@@ -342,6 +342,19 @@ class TestPellHeat(unittest.TestCase):
                 self.assertLess(abs(K - q), 50 * tau ** 2, (A, B, C, tau))
 
 
+class TestPellKappaLeanDefinition(unittest.TestCase):
+    def test_canonical_kappa_matches_atlas(self):
+        # kappa as defined in the Lean theorem PellExact.pell_exact_count (canonical roots,
+        # periods mod 2A, good residues) agrees with the atlas constant, including kappa = 0
+        from perfectpower.arith import pell_fundamental
+        from perfectpower.pell_heat import pell_kappa_canonical
+        for A, B, C in [(2, 0, 1), (3, 0, 1), (2, 0, -7), (5, 1, 3), (2, 1, 0), (6, 0, -2),
+                        (2, 2, 0), (7, 3, -5), (13, 0, 4), (2, 0, 7)]:
+            u, v = pell_fundamental(4 * A)
+            k, _ = pell_kappa_canonical(A, B, C, u, v)
+            self.assertAlmostEqual(k, classify([C, B, A], 2).details['kappa'], places=10)
+
+
 class TestGeometry(unittest.TestCase):
     def test_euler_characteristic_matches_types(self):
         # Theorem G: finite type  <=>  chi(affine component) = d'(1 - S) < 0  (Siegel)

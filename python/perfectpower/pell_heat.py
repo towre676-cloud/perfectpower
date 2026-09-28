@@ -135,3 +135,42 @@ def pell_heat_prediction(A: int, B: int, C: int, tau: float, hits_small: int, cl
     f = math.exp(tau * B / (2 * A)) if shift else 1.0
     corr = hits_small - model_small
     return f * (main + periodic) + corr, f * main + corr
+
+
+def pell_kappa_canonical(A: int, B: int, C: int, u: int, v: int):
+    """kappa exactly as in the Lean theorem `PellExact.pell_exact_count`.
+
+    Roots are the solutions of X^2 - 4A Y^2 = Delta with X > 0, Y >= 0 whose inverse-unit
+    predecessor leaves that quadrant (they lie in the box 4A Y^2 <= |Delta| u^2); P is the period
+    of X mod 2A along the orbit, g the number of good residues (X_r = B mod 2A).  Returns
+    (kappa, [(root, P, g)])."""
+    from math import isqrt
+    D, Delta = 4 * A, B * B - 4 * A * C
+    ymax = isqrt(abs(Delta) * u * u // D) + 1
+    roots = []
+    for Y in range(0, ymax + 1):
+        if D * Y * Y > abs(Delta) * u * u:
+            break
+        X2 = Delta + D * Y * Y
+        if X2 <= 0:
+            continue
+        X = isqrt(X2)
+        if X * X != X2:
+            continue
+        Xp, Yp = X * u - D * Y * v, u * Y - v * X          # predecessor
+        if not (Xp > 0 and Yp >= 0):
+            roots.append((X, Y))
+    data, total = [], 0.0
+    for X0, Y0 in roots:
+        M = 2 * A
+        X, Y, P, good = X0, Y0, 0, 0
+        while True:
+            if (X - B) % M == 0:
+                good += 1
+            P += 1
+            X, Y = X * u + D * Y * v, X * v + Y * u
+            if (X % M, Y % M) == (X0 % M, Y0 % M):
+                break
+        data.append(((X0, Y0), P, good))
+        total += good / P
+    return total / math.log(u + v * math.sqrt(D)), data

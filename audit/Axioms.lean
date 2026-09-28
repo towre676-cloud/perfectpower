@@ -146,3 +146,13 @@ open PerfectPower
 #print axioms PerfectPower.PellExact.pell_exact_count
 #print axioms chi_eq
 #print axioms chi_neg_iff
+-- RadicalAsymp (radical real-power asymptotic) and the Atlas interface
+#print axioms radW_spec
+#print axioms radW_approx
+#print axioms radical_asymptotic
+#print axioms radical_asymptotic_int
+#print axioms isHit_mul_pow_iff
+#print axioms atlas_power
+#print axioms atlas_radical
+#print axioms atlas_pell
+#print axioms atlas_finite
