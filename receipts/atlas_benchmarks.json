@@ -1,0 +1,1249 @@
+{
+  "status": "exact computations; structural counts cross-checked against the defining scan up to 1e5; complete hit lists are proofs relative to Theorems P, B, C, R",
+  "generator": "python3 python/make_atlas_receipts.py",
+  "definition": "count n in [1,N] with F(n)=m**d for an integer m",
+  "rows": [
+    {
+      "name": "square_polynomial_n2",
+      "coefficients_F_low_to_high": [
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "kind": "power",
+      "multiplicity_profile": {
+        "2": 1
+      },
+      "t_profile": {
+        "1": 1
+      },
+      "growth": "N",
+      "exponent": "1",
+      "infinite": true,
+      "effective": true,
+      "count_at_1e5_structural_equals_scan": 100000,
+      "counts_structural": {
+        "1e6": 1000000,
+        "1e12": 1000000000000,
+        "1e24": 1000000000000000000000000
+      }
+    },
+    {
+      "name": "twisted_power_2n2",
+      "coefficients_F_low_to_high": [
+        0,
+        0,
+        2
+      ],
+      "d": 2,
+      "kind": "power",
+      "multiplicity_profile": {
+        "2": 1
+      },
+      "t_profile": {
+        "1": 1
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "count_at_1e5_structural_equals_scan": 0,
+      "counts_structural": {
+        "1e6": 0,
+        "1e12": 0,
+        "1e24": 0
+      },
+      "complete_hit_list": []
+    },
+    {
+      "name": "grunwald_wang_16n8",
+      "coefficients_F_low_to_high": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        16
+      ],
+      "d": 8,
+      "kind": "power",
+      "multiplicity_profile": {
+        "8": 1
+      },
+      "t_profile": {
+        "1": 1
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "count_at_1e5_structural_equals_scan": 0,
+      "counts_structural": {
+        "1e6": 0,
+        "1e12": 0,
+        "1e24": 0
+      },
+      "complete_hit_list": []
+    },
+    {
+      "name": "linear_4n_plus_1",
+      "coefficients_F_low_to_high": [
+        1,
+        4
+      ],
+      "d": 2,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "1": 1
+      },
+      "t_profile": {
+        "2": 1
+      },
+      "growth": "N^(1/2)",
+      "exponent": "1/2",
+      "infinite": true,
+      "effective": true,
+      "kappa": 1.0,
+      "count_at_1e5_structural_equals_scan": 315,
+      "counts_structural": {
+        "1e6": 999,
+        "1e12": 999999,
+        "1e24": 999999999999
+      }
+    },
+    {
+      "name": "linear_2n_minus_5",
+      "coefficients_F_low_to_high": [
+        -5,
+        2
+      ],
+      "d": 2,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "1": 1
+      },
+      "t_profile": {
+        "2": 1
+      },
+      "growth": "N^(1/2)",
+      "exponent": "1/2",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.707106781187,
+      "count_at_1e5_structural_equals_scan": 224,
+      "counts_structural": {
+        "1e6": 707,
+        "1e12": 707107,
+        "1e24": 707106781187
+      }
+    },
+    {
+      "name": "linear_3n_plus_2_d6",
+      "coefficients_F_low_to_high": [
+        2,
+        3
+      ],
+      "d": 6,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "1": 1
+      },
+      "t_profile": {
+        "6": 1
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "kappa": 0.0,
+      "count_at_1e5_structural_equals_scan": 0,
+      "counts_structural": {
+        "1e6": 0,
+        "1e12": 0,
+        "1e24": 0
+      },
+      "complete_hit_list": []
+    },
+    {
+      "name": "singular_cubic_n3",
+      "coefficients_F_low_to_high": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "3": 1
+      },
+      "t_profile": {
+        "2": 1
+      },
+      "growth": "N^(1/2)",
+      "exponent": "1/2",
+      "infinite": true,
+      "effective": true,
+      "kappa": 1.0,
+      "count_at_1e5_structural_equals_scan": 316,
+      "counts_structural": {
+        "1e6": 1000,
+        "1e12": 1000000,
+        "1e24": 1000000000000
+      }
+    },
+    {
+      "name": "cube_twist_5_plus_3n",
+      "coefficients_F_low_to_high": [
+        5,
+        3
+      ],
+      "d": 3,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "1": 1
+      },
+      "t_profile": {
+        "3": 1
+      },
+      "growth": "N^(1/3)",
+      "exponent": "1/3",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.480749856769,
+      "count_at_1e5_structural_equals_scan": 22,
+      "counts_structural": {
+        "1e6": 48,
+        "1e12": 4807,
+        "1e24": 48074986
+      }
+    },
+    {
+      "name": "radical_12n2_d3",
+      "coefficients_F_low_to_high": [
+        0,
+        0,
+        12
+      ],
+      "d": 3,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "2": 1
+      },
+      "t_profile": {
+        "3": 1
+      },
+      "growth": "N^(1/3)",
+      "exponent": "1/3",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.436790232368,
+      "count_at_1e5_structural_equals_scan": 20,
+      "counts_structural": {
+        "1e6": 43,
+        "1e12": 4367,
+        "1e24": 43679023
+      }
+    },
+    {
+      "name": "radical_n3_times_square",
+      "coefficients_F_low_to_high": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        1
+      ],
+      "d": 2,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "2": 1,
+        "3": 1
+      },
+      "t_profile": {
+        "1": 1,
+        "2": 1
+      },
+      "growth": "N^(1/2)",
+      "exponent": "1/2",
+      "infinite": true,
+      "effective": true,
+      "kappa": 1.0,
+      "count_at_1e5_structural_equals_scan": 316,
+      "counts_structural": {
+        "1e6": 1000,
+        "1e12": 1000000,
+        "1e24": 1000000000000
+      }
+    },
+    {
+      "name": "monomial_n4_d6",
+      "coefficients_F_low_to_high": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "d": 6,
+      "kind": "radical",
+      "multiplicity_profile": {
+        "4": 1
+      },
+      "t_profile": {
+        "3": 1
+      },
+      "growth": "N^(1/3)",
+      "exponent": "1/3",
+      "infinite": true,
+      "effective": true,
+      "kappa": 1.0,
+      "count_at_1e5_structural_equals_scan": 46,
+      "counts_structural": {
+        "1e6": 100,
+        "1e12": 10000,
+        "1e24": 100000000
+      }
+    },
+    {
+      "name": "pell_2n2_plus_1",
+      "coefficients_F_low_to_high": [
+        1,
+        0,
+        2
+      ],
+      "d": 2,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "log N",
+      "exponent": "0",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.567296328553,
+      "count_at_1e5_structural_equals_scan": 7,
+      "counts_structural": {
+        "1e6": 8,
+        "1e12": 16,
+        "1e24": 31
+      }
+    },
+    {
+      "name": "pell_3n2_plus_1",
+      "coefficients_F_low_to_high": [
+        1,
+        0,
+        3
+      ],
+      "d": 2,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "log N",
+      "exponent": "0",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.7593257175,
+      "count_at_1e5_structural_equals_scan": 9,
+      "counts_structural": {
+        "1e6": 11,
+        "1e12": 21,
+        "1e24": 42
+      }
+    },
+    {
+      "name": "pell_2n2_minus_7",
+      "coefficients_F_low_to_high": [
+        -7,
+        0,
+        2
+      ],
+      "d": 2,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "log N",
+      "exponent": "0",
+      "infinite": true,
+      "effective": true,
+      "kappa": 1.134592657107,
+      "count_at_1e5_structural_equals_scan": 13,
+      "counts_structural": {
+        "1e6": 16,
+        "1e12": 31,
+        "1e24": 63
+      }
+    },
+    {
+      "name": "pell_5n2_plus_n_plus_3",
+      "coefficients_F_low_to_high": [
+        3,
+        1,
+        5
+      ],
+      "d": 2,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "log N",
+      "exponent": "0",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.346347820206,
+      "count_at_1e5_structural_equals_scan": 4,
+      "counts_structural": {
+        "1e6": 6,
+        "1e12": 10,
+        "1e24": 20
+      }
+    },
+    {
+      "name": "pell_2n2_plus_n",
+      "coefficients_F_low_to_high": [
+        0,
+        1,
+        2
+      ],
+      "d": 2,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "log N",
+      "exponent": "0",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.283648164277,
+      "count_at_1e5_structural_equals_scan": 3,
+      "counts_structural": {
+        "1e6": 4,
+        "1e12": 8,
+        "1e24": 16
+      }
+    },
+    {
+      "name": "pell_quartic_(2n2+1)^2_d4",
+      "coefficients_F_low_to_high": [
+        1,
+        0,
+        4,
+        0,
+        4
+      ],
+      "d": 4,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "2": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "log N",
+      "exponent": "0",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.567296328553,
+      "count_at_1e5_structural_equals_scan": 7,
+      "counts_structural": {
+        "1e6": 8,
+        "1e12": 16,
+        "1e24": 31
+      }
+    },
+    {
+      "name": "elliptic_n3_plus_1",
+      "coefficients_F_low_to_high": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 3
+      },
+      "t_profile": {
+        "2": 3
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": false,
+      "runge_divisors": [],
+      "count_at_1e5_scan_only": 1,
+      "scan_hits_up_to_1e5": [
+        2
+      ]
+    },
+    {
+      "name": "elliptic_n3_minus_2n_plus_1",
+      "coefficients_F_low_to_high": [
+        1,
+        -2,
+        0,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 3
+      },
+      "t_profile": {
+        "2": 3
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": false,
+      "runge_divisors": [],
+      "count_at_1e5_scan_only": 1,
+      "scan_hits_up_to_1e5": [
+        1
+      ]
+    },
+    {
+      "name": "elliptic_n3_plus_n_plus_4",
+      "coefficients_F_low_to_high": [
+        4,
+        1,
+        0,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 3
+      },
+      "t_profile": {
+        "2": 3
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": false,
+      "runge_divisors": [],
+      "count_at_1e5_scan_only": 1,
+      "scan_hits_up_to_1e5": [
+        4128
+      ]
+    },
+    {
+      "name": "rigid_quartic_n4_plus_1",
+      "coefficients_F_low_to_high": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 4
+      },
+      "t_profile": {
+        "2": 4
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 1,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 2,
+        "v05_certificate_cutoff": 3
+      }
+    },
+    {
+      "name": "rigid_n2_plus_n",
+      "coefficients_F_low_to_high": [
+        0,
+        1,
+        1
+      ],
+      "d": 2,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "kappa": 0.0,
+      "count_at_1e5_structural_equals_scan": 0,
+      "counts_structural": {
+        "1e6": 0,
+        "1e12": 0,
+        "1e24": 0
+      },
+      "complete_hit_list": []
+    },
+    {
+      "name": "ljunggren_1_plus_n_to_n4",
+      "coefficients_F_low_to_high": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 4
+      },
+      "t_profile": {
+        "2": 4
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 1,
+      "complete_hit_list": [
+        3
+      ],
+      "runge": {
+        "hits": [
+          [
+            3,
+            11
+          ]
+        ],
+        "scan_below": 1,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 8,
+        "v05_certificate_cutoff": 48
+      }
+    },
+    {
+      "name": "n4_plus_1_sixth_power",
+      "coefficients_F_low_to_high": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "d": 6,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 4
+      },
+      "t_profile": {
+        "6": 4
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": []
+    },
+    {
+      "name": "consecutive_product_4_d2",
+      "coefficients_F_low_to_high": [
+        0,
+        6,
+        11,
+        6,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 4
+      },
+      "t_profile": {
+        "2": 4
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 4,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 4,
+        "v05_certificate_cutoff": 8
+      }
+    },
+    {
+      "name": "consecutive_product_4_d4",
+      "coefficients_F_low_to_high": [
+        0,
+        6,
+        11,
+        6,
+        1
+      ],
+      "d": 4,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 4
+      },
+      "t_profile": {
+        "4": 4
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2,
+        4
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 2,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 16,
+        "v05_certificate_cutoff": 483
+      }
+    },
+    {
+      "name": "consecutive_product_6_d2",
+      "coefficients_F_low_to_high": [
+        0,
+        120,
+        274,
+        225,
+        85,
+        15,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 6
+      },
+      "t_profile": {
+        "2": 6
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 16,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 64,
+        "v05_certificate_cutoff": 2541
+      }
+    },
+    {
+      "name": "consecutive_product_6_d3",
+      "coefficients_F_low_to_high": [
+        0,
+        120,
+        274,
+        225,
+        85,
+        15,
+        1
+      ],
+      "d": 3,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 6
+      },
+      "t_profile": {
+        "3": 6
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        3
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 8,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 16,
+        "v05_certificate_cutoff": 48
+      }
+    },
+    {
+      "name": "consecutive_product_6_d6",
+      "coefficients_F_low_to_high": [
+        0,
+        120,
+        274,
+        225,
+        85,
+        15,
+        1
+      ],
+      "d": 6,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 6
+      },
+      "t_profile": {
+        "6": 6
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2,
+        3,
+        6
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 4,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 64,
+        "v05_certificate_cutoff": 143139
+      }
+    },
+    {
+      "name": "consecutive_product_8_d2",
+      "coefficients_F_low_to_high": [
+        0,
+        5040,
+        13068,
+        13132,
+        6769,
+        1960,
+        322,
+        28,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 8
+      },
+      "t_profile": {
+        "2": 8
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 32,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 32,
+        "v05_certificate_cutoff": 406
+      }
+    },
+    {
+      "name": "consecutive_product_8_d4",
+      "coefficients_F_low_to_high": [
+        0,
+        5040,
+        13068,
+        13132,
+        6769,
+        1960,
+        322,
+        28,
+        1
+      ],
+      "d": 4,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 8
+      },
+      "t_profile": {
+        "4": 8
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2,
+        4
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 8,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 32,
+        "v05_certificate_cutoff": 489
+      }
+    },
+    {
+      "name": "consecutive_product_8_d8",
+      "coefficients_F_low_to_high": [
+        0,
+        5040,
+        13068,
+        13132,
+        6769,
+        1960,
+        322,
+        28,
+        1
+      ],
+      "d": 8,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 8
+      },
+      "t_profile": {
+        "8": 8
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2,
+        4,
+        8
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 4,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 128,
+        "v05_certificate_cutoff": 65449603
+      }
+    },
+    {
+      "name": "consecutive_product_10_d2",
+      "coefficients_F_low_to_high": [
+        0,
+        362880,
+        1026576,
+        1172700,
+        723680,
+        269325,
+        63273,
+        9450,
+        870,
+        45,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 10
+      },
+      "t_profile": {
+        "2": 10
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 32,
+        "max_t": 4,
+        "polynomials_solved": 18,
+        "tail_start": 65536,
+        "v05_certificate_cutoff": 139044067
+      }
+    },
+    {
+      "name": "consecutive_product_10_d5",
+      "coefficients_F_low_to_high": [
+        0,
+        362880,
+        1026576,
+        1172700,
+        723680,
+        269325,
+        63273,
+        9450,
+        870,
+        45,
+        1
+      ],
+      "d": 5,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 10
+      },
+      "t_profile": {
+        "5": 10
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        5
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 16,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 64,
+        "v05_certificate_cutoff": 23102
+      }
+    },
+    {
+      "name": "consecutive_product_12_d2",
+      "coefficients_F_low_to_high": [
+        0,
+        39916800,
+        120543840,
+        150917976,
+        105258076,
+        45995730,
+        13339535,
+        2637558,
+        357423,
+        32670,
+        1925,
+        66,
+        1
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 12
+      },
+      "t_profile": {
+        "2": 12
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 64,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 256,
+        "v05_certificate_cutoff": 44341
+      }
+    },
+    {
+      "name": "consecutive_product_12_d3",
+      "coefficients_F_low_to_high": [
+        0,
+        39916800,
+        120543840,
+        150917976,
+        105258076,
+        45995730,
+        13339535,
+        2637558,
+        357423,
+        32670,
+        1925,
+        66,
+        1
+      ],
+      "d": 3,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 12
+      },
+      "t_profile": {
+        "3": 12
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        3
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 32,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 256,
+        "v05_certificate_cutoff": 74130
+      }
+    },
+    {
+      "name": "consecutive_product_12_d4",
+      "coefficients_F_low_to_high": [
+        0,
+        39916800,
+        120543840,
+        150917976,
+        105258076,
+        45995730,
+        13339535,
+        2637558,
+        357423,
+        32670,
+        1925,
+        66,
+        1
+      ],
+      "d": 4,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 12
+      },
+      "t_profile": {
+        "4": 12
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2,
+        4
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 32,
+        "max_t": 2,
+        "polynomials_solved": 6,
+        "tail_start": 2048,
+        "v05_certificate_cutoff": 38689526926
+      }
+    },
+    {
+      "name": "consecutive_product_12_d6",
+      "coefficients_F_low_to_high": [
+        0,
+        39916800,
+        120543840,
+        150917976,
+        105258076,
+        45995730,
+        13339535,
+        2637558,
+        357423,
+        32670,
+        1925,
+        66,
+        1
+      ],
+      "d": 6,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 12
+      },
+      "t_profile": {
+        "6": 12
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": true,
+      "runge_divisors": [
+        2,
+        3,
+        6
+      ],
+      "count_at_1e5_structural_equals_scan": 0,
+      "complete_hit_list": [],
+      "runge": {
+        "hits": [],
+        "scan_below": 16,
+        "max_t": 0,
+        "polynomials_solved": 1,
+        "tail_start": 128,
+        "v05_certificate_cutoff": 1798012
+      }
+    }
+  ]
+}

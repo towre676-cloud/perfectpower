@@ -1,4 +1,4 @@
-"""python -m perfectpower scan|certificate|verify|surgery ..."""
+"""python -m perfectpower scan|certificate|verify|surgery|classify|enumerate|count ..."""
 import argparse
 import json
 from pathlib import Path
@@ -13,13 +13,13 @@ def coefficients(raw):
 def main():
     parser = argparse.ArgumentParser(description='Exact polynomial perfect-power research console')
     sub = parser.add_subparsers(dest='command', required=True)
-    for name in ('scan', 'certificate', 'surgery'):
+    for name in ('scan', 'certificate', 'surgery', 'classify', 'enumerate', 'count'):
         p = sub.add_parser(name)
         p.add_argument('--coeff', required=True, type=coefficients,
                        help='S coefficients low to high, comma separated')
         p.add_argument('--d', type=int, required=True)
         p.add_argument('--k', type=int, default=0)
-        if name != 'certificate':
+        if name in ('scan', 'surgery', 'count'):
             p.add_argument('--N', type=int, required=True)
         if name == 'surgery':
             p.add_argument('--override', action='append', default=[],
@@ -37,6 +37,30 @@ def main():
         parser.error('d >= 2 required')
     f = args.coeff.copy()
     f[0] += args.k
+    if args.command == 'classify':
+        from dataclasses import asdict
+        from .atlas import classify
+        out = asdict(classify(f, args.d))
+        out['exponent'] = str(out['exponent'])
+        print(json.dumps(out, indent=2, default=str))
+        return
+    if args.command == 'enumerate':
+        from dataclasses import asdict
+        from .runge import runge_enumerate
+        e = runge_enumerate(f, args.d)
+        if e is None:
+            print(json.dumps({'classification': 'nonrigid', 'enumeration': None}))
+            raise SystemExit(1)
+        print(json.dumps({'classification': 'perfect_polynomial_power' if e.exact_identity
+                          else 'complete_finite_hit_list', 'enumeration': asdict(e)}, indent=2))
+        return
+    if args.command == 'count':
+        from .atlas import classify, structural_count
+        cl = classify(f, args.d)
+        print(json.dumps({'kind': cl.kind, 'growth': cl.growth, 'N': args.N,
+                          'count': structural_count(f, args.d, args.N),
+                          'kappa': cl.details.get('kappa')}, indent=2))
+        return
     if args.command == 'certificate':
         cert = rigid_certificate(f, args.d)
         print(json.dumps({'classification': 'nonrigid' if cert is None else

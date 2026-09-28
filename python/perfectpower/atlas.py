@@ -15,8 +15,8 @@ Kinds returned by classify():
                    A(N) = kappa N^(1/t) + O(1) with an explicit kappa >= 0.
   'pell'           {2, 2, 1, ..., 1} (d even): reduces to squares of integer quadratics.
                    A(N) = kappa log N + O(1) with an explicit kappa >= 0.
-  'finite'         anything else: finitely many hits (LeVeque).  Enumerated effectively only
-                   in the rigid (Runge) sub-branch, via runge.runge_enumerate.
+  'finite'         anything else: finitely many hits (LeVeque).  Enumerated effectively when
+                   F is Runge-rigid for some divisor d' >= 2 of d (runge.runge_enumerate).
 """
 from __future__ import annotations
 
@@ -144,11 +144,15 @@ def classify(coefficients, d: int) -> Classification:
                               exponent=Fraction(0), infinite=infinite, effective=True,
                               details=info, **base)
 
-    rigid = degree(F) % d == 0 and integer_power_root(lead, d) is not None
+    # Hits for d are hits for every divisor d' of d, so a Runge-rigid divisor d' >= 2
+    # (d' | deg F and lead(F) an integer d'-th power) makes the finite hit set computable.
+    runge = [e for e in range(2, d + 1)
+             if d % e == 0 and degree(F) % e == 0 and integer_power_root(lead, e) is not None]
     return Classification(kind='finite', growth='bounded', exponent=Fraction(0), infinite=False,
-                          effective=rigid,
+                          effective=bool(runge),
                           details={'theorem': 'LeVeque 1964 (via Siegel); effective by Brindza 1984',
-                                   'rigid_runge_branch': rigid}, **base)
+                                   'rigid_runge_branch': d in runge,
+                                   'runge_divisors': runge}, **base)
 
 
 # ---------------------------------------------------------------------------
@@ -187,17 +191,22 @@ def _radical_param_hits(info: dict, N: int) -> set[int]:
     z0, t, u, v = info['z0'], info['t'], info['u'], info['v']
     out = set()
     for s in info['signs']:
-        w = 1
-        while True:
-            z = s * z0 * w ** t
-            n_num = z + u
-            if s > 0 and n_num > v * N:
-                break
-            if s < 0 and n_num < v:
-                break
-            if n_num % v == 0 and 1 <= n_num // v <= N:
-                out.add(n_num // v)
-            w += 1
+        if s > 0:
+            # z = z0 w^t with w in a good class mod v; stop once n = (z + u)/v exceeds N
+            for rho in info['good_residues_mod_v']:
+                w = rho if rho >= 1 else v
+                while z0 * w ** t + u <= v * N:
+                    n_num = z0 * w ** t + u
+                    if n_num >= v:
+                        out.add(n_num // v)
+                    w += v
+        else:
+            w = 1
+            while u - z0 * w ** t >= v:        # n = (u - z0 w^t)/v >= 1
+                n_num = u - z0 * w ** t
+                if n_num % v == 0 and n_num // v <= N:
+                    out.add(n_num // v)
+                w += 1
     return out
 
 
@@ -426,7 +435,9 @@ def structural_hits(coefficients, d: int, N: int) -> list[int]:
         return sorted(hits)
     if cl.effective:
         from .runge import runge_enumerate
-        return [n for n, _ in runge_enumerate(f, d).hits if n <= N]
+        e = cl.details['runge_divisors'][-1]
+        return [n for n, _ in runge_enumerate(f, e).hits
+                if n <= N and integer_power_root(_eval_int(f, n), d) is not None]
     raise NotImplementedError('finite by LeVeque, but no effective enumeration implemented')
 
 
