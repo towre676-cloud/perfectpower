@@ -10,7 +10,7 @@ lemma abs_sub_ge_inv (D P y : ℤ) (hD : D ≠ 0) (h : (y : ℝ) - (P : ℝ) / D
     1 / |(D : ℝ)| ≤ |(y : ℝ) - (P : ℝ) / D| := by
   have hDq : (D : ℝ) ≠ 0 := by exact_mod_cast hD
   have e : (y : ℝ) - (P : ℝ) / D = ((D * y - P : ℤ) : ℝ) / D := by
-    push_cast; field_simp
+    push_cast; field_simp; ring
   have hn : D * y - P ≠ 0 := by
     intro h0; apply h; rw [e, h0]; simp
   rw [e, abs_div]
@@ -28,14 +28,13 @@ lemma Qeval_mul_D {Q : ℚ[X]} {D : ℤ} {P : ℤ[X]}
 /-- Evaluation commutes with the cast `ℚ → ℝ`. -/
 lemma eval_cast_real (P : ℚ[X]) (n : ℕ) :
     ((P.eval (n : ℚ) : ℚ) : ℝ) = (P.map (Rat.castHom ℝ)).eval (n : ℝ) := by
-  have h := Polynomial.eval₂_at_apply (p := P) (Rat.castHom ℝ) (n : ℚ)
   rw [eval_map]
-  simpa using h.symm
+  simp
 
 lemma abs_sub_one_le_abs_pow_sub_one {t : ℝ} (ht : 0 ≤ t) {d : ℕ} (hd : d ≠ 0) :
     |t - 1| ≤ |t ^ d - 1| := by
   rcases le_total 1 t with h | h
-  · have := le_self_pow h hd
+  · have := le_self_pow₀ h hd
     rw [abs_of_nonneg (by linarith), abs_of_nonneg (by linarith)]; linarith
   · have := pow_le_of_le_one ht h hd
     rw [abs_of_nonpos (by linarith), abs_of_nonpos (by linarith)]; linarith
@@ -107,7 +106,7 @@ lemma pow_diff_bound {d : ℕ} (hd : 2 ≤ d) (m : ℤ) (x r : ℝ) (hx : x ≠ 
         rw [Nat.not_even_iff_odd] at hodd
         have h1 : ((m : ℝ) * x) ^ d < 0 := hodd.pow_neg hmx
         rw [mul_pow] at h1
-        have h2 : |r| ^ 2 ≤ (|x| ^ d / 2) ^ 2 := pow_le_pow_left (abs_nonneg _) hr 2
+        have h2 : |r| ^ 2 ≤ (|x| ^ d / 2) ^ 2 := pow_le_pow_left₀ (abs_nonneg _) hr 2
         rw [sq_abs] at h2
         have e : (|x| ^ d) ^ 2 = (x ^ d) ^ 2 := by rw [← abs_pow, sq_abs]
         have hrr : r = (m : ℝ) ^ d - x ^ d := by linarith
@@ -174,7 +173,7 @@ theorem eventually_no_hit {d : ℕ} (hd : 2 ≤ d) {F : ℤ[X]} {Q : ℚ[X]}
   rw [← hxD] at hlow
   have hup := lt_of_le_of_lt hyb hsmall
   have hcmp : 1 / (2 * |(D : ℝ)|) < 1 / |(D : ℝ)| := by
-    rw [div_lt_div_iff (by positivity) hDpos]; nlinarith
+    rw [div_lt_div_iff₀ (by positivity) hDpos]; nlinarith
   linarith
 
 end PerfectPower

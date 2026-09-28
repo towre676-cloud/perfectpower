@@ -93,7 +93,7 @@ lemma binom_remainder (Q T : ℚ[X]) (e : ℕ) (hT : T.natDegree ≤ Q.natDegree
       E.natDegree ≤ 2 * T.natDegree + e * Q.natDegree := by
   rw [add_comm Q T, add_pow]
   rw [Finset.sum_range_succ', Finset.sum_range_succ']
-  refine ⟨∑ i in Finset.range (e + 1),
+  refine ⟨∑ i ∈ Finset.range (e + 1),
       T ^ (i + 1 + 1) * Q ^ (e + 2 - (i + 1 + 1)) * (((e + 2).choose (i + 1 + 1) : ℕ) : ℚ[X]), ?_, ?_⟩
   · simp
     ring
@@ -110,7 +110,7 @@ lemma binom_remainder (Q T : ℚ[X]) (e : ℕ) (hT : T.natDegree ≤ Q.natDegree
           rw [h3]; exact Nat.add_le_add_right natDegree_mul_le 0
       _ ≤ (i + 1 + 1) * T.natDegree + (e - i) * Q.natDegree := by
           have : e + 2 - (i + 1 + 1) = e - i := by omega
-          rw [this] at h2; omega
+          rw [this] at h2 ⊢; omega
       _ ≤ 2 * T.natDegree + e * Q.natDegree := by
           obtain ⟨s, rfl⟩ : ∃ s, e = i + s := ⟨e - i, by omega⟩
           have : i + s - i = s := by omega
@@ -180,6 +180,7 @@ lemma trunc_induction {q e : ℕ} (b : ℚ) (hb : b ≠ 0) (F : ℚ[X])
           _ ≤ N1 := by rw [hQpow, natDegree_X_pow]; omega
       have hEle : E.natDegree < N1 := by
         have : (e * q) + q = (e + 1) * q := by ring
+        rw [hQd] at hEd hTq
         omega
       have hMcoef : M.coeff N1 = R.coeff N1 := by
         rw [hMform, coeff_C_mul, hN1eq, coeff_mul_X_pow]
@@ -190,6 +191,7 @@ lemma trunc_induction {q e : ℕ} (b : ℚ) (hb : b ≠ 0) (F : ℚ[X])
         have h2 : b ^ (e + 1) ≠ 0 := pow_ne_zero _ hb
         simp only [c]
         field_simp
+        rw [← hN1eq]; ring
       have hcoef : (R - M - E).coeff N1 = 0 := by
         rw [coeff_sub, coeff_sub, hMcoef, coeff_eq_zero_of_natDegree_lt hEle]; ring
       have hdeg : (R - M - E).degree ≤ N1 :=

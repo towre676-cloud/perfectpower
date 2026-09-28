@@ -16,7 +16,7 @@ lemma A_succ (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) :
   have hI : Finset.Icc 1 (N + 1) = insert (N + 1) (Finset.Icc 1 N) := by
     ext x; simp only [Finset.mem_Icc, Finset.mem_insert]; omega
   by_cases h : IsHit d (S (N + 1) + k)
-  · rw [hI, Finset.filter_insert, if_pos h, Finset.card_insert_of_not_mem (by simp), if_pos h]
+  · rw [hI, Finset.filter_insert, if_pos h, Finset.card_insert_of_notMem (by simp), if_pos h]
   · rw [hI, Finset.filter_insert, if_neg h, if_neg h, add_zero]
 
 lemma A_le (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) : A S d k N ≤ N := by
@@ -77,11 +77,11 @@ lemma limsup_le_of_tendsto_sub {u v : ℕ → ℝ} (hu0 : ∀ n, 0 ≤ u n) (hv1
   intro ε hε
   have hbv : IsBoundedUnder (· ≤ ·) atTop v := isBoundedUnder_of ⟨1, hv1⟩
   have hcu : IsCoboundedUnder (· ≤ ·) atTop u :=
-    isCoboundedUnder_le_of_le atTop (x := 0) (Eventually.of_forall hu0)
+    isCoboundedUnder_le_of_le atTop (x := 0) hu0
   have h1 : limsup v atTop < limsup v atTop + ε / 2 := by linarith
   have e1 := eventually_lt_of_limsup_lt h1 hbv
   have e2 : ∀ᶠ n in atTop, u n - v n < ε / 2 := (tendsto_order.1 h).2 _ (by linarith)
-  refine le_trans (limsup_le_of_le hcu (a := limsup v atTop + ε / 2) ?_) (by linarith)
+  refine limsup_le_of_le hcu ?_
   filter_upwards [e1, e2] with n h1n h2n
   linarith
 
