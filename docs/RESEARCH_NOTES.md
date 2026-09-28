@@ -8,22 +8,24 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 |---|---|---|
 | Theorem P (power type) | `LEAN_VERIFIED`: density one is `hasDensity_one_of_pow`; finiteness is `power_type_finite` | §2, `PerfectPower/ZeroOne.lean` |
 | Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check. `LEAN_VERIFIED`: the monomial case (`monomial_count`) and the valuation core for general $c$ (`isHit_iff_natAbs` sign condition, `isHit_iff_rat` denominator step, `mul_pow_isPow_iff_congr`, `mul_pow_isPow_iff_param`: $z=z_0w^t$) and the count (`radical_count_bound`: $|vA(N)-RW|\le2Rv$); only $W\sim(v/z_0)^{1/t}N^{1/t}$ is left informal | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
-| Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; for $2n^2+1$, infinitude and density zero are `LEAN_VERIFIED` (`pell_hasDensity_zero`) | §4, `atlas.py`, `PerfectPower/Pell.lean` |
+| Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; for $2n^2+1$, infinitude and density zero are `LEAN_VERIFIED` (`pell_hasDensity_zero`). In general, `LEAN_VERIFIED`: the norm-equation reduction, pure periodicity modulo $2A$, good classes, finitely many orbit representatives (`pell_orbits_exhaust`) and geometric counting; the assembled $A(N)=\kappa\log N+O(1)$ is not | §4, `atlas.py`, `PerfectPower/Pell.lean` |
 | Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` on Siegel's theorem (standard form) via Theorem G; LeVeque 1964 kept as historical context | §5 |
-| Theorem G ($\chi=d'(1-S)$; finite type ⇔ $\chi<0$) | `PAPER_PROOF` (not refereed) + randomized consistency checks | §5, `atlas.curve_invariants` |
+| Theorem G ($\chi=d'(1-S)$; finite type ⇔ $\chi<0$) | Geometric half (Kummer, Riemann–Hurwitz): `PAPER_PROOF` (not refereed), checked against Sage normalisation for $d\le12$, $\deg F\le12$ (`receipts/theorem_g_check.json`). Combinatorial half: `LEAN_VERIFIED` (`S_le_one_iff`, `profile_table_ok`) | §5, `PerfectPower/ProfileG.lean` |
+| Function-field Pillai ($\deg(f^a-g^b)$ bound) | `LEAN_VERIFIED` (`pillai_polynomial`, `pillai_polynomial_balanced`), unconditional | `PerfectPower/Davenport.lean` |
+| Genus-one hit lists (non-monic/shifted cubics, $m^3=$ quadratic) | `EXTERNAL_COMPUTATION` (Sage), re-verified in plain Python | `receipts/genus1_crossval.json` |
 | Theorem R (complete Runge enumeration) | `PAPER_PROOF`; the reduction to the $G_t$ is `LEAN_VERIFIED` (`runge_finite`); 19 instances have generated Lean certificates (17 by Taylor-shift plans, 2 by interval sandwiches); adversarial planted-hit test, 220 trials, 0 failures; prior art (Walsh 1992, Beukers–Tengely 2005) not yet compared | §6, `runge.py`, `lean_emit.py`, `lean_sandwich.py` |
 | Rigid-branch 0–1 law | `LEAN_VERIFIED` (`rigid_zero_one`) | §6 |
-| Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) | §7 |
-| Schäffer's sums-of-powers list, recovered with constants | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) + `EXACT_COMPUTATION` | §7 |
+| Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (Siegel, via Theorem G) | §7 |
+| Schäffer's sums-of-powers list, recovered with constants | `THEOREM_EXTERNAL_DEPENDENCY` (Siegel, via Theorem G) + `EXACT_COMPUTATION` | §7 |
 | Theorem T (transforms) | `PAPER_PROOF` | §8 |
-| Theorem T2 (log-periodic second term, Pell type) | `PAPER_PROOF` + numerical check to $O(\tau)$ | §8, `pell_heat.py` |
+| Theorem T2 (log-periodic second term, Pell type) | `PAPER_PROOF` (corrected: shift $\beta=-B/2A$; two-term remainder $O(\tau\log(1/\tau))$ if $B\ne0$) + numerical check of residual/scale | §8, `pell_heat.py` |
 | Theorem E (exponential sequences) | `PAPER_PROOF` + `EXACT_COMPUTATION`; the $d$-periodicity and rational density $P/d$ are `LEAN_VERIFIED` (`exp_hasDensity`, `two_pow_hasDensity_half`) | §9, `exponential.py`, `PerfectPower/Exponential.lean` |
 
 ## 1. Summary
 
-The monograph proves that the hit density of $F(n)$ is $1$ if $F=G^d$ with $G\in\mathbb Z[x]$ and $0$ otherwise, and asks for finer information inside the zero-density branch: rates, exponents, exact counts, and effective enumeration. These notes answer the rate question for polynomials, conditionally on LeVeque's classical finiteness theorem and therefore on Siegel's, which is ineffective.
+The monograph proves that the hit density of $F(n)$ is $1$ if $F=G^d$ with $G\in\mathbb Z[x]$ and $0$ otherwise, and asks for finer information inside the zero-density branch: rates, exponents, exact counts, and effective enumeration. These notes answer the rate question for polynomials, conditionally on Siegel's theorem on integral points (standard form), which is ineffective. The reduction to Siegel is Theorem G, a paper proof in these notes that has not been independently refereed.
 
-**Positioning.** The atlas and the exponent spectrum below are a *synthesis*: LeVeque's theorem combined with classical Pell and valuation counting, made explicit (with constants) and decidable (by an implementation). We make no priority claim for them until a literature pass, which must cover in particular the Bilu–Tichy and Schinzel–Tijdeman lineages, shows the packaging is new. The parts with a chance of being new are the certified pipeline: the rigid-branch enumerator, which must still be compared with the Runge implementations of Walsh and of Beukers–Tengely, and the Lean certificate emitter. See [RELATED_WORK.md](RELATED_WORK.md) and [TRUST_BOUNDARY.md](TRUST_BOUNDARY.md). The LeVeque statement used here is taken from secondary sources; the primary paper could not be read in the build environment.
+**Positioning.** The atlas and the exponent spectrum below are a *synthesis*: Siegel's theorem (through the Euler-characteristic computation of Theorem G, which recovers LeVeque's 1964 exceptional patterns) combined with classical Pell and valuation counting, made explicit (with constants) and decidable (by an implementation). We make no priority claim for them until a literature pass, which must cover in particular the Bilu–Tichy and Schinzel–Tijdeman lineages, shows the packaging is new. The parts with a chance of being new are the certified pipeline: the rigid-branch enumerator, which must still be compared with the Runge implementations of Walsh and of Beukers–Tengely, and the Lean certificate emitter. See [RELATED_WORK.md](RELATED_WORK.md) and [TRUST_BOUNDARY.md](TRUST_BOUNDARY.md). LeVeque's theorem is no longer an input: it was only ever available to us in secondary sources, and Theorem G replaces it by a direct argument from Siegel.
 
 Write $F=c\prod_i(x-\alpha_i)^{r_i}$ over $\overline{\mathbb Q}$ with distinct $\alpha_i$, and put $t_i=d/\gcd(d,r_i)$. Call the multiset $\{t_i\}$ the *$t$-profile* of $(F,d)$. It is computable exactly from a squarefree decomposition, without factoring $F$.
 
@@ -34,7 +36,7 @@ Write $F=c\prod_i(x-\alpha_i)^{r_i}$ over $\overline{\mathbb Q}$ with distinct $
 3. **Pell type** ($t$-profile $\{2,2,1,\dots,1\}$, so $d$ is even). There is an explicit $\kappa\ge0$ with $A(N)=\kappa\log N+O(1)$; $\kappa$ is computed from Pell orbits modulo $2A$ (Theorem C).
 4. **Finite type** (every other profile). The hit set is finite.
 
-Parts 1–3 are elementary and are proved here. Part 4 is LeVeque's theorem.
+Parts 1–3 are elementary and are proved here. Part 4 follows from Siegel's theorem by Theorem G (§5).
 
 **Corollary A (exponent spectrum and the root barrier).** Let $\alpha(F,d)=\limsup_N \log(1+A(N))/\log N$. Then
 $$\alpha(F,d)\in\{0,1\}\cup\{1/t:\ t\mid d,\ t\ge2\},$$
@@ -42,10 +44,10 @@ and every value in this set occurs. Moreover $\alpha=1$ exactly when $F$ is an i
 
 *Proof of the corollary from Theorem A.* In the radical type $t=d/\gcd(d,r)$ divides $d$ and exceeds $1$, so $t\ge p$. The Pell and finite types have $\alpha=0$. The monomial $F=x^{r}$ with $\gcd(r,d)=d/t$ has hits exactly at the $t$-th powers, so $A(N)=\lfloor N^{1/t}\rfloor$ realises $1/t$. This is Theorem B, and it is also the compiled Lean theorem `monomial_count`. For sharpness take $r=d/p$. $\square$
 
-This refines the monograph's 0–1 law in two ways, both conditional on LeVeque.
+This refines the monograph's 0–1 law in two ways, both conditional on Siegel's theorem through Theorem G.
 
 1. The zero branch has a quantitative ceiling, $N^{1/2}$, instead of $o(N)$.
-2. There is a second proof of density zero that does not use Boshernitzan's equidistribution theorem. It rests on Siegel's theorem through LeVeque, however, so it is **ineffective**. It cannot replace the Boshernitzan argument, or any argument, where effectivity matters. The two proofs are logically independent, but neither gives computable bounds in the finite type.
+2. There is a second proof of density zero that does not use Boshernitzan's equidistribution theorem. It rests on Siegel's theorem through Theorem G, however, so it is **ineffective**. It cannot replace the Boshernitzan argument, or any argument, where effectivity matters. The two proofs are logically independent, but neither gives computable bounds in the finite type.
 
 ## 2. The power type
 
@@ -134,7 +136,7 @@ The finite type (part 4) no longer needs LeVeque's theorem as a black box. It fo
 2. Each component, after normalisation, is a cyclic cover of $\mathbb P^1_x$ of degree $d'$. It has:
    - $d'/t_i$ points over $\alpha_i$;
    - $n_\infty=\gcd(d',\deg F/g)$ points over $x=\infty$;
-   - one point over every other $x$.
+   - $d'$ points over every other $x$ (the cover is unramified there).
 3. Hence the affine part of each component has Euler characteristic
 $$\chi \;=\; 2-2g_C-n_\infty \;=\; d'\,(1-S).$$
 4. In particular, $y^d=F(x)$ has finitely many integral points whenever $S>1$. And $S\le1$ holds exactly for the $t$-profiles $\{1,\dots,1\}$ (power), $\{t,1,\dots,1\}$ (radical) and $\{2,2,1,\dots,1\}$ (Pell).
@@ -162,6 +164,8 @@ So there are finitely many integral points when $S>1$. Finally, each special roo
 - The Siegel input is `THEOREM_EXTERNAL_DEPENDENCY` and is ineffective.
 - `atlas.curve_invariants` computes $g$, $d'$, $n_\infty$, $g_C$ and $\chi$ for every classification.
 - The test suite checks, on 1500 random $(F,d)$ with repeated and complex roots, that $2g_C$ is a non-negative even integer, and that $\chi<0$ exactly for the finite type. Earlier runs of the same check covered 4000 cases.
+- *Independent geometry.* `crosscheck/theorem_g_sage.py` computes, for every $2\le d\le12$ and every multiplicity profile of degree $\le12$, the genus and the places at infinity of $y^{d'}=\prod(x-i)^{r_i/g}$ by normalisation (Sage function fields, integral closure). It then compares $2-2g_C-n_\infty$ with $d'(1-S)$ and $n_\infty$ with $\gcd(d',\deg F/g)$. See `receipts/theorem_g_check.json` for the case count and any disagreements.
+- *Lean.* The combinatorial content is compiled. `S_le_one_iff` shows that $S\le1$ exactly for the power, radical and Pell profiles, and `profile_table_ok` checks the Riemann–Hurwitz integrality and the sign of $\chi$ over the same finite range by kernel evaluation. What a referee must still trust is the geometric normalisation step (2) and Siegel's theorem.
 
 *Proof of Theorem A.* The $t$-profile is determined by Yun's squarefree decomposition $F=c\prod_jS_j^j$: a root of $S_j$ has $t=d/\gcd(d,j)$. The types are therefore mutually exclusive and exhaustive. Parts 1–3 are Theorems P, B and C, the last with Lemma Q. Part 4 is Theorem G. $\square$
 
@@ -238,7 +242,7 @@ In particular, if $M\ge3$, then *for all but at most $M-1$ shifts $k$ the hit se
 - *Square triangular numbers.* $n(n+1)/2$ is of Pell type with $\kappa=1/\log(3+2\sqrt2)$, and its hits are $1,8,49,288,1681,\dots$.
 - *Square values of $\binom n3$.* These are of finite type (an elliptic curve), with scan hits $n=3,4,50$ up to $10^5$. This agrees with the classical theorem that these are the only ones.
 
-**Application (sums of powers; Schäffer).** Let $S_k(n)=1^k+\cdots+n^k$, an integer-valued polynomial of degree $k+1$. Schäffer (1956) proved, via LeVeque's theorem, that $S_k(n)=m^d$ has infinitely many solutions only for $(k,d)\in\{(1,2),(3,2),(3,4),(5,2)\}$. The atlas classifies every $(k,d)$ from the root multiplicities of $S_k$ and recovers exactly this list, which the receipt checks for $k\le10$, $d\le6$. It also supplies the constants:
+**Application (sums of powers; Schäffer).** Let $S_k(n)=1^k+\cdots+n^k$, an integer-valued polynomial of degree $k+1$. Schäffer (1956) proved, via LeVeque's theorem (which Theorem G replaces here), that $S_k(n)=m^d$ has infinitely many solutions only for $(k,d)\in\{(1,2),(3,2),(3,4),(5,2)\}$. The atlas classifies every $(k,d)$ from the root multiplicities of $S_k$ and recovers exactly this list, which the receipt checks for $k\le10$, $d\le6$. It also supplies the constants:
 
 | $(k,d)$ | type | first hits | growth |
 |---|---|---|---|
@@ -282,27 +286,34 @@ The receipt `heat_kernel_checks_theorem_T` evaluates $K_X(\tau)$ from exact stru
 
 This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\beta$ imply" in the polynomial case, where only $(\alpha,\beta)\in\{(1,0),(1/t,0),(0,1),(0,0)\}$ occur.
 
-**Theorem T2 (second-order heat asymptotics, Pell type).** Let $P=An^2+Bn+C$ be of Pell type with infinitely many square values. Apart from finitely many terms, the hits split into subsequences $n_j=\alpha E^j+O(E^{-j})$, $j\ge0$. There is one subsequence for each positive Pell orbit $\mathcal O$ and each good residue class $r$ of the orbit index modulo the period $\pi_{\mathcal O}$, with $E=\varepsilon^{\pi_{\mathcal O}}$ and $\alpha=\eta_r/(4A)$. Then
-$$K_X(\tau)=\kappa\log\frac1\tau+C_0+\sum_{\text{classes}}\Phi_E\big(\log(\tau\alpha)\big)+O(\tau),$$
+**Theorem T2 (second-order heat asymptotics, Pell type).** Let $P=An^2+Bn+C$ be of Pell type with infinitely many square values, and put $\beta=-B/(2A)$. Apart from finitely many terms, the hits split into subsequences
+$$n_j=\alpha E^j+\beta+O(E^{-j}),\qquad j\ge0.$$
+There is one subsequence for each positive Pell orbit $\mathcal O$ and each good residue class $r$ of the orbit index modulo the period $\pi_{\mathcal O}$, with $E=\varepsilon^{\pi_{\mathcal O}}$ and $\alpha=\eta_r/(4A)$. (The shift comes from $X=2An+B$: the orbit element $X_j+Y_j\sqrt{4A}=\eta_rE^j$ has $X_j=\tfrac12(\eta_rE^j+\bar\eta_rE^{-j})$, so $n_j=(X_j-B)/(2A)=\alpha E^j+\beta+O(E^{-j})$.) Then
+$$K_X(\tau)=e^{-\tau\beta}\sum_{\text{classes}}\Big(\frac{\log(1/(\tau\alpha))-\gamma}{\log E}+\frac12+\Phi_E\big(\log(\tau\alpha)\big)\Big)+c_{\mathrm{int}}+O(\tau),$$
 where
-$$\Phi_E(u)=\frac2{\log E}\,\mathrm{Re}\sum_{m\ge1}\Gamma\!\Big(\frac{2\pi i m}{\log E}\Big)e^{-2\pi i m u/\log E}.$$
-Here $\Phi_E$ is continuous and $\log E$-periodic, $\kappa$ is the Lemma Q constant, and
-$$C_0=\sum_{\text{classes}}\Big(\frac{\log(1/\alpha)-\gamma}{\log E}+\frac12\Big)+\big(\#\{\text{hits}\le M\}-\#\{\text{model terms}\le M\}\big)$$
-for any $M$ beyond which hits and model terms coincide.
+$$\Phi_E(u)=\frac2{\log E}\,\mathrm{Re}\sum_{m\ge1}\Gamma\!\Big(\frac{2\pi i m}{\log E}\Big)e^{-2\pi i m u/\log E}$$
+is continuous and $\log E$-periodic, and $c_{\mathrm{int}}=\#\{\text{hits}\le M\}-\#\{\text{model terms}\le M\}$ for any $M$ beyond which hits and model terms coincide. Expanding $e^{-\tau\beta}=1-\tau\beta+O(\tau^2)$ gives the two-term form
+$$K_X(\tau)=\kappa\log\frac1\tau+C_0+\sum_{\text{classes}}\Phi_E\big(\log(\tau\alpha)\big)+O\big(\tau\log(1/\tau)\big),\qquad C_0=\sum_{\text{classes}}\Big(\frac{\log(1/\alpha)-\gamma}{\log E}+\frac12\Big)+c_{\mathrm{int}},$$
+with $\kappa$ the Lemma Q constant. The remainder is $O(\tau)$ when $B=0$. When $B\ne0$ the leading correction is $-\beta\kappa\,\tau\log(1/\tau)$, and $O(\tau)$ is false.
+
+*Correction.* An earlier version of this theorem stated $n_j=\alpha E^j+O(E^{-j})$ and an $O(\tau)$ remainder for the two-term form. Both are wrong when $B\ne0$. The receipt shows the failure: for $2n^2+2n$ the unshifted residual divided by $\tau$ grows from $2.8$ to $8.1$ as $\tau$ goes from $10^{-4}$ to $10^{-12}$, while the shifted residual divided by $\tau$ stays at $0.25$.
 
 *Proof.* The Mellin transform of $\lambda\mapsto\sum_{j\ge0}e^{-\lambda E^j}$ is $\Gamma(s)/(1-E^{-s})$ for $\Re s>0$. Shift the contour to $\Re s=-\tfrac12$.
 - The double pole at $s=0$ contributes $(\log(1/\lambda)-\gamma)/\log E+\tfrac12$.
 - The simple poles at $s=2\pi im/\log E$, $m\ne0$, contribute $\Phi_E(\log\lambda)$. The series converges absolutely because $|\Gamma(iy)|\sim\sqrt{2\pi/|y|}\,e^{-\pi|y|/2}$.
 - The remaining integral is $O(\lambda)$.
 
-Next, replace $e^{-\tau n_j}$ by $e^{-\tau\alpha E^j}$. This costs $O(\tau\sum_jE^{-j})=O(\tau)$. Each of the finitely many discrepancies between hits and model terms tends to $\pm1$ as $\tau\to0$, which gives the integer correction in $C_0$. $\square$
+Write $e^{-\tau n_j}=e^{-\tau\beta}e^{-\tau\alpha E^j}e^{-\tau\delta_j}$ with $\delta_j=O(E^{-j})$. Replacing $e^{-\tau\delta_j}$ by $1$ costs $O(\tau\sum_jE^{-j})=O(\tau)$. Then apply the Mellin expansion with $\lambda=\tau\alpha$. Each of the finitely many discrepancies between hits and model terms is $\pm e^{-\tau n}=\pm1+O(\tau)$, which gives $c_{\mathrm{int}}$. For the two-term form, $(e^{-\tau\beta}-1)$ times the class sum is $-\tau\beta\kappa\log(1/\tau)+O(\tau)$. $\square$
 
 *What it adds.*
 - **It distinguishes families with the same $\kappa$.** $2n^2+1$ and $2n^2+2n$ (four times the triangular numbers) share $\kappa=1/\log(3+2\sqrt2)$, but their constants differ: $C_0=-0.2376$ and $-0.0410$.
 - **The oscillation is not negligible.** It has peak-to-peak amplitude $0.011$ for $2n^2+1$ but $0.58$ for $5n^2+n+3$.
-- **It connects to the Dirichlet series.** Because $Z_X(s)=\sum_{\text{classes}}\alpha^{-s}/(1-E^{-s})+(\text{entire near }\Re s=0)$, the heat fluctuations are exactly the contributions of the imaginary poles $s=2\pi im/\log E$ of $Z_X$.
+- **It connects to the Dirichlet series.** Because $Z_X(s)=\sum_{\text{classes}}\alpha^{-s}/(1-E^{-s})+(\text{entire near }\Re s=0)$ up to the shift, the heat fluctuations are the contributions of the imaginary poles $s=2\pi im/\log E$ of $Z_X$.
 
-*Status.* `PAPER_PROOF` (standard Mellin analysis). `receipts/pell_heat.json` checks seven families: after the two terms, the residual $|K(\tau)-\text{prediction}|$ is $\le 1.3\cdot10^{-12}$ at $\tau=10^{-12}$ and scales like $\tau$, as the $O(\tau)$ error predicts (`perfectpower/pell_heat.py`).
+*Status.* `PAPER_PROOF` (standard Mellin analysis). `receipts/pell_heat.json` checks seven families and reports, for $\tau=10^{-4},\dots,10^{-12}$, the ratio of the residual to its claimed scale.
+- *Shifted model:* residual$/\tau$ is constant to four digits for $\tau\ge10^{-10}$. The values are $0.5$, $0.5$, $0.2$, $0.125$ and $0.25$ for the families with a nonzero next term; for $2n^2-7$ and $6n^2-2$ the ratio is at rounding level.
+- *Unshifted two-term form:* residual$/(\tau\log(1/\tau))$ stays bounded, and residual$/\tau$ grows when $B\ne0$.
+- *Precision:* at $\tau=10^{-12}$ the residual is about $10^{-13}$, close to double-precision rounding of $K\approx 10$–$20$, so that ratio carries noise of about $0.06$.
 
 ## 9. Exponential sequences: a dual spectrum
 
@@ -335,9 +346,11 @@ The receipt `shifted_exponential_scans` lists all hits with $n\le400$ for $a\in\
 1. **Effective enumeration in the finite type outside the Runge branch.** Examples are $n^3+k=m^2$ (Mordell curves) and $n^3+n+4=m^2$, which has the isolated hit $n=4128$. Brindza's bounds are effective but impractical. Elliptic-logarithm methods, as in Magma or Sage, solve genus-one cases. **Status now:**
    - For $m^2=n^3+an+b$ with $|a|,|b|\le12$, all 622 curves, including $n^3+n+4$, have hit lists certified by an *independent* computation: Sage `integral_points`, see `receipts/cubic_crossval.json`. These agree with our scans.
    - That certification is external. Lean does not check it.
-   - Every other finite-type, non-Runge family, e.g. $\binom n3=m^2$, remains **scan evidence only** (`SCAN_EVIDENCE_ONLY` in `data/families.csv`), and no completeness is claimed for it.
+   - `crosscheck/genus1_sage.py` extends this to 400 non-monic or shifted cubics and cubes $m^3=aX^2+bX+c$. Each is reduced to an integral short Weierstrass model, and the Sage points are pulled back through explicit congruences. The results are in `receipts/genus1_crossval.json`: 399 are certified, one rests on an unproven rank, and none disagrees with an exact sieve scan to $10^6$. Three families have certified hits beyond $10^6$: $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$, $6n^2+n+1=61301^3$ at $n=6{,}196{,}204$, and $3n^2-n-3=19483^3$ at $n=1{,}570{,}085$.
+   - $\binom n2=m^3$ and $\binom n3=m^2$ are settled given Sage's integral points of $Y^2=X^3+1$ and $Y^2=X^3-36X$ (`PerfectPower/Binomial.lean`).
+   - Genus $\ge2$ non-Runge families, e.g. $n^5+2=m^2$, remain **scan evidence only** (`SCAN_EVIDENCE_ONLY`). They are scanned exactly to $10^8$ by a modular sieve, and no completeness is claimed.
    - The cross-validation also shows that scan horizons matter. Scans to $10^3$ or $10^4$ would have missed hits on 18 and 4 of the 622 curves; the largest hit is $n=80327$.
-2. **Formalisation of Theorems B, C, R in Lean.** Theorem B needs $p$-adic valuations of $c_1z^r$, which are available in Mathlib. Theorem R needs the explicit threshold inequalities; its analytic core is already compiled. LeVeque's theorem itself is far beyond current formal libraries and should remain an external boundary.
+2. **Formalisation of Theorems B, C, R in Lean.** The valuation core and the count of Theorem B are compiled, and so are the Pell interfaces and orbit exhaustion. Still open: the assembled $\kappa\log N$ count, and the threshold inequalities of Theorem R. Siegel's theorem itself is far beyond current formal libraries and should remain an external boundary.
 3. **Uniformity.** Bound the number of hits in the finite type uniformly in the height of $F$. Theorem R gives such a bound in the Runge branch, $x_0-1+(2T(x_0)+1)(d-1)q$; is there a Runge-type bound polynomial in the height?
 4. **Beyond polynomials.** Exponential sequences ($a^n+k$; Catalan–Mihăilescu, Pillai), factorials (Brocard–Ramanujan), and linear recurrences each need their own theorems. The atlas shows that the polynomial exponent spectrum is discrete. Is the exponent spectrum of $\{S(n)+k\}$ discrete for every linear recurrence $S$?
 5. **Thin sets.** Theorem A implies that the hit set of a non-power polynomial is contained in a thin set of type 2 with at most $O(N^{1/2})$ elements up to $N$, consistent with the Cohen–Serre bound for thin sets (Serre, *Topics in Galois Theory*, §3.4). A direct large-sieve proof of Corollary A's barrier, avoiding Siegel, would give an effective exponent bound in the finite type.

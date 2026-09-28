@@ -21,7 +21,9 @@ points lie on their curves.
 
 Also writes data/mordell_census.csv (flat view, including the engine column) and
 receipts/mordell_census_summary.json; `python3 crosscheck/mordell_census.py --from-jsonl` rebuilds
-both from the JSONL without Sage (run by `make receipts`).
+both from the JSONL without Sage (run by `make receipts`), after checking that the keys are
+exactly 0 < |k| <= K once each, every x-list is strictly increasing, and every row passes
+`check_row`.  It does not rerun the scan; only `make crosscheck` does.
 """
 import csv
 import hashlib
@@ -144,6 +146,25 @@ def check_row(r):
     assert r['certification'] == expected, ('label', k, r['certification'], expected)
 
 
+def check_domain(rows, K):
+    """Gate for the whole file: the keys are exactly {-K..-1, 1..K}, once each, in order; every
+    x-list is strictly increasing (sorted, no duplicates) and every curve is the declared one."""
+    ks = [r['k'] for r in rows]
+    expected = [k for k in range(-K, K + 1) if k != 0]
+    if ks != expected:
+        from collections import Counter
+        dup = sorted(k for k, c in Counter(ks).items() if c > 1)
+        missing = sorted(set(expected) - set(ks))
+        extra = sorted(set(ks) - set(expected))
+        raise AssertionError(f'census domain: duplicates {dup[:5]}, missing {missing[:5]}, '
+                             f'outside bound {extra[:5]}, sorted={ks == sorted(ks)}')
+    for r in rows:
+        xs = r['x_coordinates']
+        assert all(a < b for a, b in zip(xs, xs[1:])), ('x-list not strictly increasing', r['k'])
+        assert r['a_invariants'] == [0, 0, 0, 0, r['k']], ('curve', r['k'])
+        assert r['scan_x_abs_le_1e5'] == sorted(set(r['scan_x_abs_le_1e5'])), ('scan list', r['k'])
+
+
 def write_outputs(rows, K, root):
     """Flat CSV and summary, derived from the per-curve rows (the JSONL is the primary record)."""
     with open(root / 'data' / 'mordell_census.csv', 'w', newline='') as fh:
@@ -185,9 +206,11 @@ def main():
     if sys.argv[1:2] == ['--from-jsonl']:
         # rebuild the CSV and summary from the committed JSONL (plain Python, no Sage needed)
         rows = [json.loads(line) for line in open(root / 'data' / 'mordell_census.jsonl')]
+        K = int(sys.argv[2]) if len(sys.argv) > 2 else 10000        # the declared bound
+        check_domain(rows, K)
         for r in rows:
             check_row(r)
-        summary = write_outputs(rows, max(abs(r['k']) for r in rows), root)
+        summary = write_outputs(rows, K, root)
         print(json.dumps({k: v for k, v in summary.items() if k != 'top_hall_ratios'}, indent=1))
         return
     K = int(sys.argv[1]) if len(sys.argv) > 1 else 1000

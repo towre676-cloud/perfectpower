@@ -19,7 +19,8 @@ def _std(l):
 
 audited = [l for l in report if 'depend' in l]
 standard = [l for l in audited if _std(l)]
-generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' not in l]
+generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' not in l
+             and '.cert_' not in l]
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
@@ -50,6 +51,22 @@ if mc.exists():
                  + f'; {len(s["scan_disagreements"])} scan disagreements ($|x|\\le10^5$); best Hall ratio '
                  f'{s["top_hall_ratios"][0]["ratio"]} ($k={s["top_hall_ratios"][0]["k"]}$, '
                  f'$x={s["top_hall_ratios"][0]["x"]}$).')
+g1 = root / 'receipts' / 'genus1_crossval.json'
+if g1.exists():
+    s = json.loads(g1.read_text())
+    far = max(s['hits_beyond_scan'], key=lambda r: r['max_hit']) if s['hits_beyond_scan'] else None
+    lines.append(f'- Genus-one cross-validation (non-monic/shifted $m^2=$ cubic, $m^3=$ quadratic): '
+                 f'{s["trials"]} families; labels '
+                 + ', '.join(f'`{a}` {b}' for a, b in sorted(s['labels'].items()))
+                 + f'; {len(s["scan_disagreements"])} disagreements with the exact scan to $10^6$; '
+                 f'{len(s["hits_beyond_scan"])} certified hits beyond it'
+                 + (f' (largest $n={far["max_hit"]:,}$)' if far else '') + '.')
+tg = root / 'receipts' / 'theorem_g_check.json'
+if tg.exists():
+    s = json.loads(tg.read_text())
+    lines.append(f'- Theorem G check (Sage normalisation, $d\\le{s["d_max"]}$, $\\deg F\\le{s["degree_max"]}$): '
+                 f'{s["cases"]} cases, {len(s["disagreements"])} disagreements with '
+                 + r"$\chi=d'(1-S)$ and $n_\infty=\gcd(d',\deg F/g)$.")
 pc = root / 'receipts' / 'pillai_census_summary.json'
 if pc.exists():
     s = json.loads(pc.read_text())

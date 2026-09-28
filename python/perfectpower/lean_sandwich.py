@@ -252,3 +252,62 @@ def emit_sandwich(name: str, coefficients, d: int, tail_max: int = 1 << 22):
              'intervals': sum(1 for p in dispatch if p[0] == 'interval'),
              'points': sum(1 for p in dispatch if p[0] != 'interval'), 'hits': hits}
     return '\n'.join(out + main) + '\n', stats
+
+
+def emit_reflective(name: str, coefficients, d: int, tail_max: int = 1 << 22):
+    """Lean source for the same complete hit set as `emit_sandwich`, as *data* checked by the
+    verified checker `PerfectPower.Reflect.check` (soundness: `Reflect.check_sound`)."""
+    cov = Cover(coefficients, d, tail_max)
+    pieces, (c, tc) = cov.build()
+    fi, Pi = cov.fi, _ints(cov.P)
+    segs, hits = [], []
+    for pc in pieces:
+        if pc[0] == 'point':
+            n, info = pc[1], pc[2]
+            if info[0] == 'hit':
+                segs.append(f'.hit {n} ({info[1]})')
+                hits.append(n)
+            elif info[0] == 'neg':
+                segs.append(f'.neg {n}')
+            else:
+                segs.append(f'.gap {n} {floor_nth_root(abs(_eval(fi, n)), d)}')
+        else:
+            _, a, b, t = pc
+            segs.append(f'.ival {a} {b} ({t})')
+    lst = lambda xs: '[' + ', '.join(f'({x})' if x < 0 else str(x) for x in xs) + ']'
+    cert = f'cert_{name}'
+    Fz = _expr(fi, 'z')
+    stmt = f'IsHit {d} (let z : ℤ := n; {Fz})'
+    hitset = '{' + ', '.join(map(str, hits)) + '}' if hits else '∅'
+    seg_lines = ',\n    '.join(segs)
+    text = f'''/-- Sandwich certificate data for `{name}` ({len(segs)} segments, tail from `n = {c}`). -/
+def {cert} : Reflect.Cert where
+  F := {lst(fi)}
+  d := {d}
+  D := {cov.D}
+  P := {lst(Pi)}
+  segs := [
+    {seg_lines}]
+  c := {c}
+  tc := {tc}
+
+/-- The verified checker accepts `{cert}` (kernel evaluation, no `Lean.ofReduceBool`). -/
+theorem {cert}_ok : Reflect.check {cert} = true := by decide +kernel
+
+/-- Complete hit set, certified by the reflective sandwich checker: for `n ≥ 1`,
+`{_expr(fi, "n")} = m ^ {d}` is solvable in integers iff `n ∈ {hitset}`. -/
+theorem {name} (n : ℕ) (hn : 1 ≤ n) : {stmt} ↔ n ∈ ({hitset} : Finset ℕ) := by
+  have h := Reflect.check_sound {cert}_ok n hn
+  have hF : {cert}.F = {lst(fi)} := rfl
+  have e : Reflect.ev {cert}.F n = (let z : ℤ := n; {Fz}) := by
+    rw [hF]; simp only [Reflect.ev]; ring
+  have hh : Reflect.hitsOf {cert}.segs = {lst(hits)} := by decide +kernel
+  have hd : {cert}.d = {d} := rfl
+  rw [e, hh, hd] at h
+  rw [h]
+  simp
+'''
+    stats = {'tail_start': c, 'tail_t': tc, 'pieces': len(segs),
+             'intervals': sum(1 for p in pieces if p[0] != 'point'),
+             'points': sum(1 for p in pieces if p[0] == 'point'), 'hits': hits}
+    return text, stats

@@ -190,4 +190,113 @@ theorem le_geometric_count {f : ℕ → ℝ} {E c₂ N : ℝ} (hE : 1 < E) (hc�
     _ = ((Finset.range (⌊b⌋₊ + 1)).card : ℝ) := by simp
     _ ≤ _ := by exact_mod_cast Finset.card_le_card hsub
 
+/-! #### Finitely many orbit representatives
+
+Every solution of `X^2 - D Y^2 = Δ` with `X > 0`, `Y ≥ 0` is the image, under a nonnegative power of
+the unit, of a solution in the box `D Y₀^2 ≤ |Δ| x₁^2`; the box is finite.  The descent step is the
+inverse unit, `(X, Y) ↦ (X x₁ - D Y y₁, x₁ Y - y₁ X)`, which keeps `X > 0`, `Y ≥ 0` and strictly
+decreases `X` outside the box.  (This is a weak form of Nagell's bound, enough for finiteness.) -/
+
+/-- From squares to values: `0 ≤ b` and `a^2 < b^2` give `a < b`. -/
+lemma lt_of_sq_lt_sq' {a b : ℤ} (hb : 0 ≤ b) (h : a ^ 2 < b ^ 2) : a < b := by
+  by_contra hab; push_neg at hab
+  nlinarith [mul_le_mul hab hab hb (le_trans hb hab)]
+
+/-- The unit applied to the descended point gives back the point. -/
+lemma unitAct_descend {D x₁ y₁ : ℤ} (hu : x₁ ^ 2 - D * y₁ ^ 2 = 1) (X Y : ℤ) :
+    unitAct D x₁ y₁ (X * x₁ - D * Y * y₁, x₁ * Y - y₁ * X) = (X, Y) := by
+  simp only [unitAct, Prod.mk.injEq]
+  constructor
+  · linear_combination X * hu
+  · linear_combination Y * hu
+
+/-- **Descent to the box.** -/
+theorem pell_descent_box {D x₁ y₁ Δ : ℤ} (hD : 0 < D) (hx₁ : 1 < x₁) (hy₁ : 0 < y₁)
+    (hu : x₁ ^ 2 - D * y₁ ^ 2 = 1) :
+    ∀ (X Y : ℤ), 0 < X → 0 ≤ Y → X ^ 2 - D * Y ^ 2 = Δ →
+      ∃ (k : ℕ) (X₀ Y₀ : ℤ), 0 < X₀ ∧ 0 ≤ Y₀ ∧ X₀ ^ 2 - D * Y₀ ^ 2 = Δ ∧
+        D * Y₀ ^ 2 ≤ |Δ| * x₁ ^ 2 ∧ unitOrbit D x₁ y₁ (X₀, Y₀) k = (X, Y) := by
+  intro X
+  induction X using Int.strongRec (m := 1) with
+  | lt X hX => intro Y hX0; omega
+  | ge X _ ih =>
+    intro Y hX0 hY0 hN
+    by_cases hbox : D * Y ^ 2 ≤ |Δ| * x₁ ^ 2
+    · exact ⟨0, X, Y, hX0, hY0, hN, hbox, rfl⟩
+    push_neg at hbox
+    have habs : -|Δ| ≤ Δ ∧ Δ ≤ |Δ| := ⟨neg_abs_le Δ, le_abs_self Δ⟩
+    have hDy : D * y₁ ^ 2 < x₁ ^ 2 := by linarith
+    have hA0 : 0 ≤ |Δ| := abs_nonneg Δ
+    -- consequences of being outside the box
+    have c2 : -Δ * x₁ ^ 2 < D * Y ^ 2 := by nlinarith
+    have c3 : y₁ ^ 2 * Δ ≤ Y ^ 2 := by
+      have h1 : |Δ| * (D * y₁ ^ 2) ≤ |Δ| * x₁ ^ 2 := mul_le_mul_of_nonneg_left hDy.le hA0
+      have h2 : |Δ| * y₁ ^ 2 < Y ^ 2 := by
+        by_contra h; push_neg at h
+        have := mul_le_mul_of_nonneg_left h hD.le
+        nlinarith
+      have h3 : y₁ ^ 2 * Δ ≤ y₁ ^ 2 * |Δ| := mul_le_mul_of_nonneg_left habs.2 (sq_nonneg _)
+      linarith
+    set X' := X * x₁ - D * Y * y₁
+    set Y' := x₁ * Y - y₁ * X
+    have hX'pos : 0 < X' := by
+      have h := lt_of_sq_lt_sq' (a := D * Y * y₁) (b := X * x₁) (by positivity) (by
+        have e1 : (D * Y * y₁) ^ 2 = D * Y ^ 2 * (x₁ ^ 2 - 1) := by linear_combination (-(D * Y ^ 2)) * hu
+        have e2 : (X * x₁) ^ 2 = (Δ + D * Y ^ 2) * x₁ ^ 2 := by rw [mul_pow, ← hN]; ring
+        rw [e1, e2]; nlinarith)
+      simp only [X']; linarith
+    have hX'lt : X' < X := by
+      have h := lt_of_sq_lt_sq' (a := X * (x₁ - 1)) (b := D * Y * y₁) (by positivity) (by
+        have e1 : (D * Y * y₁) ^ 2 = D * Y ^ 2 * (x₁ ^ 2 - 1) := by linear_combination (-(D * Y ^ 2)) * hu
+        have e2 : (X * (x₁ - 1)) ^ 2 = (Δ + D * Y ^ 2) * (x₁ - 1) ^ 2 := by rw [mul_pow, ← hN]; ring
+        rw [e1, e2]
+        nlinarith)
+      simp only [X']; linarith
+    have hY' : 0 ≤ Y' := by
+      have hle : y₁ * X ≤ x₁ * Y := by
+        by_contra hlt; push_neg at hlt
+        have h0 : 0 ≤ x₁ * Y := by positivity
+        have hsq : (x₁ * Y) ^ 2 < (y₁ * X) ^ 2 := by nlinarith
+        have e2 : (y₁ * X) ^ 2 = y₁ ^ 2 * (Δ + D * Y ^ 2) := by rw [mul_pow, ← hN]; ring
+        have e1 : (x₁ * Y) ^ 2 = (1 + D * y₁ ^ 2) * Y ^ 2 := by
+          rw [mul_pow]; linear_combination Y ^ 2 * hu
+        rw [e1, e2] at hsq
+        nlinarith
+      simp only [Y']; linarith
+    have hN' : X' ^ 2 - D * Y' ^ 2 = Δ := by
+      simp only [X', Y']; linear_combination (X ^ 2 - D * Y ^ 2) * hu + hN
+    obtain ⟨k, X₀, Y₀, h1, h2, h3, h4, h5⟩ := ih X' hX'lt Y' hX'pos hY' hN'
+    refine ⟨k + 1, X₀, Y₀, h1, h2, h3, h4, ?_⟩
+    rw [unitOrbit, Function.iterate_succ_apply', ← unitOrbit, h5]
+    exact unitAct_descend hu X Y
+
+/-- **The box is finite**, so there are finitely many orbit representatives. -/
+theorem pell_box_finite {D x₁ Δ : ℤ} (hD : 0 < D) :
+    {p : ℤ × ℤ | 0 < p.1 ∧ 0 ≤ p.2 ∧ p.1 ^ 2 - D * p.2 ^ 2 = Δ ∧
+      D * p.2 ^ 2 ≤ |Δ| * x₁ ^ 2}.Finite := by
+  set B := |Δ| * x₁ ^ 2
+  refine (Set.finite_Icc (0 : ℤ) (B + |Δ|) |>.prod (Set.finite_Icc (0 : ℤ) B)).subset ?_
+  rintro ⟨X, Y⟩ ⟨hX, hY, hN, hbox⟩
+  simp only [Set.mem_prod, Set.mem_Icc]
+  have hY2 : Y ≤ Y ^ 2 := by nlinarith
+  have hDY : Y ^ 2 ≤ D * Y ^ 2 := by nlinarith
+  have hX2 : X ≤ X ^ 2 := by nlinarith
+  have hΔ : Δ ≤ |Δ| := le_abs_self Δ
+  refine ⟨⟨hX.le, by nlinarith⟩, ⟨hY, by nlinarith⟩⟩
+
+/-- **Orbit exhaustion.**  The solutions with `X > 0`, `Y ≥ 0` are covered by the forward orbits of
+a finite set of representatives. -/
+theorem pell_orbits_exhaust {D x₁ y₁ Δ : ℤ} (hD : 0 < D) (hx₁ : 1 < x₁) (hy₁ : 0 < y₁)
+    (hu : x₁ ^ 2 - D * y₁ ^ 2 = 1) :
+    ∃ R : Finset (ℤ × ℤ), (∀ p ∈ R, p.1 ^ 2 - D * p.2 ^ 2 = Δ) ∧
+      ∀ X Y : ℤ, 0 < X → 0 ≤ Y → X ^ 2 - D * Y ^ 2 = Δ →
+        ∃ p ∈ R, ∃ k : ℕ, unitOrbit D x₁ y₁ p k = (X, Y) := by
+  set S := {p : ℤ × ℤ | 0 < p.1 ∧ 0 ≤ p.2 ∧ p.1 ^ 2 - D * p.2 ^ 2 = Δ ∧
+      D * p.2 ^ 2 ≤ |Δ| * x₁ ^ 2}
+  have hS : S.Finite := pell_box_finite hD
+  refine ⟨hS.toFinset, fun p hp => ((hS.mem_toFinset).mp hp).2.2.1, ?_⟩
+  intro X Y hX hY hN
+  obtain ⟨k, X₀, Y₀, h1, h2, h3, h4, h5⟩ := pell_descent_box hD hx₁ hy₁ hu X Y hX hY hN
+  exact ⟨(X₀, Y₀), (hS.mem_toFinset).mpr ⟨h1, h2, h3, h4⟩, k, h5⟩
+
 end PerfectPower

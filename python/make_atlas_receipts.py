@@ -11,6 +11,7 @@ from fractions import Fraction
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from perfectpower.sieve import sieve_hits
 from perfectpower.atlas import classify, integerize, structural_count, structural_hits
 from perfectpower.core import count, hit_indices, mul, rigid_certificate
 from perfectpower.runge import runge_enumerate
@@ -58,6 +59,17 @@ families = [
     ('binomial_n_choose_3_square', list(integerize([0, Fraction(1, 3), Fraction(-1, 2), Fraction(1, 6)], 2)), 2),
     ('binomial_n_choose_2_cube', list(integerize([0, Fraction(-1, 2), Fraction(1, 2)], 3)), 3),
 ]
+# Genus-one families certified by crosscheck/genus1_sage.py, including late hits a short scan
+# misses, and genus >= 2 families that no engine here certifies (SCAN_EVIDENCE_ONLY, sieve to 1e8).
+families += [
+    ('genus1_n3_plus_2n2_minus_3n_minus_1', [-1, -3, 2, 1], 2),     # hits 2, 47882
+    ('genus1_cube_6n2_minus_7n_minus_6', [-6, -7, 6], 3),         # hits 3, 22, 12017947
+    ('genus1_cube_6n2_plus_n_plus_1', [1, 1, 6], 3),              # hits 1, 2, 153, 6196204
+    ('genus1_cube_n2_plus_n_plus_1', [1, 1, 1], 3),               # hit 18
+    ('genus2_n5_plus_2', [2, 0, 0, 0, 0, 1], 2),
+    ('genus2_n6_plus_n_plus_1', [1, 1, 0, 0, 0, 0, 1], 2),
+    ('genus3_cube_n4_plus_n_plus_1', [1, 1, 0, 0, 1], 3),
+]
 for k, ds in ((4, (2, 4)), (6, (2, 3, 6)), (8, (2, 4, 8)), (10, (2, 5)), (12, (2, 3, 4, 6))):
     for d in ds:
         families.append((f'consecutive_product_{k}_d{d}', consecutive(k), d))
@@ -91,6 +103,14 @@ if _binomial_path.exists():
     _BINOMIAL = {('binomial_n_choose_2_cube'): [1, 2], ('binomial_n_choose_3_square'): [1, 2, 3, 4, 50]}
 
 
+_genus1_path = root / 'receipts' / 'genus1_crossval.json'
+_GENUS1 = {}
+if _genus1_path.exists():
+    for r in json.loads(_genus1_path.read_text())['rows']:
+        if r['certification'] == 'INDEPENDENT_COMPUTATION':
+            _GENUS1[(tuple(r['F_low_to_high']), r['d'])] = r['hits']
+
+
 def certification(cl, f, d, name=None):
     if name in _BINOMIAL:
         return 'LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS'
@@ -100,9 +120,9 @@ def certification(cl, f, d, name=None):
         return 'PROVED_STRUCTURAL'                   # Theorems P, B, C; paper proof + scan check
     if cl.effective:
         return 'COMPLETE_HIT_LIST'                   # Runge enumeration; paper proof + exact arithmetic
-    if tuple(f) in _cubic:
+    if tuple(f) in _cubic or (tuple(f), d) in _GENUS1:
         return 'INDEPENDENT_COMPUTATION'             # Sage integral points agree with the scan
-    return 'SCAN_EVIDENCE_ONLY'                      # finiteness conditional on LeVeque; list unproven
+    return 'SCAN_EVIDENCE_ONLY'                      # finiteness conditional on Siegel (Theorem G); list unproven
 
 
 rows = []
@@ -138,11 +158,14 @@ for name, f, d in families:
                         'polynomials_solved': e.polynomials_solved, 'tail_start': e.tail_start,
                         'v05_certificate_cutoff': c.cutoff}
     row['certification'] = certification(cl, f, d, name)
+    if row['certification'] == 'SCAN_EVIDENCE_ONLY':
+        row['sieve_hits_up_to_1e8'] = sieve_hits(f, d, 10 ** 8 + 1)   # exact within the bound
     if name in _BINOMIAL:
         row['complete_hit_list'] = _BINOMIAL[name]
         assert row['scan_hits_up_to_1e5'] == _BINOMIAL[name], name
     if row['certification'] == 'INDEPENDENT_COMPUTATION':
-        row['independent_hit_list'] = _cubic[tuple(f)]
+        row['independent_hit_list'] = (_GENUS1[(tuple(f), d)] if (tuple(f), d) in _GENUS1
+                                       else _cubic[tuple(f)])
     rows.append(row)
 
 # Grunwald-Wang: 16 is an 8th power modulo every odd prime (checked below 2e4 by Euler's
@@ -251,6 +274,8 @@ with open(root / 'data' / 'families.csv', 'w', newline='') as fh:
             hits, scope = r['complete_hit_list'], 'complete'
         elif 'independent_hit_list' in r:
             hits, scope = r['independent_hit_list'], 'complete (independent computation)'
+        elif 'sieve_hits_up_to_1e8' in r:
+            hits, scope = r['sieve_hits_up_to_1e8'], 'n <= 1e8 only (exact sieve)'
         elif 'scan_hits_up_to_1e5' in r:
             hits, scope = r['scan_hits_up_to_1e5'], 'n <= 1e5 only'
         else:

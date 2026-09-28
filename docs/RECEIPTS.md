@@ -4,7 +4,7 @@
 
 - **`THEOREM_EXTERNAL_DEPENDENCY`**: the receipt names the exact imported theorem and the step it is applied to. Current external dependencies:
   - The polynomial 0–1 proof of the monograph depends on Boshernitzan's uniform-distribution criterion in its nonrigid branch.
-  - The atlas (research notes, Theorem A, part 4), the exponent spectrum, and the shift spectrum depend on LeVeque's theorem on $y^m=f(x)$, which rests on Siegel's theorem.
+  - The atlas (research notes, Theorem A, part 4), the exponent spectrum, and the shift spectrum depend on Siegel's theorem (standard form) through Theorem G, a paper proof in the research notes; LeVeque's theorem on $y^m=f(x)$ is historical context only.
   - The shifted nonsingular-cubic finiteness statement depends on Siegel's theorem.
 - **`PAPER_PROOF`**: a written mathematical argument.
 - **`EXACT_COMPUTATION`**: records parameters, range, exit code, and reproducible integer calculations.
@@ -30,7 +30,7 @@
 
 - **Types `power`, `radical`, `pell`.** The structural counts are exact consequences of Theorems P, B, C (`PAPER_PROOF`). They are cross-checked against the defining scan at $N=10^5$ (`EXACT_COMPUTATION`), and the generator aborts on any disagreement. The constant $\kappa$ is a floating-point evaluation of an exact formula.
 - **Rows marked `effective` with `complete_hit_list` or `runge` entries.** These are `COMPLETE_HIT_LIST` receipts.
-- **Rows of `finite` type that are not effective.** For example, the elliptic curves $n^3+1$ and $n^3+n+4$. Their finiteness is `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque/Siegel), and their listed hits are only an `EXACT_COMPUTATION` up to $10^5$. Observed absence of further hits is not promoted to a theorem.
+- **Rows of `finite` type that are not effective.** For example, the elliptic curves $n^3+1$ and $n^3+n+4$. Their finiteness is `THEOREM_EXTERNAL_DEPENDENCY` (Siegel, via Theorem G), and their listed hits are only an `EXACT_COMPUTATION` up to $10^5$. Observed absence of further hits is not promoted to a theorem.
 
 ## Finite surgery
 

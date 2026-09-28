@@ -10,7 +10,7 @@ bad=$(printf '%s\n' "$out" | grep "depend" | grep -v "does not depend on any axi
       | sed -n 's/.*depends on axioms: \[\(.*\)\]$/\1/p' | tr ',' '\n' | sed 's/^ *//' \
       | grep -v -x -e propext -e Classical.choice -e Quot.sound || true)
 unparsed=$(printf '%s\n' "$out" | grep -v "depend" | grep -v '^$' || true)
-if [ -n "$bad" ] || [ -n "$unparsed" ] || [ "$n" -lt 80 ]; then
+if [ -n "$bad" ] || [ -n "$unparsed" ] || [ "$n" -lt 100 ]; then
   echo "axiom audit FAILED: nonstandard axioms: [$bad] other output: [$unparsed] count: $n" >&2
   exit 1
 fi

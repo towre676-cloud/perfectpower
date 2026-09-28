@@ -26,7 +26,7 @@
 \begin{document}
 
 \begin{abstract}
-For $F\in\Z[x]$ and $d\ge2$ let $A(N)$ be the number of $1\le n\le N$ for which $F(n)$ is a perfect $d$-th power. We make explicit, with constants and a decision procedure, the classification of $(F,d)$ into four types that follows from LeVeque's theorem combined with classical Pell and valuation counting. The types are decidable from the root multiplicities of $F$. In the four types, $A(N)=N$; $A(N)=\kappa N^{1/t}+O(1)$ with $t\mid d$; $A(N)=\kappa\log N+O(1)$; or $A(N)=O(1)$. The constants $\kappa$ are explicit. The first three types are handled by elementary arguments. The last rests on LeVeque's theorem, and hence on Siegel's, so it is ineffective. We regard the classification as a synthesis rather than a new theorem. Consequently the growth exponent $\limsup\log(1+A(N))/\log N$ lies in $\{0,1\}\cup\{1/t:t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ for $p$ the least prime factor of $d$ whenever $F$ is not a $d$-th power in $\Z[x]$. In the Runge case ($d\mid\deg F$ and $\lc F$ a $d$-th power) we give a complete enumeration of the hit set by exact root isolation, together with a pipeline that emits Lean proofs of complete hit sets; these are the parts we consider possibly new. We describe the dependence on a shift $F=S+k$, and give Dirichlet-series and heat-kernel asymptotics for every type. Several results, among them the rigid dichotomy, the rigid $0$--$1$ law, the monomial count and the Pell example $2n^2+1$, are verified in Lean~4 with Mathlib.
+For $F\in\Z[x]$ and $d\ge2$ let $A(N)$ be the number of $1\le n\le N$ for which $F(n)$ is a perfect $d$-th power. We make explicit, with constants and a decision procedure, the classification of $(F,d)$ into four types that follows from Siegel's theorem on integral points, combined with classical Pell and valuation counting. The reduction to Siegel is an Euler-characteristic computation, $\chi=d'(1-S)$, for the curve $y^d=F(x)$; it recovers the exceptional patterns of LeVeque (1964). The types are decidable from the root multiplicities of $F$. In the four types, $A(N)=N$; $A(N)=\kappa N^{1/t}+O(1)$ with $t\mid d$; $A(N)=\kappa\log N+O(1)$; or $A(N)=O(1)$. The constants $\kappa$ are explicit. The first three types are handled by elementary arguments. The last rests on Siegel's theorem, so it is ineffective. We regard the classification as a synthesis rather than a new theorem. Consequently the growth exponent $\limsup\log(1+A(N))/\log N$ lies in $\{0,1\}\cup\{1/t:t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ for $p$ the least prime factor of $d$ whenever $F$ is not a $d$-th power in $\Z[x]$. In the Runge case ($d\mid\deg F$ and $\lc F$ a $d$-th power) we give a complete enumeration of the hit set by exact root isolation, together with a pipeline that emits Lean proofs of complete hit sets; these are the parts we consider possibly new. We describe the dependence on a shift $F=S+k$, and give Dirichlet-series and heat-kernel asymptotics for every type. Several results are verified in Lean~4 with Mathlib. They include the rigid dichotomy and the rigid $0$--$1$ law, the counting core of the radical type, the finiteness of Pell orbit representatives, the combinatorial half of the Euler-characteristic computation, and a function-field Pillai inequality. The generated certificates are checked by a verified reflective checker.
 \end{abstract}
 \maketitle
 
@@ -34,7 +34,7 @@ For $F\in\Z[x]$ and $d\ge2$ let $A(N)$ be the number of $1\le n\le N$ for which 
 
 Let $F\in\Z[x]$ and $d\ge2$. Call $n\ge1$ a \emph{hit} if $F(n)=m^d$ for some $m\in\Z$, and let $A(N)=\#\{1\le n\le N:\ n\text{ is a hit}\}$. The density $\lim A(N)/N$ always exists: it is $1$ if $F=G^d$ with $G\in\Z[x]$ and $0$ otherwise. This follows, for instance, from Boshernitzan's equidistribution theorem for Hardy fields together with a separate treatment of the ``rigid'' case, and this was the starting point of the project.
 
-Density zero is a weak statement. The hit sets of $4n+1$, of $2n^2+1$ and of $n^3+1$ (with $d=2$) have respectively about $\sqrt N$ elements, about $0.567\log N$ elements, and finitely many elements. The purpose of this paper is to make explicit that these three behaviours, together with density one, are the only possibilities. We show this is a consequence of LeVeque's theorem~\cite{LeVeque} and classical counting, compute everything explicitly, and certify as much as possible by machine. We claim no priority for the classification itself.
+Density zero is a weak statement. The hit sets of $4n+1$, of $2n^2+1$ and of $n^3+1$ (with $d=2$) have respectively about $\sqrt N$ elements, about $0.567\log N$ elements, and finitely many elements. The purpose of this paper is to make explicit that these three behaviours, together with density one, are the only possibilities. We show this is a consequence of Siegel's theorem~\cite{HS} (through Theorem~\ref{thm:geom}, which recovers LeVeque's patterns~\cite{LeVeque}) and classical counting, compute everything explicitly, and certify as much as possible by machine. We claim no priority for the classification itself.
 
 \subsection*{Setup} Write $F=c\prod_i(x-\alpha_i)^{r_i}$ over $\overline\Q$ with distinct $\alpha_i$ and $c=\lc F$. Put $t_i=d/\gcd(d,r_i)$. The multiset $\{t_i\}$ is the \emph{$t$-profile} of $(F,d)$. It is determined by Yun's squarefree decomposition $F=c\prod_j S_j^{\,j}$: every root of $S_j$ has $t=d/\gcd(d,j)$. No factorisation is needed.
 
@@ -56,7 +56,7 @@ Let $\alpha(F,d)=\limsup_N\log(1+A(N))/\log N$. Then $\alpha(F,d)\in\{0,1\}\cup\
 In type (ii) the integer $t=d/\gcd(d,r)$ divides $d$ and exceeds $1$, so $t\ge p$. Types (iii) and (iv) have exponent $0$. The monomial $x^r$ with $\gcd(r,d)=d/t$ has $A(N)=\lfloor N^{1/t}\rfloor$ by Theorem~\ref{thm:radical}.
 \end{proof}
 
-Parts (i)--(iii) of Theorem~\ref{thm:atlas} are proved in \S\S\ref{sec:power}--\ref{sec:pell}. Part (iv) is LeVeque's theorem~\cite{LeVeque}. We therefore obtain a second proof of the density $0$--$1$ law, independent of equidistribution. It depends on Siegel's theorem through LeVeque. It is quantitative in the rate but \emph{ineffective} in the finite type, so it cannot replace the equidistribution argument where effectivity matters. The statement of LeVeque's theorem used here is taken from secondary sources; we did not have access to the primary paper. Section~\ref{sec:runge} makes type (iv) effective in the Runge case. Section~\ref{sec:shift} treats shifts, \S\ref{sec:transforms} treats transforms, and \S\ref{sec:formal} describes the Lean formalisation and the computations.
+Parts (i)--(iii) of Theorem~\ref{thm:atlas} are proved in \S\S\ref{sec:power}--\ref{sec:pell}. Part (iv) is Theorem~\ref{thm:geom}, which derives it from Siegel's theorem in its standard form. LeVeque's theorem~\cite{LeVeque} states the same exceptional patterns. We had it only from secondary sources, so we do not use it. We therefore obtain a second proof of the density $0$--$1$ law, independent of equidistribution. It depends on Siegel's theorem through Theorem~\ref{thm:geom}, whose geometric step is a paper proof that has not been refereed. It is quantitative in the rate but \emph{ineffective} in the finite type, so it cannot replace the equidistribution argument where effectivity matters. Section~\ref{sec:runge} makes type (iv) effective in the Runge case. Section~\ref{sec:shift} treats shifts, \S\ref{sec:transforms} treats transforms, and \S\ref{sec:formal} describes the Lean formalisation and the computations.
 
 \section{The power type}\label{sec:power}
 
@@ -134,7 +134,7 @@ We have $4AP(n)=X^2-\Delta$ with $X=2An+B$. So $P(n)=m^2$ if and only if $X^2-4A
 
 In (a), $A<0$ bounds $X$. If $A=s^2$, the factorisation $(X-2sm)(X+2sm)=\Delta$ leaves at most $2\tau(|\Delta|)$ possibilities.
 
-In (b) there are finitely many orbits (Nagell). A large hit corresponds to exactly one large $\eta=\eta_0\varepsilon^k$ in a positive orbit with $X\equiv B\pmod{2A}$. The step $(X,Y)\mapsto(x_1X+4Ay_1Y,\ y_1X+x_1Y)$ has determinant $1$, so it is invertible modulo $2A$ and the residues are purely periodic. Finally $\log X_k=k\log\varepsilon+O(1)$.
+In (b) there are finitely many orbits (Nagell; in Lean, \lean{pell\_orbits\_exhaust}: descent by $\varepsilon^{-1}$ lands every solution with $X>0$, $Y\ge0$ in the box $4AY_0^2\le|\Delta|x_1^2$). A large hit corresponds to exactly one large $\eta=\eta_0\varepsilon^k$ in a positive orbit with $X\equiv B\pmod{2A}$. The step $(X,Y)\mapsto(x_1X+4Ay_1Y,\ y_1X+x_1Y)$ has determinant $1$, so it is invertible modulo $2A$ and the residues are purely periodic. Finally $\log X_k=k\log\varepsilon+O(1)$.
 \end{proof}
 
 \begin{example}
@@ -150,19 +150,23 @@ Consequently $y^d=F(x)$ has only finitely many integral points when $S>1$. Moreo
 \end{theorem}
 
 \begin{proof}
-Capelli's theorem gives the irreducibility of each factor $Y^{d'}-\zeta c^{1/g}\prod(x-\alpha_i)^{r_i/g}$. Kummer theory gives $\gcd(d',r_i/g)=d'/t_i$ points over $\alpha_i$ and $\gcd(d',\deg F/g)$ points over $\infty$. Riemann--Hurwitz then yields the formula for $\chi$. If $S>1$ then $\chi<0$, which is Siegel's condition $2g_C-2+n_\infty>0$ (Hindry--Silverman, Theorem D.9.1).
+Capelli's theorem gives the irreducibility of each factor $Y^{d'}-\zeta c^{1/g}\prod(x-\alpha_i)^{r_i/g}$. By Kummer theory, at a place where $y^{d'}$ has valuation $v$ there are $\gcd(d',v)$ points, each with ramification index $d'/\gcd(d',v)$. This gives $\gcd(d',r_i/g)=d'/t_i$ points over $\alpha_i$, $\gcd(d',\deg F/g)$ points over $\infty$, and $d'$ unramified points over every other $x$. Riemann--Hurwitz, $2g_C-2=-2d'+\sum_i(d'-d'/t_i)+(d'-n_\infty)$, then yields the formula for $\chi$. If $S>1$ then $\chi<0$, which is Siegel's condition $2g_C-2+n_\infty>0$ (Hindry--Silverman, Theorem D.9.1).
 
 Siegel's theorem applies to the normalisation of each component. Integral points avoid the finitely many singular points. On the normalisation they have coordinates with denominators bounded by a fixed integer, because the coordinate ring is the integral closure of $K[x]$. So they are $S$-integral for a suitable finite $S$.
 
 Finally, each special root contributes at least $\frac12$ to $S$. Hence $S\le1$ allows at most one special root with arbitrary $t$, or two with $t=2$.
 \end{proof}
 
+\begin{remark}[Checks of Theorem~\ref{thm:geom}]
+The last paragraph of the proof is compiled in Lean (\lean{S\_le\_one\_iff}). Lean also checks by kernel evaluation (\lean{profile\_table\_ok}) that for every $2\le d\le12$ and every multiplicity profile of degree at most $12$, the genus from Riemann--Hurwitz is a nonnegative integer and $\chi<0$ exactly outside the three exceptional profiles. Independently, Sage's function-field normalisation computes $g_C$ and $n_\infty$ over the same range, and we compare them with the formula. The Kummer and Riemann--Hurwitz step itself remains a paper argument.
+\end{remark}
+
 \begin{proof}[Proof of Theorem~\ref{thm:atlas}]
 The $t$-profiles in (i)--(iv) are mutually exclusive and exhaust all possibilities. Parts (i)--(iii) are Theorems~\ref{thm:power}, \ref{thm:radical} and~\ref{thm:pellred} together with Lemma~\ref{lem:quad}. Part (iv) is Theorem~\ref{thm:geom}, which recovers LeVeque's exceptional patterns~\cite{LeVeque} from Siegel's theorem.
 \end{proof}
 
 \begin{remark}[Integer-valued polynomials]\label{rem:intval}
-If $F\in\Q[x]$ is integer-valued with coefficient denominator $L$, then $F$ and $L^dF\in\Z[x]$ have the same hits. This brings binomial coefficients into scope. For example, $\binom n3$ is a square for $n\le10^5$ only when $n\in\{1,2,3,4,50\}$.
+If $F\in\Q[x]$ is integer-valued with coefficient denominator $L$, then $F$ and $L^dF\in\Z[x]$ have the same hits. This brings binomial coefficients into scope. For example, $\binom n3=m^2$ reduces to integral points on $Y^2=X^3-36X$ via $X=6(n-1)$, $Y=36m$, and $\binom n2=m^3$ reduces to $Y^2=X^3+1$ via $X=2m$, $Y=2n-1$. Lean proves both reductions. Given the integral points of the two curves, computed by Sage (rank proved, saturated basis, elliptic-logarithm sieving) and taken as explicit hypotheses, the hit sets are $\{1,2,3,4,50\}$ and $\{1,2\}$.
 \end{remark}
 
 \begin{example}[Sums of powers]
@@ -243,6 +247,22 @@ Use Abel summation, $Z_X(s)=s\int_1^\infty A(x)x^{-s-1}\,dx$ and $K_X(\tau)=\tau
 
 By Theorem~\ref{thm:radical} and Lemma~\ref{lem:quad} these hypotheses hold exactly in the radical and Pell types. When $\alpha=0$ in the radical type, one gets $Z_X(s)=z_0^{-s}\zeta(ts)$ plus a Dirichlet polynomial.
 
+In the Pell type the second term of $K_X$ oscillates. Put $\beta=-B/(2A)$. Apart from finitely many hits, the hits split into classes $n_j=\alpha E^j+\beta+O(E^{-j})$, one for each positive orbit and good residue class, with $E=\varepsilon^{\pi_{\mathcal O}}$. The shift $\beta$ comes from $X=2An+B$.
+
+\begin{theorem}\label{thm:T2}
+In the Pell type,
+\[
+K_X(\tau)=e^{-\tau\beta}\sum_{\text{classes}}\Big(\frac{\log(1/(\tau\alpha))-\gamma}{\log E}+\frac12+\Phi_E(\log\tau\alpha)\Big)+c_{\mathrm{int}}+O(\tau),
+\]
+where $\Phi_E(u)=\frac{2}{\log E}\Re\sum_{m\ge1}\Gamma(2\pi im/\log E)e^{-2\pi imu/\log E}$ is $\log E$-periodic and $c_{\mathrm{int}}\in\Z$ counts the finitely many hits outside the classes minus the model terms missing from the hit set. Hence $K_X(\tau)=\kappa\log(1/\tau)+C_0+\sum\Phi_E(\log\tau\alpha)+O(\tau\log(1/\tau))$. The remainder is $O(\tau)$ when $B=0$ and not in general.
+\end{theorem}
+
+\begin{proof}
+The Mellin transform of $\sum_je^{-\lambda E^j}$ is $\Gamma(s)/(1-E^{-s})$. The double pole at $0$ gives the main term, the poles at $2\pi im/\log E$ give $\Phi_E$, and shifting to $\Re s=-\frac12$ leaves $O(\lambda)$. Writing $e^{-\tau n_j}=e^{-\tau\beta}e^{-\tau\alpha E^j}(1+O(\tau E^{-j}))$ costs $O(\tau)$ in total. For the two-term form, $(e^{-\tau\beta}-1)\kappa\log(1/\tau)=-\beta\kappa\,\tau\log(1/\tau)+O(\tau^2\log(1/\tau))$.
+\end{proof}
+
+An earlier version stated the unshifted form with remainder $O(\tau)$, which is false for $B\ne0$. Numerically, for $2n^2+2n$ the unshifted residual divided by $\tau$ grows from $2.8$ to $8.1$ as $\tau$ decreases from $10^{-4}$ to $10^{-12}$. The shifted residual divided by $\tau$ stays at $0.25$.
+
 \section{Exponential sequences}\label{sec:exp}
 
 \begin{theorem}\label{thm:exp}
@@ -255,38 +275,57 @@ For $d$ even and $c<0$ there are no hits. Otherwise the condition is $v_p(c)+n\,
 
 Thus the polynomial and exponential cases have dual discrete spectra: exponents $1/t$ for polynomials and densities $1/L$ for exponentials, with $t,L\mid d$. For a nonzero shift $k$, $c\,a^n+k=m^d$ has finitely many solutions, by Thue's theorem for $d\ge3$ and by the $S$-unit theorem for $d=2$. An example is Ramanujan--Nagell, $2^n-7=m^2$ only for $n=3,4,5,7,15$.
 
-\section{Formal verification and computation}\label{sec:formal}
+\section{Function fields and the abc-conditional layer}\label{sec:ff}
 
-The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20.0}). An audit script checks that $62$ theorems depend only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. Among them:
+Hall's and Pillai's conjectures are open, and nothing here proves them. Over $k[x]$ with $\operatorname{char}k=0$ their analogues follow from the Mason--Stothers theorem, which Mathlib provides.
+
+\begin{theorem}[Function-field Pillai]\label{thm:ffpillai}
+Let $f,g\in k[x]$ be coprime, with $f$ nonconstant, $a,b\ge1$ and $f^a\ne g^b$. Then $a\deg f+1\le\deg f+\deg g+\deg(f^a-g^b)$ and $b\deg g+1\le\deg f+\deg g+\deg(f^a-g^b)$. If $a,b\ge2$ and $a\deg f=b\deg g=n$, then $\deg(f^a-g^b)\ge n(1-1/a-1/b)+1$. For $(a,b)=(3,2)$ this is Davenport's bound $2\deg(f^3-g^2)\ge\deg f+2$, which is attained by $f=x^2+2$, $g=x^3+3x$.
+\end{theorem}
+
+\begin{proof}
+Apply Mason--Stothers to $f^a-g^b-(f^a-g^b)=0$. The radical of $f^ag^b(f^a-g^b)$ has degree at most $\deg f+\deg g+\deg(f^a-g^b)$. The degenerate case, where all derivatives vanish, forces $f'=0$. The balanced form follows by multiplying by $ab$.
+\end{proof}
+
+Over $\Z$ we state abc as an explicit hypothesis $\mathrm{ABC}(\varepsilon,C)$, never as an axiom, and derive Hall's inequality for coprime $x,y$ and Pillai finiteness uniform in the exponents. All of this is in Lean (\lean{pillai\_polynomial}, \lean{davenport}, \lean{hall\_of\_abc}, \lean{pillai\_finite\_of\_abc}). A census of all integral points on $y^2=x^3+k$, $0<|k|\le10^4$ (Sage), and of all pairs of perfect powers up to $10^{18}$ at distance at most $1000$ records the numerical frontier. It is evidence, not proof.
+
+\section{Formal verification and computation}\label{sec:formal}
+\sloppy
+
+The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20.0}). An audit script checks that $112$ declarations depend only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}; the current count is regenerated in the repository README. Among them:
 \begin{itemize}
 \item \lean{rigid\_dichotomy}: in the rigid case, either $F=G^d$ over $\Z$ or the hit set is finite.
 \item \lean{rigid\_zero\_one}: in the rigid case the density exists and is $0$ or $1$.
 \item \lean{twisted\_finite}: if $D^dF=cH^d$ with $c$ not a $d$-th power, every hit is a root of $H$.
-\item \lean{monomial\_count}: for $F=x^r$, $A(N)=\#\{w\le N: w^t\le N\}$.
-\item \lean{ljunggren\_hitSet} and \lean{consecutive\_four\_hitSet}: two complete hit lists.
-\item \lean{pell\_hitSet\_infinite} and \lean{pell\_hasDensity\_zero}: $2n^2+1$ has infinitely many square values and density zero.
-\item \lean{runge\_finite} (Theorem~\ref{thm:runge} in integer form) and \lean{power\_type\_finite} (Theorem~\ref{thm:power} over $\Q[x]$).
-\item \lean{exp\_hasDensity}: for $a\ne0$ the hit density of $c\,a^n$ exists and equals $P/d$; \lean{two\_pow\_hasDensity\_half}.
-\item $19$ machine-generated theorems of the form ``the hit set of $F$ is exactly $H$''. A Python search proposes the data, and Lean checks every identity by \texttt{ring}, every sign by \texttt{positivity} and \texttt{gcongr}, and every small case by \texttt{norm\_num}. Seventeen use a Runge threshold with Taylor-shifted polynomials. Two, products of $10$ consecutive integers ($d=2$) and of $12$ ($d=4$), use \emph{interval sandwiches}: $[1,\infty)$ is covered by intervals on which $(P+t)^d<D^dF<(P+t+1)^d$ is proved once per interval.
+\item \lean{monomial\_count}, the valuation core of Theorem~\ref{thm:radical} (\lean{mul\_pow\_isPow\_iff\_param}: the solutions are $z=z_0w^t$), and its count \lean{radical\_count\_bound}: $|vA(N)-RW|\le2Rv$ with $R$ good residues modulo $v$.
+\item The Pell interfaces of Lemma~\ref{lem:quad}: \lean{quadratic\_isHit\_iff\_norm}, \lean{unitOrbit\_periodic} (pure periodicity modulo any $M$), \lean{goodClass\_hits}, \lean{pell\_orbits\_exhaust} (finitely many orbit representatives), and geometric counting. The assembled $\kappa\log N$ asymptotic is not yet compiled.
+\item \lean{S\_le\_one\_iff} and \lean{profile\_table\_ok}: the combinatorial half of Theorem~\ref{thm:geom}.
+\item \lean{pell\_hitSet\_infinite} and \lean{pell\_hasDensity\_zero} for $2n^2+1$; \lean{runge\_finite}; \lean{power\_type\_finite}; \lean{exp\_hasDensity}.
+\item The reductions of $\binom n2=m^3$ and $\binom n3=m^2$ to elliptic curves, with the curves' integral points as hypotheses.
+\item $19$ machine-generated theorems of the form ``the hit set of $F$ is exactly $H$''. Seventeen use a Runge threshold with Taylor-shifted polynomials. Two, products of $10$ consecutive integers ($d=2$) and of $12$ ($d=4$), use \emph{interval sandwiches}: $[1,\infty)$ is covered by intervals on which $(P+t)^d<D^dF<(P+t+1)^d$. These two are now \emph{reflective}. The certificate is a data literal, and a Boolean checker, whose soundness (\lean{check\_sound}) is proved once, recomputes every Taylor shift and power by kernel evaluation. This took the generated file from 768\,KB to 12\,KB. Replacing the interval test $\mathrm{POS}(0)>\mathrm{NEG}(w)$ by a Bernstein bound would save only $4$ of $283$ pieces, because single points at small $n$ dominate.
 \end{itemize}
-The exact Python implementation (standard library only) classifies $(F,d)$, computes $\kappa$, enumerates hits structurally or by Theorem~\ref{thm:runge}, and cross-checks every structural count against the defining scan. The receipts record $41$ families, a sums-of-powers table, and are reproducible bit-for-bit.
+The exact Python implementation (standard library only) classifies $(F,d)$, computes $\kappa$, enumerates hits structurally or by Theorem~\ref{thm:runge}, and cross-checks every structural count against the defining scan. A modular sieve makes exact scans to $10^8$ take seconds. Differential fuzzers compare the classifier with brute force under fixed seeds; they were contributed by an external reviewer. Every receipt is reproducible bit-for-bit, and \texttt{make verify} regenerates them and fails on any difference.
 
 \subsection*{Independent checks}
-Two further checks have been run.
 \begin{itemize}
-\item \emph{Cross-validation of cubics.} For the $622$ nonsingular cubics $m^2=n^3+an+b$ with $|a|,|b|\le12$, our scan up to $10^5$ agrees with Sage's certified integral points: Mordell--Weil generators from mwrank followed by elliptic-logarithm sieving, with one rank proved analytically. The largest hit is $n=80327$. Scans to $10^3$ or $10^4$ would have missed hits on $18$ and $4$ curves respectively. This certification is external to Lean.
+\item \emph{Genus one.} For the $622$ nonsingular cubics $m^2=n^3+an+b$ with $|a|,|b|\le12$, and for $400$ further non-monic or shifted cubics and cubes $m^3=an^2+bn+c$, Sage's integral points agree with our exact scans. Each family is reduced to an integral Weierstrass model with integrality tracked, and the Sage points are then pulled back. The certified lists contain hits far beyond any scan: $n^3+n+4$ at $n=4128$, $n^3+2n^2-3n-1$ at $n=47882$, $6n^2+n+1=61301^3$ at $n=6{,}196{,}204$, and $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$. A plain-Python gate re-verifies every stored point and pull-back.
+\item \emph{Mordell census.} For all $20000$ curves $y^2=x^3+k$, $0<|k|\le10^4$, each row records the rank proof, generators, saturation index, point list and hash, and a scan to $|x|\le10^5$. A row whose scan disagrees cannot be labelled certified; the gate checks the domain and every row.
+\item \emph{Theorem~\ref{thm:geom}.} Sage normalisation is compared with $\chi=d'(1-S)$ for $d,\deg F\le12$.
 \item \emph{Adversarial test of the enumerator.} Rigid polynomials with hits planted up to $n\approx10^9$ were constructed, and all planted hits were found in $220$ trials.
 \end{itemize}
-Families that are neither certified in Lean nor independently cross-validated are labelled as scan evidence only.
+Families that are neither certified in Lean nor independently cross-validated are labelled as scan evidence only, and are scanned exactly to $10^8$.
 
 \subsection*{What remains}
 \begin{itemize}
-\item Effective enumeration in the finite type outside the Runge case. This requires elliptic-logarithm or Baker-type methods; an example is $n^3+n+4=m^2$, which has the isolated hit $n=4128$.
-\item Formalisation of Theorems~\ref{thm:radical}, \ref{thm:pellred} and~\ref{thm:runge} in general.
-\item Analogues for non-polynomial sequences.
+\item Effective enumeration in the finite type of genus at least $2$ outside the Runge case, and quartic genus-one models.
+\item The assembled Pell count $\kappa\log N+O(1)$ in Lean, and the geometric half of Theorem~\ref{thm:geom}.
+\item Analogues for non-polynomial sequences, and the Bilu--Tichy generalisation $F(x)=G(y)$.
 \end{itemize}
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
+\bibitem{Davenport} H.~Davenport, On $f^3(t)-g^2(t)$, \emph{Norske Vid. Selsk. Forh.} 38 (1965), 86--87.
+\bibitem{HS} M.~Hindry and J.~H.~Silverman, \emph{Diophantine Geometry: An Introduction}, Springer GTM 201, 2000, Theorem D.9.1.
+\bibitem{Mason} R.~C.~Mason, \emph{Diophantine Equations over Function Fields}, LMS Lecture Note Series 96, Cambridge, 1984.
 \bibitem{Boshernitzan} M.~D.~Boshernitzan, Uniform distribution and Hardy fields, \emph{J. Anal. Math.} 62 (1994), 225--240.
 \bibitem{Brindza} B.~Brindza, On $S$-integral solutions of the equation $y^m=f(x)$, \emph{Acta Math. Hungar.} 44 (1984), 133--139.
 \bibitem{ES} P.~Erd\H{o}s and J.~L.~Selfridge, The product of consecutive integers is never a power, \emph{Illinois J. Math.} 19 (1975), 292--301.

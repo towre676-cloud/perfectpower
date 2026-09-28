@@ -2,7 +2,7 @@
 
 For a Pell-type quadratic P(n) = A n^2 + B n + C (A > 0 nonsquare, Delta != 0), the hits
 n >= 1 with P(n) a square split, apart from finitely many, into subsequences
-    n_j = alpha E^j + O(E^-j),   j >= 0,      E = eps^pi,
+    n_j = alpha E^j + beta + O(E^-j),   j >= 0,   E = eps^pi,   beta = -B/(2A),
 one for each positive Pell orbit O and each good residue class r (mod pi) of the orbit index.
 Mellin inversion of sum_j exp(-lam E^j), i.e. of Gamma(s) / (1 - E^-s), gives
 
@@ -12,10 +12,13 @@ Mellin inversion of sum_j exp(-lam E^j), i.e. of Gamma(s) / (1 - E^-s), gives
 where Phi_E is continuous and log E-periodic; its Fourier coefficients come from the imaginary
 poles s = 2 pi i m / log E of the Dirichlet-type transform.  Summing over classes,
 
-    K(tau) = kappa log(1/tau) + C0 + sum_classes Phi_E(log(tau alpha)) + O(tau)
+    K(tau) = e^{-tau beta} sum_classes [ (log(1/(tau alpha)) - gamma)/log E + 1/2 + Phi_E(log(tau alpha)) ]
+             + (integer boundary correction) + O(tau)
 
-with kappa = sum_classes 1/log E (the Lemma Q constant) and an explicit C0 that includes an
-integer boundary correction (hits minus model terms below the matching point).
+with kappa = sum_classes 1/log E (the Lemma Q constant).  Expanding e^{-tau beta} = 1 - tau beta + ...
+gives the two-term form kappa log(1/tau) + C0 + sum Phi_E + O(tau log(1/tau)); the shift term
+-beta kappa tau log(1/tau) is the leading correction when B != 0 (the O(tau) remainder of the
+unshifted form is false for B != 0).
 """
 from __future__ import annotations
 
@@ -91,10 +94,14 @@ def pell_heat_model(A: int, B: int, C: int, match: int = 10 ** 12):
     return classes, model_small
 
 
-def pell_heat_prediction(A: int, B: int, C: int, tau: float, hits_small: int, classes, model_small):
-    """Two-term prediction of K(tau) = sum_{hits n} e^{-tau n}.
+def pell_heat_prediction(A: int, B: int, C: int, tau: float, hits_small: int, classes, model_small,
+                         shift: bool = True):
+    """Prediction of K(tau) = sum_{hits n} e^{-tau n}.
 
-    hits_small is the number of actual hits n <= match (same match as the model).
+    hits_small is the number of actual hits n <= match (same match as the model).  With shift=True
+    the class sums carry the factor e^{-tau beta}, beta = -B/(2A) (remainder O(tau)); with
+    shift=False this is the unshifted two-term form (remainder O(tau log(1/tau)) when B != 0).
+    Returns (full prediction, prediction without the periodic term).
     """
     main = 0.0
     periodic = 0.0
@@ -102,4 +109,6 @@ def pell_heat_prediction(A: int, B: int, C: int, tau: float, hits_small: int, cl
         lam = tau * cl['alpha']
         main += (math.log(1 / lam) - EULER_GAMMA) / cl['logE'] + 0.5
         periodic += phi(math.log(lam), cl['logE'])
-    return main + (hits_small - model_small) + periodic, main + (hits_small - model_small)
+    f = math.exp(tau * B / (2 * A)) if shift else 1.0
+    corr = hits_small - model_small
+    return f * (main + periodic) + corr, f * main + corr

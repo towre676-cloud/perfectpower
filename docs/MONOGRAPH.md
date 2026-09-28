@@ -3,6 +3,18 @@
 ## Exact definitions, a polynomial dichotomy, finite-hit certificates, and the arithmetic of the zero branch
 
 > **Release 0.6 update.** The Lean kernel described in §7 now compiles against Mathlib `v4.20.0` with only standard axioms (see [FORMAL_AUDIT.md](FORMAL_AUDIT.md)), including the rigid dichotomy and a formal rigid-branch 0–1 law. The rate questions of §§5 and 8 are answered for polynomials in [RESEARCH_NOTES.md](RESEARCH_NOTES.md): the hit count is $N$, $\kappa N^{1/t}$, $\kappa\log N$, or bounded, and the exponent spectrum is $\{0,1\}\cup\{1/t: t\mid d\}$. The text below is the 0.5 edition, unchanged except for this note and the formal-status sentences of §7.
+>
+> **Post-0.6 status**, answering the questions of §§5, 6 and 8. Details and receipts are in the research notes.
+> - *The finite type rests on Siegel's theorem.* The curve computation $\chi=d'(1-S)$ (Theorem G) connects the two, and no secondary quotation of LeVeque is used. Its combinatorial half is compiled in Lean. Its geometric half is a paper proof, checked against Sage normalisation for $d,\deg F\le12$.
+> - *§5, genus-one finiteness and enumeration.*
+>   - Sage certifies the hit lists of 622 monic and 400 non-monic, shifted or cubic-power genus-one families.
+>   - Some of these hits are very late, e.g. $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$, so short scans are unreliable.
+>   - $\binom n2=m^3$ and $\binom n3=m^2$ are settled given two curves' integral points, with the reduction in Lean.
+>   - Genus $\ge2$ remains scan evidence, now exact to $10^8$.
+> - *§5, Pell-type sparse families.* Lean proves orbit exhaustion (finitely many representatives), periodicity modulo $2A$ and the geometric count. The assembled $\kappa\log N$ is still a paper result.
+> - *§6, transforms.* For the Pell type the heat transform has a log-periodic second term (Theorem T2). The shift $-B/(2A)$ in the hit sequence must be kept: without it the two-term remainder is $O(\tau\log(1/\tau))$, not $O(\tau)$.
+> - *§7, receipts.* Generated certificates are data checked by verified checkers (`Reflect.lean`). Every census and cross-validation receipt passes a plain-Python gate in `make verify`, and differential fuzzers run with fixed seeds.
+> - *Beyond the program.* The function-field analogues of Hall (Davenport) and Pillai are compiled unconditionally. Their integer versions are compiled only under an explicit abc hypothesis.
 
 **Research edition, 28 September 2026.** This manuscript consolidates the preceding chat monograph with the attached Lean draft and the exact computational implementation in this repository. The analytic polynomial dichotomy is a paper proof relying on an established uniform-distribution theorem. The finite-hit cutoff is constructed and independently checked by exact Python arithmetic. The Lean files are uncompiled attempts, not machine-checked theorems. No novelty claim attaches to Boshernitzan's, Siegel's, or Bombieri–Pila's results.
 

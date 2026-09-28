@@ -1,0 +1,45 @@
+{
+ "Y^2 = X^3 + 1": {
+  "lean_hypothesis": "IntegralPointsCubePlusOne",
+  "x_coordinates": [
+   -1,
+   0,
+   2
+  ],
+  "rank": 0,
+  "saturation_index": 1,
+  "scan_abs_x_le": 1000000,
+  "scan_agrees": true
+ },
+ "Y^2 = X^3 - 36X": {
+  "lean_hypothesis": "IntegralPointsCongruent6",
+  "x_coordinates": [
+   -6,
+   -3,
+   -2,
+   0,
+   6,
+   12,
+   18,
+   294
+  ],
+  "rank": 1,
+  "saturation_index": 1,
+  "scan_abs_x_le": 1000000,
+  "scan_agrees": true
+ },
+ "hit_lists": {
+  "C(n,2)=m^3": [
+   1,
+   2
+  ],
+  "C(n,3)=m^2": [
+   1,
+   2,
+   3,
+   4,
+   50
+  ]
+ },
+ "boundary": "completeness of each integral-point list beyond |X| <= 1e6 rests on Sage (proved rank, saturated basis, elliptic-logarithm sieving); Lean takes it as the named hypothesis"
+}

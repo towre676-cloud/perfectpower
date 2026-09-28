@@ -112,3 +112,23 @@ open PerfectPower
 #print axioms card_Icc_filter_eq_count
 #print axioms radical_hits_card
 #print axioms radical_count_bound
+-- Pell orbit representatives (finite box) and function-field Pillai
+#print axioms pell_descent_box
+#print axioms pell_box_finite
+#print axioms pell_orbits_exhaust
+#print axioms pillai_polynomial
+#print axioms pillai_polynomial_balanced
+#print axioms pillai_polynomial_sq_sharp
+-- ProfileG (Theorem G, combinatorial half)
+#print axioms S_le_one_iff
+#print axioms profile_table_ok
+#print axioms profiles12_length
+-- Reflect (verified certificate checkers) and the reflective census
+#print axioms PerfectPower.Reflect.check_sound
+#print axioms PerfectPower.Reflect.mordellOK_sound
+#print axioms PerfectPower.Reflect.ev_shift
+#print axioms PerfectPower.Reflect.intervalPos_sound
+#print axioms PerfectPower.Generated.cert_consecutive10_square_hits_ok
+#print axioms PerfectPower.Generated.cert_consecutive12_fourth_power_hits_ok
+#print axioms PerfectPower.Generated.Mordell.census_ok
+#print axioms PerfectPower.Generated.Mordell.census_size

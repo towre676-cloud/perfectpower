@@ -60,10 +60,22 @@ Only the final step $W=\lfloor((vN-u)/z_0)^{1/t}\rfloor\sim(v/z_0)^{1/t}N^{1/t}$
 - **`goodClass_hits`**: a good index $r$ ($X_r\equiv B \bmod 2A$) stays good at $r+kP$, and each of those orbit points gives a hit.
 - `geometric_count_le` / `le_geometric_count`: a sequence between $c_1E^j$ and $c_2E^j$ has $\log N/\log E+O(1)$ terms $\le N$, the source of the factor $1/(P\log u)$.
 
-**Not formalised:** that finitely many orbits exhaust the solutions of the norm equation (the classical finiteness of orbit representatives), and the resulting count $A(N)=\kappa\log N+O(1)$. |
+- **`pell_descent_box`**, **`pell_box_finite`**, **`pell_orbits_exhaust`**: each solution of $X^2-DY^2=\Delta$ with $X>0$, $Y\ge0$ is a nonnegative power of the unit applied to a representative in the finite box $DY_0^2\le|\Delta|x_1^2$. The proof is an integer descent: the inverse unit keeps $X>0$ and $Y\ge0$ and strictly lowers $X$ outside the box. This is a weak form of Nagell's bound.
+
+**Not formalised:** assembling these pieces into $A(N)=\kappa\log N+O(1)$. That step needs the real-analytic growth $X_j\asymp\varepsilon^j$, which follows from `geometric_count_le`, but the bookkeeping over orbits and classes has not been written. |
+| `ProfileG.lean` (new) | The combinatorial half of Theorem G:
+- **`S_le_one_iff`**: $S=\sum(1-1/t_i)\le1$ iff at most one $t_i>1$ or the $t_i>1$ are $\{2,2\}$.
+- **`profile_table_ok`**: for all $2\le d\le12$ and all 271 multiplicity profiles of degree $\le12$, the Riemann–Hurwitz genus $(2-n_\infty-\chi)/2$ is a nonnegative integer, $t_i\mid d'$, $\chi=d'(1-S)$ in exact arithmetic, and $\chi<0$ iff the profile is not exceptional. The kernel checks all of this by `decide +kernel`.
+
+The geometric half (Kummer and Riemann–Hurwitz for the normalisation) remains a paper proof. It is tested against Sage's normalisation by `crosscheck/theorem_g_sage.py`. |
+| `Reflect.lean` (new) | Verified certificate checkers (proof by reflection):
+- Polynomial arithmetic on coefficient lists (`ev`, `padd`, `pmul`, `ppow`, `shift`), with evaluation lemmas (`ev_shift`: Taylor shift).
+- The interval test $\mathrm{POS}(0)>\mathrm{NEG}(w)$ and the tail test, with soundness (`intervalPos_sound`, `tailPos_sound`).
+- **`check_sound`**: a sandwich certificate (a segment cover of $[1,c)$ plus a tail) that passes `check` gives the complete hit set.
+- `mordellOK_sound` for census points. |
 | `Binomial.lean` (new) | Reductions of $\binom n2=m^3$ and $\binom n3=m^2$ to the curves $Y^2=X^3+1$ and $Y^2=X^3-36X$. The point lists are checked by `decide`. Hit sets $\{1,2\}$ and $\{1,2,3,4,50\}$, **conditional on the named hypotheses** `IntegralPointsCubePlusOne` and `IntegralPointsCongruent6`, which state that the integral-point lists are complete; these are certified by Sage, not by Lean. |
-| `Davenport.lean`, `ABC.lean` (new) | `davenport`, `davenport_sharp` (unconditional). `hall_of_abc`, `pillai_bound_of_abc`, `pillai_finite_of_abc`, all with abc as an explicit hypothesis. |
-| `Generated/MordellPoints.lean` (generated) | Every listed census point lies on its curve, checked by `decide` with no axioms at all. **Completeness is not checked.** |
+| `Davenport.lean`, `ABC.lean` (new) | `davenport`, `davenport_sharp`, **`pillai_polynomial`**, **`pillai_polynomial_balanced`**, `pillai_polynomial_sq_sharp` (all unconditional; function-field Pillai from Mason–Stothers). `hall_of_abc`, `pillai_bound_of_abc`, `pillai_finite_of_abc`, all with abc as an explicit hypothesis. |
+| `Generated/MordellPoints.lean` (generated) | Census data grouped by curve, `(k, [(x, y), …])`, checked block by block with `Reflect.mordellOK` (`decide +kernel`). `census_points_valid` states that every listed point lies on its curve, and `census_size` fixes 5641 curves and 8600 points. **Completeness is not checked.** |
 | `RungeReduction.lean` (new) | `pow_diff_bound'`; **`runge_pointwise`** (if $P(n)\ne0$, $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and, for odd $d$, $<|P(n)|^d$, then a hit gives $D^dF(n)=(P(n)+t)^d$ with $|t|\le T$); `runge_uniform`; **`runge_finite`**. This is Theorem R in integer form. The same file contains **`power_type_finite`**, Theorem P over $\mathbb Q[x]$: if $F=cG^d$ with $G\in\mathbb Q[x]\setminus0$ and $c$ not an integer $d$-th power, then the hits are finite. Only the derivation of the uniform inequalities from the coefficient constants $a(x_0),C(x_0)$ remains informal. |
 
 ## Machine-generated certificates
@@ -82,7 +94,7 @@ The Python side only *chooses* the data: a threshold $x_0$, a $t$-range $T$, and
 - every sign condition, by `positivity`;
 - the reduction, by `runge_pointwise`.
 
-So a compiled generated theorem trusts nothing in the Python code. `PerfectPower/Generated/Runge.lean` contains 17 such theorems, and `Generated/Sandwich.lean` two more (below). Regenerate it with `python3 python/make_lean_certificates.py`; CI checks that the file is reproducible, and the full file builds in about 90 s. The theorems cover:
+So a compiled generated theorem trusts nothing in the Python code. `PerfectPower/Generated/Runge.lean` contains 17 such theorems, and `Generated/Sandwich.lean` two more (below); the README count block is generated from these files. Regenerate it with `python3 python/make_lean_certificates.py`; CI checks that the file is reproducible, and the full file builds in about 90 s. The theorems cover:
 
 - Ljunggren's quartic;
 - $n^4+1$ and $n^4+7$ as squares;
@@ -99,9 +111,13 @@ So a compiled generated theorem trusts nothing in the Python code. `PerfectPower
 
 **Interval-sandwich certificates** (`python/perfectpower/lean_sandwich.py` → `PerfectPower/Generated/Sandwich.lean`) cover the two instances that the plan search could not reach: $(10,2)$ and $(12,4)$.
 
+*Reflective form.* Each certificate is now a data literal of type `Reflect.Cert`: the polynomial, its truncated root $P/D$, the segments and the tail. It is accepted by `Reflect.check` under `decide +kernel`, and `Reflect.check_sound` (proved once) turns acceptance into the hit-set theorem, whose statement is unchanged. The generated file fell from 768 KB (4889 lines, one `norm_num`/`gcongr` lemma per piece) to 12 KB (391 lines). The checker recomputes every Taylor shift and power itself, so nothing in the data is trusted.
+
+*Sharper interval tests measured, not adopted.* Replacing $\mathrm{POS}(0)>\mathrm{NEG}(w)$ by a Bernstein-basis or Horner-interval lower bound changes the piece count from 283 to 279 for $(10,2)$ and from 49 to 38 for $(12,4)$. The count is dominated by single points at small $n$, where the sandwich offset $t$ changes from one $n$ to the next, not by the interval test. With the reflective format the piece count affects only the data size. The extra soundness proof is therefore not worth it.
+
 For those instances the obstruction was the scan range below the Runge threshold, not the tail argument. Pointwise checks there would need about $2\cdot10^4$ cases. Instead, $[1,\infty)$ is covered by pieces:
 
-- **Intervals** $[a,a+w]$ on which one integer $t$ satisfies $(P+t)^d<D^dF<(P+t+1)^d$ and $P+t\ge0$. Each of the three polynomials, shifted to $a+k$, is split as $\mathrm{POS}(k)-\mathrm{NEG}(k)$ with nonnegative coefficients. `gcongr` proves $\mathrm{NEG}(k)\le\mathrm{NEG}(w)$, `positivity` proves $\mathrm{POS}(k)\ge\mathrm{POS}(0)$, and `norm_num` checks $\mathrm{POS}(0)>\mathrm{NEG}(w)$.
+- **Intervals** $[a,a+w]$ on which one integer $t$ satisfies $(P+t)^d<D^dF<(P+t+1)^d$ and $P+t>0$. Each of the three polynomials, shifted to $a+k$, is split as $\mathrm{POS}(k)-\mathrm{NEG}(k)$ with nonnegative coefficients. Monotonicity of polynomials with nonnegative coefficients gives $\mathrm{NEG}(k)\le\mathrm{NEG}(w)$ and $\mathrm{POS}(k)\ge\mathrm{POS}(0)$ (`ev_nonneg_mono`), and the checker tests $\mathrm{POS}(0)>\mathrm{NEG}(w)$.
 - **A tail** $[c,\infty)$, where $\mathrm{NEG}$ is empty.
 - **Isolated points**, decided numerically.
 
@@ -118,7 +134,7 @@ The two files compile in about 4.5 minutes, and both theorems depend only on the
 
 ## What it does not certify
 
-- **The nonrigid density-zero branch in general.** This is Boshernitzan's criterion, or alternatively LeVeque's theorem. Both remain named external theorems. Individual nonrigid examples are proved directly (`pell_hasDensity_zero`, `monomial_count`, `twisted_density_zero`).
+- **The nonrigid density-zero branch in general.** This is Boshernitzan's criterion, or alternatively Siegel's theorem through Theorem G. Both remain named external theorems. Individual nonrigid examples are proved directly (`pell_hasDensity_zero`, `monomial_count`, `twisted_density_zero`).
 - **The atlas (Theorems B, C), the explicit Runge thresholds of Theorem R, the shift spectrum, and the transform theorems.** These are paper proofs. The Python implementations are checked against direct scans, but a Python test is not a Lean proof, and the Lean kernel does not certify the Python code.
 - **The Python certificate verifier.** It shares its mathematics with `eventually_no_hit` but is a separate artifact.
 

@@ -1,8 +1,9 @@
 """Structural classification of polynomial perfect-power hits ("the atlas").
 
 For F in Z[x] and d >= 2 write F = c * prod_i (x - alpha_i)^(r_i) over the algebraic closure
-and t_i = d / gcd(d, r_i).  LeVeque (1964), building on Siegel, proved that y^d = F(x) has only
-finitely many integer solutions unless the multiset {t_i} is {t, 1, ..., 1} or {2, 2, 1, ..., 1}.
+and t_i = d / gcd(d, r_i).  y^d = F(x) has only finitely many integer solutions unless the multiset
+{t_i} is {1, ..., 1}, {t, 1, ..., 1} or {2, 2, 1, ..., 1}: Theorem G of the research notes derives
+this from Siegel's theorem via chi = d'(1 - S) (LeVeque 1964 found the same exceptional patterns).
 The multiplicities are read off from an exact squarefree decomposition, so the type is
 decidable.  In each exceptional type the hit set has an explicit description (Theorems B, C in
 docs/RESEARCH_NOTES.md), which this module turns into exact enumeration and counting.
@@ -15,7 +16,7 @@ Kinds returned by classify():
                    A(N) = kappa N^(1/t) + O(1) with an explicit kappa >= 0.
   'pell'           {2, 2, 1, ..., 1} (d even): reduces to squares of integer quadratics.
                    A(N) = kappa log N + O(1) with an explicit kappa >= 0.
-  'finite'         anything else: finitely many hits (LeVeque).  Enumerated effectively when
+  'finite'         anything else: finitely many hits (Siegel via Theorem G; historically LeVeque).  Enumerated effectively when
                    F is Runge-rigid for some divisor d' >= 2 of d (runge.runge_enumerate).
 """
 from __future__ import annotations
@@ -195,7 +196,7 @@ def classify(coefficients, d: int) -> Classification:
     strategy = _finite_strategy(f, d)
     return Classification(kind='finite', growth='bounded', exponent=Fraction(0), infinite=False,
                           effective=strategy is not None,
-                          details={'theorem': 'LeVeque 1964 (via Siegel); effective by Brindza 1984',
+                          details={'theorem': 'Siegel via Theorem G (chi = d\'(1 - S) < 0); historically LeVeque 1964; effective by Brindza 1984',
                                    'rigid_runge_branch': strategy is not None and strategy[0] == 'runge'
                                    and strategy[1] == d,
                                    'strategy': strategy}, **base)
@@ -526,7 +527,7 @@ def structural_hits(coefficients, d: int, N: int) -> list[int]:
         if e % 2 == 0:
             cand |= set(structural_hits(tuple(-c for c in G), d // e, N))
         return sorted(n for n in cand if integer_power_root(_eval_int(f, n), d) is not None)
-    raise NotImplementedError('finite by LeVeque, but no effective enumeration implemented')
+    raise NotImplementedError('finite by Siegel (Theorem G), but no effective enumeration implemented')
 
 
 def structural_count(coefficients, d: int, N: int) -> int:
@@ -584,7 +585,7 @@ def shift_spectrum(S, d: int) -> dict:
 
     Outside the finite set critical_shifts(S), S + k is squarefree, so every root has
     t = d and the type depends only on deg S and d:
-      deg S = 1 -> radical (t = d);  deg S = 2, d = 2 -> Pell;  otherwise -> finite (LeVeque).
+      deg S = 1 -> radical (t = d);  deg S = 2, d = 2 -> Pell;  otherwise -> finite (Siegel via Theorem G).
     At most one k makes S + k an integer-polynomial d-th power.
     """
     s = _int_poly(S)

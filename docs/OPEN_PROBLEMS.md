@@ -35,11 +35,12 @@ Each entry gives the precise problem, the current best approach, and the obstruc
 
 7. **Coefficient-bound lemmas for Theorem R.** Derive the hypotheses of `runge_uniform` from the constants $a(x_0)$ and $C(x_0)$, so that one certificate format covers every rigid $F$.
 
-8. **Pell count in Lean.** The interfaces are done (`PellGeneral.lean`: norm equation, pure periodicity modulo $2A$, good classes, geometric counting). Missing: finiteness of orbit representatives for $X^2-DY^2=\Delta$ (a bounded search over $|Y|\le\sqrt{|\Delta|\,u/D}$ in the classical form), and assembling $A(N)=\kappa\log N+O(1)$. The log-periodic second term (Theorem T2) is numerical and paper-level only.
+8. **Pell count in Lean.** The interfaces and orbit exhaustion are done (`PellGeneral.lean`: norm equation, pure periodicity modulo $2A$, good classes, finitely many representatives in the box $DY_0^2\le|\Delta|x_1^2$, geometric counting). Missing: assembling $A(N)=\kappa\log N+O(1)$ from these pieces, which needs $X_j\asymp\varepsilon^j$ along each orbit. The log-periodic second term (Theorem T2) is numerical and paper-level only.
 
 ## Good first issues
 
-- Reduce the piece count of the sandwich certificates. The $(10,2)$ certificate uses 283 pieces because the per-interval test $\mathrm{POS}(0)>\mathrm{NEG}(w)$ is crude. A midpoint shift or a Bernstein-basis test would merge intervals.
+- ~~Reduce the piece count of the sandwich certificates.~~ Measured: a Bernstein or Horner-interval test only takes $(10,2)$ from 283 to 279 pieces, because single points at small $n$ dominate, and the reflective format (`Reflect.lean`) already made piece count cheap (12 KB for both certificates).
+- Port the Taylor-shift Runge certificates (`Generated/Runge.lean`, 136 KB) to the reflective checker as well.
 - Add families to `python/make_atlas_receipts.py`, each with a certification label.
-- Extend `crosscheck/` to quartic models $m^2=\text{quartic}$ (general Weierstrass models are done in `crosscheck/binomial_curves.py`).
+- Extend `crosscheck/` to quartic models $m^2=\text{quartic}$ with a rational point, keeping integrality through the conversion to Weierstrass form. Non-monic and shifted cubics and $m^3=$ quadratic are done in `crosscheck/genus1_sage.py`.
 - Remove the unnecessary `have`s flagged by Batteries' `#lint` (see `FORMAL_AUDIT.md`).

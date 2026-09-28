@@ -1,5 +1,7 @@
 # Research roadmap after release 0.6
 
+Current counts (audited declarations, generated certificates, census sizes) are generated into the README by `make counts`; the numbers in the "Done in 0.6" section below are historical snapshots of that release.
+
 ## Done in 0.6
 
 **Lean kernel.**
@@ -10,14 +12,14 @@
 **Rate question.** The monograph's rate question has a complete answer for polynomials, the atlas (research notes, Theorem A):
 - A decidable type, computed from root multiplicities.
 - Exact parametrisations and asymptotic constants for the power, radical and Pell types.
-- LeVeque finiteness for all other types.
+- Finiteness for all other types (originally quoted from LeVeque; now Theorem G from Siegel).
 - The discrete exponent spectrum $\{0,1\}\cup\{1/t : t\mid d\}$, with an $N^{1/2}$ barrier for non-powers.
 
-**Runge branch.** The branch is now completely enumerable, and 17 instances have machine-generated Lean certificates.
+**Runge branch.** The branch is now completely enumerable, and at release 0.6 17 instances had machine-generated Lean certificates.
 
 **Applications.** The atlas recovers Schäffer's sums-of-powers theorem with constants and covers integer-valued polynomials.
 
-**Formal kernel.** It proves 56 audited theorems, including:
+**Formal kernel.** At release 0.6 it proved 56 audited theorems, including:
 - the monomial count;
 - infinitude and density zero for $2n^2+1$;
 - Theorem P over $\mathbb Q[x]$;
@@ -27,15 +29,36 @@
 
 ## Done after 0.6
 
-- **Provenance gate.** The axiom audit covers all 80 declarations it lists. The Mordell census has a per-curve JSONL record (curve, engine and version, rank method and proof status, generators, saturation index, $x$-list and hash, scan), and the CSV names the engine. `make receipts` re-checks every row and its label (`TRUST_BOUNDARY.md` §4).
+- **Provenance gate.** The axiom audit checks every declaration it lists (count in the README). The Mordell census has a per-curve JSONL record (curve, engine and version, rank method and proof status, generators, saturation index, $x$-list and hash, scan), and the CSV names the engine. `make receipts` re-checks every row and its label (`TRUST_BOUNDARY.md` §4).
 - **Theorem G** replaces the LeVeque dependency with a Riemann–Hurwitz computation plus Siegel's theorem.
 - **Binomial rows.** $\binom n2=m^3$ holds only for $n\in\{1,2\}$, and $\binom n3=m^2$ only for $n\in\{1,2,3,4,50\}$. Lean proves both reductions and hit lists; the integral points of the two curves are a Sage-certified hypothesis.
 - **Theorem B valuation core** in Lean (`RadicalValuation.lean`).
-- **Theorem T2.** The heat transform of a Pell-type family has a log-periodic second-order term (`receipts/pell_heat.json`, residuals $\le 10^{-11}$ at $\tau=10^{-12}$).
+- **Theorem T2.** The heat transform of a Pell-type family has a log-periodic second-order term. Corrected after review: the hits are $n_j=\alpha E^j-B/(2A)+O(E^{-j})$, the shifted model has remainder $O(\tau)$, and the unshifted two-term form only $O(\tau\log(1/\tau))$ when $B\ne0$ (`receipts/pell_heat.json` records residual/scale).
 
 - **Lean interfaces for the counts.** `PellGeneral.lean` (norm equation, periodicity modulo $2A$, good classes, geometric counting) and `RadicalCount.lean` ($|vA(N)-RW|\le2Rv$).
 
-**Next:** finiteness of Pell orbit representatives in Lean, then the Bilu–Tichy atlas.
+## Done after the second review
+
+- **T2 corrected.** The hits are $n_j=\alpha E^j-B/(2A)+O(E^{-j})$. The shifted model has remainder $O(\tau)$, and the two-term form has only $O(\tau\log(1/\tau))$ when $B\ne0$. The receipt reports residual divided by the claimed scale.
+- **Gates.**
+  - The census domain is checked: the exact key set, unique keys, sorted unique lists and the declared bound.
+  - A plain-Python binomial gate ties the Sage receipt to the Lean hypotheses, and a genus-one gate re-verifies the new receipt.
+  - `make crosscheck` reruns all Sage steps.
+  - Negative tests plant corruptions.
+- **Status language.** Everything that rested on LeVeque now rests on Siegel through Theorem G. Theorem G's step 2 now counts $d'$ points over an unramified $x$.
+- **Lean.**
+  - Pell orbit exhaustion by a descent to a finite box.
+  - Function-field Pillai.
+  - The combinatorial half of Theorem G, including an exhaustive kernel-checked table for $d,\deg F\le12$.
+  - A verified reflective checker. The sandwich certificates went from 768 KB to 12 KB, and the census is data plus a soundness theorem.
+- **Evidence.**
+  - Sage normalisation check of Theorem G.
+  - 400 further genus-one families, with certified hits as late as $n=12{,}017{,}947$.
+  - A modular sieve for exact scans to $10^8$.
+  - The external fuzzers are in `make fuzz` and `make test` with fixed seeds.
+- **CI diagnosed.** Jobs are never assigned a runner. That is an account-level Actions block, and only the owner can lift it (README).
+
+**Next:** assemble $A(N)=\kappa\log N+O(1)$ in Lean from the Pell pieces; port the Runge certificates to the reflective checker; quartic genus-one models; then the Bilu–Tichy atlas.
 
 ## Order of work after 0.6 (recommended)
 
@@ -67,7 +90,7 @@ The centre of gravity moves from proving more theorems to closing the gap betwee
 1. Done: Theorem P over $\mathbb Q[x]$ is `power_type_finite`, and Theorem R in integer form is `runge_finite`.
 2. Formalise the valuation characterisation of Theorem B: $c_1z^r$ is a $d$-th power iff $v_p(z)\equiv\tau_p \pmod t$ for all $p$, together with the sign condition. Mathlib's `padicValInt` and `Nat.factorization` suffice. The monomial count $A(N)=\lfloor N^{\gcd(r,d)/d}\rfloor$ for $n^r$ is done (`monomial_count`); the general case adds a twist $c$ and a rational root $\alpha$.
 3. Extend the certificate emitter to instances whose Runge plan needs a large $x_0$ or roots of $G_t$ beyond $x_0$. Examples are the consecutive products $(k,d)=(10,2)$ and $(12,4)$. Two routes: a verified range check by `decide` over a computable integer-root predicate, or emitting explicit factorisations of the $G_t$.
-4. Keep Boshernitzan and LeVeque as named external boundaries. If a nonrigid statement is wanted formally, state it as a hypothesis-carrying theorem, `LeVeque → …`.
+4. Keep Boshernitzan and Siegel as named external boundaries. If a nonrigid statement is wanted formally, state it as a hypothesis-carrying theorem, `Siegel → …`.
 
 ## Arithmetic
 

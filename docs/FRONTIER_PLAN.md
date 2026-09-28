@@ -23,6 +23,12 @@ It turns each conjecture into a sharply stated, certified, machine-readable fron
    Lean can check that a listed point satisfies its equation, but **never that a list is complete**. The census validates the pipeline; it is not expected to beat published Hall records, which come from lattice-reduction searches (Elkies, Jiménez Calvo–Herranz–Sáez, Aanderaa–Kristensen–Ruud).
 2. **Pillai gap census.** Tabulate all pairs of perfect powers up to a bound $B$ that differ by at most $K$. Pillai's conjecture says this set is finite for each fixed $k$; the census is the empirical set, not a proof. Mihăilescu's theorem settles $k=1$ (Catalan) and is cited, not rescanned; $3^2-2^3=1$ serves as a regression check.
 3. **Mason–Stothers and Davenport, formalised unconditionally.** Mathlib provides Mason–Stothers as `Polynomial.abc`. From it we derive Davenport's bound $2\deg(f^3-g^2)\ge\deg f+2$ for coprime $f,g$ over a field of characteristic $0$ with $f$ nonconstant and $f^3\ne g^2$. This is a proven theorem in the shape of Hall.
+
+   **Function-field Pillai (added after review).** The same route gives, for coprime $f,g$ with $f$ nonconstant, $a,b\ge1$ and $f^a\ne g^b$,
+   $$a\deg f+1\le\deg f+\deg g+\deg(f^a-g^b),\qquad b\deg g+1\le\deg f+\deg g+\deg(f^a-g^b)$$
+   (`pillai_polynomial`). *Proof.* Apply Mason–Stothers to $f^a+(-g^b)+(-(f^a-g^b))=0$. The radical of $f^ag^b(f^a-g^b)$ has degree at most $\deg f+\deg g+\deg(f^a-g^b)$. The degenerate branch, where all three derivatives vanish, would force $f'=0$, impossible in characteristic $0$ for nonconstant $f$.
+
+   In the balanced case $a\deg f=b\deg g=n$ with $a,b\ge2$, this gives $\deg(f^a-g^b)\ge n(1-1/a-1/b)+1$ (`pillai_polynomial_balanced`). For $(a,b)=(3,2)$ that is Davenport's bound. The hypothesis $a,b\ge2$ is needed: $f=g^b+1$ has $\deg(f-g^b)=0$. It is the unconditional analogue of `pillai_finite_of_abc`.
 4. **The abc-conditional layer, formalised.**
    - abc is stated as an explicit *hypothesis* `ABC ε C`, never as an axiom, so the axiom audit stays clean.
    - Proved consequences:

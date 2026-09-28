@@ -11,7 +11,7 @@ $ PYTHONPATH=python python3 -m perfectpower classify --coeff 1,1,1,1,1 --d 2
 
 The output says three things:
 
-- The four roots are simple and $d=2$, so every root has $t=2$. By LeVeque's theorem the hit set is finite; this step is conditional and ineffective (see [TRUST_BOUNDARY.md](TRUST_BOUNDARY.md)).
+- The four roots are simple and $d=2$, so every root has $t=2$. By Siegel's theorem, through Theorem G ($S=4\cdot\tfrac12=2>1$), the hit set is finite; this step is conditional and ineffective (see [TRUST_BOUNDARY.md](TRUST_BOUNDARY.md)).
 - The degree is divisible by $d$ and the leading coefficient is a square. So $F$ is *rigid* (the Runge case), and the finite set is computable.
 - `effective: true` records exactly that.
 

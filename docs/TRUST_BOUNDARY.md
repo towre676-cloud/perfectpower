@@ -22,6 +22,14 @@ Given that kernel, the following are theorems:
 **Unconditional function-field results.**
 - Davenport's bound $2\deg(f^3-g^2)\ge\deg f+2$ (`davenport`), derived from Mathlib's Mason–Stothers (`Polynomial.abc`).
 - Its sharpness (`davenport_sharp`).
+- Function-field Pillai (`pillai_polynomial`, `pillai_polynomial_balanced`): for coprime $f,g$ with $f$ nonconstant and $f^a\ne g^b$, $a\deg f+1\le\deg f+\deg g+\deg(f^a-g^b)$.
+
+**Counting and geometry pieces.**
+- Theorem B count: $|vA(N)-RW|\le2Rv$ (`radical_count_bound`).
+- Pell orbits: finitely many representatives exhaust the solutions of the norm equation (`pell_orbits_exhaust`), with pure periodicity modulo $2A$ (`unitOrbit_periodic`).
+- The combinatorial half of Theorem G (`S_le_one_iff`, and the exhaustive table `profile_table_ok` for $d,\deg F\le12$).
+
+**Verified checkers.** `Reflect.check_sound` and `Reflect.mordellOK_sound` are proved once. The generated sandwich certificates and census blocks are data that the kernel runs through these checkers (`decide +kernel`, no `Lean.ofReduceBool`).
 
 **Conditional results (abc as a hypothesis).** The following are implications "`ABC ε C` ⇒ …":
 - `hall_of_abc`, for coprime $x,y$;
@@ -36,7 +44,8 @@ abc is an ordinary proposition passed as an argument, so the axiom audit is unaf
 - **That scan-only rows are complete.**
 - **Hall's conjecture, Pillai's conjecture, or any uniform integral-point bound.** No part of the repository proves these, and none is claimed. See `FRONTIER_PLAN.md`.
 - **Completeness of the Mordell census** (`data/mordell_census.csv`). That is Sage's claim: Mordell–Weil generators from mwrank, saturated, then elliptic-logarithm sieving. It is rigorous modulo the correctness of that software and of the proved rank. Lean checks no row of the census.
-- **The Sage cross-validation.** That is an external computation: Mordell–Weil generators from mwrank, then elliptic-logarithm sieving. Lean never checks a Baker bound or a sieve.
+- **The Sage cross-validations** (cubic table, genus-one families, binomial curves, Theorem G normalisation). These are external computations: Mordell–Weil generators from mwrank, then elliptic-logarithm sieving, or function-field integral closures. Lean never checks a Baker bound, a sieve or a normalisation. For the genus-one families, `crosscheck/check_genus1.py` recomputes the Weierstrass models, re-verifies every stored model point, redoes the pull-back, and reruns the exact scan to $10^6$ in plain Python. It does not rerun the Sage side.
+- **The modular sieve** (`perfectpower/sieve.py`) as a program. Its soundness is elementary (a discarded residue has no $d$-th power value modulo $m$). It is tested against the plain scan, but it is not verified. Rows scanned with it are `EXACT_WITHIN_BOUND` evidence only.
 - **The Python Runge enumerator and the v0.5 cutoff certificate as programs.** Their mathematics is Theorem R, whose reduction step is compiled. The Python code is tested, including planted-hit adversarial tests, but it is not verified.
 
 ## 3. Conditional and ineffective inputs
@@ -53,7 +62,12 @@ abc is an ordinary proposition passed as an argument, so the axiom audit is unaf
 | Radical and Pell counts, Theorems P, B, C | Elementary; paper proofs | Yes, explicit |
 | Rigid-branch complete hit lists | Theorem R; elementary | Yes, explicit |
 
-**LeVeque is no longer a dependency.** Theorem G in the research notes derives the finite type directly from Siegel's theorem in its standard form. That form is stated in Hindry–Silverman (Theorem D.9.1) and Bombieri–Gubler (§7.3): an affine curve with $2g-2+n_\infty>0$ has finitely many $S$-integral points. The derivation is a Riemann–Hurwitz computation, $\chi=d'(1-S)$, carried out for each geometric component of $y^d=F(x)$. It treats common multiplicities, the normalisation of singular points, fields of definition, and integrality with bounded denominators after normalisation. Its status is `PAPER_PROOF`, not independently refereed. It is backed by randomized consistency checks: the genus comes out integral and non-negative, and $\chi<0$ exactly for the finite type. The LeVeque statement (Acta Arith. 9 (1964) 209–219) was only ever taken from secondary sources, because the primary paper could not be read in the build environment. It is now historical context and matches Theorem G's conclusion.
+**LeVeque is no longer a dependency.** Theorem G in the research notes derives the finite type directly from Siegel's theorem in its standard form. That form is stated in Hindry–Silverman (Theorem D.9.1) and Bombieri–Gubler (§7.3): an affine curve with $2g-2+n_\infty>0$ has finitely many $S$-integral points. The derivation is a Riemann–Hurwitz computation, $\chi=d'(1-S)$, carried out for each geometric component of $y^d=F(x)$. It treats common multiplicities, the normalisation of singular points, fields of definition, and integrality with bounded denominators after normalisation. Its status is `PAPER_PROOF`, not independently refereed. It is backed in three ways:
+- randomized consistency checks: the genus comes out integral and non-negative, and $\chi<0$ exactly for the finite type;
+- an independent Sage normalisation over every profile with $d\le12$ and $\deg F\le12$ (`receipts/theorem_g_check.json`);
+- a Lean proof of the combinatorial half (`ProfileG.lean`).
+
+A referee needs to trust only the Kummer/Riemann–Hurwitz step for the normalisation. Proof step 2 counts $d'$ geometric points over an unramified $x$; an earlier draft said "one point", which was a wording error. The LeVeque statement (Acta Arith. 9 (1964) 209–219) was only ever taken from secondary sources, because the primary paper could not be read in the build environment. It is now historical context and matches Theorem G's conclusion.
 
 ## 4. Epistemic label of every data row
 
@@ -72,6 +86,21 @@ Every data row carries one label: `receipts/atlas_benchmarks.json`, `data/famili
 | `EXACT_WITHIN_BOUND` | An exhaustive enumeration, complete up to the stated bound and silent beyond it. Used in `data/pillai_gaps.csv`. |
 | `SCAN_EVIDENCE_ONLY` | Finiteness is conditional on Siegel (Theorem G). The listed hits are those with $n\le10^5$. **No completeness claim is made.** |
 
-**The census gate.** `make receipts` runs `crosscheck/mordell_census.py --from-jsonl`, which rebuilds the CSV and summary from `data/mordell_census.jsonl` and re-checks every row with plain Python. For each row it recomputes the SHA-256 of the $x$-list, checks exactly that each $x^3+k$ is a square, compares the stored scan with the listed points for $|x|\le10^5$, and recomputes the label from `rank_proved`, `saturation_index` and the scan comparison. A row whose scan cross-check fails cannot carry `INDEPENDENT_COMPUTATION`, and a JSONL that says otherwise fails the build. The scan itself is recomputed only by the Sage run (`make crosscheck`).
+**The census gate.** `make receipts` runs `crosscheck/mordell_census.py --from-jsonl 10000`, which checks `data/mordell_census.jsonl` in plain Python before it rebuilds the CSV and summary.
+- *Domain.* The keys are exactly $\{-10000,\dots,-1,1,\dots,10000\}$, once each and in order, so a duplicated row cannot hide an omitted curve. Every curve is $[0,0,0,0,k]$, and every $x$-list and scan list is strictly increasing.
+- *Rows.* The SHA-256 of each $x$-list is recomputed, each $x^3+k$ is checked to be a square, the stored scan is compared with the listed points for $|x|\le10^5$, and the label is recomputed from `rank_proved`, `saturation_index` and that comparison. A row whose scan cross-check fails cannot carry `INDEPENDENT_COMPUTATION`.
+- *Not rerun.* The scan itself is stored data here. Only the Sage run (`make crosscheck`) recomputes it.
+
+`python/tests/test_gates.py` plants a duplicate plus an omission (same row count), an out-of-bound key, unsorted and duplicated $x$-lists, a failed scan and an off-curve point, and checks that each is rejected.
+
+**The binomial gate.** `make receipts` also runs `crosscheck/check_binomial.py`, which ties `receipts/binomial_curves.json` to the Lean source without Sage. It checks that:
+- each curve has a proved rank and a saturated basis;
+- every receipt point lies on its curve;
+- the receipt's $x$-list equals the disjunction in `IntegralPointsCubePlusOne` or `IntegralPointsCongruent6`, parsed from `PerfectPower/Binomial.lean`;
+- the points proved in `binomial_curve_points_valid` are the receipt's points with $y\ge0$;
+- a scan over $|X|\le10^6$ finds nothing else;
+- pulling the points back through the reductions gives exactly the hit lists of `choose_two_cube_hits` and `choose_three_square_hits`.
+
+It writes `receipts/binomial_gate.json`. `make crosscheck` reruns the Sage computation (`crosscheck/binomial_curves.py`). Completeness beyond $|X|\le10^6$ remains Sage's claim and Lean's hypothesis.
 
 The cubic cross-validation shows why the last label matters. Among the 622 curves $m^2=n^3+an+b$ with $|a|,|b|\le12$, a scan to $10^3$ would have missed hits on 18 curves, and a scan to $10^4$ on 4. The largest hit is $n=80327$, at $(a,b)=(-12,-10)$.

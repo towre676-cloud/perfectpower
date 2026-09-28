@@ -3,7 +3,7 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test receipts counts check-clean crosscheck paper
+.PHONY: verify lean audit lint test receipts counts check-clean crosscheck fuzz paper
 
 verify: lean audit lint test receipts counts check-clean
 	@echo "verify: OK"
@@ -26,7 +26,9 @@ receipts:
 	$(PY) python/make_lean_certificates.py
 	$(PY) python/adversarial_runge.py 300
 	$(PY) python/pillai_census.py 18 1000
-	$(PY) crosscheck/mordell_census.py --from-jsonl
+	$(PY) crosscheck/mordell_census.py --from-jsonl 10000
+	$(PY) crosscheck/check_binomial.py
+	$(PY) crosscheck/check_genus1.py
 	$(PY) python/make_lean_census.py
 	$(PY) python/uniformity.py
 	$(PY) python/make_pell_heat_receipt.py
@@ -41,7 +43,16 @@ check-clean:
 # Optional: needs Sage or passagemath (see crosscheck/README.md).
 crosscheck:
 	$(SAGEPY) crosscheck/cubics_sage.py 12 100000
+	$(SAGEPY) crosscheck/binomial_curves.py
+	PYTHONPATH=python $(SAGEPY) crosscheck/genus1_sage.py 400 3
 	$(SAGEPY) crosscheck/mordell_census.py 10000 4
+
+# Differential fuzzers with fixed seeds (python/fuzz/); the finite-bucket scan goes to 1e8.
+fuzz:
+	PYTHONPATH=python $(PY) python/fuzz/fuzz_structural_vs_scan.py 1 1500
+	PYTHONPATH=python $(PY) python/fuzz/fuzz_structural_vs_scan.py 2 1500
+	PYTHONPATH=python $(PY) python/fuzz/fuzz_pell_quadratic.py 7 400
+	PYTHONPATH=python $(PY) python/fuzz/fuzz_finite_bucket_late_hits.py 11 1500 100000000
 
 paper:
 	cd paper && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && rm -f *.aux *.log *.out

@@ -19,3 +19,5 @@ import PerfectPower.Binomial
 import PerfectPower.RadicalValuation
 import PerfectPower.PellGeneral
 import PerfectPower.RadicalCount
+import PerfectPower.ProfileG
+import PerfectPower.Reflect
