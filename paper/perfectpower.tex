@@ -225,7 +225,7 @@ By Theorem~\ref{thm:radical} and Lemma~\ref{lem:quad} these hypotheses hold exac
 
 \section{Formal verification and computation}\label{sec:formal}
 
-The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20.0}). An audit script checks that $32$ theorems depend only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. Among them:
+The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20.0}). An audit script checks that $37$ theorems depend only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. Among them:
 \begin{itemize}
 \item \lean{rigid\_dichotomy}: in the rigid case, either $F=G^d$ over $\Z$ or the hit set is finite.
 \item \lean{rigid\_zero\_one}: in the rigid case the density exists and is $0$ or $1$.
@@ -233,6 +233,7 @@ The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20
 \item \lean{monomial\_count}: for $F=x^r$, $A(N)=\#\{w\le N: w^t\le N\}$.
 \item \lean{ljunggren\_hitSet} and \lean{consecutive\_four\_hitSet}: two complete hit lists.
 \item \lean{pell\_hitSet\_infinite} and \lean{pell\_hasDensity\_zero}: $2n^2+1$ has infinitely many square values and density zero.
+\item \lean{runge\_finite} (Theorem~\ref{thm:runge} in integer form) and \lean{power\_type\_finite} (Theorem~\ref{thm:power} over $\Q[x]$).
 \end{itemize}
 The exact Python implementation (standard library only) classifies $(F,d)$, computes $\kappa$, enumerates hits structurally or by Theorem~\ref{thm:runge}, and cross-checks every structural count against the defining scan. The receipts record $43$ families and are reproducible bit-for-bit.
 

@@ -6,7 +6,7 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 
 | Result | Status | Where |
 |---|---|---|
-| Theorem P (power type) | `PAPER_PROOF`; the finiteness half is `LEAN_VERIFIED` (`twisted_finite`) | §2, `PerfectPower/ZeroOne.lean` |
+| Theorem P (power type) | `LEAN_VERIFIED`: density one is `hasDensity_one_of_pow`; finiteness is `power_type_finite` | §2, `PerfectPower/ZeroOne.lean` |
 | Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; the monomial case $c=1,\alpha=0$ is `LEAN_VERIFIED` (`monomial_count`) | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
 | Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check | §4, `atlas.py` |
 | Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque 1964) | §5 |

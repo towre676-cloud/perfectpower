@@ -13,7 +13,7 @@
 |---|---|
 | **0–1 law.** The hit density is $1$ if $F=G^d$ with $G\in\mathbb Z[x]$, else $0$ ([monograph](docs/MONOGRAPH.md) §3). | Paper proof using Boshernitzan; an independent route via LeVeque is in [the research notes](docs/RESEARCH_NOTES.md). |
 | **Rigid branch** ($d\mid\deg F$, leading coefficient a $d$-th power): exact power or finitely many hits; density exists and is $0$ or $1$. | **Lean-verified**: `rigid_dichotomy`, `rigid_zero_one`. |
-| **Twisted powers** $D^dF=cH^d$ with $c$ not a $d$-th power: every hit is a root of $H$. | **Lean-verified**: `twisted_finite`. |
+| **Twisted powers** $D^dF=cH^d$ with $c$ not a $d$-th power: every hit is a root of $H$. | **Lean-verified**: `twisted_finite`, and `power_type_finite` over $\mathbb Q[x]$. |
 | Finite surgery, periodic density $P/T$, convergence bridge, finite-support squeeze. | **Lean-verified.** |
 | **Monomials** $n^r$: hits are exactly the $t$-th powers, $A(N)=\lfloor N^{1/t}\rfloor$, $t=d/\gcd(r,d)$; this realises every exponent of the spectrum. | **Lean-verified**: `monomial_count`. |
 | Complete hit lists: $1+n+\dots+n^4=m^2 \iff n=3$ (Ljunggren); $n(n+1)(n+2)(n+3)$ is never a square. | **Lean-verified**: `ljunggren_hitSet`, `consecutive_four_hitSet`. |
@@ -41,7 +41,7 @@ lake build
 ./audit/check_axioms.sh # fails on sorry or any axiom beyond propext, Classical.choice, Quot.sound
 ```
 
-All ten modules compile. Thirty-six audited theorems use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
+All ten modules compile. Thirty-seven audited theorems use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
 
 ## Python (standard library only)
 

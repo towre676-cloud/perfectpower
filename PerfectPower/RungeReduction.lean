@@ -134,3 +134,27 @@ theorem runge_finite {d : ℕ} (hd : 2 ≤ d) {F P : ℤ[X]} {D : ℤ} {T x0 : �
   · left; exact not_le.mp hx
 
 end PerfectPower
+
+namespace PerfectPower
+
+/-- **Theorem P over `ℚ[X]`.**  If `F = c · G^d` with `G ∈ ℚ[X]` nonzero and `c ∈ ℤ` not an integer
+`d`-th power, then `F` has only finitely many hits. -/
+theorem power_type_finite {d : ℕ} (hd : 2 ≤ d) {F : ℤ[X]} {G : ℚ[X]} {c : ℤ}
+    (hc : ¬ ∃ b : ℤ, c = b ^ d) (hG : G ≠ 0)
+    (hFG : F.map (Int.castRingHom ℚ) = C (c : ℚ) * G ^ d) :
+    (hitSet (fun n => F.eval (n : ℤ)) d 0).Finite := by
+  obtain ⟨D, hD, P, hP⟩ := exists_denominator G
+  have hinj : Function.Injective (Int.castRingHom ℚ) := Int.cast_injective
+  have hPne : P ≠ 0 := by
+    rintro rfl
+    have : C (D : ℚ) * G = 0 := by simpa using hP
+    rcases mul_eq_zero.mp this with h | h
+    · exact hD (by exact_mod_cast (Polynomial.C_eq_zero.mp h))
+    · exact hG h
+  refine twisted_finite hd hc (D := D) (H := P) ?_ hPne
+  apply Polynomial.map_injective _ hinj
+  simp only [Polynomial.map_mul, Polynomial.map_pow, Polynomial.map_C, hFG, ← hP]
+  simp only [eq_intCast, Int.cast_pow, mul_pow, ← C_pow]
+  ring
+
+end PerfectPower

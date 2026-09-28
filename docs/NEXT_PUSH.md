@@ -19,7 +19,7 @@
 
 ## Formal kernel
 
-1. Derive Theorem P over $\mathbb Q[x]$ from `twisted_hits_subset` by clearing denominators. Connect it to `integral_closure_step` for the density-one half.
+1. Done: Theorem P over $\mathbb Q[x]$ is `power_type_finite`, and Theorem R in integer form is `runge_finite`.
 2. Formalise the valuation characterisation of Theorem B: $c_1z^r$ is a $d$-th power iff $v_p(z)\equiv\tau_p \pmod t$ for all $p$, together with the sign condition. Mathlib's `padicValInt` and `Nat.factorization` suffice. The monomial count $A(N)=\lfloor N^{\gcd(r,d)/d}\rfloor$ for $n^r$ is done (`monomial_count`); the general case adds a twist $c$ and a rational root $\alpha$.
 3. Formalise the explicit thresholds of Theorem R: $a(x_0)$, $C(x_0)$, $T(x_0)$. A certificate from `runge.py`, consisting of $x_0$, the $G_t$, and their root lists, could then be checked by `decide`/`norm_num` inside Lean, closing the gap between the Python tool and the kernel.
 4. Keep Boshernitzan and LeVeque as named external boundaries. If a nonrigid statement is wanted formally, state it as a hypothesis-carrying theorem, `LeVeque → …`.

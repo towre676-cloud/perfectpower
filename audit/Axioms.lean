@@ -45,3 +45,4 @@ open PerfectPower
 #print axioms runge_pointwise
 #print axioms runge_uniform
 #print axioms runge_finite
+#print axioms power_type_finite
