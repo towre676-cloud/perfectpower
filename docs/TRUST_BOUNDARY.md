@@ -67,7 +67,11 @@ Every data row carries one label: `receipts/atlas_benchmarks.json`, `data/famili
 | `INDEPENDENT_COMPUTATION` | Our scan agrees with a certified external computation (Sage integral points; `receipts/cubic_crossval.json`). |
 | `LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS` | Lean proves the reduction to an elliptic curve, the congruence filtering, and that every surviving point is a hit (`PerfectPower/Binomial.lean`). Completeness of the curve's integral-point list is an explicit hypothesis, certified by Sage (`receipts/binomial_curves.json`: rank proved, basis saturated). |
 | `CONDITIONAL_ON_UNPROVEN_RANK` | A Sage integral-point list computed from generators whose rank mwrank could not prove. Complete only if the rank is right. Used in `data/mordell_census.csv`. |
+| `CONDITIONAL_ON_UNSATURATED_BASIS` | A Sage integral-point list whose generator basis Sage could not show saturated. Defined for `data/mordell_census.jsonl`; no row currently carries it. |
+| `SCAN_DISAGREEMENT` | Sage's list and our independent scan disagree for $|x|\le10^5$. Such a row is never certified. Defined for the census; no row currently carries it. |
 | `EXACT_WITHIN_BOUND` | An exhaustive enumeration, complete up to the stated bound and silent beyond it. Used in `data/pillai_gaps.csv`. |
 | `SCAN_EVIDENCE_ONLY` | Finiteness is conditional on Siegel (Theorem G). The listed hits are those with $n\le10^5$. **No completeness claim is made.** |
+
+**The census gate.** `make receipts` runs `crosscheck/mordell_census.py --from-jsonl`, which rebuilds the CSV and summary from `data/mordell_census.jsonl` and re-checks every row with plain Python. For each row it recomputes the SHA-256 of the $x$-list, checks exactly that each $x^3+k$ is a square, compares the stored scan with the listed points for $|x|\le10^5$, and recomputes the label from `rank_proved`, `saturation_index` and the scan comparison. A row whose scan cross-check fails cannot carry `INDEPENDENT_COMPUTATION`, and a JSONL that says otherwise fails the build. The scan itself is recomputed only by the Sage run (`make crosscheck`).
 
 The cubic cross-validation shows why the last label matters. Among the 622 curves $m^2=n^3+an+b$ with $|a|,|b|\le12$, a scan to $10^3$ would have missed hits on 18 curves, and a scan to $10^4$ on 4. The largest hit is $n=80327$, at $(a,b)=(-12,-10)$.

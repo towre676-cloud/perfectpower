@@ -9,7 +9,9 @@
   --grid:#34332f; --series-1:#3987e5; } }
 :root[data-theme="dark"] .viz-root { color-scheme: dark; --surface-1:#1a1a19; --text-primary:#ffffff;
   --text-secondary:#c3c2b7; --grid:#34332f; --series-1:#3987e5; }
-body { margin:0; }
+body { margin:0; background:#fcfcfb; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body { background:#1a1a19; } }
+:root[data-theme="dark"] body { background:#1a1a19; }
 .viz-root { background:var(--surface-1); color:var(--text-primary); font:14px/1.45 system-ui, sans-serif;
   padding:16px; max-width:900px; margin:0 auto; }
 .note { color:var(--text-secondary); }
@@ -27,44 +29,56 @@ table { border-collapse:collapse; margin-top:12px; }
 td, th { border-bottom:1px solid var(--grid); padding:4px 10px; text-align:right; }
 </style></head>
 <body><main class="viz-root">
-<h1>Integral points on y² = x³ + k, 0 &lt; |k| ≤ 50</h1>
+<h1>Integral points on y² = x³ + k, 0 &lt; |k| ≤ 10000</h1>
 <p class="note"><strong>Numerical evidence only.</strong> Counts are of integral points up to the sign
 of y, from Sage <code>integral_points</code> (rows with an unproven rank are included and flagged in
 the table; engine failures are excluded). Lang's conjecture predicts at most C<sup>1+rank</sup> points;
 the largest N<sup>1/(1+rank)</sup> observed here is 3.0
-(k = 1). Nothing here proves or refutes a uniform bound.</p>
+(k = 4096). Nothing here proves or refutes a uniform bound.</p>
 <div class="panels"><figure class="panel"><figcaption>Maximum number of integral points vs. Mordell–Weil rank</figcaption><svg viewBox="0 0 420 260" role="img" aria-label="Maximum number of integral points vs. Mordell–Weil rank">
 <line class="grid" x1="44" x2="376" y1="216.0" y2="216.0"/><text class="tick" x="38" y="220.0" text-anchor="end">0</text>
-<line class="grid" x1="44" x2="376" y1="173.0" y2="173.0"/><text class="tick" x="38" y="177.0" text-anchor="end">2</text>
-<line class="grid" x1="44" x2="376" y1="130.0" y2="130.0"/><text class="tick" x="38" y="134.0" text-anchor="end">4</text>
-<line class="grid" x1="44" x2="376" y1="87.0" y2="87.0"/><text class="tick" x="38" y="91.0" text-anchor="end">6</text>
-<line class="grid" x1="44" x2="376" y1="44.0" y2="44.0"/><text class="tick" x="38" y="48.0" text-anchor="end">8</text>
+<line class="grid" x1="44" x2="376" y1="173.0" y2="173.0"/><text class="tick" x="38" y="177.0" text-anchor="end">4</text>
+<line class="grid" x1="44" x2="376" y1="130.0" y2="130.0"/><text class="tick" x="38" y="134.0" text-anchor="end">8</text>
+<line class="grid" x1="44" x2="376" y1="87.0" y2="87.0"/><text class="tick" x="38" y="91.0" text-anchor="end">12</text>
+<line class="grid" x1="44" x2="376" y1="44.0" y2="44.0"/><text class="tick" x="38" y="48.0" text-anchor="end">16</text>
 <text class="tick" x="44.0" y="232" text-anchor="middle">0</text>
-<text class="tick" x="210.0" y="232" text-anchor="middle">1</text>
-<text class="tick" x="376.0" y="232" text-anchor="middle">2</text>
+<text class="tick" x="127.0" y="232" text-anchor="middle">1</text>
+<text class="tick" x="210.0" y="232" text-anchor="middle">2</text>
+<text class="tick" x="293.0" y="232" text-anchor="middle">3</text>
+<text class="tick" x="376.0" y="232" text-anchor="middle">4</text>
 <text class="axis" x="210.0" y="254" text-anchor="middle">rank</text>
-<polyline class="line" points="44.0,151.5 210.0,108.5 376.0,44.0"/>
-<g class="dot"><circle class="hit" cx="44.0" cy="151.5" r="10"/><circle class="mark" cx="44.0" cy="151.5" r="4.5"/><title>rank 0: max 3 points (k = 1), 40 curves</title></g>
-<g class="dot"><circle class="hit" cx="210.0" cy="108.5" r="10"/><circle class="mark" cx="210.0" cy="108.5" r="4.5"/><title>rank 1: max 5 points (k = 9), 51 curves</title></g>
-<g class="dot"><circle class="hit" cx="376.0" cy="44.0" r="10"/><circle class="mark" cx="376.0" cy="44.0" r="4.5"/><title>rank 2: max 8 points (k = 17), 9 curves</title></g>
+<polyline class="line" points="44.0,183.8 127.0,140.8 210.0,76.2 293.0,44.0 376.0,65.5"/>
+<g class="dot"><circle class="hit" cx="44.0" cy="183.8" r="10"/><circle class="mark" cx="44.0" cy="183.8" r="4.5"/><title>rank 0: max 3 points (k = 1), 6532 curves</title></g>
+<g class="dot"><circle class="hit" cx="127.0" cy="140.8" r="10"/><circle class="mark" cx="127.0" cy="140.8" r="4.5"/><title>rank 1: max 7 points (k = 6400), 9558 curves</title></g>
+<g class="dot"><circle class="hit" cx="210.0" cy="76.2" r="10"/><circle class="mark" cx="210.0" cy="76.2" r="4.5"/><title>rank 2: max 13 points (k = 225), 3414 curves</title></g>
+<g class="dot"><circle class="hit" cx="293.0" cy="44.0" r="10"/><circle class="mark" cx="293.0" cy="44.0" r="4.5"/><title>rank 3: max 16 points (k = 1025), 478 curves</title></g>
+<g class="dot"><circle class="hit" cx="376.0" cy="65.5" r="10"/><circle class="mark" cx="376.0" cy="65.5" r="4.5"/><title>rank 4: max 14 points (k = 2089), 18 curves</title></g>
 </svg></figure><figure class="panel"><figcaption>Maximum number of integral points vs. log10 |k| (half-decade bins)</figcaption><svg viewBox="0 0 420 260" role="img" aria-label="Maximum number of integral points vs. log10 |k| (half-decade bins)">
 <line class="grid" x1="44" x2="376" y1="216.0" y2="216.0"/><text class="tick" x="38" y="220.0" text-anchor="end">0</text>
-<line class="grid" x1="44" x2="376" y1="173.0" y2="173.0"/><text class="tick" x="38" y="177.0" text-anchor="end">2</text>
-<line class="grid" x1="44" x2="376" y1="130.0" y2="130.0"/><text class="tick" x="38" y="134.0" text-anchor="end">4</text>
-<line class="grid" x1="44" x2="376" y1="87.0" y2="87.0"/><text class="tick" x="38" y="91.0" text-anchor="end">6</text>
-<line class="grid" x1="44" x2="376" y1="44.0" y2="44.0"/><text class="tick" x="38" y="48.0" text-anchor="end">8</text>
+<line class="grid" x1="44" x2="376" y1="173.0" y2="173.0"/><text class="tick" x="38" y="177.0" text-anchor="end">4</text>
+<line class="grid" x1="44" x2="376" y1="130.0" y2="130.0"/><text class="tick" x="38" y="134.0" text-anchor="end">8</text>
+<line class="grid" x1="44" x2="376" y1="87.0" y2="87.0"/><text class="tick" x="38" y="91.0" text-anchor="end">12</text>
+<line class="grid" x1="44" x2="376" y1="44.0" y2="44.0"/><text class="tick" x="38" y="48.0" text-anchor="end">16</text>
 <text class="tick" x="44.0" y="232" text-anchor="middle">0</text>
-<text class="tick" x="154.7" y="232" text-anchor="middle">0.5</text>
-<text class="tick" x="265.3" y="232" text-anchor="middle">1</text>
-<text class="tick" x="376.0" y="232" text-anchor="middle">1.5</text>
+<text class="tick" x="91.4" y="232" text-anchor="middle">0.5</text>
+<text class="tick" x="138.9" y="232" text-anchor="middle">1</text>
+<text class="tick" x="186.3" y="232" text-anchor="middle">1.5</text>
+<text class="tick" x="233.7" y="232" text-anchor="middle">2</text>
+<text class="tick" x="281.1" y="232" text-anchor="middle">2.5</text>
+<text class="tick" x="328.6" y="232" text-anchor="middle">3</text>
+<text class="tick" x="376.0" y="232" text-anchor="middle">3.5</text>
 <text class="axis" x="210.0" y="254" text-anchor="middle">log10 |k|</text>
-<polyline class="line" points="44.0,151.5 154.7,108.5 265.3,44.0 376.0,130.0"/>
-<g class="dot"><circle class="hit" cx="44.0" cy="151.5" r="10"/><circle class="mark" cx="44.0" cy="151.5" r="4.5"/><title>log10|k| in [0.0, 0.5): max 3, 6 curves</title></g>
-<g class="dot"><circle class="hit" cx="154.7" cy="108.5" r="10"/><circle class="mark" cx="154.7" cy="108.5" r="4.5"/><title>log10|k| in [0.5, 1.0): max 5, 12 curves</title></g>
-<g class="dot"><circle class="hit" cx="265.3" cy="44.0" r="10"/><circle class="mark" cx="265.3" cy="44.0" r="4.5"/><title>log10|k| in [1.0, 1.5): max 8, 44 curves</title></g>
-<g class="dot"><circle class="hit" cx="376.0" cy="130.0" r="10"/><circle class="mark" cx="376.0" cy="130.0" r="4.5"/><title>log10|k| in [1.5, 2.0): max 4, 38 curves</title></g>
+<polyline class="line" points="44.0,183.8 91.4,162.2 138.9,130.0 186.3,151.5 233.7,76.2 281.1,119.2 328.6,44.0 376.0,87.0"/>
+<g class="dot"><circle class="hit" cx="44.0" cy="183.8" r="10"/><circle class="mark" cx="44.0" cy="183.8" r="4.5"/><title>log10|k| in [0.0, 0.5): max 3, 6 curves</title></g>
+<g class="dot"><circle class="hit" cx="91.4" cy="162.2" r="10"/><circle class="mark" cx="91.4" cy="162.2" r="4.5"/><title>log10|k| in [0.5, 1.0): max 5, 12 curves</title></g>
+<g class="dot"><circle class="hit" cx="138.9" cy="130.0" r="10"/><circle class="mark" cx="138.9" cy="130.0" r="4.5"/><title>log10|k| in [1.0, 1.5): max 8, 44 curves</title></g>
+<g class="dot"><circle class="hit" cx="186.3" cy="151.5" r="10"/><circle class="mark" cx="186.3" cy="151.5" r="4.5"/><title>log10|k| in [1.5, 2.0): max 6, 136 curves</title></g>
+<g class="dot"><circle class="hit" cx="233.7" cy="76.2" r="10"/><circle class="mark" cx="233.7" cy="76.2" r="4.5"/><title>log10|k| in [2.0, 2.5): max 13, 434 curves</title></g>
+<g class="dot"><circle class="hit" cx="281.1" cy="119.2" r="10"/><circle class="mark" cx="281.1" cy="119.2" r="4.5"/><title>log10|k| in [2.5, 3.0): max 9, 1366 curves</title></g>
+<g class="dot"><circle class="hit" cx="328.6" cy="44.0" r="10"/><circle class="mark" cx="328.6" cy="44.0" r="4.5"/><title>log10|k| in [3.0, 3.5): max 16, 4326 curves</title></g>
+<g class="dot"><circle class="hit" cx="376.0" cy="87.0" r="10"/><circle class="mark" cx="376.0" cy="87.0" r="4.5"/><title>log10|k| in [3.5, 4.0]: max 12, 13676 curves</title></g>
 </svg></figure></div>
 <table><thead><tr><th>rank</th><th>curves</th><th>median points</th><th>max points</th><th>k at max</th></tr></thead>
-<tbody><tr><td>0</td><td>40</td><td>0</td><td>3</td><td>1</td></tr><tr><td>1</td><td>51</td><td>1</td><td>5</td><td>9</td></tr><tr><td>2</td><td>9</td><td>3</td><td>8</td><td>17</td></tr></tbody></table>
+<tbody><tr><td>0</td><td>6532</td><td>0</td><td>3</td><td>1</td></tr><tr><td>1</td><td>9558</td><td>0</td><td>7</td><td>6400</td></tr><tr><td>2</td><td>3414</td><td>1</td><td>13</td><td>225</td></tr><tr><td>3</td><td>478</td><td>2</td><td>16</td><td>1025</td></tr><tr><td>4</td><td>18</td><td>6</td><td>14</td><td>2089</td></tr></tbody></table>
 <p class="note">Source: data/mordell_census.csv; regenerate with <code>python3 python/uniformity.py</code>.</p>
 </main></body></html>

@@ -19,7 +19,9 @@ Labels (docs/TRUST_BOUNDARY.md):
 Completeness is Sage's claim, not Lean's; Generated/MordellPoints.lean checks only that listed
 points lie on their curves.
 
-Also writes data/mordell_census.csv (flat view) and receipts/mordell_census_summary.json.
+Also writes data/mordell_census.csv (flat view, including the engine column) and
+receipts/mordell_census_summary.json; `python3 crosscheck/mordell_census.py --from-jsonl` rebuilds
+both from the JSONL without Sage (run by `make receipts`).
 """
 import csv
 import hashlib
@@ -123,30 +125,39 @@ def hall(x, k):
     return isqrt(abs(x) * 10 ** 12) / 10 ** 6 / abs(k)
 
 
-def main():
-    K = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
-    workers = int(sys.argv[2]) if len(sys.argv) > 2 else 4
-    ks = [k for k in range(-K, K + 1) if k != 0]
-    t0 = time.time()
-    with Pool(workers, initializer=_setup, maxtasksperchild=200) as pool:
-        rows = sorted(pool.imap_unordered(one, ks, chunksize=8), key=lambda r: r['k'])
-    root = Path(__file__).resolve().parents[1]
-    (root / 'data').mkdir(exist_ok=True)
-    with open(root / 'data' / 'mordell_census.jsonl', 'w') as fh:
-        for r in rows:
-            fh.write(json.dumps(r, separators=(',', ':')) + '\n')
+def check_row(r):
+    """Gate for the committed JSONL: hash, exact point check, and the label rule."""
+    xs, k = r['x_coordinates'], r['k']
+    assert r['x_hash'] == xs_hash(xs), ('hash', k)
+    for x in xs:
+        v = x ** 3 + k
+        assert v >= 0 and isqrt(v) ** 2 == v, ('point', k, x)
+    if r['certification'] == 'SCAN_EVIDENCE_ONLY':
+        return
+    scan = [x for x in xs if abs(x) <= SCAN]
+    agrees = scan == r['scan_x_abs_le_1e5']
+    assert agrees == r['scan_agrees'], ('scan flag', k)
+    expected = ('SCAN_DISAGREEMENT' if not agrees else
+                'CONDITIONAL_ON_UNPROVEN_RANK' if not r['rank_proved'] else
+                'CONDITIONAL_ON_UNSATURATED_BASIS' if r['saturation_index'] != 1 else
+                'INDEPENDENT_COMPUTATION')
+    assert r['certification'] == expected, ('label', k, r['certification'], expected)
+
+
+def write_outputs(rows, K, root):
+    """Flat CSV and summary, derived from the per-curve rows (the JSONL is the primary record)."""
     with open(root / 'data' / 'mordell_census.csv', 'w', newline='') as fh:
         w = csv.writer(fh, lineterminator='\n')
-        w.writerow(['k', 'rank', 'rank_method', 'saturation_index', 'torsion', 'n_points_up_to_sign',
-                    'x_coordinates', 'x_sha256', 'max_x', 'max_hall_ratio', 'scan_agrees_up_to_1e5',
-                    'certification'])
+        w.writerow(['k', 'rank', 'rank_method', 'rank_proved', 'saturation_index', 'torsion',
+                    'n_points_up_to_sign', 'x_coordinates', 'x_sha256', 'max_x', 'max_hall_ratio',
+                    'scan_agrees_up_to_1e5', 'certification', 'engine'])
         for r in rows:
             xs = r['x_coordinates']
             hr = max((hall(x, r['k']) for x in xs if x > 0), default=None)
-            w.writerow([r['k'], r.get('rank', ''), r.get('rank_method', ''), r.get('saturation_index', ''),
-                        r.get('torsion', ''), len(xs), ' '.join(map(str, xs)), r['x_hash'],
-                        max(xs, default=''), f'{hr:.6f}' if hr is not None else '',
-                        r.get('scan_agrees', ''), r['certification']])
+            w.writerow([r['k'], r.get('rank', ''), r.get('rank_method', ''), r.get('rank_proved', ''),
+                        r.get('saturation_index', ''), r.get('torsion', ''), len(xs), ' '.join(map(str, xs)),
+                        r['x_hash'], max(xs, default=''), f'{hr:.6f}' if hr is not None else '',
+                        r.get('scan_agrees', ''), r['certification'], r.get('engine', '')])
     records = sorted(((hall(x, r['k']), r['k'], x) for r in rows for x in r['x_coordinates'] if x > 0),
                      reverse=True)[:25]
     labels = {}
@@ -166,6 +177,30 @@ def main():
                   'unproved rank; Lean checks only that listed points lie on their curves',
     }
     (root / 'receipts' / 'mordell_census_summary.json').write_text(json.dumps(summary, indent=1) + '\n')
+    return summary
+
+
+def main():
+    root = Path(__file__).resolve().parents[1]
+    if sys.argv[1:2] == ['--from-jsonl']:
+        # rebuild the CSV and summary from the committed JSONL (plain Python, no Sage needed)
+        rows = [json.loads(line) for line in open(root / 'data' / 'mordell_census.jsonl')]
+        for r in rows:
+            check_row(r)
+        summary = write_outputs(rows, max(abs(r['k']) for r in rows), root)
+        print(json.dumps({k: v for k, v in summary.items() if k != 'top_hall_ratios'}, indent=1))
+        return
+    K = int(sys.argv[1]) if len(sys.argv) > 1 else 1000
+    workers = int(sys.argv[2]) if len(sys.argv) > 2 else 4
+    ks = [k for k in range(-K, K + 1) if k != 0]
+    t0 = time.time()
+    with Pool(workers, initializer=_setup, maxtasksperchild=200) as pool:
+        rows = sorted(pool.imap_unordered(one, ks, chunksize=8), key=lambda r: r['k'])
+    (root / 'data').mkdir(exist_ok=True)
+    with open(root / 'data' / 'mordell_census.jsonl', 'w') as fh:
+        for r in rows:
+            fh.write(json.dumps(r, separators=(',', ':')) + '\n')
+    summary = write_outputs(rows, K, root)
     print(json.dumps({k: v for k, v in summary.items() if k != 'top_hall_ratios'}, indent=1))
     print('top:', summary['top_hall_ratios'][:5], f'{time.time() - t0:.0f}s')
 

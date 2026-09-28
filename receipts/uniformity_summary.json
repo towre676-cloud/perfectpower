@@ -1,11 +1,11 @@
 {
  "label": "NUMERICAL EVIDENCE - proves nothing about Lang, Hindry-Silverman or uniform bounds",
- "curves_used": 100,
+ "curves_used": 20000,
  "curves_excluded_scan_only": 0,
  "by_rank": [
   {
    "rank": 0,
-   "curves": 40,
+   "curves": 6532,
    "max_points": 3,
    "median_points": 0,
    "k_attaining_max": 1,
@@ -13,18 +13,34 @@
   },
   {
    "rank": 1,
-   "curves": 51,
-   "max_points": 5,
-   "median_points": 1,
-   "k_attaining_max": 9,
-   "conditional_rows": 0
+   "curves": 9558,
+   "max_points": 7,
+   "median_points": 0,
+   "k_attaining_max": 6400,
+   "conditional_rows": 483
   },
   {
    "rank": 2,
-   "curves": 9,
-   "max_points": 8,
-   "median_points": 3,
-   "k_attaining_max": 17,
+   "curves": 3414,
+   "max_points": 13,
+   "median_points": 1,
+   "k_attaining_max": 225,
+   "conditional_rows": 2
+  },
+  {
+   "rank": 3,
+   "curves": 478,
+   "max_points": 16,
+   "median_points": 2,
+   "k_attaining_max": 1025,
+   "conditional_rows": 0
+  },
+  {
+   "rank": 4,
+   "curves": 18,
+   "max_points": 14,
+   "median_points": 6,
+   "k_attaining_max": 2089,
    "conditional_rows": 0
   }
  ],
@@ -46,12 +62,32 @@
   },
   {
    "log10_k_bin_start": 1.5,
-   "curves": 38,
-   "max_points": 4
+   "curves": 136,
+   "max_points": 6
+  },
+  {
+   "log10_k_bin_start": 2.0,
+   "curves": 434,
+   "max_points": 13
+  },
+  {
+   "log10_k_bin_start": 2.5,
+   "curves": 1366,
+   "max_points": 9
+  },
+  {
+   "log10_k_bin_start": 3.0,
+   "curves": 4326,
+   "max_points": 16
+  },
+  {
+   "log10_k_bin_start": 3.5,
+   "curves": 13676,
+   "max_points": 12
   }
  ],
  "empirical_lang_constant": {
   "max_N^(1/(1+rank))": 3.0,
-  "k": 1
+  "k": 4096
  }
 }

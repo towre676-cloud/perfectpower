@@ -32,8 +32,10 @@ for rk in sorted(by_rank):
         'conditional_rows': sum(1 for r in rs if r['certification'] not in ('INDEPENDENT_COMPUTATION', 'certified_by_independent_computation')),
     })
 bins = defaultdict(list)
+K_MAX = max(abs(int(r['k'])) for r in rows)
 for r in use:
-    b = int(math.floor(math.log10(abs(int(r['k'])) ) * 2)) / 2      # half-decade bins
+    # half-decade bins; |k| = 10^K (the single endpoint) is folded into the last full bin
+    b = min(math.floor(math.log10(K_MAX) * 2) / 2 - 0.5, math.floor(math.log10(abs(int(r['k']))) * 2) / 2)
     bins[b].append(int(r['n_points_up_to_sign']))
 bin_stats = [{'log10_k_bin_start': b, 'curves': len(v), 'max_points': max(v)} for b, v in sorted(bins.items())]
 lang_C = max((int(r['n_points_up_to_sign']) ** (1 / (1 + int(r['rank']))), int(r['k']))
@@ -81,7 +83,7 @@ p1 = panel('Maximum number of integral points vs. Mordell–Weil rank',
            list(range(0, max(s['rank'] for s in rank_stats) + 1)))
 p2 = panel('Maximum number of integral points vs. log10 |k| (half-decade bins)',
            [b['log10_k_bin_start'] for b in bin_stats], [b['max_points'] for b in bin_stats], 'log10 |k|',
-           [f"log10|k| in [{b['log10_k_bin_start']}, {b['log10_k_bin_start'] + 0.5}): max {b['max_points']}, "
+           [f"log10|k| in [{b['log10_k_bin_start']}, {b['log10_k_bin_start'] + 0.5}{']' if b is bin_stats[-1] else ')'}: max {b['max_points']}, "
             f"{b['curves']} curves" for b in bin_stats],
            [b['log10_k_bin_start'] for b in bin_stats])
 table = ''.join(f"<tr><td>{s['rank']}</td><td>{s['curves']}</td><td>{s['median_points']}</td>"
@@ -98,7 +100,9 @@ html = f'''<!doctype html>
   --grid:#34332f; --series-1:#3987e5; }} }}
 :root[data-theme="dark"] .viz-root {{ color-scheme: dark; --surface-1:#1a1a19; --text-primary:#ffffff;
   --text-secondary:#c3c2b7; --grid:#34332f; --series-1:#3987e5; }}
-body {{ margin:0; }}
+body {{ margin:0; background:#fcfcfb; }}
+@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) body {{ background:#1a1a19; }} }}
+:root[data-theme="dark"] body {{ background:#1a1a19; }}
 .viz-root {{ background:var(--surface-1); color:var(--text-primary); font:14px/1.45 system-ui, sans-serif;
   padding:16px; max-width:900px; margin:0 auto; }}
 .note {{ color:var(--text-secondary); }}

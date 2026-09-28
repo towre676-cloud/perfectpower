@@ -25,6 +25,16 @@
 
 **Transforms.** Their asymptotics are proved for every type.
 
+## Done after 0.6
+
+- **Provenance gate.** The axiom audit covers all 80 declarations it lists. The Mordell census has a per-curve JSONL record (curve, engine and version, rank method and proof status, generators, saturation index, $x$-list and hash, scan), and the CSV names the engine. `make receipts` re-checks every row and its label (`TRUST_BOUNDARY.md` §4).
+- **Theorem G** replaces the LeVeque dependency with a Riemann–Hurwitz computation plus Siegel's theorem.
+- **Binomial rows.** $\binom n2=m^3$ holds only for $n\in\{1,2\}$, and $\binom n3=m^2$ only for $n\in\{1,2,3,4,50\}$. Lean proves both reductions and hit lists; the integral points of the two curves are a Sage-certified hypothesis.
+- **Theorem B valuation core** in Lean (`RadicalValuation.lean`).
+- **Theorem T2.** The heat transform of a Pell-type family has a log-periodic second-order term (`receipts/pell_heat.json`, residuals $\le 10^{-11}$ at $\tau=10^{-12}$).
+
+**Next:** the Pell interfaces in Lean (norm equation, period, orbit constant), the Theorem B counting constant, then the Bilu–Tichy atlas.
+
 ## Order of work after 0.6 (recommended)
 
 The centre of gravity moves from proving more theorems to closing the gap between *scan evidence* and *certified statement*.
@@ -34,7 +44,7 @@ The centre of gravity moves from proving more theorems to closing the gap betwee
    - Cubic cross-validation against Sage: 622/622.
    - Epistemic labels on every data row.
    - `make verify`, trust boundary and licences.
-2. **Read LeVeque (1964) in the primary source.** Check the exceptional patterns and the ring of solutions (`TRUST_BOUNDARY.md` §3). Until then the atlas is proved *conditionally on the quoted statement*.
+2. ~~Read LeVeque (1964) in the primary source.~~ Superseded by Theorem G, which derives the finite type from Siegel's theorem directly (`TRUST_BOUNDARY.md` §3).
 3. **Literature pass.** Cover Bilu–Tichy, Schinzel–Tijdeman, Walsh, Beukers–Tengely and existing formalisations. Write the result into `RELATED_WORK.md` before any announcement or priority claim.
 4. **Extend certification of the finite type.**
    - Cover general Weierstrass models (e.g. $\binom n3$) in `crosscheck/`.

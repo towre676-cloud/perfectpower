@@ -26,6 +26,7 @@ receipts:
 	$(PY) python/make_lean_certificates.py
 	$(PY) python/adversarial_runge.py 300
 	$(PY) python/pillai_census.py 18 1000
+	$(PY) crosscheck/mordell_census.py --from-jsonl
 	$(PY) python/make_lean_census.py
 	$(PY) python/uniformity.py
 	$(PY) python/make_pell_heat_receipt.py
