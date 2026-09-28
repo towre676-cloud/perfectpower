@@ -14,6 +14,7 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 | Rigid-branch 0–1 law | `LEAN_VERIFIED` (`rigid_zero_one`) | §6 |
 | Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) | §7 |
 | Theorem T (transforms) | `PAPER_PROOF` | §8 |
+| Theorem E (exponential sequences) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check | §9, `exponential.py` |
 
 ## 1. Summary
 
@@ -236,7 +237,33 @@ The receipt `heat_kernel_checks_theorem_T` evaluates $K_X(\tau)$ from exact stru
 
 This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\beta$ imply" in the polynomial case, where only $(\alpha,\beta)\in\{(1,0),(1/t,0),(0,1),(0,0)\}$ occur.
 
-## 9. What remains open
+## 9. Exponential sequences: a dual spectrum
+
+For polynomials, the *exponents* $1/t$ with $t\mid d$ are discrete and the density is $0$ or $1$. For pure exponentials the roles swap: the density itself takes the discrete values $1/L$ with $L\mid d$.
+
+**Theorem E.** Let $a\ge2$, $c\ne0$, $d\ge2$, and write $a=b^s$ with $s$ maximal. The set of $n\ge1$ for which $c\,a^n$ is a $d$-th power is either empty or a full residue class $n\equiv n_0\pmod L$ with $L=d/\gcd(d,s)$. So the hit density exists and equals $0$ or $\gcd(d,s)/d$.
+
+*Proof.* For $d$ even and $c<0$ there are no hits. Otherwise $c\,a^n$ is a $d$-th power if and only if $v_p(c)+n\,v_p(a)\equiv0\pmod d$ for every prime $p$.
+
+- For $p\nmid a$ this is a solvability condition, $d\mid v_p(c)$.
+- For $p\mid a$ it is solvable if and only if $\gcd(d,v_p(a))\mid v_p(c)$, and then it pins $n$ down modulo $d/\gcd(d,v_p(a))$.
+
+All these moduli divide $d$, so the intersection is empty or a single class modulo their lcm. That lcm is $d/\gcd(d,\gcd_p v_p(a))=d/\gcd(d,s)$. $\square$
+
+*Examples* (receipt `exponential_theorem_E`, each cross-checked by a scan to $n\le120$):
+
+- $2^n$ is a square for $n$ even, density $1/2$;
+- $5\cdot5^n$ is a fifth power for $n\equiv4\pmod5$, density $1/5$;
+- $36^n$ is a fourth power for $n$ even;
+- $12\cdot18^n$ is never a sixth power.
+
+`perfectpower/exponential.py` computes $(n_0,L)$.
+
+**Shifted exponentials.** For $k\neq0$, $c\,a^n+k=m^d$ has only finitely many solutions (`THEOREM_EXTERNAL_DEPENDENCY`). Write $n=dq+r$ and $X=a^q$. The equation becomes $Y^d-c\,a^rX^d=k$. For $d\ge3$ this is a Thue equation, or it factors. For $d=2$ it is Pell-type, and the $X$-coordinates of a Pell class form a binary recurrence that meets the powers of $a$ only finitely often (S-unit theorem). So the shift destroys the positive density completely.
+
+The receipt `shifted_exponential_scans` lists all hits with $n\le400$ for $a\in\{2,3\}$, $|k|\le9$ and $d\in\{2,3\}$. These lists are `EXACT_COMPUTATION` only. Among them is Ramanujan–Nagell, $2^n-7=m^2$ only for $n=3,4,5,7,15$ (proved by Nagell in 1948), which the scan reproduces.
+
+## 10. What remains open
 
 1. **Effective enumeration in the finite type outside the Runge branch.** Examples are $n^3+k=m^2$ (Mordell curves) and $n^3+n+4=m^2$, whose scan finds the isolated hit $n=4128$. Brindza's bounds are effective but impractical. Elliptic-logarithm methods, as in Magma or Sage, solve genus-one cases. A general superelliptic implementation needs Baker–Davenport reduction. Until then these hit lists are `EXACT_COMPUTATION` over a range, not complete.
 2. **Formalisation of Theorems B, C, R in Lean.** Theorem B needs $p$-adic valuations of $c_1z^r$, which are available in Mathlib. Theorem R needs the explicit threshold inequalities; its analytic core is already compiled. LeVeque's theorem itself is far beyond current formal libraries and should remain an external boundary.

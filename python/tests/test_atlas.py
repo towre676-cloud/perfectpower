@@ -278,6 +278,22 @@ class TestSchaffer(unittest.TestCase):
         self.assertEqual(structural_hits([1, 0, 0, 0, 1], 6, 10 ** 6), [])
 
 
+class TestExponential(unittest.TestCase):
+    def test_theorem_E_against_scan(self):
+        from perfectpower.core import integer_power_root
+        from perfectpower.exponential import exponential_density, exponential_hits
+        rng = random.Random(4)
+        for _ in range(1500):
+            a = rng.randrange(2, 40)
+            c = rng.choice([1, -1, 2, -8, 12, 27, -27, 32, 64, 72, 1000, -243, 5, 343])
+            d = rng.randrange(2, 9)
+            scan = [n for n in range(1, 70) if integer_power_root(c * a ** n, d) is not None]
+            self.assertEqual(exponential_hits(c, a, d, 69), scan, (c, a, d))
+        self.assertEqual(exponential_density(1, 2, 2), Fraction(1, 2))
+        self.assertEqual(exponential_density(1, 36, 4), Fraction(1, 2))
+        self.assertEqual(exponential_density(1, 8, 6), Fraction(1, 2))   # 8 = 2^3, gcd(6,3) = 3
+
+
 class TestLeanEmitter(unittest.TestCase):
     def test_plans_and_hits(self):
         from perfectpower.lean_emit import emit, plan

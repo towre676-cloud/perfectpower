@@ -152,11 +152,39 @@ for kk in range(1, 11):
 infinite_pairs = [(e['k'], e['d']) for e in schaffer if e['growth'] != 'bounded']
 assert infinite_pairs == [(1, 2), (3, 2), (3, 4), (5, 2)], infinite_pairs
 
+# Theorem E: c a^n is a d-th power exactly on a progression n = n0 (mod L), L | d.
+from perfectpower.exponential import exponential_progression
+from perfectpower.core import integer_power_root as _ipr
+exponential = []
+for c, a, d in ((1, 2, 2), (1, 2, 3), (1, 4, 2), (1, 8, 6), (2, 2, 2), (2, 8, 6), (1, 12, 2),
+                (3, 12, 2), (-1, 2, 3), (-1, 2, 2), (5, 5, 5), (72, 6, 3), (12, 18, 6), (1, 36, 4)):
+    prog = exponential_progression(c, a, d)
+    brute = [n for n in range(1, 121) if _ipr(c * a ** n, d) is not None]
+    if (prog is None and brute) or (prog is not None and brute != list(range(prog[0], 121, prog[1]))):
+        raise AssertionError(f'Theorem E mismatch for {(c, a, d)}')
+    exponential.append({'c': c, 'a': a, 'd': d,
+                        'progression': None if prog is None else {'n0': prog[0], 'L': prog[1]},
+                        'density': '0' if prog is None else f'1/{prog[1]}',
+                        'scan_agrees_up_to': 120})
+# Shifted exponentials 2^n + k, 3^n + k: finitely many hits (Thue / S-unit theorem);
+# the lists below are EXACT_COMPUTATION for n <= 400 only.
+shifted = []
+for a in (2, 3):
+    for k in range(-9, 10):
+        if k == 0:
+            continue
+        for d in (2, 3):
+            hits = [n for n in range(1, 401) if _ipr(a ** n + k, d) is not None]
+            if hits:
+                shifted.append({'a': a, 'k': k, 'd': d, 'hits_n_le_400': hits})
+
 result = {'status': 'exact computations; structural counts cross-checked against the defining '
                     'scan up to 1e5; complete hit lists are proofs relative to Theorems P, B, C, R',
           'generator': 'python3 python/make_atlas_receipts.py',
           'definition': 'count n in [1,N] with F(n)=m**d for an integer m',
           'grunwald_wang_check': grunwald,
+          'exponential_theorem_E': exponential,
+          'shifted_exponential_scans': shifted,
           'schaffer_sums_of_powers': {'infinite_pairs': infinite_pairs, 'table': schaffer},
           'heat_kernel_checks_theorem_T': transform_checks,
           'rows': rows}

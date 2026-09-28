@@ -24,6 +24,7 @@
 | **Complete Runge enumeration** (new): in the rigid branch the entire hit set is computed, not just a cutoff. | Paper proof; the reduction to finitely many $G_t$ is Lean-verified (`runge_finite`); exact implementation. |
 | **Sums of powers** (new): the atlas recovers Schäffer's list $(k,d)\in\{(1,2),(3,2),(3,4),(5,2)\}$ of infinite families $1^k+\dots+n^k=m^d$, with constants (e.g. $\kappa=1/\log(5+2\sqrt6)$ for $k=5$). | Corollary of the atlas; receipt-checked. |
 | **Shift spectrum** (new): for $\deg S\ge3$, $S(n)+k$ has finitely many hits except at the $\le\deg S-1$ critical values $k$. | Corollary of the atlas. |
+| **Exponential sequences** (new): $c\,a^n$ is a $d$-th power exactly on one residue class modulo $L=d/\gcd(d,s)$ ($a=b^s$), so the density is $0$ or $1/L$; shifts $c\,a^n+k$ have finitely many hits. | Paper proof; the shifted case uses Thue and S-unit theorems. |
 | **Transform asymptotics** (new): Dirichlet poles and heat asymptotics for every type. | Paper proof ([notes](docs/RESEARCH_NOTES.md) §8). |
 
 Reading order:

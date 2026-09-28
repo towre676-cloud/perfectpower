@@ -227,6 +227,18 @@ Use Abel summation, $Z_X(s)=s\int_1^\infty A(x)x^{-s-1}\,dx$ and $K_X(\tau)=\tau
 
 By Theorem~\ref{thm:radical} and Lemma~\ref{lem:quad} these hypotheses hold exactly in the radical and Pell types. When $\alpha=0$ in the radical type, one gets $Z_X(s)=z_0^{-s}\zeta(ts)$ plus a Dirichlet polynomial.
 
+\section{Exponential sequences}\label{sec:exp}
+
+\begin{theorem}\label{thm:exp}
+Let $a\ge2$, $c\ne0$, $d\ge2$, and write $a=b^s$ with $s$ maximal. The integers $n\ge1$ for which $c\,a^n$ is a $d$-th power form either the empty set or one residue class modulo $L=d/\gcd(d,s)$. Hence the density is $0$ or $\gcd(d,s)/d$.
+\end{theorem}
+
+\begin{proof}
+For $d$ even and $c<0$ there are no hits. Otherwise the condition is $v_p(c)+n\,v_p(a)\equiv0\pmod d$ for all primes $p$. Each such congruence is either a solvability condition (when $p\nmid a$) or it fixes $n$ modulo $d/\gcd(d,v_p(a))$. The least common multiple of these moduli is $d/\gcd(d,s)$.
+\end{proof}
+
+Thus the polynomial and exponential cases have dual discrete spectra: exponents $1/t$ for polynomials and densities $1/L$ for exponentials, with $t,L\mid d$. For a nonzero shift $k$, $c\,a^n+k=m^d$ has finitely many solutions, by Thue's theorem for $d\ge3$ and by the $S$-unit theorem for $d=2$. An example is Ramanujan--Nagell, $2^n-7=m^2$ only for $n=3,4,5,7,15$.
+
 \section{Formal verification and computation}\label{sec:formal}
 
 The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20.0}). An audit script checks that $56$ theorems depend only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. Among them:
