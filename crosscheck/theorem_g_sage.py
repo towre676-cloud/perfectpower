@@ -10,7 +10,9 @@ twists by roots of unity and have the same invariants).
   * places at infinity: Sage's function field (integral closure), the geometric count being the
     sum of the degrees of the poles of x (the component is absolutely irreducible, so the constant
     field is Q).  This is slow for large covers, so it runs under a per-case alarm (NINF_SECONDS)
-    and is recorded as null when it times out.
+    and is recorded as null when it times out.  An interrupted Singular computation can leave
+    the process in a corrupted state (observed: wrong genera after an alarm), so every case runs in
+    a fresh worker process (maxtasksperchild=1).
 
 Theorem G predicts n_inf = gcd(d', deg F / g) and chi = 2 - 2 g_C - n_inf = d' (1 - S),
 S = sum (1 - 1/t_i), t_i = d / gcd(d, r_i), i.e. g_C = (2 - n_inf - d'(1 - S)) / 2.  We compare
@@ -125,8 +127,8 @@ def main():
     root = Path(__file__).resolve().parents[1]
     progress = root / 'receipts' / 'theorem_g_check.partial.jsonl'
     rows = []
-    with Pool(workers, initializer=_setup, maxtasksperchild=40) as pool, open(progress, 'w') as fh:
-        for row in pool.imap_unordered(one, items, chunksize=2):
+    with Pool(workers, initializer=_setup, maxtasksperchild=1) as pool, open(progress, 'w') as fh:
+        for row in pool.imap_unordered(one, items, chunksize=1):
             rows.append(row)
             fh.write(json.dumps(row) + '\n')
             fh.flush()
