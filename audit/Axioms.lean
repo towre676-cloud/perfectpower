@@ -28,3 +28,8 @@ open PerfectPower
 #print axioms monomial_isHit_iff
 #print axioms monomial_hitSet
 #print axioms monomial_count
+-- Examples
+#print axioms consecutive_four_not_square
+#print axioms consecutive_four_hitSet
+#print axioms ljunggren_quartic
+#print axioms ljunggren_hitSet

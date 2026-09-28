@@ -145,6 +145,10 @@ The list can be reproduced by `python -m perfectpower enumerate`. It has been cr
 
 **Corollary R′ (divisor trick).** If $F$ is rigid with respect to some divisor $d'\ge2$ of $d$, then the hit set of $(F,d)$ is effectively computable, because every $d$-th power is a $d'$-th power. For example, $n^4+1$ with $d=6$ is handled through $d'=2$.
 
+**Remark (Runge's criterion).** For the curve $y^d=F(x)$ with $\deg F=M$ and $g=\gcd(d,M)$, the places at infinity correspond to the roots of $X^g=\operatorname{lc}F$. Runge's method applies when these places split into at least two Galois orbits, that is, when $X^g-\operatorname{lc}F$ is reducible over $\mathbb Q$. By Capelli's theorem this happens exactly when $\operatorname{lc}F$ is a $p$-th power for some prime $p\mid g$, or when $4\mid g$ and $\operatorname{lc}F\in-4\mathbb Q^{4}$.
+
+The first case is precisely Corollary R′ with $d'=p$. In the second case $d$ is even and $\operatorname{lc}F<0$, so $F(n)<0$ for large $n$ and there are trivially finitely many hits, found by a scan up to the last sign change. So the effective class of `runge.py` together with this trivial case covers every superelliptic equation to which the leading-term form of Runge's criterion applies. (This bookkeeping is a remark, not an independent proof of Runge's theorem.)
+
 **Named consequences** (`receipts/atlas_benchmarks.json`), each a complete proof relative to Theorem R and exact arithmetic:
 
 - $1+n+n^2+n^3+n^4$ is a square for $n\ge1$ only at $n=3$, where it equals $121$. This is Ljunggren's classical result, recovered with one polynomial solve; v0.5 cutoff $48$.
@@ -161,7 +165,7 @@ The list can be reproduced by `python -m perfectpower enumerate`. It has been cr
   The largest v0.5 cutoff among them was $3.87\cdot10^{10}$ ($k=12$, $d=4$).
 - $n^4+1$ is never a square or a sixth power.
 
-**Formal status.** The analytic core — eventually $|y-Q(n)|<1/(2D)$ with $y\neq Q(n)$ — is the compiled Lean theorem `eventually_no_hit`. The formal 0–1 law `rigid_zero_one` states that on the rigid branch the hit density exists and equals $1$ if $F=G^d$ with $G \in \mathbb Z[X]$, and $0$ with a finite hit set otherwise. The explicit thresholds $x_0$, $T(x_0)$ are not yet formalised.
+**Formal status.** The two smallest named cases are compiled Lean theorems: `ljunggren_hitSet` (the hit set is exactly $\{3\}$) and `consecutive_four_hitSet` (empty). Each traps $2m$ or $m$ between consecutive integers, which is Theorem R with an explicit $t$-range. The analytic core — eventually $|y-Q(n)|<1/(2D)$ with $y\neq Q(n)$ — is the compiled Lean theorem `eventually_no_hit`. The formal 0–1 law `rigid_zero_one` states that on the rigid branch the hit density exists and equals $1$ if $F=G^d$ with $G \in \mathbb Z[X]$, and $0$ with a finite hit set otherwise. The explicit thresholds $x_0$, $T(x_0)$ are not yet formalised.
 
 ## 7. The shift spectrum
 
@@ -176,6 +180,8 @@ The monograph studies $S(n)+k$ for a fixed sequence $S$ and a variable shift $k$
 In particular, if $M\ge3$, then *for all but at most $M-1$ shifts $k$ the hit set of $S(n)+k$ is finite*, and polynomial or logarithmic growth can occur only at critical values. At most one $k$ makes $S+k$ an integer-polynomial $d$-th power. The reason is that $G_1^d-G_2^d$ is a nonzero constant only if both $G_1$ and $G_2$ are constant.
 
 *Examples.* For $S=n^3$ and $d=2$, $\mathcal K=\{0\}$: the Mordell curves $m^2=n^3+k$ have finitely many integral points for each $k\ne0$ (Siegel), while $k=0$ gives $\sqrt N$ hits. For $S=n^3-3n$ and $d=2$, $\mathcal K=\{\pm2\}$, and $n^3-3n+2=(n-1)^2(n+2)$ is of radical type with $\kappa=1$. For $S=n^2+n$, $\mathcal K=\emptyset$ over $\mathbb Z$ because the critical value $-1/4$ is not an integer. `python -m perfectpower shifts` computes $\mathcal K(S)$ exactly by resultant interpolation.
+
+**Remark (all exponents at once).** Let $\mathcal P$ be the set of perfect powers $m^d$ with $|m|\ge2$ and $d\ge2$, and consider $A_{\mathcal P}(N)=\#\{n\le N: F(n)\in\mathcal P\}$. If $F$ has at least two distinct roots, the Schinzel–Tijdeman theorem (Acta Arith. 31 (1976)) bounds $d$ effectively in terms of $F$. So $A_{\mathcal P}$ is a finite union of the atlas counts over $d\le d_0(F)$, and it again has growth $N$, $N^{1/t}$, $\log N$ or $O(1)$. If $F=c(x-\alpha)^r$ has a single root, Theorem B applies to each $d$ separately, and the union is dominated by the smallest $t$.
 
 ## 8. Transforms of each type
 
@@ -218,5 +224,6 @@ This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\be
 - C. Runge, Über ganzzahlige Lösungen von Gleichungen zwischen zwei Veränderlichen, *J. reine angew. Math.* 100 (1887), 425–435.
 - W. Ljunggren, Noen setninger om ubestemte likninger av formen $(x^n-1)/(x-1)=y^q$, *Norsk Mat. Tidsskr.* 25 (1943), 17–20 (the case $n=5$, $q=2$: only $x=3$ among $x>1$).
 - P. Erdős and J. L. Selfridge, The product of consecutive integers is never a power, *Illinois J. Math.* 19 (1975), 292–301.
+- A. Schinzel and R. Tijdeman, On the equation $y^m=P(x)$, *Acta Arith.* 31 (1976), 199–204.
 - S. Wang, A counter-example to Grunwald's theorem, *Ann. of Math.* 49 (1948), 1008–1009.
 - J.-P. Serre, *Topics in Galois Theory*, Jones and Bartlett 1992, Chapter 3.

@@ -4,7 +4,7 @@
 
 In the build environment of this release, the Mathlib cache and release servers were unreachable, so Mathlib was compiled from source (about 1900 modules). CI uses `leanprover/lean-action` and the ordinary cache.
 
-`./audit/check_axioms.sh` runs `#print axioms` on twenty-two declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
+`./audit/check_axioms.sh` runs `#print axioms` on twenty-six declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
 
 ## What changed from 0.5
 
@@ -36,6 +36,7 @@ No theorem statement of 0.5 was changed.
 | `Dichotomy.lean` | `rigid_dichotomy`: rigid $F\ne0$ is $G^d$ over $\mathbb Z$, or has finitely many hits |
 | `ZeroOne.lean` (new) | `hasDensity_one_of_pow`, **`rigid_zero_one`** (density exists and is $1$ or $0$ on the rigid branch), `rigid_H_mem`, `pow_of_mul_pow_eq`, `twisted_hits_subset`, `twisted_finite`, `twisted_density_zero` |
 | `Monomial.lean` (new) | `rat_pow_eq_nat`, **`monomial_isHit_iff`** ($n^r$ is a $d$-th power iff $n$ is a $t$-th power, $t=d/\gcd(r,d)$), `monomial_hitSet`, **`monomial_count`** ($A(N)=\#\{w\in[1,N]: w^t\le N\}=\lfloor N^{1/t}\rfloor$) |
+| `Examples.lean` (new) | `consecutive_four_hitSet` ($n(n+1)(n+2)(n+3)$ is never a square), **`ljunggren_hitSet`** (the hit set of $1+n+n^2+n^3+n^4$, $d=2$, is exactly $\{3\}$); both by the Runge squeeze |
 
 ## What it does not certify
 
