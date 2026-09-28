@@ -82,9 +82,13 @@ def hit_indices(coefficients: Iterable[int], d: int, k: int, end: int, start: in
     c = normalize(coefficients)
     if any(x.denominator != 1 for x in c):
         raise ValueError('S must be in Z[x]')
+    ints = [int(x) for x in c]
     for n in range(start, end + 1):
-        v = evaluate(c, n) + k
-        m = integer_power_root(int(v), d)
+        v = 0
+        for x in reversed(ints):
+            v = v * n + x
+        v += k
+        m = integer_power_root(v, d)
         if m is not None:
             yield (n, m)
 
