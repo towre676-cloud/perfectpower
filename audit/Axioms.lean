@@ -23,3 +23,8 @@ open PerfectPower
 #print axioms twisted_hits_subset
 #print axioms twisted_finite
 #print axioms twisted_density_zero
+-- Monomial
+#print axioms rat_pow_eq_nat
+#print axioms monomial_isHit_iff
+#print axioms monomial_hitSet
+#print axioms monomial_count

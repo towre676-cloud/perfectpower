@@ -15,6 +15,7 @@
 | **Rigid branch** ($d\mid\deg F$, leading coefficient a $d$-th power): exact power or finitely many hits; density exists and is $0$ or $1$. | **Lean-verified**: `rigid_dichotomy`, `rigid_zero_one`. |
 | **Twisted powers** $D^dF=cH^d$ with $c$ not a $d$-th power: every hit is a root of $H$. | **Lean-verified**: `twisted_finite`. |
 | Finite surgery, periodic density $P/T$, convergence bridge, finite-support squeeze. | **Lean-verified.** |
+| **Monomials** $n^r$: hits are exactly the $t$-th powers, $A(N)=\lfloor N^{1/t}\rfloor$, $t=d/\gcd(r,d)$; this realises every exponent of the spectrum. | **Lean-verified**: `monomial_count`. |
 | **Atlas** (new): $A(N)$ is $N$, $\kappa N^{1/t}+O(1)$ with $t\mid d$, $\kappa\log N+O(1)$, or bounded, with explicit $\kappa$; the type is decidable from root multiplicities. | Paper proof plus LeVeque's theorem for the bounded case ([notes](docs/RESEARCH_NOTES.md) §§2–5). |
 | **Exponent spectrum** (new): $\alpha(F,d)\in\{0,1\}\cup\{1/t: t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ ($p$ the least prime factor of $d$) for every non-power $F$. | Corollary of the atlas. |
 | **Complete Runge enumeration** (new): in the rigid branch the entire hit set is computed, not just a cutoff. | Paper proof; its analytic core is Lean-verified; exact implementation. |
@@ -37,7 +38,7 @@ lake build
 ./audit/check_axioms.sh # fails on sorry or any axiom beyond propext, Classical.choice, Quot.sound
 ```
 
-All six modules compile. Eighteen audited theorems use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
+All seven modules compile. Twenty-two audited theorems use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
 
 ## Python (standard library only)
 

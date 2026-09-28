@@ -7,7 +7,7 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 | Result | Status | Where |
 |---|---|---|
 | Theorem P (power type) | `PAPER_PROOF`; the finiteness half is `LEAN_VERIFIED` (`twisted_finite`) | §2, `PerfectPower/ZeroOne.lean` |
-| Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check | §3, `atlas.py` |
+| Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; the monomial case $c=1,\alpha=0$ is `LEAN_VERIFIED` (`monomial_count`) | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
 | Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check | §4, `atlas.py` |
 | Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque 1964) | §5 |
 | Theorem R (complete Runge enumeration) | `PAPER_PROOF`; its analytic core is `LEAN_VERIFIED` (`eventually_no_hit`) | §6, `runge.py` |
@@ -34,7 +34,7 @@ Parts 1–3 are elementary and are proved here. Part 4 is LeVeque's theorem.
 $$\alpha(F,d)\in\{0,1\}\cup\{1/t:\ t\mid d,\ t\ge2\},$$
 and every value in this set occurs. Moreover $\alpha=1$ exactly when $F$ is an integer-polynomial $d$-th power. Otherwise $A(N)=O(N^{1/p})$, where $p$ is the least prime factor of $d$. In particular $A(N)=O(N^{1/2})$ for every non-power $F$, and $A(N)=O(N^{1/3})$ when $d$ is odd. All these bounds are sharp.
 
-*Proof of the corollary from Theorem A.* In the radical type $t=d/\gcd(d,r)$ divides $d$ and exceeds $1$, so $t\ge p$. The Pell and finite types have $\alpha=0$. The monomial $F=x^{r}$ with $\gcd(r,d)=d/t$ has hits exactly at the $t$-th powers (Theorem B, or §5 of the monograph), so $A(N)=\lfloor N^{1/t}\rfloor$ realises $1/t$. For sharpness take $r=d/p$. $\square$
+*Proof of the corollary from Theorem A.* In the radical type $t=d/\gcd(d,r)$ divides $d$ and exceeds $1$, so $t\ge p$. The Pell and finite types have $\alpha=0$. The monomial $F=x^{r}$ with $\gcd(r,d)=d/t$ has hits exactly at the $t$-th powers, so $A(N)=\lfloor N^{1/t}\rfloor$ realises $1/t$. This is Theorem B, and it is also the compiled Lean theorem `monomial_count`. For sharpness take $r=d/p$. $\square$
 
 This refines the monograph's 0–1 law in two ways. First, the zero branch has a quantitative ceiling, $N^{1/2}$, instead of $o(N)$. Second, the proof of density zero no longer uses Boshernitzan's equidistribution theorem, although it now depends on LeVeque's theorem, which in turn rests on Siegel's theorem. The two proofs of the 0–1 law are logically independent.
 
