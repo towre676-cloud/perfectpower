@@ -1,0 +1,265 @@
+{
+  "status": "exact finite computations; asymptotic statements supplied by separate proofs",
+  "generator_exit_code_on_success": 0,
+  "generator": "python3 python/make_receipts.py",
+  "definition": "count n in [1,N] with S(n)+k=m**d for an integer m",
+  "rows": [
+    {
+      "name": "linear_4n_plus_1",
+      "coefficients_S_low_to_high": [
+        1,
+        4
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        31,
+        99,
+        315
+      ],
+      "rigid_certificate": null,
+      "certificate_valid": null
+    },
+    {
+      "name": "singular_cubic",
+      "coefficients_S_low_to_high": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        31,
+        100,
+        316
+      ],
+      "rigid_certificate": null,
+      "certificate_valid": null
+    },
+    {
+      "name": "elliptic_a0_b1_k0",
+      "coefficients_S_low_to_high": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        1,
+        1,
+        1
+      ],
+      "rigid_certificate": null,
+      "certificate_valid": null
+    },
+    {
+      "name": "elliptic_am2_b1_k0",
+      "coefficients_S_low_to_high": [
+        1,
+        -2,
+        0,
+        1
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        1,
+        1,
+        1
+      ],
+      "rigid_certificate": null,
+      "certificate_valid": null
+    },
+    {
+      "name": "elliptic_a1_b1_k3",
+      "coefficients_S_low_to_high": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "d": 2,
+      "k": 3,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        0,
+        1,
+        1
+      ],
+      "rigid_certificate": null,
+      "certificate_valid": null
+    },
+    {
+      "name": "square_polynomial",
+      "coefficients_S_low_to_high": [
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        1000,
+        10000,
+        100000
+      ],
+      "rigid_certificate": {
+        "d": 2,
+        "coefficients": [
+          0,
+          0,
+          1
+        ],
+        "root_numerators": [
+          0,
+          1
+        ],
+        "denominator": 1,
+        "remainder_numerators": [
+          0
+        ],
+        "cutoff": 1,
+        "exact_identity": true
+      },
+      "certificate_valid": true
+    },
+    {
+      "name": "n_squared_plus_n",
+      "coefficients_S_low_to_high": [
+        0,
+        1,
+        1
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        0,
+        0,
+        0
+      ],
+      "rigid_certificate": {
+        "d": 2,
+        "coefficients": [
+          0,
+          1,
+          1
+        ],
+        "root_numerators": [
+          1,
+          2
+        ],
+        "denominator": 2,
+        "remainder_numerators": [
+          -1
+        ],
+        "cutoff": 3,
+        "exact_identity": false
+      },
+      "certificate_valid": true
+    },
+    {
+      "name": "pell_2n_squared_plus_1",
+      "coefficients_S_low_to_high": [
+        1,
+        0,
+        2
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        4,
+        5,
+        7
+      ],
+      "rigid_certificate": null,
+      "certificate_valid": null
+    },
+    {
+      "name": "rigid_quartic_x4_plus_1",
+      "coefficients_S_low_to_high": [
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "d": 2,
+      "k": 0,
+      "cutoffs": [
+        1000,
+        10000,
+        100000
+      ],
+      "counts": [
+        0,
+        0,
+        0
+      ],
+      "rigid_certificate": {
+        "d": 2,
+        "coefficients": [
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "root_numerators": [
+          0,
+          0,
+          1
+        ],
+        "denominator": 1,
+        "remainder_numerators": [
+          1
+        ],
+        "cutoff": 3,
+        "exact_identity": false
+      },
+      "certificate_valid": true
+    }
+  ]
+}
