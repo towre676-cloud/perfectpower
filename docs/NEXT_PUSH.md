@@ -33,7 +33,9 @@
 - **Theorem B valuation core** in Lean (`RadicalValuation.lean`).
 - **Theorem T2.** The heat transform of a Pell-type family has a log-periodic second-order term (`receipts/pell_heat.json`, residuals $\le 10^{-11}$ at $\tau=10^{-12}$).
 
-**Next:** the Pell interfaces in Lean (norm equation, period, orbit constant), the Theorem B counting constant, then the Bilu–Tichy atlas.
+- **Lean interfaces for the counts.** `PellGeneral.lean` (norm equation, periodicity modulo $2A$, good classes, geometric counting) and `RadicalCount.lean` ($|vA(N)-RW|\le2Rv$).
+
+**Next:** finiteness of Pell orbit representatives in Lean, then the Bilu–Tichy atlas.
 
 ## Order of work after 0.6 (recommended)
 

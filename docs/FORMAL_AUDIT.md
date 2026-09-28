@@ -46,7 +46,21 @@ No theorem statement of 0.5 was changed.
 - **`mul_pow_isPow_iff_congr`**: if $cz_0^r$ is a $d$-th power, then $cz^r$ is one iff $v_p(z)\equiv v_p(z_0)\pmod t$ for all $p$.
 - **`mul_pow_isPow_iff_param`**: if moreover $z_0$ is minimal, the solutions are exactly $z=z_0w^t$.
 
-The residue-class count and the constant $\kappa$ are not yet formalised. |
+The count is in `RadicalCount.lean`. |
+| `RadicalCount.lean` (new) | The count of Theorem B:
+- `count_periodic_le` / `le_count_periodic`: a $q$-periodic predicate with $R$ solutions per period has $RW/q+O(R)$ solutions below $W$.
+- **`radical_hits_card`**: the hits $n\in[1,N]$ of $c(vn-u)^r$ with $vn>u$ are in bijection with the $w\in[1,W]$ satisfying $v\mid z_0w^t+u$, where $W$ is the largest $w$ with $z_0w^t+u\le vN$.
+- **`radical_count_bound`**: $|v\,A(N)-R\,W|\le 2Rv$, with $R$ the number of good residues of $w$ modulo $v$.
+
+Only the final step $W=\lfloor((vN-u)/z_0)^{1/t}\rfloor\sim(v/z_0)^{1/t}N^{1/t}$, which is real-analysis bookkeeping, is not formalised. A sanity instance (squares up to 10) checks that the hypotheses are satisfiable. |
+| `PellGeneral.lean` (new) | Interfaces for Theorem Q, for general $An^2+Bn+C$:
+- **`quadratic_isHit_iff_norm`**: $P(n)$ is a square iff $(2An+B)^2-4AY^2=B^2-4AC$.
+- `unitAct_norm`, `unitOrbit_norm`: a norm-one unit preserves the norm form along the orbit.
+- **`unitOrbit_periodic`**: the orbit is purely periodic modulo every $M>0$, via a permutation of $(\mathbb Z/M)^2$ of finite order.
+- **`goodClass_hits`**: a good index $r$ ($X_r\equiv B \bmod 2A$) stays good at $r+kP$, and each of those orbit points gives a hit.
+- `geometric_count_le` / `le_geometric_count`: a sequence between $c_1E^j$ and $c_2E^j$ has $\log N/\log E+O(1)$ terms $\le N$, the source of the factor $1/(P\log u)$.
+
+**Not formalised:** that finitely many orbits exhaust the solutions of the norm equation (the classical finiteness of orbit representatives), and the resulting count $A(N)=\kappa\log N+O(1)$. |
 | `Binomial.lean` (new) | Reductions of $\binom n2=m^3$ and $\binom n3=m^2$ to the curves $Y^2=X^3+1$ and $Y^2=X^3-36X$. The point lists are checked by `decide`. Hit sets $\{1,2\}$ and $\{1,2,3,4,50\}$, **conditional on the named hypotheses** `IntegralPointsCubePlusOne` and `IntegralPointsCongruent6`, which state that the integral-point lists are complete; these are certified by Sage, not by Lean. |
 | `Davenport.lean`, `ABC.lean` (new) | `davenport`, `davenport_sharp` (unconditional). `hall_of_abc`, `pillai_bound_of_abc`, `pillai_finite_of_abc`, all with abc as an explicit hypothesis. |
 | `Generated/MordellPoints.lean` (generated) | Every listed census point lies on its curve, checked by `decide` with no axioms at all. **Completeness is not checked.** |

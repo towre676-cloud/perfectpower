@@ -95,3 +95,20 @@ open PerfectPower
 #print axioms isHit_iff_rat
 #print axioms mul_pow_isPow_iff_congr
 #print axioms mul_pow_isPow_iff_param
+-- PellGeneral (Theorem Q interfaces)
+#print axioms quadratic_isHit_iff_norm
+#print axioms unitAct_norm
+#print axioms unitOrbit_norm
+#print axioms unitOrbit_periodic
+#print axioms goodClass_hits
+#print axioms index_le_of_geometric
+#print axioms le_of_index_le_geometric
+#print axioms geometric_count_le
+#print axioms le_geometric_count
+-- RadicalCount (Theorem B count)
+#print axioms count_periodic_eq
+#print axioms count_periodic_le
+#print axioms le_count_periodic
+#print axioms card_Icc_filter_eq_count
+#print axioms radical_hits_card
+#print axioms radical_count_bound

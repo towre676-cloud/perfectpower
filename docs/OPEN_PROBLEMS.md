@@ -31,11 +31,11 @@ Each entry gives the precise problem, the current best approach, and the obstruc
    - `runge_pointwise`: the Runge reduction in integer form.
    - `ljunggren_hitSet` and the consecutive-product instances, as Archive or formal-conjectures-style entries.
 
-6. **Theorem B in general.** The valuation core is done (`PerfectPower/RadicalValuation.lean`): sign, rational denominators, the congruence form and the parametrisation $z=z_0w^t$. Still open: the counting statement $A(N)\sim\kappa N^{1/t}$ with the residue-class constant, and the reduction from $c\,(n-\alpha)^rG^d$ with rational $\alpha$.
+6. **Theorem B in general.** The valuation core is done (`PerfectPower/RadicalValuation.lean`): sign, rational denominators, the congruence form and the parametrisation $z=z_0w^t$. The count is done up to the real power (`RadicalCount.lean`: $|vA(N)-RW|\le2Rv$). Still open: $W\sim(v/z_0)^{1/t}N^{1/t}$ in Lean, and the reduction from $c\,(n-\alpha)^rG^d$ with rational $\alpha$ and a nontrivial $G$.
 
 7. **Coefficient-bound lemmas for Theorem R.** Derive the hypotheses of `runge_uniform` from the constants $a(x_0)$ and $C(x_0)$, so that one certificate format covers every rigid $F$.
 
-8. **Pell interfaces in Lean.** State the norm equation, the period of the orbit modulo $2A$, and the per-orbit contribution $R/(P\log u)$ to $\kappa$, so that Theorem Q's constant has a formal statement. The log-periodic second term (Theorem T2) is numerical and paper-level only.
+8. **Pell count in Lean.** The interfaces are done (`PellGeneral.lean`: norm equation, pure periodicity modulo $2A$, good classes, geometric counting). Missing: finiteness of orbit representatives for $X^2-DY^2=\Delta$ (a bounded search over $|Y|\le\sqrt{|\Delta|\,u/D}$ in the classical form), and assembling $A(N)=\kappa\log N+O(1)$. The log-periodic second term (Theorem T2) is numerical and paper-level only.
 
 ## Good first issues
 

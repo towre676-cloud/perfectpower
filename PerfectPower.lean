@@ -17,3 +17,5 @@ import PerfectPower.ABC
 import PerfectPower.Generated.MordellPoints
 import PerfectPower.Binomial
 import PerfectPower.RadicalValuation
+import PerfectPower.PellGeneral
+import PerfectPower.RadicalCount

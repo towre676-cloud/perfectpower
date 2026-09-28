@@ -7,7 +7,7 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 | Result | Status | Where |
 |---|---|---|
 | Theorem P (power type) | `LEAN_VERIFIED`: density one is `hasDensity_one_of_pow`; finiteness is `power_type_finite` | §2, `PerfectPower/ZeroOne.lean` |
-| Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check. `LEAN_VERIFIED`: the monomial case (`monomial_count`) and the valuation core for general $c$ (`isHit_iff_natAbs` sign condition, `isHit_iff_rat` denominator step, `mul_pow_isPow_iff_congr`, `mul_pow_isPow_iff_param`: $z=z_0w^t$); the residue-class count and constant $\kappa$ remain paper results | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
+| Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check. `LEAN_VERIFIED`: the monomial case (`monomial_count`) and the valuation core for general $c$ (`isHit_iff_natAbs` sign condition, `isHit_iff_rat` denominator step, `mul_pow_isPow_iff_congr`, `mul_pow_isPow_iff_param`: $z=z_0w^t$) and the count (`radical_count_bound`: $|vA(N)-RW|\le2Rv$); only $W\sim(v/z_0)^{1/t}N^{1/t}$ is left informal | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
 | Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; for $2n^2+1$, infinitude and density zero are `LEAN_VERIFIED` (`pell_hasDensity_zero`) | §4, `atlas.py`, `PerfectPower/Pell.lean` |
 | Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` on Siegel's theorem (standard form) via Theorem G; LeVeque 1964 kept as historical context | §5 |
 | Theorem G ($\chi=d'(1-S)$; finite type ⇔ $\chi<0$) | `PAPER_PROOF` (not refereed) + randomized consistency checks | §5, `atlas.curve_invariants` |
