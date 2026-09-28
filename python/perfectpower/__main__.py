@@ -1,5 +1,6 @@
 """python -m perfectpower scan|certificate|verify|surgery|classify|enumerate|count|shifts ..."""
 import argparse
+import sys
 import json
 from pathlib import Path
 from .core import (RigidCertificate, count, hit_indices, rigid_certificate,
@@ -27,6 +28,10 @@ def main():
             p.add_argument('--override', action='append', default=[],
                            help='n:value; replace S(n) at finitely many prefix indices')
             p.add_argument('--N0', type=int, required=True)
+    p = sub.add_parser('lean', help='emit a Lean theorem pinning down the complete hit set')
+    p.add_argument('--coeff', required=True, type=coefficients)
+    p.add_argument('--d', type=int, required=True)
+    p.add_argument('--name', default='generated_hits')
     p = sub.add_parser('shifts', help='type of S + k for every integer shift k')
     p.add_argument('--coeff', required=True, type=coefficients)
     p.add_argument('--d', type=int, required=True)
@@ -40,6 +45,14 @@ def main():
         raise SystemExit(0 if result else 1)
     if args.d < 2:
         parser.error('d >= 2 required')
+    if args.command == 'lean':
+        from .lean_emit import emit
+        text = emit(args.name, args.coeff, args.d, T_max=6, x0_max=300)
+        if text is None:
+            print('no Runge plan (needs rigid F with positive leading coefficient)', file=sys.stderr)
+            raise SystemExit(1)
+        print('import PerfectPower.Certificates\nopen PerfectPower\n\n' + text)
+        return
     if args.command == 'shifts':
         from .atlas import shift_spectrum
         print(json.dumps(shift_spectrum(args.coeff, args.d), indent=2))

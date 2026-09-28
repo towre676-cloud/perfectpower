@@ -10,6 +10,7 @@
 - **`EXACT_COMPUTATION`**: records parameters, range, exit code, and reproducible integer calculations.
 - **`FINITE_HIT_CERTIFICATE`**: records rational polynomial identities and inequalities proving the absence of hits beyond a cutoff.
 - **`COMPLETE_HIT_LIST`** (new in 0.6): the full hit set, produced by a procedure whose correctness is a `PAPER_PROOF` and whose arithmetic is exact. Two procedures qualify: the Runge enumeration (Theorem R) and the structural descriptions (Theorems P, B, C).
+- **`LEAN_VERIFIED`** also covers the machine-generated hit-set theorems in `PerfectPower/Generated/`: Python proposes the data, and Lean checks the proof.
 - **`LEAN_VERIFIED`**: reserved for declarations compiled against a named immutable dependency revision and passing `audit/check_axioms.sh`.
 
 ## Receipts in release 0.6

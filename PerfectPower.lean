@@ -8,3 +8,5 @@ import PerfectPower.Monomial
 import PerfectPower.Examples
 import PerfectPower.Pell
 import PerfectPower.RungeReduction
+import PerfectPower.Certificates
+import PerfectPower.Generated.Runge

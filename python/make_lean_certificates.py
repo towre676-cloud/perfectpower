@@ -1,0 +1,45 @@
+"""Regenerate PerfectPower/Generated/Runge.lean: Lean-checked complete hit sets (Runge branch)."""
+import sys
+from fractions import Fraction
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from perfectpower.core import mul
+from perfectpower.lean_emit import emit_file
+import perfectpower.lean_emit as lean_emit
+
+
+def consecutive(k):
+    p = (Fraction(1),)
+    for i in range(k):
+        p = mul(p, (Fraction(i), Fraction(1)))
+    return [int(x) for x in p]
+
+
+ENTRIES = [
+    ('ljunggren_quartic_hits', [1, 1, 1, 1, 1], 2),
+    ('n4_plus_1_square_hits', [1, 0, 0, 0, 1], 2),
+    ('consecutive4_square_hits', consecutive(4), 2),
+    ('consecutive4_fourth_power_hits', consecutive(4), 4),
+    ('consecutive6_square_hits', consecutive(6), 2),
+    ('consecutive6_cube_hits', consecutive(6), 3),
+    ('consecutive6_sixth_power_hits', consecutive(6), 6),
+    ('consecutive8_square_hits', consecutive(8), 2),
+    ('consecutive8_fourth_power_hits', consecutive(8), 4),
+    ('consecutive8_eighth_power_hits', consecutive(8), 8),
+    ('consecutive10_fifth_power_hits', consecutive(10), 5),
+    ('consecutive12_square_hits', consecutive(12), 2),
+    ('consecutive12_cube_hits', consecutive(12), 3),
+    ('consecutive12_sixth_power_hits', consecutive(12), 6),
+    ('n6_plus_n_plus_1_cube_hits', [1, 1, 0, 0, 0, 0, 1], 3),
+    ('n4_plus_7_square_hits', [7, 0, 0, 0, 1], 2),
+    ('sextic_1_2_3_4_5_6_1_cube_hits', [1, 2, 3, 4, 5, 6, 1], 3),
+]
+
+if __name__ == '__main__':
+    root = Path(__file__).resolve().parents[1]
+    out = root / 'PerfectPower' / 'Generated' / 'Runge.lean'
+    out.parent.mkdir(exist_ok=True)
+    entries = [e for e in ENTRIES if len(sys.argv) < 2 or e[0] in sys.argv[1:]]
+    out.write_text(emit_file(entries, T_max=6, x0_max=300))
+    print(out)

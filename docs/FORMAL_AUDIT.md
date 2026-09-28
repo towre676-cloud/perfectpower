@@ -4,7 +4,7 @@
 
 In the build environment of this release, the Mathlib cache and release servers were unreachable, so Mathlib was compiled from source (about 1900 modules). CI uses `leanprover/lean-action` and the ordinary cache.
 
-`./audit/check_axioms.sh` runs `#print axioms` on thirty-seven declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
+`./audit/check_axioms.sh` runs `#print axioms` on fifty-six declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
 
 ## What changed from 0.5
 
@@ -39,6 +39,39 @@ No theorem statement of 0.5 was changed.
 | `Examples.lean` (new) | `consecutive_four_hitSet` ($n(n+1)(n+2)(n+3)$ is never a square), **`ljunggren_hitSet`** (the hit set of $1+n+n^2+n^3+n^4$, $d=2$, is exactly $\{3\}$); both by the Runge squeeze |
 | `Pell.lean` (new) | `hasDensity_zero_of_count_le`, `pell_descent` (every solution of $m^2-2n^2=1$ lies on the orbit of $(1,0)$), `pell_hit_iff`, **`pell_hitSet_infinite`**, `pell_count_le` ($A(N)\le\lfloor\sqrt N\rfloor$), **`pell_hasDensity_zero`**: $2n^2+1$ has infinitely many square values and density zero. This is the first **nonrigid** density-zero theorem in the kernel, proved without Boshernitzan or LeVeque. |
 | `RungeReduction.lean` (new) | `pow_diff_bound'`; **`runge_pointwise`** (if $P(n)\ne0$, $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and, for odd $d$, $<|P(n)|^d$, then a hit gives $D^dF(n)=(P(n)+t)^d$ with $|t|\le T$); `runge_uniform`; **`runge_finite`**. This is Theorem R in integer form. The same file contains **`power_type_finite`**, Theorem P over $\mathbb Q[x]$: if $F=cG^d$ with $G\in\mathbb Q[x]\setminus0$ and $c$ not an integer $d$-th power, then the hits are finite. Only the derivation of the uniform inequalities from the coefficient constants $a(x_0),C(x_0)$ remains informal. |
+
+## Machine-generated certificates
+
+`python/perfectpower/lean_emit.py` turns a Runge plan into a Lean theorem of the form
+
+```lean
+theorem ljunggren_quartic_hits (n : ℕ) (hn : 1 ≤ n) :
+    IsHit 2 (let z : ℤ := n; 1 + z + z^2 + z^3 + z^4) ↔ n ∈ ({3} : Finset ℕ)
+```
+
+The Python side only *chooses* the data: a threshold $x_0$, a $t$-range $T$, and Taylor-shifted polynomials. Lean re-checks everything:
+
+- every value below $x_0$, using `norm_num` with the lemmas `not_isHit_between` and `not_isHit_neg`;
+- every polynomial identity, by `ring`;
+- every sign condition, by `positivity`;
+- the reduction, by `runge_pointwise`.
+
+So a compiled generated theorem trusts nothing in the Python code. `PerfectPower/Generated/Runge.lean` contains 17 such theorems. Regenerate it with `python3 python/make_lean_certificates.py`; CI checks that the file is reproducible, and the full file builds in about 90 s. The theorems cover:
+
+- Ljunggren's quartic;
+- $n^4+1$ and $n^4+7$ as squares;
+- $n^6+n+1$ and $n^6+6n^5+5n^4+4n^3+3n^2+2n+1$ as cubes;
+- products of $k$ consecutive integers that are never $d$-th powers, for these pairs:
+
+  | $k$ | $d$ |
+  |---|---|
+  | 4 | 2, 4 |
+  | 6 | 2, 3, 6 |
+  | 8 | 2, 4, 8 |
+  | 10 | 5 |
+  | 12 | 2, 3, 6 |
+
+Two instances fall outside the current plan search: $(10,2)$ and $(12,4)$. For $(12,4)$ a plan exists at $x_0=478$ but was not included; $(10,2)$ needs larger limits.
 
 ## What it does not certify
 

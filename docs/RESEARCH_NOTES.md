@@ -167,6 +167,8 @@ The first case is precisely Corollary R′ with $d'=p$. In the second case $d$ i
   The largest v0.5 cutoff among them was $3.87\cdot10^{10}$ ($k=12$, $d=4$).
 - $n^4+1$ is never a square or a sixth power.
 
+**Lean certificates.** For 17 of these instances the complete hit set is a compiled Lean theorem emitted by `lean_emit.py`; see `PerfectPower/Generated/Runge.lean` and the formal audit. The instances include all the consecutive-product pairs above except $(10,2)$ and $(12,4)$.
+
 **Formal status.** The two smallest named cases are compiled Lean theorems: `ljunggren_hitSet` (the hit set is exactly $\{3\}$) and `consecutive_four_hitSet` (empty). Each traps $2m$ or $m$ between consecutive integers, which is Theorem R with an explicit $t$-range. The analytic core — eventually $|y-Q(n)|<1/(2D)$ with $y\neq Q(n)$ — is the compiled Lean theorem `eventually_no_hit`. The formal 0–1 law `rigid_zero_one` states that on the rigid branch the hit density exists and equals $1$ if $F=G^d$ with $G \in \mathbb Z[X]$, and $0$ with a finite hit set otherwise. The reduction itself is compiled in integer form: `runge_pointwise`, `runge_uniform`, `runge_finite` in `PerfectPower/RungeReduction.lean`. Their hypotheses are the integer inequalities $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and for odd $d$, $<|P(n)|^d$. Only the derivation of these inequalities for all $n\ge x_0$ from $a(x_0)$ and $C(x_0)$ is not yet formalised.
 
 ## 7. The shift spectrum

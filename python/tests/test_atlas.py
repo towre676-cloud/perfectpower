@@ -256,5 +256,27 @@ class TestShiftSpectrum(unittest.TestCase):
                     self.assertEqual(classify(f, d).kind, sp['generic_kind'], (S, d, k))
 
 
+class TestLeanEmitter(unittest.TestCase):
+    def test_plans_and_hits(self):
+        from perfectpower.lean_emit import emit, plan
+        pl = plan([1, 1, 1, 1, 1], 2)
+        self.assertEqual((pl['x0'], pl['T']), (4, 1))
+        text = emit('t', [1, 1, 1, 1, 1], 2)
+        self.assertIn("n ∈ ({3} : Finset ℕ)", text)
+        self.assertIn('exact ⟨11, by norm_num⟩', text)
+        self.assertIsNone(plan([1, 0, 2], 2))          # nonrigid
+        self.assertIsNone(plan([0, 0, 1], 2))          # exact power
+
+    def test_shifted_polynomials_are_definite(self):
+        from perfectpower.lean_emit import _definite, plan
+        for f, d in (([0, 6, 11, 6, 1], 2), ([1, 1, 0, 0, 0, 0, 1], 3), ([7, 0, 0, 0, 1], 2)):
+            pl = plan(f, d)
+            self.assertEqual(_definite(pl['Ps']), 1)
+            for _, sh in pl['conds']:
+                self.assertEqual(_definite(sh), 1)
+            for t, (_, sh, sgn) in pl['Gs'].items():
+                self.assertNotEqual(sgn, 0)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -16,4 +16,5 @@ jobs:
         run: |
           python3 python/make_receipts.py
           python3 python/make_atlas_receipts.py
-          git diff --exit-code -- receipts/
+          python3 python/make_lean_certificates.py
+          git diff --exit-code -- receipts/ PerfectPower/Generated/

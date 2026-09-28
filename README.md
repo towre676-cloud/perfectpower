@@ -17,6 +17,7 @@
 | Finite surgery, periodic density $P/T$, convergence bridge, finite-support squeeze. | **Lean-verified.** |
 | **Monomials** $n^r$: hits are exactly the $t$-th powers, $A(N)=\lfloor N^{1/t}\rfloor$, $t=d/\gcd(r,d)$; this realises every exponent of the spectrum. | **Lean-verified**: `monomial_count`. |
 | Complete hit lists: $1+n+\dots+n^4=m^2 \iff n=3$ (Ljunggren); $n(n+1)(n+2)(n+3)$ is never a square. | **Lean-verified**: `ljunggren_hitSet`, `consecutive_four_hitSet`. |
+| **Machine-generated certificates** (new): Python finds a Runge plan and emits a Lean theorem "the hit set is exactly $H$", which Lean checks independently. There are 17 instances, including products of up to 12 consecutive integers. | **Lean-verified**: `PerfectPower/Generated/Runge.lean`. |
 | **Pell example** $2n^2+1$: infinitely many square values but density zero, with $A(N)\le\sqrt N$. | **Lean-verified**: `pell_hitSet_infinite`, `pell_hasDensity_zero`. |
 | **Atlas** (new): $A(N)$ is $N$, $\kappa N^{1/t}+O(1)$ with $t\mid d$, $\kappa\log N+O(1)$, or bounded, with explicit $\kappa$; the type is decidable from root multiplicities. | Paper proof plus LeVeque's theorem for the bounded case ([notes](docs/RESEARCH_NOTES.md) §§2–5). |
 | **Exponent spectrum** (new): $\alpha(F,d)\in\{0,1\}\cup\{1/t: t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ ($p$ the least prime factor of $d$) for every non-power $F$. | Corollary of the atlas. |
@@ -41,7 +42,7 @@ lake build
 ./audit/check_axioms.sh # fails on sorry or any axiom beyond propext, Classical.choice, Quot.sound
 ```
 
-All ten modules compile. Thirty-seven audited theorems use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
+All modules compile. Fifty-six audited theorems (including 17 machine-generated complete hit sets) use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
 
 ## Python (standard library only)
 
@@ -54,6 +55,7 @@ PYTHONPATH=python python3 -m perfectpower classify  --coeff 1,0,2 --d 2         
 PYTHONPATH=python python3 -m perfectpower count     --coeff 1,0,2 --d 2 --N 1000000000000000000000000
 PYTHONPATH=python python3 -m perfectpower enumerate --coeff 1,1,1,1,1 --d 2      # complete: only n = 3
 PYTHONPATH=python python3 -m perfectpower shifts    --coeff 0,-3,0,1 --d 2       # critical shifts k = +-2
+PYTHONPATH=python python3 -m perfectpower lean      --coeff 7,0,0,0,1 --d 2      # emit a Lean proof of the hit set
 PYTHONPATH=python python3 -m perfectpower certificate --coeff 1,0,0,0,1 --d 2    # v0.5 cutoff certificate
 python3 python/make_receipts.py && python3 python/make_atlas_receipts.py
 ```

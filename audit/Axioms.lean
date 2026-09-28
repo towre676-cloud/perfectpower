@@ -46,3 +46,23 @@ open PerfectPower
 #print axioms runge_uniform
 #print axioms runge_finite
 #print axioms power_type_finite
+-- Certificates and machine-generated hit sets
+#print axioms not_isHit_between
+#print axioms not_isHit_neg
+#print axioms PerfectPower.Generated.ljunggren_quartic_hits
+#print axioms PerfectPower.Generated.n4_plus_1_square_hits
+#print axioms PerfectPower.Generated.consecutive4_square_hits
+#print axioms PerfectPower.Generated.consecutive4_fourth_power_hits
+#print axioms PerfectPower.Generated.consecutive6_square_hits
+#print axioms PerfectPower.Generated.consecutive6_cube_hits
+#print axioms PerfectPower.Generated.consecutive6_sixth_power_hits
+#print axioms PerfectPower.Generated.consecutive8_square_hits
+#print axioms PerfectPower.Generated.consecutive8_fourth_power_hits
+#print axioms PerfectPower.Generated.consecutive8_eighth_power_hits
+#print axioms PerfectPower.Generated.consecutive10_fifth_power_hits
+#print axioms PerfectPower.Generated.consecutive12_square_hits
+#print axioms PerfectPower.Generated.consecutive12_cube_hits
+#print axioms PerfectPower.Generated.consecutive12_sixth_power_hits
+#print axioms PerfectPower.Generated.n6_plus_n_plus_1_cube_hits
+#print axioms PerfectPower.Generated.n4_plus_7_square_hits
+#print axioms PerfectPower.Generated.sextic_1_2_3_4_5_6_1_cube_hits
