@@ -3,7 +3,7 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test receipts counts check-clean crosscheck fuzz paper
+.PHONY: verify lean audit lint test receipts counts check-clean crosscheck fuzz bench paper
 
 verify: lean audit lint test receipts counts check-clean
 	@echo "verify: OK"
@@ -13,6 +13,7 @@ lean:
 
 audit: lean
 	./audit/check_axioms.sh
+	lake env lean audit/CertReject.lean
 
 lint: lean
 	lake env lean audit/Lint.lean
@@ -39,7 +40,7 @@ counts: audit
 
 # Regenerated files must match the committed ones exactly.
 check-clean:
-	git diff --exit-code -- receipts/ data/ docs/figures/ PerfectPower/Generated/ README.md audit/axioms_report.txt
+	git diff --exit-code -- receipts/ certs/ data/ docs/figures/ PerfectPower/Generated/ README.md audit/axioms_report.txt
 
 # Optional: needs Sage or passagemath (see crosscheck/README.md).
 crosscheck:
@@ -54,6 +55,10 @@ fuzz:
 	PYTHONPATH=python $(PY) python/fuzz/fuzz_structural_vs_scan.py 2 1500
 	PYTHONPATH=python $(PY) python/fuzz/fuzz_pell_quadratic.py 7 400
 	PYTHONPATH=python $(PY) python/fuzz/fuzz_finite_bucket_late_hits.py 11 1500 100000000
+
+# Certificate benchmarks (timings vary by machine; not part of verify).
+bench:
+	$(PY) python/cert_benchmarks.py
 
 paper:
 	cd paper && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && rm -f *.aux *.log *.out
