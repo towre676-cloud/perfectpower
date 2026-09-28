@@ -166,13 +166,48 @@ def classify(coefficients, d: int) -> Classification:
 
     # Hits for d are hits for every divisor d' of d, so a Runge-rigid divisor d' >= 2
     # (d' | deg F and lead(F) an integer d'-th power) makes the finite hit set computable.
-    runge = [e for e in range(2, d + 1)
-             if d % e == 0 and degree(F) % e == 0 and integer_power_root(lead, e) is not None]
+    strategy = _finite_strategy(f, d)
     return Classification(kind='finite', growth='bounded', exponent=Fraction(0), infinite=False,
-                          effective=bool(runge),
+                          effective=strategy is not None,
                           details={'theorem': 'LeVeque 1964 (via Siegel); effective by Brindza 1984',
-                                   'rigid_runge_branch': d in runge,
-                                   'runge_divisors': runge}, **base)
+                                   'rigid_runge_branch': strategy is not None and strategy[0] == 'runge'
+                                   and strategy[1] == d,
+                                   'strategy': strategy}, **base)
+
+
+def _exact_root(f, e: int):
+    """G in Z[x] with G^e = f (leading coefficient positive when e is even), or None."""
+    from .core import rigid_certificate
+    if len(f) - 1 < 1 or (len(f) - 1) % e or integer_power_root(f[-1], e) is None:
+        return None
+    cert = rigid_certificate(f, e)
+    if cert is None or not cert.exact_identity:
+        return None
+    return tuple(cert.root_numerators)
+
+
+def _finite_strategy(f, d: int):
+    """How to enumerate the (finite) hit set of (f, d) effectively, or None.
+
+    ('runge', e): f is Runge-rigid for the divisor e >= 2 of d and not an exact e-th power;
+                  hits for d are the hits for e that are also d-th powers.
+    ('root', e, G): f = G^e exactly for a divisor e of d with 2 <= e < d; then f(n) = m^d iff
+                  G(n) = s^(d/e) (odd e), or G(n) = +-s^(d/e) (even e).
+    """
+    deg = len(f) - 1
+    for e in sorted((e for e in range(2, d + 1) if d % e == 0), reverse=True):
+        if deg % e or integer_power_root(f[-1], e) is None:
+            continue
+        G = _exact_root(f, e)
+        if G is None:
+            return ('runge', e)
+    for e in sorted((e for e in range(2, d) if d % e == 0), reverse=True):
+        G = _exact_root(f, e)
+        if G is not None:
+            sub = [G] + ([tuple(-c for c in G)] if e % 2 == 0 else [])
+            if all(classify(g, d // e).effective for g in sub):
+                return ('root', e, G)
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -454,10 +489,17 @@ def structural_hits(coefficients, d: int, N: int) -> list[int]:
             hits |= quadratic_square_hits(q['A'], q['B'], q['C'], N)
         return sorted(hits)
     if cl.effective:
-        from .runge import runge_enumerate
-        e = cl.details['runge_divisors'][-1]
-        return [n for n, _ in runge_enumerate(f, e).hits
-                if n <= N and integer_power_root(_eval_int(f, n), d) is not None]
+        strategy = cl.details['strategy']
+        if strategy[0] == 'runge':
+            from .runge import runge_enumerate
+            e = strategy[1]
+            return [n for n, _ in runge_enumerate(f, e).hits
+                    if n <= N and integer_power_root(_eval_int(f, n), d) is not None]
+        _, e, G = strategy
+        cand = set(structural_hits(G, d // e, N))
+        if e % 2 == 0:
+            cand |= set(structural_hits(tuple(-c for c in G), d // e, N))
+        return sorted(n for n in cand if integer_power_root(_eval_int(f, n), d) is not None)
     raise NotImplementedError('finite by LeVeque, but no effective enumeration implemented')
 
 

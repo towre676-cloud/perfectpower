@@ -192,6 +192,19 @@ In particular, if $M\ge3$, then *for all but at most $M-1$ shifts $k$ the hit se
 - *Square triangular numbers.* $n(n+1)/2$ is of Pell type with $\kappa=1/\log(3+2\sqrt2)$, and its hits are $1,8,49,288,1681,\dots$.
 - *Square values of $\binom n3$.* These are of finite type (an elliptic curve), with scan hits $n=3,4,50$ up to $10^5$. This agrees with the classical theorem that these are the only ones.
 
+**Application (sums of powers; Schäffer).** Let $S_k(n)=1^k+\cdots+n^k$, an integer-valued polynomial of degree $k+1$. Schäffer (1956) proved, via LeVeque's theorem, that $S_k(n)=m^d$ has infinitely many solutions only for $(k,d)\in\{(1,2),(3,2),(3,4),(5,2)\}$. The atlas classifies every $(k,d)$ from the root multiplicities of $S_k$ and recovers exactly this list, which the receipt checks for $k\le10$, $d\le6$. It also supplies the constants:
+
+| $(k,d)$ | type | first hits | growth |
+|---|---|---|---|
+| $(1,2)$ | Pell | $1,8,49,288,\dots$ (square triangular numbers) | $\kappa=0.567296$ |
+| $(3,2)$ | power | all $n$ (Nicomachus: $S_3=(n(n+1)/2)^2$) | $N$ |
+| $(3,4)$ | Pell | same as $(1,2)$ | $\kappa=0.567296$ |
+| $(5,2)$ | Pell | $1,13,133,1321,13081,\dots$ | $\kappa=0.436218=1/\log(5+2\sqrt6)$ |
+
+Every other pair is of finite type. A scan to $10^4$ finds nontrivial hits only for $(k,d)=(2,2)$: $n=24$, which is Lucas's cannonball problem, settled by Watson (1918).
+
+The implementation also handles $F=G^e$ exactly for a divisor $e$ of $d$. In that case $F(n)=m^d$ if and only if $G(n)=\pm s^{d/e}$, and the atlas recurses on $(G,d/e)$. For example, $(n+1)^2$ with $d=4$ has hits $n=3,8,15,\dots$.
+
 ## 8. Transforms of each type
 
 For the indicator $X$ of hits put $Z_X(s)=\sum X(n)n^{-s}$ and $K_X(\tau)=\sum X(n)e^{-\tau n}$. The monograph asked what count asymptotics imply for these transforms. Abel summation gives $Z_X(s)=s\int_1^\infty A(x)x^{-s-1}\,dx$ and $K_X(\tau)=\tau\int_0^\infty A(x)e^{-\tau x}\,dx$.
@@ -240,6 +253,7 @@ This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\be
 - C. Runge, Über ganzzahlige Lösungen von Gleichungen zwischen zwei Veränderlichen, *J. reine angew. Math.* 100 (1887), 425–435.
 - W. Ljunggren, Noen setninger om ubestemte likninger av formen $(x^n-1)/(x-1)=y^q$, *Norsk Mat. Tidsskr.* 25 (1943), 17–20 (the case $n=5$, $q=2$: only $x=3$ among $x>1$).
 - P. Erdős and J. L. Selfridge, The product of consecutive integers is never a power, *Illinois J. Math.* 19 (1975), 292–301.
+- J. J. Schäffer, The equation $1^p+2^p+\cdots+n^p=m^q$, *Acta Math.* 95 (1956), 155–189.
 - A. Schinzel and R. Tijdeman, On the equation $y^m=P(x)$, *Acta Arith.* 31 (1976), 199–204.
 - S. Wang, A counter-example to Grunwald's theorem, *Ann. of Math.* 49 (1948), 1008–1009.
 - J.-P. Serre, *Topics in Galois Theory*, Jones and Bartlett 1992, Chapter 3.

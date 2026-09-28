@@ -256,6 +256,28 @@ class TestShiftSpectrum(unittest.TestCase):
                     self.assertEqual(classify(f, d).kind, sp['generic_kind'], (S, d, k))
 
 
+class TestSchaffer(unittest.TestCase):
+    def test_exceptional_pairs(self):
+        from perfectpower.atlas import integerize
+        from perfectpower.polyalg import interpolate
+        infinite = []
+        for k in range(1, 9):
+            Sk = interpolate(list(range(k + 2)), [sum(i ** k for i in range(1, x + 1)) for x in range(k + 2)])
+            for d in range(2, 6):
+                if classify(integerize(Sk, d), d).growth != 'bounded':
+                    infinite.append((k, d))
+        self.assertEqual(infinite, [(1, 2), (3, 2), (3, 4), (5, 2)])
+        S5 = interpolate(list(range(7)), [sum(i ** 5 for i in range(1, x + 1)) for x in range(7)])
+        f = integerize(S5, 2)
+        self.assertEqual(structural_hits(f, 2, 2000), [1, 13, 133, 1321])
+        self.assertEqual(structural_hits(f, 2, 2000), brute(f, 2, 2000))
+
+    def test_exact_power_reduction(self):
+        # (n+1)^2 with d = 4 reduces to n + 1 = square;  S_3 with d = 6 is not effective
+        self.assertEqual(structural_hits([1, 2, 1], 4, 50), [3, 8, 15, 24, 35, 48])
+        self.assertEqual(structural_hits([1, 0, 0, 0, 1], 6, 10 ** 6), [])
+
+
 class TestLeanEmitter(unittest.TestCase):
     def test_plans_and_hits(self):
         from perfectpower.lean_emit import emit, plan

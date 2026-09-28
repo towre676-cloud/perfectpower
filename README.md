@@ -22,6 +22,7 @@
 | **Atlas** (new): $A(N)$ is $N$, $\kappa N^{1/t}+O(1)$ with $t\mid d$, $\kappa\log N+O(1)$, or bounded, with explicit $\kappa$; the type is decidable from root multiplicities. | Paper proof plus LeVeque's theorem for the bounded case ([notes](docs/RESEARCH_NOTES.md) §§2–5). |
 | **Exponent spectrum** (new): $\alpha(F,d)\in\{0,1\}\cup\{1/t: t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ ($p$ the least prime factor of $d$) for every non-power $F$. | Corollary of the atlas. |
 | **Complete Runge enumeration** (new): in the rigid branch the entire hit set is computed, not just a cutoff. | Paper proof; the reduction to finitely many $G_t$ is Lean-verified (`runge_finite`); exact implementation. |
+| **Sums of powers** (new): the atlas recovers Schäffer's list $(k,d)\in\{(1,2),(3,2),(3,4),(5,2)\}$ of infinite families $1^k+\dots+n^k=m^d$, with constants (e.g. $\kappa=1/\log(5+2\sqrt6)$ for $k=5$). | Corollary of the atlas; receipt-checked. |
 | **Shift spectrum** (new): for $\deg S\ge3$, $S(n)+k$ has finitely many hits except at the $\le\deg S-1$ critical values $k$. | Corollary of the atlas. |
 | **Transform asymptotics** (new): Dirichlet poles and heat asymptotics for every type. | Paper proof ([notes](docs/RESEARCH_NOTES.md) §8). |
 

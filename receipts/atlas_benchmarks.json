@@ -11,6 +11,715 @@
       1
     ]
   },
+  "schaffer_sums_of_powers": {
+    "infinite_pairs": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    "table": [
+      {
+        "k": 1,
+        "d": 2,
+        "kind": "pell",
+        "growth": "log N",
+        "t_profile": {
+          "2": 2
+        },
+        "kappa": 0.567296328553,
+        "count_1e12": 16,
+        "first_hits": [
+          1,
+          8,
+          49,
+          288,
+          1681,
+          9800,
+          57121,
+          332928,
+          1940449,
+          11309768,
+          65918161
+        ]
+      },
+      {
+        "k": 1,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 1,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "4": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 1,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 1,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "6": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 2,
+        "d": 2,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 3
+        },
+        "scan_hits_up_to_1e4": [
+          1,
+          24
+        ],
+        "effective": false
+      },
+      {
+        "k": 2,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 3
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 2,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "4": 3
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 2,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 3
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 2,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "6": 3
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 3,
+        "d": 2,
+        "kind": "power",
+        "growth": "N",
+        "t_profile": {
+          "1": 2
+        },
+        "count_1e12": 1000000000000
+      },
+      {
+        "k": 3,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 3,
+        "d": 4,
+        "kind": "pell",
+        "growth": "log N",
+        "t_profile": {
+          "2": 2
+        },
+        "kappa": 0.567296328553,
+        "count_1e12": 16,
+        "first_hits": [
+          1,
+          8,
+          49,
+          288,
+          1681,
+          9800,
+          57121,
+          332928,
+          1940449,
+          11309768,
+          65918161
+        ]
+      },
+      {
+        "k": 3,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 3,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 4,
+        "d": 2,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 5
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 4,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 5
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 4,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "4": 5
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 4,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 5
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 4,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "6": 5
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 5,
+        "d": 2,
+        "kind": "pell",
+        "growth": "log N",
+        "t_profile": {
+          "1": 2,
+          "2": 2
+        },
+        "kappa": 0.436218018307,
+        "count_1e12": 12,
+        "first_hits": [
+          1,
+          13,
+          133,
+          1321,
+          13081,
+          129493,
+          1281853,
+          12689041
+        ]
+      },
+      {
+        "k": 5,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 4
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 5,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 2,
+          "4": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 5,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 4
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 5,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 2,
+          "6": 2
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 6,
+        "d": 2,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 7
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 6,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 7
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 6,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "4": 7
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 6,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 7
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 6,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "6": 7
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 7,
+        "d": 2,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "1": 2,
+          "2": 4
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 7,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 6
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 7,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 2,
+          "4": 4
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 7,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 6
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 7,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 2,
+          "6": 4
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 8,
+        "d": 2,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 9
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 8,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 9
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 8,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "4": 9
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 8,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 9
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 8,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "6": 9
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 9,
+        "d": 2,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "1": 2,
+          "2": 6
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 9,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 8
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 9,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 2,
+          "4": 6
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 9,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 8
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 9,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 2,
+          "6": 6
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 10,
+        "d": 2,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "2": 11
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 10,
+        "d": 3,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "3": 11
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 10,
+        "d": 4,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "4": 11
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 10,
+        "d": 5,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "5": 11
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      },
+      {
+        "k": 10,
+        "d": 6,
+        "kind": "finite",
+        "growth": "bounded",
+        "t_profile": {
+          "6": 11
+        },
+        "scan_hits_up_to_1e4": [
+          1
+        ],
+        "effective": false
+      }
+    ]
+  },
   "heat_kernel_checks_theorem_T": [
     {
       "name": "linear_4n_plus_1",
@@ -601,7 +1310,7 @@
       "exponent": "0",
       "infinite": false,
       "effective": false,
-      "runge_divisors": [],
+      "effective_strategy": null,
       "count_at_1e5_scan_only": 1,
       "scan_hits_up_to_1e5": [
         2
@@ -627,7 +1336,7 @@
       "exponent": "0",
       "infinite": false,
       "effective": false,
-      "runge_divisors": [],
+      "effective_strategy": null,
       "count_at_1e5_scan_only": 1,
       "scan_hits_up_to_1e5": [
         1
@@ -653,7 +1362,7 @@
       "exponent": "0",
       "infinite": false,
       "effective": false,
-      "runge_divisors": [],
+      "effective_strategy": null,
       "count_at_1e5_scan_only": 1,
       "scan_hits_up_to_1e5": [
         4128
@@ -680,7 +1389,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -743,7 +1453,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 1,
@@ -785,7 +1496,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -838,7 +1550,7 @@
       "exponent": "0",
       "infinite": false,
       "effective": false,
-      "runge_divisors": [],
+      "effective_strategy": null,
       "count_at_1e5_scan_only": 5,
       "scan_hits_up_to_1e5": [
         1,
@@ -867,7 +1579,7 @@
       "exponent": "0",
       "infinite": false,
       "effective": false,
-      "runge_divisors": [],
+      "effective_strategy": null,
       "count_at_1e5_scan_only": 2,
       "scan_hits_up_to_1e5": [
         1,
@@ -895,7 +1607,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -930,8 +1643,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
-        2,
+      "effective_strategy": [
+        "runge",
         4
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -968,7 +1681,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1005,7 +1719,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         3
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1042,9 +1757,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
-        2,
-        3,
+      "effective_strategy": [
+        "runge",
         6
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1083,7 +1797,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1122,8 +1837,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
-        2,
+      "effective_strategy": [
+        "runge",
         4
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1162,9 +1877,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
-        2,
-        4,
+      "effective_strategy": [
+        "runge",
         8
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1205,7 +1919,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1246,7 +1961,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         5
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1289,7 +2005,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1332,7 +2049,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
+      "effective_strategy": [
+        "runge",
         3
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1375,8 +2093,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
-        2,
+      "effective_strategy": [
+        "runge",
         4
       ],
       "count_at_1e5_structural_equals_scan": 0,
@@ -1419,9 +2137,8 @@
       "exponent": "0",
       "infinite": false,
       "effective": true,
-      "runge_divisors": [
-        2,
-        3,
+      "effective_strategy": [
+        "runge",
         6
       ],
       "count_at_1e5_structural_equals_scan": 0,

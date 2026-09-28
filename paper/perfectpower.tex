@@ -149,6 +149,10 @@ The $t$-profiles in (i)--(iv) are mutually exclusive and exhaust all possibiliti
 If $F\in\Q[x]$ is integer-valued with coefficient denominator $L$, then $F$ and $L^dF\in\Z[x]$ have the same hits. This brings binomial coefficients into scope. For example, $\binom n3$ is a square for $n\le10^5$ only when $n\in\{1,2,3,4,50\}$.
 \end{remark}
 
+\begin{example}[Sums of powers]
+Let $S_k(n)=1^k+\dots+n^k$. Classifying $(L^dS_k,d)$ for $k\le10$ and $d\le6$ recovers Sch\"affer's theorem~\cite{Schaffer}: there are infinitely many solutions exactly for $(k,d)=(1,2),(3,2),(3,4),(5,2)$. The first is of Pell type with $\kappa=1/\log(3+2\sqrt2)$, and the second is of power type (Nicomachus). The third is of Pell type with the same hits as $(1,2)$. The fourth is of Pell type, with hits $1,13,133,1321,\dots$ and $\kappa=1/\log(5+2\sqrt6)$. Among the finite cases, a scan finds only Lucas's $n=24$ for $(2,2)$.
+\end{example}
+
 \section{Complete enumeration in the Runge case}\label{sec:runge}
 
 Suppose $\deg F=dq$ and $\lc F=b^d$ with $b\in\Z$ (the \emph{rigid} case), and that $F$ is not a $d$-th power. Matching the top $q+1$ coefficients gives a truncated root $Q=P/D$ with $P\in\Z[x]$, $D\ge1$ and $\lc Q=b$, such that $R=F-Q^d\ne0$ has degree $r<(d-1)q$. Qualitatively this shows that the hit set is finite. The Lean theorem \lean{rigid\_dichotomy} checks this.
@@ -253,6 +257,7 @@ The exact Python implementation (standard library only) classifies $(F,d)$, comp
 \bibitem{Ljunggren} W.~Ljunggren, Noen setninger om ubestemte likninger av formen $(x^n-1)/(x-1)=y^q$, \emph{Norsk Mat. Tidsskr.} 25 (1943), 17--20.
 \bibitem{Matthews} K.~Matthews, The Diophantine equation $x^2-Dy^2=N$, $D>0$, \emph{Expo. Math.} 18 (2000), 323--331.
 \bibitem{Runge} C.~Runge, \"Uber ganzzahlige L\"osungen von Gleichungen zwischen zwei Ver\"anderlichen, \emph{J. Reine Angew. Math.} 100 (1887), 425--435.
+\bibitem{Schaffer} J.~J.~Sch\"affer, The equation $1^p+2^p+\cdots+n^p=m^q$, \emph{Acta Math.} 95 (1956), 155--189.
 \bibitem{ST} A.~Schinzel and R.~Tijdeman, On the equation $y^m=P(x)$, \emph{Acta Arith.} 31 (1976), 199--204.
 \bibitem{Wang} S.~Wang, A counter-example to Grunwald's theorem, \emph{Ann. of Math.} 49 (1948), 1008--1009.
 \end{thebibliography}

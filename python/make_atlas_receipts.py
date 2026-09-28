@@ -72,7 +72,8 @@ for name, f, d in families:
     if cl.kind in ('radical', 'pell'):
         row['kappa'] = round(cl.details['kappa'], 12)
     if cl.kind == 'finite':
-        row['runge_divisors'] = cl.details['runge_divisors']
+        row['effective_strategy'] = (None if cl.details['strategy'] is None
+                                     else list(cl.details['strategy'][:2]))
     scan = count(f, d, 0, N_SCAN)
     if cl.effective:
         structural = structural_count(f, d, N_SCAN)
@@ -128,11 +129,35 @@ for name, f, d in (('linear_4n_plus_1', [1, 4], 2), ('cube_twist_5_plus_3n', [5,
                                  'K_tau': round(K, 6), 'main_term': round(main, 6),
                                  'difference': round(K - main, 6)})
 
+# Schaffer (1956): 1^k + ... + n^k = m^d has infinitely many solutions only for
+# (k, d) in {(1,2), (3,2), (3,4), (5,2)}.  The atlas recovers this list with constants.
+from perfectpower.polyalg import interpolate
+schaffer = []
+for kk in range(1, 11):
+    Sk = interpolate(list(range(kk + 2)), [sum(i ** kk for i in range(1, x + 1)) for x in range(kk + 2)])
+    for d in range(2, 7):
+        f = integerize(Sk, d)
+        cl = classify(f, d)
+        entry = {'k': kk, 'd': d, 'kind': cl.kind, 'growth': cl.growth, 't_profile': cl.t_profile}
+        if cl.infinite and cl.kind in ('radical', 'pell'):
+            entry['kappa'] = round(cl.details['kappa'], 12)
+            entry['count_1e12'] = structural_count(f, d, 10 ** 12)
+            entry['first_hits'] = structural_hits(f, d, 10 ** 8)
+        elif cl.infinite:
+            entry['count_1e12'] = structural_count(f, d, 10 ** 12)
+        else:
+            entry['scan_hits_up_to_1e4'] = [n for n, _ in hit_indices(f, d, 0, 10 ** 4)]
+            entry['effective'] = cl.effective
+        schaffer.append(entry)
+infinite_pairs = [(e['k'], e['d']) for e in schaffer if e['growth'] != 'bounded']
+assert infinite_pairs == [(1, 2), (3, 2), (3, 4), (5, 2)], infinite_pairs
+
 result = {'status': 'exact computations; structural counts cross-checked against the defining '
                     'scan up to 1e5; complete hit lists are proofs relative to Theorems P, B, C, R',
           'generator': 'python3 python/make_atlas_receipts.py',
           'definition': 'count n in [1,N] with F(n)=m**d for an integer m',
           'grunwald_wang_check': grunwald,
+          'schaffer_sums_of_powers': {'infinite_pairs': infinite_pairs, 'table': schaffer},
           'heat_kernel_checks_theorem_T': transform_checks,
           'rows': rows}
 out = root / 'receipts' / 'atlas_benchmarks.json'
