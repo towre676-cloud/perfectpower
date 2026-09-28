@@ -9,5 +9,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build against the pinned Mathlib (fetches the Mathlib build cache)
         uses: leanprover/lean-action@v1
-      - name: Axiom audit (no sorry, no custom axioms)
+      - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
+      - name: Batteries linters on the hand-written library
+        run: lake env lean audit/Lint.lean
+      - name: README counts match the audit
+        run: |
+          python3 python/make_counts.py
+          git diff --exit-code -- README.md audit/axioms_report.txt

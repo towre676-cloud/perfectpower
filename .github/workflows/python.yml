@@ -9,12 +9,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - name: Exact regression suite
-        run: PYTHONPATH=python python3 -m unittest discover -s python/tests -v
-      - name: Reproduce benchmark receipts
+          python-version: '3.11'
+      - name: Tests
+        run: make test
+      - name: Regenerate receipts, data and generated Lean; must match the commit
         run: |
-          python3 python/make_receipts.py
-          python3 python/make_atlas_receipts.py
-          python3 python/make_lean_certificates.py
-          git diff --exit-code -- receipts/ PerfectPower/Generated/
+          make receipts
+          git diff --exit-code -- receipts/ data/ PerfectPower/Generated/
