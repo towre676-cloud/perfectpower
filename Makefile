@@ -28,6 +28,7 @@ receipts:
 	$(PY) python/pillai_census.py 18 1000
 	$(PY) python/make_lean_census.py
 	$(PY) python/uniformity.py
+	$(PY) python/make_pell_heat_receipt.py
 
 counts: audit
 	$(PY) python/make_counts.py

@@ -16,6 +16,7 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 | Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) | §7 |
 | Schäffer's sums-of-powers list, recovered with constants | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) + `EXACT_COMPUTATION` | §7 |
 | Theorem T (transforms) | `PAPER_PROOF` | §8 |
+| Theorem T2 (log-periodic second term, Pell type) | `PAPER_PROOF` + numerical check to $O(\tau)$ | §8, `pell_heat.py` |
 | Theorem E (exponential sequences) | `PAPER_PROOF` + `EXACT_COMPUTATION`; the $d$-periodicity and rational density $P/d$ are `LEAN_VERIFIED` (`exp_hasDensity`, `two_pow_hasDensity_half`) | §9, `exponential.py`, `PerfectPower/Exponential.lean` |
 
 ## 1. Summary
@@ -280,6 +281,28 @@ The receipt `heat_kernel_checks_theorem_T` evaluates $K_X(\tau)$ from exact stru
 - $3n^2+1$: about $0.005$.
 
 This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\beta$ imply" in the polynomial case, where only $(\alpha,\beta)\in\{(1,0),(1/t,0),(0,1),(0,0)\}$ occur.
+
+**Theorem T2 (second-order heat asymptotics, Pell type).** Let $P=An^2+Bn+C$ be of Pell type with infinitely many square values. Apart from finitely many terms, the hits split into subsequences $n_j=\alpha E^j+O(E^{-j})$, $j\ge0$. There is one subsequence for each positive Pell orbit $\mathcal O$ and each good residue class $r$ of the orbit index modulo the period $\pi_{\mathcal O}$, with $E=\varepsilon^{\pi_{\mathcal O}}$ and $\alpha=\eta_r/(4A)$. Then
+$$K_X(\tau)=\kappa\log\frac1\tau+C_0+\sum_{\text{classes}}\Phi_E\big(\log(\tau\alpha)\big)+O(\tau),$$
+where
+$$\Phi_E(u)=\frac2{\log E}\,\mathrm{Re}\sum_{m\ge1}\Gamma\!\Big(\frac{2\pi i m}{\log E}\Big)e^{-2\pi i m u/\log E}.$$
+Here $\Phi_E$ is continuous and $\log E$-periodic, $\kappa$ is the Lemma Q constant, and
+$$C_0=\sum_{\text{classes}}\Big(\frac{\log(1/\alpha)-\gamma}{\log E}+\frac12\Big)+\big(\#\{\text{hits}\le M\}-\#\{\text{model terms}\le M\}\big)$$
+for any $M$ beyond which hits and model terms coincide.
+
+*Proof.* The Mellin transform of $\lambda\mapsto\sum_{j\ge0}e^{-\lambda E^j}$ is $\Gamma(s)/(1-E^{-s})$ for $\Re s>0$. Shift the contour to $\Re s=-\tfrac12$.
+- The double pole at $s=0$ contributes $(\log(1/\lambda)-\gamma)/\log E+\tfrac12$.
+- The simple poles at $s=2\pi im/\log E$, $m\ne0$, contribute $\Phi_E(\log\lambda)$. The series converges absolutely because $|\Gamma(iy)|\sim\sqrt{2\pi/|y|}\,e^{-\pi|y|/2}$.
+- The remaining integral is $O(\lambda)$.
+
+Next, replace $e^{-\tau n_j}$ by $e^{-\tau\alpha E^j}$. This costs $O(\tau\sum_jE^{-j})=O(\tau)$. Each of the finitely many discrepancies between hits and model terms tends to $\pm1$ as $\tau\to0$, which gives the integer correction in $C_0$. $\square$
+
+*What it adds.*
+- **It distinguishes families with the same $\kappa$.** $2n^2+1$ and $2n^2+2n$ (four times the triangular numbers) share $\kappa=1/\log(3+2\sqrt2)$, but their constants differ: $C_0=-0.2376$ and $-0.0410$.
+- **The oscillation is not negligible.** It has peak-to-peak amplitude $0.011$ for $2n^2+1$ but $0.58$ for $5n^2+n+3$.
+- **It connects to the Dirichlet series.** Because $Z_X(s)=\sum_{\text{classes}}\alpha^{-s}/(1-E^{-s})+(\text{entire near }\Re s=0)$, the heat fluctuations are exactly the contributions of the imaginary poles $s=2\pi im/\log E$ of $Z_X$.
+
+*Status.* `PAPER_PROOF` (standard Mellin analysis). `receipts/pell_heat.json` checks seven families: after the two terms, the residual $|K(\tau)-\text{prediction}|$ is $\le 1.3\cdot10^{-12}$ at $\tau=10^{-12}$ and scales like $\tau$, as the $O(\tau)$ error predicts (`perfectpower/pell_heat.py`).
 
 ## 9. Exponential sequences: a dual spectrum
 

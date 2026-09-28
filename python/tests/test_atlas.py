@@ -321,6 +321,21 @@ class TestSandwichCover(unittest.TestCase):
                 self.assertTrue(p >= 0 and p ** d < V < (p + 1) ** d, (f, d, n))
 
 
+class TestPellHeat(unittest.TestCase):
+    def test_two_term_expansion(self):
+        import math
+        from perfectpower.atlas import quadratic_square_hits
+        from perfectpower.pell_heat import pell_heat_model, pell_heat_prediction
+        for A, B, C in ((2, 0, 1), (5, 1, 3), (2, 2, 0)):
+            classes, ms = pell_heat_model(A, B, C, match=10 ** 6)
+            hits = sorted(quadratic_square_hits(A, B, C, 10 ** 30))
+            hs = sum(1 for h in hits if h <= 10 ** 6)
+            for tau in (1e-6, 1e-9):
+                K = sum(math.exp(-tau * h) for h in hits)
+                p, _ = pell_heat_prediction(A, B, C, tau, hs, classes, ms)
+                self.assertLess(abs(K - p), 20 * tau, (A, B, C, tau))
+
+
 class TestGeometry(unittest.TestCase):
     def test_euler_characteristic_matches_types(self):
         # Theorem G: finite type  <=>  chi(affine component) = d'(1 - S) < 0  (Siegel)
