@@ -28,7 +28,8 @@ Reading order:
 
 1. [MONOGRAPH.md](docs/MONOGRAPH.md): definitions and the 0–1 law.
 2. [RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md): the v0.6 theorems with proofs.
-3. [FORMAL_AUDIT.md](docs/FORMAL_AUDIT.md): exactly what the Lean build certifies.
+3. [paper/perfectpower.pdf](paper/perfectpower.pdf): the same results as a typeset paper (source `paper/perfectpower.tex`; build with `pdflatex` twice).
+4. [FORMAL_AUDIT.md](docs/FORMAL_AUDIT.md): exactly what the Lean build certifies.
 
 ## Lean
 

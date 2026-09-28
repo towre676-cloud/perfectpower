@@ -1,0 +1,257 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amssymb,mathtools,booktabs,enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\lc}{\operatorname{lc}}
+\newcommand{\lean}[1]{\texttt{#1}}
+
+\title[Perfect-power values of polynomials]{The exponent spectrum of perfect-power values of polynomials, with complete Runge enumeration and a machine-checked kernel}
+\author{PerfectPower project}
+\date{Release 0.6, 28 September 2026}
+
+\begin{document}
+
+\begin{abstract}
+For $F\in\Z[x]$ and $d\ge2$ let $A(N)$ be the number of $1\le n\le N$ for which $F(n)$ is a perfect $d$-th power. We classify $(F,d)$ into four types, decidable from the root multiplicities of $F$. In the four types, $A(N)=N$; $A(N)=\kappa N^{1/t}+O(1)$ with $t\mid d$; $A(N)=\kappa\log N+O(1)$; or $A(N)=O(1)$. The constants $\kappa$ are explicit. The first three types are handled by elementary arguments, and the last by LeVeque's theorem. Consequently the growth exponent $\limsup\log(1+A(N))/\log N$ lies in $\{0,1\}\cup\{1/t:t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ for $p$ the least prime factor of $d$ whenever $F$ is not a $d$-th power in $\Z[x]$. In the Runge case ($d\mid\deg F$ and $\lc F$ a $d$-th power) we give a complete enumeration of the hit set by exact root isolation. We describe the dependence on a shift $F=S+k$, and give Dirichlet-series and heat-kernel asymptotics for every type. Several results, among them the rigid dichotomy, the rigid $0$--$1$ law, the monomial count and the Pell example $2n^2+1$, are verified in Lean~4 with Mathlib.
+\end{abstract}
+\maketitle
+
+\section{Introduction}
+
+Let $F\in\Z[x]$ and $d\ge2$. Call $n\ge1$ a \emph{hit} if $F(n)=m^d$ for some $m\in\Z$, and let $A(N)=\#\{1\le n\le N:\ n\text{ is a hit}\}$. The density $\lim A(N)/N$ always exists: it is $1$ if $F=G^d$ with $G\in\Z[x]$ and $0$ otherwise. This follows, for instance, from Boshernitzan's equidistribution theorem for Hardy fields together with a separate treatment of the ``rigid'' case, and this was the starting point of the project.
+
+Density zero is a weak statement. The hit sets of $4n+1$, of $2n^2+1$ and of $n^3+1$ (with $d=2$) have respectively about $\sqrt N$ elements, about $0.567\log N$ elements, and finitely many elements. The purpose of this paper is to show that these three behaviours, together with density one, are the only possibilities, and to compute everything explicitly.
+
+\subsection*{Setup} Write $F=c\prod_i(x-\alpha_i)^{r_i}$ over $\overline\Q$ with distinct $\alpha_i$ and $c=\lc F$. Put $t_i=d/\gcd(d,r_i)$. The multiset $\{t_i\}$ is the \emph{$t$-profile} of $(F,d)$. It is determined by Yun's squarefree decomposition $F=c\prod_j S_j^{\,j}$: every root of $S_j$ has $t=d/\gcd(d,j)$. No factorisation is needed.
+
+\begin{theorem}[Atlas]\label{thm:atlas}
+Let $F\in\Z[x]$ be nonconstant and $d\ge2$. Exactly one of the following holds.
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item \textbf{Power type:} all $t_i=1$. Then $A(N)=N$ if $c$ is an integer $d$-th power, and otherwise the hits are exactly the positive integer roots of $F$.
+\item \textbf{Radical type:} the $t$-profile is $\{t,1,\dots,1\}$ with $t\ge2$. Then $A(N)=\kappa N^{1/t}+O(1)$ with $\kappa\ge0$ given by \eqref{eq:kappaB}.
+\item \textbf{Pell type:} the $t$-profile is $\{2,2,1,\dots,1\}$. Then $A(N)=\kappa\log N+O(1)$ with $\kappa\ge0$ given by \eqref{eq:kappaQ}.
+\item \textbf{Finite type:} all remaining cases. Then the hit set is finite.
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}[Exponent spectrum]\label{cor:spectrum}
+Let $\alpha(F,d)=\limsup_N\log(1+A(N))/\log N$. Then $\alpha(F,d)\in\{0,1\}\cup\{1/t:\ t\mid d,\ t\ge2\}$, and each value occurs. If $F$ is not the $d$-th power of a polynomial in $\Z[x]$, then $A(N)=O(N^{1/p})$, where $p$ is the least prime factor of $d$. In particular $A(N)=O(\sqrt N)$ always, and $A(N)=O(N^{1/3})$ for odd $d$. These bounds are attained.
+\end{corollary}
+
+\begin{proof}
+In type (ii) the integer $t=d/\gcd(d,r)$ divides $d$ and exceeds $1$, so $t\ge p$. Types (iii) and (iv) have exponent $0$. The monomial $x^r$ with $\gcd(r,d)=d/t$ has $A(N)=\lfloor N^{1/t}\rfloor$ by Theorem~\ref{thm:radical}.
+\end{proof}
+
+Parts (i)--(iii) of Theorem~\ref{thm:atlas} are proved in \S\S\ref{sec:power}--\ref{sec:pell}. Part (iv) is LeVeque's theorem~\cite{LeVeque}. We therefore obtain a second proof of the density $0$--$1$ law, independent of equidistribution. It depends on Siegel's theorem through LeVeque, but it is quantitative. Section~\ref{sec:runge} makes type (iv) effective in the Runge case. Section~\ref{sec:shift} treats shifts, \S\ref{sec:transforms} treats transforms, and \S\ref{sec:formal} describes the Lean formalisation and the computations.
+
+\section{The power type}\label{sec:power}
+
+\begin{theorem}\label{thm:power}
+Suppose all root multiplicities of $F$ are divisible by $d$, so that $F=cG^d$ with $G\in\Q[x]$ monic. If $c=b^d$ with $b\in\Z$, then $bG\in\Z[x]$ and every $n$ is a hit. Otherwise $n\ge1$ is a hit if and only if $F(n)=0$.
+\end{theorem}
+
+\begin{proof}
+If $c=b^d$, then $(bG)^d=F\in\Z[x]$. Since $\Z[x]$ is integrally closed in $\Q[x]$ (Gauss's lemma), $bG\in\Z[x]$. Now suppose $c$ is not an integer $d$-th power. If $G(n)\ne0$ and $F(n)=m^d$, then $c=(m/G(n))^d$. A rational number whose $d$-th power is an integer is an integer, so $c$ would be an integer $d$-th power, a contradiction. Finally, $F(n)=0=0^d$ whenever $G(n)=0$.
+\end{proof}
+
+\begin{remark}[Grunwald--Wang]
+Take $F=16x^8$ and $d=8$. Since $16$ is an $8$-th power modulo every odd prime, $F(n)$ is an $8$-th power residue modulo every prime for every $n$. Yet $F$ has no hits. No sieve that uses residues modulo primes alone can prove density zero in general. Here the obstruction is modulo $32$.
+\end{remark}
+
+\section{The radical type}\label{sec:radical}
+
+Galois-conjugate roots of $F$ have equal multiplicities. A unique root with $t\ge2$ is therefore rational, say $\alpha=u/v$ with $v\ge1$ and $\gcd(u,v)=1$. We can write
+\[
+F=c\,(x-\alpha)^rG(x)^d,\qquad G\in\Q[x]\text{ monic},\quad t=d/\gcd(r,d)\ge2 .
+\]
+Let $K=\lceil r/d\rceil$ and $c_1=c\,v^{dK-r}\in\Z$. Let $g=\gcd(r,d)$ and $r'=r/g$, so $\gcd(r',t)=1$. If $g\mid v_p(c_1)$ for all primes $p$, let $\tau_p\in[0,t)$ be defined by $\tau_p\equiv-(v_p(c_1)/g)\,r'^{-1}\pmod t$, and put $z_0=\prod_p p^{\tau_p}$. A sign $\sigma\in\{\pm1\}$ is \emph{admissible} if $d$ is odd, or if $d$ is even and $c_1\sigma^r>0$.
+
+\begin{theorem}\label{thm:radical}
+In the radical type, $n\ge1$ is a hit if and only if either $F(n)=0$, or $g\mid v_p(c_1)$ for every $p$ and $vn-u=\sigma z_0w^t$ for an admissible sign $\sigma$ and an integer $w\ge1$. Let $\varrho=\#\{w\bmod v:\ z_0w^t+u\equiv0\ (v)\}$. If $+1$ is admissible and the divisibility condition holds, then
+\begin{equation}\label{eq:kappaB}
+A(N)=\kappa N^{1/t}+O(1),\qquad \kappa=\frac{\varrho}{v}\Big(\frac{v}{z_0}\Big)^{1/t}.
+\end{equation}
+Otherwise $A(N)=O(1)$.
+\end{theorem}
+
+\begin{proof}
+Let $F(n)\ne0$. We claim that $n$ is a hit if and only if $c(n-\alpha)^r\in\Q^{\times d}$. If $F(n)=m^d$, divide by $G(n)^d$. Conversely, if $c(n-\alpha)^r=\xi^d$, then $F(n)=(\xi G(n))^d$ is an integer and a rational $d$-th power, hence an integer $d$-th power.
+
+With $z=vn-u\ne0$, multiplying by the $d$-th power $v^{dK}$ shows that the condition is equivalent to $c_1z^r$ being the $d$-th power of an integer. An integer $X\ne0$ is a $d$-th power if and only if $d\mid v_p(X)$ for every $p$, together with $X>0$ when $d$ is even. For $X=c_1z^r$ the valuation condition is $v_p(c_1)+rv_p(z)\equiv0\pmod d$. This is solvable exactly when $g\mid v_p(c_1)$, and then it is equivalent to $v_p(z)\equiv\tau_p\pmod t$. The positive integers with these valuations are exactly $z_0w^t$ with $w\ge1$.
+
+For the count, the sign $\sigma=+1$ contributes $n=(z_0w^t+u)/v$ with $w$ in one of $\varrho$ residue classes modulo $v$ and $z_0w^t\le vN-u$. That gives $\varrho v^{-1}\big((vN-u)/z_0\big)^{1/t}+O(1)$ hits. The sign $\sigma=-1$ forces $n<\alpha$, and there are finitely many zeros of $F$.
+\end{proof}
+
+\begin{example}
+\begin{itemize}
+\item $4n+1$ with $d=2$: $\kappa=1$.
+\item $2n-5$ with $d=2$: $\kappa=2^{-1/2}$.
+\item $3n+5$ with $d=3$: $\kappa\approx0.4807$.
+\item $12n^2$ with $d=3$: the hits are $n=12w^3$, so $\kappa=12^{-1/3}$.
+\item $3n+2$ with $d=6$ and $16n^3$ with $d=6$: no hits.
+\end{itemize}
+\end{example}
+
+\section{The Pell type}\label{sec:pell}
+
+Here $d=2e$, and the two special roots have multiplicities that are odd multiples of $e$. They are either both rational or conjugate. Their monic product $W\in\Q[x]$ has distinct roots, and $F=cW^eH^d$ with $H\in\Q[x]$ monic.
+
+\begin{theorem}\label{thm:pellred}
+Let $\Gamma=\{\gamma\in\Q:\gamma^e=c\}$, so that $|\Gamma|\le2$. For $\gamma=\gamma_1/\gamma_2\in\Gamma$ in lowest terms, let $L$ be the common denominator of $W$ and put $P_\gamma=\gamma_1\gamma_2L\cdot LW\in\Z[x]$. Then $n\ge1$ is a hit if and only if $F(n)=0$ or $P_\gamma(n)$ is a perfect square for some $\gamma\in\Gamma$.
+\end{theorem}
+
+\begin{proof}
+For $F(n)\ne0$, $n$ is a hit if and only if $cW(n)^e=y^{2e}$ with $y\in\Q^\times$. In that case $\gamma=y^2/W(n)$ satisfies $\gamma^e=c$. Conversely, if $\gamma W(n)=y^2$ with $\gamma^e=c$, then $cW(n)^e=y^{2e}$. Multiplying by $(\gamma_2L)^2$ turns ``$\gamma W(n)$ is a rational square'' into ``$P_\gamma(n)$ is a perfect square''.
+\end{proof}
+
+\begin{lemma}\label{lem:quad}
+Let $P=An^2+Bn+C\in\Z[x]$ with $A\ne0$ and $\Delta=B^2-4AC\ne0$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item If $A<0$ or $A$ is a square, then $P(n)$ is a square for only finitely many $n$.
+\item If $A>0$ is not a square, let $\varepsilon=x_1+y_1\sqrt{4A}$ be the fundamental solution of $x^2-4Ay^2=1$. For each $\varepsilon$-orbit $\mathcal O$ of solutions $\eta=X+Y\sqrt{4A}>0$ of $X^2-4AY^2=\Delta$, let $\pi_{\mathcal O}$ be the period of $(X,Y)\bmod 2A$ along the orbit, and let $g_{\mathcal O}$ be the number of steps in one period with $X\equiv B\pmod{2A}$. Then
+\begin{equation}\label{eq:kappaQ}
+\#\{n\le N:\ P(n)=\square\}=\kappa\log N+O(1),\qquad \kappa=\frac{1}{\log\varepsilon}\sum_{\mathcal O}\frac{g_{\mathcal O}}{\pi_{\mathcal O}}.
+\end{equation}
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+We have $4AP(n)=X^2-\Delta$ with $X=2An+B$. So $P(n)=m^2$ if and only if $X^2-4Am^2=\Delta$, and $n\mapsto X$ is a bijection onto the class $B\bmod 2A$.
+
+In (a), $A<0$ bounds $X$. If $A=s^2$, the factorisation $(X-2sm)(X+2sm)=\Delta$ leaves at most $2\tau(|\Delta|)$ possibilities.
+
+In (b) there are finitely many orbits (Nagell). A large hit corresponds to exactly one large $\eta=\eta_0\varepsilon^k$ in a positive orbit with $X\equiv B\pmod{2A}$. The step $(X,Y)\mapsto(x_1X+4Ay_1Y,\ y_1X+x_1Y)$ has determinant $1$, so it is invertible modulo $2A$ and the residues are purely periodic. Finally $\log X_k=k\log\varepsilon+O(1)$.
+\end{proof}
+
+\begin{example}
+For $2n^2+1$ we get $\kappa=1/\log(3+2\sqrt2)=0.56729\ldots$. The exact counts at $N=10^6,10^{12},10^{24},10^{48}$ are $8,16,31,63$. The square triangular numbers $n(n+1)/2$, reduced to $4n^2+4n$ by Remark~\ref{rem:intval}, have the same $\kappa$. For the rigid polynomials $n^2+n$ and $n^2+1$, $A$ is a square and there are no hits.
+\end{example}
+
+\begin{proof}[Proof of Theorem~\ref{thm:atlas}]
+The $t$-profiles in (i)--(iv) are mutually exclusive and exhaust all possibilities. Parts (i)--(iii) are Theorems~\ref{thm:power}, \ref{thm:radical} and~\ref{thm:pellred} together with Lemma~\ref{lem:quad}. Part (iv) is LeVeque's theorem~\cite{LeVeque}: the equation $y^m=f(x)$ has only finitely many integral solutions unless the $t$-profile is $\{t,1,\dots,1\}$ or $\{2,2,1,\dots,1\}$.
+\end{proof}
+
+\begin{remark}[Integer-valued polynomials]\label{rem:intval}
+If $F\in\Q[x]$ is integer-valued with coefficient denominator $L$, then $F$ and $L^dF\in\Z[x]$ have the same hits. This brings binomial coefficients into scope. For example, $\binom n3$ is a square for $n\le10^5$ only when $n\in\{1,2,3,4,50\}$.
+\end{remark}
+
+\section{Complete enumeration in the Runge case}\label{sec:runge}
+
+Suppose $\deg F=dq$ and $\lc F=b^d$ with $b\in\Z$ (the \emph{rigid} case), and that $F$ is not a $d$-th power. Matching the top $q+1$ coefficients gives a truncated root $Q=P/D$ with $P\in\Z[x]$, $D\ge1$ and $\lc Q=b$, such that $R=F-Q^d\ne0$ has degree $r<(d-1)q$. Qualitatively this shows that the hit set is finite. The Lean theorem \lean{rigid\_dichotomy} checks this.
+
+\begin{theorem}\label{thm:runge}
+For $x_0\ge1$ put
+\[
+a(x_0)=|b|-\sum_{i<q}|Q_i|x_0^{i-q},\qquad C(x_0)=\sum_{i\le r}|R_i|x_0^{i-r},\qquad T(x_0)=\Big\lfloor\frac{D\,C(x_0)\,x_0^{r-(d-1)q}}{a(x_0)^{d-1}}\Big\rfloor .
+\]
+Suppose $a(x_0)>0$ and, when $d$ is odd, $C(x_0)x_0^r<a(x_0)^dx_0^{dq}$. Then every hit $n\ge x_0$ is a root of one of the nonzero integer polynomials
+\[
+G_t=D^dF-(P+t)^d,\qquad |t|\le T(x_0).
+\]
+In particular the number of hits is at most $x_0-1+(2T(x_0)+1)(d-1)q$.
+\end{theorem}
+
+\begin{proof}
+For $n\ge x_0$ we have $|Q(n)|\ge a(x_0)n^q>0$ and $|R(n)|\le C(x_0)n^r$. Let $F(n)=m^d$ and pick $y=\pm m$ with $y^d=F(n)$ and $yQ(n)\ge0$. For odd $d$ the sign condition forces $y=m$ to work, because $|R(n)|<|Q(n)|^d$ gives $F(n)$ the sign of $Q(n)$. Write $y=sQ(n)$ with $s\ge0$. Then $|s-1|\le|s^d-1|=|R(n)|/|Q(n)|^d$, so
+\[
+|Dy-P(n)|\le D|R(n)|/|Q(n)|^{d-1}\le D\,C(x_0)\,x_0^{r-(d-1)q}/a(x_0)^{d-1}.
+\]
+Hence $t=Dy-P(n)\in\Z$ satisfies $|t|\le T(x_0)$ and $G_t(n)=0$. Finally, $G_0=D^dR\ne0$, and for $t\ne0$ the polynomial $G_t$ has degree $(d-1)q$ with leading coefficient $-d\,t\,(Db)^{d-1}$.
+\end{proof}
+
+Since $T(x_0)\to0$, the following algorithm is complete. Scan up to the first admissible $x_0$. Then walk dyadic blocks $[x_0,2x_0)$, and in each block either scan it or isolate the integer roots of all $G_t$ with $|t|\le T(x_0)$ by Sturm sequences, whichever is cheaper. Stop when $T(x_0)=0$, where only $G_0$ remains. If $F$ is rigid for some divisor $d'\ge2$ of $d$, the same procedure applies, because $d$-th powers are $d'$-th powers. By Capelli's theorem this covers the leading-term form of Runge's criterion, up to a trivially negative case.
+
+\begin{example}
+$1+n+n^2+n^3+n^4$ is a square for $n\ge1$ only at $n=3$ (Ljunggren). For the following pairs, the product of $k$ consecutive positive integers is never a $d$-th power; each is a fixed instance of the Erd\H{o}s--Selfridge theorem, and each takes at most $0.03$\,s:
+
+\begin{center}
+\begin{tabular}{@{}cc@{}}
+\toprule
+$k$ & $d$ \\
+\midrule
+4 & 2, 4 \\
+6 & 2, 3, 6 \\
+8 & 2, 4, 8 \\
+10 & 2, 5 \\
+12 & 2, 3, 4, 6 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The earlier cutoff-only method for these pairs needed cutoffs as large as $3.9\cdot10^{10}$.
+\end{example}
+
+\section{Shifts}\label{sec:shift}
+
+\begin{corollary}\label{cor:shift}
+Let $S\in\Z[x]$ with $\deg S=M\ge1$, and let $\mathcal K(S)$ be the set of integer critical values $-S(\xi)$, where $S'(\xi)=0$. It has at most $M-1$ elements, and it is the set of integer roots of $\operatorname{Res}_x(S+k,S')$. For $k\notin\mathcal K(S)$, the polynomial $S+k$ is squarefree and is:
+\begin{itemize}
+\item of radical type if $M=1$;
+\item of Pell type if $M=2$ and $d=2$;
+\item of finite type otherwise.
+\end{itemize}
+In particular, if $M\ge3$ then $S(n)+k$ has finitely many hits for all but at most $M-1$ values of $k$, and at most one $k$ gives density one.
+\end{corollary}
+
+For example, $n^3+k$ with $d=2$ has finitely many hits for every $k\neq0$; these are the Mordell curves. For $n^3-3n+k$ with $d=2$ the exceptional shifts are $k=\pm2$, and $n^3-3n+2=(n-1)^2(n+2)$ has $\kappa=1$.
+
+\section{Transforms}\label{sec:transforms}
+
+Let $X$ be the hit indicator, $Z_X(s)=\sum X(n)n^{-s}$ and $K_X(\tau)=\sum X(n)e^{-\tau n}$.
+
+\begin{theorem}\label{thm:transforms}
+If $A(x)=\kappa x^\beta+O(1)$ with $0<\beta\le1$, then $Z_X(s)-\kappa s/(s-\beta)$ is holomorphic on $\Re s>0$, and $K_X(\tau)=\kappa\Gamma(1+\beta)\tau^{-\beta}+O(1)$. If $A(x)=\kappa\log x+O(1)$, then $Z_X(s)-\kappa/s$ is holomorphic on $\Re s>0$, and $K_X(\tau)=\kappa\log(1/\tau)+O(1)$.
+\end{theorem}
+
+\begin{proof}
+Use Abel summation, $Z_X(s)=s\int_1^\infty A(x)x^{-s-1}\,dx$ and $K_X(\tau)=\tau\int_0^\infty A(x)e^{-\tau x}\,dx$. The main terms integrate explicitly, and a bounded error contributes a function that is holomorphic on $\Re s>0$, respectively bounded.
+\end{proof}
+
+By Theorem~\ref{thm:radical} and Lemma~\ref{lem:quad} these hypotheses hold exactly in the radical and Pell types. When $\alpha=0$ in the radical type, one gets $Z_X(s)=z_0^{-s}\zeta(ts)$ plus a Dirichlet polynomial.
+
+\section{Formal verification and computation}\label{sec:formal}
+
+The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20.0}). An audit script checks that $32$ theorems depend only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}. Among them:
+\begin{itemize}
+\item \lean{rigid\_dichotomy}: in the rigid case, either $F=G^d$ over $\Z$ or the hit set is finite.
+\item \lean{rigid\_zero\_one}: in the rigid case the density exists and is $0$ or $1$.
+\item \lean{twisted\_finite}: if $D^dF=cH^d$ with $c$ not a $d$-th power, every hit is a root of $H$.
+\item \lean{monomial\_count}: for $F=x^r$, $A(N)=\#\{w\le N: w^t\le N\}$.
+\item \lean{ljunggren\_hitSet} and \lean{consecutive\_four\_hitSet}: two complete hit lists.
+\item \lean{pell\_hitSet\_infinite} and \lean{pell\_hasDensity\_zero}: $2n^2+1$ has infinitely many square values and density zero.
+\end{itemize}
+The exact Python implementation (standard library only) classifies $(F,d)$, computes $\kappa$, enumerates hits structurally or by Theorem~\ref{thm:runge}, and cross-checks every structural count against the defining scan. The receipts record $43$ families and are reproducible bit-for-bit.
+
+\subsection*{What remains}
+\begin{itemize}
+\item Effective enumeration in the finite type outside the Runge case. This requires elliptic-logarithm or Baker-type methods; an example is $n^3+n+4=m^2$, which has the isolated hit $n=4128$.
+\item Formalisation of Theorems~\ref{thm:radical}, \ref{thm:pellred} and~\ref{thm:runge} in general.
+\item Analogues for non-polynomial sequences.
+\end{itemize}
+
+\begin{thebibliography}{9}
+\bibitem{Boshernitzan} M.~D.~Boshernitzan, Uniform distribution and Hardy fields, \emph{J. Anal. Math.} 62 (1994), 225--240.
+\bibitem{Brindza} B.~Brindza, On $S$-integral solutions of the equation $y^m=f(x)$, \emph{Acta Math. Hungar.} 44 (1984), 133--139.
+\bibitem{ES} P.~Erd\H{o}s and J.~L.~Selfridge, The product of consecutive integers is never a power, \emph{Illinois J. Math.} 19 (1975), 292--301.
+\bibitem{LeVeque} W.~J.~LeVeque, On the equation $y^m=f(x)$, \emph{Acta Arith.} 9 (1964), 209--219.
+\bibitem{Ljunggren} W.~Ljunggren, Noen setninger om ubestemte likninger av formen $(x^n-1)/(x-1)=y^q$, \emph{Norsk Mat. Tidsskr.} 25 (1943), 17--20.
+\bibitem{Matthews} K.~Matthews, The Diophantine equation $x^2-Dy^2=N$, $D>0$, \emph{Expo. Math.} 18 (2000), 323--331.
+\bibitem{Runge} C.~Runge, \"Uber ganzzahlige L\"osungen von Gleichungen zwischen zwei Ver\"anderlichen, \emph{J. Reine Angew. Math.} 100 (1887), 425--435.
+\bibitem{ST} A.~Schinzel and R.~Tijdeman, On the equation $y^m=P(x)$, \emph{Acta Arith.} 31 (1976), 199--204.
+\bibitem{Wang} S.~Wang, A counter-example to Grunwald's theorem, \emph{Ann. of Math.} 49 (1948), 1008--1009.
+\end{thebibliography}
+\end{document}
