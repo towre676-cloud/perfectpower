@@ -8,11 +8,12 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 |---|---|---|
 | Theorem P (power type) | `LEAN_VERIFIED`: density one is `hasDensity_one_of_pow`; finiteness is `power_type_finite` | §2, `PerfectPower/ZeroOne.lean` |
 | Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; the monomial case $c=1,\alpha=0$ is `LEAN_VERIFIED` (`monomial_count`) | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
-| Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check | §4, `atlas.py` |
+| Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; for $2n^2+1$, infinitude and density zero are `LEAN_VERIFIED` (`pell_hasDensity_zero`) | §4, `atlas.py`, `PerfectPower/Pell.lean` |
 | Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque 1964) | §5 |
-| Theorem R (complete Runge enumeration) | `PAPER_PROOF`; its analytic core is `LEAN_VERIFIED` (`eventually_no_hit`) | §6, `runge.py` |
+| Theorem R (complete Runge enumeration) | `PAPER_PROOF`; the reduction to the $G_t$ is `LEAN_VERIFIED` (`runge_finite`); 17 instances have generated Lean certificates | §6, `runge.py`, `lean_emit.py` |
 | Rigid-branch 0–1 law | `LEAN_VERIFIED` (`rigid_zero_one`) | §6 |
 | Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) | §7 |
+| Schäffer's sums-of-powers list, recovered with constants | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) + `EXACT_COMPUTATION` | §7 |
 | Theorem T (transforms) | `PAPER_PROOF` | §8 |
 | Theorem E (exponential sequences) | `PAPER_PROOF` + `EXACT_COMPUTATION`; the $d$-periodicity and rational density $P/d$ are `LEAN_VERIFIED` (`exp_hasDensity`, `two_pow_hasDensity_half`) | §9, `exponential.py`, `PerfectPower/Exponential.lean` |
 
