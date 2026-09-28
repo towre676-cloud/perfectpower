@@ -81,3 +81,11 @@ open PerfectPower
 #print axioms pillai_finite_of_abc
 -- Mordell census points lie on their curves (completeness NOT checked; see TRUST_BOUNDARY)
 #print axioms PerfectPower.Generated.Mordell.census_points_valid
+-- Binomial coefficients via elliptic curves (point-list completeness is an explicit hypothesis)
+#print axioms two_mul_choose_two
+#print axioms six_mul_choose_three
+#print axioms binomial_curve_points_valid
+#print axioms choose_two_cube_iff
+#print axioms choose_two_cube_hits
+#print axioms choose_three_square_iff
+#print axioms choose_three_square_hits

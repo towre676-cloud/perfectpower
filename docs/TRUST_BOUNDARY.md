@@ -65,6 +65,7 @@ Every data row carries one label: `receipts/atlas_benchmarks.json`, `data/famili
 | `PROVED_STRUCTURAL` | A paper proof of the structure (Theorems P, B, C), with counts cross-checked against scans. |
 | `COMPLETE_HIT_LIST` | Theorem R plus exact arithmetic; not formalised for this instance. |
 | `INDEPENDENT_COMPUTATION` | Our scan agrees with a certified external computation (Sage integral points; `receipts/cubic_crossval.json`). |
+| `LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS` | Lean proves the reduction to an elliptic curve, the congruence filtering, and that every surviving point is a hit (`PerfectPower/Binomial.lean`). Completeness of the curve's integral-point list is an explicit hypothesis, certified by Sage (`receipts/binomial_curves.json`: rank proved, basis saturated). |
 | `CONDITIONAL_ON_UNPROVEN_RANK` | A Sage integral-point list computed from generators whose rank mwrank could not prove. Complete only if the rank is right. Used in `data/mordell_census.csv`. |
 | `EXACT_WITHIN_BOUND` | An exhaustive enumeration, complete up to the stated bound and silent beyond it. Used in `data/pillai_gaps.csv`. |
 | `SCAN_EVIDENCE_ONLY` | Finiteness is conditional on LeVeque. The listed hits are those with $n\le10^5$. **No completeness claim is made.** |

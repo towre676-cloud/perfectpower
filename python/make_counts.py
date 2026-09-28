@@ -10,14 +10,21 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 report = (root / 'audit' / 'axioms_report.txt').read_text().splitlines()
-audited = [l for l in report if 'depends on axioms' in l]
-standard = [l for l in audited if l.endswith('[propext, Classical.choice, Quot.sound]')]
-generated = [l for l in audited if 'PerfectPower.Generated.' in l]
+def _std(l):
+    if 'does not depend on any axioms' in l:
+        return True
+    m = re.search(r'depends on axioms: \[(.*)\]$', l)
+    return bool(m) and set(a.strip() for a in m.group(1).split(',')) <= {'propext', 'Classical.choice', 'Quot.sound'}
+
+
+audited = [l for l in report if 'depend' in l]
+standard = [l for l in audited if _std(l)]
+generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' not in l]
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
     f'- Lean declarations audited: **{len(audited)}**; using only `propext`, `Classical.choice`, '
-    f'`Quot.sound`: **{len(standard)}**.',
+    f'`Quot.sound` (or a subset): **{len(standard)}**.',
     f'- Machine-generated Lean hit-set certificates: **{len(generated)}**.',
     '- Atlas families by certification label: '
     + ', '.join(f'`{k}` {v}' for k, v in sorted(labels.items())) + '.',
@@ -37,12 +44,12 @@ mc = root / 'receipts' / 'mordell_census_summary.json'
 if mc.exists():
     s = json.loads(mc.read_text())
     lab = s['labels']
-    lines.append(f'- Mordell census $y^2=x^3+k$, $0<|k|\\le{s["K"]}$: {s["curves"]} curves; '
-                 f'{lab["certified_by_independent_computation"]} certified by Sage, '
-                 f'{lab["conditional_on_unproven_rank"]} conditional on an unproven rank, '
-                 f'{lab["scan_only"]} scan only; {len(s["scan_disagreements"])} disagreements with the scan '
-                 f'$|x|\\le10^5$; best Hall ratio {s["top_hall_ratios"][0]["ratio"]} '
-                 f'($k={s["top_hall_ratios"][0]["k"]}$).')
+    lines.append(f'- Mordell census $y^2=x^3+k$, $0<|k|\\le{s["K"]}$: {s["curves"]} curves, '
+                 f'{s.get("total_points", "?")} integral points; labels '
+                 + ', '.join(f'`{a}` {b}' for a, b in sorted(lab.items()))
+                 + f'; {len(s["scan_disagreements"])} scan disagreements ($|x|\\le10^5$); best Hall ratio '
+                 f'{s["top_hall_ratios"][0]["ratio"]} ($k={s["top_hall_ratios"][0]["k"]}$, '
+                 f'$x={s["top_hall_ratios"][0]["x"]}$).')
 pc = root / 'receipts' / 'pillai_census_summary.json'
 if pc.exists():
     s = json.loads(pc.read_text())

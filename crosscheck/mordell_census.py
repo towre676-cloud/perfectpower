@@ -4,18 +4,25 @@ Run with a Sage / passagemath Python from the repository root:
 
     /opt/sagevenv/bin/python crosscheck/mordell_census.py 10000 [workers]
 
-Engine: EllipticCurve([0,0,0,0,k]).integral_points(mw_base=gens), where gens are Mordell-Weil
-generators from mwrank (saturated) and integral_points performs elliptic-logarithm sieving
-(Stroeker-Tzanakis / Gebel-Petho-Zimmer).  Per-row labels:
-  certified_by_independent_computation  rank proved (mwrank, or analytically when rank <= 1)
-  conditional_on_unproven_rank          generators from proof=False (rank not proved)
-  scan_only                             engine failure; only the small-x scan is recorded
-In every case the listed points are re-verified in exact integer arithmetic and cross-checked
-against an independent scan |x| <= SCAN.  Lean plays no part in completeness.
+Per curve (data/mordell_census.jsonl, one JSON object per k) the census records:
+  curve a-invariants; engine and version; rank and how it was proved (mwrank 2-descent,
+  analytic rank <= 1, or unproven); Mordell-Weil generators; the saturation index returned by
+  E.saturation(gens) (1 = saturated at all primes checked by Sage); the integral-point method;
+  the sorted x-coordinates and their SHA-256; and the independent scan result for |x| <= 1e5.
 
-Output: data/mordell_census.csv (one row per k) and receipts/mordell_census_summary.json.
+Labels (docs/TRUST_BOUNDARY.md):
+  INDEPENDENT_COMPUTATION        rank proved, generators saturated, points re-verified exactly,
+                                 and the independent scan |x| <= 1e5 agrees
+  CONDITIONAL_ON_UNPROVEN_RANK   generators from proof=False; everything else as above
+  SCAN_DISAGREEMENT              Sage's list and the scan disagree on |x| <= 1e5 (never certified)
+  SCAN_EVIDENCE_ONLY             engine failure; only the scan is recorded
+Completeness is Sage's claim, not Lean's; Generated/MordellPoints.lean checks only that listed
+points lie on their curves.
+
+Also writes data/mordell_census.csv (flat view) and receipts/mordell_census_summary.json.
 """
 import csv
+import hashlib
 import json
 import sys
 import time
@@ -24,16 +31,15 @@ from multiprocessing import Pool
 from pathlib import Path
 
 SCAN = 10 ** 5
-LABEL = {'certified_by_independent_computation': 'INDEPENDENT_COMPUTATION',
-         'conditional_on_unproven_rank': 'CONDITIONAL_ON_UNPROVEN_RANK',
-         'scan_only': 'SCAN_EVIDENCE_ONLY'}
+ENGINE = None
 
 
 def _setup():
-    global EllipticCurve
+    global EllipticCurve, ENGINE
     from sage.all__sagemath_schemes import EllipticCurve as _E
     import sage.all__sagemath_eclib  # noqa: F401
     import sage.all__sagemath_symbolics  # noqa: F401
+    import sage.version
     from sage.schemes.elliptic_curves.ell_rational_field import EllipticCurve_rational_field
 
     def exact_interval(self, xmin, xmax):
@@ -46,10 +52,12 @@ def _setup():
                 if x ** 3 + a4 * x + a6 >= 0 and isqrt(x ** 3 + a4 * x + a6) ** 2 == x ** 3 + a4 * x + a6}
     EllipticCurve_rational_field.integral_x_coords_in_interval = exact_interval
     EllipticCurve = _E
+    ENGINE = (f'passagemath {sage.version.version}: EllipticCurve.integral_points(mw_base=gens, '
+              f'both_signs=False); gens from mwrank; ellratpoints step replaced by exact interval scan')
 
 
 def scan_points(k):
-    """Independent check: all x with |x| <= SCAN and x^3 + k a square (x >= -cbrt(k))."""
+    """Independent check: all x with |x| <= SCAN and x^3 + k a square."""
     out = []
     for x in range(-SCAN, SCAN + 1):
         v = x ** 3 + k
@@ -60,40 +68,59 @@ def scan_points(k):
     return out
 
 
+def xs_hash(xs):
+    return hashlib.sha256(' '.join(map(str, xs)).encode()).hexdigest()
+
+
 def one(k):
     E = EllipticCurve([0, 0, 0, 0, k])
-    row = {'k': k}
-    status = 'certified_by_independent_computation'
+    scan = scan_points(k)
+    row = {'k': k, 'a_invariants': [0, 0, 0, 0, k], 'engine': ENGINE, 'scan_x_abs_le_1e5': scan}
     try:
         try:
             rank = int(E.rank(proof=True))
             gens = E.gens(proof=True)
-            method = 'mwrank'
+            method = 'mwrank (proof=True)'
+            proved = True
         except RuntimeError:
             try:
                 rank = int(E.rank(only_use_mwrank=False, proof=True))
                 gens = E.gens(proof=True) if rank else []
-                method = 'analytic'
+                method = 'analytic rank (only_use_mwrank=False, proof=True)'
+                proved = True
             except RuntimeError:
                 rank = int(E.rank(proof=False))
                 gens = E.gens(proof=False)
-                method = 'unproven'
-                status = 'conditional_on_unproven_rank'
+                method = 'unproven (proof=False)'
+                proved = False
+        sat_index = int(E.saturation(gens)[1]) if gens else 1
         pts = E.integral_points(mw_base=gens, both_signs=False)
         xs = sorted({int(P[0]) for P in pts})
     except BaseException as exc:          # cysignals SignalError derives from BaseException
         if isinstance(exc, KeyboardInterrupt):
             raise
-        return {'k': k, 'status': 'scan_only', 'error': f'{type(exc).__name__}: {exc}'[:200],
-                'xs': scan_points(k)}
+        row.update(certification='SCAN_EVIDENCE_ONLY', error=f'{type(exc).__name__}: {exc}'[:200],
+                   x_coordinates=scan, x_hash=xs_hash(scan))
+        return row
     for x in xs:                                   # exact re-verification
         v = x ** 3 + k
         assert v >= 0 and isqrt(v) ** 2 == v, (k, x)
-    small = [x for x in xs if abs(x) <= SCAN]
-    row.update(status=status, rank=rank, rank_method=method, xs=xs,
-               scan_agrees=small == scan_points(k),
-               torsion=int(E.torsion_order()), disc=int(E.discriminant()))
+    agrees = [x for x in xs if abs(x) <= SCAN] == scan
+    if not agrees:
+        label = 'SCAN_DISAGREEMENT'
+    elif not proved or sat_index != 1:
+        label = 'CONDITIONAL_ON_UNPROVEN_RANK' if not proved else 'CONDITIONAL_ON_UNSATURATED_BASIS'
+    else:
+        label = 'INDEPENDENT_COMPUTATION'
+    row.update(rank=rank, rank_method=method, rank_proved=proved,
+               generators=[[str(c) for c in P.xy()] for P in gens], saturation_index=sat_index,
+               torsion=int(E.torsion_order()), discriminant=int(E.discriminant()),
+               x_coordinates=xs, x_hash=xs_hash(xs), scan_agrees=agrees, certification=label)
     return row
+
+
+def hall(x, k):
+    return isqrt(abs(x) * 10 ** 12) / 10 ** 6 / abs(k)
 
 
 def main():
@@ -103,33 +130,40 @@ def main():
     t0 = time.time()
     with Pool(workers, initializer=_setup, maxtasksperchild=200) as pool:
         rows = sorted(pool.imap_unordered(one, ks, chunksize=8), key=lambda r: r['k'])
-    import sage.version
-    global ENGINE
-    ENGINE = f'passagemath {sage.version.version} integral_points (mwrank)'
     root = Path(__file__).resolve().parents[1]
     (root / 'data').mkdir(exist_ok=True)
+    with open(root / 'data' / 'mordell_census.jsonl', 'w') as fh:
+        for r in rows:
+            fh.write(json.dumps(r, separators=(',', ':')) + '\n')
     with open(root / 'data' / 'mordell_census.csv', 'w', newline='') as fh:
         w = csv.writer(fh, lineterminator='\n')
-        w.writerow(['k', 'rank', 'rank_method', 'torsion', 'n_points_up_to_sign', 'x_coordinates',
-                    'max_x', 'max_hall_ratio', 'scan_agrees_up_to_1e5', 'certification', 'engine'])
+        w.writerow(['k', 'rank', 'rank_method', 'saturation_index', 'torsion', 'n_points_up_to_sign',
+                    'x_coordinates', 'x_sha256', 'max_x', 'max_hall_ratio', 'scan_agrees_up_to_1e5',
+                    'certification'])
         for r in rows:
-            xs = r['xs']
-            hall = max((isqrt(abs(x) * 10 ** 12) / 10 ** 6 / abs(r['k']) for x in xs if x > 0), default='')
-            w.writerow([r['k'], r.get('rank', ''), r.get('rank_method', ''), r.get('torsion', ''),
-                        len(xs), ' '.join(map(str, xs)), max(xs, default=''),
-                        f'{hall:.6f}' if hall != '' else '', r.get('scan_agrees', ''), LABEL[r['status']],
-                        ENGINE if r['status'] != 'scan_only' else 'stdlib scan |x| <= 1e5'])
-    records = sorted(((isqrt(x * 10 ** 12) / 10 ** 6 / abs(r['k']), r['k'], x)
-                      for r in rows for x in r['xs'] if x > 0), reverse=True)[:25]
+            xs = r['x_coordinates']
+            hr = max((hall(x, r['k']) for x in xs if x > 0), default=None)
+            w.writerow([r['k'], r.get('rank', ''), r.get('rank_method', ''), r.get('saturation_index', ''),
+                        r.get('torsion', ''), len(xs), ' '.join(map(str, xs)), r['x_hash'],
+                        max(xs, default=''), f'{hr:.6f}' if hr is not None else '',
+                        r.get('scan_agrees', ''), r['certification']])
+    records = sorted(((hall(x, r['k']), r['k'], x) for r in rows for x in r['x_coordinates'] if x > 0),
+                     reverse=True)[:25]
+    labels = {}
+    for r in rows:
+        labels[r['certification']] = labels.get(r['certification'], 0) + 1
+    engines = sorted({r['engine'] for r in rows if r.get('engine')})
     summary = {
-        'K': K, 'curves': len(rows),
-        'labels': {s: sum(1 for r in rows if r['status'] == s)
-                   for s in ('certified_by_independent_computation', 'conditional_on_unproven_rank', 'scan_only')},
+        'K': K, 'curves': len(rows), 'labels': dict(sorted(labels.items())),
         'scan_disagreements': [r['k'] for r in rows if r.get('scan_agrees') is False],
-        'points_beyond_scan': sum(1 for r in rows for x in r['xs'] if abs(x) > SCAN),
+        'unsaturated': [r['k'] for r in rows if r.get('saturation_index', 1) != 1],
+        'points_beyond_scan': sum(1 for r in rows for x in r['x_coordinates'] if abs(x) > SCAN),
+        'total_points': sum(len(r['x_coordinates']) for r in rows),
         'top_hall_ratios': [{'ratio': round(a, 6), 'k': k, 'x': x} for a, k, x in records],
-        'engine': f'passagemath/Sage {sage.version.version}: integral_points, mwrank generators',
-        'caveat': 'completeness is certified by Sage, not by Lean; conditional rows rest on an unproved rank',
+        'engine': engines,
+        'jsonl_sha256': hashlib.sha256((root / 'data' / 'mordell_census.jsonl').read_bytes()).hexdigest(),
+        'caveat': 'completeness is certified by Sage, not by Lean; conditional rows rest on an '
+                  'unproved rank; Lean checks only that listed points lie on their curves',
     }
     (root / 'receipts' / 'mordell_census_summary.json').write_text(json.dumps(summary, indent=1) + '\n')
     print(json.dumps({k: v for k, v in summary.items() if k != 'top_hall_ratios'}, indent=1))

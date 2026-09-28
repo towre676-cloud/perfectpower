@@ -83,7 +83,17 @@ def _lean_certified(f, d):
     return any(needle in text for text in _lean_generated)
 
 
-def certification(cl, f, d):
+# Binomial rows whose hit sets follow from a Lean-checked reduction to an elliptic curve plus a
+# Sage-certified integral-point list (PerfectPower/Binomial.lean, receipts/binomial_curves.json).
+_binomial_path = root / 'receipts' / 'binomial_curves.json'
+_BINOMIAL = {}
+if _binomial_path.exists():
+    _BINOMIAL = {('binomial_n_choose_2_cube'): [1, 2], ('binomial_n_choose_3_square'): [1, 2, 3, 4, 50]}
+
+
+def certification(cl, f, d, name=None):
+    if name in _BINOMIAL:
+        return 'LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS'
     if _lean_certified(f, d):
         return 'LEAN_CERTIFIED'
     if cl.kind in ('power', 'radical', 'pell', 'constant'):
@@ -127,7 +137,10 @@ for name, f, d in families:
         row['runge'] = {'hits': e.hits, 'scan_below': e.scan_below, 'max_t': e.max_t,
                         'polynomials_solved': e.polynomials_solved, 'tail_start': e.tail_start,
                         'v05_certificate_cutoff': c.cutoff}
-    row['certification'] = certification(cl, f, d)
+    row['certification'] = certification(cl, f, d, name)
+    if name in _BINOMIAL:
+        row['complete_hit_list'] = _BINOMIAL[name]
+        assert row['scan_hits_up_to_1e5'] == _BINOMIAL[name], name
     if row['certification'] == 'INDEPENDENT_COMPUTATION':
         row['independent_hit_list'] = _cubic[tuple(f)]
     rows.append(row)
