@@ -25,6 +25,31 @@
 
 **Transforms.** Their asymptotics are proved for every type.
 
+## Order of work after 0.6 (recommended)
+
+The centre of gravity moves from proving more theorems to closing the gap between *scan evidence* and *certified statement*.
+
+1. **Done in this round.**
+   - Interval-sandwich certificates for $(10,2)$ and $(12,4)$.
+   - Cubic cross-validation against Sage: 622/622.
+   - Epistemic labels on every data row.
+   - `make verify`, trust boundary and licences.
+2. **Read LeVeque (1964) in the primary source.** Check the exceptional patterns and the ring of solutions (`TRUST_BOUNDARY.md` §3). Until then the atlas is proved *conditionally on the quoted statement*.
+3. **Literature pass.** Cover Bilu–Tichy, Schinzel–Tijdeman, Walsh, Beukers–Tengely and existing formalisations. Write the result into `RELATED_WORK.md` before any announcement or priority claim.
+4. **Extend certification of the finite type.**
+   - Cover general Weierstrass models (e.g. $\binom n3$) in `crosscheck/`.
+   - Add quartic models.
+   - Produce Baker-type height bounds where Brindza applies.
+   - Lean can check final lists against sieve output, but never the Baker step.
+5. **Bilu–Tichy atlas** as the next monograph part (`OPEN_PROBLEMS.md` §2).
+6. **Upstreaming and outreach, to be done by the owner.** The actions:
+   - propose Mathlib PRs or Archive entries for the candidates in `OPEN_PROBLEMS.md` §5;
+   - post on the Lean Zulip about the certificate emitter;
+   - tag a release and mint a Zenodo DOI;
+   - post on arXiv in math.NT, cross-listed to cs.LO, aimed at CPP/ITP or experimental mathematics.
+
+**Not worth effort:** uniformity in $d$ via Schinzel–Tijdeman (bounds too weak to compute with), and Erdős–Selfridge certificates beyond $k=12$ (already theorems; pure engineering).
+
 ## Formal kernel
 
 1. Done: Theorem P over $\mathbb Q[x]$ is `power_type_finite`, and Theorem R in integer form is `runge_finite`.

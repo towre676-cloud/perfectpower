@@ -18,6 +18,14 @@
 
 **`exact_benchmarks.json`** is an `EXACT_COMPUTATION`. Its counts are exact over the recorded ranges, and it asserts no numerical `limsup`. A certificate's `exact_identity` means polynomial equality was checked. A valid cutoff that is not an identity means no hit occurs at or above that cutoff, by the explicitly checked inequalities. A nonrigid classification is neither a certificate of infinitely many hits nor a rate estimate.
 
+**Certification labels.** Each atlas row and each row of `data/families.csv` carries one of the labels `LEAN_CERTIFIED`, `PROVED_STRUCTURAL`, `COMPLETE_HIT_LIST`, `INDEPENDENT_COMPUTATION` or `SCAN_EVIDENCE_ONLY`, defined in [TRUST_BOUNDARY.md](TRUST_BOUNDARY.md) §4.
+
+**`cubic_crossval.json`** (produced by `crosscheck/cubics_sage.py`, which needs Sage) compares the scan up to $10^5$ with Sage's certified integral points for 622 cubics. This is an external certificate.
+
+**`adversarial_runge.json`** records planted-hit trials of the Runge enumerator. It is a test, not a proof.
+
+**`sandwich_certificates.json`** records the statistics of the interval-sandwich Lean certificates.
+
 **`atlas_benchmarks.json`** has three kinds of rows:
 
 - **Types `power`, `radical`, `pell`.** The structural counts are exact consequences of Theorems P, B, C (`PAPER_PROOF`). They are cross-checked against the defining scan at $N=10^5$ (`EXACT_COMPUTATION`), and the generator aborts on any disagreement. The constant $\kappa$ is a floating-point evaluation of an exact formula.

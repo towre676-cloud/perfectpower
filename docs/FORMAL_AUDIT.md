@@ -4,7 +4,7 @@
 
 In the build environment of this release, the Mathlib cache and release servers were unreachable, so Mathlib was compiled from source (about 1900 modules). CI uses `leanprover/lean-action` and the ordinary cache.
 
-`./audit/check_axioms.sh` runs `#print axioms` on fifty-nine declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
+`./audit/check_axioms.sh` runs `#print axioms` on every audited declaration; the current number is generated into the README by `make counts`, so it is never typed by hand. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. `audit/Lint.lean` runs Batteries' `#lint` over the hand-written library and reports 0 errors; the generated certificates are excluded, since their redundant `have`s are harmless machine output. Both checks are part of `make verify`. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
 
 ## What changed from 0.5
 
@@ -57,7 +57,7 @@ The Python side only *chooses* the data: a threshold $x_0$, a $t$-range $T$, and
 - every sign condition, by `positivity`;
 - the reduction, by `runge_pointwise`.
 
-So a compiled generated theorem trusts nothing in the Python code. `PerfectPower/Generated/Runge.lean` contains 17 such theorems. Regenerate it with `python3 python/make_lean_certificates.py`; CI checks that the file is reproducible, and the full file builds in about 90 s. The theorems cover:
+So a compiled generated theorem trusts nothing in the Python code. `PerfectPower/Generated/Runge.lean` contains 17 such theorems, and `Generated/Sandwich.lean` two more (below). Regenerate it with `python3 python/make_lean_certificates.py`; CI checks that the file is reproducible, and the full file builds in about 90 s. The theorems cover:
 
 - Ljunggren's quartic;
 - $n^4+1$ and $n^4+7$ as squares;
@@ -72,7 +72,24 @@ So a compiled generated theorem trusts nothing in the Python code. `PerfectPower
   | 10 | 5 |
   | 12 | 2, 3, 6 |
 
-Two instances fall outside the current plan search: $(10,2)$ and $(12,4)$. For $(12,4)$ a plan exists at $x_0=478$ but was not included; $(10,2)$ needs larger limits.
+**Interval-sandwich certificates** (`python/perfectpower/lean_sandwich.py` → `PerfectPower/Generated/Sandwich.lean`) cover the two instances that the plan search could not reach: $(10,2)$ and $(12,4)$.
+
+For those instances the obstruction was the scan range below the Runge threshold, not the tail argument. Pointwise checks there would need about $2\cdot10^4$ cases. Instead, $[1,\infty)$ is covered by pieces:
+
+- **Intervals** $[a,a+w]$ on which one integer $t$ satisfies $(P+t)^d<D^dF<(P+t+1)^d$ and $P+t\ge0$. Each of the three polynomials, shifted to $a+k$, is split as $\mathrm{POS}(k)-\mathrm{NEG}(k)$ with nonnegative coefficients. `gcongr` proves $\mathrm{NEG}(k)\le\mathrm{NEG}(w)$, `positivity` proves $\mathrm{POS}(k)\ge\mathrm{POS}(0)$, and `norm_num` checks $\mathrm{POS}(0)>\mathrm{NEG}(w)$.
+- **A tail** $[c,\infty)$, where $\mathrm{NEG}$ is empty.
+- **Isolated points**, decided numerically.
+
+The lemma `no_hit_of_sandwich` then shows $F(n)$ is not a $d$-th power.
+
+| Instance | Pieces below the tail | Tail start |
+|---|---|---|
+| $(10,2)$ | 283 | 20277 |
+| $(12,4)$ | 49 | 478 |
+
+The two files compile in about 4.5 minutes, and both theorems depend only on the standard axioms (no `Lean.ofReduceBool`). Statistics are in `receipts/sandwich_certificates.json`.
+
+*On recentring.* Recentring the variable, e.g. $u=2n+9$ for $k=10$, improves only crude global coefficient bounds. The sandwich takes a Taylor shift at every interval start, which is already a local recentring. So a global substitution was not needed.
 
 ## What it does not certify
 

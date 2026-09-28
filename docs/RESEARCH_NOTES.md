@@ -10,7 +10,7 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 | Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; the monomial case $c=1,\alpha=0$ is `LEAN_VERIFIED` (`monomial_count`) | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
 | Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; for $2n^2+1$, infinitude and density zero are `LEAN_VERIFIED` (`pell_hasDensity_zero`) | §4, `atlas.py`, `PerfectPower/Pell.lean` |
 | Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque 1964) | §5 |
-| Theorem R (complete Runge enumeration) | `PAPER_PROOF`; the reduction to the $G_t$ is `LEAN_VERIFIED` (`runge_finite`); 17 instances have generated Lean certificates | §6, `runge.py`, `lean_emit.py` |
+| Theorem R (complete Runge enumeration) | `PAPER_PROOF`; the reduction to the $G_t$ is `LEAN_VERIFIED` (`runge_finite`); 19 instances have generated Lean certificates (17 by Taylor-shift plans, 2 by interval sandwiches); adversarial planted-hit test, 220 trials, 0 failures; prior art (Walsh 1992, Beukers–Tengely 2005) not yet compared | §6, `runge.py`, `lean_emit.py`, `lean_sandwich.py` |
 | Rigid-branch 0–1 law | `LEAN_VERIFIED` (`rigid_zero_one`) | §6 |
 | Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) | §7 |
 | Schäffer's sums-of-powers list, recovered with constants | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) + `EXACT_COMPUTATION` | §7 |
@@ -19,7 +19,9 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 
 ## 1. Summary
 
-The monograph proves that the hit density of $F(n)$ is $1$ if $F=G^d$ with $G\in\mathbb Z[x]$ and $0$ otherwise, and asks for finer information inside the zero-density branch: rates, exponents, exact counts, and effective enumeration. These notes answer the rate question completely for polynomials, conditional only on LeVeque's classical finiteness theorem.
+The monograph proves that the hit density of $F(n)$ is $1$ if $F=G^d$ with $G\in\mathbb Z[x]$ and $0$ otherwise, and asks for finer information inside the zero-density branch: rates, exponents, exact counts, and effective enumeration. These notes answer the rate question for polynomials, conditionally on LeVeque's classical finiteness theorem and therefore on Siegel's, which is ineffective.
+
+**Positioning.** The atlas and the exponent spectrum below are a *synthesis*: LeVeque's theorem combined with classical Pell and valuation counting, made explicit (with constants) and decidable (by an implementation). We make no priority claim for them until a literature pass, which must cover in particular the Bilu–Tichy and Schinzel–Tijdeman lineages, shows the packaging is new. The parts with a chance of being new are the certified pipeline: the rigid-branch enumerator, which must still be compared with the Runge implementations of Walsh and of Beukers–Tengely, and the Lean certificate emitter. See [RELATED_WORK.md](RELATED_WORK.md) and [TRUST_BOUNDARY.md](TRUST_BOUNDARY.md). The LeVeque statement used here is taken from secondary sources; the primary paper could not be read in the build environment.
 
 Write $F=c\prod_i(x-\alpha_i)^{r_i}$ over $\overline{\mathbb Q}$ with distinct $\alpha_i$, and put $t_i=d/\gcd(d,r_i)$. Call the multiset $\{t_i\}$ the *$t$-profile* of $(F,d)$. It is computable exactly from a squarefree decomposition, without factoring $F$.
 
@@ -38,7 +40,10 @@ and every value in this set occurs. Moreover $\alpha=1$ exactly when $F$ is an i
 
 *Proof of the corollary from Theorem A.* In the radical type $t=d/\gcd(d,r)$ divides $d$ and exceeds $1$, so $t\ge p$. The Pell and finite types have $\alpha=0$. The monomial $F=x^{r}$ with $\gcd(r,d)=d/t$ has hits exactly at the $t$-th powers, so $A(N)=\lfloor N^{1/t}\rfloor$ realises $1/t$. This is Theorem B, and it is also the compiled Lean theorem `monomial_count`. For sharpness take $r=d/p$. $\square$
 
-This refines the monograph's 0–1 law in two ways. First, the zero branch has a quantitative ceiling, $N^{1/2}$, instead of $o(N)$. Second, the proof of density zero no longer uses Boshernitzan's equidistribution theorem, although it now depends on LeVeque's theorem, which in turn rests on Siegel's theorem. The two proofs of the 0–1 law are logically independent.
+This refines the monograph's 0–1 law in two ways, both conditional on LeVeque.
+
+1. The zero branch has a quantitative ceiling, $N^{1/2}$, instead of $o(N)$.
+2. There is a second proof of density zero that does not use Boshernitzan's equidistribution theorem. It rests on Siegel's theorem through LeVeque, however, so it is **ineffective**. It cannot replace the Boshernitzan argument, or any argument, where effectivity matters. The two proofs are logically independent, but neither gives computable bounds in the finite type.
 
 ## 2. The power type
 
@@ -169,7 +174,7 @@ The first case is precisely Corollary R′ with $d'=p$. In the second case $d$ i
   The largest v0.5 cutoff among them was $3.87\cdot10^{10}$ ($k=12$, $d=4$).
 - $n^4+1$ is never a square or a sixth power.
 
-**Lean certificates.** For 17 of these instances the complete hit set is a compiled Lean theorem emitted by `lean_emit.py`; see `PerfectPower/Generated/Runge.lean` and the formal audit. The instances include all the consecutive-product pairs above except $(10,2)$ and $(12,4)$.
+**Lean certificates.** For 17 of these instances the complete hit set is a compiled Lean theorem emitted by `lean_emit.py`; see `PerfectPower/Generated/Runge.lean` and the formal audit. The instances include all the consecutive-product pairs above. $(10,2)$ and $(12,4)$ use *interval-sandwich* certificates (`lean_sandwich.py`): $[1,\infty)$ is covered by intervals on which $(P+t)^d<D^dF<(P+t+1)^d$ is proved once, symbolically, by a Taylor shift split into nonnegative parts (`gcongr` and `positivity`), plus a tail and a few isolated points. For $(10,2)$ this takes 283 pieces below a tail at $n=20277$; for $(12,4)$, 49 pieces below $n=478$.
 
 **Formal status.** The two smallest named cases are compiled Lean theorems: `ljunggren_hitSet` (the hit set is exactly $\{3\}$) and `consecutive_four_hitSet` (empty). Each traps $2m$ or $m$ between consecutive integers, which is Theorem R with an explicit $t$-range. The analytic core — eventually $|y-Q(n)|<1/(2D)$ with $y\neq Q(n)$ — is the compiled Lean theorem `eventually_no_hit`. The formal 0–1 law `rigid_zero_one` states that on the rigid branch the hit density exists and equals $1$ if $F=G^d$ with $G \in \mathbb Z[X]$, and $0$ with a finite hit set otherwise. The reduction itself is compiled in integer form: `runge_pointwise`, `runge_uniform`, `runge_finite` in `PerfectPower/RungeReduction.lean`. Their hypotheses are the integer inequalities $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and for odd $d$, $<|P(n)|^d$. Only the derivation of these inequalities for all $n\ge x_0$ from $a(x_0)$ and $C(x_0)$ is not yet formalised.
 
@@ -266,7 +271,11 @@ The receipt `shifted_exponential_scans` lists all hits with $n\le400$ for $a\in\
 
 ## 10. What remains open
 
-1. **Effective enumeration in the finite type outside the Runge branch.** Examples are $n^3+k=m^2$ (Mordell curves) and $n^3+n+4=m^2$, whose scan finds the isolated hit $n=4128$. Brindza's bounds are effective but impractical. Elliptic-logarithm methods, as in Magma or Sage, solve genus-one cases. A general superelliptic implementation needs Baker–Davenport reduction. Until then these hit lists are `EXACT_COMPUTATION` over a range, not complete.
+1. **Effective enumeration in the finite type outside the Runge branch.** Examples are $n^3+k=m^2$ (Mordell curves) and $n^3+n+4=m^2$, which has the isolated hit $n=4128$. Brindza's bounds are effective but impractical. Elliptic-logarithm methods, as in Magma or Sage, solve genus-one cases. **Status now:**
+   - For $m^2=n^3+an+b$ with $|a|,|b|\le12$, all 622 curves, including $n^3+n+4$, have hit lists certified by an *independent* computation: Sage `integral_points`, see `receipts/cubic_crossval.json`. These agree with our scans.
+   - That certification is external. Lean does not check it.
+   - Every other finite-type, non-Runge family, e.g. $\binom n3=m^2$, remains **scan evidence only** (`SCAN_EVIDENCE_ONLY` in `data/families.csv`), and no completeness is claimed for it.
+   - The cross-validation also shows that scan horizons matter. Scans to $10^3$ or $10^4$ would have missed hits on 18 and 4 of the 622 curves; the largest hit is $n=80327$.
 2. **Formalisation of Theorems B, C, R in Lean.** Theorem B needs $p$-adic valuations of $c_1z^r$, which are available in Mathlib. Theorem R needs the explicit threshold inequalities; its analytic core is already compiled. LeVeque's theorem itself is far beyond current formal libraries and should remain an external boundary.
 3. **Uniformity.** Bound the number of hits in the finite type uniformly in the height of $F$. Theorem R gives such a bound in the Runge branch, $x_0-1+(2T(x_0)+1)(d-1)q$; is there a Runge-type bound polynomial in the height?
 4. **Beyond polynomials.** Exponential sequences ($a^n+k$; Catalan–Mihăilescu, Pillai), factorials (Brocard–Ramanujan), and linear recurrences each need their own theorems. The atlas shows that the polynomial exponent spectrum is discrete. Is the exponent spectrum of $\{S(n)+k\}$ discrete for every linear recurrence $S$?
