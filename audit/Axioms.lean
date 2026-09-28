@@ -132,3 +132,6 @@ open PerfectPower
 #print axioms PerfectPower.Generated.cert_consecutive12_fourth_power_hits_ok
 #print axioms PerfectPower.Generated.Mordell.census_ok
 #print axioms PerfectPower.Generated.Mordell.census_size
+#print axioms unitOrbit_growth
+#print axioms pell_count_log
+#print axioms PerfectPower.Reflect.rungeCheck_sound

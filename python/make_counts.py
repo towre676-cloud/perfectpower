@@ -64,9 +64,9 @@ if g1.exists():
 tg = root / 'receipts' / 'theorem_g_check.json'
 if tg.exists():
     s = json.loads(tg.read_text())
-    lines.append(f'- Theorem G check (Sage normalisation, $d\\le{s["d_max"]}$, $\\deg F\\le{s["degree_max"]}$): '
-                 f'{s["cases"]} cases, {len(s["disagreements"])} disagreements with '
-                 + r"$\chi=d'(1-S)$ and $n_\infty=\gcd(d',\deg F/g)$.")
+    lines.append(f'- Theorem G check ($d\\le{s["d_max"]}$, $\\deg F\\le{s["degree_max"]}$): {s["cases"]} cases; '
+                 f'Singular genus in all {s["cases"]}, Sage places at infinity in {s["n_inf_computed"]}; '
+                 f'{len(s["disagreements"])} disagreements with ' + r"$\chi=d'(1-S)$.")
 pc = root / 'receipts' / 'pillai_census_summary.json'
 if pc.exists():
     s = json.loads(pc.read_text())

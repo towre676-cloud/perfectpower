@@ -1,0 +1,13 @@
+{
+ "command": "PYTHONPATH=python python3 python/fuzz/fuzz_finite_bucket_late_hits.py 11 1500 100000000",
+ "label": "EXACT_WITHIN_BOUND (exact sieve scan to 1e8); evidence only, no completeness claim",
+ "seed": 11,
+ "trials": 1500,
+ "finite_type_polynomials_scanned": 1322,
+ "scan_bound": 100000000,
+ "polynomials_with_hits_beyond_5000": [
+  {"F_low_to_high": [-1, -3, 2, 1], "d": 2, "genus": 1, "hits": [2, 47882],
+   "certified_by": "receipts/genus1_crossval.json (Sage, rank proved)"}
+ ],
+ "wall_time_seconds": 2878
+}

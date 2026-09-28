@@ -110,3 +110,6 @@
 'PerfectPower.Generated.cert_consecutive12_fourth_power_hits_ok' depends on axioms: [propext]
 'PerfectPower.Generated.Mordell.census_ok' depends on axioms: [propext]
 'PerfectPower.Generated.Mordell.census_size' depends on axioms: [propext]
+'PerfectPower.unitOrbit_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.pell_count_log' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.Reflect.rungeCheck_sound' depends on axioms: [propext, Classical.choice, Quot.sound]

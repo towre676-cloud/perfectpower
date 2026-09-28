@@ -370,4 +370,107 @@ theorem mordellOK_sound {L : List (ℤ × List (ℤ × ℤ))} (h : mordellOK L =
   simp only [mordellOK, List.all_eq_true, beq_iff_eq] at h
   rw [sq]; exact h e he p hp
 
+/-! #### Runge certificates
+
+A Runge certificate decides `[1, x₀)` point by point (the same `hit`/`gap`/`neg` segments) and
+handles `[x₀, ∞)` by Theorem R: with `n = x₀ + k`, the checker verifies by Taylor shift that
+`P > 0`, `(T+1) P^(d-1) ∓ R' > 0` (and `P^d ∓ R' > 0` for odd `d`), where `R' = D^d F - P^d`,
+so `runge_pointwise` applies; and that each `G_t = D^d F - (P + t)^d`, `|t| ≤ T`, times a
+recorded sign is positive, so no `t` survives. -/
+
+/-- A Runge certificate. -/
+structure RungeCert where
+  /-- `F`, low degree first. -/
+  F : Poly
+  /-- The exponent. -/
+  d : ℕ
+  /-- The common denominator of the truncated root. -/
+  D : ℤ
+  /-- The numerator `P` of the truncated root `P / D`. -/
+  P : Poly
+  /-- The threshold. -/
+  x₀ : ℕ
+  /-- The `t`-range. -/
+  T : ℕ
+  /-- Pointwise segments covering `[1, x₀)`. -/
+  segs : List Seg
+  /-- Signs of `G_t`, for `t = -T, …, T`. -/
+  signs : List ℤ
+
+/-- The same data seen as a sandwich certificate, to reuse `walk`. -/
+def RungeCert.toCert (C : RungeCert) : Cert := ⟨C.F, C.d, C.D, C.P, C.segs, C.x₀, 0⟩
+
+/-- `V = D^d F`. -/
+def RungeCert.V (C : RungeCert) : Poly := smul (C.D ^ C.d) C.F
+
+/-- `R' = D^d F - P^d`. -/
+def RungeCert.Rp (C : RungeCert) : Poly := psub C.V (ppow C.P C.d)
+
+/-- `(T + 1) P^(d-1)`. -/
+def RungeCert.bound (C : RungeCert) : Poly := smul ((C.T : ℤ) + 1) (ppow C.P (C.d - 1))
+
+/-- The sign recorded for `t`. -/
+def RungeCert.sgn (C : RungeCert) (t : ℤ) : ℤ := C.signs.getD (t + C.T).toNat 1
+
+/-- `G_t = D^d F - (P + t)^d`. -/
+def RungeCert.G (C : RungeCert) (t : ℤ) : Poly := psub C.V (ppow (padd C.P [t]) C.d)
+
+/-- The whole Runge check. -/
+def rungeCheck (C : RungeCert) : Bool :=
+  decide (2 ≤ C.d) && decide (walk C.toCert 1 C.segs = some C.x₀) &&
+    tailPos (shift C.P C.x₀) &&
+    tailPos (shift (psub C.bound C.Rp) C.x₀) && tailPos (shift (padd C.bound C.Rp) C.x₀) &&
+    (decide (C.d % 2 = 0) ||
+      (tailPos (shift (psub (ppow C.P C.d) C.Rp) C.x₀) &&
+        tailPos (shift (padd (ppow C.P C.d) C.Rp) C.x₀))) &&
+    (List.range (2 * C.T + 1)).all fun i =>
+      tailPos (shift (smul (C.sgn ((i : ℤ) - C.T)) (C.G ((i : ℤ) - C.T))) C.x₀)
+
+lemma tail_at {p : Poly} {x₀ n : ℕ} (h : tailPos (shift p x₀) = true) (hn : x₀ ≤ n) :
+    0 < ev p n := by
+  have := tailPos_sound h ((n : ℤ) - x₀) (by omega)
+  have e : (x₀ : ℤ) + ((n : ℤ) - x₀) = n := by ring
+  rwa [ev_shift, e] at this
+
+/-- **Soundness of the Runge checker.** -/
+theorem rungeCheck_sound {C : RungeCert} (h : rungeCheck C = true) :
+    ∀ n : ℕ, 1 ≤ n → (IsHit C.d (ev C.F n) ↔ n ∈ hitsOf C.segs) := by
+  simp only [rungeCheck, Bool.and_eq_true, Bool.or_eq_true, decide_eq_true_eq,
+    List.all_eq_true, List.mem_range] at h
+  obtain ⟨⟨⟨⟨⟨⟨hd, hw⟩, hP⟩, hb1⟩, hb2⟩, hodd⟩, hG⟩ := h
+  intro n hn
+  rcases Nat.lt_or_ge n C.x₀ with h1 | h1
+  · exact walk_sound (C := C.toCert) C.segs 1 C.x₀ hw n hn h1
+  · have hnot : ¬ IsHit C.d (ev C.F n) := by
+      intro hit
+      have hp := tail_at hP h1
+      have e1 := tail_at hb1 h1
+      have e2 := tail_at hb2 h1
+      simp only [RungeCert.bound, RungeCert.Rp, RungeCert.V, ev_psub, ev_padd, ev_smul,
+        ev_ppow] at e1 e2
+      have hsmall : |C.D ^ C.d * ev C.F n - ev C.P n ^ C.d| < (C.T + 1) * |ev C.P n| ^ (C.d - 1) := by
+        rw [abs_of_pos hp, abs_lt]; constructor <;> linarith
+      have hodd' : Odd C.d → |C.D ^ C.d * ev C.F n - ev C.P n ^ C.d| < |ev C.P n| ^ C.d := by
+        intro ho
+        rcases hodd with he | ⟨o1, o2⟩
+        · exact absurd (Nat.even_iff.mpr he) (Nat.not_even_iff_odd.mpr ho)
+        · have f1 := tail_at o1 h1
+          have f2 := tail_at o2 h1
+          simp only [RungeCert.Rp, RungeCert.V, ev_psub, ev_padd, ev_smul, ev_ppow] at f1 f2
+          rw [abs_of_pos hp, abs_lt]; constructor <;> linarith
+      obtain ⟨t, ht, heq⟩ := runge_pointwise hd hp.ne' hodd' hsmall hit
+      have hi : ((t + C.T).toNat : ℕ) < 2 * C.T + 1 := by
+        have := abs_le.mp ht; omega
+      have hg := tail_at (hG _ hi) h1
+      have ei : (((t + C.T).toNat : ℕ) : ℤ) - C.T = t := by
+        have := abs_le.mp ht; omega
+      rw [ei] at hg
+      simp only [RungeCert.G, RungeCert.V, ev_smul, ev_psub, ev_ppow, ev_padd, ev_cons, ev_nil,
+        mul_zero, add_zero] at hg
+      rw [heq, sub_self, mul_zero] at hg
+      exact lt_irrefl 0 hg
+    have : n ∉ hitsOf C.segs := fun hm => by
+      have := ((walk_bounds (C := C.toCert) C.segs 1 C.x₀ hw).2 n hm).2; omega
+    tauto
+
 end PerfectPower.Reflect

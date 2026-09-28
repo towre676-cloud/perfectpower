@@ -288,15 +288,97 @@ theorem pell_box_finite {D x₁ Δ : ℤ} (hD : 0 < D) :
 a finite set of representatives. -/
 theorem pell_orbits_exhaust {D x₁ y₁ Δ : ℤ} (hD : 0 < D) (hx₁ : 1 < x₁) (hy₁ : 0 < y₁)
     (hu : x₁ ^ 2 - D * y₁ ^ 2 = 1) :
-    ∃ R : Finset (ℤ × ℤ), (∀ p ∈ R, p.1 ^ 2 - D * p.2 ^ 2 = Δ) ∧
+    ∃ R : Finset (ℤ × ℤ), (∀ p ∈ R, 0 < p.1 ∧ 0 ≤ p.2 ∧ p.1 ^ 2 - D * p.2 ^ 2 = Δ) ∧
       ∀ X Y : ℤ, 0 < X → 0 ≤ Y → X ^ 2 - D * Y ^ 2 = Δ →
         ∃ p ∈ R, ∃ k : ℕ, unitOrbit D x₁ y₁ p k = (X, Y) := by
   set S := {p : ℤ × ℤ | 0 < p.1 ∧ 0 ≤ p.2 ∧ p.1 ^ 2 - D * p.2 ^ 2 = Δ ∧
       D * p.2 ^ 2 ≤ |Δ| * x₁ ^ 2}
   have hS : S.Finite := pell_box_finite hD
-  refine ⟨hS.toFinset, fun p hp => ((hS.mem_toFinset).mp hp).2.2.1, ?_⟩
+  refine ⟨hS.toFinset, fun p hp => by
+    obtain ⟨h1, h2, h3, -⟩ := (hS.mem_toFinset).mp hp
+    exact ⟨h1, h2, h3⟩, ?_⟩
   intro X Y hX hY hN
   obtain ⟨k, X₀, Y₀, h1, h2, h3, h4, h5⟩ := pell_descent_box hD hx₁ hy₁ hu X Y hX hY hN
   exact ⟨(X₀, Y₀), (hS.mem_toFinset).mpr ⟨h1, h2, h3, h4⟩, k, h5⟩
+
+/-! #### The Pell count is `O(log N)`
+
+Along a forward orbit with `X₀ > 0`, `Y₀ ≥ 0` the coordinates stay nonnegative and
+`X_j ≥ X₀ x₁^j`, so at most `log_{x₁} M + 1` orbit points have `X ≤ M`.  With finitely many
+orbits (`pell_orbits_exhaust`) this bounds the number of hits `n ≤ N` of a Pell-type quadratic by
+`K (log_{x₁}(2AN + |B|) + 1) + |B|`: the upper half of `A(N) = κ log N + O(1)`. -/
+
+/-- Growth along a forward orbit. -/
+lemma unitOrbit_growth {D x₁ y₁ : ℤ} (hD : 0 ≤ D) (hx₁ : 1 ≤ x₁) (hy₁ : 0 ≤ y₁) {p₀ : ℤ × ℤ}
+    (hX : 0 < p₀.1) (hY : 0 ≤ p₀.2) :
+    ∀ j : ℕ, p₀.1 * x₁ ^ j ≤ (unitOrbit D x₁ y₁ p₀ j).1 ∧ 0 ≤ (unitOrbit D x₁ y₁ p₀ j).2
+  | 0 => by simp [unitOrbit, hY]
+  | j + 1 => by
+    obtain ⟨h1, h2⟩ := unitOrbit_growth hD hx₁ hy₁ hX hY j
+    rw [unitOrbit, Function.iterate_succ_apply', ← unitOrbit]
+    simp only [unitAct]
+    set X := (unitOrbit D x₁ y₁ p₀ j).1
+    set Y := (unitOrbit D x₁ y₁ p₀ j).2
+    have hpow : 0 < p₀.1 * x₁ ^ j := mul_pos hX (pow_pos (by omega) j)
+    have hDY : 0 ≤ D * Y * y₁ := mul_nonneg (mul_nonneg hD h2) hy₁
+    constructor
+    · rw [pow_succ, ← mul_assoc]
+      nlinarith
+    · nlinarith
+
+open scoped Classical in
+/-- **Hits of a Pell-type quadratic: `O(log N)`.** -/
+theorem pell_count_log {A B C x₁ y₁ : ℤ} (hA : 0 < A) (hx₁ : 1 < x₁) (hy₁ : 0 < y₁)
+    (hu : x₁ ^ 2 - 4 * A * y₁ ^ 2 = 1) :
+    ∃ K : ℕ, ∀ N : ℕ,
+      (Finset.filter (fun n : ℕ => IsHit 2 (A * (n : ℤ) ^ 2 + B * n + C)) (Finset.Icc 1 N)).card ≤
+        K * (Nat.log x₁.toNat (2 * A * N + |B|).toNat + 1) + B.natAbs := by
+  classical
+  obtain ⟨R, hR, hex⟩ := pell_orbits_exhaust (Δ := B ^ 2 - 4 * A * C) (by positivity) hx₁ hy₁ hu
+  refine ⟨R.card, fun N => ?_⟩
+  set M : ℤ := 2 * A * N + |B|
+  set L := Nat.log x₁.toNat M.toNat
+  set hits := Finset.filter (fun n : ℕ => IsHit 2 (A * (n : ℤ) ^ 2 + B * n + C)) (Finset.Icc 1 N)
+  set g : (ℤ × ℤ) × ℕ → ℕ := fun q => (((unitOrbit (4 * A) x₁ y₁ q.1 q.2).1 - B) / (2 * A)).toNat
+  -- hits with `2An + B ≤ 0` lie in `[1, |B|]`
+  have hsmall : (hits.filter fun n : ℕ => 2 * A * n + B ≤ 0) ⊆ Finset.Icc 1 B.natAbs := by
+    intro n hn
+    simp only [hits, Finset.mem_filter, Finset.mem_Icc] at hn ⊢
+    refine ⟨hn.1.1.1, ?_⟩
+    have : (n : ℤ) ≤ |B| := by nlinarith [neg_abs_le B, (by exact_mod_cast hn.1.1.1 : (1 : ℤ) ≤ n)]
+    have hB : (|B| : ℤ) = (B.natAbs : ℤ) := Int.abs_eq_natAbs B
+    omega
+  -- the others come from orbit points with `X ≤ M`, i.e. orbit index `≤ L`
+  have hbig : (hits.filter fun n : ℕ => ¬ 2 * A * n + B ≤ 0) ⊆
+      (R ×ˢ Finset.range (L + 1)).image g := by
+    intro n hn
+    simp only [hits, Finset.mem_filter, Finset.mem_Icc, not_le] at hn
+    obtain ⟨⟨⟨hn1, hnN⟩, hhit⟩, hX⟩ := hn
+    obtain ⟨Y, hY⟩ := (quadratic_isHit_iff_norm hA.ne' B C n).mp hhit
+    obtain ⟨p, hp, j, hj⟩ := hex (2 * A * n + B) |Y| hX (abs_nonneg Y) (by rw [sq_abs]; exact hY)
+    obtain ⟨hp1, hp2, -⟩ := hR p hp
+    have hgrow := (unitOrbit_growth (D := 4 * A) (by positivity) hx₁.le hy₁.le hp1 hp2 j).1
+    rw [hj] at hgrow
+    simp only at hgrow
+    have hXM : 2 * A * n + B ≤ M := by
+      simp only [M]; have := le_abs_self B; nlinarith
+    have hpow : x₁ ^ j ≤ M := by nlinarith [pow_pos (show (0 : ℤ) < x₁ by omega) j]
+    have hjL : j ≤ L := by
+      apply Nat.le_log_of_pow_le (by omega)
+      have h1 : ((x₁.toNat ^ j : ℕ) : ℤ) = x₁ ^ j := by
+        push_cast; rw [Int.toNat_of_nonneg (by omega)]
+      have h2 : ((M.toNat : ℕ) : ℤ) = M := Int.toNat_of_nonneg (by linarith [pow_pos (show (0 : ℤ) < x₁ by omega) j])
+      exact_mod_cast (show ((x₁.toNat ^ j : ℕ) : ℤ) ≤ (M.toNat : ℤ) by rw [h1, h2]; exact hpow)
+    refine Finset.mem_image.mpr ⟨(p, j), Finset.mem_product.mpr ⟨hp, Finset.mem_range.mpr (by omega)⟩, ?_⟩
+    simp only [g, hj]
+    rw [show 2 * A * (n : ℤ) + B - B = 2 * A * n by ring, Int.mul_ediv_cancel_left _ (by positivity)]
+    simp
+  have hsplit := Finset.filter_card_add_filter_neg_card_eq_card (s := hits)
+    (fun n : ℕ => 2 * A * n + B ≤ 0)
+  have c1 := Finset.card_le_card hsmall
+  have c2 := (Finset.card_le_card hbig).trans Finset.card_image_le
+  rw [Finset.card_product, Finset.card_range] at c2
+  simp only [Nat.card_Icc, add_tsub_cancel_right] at c1
+  omega
 
 end PerfectPower

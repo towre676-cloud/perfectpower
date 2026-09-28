@@ -26,10 +26,10 @@ Given that kernel, the following are theorems:
 
 **Counting and geometry pieces.**
 - Theorem B count: $|vA(N)-RW|\le2Rv$ (`radical_count_bound`).
-- Pell orbits: finitely many representatives exhaust the solutions of the norm equation (`pell_orbits_exhaust`), with pure periodicity modulo $2A$ (`unitOrbit_periodic`).
+- Pell orbits: finitely many representatives exhaust the solutions of the norm equation (`pell_orbits_exhaust`), with pure periodicity modulo $2A$ (`unitOrbit_periodic`), and the Pell-type count is $O(\log N)$ (`pell_count_log`).
 - The combinatorial half of Theorem G (`S_le_one_iff`, and the exhaustive table `profile_table_ok` for $d,\deg F\le12$).
 
-**Verified checkers.** `Reflect.check_sound` and `Reflect.mordellOK_sound` are proved once. The generated sandwich certificates and census blocks are data that the kernel runs through these checkers (`decide +kernel`, no `Lean.ofReduceBool`).
+**Verified checkers.** `Reflect.check_sound`, `Reflect.rungeCheck_sound` and `Reflect.mordellOK_sound` are proved once. Every generated certificate (Runge and sandwich) and every census block is data that the kernel runs through these checkers (`decide +kernel`, no `Lean.ofReduceBool`).
 
 **Conditional results (abc as a hypothesis).** The following are implications "`ABC ε C` ⇒ …":
 - `hall_of_abc`, for coprime $x,y$;
@@ -64,7 +64,7 @@ abc is an ordinary proposition passed as an argument, so the axiom audit is unaf
 
 **LeVeque is no longer a dependency.** Theorem G in the research notes derives the finite type directly from Siegel's theorem in its standard form. That form is stated in Hindry–Silverman (Theorem D.9.1) and Bombieri–Gubler (§7.3): an affine curve with $2g-2+n_\infty>0$ has finitely many $S$-integral points. The derivation is a Riemann–Hurwitz computation, $\chi=d'(1-S)$, carried out for each geometric component of $y^d=F(x)$. It treats common multiplicities, the normalisation of singular points, fields of definition, and integrality with bounded denominators after normalisation. Its status is `PAPER_PROOF`, not independently refereed. It is backed in three ways:
 - randomized consistency checks: the genus comes out integral and non-negative, and $\chi<0$ exactly for the finite type;
-- an independent Sage normalisation over every profile with $d\le12$ and $\deg F\le12$ (`receipts/theorem_g_check.json`);
+- an independent computation over every profile with $d\le12$ and $\deg F\le12$: Singular's normalisation genus in every case, and Sage's places at infinity where they finish within the time limit (`receipts/theorem_g_check.json`);
 - a Lean proof of the combinatorial half (`ProfileG.lean`).
 
 A referee needs to trust only the Kummer/Riemann–Hurwitz step for the normalisation. Proof step 2 counts $d'$ geometric points over an unramified $x$; an earlier draft said "one point", which was a wording error. The LeVeque statement (Acta Arith. 9 (1964) 209–219) was only ever taken from secondary sources, because the primary paper could not be read in the build environment. It is now historical context and matches Theorem G's conclusion.

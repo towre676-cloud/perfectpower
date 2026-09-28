@@ -158,7 +158,7 @@ Finally, each special root contributes at least $\frac12$ to $S$. Hence $S\le1$ 
 \end{proof}
 
 \begin{remark}[Checks of Theorem~\ref{thm:geom}]
-The last paragraph of the proof is compiled in Lean (\lean{S\_le\_one\_iff}). Lean also checks by kernel evaluation (\lean{profile\_table\_ok}) that for every $2\le d\le12$ and every multiplicity profile of degree at most $12$, the genus from Riemann--Hurwitz is a nonnegative integer and $\chi<0$ exactly outside the three exceptional profiles. Independently, Sage's function-field normalisation computes $g_C$ and $n_\infty$ over the same range, and we compare them with the formula. The Kummer and Riemann--Hurwitz step itself remains a paper argument.
+The last paragraph of the proof is compiled in Lean (\lean{S\_le\_one\_iff}). Lean also checks by kernel evaluation (\lean{profile\_table\_ok}) that for every $2\le d\le12$ and every multiplicity profile of degree at most $12$, the genus from Riemann--Hurwitz is a nonnegative integer and $\chi<0$ exactly outside the three exceptional profiles. Independently, Singular's normalisation computes $g_C$ over the same range, Sage's function fields compute $n_\infty$ where feasible, and we compare both with the formula. The Kummer and Riemann--Hurwitz step itself remains a paper argument.
 \end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{thm:atlas}]
@@ -298,11 +298,11 @@ The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20
 \item \lean{rigid\_zero\_one}: in the rigid case the density exists and is $0$ or $1$.
 \item \lean{twisted\_finite}: if $D^dF=cH^d$ with $c$ not a $d$-th power, every hit is a root of $H$.
 \item \lean{monomial\_count}, the valuation core of Theorem~\ref{thm:radical} (\lean{mul\_pow\_isPow\_iff\_param}: the solutions are $z=z_0w^t$), and its count \lean{radical\_count\_bound}: $|vA(N)-RW|\le2Rv$ with $R$ good residues modulo $v$.
-\item The Pell interfaces of Lemma~\ref{lem:quad}: \lean{quadratic\_isHit\_iff\_norm}, \lean{unitOrbit\_periodic} (pure periodicity modulo any $M$), \lean{goodClass\_hits}, \lean{pell\_orbits\_exhaust} (finitely many orbit representatives), and geometric counting. The assembled $\kappa\log N$ asymptotic is not yet compiled.
+\item The Pell interfaces of Lemma~\ref{lem:quad}: \lean{quadratic\_isHit\_iff\_norm}, \lean{unitOrbit\_periodic} (pure periodicity modulo any $M$), \lean{goodClass\_hits}, \lean{pell\_orbits\_exhaust} (finitely many orbit representatives), geometric counting, and \lean{pell\_count\_log}: $A(N)=O(\log N)$ for every quadratic. The exact constant $\kappa$ is not yet compiled.
 \item \lean{S\_le\_one\_iff} and \lean{profile\_table\_ok}: the combinatorial half of Theorem~\ref{thm:geom}.
 \item \lean{pell\_hitSet\_infinite} and \lean{pell\_hasDensity\_zero} for $2n^2+1$; \lean{runge\_finite}; \lean{power\_type\_finite}; \lean{exp\_hasDensity}.
 \item The reductions of $\binom n2=m^3$ and $\binom n3=m^2$ to elliptic curves, with the curves' integral points as hypotheses.
-\item $19$ machine-generated theorems of the form ``the hit set of $F$ is exactly $H$''. Seventeen use a Runge threshold with Taylor-shifted polynomials. Two, products of $10$ consecutive integers ($d=2$) and of $12$ ($d=4$), use \emph{interval sandwiches}: $[1,\infty)$ is covered by intervals on which $(P+t)^d<D^dF<(P+t+1)^d$. These two are now \emph{reflective}. The certificate is a data literal, and a Boolean checker, whose soundness (\lean{check\_sound}) is proved once, recomputes every Taylor shift and power by kernel evaluation. This took the generated file from 768\,KB to 12\,KB. Replacing the interval test $\mathrm{POS}(0)>\mathrm{NEG}(w)$ by a Bernstein bound would save only $4$ of $283$ pieces, because single points at small $n$ dominate.
+\item $19$ machine-generated theorems of the form ``the hit set of $F$ is exactly $H$''. Seventeen use a Runge threshold with Taylor-shifted polynomials, checked by a verified reflective checker (\lean{rungeCheck\_sound}). Two, products of $10$ consecutive integers ($d=2$) and of $12$ ($d=4$), use \emph{interval sandwiches}: $[1,\infty)$ is covered by intervals on which $(P+t)^d<D^dF<(P+t+1)^d$. These two are now \emph{reflective}. The certificate is a data literal, and a Boolean checker, whose soundness (\lean{check\_sound}) is proved once, recomputes every Taylor shift and power by kernel evaluation. This took the generated file from 768\,KB to 12\,KB. Replacing the interval test $\mathrm{POS}(0)>\mathrm{NEG}(w)$ by a Bernstein bound would save only $4$ of $283$ pieces, because single points at small $n$ dominate.
 \end{itemize}
 The exact Python implementation (standard library only) classifies $(F,d)$, computes $\kappa$, enumerates hits structurally or by Theorem~\ref{thm:runge}, and cross-checks every structural count against the defining scan. A modular sieve makes exact scans to $10^8$ take seconds. Differential fuzzers compare the classifier with brute force under fixed seeds; they were contributed by an external reviewer. Every receipt is reproducible bit-for-bit, and \texttt{make verify} regenerates them and fails on any difference.
 
@@ -310,7 +310,7 @@ The exact Python implementation (standard library only) classifies $(F,d)$, comp
 \begin{itemize}
 \item \emph{Genus one.} For the $622$ nonsingular cubics $m^2=n^3+an+b$ with $|a|,|b|\le12$, and for $400$ further non-monic or shifted cubics and cubes $m^3=an^2+bn+c$, Sage's integral points agree with our exact scans. Each family is reduced to an integral Weierstrass model with integrality tracked, and the Sage points are then pulled back. The certified lists contain hits far beyond any scan: $n^3+n+4$ at $n=4128$, $n^3+2n^2-3n-1$ at $n=47882$, $6n^2+n+1=61301^3$ at $n=6{,}196{,}204$, and $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$. A plain-Python gate re-verifies every stored point and pull-back.
 \item \emph{Mordell census.} For all $20000$ curves $y^2=x^3+k$, $0<|k|\le10^4$, each row records the rank proof, generators, saturation index, point list and hash, and a scan to $|x|\le10^5$. A row whose scan disagrees cannot be labelled certified; the gate checks the domain and every row.
-\item \emph{Theorem~\ref{thm:geom}.} Sage normalisation is compared with $\chi=d'(1-S)$ for $d,\deg F\le12$.
+\item \emph{Theorem~\ref{thm:geom}.} For $d,\deg F\le12$, Singular's normalisation genus, and Sage's count of places at infinity where it finishes, are compared with $\chi=d'(1-S)$.
 \item \emph{Adversarial test of the enumerator.} Rigid polynomials with hits planted up to $n\approx10^9$ were constructed, and all planted hits were found in $220$ trials.
 \end{itemize}
 Families that are neither certified in Lean nor independently cross-validated are labelled as scan evidence only, and are scanned exactly to $10^8$.
@@ -318,7 +318,7 @@ Families that are neither certified in Lean nor independently cross-validated ar
 \subsection*{What remains}
 \begin{itemize}
 \item Effective enumeration in the finite type of genus at least $2$ outside the Runge case, and quartic genus-one models.
-\item The assembled Pell count $\kappa\log N+O(1)$ in Lean, and the geometric half of Theorem~\ref{thm:geom}.
+\item The exact Pell asymptotic $\kappa\log N+O(1)$ in Lean (the $O(\log N)$ bound is compiled), and the geometric half of Theorem~\ref{thm:geom}.
 \item Analogues for non-polynomial sequences, and the Bilu--Tichy generalisation $F(x)=G(y)$.
 \end{itemize}
 

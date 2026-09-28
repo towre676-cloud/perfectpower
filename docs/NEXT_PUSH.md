@@ -47,18 +47,18 @@ Current counts (audited declarations, generated certificates, census sizes) are 
   - Negative tests plant corruptions.
 - **Status language.** Everything that rested on LeVeque now rests on Siegel through Theorem G. Theorem G's step 2 now counts $d'$ points over an unramified $x$.
 - **Lean.**
-  - Pell orbit exhaustion by a descent to a finite box.
+  - Pell orbit exhaustion by a descent to a finite box, and the Pell-type bound $A(N)=O(\log N)$ (`pell_count_log`).
   - Function-field Pillai.
   - The combinatorial half of Theorem G, including an exhaustive kernel-checked table for $d,\deg F\le12$.
-  - A verified reflective checker. The sandwich certificates went from 768 KB to 12 KB, and the census is data plus a soundness theorem.
+  - Verified reflective checkers for all generated certificates: the sandwich certificates went from 768 KB to 12 KB, the Runge certificates from 136 KB to 31 KB, and the census is data plus a soundness theorem.
 - **Evidence.**
-  - Sage normalisation check of Theorem G.
+  - Singular/Sage normalisation check of Theorem G.
   - 400 further genus-one families, with certified hits as late as $n=12{,}017{,}947$.
   - A modular sieve for exact scans to $10^8$.
   - The external fuzzers are in `make fuzz` and `make test` with fixed seeds.
 - **CI diagnosed.** Jobs are never assigned a runner. That is an account-level Actions block, and only the owner can lift it (README).
 
-**Next:** assemble $A(N)=\kappa\log N+O(1)$ in Lean from the Pell pieces; port the Runge certificates to the reflective checker; quartic genus-one models; then the Bilu–Tichy atlas.
+**Next:** the exact constant, $A(N)=\kappa\log N+O(1)$, in Lean (the $O(\log N)$ upper bound is done); quartic genus-one models; then the Bilu–Tichy atlas.
 
 ## Order of work after 0.6 (recommended)
 

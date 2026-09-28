@@ -62,12 +62,14 @@ Only the final step $W=\lfloor((vN-u)/z_0)^{1/t}\rfloor\sim(v/z_0)^{1/t}N^{1/t}$
 
 - **`pell_descent_box`**, **`pell_box_finite`**, **`pell_orbits_exhaust`**: each solution of $X^2-DY^2=\Delta$ with $X>0$, $Y\ge0$ is a nonnegative power of the unit applied to a representative in the finite box $DY_0^2\le|\Delta|x_1^2$. The proof is an integer descent: the inverse unit keeps $X>0$ and $Y\ge0$ and strictly lowers $X$ outside the box. This is a weak form of Nagell's bound.
 
-**Not formalised:** assembling these pieces into $A(N)=\kappa\log N+O(1)$. That step needs the real-analytic growth $X_j\asymp\varepsilon^j$, which follows from `geometric_count_le`, but the bookkeeping over orbits and classes has not been written. |
+- **`unitOrbit_growth`**, **`pell_count_log`**: along a forward orbit $X_j\ge X_0x_1^j$ and $Y_j\ge0$. Hence the hits $n\le N$ of any quadratic $An^2+Bn+C$ with $A>0$, given a unit, number at most $K(\lfloor\log_{x_1}(2AN+|B|)\rfloor+1)+|B|$, with $K$ the number of orbit representatives: $A(N)=O(\log N)$.
+
+**Not formalised:** the matching lower bound and the exact constant, $A(N)=\kappa\log N+O(1)$. That needs the upper growth $X_j\le c\,\varepsilon^j$ and the class bookkeeping. |
 | `ProfileG.lean` (new) | The combinatorial half of Theorem G:
 - **`S_le_one_iff`**: $S=\sum(1-1/t_i)\le1$ iff at most one $t_i>1$ or the $t_i>1$ are $\{2,2\}$.
 - **`profile_table_ok`**: for all $2\le d\le12$ and all 271 multiplicity profiles of degree $\le12$, the Riemann–Hurwitz genus $(2-n_\infty-\chi)/2$ is a nonnegative integer, $t_i\mid d'$, $\chi=d'(1-S)$ in exact arithmetic, and $\chi<0$ iff the profile is not exceptional. The kernel checks all of this by `decide +kernel`.
 
-The geometric half (Kummer and Riemann–Hurwitz for the normalisation) remains a paper proof. It is tested against Sage's normalisation by `crosscheck/theorem_g_sage.py`. |
+The geometric half (Kummer and Riemann–Hurwitz for the normalisation) remains a paper proof. It is tested against Singular's normalisation genus and Sage's places at infinity by `crosscheck/theorem_g_sage.py`. |
 | `Reflect.lean` (new) | Verified certificate checkers (proof by reflection):
 - Polynomial arithmetic on coefficient lists (`ev`, `padd`, `pmul`, `ppow`, `shift`), with evaluation lemmas (`ev_shift`: Taylor shift).
 - The interval test $\mathrm{POS}(0)>\mathrm{NEG}(w)$ and the tail test, with soundness (`intervalPos_sound`, `tailPos_sound`).
@@ -87,14 +89,18 @@ theorem ljunggren_quartic_hits (n : ℕ) (hn : 1 ≤ n) :
     IsHit 2 (let z : ℤ := n; 1 + z + z^2 + z^3 + z^4) ↔ n ∈ ({3} : Finset ℕ)
 ```
 
-The Python side only *chooses* the data: a threshold $x_0$, a $t$-range $T$, and Taylor-shifted polynomials. Lean re-checks everything:
+The Python side only *chooses* the data: a threshold $x_0$, a $t$-range $T$, the signs of the $G_t$, and a witness for each $n<x_0$.
 
-- every value below $x_0$, using `norm_num` with the lemmas `not_isHit_between` and `not_isHit_neg`;
-- every polynomial identity, by `ring`;
-- every sign condition, by `positivity`;
-- the reduction, by `runge_pointwise`.
+*Reflective form (current).* `Generated/Runge.lean` stores each certificate as a `Reflect.RungeCert` literal. `Reflect.rungeCheck` recomputes everything by kernel evaluation (`decide +kernel`):
+- every Taylor shift and power, and the sign conditions $P>0$ and $(T+1)P^{d-1}\mp R'>0$ (and $P^d\mp R'>0$ for odd $d$);
+- the definite sign of each $G_t$, $|t|\le T$;
+- every value below $x_0$ (hit witness, strict bracket, or negative value).
 
-So a compiled generated theorem trusts nothing in the Python code. `PerfectPower/Generated/Runge.lean` contains 17 such theorems, and `Generated/Sandwich.lean` two more (below); the README count block is generated from these files. Regenerate it with `python3 python/make_lean_certificates.py`; CI checks that the file is reproducible, and the full file builds in about 90 s. The theorems cover:
+`Reflect.rungeCheck_sound`, proved once from `runge_pointwise`, `tailPos_sound` and `ev_shift`, turns acceptance into the hit-set theorem, whose statement is unchanged. The file fell from 136 KB to 31 KB and checks in about 13 s.
+
+The CLI (`python -m perfectpower lean --method runge`) still emits the older tactic proofs. There `norm_num`, `ring`, `positivity` and `runge_pointwise` re-check each instance, which is convenient for reading one certificate.
+
+So a compiled generated theorem trusts nothing in the Python code. `PerfectPower/Generated/Runge.lean` contains 17 such theorems, and `Generated/Sandwich.lean` two more (below); the README count block is generated from these files. Regenerate them with `python3 python/make_lean_certificates.py`; `make verify` checks that the files are reproducible. The theorems cover:
 
 - Ljunggren's quartic;
 - $n^4+1$ and $n^4+7$ as squares;

@@ -11,7 +11,7 @@
 >   - Some of these hits are very late, e.g. $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$, so short scans are unreliable.
 >   - $\binom n2=m^3$ and $\binom n3=m^2$ are settled given two curves' integral points, with the reduction in Lean.
 >   - Genus $\ge2$ remains scan evidence, now exact to $10^8$.
-> - *§5, Pell-type sparse families.* Lean proves orbit exhaustion (finitely many representatives), periodicity modulo $2A$ and the geometric count. The assembled $\kappa\log N$ is still a paper result.
+> - *§5, Pell-type sparse families.* Lean proves orbit exhaustion (finitely many representatives), periodicity modulo $2A$, and $A(N)=O(\log N)$. The exact constant $\kappa\log N$ is still a paper result.
 > - *§6, transforms.* For the Pell type the heat transform has a log-periodic second term (Theorem T2). The shift $-B/(2A)$ in the hit sequence must be kept: without it the two-term remainder is $O(\tau\log(1/\tau))$, not $O(\tau)$.
 > - *§7, receipts.* Generated certificates are data checked by verified checkers (`Reflect.lean`). Every census and cross-validation receipt passes a plain-Python gate in `make verify`, and differential fuzzers run with fixed seeds.
 > - *Beyond the program.* The function-field analogues of Hall (Davenport) and Pillai are compiled unconditionally. Their integer versions are compiled only under an explicit abc hypothesis.

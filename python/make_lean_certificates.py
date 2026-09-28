@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from perfectpower.core import mul
-from perfectpower.lean_emit import emit_file
+from perfectpower.lean_emit import emit_file_reflective
 import perfectpower.lean_emit as lean_emit
 
 
@@ -68,6 +68,6 @@ if __name__ == '__main__':
     out = root / 'PerfectPower' / 'Generated' / 'Runge.lean'
     out.parent.mkdir(exist_ok=True)
     entries = [e for e in ENTRIES if len(sys.argv) < 2 or e[0] in sys.argv[1:]]
-    out.write_text(emit_file(entries, T_max=6, x0_max=300))
+    out.write_text(emit_file_reflective(entries, T_max=6, x0_max=300))
     print(out)
     write_sandwich(root)
