@@ -14,7 +14,7 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 | Rigid-branch 0–1 law | `LEAN_VERIFIED` (`rigid_zero_one`) | §6 |
 | Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) | §7 |
 | Theorem T (transforms) | `PAPER_PROOF` | §8 |
-| Theorem E (exponential sequences) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check | §9, `exponential.py` |
+| Theorem E (exponential sequences) | `PAPER_PROOF` + `EXACT_COMPUTATION`; the $d$-periodicity and rational density $P/d$ are `LEAN_VERIFIED` (`exp_hasDensity`, `two_pow_hasDensity_half`) | §9, `exponential.py`, `PerfectPower/Exponential.lean` |
 
 ## 1. Summary
 

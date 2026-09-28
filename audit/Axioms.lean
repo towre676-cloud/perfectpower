@@ -66,3 +66,7 @@ open PerfectPower
 #print axioms PerfectPower.Generated.n6_plus_n_plus_1_cube_hits
 #print axioms PerfectPower.Generated.n4_plus_7_square_hits
 #print axioms PerfectPower.Generated.sextic_1_2_3_4_5_6_1_cube_hits
+-- Exponential sequences
+#print axioms isHit_exp_shift
+#print axioms exp_hasDensity
+#print axioms two_pow_hasDensity_half

@@ -4,7 +4,7 @@
 
 In the build environment of this release, the Mathlib cache and release servers were unreachable, so Mathlib was compiled from source (about 1900 modules). CI uses `leanprover/lean-action` and the ordinary cache.
 
-`./audit/check_axioms.sh` runs `#print axioms` on fifty-six declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
+`./audit/check_axioms.sh` runs `#print axioms` on fifty-nine declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
 
 ## What changed from 0.5
 
@@ -38,6 +38,7 @@ No theorem statement of 0.5 was changed.
 | `Monomial.lean` (new) | `rat_pow_eq_nat`, **`monomial_isHit_iff`** ($n^r$ is a $d$-th power iff $n$ is a $t$-th power, $t=d/\gcd(r,d)$), `monomial_hitSet`, **`monomial_count`** ($A(N)=\#\{w\in[1,N]: w^t\le N\}=\lfloor N^{1/t}\rfloor$) |
 | `Examples.lean` (new) | `consecutive_four_hitSet` ($n(n+1)(n+2)(n+3)$ is never a square), **`ljunggren_hitSet`** (the hit set of $1+n+n^2+n^3+n^4$, $d=2$, is exactly $\{3\}$); both by the Runge squeeze |
 | `Pell.lean` (new) | `hasDensity_zero_of_count_le`, `pell_descent` (every solution of $m^2-2n^2=1$ lies on the orbit of $(1,0)$), `pell_hit_iff`, **`pell_hitSet_infinite`**, `pell_count_le` ($A(N)\le\lfloor\sqrt N\rfloor$), **`pell_hasDensity_zero`**: $2n^2+1$ has infinitely many square values and density zero. This is the first **nonrigid** density-zero theorem in the kernel, proved without Boshernitzan or LeVeque. |
+| `Exponential.lean` (new) | `isHit_exp_shift`, **`exp_hasDensity`**: for $a\ne0$ the hit density of $c\,a^n$ exists and equals $P/d$, the periodic core of Theorem E. **`two_pow_hasDensity_half`**: $2^n$ is a square with density exactly $1/2$. |
 | `RungeReduction.lean` (new) | `pow_diff_bound'`; **`runge_pointwise`** (if $P(n)\ne0$, $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and, for odd $d$, $<|P(n)|^d$, then a hit gives $D^dF(n)=(P(n)+t)^d$ with $|t|\le T$); `runge_uniform`; **`runge_finite`**. This is Theorem R in integer form. The same file contains **`power_type_finite`**, Theorem P over $\mathbb Q[x]$: if $F=cG^d$ with $G\in\mathbb Q[x]\setminus0$ and $c$ not an integer $d$-th power, then the hits are finite. Only the derivation of the uniform inequalities from the coefficient constants $a(x_0),C(x_0)$ remains informal. |
 
 ## Machine-generated certificates

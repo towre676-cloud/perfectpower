@@ -10,3 +10,4 @@ import PerfectPower.Pell
 import PerfectPower.RungeReduction
 import PerfectPower.Certificates
 import PerfectPower.Generated.Runge
+import PerfectPower.Exponential
