@@ -89,3 +89,9 @@ open PerfectPower
 #print axioms choose_two_cube_hits
 #print axioms choose_three_square_iff
 #print axioms choose_three_square_hits
+-- Valuation core of Theorem B
+#print axioms exists_pow_iff_factorization
+#print axioms isHit_iff_natAbs
+#print axioms isHit_iff_rat
+#print axioms mul_pow_isPow_iff_congr
+#print axioms mul_pow_isPow_iff_param

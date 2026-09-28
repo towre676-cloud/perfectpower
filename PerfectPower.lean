@@ -16,3 +16,4 @@ import PerfectPower.Davenport
 import PerfectPower.ABC
 import PerfectPower.Generated.MordellPoints
 import PerfectPower.Binomial
+import PerfectPower.RadicalValuation

@@ -39,6 +39,17 @@ No theorem statement of 0.5 was changed.
 | `Examples.lean` (new) | `consecutive_four_hitSet` ($n(n+1)(n+2)(n+3)$ is never a square), **`ljunggren_hitSet`** (the hit set of $1+n+n^2+n^3+n^4$, $d=2$, is exactly $\{3\}$); both by the Runge squeeze |
 | `Pell.lean` (new) | `hasDensity_zero_of_count_le`, `pell_descent` (every solution of $m^2-2n^2=1$ lies on the orbit of $(1,0)$), `pell_hit_iff`, **`pell_hitSet_infinite`**, `pell_count_le` ($A(N)\le\lfloor\sqrt N\rfloor$), **`pell_hasDensity_zero`**: $2n^2+1$ has infinitely many square values and density zero. This is the first **nonrigid** density-zero theorem in the kernel, proved without Boshernitzan or LeVeque. |
 | `Exponential.lean` (new) | `isHit_exp_shift`, **`exp_hasDensity`**: for $a\ne0$ the hit density of $c\,a^n$ exists and equals $P/d$, the periodic core of Theorem E. **`two_pow_hasDensity_half`**: $2^n$ is a square with density exactly $1/2$. |
+| `RadicalValuation.lean` (new) | The valuation core of Theorem B for general $c$:
+- `exists_pow_iff_factorization`: $n$ is a $d$-th power iff $d\mid v_p(n)$ for all $p$.
+- `isHit_iff_natAbs`: the signed version.
+- `isHit_iff_rat`: a rational $d$-th power that is an integer is an integer $d$-th power, i.e. the denominator step.
+- **`mul_pow_isPow_iff_congr`**: if $cz_0^r$ is a $d$-th power, then $cz^r$ is one iff $v_p(z)\equiv v_p(z_0)\pmod t$ for all $p$.
+- **`mul_pow_isPow_iff_param`**: if moreover $z_0$ is minimal, the solutions are exactly $z=z_0w^t$.
+
+The residue-class count and the constant $\kappa$ are not yet formalised. |
+| `Binomial.lean` (new) | Reductions of $\binom n2=m^3$ and $\binom n3=m^2$ to the curves $Y^2=X^3+1$ and $Y^2=X^3-36X$. The point lists are checked by `decide`. Hit sets $\{1,2\}$ and $\{1,2,3,4,50\}$, **conditional on the named hypotheses** `IntegralPointsCubePlusOne` and `IntegralPointsCongruent6`, which state that the integral-point lists are complete; these are certified by Sage, not by Lean. |
+| `Davenport.lean`, `ABC.lean` (new) | `davenport`, `davenport_sharp` (unconditional). `hall_of_abc`, `pillai_bound_of_abc`, `pillai_finite_of_abc`, all with abc as an explicit hypothesis. |
+| `Generated/MordellPoints.lean` (generated) | Every listed census point lies on its curve, checked by `decide` with no axioms at all. **Completeness is not checked.** |
 | `RungeReduction.lean` (new) | `pow_diff_bound'`; **`runge_pointwise`** (if $P(n)\ne0$, $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and, for odd $d$, $<|P(n)|^d$, then a hit gives $D^dF(n)=(P(n)+t)^d$ with $|t|\le T$); `runge_uniform`; **`runge_finite`**. This is Theorem R in integer form. The same file contains **`power_type_finite`**, Theorem P over $\mathbb Q[x]$: if $F=cG^d$ with $G\in\mathbb Q[x]\setminus0$ and $c$ not an integer $d$-th power, then the hits are finite. Only the derivation of the uniform inequalities from the coefficient constants $a(x_0),C(x_0)$ remains informal. |
 
 ## Machine-generated certificates
