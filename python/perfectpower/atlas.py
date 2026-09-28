@@ -42,6 +42,7 @@ class Classification:
     infinite: bool | None                     # None: not decided by this module
     effective: bool                           # complete hit list computable by this module
     details: dict = field(default_factory=dict)
+    curve: dict = field(default_factory=dict)             # genus, points at infinity, chi (Theorem G)
 
 
 # ---------------------------------------------------------------------------
@@ -103,6 +104,31 @@ def _rational_power_root(c: Fraction, e: int) -> list[Fraction]:
 
 
 # ---------------------------------------------------------------------------
+# geometry of y^d = F(x)  (research notes, Theorem G)
+# ---------------------------------------------------------------------------
+
+def curve_invariants(F, d: int, parts: dict) -> dict:
+    """Components, genus and points at infinity of the smooth models of y^d = F(x).
+
+    With g = gcd(d, all multiplicities) the curve splits over Qbar into g components
+    y^(d') = zeta c' prod (x - alpha_i)^(r_i / g), d' = d / g, each a cyclic cover of P^1 of
+    degree d' with d'/t_i points over alpha_i and n_inf = gcd(d', deg F / g) points over infinity.
+    Riemann-Hurwitz gives chi = 2 - 2 genus - n_inf = d' (1 - S), S = sum_i (1 - 1/t_i).
+    """
+    from functools import reduce
+    g = reduce(gcd, [d] + list(parts))
+    dp = d // g
+    S = sum(Fraction(degree(s)) * (1 - Fraction(1, d // gcd(d, j))) for j, s in parts.items())
+    n_inf = gcd(dp, degree(F) // g)
+    chi = dp * (1 - S)
+    genus = (2 - n_inf - chi) / 2
+    assert genus.denominator == 1 and genus >= 0
+    return {'components_over_Qbar': g, 'cover_degree': dp, 'S': str(S),
+            'points_at_infinity': n_inf, 'genus': int(genus), 'euler_characteristic': str(chi),
+            'siegel_finite': bool(chi < 0)}
+
+
+# ---------------------------------------------------------------------------
 # classification
 # ---------------------------------------------------------------------------
 
@@ -127,7 +153,7 @@ def classify(coefficients, d: int) -> Classification:
     special = {t: k for t, k in tprof.items() if t != 1}
     nspecial = sum(special.values())
     base = dict(coefficients=f, d=d, leading=lead, multiplicity_profile=mult,
-                t_profile=dict(sorted(tprof.items())))
+                t_profile=dict(sorted(tprof.items())), curve=curve_invariants(F, d, parts))
 
     if nspecial == 0:
         G = ONE

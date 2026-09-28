@@ -9,7 +9,8 @@ Every result below carries one of the status labels of [the receipt policy](RECE
 | Theorem P (power type) | `LEAN_VERIFIED`: density one is `hasDensity_one_of_pow`; finiteness is `power_type_finite` | §2, `PerfectPower/ZeroOne.lean` |
 | Theorem B (radical type, exact parametrisation) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; the monomial case $c=1,\alpha=0$ is `LEAN_VERIFIED` (`monomial_count`) | §3, `atlas.py`, `PerfectPower/Monomial.lean` |
 | Lemma Q, Theorem C (Pell type) | `PAPER_PROOF` + `EXACT_COMPUTATION` cross-check; for $2n^2+1$, infinitude and density zero are `LEAN_VERIFIED` (`pell_hasDensity_zero`) | §4, `atlas.py`, `PerfectPower/Pell.lean` |
-| Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque 1964) | §5 |
+| Theorem A (atlas) and Corollary A (exponent spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` on Siegel's theorem (standard form) via Theorem G; LeVeque 1964 kept as historical context | §5 |
+| Theorem G ($\chi=d'(1-S)$; finite type ⇔ $\chi<0$) | `PAPER_PROOF` (not refereed) + randomized consistency checks | §5, `atlas.curve_invariants` |
 | Theorem R (complete Runge enumeration) | `PAPER_PROOF`; the reduction to the $G_t$ is `LEAN_VERIFIED` (`runge_finite`); 19 instances have generated Lean certificates (17 by Taylor-shift plans, 2 by interval sandwiches); adversarial planted-hit test, 220 trials, 0 failures; prior art (Walsh 1992, Beukers–Tengely 2005) not yet compared | §6, `runge.py`, `lean_emit.py`, `lean_sandwich.py` |
 | Rigid-branch 0–1 law | `LEAN_VERIFIED` (`rigid_zero_one`) | §6 |
 | Corollary K (shift spectrum) | `THEOREM_EXTERNAL_DEPENDENCY` (LeVeque) | §7 |
@@ -122,9 +123,46 @@ Along an orbit, $(X_{k+1},Y_{k+1})=(x_1X_k+4Ay_1Y_k,\;y_1X_k+x_1Y_k)$. This matr
 
 ## 5. The atlas theorem
 
-**LeVeque's theorem** (W. J. LeVeque, *On the equation $y^m=f(x)$*, Acta Arith. 9 (1964) 209–219). Let $f\in K[x]$ over a number field $K$, with root multiplicities $r_i$ and $t_i=m/\gcd(m,r_i)$. The equation $y^m=f(x)$ has only finitely many solutions in integers of $K$ unless $\{t_i\}$ is $\{t,1,\dots,1\}$ or $\{2,2,1,\dots,1\}$. B. Brindza (*On S-integral solutions of the equation $y^m=f(x)$*, Acta Math. Hungar. 44 (1984)) made the finiteness effective via Baker's method, with bounds that are astronomically large.
+The finite type (part 4) no longer needs LeVeque's theorem as a black box. It follows from the standard form of Siegel's theorem by the Euler-characteristic computation below (Theorem G). LeVeque's theorem (Acta Arith. 9 (1964) 209–219), which is the historical source of the exceptional patterns, is retained as context only; its primary text was not accessible in the build environment. Brindza (Acta Math. Hungar. 44 (1984)) made the finiteness effective via Baker's method, with astronomically large bounds.
 
-*Proof of Theorem A.* The $t$-profile is determined by the multiplicities $\{j:\ S_j\ne1\}$ and degrees $\deg S_j$ of Yun's squarefree decomposition $F=c\prod_jS_j^j$: a root of $S_j$ has $t=d/\gcd(d,j)$. The types are therefore mutually exclusive and exhaustive. Part 1 is Theorem P, part 2 is Theorem B, part 3 is Theorem C with Lemma Q, and part 4 is LeVeque's theorem with $K=\mathbb Q$. $\square$
+**Siegel's theorem (standard form).** Let $C$ be an affine curve over a number field $K$, irreducible over $\overline K$. Let $\tilde C$ be the smooth projective model of $C$, of genus $g_C$, and let $n_\infty$ be the number of points of $\tilde C(\overline K)$ lying over the complement of $C$. If $2g_C-2+n_\infty>0$, then for every finite set $S$ of places, $C$ has only finitely many $S$-integral points. In words: every affine curve other than $\mathbb P^1$ minus at most two points has finitely many $S$-integral points. References: Siegel (1929), Mahler (S-integers); Hindry–Silverman, *Diophantine Geometry*, Theorem D.9.1; Bombieri–Gubler, *Heights in Diophantine Geometry*, §7.3.
+
+**Theorem G (geometry of $y^d=F(x)$).** Let $F=c\prod_{i=1}^s(x-\alpha_i)^{r_i}$ with distinct $\alpha_i\in\overline{\mathbb Q}$ and $d\ge2$. Put $g=\gcd(d,r_1,\dots,r_s)$, $d'=d/g$, $t_i=d/\gcd(d,r_i)$ and $S=\sum_i(1-1/t_i)$.
+
+1. Over $\overline{\mathbb Q}$, the curve $y^d=F(x)$ is the union of $g$ irreducible components $y^{d'}=\zeta c^{1/g}\prod(x-\alpha_i)^{r_i/g}$, one for each $g$-th root of unity $\zeta$.
+2. Each component, after normalisation, is a cyclic cover of $\mathbb P^1_x$ of degree $d'$. It has:
+   - $d'/t_i$ points over $\alpha_i$;
+   - $n_\infty=\gcd(d',\deg F/g)$ points over $x=\infty$;
+   - one point over every other $x$.
+3. Hence the affine part of each component has Euler characteristic
+$$\chi \;=\; 2-2g_C-n_\infty \;=\; d'\,(1-S).$$
+4. In particular, $y^d=F(x)$ has finitely many integral points whenever $S>1$. And $S\le1$ holds exactly for the $t$-profiles $\{1,\dots,1\}$ (power), $\{t,1,\dots,1\}$ (radical) and $\{2,2,1,\dots,1\}$ (Pell).
+
+*Proof.* (1) We have $Y^d-F=\prod_\zeta\bigl(Y^{d'}-\zeta c^{1/g}\prod(x-\alpha_i)^{r_i/g}\bigr)$. Each factor is irreducible over $\overline{\mathbb Q}(x)$ by Capelli's theorem: the exponents $r_i/g$ have $\gcd(d',r_1/g,\dots,r_s/g)=1$, so the right-hand side is not a $p$-th power in $\overline{\mathbb Q}(x)$ for any prime $p\mid d'$. Over an algebraically closed field, Capelli's extra condition $-4w^4$ is subsumed.
+
+(2) Kummer theory for the cyclic extension $\overline{\mathbb Q}(x)(y)/\overline{\mathbb Q}(x)$ of degree $d'$. At a place where $y^{d'}$ has valuation $v$, the ramification index is $d'/\gcd(d',v)$, and there are $\gcd(d',v)$ places above it. At $x=\alpha_i$ the valuation is $v=r_i/g$, and $d'/\gcd(d',r_i/g)=d/\gcd(d,r_i)=t_i$. At $x=\infty$ the valuation is $-\deg F/g$. Everywhere else the extension is unramified.
+
+(3) Riemann–Hurwitz for the degree-$d'$ map to $\mathbb P^1$ gives
+$$2g_C-2=d'(-2)+\sum_i(d'-d'/t_i)+(d'-n_\infty),$$
+which rearranges to $2-2g_C-n_\infty=d'(1-S)$.
+
+(4) An affine curve other than $\mathbb P^1$ minus at most two points has $\chi<0$; conversely $\chi<0$ is exactly Siegel's condition $2g_C-2+n_\infty>0$. If $S>1$, apply Siegel over a number field $K$ containing $c^{1/g}$, the $\alpha_i$ and the $g$-th roots of unity, to each component $C_j$, using its normalisation $\tilde C_j$. There are three technical points:
+
+- *Singular points.* An integral point of $C_j$ that is not one of its finitely many singular points lifts uniquely to $\tilde C_j$.
+- *Integrality after normalisation.* The affine part of $\tilde C_j$ is $\tilde C_j$ minus the $n_\infty$ points over $x=\infty$. Its coordinate ring is the integral closure of $K[x]$ in the function field, and it is generated by finitely many functions $w_\ell$, each integral over $K[x]$. Multiplying by a fixed integer $N$ makes each $Nw_\ell$ integral over $\mathcal O_K[x]$. So at a point with $x\in\mathbb Z$ every $w_\ell$ takes values in $N^{-1}\mathcal O_K$. These points are $S$-integral for $S$ containing the primes dividing $N$, and Siegel applies.
+- *Fields of definition.* Every rational integral point lies on some $C_j$, and there are finitely many components.
+
+So there are finitely many integral points when $S>1$. Finally, each special root contributes $1-1/t_i\ge\tfrac12$ to $S$. Hence $S\le1$ allows either one special root with any $t$ (radical type), or two special roots with $t=2$ each (Pell type, $S=1$), or none (power type). $\square$
+
+*Corollary (Theorem A, part 4, now from Siegel).* Profiles outside the power, radical and Pell types have $S>1$, hence finitely many hits. The classification in Theorem A therefore rests on Siegel's theorem in the standard form above. That form is stated with proof in textbooks (Hindry–Silverman; Bombieri–Gubler), which removes the dependence on a secondary-source quotation of LeVeque. The formula $\chi=d'(1-S)$ also explains the growth types: the exceptional curves are exactly those of genus $0$ with $n_\infty=1$ (power and radical, $\chi>0$: polynomial-size families) or $n_\infty=2$ (Pell, $\chi=0$: unit-group orbits, logarithmic counts).
+
+*Status.*
+- The proof is a `PAPER_PROOF` written in this repository. It has not been independently refereed.
+- The Siegel input is `THEOREM_EXTERNAL_DEPENDENCY` and is ineffective.
+- `atlas.curve_invariants` computes $g$, $d'$, $n_\infty$, $g_C$ and $\chi$ for every classification.
+- The test suite checks, on 1500 random $(F,d)$ with repeated and complex roots, that $2g_C$ is a non-negative even integer, and that $\chi<0$ exactly for the finite type. Earlier runs of the same check covered 4000 cases.
+
+*Proof of Theorem A.* The $t$-profile is determined by Yun's squarefree decomposition $F=c\prod_jS_j^j$: a root of $S_j$ has $t=d/\gcd(d,j)$. The types are therefore mutually exclusive and exhaustive. Parts 1–3 are Theorems P, B and C, the last with Lemma Q. Part 4 is Theorem G. $\square$
 
 Two observations connect the atlas to the monograph's rigid branch ($d\mid\deg F$ and $\operatorname{lc}F$ an integer $d$-th power).
 

@@ -32,7 +32,7 @@ abc is an ordinary proposition passed as an argument, so the axiom audit is unaf
 ## 2. What the Lean kernel does not prove
 
 - **The Python classifier's type assignments** (`atlas.py`): power, radical, Pell or finite. Nor does it prove the constants $\kappa$, the structural counts, or the shift spectrum. These are paper proofs, cross-checked against direct scans.
-- **LeVeque's theorem, and anything resting on it.** That covers the finite type of the atlas, the exponent spectrum $\{0,1\}\cup\{1/t\}$ as a complete list, and Corollary K. Siegel's and Boshernitzan's theorems are likewise outside the kernel.
+- **Siegel's theorem, and anything resting on it.** Through Theorem G of the research notes, it now replaces the secondary-source LeVeque statement. That covers the finite type of the atlas, the exponent spectrum $\{0,1\}\cup\{1/t\}$ as a complete list, and Corollary K. Siegel's and Boshernitzan's theorems are likewise outside the kernel.
 - **That scan-only rows are complete.**
 - **Hall's conjecture, Pillai's conjecture, or any uniform integral-point bound.** No part of the repository proves these, and none is claimed. See `FRONTIER_PLAN.md`.
 - **Completeness of the Mordell census** (`data/mordell_census.csv`). That is Sage's claim: Mordell–Weil generators from mwrank, saturated, then elliptic-logarithm sieving. It is rigorous modulo the correctness of that software and of the proved rank. Lean checks no row of the census.
@@ -44,16 +44,16 @@ abc is an ordinary proposition passed as an argument, so the axiom audit is unaf
 | Statement | Depends on | Effective? |
 |---|---|---|
 | Density zero outside the rigid branch (monograph §3) | Boshernitzan's equidistribution criterion | Qualitative only |
-| Atlas finite type, exponent spectrum as a complete list, $O(N^{1/p})$ barrier, Corollary K | LeVeque (1964), hence Siegel | **No.** Siegel is ineffective. Brindza's effective version exists in principle, but its bounds are astronomical, and none is computed here. |
-| Second proof of the 0–1 law (research notes §1) | LeVeque/Siegel | **No.** It cannot replace the Boshernitzan argument where effectivity matters. |
+| Atlas finite type, exponent spectrum as a complete list, $O(N^{1/p})$ barrier, Corollary K | Siegel (standard form) via Theorem G; historically LeVeque (1964) | **No.** Siegel is ineffective. Brindza's effective version exists in principle, but its bounds are astronomical, and none is computed here. |
+| Second proof of the 0–1 law (research notes §1) | Siegel, via Theorem G | **No.** It cannot replace the Boshernitzan argument where effectivity matters. |
 | Shifted exponentials $c\,a^n+k$ finite | Thue, the S-unit theorem | Thue is effective via Baker; no bounds are computed |
 | Each Mordell curve $y^2=x^3+k$ has finitely many integral points | Siegel; effective via Baker | Yes. The census lists come from Sage, not from explicit Baker bounds computed here. |
-| Pillai: finiteness for fixed $(a,b)$ | LeVeque/Siegel; effective via Baker | Not computed here |
+| Pillai: finiteness for fixed $(a,b)$ | Siegel, via Theorem G; effective via Baker | Not computed here |
 | Pillai: finiteness uniform in the exponents; Hall's inequality | **abc (open)** | Formalised only as implications |
 | Radical and Pell counts, Theorems P, B, C | Elementary; paper proofs | Yes, explicit |
 | Rigid-branch complete hit lists | Theorem R; elementary | Yes, explicit |
 
-**Status of the LeVeque statement.** The primary paper (Acta Arith. 9 (1964) 209–219) could not be read from the build environment, because every host carrying the full text was blocked. The statement used here is taken from concordant secondary sources, which state it for integral solutions over a number field $K$, with $f\in K[x]$. With $m_i=m/\gcd(m,e_i)$ sorted decreasingly, finiteness holds under the *LeVeque condition*: $m_1\ge3,\ m_2\ge2$, or $m_1=m_2=m_3=2$. This condition is exactly the complement of the two exceptional patterns $\{t,1,\dots,1\}$ and $\{2,2,1,\dots,1\}$ used by the atlas. The reduction of the atlas to those patterns is proved *conditionally on that statement*. Reading the primary source is an open task (see `docs/RELATED_WORK.md`).
+**LeVeque is no longer a dependency.** Theorem G in the research notes derives the finite type directly from Siegel's theorem in its standard form. That form is stated in Hindry–Silverman (Theorem D.9.1) and Bombieri–Gubler (§7.3): an affine curve with $2g-2+n_\infty>0$ has finitely many $S$-integral points. The derivation is a Riemann–Hurwitz computation, $\chi=d'(1-S)$, carried out for each geometric component of $y^d=F(x)$. It treats common multiplicities, the normalisation of singular points, fields of definition, and integrality with bounded denominators after normalisation. Its status is `PAPER_PROOF`, not independently refereed. It is backed by randomized consistency checks: the genus comes out integral and non-negative, and $\chi<0$ exactly for the finite type. The LeVeque statement (Acta Arith. 9 (1964) 209–219) was only ever taken from secondary sources, because the primary paper could not be read in the build environment. It is now historical context and matches Theorem G's conclusion.
 
 ## 4. Epistemic label of every data row
 
@@ -68,6 +68,6 @@ Every data row carries one label: `receipts/atlas_benchmarks.json`, `data/famili
 | `LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS` | Lean proves the reduction to an elliptic curve, the congruence filtering, and that every surviving point is a hit (`PerfectPower/Binomial.lean`). Completeness of the curve's integral-point list is an explicit hypothesis, certified by Sage (`receipts/binomial_curves.json`: rank proved, basis saturated). |
 | `CONDITIONAL_ON_UNPROVEN_RANK` | A Sage integral-point list computed from generators whose rank mwrank could not prove. Complete only if the rank is right. Used in `data/mordell_census.csv`. |
 | `EXACT_WITHIN_BOUND` | An exhaustive enumeration, complete up to the stated bound and silent beyond it. Used in `data/pillai_gaps.csv`. |
-| `SCAN_EVIDENCE_ONLY` | Finiteness is conditional on LeVeque. The listed hits are those with $n\le10^5$. **No completeness claim is made.** |
+| `SCAN_EVIDENCE_ONLY` | Finiteness is conditional on Siegel (Theorem G). The listed hits are those with $n\le10^5$. **No completeness claim is made.** |
 
 The cubic cross-validation shows why the last label matters. Among the 622 curves $m^2=n^3+an+b$ with $|a|,|b|\le12$, a scan to $10^3$ would have missed hits on 18 curves, and a scan to $10^4$ on 4. The largest hit is $n=80327$, at $(a,b)=(-12,-10)$.

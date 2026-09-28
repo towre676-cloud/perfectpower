@@ -321,6 +321,29 @@ class TestSandwichCover(unittest.TestCase):
                 self.assertTrue(p >= 0 and p ** d < V < (p + 1) ** d, (f, d, n))
 
 
+class TestGeometry(unittest.TestCase):
+    def test_euler_characteristic_matches_types(self):
+        # Theorem G: finite type  <=>  chi(affine component) = d'(1 - S) < 0  (Siegel)
+        rng = random.Random(11)
+        for _ in range(1500):
+            d = rng.randrange(2, 9)
+            f = (Fraction(rng.choice([1, -2, 3, 4, 8, 9])),)
+            for _ in range(rng.randrange(1, 5)):
+                lin = (normalize([rng.randrange(-5, 6), 1]) if rng.random() < 0.7
+                       else normalize([rng.randrange(1, 5), 0, 1]))
+                f = mul(f, power(lin, rng.randrange(1, 7)))
+            cl = classify([int(x) for x in normalize(f)], d)
+            self.assertEqual(cl.curve['siegel_finite'], cl.kind == 'finite', (f, d))
+
+    def test_named_curves(self):
+        self.assertEqual(classify([1, 0, 0, 1], 2).curve['genus'], 1)          # y^2 = x^3 + 1
+        self.assertEqual(classify([1, 0, 2], 2).curve['points_at_infinity'], 2)  # Pell, genus 0
+        self.assertEqual(classify([1, 0, 2], 2).curve['genus'], 0)
+        self.assertEqual(classify([1, 1, 1, 1, 1], 2).curve['genus'], 1)      # Ljunggren quartic
+        self.assertEqual(classify([0, 0, 0, 0, 0, 1], 3).curve['genus'], 0)   # y^3 = x^5: radical type
+        self.assertEqual(classify([2, 0, 0, 0, 0, 1], 3).curve['genus'], 4)   # y^3 = x^5 + 2: (2*4 - 0)/2
+
+
 class TestFrontier(unittest.TestCase):
     def test_pillai_instances_are_finite_type_except_2_2(self):
         # x^a - y^b = k is the atlas instance F = x^a - k, d = b: x^a - k is squarefree for k != 0,

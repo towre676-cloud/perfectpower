@@ -141,8 +141,24 @@ In (b) there are finitely many orbits (Nagell). A large hit corresponds to exact
 For $2n^2+1$ we get $\kappa=1/\log(3+2\sqrt2)=0.56729\ldots$. The exact counts at $N=10^6,10^{12},10^{24},10^{48}$ are $8,16,31,63$. The square triangular numbers $n(n+1)/2$, reduced to $4n^2+4n$ by Remark~\ref{rem:intval}, have the same $\kappa$. For the rigid polynomials $n^2+n$ and $n^2+1$, $A$ is a square and there are no hits.
 \end{example}
 
+\begin{theorem}[Geometry of $y^d=F(x)$]\label{thm:geom}
+Let $F=c\prod_{i=1}^s(x-\alpha_i)^{r_i}$ with distinct $\alpha_i\in\overline\Q$. Put $g=\gcd(d,r_1,\dots,r_s)$, $d'=d/g$, $t_i=d/\gcd(d,r_i)$ and $S=\sum_i(1-1/t_i)$. Over $\overline\Q$, the curve $y^d=F(x)$ splits into $g$ irreducible components. Each is a cyclic cover of $\mathbb P^1$ of degree $d'$ with $n_\infty=\gcd(d',\deg F/g)$ points over infinity, and the affine part of each component has Euler characteristic
+\[
+\chi=2-2g_C-n_\infty=d'(1-S).
+\]
+Consequently $y^d=F(x)$ has only finitely many integral points when $S>1$. Moreover $S\le1$ holds exactly for the power, radical and Pell profiles.
+\end{theorem}
+
+\begin{proof}
+Capelli's theorem gives the irreducibility of each factor $Y^{d'}-\zeta c^{1/g}\prod(x-\alpha_i)^{r_i/g}$. Kummer theory gives $\gcd(d',r_i/g)=d'/t_i$ points over $\alpha_i$ and $\gcd(d',\deg F/g)$ points over $\infty$. Riemann--Hurwitz then yields the formula for $\chi$. If $S>1$ then $\chi<0$, which is Siegel's condition $2g_C-2+n_\infty>0$ (Hindry--Silverman, Theorem D.9.1).
+
+Siegel's theorem applies to the normalisation of each component. Integral points avoid the finitely many singular points. On the normalisation they have coordinates with denominators bounded by a fixed integer, because the coordinate ring is the integral closure of $K[x]$. So they are $S$-integral for a suitable finite $S$.
+
+Finally, each special root contributes at least $\frac12$ to $S$. Hence $S\le1$ allows at most one special root with arbitrary $t$, or two with $t=2$.
+\end{proof}
+
 \begin{proof}[Proof of Theorem~\ref{thm:atlas}]
-The $t$-profiles in (i)--(iv) are mutually exclusive and exhaust all possibilities. Parts (i)--(iii) are Theorems~\ref{thm:power}, \ref{thm:radical} and~\ref{thm:pellred} together with Lemma~\ref{lem:quad}. Part (iv) is LeVeque's theorem~\cite{LeVeque}: the equation $y^m=f(x)$ has only finitely many integral solutions unless the $t$-profile is $\{t,1,\dots,1\}$ or $\{2,2,1,\dots,1\}$.
+The $t$-profiles in (i)--(iv) are mutually exclusive and exhaust all possibilities. Parts (i)--(iii) are Theorems~\ref{thm:power}, \ref{thm:radical} and~\ref{thm:pellred} together with Lemma~\ref{lem:quad}. Part (iv) is Theorem~\ref{thm:geom}, which recovers LeVeque's exceptional patterns~\cite{LeVeque} from Siegel's theorem.
 \end{proof}
 
 \begin{remark}[Integer-valued polynomials]\label{rem:intval}
