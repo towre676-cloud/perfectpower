@@ -1311,7 +1311,8 @@
         "1e6": 1000000,
         "1e12": 1000000000000,
         "1e24": 1000000000000000000000000
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "twisted_power_2n2",
@@ -1338,7 +1339,8 @@
         "1e12": 0,
         "1e24": 0
       },
-      "complete_hit_list": []
+      "complete_hit_list": [],
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "grunwald_wang_16n8",
@@ -1371,7 +1373,8 @@
         "1e12": 0,
         "1e24": 0
       },
-      "complete_hit_list": []
+      "complete_hit_list": [],
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "linear_4n_plus_1",
@@ -1397,7 +1400,8 @@
         "1e6": 999,
         "1e12": 999999,
         "1e24": 999999999999
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "linear_2n_minus_5",
@@ -1423,7 +1427,8 @@
         "1e6": 707,
         "1e12": 707107,
         "1e24": 707106781187
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "linear_3n_plus_2_d6",
@@ -1450,7 +1455,8 @@
         "1e12": 0,
         "1e24": 0
       },
-      "complete_hit_list": []
+      "complete_hit_list": [],
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "singular_cubic_n3",
@@ -1478,7 +1484,8 @@
         "1e6": 1000,
         "1e12": 1000000,
         "1e24": 1000000000000
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "cube_twist_5_plus_3n",
@@ -1504,7 +1511,8 @@
         "1e6": 48,
         "1e12": 4807,
         "1e24": 48074986
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "radical_12n2_d3",
@@ -1531,7 +1539,8 @@
         "1e6": 43,
         "1e12": 4367,
         "1e24": 43679023
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "radical_n3_times_square",
@@ -1563,7 +1572,8 @@
         "1e6": 1000,
         "1e12": 1000000,
         "1e24": 1000000000000
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "monomial_n4_d6",
@@ -1592,7 +1602,8 @@
         "1e6": 100,
         "1e12": 10000,
         "1e24": 100000000
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "pell_2n2_plus_1",
@@ -1619,7 +1630,8 @@
         "1e6": 8,
         "1e12": 16,
         "1e24": 31
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "pell_3n2_plus_1",
@@ -1646,7 +1658,8 @@
         "1e6": 11,
         "1e12": 21,
         "1e24": 42
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "pell_2n2_minus_7",
@@ -1673,7 +1686,8 @@
         "1e6": 16,
         "1e12": 31,
         "1e24": 63
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "pell_5n2_plus_n_plus_3",
@@ -1700,7 +1714,8 @@
         "1e6": 6,
         "1e12": 10,
         "1e24": 20
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "pell_2n2_plus_n",
@@ -1727,7 +1742,8 @@
         "1e6": 4,
         "1e12": 8,
         "1e24": 16
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "pell_quartic_(2n2+1)^2_d4",
@@ -1756,7 +1772,8 @@
         "1e6": 8,
         "1e12": 16,
         "1e24": 31
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "elliptic_n3_plus_1",
@@ -1781,6 +1798,10 @@
       "effective_strategy": null,
       "count_at_1e5_scan_only": 1,
       "scan_hits_up_to_1e5": [
+        2
+      ],
+      "certification": "INDEPENDENT_COMPUTATION",
+      "independent_hit_list": [
         2
       ]
     },
@@ -1808,6 +1829,10 @@
       "count_at_1e5_scan_only": 1,
       "scan_hits_up_to_1e5": [
         1
+      ],
+      "certification": "INDEPENDENT_COMPUTATION",
+      "independent_hit_list": [
+        1
       ]
     },
     {
@@ -1833,6 +1858,10 @@
       "effective_strategy": null,
       "count_at_1e5_scan_only": 1,
       "scan_hits_up_to_1e5": [
+        4128
+      ],
+      "certification": "INDEPENDENT_COMPUTATION",
+      "independent_hit_list": [
         4128
       ]
     },
@@ -1870,7 +1899,8 @@
         "polynomials_solved": 1,
         "tail_start": 2,
         "v05_certificate_cutoff": 3
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "rigid_n2_plus_n",
@@ -1898,7 +1928,8 @@
         "1e12": 0,
         "1e24": 0
       },
-      "complete_hit_list": []
+      "complete_hit_list": [],
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "ljunggren_1_plus_n_to_n4",
@@ -1941,7 +1972,8 @@
         "polynomials_solved": 1,
         "tail_start": 8,
         "v05_certificate_cutoff": 48
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "n4_plus_1_sixth_power",
@@ -1969,7 +2001,8 @@
         2
       ],
       "count_at_1e5_structural_equals_scan": 0,
-      "complete_hit_list": []
+      "complete_hit_list": [],
+      "certification": "COMPLETE_HIT_LIST"
     },
     {
       "name": "triangular_n(n+1)/2_square",
@@ -1996,7 +2029,8 @@
         "1e6": 8,
         "1e12": 16,
         "1e24": 32
-      }
+      },
+      "certification": "PROVED_STRUCTURAL"
     },
     {
       "name": "binomial_n_choose_3_square",
@@ -2026,7 +2060,8 @@
         3,
         4,
         50
-      ]
+      ],
+      "certification": "SCAN_EVIDENCE_ONLY"
     },
     {
       "name": "binomial_n_choose_2_cube",
@@ -2052,7 +2087,8 @@
       "scan_hits_up_to_1e5": [
         1,
         2
-      ]
+      ],
+      "certification": "SCAN_EVIDENCE_ONLY"
     },
     {
       "name": "consecutive_product_4_d2",
@@ -2088,7 +2124,8 @@
         "polynomials_solved": 1,
         "tail_start": 4,
         "v05_certificate_cutoff": 8
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_4_d4",
@@ -2124,7 +2161,8 @@
         "polynomials_solved": 1,
         "tail_start": 16,
         "v05_certificate_cutoff": 483
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_6_d2",
@@ -2162,7 +2200,8 @@
         "polynomials_solved": 1,
         "tail_start": 64,
         "v05_certificate_cutoff": 2541
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_6_d3",
@@ -2200,7 +2239,8 @@
         "polynomials_solved": 1,
         "tail_start": 16,
         "v05_certificate_cutoff": 48
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_6_d6",
@@ -2238,7 +2278,8 @@
         "polynomials_solved": 1,
         "tail_start": 64,
         "v05_certificate_cutoff": 143139
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_8_d2",
@@ -2278,7 +2319,8 @@
         "polynomials_solved": 1,
         "tail_start": 32,
         "v05_certificate_cutoff": 406
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_8_d4",
@@ -2318,7 +2360,8 @@
         "polynomials_solved": 1,
         "tail_start": 32,
         "v05_certificate_cutoff": 489
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_8_d8",
@@ -2358,7 +2401,8 @@
         "polynomials_solved": 1,
         "tail_start": 128,
         "v05_certificate_cutoff": 65449603
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_10_d2",
@@ -2400,7 +2444,8 @@
         "polynomials_solved": 18,
         "tail_start": 65536,
         "v05_certificate_cutoff": 139044067
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_10_d5",
@@ -2442,7 +2487,8 @@
         "polynomials_solved": 1,
         "tail_start": 64,
         "v05_certificate_cutoff": 23102
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_12_d2",
@@ -2486,7 +2532,8 @@
         "polynomials_solved": 1,
         "tail_start": 256,
         "v05_certificate_cutoff": 44341
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_12_d3",
@@ -2530,7 +2577,8 @@
         "polynomials_solved": 1,
         "tail_start": 256,
         "v05_certificate_cutoff": 74130
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_12_d4",
@@ -2574,7 +2622,8 @@
         "polynomials_solved": 6,
         "tail_start": 2048,
         "v05_certificate_cutoff": 38689526926
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     },
     {
       "name": "consecutive_product_12_d6",
@@ -2618,7 +2667,8 @@
         "polynomials_solved": 1,
         "tail_start": 128,
         "v05_certificate_cutoff": 1798012
-      }
+      },
+      "certification": "LEAN_CERTIFIED"
     }
   ]
 }

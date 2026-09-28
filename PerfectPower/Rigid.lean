@@ -73,12 +73,14 @@ theorem integral_closure_step {d : ℕ} (hd : 2 ≤ d) (F : ℤ[X]) (Q : ℚ[X])
 
 /-! ### Algebraic truncated `d`-th root -/
 
+/-- If `deg p ≤ N` and the `X^N` coefficient vanishes, then `deg p < N`. -/
 lemma degree_lt_of_coeff_zero {p : ℚ[X]} {N : ℕ} (h1 : p.degree ≤ N) (h2 : p.coeff N = 0) :
     p.degree < N := by
   rcases lt_or_eq_of_le h1 with h | h
   · exact h
   · exact absurd h2 (coeff_ne_zero_of_eq_degree h)
 
+/-- `deg p < n + 1` implies `deg p ≤ n`. -/
 lemma degree_le_of_lt_succ {p : ℚ[X]} {n : ℕ} (h : p.degree < ((n + 1 : ℕ) : WithBot ℕ)) :
     p.degree ≤ n := by
   by_cases hp : p = 0

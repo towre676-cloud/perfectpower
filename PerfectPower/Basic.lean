@@ -22,6 +22,7 @@ noncomputable def A (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) : ℕ :=
 /-- The density sequence `A(N)/N`. -/
 noncomputable def ratio (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) : ℝ := (A S d k N : ℝ) / N
 
+/-- The hit density exists and equals `L`: `A(N)/N → L`. -/
 def HasDensity (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (L : ℝ) : Prop :=
   Tendsto (ratio S d k) atTop (𝓝 L)
 

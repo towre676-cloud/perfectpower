@@ -31,6 +31,7 @@ lemma eval_cast_real (P : ℚ[X]) (n : ℕ) :
   rw [eval_map]
   simp
 
+/-- For `t ≥ 0` and `d ≠ 0`, `|t - 1| ≤ |t^d - 1|`. -/
 lemma abs_sub_one_le_abs_pow_sub_one {t : ℝ} (ht : 0 ≤ t) {d : ℕ} (hd : d ≠ 0) :
     |t - 1| ≤ |t ^ d - 1| := by
   rcases le_total 1 t with h | h

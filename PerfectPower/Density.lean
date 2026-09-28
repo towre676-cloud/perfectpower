@@ -7,9 +7,11 @@ namespace PerfectPower
 
 /-! ### Elementary count facts -/
 
+/-- No indices are counted up to `0`. -/
 lemma A_zero (S : ℕ → ℤ) (d : ℕ) (k : ℤ) : A S d k 0 = 0 := by
   simp [A]
 
+/-- Recursion for the count: `A(N+1) = A(N) + [N+1 is a hit]`. -/
 lemma A_succ (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) :
     A S d k (N + 1) = A S d k N + if IsHit d (S (N + 1) + k) then 1 else 0 := by
   unfold A
@@ -19,6 +21,7 @@ lemma A_succ (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) :
   · rw [hI, Finset.filter_insert, if_pos h, Finset.card_insert_of_notMem (by simp), if_pos h]
   · rw [hI, Finset.filter_insert, if_neg h, if_neg h, add_zero]
 
+/-- At most `N` of the indices `1..N` are hits. -/
 lemma A_le (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) : A S d k N ≤ N := by
   induction N with
   | zero => simp [A_zero]
@@ -26,9 +29,11 @@ lemma A_le (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) : A S d k N ≤ N := 
     rw [A_succ]
     split_ifs <;> omega
 
+/-- The density ratio `A(N)/N` is nonnegative. -/
 lemma ratio_nonneg (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) : 0 ≤ ratio S d k N := by
   unfold ratio; positivity
 
+/-- The density ratio `A(N)/N` is at most one. -/
 lemma ratio_le_one (S : ℕ → ℤ) (d : ℕ) (k : ℤ) (N : ℕ) : ratio S d k N ≤ 1 := by
   unfold ratio
   rcases Nat.eq_zero_or_pos N with h | h
@@ -106,6 +111,7 @@ theorem H_surgery {S S' : ℕ → ℤ} {d : ℕ} {k : ℤ} {N₀ : ℕ} (hN₀ :
 
 /-! ### Periodic indicators -/
 
+/-- For a `T`-periodic hit indicator, `A(N+T) = A(N) + A(T)`. -/
 lemma A_add_period {S : ℕ → ℤ} {d : ℕ} {k : ℤ} {T : ℕ}
     (hper : ∀ n, 1 ≤ n → (IsHit d (S (n + T) + k) ↔ IsHit d (S n + k))) (N : ℕ) :
     A S d k (N + T) = A S d k N + A S d k T := by
@@ -120,6 +126,7 @@ lemma A_add_period {S : ℕ → ℤ} {d : ℕ} {k : ℤ} {T : ℕ}
     rw [if_congr hh rfl rfl]
     ring
 
+/-- For a `T`-periodic hit indicator, `A(qT + r) = A(r) + q·A(T)`. -/
 lemma A_mul_add {S : ℕ → ℤ} {d : ℕ} {k : ℤ} {T : ℕ}
     (hper : ∀ n, 1 ≤ n → (IsHit d (S (n + T) + k) ↔ IsHit d (S n + k))) (q r : ℕ) :
     A S d k (q * T + r) = A S d k r + q * A S d k T := by

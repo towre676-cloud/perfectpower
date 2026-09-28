@@ -27,6 +27,7 @@ def pellSeq : ℕ → ℤ × ℤ
   | 0 => (1, 0)
   | k + 1 => (3 * (pellSeq k).1 + 4 * (pellSeq k).2, 2 * (pellSeq k).1 + 3 * (pellSeq k).2)
 
+/-- Invariants of the Pell orbit: norm one, `m_k ≥ 2k+1`, `n_k ≥ k^2`, `n_k ≥ 0`. -/
 lemma pellSeq_spec (k : ℕ) :
     (pellSeq k).1 ^ 2 - 2 * (pellSeq k).2 ^ 2 = 1 ∧ 2 * k + 1 ≤ (pellSeq k).1 ∧
       (k : ℤ) ^ 2 ≤ (pellSeq k).2 ∧ 0 ≤ (pellSeq k).2 := by

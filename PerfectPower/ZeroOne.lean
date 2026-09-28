@@ -74,6 +74,7 @@ theorem twisted_hits_subset {d : ℕ} (hd : 2 ≤ d) {F H : ℤ[X]} {c D : ℤ}
   rw [hm, ← mul_pow] at hev
   exact hc (pow_of_mul_pow_eq (by omega) hH hev.symm)
 
+/-- Twisted powers with `H ≠ 0` have finitely many hits. -/
 theorem twisted_finite {d : ℕ} (hd : 2 ≤ d) {F H : ℤ[X]} {c D : ℤ}
     (hc : ¬ ∃ b : ℤ, c = b ^ d) (hFH : C (D ^ d) * F = C c * H ^ d) (hH : H ≠ 0) :
     (hitSet (fun n => F.eval (n : ℤ)) d 0).Finite := by
@@ -83,6 +84,7 @@ theorem twisted_finite {d : ℕ} (hd : 2 ≤ d) {F H : ℤ[X]} {c D : ℤ}
   intro n hn
   simpa [Polynomial.IsRoot] using hn
 
+/-- Twisted powers with `H ≠ 0` have hit density zero. -/
 theorem twisted_density_zero {d : ℕ} (hd : 2 ≤ d) {F H : ℤ[X]} {c D : ℤ}
     (hc : ¬ ∃ b : ℤ, c = b ^ d) (hFH : C (D ^ d) * F = C c * H ^ d) (hH : H ≠ 0) :
     HasDensity (fun n => F.eval (n : ℤ)) d 0 0 :=

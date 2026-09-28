@@ -70,3 +70,6 @@ open PerfectPower
 #print axioms isHit_exp_shift
 #print axioms exp_hasDensity
 #print axioms two_pow_hasDensity_half
+#print axioms PerfectPower.Generated.consecutive10_square_hits
+#print axioms PerfectPower.Generated.consecutive12_fourth_power_hits
+#print axioms no_hit_of_sandwich

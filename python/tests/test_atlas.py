@@ -294,6 +294,33 @@ class TestExponential(unittest.TestCase):
         self.assertEqual(exponential_density(1, 8, 6), Fraction(1, 2))   # 8 = 2^3, gcd(6,3) = 3
 
 
+class TestSandwichCover(unittest.TestCase):
+    def test_cover_is_sound_numerically(self):
+        from perfectpower.lean_sandwich import Cover, _eval
+        from perfectpower.lean_emit import _ints
+        for f, d in (([0, 120, 274, 225, 85, 15, 1], 2), ([1, 1, 1, 1, 1], 2),
+                     ([0, 5040, 13068, 13132, 6769, 1960, 322, 28, 1], 4)):
+            cov = Cover(f, d)
+            pieces, (c, tc) = cov.build()
+            P, fi = _ints(cov.P), cov.fi
+            covered = []
+            for pc in pieces:
+                if pc[0] == 'point':
+                    covered.append(pc[1])
+                    continue
+                _, a, b, t = pc
+                for n in range(a, b + 1):
+                    V = cov.D ** d * _eval(fi, n)
+                    p = _eval(P, n) + t
+                    self.assertTrue(p >= 0 and p ** d < V < (p + 1) ** d, (f, d, n))
+                covered.extend(range(a, b + 1))
+            self.assertEqual(covered, list(range(1, c)))
+            for n in range(c, c + 500):
+                V = cov.D ** d * _eval(fi, n)
+                p = _eval(P, n) + tc
+                self.assertTrue(p >= 0 and p ** d < V < (p + 1) ** d, (f, d, n))
+
+
 class TestLeanEmitter(unittest.TestCase):
     def test_plans_and_hits(self):
         from perfectpower.lean_emit import emit, plan

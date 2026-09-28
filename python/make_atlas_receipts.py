@@ -62,6 +62,39 @@ for k, ds in ((4, (2, 4)), (6, (2, 3, 6)), (8, (2, 4, 8)), (10, (2, 5)), (12, (2
     for d in ds:
         families.append((f'consecutive_product_{k}_d{d}', consecutive(k), d))
 
+# Epistemic labels (docs/TRUST_BOUNDARY.md).  Independent certificates come from
+# crosscheck/cubics_sage.py (Sage integral points); Lean certificates from PerfectPower/Generated.
+_cubic_path = root / 'receipts' / 'cubic_crossval.json'
+_cubic = {}
+if _cubic_path.exists():
+    for r in json.loads(_cubic_path.read_text())['rows']:
+        if r['status'] == 'certified_by_independent_computation':
+            _cubic[tuple(r['coefficients_F_low_to_high'])] = r['sage_hits_x_ge_1']
+_lean_generated = set()
+for _gen in ('Runge.lean', 'Sandwich.lean'):
+    _gp = root / 'PerfectPower' / 'Generated' / _gen
+    if _gp.exists():
+        _lean_generated.add(_gp.read_text())
+
+
+def _lean_certified(f, d):
+    from perfectpower.lean_emit import _expr
+    needle = f'IsHit {d} (let z : ℤ := n; {_expr(list(f), "z")})'
+    return any(needle in text for text in _lean_generated)
+
+
+def certification(cl, f, d):
+    if _lean_certified(f, d):
+        return 'LEAN_CERTIFIED'
+    if cl.kind in ('power', 'radical', 'pell', 'constant'):
+        return 'PROVED_STRUCTURAL'                   # Theorems P, B, C; paper proof + scan check
+    if cl.effective:
+        return 'COMPLETE_HIT_LIST'                   # Runge enumeration; paper proof + exact arithmetic
+    if tuple(f) in _cubic:
+        return 'INDEPENDENT_COMPUTATION'             # Sage integral points agree with the scan
+    return 'SCAN_EVIDENCE_ONLY'                      # finiteness conditional on LeVeque; list unproven
+
+
 rows = []
 for name, f, d in families:
     cl = classify(f, d)
@@ -94,6 +127,9 @@ for name, f, d in families:
         row['runge'] = {'hits': e.hits, 'scan_below': e.scan_below, 'max_t': e.max_t,
                         'polynomials_solved': e.polynomials_solved, 'tail_start': e.tail_start,
                         'v05_certificate_cutoff': c.cutoff}
+    row['certification'] = certification(cl, f, d)
+    if row['certification'] == 'INDEPENDENT_COMPUTATION':
+        row['independent_hit_list'] = _cubic[tuple(f)]
     rows.append(row)
 
 # Grunwald-Wang: 16 is an 8th power modulo every odd prime (checked below 2e4 by Euler's
@@ -188,6 +224,29 @@ result = {'status': 'exact computations; structural counts cross-checked against
           'schaffer_sums_of_powers': {'infinite_pairs': infinite_pairs, 'table': schaffer},
           'heat_kernel_checks_theorem_T': transform_checks,
           'rows': rows}
+# Flat dataset for reuse: data/families.csv (one row per family, with provenance).
+import csv
+from perfectpower.lean_emit import _expr as _pexpr
+(root / 'data').mkdir(exist_ok=True)
+with open(root / 'data' / 'families.csv', 'w', newline='') as fh:
+    w = csv.writer(fh, lineterminator='\n')
+    w.writerow(['name', 'polynomial', 'coefficients_low_to_high', 'd', 'type', 'growth', 'exponent',
+                'kappa', 'hits_known', 'hit_list_scope', 'certification', 'reproduce'])
+    for r in rows:
+        f, d = r['coefficients_F_low_to_high'], r['d']
+        if 'complete_hit_list' in r:
+            hits, scope = r['complete_hit_list'], 'complete'
+        elif 'independent_hit_list' in r:
+            hits, scope = r['independent_hit_list'], 'complete (independent computation)'
+        elif 'scan_hits_up_to_1e5' in r:
+            hits, scope = r['scan_hits_up_to_1e5'], 'n <= 1e5 only'
+        else:
+            hits, scope = '', 'infinite (see growth, kappa)'
+        w.writerow([r['name'], _pexpr(f, 'n'), ' '.join(map(str, f)), d, r['kind'], r['growth'],
+                    r['exponent'], r.get('kappa', ''), ' '.join(map(str, hits)) if hits != '' else '',
+                    scope, r['certification'],
+                    f'PYTHONPATH=python python3 -m perfectpower classify --coeff {",".join(map(str, f))} --d {d}'])
+
 out = root / 'receipts' / 'atlas_benchmarks.json'
 out.write_text(json.dumps(result, indent=2) + '\n')
 print(out)

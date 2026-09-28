@@ -31,6 +31,7 @@ theorem consecutive_four_not_square (n : ℕ) (hn : 1 ≤ n) :
   · nlinarith
   · nlinarith
 
+/-- The hit set of `n(n+1)(n+2)(n+3)` for `d = 2` is empty. -/
 theorem consecutive_four_hitSet :
     hitSet (fun n => (n : ℤ) * (n + 1) * (n + 2) * (n + 3)) 2 0 = ∅ := by
   ext n
@@ -64,6 +65,7 @@ theorem ljunggren_quartic (n : ℕ) (hn : 1 ≤ n) :
   · rintro rfl
     exact ⟨11, by norm_num⟩
 
+/-- The hit set of `1 + n + n^2 + n^3 + n^4` for `d = 2` is exactly `{3}`. -/
 theorem ljunggren_hitSet :
     hitSet (fun n => 1 + (n : ℤ) + n ^ 2 + n ^ 3 + n ^ 4) 2 0 = {3} := by
   ext n
