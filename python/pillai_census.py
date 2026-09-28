@@ -85,7 +85,7 @@ def main():
             for p, q in by_k[k]:
                 w.writerow([k, p, q, ' '.join(f'{m}^{e}' for m, e in representations(p)),
                             ' '.join(f'{m}^{e}' for m, e in representations(q)),
-                            f'EXACT_COMPUTATION (complete for Q <= 10^{E})'])
+                            f'EXACT_WITHIN_BOUND (Q <= 10^{E})'])
     assert by_k[1] == [(8, 9)], by_k[1]          # regression: Catalan/Mihailescu
     summary = {
         'B': f'10^{E}', 'K': K, 'nonsquare_powers_enumerated': len(ns), 'pairs': len(pairs),

@@ -79,3 +79,5 @@ open PerfectPower
 #print axioms hall_of_abc
 #print axioms pillai_bound_of_abc
 #print axioms pillai_finite_of_abc
+-- Mordell census points lie on their curves (completeness NOT checked; see TRUST_BOUNDARY)
+#print axioms PerfectPower.Generated.Mordell.census_points_valid

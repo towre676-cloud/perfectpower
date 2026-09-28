@@ -80,3 +80,26 @@ The parts with a chance of being new are engineering and certification:
 **Formal libraries.**
 - Mathlib contains Pell-equation theory (`Mathlib.NumberTheory.Pell`), which our Pell example does not use.
 - We have not yet searched Mathlib, the Mathlib Archive or the formal-conjectures collection for existing formalisations of Ljunggren or Erdős–Selfridge instances. That search is part of the upstreaming plan.
+
+## Frontier push: Hall, Pillai and uniform bounds
+
+**Hall (1971); Danilov (1982); Elkies (2000); Jiménez Calvo–Herranz–Sáez (2009); Aanderaa–Kristensen–Ruud (2017).**
+- Hall conjectured $|x^3-y^2|\gg x^{1/2}$. Danilov showed that the exponent $\tfrac12$ cannot be improved and that the constant in the original conjecture fails. The modern form is $|x^3-y^2|\gg_\varepsilon x^{1/2-\varepsilon}$, which is open.
+- Record ratios come from lattice-reduction searches. For example, Elkies' $x=5853886516781223$ gives $x^3-y^2=1641843$ and $r=\sqrt x/|k|\approx46.60$; this repository verifies the arithmetic only (`receipts/hall_literature_check.json`).
+- *Reproduced:* nothing new. The census (`data/mordell_census.csv`) validates the pipeline for $|k|\le10^4$ and does not approach record territory.
+- *Formalised:* the abc ⇒ Hall implication in the coprime case (`hall_of_abc`).
+
+**Mason (1984), Stothers (1981); Davenport (1965); Birch–Chowla–Hall–Schinzel (1965).**
+- The polynomial abc theorem is in Mathlib (`Polynomial.abc`, by Baek and Lee).
+- *Formalised here:* Davenport's bound as a corollary (`davenport`), and sharpness via the Birch–Chowla–Hall–Schinzel example $f=X^2+2$, $g=X^3+3X$ (`davenport_sharp`).
+- This is a candidate for Mathlib or the Mathlib Archive; first check that it does not already exist.
+
+**Pillai (1936); Mihăilescu (2004).**
+- Pillai conjectured that each $k$ is a difference of perfect powers only finitely often; this is open. Mihăilescu settled $k=1$ (Catalan).
+- *Reproduced:* the empirical gap set up to $10^{18}$ (`data/pillai_gaps.csv`), exact within that bound. The list of $k\le100$ with no representation (6, 14, 34, 42, …) agrees with the conjectural list in the literature.
+- *Formalised:* abc ⇒ Pillai, uniformly in the exponents, for coprime bases (`pillai_finite_of_abc`).
+
+**Lang's conjecture; Hindry–Silverman (1988).**
+- Lang conjectured that the number of integral points on a quasi-minimal model is at most $C^{1+\mathrm{rank}}$.
+- Hindry–Silverman bound the number of ($S$-)integral points in terms of the rank, the number of bad primes and the Szpiro ratio of the curve. Uniformity in the curve therefore rests on Szpiro's conjecture. This is from memory; check the precise statement against the paper.
+- The census supplies counts, ranks and discriminants. The uniformity plots are **numerical evidence** only.

@@ -14,3 +14,4 @@ import PerfectPower.Exponential
 import PerfectPower.Generated.Sandwich
 import PerfectPower.Davenport
 import PerfectPower.ABC
+import PerfectPower.Generated.MordellPoints
