@@ -5,7 +5,7 @@ out=$(lake env lean audit/Axioms.lean)
 printf '%s\n' "$out"
 n=$(printf '%s\n' "$out" | grep -c "depends on axioms")
 bad=$(printf '%s\n' "$out" | grep -v "depends on axioms: \[propext, Classical.choice, Quot.sound\]" || true)
-if [ -n "$bad" ] || [ "$n" -lt 26 ]; then
+if [ -n "$bad" ] || [ "$n" -lt 32 ]; then
   echo "axiom audit FAILED" >&2
   exit 1
 fi

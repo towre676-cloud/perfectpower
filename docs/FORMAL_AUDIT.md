@@ -4,7 +4,7 @@
 
 In the build environment of this release, the Mathlib cache and release servers were unreachable, so Mathlib was compiled from source (about 1900 modules). CI uses `leanprover/lean-action` and the ordinary cache.
 
-`./audit/check_axioms.sh` runs `#print axioms` on twenty-six declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
+`./audit/check_axioms.sh` runs `#print axioms` on thirty-two declarations. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
 
 ## What changed from 0.5
 
@@ -37,10 +37,11 @@ No theorem statement of 0.5 was changed.
 | `ZeroOne.lean` (new) | `hasDensity_one_of_pow`, **`rigid_zero_one`** (density exists and is $1$ or $0$ on the rigid branch), `rigid_H_mem`, `pow_of_mul_pow_eq`, `twisted_hits_subset`, `twisted_finite`, `twisted_density_zero` |
 | `Monomial.lean` (new) | `rat_pow_eq_nat`, **`monomial_isHit_iff`** ($n^r$ is a $d$-th power iff $n$ is a $t$-th power, $t=d/\gcd(r,d)$), `monomial_hitSet`, **`monomial_count`** ($A(N)=\#\{w\in[1,N]: w^t\le N\}=\lfloor N^{1/t}\rfloor$) |
 | `Examples.lean` (new) | `consecutive_four_hitSet` ($n(n+1)(n+2)(n+3)$ is never a square), **`ljunggren_hitSet`** (the hit set of $1+n+n^2+n^3+n^4$, $d=2$, is exactly $\{3\}$); both by the Runge squeeze |
+| `Pell.lean` (new) | `hasDensity_zero_of_count_le`, `pell_descent` (every solution of $m^2-2n^2=1$ lies on the orbit of $(1,0)$), `pell_hit_iff`, **`pell_hitSet_infinite`**, `pell_count_le` ($A(N)\le\lfloor\sqrt N\rfloor$), **`pell_hasDensity_zero`**: $2n^2+1$ has infinitely many square values and density zero. This is the first **nonrigid** density-zero theorem in the kernel, proved without Boshernitzan or LeVeque. |
 
 ## What it does not certify
 
-- **The nonrigid density-zero branch.** This is Boshernitzan's criterion, or alternatively LeVeque's theorem. Both remain named external theorems.
+- **The nonrigid density-zero branch in general.** This is Boshernitzan's criterion, or alternatively LeVeque's theorem. Both remain named external theorems. Individual nonrigid examples are proved directly (`pell_hasDensity_zero`, `monomial_count`, `twisted_density_zero`).
 - **The atlas (Theorems B, C), the explicit Runge thresholds of Theorem R, the shift spectrum, and the transform theorems.** These are paper proofs. The Python implementations are checked against direct scans, but a Python test is not a Lean proof, and the Lean kernel does not certify the Python code.
 - **The Python certificate verifier.** It shares its mathematics with `eventually_no_hit` but is a separate artifact.
 

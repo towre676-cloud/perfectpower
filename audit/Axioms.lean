@@ -33,3 +33,10 @@ open PerfectPower
 #print axioms consecutive_four_hitSet
 #print axioms ljunggren_quartic
 #print axioms ljunggren_hitSet
+-- Pell example 2n^2 + 1
+#print axioms hasDensity_zero_of_count_le
+#print axioms pell_descent
+#print axioms pell_hit_iff
+#print axioms pell_hitSet_infinite
+#print axioms pell_count_le
+#print axioms pell_hasDensity_zero

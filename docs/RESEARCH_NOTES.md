@@ -109,6 +109,8 @@ Along an orbit, $(X_{k+1},Y_{k+1})=(x_1X_k+4Ay_1Y_k,\;y_1X_k+x_1Y_k)$. This matr
 
 *Examples.* For $2n^2+1$, $\kappa=1/\log(3+2\sqrt2)=0.567296\ldots$. The exact counts at $N=10^6,10^{12},10^{24},10^{48}$ are $8,16,31,63$, against $\kappa\log N=7.84,15.67,31.35,62.70$. The other receipt values are $\kappa=0.75933$ for $3n^2+1$, $1.13459$ for $2n^2-7$, $0.34635$ for $5n^2+n+3$, and $0.28365$ for $2n^2+n$. The quartic $(2n^2+1)^2$ with $d=4$ reduces via Theorem C to $2n^2+1=\pm m^2$ and gives the same counts as $2n^2+1$ with $d=2$. For $n^2+n$ we have $A=1$, a square, so there are no hits.
 
+**Formal status.** For $2n^2+1$ the descent step behind Lemma Q(3), infinitude, the bound $A(N)\le\sqrt N$ and density zero are compiled Lean theorems (`PerfectPower/Pell.lean`). The logarithmic asymptotic itself is not yet formalised.
+
 **Corollary.** In the Pell type, $\alpha(F,d)=0$. The hit set is either finite or of exact logarithmic order $\kappa\log N$ with $\kappa>0$. This is the "Pell exception" to the heuristic that infinitely many hits force a positive exponent; the monograph observed it for $2n^2+1$, and here it is characterised.
 
 ## 5. The atlas theorem
