@@ -468,3 +468,47 @@ def _radical_param_hits_single(info: dict, n: int) -> set[int]:
         return set()
     w = integer_power_root(abs(z) // info['z0'], info['t'])
     return {n} if w is not None and w >= 1 else set()
+
+
+# ---------------------------------------------------------------------------
+# shift spectrum: how the type of S + k depends on the integer shift k
+# ---------------------------------------------------------------------------
+
+def critical_shifts(S) -> list[int]:
+    """Integers k for which S + k has a repeated root, i.e. k = -S(xi) with S'(xi) = 0.
+
+    These are the integer roots of R(k) = Res_x(S(x) + k, S'(x)), a polynomial in k of degree
+    deg S - 1, recovered exactly by interpolation.
+    """
+    from .polyalg import derivative, interpolate, resultant
+    s = poly(_int_poly(S))
+    m = degree(s)
+    if m < 2:
+        return []
+    ds = derivative(s)
+    xs = list(range(m))
+    ys = [resultant(poly((s[0] + k,) + tuple(s[1:])), ds) for k in xs]
+    return integer_roots(interpolate(xs, ys))
+
+
+def shift_spectrum(S, d: int) -> dict:
+    """Type of S + k for every integer k.
+
+    Outside the finite set critical_shifts(S), S + k is squarefree, so every root has
+    t = d and the type depends only on deg S and d:
+      deg S = 1 -> radical (t = d);  deg S = 2, d = 2 -> Pell;  otherwise -> finite (LeVeque).
+    At most one k makes S + k an integer-polynomial d-th power.
+    """
+    s = _int_poly(S)
+    m = len(s) - 1
+    if m < 1:
+        raise ValueError('S must be nonconstant')
+    generic = 'radical' if m == 1 else ('pell' if (m == 2 and d == 2) else 'finite')
+    special = {}
+    for k in critical_shifts(s):
+        f = list(s)
+        f[0] += k
+        cl = classify(f, d)
+        special[k] = {'kind': cl.kind, 'growth': cl.growth, 'exponent': str(cl.exponent),
+                      't_profile': cl.t_profile}
+    return {'S': s, 'd': d, 'generic_kind': generic, 'critical_shifts': special}

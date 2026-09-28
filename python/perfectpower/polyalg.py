@@ -233,3 +233,35 @@ def integer_roots(a: Iterable, lo: int | None = None, hi: int | None = None) -> 
         stack.append((a_, m))
         stack.append((m, b_))
     return sorted(roots)
+
+
+def resultant(a: Poly, b: Poly) -> Fraction:
+    """Resultant Res(a, b) = lc(a)^deg(b) prod_{a(x)=0} b(x), by the Euclidean recursion."""
+    a, b = poly(a), poly(b)
+    if is_zero(a) or is_zero(b):
+        return Fraction(0)
+    da, db = degree(a), degree(b)
+    if da == 0:
+        return a[0] ** db
+    if db == 0:
+        return b[0] ** da
+    if da < db:
+        return (-1) ** (da * db) * resultant(b, a)
+    r = divmod_poly(a, b)[1]
+    if is_zero(r):
+        return Fraction(0)
+    # Res(a, b) = (-1)^(da db) Res(b, a) = (-1)^(da db) lc(b)^(da - dr) Res(b, r)
+    dr = degree(r)
+    return (-1) ** (da * db) * lead(b) ** (da - dr) * resultant(b, r)
+
+
+def interpolate(xs: Sequence[int], ys: Sequence) -> Poly:
+    """Lagrange interpolation over Q."""
+    out = ZERO
+    for i, (xi, yi) in enumerate(zip(xs, ys)):
+        term: Poly = (Fraction(yi),)
+        for j, xj in enumerate(xs):
+            if j != i:
+                term = mul(term, (Fraction(-xj, xi - xj), Fraction(1, xi - xj)))
+        out = add(out, term)
+    return out

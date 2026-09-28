@@ -211,5 +211,32 @@ class TestAtlas(unittest.TestCase):
             self.assertEqual(classify(f, d).kind, kind, (f, d))
 
 
+class TestShiftSpectrum(unittest.TestCase):
+    def test_named(self):
+        from perfectpower.atlas import shift_spectrum
+        sp = shift_spectrum((0, -3, 0, 1), 2)       # n^3 - 3n + k, critical values k = +-2
+        self.assertEqual(sorted(sp['critical_shifts']), [-2, 2])
+        self.assertEqual(sp['generic_kind'], 'finite')
+        self.assertEqual(sp['critical_shifts'][2]['kind'], 'radical')
+        self.assertEqual(shift_spectrum((0, 0, 1), 2)['critical_shifts'][0]['kind'], 'power')
+        self.assertEqual(shift_spectrum((0, 1, 1), 2)['critical_shifts'], {})
+
+    def test_generic_type_off_critical_set(self):
+        from perfectpower.atlas import shift_spectrum
+        rng = random.Random(9)
+        for _ in range(120):
+            m, d = rng.randrange(1, 5), rng.choice([2, 3, 4])
+            S = [rng.randrange(-6, 7) for _ in range(m)] + [rng.choice([1, -1, 2, 3])]
+            sp = shift_spectrum(S, d)
+            for k in range(-25, 26):
+                f = list(S)
+                f[0] += k
+                _, parts = squarefree_decomposition(normalize(f))
+                repeated = any(j > 1 for j in parts)
+                self.assertEqual(repeated, k in sp['critical_shifts'], (S, k))
+                if not repeated:
+                    self.assertEqual(classify(f, d).kind, sp['generic_kind'], (S, d, k))
+
+
 if __name__ == '__main__':
     unittest.main()
