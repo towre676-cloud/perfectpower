@@ -73,4 +73,4 @@ The modules are:
 
 ## Receipts
 
-`receipts/exact_benchmarks.json` is the v0.5 receipt, unchanged apart from regeneration. `receipts/atlas_benchmarks.json` covers 43 families: their classification, exponent, $\kappa$, and structural counts up to $10^{24}$. Each structural count is cross-checked against the defining scan up to $10^5$. The receipt also contains complete hit lists and a Grunwald–Wang check. [Receipt policy](docs/RECEIPTS.md) defines the status labels, and [the roadmap](docs/NEXT_PUSH.md) lists what is open.
+`receipts/exact_benchmarks.json` is the v0.5 receipt, unchanged apart from regeneration. `receipts/atlas_benchmarks.json` covers 41 polynomial families: their classification, exponent, $\kappa$, and structural counts up to $10^{24}$. Each structural count is cross-checked against the defining scan up to $10^5$. The receipt also contains complete hit lists, a Grunwald–Wang check, the Schäffer sums-of-powers table ($k\le10$, $d\le6$), and heat-kernel checks of Theorem T. [Receipt policy](docs/RECEIPTS.md) defines the status labels, and [the roadmap](docs/NEXT_PUSH.md) lists what is open.

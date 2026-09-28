@@ -240,7 +240,7 @@ The Lean~4 library in the repository compiles against Mathlib (tag \texttt{v4.20
 \item \lean{runge\_finite} (Theorem~\ref{thm:runge} in integer form) and \lean{power\_type\_finite} (Theorem~\ref{thm:power} over $\Q[x]$).
 \item $17$ machine-generated theorems of the form ``the hit set of $F$ is exactly $H$''. A Python search finds the Runge data $(x_0,T)$ and Taylor-shifted polynomials, and Lean checks every identity by \texttt{ring}, every sign by \texttt{positivity}, and every small case by \texttt{norm\_num}. The instances include products of $4,6,8,10,12$ consecutive integers.
 \end{itemize}
-The exact Python implementation (standard library only) classifies $(F,d)$, computes $\kappa$, enumerates hits structurally or by Theorem~\ref{thm:runge}, and cross-checks every structural count against the defining scan. The receipts record $43$ families and are reproducible bit-for-bit.
+The exact Python implementation (standard library only) classifies $(F,d)$, computes $\kappa$, enumerates hits structurally or by Theorem~\ref{thm:runge}, and cross-checks every structural count against the defining scan. The receipts record $41$ families, a sums-of-powers table, and are reproducible bit-for-bit.
 
 \subsection*{What remains}
 \begin{itemize}
