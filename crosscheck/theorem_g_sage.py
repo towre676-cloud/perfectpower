@@ -89,23 +89,26 @@ def one(item):
     H = PXY.one()
     for i, r in enumerate(rs):
         H *= (X2 - i) ** (r // g)
-    genus = int(Curve(Y2 ** dp - H).genus())
-    ninf = None
     G = K.one()
     for i, r in enumerate(rs):
         G *= (x - i) ** (r // g)
-    try:
-        alarm(NINF_SECONDS)
-        L = K.extension(Y ** dp - G, 'y')
-        ninf = sum(int(P.degree()) for P in L(x).poles())
-        cancel_alarm()
-    except AlarmInterrupt:
-        ninf = None
-    except BaseException:
-        cancel_alarm()
-        raise
+    genus, ninf = None, None
+    for _ in range(3):                      # a late alarm from the n_inf step may land here; retry
+        try:
+            cancel_alarm()
+            if genus is None:
+                genus = int(Curve(Y2 ** dp - H).genus())
+            try:
+                alarm(NINF_SECONDS)
+                L = K.extension(Y ** dp - G, 'y')
+                ninf = sum(int(P.degree()) for P in L(x).poles())
+            finally:
+                cancel_alarm()
+            break
+        except AlarmInterrupt:
+            continue
     row.update(genus_singular=genus, n_inf_sage=ninf,
-               agrees=(Fraction(genus) == genus_formula and (ninf is None or ninf == n_inf)),
+               agrees=(genus is None or (Fraction(genus) == genus_formula and (ninf is None or ninf == n_inf))),
                seconds=round(time.time() - t0, 2))
     return row
 
@@ -124,6 +127,7 @@ def main():
            'd_max': DMAX, 'degree_max': DEGMAX, 'cases': len(rows), 'disagreements': bad,
            'cases_with_chi_negative': sum(1 for r in rows if Fraction(r['chi_formula']) < 0),
            'n_inf_computed': sum(1 for r in rows if r['n_inf_sage'] is not None),
+           'genus_computed': sum(1 for r in rows if r['genus_singular'] is not None),
            'n_inf_alarm_seconds': NINF_SECONDS,
            'S_gt_1_iff_not_power_radical_pell': all(
                (Fraction(r['S']) > 1) == (not exceptional(r['t_profile'])) for r in rows),

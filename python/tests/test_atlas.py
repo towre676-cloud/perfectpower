@@ -325,15 +325,21 @@ class TestPellHeat(unittest.TestCase):
     def test_two_term_expansion(self):
         import math
         from perfectpower.atlas import quadratic_square_hits
-        from perfectpower.pell_heat import pell_heat_model, pell_heat_prediction
+        from perfectpower.pell_heat import (pell_heat_model, pell_heat_prediction,
+                                            pell_heat_prediction_first_order)
         for A, B, C in ((2, 0, 1), (5, 1, 3), (2, 2, 0)):
-            classes, ms = pell_heat_model(A, B, C, match=10 ** 6)
+            classes, ms, msum = pell_heat_model(A, B, C, match=10 ** 6)
             hits = sorted(quadratic_square_hits(A, B, C, 10 ** 30))
             hs = sum(1 for h in hits if h <= 10 ** 6)
+            hsum = sum(h for h in hits if h <= 10 ** 6)
             for tau in (1e-6, 1e-9):
-                K = sum(math.exp(-tau * h) for h in hits)
+                K = math.fsum(math.exp(-tau * h) for h in hits)
                 p, _ = pell_heat_prediction(A, B, C, tau, hs, classes, ms)
                 self.assertLess(abs(K - p), 20 * tau, (A, B, C, tau))
+            for tau in (1e-3, 1e-4, 1e-5):
+                K = math.fsum(math.exp(-tau * h) for h in hits)
+                q = pell_heat_prediction_first_order(A, B, tau, hs, hsum, classes, ms, msum)
+                self.assertLess(abs(K - q), 50 * tau ** 2, (A, B, C, tau))
 
 
 class TestGeometry(unittest.TestCase):

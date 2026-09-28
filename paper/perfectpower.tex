@@ -258,10 +258,10 @@ where $\Phi_E(u)=\frac{2}{\log E}\Re\sum_{m\ge1}\Gamma(2\pi im/\log E)e^{-2\pi i
 \end{theorem}
 
 \begin{proof}
-The Mellin transform of $\sum_je^{-\lambda E^j}$ is $\Gamma(s)/(1-E^{-s})$. The double pole at $0$ gives the main term, the poles at $2\pi im/\log E$ give $\Phi_E$, and shifting to $\Re s=-\frac12$ leaves $O(\lambda)$. Writing $e^{-\tau n_j}=e^{-\tau\beta}e^{-\tau\alpha E^j}(1+O(\tau E^{-j}))$ costs $O(\tau)$ in total. For the two-term form, $(e^{-\tau\beta}-1)\kappa\log(1/\tau)=-\beta\kappa\,\tau\log(1/\tau)+O(\tau^2\log(1/\tau))$.
+The Mellin transform of $h(\lambda)=\sum_je^{-\lambda E^j}$ is $\Gamma(s)/(1-E^{-s})$. Moving the inverse integral from $\Re s>0$ to $\Re s=-\frac32$ crosses three kinds of pole. The double pole at $0$ gives the main term, the poles at $2\pi im/\log E$ give $\Phi_E$, and the pole of $\Gamma$ at $s=-1$ gives $+\lambda/(E-1)$. The horizontal segments at heights $\pm(2k+1)\pi/\log E$ vanish as $k\to\infty$, and the remaining vertical integral is $O(\lambda^{3/2})$. Stopping at $\Re s=-\frac12$ would give only $O(\lambda^{1/2})$. With $n_j=\alpha E^j+\beta+\delta_j$ and $\delta_j=\frac{\Delta}{4A\eta_r}E^{-j}$ exactly, $\sum_je^{-\tau\alpha E^j}(e^{-\tau\delta_j}-1)=-\tau\sum_j\delta_j+O(\tau^2\log(1/\tau))$. The finitely many discrepancies contribute $c_{\mathrm{int}}+O(\tau)$. For the two-term form, $(e^{-\tau\beta}-1)\kappa\log(1/\tau)=-\beta\kappa\,\tau\log(1/\tau)+O(\tau^2\log(1/\tau))$.
 \end{proof}
 
-An earlier version stated the unshifted form with remainder $O(\tau)$, which is false for $B\ne0$. Numerically, for $2n^2+2n$ the unshifted residual divided by $\tau$ grows from $2.8$ to $8.1$ as $\tau$ decreases from $10^{-4}$ to $10^{-12}$. The shifted residual divided by $\tau$ stays at $0.25$.
+An earlier version stated the unshifted form with remainder $O(\tau)$, which is false for $B\ne0$. Numerically, for $2n^2+2n$ the unshifted residual divided by $\tau$ grows from $2.8$ to $8.1$ as $\tau$ decreases from $10^{-4}$ to $10^{-12}$. The shifted residual divided by $\tau$ stays at $0.25$. Including every $O(\tau)$ term ($\lambda/(E-1)$, $-\tau\sum\delta_j$, and the boundary sum), the residual divided by $\tau^2\log(1/\tau)$ stays bounded from $\tau=10^{-2}$ to $10^{-6}$ for all seven test families. The log-periodic Mellin analysis itself is classical (Flajolet--Gourdon--Dumas~\cite{FGD}); the arithmetic input is the Pell orbit and class decomposition.
 
 \section{Exponential sequences}\label{sec:exp}
 
@@ -324,6 +324,7 @@ Families that are neither certified in Lean nor independently cross-validated ar
 
 \begin{thebibliography}{99}
 \bibitem{Davenport} H.~Davenport, On $f^3(t)-g^2(t)$, \emph{Norske Vid. Selsk. Forh.} 38 (1965), 86--87.
+\bibitem{FGD} P.~Flajolet, X.~Gourdon and P.~Dumas, Mellin transforms and asymptotics: harmonic sums, \emph{Theoret. Comput. Sci.} 144 (1995), 3--58.
 \bibitem{HS} M.~Hindry and J.~H.~Silverman, \emph{Diophantine Geometry: An Introduction}, Springer GTM 201, 2000, Theorem D.9.1.
 \bibitem{Mason} R.~C.~Mason, \emph{Diophantine Equations over Function Fields}, LMS Lecture Note Series 96, Cambridge, 1984.
 \bibitem{Boshernitzan} M.~D.~Boshernitzan, Uniform distribution and Hardy fields, \emph{J. Anal. Math.} 62 (1994), 225--240.

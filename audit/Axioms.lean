@@ -135,3 +135,14 @@ open PerfectPower
 #print axioms unitOrbit_growth
 #print axioms pell_count_log
 #print axioms PerfectPower.Reflect.rungeCheck_sound
+-- PellExact (exact Pell count) and the general Theorem G statement
+#print axioms PerfectPower.PellExact.exists_root
+#print axioms PerfectPower.PellExact.root_unique
+#print axioms PerfectPower.PellExact.roots_finite
+#print axioms PerfectPower.PellExact.orbit_fst_bracket
+#print axioms PerfectPower.PellExact.count_near_geometric
+#print axioms PerfectPower.PellExact.class_count
+#print axioms PerfectPower.PellExact.orbit_count
+#print axioms PerfectPower.PellExact.pell_exact_count
+#print axioms chi_eq
+#print axioms chi_neg_iff

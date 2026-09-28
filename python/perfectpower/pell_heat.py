@@ -62,7 +62,7 @@ def pell_heat_model(A: int, B: int, C: int, match: int = 10 ** 12):
     Dp = 4 * A
     x1, y1 = pell_fundamental(Dp)
     eps = x1 + y1 * math.sqrt(Dp)
-    classes, model_small = [], 0
+    classes, model_small, model_sum = [], 0, 0
     for X0, Y0 in qd['orbits']:
         # period of (X, Y) mod 2A along the orbit
         M = 2 * A
@@ -81,7 +81,10 @@ def pell_heat_model(A: int, B: int, C: int, match: int = 10 ** 12):
                 continue
             eta_r = Xr + Yr * math.sqrt(Dp)            # orbit element at index r
             alpha = eta_r / (4 * A)                    # n_j ~ alpha E^j
-            classes.append({'alpha': alpha, 'logE': logE, 'orbit': (X0, Y0), 'r': r})
+            # n_j = alpha E^j + beta + delta_j exactly, with delta_j = (Delta / eta_r) E^-j / (4A):
+            # the conjugate of eta_r eps^k is (Delta / eta_r) eps^-k
+            delta0 = (B * B - 4 * A * C) / eta_r / (4 * A)
+            classes.append({'alpha': alpha, 'logE': logE, 'orbit': (X0, Y0), 'r': r, 'delta0': delta0})
             # count exact model terms n_j <= match (each tends to 1 in the Mellin formula)
             X, Y = Xr, Yr
             while True:
@@ -89,9 +92,29 @@ def pell_heat_model(A: int, B: int, C: int, match: int = 10 ** 12):
                 if n > match:
                     break
                 model_small += 1
+                model_sum += n
                 for _ in range(period):
                     X, Y = X * x1 + Dp * Y * y1, X * y1 + Y * x1
-    return classes, model_small
+    return classes, model_small, model_sum
+
+
+def pell_heat_prediction_first_order(A: int, B: int, tau: float, hits_small: int, hits_sum: int,
+                                     classes, model_small: int, model_sum: int):
+    """Prediction including every O(tau) term; the remainder is O(tau^2).
+
+    Per class: exp(-tau beta) [ (log(1/lam) - gamma)/log E + 1/2 + Phi_E(log lam) + lam/(E - 1) ]
+    - tau * sum_j delta_j, where lam/(E - 1) is the residue of Gamma(s) lam^-s / (1 - E^-s) at
+    s = -1 and sum_j delta_j = delta0 E / (E - 1); plus the boundary correction
+    (hits_small - model_small) - tau (hits_sum - model_sum)."""
+    total = 0.0
+    f = math.exp(tau * B / (2 * A))
+    for cl in classes:
+        E = math.exp(cl['logE'])
+        lam = tau * cl['alpha']
+        total += f * ((math.log(1 / lam) - EULER_GAMMA) / cl['logE'] + 0.5 + phi(math.log(lam), cl['logE'])
+                      + lam / (E - 1))
+        total -= tau * cl['delta0'] * E / (E - 1)
+    return total + (hits_small - model_small) - tau * (hits_sum - model_sum)
 
 
 def pell_heat_prediction(A: int, B: int, C: int, tau: float, hits_small: int, classes, model_small,

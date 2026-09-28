@@ -412,4 +412,94 @@ theorem profile_table_ok :
     ((List.range' 2 11).all fun d => profiles12.all fun rs => rowOK d rs) = true := by
   decide +kernel
 
+/-! #### The general statement (all `d`, all profiles) -/
+
+lemma gOf_dvd_foldl : ∀ (rs : List ℕ) (a : ℕ), rs.foldl Nat.gcd a ∣ a ∧ ∀ r ∈ rs, rs.foldl Nat.gcd a ∣ r
+  | [], a => by simp
+  | r :: rs, a => by
+    obtain ⟨h1, h2⟩ := gOf_dvd_foldl rs (Nat.gcd a r)
+    simp only [List.foldl_cons, List.mem_cons, forall_eq_or_imp]
+    exact ⟨h1.trans (Nat.gcd_dvd_left a r), h1.trans (Nat.gcd_dvd_right a r), h2⟩
+
+lemma gOf_dvd_d (d : ℕ) (rs : List ℕ) : gOf d rs ∣ d := (gOf_dvd_foldl rs d).1
+
+lemma gOf_dvd_r {d : ℕ} {rs : List ℕ} {r : ℕ} (hr : r ∈ rs) : gOf d rs ∣ r :=
+  (gOf_dvd_foldl rs d).2 r hr
+
+lemma gOf_pos {d : ℕ} (hd : 0 < d) (rs : List ℕ) : 0 < gOf d rs :=
+  Nat.pos_of_dvd_of_pos (gOf_dvd_d d rs) hd
+
+/-- Each `t_i` divides `d' = d / g`. -/
+lemma tOf_dvd_dprime {d : ℕ} (hd : 0 < d) {rs : List ℕ} {r : ℕ} (hr : r ∈ rs) :
+    tOf d r ∣ d / gOf d rs := by
+  set g := gOf d rs
+  have hg : g ∣ Nat.gcd d r := Nat.dvd_gcd (gOf_dvd_d d rs) (gOf_dvd_r hr)
+  obtain ⟨b, hb⟩ := hg
+  obtain ⟨c, hc⟩ := Nat.gcd_dvd_left d r
+  have hgpos : 0 < g := gOf_pos hd rs
+  have hgcd : 0 < Nat.gcd d r := Nat.gcd_pos_of_pos_left r hd
+  have ht : tOf d r = c := Nat.div_eq_of_eq_mul_left hgcd (by rw [mul_comm]; exact hc)
+  have hdp : d / g = b * c := by
+    apply Nat.div_eq_of_eq_mul_left hgpos
+    have e1 : d = Nat.gcd d r * c := hc
+    rw [hb] at e1
+    rw [e1]; ring
+  rw [ht, hdp]
+  exact Dvd.intro_left b rfl
+
+lemma tOf_pos {d r : ℕ} (hd : 0 < d) : 0 < tOf d r :=
+  Nat.div_pos (Nat.gcd_le_left r hd) (Nat.gcd_pos_of_pos_left r hd)
+
+/-- **`χ = d'(1 - S)` for every `d > 0` and every profile.** -/
+theorem chi_eq {d : ℕ} (hd : 0 < d) (rs : List ℕ) :
+    (chiInt d rs : ℚ) = (d / gOf d rs : ℕ) * (1 - profileS (rs.map (tOf d))) := by
+  set dp := d / gOf d rs
+  have key : ∀ l : List ℕ, (∀ r ∈ l, tOf d r ∣ dp) →
+      (((l.map fun r => ((dp : ℤ) - ((dp / tOf d r : ℕ) : ℤ))).sum : ℤ) : ℚ) =
+        (dp : ℚ) * profileS (l.map (tOf d)) := by
+    intro l hl
+    induction l with
+    | nil => simp [profileS]
+    | cons r l ih =>
+      have h1 := hl r (by simp)
+      have ih' := ih fun q hq => hl q (by simp [hq])
+      simp only [List.map_cons, List.sum_cons, Int.cast_add, profileS_cons] at ih' ⊢
+      rw [ih']
+      have htpos : (0 : ℚ) < tOf d r := by exact_mod_cast tOf_pos hd
+      have e : ((dp / tOf d r : ℕ) : ℚ) = (dp : ℚ) / tOf d r := by
+        rw [Nat.cast_div h1 htpos.ne']
+      rw [Int.cast_sub, Int.cast_natCast, Int.cast_natCast, e]
+      field_simp
+      ring
+  simp only [chiInt, Int.cast_sub, Int.cast_natCast]
+  rw [key rs fun r hr => tOf_dvd_dprime hd hr]
+  ring
+
+/-- **Theorem G, combinatorial half, in general.**  For every `d > 0` and every multiplicity list,
+`χ < 0` iff the `t`-profile is not of power, radical or Pell type. -/
+theorem chi_neg_iff {d : ℕ} (hd : 0 < d) (rs : List ℕ) :
+    chiInt d rs < 0 ↔ exceptionalProfile (rs.map (tOf d)) = false := by
+  have hdp : (0 : ℚ) < (d / gOf d rs : ℕ) := by
+    exact_mod_cast Nat.div_pos (Nat.le_of_dvd hd (gOf_dvd_d d rs)) (gOf_pos hd rs)
+  have hS := S_le_one_iff (rs.map (tOf d)) (by
+    intro t ht
+    obtain ⟨r, -, rfl⟩ := List.mem_map.mp ht
+    exact tOf_pos hd)
+  have hc := chi_eq hd rs
+  constructor
+  · intro h
+    have hq : (chiInt d rs : ℚ) < 0 := by exact_mod_cast h
+    rw [hc] at hq
+    have : 1 < profileS (rs.map (tOf d)) := by
+      by_contra hle; push_neg at hle; nlinarith
+    cases hE : exceptionalProfile (rs.map (tOf d))
+    · rfl
+    · exact absurd (hS.mpr hE) (by linarith)
+  · intro h
+    have : 1 < profileS (rs.map (tOf d)) := by
+      by_contra hle; push_neg at hle
+      rw [hS.mp hle] at h; exact Bool.noConfusion h
+    have hq : (chiInt d rs : ℚ) < 0 := by rw [hc]; nlinarith
+    exact_mod_cast hq
+
 end PerfectPower

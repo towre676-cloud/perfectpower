@@ -298,12 +298,28 @@ with $\kappa$ the Lemma Q constant. The remainder is $O(\tau)$ when $B=0$. When 
 
 *Correction.* An earlier version of this theorem stated $n_j=\alpha E^j+O(E^{-j})$ and an $O(\tau)$ remainder for the two-term form. Both are wrong when $B\ne0$. The receipt shows the failure: for $2n^2+2n$ the unshifted residual divided by $\tau$ grows from $2.8$ to $8.1$ as $\tau$ goes from $10^{-4}$ to $10^{-12}$, while the shifted residual divided by $\tau$ stays at $0.25$.
 
-*Proof.* The Mellin transform of $\lambda\mapsto\sum_{j\ge0}e^{-\lambda E^j}$ is $\Gamma(s)/(1-E^{-s})$ for $\Re s>0$. Shift the contour to $\Re s=-\tfrac12$.
-- The double pole at $s=0$ contributes $(\log(1/\lambda)-\gamma)/\log E+\tfrac12$.
-- The simple poles at $s=2\pi im/\log E$, $m\ne0$, contribute $\Phi_E(\log\lambda)$. The series converges absolutely because $|\Gamma(iy)|\sim\sqrt{2\pi/|y|}\,e^{-\pi|y|/2}$.
-- The remaining integral is $O(\lambda)$.
+*Proof.* The Mellin transform of $h(\lambda)=\sum_{j\ge0}e^{-\lambda E^j}$ is $\Gamma(s)/(1-E^{-s})$ for $\Re s>0$, so $h(\lambda)=\frac1{2\pi i}\int_{(c)}\Gamma(s)\lambda^{-s}(1-E^{-s})^{-1}\,ds$ for any $c>0$. Move the line of integration to $\Re s=-\tfrac32$. The poles crossed are these:
+- the double pole at $s=0$, which contributes $(\log(1/\lambda)-\gamma)/\log E+\tfrac12$;
+- the simple poles at $s=2\pi im/\log E$, $m\ne0$, which contribute $\Phi_E(\log\lambda)$; the series converges absolutely because $|\Gamma(iy)|\sim\sqrt{2\pi/|y|}\,e^{-\pi|y|/2}$;
+- the simple pole of $\Gamma$ at $s=-1$, with residue $-1$, which contributes $-\lambda^{1}/(1-E^{1})=\lambda/(E-1)$.
 
-Write $e^{-\tau n_j}=e^{-\tau\beta}e^{-\tau\alpha E^j}e^{-\tau\delta_j}$ with $\delta_j=O(E^{-j})$. Replacing $e^{-\tau\delta_j}$ by $1$ costs $O(\tau\sum_jE^{-j})=O(\tau)$. Then apply the Mellin expansion with $\lambda=\tau\alpha$. Each of the finitely many discrepancies between hits and model terms is $\pm e^{-\tau n}=\pm1+O(\tau)$, which gives $c_{\mathrm{int}}$. For the two-term form, $(e^{-\tau\beta}-1)$ times the class sum is $-\tau\beta\kappa\log(1/\tau)+O(\tau)$. $\square$
+The factor $(1-E^{-s})^{-1}$ has no other poles, since all its poles lie on $\Re s=0$. The horizontal segments can be taken at heights $\pm(2k+1)\pi/\log E$, midway between those poles. There $(1-E^{-s})^{-1}$ is bounded uniformly in $k$ for $-\tfrac32\le\Re s\le c$, and $\Gamma(s)$ decays exponentially, so their contribution tends to $0$ as $k\to\infty$. The remaining integral on $\Re s=-\tfrac32$ is $O(\lambda^{3/2})$. Hence
+$$h(\lambda)=\frac{\log(1/\lambda)-\gamma}{\log E}+\frac12+\Phi_E(\log\lambda)+\frac{\lambda}{E-1}+O(\lambda^{3/2}).$$
+(Stopping at $\Re s=-\tfrac12$, as an earlier draft did, gives only $O(\lambda^{1/2})$.)
+
+Now write $n_j=\alpha E^j+\beta+\delta_j$ with $\delta_j=\frac{\Delta}{4A\eta_r}E^{-j}$ exactly: the conjugate of $\eta_r\varepsilon^k$ is $(\Delta/\eta_r)\varepsilon^{-k}$. Then
+$$\sum_je^{-\tau n_j}=e^{-\tau\beta}\,h(\tau\alpha)+e^{-\tau\beta}\sum_je^{-\tau\alpha E^j}\bigl(e^{-\tau\delta_j}-1\bigr).$$
+The last sum is $-\tau\sum_j\delta_j+O\bigl(\tau^2\log(1/\tau)\bigr)$. Indeed $e^{-\tau\delta_j}-1=-\tau\delta_j+O(\tau^2E^{-2j})$, and
+$$\sum_j\delta_j\bigl(1-e^{-\tau\alpha E^j}\bigr)\ll\sum_{E^j\le1/\tau}\tau+\sum_{E^j>1/\tau}E^{-j}\ll\tau\log(1/\tau).$$
+So each class contributes $e^{-\tau\beta}h(\tau\alpha)-\tau\sum_j\delta_j+O(\tau^2\log(1/\tau))$, and in particular its main part plus $O(\tau)$.
+
+Each of the finitely many discrepancies between hits and model terms is $\pm e^{-\tau n}=\pm1\mp\tau n+O(\tau^2)$. This gives $c_{\mathrm{int}}$ and an $O(\tau)$ boundary term. For the two-term form, $(e^{-\tau\beta}-1)$ times the class sum is $-\tau\beta\kappa\log(1/\tau)+O(\tau)$. $\square$
+
+*The $O(\tau)$ coefficient, made explicit and checked.* Collecting the terms above,
+$$K_X(\tau)=\sum_{\text{classes}}\Bigl[e^{-\tau\beta}\Bigl(\tfrac{\log(1/\tau\alpha)-\gamma}{\log E}+\tfrac12+\Phi_E(\log\tau\alpha)+\tfrac{\tau\alpha}{E-1}\Bigr)-\tau\,\tfrac{\Delta}{4A\eta_r}\tfrac{E}{E-1}\Bigr]+c_{\mathrm{int}}-\tau\,c_{\mathrm{sum}}+O\bigl(\tau^2\log(1/\tau)\bigr),$$
+where $c_{\mathrm{sum}}$ is the sum of the hits $\le M$ minus the sum of the model terms $\le M$. `receipts/pell_heat.json` evaluates this for $\tau=10^{-2},\dots,10^{-6}$. For every family, $|K-\text{prediction}|/(\tau^2\log(1/\tau))$ stays between $0.003$ and $1.1$ with no growth, for example $0.086,0.082,0.080,0.079,0.078$ for $2n^2+1$. This confirms the $O(\tau)$ coefficient, and it shows that the next term really is of order $\tau^2\log(1/\tau)$ rather than $\tau^2$.
+
+*Prior work.* Mellin analysis of geometric harmonic sums $\sum_j f(\lambda E^j)$, with their log-periodic fluctuations, is classical (Flajolet–Gourdon–Dumas, *Mellin transforms and asymptotics: harmonic sums*, TCS 144 (1995)). What is specific here is the arithmetic input: the orbit and class decomposition of Pell-type hit sets, the shift $\beta=-B/(2A)$, and the exact correction $\delta_j$.
 
 *What it adds.*
 - **It distinguishes families with the same $\kappa$.** $2n^2+1$ and $2n^2+2n$ (four times the triangular numbers) share $\kappa=1/\log(3+2\sqrt2)$, but their constants differ: $C_0=-0.2376$ and $-0.0410$.

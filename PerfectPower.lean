@@ -21,3 +21,4 @@ import PerfectPower.PellGeneral
 import PerfectPower.RadicalCount
 import PerfectPower.ProfileG
 import PerfectPower.Reflect
+import PerfectPower.PellExact
