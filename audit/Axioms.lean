@@ -40,3 +40,8 @@ open PerfectPower
 #print axioms pell_hitSet_infinite
 #print axioms pell_count_le
 #print axioms pell_hasDensity_zero
+-- Theorem R (integer form)
+#print axioms pow_diff_bound'
+#print axioms runge_pointwise
+#print axioms runge_uniform
+#print axioms runge_finite

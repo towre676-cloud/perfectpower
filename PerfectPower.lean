@@ -7,3 +7,4 @@ import PerfectPower.ZeroOne
 import PerfectPower.Monomial
 import PerfectPower.Examples
 import PerfectPower.Pell
+import PerfectPower.RungeReduction
