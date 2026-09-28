@@ -13,7 +13,15 @@
 - LeVeque finiteness for all other types.
 - The discrete exponent spectrum $\{0,1\}\cup\{1/t : t\mid d\}$, with an $N^{1/2}$ barrier for non-powers.
 
-**Runge branch.** The branch is now completely enumerable.
+**Runge branch.** The branch is now completely enumerable, and 17 instances have machine-generated Lean certificates.
+
+**Applications.** The atlas recovers Schäffer's sums-of-powers theorem with constants and covers integer-valued polynomials.
+
+**Formal kernel.** It proves 56 audited theorems, including:
+- the monomial count;
+- infinitude and density zero for $2n^2+1$;
+- Theorem P over $\mathbb Q[x]$;
+- Theorem R in integer form.
 
 **Transforms.** Their asymptotics are proved for every type.
 
@@ -21,7 +29,7 @@
 
 1. Done: Theorem P over $\mathbb Q[x]$ is `power_type_finite`, and Theorem R in integer form is `runge_finite`.
 2. Formalise the valuation characterisation of Theorem B: $c_1z^r$ is a $d$-th power iff $v_p(z)\equiv\tau_p \pmod t$ for all $p$, together with the sign condition. Mathlib's `padicValInt` and `Nat.factorization` suffice. The monomial count $A(N)=\lfloor N^{\gcd(r,d)/d}\rfloor$ for $n^r$ is done (`monomial_count`); the general case adds a twist $c$ and a rational root $\alpha$.
-3. Formalise the explicit thresholds of Theorem R: $a(x_0)$, $C(x_0)$, $T(x_0)$. A certificate from `runge.py`, consisting of $x_0$, the $G_t$, and their root lists, could then be checked by `decide`/`norm_num` inside Lean, closing the gap between the Python tool and the kernel.
+3. Extend the certificate emitter to instances whose Runge plan needs a large $x_0$ or roots of $G_t$ beyond $x_0$. Examples are the consecutive products $(k,d)=(10,2)$ and $(12,4)$. Two routes: a verified range check by `decide` over a computable integer-root predicate, or emitting explicit factorisations of the $G_t$.
 4. Keep Boshernitzan and LeVeque as named external boundaries. If a nonrigid statement is wanted formally, state it as a hypothesis-carrying theorem, `LeVeque → …`.
 
 ## Arithmetic
