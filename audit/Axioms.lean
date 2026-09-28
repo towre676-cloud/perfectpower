@@ -1,0 +1,25 @@
+import PerfectPower
+/-! Axiom audit: every public theorem must depend only on `propext`, `Classical.choice` and
+`Quot.sound` (no `sorryAx`, no custom axioms).  Run with `lake env lean audit/Axioms.lean`. -/
+open PerfectPower
+-- Basic / Density
+#print axioms H_eq_of_hasDensity
+#print axioms hasDensity_zero_of_finite
+#print axioms A_sub_eq_const
+#print axioms H_surgery
+#print axioms hasDensity_of_periodic
+-- Rigid / Estimates / Dichotomy
+#print axioms exists_denominator
+#print axioms frac_periodic
+#print axioms integral_closure_step
+#print axioms exists_truncated_root
+#print axioms pow_diff_bound
+#print axioms eventually_no_hit
+#print axioms rigid_dichotomy
+-- ZeroOne
+#print axioms hasDensity_one_of_pow
+#print axioms rigid_zero_one
+#print axioms rigid_H_mem
+#print axioms twisted_hits_subset
+#print axioms twisted_finite
+#print axioms twisted_density_zero
