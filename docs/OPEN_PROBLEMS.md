@@ -35,7 +35,7 @@ Each entry gives the precise problem, the current best approach, and the obstruc
 
 7. **Coefficient-bound lemmas for Theorem R.** Derive the hypotheses of `runge_uniform` from the constants $a(x_0)$ and $C(x_0)$, so that one certificate format covers every rigid $F$.
 
-8. **Pell count in Lean.** The interfaces and orbit exhaustion are done (`PellGeneral.lean`: norm equation, pure periodicity modulo $2A$, good classes, finitely many representatives in the box $DY_0^2\le|\Delta|x_1^2$, geometric counting). The upper bound $A(N)=O(\log N)$ is compiled (`pell_count_log`). Missing: the exact asymptotic $A(N)=\kappa\log N+O(1)$, which needs the upper growth $X_j\le c\,\varepsilon^j$ and the per-class bookkeeping. The log-periodic second term (Theorem T2) is numerical and paper-level only.
+8. **Pell count in Lean.** *Done for the quadratic family (`pell_exact_count`).* Remaining: Theorem C, the reduction of a general $F$ of Pell type to the quadratic family, and the existence of a fundamental unit for every nonsquare $4A$ (currently a hypothesis). The earlier text follows. The interfaces and orbit exhaustion are done (`PellGeneral.lean`: norm equation, pure periodicity modulo $2A$, good classes, finitely many representatives in the box $DY_0^2\le|\Delta|x_1^2$, geometric counting). The upper bound $A(N)=O(\log N)$ is compiled (`pell_count_log`). Missing: the exact asymptotic $A(N)=\kappa\log N+O(1)$, which needs the upper growth $X_j\le c\,\varepsilon^j$ and the per-class bookkeeping. The log-periodic second term (Theorem T2) is numerical and paper-level only.
 
 ## Good first issues
 
@@ -44,3 +44,15 @@ Each entry gives the precise problem, the current best approach, and the obstruc
 - Add families to `python/make_atlas_receipts.py`, each with a certification label.
 - Extend `crosscheck/` to quartic models $m^2=\text{quartic}$ with a rational point, keeping integrality through the conversion to Weierstrass form. Non-monic and shifted cubics and $m^3=$ quadratic are done in `crosscheck/genus1_sage.py`.
 - Remove the unnecessary `have`s flagged by Batteries' `#lint` (see `FORMAL_AUDIT.md`).
+
+## Added after the third review
+
+9. **A kernel-checked completeness proof for one nonrigid genus-one family.**
+   - *Current state:* every genus-one hit list here rests on Sage (`Genus1.lean` takes its point list as a hypothesis).
+   - *Two routes:* (i) an independently checked height bound followed by an exact kernel-checked sieve up to it; or (ii) a formal descent for one well-chosen curve.
+   - *Obstruction:* both are research projects. Any claim must be compared with Baanen–Best–Coppola–Dahmen (CPP 2023).
+10. **Quartic genus-one models $m^2=$ quartic** with non-square leading coefficient, e.g. Ljunggren's $2n^4-1=m^2$ (hits $1,13$; a theorem of Ljunggren, 1942).
+    - *Obstruction:* Sage has no integral-points routine for quartic models. Integral points of the quartic do not map to integral points of its Weierstrass model, so the cubic pipeline does not apply. What is needed is elliptic-logarithm bounds relative to a non-origin point (Tzanakis's method, or Magma's `IntegralQuarticPoints`). Until then these rows are evidence to $10^8$.
+11. **Bilu–Tichy counting sequel.** Prove the complete integer counting theorem for one non-power $g$ in $f(x)=g(y)$, with integrality, congruence and multiplicity accounting, before any general atlas.
+12. **Primary-source comparison.** Read Beukers–Tengely, Baanen–Best–Coppola–Dahmen, Bérczes–Evertse–Győry et al. (2023) and Flajolet–Gourdon–Dumas, and turn the provisional notes in `RELATED_WORK.md` and `CERTIFICATE_FORMAT.md` into a verified comparison. The build environment could not reach these texts.
+

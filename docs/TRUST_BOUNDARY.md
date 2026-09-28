@@ -29,6 +29,12 @@ Given that kernel, the following are theorems:
 - Pell orbits: finitely many representatives exhaust the solutions of the norm equation (`pell_orbits_exhaust`), with pure periodicity modulo $2A$ (`unitOrbit_periodic`), and the Pell-type count is $O(\log N)$ (`pell_count_log`).
 - The combinatorial half of Theorem G (`S_le_one_iff`, and the exhaustive table `profile_table_ok` for $d,\deg F\le12$).
 
+**Exact counts and named premises.**
+- `pell_exact_count` gives the Pell count with its exact constant for any quadratic with a given unit.
+- `radical_asymptotic_int` gives the radical count for the normalised family.
+- `atlas_finite` proves finiteness only *under* the premise `SuperellipticSiegel`, which is stated in `Atlas.lean` and not proved.
+- The 399 genus-one theorems of `Generated/Genus1.lean` hold only *under* their named hypotheses `IntegralPoints_…`, which say that Sage's point lists are complete. That is the label `LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS`, not `LEAN_CERTIFIED`.
+
 **Verified checkers.** `Reflect.check_sound`, `Reflect.rungeCheck_sound` and `Reflect.mordellOK_sound` are proved once. Every generated certificate (Runge and sandwich) and every census block is data that the kernel runs through these checkers (`decide +kernel`, no `Lean.ofReduceBool`).
 
 **Conditional results (abc as a hypothesis).** The following are implications "`ABC ε C` ⇒ …":

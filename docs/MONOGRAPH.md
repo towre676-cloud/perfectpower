@@ -2,21 +2,42 @@
 
 ## Exact definitions, a polynomial dichotomy, finite-hit certificates, and the arithmetic of the zero branch
 
-> **Release 0.6 update.** The Lean kernel described in §7 now compiles against Mathlib `v4.20.0` with only standard axioms (see [FORMAL_AUDIT.md](FORMAL_AUDIT.md)), including the rigid dichotomy and a formal rigid-branch 0–1 law. The rate questions of §§5 and 8 are answered for polynomials in [RESEARCH_NOTES.md](RESEARCH_NOTES.md): the hit count is $N$, $\kappa N^{1/t}$, $\kappa\log N$, or bounded, and the exponent spectrum is $\{0,1\}\cup\{1/t: t\mid d\}$. The text below is the 0.5 edition, unchanged except for this note and the formal-status sentences of §7.
->
-> **Post-0.6 status**, answering the questions of §§5, 6 and 8. Details and receipts are in the research notes.
-> - *The finite type rests on Siegel's theorem.* The curve computation $\chi=d'(1-S)$ (Theorem G) connects the two, and no secondary quotation of LeVeque is used. Its combinatorial half is compiled in Lean. Its geometric half is a paper proof, checked against Sage normalisation for $d,\deg F\le12$.
-> - *§5, genus-one finiteness and enumeration.*
->   - Sage certifies the hit lists of 622 monic and 400 non-monic, shifted or cubic-power genus-one families.
->   - Some of these hits are very late, e.g. $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$, so short scans are unreliable.
->   - $\binom n2=m^3$ and $\binom n3=m^2$ are settled given two curves' integral points, with the reduction in Lean.
->   - Genus $\ge2$ remains scan evidence, now exact to $10^8$.
-> - *§5, Pell-type sparse families.* Lean proves orbit exhaustion (finitely many representatives), periodicity modulo $2A$, and $A(N)=O(\log N)$. The exact constant $\kappa\log N$ is still a paper result.
-> - *§6, transforms.* For the Pell type the heat transform has a log-periodic second term (Theorem T2). The shift $-B/(2A)$ in the hit sequence must be kept: without it the two-term remainder is $O(\tau\log(1/\tau))$, not $O(\tau)$.
-> - *§7, receipts.* Generated certificates are data checked by verified checkers (`Reflect.lean`). Every census and cross-validation receipt passes a plain-Python gate in `make verify`, and differential fuzzers run with fixed seeds.
-> - *Beyond the program.* The function-field analogues of Hall (Davenport) and Pillai are compiled unconditionally. Their integer versions are compiled only under an explicit abc hypothesis.
+## 0. Status of every result (edition 0.7)
 
-**Research edition, 28 September 2026.** This manuscript consolidates the preceding chat monograph with the attached Lean draft and the exact computational implementation in this repository. The analytic polynomial dichotomy is a paper proof relying on an established uniform-distribution theorem. The finite-hit cutoff is constructed and independently checked by exact Python arithmetic. The Lean files are uncompiled attempts, not machine-checked theorems. No novelty claim attaches to Boshernitzan's, Siegel's, or Bombieri–Pila's results.
+This table is the single source of truth. The research notes, the paper, the README and the trust boundary state the same claims. Labels: **Lean** means compiled and axiom-audited (only `propext`, `Classical.choice`, `Quot.sound`). **Lean ⇐ H** means compiled, with a named hypothesis that is not proved. **Paper** means a written proof. **External** means a computation by third-party software (Sage, Singular). **Evidence** means exact within a stated bound and silent beyond it.
+
+| Result | Status | Depends on | Where |
+|---|---|---|---|
+| Density 0–1 law, rigid branch | Lean (`rigid_zero_one`, `rigid_dichotomy`) | — | `ZeroOne.lean`, `Rigid.lean` |
+| Density 0–1 law, nonrigid branch | Paper | Boshernitzan (external theorem) | §3 below |
+| Power type: all hits, or finitely many | Lean (`atlas_power`, `power_type_finite`) | — | `Atlas.lean`, `RungeReduction.lean` |
+| Radical type $A(N)=\kappa N^{1/t}+O(1)$, $\kappa=(R/v)(v/z_0)^{1/t}$ | Lean for $c(vn-u)^rG(n)^d$ (`radical_asymptotic_int`, `atlas_radical`); reduction of a general $F$ to that form: Paper | valuation core (Lean) | `RadicalAsymp.lean`; notes §3 |
+| Pell type $A(N)=\kappa\log N+O(1)$, $\kappa=(\sum_\rho g_\rho/P_\rho)/\log\varepsilon$ | Lean for $An^2+Bn+C$ with a given unit (`pell_exact_count`, `atlas_pell`); reduction of a general $F$ (Theorem C): Paper | canonical orbit roots (Lean) | `PellExact.lean`; notes §4 |
+| Finite type: finitely many hits | Lean ⇐ `SuperellipticSiegel` (`atlas_finite`) | Siegel (external) + geometric half of Theorem G (Paper) | `Atlas.lean`; notes §5 |
+| Theorem G, combinatorial half ($\chi=d'(1-S)$; $\chi<0$ ⇔ non-exceptional) | Lean, all $d$ (`chi_eq`, `chi_neg_iff`); Riemann–Hurwitz integrality table for $d,\deg F\le12$ (`profile_table_ok`) | — | `ProfileG.lean` |
+| Theorem G, geometric half (Kummer, Riemann–Hurwitz) | Paper; External check (Singular genus, Sage places at infinity) over the range stated in `receipts/theorem_g_check.json` | — | notes §5 |
+| Runge enumeration, rigid branch | Paper (Theorem R); 19 instances Lean via pp-cert/1 (`check_sound`, `rungeCheck_sound`) | — | `Reflect.lean`, `CERTIFICATE_FORMAT.md` |
+| Genus one: 399 non-monic/shifted families, 2 binomials | Lean ⇐ named Sage point lists (`Genus1.lean`, `Binomial.lean`) | Sage `integral_points` (External) | `Generated/Genus1.lean` |
+| Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
+| Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
+| Transforms (Theorem T); log-periodic heat term (Theorem T2) | Paper; T2's $O(\tau)$ coefficient checked numerically | Mellin analysis (classical) | notes §8 |
+| Exponential sequences (Theorem E) | Paper; periodic density Lean (`exp_hasDensity`) | — | notes §9 |
+| Function-field Hall (Davenport) and Pillai | Lean (`davenport`, `pillai_polynomial`) | Mason–Stothers (Mathlib) | `Davenport.lean` |
+| Hall, Pillai over $\mathbb Z$ | Lean ⇐ abc (`hall_of_abc`, `pillai_finite_of_abc`); the conjectures themselves are open | abc (hypothesis) | `ABC.lean` |
+
+**Dependency arrows.**
+- Siegel + Theorem G (geometric) ⟶ `SuperellipticSiegel` ⟶ finite type.
+- Valuation core ⟶ radical count ⟶ `radical_asymptotic_int`.
+- Canonical Pell roots + ε-growth ⟶ `pell_exact_count`.
+- Theorems B, C (paper reductions) ⟶ general $F$ in the radical and Pell types.
+- Atlas = power ∪ radical ∪ Pell ∪ finite.
+- Boshernitzan ⟶ nonrigid density zero. This is independent of the atlas; the atlas gives a second, ineffective proof through Siegel.
+
+**One command.** `make verify` builds the Lean library, audits axioms, lints, runs the Python tests, regenerates every receipt, certificate and generated Lean file, and fails on any difference from the committed files. Its output for the release commit is archived in `docs/RELEASE_CHECK.md`. The Sage and Singular steps (`make crosscheck`) are optional, and their receipts are re-checked in plain Python by `make verify`.
+
+The text from §1 on is the 0.5 edition, kept for its definitions and the density argument. Where it and this table disagree, the table is current.
+
+**Research edition, 28 September 2026.** This manuscript consolidates the preceding chat monograph with the attached Lean draft and the exact computational implementation in this repository. The analytic polynomial dichotomy is a paper proof relying on an established uniform-distribution theorem. The finite-hit cutoff is constructed and independently checked by exact Python arithmetic. In the 0.5 edition the Lean files had not been compiled; since 0.6 they compile, and the table in §0 lists what is machine-checked. No novelty claim attaches to Boshernitzan's, Siegel's, or Bombieri–Pila's results.
 
 ### 1. The object of study
 

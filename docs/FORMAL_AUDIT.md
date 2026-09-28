@@ -52,7 +52,7 @@ The count is in `RadicalCount.lean`. |
 - **`radical_hits_card`**: the hits $n\in[1,N]$ of $c(vn-u)^r$ with $vn>u$ are in bijection with the $w\in[1,W]$ satisfying $v\mid z_0w^t+u$, where $W$ is the largest $w$ with $z_0w^t+u\le vN$.
 - **`radical_count_bound`**: $|v\,A(N)-R\,W|\le 2Rv$, with $R$ the number of good residues of $w$ modulo $v$.
 
-Only the final step $W=\lfloor((vN-u)/z_0)^{1/t}\rfloor\sim(v/z_0)^{1/t}N^{1/t}$, which is real-analysis bookkeeping, is not formalised. A sanity instance (squares up to 10) checks that the hypotheses are satisfiable. |
+The final step $W=\lfloor((vN-u)/z_0)^{1/t}\rfloor=(v/z_0)^{1/t}N^{1/t}+O(1)$ is in `RadicalAsymp.lean`. A sanity instance (squares up to 10) checks that the hypotheses are satisfiable. |
 | `PellGeneral.lean` (new) | Interfaces for Theorem Q, for general $An^2+Bn+C$:
 - **`quadratic_isHit_iff_norm`**: $P(n)$ is a square iff $(2An+B)^2-4AY^2=B^2-4AC$.
 - `unitAct_norm`, `unitOrbit_norm`: a norm-one unit preserves the norm form along the orbit.
@@ -67,6 +67,7 @@ Only the final step $W=\lfloor((vN-u)/z_0)^{1/t}\rfloor\sim(v/z_0)^{1/t}N^{1/t}$
 **Not formalised:** the matching lower bound and the exact constant, $A(N)=\kappa\log N+O(1)$. That needs the upper growth $X_j\le c\,\varepsilon^j$ and the class bookkeeping. |
 | `ProfileG.lean` (new) | The combinatorial half of Theorem G:
 - **`S_le_one_iff`**: $S=\sum(1-1/t_i)\le1$ iff at most one $t_i>1$ or the $t_i>1$ are $\{2,2\}$.
+- **`chi_eq`**, **`chi_neg_iff`**: for *every* $d>0$ and every multiplicity list, the integer $\chi=d'-\sum(d'-d'/t_i)$ equals $d'(1-S)$, and $\chi<0$ iff the profile is not of power, radical or Pell type. This is a universal theorem, not a table.
 - **`profile_table_ok`**: for all $2\le d\le12$ and all 271 multiplicity profiles of degree $\le12$, the Riemann–Hurwitz genus $(2-n_\infty-\chi)/2$ is a nonnegative integer, $t_i\mid d'$, $\chi=d'(1-S)$ in exact arithmetic, and $\chi<0$ iff the profile is not exceptional. The kernel checks all of this by `decide +kernel`.
 
 The geometric half (Kummer and Riemann–Hurwitz for the normalisation) remains a paper proof. It is tested against Singular's normalisation genus and Sage's places at infinity by `crosscheck/theorem_g_sage.py`. |
@@ -75,6 +76,10 @@ The geometric half (Kummer and Riemann–Hurwitz for the normalisation) remains 
 - The interval test $\mathrm{POS}(0)>\mathrm{NEG}(w)$ and the tail test, with soundness (`intervalPos_sound`, `tailPos_sound`).
 - **`check_sound`**: a sandwich certificate (a segment cover of $[1,c)$ plus a tail) that passes `check` gives the complete hit set.
 - `mordellOK_sound` for census points. |
+| `RadicalAsymp.lean` (new) | `radW_spec`, `radW_approx` (the cutoff $W=\lfloor((vN-u)/z_0)^{1/t}\rfloor$ is $(v/z_0)^{1/t}N^{1/t}+O(1)$, by subadditivity of $x^{1/t}$). **`radical_asymptotic`**: $|A(N)-\kappa N^{1/t}|\le2R+(R/v)((u/z_0)^{1/t}+1)$ with $\kappa=(R/v)(v/z_0)^{1/t}$, which is $0$ when $R=0$. **`radical_asymptotic_int`**: the same over all $n\in[1,N]$ for $c(vn-u)^rG(n)^d$ as integer `IsHit` statements, with the zeros of $G$ and the $n$ with $vn\le u$ counted in the constant. `isHit_mul_pow_iff`. |
+| `PellExact.lean` (new) | Canonical orbit roots (`IsRoot`, `exists_root`, `root_unique`, `roots_finite`); growth at the rate of $\varepsilon=u+v\sqrt D$ (`orbit_fst_bracket`); counting near a geometric sequence (`count_near_geometric`); per class and per orbit (`class_count`, `orbit_count`). **`pell_exact_count`**: $|A(N)-\kappa\log N|\le K$ for $N\ge N_0$, $\kappa=(\sum_\rho g_\rho/P_\rho)/\log\varepsilon$. |
+| `Atlas.lean` (new) | The interface: `atlas_power`, `atlas_radical`, `atlas_pell` (exact constants), and **`atlas_finite`** under the named premise `SuperellipticSiegel`, with profiles given by a Yun decomposition. |
+| `Genus1.lean`, `Generated/Genus1.lean` (new) | Checked Weierstrass reductions of $m^2=$ cubic and $m^3=$ quadratic, and checkers `cubicOK`/`quadOK` with soundness `cubic_sound`/`quad_sound`. Every listed point is re-verified on the model, every point pulls back to a recorded hit or to nothing, and every hit has a witness. There are 399 generated hit-list theorems, **each from the named hypothesis that Sage's point list is complete**. |
 | `Binomial.lean` (new) | Reductions of $\binom n2=m^3$ and $\binom n3=m^2$ to the curves $Y^2=X^3+1$ and $Y^2=X^3-36X$. The point lists are checked by `decide`. Hit sets $\{1,2\}$ and $\{1,2,3,4,50\}$, **conditional on the named hypotheses** `IntegralPointsCubePlusOne` and `IntegralPointsCongruent6`, which state that the integral-point lists are complete; these are certified by Sage, not by Lean. |
 | `Davenport.lean`, `ABC.lean` (new) | `davenport`, `davenport_sharp`, **`pillai_polynomial`**, **`pillai_polynomial_balanced`**, `pillai_polynomial_sq_sharp` (all unconditional; function-field Pillai from Mason–Stothers). `hall_of_abc`, `pillai_bound_of_abc`, `pillai_finite_of_abc`, all with abc as an explicit hypothesis. |
 | `Generated/MordellPoints.lean` (generated) | Census data grouped by curve, `(k, [(x, y), …])`, checked block by block with `Reflect.mordellOK` (`decide +kernel`). `census_points_valid` states that every listed point lies on its curve, and `census_size` fixes 5641 curves and 8600 points. **Completeness is not checked.** |

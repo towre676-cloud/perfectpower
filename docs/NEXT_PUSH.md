@@ -58,7 +58,20 @@ Current counts (audited declarations, generated certificates, census sizes) are 
   - The external fuzzers are in `make fuzz` and `make test` with fixed seeds.
 - **CI diagnosed.** Jobs are never assigned a runner. That is an account-level Actions block, and only the owner can lift it (README).
 
-**Next:** the exact constant, $A(N)=\kappa\log N+O(1)$, in Lean (the $O(\log N)$ upper bound is done); quartic genus-one models; then the Bilu–Tichy atlas.
+## Done after the third review
+
+- **Exact counts in Lean.**
+  - `pell_exact_count`: canonical orbit roots, ε-growth, per-class counting, and $\kappa=(\sum g/P)/\log\varepsilon$, cross-checked against the atlas constant.
+  - `radical_asymptotic_int`: $\kappa=(R/v)(v/z_0)^{1/t}$, with $R=0$ allowed.
+  - `Atlas.lean`: the finite type as an implication from the named premise `SuperellipticSiegel`.
+- **Theorem G.** `chi_eq` and `chi_neg_iff` hold for all $d$. The Sage sweep now uses Singular's genus and runs robustly.
+- **T2.** The contour now moves past $s=-1$, and the full $O(\tau)$ coefficient is checked numerically.
+- **Genus one.** 399 generated Lean hit-list theorems, each from a named Sage point hypothesis.
+- **pp-cert/1.** A versioned, hash-bound certificate format with importer, round-trip tests, kernel-checked rejection tests and benchmarks.
+- **Quartics.** Now listed, as evidence only.
+- **Manuscripts.** A single status table in the monograph, and related work marked unverified where primary texts were unreachable.
+
+**Next:** Theorems B and C (the general reductions) in Lean; one kernel-checked completeness proof for a nonrigid genus-one family; the primary-source comparison; the Bilu–Tichy counting sequel for one family.
 
 ## Order of work after 0.6 (recommended)
 

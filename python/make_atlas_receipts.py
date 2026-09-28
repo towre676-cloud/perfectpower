@@ -67,6 +67,11 @@ families += [
     ('genus1_cube_6n2_plus_n_plus_1', [1, 1, 6], 3),              # hits 1, 2, 153, 6196204
     ('genus1_cube_n2_plus_n_plus_1', [1, 1, 1], 3),               # hit 18
     ('genus2_n5_plus_2', [2, 0, 0, 0, 0, 1], 2),
+    # genus-one quartics with non-square leading coefficient: no certified method here (Sage has no
+    # integral points on quartic models); Ljunggren (1942) proved 2n^4 - 1 = m^2 only for n = 1, 13
+    ('quartic_ljunggren_2n4_minus_1', [-1, 0, 0, 0, 2], 2),
+    ('quartic_2n4_plus_n2_plus_1', [1, 0, 1, 0, 2], 2),
+    ('quartic_5n4_plus_4', [4, 0, 0, 0, 5], 2),
     ('genus2_n6_plus_n_plus_1', [1, 1, 0, 0, 0, 0, 1], 2),
     ('genus3_cube_n4_plus_n_plus_1', [1, 1, 0, 0, 1], 3),
 ]

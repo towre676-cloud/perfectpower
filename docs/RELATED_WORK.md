@@ -2,11 +2,11 @@
 
 For each strand of prior work this page says three things: what the repository **reproduces**, what it **formalises**, and what, if anything, it **adds**.
 
-**Status of this page.** It was written without library access. Bibliographic details come from memory and from search snippets. The primary texts of LeVeque, Brindza, Walsh and Tengely were not read in the build environment, because every host carrying them was blocked. Before any announcement, a literature pass must check each entry against the primary source, especially the Bilu–Tichy and Schinzel–Tijdeman lineage and all implementations of Runge's method.
+**Status of this page.** It was written without library access. Bibliographic details come from memory, from search snippets and from an external reviewer's notes. The build environment's network policy blocks arXiv and the journal hosts, so **no entry below has yet been checked against its primary text.** Entries marked [unverified] carry claims about the content of a paper that we could not read. Before any announcement, a literature pass must check each entry against the primary source. That pass should cover especially Bilu–Tichy, Schinzel–Tijdeman, the implementations of Runge's method, the 2023 explicit superelliptic bounds and the formal Mordell work. The repository makes no novelty claim that depends on these comparisons.
 
 ## Positioning
 
-- **The atlas and the exponent spectrum are a synthesis.** They combine LeVeque's finiteness theorem with classical Pell and valuation counting, and they add explicit constants and a decidable implementation. We make no priority claim for them.
+- **The atlas and the exponent spectrum are a synthesis.** They combine Siegel's theorem, through the Euler-characteristic computation of Theorem G, with classical Pell and valuation counting. They add explicit constants, a decidable implementation and a formal exact-count interface for the infinite types (`Atlas.lean`). LeVeque's theorem (1964) states the same exceptional patterns and is historical context, not an input. We make no priority claim for the classification.
 - **The Schäffer reproduction confirms the machinery.** It does not extend Schäffer's result.
 - **The second proof of the 0–1 law is conditional and ineffective.** It goes through Siegel's theorem, so it complements the Boshernitzan argument but cannot replace it.
 
@@ -19,11 +19,11 @@ The parts with a chance of being new are engineering and certification:
 ## By strand
 
 **LeVeque, *On the equation $y^m=f(x)$*, Acta Arith. 9 (1964) 209–219.**
-- The finiteness theorem is the input to the atlas's finite type; it is applied, not reproved.
-- *Reproduced:* nothing.
-- *Formalised:* nothing, and it is out of reach.
-- *Adds:* the explicit description of the two exceptional patterns (Theorems B, C) with constants. This is almost certainly classical in substance.
-- The statement is taken from secondary sources (see `TRUST_BOUNDARY.md` §3).
+- Historical context only. The finite type is derived from Siegel's theorem by Theorem G, which recovers the same exceptional patterns. LeVeque is **not** an input.
+- *Reproduced:* the list of exceptional patterns, through $\chi=d'(1-S)$.
+- *Formalised:* the combinatorial half of that derivation (`chi_neg_iff`); the geometric half and Siegel remain external (`SuperellipticSiegel` in `Atlas.lean`).
+- *Adds:* explicit constants for the two infinite nonpower patterns, with formal exact counts. This is almost certainly classical in substance.
+- The statement was only ever available to us from secondary sources [unverified].
 
 **Brindza, Acta Math. Hungar. 44 (1984); and later effective work on superelliptic equations.**
 - These make LeVeque's finiteness effective.
@@ -103,3 +103,21 @@ The parts with a chance of being new are engineering and certification:
 - Lang conjectured that the number of integral points on a quasi-minimal model is at most $C^{1+\mathrm{rank}}$.
 - Hindry–Silverman bound the number of ($S$-)integral points in terms of the rank, the number of bad primes and the Szpiro ratio of the curve. Uniformity in the curve therefore rests on Szpiro's conjecture. This is from memory; check the precise statement against the paper.
 - The census supplies counts, ranks and discriminants. The uniformity plots are **numerical evidence** only.
+
+**Bérczes, Evertse, Győry et al., *Explicit bounds for the solutions of superelliptic equations over number fields* (arXiv:2310.09704) [unverified].**
+- By the reviewer's account, this treats the multiple-root superelliptic regime with explicit bounds. That is the same regime as the atlas's finite type, which the repository handles only ineffectively (via Siegel) outside the Runge branch.
+- It is the natural source for turning `SuperellipticSiegel` into an effective statement. It belongs in the introduction of any paper, not in a deferred roadmap.
+- *Formalised:* nothing.
+
+**Baanen, Best, Coppola, Dahmen, *Formalized class group computations and integral points on Mordell elliptic curves* (CPP 2023, arXiv:2209.15492) [unverified].**
+- Formal complete solutions of selected Mordell equations. Any claim here about formal completeness of genus-one hit lists must be compared with it.
+- The repository does **not** yet prove completeness of any genus-one list in Lean. `Genus1.lean` proves hit lists *from* a named Sage point hypothesis, so it is complementary.
+
+**Flajolet, Gourdon, Dumas, *Mellin transforms and asymptotics: harmonic sums*, TCS 144 (1995) 3–58.**
+- The general machinery behind Theorem T2's log-periodic term. T2's novelty, if any, is limited to its arithmetic input: the Pell orbit and class decomposition, the shift $-B/(2A)$ and the exact correction $\delta_j$.
+
+**Proof by reflection and verified numerical certificates (e.g. LeanCert) [unverified].**
+- `pp-cert/1` (`docs/CERTIFICATE_FORMAT.md`) follows the standard search/check/interpret separation. A comparison of formats and checking times is future work.
+
+**Bilu–Tichy and counting.** Bilu–Tichy classify when $f(x)=g(y)$ has infinitely many rational solutions with bounded denominator. That does not by itself give the number of positive *integral* $x$: integrality, local congruences, compositions and parametrisation multiplicity can change or remove the family. The atlas's Pell and radical modules are the $g=y^d$ case of such a counting theory, and a sequel should first prove the complete integer count for one non-power $g$ family.
+
