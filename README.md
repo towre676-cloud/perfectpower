@@ -1,77 +1,93 @@
-# PerfectPower — density, exponents, and exact hit sets of polynomial perfect powers
+# PerfectPower
 
-**Release 0.6, 28 September 2026.** For $F\in\mathbb Z[x]$ and $d\ge2$, a *hit* is an index $n\ge1$ with $F(n)=m^d$, and $A(N)$ counts hits up to $N$. This repository contains:
+**Certified hit sets and a growth classification for perfect-power values of polynomials.** Release 0.6.
 
-- a publication-oriented manuscript,
-- a compiled Lean 4 kernel,
-- exact stdlib-only Python tooling,
-- reproducible receipts.
+For $F\in\mathbb Z[x]$ and $d\ge2$, a *hit* is an index $n\ge1$ with $F(n)=m^d$, and $A(N)$ counts the hits up to $N$. The repository is three separable artifacts with stated interfaces, plus a manuscript.
 
-## What is proved
+| Artifact | Where | Interface | What you must trust |
+|---|---|---|---|
+| **Lean library** | `PerfectPower/`, `lakefile.toml`, `lean-toolchain`, `lake-manifest.json` | `import PerfectPower`; every public statement has a docstring | Lean and Mathlib `v4.20.0`; `audit/check_axioms.sh` shows only `propext`, `Classical.choice`, `Quot.sound` |
+| **Python tool** (stdlib only) | `python/perfectpower/`, `pyproject.toml` | CLI `perfectpower classify / count / enumerate / lean / shifts`, and a function API ([python/README.md](python/README.md)) | Its classifications and counts are paper proofs plus tests. Its **Lean output** needs no trust once compiled. |
+| **Dataset** | `data/families.csv`, `receipts/*.json` | One row per family, with type, growth, $\kappa$, hits, certification label, and the command that reproduces the row | Each row's label, defined in [TRUST_BOUNDARY.md](docs/TRUST_BOUNDARY.md) |
 
-| Result | Status |
-|---|---|
-| **0–1 law.** The hit density is $1$ if $F=G^d$ with $G\in\mathbb Z[x]$, else $0$ ([monograph](docs/MONOGRAPH.md) §3). | Paper proof using Boshernitzan; an independent route via LeVeque is in [the research notes](docs/RESEARCH_NOTES.md). |
-| **Rigid branch** ($d\mid\deg F$, leading coefficient a $d$-th power): exact power or finitely many hits; density exists and is $0$ or $1$. | **Lean-verified**: `rigid_dichotomy`, `rigid_zero_one`. |
-| **Twisted powers** $D^dF=cH^d$ with $c$ not a $d$-th power: every hit is a root of $H$. | **Lean-verified**: `twisted_finite`, and `power_type_finite` over $\mathbb Q[x]$. |
-| Finite surgery, periodic density $P/T$, convergence bridge, finite-support squeeze. | **Lean-verified.** |
-| **Monomials** $n^r$: hits are exactly the $t$-th powers, $A(N)=\lfloor N^{1/t}\rfloor$, $t=d/\gcd(r,d)$; this realises every exponent of the spectrum. | **Lean-verified**: `monomial_count`. |
-| Complete hit lists: $1+n+\dots+n^4=m^2 \iff n=3$ (Ljunggren); $n(n+1)(n+2)(n+3)$ is never a square. | **Lean-verified**: `ljunggren_hitSet`, `consecutive_four_hitSet`. |
-| **Machine-generated certificates** (new): Python finds a Runge plan and emits a Lean theorem "the hit set is exactly $H$", which Lean checks independently. There are 17 instances, including products of up to 12 consecutive integers. | **Lean-verified**: `PerfectPower/Generated/Runge.lean`. |
-| **Pell example** $2n^2+1$: infinitely many square values but density zero, with $A(N)\le\sqrt N$. | **Lean-verified**: `pell_hitSet_infinite`, `pell_hasDensity_zero`. |
-| **Atlas** (new): $A(N)$ is $N$, $\kappa N^{1/t}+O(1)$ with $t\mid d$, $\kappa\log N+O(1)$, or bounded, with explicit $\kappa$; the type is decidable from root multiplicities. | Paper proof plus LeVeque's theorem for the bounded case ([notes](docs/RESEARCH_NOTES.md) §§2–5). |
-| **Exponent spectrum** (new): $\alpha(F,d)\in\{0,1\}\cup\{1/t: t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ ($p$ the least prime factor of $d$) for every non-power $F$. | Corollary of the atlas. |
-| **Complete Runge enumeration** (new): in the rigid branch the entire hit set is computed, not just a cutoff. | Paper proof; the reduction to finitely many $G_t$ is Lean-verified (`runge_finite`); exact implementation. |
-| **Sums of powers** (new): the atlas recovers Schäffer's list $(k,d)\in\{(1,2),(3,2),(3,4),(5,2)\}$ of infinite families $1^k+\dots+n^k=m^d$, with constants (e.g. $\kappa=1/\log(5+2\sqrt6)$ for $k=5$). | Corollary of the atlas; receipt-checked. |
-| **Shift spectrum** (new): for $\deg S\ge3$, $S(n)+k$ has finitely many hits except at the $\le\deg S-1$ critical values $k$. | Corollary of the atlas. |
-| **Exponential sequences** (new): $c\,a^n$ is a $d$-th power exactly on one residue class modulo $L=d/\gcd(d,s)$ ($a=b^s$), so the density is $0$ or $1/L$; shifts $c\,a^n+k$ have finitely many hits. | Paper proof; the periodic core (density exists and equals $P/d$) is **Lean-verified** (`exp_hasDensity`); the shifted case uses Thue and S-unit theorems. |
-| **Transform asymptotics** (new): Dirichlet poles and heat asymptotics for every type. | Paper proof ([notes](docs/RESEARCH_NOTES.md) §8). |
+**Start here:** [TRUST_BOUNDARY.md](docs/TRUST_BOUNDARY.md) (one page), then [TUTORIAL.md](docs/TUTORIAL.md), which goes from a polynomial to a compiled Lean certificate in five minutes.
 
-Reading order:
+## Status in numbers
 
-1. [MONOGRAPH.md](docs/MONOGRAPH.md): definitions and the 0–1 law.
-2. [RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md): the v0.6 theorems with proofs.
-3. [paper/perfectpower.pdf](paper/perfectpower.pdf): the same results as a typeset paper (source `paper/perfectpower.tex`; build with `pdflatex` twice).
-4. [FORMAL_AUDIT.md](docs/FORMAL_AUDIT.md): exactly what the Lean build certifies.
+<!-- counts:begin (generated by python/make_counts.py; do not edit) -->
+- Lean declarations audited: **62**; using only `propext`, `Classical.choice`, `Quot.sound`: **62**.
+- Machine-generated Lean hit-set certificates: **19**.
+- Atlas families by certification label: `COMPLETE_HIT_LIST` 1, `INDEPENDENT_COMPUTATION` 3, `LEAN_CERTIFIED` 16, `PROVED_STRUCTURAL` 19, `SCAN_EVIDENCE_ONLY` 2.
+- Cubic cross-validation ($m^2=n^3+an+b$, $|a|,|b|\le12$): 622/622 certified by Sage, 0 disagreements with the scan to $10^5$.
+- Adversarial Runge test: 220 planted-hit trials, 0 failures, planted hits up to 993,384,039.
+<!-- counts:end -->
 
-## Lean
+## What is established, and how
 
-The toolchain is Lean `v4.20.0`, with Mathlib pinned to tag `v4.20.0` in `lake-manifest.json`.
+**Machine-checked in Lean** (standard axioms only):
+
+- **Rigid branch.** If $d\mid\deg F$ and the leading coefficient is a $d$-th power, then either $F=G^d$ with $G\in\mathbb Z[x]$ or the hit set is finite. The density exists and is $0$ or $1$ (`rigid_dichotomy`, `rigid_zero_one`).
+- **Explicit families.**
+  - Twisted powers $c\,G^d$ are finite (`power_type_finite`).
+  - Monomials $n^r$ hit exactly at the $t$-th powers, $t=d/\gcd(r,d)$ (`monomial_count`).
+  - The hit indicator of $c\,a^n$ is $d$-periodic, so its density is $P/d$ (`exp_hasDensity`).
+  - $2n^2+1$ has infinitely many square values and density zero (`pell_hasDensity_zero`).
+- **Runge reduction in integer form** (`runge_finite`).
+- **Complete hit sets, generated by the Python tool and checked by Lean:**
+  - Ljunggren's quartic;
+  - $n^4+1$ and $n^4+7$ as squares;
+  - two sextic cubes;
+  - products of $k$ consecutive integers that are never $d$-th powers, for:
+
+    | $k$ | $d$ |
+    |---|---|
+    | 4 | 2, 4 |
+    | 6 | 2, 3, 6 |
+    | 8 | 2, 4, 8 |
+    | 10 | 2, 5 |
+    | 12 | 2, 3, 4, 6 |
+
+  These are fixed instances of Erdős–Selfridge. The $(10,2)$ and $(12,4)$ cases use interval-sandwich certificates.
+
+**Paper proofs, cross-checked by exact computation** ([RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md), [paper](paper/perfectpower.pdf)):
+
+- the radical and Pell types, with explicit constants $\kappa$ (Theorems B, C, Lemma Q);
+- complete enumeration in the rigid branch (Theorem R);
+- exponential sequences (Theorem E);
+- transform asymptotics (Theorem T).
+
+**Conditional on LeVeque's theorem, and therefore on Siegel's — ineffective:**
+
+- the four-type atlas as a *complete* classification;
+- the exponent spectrum $\alpha(F,d)\in\{0,1\}\cup\{1/t : t\mid d\}$ and the $O(N^{1/p})$ barrier;
+- the shift spectrum;
+- a second proof of the density 0–1 law. This proof cannot replace the Boshernitzan argument where effectivity matters.
+
+The atlas and the spectrum are a **synthesis** of LeVeque with classical Pell and valuation counting, made explicit and decidable. The Schäffer sums-of-powers reproduction confirms the machinery rather than extending it. See [RELATED_WORK.md](docs/RELATED_WORK.md). No priority is claimed.
+
+**Scan evidence only.** Finite-type families outside the rigid branch that have not been independently certified are labelled `SCAN_EVIDENCE_ONLY`. For example, $\binom n3=m^2$ has scan hits $3,4,50$ up to $10^5$. Cubics $m^2=n^3+an+b$ with $|a|,|b|\le12$ are certified independently by Sage ([crosscheck/](crosscheck/README.md)). These include $n^3+n+4$, whose only hit is at $n=4128$.
+
+## Reproduce
 
 ```sh
-lake exe cache get      # or build Mathlib from source (about 1900 modules)
-lake build
-./audit/check_axioms.sh # fails on sorry or any axiom beyond propext, Classical.choice, Quot.sound
+make verify          # lake build, axiom audit, Python tests, regenerate receipts, zero-diff check
+docker build -t perfectpower . && docker run --rm perfectpower     # same, in a clean container
+make crosscheck      # optional: Sage cross-validation of the cubic table
 ```
 
-All modules compile. Fifty-nine audited theorems (including 17 machine-generated complete hit sets) use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
+Mathlib is pinned in `lake-manifest.json`. `lake exe cache get` fetches the build cache; if the cache host is unreachable, `lake build` compiles Mathlib from source, about 1900 modules.
 
-## Python (standard library only)
+**CI status.** Both GitHub Actions workflows fail within seconds at job start-up, before any step runs, and they already did so for the unmodified v0.5 import. This points to an account-level Actions setting or limit, not to the code. Until that is resolved, treat the badge-less state as **suspended**: `make verify` is the reference check, and it passes locally.
 
-Coefficients are given low-to-high, so `1,4` means $4x+1$.
+## Documents
 
-```sh
-PYTHONPATH=python python3 -m unittest discover -s python/tests -v
-PYTHONPATH=python python3 -m perfectpower scan      --coeff 1,4 --d 2 --N 10000
-PYTHONPATH=python python3 -m perfectpower classify  --coeff 1,0,2 --d 2          # Pell type, kappa = 1/log(3+2*sqrt2)
-PYTHONPATH=python python3 -m perfectpower count     --coeff 1,0,2 --d 2 --N 1000000000000000000000000
-PYTHONPATH=python python3 -m perfectpower enumerate --coeff 1,1,1,1,1 --d 2      # complete: only n = 3
-PYTHONPATH=python python3 -m perfectpower shifts    --coeff 0,-3,0,1 --d 2       # critical shifts k = +-2
-PYTHONPATH=python python3 -m perfectpower lean      --coeff 7,0,0,0,1 --d 2      # emit a Lean proof of the hit set
-PYTHONPATH=python python3 -m perfectpower certificate --coeff 1,0,0,0,1 --d 2    # v0.5 cutoff certificate
-python3 python/make_receipts.py && python3 python/make_atlas_receipts.py
-```
+- [MONOGRAPH.md](docs/MONOGRAPH.md): definitions and the original 0–1 law (v0.5 text with status notes).
+- [RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md) and [paper/perfectpower.pdf](paper/perfectpower.pdf): v0.6 statements and proofs.
+- [FORMAL_AUDIT.md](docs/FORMAL_AUDIT.md): the Lean build, file by file.
+- [RECEIPTS.md](docs/RECEIPTS.md): status labels of the receipts.
+- [OPEN_PROBLEMS.md](docs/OPEN_PROBLEMS.md): open problems and good first issues.
+- [NEXT_PUSH.md](docs/NEXT_PUSH.md): the roadmap.
 
-The modules are:
+## Licence and citation
 
-| Module | Contents |
-|---|---|
-| `core.py` | exact hit definition, v0.5 certificate |
-| `polyalg.py` | exact $\mathbb Q[x]$ algebra: squarefree decomposition, Sturm integer roots, resultants |
-| `arith.py` | factoring, square roots mod $m$, Pell and LMM |
-| `runge.py` | complete rigid enumeration |
-| `atlas.py` | classification, structural hits and counts, shift spectrum |
-
-## Receipts
-
-`receipts/exact_benchmarks.json` is the v0.5 receipt, unchanged apart from regeneration. `receipts/atlas_benchmarks.json` covers 41 polynomial families: their classification, exponent, $\kappa$, and structural counts up to $10^{24}$. Each structural count is cross-checked against the defining scan up to $10^5$. The receipt also contains complete hit lists, a Grunwald–Wang check, the Schäffer sums-of-powers table ($k\le10$, $d\le6$), and heat-kernel checks of Theorem T. [Receipt policy](docs/RECEIPTS.md) defines the status labels, and [the roadmap](docs/NEXT_PUSH.md) lists what is open.
+Code and Lean sources are licensed under [Apache-2.0](LICENSE). The documents in `docs/` and `paper/` are licensed under [CC-BY-4.0](LICENSE-docs). To cite, see [CITATION.cff](CITATION.cff).

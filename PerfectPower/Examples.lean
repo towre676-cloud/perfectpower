@@ -26,7 +26,6 @@ it equals `(n^2+3n+1)^2 - 1`. -/
 theorem consecutive_four_not_square (n : ℕ) (hn : 1 ≤ n) :
     ¬ IsHit 2 ((n : ℤ) * (n + 1) * (n + 2) * (n + 3)) := by
   rintro ⟨m, hm⟩
-  have hn' : (1 : ℤ) ≤ n := by exact_mod_cast hn
   apply not_sq_between (a := (n : ℤ) ^ 2 + 3 * n) (m := m) (by positivity)
   · nlinarith
   · nlinarith
@@ -46,7 +45,6 @@ theorem ljunggren_quartic (n : ℕ) (hn : 1 ≤ n) :
     IsHit 2 (1 + (n : ℤ) + n ^ 2 + n ^ 3 + n ^ 4) ↔ n = 3 := by
   constructor
   · rintro ⟨m, hm⟩
-    have hn' : (1 : ℤ) ≤ n := by exact_mod_cast hn
     set a : ℤ := 2 * n ^ 2 + n with ha
     have ha0 : 0 ≤ a := by positivity
     -- (2m)^2 = 4F lies in ((a)^2, (a+2)^2)

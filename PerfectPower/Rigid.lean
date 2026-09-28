@@ -147,8 +147,6 @@ lemma trunc_induction {q e : ℕ} (b : ℚ) (hb : b ≠ 0) (F : ℚ[X])
   | succ j ih =>
     intro hj
     obtain ⟨Q, hQd, hQl, hQR⟩ := ih (by omega)
-    have hQ0 : Q ≠ 0 := by
-      intro h; rw [h, leadingCoeff_zero] at hQl; exact hb hQl.symm
     obtain ⟨k, hk⟩ : ∃ k, k = q - j - 1 := ⟨_, rfl⟩
     obtain ⟨N1, hN1⟩ : ∃ N1, N1 = q * (e + 2) - j - 1 := ⟨_, rfl⟩
     have hkq : k < q := by omega
@@ -189,8 +187,6 @@ lemma trunc_induction {q e : ℕ} (b : ℚ) (hb : b ≠ 0) (F : ℚ[X])
         have hcl : (Q ^ (e + 1)).coeff ((e + 1) * q) = b ^ (e + 1) := by
           rw [← hQpow, ← leadingCoeff, leadingCoeff_pow, hQl]
         rw [hcl]
-        have h1 : (((e + 2 : ℕ) : ℚ)) ≠ 0 := by positivity
-        have h2 : b ^ (e + 1) ≠ 0 := pow_ne_zero _ hb
         simp only [c]
         field_simp
         rw [← hN1eq]; ring

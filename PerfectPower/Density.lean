@@ -165,8 +165,6 @@ theorem hasDensity_of_periodic {S : ℕ → ℤ} {d : ℕ} {k : ℤ} {T : ℕ} (
     field_simp; ring
   rw [Real.norm_eq_abs, hdiff, abs_div, abs_of_pos hNpos]
   apply div_le_div_of_nonneg_right _ hNpos.le
-  have h0 : (0 : ℝ) ≤ A S d k r := Nat.cast_nonneg _
-  have hP0 : (0 : ℝ) ≤ A S d k T := Nat.cast_nonneg _
   have h1 : (0 : ℝ) ≤ r * A S d k T / T := by positivity
   have h2 : (r : ℝ) * A S d k T / T ≤ A S d k T := by
     rw [div_le_iff₀ hTr]; nlinarith

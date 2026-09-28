@@ -67,7 +67,7 @@ i.e. `⌊N^(1/t)⌋`. -/
 theorem monomial_count {r d : ℕ} (hd : 0 < d) (N : ℕ) :
     A (fun n => (n : ℤ) ^ r) d 0 N =
       ((Finset.Icc 1 N).filter (fun w => w ^ (d / Nat.gcd r d) ≤ N)).card := by
-  set t := d / Nat.gcd r d with htdef
+  set t := d / Nat.gcd r d
   have ht0 : t ≠ 0 := by
     have := Nat.div_pos (Nat.gcd_le_right (m := r) hd) (Nat.gcd_pos_of_pos_right r hd)
     omega

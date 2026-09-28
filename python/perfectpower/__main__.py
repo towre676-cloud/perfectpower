@@ -32,6 +32,8 @@ def main():
     p.add_argument('--coeff', required=True, type=coefficients)
     p.add_argument('--d', type=int, required=True)
     p.add_argument('--name', default='generated_hits')
+    p.add_argument('--method', choices=('runge', 'sandwich'), default='runge',
+                   help='runge: Taylor-shift plan (small thresholds); sandwich: interval cover')
     p = sub.add_parser('shifts', help='type of S + k for every integer shift k')
     p.add_argument('--coeff', required=True, type=coefficients)
     p.add_argument('--d', type=int, required=True)
@@ -47,7 +49,15 @@ def main():
         parser.error('d >= 2 required')
     if args.command == 'lean':
         from .lean_emit import emit
-        text = emit(args.name, args.coeff, args.d, T_max=6, x0_max=300)
+        if args.method == 'sandwich':
+            from .lean_sandwich import emit_sandwich
+            try:
+                text, _ = emit_sandwich(args.name, args.coeff, args.d)
+            except ValueError as exc:
+                print(exc, file=sys.stderr)
+                raise SystemExit(1)
+        else:
+            text = emit(args.name, args.coeff, args.d, T_max=6, x0_max=300)
         if text is None:
             print('no Runge plan (needs rigid F with positive leading coefficient)', file=sys.stderr)
             raise SystemExit(1)

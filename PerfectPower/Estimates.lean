@@ -172,7 +172,6 @@ theorem eventually_no_hit {d : ℕ} (hd : 2 ≤ d) {F : ℤ[X]} {Q : ℚ[X]}
     rw [this] at hr0; simp at hr0
   have hlow := abs_sub_ge_inv D (P.eval (n : ℤ)) y hD (by rw [← hxD]; exact hyx)
   rw [← hxD] at hlow
-  have hup := lt_of_le_of_lt hyb hsmall
   have hcmp : 1 / (2 * |(D : ℝ)|) < 1 / |(D : ℝ)| := by
     rw [div_lt_div_iff₀ (by positivity) hDpos]; nlinarith
   linarith

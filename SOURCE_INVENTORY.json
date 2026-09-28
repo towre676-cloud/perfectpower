@@ -33,8 +33,8 @@
     },
     {
       "path": "PerfectPower/Density.lean",
-      "bytes": 7472,
-      "sha256": "a803b61cf052f4b064c322eeacfaf8d66b8669a1294f24b165fbe29d16b9cd6b"
+      "bytes": 7357,
+      "sha256": "92564b9b6dc09d903cad6ea00bf90dab77f2f7a807b51b43bf40c2f673fe4099"
     },
     {
       "path": "PerfectPower/Dichotomy.lean",
@@ -43,18 +43,18 @@
     },
     {
       "path": "PerfectPower/Estimates.lean",
-      "bytes": 9125,
-      "sha256": "43a2280c009e634bc8cb687fa1b8f3ee455202b9be1b863925fbc1fcf89a4ebc"
+      "bytes": 9085,
+      "sha256": "25e0ad3f1f5d8faecbc4586ed69776dd76d39b1b8352a1e36513115e2dbf9d98"
     },
     {
       "path": "PerfectPower/Examples.lean",
-      "bytes": 3119,
-      "sha256": "abf32fba790b8e1cd9bc4322438782a4f289c2f39a2cc9526f2168dc42073e14"
+      "bytes": 3011,
+      "sha256": "54246737c275856c1208b4bd2406038d8d28a2fdf51a721e8a114088814fe3e4"
     },
     {
       "path": "PerfectPower/Exponential.lean",
-      "bytes": 3830,
-      "sha256": "8d164578786331100e08241776e6a900c2071757d52ff03f8c6f30be9bb1e454"
+      "bytes": 3772,
+      "sha256": "e669689082bf091b1665d9811982cd91f8e1779c376056454a970acc1be5735b"
     },
     {
       "path": "PerfectPower/Generated/Runge.lean",
@@ -62,19 +62,24 @@
       "sha256": "8b1ffc7300a2c5d562d11fdceeea60d73f71d435e60a3b4925dad895f062ee9f"
     },
     {
+      "path": "PerfectPower/Generated/Sandwich.lean",
+      "bytes": 768357,
+      "sha256": "ccdef87677a2c71b4a984a1db6c93299b55ca247866aa43a0c2973b6197b8320"
+    },
+    {
       "path": "PerfectPower/Monomial.lean",
-      "bytes": 4290,
-      "sha256": "cf0ff18b6d25f1da2262966213629c2c2432d63908460ccca06ba6643ce3bcf4"
+      "bytes": 4279,
+      "sha256": "09491b9409a5a3a8d21bd9599ae4d48951169e0fe1e47b6df21f744fedbbfd6a"
     },
     {
       "path": "PerfectPower/Pell.lean",
-      "bytes": 6730,
-      "sha256": "10d10e1991c10712021465238a128a700767557e1b2f740c46d9c3c89a583961"
+      "bytes": 6539,
+      "sha256": "37b33321edf02c15f93be50f927650785cbca96872ff0e7e8616f3819b73e87b"
     },
     {
       "path": "PerfectPower/Rigid.lean",
-      "bytes": 11933,
-      "sha256": "ac92614c20ed5bf9c5c3470e75e4f12844da8d0982dc29974edc946eace73683"
+      "bytes": 11716,
+      "sha256": "7d66de101f2729d239cc22efa3f2347474d3da590d51b4b823486155149d4ea2"
     },
     {
       "path": "PerfectPower/RungeReduction.lean",
@@ -88,8 +93,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6480,
-      "sha256": "56fec831e6f2ed68e5d5ba421033a63f6e7f6a91b64b6c40db31b345a01a3364"
+      "bytes": 6297,
+      "sha256": "0a56db3a741c5f1be74d6ccc6520378ae7c04eef8697c6a6312bac3570caf55f"
     },
     {
       "path": "audit/Axioms.lean",
@@ -98,8 +103,18 @@
     },
     {
       "path": "audit/check_axioms.sh",
-      "bytes": 450,
-      "sha256": "8af9c81a5a3809a455778e57bc86eaf1d0832d24106f2441ad7556aa31fe540f"
+      "bytes": 497,
+      "sha256": "d604ff22eb20b13622ceff1cc7b22c46c161c6ef7c73ed12c0a0f53d350e60ec"
+    },
+    {
+      "path": "crosscheck/cubics_sage.py",
+      "bytes": 5835,
+      "sha256": "7d69b047441d71c99d961860d1a3382d3b5c6f8d6f577212cf3b629fc1f650b4"
+    },
+    {
+      "path": "data/families.csv",
+      "bytes": 10463,
+      "sha256": "965fdd8d6fc0c038179592e2da70436461a4f012baabeccb6a4843c4860d14e2"
     },
     {
       "path": "docs/FORMAL_AUDIT.md",
@@ -178,8 +193,8 @@
     },
     {
       "path": "python/perfectpower/__main__.py",
-      "bytes": 6379,
-      "sha256": "896e1e2371014f8da384bc0b0019e09823432ad75707f597aabaabf3844f447b"
+      "bytes": 6870,
+      "sha256": "1757885bae3ca8114f26caa27eaecfd35f755566b8cdea610318522fcede70d8"
     },
     {
       "path": "python/perfectpower/arith.py",
@@ -207,6 +222,11 @@
       "sha256": "309f8861e9b29d62faf191e7528a55b5df931bf34689741f033c9692bf3a0d70"
     },
     {
+      "path": "python/perfectpower/lean_sandwich.py",
+      "bytes": 11375,
+      "sha256": "999b45abdbe9fce4fb60de7b56cb88c25e678feffa4633442b4b1295b1648bd8"
+    },
+    {
       "path": "python/perfectpower/polyalg.py",
       "bytes": 8106,
       "sha256": "fecb8684949b0863f696498ce9f37c390b4f3e9a41356c80734a9e906e7aa6ee"
@@ -232,9 +252,19 @@
       "sha256": "41a69d84c200bc7ecb25f6569244d7bf8eb72a1dc86a6b7f05582b2a58b02266"
     },
     {
+      "path": "receipts/cubic_crossval.json",
+      "bytes": 231635,
+      "sha256": "bdc84f24f6fd8d942af4a5a45e146c6e6b3cf2252db13bbfea52f257a463d870"
+    },
+    {
       "path": "receipts/exact_benchmarks.json",
       "bytes": 4443,
       "sha256": "8a71e987f878d40c4d5a9a97589e317d2e8866c4dc41a6784873ab53f822dc14"
+    },
+    {
+      "path": "receipts/sandwich_certificates.json",
+      "bytes": 713,
+      "sha256": "f8095ad4f429298fa0015d213eecd852ed540cd64234f6dbb18b32165e4cfb5b"
     }
   ]
 }

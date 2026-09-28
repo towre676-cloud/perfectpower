@@ -60,7 +60,6 @@ theorem pell_descent : ∀ (n : ℕ) (m : ℤ), 0 ≤ m → m ^ 2 - 2 * (n : ℤ
         rcases le_or_lt m 1 with h1 | h1
         · nlinarith
         · nlinarith
-      have hn' : (2 : ℤ) ≤ n := by exact_mod_cast hn2
       -- predecessor (3m - 4n, 3n - 2m)
       have hmn : (n : ℤ) < m := by nlinarith
       have hA : 0 ≤ 3 * m - 4 * n := by nlinarith
@@ -140,10 +139,7 @@ theorem pell_hasDensity_zero : HasDensity (fun n => 2 * (n : ℤ) ^ 2 + 1) 2 0 0
         _ ≤ Real.sqrt a := Real.sqrt_le_sqrt hle
     refine (tendsto_inv_atTop_zero.comp hsq).congr' ?_
     filter_upwards [eventually_ge_atTop 1] with N hN
-    have hN' : (0 : ℝ) < N := by exact_mod_cast hN
     simp only [Function.comp]
-    have hs := Real.mul_self_sqrt hN'.le
-    have hpos := Real.sqrt_pos.mpr hN'
     field_simp
 
 end PerfectPower

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "perfectpower"
+version = "0.6.0"
+description = "Exact classification, complete enumeration and Lean certificates for perfect-power values of polynomials"
+readme = "python/README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = []          # standard library only
+
+[project.scripts]
+perfectpower = "perfectpower.__main__:main"
+
+[tool.setuptools]
+package-dir = { "" = "python" }
+packages = ["perfectpower"]

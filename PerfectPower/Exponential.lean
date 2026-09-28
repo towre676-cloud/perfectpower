@@ -62,11 +62,10 @@ theorem two_pow_hasDensity_half : HasDensity (fun n => (1 : ℤ) * 2 ^ n) 2 0 (1
   have hr' : (r : ℝ) ≤ 1 := by
     have : r ≤ 1 := by omega
     exact_mod_cast this
-  have hr0 : (0 : ℝ) ≤ r := Nat.cast_nonneg r
   unfold ratio
   rw [hAq]
   push_cast
-  set X : ℝ := (A (fun n => (1 : ℤ) * 2 ^ n) 2 0 r : ℝ) with hX
+  set X : ℝ := (A (fun n => (1 : ℤ) * 2 ^ n) 2 0 r : ℝ)
   have h0 : (0 : ℝ) ≤ X := Nat.cast_nonneg _
   have key : (X + q * 1) / (q * 2 + r) - 1 / 2 = (2 * X - r) / (2 * (q * 2 + r)) := by
     field_simp; ring
