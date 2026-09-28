@@ -91,10 +91,25 @@ for name, f, d in families:
                         'v05_certificate_cutoff': c.cutoff}
     rows.append(row)
 
+# Grunwald-Wang: 16 is an 8th power modulo every odd prime (checked below 2e4 by Euler's
+# criterion for 8th powers), while 16 n^8 is never an 8th power (Theorem P).
+sieve = bytearray([1]) * 20001
+sieve[0] = sieve[1] = 0
+for i in range(2, 142):
+    if sieve[i]:
+        sieve[i * i::i] = bytearray(len(sieve[i * i::i]))
+odd_primes = [p for p in range(3, 20001) if sieve[p]]
+from math import gcd
+failures = [p for p in odd_primes if pow(16, (p - 1) // gcd(8, p - 1), p) != 1]
+grunwald = {'odd_primes_checked_below': 20000, 'primes_checked': len(odd_primes),
+            'primes_where_16_is_not_an_8th_power': failures,
+            'eighth_powers_mod_32': sorted({pow(x, 8, 32) for x in range(32)})}
+
 result = {'status': 'exact computations; structural counts cross-checked against the defining '
                     'scan up to 1e5; complete hit lists are proofs relative to Theorems P, B, C, R',
           'generator': 'python3 python/make_atlas_receipts.py',
           'definition': 'count n in [1,N] with F(n)=m**d for an integer m',
+          'grunwald_wang_check': grunwald,
           'rows': rows}
 out = root / 'receipts' / 'atlas_benchmarks.json'
 out.write_text(json.dumps(result, indent=2) + '\n')

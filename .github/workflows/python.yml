@@ -12,7 +12,8 @@ jobs:
           python-version: '3.12'
       - name: Exact regression suite
         run: PYTHONPATH=python python3 -m unittest discover -s python/tests -v
-      - name: Reproduce benchmark receipt
+      - name: Reproduce benchmark receipts
         run: |
           python3 python/make_receipts.py
-          git diff --exit-code -- receipts/exact_benchmarks.json
+          python3 python/make_atlas_receipts.py
+          git diff --exit-code -- receipts/

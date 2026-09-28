@@ -1,11 +1,69 @@
-# PerfectPower — density dichotomy and hit-count laboratory
+# PerfectPower — density, exponents, and exact hit sets of polynomial perfect powers
 
-**Release 0.5, 28 September 2026.** This is a repo-ready handoff containing a publication-oriented mathematical manuscript, a preserved Lean proof attempt, an exact Python implementation of the actual perfect-power hit definition, a deterministic benchmark receipt, and an explicit finite-hit cutoff certificate for the rigid polynomial branch. Read [the monograph](docs/MONOGRAPH.md) for the full proof and its dependencies and [the formal audit](docs/FORMAL_AUDIT.md) before citing any Lean statement as checked.
+**Release 0.6, 28 September 2026.** For $F\in\mathbb Z[x]$ and $d\ge2$, a *hit* is an index $n\ge1$ with $F(n)=m^d$, and $A(N)$ counts hits up to $N$. This repository contains:
 
-The central theorem is that for F=S+k∈ℤ[x] and d≥2, the ordinary hit density is one exactly when F is G^d for some G∈ℤ[x] and zero otherwise. The proof uses Boshernitzan's established criterion in its nonrigid branch. When deg(F) is divisible by d and the leading coefficient is an integer d-th power, either F itself is an integer-polynomial d-th power or its hits are finite. The Python tool constructs a conservative exact cutoff B in the latter case, verifying that no hit occurs at n≥B. The hit count below B must be scanned separately to enumerate all hits.
+- a publication-oriented manuscript,
+- a compiled Lean 4 kernel,
+- exact stdlib-only Python tooling,
+- reproducible receipts.
 
-From this directory, run `PYTHONPATH=python python3 -m unittest discover -s python/tests -v`. An exact scan is `PYTHONPATH=python python3 -m perfectpower scan --coeff 1,4 --d 2 --k 0 --N 10000`; coefficients are low-to-high, so `1,4` is 4x+1. To construct a certificate, run `PYTHONPATH=python python3 -m perfectpower certificate --coeff 1,0,0,0,1 --d 2`. Save the nested `certificate` JSON object to a file and run `PYTHONPATH=python python3 -m perfectpower verify FILE`. To demonstrate finite surgery of S(n)=n, run `PYTHONPATH=python python3 -m perfectpower surgery --coeff 0,1 --d 2 --N0 31 --N 1000 --override 2:4 --override 3:9`. The replacement values change only specified prefix indices, so eventual agreement is known by construction. To reproduce benchmark counts, run `python3 python/make_receipts.py`.
+## What is proved
 
-The attached Lean files in `PerfectPower/` remain **uncompiled proof attempts**, including the rigid algebraic and analytic arguments. They contain no `sorry`, which is not a compilation or correctness claim. `lakefile.toml` now names a Mathlib v4.20.0 tag alongside Lean v4.20.0, but the release/cache was unavailable here, so even the pin's remote availability is unverified. No compiled Lean result is included in this handoff. The original source contents were preserved except for this declared pin and the release documentation. Python uses only the standard library; the bundled tests passed locally.
+| Result | Status |
+|---|---|
+| **0–1 law.** The hit density is $1$ if $F=G^d$ with $G\in\mathbb Z[x]$, else $0$ ([monograph](docs/MONOGRAPH.md) §3). | Paper proof using Boshernitzan; an independent route via LeVeque is in [the research notes](docs/RESEARCH_NOTES.md). |
+| **Rigid branch** ($d\mid\deg F$, leading coefficient a $d$-th power): exact power or finitely many hits; density exists and is $0$ or $1$. | **Lean-verified**: `rigid_dichotomy`, `rigid_zero_one`. |
+| **Twisted powers** $D^dF=cH^d$ with $c$ not a $d$-th power: every hit is a root of $H$. | **Lean-verified**: `twisted_finite`. |
+| Finite surgery, periodic density $P/T$, convergence bridge, finite-support squeeze. | **Lean-verified.** |
+| **Atlas** (new): $A(N)$ is $N$, $\kappa N^{1/t}+O(1)$ with $t\mid d$, $\kappa\log N+O(1)$, or bounded, with explicit $\kappa$; the type is decidable from root multiplicities. | Paper proof plus LeVeque's theorem for the bounded case ([notes](docs/RESEARCH_NOTES.md) §§2–5). |
+| **Exponent spectrum** (new): $\alpha(F,d)\in\{0,1\}\cup\{1/t: t\mid d,\ t>1\}$, and $A(N)=O(N^{1/p})$ ($p$ the least prime factor of $d$) for every non-power $F$. | Corollary of the atlas. |
+| **Complete Runge enumeration** (new): in the rigid branch the entire hit set is computed, not just a cutoff. | Paper proof; its analytic core is Lean-verified; exact implementation. |
+| **Shift spectrum** (new): for $\deg S\ge3$, $S(n)+k$ has finitely many hits except at the $\le\deg S-1$ critical values $k$. | Corollary of the atlas. |
+| **Transform asymptotics** (new): Dirichlet poles and heat asymptotics for every type. | Paper proof ([notes](docs/RESEARCH_NOTES.md) §8). |
 
-The exact benchmark receipt is [receipts/exact_benchmarks.json](receipts/exact_benchmarks.json). It reports finite counts and certificates without promoting observed absence of further hits into a theorem. [The next-push roadmap](docs/NEXT_PUSH.md) separates completion of the formal kernel, explicit arithmetic rates, analytic transform theorems, and new natural-sequence cases. [Receipt policy](docs/RECEIPTS.md) states the proof and execution statuses.
+Reading order:
+
+1. [MONOGRAPH.md](docs/MONOGRAPH.md): definitions and the 0–1 law.
+2. [RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md): the v0.6 theorems with proofs.
+3. [FORMAL_AUDIT.md](docs/FORMAL_AUDIT.md): exactly what the Lean build certifies.
+
+## Lean
+
+The toolchain is Lean `v4.20.0`, with Mathlib pinned to tag `v4.20.0` in `lake-manifest.json`.
+
+```sh
+lake exe cache get      # or build Mathlib from source (about 1900 modules)
+lake build
+./audit/check_axioms.sh # fails on sorry or any axiom beyond propext, Classical.choice, Quot.sound
+```
+
+All six modules compile. Eighteen audited theorems use only the standard axioms. CI (`.github/workflows/lean.yml`) repeats both steps.
+
+## Python (standard library only)
+
+Coefficients are given low-to-high, so `1,4` means $4x+1$.
+
+```sh
+PYTHONPATH=python python3 -m unittest discover -s python/tests -v
+PYTHONPATH=python python3 -m perfectpower scan      --coeff 1,4 --d 2 --N 10000
+PYTHONPATH=python python3 -m perfectpower classify  --coeff 1,0,2 --d 2          # Pell type, kappa = 1/log(3+2*sqrt2)
+PYTHONPATH=python python3 -m perfectpower count     --coeff 1,0,2 --d 2 --N 1000000000000000000000000
+PYTHONPATH=python python3 -m perfectpower enumerate --coeff 1,1,1,1,1 --d 2      # complete: only n = 3
+PYTHONPATH=python python3 -m perfectpower shifts    --coeff 0,-3,0,1 --d 2       # critical shifts k = +-2
+PYTHONPATH=python python3 -m perfectpower certificate --coeff 1,0,0,0,1 --d 2    # v0.5 cutoff certificate
+python3 python/make_receipts.py && python3 python/make_atlas_receipts.py
+```
+
+The modules are:
+
+| Module | Contents |
+|---|---|
+| `core.py` | exact hit definition, v0.5 certificate |
+| `polyalg.py` | exact $\mathbb Q[x]$ algebra: squarefree decomposition, Sturm integer roots, resultants |
+| `arith.py` | factoring, square roots mod $m$, Pell and LMM |
+| `runge.py` | complete rigid enumeration |
+| `atlas.py` | classification, structural hits and counts, shift spectrum |
+
+## Receipts
+
+`receipts/exact_benchmarks.json` is the v0.5 receipt, unchanged apart from regeneration. `receipts/atlas_benchmarks.json` covers 43 families: their classification, exponent, $\kappa$, and structural counts up to $10^{24}$. Each structural count is cross-checked against the defining scan up to $10^5$. The receipt also contains complete hit lists and a Grunwald–Wang check. [Receipt policy](docs/RECEIPTS.md) defines the status labels, and [the roadmap](docs/NEXT_PUSH.md) lists what is open.

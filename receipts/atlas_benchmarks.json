@@ -2,6 +2,15 @@
   "status": "exact computations; structural counts cross-checked against the defining scan up to 1e5; complete hit lists are proofs relative to Theorems P, B, C, R",
   "generator": "python3 python/make_atlas_receipts.py",
   "definition": "count n in [1,N] with F(n)=m**d for an integer m",
+  "grunwald_wang_check": {
+    "odd_primes_checked_below": 20000,
+    "primes_checked": 2261,
+    "primes_where_16_is_not_an_8th_power": [],
+    "eighth_powers_mod_32": [
+      0,
+      1
+    ]
+  },
   "rows": [
     {
       "name": "square_polynomial_n2",

@@ -1,20 +1,35 @@
 {
-  "release": "0.5",
+  "release": "0.6",
   "files": [
     {
+      "path": ".github/workflows/lean.yml",
+      "bytes": 346,
+      "sha256": "87acf432f63eca2dc26203ab535f13bc3a163dffa69185e1bcb4e1e68263800f"
+    },
+    {
       "path": ".github/workflows/python.yml",
-      "bytes": 511,
-      "sha256": "0722b3b7519f2328873d8b5a5d0e3edfede99353425751f2266afb42d6ad2b16"
+      "bytes": 539,
+      "sha256": "d29beaad41684ceb53886041e9d85890f92a6eb5e9b18af9ade538533469c081"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 26,
+      "sha256": "c75666b5df7a332bb2c9d839e7872a51eb4f8d2ab905e41f8f9f0e28f811562d"
+    },
+    {
+      "path": "PerfectPower.lean",
+      "bytes": 168,
+      "sha256": "462782d3da9c68e00332e0bbbd572f83cf7623a76a7e0cbbc80219c9d1010fd8"
     },
     {
       "path": "PerfectPower/Basic.lean",
-      "bytes": 1188,
-      "sha256": "ad9b272233d362b825bd9fef40f9b4385db861e0123f351a1e4b48e1d1c8015f"
+      "bytes": 1403,
+      "sha256": "f3bc0c6c7fd68df8dd22963c84c76ddfa7e48b01e78944f1dfc65cc680d9c8b5"
     },
     {
       "path": "PerfectPower/Density.lean",
-      "bytes": 7158,
-      "sha256": "7618de2f5bf5dab1089d0fac4cdaa8671b311227214b885b9930691b30c9b5cc"
+      "bytes": 7078,
+      "sha256": "18ca037d1319094dc26662af22de9861bbcfaec92ad7d3844e3042e7924397ad"
     },
     {
       "path": "PerfectPower/Dichotomy.lean",
@@ -23,53 +38,83 @@
     },
     {
       "path": "PerfectPower/Estimates.lean",
-      "bytes": 9140,
-      "sha256": "233868bfab68e40fdfbb37fdaf13aa6b70d9ac2765b12599225d05a6f249aca2"
+      "bytes": 9064,
+      "sha256": "9009084b97c998ea479f0a585dbcbf1608784f045f8e4c887233840fd94c07c0"
     },
     {
       "path": "PerfectPower/Rigid.lean",
-      "bytes": 11747,
-      "sha256": "3d7634aa025f99e3d685eaf284c0583d80b4118a0f5e063a142cfd9a34614c4b"
+      "bytes": 11809,
+      "sha256": "f486b4bff8b2dfdf01b8c2a2544992f1de82c3f3834756da7e3235eb37f07e78"
     },
     {
-      "path": "PerfectPower.lean",
-      "bytes": 140,
-      "sha256": "e1d4137cc88df6b6297da6e8b7264c00950152bff90b0f787c4a3e5d39ed6f7a"
+      "path": "PerfectPower/ZeroOne.lean",
+      "bytes": 4574,
+      "sha256": "38105f0e7500f246943a6dcb18bcd65a5d7e9770577c2a7343a49dd09ad022d7"
     },
     {
       "path": "README.md",
-      "bytes": 3037,
-      "sha256": "e5d0864c684e859c992e6712333f8431cb69f736d034ba6dbff50eebef9ddb16"
+      "bytes": 4541,
+      "sha256": "fe8be8273510f9d822e562083cb38603469814cd80a8c0e76ce1bf67dbfac061"
+    },
+    {
+      "path": "audit/Axioms.lean",
+      "bytes": 864,
+      "sha256": "65f7791d184febf9879e6d5255044653fca687988e4cd911f7dce745b3123495"
+    },
+    {
+      "path": "audit/check_axioms.sh",
+      "bytes": 450,
+      "sha256": "5acd22a3d38a7d69544bbf16e07d81ac7d320ea6e06645f4fb179c35b8c94984"
     },
     {
       "path": "docs/FORMAL_AUDIT.md",
-      "bytes": 3036,
-      "sha256": "adee96651581963d392232b84dfab9abce5b9340b0fe2b0903bb73d4b419ea5d"
+      "bytes": 4245,
+      "sha256": "9d84f71d58062228ea0e6629b784f3a73c1e11de81e7a296c6bdd5b786116c9c"
     },
     {
       "path": "docs/MONOGRAPH.md",
-      "bytes": 15449,
-      "sha256": "1d20590b9e161bf5acba32cd0d01277150a800ca83bb38c5f9980e4091c59110"
+      "bytes": 15928,
+      "sha256": "111f78428bc7c013cc6912304d7e4492184cd85d4eff6a129f53ef38fac7cc52"
     },
     {
       "path": "docs/NEXT_PUSH.md",
-      "bytes": 2308,
-      "sha256": "013f03dd433c7f3c2a559a8d2cb14f0e8b38ef84021f53683319d1dcd0e50223"
+      "bytes": 3101,
+      "sha256": "e9905bdffcac35d954803cfb25d94a371ad124ac1f597a579421c2bf3d348fbb"
     },
     {
       "path": "docs/RECEIPTS.md",
-      "bytes": 2035,
-      "sha256": "ac43a783ec6eca939e5ce8dd2868cabcd79af90109979576b158bf3db8de26e2"
+      "bytes": 3720,
+      "sha256": "cb40307b9b77bf4705af4cdd400740b4efcf489295d59d689b0d92d2c968c98f"
+    },
+    {
+      "path": "docs/RESEARCH_NOTES.md",
+      "bytes": 26447,
+      "sha256": "1033307bad42ca19b7bb18e20288cb34a552dd1de3b46261ca0ff4aac1e1477b"
+    },
+    {
+      "path": "lake-manifest.json",
+      "bytes": 3100,
+      "sha256": "e33945df9506a576456eb28f4a03bd745b0a742863b34076c53dc5c4dbc001ef"
     },
     {
       "path": "lakefile.toml",
-      "bytes": 169,
-      "sha256": "c1dbd16bb2bf75bec7996f6f5f9908bfa6adfd42cfdaecb5cf00c2ea497892f5"
+      "bytes": 195,
+      "sha256": "3ca5d89f8395f23604aa83354aff4933842899824b1372178c389da209d4d1f8"
     },
     {
       "path": "lean-toolchain",
       "bytes": 25,
       "sha256": "b1a88ff98b9eb4f96aaf762f9d1ef0e692c9e52a80c51bbb58f3686a6f01571f"
+    },
+    {
+      "path": "python/make_atlas_receipts.py",
+      "bytes": 5159,
+      "sha256": "492dc668147fa797c1427cc32d646225dad2a91819f7c82b4922e6cfe785dfc8"
+    },
+    {
+      "path": "python/make_inventory.py",
+      "bytes": 715,
+      "sha256": "ddde798999285eba8983bbae92dc59f1b2a7fb2702a2f11fcbd366fe0429baea"
     },
     {
       "path": "python/make_receipts.py",
@@ -83,18 +128,48 @@
     },
     {
       "path": "python/perfectpower/__main__.py",
-      "bytes": 3826,
-      "sha256": "b06fb18def5e2777ba956d50216ebeef8f134cf69a28fd63d49ce235d0d03a4d"
+      "bytes": 5385,
+      "sha256": "9a430a3bef4cab998813260471fa69e90c9d3b579baea102d62f9d22f65dadd1"
+    },
+    {
+      "path": "python/perfectpower/arith.py",
+      "bytes": 9145,
+      "sha256": "691d46e7af3e6ea6e8801e025e2519ae2229919e9e1407735466f43810e60782"
+    },
+    {
+      "path": "python/perfectpower/atlas.py",
+      "bytes": 20631,
+      "sha256": "3f6d8e414ebe4bcd7ce1bff39001c202dd1d6ad2b76553a04422b435e68a3eb3"
     },
     {
       "path": "python/perfectpower/core.py",
-      "bytes": 7622,
-      "sha256": "7953ad5c09151db4524daa8f22429eeada315c1da3290ebcf5e2ea0b1dfedb11"
+      "bytes": 7705,
+      "sha256": "02f86a80d53e63e2d752f8c8cae6487806e75836ce27520af9f621146aa6a830"
+    },
+    {
+      "path": "python/perfectpower/polyalg.py",
+      "bytes": 8106,
+      "sha256": "fecb8684949b0863f696498ce9f37c390b4f3e9a41356c80734a9e906e7aa6ee"
+    },
+    {
+      "path": "python/perfectpower/runge.py",
+      "bytes": 5244,
+      "sha256": "9bbeff00c0c794e74a11ae43d36cc8dc71d4f89f9e96d333f08ef24e8836b514"
+    },
+    {
+      "path": "python/tests/test_atlas.py",
+      "bytes": 10742,
+      "sha256": "8b6a3bb2ee99dec093d333f6cc3acb7266f3669f9a92ea3c2ed92b4ef3852bc3"
     },
     {
       "path": "python/tests/test_core.py",
       "bytes": 4405,
       "sha256": "783787fea3ca989b42d93e1f37779f6f3b57a75903664aad07124d4b3cf51863"
+    },
+    {
+      "path": "receipts/atlas_benchmarks.json",
+      "bytes": 25095,
+      "sha256": "ab7dff7d85c491a098dfcb3c7adeb8a8d3a9fab093f6a5084d51d05939c1b33d"
     },
     {
       "path": "receipts/exact_benchmarks.json",
