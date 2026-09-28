@@ -321,6 +321,31 @@ class TestSandwichCover(unittest.TestCase):
                 self.assertTrue(p >= 0 and p ** d < V < (p + 1) ** d, (f, d, n))
 
 
+class TestFrontier(unittest.TestCase):
+    def test_pillai_instances_are_finite_type_except_2_2(self):
+        # x^a - y^b = k is the atlas instance F = x^a - k, d = b: x^a - k is squarefree for k != 0,
+        # so LeVeque's exceptional patterns occur only in the Pell case a = b = 2.
+        for a in range(2, 7):
+            for b in range(2, 7):
+                for k in (-7, -2, -1, 1, 2, 5, 12):
+                    kind = classify([-k] + [0] * (a - 1) + [1], b).kind
+                    self.assertEqual(kind, 'pell' if a == b == 2 else 'finite', (a, b, k))
+
+    def test_mordell_curves_are_finite_type(self):
+        for k in (-26, -2, 1, 17, 24):
+            self.assertEqual(classify([k, 0, 0, 1], 2).kind, 'finite')
+
+    def test_pillai_census_small(self):
+        import subprocess, sys, os
+        env = dict(os.environ, PYTHONPATH='python')
+        out = subprocess.run([sys.executable, 'python/pillai_census.py', '8', '100'],
+                             capture_output=True, text=True, env=env, check=True).stdout
+        self.assertIn('"pairs": 255', out)            # equals an independent brute force at 1e8
+        self.assertIn('"k_equal_1": [[8, 9]]', out)   # Catalan / Mihailescu regression
+        subprocess.run([sys.executable, 'python/pillai_census.py', '18', '1000'],
+                       capture_output=True, text=True, env=env, check=True)   # restore receipt
+
+
 class TestLeanEmitter(unittest.TestCase):
     def test_plans_and_hits(self):
         from perfectpower.lean_emit import emit, plan

@@ -73,3 +73,9 @@ open PerfectPower
 #print axioms PerfectPower.Generated.consecutive10_square_hits
 #print axioms PerfectPower.Generated.consecutive12_fourth_power_hits
 #print axioms no_hit_of_sandwich
+-- Function field (unconditional) and abc-conditional layer (abc is a hypothesis, not an axiom)
+#print axioms davenport
+#print axioms davenport_sharp
+#print axioms hall_of_abc
+#print axioms pillai_bound_of_abc
+#print axioms pillai_finite_of_abc

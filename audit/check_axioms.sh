@@ -6,7 +6,7 @@ printf '%s\n' "$out"
 printf '%s\n' "$out" > audit/axioms_report.txt
 n=$(printf '%s\n' "$out" | grep -c "depends on axioms")
 bad=$(printf '%s\n' "$out" | grep -v "depends on axioms: \[propext, Classical.choice, Quot.sound\]" || true)
-if [ -n "$bad" ] || [ "$n" -lt 62 ]; then
+if [ -n "$bad" ] || [ "$n" -lt 67 ]; then
   echo "axiom audit FAILED" >&2
   exit 1
 fi

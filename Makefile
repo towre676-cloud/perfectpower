@@ -25,6 +25,7 @@ receipts:
 	$(PY) python/make_atlas_receipts.py
 	$(PY) python/make_lean_certificates.py
 	$(PY) python/adversarial_runge.py 300
+	$(PY) python/pillai_census.py 18 1000
 
 counts: audit
 	$(PY) python/make_counts.py
