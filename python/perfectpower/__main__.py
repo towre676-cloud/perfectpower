@@ -7,7 +7,9 @@ from .core import (RigidCertificate, count, hit_indices, rigid_certificate,
 
 
 def coefficients(raw):
-    return [int(s.strip()) for s in raw.split(',')]
+    from fractions import Fraction
+    out = [Fraction(s.strip()) for s in raw.split(',')]
+    return [int(c) if c.denominator == 1 else c for c in out]
 
 
 def main():
@@ -44,6 +46,11 @@ def main():
         return
     f = args.coeff.copy()
     f[0] += args.k
+    if any(not isinstance(c, int) for c in f):
+        from .atlas import integerize
+        f = list(integerize(f, args.d))   # same hit set; see atlas.integerize
+        args.coeff = f.copy()
+        args.coeff[0] -= args.k
     if args.command == 'classify':
         from dataclasses import asdict
         from .atlas import classify

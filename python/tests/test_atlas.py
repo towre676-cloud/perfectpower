@@ -211,6 +211,24 @@ class TestAtlas(unittest.TestCase):
             self.assertEqual(classify(f, d).kind, kind, (f, d))
 
 
+class TestIntegerValued(unittest.TestCase):
+    def test_integerize_preserves_hits(self):
+        from perfectpower.atlas import integerize
+        tri = (0, Fraction(1, 2), Fraction(1, 2))              # n(n+1)/2
+        f = integerize(tri, 2)
+        self.assertEqual(f, (0, 2, 2))
+        self.assertEqual(brute(f, 2, 2000), [1, 8, 49, 288, 1681])   # square triangular numbers
+        self.assertEqual(classify(f, 2).kind, 'pell')
+        c3 = (0, Fraction(1, 3), Fraction(-1, 2), Fraction(1, 6))   # binomial(n, 3)
+        g = integerize(c3, 2)
+        self.assertEqual([n for n in brute(g, 2, 3000) if n >= 3], [3, 4, 50])
+        for n in range(1, 60):
+            v = n * (n - 1) * (n - 2) // 6
+            self.assertEqual(n in brute(g, 2, 60), any(m * m == v for m in range(0, 400)))
+        with self.assertRaises(ValueError):
+            integerize((0, Fraction(1, 2)), 2)                       # n/2 is not integer-valued
+
+
 class TestShiftSpectrum(unittest.TestCase):
     def test_named(self):
         from perfectpower.atlas import shift_spectrum

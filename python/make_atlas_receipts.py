@@ -11,7 +11,7 @@ from fractions import Fraction
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from perfectpower.atlas import classify, structural_count, structural_hits
+from perfectpower.atlas import classify, integerize, structural_count, structural_hits
 from perfectpower.core import count, hit_indices, mul, rigid_certificate
 from perfectpower.runge import runge_enumerate
 
@@ -53,6 +53,10 @@ families = [
     ('rigid_n2_plus_n', [0, 1, 1], 2),
     ('ljunggren_1_plus_n_to_n4', [1, 1, 1, 1, 1], 2),
     ('n4_plus_1_sixth_power', [1, 0, 0, 0, 1], 6),
+    # integer-valued inputs, replaced by L^d F with the same hits (atlas.integerize)
+    ('triangular_n(n+1)/2_square', list(integerize([0, Fraction(1, 2), Fraction(1, 2)], 2)), 2),
+    ('binomial_n_choose_3_square', list(integerize([0, Fraction(1, 3), Fraction(-1, 2), Fraction(1, 6)], 2)), 2),
+    ('binomial_n_choose_2_cube', list(integerize([0, Fraction(-1, 2), Fraction(1, 2)], 3)), 3),
 ]
 for k, ds in ((4, (2, 4)), (6, (2, 3, 6)), (8, (2, 4, 8)), (10, (2, 5)), (12, (2, 3, 4, 6))):
     for d in ds:
@@ -105,11 +109,31 @@ grunwald = {'odd_primes_checked_below': 20000, 'primes_checked': len(odd_primes)
             'primes_where_16_is_not_an_8th_power': failures,
             'eighth_powers_mod_32': sorted({pow(x, 8, 32) for x in range(32)})}
 
+# Theorem T: heat-kernel asymptotics K(tau) = kappa Gamma(1+1/t) tau^(-1/t) + O(1) (radical)
+# and kappa log(1/tau) + O(1) (Pell), evaluated from exact structural hit lists.
+from math import exp, gamma, log
+transform_checks = []
+for name, f, d in (('linear_4n_plus_1', [1, 4], 2), ('cube_twist_5_plus_3n', [5, 3], 3),
+                   ('pell_2n2_plus_1', [1, 0, 2], 2), ('pell_3n2_plus_1', [1, 0, 3], 2)):
+    cl = classify(f, d)
+    for tau in (1e-3, 1e-5, 1e-7):
+        cutoff = int(60 / tau)
+        K = sum(exp(-tau * n) for n in structural_hits(f, d, cutoff))
+        if cl.kind == 'radical':
+            t = cl.details['t']
+            main = cl.details['kappa'] * gamma(1 + 1 / t) * tau ** (-1 / t)
+        else:
+            main = cl.details['kappa'] * log(1 / tau)
+        transform_checks.append({'name': name, 'kind': cl.kind, 'tau': tau,
+                                 'K_tau': round(K, 6), 'main_term': round(main, 6),
+                                 'difference': round(K - main, 6)})
+
 result = {'status': 'exact computations; structural counts cross-checked against the defining '
                     'scan up to 1e5; complete hit lists are proofs relative to Theorems P, B, C, R',
           'generator': 'python3 python/make_atlas_receipts.py',
           'definition': 'count n in [1,N] with F(n)=m**d for an integer m',
           'grunwald_wang_check': grunwald,
+          'heat_kernel_checks_theorem_T': transform_checks,
           'rows': rows}
 out = root / 'receipts' / 'atlas_benchmarks.json'
 out.write_text(json.dumps(result, indent=2) + '\n')

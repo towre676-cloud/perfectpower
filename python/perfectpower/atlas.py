@@ -48,10 +48,30 @@ class Classification:
 # helpers
 # ---------------------------------------------------------------------------
 
+def integerize(coefficients, d: int) -> tuple[int, ...]:
+    """Integer polynomial with the same hit set as an integer-valued F in Q[x].
+
+    If F takes integer values on Z and L is the common denominator of its coefficients, then
+    F(n) = m^d  <=>  L^d F(n) = (L m)^d, and conversely M^d = L^d F(n) makes F(n) = (M/L)^d
+    an integer that is a rational d-th power, hence an integer d-th power.  So L^d F has
+    exactly the same hits.  Raises ValueError if F is not integer-valued.
+    """
+    f = normalize(coefficients)
+    if all(c.denominator == 1 for c in f):
+        return tuple(int(c) for c in f)
+    # integer-valued iff integral at deg F + 1 consecutive integers
+    if any(evaluate(f, n).denominator != 1 for n in range(len(f))):
+        raise ValueError('F must be integer-valued on the integers')
+    L = 1
+    for c in f:
+        L = L * c.denominator // gcd(L, c.denominator)
+    return tuple(int(c * L ** d) for c in f)
+
+
 def _int_poly(coefficients) -> tuple[int, ...]:
     f = normalize(coefficients)
     if any(c.denominator != 1 for c in f):
-        raise ValueError('F must have integer coefficients')
+        raise ValueError('F must have integer coefficients (use integerize for Q[x] input)')
     return tuple(int(c) for c in f)
 
 

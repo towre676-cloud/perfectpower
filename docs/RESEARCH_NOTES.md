@@ -183,6 +183,11 @@ In particular, if $M\ge3$, then *for all but at most $M-1$ shifts $k$ the hit se
 
 **Remark (all exponents at once).** Let $\mathcal P$ be the set of perfect powers $m^d$ with $|m|\ge2$ and $d\ge2$, and consider $A_{\mathcal P}(N)=\#\{n\le N: F(n)\in\mathcal P\}$. If $F$ has at least two distinct roots, the Schinzel–Tijdeman theorem (Acta Arith. 31 (1976)) bounds $d$ effectively in terms of $F$. So $A_{\mathcal P}$ is a finite union of the atlas counts over $d\le d_0(F)$, and it again has growth $N$, $N^{1/t}$, $\log N$ or $O(1)$. If $F=c(x-\alpha)^r$ has a single root, Theorem B applies to each $d$ separately, and the union is dominated by the smallest $t$.
 
+**Remark (integer-valued polynomials).** If $F\in\mathbb Q[x]$ takes integer values on $\mathbb Z$ and $L$ is its coefficient denominator, then $F$ and $L^dF\in\mathbb Z[x]$ have the same hits. Indeed $M^d=L^dF(n)$ makes $F(n)=(M/L)^d$ an integer that is a rational $d$-th power, hence an integer $d$-th power. The atlas therefore covers binomial coefficients (`atlas.integerize`).
+
+- *Square triangular numbers.* $n(n+1)/2$ is of Pell type with $\kappa=1/\log(3+2\sqrt2)$, and its hits are $1,8,49,288,1681,\dots$.
+- *Square values of $\binom n3$.* These are of finite type (an elliptic curve), with scan hits $n=3,4,50$ up to $10^5$. This agrees with the classical theorem that these are the only ones.
+
 ## 8. Transforms of each type
 
 For the indicator $X$ of hits put $Z_X(s)=\sum X(n)n^{-s}$ and $K_X(\tau)=\sum X(n)e^{-\tau n}$. The monograph asked what count asymptotics imply for these transforms. Abel summation gives $Z_X(s)=s\int_1^\infty A(x)x^{-s-1}\,dx$ and $K_X(\tau)=\tau\int_0^\infty A(x)e^{-\tau x}\,dx$.
@@ -204,6 +209,13 @@ By Theorems B and C the hypotheses hold exactly, with $\beta=1/t$, in the radica
 | Radical | pole at $1/t$ | $\sim\kappa\Gamma(1+1/t)\tau^{-1/t}$ |
 | Pell | $\sim\kappa/s$ at $0$ | $\sim\kappa\log(1/\tau)$ |
 | Finite | Dirichlet polynomial | bounded |
+
+The receipt `heat_kernel_checks_theorem_T` evaluates $K_X(\tau)$ from exact structural hit lists at $\tau=10^{-3},10^{-5},10^{-7}$. The difference $K_X(\tau)-\text{main term}$ stays bounded:
+
+- $4n+1$: tends to $-1$;
+- $3n+5$ with $d=3$: tends to $-0.167$;
+- $2n^2+1$: about $-0.24$;
+- $3n^2+1$: about $0.005$.
 
 This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\beta$ imply" in the polynomial case, where only $(\alpha,\beta)\in\{(1,0),(1/t,0),(0,1),(0,0)\}$ occur.
 

@@ -11,6 +11,104 @@
       1
     ]
   },
+  "heat_kernel_checks_theorem_T": [
+    {
+      "name": "linear_4n_plus_1",
+      "kind": "radical",
+      "tau": 0.001,
+      "K_tau": 27.031963,
+      "main_term": 28.024956,
+      "difference": -0.992993
+    },
+    {
+      "name": "linear_4n_plus_1",
+      "kind": "radical",
+      "tau": 1e-05,
+      "K_tau": 279.250261,
+      "main_term": 280.249561,
+      "difference": -0.999299
+    },
+    {
+      "name": "linear_4n_plus_1",
+      "kind": "radical",
+      "tau": 1e-07,
+      "K_tau": 2801.495678,
+      "main_term": 2802.495608,
+      "difference": -0.99993
+    },
+    {
+      "name": "cube_twist_5_plus_3n",
+      "kind": "radical",
+      "tau": 0.001,
+      "K_tau": 4.13325,
+      "main_term": 4.292998,
+      "difference": -0.159747
+    },
+    {
+      "name": "cube_twist_5_plus_3n",
+      "kind": "radical",
+      "tau": 1e-05,
+      "K_tau": 19.759993,
+      "main_term": 19.92633,
+      "difference": -0.166337
+    },
+    {
+      "name": "cube_twist_5_plus_3n",
+      "kind": "radical",
+      "tau": 1e-07,
+      "K_tau": 92.323181,
+      "main_term": 92.489832,
+      "difference": -0.166651
+    },
+    {
+      "name": "pell_2n2_plus_1",
+      "kind": "pell",
+      "tau": 0.001,
+      "K_tau": 3.676183,
+      "main_term": 3.918744,
+      "difference": -0.242561
+    },
+    {
+      "name": "pell_2n2_plus_1",
+      "kind": "pell",
+      "tau": 1e-05,
+      "K_tau": 6.297014,
+      "main_term": 6.53124,
+      "difference": -0.234226
+    },
+    {
+      "name": "pell_2n2_plus_1",
+      "kind": "pell",
+      "tau": 1e-07,
+      "K_tau": 8.906401,
+      "main_term": 9.143736,
+      "difference": -0.237336
+    },
+    {
+      "name": "pell_3n2_plus_1",
+      "kind": "pell",
+      "tau": 0.001,
+      "K_tau": 5.249901,
+      "main_term": 5.245236,
+      "difference": 0.004665
+    },
+    {
+      "name": "pell_3n2_plus_1",
+      "kind": "pell",
+      "tau": 1e-05,
+      "K_tau": 8.748163,
+      "main_term": 8.74206,
+      "difference": 0.006102
+    },
+    {
+      "name": "pell_3n2_plus_1",
+      "kind": "pell",
+      "tau": 1e-07,
+      "K_tau": 12.243054,
+      "main_term": 12.238885,
+      "difference": 0.004169
+    }
+  ],
   "rows": [
     {
       "name": "square_polynomial_n2",
@@ -692,6 +790,89 @@
       ],
       "count_at_1e5_structural_equals_scan": 0,
       "complete_hit_list": []
+    },
+    {
+      "name": "triangular_n(n+1)/2_square",
+      "coefficients_F_low_to_high": [
+        0,
+        2,
+        2
+      ],
+      "d": 2,
+      "kind": "pell",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "2": 2
+      },
+      "growth": "log N",
+      "exponent": "0",
+      "infinite": true,
+      "effective": true,
+      "kappa": 0.567296328553,
+      "count_at_1e5_structural_equals_scan": 7,
+      "counts_structural": {
+        "1e6": 8,
+        "1e12": 16,
+        "1e24": 32
+      }
+    },
+    {
+      "name": "binomial_n_choose_3_square",
+      "coefficients_F_low_to_high": [
+        0,
+        12,
+        -18,
+        6
+      ],
+      "d": 2,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 3
+      },
+      "t_profile": {
+        "2": 3
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": false,
+      "runge_divisors": [],
+      "count_at_1e5_scan_only": 5,
+      "scan_hits_up_to_1e5": [
+        1,
+        2,
+        3,
+        4,
+        50
+      ]
+    },
+    {
+      "name": "binomial_n_choose_2_cube",
+      "coefficients_F_low_to_high": [
+        0,
+        -4,
+        4
+      ],
+      "d": 3,
+      "kind": "finite",
+      "multiplicity_profile": {
+        "1": 2
+      },
+      "t_profile": {
+        "3": 2
+      },
+      "growth": "bounded",
+      "exponent": "0",
+      "infinite": false,
+      "effective": false,
+      "runge_divisors": [],
+      "count_at_1e5_scan_only": 2,
+      "scan_hits_up_to_1e5": [
+        1,
+        2
+      ]
     },
     {
       "name": "consecutive_product_4_d2",
