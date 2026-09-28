@@ -120,7 +120,9 @@ def certification(cl, f, d, name=None):
         return 'PROVED_STRUCTURAL'                   # Theorems P, B, C; paper proof + scan check
     if cl.effective:
         return 'COMPLETE_HIT_LIST'                   # Runge enumeration; paper proof + exact arithmetic
-    if tuple(f) in _cubic or (tuple(f), d) in _GENUS1:
+    if (tuple(f), d) in _GENUS1:
+        return 'LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS'    # PerfectPower/Generated/Genus1.lean
+    if tuple(f) in _cubic:
         return 'INDEPENDENT_COMPUTATION'             # Sage integral points agree with the scan
     return 'SCAN_EVIDENCE_ONLY'                      # finiteness conditional on Siegel (Theorem G); list unproven
 
@@ -163,9 +165,10 @@ for name, f, d in families:
     if name in _BINOMIAL:
         row['complete_hit_list'] = _BINOMIAL[name]
         assert row['scan_hits_up_to_1e5'] == _BINOMIAL[name], name
-    if row['certification'] == 'INDEPENDENT_COMPUTATION':
-        row['independent_hit_list'] = (_GENUS1[(tuple(f), d)] if (tuple(f), d) in _GENUS1
-                                       else _cubic[tuple(f)])
+    if (tuple(f), d) in _GENUS1:
+        row['independent_hit_list'] = _GENUS1[(tuple(f), d)]
+    elif row['certification'] == 'INDEPENDENT_COMPUTATION':
+        row['independent_hit_list'] = _cubic[tuple(f)]
     rows.append(row)
 
 # Grunwald-Wang: 16 is an 8th power modulo every odd prime (checked below 2e4 by Euler's
@@ -273,7 +276,10 @@ with open(root / 'data' / 'families.csv', 'w', newline='') as fh:
         if 'complete_hit_list' in r:
             hits, scope = r['complete_hit_list'], 'complete'
         elif 'independent_hit_list' in r:
-            hits, scope = r['independent_hit_list'], 'complete (independent computation)'
+            hits = r['independent_hit_list']
+            scope = ('complete given the named Sage point hypothesis (reduction checked in Lean)'
+                     if r['certification'] == 'LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS'
+                     else 'complete (independent computation)')
         elif 'sieve_hits_up_to_1e8' in r:
             hits, scope = r['sieve_hits_up_to_1e8'], 'n <= 1e8 only (exact sieve)'
         elif 'scan_hits_up_to_1e5' in r:

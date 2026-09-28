@@ -156,3 +156,8 @@ open PerfectPower
 #print axioms atlas_radical
 #print axioms atlas_pell
 #print axioms atlas_finite
+-- Genus1 (checked Weierstrass reductions; Sage points as named hypotheses)
+#print axioms PerfectPower.Genus1.cubic_sound
+#print axioms PerfectPower.Genus1.quad_sound
+#print axioms PerfectPower.Generated.Genus1.g1_sq_m1_m3_2_1_hits
+#print axioms PerfectPower.Generated.Genus1.g1_cube_m6_m7_6_hits

@@ -24,3 +24,5 @@ import PerfectPower.Reflect
 import PerfectPower.PellExact
 import PerfectPower.RadicalAsymp
 import PerfectPower.Atlas
+import PerfectPower.Genus1
+import PerfectPower.Generated.Genus1

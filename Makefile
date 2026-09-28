@@ -29,6 +29,7 @@ receipts:
 	$(PY) crosscheck/mordell_census.py --from-jsonl 10000
 	$(PY) crosscheck/check_binomial.py
 	$(PY) crosscheck/check_genus1.py
+	$(PY) python/make_lean_genus1.py
 	$(PY) python/make_lean_census.py
 	$(PY) python/uniformity.py
 	$(PY) python/make_pell_heat_receipt.py

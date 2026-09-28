@@ -107,6 +107,9 @@ def one(item):
             break
         except AlarmInterrupt:
             continue
+        except RuntimeError as exc:             # e.g. a Singular error after an interrupt: retry
+            row['engine_error'] = str(exc)[:120]
+            continue
     row.update(genus_singular=genus, n_inf_sage=ninf,
                agrees=(genus is None or (Fraction(genus) == genus_formula and (ninf is None or ninf == n_inf))),
                seconds=round(time.time() - t0, 2))
@@ -119,8 +122,16 @@ def main():
     workers = int(sys.argv[3]) if len(sys.argv) > 3 else 4
     items = [(d, rs) for d in range(2, DMAX + 1) for n in range(1, DEGMAX + 1) for rs in partitions(n)]
     t0 = time.time()
-    with Pool(workers, initializer=_setup, maxtasksperchild=40) as pool:
-        rows = pool.map(one, items, chunksize=4)
+    root = Path(__file__).resolve().parents[1]
+    progress = root / 'receipts' / 'theorem_g_check.partial.jsonl'
+    rows = []
+    with Pool(workers, initializer=_setup, maxtasksperchild=40) as pool, open(progress, 'w') as fh:
+        for row in pool.imap_unordered(one, items, chunksize=2):
+            rows.append(row)
+            fh.write(json.dumps(row) + '\n')
+            fh.flush()
+    progress.unlink()
+    rows.sort(key=lambda r: (r['d'], sum(r['multiplicities']), r['multiplicities']))
     bad = [r for r in rows if not r['agrees']]
     out = {'description': 'Theorem G check: Singular geometric genus (every case) and Sage places at '
                           'infinity (where computed within the alarm) against chi = d\'(1 - S)',
@@ -132,7 +143,6 @@ def main():
            'S_gt_1_iff_not_power_radical_pell': all(
                (Fraction(r['S']) > 1) == (not exceptional(r['t_profile'])) for r in rows),
            'rows': [{k: v for k, v in r.items() if k != 'seconds'} for r in rows]}
-    root = Path(__file__).resolve().parents[1]
     (root / 'receipts' / 'theorem_g_check.json').write_text(json.dumps(out, indent=0) + '\n')
     print(json.dumps({k: v for k, v in out.items() if k != 'rows'}), f'{time.time() - t0:.0f}s')
 

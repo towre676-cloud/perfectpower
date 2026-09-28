@@ -61,6 +61,12 @@ if g1.exists():
                  + f'; {len(s["scan_disagreements"])} disagreements with the exact scan to $10^6$; '
                  f'{len(s["hits_beyond_scan"])} certified hits beyond it'
                  + (f' (largest $n={far["max_hit"]:,}$)' if far else '') + '.')
+gl = root / 'receipts' / 'genus1_lean.json'
+if gl.exists():
+    s = json.loads(gl.read_text())
+    lines.append(f'- Generated Lean genus-one reductions: {s["theorems"]} theorems proving complete hit lists '
+                 'from a named hypothesis (Sage\'s integral points on the Weierstrass model); the '
+                 'hypothesis itself is not proved in Lean.')
 tg = root / 'receipts' / 'theorem_g_check.json'
 if tg.exists():
     s = json.loads(tg.read_text())
