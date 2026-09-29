@@ -105,7 +105,7 @@ New here? Start with the five-minute [TUTORIAL.md](docs/TUTORIAL.md): a polynomi
 - quartic genus-one models;
 - the general reductions (Theorems B, C) in Lean;
 - a Bilu–Tichy counting sequel;
-- a primary-source literature comparison. The build environment could not reach arXiv, so [RELATED_WORK.md](docs/RELATED_WORK.md) marks those entries unverified.
+- complete the primary-source literature comparison. [RELATED_WORK.md](docs/RELATED_WORK.md) now checks the full texts of Beukers–Tengely (Runge), Bérczes et al. (explicit superelliptic bounds), and Baanen et al. (formal Mordell completeness); the remaining comparisons are explicitly pending.
 
 **CI.** GitHub Actions jobs for this repository are never assigned a runner, which is an account-level block. `make verify` (or the Dockerfile) is the reference check.
 
