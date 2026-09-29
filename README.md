@@ -1,22 +1,51 @@
 # PerfectPower
 
-**Certified hit sets and a growth classification for perfect-power values of polynomials.** Release 0.6.
+**When is $F(n)$ a perfect power, and how often?**
+This repository gives an exact answer for every integer polynomial. The answer comes with explicit constants, machine-checked proofs, and certificates that anyone can re-check.
 
-For $F\in\mathbb Z[x]$ and $d\ge2$, a *hit* is an index $n\ge1$ with $F(n)=m^d$, and $A(N)$ counts the hits up to $N$. The repository is three separable artifacts with stated interfaces, plus a manuscript.
+> Take $F\in\mathbb Z[x]$ and $d\ge2$, and count the *hits* $A(N)=\#\{1\le n\le N : F(n)=m^d\}$.
+> Only four behaviours are possible:
+>
+> | type | $A(N)$ | example |
+> |---|---|---|
+> | **power** | $N$ | $(n^2+1)^2$ |
+> | **radical** | $\kappa\,N^{1/t}+O(1)$, $t\mid d$ | $4n+1=m^2$: $\kappa=1$ |
+> | **Pell** | $\kappa\log N+O(1)$ | $2n^2+1=m^2$: $\kappa=1/\log(3+2\sqrt2)=0.5673\ldots$ |
+> | **finite** | $O(1)$ | $n^3+n+4=m^2$: only $n=4128$ |
+>
+> The type is decidable from the root multiplicities of $F$. The constants $\kappa$ are exact. The growth exponent always lies in $\{0,1\}\cup\{1/t: t\mid d\}$.
 
-| Artifact | Where | Interface | What you must trust |
-|---|---|---|---|
-| **Lean library** | `PerfectPower/`, `lakefile.toml`, `lean-toolchain`, `lake-manifest.json` | `import PerfectPower`; every public statement has a docstring | Lean and Mathlib `v4.20.0`; `audit/check_axioms.sh` shows only `propext`, `Classical.choice`, `Quot.sound` |
-| **Python tool** (stdlib only) | `python/perfectpower/`, `pyproject.toml` | CLI `perfectpower classify / count / enumerate / lean / shifts`, and a function API ([python/README.md](python/README.md)) | Its classifications and counts are paper proofs plus tests. Its **Lean output** needs no trust once compiled. |
-| **Dataset** | `data/families.csv`, `receipts/*.json` | One row per family, with type, growth, $\kappa$, hits, certification label, and the command that reproduces the row | Each row's label, defined in [TRUST_BOUNDARY.md](docs/TRUST_BOUNDARY.md) |
+The classification is a **synthesis**, and we claim no priority for it. It combines Siegel's theorem, through the Euler characteristic $\chi=d'(1-S)$ of the curve $y^d=F(x)$ (Theorem G), with classical Pell and valuation counting. What is new here is how much of it is *machine-checked*, and the *certificate system* that makes finite answers checkable.
 
-**Start here:** [TRUST_BOUNDARY.md](docs/TRUST_BOUNDARY.md) (one page), then [TUTORIAL.md](docs/TUTORIAL.md), which goes from a polynomial to a compiled Lean certificate in five minutes.
+---
+
+## Highlights
+
+**Exact counts, proved in Lean 4.** `PerfectPower/Atlas.lean` gives one interface for all four types:
+
+- `pell_exact_count`: $|A(N)-\kappa\log N|\le K$ with $\kappa=\frac{1}{\log\varepsilon}\sum_\rho g_\rho/P_\rho$. The sum runs over canonical Pell orbit roots, so duplicate orbits are removed and each orbit is counted at the true rate $\varepsilon^j$.
+- `radical_asymptotic_int`: $|A(N)-\kappa N^{1/t}|\le K$ with $\kappa=(R/v)(v/z_0)^{1/t}$. This includes the case $\kappa=0$, where local solvability does **not** give infinitely many hits.
+- `atlas_finite`: finitely many hits, **from an explicitly named premise** (`SuperellipticSiegel`: Siegel's theorem plus the geometric half of Theorem G). The combinatorial half, "$\chi<0$ iff the profile is not of power, radical or Pell type", is proved for **all** $d$ (`chi_neg_iff`).
+
+**Certificates you can re-check.** `pp-cert/1` is a small, versioned JSON format whose statement is bound by a hash ([spec](docs/CERTIFICATE_FORMAT.md)).
+- A Lean checker, proved sound once (`check_sound`, `rungeCheck_sound`), turns each certificate into a kernel theorem. 19 complete hit sets, including instances of Erdős–Selfridge, total 25 KB and check in about a minute.
+- Mutated certificates are rejected by the kernel. One surprise: the same certificate that proves $n(n+1)\cdots(n+11)$ is never a fourth power also proves it for $n(n+1)\cdots(n+11)+1$.
+
+**Hidden hits, caught.** Short scans miss real solutions. Sage-certified genus-one lists contain
+$$6n^2-7n-6=95339^3\ \text{ at } n=12{,}017{,}947,\qquad 6n^2+n+1=61301^3\ \text{ at } n=6{,}196{,}204.$$
+399 such families are generated as Lean theorems whose complete hit lists follow from a *named* hypothesis: Sage's point list on the Weierstrass model. That hypothesis is not proved in Lean.
+
+**A census of the frontier.** All integral points of $y^2=x^3+k$ for $0<|k|\le10^4$ (the Hall ratio, the rank, and a proof status per curve), and every pair of perfect powers up to $10^{18}$ at distance at most $1000$ (Pillai). These are *evidence* only: Hall and Pillai are open, and nothing here proves them. The function-field analogues are proved unconditionally (`davenport`, `pillai_polynomial`). Over $\mathbb Z$ they are proved only from abc, taken as an explicit hypothesis (`hall_of_abc`, `pillai_finite_of_abc`).
+
+**The oscillation in the Pell type.** For Pell-type families the heat transform $\sum e^{-\tau n}$ over the hits has a log-periodic second term. The proof keeps the shift $-B/2A$ and the pole at $s=-1$, and it is checked numerically to order $\tau^2\log(1/\tau)$ (Theorem T2).
+
+---
 
 ## Status in numbers
 
 <!-- counts:begin (generated by python/make_counts.py; do not edit) -->
 - Lean declarations audited: **138**; using only `propext`, `Classical.choice`, `Quot.sound` (or a subset): **138**.
-- Machine-generated Lean hit-set certificates: **21**.
+- Machine-generated Lean hit-set certificates: **19**.
 - Atlas families by certification label: `COMPLETE_HIT_LIST` 2, `INDEPENDENT_COMPUTATION` 2, `LEAN_CERTIFIED` 16, `LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS` 7, `PROVED_STRUCTURAL` 19, `SCAN_EVIDENCE_ONLY` 5.
 - Cubic cross-validation ($m^2=n^3+an+b$, $|a|,|b|\le12$): 622/622 certified by Sage, 0 disagreements with the scan to $10^5$.
 - Adversarial Runge test: 220 planted-hit trials, 0 failures, planted hits up to 993,384,039.
@@ -27,98 +56,59 @@ For $F\in\mathbb Z[x]$ and $d\ge2$, a *hit* is an index $n\ge1$ with $F(n)=m^d$,
 - Pillai gap census: 2856 pairs of perfect powers $\le 10^{18}$ at distance $\le 1000$ (exact within the bound).
 <!-- counts:end -->
 
-## What is established, and how
+Every number above is regenerated by `make verify`, which fails if anything drifts. The last run is archived in [RELEASE_CHECK.md](docs/RELEASE_CHECK.md).
 
-**Machine-checked in Lean** (standard axioms only):
+## What to trust, at a glance
 
-- **Rigid branch.** If $d\mid\deg F$ and the leading coefficient is a $d$-th power, then either $F=G^d$ with $G\in\mathbb Z[x]$ or the hit set is finite. The density exists and is $0$ or $1$ (`rigid_dichotomy`, `rigid_zero_one`).
-- **Explicit families.**
-  - Twisted powers $c\,G^d$ are finite (`power_type_finite`).
-  - Monomials $n^r$ hit exactly at the $t$-th powers, $t=d/\gcd(r,d)$ (`monomial_count`).
-  - The hit indicator of $c\,a^n$ is $d$-periodic, so its density is $P/d$ (`exp_hasDensity`).
-  - $2n^2+1$ has infinitely many square values and density zero (`pell_hasDensity_zero`).
-- **Runge reduction in integer form** (`runge_finite`).
-- **Complete hit sets, generated by the Python tool and checked by Lean:**
-  - Ljunggren's quartic;
-  - $n^4+1$ and $n^4+7$ as squares;
-  - two sextic cubes;
-  - products of $k$ consecutive integers that are never $d$-th powers, for:
+| Label | Meaning | Examples |
+|---|---|---|
+| **Lean** | compiled; only `propext`, `Classical.choice`, `Quot.sound` | exact Pell and radical counts, the 0–1 law on the rigid branch, 19 certificates |
+| **Lean ⇐ named hypothesis** | compiled, with an unproved premise stated as a `def` | finite type (`SuperellipticSiegel`), 399 genus-one lists, the binomials $\binom n2=m^3$ and $\binom n3=m^2$ |
+| **Paper** | written proof, cross-checked by exact computation | reductions of a general $F$ (Theorems B, C); geometric half of Theorem G |
+| **External** | Sage or Singular, re-verified in plain Python by `make verify` | Mordell census, 1022 genus-one families, Theorem G check for $d,\deg F\le8$ (462 cases, 0 disagreements) |
+| **Evidence** | exact within a bound, silent beyond it | quartics such as Ljunggren's $2n^4-1=m^2$, genus $\ge2$ (sieve to $10^8$) |
 
-    | $k$ | $d$ |
-    |---|---|
-    | 4 | 2, 4 |
-    | 6 | 2, 3, 6 |
-    | 8 | 2, 4, 8 |
-    | 10 | 2, 5 |
-    | 12 | 2, 3, 4, 6 |
+The full picture, with dependency arrows, is in the status table of the [monograph](docs/MONOGRAPH.md#0-status-of-every-result-edition-07). What is assumed and what is ineffective is in [TRUST_BOUNDARY.md](docs/TRUST_BOUNDARY.md).
 
-  These are fixed instances of Erdős–Selfridge. The $(10,2)$ and $(12,4)$ cases use interval-sandwich certificates. All 19 certificates are pure data in a versioned, hash-bound format, `pp-cert/1` ([CERTIFICATE_FORMAT.md](docs/CERTIFICATE_FORMAT.md)), checked by verified checkers (`Reflect.check_sound`, `Reflect.rungeCheck_sound`), which cut the generated files from 904 KB to 43 KB.
-- **Exact counts for the infinite types, as one interface** (`Atlas.lean`).
-  - Radical type: $A(N)=\kappa N^{1/t}+O(1)$ with $\kappa=(R/v)(v/z_0)^{1/t}$, which is $0$ when no residue is admissible (`radical_asymptotic_int`). It is proved for the normalised family $c(vn-u)^rG(n)^d$.
-  - Pell type: $A(N)=\kappa\log N+O(1)$ with $\kappa=(\sum_\rho g_\rho/P_\rho)/\log\varepsilon$ over canonical orbit roots (`pell_exact_count`), for every quadratic with a given unit.
-  - Finite type: finitely many hits under the explicitly named premise `SuperellipticSiegel`. That premise is Siegel's theorem plus the geometric half of Theorem G, and it is not proved.
-  - The reductions of a general $F$ to these normalised families (Theorems B, C) are paper proofs.
-- **Theorem Q pieces.** Pell orbits are exhausted by finitely many representatives (`pell_orbits_exhaust`, a descent to a finite box). Orbits are purely periodic modulo $2A$ (`unitOrbit_periodic`), and good classes give hits (`goodClass_hits`). The Pell-type count is $O(\log N)$ (`pell_count_log`).
-- **Theorem G, combinatorial half, for all $d$.** $\chi=d'(1-S)$ (`chi_eq`), and $\chi<0$ exactly outside the power, radical and Pell profiles (`chi_neg_iff`, `S_le_one_iff`). The kernel also checks a table (`profile_table_ok`) over every $d\le12$ and multiplicity profile of degree $\le12$: the Riemann–Hurwitz genus is a nonnegative integer, and $\chi<0$ exactly for the finite type.
-- **Genus-one reductions, generated.** 399 families of the form $m^2=$ cubic (non-monic or shifted) or $m^3=$ quadratic. For each, Lean proves the complete hit list *from* the named hypothesis that Sage's integral-point list on the Weierstrass model is complete (`Genus1.lean`). That hypothesis is not proved in Lean.
-- **Binomial reductions.** Lean proves that $\binom n2=m^3$ only for $n\in\{1,2\}$ and $\binom n3=m^2$ only for $n\in\{1,2,3,4,50\}$, given the integral points of two elliptic curves. Those point lists are named hypotheses, certified by Sage.
-
-**Paper proofs, cross-checked by exact computation** ([RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md), [paper](paper/perfectpower.pdf)):
-
-- the radical and Pell types, with explicit constants $\kappa$ (Theorems B, C, Lemma Q);
-- complete enumeration in the rigid branch (Theorem R);
-- exponential sequences (Theorem E);
-- transform asymptotics (Theorem T).
-
-**Conditional on Siegel's theorem (standard form) through Theorem G, a paper proof in this repository that has not been refereed — ineffective:**
-
-- the four-type atlas as a *complete* classification;
-- the exponent spectrum $\alpha(F,d)\in\{0,1\}\cup\{1/t : t\mid d\}$ and the $O(N^{1/p})$ barrier;
-- the shift spectrum;
-- a second proof of the density 0–1 law. This proof cannot replace the Boshernitzan argument where effectivity matters.
-
-The atlas and the spectrum are a **synthesis**: Siegel's theorem, reached through the Euler-characteristic formula $\chi=d'(1-S)$ of Theorem G (which recovers LeVeque's 1964 exceptional patterns), combined with classical Pell and valuation counting and made explicit and decidable. The Schäffer sums-of-powers reproduction confirms the machinery rather than extending it. See [RELATED_WORK.md](docs/RELATED_WORK.md). No priority is claimed.
-
-**Genus one: independent computation.** The classifier marks every non-rigid finite family as non-effective, and the Python tool gives no certified hit list for it. For genus one, Sage supplies one:
-- the cubic table $m^2=n^3+an+b$, $|a|,|b|\le12$ (622 curves);
-- 400 further non-monic or shifted cubics and cubes $m^3=$ quadratic, each reduced to an integral Weierstrass model with integrality tracked ([crosscheck/](crosscheck/README.md)).
-
-These lists include late hits that a short scan misses. $n^3+n+4$ has its only hit at $n=4128$, and $n^3+2n^2-3n-1$ has hits at $2$ and $47882$. $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$, and $6n^2+n+1=61301^3$ at $n=6{,}196{,}204$.
-
-**Scan evidence only.** Quartic genus-one models (for example Ljunggren's $2n^4-1=m^2$, hits $1,13$) and genus $\ge2$ families outside the rigid branch have no certified hit list here. They are labelled `SCAN_EVIDENCE_ONLY` and scanned exactly to $10^8$ with a modular sieve (`perfectpower/sieve.py`), for example $n^5+2=m^2$. The scan is complete up to $10^8$ and says nothing beyond it.
-
-## Frontier: Hall, Pillai, uniform bounds
-
-**None of these conjectures is proved here, and none can be with the available tools.** The push turns each into a certified, machine-readable frontier ([FRONTIER_PLAN.md](docs/FRONTIER_PLAN.md)):
-
-- **Mordell census** (`data/mordell_census.csv`). All integral points of $y^2=x^3+k$ for $0<|k|\le10^4$, with Hall ratio $\sqrt{|x|}/|k|$, rank, and a certification label. Completeness is Sage's claim (Mordell–Weil generators with elliptic-logarithm sieving), not Lean's.
-- **Pillai gap census** (`data/pillai_gaps.csv`). Every pair of perfect powers up to $10^{18}$ at distance at most 1000. It is exact within the bound and silent beyond it.
-- **Unconditional function-field analogues, in Lean.** Davenport's bound $2\deg(f^3-g^2)\ge\deg f+2$ (`davenport`, derived from Mathlib's Mason–Stothers), with sharpness (`davenport_sharp`). Function-field Pillai for coprime $f,g$ (`pillai_polynomial`): $a\deg f+1\le\deg f+\deg g+\deg(f^a-g^b)$. In balanced form, $\deg(f^a-g^b)\ge n(1-1/a-1/b)+1$ when $a\deg f=b\deg g=n$ (`pillai_polynomial_balanced`).
-- **abc-conditional layer, in Lean.** abc enters as a hypothesis, never an axiom. It yields `hall_of_abc` (coprime Hall inequality), `pillai_bound_of_abc` and `pillai_finite_of_abc` (finiteness uniform in the exponents, for coprime bases).
-- **Uniformity data** ([docs/figures/uniformity.html](docs/figures/uniformity.html)). Maximum number of integral points against rank and against $\log|k|$. **Numerical evidence only.**
-
-## Reproduce
+## Try it
 
 ```sh
-make verify          # lake build, axiom audit, Python tests, regenerate receipts, zero-diff check
-docker build -t perfectpower . && docker run --rm perfectpower     # same, in a clean container
-make fuzz            # differential fuzzers with fixed seeds (the finite-bucket scan goes to 1e8)
-make crosscheck      # optional (Sage): cubic table, binomial curves, genus-one families, Mordell census
+PYTHONPATH=python python3 -m perfectpower classify --coeff 1,0,2 --d 2   # 2n^2+1: Pell type, kappa = 0.5673...
+PYTHONPATH=python python3 -m perfectpower lean --coeff 1,1,1,1,1 --d 2   # Ljunggren's quartic -> Lean proof that n = 3 is the only hit
+make verify      # build Lean, audit axioms, lint, test, regenerate every receipt, require zero diff
+make fuzz        # differential fuzzers with fixed seeds (scans to 1e8 by a modular sieve)
+make crosscheck  # optional, needs Sage: census, genus-one families, binomials, Theorem G
+make bench       # certificate size and checking-time benchmarks
+docker build -t perfectpower . && docker run --rm perfectpower
 ```
 
-Mathlib is pinned in `lake-manifest.json`. `lake exe cache get` fetches the build cache; if the cache host is unreachable, `lake build` compiles Mathlib from source, about 1900 modules.
+New here? Start with the five-minute [TUTORIAL.md](docs/TUTORIAL.md): a polynomial in, a compiled Lean certificate out.
 
-**CI status.** Both GitHub Actions workflows fail about three seconds after they are queued. The jobs are never assigned a runner (`runner_id: 0`, no log, empty check output), and this was already so for the unmodified v0.5 import. The code cannot cause this. It is the signature of an account-level block: Actions disabled for the repository, a billing problem, or an exhausted Actions spending limit for private repositories. The owner can check *Settings → Actions → General* and *Billing → Actions*. Until then, `make verify` (or the Dockerfile) is the reference check. A skeptical reader should run it, not take our word for it.
+## The three artifacts
+
+| Artifact | Where | Interface |
+|---|---|---|
+| **Lean library** | `PerfectPower/` (Lean and Mathlib `v4.20.0`) | `import PerfectPower`; start at `Atlas.lean`, `PellExact.lean`, `RadicalAsymp.lean`, `Reflect.lean` |
+| **Python tool** (standard library only) | `python/perfectpower/` | CLI `classify / count / enumerate / lean / shifts`; `certfmt` (certificates), `sieve` (exact scans) |
+| **Dataset** | `data/`, `receipts/`, `certs/` | one row per family with type, $\kappa$, hits, certification label and the command that reproduces it |
 
 ## Documents
 
-- [MONOGRAPH.md](docs/MONOGRAPH.md): definitions and the original 0–1 law (v0.5 text with status notes).
-- [RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md) and [paper/perfectpower.pdf](paper/perfectpower.pdf): v0.6 statements and proofs.
-- [FORMAL_AUDIT.md](docs/FORMAL_AUDIT.md): the Lean build, file by file.
-- [RECEIPTS.md](docs/RECEIPTS.md): status labels of the receipts.
-- [OPEN_PROBLEMS.md](docs/OPEN_PROBLEMS.md): open problems and good first issues.
-- [NEXT_PUSH.md](docs/NEXT_PUSH.md): the roadmap.
+- [MONOGRAPH.md](docs/MONOGRAPH.md): the status table, then the original 0–1 law.
+- [RESEARCH_NOTES.md](docs/RESEARCH_NOTES.md) and the [paper (PDF)](paper/perfectpower.pdf): statements and proofs.
+- [CERTIFICATE_FORMAT.md](docs/CERTIFICATE_FORMAT.md): `pp-cert/1`, its soundness, rejection tests and benchmarks.
+- [FORMAL_AUDIT.md](docs/FORMAL_AUDIT.md): the Lean library, file by file.
+- [TRUST_BOUNDARY.md](docs/TRUST_BOUNDARY.md), [RELATED_WORK.md](docs/RELATED_WORK.md), [OPEN_PROBLEMS.md](docs/OPEN_PROBLEMS.md), [NEXT_PUSH.md](docs/NEXT_PUSH.md).
+
+**What is still open.** The main open items are:
+- a kernel-checked *completeness* proof for one nonrigid genus-one family;
+- quartic genus-one models;
+- the general reductions (Theorems B, C) in Lean;
+- a Bilu–Tichy counting sequel;
+- a primary-source literature comparison. The build environment could not reach arXiv, so [RELATED_WORK.md](docs/RELATED_WORK.md) marks those entries unverified.
+
+**CI.** GitHub Actions jobs for this repository are never assigned a runner, which is an account-level block. `make verify` (or the Dockerfile) is the reference check.
 
 ## Licence and citation
 
-Code and Lean sources are licensed under [Apache-2.0](LICENSE). The documents in `docs/` and `paper/` are licensed under [CC-BY-4.0](LICENSE-docs). To cite, see [CITATION.cff](CITATION.cff).
+Code and Lean sources are licensed under [Apache-2.0](LICENSE); `docs/` and `paper/` under [CC-BY-4.0](LICENSE-docs). To cite, see [CITATION.cff](CITATION.cff).

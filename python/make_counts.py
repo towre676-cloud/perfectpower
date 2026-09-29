@@ -20,7 +20,7 @@ def _std(l):
 audited = [l for l in report if 'depend' in l]
 standard = [l for l in audited if _std(l)]
 generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' not in l
-             and '.cert_' not in l]
+             and '.cert_' not in l and '.Genus1.' not in l]
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
