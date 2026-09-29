@@ -21,7 +21,7 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Genus one, unconditional: 1163 Mordell curves $y^2=x^3+k$, $0<|k|\le10^4$, with **no** integral points | **Lean** (elementary descent `MordellDescent.lean`; no hypothesis) | agrees with the Sage census, 0 conflicts | `Generated/MordellDescent.lean` |
 | Genus one, unconditional and **nonempty**: $y^2=x^3-432u^6$ has exactly the integral points $(12u^2,\pm36u^3)$ for every $u\ne0$; so $n^3-432u^6=m^2$ iff $n=12u^2$ | **Lean** (`MordellFLT3.lean`, from Mathlib's `fermatLastTheoremThree`) | classical (the Fermat cubic) | `MordellFLT3.isHit_iff` |
 | Genus one, unconditional, **positive rank**: $y^2=x^3-2$ (points $(3,\pm5)$), $y^2=x^3-4$ (points $(2,\pm2),(5,\pm11)$) | **Lean** (`MordellMinus2.lean`, `MordellMinus4.lean`; descent in ℤ[√−2], ℤ[i]) | Mathlib (Euclidean ℤ[i]; ours for ℤ[√−2]) | §5A |
-| Genus one, unconditional, positive rank, **class number 2**: $y^2=x^3-13$ (points $(17,\pm70)$) | **Lean** (`MordellMinus13.lean`; ideal-free class-group argument: Thue lattice bound + norm table) | — | §5A.3′ |
+| Genus one, unconditional, positive rank, **class number 2**: $y^2=x^3-13$ (points $(17,\pm70)$); with $y^2=x^3-5$, $y^2=x^3-6$ (no points) as further instances | **Lean** (`ClassTwo.lean` template: Thue lattice bound + kernel norm table; `MordellMinus13/5/6.lean`) | — | §5A.3′ |
 | Transport of complete lists through $n\mapsto rn+s$ with exact counts; image-restricted genus-one premise | **Lean** (`affine_count`, `cubic_sound_image`, `n3m2_hits`) | — | `Transport.lean`, §5A |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
@@ -102,14 +102,21 @@ so Mathlib's `fermatLastTheoremThree` forces a vanishing cube. This gives exactl
 
 These reprove in Lean 4 results that Baanen–Best–Coppola–Dahmen formalised in Lean 3 through class groups. For these two curves the route is elementary, because the rings are Euclidean.
 
-**3′. Class number two, without ideals** (`MordellMinus13.lean`). ℤ[√−13] has class number 2, so unique factorisation fails. The classical proof shows that the ideal $I$ with $I^3=(y+\sqrt{-13})$ is principal, because $3\nmid h$. `MordellMinus13` makes each ingredient explicit, and the whole proof is integer arithmetic. Write $\alpha=y+\sqrt{-13}$ and $x^3=y^2+13$.
+**3′. Class number two, without ideals: a template** (`ClassTwo.lean`; instances `MordellMinus13.lean`, `MordellMinus5.lean`, `MordellMinus6.lean`). When ℤ[√−D] has class number 2, unique factorisation fails. The classical proof shows that the ideal $I$ with $I^3=(y+\sqrt{-D})$ is principal, because $3\nmid h$. `ClassTwo` makes each ingredient explicit *for every $D>0$*, in integer arithmetic. Write $\alpha=y+\sqrt{-D}$ and $x^3=y^2+D$.
 - *The ideal $I$* is the lattice $\{(a,b): x\mid a-yb\}$ of index $x$.
-- *Minkowski's bound* is Thue's pigeonhole lemma (`exists_short`). With $s=\lfloor\sqrt x\rfloor$, compare the pairs $0\le a\le 2s+1$, $0\le b\le\lfloor s/2\rfloor$ modulo $x$. This gives $v=(a,b)\ne0$ in the lattice with $a^2+13b^2=kx$ and $1\le k\le8$ (for $x\ge36$).
-- *$I^3=(\alpha)$* is the congruence $\psi(z^3)\equiv\psi(z)^3\pmod{y^2+13}$ for $\psi(z)=z_{\mathrm{re}}+y\,z_{\mathrm{im}}$. Since $x\mid\psi(\bar v)$, $x^3$ divides both coordinates of $\alpha\bar v^3$, so $\alpha\bar v^3=x^3\beta$ with $N(\beta)=k^3$ and $k^3\alpha=\beta v^3$.
-- *"The class group has order 2"* is the finite table `norm_table`. For $1\le k\le8$, $p^2+13q^2=k^3$ forces $q=0$ and $(k,p)=(1,\pm1)$ or $(4,\pm8)$: the norms $8,27,125,216,343,512$ of the non-principal class are not represented. When $k=4$, a congruence mod 8 shows $2\mid v$.
-- In both cases $\alpha=(p+q\sqrt{-13})^3$. Then $q(3p^2-13q^2)=1$ gives $(x,y)=(17,\pm70)$. The case $x\le35$ is closed by kernel evaluation.
+- *Minkowski's bound* is Thue's pigeonhole lemma (`exists_short`, `box`, `short_relation`). Compare the pairs in $[0,A]\times[0,B]$ modulo $x$, with $A=\lfloor\sqrt{rx/t}\rfloor$ and $B=\lfloor\sqrt{tx/r}\rfloor$ for a rational box ratio $r/t\approx\sqrt D$. There are more than $x$ pairs, so two collide, and their difference is $v=(a,b)\ne0$ in the lattice. It satisfies $a^2+Db^2=kx$ with $1\le k\le K$ whenever $r^2+Dt^2<(K+1)rt$. No small-$x$ case remains.
+- *$I^3=(\alpha)$* is the congruence $\psi(z^3)\equiv\psi(z)^3\pmod{y^2+D}$ for $\psi(z)=z_{\mathrm{re}}+y\,z_{\mathrm{im}}$. Since $x\mid\psi(\bar v)$, $x^3$ divides both coordinates of $\alpha\bar v^3$, so $\alpha\bar v^3=x^3\beta$ with $N(\beta)=k^3$ and $k^3\alpha=\beta v^3$.
+- *"The class group has order 2"* is the only instance-specific input: a finite table `TableOK D K P Q`, decided by the kernel. For $k\le K$, $p^2+Dq^2=k^3$ forces $q=0$ and $(k,p)=(1,\pm1)$ or $(4,\pm8)$. The companion `HalvesOK D` is a residue check mod 8 that halves $v$ when $k=4$. Given both, `cube_of_table` concludes $\alpha=(p+q\sqrt{-D})^3$.
 
-This is the class-group argument of Baanen–Best–Coppola–Dahmen, reorganised so that no ideal or class group appears. It is *not* a line-by-line port of their Lean 3 code, which this environment could not fetch. The same template (lattice, pigeonhole bound, norm table) applies to any $y^2=x^3-D$ once the norm table for $p^2+Dq^2=k^3$ in the pigeonhole range is decided.
+| $D$ | box $r/t$ | $K$ | cube-root step $q(3p^2-Dq^2)=1$ | integral points |
+|---|---|---|---|---|
+| 13 | 11/3 | 7 | $q=-1$, $p=\pm2$ | $(17,\pm70)$ |
+| 5 | 3/2 | 4 | none | none |
+| 6 | 5/2 | 4 | none | none |
+
+For $D=5,6$ the table rules out the norms $8$ and $27$, which is exactly where the non-principal class would enter. The curves $y^2=x^3-5$ and $y^2=x^3-6$ have rank 0, and the elementary descent of item 1 also shows they have no points. The template gives a second, class-group proof.
+
+This is the class-group argument of Baanen–Best–Coppola–Dahmen, reorganised so that no ideal or class group appears. It is *not* a line-by-line port of their Lean 3 code, which this environment could not fetch. A new $D$ needs only a box ratio and $K$ with $r^2+Dt^2<(K+1)rt$, the kernel's table and halving checks, and the Thue step. The table fails, as it should, when a norm $k^3$ with $k\le K$ is represented non-trivially. That happens when the class group has elements of order 3, or when the pigeonhole bound is too weak for $D$ to be reached with $K<8$.
 
 **4. Transport with integrality** (`Transport.lean`). Suppose a complete list is $\mathrm{CompleteArgs}(G,d,T)$: $G(t)$ is a $d$-th power iff $t\in T$, for every *integer* $t$. For $r\ne0$, the family $n\mapsto G(rn+s)$ then has hits exactly at $rn+s\in T$. By `affine_count`, the count is
 $$A(N)=\#\{t\in T:\ r\mid t-s,\ 1\le (t-s)/r\le N\},$$

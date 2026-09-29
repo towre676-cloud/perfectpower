@@ -31,5 +31,8 @@ import PerfectPower.Generated.MordellDescent
 import PerfectPower.MordellFLT3
 import PerfectPower.MordellMinus2
 import PerfectPower.MordellMinus4
+import PerfectPower.ClassTwo
 import PerfectPower.MordellMinus13
+import PerfectPower.MordellMinus5
+import PerfectPower.MordellMinus6
 import PerfectPower.Transport

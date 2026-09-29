@@ -31,7 +31,7 @@ class DescentAgreesWithCensus(unittest.TestCase):
 class RankOneCurvesAgreeWithCensus(unittest.TestCase):
     def test_lean_point_lists_match_census(self):
         # MordellMinus2.points, MordellMinus4.points, MordellFLT3.points_432 (x-coordinates, y >= 0)
-        lean = {-2: [3], -4: [2, 5], -13: [17], -432: [12]}
+        lean = {-2: [3], -4: [2, 5], -13: [17], -5: [], -6: [], -432: [12]}
         census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
         for k, xs in lean.items():
             got = sorted(int(x) for x in census[k]['x_coordinates'].split()) if census[k]['x_coordinates'] else []
