@@ -60,5 +60,20 @@ class RadicalCount(unittest.TestCase):
             self.assertLess(worst, 12, (name, kappa, t, count))
 
 
+    def test_explicit_constant(self):
+        """`radical_count_explicit`: |A(N) - kappa N^(1/t)| <= 2V + 2(U + V|U|) + |U| + 2 + deg F."""
+        for name, f, d in CASES:
+            c = classify(f, d)
+            det = c.details
+            kappa = det.get('kappa', 0.0) if det.get('solvable', True) else 0.0
+            U, V, t = det['u'], det['v'], det['t']
+            K = 2 * V + 2 * (U + V * abs(U)) + abs(U) + 2 + (len(f) - 1)
+            count = 0
+            for n in range(1, 50001):
+                if is_power(value(f, n), d):
+                    count += 1
+                self.assertLessEqual(abs(count - kappa * n ** (1.0 / t)), K, (name, n))
+
+
 if __name__ == '__main__':
     unittest.main()

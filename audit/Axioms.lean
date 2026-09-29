@@ -289,3 +289,9 @@ open PerfectPower
 #print axioms PerfectPower.RationalYun.branch_infinite_iff
 #print axioms PerfectPower.RationalYun.branch_infinite_iff_bounded
 #print axioms PerfectPower.RationalYun.Decomposition.pell_kappa_decide
+-- Explicit error constant, radical type
+#print axioms PerfectPower.RationalYun.rpow_inv_le
+#print axioms PerfectPower.RationalYun.nat_radical_count_explicit
+#print axioms PerfectPower.RationalYun.int_coeff_count_explicit
+#print axioms PerfectPower.RationalYun.int_count_explicit
+#print axioms PerfectPower.RationalYun.Decomposition.radical_count_explicit

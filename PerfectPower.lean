@@ -41,3 +41,4 @@ import PerfectPower.Continuation.RadicalCountGeneral
 import PerfectPower.Continuation.PellCountGeneral
 import PerfectPower.Continuation.KappaPositive
 import PerfectPower.Continuation.PellPositive
+import PerfectPower.Continuation.ExplicitK
