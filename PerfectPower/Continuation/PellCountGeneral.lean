@@ -99,7 +99,8 @@ theorem card_zeros_le_rat (Q : ℚ[X]) (hQ : Q ≠ 0) (N : ℕ) :
 
 /-- **Clearing denominators in one branch.** -/
 theorem clear_denoms (γ b c : ℚ) (hγ : γ ≠ 0) (hdisc : b ^ 2 - 4 * c ≠ 0) :
-    ∃ A B C : ℤ, A ≠ 0 ∧ B ^ 2 - 4 * A * C ≠ 0 ∧ ∀ n : ℤ,
+    ∃ A B C : ℤ, A ≠ 0 ∧ B ^ 2 - 4 * A * C ≠ 0 ∧
+      (∃ s : ℚ, s ≠ 0 ∧ (A : ℚ) = γ * s ^ 2 ∧ (B : ℚ) = γ * s ^ 2 * b) ∧ ∀ n : ℤ,
       (RatPower (γ * ((n : ℚ) ^ 2 + b * n + c)) 2 ↔ IsHit 2 (A * n ^ 2 + B * n + C)) := by
   set D : ℤ := b.den * c.den with hDdef
   have hD : (D : ℚ) ≠ 0 := by rw [hDdef]; push_cast; positivity
@@ -112,7 +113,10 @@ theorem clear_denoms (γ b c : ℚ) (hγ : γ ≠ 0) (hdisc : b ^ 2 - 4 * c ≠ 
   have hgne : ((γ.num * γ.den : ℤ) : ℚ) ≠ 0 := by
     rw [hg]; exact mul_ne_zero hγ (by positivity)
   set g : ℤ := γ.num * γ.den
-  refine ⟨g * D ^ 2, g * D * (b.num * c.den), g * D * (c.num * b.den), ?_, ?_, fun n => ?_⟩
+  refine ⟨g * D ^ 2, g * D * (b.num * c.den), g * D * (c.num * b.den), ?_, ?_,
+    ⟨(γ.den : ℚ) * D, mul_ne_zero (by positivity) hD, by push_cast; rw [hg]; ring,
+      by push_cast; rw [hg, show ((b.num : ℚ) * c.den) = D * b by exact_mod_cast hβ]; ring⟩,
+    fun n => ?_⟩
   · have : ((g * D ^ 2 : ℤ) : ℚ) ≠ 0 := by push_cast; exact mul_ne_zero hgne (pow_ne_zero _ hD)
     exact_mod_cast this
   · have : (((g * D * (b.num * c.den)) ^ 2 - 4 * (g * D ^ 2) * (g * D * (c.num * b.den)) : ℤ) : ℚ)
@@ -149,6 +153,57 @@ lemma isSquare_of_isSquare_four_mul {A : ℤ} (h : IsSquare (4 * A)) : IsSquare 
   obtain ⟨k, rfl⟩ := heven
   exact ⟨k, by nlinarith⟩
 
+/-- `A < 0`: only `n ≤ |B| + |C|` can hit. -/
+lemma hit_le_of_neg {A B C : ℤ} (hneg : A < 0) :
+    ∀ n : ℕ, 1 ≤ n → IsHit 2 (A * (n : ℤ) ^ 2 + B * n + C) → n ≤ B.natAbs + C.natAbs := by
+  intro n hn ⟨m, hm⟩
+  by_contra hlt
+  push_neg at hlt
+  have hB : (B : ℤ) ≤ B.natAbs := Int.le_natAbs
+  have hC : (C : ℤ) ≤ C.natAbs := Int.le_natAbs
+  have hn' : (B.natAbs : ℤ) + C.natAbs + 1 ≤ n := by exact_mod_cast hlt
+  have hn0 : (0 : ℤ) ≤ n := by positivity
+  have hBn : B * n ≤ B.natAbs * n := mul_le_mul_of_nonneg_right hB hn0
+  have hAn : A * (n : ℤ) ^ 2 ≤ -(n : ℤ) ^ 2 := by nlinarith
+  nlinarith [sq_nonneg m]
+
+/-- `A = a^2` with nonzero discriminant: only `n ≤ |Δ| + |B|` can hit (a difference of two
+squares equals `Δ`). -/
+lemma hit_le_of_square {A B C : ℤ} (hpos : 0 < A) (hsqA : IsSquare A)
+    (hdisc : B ^ 2 - 4 * A * C ≠ 0) :
+    ∀ n : ℕ, 1 ≤ n → IsHit 2 (A * (n : ℤ) ^ 2 + B * n + C) →
+      n ≤ (B ^ 2 - 4 * A * C).natAbs + B.natAbs := by
+  obtain ⟨a, ha⟩ := hsqA
+  intro n hn ⟨m, hm⟩
+  set Δ := B ^ 2 - 4 * A * C
+  set Xv := 2 * A * n + B
+  set Yv := 2 * a * m
+  have hXY : (Xv - Yv) * (Xv + Yv) = Δ := by
+    simp only [Xv, Yv, Δ]
+    rw [ha] at hm ⊢
+    linear_combination (4 * (a * a)) * hm
+  have hp : 1 ≤ |Xv - Yv| := by
+    rcases eq_or_ne (Xv - Yv) 0 with h0 | h0
+    · rw [h0, zero_mul] at hXY; exact absurd hXY.symm hdisc
+    · exact Int.one_le_abs h0
+  have hq : 1 ≤ |Xv + Yv| := by
+    rcases eq_or_ne (Xv + Yv) 0 with h0 | h0
+    · rw [h0, mul_zero] at hXY; exact absurd hXY.symm hdisc
+    · exact Int.one_le_abs h0
+  have hpq : |Xv - Yv| * |Xv + Yv| = |Δ| := by rw [← abs_mul, hXY]
+  have h2X : |2 * Xv| ≤ |Xv - Yv| + |Xv + Yv| := by
+    calc |2 * Xv| = |(Xv - Yv) + (Xv + Yv)| := by ring_nf
+      _ ≤ _ := abs_add _ _
+  have hsum : |Xv - Yv| + |Xv + Yv| ≤ |Δ| + 1 := by nlinarith
+  have hX : Xv ≤ |Δ| := by
+    have : 2 * Xv ≤ |2 * Xv| := le_abs_self _
+    linarith
+  have hΔ : |Δ| = (Δ.natAbs : ℤ) := Int.abs_eq_natAbs Δ
+  have hB : -(B.natAbs : ℤ) ≤ B := by rw [← Int.abs_eq_natAbs]; exact neg_abs_le B
+  have : (n : ℤ) ≤ 2 * A * n := by nlinarith
+  have : (n : ℤ) ≤ Δ.natAbs + B.natAbs := by simp only [Xv] at hX; linarith
+  exact_mod_cast this
+
 /-- **One branch.**  `A n^2 + B n + C` with `A ≠ 0` and nonzero discriminant is a square for
 `κ log N + O(1)` indices `n ≤ N`, with `κ = 0` unless `A > 0` is not a square. -/
 theorem branch_count (A B C : ℤ) (hA : A ≠ 0) (hdisc : B ^ 2 - 4 * A * C ≠ 0) :
@@ -172,51 +227,9 @@ theorem branch_count (A B C : ℤ) (hA : A ≠ 0) (hdisc : B ^ 2 - 4 * A * C ≠
     simp only [zero_mul, sub_zero, Nat.abs_cast]
     exact_mod_cast hcard
   rcases lt_or_gt_of_ne hA with hneg | hpos
-  · -- `A < 0`: the value is eventually negative
-    apply bounded (B.natAbs + C.natAbs)
-    intro n hn ⟨m, hm⟩
-    by_contra hlt
-    push_neg at hlt
-    have hB : (B : ℤ) ≤ B.natAbs := Int.le_natAbs
-    have hC : (C : ℤ) ≤ C.natAbs := Int.le_natAbs
-    have hn' : (B.natAbs : ℤ) + C.natAbs + 1 ≤ n := by exact_mod_cast hlt
-    have hn0 : (0 : ℤ) ≤ n := by positivity
-    have hBn : B * n ≤ B.natAbs * n := mul_le_mul_of_nonneg_right hB hn0
-    have hAn : A * (n : ℤ) ^ 2 ≤ -(n : ℤ) ^ 2 := by nlinarith
-    nlinarith [sq_nonneg m]
+  · exact bounded _ (hit_le_of_neg hneg)
   · by_cases hsqA : IsSquare A
-    · -- `A = a^2`: a difference of two squares equals the nonzero discriminant
-      obtain ⟨a, ha⟩ := hsqA
-      apply bounded ((B ^ 2 - 4 * A * C).natAbs + B.natAbs)
-      intro n hn ⟨m, hm⟩
-      set Δ := B ^ 2 - 4 * A * C
-      set Xv := 2 * A * n + B
-      set Yv := 2 * a * m
-      have hXY : (Xv - Yv) * (Xv + Yv) = Δ := by
-        simp only [Xv, Yv, Δ]
-        rw [ha] at hm ⊢
-        linear_combination (4 * (a * a)) * hm
-      have hp : 1 ≤ |Xv - Yv| := by
-        rcases eq_or_ne (Xv - Yv) 0 with h0 | h0
-        · rw [h0, zero_mul] at hXY; exact absurd hXY.symm hdisc
-        · exact Int.one_le_abs h0
-      have hq : 1 ≤ |Xv + Yv| := by
-        rcases eq_or_ne (Xv + Yv) 0 with h0 | h0
-        · rw [h0, mul_zero] at hXY; exact absurd hXY.symm hdisc
-        · exact Int.one_le_abs h0
-      have hpq : |Xv - Yv| * |Xv + Yv| = |Δ| := by rw [← abs_mul, hXY]
-      have h2X : |2 * Xv| ≤ |Xv - Yv| + |Xv + Yv| := by
-        calc |2 * Xv| = |(Xv - Yv) + (Xv + Yv)| := by ring_nf
-          _ ≤ _ := abs_add _ _
-      have hsum : |Xv - Yv| + |Xv + Yv| ≤ |Δ| + 1 := by nlinarith
-      have hX : Xv ≤ |Δ| := by
-        have : 2 * Xv ≤ |2 * Xv| := le_abs_self _
-        linarith
-      have hΔ : |Δ| = (Δ.natAbs : ℤ) := Int.abs_eq_natAbs Δ
-      have hB : -(B.natAbs : ℤ) ≤ B := by rw [← Int.abs_eq_natAbs]; exact neg_abs_le B
-      have : (n : ℤ) ≤ 2 * A * n := by nlinarith
-      have : (n : ℤ) ≤ Δ.natAbs + B.natAbs := by simp only [Xv] at hX; linarith
-      exact_mod_cast this
+    · exact bounded _ (hit_le_of_square hpos hsqA hdisc)
     · -- `A > 0` not a square: a Pell unit exists, and `atlas_pell` applies
       have h4 : ¬ IsSquare (4 * A) := fun h => hsqA (isSquare_of_isSquare_four_mul h)
       obtain ⟨x, y, hxy, hy⟩ := Pell.exists_of_not_isSquare (by omega : 0 < 4 * A) h4
@@ -250,7 +263,7 @@ theorem Decomposition.pell_count {F : ℤ[X]}
   have hbranch : ∀ γ : ℚ, γ ≠ 0 → ∃ κ K : ℝ, 0 ≤ κ ∧ ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N →
       |(#((Icc 1 N).filter (P γ)) : ℝ) - κ * Real.log N| ≤ K := by
     intro γ hγ
-    obtain ⟨A, B, C, hA, hD, hPA⟩ := clear_denoms γ (Q.coeff 1) (Q.coeff 0) hγ hdisc
+    obtain ⟨A, B, C, hA, hD, -, hPA⟩ := clear_denoms γ (Q.coeff 1) (Q.coeff 0) hγ hdisc
     obtain ⟨κ, K, hκ, N₀, hK⟩ := branch_count A B C hA hD
     refine ⟨κ, K, hκ, N₀, fun N hN => ?_⟩
     have e1 : (Icc 1 N).filter (P γ) =

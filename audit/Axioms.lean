@@ -277,3 +277,15 @@ open PerfectPower
 #print axioms PerfectPower.RationalYun.zeros_finite
 #print axioms PerfectPower.RationalYun.int_radical_infinite_iff
 #print axioms PerfectPower.RationalYun.Decomposition.radical_kappa_decide
+-- Positivity of the Pell constant: one point, a bounded search, and the F-level decision
+#print axioms PerfectPower.RationalYun.hit_le_of_neg
+#print axioms PerfectPower.RationalYun.hit_le_of_square
+#print axioms PerfectPower.RationalYun.short_period
+#print axioms PerfectPower.RationalYun.orbit_mono
+#print axioms PerfectPower.RationalYun.orbit_growth
+#print axioms PerfectPower.RationalYun.root_small
+#print axioms PerfectPower.RationalYun.branch_point_infinite
+#print axioms PerfectPower.RationalYun.branch_bounded_witness
+#print axioms PerfectPower.RationalYun.branch_infinite_iff
+#print axioms PerfectPower.RationalYun.branch_infinite_iff_bounded
+#print axioms PerfectPower.RationalYun.Decomposition.pell_kappa_decide
