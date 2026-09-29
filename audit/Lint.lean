@@ -22,6 +22,7 @@ import PerfectPower.MordellMinus6
 import PerfectPower.Transport
 import PerfectPower.Continuation.DenominatorReduction
 import PerfectPower.Continuation.RadicalCountGeneral
+import PerfectPower.Continuation.PellCountGeneral
 import Batteries.Tactic.Lint
 /-! Batteries' environment linters over the hand-written library, not the generated certificates (docstrings, unused haves,
 simp-normal forms, ...).  Run with `lake env lean audit/Lint.lean`; it must report 0 errors. -/

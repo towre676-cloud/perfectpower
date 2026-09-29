@@ -256,3 +256,11 @@ open PerfectPower
 #print axioms PerfectPower.RationalYun.int_coeff_count
 #print axioms PerfectPower.RationalYun.int_count
 #print axioms PerfectPower.RationalYun.Decomposition.radical_count
+-- Theorem C as a count for a general F (squarefree quadratic, +-gamma branches, Pell units)
+#print axioms PerfectPower.RationalYun.squarefree_prod_of_coprime
+#print axioms PerfectPower.RationalYun.pellPart_squarefree
+#print axioms PerfectPower.RationalYun.disc_ne_zero
+#print axioms PerfectPower.RationalYun.card_zeros_le_rat
+#print axioms PerfectPower.RationalYun.clear_denoms
+#print axioms PerfectPower.RationalYun.branch_count
+#print axioms PerfectPower.RationalYun.Decomposition.pell_count
