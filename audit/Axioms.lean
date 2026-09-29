@@ -190,3 +190,10 @@ open PerfectPower
 #print axioms PerfectPower.Transport.complete_of_no_points
 #print axioms PerfectPower.Transport.cubic_sound_image
 #print axioms PerfectPower.Transport.n3m2_hits
+-- Class number two, unconditional: y^2 = x^3 - 13 (ideal-free class-group argument)
+#print axioms PerfectPower.MordellMinus13.exists_short
+#print axioms PerfectPower.MordellMinus13.norm_table
+#print axioms PerfectPower.MordellMinus13.cube_root
+#print axioms PerfectPower.MordellMinus13.points
+#print axioms PerfectPower.MordellMinus13.hitSet
+#print axioms PerfectPower.Transport.complete_cube_sub_thirteen

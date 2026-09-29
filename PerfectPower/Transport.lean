@@ -1,5 +1,6 @@
 import PerfectPower.Genus1
 import PerfectPower.MordellMinus2
+import PerfectPower.MordellMinus13
 import PerfectPower.MordellFLT3
 import PerfectPower.MordellDescent
 
@@ -84,6 +85,13 @@ theorem complete_cube_sub_two : CompleteArgs (fun t => t ^ 3 - 2) 2 {3} := by
   constructor
   · rintro ⟨m, hm⟩; exact ((MordellMinus2.points t m).mp hm.symm).1
   · rintro rfl; exact ⟨5, by norm_num⟩
+
+theorem complete_cube_sub_thirteen : CompleteArgs (fun t => t ^ 3 - 13) 2 {17} := by
+  intro t
+  simp only [Finset.mem_singleton]
+  constructor
+  · rintro ⟨m, hm⟩; exact ((MordellMinus13.points t m).mp hm.symm).1
+  · rintro rfl; exact ⟨70, by norm_num⟩
 
 theorem complete_fermat (u : ℤ) (hu : u ≠ 0) :
     CompleteArgs (fun t => t ^ 3 - 432 * u ^ 6) 2 {12 * u ^ 2} := by
