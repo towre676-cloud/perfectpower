@@ -175,3 +175,18 @@ open PerfectPower
 #print axioms PerfectPower.MordellFLT3.points
 #print axioms PerfectPower.MordellFLT3.isHit_iff
 #print axioms PerfectPower.MordellFLT3.hitSet_432
+-- Positive rank, unconditional: y^2 = x^3 - 2 and y^2 = x^3 - 4
+#print axioms PerfectPower.MordellMinus2.norm_mod_lt
+#print axioms PerfectPower.MordellMinus2.points
+#print axioms PerfectPower.MordellMinus2.hitSet
+#print axioms PerfectPower.MordellMinus4.unit_is_cube
+#print axioms PerfectPower.MordellMinus4.points
+#print axioms PerfectPower.MordellMinus4.hitSet
+-- Transport with integrality and exact counts
+#print axioms PerfectPower.Transport.affine_count
+#print axioms PerfectPower.Transport.affine_count_le
+#print axioms PerfectPower.Transport.affine_cube_sub_two
+#print axioms PerfectPower.Transport.complete_fermat
+#print axioms PerfectPower.Transport.complete_of_no_points
+#print axioms PerfectPower.Transport.cubic_sound_image
+#print axioms PerfectPower.Transport.n3m2_hits

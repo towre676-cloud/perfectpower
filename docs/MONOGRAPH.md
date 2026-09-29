@@ -2,7 +2,7 @@
 
 ## Exact definitions, a polynomial dichotomy, finite-hit certificates, and the arithmetic of the zero branch
 
-## 0. Status of every result (edition 0.7)
+## 0. Status of every result (edition 0.8)
 
 This table is the single source of truth. The research notes, the paper, the README and the trust boundary state the same claims. Labels: **Lean** means compiled and axiom-audited (only `propext`, `Classical.choice`, `Quot.sound`). **Lean ⇐ H** means compiled, with a named hypothesis that is not proved. **Paper** means a written proof. **External** means a computation by third-party software (Sage, Singular). **Evidence** means exact within a stated bound and silent beyond it.
 
@@ -20,6 +20,8 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Genus one: 399 non-monic/shifted families, 2 binomials | Lean ⇐ named Sage point lists (`Genus1.lean`, `Binomial.lean`) | Sage `integral_points` (External) | `Generated/Genus1.lean` |
 | Genus one, unconditional: 1163 Mordell curves $y^2=x^3+k$, $0<|k|\le10^4$, with **no** integral points | **Lean** (elementary descent `MordellDescent.lean`; no hypothesis) | agrees with the Sage census, 0 conflicts | `Generated/MordellDescent.lean` |
 | Genus one, unconditional and **nonempty**: $y^2=x^3-432u^6$ has exactly the integral points $(12u^2,\pm36u^3)$ for every $u\ne0$; so $n^3-432u^6=m^2$ iff $n=12u^2$ | **Lean** (`MordellFLT3.lean`, from Mathlib's `fermatLastTheoremThree`) | classical (the Fermat cubic) | `MordellFLT3.isHit_iff` |
+| Genus one, unconditional, **positive rank**: $y^2=x^3-2$ (points $(3,\pm5)$), $y^2=x^3-4$ (points $(2,\pm2),(5,\pm11)$) | **Lean** (`MordellMinus2.lean`, `MordellMinus4.lean`; descent in ℤ[√−2], ℤ[i]) | Mathlib (Euclidean ℤ[i]; ours for ℤ[√−2]) | §5A |
+| Transport of complete lists through $n\mapsto rn+s$ with exact counts; image-restricted genus-one premise | **Lean** (`affine_count`, `cubic_sound_image`, `n3m2_hits`) | — | `Transport.lean`, §5A |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
 | Transforms (Theorem T); log-periodic heat term (Theorem T2) | Paper; T2's $O(\tau)$ coefficient checked numerically | Mellin analysis (classical) | notes §8 |
@@ -80,6 +82,30 @@ For F(n)=n³, a square hit occurs exactly when n is a square, so A(N)=⌊√N⌋
 Define α=limsup_N log(1+A(N))/log N. The regularization makes α=0 for empty and finite hit sets. The above cases have α=1/2, 1/2, 0, and 1 for a polynomial d-th power; Pell gives α=0 despite infinitely many hits. For F(n)=a n+c with a>0, the congruence m^d≡c mod a determines whether any sufficiently large hits exist. If it has R positive residue classes modulo a, A(N)∼R a^(1/d−1)N^(1/d); if it has none, A(N)=0. The exact count and leading constant should be preferred over an exponent whenever available.
 
 An enriched profile can retain (H, α, finite/infinite support, a logarithmic correction when meaningful, and local congruence data). Finiteness may be known nonconstructively; distinguish that proof status from an enumerated finite set. Brocard-type factorial questions lie outside the polynomial theorem. A computation of finitely many factorial values cannot establish their density or the finiteness of their hit set. Conversely, periodic fixtures can have rational H strictly between zero and one, but such fixtures are not examples contradicting the polynomial theorem.
+
+### 5A. Genus one without an external point list (edition 0.8)
+
+Sections 4–5 establish that a nonsingular cubic $F$ has finitely many square hits, but finiteness is not a list. Until edition 0.7 every complete genus-one list in this repository rested on Sage's `integral_points`, an elliptic-logarithm computation that Lean never checks. This section describes the four ways the Lean library now closes such a list with no external hypothesis. It also describes the bridge that carries a closed list to an exact hit count.
+
+**1. Arithmetic obstruction: curves with no integral points** (`MordellDescent.lean`). Let $k=c^3-Db^2$ with $D\in\{1,2,-2\}$. An integral point of $y^2=x^3+k$ gives
+$$y^2+Db^2=(x+c)\,q,\qquad q=x^2-cx+c^2=\tfrac14\big((2x-c)^2+3c^2\big)\ge0.$$
+Let $G_D$ be the residues mod 8 of the odd primes $p$ for which $-D$ is a square mod $p$: $\{1,5\}$, $\{1,3\}$ and $\{1,7\}$ respectively (Mathlib's supplementary laws). $G_D$ is closed under multiplication, so an odd $q$ with $q\bmod 8\notin G_D$ has a prime factor $p$ with $p\bmod 8\notin G_D$ (`exists_bad_prime`). The kernel evaluates every residue pair mod $M\in\{8,16,32\}$ and checks that the equation forces exactly this (`CongOK`). Such a $p$ divides $y^2+Db^2$, and $-D$ is not a square mod $p$, so $p\mid b$ (`good_of_dvd`). This is excluded by a certificate $b=2^jb_1$ with $b_1\mid u^2+D$ (`goodDivisors_of_cert`). The obstruction is arithmetic, not local: the curves have points modulo every integer. For $0<|k|\le10^4$ the search finds 1163 such $k$, 28 of them census rows whose Sage rank was unproved. For $D=\pm3$ the method fails structurally: every prime factor of $q$ is $3$ or $\equiv1\pmod 3$, so $-3$ is a quadratic residue modulo it.
+
+**2. Reduction to a formalised theorem: a nonempty infinite family** (`MordellFLT3.lean`). On $y^2=x^3-432u^6$,
+$$(36u^3+y)^3+(36u^3-y)^3=(6ux)^3,$$
+so Mathlib's `fermatLastTheoremThree` forces a vanishing cube. This gives exactly the points $(12u^2,\pm36u^3)$.
+
+**3. Positive rank: descent in a Euclidean quadratic ring** (`MordellMinus2.lean`, `MordellMinus4.lean`). $y^2=x^3-2$ and $y^2=x^3-4$ have rank one. There are infinitely many rational points, so no finite-group or congruence argument can close the list.
+- *For $x^3-2$:* ℤ[√−2] is made Euclidean by integer rounding, and the remainder norm is at most $\tfrac34$ of the divisor's. By a congruence mod 4, $y$ is odd. The explicit Bézout identity $(-B-c\sqrt{-2})A+c\sqrt{-2}\,B=1$ with $A,B=y\pm\sqrt{-2}$ and $c=k^2+k+1$ proves coprimality. Mathlib's `exists_associated_pow_of_mul_eq_pow'` extracts a cube root, and the only units are $\pm1$. The $\sqrt{-2}$-coefficient gives $b(3a^2-2b^2)=1$, hence $(x,y)=(3,\pm5)$.
+- *For $x^3-4$ in ℤ[i]:* every unit is a cube. When $y$ is odd, the argument gives $(5,\pm11)$. When $y$ is even, it passes through $y_1^2+1=2x_1^3$ and the factor $1+i$ to the Thue equation $(a-b)(a^2+4ab+b^2)=1$, giving $(2,\pm2)$.
+
+These reprove in Lean 4 results that Baanen–Best–Coppola–Dahmen formalised in Lean 3 through class groups. The route here is elementary and applies only in class number one. $y^2=x^3-13$ (class number 2) is the next target and needs their class-group computation.
+
+**4. Transport with integrality** (`Transport.lean`). Suppose a complete list is $\mathrm{CompleteArgs}(G,d,T)$: $G(t)$ is a $d$-th power iff $t\in T$, for every *integer* $t$. For $r\ne0$, the family $n\mapsto G(rn+s)$ then has hits exactly at $rn+s\in T$. By `affine_count`, the count is
+$$A(N)=\#\{t\in T:\ r\mid t-s,\ 1\le (t-s)/r\le N\},$$
+from the same hypothesis. For example, $(rn+s)^3-2$ is a square iff $rn+s=3$, so $A(N)\in\{0,1\}$ is decided by $r\mid 3-s$ and $1\le(3-s)/r\le N$ (`affine_cube_sub_two`).
+
+The Weierstrass normalisation of `Genus1.lean` needs the same care. The old premise `IntegralPointsOn` asks for *every* integral point of the scaled model. A theorem about $m^2=F(n)$ only classifies the points in the image of $(n,m)\mapsto(9an+3b,\,27am)$. `IntegralPointsOnImage` asks only for those points (those with $9a\mid U-3b$ and $27a\mid V$), and `cubic_sound_image` proves the hit list from it. For $n^3-2$ the model is $V^2=U^3-1458$: `n3m2_image` discharges the image premise from `MordellMinus2.points`, and `n3m2_hits` recovers the unconditional list $\{3\}$ through the generic checker, without classifying the model's other integral points. The same distinction will be essential for quartic models, where the change of variables introduces denominators.
 
 ### 6. Dirichlet and heat transforms
 

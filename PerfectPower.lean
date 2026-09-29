@@ -29,3 +29,6 @@ import PerfectPower.Generated.Genus1
 import PerfectPower.MordellDescent
 import PerfectPower.Generated.MordellDescent
 import PerfectPower.MordellFLT3
+import PerfectPower.MordellMinus2
+import PerfectPower.MordellMinus4
+import PerfectPower.Transport
