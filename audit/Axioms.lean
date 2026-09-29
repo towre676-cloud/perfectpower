@@ -161,3 +161,17 @@ open PerfectPower
 #print axioms PerfectPower.Genus1.quad_sound
 #print axioms PerfectPower.Generated.Genus1.g1_sq_m1_m3_2_1_hits
 #print axioms PerfectPower.Generated.Genus1.g1_cube_m6_m7_6_hits
+-- MordellDescent (unconditional: no integral points on y^2 = x^3 + k)
+#print axioms PerfectPower.MordellDescent.good_of_dvd
+#print axioms PerfectPower.MordellDescent.exists_bad_prime
+#print axioms PerfectPower.MordellDescent.goodDivisors_of_cert
+#print axioms PerfectPower.MordellDescent.no_points
+#print axioms PerfectPower.MordellDescent.not_isHit
+#print axioms PerfectPower.MordellDescent.mordell_7
+#print axioms PerfectPower.Generated.MordellDescent.no_points_m9985
+#print axioms PerfectPower.Generated.MordellDescent.no_points_m9957
+#print axioms PerfectPower.Generated.MordellDescent.no_points_m9201
+-- MordellFLT3 (unconditional nonempty list, via Mathlib's FLT for exponent 3)
+#print axioms PerfectPower.MordellFLT3.points
+#print axioms PerfectPower.MordellFLT3.isHit_iff
+#print axioms PerfectPower.MordellFLT3.hitSet_432

@@ -104,10 +104,20 @@ The parts with a chance of being new are engineering and certification:
 - This is strong prior art for **effective** finite-type bounds. The repository's Siegel-premise route is ineffective, while `runge.py` handles an algorithmic subcase. Importing Theorem 2.1 into Lean would require formalizing its full hypotheses and a bound usable by the enumeration algorithm; a citation is not an executable cutoff.
 - *Formalised here:* nothing from this paper.
 
+**Mordell, *Diophantine Equations* (Academic Press, 1969), ch. 26 [primary text pending].**
+- The elementary argument that $y^2=x^3+k$ has no integral points when $k=(4m-1)^3-4n^2$ and $n$ has no prime factor $\equiv3\pmod4$, and variants. This is classical; the case $k=7$ is a textbook exercise.
+- *Formalised here:* a parametrised version (`MordellDescent.no_points`, $D\in\{1,2,-2\}$, congruence mod $M$ checked by the kernel) and 1163 generated instances for $0<|k|\le10^4$.
+- *Adds:* no new mathematics. The contribution is a kernel-checked, hypothesis-free completeness statement plugged into the hit-list interface, and an independent confirmation of 1163 empty rows of the Sage census, 28 of them rows where Sage's rank was unproved.
+
+**Euler; the Fermat cubic $a^3+b^3=c^3$ and $y^2=x^3-432$ [classical].**
+- The birational map between the Fermat cubic and $y^2=x^3-432$ is classical. `MordellFLT3.lean` uses only the polynomial identity $(36u^3+y)^3+(36u^3-y)^3=(6ux)^3$ and Mathlib's `fermatLastTheoremThree` (Mathlib contributors, 2024).
+- *Adds:* a kernel-checked complete, nonempty hit list for an infinite family ($n^3-432u^6$), plugged into the hit-list interface. No new mathematics.
+
 **[Baanen, Best, Coppola and Dahmen, *Formalized Class Group Computations and Integral Points on Mordell Elliptic Curves*](https://arxiv.org/html/2209.15492v2) (CPP 2023).**
 - Theorem 5.1 and §5 give a Lean 3 class-group descent for $y^2=x^3+c$ under explicit negative-squarefree, congruence and class-number hypotheses. §4 computes class numbers for $c=-1,-2,-5,-6,-13$; §5 describes complete integral-point results for selected instances. **Kernel-checked genus-one completeness therefore predates this repository.**
 - `Genus1.lean` currently derives lists only under a named Sage point-list hypothesis, so its 399 instances are *conditional reductions*, not a replacement for those completeness proofs. A concrete next step is to choose a compatible $c$, translate its signed integral-point statement to positive $n$ and $m^2=F(n)$, and port or reprove the descent under this repository's Lean 4/Mathlib version. Verify the resulting theorem with the standard-axiom audit before advertising a new complete instance.
 - Any claim of novelty should concern the integration of a completed proof into the hit-count and certificate interface, not the first formal Mordell solution.
+- Their method (class groups, negative $c$) and the elementary descent in `MordellDescent.lean` (quadratic-residue obstructions, both signs of $k$, empty lists only) cover different curves; neither subsumes the other. Overlap of individual $k$ values has not been checked against their tables.
 
 **Flajolet, Gourdon, Dumas, *Mellin transforms and asymptotics: harmonic sums*, TCS 144 (1995) 3–58.**
 - The general machinery behind Theorem T2's log-periodic term. T2's novelty, if any, is limited to its arithmetic input: the Pell orbit and class decomposition, the shift $-B/(2A)$ and the exact correction $\delta_j$.

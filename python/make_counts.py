@@ -67,6 +67,13 @@ if gl.exists():
     lines.append(f'- Generated Lean genus-one reductions: {s["theorems"]} theorems proving complete hit lists '
                  'from a named hypothesis (Sage\'s integral points on the Weierstrass model); the '
                  'hypothesis itself is not proved in Lean.')
+md = root / 'receipts' / 'mordell_descent.json'
+if md.exists():
+    s = json.loads(md.read_text())
+    lines.append(f'- Mordell curves $y^2=x^3+k$, $0<|k|\\le{s["K"]}$, proved in Lean to have **no** integral points, '
+                 f'unconditionally (elementary descent, `MordellDescent.lean`): **{s["curves"]}**; '
+                 f'{len(s["census_rows_not_independently_certified"])} of them rest in the Sage census on an '
+                 f'unproved rank; {len(s["census_conflicts"])} conflicts with the census.')
 tg = root / 'receipts' / 'theorem_g_check.json'
 if tg.exists():
     s = json.loads(tg.read_text())

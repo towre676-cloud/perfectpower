@@ -48,7 +48,10 @@ Each entry gives the precise problem, the current best approach, and the obstruc
 ## Added after the third review
 
 9. **A kernel-checked completeness proof for one nonrigid genus-one family.**
-   - *Current state:* every genus-one hit list here rests on Sage (`Genus1.lean` takes its point list as a hypothesis).
+   - *Done for empty lists (2026-09-29):* `MordellDescent.lean` proves, with no hypothesis, that $y^2=x^3+k$ has no integral points for 1163 values $0<|k|\le10^4$, including $k=7$ (so $n^3+7$ is never a square). This is Mordell's classical elementary descent ($k=c^3-Db^2$, $D\in\{1,2,-2\}$), with congruences checked by the kernel. 28 of these curves rest in the Sage census on an unproved rank.
+   - *Done for one nonempty family:* `MordellFLT3.lean` proves that the integral points of $y^2=x^3-432u^6$ are exactly $(12u^2,\pm36u^3)$, for every $u\ne0$, by reduction to Mathlib's `fermatLastTheoremThree` (the curve is the Fermat cubic). So $n^3-432u^6=m^2$ iff $n=12u^2$.
+   - *Still open:* a nonempty list for a curve of **positive rank**, or any curve not reducible to a formalised theorem, which needs a height bound or a formal descent that bounds rather than excludes. Extending the descent to $D=\pm3$ (cubic residues of $-3$) would cover more empty cases.
+   - *Current state for nonempty lists:* every one rests on Sage (`Genus1.lean` takes its point list as a hypothesis).
    - *Two routes:* (i) an independently checked height bound followed by an exact kernel-checked sieve up to it; or (ii) a formal descent for one well-chosen curve.
    - *Obstruction:* both are research projects. Any claim must be compared with Baanen–Best–Coppola–Dahmen (CPP 2023).
 10. **Quartic genus-one models $m^2=$ quartic** with non-square leading coefficient, e.g. Ljunggren's $2n^4-1=m^2$ (hits $1,13$; a theorem of Ljunggren, 1942).

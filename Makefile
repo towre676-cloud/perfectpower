@@ -36,6 +36,7 @@ receipts:
 	$(PY) crosscheck/check_theorem_g.py
 	$(PY) python/make_lean_genus1.py
 	$(PY) python/make_lean_census.py
+	$(PY) python/make_lean_mordell_descent.py
 	$(PY) python/uniformity.py
 	$(PY) python/make_pell_heat_receipt.py
 

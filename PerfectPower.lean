@@ -26,3 +26,6 @@ import PerfectPower.RadicalAsymp
 import PerfectPower.Atlas
 import PerfectPower.Genus1
 import PerfectPower.Generated.Genus1
+import PerfectPower.MordellDescent
+import PerfectPower.Generated.MordellDescent
+import PerfectPower.MordellFLT3

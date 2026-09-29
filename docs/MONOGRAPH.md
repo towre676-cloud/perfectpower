@@ -18,6 +18,8 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Theorem G, geometric half (Kummer, Riemann–Hurwitz) | Paper; External check (Singular genus, Sage places at infinity) over the range stated in `receipts/theorem_g_check.json` | — | notes §5 |
 | Runge enumeration, rigid branch | Paper (Theorem R); 19 instances Lean via pp-cert/1 (`check_sound`, `rungeCheck_sound`) | — | `Reflect.lean`, `CERTIFICATE_FORMAT.md` |
 | Genus one: 399 non-monic/shifted families, 2 binomials | Lean ⇐ named Sage point lists (`Genus1.lean`, `Binomial.lean`) | Sage `integral_points` (External) | `Generated/Genus1.lean` |
+| Genus one, unconditional: 1163 Mordell curves $y^2=x^3+k$, $0<|k|\le10^4$, with **no** integral points | **Lean** (elementary descent `MordellDescent.lean`; no hypothesis) | agrees with the Sage census, 0 conflicts | `Generated/MordellDescent.lean` |
+| Genus one, unconditional and **nonempty**: $y^2=x^3-432u^6$ has exactly the integral points $(12u^2,\pm36u^3)$ for every $u\ne0$; so $n^3-432u^6=m^2$ iff $n=12u^2$ | **Lean** (`MordellFLT3.lean`, from Mathlib's `fermatLastTheoremThree`) | classical (the Fermat cubic) | `MordellFLT3.isHit_iff` |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
 | Transforms (Theorem T); log-periodic heat term (Theorem T2) | Paper; T2's $O(\tau)$ coefficient checked numerically | Mellin analysis (classical) | notes §8 |

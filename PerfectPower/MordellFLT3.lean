@@ -21,7 +21,7 @@ model of the Fermat cubic `a^3 + b^3 = c^3`.)
 namespace PerfectPower.MordellFLT3
 
 lemma cube_inj {a b : ℤ} (h : a ^ 3 = b ^ 3) : a = b :=
-  (Odd.pow_left_injective (by decide : Odd 3)) h
+  (Odd.pow_inj (⟨1, rfl⟩ : Odd 3)).mp h
 
 /-- **Integral points of `y^2 = x^3 - 432 u^6`.** -/
 theorem points (u : ℤ) (hu : u ≠ 0) (x y : ℤ) :
@@ -45,7 +45,8 @@ theorem points (u : ℤ) (hu : u ≠ 0) (x y : ℤ) :
         · exact absurd (by linarith : u = 0) hu
         · exact h6
       rw [hx] at h
-      nlinarith [sq_nonneg y, pow_pos (pow_pos (lt_of_le_of_ne (sq_nonneg u) (Ne.symm (pow_ne_zero 2 hu))) 3)]
+      have h6 : 0 < u ^ 6 := Even.pow_pos ⟨3, rfl⟩ hu
+      nlinarith [sq_nonneg y]
     · exact absurd key (flt _ _ _ ha hb hc)
   · rintro ⟨rfl, rfl | rfl⟩ <;> ring
 
