@@ -3,9 +3,9 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test receipts counts check-clean crosscheck fuzz bench paper
+.PHONY: verify lean audit lint test cert-audit receipts counts check-clean crosscheck fuzz bench paper
 
-verify: lean audit lint test receipts counts check-clean
+verify: lean audit lint test cert-audit receipts counts check-clean
 	@echo "verify: OK"
 
 lean:
@@ -20,6 +20,9 @@ lint: lean
 
 test:
 	$(PY) -m unittest discover -s python/tests
+
+cert-audit:
+	$(PY) python/independent_cert_audit.py
 
 receipts:
 	$(PY) python/make_receipts.py

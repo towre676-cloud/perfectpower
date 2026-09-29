@@ -94,9 +94,12 @@ def main():
     if args.command == 'count':
         from .atlas import classify, structural_count
         cl = classify(f, args.d)
-        print(json.dumps({'kind': cl.kind, 'growth': cl.growth, 'N': args.N,
-                          'count': structural_count(f, args.d, args.N),
-                          'kappa': cl.details.get('kappa')}, indent=2))
+        out = {'kind': cl.kind, 'growth': cl.growth, 'N': args.N,
+               'count': structural_count(f, args.d, args.N),
+               'kappa': cl.details.get('kappa')}
+        if cl.details.get('kappa_exact') is not None:
+            out['kappa_exact'] = cl.details['kappa_exact']
+        print(json.dumps(out, indent=2))
         return
     if args.command == 'certificate':
         cert = rigid_certificate(f, args.d)

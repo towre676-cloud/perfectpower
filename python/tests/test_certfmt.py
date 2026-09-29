@@ -1,10 +1,14 @@
 """pp-cert/1: round trip JSON -> Lean -> JSON, and rejection of malformed certificates."""
 import copy
 import json
+import contextlib
+import io
+import tempfile
 import unittest
 from pathlib import Path
 
 from perfectpower.certfmt import CertError, from_lean, statement_hash, to_lean, validate
+from independent_cert_audit import check as independent_check, main as independent_main
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -19,6 +23,17 @@ class RoundTrip(unittest.TestCase):
         self.assertEqual(len(certs), 19)
         for c in certs:
             validate(c)
+
+    def test_independent_audit_fails_closed(self):
+        for c in load_all():
+            independent_check(c)
+        bad = copy.deepcopy(next(c for c in load_all() if c['kind'] == 'runge'))
+        bad['data']['signs'][0] *= -1
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'bad.json'
+            path.write_text(json.dumps(bad))
+            with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                self.assertEqual(independent_main([str(path)]), 1)
 
     def test_json_lean_json(self):
         for c in load_all():

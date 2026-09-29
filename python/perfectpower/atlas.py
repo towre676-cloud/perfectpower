@@ -23,7 +23,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from fractions import Fraction
-from math import gcd, isqrt, log
+from math import exp, gcd, isfinite, isqrt, log, log1p
 
 from .arith import factorint, generalized_pell_classes, is_square, pell_fundamental, divisors
 from .core import evaluate, integer_power_root, mul, normalize, power
@@ -175,7 +175,9 @@ def classify(coefficients, d: int) -> Classification:
         (j0,) = [j for j in parts if d // gcd(d, j) != 1]
         alpha = -parts[j0][0]
         info = _radical_data(f, d, lead, alpha, j0)
-        infinite = info['kappa'] > 0
+        # The numerical approximation to κ may underflow for large squarefree twists.
+        # A positive admissible residue class is the exact infinitude criterion.
+        infinite = bool(info['good_residues_mod_v'])
         return Classification(kind='radical', growth=f'N^(1/{t})' if infinite else 'bounded',
                               exponent=Fraction(1, t) if infinite else Fraction(0),
                               infinite=infinite, effective=True, details=info, **base)
@@ -186,7 +188,10 @@ def classify(coefficients, d: int) -> Classification:
         for j in js:
             W = mul(W, parts[j])
         info = _pell_data(f, d, lead, W)
-        infinite = info['kappa'] > 0
+        # Each quadratic's good_fraction is an exact rational number.  A tiny
+        # positive coefficient can round to 0.0 in the displayed approximation.
+        infinite = any(Fraction(q['good_fraction']) > 0 for q in info['quadratics']
+                       if q['case'] == 'pell')
         return Classification(kind='pell', growth='log N' if infinite else 'bounded',
                               exponent=Fraction(0), infinite=infinite, effective=True,
                               details=info, **base)
@@ -262,10 +267,20 @@ def _radical_data(f, d: int, c: int, alpha: Fraction, r: int) -> dict:
         signs = []
     good = sorted(w for w in range(v) if (z0 * w ** t + u) % v == 0) if 1 in signs else []
     kappa = Fraction(len(good), v)                      # times (v / z0)^(1/t): see count
-    kappa_float = float(kappa) * (v / z0) ** (1 / t) if good else 0.0
+    try:
+        kappa_float = float(kappa) * (v / z0) ** (1 / t) if good else 0.0
+    except OverflowError:
+        kappa_float = None
+    if good and (kappa_float is None or not isfinite(kappa_float) or kappa_float == 0.0):
+        # Retain the exact expression in JSON; null means the approximation is
+        # below float range, not that the constant is zero.
+        kappa_float = None
     return {'alpha': str(alpha), 'r': r, 't': t, 'c1': c1, 'solvable': solvable, 'z0': z0,
             'signs': signs, 'good_residues_mod_v': good, 'v': v, 'u': u,
             'kappa': kappa_float,
+            **({'kappa_exact': {'coefficient': str(kappa), 'radicand_num': v,
+                                'radicand_den': z0, 'degree': t}}
+               if good and kappa_float is None else {}),
             'formula': 'hits = zeros of F  U  {(s z0 w^t + u)/v : w >= 1, s in signs, integral, >= 1}'}
 
 
@@ -361,9 +376,18 @@ def _pell_data(f, d: int, c: int, W) -> dict:
         A, B, C = (k * LW[2], k * LW[1], k * LW[0])
         qd = quadratic_square_data(A, B, C)
         quads.append(qd)
-        kappa += qd['kappa']
+        if qd['kappa'] is None:
+            kappa = None
+        elif kappa is not None:
+            kappa += qd['kappa']
+    positive = any(Fraction(q['good_fraction']) > 0 for q in quads if q['case'] == 'pell')
+    if positive and kappa == 0.0:
+        kappa = None
     return {'W': [str(x) for x in W], 'gammas': [str(g) for g in gammas],
             'quadratics': quads, 'kappa': kappa,
+            **({'kappa_exact': [{'good_fraction': q['good_fraction'], 'unit': q['unit'],
+                                 'D': q['D']} for q in quads if q['case'] == 'pell']}
+               if positive and kappa is None else {}),
             'formula': 'hits = zeros of F  U  {n : A n^2 + B n + C is a square} over the quadratics'}
 
 
@@ -380,7 +404,9 @@ def quadratic_square_data(A: int, B: int, C: int) -> dict:
     else:
         Dp = 4 * A
         x1, y1 = pell_fundamental(Dp)
-        eps = x1 + y1 * Dp ** 0.5
+        # Avoid converting a potentially huge discriminant or unit to float.
+        # The ratio in exp(...) is strictly below 1 by the Pell identity.
+        log_eps = log(x1) + log1p(exp(log(y1) + log(Dp) / 2 - log(x1)))
         g_over_pi = Fraction(0)
         orbits = _positive_orbits(Dp, Delta)
         for (X, Y) in orbits:
@@ -396,8 +422,10 @@ def quadratic_square_data(A: int, B: int, C: int) -> dict:
                 if state == state0:
                     break
             g_over_pi += Fraction(good, period)
+        kappa = float(g_over_pi) / log_eps
         out.update(case='pell', D=Dp, unit=(x1, y1), orbits=orbits,
-                   good_fraction=str(g_over_pi), kappa=float(g_over_pi) / log(eps))
+                   good_fraction=str(g_over_pi),
+                   kappa=None if g_over_pi > 0 and kappa == 0.0 else kappa)
     return out
 
 

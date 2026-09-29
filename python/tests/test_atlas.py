@@ -1,7 +1,7 @@
 import random
 import unittest
 from fractions import Fraction
-from math import gcd, lcm, log
+from math import gcd, lcm, log, prod
 
 from perfectpower.arith import (factorint, generalized_pell_classes_bruteforce, generalized_pell_solutions,
                                 is_square, pell_fundamental, sqrt_mod)
@@ -179,6 +179,19 @@ class TestAtlas(unittest.TestCase):
             self.assertAlmostEqual(cl.details['kappa'], kappa, places=12)
             N = 10 ** 30
             self.assertLessEqual(abs(structural_count(f, d, N) - kappa * N ** 0.5), 10 ** 3)
+
+    def test_radical_infinitude_does_not_depend_on_float_range(self):
+        primes = []
+        for n in range(2, 900):
+            if all(n % p for p in primes if p * p <= n):
+                primes.append(n)
+        c = prod(primes)  # squarefree and large enough that 1/sqrt(c) underflows
+        cl = classify((0, c), 2)
+        self.assertEqual((cl.kind, cl.infinite, cl.growth, cl.exponent),
+                         ('radical', True, 'N^(1/2)', Fraction(1, 2)))
+        self.assertIsNone(cl.details['kappa'])
+        self.assertEqual(cl.details['kappa_exact']['radicand_den'], c)
+        self.assertEqual(structural_count((0, c), 2, 100 * c), 10)
 
     def test_pell_constant(self):
         cl = classify((1, 0, 2), 2)
