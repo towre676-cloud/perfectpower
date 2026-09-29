@@ -48,7 +48,7 @@ crosscheck:
 	$(SAGEPY) crosscheck/cubics_sage.py 12 100000
 	$(SAGEPY) crosscheck/binomial_curves.py
 	PYTHONPATH=python $(SAGEPY) crosscheck/genus1_sage.py 400 3
-	$(SAGEPY) crosscheck/theorem_g_sage.py 12 12 4
+	$(SAGEPY) crosscheck/theorem_g_sage.py 8 8 4
 	$(SAGEPY) crosscheck/mordell_census.py 10000 4
 
 # Differential fuzzers with fixed seeds (python/fuzz/); the finite-bucket scan goes to 1e8.

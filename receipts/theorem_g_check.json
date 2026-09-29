@@ -1,12 +1,13 @@
 {
 "description": "Theorem G check: Singular geometric genus (every case) and Sage places at infinity (where computed within the alarm) against chi = d'(1 - S)",
-"d_max": 5,
-"degree_max": 6,
-"cases": 116,
+"d_max": 8,
+"degree_max": 8,
+"cases": 462,
 "disagreements": [],
-"cases_with_chi_negative": 70,
-"n_inf_computed": 116,
-"n_inf_alarm_seconds": 20,
+"cases_with_chi_negative": 348,
+"n_inf_computed": 453,
+"genus_computed": 462,
+"n_inf_alarm_seconds": 5,
 "S_gt_1_iff_not_power_radical_pell": true,
 "rows": [
 {
@@ -19,23 +20,6 @@
 ],
 "d_prime": 2,
 "S": "1/2",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-2
-],
-"t_profile": [
-1
-],
-"d_prime": 1,
-"S": "0",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
@@ -65,32 +49,13 @@
 {
 "d": 2,
 "multiplicities": [
-3
-],
-"t_profile": [
 2
 ],
-"d_prime": 2,
-"S": "1/2",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-2,
+"t_profile": [
 1
 ],
-"t_profile": [
-1,
-2
-],
-"d_prime": 2,
-"S": "1/2",
+"d_prime": 1,
+"S": "0",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
@@ -122,13 +87,15 @@
 {
 "d": 2,
 "multiplicities": [
-4
-],
-"t_profile": [
+2,
 1
 ],
-"d_prime": 1,
-"S": "0",
+"t_profile": [
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
@@ -139,60 +106,18 @@
 {
 "d": 2,
 "multiplicities": [
-3,
-1
+3
 ],
 "t_profile": [
-2,
 2
 ],
 "d_prime": 2,
-"S": "1",
-"chi_formula": "0",
-"n_inf_formula": 2,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-2,
-2
-],
-"t_profile": [
-1,
-1
-],
-"d_prime": 1,
-"S": "0",
+"S": "1/2",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
 "n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-2,
-1,
-1
-],
-"t_profile": [
-1,
-2,
-2
-],
-"d_prime": 2,
-"S": "1",
-"chi_formula": "0",
-"n_inf_formula": 2,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 2,
 "agrees": true
 },
 {
@@ -221,51 +146,36 @@
 {
 "d": 2,
 "multiplicities": [
-5
-],
-"t_profile": [
-2
-],
-"d_prime": 2,
-"S": "1/2",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-4,
+2,
+1,
 1
 ],
 "t_profile": [
 1,
+2,
 2
 ],
 "d_prime": 2,
-"S": "1/2",
-"chi_formula": "1",
-"n_inf_formula": 1,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
 "genus_formula": "0",
 "genus_singular": 0,
-"n_inf_sage": 1,
+"n_inf_sage": 2,
 "agrees": true
 },
 {
 "d": 2,
 "multiplicities": [
-3,
+2,
 2
 ],
 "t_profile": [
-2,
+1,
 1
 ],
-"d_prime": 2,
-"S": "1/2",
+"d_prime": 1,
+"S": "0",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
@@ -277,64 +187,35 @@
 "d": 2,
 "multiplicities": [
 3,
-1,
 1
 ],
 "t_profile": [
 2,
-2,
 2
 ],
 "d_prime": 2,
-"S": "3/2",
-"chi_formula": "-1",
-"n_inf_formula": 1,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 1,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
 "agrees": true
 },
 {
 "d": 2,
 "multiplicities": [
-2,
-2,
-1
+4
 ],
 "t_profile": [
-1,
-1,
-2
+1
 ],
-"d_prime": 2,
-"S": "1/2",
+"d_prime": 1,
+"S": "0",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-2,
-1,
-1,
-1
-],
-"t_profile": [
-1,
-2,
-2,
-2
-],
-"d_prime": 2,
-"S": "3/2",
-"chi_formula": "-1",
-"n_inf_formula": 1,
-"genus_formula": "1",
-"genus_singular": 1,
 "n_inf_sage": 1,
 "agrees": true
 },
@@ -366,9 +247,311 @@
 {
 "d": 2,
 "multiplicities": [
-6
+2,
+1,
+1,
+1
 ],
 "t_profile": [
+1,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+2,
+1
+],
+"t_profile": [
+1,
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+2
+],
+"t_profile": [
+2,
+1
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+1
+],
+"t_profile": [
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+5
+],
+"t_profile": [
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "3",
+"chi_formula": "-4",
+"n_inf_formula": 2,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+2,
+1,
+1
+],
+"t_profile": [
+1,
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+2,
+2
+],
+"t_profile": [
+1,
+1,
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+2,
+1
+],
+"t_profile": [
+2,
+1,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+3
+],
+"t_profile": [
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+1,
+1
+],
+"t_profile": [
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+2
+],
+"t_profile": [
+1,
 1
 ],
 "d_prime": 1,
@@ -402,11 +585,9 @@
 {
 "d": 2,
 "multiplicities": [
-4,
-2
+6
 ],
 "t_profile": [
-1,
 1
 ],
 "d_prime": 1,
@@ -421,73 +602,409 @@
 {
 "d": 2,
 "multiplicities": [
-4,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "7/2",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+1,
+1,
+1,
 1,
 1
 ],
 "t_profile": [
 1,
 2,
+2,
+2,
+2,
 2
 ],
 "d_prime": 2,
-"S": "1",
-"chi_formula": "0",
-"n_inf_formula": 2,
+"S": "5/2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+1,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+2,
+2,
+1
+],
+"t_profile": [
+1,
+1,
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
-"n_inf_sage": 2,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 2,
 "multiplicities": [
 3,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "5/2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+2,
+1,
+1
+],
+"t_profile": [
+2,
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+2,
+2
+],
+"t_profile": [
+2,
+1,
+1
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+3,
+1
+],
+"t_profile": [
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+2,
+1
+],
+"t_profile": [
+1,
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
 3
 ],
 "t_profile": [
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+5,
+1,
+1
+],
+"t_profile": [
+2,
 2,
 2
 ],
 "d_prime": 2,
-"S": "1",
-"chi_formula": "0",
-"n_inf_formula": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+5,
+2
+],
+"t_profile": [
+2,
+1
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+6,
+1
+],
+"t_profile": [
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+7
+],
+"t_profile": [
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+2,
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "4",
+"chi_formula": "-6",
+"n_inf_formula": 2,
+"genus_formula": "3",
+"genus_singular": 3,
 "n_inf_sage": 2,
 "agrees": true
 },
 {
 "d": 2,
 "multiplicities": [
-3,
 2,
+1,
+1,
+1,
+1,
+1,
 1
 ],
 "t_profile": [
-2,
 1,
+2,
+2,
+2,
+2,
+2,
 2
 ],
 "d_prime": 2,
-"S": "1",
-"chi_formula": "0",
+"S": "3",
+"chi_formula": "-4",
 "n_inf_formula": 2,
-"genus_formula": "0",
-"genus_singular": 0,
+"genus_formula": "2",
+"genus_singular": 2,
 "n_inf_sage": 2,
 "agrees": true
 },
 {
 "d": 2,
 "multiplicities": [
-3,
+2,
+2,
+1,
 1,
 1,
 1
 ],
 "t_profile": [
+1,
+1,
 2,
 2,
 2,
@@ -507,9 +1024,36 @@
 "multiplicities": [
 2,
 2,
+2,
+1,
+1
+],
+"t_profile": [
+1,
+1,
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+2,
+2,
+2,
 2
 ],
 "t_profile": [
+1,
 1,
 1,
 1
@@ -526,55 +1070,7 @@
 {
 "d": 2,
 "multiplicities": [
-2,
-2,
-1,
-1
-],
-"t_profile": [
-1,
-1,
-2,
-2
-],
-"d_prime": 2,
-"S": "1",
-"chi_formula": "0",
-"n_inf_formula": 2,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-2,
-1,
-1,
-1,
-1
-],
-"t_profile": [
-1,
-2,
-2,
-2,
-2
-],
-"d_prime": 2,
-"S": "2",
-"chi_formula": "-2",
-"n_inf_formula": 2,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 2,
-"multiplicities": [
-1,
+3,
 1,
 1,
 1,
@@ -599,15 +1095,338 @@
 "agrees": true
 },
 {
-"d": 3,
+"d": 2,
 "multiplicities": [
+3,
+2,
+1,
+1,
 1
 ],
 "t_profile": [
+2,
+1,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+2,
+2,
+1
+],
+"t_profile": [
+2,
+1,
+1,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+3,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+3,
+3,
+2
+],
+"t_profile": [
+2,
+2,
+1
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+2,
+1,
+1
+],
+"t_profile": [
+1,
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+2,
+2
+],
+"t_profile": [
+1,
+1,
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+3,
+1
+],
+"t_profile": [
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+4,
+4
+],
+"t_profile": [
+1,
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+5,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+5,
+2,
+1
+],
+"t_profile": [
+2,
+1,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+5,
 3
 ],
-"d_prime": 3,
-"S": "2/3",
+"t_profile": [
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+6,
+1,
+1
+],
+"t_profile": [
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+6,
+2
+],
+"t_profile": [
+1,
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+7,
+1
+],
+"t_profile": [
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 2,
+"multiplicities": [
+8
+],
+"t_profile": [
+1
+],
+"d_prime": 1,
+"S": "0",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
@@ -618,7 +1437,7 @@
 {
 "d": 3,
 "multiplicities": [
-2
+1
 ],
 "t_profile": [
 3
@@ -649,6 +1468,63 @@
 "genus_formula": "1",
 "genus_singular": 1,
 "n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2
+],
+"t_profile": [
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 3,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+1
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 3,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 3,
 "agrees": true
 },
 {
@@ -671,26 +1547,30 @@
 {
 "d": 3,
 "multiplicities": [
-2,
+1,
+1,
+1,
 1
 ],
 "t_profile": [
 3,
+3,
+3,
 3
 ],
 "d_prime": 3,
-"S": "4/3",
-"chi_formula": "-1",
-"n_inf_formula": 3,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 3,
 "multiplicities": [
-1,
+2,
 1,
 1
 ],
@@ -702,10 +1582,48 @@
 "d_prime": 3,
 "S": "2",
 "chi_formula": "-3",
-"n_inf_formula": 3,
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
 "genus_formula": "1",
 "genus_singular": 1,
-"n_inf_sage": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+1
+],
+"t_profile": [
+1,
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
@@ -722,208 +1640,6 @@
 "n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-3,
-1
-],
-"t_profile": [
-1,
-3
-],
-"d_prime": 3,
-"S": "2/3",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-2,
-2
-],
-"t_profile": [
-3,
-3
-],
-"d_prime": 3,
-"S": "4/3",
-"chi_formula": "-1",
-"n_inf_formula": 1,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-2,
-1,
-1
-],
-"t_profile": [
-3,
-3,
-3
-],
-"d_prime": 3,
-"S": "2",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-1,
-1,
-1,
-1
-],
-"t_profile": [
-3,
-3,
-3,
-3
-],
-"d_prime": 3,
-"S": "8/3",
-"chi_formula": "-5",
-"n_inf_formula": 1,
-"genus_formula": "3",
-"genus_singular": 3,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-5
-],
-"t_profile": [
-3
-],
-"d_prime": 3,
-"S": "2/3",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-4,
-1
-],
-"t_profile": [
-3,
-3
-],
-"d_prime": 3,
-"S": "4/3",
-"chi_formula": "-1",
-"n_inf_formula": 1,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-3,
-2
-],
-"t_profile": [
-1,
-3
-],
-"d_prime": 3,
-"S": "2/3",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-3,
-1,
-1
-],
-"t_profile": [
-1,
-3,
-3
-],
-"d_prime": 3,
-"S": "4/3",
-"chi_formula": "-1",
-"n_inf_formula": 1,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-2,
-2,
-1
-],
-"t_profile": [
-3,
-3,
-3
-],
-"d_prime": 3,
-"S": "2",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-2,
-1,
-1,
-1
-],
-"t_profile": [
-3,
-3,
-3,
-3
-],
-"d_prime": 3,
-"S": "8/3",
-"chi_formula": "-5",
-"n_inf_formula": 1,
-"genus_formula": "3",
-"genus_singular": 3,
 "n_inf_sage": 1,
 "agrees": true
 },
@@ -955,168 +1671,8 @@
 {
 "d": 3,
 "multiplicities": [
-6
-],
-"t_profile": [
-1
-],
-"d_prime": 1,
-"S": "0",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-5,
-1
-],
-"t_profile": [
-3,
-3
-],
-"d_prime": 3,
-"S": "4/3",
-"chi_formula": "-1",
-"n_inf_formula": 3,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 3,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-4,
-2
-],
-"t_profile": [
-3,
-3
-],
-"d_prime": 3,
-"S": "4/3",
-"chi_formula": "-1",
-"n_inf_formula": 3,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 3,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-4,
-1,
-1
-],
-"t_profile": [
-3,
-3,
-3
-],
-"d_prime": 3,
-"S": "2",
-"chi_formula": "-3",
-"n_inf_formula": 3,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 3,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-3,
-3
-],
-"t_profile": [
-1,
-1
-],
-"d_prime": 1,
-"S": "0",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-3,
 2,
-1
-],
-"t_profile": [
 1,
-3,
-3
-],
-"d_prime": 3,
-"S": "4/3",
-"chi_formula": "-1",
-"n_inf_formula": 3,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 3,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-3,
-1,
-1,
-1
-],
-"t_profile": [
-1,
-3,
-3,
-3
-],
-"d_prime": 3,
-"S": "2",
-"chi_formula": "-3",
-"n_inf_formula": 3,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 3,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-2,
-2,
-2
-],
-"t_profile": [
-3,
-3,
-3
-],
-"d_prime": 3,
-"S": "2",
-"chi_formula": "-3",
-"n_inf_formula": 3,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 3,
-"agrees": true
-},
-{
-"d": 3,
-"multiplicities": [
-2,
-2,
 1,
 1
 ],
@@ -1129,35 +1685,107 @@
 "d_prime": 3,
 "S": "8/3",
 "chi_formula": "-5",
-"n_inf_formula": 3,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 3,
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 3,
 "multiplicities": [
 2,
-1,
-1,
-1,
+2,
 1
 ],
 "t_profile": [
 3,
 3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
 3,
+1,
+1
+],
+"t_profile": [
+1,
 3,
 3
 ],
 "d_prime": 3,
-"S": "10/3",
-"chi_formula": "-7",
-"n_inf_formula": 3,
-"genus_formula": "3",
-"genus_singular": 3,
-"n_inf_sage": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+2
+],
+"t_profile": [
+1,
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+1
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+5
+],
+"t_profile": [
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
@@ -1188,15 +1816,1041 @@
 "agrees": true
 },
 {
-"d": 4,
+"d": 3,
 "multiplicities": [
+2,
+1,
+1,
+1,
 1
 ],
 "t_profile": [
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "10/3",
+"chi_formula": "-7",
+"n_inf_formula": 3,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 3,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2,
+2
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 3,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 3,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+2,
+1
+],
+"t_profile": [
+1,
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 3,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+3
+],
+"t_profile": [
+1,
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 3,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+2
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 3,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+5,
+1
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 3,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+6
+],
+"t_profile": [
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "14/3",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "4",
+"chi_formula": "-9",
+"n_inf_formula": 1,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "10/3",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2,
+2,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+2,
+1,
+1
+],
+"t_profile": [
+1,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+2,
+2
+],
+"t_profile": [
+1,
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+3,
+1
+],
+"t_profile": [
+1,
+1,
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+2,
+1
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+3
+],
+"t_profile": [
+3,
+1
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+5,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+5,
+2
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+6,
+1
+],
+"t_profile": [
+1,
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+7
+],
+"t_profile": [
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "16/3",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "14/3",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "4",
+"chi_formula": "-9",
+"n_inf_formula": 1,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2,
+2,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "10/3",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+2,
+2,
+2,
+2
+],
+"t_profile": [
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "10/3",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+2,
+2,
+1
+],
+"t_profile": [
+1,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+3,
+1,
+1
+],
+"t_profile": [
+1,
+1,
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+3,
+3,
+2
+],
+"t_profile": [
+1,
+1,
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "10/3",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+2,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+2,
+2
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
+3,
+1
+],
+"t_profile": [
+3,
+1,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+4,
 4
 ],
-"d_prime": 4,
-"S": "3/4",
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+5,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+5,
+2,
+1
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+5,
+3
+],
+"t_profile": [
+3,
+1
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+6,
+1,
+1
+],
+"t_profile": [
+1,
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+6,
+2
+],
+"t_profile": [
+1,
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+7,
+1
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 3,
+"multiplicities": [
+8
+],
+"t_profile": [
+3
+],
+"d_prime": 3,
+"S": "2/3",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
@@ -1207,13 +2861,13 @@
 {
 "d": 4,
 "multiplicities": [
-2
+1
 ],
 "t_profile": [
-2
+4
 ],
-"d_prime": 2,
-"S": "1/2",
+"d_prime": 4,
+"S": "3/4",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
@@ -1243,36 +2897,17 @@
 {
 "d": 4,
 "multiplicities": [
-3
+2
 ],
 "t_profile": [
-4
+2
 ],
-"d_prime": 4,
-"S": "3/4",
+"d_prime": 2,
+"S": "1/2",
 "chi_formula": "1",
 "n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-2,
-1
-],
-"t_profile": [
-2,
-4
-],
-"d_prime": 4,
-"S": "5/4",
-"chi_formula": "-1",
-"n_inf_formula": 1,
-"genus_formula": "1",
-"genus_singular": 1,
 "n_inf_sage": 1,
 "agrees": true
 },
@@ -1300,77 +2935,37 @@
 {
 "d": 4,
 "multiplicities": [
-4
-],
-"t_profile": [
+2,
 1
 ],
-"d_prime": 1,
-"S": "0",
-"chi_formula": "1",
+"t_profile": [
+2,
+4
+],
+"d_prime": 4,
+"S": "5/4",
+"chi_formula": "-1",
 "n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
+"genus_formula": "1",
+"genus_singular": 1,
 "n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 4,
 "multiplicities": [
-3,
-1
+3
 ],
 "t_profile": [
-4,
 4
 ],
 "d_prime": 4,
-"S": "3/2",
-"chi_formula": "-2",
-"n_inf_formula": 4,
+"S": "3/4",
+"chi_formula": "1",
+"n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
-"n_inf_sage": 4,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-2,
-2
-],
-"t_profile": [
-2,
-2
-],
-"d_prime": 2,
-"S": "1",
-"chi_formula": "0",
-"n_inf_formula": 2,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-2,
-1,
-1
-],
-"t_profile": [
-2,
-4,
-4
-],
-"d_prime": 4,
-"S": "2",
-"chi_formula": "-4",
-"n_inf_formula": 4,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 4,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
@@ -1399,120 +2994,76 @@
 {
 "d": 4,
 "multiplicities": [
-5
-],
-"t_profile": [
-4
-],
-"d_prime": 4,
-"S": "3/4",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-4,
+2,
+1,
 1
 ],
 "t_profile": [
-1,
+2,
+4,
 4
 ],
 "d_prime": 4,
-"S": "3/4",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-3,
-2
-],
-"t_profile": [
-4,
-2
-],
-"d_prime": 4,
-"S": "5/4",
-"chi_formula": "-1",
-"n_inf_formula": 1,
+"S": "2",
+"chi_formula": "-4",
+"n_inf_formula": 4,
 "genus_formula": "1",
 "genus_singular": 1,
-"n_inf_sage": 1,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+2
+],
+"t_profile": [
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
 "agrees": true
 },
 {
 "d": 4,
 "multiplicities": [
 3,
-1,
 1
 ],
 "t_profile": [
 4,
-4,
 4
 ],
 "d_prime": 4,
-"S": "9/4",
-"chi_formula": "-5",
-"n_inf_formula": 1,
-"genus_formula": "3",
-"genus_singular": 3,
-"n_inf_sage": 1,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 4,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 4,
 "agrees": true
 },
 {
 "d": 4,
 "multiplicities": [
-2,
-2,
-1
-],
-"t_profile": [
-2,
-2,
 4
 ],
-"d_prime": 4,
-"S": "7/4",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-2,
-1,
-1,
+"t_profile": [
 1
 ],
-"t_profile": [
-2,
-4,
-4,
-4
-],
-"d_prime": 4,
-"S": "11/4",
-"chi_formula": "-7",
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
 "n_inf_formula": 1,
-"genus_formula": "4",
-"genus_singular": 4,
+"genus_formula": "0",
+"genus_singular": 0,
 "n_inf_sage": 1,
 "agrees": true
 },
@@ -1544,140 +3095,24 @@
 {
 "d": 4,
 "multiplicities": [
-6
-],
-"t_profile": [
-2
-],
-"d_prime": 2,
-"S": "1/2",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-5,
-1
-],
-"t_profile": [
-4,
-4
-],
-"d_prime": 4,
-"S": "3/2",
-"chi_formula": "-2",
-"n_inf_formula": 2,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-4,
-2
-],
-"t_profile": [
-1,
-2
-],
-"d_prime": 2,
-"S": "1/2",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-4,
-1,
-1
-],
-"t_profile": [
-1,
-4,
-4
-],
-"d_prime": 4,
-"S": "3/2",
-"chi_formula": "-2",
-"n_inf_formula": 2,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-3,
-3
-],
-"t_profile": [
-4,
-4
-],
-"d_prime": 4,
-"S": "3/2",
-"chi_formula": "-2",
-"n_inf_formula": 2,
-"genus_formula": "1",
-"genus_singular": 1,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-3,
 2,
+1,
+1,
 1
 ],
 "t_profile": [
-4,
 2,
-4
-],
-"d_prime": 4,
-"S": "2",
-"chi_formula": "-4",
-"n_inf_formula": 2,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 2,
-"agrees": true
-},
-{
-"d": 4,
-"multiplicities": [
-3,
-1,
-1,
-1
-],
-"t_profile": [
-4,
 4,
 4,
 4
 ],
 "d_prime": 4,
-"S": "3",
-"chi_formula": "-8",
-"n_inf_formula": 2,
+"S": "11/4",
+"chi_formula": "-7",
+"n_inf_formula": 1,
 "genus_formula": "4",
 "genus_singular": 4,
-"n_inf_sage": 2,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
@@ -1685,15 +3120,55 @@
 "multiplicities": [
 2,
 2,
-2
+1
 ],
 "t_profile": [
 2,
 2,
+4
+],
+"d_prime": 4,
+"S": "7/4",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "9/4",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
 2
 ],
-"d_prime": 2,
-"S": "3/2",
+"t_profile": [
+4,
+2
+],
+"d_prime": 4,
+"S": "5/4",
 "chi_formula": "-1",
 "n_inf_formula": 1,
 "genus_formula": "1",
@@ -1704,23 +3179,63 @@
 {
 "d": 4,
 "multiplicities": [
-2,
-2,
+4,
+1
+],
+"t_profile": [
+1,
+4
+],
+"d_prime": 4,
+"S": "3/4",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+5
+],
+"t_profile": [
+4
+],
+"d_prime": 4,
+"S": "3/4",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+1,
+1,
+1,
+1,
 1,
 1
 ],
 "t_profile": [
-2,
-2,
+4,
+4,
+4,
+4,
 4,
 4
 ],
 "d_prime": 4,
-"S": "5/2",
-"chi_formula": "-6",
+"S": "9/2",
+"chi_formula": "-14",
 "n_inf_formula": 2,
-"genus_formula": "3",
-"genus_singular": 3,
+"genus_formula": "7",
+"genus_singular": 7,
 "n_inf_sage": 2,
 "agrees": true
 },
@@ -1752,7 +3267,658 @@
 {
 "d": 4,
 "multiplicities": [
+2,
+2,
 1,
+1
+],
+"t_profile": [
+2,
+2,
+4,
+4
+],
+"d_prime": 4,
+"S": "5/2",
+"chi_formula": "-6",
+"n_inf_formula": 2,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+2,
+2
+],
+"t_profile": [
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "3/2",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "3",
+"chi_formula": "-8",
+"n_inf_formula": 2,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+2,
+1
+],
+"t_profile": [
+4,
+2,
+4
+],
+"d_prime": 4,
+"S": "2",
+"chi_formula": "-4",
+"n_inf_formula": 2,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+3
+],
+"t_profile": [
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+1,
+1
+],
+"t_profile": [
+1,
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+2
+],
+"t_profile": [
+1,
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+5,
+1
+],
+"t_profile": [
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+6
+],
+"t_profile": [
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "21/4",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+4,
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "17/4",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "13/4",
+"chi_formula": "-9",
+"n_inf_formula": 1,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+2,
+2,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+4
+],
+"d_prime": 4,
+"S": "9/4",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "15/4",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+2,
+1,
+1
+],
+"t_profile": [
+4,
+2,
+4,
+4
+],
+"d_prime": 4,
+"S": "11/4",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+2,
+2
+],
+"t_profile": [
+4,
+2,
+2
+],
+"d_prime": 4,
+"S": "7/4",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+3,
+1
+],
+"t_profile": [
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "9/4",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "9/4",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+2,
+1
+],
+"t_profile": [
+1,
+2,
+4
+],
+"d_prime": 4,
+"S": "5/4",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+3
+],
+"t_profile": [
+1,
+4
+],
+"d_prime": 4,
+"S": "3/4",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+5,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "9/4",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+5,
+2
+],
+"t_profile": [
+4,
+2
+],
+"d_prime": 4,
+"S": "5/4",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+6,
+1
+],
+"t_profile": [
+2,
+4
+],
+"d_prime": 4,
+"S": "5/4",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+7
+],
+"t_profile": [
+4
+],
+"d_prime": 4,
+"S": "3/4",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+4,
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "6",
+"chi_formula": "-20",
+"n_inf_formula": 4,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+4,
+4,
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "5",
+"chi_formula": "-16",
+"n_inf_formula": 4,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "4",
+"chi_formula": "-12",
+"n_inf_formula": 4,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+2,
+2,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+2,
+4,
+4
+],
+"d_prime": 4,
+"S": "3",
+"chi_formula": "-8",
+"n_inf_formula": 4,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+2,
+2,
+2,
+2
+],
+"t_profile": [
+2,
+2,
+2,
+2
+],
+"d_prime": 2,
+"S": "2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
 1,
 1,
 1,
@@ -1770,10 +3936,350 @@
 "d_prime": 4,
 "S": "9/2",
 "chi_formula": "-14",
+"n_inf_formula": 4,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+2,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "7/2",
+"chi_formula": "-10",
+"n_inf_formula": 4,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+2,
+2,
+1
+],
+"t_profile": [
+4,
+2,
+2,
+4
+],
+"d_prime": 4,
+"S": "5/2",
+"chi_formula": "-6",
+"n_inf_formula": 4,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+3,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "3",
+"chi_formula": "-8",
+"n_inf_formula": 4,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+3,
+3,
+2
+],
+"t_profile": [
+4,
+4,
+2
+],
+"d_prime": 4,
+"S": "2",
+"chi_formula": "-4",
+"n_inf_formula": 4,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "3",
+"chi_formula": "-8",
+"n_inf_formula": 4,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+2,
+1,
+1
+],
+"t_profile": [
+1,
+2,
+4,
+4
+],
+"d_prime": 4,
+"S": "2",
+"chi_formula": "-4",
+"n_inf_formula": 4,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+2,
+2
+],
+"t_profile": [
+1,
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
 "n_inf_formula": 2,
-"genus_formula": "7",
-"genus_singular": 7,
+"genus_formula": "0",
+"genus_singular": 0,
 "n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+3,
+1
+],
+"t_profile": [
+1,
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 4,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+4,
+4
+],
+"t_profile": [
+1,
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+5,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "3",
+"chi_formula": "-8",
+"n_inf_formula": 4,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+5,
+2,
+1
+],
+"t_profile": [
+4,
+2,
+4
+],
+"d_prime": 4,
+"S": "2",
+"chi_formula": "-4",
+"n_inf_formula": 4,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+5,
+3
+],
+"t_profile": [
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 4,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+6,
+1,
+1
+],
+"t_profile": [
+2,
+4,
+4
+],
+"d_prime": 4,
+"S": "2",
+"chi_formula": "-4",
+"n_inf_formula": 4,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+6,
+2
+],
+"t_profile": [
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+7,
+1
+],
+"t_profile": [
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 4,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 4,
+"multiplicities": [
+8
+],
+"t_profile": [
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
@@ -1790,6 +4296,25 @@
 "n_inf_formula": 1,
 "genus_formula": "0",
 "genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+1,
+1
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
 "n_inf_sage": 1,
 "agrees": true
 },
@@ -1814,6 +4339,27 @@
 "d": 5,
 "multiplicities": [
 1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
 1
 ],
 "t_profile": [
@@ -1849,122 +4395,6 @@
 {
 "d": 5,
 "multiplicities": [
-2,
-1
-],
-"t_profile": [
-5,
-5
-],
-"d_prime": 5,
-"S": "8/5",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-1,
-1,
-1
-],
-"t_profile": [
-5,
-5,
-5
-],
-"d_prime": 5,
-"S": "12/5",
-"chi_formula": "-7",
-"n_inf_formula": 1,
-"genus_formula": "4",
-"genus_singular": 4,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-4
-],
-"t_profile": [
-5
-],
-"d_prime": 5,
-"S": "4/5",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-3,
-1
-],
-"t_profile": [
-5,
-5
-],
-"d_prime": 5,
-"S": "8/5",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-2,
-2
-],
-"t_profile": [
-5,
-5
-],
-"d_prime": 5,
-"S": "8/5",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-2,
-1,
-1
-],
-"t_profile": [
-5,
-5,
-5
-],
-"d_prime": 5,
-"S": "12/5",
-"chi_formula": "-7",
-"n_inf_formula": 1,
-"genus_formula": "4",
-"genus_singular": 4,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
 1,
 1,
 1,
@@ -1988,43 +4418,28 @@
 {
 "d": 5,
 "multiplicities": [
-5
-],
-"t_profile": [
+2,
+1,
 1
 ],
-"d_prime": 1,
-"S": "0",
-"chi_formula": "1",
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
 "n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
+"genus_formula": "4",
+"genus_singular": 4,
 "n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 5,
 "multiplicities": [
-4,
-1
-],
-"t_profile": [
-5,
-5
-],
-"d_prime": 5,
-"S": "8/5",
-"chi_formula": "-3",
-"n_inf_formula": 5,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 5,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-3,
+2,
 2
 ],
 "t_profile": [
@@ -2034,75 +4449,46 @@
 "d_prime": 5,
 "S": "8/5",
 "chi_formula": "-3",
-"n_inf_formula": 5,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 5,
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 5,
 "multiplicities": [
 3,
-1,
 1
 ],
 "t_profile": [
 5,
-5,
 5
 ],
 "d_prime": 5,
-"S": "12/5",
-"chi_formula": "-7",
-"n_inf_formula": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
 "genus_formula": "2",
 "genus_singular": 2,
-"n_inf_sage": 5,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 5,
 "multiplicities": [
-2,
-2,
-1
+4
 ],
 "t_profile": [
-5,
-5,
 5
 ],
 "d_prime": 5,
-"S": "12/5",
-"chi_formula": "-7",
-"n_inf_formula": 5,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 5,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-2,
-1,
-1,
-1
-],
-"t_profile": [
-5,
-5,
-5,
-5
-],
-"d_prime": 5,
-"S": "16/5",
-"chi_formula": "-11",
-"n_inf_formula": 5,
-"genus_formula": "4",
-"genus_singular": 4,
-"n_inf_sage": 5,
+"S": "4/5",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
 "agrees": true
 },
 {
@@ -2133,123 +4519,7 @@
 {
 "d": 5,
 "multiplicities": [
-6
-],
-"t_profile": [
-5
-],
-"d_prime": 5,
-"S": "4/5",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-5,
-1
-],
-"t_profile": [
-1,
-5
-],
-"d_prime": 5,
-"S": "4/5",
-"chi_formula": "1",
-"n_inf_formula": 1,
-"genus_formula": "0",
-"genus_singular": 0,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-4,
-2
-],
-"t_profile": [
-5,
-5
-],
-"d_prime": 5,
-"S": "8/5",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-4,
-1,
-1
-],
-"t_profile": [
-5,
-5,
-5
-],
-"d_prime": 5,
-"S": "12/5",
-"chi_formula": "-7",
-"n_inf_formula": 1,
-"genus_formula": "4",
-"genus_singular": 4,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-3,
-3
-],
-"t_profile": [
-5,
-5
-],
-"d_prime": 5,
-"S": "8/5",
-"chi_formula": "-3",
-"n_inf_formula": 1,
-"genus_formula": "2",
-"genus_singular": 2,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-3,
 2,
-1
-],
-"t_profile": [
-5,
-5,
-5
-],
-"d_prime": 5,
-"S": "12/5",
-"chi_formula": "-7",
-"n_inf_formula": 1,
-"genus_formula": "4",
-"genus_singular": 4,
-"n_inf_sage": 1,
-"agrees": true
-},
-{
-"d": 5,
-"multiplicities": [
-3,
 1,
 1,
 1
@@ -2263,10 +4533,10 @@
 "d_prime": 5,
 "S": "16/5",
 "chi_formula": "-11",
-"n_inf_formula": 1,
-"genus_formula": "6",
-"genus_singular": 6,
-"n_inf_sage": 1,
+"n_inf_formula": 5,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 5,
 "agrees": true
 },
 {
@@ -2274,7 +4544,7 @@
 "multiplicities": [
 2,
 2,
-2
+1
 ],
 "t_profile": [
 5,
@@ -2284,17 +4554,95 @@
 "d_prime": 5,
 "S": "12/5",
 "chi_formula": "-7",
+"n_inf_formula": 5,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 5,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 5,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 5,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+2
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 5,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 5,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+1
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 5,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 5,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+5
+],
+"t_profile": [
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
 "n_inf_formula": 1,
-"genus_formula": "4",
-"genus_singular": 4,
+"genus_formula": "0",
+"genus_singular": 0,
 "n_inf_sage": 1,
 "agrees": true
 },
 {
 "d": 5,
 "multiplicities": [
-2,
-2,
+1,
+1,
+1,
+1,
 1,
 1
 ],
@@ -2302,14 +4650,16 @@
 5,
 5,
 5,
+5,
+5,
 5
 ],
 "d_prime": 5,
-"S": "16/5",
-"chi_formula": "-11",
+"S": "24/5",
+"chi_formula": "-19",
 "n_inf_formula": 1,
-"genus_formula": "6",
-"genus_singular": 6,
+"genus_formula": "10",
+"genus_singular": 10,
 "n_inf_sage": 1,
 "agrees": true
 },
@@ -2341,7 +4691,219 @@
 {
 "d": 5,
 "multiplicities": [
+2,
+2,
 1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
+2,
+2
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+2,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+3
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+2
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+5,
+1
+],
+"t_profile": [
+1,
+5
+],
+"d_prime": 5,
+"S": "4/5",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+6
+],
+"t_profile": [
+5
+],
+"d_prime": 5,
+"S": "4/5",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "28/5",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
 1,
 1,
 1,
@@ -2362,6 +4924,5057 @@
 "n_inf_formula": 1,
 "genus_formula": "10",
 "genus_singular": 10,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "4",
+"chi_formula": "-15",
+"n_inf_formula": 1,
+"genus_formula": "8",
+"genus_singular": 8,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
+2,
+2,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "4",
+"chi_formula": "-15",
+"n_inf_formula": 1,
+"genus_formula": "8",
+"genus_singular": 8,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+2,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+2,
+2
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+3,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+2,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+3
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+5,
+1,
+1
+],
+"t_profile": [
+1,
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+5,
+2
+],
+"t_profile": [
+1,
+5
+],
+"d_prime": 5,
+"S": "4/5",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+6,
+1
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+7
+],
+"t_profile": [
+5
+],
+"d_prime": 5,
+"S": "4/5",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "32/5",
+"chi_formula": "-27",
+"n_inf_formula": 1,
+"genus_formula": "14",
+"genus_singular": 14,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "28/5",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "24/5",
+"chi_formula": "-19",
+"n_inf_formula": 1,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
+2,
+2,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "4",
+"chi_formula": "-15",
+"n_inf_formula": 1,
+"genus_formula": "8",
+"genus_singular": 8,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+2,
+2,
+2,
+2
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "24/5",
+"chi_formula": "-19",
+"n_inf_formula": 1,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "4",
+"chi_formula": "-15",
+"n_inf_formula": 1,
+"genus_formula": "8",
+"genus_singular": 8,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+2,
+2,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+3,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+3,
+3,
+2
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "4",
+"chi_formula": "-15",
+"n_inf_formula": 1,
+"genus_formula": "8",
+"genus_singular": 8,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+2,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "16/5",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+2,
+2
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+3,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+4,
+4
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+5,
+1,
+1,
+1
+],
+"t_profile": [
+1,
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+5,
+2,
+1
+],
+"t_profile": [
+1,
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+5,
+3
+],
+"t_profile": [
+1,
+5
+],
+"d_prime": 5,
+"S": "4/5",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+6,
+1,
+1
+],
+"t_profile": [
+5,
+5,
+5
+],
+"d_prime": 5,
+"S": "12/5",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+6,
+2
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+7,
+1
+],
+"t_profile": [
+5,
+5
+],
+"d_prime": 5,
+"S": "8/5",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 5,
+"multiplicities": [
+8
+],
+"t_profile": [
+5
+],
+"d_prime": 5,
+"S": "4/5",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1
+],
+"t_profile": [
+6
+],
+"d_prime": 6,
+"S": "5/6",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1,
+1
+],
+"t_profile": [
+6,
+6
+],
+"d_prime": 6,
+"S": "5/3",
+"chi_formula": "-4",
+"n_inf_formula": 2,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2
+],
+"t_profile": [
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "5/2",
+"chi_formula": "-9",
+"n_inf_formula": 3,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+1
+],
+"t_profile": [
+3,
+6
+],
+"d_prime": 6,
+"S": "3/2",
+"chi_formula": "-3",
+"n_inf_formula": 3,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3
+],
+"t_profile": [
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1,
+1,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "10/3",
+"chi_formula": "-14",
+"n_inf_formula": 2,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6
+],
+"d_prime": 6,
+"S": "7/3",
+"chi_formula": "-8",
+"n_inf_formula": 2,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+1
+],
+"t_profile": [
+2,
+6
+],
+"d_prime": 6,
+"S": "4/3",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4
+],
+"t_profile": [
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "25/6",
+"chi_formula": "-19",
+"n_inf_formula": 1,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "19/6",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+1
+],
+"t_profile": [
+3,
+3,
+6
+],
+"d_prime": 6,
+"S": "13/6",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+1,
+1
+],
+"t_profile": [
+2,
+6,
+6
+],
+"d_prime": 6,
+"S": "13/6",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+2
+],
+"t_profile": [
+2,
+3
+],
+"d_prime": 6,
+"S": "7/6",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+1
+],
+"t_profile": [
+3,
+6
+],
+"d_prime": 6,
+"S": "3/2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+5
+],
+"t_profile": [
+6
+],
+"d_prime": 6,
+"S": "5/6",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "5",
+"chi_formula": "-24",
+"n_inf_formula": 6,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": 6,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "4",
+"chi_formula": "-18",
+"n_inf_formula": 6,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 6,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+6,
+6
+],
+"d_prime": 6,
+"S": "3",
+"chi_formula": "-12",
+"n_inf_formula": 6,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 6,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+2
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 3,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "3",
+"chi_formula": "-12",
+"n_inf_formula": 6,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 6,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+2,
+1
+],
+"t_profile": [
+2,
+3,
+6
+],
+"d_prime": 6,
+"S": "2",
+"chi_formula": "-6",
+"n_inf_formula": 6,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 6,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+3
+],
+"t_profile": [
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6
+],
+"d_prime": 6,
+"S": "7/3",
+"chi_formula": "-8",
+"n_inf_formula": 6,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 6,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+2
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 3,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 3,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+5,
+1
+],
+"t_profile": [
+6,
+6
+],
+"d_prime": 6,
+"S": "5/3",
+"chi_formula": "-4",
+"n_inf_formula": 6,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 6,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+6
+],
+"t_profile": [
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "35/6",
+"chi_formula": "-29",
+"n_inf_formula": 1,
+"genus_formula": "15",
+"genus_singular": 15,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "29/6",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "23/6",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+2,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+6
+],
+"d_prime": 6,
+"S": "17/6",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "23/6",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+2,
+1,
+1
+],
+"t_profile": [
+2,
+3,
+6,
+6
+],
+"d_prime": 6,
+"S": "17/6",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+2,
+2
+],
+"t_profile": [
+2,
+3,
+3
+],
+"d_prime": 6,
+"S": "11/6",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+3,
+1
+],
+"t_profile": [
+2,
+2,
+6
+],
+"d_prime": 6,
+"S": "11/6",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "19/6",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+2,
+1
+],
+"t_profile": [
+3,
+3,
+6
+],
+"d_prime": 6,
+"S": "13/6",
+"chi_formula": "-7",
+"n_inf_formula": 1,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+3
+],
+"t_profile": [
+3,
+2
+],
+"d_prime": 6,
+"S": "7/6",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+5,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "5/2",
+"chi_formula": "-9",
+"n_inf_formula": 1,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+5,
+2
+],
+"t_profile": [
+6,
+3
+],
+"d_prime": 6,
+"S": "3/2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+6,
+1
+],
+"t_profile": [
+1,
+6
+],
+"d_prime": 6,
+"S": "5/6",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+7
+],
+"t_profile": [
+6
+],
+"d_prime": 6,
+"S": "5/6",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6,
+6,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "20/3",
+"chi_formula": "-34",
+"n_inf_formula": 2,
+"genus_formula": "17",
+"genus_singular": 17,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "17/3",
+"chi_formula": "-28",
+"n_inf_formula": 2,
+"genus_formula": "14",
+"genus_singular": 14,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "14/3",
+"chi_formula": "-22",
+"n_inf_formula": 2,
+"genus_formula": "11",
+"genus_singular": 11,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+2,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+3,
+6,
+6
+],
+"d_prime": 6,
+"S": "11/3",
+"chi_formula": "-16",
+"n_inf_formula": 2,
+"genus_formula": "8",
+"genus_singular": 8,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+2,
+2,
+2,
+2
+],
+"t_profile": [
+3,
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "8/3",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+6,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "14/3",
+"chi_formula": "-22",
+"n_inf_formula": 2,
+"genus_formula": "11",
+"genus_singular": 11,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+3,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "11/3",
+"chi_formula": "-16",
+"n_inf_formula": 2,
+"genus_formula": "8",
+"genus_singular": 8,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+2,
+2,
+1
+],
+"t_profile": [
+2,
+3,
+3,
+6
+],
+"d_prime": 6,
+"S": "8/3",
+"chi_formula": "-10",
+"n_inf_formula": 2,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+3,
+1,
+1
+],
+"t_profile": [
+2,
+2,
+6,
+6
+],
+"d_prime": 6,
+"S": "8/3",
+"chi_formula": "-10",
+"n_inf_formula": 2,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+3,
+3,
+2
+],
+"t_profile": [
+2,
+2,
+3
+],
+"d_prime": 6,
+"S": "5/3",
+"chi_formula": "-4",
+"n_inf_formula": 2,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+3,
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "4",
+"chi_formula": "-18",
+"n_inf_formula": 2,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+2,
+1,
+1
+],
+"t_profile": [
+3,
+3,
+6,
+6
+],
+"d_prime": 6,
+"S": "3",
+"chi_formula": "-12",
+"n_inf_formula": 2,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+2,
+2
+],
+"t_profile": [
+3,
+3,
+3
+],
+"d_prime": 3,
+"S": "2",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+3,
+1
+],
+"t_profile": [
+3,
+2,
+6
+],
+"d_prime": 6,
+"S": "2",
+"chi_formula": "-6",
+"n_inf_formula": 2,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+4,
+4
+],
+"t_profile": [
+3,
+3
+],
+"d_prime": 3,
+"S": "4/3",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+5,
+1,
+1,
+1
+],
+"t_profile": [
+6,
+6,
+6,
+6
+],
+"d_prime": 6,
+"S": "10/3",
+"chi_formula": "-14",
+"n_inf_formula": 2,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+5,
+2,
+1
+],
+"t_profile": [
+6,
+3,
+6
+],
+"d_prime": 6,
+"S": "7/3",
+"chi_formula": "-8",
+"n_inf_formula": 2,
+"genus_formula": "4",
+"genus_singular": 4,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+5,
+3
+],
+"t_profile": [
+6,
+2
+],
+"d_prime": 6,
+"S": "4/3",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+6,
+1,
+1
+],
+"t_profile": [
+1,
+6,
+6
+],
+"d_prime": 6,
+"S": "5/3",
+"chi_formula": "-4",
+"n_inf_formula": 2,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+6,
+2
+],
+"t_profile": [
+1,
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+7,
+1
+],
+"t_profile": [
+6,
+6
+],
+"d_prime": 6,
+"S": "5/3",
+"chi_formula": "-4",
+"n_inf_formula": 2,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 6,
+"multiplicities": [
+8
+],
+"t_profile": [
+3
+],
+"d_prime": 3,
+"S": "2/3",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1
+],
+"t_profile": [
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1,
+1
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2
+],
+"t_profile": [
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+1
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3
+],
+"t_profile": [
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+1
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4
+],
+"t_profile": [
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "30/7",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+2
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+1
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+5
+],
+"t_profile": [
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "36/7",
+"chi_formula": "-29",
+"n_inf_formula": 1,
+"genus_formula": "15",
+"genus_singular": 15,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "30/7",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+2
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+2,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+3
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+2
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+5,
+1
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+6
+],
+"t_profile": [
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "6",
+"chi_formula": "-35",
+"n_inf_formula": 7,
+"genus_formula": "15",
+"genus_singular": 15,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "36/7",
+"chi_formula": "-29",
+"n_inf_formula": 7,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "30/7",
+"chi_formula": "-23",
+"n_inf_formula": 7,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+2,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 7,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "30/7",
+"chi_formula": "-23",
+"n_inf_formula": 7,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+2,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 7,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+2,
+2
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 7,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+3,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 7,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 7,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+2,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 7,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+3
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 7,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+5,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 7,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+5,
+2
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 7,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+6,
+1
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 7,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 7,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+7
+],
+"t_profile": [
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "48/7",
+"chi_formula": "-41",
+"n_inf_formula": 1,
+"genus_formula": "21",
+"genus_singular": 21,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "6",
+"chi_formula": "-35",
+"n_inf_formula": 1,
+"genus_formula": "18",
+"genus_singular": 18,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "36/7",
+"chi_formula": "-29",
+"n_inf_formula": 1,
+"genus_formula": "15",
+"genus_singular": 15,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+2,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "30/7",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+2,
+2,
+2,
+2
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "36/7",
+"chi_formula": "-29",
+"n_inf_formula": 1,
+"genus_formula": "15",
+"genus_singular": 15,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "30/7",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+2,
+2,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+3,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+3,
+3,
+2
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "30/7",
+"chi_formula": "-23",
+"n_inf_formula": 1,
+"genus_formula": "12",
+"genus_singular": 12,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+2,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+2,
+2
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+3,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+4,
+4
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+5,
+1,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "24/7",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+5,
+2,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+5,
+3
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+6,
+1,
+1
+],
+"t_profile": [
+7,
+7,
+7
+],
+"d_prime": 7,
+"S": "18/7",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+6,
+2
+],
+"t_profile": [
+7,
+7
+],
+"d_prime": 7,
+"S": "12/7",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+7,
+1
+],
+"t_profile": [
+1,
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 7,
+"multiplicities": [
+8
+],
+"t_profile": [
+7
+],
+"d_prime": 7,
+"S": "6/7",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1
+],
+"t_profile": [
+8
+],
+"d_prime": 8,
+"S": "7/8",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1,
+1
+],
+"t_profile": [
+8,
+8
+],
+"d_prime": 8,
+"S": "7/4",
+"chi_formula": "-6",
+"n_inf_formula": 2,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2
+],
+"t_profile": [
+4
+],
+"d_prime": 4,
+"S": "3/4",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "21/8",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+1
+],
+"t_profile": [
+4,
+8
+],
+"d_prime": 8,
+"S": "13/8",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3
+],
+"t_profile": [
+8
+],
+"d_prime": 8,
+"S": "7/8",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "7/2",
+"chi_formula": "-20",
+"n_inf_formula": 4,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+1,
+1
+],
+"t_profile": [
+4,
+8,
+8
+],
+"d_prime": 8,
+"S": "5/2",
+"chi_formula": "-12",
+"n_inf_formula": 4,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2
+],
+"t_profile": [
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 2,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+1
+],
+"t_profile": [
+8,
+8
+],
+"d_prime": 8,
+"S": "7/4",
+"chi_formula": "-6",
+"n_inf_formula": 4,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4
+],
+"t_profile": [
+2
+],
+"d_prime": 2,
+"S": "1/2",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "35/8",
+"chi_formula": "-27",
+"n_inf_formula": 1,
+"genus_formula": "14",
+"genus_singular": 14,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "27/8",
+"chi_formula": "-19",
+"n_inf_formula": 1,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+1
+],
+"t_profile": [
+4,
+4,
+8
+],
+"d_prime": 8,
+"S": "19/8",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "21/8",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+2
+],
+"t_profile": [
+8,
+4
+],
+"d_prime": 8,
+"S": "13/8",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+1
+],
+"t_profile": [
+2,
+8
+],
+"d_prime": 8,
+"S": "11/8",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+5
+],
+"t_profile": [
+8
+],
+"d_prime": 8,
+"S": "7/8",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "21/4",
+"chi_formula": "-34",
+"n_inf_formula": 2,
+"genus_formula": "17",
+"genus_singular": 17,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "17/4",
+"chi_formula": "-26",
+"n_inf_formula": 2,
+"genus_formula": "13",
+"genus_singular": 13,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+8,
+8
+],
+"d_prime": 8,
+"S": "13/4",
+"chi_formula": "-18",
+"n_inf_formula": 2,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+2
+],
+"t_profile": [
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "9/4",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "7/2",
+"chi_formula": "-20",
+"n_inf_formula": 2,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+2,
+1
+],
+"t_profile": [
+8,
+4,
+8
+],
+"d_prime": 8,
+"S": "5/2",
+"chi_formula": "-12",
+"n_inf_formula": 2,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+3
+],
+"t_profile": [
+8,
+8
+],
+"d_prime": 8,
+"S": "7/4",
+"chi_formula": "-6",
+"n_inf_formula": 2,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+1,
+1
+],
+"t_profile": [
+2,
+8,
+8
+],
+"d_prime": 8,
+"S": "9/4",
+"chi_formula": "-10",
+"n_inf_formula": 2,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+2
+],
+"t_profile": [
+2,
+4
+],
+"d_prime": 4,
+"S": "5/4",
+"chi_formula": "-1",
+"n_inf_formula": 1,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+5,
+1
+],
+"t_profile": [
+8,
+8
+],
+"d_prime": 8,
+"S": "7/4",
+"chi_formula": "-6",
+"n_inf_formula": 2,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": null,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+6
+],
+"t_profile": [
+4
+],
+"d_prime": 4,
+"S": "3/4",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "49/8",
+"chi_formula": "-41",
+"n_inf_formula": 1,
+"genus_formula": "21",
+"genus_singular": 21,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "41/8",
+"chi_formula": "-33",
+"n_inf_formula": 1,
+"genus_formula": "17",
+"genus_singular": 17,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "33/8",
+"chi_formula": "-25",
+"n_inf_formula": 1,
+"genus_formula": "13",
+"genus_singular": 13,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+2,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+8
+],
+"d_prime": 8,
+"S": "25/8",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "35/8",
+"chi_formula": "-27",
+"n_inf_formula": 1,
+"genus_formula": "14",
+"genus_singular": 14,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+2,
+1,
+1
+],
+"t_profile": [
+8,
+4,
+8,
+8
+],
+"d_prime": 8,
+"S": "27/8",
+"chi_formula": "-19",
+"n_inf_formula": 1,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+2,
+2
+],
+"t_profile": [
+8,
+4,
+4
+],
+"d_prime": 8,
+"S": "19/8",
+"chi_formula": "-11",
+"n_inf_formula": 1,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+3,
+1
+],
+"t_profile": [
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "21/8",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "25/8",
+"chi_formula": "-17",
+"n_inf_formula": 1,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+2,
+1
+],
+"t_profile": [
+2,
+4,
+8
+],
+"d_prime": 8,
+"S": "17/8",
+"chi_formula": "-9",
+"n_inf_formula": 1,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+3
+],
+"t_profile": [
+2,
+8
+],
+"d_prime": 8,
+"S": "11/8",
+"chi_formula": "-3",
+"n_inf_formula": 1,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+5,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "21/8",
+"chi_formula": "-13",
+"n_inf_formula": 1,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+5,
+2
+],
+"t_profile": [
+8,
+4
+],
+"d_prime": 8,
+"S": "13/8",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+6,
+1
+],
+"t_profile": [
+4,
+8
+],
+"d_prime": 8,
+"S": "13/8",
+"chi_formula": "-5",
+"n_inf_formula": 1,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+7
+],
+"t_profile": [
+8
+],
+"d_prime": 8,
+"S": "7/8",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 1,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+1,
+1,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "7",
+"chi_formula": "-48",
+"n_inf_formula": 8,
+"genus_formula": "21",
+"genus_singular": 21,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+1,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+8,
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "6",
+"chi_formula": "-40",
+"n_inf_formula": 8,
+"genus_formula": "17",
+"genus_singular": 17,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "5",
+"chi_formula": "-32",
+"n_inf_formula": 8,
+"genus_formula": "13",
+"genus_singular": 13,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+2,
+1,
+1
+],
+"t_profile": [
+4,
+4,
+4,
+8,
+8
+],
+"d_prime": 8,
+"S": "4",
+"chi_formula": "-24",
+"n_inf_formula": 8,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+2,
+2,
+2,
+2
+],
+"t_profile": [
+4,
+4,
+4,
+4
+],
+"d_prime": 4,
+"S": "3",
+"chi_formula": "-8",
+"n_inf_formula": 4,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+1,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "21/4",
+"chi_formula": "-34",
+"n_inf_formula": 8,
+"genus_formula": "14",
+"genus_singular": 14,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+2,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+4,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "17/4",
+"chi_formula": "-26",
+"n_inf_formula": 8,
+"genus_formula": "10",
+"genus_singular": 10,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+2,
+2,
+1
+],
+"t_profile": [
+8,
+4,
+4,
+8
+],
+"d_prime": 8,
+"S": "13/4",
+"chi_formula": "-18",
+"n_inf_formula": 8,
+"genus_formula": "6",
+"genus_singular": 6,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+3,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "7/2",
+"chi_formula": "-20",
+"n_inf_formula": 8,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+3,
+3,
+2
+],
+"t_profile": [
+8,
+8,
+4
+],
+"d_prime": 8,
+"S": "5/2",
+"chi_formula": "-12",
+"n_inf_formula": 8,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+1,
+1,
+1,
+1
+],
+"t_profile": [
+2,
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "4",
+"chi_formula": "-24",
+"n_inf_formula": 8,
+"genus_formula": "9",
+"genus_singular": 9,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+2,
+1,
+1
+],
+"t_profile": [
+2,
+4,
+8,
+8
+],
+"d_prime": 8,
+"S": "3",
+"chi_formula": "-16",
+"n_inf_formula": 8,
+"genus_formula": "5",
+"genus_singular": 5,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+2,
+2
+],
+"t_profile": [
+2,
+4,
+4
+],
+"d_prime": 4,
+"S": "2",
+"chi_formula": "-4",
+"n_inf_formula": 4,
+"genus_formula": "1",
+"genus_singular": 1,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+3,
+1
+],
+"t_profile": [
+2,
+8,
+8
+],
+"d_prime": 8,
+"S": "9/4",
+"chi_formula": "-10",
+"n_inf_formula": 8,
+"genus_formula": "2",
+"genus_singular": 2,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+4,
+4
+],
+"t_profile": [
+2,
+2
+],
+"d_prime": 2,
+"S": "1",
+"chi_formula": "0",
+"n_inf_formula": 2,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 2,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+5,
+1,
+1,
+1
+],
+"t_profile": [
+8,
+8,
+8,
+8
+],
+"d_prime": 8,
+"S": "7/2",
+"chi_formula": "-20",
+"n_inf_formula": 8,
+"genus_formula": "7",
+"genus_singular": 7,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+5,
+2,
+1
+],
+"t_profile": [
+8,
+4,
+8
+],
+"d_prime": 8,
+"S": "5/2",
+"chi_formula": "-12",
+"n_inf_formula": 8,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+5,
+3
+],
+"t_profile": [
+8,
+8
+],
+"d_prime": 8,
+"S": "7/4",
+"chi_formula": "-6",
+"n_inf_formula": 8,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+6,
+1,
+1
+],
+"t_profile": [
+4,
+8,
+8
+],
+"d_prime": 8,
+"S": "5/2",
+"chi_formula": "-12",
+"n_inf_formula": 8,
+"genus_formula": "3",
+"genus_singular": 3,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+6,
+2
+],
+"t_profile": [
+4,
+4
+],
+"d_prime": 4,
+"S": "3/2",
+"chi_formula": "-2",
+"n_inf_formula": 4,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 4,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+7,
+1
+],
+"t_profile": [
+8,
+8
+],
+"d_prime": 8,
+"S": "7/4",
+"chi_formula": "-6",
+"n_inf_formula": 8,
+"genus_formula": "0",
+"genus_singular": 0,
+"n_inf_sage": 8,
+"agrees": true
+},
+{
+"d": 8,
+"multiplicities": [
+8
+],
+"t_profile": [
+1
+],
+"d_prime": 1,
+"S": "0",
+"chi_formula": "1",
+"n_inf_formula": 1,
+"genus_formula": "0",
+"genus_singular": 0,
 "n_inf_sage": 1,
 "agrees": true
 }

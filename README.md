@@ -23,7 +23,7 @@ For $F\in\mathbb Z[x]$ and $d\ge2$, a *hit* is an index $n\ge1$ with $F(n)=m^d$,
 - Mordell census $y^2=x^3+k$, $0<|k|\le10000$: 20000 curves, 8600 integral points; labels `CONDITIONAL_ON_UNPROVEN_RANK` 485, `INDEPENDENT_COMPUTATION` 19515; 0 scan disagreements ($|x|\le10^5$); best Hall ratio 4.870804 ($k=1090$, $x=28187351$).
 - Genus-one cross-validation (non-monic/shifted $m^2=$ cubic, $m^3=$ quadratic): 400 families; labels `CONDITIONAL_ON_UNPROVEN_RANK` 1, `INDEPENDENT_COMPUTATION` 399; 0 disagreements with the exact scan to $10^6$; 3 certified hits beyond it (largest $n=12,017,947$).
 - Generated Lean genus-one reductions: 399 theorems proving complete hit lists from a named hypothesis (Sage's integral points on the Weierstrass model); the hypothesis itself is not proved in Lean.
-- Theorem G check ($d\le5$, $\deg F\le6$): 116 cases; Singular genus in all 116, Sage places at infinity in 116; 0 disagreements with $\chi=d'(1-S)$.
+- Theorem G check ($d\le8$, $\deg F\le8$): 462 cases; Singular genus in all 462, Sage places at infinity in 453; 0 disagreements with $\chi=d'(1-S)$.
 - Pillai gap census: 2856 pairs of perfect powers $\le 10^{18}$ at distance $\le 1000$ (exact within the bound).
 <!-- counts:end -->
 

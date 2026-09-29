@@ -158,7 +158,7 @@ Finally, each special root contributes at least $\frac12$ to $S$. Hence $S\le1$ 
 \end{proof}
 
 \begin{remark}[Checks of Theorem~\ref{thm:geom}]
-The last paragraph of the proof is compiled in Lean (\lean{S\_le\_one\_iff}). Lean also checks by kernel evaluation (\lean{profile\_table\_ok}) that for every $2\le d\le12$ and every multiplicity profile of degree at most $12$, the genus from Riemann--Hurwitz is a nonnegative integer and $\chi<0$ exactly outside the three exceptional profiles. Independently, Singular's normalisation computes $g_C$ over the same range, Sage's function fields compute $n_\infty$ where feasible, and we compare both with the formula. The Kummer and Riemann--Hurwitz step itself remains a paper argument.
+The last paragraph of the proof is compiled in Lean (\lean{S\_le\_one\_iff}). Lean also checks by kernel evaluation (\lean{profile\_table\_ok}) that for every $2\le d\le12$ and every multiplicity profile of degree at most $12$, the genus from Riemann--Hurwitz is a nonnegative integer and $\chi<0$ exactly outside the three exceptional profiles. Independently, Singular's normalisation computes $g_C$ for $d,\deg F\le8$, Sage's function fields compute $n_\infty$ where feasible, and we compare both with the formula. The Kummer and Riemann--Hurwitz step itself remains a paper argument.
 \end{remark}
 
 \begin{proof}[Proof of Theorem~\ref{thm:atlas}]
@@ -314,7 +314,7 @@ The exact Python implementation (standard library only) classifies $(F,d)$, comp
 \begin{itemize}
 \item \emph{Genus one.} For the $622$ nonsingular cubics $m^2=n^3+an+b$ with $|a|,|b|\le12$, and for $400$ further non-monic or shifted cubics and cubes $m^3=an^2+bn+c$, Sage's integral points agree with our exact scans. Each family is reduced to an integral Weierstrass model with integrality tracked, and the Sage points are then pulled back. The certified lists contain hits far beyond any scan: $n^3+n+4$ at $n=4128$, $n^3+2n^2-3n-1$ at $n=47882$, $6n^2+n+1=61301^3$ at $n=6{,}196{,}204$, and $6n^2-7n-6=95339^3$ at $n=12{,}017{,}947$. A plain-Python gate re-verifies every stored point and pull-back.
 \item \emph{Mordell census.} For all $20000$ curves $y^2=x^3+k$, $0<|k|\le10^4$, each row records the rank proof, generators, saturation index, point list and hash, and a scan to $|x|\le10^5$. A row whose scan disagrees cannot be labelled certified; the gate checks the domain and every row.
-\item \emph{Theorem~\ref{thm:geom}.} For $d,\deg F\le12$, Singular's normalisation genus, and Sage's count of places at infinity where it finishes, are compared with $\chi=d'(1-S)$.
+\item \emph{Theorem~\ref{thm:geom}.} For $d,\deg F\le8$ (462 cases), Singular's normalisation genus, and Sage's count of places at infinity where it finishes, are compared with $\chi=d'(1-S)$.
 \item \emph{Adversarial test of the enumerator.} Rigid polynomials with hits planted up to $n\approx10^9$ were constructed, and all planted hits were found in $220$ trials.
 \end{itemize}
 Families that are neither certified in Lean nor independently cross-validated are labelled as scan evidence only, and are scanned exactly to $10^8$.
