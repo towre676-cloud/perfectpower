@@ -37,3 +37,4 @@ import PerfectPower.MordellMinus5
 import PerfectPower.MordellMinus6
 import PerfectPower.Transport
 import PerfectPower.Continuation.DenominatorReduction
+import PerfectPower.Continuation.RadicalCountGeneral

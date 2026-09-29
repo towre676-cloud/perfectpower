@@ -11,7 +11,7 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Density 0–1 law, rigid branch | Lean (`rigid_zero_one`, `rigid_dichotomy`) | — | `ZeroOne.lean`, `Rigid.lean` |
 | Density 0–1 law, nonrigid branch | Paper | Boshernitzan (external theorem) | §3 below |
 | Power type: all hits, or finitely many | Lean (`atlas_power`, `power_type_finite`) | — | `Atlas.lean`, `RungeReduction.lean` |
-| Radical type $A(N)=\kappa N^{1/t}+O(1)$, $\kappa=(R/v)(v/z_0)^{1/t}$ | Lean for $c(vn-u)^rG(n)^d$ (`radical_asymptotic_int`, `atlas_radical`); reduction of a general $F$ to that form: **pointwise in Lean** (`integer_radical_reduction`: every $F\in\mathbb Z[X]$ with rational bad degree 1 satisfies $F(n)\in\mathcal H_d\iff F(n)=0\lor \mathrm{lc}(F)\,v^{d-r}(vn-u)^r\in\mathcal H_d$); connecting that to the count (exceptional zeros, signs, congruences): Paper | valuation core (Lean); rational Yun decomposition (Lean) | `RadicalAsymp.lean`; notes §3 |
+| Radical type $A(N)=\kappa N^{1/t}+O(1)$, $\kappa=(R/v)(v/z_0)^{1/t}$ | Lean for $c(vn-u)^rG(n)^d$ (`radical_asymptotic_int`, `atlas_radical`); general $F$ (rational bad degree 1): **Lean**. The pointwise reduction is `integer_radical_reduction`. The count is `Decomposition.radical_count`: $|A(N)-\kappa N^{1/t}|\le K$ with $\kappa\ge0$ and $2\le t\mid d$, keeping the exceptional zeros, both signs of the coefficient, negative shifts, and the unsolvable case ($\kappa=0$). Positivity of $\kappa$ (a nonempty residue set) is not decided in Lean | valuation core (Lean); rational Yun decomposition (Lean) | `RadicalAsymp.lean`; notes §3 |
 | Pell type $A(N)=\kappa\log N+O(1)$, $\kappa=(\sum_\rho g_\rho/P_\rho)/\log\varepsilon$ | Lean for $An^2+Bn+C$ with a given unit (`pell_exact_count`, `atlas_pell`); reduction of a general $F$ (Theorem C): **pointwise in Lean** (`integer_pell_reduction`, to rational square branches of a monic quadratic); orbit exhaustion and the count for general $F$: Paper | canonical orbit roots (Lean) | `PellExact.lean`; notes §4 |
 | Finite type: finitely many hits | Lean ⇐ `SuperellipticSiegel` (`atlas_finite`) | Siegel (external) + geometric half of Theorem G (Paper) | `Atlas.lean`; notes §5 |
 | Theorem G, combinatorial half ($\chi=d'(1-S)$; $\chi<0$ ⇔ non-exceptional) | Lean, all $d$ (`chi_eq`, `chi_neg_iff`); Riemann–Hurwitz integrality table for $d,\deg F\le12$ (`profile_table_ok`) | — | `ProfileG.lean` |
@@ -34,7 +34,7 @@ This table is the single source of truth. The research notes, the paper, the REA
 - Siegel + Theorem G (geometric) ⟶ `SuperellipticSiegel` ⟶ finite type.
 - Valuation core ⟶ radical count ⟶ `radical_asymptotic_int`.
 - Canonical Pell roots + ε-growth ⟶ `pell_exact_count`.
-- Rational Yun decomposition (`exists_integer_decomposition`, Lean) ⟶ pointwise Theorems B, C (`integer_radical_reduction`, `integer_pell_reduction`, Lean) ⟶ counts for general $F$ (Paper: exceptional zeros, signs, congruences, orbit population).
+- Rational Yun decomposition (`exists_integer_decomposition`, Lean) ⟶ pointwise Theorems B, C (`integer_radical_reduction`, `integer_pell_reduction`, Lean) ⟶ Theorem B count for general $F$ (`Decomposition.radical_count`, Lean); Theorem C count for general $F$ (Paper: rational roots of the constant, constrained orbits, orbit population).
 - Atlas = power ∪ radical ∪ Pell ∪ finite.
 - Boshernitzan ⟶ nonrigid density zero. This is independent of the atlas; the atlas gives a second, ineffective proof through Siegel.
 

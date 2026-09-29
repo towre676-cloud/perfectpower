@@ -247,3 +247,12 @@ open PerfectPower
 #print axioms PerfectPower.RationalYun.decomposition_iff_nonzero
 #print axioms PerfectPower.RationalYun.not_isCoprime_integer_X_X_add_two
 #print axioms PerfectPower.RationalYun.isCoprime_rational_X_X_add_two
+-- Theorem B as a count for a general F (exceptional zeros, signs, shifts, solvability)
+#print axioms PerfectPower.RationalYun.card_zeros_le
+#print axioms PerfectPower.RationalYun.count_or
+#print axioms PerfectPower.RationalYun.shift_count
+#print axioms PerfectPower.RationalYun.z0_dichotomy
+#print axioms PerfectPower.RationalYun.nat_radical_count
+#print axioms PerfectPower.RationalYun.int_coeff_count
+#print axioms PerfectPower.RationalYun.int_count
+#print axioms PerfectPower.RationalYun.Decomposition.radical_count
