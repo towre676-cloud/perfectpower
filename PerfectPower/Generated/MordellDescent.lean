@@ -11,6979 +11,6979 @@ open PerfectPower.MordellDescent
 theorem no_points_m9985 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9985) := by
   have h := no_points (D := 1) (c := 6) (b := 101) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 101 ^ 2 = -9985 by norm_num] at h
 
 theorem no_points_m9973 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9973) := by
   have h := no_points (D := 1) (c := 3) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 100 ^ 2 = -9973 by norm_num] at h
 
 theorem no_points_m9971 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9971) := by
   have h := no_points (D := 1) (c := 17) (b := 122) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 122 ^ 2 = -9971 by norm_num] at h
 
 theorem no_points_m9969 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9969) := by
   have h := no_points (D := 1) (c := -14) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 85 ^ 2 = -9969 by norm_num] at h
 
 theorem no_points_m9957 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9957) := by
   have h := no_points (D := 1) (c := 307) (b := 5380) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1345) (u := 187) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (307 : ℤ) ^ 3 - (1) * 5380 ^ 2 = -9957 by norm_num] at h
 
 theorem no_points_m9937 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9937) := by
   have h := no_points (D := 1) (c := -21) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-21 : ℤ) ^ 3 - (1) * 26 ^ 2 = -9937 by norm_num] at h
 
 theorem no_points_m9917 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9917) := by
   have h := no_points (D := 1) (c := 59) (b := 464) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (59 : ℤ) ^ 3 - (1) * 464 ^ 2 = -9917 by norm_num] at h
 
 theorem no_points_m9905 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9905) := by
   have h := no_points (D := 1) (c := 11) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 106 ^ 2 = -9905 by norm_num] at h
 
 theorem no_points_m9875 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9875) := by
   have h := no_points (D := 1) (c := 5) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 100 ^ 2 = -9875 by norm_num] at h
 
 theorem no_points_m9818 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9818) := by
   have h := no_points (D := 2) (c := 210) (b := 2153) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2153) (u := 813) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (210 : ℤ) ^ 3 - (2) * 2153 ^ 2 = -9818 by norm_num] at h
 
 theorem no_points_m9817 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9817) := by
   have h := no_points (D := 1) (c := 54) (b := 409) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 409) (u := 266) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (54 : ℤ) ^ 3 - (1) * 409 ^ 2 = -9817 by norm_num] at h
 
 theorem no_points_m9793 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9793) := by
   have h := no_points (D := 1) (c := 18) (b := 125) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 125) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 125 ^ 2 = -9793 by norm_num] at h
 
 theorem no_points_m9737 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9737) := by
   have h := no_points (D := 1) (c := 23) (b := 148) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 148 ^ 2 = -9737 by norm_num] at h
 
 theorem no_points_m9706 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9706) := by
   have h := no_points (D := 2) (c := -14) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 59 ^ 2 = -9706 by norm_num] at h
 
 theorem no_points_m9661 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9661) := by
   have h := no_points (D := 1) (c := -21) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-21 : ℤ) ^ 3 - (1) * 20 ^ 2 = -9661 by norm_num] at h
 
 theorem no_points_m9658 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9658) := by
   have h := no_points (D := 2) (c := 10) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 73 ^ 2 = -9658 by norm_num] at h
 
 theorem no_points_m9657 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9657) := by
   have h := no_points (D := 1) (c := 7) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 100 ^ 2 = -9657 by norm_num] at h
 
 theorem no_points_m9625 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9625) := by
   have h := no_points (D := 1) (c := -6) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 97 ^ 2 = -9625 by norm_num] at h
 
 theorem no_points_m9613 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9613) := by
   have h := no_points (D := 1) (c := 327) (b := 5914) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 2957) (u := 1222) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (327 : ℤ) ^ 3 - (1) * 5914 ^ 2 = -9613 by norm_num] at h
 
 theorem no_points_m9585 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9585) := by
   have h := no_points (D := 1) (c := 166) (b := 2141) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2141) (u := 419) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (166 : ℤ) ^ 3 - (1) * 2141 ^ 2 = -9585 by norm_num] at h
 
 theorem no_points_m9580 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9580) := by
   have h := no_points (D := 1) (c := 294) (b := 5042) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 2521) (u := 71) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (294 : ℤ) ^ 3 - (1) * 5042 ^ 2 = -9580 by norm_num] at h
 
 theorem no_points_m9563 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9563) := by
   have h := no_points (D := 1) (c := -19) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-19 : ℤ) ^ 3 - (1) * 52 ^ 2 = -9563 by norm_num] at h
 
 theorem no_points_m9553 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9553) := by
   have h := no_points (D := 1) (c := -18) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 61 ^ 2 = -9553 by norm_num] at h
 
 theorem no_points_m9537 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9537) := by
   have h := no_points (D := 1) (c := -17) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 68 ^ 2 = -9537 by norm_num] at h
 
 theorem no_points_m9529 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9529) := by
   have h := no_points (D := 1) (c := 66) (b := 545) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 545) (u := 142) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (66 : ℤ) ^ 3 - (1) * 545 ^ 2 = -9529 by norm_num] at h
 
 theorem no_points_m9525 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9525) := by
   have h := no_points (D := 1) (c := 19) (b := 128) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 7 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 128 ^ 2 = -9525 by norm_num] at h
 
 theorem no_points_m9517 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9517) := by
   have h := no_points (D := 1) (c := -21) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-21 : ℤ) ^ 3 - (1) * 16 ^ 2 = -9517 by norm_num] at h
 
 theorem no_points_m9485 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9485) := by
   have h := no_points (D := 1) (c := 11) (b := 104) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 104 ^ 2 = -9485 by norm_num] at h
 
 theorem no_points_m9470 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9470) := by
   have h := no_points (D := -2) (c := -28) (b := 79) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 79) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-28 : ℤ) ^ 3 - (-2) * 79 ^ 2 = -9470 by norm_num] at h
 
 theorem no_points_m9458 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9458) := by
   have h := no_points (D := 2) (c := -20) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (2) * 27 ^ 2 = -9458 by norm_num] at h
 
 theorem no_points_m9433 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9433) := by
   have h := no_points (D := 1) (c := 42) (b := 289) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 289) (u := 38) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (1) * 289 ^ 2 = -9433 by norm_num] at h
 
 theorem no_points_m9417 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9417) := by
   have h := no_points (D := 1) (c := -2) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 97 ^ 2 = -9417 by norm_num] at h
 
 theorem no_points_m9401 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9401) := by
   have h := no_points (D := 1) (c := 2) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 97 ^ 2 = -9401 by norm_num] at h
 
 theorem no_points_m9377 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9377) := by
   have h := no_points (D := 1) (c := 539) (b := 12514) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 6257) (u := 1584) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (539 : ℤ) ^ 3 - (1) * 12514 ^ 2 = -9377 by norm_num] at h
 
 theorem no_points_m9361 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9361) := by
   have h := no_points (D := 1) (c := -21) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-21 : ℤ) ^ 3 - (1) * 10 ^ 2 = -9361 by norm_num] at h
 
 theorem no_points_m9325 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9325) := by
   have h := no_points (D := 1) (c := -21) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-21 : ℤ) ^ 3 - (1) * 8 ^ 2 = -9325 by norm_num] at h
 
 theorem no_points_m9297 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9297) := by
   have h := no_points (D := 1) (c := 43) (b := 298) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 149) (u := 44) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (43 : ℤ) ^ 3 - (1) * 298 ^ 2 = -9297 by norm_num] at h
 
 theorem no_points_m9277 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9277) := by
   have h := no_points (D := 1) (c := -21) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-21 : ℤ) ^ 3 - (1) * 4 ^ 2 = -9277 by norm_num] at h
 
 theorem no_points_m9265 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9265) := by
   have h := no_points (D := 1) (c := -21) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-21 : ℤ) ^ 3 - (1) * 2 ^ 2 = -9265 by norm_num] at h
 
 theorem no_points_m9242 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9242) := by
   have h := no_points (D := 2) (c := -14) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 57 ^ 2 = -9242 by norm_num] at h
 
 theorem no_points_m9235 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9235) := by
   have h := no_points (D := 1) (c := 21) (b := 136) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 136 ^ 2 = -9235 by norm_num] at h
 
 theorem no_points_m9217 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9217) := by
   have h := no_points (D := 1) (c := 27) (b := 170) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 170 ^ 2 = -9217 by norm_num] at h
 
 theorem no_points_m9213 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9213) := by
   have h := no_points (D := 1) (c := 151) (b := 1858) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 929) (u := 324) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (151 : ℤ) ^ 3 - (1) * 1858 ^ 2 = -9213 by norm_num] at h
 
 theorem no_points_m9201 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9201) := by
   have h := no_points (D := 1) (c := 10) (b := 101) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 101 ^ 2 = -9201 by norm_num] at h
 
 theorem no_points_m9196 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9196) := by
   have h := no_points (D := 1) (c := -18) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 58 ^ 2 = -9196 by norm_num] at h
 
 theorem no_points_m9194 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9194) := by
   have h := no_points (D := 2) (c := -6) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 67 ^ 2 = -9194 by norm_num] at h
 
 theorem no_points_m9193 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9193) := by
   have h := no_points (D := 1) (c := 6) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 97 ^ 2 = -9193 by norm_num] at h
 
 theorem no_points_m9149 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9149) := by
   have h := no_points (D := 1) (c := 23) (b := 146) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 146 ^ 2 = -9149 by norm_num] at h
 
 theorem no_points_m9137 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9137) := by
   have h := no_points (D := 1) (c := 14) (b := 109) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 109) (u := 33) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 109 ^ 2 = -9137 by norm_num] at h
 
 theorem no_points_m9118 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9118) := by
   have h := no_points (D := -2) (c := -36) (b := 137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 137) (u := 106) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-36 : ℤ) ^ 3 - (-2) * 137 ^ 2 = -9118 by norm_num] at h
 
 theorem no_points_m9042 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9042) := by
   have h := no_points (D := 2) (c := -4) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 67 ^ 2 = -9042 by norm_num] at h
 
 theorem no_points_m9009 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9009) := by
   have h := no_points (D := 1) (c := -17) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 64 ^ 2 = -9009 by norm_num] at h
 
 theorem no_points_m8970 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8970) := by
   have h := no_points (D := 2) (c := 2) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 67 ^ 2 = -8970 by norm_num] at h
 
 theorem no_points_m8961 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8961) := by
   have h := no_points (D := 1) (c := 442) (b := 9293) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9293) (u := 8811) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (442 : ℤ) ^ 3 - (1) * 9293 ^ 2 = -8961 by norm_num] at h
 
 theorem no_points_m8954 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8954) := by
   have h := no_points (D := 2) (c := 154) (b := 1353) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1353) (u := 421) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (154 : ℤ) ^ 3 - (2) * 1353 ^ 2 = -8954 by norm_num] at h
 
 theorem no_points_m8930 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8930) := by
   have h := no_points (D := 2) (c := 12) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 73 ^ 2 = -8930 by norm_num] at h
 
 theorem no_points_m8921 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8921) := by
   have h := no_points (D := 1) (c := -10) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 89 ^ 2 = -8921 by norm_num] at h
 
 theorem no_points_m8914 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8914) := by
   have h := no_points (D := 2) (c := 4) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 67 ^ 2 = -8914 by norm_num] at h
 
 theorem no_points_m8907 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8907) := by
   have h := no_points (D := 1) (c := 457) (b := 9770) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 4885) (u := 1702) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (457 : ℤ) ^ 3 - (1) * 9770 ^ 2 = -8907 by norm_num] at h
 
 theorem no_points_m8883 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8883) := by
   have h := no_points (D := 1) (c := 37) (b := 244) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (37 : ℤ) ^ 3 - (1) * 244 ^ 2 = -8883 by norm_num] at h
 
 theorem no_points_m8851 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8851) := by
   have h := no_points (D := 1) (c := -15) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-15 : ℤ) ^ 3 - (1) * 74 ^ 2 = -8851 by norm_num] at h
 
 theorem no_points_m8838 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8838) := by
   have h := no_points (D := -2) (c := -50) (b := 241) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 241) (u := 219) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-50 : ℤ) ^ 3 - (-2) * 241 ^ 2 = -8838 by norm_num] at h
 
 theorem no_points_m8731 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8731) := by
   have h := no_points (D := 1) (c := 189) (b := 2600) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 325) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (189 : ℤ) ^ 3 - (1) * 2600 ^ 2 = -8731 by norm_num] at h
 
 theorem no_points_m8722 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8722) := by
   have h := no_points (D := 2) (c := -20) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (2) * 19 ^ 2 = -8722 by norm_num] at h
 
 theorem no_points_m8690 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8690) := by
   have h := no_points (D := 2) (c := -12) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 59 ^ 2 = -8690 by norm_num] at h
 
 theorem no_points_m8670 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8670) := by
   have h := no_points (D := -2) (c := -68) (b := 391) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 391) (u := 74) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-68 : ℤ) ^ 3 - (-2) * 391 ^ 2 = -8670 by norm_num] at h
 
 theorem no_points_m8669 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8669) := by
   have h := no_points (D := 1) (c := 11) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 100 ^ 2 = -8669 by norm_num] at h
 
 theorem no_points_m8649 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8649) := by
   have h := no_points (D := 1) (c := 70) (b := 593) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 593) (u := 516) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (70 : ℤ) ^ 3 - (1) * 593 ^ 2 = -8649 by norm_num] at h
 
 theorem no_points_m8641 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8641) := by
   have h := no_points (D := 1) (c := -18) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 53 ^ 2 = -8641 by norm_num] at h
 
 theorem no_points_m8619 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8619) := by
   have h := no_points (D := 1) (c := 13) (b := 104) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 104 ^ 2 = -8619 by norm_num] at h
 
 theorem no_points_m8597 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8597) := by
   have h := no_points (D := 1) (c := -13) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 80 ^ 2 = -8597 by norm_num] at h
 
 theorem no_points_m8578 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8578) := by
   have h := no_points (D := 2) (c := -20) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (2) * 17 ^ 2 = -8578 by norm_num] at h
 
 theorem no_points_m8574 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8574) := by
   have h := no_points (D := -2) (c := -116) (b := 881) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 881) (u := 42) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-116 : ℤ) ^ 3 - (-2) * 881 ^ 2 = -8574 by norm_num] at h
 
 theorem no_points_m8571 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8571) := by
   have h := no_points (D := 1) (c := 1165) (b := 39764) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 9941) (u := 9800) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1165 : ℤ) ^ 3 - (1) * 39764 ^ 2 = -8571 by norm_num] at h
 
 theorem no_points_m8510 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8510) := by
   have h := no_points (D := -2) (c := -52) (b := 257) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 257) (u := 60) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-52 : ℤ) ^ 3 - (-2) * 257 ^ 2 = -8510 by norm_num] at h
 
 theorem no_points_m8492 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8492) := by
   have h := no_points (D := 1) (c := 14) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 106 ^ 2 = -8492 by norm_num] at h
 
 theorem no_points_m8486 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8486) := by
   have h := no_points (D := -2) (c := -82) (b := 521) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 521) (u := 249) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-82 : ℤ) ^ 3 - (-2) * 521 ^ 2 = -8486 by norm_num] at h
 
 theorem no_points_m8482 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8482) := by
   have h := no_points (D := 2) (c := 76) (b := 473) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 473) (u := 102) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (76 : ℤ) ^ 3 - (2) * 473 ^ 2 = -8482 by norm_num] at h
 
 theorem no_points_m8461 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8461) := by
   have h := no_points (D := 1) (c := 75) (b := 656) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (75 : ℤ) ^ 3 - (1) * 656 ^ 2 = -8461 by norm_num] at h
 
 theorem no_points_m8459 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8459) := by
   have h := no_points (D := 1) (c := -19) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-19 : ℤ) ^ 3 - (1) * 40 ^ 2 = -8459 by norm_num] at h
 
 theorem no_points_m8409 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8409) := by
   have h := no_points (D := 1) (c := 10) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 97 ^ 2 = -8409 by norm_num] at h
 
 theorem no_points_m8393 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8393) := by
   have h := no_points (D := 1) (c := 302) (b := 5249) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5249) (u := 5087) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (302 : ℤ) ^ 3 - (1) * 5249 ^ 2 = -8393 by norm_num] at h
 
 theorem no_points_m8350 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8350) := by
   have h := no_points (D := -2) (c := -108) (b := 791) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 791) (u := 514) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-108 : ℤ) ^ 3 - (-2) * 791 ^ 2 = -8350 by norm_num] at h
 
 theorem no_points_m8332 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8332) := by
   have h := no_points (D := 1) (c := -18) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 50 ^ 2 = -8332 by norm_num] at h
 
 theorem no_points_m8306 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8306) := by
   have h := no_points (D := 2) (c := 28) (b := 123) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 123) (u := 52) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 123 ^ 2 = -8306 by norm_num] at h
 
 theorem no_points_m8294 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8294) := by
   have h := no_points (D := -2) (c := -106) (b := 769) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 769) (u := 636) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-106 : ℤ) ^ 3 - (-2) * 769 ^ 2 = -8294 by norm_num] at h
 
 theorem no_points_m8289 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8289) := by
   have h := no_points (D := 1) (c := 46) (b := 325) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 325) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (46 : ℤ) ^ 3 - (1) * 325 ^ 2 = -8289 by norm_num] at h
 
 theorem no_points_m8281 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8281) := by
   have h := no_points (D := 1) (c := 39) (b := 260) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (39 : ℤ) ^ 3 - (1) * 260 ^ 2 = -8281 by norm_num] at h
 
 theorem no_points_m8277 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8277) := by
   have h := no_points (D := 1) (c := -17) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 58 ^ 2 = -8277 by norm_num] at h
 
 theorem no_points_m8242 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8242) := by
   have h := no_points (D := 2) (c := -20) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (2) * 11 ^ 2 = -8242 by norm_num] at h
 
 theorem no_points_m8226 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8226) := by
   have h := no_points (D := 2) (c := -12) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 57 ^ 2 = -8226 by norm_num] at h
 
 theorem no_points_m8225 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8225) := by
   have h := no_points (D := 1) (c := -10) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 85 ^ 2 = -8225 by norm_num] at h
 
 theorem no_points_m8222 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8222) := by
   have h := no_points (D := -2) (c := -484) (b := 7529) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7529) (u := 5922) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-484 : ℤ) ^ 3 - (-2) * 7529 ^ 2 = -8222 by norm_num] at h
 
 theorem no_points_m8201 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8201) := by
   have h := no_points (D := 1) (c := 35) (b := 226) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 113) (u := 98) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (35 : ℤ) ^ 3 - (1) * 226 ^ 2 = -8201 by norm_num] at h
 
 theorem no_points_m8193 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8193) := by
   have h := no_points (D := 1) (c := 118) (b := 1285) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1285) (u := 787) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (118 : ℤ) ^ 3 - (1) * 1285 ^ 2 = -8193 by norm_num] at h
 
 theorem no_points_m8185 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8185) := by
   have h := no_points (D := 1) (c := 174) (b := 2297) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2297) (u := 365) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (174 : ℤ) ^ 3 - (1) * 2297 ^ 2 = -8185 by norm_num] at h
 
 theorem no_points_m8162 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8162) := by
   have h := no_points (D := 2) (c := -20) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (2) * 9 ^ 2 = -8162 by norm_num] at h
 
 theorem no_points_m8137 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8137) := by
   have h := no_points (D := 1) (c := -6) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 89 ^ 2 = -8137 by norm_num] at h
 
 theorem no_points_m8129 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8129) := by
   have h := no_points (D := 1) (c := 383) (b := 7496) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 937) (u := 196) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (383 : ℤ) ^ 3 - (1) * 7496 ^ 2 = -8129 by norm_num] at h
 
 theorem no_points_m8121 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8121) := by
   have h := no_points (D := 1) (c := 22) (b := 137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 137) (u := 37) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 137 ^ 2 = -8121 by norm_num] at h
 
 theorem no_points_m8109 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8109) := by
   have h := no_points (D := 1) (c := 43) (b := 296) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (43 : ℤ) ^ 3 - (1) * 296 ^ 2 = -8109 by norm_num] at h
 
 theorem no_points_m8073 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8073) := by
   have h := no_points (D := 1) (c := -14) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 73 ^ 2 = -8073 by norm_num] at h
 
 theorem no_points_m8025 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8025) := by
   have h := no_points (D := 1) (c := 19) (b := 122) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 122 ^ 2 = -8025 by norm_num] at h
 
 theorem no_points_m8018 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8018) := by
   have h := no_points (D := 2) (c := -20) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (2) * 3 ^ 2 = -8018 by norm_num] at h
 
 theorem no_points_m8010 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8010) := by
   have h := no_points (D := 2) (c := 258) (b := 2931) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2931) (u := 1288) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (258 : ℤ) ^ 3 - (2) * 2931 ^ 2 = -8010 by norm_num] at h
 
 theorem no_points_m8002 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-8002) := by
   have h := no_points (D := 2) (c := -20) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (2) * 1 ^ 2 = -8002 by norm_num] at h
 
 theorem no_points_m7998 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7998) := by
   have h := no_points (D := -2) (c := -20) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 1 ^ 2 = -7998 by norm_num] at h
 
 theorem no_points_m7978 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7978) := by
   have h := no_points (D := 2) (c := 10) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 67 ^ 2 = -7978 by norm_num] at h
 
 theorem no_points_m7962 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7962) := by
   have h := no_points (D := 2) (c := 26) (b := 113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 113) (u := 87) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 113 ^ 2 = -7962 by norm_num] at h
 
 theorem no_points_m7946 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7946) := by
   have h := no_points (D := 2) (c := -14) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 51 ^ 2 = -7946 by norm_num] at h
 
 theorem no_points_m7929 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7929) := by
   have h := no_points (D := 1) (c := -2) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 89 ^ 2 = -7929 by norm_num] at h
 
 theorem no_points_m7913 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7913) := by
   have h := no_points (D := 1) (c := 2) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 89 ^ 2 = -7913 by norm_num] at h
 
 theorem no_points_m7902 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7902) := by
   have h := no_points (D := -2) (c := -20) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 7 ^ 2 = -7902 by norm_num] at h
 
 theorem no_points_m7891 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7891) := by
   have h := no_points (D := 1) (c := 69) (b := 580) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 145) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (69 : ℤ) ^ 3 - (1) * 580 ^ 2 = -7891 by norm_num] at h
 
 theorem no_points_m7883 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7883) := by
   have h := no_points (D := 1) (c := -19) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-19 : ℤ) ^ 3 - (1) * 32 ^ 2 = -7883 by norm_num] at h
 
 theorem no_points_m7866 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7866) := by
   have h := no_points (D := 2) (c := 146) (b := 1249) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1249) (u := 523) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (146 : ℤ) ^ 3 - (2) * 1249 ^ 2 = -7866 by norm_num] at h
 
 theorem no_points_m7861 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7861) := by
   have h := no_points (D := 1) (c := 15) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 106 ^ 2 = -7861 by norm_num] at h
 
 theorem no_points_m7845 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7845) := by
   have h := no_points (D := 1) (c := 31) (b := 194) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (31 : ℤ) ^ 3 - (1) * 194 ^ 2 = -7845 by norm_num] at h
 
 theorem no_points_m7842 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7842) := by
   have h := no_points (D := 2) (c := 20) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 40) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 89 ^ 2 = -7842 by norm_num] at h
 
 theorem no_points_m7803 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7803) := by
   have h := no_points (D := 1) (c := 13) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 100 ^ 2 = -7803 by norm_num] at h
 
 theorem no_points_m7801 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7801) := by
   have h := no_points (D := 1) (c := 1590) (b := 63401) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 63401) (u := 52928) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1590 : ℤ) ^ 3 - (1) * 63401 ^ 2 = -7801 by norm_num] at h
 
 theorem no_points_m7731 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7731) := by
   have h := no_points (D := 1) (c := -11) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 80 ^ 2 = -7731 by norm_num] at h
 
 theorem no_points_m7724 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7724) := by
   have h := no_points (D := 1) (c := -10) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 82 ^ 2 = -7724 by norm_num] at h
 
 theorem no_points_m7705 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7705) := by
   have h := no_points (D := 1) (c := 6) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 89 ^ 2 = -7705 by norm_num] at h
 
 theorem no_points_m7673 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7673) := by
   have h := no_points (D := 1) (c := -13) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 74 ^ 2 = -7673 by norm_num] at h
 
 theorem no_points_m7649 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7649) := by
   have h := no_points (D := 1) (c := 110) (b := 1157) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1157) (u := 746) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (110 : ℤ) ^ 3 - (1) * 1157 ^ 2 = -7649 by norm_num] at h
 
 theorem no_points_m7628 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7628) := by
   have h := no_points (D := 1) (c := 38) (b := 250) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 125) (u := 57) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (38 : ℤ) ^ 3 - (1) * 250 ^ 2 = -7628 by norm_num] at h
 
 theorem no_points_m7617 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7617) := by
   have h := no_points (D := 1) (c := -17) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 52 ^ 2 = -7617 by norm_num] at h
 
 theorem no_points_m7570 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7570) := by
   have h := no_points (D := 2) (c := 92) (b := 627) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 627) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (92 : ℤ) ^ 3 - (2) * 627 ^ 2 = -7570 by norm_num] at h
 
 theorem no_points_m7514 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7514) := by
   have h := no_points (D := 2) (c := 34) (b := 153) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 153) (u := 58) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (2) * 153 ^ 2 = -7514 by norm_num] at h
 
 theorem no_points_m7513 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7513) := by
   have h := no_points (D := 1) (c := -18) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 41 ^ 2 = -7513 by norm_num] at h
 
 theorem no_points_m7494 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7494) := by
   have h := no_points (D := -2) (c := -26) (b := 71) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 71) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-26 : ℤ) ^ 3 - (-2) * 71 ^ 2 = -7494 by norm_num] at h
 
 theorem no_points_m7457 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7457) := by
   have h := no_points (D := 1) (c := 14) (b := 101) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 101 ^ 2 = -7457 by norm_num] at h
 
 theorem no_points_m7453 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7453) := by
   have h := no_points (D := 1) (c := -9) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 82 ^ 2 = -7453 by norm_num] at h
 
 theorem no_points_m7441 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7441) := by
   have h := no_points (D := 1) (c := -6) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 85 ^ 2 = -7441 by norm_num] at h
 
 theorem no_points_m7422 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7422) := by
   have h := no_points (D := -2) (c := -20) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 17 ^ 2 = -7422 by norm_num] at h
 
 theorem no_points_m7413 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7413) := by
   have h := no_points (D := 1) (c := -17) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 50 ^ 2 = -7413 by norm_num] at h
 
 theorem no_points_m7353 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7353) := by
   have h := no_points (D := 1) (c := 391) (b := 7732) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1933) (u := 598) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (391 : ℤ) ^ 3 - (1) * 7732 ^ 2 = -7353 by norm_num] at h
 
 theorem no_points_m7337 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7337) := by
   have h := no_points (D := 1) (c := 254) (b := 4049) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 4049) (u := 3165) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (254 : ℤ) ^ 3 - (1) * 4049 ^ 2 = -7337 by norm_num] at h
 
 theorem no_points_m7330 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7330) := by
   have h := no_points (D := 2) (c := 28) (b := 121) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 121) (u := 102) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 121 ^ 2 = -7330 by norm_num] at h
 
 theorem no_points_m7305 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7305) := by
   have h := no_points (D := 1) (c := 154) (b := 1913) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1913) (u := 712) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (154 : ℤ) ^ 3 - (1) * 1913 ^ 2 = -7305 by norm_num] at h
 
 theorem no_points_m7290 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7290) := by
   have h := no_points (D := 2) (c := 18) (b := 81) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 81) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 81 ^ 2 = -7290 by norm_num] at h
 
 theorem no_points_m7259 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7259) := by
   have h := no_points (D := 1) (c := -19) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-19 : ℤ) ^ 3 - (1) * 20 ^ 2 = -7259 by norm_num] at h
 
 theorem no_points_m7250 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7250) := by
   have h := no_points (D := 2) (c := 12) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 67 ^ 2 = -7250 by norm_num] at h
 
 theorem no_points_m7233 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7233) := by
   have h := no_points (D := 1) (c := -2) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 85 ^ 2 = -7233 by norm_num] at h
 
 theorem no_points_m7225 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7225) := by
   have h := no_points (D := 1) (c := 30) (b := 185) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 185) (u := 117) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 185 ^ 2 = -7225 by norm_num] at h
 
 theorem no_points_m7217 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7217) := by
   have h := no_points (D := 1) (c := 2) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 85 ^ 2 = -7217 by norm_num] at h
 
 theorem no_points_m7213 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7213) := by
   have h := no_points (D := 1) (c := 27) (b := 164) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 164 ^ 2 = -7213 by norm_num] at h
 
 theorem no_points_m7201 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7201) := by
   have h := no_points (D := 1) (c := -18) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 37 ^ 2 = -7201 by norm_num] at h
 
 theorem no_points_m7178 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7178) := by
   have h := no_points (D := 2) (c := -6) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 59 ^ 2 = -7178 by norm_num] at h
 
 theorem no_points_m7170 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7170) := by
   have h := no_points (D := 2) (c := 68) (b := 401) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 401) (u := 258) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (68 : ℤ) ^ 3 - (2) * 401 ^ 2 = -7170 by norm_num] at h
 
 theorem no_points_m7148 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7148) := by
   have h := no_points (D := 1) (c := 86) (b := 802) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 401) (u := 381) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (86 : ℤ) ^ 3 - (1) * 802 ^ 2 = -7148 by norm_num] at h
 
 theorem no_points_m7129 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7129) := by
   have h := no_points (D := 1) (c := -9) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 80 ^ 2 = -7129 by norm_num] at h
 
 theorem no_points_m7123 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7123) := by
   have h := no_points (D := 1) (c := 21) (b := 128) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 7 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 128 ^ 2 = -7123 by norm_num] at h
 
 theorem no_points_m7115 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7115) := by
   have h := no_points (D := 1) (c := -19) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-19 : ℤ) ^ 3 - (1) * 16 ^ 2 = -7115 by norm_num] at h
 
 theorem no_points_m7105 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7105) := by
   have h := no_points (D := 1) (c := 219) (b := 3242) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1621) (u := 1455) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (219 : ℤ) ^ 3 - (1) * 3242 ^ 2 = -7105 by norm_num] at h
 
 theorem no_points_m7098 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7098) := by
   have h := no_points (D := 2) (c := 50) (b := 257) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 257) (u := 68) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (50 : ℤ) ^ 3 - (2) * 257 ^ 2 = -7098 by norm_num] at h
 
 theorem no_points_m7073 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7073) := by
   have h := no_points (D := 1) (c := 26) (b := 157) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 157) (u := 129) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 157 ^ 2 = -7073 by norm_num] at h
 
 theorem no_points_m7067 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7067) := by
   have h := no_points (D := 1) (c := -7) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 82 ^ 2 = -7067 by norm_num] at h
 
 theorem no_points_m7057 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7057) := by
   have h := no_points (D := 1) (c := 354) (b := 6661) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 6661) (u := 6003) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (354 : ℤ) ^ 3 - (1) * 6661 ^ 2 = -7057 by norm_num] at h
 
 theorem no_points_m7046 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7046) := by
   have h := no_points (D := -2) (c := -34) (b := 127) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 127) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-34 : ℤ) ^ 3 - (-2) * 127 ^ 2 = -7046 by norm_num] at h
 
 theorem no_points_m7026 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7026) := by
   have h := no_points (D := 2) (c := -4) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 59 ^ 2 = -7026 by norm_num] at h
 
 theorem no_points_m7019 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7019) := by
   have h := no_points (D := 1) (c := 425) (b := 8762) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 4381) (u := 863) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (425 : ℤ) ^ 3 - (1) * 8762 ^ 2 = -7019 by norm_num] at h
 
 theorem no_points_m7009 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-7009) := by
   have h := no_points (D := 1) (c := 6) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 85 ^ 2 = -7009 by norm_num] at h
 
 theorem no_points_m6988 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6988) := by
   have h := no_points (D := 1) (c := -18) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 34 ^ 2 = -6988 by norm_num] at h
 
 theorem no_points_m6969 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6969) := by
   have h := no_points (D := 1) (c := -14) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 65 ^ 2 = -6969 by norm_num] at h
 
 theorem no_points_m6954 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6954) := by
   have h := no_points (D := 2) (c := 2) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 59 ^ 2 = -6954 by norm_num] at h
 
 theorem no_points_m6942 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6942) := by
   have h := no_points (D := -2) (c := -20) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 23 ^ 2 = -6942 by norm_num] at h
 
 theorem no_points_m6937 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6937) := by
   have h := no_points (D := 1) (c := 18) (b := 113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 113) (u := 98) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 113 ^ 2 = -6937 by norm_num] at h
 
 theorem no_points_m6930 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6930) := by
   have h := no_points (D := 2) (c := -12) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 51 ^ 2 = -6930 by norm_num] at h
 
 theorem no_points_m6923 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6923) := by
   have h := no_points (D := 1) (c := -19) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-19 : ℤ) ^ 3 - (1) * 8 ^ 2 = -6923 by norm_num] at h
 
 theorem no_points_m6921 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6921) := by
   have h := no_points (D := 1) (c := 10) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 89 ^ 2 = -6921 by norm_num] at h
 
 theorem no_points_m6918 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6918) := by
   have h := no_points (D := -2) (c := -26) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 32) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-26 : ℤ) ^ 3 - (-2) * 73 ^ 2 = -6918 by norm_num] at h
 
 theorem no_points_m6898 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6898) := by
   have h := no_points (D := 2) (c := 4) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 59 ^ 2 = -6898 by norm_num] at h
 
 theorem no_points_m6875 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6875) := by
   have h := no_points (D := 1) (c := -19) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-19 : ℤ) ^ 3 - (1) * 4 ^ 2 = -6875 by norm_num] at h
 
 theorem no_points_m6849 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6849) := by
   have h := no_points (D := 1) (c := -5) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 82 ^ 2 = -6849 by norm_num] at h
 
 theorem no_points_m6821 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6821) := by
   have h := no_points (D := 1) (c := -13) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 68 ^ 2 = -6821 by norm_num] at h
 
 theorem no_points_m6819 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6819) := by
   have h := no_points (D := 1) (c := 85) (b := 788) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 197) (u := 14) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (85 : ℤ) ^ 3 - (1) * 788 ^ 2 = -6819 by norm_num] at h
 
 theorem no_points_m6813 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6813) := by
   have h := no_points (D := 1) (c := 91) (b := 872) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 109) (u := 33) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (91 : ℤ) ^ 3 - (1) * 872 ^ 2 = -6813 by norm_num] at h
 
 theorem no_points_m6739 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6739) := by
   have h := no_points (D := 1) (c := -15) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-15 : ℤ) ^ 3 - (1) * 58 ^ 2 = -6739 by norm_num] at h
 
 theorem no_points_m6732 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6732) := by
   have h := no_points (D := 1) (c := -2) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 82 ^ 2 = -6732 by norm_num] at h
 
 theorem no_points_m6725 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6725) := by
   have h := no_points (D := 1) (c := -1) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 82 ^ 2 = -6725 by norm_num] at h
 
 theorem no_points_m6723 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6723) := by
   have h := no_points (D := 1) (c := 1) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 82 ^ 2 = -6723 by norm_num] at h
 
 theorem no_points_m6714 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6714) := by
   have h := no_points (D := 2) (c := -6) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 57 ^ 2 = -6714 by norm_num] at h
 
 theorem no_points_m6697 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6697) := by
   have h := no_points (D := 1) (c := 3) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 82 ^ 2 = -6697 by norm_num] at h
 
 theorem no_points_m6681 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6681) := by
   have h := no_points (D := 1) (c := 55) (b := 416) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (55 : ℤ) ^ 3 - (1) * 416 ^ 2 = -6681 by norm_num] at h
 
 theorem no_points_m6673 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6673) := by
   have h := no_points (D := 1) (c := -18) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 29 ^ 2 = -6673 by norm_num] at h
 
 theorem no_points_m6665 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6665) := by
   have h := no_points (D := 1) (c := 14) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 97 ^ 2 = -6665 by norm_num] at h
 
 theorem no_points_m6625 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6625) := by
   have h := no_points (D := 1) (c := 15) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 100 ^ 2 = -6625 by norm_num] at h
 
 theorem no_points_m6618 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6618) := by
   have h := no_points (D := 2) (c := 1010) (b := 22697) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 22697) (u := 1499) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1010 : ℤ) ^ 3 - (2) * 22697 ^ 2 = -6618 by norm_num] at h
 
 theorem no_points_m6598 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6598) := by
   have h := no_points (D := -2) (c := -90) (b := 601) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 601) (u := 379) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-90 : ℤ) ^ 3 - (-2) * 601 ^ 2 = -6598 by norm_num] at h
 
 theorem no_points_m6597 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6597) := by
   have h := no_points (D := 1) (c := 19) (b := 116) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 116 ^ 2 = -6597 by norm_num] at h
 
 theorem no_points_m6562 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6562) := by
   have h := no_points (D := 2) (c := -4) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 57 ^ 2 = -6562 by norm_num] at h
 
 theorem no_points_m6525 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6525) := by
   have h := no_points (D := 1) (c := -5) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 80 ^ 2 = -6525 by norm_num] at h
 
 theorem no_points_m6513 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6513) := by
   have h := no_points (D := 1) (c := -17) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 40 ^ 2 = -6513 by norm_num] at h
 
 theorem no_points_m6508 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6508) := by
   have h := no_points (D := 1) (c := 6) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 82 ^ 2 = -6508 by norm_num] at h
 
 theorem no_points_m6490 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6490) := by
   have h := no_points (D := 2) (c := 2) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 57 ^ 2 = -6490 by norm_num] at h
 
 theorem no_points_m6489 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6489) := by
   have h := no_points (D := 1) (c := 58) (b := 449) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 449) (u := 67) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (58 : ℤ) ^ 3 - (1) * 449 ^ 2 = -6489 by norm_num] at h
 
 theorem no_points_m6482 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6482) := by
   have h := no_points (D := 2) (c := 36) (b := 163) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 163) (u := 145) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (36 : ℤ) ^ 3 - (2) * 163 ^ 2 = -6482 by norm_num] at h
 
 theorem no_points_m6476 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6476) := by
   have h := no_points (D := 1) (c := -10) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 74 ^ 2 = -6476 by norm_num] at h
 
 theorem no_points_m6465 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6465) := by
   have h := no_points (D := 1) (c := -14) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 61 ^ 2 = -6465 by norm_num] at h
 
 theorem no_points_m6457 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6457) := by
   have h := no_points (D := 1) (c := -18) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 25 ^ 2 = -6457 by norm_num] at h
 
 theorem no_points_m6442 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6442) := by
   have h := no_points (D := 2) (c := -14) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 43 ^ 2 = -6442 by norm_num] at h
 
 theorem no_points_m6434 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6434) := by
   have h := no_points (D := 2) (c := 4) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 57 ^ 2 = -6434 by norm_num] at h
 
 theorem no_points_m6427 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6427) := by
   have h := no_points (D := 1) (c := -3) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 80 ^ 2 = -6427 by norm_num] at h
 
 theorem no_points_m6401 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6401) := by
   have h := no_points (D := 1) (c := -1) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 80 ^ 2 = -6401 by norm_num] at h
 
 theorem no_points_m6381 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6381) := by
   have h := no_points (D := 1) (c := 7) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 82 ^ 2 = -6381 by norm_num] at h
 
 theorem no_points_m6373 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6373) := by
   have h := no_points (D := 1) (c := 3) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 80 ^ 2 = -6373 by norm_num] at h
 
 theorem no_points_m6329 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6329) := by
   have h := no_points (D := 1) (c := -10) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 73 ^ 2 = -6329 by norm_num] at h
 
 theorem no_points_m6323 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6323) := by
   have h := no_points (D := 1) (c := 17) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 106 ^ 2 = -6323 by norm_num] at h
 
 theorem no_points_m6293 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6293) := by
   have h := no_points (D := 1) (c := -13) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 64 ^ 2 = -6293 by norm_num] at h
 
 theorem no_points_m6275 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6275) := by
   have h := no_points (D := 1) (c := 5) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 80 ^ 2 = -6275 by norm_num] at h
 
 theorem no_points_m6252 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6252) := by
   have h := no_points (D := 1) (c := 22) (b := 130) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 130 ^ 2 = -6252 by norm_num] at h
 
 theorem no_points_m6225 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6225) := by
   have h := no_points (D := 1) (c := 10) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 85 ^ 2 = -6225 by norm_num] at h
 
 theorem no_points_m6217 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6217) := by
   have h := no_points (D := 1) (c := 39) (b := 256) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 8 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (39 : ℤ) ^ 3 - (1) * 256 ^ 2 = -6217 by norm_num] at h
 
 theorem no_points_m6211 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6211) := by
   have h := no_points (D := 1) (c := 117) (b := 1268) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 317) (u := 203) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (117 : ℤ) ^ 3 - (1) * 1268 ^ 2 = -6211 by norm_num] at h
 
 theorem no_points_m6205 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6205) := by
   have h := no_points (D := 1) (c := -9) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 74 ^ 2 = -6205 by norm_num] at h
 
 theorem no_points_m6155 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6155) := by
   have h := no_points (D := 1) (c := 41) (b := 274) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 137) (u := 37) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (41 : ℤ) ^ 3 - (1) * 274 ^ 2 = -6155 by norm_num] at h
 
 theorem no_points_m6153 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6153) := by
   have h := no_points (D := 1) (c := 67) (b := 554) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 277) (u := 217) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (67 : ℤ) ^ 3 - (1) * 554 ^ 2 = -6153 by norm_num] at h
 
 theorem no_points_m6121 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6121) := by
   have h := no_points (D := 1) (c := -18) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 17 ^ 2 = -6121 by norm_num] at h
 
 theorem no_points_m6110 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6110) := by
   have h := no_points (D := -2) (c := -28) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 64) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-28 : ℤ) ^ 3 - (-2) * 89 ^ 2 = -6110 by norm_num] at h
 
 theorem no_points_m6106 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6106) := by
   have h := no_points (D := 2) (c := -14) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 41 ^ 2 = -6106 by norm_num] at h
 
 theorem no_points_m6078 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6078) := by
   have h := no_points (D := -2) (c := -20) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 31 ^ 2 = -6078 by norm_num] at h
 
 theorem no_points_m6069 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6069) := by
   have h := no_points (D := 1) (c := -17) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 34 ^ 2 = -6069 by norm_num] at h
 
 theorem no_points_m6057 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6057) := by
   have h := no_points (D := 1) (c := 7) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 80 ^ 2 = -6057 by norm_num] at h
 
 theorem no_points_m6049 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6049) := by
   have h := no_points (D := 1) (c := 18) (b := 109) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 109) (u := 33) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 109 ^ 2 = -6049 by norm_num] at h
 
 theorem no_points_m6001 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6001) := by
   have h := no_points (D := 1) (c := -18) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 13 ^ 2 = -6001 by norm_num] at h
 
 theorem no_points_m5995 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5995) := by
   have h := no_points (D := 1) (c := 9) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (9 : ℤ) ^ 3 - (1) * 82 ^ 2 = -5995 by norm_num] at h
 
 theorem no_points_m5982 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5982) := by
   have h := no_points (D := -2) (c := -44) (b := 199) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 199) (u := 20) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-44 : ℤ) ^ 3 - (-2) * 199 ^ 2 = -5982 by norm_num] at h
 
 theorem no_points_m5962 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5962) := by
   have h := no_points (D := 2) (c := 10) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 59 ^ 2 = -5962 by norm_num] at h
 
 theorem no_points_m5955 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5955) := by
   have h := no_points (D := 1) (c := -11) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 68 ^ 2 = -5955 by norm_num] at h
 
 theorem no_points_m5953 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5953) := by
   have h := no_points (D := 1) (c := 111) (b := 1172) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 293) (u := 155) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (111 : ℤ) ^ 3 - (1) * 1172 ^ 2 = -5953 by norm_num] at h
 
 theorem no_points_m5937 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5937) := by
   have h := no_points (D := 1) (c := -17) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 32 ^ 2 = -5937 by norm_num] at h
 
 theorem no_points_m5932 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5932) := by
   have h := no_points (D := 1) (c := -18) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 10 ^ 2 = -5932 by norm_num] at h
 
 theorem no_points_m5917 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5917) := by
   have h := no_points (D := 1) (c := 27) (b := 160) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 160 ^ 2 = -5917 by norm_num] at h
 
 theorem no_points_m5889 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5889) := by
   have h := no_points (D := 1) (c := 430) (b := 8917) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 8917) (u := 6925) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (430 : ℤ) ^ 3 - (1) * 8917 ^ 2 = -5889 by norm_num] at h
 
 theorem no_points_m5881 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5881) := by
   have h := no_points (D := 1) (c := 102) (b := 1033) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1033) (u := 355) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (102 : ℤ) ^ 3 - (1) * 1033 ^ 2 = -5881 by norm_num] at h
 
 theorem no_points_m5875 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5875) := by
   have h := no_points (D := 1) (c := -15) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-15 : ℤ) ^ 3 - (1) * 50 ^ 2 = -5875 by norm_num] at h
 
 theorem no_points_m5867 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5867) := by
   have h := no_points (D := 1) (c := 77) (b := 680) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (77 : ℤ) ^ 3 - (1) * 680 ^ 2 = -5867 by norm_num] at h
 
 theorem no_points_m5857 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5857) := by
   have h := no_points (D := 1) (c := -18) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 5 ^ 2 = -5857 by norm_num] at h
 
 theorem no_points_m5836 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5836) := by
   have h := no_points (D := 1) (c := -18) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 2 ^ 2 = -5836 by norm_num] at h
 
 theorem no_points_m5834 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5834) := by
   have h := no_points (D := 2) (c := 162) (b := 1459) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1459) (u := 54) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (162 : ℤ) ^ 3 - (2) * 1459 ^ 2 = -5834 by norm_num] at h
 
 theorem no_points_m5833 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5833) := by
   have h := no_points (D := 1) (c := -18) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (1) * 1 ^ 2 = -5833 by norm_num] at h
 
 theorem no_points_m5830 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5830) := by
   have h := no_points (D := -2) (c := -18) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 1 ^ 2 = -5830 by norm_num] at h
 
 theorem no_points_m5819 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5819) := by
   have h := no_points (D := 1) (c := -7) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5819 by norm_num] at h
 
 theorem no_points_m5778 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5778) := by
   have h := no_points (D := 2) (c := 20) (b := 83) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 83) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 83 ^ 2 = -5778 by norm_num] at h
 
 theorem no_points_m5761 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5761) := by
   have h := no_points (D := 1) (c := 30) (b := 181) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 181) (u := 19) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 181 ^ 2 = -5761 by norm_num] at h
 
 theorem no_points_m5757 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5757) := by
   have h := no_points (D := 1) (c := 43) (b := 292) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (43 : ℤ) ^ 3 - (1) * 292 ^ 2 = -5757 by norm_num] at h
 
 theorem no_points_m5734 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5734) := by
   have h := no_points (D := -2) (c := -18) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 7 ^ 2 = -5734 by norm_num] at h
 
 theorem no_points_m5714 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5714) := by
   have h := no_points (D := 2) (c := 84) (b := 547) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 547) (u := 190) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (84 : ℤ) ^ 3 - (2) * 547 ^ 2 = -5714 by norm_num] at h
 
 theorem no_points_m5705 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5705) := by
   have h := no_points (D := 1) (c := 134) (b := 1553) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1553) (u := 339) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (134 : ℤ) ^ 3 - (1) * 1553 ^ 2 = -5705 by norm_num] at h
 
 theorem no_points_m5691 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5691) := by
   have h := no_points (D := 1) (c := 25) (b := 146) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (25 : ℤ) ^ 3 - (1) * 146 ^ 2 = -5691 by norm_num] at h
 
 theorem no_points_m5657 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5657) := by
   have h := no_points (D := 1) (c := 74) (b := 641) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 641) (u := 154) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (74 : ℤ) ^ 3 - (1) * 641 ^ 2 = -5657 by norm_num] at h
 
 theorem no_points_m5642 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5642) := by
   have h := no_points (D := 2) (c := 226) (b := 2403) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2403) (u := 1642) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (226 : ℤ) ^ 3 - (2) * 2403 ^ 2 = -5642 by norm_num] at h
 
 theorem no_points_m5601 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5601) := by
   have h := no_points (D := 1) (c := -5) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5601 by norm_num] at h
 
 theorem no_points_m5589 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5589) := by
   have h := no_points (D := 1) (c := -17) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 26 ^ 2 = -5589 by norm_num] at h
 
 theorem no_points_m5561 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5561) := by
   have h := no_points (D := 1) (c := -13) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 58 ^ 2 = -5561 by norm_num] at h
 
 theorem no_points_m5553 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5553) := by
   have h := no_points (D := 1) (c := -14) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 53 ^ 2 = -5553 by norm_num] at h
 
 theorem no_points_m5545 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5545) := by
   have h := no_points (D := 1) (c := -6) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 73 ^ 2 = -5545 by norm_num] at h
 
 theorem no_points_m5498 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5498) := by
   have h := no_points (D := 2) (c := 10) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 57 ^ 2 = -5498 by norm_num] at h
 
 theorem no_points_m5484 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5484) := by
   have h := no_points (D := 1) (c := -2) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5484 by norm_num] at h
 
 theorem no_points_m5477 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5477) := by
   have h := no_points (D := 1) (c := -1) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5477 by norm_num] at h
 
 theorem no_points_m5475 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5475) := by
   have h := no_points (D := 1) (c := 1) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5475 by norm_num] at h
 
 theorem no_points_m5449 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5449) := by
   have h := no_points (D := 1) (c := 3) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5449 by norm_num] at h
 
 theorem no_points_m5427 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5427) := by
   have h := no_points (D := 1) (c := -11) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 64 ^ 2 = -5427 by norm_num] at h
 
 theorem no_points_m5426 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5426) := by
   have h := no_points (D := 2) (c := -12) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 43 ^ 2 = -5426 by norm_num] at h
 
 theorem no_points_m5418 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5418) := by
   have h := no_points (D := 2) (c := -6) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 51 ^ 2 = -5418 by norm_num] at h
 
 theorem no_points_m5397 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5397) := by
   have h := no_points (D := 1) (c := 79) (b := 706) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 353) (u := 311) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (79 : ℤ) ^ 3 - (1) * 706 ^ 2 = -5397 by norm_num] at h
 
 theorem no_points_m5393 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5393) := by
   have h := no_points (D := 1) (c := 11) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 82 ^ 2 = -5393 by norm_num] at h
 
 theorem no_points_m5353 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5353) := by
   have h := no_points (D := 1) (c := -9) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 68 ^ 2 = -5353 by norm_num] at h
 
 theorem no_points_m5337 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5337) := by
   have h := no_points (D := 1) (c := -2) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 73 ^ 2 = -5337 by norm_num] at h
 
 theorem no_points_m5322 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5322) := by
   have h := no_points (D := 2) (c := 26) (b := 107) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 107) (u := 76) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 107 ^ 2 = -5322 by norm_num] at h
 
 theorem no_points_m5321 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5321) := by
   have h := no_points (D := 1) (c := 2) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 73 ^ 2 = -5321 by norm_num] at h
 
 theorem no_points_m5313 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5313) := by
   have h := no_points (D := 1) (c := -17) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 20 ^ 2 = -5313 by norm_num] at h
 
 theorem no_points_m5266 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5266) := by
   have h := no_points (D := 2) (c := -4) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 51 ^ 2 = -5266 by norm_num] at h
 
 theorem no_points_m5260 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5260) := by
   have h := no_points (D := 1) (c := 6) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5260 by norm_num] at h
 
 theorem no_points_m5254 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5254) := by
   have h := no_points (D := -2) (c := -18) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 17 ^ 2 = -5254 by norm_num] at h
 
 theorem no_points_m5234 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5234) := by
   have h := no_points (D := 2) (c := 12) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 59 ^ 2 = -5234 by norm_num] at h
 
 theorem no_points_m5225 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5225) := by
   have h := no_points (D := 1) (c := -10) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 65 ^ 2 = -5225 by norm_num] at h
 
 theorem no_points_m5194 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5194) := by
   have h := no_points (D := 2) (c := 2) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 51 ^ 2 = -5194 by norm_num] at h
 
 theorem no_points_m5185 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5185) := by
   have h := no_points (D := 1) (c := 66) (b := 541) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 541) (u := 52) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (66 : ℤ) ^ 3 - (1) * 541 ^ 2 = -5185 by norm_num] at h
 
 theorem no_points_m5177 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5177) := by
   have h := no_points (D := 1) (c := 14) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 89 ^ 2 = -5177 by norm_num] at h
 
 theorem no_points_m5169 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5169) := by
   have h := no_points (D := 1) (c := -17) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 16 ^ 2 = -5169 by norm_num] at h
 
 theorem no_points_m5138 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5138) := by
   have h := no_points (D := 2) (c := 4) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 51 ^ 2 = -5138 by norm_num] at h
 
 theorem no_points_m5133 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5133) := by
   have h := no_points (D := 1) (c := 7) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 74 ^ 2 = -5133 by norm_num] at h
 
 theorem no_points_m5122 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5122) := by
   have h := no_points (D := 2) (c := 20) (b := 81) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 81) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 81 ^ 2 = -5122 by norm_num] at h
 
 theorem no_points_m5113 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5113) := by
   have h := no_points (D := 1) (c := 6) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 73 ^ 2 = -5113 by norm_num] at h
 
 theorem no_points_m5094 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5094) := by
   have h := no_points (D := -2) (c := -26) (b := 79) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 79) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-26 : ℤ) ^ 3 - (-2) * 79 ^ 2 = -5094 by norm_num] at h
 
 theorem no_points_m5090 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5090) := by
   have h := no_points (D := 2) (c := -12) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 41 ^ 2 = -5090 by norm_num] at h
 
 theorem no_points_m5069 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5069) := by
   have h := no_points (D := 1) (c := 11) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 80 ^ 2 = -5069 by norm_num] at h
 
 theorem no_points_m5013 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5013) := by
   have h := no_points (D := 1) (c := -17) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 10 ^ 2 = -5013 by norm_num] at h
 
 theorem no_points_m4977 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4977) := by
   have h := no_points (D := 1) (c := -17) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 8 ^ 2 = -4977 by norm_num] at h
 
 theorem no_points_m4929 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4929) := by
   have h := no_points (D := 1) (c := -17) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 4 ^ 2 = -4929 by norm_num] at h
 
 theorem no_points_m4922 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4922) := by
   have h := no_points (D := 2) (c := -14) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 33 ^ 2 = -4922 by norm_num] at h
 
 theorem no_points_m4917 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4917) := by
   have h := no_points (D := 1) (c := -17) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-17 : ℤ) ^ 3 - (1) * 2 ^ 2 = -4917 by norm_num] at h
 
 theorem no_points_m4901 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4901) := by
   have h := no_points (D := 1) (c := -13) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 52 ^ 2 = -4901 by norm_num] at h
 
 theorem no_points_m4873 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4873) := by
   have h := no_points (D := 1) (c := 42) (b := 281) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 281) (u := 228) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (1) * 281 ^ 2 = -4873 by norm_num] at h
 
 theorem no_points_m4867 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4867) := by
   have h := no_points (D := 1) (c := 33) (b := 202) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (33 : ℤ) ^ 3 - (1) * 202 ^ 2 = -4867 by norm_num] at h
 
 theorem no_points_m4841 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4841) := by
   have h := no_points (D := 1) (c := 119) (b := 1300) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 325) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (119 : ℤ) ^ 3 - (1) * 1300 ^ 2 = -4841 by norm_num] at h
 
 theorem no_points_m4826 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4826) := by
   have h := no_points (D := 2) (c := 18) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 73 ^ 2 = -4826 by norm_num] at h
 
 theorem no_points_m4825 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4825) := by
   have h := no_points (D := 1) (c := -9) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 64 ^ 2 = -4825 by norm_num] at h
 
 theorem no_points_m4812 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4812) := by
   have h := no_points (D := 1) (c := 94) (b := 914) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 457) (u := 109) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (94 : ℤ) ^ 3 - (1) * 914 ^ 2 = -4812 by norm_num] at h
 
 theorem no_points_m4774 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4774) := by
   have h := no_points (D := -2) (c := -18) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 23 ^ 2 = -4774 by norm_num] at h
 
 theorem no_points_m4770 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4770) := by
   have h := no_points (D := 2) (c := 12) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 57 ^ 2 = -4770 by norm_num] at h
 
 theorem no_points_m4749 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4749) := by
   have h := no_points (D := 1) (c := -5) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 68 ^ 2 = -4749 by norm_num] at h
 
 theorem no_points_m4747 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4747) := by
   have h := no_points (D := 1) (c := 9) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (9 : ℤ) ^ 3 - (1) * 74 ^ 2 = -4747 by norm_num] at h
 
 theorem no_points_m4733 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4733) := by
   have h := no_points (D := 1) (c := 23) (b := 130) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 130 ^ 2 = -4733 by norm_num] at h
 
 theorem no_points_m4721 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4721) := by
   have h := no_points (D := 1) (c := -10) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 61 ^ 2 = -4721 by norm_num] at h
 
 theorem no_points_m4697 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4697) := by
   have h := no_points (D := 1) (c := -13) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 50 ^ 2 = -4697 by norm_num] at h
 
 theorem no_points_m4684 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4684) := by
   have h := no_points (D := 1) (c := 30) (b := 178) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 178 ^ 2 = -4684 by norm_num] at h
 
 theorem no_points_m4651 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4651) := by
   have h := no_points (D := 1) (c := -3) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 68 ^ 2 = -4651 by norm_num] at h
 
 theorem no_points_m4649 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4649) := by
   have h := no_points (D := 1) (c := 35) (b := 218) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 109) (u := 33) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (35 : ℤ) ^ 3 - (1) * 218 ^ 2 = -4649 by norm_num] at h
 
 theorem no_points_m4638 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4638) := by
   have h := no_points (D := -2) (c := -20) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 41 ^ 2 = -4638 by norm_num] at h
 
 theorem no_points_m4625 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4625) := by
   have h := no_points (D := 1) (c := -1) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 68 ^ 2 = -4625 by norm_num] at h
 
 theorem no_points_m4597 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4597) := by
   have h := no_points (D := 1) (c := 3) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 68 ^ 2 = -4597 by norm_num] at h
 
 theorem no_points_m4593 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4593) := by
   have h := no_points (D := 1) (c := 43) (b := 290) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 145) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (43 : ℤ) ^ 3 - (1) * 290 ^ 2 = -4593 by norm_num] at h
 
 theorem no_points_m4531 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4531) := by
   have h := no_points (D := 1) (c := -15) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-15 : ℤ) ^ 3 - (1) * 34 ^ 2 = -4531 by norm_num] at h
 
 theorem no_points_m4525 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4525) := by
   have h := no_points (D := 1) (c := 135) (b := 1570) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 785) (u := 757) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (135 : ℤ) ^ 3 - (1) * 1570 ^ 2 = -4525 by norm_num] at h
 
 theorem no_points_m4499 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4499) := by
   have h := no_points (D := 1) (c := 5) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 68 ^ 2 = -4499 by norm_num] at h
 
 theorem no_points_m4481 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4481) := by
   have h := no_points (D := 1) (c := 14) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 85 ^ 2 = -4481 by norm_num] at h
 
 theorem no_points_m4441 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4441) := by
   have h := no_points (D := 1) (c := -6) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 65 ^ 2 = -4441 by norm_num] at h
 
 theorem no_points_m4425 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4425) := by
   have h := no_points (D := 1) (c := -14) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 41 ^ 2 = -4425 by norm_num] at h
 
 theorem no_points_m4385 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4385) := by
   have h := no_points (D := 1) (c := 59) (b := 458) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 229) (u := 107) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (59 : ℤ) ^ 3 - (1) * 458 ^ 2 = -4385 by norm_num] at h
 
 theorem no_points_m4377 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4377) := by
   have h := no_points (D := 1) (c := 19) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 106 ^ 2 = -4377 by norm_num] at h
 
 theorem no_points_m4369 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4369) := by
   have h := no_points (D := 1) (c := 18) (b := 101) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 101 ^ 2 = -4369 by norm_num] at h
 
 theorem no_points_m4364 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4364) := by
   have h := no_points (D := 1) (c := -10) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 58 ^ 2 = -4364 by norm_num] at h
 
 theorem no_points_m4345 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4345) := by
   have h := no_points (D := 1) (c := 339) (b := 6242) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 3121) (u := 79) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (339 : ℤ) ^ 3 - (1) * 6242 ^ 2 = -4345 by norm_num] at h
 
 theorem no_points_m4329 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4329) := by
   have h := no_points (D := 1) (c := 10) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 73 ^ 2 = -4329 by norm_num] at h
 
 theorem no_points_m4281 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4281) := by
   have h := no_points (D := 1) (c := 7) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 68 ^ 2 = -4281 by norm_num] at h
 
 theorem no_points_m4249 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4249) := by
   have h := no_points (D := 1) (c := 51) (b := 370) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 185) (u := 117) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (51 : ℤ) ^ 3 - (1) * 370 ^ 2 = -4249 by norm_num] at h
 
 theorem no_points_m4236 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4236) := by
   have h := no_points (D := 1) (c := 22) (b := 122) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 122 ^ 2 = -4236 by norm_num] at h
 
 theorem no_points_m4233 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4233) := by
   have h := no_points (D := 1) (c := -2) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 65 ^ 2 = -4233 by norm_num] at h
 
 theorem no_points_m4221 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4221) := by
   have h := no_points (D := 1) (c := -5) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 64 ^ 2 = -4221 by norm_num] at h
 
 theorem no_points_m4217 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4217) := by
   have h := no_points (D := 1) (c := 2) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 65 ^ 2 = -4217 by norm_num] at h
 
 theorem no_points_m4203 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4203) := by
   have h := no_points (D := 1) (c := 13) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 80 ^ 2 = -4203 by norm_num] at h
 
 theorem no_points_m4202 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4202) := by
   have h := no_points (D := 2) (c := 10) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 51 ^ 2 = -4202 by norm_num] at h
 
 theorem no_points_m4195 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4195) := by
   have h := no_points (D := 1) (c := 21) (b := 116) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 116 ^ 2 = -4195 by norm_num] at h
 
 theorem no_points_m4145 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4145) := by
   have h := no_points (D := 1) (c := 11) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 74 ^ 2 = -4145 by norm_num] at h
 
 theorem no_points_m4123 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4123) := by
   have h := no_points (D := 1) (c := -3) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 64 ^ 2 = -4123 by norm_num] at h
 
 theorem no_points_m4113 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4113) := by
   have h := no_points (D := 1) (c := -14) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 37 ^ 2 = -4113 by norm_num] at h
 
 theorem no_points_m4097 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4097) := by
   have h := no_points (D := 1) (c := -1) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 64 ^ 2 = -4097 by norm_num] at h
 
 theorem no_points_m4093 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4093) := by
   have h := no_points (D := 1) (c := -9) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 58 ^ 2 = -4093 by norm_num] at h
 
 theorem no_points_m4069 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4069) := by
   have h := no_points (D := 1) (c := 3) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 64 ^ 2 = -4069 by norm_num] at h
 
 theorem no_points_m4051 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4051) := by
   have h := no_points (D := 1) (c := -15) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-15 : ℤ) ^ 3 - (1) * 26 ^ 2 = -4051 by norm_num] at h
 
 theorem no_points_m4035 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4035) := by
   have h := no_points (D := 1) (c := -11) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 52 ^ 2 = -4035 by norm_num] at h
 
 theorem no_points_m4009 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4009) := by
   have h := no_points (D := 1) (c := 6) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 65 ^ 2 = -4009 by norm_num] at h
 
 theorem no_points_m4006 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-4006) := by
   have h := no_points (D := -2) (c := -474) (b := 7297) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7297) (u := 1961) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-474 : ℤ) ^ 3 - (-2) * 7297 ^ 2 = -4006 by norm_num] at h
 
 theorem no_points_m3995 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3995) := by
   have h := no_points (D := 1) (c := 89) (b := 842) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 421) (u := 392) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (89 : ℤ) ^ 3 - (1) * 842 ^ 2 = -3995 by norm_num] at h
 
 theorem no_points_m3981 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3981) := by
   have h := no_points (D := 1) (c := 139) (b := 1640) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 205) (u := 132) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (139 : ℤ) ^ 3 - (1) * 1640 ^ 2 = -3981 by norm_num] at h
 
 theorem no_points_m3980 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3980) := by
   have h := no_points (D := 1) (c := 14) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 82 ^ 2 = -3980 by norm_num] at h
 
 theorem no_points_m3971 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3971) := by
   have h := no_points (D := 1) (c := 5) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 64 ^ 2 = -3971 by norm_num] at h
 
 theorem no_points_m3957 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3957) := by
   have h := no_points (D := 1) (c := 19) (b := 104) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 104 ^ 2 = -3957 by norm_num] at h
 
 theorem no_points_m3937 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3937) := by
   have h := no_points (D := 1) (c := -6) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 61 ^ 2 = -3937 by norm_num] at h
 
 theorem no_points_m3914 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3914) := by
   have h := no_points (D := 2) (c := -6) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 43 ^ 2 = -3914 by norm_num] at h
 
 theorem no_points_m3910 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3910) := by
   have h := no_points (D := -2) (c := -18) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 31 ^ 2 = -3910 by norm_num] at h
 
 theorem no_points_m3906 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3906) := by
   have h := no_points (D := 2) (c := -12) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 33 ^ 2 = -3906 by norm_num] at h
 
 theorem no_points_m3858 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3858) := by
   have h := no_points (D := 2) (c := 44) (b := 211) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 211) (u := 93) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (44 : ℤ) ^ 3 - (2) * 211 ^ 2 = -3858 by norm_num] at h
 
 theorem no_points_m3826 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3826) := by
   have h := no_points (D := 2) (c := 1036) (b := 23579) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23579) (u := 9867) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1036 : ℤ) ^ 3 - (2) * 23579 ^ 2 = -3826 by norm_num] at h
 
 theorem no_points_m3809 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3809) := by
   have h := no_points (D := 1) (c := -10) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 53 ^ 2 = -3809 by norm_num] at h
 
 theorem no_points_m3802 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3802) := by
   have h := no_points (D := 2) (c := 130) (b := 1049) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1049) (u := 238) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (130 : ℤ) ^ 3 - (2) * 1049 ^ 2 = -3802 by norm_num] at h
 
 theorem no_points_m3797 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3797) := by
   have h := no_points (D := 1) (c := -13) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 40 ^ 2 = -3797 by norm_num] at h
 
 theorem no_points_m3771 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3771) := by
   have h := no_points (D := 1) (c := 985) (b := 30914) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 15457) (u := 6856) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (985 : ℤ) ^ 3 - (1) * 30914 ^ 2 = -3771 by norm_num] at h
 
 theorem no_points_m3762 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3762) := by
   have h := no_points (D := 2) (c := -4) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 43 ^ 2 = -3762 by norm_num] at h
 
 theorem no_points_m3761 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3761) := by
   have h := no_points (D := 1) (c := 47) (b := 328) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (47 : ℤ) ^ 3 - (1) * 328 ^ 2 = -3761 by norm_num] at h
 
 theorem no_points_m3753 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3753) := by
   have h := no_points (D := 1) (c := 7) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 64 ^ 2 = -3753 by norm_num] at h
 
 theorem no_points_m3729 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3729) := by
   have h := no_points (D := 1) (c := -2) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 61 ^ 2 = -3729 by norm_num] at h
 
 theorem no_points_m3713 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3713) := by
   have h := no_points (D := 1) (c := 2) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 61 ^ 2 = -3713 by norm_num] at h
 
 theorem no_points_m3707 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3707) := by
   have h := no_points (D := 1) (c := -7) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3707 by norm_num] at h
 
 theorem no_points_m3690 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3690) := by
   have h := no_points (D := 2) (c := 2) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 43 ^ 2 = -3690 by norm_num] at h
 
 theorem no_points_m3657 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3657) := by
   have h := no_points (D := 1) (c := 82) (b := 745) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 745) (u := 342) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (82 : ℤ) ^ 3 - (1) * 745 ^ 2 = -3657 by norm_num] at h
 
 theorem no_points_m3634 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3634) := by
   have h := no_points (D := 2) (c := 4) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 43 ^ 2 = -3634 by norm_num] at h
 
 theorem no_points_m3633 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3633) := by
   have h := no_points (D := 1) (c := 106) (b := 1093) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1093) (u := 563) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (106 : ℤ) ^ 3 - (1) * 1093 ^ 2 = -3633 by norm_num] at h
 
 theorem no_points_m3629 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3629) := by
   have h := no_points (D := 1) (c := 491) (b := 10880) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 7 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (491 : ℤ) ^ 3 - (1) * 10880 ^ 2 = -3629 by norm_num] at h
 
 theorem no_points_m3586 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3586) := by
   have h := no_points (D := 2) (c := 28) (b := 113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 113) (u := 87) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 113 ^ 2 = -3586 by norm_num] at h
 
 theorem no_points_m3585 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3585) := by
   have h := no_points (D := 1) (c := -14) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 29 ^ 2 = -3585 by norm_num] at h
 
 theorem no_points_m3582 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3582) := by
   have h := no_points (D := -2) (c := -20) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 47 ^ 2 = -3582 by norm_num] at h
 
 theorem no_points_m3578 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3578) := by
   have h := no_points (D := 2) (c := -6) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 41 ^ 2 = -3578 by norm_num] at h
 
 theorem no_points_m3577 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3577) := by
   have h := no_points (D := 1) (c := 18) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 97 ^ 2 = -3577 by norm_num] at h
 
 theorem no_points_m3505 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3505) := by
   have h := no_points (D := 1) (c := 6) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 61 ^ 2 = -3505 by norm_num] at h
 
 theorem no_points_m3500 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3500) := by
   have h := no_points (D := 1) (c := -10) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 50 ^ 2 = -3500 by norm_num] at h
 
 theorem no_points_m3489 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3489) := by
   have h := no_points (D := 1) (c := -5) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3489 by norm_num] at h
 
 theorem no_points_m3475 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3475) := by
   have h := no_points (D := 1) (c := -15) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-15 : ℤ) ^ 3 - (1) * 10 ^ 2 = -3475 by norm_num] at h
 
 theorem no_points_m3474 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3474) := by
   have h := no_points (D := 2) (c := 12) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 51 ^ 2 = -3474 by norm_num] at h
 
 theorem no_points_m3466 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3466) := by
   have h := no_points (D := 2) (c := -14) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 19 ^ 2 = -3466 by norm_num] at h
 
 theorem no_points_m3449 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3449) := by
   have h := no_points (D := 1) (c := 26) (b := 145) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 145) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 145 ^ 2 = -3449 by norm_num] at h
 
 theorem no_points_m3433 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3433) := by
   have h := no_points (D := 1) (c := -9) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 52 ^ 2 = -3433 by norm_num] at h
 
 theorem no_points_m3426 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3426) := by
   have h := no_points (D := 2) (c := -4) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 41 ^ 2 = -3426 by norm_num] at h
 
 theorem no_points_m3379 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3379) := by
   have h := no_points (D := 1) (c := -15) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-15 : ℤ) ^ 3 - (1) * 2 ^ 2 = -3379 by norm_num] at h
 
 theorem no_points_m3372 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3372) := by
   have h := no_points (D := 1) (c := -2) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3372 by norm_num] at h
 
 theorem no_points_m3369 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3369) := by
   have h := no_points (D := 1) (c := -14) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 25 ^ 2 = -3369 by norm_num] at h
 
 theorem no_points_m3365 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3365) := by
   have h := no_points (D := 1) (c := -1) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3365 by norm_num] at h
 
 theorem no_points_m3363 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3363) := by
   have h := no_points (D := 1) (c := 1) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3363 by norm_num] at h
 
 theorem no_points_m3354 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3354) := by
   have h := no_points (D := 2) (c := 2) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 41 ^ 2 = -3354 by norm_num] at h
 
 theorem no_points_m3353 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3353) := by
   have h := no_points (D := 1) (c := -13) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 34 ^ 2 = -3353 by norm_num] at h
 
 theorem no_points_m3349 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3349) := by
   have h := no_points (D := 1) (c := 15) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 82 ^ 2 = -3349 by norm_num] at h
 
 theorem no_points_m3337 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3337) := by
   have h := no_points (D := 1) (c := 3) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3337 by norm_num] at h
 
 theorem no_points_m3322 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3322) := by
   have h := no_points (D := 2) (c := -14) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 17 ^ 2 = -3322 by norm_num] at h
 
 theorem no_points_m3298 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3298) := by
   have h := no_points (D := 2) (c := 4) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 41 ^ 2 = -3298 by norm_num] at h
 
 theorem no_points_m3293 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3293) := by
   have h := no_points (D := 1) (c := 11) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 68 ^ 2 = -3293 by norm_num] at h
 
 theorem no_points_m3229 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3229) := by
   have h := no_points (D := 1) (c := -9) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 50 ^ 2 = -3229 by norm_num] at h
 
 theorem no_points_m3225 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3225) := by
   have h := no_points (D := 1) (c := 10) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 65 ^ 2 = -3225 by norm_num] at h
 
 theorem no_points_m3221 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3221) := by
   have h := no_points (D := 1) (c := -13) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 32 ^ 2 = -3221 by norm_num] at h
 
 theorem no_points_m3209 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3209) := by
   have h := no_points (D := 1) (c := 38) (b := 241) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 241) (u := 177) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (38 : ℤ) ^ 3 - (1) * 241 ^ 2 = -3209 by norm_num] at h
 
 theorem no_points_m3198 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3198) := by
   have h := no_points (D := -2) (c := -20) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 49 ^ 2 = -3198 by norm_num] at h
 
 theorem no_points_m3186 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3186) := by
   have h := no_points (D := 2) (c := -12) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 27 ^ 2 = -3186 by norm_num] at h
 
 theorem no_points_m3181 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3181) := by
   have h := no_points (D := 1) (c := 39) (b := 250) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 125) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (39 : ℤ) ^ 3 - (1) * 250 ^ 2 = -3181 by norm_num] at h
 
 theorem no_points_m3171 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3171) := by
   have h := no_points (D := 1) (c := 37) (b := 232) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (37 : ℤ) ^ 3 - (1) * 232 ^ 2 = -3171 by norm_num] at h
 
 theorem no_points_m3153 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3153) := by
   have h := no_points (D := 1) (c := 46) (b := 317) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 317) (u := 203) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (46 : ℤ) ^ 3 - (1) * 317 ^ 2 = -3153 by norm_num] at h
 
 theorem no_points_m3148 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3148) := by
   have h := no_points (D := 1) (c := 6) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3148 by norm_num] at h
 
 theorem no_points_m3146 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3146) := by
   have h := no_points (D := 2) (c := 18) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 67 ^ 2 = -3146 by norm_num] at h
 
 theorem no_points_m3141 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3141) := by
   have h := no_points (D := 1) (c := 19) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 100 ^ 2 = -3141 by norm_num] at h
 
 theorem no_points_m3134 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3134) := by
   have h := no_points (D := -2) (c := -28) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 83) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-28 : ℤ) ^ 3 - (-2) * 97 ^ 2 = -3134 by norm_num] at h
 
 theorem no_points_m3122 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3122) := by
   have h := no_points (D := 2) (c := 60) (b := 331) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 331) (u := 256) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (60 : ℤ) ^ 3 - (2) * 331 ^ 2 = -3122 by norm_num] at h
 
 theorem no_points_m3089 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3089) := by
   have h := no_points (D := 1) (c := 146) (b := 1765) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1765) (u := 1017) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (146 : ℤ) ^ 3 - (1) * 1765 ^ 2 = -3089 by norm_num] at h
 
 theorem no_points_m3033 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3033) := by
   have h := no_points (D := 1) (c := -14) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 17 ^ 2 = -3033 by norm_num] at h
 
 theorem no_points_m3025 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3025) := by
   have h := no_points (D := 1) (c := -6) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 53 ^ 2 = -3025 by norm_num] at h
 
 theorem no_points_m3021 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3021) := by
   have h := no_points (D := 1) (c := 7) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 58 ^ 2 = -3021 by norm_num] at h
 
 theorem no_points_m2986 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2986) := by
   have h := no_points (D := 2) (c := -14) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 11 ^ 2 = -2986 by norm_num] at h
 
 theorem no_points_m2961 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2961) := by
   have h := no_points (D := 1) (c := 142) (b := 1693) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1693) (u := 92) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (142 : ℤ) ^ 3 - (1) * 1693 ^ 2 = -2961 by norm_num] at h
 
 theorem no_points_m2931 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2931) := by
   have h := no_points (D := 1) (c := -11) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 40 ^ 2 = -2931 by norm_num] at h
 
 theorem no_points_m2929 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2929) := by
   have h := no_points (D := 1) (c := 30) (b := 173) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 173) (u := 80) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 173 ^ 2 = -2929 by norm_num] at h
 
 theorem no_points_m2913 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2913) := by
   have h := no_points (D := 1) (c := -14) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 13 ^ 2 = -2913 by norm_num] at h
 
 theorem no_points_m2906 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2906) := by
   have h := no_points (D := 2) (c := -14) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 9 ^ 2 = -2906 by norm_num] at h
 
 theorem no_points_m2873 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2873) := by
   have h := no_points (D := 1) (c := -13) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 26 ^ 2 = -2873 by norm_num] at h
 
 theorem no_points_m2859 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2859) := by
   have h := no_points (D := 1) (c := 73) (b := 626) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 313) (u := 288) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (73 : ℤ) ^ 3 - (1) * 626 ^ 2 = -2859 by norm_num] at h
 
 theorem no_points_m2843 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2843) := by
   have h := no_points (D := 1) (c := -7) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2843 by norm_num] at h
 
 theorem no_points_m2829 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2829) := by
   have h := no_points (D := 1) (c := -5) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 52 ^ 2 = -2829 by norm_num] at h
 
 theorem no_points_m2817 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2817) := by
   have h := no_points (D := 1) (c := -2) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 53 ^ 2 = -2817 by norm_num] at h
 
 theorem no_points_m2801 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2801) := by
   have h := no_points (D := 1) (c := 2) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 53 ^ 2 = -2801 by norm_num] at h
 
 theorem no_points_m2769 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2769) := by
   have h := no_points (D := 1) (c := -14) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 5 ^ 2 = -2769 by norm_num] at h
 
 theorem no_points_m2765 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2765) := by
   have h := no_points (D := 1) (c := 11) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 64 ^ 2 = -2765 by norm_num] at h
 
 theorem no_points_m2762 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2762) := by
   have h := no_points (D := 2) (c := -14) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 3 ^ 2 = -2762 by norm_num] at h
 
 theorem no_points_m2746 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2746) := by
   have h := no_points (D := 2) (c := -14) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (2) * 1 ^ 2 = -2746 by norm_num] at h
 
 theorem no_points_m2745 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2745) := by
   have h := no_points (D := 1) (c := -14) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-14 : ℤ) ^ 3 - (1) * 1 ^ 2 = -2745 by norm_num] at h
 
 theorem no_points_m2732 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2732) := by
   have h := no_points (D := 1) (c := 14) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 74 ^ 2 = -2732 by norm_num] at h
 
 theorem no_points_m2731 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2731) := by
   have h := no_points (D := 1) (c := -3) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 52 ^ 2 = -2731 by norm_num] at h
 
 theorem no_points_m2721 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2721) := by
   have h := no_points (D := 1) (c := 10) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 61 ^ 2 = -2721 by norm_num] at h
 
 theorem no_points_m2717 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2717) := by
   have h := no_points (D := 1) (c := 23) (b := 122) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 122 ^ 2 = -2717 by norm_num] at h
 
 theorem no_points_m2705 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2705) := by
   have h := no_points (D := 1) (c := -1) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 52 ^ 2 = -2705 by norm_num] at h
 
 theorem no_points_m2698 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2698) := by
   have h := no_points (D := 2) (c := 10) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 43 ^ 2 = -2698 by norm_num] at h
 
 theorem no_points_m2681 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2681) := by
   have h := no_points (D := 1) (c := -10) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 41 ^ 2 = -2681 by norm_num] at h
 
 theorem no_points_m2677 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2677) := by
   have h := no_points (D := 1) (c := 3) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 52 ^ 2 = -2677 by norm_num] at h
 
 theorem no_points_m2658 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2658) := by
   have h := no_points (D := 2) (c := 20) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 73 ^ 2 = -2658 by norm_num] at h
 
 theorem no_points_m2641 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2641) := by
   have h := no_points (D := 1) (c := 42) (b := 277) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 277) (u := 217) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (1) * 277 ^ 2 = -2641 by norm_num] at h
 
 theorem no_points_m2635 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2635) := by
   have h := no_points (D := 1) (c := 9) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (9 : ℤ) ^ 3 - (1) * 58 ^ 2 = -2635 by norm_num] at h
 
 theorem no_points_m2625 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2625) := by
   have h := no_points (D := 1) (c := -5) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2625 by norm_num] at h
 
 theorem no_points_m2621 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2621) := by
   have h := no_points (D := 1) (c := 107) (b := 1108) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 277) (u := 217) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (107 : ℤ) ^ 3 - (1) * 1108 ^ 2 = -2621 by norm_num] at h
 
 theorem no_points_m2597 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2597) := by
   have h := no_points (D := 1) (c := -13) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 20 ^ 2 = -2597 by norm_num] at h
 
 theorem no_points_m2593 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2593) := by
   have h := no_points (D := 1) (c := 6) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 53 ^ 2 = -2593 by norm_num] at h
 
 theorem no_points_m2585 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2585) := by
   have h := no_points (D := 1) (c := 14) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 73 ^ 2 = -2585 by norm_num] at h
 
 theorem no_points_m2579 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2579) := by
   have h := no_points (D := 1) (c := 5) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 52 ^ 2 = -2579 by norm_num] at h
 
 theorem no_points_m2508 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2508) := by
   have h := no_points (D := 1) (c := -2) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2508 by norm_num] at h
 
 theorem no_points_m2507 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2507) := by
   have h := no_points (D := 1) (c := 29) (b := 164) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (29 : ℤ) ^ 3 - (1) * 164 ^ 2 = -2507 by norm_num] at h
 
 theorem no_points_m2501 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2501) := by
   have h := no_points (D := 1) (c := -1) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2501 by norm_num] at h
 
 theorem no_points_m2499 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2499) := by
   have h := no_points (D := 1) (c := 1) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2499 by norm_num] at h
 
 theorem no_points_m2473 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2473) := by
   have h := no_points (D := 1) (c := 3) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2473 by norm_num] at h
 
 theorem no_points_m2470 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2470) := by
   have h := no_points (D := -2) (c := -18) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 41 ^ 2 = -2470 by norm_num] at h
 
 theorem no_points_m2467 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2467) := by
   have h := no_points (D := 1) (c := 129) (b := 1466) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 733) (u := 380) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (129 : ℤ) ^ 3 - (1) * 1466 ^ 2 = -2467 by norm_num] at h
 
 theorem no_points_m2459 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2459) := by
   have h := no_points (D := 1) (c := 173) (b := 2276) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 569) (u := 483) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (173 : ℤ) ^ 3 - (1) * 2276 ^ 2 = -2459 by norm_num] at h
 
 theorem no_points_m2453 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2453) := by
   have h := no_points (D := 1) (c := -13) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 16 ^ 2 = -2453 by norm_num] at h
 
 theorem no_points_m2450 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2450) := by
   have h := no_points (D := 2) (c := -12) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 19 ^ 2 = -2450 by norm_num] at h
 
 theorem no_points_m2434 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2434) := by
   have h := no_points (D := 2) (c := 124) (b := 977) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 977) (u := 311) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (124 : ℤ) ^ 3 - (2) * 977 ^ 2 = -2434 by norm_num] at h
 
 theorem no_points_m2430 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2430) := by
   have h := no_points (D := -2) (c := -92) (b := 623) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 623) (u := 598) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-92 : ℤ) ^ 3 - (-2) * 623 ^ 2 = -2430 by norm_num] at h
 
 theorem no_points_m2427 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2427) := by
   have h := no_points (D := 1) (c := 13) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 68 ^ 2 = -2427 by norm_num] at h
 
 theorem no_points_m2394 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2394) := by
   have h := no_points (D := 2) (c := -6) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 33 ^ 2 = -2394 by norm_num] at h
 
 theorem no_points_m2369 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2369) := by
   have h := no_points (D := 1) (c := -10) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 37 ^ 2 = -2369 by norm_num] at h
 
 theorem no_points_m2362 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2362) := by
   have h := no_points (D := 2) (c := 10) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 41 ^ 2 = -2362 by norm_num] at h
 
 theorem no_points_m2361 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2361) := by
   have h := no_points (D := 1) (c := 7) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 52 ^ 2 = -2361 by norm_num] at h
 
 theorem no_points_m2355 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2355) := by
   have h := no_points (D := 1) (c := -11) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 32 ^ 2 = -2355 by norm_num] at h
 
 theorem no_points_m2329 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2329) := by
   have h := no_points (D := 1) (c := -9) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 40 ^ 2 = -2329 by norm_num] at h
 
 theorem no_points_m2306 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2306) := by
   have h := no_points (D := 2) (c := -12) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 17 ^ 2 = -2306 by norm_num] at h
 
 theorem no_points_m2297 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2297) := by
   have h := no_points (D := 1) (c := -13) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 10 ^ 2 = -2297 by norm_num] at h
 
 theorem no_points_m2284 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2284) := by
   have h := no_points (D := 1) (c := 6) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2284 by norm_num] at h
 
 theorem no_points_m2275 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2275) := by
   have h := no_points (D := 1) (c := 165) (b := 2120) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 265) (u := 182) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (165 : ℤ) ^ 3 - (1) * 2120 ^ 2 = -2275 by norm_num] at h
 
 theorem no_points_m2270 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2270) := by
   have h := no_points (D := -2) (c := -52) (b := 263) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 263) (u := 153) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-52 : ℤ) ^ 3 - (-2) * 263 ^ 2 = -2270 by norm_num] at h
 
 theorem no_points_m2261 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2261) := by
   have h := no_points (D := 1) (c := -13) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 8 ^ 2 = -2261 by norm_num] at h
 
 theorem no_points_m2242 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2242) := by
   have h := no_points (D := 2) (c := -4) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 33 ^ 2 = -2242 by norm_num] at h
 
 theorem no_points_m2221 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2221) := by
   have h := no_points (D := 1) (c := 27) (b := 148) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 148 ^ 2 = -2221 by norm_num] at h
 
 theorem no_points_m2213 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2213) := by
   have h := no_points (D := 1) (c := -13) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 4 ^ 2 = -2213 by norm_num] at h
 
 theorem no_points_m2201 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2201) := by
   have h := no_points (D := 1) (c := -13) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-13 : ℤ) ^ 3 - (1) * 2 ^ 2 = -2201 by norm_num] at h
 
 theorem no_points_m2178 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2178) := by
   have h := no_points (D := 2) (c := 44) (b := 209) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 209) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (44 : ℤ) ^ 3 - (2) * 209 ^ 2 = -2178 by norm_num] at h
 
 theorem no_points_m2170 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2170) := by
   have h := no_points (D := 2) (c := 2) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 33 ^ 2 = -2170 by norm_num] at h
 
 theorem no_points_m2157 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2157) := by
   have h := no_points (D := 1) (c := 7) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 50 ^ 2 = -2157 by norm_num] at h
 
 theorem no_points_m2156 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2156) := by
   have h := no_points (D := 1) (c := -10) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 34 ^ 2 = -2156 by norm_num] at h
 
 theorem no_points_m2121 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2121) := by
   have h := no_points (D := 1) (c := 22) (b := 113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 113) (u := 98) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 113 ^ 2 = -2121 by norm_num] at h
 
 theorem no_points_m2114 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2114) := by
   have h := no_points (D := 2) (c := 4) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 33 ^ 2 = -2114 by norm_num] at h
 
 theorem no_points_m2101 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2101) := by
   have h := no_points (D := 1) (c := 15) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 74 ^ 2 = -2101 by norm_num] at h
 
 theorem no_points_m2089 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2089) := by
   have h := no_points (D := 1) (c := 18) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 89 ^ 2 = -2089 by norm_num] at h
 
 theorem no_points_m2069 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2069) := by
   have h := no_points (D := 1) (c := 35) (b := 212) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (35 : ℤ) ^ 3 - (1) * 212 ^ 2 = -2069 by norm_num] at h
 
 theorem no_points_m2067 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2067) := by
   have h := no_points (D := 1) (c := 49) (b := 346) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 173) (u := 80) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (49 : ℤ) ^ 3 - (1) * 346 ^ 2 = -2067 by norm_num] at h
 
 theorem no_points_m2033 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2033) := by
   have h := no_points (D := 1) (c := 11) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 58 ^ 2 = -2033 by norm_num] at h
 
 theorem no_points_m2026 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2026) := by
   have h := no_points (D := 2) (c := 26) (b := 99) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 99) (u := 58) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 99 ^ 2 = -2026 by norm_num] at h
 
 theorem no_points_m2022 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-2022) := by
   have h := no_points (D := -2) (c := -74) (b := 449) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 449) (u := 419) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-74 : ℤ) ^ 3 - (-2) * 449 ^ 2 = -2022 by norm_num] at h
 
 theorem no_points_m1993 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1993) := by
   have h := no_points (D := 1) (c := 306) (b := 5353) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5353) (u := 394) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (306 : ℤ) ^ 3 - (1) * 5353 ^ 2 = -1993 by norm_num] at h
 
 theorem no_points_m1970 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1970) := by
   have h := no_points (D := 2) (c := -12) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 11 ^ 2 = -1970 by norm_num] at h
 
 theorem no_points_m1907 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1907) := by
   have h := no_points (D := 1) (c := 113) (b := 1202) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 601) (u := 476) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (113 : ℤ) ^ 3 - (1) * 1202 ^ 2 = -1907 by norm_num] at h
 
 theorem no_points_m1900 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1900) := by
   have h := no_points (D := 1) (c := 30) (b := 170) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 170 ^ 2 = -1900 by norm_num] at h
 
 theorem no_points_m1899 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1899) := by
   have h := no_points (D := 1) (c := 13) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 64 ^ 2 = -1899 by norm_num] at h
 
 theorem no_points_m1897 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1897) := by
   have h := no_points (D := 1) (c := -6) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 41 ^ 2 = -1897 by norm_num] at h
 
 theorem no_points_m1893 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1893) := by
   have h := no_points (D := 1) (c := 31) (b := 178) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (31 : ℤ) ^ 3 - (1) * 178 ^ 2 = -1893 by norm_num] at h
 
 theorem no_points_m1890 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1890) := by
   have h := no_points (D := 2) (c := -12) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 9 ^ 2 = -1890 by norm_num] at h
 
 theorem no_points_m1885 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1885) := by
   have h := no_points (D := 1) (c := -9) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 34 ^ 2 = -1885 by norm_num] at h
 
 theorem no_points_m1881 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1881) := by
   have h := no_points (D := 1) (c := 115) (b := 1234) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 617) (u := 423) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (115 : ℤ) ^ 3 - (1) * 1234 ^ 2 = -1881 by norm_num] at h
 
 theorem no_points_m1862 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1862) := by
   have h := no_points (D := -2) (c := -154) (b := 1351) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1351) (u := 913) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-154 : ℤ) ^ 3 - (-2) * 1351 ^ 2 = -1862 by norm_num] at h
 
 theorem no_points_m1841 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1841) := by
   have h := no_points (D := 1) (c := -10) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 29 ^ 2 = -1841 by norm_num] at h
 
 theorem no_points_m1811 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1811) := by
   have h := no_points (D := 1) (c := 17) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 82 ^ 2 = -1811 by norm_num] at h
 
 theorem no_points_m1809 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1809) := by
   have h := no_points (D := 1) (c := 10) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 53 ^ 2 = -1809 by norm_num] at h
 
 theorem no_points_m1785 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1785) := by
   have h := no_points (D := 1) (c := 151) (b := 1856) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (151 : ℤ) ^ 3 - (1) * 1856 ^ 2 = -1785 by norm_num] at h
 
 theorem no_points_m1771 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1771) := by
   have h := no_points (D := 1) (c := 9) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (9 : ℤ) ^ 3 - (1) * 50 ^ 2 = -1771 by norm_num] at h
 
 theorem no_points_m1766 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1766) := by
   have h := no_points (D := -2) (c := -34) (b := 137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 137) (u := 106) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-34 : ℤ) ^ 3 - (-2) * 137 ^ 2 = -1766 by norm_num] at h
 
 theorem no_points_m1753 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1753) := by
   have h := no_points (D := 1) (c := -9) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 32 ^ 2 = -1753 by norm_num] at h
 
 theorem no_points_m1746 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1746) := by
   have h := no_points (D := 2) (c := -12) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 3 ^ 2 = -1746 by norm_num] at h
 
 theorem no_points_m1734 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1734) := by
   have h := no_points (D := -2) (c := -26) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 64) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-26 : ℤ) ^ 3 - (-2) * 89 ^ 2 = -1734 by norm_num] at h
 
 theorem no_points_m1731 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1731) := by
   have h := no_points (D := 1) (c := -11) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 20 ^ 2 = -1731 by norm_num] at h
 
 theorem no_points_m1730 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1730) := by
   have h := no_points (D := 2) (c := -12) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (2) * 1 ^ 2 = -1730 by norm_num] at h
 
 theorem no_points_m1726 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1726) := by
   have h := no_points (D := -2) (c := -12) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 1 ^ 2 = -1726 by norm_num] at h
 
 theorem no_points_m1725 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1725) := by
   have h := no_points (D := 1) (c := -5) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 40 ^ 2 = -1725 by norm_num] at h
 
 theorem no_points_m1699 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1699) := by
   have h := no_points (D := 1) (c := 33) (b := 194) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (33 : ℤ) ^ 3 - (1) * 194 ^ 2 = -1699 by norm_num] at h
 
 theorem no_points_m1689 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1689) := by
   have h := no_points (D := 1) (c := -2) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 41 ^ 2 = -1689 by norm_num] at h
 
 theorem no_points_m1676 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1676) := by
   have h := no_points (D := 1) (c := -10) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 26 ^ 2 = -1676 by norm_num] at h
 
 theorem no_points_m1674 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1674) := by
   have h := no_points (D := 2) (c := -6) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 27 ^ 2 = -1674 by norm_num] at h
 
 theorem no_points_m1673 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1673) := by
   have h := no_points (D := 1) (c := 2) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 41 ^ 2 = -1673 by norm_num] at h
 
 theorem no_points_m1670 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1670) := by
   have h := no_points (D := -2) (c := -58) (b := 311) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 311) (u := 245) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-58 : ℤ) ^ 3 - (-2) * 311 ^ 2 = -1670 by norm_num] at h
 
 theorem no_points_m1667 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1667) := by
   have h := no_points (D := 1) (c := 53) (b := 388) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (53 : ℤ) ^ 3 - (1) * 388 ^ 2 = -1667 by norm_num] at h
 
 theorem no_points_m1634 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1634) := by
   have h := no_points (D := 2) (c := 12) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 41 ^ 2 = -1634 by norm_num] at h
 
 theorem no_points_m1633 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1633) := by
   have h := no_points (D := 1) (c := 27) (b := 146) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 146 ^ 2 = -1633 by norm_num] at h
 
 theorem no_points_m1630 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1630) := by
   have h := no_points (D := -2) (c := -12) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 7 ^ 2 = -1630 by norm_num] at h
 
 theorem no_points_m1627 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1627) := by
   have h := no_points (D := 1) (c := -3) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 40 ^ 2 = -1627 by norm_num] at h
 
 theorem no_points_m1625 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1625) := by
   have h := no_points (D := 1) (c := -10) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 25 ^ 2 = -1625 by norm_num] at h
 
 theorem no_points_m1601 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1601) := by
   have h := no_points (D := 1) (c := -1) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 40 ^ 2 = -1601 by norm_num] at h
 
 theorem no_points_m1587 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1587) := by
   have h := no_points (D := 1) (c := -11) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 16 ^ 2 = -1587 by norm_num] at h
 
 theorem no_points_m1585 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1585) := by
   have h := no_points (D := 1) (c := -6) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 37 ^ 2 = -1585 by norm_num] at h
 
 theorem no_points_m1578 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1578) := by
   have h := no_points (D := 2) (c := 74) (b := 451) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 451) (u := 421) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (74 : ℤ) ^ 3 - (2) * 451 ^ 2 = -1578 by norm_num] at h
 
 theorem no_points_m1573 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1573) := by
   have h := no_points (D := 1) (c := 3) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 40 ^ 2 = -1573 by norm_num] at h
 
 theorem no_points_m1561 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1561) := by
   have h := no_points (D := 1) (c := 30) (b := 169) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 169) (u := 70) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 169 ^ 2 = -1561 by norm_num] at h
 
 theorem no_points_m1555 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1555) := by
   have h := no_points (D := 1) (c := 21) (b := 104) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 104 ^ 2 = -1555 by norm_num] at h
 
 theorem no_points_m1522 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1522) := by
   have h := no_points (D := 2) (c := -4) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 27 ^ 2 = -1522 by norm_num] at h
 
 theorem no_points_m1499 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1499) := by
   have h := no_points (D := 1) (c := -7) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 34 ^ 2 = -1499 by norm_num] at h
 
 theorem no_points_m1481 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1481) := by
   have h := no_points (D := 1) (c := 14) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 65 ^ 2 = -1481 by norm_num] at h
 
 theorem no_points_m1475 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1475) := by
   have h := no_points (D := 1) (c := 5) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 40 ^ 2 = -1475 by norm_num] at h
 
 theorem no_points_m1466 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1466) := by
   have h := no_points (D := 2) (c := 1186) (b := 28881) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 28881) (u := 4252) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1186 : ℤ) ^ 3 - (2) * 28881 ^ 2 = -1466 by norm_num] at h
 
 theorem no_points_m1465 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1465) := by
   have h := no_points (D := 1) (c := 6) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 41 ^ 2 = -1465 by norm_num] at h
 
 theorem no_points_m1459 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1459) := by
   have h := no_points (D := 1) (c := 81) (b := 730) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 365) (u := 192) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (81 : ℤ) ^ 3 - (1) * 730 ^ 2 = -1459 by norm_num] at h
 
 theorem no_points_m1450 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1450) := by
   have h := no_points (D := 2) (c := 2) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 27 ^ 2 = -1450 by norm_num] at h
 
 theorem no_points_m1414 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1414) := by
   have h := no_points (D := -2) (c := -18) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 47 ^ 2 = -1414 by norm_num] at h
 
 theorem no_points_m1405 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1405) := by
   have h := no_points (D := 1) (c := -9) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 26 ^ 2 = -1405 by norm_num] at h
 
 theorem no_points_m1395 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1395) := by
   have h := no_points (D := 1) (c := -11) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 8 ^ 2 = -1395 by norm_num] at h
 
 theorem no_points_m1394 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1394) := by
   have h := no_points (D := 2) (c := 4) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 27 ^ 2 = -1394 by norm_num] at h
 
 theorem no_points_m1393 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1393) := by
   have h := no_points (D := 1) (c := 18) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 85 ^ 2 = -1393 by norm_num] at h
 
 theorem no_points_m1377 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1377) := by
   have h := no_points (D := 1) (c := -2) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 37 ^ 2 = -1377 by norm_num] at h
 
 theorem no_points_m1373 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1373) := by
   have h := no_points (D := 1) (c := 11) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 52 ^ 2 = -1373 by norm_num] at h
 
 theorem no_points_m1361 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1361) := by
   have h := no_points (D := 1) (c := 2) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 37 ^ 2 = -1361 by norm_num] at h
 
 theorem no_points_m1353 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1353) := by
   have h := no_points (D := 1) (c := 262) (b := 4241) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 4241) (u := 3197) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (262 : ℤ) ^ 3 - (1) * 4241 ^ 2 = -1353 by norm_num] at h
 
 theorem no_points_m1347 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1347) := by
   have h := no_points (D := 1) (c := -11) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-11 : ℤ) ^ 3 - (1) * 4 ^ 2 = -1347 by norm_num] at h
 
 theorem no_points_m1289 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1289) := by
   have h := no_points (D := 1) (c := -10) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 17 ^ 2 = -1289 by norm_num] at h
 
 theorem no_points_m1281 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1281) := by
   have h := no_points (D := 1) (c := -5) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 34 ^ 2 = -1281 by norm_num] at h
 
 theorem no_points_m1275 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1275) := by
   have h := no_points (D := 1) (c := 25) (b := 130) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (25 : ℤ) ^ 3 - (1) * 130 ^ 2 = -1275 by norm_num] at h
 
 theorem no_points_m1260 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1260) := by
   have h := no_points (D := 1) (c := 46) (b := 314) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 157) (u := 129) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (46 : ℤ) ^ 3 - (1) * 314 ^ 2 = -1260 by norm_num] at h
 
 theorem no_points_m1257 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1257) := by
   have h := no_points (D := 1) (c := 7) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 40 ^ 2 = -1257 by norm_num] at h
 
 theorem no_points_m1249 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1249) := by
   have h := no_points (D := 1) (c := 15) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 68 ^ 2 = -1249 by norm_num] at h
 
 theorem no_points_m1242 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1242) := by
   have h := no_points (D := 2) (c := 26) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 97 ^ 2 = -1242 by norm_num] at h
 
 theorem no_points_m1233 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1233) := by
   have h := no_points (D := 1) (c := 22) (b := 109) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 109) (u := 33) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 109 ^ 2 = -1233 by norm_num] at h
 
 theorem no_points_m1211 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1211) := by
   have h := no_points (D := 1) (c := 29) (b := 160) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (29 : ℤ) ^ 3 - (1) * 160 ^ 2 = -1211 by norm_num] at h
 
 theorem no_points_m1193 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1193) := by
   have h := no_points (D := 1) (c := 26) (b := 137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 137) (u := 37) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 137 ^ 2 = -1193 by norm_num] at h
 
 theorem no_points_m1178 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1178) := by
   have h := no_points (D := 2) (c := 10) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 33 ^ 2 = -1178 by norm_num] at h
 
 theorem no_points_m1169 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1169) := by
   have h := no_points (D := 1) (c := -10) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 13 ^ 2 = -1169 by norm_num] at h
 
 theorem no_points_m1164 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1164) := by
   have h := no_points (D := 1) (c := -2) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 34 ^ 2 = -1164 by norm_num] at h
 
 theorem no_points_m1157 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1157) := by
   have h := no_points (D := 1) (c := -1) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 34 ^ 2 = -1157 by norm_num] at h
 
 theorem no_points_m1155 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1155) := by
   have h := no_points (D := 1) (c := 1) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 34 ^ 2 = -1155 by norm_num] at h
 
 theorem no_points_m1153 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1153) := by
   have h := no_points (D := 1) (c := 6) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 37 ^ 2 = -1153 by norm_num] at h
 
 theorem no_points_m1150 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1150) := by
   have h := no_points (D := -2) (c := -12) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 17 ^ 2 = -1150 by norm_num] at h
 
 theorem no_points_m1149 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1149) := by
   have h := no_points (D := 1) (c := -5) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 32 ^ 2 = -1149 by norm_num] at h
 
 theorem no_points_m1130 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1130) := by
   have h := no_points (D := 2) (c := 18) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 59 ^ 2 = -1130 by norm_num] at h
 
 theorem no_points_m1129 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1129) := by
   have h := no_points (D := 1) (c := 3) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 34 ^ 2 = -1129 by norm_num] at h
 
 theorem no_points_m1126 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1126) := by
   have h := no_points (D := -2) (c := -42) (b := 191) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 191) (u := 134) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-42 : ℤ) ^ 3 - (-2) * 191 ^ 2 = -1126 by norm_num] at h
 
 theorem no_points_m1100 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1100) := by
   have h := no_points (D := 1) (c := -10) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 10 ^ 2 = -1100 by norm_num] at h
 
 theorem no_points_m1066 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1066) := by
   have h := no_points (D := 2) (c := 418) (b := 6043) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 6043) (u := 830) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (418 : ℤ) ^ 3 - (2) * 6043 ^ 2 = -1066 by norm_num] at h
 
 theorem no_points_m1057 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1057) := by
   have h := no_points (D := 1) (c := -6) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 29 ^ 2 = -1057 by norm_num] at h
 
 theorem no_points_m1054 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1054) := by
   have h := no_points (D := -2) (c := -36) (b := 151) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 151) (u := 105) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-36 : ℤ) ^ 3 - (-2) * 151 ^ 2 = -1054 by norm_num] at h
 
 theorem no_points_m1051 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1051) := by
   have h := no_points (D := 1) (c := -3) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 32 ^ 2 = -1051 by norm_num] at h
 
 theorem no_points_m1030 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1030) := by
   have h := no_points (D := -2) (c := -18) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 49 ^ 2 = -1030 by norm_num] at h
 
 theorem no_points_m1025 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1025) := by
   have h := no_points (D := 1) (c := -10) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 5 ^ 2 = -1025 by norm_num] at h
 
 theorem no_points_m1019 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1019) := by
   have h := no_points (D := 1) (c := -7) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 26 ^ 2 = -1019 by norm_num] at h
 
 theorem no_points_m1004 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1004) := by
   have h := no_points (D := 1) (c := -10) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 2 ^ 2 = -1004 by norm_num] at h
 
 theorem no_points_m1002 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1002) := by
   have h := no_points (D := 2) (c := 50) (b := 251) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 251) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (50 : ℤ) ^ 3 - (2) * 251 ^ 2 = -1002 by norm_num] at h
 
 theorem no_points_m1001 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-1001) := by
   have h := no_points (D := 1) (c := -10) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (1) * 1 ^ 2 = -1001 by norm_num] at h
 
 theorem no_points_m998 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-998) := by
   have h := no_points (D := -2) (c := -10) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 1 ^ 2 = -998 by norm_num] at h
 
 theorem no_points_m997 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-997) := by
   have h := no_points (D := 1) (c := 3) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 32 ^ 2 = -997 by norm_num] at h
 
 theorem no_points_m985 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-985) := by
   have h := no_points (D := 1) (c := -9) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 16 ^ 2 = -985 by norm_num] at h
 
 theorem no_points_m978 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-978) := by
   have h := no_points (D := 2) (c := 20) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 67 ^ 2 = -978 by norm_num] at h
 
 theorem no_points_m977 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-977) := by
   have h := no_points (D := 1) (c := 14) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 61 ^ 2 = -977 by norm_num] at h
 
 theorem no_points_m946 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-946) := by
   have h := no_points (D := 2) (c := 28) (b := 107) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 107) (u := 76) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 107 ^ 2 = -946 by norm_num] at h
 
 theorem no_points_m940 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-940) := by
   have h := no_points (D := 1) (c := 6) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 34 ^ 2 = -940 by norm_num] at h
 
 theorem no_points_m938 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-938) := by
   have h := no_points (D := 2) (c := -6) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 19 ^ 2 = -938 by norm_num] at h
 
 theorem no_points_m902 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-902) := by
   have h := no_points (D := -2) (c := -10) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 7 ^ 2 = -902 by norm_num] at h
 
 theorem no_points_m899 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-899) := by
   have h := no_points (D := 1) (c := 5) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 32 ^ 2 = -899 by norm_num] at h
 
 theorem no_points_m849 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-849) := by
   have h := no_points (D := 1) (c := -2) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 29 ^ 2 = -849 by norm_num] at h
 
 theorem no_points_m841 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-841) := by
   have h := no_points (D := 1) (c := -6) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 25 ^ 2 = -841 by norm_num] at h
 
 theorem no_points_m833 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-833) := by
   have h := no_points (D := 1) (c := 2) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 29 ^ 2 = -833 by norm_num] at h
 
 theorem no_points_m829 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-829) := by
   have h := no_points (D := 1) (c := -9) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 10 ^ 2 = -829 by norm_num] at h
 
 theorem no_points_m826 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-826) := by
   have h := no_points (D := 2) (c := 58) (b := 313) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 313) (u := 183) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (58 : ℤ) ^ 3 - (2) * 313 ^ 2 = -826 by norm_num] at h
 
 theorem no_points_m813 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-813) := by
   have h := no_points (D := 1) (c := 7) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 34 ^ 2 = -813 by norm_num] at h
 
 theorem no_points_m801 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-801) := by
   have h := no_points (D := 1) (c := -5) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 26 ^ 2 = -801 by norm_num] at h
 
 theorem no_points_m794 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-794) := by
   have h := no_points (D := 2) (c := -6) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 17 ^ 2 = -794 by norm_num] at h
 
 theorem no_points_m793 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-793) := by
   have h := no_points (D := 1) (c := -9) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 8 ^ 2 = -793 by norm_num] at h
 
 theorem no_points_m786 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-786) := by
   have h := no_points (D := 2) (c := -4) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 19 ^ 2 = -786 by norm_num] at h
 
 theorem no_points_m745 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-745) := by
   have h := no_points (D := 1) (c := -9) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 4 ^ 2 = -745 by norm_num] at h
 
 theorem no_points_m739 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-739) := by
   have h := no_points (D := 1) (c := 21) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 100 ^ 2 = -739 by norm_num] at h
 
 theorem no_points_m734 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-734) := by
   have h := no_points (D := -2) (c := -28) (b := 103) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 103) (u := 38) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-28 : ℤ) ^ 3 - (-2) * 103 ^ 2 = -734 by norm_num] at h
 
 theorem no_points_m733 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-733) := by
   have h := no_points (D := 1) (c := -9) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-9 : ℤ) ^ 3 - (1) * 2 ^ 2 = -733 by norm_num] at h
 
 theorem no_points_m721 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-721) := by
   have h := no_points (D := 1) (c := 15) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 64 ^ 2 = -721 by norm_num] at h
 
 theorem no_points_m716 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-716) := by
   have h := no_points (D := 1) (c := 110) (b := 1154) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 577) (u := 24) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (110 : ℤ) ^ 3 - (1) * 1154 ^ 2 = -716 by norm_num] at h
 
 theorem no_points_m714 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-714) := by
   have h := no_points (D := 2) (c := 2) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 19 ^ 2 = -714 by norm_num] at h
 
 theorem no_points_m684 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-684) := by
   have h := no_points (D := 1) (c := -2) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 26 ^ 2 = -684 by norm_num] at h
 
 theorem no_points_m681 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-681) := by
   have h := no_points (D := 1) (c := 7) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 32 ^ 2 = -681 by norm_num] at h
 
 theorem no_points_m677 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-677) := by
   have h := no_points (D := 1) (c := -1) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 26 ^ 2 = -677 by norm_num] at h
 
 theorem no_points_m675 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-675) := by
   have h := no_points (D := 1) (c := 1) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 26 ^ 2 = -675 by norm_num] at h
 
 theorem no_points_m670 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-670) := by
   have h := no_points (D := -2) (c := -12) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 23 ^ 2 = -670 by norm_num] at h
 
 theorem no_points_m666 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-666) := by
   have h := no_points (D := 2) (c := 18) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 57 ^ 2 = -666 by norm_num] at h
 
 theorem no_points_m658 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-658) := by
   have h := no_points (D := 2) (c := 4) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 19 ^ 2 = -658 by norm_num] at h
 
 theorem no_points_m649 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-649) := by
   have h := no_points (D := 1) (c := 3) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 26 ^ 2 = -649 by norm_num] at h
 
 theorem no_points_m642 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-642) := by
   have h := no_points (D := 2) (c := -4) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 17 ^ 2 = -642 by norm_num] at h
 
 theorem no_points_m633 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-633) := by
   have h := no_points (D := 1) (c := -2) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 25 ^ 2 = -633 by norm_num] at h
 
 theorem no_points_m625 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-625) := by
   have h := no_points (D := 1) (c := 6) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 29 ^ 2 = -625 by norm_num] at h
 
 theorem no_points_m620 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-620) := by
   have h := no_points (D := 1) (c := 14) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 58 ^ 2 = -620 by norm_num] at h
 
 theorem no_points_m617 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-617) := by
   have h := no_points (D := 1) (c := 2) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 25 ^ 2 = -617 by norm_num] at h
 
 theorem no_points_m588 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-588) := by
   have h := no_points (D := 1) (c := 22) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 106 ^ 2 = -588 by norm_num] at h
 
 theorem no_points_m570 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-570) := by
   have h := no_points (D := 2) (c := 2) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 17 ^ 2 = -570 by norm_num] at h
 
 theorem no_points_m563 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-563) := by
   have h := no_points (D := 1) (c := 17) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 74 ^ 2 = -563 by norm_num] at h
 
 theorem no_points_m525 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-525) := by
   have h := no_points (D := 1) (c := -5) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 20 ^ 2 = -525 by norm_num] at h
 
 theorem no_points_m514 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-514) := by
   have h := no_points (D := 2) (c := 4) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 17 ^ 2 = -514 by norm_num] at h
 
 theorem no_points_m510 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-510) := by
   have h := no_points (D := -2) (c := -548) (b := 9071) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9071) (u := 7668) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-548 : ℤ) ^ 3 - (-2) * 9071 ^ 2 = -510 by norm_num] at h
 
 theorem no_points_m507 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-507) := by
   have h := no_points (D := 1) (c := 13) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 52 ^ 2 = -507 by norm_num] at h
 
 theorem no_points_m505 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-505) := by
   have h := no_points (D := 1) (c := -6) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 17 ^ 2 = -505 by norm_num] at h
 
 theorem no_points_m492 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-492) := by
   have h := no_points (D := 1) (c := 118) (b := 1282) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 641) (u := 154) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (118 : ℤ) ^ 3 - (1) * 1282 ^ 2 = -492 by norm_num] at h
 
 theorem no_points_m460 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-460) := by
   have h := no_points (D := 1) (c := 6) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 26 ^ 2 = -460 by norm_num] at h
 
 theorem no_points_m458 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-458) := by
   have h := no_points (D := 2) (c := -6) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 11 ^ 2 = -458 by norm_num] at h
 
 theorem no_points_m450 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-450) := by
   have h := no_points (D := 2) (c := 12) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 33 ^ 2 = -450 by norm_num] at h
 
 theorem no_points_m443 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-443) := by
   have h := no_points (D := 1) (c := -7) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 10 ^ 2 = -443 by norm_num] at h
 
 theorem no_points_m427 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-427) := by
   have h := no_points (D := 1) (c := -3) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 20 ^ 2 = -427 by norm_num] at h
 
 theorem no_points_m422 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-422) := by
   have h := no_points (D := -2) (c := -10) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 17 ^ 2 = -422 by norm_num] at h
 
 theorem no_points_m410 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-410) := by
   have h := no_points (D := 2) (c := 42) (b := 193) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 193) (u := 159) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (2) * 193 ^ 2 = -410 by norm_num] at h
 
 theorem no_points_m409 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-409) := by
   have h := no_points (D := 1) (c := 6) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 25 ^ 2 = -409 by norm_num] at h
 
 theorem no_points_m401 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-401) := by
   have h := no_points (D := 1) (c := -1) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 20 ^ 2 = -401 by norm_num] at h
 
 theorem no_points_m396 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-396) := by
   have h := no_points (D := 1) (c := 70) (b := 586) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 293) (u := 155) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (70 : ℤ) ^ 3 - (1) * 586 ^ 2 = -396 by norm_num] at h
 
 theorem no_points_m389 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-389) := by
   have h := no_points (D := 1) (c := 35) (b := 208) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (35 : ℤ) ^ 3 - (1) * 208 ^ 2 = -389 by norm_num] at h
 
 theorem no_points_m385 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-385) := by
   have h := no_points (D := 1) (c := -6) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 13 ^ 2 = -385 by norm_num] at h
 
 theorem no_points_m381 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-381) := by
   have h := no_points (D := 1) (c := -5) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 16 ^ 2 = -381 by norm_num] at h
 
 theorem no_points_m378 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-378) := by
   have h := no_points (D := 2) (c := -6) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 9 ^ 2 = -378 by norm_num] at h
 
 theorem no_points_m373 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-373) := by
   have h := no_points (D := 1) (c := 3) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 20 ^ 2 = -373 by norm_num] at h
 
 theorem no_points_m369 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-369) := by
   have h := no_points (D := 1) (c := 10) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 37 ^ 2 = -369 by norm_num] at h
 
 theorem no_points_m347 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-347) := by
   have h := no_points (D := 1) (c := -7) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-7 : ℤ) ^ 3 - (1) * 2 ^ 2 = -347 by norm_num] at h
 
 theorem no_points_m333 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-333) := by
   have h := no_points (D := 1) (c := 7) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 26 ^ 2 = -333 by norm_num] at h
 
 theorem no_points_m306 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-306) := by
   have h := no_points (D := 2) (c := -4) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 11 ^ 2 = -306 by norm_num] at h
 
 theorem no_points_m297 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-297) := by
   have h := no_points (D := 1) (c := -2) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 17 ^ 2 = -297 by norm_num] at h
 
 theorem no_points_m283 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-283) := by
   have h := no_points (D := 1) (c := -3) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 16 ^ 2 = -283 by norm_num] at h
 
 theorem no_points_m281 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-281) := by
   have h := no_points (D := 1) (c := 2) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 17 ^ 2 = -281 by norm_num] at h
 
 theorem no_points_m275 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-275) := by
   have h := no_points (D := 1) (c := 5) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 20 ^ 2 = -275 by norm_num] at h
 
 theorem no_points_m269 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-269) := by
   have h := no_points (D := 1) (c := 11) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 40 ^ 2 = -269 by norm_num] at h
 
 theorem no_points_m257 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-257) := by
   have h := no_points (D := 1) (c := -1) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 16 ^ 2 = -257 by norm_num] at h
 
 theorem no_points_m241 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-241) := by
   have h := no_points (D := 1) (c := -6) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 5 ^ 2 = -241 by norm_num] at h
 
 theorem no_points_m234 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-234) := by
   have h := no_points (D := 2) (c := -6) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 3 ^ 2 = -234 by norm_num] at h
 
 theorem no_points_m229 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-229) := by
   have h := no_points (D := 1) (c := 3) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 16 ^ 2 = -229 by norm_num] at h
 
 theorem no_points_m226 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-226) := by
   have h := no_points (D := 2) (c := -4) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 9 ^ 2 = -226 by norm_num] at h
 
 theorem no_points_m225 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-225) := by
   have h := no_points (D := 1) (c := -5) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 10 ^ 2 = -225 by norm_num] at h
 
 theorem no_points_m218 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-218) := by
   have h := no_points (D := 2) (c := -6) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (2) * 1 ^ 2 = -218 by norm_num] at h
 
 theorem no_points_m217 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-217) := by
   have h := no_points (D := 1) (c := -6) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-6 : ℤ) ^ 3 - (1) * 1 ^ 2 = -217 by norm_num] at h
 
 theorem no_points_m189 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-189) := by
   have h := no_points (D := 1) (c := -5) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 8 ^ 2 = -189 by norm_num] at h
 
 theorem no_points_m178 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-178) := by
   have h := no_points (D := 2) (c := 4) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 11 ^ 2 = -178 by norm_num] at h
 
 theorem no_points_m177 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-177) := by
   have h := no_points (D := 1) (c := -2) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 13 ^ 2 = -177 by norm_num] at h
 
 theorem no_points_m171 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-171) := by
   have h := no_points (D := 1) (c := 937) (b := 28682) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 14341) (u := 7807) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (937 : ℤ) ^ 3 - (1) * 28682 ^ 2 = -171 by norm_num] at h
 
 theorem no_points_m169 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-169) := by
   have h := no_points (D := 1) (c := 78) (b := 689) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 689) (u := 447) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (78 : ℤ) ^ 3 - (1) * 689 ^ 2 = -169 by norm_num] at h
 
 theorem no_points_m162 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-162) := by
   have h := no_points (D := 2) (c := 36) (b := 153) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 153) (u := 58) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (36 : ℤ) ^ 3 - (2) * 153 ^ 2 = -162 by norm_num] at h
 
 theorem no_points_m161 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-161) := by
   have h := no_points (D := 1) (c := 2) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 13 ^ 2 = -161 by norm_num] at h
 
 theorem no_points_m154 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-154) := by
   have h := no_points (D := 2) (c := 2) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 9 ^ 2 = -154 by norm_num] at h
 
 theorem no_points_m145 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-145) := by
   have h := no_points (D := 1) (c := 54) (b := 397) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 397) (u := 63) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (54 : ℤ) ^ 3 - (1) * 397 ^ 2 = -145 by norm_num] at h
 
 theorem no_points_m141 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-141) := by
   have h := no_points (D := 1) (c := -5) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 4 ^ 2 = -141 by norm_num] at h
 
 theorem no_points_m131 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-131) := by
   have h := no_points (D := 1) (c := 5) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 16 ^ 2 = -131 by norm_num] at h
 
 theorem no_points_m129 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-129) := by
   have h := no_points (D := 1) (c := -5) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-5 : ℤ) ^ 3 - (1) * 2 ^ 2 = -129 by norm_num] at h
 
 theorem no_points_m113 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-113) := by
   have h := no_points (D := 1) (c := 422) (b := 8669) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 8669) (u := 4793) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (422 : ℤ) ^ 3 - (1) * 8669 ^ 2 = -113 by norm_num] at h
 
 theorem no_points_m108 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-108) := by
   have h := no_points (D := 1) (c := -2) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 10 ^ 2 = -108 by norm_num] at h
 
 theorem no_points_m101 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-101) := by
   have h := no_points (D := 1) (c := -1) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 10 ^ 2 = -101 by norm_num] at h
 
 theorem no_points_m99 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-99) := by
   have h := no_points (D := 1) (c := 1) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 10 ^ 2 = -99 by norm_num] at h
 
 theorem no_points_m98 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-98) := by
   have h := no_points (D := 2) (c := 4) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 9 ^ 2 = -98 by norm_num] at h
 
 theorem no_points_m91 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-91) := by
   have h := no_points (D := 1) (c := -3) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 8 ^ 2 = -91 by norm_num] at h
 
 theorem no_points_m82 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-82) := by
   have h := no_points (D := 2) (c := -4) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 3 ^ 2 = -82 by norm_num] at h
 
 theorem no_points_m73 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-73) := by
   have h := no_points (D := 1) (c := 3) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 10 ^ 2 = -73 by norm_num] at h
 
 theorem no_points_m66 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-66) := by
   have h := no_points (D := 2) (c := -4) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (2) * 1 ^ 2 = -66 by norm_num] at h
 
 theorem no_points_m65 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-65) := by
   have h := no_points (D := 1) (c := -1) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 8 ^ 2 = -65 by norm_num] at h
 
 theorem no_points_m62 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-62) := by
   have h := no_points (D := -2) (c := -4) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 1 ^ 2 = -62 by norm_num] at h
 
 theorem no_points_m57 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-57) := by
   have h := no_points (D := 1) (c := 7) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 20 ^ 2 = -57 by norm_num] at h
 
 theorem no_points_m43 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-43) := by
   have h := no_points (D := 1) (c := -3) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-3 : ℤ) ^ 3 - (1) * 4 ^ 2 = -43 by norm_num] at h
 
 theorem no_points_m37 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-37) := by
   have h := no_points (D := 1) (c := 3) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 8 ^ 2 = -37 by norm_num] at h
 
 theorem no_points_m33 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-33) := by
   have h := no_points (D := 1) (c := -2) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 5 ^ 2 = -33 by norm_num] at h
 
 theorem no_points_m17 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-17) := by
   have h := no_points (D := 1) (c := -1) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 4 ^ 2 = -17 by norm_num] at h
 
 theorem no_points_m12 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-12) := by
   have h := no_points (D := 1) (c := -2) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 2 ^ 2 = -12 by norm_num] at h
 
 theorem no_points_m10 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-10) := by
   have h := no_points (D := 2) (c := 2) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 3 ^ 2 = -10 by norm_num] at h
 
 theorem no_points_m9 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-9) := by
   have h := no_points (D := 1) (c := -2) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (1) * 1 ^ 2 = -9 by norm_num] at h
 
 theorem no_points_m6 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-6) := by
   have h := no_points (D := -2) (c := -2) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 1 ^ 2 = -6 by norm_num] at h
 
 theorem no_points_m5 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5) := by
   have h := no_points (D := 1) (c := -1) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1 : ℤ) ^ 3 - (1) * 2 ^ 2 = -5 by norm_num] at h
 
 theorem no_points_m3 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-3) := by
   have h := no_points (D := 1) (c := 1) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1 : ℤ) ^ 3 - (1) * 2 ^ 2 = -3 by norm_num] at h
 
 theorem no_points_6 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6) := by
   have h := no_points (D := 2) (c := 2) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (2) * 1 ^ 2 = 6 by norm_num] at h
 
 theorem no_points_7 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7) := by
   have h := no_points (D := 1) (c := 2) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (2 : ℤ) ^ 3 - (1) * 1 ^ 2 = 7 by norm_num] at h
 
 theorem no_points_11 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (11) := by
   have h := no_points (D := 1) (c := 3) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 4 ^ 2 = 11 by norm_num] at h
 
 theorem no_points_23 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (23) := by
   have h := no_points (D := 1) (c := 3) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (3 : ℤ) ^ 3 - (1) * 2 ^ 2 = 23 by norm_num] at h
 
 theorem no_points_34 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (34) := by
   have h := no_points (D := -2) (c := -4) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 7 ^ 2 = 34 by norm_num] at h
 
 theorem no_points_46 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (46) := by
   have h := no_points (D := 2) (c := 4) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 3 ^ 2 = 46 by norm_num] at h
 
 theorem no_points_47 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (47) := by
   have h := no_points (D := 1) (c := 6) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 13 ^ 2 = 47 by norm_num] at h
 
 theorem no_points_53 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (53) := by
   have h := no_points (D := 1) (c := 9) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (9 : ℤ) ^ 3 - (1) * 26 ^ 2 = 53 by norm_num] at h
 
 theorem no_points_58 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (58) := by
   have h := no_points (D := -2) (c := -10) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 23 ^ 2 = 58 by norm_num] at h
 
 theorem no_points_61 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (61) := by
   have h := no_points (D := 1) (c := 5) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 8 ^ 2 = 61 by norm_num] at h
 
 theorem no_points_62 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (62) := by
   have h := no_points (D := 2) (c := 4) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (2) * 1 ^ 2 = 62 by norm_num] at h
 
 theorem no_points_66 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (66) := by
   have h := no_points (D := -2) (c := 4) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 1 ^ 2 = 66 by norm_num] at h
 
 theorem no_points_87 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (87) := by
   have h := no_points (D := 1) (c := 7) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 16 ^ 2 = 87 by norm_num] at h
 
 theorem no_points_90 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (90) := by
   have h := no_points (D := -2) (c := -2) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 7 ^ 2 = 90 by norm_num] at h
 
 theorem no_points_109 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (109) := by
   have h := no_points (D := 1) (c := 5) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (5 : ℤ) ^ 3 - (1) * 4 ^ 2 = 109 by norm_num] at h
 
 theorem no_points_116 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (116) := by
   have h := no_points (D := 1) (c := 6) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 10 ^ 2 = 116 by norm_num] at h
 
 theorem no_points_135 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (135) := by
   have h := no_points (D := 1) (c := 19) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 82 ^ 2 = 135 by norm_num] at h
 
 theorem no_points_159 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (159) := by
   have h := no_points (D := 1) (c := 10) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 29 ^ 2 = 159 by norm_num] at h
 
 theorem no_points_162 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (162) := by
   have h := no_points (D := -2) (c := 4) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 7 ^ 2 = 162 by norm_num] at h
 
 theorem no_points_175 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (175) := by
   have h := no_points (D := 1) (c := 11) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 34 ^ 2 = 175 by norm_num] at h
 
 theorem no_points_191 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (191) := by
   have h := no_points (D := 1) (c := 6) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 5 ^ 2 = 191 by norm_num] at h
 
 theorem no_points_194 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (194) := by
   have h := no_points (D := -2) (c := -12) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 194 by norm_num] at h
 
 theorem no_points_212 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (212) := by
   have h := no_points (D := 1) (c := 6) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 2 ^ 2 = 212 by norm_num] at h
 
 theorem no_points_214 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (214) := by
   have h := no_points (D := 2) (c := 66) (b := 379) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 379) (u := 120) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (66 : ℤ) ^ 3 - (2) * 379 ^ 2 = 214 by norm_num] at h
 
 theorem no_points_215 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (215) := by
   have h := no_points (D := 1) (c := 6) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (1) * 1 ^ 2 = 215 by norm_num] at h
 
 theorem no_points_218 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (218) := by
   have h := no_points (D := -2) (c := 6) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 1 ^ 2 = 218 by norm_num] at h
 
 theorem no_points_243 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (243) := by
   have h := no_points (D := 1) (c := 7) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 10 ^ 2 = 243 by norm_num] at h
 
 theorem no_points_244 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (244) := by
   have h := no_points (D := 1) (c := 14) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 50 ^ 2 = 244 by norm_num] at h
 
 theorem no_points_270 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (270) := by
   have h := no_points (D := 2) (c := 12) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 27 ^ 2 = 270 by norm_num] at h
 
 theorem no_points_278 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (278) := by
   have h := no_points (D := 2) (c := 10) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 19 ^ 2 = 278 by norm_num] at h
 
 theorem no_points_279 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (279) := by
   have h := no_points (D := 1) (c := 7) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 8 ^ 2 = 279 by norm_num] at h
 
 theorem no_points_299 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (299) := by
   have h := no_points (D := 1) (c := 399) (b := 7970) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 3985) (u := 1012) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (399 : ℤ) ^ 3 - (1) * 7970 ^ 2 = 299 by norm_num] at h
 
 theorem no_points_307 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (307) := by
   have h := no_points (D := 1) (c := 11) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 32 ^ 2 = 307 by norm_num] at h
 
 theorem no_points_314 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (314) := by
   have h := no_points (D := -2) (c := 6) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 7 ^ 2 = 314 by norm_num] at h
 
 theorem no_points_327 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (327) := by
   have h := no_points (D := 1) (c := 7) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 4 ^ 2 = 327 by norm_num] at h
 
 theorem no_points_339 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (339) := by
   have h := no_points (D := 1) (c := 7) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (7 : ℤ) ^ 3 - (1) * 2 ^ 2 = 339 by norm_num] at h
 
 theorem no_points_375 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (375) := by
   have h := no_points (D := 1) (c := 10) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 25 ^ 2 = 375 by norm_num] at h
 
 theorem no_points_391 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (391) := by
   have h := no_points (D := 1) (c := 50) (b := 353) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 353) (u := 311) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (50 : ℤ) ^ 3 - (1) * 353 ^ 2 = 391 by norm_num] at h
 
 theorem no_points_410 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (410) := by
   have h := no_points (D := -2) (c := -42) (b := 193) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 193) (u := 141) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-42 : ℤ) ^ 3 - (-2) * 193 ^ 2 = 410 by norm_num] at h
 
 theorem no_points_422 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (422) := by
   have h := no_points (D := 2) (c := 10) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 17 ^ 2 = 422 by norm_num] at h
 
 theorem no_points_431 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (431) := by
   have h := no_points (D := 1) (c := 138) (b := 1621) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1621) (u := 1455) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (138 : ℤ) ^ 3 - (1) * 1621 ^ 2 = 431 by norm_num] at h
 
 theorem no_points_447 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (447) := by
   have h := no_points (D := 1) (c := 22) (b := 101) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 101 ^ 2 = 447 by norm_num] at h
 
 theorem no_points_455 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (455) := by
   have h := no_points (D := 1) (c := 114) (b := 1217) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1217) (u := 78) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (114 : ℤ) ^ 3 - (1) * 1217 ^ 2 = 455 by norm_num] at h
 
 theorem no_points_459 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (459) := by
   have h := no_points (D := 1) (c := 19) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 80 ^ 2 = 459 by norm_num] at h
 
 theorem no_points_482 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (482) := by
   have h := no_points (D := -2) (c := -60) (b := 329) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 329) (u := 101) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-60 : ℤ) ^ 3 - (-2) * 329 ^ 2 = 482 by norm_num] at h
 
 theorem no_points_494 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (494) := by
   have h := no_points (D := 2) (c := 908) (b := 19347) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19347) (u := 18217) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (908 : ℤ) ^ 3 - (2) * 19347 ^ 2 = 494 by norm_num] at h
 
 theorem no_points_495 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (495) := by
   have h := no_points (D := 1) (c := 34) (b := 197) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 197) (u := 14) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (1) * 197 ^ 2 = 495 by norm_num] at h
 
 theorem no_points_503 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (503) := by
   have h := no_points (D := 1) (c := 18) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 73 ^ 2 = 503 by norm_num] at h
 
 theorem no_points_514 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (514) := by
   have h := no_points (D := -2) (c := -4) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 17 ^ 2 = 514 by norm_num] at h
 
 theorem no_points_570 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (570) := by
   have h := no_points (D := -2) (c := -2) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 17 ^ 2 = 570 by norm_num] at h
 
 theorem no_points_583 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (583) := by
   have h := no_points (D := 1) (c := 38) (b := 233) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 233) (u := 89) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (38 : ℤ) ^ 3 - (1) * 233 ^ 2 = 583 by norm_num] at h
 
 theorem no_points_597 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (597) := by
   have h := no_points (D := 1) (c := 13) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 40 ^ 2 = 597 by norm_num] at h
 
 theorem no_points_629 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (629) := by
   have h := no_points (D := 1) (c := 9) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (9 : ℤ) ^ 3 - (1) * 10 ^ 2 = 629 by norm_num] at h
 
 theorem no_points_630 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (630) := by
   have h := no_points (D := 2) (c := 18) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 51 ^ 2 = 630 by norm_num] at h
 
 theorem no_points_642 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (642) := by
   have h := no_points (D := -2) (c := 4) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 17 ^ 2 = 642 by norm_num] at h
 
 theorem no_points_655 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (655) := by
   have h := no_points (D := 1) (c := 11) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 26 ^ 2 = 655 by norm_num] at h
 
 theorem no_points_662 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (662) := by
   have h := no_points (D := 2) (c := 34) (b := 139) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 139) (u := 89) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (2) * 139 ^ 2 = 662 by norm_num] at h
 
 theorem no_points_671 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (671) := by
   have h := no_points (D := 1) (c := 15) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 52 ^ 2 = 671 by norm_num] at h
 
 theorem no_points_711 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (711) := by
   have h := no_points (D := 1) (c := 10) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 17 ^ 2 = 711 by norm_num] at h
 
 theorem no_points_725 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (725) := by
   have h := no_points (D := 1) (c := 9) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (9 : ℤ) ^ 3 - (1) * 2 ^ 2 = 725 by norm_num] at h
 
 theorem no_points_734 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (734) := by
   have h := no_points (D := 2) (c := 148) (b := 1273) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1273) (u := 918) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (148 : ℤ) ^ 3 - (2) * 1273 ^ 2 = 734 by norm_num] at h
 
 theorem no_points_741 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (741) := by
   have h := no_points (D := 1) (c := 25) (b := 122) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (25 : ℤ) ^ 3 - (1) * 122 ^ 2 = 741 by norm_num] at h
 
 theorem no_points_755 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (755) := by
   have h := no_points (D := 1) (c := 891) (b := 26596) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 6649) (u := 6355) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (891 : ℤ) ^ 3 - (1) * 26596 ^ 2 = 755 by norm_num] at h
 
 theorem no_points_758 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (758) := by
   have h := no_points (D := 2) (c := 10) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 11 ^ 2 = 758 by norm_num] at h
 
 theorem no_points_767 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (767) := by
   have h := no_points (D := 1) (c := 1023) (b := 32720) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 2045) (u := 1902) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1023 : ℤ) ^ 3 - (1) * 32720 ^ 2 = 767 by norm_num] at h
 
 theorem no_points_794 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (794) := by
   have h := no_points (D := -2) (c := 6) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 17 ^ 2 = 794 by norm_num] at h
 
 theorem no_points_826 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (826) := by
   have h := no_points (D := -2) (c := -58) (b := 313) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 313) (u := 193) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-58 : ℤ) ^ 3 - (-2) * 313 ^ 2 = 826 by norm_num] at h
 
 theorem no_points_831 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (831) := by
   have h := no_points (D := 1) (c := 10) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 13 ^ 2 = 831 by norm_num] at h
 
 theorem no_points_838 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (838) := by
   have h := no_points (D := 2) (c := 10) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 9 ^ 2 = 838 by norm_num] at h
 
 theorem no_points_847 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (847) := by
   have h := no_points (D := 1) (c := 86) (b := 797) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 797) (u := 215) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (86 : ℤ) ^ 3 - (1) * 797 ^ 2 = 847 by norm_num] at h
 
 theorem no_points_875 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (875) := by
   have h := no_points (D := 1) (c := 15) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 50 ^ 2 = 875 by norm_num] at h
 
 theorem no_points_891 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (891) := by
   have h := no_points (D := 1) (c := 31) (b := 170) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (31 : ℤ) ^ 3 - (1) * 170 ^ 2 = 891 by norm_num] at h
 
 theorem no_points_922 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (922) := by
   have h := no_points (D := -2) (c := -10) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 922 by norm_num] at h
 
 theorem no_points_931 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (931) := by
   have h := no_points (D := 1) (c := 11) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 20 ^ 2 = 931 by norm_num] at h
 
 theorem no_points_975 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (975) := by
   have h := no_points (D := 1) (c := 10) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 5 ^ 2 = 975 by norm_num] at h
 
 theorem no_points_982 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (982) := by
   have h := no_points (D := 2) (c := 10) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 3 ^ 2 = 982 by norm_num] at h
 
 theorem no_points_994 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (994) := by
   have h := no_points (D := -2) (c := -4) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 23 ^ 2 = 994 by norm_num] at h
 
 theorem no_points_998 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (998) := by
   have h := no_points (D := 2) (c := 10) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (2) * 1 ^ 2 = 998 by norm_num] at h
 
 theorem no_points_999 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (999) := by
   have h := no_points (D := 1) (c := 10) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (10 : ℤ) ^ 3 - (1) * 1 ^ 2 = 999 by norm_num] at h
 
 theorem no_points_1006 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1006) := by
   have h := no_points (D := 2) (c := 12) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 19 ^ 2 = 1006 by norm_num] at h
 
 theorem no_points_1038 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1038) := by
   have h := no_points (D := 2) (c := 20) (b := 59) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 59) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 59 ^ 2 = 1038 by norm_num] at h
 
 theorem no_points_1050 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1050) := by
   have h := no_points (D := -2) (c := -2) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 23 ^ 2 = 1050 by norm_num] at h
 
 theorem no_points_1063 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1063) := by
   have h := no_points (D := 1) (c := 14) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 41 ^ 2 = 1063 by norm_num] at h
 
 theorem no_points_1075 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1075) := by
   have h := no_points (D := 1) (c := 11) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 16 ^ 2 = 1075 by norm_num] at h
 
 theorem no_points_1122 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1122) := by
   have h := no_points (D := -2) (c := 4) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 23 ^ 2 = 1122 by norm_num] at h
 
 theorem no_points_1150 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1150) := by
   have h := no_points (D := 2) (c := 12) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 17 ^ 2 = 1150 by norm_num] at h
 
 theorem no_points_1173 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1173) := by
   have h := no_points (D := 1) (c := 13) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 32 ^ 2 = 1173 by norm_num] at h
 
 theorem no_points_1187 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1187) := by
   have h := no_points (D := 1) (c := 27) (b := 136) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 136 ^ 2 = 1187 by norm_num] at h
 
 theorem no_points_1231 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1231) := by
   have h := no_points (D := 1) (c := 11) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 10 ^ 2 = 1231 by norm_num] at h
 
 theorem no_points_1236 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1236) := by
   have h := no_points (D := 1) (c := 310) (b := 5458) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 2729) (u := 1627) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (310 : ℤ) ^ 3 - (1) * 5458 ^ 2 = 1236 by norm_num] at h
 
 theorem no_points_1239 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1239) := by
   have h := no_points (D := 1) (c := 22) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 97 ^ 2 = 1239 by norm_num] at h
 
 theorem no_points_1242 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1242) := by
   have h := no_points (D := -2) (c := -26) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 83) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-26 : ℤ) ^ 3 - (-2) * 97 ^ 2 = 1242 by norm_num] at h
 
 theorem no_points_1259 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1259) := by
   have h := no_points (D := 1) (c := 207) (b := 2978) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1489) (u := 225) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (207 : ℤ) ^ 3 - (1) * 2978 ^ 2 = 1259 by norm_num] at h
 
 theorem no_points_1267 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1267) := by
   have h := no_points (D := 1) (c := 11) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 8 ^ 2 = 1267 by norm_num] at h
 
 theorem no_points_1274 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1274) := by
   have h := no_points (D := -2) (c := 6) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 23 ^ 2 = 1274 by norm_num] at h
 
 theorem no_points_1315 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1315) := by
   have h := no_points (D := 1) (c := 11) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 4 ^ 2 = 1315 by norm_num] at h
 
 theorem no_points_1327 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1327) := by
   have h := no_points (D := 1) (c := 11) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (11 : ℤ) ^ 3 - (1) * 2 ^ 2 = 1327 by norm_num] at h
 
 theorem no_points_1351 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1351) := by
   have h := no_points (D := 1) (c := 23) (b := 104) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 104 ^ 2 = 1351 by norm_num] at h
 
 theorem no_points_1375 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1375) := by
   have h := no_points (D := 1) (c := 14) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 37 ^ 2 = 1375 by norm_num] at h
 
 theorem no_points_1383 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1383) := by
   have h := no_points (D := 1) (c := 19) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 74 ^ 2 = 1383 by norm_num] at h
 
 theorem no_points_1391 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1391) := by
   have h := no_points (D := 1) (c := 90) (b := 853) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 853) (u := 520) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (90 : ℤ) ^ 3 - (1) * 853 ^ 2 = 1391 by norm_num] at h
 
 theorem no_points_1423 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1423) := by
   have h := no_points (D := 1) (c := 47) (b := 320) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (47 : ℤ) ^ 3 - (1) * 320 ^ 2 = 1423 by norm_num] at h
 
 theorem no_points_1486 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1486) := by
   have h := no_points (D := 2) (c := 12) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 11 ^ 2 = 1486 by norm_num] at h
 
 theorem no_points_1502 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1502) := by
   have h := no_points (D := 2) (c := 20) (b := 57) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 57) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 57 ^ 2 = 1502 by norm_num] at h
 
 theorem no_points_1518 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1518) := by
   have h := no_points (D := 2) (c := 116) (b := 883) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 883) (u := 841) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (116 : ℤ) ^ 3 - (2) * 883 ^ 2 = 1518 by norm_num] at h
 
 theorem no_points_1549 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1549) := by
   have h := no_points (D := 1) (c := 17) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 58 ^ 2 = 1549 by norm_num] at h
 
 theorem no_points_1566 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1566) := by
   have h := no_points (D := 2) (c := 12) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 9 ^ 2 = 1566 by norm_num] at h
 
 theorem no_points_1588 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1588) := by
   have h := no_points (D := 1) (c := 14) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 34 ^ 2 = 1588 by norm_num] at h
 
 theorem no_points_1591 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1591) := by
   have h := no_points (D := 1) (c := 110) (b := 1153) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1153) (u := 1013) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (110 : ℤ) ^ 3 - (1) * 1153 ^ 2 = 1591 by norm_num] at h
 
 theorem no_points_1607 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1607) := by
   have h := no_points (D := 1) (c := 18) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 65 ^ 2 = 1607 by norm_num] at h
 
 theorem no_points_1634 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1634) := by
   have h := no_points (D := -2) (c := -12) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 1634 by norm_num] at h
 
 theorem no_points_1710 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1710) := by
   have h := no_points (D := 2) (c := 12) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 3 ^ 2 = 1710 by norm_num] at h
 
 theorem no_points_1726 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1726) := by
   have h := no_points (D := 2) (c := 12) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (2) * 1 ^ 2 = 1726 by norm_num] at h
 
 theorem no_points_1727 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1727) := by
   have h := no_points (D := 1) (c := 42) (b := 269) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 269) (u := 187) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (1) * 269 ^ 2 = 1727 by norm_num] at h
 
 theorem no_points_1730 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1730) := by
   have h := no_points (D := -2) (c := 12) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 1 ^ 2 = 1730 by norm_num] at h
 
 theorem no_points_1734 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1734) := by
   have h := no_points (D := 2) (c := 26) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 40) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 89 ^ 2 = 1734 by norm_num] at h
 
 theorem no_points_1755 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1755) := by
   have h := no_points (D := 1) (c := 259) (b := 4168) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 521) (u := 286) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (259 : ℤ) ^ 3 - (1) * 4168 ^ 2 = 1755 by norm_num] at h
 
 theorem no_points_1766 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1766) := by
   have h := no_points (D := 2) (c := 34) (b := 137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 137) (u := 51) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (2) * 137 ^ 2 = 1766 by norm_num] at h
 
 theorem no_points_1775 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1775) := by
   have h := no_points (D := 1) (c := 15) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 40 ^ 2 = 1775 by norm_num] at h
 
 theorem no_points_1782 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1782) := by
   have h := no_points (D := 2) (c := 90) (b := 603) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 603) (u := 382) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (90 : ℤ) ^ 3 - (2) * 603 ^ 2 = 1782 by norm_num] at h
 
 theorem no_points_1797 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1797) := by
   have h := no_points (D := 1) (c := 13) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 20 ^ 2 = 1797 by norm_num] at h
 
 theorem no_points_1812 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1812) := by
   have h := no_points (D := 1) (c := 382) (b := 7466) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 3733) (u := 2882) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (382 : ℤ) ^ 3 - (1) * 7466 ^ 2 = 1812 by norm_num] at h
 
 theorem no_points_1826 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1826) := by
   have h := no_points (D := -2) (c := 12) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 7 ^ 2 = 1826 by norm_num] at h
 
 theorem no_points_1858 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1858) := by
   have h := no_points (D := -2) (c := -4) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 1858 by norm_num] at h
 
 theorem no_points_1883 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1883) := by
   have h := no_points (D := 1) (c := 627) (b := 15700) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 3925) (u := 757) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (627 : ℤ) ^ 3 - (1) * 15700 ^ 2 = 1883 by norm_num] at h
 
 theorem no_points_1903 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1903) := by
   have h := no_points (D := 1) (c := 14) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 29 ^ 2 = 1903 by norm_num] at h
 
 theorem no_points_1914 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1914) := by
   have h := no_points (D := -2) (c := -2) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 1914 by norm_num] at h
 
 theorem no_points_1941 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1941) := by
   have h := no_points (D := 1) (c := 13) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 16 ^ 2 = 1941 by norm_num] at h
 
 theorem no_points_1951 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1951) := by
   have h := no_points (D := 1) (c := 26) (b := 125) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 125) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 125 ^ 2 = 1951 by norm_num] at h
 
 theorem no_points_1986 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (1986) := by
   have h := no_points (D := -2) (c := 4) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 1986 by norm_num] at h
 
 theorem no_points_2022 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2022) := by
   have h := no_points (D := 2) (c := 74) (b := 449) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 449) (u := 235) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (74 : ℤ) ^ 3 - (2) * 449 ^ 2 = 2022 by norm_num] at h
 
 theorem no_points_2039 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2039) := by
   have h := no_points (D := 1) (c := 279) (b := 4660) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1165) (u := 322) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (279 : ℤ) ^ 3 - (1) * 4660 ^ 2 = 2039 by norm_num] at h
 
 theorem no_points_2055 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2055) := by
   have h := no_points (D := 1) (c := 34) (b := 193) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 193) (u := 112) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (1) * 193 ^ 2 = 2055 by norm_num] at h
 
 theorem no_points_2068 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2068) := by
   have h := no_points (D := 1) (c := 14) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 26 ^ 2 = 2068 by norm_num] at h
 
 theorem no_points_2071 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2071) := by
   have h := no_points (D := 1) (c := 35) (b := 202) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (35 : ℤ) ^ 3 - (1) * 202 ^ 2 = 2071 by norm_num] at h
 
 theorem no_points_2082 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2082) := by
   have h := no_points (D := -2) (c := -20) (b := 71) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 71) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 71 ^ 2 = 2082 by norm_num] at h
 
 theorem no_points_2111 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2111) := by
   have h := no_points (D := 1) (c := 18) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 61 ^ 2 = 2111 by norm_num] at h
 
 theorem no_points_2119 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2119) := by
   have h := no_points (D := 1) (c := 14) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 25 ^ 2 = 2119 by norm_num] at h
 
 theorem no_points_2133 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2133) := by
   have h := no_points (D := 1) (c := 13) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 8 ^ 2 = 2133 by norm_num] at h
 
 theorem no_points_2134 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2134) := by
   have h := no_points (D := 2) (c := 18) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 43 ^ 2 = 2134 by norm_num] at h
 
 theorem no_points_2138 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2138) := by
   have h := no_points (D := -2) (c := 6) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 2138 by norm_num] at h
 
 theorem no_points_2167 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2167) := by
   have h := no_points (D := 1) (c := 23) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 100 ^ 2 = 2167 by norm_num] at h
 
 theorem no_points_2181 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2181) := by
   have h := no_points (D := 1) (c := 13) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (13 : ℤ) ^ 3 - (1) * 4 ^ 2 = 2181 by norm_num] at h
 
 theorem no_points_2219 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2219) := by
   have h := no_points (D := 1) (c := 15) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 34 ^ 2 = 2219 by norm_num] at h
 
 theorem no_points_2228 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2228) := by
   have h := no_points (D := 1) (c := 54) (b := 394) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 197) (u := 14) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (54 : ℤ) ^ 3 - (1) * 394 ^ 2 = 2228 by norm_num] at h
 
 theorem no_points_2235 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2235) := by
   have h := no_points (D := 1) (c := 19) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 68 ^ 2 = 2235 by norm_num] at h
 
 theorem no_points_2306 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2306) := by
   have h := no_points (D := -2) (c := 12) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 17 ^ 2 = 2306 by norm_num] at h
 
 theorem no_points_2350 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2350) := by
   have h := no_points (D := 2) (c := 28) (b := 99) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 99) (u := 58) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 99 ^ 2 = 2350 by norm_num] at h
 
 theorem no_points_2351 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2351) := by
   have h := no_points (D := 1) (c := 15) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 32 ^ 2 = 2351 by norm_num] at h
 
 theorem no_points_2362 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2362) := by
   have h := no_points (D := -2) (c := -10) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 2362 by norm_num] at h
 
 theorem no_points_2413 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2413) := by
   have h := no_points (D := 1) (c := 17) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 50 ^ 2 = 2413 by norm_num] at h
 
 theorem no_points_2431 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2431) := by
   have h := no_points (D := 1) (c := 38) (b := 229) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 229) (u := 107) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (38 : ℤ) ^ 3 - (1) * 229 ^ 2 = 2431 by norm_num] at h
 
 theorem no_points_2434 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2434) := by
   have h := no_points (D := -2) (c := -124) (b := 977) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 977) (u := 765) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-124 : ℤ) ^ 3 - (-2) * 977 ^ 2 = 2434 by norm_num] at h
 
 theorem no_points_2455 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2455) := by
   have h := no_points (D := 1) (c := 14) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 17 ^ 2 = 2455 by norm_num] at h
 
 theorem no_points_2470 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2470) := by
   have h := no_points (D := 2) (c := 18) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 41 ^ 2 = 2470 by norm_num] at h
 
 theorem no_points_2485 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2485) := by
   have h := no_points (D := 1) (c := 29) (b := 148) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (29 : ℤ) ^ 3 - (1) * 148 ^ 2 = 2485 by norm_num] at h
 
 theorem no_points_2575 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2575) := by
   have h := no_points (D := 1) (c := 14) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 13 ^ 2 = 2575 by norm_num] at h
 
 theorem no_points_2637 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2637) := by
   have h := no_points (D := 1) (c := 433) (b := 9010) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 4505) (u := 1772) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (433 : ℤ) ^ 3 - (1) * 9010 ^ 2 = 2637 by norm_num] at h
 
 theorem no_points_2644 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2644) := by
   have h := no_points (D := 1) (c := 14) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 10 ^ 2 = 2644 by norm_num] at h
 
 theorem no_points_2658 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2658) := by
   have h := no_points (D := -2) (c := -20) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 32) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 73 ^ 2 = 2658 by norm_num] at h
 
 theorem no_points_2690 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2690) := by
   have h := no_points (D := -2) (c := -12) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 2690 by norm_num] at h
 
 theorem no_points_2695 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2695) := by
   have h := no_points (D := 1) (c := 71) (b := 596) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 149) (u := 44) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (71 : ℤ) ^ 3 - (1) * 596 ^ 2 = 2695 by norm_num] at h
 
 theorem no_points_2699 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2699) := by
   have h := no_points (D := 1) (c := 15) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 26 ^ 2 = 2699 by norm_num] at h
 
 theorem no_points_2719 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2719) := by
   have h := no_points (D := 1) (c := 14) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 5 ^ 2 = 2719 by norm_num] at h
 
 theorem no_points_2727 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2727) := by
   have h := no_points (D := 1) (c := 22) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 89 ^ 2 = 2727 by norm_num] at h
 
 theorem no_points_2740 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2740) := by
   have h := no_points (D := 1) (c := 14) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 2 ^ 2 = 2740 by norm_num] at h
 
 theorem no_points_2743 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2743) := by
   have h := no_points (D := 1) (c := 14) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (1) * 1 ^ 2 = 2743 by norm_num] at h
 
 theorem no_points_2746 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2746) := by
   have h := no_points (D := -2) (c := 14) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (-2) * 1 ^ 2 = 2746 by norm_num] at h
 
 theorem no_points_2763 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2763) := by
   have h := no_points (D := 1) (c := 19) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 64 ^ 2 = 2763 by norm_num] at h
 
 theorem no_points_2783 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2783) := by
   have h := no_points (D := 1) (c := 27) (b := 130) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 130 ^ 2 = 2783 by norm_num] at h
 
 theorem no_points_2786 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2786) := by
   have h := no_points (D := -2) (c := 12) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 23 ^ 2 = 2786 by norm_num] at h
 
 theorem no_points_2798 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2798) := by
   have h := no_points (D := 2) (c := 20) (b := 51) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 51) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 51 ^ 2 = 2798 by norm_num] at h
 
 theorem no_points_2842 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2842) := by
   have h := no_points (D := -2) (c := 14) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (-2) * 7 ^ 2 = 2842 by norm_num] at h
 
 theorem no_points_2861 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2861) := by
   have h := no_points (D := 1) (c := 21) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 80 ^ 2 = 2861 by norm_num] at h
 
 theorem no_points_2875 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2875) := by
   have h := no_points (D := 1) (c := 35) (b := 200) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (35 : ℤ) ^ 3 - (1) * 200 ^ 2 = 2875 by norm_num] at h
 
 theorem no_points_2895 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2895) := by
   have h := no_points (D := 1) (c := 31) (b := 164) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (31 : ℤ) ^ 3 - (1) * 164 ^ 2 = 2895 by norm_num] at h
 
 theorem no_points_2975 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (2975) := by
   have h := no_points (D := 1) (c := 15) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 20 ^ 2 = 2975 by norm_num] at h
 
 theorem no_points_3023 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3023) := by
   have h := no_points (D := 1) (c := 18) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 53 ^ 2 = 3023 by norm_num] at h
 
 theorem no_points_3074 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3074) := by
   have h := no_points (D := -2) (c := -12) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 3074 by norm_num] at h
 
 theorem no_points_3103 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3103) := by
   have h := no_points (D := 1) (c := 62) (b := 485) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 485) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (62 : ℤ) ^ 3 - (1) * 485 ^ 2 = 3103 by norm_num] at h
 
 theorem no_points_3119 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3119) := by
   have h := no_points (D := 1) (c := 15) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 16 ^ 2 = 3119 by norm_num] at h
 
 theorem no_points_3134 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3134) := by
   have h := no_points (D := 2) (c := 28) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 97 ^ 2 = 3134 by norm_num] at h
 
 theorem no_points_3159 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3159) := by
   have h := no_points (D := 1) (c := 55) (b := 404) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (55 : ℤ) ^ 3 - (1) * 404 ^ 2 = 3159 by norm_num] at h
 
 theorem no_points_3199 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3199) := by
   have h := no_points (D := 1) (c := 50) (b := 349) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 349) (u := 213) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (50 : ℤ) ^ 3 - (1) * 349 ^ 2 = 3199 by norm_num] at h
 
 theorem no_points_3252 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3252) := by
   have h := no_points (D := 1) (c := 166) (b := 2138) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1069) (u := 820) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (166 : ℤ) ^ 3 - (1) * 2138 ^ 2 = 3252 by norm_num] at h
 
 theorem no_points_3271 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3271) := by
   have h := no_points (D := 1) (c := 83) (b := 754) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 377) (u := 70) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (83 : ℤ) ^ 3 - (1) * 754 ^ 2 = 3271 by norm_num] at h
 
 theorem no_points_3275 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3275) := by
   have h := no_points (D := 1) (c := 15) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 10 ^ 2 = 3275 by norm_num] at h
 
 theorem no_points_3298 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3298) := by
   have h := no_points (D := -2) (c := -4) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 3298 by norm_num] at h
 
 theorem no_points_3299 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3299) := by
   have h := no_points (D := 1) (c := 27) (b := 128) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 7 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 128 ^ 2 = 3299 by norm_num] at h
 
 theorem no_points_3311 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3311) := by
   have h := no_points (D := 1) (c := 15) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 8 ^ 2 = 3311 by norm_num] at h
 
 theorem no_points_3322 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3322) := by
   have h := no_points (D := -2) (c := 14) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (-2) * 17 ^ 2 = 3322 by norm_num] at h
 
 theorem no_points_3354 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3354) := by
   have h := no_points (D := -2) (c := -2) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 3354 by norm_num] at h
 
 theorem no_points_3359 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3359) := by
   have h := no_points (D := 1) (c := 15) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 4 ^ 2 = 3359 by norm_num] at h
 
 theorem no_points_3371 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3371) := by
   have h := no_points (D := 1) (c := 15) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (15 : ℤ) ^ 3 - (1) * 2 ^ 2 = 3371 by norm_num] at h
 
 theorem no_points_3405 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3405) := by
   have h := no_points (D := 1) (c := 49) (b := 338) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 169) (u := 70) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (49 : ℤ) ^ 3 - (1) * 338 ^ 2 = 3405 by norm_num] at h
 
 theorem no_points_3407 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3407) := by
   have h := no_points (D := 1) (c := 66) (b := 533) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 533) (u := 460) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (66 : ℤ) ^ 3 - (1) * 533 ^ 2 = 3407 by norm_num] at h
 
 theorem no_points_3418 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3418) := by
   have h := no_points (D := -2) (c := -10) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 3418 by norm_num] at h
 
 theorem no_points_3423 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3423) := by
   have h := no_points (D := 1) (c := 22) (b := 85) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 85 ^ 2 = 3423 by norm_num] at h
 
 theorem no_points_3426 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3426) := by
   have h := no_points (D := -2) (c := 4) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 3426 by norm_num] at h
 
 theorem no_points_3444 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3444) := by
   have h := no_points (D := 1) (c := 214) (b := 3130) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1565) (u := 1227) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (214 : ℤ) ^ 3 - (1) * 3130 ^ 2 = 3444 by norm_num] at h
 
 theorem no_points_3471 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3471) := by
   have h := no_points (D := 1) (c := 235) (b := 3602) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1801) (u := 977) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (235 : ℤ) ^ 3 - (1) * 3602 ^ 2 = 3471 by norm_num] at h
 
 theorem no_points_3495 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3495) := by
   have h := no_points (D := 1) (c := 19) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 58 ^ 2 = 3495 by norm_num] at h
 
 theorem no_points_3502 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3502) := by
   have h := no_points (D := 2) (c := 220) (b := 2307) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2307) (u := 556) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (220 : ℤ) ^ 3 - (2) * 2307 ^ 2 = 3502 by norm_num] at h
 
 theorem no_points_3509 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3509) := by
   have h := no_points (D := 1) (c := 45) (b := 296) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (45 : ℤ) ^ 3 - (1) * 296 ^ 2 = 3509 by norm_num] at h
 
 theorem no_points_3517 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3517) := by
   have h := no_points (D := 1) (c := 161) (b := 2042) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1021) (u := 374) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (161 : ℤ) ^ 3 - (1) * 2042 ^ 2 = 3517 by norm_num] at h
 
 theorem no_points_3578 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3578) := by
   have h := no_points (D := -2) (c := 6) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 3578 by norm_num] at h
 
 theorem no_points_3586 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3586) := by
   have h := no_points (D := -2) (c := -28) (b := 113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 113) (u := 62) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-28 : ℤ) ^ 3 - (-2) * 113 ^ 2 = 3586 by norm_num] at h
 
 theorem no_points_3615 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3615) := by
   have h := no_points (D := 1) (c := 91) (b := 866) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 433) (u := 179) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (91 : ℤ) ^ 3 - (1) * 866 ^ 2 = 3615 by norm_num] at h
 
 theorem no_points_3639 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3639) := by
   have h := no_points (D := 1) (c := 130) (b := 1481) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1481) (u := 465) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (130 : ℤ) ^ 3 - (1) * 1481 ^ 2 = 3639 by norm_num] at h
 
 theorem no_points_3642 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3642) := by
   have h := no_points (D := -2) (c := -26) (b := 103) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 103) (u := 38) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-26 : ℤ) ^ 3 - (-2) * 103 ^ 2 = 3642 by norm_num] at h
 
 theorem no_points_3650 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3650) := by
   have h := no_points (D := -2) (c := 12) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 3650 by norm_num] at h
 
 theorem no_points_3654 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3654) := by
   have h := no_points (D := 2) (c := 18) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 33 ^ 2 = 3654 by norm_num] at h
 
 theorem no_points_3742 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3742) := by
   have h := no_points (D := 2) (c := 540) (b := 8873) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 8873) (u := 5478) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (540 : ℤ) ^ 3 - (2) * 8873 ^ 2 = 3742 by norm_num] at h
 
 theorem no_points_3757 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3757) := by
   have h := no_points (D := 1) (c := 17) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 34 ^ 2 = 3757 by norm_num] at h
 
 theorem no_points_3796 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3796) := by
   have h := no_points (D := 1) (c := 38) (b := 226) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 113) (u := 98) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (38 : ℤ) ^ 3 - (1) * 226 ^ 2 = 3796 by norm_num] at h
 
 theorem no_points_3798 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3798) := by
   have h := no_points (D := 2) (c := 26) (b := 83) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 83) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 83 ^ 2 = 3798 by norm_num] at h
 
 theorem no_points_3802 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3802) := by
   have h := no_points (D := -2) (c := -10) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 3802 by norm_num] at h
 
 theorem no_points_3807 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3807) := by
   have h := no_points (D := 1) (c := 1306) (b := 47197) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47197) (u := 36984) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1306 : ℤ) ^ 3 - (1) * 47197 ^ 2 = 3807 by norm_num] at h
 
 theorem no_points_3863 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3863) := by
   have h := no_points (D := 1) (c := 42) (b := 265) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 265) (u := 182) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (1) * 265 ^ 2 = 3863 by norm_num] at h
 
 theorem no_points_3924 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (3924) := by
   have h := no_points (D := 1) (c := 22) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 82 ^ 2 = 3924 by norm_num] at h
 
 theorem no_points_4006 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4006) := by
   have h := no_points (D := 2) (c := 474) (b := 7297) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7297) (u := 6095) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (474 : ℤ) ^ 3 - (2) * 7297 ^ 2 = 4006 by norm_num] at h
 
 theorem no_points_4087 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4087) := by
   have h := no_points (D := 1) (c := 158) (b := 1985) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1985) (u := 857) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (158 : ℤ) ^ 3 - (1) * 1985 ^ 2 = 4087 by norm_num] at h
 
 theorem no_points_4090 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4090) := by
   have h := no_points (D := -2) (c := -82) (b := 527) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 527) (u := 380) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-82 : ℤ) ^ 3 - (-2) * 527 ^ 2 = 4090 by norm_num] at h
 
 theorem no_points_4150 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4150) := by
   have h := no_points (D := 2) (c := 42) (b := 187) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 187) (u := 58) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (2) * 187 ^ 2 = 4150 by norm_num] at h
 
 theorem no_points_4151 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4151) := by
   have h := no_points (D := 1) (c := 18) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 41 ^ 2 = 4151 by norm_num] at h
 
 theorem no_points_4155 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4155) := by
   have h := no_points (D := 1) (c := 19) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 52 ^ 2 = 4155 by norm_num] at h
 
 theorem no_points_4158 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4158) := by
   have h := no_points (D := 2) (c := 156) (b := 1377) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1377) (u := 670) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (156 : ℤ) ^ 3 - (2) * 1377 ^ 2 = 4158 by norm_num] at h
 
 theorem no_points_4191 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4191) := by
   have h := no_points (D := 1) (c := 31) (b := 160) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (31 : ℤ) ^ 3 - (1) * 160 ^ 2 = 4191 by norm_num] at h
 
 theorem no_points_4237 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4237) := by
   have h := no_points (D := 1) (c := 17) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 26 ^ 2 = 4237 by norm_num] at h
 
 theorem no_points_4250 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4250) := by
   have h := no_points (D := -2) (c := -18) (b := 71) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 71) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 71 ^ 2 = 4250 by norm_num] at h
 
 theorem no_points_4253 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4253) := by
   have h := no_points (D := 1) (c := 33) (b := 178) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (33 : ℤ) ^ 3 - (1) * 178 ^ 2 = 4253 by norm_num] at h
 
 theorem no_points_4302 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4302) := by
   have h := no_points (D := 2) (c := 20) (b := 43) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 43) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 43 ^ 2 = 4302 by norm_num] at h
 
 theorem no_points_4309 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4309) := by
   have h := no_points (D := 1) (c := 125) (b := 1396) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 349) (u := 213) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (125 : ℤ) ^ 3 - (1) * 1396 ^ 2 = 4309 by norm_num] at h
 
 theorem no_points_4310 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4310) := by
   have h := no_points (D := 2) (c := 82) (b := 523) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 523) (u := 467) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (82 : ℤ) ^ 3 - (2) * 523 ^ 2 = 4310 by norm_num] at h
 
 theorem no_points_4311 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4311) := by
   have h := no_points (D := 1) (c := 46) (b := 305) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 305) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (46 : ℤ) ^ 3 - (1) * 305 ^ 2 = 4311 by norm_num] at h
 
 theorem no_points_4347 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4347) := by
   have h := no_points (D := 1) (c := 163) (b := 2080) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (163 : ℤ) ^ 3 - (1) * 2080 ^ 2 = 4347 by norm_num] at h
 
 theorem no_points_4351 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4351) := by
   have h := no_points (D := 1) (c := 758) (b := 20869) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 20869) (u := 9972) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (758 : ℤ) ^ 3 - (1) * 20869 ^ 2 = 4351 by norm_num] at h
 
 theorem no_points_4354 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4354) := by
   have h := no_points (D := -2) (c := -4) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 4354 by norm_num] at h
 
 theorem no_points_4359 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4359) := by
   have h := no_points (D := 1) (c := 19) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 50 ^ 2 = 4359 by norm_num] at h
 
 theorem no_points_4374 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4374) := by
   have h := no_points (D := 2) (c := 18) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 27 ^ 2 = 4374 by norm_num] at h
 
 theorem no_points_4382 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4382) := by
   have h := no_points (D := 2) (c := 44) (b := 201) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 201) (u := 181) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (44 : ℤ) ^ 3 - (2) * 201 ^ 2 = 4382 by norm_num] at h
 
 theorem no_points_4389 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4389) := by
   have h := no_points (D := 1) (c := 25) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (25 : ℤ) ^ 3 - (1) * 106 ^ 2 = 4389 by norm_num] at h
 
 theorem no_points_4410 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4410) := by
   have h := no_points (D := -2) (c := -2) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 4410 by norm_num] at h
 
 theorem no_points_4415 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4415) := by
   have h := no_points (D := 1) (c := 1074) (b := 35197) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 35197) (u := 31182) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1074 : ℤ) ^ 3 - (1) * 35197 ^ 2 = 4415 by norm_num] at h
 
 theorem no_points_4431 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4431) := by
   have h := no_points (D := 1) (c := 43) (b := 274) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 137) (u := 37) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (43 : ℤ) ^ 3 - (1) * 274 ^ 2 = 4431 by norm_num] at h
 
 theorem no_points_4454 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4454) := by
   have h := no_points (D := 2) (c := 26) (b := 81) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 81) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 81 ^ 2 = 4454 by norm_num] at h
 
 theorem no_points_4463 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4463) := by
   have h := no_points (D := 1) (c := 18) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 37 ^ 2 = 4463 by norm_num] at h
 
 theorem no_points_4482 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4482) := by
   have h := no_points (D := -2) (c := 4) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 4482 by norm_num] at h
 
 theorem no_points_4634 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4634) := by
   have h := no_points (D := -2) (c := 6) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 4634 by norm_num] at h
 
 theorem no_points_4637 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4637) := by
   have h := no_points (D := 1) (c := 21) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 68 ^ 2 = 4637 by norm_num] at h
 
 theorem no_points_4638 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4638) := by
   have h := no_points (D := 2) (c := 20) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 41 ^ 2 = 4638 by norm_num] at h
 
 theorem no_points_4666 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4666) := by
   have h := no_points (D := -2) (c := 14) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 4666 by norm_num] at h
 
 theorem no_points_4738 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4738) := by
   have h := no_points (D := -2) (c := -4) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-4 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 4738 by norm_num] at h
 
 theorem no_points_4779 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4779) := by
   have h := no_points (D := 1) (c := 175) (b := 2314) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1157) (u := 746) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (175 : ℤ) ^ 3 - (1) * 2314 ^ 2 = 4779 by norm_num] at h
 
 theorem no_points_4794 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4794) := by
   have h := no_points (D := -2) (c := -2) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-2 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 4794 by norm_num] at h
 
 theorem no_points_4799 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4799) := by
   have h := no_points (D := 1) (c := 27) (b := 122) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 122 ^ 2 = 4799 by norm_num] at h
 
 theorem no_points_4807 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4807) := by
   have h := no_points (D := 1) (c := 26) (b := 113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 113) (u := 98) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 113 ^ 2 = 4807 by norm_num] at h
 
 theorem no_points_4813 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4813) := by
   have h := no_points (D := 1) (c := 17) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 10 ^ 2 = 4813 by norm_num] at h
 
 theorem no_points_4826 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4826) := by
   have h := no_points (D := -2) (c := -18) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 32) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 73 ^ 2 = 4826 by norm_num] at h
 
 theorem no_points_4827 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4827) := by
   have h := no_points (D := 1) (c := 67) (b := 544) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (67 : ℤ) ^ 3 - (1) * 544 ^ 2 = 4827 by norm_num] at h
 
 theorem no_points_4866 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4866) := by
   have h := no_points (D := -2) (c := 4) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (4 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 4866 by norm_num] at h
 
 theorem no_points_4909 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4909) := by
   have h := no_points (D := 1) (c := 17) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (17 : ℤ) ^ 3 - (1) * 2 ^ 2 = 4909 by norm_num] at h
 
 theorem no_points_4982 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4982) := by
   have h := no_points (D := 2) (c := 34) (b := 131) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 131) (u := 28) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (2) * 131 ^ 2 = 4982 by norm_num] at h
 
 theorem no_points_4991 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (4991) := by
   have h := no_points (D := 1) (c := 18) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 29 ^ 2 = 4991 by norm_num] at h
 
 theorem no_points_5018 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5018) := by
   have h := no_points (D := -2) (c := 6) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (6 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 5018 by norm_num] at h
 
 theorem no_points_5051 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5051) := by
   have h := no_points (D := 1) (c := 1683) (b := 69044) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17261) (u := 15548) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1683 : ℤ) ^ 3 - (1) * 69044 ^ 2 = 5051 by norm_num] at h
 
 theorem no_points_5079 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5079) := by
   have h := no_points (D := 1) (c := 34) (b := 185) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 185) (u := 117) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (1) * 185 ^ 2 = 5079 by norm_num] at h
 
 theorem no_points_5090 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5090) := by
   have h := no_points (D := -2) (c := 12) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 5090 by norm_num] at h
 
 theorem no_points_5095 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5095) := by
   have h := no_points (D := 1) (c := 1274) (b := 45473) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 45473) (u := 6777) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (1274 : ℤ) ^ 3 - (1) * 45473 ^ 2 = 5095 by norm_num] at h
 
 theorem no_points_5110 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5110) := by
   have h := no_points (D := 2) (c := 18) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 19 ^ 2 = 5110 by norm_num] at h
 
 theorem no_points_5114 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5114) := by
   have h := no_points (D := -2) (c := -42) (b := 199) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 199) (u := 20) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-42 : ℤ) ^ 3 - (-2) * 199 ^ 2 = 5114 by norm_num] at h
 
 theorem no_points_5158 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5158) := by
   have h := no_points (D := 2) (c := 186) (b := 1793) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1793) (u := 960) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (186 : ℤ) ^ 3 - (2) * 1793 ^ 2 = 5158 by norm_num] at h
 
 theorem no_points_5165 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5165) := by
   have h := no_points (D := 1) (c := 21) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 64 ^ 2 = 5165 by norm_num] at h
 
 theorem no_points_5172 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5172) := by
   have h := no_points (D := 1) (c := 22) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 74 ^ 2 = 5172 by norm_num] at h
 
 theorem no_points_5186 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5186) := by
   have h := no_points (D := -2) (c := -36) (b := 161) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 161) (u := 143) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-36 : ℤ) ^ 3 - (-2) * 161 ^ 2 = 5186 by norm_num] at h
 
 theorem no_points_5207 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5207) := by
   have h := no_points (D := 1) (c := 18) (b := 25) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 25 ^ 2 = 5207 by norm_num] at h
 
 theorem no_points_5227 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5227) := by
   have h := no_points (D := 1) (c := 47) (b := 314) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 157) (u := 129) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (47 : ℤ) ^ 3 - (1) * 314 ^ 2 = 5227 by norm_num] at h
 
 theorem no_points_5239 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5239) := by
   have h := no_points (D := 1) (c := 35) (b := 194) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (35 : ℤ) ^ 3 - (1) * 194 ^ 2 = 5239 by norm_num] at h
 
 theorem no_points_5254 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5254) := by
   have h := no_points (D := 2) (c := 18) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 17 ^ 2 = 5254 by norm_num] at h
 
 theorem no_points_5259 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5259) := by
   have h := no_points (D := 1) (c := 19) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 40 ^ 2 = 5259 by norm_num] at h
 
 theorem no_points_5319 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5319) := by
   have h := no_points (D := 1) (c := 22) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 73 ^ 2 = 5319 by norm_num] at h
 
 theorem no_points_5327 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5327) := by
   have h := no_points (D := 1) (c := 78) (b := 685) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 685) (u := 37) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (78 : ℤ) ^ 3 - (1) * 685 ^ 2 = 5327 by norm_num] at h
 
 theorem no_points_5389 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5389) := by
   have h := no_points (D := 1) (c := 977) (b := 30538) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 15269) (u := 7026) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (977 : ℤ) ^ 3 - (1) * 30538 ^ 2 = 5389 by norm_num] at h
 
 theorem no_points_5443 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5443) := by
   have h := no_points (D := 1) (c := 23) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 82 ^ 2 = 5443 by norm_num] at h
 
 theorem no_points_5495 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5495) := by
   have h := no_points (D := 1) (c := 39) (b := 232) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (39 : ℤ) ^ 3 - (1) * 232 ^ 2 = 5495 by norm_num] at h
 
 theorem no_points_5523 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5523) := by
   have h := no_points (D := 1) (c := 43) (b := 272) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (43 : ℤ) ^ 3 - (1) * 272 ^ 2 = 5523 by norm_num] at h
 
 theorem no_points_5534 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5534) := by
   have h := no_points (D := 2) (c := 68) (b := 393) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 393) (u := 28) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (68 : ℤ) ^ 3 - (2) * 393 ^ 2 = 5534 by norm_num] at h
 
 theorem no_points_5543 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5543) := by
   have h := no_points (D := 1) (c := 18) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 17 ^ 2 = 5543 by norm_num] at h
 
 theorem no_points_5590 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5590) := by
   have h := no_points (D := 2) (c := 18) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 11 ^ 2 = 5590 by norm_num] at h
 
 theorem no_points_5591 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5591) := by
   have h := no_points (D := 1) (c := 195) (b := 2722) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1361) (u := 614) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (195 : ℤ) ^ 3 - (1) * 2722 ^ 2 = 5591 by norm_num] at h
 
 theorem no_points_5606 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5606) := by
   have h := no_points (D := 2) (c := 434) (b := 6393) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 6393) (u := 3691) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (434 : ℤ) ^ 3 - (2) * 6393 ^ 2 = 5606 by norm_num] at h
 
 theorem no_points_5620 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5620) := by
   have h := no_points (D := 1) (c := 86) (b := 794) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 397) (u := 63) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (86 : ℤ) ^ 3 - (1) * 794 ^ 2 = 5620 by norm_num] at h
 
 theorem no_points_5639 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5639) := by
   have h := no_points (D := 1) (c := 87) (b := 808) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (87 : ℤ) ^ 3 - (1) * 808 ^ 2 = 5639 by norm_num] at h
 
 theorem no_points_5663 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5663) := by
   have h := no_points (D := 1) (c := 18) (b := 13) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 13 ^ 2 = 5663 by norm_num] at h
 
 theorem no_points_5670 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5670) := by
   have h := no_points (D := 2) (c := 18) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 9 ^ 2 = 5670 by norm_num] at h
 
 theorem no_points_5684 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5684) := by
   have h := no_points (D := 1) (c := 30) (b := 146) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 146 ^ 2 = 5684 by norm_num] at h
 
 theorem no_points_5695 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5695) := by
   have h := no_points (D := 1) (c := 26) (b := 109) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 109) (u := 33) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 109 ^ 2 = 5695 by norm_num] at h
 
 theorem no_points_5703 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5703) := by
   have h := no_points (D := 1) (c := 19) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 34 ^ 2 = 5703 by norm_num] at h
 
 theorem no_points_5709 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5709) := by
   have h := no_points (D := 1) (c := 37) (b := 212) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (37 : ℤ) ^ 3 - (1) * 212 ^ 2 = 5709 by norm_num] at h
 
 theorem no_points_5767 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5767) := by
   have h := no_points (D := 1) (c := 23) (b := 80) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 80 ^ 2 = 5767 by norm_num] at h
 
 theorem no_points_5782 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5782) := by
   have h := no_points (D := 2) (c := 114) (b := 859) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 859) (u := 296) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (114 : ℤ) ^ 3 - (2) * 859 ^ 2 = 5782 by norm_num] at h
 
 theorem no_points_5807 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5807) := by
   have h := no_points (D := 1) (c := 18) (b := 5) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 5 ^ 2 = 5807 by norm_num] at h
 
 theorem no_points_5814 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5814) := by
   have h := no_points (D := 2) (c := 18) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 3 ^ 2 = 5814 by norm_num] at h
 
 theorem no_points_5822 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5822) := by
   have h := no_points (D := 2) (c := 20) (b := 33) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 33) (u := 25) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 33 ^ 2 = 5822 by norm_num] at h
 
 theorem no_points_5830 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5830) := by
   have h := no_points (D := 2) (c := 18) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (2) * 1 ^ 2 = 5830 by norm_num] at h
 
 theorem no_points_5831 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5831) := by
   have h := no_points (D := 1) (c := 18) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (18 : ℤ) ^ 3 - (1) * 1 ^ 2 = 5831 by norm_num] at h
 
 theorem no_points_5835 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5835) := by
   have h := no_points (D := 1) (c := 19) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 32 ^ 2 = 5835 by norm_num] at h
 
 theorem no_points_5861 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5861) := by
   have h := no_points (D := 1) (c := 45) (b := 292) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (45 : ℤ) ^ 3 - (1) * 292 ^ 2 = 5861 by norm_num] at h
 
 theorem no_points_5882 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5882) := by
   have h := no_points (D := -2) (c := -66) (b := 383) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 383) (u := 137) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-66 : ℤ) ^ 3 - (-2) * 383 ^ 2 = 5882 by norm_num] at h
 
 theorem no_points_5893 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5893) := by
   have h := no_points (D := 1) (c := 29) (b := 136) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (29 : ℤ) ^ 3 - (1) * 136 ^ 2 = 5893 by norm_num] at h
 
 theorem no_points_5915 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5915) := by
   have h := no_points (D := 1) (c := 51) (b := 356) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (51 : ℤ) ^ 3 - (1) * 356 ^ 2 = 5915 by norm_num] at h
 
 theorem no_points_5975 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5975) := by
   have h := no_points (D := 1) (c := 30) (b := 145) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 145) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 145 ^ 2 = 5975 by norm_num] at h
 
 theorem no_points_5983 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (5983) := by
   have h := no_points (D := 1) (c := 194) (b := 2701) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2701) (u := 265) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (194 : ℤ) ^ 3 - (1) * 2701 ^ 2 = 5983 by norm_num] at h
 
 theorem no_points_6004 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6004) := by
   have h := no_points (D := 1) (c := 62) (b := 482) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 241) (u := 177) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (62 : ℤ) ^ 3 - (1) * 482 ^ 2 = 6004 by norm_num] at h
 
 theorem no_points_6022 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6022) := by
   have h := no_points (D := 2) (c := 34) (b := 129) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 129) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (2) * 129 ^ 2 = 6022 by norm_num] at h
 
 theorem no_points_6031 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6031) := by
   have h := no_points (D := 1) (c := 38) (b := 221) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 221) (u := 174) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (38 : ℤ) ^ 3 - (1) * 221 ^ 2 = 6031 by norm_num] at h
 
 theorem no_points_6106 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6106) := by
   have h := no_points (D := -2) (c := 14) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 17) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (-2) * 41 ^ 2 = 6106 by norm_num] at h
 
 theorem no_points_6110 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6110) := by
   have h := no_points (D := 2) (c := 28) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 40) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 89 ^ 2 = 6110 by norm_num] at h
 
 theorem no_points_6143 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6143) := by
   have h := no_points (D := 1) (c := 54) (b := 389) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 389) (u := 274) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (54 : ℤ) ^ 3 - (1) * 389 ^ 2 = 6143 by norm_num] at h
 
 theorem no_points_6146 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6146) := by
   have h := no_points (D := -2) (c := 12) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 6146 by norm_num] at h
 
 theorem no_points_6167 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6167) := by
   have h := no_points (D := 1) (c := 198) (b := 2785) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2785) (u := 1232) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (198 : ℤ) ^ 3 - (1) * 2785 ^ 2 = 6167 by norm_num] at h
 
 theorem no_points_6183 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6183) := by
   have h := no_points (D := 1) (c := 19) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 26 ^ 2 = 6183 by norm_num] at h
 
 theorem no_points_6199 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6199) := by
   have h := no_points (D := 1) (c := 599) (b := 14660) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 3665) (u := 3312) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (599 : ℤ) ^ 3 - (1) * 14660 ^ 2 = 6199 by norm_num] at h
 
 theorem no_points_6227 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6227) := by
   have h := no_points (D := 1) (c := 27) (b := 116) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 116 ^ 2 = 6227 by norm_num] at h
 
 theorem no_points_6274 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6274) := by
   have h := no_points (D := -2) (c := -52) (b := 271) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 271) (u := 175) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-52 : ℤ) ^ 3 - (-2) * 271 ^ 2 = 6274 by norm_num] at h
 
 theorem no_points_6298 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6298) := by
   have h := no_points (D := -2) (c := -34) (b := 151) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 151) (u := 105) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-34 : ℤ) ^ 3 - (-2) * 151 ^ 2 = 6298 by norm_num] at h
 
 theorem no_points_6318 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6318) := by
   have h := no_points (D := 2) (c := 236) (b := 2563) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2563) (u := 124) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (236 : ℤ) ^ 3 - (2) * 2563 ^ 2 = 6318 by norm_num] at h
 
 theorem no_points_6370 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6370) := by
   have h := no_points (D := -2) (c := -28) (b := 119) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 119) (u := 108) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-28 : ℤ) ^ 3 - (-2) * 119 ^ 2 = 6370 by norm_num] at h
 
 theorem no_points_6375 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6375) := by
   have h := no_points (D := 1) (c := 55) (b := 400) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (55 : ℤ) ^ 3 - (1) * 400 ^ 2 = 6375 by norm_num] at h
 
 theorem no_points_6421 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6421) := by
   have h := no_points (D := 1) (c := 41) (b := 250) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 125) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (41 : ℤ) ^ 3 - (1) * 250 ^ 2 = 6421 by norm_num] at h
 
 theorem no_points_6423 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6423) := by
   have h := no_points (D := 1) (c := 22) (b := 65) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 65) (u := 57) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 65 ^ 2 = 6423 by norm_num] at h
 
 theorem no_points_6459 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6459) := by
   have h := no_points (D := 1) (c := 19) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 20 ^ 2 = 6459 by norm_num] at h
 
 theorem no_points_6479 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6479) := by
   have h := no_points (D := 1) (c := 834) (b := 24085) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 24085) (u := 17977) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (834 : ℤ) ^ 3 - (1) * 24085 ^ 2 = 6479 by norm_num] at h
 
 theorem no_points_6530 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6530) := by
   have h := no_points (D := -2) (c := 12) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (12 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 6530 by norm_num] at h
 
 theorem no_points_6542 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6542) := by
   have h := no_points (D := 2) (c := 20) (b := 27) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 27) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 27 ^ 2 = 6542 by norm_num] at h
 
 theorem no_points_6543 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6543) := by
   have h := no_points (D := 1) (c := 34) (b := 181) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 181) (u := 19) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (1) * 181 ^ 2 = 6543 by norm_num] at h
 
 theorem no_points_6557 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6557) := by
   have h := no_points (D := 1) (c := 21) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 52 ^ 2 = 6557 by norm_num] at h
 
 theorem no_points_6598 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6598) := by
   have h := no_points (D := 2) (c := 90) (b := 601) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 601) (u := 104) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (90 : ℤ) ^ 3 - (2) * 601 ^ 2 = 6598 by norm_num] at h
 
 theorem no_points_6603 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6603) := by
   have h := no_points (D := 1) (c := 19) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 16 ^ 2 = 6603 by norm_num] at h
 
 theorem no_points_6614 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6614) := by
   have h := no_points (D := 2) (c := 58) (b := 307) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 307) (u := 199) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (58 : ℤ) ^ 3 - (2) * 307 ^ 2 = 6614 by norm_num] at h
 
 theorem no_points_6618 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6618) := by
   have h := no_points (D := -2) (c := -1010) (b := 22697) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 22697) (u := 13924) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-1010 : ℤ) ^ 3 - (-2) * 22697 ^ 2 = 6618 by norm_num] at h
 
 theorem no_points_6650 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6650) := by
   have h := no_points (D := -2) (c := -18) (b := 79) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 79) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-18 : ℤ) ^ 3 - (-2) * 79 ^ 2 = 6650 by norm_num] at h
 
 theorem no_points_6691 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6691) := by
   have h := no_points (D := 1) (c := 23) (b := 74) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 74 ^ 2 = 6691 by norm_num] at h
 
 theorem no_points_6703 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6703) := by
   have h := no_points (D := 1) (c := 134) (b := 1549) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1549) (u := 88) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (134 : ℤ) ^ 3 - (1) * 1549 ^ 2 = 6703 by norm_num] at h
 
 theorem no_points_6759 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6759) := by
   have h := no_points (D := 1) (c := 19) (b := 10) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 10 ^ 2 = 6759 by norm_num] at h
 
 theorem no_points_6795 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6795) := by
   have h := no_points (D := 1) (c := 19) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 8 ^ 2 = 6795 by norm_num] at h
 
 theorem no_points_6823 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6823) := by
   have h := no_points (D := 1) (c := 122) (b := 1345) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1345) (u := 187) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (122 : ℤ) ^ 3 - (1) * 1345 ^ 2 = 6823 by norm_num] at h
 
 theorem no_points_6843 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6843) := by
   have h := no_points (D := 1) (c := 19) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 4 ^ 2 = 6843 by norm_num] at h
 
 theorem no_points_6855 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6855) := by
   have h := no_points (D := 1) (c := 19) (b := 2) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (19 : ℤ) ^ 3 - (1) * 2 ^ 2 = 6855 by norm_num] at h
 
 theorem no_points_6902 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6902) := by
   have h := no_points (D := 2) (c := 50) (b := 243) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 243) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (50 : ℤ) ^ 3 - (2) * 243 ^ 2 = 6902 by norm_num] at h
 
 theorem no_points_6918 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6918) := by
   have h := no_points (D := 2) (c := 26) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 73 ^ 2 = 6918 by norm_num] at h
 
 theorem no_points_6927 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6927) := by
   have h := no_points (D := 1) (c := 22) (b := 61) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 61) (u := 11) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 61 ^ 2 = 6927 by norm_num] at h
 
 theorem no_points_6963 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6963) := by
   have h := no_points (D := 1) (c := 103) (b := 1042) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 521) (u := 286) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (103 : ℤ) ^ 3 - (1) * 1042 ^ 2 = 6963 by norm_num] at h
 
 theorem no_points_6967 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (6967) := by
   have h := no_points (D := 1) (c := 62) (b := 481) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 481) (u := 265) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (62 : ℤ) ^ 3 - (1) * 481 ^ 2 = 6967 by norm_num] at h
 
 theorem no_points_7037 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7037) := by
   have h := no_points (D := 1) (c := 33) (b := 170) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 85) (u := 72) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (33 : ℤ) ^ 3 - (1) * 170 ^ 2 = 7037 by norm_num] at h
 
 theorem no_points_7098 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7098) := by
   have h := no_points (D := -2) (c := -50) (b := 257) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 257) (u := 60) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-50 : ℤ) ^ 3 - (-2) * 257 ^ 2 = 7098 by norm_num] at h
 
 theorem no_points_7162 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7162) := by
   have h := no_points (D := -2) (c := 14) (b := 47) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 47) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (-2) * 47 ^ 2 = 7162 by norm_num] at h
 
 theorem no_points_7170 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7170) := by
   have h := no_points (D := -2) (c := -68) (b := 401) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 401) (u := 348) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-68 : ℤ) ^ 3 - (-2) * 401 ^ 2 = 7170 by norm_num] at h
 
 theorem no_points_7188 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7188) := by
   have h := no_points (D := 1) (c := 142) (b := 1690) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 845) (u := 577) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (142 : ℤ) ^ 3 - (1) * 1690 ^ 2 = 7188 by norm_num] at h
 
 theorem no_points_7207 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7207) := by
   have h := no_points (D := 1) (c := 86) (b := 793) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 793) (u := 499) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (86 : ℤ) ^ 3 - (1) * 793 ^ 2 = 7207 by norm_num] at h
 
 theorem no_points_7223 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7223) := by
   have h := no_points (D := 1) (c := 498) (b := 11113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11113) (u := 6638) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (498 : ℤ) ^ 3 - (1) * 11113 ^ 2 = 7223 by norm_num] at h
 
 theorem no_points_7278 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7278) := by
   have h := no_points (D := 2) (c := 20) (b := 19) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 19 ^ 2 = 7278 by norm_num] at h
 
 theorem no_points_7284 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7284) := by
   have h := no_points (D := 1) (c := 22) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 58 ^ 2 = 7284 by norm_num] at h
 
 theorem no_points_7291 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7291) := by
   have h := no_points (D := 1) (c := 95) (b := 922) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 461) (u := 48) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (95 : ℤ) ^ 3 - (1) * 922 ^ 2 = 7291 by norm_num] at h
 
 theorem no_points_7342 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7342) := by
   have h := no_points (D := 2) (c := 60) (b := 323) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 323) (u := 177) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (60 : ℤ) ^ 3 - (2) * 323 ^ 2 = 7342 by norm_num] at h
 
 theorem no_points_7348 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7348) := by
   have h := no_points (D := 1) (c := 38) (b := 218) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 109) (u := 33) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (38 : ℤ) ^ 3 - (1) * 218 ^ 2 = 7348 by norm_num] at h
 
 theorem no_points_7375 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7375) := by
   have h := no_points (D := 1) (c := 26) (b := 101) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 101) (u := 91) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 101 ^ 2 = 7375 by norm_num] at h
 
 theorem no_points_7389 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7389) := by
   have h := no_points (D := 1) (c := 37) (b := 208) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (37 : ℤ) ^ 3 - (1) * 208 ^ 2 = 7389 by norm_num] at h
 
 theorem no_points_7390 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7390) := by
   have h := no_points (D := 2) (c := 412) (b := 5913) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5913) (u := 1399) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (412 : ℤ) ^ 3 - (2) * 5913 ^ 2 = 7390 by norm_num] at h
 
 theorem no_points_7422 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7422) := by
   have h := no_points (D := 2) (c := 20) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 17 ^ 2 = 7422 by norm_num] at h
 
 theorem no_points_7447 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7447) := by
   have h := no_points (D := 1) (c := 71) (b := 592) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (71 : ℤ) ^ 3 - (1) * 592 ^ 2 = 7447 by norm_num] at h
 
 theorem no_points_7527 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7527) := by
   have h := no_points (D := 1) (c := 166) (b := 2137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2137) (u := 1841) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (166 : ℤ) ^ 3 - (1) * 2137 ^ 2 = 7527 by norm_num] at h
 
 theorem no_points_7543 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7543) := by
   have h := no_points (D := 1) (c := 23) (b := 68) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 68 ^ 2 = 7543 by norm_num] at h
 
 theorem no_points_7546 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7546) := by
   have h := no_points (D := -2) (c := 14) (b := 49) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 49) (u := 10) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (14 : ℤ) ^ 3 - (-2) * 49 ^ 2 = 7546 by norm_num] at h
 
 theorem no_points_7606 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7606) := by
   have h := no_points (D := 2) (c := 402) (b := 5699) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5699) (u := 4398) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (402 : ℤ) ^ 3 - (2) * 5699 ^ 2 = 7606 by norm_num] at h
 
 theorem no_points_7623 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7623) := by
   have h := no_points (D := 1) (c := 58) (b := 433) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 433) (u := 179) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (58 : ℤ) ^ 3 - (1) * 433 ^ 2 = 7623 by norm_num] at h
 
 theorem no_points_7661 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7661) := by
   have h := no_points (D := 1) (c := 21) (b := 40) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 40 ^ 2 = 7661 by norm_num] at h
 
 theorem no_points_7758 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7758) := by
   have h := no_points (D := 2) (c := 20) (b := 11) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 11) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 11 ^ 2 = 7758 by norm_num] at h
 
 theorem no_points_7811 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7811) := by
   have h := no_points (D := 1) (c := 183) (b := 2474) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1237) (u := 546) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (183 : ℤ) ^ 3 - (1) * 2474 ^ 2 = 7811 by norm_num] at h
 
 theorem no_points_7838 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7838) := by
   have h := no_points (D := 2) (c := 20) (b := 9) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9) (u := 4) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 9 ^ 2 = 7838 by norm_num] at h
 
 theorem no_points_7839 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7839) := by
   have h := no_points (D := 1) (c := 22) (b := 53) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 53 ^ 2 = 7839 by norm_num] at h
 
 theorem no_points_7842 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7842) := by
   have h := no_points (D := -2) (c := -20) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 64) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-20 : ℤ) ^ 3 - (-2) * 89 ^ 2 = 7842 by norm_num] at h
 
 theorem no_points_7866 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7866) := by
   have h := no_points (D := -2) (c := -146) (b := 1249) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1249) (u := 50) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-146 : ℤ) ^ 3 - (-2) * 1249 ^ 2 = 7866 by norm_num] at h
 
 theorem no_points_7887 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7887) := by
   have h := no_points (D := 1) (c := 31) (b := 148) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (31 : ℤ) ^ 3 - (1) * 148 ^ 2 = 7887 by norm_num] at h
 
 theorem no_points_7898 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7898) := by
   have h := no_points (D := -2) (c := -90) (b := 607) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 607) (u := 194) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-90 : ℤ) ^ 3 - (-2) * 607 ^ 2 = 7898 by norm_num] at h
 
 theorem no_points_7962 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7962) := by
   have h := no_points (D := -2) (c := -26) (b := 113) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 113) (u := 62) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-26 : ℤ) ^ 3 - (-2) * 113 ^ 2 = 7962 by norm_num] at h
 
 theorem no_points_7982 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7982) := by
   have h := no_points (D := 2) (c := 20) (b := 3) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3) (u := 1) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 3 ^ 2 = 7982 by norm_num] at h
 
 theorem no_points_7994 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7994) := by
   have h := no_points (D := -2) (c := -114) (b := 863) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 863) (u := 612) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-114 : ℤ) ^ 3 - (-2) * 863 ^ 2 = 7994 by norm_num] at h
 
 theorem no_points_7998 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (7998) := by
   have h := no_points (D := 2) (c := 20) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (2) * 1 ^ 2 = 7998 by norm_num] at h
 
 theorem no_points_8002 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8002) := by
   have h := no_points (D := -2) (c := 20) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (-2) * 1 ^ 2 = 8002 by norm_num] at h
 
 theorem no_points_8005 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8005) := by
   have h := no_points (D := 1) (c := 29) (b := 128) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 7 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (29 : ℤ) ^ 3 - (1) * 128 ^ 2 = 8005 by norm_num] at h
 
 theorem no_points_8014 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8014) := by
   have h := no_points (D := 2) (c := 36) (b := 139) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 139) (u := 89) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (36 : ℤ) ^ 3 - (2) * 139 ^ 2 = 8014 by norm_num] at h
 
 theorem no_points_8019 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8019) := by
   have h := no_points (D := 1) (c := 295) (b := 5066) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 2533) (u := 1534) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (295 : ℤ) ^ 3 - (1) * 5066 ^ 2 = 8019 by norm_num] at h
 
 theorem no_points_8039 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8039) := by
   have h := no_points (D := 1) (c := 42) (b := 257) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 257) (u := 16) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (42 : ℤ) ^ 3 - (1) * 257 ^ 2 = 8039 by norm_num] at h
 
 theorem no_points_8071 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8071) := by
   have h := no_points (D := 1) (c := 23) (b := 64) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 6 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 64 ^ 2 = 8071 by norm_num] at h
 
 theorem no_points_8098 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8098) := by
   have h := no_points (D := -2) (c := 20) (b := 7) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7) (u := 3) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (-2) * 7 ^ 2 = 8098 by norm_num] at h
 
 theorem no_points_8118 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8118) := by
   have h := no_points (D := 2) (c := 266) (b := 3067) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 3067) (u := 2438) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (266 : ℤ) ^ 3 - (2) * 3067 ^ 2 = 8118 by norm_num] at h
 
 theorem no_points_8123 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8123) := by
   have h := no_points (D := 1) (c := 147) (b := 1780) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 445) (u := 212) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (147 : ℤ) ^ 3 - (1) * 1780 ^ 2 = 8123 by norm_num] at h
 
 theorem no_points_8148 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8148) := by
   have h := no_points (D := 1) (c := 22) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 50 ^ 2 = 8148 by norm_num] at h
 
 theorem no_points_8167 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8167) := by
   have h := no_points (D := 1) (c := 26) (b := 97) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 97) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 97 ^ 2 = 8167 by norm_num] at h
 
 theorem no_points_8174 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8174) := by
   have h := no_points (D := 2) (c := 28) (b := 83) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 83) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 83 ^ 2 = 8174 by norm_num] at h
 
 theorem no_points_8190 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8190) := by
   have h := no_points (D := 2) (c := 372) (b := 5073) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5073) (u := 1108) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (372 : ℤ) ^ 3 - (2) * 5073 ^ 2 = 8190 by norm_num] at h
 
 theorem no_points_8214 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8214) := by
   have h := no_points (D := 2) (c := 98) (b := 683) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 683) (u := 64) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (98 : ℤ) ^ 3 - (2) * 683 ^ 2 = 8214 by norm_num] at h
 
 theorem no_points_8222 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8222) := by
   have h := no_points (D := 2) (c := 484) (b := 7529) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 7529) (u := 6506) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (484 : ℤ) ^ 3 - (2) * 7529 ^ 2 = 8222 by norm_num] at h
 
 theorem no_points_8231 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8231) := by
   have h := no_points (D := 1) (c := 30) (b := 137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 137) (u := 37) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (30 : ℤ) ^ 3 - (1) * 137 ^ 2 = 8231 by norm_num] at h
 
 theorem no_points_8237 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8237) := by
   have h := no_points (D := 1) (c := 21) (b := 32) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 5 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 32 ^ 2 = 8237 by norm_num] at h
 
 theorem no_points_8243 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8243) := by
   have h := no_points (D := 1) (c := 39) (b := 226) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 113) (u := 98) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (39 : ℤ) ^ 3 - (1) * 226 ^ 2 = 8243 by norm_num] at h
 
 theorem no_points_8294 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8294) := by
   have h := no_points (D := 2) (c := 106) (b := 769) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 769) (u := 556) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (106 : ℤ) ^ 3 - (2) * 769 ^ 2 = 8294 by norm_num] at h
 
 theorem no_points_8314 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8314) := by
   have h := no_points (D := -2) (c := -82) (b := 529) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 529) (u := 373) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-82 : ℤ) ^ 3 - (-2) * 529 ^ 2 = 8314 by norm_num] at h
 
 theorem no_points_8354 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8354) := by
   have h := no_points (D := -2) (c := -12) (b := 71) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 71) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 71 ^ 2 = 8354 by norm_num] at h
 
 theorem no_points_8447 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8447) := by
   have h := no_points (D := 1) (c := 27) (b := 106) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 53) (u := 23) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 106 ^ 2 = 8447 by norm_num] at h
 
 theorem no_points_8468 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8468) := by
   have h := no_points (D := 1) (c := 54) (b := 386) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 193) (u := 112) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (54 : ℤ) ^ 3 - (1) * 386 ^ 2 = 8468 by norm_num] at h
 
 theorem no_points_8475 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8475) := by
   have h := no_points (D := 1) (c := 31) (b := 146) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 73) (u := 46) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (31 : ℤ) ^ 3 - (1) * 146 ^ 2 = 8475 by norm_num] at h
 
 theorem no_points_8486 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8486) := by
   have h := no_points (D := 2) (c := 82) (b := 521) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 521) (u := 358) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (82 : ℤ) ^ 3 - (2) * 521 ^ 2 = 8486 by norm_num] at h
 
 theorem no_points_8510 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8510) := by
   have h := no_points (D := 2) (c := 52) (b := 257) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 257) (u := 68) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (52 : ℤ) ^ 3 - (2) * 257 ^ 2 = 8510 by norm_num] at h
 
 theorem no_points_8532 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8532) := by
   have h := no_points (D := 1) (c := 46) (b := 298) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 149) (u := 44) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (46 : ℤ) ^ 3 - (1) * 298 ^ 2 = 8532 by norm_num] at h
 
 theorem no_points_8574 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8574) := by
   have h := no_points (D := 2) (c := 116) (b := 881) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 881) (u := 396) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (116 : ℤ) ^ 3 - (2) * 881 ^ 2 = 8574 by norm_num] at h
 
 theorem no_points_8578 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8578) := by
   have h := no_points (D := -2) (c := 20) (b := 17) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 17) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (-2) * 17 ^ 2 = 8578 by norm_num] at h
 
 theorem no_points_8598 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8598) := by
   have h := no_points (D := 2) (c := 26) (b := 67) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 67) (u := 47) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (2) * 67 ^ 2 = 8598 by norm_num] at h
 
 theorem no_points_8803 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8803) := by
   have h := no_points (D := 1) (c := 23) (b := 58) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 58 ^ 2 = 8803 by norm_num] at h
 
 theorem no_points_8830 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8830) := by
   have h := no_points (D := 2) (c := 28) (b := 81) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 81) (u := 22) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (28 : ℤ) ^ 3 - (2) * 81 ^ 2 = 8830 by norm_num] at h
 
 theorem no_points_8838 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8838) := by
   have h := no_points (D := 2) (c := 50) (b := 241) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 241) (u := 203) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (50 : ℤ) ^ 3 - (2) * 241 ^ 2 = 8838 by norm_num] at h
 
 theorem no_points_8861 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8861) := by
   have h := no_points (D := 1) (c := 21) (b := 20) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5) (u := 2) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 20 ^ 2 = 8861 by norm_num] at h
 
 theorem no_points_8867 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8867) := by
   have h := no_points (D := 1) (c := 27) (b := 104) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 104 ^ 2 = 8867 by norm_num] at h
 
 theorem no_points_8901 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8901) := by
   have h := no_points (D := 1) (c := 25) (b := 82) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (25 : ℤ) ^ 3 - (1) * 82 ^ 2 = 8901 by norm_num] at h
 
 theorem no_points_8916 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8916) := by
   have h := no_points (D := 1) (c := 70) (b := 578) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 289) (u := 38) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (70 : ℤ) ^ 3 - (1) * 578 ^ 2 = 8916 by norm_num] at h
 
 theorem no_points_8930 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8930) := by
   have h := no_points (D := -2) (c := -12) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 32) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-12 : ℤ) ^ 3 - (-2) * 73 ^ 2 = 8930 by norm_num] at h
 
 theorem no_points_8967 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8967) := by
   have h := no_points (D := 1) (c := 22) (b := 41) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 41) (u := 9) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 41 ^ 2 = 8967 by norm_num] at h
 
 theorem no_points_8994 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (8994) := by
   have h := no_points (D := -2) (c := -44) (b := 217) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 217) (u := 101) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-44 : ℤ) ^ 3 - (-2) * 217 ^ 2 = 8994 by norm_num] at h
 
 theorem no_points_9005 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9005) := by
   have h := no_points (D := 1) (c := 21) (b := 16) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 4 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 16 ^ 2 = 9005 by norm_num] at h
 
 theorem no_points_9046 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9046) := by
   have h := no_points (D := 2) (c := 34) (b := 123) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 123) (u := 52) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (2) * 123 ^ 2 = 9046 by norm_num] at h
 
 theorem no_points_9058 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9058) := by
   have h := no_points (D := -2) (c := 20) (b := 23) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 23) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (-2) * 23 ^ 2 = 9058 by norm_num] at h
 
 theorem no_points_9082 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9082) := by
   have h := no_points (D := -2) (c := -10) (b := 71) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 71) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 71 ^ 2 = 9082 by norm_num] at h
 
 theorem no_points_9085 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9085) := by
   have h := no_points (D := 1) (c := 821) (b := 23524) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 5881) (u := 1098) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (821 : ℤ) ^ 3 - (1) * 23524 ^ 2 = 9085 by norm_num] at h
 
 theorem no_points_9118 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9118) := by
   have h := no_points (D := 2) (c := 36) (b := 137) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 137) (u := 51) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (36 : ℤ) ^ 3 - (2) * 137 ^ 2 = 9118 by norm_num] at h
 
 theorem no_points_9122 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9122) := by
   have h := no_points (D := -2) (c := -36) (b := 167) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 167) (u := 154) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-36 : ℤ) ^ 3 - (-2) * 167 ^ 2 = 9122 by norm_num] at h
 
 theorem no_points_9123 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9123) := by
   have h := no_points (D := 1) (c := 139) (b := 1636) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 409) (u := 266) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (139 : ℤ) ^ 3 - (1) * 1636 ^ 2 = 9123 by norm_num] at h
 
 theorem no_points_9178 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9178) := by
   have h := no_points (D := -2) (c := -370) (b := 5033) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 5033) (u := 2481) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-370 : ℤ) ^ 3 - (-2) * 5033 ^ 2 = 9178 by norm_num] at h
 
 theorem no_points_9183 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9183) := by
   have h := no_points (D := 1) (c := 358) (b := 6773) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 6773) (u := 2891) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (358 : ℤ) ^ 3 - (1) * 6773 ^ 2 = 9183 by norm_num] at h
 
 theorem no_points_9197 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9197) := by
   have h := no_points (D := 1) (c := 21) (b := 8) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 8 ^ 2 = 9197 by norm_num] at h
 
 theorem no_points_9205 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9205) := by
   have h := no_points (D := 1) (c := 221) (b := 3284) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 821) (u := 526) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (221 : ℤ) ^ 3 - (1) * 3284 ^ 2 = 9205 by norm_num] at h
 
 theorem no_points_9238 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9238) := by
   have h := no_points (D := 2) (c := 906) (b := 19283) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 19283) (u := 6713) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (906 : ℤ) ^ 3 - (2) * 19283 ^ 2 = 9238 by norm_num] at h
 
 theorem no_points_9245 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9245) := by
   have h := no_points (D := 1) (c := 21) (b := 4) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (21 : ℤ) ^ 3 - (1) * 4 ^ 2 = 9245 by norm_num] at h
 
 theorem no_points_9279 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9279) := by
   have h := no_points (D := 1) (c := 22) (b := 37) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 37) (u := 6) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 37 ^ 2 = 9279 by norm_num] at h
 
 theorem no_points_9375 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9375) := by
   have h := no_points (D := 1) (c := 34) (b := 173) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 173) (u := 80) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (34 : ℤ) ^ 3 - (1) * 173 ^ 2 = 9375 by norm_num] at h
 
 theorem no_points_9455 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9455) := by
   have h := no_points (D := 1) (c := 171) (b := 2234) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 1117) (u := 214) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (171 : ℤ) ^ 3 - (1) * 2234 ^ 2 = 9455 by norm_num] at h
 
 theorem no_points_9463 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9463) := by
   have h := no_points (D := 1) (c := 23) (b := 52) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 52 ^ 2 = 9463 by norm_num] at h
 
 theorem no_points_9492 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9492) := by
   have h := no_points (D := 1) (c := 22) (b := 34) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 17) (u := 4) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 34 ^ 2 = 9492 by norm_num] at h
 
 theorem no_points_9583 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9583) := by
   have h := no_points (D := 1) (c := 74) (b := 629) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 629) (u := 191) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (74 : ℤ) ^ 3 - (1) * 629 ^ 2 = 9583 by norm_num] at h
 
 theorem no_points_9655 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9655) := by
   have h := no_points (D := 1) (c := 26) (b := 89) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 89) (u := 34) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (26 : ℤ) ^ 3 - (1) * 89 ^ 2 = 9655 by norm_num] at h
 
 theorem no_points_9658 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9658) := by
   have h := no_points (D := -2) (c := -10) (b := 73) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 73) (u := 32) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-10 : ℤ) ^ 3 - (-2) * 73 ^ 2 = 9658 by norm_num] at h
 
 theorem no_points_9667 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9667) := by
   have h := no_points (D := 1) (c := 23) (b := 50) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (23 : ℤ) ^ 3 - (1) * 50 ^ 2 = 9667 by norm_num] at h
 
 theorem no_points_9683 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9683) := by
   have h := no_points (D := 1) (c := 27) (b := 100) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 2 (b₁ := 25) (u := 7) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (27 : ℤ) ^ 3 - (1) * 100 ^ 2 = 9683 by norm_num] at h
 
 theorem no_points_9693 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9693) := by
   have h := no_points (D := 1) (c := 229) (b := 3464) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 433) (u := 179) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (229 : ℤ) ^ 3 - (1) * 3464 ^ 2 = 9693 by norm_num] at h
 
 theorem no_points_9735 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9735) := by
   have h := no_points (D := 1) (c := 454) (b := 9673) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 9673) (u := 3897) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (454 : ℤ) ^ 3 - (1) * 9673 ^ 2 = 9735 by norm_num] at h
 
 theorem no_points_9751 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9751) := by
   have h := no_points (D := 1) (c := 263) (b := 4264) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 3 (b₁ := 533) (u := 460) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (263 : ℤ) ^ 3 - (1) * 4264 ^ 2 = 9751 by norm_num] at h
 
 theorem no_points_9807 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9807) := by
   have h := no_points (D := 1) (c := 22) (b := 29) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 29) (u := 12) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 29 ^ 2 = 9807 by norm_num] at h
 
 theorem no_points_9818 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9818) := by
   have h := no_points (D := -2) (c := -210) (b := 2153) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 2153) (u := 1305) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (-210 : ℤ) ^ 3 - (-2) * 2153 ^ 2 = 9818 by norm_num] at h
 
 theorem no_points_9918 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9918) := by
   have h := no_points (D := 2) (c := 60) (b := 321) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 321) (u := 76) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (60 : ℤ) ^ 3 - (2) * 321 ^ 2 = 9918 by norm_num] at h
 
 theorem no_points_9922 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9922) := by
   have h := no_points (D := -2) (c := 20) (b := 31) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 31) (u := 8) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (20 : ℤ) ^ 3 - (-2) * 31 ^ 2 = 9922 by norm_num] at h
 
 theorem no_points_9967 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9967) := by
   have h := no_points (D := 1) (c := 98) (b := 965) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 965) (u := 112) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (98 : ℤ) ^ 3 - (1) * 965 ^ 2 = 9967 by norm_num] at h
 
 theorem no_points_9972 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (9972) := by
   have h := no_points (D := 1) (c := 22) (b := 26) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 1 (b₁ := 13) (u := 5) (by norm_num) (by norm_num))
-    (M := 32) (by norm_num) (by decide +kernel) x y
+    (M := 32) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show (22 : ℤ) ^ 3 - (1) * 26 ^ 2 = 9972 by norm_num] at h
 
 end PerfectPower.Generated.MordellDescent

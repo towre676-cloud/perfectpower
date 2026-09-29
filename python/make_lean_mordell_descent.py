@@ -146,7 +146,7 @@ def main():
         out.append(f'''theorem {name(k)} (x y : ℤ) : y ^ 2 ≠ x ^ 3 + ({k}) := by
   have h := no_points (D := {D}) (c := {c}) (b := {b}) (by norm_num)
     (goodDivisors_of_cert (by norm_num) {j} (b₁ := {b1}) (u := {u}) (by norm_num) (by norm_num))
-    (M := {M}) (by norm_num) (by decide +kernel) x y
+    (M := {M}) (by norm_num) (by norm_num) (by decide +kernel) x y
   rwa [show ({c} : ℤ) ^ 3 - ({D}) * {b} ^ 2 = {k} by norm_num] at h
 ''')
     out.append('end PerfectPower.Generated.MordellDescent')

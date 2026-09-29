@@ -66,17 +66,21 @@ theorem exists_bad_prime {D : ℤ} (hD : D = 1 ∨ D = 2 ∨ D = -2) :
   by_cases hg : good D (N.minFac % 8)
   · obtain ⟨m, hm⟩ := Nat.minFac_dvd N
     have hpos : 0 < N := by omega
+    have hm0 : 0 < m := by
+      rcases Nat.eq_zero_or_pos m with h | h
+      · rw [h, mul_zero] at hm; omega
+      · exact h
     have hm_lt : m < N := by
-      rw [hm]; have := hp.two_le
-      have : 0 < m := by rcases Nat.eq_zero_or_pos m with h | h <;> [simp [h] at hm; omega; exact h]
-      nlinarith
+      have := hp.two_le
+      calc m < N.minFac * m := by nlinarith
+        _ = N := hm.symm
     have hmodd : m % 2 = 1 := by
       rcases Nat.even_or_odd m with ⟨t, ht⟩ | ⟨t, ht⟩
       · exfalso; rw [hm, ht] at hodd; rw [show N.minFac * (t + t) = 2 * (N.minFac * t) by ring] at hodd; omega
       · omega
     have hmbad : ¬ good D (m % 8) := fun h => hbad (hm ▸ good_mul hD hg h)
     obtain ⟨p, hpp, hpm, hpb⟩ := ih m hm_lt hmodd hmbad
-    exact ⟨p, hpp, hpm.trans ⟨N.minFac, by rw [hm, mul_comm]⟩, hpb⟩
+    exact ⟨p, hpp, hpm.trans (Dvd.intro_left _ hm.symm), hpb⟩
   · exact ⟨_, hp, Nat.minFac_dvd N, hg⟩
 
 /-- Certificate for the prime factors of `b`: `b = 2^j b₁` with `b₁ ∣ u^2 + D`. -/
@@ -106,33 +110,31 @@ def CongOK (D c b : ℤ) (M : ℕ) : Prop :=
 
 instance (D c b : ℤ) (M : ℕ) : Decidable (CongOK D c b M) := by unfold CongOK; infer_instance
 
-lemma cast_emod (M : ℕ) (x : ℤ) : (((x % M).toNat : ℕ) : ℤ) = x % M :=
-  Int.toNat_of_nonneg (Int.emod_nonneg _ (by positivity))
+lemma cast_emod {M : ℕ} (hM : 0 < M) (x : ℤ) : (((x % M).toNat : ℕ) : ℤ) = x % M :=
+  Int.toNat_of_nonneg (Int.emod_nonneg _ (by exact_mod_cast hM.ne'))
 
 /-- **The descent.** -/
 theorem no_points {D c b : ℤ} (hD : D = 1 ∨ D = 2 ∨ D = -2)
     (hb : ∀ p : ℕ, p.Prime → p ≠ 2 → (p : ℤ) ∣ b → good D (p % 8))
-    {M : ℕ} (hM : 8 ∣ M) (hcong : CongOK D c b M) (x y : ℤ) :
+    {M : ℕ} (hM : 8 ∣ M) (hMpos : 0 < M) (hcong : CongOK D c b M) (x y : ℤ) :
     y ^ 2 ≠ x ^ 3 + (c ^ 3 - D * b ^ 2) := by
   intro heq
-  have hM0 : (0 : ℤ) < M := by
-    have : 0 < M := Nat.pos_of_ne_zero (by rintro rfl; simp at hM)
-    exact_mod_cast this
+  have hM0 : (0 : ℤ) < M := by exact_mod_cast hMpos
   set X := (x % M).toNat
   set Y := (y % M).toNat
-  have hX : (X : ℤ) = x % M := cast_emod M x
-  have hY : (Y : ℤ) = y % M := cast_emod M y
+  have hX : (X : ℤ) = x % M := cast_emod hMpos x
+  have hY : (Y : ℤ) = y % M := cast_emod hMpos y
   have hXlt : X < M := by have := Int.emod_lt_of_pos x hM0; omega
   have hYlt : Y < M := by have := Int.emod_lt_of_pos y hM0; omega
   -- `x ≡ X`, `y ≡ Y` mod `M`
-  obtain ⟨s, hs⟩ : (M : ℤ) ∣ x - X := by rw [hX]; exact Int.dvd_sub_of_emod_eq rfl
-  obtain ⟨t, ht⟩ : (M : ℤ) ∣ y - Y := by rw [hY]; exact Int.dvd_sub_of_emod_eq rfl
+  obtain ⟨s, hs⟩ : (M : ℤ) ∣ x - X := by rw [hX]; exact Int.dvd_self_sub_of_emod_eq rfl
+  obtain ⟨t, ht⟩ : (M : ℤ) ∣ y - Y := by rw [hY]; exact Int.dvd_self_sub_of_emod_eq rfl
   have hc : ((Y : ℤ) ^ 2 - X ^ 3 - c ^ 3 + D * b ^ 2) % M = 0 := by
     apply Int.emod_eq_zero_of_dvd
     have hx' : x = X + M * s := by linarith
     have hy' : y = Y + M * t := by linarith
     refine ⟨-(2 * Y * t + M * t ^ 2) + (3 * X ^ 2 * s + 3 * X * M * s ^ 2 + M ^ 2 * s ^ 3), ?_⟩
-    rw [hx', hy'] at heq; linear_combination -heq
+    rw [hx', hy'] at heq; linear_combination heq
   obtain ⟨hq2, hq8⟩ := hcong X hXlt Y hYlt hc
   set q := x ^ 2 - c * x + c ^ 2 with hqdef
   obtain ⟨r, hr⟩ : (8 : ℤ) ∣ q - ((X : ℤ) ^ 2 - c * X + c ^ 2) := by
@@ -157,16 +159,16 @@ theorem no_points {D c b : ℤ} (hD : D = 1 ∨ D = 2 ∨ D = -2)
 /-- The hit-list form: `n^3 + k` is never a square, for any integer `n`. -/
 theorem not_isHit {D c b k : ℤ} (hD : D = 1 ∨ D = 2 ∨ D = -2)
     (hb : ∀ p : ℕ, p.Prime → p ≠ 2 → (p : ℤ) ∣ b → good D (p % 8))
-    {M : ℕ} (hM : 8 ∣ M) (hcong : CongOK D c b M) (hk : k = c ^ 3 - D * b ^ 2) (n : ℤ) :
+    {M : ℕ} (hM : 8 ∣ M) (hMpos : 0 < M) (hcong : CongOK D c b M) (hk : k = c ^ 3 - D * b ^ 2) (n : ℤ) :
     ¬ IsHit 2 (n ^ 3 + k) := by
   rintro ⟨m, hm⟩
-  exact no_points hD hb hM hcong n m (by rw [← hk]; exact hm.symm)
+  exact no_points hD hb hM hMpos hcong n m (by rw [← hk]; exact hm.symm)
 
 /-- `y^2 = x^3 + 7` has no integral points (`c = 2`, `b = 1`, `D = 1`). -/
 theorem mordell_7 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + 7 := by
   have := no_points (D := 1) (c := 2) (b := 1) (by norm_num)
     (goodDivisors_of_cert (by norm_num) 0 (b₁ := 1) (u := 0) (by norm_num) (by norm_num))
-    (M := 8) (by norm_num) (by decide +kernel) x y
+    (M := 8) (by norm_num) (by norm_num) (by decide +kernel) x y
   norm_num at this; exact this
 
 end PerfectPower.MordellDescent
