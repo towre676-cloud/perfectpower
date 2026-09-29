@@ -264,3 +264,16 @@ open PerfectPower
 #print axioms PerfectPower.RationalYun.clear_denoms
 #print axioms PerfectPower.RationalYun.branch_count
 #print axioms PerfectPower.RationalYun.Decomposition.pell_count
+-- Positivity of kappa: infinitude, and a finite check for the radical type
+#print axioms PerfectPower.RationalYun.infinite_iff_unbounded
+#print axioms PerfectPower.RationalYun.kappa_pos_iff_rpow
+#print axioms PerfectPower.RationalYun.kappa_pos_iff_log
+#print axioms PerfectPower.RationalYun.Decomposition.radical_count_pos
+#print axioms PerfectPower.RationalYun.Decomposition.pell_count_pos
+#print axioms PerfectPower.RationalYun.z0_dvd
+#print axioms PerfectPower.RationalYun.nat_infinite_of_hit
+#print axioms PerfectPower.RationalYun.nat_radical_infinite_iff
+#print axioms PerfectPower.RationalYun.infinite_shift
+#print axioms PerfectPower.RationalYun.zeros_finite
+#print axioms PerfectPower.RationalYun.int_radical_infinite_iff
+#print axioms PerfectPower.RationalYun.Decomposition.radical_kappa_decide

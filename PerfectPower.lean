@@ -39,3 +39,4 @@ import PerfectPower.Transport
 import PerfectPower.Continuation.DenominatorReduction
 import PerfectPower.Continuation.RadicalCountGeneral
 import PerfectPower.Continuation.PellCountGeneral
+import PerfectPower.Continuation.KappaPositive
