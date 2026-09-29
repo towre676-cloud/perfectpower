@@ -10,7 +10,13 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 .
 ----------------------------------------------------------------------
-Ran 66 tests in 16.978s
+Ran 66 tests in 16.699s
+
+OK
+python3 -m unittest discover -s continuation_tests
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.786s
 
 OK
 python3 python/independent_cert_audit.py

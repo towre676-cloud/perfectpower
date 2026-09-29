@@ -1,5 +1,6 @@
 {
-  "base_commit": "ddad6befc1f16219e4860bd90273a99a25e37bd6",
+  "original_base_commit": "ddad6befc1f16219e4860bd90273a99a25e37bd6",
+  "head_commit": "0b6a091349b7f6c25e0c6bf7d310b3ad0fae1dba",
   "scope": "continuation targeted build; not a claim of full make verify",
   "steps": [
     {
@@ -10,7 +11,7 @@
         "PerfectPower.Continuation.DenominatorReduction"
       ],
       "exit_code": 0,
-      "seconds": 240.651
+      "seconds": 1.732
     },
     {
       "name": "axioms",
@@ -21,7 +22,7 @@
         "audit/continuation/Axioms.lean"
       ],
       "exit_code": 0,
-      "seconds": 14.863
+      "seconds": 15.448
     },
     {
       "name": "lint",
@@ -32,7 +33,7 @@
         "audit/continuation/Lint.lean"
       ],
       "exit_code": 0,
-      "seconds": 5.367
+      "seconds": 5.349
     },
     {
       "name": "new_python_tests",
@@ -46,7 +47,7 @@
         "-v"
       ],
       "exit_code": 0,
-      "seconds": 0.851
+      "seconds": 0.857
     },
     {
       "name": "baseline_python_and_certificates",
@@ -56,7 +57,7 @@
         "cert-audit"
       ],
       "exit_code": 0,
-      "seconds": 17.224
+      "seconds": 17.777
     }
   ],
   "source_sha256": {
