@@ -2,7 +2,7 @@
 
 For each strand of prior work this page says three things: what the repository **reproduces**, what it **formalises**, and what, if anything, it **adds**.
 
-**Status of this page.** It was written without library access. Bibliographic details come from memory, from search snippets and from an external reviewer's notes. The build environment's network policy blocks arXiv and the journal hosts, so **no entry below has yet been checked against its primary text.** Entries marked [unverified] carry claims about the content of a paper that we could not read. Before any announcement, a literature pass must check each entry against the primary source. That pass should cover especially Bilu–Tichy, Schinzel–Tijdeman, the implementations of Runge's method, the 2023 explicit superelliptic bounds and the formal Mordell work. The repository makes no novelty claim that depends on these comparisons.
+**Source audit (2026-09-29).** The full texts of Beukers–Tengely (2005), Bérczes–Bugeaud–Győry–Mello–Ostafe–Sha (2023, Theorems 2.1–2.2), and Baanen–Best–Coppola–Dahmen (CPP 2023, Theorem 5.1 and §5) have been checked against the linked primary texts below. This is a *partial* literature audit. Entries without a primary-text link, including LeVeque, Bilu–Tichy, Schinzel–Tijdeman, Walsh and the Hall/Pillai comparisons, remain to be checked before an announcement. Bibliographic references alone do not verify the assertions attached to them. No novelty claim depends on an unaudited comparison.
 
 ## Positioning
 
@@ -12,7 +12,7 @@ For each strand of prior work this page says three things: what the repository *
 
 The parts with a chance of being new are engineering and certification:
 
-- the complete rigid-branch enumerator, together with its dyadic root-isolation strategy, but *only after* comparison with the existing Runge implementations listed below;
+- the specialized dyadic root-isolation strategy and its completeness certificates, subject to a direct example-by-example comparison with Beukers–Tengely's existing general Runge algorithm;
 - the pipeline that emits Lean certificates, including the interval-sandwich certificates;
 - the Lean formalisations themselves, most of which are new as formal statements whatever the novelty of the mathematics.
 
@@ -23,7 +23,7 @@ The parts with a chance of being new are engineering and certification:
 - *Reproduced:* the list of exceptional patterns, through $\chi=d'(1-S)$.
 - *Formalised:* the combinatorial half of that derivation (`chi_neg_iff`); the geometric half and Siegel remain external (`SuperellipticSiegel` in `Atlas.lean`).
 - *Adds:* explicit constants for the two infinite nonpower patterns, with formal exact counts. This is almost certainly classical in substance.
-- The statement was only ever available to us from secondary sources [unverified].
+- The exceptional multiplicity patterns are also stated in the introduction of [Bérczes et al. (2023)](https://arxiv.org/html/2310.09704v1), §2.2, as LeVeque's prior result. LeVeque's original paper has not been inspected [primary text pending].
 
 **Brindza, Acta Math. Hungar. 44 (1984); and later effective work on superelliptic equations.**
 - These make LeVeque's finiteness effective.
@@ -33,24 +33,19 @@ The parts with a chance of being new are engineering and certification:
 - If $P$ has at least two distinct roots, $m$ is effectively bounded.
 - Cited only as a remark: counting all exponents at once. The resulting bound is too weak to compute with.
 
-**Bilu–Tichy, *The Diophantine equation $f(x)=g(y)$*, Acta Arith. 95 (2000) 261–288.**
-- An effective classification of when $f(x)=g(y)$ has infinitely many solutions with bounded denominator, in terms of standard pairs.
-- The atlas is the specialisation $g=y^d$, where the Dickson/Chebyshev kinds drop out. Generalising the atlas to standard pairs is the proposed next monograph part (`OPEN_PROBLEMS.md`).
-- *Adds today:* nothing.
+**Bilu–Tichy, *The Diophantine equation $f(x)=g(y)$*, Acta Arith. 95 (2000) 261–288 [primary text pending].**
+- The standard-pair classification concerns infinitely many solutions with bounded denominator. The relationship between its cases and the atlas's fixed-power family $g=y^d$ has **not** been worked through here; in particular, the former assertion that the Dickson/Chebyshev types simply drop out is withdrawn.
+- A sequel on general $g$ must first specialize each standard pair to $g=y^d$, impose integral and sign conditions, and separate an infinitude criterion from a counting theorem. No novelty claim is made here.
 
 **Schäffer, *The equation $1^p+\cdots+n^p=m^q$*, Acta Math. 95 (1956) 155–189.**
 - *Reproduced:* the list of infinite pairs $(1,2),(3,2),(3,4),(5,2)$ for $k\le10$, $d\le6$, with growth constants.
 - *Formalised:* nothing.
 - *Adds:* explicit counting constants, e.g. $\kappa=1/\log(5+2\sqrt6)$ for $(5,2)$, probably known to specialists.
 
-**Runge (1887); Walsh, *A quantitative version of Runge's theorem on Diophantine equations*, Acta Arith. 62 (1992) 157–172; Beukers–Tengely, *An implementation of Runge's method for Diophantine equations* (2005), and Tengely's thesis (Leiden, 2005).**
-- This is **prior art for the rigid-branch enumeration.**
-- Walsh gives explicit bounds. Tengely implements Runge's method for equations of the shape $y^2=F(x)$, among others.
-- `runge.py` must be compared against these before any claim. Plausible differences to check are:
-  - exact dyadic root isolation of $D^dF-(P+t)^d$ instead of bounding and searching;
-  - general $d$;
-  - the Lean certificate output.
-- *Formalised:* the Runge reduction in integer form (`runge_finite`), plus generated certificates.
+**Runge (1887); Walsh, *A quantitative version of Runge's theorem on Diophantine equations*, Acta Arith. 62 (1992) 157–172 [primary texts pending]; [Beukers–Tengely, *An implementation of Runge's method for Diophantine equations*](https://arxiv.org/html/math/0512418v1) (2005).**
+- **Prior art:** Beukers–Tengely §1 states a Runge–Schinzel Newton-polygon criterion, constructs an implementable algorithm over $\mathbb Q$ without Puiseux series or algebraic coefficients, and uses discriminants and resultants to isolate a finite search region (especially §2). Its examples are complete integral-point computations for nontrivial curves. Thus neither an effective Runge search nor use of rational polynomial operations can be claimed as new here.
+- A defensible possible difference is a specialized algorithm for $y^d=F(x)$ using exact dyadic isolation of $D^dF-(P+t)^d$ and compact Lean-checkable completeness certificates. This remains a **candidate contribution**, pending benchmark cases and a comparison of hypothesis, cutoff size and certificate size. Beukers–Tengely treats more general bivariate curves; `runge.py` must not be described as a general improvement.
+- *Formalised here:* the integer-form reduction (`runge_finite`) and generated instance certificates. The paper's general algorithm and completeness proofs have not been formalised here.
 
 **Ljunggren (1943): $(x^n-1)/(x-1)=y^q$, case $n=5$, $q=2$.**
 - *Reproduced and formalised:* the hit set $\{3\}$ (`ljunggren_hitSet`; also a generated certificate).
@@ -104,14 +99,15 @@ The parts with a chance of being new are engineering and certification:
 - Hindry–Silverman bound the number of ($S$-)integral points in terms of the rank, the number of bad primes and the Szpiro ratio of the curve. Uniformity in the curve therefore rests on Szpiro's conjecture. This is from memory; check the precise statement against the paper.
 - The census supplies counts, ranks and discriminants. The uniformity plots are **numerical evidence** only.
 
-**Bérczes, Evertse, Győry et al., *Explicit bounds for the solutions of superelliptic equations over number fields* (arXiv:2310.09704) [unverified].**
-- By the reviewer's account, this treats the multiple-root superelliptic regime with explicit bounds. That is the same regime as the atlas's finite type, which the repository handles only ineffectively (via Siegel) outside the Runge branch.
-- It is the natural source for turning `SuperellipticSiegel` into an effective statement. It belongs in the introduction of any paper, not in a deferred roadmap.
-- *Formalised:* nothing.
+**[Bérczes, Bugeaud, Győry, Mello, Ostafe and Sha, *Explicit bounds for the solutions of superelliptic equations over number fields*](https://arxiv.org/html/2310.09704v1) (2023).**
+- **Correction:** Bérczes–Evertse–Győry is an *earlier* work cited by this paper, not its author list. §2.2 defines $m_i=m/\gcd(m,e_i)$ from the root multiplicities $e_i$. Theorem 2.1 gives explicit height bounds outside LeVeque's exceptional tuples $(a,1,\ldots,1)$ and $(2,2,1,\ldots,1)$; it includes multiple-root cases. Theorem 2.2 also bounds the varying exponent under its stated nonunit hypothesis on $y$.
+- This is strong prior art for **effective** finite-type bounds. The repository's Siegel-premise route is ineffective, while `runge.py` handles an algorithmic subcase. Importing Theorem 2.1 into Lean would require formalizing its full hypotheses and a bound usable by the enumeration algorithm; a citation is not an executable cutoff.
+- *Formalised here:* nothing from this paper.
 
-**Baanen, Best, Coppola, Dahmen, *Formalized class group computations and integral points on Mordell elliptic curves* (CPP 2023, arXiv:2209.15492) [unverified].**
-- Formal complete solutions of selected Mordell equations. Any claim here about formal completeness of genus-one hit lists must be compared with it.
-- The repository does **not** yet prove completeness of any genus-one list in Lean. `Genus1.lean` proves hit lists *from* a named Sage point hypothesis, so it is complementary.
+**[Baanen, Best, Coppola and Dahmen, *Formalized Class Group Computations and Integral Points on Mordell Elliptic Curves*](https://arxiv.org/html/2209.15492v2) (CPP 2023).**
+- Theorem 5.1 and §5 give a Lean 3 class-group descent for $y^2=x^3+c$ under explicit negative-squarefree, congruence and class-number hypotheses. §4 computes class numbers for $c=-1,-2,-5,-6,-13$; §5 describes complete integral-point results for selected instances. **Kernel-checked genus-one completeness therefore predates this repository.**
+- `Genus1.lean` currently derives lists only under a named Sage point-list hypothesis, so its 399 instances are *conditional reductions*, not a replacement for those completeness proofs. A concrete next step is to choose a compatible $c$, translate its signed integral-point statement to positive $n$ and $m^2=F(n)$, and port or reprove the descent under this repository's Lean 4/Mathlib version. Verify the resulting theorem with the standard-axiom audit before advertising a new complete instance.
+- Any claim of novelty should concern the integration of a completed proof into the hit-count and certificate interface, not the first formal Mordell solution.
 
 **Flajolet, Gourdon, Dumas, *Mellin transforms and asymptotics: harmonic sums*, TCS 144 (1995) 3–58.**
 - The general machinery behind Theorem T2's log-periodic term. T2's novelty, if any, is limited to its arithmetic input: the Pell orbit and class decomposition, the shift $-B/(2A)$ and the exact correction $\delta_j$.
@@ -119,5 +115,11 @@ The parts with a chance of being new are engineering and certification:
 **Proof by reflection and verified numerical certificates (e.g. LeanCert) [unverified].**
 - `pp-cert/1` (`docs/CERTIFICATE_FORMAT.md`) follows the standard search/check/interpret separation. A comparison of formats and checking times is future work.
 
-**Bilu–Tichy and counting.** Bilu–Tichy classify when $f(x)=g(y)$ has infinitely many rational solutions with bounded denominator. That does not by itself give the number of positive *integral* $x$: integrality, local congruences, compositions and parametrisation multiplicity can change or remove the family. The atlas's Pell and radical modules are the $g=y^d$ case of such a counting theory, and a sequel should first prove the complete integer count for one non-power $g$ family.
+**Bilu–Tichy and counting [primary text pending].** Its standard-pair framework for bounded-denominator solutions does not by itself count positive integral $x$: integrality, sign, local conditions and parametrisation multiplicity require separate arguments. The Pell and radical modules provide counts for particular fixed-power families. A sequel should specialize the standard pairs rigorously and first prove a complete integer count for one non-power $g$ family.
 
+
+## Audit boundary and immediate comparison experiment
+
+The three full-text links above support only the statements attributed to those papers. The remaining references on this page retain their pre-audit status; in particular the historical priority of individual counting constants, Walsh's exact bounds, and the Hall/Pillai record comparisons have not been certified by this pass.
+
+For a reproducible Runge comparison, select one $y^d=F(x)$ example within both algorithms' hypotheses. Record the same input polynomial, the actual infinity-branch condition, each cutoff, the finite candidates, and the independent completeness argument. Time and certificate size can then be reported with versioned inputs. The comparison must distinguish an exact enumerator from a Lean proof of its finite result.
