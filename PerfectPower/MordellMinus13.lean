@@ -32,8 +32,8 @@ lemma thue (y p q : ℤ) (hy : y = p ^ 3 - 3 * 13 * p * q ^ 2)
   rcases Int.eq_one_or_neg_one_of_mul_eq_one' hq with ⟨rfl, h2⟩ | ⟨rfl, h2⟩
   · exfalso
     have h3 : 3 * p ^ 2 = 14 := by linarith
-    generalize p ^ 2 = t at h3
-    omega
+    have h4 := Int.mul_emod_right 3 (p ^ 2)
+    rw [h3] at h4; norm_num at h4
   · have hp2 : p ^ 2 = 4 := by nlinarith
     have : (p - 2) * (p + 2) = 0 := by linear_combination hp2
     rcases mul_eq_zero.mp this with hp | hp

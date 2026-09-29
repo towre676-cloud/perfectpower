@@ -20,6 +20,7 @@ lint: lean
 
 test:
 	$(PY) -m unittest discover -s python/tests
+	$(PY) -m unittest discover -s continuation_tests
 
 cert-audit:
 	$(PY) python/independent_cert_audit.py

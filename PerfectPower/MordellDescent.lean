@@ -65,7 +65,6 @@ theorem exists_bad_prime {D : ℤ} (hD : D = 1 ∨ D = 2 ∨ D = -2) :
   have hp := Nat.minFac_prime hN1
   by_cases hg : good D (N.minFac % 8)
   · obtain ⟨m, hm⟩ := Nat.minFac_dvd N
-    have hpos : 0 < N := by omega
     have hm0 : 0 < m := by
       rcases Nat.eq_zero_or_pos m with h | h
       · rw [h, mul_zero] at hm; omega

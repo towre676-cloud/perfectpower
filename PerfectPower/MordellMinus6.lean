@@ -30,11 +30,11 @@ theorem no_points (x y : ℤ) : y ^ 2 ≠ x ^ 3 - 6 := by
   have hq' : q * (3 * p ^ 2 - 6 * q ^ 2) = 1 := by linear_combination -hq
   rcases Int.eq_one_or_neg_one_of_mul_eq_one' hq' with ⟨rfl, h2⟩ | ⟨rfl, h2⟩
   · have h3 : 3 * p ^ 2 = 7 := by linarith
-    generalize p ^ 2 = t at h3
-    omega
+    have h4 := Int.mul_emod_right 3 (p ^ 2)
+    rw [h3] at h4; norm_num at h4
   · have h3 : 3 * p ^ 2 = 5 := by linarith
-    generalize p ^ 2 = t at h3
-    omega
+    have h4 := Int.mul_emod_right 3 (p ^ 2)
+    rw [h3] at h4; norm_num at h4
 
 /-- **Complete (empty) hit list.**  `n^3 - 6` is never a perfect square. -/
 theorem not_isHit (n : ℤ) : ¬ IsHit 2 (n ^ 3 - 6) := by

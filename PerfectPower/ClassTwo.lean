@@ -30,10 +30,12 @@ namespace PerfectPower.ClassTwo
 
 /-- Coordinates of `(a - b√-D)^3 = W1 + W2 √-D`. -/
 def W1 (D a b : ℤ) : ℤ := a ^ 3 - 3 * D * a * b ^ 2
+/-- The `√-D` coordinate of `(a - b√-D)^3`. -/
 def W2 (D a b : ℤ) : ℤ := D * b ^ 3 - 3 * a ^ 2 * b
 
 /-- Coordinates of `(y + √-D) · (a - b√-D)^3 = Q1 + Q2 √-D`. -/
 def Q1 (D y a b : ℤ) : ℤ := y * W1 D a b - D * W2 D a b
+/-- The `√-D` coordinate of `(y + √-D) · (a - b√-D)^3`. -/
 def Q2 (D y a b : ℤ) : ℤ := y * W2 D a b + W1 D a b
 
 lemma Q2_eq (D y a b : ℤ) :
@@ -67,9 +69,8 @@ lemma exists_short (x t : ℤ) (hx : 0 < x) (A B : ℕ) (hAB : x < ((A + 1) * (B
   have hmaps : ∀ p ∈ S, f p ∈ Finset.range x.toNat := by
     intro p _
     simp only [Finset.mem_range, f]
-    have h1 := Int.emod_nonneg ((p.1 : ℤ) - t * p.2) hx.ne'
     have h2 := Int.emod_lt_of_pos ((p.1 : ℤ) - t * p.2) hx
-    generalize ((p.1 : ℤ) - t * p.2) % x = r at h1 h2
+    generalize ((p.1 : ℤ) - t * p.2) % x = r at h2
     omega
   have hcard : (Finset.range x.toNat).card < S.card := by
     simp only [Finset.card_range, S, Finset.card_product]

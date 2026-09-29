@@ -1,0 +1,36 @@
+python3 -m unittest discover -s python/tests
+........................................................./home/user/perfectpower/python/tests/test_gates.py:17: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/perfectpower/data/mordell_census.jsonl' mode='r' encoding='UTF-8'>
+  cls.rows = [json.loads(line) for line in open(ROOT / 'data' / 'mordell_census.jsonl')]
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+....../home/user/perfectpower/python/tests/test_mordell_descent.py:13: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/perfectpower/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../home/user/perfectpower/python/tests/test_mordell_descent.py:35: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/user/perfectpower/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.
+----------------------------------------------------------------------
+Ran 66 tests in 16.978s
+
+OK
+python3 python/independent_cert_audit.py
+OK certs/runge/consecutive10_fifth_power_hits.json
+OK certs/runge/consecutive12_cube_hits.json
+OK certs/runge/consecutive12_sixth_power_hits.json
+OK certs/runge/consecutive12_square_hits.json
+OK certs/runge/consecutive4_fourth_power_hits.json
+OK certs/runge/consecutive4_square_hits.json
+OK certs/runge/consecutive6_cube_hits.json
+OK certs/runge/consecutive6_sixth_power_hits.json
+OK certs/runge/consecutive6_square_hits.json
+OK certs/runge/consecutive8_eighth_power_hits.json
+OK certs/runge/consecutive8_fourth_power_hits.json
+OK certs/runge/consecutive8_square_hits.json
+OK certs/runge/ljunggren_quartic_hits.json
+OK certs/runge/n4_plus_1_square_hits.json
+OK certs/runge/n4_plus_7_square_hits.json
+OK certs/runge/n6_plus_n_plus_1_cube_hits.json
+OK certs/runge/sextic_1_2_3_4_5_6_1_cube_hits.json
+OK certs/sandwich/consecutive10_square_hits.json
+OK certs/sandwich/consecutive12_fourth_power_hits.json
+19/19 certificates passed

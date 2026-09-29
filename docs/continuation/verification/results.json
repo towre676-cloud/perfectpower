@@ -1,0 +1,73 @@
+{
+  "base_commit": "ddad6befc1f16219e4860bd90273a99a25e37bd6",
+  "scope": "continuation targeted build; not a claim of full make verify",
+  "steps": [
+    {
+      "name": "lean_build",
+      "command": [
+        "lake",
+        "build",
+        "PerfectPower.Continuation.DenominatorReduction"
+      ],
+      "exit_code": 0,
+      "seconds": 240.651
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "audit/continuation/Axioms.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 14.863
+    },
+    {
+      "name": "lint",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "audit/continuation/Lint.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 5.367
+    },
+    {
+      "name": "new_python_tests",
+      "command": [
+        "/usr/local/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "continuation_tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 0.851
+    },
+    {
+      "name": "baseline_python_and_certificates",
+      "command": [
+        "make",
+        "test",
+        "cert-audit"
+      ],
+      "exit_code": 0,
+      "seconds": 17.224
+    }
+  ],
+  "source_sha256": {
+    "PerfectPower/Continuation/DenominatorReduction.lean": "ea89a62fc611fe1878d927d1c3a3081d582bff3857eec247b394938be2c2e1aa",
+    "PerfectPower/Continuation/PowerSplit.lean": "7345635afe6ad7583e3fa89f2d4d90178d7c2ad11dd2de93872ec1aaab1d43df",
+    "PerfectPower/Continuation/ProfileReduction.lean": "6872ea2a25c33de3bf6105c077e322c41ae010e91ad7e149b5de0d3660fa4dae",
+    "PerfectPower/Continuation/RationalHit.lean": "dce00f3594e7fedcc7d7e66d4fec30375ae6c993eedc9f1a74bef6bf83e2a0ce",
+    "PerfectPower/Continuation/RationalYun.lean": "a70843e1d0ce92e00086b48d3d106f28a7e7dbd8cdf35b21e4a746b4de4564fe"
+  },
+  "audited_entries": 40,
+  "audited_theorems": 31,
+  "lint_declarations": 51,
+  "status": "PASS"
+}

@@ -36,3 +36,4 @@ import PerfectPower.MordellMinus13
 import PerfectPower.MordellMinus5
 import PerfectPower.MordellMinus6
 import PerfectPower.Transport
+import PerfectPower.Continuation.DenominatorReduction

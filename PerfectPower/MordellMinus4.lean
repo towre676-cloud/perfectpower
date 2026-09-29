@@ -101,8 +101,8 @@ lemma odd_case (x y k : ℤ) (h : y ^ 2 = x ^ 3 - 4) (hk : y = 2 * k + 1) :
   · -- b = 2
     exfalso
     have h3 : 3 * a ^ 2 = 5 := by linarith
-    generalize a ^ 2 = t at h3
-    omega
+    have h4 := Int.mul_emod_right 3 (a ^ 2)
+    rw [h3] at h4; norm_num at h4
 
 /-- The even case: reduce to `y₁^2 + 1 = 2 x₁^3` and a Thue equation. -/
 lemma even_case (x y : ℤ) (h : y ^ 2 = x ^ 3 - 4) (hy : y % 2 = 0) :

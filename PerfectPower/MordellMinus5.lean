@@ -34,8 +34,8 @@ theorem no_points (x y : ℤ) : y ^ 2 ≠ x ^ 3 - 5 := by
     have hp2 : -1 ≤ p := by nlinarith
     interval_cases p <;> norm_num at h3
   · have h3 : 3 * p ^ 2 = 4 := by linarith
-    generalize p ^ 2 = t at h3
-    omega
+    have h4 := Int.mul_emod_right 3 (p ^ 2)
+    rw [h3] at h4; norm_num at h4
 
 /-- **Complete (empty) hit list.**  `n^3 - 5` is never a perfect square. -/
 theorem not_isHit (n : ℤ) : ¬ IsHit 2 (n ^ 3 - 5) := by

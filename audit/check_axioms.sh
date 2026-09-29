@@ -2,7 +2,8 @@
 # Fails unless every audited declaration depends only on a subset of the standard axioms
 # {propext, Classical.choice, Quot.sound}: no sorryAx, no Lean.ofReduceBool, no custom axioms.
 set -eu
-out=$(lake env lean audit/Axioms.lean)
+# Lean wraps long messages at 100 columns; rejoin continuation lines (they start with a space).
+out=$(lake env lean audit/Axioms.lean | awk 'NR > 1 && /^ / { sub(/^ +/, " "); printf "%s", $0; next } { if (NR > 1) printf "\n"; printf "%s", $0 } END { printf "\n" }')
 printf '%s\n' "$out"
 printf '%s\n' "$out" > audit/axioms_report.txt
 n=$(printf '%s\n' "$out" | grep -c "depend" || true)

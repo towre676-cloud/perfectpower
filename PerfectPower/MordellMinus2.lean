@@ -186,8 +186,8 @@ theorem points (x y : ℤ) : y ^ 2 = x ^ 3 - 2 ↔ x = 3 ∧ (y = 5 ∨ y = -5) 
       subst this; linarith
   · exfalso
     have h3 : 3 * a ^ 2 = 1 := by linarith
-    generalize a ^ 2 = t at h3
-    omega
+    have h4 := Int.mul_emod_right 3 (a ^ 2)
+    rw [h3] at h4; norm_num at h4
 
 /-- **Complete hit list.**  For `n ≥ 1`, `n^3 - 2` is a perfect square iff `n = 3`. -/
 theorem hitSet (n : ℕ) : IsHit 2 ((n : ℤ) ^ 3 - 2) ↔ n = 3 := by
