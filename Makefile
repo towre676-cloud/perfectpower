@@ -43,6 +43,7 @@ receipts:
 	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
 	$(PY) python/make_oeis_problems.py
+	$(PY) python/make_oeis_atlas.py
 
 counts: audit
 	$(PY) python/make_counts.py

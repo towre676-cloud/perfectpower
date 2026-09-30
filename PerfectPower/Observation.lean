@@ -271,4 +271,81 @@ theorem observed_count {ι : Type*} [DecidableEq ι] (R : Finset ι) (obs : ι �
         abs_sub_le _ _ _
     _ ≤ _ := by linarith
 
+/-- The number of accepted residues in a period does not depend on where the period starts. -/
+lemma card_filter_shift {P : ℕ} (q : ℕ → Prop) [DecidablePred q] (hq : ∀ j, q (j + P) ↔ q j)
+    (s : ℕ) : #((range P).filter (fun r => q (r + s))) = #((range P).filter q) := by
+  induction s with
+  | zero => simp
+  | succ s ih =>
+    rw [← ih]
+    simp only [card_filter]
+    have h1 := sum_range_succ' (fun r => if q (r + s) then 1 else 0) P
+    have h2 := sum_range_succ (fun r => if q (r + s) then 1 else 0) P
+    have hP : (if q (P + s) then 1 else 0) = (if q (0 + s) then 1 else 0) := by
+      rw [show P + s = s + P by ring, zero_add]
+      exact if_congr (hq s) rfl rfl
+    have e : ∀ r, r + 1 + s = r + (s + 1) := fun r => by ring
+    simp only [e] at h1
+    omega
+
+/-- **Eventually increasing observations.**  If each observation is strictly increasing and
+geometrically bounded only from index `j₀ ρ` on, the counting law is unchanged: the first
+`j₀ ρ` values of each orbit change the count by at most `∑ j₀`. -/
+theorem observed_count_eventually {ι : Type*} [DecidableEq ι] (R : Finset ι) (obs : ι → ℕ → ℕ)
+    (j₀ : ι → ℕ) (E c₁ c₂ : ι → ℝ) (hE : ∀ ρ ∈ R, 1 < E ρ) (hc₁ : ∀ ρ ∈ R, 0 < c₁ ρ)
+    (hc₂ : ∀ ρ ∈ R, 0 < c₂ ρ)
+    (hlow : ∀ ρ ∈ R, ∀ j, c₁ ρ * E ρ ^ j ≤ obs ρ (j + j₀ ρ))
+    (hup : ∀ ρ ∈ R, ∀ j, (obs ρ (j + j₀ ρ) : ℝ) ≤ c₂ ρ * E ρ ^ j)
+    (P : ι → ℕ) (hP : ∀ ρ ∈ R, 0 < P ρ)
+    (q : ι → ℕ → Prop) [∀ ρ, DecidablePred (q ρ)] (hq : ∀ ρ ∈ R, ∀ j, q ρ (j + P ρ) ↔ q ρ j)
+    (hmono : ∀ ρ ∈ R, StrictMono (fun j => obs ρ (j + j₀ ρ)))
+    (V₀ : ℕ) (hdisj : ∀ ρ ∈ R, ∀ σ ∈ R, ∀ i j, q ρ (i + j₀ ρ) → q σ (j + j₀ σ) →
+      obs ρ (i + j₀ ρ) = obs σ (j + j₀ σ) → V₀ < obs ρ (i + j₀ ρ) → ρ = σ)
+    (S : Set ℕ) [DecidablePred (· ∈ S)] (hS : ∀ v, v ∈ S ↔ ∃ ρ ∈ R, ∃ j, q ρ j ∧ obs ρ j = v) :
+    ∃ K : ℝ, ∀ N : ℕ, 1 ≤ N →
+      |((#{v ∈ Icc 1 N | v ∈ S} : ℕ) : ℝ) -
+        (∑ ρ ∈ R, (#((range (P ρ)).filter (q ρ)) : ℝ) / (P ρ * Real.log (E ρ))) * Real.log N| ≤ K := by
+  classical
+  -- the tail observations
+  set S' : Set ℕ := {v | ∃ ρ ∈ R, ∃ j, q ρ (j + j₀ ρ) ∧ obs ρ (j + j₀ ρ) = v}
+  obtain ⟨K, hK⟩ := observed_count R (fun ρ j => obs ρ (j + j₀ ρ)) E c₁ c₂ hE hc₁ hc₂ hlow hup P hP
+    (fun ρ j => q ρ (j + j₀ ρ))
+    (fun ρ hρ j => by
+      show q ρ (j + P ρ + j₀ ρ) ↔ q ρ (j + j₀ ρ)
+      rw [show j + P ρ + j₀ ρ = j + j₀ ρ + P ρ by ring]; exact hq ρ hρ _)
+    hmono V₀ hdisj S' (fun v => Iff.rfl)
+  -- the head: finitely many values
+  set H : Finset ℕ := R.biUnion (fun ρ => (range (j₀ ρ)).image (obs ρ))
+  refine ⟨K + #H, fun N hN => ?_⟩
+  have hK' := hK N hN
+  have hshift : ∀ ρ ∈ R, #((range (P ρ)).filter (fun j => q ρ (j + j₀ ρ))) =
+      #((range (P ρ)).filter (q ρ)) := fun ρ hρ => card_filter_shift (q ρ) (hq ρ hρ) (j₀ ρ)
+  have hsum : (∑ ρ ∈ R, (#((range (P ρ)).filter (fun j => q ρ (j + j₀ ρ))) : ℝ) /
+      (P ρ * Real.log (E ρ))) = ∑ ρ ∈ R, (#((range (P ρ)).filter (q ρ)) : ℝ) /
+      (P ρ * Real.log (E ρ)) := sum_congr rfl fun ρ hρ => by rw [hshift ρ hρ]
+  rw [hsum] at hK'
+  have hsub : {v ∈ Icc 1 N | v ∈ S'} ⊆ {v ∈ Icc 1 N | v ∈ S} := by
+    intro v hv
+    simp only [mem_filter] at hv ⊢
+    obtain ⟨hv1, ρ, hρ, j, hq', hj⟩ := hv
+    exact ⟨hv1, (hS v).mpr ⟨ρ, hρ, _, hq', hj⟩⟩
+  have hsup : {v ∈ Icc 1 N | v ∈ S} ⊆ {v ∈ Icc 1 N | v ∈ S'} ∪ H := by
+    intro v hv
+    simp only [mem_filter, mem_union] at hv ⊢
+    obtain ⟨hv1, hvS⟩ := hv
+    obtain ⟨ρ, hρ, j, hqj, rfl⟩ := (hS _).mp hvS
+    by_cases hj : j₀ ρ ≤ j
+    · left
+      refine ⟨hv1, ρ, hρ, j - j₀ ρ, ?_, ?_⟩ <;> rw [Nat.sub_add_cancel hj]
+      exact hqj
+    · right
+      exact mem_biUnion.mpr ⟨ρ, hρ, mem_image.mpr ⟨j, mem_range.mpr (by omega), rfl⟩⟩
+  have h1 := card_le_card hsub
+  have h2 := (card_le_card hsup).trans (card_union_le _ _)
+  have h1' : ((#{v ∈ Icc 1 N | v ∈ S'} : ℕ) : ℝ) ≤ #{v ∈ Icc 1 N | v ∈ S} := by exact_mod_cast h1
+  have h2' : ((#{v ∈ Icc 1 N | v ∈ S} : ℕ) : ℝ) ≤ #{v ∈ Icc 1 N | v ∈ S'} + #H := by
+    exact_mod_cast h2
+  rw [abs_le] at hK' ⊢
+  constructor <;> linarith [hK'.1, hK'.2]
+
 end PerfectPower.Observation

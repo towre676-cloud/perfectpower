@@ -64,10 +64,10 @@ Each entry gives the precise problem, the current best approach, and the obstruc
 
 **OEIS as a discovery layer** (`OEIS.md`). *Done:* the counting law for observed coordinates of
 filtered orbits (`Observation.observed_count`) and the six-sequence theorem for $(3+\sqrt8)^j$.
-*Open:*
-- a first atlas against a real OEIS snapshot (oeis.org was unreachable from the release
-  environment);
+*Done since:* a versioned snapshot of the official export, a 39-entry cluster around $(1+\sqrt2)^k$ with 13 definitions proved, eventual monotonicity, and a Mordell cross-check (41 certified curves, 0 disagreements). *Open:*
+- formalizing the 23 unproved $\sqrt2$ entries (convergents, generating functions, Pythagorean triples);
+- discovery over other orbits and norm equations;
+- proofs for the 98 nonempty Mordell leads with $|k|\le100$, starting with $y^2=x^3-1$ (descent with the units $\pm i$);
 - reviewed definitions for the entries it confirms;
-- eventual rather than strict monotonicity in `observed_count`;
 - a clustering pass that proposes coordinate maps between entries sharing a norm equation;
 - reading the leads for the 155 unresolved Mordell curves.

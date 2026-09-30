@@ -53,4 +53,5 @@ import PerfectPower.KernelArith
 import PerfectPower.Descent
 import PerfectPower.Observation
 import PerfectPower.SquareTriangular
+import PerfectPower.SqrtTwoOrbit
 import PerfectPower.Generated.Plans

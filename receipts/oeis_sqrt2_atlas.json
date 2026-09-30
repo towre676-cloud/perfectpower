@@ -1,0 +1,3435 @@
+{
+ "snapshot": {
+  "adapter": "GitExport",
+  "url": "https://github.com/oeis/oeisdata.git",
+  "commit": "14eb04df5c1a66f3b8c6d19ac8a5c1dce75f9014",
+  "commit_date": "2026-09-30T03:03:26-04:00",
+  "time_txt": "2026-09-30T03:00:20-04:00",
+  "license": "OEIS content: CC BY-SA 4.0 (The OEIS Foundation); files are unmodified copies",
+  "global_index": {
+   "file": "all_sequences_index.tsv",
+   "entries": 399743,
+   "candidates": 5617,
+   "entries_examined": 399743,
+   "entries_included": 5617,
+   "format": "perfectpower-oeis-corpus/1",
+   "license": "OEIS content: CC BY-SA 4.0; retain attribution and source references",
+   "max_bytes": 28000000,
+   "selection": "heuristic text relevance; neither completeness nor mathematical equivalence is asserted",
+   "source": "official oeis/oeisdata export",
+   "source_archive_filename": "01-oeisdata-main.zip",
+   "source_sha256": "d781e20888ca7d3ba6295dfb6a29c56fa6a0f79b38cd64bc6f613c3acbe0586f",
+   "source_time_txt": "2026-09-29T03:00:25-04:00"
+  }
+ },
+ "orbit": "(1 + sqrt 2)^k = A_k + B_k sqrt 2",
+ "atlas": [
+  {
+   "oeis": "A000129",
+   "offset": 0,
+   "filter": "all",
+   "map": "B",
+   "coordinate": "B on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 32,
+   "proof": {
+    "kind": "recurrence",
+    "coordinate": "B_n",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A000129",
+     "PerfectPower.SqrtTwoOrbit.A000129_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 32,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A001108",
+   "offset": 0,
+   "filter": "even",
+   "map": "(A-1)/2",
+   "coordinate": "(A-1)/2 on even powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 24,
+   "proof": {
+    "kind": "recurrence",
+    "coordinate": "(A_{2n}-1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A001108",
+     "PerfectPower.SqrtTwoOrbit.A001108_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 24,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A001109",
+   "offset": 0,
+   "filter": "all",
+   "map": "AB",
+   "coordinate": "AB on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 25,
+   "proof": {
+    "kind": "recurrence",
+    "coordinate": "B_{2n}/2",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A001109",
+     "PerfectPower.SqrtTwoOrbit.A001109_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 25,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A001110",
+   "offset": 0,
+   "filter": "even",
+   "map": "(B/2)^2",
+   "coordinate": "(B/2)^2 on even powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 19,
+   "proof": {
+    "kind": "set: square triangular numbers, increasing",
+    "coordinate": "(B_{2n}/2)^2",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A001110",
+     "PerfectPower.SqrtTwoOrbit.A001110_enumerates"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 19,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A001333",
+   "offset": 0,
+   "filter": "all",
+   "map": "A",
+   "coordinate": "A on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 32,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A001541",
+   "offset": 0,
+   "filter": "even",
+   "map": "A",
+   "coordinate": "A on even powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 23,
+   "proof": {
+    "kind": "recurrence",
+    "coordinate": "A_{2n}",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A001541",
+     "PerfectPower.SqrtTwoOrbit.A001541_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 23,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A001542",
+   "offset": 0,
+   "filter": "all",
+   "map": "2AB",
+   "coordinate": "2AB on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 24,
+   "proof": {
+    "kind": "recurrence",
+    "coordinate": "B_{2n}",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A001542",
+     "PerfectPower.SqrtTwoOrbit.A001542_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 24,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A001652",
+   "offset": 0,
+   "filter": "odd",
+   "map": "(A-1)/2",
+   "coordinate": "(A-1)/2 on odd powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 24,
+   "proof": {
+    "kind": "recurrence",
+    "coordinate": "(A_{2n+1}-1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A001652",
+     "PerfectPower.SqrtTwoOrbit.A001652_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 24,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A001653",
+   "offset": 1,
+   "filter": "even",
+   "map": "A+B",
+   "coordinate": "A+B on even powers, a(1 + i) at power index 0 + i",
+   "terms_checked": 24,
+   "proof": {
+    "kind": "set: k with 2k^2 - 1 a square, increasing",
+    "coordinate": "B_{2n-1}",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A001653",
+     "PerfectPower.SqrtTwoOrbit.A001653_enumerates"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 24,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A002315",
+   "offset": 0,
+   "filter": "even",
+   "map": "A+2B",
+   "coordinate": "A+2B on even powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 23,
+   "proof": {
+    "kind": "recurrence (initial values from the terms)",
+    "coordinate": "A_{2n+1}",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A002315",
+     "PerfectPower.SqrtTwoOrbit.A002315_eq",
+     "PerfectPower.SqrtTwoOrbit.A002315_A001653"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 23,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A005319",
+   "offset": 0,
+   "filter": "even",
+   "map": "2B",
+   "coordinate": "2B on even powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 22,
+   "proof": {
+    "kind": "recurrence (initial values from the terms)",
+    "coordinate": "2 B_{2n}",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A005319",
+     "PerfectPower.SqrtTwoOrbit.A005319_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 22,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A008843",
+   "offset": 0,
+   "filter": "odd",
+   "map": "A^2",
+   "coordinate": "A^2 on odd powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 18,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A008844",
+   "offset": 0,
+   "filter": "odd",
+   "map": "B^2",
+   "coordinate": "B^2 on odd powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 18,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A018905",
+   "offset": 0,
+   "filter": "all",
+   "map": "(A+1)/2",
+   "coordinate": "(A+1)/2 on all powers, a(0 + i) at power index 2 + i",
+   "terms_checked": 15,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A024537",
+   "offset": 0,
+   "filter": "all",
+   "map": "(A+1)/2",
+   "coordinate": "(A+1)/2 on all powers, a(0 + i) at power index 1 + i",
+   "terms_checked": 31,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A046090",
+   "offset": 0,
+   "filter": "odd",
+   "map": "(A+1)/2",
+   "coordinate": "(A+1)/2 on odd powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 24,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A046176",
+   "offset": 1,
+   "filter": "odd",
+   "map": "AB",
+   "coordinate": "AB on odd powers, a(1 + i) at power index 0 + i",
+   "terms_checked": 18,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A048624",
+   "offset": 0,
+   "filter": "all",
+   "map": "B",
+   "coordinate": "B on all powers, a(0 + i) at power index 2 + i",
+   "terms_checked": 16,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A048739",
+   "offset": 0,
+   "filter": "all",
+   "map": "(A-1)/2",
+   "coordinate": "(A-1)/2 on all powers, a(0 + i) at power index 2 + i",
+   "terms_checked": 29,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A052542",
+   "offset": 0,
+   "filter": "all",
+   "map": "2B",
+   "coordinate": "2B on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 32,
+   "outcome": "REJECTED",
+   "first_counterexample": {
+    "term_index": 0,
+    "entry": 1,
+    "coordinate": 0
+   },
+   "agrees_from_term": 1
+  },
+  {
+   "oeis": "A055792",
+   "offset": 0,
+   "filter": "even",
+   "map": "A^2",
+   "coordinate": "A^2 on even powers, a(0 + i) at power index -1 + i",
+   "terms_checked": 18,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A055997",
+   "offset": 1,
+   "filter": "even",
+   "map": "(A+1)/2",
+   "coordinate": "(A+1)/2 on even powers, a(1 + i) at power index 0 + i",
+   "terms_checked": 24,
+   "proof": {
+    "kind": "set: k >= 1 with k(k-1)/2 a square, increasing",
+    "coordinate": "(A_{2n-2}+1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A055997",
+     "PerfectPower.SqrtTwoOrbit.A055997_enumerates"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 24,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A069306",
+   "offset": 2,
+   "filter": "all",
+   "map": "B",
+   "coordinate": "B on all powers, a(2 + i) at power index 3 + i",
+   "terms_checked": 32,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A075870",
+   "offset": 1,
+   "filter": "odd",
+   "map": "2B",
+   "coordinate": "2B on odd powers, a(1 + i) at power index 0 + i",
+   "terms_checked": 23,
+   "proof": {
+    "kind": "set: k with 2k^2 - 4 a square, increasing",
+    "coordinate": "2 B_{2n-1}",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A075870",
+     "PerfectPower.SqrtTwoOrbit.A075870_enumerates"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 23,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A078057",
+   "offset": 0,
+   "filter": "all",
+   "map": "A",
+   "coordinate": "A on all powers, a(0 + i) at power index 1 + i",
+   "terms_checked": 32,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A078522",
+   "offset": 1,
+   "filter": "odd",
+   "map": "(A^2-1)/2",
+   "coordinate": "(A^2-1)/2 on odd powers, a(1 + i) at power index 0 + i",
+   "terms_checked": 17,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A079291",
+   "offset": 0,
+   "filter": "all",
+   "map": "B^2",
+   "coordinate": "B^2 on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 25,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A082405",
+   "offset": 0,
+   "filter": "even",
+   "map": "AB",
+   "coordinate": "AB on even powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 18,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A084703",
+   "offset": 0,
+   "filter": "even",
+   "map": "B^2",
+   "coordinate": "B^2 on even powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 18,
+   "proof": {
+    "kind": "set: squares k with 2k + 1 a square, increasing",
+    "coordinate": "B_{2n}^2",
+    "lean": [
+     "PerfectPower.SqrtTwoOrbit.A084703",
+     "PerfectPower.SqrtTwoOrbit.A084703_enumerates"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 18,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
+  },
+  {
+   "oeis": "A090390",
+   "offset": 0,
+   "filter": "all",
+   "map": "A^2",
+   "coordinate": "A^2 on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 25,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A090757",
+   "offset": 0,
+   "filter": "all",
+   "map": "(A-1)/2",
+   "coordinate": "(A-1)/2 on all powers, a(0 + i) at power index 2 + i",
+   "terms_checked": 15,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A098602",
+   "offset": 0,
+   "filter": "odd",
+   "map": "(A-1)(A+1)/4",
+   "coordinate": "(A-1)(A+1)/4 on odd powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 17,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A115598",
+   "offset": 1,
+   "filter": "even",
+   "map": "(A-1)/2",
+   "coordinate": "(A-1)/2 on even powers, a(1 + i) at power index 1 + i",
+   "terms_checked": 23,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A115599",
+   "offset": 1,
+   "filter": "even",
+   "map": "(A+1)/2",
+   "coordinate": "(A+1)/2 on even powers, a(1 + i) at power index 1 + i",
+   "terms_checked": 23,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A163271",
+   "offset": 1,
+   "filter": "all",
+   "map": "2B",
+   "coordinate": "2B on all powers, a(1 + i) at power index 0 + i",
+   "terms_checked": 31,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A171842",
+   "offset": 0,
+   "filter": "all",
+   "map": "(A+1)/2",
+   "coordinate": "(A+1)/2 on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 34,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A176981",
+   "offset": 0,
+   "filter": "all",
+   "map": "B-A",
+   "coordinate": "B-A on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 31,
+   "outcome": "REJECTED",
+   "first_counterexample": {
+    "term_index": 0,
+    "entry": 1,
+    "coordinate": -1
+   },
+   "agrees_from_term": 1
+  },
+  {
+   "oeis": "A182435",
+   "offset": 0,
+   "filter": "odd",
+   "map": "(A+1)/2",
+   "coordinate": "(A+1)/2 on odd powers, a(0 + i) at power index -1 + i",
+   "terms_checked": 24,
+   "outcome": "TERMS_AGREE_UNPROVED"
+  },
+  {
+   "oeis": "A215928",
+   "offset": 0,
+   "filter": "all",
+   "map": "B",
+   "coordinate": "B on all powers, a(0 + i) at power index 0 + i",
+   "terms_checked": 32,
+   "outcome": "REJECTED",
+   "first_counterexample": {
+    "term_index": 0,
+    "entry": 1,
+    "coordinate": 0
+   },
+   "agrees_from_term": 1
+  }
+ ],
+ "mordell": {
+  "sources": {
+   "A081119": "y^2 = x^3 + n",
+   "A081120": "y^2 = x^3 - n"
+  },
+  "certified_checked": 41,
+  "disagreements": [],
+  "checks": [
+   {
+    "k": -99,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m99",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -98,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m98",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -97,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -94,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -93,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -91,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m91",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -90,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -85,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -82,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m82",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -78,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -74,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -73,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m73",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -70,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -69,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -66,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m66",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -65,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m65",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -62,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m62",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -58,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -57,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m57",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -49,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -46,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -43,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m43",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -42,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -41,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -37,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m37",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -34,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -33,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m33",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -30,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -22,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -21,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -17,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m17",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -14,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -13,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.MordellMinus13.points",
+     "PerfectPower.Transport.complete_cube_sub_thirteen"
+    ]
+   },
+   {
+    "k": -12,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m12",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -10,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m10",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -9,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m9",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -6,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.MordellMinus6.no_points"
+    ]
+   },
+   {
+    "k": -5,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.MordellMinus5.no_points"
+    ]
+   },
+   {
+    "k": -4,
+    "certified_points": 4,
+    "published": 4,
+    "lean": [
+     "PerfectPower.MordellMinus4.points"
+    ]
+   },
+   {
+    "k": -3,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.no_points_m3",
+     "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -2,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.MordellMinus2.points",
+     "PerfectPower.Transport.complete_cube_sub_two"
+    ]
+   }
+  ],
+  "leads": [
+   {
+    "k": -1,
+    "published_count": 1,
+    "scan_points": 1,
+    "points": [
+     [
+      1,
+      0
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 1,
+    "published_count": 5,
+    "scan_points": 5,
+    "points": [
+     [
+      -1,
+      0
+     ],
+     [
+      0,
+      -1
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      2,
+      -3
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 2,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -1,
+      -1
+     ],
+     [
+      -1,
+      1
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 3,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      1,
+      -2
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 4,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      0,
+      -2
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 5,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -1,
+      -2
+     ],
+     [
+      -1,
+      2
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -7,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      2,
+      -1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      32,
+      -181
+     ],
+     [
+      32,
+      181
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -8,
+    "published_count": 1,
+    "scan_points": 1,
+    "points": [
+     [
+      2,
+      0
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 8,
+    "published_count": 7,
+    "scan_points": 7,
+    "points": [
+     [
+      -2,
+      0
+     ],
+     [
+      1,
+      -3
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      2,
+      -4
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      46,
+      -312
+     ],
+     [
+      46,
+      312
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 9,
+    "published_count": 10,
+    "scan_points": 10,
+    "points": [
+     [
+      -2,
+      -1
+     ],
+     [
+      -2,
+      1
+     ],
+     [
+      0,
+      -3
+     ],
+     [
+      0,
+      3
+     ],
+     [
+      3,
+      -6
+     ],
+     [
+      3,
+      6
+     ],
+     [
+      6,
+      -15
+     ],
+     [
+      6,
+      15
+     ],
+     [
+      40,
+      -253
+     ],
+     [
+      40,
+      253
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 10,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -1,
+      -3
+     ],
+     [
+      -1,
+      3
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -11,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      3,
+      -4
+     ],
+     [
+      3,
+      4
+     ],
+     [
+      15,
+      -58
+     ],
+     [
+      15,
+      58
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 12,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      -2,
+      -2
+     ],
+     [
+      -2,
+      2
+     ],
+     [
+      13,
+      -47
+     ],
+     [
+      13,
+      47
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -15,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      4,
+      -7
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 15,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      1,
+      -4
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      109,
+      -1138
+     ],
+     [
+      109,
+      1138
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 16,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      0,
+      -4
+     ],
+     [
+      0,
+      4
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 17,
+    "published_count": 16,
+    "scan_points": 16,
+    "points": [
+     [
+      -2,
+      -3
+     ],
+     [
+      -2,
+      3
+     ],
+     [
+      -1,
+      -4
+     ],
+     [
+      -1,
+      4
+     ],
+     [
+      2,
+      -5
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      4,
+      -9
+     ],
+     [
+      4,
+      9
+     ],
+     [
+      8,
+      -23
+     ],
+     [
+      8,
+      23
+     ],
+     [
+      43,
+      -282
+     ],
+     [
+      43,
+      282
+     ],
+     [
+      52,
+      -375
+     ],
+     [
+      52,
+      375
+     ],
+     [
+      5234,
+      -378661
+     ],
+     [
+      5234,
+      378661
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -18,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      3,
+      -3
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 18,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      7,
+      -19
+     ],
+     [
+      7,
+      19
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -19,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      7,
+      -18
+     ],
+     [
+      7,
+      18
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 19,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      5,
+      -12
+     ],
+     [
+      5,
+      12
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -20,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      6,
+      -14
+     ],
+     [
+      6,
+      14
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 22,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      3,
+      -7
+     ],
+     [
+      3,
+      7
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -23,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      3,
+      -2
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 24,
+    "published_count": 8,
+    "scan_points": 8,
+    "points": [
+     [
+      -2,
+      -4
+     ],
+     [
+      -2,
+      4
+     ],
+     [
+      1,
+      -5
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      10,
+      -32
+     ],
+     [
+      10,
+      32
+     ],
+     [
+      8158,
+      -736844
+     ],
+     [
+      8158,
+      736844
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -25,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      5,
+      -10
+     ],
+     [
+      5,
+      10
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 25,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      0,
+      -5
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -26,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      3,
+      -1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      35,
+      -207
+     ],
+     [
+      35,
+      207
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 26,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -1,
+      -5
+     ],
+     [
+      -1,
+      5
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -27,
+    "published_count": 1,
+    "scan_points": 1,
+    "points": [
+     [
+      3,
+      0
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 27,
+    "published_count": 1,
+    "scan_points": 1,
+    "points": [
+     [
+      -3,
+      0
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -28,
+    "published_count": 6,
+    "scan_points": 6,
+    "points": [
+     [
+      4,
+      -6
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      8,
+      -22
+     ],
+     [
+      8,
+      22
+     ],
+     [
+      37,
+      -225
+     ],
+     [
+      37,
+      225
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 28,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      -3,
+      -1
+     ],
+     [
+      -3,
+      1
+     ],
+     [
+      2,
+      -6
+     ],
+     [
+      2,
+      6
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 30,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      19,
+      -83
+     ],
+     [
+      19,
+      83
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 31,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -3,
+      -2
+     ],
+     [
+      -3,
+      2
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 33,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -2,
+      -5
+     ],
+     [
+      -2,
+      5
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -35,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      11,
+      -36
+     ],
+     [
+      11,
+      36
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 35,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      1,
+      -6
+     ],
+     [
+      1,
+      6
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 36,
+    "published_count": 8,
+    "scan_points": 8,
+    "points": [
+     [
+      -3,
+      -3
+     ],
+     [
+      -3,
+      3
+     ],
+     [
+      0,
+      -6
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      4,
+      -10
+     ],
+     [
+      4,
+      10
+     ],
+     [
+      12,
+      -42
+     ],
+     [
+      12,
+      42
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 37,
+    "published_count": 6,
+    "scan_points": 6,
+    "points": [
+     [
+      -1,
+      -6
+     ],
+     [
+      -1,
+      6
+     ],
+     [
+      3,
+      -8
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      243,
+      -3788
+     ],
+     [
+      243,
+      3788
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 38,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      11,
+      -37
+     ],
+     [
+      11,
+      37
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -39,
+    "published_count": 6,
+    "scan_points": 6,
+    "points": [
+     [
+      4,
+      -5
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      10,
+      -31
+     ],
+     [
+      10,
+      31
+     ],
+     [
+      22,
+      -103
+     ],
+     [
+      22,
+      103
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -40,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      14,
+      -52
+     ],
+     [
+      14,
+      52
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 40,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      6,
+      -16
+     ],
+     [
+      6,
+      16
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 41,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      2,
+      -7
+     ],
+     [
+      2,
+      7
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 43,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -3,
+      -4
+     ],
+     [
+      -3,
+      4
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -44,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      5,
+      -9
+     ],
+     [
+      5,
+      9
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 44,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      -2,
+      -6
+     ],
+     [
+      -2,
+      6
+     ],
+     [
+      5,
+      -13
+     ],
+     [
+      5,
+      13
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -45,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      21,
+      -96
+     ],
+     [
+      21,
+      96
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -47,
+    "published_count": 6,
+    "scan_points": 6,
+    "points": [
+     [
+      6,
+      -13
+     ],
+     [
+      6,
+      13
+     ],
+     [
+      12,
+      -41
+     ],
+     [
+      12,
+      41
+     ],
+     [
+      63,
+      -500
+     ],
+     [
+      63,
+      500
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -48,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      4,
+      -4
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      28,
+      -148
+     ],
+     [
+      28,
+      148
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 48,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      1,
+      -7
+     ],
+     [
+      1,
+      7
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 49,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      0,
+      -7
+     ],
+     [
+      0,
+      7
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 50,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -1,
+      -7
+     ],
+     [
+      -1,
+      7
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 52,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -3,
+      -5
+     ],
+     [
+      -3,
+      5
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -53,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      9,
+      -26
+     ],
+     [
+      9,
+      26
+     ],
+     [
+      29,
+      -156
+     ],
+     [
+      29,
+      156
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -54,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      7,
+      -17
+     ],
+     [
+      7,
+      17
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 54,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      3,
+      -9
+     ],
+     [
+      3,
+      9
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -55,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      4,
+      -3
+     ],
+     [
+      4,
+      3
+     ],
+     [
+      56,
+      -419
+     ],
+     [
+      56,
+      419
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 55,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      9,
+      -28
+     ],
+     [
+      9,
+      28
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -56,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      18,
+      -76
+     ],
+     [
+      18,
+      76
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 56,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      2,
+      -8
+     ],
+     [
+      2,
+      8
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 57,
+    "published_count": 6,
+    "scan_points": 6,
+    "points": [
+     [
+      -2,
+      -7
+     ],
+     [
+      -2,
+      7
+     ],
+     [
+      4,
+      -11
+     ],
+     [
+      4,
+      11
+     ],
+     [
+      7,
+      -20
+     ],
+     [
+      7,
+      20
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -60,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      4,
+      -2
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      136,
+      -1586
+     ],
+     [
+      136,
+      1586
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -61,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      5,
+      -8
+     ],
+     [
+      5,
+      8
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -63,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      4,
+      -1
+     ],
+     [
+      4,
+      1
+     ],
+     [
+      568,
+      -13537
+     ],
+     [
+      568,
+      13537
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 63,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      -3,
+      -6
+     ],
+     [
+      -3,
+      6
+     ],
+     [
+      1,
+      -8
+     ],
+     [
+      1,
+      8
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -64,
+    "published_count": 1,
+    "scan_points": 1,
+    "points": [
+     [
+      4,
+      0
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 64,
+    "published_count": 5,
+    "scan_points": 5,
+    "points": [
+     [
+      -4,
+      0
+     ],
+     [
+      0,
+      -8
+     ],
+     [
+      0,
+      8
+     ],
+     [
+      8,
+      -24
+     ],
+     [
+      8,
+      24
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 65,
+    "published_count": 8,
+    "scan_points": 8,
+    "points": [
+     [
+      -4,
+      -1
+     ],
+     [
+      -4,
+      1
+     ],
+     [
+      -1,
+      -8
+     ],
+     [
+      -1,
+      8
+     ],
+     [
+      14,
+      -53
+     ],
+     [
+      14,
+      53
+     ],
+     [
+      584,
+      -14113
+     ],
+     [
+      584,
+      14113
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -67,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      23,
+      -110
+     ],
+     [
+      23,
+      110
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 68,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      -4,
+      -2
+     ],
+     [
+      -4,
+      2
+     ],
+     [
+      152,
+      -1874
+     ],
+     [
+      152,
+      1874
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -71,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      8,
+      -21
+     ],
+     [
+      8,
+      21
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 71,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      5,
+      -14
+     ],
+     [
+      5,
+      14
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -72,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      6,
+      -12
+     ],
+     [
+      6,
+      12
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 72,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -2,
+      -8
+     ],
+     [
+      -2,
+      8
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 73,
+    "published_count": 12,
+    "scan_points": 12,
+    "points": [
+     [
+      -4,
+      -3
+     ],
+     [
+      -4,
+      3
+     ],
+     [
+      2,
+      -9
+     ],
+     [
+      2,
+      9
+     ],
+     [
+      3,
+      -10
+     ],
+     [
+      3,
+      10
+     ],
+     [
+      6,
+      -17
+     ],
+     [
+      6,
+      17
+     ],
+     [
+      72,
+      -611
+     ],
+     [
+      72,
+      611
+     ],
+     [
+      356,
+      -6717
+     ],
+     [
+      356,
+      6717
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -76,
+    "published_count": 4,
+    "scan_points": 4,
+    "points": [
+     [
+      5,
+      -7
+     ],
+     [
+      5,
+      7
+     ],
+     [
+      101,
+      -1015
+     ],
+     [
+      101,
+      1015
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 76,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -3,
+      -7
+     ],
+     [
+      -3,
+      7
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -79,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      20,
+      -89
+     ],
+     [
+      20,
+      89
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 79,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      45,
+      -302
+     ],
+     [
+      45,
+      302
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 80,
+    "published_count": 8,
+    "scan_points": 8,
+    "points": [
+     [
+      -4,
+      -4
+     ],
+     [
+      -4,
+      4
+     ],
+     [
+      1,
+      -9
+     ],
+     [
+      1,
+      9
+     ],
+     [
+      4,
+      -12
+     ],
+     [
+      4,
+      12
+     ],
+     [
+      44,
+      -292
+     ],
+     [
+      44,
+      292
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -81,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      13,
+      -46
+     ],
+     [
+      13,
+      46
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 81,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      0,
+      -9
+     ],
+     [
+      0,
+      9
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 82,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -1,
+      -9
+     ],
+     [
+      -1,
+      9
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -83,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      27,
+      -140
+     ],
+     [
+      27,
+      140
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -87,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      7,
+      -16
+     ],
+     [
+      7,
+      16
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -89,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      5,
+      -6
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 89,
+    "published_count": 8,
+    "scan_points": 8,
+    "points": [
+     [
+      -4,
+      -5
+     ],
+     [
+      -4,
+      5
+     ],
+     [
+      -2,
+      -9
+     ],
+     [
+      -2,
+      9
+     ],
+     [
+      10,
+      -33
+     ],
+     [
+      10,
+      33
+     ],
+     [
+      55,
+      -408
+     ],
+     [
+      55,
+      408
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 91,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      -3,
+      -8
+     ],
+     [
+      -3,
+      8
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 92,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      2,
+      -10
+     ],
+     [
+      2,
+      10
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 94,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      3,
+      -11
+     ],
+     [
+      3,
+      11
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -95,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      6,
+      -11
+     ],
+     [
+      6,
+      11
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 97,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      18,
+      -77
+     ],
+     [
+      18,
+      77
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 98,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      7,
+      -21
+     ],
+     [
+      7,
+      21
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 99,
+    "published_count": 2,
+    "scan_points": 2,
+    "points": [
+     [
+      1,
+      -10
+     ],
+     [
+      1,
+      10
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": -100,
+    "published_count": 6,
+    "scan_points": 6,
+    "points": [
+     [
+      5,
+      -5
+     ],
+     [
+      5,
+      5
+     ],
+     [
+      10,
+      -30
+     ],
+     [
+      10,
+      30
+     ],
+     [
+      34,
+      -198
+     ],
+     [
+      34,
+      198
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 100,
+    "published_count": 12,
+    "scan_points": 12,
+    "points": [
+     [
+      -4,
+      -6
+     ],
+     [
+      -4,
+      6
+     ],
+     [
+      0,
+      -10
+     ],
+     [
+      0,
+      10
+     ],
+     [
+      5,
+      -15
+     ],
+     [
+      5,
+      15
+     ],
+     [
+      20,
+      -90
+     ],
+     [
+      20,
+      90
+     ],
+     [
+      24,
+      -118
+     ],
+     [
+      24,
+      118
+     ],
+     [
+      2660,
+      -137190
+     ],
+     [
+      2660,
+      137190
+     ]
+    ],
+    "scan_matches_published": true
+   },
+   {
+    "k": 6,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 7,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 13,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 14,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -16,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 20,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 21,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -24,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -29,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 29,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -31,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -32,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 32,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 34,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -36,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -38,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 39,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 42,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 45,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 46,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -50,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -51,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 51,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -52,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 53,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 58,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -59,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 59,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 60,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 61,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 62,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 66,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 67,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -68,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 69,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 70,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 74,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -75,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 75,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -77,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 77,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 78,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -80,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 83,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -84,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 84,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 85,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -86,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 86,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -88,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 88,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 90,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -92,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 93,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 95,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": -96,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   },
+   {
+    "k": 96,
+    "published_count": 0,
+    "scan_points": 0,
+    "points": [],
+    "scan_matches_published": true
+   }
+  ],
+  "note": "A081119 cites Gebel-Petho-Zimmer (1998) and Bennett-Ghadermarzi (2015) for the computations; a published count is a lead, not a proof. The entry also records the route used when the rank is 0: the integral points are the torsion points."
+ }
+}
