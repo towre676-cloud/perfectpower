@@ -10,7 +10,7 @@ import re
 import unittest
 from pathlib import Path
 
-from perfectpower.compiler import (BOUNDED_EVIDENCE, COMPLETE_FINITE, NOT_ENUMERATED,
+from perfectpower.compiler import (padd, ppow, pscale, BOUNDED_EVIDENCE, COMPLETE_FINITE, NOT_ENUMERATED,
                                    STRUCTURED_FILTERED, STRUCTURED_INFINITE, NotEnumerable,
                                    PowerConstraint, QuadraticRootConstraint, TriangularConstraint,
                                    compile_constraint, match_affine_cube, mordell_complete)
@@ -102,6 +102,53 @@ class Reductions(unittest.TestCase):
     def test_execution_is_never_claimed_verified(self):
         for con in (PowerConstraint((1, 0, 2), 2), TriangularConstraint((0, 0, 1))):
             self.assertFalse(compile_constraint(con).explain()['execution_verified'])
+
+
+class FarHits(unittest.TestCase):
+    """COMPLETE_FINITE must be earned: no finite branch may be frozen by a fixed scan limit."""
+    C = 10 ** 6 + 7
+
+    def test_quartic_bounded_branches_beyond_scan(self):
+        # ((n - c)^2 - 2)^2 = m^4: branches +-((n - c)^2 - 2), a square leading coefficient and a
+        # negative one; the hits n = c +- 1 lie beyond any fixed cutoff of 10^6
+        W = padd(ppow((-self.C, 1), 2), (-2,))
+        p = compile_constraint(PowerConstraint(ppow(W, 2), 4))
+        self.assertEqual(p.status, COMPLETE_FINITE)
+        self.assertEqual(p.contains(self.C + 1), [-1, 1])
+        self.assertEqual(p.all_hits(), [(self.C - 1, [-1, 1]), (self.C + 1, [-1, 1])])
+        self.assertIn('PerfectPower.RationalYun.hit_le_of_square', p.justification)
+
+    def test_mixed_pell_program_keeps_late_bounded_hit(self):
+        # (2(n - c)^2 - 1)^2 = m^4: a populated Pell branch and a bounded branch hit at n = c
+        expr = f'(2*(n - {self.C})**2 - 1)**2'
+        sp = specialize(LoopProgram(expr, ('power', 4)))
+        self.assertEqual(sp.plan.status, STRUCTURED_INFINITE)
+        N = self.C + 20
+        window = [(n, sp.plan.original.witnesses(n)) for n in range(self.C - 20, N + 1)]
+        window = [h for h in window if h[1]]
+        self.assertIn((self.C, [-1, 1]), window)
+        self.assertEqual([h for h in sp.run_specialized(N) if h[0] >= self.C - 20], window)
+        self.assertEqual([h for h in sp.plan.iter_hits(N) if h[0] >= self.C - 20], window)
+
+    def test_far_shifted_finite_plans(self):
+        # shift random small families far out: every hit near the shift must be in the list
+        rng = random.Random(7)
+        checked = 0
+        for _ in range(120):
+            G = [rng.randint(-6, 6) for _ in range(rng.choice([1, 2]))] + [rng.choice([-2, -1, 1, 4])]
+            d = rng.choice([2, 4])
+            shifted = (0,)
+            for i, g in enumerate(G):                  # G(n - C)
+                shifted = padd(shifted, pscale(ppow((-self.C, 1), i), g))
+            F = ppow(shifted, 2) if d == 4 else shifted
+            p = compile_constraint(PowerConstraint(F, d))
+            if p.status != COMPLETE_FINITE:
+                continue
+            checked += 1
+            listed = {n for n, _ in p.all_hits()}
+            for n in range(self.C - 30, self.C + 31):
+                self.assertEqual(n in listed, bool(p.original.witnesses(n)), (G, d, n))
+        self.assertGreater(checked, 20)
 
 
 class Differential(unittest.TestCase):

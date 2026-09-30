@@ -415,6 +415,31 @@ class PellBranch:
         return {n: sorted(ms) for n, ms in out.items()}
 
 
+def bounded_branch_hits(A: int, B: int, C: int) -> list[int]:
+    """All n >= 1 with A n^2 + B n + C a square, for a bounded branch (A < 0, or A a positive
+    square, nonzero discriminant).  The search limit is the proved bound, never a fixed cutoff:
+    n <= |B| + |C| for A < 0 (`hit_le_of_neg`) and n <= |Delta| + |B| for A a square
+    (`hit_le_of_square`).  quadratic_square_hits only enumerates divisors or the ellipse, so the
+    size of the limit costs nothing."""
+    Delta = B * B - 4 * A * C
+    if A < 0:
+        # A n^2 + B n + C >= 0 forces |2An + B| <= sqrt(Delta): scan only that interval
+        # (inside the proved bound n <= |B| + |C|, `hit_le_of_neg`)
+        if Delta < 0:
+            return []
+        r = isqrt(Delta)
+        ends = [Fraction(-r - B, 2 * A), Fraction(r - B, 2 * A)]
+        lo = max(1, -((-min(ends).numerator) // min(ends).denominator))
+        hi = min(abs(B) + abs(C), max(ends).numerator // max(ends).denominator)
+        return [n for n in range(lo, hi + 1)
+                if (v := A * n * n + B * n + C) >= 0 and is_square(v)]
+    if A > 0 and is_square(A):
+        limit = abs(Delta) + abs(B)
+    else:
+        raise ValueError('not a bounded branch')
+    return sorted(quadratic_square_hits(A, B, C, limit))
+
+
 def pell_branch(A: int, B: int, C: int) -> PellBranch:
     D = 4 * A
     Delta = B * B - 4 * A * C
@@ -598,9 +623,10 @@ def _power_plan(pc: PowerConstraint) -> dict:
             for br in branches:
                 ns |= set(br.hits(N))
             for (A, B, C) in bounded:
-                ns |= quadratic_square_hits(A, B, C, N)
+                ns |= {n for n in bounded_branch_hits(A, B, C) if n <= N}
             return {n: pc.witnesses(n) for n in sorted(ns)}
-        just = ['PerfectPower.RationalYun.Decomposition.pell_count',
+        just = ['PerfectPower.RationalYun.hit_le_of_neg', 'PerfectPower.RationalYun.hit_le_of_square'] * bool(bounded) + [
+                'PerfectPower.RationalYun.Decomposition.pell_count',
                 'PerfectPower.RationalYun.Decomposition.pell_count_explicit',
                 'PerfectPower.RationalYun.Decomposition.pell_kappa_decide']
         data = {**base, 'branches': [b.explain() for b in branches],
@@ -611,7 +637,7 @@ def _power_plan(pc: PowerConstraint) -> dict:
         # every Pell branch is unpopulated: hits come from bounded branches, zeros and the
         # finitely many small n of the Pell branches
         bound = max([1] + _positive_zeros(F) + [br.small_n() for br in branches]
-                    + [max(quadratic_square_hits(A, B, C, 10 ** 6) | {0}) for A, B, C in bounded])
+                    + [max(bounded_branch_hits(A, B, C) + [0]) for A, B, C in bounded])
         fin = hits(bound)
         return dict(method='Pell type with no populated branch', status=COMPLETE_FINITE,
                     justification=just, data=data, finite=fin,
@@ -622,18 +648,29 @@ def _power_plan(pc: PowerConstraint) -> dict:
     if cl.effective and strategy[0] == 'runge':
         from .runge import runge_enumerate
         e = strategy[1]
-        fin = {n: pc.witnesses(n) for n, _ in runge_enumerate(F, e).hits
-               if pc.witnesses(n)}
+        try:
+            enum = runge_enumerate(F, e)
+        except ValueError as exc:
+            # the Runge threshold is effective but its direct-scan prefix is too long here
+            return dict(method=f'Runge-rigid (divisor {e}), prefix too long to enumerate',
+                        status=NOT_ENUMERATED,
+                        justification=['Runge (Theorem R): finite and effective in principle'],
+                        data={**base, 'reason': str(exc)}, hits=None)
+        fin = {n: pc.witnesses(n) for n, _ in enum.hits if pc.witnesses(n)}
         just = ([cert[1], f'certificate {cert[0]} (pp-cert/1)'] if cert else []) + \
             ['Runge enumeration (Python, runge.runge_enumerate)']
         return dict(method=f'Runge enumeration (divisor {e})', status=COMPLETE_FINITE,
                     justification=just, data={**base, 'certificate': cert and cert[0]},
                     finite=fin, hits=lambda N: {n: w for n, w in fin.items() if n <= N})
     if cl.effective:
+        def root_hits(N):
+            try:
+                return {n: pc.witnesses(n) for n in structural_hits(F, d, N)}
+            except ValueError as exc:
+                raise NotEnumerable(f'{CLASSIFIED_FINITE}: {exc}') from exc
         return dict(method=f'exact root reduction {strategy[:2]}', status=CLASSIFIED_FINITE,
                     justification=['Siegel via Theorem G (finite)', 'atlas structural_hits (Python)'],
-                    data=base, hits=lambda N: {n: pc.witnesses(n)
-                                               for n in structural_hits(F, d, N)})
+                    data=base, hits=root_hits)
     return dict(method='finite by Siegel (Theorem G); no effective enumeration here',
                 status=NOT_ENUMERATED, justification=['Siegel via Theorem G (paper; not in Lean)'],
                 data={**base, 'curve': cl.curve}, hits=None)

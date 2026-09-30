@@ -220,8 +220,8 @@ def _reduced_source(plan) -> str | None:
                       f'                ns.add((X - ({B})) // {2 * A})',
                       f'            X, Y = {x1} * X + {D * y1} * Y, {y1} * X + {x1} * Y   # times the unit']
         for (A, B, C) in bounded:
-            from .atlas import quadratic_square_hits
-            fixed = sorted(quadratic_square_hits(A, B, C, 10 ** 6))
+            from .compiler import bounded_branch_hits
+            fixed = bounded_branch_hits(A, B, C)
             lines += [f'    ns |= {{n for n in {fixed!r} if n <= N}}   # bounded branch {A}, {B}, {C}']
         lines += [f'    ns |= {{n for n in {sorted(_zeros(G))!r} if n <= N}}',
                   '    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n']

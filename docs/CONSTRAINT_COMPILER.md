@@ -162,6 +162,19 @@ What the measurements show:
 - During development, 1500 random constraints and 800 random loops (558 of them specialized)
   agreed with brute force, with 0 mismatches.
 
+**A completeness bug, found in review and fixed.** Release `ddbdcb8` froze a *bounded* Pell
+branch ($A<0$, or $A$ a square) by scanning only to $n\le10^6$. Two consequences followed:
+- for $F(n)=((n-1000007)^2-2)^2$ with $d=4$, `contains(1000008)` found a hit that `all_hits()`,
+  labelled `COMPLETE_FINITE`, omitted;
+- the generated program for $(2(n-1000007)^2-1)^2=m^4$ lost its hit at $n=1000007$.
+
+The fix derives the search limit from the Lean bounds `hit_le_of_neg` and `hit_le_of_square`, and
+for $A<0$ it scans only the interval where the quadratic is nonnegative. The regression tests
+(`FarHits`) fail on `ddbdcb8` and pass now. One of them shifts random finite families by
+$10^6+7$ and compares every `COMPLETE_FINITE` list with brute force around the shift. A larger
+far-shift fuzz (3000 constraints) found no incomplete list. It did show that a Runge plan whose
+scan prefix is too long raised an error; such a plan is now `NOT_ENUMERATED` with the reason.
+
 ## 7. The effectiveness boundary
 
 What remains open is exactly the atlas's open part:
