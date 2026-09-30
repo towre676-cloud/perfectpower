@@ -1,0 +1,1875 @@
+{
+  "timestamp_utc": "2026-09-30T22:54:52.870901+00:00",
+  "solver": "/tmp/claude-0/z3pkg/bin/z3",
+  "solver_version": "Z3 version 5.1.0 - 64 bit\n",
+  "solver_arguments": [
+    "-smt2"
+  ],
+  "timeout_seconds_per_file": 10.0,
+  "cohort": "cvc5",
+  "results": [
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue12499-learned-rewrite-mod-range.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue12499-learned-rewrite-mod-range.smt2"
+      ],
+      "wall_seconds": 0.028068663999874843,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--learned-rewrite"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "no-safe-mode"
+        ],
+        "COMMAND-LINE": [
+          "--learned-rewrite"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue3971.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue3971.smt2"
+      ],
+      "wall_seconds": 0.027293623000332445,
+      "query_count": 5,
+      "statuses": [
+        "sat",
+        "unsat",
+        "unsat",
+        "unsat",
+        "unsat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--incremental"
+      ],
+      "original_harness_directives": {
+        "COMMAND-LINE": [
+          "--incremental"
+        ],
+        "EXPECT": [
+          "sat",
+          "unsat",
+          "unsat",
+          "unsat",
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat",
+        "unsat",
+        "unsat",
+        "unsat",
+        "unsat"
+      ],
+      "status_annotations": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "stdout_prefix": "sat\nunsat\nunsat\nunsat\nunsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue3991.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue3991.smt2"
+      ],
+      "wall_seconds": 0.012604314999862254,
+      "query_count": 3,
+      "statuses": [
+        "sat",
+        "sat",
+        "unsat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--incremental"
+      ],
+      "original_harness_directives": {
+        "COMMAND-LINE": [
+          "--incremental"
+        ],
+        "EXPECT": [
+          "sat",
+          "sat",
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat",
+        "sat",
+        "unsat"
+      ],
+      "status_annotations": [
+        null,
+        null,
+        null
+      ],
+      "stdout_prefix": "sat\nsat\nunsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue4463-ack-model.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue4463-ack-model.smt2"
+      ],
+      "wall_seconds": 0.014930930999980774,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 4 column 23: unknown parameter 'ackermann'\nLegal parameters are:\n  auto_config (bool) (default: true)\n  ctrl_c (bool) (default: true)\n  debug_ref_count (bool) (default: false)\n  dot_proof_file (string) (default: proof.dot)\n  dump_models (bool) (default: false)\n  encoding (string) (default: unicode)\n  memory_high_watermark (unsigned int) (default: 0)\n  memory_high_watermark_mb (unsigned int) (default: 0)\n  memory_max_alloc_count (unsigned int) (default: 0)\n  memory_max_size (unsigned int) (default: 0)\n  model (bool) (default: true)\n  model_validate (bool) (default: false)\n  proof (bool) (default: false)\n  rlimit (unsigned int) (default: 0)\n  smtlib2_compliant (bool) (default: false)\n  stats (bool) (default: false)\n  suppress_platform_verbose (bool) (default: false)\n  timeout (unsigned int) (default: 4294967295)\n  trace (bool) (default: false)\n  trace_file_name (string) (default: z3.log)\n  type_check (bool) (default: true)\n  unsat_core (bool) (default: false)\n  verbose (unsigned int) (default: 0)\n  warning (bool) (default: true)\n  well_sorted_check (bool) (default: false)\")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue8135-icp-candidates.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue8135-icp-candidates.smt2"
+      ],
+      "wall_seconds": 0.018855928999983007,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--nl-icp"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode",
+          "poly"
+        ],
+        "COMMAND-LINE": [
+          "--nl-icp"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue8934-lr-int-mod-range.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/issue8934-lr-int-mod-range.smt2"
+      ],
+      "wall_seconds": 0.01339997199966092,
+      "query_count": 1,
+      "statuses": [
+        "unsat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--learned-rewrite"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "no-safe-mode"
+        ],
+        "COMMAND-LINE": [
+          "--learned-rewrite"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "unsat-core",
+          "proof"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "unsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/mod_elim_pow2.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/mod_elim_pow2.smt2"
+      ],
+      "wall_seconds": 0.016891112999928737,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "--learned-rewrite"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "--learned-rewrite"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "unsat-core",
+          "proof"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 12 column 55: unknown constant int.pow2 (Int) \")\n(error \"line 16 column 13: unknown constant lemma\")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/nia-wrong-tl.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/nia-wrong-tl.smt2"
+      ],
+      "wall_seconds": 0.017171677999613166,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--nl-ext=full"
+      ],
+      "original_harness_directives": {
+        "COMMAND-LINE": [
+          "--nl-ext=full"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-base-sat.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-base-sat.smt2"
+      ],
+      "wall_seconds": 0.01619352300031096,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 23: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-base.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-base.smt2"
+      ],
+      "wall_seconds": 0.015821270999822445,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 30: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-difference.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-difference.smt2"
+      ],
+      "wall_seconds": 0.015896966000127577,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 11 column 23: unknown constant piand (Int Int Int) \")\n(error \"line 12 column 23: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-idempotence.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-idempotence.smt2"
+      ],
+      "wall_seconds": 0.015318577000016376,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 9 column 24: unknown constant int.pow2 (Int) \")\n(error \"line 11 column 30: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-lsb.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-lsb.smt2"
+      ],
+      "wall_seconds": 0.011181406000105198,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 35: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-max.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-max.smt2"
+      ],
+      "wall_seconds": 0.015400583000428014,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "--sat-solver=minisat"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "--sat-solver=minisat"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 9 column 24: unknown constant int.pow2 (Int) \")\n(error \"line 10 column 27: unknown constant int.pow2 (Int) \")\n(error \"line 11 column 30: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-min-sat.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-min-sat.smt2"
+      ],
+      "wall_seconds": 0.010998911000115186,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 23: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-min.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-min.smt2"
+      ],
+      "wall_seconds": 0.010525750999931915,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 30: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-negative.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-negative.smt2"
+      ],
+      "wall_seconds": 0.01784267599987288,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 30: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-one.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-one.smt2"
+      ],
+      "wall_seconds": 0.018259408000176336,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 11 column 30: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-possitive-sat.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-possitive-sat.smt2"
+      ],
+      "wall_seconds": 0.017650525999670208,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 26: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-possitive.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-possitive.smt2"
+      ],
+      "wall_seconds": 0.016310672000145132,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 25: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-range.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-range.smt2"
+      ],
+      "wall_seconds": 0.01593680600035441,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 25: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-symmetry-sat.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-symmetry-sat.smt2"
+      ],
+      "wall_seconds": 0.011494403000142484,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 7 column 23: unknown constant piand (Int Int Int) \")\n(error \"line 8 column 23: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-symmetry.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/piand-symmetry.smt2"
+      ],
+      "wall_seconds": 0.01701319699986925,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 7 column 30: unknown constant piand (Int Int Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-monotone-neg-soundness.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-monotone-neg-soundness.smt2"
+      ],
+      "wall_seconds": 0.018271598999945127,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 23: unknown constant int.pow2 (Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-0.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-0.smt2"
+      ],
+      "wall_seconds": 0.01721441900008358,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 7 column 29: unknown constant int.pow2 (Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-1.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-1.smt2"
+      ],
+      "wall_seconds": 0.01206570099975579,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "(error \"line 8 column 22: unknown constant int.pow2 (Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-2.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-2.smt2"
+      ],
+      "wall_seconds": 0.013046340000073542,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 9 column 22: unknown constant int.pow2 (Int) \")\nsat\n(error \"line 11 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-3.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-3.smt2"
+      ],
+      "wall_seconds": 0.01698280899972815,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 12 column 22: unknown constant int.pow2 (Int) \")\nsat\n(error \"line 14 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-4.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-4.smt2"
+      ],
+      "wall_seconds": 0.01559764700004962,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 10 column 24: unknown constant int.pow2 (Int) \")\nsat\n(error \"line 12 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-5.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-5.smt2"
+      ],
+      "wall_seconds": 0.015025532999970892,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 10 column 29: unknown constant int.pow2 (Int) \")\nsat\n(error \"line 12 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-6.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-6.smt2"
+      ],
+      "wall_seconds": 0.014791201000207366,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 10 column 38: unknown constant int.pow2 (Int) \")\nsat\n(error \"line 12 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-7.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-native-7.smt2"
+      ],
+      "wall_seconds": 0.01452534200006994,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 11 column 36: unknown constant int.pow2 (Int) \")\nsat\n(error \"line 13 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-pow.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-pow.smt2"
+      ],
+      "wall_seconds": 0.014238495999961742,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "alethe"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 8 column 29: unknown constant int.pow2 (Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/proj-issue-425.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress0/nl/proj-issue-425.smt2"
+      ],
+      "wall_seconds": 0.009709431000374025,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--solve-int-as-bv=5524936381719514648"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode",
+          "no-competition"
+        ],
+        "COMMAND-LINE": [
+          "--solve-int-as-bv=5524936381719514648"
+        ],
+        "EXPECT-ERROR": [
+          "Error in option parsing"
+        ],
+        "ERROR-SCRUBBER": [
+          "grep -o \"Error in option parsing\""
+        ],
+        "DISABLE-TESTER": [
+          "dump"
+        ],
+        "EXIT": [
+          "1"
+        ]
+      },
+      "expected_harness_failure": true,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/disj-eval.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/disj-eval.smt2"
+      ],
+      "wall_seconds": 0.015097145000254386,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--nl-ext=full"
+      ],
+      "original_harness_directives": {
+        "COMMAND-LINE": [
+          "--nl-ext=full"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/ext-rew-aggr-test.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/ext-rew-aggr-test.smt2"
+      ],
+      "wall_seconds": 0.018624619999627612,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--ext-rew-prep=agg --nl-ext-tplanes"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "--ext-rew-prep=agg --nl-ext-tplanes"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/iand-big-gran.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/iand-big-gran.smt2"
+      ],
+      "wall_seconds": 0.009404815999914717,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--bvand-integer-granularity=9"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode",
+          "no-competition"
+        ],
+        "COMMAND-LINE": [
+          "--bvand-integer-granularity=9"
+        ],
+        "EXPECT-ERROR": [
+          "Error in option parsing"
+        ],
+        "ERROR-SCRUBBER": [
+          "grep -o \"Error in option parsing\""
+        ],
+        "DISABLE-TESTER": [
+          "dump"
+        ],
+        "EXIT": [
+          "1"
+        ]
+      },
+      "expected_harness_failure": true,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/iand-native-2.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/iand-native-2.smt2"
+      ],
+      "wall_seconds": 0.01410069499979727,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "--iand-mode=value",
+        "--iand-mode=sum --bvand-integer-granularity=1",
+        "--solve-bv-as-int=iand --iand-mode=bitwise"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "--iand-mode=value",
+          "--iand-mode=sum --bvand-integer-granularity=1",
+          "--solve-bv-as-int=iand --iand-mode=bitwise"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 13 column 26: unknown constant iand (Int Int) \")\nsat\n(error \"line 17 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/iand-native-granularities.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/iand-native-granularities.smt2"
+      ],
+      "wall_seconds": 0.014103182000326342,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "--iand-mode=value",
+        "--iand-mode=sum --bvand-integer-granularity=1 --finite-model-find",
+        "--iand-mode=bitwise",
+        "--iand-mode=bitwise --bvand-integer-granularity=1",
+        "--iand-mode=bitwise --bvand-integer-granularity=3",
+        "--iand-mode=bitwise --bvand-integer-granularity=4"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "--iand-mode=value",
+          "--iand-mode=sum --bvand-integer-granularity=1 --finite-model-find",
+          "--iand-mode=bitwise",
+          "--iand-mode=bitwise --bvand-integer-granularity=1",
+          "--iand-mode=bitwise --bvand-integer-granularity=3",
+          "--iand-mode=bitwise --bvand-integer-granularity=4"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "(error \"line 20 column 30: unknown constant iand (Int Int) \")\nsat\n(error \"line 23 column 10: check annotation that says unsat\")\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue10003-nl-ext-rr.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue10003-nl-ext-rr.smt2"
+      ],
+      "wall_seconds": 0.00970106599970677,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "--no-nl-ext-rewrite"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "--no-nl-ext-rewrite"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 11 column 33: unknown constant int.pow2 (Int) \")\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue3441.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue3441.smt2"
+      ],
+      "wall_seconds": 0.012201568999898882,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--quiet"
+      ],
+      "original_harness_directives": {
+        "COMMAND-LINE": [
+          "--quiet"
+        ],
+        "EXPECT": [
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat"
+      ],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue4334-sat-proof.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue4334-sat-proof.smt2"
+      ],
+      "wall_seconds": 0.7163655660001496,
+      "query_count": 4,
+      "statuses": [
+        "sat",
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "-i --produce-unsat-cores --nl-ext-purify"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "-i --produce-unsat-cores --nl-ext-purify"
+        ],
+        "EXPECT": [
+          "sat",
+          "sat",
+          "sat",
+          "sat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "sat",
+        "sat",
+        "sat",
+        "sat"
+      ],
+      "status_annotations": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "stdout_prefix": "(error \"line 9 column 27: unknown parameter 'nl_ext_purify'\nLegal parameters are:\n  auto_config (bool) (default: true)\n  ctrl_c (bool) (default: true)\n  debug_ref_count (bool) (default: false)\n  dot_proof_file (string) (default: proof.dot)\n  dump_models (bool) (default: false)\n  encoding (string) (default: unicode)\n  memory_high_watermark (unsigned int) (default: 0)\n  memory_high_watermark_mb (unsigned int) (default: 0)\n  memory_max_alloc_count (unsigned int) (default: 0)\n  memory_max_size (unsigned int) (default: 0)\n  model (bool) (default: true)\n  model_validate (bool) (default: false)\n  proof (bool) (default: false)\n  rlimit (unsigned int) (default: 0)\n  smtlib2_compliant (bool) (default: false)\n  stats (bool) (default: false)\n  suppress_platform_verbose (bool) (default: false)\n  timeout (unsigned int) (default: 4294967295)\n  trace (bool) (default: false)\n  trace_file_name (string) (default: z3.log)\n  type_check (bool) (default: true)\n  unsat_core (bool) (default: false)\n  verbose (unsigned int) (default: 0)\n  warning (bool) (default: true)\n  well_sorted_check (bool) (default: false)\")\nsat\nsat\nsat\nsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "timeout",
+      "returncode": null,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue4791-llr.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/issue4791-llr.smt2"
+      ],
+      "wall_seconds": 10.013333031000002,
+      "query_count": 1,
+      "statuses": [],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "--learned-rewrite"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "no-safe-mode"
+        ],
+        "COMMAND-LINE": [
+          "--learned-rewrite"
+        ],
+        "EXPECT": [
+          "unsat"
+        ],
+        "DISABLE-TESTER": [
+          "unsat-core",
+          "proof"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/learned-rewrite-int-mod-range.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/learned-rewrite-int-mod-range.smt2"
+      ],
+      "wall_seconds": 0.025350794999667414,
+      "query_count": 1,
+      "statuses": [
+        "unsat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {},
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "unsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/nl-eq-infer.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/nl-eq-infer.smt2"
+      ],
+      "wall_seconds": 0.02335396500029674,
+      "query_count": 1,
+      "statuses": [
+        "unsat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {},
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "unsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 1,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/nl-ext-flatten-simp.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/nl-ext-flatten-simp.smt2"
+      ],
+      "wall_seconds": 0.01226282000015999,
+      "query_count": 1,
+      "statuses": [
+        "unsat"
+      ],
+      "fully_answered": false,
+      "original_harness_command_lines": [
+        "--nl-ext-flatten-mon"
+      ],
+      "original_harness_directives": {
+        "REQUIRES": [
+          "unrestricted-mode"
+        ],
+        "COMMAND-LINE": [
+          "--nl-ext-flatten-mon"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        null
+      ],
+      "stdout_prefix": "(error \"line 5 column 28: unknown parameter 'simplification'\nLegal parameters are:\n  auto_config (bool) (default: true)\n  ctrl_c (bool) (default: true)\n  debug_ref_count (bool) (default: false)\n  dot_proof_file (string) (default: proof.dot)\n  dump_models (bool) (default: false)\n  encoding (string) (default: unicode)\n  memory_high_watermark (unsigned int) (default: 0)\n  memory_high_watermark_mb (unsigned int) (default: 0)\n  memory_max_alloc_count (unsigned int) (default: 0)\n  memory_max_size (unsigned int) (default: 0)\n  model (bool) (default: true)\n  model_validate (bool) (default: false)\n  proof (bool) (default: false)\n  rlimit (unsigned int) (default: 0)\n  smtlib2_compliant (bool) (default: false)\n  stats (bool) (default: false)\n  suppress_platform_verbose (bool) (default: false)\n  timeout (unsigned int) (default: 4294967295)\n  trace (bool) (default: false)\n  trace_file_name (string) (default: z3.log)\n  type_check (bool) (default: true)\n  unsat_core (bool) (default: false)\n  verbose (unsigned int) (default: 0)\n  warning (bool) (default: true)\n  well_sorted_check (bool) (default: false)\")\nunsat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/proj-issue231.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/proj-issue231.smt2"
+      ],
+      "wall_seconds": 0.011714315000062925,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {},
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/proj-issue253.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/proj-issue253.smt2"
+      ],
+      "wall_seconds": 0.016961483999693883,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {},
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    },
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/rewriting-sums.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/rewriting-sums.smt2"
+      ],
+      "wall_seconds": 0.05206159399995158,
+      "query_count": 1,
+      "statuses": [
+        "unsat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [
+        "--nl-ext=full"
+      ],
+      "original_harness_directives": {
+        "COMMAND-LINE": [
+          "--nl-ext=full"
+        ],
+        "EXPECT": [
+          "unsat"
+        ]
+      },
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [
+        "unsat"
+      ],
+      "status_annotations": [
+        "unsat"
+      ],
+      "stdout_prefix": "unsat\n",
+      "stderr_prefix": ""
+    }
+  ],
+  "method": "No source rewrite; no automatic execution of harness comments. Per-file times include startup. Statuses are solver claims, not checked certificates."
+}

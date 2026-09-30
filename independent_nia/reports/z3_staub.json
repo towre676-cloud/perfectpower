@@ -1,0 +1,39 @@
+{
+  "timestamp_utc": "2026-09-30T22:54:55.261611+00:00",
+  "solver": "/tmp/claude-0/z3pkg/bin/z3",
+  "solver_version": "Z3 version 5.1.0 - 64 bit\n",
+  "solver_arguments": [
+    "-smt2"
+  ],
+  "timeout_seconds_per_file": 10.0,
+  "cohort": "staub",
+  "results": [
+    {
+      "outcome": "finished",
+      "returncode": 0,
+      "local_path": "corpus/mikekben__STAUB/samples/motivating.smt2",
+      "command": [
+        "/tmp/claude-0/z3pkg/bin/z3",
+        "-smt2",
+        "/tmp/claude-0/handoff/perfectpower_independent_nia_handoff/corpus/mikekben__STAUB/samples/motivating.smt2"
+      ],
+      "wall_seconds": 2.3335308670002632,
+      "query_count": 1,
+      "statuses": [
+        "sat"
+      ],
+      "fully_answered": true,
+      "original_harness_command_lines": [],
+      "original_harness_directives": {},
+      "expected_harness_failure": false,
+      "harness_flags_applied": false,
+      "original_harness_expectations": [],
+      "status_annotations": [
+        "sat"
+      ],
+      "stdout_prefix": "sat\n",
+      "stderr_prefix": ""
+    }
+  ],
+  "method": "No source rewrite; no automatic execution of harness comments. Per-file times include startup. Statuses are solver claims, not checked certificates."
+}

@@ -57,7 +57,9 @@ class Adapter(unittest.TestCase):
         # N(N-1)/2 = S^2 with explicit bounds: the exact orbit solutions, checked by brute force
         from math import isqrt
         N, S = z3.Ints('N S')
-        r = self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= -3000, N < 3001])
+        r = self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= -3000, N < 3001], allow_unchecked=True)
+        self.assertEqual(r.replacements[0].evidence, 'python_enumeration_unchecked')
+        self.assertEqual(self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= -3000, N < 3001]).replacements, [])
         self.assertEqual(len(r.replacements), 1)
         brute = sorted({(n, sg * y) for n in range(-3000, 3001) for y in [isqrt(max(n * (n - 1) // 2, 0))]
                         for sg in (1, -1) if 2 * y * y == n * (n - 1)})
@@ -65,7 +67,7 @@ class Adapter(unittest.TestCase):
 
     def test_unbounded_pell_left_to_host(self):
         N, S = z3.Ints('N S')
-        r = self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= 1])
+        r = self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= 1], allow_unchecked=True)
         self.assertEqual(r.replacements, [])
 
 

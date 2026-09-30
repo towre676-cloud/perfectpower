@@ -19,6 +19,11 @@ coefficients).  The adapter does not emit a Lean proof of the *replacement*; tha
 elementary substitution `x = r n + s`.  Every other conjunct is left to the host solver unchanged,
 and an unrecognized problem is returned unchanged.
 
+Fail-closed by default: only replacements whose complete theorem is re-parsed from the Lean
+source are applied (see `smt_cert.py` for the script-level, source-bound, independently checked
+version).  `allow_unchecked` / `--allow-unchecked` also applies theorem-cited curves and bounded
+Pell/radical enumerations; each replacement records its evidence level.
+
 Requires the `z3-solver` package (imported lazily); nothing else in the repository depends on it.
 """
 from __future__ import annotations
@@ -216,6 +221,7 @@ class Replacement:
     curve: str
     solutions: list
     lean: list
+    evidence: str = ''      # lean_statement_parsed | theorem_cited | python_enumeration_unchecked
 
 
 @dataclass
@@ -224,8 +230,14 @@ class Result:
     replacements: list = field(default_factory=list)
 
 
-def reduce_assertions(assertions) -> Result:
-    """Split top-level conjunctions; replace every recognized solved conjunct."""
+def reduce_assertions(assertions, allow_unchecked: bool = False) -> Result:
+    """Split top-level conjunctions and replace recognized solved conjuncts.
+
+    Fail-closed by default: a conjunct is replaced only when its complete theorem's statement is
+    re-parsed from the Lean source (`smt_cert._lean_list`).  Theorem-cited curves and bounded
+    Pell/radical enumerations (Python) are applied only with `allow_unchecked=True`, and every
+    replacement records its evidence level."""
+    from .smt_cert import _lean_list
     import z3
     flat, todo = [], list(assertions)
     while todo:
@@ -249,8 +261,9 @@ def reduce_assertions(assertions) -> Result:
                 mac = match_affine_cube(F) if len(F) == 4 else None
                 if mac is not None:
                     r, s, k = mac
-                    solved = mordell_complete(k)
-                    if solved is not None:
+                    solved = mordell_complete(k) if k != 0 else None
+                    parsed = _lean_list(k) if solved is not None else None
+                    if solved is not None and (parsed is not None or allow_unchecked):
                         T, lean = solved
                         sols = sorted((Fraction(t - s, r), sg * y) for t, ys in T.items() for y in ys
                                       for sg in ((1, -1) if y else (1,)) if (t - s) % r == 0)
@@ -258,10 +271,11 @@ def reduce_assertions(assertions) -> Result:
                         N, Mv = z3.Int(n), z3.Int(m)
                         new = z3.Or([z3.And(N == x, Mv == y) for x, y in sols]) if sols else z3.BoolVal(False)
                         rep = Replacement(conjunct=str(a), n=n, m=m, substitution=f'x = {r}*{n} + ({s})',
-                                          curve=f'y^2 = x^3 + ({k})', solutions=sols, lean=lean)
+                                          curve=f'y^2 = x^3 + ({k})', solutions=sols, lean=lean,
+                                          evidence='lean_statement_parsed' if parsed else 'theorem_cited')
                         out.assertions.append(new)
                         out.replacements.append(rep)
-        if rep is None and z3.is_eq(a) and a.arg(0).sort() in (z3.IntSort(), z3.RealSort()):
+        if rep is None and allow_unchecked and z3.is_eq(a) and a.arg(0).sort() in (z3.IntSort(), z3.RealSort()):
             try:
                 readings = recognize_quadratic(_padd(to_poly(a.arg(0)), to_poly(a.arg(1)), -1))
             except Unsupported:
@@ -275,7 +289,7 @@ def reduce_assertions(assertions) -> Result:
                     new = z3.Or([z3.And(Nv == x, Sv == y) for x, y in sols]) if sols else z3.BoolVal(False)
                     rep = Replacement(conjunct=str(a), n=N, m=S, substitution=f'{lo} <= {N} <= {hi}',
                                       curve=f'{qa}*{S}^2 + {qb}*{S} + {qc} = {F[2]}*{N}^2 + {F[1]}*{N} + {F[0]}',
-                                      solutions=sols, lean=list(just))
+                                      solutions=sols, lean=list(just), evidence='python_enumeration_unchecked')
                     out.assertions.append(new)
                     out.replacements.append(rep)
                     break
@@ -284,9 +298,9 @@ def reduce_assertions(assertions) -> Result:
     return out
 
 
-def reduce_smt2(text: str) -> Result:
+def reduce_smt2(text: str, allow_unchecked: bool = False) -> Result:
     import z3
-    return reduce_assertions(list(z3.parse_smt2_string(text)))
+    return reduce_assertions(list(z3.parse_smt2_string(text)), allow_unchecked)
 
 
 def main(argv=None):
@@ -303,15 +317,17 @@ def main(argv=None):
     ap.add_argument('task')
     ap.add_argument('--out')
     ap.add_argument('--report')
+    ap.add_argument('--allow-unchecked', action='store_true',
+                    help='also apply theorem-cited curves and bounded Pell/radical enumerations (Python)')
     a = ap.parse_args(argv)
-    res = reduce_smt2(open(a.task).read())
+    res = reduce_smt2(open(a.task).read(), a.allow_unchecked)
     s = z3.Solver()
     s.add(res.assertions)
     if a.out:
         open(a.out, 'w').write(s.to_smt2())
     report = {'task': a.task, 'replacements': [{
         'conjunct': r.conjunct, 'recognized_as': r.curve, 'domain_or_substitution': r.substitution,
-        'solutions': r.solutions, 'justification': r.lean,
+        'solutions': r.solutions, 'justification': r.lean, 'evidence': r.evidence,
         'equivalence': 'over Z, of the replaced conjunct (bounds kept as separate conjuncts)'}
         for r in res.replacements]}
     text = json.dumps(report, indent=1)

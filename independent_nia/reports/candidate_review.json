@@ -1,0 +1,104 @@
+[
+  {
+    "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/pow2-monotone-neg-soundness.smt2",
+    "candidates": [
+      {
+        "command_index": 4,
+        "power": 2,
+        "output_variable": "y",
+        "input_variable": null,
+        "coefficients_by_degree": {
+          "0": 4
+        },
+        "atom": "(= (* y y) 4)",
+        "classification": "syntactic_candidate_only"
+      }
+    ],
+    "harness_directives": {
+      "REQUIRES": [
+        "unrestricted-mode"
+      ],
+      "EXPECT": [
+        "sat"
+      ]
+    },
+    "eligible_checked_replacement": false,
+    "reason": "Only syntactic recognition was performed. No source-domain proof, PerfectPower compilation, certificate checking, or downstream semantics bridge was run."
+  },
+  {
+    "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress0/nl/proj-issue-425.smt2",
+    "candidates": [
+      {
+        "command_index": 3,
+        "power": 2,
+        "output_variable": "x",
+        "input_variable": "y",
+        "coefficients_by_degree": {
+          "1": 1
+        },
+        "atom": "(= (* x x) y)",
+        "classification": "syntactic_candidate_only"
+      }
+    ],
+    "harness_directives": {
+      "REQUIRES": [
+        "unrestricted-mode",
+        "no-competition"
+      ],
+      "COMMAND-LINE": [
+        "--solve-int-as-bv=5524936381719514648"
+      ],
+      "EXPECT-ERROR": [
+        "Error in option parsing"
+      ],
+      "ERROR-SCRUBBER": [
+        "grep -o \"Error in option parsing\""
+      ],
+      "DISABLE-TESTER": [
+        "dump"
+      ],
+      "EXIT": [
+        "1"
+      ]
+    },
+    "eligible_checked_replacement": false,
+    "reason": "Only syntactic recognition was performed. No source-domain proof, PerfectPower compilation, certificate checking, or downstream semantics bridge was run."
+  },
+  {
+    "local_path": "corpus/cvc5__cvc5/test/regress/cli/regress1/nl/disj-eval.smt2",
+    "candidates": [
+      {
+        "command_index": 6,
+        "power": 2,
+        "output_variable": "x",
+        "input_variable": "y",
+        "coefficients_by_degree": {
+          "3": 1
+        },
+        "atom": "(= (* x x) (* y y y))",
+        "classification": "syntactic_candidate_only"
+      },
+      {
+        "command_index": 6,
+        "power": 3,
+        "output_variable": "y",
+        "input_variable": "x",
+        "coefficients_by_degree": {
+          "2": 1
+        },
+        "atom": "(= (* x x) (* y y y))",
+        "classification": "syntactic_candidate_only"
+      }
+    ],
+    "harness_directives": {
+      "COMMAND-LINE": [
+        "--nl-ext=full"
+      ],
+      "EXPECT": [
+        "sat"
+      ]
+    },
+    "eligible_checked_replacement": false,
+    "reason": "Only syntactic recognition was performed. No source-domain proof, PerfectPower compilation, certificate checking, or downstream semantics bridge was run."
+  }
+]
