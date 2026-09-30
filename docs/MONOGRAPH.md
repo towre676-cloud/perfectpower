@@ -26,7 +26,8 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Exact constraint reductions (affine, quadratic discriminant, triangular), their composition, and transported completeness | **Lean** (`Reduction.Exact`, `Exact.comp`, `Exact.pull_complete`, `triangular_count`, `tri_cube_complete`) | — | `Reduction.lean`, §5B |
 | Filtered Pell orbits: a divisibility filter from a reduction's way back leaves infinitely many solutions iff some root cycle mod $M$ meets an admissible state; otherwise a complete finite range | **Lean** (`FilteredPell.infinite_iff_root_state`, `quadRoot_infinite_iff`, `FinCert.sound`, `quadRoot_bound_of_cert`) | unit orbits (Lean) | `FilteredPell.lean`, §5B |
 | Filtered Pell count $A(N)=\frac1{\log\varepsilon}\big(\sum_\rho g_\rho/P_\rho\big)\log N+O(1)$ over canonical roots, and a certificate for the constant | **Lean** (`FilteredPell.filtered_count`, `count_of_orbit_estimates`, `count_of_cert`, `quadRoot_count_of_cert`) | exact Pell count (Lean) | `FilteredCount.lean`, §5B |
-| Compiler plans as theorems on the original constraint: 18 catalogued plans with 24 theorems (7 transport chains; 5 infinite filtered plans with certified-constant counts; 5 finite; one first hit near $7.8\cdot10^{15}$) | **Lean** (`Generated/Plans.lean`, via `PlanCerts.power_transport`, `root_transport`, `quadRoot_subset_of_cert`) | the rows above | `PlanCerts.lean`, §5B |
+| Compiler plans as theorems on the original constraint: 21 catalogued plans with 33 theorems (7 transport chains; 5 infinite filtered plans with kernel-computed count constants, 4 with least solutions; 5 finite; a late family whose least solution $n=655680$ is proved; 2 Mordell-family members; one solution near $7.8\cdot10^{15}$) | **Lean** (`Generated/Plans.lean`, via `PlanCerts.power_transport`, `root_transport`, `quadRoot_subset_of_cert`, `FilteredPell.quadRoot_count_auto`, `quadRoot_isLeast`, `MordellFamily.no_points_cert`) | the rows above | `PlanCerts.lean`, §5B |
+| Mordell's family $k=(4t-1)^3-4m^2$, $m$ free of primes $\equiv3\pmod4$: no integral point, for every member and every affine substitution | **Lean** (`MordellFamily.no_points`, `family_not_isHit`) | Mordell descent lemmas (Lean) | `MordellFamily.lean`, §5B |
 | Constraint compiler: plans, generated programs, timings | Python (tested against brute force, not verified); each plan cites its justification | the rows above | `CONSTRAINT_COMPILER.md`, §5B |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
@@ -235,6 +236,22 @@ generated theorem states $\kappa$ as an explicit rational over $\log\varepsilon$
 plans the compiler's path is emitted as a Lean term: an `Exact` chain composed by `Exact.comp` and
 closed by `pull_complete`, or a filtered-orbit certificate. The kernel then checks the plan's
 statement about the original constraint, and the plan cites that theorem.
+Certificates are computed by the kernel rather than written out (`FilteredAuto.buildCert`,
+checked by the proved `CountCert.check`), and `quadRoot_isLeast` certifies the first solution
+from the orbit order. For example, $41y^2+y+3=n^2+3$ has least solution $n=655680$, with count
+$\tfrac12\log N/\log\varepsilon+O(1)$.
+
+**8A. Recurrence to geometry.** A genus-one plan returns one of three kinds of answer:
+- a complete list with a proof;
+- an infinite family with a counting law;
+- the exact missing premise (`Transport.IntegralPointsOnImage` on the Weierstrass model, with
+  its substitution).
+
+The first family case is Mordell's $k=(4t-1)^3-4m^2$ (`MordellFamily.lean`): one theorem gives
+the empty answer for every member, so the emitted answer is the solution set. Its limits:
+- the family's answer is always empty;
+- recognition is a bounded search;
+- positive-rank families with points remain open.
 
 **9. Two symmetries** (`galois.py`, `factor.py`). *The root action.* Each squarefree layer is
 factored over $\mathbb Q$ (Berlekamp–Zassenhaus), so each irreducible factor is a genuine Galois

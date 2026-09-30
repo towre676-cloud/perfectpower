@@ -47,4 +47,6 @@ import PerfectPower.Reduction
 import PerfectPower.FilteredPell
 import PerfectPower.FilteredCount
 import PerfectPower.PlanCerts
+import PerfectPower.FilteredAuto
+import PerfectPower.MordellFamily
 import PerfectPower.Generated.Plans

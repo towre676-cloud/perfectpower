@@ -263,6 +263,70 @@ class ProofCarrying(unittest.TestCase):
             self.assertEqual(count_cert(con)['sum_g_over_P'], Fraction(fd['good_fraction']))
 
 
+class Geometry(unittest.TestCase):
+    """The passage from recurrence to geometry: each answer is one of three kinds."""
+
+    def test_family_members_are_recognized_and_certified(self):
+        from perfectpower.compiler import mordell_family_match
+        from perfectpower.arith import factorint
+        for k in (1025127, 29115):
+            f = mordell_family_match(k)
+            self.assertIsNotNone(f)
+            c, m, j, m1, u = f['c'], f['m'], f['j'], f['m1'], f['u']
+            self.assertEqual((c % 4, 4 * f['t'] - 1), (3, c))
+            self.assertEqual(c ** 3 - 4 * m * m, k)
+            self.assertEqual((m, (u * u + 1) % m1), (2 ** j * m1, 0))
+            # the certificate's consequence, checked directly: no prime = 3 (mod 4) divides m
+            self.assertFalse([p for p in factorint(m) if p % 4 == 3])
+
+    def test_family_members_have_no_small_points(self):
+        # the Lean theorem says no point at all; sanity-check a window by brute force
+        for k in (1025127, 29115):
+            for x in range(-_cbrt_floor(k) - 1, 20000):
+                r = x ** 3 + k
+                self.assertFalse(r >= 0 and math.isqrt(r) ** 2 == r, (k, x))
+
+    def test_family_plans_are_complete_and_empty(self):
+        for poly in ('(n + 5)**3 + 1025127', '(2*n + 1)**3 + 29115'):
+            p = compile_constraint(PowerConstraint(parse_poly(poly), 2))
+            self.assertEqual(p.status, COMPLETE_FINITE)
+            self.assertEqual(list(p.iter_hits(10 ** 4)), [])
+            self.assertTrue(p.mechanism.startswith('complete finite list'))
+
+    def test_missing_premise_is_explicit(self):
+        p = compile_constraint(PowerConstraint(parse_poly('n**3 + 17'), 2))
+        self.assertEqual(p.status, NOT_ENUMERATED)
+        mp = p.data['missing_premise']
+        self.assertIn('Transport.IntegralPointsOnImage', mp['premise'])
+        self.assertEqual(mp['model'], 'V^2 = U^3 + (0) U + (12393)')
+        self.assertTrue(p.mechanism.startswith('missing premise: Transport.IntegralPointsOnImage'))
+
+    def test_counting_law_mechanism(self):
+        p = compile_constraint(PowerConstraint((1, 0, 2), 2))
+        self.assertTrue(p.mechanism.startswith('infinite family'))
+
+    def test_late_hit_is_certified_first_and_counted(self):
+        import json
+        rows = json.loads((ROOT / 'receipts' / 'plan_certificates.json').read_text())
+        r = {x['theorem'].split('.')[-1]: x for x in rows}['plan_late_certified']
+        self.assertIn('PerfectPower.Generated.Plans.plan_late_certified_first', r['also'])
+        self.assertIn('PerfectPower.Generated.Plans.plan_late_certified_count', r['also'])
+        con = QuadraticRootConstraint(41, 1, 3, (3, 0, 1), 'nonneg')
+        (n0, ws), = list(compile_constraint(con).iter_hits(10 ** 6))[:1]
+        self.assertEqual((n0, ws), (655680, [102400]))
+        text = (ROOT / 'PerfectPower' / 'Generated' / 'Plans.lean').read_text()
+        self.assertIn('IsLeast (FilteredPell.QuadHits 41 1 3 1 0 3 (some 0)) 655680', text)
+
+
+def _cbrt_floor(k):
+    r = round(k ** (1 / 3))
+    while r ** 3 > k:
+        r -= 1
+    while (r + 1) ** 3 <= k:
+        r += 1
+    return r
+
+
 class Justification(unittest.TestCase):
     def test_lean_names_exist(self):
         decls = set()

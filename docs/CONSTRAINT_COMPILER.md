@@ -196,21 +196,123 @@ so.
 - A filtered Pell plan becomes infinitude from its witness, or `QuadHits ⊆ [1, Nb]` from its
   `FinCert`.
 
-The catalogue has 18 plans with 24 theorems, and they check in about 27 s:
+The catalogue has 21 plans with 33 theorems, and they check in about 75 s:
 - 7 transport chains, including $(n-1000004)^3-2=m^2$, whose only solution $n=1000007$ lies past
   any $10^6$ scan and comes with both signs $m=\pm5$;
 - 5 infinite filtered plans, each with an infinitude theorem and a **count theorem with a
-  certified constant**. One composes two filters: $3y^2+4y-2=2n^2+3n$ with $y\ge1$, where both
-  $6\mid sY-4$ and the domain act;
+  certified constant**, and 4 of them with a **least-solution theorem** (§3D). One composes two
+  filters: $3y^2+4y-2=2n^2+3n$ with $y\ge1$, where both $6\mid sY-4$ and the domain act;
 - 5 finite filtered plans (empty cycles), each with a complete range;
+- `plan_late_certified`: $41y^2+y+3=n^2+3$ with $y\ge0$. It is infinite, its count has a
+  certified constant, and `plan_late_certified_first` proves that its **least** solution is
+  $n=655680$ (§3D);
+- 2 members of Mordell's family (§3E), each with a theorem that the original equation has no
+  solution at all;
 - `plan_far_first_hit`: $2y^2+y=263n^2+1$ with $y\ge1$. It is infinite, and
   `plan_far_first_hit_member` proves that $n=7816408648416305$, $y=89633454172610088$ is a
   solution. The compiler finds this as the first admissible orbit point. Lean checks that it is a
-  solution, not that it is the first.
+  solution, **not** that it is the first, and gives no count: see §7.
 
-The compiler reads `receipts/plan_certificates.json` and cites the theorem The compiler reads `receipts/plan_certificates.json` and cites the theorem
+The compiler reads `receipts/plan_certificates.json` and cites the theorem
 in the plan's justification. This connects the path the compiler chose to `Exact.comp` and
 `pull_complete`, instead of only naming the theorems it relied on.
+
+## 3D. Compact certificates and certified first hits (`FilteredAuto.lean`)
+
+**No tables.** A generated count theorem no longer carries its certificate. `buildCert`
+computes the certificate by kernel evaluation:
+- the root box $4AY^2\le|\Delta|u^2$;
+- every root in it;
+- for each root, a period $P$ of its residue cycle (`cycleLen`) and its number $g$ of admissible
+  states (`orbitCount`).
+
+`CountCert.check`, the proved checker, then verifies all of it. None of the computation is
+trusted:
+- the integer square roots (`isqrtZ`, Newton with fuel) are checked by $q^2\le t<(q+1)^2$;
+- the period is checked by iterating the step map $P$ times;
+- $g$ is recounted.
+
+`quadRoot_count_auto` turns `autoCount … = some q` into the count theorem, so the theorem
+states only the rational $q=\sum g/P$.
+
+Two kernel details matter:
+- the counter runs in one pass along the orbit rather than as `List.range` of iterates, which
+  would be quadratic in $P$;
+- `iterForce` compares each state with itself before the next step. This forces evaluation;
+  otherwise the kernel builds a chain of $P$ unevaluated applications and overflows.
+
+For the late example ($P=3362$, $M=26896$, a box of 2050 rows) this cut the peak memory from
+over 13.8 GB, where the check was killed, to 4.6 GB, and the time to about 25 s.
+
+**The first solution.** `quadRoot_isLeast` proves `IsLeast (QuadHits …) n₀` from four facts:
+1. every solution lies on the orbit of a root (`exists_root`);
+2. the roots are exactly the certified ones (`roots_complete_of_check`);
+3. $X$ increases along an orbit (`orbit_fst_mono`);
+4. `minCheck`: for every root, each orbit point before the first with $X\ge X_0=2An_0+B$ fails
+   the **exact** filter (`quadGoodExactB`, proved equal to the filter), not only its residue form.
+
+A smaller solution would have $X<X_0$, so it would be one of the checked points. The theorem needs
+$2A\cdot1+B>0$ (every $n\ge1$ lies right of the vertex). Plan 4 of the catalogue has
+$2A+B=0$, so no minimality theorem is emitted for it.
+
+**The spectacular case, certified.** $41y^2+y+3=n^2+3$, $y\ge0$ (after the exact reduction:
+$X^2-656Y^2=-656$ modulo $M=26896$). Its unit $2049+80\sqrt{656}$ is small, but the filter
+rejects every orbit point until $n=655680$, $y=102400$. Lean proves:
+- `plan_late_certified`: infinitely many solutions;
+- `plan_late_certified_count`: $A(N)=\tfrac12\log N/\log\varepsilon+O(1)$;
+- `plan_late_certified_first`: the least solution is $n=655680$.
+
+So a scan to $6\cdot10^5$ finds nothing, and the theorem says why the first hit is exactly there.
+
+## 3E. From recurrence to geometry: three kinds of answer (`MordellFamily.lean`)
+
+For $m^2=F(n)$ with $F$ cubic, the compiler moves the constraint to the Weierstrass model by an
+exact change of coordinates:
+$$V^2=U^3+AU+B,\quad U=9an+3b,\quad V=27am,$$
+$$A=81ac-27b^2,\quad B=54b^3-243abc+729a^2e.$$
+When $F$ is an affine cube shift, the model is the Mordell curve $m^2=t^3+k$. `plan.mechanism`
+then reports one of three kinds of answer.
+
+**1. Complete finite list, with a proof.** This comes from the solved Mordell registry, from Runge,
+or from the new family theorem.
+
+`MordellFamily.no_points` states: if $k=(4t-1)^3-4m^2$ and $m$ has no prime factor
+$\equiv3\pmod4$, then $y^2=x^3+k$ has **no** integral point. The proof:
+- modulo 4, $x\equiv1$;
+- then $q=x^2-cx+c^2\equiv3\pmod4$, so $q$ has a prime factor $p\equiv3\pmod4$;
+- $p$ divides $y^2+(2m)^2$, hence $p\mid m$, a contradiction.
+
+This is Mordell's classical family. It is **nonrigid**: $t$ and $m$ range over infinitely many
+curves, none of them in the per-curve registry. One theorem covers them all.
+- The hypothesis on $m$ comes from a checkable certificate: $m=2^jm_1$ with $m_1\mid u^2+1$
+  (`no_points_cert`).
+- `family_not_isHit` extends the result through every affine substitution $x=rn+s$.
+
+The compiler recognizes membership (`mordell_family_match`) and emits a theorem about the
+original equation. For example, `plan_mordell_family_1` states that
+$n^3+15n^2+75n+1025252=m^2$ has no solution with $n\ge1$. The theorem holds for every input in
+the family, so the emitted answer (the empty list) is exactly the integral solution set.
+
+**2. Infinite family, with a counting law.** Pell orbits, filtered or not (§3A, §3D).
+
+**3. The missing premise, stated exactly.** For example, $n^3+17=m^2$ reports:
+- the model $V^2=U^3+12393$ and the substitution;
+- the premise `Transport.IntegralPointsOnImage 1 0 0 12393 L`: every integral point of the model
+  with $9\mid U$ and $27\mid V$ is in the list $L$;
+- the consumer `Transport.cubic_sound_image`, which with `Genus1.cubicOK` turns such an $L$ into
+  a complete answer;
+- the routes that could supply the premise:
+  - a proved Mordell–Weil basis, an elliptic-logarithm bound and a sieve;
+  - a descent or class-group argument;
+  - Runge.
+
+**Limits of each route.**
+- *Family.* The family theorem proves emptiness only. A positive-rank family whose complete
+  point set is a nonempty parametrized list is open here.
+- *Recognition.* Recognition is a bounded search (4000 values of $t$ above $\sqrt[3]k$). A match
+  is certified by the returned data. A miss is not a claim of non-membership.
+- *Missing premise.* The premise is stated, not supplied. No elliptic-logarithm machinery is in
+  Lean.
 
 ## 3C. Two symmetries: roots and units (`galois.py`, `factor.py`)
 
@@ -254,10 +356,11 @@ $N=10^4$, which must agree. `make verify` regenerates the receipt.
 | `filtered_pell_infinite` | $-2y^2+y+2=-n^2-2n$, $y\in\mathbb Z$ | filtered Pell, infinite | $n=2,17,104,611,\dots$ (Lean: `plan_filtered_infinite_3`) |
 | `filtered_pell_finite` | $2y^2+3y+1=3n^2$, $y\ge1$ | filtered Pell, no cycle admissible | no solution (Lean: `plan_filtered_finite_2`) |
 | `late_transport` | $(n-1000004)^3-2=m^2$ | transport | only $n=1000007$, $m=\pm5$ (Lean: `plan_late_transport`) |
+| `mordell_family` | $(n+5)^3+1025127=m^2$ | transport → Mordell family | no solution, for every member of the family (Lean: `plan_mordell_family_1`) |
 | `far_first_hit` | $2y^2+y=263n^2+1$, $y\ge1$ | filtered Pell, infinite | first hit $n=7816408648416305$, found by `point(0, 1)` (Lean: `plan_far_first_hit_member`) |
 | `pell_large_unit` | $991n^2+1=m^2$ | Pell orbits | no hit below $1.2\cdot10^{28}$; the first is $n=12055735790331359447442538767$ |
 | `ljunggren` | $n^4+n^3+n^2+n+1=m^2$ | Runge + certificate | only $n=3$ (`Generated.ljunggren_quartic_hits`) |
-| `unresolved_mordell` | $n^3+17=m^2$ | `NOT_ENUMERATED` | bounded evidence only |
+| `unresolved_mordell` | $n^3+17=m^2$ | `NOT_ENUMERATED` | bounded evidence, and the missing premise `IntegralPointsOnImage 1 0 0 12393 L` |
 
 ## 5. Does it pay? (`make bench`, `receipts/constraint_benchmarks.json`)
 
@@ -332,8 +435,15 @@ What remains open is exactly the atlas's open part:
   recognition, the choice of solver and the execution are tested Python, not verified. Emitting a
   `Plans`-style theorem for every plan on request is the natural extension, limited by
   certificate size: $M^2$ residue classes and cycle lengths up to $M^2$.
-- Only catalogued plans have count theorems with certified constants. A certificate needs every
-  root in the box $4AY^2\le|\Delta|u^2$, which is out of reach for large units: the far example
-  $263n^2+1$ gets infinitude and an explicit solution, not a certified count.
+- Only catalogued plans have count and least-solution theorems. A certificate enumerates the
+  box $4AY^2\le|\Delta|u^2$, of height about $u$. That is fine for $u=2049$ (§3D), but out of
+  reach for the far example $263n^2+1$, whose unit is about $8.4\cdot10^{19}$. That example
+  keeps infinitude and an explicit solution. Certifying its roots, and so its count and its first
+  hit, needs a different root-finding argument: the continued-fraction (Lagrange–Legendre)
+  characterization of the solutions of $X^2-DY^2=N$ with $|N|<\sqrt D$, or the LMM algorithm
+  in general. Neither is formalized here.
+- The Mordell family (§3E) is certified for every member, but its answer is always empty.
+  Families with points, and single curves outside the registry, stop at an explicit missing
+  premise.
 - Galois groups are identified up to degree 4. Higher-degree orbits are exact, but their groups
   are not named.

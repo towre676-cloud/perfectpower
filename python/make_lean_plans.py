@@ -142,46 +142,79 @@ theorem {name} : FilteredPell.QuadHits {args} ⊆ Set.Iic {Nb} :=
 '''
 
 
-def count_theorem(name, con, plan):
-    """`|A(N) - (p/q) / log eps * log N| <= K` for all large N, from a CountCert, or None when
-    the certificate would be too large for the kernel."""
-    cc = count_cert(con)
-    if cc is None or cc['Ymax'] > 400 or cc['M'] > 800 or \
-            max([P for _, (P, _) in cc['roots']] + [0]) > 400 or not cc['sum_g_over_P']:
-        return None
+def _auto_args(con):
     a, b, c, F, L = _root_params(con)
-    args, Ls = qh_args(a, b, c, F, L)
     C0, B0, A0 = F
+    Ls = 'none' if L is None else f'(some {lz(L)})'
+    u, v = pell_fundamental(4 * 4 * a * A0)
+    named = f'(a := {a}) (b := {b}) (c := {c}) (A₀ := {A0}) (B₀ := {B0}) (C₀ := {C0})'
+    M = f'(4 * (4 * {lz(a)} * {lz(A0)}) * {lz(a)} : ℤ).natAbs'
+    good = f'(FilteredPell.quadGoodB {lz(a)} {lz(b)} (4 * {lz(a)} * {lz(A0)}) (4 * {lz(a)} * {lz(B0)}) {Ls})'
+    abc = f'(4 * {lz(a)} * {lz(A0)}) (4 * {lz(a)} * {lz(B0)}) (4 * {lz(a)} * {lz(C0)} + {lz(b)} ^ 2 - 4 * {lz(a)} * {lz(c)})'
+    return a, b, c, A0, B0, C0, L, Ls, u, v, named, M, good, abc
+
+
+def count_theorem(name, con, plan):
+    """The count with a certified constant, from a certificate **computed by Lean**
+    (`FilteredPell.autoCount`): the theorem carries only the constant."""
+    cc = count_cert(con)
+    if cc is None or cc['Ymax'] > 3000 or max([P for _, (P, _) in cc['roots']] + [0]) > 400 \
+            or not cc['sum_g_over_P']:
+        return None
+    a, b, c, A0, B0, C0, L, Ls, u, v, named, M, good, abc = _auto_args(con)
+    args, _ = qh_args(a, b, c, (C0, B0, A0), L)
     q = cc['sum_g_over_P']
-    roots = ', '.join(f'(({X}, {Y}), ({P}, {g}))' for (X, Y), (P, g) in cc['roots'])
     D = 4 * 4 * a * A0
-    u, v = cc['u'], cc['v']
-    num, den = q.numerator, q.denominator
     return (
-        f"/-- The roots of `{name}` (for `X^2 - {D} Y^2 = Δ`), each with its residue-cycle length\n"
-        f"`P` modulo {cc['M']} and its number `g` of admissible states. -/\n"
-        f"def {name}_roots : List ((ℤ × ℤ) × (ℕ × ℕ)) := [{roots}]\n\n"
-        f"/-- Certificate for the constant of `{name}`. -/\n"
-        f"def {name}_cert : FilteredPell.CountCert := ⟨{cc['Ymax']}, {cc['isqrts']}, {name}_roots⟩\n\n"
-        f"/-- **Count of `{name}`**: {con.describe()}.  The number `A(N)` of solutions `n ≤ N`\n"
-        f"satisfies `|A(N) - ({num}/{den}) / log ε · log N| ≤ K` for all large `N`, where\n"
-        f"`ε = {u} + {v}√{D}` and `{q} = ∑ g / P` over the roots (each `n` counted once). -/\n"
+        f"/-- **Count of `{name}`**: {con.describe()}.  `|A(N) - ({q}) / log ε · log N| ≤ K` for all\n"
+        f"large `N`, `ε = {u} + {v}√{D}`.  The certificate (roots, cycle lengths modulo the filter\n"
+        f"modulus, admissible states) is computed and checked by the kernel; only the constant is\n"
+        f"stated here. -/\n"
         f"theorem {name}_count : ∃ K : ℝ, ∀ N : ℕ, (4 * {lz(a)} * {lz(B0)} : ℤ).natAbs + 1 ≤ N →\n"
         f"    |((FilteredPell.countQuad {args} N : ℕ) : ℝ) -\n"
-        f"      (({num} : ℝ) / {den}) / Real.log (PellExact.eps (4 * (4 * {lz(a)} * {lz(A0)})) {u} {v}) *\n"
-        f"        Real.log N| ≤ K := by\n"
-        f"  obtain ⟨K, hK⟩ := FilteredPell.quadRoot_count_of_cert (a := {a}) (b := {b}) (c := {c})\n"
-        f"    (A₀ := {A0}) (B₀ := {B0}) (C₀ := {C0}) {Ls} (by decide) (by decide)\n"
-        f"    (u := {u}) (v := {v}) (by decide) (by decide) (by decide +kernel) {name}_cert\n"
-        f"    (by decide +kernel)\n"
-        f"  have e : ({name}_roots.map fun e => (e.2.2 : ℝ) / e.2.1).sum = ({num} : ℝ) / {den} := by\n"
-        f"    simp only [{name}_roots, List.map, List.sum_cons, List.sum_nil]\n"
-        f"    norm_num\n"
-        f"  have e' : ({name}_cert.roots.map fun e => (e.2.2 : ℝ) / e.2.1).sum =\n"
-        f"      ({num} : ℝ) / {den} := e\n"
-        f"  refine ⟨K, fun N hN => ?_⟩\n"
-        f"  have := hK N hN\n"
-        f"  rwa [e'] at this\n")
+        f"      ((({q.numerator} : ℚ) / {q.denominator} : ℚ) : ℝ) /\n"
+        f"        Real.log (PellExact.eps (4 * (4 * {lz(a)} * {lz(A0)})) {u} {v}) * Real.log N| ≤ K :=\n"
+        f"  FilteredPell.quadRoot_count_auto {named} {Ls} (by decide) (by decide)\n"
+        f"    (u := {u}) (v := {v}) (by decide) (by decide) (by decide +kernel) (by decide +kernel)\n")
+
+
+def first_theorem(name, con, plan):
+    """`n₀` is the least solution: minimality from the orbit order and the computed roots."""
+    cc = count_cert(con)
+    if cc is None or cc['Ymax'] > 3000 or max([P for _, (P, _) in cc['roots']] + [0]) > 400:
+        return None
+    a, b, c, A0, B0, C0, L, Ls, u, v, named, M, good, abc = _auto_args(con)
+    if not 2 * 4 * a * A0 + 4 * a * B0 > 0:
+        return None
+    n0, ws = next(iter(plan.iter_hits(10 ** 60)))
+    args, _ = qh_args(a, b, c, (C0, B0, A0), L)
+    return n0, (
+        f"/-- **The least solution of `{name}`** is `n = {n0}` (`y = {ws[0]}`): every root's orbit up to\n"
+        f"its first point with `X ≥ 2An₀ + B` has no admissible point (checked exactly), and the roots\n"
+        f"are complete (computed certificate). -/\n"
+        f"theorem {name}_first : IsLeast (FilteredPell.QuadHits {args}) {n0} :=\n"
+        f"  FilteredPell.quadRoot_isLeast {named} {Ls} (by decide) (by decide) (u := {u}) (v := {v})\n"
+        f"    (by decide) (by decide) (by decide +kernel)\n"
+        f"    (FilteredPell.buildCert {M} {good} {abc} {u} {v})\n"
+        f"    (by decide +kernel) (by decide) {n0} 400 (by decide +kernel)\n"
+        f"    ⟨by norm_num, {ws[0]}, by simp [FilteredPell.Dom], by norm_num⟩\n")
+
+
+def family_theorem(name, con, plan):
+    """A member of Mordell's family k = (4t - 1)^3 - 4m^2, through its affine substitution."""
+    fam = plan.data['family']
+    r, s, k = match_affine_cube(plan.reduced.F)
+    Fs = poly_lean(con.F)
+    t, m, j, m1, u = fam['t'], fam['m'], fam['j'], fam['m1'], fam['u']
+    return (
+        f"/-- Plan `{name}`: {con.describe()}.  The model is `m^2 = t^3 + ({k})` with `t = {r}n + ({s})`,\n"
+        f"and `{k} = (4·{t} - 1)^3 - 4·{m}^2` with `{m} = 2^{j}·{m1}`, `{m1} ∣ {u}^2 + 1`: a member of\n"
+        f"Mordell's family, which has no integral point (`MordellFamily.no_points`). -/\n"
+        f"theorem {name} (n : ℕ) (m : ℤ) : ¬ (1 ≤ n ∧ m ^ 2 = {Fs}) := by\n"
+        f"  rintro ⟨-, h⟩\n"
+        f"  refine MordellFamily.no_points_cert {lz(t)} {m} {m1} {u} {j} (by norm_num) (by decide)\n"
+        f"    ({r} * (n : ℤ) + ({s})) m ?_\n"
+        f"  rw [h]; ring\n")
 
 
 def member_theorem(name, con, n0, y0):
@@ -203,7 +236,10 @@ def catalogue():
            ('plan_triangular_cube', TriangularConstraint(parse_poly('64*n**3 - 120*n**2 + 75*n - 16'), 'int')),
            ('plan_root_cube', QuadraticRootConstraint(1, 1, 0, parse_poly('16*n**3 - 12*n**2 + 3*n - 1'), 'nonneg')),
            ('plan_late_transport', PowerConstraint(parse_poly('(n - 1000004)**3 - 2'), 2)),
-           ('plan_far_first_hit', QuadraticRootConstraint(2, 1, 0, (1, 0, 263), 'pos'))]
+           ('plan_far_first_hit', QuadraticRootConstraint(2, 1, 0, (1, 0, 263), 'pos')),
+           ('plan_late_certified', QuadraticRootConstraint(41, 1, 3, (3, 0, 1), 'nonneg')),
+           ('plan_mordell_family_1', PowerConstraint(parse_poly('(n + 5)**3 + 1025127'), 2)),
+           ('plan_mordell_family_2', PowerConstraint(parse_poly('(2*n + 1)**3 + 29115'), 2))]
     # filtered Pell constraints from a seeded search, kept when the certificate is small
     rng = random.Random(20260930)
     inf, fin = [], []
@@ -229,15 +265,19 @@ def catalogue():
 
 
 def main():
-    out = ['import PerfectPower.PlanCerts', 'import PerfectPower.FilteredCount', '',
+    out = ['import PerfectPower.PlanCerts', 'import PerfectPower.FilteredAuto', 'import PerfectPower.MordellFamily', '',
            '/-! Machine-generated by `python3 python/make_lean_plans.py`; do not edit.  One theorem per',
            'catalogued compiler plan, about the original constraint (see `PlanCerts.lean`). -/', '',
            'namespace PerfectPower.Generated.Plans', '', 'open PerfectPower', '']
     receipt = []
     for name, con in catalogue():
         plan = compile_constraint(con)
-        thm = transport_theorem(name, con, plan) if plan.method.startswith('affine transport') \
-            else filtered_theorem(name, con, plan)
+        if plan.method.startswith('affine transport'):
+            thm = transport_theorem(name, con, plan)
+        elif plan.method.startswith("Mordell's family"):
+            thm = family_theorem(name, con, plan)
+        else:
+            thm = filtered_theorem(name, con, plan)
         if thm is None:
             raise SystemExit(f'no certificate for {name}: {plan.method}')
         out.append(thm)
@@ -247,6 +287,11 @@ def main():
             if ct is not None:
                 out.append(ct)
                 extra.append(f'PerfectPower.Generated.Plans.{name}_count')
+        if plan.status == STRUCTURED_INFINITE and plan.data.get('filter_decision'):
+            ft = first_theorem(name, con, plan)
+            if ft is not None:
+                out.append(ft[1])
+                extra.append(f'PerfectPower.Generated.Plans.{name}_first')
         if name == 'plan_far_first_hit':
             n0, ws = next(iter(plan.iter_hits(10 ** 20)))
             out.append(member_theorem(name, con, n0, ws[0]))

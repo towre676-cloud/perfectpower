@@ -32,6 +32,8 @@ DEMOS = [
      LoopProgram('3*n**2', ('root', 2, 3, 1, 'pos'))),
     ('late_transport', 'is (n - 1000004)^3 - 2 a square?  (the only hit, n = 1000007, is past 10^6; Lean)',
      LoopProgram('(n - 1000004)**3 - 2', ('power', 2))),
+    ('mordell_family', 'is (n + 5)^3 + 1025127 a square?  (a member of the Mordell family: never; Lean)',
+     LoopProgram('(n + 5)**3 + 1025127', ('power', 2))),
     ('far_first_hit', 'does 2y^2 + y = 263n^2 + 1 have a root y >= 1?  (populated cycle, first hit ~7.8e15; Lean)',
      LoopProgram('263*n**2 + 1', ('root', 2, 1, 0, 'pos'))),
     ('pell_large_unit', 'is 991n^2 + 1 a square?  (first hit far beyond any scan)',
@@ -50,6 +52,7 @@ def main():
         orig = sp.run_original(N)
         row = {'demo': key, 'title': title, **sp.explain(),
                'original_program': sp.original, 'specialized_program': sp.source, 'N': N,
+               'mechanism': sp.plan.mechanism,
                'original_output': [[n, w] for n, w in orig]}
         if sp.source is not None:
             spec = sp.run_specialized(N)

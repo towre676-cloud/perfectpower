@@ -361,19 +361,59 @@ lemma lk_of_mem : ∀ {l : List ((ℤ × ℤ) × (ℕ × ℕ))}, (l.map Prod.fst
       simp only [lk, if_neg hne]
       exact lk_of_mem hn.2 e h
 
+/-- The number of `j < n` with `good (f^[j] s)`, counted in one pass along the orbit (the
+kernel evaluates this in `n` steps; the `List.range` form below takes `n^2`). -/
+def orbitCount {α : Type*} (f : α → α) (good : α → Bool) : ℕ → α → ℕ → ℕ
+  | 0, _, acc => acc
+  | n + 1, s, acc => orbitCount f good n (f s) (if good s then acc + 1 else acc)
+
+lemma orbitCount_eq {α : Type*} (f : α → α) (good : α → Bool) (n : ℕ) (s : α) (acc : ℕ) :
+    orbitCount f good n s acc = acc + ((List.range n).filter fun j => good (f^[j] s)).length := by
+  induction n generalizing s acc with
+  | zero => simp [orbitCount]
+  | succ n ih =>
+    rw [orbitCount, ih, List.range_succ_eq_map, List.filter_cons, List.filter_map]
+    simp only [Function.iterate_zero, id, Function.comp_def, Function.iterate_succ_apply]
+    split_ifs with h <;> simp [h, List.length_cons] <;> omega
+
+/-- `f^[n] s`, with every state compared to itself before the next step.  The comparison
+forces the kernel to evaluate each state, so it never builds a chain of `n` unevaluated
+applications (the plain `f^[n] s` overflows the stack for `n` in the thousands). -/
+def iterForce (f : ℤ × ℤ → ℤ × ℤ) : ℕ → ℤ × ℤ → ℤ × ℤ
+  | 0, s => s
+  | n + 1, s => if f s = f s then iterForce f n (f s) else iterForce f n (f s)
+
+lemma iterForce_eq (f : ℤ × ℤ → ℤ × ℤ) (n : ℕ) (s : ℤ × ℤ) : iterForce f n s = f^[n] s := by
+  induction n generalizing s with
+  | zero => rfl
+  | succ n ih => simp [iterForce, ih, Function.iterate_succ_apply]
+
 /-- A quadrant solution, as a Boolean. -/
 def solB (D Δ : ℤ) (p : ℤ × ℤ) : Bool := decide (0 < p.1 ∧ 0 ≤ p.2 ∧ p.1 ^ 2 - D * p.2 ^ 2 = Δ)
 
 lemma solB_iff {D Δ : ℤ} (p : ℤ × ℤ) : solB D Δ p = true ↔ Sol D Δ p := by
   simp [solB, Sol]
 
+/-! ### Kernel-friendly integer square root (not trusted: the checker verifies it) -/
+
+/-- Newton iteration for `⌊√x⌋`, with fuel. -/
+def nsqrtAux : ℕ → ℕ → ℕ → ℕ
+  | 0, _, r => r
+  | fuel + 1, x, r =>
+    let r' := (r + x / r) / 2
+    if r' < r then nsqrtAux fuel x r' else r
+
+/-- `⌊√x⌋` for `x < 2^256` (checked by the caller, never assumed). -/
+def nsqrt (x : ℕ) : ℕ := if x = 0 then 0 else nsqrtAux 300 x x
+
+/-- `⌊√t⌋` for `t > 0`, and `0` otherwise. -/
+def isqrtZ (t : ℤ) : ℤ := if t ≤ 0 then 0 else (nsqrt t.toNat : ℤ)
+
 /-- A certificate for the constant: the roots exactly, each with a period `P` of its residue
 cycle and the number `g` of admissible states in it. -/
 structure CountCert where
   /-- Every root has `Y ≤ Ymax`. -/
   Ymax : ℕ
-  /-- `⌊√(Δ + 4A Y^2)⌋` for `Y ≤ Ymax` (checked). -/
-  isqrts : List ℤ
   /-- `(root, (P, g))`. -/
   roots : List ((ℤ × ℤ) × (ℕ × ℕ))
 
@@ -385,7 +425,7 @@ def CountCert.check (M : ℕ) (goodB : ℤ × ℤ → Bool) (A B C u v : ℤ) (c
   decide (|B ^ 2 - 4 * A * C| * u ^ 2 < 4 * A * ((c.Ymax : ℤ) + 1) ^ 2) &&
   (List.range (c.Ymax + 1)).all (fun Y =>
     let t := B ^ 2 - 4 * A * C + 4 * A * (Y : ℤ) ^ 2
-    let q := c.isqrts.getD Y 0
+    let q := isqrtZ t
     decide (t ≤ 0) ||
       (decide (0 ≤ q ∧ q * q ≤ t ∧ t < (q + 1) * (q + 1)) &&
         (!decide (q * q = t) || !decide (0 < q) ||
@@ -395,9 +435,9 @@ def CountCert.check (M : ℕ) (goodB : ℤ × ℤ → Bool) (A B C u v : ℤ) (c
     solB (4 * A) (B ^ 2 - 4 * A * C) r.1 &&
     !solB (4 * A) (B ^ 2 - 4 * A * C) (pred (4 * A) u v r.1) &&
     decide (0 < r.2.1) &&
-    decide ((stepInt M (4 * A) u v)^[r.2.1] (r.1.1 % M, r.1.2 % M) = (r.1.1 % M, r.1.2 % M)) &&
-    decide (((List.range r.2.1).filter
-      (fun j => goodB ((stepInt M (4 * A) u v)^[j] (r.1.1 % M, r.1.2 % M)))).length = r.2.2))
+    decide (iterForce (stepInt M (4 * A) u v) r.2.1 (r.1.1 % M, r.1.2 % M) =
+      (r.1.1 % M, r.1.2 % M)) &&
+    decide (orbitCount (stepInt M (4 * A) u v) goodB r.2.1 (r.1.1 % M, r.1.2 % M) 0 = r.2.2))
 
 /-- **The count with a certified constant.**  If the certificate checks, the filtered family
 satisfies `|A(N) - (∑ g / P) / log ε · log N| ≤ K` for all `N > |B|`. -/
@@ -445,8 +485,8 @@ theorem count_of_cert {M : ℕ} (hA : 0 < A) (hu1 : 1 < u) (hv : 0 < v)
       have ht : Δ + D * ((ρ.2.toNat : ℕ) : ℤ) ^ 2 = ρ.1 * ρ.1 := by rw [hYc]; linarith
       rcases hlist _ hYn with hneg | ⟨⟨hq0, hq1, hq2⟩, hsq⟩
       · rw [ht] at hneg; nlinarith
-      rw [ht] at hq1 hq2 hsq
-      set q := c.isqrts.getD ρ.2.toNat 0
+      rw [ht] at hq0 hq1 hq2 hsq
+      generalize isqrtZ (ρ.1 * ρ.1) = q at hq0 hq1 hq2 hsq
       have hqX : q = ρ.1 := by
         have h1 : q ≤ ρ.1 := by nlinarith
         have h2 : ρ.1 < q + 1 := by nlinarith
@@ -462,6 +502,7 @@ theorem count_of_cert {M : ℕ} (hA : 0 < A) (hu1 : 1 < u) (hv : 0 < v)
     intro ρ hρ
     obtain ⟨e, he, rfl⟩ := hentry ρ hρ
     obtain ⟨⟨⟨-, hP0⟩, hper⟩, -⟩ := hroots e he
+    rw [iterForce_eq] at hper
     have hlk : P e.1 = e.2.1 := by simp only [P, lk_of_mem hnodup e he]
     refine ⟨hlk ▸ hP0, fun j => ?_⟩
     rw [hlk, castPair_orbit, castPair_orbit, ← castPair_mod M e.1, ← castPair_stepInt_iter,
@@ -475,6 +516,7 @@ theorem count_of_cert {M : ℕ} (hA : 0 < A) (hu1 : 1 < u) (hv : 0 < v)
     apply List.map_congr_left
     intro e he
     obtain ⟨⟨-, -⟩, hg⟩ := hroots e he
+    rw [orbitCount_eq, zero_add] at hg
     simp only [Function.comp, P, lk_of_mem hnodup e he]
     congr 2
     rw [← hg]

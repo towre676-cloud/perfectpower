@@ -120,12 +120,40 @@
   "hits": null
  },
  {
+  "theorem": "PerfectPower.Generated.Plans.plan_late_certified",
+  "constraint": "41*y^2 + 1*y + 3 = n^2 + 3,  n >= 1, y in Z>=0",
+  "status": "STRUCTURED_INFINITE",
+  "method": "Pell orbits",
+  "also": [
+   "PerfectPower.Generated.Plans.plan_late_certified_count",
+   "PerfectPower.Generated.Plans.plan_late_certified_first"
+  ],
+  "hits": null
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_mordell_family_1",
+  "constraint": "n^3 + 15*n^2 + 75*n + 1025252 = m^2,  n >= 1, m in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "Mordell's family k = (4t - 1)^3 - 4m^2 (no integral points)",
+  "also": [],
+  "hits": []
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_mordell_family_2",
+  "constraint": "8*n^3 + 12*n^2 + 6*n + 29116 = m^2,  n >= 1, m in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "Mordell's family k = (4t - 1)^3 - 4m^2 (no integral points)",
+  "also": [],
+  "hits": []
+ },
+ {
   "theorem": "PerfectPower.Generated.Plans.plan_filtered_infinite_1",
   "constraint": "3*y^2 + 4*y + -2 = 2*n^2 + 3*n,  n >= 1, y in Z>=1",
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
   "also": [
-   "PerfectPower.Generated.Plans.plan_filtered_infinite_1_count"
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_1_count",
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_1_first"
   ],
   "hits": null
  },
@@ -135,7 +163,8 @@
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
   "also": [
-   "PerfectPower.Generated.Plans.plan_filtered_infinite_2_count"
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_2_count",
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_2_first"
   ],
   "hits": null
  },
@@ -145,7 +174,8 @@
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
   "also": [
-   "PerfectPower.Generated.Plans.plan_filtered_infinite_3_count"
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_3_count",
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_3_first"
   ],
   "hits": null
  },
@@ -165,7 +195,8 @@
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
   "also": [
-   "PerfectPower.Generated.Plans.plan_filtered_infinite_5_count"
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_5_count",
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_5_first"
   ],
   "hits": null
  },

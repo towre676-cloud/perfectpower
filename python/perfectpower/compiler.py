@@ -303,6 +303,72 @@ def mordell_complete(k: int):
     return None
 
 
+def mordell_family_match(k: int, window: int = 4000):
+    """(t, m, certificate) with k = (4t - 1)^3 - 4m^2 and m free of primes = 3 (mod 4), found by
+    searching c = 4t - 1 above the cube root of k (a bounded search: membership is certified by
+    the returned data, non-membership is not claimed).  Certificate: m = 2^j m1, m1 | u^2 + 1."""
+    from .arith import sqrt_mod
+    lo = _icbrt(k) + 1
+    lo += (3 - lo) % 4
+    for c in range(lo, lo + 4 * window, 4):
+        v = c ** 3 - k
+        if v <= 0 or v % 4:
+            continue
+        m2 = v // 4
+        m = isqrt(m2)
+        if m * m != m2 or m == 0:
+            continue
+        j, m1 = 0, m
+        while m1 % 2 == 0:
+            j, m1 = j + 1, m1 // 2
+        roots = sqrt_mod((-1) % m1, m1) if m1 > 1 else [0]
+        if not roots:
+            continue
+        return {'t': (c + 1) // 4, 'c': c, 'm': m, 'j': j, 'm1': m1, 'u': roots[0]}
+    return None
+
+
+def _icbrt(k: int) -> int:
+    """floor of the real cube root of k."""
+    if k < 0:
+        r = -_icbrt(-k)
+        return r if r ** 3 == k else r - 1
+    r = int(round(k ** (1 / 3))) if k < 10 ** 45 else 1
+    while r ** 3 > k:
+        r -= 1
+    while (r + 1) ** 3 <= k:
+        r += 1
+    return r
+
+
+def missing_premise(F, d: int) -> dict | None:
+    """For a genus-one plan that cannot be enumerated: the exact statement that would finish it."""
+    F = _trim(F)
+    if d == 2 and len(F) == 4:
+        e, c, b, a = F
+        A, B = 81 * a * c - 27 * b * b, 54 * b ** 3 - 243 * a * b * c + 729 * a * a * e
+        return {'kind': 'genus one, cubic',
+                'model': f'V^2 = U^3 + ({A}) U + ({B})',
+                'substitution': f'U = {9 * a}*n + ({3 * b}), V = {27 * a}*m',
+                'premise': f'Transport.IntegralPointsOnImage {a} {b} {A} {B} L: every integral point '
+                           f'of the model with {9 * a} | U - ({3 * b}) and {27 * a} | V is in the list L',
+                'consumer': 'PerfectPower.Transport.cubic_sound_image (with Genus1.cubicOK checking L)',
+                'routes': ['a Mordell-Weil basis proved complete, an elliptic-logarithm bound on '
+                           'integral points, and a sieve down to a finite search',
+                           'a descent in a quadratic ring or a class-group argument, when the model is '
+                           'a Mordell curve (as in MordellMinus2, ClassTwo)',
+                           'Runge, when the curve is Runge-rigid']}
+    if d == 2 and len(F) == 5:
+        return {'kind': 'genus one, quartic',
+                'premise': 'a complete list of integral points on the quartic model; no Lean interface '
+                           'for quartic models yet (OPEN_PROBLEMS item 10)',
+                'routes': ['Runge, when the leading coefficient is a square',
+                           'reduction to a cubic model with the images of the integral points tracked']}
+    return {'kind': 'higher genus or superelliptic',
+            'premise': 'an effective bound on integral points (Baker-type) or a Runge condition; '
+                       'Siegel gives finiteness only'}
+
+
 def match_affine_cube(F) -> tuple[int, int, int] | None:
     """(r, s, k) with F(n) = (r n + s)^3 + k exactly, r != 0, or None."""
     F = _trim(F)
@@ -570,9 +636,21 @@ class Plan:
         from .galois import galois_profile
         return galois_profile(self.reduced.F, self.reduced.d)
 
+    @property
+    def mechanism(self) -> str:
+        """The solution mechanism, in one of three kinds."""
+        if self.status == COMPLETE_FINITE:
+            return 'complete finite list, with a proof that no solution is missed'
+        if self.status in (STRUCTURED_INFINITE, STRUCTURED_FILTERED):
+            return 'infinite family: ' + ('a counting law (Pell orbits)' if 'Pell' in self.method
+                                          else 'an exact generator')
+        if self.status == NOT_ENUMERATED:
+            return 'missing premise: ' + (self.data.get('missing_premise') or {}).get('premise', '?')
+        return 'finite, exact to any N, no complete list'
+
     def explain(self, galois: bool = False) -> dict:
         extra = {'galois': self.galois()} if galois else {}
-        return {**extra, 'constraint': self.original.describe(),
+        return {**extra, 'mechanism': self.mechanism, 'constraint': self.original.describe(),
                 'reductions': [s.explain() for s in self.chain],
                 'reduced': self.reduced.describe(), 'method': self.method,
                 'status': self.status, 'justification': self.justification,
@@ -613,6 +691,15 @@ def _power_plan(pc: PowerConstraint) -> dict:
                                   or 'False'},
                             finite=hits, contains=lambda n: (r * n + s) in T,
                             hits=lambda N: {n: w for n, w in hits.items() if n <= N})
+            fam = mordell_family_match(k)
+            if fam is not None:
+                return dict(method="Mordell's family k = (4t - 1)^3 - 4m^2 (no integral points)",
+                            status=COMPLETE_FINITE,
+                            justification=['PerfectPower.MordellFamily.family_not_isHit',
+                                           'PerfectPower.MordellFamily.no_points_cert'],
+                            data={'substitution': f't = {r}*n + ({s})', 'curve': f'm^2 = t^3 + ({k})',
+                                  'family': fam, 'specialized_test': 'False'},
+                            finite={}, contains=lambda n: False, hits=lambda N: {})
     if d == 2 and len(F) == 3 and F[2] > 0 and not is_square(F[2]) and F[1] ** 2 - 4 * F[2] * F[0]:
         return _quadratic_pell_plan(pc)
     cl = classify(F, d)
@@ -715,7 +802,8 @@ def _power_plan(pc: PowerConstraint) -> dict:
                     data=base, hits=root_hits)
     return dict(method='finite by Siegel (Theorem G); no effective enumeration here',
                 status=NOT_ENUMERATED, justification=['Siegel via Theorem G (paper; not in Lean)'],
-                data={**base, 'curve': cl.curve}, hits=None)
+                data={**base, 'curve': cl.curve, 'missing_premise': missing_premise(F, d)},
+                hits=None)
 
 
 def _quadratic_pell_plan(pc: PowerConstraint) -> dict:
