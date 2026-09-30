@@ -48,11 +48,11 @@ def main():
     # the expert_push bounded scan (all 200 curves, x <= 100000), joined by k; its counts are kept
     # separate: signed points, points with y >= 0, and distinct x
     ext = ROOT / 'expert_push' / 'receipts' / 'mordell_scan.json'
-    published = {}
-    atl = ROOT / 'receipts' / 'oeis_sqrt2_atlas.json'
-    if atl.exists():
-        m = json.loads(atl.read_text())['mordell']
-        published = {r['k']: r['published_count'] for r in m['leads']}
+    # published counts straight from the committed entries (A081119: y^2 = x^3 + n, A081120: - n)
+    from perfectpower.oeis_source import SeqDir, parse_seq
+    src = SeqDir(ROOT / 'data' / 'oeis')
+    published = {n: t for n, t in parse_seq(src.text('A081119')).indexed()}
+    published.update({-n: t for n, t in parse_seq(src.text('A081120')).indexed()})
     join = None
     if ext.exists():
         scan = {c['k']: c for c in json.loads(ext.read_text())['curves']}
