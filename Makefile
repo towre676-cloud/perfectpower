@@ -42,11 +42,12 @@ receipts:
 	$(PY) python/make_lean_mordell_descent.py
 	$(PY) python/uniformity.py
 	$(PY) python/make_pell_heat_receipt.py
+	$(PY) python/make_lean_mordell_branch.py
+	$(PY) python/make_lean_thue_branch.py
+	$(PY) python/make_mordell_registry.py
 	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
 	$(PY) python/make_oeis_problems.py
-	$(PY) python/make_lean_mordell_branch.py
-	$(PY) python/make_lean_thue_branch.py
 	$(PY) python/d72_local.py
 	$(PY) python/descent_residual.py
 	$(PY) galois_merge/run_repo_adapters.py

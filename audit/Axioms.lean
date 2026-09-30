@@ -738,6 +738,9 @@ open PerfectPower
 #print axioms PerfectPower.Interfaces.evalF_compF_mul
 #print axioms PerfectPower.Interfaces.detM_mul
 #print axioms PerfectPower.Interfaces.bound_transport
+#print axioms PerfectPower.Interfaces.sublattice_branch
+#print axioms PerfectPower.Interfaces.line_image
+#print axioms PerfectPower.Interfaces.vert_image
 #print axioms PerfectPower.Interfaces.shift_shift
 #print axioms PerfectPower.Interfaces.split_prefix
 #print axioms PerfectPower.Interfaces.A048624_terms_match

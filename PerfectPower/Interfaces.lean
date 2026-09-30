@@ -11,6 +11,10 @@ import PerfectPower.PellGeneral
   source solution is `T (u, v)` for a target solution satisfying `R (T (u, v))`.  Emptiness of
   the *unrestricted* target implies emptiness of every restricted source.  So the existing empty
   obligations need no restriction bookkeeping, but solution-carrying ones do.
+* **Sublattice branches** (`sublattice_branch`, `line_image`, `vert_image`).  A descent edge
+  `F ∘ T = c G` with `det T ≠ ±1` covers exactly the points of `T ℤ²`, and on that sublattice the
+  solutions of `F = cN` are the images of the solutions of `G = N`.  For the two line matrices of
+  `ThueLocal.descB` the image is a congruence (`p ∣ a − λb`, `p ∣ b`).
 * **Composition and bound transport** (`evalF_compF_mul`, `detM_mul`, `bound_transport`).  Edges
   compose by the matrix product, with multiplicative determinant.  A coordinate bound `B` on the
   target solutions transports to `(|t₁| + |t₂|) B` on the source, row by row.
@@ -78,6 +82,45 @@ theorem bound_transport (t₁ t₂ u v B : ℤ) (hu : |u| ≤ B) (hv : |v| ≤ B
     _ ≤ |t₁| * B + |t₂| * B := by
         gcongr
     _ = (|t₁| + |t₂|) * B := by ring
+
+/-! ### Sublattice branches (non-unimodular edges keep their image condition) -/
+
+/-- **A sublattice branch, exactly.**  If `F ∘ T = c · G` with `c ≠ 0` and `M = c N`, then the
+solutions of `F = M` lying in the image `T ℤ²` are exactly the images `T z` of the solutions of
+`G = N`.  Unlike the unimodular case, the image condition is part of the statement: a descent
+edge covers precisely the points of its sublattice, and **nonempty** solution sets transport
+along it, not only emptiness. -/
+theorem sublattice_branch (F G : Form) (T : Mat) (c M N : ℤ) (hc : c ≠ 0)
+    (hFG : ∀ u v, evalF (compF F T) u v = c * evalF G u v) (hM : M = c * N) (a b : ℤ) :
+    (evalF F a b = M ∧ ∃ u v, a = T.1.1 * u + T.1.2 * v ∧ b = T.2.1 * u + T.2.2 * v) ↔
+      ∃ u v, a = T.1.1 * u + T.1.2 * v ∧ b = T.2.1 * u + T.2.2 * v ∧ evalF G u v = N := by
+  constructor
+  · rintro ⟨h, u, v, ha, hb⟩
+    refine ⟨u, v, ha, hb, ?_⟩
+    have := hFG u v
+    rw [evalF_compF, ← ha, ← hb, h, hM] at this
+    exact (mul_left_cancel₀ hc this).symm
+  · rintro ⟨u, v, ha, hb, h⟩
+    refine ⟨?_, u, v, ha, hb⟩
+    rw [ha, hb, ← evalF_compF, hFG, h, hM]
+
+/-- The image of the descent line matrix `((λ, p), (1, 0))` is `{(a, b) : p ∣ a − λ b}`. -/
+theorem line_image (lam p a b : ℤ) :
+    (∃ u v, a = lam * u + p * v ∧ b = 1 * u + 0 * v) ↔ p ∣ a - lam * b := by
+  constructor
+  · rintro ⟨u, v, ha, hb⟩
+    exact ⟨v, by rw [ha, hb]; ring⟩
+  · rintro ⟨v, hv⟩
+    exact ⟨b, v, by linarith, by ring⟩
+
+/-- The image of `((1, 0), (0, p))` is `{(a, b) : p ∣ b}`. -/
+theorem vert_image (p a b : ℤ) :
+    (∃ u v, a = 1 * u + 0 * v ∧ b = 0 * u + p * v) ↔ p ∣ b := by
+  constructor
+  · rintro ⟨u, v, -, hb⟩
+    exact ⟨v, by rw [hb]; ring⟩
+  · rintro ⟨v, hv⟩
+    exact ⟨a, v, by ring, by rw [hv]; ring⟩
 
 /-! ### Sequence shifts -/
 

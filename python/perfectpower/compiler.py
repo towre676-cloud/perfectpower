@@ -283,26 +283,22 @@ def _generated_no_points() -> dict[int, str]:
 
 
 def _generated_complete() -> dict[int, tuple]:
-    """k -> ({t: [m >= 0]}, lean names) for every complete list `y^2 = x^3 - D` emitted by the
-    branch compiler (`Generated/MordellBranch.lean`, `complete_of_branch`) and by transported
-    Thue obligations (`Generated/MordellThue.lean`, `complete_of_thue`).  Read from the generated
-    theorem statements themselves, so the registry cannot drift from what Lean checks."""
+    """k -> ({t: [m >= 0]}, lean names) for every complete list `y^2 = x^3 - D` in the solved-family
+    registry `receipts/mordell_registry.json`.  The registry is structured data from the generators'
+    receipts, and `python/make_mordell_registry.py` checks every entry against its Lean theorem
+    statement (full parse, both directions) and fails on any gap, so a missing or stale registry
+    can only make the compiler more conservative, never wrong."""
+    path = ROOT / 'receipts' / 'mordell_registry.json'
     out = {}
-    for mod, via in (('MordellBranch', 'PerfectPower.DescentBranch.complete_of_branch'),
-                     ('MordellThue', 'PerfectPower.DescentThue.complete_of_thue')):
-        path = ROOT / 'PerfectPower' / 'Generated' / f'{mod}.lean'
-        if not path.exists():
-            continue
-        pat = r'theorem minus(\d+) \(x y : ℤ\) : y \^ 2 = x \^ 3 - (\d+) ↔ \(x, y\) ∈ \(\[(.*?)\] :'
-        for name, D, body in re.findall(pat, path.read_text()):
-            assert name == D
-            T: dict[int, list[int]] = {}
-            for x, y in re.findall(r'\(\(?(-?\d+)\)?, \(?(-?\d+)\)?\)', body):
-                T.setdefault(int(x), [])
-                if int(y) >= 0:
-                    T[int(x)].append(int(y))
-            out[-int(D)] = ({t: sorted(ms) for t, ms in T.items()},
-                            [f'PerfectPower.Generated.{mod}.minus{D}', via])
+    if not path.exists():
+        return out
+    for c in json.loads(path.read_text())['curves']:
+        T: dict[int, list[int]] = {}
+        for x, y in c['points']:
+            T.setdefault(x, [])
+            if y >= 0:
+                T[x].append(y)
+        out[-c['D']] = ({t: sorted(ms) for t, ms in T.items()}, [c['lean'], c['via']])
     return out
 
 
