@@ -156,6 +156,31 @@ determines $n$, and the two signs of the root are handled inside the filter, so 
 twice. Hence $\kappa=\big(\sum_{\text{seeds}}\#\text{marked}/\text{period}\big)/\log\varepsilon$.
 On 271 random infinite filtered Pell plans, $|A(N)-\kappa\log N|\le 2.03$ at $N=10^{40}$.
 
+**The count is a theorem** (`FilteredCount.lean`). Let the roots be one per orbit (canonical by
+`root_unique`), let $P_\rho$ be a period of the residue cycle of $\rho$, and let $g_\rho$ be the
+number of admissible states in it. Then
+$$A(N)=\frac{1}{\log\varepsilon}\Big(\sum_\rho\frac{g_\rho}{P_\rho}\Big)\log N+O(1).$$
+- `filtered_count` proves this for any stable filter.
+- `quadRoot_count_of_cert` proves it for the original constraint.
+
+The proof has three layers:
+- `orbit_count_pred`: one orbit, for any periodic predicate;
+- `count_of_orbit_estimates`: the assembly of `pell_exact_count`, with divisibility replaced by
+  an arbitrary filter;
+- the finitely many indices with $Y<T$, where the filter and its residue form may differ, go into
+  the $O(1)$.
+
+**A certified constant.** A `CountCert` lists the roots exactly, each checked to be a root (a
+solution whose predecessor is not) and complete through the root box. It gives each root's
+$(P_\rho,g_\rho)$, checked on integer residues. So the generated theorem names the constant as
+an explicit rational divided by $\log\varepsilon$. On all 624 comparable random plans,
+$\sum g/P$ over the Lean roots equals the compiler's seed-based value.
+
+**Direct access.** `plan.orbit_point(k, j)` returns the $j$-th point of orbit $k$ by fast
+exponentiation of the unit, together with its recovered witnesses. The 100,000th point of the
+$2n^2+1$ orbit (an $n$ of 254,310 bits) takes 45 ms. The generated Pell programs contain the same
+`point(k, j)`.
+
 **The radical analogue** ($G=\alpha n+\beta$): $m$ ranges over residues mod $|2a\alpha|$ with
 $m^2\equiv\beta\pmod\alpha$, and the same argument applies. This case is Python only and labelled
 so.
@@ -171,29 +196,48 @@ so.
 - A filtered Pell plan becomes infinitude from its witness, or `QuadHits ⊆ [1, Nb]` from its
   `FinCert`.
 
-There are 16 theorems (6 transport chains, 5 infinite and 5 finite filtered plans), and they
-check in about 15 s. The compiler reads `receipts/plan_certificates.json` and cites the theorem
+The catalogue has 18 plans with 24 theorems, and they check in about 27 s:
+- 7 transport chains, including $(n-1000004)^3-2=m^2$, whose only solution $n=1000007$ lies past
+  any $10^6$ scan and comes with both signs $m=\pm5$;
+- 5 infinite filtered plans, each with an infinitude theorem and a **count theorem with a
+  certified constant**. One composes two filters: $3y^2+4y-2=2n^2+3n$ with $y\ge1$, where both
+  $6\mid sY-4$ and the domain act;
+- 5 finite filtered plans (empty cycles), each with a complete range;
+- `plan_far_first_hit`: $2y^2+y=263n^2+1$ with $y\ge1$. It is infinite, and
+  `plan_far_first_hit_member` proves that $n=7816408648416305$, $y=89633454172610088$ is a
+  solution. The compiler finds this as the first admissible orbit point. Lean checks that it is a
+  solution, not that it is the first.
+
+The compiler reads `receipts/plan_certificates.json` and cites the theorem The compiler reads `receipts/plan_certificates.json` and cites the theorem
 in the plan's justification. This connects the path the compiler chose to `Exact.comp` and
 `pull_complete`, instead of only naming the theorems it relied on.
 
-## 3C. The Galois front end (`galois.py`)
+## 3C. Two symmetries: roots and units (`galois.py`, `factor.py`)
 
-`plan.galois()`, and the `galois` field of `solve`, list the orbits of the Galois action on the
-roots of each squarefree layer:
+**The root action.** `plan.galois()`, and the `galois` field of `solve`, factor each squarefree
+layer over $\mathbb Q$ (`factor.py`: Berlekamp–Zassenhaus, with every factor verified by exact
+division). Each irreducible factor is a genuine Galois orbit, reported with its group:
 - rational roots are fixed points;
-- a conjugate pair comes from an irreducible quadratic, with group $C_2$ and field
-  $\mathbb Q(\sqrt D)$;
-- a cubic orbit has group $A_3$ or $S_3$, decided by whether its discriminant is a square;
-- factors of degree $\ge4$ without a rational root are reported by degree only.
+- $C_2$ for a quadratic, with its **root field** $\mathbb Q(\sqrt D)$;
+- $A_3$ or $S_3$ for a cubic;
+- $S_4$, $A_4$, $D_4$, $C_4$ or $V_4$ for a quartic, via the resolvent cubic and Kappe–Warren;
+- degree $\ge5$: transitive, group not identified.
 
-Each orbit carries its multiplicity $j$ and its $t=d/\gcd(d,j)$. The explanation says why the type
-follows:
-- radical type: the single obstructed root is Galois-fixed, hence a rational parameter;
-- Pell type: the two obstructed roots are one conjugate pair (a norm form) or two rational roots;
-- finite type: $S>1$.
+A remainder the factorizer declines is labelled unknown, never an orbit. For example, $x^4+4$
+gives two $C_2$ orbits, not one quartic.
 
-The explanation agrees with the classifier on every tested case. Root symmetry alone does not
-decide whether an integer orbit is populated, nor whether a curve has a complete point list.
+**The unit action.** For the Pell type the integer solutions do *not* move under the root Galois
+group. Each branch is the norm form $X^2-4AY^2=\Delta$ of the **real** field $\mathbb Q(\sqrt A)$,
+and they move along orbits of its fundamental unit. For $2n^2+1=m^2$ the roots of $2x^2+1$ lie in
+$\mathbb Q(\sqrt{-2})$, while the unit $3+\sqrt8$ lies in $\mathbb Q(\sqrt2)$.
+
+The profile reports the two fields separately (`orbits[*].root_field`,
+`unit_fields[*].unit_field`). The earlier explanation conflated them; this was a review
+correction. The root action explains the *shape* (why a rational parameter or a norm equation
+appears). The unit action and its finite quotient mod $M$ (§3A) decide *which* integer solutions
+exist and how many there are.
+
+Neither symmetry decides whether a curve of higher genus has a complete point list.
 
 ## 4. Worked examples (`receipts/constraint_demos.json`)
 
@@ -209,6 +253,8 @@ $N=10^4$, which must agree. `make verify` regenerates the receipt.
 | `quadratic_filter` | $2y^2+y=n$, $y\ge0$ | radical + filter, decided: `STRUCTURED_INFINITE` | $n=3,10,21,36,\dots$ ($8n+1$ square *and* $4\mid m-1$) |
 | `filtered_pell_infinite` | $-2y^2+y+2=-n^2-2n$, $y\in\mathbb Z$ | filtered Pell, infinite | $n=2,17,104,611,\dots$ (Lean: `plan_filtered_infinite_3`) |
 | `filtered_pell_finite` | $2y^2+3y+1=3n^2$, $y\ge1$ | filtered Pell, no cycle admissible | no solution (Lean: `plan_filtered_finite_2`) |
+| `late_transport` | $(n-1000004)^3-2=m^2$ | transport | only $n=1000007$, $m=\pm5$ (Lean: `plan_late_transport`) |
+| `far_first_hit` | $2y^2+y=263n^2+1$, $y\ge1$ | filtered Pell, infinite | first hit $n=7816408648416305$, found by `point(0, 1)` (Lean: `plan_far_first_hit_member`) |
 | `pell_large_unit` | $991n^2+1=m^2$ | Pell orbits | no hit below $1.2\cdot10^{28}$; the first is $n=12055735790331359447442538767$ |
 | `ljunggren` | $n^4+n^3+n^2+n+1=m^2$ | Runge + certificate | only $n=3$ (`Generated.ljunggren_quartic_hits`) |
 | `unresolved_mordell` | $n^3+17=m^2$ | `NOT_ENUMERATED` | bounded evidence only |
@@ -286,4 +332,8 @@ What remains open is exactly the atlas's open part:
   recognition, the choice of solver and the execution are tested Python, not verified. Emitting a
   `Plans`-style theorem for every plan on request is the natural extension, limited by
   certificate size: $M^2$ residue classes and cycle lengths up to $M^2$.
-- The Galois front end does not factor residual layers of degree $\ge4$.
+- Only catalogued plans have count theorems with certified constants. A certificate needs every
+  root in the box $4AY^2\le|\Delta|u^2$, which is out of reach for large units: the far example
+  $263n^2+1$ gets infinitude and an explicit solution, not a certified count.
+- Galois groups are identified up to degree 4. Higher-degree orbits are exact, but their groups
+  are not named.

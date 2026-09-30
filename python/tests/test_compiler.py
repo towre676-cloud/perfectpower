@@ -206,6 +206,63 @@ class Differential(unittest.TestCase):
         self.assertTrue({COMPLETE_FINITE, STRUCTURED_INFINITE, NOT_ENUMERATED} <= seen)
 
 
+class ProofCarrying(unittest.TestCase):
+    """The release tests: each case has a generated Lean theorem about the original equation."""
+
+    @classmethod
+    def setUpClass(cls):
+        import json
+        cls.rows = json.loads((ROOT / 'receipts' / 'plan_certificates.json').read_text())
+        cls.by_name = {r['theorem'].split('.')[-1]: r for r in cls.rows}
+
+    def test_two_filters_with_certified_count(self):
+        # divisibility (|2a| > 2) and the domain y >= 1, composed; its constant is a Lean theorem
+        r = self.by_name['plan_filtered_infinite_1']
+        self.assertIn('y in Z>=1', r['constraint'])
+        self.assertIn('PerfectPower.Generated.Plans.plan_filtered_infinite_1_count', r['also'])
+
+    def test_late_finite_hit_and_both_signs(self):
+        r = self.by_name['plan_late_transport']
+        self.assertEqual(r['status'], COMPLETE_FINITE)
+        self.assertEqual(r['hits'], [[1000007, [-5, 5]]])
+
+    def test_empty_cycle(self):
+        r = self.by_name['plan_filtered_finite_2']
+        self.assertEqual((r['status'], r['hits']), (COMPLETE_FINITE, []))
+
+    def test_first_hit_beyond_any_scan(self):
+        r = self.by_name['plan_far_first_hit']
+        self.assertEqual(r['status'], STRUCTURED_INFINITE)
+        self.assertIn('PerfectPower.Generated.Plans.plan_far_first_hit_member', r['also'])
+        p = compile_constraint(QuadraticRootConstraint(2, 1, 0, (1, 0, 263), 'pos'))
+        (n0, ws), = list(p.iter_hits(10 ** 16))[:1]
+        self.assertEqual(n0, 7816408648416305)
+        self.assertEqual(2 * ws[0] ** 2 + ws[0], 263 * n0 * n0 + 1)
+        pt = p.orbit_point(0, 1)
+        self.assertEqual((pt['n'], pt['witnesses']), (n0, ws))
+
+    def test_orbit_point_by_exponentiation(self):
+        p = compile_constraint(PowerConstraint((1, 0, 2), 2))
+        self.assertEqual([p.orbit_point(0, j)['n'] for j in range(1, 5)], [2, 12, 70, 408])
+        pt = p.orbit_point(0, 5000)
+        self.assertEqual(2 * pt['n'] ** 2 + 1, pt['Y'] ** 2)
+
+    def test_certified_constant_matches_plan(self):
+        from fractions import Fraction
+        from perfectpower.compiler import count_cert
+        for i in range(1, 6):
+            r = self.by_name[f'plan_filtered_infinite_{i}']
+            if not any(a.endswith('_count') for a in r['also']):
+                continue
+            # rebuild the constraint from the catalogue and compare sum g / P with the plan
+            import sys
+            sys.path.insert(0, str(ROOT / 'python'))
+            from make_lean_plans import catalogue
+            con = dict(catalogue())[f'plan_filtered_infinite_{i}']
+            fd = compile_constraint(con).data['filter_decision']
+            self.assertEqual(count_cert(con)['sum_g_over_P'], Fraction(fd['good_fraction']))
+
+
 class Justification(unittest.TestCase):
     def test_lean_names_exist(self):
         decls = set()

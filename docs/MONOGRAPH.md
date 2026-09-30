@@ -25,7 +25,8 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Transport of complete lists through $n\mapsto rn+s$ with exact counts; image-restricted genus-one premise | **Lean** (`affine_count`, `cubic_sound_image`, `n3m2_hits`) | — | `Transport.lean`, §5A |
 | Exact constraint reductions (affine, quadratic discriminant, triangular), their composition, and transported completeness | **Lean** (`Reduction.Exact`, `Exact.comp`, `Exact.pull_complete`, `triangular_count`, `tri_cube_complete`) | — | `Reduction.lean`, §5B |
 | Filtered Pell orbits: a divisibility filter from a reduction's way back leaves infinitely many solutions iff some root cycle mod $M$ meets an admissible state; otherwise a complete finite range | **Lean** (`FilteredPell.infinite_iff_root_state`, `quadRoot_infinite_iff`, `FinCert.sound`, `quadRoot_bound_of_cert`) | unit orbits (Lean) | `FilteredPell.lean`, §5B |
-| Compiler plans as theorems on the original constraint: 16 catalogued plans (6 transport chains, 10 filtered Pell) | **Lean** (`Generated/Plans.lean`, via `PlanCerts.power_transport`, `root_transport`, `quadRoot_subset_of_cert`) | the rows above | `PlanCerts.lean`, §5B |
+| Filtered Pell count $A(N)=\frac1{\log\varepsilon}\big(\sum_\rho g_\rho/P_\rho\big)\log N+O(1)$ over canonical roots, and a certificate for the constant | **Lean** (`FilteredPell.filtered_count`, `count_of_orbit_estimates`, `count_of_cert`, `quadRoot_count_of_cert`) | exact Pell count (Lean) | `FilteredCount.lean`, §5B |
+| Compiler plans as theorems on the original constraint: 18 catalogued plans with 24 theorems (7 transport chains; 5 infinite filtered plans with certified-constant counts; 5 finite; one first hit near $7.8\cdot10^{15}$) | **Lean** (`Generated/Plans.lean`, via `PlanCerts.power_transport`, `root_transport`, `quadRoot_subset_of_cert`) | the rows above | `PlanCerts.lean`, §5B |
 | Constraint compiler: plans, generated programs, timings | Python (tested against brute force, not verified); each plan cites its justification | the rows above | `CONSTRAINT_COMPILER.md`, §5B |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
@@ -220,20 +221,35 @@ roots in the box $4AY^2\le|\Delta|u^2$ and their cycle lengths. Counting orbit i
 counts each $n$ once, so $\kappa$ is the marked fraction of the cycles over $\log\varepsilon$. On
 271 random plans this agrees with the count to within $2.03$ at $N=10^{40}$.
 
+**7′. The filtered count.** With one root $\rho$ per orbit, a period $P_\rho$ of its residue
+cycle and $g_\rho$ admissible states per period,
+$$A(N)=\frac{1}{\log\varepsilon}\Big(\sum_\rho\frac{g_\rho}{P_\rho}\Big)\log N+O(1)$$
+(`filtered_count`; for the original constraint, `quadRoot_count_of_cert`). The proof generalises
+the exact Pell count: `orbit_count_pred` counts one orbit for any periodic predicate, the
+assembly `count_of_orbit_estimates` works for any filter forcing $2A\mid X-B$, and the finitely
+many indices with $Y<T$ go into the error. A `CountCert` names the constant exactly: it lists
+the roots (each checked to be a root, complete through the root box) with their $(P,g)$, so a
+generated theorem states $\kappa$ as an explicit rational over $\log\varepsilon$.
+
 **8. The chosen path as a theorem** (`PlanCerts.lean`, `Generated/Plans.lean`). For catalogued
 plans the compiler's path is emitted as a Lean term: an `Exact` chain composed by `Exact.comp` and
 closed by `pull_complete`, or a filtered-orbit certificate. The kernel then checks the plan's
 statement about the original constraint, and the plan cites that theorem.
 
-**9. Galois action** (`galois.py`). The rational squarefree decomposition groups roots by
-multiplicity, and the Galois action splits each layer into orbits: fixed rational roots,
-conjugate pairs ($C_2$, field $\mathbb Q(\sqrt D)$), and cubic orbits ($A_3$ or $S_3$). The atlas
-profile is a union of orbit profiles, and the type follows:
+**9. Two symmetries** (`galois.py`, `factor.py`). *The root action.* Each squarefree layer is
+factored over $\mathbb Q$ (Berlekamp–Zassenhaus), so each irreducible factor is a genuine Galois
+orbit. Groups are named up to degree 4: $C_2$ with its root field, $A_3$/$S_3$, and
+$S_4$/$A_4$/$D_4$/$C_4$/$V_4$ via the resolvent cubic. The atlas profile is a union of orbit
+profiles:
 - radical type: its one obstructed root is fixed, hence a rational parameter;
-- Pell type: its two obstructed roots are one conjugate pair (a norm form) or two rational roots.
+- Pell type: its two obstructed roots are one conjugate pair or two rational roots.
 
-This is an explanatory front end. It does not decide whether an orbit is populated, nor settle
-point lists in higher genus.
+*The unit action.* The integer solutions of a Pell branch move under the units of the **real**
+field $\mathbb Q(\sqrt A)$ of its norm form, not under the root Galois group. For $2n^2+1$ the
+roots lie in $\mathbb Q(\sqrt{-2})$ and the unit $3+\sqrt8$ lies in $\mathbb Q(\sqrt2)$. The two
+fields are reported separately; an earlier explanation conflated them. The root action explains
+the shape, and the unit action with its finite quotient decides the solutions and their count.
+Neither settles point lists in higher genus.
 
 **10. The remaining effectiveness boundary.** Classification becomes a complete executable answer
 exactly where the mathematics is effective:

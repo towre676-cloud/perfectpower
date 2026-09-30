@@ -225,6 +225,26 @@ def _reduced_source(plan) -> str | None:
             lines += [f'    ns |= {{n for n in {fixed!r} if n <= N}}   # bounded branch {A}, {B}, {C}']
         lines += [f'    ns |= {{n for n in {sorted(_zeros(G))!r} if n <= N}}',
                   '    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n']
+        if len(branches) == 1:
+            br = branches[0]
+            A, B, C = br['quadratic']
+            D = br['D']
+            x1, y1 = br['unit']
+            lines += ['',
+                      'def point(k, j):',
+                      '    """The j-th point of orbit k, (X, Y) = seed * eps^j, by fast exponentiation;',
+                      '    returns (n, Y) when X = 2An + B with n >= 1, else None."""',
+                      f'    X, Y = {[tuple(x) for x in br["seeds"]]!r}[k]',
+                      f'    ex, ey, bx, by = 1, 0, {x1}, {y1}',
+                      '    while j:',
+                      '        if j & 1:',
+                      f'            ex, ey = ex * bx + {D} * ey * by, ex * by + ey * bx',
+                      f'        bx, by = bx * bx + {D} * by * by, 2 * bx * by',
+                      '        j >>= 1',
+                      f'    X, Y = X * ex + {D} * Y * ey, X * ey + Y * ex',
+                      f'    if X > 0 and (X - ({B})) % {2 * A} == 0 and X - ({B}) >= {2 * A}:',
+                      f'        return (X - ({B})) // {2 * A}, abs(Y)',
+                      '    return None\n']
         return '\n'.join(lines)
     return None
 

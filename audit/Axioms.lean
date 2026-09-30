@@ -337,3 +337,15 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Plans.plan_root_cube
 #print axioms PerfectPower.Generated.Plans.plan_filtered_infinite_1
 #print axioms PerfectPower.Generated.Plans.plan_filtered_finite_1
+-- The filtered Pell count
+#print axioms PerfectPower.FilteredPell.orbit_count_pred
+#print axioms PerfectPower.FilteredPell.count_of_orbit_estimates
+#print axioms PerfectPower.FilteredPell.card_filter_diff_le
+#print axioms PerfectPower.FilteredPell.filtered_count
+#print axioms PerfectPower.FilteredPell.count_of_cert
+#print axioms PerfectPower.FilteredPell.countQuad_near
+#print axioms PerfectPower.FilteredPell.quadRoot_count_of_cert
+#print axioms PerfectPower.Generated.Plans.plan_filtered_infinite_1_count
+#print axioms PerfectPower.Generated.Plans.plan_far_first_hit
+#print axioms PerfectPower.Generated.Plans.plan_far_first_hit_member
+#print axioms PerfectPower.Generated.Plans.plan_late_transport

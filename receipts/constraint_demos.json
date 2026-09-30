@@ -14,18 +14,19 @@
     "orbits": [
      {
       "size": 3,
-      "group": "S3",
       "factor": [
-       "-69/25",
-       "147/25",
-       "-21/5",
-       "1"
+       -69,
+       147,
+       -105,
+       25
       ],
+      "group": "S3",
       "discriminant": "-108/15625",
       "multiplicity": 1,
       "t": 2
      }
     ],
+    "unit_fields": [],
     "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)"
    },
    "constraint": "125*n^3 - 525*n^2 + 735*n - 345 = m^2,  n >= 1, m in Z",
@@ -97,19 +98,32 @@
     "orbits": [
      {
       "size": 2,
-      "group": "C2",
       "factor": [
-       "1/2",
-       "0",
-       "1"
+       1,
+       0,
+       2
       ],
+      "group": "C2",
       "discriminant": "-2",
-      "field": "Q(sqrt(-2))",
+      "root_field": "Q(sqrt(-2))",
       "multiplicity": 1,
       "t": 2
      }
     ],
-    "explanation": "Pell type: the two obstructed roots are one conjugate pair, the norm form of Q(sqrt(-2)); square values come from a Pell equation"
+    "unit_fields": [
+     {
+      "branch": [
+       2,
+       0,
+       1
+      ],
+      "case": "pell",
+      "unit_field": "Q(sqrt(2))",
+      "unit": "3 + 1*sqrt(8)",
+      "norm_form": "X^2 - 8 Y^2 = -8"
+     }
+    ],
+    "explanation": "Pell type: the two obstructed roots are one conjugate pair with root field Q(sqrt(-2)). The integer solutions move under a different action: the units of the real quadratic field Q(sqrt(2)), acting on the norm form of each branch"
    },
    "constraint": "2*n^2 + 1 = m^2,  n >= 1, m in Z",
    "reductions": [],
@@ -164,7 +178,7 @@
   },
   "specialized": true,
   "original_program": "from math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n\ndef run(N):\n    out = []\n    for n in range(1, N + 1):\n        v = 2*n**2 + 1\n        r = iroot(v, 2)\n        if r is not None:\n            out.append((n, sorted({r, -r}) if True else [r]))\n    return out\n",
-  "specialized_program": "\"\"\"Specialized from: 2*n^2 + 1 = m^2,  n >= 1, m in Z\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (1) * n ** 0 + (2) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 2 n^2 + (0) n + (1) = m^2  <=>  X^2 - 8 m^2 = -8, X = 4 n + (0)\n    for n in range(1, min(N, 0) + 1):\n        v = 2 * n * n + (0) * n + (1)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(0, 1)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 3 * X - 8 * Y, 3 * Y - 1 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 4 * N + (0):\n            if X > 0 and Y >= 0 and (X - (0)) % 4 == 0 and X - (0) >= 4:\n                ns.add((X - (0)) // 4)\n            X, Y = 3 * X + 8 * Y, 1 * X + 3 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\ndef back(n, ms):\n    return sorted(set(ms) | {-m for m in ms}) if True else sorted(ms)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
+  "specialized_program": "\"\"\"Specialized from: 2*n^2 + 1 = m^2,  n >= 1, m in Z\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (1) * n ** 0 + (2) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 2 n^2 + (0) n + (1) = m^2  <=>  X^2 - 8 m^2 = -8, X = 4 n + (0)\n    for n in range(1, min(N, 0) + 1):\n        v = 2 * n * n + (0) * n + (1)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(0, 1)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 3 * X - 8 * Y, 3 * Y - 1 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 4 * N + (0):\n            if X > 0 and Y >= 0 and (X - (0)) % 4 == 0 and X - (0) >= 4:\n                ns.add((X - (0)) // 4)\n            X, Y = 3 * X + 8 * Y, 1 * X + 3 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\n\ndef point(k, j):\n    \"\"\"The j-th point of orbit k, (X, Y) = seed * eps^j, by fast exponentiation;\n    returns (n, Y) when X = 2An + B with n >= 1, else None.\"\"\"\n    X, Y = [(0, 1)][k]\n    ex, ey, bx, by = 1, 0, 3, 1\n    while j:\n        if j & 1:\n            ex, ey = ex * bx + 8 * ey * by, ex * by + ey * bx\n        bx, by = bx * bx + 8 * by * by, 2 * bx * by\n        j >>= 1\n    X, Y = X * ex + 8 * Y * ey, X * ey + Y * ex\n    if X > 0 and (X - (0)) % 4 == 0 and X - (0) >= 4:\n        return (X - (0)) // 4, abs(Y)\n    return None\n\ndef back(n, ms):\n    return sorted(set(ms) | {-m for m in ms}) if True else sorted(ms)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
   "N": 10000,
   "original_output": [
    [
@@ -257,19 +271,32 @@
     "orbits": [
      {
       "size": 2,
-      "group": "C2",
       "factor": [
-       "1/8",
-       "0",
-       "1"
+       1,
+       0,
+       8
       ],
+      "group": "C2",
       "discriminant": "-1/2",
-      "field": "Q(sqrt(-2))",
+      "root_field": "Q(sqrt(-2))",
       "multiplicity": 1,
       "t": 2
      }
     ],
-    "explanation": "Pell type: the two obstructed roots are one conjugate pair, the norm form of Q(sqrt(-2)); square values come from a Pell equation"
+    "unit_fields": [
+     {
+      "branch": [
+       8,
+       0,
+       1
+      ],
+      "case": "pell",
+      "unit_field": "Q(sqrt(2))",
+      "unit": "17 + 3*sqrt(32)",
+      "norm_form": "X^2 - 32 Y^2 = -32"
+     }
+    ],
+    "explanation": "Pell type: the two obstructed roots are one conjugate pair with root field Q(sqrt(-2)). The integer solutions move under a different action: the units of the real quadratic field Q(sqrt(2)), acting on the norm form of each branch"
    },
    "constraint": "y*(y+1)/2 = n^2,  n >= 1, y in Z>=0",
    "reductions": [
@@ -344,7 +371,7 @@
   },
   "specialized": true,
   "original_program": "from math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n\ndef run(N):\n    out = []\n    for n in range(1, N + 1):\n        v = n**2\n        disc = (1) ** 2 - 4 * (1) * ((0) - 2 * v)\n        s = isqrt(disc) if disc >= 0 else -1\n        if s >= 0 and s * s == disc:\n            ys = sorted({(m - (1)) // (2) for m in (s, -s)\n                         if (m - (1)) % (2) == 0})\n            ys = [y for y in ys if y >= 0]\n            if ys:\n                out.append((n, ys))\n    return out\n",
-  "specialized_program": "\"\"\"Specialized from: y*(y+1)/2 = n^2,  n >= 1, y in Z>=0\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.Reduction.triangular\n  PerfectPower.Reduction.triangular_count_int\n  PerfectPower.Reduction.triangular_count_nonneg\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (1) * n ** 0 + (8) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 8 n^2 + (0) n + (1) = m^2  <=>  X^2 - 32 m^2 = -32, X = 16 n + (0)\n    for n in range(1, min(N, 0) + 1):\n        v = 8 * n * n + (0) * n + (1)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(-16, 3), (0, 1)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 17 * X - 96 * Y, 17 * Y - 3 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 16 * N + (0):\n            if X > 0 and Y >= 0 and (X - (0)) % 16 == 0 and X - (0) >= 16:\n                ns.add((X - (0)) // 16)\n            X, Y = 17 * X + 96 * Y, 3 * X + 17 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\ndef back(n, ms):\n    # m^2 = 8F + 1 forces m odd: y = (m - 1) / 2 is always an integer\n    ys = {(m - 1) // 2 for m in set(ms) | {-m for m in ms}}\n    return sorted(y for y in ys if y >= 0)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
+  "specialized_program": "\"\"\"Specialized from: y*(y+1)/2 = n^2,  n >= 1, y in Z>=0\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.Reduction.triangular\n  PerfectPower.Reduction.triangular_count_int\n  PerfectPower.Reduction.triangular_count_nonneg\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (1) * n ** 0 + (8) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 8 n^2 + (0) n + (1) = m^2  <=>  X^2 - 32 m^2 = -32, X = 16 n + (0)\n    for n in range(1, min(N, 0) + 1):\n        v = 8 * n * n + (0) * n + (1)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(-16, 3), (0, 1)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 17 * X - 96 * Y, 17 * Y - 3 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 16 * N + (0):\n            if X > 0 and Y >= 0 and (X - (0)) % 16 == 0 and X - (0) >= 16:\n                ns.add((X - (0)) // 16)\n            X, Y = 17 * X + 96 * Y, 3 * X + 17 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\n\ndef point(k, j):\n    \"\"\"The j-th point of orbit k, (X, Y) = seed * eps^j, by fast exponentiation;\n    returns (n, Y) when X = 2An + B with n >= 1, else None.\"\"\"\n    X, Y = [(-16, 3), (0, 1)][k]\n    ex, ey, bx, by = 1, 0, 17, 3\n    while j:\n        if j & 1:\n            ex, ey = ex * bx + 32 * ey * by, ex * by + ey * bx\n        bx, by = bx * bx + 32 * by * by, 2 * bx * by\n        j >>= 1\n    X, Y = X * ex + 32 * Y * ey, X * ey + Y * ex\n    if X > 0 and (X - (0)) % 16 == 0 and X - (0) >= 16:\n        return (X - (0)) // 16, abs(Y)\n    return None\n\ndef back(n, ms):\n    # m^2 = 8F + 1 forces m odd: y = (m - 1) / 2 is always an integer\n    ys = {(m - 1) // 2 for m in set(ms) | {-m for m in ms}}\n    return sorted(y for y in ys if y >= 0)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
   "N": 10000,
   "original_output": [
    [
@@ -439,18 +466,19 @@
     "orbits": [
      {
       "size": 3,
-      "group": "S3",
       "factor": [
-       "-127/512",
-       "75/64",
-       "-15/8",
-       "1"
+       -127,
+       600,
+       -960,
+       512
       ],
+      "group": "S3",
       "discriminant": "-27/65536",
       "multiplicity": 1,
       "t": 2
      }
     ],
+    "unit_fields": [],
     "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)"
    },
    "constraint": "y*(y+1)/2 = 64*n^3 - 120*n^2 + 75*n - 16,  n >= 1, y in Z",
@@ -541,12 +569,17 @@
     "orbits": [
      {
       "size": 1,
+      "factor": [
+       1,
+       8
+      ],
       "group": "trivial",
       "root": "-1/8",
       "multiplicity": 1,
       "t": 2
      }
     ],
+    "unit_fields": [],
     "explanation": "radical type: the only obstructed root is fixed by Galois, hence rational (alpha = -1/8); hits are parametrized through v n - u = z0 w^t"
    },
    "constraint": "2*y^2 + 1*y + 0 = n,  n >= 1, y in Z>=0",
@@ -1482,19 +1515,32 @@
     "orbits": [
      {
       "size": 2,
-      "group": "C2",
       "factor": [
-       "17/8",
-       "2",
-       "1"
+       17,
+       16,
+       8
       ],
+      "group": "C2",
       "discriminant": "-9/2",
-      "field": "Q(sqrt(-2))",
+      "root_field": "Q(sqrt(-2))",
       "multiplicity": 1,
       "t": 2
      }
     ],
-    "explanation": "Pell type: the two obstructed roots are one conjugate pair, the norm form of Q(sqrt(-2)); square values come from a Pell equation"
+    "unit_fields": [
+     {
+      "branch": [
+       8,
+       16,
+       17
+      ],
+      "case": "pell",
+      "unit_field": "Q(sqrt(2))",
+      "unit": "17 + 3*sqrt(32)",
+      "norm_form": "X^2 - 32 Y^2 = -288"
+     }
+    ],
+    "explanation": "Pell type: the two obstructed roots are one conjugate pair with root field Q(sqrt(-2)). The integer solutions move under a different action: the units of the real quadratic field Q(sqrt(2)), acting on the norm form of each branch"
    },
    "constraint": "-2*y^2 + 1*y + 2 = -n^2 - 2*n,  n >= 1, y in Z",
    "reductions": [
@@ -1519,7 +1565,8 @@
     "PerfectPower.RationalYun.branch_infinite_iff_bounded",
     "PerfectPower.FilteredPell.quadRoot_infinite_iff",
     "PerfectPower.FilteredPell.infinite_iff_root_state",
-    "PerfectPower.Generated.Plans.plan_filtered_infinite_3 (kernel-checked theorem for this plan)"
+    "PerfectPower.Generated.Plans.plan_filtered_infinite_3 (kernel-checked theorem for this plan)",
+    "PerfectPower.Generated.Plans.plan_filtered_infinite_3_count (kernel-checked theorem for this plan)"
    ],
    "supports": [
     "contains",
@@ -1618,7 +1665,7 @@
   },
   "specialized": true,
   "original_program": "from math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n\ndef run(N):\n    out = []\n    for n in range(1, N + 1):\n        v = -n**2 - 2*n\n        disc = (1) ** 2 - 4 * (-2) * ((2) - v)\n        s = isqrt(disc) if disc >= 0 else -1\n        if s >= 0 and s * s == disc:\n            ys = sorted({(m - (1)) // (-4) for m in (s, -s)\n                         if (m - (1)) % (-4) == 0})\n            ys = [y for y in ys if True]\n            if ys:\n                out.append((n, ys))\n    return out\n",
-  "specialized_program": "\"\"\"Specialized from: -2*y^2 + 1*y + 2 = -n^2 - 2*n,  n >= 1, y in Z\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.Reduction.quadratic\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\n  PerfectPower.FilteredPell.quadRoot_infinite_iff\n  PerfectPower.FilteredPell.infinite_iff_root_state\n  PerfectPower.Generated.Plans.plan_filtered_infinite_3 (kernel-checked theorem for this plan)\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (17) * n ** 0 + (16) * n ** 1 + (8) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 8 n^2 + (16) n + (17) = m^2  <=>  X^2 - 32 m^2 = -288, X = 16 n + (16)\n    for n in range(1, min(N, 0) + 1):\n        v = 8 * n * n + (16) * n + (17)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(-48, 9), (0, 3)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 17 * X - 96 * Y, 17 * Y - 3 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 16 * N + (16):\n            if X > 0 and Y >= 0 and (X - (16)) % 16 == 0 and X - (16) >= 16:\n                ns.add((X - (16)) // 16)\n            X, Y = 17 * X + 96 * Y, 3 * X + 17 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\ndef back(n, ms):\n    # the square root alone is not enough: y = (m - (1)) / (-4) must be an integer\n    ys = {(m - (1)) // (-4) for m in set(ms) | {-m for m in ms}\n          if (m - (1)) % (-4) == 0}\n    return sorted(y for y in ys if True)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
+  "specialized_program": "\"\"\"Specialized from: -2*y^2 + 1*y + 2 = -n^2 - 2*n,  n >= 1, y in Z\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.Reduction.quadratic\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\n  PerfectPower.FilteredPell.quadRoot_infinite_iff\n  PerfectPower.FilteredPell.infinite_iff_root_state\n  PerfectPower.Generated.Plans.plan_filtered_infinite_3 (kernel-checked theorem for this plan)\n  PerfectPower.Generated.Plans.plan_filtered_infinite_3_count (kernel-checked theorem for this plan)\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (17) * n ** 0 + (16) * n ** 1 + (8) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 8 n^2 + (16) n + (17) = m^2  <=>  X^2 - 32 m^2 = -288, X = 16 n + (16)\n    for n in range(1, min(N, 0) + 1):\n        v = 8 * n * n + (16) * n + (17)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(-48, 9), (0, 3)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 17 * X - 96 * Y, 17 * Y - 3 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 16 * N + (16):\n            if X > 0 and Y >= 0 and (X - (16)) % 16 == 0 and X - (16) >= 16:\n                ns.add((X - (16)) // 16)\n            X, Y = 17 * X + 96 * Y, 3 * X + 17 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\n\ndef point(k, j):\n    \"\"\"The j-th point of orbit k, (X, Y) = seed * eps^j, by fast exponentiation;\n    returns (n, Y) when X = 2An + B with n >= 1, else None.\"\"\"\n    X, Y = [(-48, 9), (0, 3)][k]\n    ex, ey, bx, by = 1, 0, 17, 3\n    while j:\n        if j & 1:\n            ex, ey = ex * bx + 32 * ey * by, ex * by + ey * bx\n        bx, by = bx * bx + 32 * by * by, 2 * bx * by\n        j >>= 1\n    X, Y = X * ex + 32 * Y * ey, X * ey + Y * ex\n    if X > 0 and (X - (16)) % 16 == 0 and X - (16) >= 16:\n        return (X - (16)) // 16, abs(Y)\n    return None\n\ndef back(n, ms):\n    # the square root alone is not enough: y = (m - (1)) / (-4) must be an integer\n    ys = {(m - (1)) // (-4) for m in set(ms) | {-m for m in ms}\n          if (m - (1)) % (-4) == 0}\n    return sorted(y for y in ys if True)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
   "N": 10000,
   "original_output": [
    [
@@ -1704,19 +1751,32 @@
     "orbits": [
      {
       "size": 2,
-      "group": "C2",
       "factor": [
-       "1/24",
-       "0",
-       "1"
+       1,
+       0,
+       24
       ],
+      "group": "C2",
       "discriminant": "-1/6",
-      "field": "Q(sqrt(-6))",
+      "root_field": "Q(sqrt(-6))",
       "multiplicity": 1,
       "t": 2
      }
     ],
-    "explanation": "Pell type: the two obstructed roots are one conjugate pair, the norm form of Q(sqrt(-6)); square values come from a Pell equation"
+    "unit_fields": [
+     {
+      "branch": [
+       24,
+       0,
+       1
+      ],
+      "case": "pell",
+      "unit_field": "Q(sqrt(6))",
+      "unit": "49 + 5*sqrt(96)",
+      "norm_form": "X^2 - 96 Y^2 = -96"
+     }
+    ],
+    "explanation": "Pell type: the two obstructed roots are one conjugate pair with root field Q(sqrt(-6)). The integer solutions move under a different action: the units of the real quadratic field Q(sqrt(6)), acting on the norm form of each branch"
    },
    "constraint": "2*y^2 + 3*y + 1 = 3*n^2,  n >= 1, y in Z>=1",
    "reductions": [
@@ -1839,6 +1899,260 @@
   "outputs_agree": true
  },
  {
+  "demo": "late_transport",
+  "title": "is (n - 1000004)^3 - 2 a square?  (the only hit, n = 1000007, is past 10^6; Lean)",
+  "program": {
+   "expr": "(n - 1000004)**3 - 2",
+   "test": [
+    "power",
+    2
+   ]
+  },
+  "plan": {
+   "galois": {
+    "orbits": [
+     {
+      "size": 3,
+      "factor": [
+       -1000012000048000066,
+       3000024000048,
+       -3000012,
+       1
+      ],
+      "group": "S3",
+      "discriminant": "-108",
+      "multiplicity": 1,
+      "t": 2
+     }
+    ],
+    "unit_fields": [],
+    "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)"
+   },
+   "constraint": "n^3 - 3000012*n^2 + 3000024000048*n - 1000012000048000066 = m^2,  n >= 1, m in Z",
+   "reductions": [],
+   "reduced": "n^3 - 3000012*n^2 + 3000024000048*n - 1000012000048000066 = m^2,  n >= 1, m in Z",
+   "method": "affine transport to a solved Mordell curve",
+   "status": "COMPLETE_FINITE",
+   "justification": [
+    "PerfectPower.MordellMinus2.points",
+    "PerfectPower.Transport.complete_cube_sub_two",
+    "PerfectPower.Transport.affine_count",
+    "PerfectPower.Reduction.affine",
+    "PerfectPower.Generated.Plans.plan_late_transport (kernel-checked theorem for this plan)"
+   ],
+   "supports": [
+    "contains",
+    "explain",
+    "bounded_evidence",
+    "iter_hits",
+    "count",
+    "all_hits"
+   ],
+   "execution_verified": false,
+   "data": {
+    "substitution": "t = 1*n + (-1000004)",
+    "curve": "m^2 = t^3 + (-2)",
+    "complete_arguments": [
+     3
+    ],
+    "specialized_test": "1*n + (-1000004) == 3"
+   }
+  },
+  "specialized": true,
+  "original_program": "from math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n\ndef run(N):\n    out = []\n    for n in range(1, N + 1):\n        v = (n - 1000004)**3 - 2\n        r = iroot(v, 2)\n        if r is not None:\n            out.append((n, sorted({r, -r}) if True else [r]))\n    return out\n",
+  "specialized_program": "\"\"\"Specialized from: n^3 - 3000012*n^2 + 3000024000048*n - 1000012000048000066 = m^2,  n >= 1, m in Z\nstatus: COMPLETE_FINITE; method: affine transport to a solved Mordell curve\njustification:\n  PerfectPower.MordellMinus2.points\n  PerfectPower.Transport.complete_cube_sub_two\n  PerfectPower.Transport.affine_count\n  PerfectPower.Reduction.affine\n  PerfectPower.Generated.Plans.plan_late_transport (kernel-checked theorem for this plan)\nThe Python below is generated; it is not itself formally verified.\"\"\"\n# membership test for the reduced constraint: 1*n + (-1000004) == 3\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n# complete finite list (affine transport to a solved Mordell curve)\nHITS = {1000007: [5]}\n\ndef reduced(N):\n    return {n: ms for n, ms in HITS.items() if n <= N}\n\ndef back(n, ms):\n    return sorted(set(ms) | {-m for m in ms}) if True else sorted(ms)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
+  "N": 10000,
+  "original_output": [],
+  "specialized_output": [],
+  "outputs_agree": true
+ },
+ {
+  "demo": "far_first_hit",
+  "title": "does 2y^2 + y = 263n^2 + 1 have a root y >= 1?  (populated cycle, first hit ~7.8e15; Lean)",
+  "program": {
+   "expr": "263*n**2 + 1",
+   "test": [
+    "root",
+    2,
+    1,
+    0,
+    "pos"
+   ]
+  },
+  "plan": {
+   "galois": {
+    "orbits": [
+     {
+      "size": 2,
+      "factor": [
+       9,
+       0,
+       2104
+      ],
+      "group": "C2",
+      "discriminant": "-9/526",
+      "root_field": "Q(sqrt(-526))",
+      "multiplicity": 1,
+      "t": 2
+     }
+    ],
+    "unit_fields": [
+     {
+      "branch": [
+       2104,
+       0,
+       9
+      ],
+      "case": "pell",
+      "unit_field": "Q(sqrt(526))",
+      "unit": "84056091546952933775 + 916254939331073883*sqrt(8416)",
+      "norm_form": "X^2 - 8416 Y^2 = -75744"
+     }
+    ],
+    "explanation": "Pell type: the two obstructed roots are one conjugate pair with root field Q(sqrt(-526)). The integer solutions move under a different action: the units of the real quadratic field Q(sqrt(526)), acting on the norm form of each branch"
+   },
+   "constraint": "2*y^2 + 1*y + 0 = 263*n^2 + 1,  n >= 1, y in Z>=1",
+   "reductions": [
+    {
+     "step": "quadratic discriminant",
+     "forward": "m = 2*2*y + 1",
+     "backward": "y = (m - 1) / 4",
+     "admissibility": "4 | m - 1 for m or -m, and y in Z>=1",
+     "lean": [
+      "PerfectPower.Reduction.quadratic"
+     ],
+     "filter_trivial": false
+    }
+   ],
+   "reduced": "2104*n^2 + 9 = m^2,  n >= 1, m in Z",
+   "method": "Pell orbits",
+   "status": "STRUCTURED_INFINITE",
+   "justification": [
+    "PerfectPower.Reduction.quadratic",
+    "PerfectPower.PellExact.pell_branch_explicit",
+    "PerfectPower.RationalYun.branch_infinite_iff",
+    "PerfectPower.RationalYun.branch_infinite_iff_bounded",
+    "PerfectPower.FilteredPell.quadRoot_infinite_iff",
+    "PerfectPower.FilteredPell.infinite_iff_root_state",
+    "PerfectPower.Generated.Plans.plan_far_first_hit (kernel-checked theorem for this plan)",
+    "PerfectPower.Generated.Plans.plan_far_first_hit_member (kernel-checked theorem for this plan)"
+   ],
+   "supports": [
+    "contains",
+    "explain",
+    "bounded_evidence",
+    "iter_hits",
+    "count"
+   ],
+   "execution_verified": false,
+   "data": {
+    "atlas_kind": "pell",
+    "growth": "log N",
+    "branches": [
+     {
+      "quadratic": [
+       2104,
+       0,
+       9
+      ],
+      "D": 8416,
+      "Delta": -75744,
+      "unit": [
+       84056091546952933775,
+       916254939331073883
+      ],
+      "seeds": [
+       [
+        -96784,
+        1055
+       ],
+       [
+        0,
+        3
+       ],
+       [
+        96784,
+        1055
+       ]
+      ],
+      "transition": "(X, Y) -> (84056091546952933775*X + 7711201569410317799328*Y, 916254939331073883*X + 84056091546952933775*Y)",
+      "admissible": "X = 0 (mod 4208), n = (X - 0) / 4208 >= 1",
+      "step_in_n_m": "n' = 84056091546952933775*n + 1832509878662147766*m + 0/4208,  m' = 3855600784705158899664*n + 84056091546952933775*m + 0",
+      "small_n_checked_directly": 0
+     }
+    ],
+    "bounded_branches": [],
+    "good_fraction": "3",
+    "kappa": 0.06441754499359771,
+    "filter_decision": {
+     "kind": "filtered_pell",
+     "modulus": 16832,
+     "D": 8416,
+     "Delta": -75744,
+     "reduced_quadratic": [
+      2104,
+      0,
+      9
+     ],
+     "unit": [
+      84056091546952933775,
+      916254939331073883
+     ],
+     "transition": "(x, y) -> (84056091546952933775x + 7711201569410317799328y, 916254939331073883x + 84056091546952933775y) mod 16832",
+     "admissible": "4208 | x - (0) and 4 | s*y - (1) for s in [1]",
+     "threshold_T": 10,
+     "cycles": [
+      {
+       "seed": [
+        -96784,
+        1055
+       ],
+       "period": 4,
+       "marked": [
+        1,
+        3
+       ]
+      },
+      {
+       "seed": [
+        0,
+        3
+       ],
+       "period": 2,
+       "marked": [
+        1
+       ]
+      },
+      {
+       "seed": [
+        96784,
+        1055
+       ],
+       "period": 4,
+       "marked": [
+        1,
+        3
+       ]
+      }
+     ],
+     "witness": [
+      32891447592535811440,
+      358533816690440353
+     ],
+     "kappa": 0.032208772496798856,
+     "good_fraction": "3/2"
+    }
+   }
+  },
+  "specialized": true,
+  "original_program": "from math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n\ndef run(N):\n    out = []\n    for n in range(1, N + 1):\n        v = 263*n**2 + 1\n        disc = (1) ** 2 - 4 * (2) * ((0) - v)\n        s = isqrt(disc) if disc >= 0 else -1\n        if s >= 0 and s * s == disc:\n            ys = sorted({(m - (1)) // (4) for m in (s, -s)\n                         if (m - (1)) % (4) == 0})\n            ys = [y for y in ys if y >= 1]\n            if ys:\n                out.append((n, ys))\n    return out\n",
+  "specialized_program": "\"\"\"Specialized from: 2*y^2 + 1*y + 0 = 263*n^2 + 1,  n >= 1, y in Z>=1\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.Reduction.quadratic\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\n  PerfectPower.FilteredPell.quadRoot_infinite_iff\n  PerfectPower.FilteredPell.infinite_iff_root_state\n  PerfectPower.Generated.Plans.plan_far_first_hit (kernel-checked theorem for this plan)\n  PerfectPower.Generated.Plans.plan_far_first_hit_member (kernel-checked theorem for this plan)\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (9) * n ** 0 + (2104) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 2104 n^2 + (0) n + (9) = m^2  <=>  X^2 - 8416 m^2 = -75744, X = 4208 n + (0)\n    for n in range(1, min(N, 0) + 1):\n        v = 2104 * n * n + (0) * n + (9)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(-96784, 1055), (0, 3), (96784, 1055)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 84056091546952933775 * X - 7711201569410317799328 * Y, 84056091546952933775 * Y - 916254939331073883 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 4208 * N + (0):\n            if X > 0 and Y >= 0 and (X - (0)) % 4208 == 0 and X - (0) >= 4208:\n                ns.add((X - (0)) // 4208)\n            X, Y = 84056091546952933775 * X + 7711201569410317799328 * Y, 916254939331073883 * X + 84056091546952933775 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\n\ndef point(k, j):\n    \"\"\"The j-th point of orbit k, (X, Y) = seed * eps^j, by fast exponentiation;\n    returns (n, Y) when X = 2An + B with n >= 1, else None.\"\"\"\n    X, Y = [(-96784, 1055), (0, 3), (96784, 1055)][k]\n    ex, ey, bx, by = 1, 0, 84056091546952933775, 916254939331073883\n    while j:\n        if j & 1:\n            ex, ey = ex * bx + 8416 * ey * by, ex * by + ey * bx\n        bx, by = bx * bx + 8416 * by * by, 2 * bx * by\n        j >>= 1\n    X, Y = X * ex + 8416 * Y * ey, X * ey + Y * ex\n    if X > 0 and (X - (0)) % 4208 == 0 and X - (0) >= 4208:\n        return (X - (0)) // 4208, abs(Y)\n    return None\n\ndef back(n, ms):\n    # the square root alone is not enough: y = (m - (1)) / (4) must be an integer\n    ys = {(m - (1)) // (4) for m in set(ms) | {-m for m in ms}\n          if (m - (1)) % (4) == 0}\n    return sorted(y for y in ys if y >= 1)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
+  "N": 10000,
+  "original_output": [],
+  "specialized_output": [],
+  "outputs_agree": true
+ },
+ {
   "demo": "pell_large_unit",
   "title": "is 991n^2 + 1 a square?  (first hit far beyond any scan)",
   "program": {
@@ -1853,19 +2167,32 @@
     "orbits": [
      {
       "size": 2,
-      "group": "C2",
       "factor": [
-       "1/991",
-       "0",
-       "1"
+       1,
+       0,
+       991
       ],
+      "group": "C2",
       "discriminant": "-4/991",
-      "field": "Q(sqrt(-991))",
+      "root_field": "Q(sqrt(-991))",
       "multiplicity": 1,
       "t": 2
      }
     ],
-    "explanation": "Pell type: the two obstructed roots are one conjugate pair, the norm form of Q(sqrt(-991)); square values come from a Pell equation"
+    "unit_fields": [
+     {
+      "branch": [
+       991,
+       0,
+       1
+      ],
+      "case": "pell",
+      "unit_field": "Q(sqrt(991))",
+      "unit": "288065397114519999215772221121510725946342952839946398732799 + 4575349457429997391891575937207579910028267903198876333360*sqrt(3964)",
+      "norm_form": "X^2 - 3964 Y^2 = -3964"
+     }
+    ],
+    "explanation": "Pell type: the two obstructed roots are one conjugate pair with root field Q(sqrt(-991)). The integer solutions move under a different action: the units of the real quadratic field Q(sqrt(991)), acting on the norm form of each branch"
    },
    "constraint": "991*n^2 + 1 = m^2,  n >= 1, m in Z",
    "reductions": [],
@@ -1924,7 +2251,7 @@
   },
   "specialized": true,
   "original_program": "from math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n\ndef run(N):\n    out = []\n    for n in range(1, N + 1):\n        v = 991*n**2 + 1\n        r = iroot(v, 2)\n        if r is not None:\n            out.append((n, sorted({r, -r}) if True else [r]))\n    return out\n",
-  "specialized_program": "\"\"\"Specialized from: 991*n^2 + 1 = m^2,  n >= 1, m in Z\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (1) * n ** 0 + (991) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 991 n^2 + (0) n + (1) = m^2  <=>  X^2 - 3964 m^2 = -3964, X = 1982 n + (0)\n    for n in range(1, min(N, 0) + 1):\n        v = 991 * n * n + (0) * n + (1)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(-23894468336436754424831111836194, 379516400906811930638014896080), (0, 1)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 288065397114519999215772221121510725946342952839946398732799 * X - 18136685249252509661458207015090846763352053968280345785439040 * Y, 288065397114519999215772221121510725946342952839946398732799 * Y - 4575349457429997391891575937207579910028267903198876333360 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 1982 * N + (0):\n            if X > 0 and Y >= 0 and (X - (0)) % 1982 == 0 and X - (0) >= 1982:\n                ns.add((X - (0)) // 1982)\n            X, Y = 288065397114519999215772221121510725946342952839946398732799 * X + 18136685249252509661458207015090846763352053968280345785439040 * Y, 4575349457429997391891575937207579910028267903198876333360 * X + 288065397114519999215772221121510725946342952839946398732799 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\ndef back(n, ms):\n    return sorted(set(ms) | {-m for m in ms}) if True else sorted(ms)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
+  "specialized_program": "\"\"\"Specialized from: 991*n^2 + 1 = m^2,  n >= 1, m in Z\nstatus: STRUCTURED_INFINITE; method: Pell orbits\njustification:\n  PerfectPower.PellExact.pell_branch_explicit\n  PerfectPower.RationalYun.branch_infinite_iff\n  PerfectPower.RationalYun.branch_infinite_iff_bounded\nThe Python below is generated; it is not itself formally verified.\"\"\"\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\ndef witness(n):\n    v = (1) * n ** 0 + (991) * n ** 2\n    r = iroot(v, 2)\n    return None if r is None else abs(r)\n\n\ndef reduced(N):\n    ns = set()\n    # 991 n^2 + (0) n + (1) = m^2  <=>  X^2 - 3964 m^2 = -3964, X = 1982 n + (0)\n    for n in range(1, min(N, 0) + 1):\n        v = 991 * n * n + (0) * n + (1)\n        if v >= 0 and isqrt(v) ** 2 == v:\n            ns.add(n)\n    for X, Y in [(-23894468336436754424831111836194, 379516400906811930638014896080), (0, 1)]:\n        while True:   # to the first orbit element with X > 0, Y >= 0\n            pX, pY = 288065397114519999215772221121510725946342952839946398732799 * X - 18136685249252509661458207015090846763352053968280345785439040 * Y, 288065397114519999215772221121510725946342952839946398732799 * Y - 4575349457429997391891575937207579910028267903198876333360 * X\n            if pX > 0 and pY >= 0:\n                X, Y = pX, pY\n            else:\n                break\n        while X <= 1982 * N + (0):\n            if X > 0 and Y >= 0 and (X - (0)) % 1982 == 0 and X - (0) >= 1982:\n                ns.add((X - (0)) // 1982)\n            X, Y = 288065397114519999215772221121510725946342952839946398732799 * X + 18136685249252509661458207015090846763352053968280345785439040 * Y, 4575349457429997391891575937207579910028267903198876333360 * X + 288065397114519999215772221121510725946342952839946398732799 * Y   # times the unit\n    ns |= {n for n in [] if n <= N}\n    return {n: [witness(n)] for n in sorted(ns) if n <= N}\n\n\ndef point(k, j):\n    \"\"\"The j-th point of orbit k, (X, Y) = seed * eps^j, by fast exponentiation;\n    returns (n, Y) when X = 2An + B with n >= 1, else None.\"\"\"\n    X, Y = [(-23894468336436754424831111836194, 379516400906811930638014896080), (0, 1)][k]\n    ex, ey, bx, by = 1, 0, 288065397114519999215772221121510725946342952839946398732799, 4575349457429997391891575937207579910028267903198876333360\n    while j:\n        if j & 1:\n            ex, ey = ex * bx + 3964 * ey * by, ex * by + ey * bx\n        bx, by = bx * bx + 3964 * by * by, 2 * bx * by\n        j >>= 1\n    X, Y = X * ex + 3964 * Y * ey, X * ey + Y * ex\n    if X > 0 and (X - (0)) % 1982 == 0 and X - (0) >= 1982:\n        return (X - (0)) // 1982, abs(Y)\n    return None\n\ndef back(n, ms):\n    return sorted(set(ms) | {-m for m in ms}) if True else sorted(ms)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
   "N": 10000,
   "original_output": [],
   "specialized_output": [],
@@ -1945,19 +2272,20 @@
     "orbits": [
      {
       "size": 4,
-      "group": null,
       "factor": [
-       "1",
-       "1",
-       "1",
-       "1",
-       "1"
+       1,
+       1,
+       1,
+       1,
+       1
       ],
-      "note": "roots without a rational root, one or more orbits (not factored)",
+      "group": "C4",
+      "discriminant": "125",
       "multiplicity": 1,
       "t": 2
      }
     ],
+    "unit_fields": [],
     "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)"
    },
    "constraint": "n^4 + n^3 + n^2 + n + 1 = m^2,  n >= 1, m in Z",
@@ -2024,18 +2352,19 @@
     "orbits": [
      {
       "size": 3,
-      "group": "S3",
       "factor": [
-       "17",
-       "0",
-       "0",
-       "1"
+       17,
+       0,
+       0,
+       1
       ],
+      "group": "S3",
       "discriminant": "-7803",
       "multiplicity": 1,
       "t": 2
      }
     ],
+    "unit_fields": [],
     "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)"
    },
    "constraint": "n^3 + 17 = m^2,  n >= 1, m in Z",

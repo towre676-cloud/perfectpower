@@ -29,6 +29,7 @@ import PerfectPower.Continuation.ExplicitK
 import PerfectPower.Continuation.PellExplicitK
 import PerfectPower.Reduction
 import PerfectPower.FilteredPell
+import PerfectPower.FilteredCount
 import PerfectPower.PlanCerts
 import Batteries.Tactic.Lint
 /-! Batteries' environment linters over the hand-written library, not the generated certificates (docstrings, unused haves,

@@ -383,6 +383,28 @@ class PellBranch:
             total += Fraction(good, period)
         return total
 
+    def unit_power(self, j: int) -> tuple[int, int]:
+        """(x, y) with x + y sqrt(D) = eps^j, by fast exponentiation (O(log j) products)."""
+        x1, y1 = self.unit
+        rx, ry, bx, by = 1, 0, x1, y1
+        while j:
+            if j & 1:
+                rx, ry = rx * bx + self.D * ry * by, rx * by + ry * bx
+            bx, by = bx * bx + self.D * by * by, 2 * bx * by
+            j >>= 1
+        return rx, ry
+
+    def point(self, k: int, j: int) -> dict:
+        """The j-th point of the orbit of seed k: (X, Y) = seed * eps^j, and its index n when
+        X = 2An + B with n >= 1 (else None)."""
+        X0, Y0 = self.seeds[k]
+        ex, ey = self.unit_power(j)
+        X, Y = X0 * ex + self.D * Y0 * ey, X0 * ey + Y0 * ex
+        n = None
+        if X > 0 and (X - self.B) % (2 * self.A) == 0 and (X - self.B) // (2 * self.A) >= 1:
+            n = (X - self.B) // (2 * self.A)
+        return {'seed': k, 'j': j, 'X': X, 'Y': abs(Y), 'n': n}
+
     def small_n(self) -> int:
         """n <= this bound may have X = 2An + B <= 0; they are tested directly."""
         return max(0, -self.B // (2 * self.A) + 1) if self.B < 0 else 0
@@ -522,6 +544,19 @@ class Plan:
             if ws:
                 out.append((n, ws))
         return out
+
+    def orbit_point(self, k: int, j: int) -> dict:
+        """Direct access to the j-th point of the k-th Pell orbit (Pell plans only), with the
+        original witnesses it yields after the backward maps (empty if it is inadmissible)."""
+        brs = self.data.get('branches') or []
+        if not brs:
+            raise NotEnumerable('orbit_point needs a Pell plan')
+        b = brs[0]
+        br = PellBranch(b['quadratic'][0], b['quadratic'][1], b['quadratic'][2], b['D'],
+                        b['Delta'], tuple(b['unit']), [tuple(x) for x in b['seeds']])
+        pt = br.point(k, j)
+        pt['witnesses'] = self._pull(pt['n'], [pt['Y']]) if pt['n'] is not None else []
+        return pt
 
     def bounded_evidence(self, N: int) -> dict:
         """A labelled direct scan of 1 <= n <= N.  Never a completeness claim."""
@@ -819,6 +854,14 @@ def decide_filter(con, reduced: PowerConstraint) -> dict | None:
     return None
 
 
+def _root_box(Delta: int, D: int, u: int) -> int:
+    """The least Ymax with |Delta| u^2 < D (Ymax + 1)^2: every root has Y <= Ymax."""
+    Ymax = max(0, isqrt(abs(Delta) * u * u // D) - 1)
+    while not abs(Delta) * u * u < D * (Ymax + 1) ** 2:
+        Ymax += 1
+    return Ymax
+
+
 def fin_cert(con) -> dict | None:
     """The data of a FilteredPell.FinCert for a finite filtered Pell plan: Ymax with
     |Delta| u^2 < D (Ymax + 1)^2 (so every root has Y <= Ymax, `root_in_box`), every quadrant
@@ -836,9 +879,9 @@ def fin_cert(con) -> dict | None:
     D, Delta = 4 * A_, B_ * B_ - 4 * A_ * C_
     u, v = pell_fundamental(D)
     M = abs(4 * A_ * a)
-    Ymax = 0
-    while not abs(Delta) * u * u < D * (Ymax + 1) ** 2:
-        Ymax += 1
+    Ymax = _root_box(Delta, D, u)
+    if Ymax > 10 ** 5:
+        return None
     roots = []
     for Y in range(Ymax + 1):
         t = Delta + D * Y * Y
@@ -856,17 +899,69 @@ def fin_cert(con) -> dict | None:
             'M': M, 'Ymax': Ymax, 'roots': roots}
 
 
+def count_cert(con) -> dict | None:
+    """The data of a FilteredPell.CountCert: the exact roots (quadrant solutions whose predecessor
+    is not one) in the box 4A Y^2 <= |Delta| u^2, each with its residue-cycle length P modulo
+    M = |4Aa| and the number g of admissible states on the cycle.  Then
+    kappa = (sum g / P) / log eps  (Lean: FilteredPell.quadRoot_count_of_cert)."""
+    rp = _root_params(con)
+    if rp is None:
+        return None
+    a, b, c, F, L = rp
+    if len(F) != 3:
+        return None
+    C0, B0, A0 = F
+    A_, B_, C_ = 4 * a * A0, 4 * a * B0, 4 * a * C0 + b * b - 4 * a * c
+    if A_ <= 0 or is_square(A_) or B_ * B_ - 4 * A_ * C_ == 0:
+        return None
+    D, Delta = 4 * A_, B_ * B_ - 4 * A_ * C_
+    u, v = pell_fundamental(D)
+    M = abs(4 * A_ * a)
+    Ymax = _root_box(Delta, D, u)
+    if Ymax > 10 ** 5:
+        return None
+    sgn = [1, -1] if L is None else [1 if a > 0 else -1]
+
+    def sol(X, Y):
+        return X > 0 and Y >= 0 and X * X - D * Y * Y == Delta
+
+    def goodB(X, Y):
+        return (X - B_) % (2 * A_) == 0 and any((s * Y - b) % (2 * a) == 0 for s in sgn)
+    isq, roots = [], []
+    for Y in range(Ymax + 1):
+        t = Delta + D * Y * Y
+        q = isqrt(t) if t > 0 else 0
+        isq.append(q)
+        if t > 0 and q * q == t and q > 0:
+            pX, pY = q * u - D * Y * v, u * Y - v * q
+            if not sol(pX, pY):
+                st0 = (q % M, Y % M)
+                st, P, g = st0, 0, 0
+                while True:
+                    if goodB(*st):
+                        g += 1
+                    st = ((st[0] * u + D * st[1] * v) % M, (st[0] * v + st[1] * u) % M)
+                    P += 1
+                    if st == st0:
+                        break
+                roots.append(((q, Y), (P, g)))
+    total = sum(Fraction(g, P) for _, (P, g) in roots)
+    return {'a': a, 'b': b, 'c': c, 'A0': A0, 'B0': B0, 'C0': C0, 'L': L, 'u': u, 'v': v,
+            'M': M, 'Ymax': Ymax, 'isqrts': isq, 'roots': roots, 'sum_g_over_P': total}
+
+
 _PLAN_CERTS = None
 
 
-def plan_certificate(con) -> str | None:
+def plan_certificate(con) -> list[str] | None:
     """The generated Lean theorem for this exact constraint (receipts/plan_certificates.json,
     written with PerfectPower/Generated/Plans.lean by python/make_lean_plans.py), or None."""
     global _PLAN_CERTS
     if _PLAN_CERTS is None:
         path = ROOT / 'receipts' / 'plan_certificates.json'
         try:
-            _PLAN_CERTS = {r['constraint']: r['theorem'] for r in json.loads(path.read_text())}
+            _PLAN_CERTS = {r['constraint']: [r['theorem']] + r.get('also', [])
+                           for r in json.loads(path.read_text())}
         except (OSError, ValueError):
             _PLAN_CERTS = {}
     return _PLAN_CERTS.get(con.describe())
@@ -908,8 +1003,7 @@ def compile_constraint(con) -> Plan:
                 status = COMPLETE_FINITE
                 finite = {n: w for n in range(1, dec['nmax'] + 1) if (w := reduced.witnesses(n))}
                 hits = (lambda fin: lambda N: {n: w for n, w in fin.items() if n <= N})(finite)
-    cert = plan_certificate(con)
-    if cert is not None:
+    for cert in plan_certificate(con) or []:
         justification.append(f'{cert} (kernel-checked theorem for this plan)')
     return Plan(original=con, chain=chain, reduced=reduced, method=solver['method'],
                 status=status, justification=justification,

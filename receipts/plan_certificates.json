@@ -4,6 +4,7 @@
   "constraint": "125*n^3 - 525*n^2 + 735*n - 345 = m^2,  n >= 1, m in Z",
   "status": "COMPLETE_FINITE",
   "method": "affine transport to a solved Mordell curve",
+  "also": [],
   "hits": [
    [
     2,
@@ -19,6 +20,7 @@
   "constraint": "27*n^3 + 54*n^2 + 36*n - 5 = m^2,  n >= 1, m in Z",
   "status": "COMPLETE_FINITE",
   "method": "affine transport to a solved Mordell curve",
+  "also": [],
   "hits": [
    [
     5,
@@ -34,6 +36,7 @@
   "constraint": "n^3 - 3*n^2 + 3*n - 5 = m^2,  n >= 1, m in Z",
   "status": "COMPLETE_FINITE",
   "method": "affine transport to a solved Mordell curve",
+  "also": [],
   "hits": [
    [
     3,
@@ -56,6 +59,7 @@
   "constraint": "8*n^3 + 12*n^2 + 6*n - 4 = m^2,  n >= 1, m in Z",
   "status": "COMPLETE_FINITE",
   "method": "affine transport to a solved Mordell curve",
+  "also": [],
   "hits": []
  },
  {
@@ -63,6 +67,7 @@
   "constraint": "y*(y+1)/2 = 64*n^3 - 120*n^2 + 75*n - 16,  n >= 1, y in Z",
   "status": "COMPLETE_FINITE",
   "method": "affine transport to a solved Mordell curve",
+  "also": [],
   "hits": [
    [
     1,
@@ -78,6 +83,7 @@
   "constraint": "1*y^2 + 1*y + 0 = 16*n^3 - 12*n^2 + 3*n - 1,  n >= 1, y in Z>=0",
   "status": "COMPLETE_FINITE",
   "method": "affine transport to a solved Mordell curve",
+  "also": [],
   "hits": [
    [
     1,
@@ -88,10 +94,39 @@
   ]
  },
  {
+  "theorem": "PerfectPower.Generated.Plans.plan_late_transport",
+  "constraint": "n^3 - 3000012*n^2 + 3000024000048*n - 1000012000048000066 = m^2,  n >= 1, m in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "affine transport to a solved Mordell curve",
+  "also": [],
+  "hits": [
+   [
+    1000007,
+    [
+     -5,
+     5
+    ]
+   ]
+  ]
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_far_first_hit",
+  "constraint": "2*y^2 + 1*y + 0 = 263*n^2 + 1,  n >= 1, y in Z>=1",
+  "status": "STRUCTURED_INFINITE",
+  "method": "Pell orbits",
+  "also": [
+   "PerfectPower.Generated.Plans.plan_far_first_hit_member"
+  ],
+  "hits": null
+ },
+ {
   "theorem": "PerfectPower.Generated.Plans.plan_filtered_infinite_1",
   "constraint": "3*y^2 + 4*y + -2 = 2*n^2 + 3*n,  n >= 1, y in Z>=1",
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
+  "also": [
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_1_count"
+  ],
   "hits": null
  },
  {
@@ -99,6 +134,9 @@
   "constraint": "-3*y^2 + 2*y + 3 = -n^2 - 3*n + 5,  n >= 1, y in Z>=1",
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
+  "also": [
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_2_count"
+  ],
   "hits": null
  },
  {
@@ -106,6 +144,9 @@
   "constraint": "-2*y^2 + 1*y + 2 = -n^2 - 2*n,  n >= 1, y in Z",
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
+  "also": [
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_3_count"
+  ],
   "hits": null
  },
  {
@@ -113,6 +154,9 @@
   "constraint": "3*y^2 + 4*y + 1 = 2*n^2 - 4*n + 3,  n >= 1, y in Z>=1",
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
+  "also": [
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_4_count"
+  ],
   "hits": null
  },
  {
@@ -120,6 +164,9 @@
   "constraint": "3*y^2 + 0*y + -3 = 5*n^2 + 5*n + 5,  n >= 1, y in Z",
   "status": "STRUCTURED_INFINITE",
   "method": "Pell orbits",
+  "also": [
+   "PerfectPower.Generated.Plans.plan_filtered_infinite_5_count"
+  ],
   "hits": null
  },
  {
@@ -127,6 +174,7 @@
   "constraint": "3*y^2 + -4*y + -4 = n^2 - n + 4,  n >= 1, y in Z>=1",
   "status": "COMPLETE_FINITE",
   "method": "Pell orbits",
+  "also": [],
   "hits": []
  },
  {
@@ -134,6 +182,7 @@
   "constraint": "2*y^2 + 3*y + 1 = 3*n^2,  n >= 1, y in Z>=1",
   "status": "COMPLETE_FINITE",
   "method": "Pell orbits",
+  "also": [],
   "hits": []
  },
  {
@@ -141,6 +190,7 @@
   "constraint": "2*y^2 + 1*y + -3 = 3*n^2 + 4*n - 1,  n >= 1, y in Z>=0",
   "status": "COMPLETE_FINITE",
   "method": "Pell orbits",
+  "also": [],
   "hits": []
  },
  {
@@ -148,6 +198,7 @@
   "constraint": "-2*y^2 + -3*y + 1 = -3*n^2 - 5,  n >= 1, y in Z>=1",
   "status": "COMPLETE_FINITE",
   "method": "Pell orbits",
+  "also": [],
   "hits": []
  },
  {
@@ -155,6 +206,7 @@
   "constraint": "3*y^2 + 4*y + -2 = n^2 - n,  n >= 1, y in Z>=1",
   "status": "COMPLETE_FINITE",
   "method": "Pell orbits",
+  "also": [],
   "hits": []
  }
 ]

@@ -11,8 +11,12 @@ class Galois(unittest.TestCase):
     def test_pell_is_a_conjugate_pair(self):
         g = galois_profile((1, 0, 2), 2)                        # 2n^2 + 1
         (o,) = g['orbits']
-        self.assertEqual((o['size'], o['group'], o['field'], o['t']), (2, 'C2', 'Q(sqrt(-2))', 2))
+        self.assertEqual((o['size'], o['group'], o['root_field'], o['t']), (2, 'C2', 'Q(sqrt(-2))', 2))
         self.assertTrue(g['explanation'].startswith('Pell type'))
+        # the root field and the Pell unit field are different fields
+        (u,) = g['unit_fields']
+        self.assertEqual((u['unit_field'], u['unit']), ('Q(sqrt(2))', '3 + 1*sqrt(8)'))
+        self.assertIn('Q(sqrt(2))', g['explanation'])
 
     def test_radical_root_is_fixed(self):
         g = galois_profile((0, 1), 3)
@@ -23,6 +27,20 @@ class Galois(unittest.TestCase):
         s3 = galois_profile((-2, 0, 0, 1), 2)['orbits'][0]    # x^3 - 2
         a3 = galois_profile((1, -3, 0, 1), 2)['orbits'][0]    # x^3 - 3x + 1, discriminant 81
         self.assertEqual((s3['group'], a3['group'], a3['discriminant']), ('S3', 'A3', '81'))
+
+    def test_quartic_groups(self):
+        groups = {F: galois_profile(F, 2)['orbits'][0]['group'] for F in
+                  [(1, 1, 1, 1, 1), (-2, 0, 0, 0, 1), (1, 0, 0, 0, 1), (5, 0, -5, 0, 1), (1, 1, 0, 0, 1)]}
+        self.assertEqual(groups, {(1, 1, 1, 1, 1): 'C4', (-2, 0, 0, 0, 1): 'D4', (1, 0, 0, 0, 1): 'V4',
+                                  (5, 0, -5, 0, 1): 'C4', (1, 1, 0, 0, 1): 'S4'})
+
+    def test_layers_are_factored(self):
+        # x^4 + 4 = (x^2 - 2x + 2)(x^2 + 2x + 2): two orbits, not one
+        orbits = galois_profile((4, 0, 0, 0, 1), 2)['orbits']
+        self.assertEqual([(o['size'], o['group']) for o in orbits], [(2, 'C2'), (2, 'C2')])
+        # a cubic times a quadratic in one layer
+        orbits = galois_profile(pmul((1, -3, 0, 1), (2, 0, 1)), 2)['orbits']
+        self.assertEqual(sorted((o['size'], o['group']) for o in orbits), [(2, 'C2'), (3, 'A3')])
 
     def test_split_pell(self):
         g = galois_profile(pmul((-1, 1), (-2, 1)), 2)          # (n - 1)(n - 2)
