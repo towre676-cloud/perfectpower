@@ -26,7 +26,9 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from fractions import Fraction
 
-from .compiler import match_affine_cube, mordell_complete
+from math import isqrt
+
+from .compiler import QuadraticRootConstraint, compile_constraint, match_affine_cube, mordell_complete
 
 
 Poly = dict  # {tuple of (var, exp) pairs sorted: coefficient}
@@ -127,6 +129,84 @@ def recognize(P: Poly):
     return None
 
 
+def recognize_quadratic(P: Poly) -> list:
+    """Every reading (N, S, a, b, c, F low->high) of P = ±(a S^2 + b S + c - F(N)), deg F = 2,
+    a != 0.  Both variables may qualify; the caller picks the one whose N is bounded."""
+    vars_ = sorted({v for mono in P for v, _ in mono})
+    out = []
+    if len(vars_) != 2:
+        return out
+    for S in vars_:
+        N = vars_[0] if vars_[1] == S else vars_[1]
+        if any(len(mono) > 1 for mono in P):                 # no mixed terms
+            continue
+        a = P.get(((S, 2),), 0)
+        if a == 0 or any(v == S and e > 2 for mono in P for v, e in mono):
+            continue
+        if any(v == N and e > 2 for mono in P for v, e in mono):
+            continue
+        sg = 1 if a > 0 else -1
+        Q = {mono: sg * c for mono, c in P.items()}
+        F = [-Q.get((), 0), -Q.get(((N, 1),), 0), -Q.get(((N, 2),), 0)]
+        if F[2] == 0:
+            continue
+        out.append((N, S, Q[((S, 2),)], Q.get(((S, 1),), 0), 0, F))
+    return out
+
+
+def _bounds(flat, var):
+    """Numeric bounds lo <= var <= hi read from top-level conjuncts (None when absent)."""
+    import z3
+    lo = hi = None
+    for a in flat:
+        if not (z3.is_le(a) or z3.is_ge(a) or z3.is_lt(a) or z3.is_gt(a)):
+            continue
+        l, r = a.arg(0), a.arg(1)
+        if z3.is_const(l) and str(l) == var and z3.is_int_value(r):
+            v, side = r.as_long(), 'hi' if (z3.is_le(a) or z3.is_lt(a)) else 'lo'
+        elif z3.is_const(r) and str(r) == var and z3.is_int_value(l):
+            v, side = l.as_long(), 'lo' if (z3.is_le(a) or z3.is_lt(a)) else 'hi'
+        else:
+            continue
+        strict = z3.is_lt(a) or z3.is_gt(a)
+        if side == 'hi':
+            v -= strict
+            hi = v if hi is None else min(hi, v)
+        else:
+            v += strict
+            lo = v if lo is None else max(lo, v)
+    return lo, hi
+
+
+def _roots_at(a, b, c, f):
+    """Integer y with a y^2 + b y + c = f."""
+    disc = b * b - 4 * a * (c - f)
+    if disc < 0 or isqrt(disc) ** 2 != disc:
+        return []
+    r = isqrt(disc)
+    return sorted({(-b + sg * r) // (2 * a) for sg in (1, -1) if (-b + sg * r) % (2 * a) == 0})
+
+
+def bounded_quadratic_hits(a, b, c, F, lo, hi):
+    """All (n, y) with lo <= n <= hi and a y^2 + b y + c = F(n), by the compiler's Pell/radical
+    orbits (n >= 1 directly, n <= -1 by reflection n -> -n, n = 0 by the quadratic formula).
+    None when the compiler has no exact enumeration."""
+    out = []
+    for sgn, top in ((1, hi), (-1, -lo)):
+        if top < 1:
+            continue
+        G = (F[0], sgn * F[1], F[2])
+        plan = compile_constraint(QuadraticRootConstraint(a, b, c, G, 'int'))
+        if not getattr(plan, 'exact_to_any_N', False):
+            return None
+        for n, ys in plan.iter_hits(top):
+            if (lo <= sgn * n <= hi) if sgn > 0 else (lo <= -n <= hi):
+                out += [(sgn * n, y) for y in ys]
+    if lo <= 0 <= hi:
+        out += [(0, y) for y in _roots_at(a, b, c, F[0])]
+    return sorted(set(out)), plan.justification
+
+
 @dataclass
 class Replacement:
     conjunct: str
@@ -181,6 +261,24 @@ def reduce_assertions(assertions) -> Result:
                                           curve=f'y^2 = x^3 + ({k})', solutions=sols, lean=lean)
                         out.assertions.append(new)
                         out.replacements.append(rep)
+        if rep is None and z3.is_eq(a) and a.arg(0).sort() in (z3.IntSort(), z3.RealSort()):
+            try:
+                readings = recognize_quadratic(_padd(to_poly(a.arg(0)), to_poly(a.arg(1)), -1))
+            except Unsupported:
+                readings = []
+            for N, S, qa, qb, qc, F in readings:
+                lo, hi = _bounds(flat, N)
+                got = bounded_quadratic_hits(qa, qb, qc, F, lo, hi) if lo is not None and hi is not None else None
+                if got is not None:
+                    sols, just = got
+                    Nv, Sv = z3.Int(N), z3.Int(S)
+                    new = z3.Or([z3.And(Nv == x, Sv == y) for x, y in sols]) if sols else z3.BoolVal(False)
+                    rep = Replacement(conjunct=str(a), n=N, m=S, substitution=f'{lo} <= {N} <= {hi}',
+                                      curve=f'{qa}*{S}^2 + {qb}*{S} + {qc} = {F[2]}*{N}^2 + {F[1]}*{N} + {F[0]}',
+                                      solutions=sols, lean=list(just))
+                    out.assertions.append(new)
+                    out.replacements.append(rep)
+                    break
         if rep is None:
             out.assertions.append(a)
     return out
@@ -189,3 +287,39 @@ def reduce_assertions(assertions) -> Result:
 def reduce_smt2(text: str) -> Result:
     import z3
     return reduce_assertions(list(z3.parse_smt2_string(text)))
+
+
+def main(argv=None):
+    """python3 -m perfectpower.smt_adapter TASK.smt2 [--out REDUCED.smt2] [--report REPORT.json]
+
+    Reads an SMT-LIB 2 task (for example one saved by a verification tool), writes the reduced
+    task, and reports every replacement with its justification.  Each replacement is an
+    *equivalence* of the replaced conjunct over the integers, so the task's satisfiability (and a
+    verification condition's validity) is preserved exactly; nothing is weakened or dropped."""
+    import argparse
+    import json
+    import z3
+    ap = argparse.ArgumentParser()
+    ap.add_argument('task')
+    ap.add_argument('--out')
+    ap.add_argument('--report')
+    a = ap.parse_args(argv)
+    res = reduce_smt2(open(a.task).read())
+    s = z3.Solver()
+    s.add(res.assertions)
+    if a.out:
+        open(a.out, 'w').write(s.to_smt2())
+    report = {'task': a.task, 'replacements': [{
+        'conjunct': r.conjunct, 'recognized_as': r.curve, 'domain_or_substitution': r.substitution,
+        'solutions': r.solutions, 'justification': r.lean,
+        'equivalence': 'over Z, of the replaced conjunct (bounds kept as separate conjuncts)'}
+        for r in res.replacements]}
+    text = json.dumps(report, indent=1)
+    if a.report:
+        open(a.report, 'w').write(text + '\n')
+    else:
+        print(text)
+
+
+if __name__ == '__main__':
+    main()
