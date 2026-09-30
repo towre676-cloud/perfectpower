@@ -113,7 +113,7 @@ export dated 2026-09-29, with SHA-256 recorded. Everything is in `data/oeis/mani
 | `DEFINITION_PROVED_EQUIVALENT` | definition formalized with the entry's offset (hand-written or generated), Lean theorems present, every term agrees | 29 | 15 | 8 |
 | `EXCEPTIONAL_SET_PROVED` | the discovered coordinate disagrees on a finite initial segment; the generated theorem proves the definition equal to an orbit coordinate from a stated index on | 3 | 3 | 0 |
 | `TRANSPORTED_FROM_DUPLICATE` | named "Duplicate of X", X proved, every term equal at the same index | 1 | 1 | 0 |
-| `TRANSPORTED_WITH_SHIFT` | named "Essentially a duplicate of X", X proved; the terms fix a unique shift `s ≤ 4`, and `a(n) = X(n + s)` is a Lean theorem | 1 | 0 | 0 |
+| `TRANSPORTED_WITH_SHIFT` | named "Essentially a duplicate of X", X proved; the terms fix a unique shift among `1 ≤ s ≤ 4` (a tested family, not a determination of the infinite sequence), and `a(n) = X(n + s)` is a Lean theorem | 1 | 0 | 0 |
 | `TERMS_AGREE_UNPROVED` | every term of the full entry agrees with the discovered coordinate | 5 | 18 | 10 |
 | `REJECTED` | first counterexample recorded; `agrees_from_term` when only initial values differ | 0 | 20 | 1 |
 
@@ -124,7 +124,13 @@ only at $a(0)$; the generated theorems prove each equal to an orbit coordinate f
   The partial quotients of `GenContFract.of √2` are `1, 2, 2, …`, and the continuants are
   `(A_n, B_n)` from `p₋₁ = 1`, which is the entry's `a(0)`.
 - **A048624** (dead; "Essentially a duplicate of A000129") is transported with the shift its
-  terms fix, `a(n) = A000129(n + 2)`. The text itself does not state a shift.
+  terms fix, `a(n) = A000129(n + 2)`. The text itself does not state a shift. **The qualification
+  stays attached:**
+  - the 16 listed terms single out `s = 2` only within the tested candidate family (shifts
+    `1 ≤ s ≤ 4` of A000129);
+  - a finite term list cannot determine an unrestricted infinite sequence;
+  - so the Lean theorem is about the reading "A000129 shifted by 2", and the atlas records the
+    shift's evidential origin (`shift_from_terms`).
 
 The five unproved √2 entries are A024537 and its duplicate A018905 (a floor recursion), A069306
 (binary arrays), A163271 (a "zero-transform") and A171842 (a binomial transform).

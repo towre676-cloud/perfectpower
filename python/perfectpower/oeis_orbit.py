@@ -344,6 +344,11 @@ def _branch_certified() -> dict:
     for r in json.loads(p.read_text())['curves_detail']:
         if r['status'] == 'COMPLETE':
             out[r['D']] = (sorted(tuple(pt) for pt in r['points']), [r['lean']])
+    q = ROOT / 'receipts' / 'thue_graph.json'
+    if q.exists():
+        for r in json.loads(q.read_text())['curves']:
+            if r['status'] == 'COMPLETE':
+                out[r['D']] = (sorted(tuple(pt) for pt in r['points']), [r['lean']])
     return out
 
 

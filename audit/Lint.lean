@@ -47,6 +47,8 @@ import PerfectPower.DescentBranch
 import PerfectPower.MordellMinus1
 import PerfectPower.SqrtTwoBridges
 import PerfectPower.MonomialCount
+import PerfectPower.ThueLocal
+import PerfectPower.DescentThue
 import Batteries.Tactic.Lint
 /-! Batteries' environment linters over the hand-written library, not the generated certificates (docstrings, unused haves,
 simp-normal forms, ...).  Run with `lake env lean audit/Lint.lean`; it must report 0 errors. -/

@@ -64,5 +64,8 @@ import PerfectPower.MordellMinus1
 import PerfectPower.Generated.MordellBranch
 import PerfectPower.SqrtTwoBridges
 import PerfectPower.MonomialCount
+import PerfectPower.ThueLocal
+import PerfectPower.DescentThue
+import PerfectPower.Generated.MordellThue
 import PerfectPower.Generated.OEISAuto
 import PerfectPower.Generated.Plans
