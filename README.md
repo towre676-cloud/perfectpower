@@ -48,6 +48,16 @@ The classification is a **synthesis**, and we claim no priority for it. It combi
 
    Nothing in that proof trusts the Python that found it.
 
+**As a component of another solver** ([HOST_ADAPTER.md](docs/HOST_ADAPTER.md)).
+`python3 -m perfectpower.smt_adapter TASK.smt2` replaces solved conjuncts of an SMT-LIB task by
+their complete solution sets, each an exact equivalence over ℤ, and hands back the smaller task.
+- On two verification-condition-shaped examples, z3 alone returns `unknown`, and after the
+  reduction it proves both in milliseconds.
+- On 48 constructed instances it solves 36 of 36 recognized tasks, where z3 alone solves 3.
+- It costs about 2 ms on unrecognized tasks.
+
+These instances are constructed; frequency on real workloads is unmeasured.
+
 **Try one in five minutes.** Follow the [tutorial](docs/TUTORIAL.md) to give the program $1+n+n^2+n^3+n^4$, find its square hit at $n=3$, and compile a Lean proof that there are no others.
 
 ---

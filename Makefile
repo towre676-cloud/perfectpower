@@ -3,7 +3,7 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper
+.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench
 
 verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
@@ -85,6 +85,10 @@ crosscheck:
 	$(SAGEPY) crosscheck/branch_thue_pari.py 600
 	$(SAGEPY) crosscheck/thue_fields_pari.py
 	$(SAGEPY) crosscheck/field756_pilot.py
+
+# Host-solver adapter benchmark (constructed instances; needs z3-solver on PYTHONPATH)
+adapter-bench:
+	$(PY) python/host_adapter_bench.py 10
 
 # Differential fuzzers with fixed seeds (python/fuzz/); the finite-bucket scan goes to 1e8.
 fuzz:
