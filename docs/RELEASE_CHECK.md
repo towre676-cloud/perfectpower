@@ -1,15 +1,15 @@
 # Release check
 
-`make verify` was run on commit `7a964f8` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree and exited with status 0. This file archives the key lines of its output. The Lean build used Lean `leanprover/lean4:v4.20.0` with Mathlib `v4.20.0` compiled from source, and Python 3.11.15 (standard library only). The optional Sage steps (`make crosscheck`, passagemath 10.8.12) are not part of `verify`; their receipts are re-checked in plain Python by it.
+`make verify` was run on commit `298889b` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree and exited with status 0. This file archives the key lines of its output. The Lean build used Lean `leanprover/lean4:v4.20.0` with Mathlib `v4.20.0` compiled from source, and Python 3.11.15 (standard library only). The optional Sage steps (`make crosscheck`, passagemath 10.8.12) are not part of `verify`; their receipts are re-checked in plain Python by it.
 
 ```
 Build completed successfully.
-axiom audit passed: 311 declarations
--- Found 0 errors in 630 declarations (plus 1896 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 348 declarations
+-- Found 0 errors in 652 declarations (plus 1995 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
-Ran 96 tests in 19.661s
+Ran 102 tests in 20.169s
 OK
-Ran 14 tests in 11.193s (continuation_tests)
+Ran 14 tests in 11.389s (continuation_tests)
 OK
 19/19 certificates passed (independent audit)
 /home/user/perfectpower/PerfectPower/Generated/Runge.lean 17 certificates
@@ -19,7 +19,7 @@ genus-1 gate OK: 400 families, labels {'CONDITIONAL_ON_UNPROVEN_RANK': 1, 'INDEP
 Theorem G gate OK: 462 cases, genus computed in 462, places at infinity in 453, 0 disagreements
 399 genus-one reduction theorems
 1163 Mordell curves without integral points
-- Lean declarations audited: **311**; using only `propext`, `Classical.choice`, `Quot.sound` (or a subset): **311**.
+- Lean declarations audited: **348**; using only `propext`, `Classical.choice`, `Quot.sound` (or a subset): **348**.
 git diff --exit-code -- receipts/ certs/ data/ docs/figures/ PerfectPower/Generated/ README.md audit/axioms_report.txt
 verify: OK
 ```
