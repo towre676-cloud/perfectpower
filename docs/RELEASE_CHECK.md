@@ -16,7 +16,7 @@ Build completed successfully.
 axiom audit passed: 697 declarations
 -- Found 0 errors in 1032 declarations (plus 2986 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
-Ran 169 tests (5 z3 adapter tests skipped: z3-solver is optional)
+Ran 169 tests (7 z3 adapter tests skipped: z3-solver is optional)
 OK
 Ran 14 tests in 9.743s (continuation_tests)
 OK
