@@ -3,9 +3,9 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test cert-audit receipts counts check-clean crosscheck fuzz bench paper
+.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh check-clean crosscheck fuzz bench paper
 
-verify: lean audit lint test cert-audit receipts counts check-clean
+verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
 
 lean:
@@ -45,6 +45,13 @@ receipts:
 
 counts: audit
 	$(PY) python/make_counts.py
+
+# An unseen constraint, proved end to end (fixed seed here; `make fresh` draws a new one).
+descent-gate: lean
+	$(PY) python/descent_fresh.py --seed 20260930
+
+fresh: lean
+	$(PY) python/descent_fresh.py
 
 # Regenerated files must match the committed ones exactly.
 check-clean:

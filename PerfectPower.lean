@@ -49,4 +49,6 @@ import PerfectPower.FilteredCount
 import PerfectPower.PlanCerts
 import PerfectPower.FilteredAuto
 import PerfectPower.MordellFamily
+import PerfectPower.KernelArith
+import PerfectPower.Descent
 import PerfectPower.Generated.Plans

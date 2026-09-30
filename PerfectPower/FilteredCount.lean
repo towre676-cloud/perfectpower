@@ -1,4 +1,5 @@
 import PerfectPower.FilteredPell
+import PerfectPower.KernelArith
 
 /-!
 # The filtered Pell count: `A(N) = κ_filtered log N + O(1)`
@@ -393,21 +394,6 @@ def solB (D Δ : ℤ) (p : ℤ × ℤ) : Bool := decide (0 < p.1 ∧ 0 ≤ p.2 �
 
 lemma solB_iff {D Δ : ℤ} (p : ℤ × ℤ) : solB D Δ p = true ↔ Sol D Δ p := by
   simp [solB, Sol]
-
-/-! ### Kernel-friendly integer square root (not trusted: the checker verifies it) -/
-
-/-- Newton iteration for `⌊√x⌋`, with fuel. -/
-def nsqrtAux : ℕ → ℕ → ℕ → ℕ
-  | 0, _, r => r
-  | fuel + 1, x, r =>
-    let r' := (r + x / r) / 2
-    if r' < r then nsqrtAux fuel x r' else r
-
-/-- `⌊√x⌋` for `x < 2^256` (checked by the caller, never assumed). -/
-def nsqrt (x : ℕ) : ℕ := if x = 0 then 0 else nsqrtAux 300 x x
-
-/-- `⌊√t⌋` for `t > 0`, and `0` otherwise. -/
-def isqrtZ (t : ℤ) : ℤ := if t ≤ 0 then 0 else (nsqrt t.toNat : ℤ)
 
 /-- A certificate for the constant: the roots exactly, each with a period `P` of its residue
 cycle and the number `g` of admissible states in it. -/

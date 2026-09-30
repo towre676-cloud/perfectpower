@@ -26,8 +26,9 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Exact constraint reductions (affine, quadratic discriminant, triangular), their composition, and transported completeness | **Lean** (`Reduction.Exact`, `Exact.comp`, `Exact.pull_complete`, `triangular_count`, `tri_cube_complete`) | — | `Reduction.lean`, §5B |
 | Filtered Pell orbits: a divisibility filter from a reduction's way back leaves infinitely many solutions iff some root cycle mod $M$ meets an admissible state; otherwise a complete finite range | **Lean** (`FilteredPell.infinite_iff_root_state`, `quadRoot_infinite_iff`, `FinCert.sound`, `quadRoot_bound_of_cert`) | unit orbits (Lean) | `FilteredPell.lean`, §5B |
 | Filtered Pell count $A(N)=\frac1{\log\varepsilon}\big(\sum_\rho g_\rho/P_\rho\big)\log N+O(1)$ over canonical roots, and a certificate for the constant | **Lean** (`FilteredPell.filtered_count`, `count_of_orbit_estimates`, `count_of_cert`, `quadRoot_count_of_cert`) | exact Pell count (Lean) | `FilteredCount.lean`, §5B |
-| Compiler plans as theorems on the original constraint: 21 catalogued plans with 33 theorems (7 transport chains; 5 infinite filtered plans with kernel-computed count constants, 4 with least solutions; 5 finite; a late family whose least solution $n=655680$ is proved; 2 Mordell-family members; one solution near $7.8\cdot10^{15}$) | **Lean** (`Generated/Plans.lean`, via `PlanCerts.power_transport`, `root_transport`, `quadRoot_subset_of_cert`, `FilteredPell.quadRoot_count_auto`, `quadRoot_isLeast`, `MordellFamily.no_points_cert`) | the rows above | `PlanCerts.lean`, §5B |
+| Compiler plans as theorems on the original constraint: 23 catalogued plans with 35 theorems (2 disguised Mordell curves with nonempty complete answers from a discovered descent; 7 transport chains; 5 infinite filtered plans with kernel-computed count constants, 4 with least solutions; 5 finite; a late family whose least solution $n=655680$ is proved; 2 Mordell-family members; one solution near $7.8\cdot10^{15}$) | **Lean** (`Generated/Plans.lean`, via `PlanCerts.power_transport`, `root_transport`, `quadRoot_subset_of_cert`, `FilteredPell.quadRoot_count_auto`, `quadRoot_isLeast`, `MordellFamily.no_points_cert`) | the rows above | `PlanCerts.lean`, §5B |
 | Mordell's family $k=(4t-1)^3-4m^2$, $m$ free of primes $\equiv3\pmod4$: no integral point, for every member and every affine substitution | **Lean** (`MordellFamily.no_points`, `family_not_isHit`) | Mordell descent lemmas (Lean) | `MordellFamily.lean`, §5B |
+| Descent certificates: under a kernel-checked table, `y^2 = x^3 - D` has exactly the points `(p^2 + D, p^3 - 3Dp)` with `3p^2 - D = ± 1`, and the list discharges `IntegralPointsOnImage` for every `m^2 = (rn + s)^3 - D` | **Lean** (`Descent.complete_of_cert`, `image_of_complete`, `hits_of_cert`) | `ClassTwo.short_relation` (Lean) | `Descent.lean`, `CONSTRAINT_COMPILER.md` §3F |
 | Constraint compiler: plans, generated programs, timings | Python (tested against brute force, not verified); each plan cites its justification | the rows above | `CONSTRAINT_COMPILER.md`, §5B |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
@@ -252,6 +253,23 @@ the empty answer for every member, so the emitted answer is the solution set. It
 - the family's answer is always empty;
 - recognition is a bounded search;
 - positive-rank families with points remain open.
+
+**8B. A nonempty complete answer, discovered and proved** (`Descent.lean`, `descent.py`). For
+$y^2=x^3-D$ the compiler finds a descent certificate in $\mathbb Z[\sqrt{-D}]$:
+- a Thue box;
+- a table of the norms $k^3$ with $k\le K$, where a class of order 3 would show;
+- residue checks that $j^3\mid v^3$ forces $j\mid v$.
+
+Lean turns the certificate into the complete point list $(p^2+D,\,p^3-3Dp)$, $3p^2-D=\pm1$
+(`complete_of_cert`), and then into the compiler's premise `IntegralPointsOnImage`
+(`image_of_complete`, `hits_of_cert`). For example, $8n^3+12n^2+6n-73$ is a square only at
+$n=49$. The class number $h(-296)=10$ is prime to 3, and the table is where this is certified.
+`make descent-gate` gives an unseen disguised cubic to the compiler and has Lean check the file
+it emits. Its limits:
+- $3\mid h$;
+- positive $k$;
+- other genus-one cubics;
+- kernel cost ($j\le5$).
 
 **9. Two symmetries** (`galois.py`, `factor.py`). *The root action.* Each squarefree layer is
 factored over $\mathbb Q$ (Berlekamp–Zassenhaus), so each irreducible factor is a genuine Galois

@@ -34,6 +34,8 @@ DEMOS = [
      LoopProgram('(n - 1000004)**3 - 2', ('power', 2))),
     ('mordell_family', 'is (n + 5)^3 + 1025127 a square?  (a member of the Mordell family: never; Lean)',
      LoopProgram('(n + 5)**3 + 1025127', ('power', 2))),
+    ('descent_74', 'is 8n^3 + 12n^2 + 6n - 73 a square?  (only n = 49: a descent in Z[sqrt(-74)] found here; Lean)',
+     LoopProgram('8*n**3 + 12*n**2 + 6*n - 73', ('power', 2))),
     ('far_first_hit', 'does 2y^2 + y = 263n^2 + 1 have a root y >= 1?  (populated cycle, first hit ~7.8e15; Lean)',
      LoopProgram('263*n**2 + 1', ('root', 2, 1, 0, 'pos'))),
     ('pell_large_unit', 'is 991n^2 + 1 a square?  (first hit far beyond any scan)',

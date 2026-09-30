@@ -327,6 +327,57 @@ def _cbrt_floor(k):
     return r
 
 
+class Descent(unittest.TestCase):
+    """Nonempty complete answers from a discovered descent (Descent.lean)."""
+
+    def test_certificate_for_74(self):
+        from perfectpower.descent import certificate
+        c = certificate(74)
+        self.assertEqual((c['points'], c['class_number'], c['K'], c['j']),
+                         ([(99, 985), (99, -985)], 10, 17, [1, 2, 3, 4]))
+        self.assertLess(c['r'] ** 2 + 74 * c['t'] ** 2, (c['K'] + 1) * c['r'] * c['t'])
+        self.assertLess(c['K'] ** 3, 74 * (c['Q'] + 1) ** 2)
+
+    def test_certificate_is_refused_when_points_are_missing(self):
+        # y^2 = x^3 - 11 has (3, +-4) and y^2 = x^3 - 26 has (3, +-1), not of the form
+        # (p^2 + D, p^3 - 3Dp); 3 | h for both.  The check must fail.
+        from perfectpower.descent import certificate, class_number
+        for D in (11, 26):
+            self.assertIsNone(certificate(D))
+            self.assertEqual(class_number(D) % 3, 0)
+
+    def test_certified_lists_match_brute_force(self):
+        from perfectpower.descent import certificate
+        for D in range(2, 330):
+            c = certificate(D)
+            if c is None:
+                continue
+            found = sorted((x, y) for x in range(1, 3000)
+                           for v in [x ** 3 - D] if v >= 0 and math.isqrt(v) ** 2 == v
+                           for y in {math.isqrt(v), -math.isqrt(v)})
+            self.assertEqual(found, sorted(set(c['points'])), D)
+
+    def test_disguised_input_is_compiled_and_explained(self):
+        p = compile_constraint(PowerConstraint(parse_poly('8*n**3 + 12*n**2 + 6*n - 73'), 2))
+        self.assertEqual(p.status, COMPLETE_FINITE)
+        self.assertTrue(p.method.startswith('descent in Z[sqrt(-74)]'))
+        self.assertEqual(p.all_hits(), [(49, [-985, 985])])
+        g = p.galois()['descent']
+        self.assertEqual((g['field'], g['class_number'], g['units']), ('Q(sqrt(-74))', 10, '{+1, -1}'))
+        self.assertIn('prime to 3', g['why'])
+
+    def test_emitted_theorem_and_receipt(self):
+        from perfectpower.descent import lean_theorem
+        text = lean_theorem('t', 4, 1, 193)
+        self.assertIn('Descent.hits_of_cert 193', text)
+        self.assertIn('↔ n = 64', text)
+        import json
+        rows = json.loads((ROOT / 'receipts' / 'plan_certificates.json').read_text())
+        r = {x['theorem'].split('.')[-1]: x for x in rows}
+        self.assertEqual(r['plan_descent_74']['hits'], [[49, [-985, 985]]])
+        self.assertEqual(r['plan_descent_193']['hits'], [[64, [-4120, 4120]]])
+
+
 class Justification(unittest.TestCase):
     def test_lean_names_exist(self):
         decls = set()

@@ -196,7 +196,7 @@ so.
 - A filtered Pell plan becomes infinitude from its witness, or `QuadHits ⊆ [1, Nb]` from its
   `FinCert`.
 
-The catalogue has 21 plans with 33 theorems, and they check in about 75 s:
+The catalogue has 23 plans with 35 theorems:
 - 7 transport chains, including $(n-1000004)^3-2=m^2$, whose only solution $n=1000007$ lies past
   any $10^6$ scan and comes with both signs $m=\pm5$;
 - 5 infinite filtered plans, each with an infinitude theorem and a **count theorem with a
@@ -208,6 +208,10 @@ The catalogue has 21 plans with 33 theorems, and they check in about 75 s:
   $n=655680$ (§3D);
 - 2 members of Mordell's family (§3E), each with a theorem that the original equation has no
   solution at all;
+- 2 disguised Mordell curves outside the registry, solved by a descent the compiler discovers
+  (§3F), each with a **nonempty** complete answer: `plan_descent_74`
+  ($8n^3+12n^2+6n-73=m^2$ iff $n=49$) and `plan_descent_193` ($64n^3+48n^2+12n-192=m^2$ iff
+  $n=64$);
 - `plan_far_first_hit`: $2y^2+y=263n^2+1$ with $y\ge1$. It is infinite, and
   `plan_far_first_hit_member` proves that $n=7816408648416305$, $y=89633454172610088$ is a
   solution. The compiler finds this as the first admissible orbit point. Lean checks that it is a
@@ -308,11 +312,106 @@ the family, so the emitted answer (the empty list) is exactly the integral solut
 
 **Limits of each route.**
 - *Family.* The family theorem proves emptiness only. A positive-rank family whose complete
-  point set is a nonempty parametrized list is open here.
+  point set is a nonempty parametrized list is open here. Single curves with nonempty lists
+  are now supplied by the descent of §3F.
 - *Recognition.* Recognition is a bounded search (4000 values of $t$ above $\sqrt[3]k$). A match
   is certified by the returned data. A miss is not a claim of non-membership.
-- *Missing premise.* The premise is stated, not supplied. No elliptic-logarithm machinery is in
-  Lean.
+- *Missing premise.* The premise is stated, not supplied, unless the descent of §3F applies. No
+  elliptic-logarithm machinery is in Lean.
+
+## 3F. A nonempty complete answer the compiler proves by itself (`Descent.lean`, `descent.py`)
+
+**The target.** Take a curve $y^2=x^3-D$ outside the handwritten registry, disguise it by
+$t=rn+s$, and hand the compiler only the expanded cubic. The compiler must:
+1. recognize the cube;
+2. discover the descent data;
+3. emit a standalone Lean theorem whose answer is **nonempty**;
+4. have that theorem checked by the kernel.
+
+The theorem states the complete hit set of the original polynomial. For example,
+`plan_descent_74` states: for $n\ge1$, $8n^3+12n^2+6n-73$ is a square iff $n=49$.
+
+**The mathematics.** In $\mathbb Z[\sqrt{-D}]$, $x^3=(y+\sqrt{-D})(y-\sqrt{-D})$. If the ideal
+whose cube is $(y+\sqrt{-D})$ is principal and the units are cubes ($\pm1$), then
+$y+\sqrt{-D}=(p+q\sqrt{-D})^3$. Comparing the $\sqrt{-D}$ parts gives $q(3p^2-Dq^2)=1$, so
+$q=\pm1$ and $3p^2-D=q$. The points are then
+$$(x,y)=(p^2+D,\;p^3-3Dp),$$
+which is nonempty exactly when $3p^2-D=\pm1$ is solvable. For $D=74$ this gives $(99,\pm985)$;
+for $D=193$, $(257,\pm4120)$.
+
+**Where the class group enters, as a finite check.** `ClassTwo.short_relation` (Thue's
+pigeonhole lemma in the lattice of the ideal) produces $k\le K$ and
+$e_1^2+De_2^2=k^3$ with $k^3\alpha=\beta v^3$. A class of order 3 would appear as a
+representation with $e_2\ne0$. The certificate (`tableB`, one Boolean) checks every $k\le K$,
+$|q|\le Q$:
+- every $p^2+Dq^2=k^3$ has $q=0$ and $k=j^2$;
+- `divB D j`: $j^3\mid(a-b\sqrt{-D})^3$ implies $j\mid a-b\sqrt{-D}$, checked on residues mod
+  $j^3$.
+
+The second check is integral closedness at the primes of $j$, checked rather than assumed.
+`ClassTwo` allowed only $k\in\{1,4\}$; the generalization to all squares $k=j^2$ is what lets
+the Minkowski range grow with $D$ (for $D=74$, $K=17$ includes $k=9,16$).
+
+**The Lean chain.**
+- `cube_of_cert` proves that $y+\sqrt{-D}$ is a cube.
+- `points_of_cert` then gives $p$ with $3p^2-D=\pm1$, $x=p^2+D$, $y=p^3-3Dp$.
+- `complete_of_cert` states $y^2=x^3-D\iff(x,y)\in$ `pointList D`.
+- **`image_of_complete`** turns any complete list for $m^2=t^3+k$ into
+  `Transport.IntegralPointsOnImage` for every $m^2=(rn+s)^3+k$. This is exactly the premise
+  that §3E names for unresolved cubics.
+- **`hits_of_cert`** composes it with `Transport.cubic_sound_image` and `Genus1.cubicOK`.
+
+A generated theorem is therefore one application of `hits_of_cert` to numbers and two
+`decide +kernel` calls (the table and the pull-back).
+
+**Discovery.** `descent.certificate(D)` in Python:
+- chooses the Thue box $r/t\approx\sqrt D$;
+- takes $K=\lfloor(r^2+Dt^2)/(rt)\rfloor$ and $Q$ with $K^3<D(Q+1)^2$;
+- runs the same table and residue checks as Lean;
+- computes the class number $h(-4D)$ from reduced forms (for the report only).
+
+`python -m perfectpower prove --expr '<cubic>'` prints a standalone `.lean` file.
+
+**Galois's job here.** `plan.galois()['descent']` reports what drives the proof: the field
+$\mathbb Q(\sqrt{-D})$, the conjugate factors of $x^3$, the units $\pm1$, and the class number.
+For $D=74$ the class number is 10, prime to 3, and the table is where that fact is certified.
+The root action of §3C only describes the curve; here the arithmetic of the field decides the
+answer.
+
+**The unseen-input gate** (`make descent-gate`, `make fresh`). `python/descent_fresh.py`:
+- picks a random $D$ outside the registry whose certificate passes, with a nonempty list, and
+  one with an empty list;
+- picks random $r\le6$ and a random target $n_0$;
+- expands the cubic and gives only that to the compiler;
+- checks the answer by brute force to $n<20000$;
+- writes the emitted file to a temporary directory and runs `lake env lean` on it, requiring
+  the standard axioms only.
+
+`make verify` runs it with a fixed seed; `make fresh` draws a new seed and prints it. With seed 1,
+it proves that $125n^3-15750n^2+661500n-9261049$ is a square only at $n=55$ ($D=49$), in about
+20 s of kernel time.
+
+**Reach and limits.**
+- For $D<330$ the certificate passes for 81 values of $D$. Of these, $D=13,49,74,193$ have
+  nonempty lists ($13$ was already in the registry). Every certified list agrees with a
+  brute-force point search (`python/tests`), and the certificate is refused for $D=11$ and
+  $D=26$, whose extra points $(3,\pm4)$ and $(3,\pm1)$ the cube argument cannot see ($3\mid h$).
+- *Class numbers divisible by 3.* The cube argument then does not apply, and the certificate
+  fails, so nothing is claimed. These curves need the other cube classes (a full descent over
+  the class group) or an elliptic-logarithm bound.
+- *Non-primitive representations.* For example $D=146$, $k=18$: $24^2+146\cdot6^2=18^3$ has
+  $\gcd(24,6)=6$. The table rejects these as well; accepting them would need an argument about
+  primitive representations, which is not implemented.
+- *Kernel cost.* `divB` checks $j^6$ residue pairs, so discovery caps $j\le5$; $D=1453$ (with
+  $j=8$) ran out of memory. Checking only primes $j$, and composing prime powers, is the
+  natural next step.
+- *Scope.* Only $y^2=x^3-D$ with $D>0$ (imaginary quadratic rings). Positive $k$ needs real
+  quadratic units, which are not cubes in general, and other genus-one cubics need the general
+  Weierstrass descent. There the compiler still reports the missing premise.
+- Descents and class-group computations for individual Mordell curves are classical, and
+  formalized before (Baanen–Best–Coppola–Dahmen, for $x^3-13$ in Lean 3). The contribution
+  here is the reusable certificate pipeline: Python discovers the certificate, one Lean theorem
+  consumes it, and the result composes with exact constraint reduction.
 
 ## 3C. Two symmetries: roots and units (`galois.py`, `factor.py`)
 
@@ -339,7 +438,8 @@ correction. The root action explains the *shape* (why a rational parameter or a 
 appears). The unit action and its finite quotient mod $M$ (§3A) decide *which* integer solutions
 exist and how many there are.
 
-Neither symmetry decides whether a curve of higher genus has a complete point list.
+Neither symmetry decides whether a curve of higher genus has a complete point list. For
+$y^2=x^3-D$ a third structure does: the ideal arithmetic of $\mathbb Q(\sqrt{-D})$ (§3F).
 
 ## 4. Worked examples (`receipts/constraint_demos.json`)
 
@@ -357,6 +457,7 @@ $N=10^4$, which must agree. `make verify` regenerates the receipt.
 | `filtered_pell_finite` | $2y^2+3y+1=3n^2$, $y\ge1$ | filtered Pell, no cycle admissible | no solution (Lean: `plan_filtered_finite_2`) |
 | `late_transport` | $(n-1000004)^3-2=m^2$ | transport | only $n=1000007$, $m=\pm5$ (Lean: `plan_late_transport`) |
 | `mordell_family` | $(n+5)^3+1025127=m^2$ | transport → Mordell family | no solution, for every member of the family (Lean: `plan_mordell_family_1`) |
+| `descent_74` | $8n^3+12n^2+6n-73=m^2$ | transport → descent in $\mathbb Z[\sqrt{-74}]$ | only $n=49$, $m=\pm985$ (Lean: `plan_descent_74`) |
 | `far_first_hit` | $2y^2+y=263n^2+1$, $y\ge1$ | filtered Pell, infinite | first hit $n=7816408648416305$, found by `point(0, 1)` (Lean: `plan_far_first_hit_member`) |
 | `pell_large_unit` | $991n^2+1=m^2$ | Pell orbits | no hit below $1.2\cdot10^{28}$; the first is $n=12055735790331359447442538767$ |
 | `ljunggren` | $n^4+n^3+n^2+n+1=m^2$ | Runge + certificate | only $n=3$ (`Generated.ljunggren_quartic_hits`) |
@@ -443,7 +544,8 @@ What remains open is exactly the atlas's open part:
   characterization of the solutions of $X^2-DY^2=N$ with $|N|<\sqrt D$, or the LMM algorithm
   in general. Neither is formalized here.
 - The Mordell family (§3E) is certified for every member, but its answer is always empty.
-  Families with points, and single curves outside the registry, stop at an explicit missing
-  premise.
+  Single curves $y^2=x^3-D$ whose descent certificate passes get nonempty complete answers (§3F).
+  Other curves stop at an explicit missing premise. That covers $3\mid h(-4D)$, positive $k$,
+  non-Mordell cubics, and certificates beyond the kernel budget.
 - Galois groups are identified up to degree 4. Higher-degree orbits are exact, but their groups
   are not named.

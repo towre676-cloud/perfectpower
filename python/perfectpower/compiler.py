@@ -634,7 +634,14 @@ class Plan:
         """The Galois orbits of the roots of the reduced polynomial and why they give this type
         (galois.galois_profile)."""
         from .galois import galois_profile
-        return galois_profile(self.reduced.F, self.reduced.d)
+        prof = galois_profile(self.reduced.F, self.reduced.d)
+        cert = self.data.get('descent')
+        if cert:
+            # the symmetry that drives the proof: the conjugate factors of x^3 in the ring
+            prof['descent'] = {k: cert[k] for k in ('field', 'ring', 'factorization', 'units',
+                                                     'class_number', 'j', 'points', 'why')}
+            prof['explanation'] = prof['explanation'] + ' ' + cert['why']
+        return prof
 
     @property
     def mechanism(self) -> str:
@@ -700,6 +707,27 @@ def _power_plan(pc: PowerConstraint) -> dict:
                             data={'substitution': f't = {r}*n + ({s})', 'curve': f'm^2 = t^3 + ({k})',
                                   'family': fam, 'specialized_test': 'False'},
                             finite={}, contains=lambda n: False, hits=lambda N: {})
+            if k < 0:
+                from .descent import certificate as descent_certificate, affine_hits
+                cert = descent_certificate(-k)
+                if cert is not None:
+                    fin: dict[int, list[int]] = {}
+                    for n, mm in affine_hits(cert, r, s):
+                        fin.setdefault(n, []).append(mm)
+                    fin = {n: sorted(ms) for n, ms in fin.items()}
+                    T = sorted({x for x, _ in cert['points']})
+                    return dict(method=f'descent in Z[sqrt(-{-k})] (certificate discovered here, checked in Lean)',
+                                status=COMPLETE_FINITE,
+                                justification=['PerfectPower.Descent.hits_of_cert',
+                                               'PerfectPower.Descent.complete_of_cert',
+                                               'PerfectPower.Descent.image_of_complete',
+                                               'PerfectPower.Transport.cubic_sound_image'],
+                                data={'substitution': f't = {r}*n + ({s})', 'curve': f'm^2 = t^3 + ({k})',
+                                      'descent': cert, 'complete_arguments': T,
+                                      'specialized_test': ' or '.join(f'{r}*n + ({s}) == {t}' for t in T)
+                                      or 'False'},
+                                finite=fin, contains=lambda n, T=T: (r * n + s) in T,
+                                hits=lambda N, fin=fin: {n: w for n, w in fin.items() if n <= N})
     if d == 2 and len(F) == 3 and F[2] > 0 and not is_square(F[2]) and F[1] ** 2 - 4 * F[2] * F[0]:
         return _quadratic_pell_plan(pc)
     cl = classify(F, d)

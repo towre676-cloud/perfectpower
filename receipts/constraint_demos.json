@@ -2057,6 +2057,146 @@
   "outputs_agree": true
  },
  {
+  "demo": "descent_74",
+  "title": "is 8n^3 + 12n^2 + 6n - 73 a square?  (only n = 49: a descent in Z[sqrt(-74)] found here; Lean)",
+  "program": {
+   "expr": "8*n**3 + 12*n**2 + 6*n - 73",
+   "test": [
+    "power",
+    2
+   ]
+  },
+  "plan": {
+   "galois": {
+    "orbits": [
+     {
+      "size": 3,
+      "factor": [
+       -73,
+       6,
+       12,
+       8
+      ],
+      "group": "S3",
+      "discriminant": "-36963/16",
+      "multiplicity": 1,
+      "t": 2
+     }
+    ],
+    "unit_fields": [],
+    "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G) The class number of Z[sqrt(-74)] is 10, prime to 3, so the ideal whose cube is (y + sqrt(-74)) is principal: the table shows no class of order 3 among norms k <= 17 (Thue box r/t = 7/1). The units are +-1, both cubes, so y + sqrt(-74) = (p + q sqrt(-74))^3 and q (3p^2 - 74 q^2) = 1.",
+    "descent": {
+     "field": "Q(sqrt(-74))",
+     "ring": "Z[sqrt(-74)] (the maximal order)",
+     "factorization": "x^3 = (y + sqrt(-74))(y - sqrt(-74))",
+     "units": "{+1, -1}",
+     "class_number": 10,
+     "j": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "points": [
+      [
+       99,
+       985
+      ],
+      [
+       99,
+       -985
+      ]
+     ],
+     "why": "The class number of Z[sqrt(-74)] is 10, prime to 3, so the ideal whose cube is (y + sqrt(-74)) is principal: the table shows no class of order 3 among norms k <= 17 (Thue box r/t = 7/1). The units are +-1, both cubes, so y + sqrt(-74) = (p + q sqrt(-74))^3 and q (3p^2 - 74 q^2) = 1."
+    }
+   },
+   "mechanism": "complete finite list, with a proof that no solution is missed",
+   "constraint": "8*n^3 + 12*n^2 + 6*n - 73 = m^2,  n >= 1, m in Z",
+   "reductions": [],
+   "reduced": "8*n^3 + 12*n^2 + 6*n - 73 = m^2,  n >= 1, m in Z",
+   "method": "descent in Z[sqrt(-74)] (certificate discovered here, checked in Lean)",
+   "status": "COMPLETE_FINITE",
+   "justification": [
+    "PerfectPower.Descent.hits_of_cert",
+    "PerfectPower.Descent.complete_of_cert",
+    "PerfectPower.Descent.image_of_complete",
+    "PerfectPower.Transport.cubic_sound_image",
+    "PerfectPower.Generated.Plans.plan_descent_74 (kernel-checked theorem for this plan)"
+   ],
+   "supports": [
+    "contains",
+    "explain",
+    "bounded_evidence",
+    "iter_hits",
+    "count",
+    "all_hits"
+   ],
+   "execution_verified": false,
+   "data": {
+    "substitution": "t = 2*n + (1)",
+    "curve": "m^2 = t^3 + (-74)",
+    "descent": {
+     "D": 74,
+     "r": 7,
+     "t": 1,
+     "K": 17,
+     "Q": 8,
+     "j": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "points": [
+      [
+       99,
+       985
+      ],
+      [
+       99,
+       -985
+      ]
+     ],
+     "class_number": 10,
+     "field": "Q(sqrt(-74))",
+     "ring": "Z[sqrt(-74)] (the maximal order)",
+     "factorization": "x^3 = (y + sqrt(-74))(y - sqrt(-74))",
+     "units": "{+1, -1}",
+     "why": "The class number of Z[sqrt(-74)] is 10, prime to 3, so the ideal whose cube is (y + sqrt(-74)) is principal: the table shows no class of order 3 among norms k <= 17 (Thue box r/t = 7/1). The units are +-1, both cubes, so y + sqrt(-74) = (p + q sqrt(-74))^3 and q (3p^2 - 74 q^2) = 1.",
+     "lean": "PerfectPower.Descent.hits_of_cert"
+    },
+    "complete_arguments": [
+     99
+    ],
+    "specialized_test": "2*n + (1) == 99"
+   }
+  },
+  "specialized": true,
+  "original_program": "from math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n\ndef run(N):\n    out = []\n    for n in range(1, N + 1):\n        v = 8*n**3 + 12*n**2 + 6*n - 73\n        r = iroot(v, 2)\n        if r is not None:\n            out.append((n, sorted({r, -r}) if True else [r]))\n    return out\n",
+  "specialized_program": "\"\"\"Specialized from: 8*n^3 + 12*n^2 + 6*n - 73 = m^2,  n >= 1, m in Z\nstatus: COMPLETE_FINITE; method: descent in Z[sqrt(-74)] (certificate discovered here, checked in Lean)\njustification:\n  PerfectPower.Descent.hits_of_cert\n  PerfectPower.Descent.complete_of_cert\n  PerfectPower.Descent.image_of_complete\n  PerfectPower.Transport.cubic_sound_image\n  PerfectPower.Generated.Plans.plan_descent_74 (kernel-checked theorem for this plan)\nThe Python below is generated; it is not itself formally verified.\"\"\"\n# membership test for the reduced constraint: 2*n + (1) == 99\nfrom math import isqrt\n\ndef iroot(v, d):\n    \"\"\"Integer r with r^d = v, or None (exact).\"\"\"\n    if v < 0:\n        if d % 2 == 0:\n            return None\n        r = iroot(-v, d)\n        return None if r is None else -r\n    lo, hi = 0, 1\n    while hi ** d <= v:\n        hi *= 2\n    while lo + 1 < hi:\n        mid = (lo + hi) // 2\n        if mid ** d <= v:\n            lo = mid\n        else:\n            hi = mid\n    return lo if lo ** d == v else None\n\n# complete finite list (descent in Z[sqrt(-74)] (certificate discovered here, checked in Lean))\nHITS = {49: [985]}\n\ndef reduced(N):\n    return {n: ms for n, ms in HITS.items() if n <= N}\n\ndef back(n, ms):\n    return sorted(set(ms) | {-m for m in ms}) if True else sorted(ms)\n\n\ndef run(N):\n    out = []\n    for n, ms in sorted(reduced(N).items()):\n        ws = back(n, ms)\n        if ws:\n            out.append((n, ws))\n    return out\n",
+  "N": 10000,
+  "mechanism": "complete finite list, with a proof that no solution is missed",
+  "original_output": [
+   [
+    49,
+    [
+     -985,
+     985
+    ]
+   ]
+  ],
+  "specialized_output": [
+   [
+    49,
+    [
+     -985,
+     985
+    ]
+   ]
+  ],
+  "outputs_agree": true
+ },
+ {
   "demo": "far_first_hit",
   "title": "does 2y^2 + y = 263n^2 + 1 have a root y >= 1?  (populated cycle, first hit ~7.8e15; Lean)",
   "program": {

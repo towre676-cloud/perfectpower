@@ -387,3 +387,16 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Plans.plan_filtered_finite_5
 #print axioms PerfectPower.FilteredPell.orbitCount_eq
 #print axioms PerfectPower.FilteredPell.iterForce_eq
+-- Descent certificates: complete nonempty point lists, and the bridge to the compiler's premise
+#print axioms PerfectPower.Descent.W1_modEq
+#print axioms PerfectPower.Descent.W2_modEq
+#print axioms PerfectPower.Descent.divOK_of_divB
+#print axioms PerfectPower.Descent.table_sound
+#print axioms PerfectPower.Descent.cube_of_cert
+#print axioms PerfectPower.Descent.points_of_cert
+#print axioms PerfectPower.Descent.pointList_sound
+#print axioms PerfectPower.Descent.complete_of_cert
+#print axioms PerfectPower.Descent.image_of_complete
+#print axioms PerfectPower.Descent.hits_of_cert
+#print axioms PerfectPower.Generated.Plans.plan_descent_74
+#print axioms PerfectPower.Generated.Plans.plan_descent_193

@@ -48,6 +48,9 @@ def main():
     p.add_argument('--domain', choices=('int', 'nonneg', 'pos'), default='int')
     p.add_argument('--N', type=int, default=10 ** 6)
     p.add_argument('--program', action='store_true', help='print the specialized program instead')
+    p = sub.add_parser('prove', help='emit a standalone Lean theorem for a descent-certified plan')
+    p.add_argument('--expr', required=True, help="cubic in n, e.g. '(2*n + 1)**3 - 74'")
+    p.add_argument('--name', default='emitted_hits')
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
@@ -56,6 +59,18 @@ def main():
         result = verify_certificate(obj)
         print(json.dumps({'valid': result}))
         raise SystemExit(0 if result else 1)
+    if args.command == 'prove':
+        from .compiler import PowerConstraint, compile_constraint, match_affine_cube
+        from .descent import standalone_file
+        from .specialize import parse_poly
+        plan = compile_constraint(PowerConstraint(parse_poly(args.expr), 2))
+        cert = plan.data.get('descent')
+        if cert is None:
+            print(f'no descent certificate: {plan.mechanism}', file=sys.stderr)
+            raise SystemExit(1)
+        r, s, _ = match_affine_cube(plan.reduced.F)
+        print(standalone_file(args.name, r, s, cert['D']))
+        return
     if args.command == 'solve':
         from .compiler import NotEnumerable
         from .specialize import LoopProgram, specialize
