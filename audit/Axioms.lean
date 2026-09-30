@@ -699,6 +699,10 @@ open PerfectPower
 #print axioms PerfectPower.ThueLocal.lift_step
 #print axioms PerfectPower.ThueLocal.mem_lvl
 #print axioms PerfectPower.ThueLocal.no_solution_of_lvl
+#print axioms PerfectPower.ThueLocal.nodeB_step
+#print axioms PerfectPower.ThueLocal.sound_of_step
+#print axioms PerfectPower.ThueLocal.descM_sound
+#print axioms PerfectPower.ThueLocal.no_solution_of_descM
 #print axioms PerfectPower.ThueLocal.evalF_divF
 #print axioms PerfectPower.ThueLocal.evalF_scale
 #print axioms PerfectPower.ThueLocal.descB_sound

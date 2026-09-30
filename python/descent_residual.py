@@ -5,7 +5,7 @@ lines of F mod p, each a new form with right side M/p^s.  On an obstructed class
 locally impossible.  On a class with solutions some leaf must survive: descent is a local method,
 and a global solution lies in some p-adic class at every step.
 
-Here descent runs on every class **not** closed by `make_lean_thue_branch.py`, over all primes of
+Here descent runs on every class without a Lean descent certificate from `make_lean_thue_branch.py`, over all primes of
 M, pruning children that are locally impossible (the same check as `Kind.leaf`), until the right
 side is +-1.  Each node's form is F o T for an integer matrix T of determinant +-p^s, so the
 solutions of the parent are exactly the images T(u, v) of the child solutions: solutions are
@@ -82,7 +82,7 @@ def residual(F, M, cap=4000):
 
 def main():
     graph = json.loads((ROOT / 'receipts' / 'thue_graph.json').read_text())
-    closed = {c for curve in graph['curves'] if curve['status'] == 'COMPLETE' for c in curve['classes']}
+    closed = {c['id'] for c in graph['classes'] if 'descent' in c}   # classes with a Lean descent certificate
     rows, canon = [], {}
     for c in graph['classes']:
         if c['id'] in closed:

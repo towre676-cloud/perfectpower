@@ -241,120 +241,166 @@ lemma evalF_divF {F : Form} {d : ℤ} (hd : d ≠ 0) (h : dvdF d F = true) (u v 
 lemma evalF_scale (F : Form) (p a b : ℤ) : evalF F (p * a) (p * b) = p ^ 3 * evalF F a b := by
   simp only [evalF]; ring
 
+/-- **One node's check is sound given its children**: if `nodeB p nodes i` holds and every later
+node's equation has no integral solution, neither has node `i`'s.  Descent soundness, for a fixed
+prime or with a prime per node, is induction over this step. -/
+theorem nodeB_step (p : ℕ) (hp : 0 < p) (nodes : List (Form × ℤ × Kind)) (i : ℕ)
+    (hi' : nodeB p nodes i = true)
+    (child : ∀ j : ℕ, i < j → ∀ m : Form × ℤ × Kind, m ∈ nodes[j]? → ∀ a b : ℤ, evalF m.1 a b ≠ m.2.1) :
+    ∀ n : Form × ℤ × Kind, n ∈ nodes[i]? → ∀ a b : ℤ, evalF n.1 a b ≠ n.2.1 := by
+  intro n hn a b hab
+  have hpz : (0 : ℤ) < p := by exact_mod_cast hp
+  obtain ⟨F, M, kind⟩ := n
+  simp only [Option.mem_def] at hn
+  simp only at hab
+  unfold nodeB at hi'
+  rw [hn] at hi'
+  cases kind with
+  | leaf e =>
+    simp only [decide_eq_true_eq] at hi'
+    exact no_solution_of_lvl F M p e hp hi' a b hab
+  | split zero lines =>
+    simp only [Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_range,
+      Bool.or_eq_true, List.any_eq_true] at hi'
+    obtain ⟨⟨⟨hMp, hz⟩, hcover⟩, hlines⟩ := hi'
+    by_cases hab0 : (p : ℤ) ∣ a ∧ (p : ℤ) ∣ b
+    · -- the zero class
+      obtain ⟨⟨a', rfl⟩, ⟨b', rfl⟩⟩ := hab0
+      rw [evalF_scale] at hab
+      cases zero with
+      | none =>
+        simp only [decide_eq_true_eq] at hz
+        exact hz (by rw [← hab]; simp)
+      | some j =>
+        simp only [Bool.and_eq_true, decide_eq_true_eq] at hz
+        obtain ⟨⟨hij, hM3⟩, hnj⟩ := hz
+        cases hnode : nodes[j]? with
+        | none => rw [hnode] at hnj; simp at hnj
+        | some m =>
+          rw [hnode] at hnj
+          simp only [Option.map_some, Option.some.injEq] at hnj
+          have := child j hij m (by simp [hnode]) a' b'
+          rw [(Prod.mk.inj hnj).1, (Prod.mk.inj hnj).2] at this
+          apply this
+          rw [← hab, Int.mul_ediv_cancel_left _ (by positivity)]
+    · -- a primitive pair: its residue lies on a listed line
+      have hA0 := Int.emod_nonneg a hpz.ne'
+      have hA1 := Int.emod_lt_of_pos a hpz
+      have hB0 := Int.emod_nonneg b hpz.ne'
+      have hB1 := Int.emod_lt_of_pos b hpz
+      have hc := hcover (a % p).toNat (by omega) (b % p).toNat (by omega)
+      have ca : (((a % p).toNat : ℕ) : ℤ) = a % p := Int.toNat_of_nonneg hA0
+      have cb : (((b % p).toNat : ℕ) : ℤ) = b % p := Int.toNat_of_nonneg hB0
+      rcases hc with (⟨h0a, h0b⟩ | hnz) | ⟨ln, hln, hon⟩
+      · exact hab0 ⟨Int.dvd_of_emod_eq_zero (by omega), Int.dvd_of_emod_eq_zero (by omega)⟩
+      · apply hnz
+        rw [ca, cb]
+        have := evalF_modEq F (Int.mod_modEq a p) (Int.mod_modEq b p)
+        rw [hab] at this
+        rw [this]; exact hMp
+      · have hl := hlines ln hln
+        simp only [Bool.and_eq_true, decide_eq_true_eq] at hl
+        obtain ⟨⟨⟨hil, hdv⟩, hMs⟩, hnl⟩ := hl
+        -- write (a, b) = T (u, v)
+        obtain ⟨u, v, hu, hv⟩ : ∃ u v : ℤ, a = (lineMat p ln.1).1.1 * u + (lineMat p ln.1).1.2 * v ∧
+            b = (lineMat p ln.1).2.1 * u + (lineMat p ln.1).2.2 * v := by
+          obtain ⟨l?, s, j⟩ := ln
+          cases l? with
+          | some l =>
+            simp only [onLine, decide_eq_true_eq] at hon
+            rw [ca, cb] at hon
+            have hmod : a ≡ l * b [ZMOD p] := by
+              unfold Int.ModEq
+              rw [Int.emod_emod] at hon
+              rw [hon, Int.mul_emod, Int.emod_emod, ← Int.mul_emod]
+            obtain ⟨c, hc⟩ := Int.ModEq.dvd hmod.symm
+            exact ⟨b, c, show a = (l : ℤ) * b + (p : ℤ) * c by linarith,
+              show b = 1 * b + 0 * c by ring⟩
+          | none =>
+            simp only [onLine, decide_eq_true_eq] at hon
+            rw [cb] at hon
+            rw [Int.emod_emod] at hon
+            obtain ⟨w, hw⟩ := Int.dvd_of_emod_eq_zero hon
+            exact ⟨a, w, show a = 1 * a + 0 * w by ring, show b = 0 * a + (p : ℤ) * w by linarith⟩
+        have hT : evalF (compF F (lineMat p ln.1)) u v = M := by
+          rw [evalF_compF, ← hu, ← hv, hab]
+        rw [evalF_divF (by positivity) hdv] at hT
+        cases hnode : nodes[ln.2.2]? with
+        | none => rw [hnode] at hnl; simp at hnl
+        | some m =>
+          rw [hnode] at hnl
+          simp only [Option.map_some, Option.some.injEq] at hnl
+          have := child ln.2.2 hil m (by simp [hnode]) u v
+          rw [(Prod.mk.inj hnl).1, (Prod.mk.inj hnl).2] at this
+          apply this
+          rw [← hT, Int.mul_ediv_cancel_left _ (by positivity)]
+
+/-- Strong induction from the end of a certificate: if each node is sound whenever all later
+nodes are, every node is sound. -/
+theorem sound_of_step {α : Type*} (nodes : List α) (P : α → Prop)
+    (step : ∀ i : ℕ, i < nodes.length → (∀ j : ℕ, i < j → ∀ m : α, m ∈ nodes[j]? → P m) →
+      ∀ n : α, n ∈ nodes[i]? → P n) :
+    ∀ (i : ℕ) (n : α), n ∈ nodes[i]? → P n := by
+  suffices H : ∀ k i : ℕ, nodes.length - i ≤ k → ∀ n : α, n ∈ nodes[i]? → P n from
+    fun i => H _ i le_rfl
+  intro k
+  induction k with
+  | zero =>
+    intro i hi n hn
+    rw [List.getElem?_eq_none (by omega)] at hn; simp at hn
+  | succ k ih =>
+    intro i hi n hn
+    have hlt : i < nodes.length := by
+      by_contra hc; push_neg at hc; rw [List.getElem?_eq_none hc] at hn; simp at hn
+    exact step i hlt (fun j hj => ih j (by omega)) n hn
+
 /-- **Soundness of the descent certificate**: every node's equation has no integral solution. -/
 theorem descB_sound (p : ℕ) (nodes : List (Form × ℤ × Kind)) (h : descB p nodes = true) :
     ∀ i : ℕ, ∀ n : Form × ℤ × Kind, n ∈ nodes[i]? → ∀ a b : ℤ, evalF n.1 a b ≠ n.2.1 := by
   simp only [descB, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_range] at h
   obtain ⟨hp, hall⟩ := h
-  have hpz : (0 : ℤ) < p := by exact_mod_cast hp
-  -- strong induction from the end of the list
-  suffices H : ∀ k : ℕ, ∀ i : ℕ, nodes.length - i ≤ k → ∀ n : Form × ℤ × Kind, n ∈ nodes[i]? →
-      ∀ a b : ℤ, evalF n.1 a b ≠ n.2.1 by
-    intro i; exact H _ i le_rfl
-  intro k
-  induction k with
-  | zero =>
-    intro i hi n hn
-    have : nodes.length ≤ i := by omega
-    rw [List.getElem?_eq_none this] at hn; simp at hn
-  | succ k ih =>
-    intro i hi n hn a b hab
-    have hlt : i < nodes.length := by
-      by_contra hc; push_neg at hc; rw [List.getElem?_eq_none hc] at hn; simp at hn
-    have hi' := hall i hlt
-    obtain ⟨F, M, kind⟩ := n
-    simp only [Option.mem_def] at hn
-    simp only at hab
-    unfold nodeB at hi'
-    rw [hn] at hi'
-    -- children are later nodes
-    have child : ∀ j : ℕ, i < j → ∀ m : Form × ℤ × Kind, m ∈ nodes[j]? → ∀ a b : ℤ,
-        evalF m.1 a b ≠ m.2.1 :=
-      fun j hj => ih j (by omega)
-    cases kind with
-    | leaf e =>
-      simp only [decide_eq_true_eq] at hi'
-      exact no_solution_of_lvl F M p e hp hi' a b hab
-    | split zero lines =>
-      simp only [Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_range,
-        Bool.or_eq_true, List.any_eq_true] at hi'
-      obtain ⟨⟨⟨hMp, hz⟩, hcover⟩, hlines⟩ := hi'
-      by_cases hab0 : (p : ℤ) ∣ a ∧ (p : ℤ) ∣ b
-      · -- the zero class
-        obtain ⟨⟨a', rfl⟩, ⟨b', rfl⟩⟩ := hab0
-        rw [evalF_scale] at hab
-        cases zero with
-        | none =>
-          simp only [decide_eq_true_eq] at hz
-          exact hz (by rw [← hab]; simp)
-        | some j =>
-          simp only [Bool.and_eq_true, decide_eq_true_eq] at hz
-          obtain ⟨⟨hij, hM3⟩, hnj⟩ := hz
-          cases hnode : nodes[j]? with
-          | none => rw [hnode] at hnj; simp at hnj
-          | some m =>
-            rw [hnode] at hnj
-            simp only [Option.map_some, Option.some.injEq] at hnj
-            have := child j hij m (by simp [hnode]) a' b'
-            rw [(Prod.mk.inj hnj).1, (Prod.mk.inj hnj).2] at this
-            apply this
-            rw [← hab, Int.mul_ediv_cancel_left _ (by positivity)]
-      · -- a primitive pair: its residue lies on a listed line
-        have hA0 := Int.emod_nonneg a hpz.ne'
-        have hA1 := Int.emod_lt_of_pos a hpz
-        have hB0 := Int.emod_nonneg b hpz.ne'
-        have hB1 := Int.emod_lt_of_pos b hpz
-        have hc := hcover (a % p).toNat (by omega) (b % p).toNat (by omega)
-        have ca : (((a % p).toNat : ℕ) : ℤ) = a % p := Int.toNat_of_nonneg hA0
-        have cb : (((b % p).toNat : ℕ) : ℤ) = b % p := Int.toNat_of_nonneg hB0
-        rcases hc with (⟨h0a, h0b⟩ | hnz) | ⟨ln, hln, hon⟩
-        · exact hab0 ⟨Int.dvd_of_emod_eq_zero (by omega), Int.dvd_of_emod_eq_zero (by omega)⟩
-        · apply hnz
-          rw [ca, cb]
-          have := evalF_modEq F (Int.mod_modEq a p) (Int.mod_modEq b p)
-          rw [hab] at this
-          rw [this]; exact hMp
-        · have hl := hlines ln hln
-          simp only [Bool.and_eq_true, decide_eq_true_eq] at hl
-          obtain ⟨⟨⟨hil, hdv⟩, hMs⟩, hnl⟩ := hl
-          -- write (a, b) = T (u, v)
-          obtain ⟨u, v, hu, hv⟩ : ∃ u v : ℤ, a = (lineMat p ln.1).1.1 * u + (lineMat p ln.1).1.2 * v ∧
-              b = (lineMat p ln.1).2.1 * u + (lineMat p ln.1).2.2 * v := by
-            obtain ⟨l?, s, j⟩ := ln
-            cases l? with
-            | some l =>
-              simp only [onLine, decide_eq_true_eq] at hon
-              rw [ca, cb] at hon
-              have hmod : a ≡ l * b [ZMOD p] := by
-                unfold Int.ModEq
-                rw [Int.emod_emod] at hon
-                rw [hon, Int.mul_emod, Int.emod_emod, ← Int.mul_emod]
-              obtain ⟨c, hc⟩ := Int.ModEq.dvd hmod.symm
-              exact ⟨b, c, show a = (l : ℤ) * b + (p : ℤ) * c by linarith,
-                show b = 1 * b + 0 * c by ring⟩
-            | none =>
-              simp only [onLine, decide_eq_true_eq] at hon
-              rw [cb] at hon
-              rw [Int.emod_emod] at hon
-              obtain ⟨w, hw⟩ := Int.dvd_of_emod_eq_zero hon
-              exact ⟨a, w, show a = 1 * a + 0 * w by ring, show b = 0 * a + (p : ℤ) * w by linarith⟩
-          have hT : evalF (compF F (lineMat p ln.1)) u v = M := by
-            rw [evalF_compF, ← hu, ← hv, hab]
-          rw [evalF_divF (by positivity) hdv] at hT
-          cases hnode : nodes[ln.2.2]? with
-          | none => rw [hnode] at hnl; simp at hnl
-          | some m =>
-            rw [hnode] at hnl
-            simp only [Option.map_some, Option.some.injEq] at hnl
-            have := child ln.2.2 hil m (by simp [hnode]) u v
-            rw [(Prod.mk.inj hnl).1, (Prod.mk.inj hnl).2] at this
-            apply this
-            rw [← hT, Int.mul_ediv_cancel_left _ (by positivity)]
+  exact sound_of_step nodes (fun n => ∀ a b : ℤ, evalF n.1 a b ≠ n.2.1)
+    (fun i hi child => nodeB_step p hp nodes i (hall i hi) child)
 
 /-- **A descent certificate proves `F(a, b) = M` has no integral solution** (node 0). -/
 theorem no_solution_of_desc (p : ℕ) (F : Form) (M : ℤ) (kind : Kind)
     (rest : List (Form × ℤ × Kind)) (h : descB p ((F, M, kind) :: rest) = true) (a b : ℤ) :
     evalF F a b ≠ M :=
   descB_sound p _ h 0 (F, M, kind) (by simp) a b
+
+/-! ### Descent with a prime per node
+
+Some equations need several primes: split at `p` where `p ∣ M`, and close a child at another
+prime `q ∤ M` by residue lifting.  A multi-prime certificate lists `(p, F, M, kind)`; each node is
+checked by `nodeB` at its own prime.  Soundness is the same induction. -/
+
+/-- A descent certificate with a prime per node. -/
+def descM (nodes : List (ℕ × Form × ℤ × Kind)) : Bool :=
+  (List.range nodes.length).all fun i =>
+    match nodes[i]? with
+    | some (p, _) => decide (0 < p) && nodeB p (nodes.map Prod.snd) i
+    | none => false
+
+/-- **Soundness of multi-prime descent.** -/
+theorem descM_sound (nodes : List (ℕ × Form × ℤ × Kind)) (h : descM nodes = true) :
+    ∀ (i : ℕ) (n : Form × ℤ × Kind), n ∈ (nodes.map Prod.snd)[i]? → ∀ a b : ℤ, evalF n.1 a b ≠ n.2.1 := by
+  simp only [descM, List.all_eq_true, List.mem_range] at h
+  refine sound_of_step (nodes.map Prod.snd) (fun n => ∀ a b : ℤ, evalF n.1 a b ≠ n.2.1)
+    (fun i hi child => ?_)
+  rw [List.length_map] at hi
+  have hi' := h i hi
+  cases hq : nodes[i]? with
+  | none => rw [hq] at hi'; simp at hi'
+  | some q =>
+    obtain ⟨p, r⟩ := q
+    rw [hq] at hi'
+    simp only [Bool.and_eq_true, decide_eq_true_eq] at hi'
+    exact nodeB_step p hi'.1 _ i hi'.2 child
+
+/-- **A multi-prime descent certificate proves `F(a, b) = M` has no integral solution.** -/
+theorem no_solution_of_descM (p : ℕ) (F : Form) (M : ℤ) (kind : Kind)
+    (rest : List (ℕ × Form × ℤ × Kind)) (h : descM ((p, F, M, kind) :: rest) = true) (a b : ℤ) :
+    evalF F a b ≠ M :=
+  descM_sound _ h 0 (F, M, kind) (by simp) a b
 
 end PerfectPower.ThueLocal

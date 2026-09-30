@@ -3,7 +3,7 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench
+.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing
 
 verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
@@ -89,6 +89,14 @@ crosscheck:
 # Host-solver adapter benchmark (constructed instances; needs z3-solver on PYTHONPATH)
 adapter-bench:
 	$(PY) python/host_adapter_bench.py 10
+
+# Independent QF_NIA corpus (independent_nia/; needs z3-solver on PYTHONPATH): adapter ledger and
+# query-level z3 timing.  Not part of verify (timings are machine-dependent).
+nia-ledger:
+	$(PY) python/nia_ledger.py independent_nia --baseline independent_nia/reports/z3_cvc5.json --baseline independent_nia/reports/z3_elster.json --baseline independent_nia/reports/z3_staub.json --out independent_nia/reports/perfectpower_ledger.json
+
+nia-timing:
+	$(PY) python/nia_query_timing.py independent_nia --query-timeout 2 --file-budget 120 --out independent_nia/reports/z3_query_timing.json
 
 # Differential fuzzers with fixed seeds (python/fuzz/); the finite-bucket scan goes to 1e8.
 fuzz:

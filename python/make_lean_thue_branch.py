@@ -138,6 +138,85 @@ def tree_size(nodes, i=0):
     return 1 + sum(tree_size(nodes, j) for j in kids)
 
 
+def descent_multi(F, M, maxnodes=400, qs=(2, 3, 5, 7, 11, 13), work_cap=150000):
+    """A multi-prime descent certificate (`ThueLocal.descM`): nodes `(p, F, M, kind)`, each checked
+    at its own prime, or None.  A node becomes a leaf when a small lifting tree at some prime `q`
+    closes it (kernel work at most `work_cap`); otherwise it splits at the smallest prime of `M`.
+    Exact repeated subproblems are interned; nodes are renumbered topologically."""
+    raw, memo = [], {}
+
+    def primes_of(n):
+        n, out, q = abs(n), [], 2
+        while q * q <= n:
+            if n % q == 0:
+                out.append(q)
+                while n % q == 0:
+                    n //= q
+            q += 1
+        return out + ([n] if n > 1 else [])
+
+    def build(F, M):
+        key = (F, M)
+        if key in memo:
+            return memo[key]
+        if len(raw) > maxnodes:
+            raise ValueError('too large')
+        idx = len(raw)
+        raw.append(None)
+        memo[key] = idx
+        for q in qs:
+            r = lift_obstruction(F, M, q, 5 if q <= 7 else 3)
+            if r and q * q * (1 + sum(r[1][:-1])) <= work_cap:
+                raw[idx] = (q, F, M, ('leaf', r[0]))
+                return idx
+        for p in primes_of(M):            # try each split prime, rolling back a failed attempt
+            mark, saved = len(raw), dict(memo)
+            try:
+                zero = build(F, M // p ** 3) if M % p ** 3 == 0 else None
+                lines = []
+                roots = [l for l in range(p) if G.evalF(F, l, 1) % p == 0]
+                if F[0] % p == 0:
+                    roots.append(None)
+                for lam in roots:
+                    H = G.compose(F, line_mat(p, lam))
+                    s = min(min(vp(c, p) if c else 60 for c in H), vp(M, p))
+                    lines.append((lam, s, build(tuple(c // p ** s for c in H), M // p ** s)))
+                raw[idx] = (p, F, M, ('split', zero, lines))
+                return idx
+            except ValueError as ex:
+                if str(ex) == 'too large':
+                    raise
+                del raw[mark:]
+                memo.clear()
+                memo.update(saved)
+        raise ValueError('no split prime closes this node')
+    try:
+        build(tuple(F), M)
+    except ValueError:
+        return None
+    order, seen = [], set()
+
+    def visit(i):
+        if i in seen:
+            return
+        seen.add(i)
+        k = raw[i][3]
+        if k[0] == 'split':
+            for j in ([k[1]] if k[1] is not None else []) + [l[2] for l in k[2]]:
+                visit(j)
+        order.append(i)
+    visit(0)
+    order.reverse()
+    new = {o: n for n, o in enumerate(order)}
+    out = []
+    for o in order:
+        p, F, M, k = raw[o]
+        if k[0] == 'split':
+            k = ('split', None if k[1] is None else new[k[1]], [(l, s, new[j]) for l, s, j in k[2]])
+        out.append((p, F, M, k))
+    return out
+
+
 def kind_lean(k):
     if k[0] == 'leaf':
         return f'(Kind.leaf {k[1]})'
@@ -223,6 +302,18 @@ def main():
                                                             for F, MM, k in cert]},
                                 'lean': f'PerfectPower.Generated.MordellThue.obl_{idx}', '_cert': cert})
                     break
+            if 'descent' not in cls:
+                mc = descent_multi(rep, M)
+                if mc is not None:
+                    leaf_work = sum(q * q * (1 + sum(lift_obstruction(F, MM, q, 5 if q <= 7 else 3)[1][:-1]))
+                                    for q, F, MM, k in mc if k[0] == 'leaf')
+                    cls.update({'descent': {'p': 'multi', 'primes': sorted({q for q, *_ in mc}), 'nodes': len(mc),
+                                            'tree_nodes': None, 'leaf_work': leaf_work,
+                                            'lifting_tree_work_for_comparison': None, 'lifting_tree_depth': None,
+                                            'certificate': [[q, list(F), MM, list(k[:2]) if k[0] == 'leaf' else
+                                                             [k[0], k[1], [list(x) for x in k[2]]]]
+                                                            for q, F, MM, k in mc]},
+                                'lean': f'PerfectPower.Generated.MordellThue.obl_{idx}', '_cert': mc})
         classes.append(cls)
     by_node = {}
     for c in classes:
@@ -249,6 +340,15 @@ def main():
             continue
         ob = c['descent']
         cert = c.pop('_cert')
+        if ob['p'] == 'multi':
+            rest = ', '.join(f"({q}, {form_lean(F)}, {M}, {kind_lean(k)})" for q, F, M, k in cert[1:])
+            out.append(f"/-- Obligation {c['id']}: `G(u, v) = {c['M']}` has no integral solution: a multi-prime "
+                       f"descent certificate (primes {ob['primes']}, {len(cert)} node(s); no single-prime "
+                       f"certificate was found). {c['size']} branch equations of `y^2 = x^3 - D`, "
+                       f"D ∈ {c['curves']}, transport to it. -/\n"
+                       f"theorem obl_{c['id']} : ∀ u v : ℤ, evalF {form_lean(c['representative'])} u v ≠ {c['M']} :=\n"
+                       f"  no_solution_of_descM {cert[0][0]} _ _ {kind_lean(cert[0][3])}\n    [{rest}]\n    (by decide +kernel)\n")
+            continue
         rest = ', '.join(f"({form_lean(F)}, {M}, {kind_lean(k)})" for F, M, k in cert[1:])
         out.append(f"/-- Obligation {c['id']}: `G(u, v) = {c['M']}` has no integral solution: a {ob['p']}-adic "
                    f"descent certificate with {len(cert)} node(s) (the plain lifting tree would need "
@@ -307,7 +407,8 @@ def main():
         'obligations_emitted': len(obstructed),
         'curves_closed': [r['D'] for r in curves if r['status'] == 'COMPLETE'],
         'descent_nodes_total': sum(c['descent']['nodes'] for c in obstructed),
-        'descent_nodes_without_interning': sum(c['descent']['tree_nodes'] for c in obstructed),
+        'descent_nodes_without_interning': sum(c['descent']['tree_nodes'] or c['descent']['nodes'] for c in obstructed),
+        'multi_prime_obligations': [c['id'] for c in obstructed if c['descent']['p'] == 'multi'],
         'descent_leaf_work_total': sum(c['descent']['leaf_work'] for c in obstructed),
         'lifting_tree_work_one_per_class': sum(c['descent']['lifting_tree_work_for_comparison'] or 0 for c in obstructed),
         'lifting_tree_work_one_per_branch': sum((c['descent']['lifting_tree_work_for_comparison'] or 0) * c['size']

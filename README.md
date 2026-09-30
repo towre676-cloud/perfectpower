@@ -56,7 +56,7 @@ their complete solution sets, each an exact equivalence over ℤ, and hands back
 - On 48 constructed instances it solves 36 of 36 recognized tasks, where z3 alone solves 3.
 - It costs about 2 ms on unrecognized tasks.
 
-These instances are constructed; frequency on real workloads is unmeasured.
+These instances are constructed. On an independent corpus of 69 upstream QF_NIA files (12,860 queries, including 12,801 industrial ELSTER queries), the fail-closed script-level adapter finds **zero** replaceable conjuncts ([coverage report](independent_nia/reports/PERFECTPOWER_COVERAGE.md)).
 
 **Try one in five minutes.** Follow the [tutorial](docs/TUTORIAL.md) to give the program $1+n+n^2+n^3+n^4$, find its square hit at $n=3$, and compile a Lean proof that there are no others.
 
@@ -91,7 +91,7 @@ These instances are constructed; frequency on real workloads is unmeasured.
     - Transported to every branch that uses them, these obligations close **10 more curves** (D = 29, 32, 36, 38, 52, 56, 77, 80, 86, 92).
   - **Still open:** 23 curves have Thue branches that carry points. PARI solves them unconditionally and agrees with Sage; that is external, not Lean.
     - **D = 72** is among the 23. Its two point-free classes are everywhere locally soluble, including the branch restrictions (`receipts/d72_local.json`), so no local certificate can close them. Solution-preserving descent reduces both to one unit equation, $-3u^3+9uv^2-2v^3=\pm1$, and PARI finds it has no solution (external).
-    - Solution-preserving descent (`receipts/descent_residual.json`, measurement only) reduces the 66 classes that single-prime descent leaves open to 109 distinct unit equations. Multi-prime descent also empties classes 42 (D = 55) and 51 (D = 71). No curve closes, and the Lean checker needs a per-node prime to emit those two.
+    - Solution-preserving descent (`receipts/descent_residual.json`, measurement only) reduces the 64 classes without a descent certificate to 109 distinct unit equations. `ThueLocal.descM` adds multi-prime descent certificates, but they close nothing new: the only point-free classes left are `D = 72`'s two, which are locally soluble.
     - A shared-field pilot (`receipts/field756_pilot.json`, external) serves 7 classes of D = 7, 28 and 63 from one certified field. Every solution has unit exponents at most 2. The exponent bound itself is not computed.
 
 ### 3. From constraints to certified plans

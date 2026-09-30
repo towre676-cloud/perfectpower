@@ -263,23 +263,30 @@ maximal-order descent in `ℤ[√−2]`.
 
 ### 7.2 Solution-preserving descent on the nonempty classes (`python/descent_residual.py`, `receipts/descent_residual.json`)
 
-Descent as in §6, but applied to all 66 classes it did not close. It runs over **all** primes of
+Descent as in §6, but applied to all 64 classes without a descent certificate (the 62 point-carrying classes and `D = 72`'s two). It runs over **all** primes of
 `M` (not just one), prunes children that are locally impossible at 2, 3, 5 and 7, and stops at
 right side `±1`. Each child is `F ∘ T` with `det T = ±pˢ`. So the parent's solutions are exactly
 the images of the children's solutions, and every solution reaches a leaf. Measured:
-- the 66 classes end in **189 unit leaves**, which are **109 distinct** unit equations
+- the 64 classes end in **189 unit leaves**, which are **109 distinct** unit equations
   `G(u, v) = 1` up to GL₂(ℤ);
 - 24 of these unit equations are shared by several classes;
 - 28 have no solution with `|u|, |v| ≤ 60`.
-- **Classes 42 (`D = 55`) and 51 (`D = 71`)** have every leaf pruned, so multi-prime descent proves
-  them empty. The single-prime certificate of §6 could not.
-  - **Neither curve closes**: each also has point-carrying classes.
-  - The Lean checker (`ThueLocal.descB`) fixes one prime per tree. Emitting these two classes as
-    certificates needs a per-node prime, which is a checker extension and is not done here.
+- **Correction.** An earlier version of this section said multi-prime descent newly empties
+  classes 42 (`D = 55`) and 51 (`D = 71`). It does not. Both already have §6 certificates and
+  are among the 15 obligations. The measurement had counted as open every class on an open
+  curve, and both curves are open because of their other, point-carrying classes. The only
+  point-free classes without a certificate are `D = 72`'s classes 56 and 57, and §7.1 shows
+  that no local certificate exists for them.
+- **Multi-prime certificates** are now available in Lean anyway: `ThueLocal.descM` carries a
+  prime per node, and `descM_sound` / `no_solution_of_descM` prove them sound.
+  - Both soundness theorems reduce to one per-node lemma, `nodeB_step`, plus a generic induction,
+    `sound_of_step`.
+  - The generator tries a multi-prime certificate whenever single-prime descent fails. On the
+    current workload it finds none, as it must: the two remaining classes are locally soluble.
 
 No leaf here is "explicitly solved". A certificate that closes a nonempty class this way needs,
 for each surviving unit equation, a proved complete solution list. That is the same global
-problem, but now on 109 unit equations instead of 62 classes with large right sides. This is the
+problem, but now on 109 unit equations instead of 64 classes with large right sides. This is the
 research direction, and nothing in this section is promoted.
 
 ### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)

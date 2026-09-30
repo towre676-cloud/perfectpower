@@ -105,6 +105,19 @@ class Query:
     assuming: bool             # check-sat-assuming (its assumptions are not analyzed)
 
 
+class DeclContext:
+    """The declarations live at one point of a script, as a snapshot (list, length) per frame:
+    constant work per assertion; iterated only when a declaration context is needed."""
+    __slots__ = ('snap',)
+
+    def __init__(self, frames):
+        self.snap = [(f['decls'], len(f['decls'])) for f in frames]
+
+    def __iter__(self):
+        for lst, n in self.snap:
+            yield from lst[:n]
+
+
 def replay(cmds: list[str]):
     """(queries, assert_decl_context): the live assertion stack at every check-sat, and for each
     assert command the declaration commands live when it was asserted."""
@@ -117,7 +130,7 @@ def replay(cmds: list[str]):
             frames[-1]['decls'].append(i)
         elif h == 'assert':
             frames[-1]['asserts'].append(i)
-            context[i] = [d for f in frames for d in f['decls']]
+            context[i] = DeclContext(frames)
         elif h == 'push':
             k = int((re.findall(r'\d+', c) or ['1'])[0])
             frames += [{'asserts': [], 'decls': []} for _ in range(k)]
@@ -198,10 +211,61 @@ class AtomRecord:
     note: str = ''
 
 
-def classify_assert(cmds, idx, context, source_sha) -> list[AtomRecord]:
+def _sexpr(text: str):
+    """A small s-expression reader (strings and |quoted| symbols kept as atoms)."""
+    toks = re.findall(r'\|[^|]*\||"(?:[^"]|"")*"|[()]|[^\s()]+', text)
+    stack = [[]]
+    for t in toks:
+        if t == '(':
+            stack.append([])
+        elif t == ')':
+            e = stack.pop()
+            stack[-1].append(e)
+        else:
+            stack[-1].append(t)
+    return stack[0][0] if stack[0] else []
+
+
+def _numeral(e) -> bool:
+    if isinstance(e, str):
+        return bool(re.fullmatch(r'\d+(\.\d+)?', e))
+    return len(e) == 2 and e[0] == '-' and _numeral(e[1])
+
+
+def _lexical_features(e) -> set:
+    """Conservative nonlinearity scan of one conjunct (false positives only send the conjunct
+    to the precise z3 path)."""
+    out, todo = set(), [e]
+    while todo:
+        t = todo.pop()
+        if isinstance(t, list) and t:
+            h = t[0]
+            if h == '*' and sum(not _numeral(a) for a in t[1:]) >= 2:
+                out.add('product')
+            elif h in ('^', 'pow') and not _numeral(t[1]):
+                out.add('power')
+            elif h in ('div', 'mod', 'rem', '/') and len(t) == 3:
+                out.add(('div' if h in ('div', '/') else 'mod') + ('_const' if _numeral(t[2]) else '_var'))
+            todo.extend(t)
+    return out
+
+
+def defined_names(cmds) -> dict:
+    """command index -> name, for every `define-fun` (computed once per script)."""
+    out = {}
+    for i, c in enumerate(cmds):
+        m = re.match(r'\(\s*define-fun\s+([^\s()]+)', c)
+        if m:
+            out[i] = m.group(1)
+    return out
+
+
+def classify_assert(cmds, idx, context, source_sha, defnames=None) -> list[AtomRecord]:
     import z3
     text = cmds[idx]
-    defined = {m.group(1) for d in context for m in [re.match(r'\(\s*define-fun\s+([^\s()]+)', cmds[d])] if m}
+    if defnames is None:
+        defnames = defined_names(cmds)
+    defined = {defnames[d] for d in context if d in defnames} if defnames else set()
     toks = set(re.findall(r'[^\s()]+', text))
     if any(h in text for h in EXTENSION_HINTS):
         return [AtomRecord(idx, 0, 'extension', [], note='solver extension symbol')]
@@ -209,6 +273,13 @@ def classify_assert(cmds, idx, context, source_sha) -> list[AtomRecord]:
         return [AtomRecord(idx, 0, 'barrier', [], note='let or defined symbol: not normalized without a checked rule')]
     if not any(op in toks for op in ('*', '^', 'div', 'mod', 'rem', '/')) and '(*' not in text:
         return [AtomRecord(idx, 0, 'linear', [], note='no multiplicative operator')]
+    # lexical pre-pass: only conjuncts that may be nonlinear go to z3
+    body = _sexpr(text)[1]
+    conj = body[1:] if isinstance(body, list) and body and body[0] == 'and' else [body]
+    lex = [_lexical_features(c) for c in conj]
+    if not any(f & {'product', 'power', 'div_var', 'mod_var'} for f in lex):
+        return [AtomRecord(idx, j, 'div_mod_const' if f & {'div_const', 'mod_const'} else 'linear',
+                           sorted(f), note='lexical') for j, f in enumerate(lex)]
     try:
         parsed = z3.parse_smt2_string('\n'.join(cmds[d] for d in context) + '\n' + text)
     except z3.Z3Exception as ex:
@@ -394,10 +465,10 @@ def ledger_for_file(path: Path, rel: str) -> dict:
         queries, context = replay(cmds)
     except ValueError as ex:
         return {'file': rel, 'sha256': sha, 'error': f'script: {ex}'}
-    records = {}
+    records, defnames = {}, defined_names(cmds)
     for i, c in enumerate(cmds):
         if head(c) == 'assert':
-            records[i] = classify_assert(cmds, i, context[i], sha)
+            records[i] = classify_assert(cmds, i, context[i], sha, defnames)
     analysis_s = time.perf_counter() - t0
     qrows = []
     for q in queries:

@@ -14,6 +14,26 @@ python3 -m perfectpower.smt_adapter TASK.smt2 --out REDUCED.smt2 --report REPORT
 
 It needs `z3-solver` for parsing and printing, and nothing else in the repository depends on it.
 
+**Fail-closed by default.** A replacement is applied only when its complete theorem's statement
+is re-parsed from the Lean source. Every replacement records its evidence level:
+
+| evidence | applied by default | meaning |
+|---|---|---|
+| `lean_statement_parsed` | yes | the curve's complete list is a Lean theorem over all integers, and its statement was re-parsed |
+| `theorem_cited` | only with `--allow-unchecked` | a Lean theorem is named but its statement is not re-parsed (`y² = x³ − 4`, the FLT3 family) |
+| `python_enumeration_unchecked` | only with `--allow-unchecked` | a bounded Pell/radical enumeration executed in Python |
+
+**Script level** (`perfectpower/smt_cert.py`). Real tasks are incremental scripts, so the
+script-level path works as follows:
+- it replays `push`/`pop`, classifies every assertion in its live declaration context, and ledgers
+  each `check-sat`;
+- it issues **source-bound certificates** (script hash, command index, assertion hash, atom,
+  normalized polynomial, parsed theorem, witnesses);
+- `check_certificate` re-derives every field from the source;
+- `python/tests/test_smt_cert.py` tests the boundary: tampering, binding, sign loss, domains,
+  Boolean context, `let`, `define-fun`, extensions, the singular `k = 0` curve, and the
+  incremental stack.
+
 ## What is replaced, and why it is sound
 
 Each replacement is an **equivalence over ℤ** of one conjunct. For a verification condition
@@ -49,7 +69,7 @@ Both are constructed. Times are z3 5.1.0 wall clock on this container.
 | task | hypotheses | goal | z3 alone | adapter + z3 |
 |---|---|---|---|---|
 | `vc_minus56.smt2` | `n ≥ 1`, `m² = n³ − 56`, `len = 2n + m` | `len ≤ 200` | `unknown` at 10 s | proved (`unsat` of the negation) in 0.002 s |
-| `vc_pairs_square.smt2` | `2 ≤ N ≤ 10⁹`, `N(N−1) = 2S²` | `N mod 4 ∈ {1, 2}` | `unknown` at 30 s | proved in 0.003 s (24 solutions `(N, S)`) |
+| `vc_pairs_square.smt2` | `2 ≤ N ≤ 10⁹`, `N(N−1) = 2S²` | `N mod 4 ∈ {1, 2}` | `unknown` at 30 s | proved in 0.003 s (24 solutions `(N, S)`), **with `--allow-unchecked`**: the enumeration is Python |
 
 ## Benchmark (`python/host_adapter_bench.py`, `receipts/host_adapter_bench.json`)
 
@@ -72,18 +92,20 @@ times include recognition and replacement.
 - The 36 recognized tasks go from 3 solved to 36 solved. This is the expected outcome on instances
   **built** to contain a solved conjunct, so it says nothing about how often such conjuncts occur.
 
-## What would make this evidence
+## An independent corpus: zero coverage (`independent_nia/reports/PERFECTPOWER_COVERAGE.md`)
 
-These instances are constructed to contain a recognizable conjunct, so they show the mechanism,
-not its frequency. The test that matters is independently sourced tasks, such as saved
-GNATprove/Why3 SMT-LIB tasks or the SMT-LIB `QF_NIA` library. On those, three things need
-measuring:
-- how often a supported structure occurs;
-- the total time with recognition included, on unsupported tasks as well;
-- how often an unproved task becomes proved.
+The corpus is 69 upstream SMT-LIB QF_NIA files, byte-exact with provenance: 19 industrial ELSTER
+files with 12,801 incremental queries, 49 cvc5 regressions, and one crafted STAUB problem.
+- The script-level adapter finds **zero checked replacements** and, in the industrial cohort,
+  zero candidates.
+- ELSTER's hard queries (2 s cap under z3) lie in linear arithmetic with `div`/`mod` by
+  constants: 116 of 8,124 such queries hit the cap, against 7 of 3,615 queries with a guarded
+  bilinear product.
+- The flagged cvc5 cases are correctly rejected: the singular `x² = y³`, `x² = y`, and
+  `int.pow2`.
+- Routing overhead is 0.7 ms per query, 1.5 % of z3's time.
 
-The `QF_NIA` library is hosted on zenodo.org, which this environment's network policy blocks, so
-that run has not been done here.
-
-Run the benchmark with `make adapter-bench`. It needs `z3-solver` on `PYTHONPATH`, and it is not
-part of `make verify`.
+The constructed benchmark above therefore shows the mechanism, and the independent corpus shows
+the fragment does not occur there. The report names the smallest workloads that would test it:
+- SMT-LIB `QF_NIA/MathProblems`;
+- saved GNATprove/Why3 tasks from SPARK code with nonlinear specifications.
