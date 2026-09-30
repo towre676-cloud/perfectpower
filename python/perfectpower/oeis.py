@@ -273,14 +273,21 @@ _COMPLETE_WORDS = ('all ', 'complete', 'only', 'integral points', 'integer solut
 
 
 def unresolved_mordell(kmin: int = -100, kmax: int = 100, scan: int = 10 ** 4) -> list[dict]:
-    """k with y^2 = x^3 + k NOT_ENUMERATED by the compiler, and the points a scan finds."""
+    """The fixed baseline: k with y^2 = x^3 + k unresolved *before* the branch compiler, and the
+    points a scan finds.  A curve counts when the compiler leaves it NOT_ENUMERATED, or solves it
+    only through a generated branch-compiler list (`Generated/MordellBranch.lean`,
+    `Generated/MordellThue.lean`).  Those lists are measured against this baseline
+    (`MORDELL_BRANCH.md`), so registering them in the compiler must not shrink it."""
     from .compiler import NOT_ENUMERATED, PowerConstraint, compile_constraint
     out = []
     for k in range(kmin, kmax + 1):
         if k == 0:
             continue
         plan = compile_constraint(PowerConstraint((k, 0, 0, 1), 2))
-        if plan.status != NOT_ENUMERATED:
+        via_branch = any(j.startswith(('PerfectPower.Generated.MordellBranch.',
+                                       'PerfectPower.Generated.MordellThue.'))
+                         for j in plan.justification)
+        if plan.status != NOT_ENUMERATED and not via_branch:
             continue
         pts = sorted({x for x in range(-int(abs(k) ** (1 / 3)) - 1, scan)
                       if x ** 3 + k >= 0 and isqrt(x ** 3 + k) ** 2 == x ** 3 + k})
