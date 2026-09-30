@@ -37,6 +37,27 @@ class PellCount(unittest.TestCase):
         populated = [name for name, f, d in CASES if classify(f, d).details.get('kappa', 0) > 0]
         self.assertGreaterEqual(len(populated), 3, populated)
 
+    def test_explicit_constant(self):
+        # `PellExact.Kpell`: one branch A n^2 + B n + C with a unit (u, v) of X^2 - 4A Y^2 = 1
+        def kpell(A, B, C, u, v):
+            delta = abs(B * B - 4 * A * C)
+            z = delta * (1 + u * u)
+            w = (2 * z + 2) * (1 + math.sqrt(4 * A))
+            log_eps = math.log(u + v * math.sqrt(4 * A))
+            kc = 3 + (2 * math.log(w + delta) + math.log(2 + math.sqrt(delta)) + math.log(2)) / log_eps
+            return (abs(B) + 1 + (2 * z + 3) ** 2 * (2 * A) ** 2 * kc
+                    + (2 * z + 3) ** 2 / log_eps * math.log(2 * A + abs(B)))
+        # 2n^2 + 1 is the branch (A, B, C) = (2, 0, 1), unit (3, 1) of X^2 - 8Y^2 = 1
+        f = [1, 0, 2]
+        kappa = classify(f, 2).details['kappa']
+        bound = kpell(2, 0, 1, 3, 1)
+        count = 0
+        for n in range(1, 100001):
+            if is_power(value(f, n), 2):
+                count += 1
+            self.assertLessEqual(abs(count - kappa * math.log(n)), bound)
+        self.assertTrue(math.isfinite(bound) and bound > 0)
+
 
 if __name__ == '__main__':
     unittest.main()

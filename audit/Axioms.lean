@@ -295,3 +295,12 @@ open PerfectPower
 #print axioms PerfectPower.RationalYun.int_coeff_count_explicit
 #print axioms PerfectPower.RationalYun.int_count_explicit
 #print axioms PerfectPower.RationalYun.Decomposition.radical_count_explicit
+-- Explicit error constant, Pell type
+#print axioms PerfectPower.PellExact.count_near_geometric_of_lower
+#print axioms PerfectPower.PellExact.orbit_lower
+#print axioms PerfectPower.PellExact.class_count_explicit
+#print axioms PerfectPower.PellExact.orbit_count_explicit
+#print axioms PerfectPower.PellExact.pell_count_core
+#print axioms PerfectPower.PellExact.pell_branch_explicit
+#print axioms PerfectPower.RationalYun.branch_count_explicit
+#print axioms PerfectPower.RationalYun.Decomposition.pell_count_explicit
