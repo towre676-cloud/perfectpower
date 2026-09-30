@@ -127,15 +127,56 @@ def withheld_report(recs):
     return rows
 
 
+def _enc_text(t):
+    k, e = t['kind'], t['encoding']
+    if k == 'LinRec':
+        init = ', '.join(f'a({n}) = {v}' for n, v in e['init'].items())
+        src = ' (initial values read from the listed terms)' if e['init_from_terms'] else ''
+        rec = ' + '.join(f'{c}*a(n-{i + 1})' for i, c in enumerate(e['coeffs']))
+        return f"LinRec: a(n) = {rec} + {e['const']} for n >= {e['start']}; {init}{src}"
+    if k == 'GF':
+        return f"GF: P = {e['P']}, Q = {e['Q']} (coefficients in x, lowest terms, Q(0) = 1)"
+    if k == 'Coord':
+        return (f"Coord: {e['scale']} * {e['which']}_{e['family']}({e['alpha']} m + {e['beta']})"
+                + (f" ^ {e['power']}" if e['power'] != 1 else ''))
+    if k == 'SetSquare':
+        note = f"; {e['domain_note']}" if e.get('domain_note') else ''
+        return f"SetSquare: {{k >= {e['lo']} : {e['D']} k^2 + ({e['c']}) is a square}}, increasing{note}"
+    return k
+
+
+def write_review(recs, blocks_by_id):
+    """The translation, exposed for review: source text, encoding, generated Lean definition."""
+    lines = ['# Translations of OEIS names into the definition language (generated; for review)', '',
+             'Written by `python/make_oeis_auto.py`. For each accepted entry: the `%N` text verbatim, '
+             'the encoding the parser read from it (`docs/DEFINITION_LANGUAGE.md` gives the grammar and '
+             'semantics), and the Lean definition emitted from the encoding. Lean proves statements '
+             'about the Lean definition; whether the encoding is what the English means is for the '
+             'reader to check here. Every encoding reproduces every listed term at the entry offset.', '']
+    for r in recs:
+        if r['status'] != 'PROVED':
+            continue
+        t = r['translation']
+        block = blocks_by_id[r['oeis']]
+        defn = [ln for ln in block.splitlines() if ln.startswith('def ') or ln.startswith('  | ')]
+        lines += [f"## {r['oeis']} (offset {r['offset']}, {r['terms']} terms checked)", '',
+                  f"- **Source (%N):** {t['source']}",
+                  f"- **Encoding:** {_enc_text(t)}",
+                  f"- **Relation proved:** {r.get('relation')}" + (f", family `{r['family']}`" if r.get('family') else ''),
+                  '- **Lean definition:**', '', '```lean', *defn, '```', '']
+    (ROOT / 'receipts' / 'oeis_translation_review.md').write_text('\n'.join(lines) + '\n')
+
+
 def build():
     acc = json.loads(ACCEPTED.read_text())['accepted']
     recs = compile_all()
-    blocks, drift = [], []
+    blocks, drift, blocks_by_id = [], [], {}
     for r in recs:
         if not r['lean']:
             continue
         if acc.get(r['oeis']) == r['sha256']:
             blocks.append(r['lean'])
+            blocks_by_id[r['oeis']] = r['lean']
             r['status'] = 'PROVED'
         else:
             drift.append(r['oeis'])
@@ -152,8 +193,14 @@ def build():
                'promotion_rule': 'the encoding, read from the entry name, reproduces every listed term '
                                  'at the entry offset; the generated Lean definition is that encoding; '
                                  'the generated theorem compiles',
+               'claim': 'Lean proves the emitted mathematical definitions equal to orbit coordinates '
+                        '(or enumerated by seed orbits). That the encoding is the meaning of the English '
+                        'name is an inspected translation (docs/DEFINITION_LANGUAGE.md, '
+                        'receipts/oeis_translation_review.md), guarded by the full term check; it is not '
+                        'a Lean theorem.',
                'tally': tally, 'withheld_sqrt3': withheld_report(recs), 'entries': recs}
     (ROOT / 'receipts' / 'oeis_auto.json').write_text(json.dumps(receipt, indent=1) + '\n')
+    write_review(recs, blocks_by_id)
     print(f'{len(recs)} candidate entries {tally} -> {OUT.relative_to(ROOT)}')
     if drift or missing:
         raise SystemExit(f'generated blocks changed or disappeared: {drift + missing}; re-run --accept')

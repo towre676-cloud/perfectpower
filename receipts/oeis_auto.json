@@ -25,6 +25,7 @@
  "lean_file": "PerfectPower/Generated/OEISAuto.lean",
  "namespace": "PerfectPower.OEISAuto",
  "promotion_rule": "the encoding, read from the entry name, reproduces every listed term at the entry offset; the generated Lean definition is that encoding; the generated theorem compiles",
+ "claim": "Lean proves the emitted mathematical definitions equal to orbit coordinates (or enumerated by seed orbits). That the encoding is the meaning of the English name is an inspected translation (docs/DEFINITION_LANGUAGE.md, receipts/oeis_translation_review.md), guarded by the full term check; it is not a Lean theorem.",
  "tally": {
   "PROVED": 69,
   "NOT_TRANSLATED": 71

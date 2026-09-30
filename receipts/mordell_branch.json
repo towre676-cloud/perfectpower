@@ -1,0 +1,3105 @@
+{
+ "curves": 59,
+ "complete": 26,
+ "open": 33,
+ "complete_D": [
+  1,
+  8,
+  11,
+  16,
+  19,
+  20,
+  24,
+  27,
+  31,
+  35,
+  40,
+  44,
+  50,
+  51,
+  54,
+  59,
+  64,
+  67,
+  68,
+  75,
+  76,
+  81,
+  83,
+  84,
+  88,
+  96
+ ],
+ "complete_agree_with_sage": 26,
+ "complete_agree_with_published": 26,
+ "complete_by_sage_rank": {
+  "0": 10,
+  "1": 12,
+  "2": 4
+ },
+ "rule": "COMPLETE only when every table entry is a field cube or locally impossible, and the Lean theorem compiles; an entry that is neither is an irreducible Thue equation and the curve stays OPEN_BRANCH",
+ "curves_detail": [
+  {
+   "D": 1,
+   "k": -1,
+   "K": 2,
+   "r": 1,
+   "t": 1,
+   "Q": 2,
+   "candidate_ys": [
+    0
+   ],
+   "points": [
+    [
+     1,
+     0
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus1",
+   "sage_rank": 0,
+   "sage_census_x": [
+    1
+   ],
+   "published_signed_count": 1,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 7,
+   "k": -7,
+   "K": 5,
+   "r": 2,
+   "t": 1,
+   "Q": 4,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 2,
+     "p": 1,
+     "q": -1
+    },
+    {
+     "k": 2,
+     "p": -1,
+     "q": -1
+    },
+    {
+     "k": 2,
+     "p": 1,
+     "q": 1
+    },
+    {
+     "k": 2,
+     "p": -1,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": 1,
+     "q": -3
+    },
+    {
+     "k": 4,
+     "p": -1,
+     "q": -3
+    },
+    {
+     "k": 4,
+     "p": 6,
+     "q": -2
+    },
+    {
+     "k": 4,
+     "p": -6,
+     "q": -2
+    },
+    {
+     "k": 4,
+     "p": 6,
+     "q": 2
+    },
+    {
+     "k": 4,
+     "p": -6,
+     "q": 2
+    },
+    {
+     "k": 4,
+     "p": 1,
+     "q": 3
+    },
+    {
+     "k": 4,
+     "p": -1,
+     "q": 3
+    }
+   ],
+   "entries": 4,
+   "cube_entries": 4,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    2,
+    32
+   ],
+   "published_signed_count": 4
+  },
+  {
+   "D": 8,
+   "k": -8,
+   "K": 5,
+   "r": 3,
+   "t": 1,
+   "Q": 3,
+   "candidate_ys": [
+    0
+   ],
+   "points": [
+    [
+     2,
+     0
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus8",
+   "sage_rank": 0,
+   "sage_census_x": [
+    2
+   ],
+   "published_signed_count": 1,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 11,
+   "k": -11,
+   "K": 6,
+   "r": 3,
+   "t": 1,
+   "Q": 4,
+   "candidate_ys": [
+    -58,
+    -4,
+    4,
+    58
+   ],
+   "points": [
+    [
+     3,
+     -4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     15,
+     -58
+    ],
+    [
+     15,
+     58
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 12,
+   "cube_entries": 12,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus11",
+   "sage_rank": 2,
+   "sage_census_x": [
+    3,
+    15
+   ],
+   "published_signed_count": 4,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 15,
+   "k": -15,
+   "K": 7,
+   "r": 4,
+   "t": 1,
+   "Q": 4,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 4,
+     "p": 2,
+     "q": -2
+    },
+    {
+     "k": 4,
+     "p": -2,
+     "q": -2
+    },
+    {
+     "k": 4,
+     "p": 7,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": -7,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": 7,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": -7,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": 2,
+     "q": 2
+    },
+    {
+     "k": 4,
+     "p": -2,
+     "q": 2
+    },
+    {
+     "k": 6,
+     "p": 9,
+     "q": -3
+    },
+    {
+     "k": 6,
+     "p": -9,
+     "q": -3
+    },
+    {
+     "k": 6,
+     "p": 9,
+     "q": 3
+    },
+    {
+     "k": 6,
+     "p": -9,
+     "q": 3
+    }
+   ],
+   "entries": 4,
+   "cube_entries": 4,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    4
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 16,
+   "k": -16,
+   "K": 8,
+   "r": 3,
+   "t": 1,
+   "Q": 5,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 10,
+   "cube_entries": 10,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus16",
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 18,
+   "k": -18,
+   "K": 8,
+   "r": 4,
+   "t": 1,
+   "Q": 5,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 3,
+     "p": 3,
+     "q": -1
+    },
+    {
+     "k": 3,
+     "p": -3,
+     "q": -1
+    },
+    {
+     "k": 3,
+     "p": 3,
+     "q": 1
+    },
+    {
+     "k": 3,
+     "p": -3,
+     "q": 1
+    },
+    {
+     "k": 6,
+     "p": 12,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": -12,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": 12,
+     "q": 2
+    },
+    {
+     "k": 6,
+     "p": -12,
+     "q": 2
+    }
+   ],
+   "entries": 4,
+   "cube_entries": 4,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    3
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 19,
+   "k": -19,
+   "K": 8,
+   "r": 4,
+   "t": 1,
+   "Q": 5,
+   "candidate_ys": [
+    -18,
+    18
+   ],
+   "points": [
+    [
+     7,
+     -18
+    ],
+    [
+     7,
+     18
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 12,
+   "cube_entries": 12,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus19",
+   "sage_rank": 1,
+   "sage_census_x": [
+    7
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 20,
+   "k": -20,
+   "K": 8,
+   "r": 9,
+   "t": 2,
+   "Q": 5,
+   "candidate_ys": [
+    -14,
+    14
+   ],
+   "points": [
+    [
+     6,
+     -14
+    ],
+    [
+     6,
+     14
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 12,
+   "cube_entries": 8,
+   "mod_entries": 4,
+   "lean": "PerfectPower.Generated.MordellBranch.minus20",
+   "sage_rank": 1,
+   "sage_census_x": [
+    6
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 23,
+   "k": -23,
+   "K": 9,
+   "r": 4,
+   "t": 1,
+   "Q": 5,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 3,
+     "p": 2,
+     "q": -1
+    },
+    {
+     "k": 3,
+     "p": -2,
+     "q": -1
+    },
+    {
+     "k": 3,
+     "p": 2,
+     "q": 1
+    },
+    {
+     "k": 3,
+     "p": -2,
+     "q": 1
+    },
+    {
+     "k": 8,
+     "p": 12,
+     "q": -4
+    },
+    {
+     "k": 8,
+     "p": -12,
+     "q": -4
+    },
+    {
+     "k": 8,
+     "p": 12,
+     "q": 4
+    },
+    {
+     "k": 8,
+     "p": -12,
+     "q": 4
+    },
+    {
+     "k": 9,
+     "p": 19,
+     "q": -4
+    },
+    {
+     "k": 9,
+     "p": -19,
+     "q": -4
+    },
+    {
+     "k": 9,
+     "p": 19,
+     "q": 4
+    },
+    {
+     "k": 9,
+     "p": -19,
+     "q": 4
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 6,
+   "mod_entries": 4,
+   "sage_rank": 1,
+   "sage_census_x": [
+    3
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 24,
+   "k": -24,
+   "K": 9,
+   "r": 5,
+   "t": 1,
+   "Q": 5,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus24",
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 25,
+   "k": -25,
+   "K": 10,
+   "r": 4,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 5,
+     "p": 5,
+     "q": -2
+    },
+    {
+     "k": 5,
+     "p": -5,
+     "q": -2
+    },
+    {
+     "k": 5,
+     "p": 10,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": -10,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": 10,
+     "q": 1
+    },
+    {
+     "k": 5,
+     "p": -10,
+     "q": 1
+    },
+    {
+     "k": 5,
+     "p": 5,
+     "q": 2
+    },
+    {
+     "k": 5,
+     "p": -5,
+     "q": 2
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": -6
+    },
+    {
+     "k": 10,
+     "p": -10,
+     "q": -6
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": -2
+    },
+    {
+     "k": 10,
+     "p": -30,
+     "q": -2
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": 2
+    },
+    {
+     "k": 10,
+     "p": -30,
+     "q": 2
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": 6
+    },
+    {
+     "k": 10,
+     "p": -10,
+     "q": 6
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    5
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 26,
+   "k": -26,
+   "K": 10,
+   "r": 4,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [
+    -207,
+    207
+   ],
+   "points": [
+    [
+     35,
+     -207
+    ],
+    [
+     35,
+     207
+    ]
+   ],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 3,
+     "p": 1,
+     "q": -1
+    },
+    {
+     "k": 3,
+     "p": -1,
+     "q": -1
+    },
+    {
+     "k": 3,
+     "p": 1,
+     "q": 1
+    },
+    {
+     "k": 3,
+     "p": -1,
+     "q": 1
+    },
+    {
+     "k": 9,
+     "p": 25,
+     "q": -2
+    },
+    {
+     "k": 9,
+     "p": -25,
+     "q": -2
+    },
+    {
+     "k": 9,
+     "p": 25,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": -25,
+     "q": 2
+    },
+    {
+     "k": 10,
+     "p": 8,
+     "q": -6
+    },
+    {
+     "k": 10,
+     "p": -8,
+     "q": -6
+    },
+    {
+     "k": 10,
+     "p": 8,
+     "q": 6
+    },
+    {
+     "k": 10,
+     "p": -8,
+     "q": 6
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 2,
+   "sage_census_x": [
+    3,
+    35
+   ],
+   "published_signed_count": 4
+  },
+  {
+   "D": 27,
+   "k": -27,
+   "K": 10,
+   "r": 4,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [
+    0
+   ],
+   "points": [
+    [
+     3,
+     0
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 12,
+   "cube_entries": 12,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus27",
+   "sage_rank": 0,
+   "sage_census_x": [
+    3
+   ],
+   "published_signed_count": 1,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 28,
+   "k": -28,
+   "K": 10,
+   "r": 5,
+   "t": 1,
+   "Q": 5,
+   "candidate_ys": [
+    -225,
+    225
+   ],
+   "points": [
+    [
+     37,
+     -225
+    ],
+    [
+     37,
+     225
+    ]
+   ],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 4,
+     "p": 6,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": -6,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": 6,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": -6,
+     "q": 1
+    },
+    {
+     "k": 8,
+     "p": 8,
+     "q": -4
+    },
+    {
+     "k": 8,
+     "p": -8,
+     "q": -4
+    },
+    {
+     "k": 8,
+     "p": 22,
+     "q": -1
+    },
+    {
+     "k": 8,
+     "p": -22,
+     "q": -1
+    },
+    {
+     "k": 8,
+     "p": 22,
+     "q": 1
+    },
+    {
+     "k": 8,
+     "p": -22,
+     "q": 1
+    },
+    {
+     "k": 8,
+     "p": 8,
+     "q": 4
+    },
+    {
+     "k": 8,
+     "p": -8,
+     "q": 4
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 10,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    4,
+    8,
+    37
+   ],
+   "published_signed_count": 6
+  },
+  {
+   "D": 29,
+   "k": -29,
+   "K": 10,
+   "r": 5,
+   "t": 1,
+   "Q": 5,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 6,
+     "p": 10,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": -10,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": 10,
+     "q": 2
+    },
+    {
+     "k": 6,
+     "p": -10,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": 2,
+     "q": -5
+    },
+    {
+     "k": 9,
+     "p": -2,
+     "q": -5
+    },
+    {
+     "k": 9,
+     "p": 2,
+     "q": 5
+    },
+    {
+     "k": 9,
+     "p": -2,
+     "q": 5
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 6,
+   "mod_entries": 4,
+   "sage_rank": 1,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 31,
+   "k": -31,
+   "K": 11,
+   "r": 4,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 22,
+   "cube_entries": 6,
+   "mod_entries": 16,
+   "lean": "PerfectPower.Generated.MordellBranch.minus31",
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 32,
+   "k": -32,
+   "K": 11,
+   "r": 5,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 9,
+     "p": 21,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": -21,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": 21,
+     "q": 3
+    },
+    {
+     "k": 9,
+     "p": -21,
+     "q": 3
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 35,
+   "k": -35,
+   "K": 11,
+   "r": 6,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [
+    -36,
+    36
+   ],
+   "points": [
+    [
+     11,
+     -36
+    ],
+    [
+     11,
+     36
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 14,
+   "cube_entries": 14,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus35",
+   "sage_rank": 1,
+   "sage_census_x": [
+    11
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 36,
+   "k": -36,
+   "K": 12,
+   "r": 5,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 10,
+     "p": 10,
+     "q": -5
+    },
+    {
+     "k": 10,
+     "p": -10,
+     "q": -5
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": 5
+    },
+    {
+     "k": 10,
+     "p": -10,
+     "q": 5
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 10,
+   "mod_entries": 0,
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 38,
+   "k": -38,
+   "K": 12,
+   "r": 5,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 6,
+     "p": 8,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": -8,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": 8,
+     "q": 2
+    },
+    {
+     "k": 6,
+     "p": -8,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": 11,
+     "q": -4
+    },
+    {
+     "k": 9,
+     "p": -11,
+     "q": -4
+    },
+    {
+     "k": 9,
+     "p": 11,
+     "q": 4
+    },
+    {
+     "k": 9,
+     "p": -11,
+     "q": 4
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 6,
+   "mod_entries": 4,
+   "sage_rank": 1,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 39,
+   "k": -39,
+   "K": 12,
+   "r": 5,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 4,
+     "p": 5,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": -5,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": 5,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": -5,
+     "q": 1
+    },
+    {
+     "k": 10,
+     "p": 31,
+     "q": -1
+    },
+    {
+     "k": 10,
+     "p": -31,
+     "q": -1
+    },
+    {
+     "k": 10,
+     "p": 31,
+     "q": 1
+    },
+    {
+     "k": 10,
+     "p": -31,
+     "q": 1
+    },
+    {
+     "k": 12,
+     "p": 18,
+     "q": -6
+    },
+    {
+     "k": 12,
+     "p": -18,
+     "q": -6
+    },
+    {
+     "k": 12,
+     "p": 18,
+     "q": 6
+    },
+    {
+     "k": 12,
+     "p": -18,
+     "q": 6
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 6,
+   "mod_entries": 4,
+   "sage_rank": 2,
+   "sage_census_x": [
+    4,
+    10,
+    22
+   ],
+   "published_signed_count": 6
+  },
+  {
+   "D": 40,
+   "k": -40,
+   "K": 12,
+   "r": 6,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [
+    -52,
+    52
+   ],
+   "points": [
+    [
+     14,
+     -52
+    ],
+    [
+     14,
+     52
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus40",
+   "sage_rank": 1,
+   "sage_census_x": [
+    14
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 44,
+   "k": -44,
+   "K": 13,
+   "r": 5,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [
+    -9,
+    9
+   ],
+   "points": [
+    [
+     5,
+     -9
+    ],
+    [
+     5,
+     9
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 22,
+   "cube_entries": 18,
+   "mod_entries": 4,
+   "lean": "PerfectPower.Generated.MordellBranch.minus44",
+   "sage_rank": 1,
+   "sage_census_x": [
+    5
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 45,
+   "k": -45,
+   "K": 13,
+   "r": 6,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 6,
+     "p": 6,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": -6,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": 6,
+     "q": 2
+    },
+    {
+     "k": 6,
+     "p": -6,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": 3,
+     "q": -4
+    },
+    {
+     "k": 9,
+     "p": -3,
+     "q": -4
+    },
+    {
+     "k": 9,
+     "p": 18,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": -18,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": 18,
+     "q": 3
+    },
+    {
+     "k": 9,
+     "p": -18,
+     "q": 3
+    },
+    {
+     "k": 9,
+     "p": 3,
+     "q": 4
+    },
+    {
+     "k": 9,
+     "p": -3,
+     "q": 4
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    21
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 47,
+   "k": -47,
+   "K": 13,
+   "r": 6,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [
+    -500,
+    500
+   ],
+   "points": [
+    [
+     63,
+     -500
+    ],
+    [
+     63,
+     500
+    ]
+   ],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 6,
+     "p": 13,
+     "q": -1
+    },
+    {
+     "k": 6,
+     "p": -13,
+     "q": -1
+    },
+    {
+     "k": 6,
+     "p": 13,
+     "q": 1
+    },
+    {
+     "k": 6,
+     "p": -13,
+     "q": 1
+    },
+    {
+     "k": 8,
+     "p": 18,
+     "q": -2
+    },
+    {
+     "k": 8,
+     "p": -18,
+     "q": -2
+    },
+    {
+     "k": 8,
+     "p": 18,
+     "q": 2
+    },
+    {
+     "k": 8,
+     "p": -18,
+     "q": 2
+    },
+    {
+     "k": 12,
+     "p": 41,
+     "q": -1
+    },
+    {
+     "k": 12,
+     "p": -41,
+     "q": -1
+    },
+    {
+     "k": 12,
+     "p": 41,
+     "q": 1
+    },
+    {
+     "k": 12,
+     "p": -41,
+     "q": 1
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 6,
+   "mod_entries": 4,
+   "sage_rank": 2,
+   "sage_census_x": [
+    6,
+    12,
+    63
+   ],
+   "published_signed_count": 6
+  },
+  {
+   "D": 48,
+   "k": -48,
+   "K": 13,
+   "r": 7,
+   "t": 1,
+   "Q": 6,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 4,
+     "p": 4,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": -4,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": 4,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": -4,
+     "q": 1
+    },
+    {
+     "k": 12,
+     "p": 36,
+     "q": -3
+    },
+    {
+     "k": 12,
+     "p": -36,
+     "q": -3
+    },
+    {
+     "k": 12,
+     "p": 36,
+     "q": 3
+    },
+    {
+     "k": 12,
+     "p": -36,
+     "q": 3
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    4,
+    28
+   ],
+   "published_signed_count": 4
+  },
+  {
+   "D": 50,
+   "k": -50,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 18,
+   "cube_entries": 18,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus50",
+   "sage_rank": 1,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 51,
+   "k": -51,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 10,
+   "cube_entries": 10,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus51",
+   "sage_rank": 1,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 52,
+   "k": -52,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 14,
+     "p": 14,
+     "q": -7
+    },
+    {
+     "k": 14,
+     "p": -14,
+     "q": -7
+    },
+    {
+     "k": 14,
+     "p": 14,
+     "q": 7
+    },
+    {
+     "k": 14,
+     "p": -14,
+     "q": 7
+    }
+   ],
+   "entries": 10,
+   "cube_entries": 10,
+   "mod_entries": 0,
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 53,
+   "k": -53,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 6,
+     "p": 2,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": -2,
+     "q": -2
+    },
+    {
+     "k": 6,
+     "p": 2,
+     "q": 2
+    },
+    {
+     "k": 6,
+     "p": -2,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": 26,
+     "q": -1
+    },
+    {
+     "k": 9,
+     "p": -26,
+     "q": -1
+    },
+    {
+     "k": 9,
+     "p": 26,
+     "q": 1
+    },
+    {
+     "k": 9,
+     "p": -26,
+     "q": 1
+    },
+    {
+     "k": 13,
+     "p": 17,
+     "q": -6
+    },
+    {
+     "k": 13,
+     "p": -17,
+     "q": -6
+    },
+    {
+     "k": 13,
+     "p": 17,
+     "q": 6
+    },
+    {
+     "k": 13,
+     "p": -17,
+     "q": 6
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 2,
+   "sage_census_x": [
+    9,
+    29
+   ],
+   "published_signed_count": 4
+  },
+  {
+   "D": 54,
+   "k": -54,
+   "K": 14,
+   "r": 7,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [
+    -17,
+    17
+   ],
+   "points": [
+    [
+     7,
+     -17
+    ],
+    [
+     7,
+     17
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 16,
+   "cube_entries": 16,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus54",
+   "sage_rank": 1,
+   "sage_census_x": [
+    7
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 55,
+   "k": -55,
+   "K": 14,
+   "r": 7,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 4,
+     "p": 3,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": -3,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": 3,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": -3,
+     "q": 1
+    },
+    {
+     "k": 14,
+     "p": 7,
+     "q": -7
+    },
+    {
+     "k": 14,
+     "p": -7,
+     "q": -7
+    },
+    {
+     "k": 14,
+     "p": 37,
+     "q": -5
+    },
+    {
+     "k": 14,
+     "p": -37,
+     "q": -5
+    },
+    {
+     "k": 14,
+     "p": 37,
+     "q": 5
+    },
+    {
+     "k": 14,
+     "p": -37,
+     "q": 5
+    },
+    {
+     "k": 14,
+     "p": 7,
+     "q": 7
+    },
+    {
+     "k": 14,
+     "p": -7,
+     "q": 7
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    4,
+    56
+   ],
+   "published_signed_count": 4
+  },
+  {
+   "D": 56,
+   "k": -56,
+   "K": 14,
+   "r": 15,
+   "t": 2,
+   "Q": 7,
+   "candidate_ys": [
+    -76,
+    76
+   ],
+   "points": [
+    [
+     18,
+     -76
+    ],
+    [
+     18,
+     76
+    ]
+   ],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 9,
+     "p": 15,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": -15,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": 15,
+     "q": 3
+    },
+    {
+     "k": 9,
+     "p": -15,
+     "q": 3
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    18
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 59,
+   "k": -59,
+   "K": 15,
+   "r": 6,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 14,
+   "cube_entries": 10,
+   "mod_entries": 4,
+   "lean": "PerfectPower.Generated.MordellBranch.minus59",
+   "sage_rank": 1,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 60,
+   "k": -60,
+   "K": 15,
+   "r": 7,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 4,
+     "p": 2,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": -2,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": 2,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": -2,
+     "q": 1
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    4,
+    136
+   ],
+   "published_signed_count": 4
+  },
+  {
+   "D": 61,
+   "k": -61,
+   "K": 15,
+   "r": 7,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 5,
+     "p": 8,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": -8,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": 8,
+     "q": 1
+    },
+    {
+     "k": 5,
+     "p": -8,
+     "q": 1
+    },
+    {
+     "k": 13,
+     "p": 1,
+     "q": -6
+    },
+    {
+     "k": 13,
+     "p": -1,
+     "q": -6
+    },
+    {
+     "k": 13,
+     "p": 1,
+     "q": 6
+    },
+    {
+     "k": 13,
+     "p": -1,
+     "q": 6
+    },
+    {
+     "k": 14,
+     "p": 50,
+     "q": -2
+    },
+    {
+     "k": 14,
+     "p": -50,
+     "q": -2
+    },
+    {
+     "k": 14,
+     "p": 50,
+     "q": 2
+    },
+    {
+     "k": 14,
+     "p": -50,
+     "q": 2
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 2,
+   "sage_census_x": [
+    5
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 63,
+   "k": -63,
+   "K": 15,
+   "r": 8,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 4,
+     "p": 1,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": -1,
+     "q": -1
+    },
+    {
+     "k": 4,
+     "p": 1,
+     "q": 1
+    },
+    {
+     "k": 4,
+     "p": -1,
+     "q": 1
+    }
+   ],
+   "entries": 6,
+   "cube_entries": 6,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    4,
+    568
+   ],
+   "published_signed_count": 4
+  },
+  {
+   "D": 64,
+   "k": -64,
+   "K": 16,
+   "r": 7,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [
+    0
+   ],
+   "points": [
+    [
+     4,
+     0
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 16,
+   "cube_entries": 16,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus64",
+   "sage_rank": 0,
+   "sage_census_x": [
+    4
+   ],
+   "published_signed_count": 1,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 67,
+   "k": -67,
+   "K": 16,
+   "r": 7,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [
+    -110,
+    110
+   ],
+   "points": [
+    [
+     23,
+     -110
+    ],
+    [
+     23,
+     110
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus67",
+   "sage_rank": 2,
+   "sage_census_x": [
+    23
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 68,
+   "k": -68,
+   "K": 16,
+   "r": 7,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus68",
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 71,
+   "k": -71,
+   "K": 16,
+   "r": 8,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 8,
+     "p": 21,
+     "q": -1
+    },
+    {
+     "k": 8,
+     "p": -21,
+     "q": -1
+    },
+    {
+     "k": 8,
+     "p": 21,
+     "q": 1
+    },
+    {
+     "k": 8,
+     "p": -21,
+     "q": 1
+    },
+    {
+     "k": 10,
+     "p": 19,
+     "q": -3
+    },
+    {
+     "k": 10,
+     "p": -19,
+     "q": -3
+    },
+    {
+     "k": 10,
+     "p": 19,
+     "q": 3
+    },
+    {
+     "k": 10,
+     "p": -19,
+     "q": 3
+    },
+    {
+     "k": 12,
+     "p": 38,
+     "q": -2
+    },
+    {
+     "k": 12,
+     "p": -38,
+     "q": -2
+    },
+    {
+     "k": 12,
+     "p": 38,
+     "q": 2
+    },
+    {
+     "k": 12,
+     "p": -38,
+     "q": 2
+    },
+    {
+     "k": 15,
+     "p": 40,
+     "q": -5
+    },
+    {
+     "k": 15,
+     "p": -40,
+     "q": -5
+    },
+    {
+     "k": 15,
+     "p": 40,
+     "q": 5
+    },
+    {
+     "k": 15,
+     "p": -40,
+     "q": 5
+    }
+   ],
+   "entries": 12,
+   "cube_entries": 8,
+   "mod_entries": 4,
+   "sage_rank": 1,
+   "sage_census_x": [
+    8
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 72,
+   "k": -72,
+   "K": 16,
+   "r": 17,
+   "t": 2,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 6,
+     "p": 12,
+     "q": -1
+    },
+    {
+     "k": 6,
+     "p": -12,
+     "q": -1
+    },
+    {
+     "k": 6,
+     "p": 12,
+     "q": 1
+    },
+    {
+     "k": 6,
+     "p": -12,
+     "q": 1
+    },
+    {
+     "k": 9,
+     "p": 9,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": -9,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": 21,
+     "q": -2
+    },
+    {
+     "k": 9,
+     "p": -21,
+     "q": -2
+    },
+    {
+     "k": 9,
+     "p": 21,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": -21,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": 9,
+     "q": 3
+    },
+    {
+     "k": 9,
+     "p": -9,
+     "q": 3
+    },
+    {
+     "k": 12,
+     "p": 24,
+     "q": -4
+    },
+    {
+     "k": 12,
+     "p": -24,
+     "q": -4
+    },
+    {
+     "k": 12,
+     "p": 24,
+     "q": 4
+    },
+    {
+     "k": 12,
+     "p": -24,
+     "q": 4
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    6
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 75,
+   "k": -75,
+   "K": 17,
+   "r": 7,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus75",
+   "sage_rank": 1,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 76,
+   "k": -76,
+   "K": 17,
+   "r": 7,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [
+    -1015,
+    -7,
+    7,
+    1015
+   ],
+   "points": [
+    [
+     5,
+     -7
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     101,
+     -1015
+    ],
+    [
+     101,
+     1015
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 16,
+   "cube_entries": 16,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus76",
+   "sage_rank": 2,
+   "sage_census_x": [
+    5,
+    101
+   ],
+   "published_signed_count": 4,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 77,
+   "k": -77,
+   "K": 17,
+   "r": 8,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 9,
+     "p": 6,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": -6,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": 6,
+     "q": 3
+    },
+    {
+     "k": 9,
+     "p": -6,
+     "q": 3
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 79,
+   "k": -79,
+   "K": 17,
+   "r": 8,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 8,
+     "p": 14,
+     "q": -2
+    },
+    {
+     "k": 8,
+     "p": -14,
+     "q": -2
+    },
+    {
+     "k": 8,
+     "p": 14,
+     "q": 2
+    },
+    {
+     "k": 8,
+     "p": -14,
+     "q": 2
+    },
+    {
+     "k": 10,
+     "p": 17,
+     "q": -3
+    },
+    {
+     "k": 10,
+     "p": -17,
+     "q": -3
+    },
+    {
+     "k": 10,
+     "p": 17,
+     "q": 3
+    },
+    {
+     "k": 10,
+     "p": -17,
+     "q": 3
+    },
+    {
+     "k": 16,
+     "p": 15,
+     "q": -7
+    },
+    {
+     "k": 16,
+     "p": -15,
+     "q": -7
+    },
+    {
+     "k": 16,
+     "p": 15,
+     "q": 7
+    },
+    {
+     "k": 16,
+     "p": -15,
+     "q": 7
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    20
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 80,
+   "k": -80,
+   "K": 17,
+   "r": 9,
+   "t": 1,
+   "Q": 7,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 9,
+     "p": 3,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": -3,
+     "q": -3
+    },
+    {
+     "k": 9,
+     "p": 3,
+     "q": 3
+    },
+    {
+     "k": 9,
+     "p": -3,
+     "q": 3
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 81,
+   "k": -81,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [
+    -46,
+    46
+   ],
+   "points": [
+    [
+     13,
+     -46
+    ],
+    [
+     13,
+     46
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 22,
+   "cube_entries": 22,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus81",
+   "sage_rank": 1,
+   "sage_census_x": [
+    13
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 83,
+   "k": -83,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [
+    -140,
+    140
+   ],
+   "points": [
+    [
+     27,
+     -140
+    ],
+    [
+     27,
+     140
+    ]
+   ],
+   "status": "COMPLETE",
+   "entries": 12,
+   "cube_entries": 8,
+   "mod_entries": 4,
+   "lean": "PerfectPower.Generated.MordellBranch.minus83",
+   "sage_rank": 2,
+   "sage_census_x": [
+    27
+   ],
+   "published_signed_count": 2,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 84,
+   "k": -84,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus84",
+   "sage_rank": 1,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 86,
+   "k": -86,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 15,
+     "p": 35,
+     "q": -5
+    },
+    {
+     "k": 15,
+     "p": -35,
+     "q": -5
+    },
+    {
+     "k": 15,
+     "p": 35,
+     "q": 5
+    },
+    {
+     "k": 15,
+     "p": -35,
+     "q": 5
+    }
+   ],
+   "entries": 12,
+   "cube_entries": 8,
+   "mod_entries": 4,
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 87,
+   "k": -87,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 7,
+     "p": 16,
+     "q": -1
+    },
+    {
+     "k": 7,
+     "p": -16,
+     "q": -1
+    },
+    {
+     "k": 7,
+     "p": 16,
+     "q": 1
+    },
+    {
+     "k": 7,
+     "p": -16,
+     "q": 1
+    },
+    {
+     "k": 13,
+     "p": 43,
+     "q": -2
+    },
+    {
+     "k": 13,
+     "p": -43,
+     "q": -2
+    },
+    {
+     "k": 13,
+     "p": 43,
+     "q": 2
+    },
+    {
+     "k": 13,
+     "p": -43,
+     "q": 2
+    },
+    {
+     "k": 16,
+     "p": 52,
+     "q": -4
+    },
+    {
+     "k": 16,
+     "p": -52,
+     "q": -4
+    },
+    {
+     "k": 16,
+     "p": 52,
+     "q": 4
+    },
+    {
+     "k": 16,
+     "p": -52,
+     "q": 4
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    7
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 88,
+   "k": -88,
+   "K": 18,
+   "r": 9,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus88",
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 89,
+   "k": -89,
+   "K": 18,
+   "r": 9,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 5,
+     "p": 6,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": -6,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": 6,
+     "q": 1
+    },
+    {
+     "k": 5,
+     "p": -6,
+     "q": 1
+    },
+    {
+     "k": 18,
+     "p": 74,
+     "q": -2
+    },
+    {
+     "k": 18,
+     "p": -74,
+     "q": -2
+    },
+    {
+     "k": 18,
+     "p": 74,
+     "q": 2
+    },
+    {
+     "k": 18,
+     "p": -74,
+     "q": 2
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 2,
+   "sage_census_x": [
+    5
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 92,
+   "k": -92,
+   "K": 19,
+   "r": 8,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 9,
+     "p": 19,
+     "q": -2
+    },
+    {
+     "k": 9,
+     "p": -19,
+     "q": -2
+    },
+    {
+     "k": 9,
+     "p": 19,
+     "q": 2
+    },
+    {
+     "k": 9,
+     "p": -19,
+     "q": 2
+    },
+    {
+     "k": 12,
+     "p": 16,
+     "q": -4
+    },
+    {
+     "k": 12,
+     "p": -16,
+     "q": -4
+    },
+    {
+     "k": 12,
+     "p": 16,
+     "q": 4
+    },
+    {
+     "k": 12,
+     "p": -16,
+     "q": 4
+    }
+   ],
+   "entries": 24,
+   "cube_entries": 8,
+   "mod_entries": 16,
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0
+  },
+  {
+   "D": 95,
+   "k": -95,
+   "K": 19,
+   "r": 8,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 6,
+     "p": 11,
+     "q": -1
+    },
+    {
+     "k": 6,
+     "p": -11,
+     "q": -1
+    },
+    {
+     "k": 6,
+     "p": 11,
+     "q": 1
+    },
+    {
+     "k": 6,
+     "p": -11,
+     "q": 1
+    },
+    {
+     "k": 16,
+     "p": 26,
+     "q": -6
+    },
+    {
+     "k": 16,
+     "p": -26,
+     "q": -6
+    },
+    {
+     "k": 16,
+     "p": 26,
+     "q": 6
+    },
+    {
+     "k": 16,
+     "p": -26,
+     "q": 6
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    6
+   ],
+   "published_signed_count": 2
+  },
+  {
+   "D": 96,
+   "k": -96,
+   "K": 19,
+   "r": 9,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [],
+   "points": [],
+   "status": "COMPLETE",
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "lean": "PerfectPower.Generated.MordellBranch.minus96",
+   "sage_rank": 0,
+   "sage_census_x": [],
+   "published_signed_count": 0,
+   "agrees_with_sage": true,
+   "agrees_with_published": true
+  },
+  {
+   "D": 100,
+   "k": -100,
+   "K": 20,
+   "r": 9,
+   "t": 1,
+   "Q": 8,
+   "candidate_ys": [
+    -198,
+    198
+   ],
+   "points": [
+    [
+     34,
+     -198
+    ],
+    [
+     34,
+     198
+    ]
+   ],
+   "status": "OPEN_BRANCH",
+   "open": [
+    {
+     "k": 5,
+     "p": 5,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": -5,
+     "q": -1
+    },
+    {
+     "k": 5,
+     "p": 5,
+     "q": 1
+    },
+    {
+     "k": 5,
+     "p": -5,
+     "q": 1
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": -3
+    },
+    {
+     "k": 10,
+     "p": -10,
+     "q": -3
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": -1
+    },
+    {
+     "k": 10,
+     "p": -30,
+     "q": -1
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": 1
+    },
+    {
+     "k": 10,
+     "p": -30,
+     "q": 1
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": 3
+    },
+    {
+     "k": 10,
+     "p": -10,
+     "q": 3
+    },
+    {
+     "k": 20,
+     "p": 40,
+     "q": -8
+    },
+    {
+     "k": 20,
+     "p": -40,
+     "q": -8
+    },
+    {
+     "k": 20,
+     "p": 80,
+     "q": -4
+    },
+    {
+     "k": 20,
+     "p": -80,
+     "q": -4
+    },
+    {
+     "k": 20,
+     "p": 80,
+     "q": 4
+    },
+    {
+     "k": 20,
+     "p": -80,
+     "q": 4
+    },
+    {
+     "k": 20,
+     "p": 40,
+     "q": 8
+    },
+    {
+     "k": 20,
+     "p": -40,
+     "q": 8
+    }
+   ],
+   "entries": 8,
+   "cube_entries": 8,
+   "mod_entries": 0,
+   "sage_rank": 1,
+   "sage_census_x": [
+    5,
+    10,
+    34
+   ],
+   "published_signed_count": 6
+  }
+ ]
+}

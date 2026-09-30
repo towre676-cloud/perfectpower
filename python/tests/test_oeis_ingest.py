@@ -68,8 +68,8 @@ class Promotion(unittest.TestCase):
         cands = json.loads((DATA / 'discovery_sqrt2.json').read_text())
         out = {r['oeis']: r for r in atlas(SeqDir(DATA), cands)}
         # hand-written proofs only (SqrtTwoOrbit, SqrtTwoBatch); generated ones need `auto`
-        self.assertEqual(sum(r['outcome'] == 'DEFINITION_PROVED_EQUIVALENT' for r in out.values()), 23)
-        self.assertEqual(out['A001333']['outcome'], 'TERMS_AGREE_UNPROVED')   # convergent definition
+        self.assertEqual(sum(r['outcome'] == 'DEFINITION_PROVED_EQUIVALENT' for r in out.values()), 24)
+        self.assertEqual(out['A001333']['outcome'], 'DEFINITION_PROVED_EQUIVALENT')   # convergents (SqrtTwoBridges)
         self.assertEqual(out['A052542']['outcome'], 'REJECTED')              # a(0) = 1, not 0
         self.assertEqual(out['A052542']['agrees_from_term'], 1)
 

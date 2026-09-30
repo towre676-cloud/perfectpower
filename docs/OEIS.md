@@ -110,42 +110,24 @@ export dated 2026-09-29, with SHA-256 recorded. Everything is in `data/oeis/mani
 
 | outcome | rule | √2 | φ | √3 |
 |---|---|---|---|---|
-| `DEFINITION_PROVED_EQUIVALENT` | definition formalized with the entry's offset (hand-written or generated), Lean theorems present, every term agrees | 28 | 15 | 8 |
+| `DEFINITION_PROVED_EQUIVALENT` | definition formalized with the entry's offset (hand-written or generated), Lean theorems present, every term agrees | 29 | 15 | 8 |
 | `EXCEPTIONAL_SET_PROVED` | the discovered coordinate disagrees on a finite initial segment; the generated theorem proves the definition equal to an orbit coordinate from a stated index on | 3 | 3 | 0 |
 | `TRANSPORTED_FROM_DUPLICATE` | named "Duplicate of X", X proved, every term equal at the same index | 1 | 1 | 0 |
-| `TERMS_AGREE_UNPROVED` | every term of the full entry agrees with the discovered coordinate | 7 | 18 | 10 |
+| `TRANSPORTED_WITH_SHIFT` | named "Essentially a duplicate of X", X proved; the terms fix a unique shift `s ≤ 4`, and `a(n) = X(n + s)` is a Lean theorem | 1 | 0 | 0 |
+| `TERMS_AGREE_UNPROVED` | every term of the full entry agrees with the discovered coordinate | 5 | 18 | 10 |
 | `REJECTED` | first counterexample recorded; `agrees_from_term` when only initial values differ | 0 | 20 | 1 |
 
 On the √2 orbit the three former rejections A052542, A176981 and A215928 differ from the coordinate
 only at $a(0)$; the generated theorems prove each equal to an orbit coordinate from index 1
-(`EXCEPTIONAL_SET_PROVED`). The seven unproved √2 entries are:
-- A001333, defined by continued-fraction convergents;
-- A024537 and its duplicate A018905 (a floor recursion);
-- A048624 ("essentially" A000129, with a different offset, so transport is refused);
-- A069306 (binary arrays), A163271 (a "zero-transform"), A171842 (a binomial transform).
+(`EXCEPTIONAL_SET_PROVED`).
+- **A001333**, defined by continued-fraction convergents, is now proved (`SqrtTwoBridges.A001333_eq`).
+  The partial quotients of `GenContFract.of √2` are `1, 2, 2, …`, and the continuants are
+  `(A_n, B_n)` from `p₋₁ = 1`, which is the entry's `a(0)`.
+- **A048624** (dead; "Essentially a duplicate of A000129") is transported with the shift its
+  terms fix, `a(n) = A000129(n + 2)`. The text itself does not state a shift.
 
-**The Mordell cross-check.** A081119 and A081120 give the number of integral solutions of
-$y^2=x^3\pm n$ for $n\le100$. The comparison with Lean covers every $k$ with $|k|\le100$ whose
-complete list Lean certifies: registry curves, pointless curves, descent certificates and the
-Fermat family. That is **41 curves, with 0 disagreements**.
-
-For the 155 curves the compiler cannot enumerate, the published count and a scan to
-$x<10^5$ are recorded as **leads**:
-- 98 are nonempty;
-- in all 98 the scan finds exactly the published number of points;
-- they are ranked nonempty first, then by $|k|$.
-
-A081119 cites Gebel–Pethő–Zimmer (1998) and Bennett–Ghadermarzi (2015) for the computation. It
-also records a proof route: when the rank is $0$, the integral points are the torsion points. A
-published count is not a proof. Turning a lead into a theorem means supplying
-`Transport.IntegralPointsOnImage` by a Lean-checked route, as `Descent.lean` does for
-$y^2=x^3-D$. For the first lead, $y^2=x^3-1$ (only $(1,0)$), the descent certificate fails at
-the norm-1 representation $0^2+1^2$. The certificate assumes the units are $\pm1$, but every
-Gaussian unit is a cube ($i=(-i)^3$), so the units are not the arithmetic obstruction (see §8).
-
-**The problem export** (`receipts/oeis_problems.json`, `make_oeis_problems.py`) still lists
-PerfectPower's own coordinates, with their terms, recurrences, constants and Lean names, for
-comparison with any snapshot (`python -m perfectpower oeis`, `make oeis`).
+The five unproved √2 entries are A024537 and its duplicate A018905 (a floor recursion), A069306
+(binary arrays), A163271 (a "zero-transform") and A171842 (a binomial transform).
 
 ## 4. The quadratic-unit orbit engine (`QuadOrbit.lean`)
 
@@ -271,7 +253,16 @@ A001075, A001353, A001835, A011944, A052530, A067900, A079935, A094347.
 - **Entries named through others** (A008843, A008844, A098602): read as the sets their names
   define, and proved equal to the squares and products of the named entries.
 
-## 8. Why the Mordell descent fails, curve by curve (`descent.diagnose`, `make_mordell_obstructions.py`)
+## 8. Why the Mordell descent fails, curve by curve (superseded in part by the branch compiler)
+
+The obstruction classes below were a **prediction**. [MORDELL_BRANCH.md](MORDELL_BRANCH.md)
+tests it with proofs:
+- 26 of the 59 negative-$k$ curves now have Lean-certified complete lists, $y^2=x^3-1$ among them;
+- 22 of the predicted 46 closed, and 4 closed that were not predicted;
+- the other 33 reduce to irreducible Thue equations, solved externally by PARI and agreeing with
+  Sage.
+
+The leads in the Mordell cross-check fall from 155 to 129. (`descent.diagnose`, `make_mordell_obstructions.py`)
 
 `receipts/mordell_obstructions.json` classifies, for each of the 155 curves with $|k|\le100$ that
 the compiler cannot enumerate, the first failing checks of the descent certificate.

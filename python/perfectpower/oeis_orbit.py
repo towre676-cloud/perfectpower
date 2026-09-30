@@ -207,6 +207,12 @@ PROVED.update({
                 'lean': [LB + 'A008844', LB + 'A008844_enumerates', LB + 'A008844_A001653']},
 })
 
+LC = 'PerfectPower.SqrtTwoBridges.'
+PROVED['A001333'] = {'offset': 0, 'kind': 'continued-fraction numerators of sqrt(2), from p_(-1) = 1 (Mathlib GenContFract.of)',
+                     'value': lambda n: _A(n), 'coordinate': 'A_n',
+                     'lean': [LC + 'A001333', LC + 'A001333_eq', LC + 'cf_sqrt2_s', LC + 'contsAux_sqrt2',
+                              LC + 'convs_sqrt2']}
+
 
 def _lean_names() -> set[str]:
     names = set()
@@ -323,7 +329,22 @@ def _certified_points(k: int):
         c = certificate(-k)
         if c is not None:
             return sorted(set(c['points'])), ['PerfectPower.Descent.complete_of_cert']
+        b = _branch_certified().get(-k)
+        if b is not None:
+            return b
     return None
+
+
+def _branch_certified() -> dict:
+    """Curves y^2 = x^3 - D with a Lean branch certificate (`receipts/mordell_branch.json`)."""
+    p = ROOT / 'receipts' / 'mordell_branch.json'
+    if not p.exists():
+        return {}
+    out = {}
+    for r in json.loads(p.read_text())['curves_detail']:
+        if r['status'] == 'COMPLETE':
+            out[r['D']] = (sorted(tuple(pt) for pt in r['points']), [r['lean']])
+    return out
 
 
 def _scan_points(k: int, X: int = 10 ** 5) -> list[tuple[int, int]]:
@@ -356,9 +377,10 @@ def mordell_check(source) -> dict:
         if len(pts) != counts[k]:
             disagreements.append(rec)
     leads = []
+    branch = _branch_certified()
     for cv in unresolved_mordell(-100, 100):
         k = cv['k']
-        if k not in counts:
+        if k not in counts or -k in branch:
             continue
         pts = _scan_points(k)
         leads.append({'k': k, 'published_count': counts[k], 'scan_points': len(pts),
@@ -374,6 +396,11 @@ def mordell_check(source) -> dict:
 
 
 PROVED_OUTCOMES = ('DEFINITION_PROVED_EQUIVALENT', 'TRANSPORTED_FROM_DUPLICATE')
+
+# entries whose text says "Essentially a duplicate" with a shift fixed only by their terms:
+# (shift, Lean names of `a(n) = target(n + shift)`)
+SHIFTED_DUPLICATES = {'A048624': (2, ['PerfectPower.SqrtTwoBridges.A048624',
+                                      'PerfectPower.SqrtTwoBridges.A048624_eq'])}
 
 
 def transport(source, rows: list[dict]) -> None:
@@ -394,6 +421,15 @@ def transport(source, rows: list[dict]) -> None:
             r['outcome'] = 'TRANSPORTED_FROM_DUPLICATE'
             r['proof'] = {'kind': 'duplicate entry', 'target': m.group(1),
                           'terms_compared': len(mine), 'lean': by_id[m.group(1)]['proof']['lean']}
+            continue
+        # "Essentially a duplicate": a shift, when the terms determine exactly one (0 < s <= 4)
+        shifts = [s for s in range(1, 5) if all(n + s in t and t[n + s] == v for n, v in mine)]
+        lean = SHIFTED_DUPLICATES.get(e.id)
+        if len(shifts) == 1 and lean and lean[0] == shifts[0]:
+            r['outcome'] = 'TRANSPORTED_WITH_SHIFT'
+            r['proof'] = {'kind': 'duplicate entry with a shift read from the terms',
+                          'target': m.group(1), 'shift_from_terms': shifts[0],
+                          'terms_compared': len(mine), 'lean': lean[1]}
 
 
 def run(source, candidates: list[dict]) -> dict:

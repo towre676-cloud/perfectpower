@@ -111,7 +111,9 @@ class Pipeline(unittest.TestCase):
         out = {r['oeis']: r for r in rows}
         self.assertEqual(out['A090757']['outcome'], 'TRANSPORTED_FROM_DUPLICATE')
         self.assertIn(out['A048739']['outcome'], PROVED_OUTCOMES)
-        self.assertEqual(out['A048624']['outcome'], 'TERMS_AGREE_UNPROVED')   # different offset
+        # not an equal-index duplicate; the terms fix a unique shift, recorded as such
+        self.assertEqual(out['A048624']['outcome'], 'TRANSPORTED_WITH_SHIFT')
+        self.assertEqual(out['A048624']['proof']['shift_from_terms'], 2)
 
 
 class Obstructions(unittest.TestCase):

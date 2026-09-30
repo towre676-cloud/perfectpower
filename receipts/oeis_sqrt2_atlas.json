@@ -123,7 +123,24 @@
    "map": "A",
    "coordinate": "A on all powers, a(0 + i) at power index 0 + i",
    "terms_checked": 32,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "continued-fraction numerators of sqrt(2), from p_(-1) = 1 (Mathlib GenContFract.of)",
+    "coordinate": "A_n",
+    "lean": [
+     "PerfectPower.SqrtTwoBridges.A001333",
+     "PerfectPower.SqrtTwoBridges.A001333_eq",
+     "PerfectPower.SqrtTwoBridges.cf_sqrt2_s",
+     "PerfectPower.SqrtTwoBridges.contsAux_sqrt2",
+     "PerfectPower.SqrtTwoBridges.convs_sqrt2"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 32,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A001541",
@@ -386,7 +403,17 @@
    "map": "B",
    "coordinate": "B on all powers, a(0 + i) at power index 2 + i",
    "terms_checked": 16,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "outcome": "TRANSPORTED_WITH_SHIFT",
+   "proof": {
+    "kind": "duplicate entry with a shift read from the terms",
+    "target": "A000129",
+    "shift_from_terms": 2,
+    "terms_compared": 16,
+    "lean": [
+     "PerfectPower.SqrtTwoBridges.A048624",
+     "PerfectPower.SqrtTwoBridges.A048624_eq"
+    ]
+   }
   },
   {
    "oeis": "A048739",
@@ -2078,7 +2105,7 @@
    "A081119": "y^2 = x^3 + n",
    "A081120": "y^2 = x^3 - n"
   },
-  "certified_checked": 41,
+  "certified_checked": 67,
   "disagreements": [],
   "checks": [
    {
@@ -2105,6 +2132,14 @@
     "published": 0,
     "lean": [
      "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -96,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus96"
     ]
    },
    {
@@ -2141,11 +2176,35 @@
     ]
    },
    {
+    "k": -88,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus88"
+    ]
+   },
+   {
     "k": -85,
     "certified_points": 0,
     "published": 0,
     "lean": [
      "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -84,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus84"
+    ]
+   },
+   {
+    "k": -83,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus83"
     ]
    },
    {
@@ -2158,11 +2217,35 @@
     ]
    },
    {
+    "k": -81,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus81"
+    ]
+   },
+   {
     "k": -78,
     "certified_points": 0,
     "published": 0,
     "lean": [
      "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -76,
+    "certified_points": 4,
+    "published": 4,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus76"
+    ]
+   },
+   {
+    "k": -75,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus75"
     ]
    },
    {
@@ -2199,6 +2282,22 @@
     ]
    },
    {
+    "k": -68,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus68"
+    ]
+   },
+   {
+    "k": -67,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus67"
+    ]
+   },
+   {
     "k": -66,
     "certified_points": 0,
     "published": 0,
@@ -2217,12 +2316,28 @@
     ]
    },
    {
+    "k": -64,
+    "certified_points": 1,
+    "published": 1,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus64"
+    ]
+   },
+   {
     "k": -62,
     "certified_points": 0,
     "published": 0,
     "lean": [
      "PerfectPower.Generated.no_points_m62",
      "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -59,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus59"
     ]
    },
    {
@@ -2243,6 +2358,30 @@
     ]
    },
    {
+    "k": -54,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus54"
+    ]
+   },
+   {
+    "k": -51,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus51"
+    ]
+   },
+   {
+    "k": -50,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus50"
+    ]
+   },
+   {
     "k": -49,
     "certified_points": 2,
     "published": 2,
@@ -2256,6 +2395,14 @@
     "published": 0,
     "lean": [
      "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -44,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus44"
     ]
    },
    {
@@ -2284,12 +2431,28 @@
     ]
    },
    {
+    "k": -40,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus40"
+    ]
+   },
+   {
     "k": -37,
     "certified_points": 0,
     "published": 0,
     "lean": [
      "PerfectPower.Generated.no_points_m37",
      "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -35,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus35"
     ]
    },
    {
@@ -2310,11 +2473,35 @@
     ]
    },
    {
+    "k": -31,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus31"
+    ]
+   },
+   {
     "k": -30,
     "certified_points": 0,
     "published": 0,
     "lean": [
      "PerfectPower.Descent.complete_of_cert"
+    ]
+   },
+   {
+    "k": -27,
+    "certified_points": 1,
+    "published": 1,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus27"
+    ]
+   },
+   {
+    "k": -24,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus24"
     ]
    },
    {
@@ -2334,12 +2521,36 @@
     ]
    },
    {
+    "k": -20,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus20"
+    ]
+   },
+   {
+    "k": -19,
+    "certified_points": 2,
+    "published": 2,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus19"
+    ]
+   },
+   {
     "k": -17,
     "certified_points": 0,
     "published": 0,
     "lean": [
      "PerfectPower.Generated.no_points_m17",
      "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -16,
+    "certified_points": 0,
+    "published": 0,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus16"
     ]
    },
    {
@@ -2369,6 +2580,14 @@
     ]
    },
    {
+    "k": -11,
+    "certified_points": 4,
+    "published": 4,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus11"
+    ]
+   },
+   {
     "k": -10,
     "certified_points": 0,
     "published": 0,
@@ -2384,6 +2603,14 @@
     "lean": [
      "PerfectPower.Generated.no_points_m9",
      "PerfectPower.Transport.complete_of_no_points"
+    ]
+   },
+   {
+    "k": -8,
+    "certified_points": 1,
+    "published": 1,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus8"
     ]
    },
    {
@@ -2427,21 +2654,17 @@
      "PerfectPower.MordellMinus2.points",
      "PerfectPower.Transport.complete_cube_sub_two"
     ]
+   },
+   {
+    "k": -1,
+    "certified_points": 1,
+    "published": 1,
+    "lean": [
+     "PerfectPower.Generated.MordellBranch.minus1"
+    ]
    }
   ],
   "leads": [
-   {
-    "k": -1,
-    "published_count": 1,
-    "scan_points": 1,
-    "points": [
-     [
-      1,
-      0
-     ]
-    ],
-    "scan_matches_published": true
-   },
    {
     "k": 1,
     "published_count": 5,
@@ -2559,18 +2782,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -8,
-    "published_count": 1,
-    "scan_points": 1,
-    "points": [
-     [
-      2,
-      0
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
     "k": 8,
     "published_count": 7,
     "scan_points": 7,
@@ -2666,30 +2877,6 @@
      [
       -1,
       3
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
-    "k": -11,
-    "published_count": 4,
-    "scan_points": 4,
-    "points": [
-     [
-      3,
-      -4
-     ],
-     [
-      3,
-      4
-     ],
-     [
-      15,
-      -58
-     ],
-     [
-      15,
-      58
      ]
     ],
     "scan_matches_published": true
@@ -2879,22 +3066,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -19,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      7,
-      -18
-     ],
-     [
-      7,
-      18
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
     "k": 19,
     "published_count": 2,
     "scan_points": 2,
@@ -2906,22 +3077,6 @@
      [
       5,
       12
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
-    "k": -20,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      6,
-      -14
-     ],
-     [
-      6,
-      14
      ]
     ],
     "scan_matches_published": true
@@ -3071,18 +3226,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -27,
-    "published_count": 1,
-    "scan_points": 1,
-    "points": [
-     [
-      3,
-      0
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
     "k": 27,
     "published_count": 1,
     "scan_points": 1,
@@ -3194,22 +3337,6 @@
      [
       -2,
       5
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
-    "k": -35,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      11,
-      -36
-     ],
-     [
-      11,
-      36
      ]
     ],
     "scan_matches_published": true
@@ -3351,22 +3478,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -40,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      14,
-      -52
-     ],
-     [
-      14,
-      52
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
     "k": 40,
     "published_count": 2,
     "scan_points": 2,
@@ -3410,22 +3521,6 @@
      [
       -3,
       4
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
-    "k": -44,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      5,
-      -9
-     ],
-     [
-      5,
-      9
      ]
     ],
     "scan_matches_published": true
@@ -3610,22 +3705,6 @@
      [
       29,
       156
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
-    "k": -54,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      7,
-      -17
-     ],
-     [
-      7,
-      17
      ]
     ],
     "scan_matches_published": true
@@ -3839,18 +3918,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -64,
-    "published_count": 1,
-    "scan_points": 1,
-    "points": [
-     [
-      4,
-      0
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
     "k": 64,
     "published_count": 5,
     "scan_points": 5,
@@ -3914,22 +3981,6 @@
      [
       584,
       14113
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
-    "k": -67,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      23,
-      -110
-     ],
-     [
-      23,
-      110
      ]
     ],
     "scan_matches_published": true
@@ -4079,30 +4130,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -76,
-    "published_count": 4,
-    "scan_points": 4,
-    "points": [
-     [
-      5,
-      -7
-     ],
-     [
-      5,
-      7
-     ],
-     [
-      101,
-      -1015
-     ],
-     [
-      101,
-      1015
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
     "k": 76,
     "published_count": 2,
     "scan_points": 2,
@@ -4191,22 +4218,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -81,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      13,
-      -46
-     ],
-     [
-      13,
-      46
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
     "k": 81,
     "published_count": 2,
     "scan_points": 2,
@@ -4234,22 +4245,6 @@
      [
       -1,
       9
-     ]
-    ],
-    "scan_matches_published": true
-   },
-   {
-    "k": -83,
-    "published_count": 2,
-    "scan_points": 2,
-    "points": [
-     [
-      27,
-      -140
-     ],
-     [
-      27,
-      140
      ]
     ],
     "scan_matches_published": true
@@ -4555,13 +4550,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -16,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
     "k": 20,
     "published_count": 0,
     "scan_points": 0,
@@ -4576,13 +4564,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -24,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
     "k": -29,
     "published_count": 0,
     "scan_points": 0,
@@ -4591,13 +4572,6 @@
    },
    {
     "k": 29,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
-    "k": -31,
     "published_count": 0,
     "scan_points": 0,
     "points": [],
@@ -4667,20 +4641,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -50,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
-    "k": -51,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
     "k": 51,
     "published_count": 0,
     "scan_points": 0,
@@ -4703,13 +4663,6 @@
    },
    {
     "k": 58,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
-    "k": -59,
     "published_count": 0,
     "scan_points": 0,
     "points": [],
@@ -4758,13 +4711,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -68,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
     "k": 69,
     "published_count": 0,
     "scan_points": 0,
@@ -4780,13 +4726,6 @@
    },
    {
     "k": 74,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
-    "k": -75,
     "published_count": 0,
     "scan_points": 0,
     "points": [],
@@ -4835,13 +4774,6 @@
     "scan_matches_published": true
    },
    {
-    "k": -84,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
     "k": 84,
     "published_count": 0,
     "scan_points": 0,
@@ -4864,13 +4796,6 @@
    },
    {
     "k": 86,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
-    "k": -88,
     "published_count": 0,
     "scan_points": 0,
     "points": [],
@@ -4906,13 +4831,6 @@
    },
    {
     "k": 95,
-    "published_count": 0,
-    "scan_points": 0,
-    "points": [],
-    "scan_matches_published": true
-   },
-   {
-    "k": -96,
     "published_count": 0,
     "scan_points": 0,
     "points": [],

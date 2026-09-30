@@ -59,5 +59,10 @@ import PerfectPower.FibOrbit
 import PerfectPower.OEISLib
 import PerfectPower.SqrtTwoBatch
 import PerfectPower.EffectiveEnumeration
+import PerfectPower.DescentBranch
+import PerfectPower.MordellMinus1
+import PerfectPower.Generated.MordellBranch
+import PerfectPower.SqrtTwoBridges
+import PerfectPower.MonomialCount
 import PerfectPower.Generated.OEISAuto
 import PerfectPower.Generated.Plans

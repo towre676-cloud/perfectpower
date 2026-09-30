@@ -44,6 +44,7 @@ receipts:
 	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
 	$(PY) python/make_oeis_problems.py
+	$(PY) python/make_lean_mordell_branch.py
 	$(PY) python/make_oeis_auto.py
 	$(PY) python/make_oeis_atlas.py
 	$(PY) python/make_mordell_obstructions.py
@@ -75,6 +76,7 @@ crosscheck:
 	PYTHONPATH=python $(SAGEPY) crosscheck/genus1_sage.py 400 3
 	$(SAGEPY) crosscheck/theorem_g_sage.py 8 8 4
 	$(SAGEPY) crosscheck/mordell_census.py 10000 4
+	$(SAGEPY) crosscheck/branch_thue_pari.py 600
 
 # Differential fuzzers with fixed seeds (python/fuzz/); the finite-bucket scan goes to 1e8.
 fuzz:
