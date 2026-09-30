@@ -1,6 +1,6 @@
 # Release check
 
-`make verify` was run on commit `c5deab5` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0.
+`make verify` was run on commit `af196bd` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -13,10 +13,10 @@ The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12) are not pa
 
 ```
 Build completed successfully.
-axiom audit passed: 694 declarations
--- Found 0 errors in 1029 declarations (plus 2986 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 697 declarations
+-- Found 0 errors in 1032 declarations (plus 2986 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
-Ran 158 tests in 20.965s
+Ran 169 tests (5 z3 adapter tests skipped: z3-solver is optional)
 OK
 Ran 14 tests in 9.743s (continuation_tests)
 OK
@@ -30,6 +30,7 @@ genus-1 gate OK: 400 families, labels {'CONDITIONAL_ON_UNPROVEN_RANK': 1, 'INDEP
 Theorem G gate OK: 462 cases, genus computed in 462, places at infinity in 453, 0 disagreements
 399 genus-one reduction theorems
 1163 Mordell curves without integral points
+36 registry entries, all checked against their Lean statements -> receipts/mordell_registry.json
 25 plan theorems -> PerfectPower/Generated/Plans.lean
 59 curves y^2 = x^3 - D: 26 complete lists emitted, 33 with open branches; complete lists agree with Sage 26/26, with published counts 26/26; ranks {'0': 10, '1': 12, '2': 4}
 56 (9, 9, -3) exceptional [2, 3, 5, 7] all witnesses found
@@ -49,6 +50,6 @@ verify: OK
 - 15 descent obligations, as DAG certificates with 178 nodes (220 unfolded) and 2,008 leaf lifts;
 - 10 closed curves (D = 29, 32, 36, 38, 52, 56, 77, 80, 86, 92), each agreeing with the Sage census.
 
-**Compiler.** It now reaches all 36 generated complete lists. `Generated/Plans.lean` includes `plan_thue_minus56` and `plan_branch_minus20`, which are theorems about the original disguised cubics.
+**Compiler.** It reads the solved-family registry, and every entry of the registry is checked against its Lean statement by a full parse in both directions. The optional host-solver adapter (`make adapter-bench`, which needs `z3-solver`) is not part of `verify`. `Generated/Plans.lean` includes `plan_thue_minus56` and `plan_branch_minus20`, which are theorems about the original disguised cubics.
 
 GitHub Actions CI was not used for this check. Its jobs are never assigned a runner, an account-level block described in the README.
