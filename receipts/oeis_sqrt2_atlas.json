@@ -271,7 +271,22 @@
    "map": "A^2",
    "coordinate": "A^2 on odd powers, a(0 + i) at power index 0 + i",
    "terms_checked": 18,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "set: x^2 with x^2 - 2y^2 = -1, increasing",
+    "coordinate": "A_{2n+1}^2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A008843",
+     "PerfectPower.SqrtTwoBatch.A008843_enumerates",
+     "PerfectPower.SqrtTwoBatch.A008843_A002315"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 18,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A008844",
@@ -280,7 +295,22 @@
    "map": "B^2",
    "coordinate": "B^2 on odd powers, a(0 + i) at power index 0 + i",
    "terms_checked": 18,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "set: y^2 with x^2 - 2y^2 = -1, increasing",
+    "coordinate": "B_{2n+1}^2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A008844",
+     "PerfectPower.SqrtTwoBatch.A008844_enumerates",
+     "PerfectPower.SqrtTwoBatch.A008844_A001653"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 18,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A018905",
@@ -307,7 +337,23 @@
    "map": "(A+1)/2",
    "coordinate": "(A+1)/2 on odd powers, a(0 + i) at power index 0 + i",
    "terms_checked": 24,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "Pythagorean triples (X, X+1, Z) by increasing Z, X+1 (from (0,1,1))",
+    "coordinate": "(A_{2n+1}+1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A046090",
+     "PerfectPower.SqrtTwoBatch.triples_listed",
+     "PerfectPower.SqrtTwoBatch.triple_iff",
+     "PerfectPower.SqrtTwoBatch.A046090_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 24,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A046176",
@@ -316,7 +362,22 @@
    "map": "AB",
    "coordinate": "AB on odd powers, a(1 + i) at power index 0 + i",
    "terms_checked": 18,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "set: k with k^2 hexagonal (residue filter mod 4), increasing",
+    "coordinate": "B_{4n-2}/2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A046176",
+     "PerfectPower.SqrtTwoBatch.A046176_enumerates",
+     "PerfectPower.SqrtTwoBatch.A_mod4"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 18,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A048624",
@@ -334,7 +395,24 @@
    "map": "(A-1)/2",
    "coordinate": "(A-1)/2 on all powers, a(0 + i) at power index 2 + i",
    "terms_checked": 29,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "generated: GF",
+    "relation": "exact",
+    "family": "pell2",
+    "fit": [
+     1,
+     0,
+     2,
+     3,
+     4,
+     1
+    ],
+    "lean": [
+     "PerfectPower.OEISAuto.A048739",
+     "PerfectPower.OEISAuto.A048739_eq"
+    ]
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A052542",
@@ -343,13 +421,30 @@
    "map": "2B",
    "coordinate": "2B on all powers, a(0 + i) at power index 0 + i",
    "terms_checked": 32,
-   "outcome": "REJECTED",
+   "outcome": "EXCEPTIONAL_SET_PROVED",
    "first_counterexample": {
     "term_index": 0,
     "entry": 1,
     "coordinate": 0
    },
-   "agrees_from_term": 1
+   "agrees_from_term": 1,
+   "proof": {
+    "kind": "generated: LinRec",
+    "relation": "exact from index 1",
+    "family": "pell2",
+    "fit": [
+     1,
+     0,
+     1,
+     2,
+     2,
+     0
+    ],
+    "lean": [
+     "PerfectPower.OEISAuto.A052542",
+     "PerfectPower.OEISAuto.A052542_eq"
+    ]
+   }
   },
   {
    "oeis": "A055792",
@@ -358,7 +453,22 @@
    "map": "A^2",
    "coordinate": "A^2 on even powers, a(0 + i) at power index -1 + i",
    "terms_checked": 18,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "set: a and floor(a/2) squares; 0 is the exceptional element",
+    "coordinate": "0, then A_{2n-2}^2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A055792",
+     "PerfectPower.SqrtTwoBatch.A055792_enumerates",
+     "PerfectPower.SqrtTwoBatch.sq_eq_two_sq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 18,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A055997",
@@ -422,7 +532,24 @@
    "map": "A",
    "coordinate": "A on all powers, a(0 + i) at power index 1 + i",
    "terms_checked": 32,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "generated: GF",
+    "relation": "exact",
+    "family": "pell2",
+    "fit": [
+     1,
+     0,
+     1,
+     1,
+     2,
+     0
+    ],
+    "lean": [
+     "PerfectPower.OEISAuto.A078057",
+     "PerfectPower.OEISAuto.A078057_eq"
+    ]
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A078522",
@@ -431,7 +558,21 @@
    "map": "(A^2-1)/2",
    "coordinate": "(A^2-1)/2 on odd powers, a(1 + i) at power index 0 + i",
    "terms_checked": 17,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "set: k with (k+1)(2k+1) a square (coprime splitting), increasing",
+    "coordinate": "B_{2n-1}^2 - 1",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A078522",
+     "PerfectPower.SqrtTwoBatch.A078522_enumerates"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 17,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A079291",
@@ -440,7 +581,16 @@
    "map": "B^2",
    "coordinate": "B^2 on all powers, a(0 + i) at power index 0 + i",
    "terms_checked": 25,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "generated: Coord",
+    "relation": "definition is the coordinate",
+    "family": "pell2",
+    "fit": null,
+    "lean": [
+     "PerfectPower.OEISAuto.A079291"
+    ]
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A082405",
@@ -449,7 +599,24 @@
    "map": "AB",
    "coordinate": "AB on even powers, a(0 + i) at power index 0 + i",
    "terms_checked": 18,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "generated: LinRec",
+    "relation": "exact",
+    "family": "pell2",
+    "fit": [
+     4,
+     0,
+     2,
+     0,
+     1,
+     0
+    ],
+    "lean": [
+     "PerfectPower.OEISAuto.A082405",
+     "PerfectPower.OEISAuto.A082405_eq"
+    ]
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A084703",
@@ -481,7 +648,22 @@
    "map": "A^2",
    "coordinate": "A^2 on all powers, a(0 + i) at power index 0 + i",
    "terms_checked": 25,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "matrix orbit: (1,0,0) M^n, leading entry",
+    "coordinate": "A_n^2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A090390",
+     "PerfectPower.SqrtTwoBatch.vM_eq",
+     "PerfectPower.SqrtTwoBatch.A090390_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 25,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A090757",
@@ -490,7 +672,16 @@
    "map": "(A-1)/2",
    "coordinate": "(A-1)/2 on all powers, a(0 + i) at power index 2 + i",
    "terms_checked": 15,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "outcome": "TRANSPORTED_FROM_DUPLICATE",
+   "proof": {
+    "kind": "duplicate entry",
+    "target": "A048739",
+    "terms_compared": 15,
+    "lean": [
+     "PerfectPower.OEISAuto.A048739",
+     "PerfectPower.OEISAuto.A048739_eq"
+    ]
+   }
   },
   {
    "oeis": "A098602",
@@ -499,7 +690,21 @@
    "map": "(A-1)(A+1)/4",
    "coordinate": "(A-1)(A+1)/4 on odd powers, a(0 + i) at power index 0 + i",
    "terms_checked": 17,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "product of entries A001652 * A046090",
+    "coordinate": "(A_{2n+1}^2-1)/4",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A098602",
+     "PerfectPower.SqrtTwoBatch.A098602_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 17,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A115598",
@@ -508,7 +713,22 @@
    "map": "(A-1)/2",
    "coordinate": "(A-1)/2 on even powers, a(1 + i) at power index 1 + i",
    "terms_checked": 23,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "Pythagorean triples by increasing Z (from (3,4,5)), Z-(X+1)",
+    "coordinate": "B_{2n+1} - (A_{2n+1}+1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A115598",
+     "PerfectPower.SqrtTwoBatch.pos_triples_listed",
+     "PerfectPower.SqrtTwoBatch.A115598_eq"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 23,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A115599",
@@ -517,7 +737,22 @@
    "map": "(A+1)/2",
    "coordinate": "(A+1)/2 on even powers, a(1 + i) at power index 1 + i",
    "terms_checked": 23,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "Pythagorean triples by increasing Z (from (3,4,5)), Z-X",
+    "coordinate": "B_{2n+1} - (A_{2n+1}-1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoBatch.A115599",
+     "PerfectPower.SqrtTwoBatch.pos_triples_listed",
+     "PerfectPower.SqrtTwoBatch.A115599_eq"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 23,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A163271",
@@ -544,13 +779,30 @@
    "map": "B-A",
    "coordinate": "B-A on all powers, a(0 + i) at power index 0 + i",
    "terms_checked": 31,
-   "outcome": "REJECTED",
+   "outcome": "EXCEPTIONAL_SET_PROVED",
    "first_counterexample": {
     "term_index": 0,
     "entry": 1,
     "coordinate": -1
    },
-   "agrees_from_term": 1
+   "agrees_from_term": 1,
+   "proof": {
+    "kind": "generated: GF",
+    "relation": "exact from index 1",
+    "family": "pell2",
+    "fit": [
+     1,
+     0,
+     1,
+     0,
+     -1,
+     0
+    ],
+    "lean": [
+     "PerfectPower.OEISAuto.A176981",
+     "PerfectPower.OEISAuto.A176981_eq"
+    ]
+   }
   },
   {
    "oeis": "A182435",
@@ -559,7 +811,24 @@
    "map": "(A+1)/2",
    "coordinate": "(A+1)/2 on odd powers, a(0 + i) at power index -1 + i",
    "terms_checked": 24,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "generated: LinRec",
+    "relation": "exact",
+    "family": "pell2",
+    "fit": [
+     2,
+     0,
+     2,
+     -1,
+     2,
+     -1
+    ],
+    "lean": [
+     "PerfectPower.OEISAuto.A182435",
+     "PerfectPower.OEISAuto.A182435_eq"
+    ]
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A215928",
@@ -568,15 +837,1242 @@
    "map": "B",
    "coordinate": "B on all powers, a(0 + i) at power index 0 + i",
    "terms_checked": 32,
-   "outcome": "REJECTED",
+   "outcome": "EXCEPTIONAL_SET_PROVED",
    "first_counterexample": {
     "term_index": 0,
     "entry": 1,
     "coordinate": 0
    },
-   "agrees_from_term": 1
+   "agrees_from_term": 1,
+   "proof": {
+    "kind": "generated: LinRec",
+    "relation": "exact from index 1",
+    "family": "pell2",
+    "fit": [
+     1,
+     0,
+     1,
+     1,
+     1,
+     0
+    ],
+    "lean": [
+     "PerfectPower.OEISAuto.A215928",
+     "PerfectPower.OEISAuto.A215928_eq"
+    ]
+   }
   }
  ],
+ "other_orbits": {
+  "phi": [
+   {
+    "oeis": "A000032",
+    "offset": 0,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 39,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "fib",
+     "fit": [
+      1,
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A000032",
+      "PerfectPower.OEISAuto.A000032_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A000045",
+    "offset": 0,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 41,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "fib",
+     "fit": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A000045",
+      "PerfectPower.OEISAuto.A000045_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A000204",
+    "offset": 1,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 39,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "fib",
+     "fit": [
+      1,
+      0,
+      2,
+      1,
+      5,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A000204",
+      "PerfectPower.OEISAuto.A000204_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A001254",
+    "offset": 0,
+    "filter": "all",
+    "map": "A^2",
+    "coordinate": "A^2 on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 33,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A001254"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A001519",
+    "offset": 0,
+    "filter": "even",
+    "map": "A+2B",
+    "coordinate": "A+2B on even powers, a(0 + i) at power index -2 + i",
+    "terms_checked": 31,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "fib",
+     "fit": [
+      2,
+      0,
+      2,
+      1,
+      -1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A001519",
+      "PerfectPower.OEISAuto.A001519_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A001906",
+    "offset": 0,
+    "filter": "all",
+    "map": "AB",
+    "coordinate": "AB on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 31,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A001906",
+      "PerfectPower.OEISAuto.A001906_rec"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A002878",
+    "offset": 0,
+    "filter": "odd",
+    "map": "A",
+    "coordinate": "A on odd powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 30,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A002878"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A005248",
+    "offset": 0,
+    "filter": "even",
+    "map": "A",
+    "coordinate": "A on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 30,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A005248"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A006355",
+    "offset": 0,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 39,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A007598",
+    "offset": 0,
+    "filter": "all",
+    "map": "B^2",
+    "coordinate": "B^2 on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 31,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A007598"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A011783",
+    "offset": 0,
+    "filter": "even",
+    "map": "A+2B",
+    "coordinate": "A+2B on even powers, a(0 + i) at power index -2 + i",
+    "terms_checked": 16,
+    "outcome": "TRANSPORTED_FROM_DUPLICATE",
+    "proof": {
+     "kind": "duplicate entry",
+     "target": "A001519",
+     "terms_compared": 16,
+     "lean": [
+      "PerfectPower.OEISAuto.A001519",
+      "PerfectPower.OEISAuto.A001519_eq"
+     ]
+    }
+   },
+   {
+    "oeis": "A020695",
+    "offset": 0,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(0 + i) at power index 3 + i",
+    "terms_checked": 39,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A020701",
+    "offset": 0,
+    "filter": "all",
+    "map": "A+2B",
+    "coordinate": "A+2B on all powers, a(0 + i) at power index 1 + i",
+    "terms_checked": 38,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A020712",
+    "offset": 0,
+    "filter": "all",
+    "map": "A+2B",
+    "coordinate": "A+2B on all powers, a(0 + i) at power index 2 + i",
+    "terms_checked": 37,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A025169",
+    "offset": 0,
+    "filter": "all",
+    "map": "2AB",
+    "coordinate": "2AB on all powers, a(0 + i) at power index 1 + i",
+    "terms_checked": 27,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A025169"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A033192",
+    "offset": 0,
+    "filter": "all",
+    "map": "B(B+1)/2",
+    "coordinate": "B(B+1)/2 on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 32,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A033888",
+    "offset": 0,
+    "filter": "even",
+    "map": "AB",
+    "coordinate": "AB on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 24,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A033888"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A033890",
+    "offset": 0,
+    "filter": "odd",
+    "map": "AB",
+    "coordinate": "AB on odd powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 22,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A033890"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A048575",
+    "offset": 0,
+    "filter": "even",
+    "map": "A+2B",
+    "coordinate": "A+2B on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 29,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A049684",
+    "offset": 0,
+    "filter": "even",
+    "map": "B^2",
+    "coordinate": "B^2 on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 24,
+    "proof": {
+     "kind": "generated: Coord",
+     "relation": "definition is the coordinate",
+     "family": "fib",
+     "fit": null,
+     "lean": [
+      "PerfectPower.OEISAuto.A049684"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A052995",
+    "offset": 0,
+    "filter": "even",
+    "map": "A+B",
+    "coordinate": "A+B on even powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 30,
+    "proof": {
+     "kind": "generated: GF",
+     "relation": "exact from index 1",
+     "family": "fib",
+     "fit": [
+      2,
+      0,
+      1,
+      1,
+      1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A052995",
+      "PerfectPower.OEISAuto.A052995_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A054886",
+    "offset": 0,
+    "filter": "all",
+    "map": "A+B",
+    "coordinate": "A+B on all powers, a(0 + i) at power index 1 + i",
+    "terms_checked": 38,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 1,
+     "coordinate": 2
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A055389",
+    "offset": 0,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 39,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 1,
+     "coordinate": 0
+    },
+    "agrees_from_term": 1
+   },
+   {
+    "oeis": "A055819",
+    "offset": 0,
+    "filter": "even",
+    "map": "A+B",
+    "coordinate": "A+B on even powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 28,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A068922",
+    "offset": 1,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(1 + i) at power index 2 + i",
+    "terms_checked": 38,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 3,
+     "coordinate": 2
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A069041",
+    "offset": 1,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 15,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 15,
+     "entry": 17711,
+     "coordinate": 610
+    }
+   },
+   {
+    "oeis": "A071679",
+    "offset": 1,
+    "filter": "all",
+    "map": "A+2B",
+    "coordinate": "A+2B on all powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 38,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 1,
+     "coordinate": 2
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A077373",
+    "offset": 1,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 12,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A078642",
+    "offset": 1,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(1 + i) at power index 3 + i",
+    "terms_checked": 37,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A080023",
+    "offset": 1,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 37,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 2,
+     "coordinate": 1
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A081068",
+    "offset": 0,
+    "filter": "odd",
+    "map": "B^2",
+    "coordinate": "B^2 on odd powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 21,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A081069",
+    "offset": 0,
+    "filter": "even",
+    "map": "A^2",
+    "coordinate": "A^2 on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A081071",
+    "offset": 0,
+    "filter": "odd",
+    "map": "A^2",
+    "coordinate": "A^2 on odd powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A088305",
+    "offset": 0,
+    "filter": "all",
+    "map": "AB",
+    "coordinate": "AB on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 29,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 1,
+     "coordinate": 0
+    },
+    "agrees_from_term": 1
+   },
+   {
+    "oeis": "A090991",
+    "offset": 1,
+    "filter": "all",
+    "map": "A+B",
+    "coordinate": "A+B on all powers, a(1 + i) at power index 3 + i",
+    "terms_checked": 36,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A093960",
+    "offset": 1,
+    "filter": "odd",
+    "map": "A",
+    "coordinate": "A on odd powers, a(1 + i) at power index -1 + i",
+    "terms_checked": 30,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 2,
+     "entry": 2,
+     "coordinate": 1
+    },
+    "agrees_from_term": 3
+   },
+   {
+    "oeis": "A111282",
+    "offset": 1,
+    "filter": "all",
+    "map": "2AB",
+    "coordinate": "2AB on all powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 28,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 1,
+     "coordinate": 0
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A118658",
+    "offset": 0,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 40,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A122367",
+    "offset": 0,
+    "filter": "even",
+    "map": "A+2B",
+    "coordinate": "A+2B on even powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 30,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A126358",
+    "offset": 0,
+    "filter": "even",
+    "map": "A+B",
+    "coordinate": "A+B on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 29,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 1,
+     "coordinate": 2
+    },
+    "agrees_from_term": 1
+   },
+   {
+    "oeis": "A128588",
+    "offset": 1,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 38,
+    "outcome": "EXCEPTIONAL_SET_PROVED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 1,
+     "coordinate": 2
+    },
+    "agrees_from_term": 2,
+    "proof": {
+     "kind": "generated: GF",
+     "relation": "exact from index 2",
+     "family": "fib",
+     "fit": [
+      1,
+      0,
+      1,
+      1,
+      3,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A128588",
+      "PerfectPower.OEISAuto.A128588_eq"
+     ]
+    }
+   },
+   {
+    "oeis": "A132636",
+    "offset": 1,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 45,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 0,
+     "coordinate": 1
+    }
+   },
+   {
+    "oeis": "A135064",
+    "offset": 1,
+    "filter": "odd",
+    "map": "A",
+    "coordinate": "A on odd powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 30,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 1,
+     "coordinate": 4
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A163733",
+    "offset": 1,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(1 + i) at power index -1 + i",
+    "terms_checked": 40,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 2,
+     "entry": 1,
+     "coordinate": 0
+    },
+    "agrees_from_term": 3
+   },
+   {
+    "oeis": "A169985",
+    "offset": 0,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 39,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 1,
+     "coordinate": 2
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A198834",
+    "offset": 1,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(1 + i) at power index -1 + i",
+    "terms_checked": 40,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A202278",
+    "offset": 1,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 11,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 0,
+     "coordinate": 1
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A212804",
+    "offset": 0,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 50,
+    "proof": {
+     "kind": "generated: GF",
+     "relation": "exact",
+     "family": "fib",
+     "fit": [
+      1,
+      0,
+      2,
+      1,
+      -1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A212804",
+      "PerfectPower.OEISAuto.A212804_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A237268",
+    "offset": 1,
+    "filter": "all",
+    "map": "AB",
+    "coordinate": "AB on all powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 30,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 2,
+     "entry": 2,
+     "coordinate": 3
+    },
+    "agrees_from_term": 3
+   },
+   {
+    "oeis": "A274163",
+    "offset": 0,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 26,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 1,
+     "coordinate": 0
+    }
+   },
+   {
+    "oeis": "A284647",
+    "offset": 0,
+    "filter": "even",
+    "map": "B(B+1)/2",
+    "coordinate": "B(B+1)/2 on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 23,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A286810",
+    "offset": 0,
+    "filter": "even",
+    "map": "A^2",
+    "coordinate": "A^2 on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 24,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 1,
+     "coordinate": 4
+    },
+    "agrees_from_term": 1
+   },
+   {
+    "oeis": "A288219",
+    "offset": 0,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(0 + i) at power index 2 + i",
+    "terms_checked": 38,
+    "outcome": "EXCEPTIONAL_SET_PROVED",
+    "first_counterexample": {
+     "term_index": 0,
+     "entry": 2,
+     "coordinate": 3
+    },
+    "agrees_from_term": 1,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact from index 1",
+     "family": "fib",
+     "fit": [
+      1,
+      0,
+      1,
+      2,
+      5,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A288219",
+      "PerfectPower.OEISAuto.A288219_eq"
+     ]
+    }
+   },
+   {
+    "oeis": "A324969",
+    "offset": 1,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 41,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 1,
+     "coordinate": 0
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A329723",
+    "offset": 0,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(0 + i) at power index -2 + i",
+    "terms_checked": 43,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A358995",
+    "offset": 1,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(1 + i) at power index 2 + i",
+    "terms_checked": 14,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 14,
+     "entry": 5778,
+     "coordinate": 1364
+    }
+   },
+   {
+    "oeis": "A373566",
+    "offset": 0,
+    "filter": "all",
+    "map": "A+2B",
+    "coordinate": "A+2B on all powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 39,
+    "outcome": "EXCEPTIONAL_SET_PROVED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 3,
+     "coordinate": 2
+    },
+    "agrees_from_term": 2,
+    "proof": {
+     "kind": "generated: GF",
+     "relation": "exact from index 2",
+     "family": "fib",
+     "fit": [
+      1,
+      0,
+      2,
+      3,
+      7,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A373566",
+      "PerfectPower.OEISAuto.A373566_eq"
+     ]
+    }
+   }
+  ],
+  "sqrt3": [
+   {
+    "oeis": "A001075",
+    "offset": 0,
+    "filter": "all",
+    "map": "A",
+    "coordinate": "A on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 27,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      1,
+      0,
+      1,
+      1,
+      0,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A001075",
+      "PerfectPower.OEISAuto.A001075_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A001353",
+    "offset": 0,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 28,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A001353",
+      "PerfectPower.OEISAuto.A001353_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A001835",
+    "offset": 0,
+    "filter": "all",
+    "map": "A+B",
+    "coordinate": "A+B on all powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 28,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      1,
+      0,
+      1,
+      1,
+      -1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A001835",
+      "PerfectPower.OEISAuto.A001835_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A007654",
+    "offset": 1,
+    "filter": "even",
+    "map": "(A-1)/2",
+    "coordinate": "(A-1)/2 on even powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A010905",
+    "offset": 0,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(0 + i) at power index 2 + i",
+    "terms_checked": 25,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A011943",
+    "offset": 1,
+    "filter": "even",
+    "map": "A",
+    "coordinate": "A on even powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A011944",
+    "offset": 0,
+    "filter": "all",
+    "map": "AB",
+    "coordinate": "AB on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 17,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      2,
+      0,
+      2,
+      0,
+      1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A011944",
+      "PerfectPower.OEISAuto.A011944_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A028230",
+    "offset": 1,
+    "filter": "even",
+    "map": "A+2B",
+    "coordinate": "A+2B on even powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A052530",
+    "offset": 0,
+    "filter": "all",
+    "map": "2B",
+    "coordinate": "2B on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 27,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      1,
+      0,
+      1,
+      0,
+      2,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A052530",
+      "PerfectPower.OEISAuto.A052530_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A055793",
+    "offset": 1,
+    "filter": "all",
+    "map": "A^2",
+    "coordinate": "A^2 on all powers, a(1 + i) at power index -1 + i",
+    "terms_checked": 22,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A067900",
+    "offset": 0,
+    "filter": "even",
+    "map": "2B",
+    "coordinate": "2B on even powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      2,
+      0,
+      1,
+      0,
+      2,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A067900",
+      "PerfectPower.OEISAuto.A067900_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A079935",
+    "offset": 1,
+    "filter": "all",
+    "map": "A+B",
+    "coordinate": "A+B on all powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 27,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      1,
+      0,
+      1,
+      1,
+      1,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A079935",
+      "PerfectPower.OEISAuto.A079935_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A094347",
+    "offset": 0,
+    "filter": "odd",
+    "map": "A",
+    "coordinate": "A on odd powers, a(0 + i) at power index -1 + i",
+    "terms_checked": 18,
+    "proof": {
+     "kind": "generated: LinRec",
+     "relation": "exact",
+     "family": "sqrt3",
+     "fit": [
+      2,
+      0,
+      1,
+      2,
+      -3,
+      0
+     ],
+     "lean": [
+      "PerfectPower.OEISAuto.A094347",
+      "PerfectPower.OEISAuto.A094347_eq"
+     ]
+    },
+    "outcome": "DEFINITION_PROVED_EQUIVALENT"
+   },
+   {
+    "oeis": "A098301",
+    "offset": 0,
+    "filter": "all",
+    "map": "B^2",
+    "coordinate": "B^2 on all powers, a(0 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A102344",
+    "offset": 1,
+    "filter": "even",
+    "map": "A",
+    "coordinate": "A on even powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 20,
+    "outcome": "REJECTED",
+    "first_counterexample": {
+     "term_index": 1,
+     "entry": 2,
+     "coordinate": 1
+    },
+    "agrees_from_term": 2
+   },
+   {
+    "oeis": "A103974",
+    "offset": 1,
+    "filter": "all",
+    "map": "A^2+B^2",
+    "coordinate": "A^2+B^2 on all powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 17,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A122769",
+    "offset": 1,
+    "filter": "even",
+    "map": "A+B",
+    "coordinate": "A+B on even powers, a(1 + i) at power index 0 + i",
+    "terms_checked": 17,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A189356",
+    "offset": 1,
+    "filter": "even",
+    "map": "A-B",
+    "coordinate": "A-B on even powers, a(1 + i) at power index 1 + i",
+    "terms_checked": 19,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   },
+   {
+    "oeis": "A195503",
+    "offset": 1,
+    "filter": "all",
+    "map": "B",
+    "coordinate": "B on all powers, a(1 + i) at power index 2 + i",
+    "terms_checked": 24,
+    "outcome": "TERMS_AGREE_UNPROVED"
+   }
+  ]
+ },
  "mordell": {
   "sources": {
    "A081119": "y^2 = x^3 + n",

@@ -54,4 +54,10 @@ import PerfectPower.Descent
 import PerfectPower.Observation
 import PerfectPower.SquareTriangular
 import PerfectPower.SqrtTwoOrbit
+import PerfectPower.QuadOrbit
+import PerfectPower.FibOrbit
+import PerfectPower.OEISLib
+import PerfectPower.SqrtTwoBatch
+import PerfectPower.EffectiveEnumeration
+import PerfectPower.Generated.OEISAuto
 import PerfectPower.Generated.Plans

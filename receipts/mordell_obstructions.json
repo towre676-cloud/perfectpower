@@ -1,0 +1,5429 @@
+{
+ "curves": 155,
+ "negative_k": 59,
+ "category_counts": {
+  "CLASS_3": 12,
+  "ELEMENT_CUBE": 1,
+  "NONMAXIMAL": 34,
+  "NONMAXIMAL_CUBE": 6,
+  "NOT_COPRIME": 36,
+  "REAL_QUADRATIC": 96,
+  "UNIT_BEYOND_PM1": 1
+ },
+ "category_combinations": {
+  "REAL_QUADRATIC": 96,
+  "NONMAXIMAL+NOT_COPRIME": 20,
+  "NOT_COPRIME": 15,
+  "CLASS_3": 9,
+  "NONMAXIMAL": 6,
+  "NONMAXIMAL+NONMAXIMAL_CUBE": 4,
+  "CLASS_3+NONMAXIMAL": 2,
+  "CLASS_3+NONMAXIMAL+NONMAXIMAL_CUBE": 1,
+  "NONMAXIMAL+NONMAXIMAL_CUBE+NOT_COPRIME": 1,
+  "ELEMENT_CUBE+UNIT_BEYOND_PM1": 1
+ },
+ "repairs_unlock": {
+  "absorb cube units (Z[i]: all units are cubes)": {
+   "count": 0,
+   "k": []
+  },
+  "accept element cubes in the table": {
+   "count": 0,
+   "k": []
+  },
+  "cube units + element cubes": {
+   "count": 1,
+   "k": [
+    -1
+   ]
+  },
+  "descent in the maximal order": {
+   "count": 10,
+   "k": [
+    -96,
+    -88,
+    -84,
+    -75,
+    -68,
+    -67,
+    -51,
+    -35,
+    -19,
+    -11
+   ]
+  },
+  "maximal order + element cubes": {
+   "count": 10,
+   "k": [
+    -96,
+    -88,
+    -84,
+    -75,
+    -68,
+    -67,
+    -51,
+    -35,
+    -19,
+    -11
+   ]
+  },
+  "coprimality at 2 and at D (case split on the gcd)": {
+   "count": 15,
+   "k": [
+    -95,
+    -86,
+    -79,
+    -77,
+    -71,
+    -63,
+    -55,
+    -50,
+    -47,
+    -45,
+    -39,
+    -25,
+    -18,
+    -15,
+    -7
+   ]
+  },
+  "maximal order + element cubes + coprimality": {
+   "count": 46,
+   "k": [
+    -100,
+    -96,
+    -95,
+    -88,
+    -86,
+    -84,
+    -81,
+    -80,
+    -79,
+    -77,
+    -76,
+    -75,
+    -72,
+    -71,
+    -68,
+    -67,
+    -64,
+    -63,
+    -60,
+    -56,
+    -55,
+    -54,
+    -52,
+    -51,
+    -50,
+    -48,
+    -47,
+    -45,
+    -44,
+    -40,
+    -39,
+    -36,
+    -35,
+    -32,
+    -28,
+    -27,
+    -25,
+    -24,
+    -20,
+    -19,
+    -18,
+    -16,
+    -15,
+    -11,
+    -8,
+    -7
+   ]
+  }
+ },
+ "y2_x3_minus_1": {
+  "k": -1,
+  "D": 1,
+  "class_number": 1,
+  "field_class_number": 1,
+  "maximal_order": true,
+  "K": 2,
+  "r": 1,
+  "t": 1,
+  "categories": [
+   "ELEMENT_CUBE",
+   "UNIT_BEYOND_PM1"
+  ],
+  "units": {
+   "group": "Z/4 = <i>",
+   "all_cubes": true,
+   "witness": "i = (-i)^3",
+   "note": "the certificate rejects the norm-1 representation because it assumes units +-1; the Gaussian units are not the obstruction"
+  },
+  "failures": [
+   {
+    "k": 1,
+    "p": 0,
+    "q": -1,
+    "category": "UNIT_BEYOND_PM1"
+   },
+   {
+    "k": 1,
+    "p": 0,
+    "q": 1,
+    "category": "UNIT_BEYOND_PM1"
+   },
+   {
+    "k": 2,
+    "p": 2,
+    "q": -2,
+    "category": "ELEMENT_CUBE"
+   },
+   {
+    "k": 2,
+    "p": 2,
+    "q": 2,
+    "category": "ELEMENT_CUBE"
+   }
+  ],
+  "x_found_by_scan": [
+   1
+  ],
+  "expert_scan": {
+   "x_interval": [
+    1,
+    100000
+   ],
+   "signed_points": 1,
+   "nonnegative_y_points": 1,
+   "distinct_x": 1,
+   "published_signed_count": 1
+  }
+ },
+ "expert_scan_join": {
+  "source": "expert_push/receipts/mordell_scan.json (bounded search, x <= 100000)",
+  "curves_joined": 155,
+  "nonempty_in_scan": 98,
+  "signed_points_match_published": 155,
+  "with_published_count": 155,
+  "note": "the package scans all 200 nonsingular curves (103 nonempty); only the 155 unresolved ones are joined here. A bounded scan proves membership, not completeness."
+ },
+ "rows": [
+  {
+   "k": -100,
+   "D": 100,
+   "class_number": 4,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 20,
+   "r": 9,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 5,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 5,
+     "p": 5,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 20,
+     "p": 40,
+     "q": -8,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 20,
+     "p": 80,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    5,
+    10,
+    34
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 6,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 6
+   }
+  },
+  {
+   "k": -96,
+   "D": 96,
+   "class_number": 8,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 19,
+   "r": 9,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -95,
+   "D": 95,
+   "class_number": 8,
+   "field_class_number": 8,
+   "maximal_order": false,
+   "K": 19,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 11,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 11,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 16,
+     "p": 26,
+     "q": -6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 16,
+     "p": 26,
+     "q": 6,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    6
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -92,
+   "D": 92,
+   "class_number": 6,
+   "field_class_number": 3,
+   "maximal_order": false,
+   "K": 19,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "CLASS_3",
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "k": 8,
+     "p": 12,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 8,
+     "p": 12,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 19,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 19,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 12,
+     "p": 16,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 12,
+     "p": 30,
+     "q": -3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 12,
+     "p": 30,
+     "q": 3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 12,
+     "p": 16,
+     "q": 4,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -89,
+   "D": 89,
+   "class_number": 12,
+   "field_class_number": 12,
+   "maximal_order": true,
+   "K": 18,
+   "r": 9,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 6,
+     "q": -1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 5,
+     "p": 6,
+     "q": 1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 18,
+     "p": 74,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 18,
+     "p": 74,
+     "q": 2,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [
+    5
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -88,
+   "D": 88,
+   "class_number": 4,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 18,
+   "r": 9,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -87,
+   "D": 87,
+   "class_number": 6,
+   "field_class_number": 6,
+   "maximal_order": false,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 7,
+     "p": 16,
+     "q": -1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 7,
+     "p": 16,
+     "q": 1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 13,
+     "p": 43,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 13,
+     "p": 43,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 16,
+     "p": 52,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 16,
+     "p": 52,
+     "q": 4,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [
+    7
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -86,
+   "D": 86,
+   "class_number": 10,
+   "field_class_number": 10,
+   "maximal_order": true,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 15,
+     "p": 35,
+     "q": -5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 15,
+     "p": 51,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 15,
+     "p": 51,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 15,
+     "p": 35,
+     "q": 5,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -84,
+   "D": 84,
+   "class_number": 8,
+   "field_class_number": 4,
+   "maximal_order": false,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -83,
+   "D": 83,
+   "class_number": 9,
+   "field_class_number": 3,
+   "maximal_order": false,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "CLASS_3",
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "k": 12,
+     "p": 20,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 12,
+     "p": 20,
+     "q": 4,
+     "category": "CLASS_3"
+    },
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [
+    27
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -81,
+   "D": 81,
+   "class_number": 6,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 18,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 9,
+     "p": 0,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 0,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 26,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 26,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 13,
+     "p": 46,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 13,
+     "p": 46,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 18,
+     "p": 54,
+     "q": -6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 18,
+     "p": 54,
+     "q": 6,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    13
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -80,
+   "D": 80,
+   "class_number": 8,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 17,
+   "r": 9,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 9,
+     "p": 3,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 3,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -79,
+   "D": 79,
+   "class_number": 5,
+   "field_class_number": 5,
+   "maximal_order": false,
+   "K": 17,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 8,
+     "p": 14,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 14,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 17,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 17,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 16,
+     "p": 15,
+     "q": -7,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 16,
+     "p": 15,
+     "q": 7,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    20
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -77,
+   "D": 77,
+   "class_number": 8,
+   "field_class_number": 8,
+   "maximal_order": true,
+   "K": 17,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 9,
+     "p": 6,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 6,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -76,
+   "D": 76,
+   "class_number": 6,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 17,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 7,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 5,
+     "p": 7,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 17,
+     "p": 7,
+     "q": -8,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 17,
+     "p": 7,
+     "q": 8,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [
+    5,
+    101
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -75,
+   "D": 75,
+   "class_number": 6,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 17,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -72,
+   "D": 72,
+   "class_number": 4,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 16,
+   "r": 17,
+   "t": 2,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 12,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 12,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 9,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 21,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 21,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 9,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 24,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 24,
+     "q": 4,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    6
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -71,
+   "D": 71,
+   "class_number": 7,
+   "field_class_number": 7,
+   "maximal_order": false,
+   "K": 16,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 8,
+     "p": 21,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 21,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 19,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 19,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 33,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 38,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 38,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 33,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    8
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -68,
+   "D": 68,
+   "class_number": 8,
+   "field_class_number": 4,
+   "maximal_order": false,
+   "K": 16,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -67,
+   "D": 67,
+   "class_number": 3,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 16,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL"
+   ],
+   "failures": [
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [
+    23
+   ],
+   "expert_scan": {
+    "x_interval": [
+     5,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -64,
+   "D": 64,
+   "class_number": 4,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 16,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 0,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 0,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 16,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 16,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 16,
+     "p": 0,
+     "q": -8,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 16,
+     "p": 0,
+     "q": 8,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 4
+    }
+   ],
+   "x_found_by_scan": [
+    4
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 1,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 1
+   }
+  },
+  {
+   "k": -63,
+   "D": 63,
+   "class_number": 4,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 15,
+   "r": 8,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 1,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 1,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    4,
+    568
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -61,
+   "D": 61,
+   "class_number": 6,
+   "field_class_number": 6,
+   "maximal_order": true,
+   "K": 15,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 8,
+     "q": -1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 5,
+     "p": 8,
+     "q": 1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 13,
+     "p": 1,
+     "q": -6,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 13,
+     "p": 1,
+     "q": 6,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 14,
+     "p": 50,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 14,
+     "p": 50,
+     "q": 2,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [
+    5
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -60,
+   "D": 60,
+   "class_number": 4,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 15,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 2,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 2,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    4,
+    136
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -59,
+   "D": 59,
+   "class_number": 9,
+   "field_class_number": 3,
+   "maximal_order": false,
+   "K": 15,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "CLASS_3",
+    "NONMAXIMAL",
+    "NONMAXIMAL_CUBE"
+   ],
+   "failures": [
+    {
+     "k": 12,
+     "p": 28,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 12,
+     "p": 28,
+     "q": 4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 15,
+     "p": 22,
+     "q": -7,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 15,
+     "p": 22,
+     "q": 7,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -56,
+   "D": 56,
+   "class_number": 8,
+   "field_class_number": 4,
+   "maximal_order": false,
+   "K": 14,
+   "r": 15,
+   "t": 2,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 9,
+     "p": 15,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 15,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 0,
+     "q": -7,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 0,
+     "q": 7,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    18
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -55,
+   "D": 55,
+   "class_number": 4,
+   "field_class_number": 4,
+   "maximal_order": false,
+   "K": 14,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 3,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 3,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 7,
+     "q": -7,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 37,
+     "q": -5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 37,
+     "q": 5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 7,
+     "q": 7,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    4,
+    56
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -54,
+   "D": 54,
+   "class_number": 6,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 14,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 0,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 0,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 7,
+     "p": 17,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 7,
+     "p": 17,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 28,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 28,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 3
+    }
+   ],
+   "x_found_by_scan": [
+    7
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -53,
+   "D": 53,
+   "class_number": 6,
+   "field_class_number": 6,
+   "maximal_order": true,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 2,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 6,
+     "p": 2,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 26,
+     "q": -1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 26,
+     "q": 1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 13,
+     "p": 17,
+     "q": -6,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 13,
+     "p": 17,
+     "q": 6,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [
+    9,
+    29
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -52,
+   "D": 52,
+   "class_number": 4,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 14,
+     "p": 14,
+     "q": -7,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 38,
+     "q": -5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 38,
+     "q": 5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 14,
+     "p": 14,
+     "q": 7,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -51,
+   "D": 51,
+   "class_number": 6,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NONMAXIMAL_CUBE"
+   ],
+   "failures": [
+    {
+     "k": 13,
+     "p": 19,
+     "q": -6,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 13,
+     "p": 19,
+     "q": 6,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -50,
+   "D": 50,
+   "class_number": 6,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 14,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 4,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 4,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 23,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 23,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 11,
+     "p": 9,
+     "q": -5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 11,
+     "p": 9,
+     "q": 5,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -48,
+   "D": 48,
+   "class_number": 4,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 13,
+   "r": 7,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 4,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 4,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 0,
+     "q": -6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 36,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 36,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 0,
+     "q": 6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    4,
+    28
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -47,
+   "D": 47,
+   "class_number": 5,
+   "field_class_number": 5,
+   "maximal_order": false,
+   "K": 13,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 13,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 13,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 18,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 18,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 6,
+     "q": -6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 41,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 41,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 6,
+     "q": 6,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    6,
+    12,
+    63
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 6,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 6
+   }
+  },
+  {
+   "k": -45,
+   "D": 45,
+   "class_number": 4,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 13,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 6,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 6,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 3,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 18,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 18,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 3,
+     "q": 4,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    21
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -44,
+   "D": 44,
+   "class_number": 6,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 13,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 9,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 5,
+     "p": 9,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 5,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 5,
+     "q": 4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 12,
+     "q": -6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 32,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 32,
+     "q": 4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 12,
+     "q": 6,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    5
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -40,
+   "D": 40,
+   "class_number": 4,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 12,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 10,
+     "p": 0,
+     "q": -5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 0,
+     "q": 5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    14
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -39,
+   "D": 39,
+   "class_number": 4,
+   "field_class_number": 4,
+   "maximal_order": false,
+   "K": 12,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 5,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 5,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 5,
+     "q": -5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 31,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 31,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 5,
+     "q": 5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 18,
+     "q": -6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 12,
+     "p": 18,
+     "q": 6,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    4,
+    10,
+    22
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 6,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 6
+   }
+  },
+  {
+   "k": -38,
+   "D": 38,
+   "class_number": 6,
+   "field_class_number": 6,
+   "maximal_order": true,
+   "K": 12,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 8,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 6,
+     "p": 8,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 7,
+     "p": 1,
+     "q": -3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 7,
+     "p": 1,
+     "q": 3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 11,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 11,
+     "q": 4,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -36,
+   "D": 36,
+   "class_number": 4,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 12,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 10,
+     "p": 10,
+     "q": -5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 26,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 26,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": 5,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -35,
+   "D": 35,
+   "class_number": 6,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 11,
+   "r": 6,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NONMAXIMAL_CUBE"
+   ],
+   "failures": [
+    {
+     "k": 9,
+     "p": 13,
+     "q": -4,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 9,
+     "p": 13,
+     "q": 4,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 11,
+     "p": 36,
+     "q": -1,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 11,
+     "p": 36,
+     "q": 1,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    11
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -32,
+   "D": 32,
+   "class_number": 4,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 11,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 8,
+     "p": 0,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 0,
+     "q": 4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 21,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 9,
+     "p": 21,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -31,
+   "D": 31,
+   "class_number": 3,
+   "field_class_number": 3,
+   "maximal_order": false,
+   "K": 11,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 1,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 5,
+     "p": 1,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 7,
+     "p": 8,
+     "q": -3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 7,
+     "p": 8,
+     "q": 3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 8,
+     "p": 4,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 8,
+     "p": 4,
+     "q": 4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 10,
+     "p": 15,
+     "q": -5,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 10,
+     "p": 15,
+     "q": 5,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -29,
+   "D": 29,
+   "class_number": 6,
+   "field_class_number": 6,
+   "maximal_order": true,
+   "K": 10,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 3,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 5,
+     "p": 3,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 6,
+     "p": 10,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 6,
+     "p": 10,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 2,
+     "q": -5,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 2,
+     "q": 5,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -28,
+   "D": 28,
+   "class_number": 2,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 10,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 6,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 6,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 8,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 20,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 22,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 22,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 20,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 8,
+     "q": 4,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    4,
+    8,
+    37
+   ],
+   "expert_scan": {
+    "x_interval": [
+     4,
+     100000
+    ],
+    "signed_points": 6,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 6
+   }
+  },
+  {
+   "k": -27,
+   "D": 27,
+   "class_number": 3,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 10,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NONMAXIMAL_CUBE",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 3,
+     "p": 0,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 3,
+     "p": 0,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 7,
+     "p": 10,
+     "q": -3,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 7,
+     "p": 10,
+     "q": 3,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "div_fails_at_j": 2
+    },
+    {
+     "div_fails_at_j": 3
+    }
+   ],
+   "x_found_by_scan": [
+    3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 1,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 1
+   }
+  },
+  {
+   "k": -26,
+   "D": 26,
+   "class_number": 6,
+   "field_class_number": 6,
+   "maximal_order": true,
+   "K": 10,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 3,
+     "p": 1,
+     "q": -1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 3,
+     "p": 1,
+     "q": 1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 25,
+     "q": -2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 25,
+     "q": 2,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 10,
+     "p": 8,
+     "q": -6,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 10,
+     "p": 8,
+     "q": 6,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [
+    3,
+    35
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -25,
+   "D": 25,
+   "class_number": 2,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 10,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 5,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 5,
+     "p": 10,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 5,
+     "p": 10,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 5,
+     "p": 5,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": -6,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 30,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 10,
+     "p": 10,
+     "q": 6,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    5
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -24,
+   "D": 24,
+   "class_number": 4,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 9,
+   "r": 5,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 0,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 0,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -23,
+   "D": 23,
+   "class_number": 3,
+   "field_class_number": 3,
+   "maximal_order": false,
+   "K": 9,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "CLASS_3"
+   ],
+   "failures": [
+    {
+     "k": 3,
+     "p": 2,
+     "q": -1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 3,
+     "p": 2,
+     "q": 1,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 6,
+     "p": 3,
+     "q": -3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 6,
+     "p": 3,
+     "q": 3,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 8,
+     "p": 12,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 8,
+     "p": 12,
+     "q": 4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 19,
+     "q": -4,
+     "category": "CLASS_3"
+    },
+    {
+     "k": 9,
+     "p": 19,
+     "q": 4,
+     "category": "CLASS_3"
+    }
+   ],
+   "x_found_by_scan": [
+    3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -20,
+   "D": 20,
+   "class_number": 4,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 8,
+   "r": 9,
+   "t": 2,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 6,
+     "p": 6,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 14,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 14,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 6,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    6
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -19,
+   "D": 19,
+   "class_number": 3,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 8,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NONMAXIMAL_CUBE"
+   ],
+   "failures": [
+    {
+     "k": 5,
+     "p": 7,
+     "q": -2,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 5,
+     "p": 7,
+     "q": 2,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 7,
+     "p": 18,
+     "q": -1,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 7,
+     "p": 18,
+     "q": 1,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    7
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -18,
+   "D": 18,
+   "class_number": 2,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 8,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 3,
+     "p": 3,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 3,
+     "p": 3,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 12,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 12,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -16,
+   "D": 16,
+   "class_number": 2,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 8,
+   "r": 3,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 0,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 0,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 16,
+     "q": -4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 8,
+     "p": 16,
+     "q": 4,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": -15,
+   "D": 15,
+   "class_number": 2,
+   "field_class_number": 2,
+   "maximal_order": false,
+   "K": 7,
+   "r": 4,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 4,
+     "p": 2,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 7,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 7,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 2,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 9,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 6,
+     "p": 9,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    4
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": -11,
+   "D": 11,
+   "class_number": 3,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 6,
+   "r": 3,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NONMAXIMAL_CUBE"
+   ],
+   "failures": [
+    {
+     "k": 3,
+     "p": 4,
+     "q": -1,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 3,
+     "p": 4,
+     "q": 1,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 5,
+     "p": 9,
+     "q": -2,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "k": 5,
+     "p": 9,
+     "q": 2,
+     "category": "NONMAXIMAL_CUBE"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    3,
+    15
+   ],
+   "expert_scan": {
+    "x_interval": [
+     3,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -8,
+   "D": 8,
+   "class_number": 2,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 5,
+   "r": 3,
+   "t": 1,
+   "categories": [
+    "NONMAXIMAL",
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 2,
+     "p": 0,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 2,
+     "p": 0,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "div_fails_at_j": 2
+    }
+   ],
+   "x_found_by_scan": [
+    2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     2,
+     100000
+    ],
+    "signed_points": 1,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 1
+   }
+  },
+  {
+   "k": -7,
+   "D": 7,
+   "class_number": 1,
+   "field_class_number": 1,
+   "maximal_order": false,
+   "K": 5,
+   "r": 2,
+   "t": 1,
+   "categories": [
+    "NOT_COPRIME"
+   ],
+   "failures": [
+    {
+     "k": 2,
+     "p": 1,
+     "q": -1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 2,
+     "p": 1,
+     "q": 1,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 1,
+     "q": -3,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 6,
+     "q": -2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 6,
+     "q": 2,
+     "category": "NOT_COPRIME"
+    },
+    {
+     "k": 4,
+     "p": 1,
+     "q": 3,
+     "category": "NOT_COPRIME"
+    }
+   ],
+   "x_found_by_scan": [
+    2,
+    32
+   ],
+   "expert_scan": {
+    "x_interval": [
+     2,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": -1,
+   "D": 1,
+   "class_number": 1,
+   "field_class_number": 1,
+   "maximal_order": true,
+   "K": 2,
+   "r": 1,
+   "t": 1,
+   "categories": [
+    "ELEMENT_CUBE",
+    "UNIT_BEYOND_PM1"
+   ],
+   "units": {
+    "group": "Z/4 = <i>",
+    "all_cubes": true,
+    "witness": "i = (-i)^3",
+    "note": "the certificate rejects the norm-1 representation because it assumes units +-1; the Gaussian units are not the obstruction"
+   },
+   "failures": [
+    {
+     "k": 1,
+     "p": 0,
+     "q": -1,
+     "category": "UNIT_BEYOND_PM1"
+    },
+    {
+     "k": 1,
+     "p": 0,
+     "q": 1,
+     "category": "UNIT_BEYOND_PM1"
+    },
+    {
+     "k": 2,
+     "p": 2,
+     "q": -2,
+     "category": "ELEMENT_CUBE"
+    },
+    {
+     "k": 2,
+     "p": 2,
+     "q": 2,
+     "category": "ELEMENT_CUBE"
+    }
+   ],
+   "x_found_by_scan": [
+    1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     1,
+     100000
+    ],
+    "signed_points": 1,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 1
+   }
+  },
+  {
+   "k": 1,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1,
+    0,
+    2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -1,
+     100000
+    ],
+    "signed_points": 5,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 5
+   }
+  },
+  {
+   "k": 2,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -1,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 3,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -1,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 4,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    0
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -1,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 5,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -1,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 6,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -1,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 7,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -1,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 8,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2,
+    1,
+    2,
+    46
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 7,
+    "nonnegative_y_points": 4,
+    "distinct_x": 4,
+    "published_signed_count": 7
+   }
+  },
+  {
+   "k": 9,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2,
+    0,
+    3,
+    6,
+    40
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 10,
+    "nonnegative_y_points": 5,
+    "distinct_x": 5,
+    "published_signed_count": 10
+   }
+  },
+  {
+   "k": 10,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 12,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2,
+    13
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": 13,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 14,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 15,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    1,
+    109
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": 16,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    0
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 17,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2,
+    -1,
+    2,
+    4,
+    8,
+    43,
+    52,
+    5234
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 16,
+    "nonnegative_y_points": 8,
+    "distinct_x": 8,
+    "published_signed_count": 16
+   }
+  },
+  {
+   "k": 18,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    7
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 19,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    5
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 20,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 21,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 22,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 24,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2,
+    1,
+    10,
+    8158
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 8,
+    "nonnegative_y_points": 4,
+    "distinct_x": 4,
+    "published_signed_count": 8
+   }
+  },
+  {
+   "k": 25,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    0
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 26,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -2,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 27,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 1,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 1
+   }
+  },
+  {
+   "k": 28,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3,
+    2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": 29,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 30,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    19
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 31,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 32,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 33,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 34,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 35,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 36,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3,
+    0,
+    4,
+    12
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 8,
+    "nonnegative_y_points": 4,
+    "distinct_x": 4,
+    "published_signed_count": 8
+   }
+  },
+  {
+   "k": 37,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1,
+    3,
+    243
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 6,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 6
+   }
+  },
+  {
+   "k": 38,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    11
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 39,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 40,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    6
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 41,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 42,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 43,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 44,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2,
+    5
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": 45,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 46,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 48,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 49,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    0
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 50,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 51,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 52,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 53,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 54,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 55,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    9
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 56,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 57,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2,
+    4,
+    7
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 6,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 6
+   }
+  },
+  {
+   "k": 58,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 59,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 60,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 61,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 62,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 63,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3,
+    1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -3,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": 64,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -4,
+    0,
+    8
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 5,
+    "nonnegative_y_points": 3,
+    "distinct_x": 3,
+    "published_signed_count": 5
+   }
+  },
+  {
+   "k": 65,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -4,
+    -1,
+    14,
+    584
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 8,
+    "nonnegative_y_points": 4,
+    "distinct_x": 4,
+    "published_signed_count": 8
+   }
+  },
+  {
+   "k": 66,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 67,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 68,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -4,
+    152
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 4,
+    "nonnegative_y_points": 2,
+    "distinct_x": 2,
+    "published_signed_count": 4
+   }
+  },
+  {
+   "k": 69,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 70,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 71,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    5
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 72,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 73,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -4,
+    2,
+    3,
+    6,
+    72,
+    356
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 12,
+    "nonnegative_y_points": 6,
+    "distinct_x": 6,
+    "published_signed_count": 12
+   }
+  },
+  {
+   "k": 74,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 75,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 76,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 77,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 78,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 79,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    45
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 80,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -4,
+    1,
+    4,
+    44
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 8,
+    "nonnegative_y_points": 4,
+    "distinct_x": 4,
+    "published_signed_count": 8
+   }
+  },
+  {
+   "k": 81,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    0
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 82,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 83,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 84,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 85,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 86,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 88,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 89,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -4,
+    -2,
+    10,
+    55
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 8,
+    "nonnegative_y_points": 4,
+    "distinct_x": 4,
+    "published_signed_count": 8
+   }
+  },
+  {
+   "k": 90,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 91,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 92,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    2
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 93,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 94,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    3
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 95,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 96,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 0,
+    "nonnegative_y_points": 0,
+    "distinct_x": 0,
+    "published_signed_count": 0
+   }
+  },
+  {
+   "k": 97,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    18
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 98,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    7
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 99,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    1
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 2,
+    "nonnegative_y_points": 1,
+    "distinct_x": 1,
+    "published_signed_count": 2
+   }
+  },
+  {
+   "k": 100,
+   "categories": [
+    "REAL_QUADRATIC"
+   ],
+   "x_found_by_scan": [
+    -4,
+    0,
+    5,
+    20,
+    24,
+    2660
+   ],
+   "expert_scan": {
+    "x_interval": [
+     -4,
+     100000
+    ],
+    "signed_points": 12,
+    "nonnegative_y_points": 6,
+    "distinct_x": 6,
+    "published_signed_count": 12
+   }
+  }
+ ]
+}

@@ -33,9 +33,16 @@ MORDELL = ['A081119', 'A081120', 'A054504', 'A081121']
 
 
 def acquire(args):
+    from perfectpower.oeis_dsl import parse_setsq
+    from perfectpower.oeis_orbit import ORBITS
     idx = load_global_index(args.index)
-    cands = discover(idx)
-    ids = sorted({c['oeis'] for c in cands} | set(MORDELL))
+    found = {}
+    for name, make in ORBITS.items():
+        A, B = make(90)
+        found[name] = discover(idx, A=A, B=B)
+    cands = found['sqrt2']
+    sets = sorted(aid for aid, (_, nm, _) in idx.items() if parse_setsq(nm))
+    ids = sorted({c['oeis'] for v in found.values() for c in v} | set(sets) | set(MORDELL))
     src = GitExport(args.git) if args.git else SeqDir(args.seqdir)
     if args.git:
         src.clone()
@@ -58,8 +65,11 @@ def acquire(args):
         'files': files,
     }
     (DATA / 'manifest.json').write_text(json.dumps(manifest, indent=1) + '\n')
-    (DATA / 'discovery_sqrt2.json').write_text(json.dumps(cands, indent=1) + '\n')
-    print(f'{len(cands)} candidates, {len(files)} entries -> {DATA.relative_to(ROOT)}')
+    for name, c in found.items():
+        (DATA / f'discovery_{name}.json').write_text(json.dumps(c, indent=1) + '\n')
+    (DATA / 'setsq_candidates.json').write_text(json.dumps(sets, indent=1) + '\n')
+    print(f"{ {k: len(v) for k, v in found.items()} } orbit candidates, {len(sets)} set definitions, "
+          f'{len(files)} entries -> {DATA.relative_to(ROOT)}')
 
 
 def verify():
@@ -76,8 +86,13 @@ def verify():
     tally = {}
     for r in out['atlas']:
         tally[r['outcome']] = tally.get(r['outcome'], 0) + 1
+    for name, rows in out['other_orbits'].items():
+        t = {}
+        for r in rows:
+            t[r['outcome']] = t.get(r['outcome'], 0) + 1
+        print(f'{name}: {len(rows)} entries {t}')
     m = out['mordell']
-    print(f"{len(out['atlas'])} entries {tally}; Mordell: {m['certified_checked']} certified lists "
+    print(f"sqrt2: {len(out['atlas'])} entries {tally}; Mordell: {m['certified_checked']} certified lists "
           f"checked, {len(m['disagreements'])} disagreements, {len(m['leads'])} leads "
           f"-> {path.relative_to(ROOT)}")
     if m['disagreements']:

@@ -1,0 +1,458 @@
+[
+ {
+  "oeis": "A000032",
+  "filter": "all",
+  "map": "A",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 18,
+  "name_prefix": "Lucas numbers beginning at 2: L(n) = L(n-1) + L(n-2), L(0) ="
+ },
+ {
+  "oeis": "A000045",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 20,
+  "name_prefix": "Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and "
+ },
+ {
+  "oeis": "A000204",
+  "filter": "all",
+  "map": "A",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 18,
+  "name_prefix": "Lucas numbers (beginning with 1): L(n) = L(n-1) + L(n-2) wit"
+ },
+ {
+  "oeis": "A001254",
+  "filter": "all",
+  "map": "A^2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 14,
+  "name_prefix": "Squares of Lucas numbers."
+ },
+ {
+  "oeis": "A001519",
+  "filter": "even",
+  "map": "A+2B",
+  "power_index_of_first_term": -2,
+  "index_terms_agreeing": 13,
+  "name_prefix": "a(n) = 3*a(n-1) - a(n-2) for n >= 2, with a(0) = a(1) = 1."
+ },
+ {
+  "oeis": "A001906",
+  "filter": "all",
+  "map": "AB",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 15,
+  "name_prefix": "F(2n) = bisection of Fibonacci sequence: a(n) = 3*a(n-1) - a"
+ },
+ {
+  "oeis": "A002878",
+  "filter": "odd",
+  "map": "A",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 14,
+  "name_prefix": "Bisection of Lucas sequence: a(n) = L(2*n+1)."
+ },
+ {
+  "oeis": "A005248",
+  "filter": "even",
+  "map": "A",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 14,
+  "name_prefix": "Bisection of Lucas numbers: a(n) = L(2*n) = A000032(2*n)."
+ },
+ {
+  "oeis": "A006355",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 18,
+  "name_prefix": "Number of binary vectors of length n containing no singleton"
+ },
+ {
+  "oeis": "A007598",
+  "filter": "all",
+  "map": "B^2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 15,
+  "name_prefix": "Squared Fibonacci numbers: a(n) = F(n)^2 where F = A000045."
+ },
+ {
+  "oeis": "A011783",
+  "filter": "even",
+  "map": "A+2B",
+  "power_index_of_first_term": -2,
+  "index_terms_agreeing": 13,
+  "name_prefix": "Duplicate of A001519."
+ },
+ {
+  "oeis": "A020695",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 3,
+  "index_terms_agreeing": 18,
+  "name_prefix": "Pisot sequence E(2,3)."
+ },
+ {
+  "oeis": "A020701",
+  "filter": "all",
+  "map": "A+2B",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 17,
+  "name_prefix": "Pisot sequences E(3,5), P(3,5)."
+ },
+ {
+  "oeis": "A020712",
+  "filter": "all",
+  "map": "A+2B",
+  "power_index_of_first_term": 2,
+  "index_terms_agreeing": 16,
+  "name_prefix": "Pisot sequences E(5,8), P(5,8)."
+ },
+ {
+  "oeis": "A025169",
+  "filter": "all",
+  "map": "2AB",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 14,
+  "name_prefix": "a(n) = 2*Fibonacci(2*n+2)."
+ },
+ {
+  "oeis": "A033192",
+  "filter": "all",
+  "map": "B(B+1)/2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 16,
+  "name_prefix": "a(n) = binomial(Fibonacci(n) + 1, 2)."
+ },
+ {
+  "oeis": "A033888",
+  "filter": "even",
+  "map": "AB",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 11,
+  "name_prefix": "a(n) = Fibonacci(4*n)."
+ },
+ {
+  "oeis": "A033890",
+  "filter": "odd",
+  "map": "AB",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 11,
+  "name_prefix": "a(n) = Fibonacci(4*n + 2)."
+ },
+ {
+  "oeis": "A048575",
+  "filter": "even",
+  "map": "A+2B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 14,
+  "name_prefix": "Pisot sequences L(2,5), E(2,5)."
+ },
+ {
+  "oeis": "A049684",
+  "filter": "even",
+  "map": "B^2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 11,
+  "name_prefix": "a(n) = Fibonacci(2n)^2."
+ },
+ {
+  "oeis": "A052995",
+  "filter": "even",
+  "map": "A+B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 14,
+  "name_prefix": "Expansion of 2*x*(1 - x)/(1 - 3*x + x^2)."
+ },
+ {
+  "oeis": "A054886",
+  "filter": "all",
+  "map": "A+B",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 15,
+  "name_prefix": "Layer counting sequence for hyperbolic tessellation by cuspi"
+ },
+ {
+  "oeis": "A055389",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 17,
+  "name_prefix": "a(0) = 1, then twice the Fibonacci sequence."
+ },
+ {
+  "oeis": "A055819",
+  "filter": "even",
+  "map": "A+B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 14,
+  "name_prefix": "Row sums of array T in A055818; twice the odd-indexed Fibona"
+ },
+ {
+  "oeis": "A068922",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": 2,
+  "index_terms_agreeing": 16,
+  "name_prefix": "Number of ways to tile a 3 X 2n room with 1 X 2 Tatami mats."
+ },
+ {
+  "oeis": "A069041",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 14,
+  "name_prefix": "Fibonacci numbers with at most two distinct digits."
+ },
+ {
+  "oeis": "A071679",
+  "filter": "all",
+  "map": "A+2B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 17,
+  "name_prefix": "Least k such that the maximum number of elements among the c"
+ },
+ {
+  "oeis": "A077373",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 11,
+  "name_prefix": "Fibonacci numbers whose external digits as well as internal "
+ },
+ {
+  "oeis": "A078642",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": 3,
+  "index_terms_agreeing": 17,
+  "name_prefix": "Numbers with two representations as the sum of two Fibonacci"
+ },
+ {
+  "oeis": "A080023",
+  "filter": "all",
+  "map": "A",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 17,
+  "name_prefix": "log_phi(n) is closer to an integer than is log_phi(m) for an"
+ },
+ {
+  "oeis": "A081068",
+  "filter": "odd",
+  "map": "B^2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 11,
+  "name_prefix": "a(n) = (Lucas(4*n+2) + 2)/5, or Fibonacci(2*n+1)^2, or A0810"
+ },
+ {
+  "oeis": "A081069",
+  "filter": "even",
+  "map": "A^2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 11,
+  "name_prefix": "a(n) = Lucas(4n)+2 = Lucas(2n)^2."
+ },
+ {
+  "oeis": "A081071",
+  "filter": "odd",
+  "map": "A^2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 10,
+  "name_prefix": "a(n) = Lucas(4*n+2)-2 = Lucas(2*n+1)^2."
+ },
+ {
+  "oeis": "A088305",
+  "filter": "all",
+  "map": "AB",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 14,
+  "name_prefix": "a(0) = 1, a(n) = Fibonacci(2*n). It has the property that a("
+ },
+ {
+  "oeis": "A090991",
+  "filter": "all",
+  "map": "A+B",
+  "power_index_of_first_term": 3,
+  "index_terms_agreeing": 16,
+  "name_prefix": "Number of meaningful differential operations of the n-th ord"
+ },
+ {
+  "oeis": "A093960",
+  "filter": "odd",
+  "map": "A",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 13,
+  "name_prefix": "a(1) = 1, a(2) = 2, a(n+1) = n*a(1) + (n-1)*a(2) + ... + (n-"
+ },
+ {
+  "oeis": "A111282",
+  "filter": "all",
+  "map": "2AB",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 13,
+  "name_prefix": "Number of permutations avoiding the patterns {1432,2431,3412"
+ },
+ {
+  "oeis": "A118658",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 18,
+  "name_prefix": "a(n) = 2*F(n-1) = L(n) - F(n), where F(n) and L(n) are Fibon"
+ },
+ {
+  "oeis": "A122367",
+  "filter": "even",
+  "map": "A+2B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 13,
+  "name_prefix": "Dimension of 3-variable non-commutative harmonics (twisted d"
+ },
+ {
+  "oeis": "A126358",
+  "filter": "even",
+  "map": "A+B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 13,
+  "name_prefix": "Number of base 4 n-digit numbers with adjacent digits differ"
+ },
+ {
+  "oeis": "A128588",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 17,
+  "name_prefix": "Expansion of g.f. x*(1+x+x^2)/(1-x-x^2)."
+ },
+ {
+  "oeis": "A132636",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 18,
+  "name_prefix": "a(n) = Fibonacci(n) mod n^3."
+ },
+ {
+  "oeis": "A135064",
+  "filter": "odd",
+  "map": "A",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 12,
+  "name_prefix": "Numbers n such that the quintic polynomial x^5 - 10*n*x^2 - "
+ },
+ {
+  "oeis": "A163733",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 17,
+  "name_prefix": "Number of n X 2 binary arrays with all 1's connected, all co"
+ },
+ {
+  "oeis": "A169985",
+  "filter": "all",
+  "map": "A",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 16,
+  "name_prefix": "Round phi^n to the nearest integer."
+ },
+ {
+  "oeis": "A198834",
+  "filter": "all",
+  "map": "2B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 18,
+  "name_prefix": "Number of sequences of n coin flips that win on the last fli"
+ },
+ {
+  "oeis": "A202278",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 9,
+  "name_prefix": "Right-truncatable Fibonacci numbers: every prefix is Fibonac"
+ },
+ {
+  "oeis": "A212804",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 19,
+  "name_prefix": "Expansion of (1 - x)/(1 - x - x^2)."
+ },
+ {
+  "oeis": "A237268",
+  "filter": "all",
+  "map": "AB",
+  "power_index_of_first_term": 1,
+  "index_terms_agreeing": 12,
+  "name_prefix": "a(1)=1; for n > 1, a(n) is the smallest F(m) > F(n) such tha"
+ },
+ {
+  "oeis": "A274163",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 19,
+  "name_prefix": "Number of real integers in n-th generation of tree T(4i) def"
+ },
+ {
+  "oeis": "A284647",
+  "filter": "even",
+  "map": "B(B+1)/2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 12,
+  "name_prefix": "Number of nonisomorphic unfoldings in an n-gonal Archimedean"
+ },
+ {
+  "oeis": "A286810",
+  "filter": "even",
+  "map": "A^2",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 10,
+  "name_prefix": "Number of non-attacking bishop positions on a cylindrical 2 "
+ },
+ {
+  "oeis": "A288219",
+  "filter": "all",
+  "map": "A",
+  "power_index_of_first_term": 2,
+  "index_terms_agreeing": 16,
+  "name_prefix": "a(n) = a(n-1) + a(n-2) for n >= 3, where a(0) = 2, a(1) = 4,"
+ },
+ {
+  "oeis": "A324969",
+  "filter": "all",
+  "map": "B",
+  "power_index_of_first_term": 0,
+  "index_terms_agreeing": 19,
+  "name_prefix": "Number of unlabeled rooted identity trees with n vertices wh"
+ },
+ {
+  "oeis": "A329723",
+  "filter": "all",
+  "map": "A",
+  "power_index_of_first_term": -2,
+  "index_terms_agreeing": 18,
+  "name_prefix": "Coefficients of expansion of (1-2x^3)/(1-x-x^2) in powers of"
+ },
+ {
+  "oeis": "A358995",
+  "filter": "all",
+  "map": "A",
+  "power_index_of_first_term": 2,
+  "index_terms_agreeing": 13,
+  "name_prefix": "Lucas numbers which are the sum of three repdigits."
+ },
+ {
+  "oeis": "A373566",
+  "filter": "all",
+  "map": "A+2B",
+  "power_index_of_first_term": -1,
+  "index_terms_agreeing": 16,
+  "name_prefix": "Expansion of x - 1/(x - 1/(x + 1))."
+ }
+]

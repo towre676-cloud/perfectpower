@@ -71,9 +71,27 @@ def coordinate(fname: str, mname: str, i: int, A=None, B=None):
     return MAPS[mname](A[k], B[k])
 
 
-def discover(index: dict, width: int = 5, min_terms: int = 8) -> list[dict]:
+def unit_orbit(t: int, sigma: int, a0: tuple[int, int], b0: tuple[int, int], n: int = 90):
+    """The two coordinate sequences of a quadratic unit: x(k+2) = t x(k+1) + sigma x(k)."""
+    A, B = list(a0), list(b0)
+    while len(A) < n:
+        A.append(t * A[-1] + sigma * A[-2])
+        B.append(t * B[-1] + sigma * B[-2])
+    return A[:n], B[:n]
+
+
+# the orbits searched: (1 + sqrt 2)^k = A + B sqrt 2, phi^k = (L + F sqrt 5)/2, (2 + sqrt 3)^k
+ORBITS = {
+    'sqrt2': lambda n=90: orbit(n),
+    'phi': lambda n=90: unit_orbit(1, 1, (2, 1), (0, 1), n),
+    'sqrt3': lambda n=90: unit_orbit(4, -1, (1, 2), (0, 1), n),
+}
+
+
+def discover(index: dict, width: int = 5, min_terms: int = 8, A=None, B=None) -> list[dict]:
     """Candidate coordinate maps for every index entry: (entry, filter, map, shift)."""
-    A, B = orbit(90)
+    if A is None:
+        A, B = orbit(90)
     windows: dict[tuple, list] = {}
     for aid, (off, name, ts) in index.items():
         for p in range(min(3, max(0, len(ts) - width))):
@@ -152,6 +170,43 @@ PROVED = {
                 'lean': [L + 'A075870', L + 'A075870_enumerates']},
 }
 
+# hand-written proofs for definitions that need more than a recurrence (PerfectPower/SqrtTwoBatch.lean)
+LB = 'PerfectPower.SqrtTwoBatch.'
+PROVED.update({
+    'A046090': {'offset': 0, 'kind': 'Pythagorean triples (X, X+1, Z) by increasing Z, X+1 (from (0,1,1))',
+                'value': lambda n: (_A(2 * n + 1) + 1) // 2, 'coordinate': '(A_{2n+1}+1)/2',
+                'lean': [LB + 'A046090', LB + 'triples_listed', LB + 'triple_iff', LB + 'A046090_eq']},
+    'A115598': {'offset': 1, 'kind': 'Pythagorean triples by increasing Z (from (3,4,5)), Z-(X+1)',
+                'value': lambda n: _B(2 * n + 1) - (_A(2 * n + 1) + 1) // 2,
+                'coordinate': 'B_{2n+1} - (A_{2n+1}+1)/2',
+                'lean': [LB + 'A115598', LB + 'pos_triples_listed', LB + 'A115598_eq']},
+    'A115599': {'offset': 1, 'kind': 'Pythagorean triples by increasing Z (from (3,4,5)), Z-X',
+                'value': lambda n: _B(2 * n + 1) - (_A(2 * n + 1) - 1) // 2,
+                'coordinate': 'B_{2n+1} - (A_{2n+1}-1)/2',
+                'lean': [LB + 'A115599', LB + 'pos_triples_listed', LB + 'A115599_eq']},
+    'A098602': {'offset': 0, 'kind': 'product of entries A001652 * A046090',
+                'value': lambda n: (_A(2 * n + 1) ** 2 - 1) // 4, 'coordinate': '(A_{2n+1}^2-1)/4',
+                'lean': [LB + 'A098602', LB + 'A098602_eq']},
+    'A090390': {'offset': 0, 'kind': 'matrix orbit: (1,0,0) M^n, leading entry',
+                'value': lambda n: _A(n) ** 2, 'coordinate': 'A_n^2',
+                'lean': [LB + 'A090390', LB + 'vM_eq', LB + 'A090390_eq']},
+    'A078522': {'offset': 1, 'kind': 'set: k with (k+1)(2k+1) a square (coprime splitting), increasing',
+                'value': lambda n: _B(2 * n - 1) ** 2 - 1, 'coordinate': 'B_{2n-1}^2 - 1',
+                'lean': [LB + 'A078522', LB + 'A078522_enumerates']},
+    'A055792': {'offset': 0, 'kind': 'set: a and floor(a/2) squares; 0 is the exceptional element',
+                'value': lambda n: 0 if n == 0 else _A(2 * n - 2) ** 2, 'coordinate': '0, then A_{2n-2}^2',
+                'lean': [LB + 'A055792', LB + 'A055792_enumerates', LB + 'sq_eq_two_sq']},
+    'A046176': {'offset': 1, 'kind': 'set: k with k^2 hexagonal (residue filter mod 4), increasing',
+                'value': lambda n: _B(4 * n - 2) // 2, 'coordinate': 'B_{4n-2}/2',
+                'lean': [LB + 'A046176', LB + 'A046176_enumerates', LB + 'A_mod4']},
+    'A008843': {'offset': 0, 'kind': 'set: x^2 with x^2 - 2y^2 = -1, increasing',
+                'value': lambda n: _A(2 * n + 1) ** 2, 'coordinate': 'A_{2n+1}^2',
+                'lean': [LB + 'A008843', LB + 'A008843_enumerates', LB + 'A008843_A002315']},
+    'A008844': {'offset': 0, 'kind': 'set: y^2 with x^2 - 2y^2 = -1, increasing',
+                'value': lambda n: _B(2 * n + 1) ** 2, 'coordinate': 'B_{2n+1}^2',
+                'lean': [LB + 'A008844', LB + 'A008844_enumerates', LB + 'A008844_A001653']},
+})
+
 
 def _lean_names() -> set[str]:
     names = set()
@@ -178,10 +233,25 @@ def check_proved(e: Entry, lean_names: set[str] | None = None) -> dict:
             'first_disagreement': bad, 'missing_lean': missing, 'ok': ok}
 
 
-def atlas(source, candidates: list[dict]) -> list[dict]:
-    """Every candidate, re-verified against its full `.seq` entry."""
+def load_auto() -> dict:
+    """Entries proved by the generated Lean (`receipts/oeis_auto.json`), by id."""
+    p = ROOT / 'receipts' / 'oeis_auto.json'
+    if not p.exists():
+        return {}
+    return {r['oeis']: r for r in json.loads(p.read_text())['entries'] if r['status'] == 'PROVED'}
+
+
+def atlas(source, candidates: list[dict], A=None, B=None, auto: dict | None = None) -> list[dict]:
+    """Every candidate, re-verified against its full `.seq` entry.
+
+    `auto` (from `load_auto`) adds the generated proofs: an entry whose definition the compiler
+    proved equal to an orbit coordinate is promoted; when that equality starts after a finite
+    initial segment and the discovered coordinate disagrees there, the outcome is
+    `EXCEPTIONAL_SET_PROVED` (equal outside a finite set, which is recorded)."""
     lean_names = _lean_names()
-    A, B = orbit(400)
+    if A is None:
+        A, B = orbit(400)
+    auto = auto or {}
     out = []
     for c in candidates:
         text = source.text(c['oeis'])
@@ -212,15 +282,28 @@ def atlas(source, candidates: list[dict]) -> list[dict]:
                             coordinate(c['filter'], c['map'], base + i, A, B) != t), default=-1)
             if last_bad < len(e.terms) - 8:
                 rec['agrees_from_term'] = e.offset + last_bad + 1
+            g = auto.get(e.id)
+            if g is not None and g.get('shift') and rec.get('agrees_from_term') is not None:
+                rec['outcome'] = 'EXCEPTIONAL_SET_PROVED'
+                rec['proof'] = _auto_proof(g)
         elif e.id in PROVED:
             chk = check_proved(e, lean_names)
             rec['proof'] = {'kind': PROVED[e.id]['kind'], 'coordinate': PROVED[e.id]['coordinate'],
                             'lean': PROVED[e.id]['lean'], **chk}
             rec['outcome'] = 'DEFINITION_PROVED_EQUIVALENT' if chk['ok'] else 'TERMS_AGREE_UNPROVED'
+        elif e.id in auto:
+            rec['proof'] = _auto_proof(auto[e.id])
+            rec['outcome'] = 'DEFINITION_PROVED_EQUIVALENT'
         else:
             rec['outcome'] = 'TERMS_AGREE_UNPROVED'
         out.append(rec)
     return out
+
+
+def _auto_proof(g: dict) -> dict:
+    return {'kind': 'generated: ' + g['translation']['kind'], 'relation': g.get('relation'),
+            'family': g.get('family'), 'fit': g.get('fit'),
+            'lean': ['PerfectPower.OEISAuto.' + t for t in g['theorems']]}
 
 
 # --------------------------------------------------------------------------------------------
@@ -290,6 +373,40 @@ def mordell_check(source) -> dict:
                     'the route used when the rank is 0: the integral points are the torsion points.'}
 
 
+PROVED_OUTCOMES = ('DEFINITION_PROVED_EQUIVALENT', 'TRANSPORTED_FROM_DUPLICATE')
+
+
+def transport(source, rows: list[dict]) -> None:
+    """Proof transport along the reference graph: an entry named "Duplicate of X" (or
+    "Essentially a duplicate of X") whose target X is proved, and whose every term agrees with X at
+    the same index, is `TRANSPORTED_FROM_DUPLICATE`."""
+    by_id = {r['oeis']: r for r in rows}
+    for r in rows:
+        if r['outcome'] != 'TERMS_AGREE_UNPROVED':
+            continue
+        e = parse_seq(source.text(r['oeis']))
+        m = re.match(r'\s*(?:Essentially a )?[Dd]uplicate of (A\d{6})', e.name)
+        if not m or m.group(1) not in by_id or by_id[m.group(1)]['outcome'] not in PROVED_OUTCOMES:
+            continue
+        t = dict(parse_seq(source.text(m.group(1))).indexed())
+        mine = e.indexed()
+        if all(n in t and t[n] == v for n, v in mine):
+            r['outcome'] = 'TRANSPORTED_FROM_DUPLICATE'
+            r['proof'] = {'kind': 'duplicate entry', 'target': m.group(1),
+                          'terms_compared': len(mine), 'lean': by_id[m.group(1)]['proof']['lean']}
+
+
 def run(source, candidates: list[dict]) -> dict:
+    auto = load_auto()
+    others = {}
+    for name in ('phi', 'sqrt3'):
+        p = ROOT / 'data' / 'oeis' / f'discovery_{name}.json'
+        if p.exists():
+            A, B = ORBITS[name](400)
+            others[name] = atlas(source, json.loads(p.read_text()), A, B, auto)
+            transport(source, others[name])
+    main = atlas(source, candidates, auto=auto)
+    transport(source, main)
     return {'snapshot': source.version(), 'orbit': '(1 + sqrt 2)^k = A_k + B_k sqrt 2',
-            'atlas': atlas(source, candidates), 'mordell': mordell_check(source)}
+            'atlas': main, 'other_orbits': others,
+            'mordell': mordell_check(source)}

@@ -198,3 +198,118 @@ def standalone_file(name: str, r: int, s: int, D: int) -> str:
     return ("import PerfectPower.Descent\n\n"
             "/-! Emitted by `python -m perfectpower prove`; checked by the kernel, not trusted. -/\n\n"
             "open PerfectPower\n\n" + lean_theorem(name, r, s, D) + f"\n#print axioms {name}\n")
+
+
+def _is_element_cube(D: int, k: int, p: int, q: int) -> bool:
+    """p + q sqrt(-D) = (a + b sqrt(-D))^3 for some a, b with a^2 + D b^2 = k."""
+    for b in range(-isqrt(k // D) - 1 if D else 0, isqrt(k // D) + 2 if D else 1):
+        t = k - D * b * b
+        if t < 0:
+            continue
+        a0 = isqrt(t)
+        if a0 * a0 != t:
+            continue
+        for a in {a0, -a0}:
+            if (W1(D, a, b), -W2(D, a, b)) == (p, q) or (W1(D, a, b), -W2(D, a, b)) == (-p, -q):
+                return True
+    return False
+
+
+def field_class_number(D: int) -> int:
+    """The class number of Q(sqrt(-D)): reduced forms of the fundamental discriminant."""
+    m, f = D, 2
+    while f * f <= m:
+        while m % (f * f) == 0:
+            m //= f * f
+        f += 1
+    disc = -m if m % 4 == 3 else -4 * m
+    h, a = 0, 1
+    while 3 * a * a <= -disc:
+        for b in range(-a + 1, a + 1):
+            if (b * b - disc) % (4 * a):
+                continue
+            c = (b * b - disc) // (4 * a)
+            if c < a or (b < 0 and a == c) or gcd(gcd(a, abs(b)), c) != 1:
+                continue
+            h += 1
+        a += 1
+    return h
+
+
+def _is_half_cube(D: int, k: int, p: int, q: int) -> bool:
+    """p + q sqrt(-D) = ((a + b sqrt(-D))/2)^3 with a = b mod 2: a cube in the maximal order of
+    Q(sqrt(-D)) (D = 3 mod 4) that is not a cube in Z[sqrt(-D)]."""
+    if D % 4 != 3:
+        return False
+    for b in range(-isqrt(4 * k // D) - 1, isqrt(4 * k // D) + 2):
+        t = 4 * k - D * b * b
+        if t < 0:
+            continue
+        a0 = isqrt(t)
+        if a0 * a0 != t or (a0 - b) % 2:
+            continue
+        for a in {a0, -a0}:
+            X, Y = W1(D, a, b), -W2(D, a, b)
+            if (X, Y) in ((8 * p, 8 * q), (-8 * p, -8 * q)):
+                return True
+    return False
+
+
+def diagnose(D: int, max_j: int = 5, max_K: int = 200) -> dict:
+    """Why `certificate(D)` fails for y^2 = x^3 - D, by the first failing check.
+
+    Categories (a curve can have several table failures; all are listed):
+    * `BOX`: the Thue box gives K > max_K, or a j above max_j (a search limit, not an obstruction);
+    * `UNIT_BEYOND_PM1`: a norm-1 representation with q != 0 (only D = 1: the units +-i).  This
+      is a limit of the certificate, not of the arithmetic: the table assumes the unit group is
+      {+-1}, but every Gaussian unit is a cube (i = (-i)^3), so the descent conclusion survives
+      once units are absorbed into the cube;
+    * `ELEMENT_CUBE`: p + q sqrt(-D) with q != 0 is itself a cube of an element of norm k, so the
+      table's "q = 0" test is too strict (the certificate would need to allow cubes);
+    * `NONMAXIMAL_CUBE`: it is the cube of ((a + b sqrt(-D))/2), an element of the maximal order
+      but not of Z[sqrt(-D)] (D = 3 mod 4): the descent has to run in the maximal order;
+    * `CLASS_3`: a representation of k^3 that is not the cube of an element, even in the maximal
+      order, and 3 divides the class number of Q(sqrt(-D)): a nonprincipal ideal whose cube is
+      principal can occur;
+    * `NOT_COPRIME`: not a cube, but the class number of Q(sqrt(-D)) is prime to 3: the
+      representation shares a prime with its conjugate (a prime over 2 or over D), so the
+      coprimality step of the descent, not the class group, is what fails;
+    * `NONMAXIMAL`: div_ok fails at a j: Z[sqrt(-D)] is not integrally closed at a prime of j."""
+    hmax = field_class_number(D)
+    out = {'D': D, 'class_number': class_number(D), 'field_class_number': hmax,
+           'maximal_order': _squarefree(D) and D % 4 in (1, 2)}
+    K, r, t = thue_box(D)
+    out.update({'K': K, 'r': r, 't': t})
+    if K > max_K or isqrt(K) > max_j:
+        out['categories'] = ['BOX']
+        return out
+    Q = 0
+    while D * (Q + 1) ** 2 <= K ** 3:
+        Q += 1
+    bad, js = table(D, K, Q)
+    cats, detail = set(), []
+    for b in bad:
+        if 'div' in b:
+            cats.add('NONMAXIMAL')
+            detail.append({'div_fails_at_j': b['div']})
+            continue
+        k, p, q = b['k'], b['p'], b['q']
+        if k == 1:
+            c = 'UNIT_BEYOND_PM1'
+        elif _is_element_cube(D, k, p, q):
+            c = 'ELEMENT_CUBE'
+        elif _is_half_cube(D, k, p, q):
+            c = 'NONMAXIMAL_CUBE'
+        elif hmax % 3 == 0:
+            c = 'CLASS_3'
+        else:
+            c = 'NOT_COPRIME'
+        cats.add(c)
+        detail.append({'k': k, 'p': p, 'q': q, 'category': c})
+    out['categories'] = sorted(cats) or ['CERTIFIED']
+    if D == 1:
+        out['units'] = {'group': 'Z/4 = <i>', 'all_cubes': True, 'witness': 'i = (-i)^3',
+                        'note': 'the certificate rejects the norm-1 representation because it '
+                                'assumes units +-1; the Gaussian units are not the obstruction'}
+    out['failures'] = detail[:8]
+    return out

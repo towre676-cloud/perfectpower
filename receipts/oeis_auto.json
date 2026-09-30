@@ -1,0 +1,3921 @@
+{
+ "snapshot": {
+  "adapter": "GitExport",
+  "url": "https://github.com/oeis/oeisdata.git",
+  "commit": "14eb04df5c1a66f3b8c6d19ac8a5c1dce75f9014",
+  "commit_date": "2026-09-30T03:03:26-04:00",
+  "time_txt": "2026-09-30T03:00:20-04:00",
+  "license": "OEIS content: CC BY-SA 4.0 (The OEIS Foundation); files are unmodified copies",
+  "global_index": {
+   "file": "all_sequences_index.tsv",
+   "entries": 399743,
+   "candidates": 5617,
+   "entries_examined": 399743,
+   "entries_included": 5617,
+   "format": "perfectpower-oeis-corpus/1",
+   "license": "OEIS content: CC BY-SA 4.0; retain attribution and source references",
+   "max_bytes": 28000000,
+   "selection": "heuristic text relevance; neither completeness nor mathematical equivalence is asserted",
+   "source": "official oeis/oeisdata export",
+   "source_archive_filename": "01-oeisdata-main.zip",
+   "source_sha256": "d781e20888ca7d3ba6295dfb6a29c56fa6a0f79b38cd64bc6f613c3acbe0586f",
+   "source_time_txt": "2026-09-29T03:00:25-04:00"
+  }
+ },
+ "lean_file": "PerfectPower/Generated/OEISAuto.lean",
+ "namespace": "PerfectPower.OEISAuto",
+ "promotion_rule": "the encoding, read from the entry name, reproduces every listed term at the entry offset; the generated Lean definition is that encoding; the generated theorem compiles",
+ "tally": {
+  "PROVED": 69,
+  "NOT_TRANSLATED": 71
+ },
+ "withheld_sqrt3": [
+  {
+   "oeis": "A001075",
+   "discovered": "A on all powers, shift 0",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A001353",
+   "discovered": "B on all powers, shift 0",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A001835",
+   "discovered": "A+B on all powers, shift -1",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    -1,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A007654",
+   "discovered": "(A-1)/2 on even powers, shift 0",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A010905",
+   "discovered": "B on all powers, shift 2",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A011943",
+   "discovered": "A on even powers, shift 0",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A011944",
+   "discovered": "AB on all powers, shift 0",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    2,
+    0,
+    2,
+    0,
+    1,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A028230",
+   "discovered": "A+2B on even powers, shift 0",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A052530",
+   "discovered": "2B on all powers, shift 0",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A055793",
+   "discovered": "A^2 on all powers, shift -1",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A067900",
+   "discovered": "2B on even powers, shift 0",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    2,
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A079935",
+   "discovered": "A+B on all powers, shift 0",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A094347",
+   "discovered": "A on odd powers, shift -1",
+   "status": "PROVED",
+   "proved_family": "sqrt3",
+   "fit": [
+    2,
+    0,
+    1,
+    2,
+    -3,
+    0
+   ],
+   "relation": "exact",
+   "mechanism_agrees": true
+  },
+  {
+   "oeis": "A098301",
+   "discovered": "B^2 on all powers, shift 0",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A102344",
+   "discovered": "A on even powers, shift 0",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A103974",
+   "discovered": "A^2+B^2 on all powers, shift 0",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A122769",
+   "discovered": "A+B on even powers, shift 0",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A189356",
+   "discovered": "A-B on even powers, shift 1",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  },
+  {
+   "oeis": "A195503",
+   "discovered": "B on all powers, shift 2",
+   "status": "NOT_TRANSLATED",
+   "proved_family": null,
+   "fit": null,
+   "relation": null,
+   "mechanism_agrees": null
+  }
+ ],
+ "entries": [
+  {
+   "oeis": "A000032",
+   "offset": 0,
+   "terms": 39,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      1,
+      1
+     ],
+     "const": 0,
+     "init": {
+      "0": 2,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "Lucas numbers beginning at 2: L(n) = L(n-1) + L(n-2), L(0) = 2, L(1) = 1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A000032",
+    "A000032_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "171ee37f348736af7add499e35c9a0d9f88c86a1db4f10063a9fc57ccc5d8f05"
+  },
+  {
+   "oeis": "A000045",
+   "offset": 0,
+   "terms": 41,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      1,
+      1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "Fibonacci numbers: F(n) = F(n-1) + F(n-2) with F(0) = 0 and F(1) = 1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A000045",
+    "A000045_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "e2179b85bb636805ef9b24c720a28a885f69a94278a1bd598fc0af326019826c"
+  },
+  {
+   "oeis": "A000129",
+   "offset": 0,
+   "terms": 32,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      2,
+      1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "Pell numbers: a(0) = 0, a(1) = 1; for n > 1, a(n) = 2*a(n-1) + a(n-2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A000129",
+    "A000129_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "305aee24f39ae2984f22687f31cb1d27bbfc11339b53f666743b0df2c244bf0b"
+  },
+  {
+   "oeis": "A000204",
+   "offset": 1,
+   "terms": 39,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      1,
+      1
+     ],
+     "const": 0,
+     "init": {
+      "1": 1,
+      "2": 3
+     },
+     "start": 3,
+     "init_from_terms": false
+    },
+    "source": "Lucas numbers (beginning with 1): L(n) = L(n-1) + L(n-2) with L(1) = 1, L(2) = 3.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    1,
+    0,
+    2,
+    1,
+    5,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A000204",
+    "A000204_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "f2d8afdad98c881b431074d6735b3a62202238039fc332d60fccb80950bb5253"
+  },
+  {
+   "oeis": "A001075",
+   "offset": 0,
+   "terms": 27,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      4,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 1,
+      "1": 2
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(0) = 1, a(1) = 2, a(n) = 4*a(n-1) - a(n-2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001075",
+    "A001075_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "911fe416ddcc0cdbc70153de773d30bd9700959247eeb3b03f78a19007db67d6"
+  },
+  {
+   "oeis": "A001108",
+   "offset": 0,
+   "terms": 24,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": 2,
+     "init": {
+      "0": 0,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n)-th triangular number is a square: a(n+1) = 6*a(n) - a(n-1) + 2, with a(0) = 0, a(1) = 1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    2,
+    1,
+    0,
+    1
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001108",
+    "A001108_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "f22b32adfdf6d0171242e6f51effda9c1f6ca2f053c868e80fad4a48fae1d8ad"
+  },
+  {
+   "oeis": "A001109",
+   "offset": 0,
+   "terms": 25,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n)^2 is a triangular number: a(n) = 6*a(n-1) - a(n-2) with a(0)=0, a(1)=1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    2,
+    0,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001109",
+    "A001109_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "28292319b2b8a1658c7cac0844f39353fbc46a1a812091a52453f6f3b8d16659"
+  },
+  {
+   "oeis": "A001110",
+   "offset": 0,
+   "terms": 19,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A001254",
+   "offset": 0,
+   "terms": 33,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "X",
+     "alpha": 1,
+     "beta": 0,
+     "scale": 1,
+     "power": 2
+    },
+    "source": "Squares of Lucas numbers.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A001254"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "24ced2681972e831b267d2053e31c96be9334fe4983b6a97a8d11da9a356aa70"
+  },
+  {
+   "oeis": "A001333",
+   "offset": 0,
+   "terms": 32,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A001353",
+   "offset": 0,
+   "terms": 28,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      4,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 4*a(n-1) - a(n-2) with a(0) = 0, a(1) = 1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001353",
+    "A001353_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "5ba631222ff5855a335a2e646f85770586c824be589fdf2e05d72d1a5111554c"
+  },
+  {
+   "oeis": "A001519",
+   "offset": 0,
+   "terms": 31,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      3,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 1,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 3*a(n-1) - a(n-2) for n >= 2, with a(0) = a(1) = 1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    2,
+    0,
+    2,
+    1,
+    -1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001519",
+    "A001519_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "aed1a9445163f249c13d0d99c8a46e2405c40d885794c97dbe4b462e4e8fa8c2"
+  },
+  {
+   "oeis": "A001541",
+   "offset": 0,
+   "terms": 23,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 1,
+      "1": 3
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(0) = 1, a(1) = 3; for n > 1, a(n) = 6*a(n-1) - a(n-2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001541",
+    "A001541_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "c797edeaf191b24a77afbd6bee3c5973dcb70e07d911a7f5a42a01842f920909"
+  },
+  {
+   "oeis": "A001542",
+   "offset": 0,
+   "terms": 24,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 2
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 6*a(n-1) - a(n-2) for n > 1, a(0)=0 and a(1)=2.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    1,
+    0,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001542",
+    "A001542_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "72409bf4e4759caabc32b8e98acd3dc0bed5a5520916878a37bd21ccb3735fc2"
+  },
+  {
+   "oeis": "A001652",
+   "offset": 0,
+   "terms": 24,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": 2,
+     "init": {
+      "0": 0,
+      "1": 3
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 6*a(n-1) - a(n-2) + 2 with a(0) = 0, a(1) = 3.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    2,
+    1,
+    2,
+    1
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001652",
+    "A001652_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "74f68d6ab1cea3683fb5043d6d86ca510ff5125522d1170bc5ab4508c7a83871"
+  },
+  {
+   "oeis": "A001653",
+   "offset": 1,
+   "terms": 24,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 2,
+     "c": -1,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 2*k^2 - 1 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 2,
+    "c": -1,
+    "unit": [
+     3,
+     2
+    ],
+    "seeds": [
+     [
+      1,
+      1
+     ]
+    ],
+    "Ymax": 2,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A001653Set",
+    "A001653",
+    "A001653_cert",
+    "A001653_order",
+    "A001653_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "sqrt2",
+    "setsq"
+   ],
+   "sha256": "ba8f605996f08117338c3e46802b926f8a0e483a544016f43371b2bd8ee0cd75"
+  },
+  {
+   "oeis": "A001835",
+   "offset": 0,
+   "terms": 28,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      4,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 1,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 4*a(n-1) - a(n-2), with a(0) = 1, a(1) = 1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    -1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A001835",
+    "A001835_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "16437cfdc23c8c8272e2c8fc656a2ae427fae8b8933da7a48a746bc2fd810ec5"
+  },
+  {
+   "oeis": "A001906",
+   "offset": 0,
+   "terms": 31,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "Y",
+     "alpha": 2,
+     "beta": 0,
+     "scale": 1,
+     "power": 1
+    },
+    "source": "F(2n) = bisection of Fibonacci sequence: a(n) = 3*a(n-1) - a(n-2).",
+    "claims": [
+     [
+      3,
+      -1
+     ]
+    ]
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A001906",
+    "A001906_rec"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "9448e28b7afdf9fa7cfb2cf28e0a483a5b06f92fa7cb8043cb814746105b5d70"
+  },
+  {
+   "oeis": "A002315",
+   "offset": 0,
+   "terms": 23,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 1,
+      "1": 7
+     },
+     "start": 2,
+     "init_from_terms": true
+    },
+    "source": "NSW numbers: a(n) = 6*a(n-1) - a(n-2); also a(n)^2 - 2*b(n)^2 = -1 with b(n) = A001653(n+1).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    1,
+    1,
+    2,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A002315",
+    "A002315_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "faee3c56104d0dd42d8e1cccc8b48a93033948dfc081eaa1548357f8a399a24b"
+  },
+  {
+   "oeis": "A002878",
+   "offset": 0,
+   "terms": 30,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "X",
+     "alpha": 2,
+     "beta": 1,
+     "scale": 1,
+     "power": 1
+    },
+    "source": "Bisection of Lucas sequence: a(n) = L(2*n+1).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A002878"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "94f3b3a1ac90d197d6ab97289671ffa89768e22dd87001a1656cbba0c44f0b2f"
+  },
+  {
+   "oeis": "A005248",
+   "offset": 0,
+   "terms": 30,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "X",
+     "alpha": 2,
+     "beta": 0,
+     "scale": 1,
+     "power": 1
+    },
+    "source": "Bisection of Lucas numbers: a(n) = L(2*n) = A000032(2*n).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A005248"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "0ee89ff89aaff1c80bbe55b19580cc394e7150b6b979966be0cd76ed133f00fd"
+  },
+  {
+   "oeis": "A005319",
+   "offset": 0,
+   "terms": 22,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 4
+     },
+     "start": 2,
+     "init_from_terms": true
+    },
+    "source": "a(n) = 6*a(n-1) - a(n-2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A005319",
+    "A005319_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "09e9c07eadaae7b2f9aef800356f801e910bd551b6abeef7ce869c04cfce1e64"
+  },
+  {
+   "oeis": "A006355",
+   "offset": 0,
+   "terms": 39,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A007598",
+   "offset": 0,
+   "terms": 31,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "Y",
+     "alpha": 1,
+     "beta": 0,
+     "scale": 1,
+     "power": 2
+    },
+    "source": "Squared Fibonacci numbers: a(n) = F(n)^2 where F = A000045.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A007598"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "03ab13c564590dd93fa2417c3e9e7365e18bac130e5edca0be0dc68e2b1012f5"
+  },
+  {
+   "oeis": "A007654",
+   "offset": 1,
+   "terms": 20,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A008843",
+   "offset": 0,
+   "terms": 18,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A008844",
+   "offset": 0,
+   "terms": 18,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A010905",
+   "offset": 0,
+   "terms": 25,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A011783",
+   "offset": 0,
+   "terms": 16,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A011943",
+   "offset": 1,
+   "terms": 20,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A011944",
+   "offset": 0,
+   "terms": 17,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      14,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 2
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 14*a(n-1) - a(n-2) with a(0) = 0, a(1) = 2.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    2,
+    0,
+    2,
+    0,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A011944",
+    "A011944_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "cc2669c0a3bd9dde6dbf225c24c5605487bb820f6cc910802d817d9a4b1290b4"
+  },
+  {
+   "oeis": "A018905",
+   "offset": 0,
+   "terms": 15,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A020695",
+   "offset": 0,
+   "terms": 39,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A020701",
+   "offset": 0,
+   "terms": 38,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A020712",
+   "offset": 0,
+   "terms": 37,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A024537",
+   "offset": 0,
+   "terms": 31,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A025169",
+   "offset": 0,
+   "terms": 27,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "Y",
+     "alpha": 2,
+     "beta": 2,
+     "scale": 2,
+     "power": 1
+    },
+    "source": "a(n) = 2*Fibonacci(2*n+2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A025169"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "9c4b063d66719a138059c100017f6e979a15fbf47ac308ad75e9c45553a39cda"
+  },
+  {
+   "oeis": "A028230",
+   "offset": 1,
+   "terms": 20,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A033192",
+   "offset": 0,
+   "terms": 32,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A033888",
+   "offset": 0,
+   "terms": 24,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "Y",
+     "alpha": 4,
+     "beta": 0,
+     "scale": 1,
+     "power": 1
+    },
+    "source": "a(n) = Fibonacci(4*n).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A033888"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "7b8b1c4109092486edac355e2909e5977c0f9ef78e36bd892611a8bd607ebf5a"
+  },
+  {
+   "oeis": "A033890",
+   "offset": 0,
+   "terms": 22,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "Y",
+     "alpha": 4,
+     "beta": 2,
+     "scale": 1,
+     "power": 1
+    },
+    "source": "a(n) = Fibonacci(4*n + 2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A033890"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "5c2bf59fc5fa50b16ae075fcde6ff62ab28436080765c89753086e2a280daa4f"
+  },
+  {
+   "oeis": "A046090",
+   "offset": 0,
+   "terms": 24,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A046176",
+   "offset": 1,
+   "terms": 18,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A048575",
+   "offset": 0,
+   "terms": 29,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A048624",
+   "offset": 0,
+   "terms": 16,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A048739",
+   "offset": 0,
+   "terms": 29,
+   "translation": {
+    "kind": "GF",
+    "encoding": {
+     "P": [
+      1
+     ],
+     "Q": [
+      1,
+      -3,
+      1,
+      1
+     ]
+    },
+    "source": "Expansion of 1/((1 - x)*(1 - 2*x - x^2)).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    1,
+    0,
+    2,
+    3,
+    4,
+    1
+   ],
+   "shift": 0,
+   "theorems": [
+    "A048739",
+    "A048739_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "128887099a8d993afd49c789b0712fdcf931d9084e3404d79cf2d5c0bdcc2a5b"
+  },
+  {
+   "oeis": "A049684",
+   "offset": 0,
+   "terms": 24,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "fib",
+     "which": "Y",
+     "alpha": 2,
+     "beta": 0,
+     "scale": 1,
+     "power": 2
+    },
+    "source": "a(n) = Fibonacci(2n)^2.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "theorems": [
+    "A049684"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "5edd79d469f4929d1a7b7979ab77276335144b8ca305271d5bd0d1d4c75ce5b8"
+  },
+  {
+   "oeis": "A052454",
+   "offset": 1,
+   "terms": 26,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 10,
+     "c": -9,
+     "lo": 1,
+     "domain_note": ""
+    },
+    "source": "Positive integer values of k such that 10*k^2 - 9 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 10,
+    "c": -9,
+    "unit": [
+     19,
+     6
+    ],
+    "seeds": [
+     [
+      1,
+      1
+     ],
+     [
+      9,
+      3
+     ],
+     [
+      41,
+      13
+     ]
+    ],
+    "Ymax": 18,
+    "skip": 0,
+    "domain": "k >= 1",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A052454Set",
+    "A052454",
+    "A052454_cert",
+    "A052454_order",
+    "A052454_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "ec71e6281fa78f688db90441dea821da2de9c974caf5279dd51c60b5080646f0"
+  },
+  {
+   "oeis": "A052530",
+   "offset": 0,
+   "terms": 27,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      4,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 2
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 4*a(n-1) - a(n-2), with a(0) = 0, a(1) = 2.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A052530",
+    "A052530_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "c809ea9148f8f7336b254a47190f5cfa9a4af24d50b047d9fe941c8360c227ce"
+  },
+  {
+   "oeis": "A052542",
+   "offset": 0,
+   "terms": 32,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      2,
+      1
+     ],
+     "const": 0,
+     "init": {
+      "0": 1,
+      "1": 2,
+      "2": 4
+     },
+     "start": 3,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 2*a(n-1) + a(n-2), with a(0) = 1, a(1) = 2, a(2) = 4.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    1,
+    0,
+    1,
+    2,
+    2,
+    0
+   ],
+   "shift": 1,
+   "theorems": [
+    "A052542",
+    "A052542_eq"
+   ],
+   "relation": "exact from index 1",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "d9a3963c488bf52dd6c4038be1e0c5d2915fdb04351560c42af22b7df548a1b4"
+  },
+  {
+   "oeis": "A052995",
+   "offset": 0,
+   "terms": 30,
+   "translation": {
+    "kind": "GF",
+    "encoding": {
+     "P": [
+      0,
+      2,
+      -2
+     ],
+     "Q": [
+      1,
+      -3,
+      1
+     ]
+    },
+    "source": "Expansion of 2*x*(1 - x)/(1 - 3*x + x^2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    2,
+    0,
+    1,
+    1,
+    1,
+    0
+   ],
+   "shift": 1,
+   "theorems": [
+    "A052995",
+    "A052995_eq"
+   ],
+   "relation": "exact from index 1",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "cda5d17f187008404118d31ca1cda6752fa0bedda28c54f94a8efdd479358c9d"
+  },
+  {
+   "oeis": "A054886",
+   "offset": 0,
+   "terms": 38,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A055389",
+   "offset": 0,
+   "terms": 39,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A055792",
+   "offset": 0,
+   "terms": 18,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A055793",
+   "offset": 1,
+   "terms": 22,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A055819",
+   "offset": 0,
+   "terms": 28,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A055997",
+   "offset": 1,
+   "terms": 24,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A067900",
+   "offset": 0,
+   "terms": 20,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      14,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 8
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 14*a(n-1) - a(n-2); a(0) = 0, a(1) = 8.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    2,
+    0,
+    1,
+    0,
+    2,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A067900",
+    "A067900_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "399cadb2bb7cfa6085fc39f2406f5a2317ed2d80d993de19a728ed22eadc99a9"
+  },
+  {
+   "oeis": "A068922",
+   "offset": 1,
+   "terms": 38,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A069041",
+   "offset": 1,
+   "terms": 15,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A069306",
+   "offset": 2,
+   "terms": 32,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A071679",
+   "offset": 1,
+   "terms": 38,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A074061",
+   "offset": 0,
+   "terms": 26,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 24,
+     "c": -23,
+     "lo": 1,
+     "domain_note": ""
+    },
+    "source": "Positive integers k such that 24*k^2 - 23 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 24,
+    "c": -23,
+    "unit": [
+     5,
+     1
+    ],
+    "seeds": [
+     [
+      1,
+      1
+     ],
+     [
+      19,
+      4
+     ]
+    ],
+    "Ymax": 4,
+    "skip": 0,
+    "domain": "k >= 1",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A074061Set",
+    "A074061",
+    "A074061_cert",
+    "A074061_order",
+    "A074061_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "c523187a852f9a80050347a1539eeb4b63336e270441fd6597eb36cac04836f4"
+  },
+  {
+   "oeis": "A075796",
+   "offset": 1,
+   "terms": 19,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 5,
+     "c": 5,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 5*k^2 + 5 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 5,
+    "c": 5,
+    "unit": [
+     9,
+     4
+    ],
+    "seeds": [
+     [
+      5,
+      2
+     ]
+    ],
+    "Ymax": 9,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075796Set",
+    "A075796",
+    "A075796_cert",
+    "A075796_order",
+    "A075796_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "e4b897f2e0bfe7d01197d834293c20befd89f8740b5c5e413220fe13598fd347"
+  },
+  {
+   "oeis": "A075835",
+   "offset": 1,
+   "terms": 21,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 13,
+     "c": 4,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 13*k^2 + 4 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 13,
+    "c": 4,
+    "unit": [
+     649,
+     180
+    ],
+    "seeds": [
+     [
+      2,
+      0
+     ],
+     [
+      11,
+      3
+     ],
+     [
+      119,
+      33
+     ]
+    ],
+    "Ymax": 360,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075835Set",
+    "A075835",
+    "A075835_cert",
+    "A075835_order",
+    "A075835_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "49966a91e05882b3023d3a3e9c1c654cec966f1828923f65813bdaeefda0b80c"
+  },
+  {
+   "oeis": "A075836",
+   "offset": 1,
+   "terms": 25,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 10,
+     "c": 9,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 10*k^2 + 9 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 10,
+    "c": 9,
+    "unit": [
+     19,
+     6
+    ],
+    "seeds": [
+     [
+      3,
+      0
+     ],
+     [
+      7,
+      2
+     ],
+     [
+      13,
+      4
+     ]
+    ],
+    "Ymax": 18,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075836Set",
+    "A075836",
+    "A075836_cert",
+    "A075836_order",
+    "A075836_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "182442533b4ef955acb614d99ab365e5d95713bb5f5d51907a7f26c8fd05abfd"
+  },
+  {
+   "oeis": "A075839",
+   "offset": 1,
+   "terms": 18,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 11,
+     "c": -2,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 11*k^2 - 2 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 11,
+    "c": -2,
+    "unit": [
+     10,
+     3
+    ],
+    "seeds": [
+     [
+      3,
+      1
+     ]
+    ],
+    "Ymax": 4,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075839Set",
+    "A075839",
+    "A075839_cert",
+    "A075839_order",
+    "A075839_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "50bf2c36b061e08405a162700f017ff1d0e862b05b0631cb58efc838bd85540d"
+  },
+  {
+   "oeis": "A075841",
+   "offset": 1,
+   "terms": 20,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 2,
+     "c": -9,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 2*k^2 - 9 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 2,
+    "c": -9,
+    "unit": [
+     3,
+     2
+    ],
+    "seeds": [
+     [
+      3,
+      3
+     ]
+    ],
+    "Ymax": 6,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075841Set",
+    "A075841",
+    "A075841_cert",
+    "A075841_order",
+    "A075841_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "ad1f789b2a3d000dd18c20e237facf36ca9d089feba3397a1b1227c11d34fc5d"
+  },
+  {
+   "oeis": "A075843",
+   "offset": 0,
+   "terms": 17,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 99,
+     "c": 1,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 99*k^2 + 1 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 99,
+    "c": 1,
+    "unit": [
+     10,
+     1
+    ],
+    "seeds": [
+     [
+      1,
+      0
+     ]
+    ],
+    "Ymax": 1,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075843Set",
+    "A075843",
+    "A075843_cert",
+    "A075843_order",
+    "A075843_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "44ab15e00d0c0d80f0df835a54747f779cb4a5e0d8d624e4966ee1dc3e3fbe82"
+  },
+  {
+   "oeis": "A075844",
+   "offset": 0,
+   "terms": 17,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 11,
+     "c": 4,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 11*k^2 + 4 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 11,
+    "c": 4,
+    "unit": [
+     10,
+     3
+    ],
+    "seeds": [
+     [
+      2,
+      0
+     ]
+    ],
+    "Ymax": 6,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075844Set",
+    "A075844",
+    "A075844_cert",
+    "A075844_order",
+    "A075844_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "663f7c87c74cd88c8477cebb21ac2dacb53ce6e2e99a45d813f42b7fac9428e0"
+  },
+  {
+   "oeis": "A075848",
+   "offset": 0,
+   "terms": 21,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 2,
+     "c": 9,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 2*k^2 + 9 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 2,
+    "c": 9,
+    "unit": [
+     3,
+     2
+    ],
+    "seeds": [
+     [
+      3,
+      0
+     ]
+    ],
+    "Ymax": 6,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075848Set",
+    "A075848",
+    "A075848_cert",
+    "A075848_order",
+    "A075848_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "70920a0509a002fd6c8ef16f7bf77fec74ced6ca5125a77a874e5d6622bd490e"
+  },
+  {
+   "oeis": "A075869",
+   "offset": 1,
+   "terms": 16,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 5,
+     "c": -9,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 5*k^2 - 9 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 5,
+    "c": -9,
+    "unit": [
+     9,
+     4
+    ],
+    "seeds": [
+     [
+      6,
+      3
+     ]
+    ],
+    "Ymax": 12,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075869Set",
+    "A075869",
+    "A075869_cert",
+    "A075869_order",
+    "A075869_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "c130fc0a2d1aa77897f28b30ad3a7c7cba908692fdc0a27204779bb271548bcb"
+  },
+  {
+   "oeis": "A075870",
+   "offset": 1,
+   "terms": 23,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 2,
+     "c": -4,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 2*k^2 - 4 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 2,
+    "c": -4,
+    "unit": [
+     3,
+     2
+    ],
+    "seeds": [
+     [
+      2,
+      2
+     ]
+    ],
+    "Ymax": 4,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075870Set",
+    "A075870",
+    "A075870_cert",
+    "A075870_order",
+    "A075870_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "sqrt2",
+    "setsq"
+   ],
+   "sha256": "d9e7b96b9eafcfdba9535b08fcd710c436489788e5a15ee63c056c17dd8c8a10"
+  },
+  {
+   "oeis": "A075871",
+   "offset": 1,
+   "terms": 12,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 13,
+     "c": 1,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 13*k^2 + 1 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 13,
+    "c": 1,
+    "unit": [
+     649,
+     180
+    ],
+    "seeds": [
+     [
+      1,
+      0
+     ]
+    ],
+    "Ymax": 180,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A075871Set",
+    "A075871",
+    "A075871_cert",
+    "A075871_order",
+    "A075871_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "7e67050b1d31bd8bc42246f755c575968c5290b0e8f3bbc39fa90d9402392388"
+  },
+  {
+   "oeis": "A077373",
+   "offset": 1,
+   "terms": 12,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A077446",
+   "offset": 1,
+   "terms": 28,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 2,
+     "c": 14,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 2*k^2 + 14 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 2,
+    "c": 14,
+    "unit": [
+     3,
+     2
+    ],
+    "seeds": [
+     [
+      4,
+      1
+     ],
+     [
+      8,
+      5
+     ]
+    ],
+    "Ymax": 7,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A077446Set",
+    "A077446",
+    "A077446_cert",
+    "A077446_order",
+    "A077446_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "31b9e72864a17876f4e996f155c41524346bd8ae4a727090de5fb3a27ed6605b"
+  },
+  {
+   "oeis": "A078057",
+   "offset": 0,
+   "terms": 32,
+   "translation": {
+    "kind": "GF",
+    "encoding": {
+     "P": [
+      1,
+      1
+     ],
+     "Q": [
+      1,
+      -2,
+      -1
+     ]
+    },
+    "source": "Expansion of (1+x)/(1-2*x-x^2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    2,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A078057",
+    "A078057_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "b0dc0a42011e1bc55a7e25a9febbd58b231e1e4f71ed80f52b3d0b793be3bb8d"
+  },
+  {
+   "oeis": "A078522",
+   "offset": 1,
+   "terms": 17,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A078642",
+   "offset": 1,
+   "terms": 37,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A079291",
+   "offset": 0,
+   "terms": 25,
+   "translation": {
+    "kind": "Coord",
+    "encoding": {
+     "family": "pell2",
+     "which": "Y",
+     "alpha": 1,
+     "beta": 0,
+     "scale": 1,
+     "power": 2
+    },
+    "source": "Squares of Pell numbers.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "theorems": [
+    "A079291"
+   ],
+   "relation": "definition is the coordinate",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "56bba01f1d9587ece4f5220efd394106e544c6f6b970d1c0b66517c9e97cf226"
+  },
+  {
+   "oeis": "A079935",
+   "offset": 1,
+   "terms": 27,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      4,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "1": 1,
+      "2": 3
+     },
+     "start": 3,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 4*a(n-1) - a(n-2) with a(1) = 1, a(2) = 3.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A079935",
+    "A079935_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "962a8ba0389d27585de363dfd71d3e124da480bff876806ea72ee1fb91cd467d"
+  },
+  {
+   "oeis": "A080023",
+   "offset": 1,
+   "terms": 37,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A080806",
+   "offset": 1,
+   "terms": 26,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 6,
+     "c": -5,
+     "lo": 1,
+     "domain_note": ""
+    },
+    "source": "Positive integer values of n such that 6*n^2-5 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 6,
+    "c": -5,
+    "unit": [
+     5,
+     2
+    ],
+    "seeds": [
+     [
+      1,
+      1
+     ],
+     [
+      7,
+      3
+     ]
+    ],
+    "Ymax": 4,
+    "skip": 0,
+    "domain": "k >= 1",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A080806Set",
+    "A080806",
+    "A080806_cert",
+    "A080806_order",
+    "A080806_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "ab20b2d2d10c0b1857b6eb2789db89437bd9f1e5bec65380297eb1b02aa2e9ac"
+  },
+  {
+   "oeis": "A081068",
+   "offset": 0,
+   "terms": 21,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A081069",
+   "offset": 0,
+   "terms": 20,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A081071",
+   "offset": 0,
+   "terms": 20,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A082405",
+   "offset": 0,
+   "terms": 18,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      34,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 0,
+      "1": 6
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 34*a(n-1) - a(n-2); a(0)=0, a(1)=6.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    4,
+    0,
+    2,
+    0,
+    1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A082405",
+    "A082405_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "b3496bc3cba9b708970cecbd4da6a6b1f4419310ae28b7f6776519fde7468894"
+  },
+  {
+   "oeis": "A082651",
+   "offset": 1,
+   "terms": 25,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 5,
+     "c": 11,
+     "lo": 1,
+     "domain_note": ""
+    },
+    "source": "Positive integer values of n such that 5n^2+11 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 5,
+    "c": 11,
+    "unit": [
+     9,
+     4
+    ],
+    "seeds": [
+     [
+      4,
+      1
+     ],
+     [
+      16,
+      7
+     ]
+    ],
+    "Ymax": 13,
+    "skip": 0,
+    "domain": "k >= 1",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A082651Set",
+    "A082651",
+    "A082651_cert",
+    "A082651_order",
+    "A082651_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "9f54adac262f46198a041f1d174920ab2819f35c2ad229d3241afd16018ae465"
+  },
+  {
+   "oeis": "A084703",
+   "offset": 0,
+   "terms": 18,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A088305",
+   "offset": 0,
+   "terms": 29,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A090390",
+   "offset": 0,
+   "terms": 25,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A090757",
+   "offset": 0,
+   "terms": 15,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A090991",
+   "offset": 1,
+   "terms": 36,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A093960",
+   "offset": 1,
+   "terms": 30,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A094347",
+   "offset": 0,
+   "terms": 18,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      14,
+      -1
+     ],
+     "const": 0,
+     "init": {
+      "0": 2,
+      "1": 2
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 14*a(n-1) - a(n-2); a(0) = a(1) = 2.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "sqrt3",
+   "fit": [
+    2,
+    0,
+    1,
+    2,
+    -3,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A094347",
+    "A094347_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt3"
+   ],
+   "sha256": "4bb51c31611ba38ce0f915aa2f3234f5819fd8a359de47582a5f0861847e0e9d"
+  },
+  {
+   "oeis": "A098301",
+   "offset": 0,
+   "terms": 20,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A098602",
+   "offset": 0,
+   "terms": 17,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A102344",
+   "offset": 1,
+   "terms": 20,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A103974",
+   "offset": 1,
+   "terms": 17,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A106256",
+   "offset": 1,
+   "terms": 24,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 12,
+     "c": 13,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers n such that 12*n^2 + 13 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 12,
+    "c": 13,
+    "unit": [
+     7,
+     2
+    ],
+    "seeds": [
+     [
+      5,
+      1
+     ],
+     [
+      11,
+      3
+     ]
+    ],
+    "Ymax": 7,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A106256Set",
+    "A106256",
+    "A106256_cert",
+    "A106256_order",
+    "A106256_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "86883263ae60b35b6b86c3659c76226f151d4d0a412fc81bce7ae204bf56f436"
+  },
+  {
+   "oeis": "A111282",
+   "offset": 1,
+   "terms": 28,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A115598",
+   "offset": 1,
+   "terms": 23,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A115599",
+   "offset": 1,
+   "terms": 23,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A118658",
+   "offset": 0,
+   "terms": 40,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A122367",
+   "offset": 0,
+   "terms": 30,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A122769",
+   "offset": 1,
+   "terms": 17,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A126358",
+   "offset": 0,
+   "terms": 29,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A128588",
+   "offset": 1,
+   "terms": 38,
+   "translation": {
+    "kind": "GF",
+    "encoding": {
+     "P": [
+      0,
+      1,
+      1,
+      1
+     ],
+     "Q": [
+      1,
+      -1,
+      -1
+     ]
+    },
+    "source": "Expansion of g.f. x*(1+x+x^2)/(1-x-x^2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    3,
+    0
+   ],
+   "shift": 2,
+   "theorems": [
+    "A128588",
+    "A128588_eq"
+   ],
+   "relation": "exact from index 2",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "ce58fc753f8c5efed70737f99bf5b24153808e3b51689fb35a03b230bd798c16"
+  },
+  {
+   "oeis": "A132636",
+   "offset": 1,
+   "terms": 45,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A133283",
+   "offset": 1,
+   "terms": 18,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 30,
+     "c": 6,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 30*k^2 + 6 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 30,
+    "c": 6,
+    "unit": [
+     11,
+     2
+    ],
+    "seeds": [
+     [
+      6,
+      1
+     ]
+    ],
+    "Ymax": 4,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A133283Set",
+    "A133283",
+    "A133283_cert",
+    "A133283_order",
+    "A133283_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "94a7f8ace1c7361985de64b2173fa631356536d8061bba36ee384ef6d1ad338b"
+  },
+  {
+   "oeis": "A133326",
+   "offset": 1,
+   "terms": 30,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 2,
+     "c": 41,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers n such that 2*n^2 + 41 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 2,
+    "c": 41,
+    "unit": [
+     3,
+     2
+    ],
+    "seeds": [
+     [
+      7,
+      2
+     ],
+     [
+      13,
+      8
+     ]
+    ],
+    "Ymax": 13,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A133326Set",
+    "A133326",
+    "A133326_cert",
+    "A133326_order",
+    "A133326_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "b235c59c4251a20963a20d9138293a39b74d3be7d7743d7028635f73444c70f5"
+  },
+  {
+   "oeis": "A135064",
+   "offset": 1,
+   "terms": 30,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A144797",
+   "offset": 1,
+   "terms": 30,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 2,
+     "c": 17,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 2*k^2 + 17 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 2,
+    "c": 17,
+    "unit": [
+     3,
+     2
+    ],
+    "seeds": [
+     [
+      5,
+      2
+     ],
+     [
+      7,
+      4
+     ]
+    ],
+    "Ymax": 8,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A144797Set",
+    "A144797",
+    "A144797_cert",
+    "A144797_order",
+    "A144797_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "8c721c068899c273ecc4f10c6ede6f9ccd8e01d03bb4906d67105b68ceb78e09"
+  },
+  {
+   "oeis": "A163271",
+   "offset": 1,
+   "terms": 31,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A163733",
+   "offset": 1,
+   "terms": 40,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A169985",
+   "offset": 0,
+   "terms": 39,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A171842",
+   "offset": 0,
+   "terms": 34,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt2"
+   ]
+  },
+  {
+   "oeis": "A176981",
+   "offset": 0,
+   "terms": 31,
+   "translation": {
+    "kind": "GF",
+    "encoding": {
+     "P": [
+      1,
+      -2,
+      -2
+     ],
+     "Q": [
+      1,
+      -2,
+      -1
+     ]
+    },
+    "source": "Expansion of 2+(1-2*x)/(-1+2*x+x^2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    1,
+    0,
+    1,
+    0,
+    -1,
+    0
+   ],
+   "shift": 1,
+   "theorems": [
+    "A176981",
+    "A176981_eq"
+   ],
+   "relation": "exact from index 1",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "def5314bfe86640ae011e955668d8cf3d40e3c71d5e5231762c90ca9270dcf48"
+  },
+  {
+   "oeis": "A182435",
+   "offset": 0,
+   "terms": 24,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      6,
+      -1
+     ],
+     "const": -2,
+     "init": {
+      "0": 0,
+      "1": 1
+     },
+     "start": 2,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 6*a(n-1) - a(n-2) - 2 with n>1, a(0)=0, a(1)=1.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    2,
+    0,
+    2,
+    -1,
+    2,
+    -1
+   ],
+   "shift": 0,
+   "theorems": [
+    "A182435",
+    "A182435_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "3f728af45480dbf0779a2ca6c151f42aad775b1f34783e5cafa17b1b56cde5a2"
+  },
+  {
+   "oeis": "A189356",
+   "offset": 1,
+   "terms": 19,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A195503",
+   "offset": 1,
+   "terms": 24,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "sqrt3"
+   ]
+  },
+  {
+   "oeis": "A198834",
+   "offset": 1,
+   "terms": 40,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A202278",
+   "offset": 1,
+   "terms": 11,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A212804",
+   "offset": 0,
+   "terms": 50,
+   "translation": {
+    "kind": "GF",
+    "encoding": {
+     "P": [
+      1,
+      -1
+     ],
+     "Q": [
+      1,
+      -1,
+      -1
+     ]
+    },
+    "source": "Expansion of (1 - x)/(1 - x - x^2).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    1,
+    0,
+    2,
+    1,
+    -1,
+    0
+   ],
+   "shift": 0,
+   "theorems": [
+    "A212804",
+    "A212804_eq"
+   ],
+   "relation": "exact",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "563fdbd3048972bebe290957cc2d88f55cbb28bb2320cfdf7920026e0faaf482"
+  },
+  {
+   "oeis": "A215928",
+   "offset": 0,
+   "terms": 32,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      2,
+      1
+     ],
+     "const": 0,
+     "init": {
+      "0": 1,
+      "1": 1,
+      "2": 2
+     },
+     "start": 3,
+     "init_from_terms": false
+    },
+    "source": "a(n) = 2*a(n-1) + a(n-2) for n > 2, a(0) = a(1) = 1, a(2) = 2.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "pell2",
+   "fit": [
+    1,
+    0,
+    1,
+    1,
+    1,
+    0
+   ],
+   "shift": 1,
+   "theorems": [
+    "A215928",
+    "A215928_eq"
+   ],
+   "relation": "exact from index 1",
+   "groups": [
+    "sqrt2"
+   ],
+   "sha256": "bc01242b1662b4901636c1ec11f2a641d60aba1bd5a01529116304f1915fd49f"
+  },
+  {
+   "oeis": "A237268",
+   "offset": 1,
+   "terms": 30,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A239365",
+   "offset": 1,
+   "terms": 16,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 10,
+     "c": 4,
+     "lo": 1,
+     "domain_note": "k = 0 solves the equation but the listed terms start after it: positive k"
+    },
+    "source": "Numbers n such that 10*n^2+4 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 10,
+    "c": 4,
+    "unit": [
+     19,
+     6
+    ],
+    "seeds": [
+     [
+      2,
+      0
+     ]
+    ],
+    "Ymax": 12,
+    "skip": 1,
+    "domain": "k >= 1",
+    "domain_note": "k = 0 solves the equation but the listed terms start after it: positive k"
+   },
+   "theorems": [
+    "A239365Set",
+    "A239365",
+    "A239365_cert",
+    "A239365_order",
+    "A239365_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "77c770789b7c88595b1ad7435ea11a9fb9470f855bfdb22ddd1350589cb9ffdd"
+  },
+  {
+   "oeis": "A259131",
+   "offset": 1,
+   "terms": 22,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 13,
+     "c": 52,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers n such that 13*n^2 + 52 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 13,
+    "c": 52,
+    "unit": [
+     649,
+     180
+    ],
+    "seeds": [
+     [
+      13,
+      3
+     ],
+     [
+      130,
+      36
+     ],
+     [
+      1417,
+      393
+     ]
+    ],
+    "Ymax": 1298,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A259131Set",
+    "A259131",
+    "A259131_cert",
+    "A259131_order",
+    "A259131_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "edeeb0af806a79cec972893f214c7816fa6c42b7c167ce41497502017993fa99"
+  },
+  {
+   "oeis": "A273052",
+   "offset": 1,
+   "terms": 19,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 7,
+     "c": 8,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers n such that 7*n^2 + 8 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 7,
+    "c": 8,
+    "unit": [
+     8,
+     3
+    ],
+    "seeds": [
+     [
+      6,
+      2
+     ]
+    ],
+    "Ymax": 8,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A273052Set",
+    "A273052",
+    "A273052_cert",
+    "A273052_order",
+    "A273052_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "e889aa020b5e9849a27428f5358c8dfc4904b975b55de882693b8d16fc3dae43"
+  },
+  {
+   "oeis": "A273053",
+   "offset": 1,
+   "terms": 22,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 15,
+     "c": 16,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers n such that 15*n^2 + 16 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 15,
+    "c": 16,
+    "unit": [
+     4,
+     1
+    ],
+    "seeds": [
+     [
+      4,
+      0
+     ]
+    ],
+    "Ymax": 4,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A273053Set",
+    "A273053",
+    "A273053_cert",
+    "A273053_order",
+    "A273053_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "2a50606bec712733248ae494b6e2ab5bfd7ae607a8c4044f1d9fc89719a9c8ac"
+  },
+  {
+   "oeis": "A273054",
+   "offset": 1,
+   "terms": 18,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 19,
+     "c": 20,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers n such that 19*n^2 + 20 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 19,
+    "c": 20,
+    "unit": [
+     170,
+     39
+    ],
+    "seeds": [
+     [
+      18,
+      4
+     ],
+     [
+      96,
+      22
+     ]
+    ],
+    "Ymax": 174,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A273054Set",
+    "A273054",
+    "A273054_cert",
+    "A273054_order",
+    "A273054_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "fbe22df2b54ecaa34cfc73949573e0ace020c6acbebef6d3e84e5eddb8d995a5"
+  },
+  {
+   "oeis": "A274163",
+   "offset": 0,
+   "terms": 26,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A284647",
+   "offset": 0,
+   "terms": 23,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A286810",
+   "offset": 0,
+   "terms": 24,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A288219",
+   "offset": 0,
+   "terms": 38,
+   "translation": {
+    "kind": "LinRec",
+    "encoding": {
+     "coeffs": [
+      1,
+      1
+     ],
+     "const": 0,
+     "init": {
+      "0": 2,
+      "1": 4,
+      "2": 7
+     },
+     "start": 3,
+     "init_from_terms": false
+    },
+    "source": "a(n) = a(n-1) + a(n-2) for n >= 3, where a(0) = 2, a(1) = 4, a(2) = 7.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    1,
+    0,
+    1,
+    2,
+    5,
+    0
+   ],
+   "shift": 1,
+   "theorems": [
+    "A288219",
+    "A288219_eq"
+   ],
+   "relation": "exact from index 1",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "b061e05aabb1b36990223f939cec2ad7ffcd3ebb6c645821fbb01ab1a26228cc"
+  },
+  {
+   "oeis": "A309330",
+   "offset": 1,
+   "terms": 15,
+   "translation": {
+    "kind": "SetSquare",
+    "encoding": {
+     "D": 10,
+     "c": 40,
+     "lo": 0,
+     "domain_note": ""
+    },
+    "source": "Numbers k such that 10*k^2 + 40 is a square.",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "engine",
+   "certificate": {
+    "D": 10,
+    "c": 40,
+    "unit": [
+     19,
+     6
+    ],
+    "seeds": [
+     [
+      20,
+      6
+     ]
+    ],
+    "Ymax": 38,
+    "skip": 0,
+    "domain": "k >= 0",
+    "domain_note": ""
+   },
+   "theorems": [
+    "A309330Set",
+    "A309330",
+    "A309330_cert",
+    "A309330_order",
+    "A309330_enumerates"
+   ],
+   "relation": "increasing enumeration of the set",
+   "groups": [
+    "setsq"
+   ],
+   "sha256": "5e4a92b7f42e8b6ab6e5230ee9f166e77162763cdab8adac2d12668432e3e551"
+  },
+  {
+   "oeis": "A324969",
+   "offset": 1,
+   "terms": 41,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A329723",
+   "offset": 0,
+   "terms": 43,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A358995",
+   "offset": 1,
+   "terms": 14,
+   "status": "NOT_TRANSLATED",
+   "groups": [
+    "phi"
+   ]
+  },
+  {
+   "oeis": "A373566",
+   "offset": 0,
+   "terms": 39,
+   "translation": {
+    "kind": "GF",
+    "encoding": {
+     "P": [
+      1,
+      2,
+      -1,
+      -1
+     ],
+     "Q": [
+      1,
+      -1,
+      -1
+     ]
+    },
+    "source": "Expansion of x - 1/(x - 1/(x + 1)).",
+    "claims": []
+   },
+   "status": "PROVED",
+   "family": "fib",
+   "fit": [
+    1,
+    0,
+    2,
+    3,
+    7,
+    0
+   ],
+   "shift": 2,
+   "theorems": [
+    "A373566",
+    "A373566_eq"
+   ],
+   "relation": "exact from index 2",
+   "groups": [
+    "phi"
+   ],
+   "sha256": "eb8209f79b3ccbe42fb021e034605cbf963e3a2e698f8a7e006be588740705b6"
+  }
+ ]
+}

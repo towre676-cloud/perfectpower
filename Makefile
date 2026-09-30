@@ -21,6 +21,7 @@ lint: lean
 test:
 	$(PY) -m unittest discover -s python/tests
 	$(PY) -m unittest discover -s continuation_tests
+	$(PY) -m unittest discover -s expert_push/tests
 
 cert-audit:
 	$(PY) python/independent_cert_audit.py
@@ -43,7 +44,9 @@ receipts:
 	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
 	$(PY) python/make_oeis_problems.py
+	$(PY) python/make_oeis_auto.py
 	$(PY) python/make_oeis_atlas.py
+	$(PY) python/make_mordell_obstructions.py
 
 counts: audit
 	$(PY) python/make_counts.py

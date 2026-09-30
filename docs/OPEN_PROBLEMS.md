@@ -65,9 +65,11 @@ Each entry gives the precise problem, the current best approach, and the obstruc
 **OEIS as a discovery layer** (`OEIS.md`). *Done:* the counting law for observed coordinates of
 filtered orbits (`Observation.observed_count`) and the six-sequence theorem for $(3+\sqrt8)^j$.
 *Done since:* a versioned snapshot of the official export, a 39-entry cluster around $(1+\sqrt2)^k$ with 13 definitions proved, eventual monotonicity, and a Mordell cross-check (41 certified curves, 0 disagreements). *Open:*
-- formalizing the 23 unproved $\sqrt2$ entries (convergents, generating functions, Pythagorean triples);
-- discovery over other orbits and norm equations;
-- proofs for the 98 nonempty Mordell leads with $|k|\le100$, starting with $y^2=x^3-1$ (descent with the units $\pm i$);
+- *done since:* the quadratic-unit orbit engine (`QuadOrbit`), the $\varphi$ family with its ring-of-integers split (`FibOrbit`), the definition language with 69 generated proofs (`Generated/OEISAuto.lean`), the withheld $2+\sqrt3$ test (8/8 translatable entries proved by the proposed mechanism), 10 hand proofs (`SqrtTwoBatch`), and the Mordell obstruction classes;
+- formalizing the 7 remaining unproved $\sqrt2$ entries (continued-fraction convergents A001333, the floor recursion A024537, binomial and "zero" transforms, binary arrays);
+- extending the language: floors ($\lfloor a(n-1)\theta\rfloor$), Pisot recurrences, continued fractions, order $>3$ generating functions, and families beyond norm $\pm1$ units of trace $\le4$;
+- proofs for the 98 nonempty Mordell leads with $|k|\le100$: a maximal-order descent with a gcd case split would address every recorded failure of 46 of the 59 curves with $k<0$ (`receipts/mordell_obstructions.json`), while the $\mathbb Z[i]$ certificate change (absorbing cube units, since $i=(-i)^3$, and coprimality at $1+i$) reaches only $y^2=x^3-1$;
+- from `expert_push/` (another session): the bound-to-list bridge and the even-quartic degree-two map with exact lift conditions are now compiled (`EffectiveEnumeration.lean`); still open there are formal-series and convergent equivalences (A001333), Euclid-parametrization completeness, Sage runs as isolated external evidence, and the Bilu–Tichy monomial counting sequel;
 - reviewed definitions for the entries it confirms;
 - a clustering pass that proposes coordinate maps between entries sharing a norm equation;
 - reading the leads for the 155 unresolved Mordell curves.
