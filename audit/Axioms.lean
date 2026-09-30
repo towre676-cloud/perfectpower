@@ -400,6 +400,9 @@ open PerfectPower
 #print axioms PerfectPower.Descent.hits_of_cert
 #print axioms PerfectPower.Generated.Plans.plan_descent_74
 #print axioms PerfectPower.Generated.Plans.plan_descent_193
+#print axioms PerfectPower.Generated.Plans.plan_thue_minus56
+#print axioms PerfectPower.Generated.Plans.plan_branch_minus20
+#print axioms PerfectPower.PlanCerts.pairs_of_list
 -- Observations of orbits, and one orbit behind six sequences
 #print axioms PerfectPower.Observation.count_between
 #print axioms PerfectPower.Observation.filtered_obs_count

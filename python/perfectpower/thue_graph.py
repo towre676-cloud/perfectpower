@@ -89,8 +89,7 @@ def reduce_hessian(H):
     while True:
         # translate: make |B| <= A
         if abs(B) > A:
-            n = -((B + A) // (2 * A)) if B > 0 else (A - B) // (2 * A)
-            n = round(-B / (2 * A))
+            n = (A - B) // (2 * A)   # exact: B + 2 A n lands in (-A, A]
             S = ((1, n), (0, 1))
             A, B, C = qcompose((A, B, C), S)
             T = matmul(T, S)

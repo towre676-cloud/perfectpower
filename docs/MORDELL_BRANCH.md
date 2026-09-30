@@ -4,9 +4,10 @@
 points for **36 of the 59** curves `y² = x³ − D` (`1 ≤ D ≤ 100`) that the repository could not
 enumerate before, including `y² = x³ − 1`:
 - 26 close by field cubes and local obstructions (§3);
-- 10 more close by transporting their Thue branches to 15 proved obligations (§5–6). The other 33 curves are reduced to explicit Thue
-equations. PARI solves those unconditionally, and the resulting lists agree with Sage on all 33.
-That is external evidence, not a Lean theorem.
+- the other 33 curves reduce to explicit Thue equations. 10 of them close by transporting their Thue
+  branches to 15 proved obligations (§5–6), and **23 remain open** (§7). PARI solves all 33
+  unconditionally, and the resulting lists agree with Sage on all 33. For the 23 open curves that
+  is external evidence, not a Lean theorem.
 
 ## 1. The method (`PerfectPower/DescentBranch.lean`, `python/perfectpower/branch_descent.py`)
 
@@ -88,7 +89,7 @@ closure: every closed curve has a compiled completeness theorem.
 
 ## 4. The open branches, externally (`crosscheck/branch_thue_pari.py`, `receipts/mordell_branch_thue.json`)
 
-For each of the 33 open curves, every open branch was solved as a Thue equation by PARI's `thue`
+For each of the 33 curves with Thue branches (10 since closed in Lean, 23 still open), every open branch was solved as a Thue equation by PARI's `thue`
 with `thueinit(P, 1)`: flag 1 certifies without GRH. Each branch ran as an isolated job with a
 600 s timeout.
 - **All 316 branches finished** (each in under 0.1 s of PARI time).

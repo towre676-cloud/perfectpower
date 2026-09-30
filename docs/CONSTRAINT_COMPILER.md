@@ -196,9 +196,13 @@ so.
 - A filtered Pell plan becomes infinitude from its witness, or `QuadHits ⊆ [1, Nb]` from its
   `FinCert`.
 
-The catalogue has 23 plans with 35 theorems:
-- 7 transport chains, including $(n-1000004)^3-2=m^2$, whose only solution $n=1000007$ lies past
-  any $10^6$ scan and comes with both signs $m=\pm5$;
+The catalogue has 25 plans with 37 theorems:
+- 9 transport chains, including $(n-1000004)^3-2=m^2$, whose only solution $n=1000007$ lies past
+  any $10^6$ scan and comes with both signs $m=\pm5$. Two reach curves closed by the branch
+  compiler: `plan_thue_minus56` ($27n^3+405n^2+2025n+3319=m^2$ iff $n=1$, $m=\pm76$, through the
+  transported Thue obligations of $y^2=x^3-56$) and `plan_branch_minus20`
+  ($8n^3+48n^2+96n+44=m^2$ iff $n=1$, $m=\pm14$). The compiler registers all 36 generated lists,
+  and `PlanCerts.pairs_of_list` turns any of them into the form a transport chain pulls back;
 - 5 infinite filtered plans, each with an infinitude theorem and a **count theorem with a
   certified constant**, and 4 of them with a **least-solution theorem** (§3D). One composes two
   filters: $3y^2+4y-2=2n^2+3n$ with $y\ge1$, where both $6\mid sY-4$ and the domain act;

@@ -277,12 +277,13 @@ A001075, A001353, A001835, A011944, A052530, A067900, A079935, A094347.
 
 The obstruction classes below were a **prediction**. [MORDELL_BRANCH.md](MORDELL_BRANCH.md)
 tests it with proofs:
-- 26 of the 59 negative-$k$ curves now have Lean-certified complete lists, $y^2=x^3-1$ among them;
-- 22 of the predicted 46 closed, and 4 closed that were not predicted;
-- the other 33 reduce to irreducible Thue equations, solved externally by PARI and agreeing with
-  Sage.
+- 26 of the 59 negative-$k$ curves have Lean-certified complete lists from the branch compiler,
+  $y^2=x^3-1$ among them: 22 of the predicted 46 closed, and 4 closed that were not predicted;
+- the other 33 reduce to irreducible Thue equations. 10 of them have since closed in Lean by
+  transported Thue obligations (36 in all); the remaining 23 are solved externally by PARI and
+  agree with Sage.
 
-The leads in the Mordell cross-check fall from 155 to 129. (`descent.diagnose`, `make_mordell_obstructions.py`)
+The leads in the Mordell cross-check fall from 155 to 129 with the branch compiler, and to 119 with the transported Thue obligations. (`descent.diagnose`, `make_mordell_obstructions.py`)
 
 `receipts/mordell_obstructions.json` classifies, for each of the 155 curves with $|k|\le100$ that
 the compiler cannot enumerate, the first failing checks of the descent certificate.

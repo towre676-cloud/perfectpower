@@ -282,12 +282,37 @@ def _generated_no_points() -> dict[int, str]:
     return out
 
 
+def _generated_complete() -> dict[int, tuple]:
+    """k -> ({t: [m >= 0]}, lean names) for every complete list `y^2 = x^3 - D` emitted by the
+    branch compiler (`Generated/MordellBranch.lean`, `complete_of_branch`) and by transported
+    Thue obligations (`Generated/MordellThue.lean`, `complete_of_thue`).  Read from the generated
+    theorem statements themselves, so the registry cannot drift from what Lean checks."""
+    out = {}
+    for mod, via in (('MordellBranch', 'PerfectPower.DescentBranch.complete_of_branch'),
+                     ('MordellThue', 'PerfectPower.DescentThue.complete_of_thue')):
+        path = ROOT / 'PerfectPower' / 'Generated' / f'{mod}.lean'
+        if not path.exists():
+            continue
+        pat = r'theorem minus(\d+) \(x y : ℤ\) : y \^ 2 = x \^ 3 - (\d+) ↔ \(x, y\) ∈ \(\[(.*?)\] :'
+        for name, D, body in re.findall(pat, path.read_text()):
+            assert name == D
+            T: dict[int, list[int]] = {}
+            for x, y in re.findall(r'\(\(?(-?\d+)\)?, \(?(-?\d+)\)?\)', body):
+                T.setdefault(int(x), [])
+                if int(y) >= 0:
+                    T[int(x)].append(int(y))
+            out[-int(D)] = ({t: sorted(ms) for t, ms in T.items()},
+                            [f'PerfectPower.Generated.{mod}.minus{D}', via])
+    return out
+
+
 _NO_POINTS = None
+_COMPLETE = None
 
 
 def mordell_complete(k: int):
     """({t: [m >= 0]}, lean names) when y^2 = t^3 + k is solved completely in Lean, else None."""
-    global _NO_POINTS
+    global _NO_POINTS, _COMPLETE
     if k in _MORDELL:
         return _MORDELL[k]
     if k < 0 and (-k) % 432 == 0:
@@ -300,6 +325,10 @@ def mordell_complete(k: int):
         _NO_POINTS = _generated_no_points()
     if k in _NO_POINTS:
         return ({}, [_NO_POINTS[k], 'PerfectPower.Transport.complete_of_no_points'])
+    if _COMPLETE is None:
+        _COMPLETE = _generated_complete()
+    if k in _COMPLETE:
+        return _COMPLETE[k]
     return None
 
 
@@ -333,7 +362,14 @@ def _icbrt(k: int) -> int:
     if k < 0:
         r = -_icbrt(-k)
         return r if r ** 3 == k else r - 1
-    r = int(round(k ** (1 / 3))) if k < 10 ** 45 else 1
+    if k < 2:
+        return k
+    r = 1 << -(-k.bit_length() // 3)   # 2^ceil(bits/3) >= cube root: Newton descends from above
+    while True:
+        s = (2 * r + k // (r * r)) // 3
+        if s >= r:
+            break
+        r = s
     while r ** 3 > k:
         r -= 1
     while (r + 1) ** 3 <= k:

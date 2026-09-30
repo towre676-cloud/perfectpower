@@ -54,6 +54,14 @@ theorem pairs_empty {k : ℤ} (h : ∀ x y : ℤ, y ^ 2 ≠ x ^ 3 + k) (q : ℤ 
   simp only [Finset.notMem_empty, iff_false]
   exact h q.1 q.2
 
+/-- **Any generated complete list** `y² = x³ − D ↔ (x, y) ∈ L` (the branch compiler,
+`DescentBranch.complete_of_branch`, or transported Thue obligations,
+`DescentThue.complete_of_thue`) in the form a transport plan pulls back. -/
+theorem pairs_of_list {D : ℤ} {L : List (ℤ × ℤ)} (S : Finset (ℤ × ℤ))
+    (hL : ∀ x y : ℤ, y ^ 2 = x ^ 3 - D ↔ (x, y) ∈ L) (hS : L.toFinset = S) (q : ℤ × ℤ) :
+    q.2 ^ 2 = q.1 ^ 3 + (-D) ↔ q ∈ S := by
+  rw [show q.1 ^ 3 + (-D) = q.1 ^ 3 - D by ring, hL, ← hS, List.mem_toFinset]
+
 theorem no_points_m5 (x y : ℤ) : y ^ 2 ≠ x ^ 3 + (-5) := by
   rw [show x ^ 3 + (-5) = x ^ 3 - 5 by ring]; exact MordellMinus5.no_points x y
 

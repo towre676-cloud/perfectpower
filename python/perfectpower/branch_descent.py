@@ -43,7 +43,14 @@ def icbrt(n: int) -> int:
     if n < 0:
         r = icbrt(-n)
         return -r if r ** 3 == -n else -r - 1
-    r = int(round(n ** (1 / 3)))
+    if n < 2:
+        return n
+    r = 1 << -(-n.bit_length() // 3)   # exact integer Newton from above (no floats)
+    while True:
+        s = (2 * r + n // (r * r)) // 3
+        if s >= r:
+            break
+        r = s
     while r ** 3 > n:
         r -= 1
     while (r + 1) ** 3 <= n:
