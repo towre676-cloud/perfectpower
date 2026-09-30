@@ -124,13 +124,27 @@ only at $a(0)$; the generated theorems prove each equal to an orbit coordinate f
   The partial quotients of `GenContFract.of √2` are `1, 2, 2, …`, and the continuants are
   `(A_n, B_n)` from `p₋₁ = 1`, which is the entry's `a(0)`.
 - **A048624** (dead; "Essentially a duplicate of A000129") is transported with the shift its
-  terms fix, `a(n) = A000129(n + 2)`. The text itself does not state a shift. **The qualification
-  stays attached:**
-  - the 16 listed terms single out `s = 2` only within the tested candidate family (shifts
-    `1 ≤ s ≤ 4` of A000129);
-  - a finite term list cannot determine an unrestricted infinite sequence;
-  - so the Lean theorem is about the reading "A000129 shifted by 2", and the atlas records the
-    shift's evidential origin (`shift_from_terms`).
+  terms fix, `a(n) = A000129(n + 2)`. Three claims are kept separate
+  (`PerfectPower/Interfaces.lean`):
+  1. **Finite check.** The 16 listed terms equal `B_{n+2}`, `n < 16` (`A048624_terms_match`,
+     by `decide`). `python/tests/test_interfaces.py` ties the Lean list to the committed `.seq`.
+  2. **Proved uniqueness among all shifts.** Among **all** `s ∈ ℕ`, only `s = 2` can match:
+     `B` is strictly increasing, so `B_s = 2` forces `s = 2` (`A048624_shift_unique`,
+     `A048624_shift_of_terms`). This replaces the earlier "within the tested shifts
+     `1 ≤ s ≤ 4`".
+  3. **Adopted interpretation.** That the entry *defines* the whole infinite sequence
+     `n ↦ B_{n+2}` is an interpretation. The entry's text states no definition, and a finite term
+     list cannot determine an infinite sequence. The atlas keeps the shift's origin
+     (`shift_from_terms`).
+
+  **Certified shift interface.**
+  - `Interfaces.shift s f = f (· + s)`, with `shift_zero` and composition
+    `shift_shift : shift s (shift t f) = shift (s + t) f`.
+  - Exact prefix handling: `split_prefix` rebuilds `f` from `(prefixOf s f, shift s f)`, so an
+    offset change loses exactly the listed prefix and nothing else.
+  - The package's `corpus_adapter`, run on all 144 committed `.seq` files, finds the same
+    `B`-index shifts: A000129 at 0, A048624 at 2, and A069306 at 1, the last as finite agreement
+    only (`receipts/galois_adapters.json`). It promotes nothing.
 
 The five unproved √2 entries are A024537 and its duplicate A018905 (a floor recursion), A069306
 (binary arrays), A163271 (a "zero-transform") and A171842 (a binomial transform).

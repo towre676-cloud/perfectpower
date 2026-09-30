@@ -1,0 +1,398 @@
+{
+  "release": "v0.24.0",
+  "word_semantics": {
+    "algebra_written_order": "word letters name left-to-right as algebra product",
+    "column_vector_execution_order": "right-to-left; reverse the written word before residual-Hankel execution analysis"
+  },
+  "generator_cost": {
+    "G": 1732,
+    "H": 1689
+  },
+  "baseline": {
+    "degree8": {
+      "state_dims": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        15,
+        7,
+        3,
+        1
+      ],
+      "transition_ranks": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "G_calls": 41,
+      "H_calls": 40,
+      "primitive_calls": 81,
+      "primitive_cost": 138572
+    },
+    "degree9": {
+      "state_dims": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        19,
+        9,
+        4,
+        2,
+        1
+      ],
+      "transition_ranks": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "G_calls": 47,
+      "H_calls": 45,
+      "primitive_calls": 92,
+      "primitive_cost": 157409
+    }
+  },
+  "selected": {
+    "sensor_d8_m12_balanced": {
+      "height_bits": 4644,
+      "flat_prefix_cost": 833035,
+      "state_dims": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        15,
+        7,
+        3,
+        1
+      ],
+      "transition_ranks": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "G_calls": 41,
+      "H_calls": 40,
+      "primitive_calls": 81,
+      "primitive_cost": 138572
+    },
+    "sensor_d8_m12_height_local": {
+      "height_bits": 4641,
+      "flat_prefix_cost": 833078,
+      "state_dims": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        15,
+        7,
+        3,
+        1
+      ],
+      "transition_ranks": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "G_calls": 41,
+      "H_calls": 40,
+      "primitive_calls": 81,
+      "primitive_cost": 138572
+    },
+    "paley_d8_m12_balanced": {
+      "height_bits": 4610,
+      "flat_prefix_cost": 833035,
+      "state_dims": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        15,
+        7,
+        3,
+        1
+      ],
+      "transition_ranks": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "G_calls": 41,
+      "H_calls": 41,
+      "primitive_calls": 82,
+      "primitive_cost": 140261
+    },
+    "sensor_d9_p1_balanced": {
+      "height_bits": 6005,
+      "flat_prefix_cost": 1081036,
+      "state_dims": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        20,
+        10,
+        5,
+        3,
+        1
+      ],
+      "transition_ranks": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          10,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "G_calls": 49,
+      "H_calls": 47,
+      "primitive_calls": 96,
+      "primitive_cost": 164251
+    },
+    "paley_d9_p1_balanced": {
+      "height_bits": 5976,
+      "flat_prefix_cost": 1081036,
+      "state_dims": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        20,
+        10,
+        5,
+        3,
+        1
+      ],
+      "transition_ranks": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "G_calls": 48,
+      "H_calls": 48,
+      "primitive_calls": 96,
+      "primitive_cost": 164208
+    }
+  },
+  "exact_Q_rank_certificate": "For each frozen baseline/selected support, every modular residual-Hankel state rank and transition rank equals its coefficient-independent support-pattern upper bound. A nonzero modular minor gives the same lower bound over Q; the support-pattern count gives the upper bound over every field. Equality therefore certifies the displayed ranks over characteristic zero."
+}

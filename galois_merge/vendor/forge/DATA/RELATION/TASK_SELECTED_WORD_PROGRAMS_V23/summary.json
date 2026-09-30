@@ -1,0 +1,239 @@
+{
+  "release": "v0.23.0",
+  "programs": [
+    {
+      "task": "sensor",
+      "target": "A12+A48",
+      "degree": 8,
+      "native_mask": {
+        "r_plus": 0,
+        "r_minus": 2,
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ]
+      },
+      "support_count": 488,
+      "support_kind": "prefix words 0..487",
+      "max_word_degree": 8,
+      "prefix_edges": 487,
+      "prefix_G_edges": 244,
+      "prefix_H_edges": 243,
+      "prefix_primitive_cost": 833035,
+      "denominator_bits": 4652,
+      "max_numerator_bits": 4640,
+      "coefficient_height_bits": 4652,
+      "padic_precision_bits": 9966,
+      "padic_steps": 500,
+      "exact_verified": true,
+      "program_file": "sensor_d8_m12_padic.json"
+    },
+    {
+      "task": "sensor",
+      "target": "A12+A48",
+      "degree": 9,
+      "native_mask": {
+        "r_plus": 1,
+        "r_minus": 0,
+        "plus": [
+          1
+        ],
+        "minus": []
+      },
+      "support_count": 633,
+      "support_kind": "prefix words 0..632",
+      "max_word_degree": 9,
+      "prefix_edges": 632,
+      "prefix_G_edges": 316,
+      "prefix_H_edges": 316,
+      "prefix_primitive_cost": 1081036,
+      "denominator_bits": 6007,
+      "max_numerator_bits": 5999,
+      "coefficient_height_bits": 6007,
+      "padic_precision_bits": 12458,
+      "padic_steps": 625,
+      "exact_verified": true,
+      "program_file": "sensor_d9_p1_padic.json"
+    },
+    {
+      "task": "paley",
+      "target": "Paley Y=-A12-A48-A59+A95+A116+A125",
+      "degree": 8,
+      "native_mask": {
+        "r_plus": 0,
+        "r_minus": 2,
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ]
+      },
+      "support_count": 488,
+      "support_kind": "prefix words 0..487",
+      "max_word_degree": 8,
+      "prefix_edges": 487,
+      "prefix_G_edges": 244,
+      "prefix_H_edges": 243,
+      "prefix_primitive_cost": 833035,
+      "denominator_bits": 4623,
+      "max_numerator_bits": 4608,
+      "coefficient_height_bits": 4623,
+      "padic_precision_bits": 9966,
+      "padic_steps": 500,
+      "exact_verified": true,
+      "program_file": "paley_d8_m12_padic.json"
+    },
+    {
+      "task": "paley",
+      "target": "Paley Y=-A12-A48-A59+A95+A116+A125",
+      "degree": 9,
+      "native_mask": {
+        "r_plus": 1,
+        "r_minus": 0,
+        "plus": [
+          1
+        ],
+        "minus": []
+      },
+      "support_count": 633,
+      "support_kind": "prefix words 0..632",
+      "max_word_degree": 9,
+      "prefix_edges": 632,
+      "prefix_G_edges": 316,
+      "prefix_H_edges": 316,
+      "prefix_primitive_cost": 1081036,
+      "denominator_bits": 5979,
+      "max_numerator_bits": 5969,
+      "coefficient_height_bits": 5979,
+      "padic_precision_bits": 11959,
+      "padic_steps": 600,
+      "exact_verified": true,
+      "program_file": "paley_d9_p1_padic.json"
+    }
+  ],
+  "comparison": {
+    "sensor": {
+      "degree8_vs_degree9": {
+        "support_delta": 145,
+        "prefix_cost_ratio": 1.2977077793850198,
+        "height_bits_delta": 1355,
+        "physical_bypass": {
+          "routes": [
+            12,
+            48
+          ],
+          "coefficient_height": 1,
+          "route_work_per_node": 120
+        }
+      }
+    },
+    "paley": {
+      "degree8_vs_degree9": {
+        "support_delta": 145,
+        "prefix_cost_ratio": 1.2977077793850198,
+        "height_bits_delta": 1356,
+        "unconstrained_synchronized_primitive": {
+          "word": "H",
+          "coefficient_height": 1,
+          "native_rank_pair": [
+            1,
+            3
+          ],
+          "primitive_cost": 1689
+        }
+      }
+    }
+  },
+  "sparse_support_audit": {
+    "sensor_d8": {
+      "candidate_collision_groups_p1": 5,
+      "max_collision_p1": 2,
+      "survive": {
+        "1000033": {
+          "count": 0,
+          "examples": []
+        },
+        "1000037": {
+          "count": 0,
+          "examples": []
+        },
+        "1000039": {
+          "count": 0,
+          "examples": []
+        },
+        "1000081": {
+          "count": 0,
+          "examples": []
+        }
+      }
+    },
+    "sensor_d9": {
+      "candidate_collision_groups_p1": 79,
+      "max_collision_p1": 2,
+      "survive": {
+        "1000033": {
+          "count": 0,
+          "examples": []
+        },
+        "1000037": {
+          "count": 0,
+          "examples": []
+        },
+        "1000039": {
+          "count": 0,
+          "examples": []
+        },
+        "1000081": {
+          "count": 0,
+          "examples": []
+        }
+      }
+    },
+    "paley_d8": {
+      "candidate_collision_groups_p1": 1,
+      "max_collision_p1": 2,
+      "survive": {
+        "1000033": {
+          "count": 0,
+          "examples": []
+        },
+        "1000037": {
+          "count": 0,
+          "examples": []
+        },
+        "1000039": {
+          "count": 0,
+          "examples": []
+        },
+        "1000081": {
+          "count": 0,
+          "examples": []
+        }
+      }
+    },
+    "paley_d9": {
+      "candidate_collision_groups_p1": 79,
+      "max_collision_p1": 2,
+      "survive": {
+        "1000033": {
+          "count": 0,
+          "examples": []
+        },
+        "1000037": {
+          "count": 0,
+          "examples": []
+        },
+        "1000039": {
+          "count": 0,
+          "examples": []
+        },
+        "1000081": {
+          "count": 0,
+          "examples": []
+        }
+      }
+    }
+  },
+  "boundary": "The 488/633 programs are exact characteristic-zero programs on deterministic prefix supports. The one-free-coordinate sparse search is not a global l0-minimality proof. All one-prime 487/632 reductions found at p=1000003 fail at each of four independent nearby primes and are not promoted."
+}

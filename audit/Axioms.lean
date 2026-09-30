@@ -729,3 +729,15 @@ open PerfectPower
 #print axioms PerfectPower.Generated.MordellThue.minus80
 #print axioms PerfectPower.Generated.MordellThue.minus86
 #print axioms PerfectPower.Generated.MordellThue.minus92
+-- Interfaces
+#print axioms PerfectPower.Interfaces.restricted_transport
+#print axioms PerfectPower.Interfaces.restricted_empty
+#print axioms PerfectPower.Interfaces.evalF_compF_mul
+#print axioms PerfectPower.Interfaces.detM_mul
+#print axioms PerfectPower.Interfaces.bound_transport
+#print axioms PerfectPower.Interfaces.shift_shift
+#print axioms PerfectPower.Interfaces.split_prefix
+#print axioms PerfectPower.Interfaces.A048624_terms_match
+#print axioms PerfectPower.Interfaces.A048624_shift_unique
+#print axioms PerfectPower.Interfaces.A048624_shift_of_terms
+#print axioms PerfectPower.Interfaces.orbit_mod_three

@@ -1,0 +1,3902 @@
+{
+  "release": "v0.26.0",
+  "semantics": {
+    "algebra_build": "left-to-right written-word residual machine; append G/H on the right of the formal algebra word",
+    "column_execution": "column vectors evaluate a written product right-to-left; equivalently reverse each written word before residual-Hankel analysis",
+    "relation": "These are two directional residual machines of the same exact coefficient series; neither count supersedes the other."
+  },
+  "generator_cost": {
+    "G": 1732,
+    "H": 1689
+  },
+  "programs": {
+    "sensor_d8_v23": {
+      "degree": 8,
+      "support_count": 488,
+      "profiles": {
+        "1000003": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000033": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000037": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000039": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000081": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        }
+      },
+      "algebra_build": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 41,
+        "primitive_calls": 82,
+        "primitive_cost": 140261
+      },
+      "column_execution": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 40,
+        "primitive_calls": 81,
+        "primitive_cost": 138572
+      }
+    },
+    "paley_d8_v23": {
+      "degree": 8,
+      "support_count": 488,
+      "profiles": {
+        "1000003": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000033": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000037": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000039": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000081": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        }
+      },
+      "algebra_build": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 41,
+        "primitive_calls": 82,
+        "primitive_cost": 140261
+      },
+      "column_execution": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 40,
+        "primitive_calls": 81,
+        "primitive_cost": 138572
+      }
+    },
+    "sensor_d9_v23": {
+      "degree": 9,
+      "support_count": 633,
+      "profiles": {
+        "1000003": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000033": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000037": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000039": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000081": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        }
+      },
+      "algebra_build": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          23,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            16
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 57,
+        "H_calls": 57,
+        "primitive_calls": 114,
+        "primitive_cost": 194997
+      },
+      "column_execution": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          19,
+          9,
+          4,
+          2,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            16
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "G_calls": 47,
+        "H_calls": 45,
+        "primitive_calls": 92,
+        "primitive_cost": 157409
+      }
+    },
+    "paley_d9_v23": {
+      "degree": 9,
+      "support_count": 633,
+      "profiles": {
+        "1000003": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000033": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000037": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000039": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        },
+        "1000081": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              23,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 57,
+            "H_calls": 57,
+            "primitive_calls": 114,
+            "primitive_cost": 194997
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              19,
+              9,
+              4,
+              2,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                16,
+                16
+              ],
+              [
+                9,
+                9
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                2,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "G_calls": 47,
+            "H_calls": 45,
+            "primitive_calls": 92,
+            "primitive_cost": 157409
+          }
+        }
+      },
+      "algebra_build": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          23,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            16
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 57,
+        "H_calls": 57,
+        "primitive_calls": 114,
+        "primitive_cost": 194997
+      },
+      "column_execution": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          19,
+          9,
+          4,
+          2,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            16
+          ],
+          [
+            9,
+            9
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "G_calls": 47,
+        "H_calls": 45,
+        "primitive_calls": 92,
+        "primitive_cost": 157409
+      }
+    },
+    "sensor_d8_v25": {
+      "degree": 8,
+      "support_count": 488,
+      "profiles": {
+        "1000003": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000033": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000037": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000039": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000081": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        }
+      },
+      "algebra_build": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 41,
+        "primitive_calls": 82,
+        "primitive_cost": 140261
+      },
+      "column_execution": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 40,
+        "primitive_calls": 81,
+        "primitive_cost": 138572
+      }
+    },
+    "paley_d8_v25": {
+      "degree": 8,
+      "support_count": 488,
+      "profiles": {
+        "1000003": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000033": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000037": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000039": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        },
+        "1000081": {
+          "algebra_build": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                15
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 41,
+            "primitive_calls": 82,
+            "primitive_cost": 140261
+          },
+          "column_execution": {
+            "state_dims": [
+              1,
+              2,
+              4,
+              8,
+              16,
+              15,
+              7,
+              3,
+              1
+            ],
+            "transition_ranks": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                4
+              ],
+              [
+                8,
+                8
+              ],
+              [
+                15,
+                14
+              ],
+              [
+                7,
+                7
+              ],
+              [
+                3,
+                3
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "G_calls": 41,
+            "H_calls": 40,
+            "primitive_calls": 81,
+            "primitive_cost": 138572
+          }
+        }
+      },
+      "algebra_build": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            15
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 41,
+        "primitive_calls": 82,
+        "primitive_cost": 140261
+      },
+      "column_execution": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 40,
+        "primitive_calls": 81,
+        "primitive_cost": 138572
+      }
+    }
+  }
+}

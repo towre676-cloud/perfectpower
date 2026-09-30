@@ -1,0 +1,429 @@
+{
+  "release": "v0.21.0",
+  "prime": 1000003,
+  "generator_construction": {
+    "seed": 1,
+    "zero_probability": 0.7785,
+    "alphabet": [
+      -1,
+      0,
+      1
+    ],
+    "height": 1,
+    "nonzeros_total": 209,
+    "G": {
+      "total": 101,
+      "a": 0,
+      "A15": 38,
+      "S5": 7,
+      "u1": 1,
+      "u2": 2,
+      "v1": 25,
+      "v2": 12,
+      "v3": 16,
+      "right_multiply_mac_proxy": 1732
+    },
+    "H": {
+      "total": 108,
+      "a": 1,
+      "A15": 44,
+      "S5": 3,
+      "u1": 2,
+      "u2": 0,
+      "v1": 29,
+      "v2": 13,
+      "v3": 16,
+      "right_multiply_mac_proxy": 1689
+    }
+  },
+  "historical_dense_generators": {
+    "generator_g": {
+      "total": 486,
+      "a": 1,
+      "A15": 225,
+      "S5": 25,
+      "u1": 5,
+      "u2": 5,
+      "v1": 75,
+      "v2": 75,
+      "v3": 75,
+      "right_multiply_mac_proxy": 8061
+    },
+    "generator_h": {
+      "total": 486,
+      "a": 1,
+      "A15": 225,
+      "S5": 25,
+      "u1": 5,
+      "u2": 5,
+      "v1": 75,
+      "v2": 75,
+      "v3": 75,
+      "right_multiply_mac_proxy": 8061
+    }
+  },
+  "rank_ladder": [
+    {
+      "degree": 0,
+      "word_count": 1,
+      "native_rank": 1,
+      "hecke_rank": 1,
+      "paired_rank": 1
+    },
+    {
+      "degree": 1,
+      "word_count": 3,
+      "native_rank": 3,
+      "hecke_rank": 3,
+      "paired_rank": 3
+    },
+    {
+      "degree": 2,
+      "word_count": 7,
+      "native_rank": 7,
+      "hecke_rank": 7,
+      "paired_rank": 7
+    },
+    {
+      "degree": 3,
+      "word_count": 15,
+      "native_rank": 15,
+      "hecke_rank": 15,
+      "paired_rank": 15
+    },
+    {
+      "degree": 4,
+      "word_count": 31,
+      "native_rank": 31,
+      "hecke_rank": 30,
+      "paired_rank": 31
+    },
+    {
+      "degree": 5,
+      "word_count": 63,
+      "native_rank": 63,
+      "hecke_rank": 59,
+      "paired_rank": 63
+    },
+    {
+      "degree": 6,
+      "word_count": 127,
+      "native_rank": 127,
+      "hecke_rank": 113,
+      "paired_rank": 127
+    },
+    {
+      "degree": 7,
+      "word_count": 255,
+      "native_rank": 255,
+      "hecke_rank": 152,
+      "paired_rank": 255
+    },
+    {
+      "degree": 8,
+      "word_count": 511,
+      "native_rank": 486,
+      "hecke_rank": 152,
+      "paired_rank": 511
+    },
+    {
+      "degree": 9,
+      "word_count": 1023,
+      "native_rank": 486,
+      "hecke_rank": 152,
+      "paired_rank": 638
+    }
+  ],
+  "separator_quartic": {
+    "polynomial": "t^4-26 t^3-131 t^2+300 t+900",
+    "scalar": 900,
+    "max_abs_coordinate": 1067,
+    "det_A15": "266092742509031435590420279021907538485760000",
+    "det_S5": "1010100119040000",
+    "det_A15_bits": 148,
+    "det_S5_bits": 50,
+    "mod_p": {
+      "det_A15": 609710,
+      "det_S5": 748736
+    },
+    "inverse_common_denominator": "59087919283075457878432420806675435295027200",
+    "inverse_denominator_bits": 146,
+    "inverse_max_numerator_bits": 136,
+    "is_unit_over_Q": true
+  },
+  "degree8_coupling": {
+    "joint_dim": 511,
+    "pure_native_dim": 359,
+    "pure_hecke_dim": 25,
+    "coupling_dim": 127,
+    "native_relations_dim": 25,
+    "hecke_relations_dim": 359
+  },
+  "task_summary_degree8": {
+    "paley_line": {
+      "task_dim": 1,
+      "task_signature_rank": 1,
+      "min_channels": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_native_dim": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_arrow_cost": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      }
+    },
+    "c3_line": {
+      "task_dim": 1,
+      "task_signature_rank": 1,
+      "min_channels": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_native_dim": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_arrow_cost": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      }
+    },
+    "route7_bank": {
+      "task_dim": 7,
+      "task_signature_rank": 7,
+      "min_channels": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_native_dim": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_arrow_cost": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      }
+    },
+    "eq_onehop8": {
+      "task_dim": 8,
+      "task_signature_rank": 8,
+      "min_channels": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_native_dim": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_arrow_cost": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      }
+    },
+    "eq_lab_application9": {
+      "task_dim": 9,
+      "task_signature_rank": 9,
+      "min_channels": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_native_dim": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      },
+      "min_arrow_cost": {
+        "plus": [],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 0,
+        "r_minus": 2,
+        "native_dim": 150,
+        "signature_rank": 127,
+        "signature_kernel_dim": 23,
+        "arrow_cost_v20": 3000
+      }
+    },
+    "full_hecke_152": {
+      "task_dim": 152,
+      "task_signature_rank": 127,
+      "min_channels": {
+        "plus": [
+          1
+        ],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 1,
+        "r_minus": 2,
+        "native_dim": 155,
+        "signature_rank": 127,
+        "signature_kernel_dim": 28,
+        "arrow_cost_v20": 3030
+      },
+      "min_native_dim": {
+        "plus": [
+          1
+        ],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 1,
+        "r_minus": 2,
+        "native_dim": 155,
+        "signature_rank": 127,
+        "signature_kernel_dim": 28,
+        "arrow_cost_v20": 3030
+      },
+      "min_arrow_cost": {
+        "plus": [
+          1
+        ],
+        "minus": [
+          1,
+          2
+        ],
+        "r_plus": 1,
+        "r_minus": 2,
+        "native_dim": 155,
+        "signature_rank": 127,
+        "signature_kernel_dim": 28,
+        "arrow_cost_v20": 3030
+      }
+    }
+  },
+  "evidence_boundary": "Rank and unit statements are certified over the good prime p=1000003. Because all generators and structure constants used here are integral, every displayed full-rank modular minor is a nonzero integer minor and yields the corresponding characteristic-zero lower bound; ambient dimensions give equality. The task coupling coordinates themselves are a good-prime model, not an asserted canonical integral lattice."
+}

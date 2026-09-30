@@ -112,16 +112,33 @@ those of `F = M`. The inverse is integral because `det T = ±1` (`ThueLocal.sols
 `empty_transport`), and the certificate is the matrix plus a coefficient identity checked by
 evaluation.
 
-**Exact classes.** All 316 forms have positive discriminant, so their Hessians are positive
-definite. Reducing the Hessian gives a canonical form (`thue_graph.canonical`, tested for
-invariance), and the classes are exact rather than the output of a bounded search.
+**Computed classes, and what is proved about them.** All 316 forms have positive discriminant,
+so their Hessians are positive definite. Reducing the Hessian gives a normal form
+(`thue_graph.canonical`), and it sorts the 316 nodes into **79 computed classes**. Three
+statements need keeping apart:
+- **Transport inside each class is certified.** Every node carries a matrix `T` with
+  `F ∘ T = (representative)`, and Lean checks each one by evaluation. This is all the
+  certificates use.
+- **Inequivalence between classes is not proved here.** That no two of the 79 classes are
+  GL₂(ℤ)-equivalent follows from the classical uniqueness of reduced binary cubic forms (reduction
+  of the Hessian). Neither that theorem nor its application is formalized. The Python tests
+  (300 random transformations mapped back to the same normal form) are evidence of invariance,
+  not a proof of it.
+- **A bounded independent cross-check agrees.** The `galois_merge` package's `branch_adapter`
+  searches all matrices with entries of size at most 2, and checks each edge it finds exactly. It
+  finds 474 edges, none between two different classes, and they connect the nodes into exactly
+  the same 79 components (`galois_merge/run_repo_adapters.py`, `receipts/galois_adapters.json`).
+
+So "79 obligations" means that the certificates needed 79 and no more. It does not rule out
+further savings: a proved equivalence between two classes, or reuse of shared field data, could
+lower the count. The established equivalences give no additional savings.
 
 | | count |
 |---|---|
 | branch equations (nodes) | 316 |
 | GL₂(ℤ) classes (distinct obligations) | **79** |
 | class size | 4 in every class: `(p, q) ↦ (±p, ±q)`, realized by `−I` (`F ↦ −F`) and `diag(−1, 1)` (complex conjugation of the branch) |
-| classes shared between curves | 0 |
+| classes shared between curves | 0 (via the established equivalences) |
 | forms with a nontrivial automorphism `F ∘ T = F` | 0 |
 
 **Cubic fields** (`crosscheck/thue_fields_pari.py`, `receipts/thue_fields.json`; external, PARI
@@ -155,9 +172,14 @@ primality or inverse mod `p` is used.
 the obligations here it needs up to 2,193,840 lifts per class (depth `3⁸`), and the kernel ran out
 of memory (15 GB) on such a tree, in both a breadth-first and a depth-first form. The descent
 follows the `p`-adic root lines instead:
-- **15 of the 17 point-free classes** close with at most 28 nodes each: **220 nodes and 2,487
+- **15 of the 17 point-free classes** close with at most 20 nodes each: **178 nodes and 2,008
   leaf lifts in total**, against 7,974,209 lifts for plain trees (one per class) or 31,896,836
   (one per branch);
+- **exact repeated suffixes are interned**: a subproblem `(F, M)` reached along two paths is
+  checked once, and both parents point at it. The checker only needs children after parents, so
+  the certificate is a DAG. Unfolded as trees, the same certificates have 220 nodes and 2,487 leaf
+  lifts. Only identical `(F, M)` are shared: the 205 non-root nodes are 163 distinct exactly but
+  108 up to GL₂(ℤ), and sharing those would need a transport step inside the checker;
 - the whole file of 15 obligations and 10 curves checks in about 80 s.
 
 **Transport composes with the branch theorem.** `DescentThue.complete_of_thue` extends
@@ -187,26 +209,125 @@ A081119/A081120 with 0 disagreements, and 119 leads remain.
 
 ## 7. What remains, and why
 
-- **23 negative-`k` curves** have at least one class that carries points (62 classes in total).
-  Completeness there needs an argument that bounds the solutions of an irreducible Thue
-  equation (Baker-type bounds with reduction, or Skolem's `p`-adic method): not a local
-  certificate.
-- **D = 72** has two point-free classes that no descent up to `p = 43` closes. Its other classes
-  carry points anyway.
-- **Positive `k`**, as a separate development. The negative-`k` derivation uses `D > 0` in exactly
-  four places in `ClassTwo.short_relation` and `DescentBranch.y_mem`:
-  1. `a² + D b² > 0`, which gives `k ≥ 1`;
-  2. `r² + D t² < (K + 1) r t`, which gives `k ≤ K`;
-  3. `D q² ≤ k³`, which gives the finite table `|q| ≤ Q`;
-  4. `y² + D = x³`, which gives `x > 0`.
+**Accounting.** 23 of the 59 negative-`k` curves remain open. For each of them, completeness is
+blocked by at least one class that carries points (62 such classes in all). That count includes
+`D = 72`. On `D = 72` there are two separate issues:
+- classes 55 and 58 carry points and need a bound, like every other open curve;
+- classes 56 and 57 are point-free, according to PARI, but no local certificate closes them.
 
-  For `D < 0`, (1) and (2) survive as `1 ≤ |k| ≤ K` (the lattice step never used definiteness
-  beyond that bound); (4) fails (`y² = x³ + 8` has `x = −2`). (3) is the real change: `p² − |D| q² = k³`
-  has infinitely many solutions, because the unit group of `ℤ[√|D|]` is infinite. The repair is to
-  take `β` modulo cubes of the fundamental unit. That is exactly what the `QuadOrbit` seed engine
-  certifies (finitely many seed orbits of `x² − d y² = Δ` under a certified unit). The planned
-  first family is one where those seeds and branches are uniform in a parameter. Nothing is
-  claimed for positive `k` yet.
+So closing the two point-free classes would not close `D = 72`. Lists: "open with a
+point-carrying branch" = 23 curves; "point-free class not closed by descent" = 2 classes, both on
+`D = 72`.
+
+Completeness at a point-carrying class needs a bound on the solutions of an irreducible Thue
+equation (Baker-type bounds with reduction, or Skolem's `p`-adic method). A local certificate
+cannot do it, because a solution survives at every place.
+
+### 7.1 D = 72: the local–global diagnosis (`python/d72_local.py`, `receipts/d72_local.json`)
+
+The question is whether classes 56 and 57 are locally soluble everywhere, **including the branch
+restrictions**. The restrictions are the readout conditions `k³ ∣ p W₁ + D q W₂` and
+`k ∣ a² + D b²`, with `k = 9`, so they live only at 3. The curve equation then follows from the
+norm identity. Every place is covered:
+- **Real place.** `F(t, 1)` is a real cubic, and an odd-degree real polynomial takes every value.
+- **Exceptional primes** `2, 3, 5, 7` (all primes of `3 · M · disc F`). The script gives an explicit
+  Hensel witness `(a, b)` with `v_p(F − M) ≥ 2 v_p(∂F) + 1`, so `a` lifts to a `p`-adic root.
+  - At `3`, the witness also satisfies both restrictions, and the lift agrees with it modulo
+    `3^(e−v)` with `e − v ≥ 6`, so the restrictions persist in the limit.
+  - The witnesses are `(1977, −40)` with `e = 17, v = 7` for class 56, and `(−3894, −40)` with
+    `e = 11, v = 5` for class 57.
+- **All other primes `p ≥ 11`, uniformly.** Two steps are needed, because smoothness alone gives
+  no point:
+  - *Existence.* The projective plane cubic `F(a, b) = M z³` is smooth over `𝔽_p` when
+    `p ∤ 3 M disc F`, so it is a genus-1 curve. Hasse–Weil gives at least `p + 1 − 2√p` points
+    over `𝔽_p`. At most 3 lie at infinity (`z = 0`), and `p + 1 − 2√p − 3 > 0` for `p ≥ 11`.
+  - *Lifting.* An affine point is smooth, so it lifts by Hensel. At `p ≠ 3` there are no
+    restrictions.
+
+**Conclusion.** Both classes are everywhere locally soluble with their restrictions, so **no local
+certificate (descent or lifting, at any prime) can close them**. The obstruction is global.
+
+**Solution-preserving descent sharpens this** (§7.2). Full descent over the primes of `M`
+reduces class 56 and class 57 to the **same** unit equation
+`G(u, v) = −3u³ + 9uv² − 2v³ = ±1` (canonical form; field discriminant 1944). Its solutions map
+onto the class's solutions through the descent matrices, so it has none. Class 55, which carries
+points, also has this equation among its leaves; its points come through its other leaves.
+- PARI's `thue` (external) finds no solution of `G = ±1`.
+- `G = ±1` is not locally obstructed at 2, 3, 5, 7, 11 or 13.
+
+The whole remaining `D = 72` point-free problem is therefore **one unit Thue equation**.
+Closing it needs a global input: a unit-equation bound in the field of discriminant 1944, which
+`D = 18` and `D = 32` share, or the lattice condition `x ∣ a − y b` expressed as a
+maximal-order descent in `ℤ[√−2]`.
+
+### 7.2 Solution-preserving descent on the nonempty classes (`python/descent_residual.py`, `receipts/descent_residual.json`)
+
+Descent as in §6, but applied to all 66 classes it did not close. It runs over **all** primes of
+`M` (not just one), prunes children that are locally impossible at 2, 3, 5 and 7, and stops at
+right side `±1`. Each child is `F ∘ T` with `det T = ±pˢ`. So the parent's solutions are exactly
+the images of the children's solutions, and every solution reaches a leaf. Measured:
+- the 66 classes end in **189 unit leaves**, which are **109 distinct** unit equations
+  `G(u, v) = 1` up to GL₂(ℤ);
+- 24 of these unit equations are shared by several classes;
+- 28 have no solution with `|u|, |v| ≤ 60`.
+- **Classes 42 (`D = 55`) and 51 (`D = 71`)** have every leaf pruned, so multi-prime descent proves
+  them empty. The single-prime certificate of §6 could not.
+  - **Neither curve closes**: each also has point-carrying classes.
+  - The Lean checker (`ThueLocal.descB`) fixes one prime per tree. Emitting these two classes as
+    certificates needs a per-node prime, which is a checker extension and is not done here.
+
+No leaf here is "explicitly solved". A certificate that closes a nonempty class this way needs,
+for each surviving unit equation, a proved complete solution list. That is the same global
+problem, but now on 109 unit equations instead of 62 classes with large right sides. This is the
+research direction, and nothing in this section is promoted.
+
+### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)
+
+**One field serving several open obligations.** `K = ℚ(x)`, `x³ − 6x − 2 = 0`, has
+discriminant 756, is totally real, has class number 1 and unit rank 2, and is certified with
+`bnfcertify`. It carries 7 classes from three open curves: `D = 7` (0, 1, 2), `D = 28`
+(18, 19, 20) and `D = 63` (50). For a class `(c₀, c₁, c₂, c₃)` with right side `M`, put
+`φ = c₀θ`. Then `F(a, b) = M ⇔ N_K(c₀a − bφ) = c₀²M`, so every solution is
+`γ · ε₁^{n₁} ε₂^{n₂} · (±1)`, with `γ` taken from the finite list `bnfisintnorm(K, c₀²M)`.
+
+- **Shared:** one `bnfinit` + `bnfcertify` (units, regulator 5.692, class group), and each class's
+  `φ` embedded in `K` (`nfisisom`).
+- **Per class:** only the norm list and the solutions' exponents. Every class has **one** norm
+  representative and **2** solutions. Every solution has unit exponents with `|nᵢ| ≤ 1`, or
+  `≤ 2` for class 50.
+- **Not done: the bound.** Completeness needs an explicit `B` with `max |nᵢ| ≤ B` for each
+  `(class, γ)`. The standard route is Baker–Matveev on Siegel's unit equation followed by LLL
+  reduction. Below `B`, the check is a finite enumeration and could be Lean-checked. No bound is
+  computed or claimed. A field match is not an equivalence: the 7 classes remain 7 obligations.
+  What they share is the unit data a bound certificate would reduce against.
+
+### 7.4 Positive `k`
+
+This is a separate development. The negative-`k` derivation uses `D > 0` in exactly four places,
+in `ClassTwo.short_relation` and `DescentBranch.y_mem`:
+1. `a² + D b² > 0`, which gives `k ≥ 1`;
+2. `r² + D t² < (K + 1) r t`, which gives `k ≤ K`;
+3. `D q² ≤ k³`, which gives the finite table `|q| ≤ Q`;
+4. `y² + D = x³`, which gives `x > 0`.
+
+For `D < 0`:
+- (1) and (2) survive as `1 ≤ |k| ≤ K`: the lattice step never used definiteness beyond that bound.
+- (4) fails: `y² = x³ + 8` has `x = −2`.
+- (3) is the real change. `p² − |D| q² = k³` has infinitely many solutions, because the unit group
+  of `ℤ[√|D|]` is infinite.
+
+**Units modulo cubes is not a finite enumeration by itself.** `Interfaces.orbit_mod_three`
+proves only the exponent normalization: `ε^n ρ = (ε³)^{⌊n/3⌋}(ε^{n mod 3} ρ)`. It leaves open
+four separate obligations, and each must be discharged before any positive-`k` list is complete:
+- **Seed coverage:** every solution of `p² − |D|q² = k³` lies in the orbit of a listed seed.
+  This is the `QuadOrbit` certificate, and it must enter through a proved interface, not by
+  matching data.
+- **Ideal classes:** the element-versus-ideal gap when the class number of the real quadratic
+  order is not coprime to 3.
+- **Exceptional primes:** 2, 3 and the primes of `D`.
+- **Integral readout of each reduced branch:** square `k` needs separate treatment.
+
+Nothing is claimed for positive `k` yet.
 
 ## 8. Not covered
 

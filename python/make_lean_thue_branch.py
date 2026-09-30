@@ -63,19 +63,29 @@ def line_mat(p, lam):
 
 def descent(F, M, p, maxnodes=500):
     """A descent certificate (list of nodes, node 0 = (F, M)) with the semantics of
-    `ThueLocal.descB`, or None."""
-    nodes = []
+    `ThueLocal.descB`, or None.
+
+    Exact repeated subproblems are interned: a node `(F, M)` reached along two paths is
+    built and checked once, and both parents point at it (the checker needs only that a
+    child's index exceed its parent's, so a DAG is valid).  The nodes are then renumbered
+    in a topological order.  Only *identical* `(F, M)` are shared; GL_2(Z)-equivalent nodes
+    are not, since that would need a transport step the checker does not have."""
+    raw, memo = [], {}
 
     def build(F, M):
-        if len(nodes) > maxnodes:
+        key = (F, M)
+        if key in memo:
+            return memo[key]
+        if len(raw) > maxnodes:
             raise ValueError('too large')
-        idx = len(nodes)
-        nodes.append(None)
+        idx = len(raw)
+        raw.append(None)
+        memo[key] = idx
         if M % p:
             r = lift_obstruction(F, M, p, 6)
             if not r:
                 raise ValueError('leaf not locally impossible')
-            nodes[idx] = (F, M, ('leaf', r[0]))
+            raw[idx] = (F, M, ('leaf', r[0]))
             return idx
         zero = build(F, M // p ** 3) if M % p ** 3 == 0 else None
         lines = []
@@ -89,13 +99,43 @@ def descent(F, M, p, maxnodes=500):
             H2 = tuple(c // p ** s for c in H)
             j = build(H2, M // p ** s)
             lines.append((lam, s, j))
-        nodes[idx] = (F, M, ('split', zero, lines))
+        raw[idx] = (F, M, ('split', zero, lines))
         return idx
     try:
         build(tuple(F), M)
     except ValueError:
         return None
+    # topological renumbering: parents before children (reverse postorder from the root)
+    order, seen = [], set()
+
+    def visit(i):
+        if i in seen:
+            return
+        seen.add(i)
+        k = raw[i][2]
+        if k[0] == 'split':
+            for j in ([k[1]] if k[1] is not None else []) + [l[2] for l in k[2]]:
+                visit(j)
+        order.append(i)
+    visit(0)
+    order.reverse()
+    new = {old: n for n, old in enumerate(order)}
+    nodes = []
+    for old in order:
+        F, M, k = raw[old]
+        if k[0] == 'split':
+            k = ('split', None if k[1] is None else new[k[1]], [(l, s, new[j]) for l, s, j in k[2]])
+        nodes.append((F, M, k))
     return nodes
+
+
+def tree_size(nodes, i=0):
+    """Number of nodes of the certificate unfolded as a tree (no interning)."""
+    k = nodes[i][2]
+    if k[0] == 'leaf':
+        return 1
+    kids = ([k[1]] if k[1] is not None else []) + [l[2] for l in k[2]]
+    return 1 + sum(tree_size(nodes, j) for j in kids)
 
 
 def kind_lean(k):
@@ -174,7 +214,8 @@ def main():
                                     for F, MM, k in cert if k[0] == 'leaf')
                     lift = lift_obstruction(rep, M, p, 12 if p <= 3 else 6)
                     lift_work = None if not lift else sum(x * p * p for x in [1] + lift[1][:-1])
-                    cls.update({'descent': {'p': p, 'nodes': len(cert), 'leaf_work': leaf_work,
+                    cls.update({'descent': {'p': p, 'nodes': len(cert), 'tree_nodes': tree_size(cert),
+                                            'leaf_work': leaf_work,
                                             'lifting_tree_work_for_comparison': lift_work,
                                             'lifting_tree_depth': None if not lift else lift[0],
                                             'certificate': [[list(F), MM, list(k[:2]) if k[0] == 'leaf' else
@@ -266,13 +307,15 @@ def main():
         'obligations_emitted': len(obstructed),
         'curves_closed': [r['D'] for r in curves if r['status'] == 'COMPLETE'],
         'descent_nodes_total': sum(c['descent']['nodes'] for c in obstructed),
+        'descent_nodes_without_interning': sum(c['descent']['tree_nodes'] for c in obstructed),
         'descent_leaf_work_total': sum(c['descent']['leaf_work'] for c in obstructed),
         'lifting_tree_work_one_per_class': sum(c['descent']['lifting_tree_work_for_comparison'] or 0 for c in obstructed),
         'lifting_tree_work_one_per_branch': sum((c['descent']['lifting_tree_work_for_comparison'] or 0) * c['size']
                                                 for c in obstructed),
     }
     out_json = {'summary': summary, 'classes': classes, 'curves': curves,
-                'note': 'GL_2(Z) classes are exact (canonical forms via the reduced Hessian); '
+                'note': 'GL_2(Z) classes are computed by a reduced-Hessian normal form; transport inside '
+                        'a class is certified, inequivalence between classes is not formalized. '
                         'PARI labels are external and used only for reporting'}
     (ROOT / 'receipts' / 'thue_graph.json').write_text(json.dumps(out_json, indent=1) + '\n')
     print(json.dumps(summary, indent=1))

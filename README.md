@@ -50,10 +50,13 @@ The classification is a **synthesis**, and we claim no priority for it. It combi
   - **Method:** every solution of $y^2=x^3-D$ enters one of finitely many branches of Thue's lattice argument, with no coprimality, maximal-order, unit or class-number assumption. Each branch is closed by a kernel check, as a field cube (a reducible cubic, listed by divisors) or as impossible mod $m$.
   - **Result:** complete lists for **26 of the 59** unresolved curves with $1\le D\le100$, including $y^2=x^3-1$ (`MordellMinus1.lean`: every Gaussian unit is a cube, $i=(-i)^3$, and $2+2i=(i-1)^3$). Ten have Sage rank 0, twelve rank 1, four rank 2; all 26 agree with the Sage census and the published counts.
   - **Prediction tested:** the earlier diagnostic predicted 46; 22 of those closed, and 4 unpredicted curves closed too.
-  - **The Thue workload as a graph:** the other 33 curves reduce to 316 explicit Thue equations. Certified unimodular transformations and exact canonical forms compress them to **79 distinct obligations**, in 26 cubic fields (none shared by equivalence across curves).
-    - A new certificate, **p-adic descent on forms** (`ThueLocal.lean`), proves 15 of them impossible. It needs 220 nodes in total, where plain residue lifting needs about 8 million steps and ran out of kernel memory.
+  - **The Thue workload as a graph:** the other 33 curves reduce to 316 explicit Thue equations. Certified unimodular transformations group them into **79 computed classes**, in 26 cubic fields. Transport inside each class is Lean-checked. Inequivalence between classes rests on classical reduction theory, which is not formalized, and a bounded independent search agrees (`receipts/galois_adapters.json`). The established equivalences share nothing across curves.
+    - A new certificate, **p-adic descent on forms** (`ThueLocal.lean`), proves 15 of them impossible. It needs 178 nodes in total (220 before interning exact repeated subproblems), where plain residue lifting needs about 8 million steps and ran out of kernel memory.
     - Transported to every branch that uses them, these obligations close **10 more curves** (D = 29, 32, 36, 38, 52, 56, 77, 80, 86, 92).
   - **Still open:** 23 curves have Thue branches that carry points. PARI solves them unconditionally and agrees with Sage; that is external, not Lean.
+    - **D = 72** is among the 23. Its two point-free classes are everywhere locally soluble, including the branch restrictions (`receipts/d72_local.json`), so no local certificate can close them. Solution-preserving descent reduces both to one unit equation, $-3u^3+9uv^2-2v^3=\pm1$, and PARI finds it has no solution (external).
+    - Solution-preserving descent (`receipts/descent_residual.json`, measurement only) reduces the 66 classes that single-prime descent leaves open to 109 distinct unit equations. Multi-prime descent also empties classes 42 (D = 55) and 51 (D = 71). No curve closes, and the Lean checker needs a per-node prime to emit those two.
+    - A shared-field pilot (`receipts/field756_pilot.json`, external) serves 7 classes of D = 7, 28 and 63 from one certified field. Every solution has unit exponents at most 2. The exponent bound itself is not computed.
 
 ### 3. From constraints to certified plans
 The constraint compiler (`python -m perfectpower solve`, [guide](docs/CONSTRAINT_COMPILER.md)) accepts constraints that do not mention powers:
@@ -95,7 +98,7 @@ $$\#\{v\le N\}=\Big(\sum_\rho\frac{g_\rho}{P_\rho\log E_\rho}\Big)\log N+O(1).$$
   - **Verification:** every candidate is re-checked against its full entry. On the $\sqrt2$ orbit:
     - 29 are proved equivalent, including A001333 through the continued fraction of $\sqrt2$ (`SqrtTwoBridges.lean`, with Euclid's primitive-triple classification);
     - 3 are proved equal to a coordinate outside a finite exceptional set;
-    - 1 is transported from the proved entry it duplicates, and 1 (A048624) with a shift read from its terms;
+    - 1 is transported from the proved entry it duplicates, and 1 (A048624) with the shift its terms fix (Lean proves the 16-term match and that `s = 2` is the only shift over all of ℕ; reading the dead entry as that infinite sequence is an adopted interpretation);
     - 5 agree without proof.
   - **The claim of a generated proof:** Lean proves the emitted definitions. Reading the English as that definition is an inspected translation, with its grammar and semantics in [DEFINITION_LANGUAGE.md](docs/DEFINITION_LANGUAGE.md) and every translation exposed in `receipts/oeis_translation_review.md`.
   - **Mordell cross-check:** all 77 Lean-certified Mordell lists with $|k|\le100$ match the published solution counts (A081119/A081120).
@@ -176,7 +179,7 @@ docker build -t perfectpower . && docker run --rm perfectpower
 **What is still open.**
 - Effective enumeration of the finite type outside Runge and the certified Mordell cases. The compiler states the missing premise exactly, and the OEIS cross-check ranks 82 nonempty curves with $|k|\le100$ as leads.
 - **The 23 negative-$k$ curves whose Thue branches carry points** (62 obligations). Local certificates cannot close them; this needs bounds for irreducible Thue equations (Baker with reduction, or Skolem's method), certified in Lean.
-- **Positive $k$** (96 curves $|k|\le100$): the factorization is real quadratic, which this lattice argument does not cover.
+- **Positive $k$** (96 curves $|k|\le100$): the factorization is real quadratic, which this lattice argument does not cover. `Interfaces.orbit_mod_three` proves only the unit-exponent normalization (units mod cubes). Seed and ideal-class coverage, the exceptional primes and the integral readout are separate obligations.
 - Quartic genus-one models: `EffectiveEnumeration.lean` has the degree-two map and exact lifts, not a quartic solver.
 - The 5 remaining unproved $\sqrt2$ entries: a floor recursion (A024537 and its duplicate), a binomial transform, a "zero-transform", binary arrays.
 - The Bilu–Tichy classification: `MonomialCount.lean` has the finished counting pieces (monomials, filtered orbits, collisions, the $t^2$ outer polynomial), not the classification.

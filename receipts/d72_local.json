@@ -1,0 +1,118 @@
+{
+ "curve": "y^2 = x^3 - 72",
+ "classes": [
+  {
+   "class": 56,
+   "entry": [
+    9,
+    9,
+    -3
+   ],
+   "form": [
+    -3,
+    27,
+    648,
+    -648
+   ],
+   "M": 729,
+   "real_place": "soluble (odd-degree real polynomial)",
+   "exceptional_primes": [
+    2,
+    3,
+    5,
+    7
+   ],
+   "hensel_witnesses": {
+    "2": {
+     "a": -3999,
+     "b": -40,
+     "lift_variable": "a",
+     "v_residual": 2,
+     "v_derivative": 0
+    },
+    "3": {
+     "a": 1977,
+     "b": -40,
+     "lift_variable": "a",
+     "v_residual": 17,
+     "v_derivative": 7
+    },
+    "5": {
+     "a": -3997,
+     "b": -40,
+     "lift_variable": "a",
+     "v_residual": 1,
+     "v_derivative": 0
+    },
+    "7": {
+     "a": -3999,
+     "b": -40,
+     "lift_variable": "a",
+     "v_residual": 1,
+     "v_derivative": 0
+    }
+   },
+   "good_primes": "p >= 11 not dividing 3*M*disc: smooth plane cubic, Hasse-Weil gives >= p + 1 - 2 sqrt(p) - 3 > 0 affine points, all smooth, Hensel lifts",
+   "restricted_at_3": "witness satisfies k^3 | p W1 + D q W2 and k | a^2 + D b^2 with e - v >= 6, so the 3-adic root keeps them",
+   "everywhere_locally_soluble": true,
+   "pari_integral_solutions": 0
+  },
+  {
+   "class": 57,
+   "entry": [
+    9,
+    21,
+    -2
+   ],
+   "form": [
+    -2,
+    63,
+    432,
+    -1512
+   ],
+   "M": 729,
+   "real_place": "soluble (odd-degree real polynomial)",
+   "exceptional_primes": [
+    2,
+    3,
+    5,
+    7
+   ],
+   "hensel_witnesses": {
+    "2": {
+     "a": -3999,
+     "b": -39,
+     "lift_variable": "b",
+     "v_residual": 2,
+     "v_derivative": 0
+    },
+    "3": {
+     "a": -3894,
+     "b": -40,
+     "lift_variable": "a",
+     "v_residual": 11,
+     "v_derivative": 5
+    },
+    "5": {
+     "a": -3998,
+     "b": -40,
+     "lift_variable": "a",
+     "v_residual": 2,
+     "v_derivative": 0
+    },
+    "7": {
+     "a": -4000,
+     "b": -40,
+     "lift_variable": "a",
+     "v_residual": 1,
+     "v_derivative": 0
+    }
+   },
+   "good_primes": "p >= 11 not dividing 3*M*disc: smooth plane cubic, Hasse-Weil gives >= p + 1 - 2 sqrt(p) - 3 > 0 affine points, all smooth, Hensel lifts",
+   "restricted_at_3": "witness satisfies k^3 | p W1 + D q W2 and k | a^2 + D b^2 with e - v >= 6, so the 3-adic root keeps them",
+   "everywhere_locally_soluble": true,
+   "pari_integral_solutions": 0
+  }
+ ],
+ "conclusion": "both remaining classes are locally soluble at every place, including the branch restrictions at 3; PARI finds no integral solution. No local certificate can close them: what is missing is global (the lattice condition x | a - y b, or a global argument in the field)"
+}

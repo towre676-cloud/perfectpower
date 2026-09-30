@@ -1,0 +1,173 @@
+{
+  "release": "v0.25.0",
+  "boundary": "The species-route association is the engineered v41 join, not an intrinsic identification. Pareto comparison is performed only within the frozen joined metrics.",
+  "all_35_coarse_objectives": {
+    "maximize": [
+      "wilson_degree4_rank",
+      "eq_sensor_direct_bypass"
+    ],
+    "front_count": 4,
+    "front": [
+      {
+        "routes": [
+          12,
+          125,
+          48
+        ],
+        "species": [
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "degree4_rank": 121,
+        "eq_direct_bypass": true,
+        "fano_line": false
+      },
+      {
+        "routes": [
+          12,
+          48,
+          116
+        ],
+        "species": [
+          "A6",
+          "A8",
+          "A9"
+        ],
+        "degree4_rank": 121,
+        "eq_direct_bypass": true,
+        "fano_line": false
+      },
+      {
+        "routes": [
+          12,
+          48,
+          59
+        ],
+        "species": [
+          "A6",
+          "A8",
+          "A10"
+        ],
+        "degree4_rank": 121,
+        "eq_direct_bypass": true,
+        "fano_line": true
+      },
+      {
+        "routes": [
+          12,
+          48,
+          95
+        ],
+        "species": [
+          "A6",
+          "A8",
+          "A11"
+        ],
+        "degree4_rank": 121,
+        "eq_direct_bypass": true,
+        "fano_line": false
+      }
+    ]
+  },
+  "fano_7_objectives": {
+    "maximize": [
+      "wilson_degree4_rank",
+      "eq_sensor_direct_bypass"
+    ],
+    "minimize": [
+      "one_pass_degree",
+      "denominator_bits",
+      "max_numerator_bits",
+      "active_word_passes",
+      "active_traffic_units"
+    ],
+    "front_count": 4,
+    "front": [
+      {
+        "routes": [
+          49,
+          12,
+          125
+        ],
+        "species": [
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "degree4_rank": 120,
+        "eq_direct_bypass": false,
+        "compiler": {
+          "one_pass_degree": 150,
+          "denominator_bits": 745,
+          "max_numerator_bits": 747,
+          "active_word_passes": 586,
+          "active_traffic_units": 29370
+        }
+      },
+      {
+        "routes": [
+          49,
+          48,
+          116
+        ],
+        "species": [
+          "A5",
+          "A8",
+          "A9"
+        ],
+        "degree4_rank": 120,
+        "eq_direct_bypass": false,
+        "compiler": {
+          "one_pass_degree": 150,
+          "denominator_bits": 747,
+          "max_numerator_bits": 751,
+          "active_word_passes": 586,
+          "active_traffic_units": 29070
+        }
+      },
+      {
+        "routes": [
+          12,
+          48,
+          59
+        ],
+        "species": [
+          "A6",
+          "A8",
+          "A10"
+        ],
+        "degree4_rank": 121,
+        "eq_direct_bypass": true,
+        "compiler": {
+          "one_pass_degree": 180,
+          "denominator_bits": 1046,
+          "max_numerator_bits": 1048,
+          "active_word_passes": 581,
+          "active_traffic_units": 34860
+        }
+      },
+      {
+        "routes": [
+          12,
+          116,
+          95
+        ],
+        "species": [
+          "A6",
+          "A9",
+          "A11"
+        ],
+        "degree4_rank": 121,
+        "eq_direct_bypass": false,
+        "compiler": {
+          "one_pass_degree": 180,
+          "denominator_bits": 1040,
+          "max_numerator_bits": 1042,
+          "active_word_passes": 581,
+          "active_traffic_units": 34860
+        }
+      }
+    ]
+  }
+}

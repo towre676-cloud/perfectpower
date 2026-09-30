@@ -22,6 +22,7 @@ test:
 	$(PY) -m unittest discover -s python/tests
 	$(PY) -m unittest discover -s continuation_tests
 	$(PY) -m unittest discover -s expert_push/tests
+	$(PY) -m unittest discover -s galois_merge/tests
 
 cert-audit:
 	$(PY) python/independent_cert_audit.py
@@ -46,6 +47,9 @@ receipts:
 	$(PY) python/make_oeis_problems.py
 	$(PY) python/make_lean_mordell_branch.py
 	$(PY) python/make_lean_thue_branch.py
+	$(PY) python/d72_local.py
+	$(PY) python/descent_residual.py
+	$(PY) galois_merge/run_repo_adapters.py
 	$(PY) python/make_oeis_auto.py
 	$(PY) python/make_oeis_atlas.py
 	$(PY) python/make_mordell_obstructions.py
@@ -79,6 +83,7 @@ crosscheck:
 	$(SAGEPY) crosscheck/mordell_census.py 10000 4
 	$(SAGEPY) crosscheck/branch_thue_pari.py 600
 	$(SAGEPY) crosscheck/thue_fields_pari.py
+	$(SAGEPY) crosscheck/field756_pilot.py
 
 # Differential fuzzers with fixed seeds (python/fuzz/); the finite-bucket scan goes to 1e8.
 fuzz:

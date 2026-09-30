@@ -1,0 +1,162 @@
+{
+  "release": "v0.25.0",
+  "max_degree": 8,
+  "universe_word_count": 511,
+  "active_word_count": 488,
+  "omitted_word_count": 23,
+  "full_dictionary_structural_primitive_calls": 82,
+  "global_488_word_support_structural_lower_bound": 81,
+  "transition_graphs": [
+    {
+      "k": 0,
+      "left": 1,
+      "right": 255,
+      "full_transition_rank_each_symbol": 1,
+      "minimum_edge_deletions_to_drop_rank_by_one": 255
+    },
+    {
+      "k": 1,
+      "left": 2,
+      "right": 127,
+      "full_transition_rank_each_symbol": 2,
+      "minimum_edge_deletions_to_drop_rank_by_one": 127
+    },
+    {
+      "k": 2,
+      "left": 4,
+      "right": 63,
+      "full_transition_rank_each_symbol": 4,
+      "minimum_edge_deletions_to_drop_rank_by_one": 63
+    },
+    {
+      "k": 3,
+      "left": 8,
+      "right": 31,
+      "full_transition_rank_each_symbol": 8,
+      "minimum_edge_deletions_to_drop_rank_by_one": 31
+    },
+    {
+      "k": 4,
+      "left": 16,
+      "right": 15,
+      "full_transition_rank_each_symbol": 15,
+      "minimum_edge_deletions_to_drop_rank_by_one": 16
+    },
+    {
+      "k": 5,
+      "left": 32,
+      "right": 7,
+      "full_transition_rank_each_symbol": 7,
+      "minimum_edge_deletions_to_drop_rank_by_one": 32
+    },
+    {
+      "k": 6,
+      "left": 64,
+      "right": 3,
+      "full_transition_rank_each_symbol": 3,
+      "minimum_edge_deletions_to_drop_rank_by_one": 64
+    },
+    {
+      "k": 7,
+      "left": 128,
+      "right": 1,
+      "full_transition_rank_each_symbol": 1,
+      "minimum_edge_deletions_to_drop_rank_by_one": 128
+    }
+  ],
+  "proof": {
+    "complete_graph_model": "For fixed k and symbol, the full degree<=8 word dictionary gives K_{2^k, 2^(8-k)-1}.",
+    "matching_preclusion": "Dropping the matching rank of K_{m,n} by one requires at least max(m,n) deleted edges.",
+    "only_droppable_layer_with_23_omissions": "k=4, threshold 16; every other threshold is >=31.",
+    "two_symbol_exclusion": "A rank drop in both k=4 symbol graphs would require at least 32 omissions; rank loss two in one graph also requires at least 32.",
+    "equality_characterization": "With <=23 deletions, rank 15->14 in K_{16,15} can only occur by isolating one right vertex, i.e. deleting one complete 16-edge fiber."
+  },
+  "v23_baseline_omitted_indices": [
+    488,
+    489,
+    490,
+    491,
+    492,
+    493,
+    494,
+    495,
+    496,
+    497,
+    498,
+    499,
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507,
+    508,
+    509,
+    510
+  ],
+  "v23_baseline_isolated_fiber": {
+    "execution_symbol": "H",
+    "execution_suffix": "HHH",
+    "indices": [
+      495,
+      496,
+      497,
+      498,
+      499,
+      500,
+      501,
+      502,
+      503,
+      504,
+      505,
+      506,
+      507,
+      508,
+      509,
+      510
+    ],
+    "written_words": [
+      "HHHHGGGG",
+      "HHHHGGGH",
+      "HHHHGGHG",
+      "HHHHGGHH",
+      "HHHHGHGG",
+      "HHHHGHGH",
+      "HHHHGHHG",
+      "HHHHGHHH",
+      "HHHHHGGG",
+      "HHHHHGGH",
+      "HHHHHGHG",
+      "HHHHHGHH",
+      "HHHHHHGG",
+      "HHHHHHGH",
+      "HHHHHHHG",
+      "HHHHHHHH"
+    ]
+  },
+  "v23_baseline_extra_omissions": {
+    "indices": [
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      494
+    ],
+    "written_words": [
+      "HHHGHGGH",
+      "HHHGHGHG",
+      "HHHGHGHH",
+      "HHHGHHGG",
+      "HHHGHHGH",
+      "HHHGHHHG",
+      "HHHGHHHH"
+    ]
+  },
+  "all_two_exchange_count": 30063484,
+  "structurally_81_call_two_exchange_count": 2495388,
+  "two_exchange_81_call_criterion": "Both inserted words must come from the seven extra baseline omissions; otherwise the unique 16-word fiber is repaired. No other fiber can be completed by only two new omissions because its baseline intersection has size at most 7."
+}

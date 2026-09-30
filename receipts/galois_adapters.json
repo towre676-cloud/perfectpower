@@ -1,0 +1,45 @@
+{
+ "label": "EXTERNAL package adapters (galois_merge) on the repository data; bounded search, exact edge checks",
+ "branch_adapter": {
+  "obligations": 316,
+  "height": 2,
+  "edges_found": 474,
+  "edges_crossing_repo_classes": 0,
+  "components_from_edges": 79,
+  "repo_classes": 79,
+  "exact_unique_obligations": 316,
+  "restricted_run_edges": 0,
+  "restricted_note": "the adapter refuses unrestricted maps between restricted nodes; restrictions pull back along T (PerfectPower.Interfaces.restricted_transport)",
+  "global_canonicalization_claim": false
+ },
+ "corpus_adapter": {
+  "seq_files": 144,
+  "B_index_matches": [
+   {
+    "id": "A000129",
+    "offset": 0,
+    "B_index_shifts": [
+     0
+    ],
+    "status": "finite_term_agreement_only"
+   },
+   {
+    "id": "A048624",
+    "offset": 0,
+    "B_index_shifts": [
+     2
+    ],
+    "status": "finite_term_agreement_only"
+   },
+   {
+    "id": "A069306",
+    "offset": 2,
+    "B_index_shifts": [
+     1
+    ],
+    "status": "finite_term_agreement_only"
+   }
+  ],
+  "promotion_allowed": false
+ }
+}

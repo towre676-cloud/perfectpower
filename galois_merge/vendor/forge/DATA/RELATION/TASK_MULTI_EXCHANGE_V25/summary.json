@@ -1,0 +1,182 @@
+{
+  "release": "v0.25.0",
+  "programs": [
+    {
+      "name": "sensor_d8_m12_two_exchange_det",
+      "task": "sensor",
+      "degree": 8,
+      "mask": "m12",
+      "support_count": 488,
+      "coefficient_height_bits": 4630,
+      "common_denominator_bits": 4630,
+      "max_numerator_bits": 4629,
+      "remove_words": [
+        "HHHHHHG",
+        "GHHHHHHH"
+      ],
+      "add_words": [
+        "HHHGHGHG",
+        "HHHGHHGG"
+      ],
+      "flat_prefix": {
+        "edges": 487,
+        "G_edges": 245,
+        "H_edges": 242,
+        "primitive_cost": 833078
+      },
+      "physical_execution_exact": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 40,
+        "primitive_calls": 81,
+        "primitive_cost": 138572,
+        "certificate_primes": [
+          1000003,
+          1000033,
+          1000037,
+          1000039,
+          1000081
+        ]
+      },
+      "improvement": {
+        "v23_baseline_height_bits": 4652,
+        "v24_best_height_bits": 4641,
+        "height_bits_saved_vs_v23": 22,
+        "height_bits_saved_vs_v24_best": 11
+      }
+    },
+    {
+      "name": "paley_d8_m12_two_exchange_det",
+      "task": "paley",
+      "degree": 8,
+      "mask": "m12",
+      "support_count": 488,
+      "coefficient_height_bits": 4596,
+      "common_denominator_bits": 4596,
+      "max_numerator_bits": 4596,
+      "remove_words": [
+        "HHHHHHG",
+        "GHHHHHHH"
+      ],
+      "add_words": [
+        "HHHGHGHG",
+        "HHHGHHGG"
+      ],
+      "flat_prefix": {
+        "edges": 487,
+        "G_edges": 245,
+        "H_edges": 242,
+        "primitive_cost": 833078
+      },
+      "physical_execution_exact": {
+        "state_dims": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          15,
+          7,
+          3,
+          1
+        ],
+        "transition_ranks": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            15,
+            14
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "G_calls": 41,
+        "H_calls": 40,
+        "primitive_calls": 81,
+        "primitive_cost": 138572,
+        "certificate_primes": [
+          1000003,
+          1000033,
+          1000037,
+          1000039,
+          1000081
+        ]
+      },
+      "improvement": {
+        "v23_baseline_height_bits": 4623,
+        "v24_best_height_bits": 4610,
+        "height_bits_saved_vs_v23": 27,
+        "height_bits_saved_vs_v24_best": 14
+      }
+    }
+  ],
+  "evidence_boundary": "The 81-call structural lower bound is global over all 488-word supports. The selected two-exchange supports are the best determinant-proxy candidates from the exhaustive admissible two-exchange scan and are exact rational programs. No global rational-height minimality claim is made."
+}
