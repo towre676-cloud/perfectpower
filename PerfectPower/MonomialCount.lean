@@ -50,7 +50,6 @@ theorem monomial_param {a b : ℕ} (ha : 0 < a) (hb : 0 < b) {x y : ℕ} (hx : 0
   have hda : a / Nat.gcd a b = a' := Nat.div_eq_of_eq_mul_left hd0 (by rw [mul_comm]; exact ha_eq)
   have hdb : b / Nat.gcd a b = b' := Nat.div_eq_of_eq_mul_left hd0 (by rw [mul_comm]; exact hb_eq)
   rw [hda, hdb] at hcop ⊢
-  have ha' : 0 < a' := by rcases Nat.eq_zero_or_pos a' with h | h <;> [simp [h] at ha_eq; exact h]; omega
   have hb'0 : 0 < b' := by rcases Nat.eq_zero_or_pos b' with h | h <;> [simp [h] at hb_eq; exact h]; omega
   set d := Nat.gcd a b
   have eqv : x ^ a = y ^ b ↔ (x ^ a') ^ d = (y ^ b') ^ d := by

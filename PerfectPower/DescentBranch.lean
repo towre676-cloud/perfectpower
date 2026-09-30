@@ -135,7 +135,6 @@ theorem divYs_complete (D : ℤ) (n : ℕ) (hn : 0 < n) (Ys : List ℤ) (hB : di
     (A B y : ℤ) (h1 : B * (3 * A ^ 2 - D * B ^ 2) = (n : ℤ) ^ 3)
     (h2 : (n : ℤ) ^ 3 * y = A ^ 3 - 3 * D * A * B ^ 2) : y ∈ Ys := by
   have hM : (0 : ℤ) < (n : ℤ) ^ 3 := by positivity
-  have hB0 : B ≠ 0 := by rintro rfl; simp at h1; exact absurd h1.symm hM.ne'
   -- `|B|` is a product of three divisors of `n`
   have hdvd : B.natAbs ∣ n * (n * n) := by
     have h3 : B.natAbs ∣ ((n : ℤ) ^ 3).natAbs := Int.natAbs_dvd_natAbs.mpr ⟨_, h1.symm⟩
