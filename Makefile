@@ -40,6 +40,7 @@ receipts:
 	$(PY) python/make_lean_mordell_descent.py
 	$(PY) python/uniformity.py
 	$(PY) python/make_pell_heat_receipt.py
+	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
 
 counts: audit

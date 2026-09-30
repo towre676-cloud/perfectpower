@@ -317,3 +317,23 @@ open PerfectPower
 #print axioms PerfectPower.Reduction.triangular_count_int
 #print axioms PerfectPower.Reduction.triangular_count_nonneg
 #print axioms PerfectPower.Reduction.tri_cube_complete
+-- Filtered Pell orbits and plan certificates
+#print axioms PerfectPower.FilteredPell.orbit_period
+#print axioms PerfectPower.FilteredPell.point_infinite
+#print axioms PerfectPower.FilteredPell.infinite_iff_state
+#print axioms PerfectPower.FilteredPell.infinite_iff_root_state
+#print axioms PerfectPower.FilteredPell.finite_bound
+#print axioms PerfectPower.FilteredPell.quadHits_iff
+#print axioms PerfectPower.FilteredPell.quadRoot_infinite_iff
+#print axioms PerfectPower.FilteredPell.quadRoot_bound
+#print axioms PerfectPower.FilteredPell.FinCert.sound
+#print axioms PerfectPower.FilteredPell.quadGoodB_iff
+#print axioms PerfectPower.FilteredPell.quadRoot_bound_of_cert
+#print axioms PerfectPower.FilteredPell.quadRoot_infinite_of_witness
+#print axioms PerfectPower.PlanCerts.power_transport
+#print axioms PerfectPower.PlanCerts.root_transport
+#print axioms PerfectPower.PlanCerts.quadRoot_subset_of_cert
+#print axioms PerfectPower.Generated.Plans.plan_cube_transport
+#print axioms PerfectPower.Generated.Plans.plan_root_cube
+#print axioms PerfectPower.Generated.Plans.plan_filtered_infinite_1
+#print axioms PerfectPower.Generated.Plans.plan_filtered_finite_1

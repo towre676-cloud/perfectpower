@@ -44,3 +44,6 @@ import PerfectPower.Continuation.PellPositive
 import PerfectPower.Continuation.ExplicitK
 import PerfectPower.Continuation.PellExplicitK
 import PerfectPower.Reduction
+import PerfectPower.FilteredPell
+import PerfectPower.PlanCerts
+import PerfectPower.Generated.Plans

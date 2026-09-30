@@ -24,6 +24,8 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Genus one, unconditional, positive rank, **class number 2**: $y^2=x^3-13$ (points $(17,\pm70)$); with $y^2=x^3-5$, $y^2=x^3-6$ (no points) as further instances | **Lean** (`ClassTwo.lean` template: Thue lattice bound + kernel norm table; `MordellMinus13/5/6.lean`) | — | §5A.3′ |
 | Transport of complete lists through $n\mapsto rn+s$ with exact counts; image-restricted genus-one premise | **Lean** (`affine_count`, `cubic_sound_image`, `n3m2_hits`) | — | `Transport.lean`, §5A |
 | Exact constraint reductions (affine, quadratic discriminant, triangular), their composition, and transported completeness | **Lean** (`Reduction.Exact`, `Exact.comp`, `Exact.pull_complete`, `triangular_count`, `tri_cube_complete`) | — | `Reduction.lean`, §5B |
+| Filtered Pell orbits: a divisibility filter from a reduction's way back leaves infinitely many solutions iff some root cycle mod $M$ meets an admissible state; otherwise a complete finite range | **Lean** (`FilteredPell.infinite_iff_root_state`, `quadRoot_infinite_iff`, `FinCert.sound`, `quadRoot_bound_of_cert`) | unit orbits (Lean) | `FilteredPell.lean`, §5B |
+| Compiler plans as theorems on the original constraint: 16 catalogued plans (6 transport chains, 10 filtered Pell) | **Lean** (`Generated/Plans.lean`, via `PlanCerts.power_transport`, `root_transport`, `quadRoot_subset_of_cert`) | the rows above | `PlanCerts.lean`, §5B |
 | Constraint compiler: plans, generated programs, timings | Python (tested against brute force, not verified); each plan cites its justification | the rows above | `CONSTRAINT_COMPILER.md`, §5B |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
@@ -191,7 +193,49 @@ finite plan then costs time proportional to its number of hits, while the loop i
 The crossover is real, not assumed: the square-triangular loop wins below $10^4$. Dense radical
 families are output-bound, about 707,000 solutions at $N=10^{12}$. The receipt records the machine.
 
-**6. The remaining effectiveness boundary.** Classification becomes a complete executable answer
+**6. Review correction.** Release `ddbdcb8` listed bounded Pell branches by scanning only
+to $n\le10^6$. A `COMPLETE_FINITE` list could then miss a hit that `contains` recognized, for
+example $((n-1000007)^2-2)^2=m^4$ at $n=1000008$. The limit is now the proved bound
+(`hit_le_of_neg`, `hit_le_of_square`). Regression tests shift families past $10^6$ and fail on the
+old code.
+
+**7. The finite symmetry system behind a filter** (`FilteredPell.lean`). The way back of a
+reduction is a filter on the reduced solutions, and for Pell families the filter is *stable*: past
+a threshold it depends only on $(X,Y)\bmod M$. The unit permutes $(\mathbb Z/M)^2$, so each root
+orbit is a cycle.
+
+**Theorem (filtered Pell orbits).** Let $m^2=An^2+Bn+C$ with $A>0$ not a square, let
+$\varepsilon=u+v\sqrt{4A}$ be a unit, and let the filter be stable modulo $M$ beyond $T$.
+- The filtered family is infinite iff some root's cycle meets an admissible state within one
+  period.
+- Otherwise every solution satisfies $(2An+B)^2<\Delta+4AT^2$.
+
+For $ay^2+by+c=F(n)$ with $M=|4Aa|$, the filter is $2A\mid X-B$ together with
+$2a\mid sY-b$, where the admissible sign is $s=\operatorname{sign}a$ once the domain $y\ge L$
+becomes a sign condition. The original solution set equals the filtered family past the vertex
+(`quadHits_iff`).
+
+Both outcomes have kernel-checked certificates: an admissible witness, or a `FinCert` giving the
+roots in the box $4AY^2\le|\Delta|u^2$ and their cycle lengths. Counting orbit indices $(X,Y\ge0)$
+counts each $n$ once, so $\kappa$ is the marked fraction of the cycles over $\log\varepsilon$. On
+271 random plans this agrees with the count to within $2.03$ at $N=10^{40}$.
+
+**8. The chosen path as a theorem** (`PlanCerts.lean`, `Generated/Plans.lean`). For catalogued
+plans the compiler's path is emitted as a Lean term: an `Exact` chain composed by `Exact.comp` and
+closed by `pull_complete`, or a filtered-orbit certificate. The kernel then checks the plan's
+statement about the original constraint, and the plan cites that theorem.
+
+**9. Galois action** (`galois.py`). The rational squarefree decomposition groups roots by
+multiplicity, and the Galois action splits each layer into orbits: fixed rational roots,
+conjugate pairs ($C_2$, field $\mathbb Q(\sqrt D)$), and cubic orbits ($A_3$ or $S_3$). The atlas
+profile is a union of orbit profiles, and the type follows:
+- radical type: its one obstructed root is fixed, hence a rational parameter;
+- Pell type: its two obstructed roots are one conjugate pair (a norm form) or two rational roots.
+
+This is an explanatory front end. It does not decide whether an orbit is populated, nor settle
+point lists in higher genus.
+
+**10. The remaining effectiveness boundary.** Classification becomes a complete executable answer
 exactly where the mathematics is effective:
 - Runge rigidity;
 - solved Mordell curves (the registry of §5A and `Generated/MordellDescent.lean`);
@@ -200,9 +244,8 @@ exactly where the mathematics is effective:
 Two gaps remain:
 - The finite type outside these cases is `NOT_ENUMERATED`. Siegel's theorem gives no bound, and
   Baker-type bounds are not implemented.
-- A nontrivial divisibility filter on a Pell family is exact to any $N$, but whether the family
-  stays infinite is not decided. The filter is periodic along each orbit, so a period criterion in
-  the style of `branch_infinite_iff` is the natural next theorem.
+- Filters on Pell quadratics are now decided (item 7). Filters on higher-degree reduced forms
+  remain `STRUCTURED_FILTERED`, and only catalogued plans are emitted as Lean theorems.
 
 ### 6. Dirichlet and heat transforms
 

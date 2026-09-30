@@ -73,7 +73,7 @@ pull-back by `decide`.
 |---|---|---|
 | `COMPLETE_FINITE` | a complete finite list of solutions | `all_hits`, `iter_hits`, `count`, `contains` |
 | `STRUCTURED_INFINITE` | infinitely many, generated exactly (every $n$, radical parametrization, Pell orbits) | `iter_hits`, `count`, `contains` |
-| `STRUCTURED_FILTERED` | an exact generator of the reduced family plus a nontrivial exact admissibility filter; exact to any $N$, but infinitude not decided | `iter_hits`, `count`, `contains` |
+| `STRUCTURED_FILTERED` | an exact generator of the reduced family plus a nontrivial exact admissibility filter, exact to any $N$, whose infinitude is **not** decided. Filters on a Pell quadratic or a linear radical family are now decided (§3A); this remains only for filters on higher-degree reduced forms | `iter_hits`, `count`, `contains` |
 | `CLASSIFIED_FINITE` | finite (Siegel via Theorem G), exact to any given $N$, no complete list | `iter_hits`, `count`, `contains` |
 | `NOT_ENUMERATED` | finite (Siegel via Theorem G), no effective enumeration here | `contains`, `bounded_evidence` only |
 
@@ -101,6 +101,99 @@ The solver for the reduced constraint $G(n)=m^d$ is chosen in this order:
 3. **The atlas** (`atlas.classify`): identity (every $n$), twisted power (zeros only), radical
    parametrization, Pell branches, Runge enumeration (with the committed certificate when one
    exists), exact root reduction, or not enumerated.
+   - Bounded Pell branches ($A<0$, or $A$ a square) are listed completely. The search limit is the
+     proved bound, $n\le|B|+|C|$ (`hit_le_of_neg`) or $n\le|\Delta|+|B|$ (`hit_le_of_square`),
+     and never a fixed cutoff (see §6).
+   - A Runge plan whose direct-scan prefix is too long becomes `NOT_ENUMERATED`, with the reason
+     recorded.
+4. **A nontrivial filter is then decided when it can be** (§3A). The status becomes
+   `STRUCTURED_INFINITE` or `COMPLETE_FINITE`.
+
+## 3A. Filtered families: the finite symmetry system (Lean: `FilteredPell.lean`)
+
+A reduction's way back is a filter. For $ay^2+by+c=F(n)$ with $F$ quadratic, the reduced family is
+$m^2=An^2+Bn+C$ with $A=4aA_0$. In the coordinates $X=2An+B$, $Y=|m|$, its solutions are the
+forward orbits of finitely many roots under the unit $\varepsilon=u+v\sqrt{4A}$. A solution passes
+the filter when:
+- $2A\mid X-B$, so that $n$ is an integer;
+- $2a\mid sY-b$ for an admissible sign $s$, so that $y$ is an integer;
+- $y$ lies in its domain. For $y\ge L$ this becomes the sign condition $s=\operatorname{sign}a$
+  once $Y\ge|b|+2|a|(|L|+1)$.
+
+So the filter is **stable**: past a threshold $T$ it depends only on $(X,Y)\bmod M$ with
+$M=|4Aa|$ (`StableFilter`, `quadFilter`).
+
+The unit acts on $(\mathbb Z/M)^2$ as a permutation (`unitPerm`), so every orbit is purely periodic
+with the common period `orderOf σ` (`orbit_period`). The theorems:
+
+- `point_infinite`: **one admissible state suffices.** Moving along its orbit by whole periods
+  keeps the residue class and makes $X$, $Y$, $n$ arbitrarily large.
+- `infinite_iff_state` and `infinite_iff_root_state`: the family is infinite **iff** some root's
+  cycle meets an admissible state within one period.
+- `finite_bound`, `FinCert.sound`: otherwise every solution has $Y<T$, so
+  $(2An+B)^2<\Delta+4AT^2$, which is a complete finite search.
+- `quadRoot_infinite_iff`, `quadRoot_bound_of_cert`: the same statements for the original
+  constraint `QuadHits` (`quadHits_iff`). Past the vertex, the original solution set *is* the
+  filtered family.
+
+**Certificates the kernel checks.**
+- *Infinite:* one quadrant solution whose residues pass the integer filter `quadGoodB`
+  (`quadRoot_infinite_of_witness`).
+- *Finite:* a `FinCert`, checked by `decide +kernel` on integer residues. It contains:
+  - a bound $Y_{\max}$ with $4A(Y_{\max}+1)^2>|\Delta|u^2$, which contains every root
+    (`root_in_box`);
+  - the integer square roots of $\Delta+4AY^2$ for $Y\le Y_{\max}$, checked as
+    $q^2\le t<(q+1)^2$ and not trusted;
+  - the quadrant solutions they reveal;
+  - each solution's cycle length mod $M$, with no admissible state on any cycle.
+
+  The residue form of the filter (`quadGoodB_iff`) is proved equal to the `ZMod` form once. This
+  matters for speed: evaluating `ZMod` arithmetic in the kernel took minutes, while integer
+  residues take seconds.
+
+**Deduplication.** A hit is counted as an orbit index, that is, a pair $(X,Y\ge0)$. $X$
+determines $n$, and the two signs of the root are handled inside the filter, so no hit is counted
+twice. Hence $\kappa=\big(\sum_{\text{seeds}}\#\text{marked}/\text{period}\big)/\log\varepsilon$.
+On 271 random infinite filtered Pell plans, $|A(N)-\kappa\log N|\le 2.03$ at $N=10^{40}$.
+
+**The radical analogue** ($G=\alpha n+\beta$): $m$ ranges over residues mod $|2a\alpha|$ with
+$m^2\equiv\beta\pmod\alpha$, and the same argument applies. This case is Python only and labelled
+so.
+
+## 3B. Plans as Lean theorems (`PlanCerts.lean`, `Generated/Plans.lean`)
+
+`python/make_lean_plans.py` writes one theorem per catalogued plan, and the theorem is about the
+**original** constraint.
+- A transport plan becomes an `Exact` chain (`quadratic`, then `affine`, composed by
+  `Exact.comp`). The complete list is pulled back by `pull_complete`, and the pull-back is
+  computed by `decide`. For example, $y(y+1)=16n^3-12n^2+3n-1$ with $y\ge0$ holds iff
+  $(n,y)=(1,2)$.
+- A filtered Pell plan becomes infinitude from its witness, or `QuadHits ⊆ [1, Nb]` from its
+  `FinCert`.
+
+There are 16 theorems (6 transport chains, 5 infinite and 5 finite filtered plans), and they
+check in about 15 s. The compiler reads `receipts/plan_certificates.json` and cites the theorem
+in the plan's justification. This connects the path the compiler chose to `Exact.comp` and
+`pull_complete`, instead of only naming the theorems it relied on.
+
+## 3C. The Galois front end (`galois.py`)
+
+`plan.galois()`, and the `galois` field of `solve`, list the orbits of the Galois action on the
+roots of each squarefree layer:
+- rational roots are fixed points;
+- a conjugate pair comes from an irreducible quadratic, with group $C_2$ and field
+  $\mathbb Q(\sqrt D)$;
+- a cubic orbit has group $A_3$ or $S_3$, decided by whether its discriminant is a square;
+- factors of degree $\ge4$ without a rational root are reported by degree only.
+
+Each orbit carries its multiplicity $j$ and its $t=d/\gcd(d,j)$. The explanation says why the type
+follows:
+- radical type: the single obstructed root is Galois-fixed, hence a rational parameter;
+- Pell type: the two obstructed roots are one conjugate pair (a norm form) or two rational roots;
+- finite type: $S>1$.
+
+The explanation agrees with the classifier on every tested case. Root symmetry alone does not
+decide whether an integer orbit is populated, nor whether a curve has a complete point list.
 
 ## 4. Worked examples (`receipts/constraint_demos.json`)
 
@@ -113,7 +206,9 @@ $N=10^4$, which must agree. `make verify` regenerates the receipt.
 | `pell_2n2_plus_1` | $2n^2+1=m^2$ | Pell orbits | $n'=3n+2m$, $m'=4n+3m$ from $(0,1)$: $n=2,12,70,408,\dots$ |
 | `square_triangular` | $y(y+1)/2=n^2$, $y\ge0$ | triangular → Pell | $(n,y)=(1,1),(6,8),(35,49),(204,288),\dots$ |
 | `triangular_cube` | $y(y+1)/2=64n^3-120n^2+75n-16$ | triangular → transport | only $(1,-3),(1,2)$ (Lean: `tri_cube_complete`) |
-| `quadratic_filter` | $2y^2+y=n$, $y\ge0$ | radical + filter, `STRUCTURED_FILTERED` | $n=3,10,21,36,\dots$ ($8n+1$ square *and* $4\mid m-1$) |
+| `quadratic_filter` | $2y^2+y=n$, $y\ge0$ | radical + filter, decided: `STRUCTURED_INFINITE` | $n=3,10,21,36,\dots$ ($8n+1$ square *and* $4\mid m-1$) |
+| `filtered_pell_infinite` | $-2y^2+y+2=-n^2-2n$, $y\in\mathbb Z$ | filtered Pell, infinite | $n=2,17,104,611,\dots$ (Lean: `plan_filtered_infinite_3`) |
+| `filtered_pell_finite` | $2y^2+3y+1=3n^2$, $y\ge1$ | filtered Pell, no cycle admissible | no solution (Lean: `plan_filtered_finite_2`) |
 | `pell_large_unit` | $991n^2+1=m^2$ | Pell orbits | no hit below $1.2\cdot10^{28}$; the first is $n=12055735790331359447442538767$ |
 | `ljunggren` | $n^4+n^3+n^2+n+1=m^2$ | Runge + certificate | only $n=3$ (`Generated.ljunggren_quartic_hits`) |
 | `unresolved_mordell` | $n^3+17=m^2$ | `NOT_ENUMERATED` | bounded evidence only |
@@ -131,6 +226,8 @@ exact integer root per $n$, with no sieve. It is measured up to $N=10^5$ only.
 | `square_triangular` | 0.5 ms | 17 ms | 24 µs | 0.6 ms (40 hits) | $10^4$ |
 | `quadratic_filter` | 0.5 ms | 10 ms | 1.7 ms | 0.32 s at $10^9$ (22360 hits) | $10^4$ |
 | `pell_large_unit` | 0.5 ms | 0.30 s | 3 µs | 65 µs (1 hit) | $\le10^3$ |
+| `filtered_pell_infinite` | 0.5 ms | 19 ms | 22 µs | 0.5 ms (39 hits) | $10^4$ |
+| `filtered_pell_finite` | 0.3 ms | 18 ms | 3 µs | 2 µs (0 hits) | $10^4$ |
 | `ljunggren` | 2.2 ms | 0.58 s | 2 µs | 2 µs (1 hit) | $\le10^3$ |
 
 What the measurements show:
@@ -182,9 +279,11 @@ What remains open is exactly the atlas's open part:
 - `NOT_ENUMERATED` covers the finite type outside Runge and outside the solved Mordell registry
   (for example $n^3+17$). Siegel gives finiteness but no bound. Baker-type bounds would make these
   effective. They are not implemented, and no plan pretends otherwise.
-- `STRUCTURED_FILTERED` plans are exact to any $N$. Whether infinitely many solutions survive a
-  nontrivial divisibility filter is not decided here. For Pell families the filter is periodic
-  along each orbit, so a period argument like `branch_infinite_iff` would decide it. That is the
-  next step.
-- Only the reductions of §2 are proved in Lean. The Python code that recognizes them and runs the
-  plans is tested, not verified.
+- Filters on Pell quadratics are decided in Lean (§3A), and filters on linear radical families
+  in Python. `STRUCTURED_FILTERED` remains for filters on higher-degree reduced forms, for example
+  $F$ of Pell type with extra square layers reduced through the atlas.
+- Catalogued plans are Lean theorems about the original constraint (§3B). For all other plans the
+  recognition, the choice of solver and the execution are tested Python, not verified. Emitting a
+  `Plans`-style theorem for every plan on request is the natural extension, limited by
+  certificate size: $M^2$ residue classes and cycle lengths up to $M^2$.
+- The Galois front end does not factor residual layers of degree $\ge4$.

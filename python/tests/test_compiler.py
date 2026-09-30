@@ -5,6 +5,7 @@ reduction can go wrong: a square discriminant whose root is not integral, the si
 root, the domain of the recovered variable, zero and negative values, and finite plans that must
 not pose as complete lists.
 """
+import math
 import random
 import re
 import unittest
@@ -33,11 +34,35 @@ class Reductions(unittest.TestCase):
         self.assertEqual(p.reduced.witnesses(1), [-3, 3])
         self.assertEqual(compile_constraint(QuadraticRootConstraint(2, 1, 0, (1,), 'int')).contains(1), [-1])
 
-    def test_filter_changes_status(self):
+    def test_filter_is_decided(self):
+        # 2y^2 + y = n, y >= 0: 8n + 1 = m^2 filtered by 4 | m - 1; decided by periodicity of m
         p = compile_constraint(QuadraticRootConstraint(2, 1, 0, (0, 1), 'nonneg'))
-        self.assertEqual(p.status, STRUCTURED_FILTERED)
         self.assertFalse(p.chain[0].filter_trivial)
+        self.assertEqual(p.status, STRUCTURED_INFINITE)
+        self.assertEqual(p.data['filter_decision']['kind'], 'filtered_radical')
         self.assertEqual(list(p.iter_hits(60)), [(3, [1]), (10, [2]), (21, [3]), (36, [4]), (55, [5])])
+
+    def test_filtered_pell_infinite_and_kappa(self):
+        # 2y^2 - 4y = 7n^2 - n + 4 (found by the seeded catalogue): the filter keeps some cycles
+        con = QuadraticRootConstraint(2, -4, 0, (4, -1, 7), 'int')
+        p = compile_constraint(con)
+        fd = p.data['filter_decision']
+        self.assertEqual(fd['kind'], 'filtered_pell')
+        if p.status == STRUCTURED_INFINITE:
+            X, Y = fd['witness']
+            self.assertGreater(X, 0)
+            self.assertGreaterEqual(Y, 0)
+            N = 10 ** 30
+            self.assertLess(abs(p.count(N) - fd['kappa'] * math.log(N)), 6)
+        self.assertEqual(list(p.iter_hits(2000)), brute(con, 2000))
+
+    def test_filtered_pell_finite_has_lean_certificate(self):
+        import json
+        rows = json.loads((ROOT / 'receipts' / 'plan_certificates.json').read_text())
+        finite = [r for r in rows if 'filtered_finite' in r['theorem']]
+        self.assertTrue(finite)
+        for r in finite:
+            self.assertEqual(r['status'], COMPLETE_FINITE)
 
     def test_triangular_filter_is_trivial(self):
         # Lean: Reduction.triangular_count_nonneg; square triangular numbers
@@ -51,7 +76,8 @@ class Reductions(unittest.TestCase):
         self.assertEqual(compile_constraint(TriangularConstraint((-1, 1), 'pos')).contains(1), [])
         self.assertEqual(compile_constraint(TriangularConstraint((-1, 1), 'nonneg')).contains(1), [0])
         self.assertEqual(compile_constraint(TriangularConstraint((-1, 1), 'int')).contains(1), [-1, 0])
-        self.assertEqual(compile_constraint(TriangularConstraint((-1, 1), 'pos')).status, STRUCTURED_FILTERED)
+        # y >= 1 is a real filter (F = 0 has only y = 0, -1), decided: still infinite
+        self.assertEqual(compile_constraint(TriangularConstraint((-1, 1), 'pos')).status, STRUCTURED_INFINITE)
 
     def test_zero_and_negative_values(self):
         p = compile_constraint(PowerConstraint((-4, 0, 1), 2))       # n^2 - 4: zero at n = 2
@@ -177,7 +203,7 @@ class Differential(unittest.TestCase):
             self.assertEqual(sp.plan.count(N), len(orig))
             if sp.source is not None:
                 self.assertEqual(sp.run_specialized(N), orig, (expr, test))
-        self.assertTrue({COMPLETE_FINITE, STRUCTURED_INFINITE, STRUCTURED_FILTERED, NOT_ENUMERATED} <= seen)
+        self.assertTrue({COMPLETE_FINITE, STRUCTURED_INFINITE, NOT_ENUMERATED} <= seen)
 
 
 class Justification(unittest.TestCase):
@@ -191,9 +217,12 @@ class Justification(unittest.TestCase):
                  PowerConstraint(parse_poly('(n + 1)**3 - 5'), 2),
                  PowerConstraint(parse_poly('n**3 - 9985'), 2),
                  TriangularConstraint((0, 0, 1)), QuadraticRootConstraint(2, 1, 0, (0, 1)),
-                 PowerConstraint((1, 0, 991), 2)]
+                 PowerConstraint((1, 0, 991), 2),
+                 QuadraticRootConstraint(1, 1, 0, parse_poly('16*n**3 - 12*n**2 + 3*n - 1'), 'nonneg'),
+                 QuadraticRootConstraint(2, -4, 0, (4, -1, 7), 'int')]
         for con in cases:
             for j in compile_constraint(con).justification:
+                j = j.split()[0]
                 if j.startswith('PerfectPower.'):
                     last = j.split('.')[-1]
                     qual = '.'.join(j.split('.')[-2:])

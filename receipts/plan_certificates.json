@@ -1,0 +1,160 @@
+[
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_cube_transport",
+  "constraint": "125*n^3 - 525*n^2 + 735*n - 345 = m^2,  n >= 1, m in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "affine transport to a solved Mordell curve",
+  "hits": [
+   [
+    2,
+    [
+     -5,
+     5
+    ]
+   ]
+  ]
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_cube_minus13",
+  "constraint": "27*n^3 + 54*n^2 + 36*n - 5 = m^2,  n >= 1, m in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "affine transport to a solved Mordell curve",
+  "hits": [
+   [
+    5,
+    [
+     -70,
+     70
+    ]
+   ]
+  ]
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_cube_minus4",
+  "constraint": "n^3 - 3*n^2 + 3*n - 5 = m^2,  n >= 1, m in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "affine transport to a solved Mordell curve",
+  "hits": [
+   [
+    3,
+    [
+     -2,
+     2
+    ]
+   ],
+   [
+    6,
+    [
+     -11,
+     11
+    ]
+   ]
+  ]
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_no_points_minus5",
+  "constraint": "8*n^3 + 12*n^2 + 6*n - 4 = m^2,  n >= 1, m in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "affine transport to a solved Mordell curve",
+  "hits": []
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_triangular_cube",
+  "constraint": "y*(y+1)/2 = 64*n^3 - 120*n^2 + 75*n - 16,  n >= 1, y in Z",
+  "status": "COMPLETE_FINITE",
+  "method": "affine transport to a solved Mordell curve",
+  "hits": [
+   [
+    1,
+    [
+     -3,
+     2
+    ]
+   ]
+  ]
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_root_cube",
+  "constraint": "1*y^2 + 1*y + 0 = 16*n^3 - 12*n^2 + 3*n - 1,  n >= 1, y in Z>=0",
+  "status": "COMPLETE_FINITE",
+  "method": "affine transport to a solved Mordell curve",
+  "hits": [
+   [
+    1,
+    [
+     2
+    ]
+   ]
+  ]
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_infinite_1",
+  "constraint": "3*y^2 + 4*y + -2 = 2*n^2 + 3*n,  n >= 1, y in Z>=1",
+  "status": "STRUCTURED_INFINITE",
+  "method": "Pell orbits",
+  "hits": null
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_infinite_2",
+  "constraint": "-3*y^2 + 2*y + 3 = -n^2 - 3*n + 5,  n >= 1, y in Z>=1",
+  "status": "STRUCTURED_INFINITE",
+  "method": "Pell orbits",
+  "hits": null
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_infinite_3",
+  "constraint": "-2*y^2 + 1*y + 2 = -n^2 - 2*n,  n >= 1, y in Z",
+  "status": "STRUCTURED_INFINITE",
+  "method": "Pell orbits",
+  "hits": null
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_infinite_4",
+  "constraint": "3*y^2 + 4*y + 1 = 2*n^2 - 4*n + 3,  n >= 1, y in Z>=1",
+  "status": "STRUCTURED_INFINITE",
+  "method": "Pell orbits",
+  "hits": null
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_infinite_5",
+  "constraint": "3*y^2 + 0*y + -3 = 5*n^2 + 5*n + 5,  n >= 1, y in Z",
+  "status": "STRUCTURED_INFINITE",
+  "method": "Pell orbits",
+  "hits": null
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_finite_1",
+  "constraint": "3*y^2 + -4*y + -4 = n^2 - n + 4,  n >= 1, y in Z>=1",
+  "status": "COMPLETE_FINITE",
+  "method": "Pell orbits",
+  "hits": []
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_finite_2",
+  "constraint": "2*y^2 + 3*y + 1 = 3*n^2,  n >= 1, y in Z>=1",
+  "status": "COMPLETE_FINITE",
+  "method": "Pell orbits",
+  "hits": []
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_finite_3",
+  "constraint": "2*y^2 + 1*y + -3 = 3*n^2 + 4*n - 1,  n >= 1, y in Z>=0",
+  "status": "COMPLETE_FINITE",
+  "method": "Pell orbits",
+  "hits": []
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_finite_4",
+  "constraint": "-2*y^2 + -3*y + 1 = -3*n^2 - 5,  n >= 1, y in Z>=1",
+  "status": "COMPLETE_FINITE",
+  "method": "Pell orbits",
+  "hits": []
+ },
+ {
+  "theorem": "PerfectPower.Generated.Plans.plan_filtered_finite_5",
+  "constraint": "3*y^2 + 4*y + -2 = n^2 - n,  n >= 1, y in Z>=1",
+  "status": "COMPLETE_FINITE",
+  "method": "Pell orbits",
+  "hits": []
+ }
+]

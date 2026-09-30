@@ -251,7 +251,7 @@ class Specialization:
 
     def explain(self) -> dict:
         return {'program': {'expr': self.program.expr, 'test': list(self.program.test)},
-                'plan': self.plan.explain(), 'specialized': self.source is not None}
+                'plan': self.plan.explain(galois=True), 'specialized': self.source is not None}
 
 
 def _exec(src: str):

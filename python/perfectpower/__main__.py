@@ -65,7 +65,7 @@ def main():
         if args.program:
             print(sp.source if sp.source is not None else f'# no specialized program: {sp.plan.status}')
             return
-        out = sp.plan.explain()
+        out = sp.plan.explain(galois=True)
         try:
             out['hits'] = [[n, w] for n, w in sp.plan.iter_hits(args.N)]
             out['N'] = args.N

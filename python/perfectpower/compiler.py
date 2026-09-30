@@ -529,8 +529,15 @@ class Plan:
         return {'label': BOUNDED_EVIDENCE, 'N': N, 'hits': hits,
                 'claim': f'these are the solutions with n <= {N}; nothing is claimed beyond'}
 
-    def explain(self) -> dict:
-        return {'constraint': self.original.describe(),
+    def galois(self) -> dict:
+        """The Galois orbits of the roots of the reduced polynomial and why they give this type
+        (galois.galois_profile)."""
+        from .galois import galois_profile
+        return galois_profile(self.reduced.F, self.reduced.d)
+
+    def explain(self, galois: bool = False) -> dict:
+        extra = {'galois': self.galois()} if galois else {}
+        return {**extra, 'constraint': self.original.describe(),
                 'reductions': [s.explain() for s in self.chain],
                 'reduced': self.reduced.describe(), 'method': self.method,
                 'status': self.status, 'justification': self.justification,
@@ -704,6 +711,167 @@ def _quadratic_pell_plan(pc: PowerConstraint) -> dict:
                 hits=lambda N: {n: w for n, w in fin.items() if n <= N})
 
 
+def _root_params(con):
+    """(a, b, c, F, L) of a quadratic-root form, or None; L = None for y in Z, else y >= L."""
+    if isinstance(con, TriangularConstraint):
+        a, b, c, F, dom = 1, 1, 0, pscale(con.F, 2), con.y_domain
+    elif isinstance(con, QuadraticRootConstraint):
+        a, b, c, F, dom = con.a, con.b, con.c, con.F, con.y_domain
+    else:
+        return None
+    return a, b, c, _trim(F), {'int': None, 'nonneg': 0, 'pos': 1}[dom]
+
+
+def _thr(a: int, b: int, L) -> int:
+    """Past this |m|, the domain of y = (s|m| - b)/2a is the sign condition s = sign a
+    (`FilteredPell.thr`)."""
+    return 0 if L is None else abs(b) + 2 * abs(a) * (abs(L) + 1) + 1
+
+
+def decide_filter(con, reduced: PowerConstraint) -> dict | None:
+    """Decide a nontrivial admissibility filter on a reduced square family m^2 = G(n).
+
+    Pell (G quadratic, A > 0 not a square): the unit acts on (X, Y) mod M = |4Aa| as a
+    permutation; each seed orbit is a cycle; a state is admissible when 2A | X - B and
+    2a | s Y - b for an admissible sign s.  Infinite iff some cycle meets an admissible state
+    (Lean: FilteredPell.quadRoot_infinite_iff); otherwise every hit has |m| < thr, a complete
+    finite search (FilteredPell.finite_bound).  kappa counts orbit indices, i.e. pairs (X, Y>=0),
+    and X determines n, so no hit is counted twice.
+
+    Radical (G = alpha n + beta, alpha > 0): m ranges over residues mod M = |2a alpha| with
+    m^2 = beta (mod alpha); the same argument, by elementary periodicity (Python only).
+    """
+    rp = _root_params(con)
+    if rp is None or reduced.d != 2:
+        return None
+    a, b, c, F, L = rp
+    G = _trim(reduced.F)
+    T = _thr(a, b, L)
+    sgn = [1, -1] if L is None else [1 if a > 0 else -1]
+
+    def adm_y(m_abs_mod: int, mod: int) -> bool:
+        return any((s * m_abs_mod - b) % (2 * a) == 0 for s in sgn)
+    if len(G) == 3 and G[2] > 0 and not is_square(G[2]) and G[1] ** 2 - 4 * G[2] * G[0]:
+        C_, B_, A_ = G
+        br = pell_branch(A_, B_, C_)
+        M = abs(4 * A_ * a)
+        x1, y1 = br.unit
+        D = br.D
+        cycles, g_total, witness = [], Fraction(0), None
+        for X0, Y0 in br.seeds:
+            st0 = (X0 % M, Y0 % M)
+            st, j, marked = st0, 0, []
+            while True:
+                if (st[0] - B_) % (2 * A_) == 0 and adm_y(st[1], M):
+                    marked.append(j)
+                j += 1
+                st = ((st[0] * x1 + D * st[1] * y1) % M, (st[0] * y1 + st[1] * x1) % M)
+                if st == st0:
+                    break
+            cycles.append({'seed': [X0, Y0], 'period': j, 'marked': marked})
+            g_total += Fraction(len(marked), j)
+            if marked and witness is None:
+                X, Y = X0, Y0
+                for _ in range(marked[0]):
+                    X, Y = X * x1 + D * Y * y1, X * y1 + Y * x1
+                # whole periods keep the residue class; move into the quadrant X > 0, Y >= 0
+                while X <= 0 or Y < 0:
+                    for _ in range(j):
+                        X, Y = X * x1 + D * Y * y1, X * y1 + Y * x1
+                witness = [X, Y]
+        log_eps = log(x1 + y1 * sqrt(D)) if x1 < 10 ** 15 else log(2 * x1)
+        cert = {'kind': 'filtered_pell', 'modulus': M, 'D': D, 'Delta': br.Delta,
+                'reduced_quadratic': [A_, B_, C_], 'unit': [x1, y1],
+                'transition': f'(x, y) -> ({x1}x + {D * y1}y, {y1}x + {x1}y) mod {M}',
+                'admissible': f'{2 * A_} | x - ({B_}) and {2 * a} | s*y - ({b}) for s in {sgn}',
+                'threshold_T': T, 'cycles': cycles, 'witness': witness,
+                'kappa': float(g_total) / log_eps if g_total else 0.0,
+                'good_fraction': str(g_total)}
+        if witness is not None:
+            return {'infinite': True, 'certificate': cert,
+                    'justification': ['PerfectPower.FilteredPell.quadRoot_infinite_iff',
+                                      'PerfectPower.FilteredPell.infinite_iff_root_state']}
+        # finite: every hit past the vertex has |m| = Y < T, so X^2 < Delta + 4A T^2
+        bound_sq = br.Delta + 4 * A_ * T * T
+        nmax = br.small_n()
+        if bound_sq > 0:
+            nmax = max(nmax, (isqrt(bound_sq) - B_) // (2 * A_) + 1)
+        # the Lean certificate needs the stronger residue statement of finite_bound
+        hno = not any((x * x - D * y * y - br.Delta) % M == 0 and (x - B_) % (2 * A_) == 0
+                      and adm_y(y, M) for x in range(M) for y in range(M)) if M <= 3000 else None
+        cert.update(search_bound_n=nmax, residue_certificate=hno)
+        return {'infinite': False, 'nmax': nmax, 'certificate': cert,
+                'justification': ['PerfectPower.FilteredPell.infinite_iff_root_state',
+                                  'PerfectPower.FilteredPell.finite_bound']}
+    if len(G) == 2 and G[1] > 0:
+        beta, alpha = G
+        M = abs(2 * a * alpha)
+        good = [r for r in range(M) if (r * r - beta) % alpha == 0 and adm_y(r, M)]
+        cert = {'kind': 'filtered_radical', 'modulus': M, 'reduced': f'm^2 = {alpha}n + ({beta})',
+                'good_residues_of_m': good, 'threshold_T': T}
+        just = ['elementary periodicity of m mod |2a alpha| (Python; not in Lean)']
+        if good:
+            cert['kappa'] = len(good) / M * sqrt(alpha)
+            return {'infinite': True, 'certificate': cert, 'justification': just}
+        nmax = max(1, (T * T - beta) // alpha + 1)
+        cert['search_bound_n'] = nmax
+        return {'infinite': False, 'nmax': nmax, 'certificate': cert, 'justification': just}
+    return None
+
+
+def fin_cert(con) -> dict | None:
+    """The data of a FilteredPell.FinCert for a finite filtered Pell plan: Ymax with
+    |Delta| u^2 < D (Ymax + 1)^2 (so every root has Y <= Ymax, `root_in_box`), every quadrant
+    solution with Y <= Ymax, and the cycle length of each modulo M."""
+    rp = _root_params(con)
+    if rp is None:
+        return None
+    a, b, c, F, L = rp
+    if len(F) != 3:
+        return None
+    C0, B0, A0 = F
+    A_, B_, C_ = 4 * a * A0, 4 * a * B0, 4 * a * C0 + b * b - 4 * a * c
+    if A_ <= 0 or is_square(A_) or B_ * B_ - 4 * A_ * C_ == 0:
+        return None
+    D, Delta = 4 * A_, B_ * B_ - 4 * A_ * C_
+    u, v = pell_fundamental(D)
+    M = abs(4 * A_ * a)
+    Ymax = 0
+    while not abs(Delta) * u * u < D * (Ymax + 1) ** 2:
+        Ymax += 1
+    roots = []
+    for Y in range(Ymax + 1):
+        t = Delta + D * Y * Y
+        if t > 0 and is_square(t):
+            X = isqrt(t)
+            st0 = (X % M, Y % M)
+            st, k = st0, 0
+            while True:
+                st = ((st[0] * u + D * st[1] * v) % M, (st[0] * v + st[1] * u) % M)
+                k += 1
+                if st == st0:
+                    break
+            roots.append(((X, Y), k))
+    return {'a': a, 'b': b, 'c': c, 'A0': A0, 'B0': B0, 'C0': C0, 'L': L, 'u': u, 'v': v,
+            'M': M, 'Ymax': Ymax, 'roots': roots}
+
+
+_PLAN_CERTS = None
+
+
+def plan_certificate(con) -> str | None:
+    """The generated Lean theorem for this exact constraint (receipts/plan_certificates.json,
+    written with PerfectPower/Generated/Plans.lean by python/make_lean_plans.py), or None."""
+    global _PLAN_CERTS
+    if _PLAN_CERTS is None:
+        path = ROOT / 'receipts' / 'plan_certificates.json'
+        try:
+            _PLAN_CERTS = {r['constraint']: r['theorem'] for r in json.loads(path.read_text())}
+        except (OSError, ValueError):
+            _PLAN_CERTS = {}
+    return _PLAN_CERTS.get(con.describe())
+
+
 def compile_constraint(con) -> Plan:
     if isinstance(con, PowerConstraint):
         chain, reduced = [], con
@@ -727,8 +895,24 @@ def compile_constraint(con) -> Plan:
     else:
         solver = _power_plan(reduced)
     status = _lift_status(solver['status'], chain)
+    justification = [j for s in chain for j in s.lean] + solver['justification']
+    data, hits, finite = solver['data'], solver['hits'], solver.get('finite')
+    if status == STRUCTURED_FILTERED:
+        dec = decide_filter(con, reduced)
+        if dec is not None:
+            data = {**data, 'filter_decision': dec['certificate']}
+            justification += dec['justification']
+            if dec['infinite']:
+                status = STRUCTURED_INFINITE
+            else:
+                status = COMPLETE_FINITE
+                finite = {n: w for n in range(1, dec['nmax'] + 1) if (w := reduced.witnesses(n))}
+                hits = (lambda fin: lambda N: {n: w for n, w in fin.items() if n <= N})(finite)
+    cert = plan_certificate(con)
+    if cert is not None:
+        justification.append(f'{cert} (kernel-checked theorem for this plan)')
     return Plan(original=con, chain=chain, reduced=reduced, method=solver['method'],
-                status=status, justification=[j for s in chain for j in s.lean] + solver['justification'],
-                data=solver['data'], exact_to_any_N=solver['hits'] is not None,
-                _reduced_hits=solver['hits'], _reduced_contains=solver.get('contains'),
-                _finite_list=solver.get('finite'))
+                status=status, justification=justification,
+                data=data, exact_to_any_N=hits is not None,
+                _reduced_hits=hits, _reduced_contains=solver.get('contains'),
+                _finite_list=finite)

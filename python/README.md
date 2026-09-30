@@ -12,6 +12,7 @@ The package installs from the repository root with `pip install .` and provides 
 | `lean_emit.emit(name, F, d)` / `lean_sandwich.emit_sandwich(name, F, d)` | Lean source of a hit-set theorem | Becomes a theorem only once Lean compiles it |
 | `compiler.compile_constraint(C)` | A plan for $F(n)=m^d$, a triangular constraint or a quadratic-root constraint: exact reductions, solver, status (`COMPLETE_FINITE`, `STRUCTURED_INFINITE`, `STRUCTURED_FILTERED`, `CLASSIFIED_FINITE`, `NOT_ENUMERATED`), justification, `contains` / `iter_hits` / `count` / `all_hits` / `bounded_evidence` | Reductions: Lean (`Reduction.lean`). Solvers: as cited per plan. Execution: tested, not verified |
 | `specialize.specialize(LoopProgram)` | A standalone program replacing a brute-force loop, and the loop itself | Differential tests against the loop |
+| `galois.galois_profile(F, d)` | Galois orbits of the roots per multiplicity layer (fixed roots, $C_2$ pairs with their field, $A_3$/$S_3$ cubics) and the reason for the type | Explanatory; agrees with `classify` on the tests |
 | `atlas.integerize(F, d)` | Integer polynomial with the same hits as an integer-valued $F\in\mathbb Q[x]$ | Elementary |
 | `atlas.shift_spectrum(S, d)` | Critical shifts and the type of $S+k$ | Finite type rests on Siegel through Theorem G |
 | `exponential.exponential_progression(c, a, d)` | Hit progression of $c\,a^n$ | Theorem E |
