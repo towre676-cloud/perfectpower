@@ -32,6 +32,7 @@ def evalF (F : Form) (a b : ℤ) : ℤ :=
 /-- A `2 × 2` integer matrix `((t₁₁, t₁₂), (t₂₁, t₂₂))`. -/
 abbrev Mat := (ℤ × ℤ) × (ℤ × ℤ)
 
+/-- The determinant of a `2 × 2` integer matrix. -/
 def detM (T : Mat) : ℤ := T.1.1 * T.2.2 - T.1.2 * T.2.1
 
 /-- The coefficients of `F(t₁₁ u + t₁₂ v, t₂₁ u + t₂₂ v)`. -/
@@ -60,7 +61,7 @@ theorem sols_transport (F : Form) (T : Mat) (hdet : detM T = 1 ∨ detM T = -1) 
   obtain ⟨⟨x, y⟩, ⟨z, w⟩⟩ := T
   simp only [detM] at hdet
   -- the inverse is `det · ((w, -y), (-z, x))`
-  set d := x * w - y * z with hd
+  set d := x * w - y * z
   have hd2 : d * d = 1 := by rcases hdet with h | h <;> rw [h] <;> norm_num
   refine ⟨d * (w * a - y * b), d * (-z * a + x * b), ?_, ?_, ?_⟩
   · rw [evalF_compF]
@@ -108,7 +109,7 @@ lemma lift_step (p e : ℕ) (hp : 0 < p) (a : ℤ) :
     ∃ i : ℕ, i < p ∧ (a % ((p : ℤ) ^ (e + 1))).toNat = (a % ((p : ℤ) ^ e)).toNat + p ^ e * i := by
   have hpe : (0 : ℤ) < (p : ℤ) ^ e := by positivity
   have hpe1 : (0 : ℤ) < (p : ℤ) ^ (e + 1) := by positivity
-  set R := a % ((p : ℤ) ^ (e + 1)) with hR
+  set R := a % ((p : ℤ) ^ (e + 1))
   have hR0 : 0 ≤ R := Int.emod_nonneg _ hpe1.ne'
   have hR1 : R < (p : ℤ) ^ (e + 1) := Int.emod_lt_of_pos _ hpe1
   have hdvd : (p : ℤ) ^ e ∣ (p : ℤ) ^ (e + 1) := pow_dvd_pow _ (Nat.le_succ e)
@@ -192,6 +193,7 @@ def lineMat (p : ℕ) : Option ℕ → Mat
 /-- `F` divided by `d`, coefficientwise, when `d` divides every coefficient. -/
 def divF (F : Form) (d : ℤ) : Form := (F.1 / d, F.2.1 / d, F.2.2.1 / d, F.2.2.2 / d)
 
+/-- `d` divides every coefficient of `F`. -/
 def dvdF (d : ℤ) (F : Form) : Bool :=
   decide (F.1 % d = 0 ∧ F.2.1 % d = 0 ∧ F.2.2.1 % d = 0 ∧ F.2.2.2 % d = 0)
 
