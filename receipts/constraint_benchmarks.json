@@ -1,0 +1,411 @@
+{
+ "machine": "Linux-6.18.44-fc-v50-x86_64-with-glibc2.39",
+ "python": "3.11.15",
+ "note": "timings vary by machine; brute force measured to 1e5 only",
+ "rows": [
+  {
+   "demo": "cube_transport",
+   "status": "COMPLETE_FINITE",
+   "method": "affine transport to a solved Mordell curve",
+   "specialized": true,
+   "preprocessing_s": 6.473299981735181e-05,
+   "preprocessing_first_call_s": 0.00014940500022930792,
+   "brute_vs_specialized": [
+    {
+     "N": 1000,
+     "brute_s": 0.0023008329999356647,
+     "specialized_s": 2.314000084879808e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 6.704699990223162e-05
+    },
+    {
+     "N": 10000,
+     "brute_s": 0.0300344249999398,
+     "specialized_s": 2.086999757011654e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 6.681999957436346e-05
+    },
+    {
+     "N": 100000,
+     "brute_s": 0.37255265600015264,
+     "specialized_s": 2.243999915663153e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 6.697699973301496e-05
+    }
+   ],
+   "specialized_only": [
+    {
+     "N": 1000000,
+     "specialized_s": 2.2089998310548253e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000,
+     "specialized_s": 2.2360000002663583e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000,
+     "specialized_s": 1.7390002540196292e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000000000,
+     "specialized_s": 1.4439997357840184e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000000000000000000000,
+     "specialized_s": 1.5079999684530776e-06,
+     "hits": 1
+    }
+   ],
+   "observed_crossover_N": 1000
+  },
+  {
+   "demo": "pell_2n2_plus_1",
+   "status": "STRUCTURED_INFINITE",
+   "method": "Pell orbits",
+   "specialized": true,
+   "preprocessing_s": 0.0002965469998343906,
+   "preprocessing_first_call_s": 0.000656144000004133,
+   "brute_vs_specialized": [
+    {
+     "N": 1000,
+     "brute_s": 0.0012634099998649617,
+     "specialized_s": 1.5876999896136113e-05,
+     "hits": 4,
+     "preprocessing_plus_specialized_s": 0.0003124239997305267
+    },
+    {
+     "N": 10000,
+     "brute_s": 0.016665807000208588,
+     "specialized_s": 1.4069999906496378e-05,
+     "hits": 5,
+     "preprocessing_plus_specialized_s": 0.00031061699974088697
+    },
+    {
+     "N": 100000,
+     "brute_s": 0.22528878499997518,
+     "specialized_s": 3.3988999803113984e-05,
+     "hits": 7,
+     "preprocessing_plus_specialized_s": 0.0003305359996375046
+    }
+   ],
+   "specialized_only": [
+    {
+     "N": 1000000,
+     "specialized_s": 3.944400032196427e-05,
+     "hits": 8
+    },
+    {
+     "N": 1000000000,
+     "specialized_s": 8.26569998935156e-05,
+     "hits": 12
+    },
+    {
+     "N": 1000000000000,
+     "specialized_s": 0.0001415199999428296,
+     "hits": 16
+    },
+    {
+     "N": 1000000000000000000,
+     "specialized_s": 0.0003030650000255264,
+     "hits": 24
+    },
+    {
+     "N": 1000000000000000000000000000000,
+     "specialized_s": 0.0009777899999789952,
+     "hits": 39
+    }
+   ],
+   "observed_crossover_N": 1000
+  },
+  {
+   "demo": "square_triangular",
+   "status": "STRUCTURED_INFINITE",
+   "method": "Pell orbits",
+   "specialized": true,
+   "preprocessing_s": 0.00047189199995045783,
+   "preprocessing_first_call_s": 0.0006971349998821097,
+   "brute_vs_specialized": [
+    {
+     "N": 1000,
+     "brute_s": 0.00012428299987732316,
+     "specialized_s": 2.2835999970993726e-05,
+     "hits": 4,
+     "preprocessing_plus_specialized_s": 0.0004947279999214516
+    },
+    {
+     "N": 10000,
+     "brute_s": 0.0013102930001878121,
+     "specialized_s": 2.2605000140174525e-05,
+     "hits": 6,
+     "preprocessing_plus_specialized_s": 0.0004944970000906324
+    },
+    {
+     "N": 100000,
+     "brute_s": 0.01688435300002311,
+     "specialized_s": 2.3764999696140876e-05,
+     "hits": 7,
+     "preprocessing_plus_specialized_s": 0.0004956569996465987
+    }
+   ],
+   "specialized_only": [
+    {
+     "N": 1000000,
+     "specialized_s": 3.181100009896909e-05,
+     "hits": 8
+    },
+    {
+     "N": 1000000000,
+     "specialized_s": 5.6289999974978855e-05,
+     "hits": 12
+    },
+    {
+     "N": 1000000000000,
+     "specialized_s": 0.00012128600019423175,
+     "hits": 16
+    },
+    {
+     "N": 1000000000000000000,
+     "specialized_s": 0.00020814500021515414,
+     "hits": 24
+    },
+    {
+     "N": 1000000000000000000000000000000,
+     "specialized_s": 0.0005866260003131174,
+     "hits": 40
+    }
+   ],
+   "observed_crossover_N": 10000
+  },
+  {
+   "demo": "triangular_cube",
+   "status": "COMPLETE_FINITE",
+   "method": "affine transport to a solved Mordell curve",
+   "specialized": true,
+   "preprocessing_s": 7.641100000910228e-05,
+   "preprocessing_first_call_s": 0.00018707200024437043,
+   "brute_vs_specialized": [
+    {
+     "N": 1000,
+     "brute_s": 0.0002867969997168984,
+     "specialized_s": 2.9269999686221126e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 7.93379999777244e-05
+    },
+    {
+     "N": 10000,
+     "brute_s": 0.0031157829998846864,
+     "specialized_s": 4.121000074519543e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 8.053200008362182e-05
+    },
+    {
+     "N": 100000,
+     "brute_s": 0.03400628899998992,
+     "specialized_s": 2.521000169508625e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 7.89320001786109e-05
+    }
+   ],
+   "specialized_only": [
+    {
+     "N": 1000000,
+     "specialized_s": 2.106000010826392e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000,
+     "specialized_s": 1.8689997887122445e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000,
+     "specialized_s": 1.958000211743638e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000000000,
+     "specialized_s": 1.89200000022538e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000000000000000000000,
+     "specialized_s": 1.6320000213454477e-06,
+     "hits": 1
+    }
+   ],
+   "observed_crossover_N": 1000
+  },
+  {
+   "demo": "quadratic_filter",
+   "status": "STRUCTURED_FILTERED",
+   "method": "radical parametrization",
+   "specialized": true,
+   "preprocessing_s": 0.0005088000002615445,
+   "preprocessing_first_call_s": 0.0007088430002113455,
+   "brute_vs_specialized": [
+    {
+     "N": 1000,
+     "brute_s": 0.00012551200006782892,
+     "specialized_s": 0.0001337020003120415,
+     "hits": 22,
+     "preprocessing_plus_specialized_s": 0.000642502000573586
+    },
+    {
+     "N": 10000,
+     "brute_s": 0.0010889109998970525,
+     "specialized_s": 0.00047269300011976156,
+     "hits": 70,
+     "preprocessing_plus_specialized_s": 0.000981493000381306
+    },
+    {
+     "N": 100000,
+     "brute_s": 0.010533477000080893,
+     "specialized_s": 0.0017272050004066841,
+     "hits": 223,
+     "preprocessing_plus_specialized_s": 0.0022360050006682286
+    }
+   ],
+   "specialized_only": [
+    {
+     "N": 1000000,
+     "specialized_s": 0.007333724000091024,
+     "hits": 706
+    },
+    {
+     "N": 1000000000,
+     "specialized_s": 0.32485379899981126,
+     "hits": 22360
+    }
+   ],
+   "observed_crossover_N": 10000
+  },
+  {
+   "demo": "pell_large_unit",
+   "status": "STRUCTURED_INFINITE",
+   "method": "Pell orbits",
+   "specialized": true,
+   "preprocessing_s": 0.0005199730003369041,
+   "preprocessing_first_call_s": 0.0008030779999899096,
+   "brute_vs_specialized": [
+    {
+     "N": 1000,
+     "brute_s": 0.001887130999875808,
+     "specialized_s": 5.350000265025301e-06,
+     "hits": 0,
+     "preprocessing_plus_specialized_s": 0.0005253230006019294
+    },
+    {
+     "N": 10000,
+     "brute_s": 0.02379885899972578,
+     "specialized_s": 4.737999915960245e-06,
+     "hits": 0,
+     "preprocessing_plus_specialized_s": 0.0005247110002528643
+    },
+    {
+     "N": 100000,
+     "brute_s": 0.2978250709998065,
+     "specialized_s": 3.3789997360145207e-06,
+     "hits": 0,
+     "preprocessing_plus_specialized_s": 0.0005233520000729186
+    }
+   ],
+   "specialized_only": [
+    {
+     "N": 1000000,
+     "specialized_s": 3.7759996303066146e-06,
+     "hits": 0
+    },
+    {
+     "N": 1000000000,
+     "specialized_s": 2.9889997676946223e-06,
+     "hits": 0
+    },
+    {
+     "N": 1000000000000,
+     "specialized_s": 3.160000233037863e-06,
+     "hits": 0
+    },
+    {
+     "N": 1000000000000000000,
+     "specialized_s": 3.0890000743966084e-06,
+     "hits": 0
+    },
+    {
+     "N": 1000000000000000000000000000000,
+     "specialized_s": 6.455499988078373e-05,
+     "hits": 1
+    }
+   ],
+   "observed_crossover_N": 1000
+  },
+  {
+   "demo": "ljunggren",
+   "status": "COMPLETE_FINITE",
+   "method": "Runge enumeration (divisor 2)",
+   "specialized": true,
+   "preprocessing_s": 0.0022212399999261834,
+   "preprocessing_first_call_s": 0.004023791999770765,
+   "brute_vs_specialized": [
+    {
+     "N": 1000,
+     "brute_s": 0.0025570849998075573,
+     "specialized_s": 1.6890003280423116e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 0.0022229290002542257
+    },
+    {
+     "N": 10000,
+     "brute_s": 0.034859507999954076,
+     "specialized_s": 2.1649998416251037e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 0.0022234049997678085
+    },
+    {
+     "N": 100000,
+     "brute_s": 0.5800764139999046,
+     "specialized_s": 2.1050000214017928e-06,
+     "hits": 1,
+     "preprocessing_plus_specialized_s": 0.002223344999947585
+    }
+   ],
+   "specialized_only": [
+    {
+     "N": 1000000,
+     "specialized_s": 2.772000243567163e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000,
+     "specialized_s": 1.5770001482451335e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000,
+     "specialized_s": 1.7270003809244372e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000000000,
+     "specialized_s": 1.8390001059742644e-06,
+     "hits": 1
+    },
+    {
+     "N": 1000000000000000000000000000000,
+     "specialized_s": 1.4949996511859354e-06,
+     "hits": 1
+    }
+   ],
+   "observed_crossover_N": 1000
+  },
+  {
+   "demo": "unresolved_mordell",
+   "status": "NOT_ENUMERATED",
+   "specialized": false,
+   "preprocessing_s": 0.0008550029997422826
+  }
+ ]
+}

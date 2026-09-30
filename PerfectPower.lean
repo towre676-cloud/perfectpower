@@ -43,3 +43,4 @@ import PerfectPower.Continuation.KappaPositive
 import PerfectPower.Continuation.PellPositive
 import PerfectPower.Continuation.ExplicitK
 import PerfectPower.Continuation.PellExplicitK
+import PerfectPower.Reduction

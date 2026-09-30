@@ -23,6 +23,8 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Genus one, unconditional, **positive rank**: $y^2=x^3-2$ (points $(3,\pm5)$), $y^2=x^3-4$ (points $(2,\pm2),(5,\pm11)$) | **Lean** (`MordellMinus2.lean`, `MordellMinus4.lean`; descent in ℤ[√−2], ℤ[i]) | Mathlib (Euclidean ℤ[i]; ours for ℤ[√−2]) | §5A |
 | Genus one, unconditional, positive rank, **class number 2**: $y^2=x^3-13$ (points $(17,\pm70)$); with $y^2=x^3-5$, $y^2=x^3-6$ (no points) as further instances | **Lean** (`ClassTwo.lean` template: Thue lattice bound + kernel norm table; `MordellMinus13/5/6.lean`) | — | §5A.3′ |
 | Transport of complete lists through $n\mapsto rn+s$ with exact counts; image-restricted genus-one premise | **Lean** (`affine_count`, `cubic_sound_image`, `n3m2_hits`) | — | `Transport.lean`, §5A |
+| Exact constraint reductions (affine, quadratic discriminant, triangular), their composition, and transported completeness | **Lean** (`Reduction.Exact`, `Exact.comp`, `Exact.pull_complete`, `triangular_count`, `tri_cube_complete`) | — | `Reduction.lean`, §5B |
+| Constraint compiler: plans, generated programs, timings | Python (tested against brute force, not verified); each plan cites its justification | the rows above | `CONSTRAINT_COMPILER.md`, §5B |
 | Genus one: 622 monic cubics, Mordell census $0<\|k\|\le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
 | Transforms (Theorem T); log-periodic heat term (Theorem T2) | Paper; T2's $O(\tau)$ coefficient checked numerically | Mellin analysis (classical) | notes §8 |
@@ -36,6 +38,7 @@ This table is the single source of truth. The research notes, the paper, the REA
 - Canonical Pell roots + ε-growth ⟶ `pell_exact_count`.
 - Rational Yun decomposition (`exists_integer_decomposition`, Lean) ⟶ pointwise Theorems B, C (`integer_radical_reduction`, `integer_pell_reduction`, Lean) ⟶ Theorem B count for general $F$ (`Decomposition.radical_count`, Lean); Theorem C count for general $F$ (`Decomposition.pell_count`, Lean). Positivity of $\kappa$ (`radical_kappa_decide`, `pell_kappa_decide`) and explicit error constants (`radical_count_explicit`, `pell_count_explicit`): Lean.
 - Atlas = power ∪ radical ∪ Pell ∪ finite.
+- Exact reductions (`Reduction.lean`) + a complete list or a structural count for the reduced power constraint ⟶ a complete answer or an exact generator for the original constraint (§5B). Completeness is transported by `Exact.pull_complete`, not re-proved.
 - Boshernitzan ⟶ nonrigid density zero. This is independent of the atlas; the atlas gives a second, ineffective proof through Siegel.
 
 **One command.** `make verify` builds the Lean library, audits axioms, lints, runs the Python tests, regenerates every receipt, certificate and generated Lean file, and fails on any difference from the committed files. Its output for the release commit is archived in `docs/RELEASE_CHECK.md`. The Sage and Singular steps (`make crosscheck`) are optional, and their receipts are re-checked in plain Python by `make verify`.
@@ -123,6 +126,83 @@ $$A(N)=\#\{t\in T:\ r\mid t-s,\ 1\le (t-s)/r\le N\},$$
 from the same hypothesis. For example, $(rn+s)^3-2$ is a square iff $rn+s=3$, so $A(N)\in\{0,1\}$ is decided by $r\mid 3-s$ and $1\le(3-s)/r\le N$ (`affine_cube_sub_two`).
 
 The Weierstrass normalisation of `Genus1.lean` needs the same care. The old premise `IntegralPointsOn` asks for *every* integral point of the scaled model. A theorem about $m^2=F(n)$ only classifies the points in the image of $(n,m)\mapsto(9an+3b,\,27am)$. `IntegralPointsOnImage` asks only for those points (those with $9a\mid U-3b$ and $27a\mid V$), and `cubic_sound_image` proves the hit list from it. For $n^3-2$ the model is $V^2=U^3-1458$: `n3m2_image` discharges the image premise from `MordellMinus2.points`, and `n3m2_hits` recovers the unconditional list $\{3\}$ through the generic checker, without classifying the model's other integral points. The same distinction will be essential for quartic models, where the change of variables introduces denominators.
+
+### 5B. From structure to execution (edition 0.9)
+
+The atlas says, before any search, which of four shapes a hit set has. This section turns that into
+programs. The guide with all details is `docs/CONSTRAINT_COMPILER.md`.
+
+**1. Architecture.** A constraint on a positive integer $n$ goes through three stages:
+1. an **exact reduction** to a power constraint $G(n)=m^d$;
+2. a **structural solver** for $G$, chosen from the classification;
+3. the **backward maps**, which recover the original witnesses and discard inadmissible ones.
+
+The result is a *plan* with exactly one outcome:
+- `COMPLETE_FINITE`: a complete finite list;
+- `STRUCTURED_INFINITE`: infinitely many, generated exactly;
+- `STRUCTURED_FILTERED`: an exact generator followed by a nontrivial exact filter;
+- `CLASSIFIED_FINITE`: finite, exact to any $N$, no complete list;
+- `NOT_ENUMERATED`: finite, no enumeration; only labelled bounded evidence.
+
+Each plan carries the Lean theorems, certificates or Python algorithms that justify it, and states
+that its own execution is not verified. The specializer writes the plan out as a standalone program,
+replacing a brute-force loop.
+
+**2. The reductions are theorems** (`Reduction.lean`). An exact reduction $P\rightsquigarrow Q$ is
+a map $\mathrm{fwd}$ of solutions and a partial inverse $\mathrm{bwd}:\ Q\text{-solutions}\to P
+\cup\{\bot\}$ with $\mathrm{bwd}(\mathrm{fwd}\,a)=a$. The general theorems are:
+- `Exact.iff`: $P(a)\iff\exists b,\ Q(b)\wedge\mathrm{bwd}(b)=a$.
+- `Exact.comp`: reductions compose, and their admissibility conditions compose.
+- `Exact.pull_complete`: a complete finite list for $Q$ pulls back to a complete finite list for
+  $P$. This is the unifying principle of the release: *a complete theorem about one equation
+  becomes a complete answer about another through a checked chain of reductions, and every
+  integrality condition along the chain is part of the chain.*
+
+The instances are:
+- **affine**: $t=rn+s$, back when $r\mid t-s$ and $(t-s)/r\ge1$;
+- **quadratic**: $m=2ay+b$, $m^2=4aF(n)+b^2-4ac$, back when $2a\mid m-b$ for $m$ or $-m$ and
+  $y$ lies in its domain;
+- **triangular**: $m=2y+1$, $m^2=8F(n)+1$. Here $m$ is odd, so the way back never fails for
+  $y\in\mathbb Z$ or $y\ge0$. Hence `triangular_count`: $\#\{n\le N: F(n)\text{ triangular}\}=A_{8F}(2,1,N)$.
+
+A square discriminant is not enough in general: $2y^2+y=1$ has discriminant $9$ but no root
+$y\ge0$.
+
+**3. Worked example, fully in Lean** (`tri_cube_complete`). With $n\ge1$ and $y\in\mathbb Z$,
+$$\frac{y(y+1)}2=64n^3-120n^2+75n-16\iff (n,y)\in\{(1,2),(1,-3)\}.$$
+The chain is: triangular, giving $m^2=(8n-5)^3-2$; then affine, $t=8n-5$; then `MordellMinus2.points`.
+The pull-back of $\{(3,\pm5)\}$ is computed by `decide`. The compiler finds the same plan
+automatically and emits the test `8*n + (-5) == 3`.
+
+**4. Worked examples, executed** (`receipts/constraint_demos.json`, regenerated by `make verify`).
+- $(5n-7)^3-2=m^2$ becomes `5*n + (-7) == 3`.
+- $2n^2+1=m^2$ becomes the orbit $(X,m)\mapsto(3X+8m,\,X+3m)$ with $X=4n$, that is
+  $n'=3n+2m$, $m'=4n+3m$ from $(n,m)=(0,1)$.
+- $y(y+1)/2=n^2$ becomes a Pell orbit on $8n^2+1$ with $y=(m-1)/2$.
+- $2y^2+y=n$ with $y\ge0$ becomes the radical family $8n+1=w^2$ filtered by $4\mid w-1$.
+- $991n^2+1=m^2$ has its first hit at $n=12055735790331359447442538767$. No scan reaches it, and
+  the plan finds it in microseconds.
+- $n^3+17=m^2$ is `NOT_ENUMERATED`. Siegel makes it finite, nothing here enumerates it, and its
+  bounded evidence ($n=2,4,8,43,52,5234$ up to $10^4$) is labelled as evidence.
+
+**5. Measurements** (`make bench`). Against the plain loop, structural plans win from
+$N\approx10^3$ to $10^4$ in every specialized demo. Preprocessing costs 0.1–2 ms. A Pell or
+finite plan then costs time proportional to its number of hits, while the loop is linear in $N$.
+The crossover is real, not assumed: the square-triangular loop wins below $10^4$. Dense radical
+families are output-bound, about 707,000 solutions at $N=10^{12}$. The receipt records the machine.
+
+**6. The remaining effectiveness boundary.** Classification becomes a complete executable answer
+exactly where the mathematics is effective:
+- Runge rigidity;
+- solved Mordell curves (the registry of §5A and `Generated/MordellDescent.lean`);
+- Pell orbits and radical parametrizations.
+
+Two gaps remain:
+- The finite type outside these cases is `NOT_ENUMERATED`. Siegel's theorem gives no bound, and
+  Baker-type bounds are not implemented.
+- A nontrivial divisibility filter on a Pell family is exact to any $N$, but whether the family
+  stays infinite is not decided. The filter is periodic along each orbit, so a period criterion in
+  the style of `branch_infinite_iff` is the natural next theorem.
 
 ### 6. Dirichlet and heat transforms
 

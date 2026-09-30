@@ -1,4 +1,4 @@
-"""python -m perfectpower scan|certificate|verify|surgery|classify|enumerate|count|shifts ..."""
+"""python -m perfectpower scan|certificate|verify|surgery|classify|enumerate|count|shifts|solve ..."""
 import argparse
 import sys
 import json
@@ -37,6 +37,17 @@ def main():
     p = sub.add_parser('shifts', help='type of S + k for every integer shift k')
     p.add_argument('--coeff', required=True, type=coefficients)
     p.add_argument('--d', type=int, required=True)
+    p = sub.add_parser('solve', help='compile an integer constraint into a plan (constraint compiler)')
+    p.add_argument('--expr', required=True, help="integer polynomial in n, e.g. '(5*n - 7)**3 - 2'")
+    p.add_argument('--form', choices=('power', 'triangular', 'root'), default='power',
+                   help='power: expr = m^d; triangular: expr = y(y+1)/2; root: a y^2 + b y + c = expr')
+    p.add_argument('--d', type=int, default=2)
+    p.add_argument('--a', type=int, default=1)
+    p.add_argument('--b', type=int, default=0)
+    p.add_argument('--c', type=int, default=0)
+    p.add_argument('--domain', choices=('int', 'nonneg', 'pos'), default='int')
+    p.add_argument('--N', type=int, default=10 ** 6)
+    p.add_argument('--program', action='store_true', help='print the specialized program instead')
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
@@ -45,6 +56,26 @@ def main():
         result = verify_certificate(obj)
         print(json.dumps({'valid': result}))
         raise SystemExit(0 if result else 1)
+    if args.command == 'solve':
+        from .compiler import NotEnumerable
+        from .specialize import LoopProgram, specialize
+        test = {'power': ('power', args.d), 'triangular': ('triangular', args.domain),
+                'root': ('root', args.a, args.b, args.c, args.domain)}[args.form]
+        sp = specialize(LoopProgram(args.expr, test))
+        if args.program:
+            print(sp.source if sp.source is not None else f'# no specialized program: {sp.plan.status}')
+            return
+        out = sp.plan.explain()
+        try:
+            out['hits'] = [[n, w] for n, w in sp.plan.iter_hits(args.N)]
+            out['N'] = args.N
+        except NotEnumerable as exc:
+            out['hits'] = None
+            out['not_enumerated'] = str(exc)
+        if sp.plan.status == 'COMPLETE_FINITE':
+            out['all_hits'] = [[n, w] for n, w in sp.plan.all_hits()]
+        print(json.dumps(out, indent=2, default=str))
+        return
     if args.d < 2:
         parser.error('d >= 2 required')
     if args.command == 'lean':

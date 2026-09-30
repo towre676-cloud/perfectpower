@@ -40,6 +40,7 @@ receipts:
 	$(PY) python/make_lean_mordell_descent.py
 	$(PY) python/uniformity.py
 	$(PY) python/make_pell_heat_receipt.py
+	$(PY) python/constraint_demos.py
 
 counts: audit
 	$(PY) python/make_counts.py
@@ -66,6 +67,7 @@ fuzz:
 # Certificate benchmarks (timings vary by machine; not part of verify).
 bench:
 	$(PY) python/cert_benchmarks.py
+	$(PY) python/constraint_benchmarks.py
 
 paper:
 	cd paper && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && rm -f *.aux *.log *.out

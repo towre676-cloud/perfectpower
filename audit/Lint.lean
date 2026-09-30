@@ -27,6 +27,7 @@ import PerfectPower.Continuation.KappaPositive
 import PerfectPower.Continuation.PellPositive
 import PerfectPower.Continuation.ExplicitK
 import PerfectPower.Continuation.PellExplicitK
+import PerfectPower.Reduction
 import Batteries.Tactic.Lint
 /-! Batteries' environment linters over the hand-written library, not the generated certificates (docstrings, unused haves,
 simp-normal forms, ...).  Run with `lake env lean audit/Lint.lean`; it must report 0 errors. -/

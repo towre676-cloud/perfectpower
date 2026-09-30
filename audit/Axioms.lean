@@ -304,3 +304,16 @@ open PerfectPower
 #print axioms PerfectPower.PellExact.pell_branch_explicit
 #print axioms PerfectPower.RationalYun.branch_count_explicit
 #print axioms PerfectPower.RationalYun.Decomposition.pell_count_explicit
+-- Exact constraint reductions
+#print axioms PerfectPower.Reduction.Exact.iff
+#print axioms PerfectPower.Reduction.Exact.comp
+#print axioms PerfectPower.Reduction.Exact.pull_complete
+#print axioms PerfectPower.Reduction.Exact.exists_iff
+#print axioms PerfectPower.Reduction.Exact.count_eq
+#print axioms PerfectPower.Reduction.affine
+#print axioms PerfectPower.Reduction.quadratic
+#print axioms PerfectPower.Reduction.triangular
+#print axioms PerfectPower.Reduction.triangular_count
+#print axioms PerfectPower.Reduction.triangular_count_int
+#print axioms PerfectPower.Reduction.triangular_count_nonneg
+#print axioms PerfectPower.Reduction.tri_cube_complete
