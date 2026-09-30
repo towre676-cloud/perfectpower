@@ -51,6 +51,11 @@ def main():
     p = sub.add_parser('prove', help='emit a standalone Lean theorem for a descent-certified plan')
     p.add_argument('--expr', required=True, help="cubic in n, e.g. '(2*n + 1)**3 - 74'")
     p.add_argument('--name', default='emitted_hits')
+    p = sub.add_parser('oeis', help='compare PerfectPower coordinates with a local OEIS snapshot')
+    p.add_argument('--stripped', type=Path, required=True, help='local stripped(.gz) from oeis.org')
+    p.add_argument('--names', type=Path, help='local names(.gz), for reading leads only')
+    p.add_argument('--reviewed', type=Path, help='JSON {A-number: review note} of checked definitions')
+    p.add_argument('--retrieved', help='date the snapshot was downloaded (recorded in the atlas)')
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
@@ -59,6 +64,15 @@ def main():
         result = verify_certificate(obj)
         print(json.dumps({'valid': result}))
         raise SystemExit(0 if result else 1)
+    if args.command == 'oeis':
+        from .oeis import atlas, load_names, load_stripped, premise_candidates
+        reviewed = json.loads(args.reviewed.read_text()) if args.reviewed else {}
+        out = {'retrieved': args.retrieved,
+               'atlas': atlas(load_stripped(args.stripped), reviewed, retrieved=args.retrieved)}
+        if args.names:
+            out['premise_candidates'] = premise_candidates(load_names(args.names))
+        print(json.dumps(out, indent=1, default=str))
+        return
     if args.command == 'prove':
         from .compiler import PowerConstraint, compile_constraint, match_affine_cube
         from .descent import standalone_file

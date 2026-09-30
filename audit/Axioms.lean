@@ -400,3 +400,24 @@ open PerfectPower
 #print axioms PerfectPower.Descent.hits_of_cert
 #print axioms PerfectPower.Generated.Plans.plan_descent_74
 #print axioms PerfectPower.Generated.Plans.plan_descent_193
+-- Observations of orbits, and one orbit behind six sequences
+#print axioms PerfectPower.Observation.count_between
+#print axioms PerfectPower.Observation.filtered_obs_count
+#print axioms PerfectPower.Observation.value_count
+#print axioms PerfectPower.Observation.observed_count
+#print axioms PerfectPower.SquareTriangular.sol_iff
+#print axioms PerfectPower.SquareTriangular.sol_nat
+#print axioms PerfectPower.SquareTriangular.even_of_pell
+#print axioms PerfectPower.SquareTriangular.sqTriRoot_iff
+#print axioms PerfectPower.SquareTriangular.triIdx_iff
+#print axioms PerfectPower.SquareTriangular.sqTri_iff
+#print axioms PerfectPower.SquareTriangular.pellIdx_iff
+#print axioms PerfectPower.SquareTriangular.pellRoot_iff
+#print axioms PerfectPower.SquareTriangular.oddSqTri_iff
+#print axioms PerfectPower.SquareTriangular.eps_eq
+#print axioms PerfectPower.SquareTriangular.sqTriRoot_count
+#print axioms PerfectPower.SquareTriangular.triIdx_count
+#print axioms PerfectPower.SquareTriangular.pellIdx_count
+#print axioms PerfectPower.SquareTriangular.pellRoot_count
+#print axioms PerfectPower.SquareTriangular.sqTri_count
+#print axioms PerfectPower.SquareTriangular.oddSqTri_count

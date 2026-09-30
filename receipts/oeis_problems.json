@@ -1,0 +1,1744 @@
+{
+ "problems": [
+  {
+   "problem": "square_triangular",
+   "orbit": "X_j + Y_j sqrt(8) = (3 + sqrt(8))^j",
+   "norm_form": "X^2 - 8 Y^2 = 1",
+   "field": "Q(sqrt(2))",
+   "field_symmetry": "conjugation m + n sqrt(2) -> m - n sqrt(2) fixes the norm m^2 - 2n^2",
+   "unit": "3 + 2 sqrt(2) (= 3 + sqrt(8)) advances the orbit",
+   "substitution": "m = 2u + 1, n = 2t (the Pell equation forces n even)",
+   "lean_orbit": [
+    "PerfectPower.SquareTriangular.sol_iff",
+    "PerfectPower.SquareTriangular.sol_nat",
+    "PerfectPower.SquareTriangular.even_of_pell"
+   ],
+   "lean_count": "PerfectPower.Observation.observed_count",
+   "coordinates": [
+    {
+     "key": "PellIdx",
+     "definition": "n >= 1 with 2n^2 + 1 a square",
+     "coordinate": "2 Y_j",
+     "terms": [
+      2,
+      12,
+      70,
+      408,
+      2378,
+      13860,
+      80782,
+      470832,
+      2744210,
+      15994428,
+      93222358,
+      543339720,
+      3166815962,
+      18457556052,
+      107578520350,
+      627013566048,
+      3654502875938,
+      21300003689580,
+      124145519261542,
+      723573111879672,
+      4217293152016490,
+      24580185800219268,
+      143263821649299118,
+      835002744095575440,
+      4866752642924153522,
+      28365513113449345692,
+      165326326037771920630,
+      963592443113182178088,
+      5616228332641321147898,
+      32733777552734744709300
+     ],
+     "recurrence": [
+      6,
+      -1
+     ],
+     "growth": "eps^j",
+     "count_constant": "1 / log(3 + 2*sqrt(2))",
+     "count_constant_value": 0.5672963285532555,
+     "least": 2,
+     "lean": [
+      "PerfectPower.SquareTriangular.pellIdx_iff",
+      "PerfectPower.SquareTriangular.pellIdx_count"
+     ]
+    },
+    {
+     "key": "PellRoot",
+     "definition": "m with m^2 = 2n^2 + 1 for some n >= 1",
+     "coordinate": "X_j",
+     "terms": [
+      3,
+      17,
+      99,
+      577,
+      3363,
+      19601,
+      114243,
+      665857,
+      3880899,
+      22619537,
+      131836323,
+      768398401,
+      4478554083,
+      26102926097,
+      152139002499,
+      886731088897,
+      5168247530883,
+      30122754096401,
+      175568277047523,
+      1023286908188737,
+      5964153172084899,
+      34761632124320657,
+      202605639573839043,
+      1180872205318713601,
+      6882627592338442563,
+      40114893348711941777,
+      233806732499933208099,
+      1362725501650887306817,
+      7942546277405390632803,
+      46292552162781456490001
+     ],
+     "recurrence": [
+      6,
+      -1
+     ],
+     "growth": "eps^j",
+     "count_constant": "1 / log(3 + 2*sqrt(2))",
+     "count_constant_value": 0.5672963285532555,
+     "least": 3,
+     "lean": [
+      "PerfectPower.SquareTriangular.pellRoot_iff",
+      "PerfectPower.SquareTriangular.pellRoot_count"
+     ]
+    },
+    {
+     "key": "SqTriRoot",
+     "definition": "t >= 1 with t^2 triangular",
+     "coordinate": "Y_j",
+     "terms": [
+      1,
+      6,
+      35,
+      204,
+      1189,
+      6930,
+      40391,
+      235416,
+      1372105,
+      7997214,
+      46611179,
+      271669860,
+      1583407981,
+      9228778026,
+      53789260175,
+      313506783024,
+      1827251437969,
+      10650001844790,
+      62072759630771,
+      361786555939836,
+      2108646576008245,
+      12290092900109634,
+      71631910824649559,
+      417501372047787720,
+      2433376321462076761,
+      14182756556724672846,
+      82663163018885960315,
+      481796221556591089044,
+      2808114166320660573949,
+      16366888776367372354650
+     ],
+     "recurrence": [
+      6,
+      -1
+     ],
+     "growth": "eps^j",
+     "count_constant": "1 / log(3 + 2*sqrt(2))",
+     "count_constant_value": 0.5672963285532555,
+     "least": 1,
+     "lean": [
+      "PerfectPower.SquareTriangular.sqTriRoot_iff",
+      "PerfectPower.SquareTriangular.sqTriRoot_count"
+     ]
+    },
+    {
+     "key": "TriIdx",
+     "definition": "u >= 1 with u(u+1)/2 a square",
+     "coordinate": "(X_j - 1)/2",
+     "terms": [
+      1,
+      8,
+      49,
+      288,
+      1681,
+      9800,
+      57121,
+      332928,
+      1940449,
+      11309768,
+      65918161,
+      384199200,
+      2239277041,
+      13051463048,
+      76069501249,
+      443365544448,
+      2584123765441,
+      15061377048200,
+      87784138523761,
+      511643454094368,
+      2982076586042449,
+      17380816062160328,
+      101302819786919521,
+      590436102659356800,
+      3441313796169221281,
+      20057446674355970888,
+      116903366249966604049,
+      681362750825443653408,
+      3971273138702695316401,
+      23146276081390728245000
+     ],
+     "recurrence": [
+      7,
+      -7,
+      1
+     ],
+     "growth": "eps^j",
+     "count_constant": "1 / log(3 + 2*sqrt(2))",
+     "count_constant_value": 0.5672963285532555,
+     "least": 1,
+     "lean": [
+      "PerfectPower.SquareTriangular.triIdx_iff",
+      "PerfectPower.SquareTriangular.triIdx_count"
+     ]
+    },
+    {
+     "key": "SqTri",
+     "definition": "v >= 1 both square and triangular",
+     "coordinate": "Y_j^2",
+     "terms": [
+      1,
+      36,
+      1225,
+      41616,
+      1413721,
+      48024900,
+      1631432881,
+      55420693056,
+      1882672131025,
+      63955431761796,
+      2172602007770041,
+      73804512832419600,
+      2507180834294496361,
+      85170343853180456676,
+      2893284510173841030625,
+      98286503002057414584576,
+      3338847817559778254844961,
+      113422539294030403250144100,
+      3853027488179473932250054441,
+      130889512058808083293251706896,
+      4446390382511295358038307980025,
+      151046383493325234090009219613956,
+      5131130648390546663702275158894481,
+      174307395661785261331787346182798400,
+      5921320321852308338617067495056251121,
+      201150583547316698251648507485729739716,
+      6833198520286915432217432187019754899225,
+      232127599106207807997141045851185936833936,
+      7885505171090778556470578126753302097454601,
+      267875048217980263112002515263761085376622500
+     ],
+     "recurrence": [
+      35,
+      -35,
+      1
+     ],
+     "growth": "eps^(2j)",
+     "count_constant": "1/2 / log(3 + 2*sqrt(2))",
+     "count_constant_value": 0.28364816427662776,
+     "least": 1,
+     "lean": [
+      "PerfectPower.SquareTriangular.sqTri_iff",
+      "PerfectPower.SquareTriangular.sqTri_count"
+     ]
+    },
+    {
+     "key": "OddSqTri",
+     "definition": "odd square triangular numbers",
+     "coordinate": "Y_j^2, j odd",
+     "terms": [
+      1,
+      1225,
+      1413721,
+      1631432881,
+      1882672131025,
+      2172602007770041,
+      2507180834294496361,
+      2893284510173841030625,
+      3338847817559778254844961,
+      3853027488179473932250054441,
+      4446390382511295358038307980025,
+      5131130648390546663702275158894481,
+      5921320321852308338617067495056251121,
+      6833198520286915432217432187019754899225,
+      7885505171090778556470578126753302097454601
+     ],
+     "recurrence": null,
+     "growth": "eps^(2j)",
+     "count_constant": "1/4 / log(3 + 2*sqrt(2))",
+     "count_constant_value": 0.14182408213831388,
+     "least": 1,
+     "lean": [
+      "PerfectPower.SquareTriangular.oddSqTri_iff",
+      "PerfectPower.SquareTriangular.oddSqTri_count"
+     ]
+    }
+   ]
+  },
+  {
+   "problem": "plan_far_first_hit",
+   "constraint": "2*y^2 + 1*y + 0 = 263*n^2 + 1,  n >= 1, y in Z>=1",
+   "method": "Pell orbits",
+   "least": 7816408648416305,
+   "lean": [
+    "PerfectPower.Generated.Plans.plan_far_first_hit"
+   ],
+   "coordinates": [
+    {
+     "key": "hits",
+     "coordinate": "hit indices n",
+     "terms": [
+      7816408648416305,
+      5497529635986443298,
+      3866588027568483369955,
+      220905044014986956938044503445128231326660824893842299845,
+      155369566873571596883971564357060831907816649070485735801702,
+      109276374462701341488103062219962673313599716518750073671563895
+     ],
+     "count_constant": null
+    },
+    {
+     "key": "witness",
+     "coordinate": "least witness",
+     "terms": [
+      89633454172610088,
+      63042068660214700331,
+      44339498657563499956224,
+      2533194338966342946546497194962741431237204097265799794224,
+      1781676416700934671214338981121617850848397660727040975477131,
+      1253109879885318419077805203558342925688608450840588220285788088
+     ]
+    }
+   ]
+  },
+  {
+   "problem": "plan_late_certified",
+   "constraint": "41*y^2 + 1*y + 3 = n^2 + 3,  n >= 1, y in Z>=0",
+   "method": "Pell orbits",
+   "least": 655680,
+   "lean": [
+    "PerfectPower.Generated.Plans.plan_late_certified"
+   ],
+   "coordinates": [
+    {
+     "key": "hits",
+     "coordinate": "hit indices n",
+     "terms": [
+      655680,
+      11011228959360,
+      184918196674365359040,
+      3105442597507004431075902720,
+      52151567016378639709528467705038400,
+      875812660149387251140619187303837208414080,
+      14708049241110017887962588286504385622429405677760,
+      247001125151602802810664149186165482778414408211633277440,
+      4148038589348192424437533967083199061330259258186078601877261120,
+      69660509150154735994293867701873535258604778373309467566234964466076800,
+      1169850865785052726664656137033494367932008640100505290880000445648834403372480
+     ],
+     "count_constant": "1/2 / log(eps)"
+    },
+    {
+     "key": "witness",
+     "coordinate": "least witness",
+     "terms": [
+      102400,
+      1719665049600,
+      28879370416292761600,
+      484988652781793234126438400,
+      8144706409333599540841807874560000,
+      136778957845197070927627284612592438886400,
+      2297011380027009076017934088525060765059650457600,
+      38575094905644202894075084747851709886942663451613593600,
+      647814790957613999998965104362615952926691561765579889057894400,
+      10879143769055329810515714730351341917216845413339679013378981898240000,
+      182700010558294477001745370313057757358552286951199133466877531584358002790400
+     ]
+    }
+   ]
+  },
+  {
+   "problem": "plan_filtered_infinite_1",
+   "constraint": "3*y^2 + 4*y + -2 = 2*n^2 + 3*n,  n >= 1, y in Z>=1",
+   "method": "Pell orbits",
+   "least": 1,
+   "lean": [
+    "PerfectPower.Generated.Plans.plan_filtered_infinite_1"
+   ],
+   "coordinates": [
+    {
+     "key": "hits",
+     "coordinate": "hit indices n",
+     "terms": [
+      1,
+      185,
+      18201,
+      1783585,
+      174773201,
+      17125990185,
+      1678172265001,
+      164443755979985,
+      16113809913773601,
+      1578988927793832985,
+      154724801113881859001,
+      15161451520232628349185,
+      1485667524181683696361201,
+      145580255918284769615048585,
+      14265379412467725738578400201,
+      1397861602165918837611068171185,
+      136976171632847578360146102376001,
+      13422266958416896760456706964676985,
+      1315245185753223034946397136435968601,
+      128880605936857440527986462663760245985
+     ],
+     "count_constant": "1 / log(eps)"
+    },
+    {
+     "key": "witness",
+     "coordinate": "least witness",
+     "terms": [
+      1,
+      151,
+      14861,
+      1456291,
+      142701721,
+      13983312431,
+      1370221916581,
+      134267764512571,
+      13156870700315441,
+      1289239060866400711,
+      126332271094206954301,
+      12379273328171415120851,
+      1213042453889704474889161,
+      118865781207862867124016991,
+      11647633515916671273678776021,
+      1141349218778625921953396033131,
+      111840575806789423680159132470881,
+      10959235079846584894733641586113271,
+      1073893197249158530260216716306629741,
+      105230574095337689380606504556463601411
+     ]
+    }
+   ]
+  },
+  {
+   "problem": "plan_filtered_infinite_2",
+   "constraint": "-3*y^2 + 2*y + 3 = -n^2 - 3*n + 5,  n >= 1, y in Z>=1",
+   "method": "Pell orbits",
+   "least": 2,
+   "lean": [
+    "PerfectPower.Generated.Plans.plan_filtered_infinite_2"
+   ],
+   "coordinates": [
+    {
+     "key": "hits",
+     "coordinate": "hit indices n",
+     "terms": [
+      2,
+      43,
+      618,
+      8627,
+      120178,
+      1673883,
+      23314202,
+      324724963,
+      4522835298,
+      62994969227,
+      877406733898,
+      12220699305363,
+      170212383541202,
+      2370752670271483,
+      33020325000259578,
+      459913797333362627,
+      6405772837666817218,
+      89220905930002078443,
+      1242686910182362281002,
+      17308395836623069855603
+     ],
+     "count_constant": "1 / log(eps)"
+    },
+    {
+     "key": "witness",
+     "coordinate": "least witness",
+     "terms": [
+      2,
+      26,
+      358,
+      4982,
+      69386,
+      966418,
+      13460462,
+      187480046,
+      2611260178,
+      36370162442,
+      506571014006,
+      7055624033638,
+      98272165456922,
+      1368754692363266,
+      19064293527628798,
+      265531354694439902,
+      3698374672194529826,
+      51511714056028977658,
+      717465622112211157382,
+      9993006995514927225686
+     ]
+    }
+   ]
+  },
+  {
+   "problem": "plan_filtered_infinite_3",
+   "constraint": "-2*y^2 + 1*y + 2 = -n^2 - 2*n,  n >= 1, y in Z",
+   "method": "Pell orbits",
+   "least": 2,
+   "lean": [
+    "PerfectPower.Generated.Plans.plan_filtered_infinite_3"
+   ],
+   "coordinates": [
+    {
+     "key": "hits",
+     "coordinate": "hit indices n",
+     "terms": [
+      2,
+      17,
+      104,
+      611,
+      3566,
+      20789,
+      121172,
+      706247,
+      4116314,
+      23991641,
+      139833536,
+      815009579,
+      4750223942,
+      27686334077,
+      161367780524,
+      940520349071,
+      5481754313906,
+      31950005534369,
+      186218278892312,
+      1085359667819507
+     ],
+     "count_constant": "2 / log(eps)"
+    },
+    {
+     "key": "witness",
+     "coordinate": "least witness",
+     "terms": [
+      -2,
+      13,
+      -74,
+      433,
+      -2522,
+      14701,
+      -85682,
+      499393,
+      -2910674,
+      16964653,
+      -98877242,
+      576298801,
+      -3358915562,
+      19577194573,
+      -114104251874,
+      665048316673,
+      -3876185648162,
+      22592065572301,
+      -131676207785642,
+      767465181141553
+     ]
+    }
+   ]
+  },
+  {
+   "problem": "plan_filtered_infinite_4",
+   "constraint": "3*y^2 + 4*y + 1 = 2*n^2 - 4*n + 3,  n >= 1, y in Z>=1",
+   "method": "Pell orbits",
+   "least": 41,
+   "lean": [
+    "PerfectPower.Generated.Plans.plan_filtered_infinite_4"
+   ],
+   "coordinates": [
+    {
+     "key": "hits",
+     "coordinate": "hit indices n",
+     "terms": [
+      41,
+      3921,
+      384121,
+      37639841,
+      3688320201,
+      361417739761,
+      35415250176281,
+      3470333099535681,
+      340057228504320361,
+      33322138060323859601,
+      3265229472683233920441,
+      319959166184896600343521,
+      31352733056647183599744521,
+      3072247880385239096174619441,
+      301048939544696784241512960601,
+      29499723827499899616572095519361,
+      2890671886155445465639823847936681,
+      283256345119406155733086165002275281,
+      27756231149815647816376804346375040761,
+      2719827396336814079849193739779751719201
+     ],
+     "count_constant": "1 / log(eps)"
+    },
+    {
+     "key": "witness",
+     "coordinate": "least witness",
+     "terms": [
+      32,
+      3200,
+      313632,
+      30732800,
+      3011500832,
+      295096348800,
+      28916430681632,
+      2833515110451200,
+      277655564393536032,
+      27207411795456080000,
+      2666048700390302304032,
+      261245565226454169715200,
+      25599399343492118329785632,
+      2508479890097001142149276800,
+      245805429830162619812299340832,
+      24086423643465839740463186124800,
+      2360223711629822131945579940889632,
+      231277837316079103090926371021059200,
+      22662867833264122280778838780122912032,
+      2220729769822567904413235274081024320000
+     ]
+    }
+   ]
+  },
+  {
+   "problem": "plan_filtered_infinite_5",
+   "constraint": "3*y^2 + 0*y + -3 = 5*n^2 + 5*n + 5,  n >= 1, y in Z",
+   "method": "Pell orbits",
+   "least": 4,
+   "lean": [
+    "PerfectPower.Generated.Plans.plan_filtered_infinite_5"
+   ],
+   "coordinates": [
+    {
+     "key": "hits",
+     "coordinate": "hit indices n",
+     "terms": [
+      4,
+      283,
+      17572,
+      1089211,
+      67513540,
+      4184750299,
+      259387005028,
+      16077809561467,
+      996564805805956,
+      61770940150407835,
+      3828801724519479844,
+      237323935980057342523,
+      14710255229039035756612,
+      911798500264440159567451,
+      56516796761166250857425380,
+      3503129600692043113000806139,
+      217137518446145506755192555268,
+      13459023014060329375708937620507,
+      834242289353294275787198939916196,
+      51709562916890184769430625337183675
+     ],
+     "count_constant": "1 / log(eps)"
+    },
+    {
+     "key": "witness",
+     "coordinate": "least witness",
+     "terms": [
+      -6,
+      -366,
+      -22686,
+      -1406166,
+      -87159606,
+      -5402489406,
+      -334867183566,
+      -20756362891686,
+      -1286559632100966,
+      -79745940827368206,
+      -4942961771664727806,
+      -306383883902385755766,
+      -18990857840176252129686,
+      -1177126802207025246284766,
+      -72962870878995389017525806,
+      -4522520867695507093840315206,
+      -280323330926242444429082016966,
+      -17375523996559336047509244736686,
+      -1077002164455752592501144091657566,
+      -66756758672260101399023424438032406
+     ]
+    }
+   ]
+  }
+ ],
+ "unresolved_mordell": [
+  {
+   "k": -100,
+   "x_found_by_scan": [
+    5,
+    10,
+    34
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -72900 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -96,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -69984 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -95,
+   "x_found_by_scan": [
+    6
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -69255 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -92,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -67068 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -89,
+   "x_found_by_scan": [
+    5
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -64881 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -88,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -64152 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -87,
+   "x_found_by_scan": [
+    7
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -63423 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -86,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -62694 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -84,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -61236 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -83,
+   "x_found_by_scan": [
+    27
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -60507 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -81,
+   "x_found_by_scan": [
+    13
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -59049 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -80,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -58320 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -79,
+   "x_found_by_scan": [
+    20
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -57591 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -77,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -56133 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -76,
+   "x_found_by_scan": [
+    5,
+    101
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -55404 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -75,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -54675 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -72,
+   "x_found_by_scan": [
+    6
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -52488 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -71,
+   "x_found_by_scan": [
+    8
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -51759 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -68,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -49572 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -67,
+   "x_found_by_scan": [
+    23
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -48843 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -64,
+   "x_found_by_scan": [
+    4
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -46656 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -63,
+   "x_found_by_scan": [
+    4,
+    568
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -45927 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -61,
+   "x_found_by_scan": [
+    5
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -44469 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -60,
+   "x_found_by_scan": [
+    4,
+    136
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -43740 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -59,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -43011 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -56,
+   "x_found_by_scan": [
+    18
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -40824 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -55,
+   "x_found_by_scan": [
+    4,
+    56
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -40095 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -54,
+   "x_found_by_scan": [
+    7
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -39366 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -53,
+   "x_found_by_scan": [
+    9,
+    29
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -38637 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -52,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -37908 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -51,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -37179 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -50,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -36450 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -48,
+   "x_found_by_scan": [
+    4,
+    28
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -34992 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -47,
+   "x_found_by_scan": [
+    6,
+    12,
+    63
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -34263 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -45,
+   "x_found_by_scan": [
+    21
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -32805 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -44,
+   "x_found_by_scan": [
+    5
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -32076 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -40,
+   "x_found_by_scan": [
+    14
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -29160 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -39,
+   "x_found_by_scan": [
+    4,
+    10,
+    22
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -28431 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -38,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -27702 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -36,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -26244 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -35,
+   "x_found_by_scan": [
+    11
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -25515 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -32,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -23328 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -31,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -22599 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -29,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -21141 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -28,
+   "x_found_by_scan": [
+    4,
+    8,
+    37
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -20412 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -27,
+   "x_found_by_scan": [
+    3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -19683 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -26,
+   "x_found_by_scan": [
+    3,
+    35
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -18954 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -25,
+   "x_found_by_scan": [
+    5
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -18225 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -24,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -17496 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -23,
+   "x_found_by_scan": [
+    3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -16767 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -20,
+   "x_found_by_scan": [
+    6
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -14580 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -19,
+   "x_found_by_scan": [
+    7
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -13851 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -18,
+   "x_found_by_scan": [
+    3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -13122 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -16,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -11664 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -15,
+   "x_found_by_scan": [
+    4
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -10935 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -11,
+   "x_found_by_scan": [
+    3,
+    15
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -8019 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -8,
+   "x_found_by_scan": [
+    2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -5832 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -7,
+   "x_found_by_scan": [
+    2,
+    32
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -5103 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": -1,
+   "x_found_by_scan": [
+    1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 -729 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 1,
+   "x_found_by_scan": [
+    -1,
+    0,
+    2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 729 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 2,
+   "x_found_by_scan": [
+    -1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 1458 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 3,
+   "x_found_by_scan": [
+    1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 2187 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 4,
+   "x_found_by_scan": [
+    0
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 2916 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 5,
+   "x_found_by_scan": [
+    -1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 3645 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 6,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 4374 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 7,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 5103 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 8,
+   "x_found_by_scan": [
+    -2,
+    1,
+    2,
+    46
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 5832 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 9,
+   "x_found_by_scan": [
+    -2,
+    0,
+    3,
+    6,
+    40
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 6561 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 10,
+   "x_found_by_scan": [
+    -1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 7290 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 12,
+   "x_found_by_scan": [
+    -2,
+    13
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 8748 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 13,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 9477 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 14,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 10206 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 15,
+   "x_found_by_scan": [
+    1,
+    109
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 10935 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 16,
+   "x_found_by_scan": [
+    0
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 11664 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 17,
+   "x_found_by_scan": [
+    -2,
+    -1,
+    2,
+    4,
+    8,
+    43,
+    52,
+    5234
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 12393 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 18,
+   "x_found_by_scan": [
+    7
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 13122 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 19,
+   "x_found_by_scan": [
+    5
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 13851 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 20,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 14580 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 21,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 15309 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 22,
+   "x_found_by_scan": [
+    3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 16038 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 24,
+   "x_found_by_scan": [
+    -2,
+    1,
+    10,
+    8158
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 17496 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 25,
+   "x_found_by_scan": [
+    0
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 18225 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 26,
+   "x_found_by_scan": [
+    -1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 18954 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 27,
+   "x_found_by_scan": [
+    -3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 19683 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 28,
+   "x_found_by_scan": [
+    -3,
+    2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 20412 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 29,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 21141 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 30,
+   "x_found_by_scan": [
+    19
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 21870 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 31,
+   "x_found_by_scan": [
+    -3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 22599 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 32,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 23328 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 33,
+   "x_found_by_scan": [
+    -2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 24057 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 34,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 24786 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 35,
+   "x_found_by_scan": [
+    1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 25515 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 36,
+   "x_found_by_scan": [
+    -3,
+    0,
+    4,
+    12
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 26244 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 37,
+   "x_found_by_scan": [
+    -1,
+    3,
+    243
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 26973 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 38,
+   "x_found_by_scan": [
+    11
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 27702 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 39,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 28431 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 40,
+   "x_found_by_scan": [
+    6
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 29160 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 41,
+   "x_found_by_scan": [
+    2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 29889 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 42,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 30618 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 43,
+   "x_found_by_scan": [
+    -3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 31347 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 44,
+   "x_found_by_scan": [
+    -2,
+    5
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 32076 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 45,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 32805 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 46,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 33534 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 48,
+   "x_found_by_scan": [
+    1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 34992 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 49,
+   "x_found_by_scan": [
+    0
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 35721 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 50,
+   "x_found_by_scan": [
+    -1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 36450 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 51,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 37179 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 52,
+   "x_found_by_scan": [
+    -3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 37908 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 53,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 38637 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 54,
+   "x_found_by_scan": [
+    3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 39366 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 55,
+   "x_found_by_scan": [
+    9
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 40095 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 56,
+   "x_found_by_scan": [
+    2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 40824 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 57,
+   "x_found_by_scan": [
+    -2,
+    4,
+    7
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 41553 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 58,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 42282 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 59,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 43011 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 60,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 43740 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 61,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 44469 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 62,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 45198 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 63,
+   "x_found_by_scan": [
+    -3,
+    1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 45927 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 64,
+   "x_found_by_scan": [
+    -4,
+    0,
+    8
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 46656 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 65,
+   "x_found_by_scan": [
+    -4,
+    -1,
+    14,
+    584
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 47385 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 66,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 48114 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 67,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 48843 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 68,
+   "x_found_by_scan": [
+    -4,
+    152
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 49572 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 69,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 50301 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 70,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 51030 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 71,
+   "x_found_by_scan": [
+    5
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 51759 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 72,
+   "x_found_by_scan": [
+    -2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 52488 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 73,
+   "x_found_by_scan": [
+    -4,
+    2,
+    3,
+    6,
+    72,
+    356
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 53217 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 74,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 53946 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 75,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 54675 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 76,
+   "x_found_by_scan": [
+    -3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 55404 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 77,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 56133 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 78,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 56862 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 79,
+   "x_found_by_scan": [
+    45
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 57591 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 80,
+   "x_found_by_scan": [
+    -4,
+    1,
+    4,
+    44
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 58320 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 81,
+   "x_found_by_scan": [
+    0
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 59049 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 82,
+   "x_found_by_scan": [
+    -1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 59778 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 83,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 60507 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 84,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 61236 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 85,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 61965 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 86,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 62694 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 88,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 64152 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 89,
+   "x_found_by_scan": [
+    -4,
+    -2,
+    10,
+    55
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 64881 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 90,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 65610 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 91,
+   "x_found_by_scan": [
+    -3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 66339 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 92,
+   "x_found_by_scan": [
+    2
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 67068 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 93,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 67797 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 94,
+   "x_found_by_scan": [
+    3
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 68526 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 95,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 69255 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 96,
+   "x_found_by_scan": [],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 69984 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 97,
+   "x_found_by_scan": [
+    18
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 70713 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 98,
+   "x_found_by_scan": [
+    7
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 71442 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 99,
+   "x_found_by_scan": [
+    1
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 72171 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  },
+  {
+   "k": 100,
+   "x_found_by_scan": [
+    -4,
+    0,
+    5,
+    20,
+    24,
+    2660
+   ],
+   "missing_premise": "Transport.IntegralPointsOnImage 1 0 0 72900 L: every integral point of the model with 9 | U - (0) and 27 | V is in the list L"
+  }
+ ]
+}

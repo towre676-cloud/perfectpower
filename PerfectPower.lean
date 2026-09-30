@@ -51,4 +51,6 @@ import PerfectPower.FilteredAuto
 import PerfectPower.MordellFamily
 import PerfectPower.KernelArith
 import PerfectPower.Descent
+import PerfectPower.Observation
+import PerfectPower.SquareTriangular
 import PerfectPower.Generated.Plans

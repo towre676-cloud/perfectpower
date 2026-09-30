@@ -3,7 +3,7 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh check-clean crosscheck fuzz bench paper
+.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper
 
 verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
@@ -42,6 +42,7 @@ receipts:
 	$(PY) python/make_pell_heat_receipt.py
 	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
+	$(PY) python/make_oeis_problems.py
 
 counts: audit
 	$(PY) python/make_counts.py
@@ -52,6 +53,12 @@ descent-gate: lean
 
 fresh: lean
 	$(PY) python/descent_fresh.py
+
+# Compare with a local OEIS snapshot (not committed; see docs/OEIS.md):
+#   make oeis STRIPPED=~/oeis/stripped.gz NAMES=~/oeis/names.gz RETRIEVED=2026-09-30
+oeis:
+	$(PY) -m perfectpower oeis --stripped $(STRIPPED) --names $(NAMES) --retrieved $(RETRIEVED) \
+	  $(if $(REVIEWED),--reviewed $(REVIEWED)) > receipts/oeis_atlas.json
 
 # Regenerated files must match the committed ones exactly.
 check-clean:
