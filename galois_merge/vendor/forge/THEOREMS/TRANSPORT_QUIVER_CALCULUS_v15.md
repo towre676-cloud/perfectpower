@@ -1,6 +1,6 @@
 # Transport quiver calculus — v0.15
 
-Let \(A=\operatorname{End}^{*}(Q6)_{\mathbb Q}\) be the characteristic-zero star-compatible five-context transport algebra.  The exact carrier sequences from v0.13 have
+Let \(A=\mathrm{End}^{*}(Q6)_{\mathbb Q}\) be the characteristic-zero star-compatible five-context transport algebra.  The exact carrier sequences from v0.13 have
 
 \[
 0\to K_+\to V_+\to C_+\otimes\mathbb Q^5\to0,
@@ -95,7 +95,7 @@ Hence the 26 homogeneous degree-nine syzygies are exactly the kernel of this one
 For the filtered 386-dimensional boundary, let \(N_-\) be the 450-dimensional minus row-kernel.  In an adapted splitting
 
 \[
-N_-\cong \operatorname{End}(K_-)\oplus\operatorname{Hom}(V_-/K_-,K_-),
+N_-\cong \mathrm{End}(K_-)\oplus\mathrm{Hom}(V_-/K_-,K_-),
 \qquad 225+225.
 \]
 
@@ -103,8 +103,8 @@ The old 64-dimensional boundary \(B_{64}\) projects injectively with rank 64 to 
 
 \[
 \boxed{
-0\to\operatorname{Hom}(V_-/K_-,K_-)\to N_-/B_{64}
-\to \operatorname{End}(K_-)/U_{64}\to0,
+0\to\mathrm{Hom}(V_-/K_-,K_-)\to N_-/B_{64}
+\to \mathrm{End}(K_-)/U_{64}\to0,
 }
 \]
 

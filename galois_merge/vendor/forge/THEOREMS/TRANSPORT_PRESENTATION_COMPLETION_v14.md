@@ -1,6 +1,6 @@
 # Transport Presentation Completion v0.14
 
-Let \(A=\operatorname{End}^{*}(Q6)_{\mathbf Q}\) be the 486-dimensional characteristic-zero transport algebra and let \(g,h\) be the two-generator presentation fixed in v0.13.
+Let \(A=\mathrm{End}^{*}(Q6)_{\mathbf Q}\) be the 486-dimensional characteristic-zero transport algebra and let \(g,h\) be the two-generator presentation fixed in v0.13.
 
 The 25 filtered relations through degree eight do **not** generate the complete two-sided relation ideal. Through degree nine the free word space has dimension \(1023\), so the exact kernel has dimension \(1023-486=537\). The two-sided consequences of the degree-eight wall have rank exactly \(125=25+100\) through degree nine. Therefore the first genuinely new relation quotient occurs in degree nine and has dimension
 
@@ -16,9 +16,9 @@ The exact homogeneous degree-nine evaluation has rank 486, hence its homogeneous
 
 The old leading image has projection ranks
 \[
-\operatorname{rank}(\pi_S U_9)=25,\qquad
-\operatorname{rank}(\pi_+U_9)=36,\qquad
-\operatorname{rank}(\pi_-U_9)=100,
+\mathrm{rank}(\pi_S U_9)=25,\qquad
+\mathrm{rank}(\pi_+U_9)=36,\qquad
+\mathrm{rank}(\pi_-U_9)=100,
 \]
 with kernel dimensions \(75,64,0\) respectively. Since the plus projection is already onto \(A_+\), the 386-dimensional boundary quotient is concentrated in the minus-side radical:
 \[
