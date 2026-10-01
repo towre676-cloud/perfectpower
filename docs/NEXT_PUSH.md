@@ -105,11 +105,13 @@ git.
    - **Today:** the curve theorem is Lean-proved, and the substitution into the SMT source is
      checked in Python (`smt_cert.check_certificate`).
 5. **Default-checked bounded Pell plans.**
-   - **Target:** for a bounded query `lo ≤ N ≤ hi`, a Lean theorem listing every solution, so the
-     adapter can apply it without `--allow-unchecked`.
-   - **Obstacle:** large fundamental units. For `263n² + 1` the unit is about `8.4·10¹⁹`, so the
-     root box is impractical; a proved continued-fraction (or LMM) root characterization is the
-     direct route.
+   - **Done for small units** (`BoundedPell.lean`, `quad_bounded`). The adapter emits a
+     kernel-checked instance per bounded query and applies it by default.
+   - **Remaining: large fundamental units.** For `263n² + 1` the unit is about `8.4·10¹⁹`, so
+     the root box `Y ≤ 2.5·10²⁰` cannot be enumerated, and the plan refuses. A proved
+     continued-fraction (or LMM) root characterization would replace the box.
+   - **Remaining:** ranges crossing `2qN + p = 0` (split at the turning point, with the
+     single-`N` case checked directly), and a Why3 emission for these lists.
 6. **Positive `k`** (`MORDELL_BRANCH.md` §7.4).
    - **Target:** seed coverage of `p² − |D|q² = k³` modulo cubes of the fundamental unit, with
      ideal classes, exceptional primes and the integral readout.

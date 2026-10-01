@@ -275,7 +275,7 @@ def reduce_assertions(assertions, allow_unchecked: bool = False) -> Result:
                                           evidence='lean_statement_parsed' if parsed else 'theorem_cited')
                         out.assertions.append(new)
                         out.replacements.append(rep)
-        if rep is None and allow_unchecked and z3.is_eq(a) and a.arg(0).sort() in (z3.IntSort(), z3.RealSort()):
+        if rep is None and z3.is_eq(a) and a.arg(0).sort() in (z3.IntSort(), z3.RealSort()):
             try:
                 readings = recognize_quadratic(_padd(to_poly(a.arg(0)), to_poly(a.arg(1)), -1))
             except Unsupported:
@@ -283,13 +283,28 @@ def reduce_assertions(assertions, allow_unchecked: bool = False) -> Result:
             for N, S, qa, qb, qc, F in readings:
                 lo, hi = _bounds(flat, N)
                 got = bounded_quadratic_hits(qa, qb, qc, F, lo, hi) if lo is not None and hi is not None else None
+                evidence, just_lean = 'python_enumeration_unchecked', None
                 if got is not None:
+                    # default path: the bounded list as a kernel-checked Lean theorem
+                    from .bounded_pell import Unsupported as BPUnsupported, kernel_check, plan
+                    try:
+                        P = plan(qa, qb, qc, F[2], F[1], F[0], lo, hi)
+                        if sorted(P['L0']) == sorted(got[0]):
+                            ok, detail = kernel_check(P)
+                            if ok:
+                                evidence, just_lean = 'lean_kernel_checked', [
+                                    'PerfectPower.BoundedPell.quad_bounded', f'instance {detail}']
+                    except BPUnsupported:
+                        pass
+                if got is not None and (evidence == 'lean_kernel_checked' or allow_unchecked):
                     sols, just = got
+                    if just_lean:
+                        just = just_lean
                     Nv, Sv = z3.Int(N), z3.Int(S)
                     new = z3.Or([z3.And(Nv == x, Sv == y) for x, y in sols]) if sols else z3.BoolVal(False)
                     rep = Replacement(conjunct=str(a), n=N, m=S, substitution=f'{lo} <= {N} <= {hi}',
                                       curve=f'{qa}*{S}^2 + {qb}*{S} + {qc} = {F[2]}*{N}^2 + {F[1]}*{N} + {F[0]}',
-                                      solutions=sols, lean=list(just), evidence='python_enumeration_unchecked')
+                                      solutions=sols, lean=list(just), evidence=evidence)
                     out.assertions.append(new)
                     out.replacements.append(rep)
                     break

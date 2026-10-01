@@ -51,6 +51,7 @@ receipts:
 	$(PY) python/make_lean_mordell_branch.py
 	$(PY) python/make_lean_thue_branch.py
 	$(PY) python/make_mordell_registry.py
+	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
 	$(PY) python/make_oeis_problems.py

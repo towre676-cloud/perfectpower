@@ -10,6 +10,9 @@ try:
 except ImportError:  # optional dependency
     z3 = None
 
+import shutil
+LAKE = shutil.which('lake') or (Path.home() / '.elan' / 'bin' / 'lake').exists()
+
 
 @unittest.skipIf(z3 is None, 'z3-solver not installed')
 class Adapter(unittest.TestCase):
@@ -57,13 +60,20 @@ class Adapter(unittest.TestCase):
         # N(N-1)/2 = S^2 with explicit bounds: the exact orbit solutions, checked by brute force
         from math import isqrt
         N, S = z3.Ints('N S')
-        r = self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= -3000, N < 3001], allow_unchecked=True)
-        self.assertEqual(r.replacements[0].evidence, 'python_enumeration_unchecked')
-        self.assertEqual(self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= -3000, N < 3001]).replacements, [])
+        r = self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= 2, N < 3001], allow_unchecked=True)
         self.assertEqual(len(r.replacements), 1)
-        brute = sorted({(n, sg * y) for n in range(-3000, 3001) for y in [isqrt(max(n * (n - 1) // 2, 0))]
+        brute = sorted({(n, sg * y) for n in range(2, 3001) for y in [isqrt(max(n * (n - 1) // 2, 0))]
                         for sg in (1, -1) if 2 * y * y == n * (n - 1)})
         self.assertEqual(r.replacements[0].solutions, brute)
+        # without --allow-unchecked it is applied only when the kernel checks the bounded theorem
+        d = self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= 2, N < 3001])
+        if LAKE:
+            self.assertEqual(d.replacements[0].evidence, 'lean_kernel_checked')
+            self.assertEqual(d.replacements[0].solutions, brute)
+        else:
+            self.assertEqual(d.replacements, [])
+        # a range crossing the turning point is not kernel-checkable here: left to the host
+        self.assertEqual(self.reduce_assertions([N * (N - 1) == 2 * S * S, N >= -30, N < 30]).replacements, [])
 
     def test_unbounded_pell_left_to_host(self):
         N, S = z3.Ints('N S')

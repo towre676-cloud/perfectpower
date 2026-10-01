@@ -767,3 +767,9 @@ open PerfectPower
 #print axioms PerfectPower.NormForm.d72_norm_eps1
 #print axioms PerfectPower.NormForm.d72_norm_eps2
 #print axioms PerfectPower.NormForm.d72_norm_alpha
+-- BoundedPell
+#print axioms PerfectPower.BoundedPell.orbit_fst_pow
+#print axioms PerfectPower.BoundedPell.bounded_list
+#print axioms PerfectPower.BoundedPell.quad_iff_norm
+#print axioms PerfectPower.BoundedPell.quad_bounded
+#print axioms PerfectPower.Generated.BoundedPlans.pairs_square_1e9

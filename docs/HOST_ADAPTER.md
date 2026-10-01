@@ -21,7 +21,8 @@ is re-parsed from the Lean source. Every replacement records its evidence level:
 |---|---|---|
 | `lean_statement_parsed` | yes | the curve's complete list is a Lean theorem over all integers, and its statement was re-parsed |
 | `theorem_cited` | only with `--allow-unchecked` | a Lean theorem is named but its statement is not re-parsed (`y² = x³ − 4`, the FLT3 family) |
-| `python_enumeration_unchecked` | only with `--allow-unchecked` | a bounded Pell/radical enumeration executed in Python |
+| `lean_kernel_checked` | yes | a bounded Pell query, `a S² + b S + c = q N² + p N + r` with numeric bounds on `N`: the adapter emits a `BoundedPell.quad_bounded` instance, runs the Lean kernel on it (`lake env lean`, a few seconds), and applies the list only if the kernel accepts it **and** it equals the Python enumeration |
+| `python_enumeration_unchecked` | only with `--allow-unchecked` | a bounded Pell/radical enumeration that is outside the kernel-checkable shapes: the range crosses `2qN + p = 0`, or the unit's root box is too large |
 
 **Script level** (`perfectpower/smt_cert.py`). Real tasks are incremental scripts, so the
 script-level path works as follows:
@@ -83,7 +84,7 @@ explicit.
 | `vc_minus56`: `m² = n³ − 56`, goal `2n + m ≤ 200` | Valid | Valid | Timeout |
 | `vc_affine56`: `m² = (3n + 15)³ − 56`, goal `n = 1` | Valid | Valid | Timeout |
 | `vc_nopoints`: `m² = (2n + 1)³ − 5` is impossible | Valid | Valid | Timeout |
-| `vc_pairs_square` (bounded Pell) | not bridged: the enumeration is unchecked Python | | |
+| `vc_pairs_square` (bounded Pell) | not yet bridged to Why3 (its list is now a Lean theorem; the Why3 emission covers Mordell certificates only) | | |
 
 - A replacement with a dropped sign witness is **not** proved (`tests/test_why3_bridge.py`).
 - Reproduce with `make why3-bridge` (receipt `receipts/why3_bridge.json`, modules in
@@ -102,7 +103,7 @@ Both are constructed. Times are z3 5.1.0 wall clock on this container.
 | task | hypotheses | goal | z3 alone | adapter + z3 |
 |---|---|---|---|---|
 | `vc_minus56.smt2` | `n ≥ 1`, `m² = n³ − 56`, `len = 2n + m` | `len ≤ 200` | `unknown` at 10 s | proved (`unsat` of the negation) in 0.002 s |
-| `vc_pairs_square.smt2` | `2 ≤ N ≤ 10⁹`, `N(N−1) = 2S²` | `N mod 4 ∈ {1, 2}` | `unknown` at 30 s | proved in 0.003 s (24 solutions `(N, S)`), **with `--allow-unchecked`**: the enumeration is Python |
+| `vc_pairs_square.smt2` | `2 ≤ N ≤ 10⁹`, `N(N−1) = 2S²` | `N mod 4 ∈ {1, 2}` | `unknown` at 30 s | proved in 0.003 s (24 solutions `(N, S)`). **By default**, the list is a kernel-checked theorem (`lean_kernel_checked`, about 4 s including the Lean check) |
 
 ## Benchmark (`python/host_adapter_bench.py`, `receipts/host_adapter_bench.json`)
 
