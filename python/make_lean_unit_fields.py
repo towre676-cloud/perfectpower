@@ -604,6 +604,52 @@ def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=
             f"    (by decide +kernel) (by decide +kernel) (by decide +kernel) u v\n")
 
 
+def class_block_multi(name, P, Q, F, M, phi, g0s, certs, B, V, L, label, nname):
+    """A class with several norm representatives: one analytic certificate and one Matveev premise per
+    representative (`matveev_{name}_j`), combined by `UnitPremises.analytic_cons`; the class premise
+    `matveev_{name}` is their conjunction."""
+    k = len(g0s)
+    out = ''
+    for j, (g0, cert) in enumerate(zip(g0s, certs)):
+        nj = f'{name}_{j}'
+        cases = cert['cases_json']
+        check_cases(cases, B)
+        assert len(cases) == 3 and cert['V'] == V
+        out += ''.join(f"/-- Case {i} of {label}, representative {j}. -/\n"
+                       f"def case_{nj}_{i} : UnitPremises.Case :=\n  {case_lean(c)}\n\n" for i, c in enumerate(cases))
+        out += (f"/-- The analytic statement of {label} for the representative `{z3_lean(g0)}`. -/\n"
+                f"def analytic_{nj} : Prop :=\n  UnitPremises.Analytic {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} "
+                f"e1 e1i e2 e2i {V} [({z3_lean(g0)}, [{', '.join(f'case_{nj}_{i}' for i in range(3))}])]\n\n")
+        out += analytic_block(nj, P, Q, F, M, phi, g0, cert, V, f'{label}, representative {j}')
+    reps = ', '.join(f"({z3_lean(g0)}, [{', '.join(f'case_{name}_{j}_{i}' for i in range(3))}])"
+                     for j, g0 in enumerate(g0s))
+    proj = [('hM' + '.2' * j + ('.1' if j < k - 1 else '')) for j in range(k)]
+    proof = 'UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _'
+    for j in reversed(range(k)):
+        proof = f'(UnitPremises.analytic_cons (analytic_{name}_{j}_proved {proj[j]}) {proof})'
+    out += (f"/-- The representatives of {label} with their analytic cases. -/\n"
+            f"def reps_{name} : List (Z3 × List UnitPremises.Case) :=\n  [{reps}]\n\n"
+            f"/-- **Matveev's lower bound for {label}**: one instance per representative.  Not proved in Lean. -/\n"
+            f"def matveev_{name} : Prop := {' ∧ '.join(f'matveev_{name}_{j}' for j in range(k))}\n\n"
+            f"/-- The analytic statement for {label} (all representatives). -/\n"
+            f"def analytic_{name} : Prop :=\n  UnitPremises.Analytic {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} "
+            f"e1 e1i e2 e2i {V} reps_{name}\n\n"
+            f"theorem analytic_{name}_proved (hM : matveev_{name}) : analytic_{name} :=\n  {proof}\n\n"
+            f"/-- Negative control: every chain of {label} with its final bound lowered by one is rejected. -/\n"
+            f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB reps_{name} = true := by decide +kernel\n\n")
+    out += (f"/-- **{label}, complete under Matveev's bound** ({k} norm representatives): `{list(F)}` takes the "
+            f"value {M} exactly at {len(L)} point(s). -/\n"
+            f"theorem class_{name} (hM : matveev_{name}) (u v : ℤ) :\n"
+            f"    evalF {form_lean(F)} u v = {_i(M)} ↔ (u, v) ∈ ({pairs_lean(L)} : List (ℤ × ℤ)) :=\n"
+            f"  thue_list {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} (reps_{name}.map Prod.fst) e1 e1i e2 e2i {B} {V} "
+            f"{pairs_lean(L)}\n    (by decide) (by decide)\n"
+            f"    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_{name} unitGen_proved ({nname}_proved)\n"
+            f"      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (analytic_{name}_proved hM) "
+            f"(by decide +kernel))\n"
+            f"    (by decide +kernel) (by decide +kernel) (by decide +kernel) u v\n")
+    return out
+
+
 def box_hits(P, Q, F, M, phi, g0, e1, e1i, e2, e2i, B):
     hits = set()
     for g in fam(P, Q, g0, e1, e1i, e2, e2i, B):

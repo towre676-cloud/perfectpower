@@ -60,6 +60,12 @@ import PerfectPower.Generated.Minus39
 import PerfectPower.Generated.Minus47
 import PerfectPower.Generated.Minus60
 import PerfectPower.Generated.Minus72
+import PerfectPower.Generated.Order1620
+import PerfectPower.Generated.Minus15
+import PerfectPower.Generated.Minus26
+import PerfectPower.Generated.Minus48
+import PerfectPower.Generated.Minus55
+import PerfectPower.Generated.Minus71
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances

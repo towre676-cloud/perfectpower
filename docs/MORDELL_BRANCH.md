@@ -474,6 +474,40 @@ that theorem as an external source under its own premise, `D72Unit.matveev_pos`.
   loop now skips every assigned node. Every complete list is unchanged; two existing trees shrink
   from 11 nodes to 9 (`D = 18` class 6, `D = 45` class 32).
 
+**Nonmonic sources: residue representatives, monic representatives, larger orders**
+(`python/norm_rep_search.py`, `receipts/norm_rep_search.json`). After the order maps, most of the
+remaining curves were blocked by sources with leading coefficient `|c₀| > 1`. Three tools now handle
+many of them.
+- **Monic representatives.** If a class takes the value `±1` at a primitive point `(x, y)`, then
+  `F ∘ T` is monic for a unimodular `T` with first column `(x, y)`. That representative needs only
+  `normRep_one`. The descent matches sources by their GL₂ class, so it can use any representative.
+  6 of the 28 remaining nonmonic classes are of this kind.
+- **Residue representatives** (`NormRepProof.normRep_of_res`). The search proposes representatives
+  `γ` of norm `±c₀²` and a modulus `m`. `res_ok` is an exact mirror of the kernel's `resRepB`.
+- **Larger orders.** A source moved into a larger order often needs a much smaller modulus:
+  - `D = 15`: modulus 9 with one representative in `t³ = 12t + 14`, against 81 in its own order;
+  - `D = 48`: modulus 9 in `t³ = 3t + 1` (discriminant 81);
+  - `D = 71`: its three nonmonic sources each certify with one representative modulo 9 in
+    `t³ = 24t + 42`, and fail in their own order.
+- **Several representatives.** `UnitPremises.analytic_cons` combines one analytic certificate per
+  representative. The source premise is then the conjunction of their Matveev instances. `D = 26`
+  and `D = 55` use three representatives each (moduli 36 and 25).
+- **Shared order.** Unit generation for `t³ = 12t + 14` now lives in `Generated/Order1620.lean`,
+  which `D = 15` and `D = 60` both import.
+- **Limit.** A residue certificate is local. When an ideal of norm `c₀²` is not principal, no
+  modulus covers its residue classes, and the statement needs class-group information. 18 nonmonic
+  classes remain open in `receipts/norm_rep_search.json`.
+
+| curve | order | sources | integral points |
+|---|---|---|---|
+| `D = 15` | `t³ = 12t + 14` (`Order1620`) | 1 residue (`m = 9`), 1 monic representative, 2 monic | `(4, ±7)` |
+| `D = 26` | `t³ = 9t + 2` | 1 residue (3 representatives, `m = 36`), 2 monic | `(3, ±1)`, `(35, ±207)` |
+| `D = 48` | `t³ = 3t + 1` | 1 residue (`m = 9`), 1 monic representative, 3 monic | `(4, ±4)`, `(28, ±148)` |
+| `D = 55` | `t³ = 12t + 6` | 1 residue (3 representatives, `m = 25`), 3 monic | `(4, ±3)`, `(56, ±419)` |
+| `D = 71` | `t³ = 24t + 42` | 3 residue (`m = 9` each), 4 monic | `(8, ±21)` |
+
+All agree with the Sage census. Each holds under its own Matveev premises.
+
 **Choosing a unit basis by its proved cost.** `ε'₁ = ε₁^{U₁₁} ε₂^{U₂₁}`,
 `ε'₂ = ε₁^{U₁₂} ε₂^{U₂₂}` with `det U = ±1` generates the same group. `best_basis` searches
 `|Uᵢⱼ| ≤ 2` and minimizes the enumeration Lean actually runs.

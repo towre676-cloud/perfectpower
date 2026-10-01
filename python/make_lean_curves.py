@@ -59,12 +59,54 @@ CURVES = {
                      {'name': 'r5', 'form': (-1, -9, 21, 37), 'phi': (3, 2, 0), 'normrep': ('one',)},
                      {'name': 'r6', 'form': (-1, -3, 9, 1), 'phi': (1, 1, 0), 'normrep': ('one',)}]},
     60: {'name': 'Minus60', 'P': 12, 'Q': 14, 'disc': 1620, 'units': [(-5, -5, -1), (-11, -12, -3)],
+         'order': 'Order1620',
          'sources': [{'name': 'q1', 'form': (-1, -6, 180, 120), 'phi': (-30, -8, 4), 'normrep': ('one',),
                       'via': (3, (12, 4), (2, 4, 0))},
                      {'name': 'q2', 'form': (-1, -3, 9, 7), 'phi': (-7, -2, 1), 'normrep': ('one',),
                       'via': (3, (12, 4), (1, 1, 0))},
                      {'name': 'q3', 'form': (-1, -3, 45, 15), 'phi': (-15, -4, 2), 'normrep': ('one',),
                       'via': (3, (12, 4), (1, 2, 0))}]},
+    # D = 15 in the order of D = 60: a nonmonic source with residue norm representatives (modulus 9,
+    # found in the larger order), a monic representative of a nonmonic class, and two monic sources
+    15: {'name': 'Minus15', 'P': 12, 'Q': 14, 'disc': 1620, 'units': [(-5, -5, -1), (-11, -12, -3)],
+         'order': 'Order1620',
+         'sources': [{'name': 'n1', 'form': (-3, -9, 15, 5), 'phi': (19, 2, -2), 'normrep': ('res', (1, 2, 1), 9),
+                      'via': (7, (18, 18), (3, 2, 0))},
+                     {'name': 'n2', 'form': (1, 6, 0, -2), 'phi': (-2, -1, 0), 'normrep': ('one',)},
+                     {'name': 'n3', 'form': (-1, -21, 45, 105), 'phi': (7, 4, 0), 'normrep': ('one',)},
+                     {'name': 'n4', 'form': (-1, -12, 0, 16), 'phi': (4, 2, 0), 'normrep': ('one',)}]},
+    # Nonmonic sources certified by residue norm representatives in a larger order (python/norm_rep_search.py)
+    48: {'name': 'Minus48', 'P': 3, 'Q': 1, 'disc': 81, 'units': [(-2, -1, 1), (-2, 0, 1)],
+         'sources': [{'name': 'a1', 'form': (-3, -36, 48, 64), 'phi': (-4, 8, 8), 'normrep': ('res', (-1, -1, -1), 9),
+                      'via': (2, (9, 9), (12, 8, 0))},
+                     {'name': 'a2', 'form': (1, -33, 27, -3), 'phi': (3, 8, 4), 'normrep': ('one',)},
+                     {'name': 'a3', 'form': (-1, -12, 144, 192), 'phi': (4, 8, 0), 'normrep': ('one',)},
+                     {'name': 'a4', 'form': (-1, -6, 36, 24), 'phi': (2, 4, 0), 'normrep': ('one',)},
+                     {'name': 'a5', 'form': (-1, -3, 9, 3), 'phi': (1, 2, 0), 'normrep': ('one',)}]},
+    26: {'name': 'Minus26', 'P': 9, 'Q': 2, 'disc': 2808, 'units': [(-1, -9, 3), (-161, -4, 18)],
+         'sources': [{'name': 'b1', 'form': (-6, -12, 117, 26), 'phi': (34, 5, -5),
+                      'normrep': ('res', [(-1, -2, -1), (-8, -1, 1), (-2, -7, -2)], 36),
+                      'via': (9, (30, 16), (4, 5, 0))},
+                     {'name': 'b2', 'form': (-1, -3, 78, 26), 'phi': (1, 3, 0), 'normrep': ('one',)},
+                     {'name': 'b3', 'form': (-1, 0, 9, -2), 'phi': (0, 1, 0), 'normrep': ('one',)}]},
+    55: {'name': 'Minus55', 'P': 12, 'Q': 6, 'disc': 5940, 'units': [(-1, -2, 0), (-53, -89, 28)],
+         'sources': [{'name': 'c1', 'form': (-5, -18, 12, 8), 'phi': (22, 2, -2),
+                      'normrep': ('res', [(-1, -1, 1), (-1, -2, -1), (-1, 6, 2)], 25),
+                      'via': (19, (42, 74), (6, 2, 0))},
+                     {'name': 'c2', 'form': (-1, -9, 165, 165), 'phi': (3, 4, 0), 'normrep': ('one',)},
+                     {'name': 'c3', 'form': (-1, -6, 36, 40), 'phi': (2, 2, 0), 'normrep': ('one',)},
+                     {'name': 'c4', 'form': (-1, -3, 9, 5), 'phi': (1, 1, 0), 'normrep': ('one',)}]},
+    71: {'name': 'Minus71', 'P': 24, 'Q': 42, 'disc': 7668, 'units': [(-115, -13, 6), (-53, -13, 4)],
+         'sources': [{'name': 'd1', 'form': (-3, -57, 639, 1349), 'phi': (-141, -30, 10),
+                      'normrep': ('res', (-3, 3, 2), 9), 'via': (12, (30, 38), (19, 10, 0))},
+                     {'name': 'd2', 'form': (-3, -33, 129, 241), 'phi': (-69, -15, 5),
+                      'normrep': ('res', (-3, 3, 2), 9), 'via': (12, (30, 38), (11, 5, 0))},
+                     {'name': 'd3', 'form': (-3, -15, 15, 19), 'phi': (-27, -6, 2),
+                      'normrep': ('res', (-3, 3, 2), 9), 'via': (12, (30, 38), (5, 2, 0))},
+                     {'name': 'd4', 'form': (-1, -63, 213, 1491), 'phi': (21, 8, 0), 'normrep': ('one',)},
+                     {'name': 'd5', 'form': (-1, -33, 21, 205), 'phi': (11, 4, 0), 'normrep': ('one',)},
+                     {'name': 'd6', 'form': (-1, -15, 21, 19), 'phi': (5, 2, 0), 'normrep': ('one',)},
+                     {'name': 'd7', 'form': (-1, -9, -3, 3), 'phi': (3, 1, 0), 'normrep': ('one',)}]},
     47: {'name': 'Minus47', 'P': 36, 'Q': 82, 'disc': 5076, 'units': [(-3, -1, 0), (-411, -72, 19)],
          'sources': [{'name': 'p1', 'form': (-1, -123, 141, 1927), 'phi': (41, 12, 0), 'normrep': ('one',)},
                      {'name': 'p2', 'form': (-1, -63, -27, 243), 'phi': (21, 6, 0), 'normrep': ('one',)},
@@ -132,10 +174,12 @@ def descent_tree(F, M, sources):
         if abs(M) == 1:
             H = F if M == 1 else neg(F)
             key, T0 = TG.canonical(H)
-            c = next(i for i, (S, _) in enumerate(sources) if tuple(S) == tuple(key))
-            T = TG.inverse(T0)
-            assert TG.compose(sources[c][0], T) == tuple(M * x for x in F)
-            nodes[k][2] = ('given', c, T, T0, M)
+            # a source matches by its GL₂ class: it may be another representative (e.g. a monic one)
+            c = next(i for i, (S, _) in enumerate(sources) if tuple(TG.canonical(tuple(S))[0]) == tuple(key))
+            _, T0s = TG.canonical(tuple(sources[c][0]))
+            T = TG.matmul(T0s, TG.inverse(T0))
+            assert TG.compose(sources[c][0], T) == tuple(M * x for x in F), (sources[c][0], T, F, M)
+            nodes[k][2] = ('given', c, T, TG.inverse(T), M)
             k += 1
             continue
         p = primes_of(M)[0]
@@ -371,13 +415,18 @@ def normrep_layer(cfg, s):
                                f"/-- **Proved**: an element of norm `1` is a unit (`NormRepProof.normRep_one`). -/\n"
                                f"theorem {nm}_proved : {nm} := NormRepProof.normRep_one {P} {Q}\n\n")
     _, g, m = s['normrep']
-    assert U.nrm(P, Q, g) == N, (g, U.nrm(P, Q, g), N)
-    return nm, g, (f"/-- Norm representatives for `{s['name']}`: every element of norm `{N}` (`= c₀²`) is "
-                   f"`{z3txt(g)}` times a unit. -/\n"
-                   f"def {nm} : Prop := UnitPremises.NormRep {P} {Q} {N} [{U.z3_lean(g)}]\n\n"
-                   f"/-- **Proved by a residue certificate modulo {m}** (`NormRepProof.normRep_of_res`): every "
-                   f"residue class of norm `≡ {N}` is divisible by `{z3txt(g)}`, and the quotient has norm `±1`. -/\n"
-                   f"theorem {nm}_proved : {nm} :=\n  NormRepProof.normRep_of_res (m := {m}) (by norm_num) (by decide +kernel)\n\n")
+    gs = [tuple(x) for x in g] if isinstance(g[0], (tuple, list)) else [tuple(g)]
+    # NormRep asks for norm exactly N: a representative of norm −N is replaced by its negative
+    gs = [x if U.nrm(P, Q, x) == N else tuple(-c for c in x) for x in gs]
+    assert all(U.nrm(P, Q, x) == N for x in gs), gs
+    txt = ', '.join(f'`{z3txt(x)}`' for x in gs)
+    return nm, (gs if len(gs) > 1 else gs[0]), (
+        f"/-- Norm representatives for `{s['name']}`: every element of norm `{N}` (`= c₀²`) is "
+        f"{txt} times a unit. -/\n"
+        f"def {nm} : Prop := UnitPremises.NormRep {P} {Q} {N} [{', '.join(U.z3_lean(x) for x in gs)}]\n\n"
+        f"/-- **Proved by a residue certificate modulo {m}** (`NormRepProof.normRep_of_res`): every "
+        f"residue class of norm `≡ {N}` is divisible by one of {txt}, and the quotient has norm `±1`. -/\n"
+        f"theorem {nm}_proved : {nm} :=\n  NormRepProof.normRep_of_res (m := {m}) (by norm_num) (by decide +kernel)\n\n")
 
 
 def doc(cfg, D, lists_info):
@@ -434,14 +483,26 @@ def build(D):
         out.append(nrtext)
         if 'via' in s:
             out.append(via_layer(cfg, s))
-        cert = U.analytic_cert(P, Q, F, 1, phi, g0, E1, E2, 0)
-        V, cases = cert['V'], cert['cases_json']
-        B = max(x['H_reduced'] for x in cases)
-        hits = U.box_hits(P, Q, F, 1, phi, g0, E1, e1i, E2, e2i, B)
-        sm = set(U.small_hits(F, 1, V))
-        L = sorted(hits | sm)
-        out.append(U.class_block(s['name'], P, Q, F, 1, phi, g0, cases, B, V, L,
-                                 f'`{list(F)} = 1`', nm, cert=cert))
+        if isinstance(g0, list):
+            # several norm representatives: one analytic certificate each, with a common V and B
+            V = max(U.analytic_cert(P, Q, F, 1, phi, g, E1, E2, 0)['V'] for g in g0)
+            certs = [U.analytic_cert(P, Q, F, 1, phi, g, E1, E2, V) for g in g0]
+            assert all(c['V'] == V for c in certs)
+            B = max(x['H_reduced'] for c in certs for x in c['cases_json'])
+            hits = set().union(*(U.box_hits(P, Q, F, 1, phi, g, E1, e1i, E2, e2i, B) for g in g0))
+            sm = set(U.small_hits(F, 1, V))
+            L = sorted(hits | sm)
+            out.append(U.class_block_multi(s['name'], P, Q, F, 1, phi, g0, certs, B, V, L, f'`{list(F)} = 1`', nm))
+            cert = {'report': [c['report'] for c in certs]}
+        else:
+            cert = U.analytic_cert(P, Q, F, 1, phi, g0, E1, E2, 0)
+            V, cases = cert['V'], cert['cases_json']
+            B = max(x['H_reduced'] for x in cases)
+            hits = U.box_hits(P, Q, F, 1, phi, g0, E1, e1i, E2, e2i, B)
+            sm = set(U.small_hits(F, 1, V))
+            L = sorted(hits | sm)
+            out.append(U.class_block(s['name'], P, Q, F, 1, phi, g0, cases, B, V, L,
+                                     f'`{list(F)} = 1`', nm, cert=cert))
         sources.append((s['name'], F, L))
         report['sources'].append({'name': s['name'], 'form': F, 'phi': phi, 'normrep': list(s['normrep']),
                                   **({'via': {'map': s['via'][0], 'from_order': s['via'][1], 'phi0': s['via'][2]}}
@@ -568,7 +629,28 @@ def build(D):
     return report
 
 
+# Orders whose unit generation several curve modules share (`'order': name` in a curve).
+SHARED_ORDERS = {'Order1620': {'P': 12, 'Q': 14, 'disc': 1620, 'units': [(-5, -5, -1), (-11, -12, -3)]}}
+
+
+def shared_order(name):
+    """`Generated/<name>.lean`: the field layer alone, imported by every curve in this order."""
+    cfg = dict(SHARED_ORDERS[name])
+    pre, _, _, _ = field_layer(cfg)
+    users = sorted(D for D, c in CURVES.items() if c.get('order') == name)
+    doc = (f"# The order `ℤ[t]`, `t³ = {cfg['P']}t + {cfg['Q']}` (discriminant {cfg['disc']}): unit generation\n"
+           f"(generated by `python/make_lean_curves.py`)\n\n"
+           f"Shared by the curve modules {', '.join(f'`Minus{D}`' for D in users)}, which import it instead of "
+           f"re-checking the enumeration.")
+    text = (f"import PerfectPower.UnitGen\n\n/-!\n{doc}\n-/\n\nnamespace PerfectPower.Generated.{name}\n\n"
+            f"open PerfectPower ThueLocal UnitBox\n\nset_option Elab.async false\n\n{pre}\n"
+            f"end PerfectPower.Generated.{name}\n")
+    (ROOT / 'PerfectPower' / 'Generated' / f'{name}.lean').write_text(text)
+
+
 def main():
+    for name in SHARED_ORDERS:
+        shared_order(name)
     for D in sorted(CURVES):
         build(D)
 

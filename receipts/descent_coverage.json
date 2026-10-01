@@ -2,78 +2,49 @@
  "label": "DERIVED from registered Lean theorems; the raw workload is descent_residual.json and thue_graph.json (unchanged)",
  "classes_total": 79,
  "classes_locally_discharged": 15,
- "classes_conditionally_complete": 28,
- "classes_unresolved": 36,
+ "classes_conditionally_complete": 41,
+ "classes_unresolved": 23,
  "unit_equations_total": 109,
- "unit_equations_registered": 30,
- "unit_equations_unregistered": 79,
+ "unit_equations_registered": 53,
+ "unit_equations_unregistered": 56,
  "unit_equations_unregistered_note": "unregistered source equations, including leaves of classes already completed by another route (field 756, D = 72)",
- "unit_equations_needed": 66,
+ "unit_equations_needed": 43,
  "unit_equations_needed_note": "U_needed = union over UNRESOLVED classes C of (unit leaves of C minus registered): the workload that still blocks a class",
  "needed_by_class_count": {
-  "1": 52,
+  "1": 34,
   "4": 2,
-  "3": 8,
-  "2": 4
+  "3": 5,
+  "2": 2
  },
  "open_curves_raw": 23,
  "curves_conditionally_complete": [
   7,
+  15,
   18,
   23,
+  26,
   28,
   39,
   45,
   47,
+  48,
+  55,
   60,
   63,
+  71,
   72,
   89
  ],
  "curves_unresolved": [
-  15,
   25,
-  26,
-  48,
   53,
-  55,
   61,
-  71,
   79,
   87,
   95,
   100
  ],
  "curves_unresolved_workload": [
-  {
-   "D": 26,
-   "unresolved_classes": [
-    15,
-    16,
-    17
-   ],
-   "unit_equations_needed": 3,
-   "forms": [
-    [
-     -6,
-     -12,
-     117,
-     26
-    ],
-    [
-     -1,
-     -3,
-     78,
-     26
-    ],
-    [
-     -1,
-     0,
-     9,
-     -2
-    ]
-   ]
-  },
   {
    "D": 61,
    "unresolved_classes": [
@@ -133,41 +104,6 @@
    ]
   },
   {
-   "D": 15,
-   "unresolved_classes": [
-    3,
-    4,
-    5
-   ],
-   "unit_equations_needed": 4,
-   "forms": [
-    [
-     -3,
-     -9,
-     15,
-     5
-    ],
-    [
-     -2,
-     0,
-     6,
-     -1
-    ],
-    [
-     -1,
-     -21,
-     45,
-     105
-    ],
-    [
-     -1,
-     -12,
-     0,
-     16
-    ]
-   ]
-  },
-  {
    "D": 53,
    "unresolved_classes": [
     39,
@@ -199,40 +135,6 @@
      -27,
      0,
      54
-    ]
-   ]
-  },
-  {
-   "D": 55,
-   "unresolved_classes": [
-    43,
-    44
-   ],
-   "unit_equations_needed": 4,
-   "forms": [
-    [
-     -5,
-     -18,
-     12,
-     8
-    ],
-    [
-     -1,
-     -9,
-     165,
-     165
-    ],
-    [
-     -1,
-     -6,
-     36,
-     40
-    ],
-    [
-     -1,
-     -3,
-     9,
-     5
     ]
    ]
   },
@@ -309,99 +211,6 @@
      -30,
      75,
      250
-    ]
-   ]
-  },
-  {
-   "D": 48,
-   "unresolved_classes": [
-    36,
-    37
-   ],
-   "unit_equations_needed": 5,
-   "forms": [
-    [
-     -3,
-     -36,
-     48,
-     64
-    ],
-    [
-     -3,
-     -18,
-     12,
-     8
-    ],
-    [
-     -1,
-     -12,
-     144,
-     192
-    ],
-    [
-     -1,
-     -6,
-     36,
-     24
-    ],
-    [
-     -1,
-     -3,
-     9,
-     3
-    ]
-   ]
-  },
-  {
-   "D": 71,
-   "unresolved_classes": [
-    52,
-    53,
-    54
-   ],
-   "unit_equations_needed": 7,
-   "forms": [
-    [
-     -3,
-     -57,
-     639,
-     1349
-    ],
-    [
-     -3,
-     -33,
-     129,
-     241
-    ],
-    [
-     -3,
-     -15,
-     15,
-     19
-    ],
-    [
-     -1,
-     -63,
-     213,
-     1491
-    ],
-    [
-     -1,
-     -33,
-     21,
-     205
-    ],
-    [
-     -1,
-     -15,
-     21,
-     19
-    ],
-    [
-     -1,
-     -9,
-     -3,
-     3
     ]
    ]
   },
@@ -608,8 +417,8 @@
     15
    ],
    "M": 216,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus15.lean (descent to n1, n2)"
   },
   {
    "class": 4,
@@ -617,8 +426,8 @@
     15
    ],
    "M": 64,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus15.lean (descent to n2)"
   },
   {
    "class": 5,
@@ -626,8 +435,8 @@
     15
    ],
    "M": 64,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus15.lean (descent to n2, n3, n4)"
   },
   {
    "class": 6,
@@ -716,8 +525,8 @@
     26
    ],
    "M": 1000,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus26.lean (descent to b1, b3)"
   },
   {
    "class": 16,
@@ -725,8 +534,8 @@
     26
    ],
    "M": 729,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus26.lean (descent to b3)"
   },
   {
    "class": 17,
@@ -734,8 +543,8 @@
     26
    ],
    "M": 27,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus26.lean (descent to b2, b3)"
   },
   {
    "class": 18,
@@ -905,8 +714,8 @@
     48
    ],
    "M": 1728,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus48.lean (descent to a1, a2, a5)"
   },
   {
    "class": 37,
@@ -914,8 +723,8 @@
     48
    ],
    "M": 64,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus48.lean (descent to a3, a4, a5)"
   },
   {
    "class": 38,
@@ -968,8 +777,8 @@
     55
    ],
    "M": 2744,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus55.lean (descent to c1, c4)"
   },
   {
    "class": 44,
@@ -977,8 +786,8 @@
     55
    ],
    "M": 64,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus55.lean (descent to c2, c3, c4)"
   },
   {
    "class": 45,
@@ -1049,8 +858,8 @@
     71
    ],
    "M": 1000,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus71.lean (descent to d1, d2, d3, d7)"
   },
   {
    "class": 53,
@@ -1058,8 +867,8 @@
     71
    ],
    "M": 1728,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus71.lean (descent to d7)"
   },
   {
    "class": 54,
@@ -1067,8 +876,8 @@
     71
    ],
    "M": 512,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus71.lean (descent to d4, d5, d6, d7)"
   },
   {
    "class": 55,
@@ -1426,11 +1235,15 @@
    "classes": [
     15
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    15
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "b1",
+    "curve": 26,
+    "premise": "matveev_b1",
+    "list": []
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1458,11 +1271,15 @@
    "classes": [
     43
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    43
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "c1",
+    "curve": 55,
+    "premise": "matveev_c1",
+    "list": []
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1522,11 +1339,15 @@
    "classes": [
     52
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    52
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "d1",
+    "curve": 71,
+    "premise": "matveev_d1",
+    "list": []
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1554,11 +1375,15 @@
    "classes": [
     36
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    36
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "a1",
+    "curve": 48,
+    "premise": "matveev_a1",
+    "list": []
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1570,11 +1395,15 @@
    "classes": [
     52
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    52
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "d2",
+    "curve": 71,
+    "premise": "matveev_d2",
+    "list": []
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1618,11 +1447,20 @@
    "classes": [
     36
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    36
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "a2",
+    "curve": 48,
+    "premise": "matveev_a2",
+    "list": [
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1634,11 +1472,15 @@
    "classes": [
     52
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    52
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "d3",
+    "curve": 71,
+    "premise": "matveev_d3",
+    "list": []
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1682,11 +1524,15 @@
    "classes": [
     3
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    3
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "n1",
+    "curve": 15,
+    "premise": "matveev_n1",
+    "list": []
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -1905,13 +1751,20 @@
     4,
     5
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    3,
-    4,
-    5
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "n2",
+    "curve": 15,
+    "premise": "matveev_n2",
+    "list": [
+     [
+      1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2064,11 +1917,20 @@
    "classes": [
     54
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    54
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "d4",
+    "curve": 71,
+    "premise": "matveev_d4",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2226,11 +2088,20 @@
    "classes": [
     54
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    54
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "d5",
+    "curve": 71,
+    "premise": "matveev_d5",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2397,11 +2268,20 @@
    "classes": [
     5
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    5
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "n3",
+    "curve": 15,
+    "premise": "matveev_n3",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2552,11 +2432,20 @@
    "classes": [
     54
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    54
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "d6",
+    "curve": 71,
+    "premise": "matveev_d6",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2611,11 +2500,20 @@
    "classes": [
     5
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    5
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "n4",
+    "curve": 15,
+    "premise": "matveev_n4",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2693,11 +2591,20 @@
    "classes": [
     37
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    37
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "a3",
+    "curve": 48,
+    "premise": "matveev_a3",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2711,13 +2618,20 @@
     53,
     54
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    52,
-    53,
-    54
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "d7",
+    "curve": 71,
+    "premise": "matveev_d7",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2793,11 +2707,20 @@
    "classes": [
     44
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    44
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "c2",
+    "curve": 55,
+    "premise": "matveev_c2",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2940,11 +2863,20 @@
    "classes": [
     37
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    37
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "a4",
+    "curve": 48,
+    "premise": "matveev_a4",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2956,11 +2888,24 @@
    "classes": [
     44
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    44
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "c3",
+    "curve": 55,
+    "premise": "matveev_c3",
+    "list": [
+     [
+      -1,
+      0
+     ],
+     [
+      1,
+      -1
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -3143,12 +3088,24 @@
     36,
     37
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    36,
-    37
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "a5",
+    "curve": 48,
+    "premise": "matveev_a5",
+    "list": [
+     [
+      -1,
+      0
+     ],
+     [
+      2,
+      1
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -3161,12 +3118,24 @@
     43,
     44
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    43,
-    44
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "c4",
+    "curve": 55,
+    "premise": "matveev_c4",
+    "list": [
+     [
+      -1,
+      0
+     ],
+     [
+      1,
+      -2
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -3306,11 +3275,20 @@
    "classes": [
     17
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    17
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "b2",
+    "curve": 26,
+    "premise": "matveev_b2",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -3338,13 +3316,20 @@
     16,
     17
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    15,
-    16,
-    17
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "b3",
+    "curve": 26,
+    "premise": "matveev_b3",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [

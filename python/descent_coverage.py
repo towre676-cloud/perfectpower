@@ -65,6 +65,9 @@ def main():
         via[cid] = 'D72Residual.residual_empty (matveev_pos)'
     for c in curve_certs:
         for cl in c['classes']:
+            if not cl['sources']:          # a descent with no source equation: no premise at all
+                status[cl['class']] = 'LOCALLY_DISCHARGED'
+                continue
             status[cl['class']] = 'CONDITIONALLY_COMPLETE'
             via[cl['class']] = f"Generated/Minus{c['curve']}.lean (descent to {', '.join(cl['sources'])})"
     rows = []

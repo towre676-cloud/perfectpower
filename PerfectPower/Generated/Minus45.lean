@@ -93,7 +93,7 @@ theorem unitGen_proved : unitGen :=
 /-- Norm representatives for `w1`: every element of norm `4` (`= c₀²`) is `4 + x` times a unit. -/
 def normRep_w1 : Prop := UnitPremises.NormRep 18 12 4 [(4, 1, 0)]
 
-/-- **Proved by a residue certificate modulo 8** (`NormRepProof.normRep_of_res`): every residue class of norm `≡ 4` is divisible by `4 + x`, and the quotient has norm `±1`. -/
+/-- **Proved by a residue certificate modulo 8** (`NormRepProof.normRep_of_res`): every residue class of norm `≡ 4` is divisible by one of `4 + x`, and the quotient has norm `±1`. -/
 theorem normRep_w1_proved : normRep_w1 :=
   NormRepProof.normRep_of_res (m := 8) (by norm_num) (by decide +kernel)
 

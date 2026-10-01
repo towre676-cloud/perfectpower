@@ -83,6 +83,22 @@ def Analytic (F : Form) (M P Q : ℤ) (phi : Z3) (e1 e1i e2 e2i : Z3) (V : ℕ)
       enc F.1 phi a b = neg (mul P Q r.1 (mul P Q (zp P Q e1 e1i x) (zp P Q e2 e2i y)))) →
     ∃ C ∈ r.2, LinIneq C x y
 
+/-- The analytic statement for no representatives holds trivially. -/
+theorem analytic_nil (F : Form) (M P Q : ℤ) (phi e1 e1i e2 e2i : Z3) (V : ℕ) :
+    Analytic F M P Q phi e1 e1i e2 e2i V [] := by
+  intro _ _ _ _ r hr
+  exact absurd hr (List.not_mem_nil)
+
+/-- **Analytic statements for several representatives combine** (a source with several norm
+representatives needs one analytic certificate, and one Matveev premise, per representative). -/
+theorem analytic_cons {F : Form} {M P Q : ℤ} {phi e1 e1i e2 e2i : Z3} {V : ℕ} {r : Z3 × List Case}
+    {rs : List (Z3 × List Case)} (h1 : Analytic F M P Q phi e1 e1i e2 e2i V [r])
+    (h2 : Analytic F M P Q phi e1 e1i e2 e2i V rs) : Analytic F M P Q phi e1 e1i e2 e2i V (r :: rs) := by
+  intro a b hF hb r' hr' x y h
+  rcases List.mem_cons.mp hr' with rfl | hr'
+  · exact h1 a b hF hb _ (List.mem_singleton_self _) x y h
+  · exact h2 a b hF hb r' hr' x y h
+
 /-- Every reduction chain checks, and ends at most at `B`. -/
 def chainsB (reps : List (Z3 × List Case)) (B : ℕ) : Bool :=
   reps.all fun r => r.2.all fun C =>

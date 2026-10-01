@@ -1,4 +1,4 @@
-"""The layered curve pipeline (`python/make_lean_curves.py`): D = 18, 23, 39, 45, 47, 60, 72 and 89."""
+"""The layered curve pipeline (`python/make_lean_curves.py`): D = 15, 18, 23, 26, 39, 45, 47, 48, 55, 60, 71, 72 and 89."""
 import itertools
 import json
 import sys
@@ -90,6 +90,11 @@ class TestCurves(unittest.TestCase):
                          [(6, -13), (6, 13), (12, -41), (12, 41), (63, -500), (63, 500)])
         self.assertEqual(sorted(map(tuple, rec(60)['curve_points'])), [(4, -2), (4, 2), (136, -1586), (136, 1586)])
         self.assertEqual(sorted(map(tuple, rec(72)['curve_points'])), [(6, -12), (6, 12)])
+        self.assertEqual(sorted(map(tuple, rec(15)['curve_points'])), [(4, -7), (4, 7)])
+        self.assertEqual(sorted(map(tuple, rec(26)['curve_points'])), [(3, -1), (3, 1), (35, -207), (35, 207)])
+        self.assertEqual(sorted(map(tuple, rec(48)['curve_points'])), [(4, -4), (4, 4), (28, -148), (28, 148)])
+        self.assertEqual(sorted(map(tuple, rec(55)['curve_points'])), [(4, -3), (4, 3), (56, -419), (56, 419)])
+        self.assertEqual(sorted(map(tuple, rec(71)['curve_points'])), [(8, -21), (8, 21)])
 
     def test_slab_covers_reduced_units(self):
         # every box triple within the embedding bounds Uᵢ lies in the slab that Lean enumerates
@@ -158,7 +163,7 @@ class TestCurves(unittest.TestCase):
         reg |= {tuple(TG.canonical(tuple(s * x for x in d72))[0]) for s in (1, -1)}
         self.assertEqual(cov['unit_equations_registered'],
                          sum(tuple(e['form']) in reg for e in cov['unit_equations']))
-        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 18, 23, 28, 39, 45, 47, 60, 63, 72, 89])
+        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 15, 18, 23, 26, 28, 39, 45, 47, 48, 55, 60, 63, 71, 72, 89])
 
     def test_needed_workload(self):
         cov = json.loads((ROOT / 'receipts' / 'descent_coverage.json').read_text())
