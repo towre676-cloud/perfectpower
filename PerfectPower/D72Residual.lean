@@ -2,7 +2,7 @@ import PerfectPower.NormForm
 import PerfectPower.Generated.D72Unit
 
 /-!
-# The `D = 72` residual unit equation, under one named premise
+# The `D = 72` residual unit equation, under Matveev's bound
 
 `H(u, v) = −3u³ + 9uv² − 2v³ = ±1` (`MORDELL_BRANCH.md` §7.1; `NormForm.H72`).  In `ℤ[δ]`,
 `δ³ = 9δ + 6`, the element `γ = −3u − βv` is `(−3u − 6v) + v δ²` (`NormForm.d72_gamma_delta`), of
@@ -14,13 +14,16 @@ norm `9 H(u, v)`.
 * **Proved:** `D72Unit.normRep_pos_proved`, the elements of norm `9` are `α` times units,
   `α = δ² − 3δ − 3`: `9 ∣ N(g)` forces `3 ∣ A, B`, and `g / α` is integral
   (`NormRepProof.normRep_d72`).
-* **Premise** (`Generated/D72Unit.lean`), not proved in Lean: `analytic_pos`, Siegel's identity,
-  the conjugate estimates and Matveev's theorem.  The target `H = −1` reuses it, transported by
-  sign (`UnitPremises.analytic_neg_of`).
+* **Proved:** `D72Unit.analytic_pos_proved`, the analytic statement, from Matveev's bound
+  (`AnalyticBridge.analytic_of_cert`: Siegel's identity, the conjugate estimates, the inverse log
+  matrix, the Matveev cutoff and a kernel-checked interval certificate).  The target `H = −1` reuses
+  it, transported by sign (`UnitPremises.analytic_neg_of`).
+* **Premise** (`Generated/D72Unit.lean`), not proved in Lean: `matveev_pos`, Matveev's lower bound
+  for the three linear forms (`AnalyticBridge.MatveevCase`).
 * **Checked by the kernel:** the direct-`H` reduction chains (to `|eᵢ| ≤ 4`), the box of `9²`
   elements of either sign, and the search `|v| ≤ 1`.
 * `small_v`: no solution has `|v| ≤ 1` (proved outright).
-* `residual_empty`: **under the premises, `H(u, v) ≠ ±1` for all integers `u, v`.**
+* `residual_empty`: **under Matveev's bound, `H(u, v) ≠ ±1` for all integers `u, v`.**
 -/
 
 namespace PerfectPower.D72Residual
@@ -42,15 +45,16 @@ theorem small_v (u v : ℤ) (hv : |v| ≤ 1) : H72 u v ≠ 1 ∧ H72 u v ≠ -1 
        obtain ⟨hu1, hu2⟩ := hu
        interval_cases u <;> omega)
 
-/-- **The residual unit equation has no solution, under its analytic premise.**  Unit generation
-(`Generated.D72Unit.unitGen_proved`) and the norm representatives
-(`Generated.D72Unit.normRep_pos_proved`) are proved.  The target `H = −1` needs no premise of its
+/-- **The residual unit equation has no solution, under Matveev's bound.**  Unit generation
+(`Generated.D72Unit.unitGen_proved`), the norm representatives
+(`Generated.D72Unit.normRep_pos_proved`) and the analytic statement
+(`Generated.D72Unit.analytic_pos_proved`) are proved.  The target `H = −1` needs no premise of its
 own: it uses that of `H = 1`, transported by sign. -/
-theorem residual_empty (hA : Generated.D72Unit.analytic_pos) (u v : ℤ) :
+theorem residual_empty (hM : Generated.D72Unit.matveev_pos) (u v : ℤ) :
     H72 u v ≠ 1 ∧ H72 u v ≠ -1 := by
   rw [H72_eq]
   constructor <;> intro h
-  · simpa using (Generated.D72Unit.class_pos hA u v).mp h
-  · simpa using (Generated.D72Unit.class_neg hA u v).mp h
+  · simpa using (Generated.D72Unit.class_pos hM u v).mp h
+  · simpa using (Generated.D72Unit.class_neg hM u v).mp h
 
 end PerfectPower.D72Residual

@@ -73,6 +73,8 @@ import PerfectPower.DirectReduction
 import PerfectPower.UnitPremises
 import PerfectPower.UnitGen
 import PerfectPower.NormRepProof
+import PerfectPower.RatInterval
+import PerfectPower.AnalyticBridge
 import PerfectPower.Generated.D72Unit
 import PerfectPower.D72Residual
 import PerfectPower.UnitBox

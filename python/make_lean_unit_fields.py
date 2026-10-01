@@ -4,11 +4,15 @@ classes of the field of discriminant 756 and the curves `y^2 = x^3 - D`, `D = 7,
 
 Unit generation is **proved** for each field (`unitGen_proved`, from the certificate `ugCert`
 built by `ug_cert` and checked by `UnitGenProof.ugCheck`), and so are the norm representatives
-(`normRep_N_proved`, `NormRepProof`: explicit division).  Every theorem is stated under the one
-remaining named premise (`UnitPremises`):
-- `analytic_i` (one per class): Siegel + Matveev, as rational enclosures and a first bound.
-From these, the kernel checks the direct-`H` reduction chains (`DirectReduction.chainCheck`), the
-norm identity, the exponent box, the small-`b` search and, for curves, the branch transport.
+(`normRep_N_proved`, `NormRepProof`: explicit division), and so is the analytic statement
+`analytic_i` (`analytic_i_proved`, `AnalyticBridge.analytic_of_cert`) from one named premise per
+class:
+- `matveev_i`: Matveev's lower bound for the three linear forms of the class
+  (`AnalyticBridge.MatveevCase`), with the constants of the certificate `acert_i`.
+The certificate (root brackets, precision, Matveev constants) and the cases are computed by
+`perfectpower.analytic_cert`, an exact replay of `AnalyticBridge.caseCompute`/`caseOK`.  The kernel
+checks the certificate, the direct-`H` reduction chains (`DirectReduction.chainCheck`), the norm
+identity, the exponent box, the small-`b` search and, for curves, the branch transport.
 
 Inputs: `receipts/field756_bound.json`, `receipts/d72_thue_bound.json` (`crosscheck/thue_bound*.py`),
 `receipts/unit_basis_witness.json`, `receipts/norm_rep_localization.json`, `receipts/thue_graph.json`.
@@ -17,7 +21,8 @@ Before emitting, this script replays in exact arithmetic: every reduction chain
 control), the small-`b` search, and the curve points against the Sage census.
 
 Run: python3 python/make_lean_unit_fields.py
-Writes the two Lean files and receipts/unit_fields_certificate.json.
+Writes the two Lean files, receipts/unit_fields_certificate.json and
+receipts/analytic_certificates.json.
 """
 from __future__ import annotations
 
@@ -30,6 +35,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'python'))
 
+from perfectpower import analytic_cert as AC  # noqa: E402
 from perfectpower import reduction_check as RC  # noqa: E402
 from perfectpower.branch_descent import compile_curve, lean_args  # noqa: E402
 from perfectpower.descent import W1, W2  # noqa: E402
@@ -340,35 +346,92 @@ def norm_rep_block(nname, P, Q, N, g0, labels):
             f"theorem {nname}_proved : {nname} :=\n  {proof}\n\n")
 
 
-def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=None):
+def analytic_cert(P, Q, F, M, phi, g0, e1, e2, V0):
+    """The analytic certificate of a class (`perfectpower.analytic_cert`, an exact replay of
+    `AnalyticBridge.caseCompute`/`caseOK`), with its cases in the receipt format."""
+    r = AC.class_cert(P, Q, F, M, phi, g0, e1, e2, V0)
+    r['cases_json'] = [{'enclosure': RC.enc_to_json({k: c[k] for k in ('kl', 'ku', 'ml', 'mu', 'cl', 'Au')}),
+                        'M0': c['M0'], 'steps': c['steps'], 'H_reduced': RC.chain_end(c['M0'], c['steps'])}
+                       for c in r['cases']]
+    return r
+
+
+def _cert_json(label, cert):
+    q = lambda x: f'{x.numerator}/{x.denominator}'           # noqa: E731
+    return {'class': label, 'p': cert['p'], 'J': cert['J'], 'em': cert['em'], 'V': cert['V'],
+            'lo': [q(x) for x in cert['lo']], 'hi': [q(x) for x in cert['hi']],
+            'Cm': [int(x) for x in cert['Cm']], 'cases': cert['cases_json'], 'report': cert['report']}
+
+
+def _vec(xs):
+    return '![' + ', '.join(q_lean(Fraction(x)) for x in xs) + ']'
+
+
+def analytic_block(name, P, Q, F, M, phi, g0, cert, V, label):
+    """The certificate, the Matveev premise and the proof of `analytic_{name}`."""
+    a = (f"/-- The analytic certificate of {label} (`python/perfectpower/analytic_cert.py`): root brackets, "
+         f"precision `2^-{cert['p']}`, `{cert['J']}` series terms, `{cert['em']}` squarings, Matveev's constants. -/\n"
+         f"def acert_{name} : AnalyticBridge.ACert :=\n"
+         f"  {{ lo := {_vec(cert['lo'])},\n    hi := {_vec(cert['hi'])},\n"
+         f"    p := {cert['p']}, J := {cert['J']}, em := {cert['em']},\n    Cm := {_vec(cert['Cm'])} }}\n\n"
+         f"/-- **Matveev's lower bound** for the three cases of {label} (`AnalyticBridge.MatveevCase`: "
+         f"Bugeaud–Mignotte–Siksek 2006, Thm 9.4, real case, `n = 3`, `D = 6`, with the constants "
+         f"`acert_{name}.Cm`).  The one premise of this class; not proved in Lean. -/\n"
+         f"def matveev_{name} : Prop :=\n  ∀ i, AnalyticBridge.MatveevCase {P} {Q} acert_{name} {z3_lean(phi)} "
+         f"{z3_lean(g0)} e1 e2 i\n\n")
+    nq = f"((|({_i(F[0])} : ℤ) ^ 2 * {_i(M)}| : ℤ) : ℚ)"
+    for i in range(3):
+        a += (f"theorem caseOK_{name}_{i} : AnalyticBridge.caseOK acert_{name}.p acert_{name}.J acert_{name}.em\n"
+              f"    {nq} {V} (acert_{name}.Cm {i})\n"
+              f"    (AnalyticBridge.baseOf acert_{name} {z3_lean(phi)} {z3_lean(g0)} e1 e2 {i}) "
+              f"case_{name}_{i} = true := by decide +kernel\n\n")
+    a += (f"/-- **The analytic premise of {label}, proved from Matveev's bound** "
+          f"(`AnalyticBridge.analytic_of_cert`: Siegel's identity, the conjugate estimates, the inverse log "
+          f"matrix and the Matveev cutoff, with every interval check evaluated by the kernel). -/\n"
+          f"theorem analytic_{name}_proved (hM : matveev_{name}) : analytic_{name} :=\n"
+          f"  AnalyticBridge.analytic_of_cert {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} {z3_lean(g0)} "
+          f"e1 e1i e2 e2i {V} acert_{name}\n"
+          f"    case_{name}_0 case_{name}_1 case_{name}_2 e1_inv e2_inv (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring)\n"
+          f"    (by decide +kernel) (by decide) (by decide)\n"
+          f"    (fun i => by fin_cases i; exacts [caseOK_{name}_0, caseOK_{name}_1, caseOK_{name}_2]) hM\n\n")
+    return a
+
+
+def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=None, cert=None):
     """One class theorem.  With `neg_of`, the class is the negated target of class `neg_of`: its
     representatives and cases are `negReps reps_{neg_of}`, and its premises are transported."""
     assert nrm(P, Q, g0) == F[0] ** 2 * M
     ncases, nsteps = check_cases(cases, B)
     if neg_of is None:
-        cs = ',\n    '.join(case_lean(c) for c in cases)
-        reps = (f"/-- The analytic cases of {label}: {ncases} cases, {nsteps} reduction steps, final bound {B}. -/\n"
-                f"def reps_{name} : List (Z3 × List UnitPremises.Case) :=\n  [({z3_lean(g0)},\n   [{cs}])]\n\n"
-                f"/-- **Analytic premise** for {label} (Siegel's identity, the conjugate estimates and Matveev's "
-                f"theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/\n"
+        assert len(cases) == 3
+        cdefs = ''.join(f"/-- Case {k} of {label}: the closest conjugate is `σ{k}`. -/\n"
+                        f"def case_{name}_{k} : UnitPremises.Case :=\n  {case_lean(c)}\n\n"
+                        for k, c in enumerate(cases))
+        cs = ', '.join(f'case_{name}_{k}' for k in range(3))
+        reps = (cdefs +
+                f"/-- The analytic cases of {label}: {ncases} cases, {nsteps} reduction steps, final bound {B}. -/\n"
+                f"def reps_{name} : List (Z3 × List UnitPremises.Case) :=\n  [({z3_lean(g0)}, [{cs}])]\n\n"
+                f"/-- The analytic statement for {label} (`UnitPremises.Analytic`), proved below from "
+                f"`matveev_{name}`. -/\n"
                 f"def analytic_{name} : Prop :=\n  UnitPremises.Analytic {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} "
                 f"e1 e1i e2 e2i {V} reps_{name}\n\n")
+        reps += analytic_block(name, P, Q, F, M, phi, g0, cert, V, label)
         reps += (f"/-- Negative control: every chain of {label} with its final bound lowered by one is rejected "
                  f"by the kernel. -/\n"
                  f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB reps_{name} = true := by decide +kernel\n\n")
-        hyps = f"(hA : analytic_{name})"
-        hN, hA = f'{nname}_proved', 'hA'
+        hyps = f"(hM : matveev_{name})"
+        hN, hA = f'{nname}_proved', f'analytic_{name}_proved hM'
     else:
         reps = (f"/-- The representatives and cases of {label}: those of `{neg_of}`, negated. -/\n"
                 f"def reps_{name} : List (Z3 × List UnitPremises.Case) := UnitPremises.negReps reps_{neg_of}\n\n")
-        hyps = f"(hA : analytic_{neg_of})"
+        hyps = f"(hM : matveev_{neg_of})"
         hN = 'UnitPremises.normRep_neg_of (reps := reps_' + neg_of + f') {nname}_proved'
-        hA = 'UnitPremises.analytic_neg_of hA'
+        hA = f'UnitPremises.analytic_neg_of (analytic_{neg_of}_proved hM)'
     note = '' if neg_of is None else f"  Its norm and analytic premises are those of `{neg_of}`, transported by sign. "
     return (reps +
-            f"/-- **{label}, complete under its analytic premise**: `{list(F)}` takes the value {M} exactly at "
-            f"{len(L)} point(s).{note}  Kernel-checked: the reduction chains (to `H ≤ {B}`), the norm identity, "
-            f"the box (`{2 * B + 1}²` elements) and the search `|b| ≤ {V}`. -/\n"
+            f"/-- **{label}, complete under Matveev's bound**: `{list(F)}` takes the value {M} exactly at "
+            f"{len(L)} point(s).{note}  Kernel-checked: the analytic certificate, the reduction chains "
+            f"(to `H ≤ {B}`), the norm identity, the box (`{2 * B + 1}²` elements) and the search `|b| ≤ {V}`. -/\n"
             f"theorem class_{name} {hyps} (u v : ℤ) :\n"
             f"    evalF {form_lean(F)} u v = {_i(M)} ↔ (u, v) ∈ ({pairs_lean(L)} : List (ℤ × ℤ)) :=\n"
             f"  thue_list {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} (reps_{name}.map Prod.fst) e1 e1i e2 e2i {B} {V} "
@@ -389,11 +452,11 @@ def box_hits(P, Q, F, M, phi, g0, e1, e1i, e2, e2i, B):
 
 
 def head(name, doc):
-    return (f"import PerfectPower.UnitGen\nimport PerfectPower.NormRepProof\nimport PerfectPower.DescentThueList\n\n/-!\n{doc}\n-/\n\n"
+    return (f"import PerfectPower.UnitGen\nimport PerfectPower.NormRepProof\nimport PerfectPower.AnalyticBridge\nimport PerfectPower.DescentThueList\n\n/-!\n{doc}\n-/\n\n"
             f"namespace PerfectPower.Generated.{name}\n\nopen PerfectPower ThueLocal UnitBox\n\n")
 
 
-DOC756 = """# The field 756: seven Thue classes and three curves, under one named premise per class
+DOC756 = """# The field 756: seven Thue classes and three curves, under Matveev's bound
 (generated by `python/make_lean_unit_fields.py`)
 
 `K = ℚ(x)`, `x³ = 6x + 2`, `O_K = ℤ[x]`, discriminant 756.  Seven GL₂(ℤ)-classes of open branch
@@ -402,14 +465,16 @@ equations of `y² = x³ − D`, `D ∈ {7, 28, 63}`, live in this field (`MORDEL
 * **Proved:** `unitGen_proved`, unit generation for `ℤ[x]` (`UnitGenProof.unitGen_of_cert`).
 * **Proved:** `normRep_N_proved`, the norm representatives (`NormRepProof.normRep756`; classes 20
   and 50 share `normRep_64`).
-* **Premise, not proved in Lean:** one `analytic_i` per class.  See `UnitPremises` for its
-  statement and evidence.
+* **Proved:** `analytic_i_proved`, the analytic statement of each class, from `matveev_i`
+  (`AnalyticBridge.analytic_of_cert`; the interval certificate `acert_i` is checked by the kernel).
+* **Premise, not proved in Lean:** one `matveev_i` per class, Matveev's lower bound for the three
+  linear forms of the class (`AnalyticBridge.MatveevCase`).
 * **Kernel-checked:** the direct-`H` reduction chains, the exponent boxes, the small-`b` searches,
   the norm identities, and the branch transport.
 * `class_i`: the complete solution list.  `minusD`: the complete list of integral points of
-  `y² = x³ − D`, under the premises of that curve's classes."""
+  `y² = x³ − D`, under the Matveev premises of that curve's classes."""
 
-DOC72 = """# The `D = 72` residual `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`, under one named premise
+DOC72 = """# The `D = 72` residual `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`, under Matveev's bound
 (generated by `python/make_lean_unit_fields.py`)
 
 `K = ℚ(δ)`, `δ³ = 9δ + 6`, `O_K = ℤ[δ]`, discriminant 1944.  The form `(−3, 0, 9, −2)` has
@@ -417,9 +482,10 @@ DOC72 = """# The `D = 72` residual `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`, u
 
 * **Proved:** `unitGen_proved`, unit generation for `ℤ[δ]`.
 * **Proved:** `normRep_pos_proved`, the norm representatives of norm 9 (`NormRepProof.normRep_d72`).
-* **Premise, not proved in Lean:** `analytic_pos`.  The target `H = −1` uses the same facts,
-  transported by sign (`UnitPremises.normRep_neg_of`, `analytic_neg_of`: the form, `enc` and the
-  norm are odd).
+* **Proved:** `analytic_pos_proved`, from `matveev_pos` (`AnalyticBridge.analytic_of_cert`).
+* **Premise, not proved in Lean:** `matveev_pos`, Matveev's lower bound for the three linear forms.
+  The target `H = −1` uses the same facts, transported by sign (`UnitPremises.normRep_neg_of`,
+  `analytic_neg_of`: the form, `enc` and the norm are odd).
 * **Kernel-checked:** the reduction chains (`H ≤ 4`), the box of `9²` elements and the search
   `|v| ≤ 1`.  `class_pos`, `class_neg`: no solution."""
 
@@ -433,6 +499,7 @@ def main():
     gcls = {c['id']: c for c in graph['classes']}
     localized = {(f['P'], f['Q'], t['N']) for f in local['fields'] for t in t_iter(f)}
     report = {'fields': []}
+    certs = []
 
     # ---- field 756
     P, Q = f756['P'], f756['Q']
@@ -454,7 +521,10 @@ def main():
         i, F, M, phi = c['class'], tuple(c['form']), c['M'], tuple(c['phi'])
         assert len(c['gammas']) == 1
         g0 = tuple(c['gammas'][0])
-        B, V = c['H_bound'], c['V0']
+        cert = analytic_cert(P, Q, F, M, phi, g0, e1, e2, c['V0'])
+        V, ccases = cert['V'], cert['cases_json']
+        B = max(x['H_reduced'] for x in ccases)
+        certs.append(_cert_json(f'field756 class {i}', cert))
         L = sorted(tuple(x) for x in c['pari_thue'])
         assert tuple(gcls[i]['representative']) == F and gcls[i]['M'] == M
         assert phi[1] != 0 or phi[2] != 0
@@ -467,9 +537,9 @@ def main():
         lists[i] = L
         rows.append({'class': i, 'curves': c['curves'], 'B': B, 'V': V, 'box_size': (2 * B + 1) ** 2,
                      'box_hits': sorted(hits), 'small_b_hits': sorted(sm), 'list': L,
-                     'reduction_steps': sum(len(x['steps']) for x in c['cases'])})
-        out.append(class_block(str(i), P, Q, F, M, phi, g0, c['cases'], B, V, L,
-                               f"class {i} (`D ∈ {c['curves']}`, `M = {M}`)", nnames[i]))
+                     'reduction_steps': sum(len(x['steps']) for x in ccases), 'analytic': cert['report']})
+        out.append(class_block(str(i), P, Q, F, M, phi, g0, ccases, B, V, L,
+                               f"class {i} (`D ∈ {c['curves']}`, `M = {M}`)", nnames[i], cert=cert))
     census = {}
     with open(ROOT / 'data' / 'mordell_census.csv') as f:
         for row in csv.DictReader(f):
@@ -500,12 +570,12 @@ def main():
         mods = '[' + ', '.join('(' + ', '.join(_i(v) for v in t) + ')' for t in a['mods']) + ']'
         listed = '[' + ', '.join(
             f"({form_lean(gcls[i]['representative'])}, {gcls[i]['M']}, {pairs_lean(lists[i])})" for i in ids) + ']'
-        hyps = ' '.join(f'(hA{i} : analytic_{i})' for i in ids)
+        hyps = ' '.join(f'(hM{i} : matveev_{i})' for i in ids)
         pat = ' | '.join(['rfl'] * len(ids))
-        cases = ' '.join(f'| exact (class_{i} hA{i} u v).mp' for i in ids)
+        cases = ' '.join(f'| exact (class_{i} hM{i} u v).mp' for i in ids)
         out.append(
             f"set_option maxHeartbeats 0 in\n"
-            f"/-- **The integral points of `y^2 = x^3 - {D}`, under the premises of classes {ids}**: "
+            f"/-- **The integral points of `y^2 = x^3 - {D}`, under the Matveev premises of classes {ids}**: "
             f"{len(pts)} point(s).  {len(a['cubes'])} field-cube and {len(a['mods'])} local branches; "
             f"{len(thuesL)} branches transported to the listed classes. -/\n"
             f"theorem minus{D} {hyps}\n    (x y : ℤ) : y ^ 2 = x ^ 3 - {D} ↔ (x, y) ∈ ({pairs_lean(pts)} : List (ℤ × ℤ)) :=\n"
@@ -527,7 +597,10 @@ def main():
     pre, e1i, e2i, wrep = field_preamble(P, Q, e1, e2, witness)
     out = [head('D72Unit', DOC72), pre]
     F, phi, g0 = tuple(d72['form']), tuple(d72['phi']), tuple(d72['gammas'][0])
-    B, V = d72['H_bound'], d72['V0']
+    cert = analytic_cert(P, Q, F, 1, phi, g0, e1, e2, d72['V0'])
+    V, ccases = cert['V'], cert['cases_json']
+    B = max(x['H_reduced'] for x in ccases)
+    certs.append(_cert_json('D = 72, H = 1', cert))
     rows = []
     out.append(norm_rep_block('normRep_pos', P, Q, F[0] ** 2, g0, ['`H = 1` (and, transported by sign, `H = -1`)']))
     for name, M, g in (('pos', 1, g0), ('neg', -1, tuple(-x for x in g0))):
@@ -535,15 +608,19 @@ def main():
         hits = box_hits(P, Q, F, M, phi, g, e1, e1i, e2, e2i, B)
         assert not hits and not small_hits(F, M, V)
         rows.append({'M': M, 'B': B, 'V': V, 'box_size': (2 * B + 1) ** 2, 'box_hits': [],
-                     'reduction_steps': sum(len(x['steps']) for x in d72['cases'])})
-        out.append(class_block(name, P, Q, F, M, phi, g, d72['cases'], B, V, [], f'`H(u, v) = {M}`',
-                               'normRep_pos', neg_of=None if M == 1 else 'pos'))
+                     'reduction_steps': sum(len(x['steps']) for x in ccases), 'analytic': cert['report']})
+        out.append(class_block(name, P, Q, F, M, phi, g, ccases, B, V, [], f'`H(u, v) = {M}`',
+                               'normRep_pos', neg_of=None if M == 1 else 'pos', cert=cert))
     out.append('end PerfectPower.Generated.D72Unit\n')
     (ROOT / 'PerfectPower' / 'Generated' / 'D72Unit.lean').write_text('\n'.join(out))
     report['fields'].append({'field': 'x^3 - 9x - 6', 'unit_witness': wrep, 'classes': rows})
 
-    report['label'] = ('Lean theorems conditional on the named analytic premises analytic_i (unitGen and '
-                       'normRep proved) '
+    (ROOT / 'receipts' / 'analytic_certificates.json').write_text(json.dumps(
+        {'label': 'analytic certificates for AnalyticBridge.analytic_of_cert (exact replay of caseCompute/caseOK; '
+                  'Matveev constants from exact rational height and log bounds)',
+         'classes': certs}, indent=1) + '\n')
+    report['label'] = ('Lean theorems conditional on the named Matveev premises matveev_i (unitGen, '
+                       'normRep and analytic_i proved) '
                        '(Generated/Field756.lean, Generated/D72Unit.lean); reduction chains, norm identities, '
                        'boxes, small-b searches and branch transport are kernel-checked')
     (ROOT / 'receipts' / 'unit_fields_certificate.json').write_text(json.dumps(report, indent=1, default=list) + '\n')

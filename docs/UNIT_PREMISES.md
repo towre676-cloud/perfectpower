@@ -6,11 +6,15 @@ This page covers the two cubic fields behind the open Mordell work:
 - the field of discriminant 1944 (`δ³ = 9δ + 6`), which carries the `D = 72` residual
   `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`.
 
-Both are proved complete in Lean under **one kind of named premise**, the analytic one. There is
-one `analytic` premise per class: seven for field 756 and one for `D = 72`, since `H = −1` is
-transported by sign. The two structural premises are now Lean theorems for both fields:
+Both are proved complete in Lean under **one kind of named premise: Matveev's lower bound for
+linear forms in three logarithms**. There is one `matveev` premise per class: seven for field 756
+and one for `D = 72`, since `H = −1` is transported by sign. Each is three instances of
+`AnalyticBridge.MatveevLB`, one per closest conjugate, with explicit real numbers and constants.
+Everything else is a Lean theorem for both fields:
 - unit generation (`UnitGen.lean`, `unitGen_proved`);
-- norm representatives (`NormRepProof.lean`, `normRep_*_proved`).
+- norm representatives (`NormRepProof.lean`, `normRep_*_proved`);
+- the analytic statement `Analytic` (`AnalyticBridge.lean`, `analytic_*_proved`), from the Matveev
+  premise.
 
 Every other step is kernel-checked. The direct maximum-exponent reduction, the unit-domain witness, the residue sieve
 and the norm-representative localization come from the direct-H handoff. The elementary
@@ -31,7 +35,8 @@ The steps:
 | norm and lattice encoding | `nrm(enc(a, b)) = c₀² F(a, b)`; `dec(enc(a, b)) = (a, b)` | **Lean**: by `ring` per class; `UnitBox.dec_enc` |
 | unit generation | every unit of `ℤ[x]` is `±ε₁^a ε₂^b` (`UnitPremises.UnitGen`) | **Lean**: `UnitGenProof.unitGen_of_cert`, certificates by `decide +kernel` |
 | norm representatives | every element of norm `N` is `γ₀ · unit` (`UnitPremises.NormRep`) | **Lean**: `NormRepProof.normRep756`, `normRep_d72` (explicit division) |
-| analytic input | Siegel + Matveev: `\|κe₁ + e₂ + μ\| ≤ A e^{−cH}` and `H ≤ M₀` (`UnitPremises.Analytic`) | **premise** |
+| analytic input | Siegel + Matveev: `\|κe₁ + e₂ + μ\| ≤ A e^{−cH}` and `H ≤ M₀` (`UnitPremises.Analytic`) | **Lean** from Matveev's bound: `AnalyticBridge.analytic_of_cert`, certificates by `decide +kernel` |
+| Matveev's lower bound | `log\|α₁^x α₂^y α₃ − 1\| > −C(1 + log H)` for three explicit `αᵢ` and `C` (`AnalyticBridge.MatveevCase`) | **premise** |
 | direct reduction | `H ≤ M₀ ⇒ … ⇒ H ≤ B` | **Lean**: `DirectReduction.chain_sound`, chains by `decide +kernel` |
 | the box | every lattice point of `±γ₀ ε₁^{e₁} ε₂^{e₂}`, `\|eᵢ\| ≤ B`, solving `F = M` is listed | **Lean**: `UnitBox.boxB` by `decide +kernel` |
 | small `b` | exhaustive search over `\|b\| ≤ V` below Cauchy's root bound | **Lean**: `UnitBox.cauchy`, `smallB` |
@@ -124,25 +129,74 @@ ideal theory.
 The earlier exact checks of Dedekind's criterion and total ramification
 (`python/norm_rep_localization.py`) remain as a cross-check.
 
-## The analytic premise
+## The analytic statement, proved from Matveev's bound (`RatInterval.lean`, `AnalyticBridge.lean`)
 
-`Analytic` asks, for each solution with `|b| > V` and each way of writing
-`γ = ±γ₀ ε₁^{e₁} ε₂^{e₂}`, for one case whose real `κ, μ, c, A` lie in the recorded rational
-enclosures, with `H ≤ M₀` and `|κe₁ + e₂ + μ| ≤ A e^{−cH}`. The evidence is in
-`crosscheck/thue_bound.py`:
-- Siegel's identity at the nearest conjugate gives `|Λ| ≤ K₁/|b|³`;
-- the conjugate estimates give `log|b| ≥ (H − b')/a`;
-- Matveev's theorem (Bugeaud–Mignotte–Siksek 2006, Thm 9.4; `n = 3`, degree 6) gives `M₀`.
+The architecture is `matveev_i ⇒ analytic_i ⇒ class_i`. The first arrow is
+`AnalyticBridge.analytic_of_cert`; the second is the existing reduction and box. The premise of a
+class is
 
-The numerics use `mpmath.iv` at 900 bits. Every constant is the safe endpoint of an interval
-enclosure:
-- the lower end for `c`;
-- the upper end for `K₁`, `b`, `K`, `A` and the Matveev constant;
-- `V₀` with `(V₀ + 1)³ > 2K₁` checked on the enclosure;
-- `H₀` accepted only when the lower end of `cH₀ − log K − C(1 + log H₀)` is positive.
+```text
+matveev_i : ∀ i, MatveevCase P Q acert γ-data i
+MatveevLB α₁ α₂ α₃ C : ∀ x y : ℤ, α₁^x α₂^y α₃ ≠ 1 → 1 ≤ H →
+    −C (1 + log H) < log |α₁^x α₂^y α₃ − 1|,          H = max(|x|, |y|)
+```
 
-The rational enclosures handed to Lean are then rounded outward again. This is the
-largest remaining dependency.
+Here `α₁ = |σₖ(ε₁)/σⱼ(ε₁)|`, `α₂ = |σₖ(ε₂)/σⱼ(ε₂)|` and
+`α₃ = |(φᵢ − φⱼ)σₖ(γ₀) / ((φᵢ − φₖ)σⱼ(γ₀))|`. The `σ` are evaluated at the roots of `X³ − PX − Q`
+in the brackets of the certificate (`rootIn`), and `C = acert.Cm i`. This is Matveev's theorem
+(Bugeaud–Mignotte–Siksek 2006, Thm 9.4, real case, `n = 3`, `D = 6`), with
+`Aᵢ ≥ max(D h(αᵢ), |log αᵢ|, 0.16)` and the height bounds
+`h(α₁) ≤ 2h(ε₁)`, `h(α₂) ≤ 2h(ε₂)`, `h(α₃) ≤ 2(2h(φ) + log 2) + 2h(γ₀)`.
+
+The constants are computed by `python/perfectpower/analytic_cert.py`. They are upper bounds,
+evaluated in exact rational arithmetic and rounded up to integers, and Lean does not check them.
+They are the content of the premise.
+
+What Lean proves (`real_case`, then `analytic_of_cert`), at a solution with `|b| > V`:
+
+1. **Closest conjugate.** `t = c₀a/b` has a closest `φᵢ` (a minimum over `Fin 3`). With
+   `γₗ = σₗ(c₀a − bφ) = b(t − φₗ)` and `γᵢγⱼγₖ = N(γ) = c₀²M` (`Roots.nrm_eq`), Siegel's estimates
+   give `|γⱼ| ≥ |b||φⱼ − φᵢ|/2` and `|t − φᵢ| ≤ 4|N|/(|b|³|φⱼ − φᵢ||φₖ − φᵢ|)` (`siegel`).
+2. **Siegel's identity.** `Λ = (φᵢ − φⱼ)γₖ/((φᵢ − φₖ)γⱼ) − 1 = −(φⱼ − φₖ)γᵢ/((φᵢ − φₖ)γⱼ)`, so
+   `Λ ≠ 0` and `|Λ| ≤ K₁/|b|³` with `K₁ = 8|N||φⱼ − φₖ|/(|φⱼ − φᵢ|²|φₖ − φᵢ|²)`.
+3. **The logarithm.** The check `2K₁ ≤ (V + 1)³` gives `|Λ| ≤ 1/2`, hence `1 + Λ > 0` and
+   `|log(1 + Λ)| ≤ 2|Λ|` (`log_one_add_le`). Since `1 + Λ = α₁^x α₂^y α₃`,
+   `log(1 + Λ) = x ℓ₁ + y ℓ₂ + ℓ₃`.
+4. **The exponents.** `log|γₗ| = log|b| + wₗ` for `l = j, k`, where `wₗ` lies in an interval from
+   step 1. Inverting the `2 × 2` log matrix of `(ε₁, ε₂)` at `σⱼ, σₖ` (`exps_le`) gives
+   `H ≤ a log|b| + b'`. Its determinant is nonzero, which is checked.
+5. **Matveev's cutoff.** `log|Λ| ≤ log K₁ − 3 log|b| ≤ log K₁ − (3/a)(H − b')` contradicts
+   Matveev's bound once `H ≥ M₀` (`matveev_cutoff`). The checks `aC/3 ≤ M₀` and
+   `3M₀/a − log K₁ − 3b'/a − C(1 + log M₀) > 0` cover every `H ≥ M₀`, so `H < M₀`.
+6. **The linear form.** Dividing step 3 by `ℓ₂` (nonzero, checked) gives
+   `|κx + y + μ| ≤ A e^{−cH}` with `κ = ℓ₁/ℓ₂`, `μ = ℓ₃/ℓ₂`, `c = 3/a` and
+   `A = 2K₁e^{3b'/a}/|ℓ₂|`. These lie in the case's rational enclosures. This is
+   `UnitPremises.LinIneq`, which feeds the existing direct reduction.
+
+**Every number in steps 1–6 is enclosed by verified rational interval arithmetic** (`RatInterval`).
+The arithmetic rounds outward on the grid `2^-p`.
+- **Logarithm.** `log y = m log 2 + 2 atanh z` with `y = 2^m w`, `w ∈ [1, 2)` and
+  `z = (w − 1)/(w + 1) ∈ [0, 1/3)`. The series `Σ z^{2k+1}/(2k + 1)` is summed to `J` terms with
+  rounded powers. The tail is bounded by `z^{2J+1}/((2J + 1)(1 − z²))`
+  (`Real.hasSum_log_sub_log_of_abs_lt_one`, `sumLo_sound`, `sumHi_sound`).
+- **Exponential.** `e^r ≤ (1/(1 − r/2^m))^{2^m}` by repeated squaring (`exp_le_expHi`).
+- **Roots.** These are chosen in rational brackets with a sign change (`rootIn`).
+- **Embeddings.** These are enclosed by `σ(lo) ± rad` (`mem_sigI`).
+
+The 48 side conditions of a case (`caseOK`: nonvanishing, domain conditions of each logarithm,
+`2K₁ ≤ (V + 1)³`, the cutoff, the enclosures of `κ, μ, c, A`) are decided by the kernel
+(`caseOK_i_k`, `decide +kernel`).
+
+**Precision.** The certificates use `p = 192`, `J = 63` and `2^-240` root brackets. The first
+reduction step needs (width of `κ, μ`) · `q` · `M₀` ≪ 1. The widths are about `2^-182`, while
+`q ≈ 2^80` and `M₀ ≈ 2^60`, so the margin is 39–46 bits across the 24 cases. It is recorded as
+`precision_margin_bits` in `receipts/analytic_certificates.json`. At `p = 160` the margin falls
+to about 9 bits.
+
+The regenerated cases give the same final bounds as before: field 756, 5, 7, 5, 6, 6, 6, 5;
+`D = 72`, 4.
+
+The earlier `mpmath` evidence (`crosscheck/thue_bound.py`) stays as an independent cross-check.
 
 ## Exponent residues (`python/d72_unit_sieve.py`, measurement)
 
@@ -161,6 +215,7 @@ so their survival fractions do not multiply.
 
 ## Next
 
-- The analytic premise: Matveev's theorem is the boundary that stays external.
+- Matveev's theorem is the boundary that stays external. It is stated per class as three explicit
+  instances (`matveev_i`); the height bounds behind its constants are computed outside Lean.
 - Bounded-Pell replacements carried through `push`/`pop` (`Γ ∧ B ∧ C ⇔ Γ ∧ B ∧ L`), and their
   reconstruction in Why3, as is already done for the Mordell replacement.

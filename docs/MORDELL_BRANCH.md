@@ -289,9 +289,11 @@ The whole remaining `D = 72` point-free problem is therefore **one unit Thue equ
   the search `|v| ≤ 1`.
 - Unit generation is **proved** (`D72Unit.unitGen_proved`, [UNIT_PREMISES.md](UNIT_PREMISES.md)).
   So are the norm representatives (`D72Unit.normRep_pos_proved`: `9 ∣ N(g)` forces `3 ∣ A, B`,
-  and `g/α` is integral). The proof rests on **one** named premise, `analytic_pos` (Siegel and
-  Matveev). The target `H = −1` needs no premise of its own: the form, `enc` and the norm are
-  odd, so `UnitPremises.normRep_neg_of` and `analytic_neg_of` transport the `H = 1` facts.
+  and `g/α` is integral). So is the analytic inequality (`D72Unit.analytic_pos_proved`,
+  `AnalyticBridge.analytic_of_cert`). The proof rests on **one** named premise, `matveev_pos`:
+  Matveev's lower bound for the three linear forms. The target `H = −1` needs no premise of its
+  own: the form, `enc` and the norm are odd, so `UnitPremises.normRep_neg_of` and
+  `analytic_neg_of` transport the `H = 1` facts.
 
 So the residual is **closed conditionally**, and its external part is now three separate,
 reusable statements instead of one opaque bound.
@@ -365,8 +367,11 @@ discriminant 756, is totally real, has class number 1 and unit rank 2, and is ce
 - **The norm representatives are proved** (`Field756.normRep_N_proved`, `NormRepProof.lean`):
   every target is `±2^r 3^s`, and division by `x` and `1 + x` is exact when `2` or `3` divides
   the norm.
-- **The remaining premise** is `analytic_i`, one per class: Siegel's identity, the conjugate
-  estimates and Matveev's theorem ([UNIT_PREMISES.md](UNIT_PREMISES.md)).
+- **The analytic inequality is proved** (`Field756.analytic_i_proved`, `AnalyticBridge.lean`):
+  Siegel's identity, the conjugate estimates, the inverse log matrix and the Matveev cutoff, with a
+  kernel-checked rational interval certificate.
+- **The remaining premise** is `matveev_i`, one per class: Matveev's lower bound for the three
+  linear forms, with explicit constants ([UNIT_PREMISES.md](UNIT_PREMISES.md)).
 - A field match is still not an equivalence: the 7 classes remain 7 obligations, sharing one unit
   group and one proof of unit generation.
 

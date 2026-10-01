@@ -15,8 +15,10 @@ statements, each reusable and each with its own evidence:
   (`NormRepProof.lean`).
 * `Analytic …` (**one per class**): for each solution with `|b| > V` and each way of writing
   `c₀a − bφ = ±γ₀ ε₁^{e₁} ε₂^{e₂}`, some case gives reals `κ, μ, c, A` inside its rational
-  enclosures with `H ≤ M₀` and `|κ e₁ + e₂ + μ| ≤ A e^{−cH}`.  Evidence: Siegel's identity, the
-  conjugate estimates and Matveev's theorem (`crosscheck/thue_bound.py`).
+  enclosures with `H ≤ M₀` and `|κ e₁ + e₂ + μ| ≤ A e^{−cH}`.  **Proved** for every class in use
+  from Matveev's lower bound (`AnalyticBridge.analytic_of_cert`: Siegel's identity, the conjugate
+  estimates, the inverse log matrix and a kernel-checked interval certificate); Matveev's bound
+  stays a named premise (`AnalyticBridge.MatveevCase`).
 
 **Proved here**: `extBound_of`.  From the three statements, the norm identity of the class and a
 kernel check of every reduction chain (`DirectReduction.chainCheck`), every solution with
@@ -73,7 +75,7 @@ def LinIneq (C : Case) (e1 e2 : ℤ) : Prop :=
   ∃ κ μ c A : ℝ, (C.kl : ℝ) ≤ κ ∧ κ ≤ C.ku ∧ (C.ml : ℝ) ≤ μ ∧ μ ≤ C.mu ∧ (C.cl : ℝ) ≤ c ∧ A ≤ C.Au ∧
     hmax e1 e2 ≤ C.M0 ∧ |κ * e1 + e2 + μ| ≤ A * exp (-(c * (hmax e1 e2 : ℝ)))
 
-/-- **The analytic premise** (one per class). -/
+/-- **The analytic statement** (one per class; proved from Matveev's bound in `AnalyticBridge`). -/
 def Analytic (F : Form) (M P Q : ℤ) (phi : Z3) (e1 e1i e2 e2i : Z3) (V : ℕ)
     (reps : List (Z3 × List Case)) : Prop :=
   ∀ a b : ℤ, evalF F a b = M → (V : ℤ) < |b| → ∀ r ∈ reps, ∀ x y : ℤ,

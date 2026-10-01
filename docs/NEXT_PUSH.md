@@ -81,19 +81,18 @@ git.
 
 1. **Complete lists for `D = 7, 28, 63`, from one shared field** (`MORDELL_BRANCH.md` §7.3).
    - **Target:** `∀ x y, y² = x³ − D ↔ (x, y) ∈ L_D` for the three curves.
-   - **In Lean, under one named premise per class** (`analytic_i`; `Generated/Field756.lean`).
-     Unit generation (`unitGen_proved`) and the norm representatives (`normRep_*_proved`) are
-     proved:
+   - **In Lean, under one named premise per class** (`matveev_i`, Matveev's lower bound;
+     `Generated/Field756.lean`). Unit generation (`unitGen_proved`), the norm representatives
+     (`normRep_*_proved`) and the analytic inequality (`analytic_i_proved`) are proved:
      `minus7`, `minus28` and `minus63`. Kernel-checked: the direct-`H` reduction chains, norm
      identities, boxes, small-`b` searches and branch transport.
-   - **Missing:** Lean proofs of `analytic_i`: Siegel's identity and the conjugate estimates
-     (elementary), and Matveev's theorem, which is the boundary that stays external
-     ([UNIT_PREMISES.md](UNIT_PREMISES.md)).
+   - **Missing:** Matveev's theorem, the boundary that stays external, and a Lean check of the
+     height bounds behind its constants ([UNIT_PREMISES.md](UNIT_PREMISES.md)).
 2. **The `D = 72` residual equation.**
    - **Target:** `∀ u v, H72 u v ≠ 1 ∧ H72 u v ≠ −1`.
-   - **In Lean, under the analytic premise only** (`D72Residual.residual_empty`,
+   - **In Lean, under Matveev's bound only** (`D72Residual.residual_empty`,
      `Generated/D72Unit.lean`). The bound drops to `H ≤ 4`, a box of 81 elements.
-   - **Missing:** the analytic premise for the field of discriminant 1944.
+   - **Missing:** Matveev's theorem itself (`matveev_pos`).
    - This closes two classes and no curve.
 3. **Descent certificates that carry nonempty lists.**
    - **Done for branch transport:** `DescentThueList.complete_of_lists` accepts obligations
