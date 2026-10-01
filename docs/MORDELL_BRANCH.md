@@ -404,6 +404,41 @@ to `G = −2u³ − 6u²v + 3uv² + 4v³ = 1`.
 - **The curve.** `minus18`: the integral points are exactly `(3, ±3)`, under `matveev_v1` and
   `matveev_v2`. This agrees with the Sage census.
 
+**Fourth instance: `D = 89`, two sources in one order** (`Generated/Minus89.lean`,
+`receipts/minus89_certificate.json`). Classes 68 and 69 descend to `F₁ = (−1, −3, 12, 2)` and
+`F₂ = (−1, −18, 267, 534)`.
+
+| class | `M` | descent primes | nodes | sources | complete list |
+|---|---|---|---|---|---|
+| 68 | `5832 = 2³3⁶` | 2, 3 | 13 | `t1` | `(−1, 1)` |
+| 69 | `125 = 5³` | 5 | 3 | `t1`, `t2` | `(−5, 0)` |
+
+- **One order.** `F₁` gives `x³ = 15x + 12` (discriminant 9612). `F₂` gives `x³ = 375x + 1500`,
+  and `375 = 5²·15`, `1500 = 5³·12`, so its `x` is `5θ`. Both encode in `ℤ[θ]`, with `φ₁ = 1 + θ`
+  and `φ₂ = 6 + 5θ`. Each reduces to `H ≤ 1` and has the single solution `(−1, 0)`.
+- **The slab.** The units `ε₁ = 37 + 55θ + 13θ²` and `ε₂ = −131 − 125θ + 37θ²` (regulator about 41)
+  give a coordinate box of 2,548,975 triples. For fixed `(B, C)`, the bounds `|σᵢ(w)| ≤ Uᵢ` confine
+  `A` to an interval of length at most `2 min Uᵢ`. `UnitGenProof.unitGen_of_slab` enumerates only
+  those intervals: 33,217 lattice points in 3,575 rows, in 13 kernel slices.
+- **The curve.** `minus89`: the integral points are exactly `(5, ±6)`, under `matveev_t1` and
+  `matveev_t2`. This agrees with the Sage census.
+
+**Choosing a unit basis by its proved cost.** `ε'₁ = ε₁^{U₁₁} ε₂^{U₂₁}`,
+`ε'₂ = ε₁^{U₁₂} ε₂^{U₂₂}` with `det U = ±1` generates the same group. `best_basis` searches
+`|Uᵢⱼ| ≤ 2` and minimizes the enumeration Lean actually runs.
+
+| order | box, given basis | best box (`U`) | slab, given basis | slab, box-optimal basis |
+|---|---|---|---|---|
+| 9612 (`D = 89`) | 2,548,975 | 1,042,671 (`[[−1, −1], [0, 1]]`) | 33,217 points | 123,553 points |
+| 19440 (`D = 45`) | 117,215 | 117,215 | 7,629 points | — |
+
+- Minimizing the box alone would choose a basis whose slab is 3.7 times larger. With the slab,
+  the given basis is already optimal in this range. The cost function prices the check Lean runs,
+  not the bounding box.
+- When a different basis wins, the generator adopts it and emits the identities `basis_e1`,
+  `basis_e2` (`ε'ᵢ` as products of powers of the units found), checked by the kernel.
+- The slab also replaced the box for `D = 45`: the module checks in 75 s instead of 229 s.
+
 **The layers** (`python/make_lean_curves.py`). A curve is assembled from three separately checked
 layers:
 
@@ -418,18 +453,38 @@ exactly the set of sources that its classes' descents reach.
 
 **Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
 derived from the registered Lean theorems. The raw workload receipts are unchanged.
-- Classes: 15 locally discharged, 17 conditionally complete, 47 unresolved, out of 79.
-- Unit equations: 6 of 109 registered. These are the five curve sources and the `D = 72` residual
-  `H = ±1` (`D72Unit.class_pos`, `class_neg`).
-- 103 are unregistered. That count includes leaves of classes already complete by another route
+- Classes: 15 locally discharged, 19 conditionally complete, 45 unresolved, out of 79.
+- Unit equations: 8 of 109 registered. These are the seven curve sources and the `D = 72`
+  residual `H = ±1` (`D72Unit.class_pos`, `class_neg`).
+- 101 are unregistered. That count includes leaves of classes already complete by another route
   (field 756, `D = 72`).
 - The workload that still blocks a class is
-  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **90** unit equations. Of these, 72 block
-  one class, 6 block two, 10 block three and 2 block four (`needed_by_class_count`).
-- Curves conditionally complete: `D = 7, 18, 23, 28, 45, 63`.
-- `curves_unresolved_workload` orders the 17 unresolved curves by the unit equations they still
-  need. The cheapest is `D = 89` (classes 68, 69): two equations, `(−1, −18, 267, 534)` and
-  `(−1, −3, 12, 2)`.
+  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **88** unit equations. Of these, 71 block
+  one class, 5 block two, 10 block three and 2 block four (`needed_by_class_count`).
+- Curves conditionally complete: `D = 7, 18, 23, 28, 45, 63, 89`.
+- `curves_unresolved_workload` orders the 16 unresolved curves by the number of unit equations
+  they still need.
+
+**Cost before proof** (`python/order_cost.py`, `receipts/order_cost.json`). The number of
+equations is a poor proxy, because one order with a large unit box can outweigh several cheap
+ones. For each unresolved curve the receipt estimates
+
+`C(D) = Σ_{new orders R} C_UnitGen(R) + Σ_{j ∈ J_D} C_source(j) + C_assembly(D)`:
+
+- **Orders.** Each needed equation's order is computed and reduced by scaling (`x = kθ`). Equations
+  in the same order share one unit proof: 88 equations need 32 orders.
+- **C_UnitGen.** Units come from quotients of small elements of equal norm (no PARI). The basis is
+  chosen by `best_basis`, and the cost is that of the cheaper of the box and the slab.
+- **C_source.** For monic sources, the reduced bound `(2B + 1)²` plus the reduction steps.
+  Nonmonic sources need a residue norm-representative certificate first, and are left unpriced.
+- **C_assembly.** The descent nodes.
+- **Results.** 27 orders are priced. Five are unpriced because their units were not found:
+  discriminants of `x³ − 30x − 16`, `x³ − 39x − 2`, `x³ − 42x − 74`, `x³ − 48x − 30` and
+  `x³ − 195x − 830`.
+- **Ranking.** Fully priced curves, cheapest first: `D = 39` (about 1,900, two new orders), `D = 60`
+  (about 4,000, one new order serving its three sources), `D = 47` (about 5,700) and `D = 95`
+  (about 24,000). The other twelve curves contain a nonmonic source or an unpriced order.
+- These are estimates of kernel work, not proofs.
 
 ### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)
 

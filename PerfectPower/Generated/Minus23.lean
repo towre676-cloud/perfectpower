@@ -44,7 +44,7 @@ theorem e2_inv : mul 6 3 e2 e2i = (1, 0, 0) := by decide
 /-- The unit-generation statement for `ℤ[x]`, `x³ = 6x + 3`. -/
 def unitGen : Prop := UnitPremises.UnitGen 6 3 e1 e1i e2 e2i
 
-/-- The unit-generation certificate: root brackets, log witnesses, the bounds `Uᵢ`, the box `7, 2, 2` and its 8 units as `±ε₁^x ε₂^y`. -/
+/-- The unit-generation certificate: root brackets, log witnesses, the bounds `Uᵢ`, the box `7, 2, 2` and the 8 units its enumeration meets, as `±ε₁^x ε₂^y`. -/
 def ugCert : UnitGenProof.UGCert :=
   { lo1 := ((-147410334485 : ℚ) / 68719476736),
     hi1 := ((-36852583621 : ℚ) / 17179869184),

@@ -17,7 +17,7 @@ A unit equation is `REGISTERED` when a Lean source theorem (`class_<name>` of a 
 certificate, or `D72Unit.class_pos` / `class_neg` for the `D = 72` residual) proves its complete
 list; the match is by GL₂(ℤ)-canonical form.  Curves are
 `CONDITIONALLY_COMPLETE` when a Lean curve theorem exists (`minus7`, `minus28`, `minus63`,
-`minus18`, `minus23`, `minus45`).
+`minus18`, `minus23`, `minus45`, `minus89`).
 
 `unit_equations_unregistered` counts every unit equation without a source theorem, including the
 leaves of classes already complete by another route.  The workload worth minimizing is

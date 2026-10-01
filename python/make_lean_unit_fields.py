@@ -183,8 +183,36 @@ def _encl(g, lo, hi):
     return v - rad, v + rad
 
 
-def ug_cert(P, Q, e1, e2, bits=30, n=64, sbits=24):
-    """The unit-generation certificate checked by `UnitGenProof.ugCheck` (same definitions)."""
+def ug_cert(P, Q, e1, e2, bits=30, n=64, sbits=24, slab=False):
+    """The unit-generation certificate checked by `UnitGenProof.ugCheck` (same definitions); with
+    `slab`, its unit list covers the slab (`unitSlabSlice`) instead of the box."""
+    c = ug_bounds(P, Q, e1, e2, bits, n, sbits)
+    ba, bb, bc = c['ba'], c['bb'], c['bc']
+    e1i, e2i = inverse(P, Q, e1), inverse(P, Q, e2)
+
+    def zp(e, ei, k):
+        return pw(P, Q, e, k) if k >= 0 else pw(P, Q, ei, -k)
+    rep = {}
+    for k in range(0, 13):
+        for x in range(-k, k + 1):
+            for y in range(-k, k + 1):
+                g = mul(P, Q, zp(e1, e1i, x), zp(e2, e2i, y))
+                for sg in (1, -1):
+                    h = tuple(sg * c for c in g)
+                    if h not in rep:
+                        rep[h] = (sg, x, y)
+    reps = []
+    pts = slab_points(c) if slab else ((A, B, Cc) for A in range(-ba, ba + 1)
+                                       for B in range(-bb, bb + 1) for Cc in range(-bc, bc + 1))
+    for g in pts:
+        if abs(nrm(P, Q, g)) == 1:
+            assert g in rep, f'unit {g} has no small representation'
+            reps.append(rep[g])
+    return dict(c, reps=reps)
+
+
+def ug_bounds(P, Q, e1, e2, bits=30, n=64, sbits=24):
+    """The certificate of `ug_cert` without its unit list: brackets, witnesses, `Uᵢ` and the box."""
     import math
     R = 1 + abs(P) + abs(Q)
     grid = [Fraction(i, 64) for i in range(-64 * R, 64 * R + 1)]
@@ -244,29 +272,164 @@ def ug_cert(P, Q, e1, e2, bits=30, n=64, sbits=24):
     bB = sum(S[i] * U[i] / G[i] for i in range(3))
     aB = sum(T[i] * U[i] / G[i] for i in range(3))
     bc, bb, ba = int(cB), int(bB), int(aB)        # floor: B < b + 1
-    e1i, e2i = inverse(P, Q, e1), inverse(P, Q, e2)
-
-    def zp(e, ei, k):
-        return pw(P, Q, e, k) if k >= 0 else pw(P, Q, ei, -k)
-    rep = {}
-    for k in range(0, 13):
-        for x in range(-k, k + 1):
-            for y in range(-k, k + 1):
-                g = mul(P, Q, zp(e1, e1i, x), zp(e2, e2i, y))
-                for sg in (1, -1):
-                    h = tuple(sg * c for c in g)
-                    if h not in rep:
-                        rep[h] = (sg, x, y)
-    reps = []
-    for A in range(-ba, ba + 1):
-        for B in range(-bb, bb + 1):
-            for Cc in range(-bc, bc + 1):
-                if abs(nrm(P, Q, (A, B, Cc))) == 1:
-                    assert (A, B, Cc) in rep, f'unit {(A, B, Cc)} has no small representation'
-                    reps.append(rep[(A, B, Cc)])
     return {'lo1': lo1, 'hi1': hi1, 'lo2': lo2, 'hi2': hi2, 'lo3': lo3, 'hi3': hi3, 'n': n,
             's11': s11, 'S11': S11, 's21': s21, 'S21': S21, 's12': s12, 'S12': S12, 's22': s22, 'S22': S22,
-            'U1': U[0], 'U2': U[1], 'U3': U[2], 'ba': ba, 'bb': bb, 'bc': bc, 'reps': reps}
+            'U1': U[0], 'U2': U[1], 'U3': U[2], 'ba': ba, 'bb': bb, 'bc': bc}
+
+
+def _ceil(x):
+    return -((-x.numerator) // x.denominator)
+
+
+def _floor(x):
+    return x.numerator // x.denominator
+
+
+def _aint(c, b, cc):
+    """`UnitGenProof.slabLo`, `slabHi` (same definitions): the first coordinates allowed at `(b, cc)`."""
+    los, his = [], []
+    for i in (1, 2, 3):
+        lo, hi, U = c[f'lo{i}'], c[f'hi{i}'], c[f'U{i}']
+        g = (0, b, cc)
+        sq = _sigq(lo, g)
+        rad = (hi - lo) * (abs(b) + 2 * abs(cc) * max(abs(lo), abs(hi)))
+        los.append(-U - sq - rad)
+        his.append(U - sq + rad)
+    return _ceil(max(los)), _floor(min(his))
+
+
+def slab_points(c):
+    """The triples `unitSlabSlice` enumerates, in its order."""
+    for j in range(2 * c['bb'] + 1):
+        for k in range(2 * c['bc'] + 1):
+            b, cc = j - c['bb'], k - c['bc']
+            l, h = _aint(c, b, cc)
+            for a in range(l, h + 1):
+                yield (a, b, cc)
+
+
+def slab_cost(c, row_weight=3, exact=True):
+    """Kernel work of the slab check: the lattice points plus `row_weight` per `(B, C)` row.
+    `exact=False` estimates the intervals in floating point (for searching; the winner is recounted)."""
+    import math as _m
+    rows = (2 * c['bb'] + 1) * (2 * c['bc'] + 1)
+    pts = 0
+    if not exact:
+        th = [float((c[f'lo{i}'] + c[f'hi{i}']) / 2) for i in (1, 2, 3)]
+        U = [float(c[f'U{i}']) for i in (1, 2, 3)]
+    for j in range(2 * c['bb'] + 1):
+        for k in range(2 * c['bc'] + 1):
+            b, cc = j - c['bb'], k - c['bc']
+            if exact:
+                l, h = _aint(c, b, cc)
+            else:
+                l = _m.ceil(max(-U[i] - b * th[i] - cc * th[i] ** 2 for i in range(3)))
+                h = _m.floor(min(U[i] - b * th[i] - cc * th[i] ** 2 for i in range(3)))
+            pts += max(0, h - l + 1)
+    return pts + row_weight * rows, pts, rows
+
+
+def box_size(c):
+    return (2 * c['ba'] + 1) * (2 * c['bb'] + 1) * (2 * c['bc'] + 1)
+
+
+def _zp(P, Q, e, k):
+    return pw(P, Q, e, k) if k >= 0 else pw(P, Q, inverse(P, Q, e), -k)
+
+
+def best_basis(P, Q, e1, e2, K=2):
+    """Over `U ∈ GL₂(ℤ)` with entries in `[-K, K]`, the basis `ε'₁ = ε₁^{U₁₁} ε₂^{U₂₁}`,
+    `ε'₂ = ε₁^{U₁₂} ε₂^{U₂₂}` (same group, `det U = ±1`) whose proved enumeration is cheapest:
+    the slab cost when the box is large, the box size otherwise."""
+    import itertools
+    best = None
+    mats = [m for m in itertools.product(range(-K, K + 1), repeat=4) if m[0] * m[3] - m[1] * m[2] in (1, -1)]
+    mats.sort(key=lambda m: sum(map(abs, m)))     # the identity first, so the pruning bites early
+    for a, b, cc, d in mats:
+        f1 = mul(P, Q, _zp(P, Q, e1, a), _zp(P, Q, e2, cc))
+        f2 = mul(P, Q, _zp(P, Q, e1, b), _zp(P, Q, e2, d))
+        try:
+            c = ug_bounds(P, Q, f1, f2)
+        except AssertionError:
+            continue
+        bs = box_size(c)
+        rows = (2 * c['bb'] + 1) * (2 * c['bc'] + 1)
+        if best is not None and min(bs, 3 * rows) >= best[0][0]:
+            continue                      # the rows alone cost more than the best so far
+        cost = bs if bs <= 20000 else min(bs, slab_cost(c, exact=False)[0])
+        key = (cost, (a, b, cc, d) != (1, 0, 0, 1), sum(map(abs, f1 + f2)))
+        if best is None or key < best[0]:
+            best = (key, (a, b, cc, d), f1, f2, c)
+    _, U, f1, f2, c = best
+    sc = slab_cost(c)
+    bs = box_size(c)
+    return {'U': U, 'e1': f1, 'e2': f2, 'method': 'box' if bs <= 20000 or bs <= sc[0] else 'slab',
+            'cost': min(bs, sc[0]) if bs > 20000 else bs, 'box': bs, 'slab_cost': sc[0], 'slab_points': sc[1],
+            'slab_rows': sc[2], 'bounds': (c['ba'], c['bb'], c['bc'])}
+
+
+def find_units(P, Q, schedule=((12, 200), (20, 600), (30, 2000), (45, 50000))):
+    """`find_units_in` over a growing search, first success."""
+    for R, nmax in schedule:
+        u = find_units_in(P, Q, R, nmax)
+        if u:
+            return u
+    return None
+
+
+def find_units_in(P, Q, R=12, nmax=200):
+    """A pair of independent units of `ℤ[x]`, `x³ = Px + Q`, of least regulator among the quotients
+    `g h#/N(h)` of small elements of equal norm.  Not a proof: `UnitGenProof` decides whether the pair
+    generates (a missing unit makes the enumeration fail)."""
+    import itertools
+    import math as _m
+    from collections import defaultdict
+
+    def adj(g):
+        A, B, C = g
+        return ((A + P * C) ** 2 - (P * B + Q * C) * B, Q * C * C - A * B, B * B - A * C - P * C * C)
+    lim = 1 + abs(P) + abs(Q)
+    grid = [Fraction(i, 64) for i in range(-64 * lim, 64 * lim + 1)]
+    roots = []
+    for u, w in zip(grid, grid[1:]):
+        if _cub(P, Q, u) * _cub(P, Q, w) < 0:
+            u, w = float(u), float(w)
+            for _ in range(80):
+                m = (u + w) / 2
+                if (u ** 3 - P * u - Q) * (m ** 3 - P * m - Q) <= 0:
+                    w = m
+                else:
+                    u = m
+            roots.append(u)
+    assert len(roots) == 3
+
+    def logv(g):
+        return [_m.log(abs(g[0] + g[1] * r + g[2] * r * r)) for r in roots]
+    byN = defaultdict(list)
+    for g in itertools.product(range(-R, R + 1), repeat=3):
+        n = abs(nrm(P, Q, g))
+        if 0 < n <= nmax and len(byN[n]) < 400:
+            byN[n].append(g)
+    units = set()
+    for n, gs in byN.items():
+        for i, g in enumerate(gs):
+            for h in gs[i + 1:]:
+                q = mul(P, Q, g, adj(h))
+                nh = nrm(P, Q, h)
+                if all(x % nh == 0 for x in q):
+                    u = tuple(x // nh for x in q)
+                    if u not in ((1, 0, 0), (-1, 0, 0)):
+                        units.add(u)
+    us = sorted(units, key=lambda u: (sum(abs(x) for x in logv(u)), u))[:80]
+    best = None
+    for i, a in enumerate(us):
+        for b in us[i + 1:]:
+            la, lb = logv(a), logv(b)
+            d = abs(la[0] * lb[1] - la[1] * lb[0])
+            # totally real cubic regulators exceed 0.5; smaller values are dependent pairs in floating point
+            if d > 0.3 and (best is None or d < best[0] - 1e-9):
+                best = (d, a, b)
+    return (best[1], best[2], best[0]) if best else None
 
 
 def ug_lean(c):

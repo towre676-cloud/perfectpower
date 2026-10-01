@@ -243,6 +243,26 @@ Unit generation for this order is proved once, in `Order1944.lean`. The `D = 72`
 | analytic, reduction | `analytic_v1_proved`, `analytic_v2_proved` from `matveev_v1`, `matveev_v2`; `H ≤ 3` |
 | lists | `F₁ = (−1, −3, 6, 2) = 1 ⇔ (u, v) = (−1, 0)`; `F₂ = (−1, −9, 54, 54) = 1 ⇔ (u, v) = (−1, 0)` |
 
+## A slab instead of a box: `ℤ[θ]`, `θ³ = 15θ + 12` (`Generated/Minus89.lean`)
+
+| item | `ℤ[θ]`, `θ³ = 15θ + 12` (discriminant 9612) |
+|---|---|
+| units | `ε₁ = 37 + 55θ + 13θ²`, `ε₂ = −131 − 125θ + 37θ²` (regulator about 41) |
+| enumeration | box `356, 32, 27` (2,548,975 triples); slab 33,217 points in 3,575 rows, 13 slices (`unitGen_of_slab`) |
+| `φ` | `φ₁ = 1 + θ`, `φ₂ = 6 + 5θ`; norm `1` (`normRep_one`) |
+| analytic, reduction | `analytic_t1_proved`, `analytic_t2_proved` from `matveev_t1`, `matveev_t2`; `H ≤ 1` |
+| lists | `(−1, −3, 12, 2) = 1 ⇔ (u, v) = (−1, 0)`; `(−1, −18, 267, 534) = 1 ⇔ (u, v) = (−1, 0)` |
+
+**`unitGen_of_slab`** (`UnitGen.lean`). `unitGen_of_core` is the old proof with its last step
+abstracted. It takes `ugCore` (brackets, logs, determinant, `Uᵢ`, box) and a proof of `Reduced`:
+every unit `w` with `|σᵢ(w)| ≤ Uᵢ` at roots in the brackets, inside the box, is listed. Two checks
+prove `Reduced`:
+- `unitBoxB` checks every triple in the box (`unitGen_of_cert`, unchanged);
+- `unitSlabSlice` checks, for each `(B, C)`, only `A ∈ [slabLo, slabHi]`. The endpoints are the
+  ceiling and floor of `max/min_i (∓Uᵢ − σ(0, B, C) ∓ rad)`, where `σ(0, B, C)` is evaluated at the
+  bracket end and `rad` bounds its movement over the bracket (`sig_near`). `slab_mem` proves every
+  admissible `w` lies in that range.
+
 ## A nonmonic source: `ℤ[x]`, `x³ = 18x + 12` (`Generated/Minus45.lean`)
 
 `G = (−2, −6, 3, 4)` with right side `1` has leading coefficient `−2`, so its encoding has norm `4`.
@@ -250,7 +270,7 @@ Unit generation for this order is proved once, in `Order1944.lean`. The `D = 72`
 | item | `ℤ[x]`, `x³ = 18x + 12` (discriminant 19440) |
 |---|---|
 | `φ` | `2 + x` (`= −2θ`) |
-| units | `ε₁ = −7 − 3x + x²`, `ε₂ = −41 − 51x + 13x²`; box of 117,215 triples, 33 slices (`unitGen_of_slices`) |
+| units | `ε₁ = −7 − 3x + x²`, `ε₂ = −41 − 51x + 13x²`; box of 117,215 triples, now enumerated as a slab of 7,629 points in 4 slices (`unitGen_of_slab`) |
 | norm representatives | norm `4`: every residue class mod `8` with norm `≡ 4` is divisible by `4 + x` (`normRep_of_res`) |
 | analytic, reduction | `analytic_w1_proved` from `matveev_w1`; `H ≤ 3` |
 | list | `G = 1 ⇔ (u, v) = (−1, −1)` |

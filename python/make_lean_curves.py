@@ -42,6 +42,10 @@ CURVES = {
     45: {'name': 'Minus45', 'P': 18, 'Q': 12, 'disc': 19440, 'units': [(-7, -3, 1), (-41, -51, 13)],
          'sources': [{'name': 'w1', 'form': (-2, -6, 3, 4), 'phi': (2, 1, 0),
                       'normrep': ('res', (4, 1, 0), 8)}]},
+    # both sources in one order: the second one's x is 5θ (P = 375 = 5²·15, Q = 1500 = 5³·12)
+    89: {'name': 'Minus89', 'P': 15, 'Q': 12, 'disc': 9612, 'units': [(37, 55, 13), (-131, -125, 37)],
+         'sources': [{'name': 't1', 'form': (-1, -3, 12, 2), 'phi': (1, 1, 0), 'normrep': ('one',)},
+                     {'name': 't2', 'form': (-1, -18, 267, 534), 'phi': (6, 5, 0), 'normrep': ('one',)}]},
     # the order of the D = 72 residual: unit generation is imported, not re-checked
     18: {'name': 'Minus18', 'P': 9, 'Q': 6, 'disc': 1944, 'units': [(-1, -3, 1), (-1, 0, 2)], 'order': 'Order1944',
          'sources': [{'name': 'v1', 'form': (-1, -3, 6, 2), 'phi': (1, 1, 0), 'normrep': ('one',)},
@@ -175,8 +179,16 @@ def z3txt(g):
 def field_layer(cfg):
     P, Q = cfg['P'], cfg['Q']
     E1, E2 = cfg['units']
+    if 'order' not in cfg and U.box_size(U.ug_bounds(P, Q, E1, E2)) > 20000:
+        # the slab regime: choose the basis by the cost of the proved enumeration
+        B1, B2, Um, choice = basis_change(cfg)
+        cfg['basis_choice'] = {k: choice[k] for k in ('U', 'cost', 'box', 'slab_points', 'slab_rows', 'bounds')}
+        if Um is not None:
+            cfg['given_units'], cfg['units'] = [E1, E2], [B1, B2]
+            cfg['basis_change'] = Um
+            E1, E2 = B1, B2
     e1i, e2i = U.inverse(P, Q, E1), U.inverse(P, Q, E2)
-    cert = U.ug_cert(P, Q, E1, E2)
+    cert = U.ug_cert(P, Q, E1, E2, slab=U.box_size(U.ug_bounds(P, Q, E1, E2)) > 20000)
     if 'order' in cfg:
         o = cfg['order']
         return (f'/-! ### Layer 1: the field certificate (`ℤ[x]`, `x³ = {P}x + {Q}`)\n\n'
@@ -190,10 +202,12 @@ def field_layer(cfg):
             f'/-- The unit-generation statement for `ℤ[x]`, `x³ = {P}x + {Q}`. -/\n'
             f'def unitGen : Prop := UnitPremises.UnitGen {P} {Q} e1 e1i e2 e2i\n\n'
             f'/-- The unit-generation certificate: root brackets, log witnesses, the bounds `Uᵢ`, the box '
-            f'`{cert["ba"]}, {cert["bb"]}, {cert["bc"]}` and its {len(cert["reps"])} units as `±ε₁^x ε₂^y`. -/\n'
+            f'`{cert["ba"]}, {cert["bb"]}, {cert["bc"]}` and the {len(cert["reps"])} units its enumeration meets, as `±ε₁^x ε₂^y`. -/\n'
             f'def ugCert : UnitGenProof.UGCert :=\n  {U.ug_lean(cert)}\n\n'
             )
     size = (2 * cert['ba'] + 1) * (2 * cert['bb'] + 1) * (2 * cert['bc'] + 1)
+    if size > 20000:
+        return slab_layer(cfg, text, cert, size, e1i, e2i)
     if size <= 20000:
         text += (f'/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_cert`). -/\n'
                  f'theorem unitGen_proved : unitGen :=\n'
@@ -215,6 +229,58 @@ def field_layer(cfg):
              f'  UnitGenProof.unitGen_of_slices {P} {Q} e1 e1i e2 e2i ugCert (w := {w}) (n := {n}) ugCore_ok\n'
              f'    (by norm_num) (by decide)\n'
              f'    (fun (t : ℕ) (ht : t < {n}) => by\n      interval_cases t\n      exacts [{", ".join(f"ugSlice_{t}" for t in range(n))}])\n')
+    return text, e1i, e2i, cert
+
+
+def basis_change(cfg):
+    """The unit basis with the cheapest proved enumeration (`best_basis`), and the identities that
+    express it in the given one: `ε'₁ = ε₁^a ε₂^c`, `ε'₂ = ε₁^b ε₂^d`, `ad − bc = ±1`."""
+    P, Q = cfg['P'], cfg['Q']
+    E1, E2 = cfg['units']
+    b = U.best_basis(P, Q, E1, E2)
+    if b['U'] == (1, 0, 0, 1):
+        return E1, E2, None, b
+    return b['e1'], b['e2'], b['U'], b
+
+
+def slab_layer(cfg, text, cert, size, e1i, e2i):
+    """A large box: enumerate only the slab (`UnitGenProof.unitGen_of_slab`), in slices of the
+    second coordinate, each a separate kernel evaluation."""
+    P, Q = cfg['P'], cfg['Q']
+    cost, pts, rows = U.slab_cost(cert)
+    nb = 2 * cert['bb'] + 1
+    n = max(1, -(-cost // 3000))
+    w = -(-nb // n)
+    n = -(-nb // w)
+    text += (f'/-- The certificate without the enumeration (`UnitGenProof.ugCore`). -/\n'
+             f'theorem ugCore_ok : UnitGenProof.ugCore {P} {Q} e1 e1i e2 e2i ugCert = true := by decide +kernel\n\n'
+             f'/-- The {len(cert["reps"])} units of the slab. -/\n'
+             f'def ugCands : List Z3 := ugCert.reps.map (UnitGenProof.evalRep {P} {Q} e1 e1i e2 e2i)\n\n')
+    for t in range(n):
+        text += (f'theorem ugSlab_{t} : UnitGenProof.unitSlabSlice {P} {Q} ugCert ugCands {w} {t} = true := '
+                 f'by decide +kernel\n')
+    text += (f'\n/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_slab`): the box of {size} triples '
+             f'is the bounding box of a slab of {pts} lattice points in {rows} rows `(B, C)`, checked in {n} '
+             f'slices of {w} values of `B`. -/\n'
+             f'theorem unitGen_proved : unitGen :=\n'
+             f'  UnitGenProof.unitGen_of_slab {P} {Q} e1 e1i e2 e2i ugCert (w := {w}) (n := {n}) ugCore_ok\n'
+             f'    (by norm_num) (by decide)\n'
+             f'    (fun (t : ℕ) (ht : t < {n}) => by\n      interval_cases t\n      exacts [{", ".join(f"ugSlab_{t}" for t in range(n))}])\n')
+    if 'basis_change' in cfg:
+        a, b, c, d = cfg['basis_change']
+        G1, G2 = cfg['given_units']
+        g1i, g2i = U.inverse(P, Q, G1), U.inverse(P, Q, G2)
+        text += (f'\n/-- The units found, `{z3txt(G1)}` and `{z3txt(G2)}`; the basis above is chosen by the cost of '
+                 f'its enumeration (`UnitGenProof.unitGen_of_slab`), and generates the same group: '
+                 f'`U = [[{a}, {b}], [{c}, {d}]]`, `det U = {a * d - b * c}`. -/\n'
+                 f'def g1 : Z3 := {U.z3_lean(G1)}\n/-- The second unit found. -/\ndef g2 : Z3 := {U.z3_lean(G2)}\n'
+                 f'theorem basis_e1 : mul {P} {Q} (UnitPremises.zp {P} {Q} g1 {U.z3_lean(g1i)} {U._i(a)}) '
+                 f'(UnitPremises.zp {P} {Q} g2 {U.z3_lean(g2i)} {U._i(c)}) = e1 := by decide +kernel\n'
+                 f'theorem basis_e2 : mul {P} {Q} (UnitPremises.zp {P} {Q} g1 {U.z3_lean(g1i)} {U._i(b)}) '
+                 f'(UnitPremises.zp {P} {Q} g2 {U.z3_lean(g2i)} {U._i(d)}) = e2 := by decide +kernel\n')
+    cert['slab'] = {'points': pts, 'rows': rows, 'slices': n, 'width': w, 'box': size}
+    if 'basis_choice' in cfg:
+        cert['slab']['basis_choice'] = cfg['basis_choice']
     return text, e1i, e2i, cert
 
 
@@ -272,9 +338,11 @@ def build(D):
     # the kernel evaluations are large; check them one at a time to bound memory
     out.append('set_option Elab.async false\n')
     pre, e1i, e2i, ugc = field_layer(cfg)
+    E1, E2 = cfg['units']            # the basis may have been changed by its enumeration cost
     out.append(pre)
     report = {'curve': D, 'field': {'P': P, 'Q': Q, 'disc': cfg['disc'], 'units': [E1, E2],
-                                    'unit_box': [ugc['ba'], ugc['bb'], ugc['bc']], 'units_in_box': len(ugc['reps'])},
+                                    'unit_box': [ugc['ba'], ugc['bb'], ugc['bc']], 'units_in_box': len(ugc['reps']),
+                                    **({'slab': ugc['slab']} if 'slab' in ugc else {})},
               'sources': [], 'classes': []}
     out.append('/-! ### Layer 2: the source equations -/\n')
     sources = []

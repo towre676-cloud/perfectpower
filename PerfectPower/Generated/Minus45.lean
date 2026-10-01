@@ -44,7 +44,7 @@ theorem e2_inv : mul 18 12 e2 e2i = (1, 0, 0) := by decide
 /-- The unit-generation statement for `ℤ[x]`, `x³ = 18x + 12`. -/
 def unitGen : Prop := UnitPremises.UnitGen 18 12 e1 e1i e2 e2i
 
-/-- The unit-generation certificate: root brackets, log witnesses, the bounds `Uᵢ`, the box `98, 17, 8` and its 6 units as `±ε₁^x ε₂^y`. -/
+/-- The unit-generation certificate: root brackets, log witnesses, the bounds `Uᵢ`, the box `98, 17, 8` and the 4 units its enumeration meets, as `±ε₁^x ε₂^y`. -/
 def ugCert : UnitGenProof.UGCert :=
   { lo1 := ((-132586799151 : ℚ) / 34359738368),
     hi1 := ((-265173598301 : ℚ) / 68719476736),
@@ -67,88 +67,26 @@ def ugCert : UnitGenProof.UGCert :=
     ba := 98,
     bb := 17,
     bc := 8,
-    reps := [(1, 1, 0), ((-1), (-1), 0), ((-1), 0, 0), (1, 0, 0), (1, (-1), 0), ((-1), 1, 0)] }
+    reps := [(1, 1, 0), ((-1), 0, 0), (1, 0, 0), ((-1), 1, 0)] }
 
-/-- The certificate without the box enumeration (`UnitGenProof.ugCore`). -/
+/-- The certificate without the enumeration (`UnitGenProof.ugCore`). -/
 theorem ugCore_ok : UnitGenProof.ugCore 18 12 e1 e1i e2 e2i ugCert = true := by decide +kernel
 
-/-- The 6 units of the box. -/
+/-- The 4 units of the slab. -/
 def ugCands : List Z3 := ugCert.reps.map (UnitGenProof.evalRep 18 12 e1 e1i e2 e2i)
 
-theorem ugSlice_0 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 0 = true := by decide +kernel
-theorem ugSlice_1 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 1 = true := by decide +kernel
-theorem ugSlice_2 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 2 = true := by decide +kernel
-theorem ugSlice_3 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 3 = true := by decide +kernel
-theorem ugSlice_4 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 4 = true := by decide +kernel
-theorem ugSlice_5 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 5 = true := by decide +kernel
-theorem ugSlice_6 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 6 = true := by decide +kernel
-theorem ugSlice_7 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 7 = true := by decide +kernel
-theorem ugSlice_8 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 8 = true := by decide +kernel
-theorem ugSlice_9 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 9 = true := by decide +kernel
-theorem ugSlice_10 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 10 = true := by decide +kernel
-theorem ugSlice_11 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 11 = true := by decide +kernel
-theorem ugSlice_12 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 12 = true := by decide +kernel
-theorem ugSlice_13 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 13 = true := by decide +kernel
-theorem ugSlice_14 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 14 = true := by decide +kernel
-theorem ugSlice_15 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 15 = true := by decide +kernel
-theorem ugSlice_16 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 16 = true := by decide +kernel
-theorem ugSlice_17 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 17 = true := by decide +kernel
-theorem ugSlice_18 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 18 = true := by decide +kernel
-theorem ugSlice_19 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 19 = true := by decide +kernel
-theorem ugSlice_20 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 20 = true := by decide +kernel
-theorem ugSlice_21 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 21 = true := by decide +kernel
-theorem ugSlice_22 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 22 = true := by decide +kernel
-theorem ugSlice_23 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 23 = true := by decide +kernel
-theorem ugSlice_24 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 24 = true := by decide +kernel
-theorem ugSlice_25 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 25 = true := by decide +kernel
-theorem ugSlice_26 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 26 = true := by decide +kernel
-theorem ugSlice_27 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 27 = true := by decide +kernel
-theorem ugSlice_28 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 28 = true := by decide +kernel
-theorem ugSlice_29 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 29 = true := by decide +kernel
-theorem ugSlice_30 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 30 = true := by decide +kernel
-theorem ugSlice_31 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 31 = true := by decide +kernel
-theorem ugSlice_32 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 32 = true := by decide +kernel
-theorem ugSlice_33 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 33 = true := by decide +kernel
-theorem ugSlice_34 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 34 = true := by decide +kernel
-theorem ugSlice_35 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 35 = true := by decide +kernel
-theorem ugSlice_36 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 36 = true := by decide +kernel
-theorem ugSlice_37 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 37 = true := by decide +kernel
-theorem ugSlice_38 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 38 = true := by decide +kernel
-theorem ugSlice_39 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 39 = true := by decide +kernel
-theorem ugSlice_40 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 40 = true := by decide +kernel
-theorem ugSlice_41 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 41 = true := by decide +kernel
-theorem ugSlice_42 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 42 = true := by decide +kernel
-theorem ugSlice_43 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 43 = true := by decide +kernel
-theorem ugSlice_44 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 44 = true := by decide +kernel
-theorem ugSlice_45 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 45 = true := by decide +kernel
-theorem ugSlice_46 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 46 = true := by decide +kernel
-theorem ugSlice_47 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 47 = true := by decide +kernel
-theorem ugSlice_48 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 48 = true := by decide +kernel
-theorem ugSlice_49 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 49 = true := by decide +kernel
-theorem ugSlice_50 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 50 = true := by decide +kernel
-theorem ugSlice_51 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 51 = true := by decide +kernel
-theorem ugSlice_52 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 52 = true := by decide +kernel
-theorem ugSlice_53 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 53 = true := by decide +kernel
-theorem ugSlice_54 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 54 = true := by decide +kernel
-theorem ugSlice_55 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 55 = true := by decide +kernel
-theorem ugSlice_56 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 56 = true := by decide +kernel
-theorem ugSlice_57 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 57 = true := by decide +kernel
-theorem ugSlice_58 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 58 = true := by decide +kernel
-theorem ugSlice_59 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 59 = true := by decide +kernel
-theorem ugSlice_60 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 60 = true := by decide +kernel
-theorem ugSlice_61 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 61 = true := by decide +kernel
-theorem ugSlice_62 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 62 = true := by decide +kernel
-theorem ugSlice_63 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 63 = true := by decide +kernel
-theorem ugSlice_64 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 64 = true := by decide +kernel
-theorem ugSlice_65 : UnitGenProof.unitBoxSlice 18 12 98 17 8 ugCands 3 65 = true := by decide +kernel
+theorem ugSlab_0 : UnitGenProof.unitSlabSlice 18 12 ugCert ugCands 9 0 = true := by decide +kernel
+theorem ugSlab_1 : UnitGenProof.unitSlabSlice 18 12 ugCert ugCands 9 1 = true := by decide +kernel
+theorem ugSlab_2 : UnitGenProof.unitSlabSlice 18 12 ugCert ugCands 9 2 = true := by decide +kernel
+theorem ugSlab_3 : UnitGenProof.unitSlabSlice 18 12 ugCert ugCands 9 3 = true := by decide +kernel
 
-/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_slices`: the box of 117215 triples in 66 slices of width 3). -/
+/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_slab`): the box of 117215 triples is the bounding box of a slab of 7629 lattice points in 595 rows `(B, C)`, checked in 4 slices of 9 values of `B`. -/
 theorem unitGen_proved : unitGen :=
-  UnitGenProof.unitGen_of_slices 18 12 e1 e1i e2 e2i ugCert (w := 3) (n := 66) ugCore_ok
+  UnitGenProof.unitGen_of_slab 18 12 e1 e1i e2 e2i ugCert (w := 9) (n := 4) ugCore_ok
     (by norm_num) (by decide)
-    (fun (t : ℕ) (ht : t < 66) => by
+    (fun (t : ℕ) (ht : t < 4) => by
       interval_cases t
-      exacts [ugSlice_0, ugSlice_1, ugSlice_2, ugSlice_3, ugSlice_4, ugSlice_5, ugSlice_6, ugSlice_7, ugSlice_8, ugSlice_9, ugSlice_10, ugSlice_11, ugSlice_12, ugSlice_13, ugSlice_14, ugSlice_15, ugSlice_16, ugSlice_17, ugSlice_18, ugSlice_19, ugSlice_20, ugSlice_21, ugSlice_22, ugSlice_23, ugSlice_24, ugSlice_25, ugSlice_26, ugSlice_27, ugSlice_28, ugSlice_29, ugSlice_30, ugSlice_31, ugSlice_32, ugSlice_33, ugSlice_34, ugSlice_35, ugSlice_36, ugSlice_37, ugSlice_38, ugSlice_39, ugSlice_40, ugSlice_41, ugSlice_42, ugSlice_43, ugSlice_44, ugSlice_45, ugSlice_46, ugSlice_47, ugSlice_48, ugSlice_49, ugSlice_50, ugSlice_51, ugSlice_52, ugSlice_53, ugSlice_54, ugSlice_55, ugSlice_56, ugSlice_57, ugSlice_58, ugSlice_59, ugSlice_60, ugSlice_61, ugSlice_62, ugSlice_63, ugSlice_64, ugSlice_65])
+      exacts [ugSlab_0, ugSlab_1, ugSlab_2, ugSlab_3])
 
 /-! ### Layer 2: the source equations -/
 

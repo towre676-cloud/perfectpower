@@ -3,7 +3,7 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing why3-bridge
+.PHONY: verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing why3-bridge order-cost
 
 verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
@@ -68,6 +68,11 @@ receipts:
 	$(PY) python/make_oeis_auto.py
 	$(PY) python/make_oeis_atlas.py
 	$(PY) python/make_mordell_obstructions.py
+
+# Estimated kernel cost of the unresolved curves (receipts/order_cost.json; an estimate, not a proof;
+# about five minutes, so not part of verify)
+order-cost:
+	$(PY) python/order_cost.py
 
 counts: audit
 	$(PY) python/make_counts.py

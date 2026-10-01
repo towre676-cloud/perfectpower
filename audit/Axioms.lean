@@ -824,6 +824,12 @@ open PerfectPower
 -- UnitGen
 #print axioms PerfectPower.UnitGenProof.unitBoxB_of_slices
 #print axioms PerfectPower.UnitGenProof.unitGen_of_slices
+#print axioms PerfectPower.UnitGenProof.sig_near
+#print axioms PerfectPower.UnitGenProof.unitGen_of_core
+#print axioms PerfectPower.UnitGenProof.a_mem
+#print axioms PerfectPower.UnitGenProof.slab_mem
+#print axioms PerfectPower.UnitGenProof.reduced_of_slab
+#print axioms PerfectPower.UnitGenProof.unitGen_of_slab
 #print axioms PerfectPower.UnitGenProof.sig_mul
 #print axioms PerfectPower.UnitGenProof.sig_one
 #print axioms PerfectPower.UnitGenProof.sig_neg
@@ -945,6 +951,27 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Minus18.class_6
 #print axioms PerfectPower.Generated.Minus18.class_7
 #print axioms PerfectPower.Generated.Minus18.minus18
+#print axioms PerfectPower.Generated.Minus89.e1_inv
+#print axioms PerfectPower.Generated.Minus89.e2_inv
+#print axioms PerfectPower.Generated.Minus89.ugCore_ok
+#print axioms PerfectPower.Generated.Minus89.unitGen_proved
+#print axioms PerfectPower.Generated.Minus89.normRep_t1_proved
+#print axioms PerfectPower.Generated.Minus89.normRep_t2_proved
+#print axioms PerfectPower.Generated.Minus89.analytic_t1_proved
+#print axioms PerfectPower.Generated.Minus89.analytic_t2_proved
+#print axioms PerfectPower.Generated.Minus89.forged_rejected_t1
+#print axioms PerfectPower.Generated.Minus89.forged_rejected_t2
+#print axioms PerfectPower.Generated.Minus89.class_t1
+#print axioms PerfectPower.Generated.Minus89.class_t2
+#print axioms PerfectPower.Generated.Minus89.src_t1_complete
+#print axioms PerfectPower.Generated.Minus89.src_t1_t2_complete
+#print axioms PerfectPower.Generated.Minus89.desc_68
+#print axioms PerfectPower.Generated.Minus89.desc_69
+#print axioms PerfectPower.Generated.Minus89.root_68
+#print axioms PerfectPower.Generated.Minus89.root_69
+#print axioms PerfectPower.Generated.Minus89.class_68
+#print axioms PerfectPower.Generated.Minus89.class_69
+#print axioms PerfectPower.Generated.Minus89.minus89
 -- AbelianTransforms
 #print axioms PerfectPower.AbelianTransforms.integral_term
 #print axioms PerfectPower.AbelianTransforms.summable_exp

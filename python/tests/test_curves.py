@@ -1,4 +1,4 @@
-"""The layered curve pipeline (`python/make_lean_curves.py`): D = 18, D = 23 and D = 45."""
+"""The layered curve pipeline (`python/make_lean_curves.py`): D = 18, 23, 45 and 89."""
 import itertools
 import json
 import sys
@@ -83,6 +83,42 @@ class TestCurves(unittest.TestCase):
         self.assertEqual(sorted(map(tuple, rec(23)['curve_points'])), [(3, -2), (3, 2)])
         self.assertEqual(sorted(map(tuple, rec(45)['curve_points'])), [(21, -96), (21, 96)])
         self.assertEqual(sorted(map(tuple, rec(18)['curve_points'])), [(3, -3), (3, 3)])
+        self.assertEqual(sorted(map(tuple, rec(89)['curve_points'])), [(5, -6), (5, 6)])
+
+    def test_slab_covers_reduced_units(self):
+        # every box triple within the embedding bounds Uᵢ lies in the slab that Lean enumerates
+        for P, Q, e1, e2 in ((18, 12, (-7, -3, 1), (-41, -51, 13)), (9, 6, (-1, -3, 1), (-1, 0, 2))):
+            c = U.ug_bounds(P, Q, e1, e2)
+            slab = set(U.slab_points(c))
+            th = [float((c[f'lo{i}'] + c[f'hi{i}']) / 2) for i in (1, 2, 3)]
+            for a in range(-c['ba'], c['ba'] + 1):
+                for b in range(-c['bb'], c['bb'] + 1):
+                    for cc in range(-c['bc'], c['bc'] + 1):
+                        if all(abs(a + b * t + cc * t * t) <= float(c[f'U{i + 1}']) - 1e-6 for i, t in enumerate(th)):
+                            self.assertIn((a, b, cc), slab)
+            self.assertLess(len(slab), U.box_size(c))
+            # the units of the box that the slab omits are not reduced, so Lean never needs them
+            cost, pts, rows = U.slab_cost(c)
+            self.assertEqual(pts, len(slab))
+
+    def test_best_basis_undoes_a_skewed_basis(self):
+        # give D = 89's units as (ε₁, ε₁ε₂): the search recovers a basis of the original cost
+        P, Q = 15, 12
+        e1, e2 = (37, 55, 13), (-131, -125, 37)
+        skew = U.mul(P, Q, e1, e2)
+        base = U.best_basis(P, Q, e1, e2, K=1)
+        b = U.best_basis(P, Q, e1, skew, K=1)
+        a, bb, c, d = b['U']
+        self.assertIn(a * d - bb * c, (1, -1))
+        self.assertLessEqual(b['cost'], base['cost'])
+        self.assertEqual(U.mul(P, Q, U._zp(P, Q, e1, a), U._zp(P, Q, skew, c)), b['e1'])
+
+    def test_order_scaling(self):
+        # D = 89: the second source's x is 5θ, so both live in ℤ[θ], θ³ = 15θ + 12
+        import order_cost as OC
+        self.assertEqual(OC.order_of((-1, -3, 12, 2))[:3], (15, 12, 1))
+        self.assertEqual(OC.order_of((-1, -18, 267, 534))[:3], (15, 12, 5))
+        self.assertEqual(tuple(OC.order_of((-1, -18, 267, 534))[3]), tuple(C.CURVES[89]['sources'][1]['phi']))
 
     def test_shared_order(self):
         # D = 18 imports the unit generation of the D = 72 order instead of re-checking it
@@ -116,7 +152,7 @@ class TestCurves(unittest.TestCase):
         reg |= {tuple(TG.canonical(tuple(s * x for x in d72))[0]) for s in (1, -1)}
         self.assertEqual(cov['unit_equations_registered'],
                          sum(tuple(e['form']) in reg for e in cov['unit_equations']))
-        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 18, 23, 28, 45, 63])
+        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 18, 23, 28, 45, 63, 89])
 
     def test_needed_workload(self):
         cov = json.loads((ROOT / 'receipts' / 'descent_coverage.json').read_text())

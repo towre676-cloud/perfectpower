@@ -69,6 +69,7 @@ import PerfectPower.DescentLists
 import PerfectPower.Generated.Minus23
 import PerfectPower.Generated.Minus45
 import PerfectPower.Generated.Minus18
+import PerfectPower.Generated.Minus89
 import PerfectPower.MonomialCount
 import PerfectPower.ThueLocal
 import PerfectPower.DescentThue

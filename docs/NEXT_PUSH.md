@@ -113,12 +113,14 @@ git.
    - **Third instance:** `D = 18` (`Generated/Minus18.lean`): two monic sources in the order of
      the `D = 72` residual, whose unit generation is imported from the shared module
      `Generated/Order1944.lean`; under `matveev_v1`, `matveev_v2`.
-   - **Coverage** is derived (`receipts/descent_coverage.json`): 6 of 109 unit equations are
+   - **Fourth instance:** `D = 89` (`Generated/Minus89.lean`): two sources in one order, whose
+     2.5-million-triple unit box is checked as a 33,217-point slab (`unitGen_of_slab`).
+   - **Coverage** is derived (`receipts/descent_coverage.json`): 8 of 109 unit equations are
      registered.
-   - **Still open:** the unit equations in `U_needed`, the unregistered leaves of unresolved
-     classes: 90 of them. Each needs a Thue bound (the field pipeline, applied per order). The
-     receipt orders the unresolved curves by this workload. The next is `D = 89`, which needs
-     two equations.
+   - **Still open:** the 88 unit equations in `U_needed`. `receipts/order_cost.json` prices the
+     curves by estimated kernel work. Next: `D = 39` (two new orders), then `D = 60` (one new
+     order, three sources). Nonmonic sources need residue norm-representative searches before
+     they can be priced, and five orders need a stronger unit search.
 4. **A consumer-accepted replacement.**
    - **Target:** for one independently authored verification condition, a checked instance of
      `Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that a downstream verifier (Why3/GNATprove) accepts.

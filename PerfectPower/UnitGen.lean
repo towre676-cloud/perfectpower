@@ -372,8 +372,9 @@ lemma abs_le_max_of {x : ℝ} {lo hi : ℚ} (h1 : (lo : ℝ) ≤ x) (h2 : x ≤ 
   push_cast
   exact DirectReduction.abs_le_of_between h1 h2
 
-lemma encl_sound (g : Z3) {lo hi : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) :
-    ((pLo g lo hi : ℚ) : ℝ) ≤ |sig t g| ∧ |sig t g| ≤ ((pHi g lo hi : ℚ) : ℝ) := by
+/-- `σ` moves by at most `rad` over `[lo, hi]`. -/
+lemma sig_near (g : Z3) {lo hi : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) :
+    |sig t g - ((sigQ lo g : ℚ) : ℝ)| ≤ ((rad g lo hi : ℚ) : ℝ) := by
   have hR := abs_le_max_of h1 h2
   have hR0 : |(lo : ℝ)| ≤ ((max |lo| |hi| : ℚ) : ℝ) := by push_cast; exact le_max_left _ _
   have hd : sig t g - ((sigQ lo g : ℚ) : ℝ) = (t - lo) * (g.2.1 + g.2.2 * (t + lo)) := by
@@ -393,6 +394,11 @@ lemma encl_sound (g : Z3) {lo hi : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : 
         ≤ ((hi : ℝ) - lo) * (|(g.2.1 : ℝ)| + 2 * |(g.2.2 : ℝ)| * ((max |lo| |hi| : ℚ) : ℝ)) :=
           mul_le_mul e1 e2 (abs_nonneg _) (by linarith)
       _ = ((rad g lo hi : ℚ) : ℝ) := by simp only [rad]; push_cast; ring
+  exact hb
+
+lemma encl_sound (g : Z3) {lo hi : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) :
+    ((pLo g lo hi : ℚ) : ℝ) ≤ |sig t g| ∧ |sig t g| ≤ ((pHi g lo hi : ℚ) : ℝ) := by
+  have hb := sig_near g h1 h2
   have := abs_sub_abs_le_abs_sub (sig t g) ((sigQ lo g : ℚ) : ℝ)
   have := abs_sub_abs_le_abs_sub ((sigQ lo g : ℚ) : ℝ) (sig t g)
   rw [abs_sub_comm] at this
@@ -667,11 +673,27 @@ lemma max_le_mB {g : Z3} {lo hi : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t
     rw [one_div]
     exact inv_anti₀ hpR e1
 
-/-- **Unit generation from a checked certificate.** -/
-theorem unitGen_of_cert (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert)
-    (h : ugCheck P Q e1 e1i e2 e2i C = true) : UnitGen P Q e1 e1i e2 e2i := by
-  simp only [ugCheck, Bool.and_eq_true, decide_eq_true_eq] at h
-  obtain ⟨⟨⟨⟨⟨⟨⟨⟨⟨⟨hi1, hi2⟩, hbr⟩, hl11⟩, hl21⟩, hl12⟩, hl22⟩, hdt⟩, hub⟩, hbx⟩, hun⟩ := h
+/-- Everything in `ugCheck` except the final enumeration. -/
+def ugCore (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert) : Bool :=
+  decide (mul P Q e1 e1i = (1, 0, 0)) && decide (mul P Q e2 e2i = (1, 0, 0)) && bracketsB P Q C &&
+  logB e1 C.lo1 C.hi1 C.s11 C.S11 C.n && logB e1 C.lo2 C.hi2 C.s21 C.S21 C.n &&
+  logB e2 C.lo1 C.hi1 C.s12 C.S12 C.n && logB e2 C.lo2 C.hi2 C.s22 C.S22 C.n &&
+  detB C && uB e1 e2 C && boxB C
+
+/-- The finite step left after `ugCore`: every unit `w` with `|σᵢ w| ≤ Uᵢ` at roots in the
+brackets, and in the box, is listed.  `unitBoxB` (the box) and `unitSlabSlice` (the slab) prove it. -/
+def Reduced (P Q : ℤ) (C : UGCert) (cands : List Z3) : Prop :=
+  ∀ t1 t2 t3 : ℝ, (C.lo1 : ℝ) ≤ t1 → t1 ≤ C.hi1 → (C.lo2 : ℝ) ≤ t2 → t2 ≤ C.hi2 →
+    (C.lo3 : ℝ) ≤ t3 → t3 ≤ C.hi3 → ∀ w : Z3, (nrm P Q w = 1 ∨ nrm P Q w = -1) →
+    |sig t1 w| ≤ C.U1 → |sig t2 w| ≤ C.U2 → |sig t3 w| ≤ C.U3 →
+    |w.1| ≤ (C.ba : ℤ) → |w.2.1| ≤ (C.bb : ℤ) → |w.2.2| ≤ (C.bc : ℤ) → w ∈ cands
+
+/-- **Unit generation from the certificate core and the finite step.** -/
+theorem unitGen_of_core (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert)
+    (h : ugCore P Q e1 e1i e2 e2i C = true)
+    (hfin : Reduced P Q C (C.reps.map (evalRep P Q e1 e1i e2 e2i))) : UnitGen P Q e1 e1i e2 e2i := by
+  simp only [ugCore, Bool.and_eq_true, decide_eq_true_eq] at h
+  obtain ⟨⟨⟨⟨⟨⟨⟨⟨⟨hi1, hi2⟩, hbr⟩, hl11⟩, hl21⟩, hl12⟩, hl22⟩, hdt⟩, hub⟩, hbx⟩ := h
   simp only [bracketsB, Bool.and_eq_true, decide_eq_true_eq] at hbr
   obtain ⟨⟨⟨⟨⟨⟨⟨b1, c1⟩, b2⟩, c2⟩, b3⟩, c3⟩, o12⟩, o23⟩ := hbr
   obtain ⟨t1, a1, a1', r1⟩ := root_in P Q _ _ b1 c1
@@ -788,7 +810,7 @@ theorem unitGen_of_cert (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert)
     rcases abs_eq (zero_le_one' ℝ) |>.mp this with h | h
     · left; exact_mod_cast h
     · right; exact_mod_cast h
-  have hmem := unitBox_sound hun w wa wb wc hn
+  have hmem := hfin R.t1 R.t2 R.t3 a1 a1' a2 a2' a3 a3' w hn u1 u2 u3 wa wb wc
   obtain ⟨r, -, hr⟩ := List.mem_map.mp hmem
   -- read off the exponents
   refine ⟨r.2.1 + k1, r.2.2 + k2, ?_⟩
@@ -821,18 +843,20 @@ theorem unitGen_of_cert (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert)
       ring
     exact R.sig_inj (fin _ R.h1) (fin _ R.h2) (fin _ R.h3)
 
+/-- **Unit generation from a checked certificate** (the box enumeration). -/
+theorem unitGen_of_cert (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert)
+    (h : ugCheck P Q e1 e1i e2 e2i C = true) : UnitGen P Q e1 e1i e2 e2i := by
+  simp only [ugCheck, Bool.and_eq_true] at h
+  refine unitGen_of_core P Q e1 e1i e2 e2i C ?_ ?_
+  · simp only [ugCore, Bool.and_eq_true]; exact h.1
+  · intro _ _ _ _ _ _ _ _ _ w hn _ _ _ wa wb wc
+    exact unitBox_sound h.2 w wa wb wc hn
+
 /-! ### The certificate in slices
 
 For a large unit box the single evaluation of `unitBoxB` is too heavy for the kernel.  The same
 check is split into slices of the first coordinate, each a separate kernel evaluation:
 `ugCore` is everything except the box, and `unitBoxB_of_slices` assembles the slices. -/
-
-/-- Everything in `ugCheck` except the final box enumeration. -/
-def ugCore (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert) : Bool :=
-  decide (mul P Q e1 e1i = (1, 0, 0)) && decide (mul P Q e2 e2i = (1, 0, 0)) && bracketsB P Q C &&
-  logB e1 C.lo1 C.hi1 C.s11 C.S11 C.n && logB e1 C.lo2 C.hi2 C.s21 C.S21 C.n &&
-  logB e2 C.lo1 C.hi1 C.s12 C.S12 C.n && logB e2 C.lo2 C.hi2 C.s22 C.S22 C.n &&
-  detB C && uB e1 e2 C && boxB C
 
 /-- Slice `t` (width `w`) of the unit box: first coordinates `i ∈ [t w, t w + w)`, `i ≤ 2a`. -/
 def unitBoxSlice (P Q : ℤ) (a b c : ℕ) (cands : List Z3) (w t : ℕ) : Bool :=
@@ -869,5 +893,103 @@ theorem unitGen_of_slices (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert) {w n : �
   simp only [ugCore, Bool.and_eq_true] at hcore
   simp only [ugCheck, Bool.and_eq_true]
   exact ⟨hcore, hb⟩
+
+/-! ### The slab: enumerate only the first coordinates the embeddings allow
+
+The box `|A| ≤ ba, |B| ≤ bb, |C| ≤ bc` is the bounding box of a thin parallelepiped.  For fixed
+`(B, C)`, `|A + Bθᵢ + Cθᵢ²| ≤ Uᵢ` confines `A` to an interval of length at most `2 minᵢ Uᵢ`;
+with `θᵢ ∈ [loᵢ, hiᵢ]` the interval is enclosed by `sigQ` and `rad`.  `unitSlabSlice` checks the
+lattice points of these intervals, slice by slice in `B`. -/
+
+/-- The enclosure of the `A`-interval from one embedding: `−U − σ(0, B, C) ≤ A ≤ U − σ(0, B, C)`. -/
+def aLo (lo hi U : ℚ) (b c : ℤ) : ℚ := -U - sigQ lo (0, b, c) - rad (0, b, c) lo hi
+/-- Upper end of the same. -/
+def aHi (lo hi U : ℚ) (b c : ℤ) : ℚ := U - sigQ lo (0, b, c) + rad (0, b, c) lo hi
+
+/-- The least first coordinate allowed by all three embeddings. -/
+def slabLo (C : UGCert) (b c : ℤ) : ℤ :=
+  ⌈max (max (aLo C.lo1 C.hi1 C.U1 b c) (aLo C.lo2 C.hi2 C.U2 b c)) (aLo C.lo3 C.hi3 C.U3 b c)⌉
+/-- The greatest first coordinate allowed by all three embeddings. -/
+def slabHi (C : UGCert) (b c : ℤ) : ℤ :=
+  ⌊min (min (aHi C.lo1 C.hi1 C.U1 b c) (aHi C.lo2 C.hi2 C.U2 b c)) (aHi C.lo3 C.hi3 C.U3 b c)⌋
+
+/-- Slice `t` (width `w`) of the slab: second coordinates `j ∈ [t w, t w + w)`, `j ≤ 2 bb`; for
+each third coordinate, the first coordinates `slabLo … slabHi`. -/
+def unitSlabSlice (P Q : ℤ) (C : UGCert) (cands : List Z3) (w t : ℕ) : Bool :=
+  (List.range' (t * w) w).all fun j => !decide (j < 2 * C.bb + 1) ||
+    (List.range (2 * C.bc + 1)).all fun k =>
+      let b : ℤ := (j : ℤ) - C.bb
+      let c : ℤ := (k : ℤ) - C.bc
+      let l := slabLo C b c
+      (List.range (slabHi C b c - l + 1).toNat).all fun i =>
+        let g : Z3 := (l + i, b, c)
+        !decide (nrm P Q g = 1 ∨ nrm P Q g = -1) || decide (g ∈ cands)
+
+lemma a_mem {lo hi U : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) (w : Z3) (hw : |sig t w| ≤ U) :
+    ((aLo lo hi U w.2.1 w.2.2 : ℚ) : ℝ) ≤ w.1 ∧ (w.1 : ℝ) ≤ ((aHi lo hi U w.2.1 w.2.2 : ℚ) : ℝ) := by
+  have hn := sig_near (0, w.2.1, w.2.2) h1 h2
+  have hs : sig t w = (w.1 : ℝ) + sig t (0, w.2.1, w.2.2) := by simp only [sig]; push_cast; ring
+  rw [hs] at hw
+  have := abs_le.mp hw
+  have := abs_le.mp hn
+  simp only [aLo, aHi]
+  push_cast
+  constructor <;> linarith
+
+lemma slab_mem {C : UGCert} {t1 t2 t3 : ℝ} (a1 : (C.lo1 : ℝ) ≤ t1) (a1' : t1 ≤ C.hi1)
+    (a2 : (C.lo2 : ℝ) ≤ t2) (a2' : t2 ≤ C.hi2) (a3 : (C.lo3 : ℝ) ≤ t3) (a3' : t3 ≤ C.hi3) (w : Z3)
+    (u1 : |sig t1 w| ≤ C.U1) (u2 : |sig t2 w| ≤ C.U2) (u3 : |sig t3 w| ≤ C.U3) :
+    slabLo C w.2.1 w.2.2 ≤ w.1 ∧ w.1 ≤ slabHi C w.2.1 w.2.2 := by
+  obtain ⟨l1, h1⟩ := a_mem a1 a1' w u1
+  obtain ⟨l2, h2⟩ := a_mem a2 a2' w u2
+  obtain ⟨l3, h3⟩ := a_mem a3 a3' w u3
+  constructor
+  · apply Int.ceil_le.mpr
+    have : ((max (max (aLo C.lo1 C.hi1 C.U1 w.2.1 w.2.2) (aLo C.lo2 C.hi2 C.U2 w.2.1 w.2.2))
+        (aLo C.lo3 C.hi3 C.U3 w.2.1 w.2.2) : ℚ) : ℝ) ≤ (w.1 : ℝ) := by
+      push_cast; exact max_le (max_le l1 l2) l3
+    exact_mod_cast this
+  · apply Int.le_floor.mpr
+    have : (w.1 : ℝ) ≤ ((min (min (aHi C.lo1 C.hi1 C.U1 w.2.1 w.2.2) (aHi C.lo2 C.hi2 C.U2 w.2.1 w.2.2))
+        (aHi C.lo3 C.hi3 C.U3 w.2.1 w.2.2) : ℚ) : ℝ) := by
+      push_cast; exact le_min (le_min h1 h2) h3
+    exact_mod_cast this
+
+/-- The slices of the slab prove the finite step. -/
+lemma reduced_of_slab {P Q : ℤ} {C : UGCert} {cands : List Z3} {w n : ℕ} (hw : 0 < w)
+    (hn : 2 * C.bb + 1 ≤ n * w) (h : ∀ t < n, unitSlabSlice P Q C cands w t = true) :
+    Reduced P Q C cands := by
+  intro t1 t2 t3 a1 a1' a2 a2' a3 a3' g hnrm u1 u2 u3 _ gb gc
+  obtain ⟨hl, hh⟩ := slab_mem a1 a1' a2 a2' a3 a3' g u1 u2 u3
+  obtain ⟨x, y, z⟩ := g
+  simp only at hl hh gb gc hnrm
+  have gb' := abs_le.mp gb
+  have gc' := abs_le.mp gc
+  set j := (y + C.bb).toNat with hj
+  have hjlt : j < 2 * C.bb + 1 := by omega
+  have ht : j / w < n := by rw [Nat.div_lt_iff_lt_mul hw]; omega
+  have hs := h (j / w) ht
+  simp only [unitSlabSlice, List.all_eq_true, List.mem_range', List.mem_range, Bool.or_eq_true,
+    Bool.not_eq_true', decide_eq_false_iff_not, decide_eq_true_eq] at hs
+  have hjm : ∃ k < w, j = j / w * w + k := ⟨j % w, Nat.mod_lt _ hw, by
+    rw [Nat.mul_comm]; exact (Nat.div_add_mod j w).symm⟩
+  obtain ⟨k, hk, hjk⟩ := hjm
+  rcases hs j ⟨k, hk, by simpa [Nat.mul_comm] using hjk⟩ with hlt | hrest
+  · exact absurd hjlt hlt
+  have ey : ((j : ℕ) : ℤ) - C.bb = y := by omega
+  have hz := hrest (z + C.bc).toNat (by omega)
+  have ez : (((z + C.bc).toNat : ℕ) : ℤ) - C.bc = z := by omega
+  rw [ey, ez] at hz
+  have hi := hz (x - slabLo C y z).toNat (by omega)
+  have ex : slabLo C y z + (((x - slabLo C y z).toNat : ℕ) : ℤ) = x := by omega
+  rw [ex] at hi
+  exact hi.resolve_left (not_not.mpr hnrm)
+
+/-- **Unit generation from a slab certificate**: `ugCore` and the slab slices. -/
+theorem unitGen_of_slab (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert) {w n : ℕ}
+    (hcore : ugCore P Q e1 e1i e2 e2i C = true) (hw : 0 < w) (hn : 2 * C.bb + 1 ≤ n * w)
+    (h : ∀ t < n, unitSlabSlice P Q C (C.reps.map (evalRep P Q e1 e1i e2 e2i)) w t = true) :
+    UnitGen P Q e1 e1i e2 e2i :=
+  unitGen_of_core P Q e1 e1i e2 e2i C hcore (reduced_of_slab hw hn h)
 
 end PerfectPower.UnitGenProof
