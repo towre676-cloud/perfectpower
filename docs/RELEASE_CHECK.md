@@ -1,6 +1,6 @@
 # Release check
 
-`make release-verify` was run on commit `7d3197f` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
+`make release-verify` was run on commit `0470af1` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -17,15 +17,15 @@ The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12, mpmath 1.3
 
 ```
 Build completed successfully.
-axiom audit passed: 890 declarations
--- Found 0 errors in 1552 declarations (plus 4698 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 911 declarations
+-- Found 0 errors in 1615 declarations (plus 4877 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
 z3-solver: present: adapter/certificate tests run
-Ran 206 tests in 46.232s
+Ran 211 tests in 47.428s
 OK
-Ran 14 tests in 9.163s (continuation_tests)
+Ran 14 tests in 8.790s (continuation_tests)
 OK
-Ran 10 tests in 0.026s (expert_push)
+Ran 10 tests in 0.025s (expert_push)
 OK
 Ran 8 tests in 0.009s (galois_merge)
 OK
@@ -61,7 +61,7 @@ pairs_square_1e9: 24 solutions, 32 orbit steps, seeds [(2, 0)]
 branch adapter: 474 edges, 0 cross repo classes, 79 components vs 79 classes; restricted edges 0
 corpus adapter: 144 .seq files, B-index matches [('A000129', [0]), ('A048624', [2]), ('A069306', [1])]
 140 candidate entries {'PROVED': 69, 'NOT_TRANSLATED': 71} -> PerfectPower/Generated/OEISAuto.lean
-sqrt2: 39 entries {'DEFINITION_PROVED_EQUIVALENT': 29, 'TERMS_AGREE_UNPROVED': 5, 'TRANSPORTED_WITH_SHIFT': 1, 'EXCEPTIONAL_SET_PROVED': 3, 'TRANSPORTED_FROM_DUPLICATE': 1}; Mordell: 77 certified lists checked, 0 disagreements, 119 leads -> receipts/oeis_sqrt2_atlas.json
+sqrt2: 39 entries {'DEFINITION_PROVED_EQUIVALENT': 33, 'TRANSPORTED_WITH_SHIFT': 2, 'EXCEPTIONAL_SET_PROVED': 3, 'TRANSPORTED_FROM_DUPLICATE': 1}; Mordell: 77 certified lists checked, 0 disagreements, 119 leads -> receipts/oeis_sqrt2_atlas.json
 155 unresolved curves (59 with k < 0): {'CLASS_3': 12, 'ELEMENT_CUBE': 1, 'NONMAXIMAL': 34, 'NONMAXIMAL_CUBE': 6, 'NOT_COPRIME': 36, 'REAL_QUADRATIC': 96, 'UNIT_BEYOND_PM1': 1}
 descent gate OK
 verify: OK
