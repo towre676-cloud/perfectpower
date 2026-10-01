@@ -873,6 +873,30 @@ open PerfectPower
 #print axioms PerfectPower.Generated.D72Unit.class_neg
 #print axioms PerfectPower.Generated.Field756.unitGen_proved
 #print axioms PerfectPower.D72Residual.H72_eq
+-- AbelianTransforms
+#print axioms PerfectPower.AbelianTransforms.integral_term
+#print axioms PerfectPower.AbelianTransforms.summable_exp
+#print axioms PerfectPower.AbelianTransforms.tsum_indicator
+#print axioms PerfectPower.AbelianTransforms.heat_eq_integral
+#print axioms PerfectPower.AbelianTransforms.cntLt_mono
+#print axioms PerfectPower.AbelianTransforms.cntLt_le_cnt
+#print axioms PerfectPower.AbelianTransforms.cnt_le_cntLt_add_one
+#print axioms PerfectPower.AbelianTransforms.cnt_of_lt_one
+#print axioms PerfectPower.AbelianTransforms.cnt_le_add_one
+#print axioms PerfectPower.AbelianTransforms.cnt_bound
+#print axioms PerfectPower.AbelianTransforms.tendsto_div_t
+#print axioms PerfectPower.AbelianTransforms.tendsto_L
+#print axioms PerfectPower.AbelianTransforms.cntLt_asymp
+#print axioms PerfectPower.AbelianTransforms.pointwise
+#print axioms PerfectPower.AbelianTransforms.one_add_log_le
+#print axioms PerfectPower.AbelianTransforms.dominated
+#print axioms PerfectPower.AbelianTransforms.heat_abelian
+#print axioms PerfectPower.AbelianTransforms.integral_term_d
+#print axioms PerfectPower.AbelianTransforms.dirichlet_eq_integral
+#print axioms PerfectPower.AbelianTransforms.log_e_add_exp_le
+#print axioms PerfectPower.AbelianTransforms.two_add_le
+#print axioms PerfectPower.AbelianTransforms.dirichlet_abelian
+#print axioms PerfectPower.AbelianTransforms.heat_finite
 -- SqrtTwoDefs
 #print axioms PerfectPower.SqrtTwoDefs.A_lt_two_B
 #print axioms PerfectPower.SqrtTwoDefs.pow_eq

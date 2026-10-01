@@ -39,7 +39,8 @@ This table is the single source of truth. The research notes, the paper, the REA
 | Constraint compiler: plans, generated programs, timings | Python (tested against brute force, not verified); each plan cites its justification | the rows above | `CONSTRAINT_COMPILER.md`, §5B |
 | Genus one: 622 monic cubics, Mordell census $0<\\lvert k\\rvert \le10^4$ | External (Sage; 485 census rows rest on an unproven rank) | — | `receipts/` |
 | Genus ≥ 2 and quartic genus one outside Runge | Evidence (exact sieve to $10^8$) | — | `data/families.csv` |
-| Transforms (Theorem T); log-periodic heat term (Theorem T2) | Paper; T2's $O(\tau)$ coefficient checked numerically | Mellin analysis (classical) | notes §8 |
+| Abelian theorems: $A(x)\sim cx^\alpha(\log x)^\beta$ ($\alpha>0$, $\beta\ge0$) gives $K_X(t)\sim c\Gamma(\alpha+1)t^{-\alpha}(\log(1/t))^\beta$ and $\epsilon^{\beta+1}Z_X(\alpha+\epsilon)\to c\alpha\Gamma(\beta+1)$; finite support gives the exact hit count and a Dirichlet polynomial | **Lean** (`AbelianTransforms.heat_abelian`, `dirichlet_abelian`, `heat_finite`) | Mathlib's Gamma integral, dominated convergence | `AbelianTransforms.lean` |
+| Log-periodic heat term (Theorem T2); $\beta<0$, $\alpha=0$ and the Tauberian converses | Paper; T2's $O(\tau)$ coefficient checked numerically | Mellin analysis (classical) | notes §8 |
 | Exponential sequences (Theorem E) | Paper; periodic density Lean (`exp_hasDensity`) | — | notes §9 |
 | Function-field Hall (Davenport) and Pillai | Lean (`davenport`, `pillai_polynomial`) | Mason–Stothers (Mathlib) | `Davenport.lean` |
 | Hall, Pillai over $\mathbb Z$ | Lean ⇐ abc (`hall_of_abc`, `pillai_finite_of_abc`); the conjectures themselves are open | abc (hypothesis) | `ABC.lean` |
@@ -308,6 +309,18 @@ Two gaps remain:
 ### 6. Dirichlet and heat transforms
 
 For the same nonnegative indicator, Z_X(s)=Σ_{n≥1}X(n)n^(−s) and K_X(t)=Σ_{n≥1}X(n)e^(−tn). Summation by parts ties both to A(N). If the hit set is infinite, the abscissa of convergence of Z_X equals α. For finite support, Z_X is a Dirichlet polynomial with abscissa −∞, whereas the regularized α is zero. For all hit sets, limsup_(t↓0) log(1+K_X(t))/log(1/t)=α. The logarithm can hide slowly varying factors, so a Mellin or heat-kernel analysis should follow the count asymptotics rather than replace them.
+
+**Proved in Lean** (`AbelianTransforms.lean`), for any hit set with `A(x) = #{1 ≤ n ≤ x}`:
+- `heat_eq_integral`: K_X(t) = ∫₀^∞ e^(−u) A₋(u/t) du (Tonelli, with A₋ the strict count);
+- `heat_abelian`: if A(x) ~ c x^α (log x)^β with α > 0, β ≥ 0, then K_X(t) ~ c Γ(α+1) t^(−α) (log(1/t))^β as t ↓ 0;
+- `dirichlet_eq_integral`, `dirichlet_abelian`: under the same hypothesis, with Z_X(s) convergent for s > α, ε^(β+1) Z_X(α+ε) → c α Γ(β+1) as ε ↓ 0;
+- `heat_finite`: for finite support, K_X(t) tends to the exact number of hits and Z_X is the finite Dirichlet polynomial.
+
+Each proof is dominated convergence after a change of variables. A Potter-type bound
+A(x) ≤ C x^α (log(e+x))^β supplies the domination. Still open in Lean: β < 0 (the domination needs
+a separate small-u estimate), the slowly growing case α = 0, and every Tauberian converse. A
+converse needs a nondecreasing count, regular variation and a stated Tauberian condition. A
+real-axis asymptotic alone does not recover the count.
 
 When ordinary density h exists, t K_X(t)→h. In general limsup_(t↓0)t K_X(t)≤H. Likewise (s−1)Z_X(s)→h along real s↓1 when density exists; this is an Abelian real-axis limit and does not assert meromorphic continuation. A T-periodic indicator admits the stronger residue-class expansion Z_X(s)=T^(−s)Σ_(r=1)^T X(r) ζ(s,r/T), and its meromorphic residue at s=1 equals P/T. The finite-window maximum sometimes called a tropical limit supplies none of these density claims. Cofinite-tail invariance is a basic property of limsup, not an independent Čech obstruction to arithmetic equality.
 
