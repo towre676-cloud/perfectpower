@@ -108,7 +108,11 @@ git.
      `Finset` (`rootSet`, duplicates removed).
    - **Worked instance:** `D = 23` (`Generated/Minus23.lean`): classes 8, 9, 10 through two unit
      equations in the field 621, under Matveev for those two equations.
-   - **Still open:** complete lists at the other leaves. In the measured workload
+   - **Second instance:** `D = 45` (`Generated/Minus45.lean`): one nonmonic source equation
+     (norm `4`, residue norm representatives) for classes 30, 31, 32, under `matveev_w1`.
+   - **Coverage** is derived (`receipts/descent_coverage.json`): 3 of 109 unit equations are
+     registered.
+   - **Still open:** complete lists at the other 106 leaves. In the measured workload
      (`receipts/descent_residual.json`) they are 109 distinct unit equations `G = ±1` in other
      cubic fields, so each needs a Thue bound (the field-756 pipeline, applied per field).
 4. **A consumer-accepted replacement.**

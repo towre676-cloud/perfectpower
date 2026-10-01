@@ -230,6 +230,23 @@ The same pipeline closes the two unit equations behind `y² = x³ − 23`. Write
 The classes of `D = 23` reach these leaves by solution-carrying descent (`DescentLists`), not
 directly; see `MORDELL_BRANCH.md` §7.2.
 
+## A nonmonic source: `ℤ[x]`, `x³ = 18x + 12` (`Generated/Minus45.lean`)
+
+`G = (−2, −6, 3, 4)` with right side `1` has leading coefficient `−2`, so its encoding has norm `4`.
+
+| item | `ℤ[x]`, `x³ = 18x + 12` (discriminant 19440) |
+|---|---|
+| `φ` | `2 + x` (`= −2θ`) |
+| units | `ε₁ = −7 − 3x + x²`, `ε₂ = −41 − 51x + 13x²`; box of 117,215 triples, 33 slices (`unitGen_of_slices`) |
+| norm representatives | norm `4`: every residue class mod `8` with norm `≡ 4` is divisible by `4 + x` (`normRep_of_res`) |
+| analytic, reduction | `analytic_w1_proved` from `matveev_w1`; `H ≤ 3` |
+| list | `G = 1 ⇔ (u, v) = (−1, −1)` |
+
+`normRep_of_res` is general. Given representatives `γ` of norm `±N` and a modulus `m` with
+`N ∣ m`, if every residue class of norm `≡ N (mod m)` has some `γ` with `γ# r ≡ 0 (mod N(γ))`,
+then every element of norm `N` is `γ` times a unit. The quotient `g γ#/N(γ)` is integral, and its
+norm is `±1`.
+
 ## Next
 
 - Matveev's theorem is the boundary that stays external. It is stated per class as three explicit

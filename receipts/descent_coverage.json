@@ -1,0 +1,2137 @@
+{
+ "label": "DERIVED from registered Lean theorems; the raw workload is descent_residual.json and thue_graph.json (unchanged)",
+ "classes_total": 79,
+ "classes_locally_discharged": 15,
+ "classes_conditionally_complete": 15,
+ "classes_unresolved": 49,
+ "unit_equations_total": 109,
+ "unit_equations_registered": 3,
+ "unit_equations_remaining": 106,
+ "open_curves_raw": 23,
+ "curves_conditionally_complete": [
+  7,
+  23,
+  28,
+  45,
+  63
+ ],
+ "curves_unresolved": [
+  15,
+  18,
+  25,
+  26,
+  39,
+  47,
+  48,
+  53,
+  55,
+  60,
+  61,
+  71,
+  72,
+  79,
+  87,
+  89,
+  95,
+  100
+ ],
+ "classes": [
+  {
+   "class": 0,
+   "curves": [
+    7
+   ],
+   "M": 64,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Field756.lean (direct, matveev_0)"
+  },
+  {
+   "class": 1,
+   "curves": [
+    7
+   ],
+   "M": 64,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Field756.lean (direct, matveev_1)"
+  },
+  {
+   "class": 2,
+   "curves": [
+    7
+   ],
+   "M": 8,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Field756.lean (direct, matveev_2)"
+  },
+  {
+   "class": 3,
+   "curves": [
+    15
+   ],
+   "M": 216,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 4,
+   "curves": [
+    15
+   ],
+   "M": 64,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 5,
+   "curves": [
+    15
+   ],
+   "M": 64,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 6,
+   "curves": [
+    18
+   ],
+   "M": 216,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 7,
+   "curves": [
+    18
+   ],
+   "M": 27,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 8,
+   "curves": [
+    23
+   ],
+   "M": 729,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus23.lean (descent to u1)"
+  },
+  {
+   "class": 9,
+   "curves": [
+    23
+   ],
+   "M": 512,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus23.lean (descent to u1)"
+  },
+  {
+   "class": 10,
+   "curves": [
+    23
+   ],
+   "M": 27,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus23.lean (descent to u1, u2)"
+  },
+  {
+   "class": 11,
+   "curves": [
+    25
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 12,
+   "curves": [
+    25
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 13,
+   "curves": [
+    25
+   ],
+   "M": 125,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 14,
+   "curves": [
+    25
+   ],
+   "M": 125,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 15,
+   "curves": [
+    26
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 16,
+   "curves": [
+    26
+   ],
+   "M": 729,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 17,
+   "curves": [
+    26
+   ],
+   "M": 27,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 18,
+   "curves": [
+    28
+   ],
+   "M": 512,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Field756.lean (direct, matveev_18)"
+  },
+  {
+   "class": 19,
+   "curves": [
+    28
+   ],
+   "M": 512,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Field756.lean (direct, matveev_19)"
+  },
+  {
+   "class": 20,
+   "curves": [
+    28
+   ],
+   "M": 64,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Field756.lean (direct, matveev_20)"
+  },
+  {
+   "class": 21,
+   "curves": [
+    29
+   ],
+   "M": 729,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 22,
+   "curves": [
+    29
+   ],
+   "M": 216,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 23,
+   "curves": [
+    32
+   ],
+   "M": 729,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 24,
+   "curves": [
+    36
+   ],
+   "M": 1000,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 25,
+   "curves": [
+    38
+   ],
+   "M": 729,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 26,
+   "curves": [
+    38
+   ],
+   "M": 216,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 27,
+   "curves": [
+    39
+   ],
+   "M": 1728,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 28,
+   "curves": [
+    39
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 29,
+   "curves": [
+    39
+   ],
+   "M": 64,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 30,
+   "curves": [
+    45
+   ],
+   "M": 729,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus45.lean (descent to w1)"
+  },
+  {
+   "class": 31,
+   "curves": [
+    45
+   ],
+   "M": 729,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus45.lean (descent to w1)"
+  },
+  {
+   "class": 32,
+   "curves": [
+    45
+   ],
+   "M": 216,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus45.lean (descent to w1)"
+  },
+  {
+   "class": 33,
+   "curves": [
+    47
+   ],
+   "M": 512,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 34,
+   "curves": [
+    47
+   ],
+   "M": 1728,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 35,
+   "curves": [
+    47
+   ],
+   "M": 216,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 36,
+   "curves": [
+    48
+   ],
+   "M": 1728,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 37,
+   "curves": [
+    48
+   ],
+   "M": 64,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 38,
+   "curves": [
+    52
+   ],
+   "M": 2744,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 39,
+   "curves": [
+    53
+   ],
+   "M": 2197,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 40,
+   "curves": [
+    53
+   ],
+   "M": 216,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 41,
+   "curves": [
+    53
+   ],
+   "M": 729,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 42,
+   "curves": [
+    55
+   ],
+   "M": 2744,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 43,
+   "curves": [
+    55
+   ],
+   "M": 2744,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 44,
+   "curves": [
+    55
+   ],
+   "M": 64,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 45,
+   "curves": [
+    56
+   ],
+   "M": 729,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 46,
+   "curves": [
+    60
+   ],
+   "M": 64,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 47,
+   "curves": [
+    61
+   ],
+   "M": 2197,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 48,
+   "curves": [
+    61
+   ],
+   "M": 2744,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 49,
+   "curves": [
+    61
+   ],
+   "M": 125,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 50,
+   "curves": [
+    63
+   ],
+   "M": 64,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Field756.lean (direct, matveev_50)"
+  },
+  {
+   "class": 51,
+   "curves": [
+    71
+   ],
+   "M": 3375,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 52,
+   "curves": [
+    71
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 53,
+   "curves": [
+    71
+   ],
+   "M": 1728,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 54,
+   "curves": [
+    71
+   ],
+   "M": 512,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 55,
+   "curves": [
+    72
+   ],
+   "M": 1728,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 56,
+   "curves": [
+    72
+   ],
+   "M": 729,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "D72Residual.residual_empty (matveev_pos)"
+  },
+  {
+   "class": 57,
+   "curves": [
+    72
+   ],
+   "M": 729,
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "D72Residual.residual_empty (matveev_pos)"
+  },
+  {
+   "class": 58,
+   "curves": [
+    72
+   ],
+   "M": 216,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 59,
+   "curves": [
+    77
+   ],
+   "M": 729,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 60,
+   "curves": [
+    79
+   ],
+   "M": 4096,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 61,
+   "curves": [
+    79
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 62,
+   "curves": [
+    79
+   ],
+   "M": 512,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 63,
+   "curves": [
+    80
+   ],
+   "M": 729,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 64,
+   "curves": [
+    86
+   ],
+   "M": 3375,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 65,
+   "curves": [
+    87
+   ],
+   "M": 4096,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 66,
+   "curves": [
+    87
+   ],
+   "M": 2197,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 67,
+   "curves": [
+    87
+   ],
+   "M": 343,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 68,
+   "curves": [
+    89
+   ],
+   "M": 5832,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 69,
+   "curves": [
+    89
+   ],
+   "M": 125,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 70,
+   "curves": [
+    92
+   ],
+   "M": 1728,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 71,
+   "curves": [
+    92
+   ],
+   "M": 729,
+   "status": "LOCALLY_DISCHARGED",
+   "via": null
+  },
+  {
+   "class": 72,
+   "curves": [
+    95
+   ],
+   "M": 4096,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 73,
+   "curves": [
+    95
+   ],
+   "M": 216,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 74,
+   "curves": [
+    100
+   ],
+   "M": 8000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 75,
+   "curves": [
+    100
+   ],
+   "M": 8000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 76,
+   "curves": [
+    100
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 77,
+   "curves": [
+    100
+   ],
+   "M": 1000,
+   "status": "UNRESOLVED",
+   "via": null
+  },
+  {
+   "class": 78,
+   "curves": [
+    100
+   ],
+   "M": 125,
+   "status": "UNRESOLVED",
+   "via": null
+  }
+ ],
+ "unit_equations": [
+  {
+   "form": [
+    -64,
+    -144,
+    267,
+    98
+   ],
+   "classes": [
+    74
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -8,
+    -42,
+    114,
+    129
+   ],
+   "classes": [
+    74
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -7,
+    -45,
+    1659,
+    1185
+   ],
+   "classes": [
+    60
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -7,
+    -33,
+    387,
+    349
+   ],
+   "classes": [
+    60
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -7,
+    -6,
+    108,
+    -8
+   ],
+   "classes": [
+    60
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -7,
+    -3,
+    27,
+    -1
+   ],
+   "classes": [
+    60
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -6,
+    -51,
+    954,
+    901
+   ],
+   "classes": [
+    39
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -6,
+    -24,
+    93,
+    83
+   ],
+   "classes": [
+    11
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -6,
+    -12,
+    117,
+    26
+   ],
+   "classes": [
+    15
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -6,
+    -3,
+    1098,
+    61
+   ],
+   "classes": [
+    47
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -5,
+    -18,
+    12,
+    8
+   ],
+   "classes": [
+    43
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -4,
+    -66,
+    12,
+    147
+   ],
+   "classes": [
+    75
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -4,
+    -60,
+    75,
+    125
+   ],
+   "classes": [
+    75
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -4,
+    -21,
+    12,
+    12
+   ],
+   "classes": [
+    74
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -57,
+    639,
+    1349
+   ],
+   "classes": [
+    52
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -51,
+    711,
+    1343
+   ],
+   "classes": [
+    61
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -36,
+    48,
+    64
+   ],
+   "classes": [
+    36
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -33,
+    129,
+    241
+   ],
+   "classes": [
+    52
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -30,
+    150,
+    250
+   ],
+   "classes": [
+    61
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -30,
+    900,
+    1000
+   ],
+   "classes": [
+    76
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -18,
+    12,
+    8
+   ],
+   "classes": [
+    36
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -15,
+    15,
+    19
+   ],
+   "classes": [
+    52
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -15,
+    225,
+    125
+   ],
+   "classes": [
+    76
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -12,
+    24,
+    16
+   ],
+   "classes": [
+    61
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -9,
+    15,
+    5
+   ],
+   "classes": [
+    3
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -6,
+    12,
+    8
+   ],
+   "classes": [
+    0
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -6,
+    36,
+    8
+   ],
+   "classes": [
+    76
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -3,
+    9,
+    1
+   ],
+   "classes": [
+    74,
+    75,
+    76,
+    77
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    -3,
+    63,
+    7
+   ],
+   "classes": [
+    0
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -3,
+    0,
+    9,
+    -2
+   ],
+   "classes": [
+    55,
+    56,
+    57
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -2,
+    -129,
+    522,
+    3741
+   ],
+   "classes": [
+    66
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -2,
+    -48,
+    -9,
+    101
+   ],
+   "classes": [
+    12
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -2,
+    -15,
+    150,
+    125
+   ],
+   "classes": [
+    13
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -2,
+    -6,
+    3,
+    4
+   ],
+   "classes": [
+    30,
+    31,
+    32
+   ],
+   "status": "REGISTERED",
+   "source": {
+    "source": "w1",
+    "curve": 45,
+    "premise": "matveev_w1",
+    "list": [
+     [
+      -1,
+      -1
+     ]
+    ]
+   }
+  },
+  {
+   "form": [
+    -2,
+    -6,
+    6,
+    3
+   ],
+   "classes": [
+    60,
+    61,
+    62
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -2,
+    -3,
+    6,
+    1
+   ],
+   "classes": [
+    11,
+    12,
+    13,
+    14
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -2,
+    0,
+    6,
+    -1
+   ],
+   "classes": [
+    3,
+    4,
+    5
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -2,
+    0,
+    9,
+    -1
+   ],
+   "classes": [
+    39,
+    40,
+    41
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -123,
+    141,
+    1927
+   ],
+   "classes": [
+    34
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -93,
+    117,
+    1209
+   ],
+   "classes": [
+    28
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -90,
+    300,
+    3000
+   ],
+   "classes": [
+    77
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -78,
+    159,
+    1378
+   ],
+   "classes": [
+    41
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -66,
+    84,
+    616
+   ],
+   "classes": [
+    19
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -63,
+    -27,
+    243
+   ],
+   "classes": [
+    34
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -63,
+    213,
+    1491
+   ],
+   "classes": [
+    54
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -48,
+    -18,
+    154
+   ],
+   "classes": [
+    28
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -48,
+    261,
+    1392
+   ],
+   "classes": [
+    67
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -45,
+    75,
+    375
+   ],
+   "classes": [
+    77
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -42,
+    -12,
+    72
+   ],
+   "classes": [
+    34
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -39,
+    141,
+    611
+   ],
+   "classes": [
+    35
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -36,
+    216,
+    864
+   ],
+   "classes": [
+    58
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -33,
+    21,
+    77
+   ],
+   "classes": [
+    19
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -33,
+    21,
+    205
+   ],
+   "classes": [
+    54
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -33,
+    285,
+    1045
+   ],
+   "classes": [
+    73
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -30,
+    24,
+    26
+   ],
+   "classes": [
+    34
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -30,
+    75,
+    250
+   ],
+   "classes": [
+    14
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -30,
+    1200,
+    4000
+   ],
+   "classes": [
+    74
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -27,
+    0,
+    54
+   ],
+   "classes": [
+    41
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -24,
+    183,
+    488
+   ],
+   "classes": [
+    49
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -21,
+    -3,
+    9
+   ],
+   "classes": [
+    34
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -21,
+    15,
+    89
+   ],
+   "classes": [
+    35
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -21,
+    45,
+    105
+   ],
+   "classes": [
+    5
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -18,
+    -12,
+    8
+   ],
+   "classes": [
+    19
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -18,
+    12,
+    8
+   ],
+   "classes": [
+    28
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -18,
+    12,
+    24
+   ],
+   "classes": [
+    77
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -18,
+    54,
+    108
+   ],
+   "classes": [
+    58
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -18,
+    54,
+    162
+   ],
+   "classes": [
+    73
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -18,
+    84,
+    168
+   ],
+   "classes": [
+    20
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -18,
+    267,
+    534
+   ],
+   "classes": [
+    69
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -15,
+    21,
+    19
+   ],
+   "classes": [
+    54
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -15,
+    117,
+    195
+   ],
+   "classes": [
+    29
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -15,
+    300,
+    500
+   ],
+   "classes": [
+    74,
+    78
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -12,
+    0,
+    16
+   ],
+   "classes": [
+    5
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -12,
+    24,
+    16
+   ],
+   "classes": [
+    35
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -12,
+    24,
+    32
+   ],
+   "classes": [
+    58
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -12,
+    24,
+    48
+   ],
+   "classes": [
+    73
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -12,
+    144,
+    192
+   ],
+   "classes": [
+    37
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -9,
+    -3,
+    3
+   ],
+   "classes": [
+    52,
+    53,
+    54
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -9,
+    21,
+    21
+   ],
+   "classes": [
+    20
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -9,
+    21,
+    37
+   ],
+   "classes": [
+    29
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -9,
+    54,
+    54
+   ],
+   "classes": [
+    7
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -9,
+    165,
+    165
+   ],
+   "classes": [
+    44
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    0,
+    4
+   ],
+   "classes": [
+    18,
+    19,
+    20
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    3,
+    6
+   ],
+   "classes": [
+    47,
+    48,
+    49
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    6,
+    2
+   ],
+   "classes": [
+    33,
+    34,
+    35
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    6,
+    4
+   ],
+   "classes": [
+    55,
+    58
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    6,
+    6
+   ],
+   "classes": [
+    72,
+    73
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    9,
+    2
+   ],
+   "classes": [
+    65,
+    66,
+    67
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    36,
+    24
+   ],
+   "classes": [
+    37
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    36,
+    40
+   ],
+   "classes": [
+    44
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    48,
+    32
+   ],
+   "classes": [
+    74
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    69,
+    46
+   ],
+   "classes": [
+    10
+   ],
+   "status": "REGISTERED",
+   "source": {
+    "source": "u2",
+    "curve": 23,
+    "premise": "matveev_u2",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "form": [
+    -1,
+    -6,
+    180,
+    120
+   ],
+   "classes": [
+    46
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    3,
+    3
+   ],
+   "classes": [
+    0,
+    1,
+    2
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    6,
+    2
+   ],
+   "classes": [
+    6,
+    7
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    6,
+    4
+   ],
+   "classes": [
+    8,
+    9,
+    10
+   ],
+   "status": "REGISTERED",
+   "source": {
+    "source": "u1",
+    "curve": 23,
+    "premise": "matveev_u1",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   }
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    9,
+    1
+   ],
+   "classes": [
+    27,
+    28,
+    29
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    9,
+    3
+   ],
+   "classes": [
+    36,
+    37
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    9,
+    5
+   ],
+   "classes": [
+    43,
+    44
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    9,
+    7
+   ],
+   "classes": [
+    46
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    12,
+    2
+   ],
+   "classes": [
+    68,
+    69
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    12,
+    4
+   ],
+   "classes": [
+    74,
+    75,
+    78
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    21,
+    7
+   ],
+   "classes": [
+    2
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    45,
+    15
+   ],
+   "classes": [
+    46
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    45,
+    31
+   ],
+   "classes": [
+    50
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    78,
+    26
+   ],
+   "classes": [
+    17
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    -3,
+    189,
+    63
+   ],
+   "classes": [
+    50
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    0,
+    9,
+    -2
+   ],
+   "classes": [
+    15,
+    16,
+    17
+   ],
+   "status": "UNREGISTERED"
+  },
+  {
+   "form": [
+    -1,
+    0,
+    12,
+    -2
+   ],
+   "classes": [
+    50
+   ],
+   "status": "UNREGISTERED"
+  }
+ ]
+}

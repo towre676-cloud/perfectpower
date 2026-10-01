@@ -81,6 +81,143 @@ lemma nrm_cast {n : ℕ} (P Q A B C : ℤ) :
 
 lemma val_mod {n : ℕ} [NeZero n] (A : ℤ) : (((A : ZMod n).val : ℕ) : ℤ) = A % n := ZMod.val_intCast A
 
+/-! ### Norm representatives from a residue check
+
+For a target `N` and representatives `γ` of norm `±N`: if every residue class `r` modulo `m`
+(`N ∣ m`) with `N(r) ≡ N` has some `γ` with `γ# r ≡ 0 (mod N(γ))`, then every `g` of norm `N` is
+`γ` times a unit.  The quotient is `u = g γ# / N(γ)`: integral by the congruence, `γ u = g`, and
+`N(u) = N/N(γ) = ±1`.  Nothing about class numbers or ideals is used. -/
+
+/-- The residue certificate. -/
+def resRepB (P Q N : ℤ) (m : ℕ) (reps : List Z3) : Bool :=
+  decide (0 < m) && decide ((m : ℤ) % N = 0) &&
+  reps.all (fun γ => decide (nrm P Q γ = N ∨ nrm P Q γ = -N)) &&
+  (List.range m).all fun a => (List.range m).all fun b => (List.range m).all fun c =>
+    decide (nrm P Q ((a : ℤ), (b : ℤ), (c : ℤ)) % m ≠ N % m) || reps.any fun γ =>
+      decide ((mul P Q ((a : ℤ), (b : ℤ), (c : ℤ)) (adj P Q γ)).1 % nrm P Q γ = 0 ∧
+        (mul P Q ((a : ℤ), (b : ℤ), (c : ℤ)) (adj P Q γ)).2.1 % nrm P Q γ = 0 ∧
+        (mul P Q ((a : ℤ), (b : ℤ), (c : ℤ)) (adj P Q γ)).2.2 % nrm P Q γ = 0)
+
+lemma cast_mul_eq {m : ℕ} {P Q A B C a b c : ℤ} (hA : (A : ZMod m) = a) (hB : (B : ZMod m) = b)
+    (hC : (C : ZMod m) = c) (X : Z3) :
+    ((mul P Q (A, B, C) X).1 : ZMod m) = (mul P Q (a, b, c) X).1 ∧
+    ((mul P Q (A, B, C) X).2.1 : ZMod m) = (mul P Q (a, b, c) X).2.1 ∧
+    ((mul P Q (A, B, C) X).2.2 : ZMod m) = (mul P Q (a, b, c) X).2.2 := by
+  obtain ⟨x, y, z⟩ := X
+  simp only [mul]
+  push_cast
+  rw [hA, hB, hC]
+  exact ⟨rfl, rfl, rfl⟩
+
+lemma mul_smul3 (P Q d : ℤ) (g u : Z3) :
+    mul P Q g (d * u.1, d * u.2.1, d * u.2.2) =
+      (d * (mul P Q g u).1, d * (mul P Q g u).2.1, d * (mul P Q g u).2.2) := by
+  obtain ⟨a, b, c⟩ := g
+  obtain ⟨x, y, z⟩ := u
+  simp only [mul, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring⟩
+
+lemma nrm_smul3 (P Q d : ℤ) (u : Z3) : nrm P Q (d * u.1, d * u.2.1, d * u.2.2) = d ^ 3 * nrm P Q u := by
+  obtain ⟨x, y, z⟩ := u
+  simp only [nrm]; ring
+
+/-- **Norm representatives from a residue certificate.** -/
+theorem normRep_of_res {P Q N : ℤ} {m : ℕ} {reps : List Z3} (hN : N ≠ 0)
+    (h : resRepB P Q N m reps = true) : NormRep P Q N reps := by
+  simp only [resRepB, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_range,
+    Bool.or_eq_true, List.any_eq_true] at h
+  obtain ⟨⟨⟨hm, hmN⟩, hreps⟩, hres⟩ := h
+  intro g hg
+  obtain ⟨A, B, C⟩ := g
+  have hm' : (0 : ℤ) < m := by exact_mod_cast hm
+  set a := (A % m).toNat
+  set b := (B % m).toNat
+  set c := (C % m).toNat
+  have ea : ((a : ℕ) : ℤ) = A % m := Int.toNat_of_nonneg (Int.emod_nonneg _ hm'.ne')
+  have eb : ((b : ℕ) : ℤ) = B % m := Int.toNat_of_nonneg (Int.emod_nonneg _ hm'.ne')
+  have ec : ((c : ℕ) : ℤ) = C % m := Int.toNat_of_nonneg (Int.emod_nonneg _ hm'.ne')
+  have la : a < m := by have := Int.emod_lt_of_pos A hm'; omega
+  have lb : b < m := by have := Int.emod_lt_of_pos B hm'; omega
+  have lc : c < m := by have := Int.emod_lt_of_pos C hm'; omega
+  have hA : (A : ZMod m) = ((a : ℤ) : ZMod m) := by
+    rw [ea, ZMod.intCast_mod]
+  have hB : (B : ZMod m) = ((b : ℤ) : ZMod m) := by rw [eb, ZMod.intCast_mod]
+  have hC : (C : ZMod m) = ((c : ℤ) : ZMod m) := by rw [ec, ZMod.intCast_mod]
+  -- the norm modulo m
+  have hn : nrm P Q ((a : ℤ), (b : ℤ), (c : ℤ)) % m = N % m := by
+    have h1 : ((nrm P Q (A, B, C) : ℤ) : ZMod m) = ((nrm P Q ((a : ℤ), (b : ℤ), (c : ℤ)) : ℤ) : ZMod m) := by
+      rw [nrm_cast, nrm_cast, hA, hB, hC]
+    rw [hg] at h1
+    exact ((ZMod.intCast_eq_intCast_iff' _ _ _).mp h1).symm
+  obtain ⟨γ, hγ, hdiv⟩ := (hres a la b lb c lc).resolve_left (by simpa using hn)
+  obtain ⟨d1, d2, d3⟩ := hdiv
+  set d := nrm P Q γ with hd
+  have hdN : d = N ∨ d = -N := hreps γ hγ
+  have hd0 : d ≠ 0 := by rcases hdN with h | h <;> rw [h] <;> simpa using hN
+  have hdm : d ∣ (m : ℤ) := by
+    rcases hdN with h | h <;> rw [h]
+    · exact Int.dvd_of_emod_eq_zero hmN
+    · exact (neg_dvd).mpr (Int.dvd_of_emod_eq_zero hmN)
+  -- the product `g γ#` modulo m, then modulo d
+  obtain ⟨c1, c2, c3⟩ := cast_mul_eq (P := P) (Q := Q) hA hB hC (adj P Q γ)
+  have tr : ∀ {x y : ℤ}, (x : ZMod m) = (y : ZMod m) → y % d = 0 → d ∣ x := by
+    intro x y hxy hy
+    have := (ZMod.intCast_eq_intCast_iff' _ _ _).mp hxy
+    have hxy' : x ≡ y [ZMOD m] := this
+    have h1 : d ∣ y - x := dvd_trans hdm hxy'.dvd
+    have h2 : d ∣ y := Int.dvd_of_emod_eq_zero hy
+    have := dvd_sub h2 h1
+    rwa [sub_sub_cancel] at this
+  set q := mul P Q (A, B, C) (adj P Q γ)
+  obtain ⟨k1, hk1⟩ := tr c1 d1
+  obtain ⟨k2, hk2⟩ := tr c2 d2
+  obtain ⟨k3, hk3⟩ := tr c3 d3
+  set u : Z3 := (k1, k2, k3)
+  have hq : q = (d * u.1, d * u.2.1, d * u.2.2) := by
+    simp only [u]; exact Prod.ext hk1 (Prod.ext hk2 hk3)
+  -- γ u = g
+  have hγu : mul P Q γ u = (A, B, C) := by
+    have e1 : mul P Q γ q = (d * A, d * B, d * C) := by
+      simp only [q]
+      rw [← mul_assoc' P Q γ (A, B, C) (adj P Q γ), mul_comm' P Q γ (A, B, C),
+        mul_assoc' P Q (A, B, C) γ (adj P Q γ), mul_adj]
+      simp only [mul, Prod.mk.injEq]
+      refine ⟨by ring, by ring, by ring⟩
+    rw [hq, mul_smul3] at e1
+    simp only [Prod.mk.injEq] at e1
+    obtain ⟨f1, f2, f3⟩ := e1
+    exact Prod.ext (mul_left_cancel₀ hd0 f1) (Prod.ext (mul_left_cancel₀ hd0 f2) (mul_left_cancel₀ hd0 f3))
+  -- N(u) = ±1
+  have hadj : nrm P Q (adj P Q γ) = d ^ 2 := by
+    have := nrm_mul P Q γ (adj P Q γ)
+    rw [mul_adj] at this
+    have h3 : nrm P Q (d, 0, 0) = d ^ 3 := by simp only [nrm]; ring
+    rw [h3] at this
+    have : d * (nrm P Q (adj P Q γ) - d ^ 2) = 0 := by rw [← hd] at this; linarith
+    rcases mul_eq_zero.mp this with h | h
+    · exact absurd h hd0
+    · linarith
+  have hnu : d * nrm P Q u = N := by
+    have e := nrm_mul P Q (A, B, C) (adj P Q γ)
+    rw [hadj, hg] at e
+    have e' : nrm P Q q = d ^ 3 * nrm P Q u := by rw [hq, nrm_smul3]
+    have : d ^ 2 * (d * nrm P Q u - N) = 0 := by
+      have : nrm P Q q = N * d ^ 2 := e
+      rw [e'] at this; linear_combination this
+    rcases mul_eq_zero.mp this with h | h
+    · exact absurd (pow_eq_zero_iff (by norm_num) |>.mp h) hd0
+    · linarith
+  have hu : nrm P Q u = 1 ∨ nrm P Q u = -1 := by
+    rcases hdN with h | h
+    · left; rw [h] at hnu; exact (mul_right_eq_self₀.mp (by linarith)).resolve_right hN
+    · right; rw [h] at hnu
+      have : N * (nrm P Q u + 1) = 0 := by linarith
+      rcases mul_eq_zero.mp this with h' | h'
+      · exact absurd h' hN
+      · linarith
+  obtain ⟨v, hv⟩ := unit_of_nrm hu
+  exact ⟨γ, hγ, u, v, hv, hγu.symm⟩
+
 /-! ### Field 1944: `x³ = 9x + 6`, `α = x² − 3x − 3`, `N(α) = 9` -/
 
 /-- `9 ∣ N(g)` forces `3 ∣ A` and `3 ∣ B` (all `729` residues modulo `9`). -/

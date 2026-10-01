@@ -821,4 +821,53 @@ theorem unitGen_of_cert (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert)
       ring
     exact R.sig_inj (fin _ R.h1) (fin _ R.h2) (fin _ R.h3)
 
+/-! ### The certificate in slices
+
+For a large unit box the single evaluation of `unitBoxB` is too heavy for the kernel.  The same
+check is split into slices of the first coordinate, each a separate kernel evaluation:
+`ugCore` is everything except the box, and `unitBoxB_of_slices` assembles the slices. -/
+
+/-- Everything in `ugCheck` except the final box enumeration. -/
+def ugCore (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert) : Bool :=
+  decide (mul P Q e1 e1i = (1, 0, 0)) && decide (mul P Q e2 e2i = (1, 0, 0)) && bracketsB P Q C &&
+  logB e1 C.lo1 C.hi1 C.s11 C.S11 C.n && logB e1 C.lo2 C.hi2 C.s21 C.S21 C.n &&
+  logB e2 C.lo1 C.hi1 C.s12 C.S12 C.n && logB e2 C.lo2 C.hi2 C.s22 C.S22 C.n &&
+  detB C && uB e1 e2 C && boxB C
+
+/-- Slice `t` (width `w`) of the unit box: first coordinates `i ∈ [t w, t w + w)`, `i ≤ 2a`. -/
+def unitBoxSlice (P Q : ℤ) (a b c : ℕ) (cands : List Z3) (w t : ℕ) : Bool :=
+  (List.range' (t * w) w).all fun i => !decide (i < 2 * a + 1) ||
+    (List.range (2 * b + 1)).all fun j => (List.range (2 * c + 1)).all fun k =>
+      let g : Z3 := ((i : ℤ) - a, (j : ℤ) - b, (k : ℤ) - c)
+      !decide (nrm P Q g = 1 ∨ nrm P Q g = -1) || decide (g ∈ cands)
+
+lemma unitBoxB_of_slices {P Q : ℤ} {a b c : ℕ} {cands : List Z3} {w n : ℕ} (hw : 0 < w)
+    (hn : 2 * a + 1 ≤ n * w) (h : ∀ t < n, unitBoxSlice P Q a b c cands w t = true) :
+    unitBoxB P Q a b c cands = true := by
+  simp only [unitBoxB, List.all_eq_true, List.mem_range]
+  intro i hi
+  have ht : i / w < n := by
+    rw [Nat.div_lt_iff_lt_mul hw]; omega
+  have hs := h (i / w) ht
+  simp only [unitBoxSlice, List.all_eq_true, List.mem_range', Bool.or_eq_true, Bool.not_eq_true',
+    decide_eq_false_iff_not] at hs
+  have hmem : ∃ k < w, i = i / w * w + k := ⟨i % w, Nat.mod_lt _ hw, by
+    rw [Nat.mul_comm]; exact (Nat.div_add_mod i w).symm⟩
+  obtain ⟨k, hk, hik⟩ := hmem
+  rcases hs i ⟨k, hk, by simpa [Nat.mul_comm] using hik⟩ with hlt | hrest
+  · exact absurd hi hlt
+  · intro j hj k' hk'
+    simpa using hrest j (List.mem_range.mpr hj) k' (List.mem_range.mpr hk')
+
+/-- **Unit generation from a sliced certificate.** -/
+theorem unitGen_of_slices (P Q : ℤ) (e1 e1i e2 e2i : Z3) (C : UGCert) {w n : ℕ}
+    (hcore : ugCore P Q e1 e1i e2 e2i C = true) (hw : 0 < w) (hn : 2 * C.ba + 1 ≤ n * w)
+    (h : ∀ t < n, unitBoxSlice P Q C.ba C.bb C.bc (C.reps.map (evalRep P Q e1 e1i e2 e2i)) w t = true) :
+    UnitGen P Q e1 e1i e2 e2i := by
+  refine unitGen_of_cert P Q e1 e1i e2 e2i C ?_
+  have hb := unitBoxB_of_slices hw hn h
+  simp only [ugCore, Bool.and_eq_true] at hcore
+  simp only [ugCheck, Bool.and_eq_true]
+  exact ⟨hcore, hb⟩
+
 end PerfectPower.UnitGenProof

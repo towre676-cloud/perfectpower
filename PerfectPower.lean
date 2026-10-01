@@ -67,6 +67,7 @@ import PerfectPower.SqrtTwoDefs
 import PerfectPower.AbelianTransforms
 import PerfectPower.DescentLists
 import PerfectPower.Generated.Minus23
+import PerfectPower.Generated.Minus45
 import PerfectPower.MonomialCount
 import PerfectPower.ThueLocal
 import PerfectPower.DescentThue

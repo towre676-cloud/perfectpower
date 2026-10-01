@@ -326,7 +326,7 @@ for each surviving unit equation, a proved complete solution list. That is the s
 problem, but now on 109 unit equations instead of 64 classes with large right sides. This
 measurement itself promotes nothing.
 
-**Worked instance: `D = 23`** (`python/make_lean_minus23.py`, `Generated/Minus23.lean`,
+**Worked instance: `D = 23`** (`python/make_lean_curves.py`, `Generated/Minus23.lean`,
 `receipts/minus23_certificate.json`). The three open classes of `D = 23` need only two of the 109
 unit equations.
 
@@ -357,6 +357,51 @@ The two unit equations are `F₁ = −u³ − 3u²v + 6uv² + 4v³ = 1` and
   - `DescentLists.root_iff` gives each class's exact solution set as a `Finset`.
 - **The curve.** `minus23`: the integral points are exactly `(3, ±2)`, under `matveev_u1` and
   `matveev_u2`. This agrees with the Sage census.
+
+**Second instance: `D = 45`, one nonmonic source equation for three classes**
+(`Generated/Minus45.lean`, `receipts/minus45_certificate.json`). Classes 30, 31 and 32 all descend
+to `G = −2u³ − 6u²v + 3uv² + 4v³ = 1`.
+
+| class | `M` | descent primes | nodes | complete list |
+|---|---|---|---|---|
+| 30 | `729 = 3⁶` | 3 | 7 | `(12, −1)` |
+| 31 | `729 = 3⁶` | 3 | 27 | `(−3, 2)` |
+| 32 | `216 = 2³3³` | 2, 3 | 11 | `(−9, −1)` |
+
+- **The order.** `G` is not monic (`c₀ = −2`). The encoding `N(c₀u − vφ) = c₀²G(u, v)` gives
+  norm `4`. `φ = −2θ = 2 + x` lives in `ℤ[x]`, `x³ = 18x + 12` (discriminant 19440, not maximal
+  at 2). The proofs work in this order, which contains every encoded element.
+- **Norm representatives without class numbers** (`NormRepProof.normRep_of_res`).
+  - Every residue class modulo `8` with norm `≡ 4` is divisible by `γ = 4 + x`
+    (`N(γ) = 4`; 512 residues decided by the kernel).
+  - So `N(g) = 4` gives `g = γ u` with `u = g γ#/4` integral and `N(u) = 1`.
+  - Modulo `4` the check fails, so the certificate needs `m = 8`.
+  - One representative suffices, and no ideal theory or bounded search is used.
+- **The units.** `ε₁ = −7 − 3x + x²`, `ε₂ = −41 − 51x + 13x²` (regulator about 30). The unit box
+  has 117,215 triples, so `UnitGenProof.unitGen_of_slices` checks it in 33 slices, one kernel
+  evaluation each. `set_option Elab.async false` keeps the peak memory near 4 GB.
+- **The source theorem.** The analytic certificate reduces to `H ≤ 3`, and
+  `G = 1 ⇔ (u, v) = (−1, −1)` (`class_w1`, under `matveev_w1`).
+- **The curve.** `minus45`: the integral points are exactly `(21, ±96)`, under `matveev_w1`
+  alone. This agrees with the Sage census.
+
+**The layers** (`python/make_lean_curves.py`). A curve is assembled from three separately checked
+layers:
+
+| layer | content | reused by |
+|---|---|---|
+| 1. field certificate | `unitGen_proved` | every source equation of the field |
+| 2. source equation `j` | `normRep_j_proved`, `analytic_j_proved` (under `matveev_j`), reduction, box: `class_j` | every class whose descent reaches `j` |
+| 3. curve assembly | `desc_*`, `root_*`, `class_*` (`DescentLists`), `minus D` (`complete_of_lists`) | — |
+
+The curve theorem is `(⋀_{j ∈ J_D} matveev_j) → (y² = x³ − D ↔ (x, y) ∈ P_D)`. Here `J_D` is
+exactly the set of sources that its classes' descents reach.
+
+**Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
+derived from the registered Lean theorems. The raw workload receipts are unchanged.
+- Classes: 15 locally discharged, 15 conditionally complete, 49 unresolved, out of 79.
+- Unit equations: 3 of 109 registered, 106 remaining.
+- Curves conditionally complete: `D = 7, 23, 28, 45, 63`.
 
 ### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)
 
