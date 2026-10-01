@@ -6,7 +6,11 @@ This page covers the two cubic fields behind the open Mordell work:
 - the field of discriminant 1944 (`δ³ = 9δ + 6`), which carries the `D = 72` residual
   `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`.
 
-Both are proved complete in Lean under **three named premises**. Every other step is
+Both are proved complete in Lean under **three kinds of named premise**. The instances are:
+- one `unitGen` per field;
+- one `normRep` per distinct `(N, γ₀)`: six for field 756, since classes 20 and 50 share
+  `normRep_64`, and one for `D = 72`, since `H = −1` is transported by sign;
+- one `analytic` per class: seven for field 756 and one for `D = 72`. Every other step is
 kernel-checked. The direct maximum-exponent reduction, the unit-domain witness, the residue sieve
 and the norm-representative localization come from the direct-H handoff, adapted here.
 
@@ -110,7 +114,14 @@ enclosures, with `H ≤ M₀` and `|κe₁ + e₂ + μ| ≤ A e^{−cH}`. The ev
 - the conjugate estimates give `log|b| ≥ (H − b')/a`;
 - Matveev's theorem (Bugeaud–Mignotte–Siksek 2006, Thm 9.4; `n = 3`, degree 6) gives `M₀`.
 
-The numerics use `mpmath.iv` at 900 bits, and the enclosures are rounded outward. This is the
+The numerics use `mpmath.iv` at 900 bits. Every constant is the safe endpoint of an interval
+enclosure:
+- the lower end for `c`;
+- the upper end for `K₁`, `b`, `K`, `A` and the Matveev constant;
+- `V₀` with `(V₀ + 1)³ > 2K₁` checked on the enclosure;
+- `H₀` accepted only when the lower end of `cH₀ − log K − C(1 + log H₀)` is positive.
+
+The rational enclosures handed to Lean are then rounded outward again. This is the
 largest remaining dependency.
 
 ## Exponent residues (`python/d72_unit_sieve.py`, measurement)

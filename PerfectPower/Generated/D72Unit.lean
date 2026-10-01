@@ -8,8 +8,9 @@ import PerfectPower.DescentThueList
 `K = ℚ(δ)`, `δ³ = 9δ + 6`, `O_K = ℤ[δ]`, discriminant 1944.  The form `(−3, 0, 9, −2)` has
 `φ = β = 6 − δ²` (`NormForm.d72_beta_of_delta`), and `N(c₀u − βv) = 9 H(u, v)`.
 
-* **Premises, not proved in Lean:** `unitGen`, `normRep_pos`/`normRep_neg` (norms `±9`), and
-  `analytic_pos`/`analytic_neg`.
+* **Premises, not proved in Lean:** `unitGen`, `normRep_pos` (norm 9) and `analytic_pos`.  The
+  target `H = −1` uses the same two, transported by sign (`UnitPremises.normRep_neg_of`,
+  `analytic_neg_of`: the form, `enc` and the norm are odd).
 * **Kernel-checked:** the reduction chains (`H ≤ 4`), the box of `9²` elements and the search
   `|v| ≤ 1`.  `class_pos`, `class_neg`: no solution.
 -/
@@ -40,6 +41,10 @@ def unitGen : Prop := UnitPremises.UnitGen 9 6 e1 e1i e2 e2i
 all but `±1` lie outside the centered parallelogram, by the exact log enclosures of the witness). -/
 theorem unit_box : UnitPremises.unitBoxB 9 6 28 8 5 [((-1), (-3), (-1)), ((-1), (-3), 1), ((-1), 0, 0), ((-1), 0, 2), (1, 0, (-2)), (1, 0, 0), (1, 3, (-1)), (1, 3, 1)] = true := by decide +kernel
 
+/-- **Norm-representative premise** (shared by `H = 1` (and, transported by sign, `H = -1`)): every element of norm 9 is `[-3, -3, 1]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
+def normRep_pos : Prop := UnitPremises.NormRep 9 6 9 [((-3), (-3), 1)]
+
+
 /-- The analytic cases of `H(u, v) = 1`: 3 cases, 6 reduction steps, final bound 4. -/
 def reps_pos : List (Z3 × List UnitPremises.Case) :=
   [(((-3), (-3), 1),
@@ -56,52 +61,32 @@ def reps_pos : List (Z3 × List UnitPremises.Case) :=
       cl := ((53583761208174539813 : ℚ) / 9223372036854775808), Au := ((13589655909428544186865 : ℚ) / 9223372036854775808),
       M0 := 2422099705422507625, steps := [(2729400835402688791473797, 11, 53), (13165269, 4, 18)] }])]
 
-/-- **Norm-representative premise** for `H(u, v) = 1`: every element of norm 9 is `[-3, -3, 1]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_pos : Prop := UnitPremises.NormRep 9 6 9 (reps_pos.map Prod.fst)
-
 /-- **Analytic premise** for `H(u, v) = 1` (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_pos : Prop :=
   UnitPremises.Analytic ((-3), 0, 9, (-2)) 1 9 6 (6, 0, (-1)) e1 e1i e2 e2i 1 reps_pos
+
+/-- Negative control: every chain of `H(u, v) = 1` with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_pos : UnitPremises.forgedRejectedB reps_pos = true := by decide +kernel
 
 /-- **`H(u, v) = 1`, complete under the three premises**: `[-3, 0, 9, -2]` takes the value 1 exactly at 0 point(s).  Kernel-checked: the reduction chains (to `H ≤ 4`), the norm identity, the box (`9²` elements) and the search `|b| ≤ 1`. -/
 theorem class_pos (hU : unitGen) (hN : normRep_pos) (hA : analytic_pos) (u v : ℤ) :
     evalF ((-3), 0, 9, (-2)) u v = 1 ↔ (u, v) ∈ ([] : List (ℤ × ℤ)) :=
   thue_list ((-3), 0, 9, (-2)) 1 9 6 (6, 0, (-1)) (reps_pos.map Prod.fst) e1 e1i e2 e2i 4 1 []
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_pos hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_pos hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
-/-- The analytic cases of `H(u, v) = -1`: 3 cases, 6 reduction steps, final bound 4. -/
-def reps_neg : List (Z3 × List UnitPremises.Case) :=
-  [((3, 3, (-1)),
-   [{ kl := ((-1501758180866557654983911108052895103095038639630699475798540869621041249359 : ℚ) / 3618502788666131106986593281521497120414687020801267626233049500247285301248), ku := ((-48056261787729844959485155457692643299041236468182383225553307827873319979487 : ℚ) / 115792089237316195423570985008687907853269984665640564039457584007913129639936),
-      ml := ((27974352416797253293045812443650840279348695168784308543519744311033950075999 : ℚ) / 115792089237316195423570985008687907853269984665640564039457584007913129639936), mu := ((874198513024914165407681638864088758729646724024509641984992009719810939875 : ℚ) / 3618502788666131106986593281521497120414687020801267626233049500247285301248),
-      cl := ((100746803642394679207 : ℚ) / 18446744073709551616), Au := ((21973576962655061576299 : ℚ) / 18446744073709551616),
-      M0 := 2580652051907444374, steps := [(4484069326921197072259777, 11, 68), (15108118, 4, 21)] },
-    { kl := ((-1279802946824838060397312741771681251475008536892045698501434803582445990529683 : ℚ) / 115792089237316195423570985008687907853269984665640564039457584007913129639936), ku := ((-639901473412419030198656370885840625737504268446022849250717401791222995264841 : ℚ) / 57896044618658097711785492504343953926634992332820282019728792003956564819968),
-      ml := ((-15742718381945331744793488236118303774743116268816324355142528215083587234701 : ℚ) / 3618502788666131106986593281521497120414687020801267626233049500247285301248), mu := ((-503766988222250615833391623555785720791779720602122379364560902882674791510431 : ℚ) / 115792089237316195423570985008687907853269984665640564039457584007913129639936),
-      cl := ((38035279438432899461 : ℚ) / 4611686018427387904), Au := ((198506992469764238463 : ℚ) / 4611686018427387904),
-      M0 := 1690383494603813403, steps := [(2345880028372119257896907, 7, 48), (7669549, 2, 16)] },
-    { kl := ((237847519130811118765454753849486208522055370174653289680579436898499155197 : ℚ) / 904625697166532776746648320380374280103671755200316906558262375061821325312), ku := ((30444482448743823201978208492734234690823087382355621079114167923007891865217 : ℚ) / 115792089237316195423570985008687907853269984665640564039457584007913129639936),
-      ml := ((15465721922080864074973363487487162848356193080499008196652677072263631151117 : ℚ) / 28948022309329048855892746252171976963317496166410141009864396001978282409984), mu := ((61862887688323456299893453949948651393424772321996032786610708289054524604469 : ℚ) / 115792089237316195423570985008687907853269984665640564039457584007913129639936),
-      cl := ((53583761208174539813 : ℚ) / 9223372036854775808), Au := ((13589655909428544186865 : ℚ) / 9223372036854775808),
-      M0 := 2422099705422507625, steps := [(2729400835402688791473797, 11, 53), (13165269, 4, 18)] }])]
+/-- The representatives and cases of `H(u, v) = -1`: those of `pos`, negated. -/
+def reps_neg : List (Z3 × List UnitPremises.Case) := UnitPremises.negReps reps_pos
 
-/-- **Norm-representative premise** for `H(u, v) = -1`: every element of norm -9 is `[3, 3, -1]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_neg : Prop := UnitPremises.NormRep 9 6 (-9) (reps_neg.map Prod.fst)
-
-/-- **Analytic premise** for `H(u, v) = -1` (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
-def analytic_neg : Prop :=
-  UnitPremises.Analytic ((-3), 0, 9, (-2)) (-1) 9 6 (6, 0, (-1)) e1 e1i e2 e2i 1 reps_neg
-
-/-- **`H(u, v) = -1`, complete under the three premises**: `[-3, 0, 9, -2]` takes the value -1 exactly at 0 point(s).  Kernel-checked: the reduction chains (to `H ≤ 4`), the norm identity, the box (`9²` elements) and the search `|b| ≤ 1`. -/
-theorem class_neg (hU : unitGen) (hN : normRep_neg) (hA : analytic_neg) (u v : ℤ) :
-    evalF ((-3), 0, 9, (-2)) u v = -1 ↔ (u, v) ∈ ([] : List (ℤ × ℤ)) :=
+/-- **`H(u, v) = -1`, complete under the three premises**: `[-3, 0, 9, -2]` takes the value -1 exactly at 0 point(s).  Its norm and analytic premises are those of `pos`, transported by sign.   Kernel-checked: the reduction chains (to `H ≤ 4`), the norm identity, the box (`9²` elements) and the search `|b| ≤ 1`. -/
+theorem class_neg (hU : unitGen) (hN : normRep_pos) (hA : analytic_pos) (u v : ℤ) :
+    evalF ((-3), 0, 9, (-2)) u v = (-1) ↔ (u, v) ∈ ([] : List (ℤ × ℤ)) :=
   thue_list ((-3), 0, 9, (-2)) (-1) 9 6 (6, 0, (-1)) (reps_neg.map Prod.fst) e1 e1i e2 e2i 4 1 []
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_neg hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_neg hU (UnitPremises.normRep_neg_of (reps := reps_pos) hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (UnitPremises.analytic_neg_of hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 end PerfectPower.Generated.D72Unit

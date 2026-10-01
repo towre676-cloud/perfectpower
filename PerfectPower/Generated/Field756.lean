@@ -8,8 +8,8 @@ import PerfectPower.DescentThueList
 `K = ℚ(x)`, `x³ = 6x + 2`, `O_K = ℤ[x]`, discriminant 756.  Seven GL₂(ℤ)-classes of open branch
 equations of `y² = x³ − D`, `D ∈ {7, 28, 63}`, live in this field (`MORDELL_BRANCH.md` §7.3).
 
-* **Premises, not proved in Lean:** `unitGen` (one for the field), `normRep_i` and `analytic_i`
-  (one each per class).  See `UnitPremises` for their statements and evidence.
+* **Premises, not proved in Lean:** `unitGen` (one for the field), one `normRep_N` per distinct
+  norm representative (classes 20 and 50 share `normRep_64`), and one `analytic_i` per class.  See `UnitPremises` for their statements and evidence.
 * **Kernel-checked:** the direct-`H` reduction chains, the exponent boxes, the small-`b` searches,
   the norm identities, and the branch transport.
 * `class_i`: the complete solution list.  `minusD`: the complete list of integral points of
@@ -42,6 +42,30 @@ def unitGen : Prop := UnitPremises.UnitGen 6 2 e1 e1i e2 e2i
 all but `±1` lie outside the centered parallelogram, by the exact log enclosures of the witness). -/
 theorem unit_box : UnitPremises.unitBoxB 6 2 9 3 3 [((-5), 0, 1), ((-1), (-3), (-1)), ((-1), (-3), 0), ((-1), (-2), 1), ((-1), 0, 0), ((-1), 3, (-1)), (1, (-3), 1), (1, 0, 0), (1, 2, (-1)), (1, 3, 0), (1, 3, 1), (5, 0, (-1))] = true := by decide +kernel
 
+/-- **Norm-representative premise** (shared by class 0): every element of norm 576 is `[-20, -4, 4]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
+def normRep_576 : Prop := UnitPremises.NormRep 6 2 576 [((-20), (-4), 4)]
+
+
+/-- **Norm-representative premise** (shared by class 1): every element of norm 256 is `[0, -8, -4]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
+def normRep_256 : Prop := UnitPremises.NormRep 6 2 256 [(0, (-8), (-4))]
+
+
+/-- **Norm-representative premise** (shared by class 2): every element of norm 8 is `[2, 0, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
+def normRep_8 : Prop := UnitPremises.NormRep 6 2 8 [(2, 0, 0)]
+
+
+/-- **Norm-representative premise** (shared by class 18): every element of norm 8192 is `[0, 16, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
+def normRep_8192 : Prop := UnitPremises.NormRep 6 2 8192 [(0, 16, 0)]
+
+
+/-- **Norm-representative premise** (shared by class 19): every element of norm 512 is `[8, 0, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
+def normRep_512 : Prop := UnitPremises.NormRep 6 2 512 [(8, 0, 0)]
+
+
+/-- **Norm-representative premise** (shared by class 20, class 50): every element of norm 64 is `[4, 0, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
+def normRep_64 : Prop := UnitPremises.NormRep 6 2 64 [(4, 0, 0)]
+
+
 /-- The analytic cases of class 0 (`D ∈ [7]`, `M = 64`): 3 cases, 8 reduction steps, final bound 5. -/
 def reps_0 : List (Z3 × List UnitPremises.Case) :=
   [(((-20), (-4), 4),
@@ -58,20 +82,20 @@ def reps_0 : List (Z3 × List UnitPremises.Case) :=
       cl := ((42082853662772286659 : ℚ) / 9223372036854775808), Au := ((978378914952016993587 : ℚ) / 18446744073709551616),
       M0 := 1703700648645494452, steps := [(4175099599096789427436679, 14, 51), (30862898, 5, 21)] }])]
 
-/-- **Norm-representative premise** for class 0 (`D ∈ [7]`, `M = 64`): every element of norm 576 is `[-20, -4, 4]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_0 : Prop := UnitPremises.NormRep 6 2 576 (reps_0.map Prod.fst)
-
 /-- **Analytic premise** for class 0 (`D ∈ [7]`, `M = 64`) (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_0 : Prop :=
   UnitPremises.Analytic ((-3), (-3), 63, 7) 64 6 2 (17, 4, (-4)) e1 e1i e2 e2i 1 reps_0
 
+/-- Negative control: every chain of class 0 (`D ∈ [7]`, `M = 64`) with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_0 : UnitPremises.forgedRejectedB reps_0 = true := by decide +kernel
+
 /-- **class 0 (`D ∈ [7]`, `M = 64`), complete under the three premises**: `[-3, -3, 63, 7]` takes the value 64 exactly at 2 point(s).  Kernel-checked: the reduction chains (to `H ≤ 5`), the norm identity, the box (`11²` elements) and the search `|b| ≤ 1`. -/
-theorem class_0 (hU : unitGen) (hN : normRep_0) (hA : analytic_0) (u v : ℤ) :
+theorem class_0 (hU : unitGen) (hN : normRep_576) (hA : analytic_0) (u v : ℤ) :
     evalF ((-3), (-3), 63, 7) u v = 64 ↔ (u, v) ∈ ([(1, 1), (10, (-2))] : List (ℤ × ℤ)) :=
   thue_list ((-3), (-3), 63, 7) 64 6 2 (17, 4, (-4)) (reps_0.map Prod.fst) e1 e1i e2 e2i 5 1 [(1, 1), (10, (-2))]
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_0 hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_0 hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 /-- The analytic cases of class 1 (`D ∈ [7]`, `M = 64`): 3 cases, 7 reduction steps, final bound 7. -/
@@ -90,20 +114,20 @@ def reps_1 : List (Z3 × List UnitPremises.Case) :=
       cl := ((42082853662772286659 : ℚ) / 9223372036854775808), Au := ((44639936641520258824383 : ℚ) / 18446744073709551616),
       M0 := 1606214826116210514, steps := [(4175099599096789427436679, 14, 69), (30862898, 6, 23)] }])]
 
-/-- **Norm-representative premise** for class 1 (`D ∈ [7]`, `M = 64`): every element of norm 256 is `[0, -8, -4]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_1 : Prop := UnitPremises.NormRep 6 2 256 (reps_1.map Prod.fst)
-
 /-- **Analytic premise** for class 1 (`D ∈ [7]`, `M = 64`) (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_1 : Prop :=
   UnitPremises.Analytic ((-2), (-18), 42, 42) 64 6 2 (22, 0, (-4)) e1 e1i e2 e2i 1 reps_1
 
+/-- Negative control: every chain of class 1 (`D ∈ [7]`, `M = 64`) with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_1 : UnitPremises.forgedRejectedB reps_1 = true := by decide +kernel
+
 /-- **class 1 (`D ∈ [7]`, `M = 64`), complete under the three premises**: `[-2, -18, 42, 42]` takes the value 64 exactly at 2 point(s).  Kernel-checked: the reduction chains (to `H ≤ 7`), the norm identity, the box (`15²` elements) and the search `|b| ≤ 1`. -/
-theorem class_1 (hU : unitGen) (hN : normRep_1) (hA : analytic_1) (u v : ℤ) :
+theorem class_1 (hU : unitGen) (hN : normRep_256) (hA : analytic_1) (u v : ℤ) :
     evalF ((-2), (-18), 42, 42) u v = 64 ↔ (u, v) ∈ ([((-11), 1), (1, 1)] : List (ℤ × ℤ)) :=
   thue_list ((-2), (-18), 42, 42) 64 6 2 (22, 0, (-4)) (reps_1.map Prod.fst) e1 e1i e2 e2i 7 1 [((-11), 1), (1, 1)]
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_1 hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_1 hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 /-- The analytic cases of class 2 (`D ∈ [7]`, `M = 8`): 3 cases, 7 reduction steps, final bound 5. -/
@@ -122,20 +146,20 @@ def reps_2 : List (Z3 × List UnitPremises.Case) :=
       cl := ((42082853662772286659 : ℚ) / 9223372036854775808), Au := ((48498498541269388461 : ℚ) / 4611686018427387904),
       M0 := 914647909645149441, steps := [(1239071994104053431134945, 12, 75), (30862898, 5, 17)] }])]
 
-/-- **Norm-representative premise** for class 2 (`D ∈ [7]`, `M = 8`): every element of norm 8 is `[2, 0, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_2 : Prop := UnitPremises.NormRep 6 2 8 (reps_2.map Prod.fst)
-
 /-- **Analytic premise** for class 2 (`D ∈ [7]`, `M = 8`) (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_2 : Prop :=
   UnitPremises.Analytic ((-1), (-3), 21, 7) 8 6 2 (1, 2, 0) e1 e1i e2 e2i 1 reps_2
 
+/-- Negative control: every chain of class 2 (`D ∈ [7]`, `M = 8`) with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_2 : UnitPremises.forgedRejectedB reps_2 = true := by decide +kernel
+
 /-- **class 2 (`D ∈ [7]`, `M = 8`), complete under the three premises**: `[-1, -3, 21, 7]` takes the value 8 exactly at 2 point(s).  Kernel-checked: the reduction chains (to `H ≤ 5`), the norm identity, the box (`11²` elements) and the search `|b| ≤ 1`. -/
-theorem class_2 (hU : unitGen) (hN : normRep_2) (hA : analytic_2) (u v : ℤ) :
+theorem class_2 (hU : unitGen) (hN : normRep_8) (hA : analytic_2) (u v : ℤ) :
     evalF ((-1), (-3), 21, 7) u v = 8 ↔ (u, v) ∈ ([((-2), 0), (1, (-3))] : List (ℤ × ℤ)) :=
   thue_list ((-1), (-3), 21, 7) 8 6 2 (1, 2, 0) (reps_2.map Prod.fst) e1 e1i e2 e2i 5 1 [((-2), 0), (1, (-3))]
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_2 hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_2 hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 /-- The analytic cases of class 18 (`D ∈ [28]`, `M = 512`): 3 cases, 7 reduction steps, final bound 6. -/
@@ -154,20 +178,20 @@ def reps_18 : List (Z3 × List UnitPremises.Case) :=
       cl := ((42082853662772286659 : ℚ) / 9223372036854775808), Au := ((1558253973702334017977 : ℚ) / 9223372036854775808),
       M0 := 2495921763487396446, steps := [(4175099599096789427436679, 13, 63), (30862898, 5, 24)] }])]
 
-/-- **Norm-representative premise** for class 18 (`D ∈ [28]`, `M = 512`): every element of norm 8192 is `[0, 16, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_18 : Prop := UnitPremises.NormRep 6 2 8192 (reps_18.map Prod.fst)
-
 /-- **Analytic premise** for class 18 (`D ∈ [28]`, `M = 512`) (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_18 : Prop :=
   UnitPremises.Analytic ((-4), (-24), 336, 224) 512 6 2 (8, 16, 0) e1 e1i e2 e2i 1 reps_18
 
+/-- Negative control: every chain of class 18 (`D ∈ [28]`, `M = 512`) with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_18 : UnitPremises.forgedRejectedB reps_18 = true := by decide +kernel
+
 /-- **class 18 (`D ∈ [28]`, `M = 512`), complete under the three premises**: `[-4, -24, 336, 224]` takes the value 512 exactly at 2 point(s).  Kernel-checked: the reduction chains (to `H ≤ 6`), the norm identity, the box (`13²` elements) and the search `|b| ≤ 1`. -/
-theorem class_18 (hU : unitGen) (hN : normRep_18) (hA : analytic_18) (u v : ℤ) :
+theorem class_18 (hU : unitGen) (hN : normRep_8192) (hA : analytic_18) (u v : ℤ) :
     evalF ((-4), (-24), 336, 224) u v = 512 ↔ (u, v) ∈ ([(2, (-1)), (6, 1)] : List (ℤ × ℤ)) :=
   thue_list ((-4), (-24), 336, 224) 512 6 2 (8, 16, 0) (reps_18.map Prod.fst) e1 e1i e2 e2i 6 1 [(2, (-1)), (6, 1)]
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_18 hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_18 hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 /-- The analytic cases of class 19 (`D ∈ [28]`, `M = 512`): 3 cases, 7 reduction steps, final bound 6. -/
@@ -186,20 +210,20 @@ def reps_19 : List (Z3 × List UnitPremises.Case) :=
       cl := ((42082853662772286659 : ℚ) / 9223372036854775808), Au := ((4708928599936937277815 : ℚ) / 4611686018427387904),
       M0 := 1910594199301519168, steps := [(4175099599096789427436679, 14, 54), (30862898, 6, 21)] }])]
 
-/-- **Norm-representative premise** for class 19 (`D ∈ [28]`, `M = 512`): every element of norm 512 is `[8, 0, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_19 : Prop := UnitPremises.NormRep 6 2 512 (reps_19.map Prod.fst)
-
 /-- **Analytic premise** for class 19 (`D ∈ [28]`, `M = 512`) (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_19 : Prop :=
   UnitPremises.Analytic ((-1), (-66), 84, 616) 512 6 2 ((-10), (-16), 8) e1 e1i e2 e2i 1 reps_19
 
+/-- Negative control: every chain of class 19 (`D ∈ [28]`, `M = 512`) with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_19 : UnitPremises.forgedRejectedB reps_19 = true := by decide +kernel
+
 /-- **class 19 (`D ∈ [28]`, `M = 512`), complete under the three premises**: `[-1, -66, 84, 616]` takes the value 512 exactly at 2 point(s).  Kernel-checked: the reduction chains (to `H ≤ 6`), the norm identity, the box (`13²` elements) and the search `|b| ≤ 1`. -/
-theorem class_19 (hU : unitGen) (hN : normRep_19) (hA : analytic_19) (u v : ℤ) :
+theorem class_19 (hU : unitGen) (hN : normRep_512) (hA : analytic_19) (u v : ℤ) :
     evalF ((-1), (-66), 84, 616) u v = 512 ↔ (u, v) ∈ ([((-8), 0), (2, 1)] : List (ℤ × ℤ)) :=
   thue_list ((-1), (-66), 84, 616) 512 6 2 ((-10), (-16), 8) (reps_19.map Prod.fst) e1 e1i e2 e2i 6 1 [((-8), 0), (2, 1)]
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_19 hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_19 hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 /-- The analytic cases of class 20 (`D ∈ [28]`, `M = 64`): 3 cases, 7 reduction steps, final bound 6. -/
@@ -218,20 +242,20 @@ def reps_20 : List (Z3 × List UnitPremises.Case) :=
       cl := ((42082853662772286659 : ℚ) / 9223372036854775808), Au := ((2169008532526260400397 : ℚ) / 18446744073709551616),
       M0 := 1478446353273898435, steps := [(4175099599096789427436679, 13, 61), (30862898, 5, 23)] }])]
 
-/-- **Norm-representative premise** for class 20 (`D ∈ [28]`, `M = 64`): every element of norm 64 is `[4, 0, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_20 : Prop := UnitPremises.NormRep 6 2 64 (reps_20.map Prod.fst)
-
 /-- **Analytic premise** for class 20 (`D ∈ [28]`, `M = 64`) (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_20 : Prop :=
   UnitPremises.Analytic ((-1), (-18), 84, 168) 64 6 2 (22, 0, (-4)) e1 e1i e2 e2i 1 reps_20
 
+/-- Negative control: every chain of class 20 (`D ∈ [28]`, `M = 64`) with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_20 : UnitPremises.forgedRejectedB reps_20 = true := by decide +kernel
+
 /-- **class 20 (`D ∈ [28]`, `M = 64`), complete under the three premises**: `[-1, -18, 84, 168]` takes the value 64 exactly at 2 point(s).  Kernel-checked: the reduction chains (to `H ≤ 6`), the norm identity, the box (`13²` elements) and the search `|b| ≤ 1`. -/
-theorem class_20 (hU : unitGen) (hN : normRep_20) (hA : analytic_20) (u v : ℤ) :
+theorem class_20 (hU : unitGen) (hN : normRep_64) (hA : analytic_20) (u v : ℤ) :
     evalF ((-1), (-18), 84, 168) u v = 64 ↔ (u, v) ∈ ([((-4), 0), (2, (-1))] : List (ℤ × ℤ)) :=
   thue_list ((-1), (-18), 84, 168) 64 6 2 (22, 0, (-4)) (reps_20.map Prod.fst) e1 e1i e2 e2i 6 1 [((-4), 0), (2, (-1))]
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_20 hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_20 hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 /-- The analytic cases of class 50 (`D ∈ [63]`, `M = 64`): 3 cases, 7 reduction steps, final bound 5. -/
@@ -250,25 +274,25 @@ def reps_50 : List (Z3 × List UnitPremises.Case) :=
       cl := ((42082853662772286659 : ℚ) / 9223372036854775808), Au := ((490793827312017135507 : ℚ) / 18446744073709551616),
       M0 := 1500999163697814826, steps := [(4175099599096789427436679, 13, 52), (30862898, 4, 21)] }])]
 
-/-- **Norm-representative premise** for class 50 (`D ∈ [63]`, `M = 64`): every element of norm 64 is `[4, 0, 0]` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in Lean. -/
-def normRep_50 : Prop := UnitPremises.NormRep 6 2 64 (reps_50.map Prod.fst)
-
 /-- **Analytic premise** for class 50 (`D ∈ [63]`, `M = 64`) (Siegel's identity, the conjugate estimates and Matveev's theorem, `crosscheck/thue_bound.py`).  Not proved in Lean. -/
 def analytic_50 : Prop :=
   UnitPremises.Analytic ((-1), (-3), 189, 63) 64 6 2 (17, 4, (-4)) e1 e1i e2 e2i 0 reps_50
 
+/-- Negative control: every chain of class 50 (`D ∈ [63]`, `M = 64`) with its final bound lowered by one is rejected by the kernel. -/
+theorem forged_rejected_50 : UnitPremises.forgedRejectedB reps_50 = true := by decide +kernel
+
 /-- **class 50 (`D ∈ [63]`, `M = 64`), complete under the three premises**: `[-1, -3, 189, 63]` takes the value 64 exactly at 2 point(s).  Kernel-checked: the reduction chains (to `H ≤ 5`), the norm identity, the box (`11²` elements) and the search `|b| ≤ 0`. -/
-theorem class_50 (hU : unitGen) (hN : normRep_50) (hA : analytic_50) (u v : ℤ) :
+theorem class_50 (hU : unitGen) (hN : normRep_64) (hA : analytic_50) (u v : ℤ) :
     evalF ((-1), (-3), 189, 63) u v = 64 ↔ (u, v) ∈ ([((-4), 0), (2, (-6))] : List (ℤ × ℤ)) :=
   thue_list ((-1), (-3), 189, 63) 64 6 2 (17, 4, (-4)) (reps_50.map Prod.fst) e1 e1i e2 e2i 5 0 [((-4), 0), (2, (-6))]
     (by decide) (by decide)
-    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_50 hU hN
-      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) hA (by decide +kernel))
+    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_50 hU (hN)
+      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) (hA) (by decide +kernel))
     (by decide +kernel) (by decide +kernel) (by decide +kernel) u v
 
 set_option maxHeartbeats 0 in
 /-- **The integral points of `y^2 = x^3 - 7`, under the premises of classes [0, 1, 2]**: 4 point(s).  4 field-cube and 0 local branches; 12 branches transported to the listed classes. -/
-theorem minus7 (hU : unitGen) (hN0 : normRep_0) (hA0 : analytic_0) (hN1 : normRep_1) (hA1 : analytic_1) (hN2 : normRep_2) (hA2 : analytic_2)
+theorem minus7 (hU : unitGen) (hnormRep_256 : normRep_256) (hnormRep_576 : normRep_576) (hnormRep_8 : normRep_8) (hA0 : analytic_0) (hA1 : analytic_1) (hA2 : analytic_2)
     (x y : ℤ) : y ^ 2 = x ^ 3 - 7 ↔ (x, y) ∈ ([(32, (-181)), (2, (-1)), (2, 1), (32, 181)] : List (ℤ × ℤ)) :=
   DescentThueList.complete_of_lists 7 (by norm_num) 2 1 (by norm_num) (by norm_num) 5 4
     (by norm_num) (by norm_num)
@@ -279,14 +303,14 @@ theorem minus7 (hU : unitGen) (hN0 : normRep_0) (hA0 : analytic_0) (hN1 : normRe
     [(((-3), (-3), 63, 7), 64, [(1, 1), (10, (-2))]), (((-2), (-18), 42, 42), 64, [((-11), 1), (1, 1)]), (((-1), (-3), 21, 7), 8, [((-2), 0), (1, (-3))])]
     (by simp)
     (by intro c hc u v; simp only [List.mem_cons, List.mem_nil_iff, or_false] at hc
-        rcases hc with rfl | rfl | rfl <;> first | exact (class_0 hU hN0 hA0 u v).mp | exact (class_1 hU hN1 hA1 u v).mp | exact (class_2 hU hN2 hA2 u v).mp)
+        rcases hc with rfl | rfl | rfl <;> first | exact (class_0 hU hnormRep_576 hA0 u v).mp | exact (class_1 hU hnormRep_256 hA1 u v).mp | exact (class_2 hU hnormRep_8 hA2 u v).mp)
     [(-181), (-1), 1, 181]
     [(32, (-181)), (2, (-1)), (2, 1), (32, 181)]
     (by decide +kernel) (by decide +kernel) x y
 
 set_option maxHeartbeats 0 in
 /-- **The integral points of `y^2 = x^3 - 28`, under the premises of classes [18, 19, 20]**: 6 point(s).  10 field-cube and 0 local branches; 12 branches transported to the listed classes. -/
-theorem minus28 (hU : unitGen) (hN18 : normRep_18) (hA18 : analytic_18) (hN19 : normRep_19) (hA19 : analytic_19) (hN20 : normRep_20) (hA20 : analytic_20)
+theorem minus28 (hU : unitGen) (hnormRep_512 : normRep_512) (hnormRep_64 : normRep_64) (hnormRep_8192 : normRep_8192) (hA18 : analytic_18) (hA19 : analytic_19) (hA20 : analytic_20)
     (x y : ℤ) : y ^ 2 = x ^ 3 - 28 ↔ (x, y) ∈ ([(37, (-225)), (8, (-22)), (4, (-6)), (4, 6), (8, 22), (37, 225)] : List (ℤ × ℤ)) :=
   DescentThueList.complete_of_lists 28 (by norm_num) 5 1 (by norm_num) (by norm_num) 10 5
     (by norm_num) (by norm_num)
@@ -297,14 +321,14 @@ theorem minus28 (hU : unitGen) (hN18 : normRep_18) (hA18 : analytic_18) (hN19 : 
     [(((-4), (-24), 336, 224), 512, [(2, (-1)), (6, 1)]), (((-1), (-66), 84, 616), 512, [((-8), 0), (2, 1)]), (((-1), (-18), 84, 168), 64, [((-4), 0), (2, (-1))])]
     (by simp)
     (by intro c hc u v; simp only [List.mem_cons, List.mem_nil_iff, or_false] at hc
-        rcases hc with rfl | rfl | rfl <;> first | exact (class_18 hU hN18 hA18 u v).mp | exact (class_19 hU hN19 hA19 u v).mp | exact (class_20 hU hN20 hA20 u v).mp)
+        rcases hc with rfl | rfl | rfl <;> first | exact (class_18 hU hnormRep_8192 hA18 u v).mp | exact (class_19 hU hnormRep_512 hA19 u v).mp | exact (class_20 hU hnormRep_64 hA20 u v).mp)
     [(-225), (-22), (-6), 6, 22, 225]
     [(37, (-225)), (8, (-22)), (4, (-6)), (4, 6), (8, 22), (37, 225)]
     (by decide +kernel) (by decide +kernel) x y
 
 set_option maxHeartbeats 0 in
 /-- **The integral points of `y^2 = x^3 - 63`, under the premises of classes [50]**: 4 point(s).  6 field-cube and 0 local branches; 4 branches transported to the listed classes. -/
-theorem minus63 (hU : unitGen) (hN50 : normRep_50) (hA50 : analytic_50)
+theorem minus63 (hU : unitGen) (hnormRep_64 : normRep_64) (hA50 : analytic_50)
     (x y : ℤ) : y ^ 2 = x ^ 3 - 63 ↔ (x, y) ∈ ([(568, (-13537)), (4, (-1)), (4, 1), (568, 13537)] : List (ℤ × ℤ)) :=
   DescentThueList.complete_of_lists 63 (by norm_num) 8 1 (by norm_num) (by norm_num) 15 7
     (by norm_num) (by norm_num)
@@ -315,7 +339,7 @@ theorem minus63 (hU : unitGen) (hN50 : normRep_50) (hA50 : analytic_50)
     [(((-1), (-3), 189, 63), 64, [((-4), 0), (2, (-6))])]
     (by simp)
     (by intro c hc u v; simp only [List.mem_cons, List.mem_nil_iff, or_false] at hc
-        rcases hc with rfl <;> first | exact (class_50 hU hN50 hA50 u v).mp)
+        rcases hc with rfl <;> first | exact (class_50 hU hnormRep_64 hA50 u v).mp)
     [(-13537), (-1), 1, 13537]
     [(568, (-13537)), (4, (-1)), (4, 1), (568, 13537)]
     (by decide +kernel) (by decide +kernel) x y

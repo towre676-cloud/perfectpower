@@ -187,4 +187,10 @@ theorem chain_sound {kl ku ml mu cl Au : ℚ} (κ μ c A : ℝ) (hk1 : (kl : ℝ
     have hB := step_sound h.1 κ μ c A hk1 hk2 hm1 hm2 hc hA e1 e2 hH hlin
     exact chain_sound κ μ c A hk1 hk2 hm1 hm2 hc hA e1 e2 hlin B rest h.2 hB
 
+/-- A chain with its final bound lowered by one (a forged certificate, for negative controls). -/
+def lowerLast : List (ℕ × ℕ × ℕ) → List (ℕ × ℕ × ℕ)
+  | [] => []
+  | [(q, B, J)] => [(q, B - 1, J)]
+  | s :: rest => s :: lowerLast rest
+
 end PerfectPower.DirectReduction

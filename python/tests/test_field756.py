@@ -41,24 +41,48 @@ class TestField756(unittest.TestCase):
         self.assertEqual(pts[7], [(2, -1), (2, 1), (32, -181), (32, 181)])
 
 
-    def test_reduction_chains_replay(self):
-        from perfectpower import reduction_check as RC
-        n = 0
+    @staticmethod
+    def _cases():
+        out = []
         for name in ('field756_bound.json', 'd72_thue_bound.json'):
             d = json.loads((ROOT / 'receipts' / name).read_text())
-            cases = [c for row in d.get('classes', [d]) for c in row['cases']]
-            for c in cases:
-                enc = RC.enc_from_json(c['enclosure'])
-                self.assertTrue(RC.chain_ok(enc, c['M0'], c['steps']))
-                n += len(c['steps'])
-                # a forged final bound one smaller must fail
-                if c['steps']:
-                    s = dict(c['steps'][-1]); s['B'] -= 1
-                    bad = c['steps'][:-1] + [s]
-                    prev = c['steps'][-2]['B'] if len(c['steps']) > 1 else c['M0']
-                    if s['B'] >= 0 and not RC.step_ok(enc, prev, s['q'], s['B'], s['J']):
-                        self.assertFalse(RC.chain_ok(enc, c['M0'], bad))
-        self.assertGreater(n, 40)
+            out += [c for row in d.get('classes', [d]) for c in row['cases']]
+        return out
+
+    def test_reduction_chains_replay(self):
+        from perfectpower import reduction_check as RC
+        cases = self._cases()
+        self.assertEqual(len(cases), 24)
+        self.assertEqual(sum(len(c['steps']) for c in cases), 56)
+        for c in cases:
+            enc = RC.enc_from_json(c['enclosure'])
+            self.assertTrue(RC.chain_ok(enc, c['M0'], c['steps']))
+            self.assertEqual(RC.chain_end(c['M0'], c['steps']), c['H_reduced'])
+
+    def test_forged_final_bound_rejected(self):
+        """Every stored final bound, reduced by one, is rejected (no conditional skip)."""
+        from perfectpower import reduction_check as RC
+        for c in self._cases():
+            enc = RC.enc_from_json(c['enclosure'])
+            last = dict(c['steps'][-1])
+            last['B'] -= 1
+            self.assertGreaterEqual(last['B'], 0)
+            self.assertFalse(RC.chain_ok(enc, c['M0'], c['steps'][:-1] + [last]), c['H0'])
+
+    def test_degenerate_steps_rejected(self):
+        """A zero denominator, zero Taylor terms or zero decay never certify a step."""
+        from fractions import Fraction
+        from perfectpower import reduction_check as RC
+        for c in self._cases():
+            enc = RC.enc_from_json(c['enclosure'])
+            s = c['steps'][0]
+            self.assertTrue(RC.step_ok(enc, c['M0'], s['q'], s['B'], s['J']))
+            self.assertFalse(RC.step_ok(enc, c['M0'], 0, s['B'], s['J']))       # q = 0
+            self.assertFalse(RC.step_ok(enc, c['M0'], s['q'], s['B'], 0))       # J = 0: empty sum
+            flat = dict(enc, cl=Fraction(0))                                    # c = 0: sum is 1
+            self.assertFalse(RC.step_ok(flat, c['M0'], s['q'], s['B'], s['J']))
+            wide = dict(enc, kl=enc['kl'] - 1)                                  # κ enclosure too wide
+            self.assertFalse(RC.step_ok(wide, c['M0'], s['q'], s['B'], s['J']))
 
 
 if __name__ == '__main__':

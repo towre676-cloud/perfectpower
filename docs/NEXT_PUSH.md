@@ -86,7 +86,7 @@ git.
      identities, boxes, small-`b` searches and branch transport.
    - **Missing:** Lean proofs of the premises ([UNIT_PREMISES.md](UNIT_PREMISES.md)):
      - `unitGen`: the real-log fundamental-domain argument. The finite part is done.
-     - `normRep_i`: the index criterion and ideal factorization. The modular facts are done.
+     - `normRep_N` (six of them; classes 20 and 50 share one): the index criterion and ideal factorization. The modular facts are done.
      - `analytic_i`: Siegel's identity and Matveev's theorem. Matveev is the boundary that stays
        external.
 2. **The `D = 72` residual equation.**

@@ -180,4 +180,64 @@ theorem unitBox_sound {P Q : ℤ} {a b c : ℕ} {cands : List Z3} (h : unitBoxB 
     decide_eq_true_eq] at h3
   exact h3.resolve_left (not_not.mpr hn)
 
+/-! ### Sign transport: the premises for `−M` from those for `M`
+
+A cubic form is odd, `F(−a, −b) = −F(a, b)`, and so are `enc` and the norm.  So the premises of
+the target `−M` (representative `−γ₀`, the same analytic cases) follow from those of `M`. -/
+
+lemma nrm_neg (P Q : ℤ) (g : Z3) : nrm P Q (neg g) = -nrm P Q g := by
+  obtain ⟨a, b, c⟩ := g
+  simp only [nrm, neg]
+  ring
+
+lemma neg_mul' (P Q : ℤ) (x y : Z3) : mul P Q (neg x) y = neg (mul P Q x y) := by
+  obtain ⟨a, b, c⟩ := x
+  obtain ⟨d, e, f⟩ := y
+  simp only [mul, neg, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring⟩
+
+lemma enc_neg (c0 : ℤ) (phi : Z3) (a b : ℤ) : enc c0 phi (-a) (-b) = neg (enc c0 phi a b) := by
+  simp only [enc, neg, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring⟩
+
+lemma evalF_neg (F : Form) (a b : ℤ) : evalF F (-a) (-b) = -evalF F a b := by
+  simp only [evalF]
+  ring
+
+/-- The representatives and cases of the target `−M`. -/
+def negReps (reps : List (Z3 × List Case)) : List (Z3 × List Case) :=
+  reps.map fun r => (neg r.1, r.2)
+
+/-- **`NormRep` transports to the negated target.** -/
+theorem normRep_neg_of {P Q N : ℤ} {reps : List (Z3 × List Case)}
+    (h : NormRep P Q N (reps.map Prod.fst)) : NormRep P Q (-N) ((negReps reps).map Prod.fst) := by
+  intro g hg
+  have hg' : nrm P Q (neg g) = N := by rw [nrm_neg, hg, neg_neg]
+  obtain ⟨g0, hg0, u, v, huv, he⟩ := h _ hg'
+  refine ⟨neg g0, ?_, u, v, huv, ?_⟩
+  · obtain ⟨r, hr, rfl⟩ := List.mem_map.mp hg0
+    exact List.mem_map.mpr ⟨(neg r.1, r.2), List.mem_map.mpr ⟨r, hr, rfl⟩, rfl⟩
+  · rw [neg_mul', ← he, neg_neg']
+
+/-- **`Analytic` transports to the negated target**, with the same cases. -/
+theorem analytic_neg_of {F : Form} {M P Q : ℤ} {phi : Z3} {e1 e1i e2 e2i : Z3} {V : ℕ}
+    {reps : List (Z3 × List Case)} (h : Analytic F M P Q phi e1 e1i e2 e2i V reps) :
+    Analytic F (-M) P Q phi e1 e1i e2 e2i V (negReps reps) := by
+  intro a b hs hb r' hr' x y hcase
+  obtain ⟨r, hr, rfl⟩ := List.mem_map.mp hr'
+  have hs' : evalF F (-a) (-b) = M := by rw [evalF_neg, hs, neg_neg]
+  have hb' : (V : ℤ) < |-b| := by rwa [abs_neg]
+  set w := mul P Q (zp P Q e1 e1i x) (zp P Q e2 e2i y)
+  have hcase' : enc F.1 phi (-a) (-b) = mul P Q r.1 w ∨ enc F.1 phi (-a) (-b) = neg (mul P Q r.1 w) := by
+    rw [enc_neg]
+    simp only [neg_mul'] at hcase
+    rcases hcase with h1 | h1
+    · left; rw [h1, neg_neg']
+    · right; rw [h1, neg_neg']
+  exact h (-a) (-b) hs' hb' r hr x y hcase'
+
+/-- Negative control: every chain of `reps`, with its final bound lowered by one, is rejected. -/
+def forgedRejectedB (reps : List (Z3 × List Case)) : Bool :=
+  reps.all fun r => r.2.all fun C => !chainCheck C.kl C.ku C.ml C.mu C.cl C.Au C.M0 (lowerLast C.steps)
+
 end PerfectPower.UnitPremises

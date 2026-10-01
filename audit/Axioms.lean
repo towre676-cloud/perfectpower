@@ -788,6 +788,20 @@ open PerfectPower
 #print axioms PerfectPower.UnitPremises.mem_fam
 #print axioms PerfectPower.UnitPremises.extBound_of
 #print axioms PerfectPower.UnitPremises.unitBox_sound
+#print axioms PerfectPower.UnitPremises.nrm_neg
+#print axioms PerfectPower.UnitPremises.neg_mul'
+#print axioms PerfectPower.UnitPremises.enc_neg
+#print axioms PerfectPower.UnitPremises.evalF_neg
+#print axioms PerfectPower.UnitPremises.normRep_neg_of
+#print axioms PerfectPower.UnitPremises.analytic_neg_of
+#print axioms PerfectPower.Generated.Field756.forged_rejected_0
+#print axioms PerfectPower.Generated.Field756.forged_rejected_1
+#print axioms PerfectPower.Generated.Field756.forged_rejected_2
+#print axioms PerfectPower.Generated.Field756.forged_rejected_18
+#print axioms PerfectPower.Generated.Field756.forged_rejected_19
+#print axioms PerfectPower.Generated.Field756.forged_rejected_20
+#print axioms PerfectPower.Generated.Field756.forged_rejected_50
+#print axioms PerfectPower.Generated.D72Unit.forged_rejected_pos
 -- Generated/D72Unit
 #print axioms PerfectPower.Generated.D72Unit.e1_inv
 #print axioms PerfectPower.Generated.D72Unit.e2_inv

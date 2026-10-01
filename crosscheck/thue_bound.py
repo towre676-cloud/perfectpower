@@ -12,8 +12,10 @@
 So every solution has `γ := c0 a - b phi = ±γ0 ε1^e1 ε2^e2` for one listed `γ0`.
 Write `H = max(|e1|, |e2|)`.
 
-**The bound** (every constant is an `mpmath.iv` interval; roots are isolated by exact rational sign
-checks).  For each `γ0` and each `i0`, the conjugate closest to `t = c0 a / b`:
+**The bound.**  Roots are isolated by exact rational sign checks, and every constant is an
+`mpmath.iv` interval (900 bits) of which only the safe endpoint is kept: lower for `c`, upper for
+`K1`, `b`, `K`, `A`, `C`, and `V0` with `(V0 + 1)^3 > 2 K1` checked on the enclosure.  The first
+bound `H0` is accepted only when the lower end of `c H0 − log K − C (1 + log H0)` is positive.  For each `γ0` and each `i0`, the conjugate closest to `t = c0 a / b`:
 1. `|γ_{i0}| <= 4 c0^2 |M| / (b^2 P)`, `|γ_j| >= |b| |φ_j - φ_{i0}| / 2`, `P = Π_{l≠i0} |φ_l - φ_{i0}|`.
 2. Siegel: `Λ = (φ_{i0} - φ_j) γ_k / ((φ_{i0} - φ_k) γ_j) - 1` has `|Λ| <= K1 / |b|^3`,
    `K1 = 8 c0^2 |M| |φ_j - φ_k| / (P |φ_{i0} - φ_k| |φ_j - φ_{i0}|)`.  For `|b| > V0 = ⌊(2 K1)^{1/3}⌋`,
@@ -114,7 +116,10 @@ def case(K: Field, c0: int, M: int, phi, gamma0, eps1, eps2, i0: int) -> dict:
     cM = c0 * c0 * abs(M)
     P = abs(PHI[j] - PHI[i0]) * abs(PHI[k] - PHI[i0])
     K1 = 8 * cM * abs(PHI[j] - PHI[k]) / (P * abs(PHI[i0] - PHI[k]) * abs(PHI[j] - PHI[i0]))
+    # V0 with (V0 + 1)^3 > 2 K1, verified on the interval enclosure (not on a rounded cube root)
     V0 = int(mp.floor(mp.cbrt(2 * _hi(K1))))
+    while not _lo(iv.mpf(V0 + 1) ** 3) > _hi(2 * K1):
+        V0 += 1
     l1 = iv.log(abs(E1[k] / E1[j]))
     l2 = iv.log(abs(E2[k] / E2[j]))
     l3 = iv.log(abs((PHI[i0] - PHI[j]) * G0[k] / ((PHI[i0] - PHI[k]) * G0[j])))
@@ -131,22 +136,32 @@ def case(K: Field, c0: int, M: int, phi, gamma0, eps1, eps2, i0: int) -> dict:
         lo_log, hi_log = iv.log(dl / 2), iv.log(dl + tau)
         lg = iv.log(abs(G0[l]))
         R = max(R, _hi(abs(lo_log - lg)), _hi(abs(hi_log - lg)))
-    b = nrm * R
-    c2 = 3 / mpf(a)
-    Kc = 2 * _hi(K1) * mp.exp(3 * b / a)
+    # From here on every constant is an upper or lower endpoint of an interval enclosure.  `a` and
+    # `b` are exact mpf numbers that dominate the true row sums, so `c = 3/a` and
+    # `K = 2 K1 exp(3b/a)` are the constants of a valid inequality; we enclose them and keep the
+    # safe endpoint (c from below, K from above).
+    b = _hi(iv.mpf(nrm) * iv.mpf(R))
+    c_iv = iv.mpf(3) / iv.mpf(a)
+    c2 = _lo(c_iv)
+    Kc = _hi(2 * iv.mpf(_hi(K1)) * iv.exp(3 * iv.mpf(b) / iv.mpf(a)))
     h_e1, h_e2, h_g, h_p = height(E1), height(E2), height(G0), height(PHI)
     Dg = 6
-    A1 = max(Dg * 2 * _hi(h_e1), _hi(abs(l1)), mpf('0.16'))
-    A2 = max(Dg * 2 * _hi(h_e2), _hi(abs(l2)), mpf('0.16'))
-    h3 = 2 * (2 * _hi(h_p) + mp.log(2)) + 2 * _hi(h_g)
-    A3 = max(Dg * h3, _hi(abs(l3)), mpf('0.16'))
+    A1 = max(_hi(Dg * 2 * h_e1), _hi(abs(l1)), mpf('0.16'))
+    A2 = max(_hi(Dg * 2 * h_e2), _hi(abs(l2)), mpf('0.16'))
+    h3 = 2 * (2 * iv.mpf(_hi(h_p)) + iv.log(2)) + 2 * iv.mpf(_hi(h_g))
+    A3 = max(_hi(Dg * h3), _hi(abs(l3)), mpf('0.16'))
     C = _hi(matveev_C([iv.mpf(A1), iv.mpf(A2), iv.mpf(A3)]))
+
+    def _clears(H):
+        # lower bound of c H − log K − C (1 + log H) on the enclosures (c from below, K, C from above)
+        return _lo(iv.mpf(c2) * iv.mpf(H) - iv.log(iv.mpf(Kc)) - iv.mpf(C) * (1 + iv.log(iv.mpf(H)))) > 0
     H0 = mpf(2) * C / c2 * mp.log(C / c2)
-    while not (c2 * H0 - mp.log(Kc) - C * (1 + mp.log(H0)) > 0):
+    while not _clears(H0):
         H0 *= 2
-    assert H0 > C / c2
+    # the function is increasing for H > C / c, so clearing at H0 clears every larger H
+    assert _lo(iv.mpf(H0)) > _hi(iv.mpf(C) / iv.mpf(c2))
     kap, mu = l1 / l2, l3 / l2
-    Acoef = Kc / _lo(abs(l2))
+    Acoef = _hi(iv.mpf(Kc) / abs(l2))
     # rational enclosures (outward) of κ, μ, a lower bound for c and an upper bound for A
     enc = {'kl': _q_down(kap.a, 256), 'ku': _q_up(kap.b, 256), 'ml': _q_down(mu.a, 256),
            'mu': _q_up(mu.b, 256), 'cl': _q_down(c2, 64, slack=1), 'Au': _q_up(Acoef, 64, slack=1)}

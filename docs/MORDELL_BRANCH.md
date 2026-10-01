@@ -290,9 +290,11 @@ The whole remaining `D = 72` point-free problem is therefore **one unit Thue equ
 - The proof rests on three named premises:
   - `unitGen`: the units are `±ε₁^a ε₂^b`. An exact fundamental-domain witness supports it;
     10,659 triples, finite part in Lean.
-  - `normRep_pos` and `normRep_neg`: the elements of norm `±9`. Supported by 3 being totally
+  - `normRep_pos`: the elements of norm `9`. Supported by 3 being totally
     ramified and `ℤ[δ]` being 3-maximal.
-  - `analytic_pos` and `analytic_neg`: Siegel and Matveev.
+  - `analytic_pos`: Siegel and Matveev.
+  - The target `H = −1` needs no premise of its own. The form, `enc` and the norm are odd, so
+    `UnitPremises.normRep_neg_of` and `analytic_neg_of` transport the `H = 1` premises.
 
 So the residual is **closed conditionally**, and its external part is now three separate,
 reusable statements instead of one opaque bound.
@@ -364,7 +366,8 @@ discriminant 756, is totally real, has class number 1 and unit rank 2, and is ce
   [UNIT_PREMISES.md](UNIT_PREMISES.md)):
   - `unitGen`, one for the field. The exact fundamental-domain witness covers 931 triples and
     replaces PARI's unit basis; its finite part is in Lean.
-  - `normRep_i`: every norm target is supported on 2 and 3, which are totally ramified, and
+  - `normRep_N`, one per distinct `(N, γ₀)` (classes 20 and 50 share `normRep_64`): every norm
+    target is supported on 2 and 3, which are totally ramified, and
     `ℤ[x]` is maximal there (Dedekind's criterion, checked exactly).
   - `analytic_i`: Siegel's identity, the conjugate estimates and Matveev's theorem.
 - A field match is still not an equivalence: the 7 classes remain 7 obligations, sharing one unit
