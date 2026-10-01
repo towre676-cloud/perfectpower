@@ -3,10 +3,15 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing
+.PHONY: verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing
 
 verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
+
+# A release that advertises the SMT adapter must run its tests: fail if z3-solver is missing.
+release-verify:
+	@$(PY) -c "import z3" || (echo 'release-verify: z3-solver is required (pip install z3-solver)'; exit 1)
+	$(MAKE) verify
 
 lean:
 	lake build
@@ -19,6 +24,7 @@ lint: lean
 	lake env lean audit/Lint.lean
 
 test:
+	@$(PY) -c "import importlib.util as u; print('z3-solver:', 'present: adapter/certificate tests run' if u.find_spec('z3') else 'ABSENT: adapter/certificate tests skipped')"
 	$(PY) -m unittest discover -s python/tests
 	$(PY) -m unittest discover -s continuation_tests
 	$(PY) -m unittest discover -s expert_push/tests
@@ -49,6 +55,7 @@ receipts:
 	$(PY) python/constraint_demos.py
 	$(PY) python/make_oeis_problems.py
 	$(PY) python/d72_local.py
+	$(PY) python/d72_delta_box.py 40
 	$(PY) python/descent_residual.py
 	$(PY) galois_merge/run_repo_adapters.py
 	$(PY) python/make_oeis_auto.py

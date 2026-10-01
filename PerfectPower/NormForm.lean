@@ -91,4 +91,68 @@ theorem d72_no_int_root (x : ℤ) : x ^ 3 - 27 * x - 18 ≠ 0 := by
 /-- The polynomial discriminant of `X³ − 27X − 18` is `−4(−27)³ − 27(−18)² = 69984 > 0`. -/
 theorem d72_disc : -4 * (-27 : ℤ) ^ 3 - 27 * (-18) ^ 2 = 69984 := by norm_num
 
+/-! ### `D = 72` in the integral basis `(1, δ, δ²)`, `δ³ = 9δ + 6`
+
+`δ = (β² − 3β − 18)/6` satisfies `δ³ − 9δ − 6 = 0`, and `β = 6 − δ²`.  In this basis the residual
+lattice is simple: `γ = −3u − βv = (−3u − 6v) + v δ²`, so `γ = A + Bδ + Cδ²` lies in the lattice
+iff `B = 0` and `3 ∣ A`, and then `u = −A/3 − 2C`, `v = C`.  The pilot's units and norm-9 element
+are `ε₁ = δ² − 3δ − 1`, `ε₂ = 2δ² − 1` (norm `−1`) and `α = δ² − 3δ − 3` (norm `9`).  That
+`ε₁, ε₂` generate the unit group, and that every solution has bounded exponents, is **not**
+proved here. -/
+
+/-- Multiplication by `A + Bδ + Cδ²` on `(1, δ, δ²)` when `δ³ = pδ + q`. -/
+def mulD (p q A B C : ℤ) : Matrix (Fin 3) (Fin 3) ℤ :=
+  !![A, C * q, B * q;
+     B, A + C * p, C * q + B * p;
+     C, B, A + C * p]
+
+/-- `mulD` is the multiplication matrix, in any commutative ring with `δ³ = pδ + q`. -/
+theorem mulD_spec {R : Type*} [CommRing R] (p q A B C : ℤ) (δ : R)
+    (hδ : δ ^ 3 = (p : R) * δ + q) :
+    let x : R := (A : R) + B * δ + C * δ ^ 2
+    let M := mulD p q A B C
+    ∀ j : Fin 3, x * δ ^ (j : ℕ) = (M 0 j : R) + (M 1 j : R) * δ + (M 2 j : R) * δ ^ 2 := by
+  intro x M j
+  fin_cases j <;> simp [x, M, mulD] <;>
+    first
+    | linear_combination (C : R) * hδ
+    | linear_combination ((B : R) + C * δ) * hδ
+
+/-- `β = 6 − δ²` is a root of `X³ − 27X − 18` whenever `δ³ − 9δ − 6 = 0`. -/
+theorem d72_beta_of_delta {R : Type*} [CommRing R] (δ : R) (hδ : δ ^ 3 - 9 * δ - 6 = 0) :
+    (6 - δ ^ 2) ^ 3 - 27 * (6 - δ ^ 2) - 18 = 0 := by
+  linear_combination (-δ ^ 3 + 9 * δ - 6) * hδ
+
+/-- `γ = −3u − βv` in the `δ` basis. -/
+theorem d72_gamma_delta {R : Type*} [CommRing R] (δ : R) (u v : ℤ) :
+    -3 * (u : R) - (6 - δ ^ 2) * v = ((-3 * u - 6 * v : ℤ) : R) + ((0 : ℤ) : R) * δ + ((v : ℤ) : R) * δ ^ 2 := by
+  push_cast; ring
+
+/-- **The lattice in `δ` coordinates**: `A + Bδ + Cδ²` is some `−3u − βv` iff `B = 0` and `3 ∣ A`;
+then `u = −A/3 − 2C` and `v = C`. -/
+theorem d72_lattice (A B C : ℤ) :
+    (∃ u v : ℤ, A = -3 * u - 6 * v ∧ B = 0 ∧ C = v) ↔ B = 0 ∧ 3 ∣ A := by
+  constructor
+  · rintro ⟨u, v, rfl, rfl, -⟩
+    exact ⟨rfl, ⟨-u - 2 * v, by ring⟩⟩
+  · rintro ⟨rfl, k, rfl⟩
+    exact ⟨-k - 2 * C, C, by ring, rfl, rfl⟩
+
+/-- The two bases agree on the norm: `det = 9 H(u, v)` in `δ` coordinates too. -/
+theorem d72_det_delta (u v : ℤ) : (mulD 9 6 (-3 * u - 6 * v) 0 v).det = 9 * H72 u v := by
+  simp [mulD, det_fin_three, H72]
+  ring
+
+/-- `N(ε₁) = −1` for `ε₁ = δ² − 3δ − 1`. -/
+theorem d72_norm_eps1 : (mulD 9 6 (-1) (-3) 1).det = -1 := by
+  simp [mulD, det_fin_three]
+
+/-- `N(ε₂) = −1` for `ε₂ = 2δ² − 1`. -/
+theorem d72_norm_eps2 : (mulD 9 6 (-1) 0 2).det = -1 := by
+  simp [mulD, det_fin_three]
+
+/-- `N(α) = 9` for `α = δ² − 3δ − 3`. -/
+theorem d72_norm_alpha : (mulD 9 6 (-3) (-3) 1).det = 9 := by
+  simp [mulD, det_fin_three]
+
 end PerfectPower.NormForm

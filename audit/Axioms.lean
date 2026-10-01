@@ -759,3 +759,11 @@ open PerfectPower
 #print axioms PerfectPower.NormForm.d72_no_root_mod5
 #print axioms PerfectPower.NormForm.d72_no_int_root
 #print axioms PerfectPower.NormForm.d72_disc
+#print axioms PerfectPower.NormForm.mulD_spec
+#print axioms PerfectPower.NormForm.d72_beta_of_delta
+#print axioms PerfectPower.NormForm.d72_gamma_delta
+#print axioms PerfectPower.NormForm.d72_lattice
+#print axioms PerfectPower.NormForm.d72_det_delta
+#print axioms PerfectPower.NormForm.d72_norm_eps1
+#print axioms PerfectPower.NormForm.d72_norm_eps2
+#print axioms PerfectPower.NormForm.d72_norm_alpha
