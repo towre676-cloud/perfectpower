@@ -1,6 +1,6 @@
 # Release check
 
-`make verify` was run on commit `fc3d5a0` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0.
+`make verify` was run on commit `5c7b13c` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -9,14 +9,15 @@ This file archives the key lines of its output. The environment was:
 The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12) are not part of `verify`, but `verify` re-checks their receipts in plain Python. For this release three crosscheck scripts were run:
 - `crosscheck/branch_thue_pari.py`, which writes `receipts/mordell_branch_thue.json`;
 - `crosscheck/thue_fields_pari.py`, which writes `receipts/thue_fields.json`;
-- `crosscheck/field756_pilot.py`, which writes `receipts/field756_pilot.json`.
+- `crosscheck/field756_pilot.py`, which writes `receipts/field756_pilot.json`;
+- `crosscheck/d72_unit_pilot.py 40`, which writes `receipts/d72_unit_pilot.json` (positive control passed).
 
 ```
 Build completed successfully.
-axiom audit passed: 701 declarations
--- Found 0 errors in 1037 declarations (plus 3004 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 708 declarations
+-- Found 0 errors in 1046 declarations (plus 3016 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
-Ran 178 tests (16 z3 adapter/certificate tests skipped: z3-solver is optional)
+Ran 179 tests (17 z3 adapter/certificate tests skipped: z3-solver is optional)
 OK
 Ran 14 tests in 9.743s (continuation_tests)
 OK
