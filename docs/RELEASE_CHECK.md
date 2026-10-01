@@ -1,6 +1,6 @@
 # Release check
 
-`make release-verify` was run on commit `eeff6f2` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
+`make release-verify` was run on commit `8950361` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -17,17 +17,17 @@ The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12, mpmath 1.3
 
 ```
 Build completed successfully.
-axiom audit passed: 1355 declarations
--- Found 0 errors in 2232 declarations (plus 7516 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 1546 declarations
+-- Found 0 errors in 2678 declarations (plus 10553 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
 z3-solver: present: adapter/certificate tests run
-Ran 243 tests in 64.061s
+Ran 260 tests in 61.095s
 OK
-Ran 14 tests in 10.827s (continuation_tests)
+Ran 14 tests in 10.940s (continuation_tests)
 OK
-Ran 10 tests in 0.027s (expert_push)
+Ran 10 tests in 0.045s (expert_push)
 OK
-Ran 8 tests in 0.010s (galois_merge)
+Ran 8 tests in 0.011s (galois_merge)
 OK
 19/19 certificates passed
 binomial gate OK: {'C(n,2)=m^3': [1, 2], 'C(n,3)=m^2': [1, 2, 3, 4, 50]}
