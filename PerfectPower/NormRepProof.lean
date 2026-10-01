@@ -61,6 +61,13 @@ lemma unit_of_nrm {P Q : ℤ} {g : Z3} (h : nrm P Q g = 1 ∨ nrm P Q g = -1) :
     rw [mul_neg', mul_adj, h]
     simp [neg]
 
+/-- **Norm `1`**: every element of norm `1` is `1 · unit` (the adjugate is its inverse), so a unit
+equation needs no norm-representative search. -/
+theorem normRep_one (P Q : ℤ) : NormRep P Q 1 [(1, 0, 0)] := by
+  intro g hg
+  obtain ⟨v, hv⟩ := unit_of_nrm (Or.inl hg)
+  exact ⟨(1, 0, 0), List.mem_singleton_self _, g, v, hv, (one_mul' P Q g).symm⟩
+
 /-- The norm over any commutative ring (for residue checks). -/
 def nrmR {R : Type*} [CommRing R] (P Q a b c : R) : R :=
   a * ((a + P * c) * (a + P * c) - (P * b + Q * c) * b) - Q * c * (b * (a + P * c) - (P * b + Q * c) * c) +

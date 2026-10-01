@@ -1,6 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Gamma.Basic
 import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
+import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
 
 /-!
 # Abelian theorems for the heat transform of a hit set
@@ -453,12 +454,101 @@ lemma two_add_le {w : ℝ} (hw : 0 ≤ w) (β : ℝ) (hβ : 0 ≤ β) :
       _ = 3 ^ β * w ^ β := Real.mul_rpow (by norm_num) hw
       _ ≤ 3 ^ β * (1 + w ^ β) := by nlinarith
 
+/-- **Convergence from the count**: if `A(x) ~ c x^α (log x)^β` (`α > 0`, `β ≥ 0`), then `Z(s)`
+converges for every `s > α`.  (Tonelli in `ℝ≥0∞`: `Σ n^{−s} = ∫ s e^{−sv} A₋(e^v) dv`, and the
+integrand is at most `s C 3^β (1 + v^β) e^{−(s−α)v}`.) -/
+theorem dirichlet_summable {α β c : ℝ} (hα : 0 < α) (hβ : 0 ≤ β)
+    (hA : Tendsto (fun x => cnt X x / (x ^ α * Real.log x ^ β)) atTop (𝓝 c)) {s : ℝ} (hs : α < s) :
+    Summable fun n : ℕ => if 1 ≤ n ∧ X n then (n : ℝ) ^ (-s) else 0 := by
+  obtain ⟨C, hC, hb⟩ := cnt_bound X hα hβ hA
+  have hs0 : 0 < s := by linarith
+  set t : ℕ → ℝ := fun n => if 1 ≤ n ∧ X n then (n : ℝ) ^ (-s) else 0
+  have ht0 : ∀ n, 0 ≤ t n := fun n => by simp only [t]; split_ifs <;> positivity
+  set f : ℕ → ℝ → ℝ := fun n v =>
+    if 1 ≤ n ∧ X n then (Ioi (Real.log n)).indicator (fun v => s * rexp (-(s * v))) v else 0
+  have hnn : ∀ n v, 0 ≤ f n v := by
+    intro n v; simp only [f]; split_ifs
+    · exact indicator_nonneg (fun _ _ => by positivity) _
+    · exact le_rfl
+  have hint : ∀ n, Integrable (f n) (volume.restrict (Ioi 0)) := by
+    intro n; simp only [f]; split_ifs
+    · have h1 : IntegrableOn (fun v : ℝ => s * rexp (-(s * v))) (Ioi 0) := by
+        simpa [neg_mul] using (exp_neg_integrableOn_Ioi 0 hs0).const_mul s
+      exact h1.indicator measurableSet_Ioi
+    · exact integrable_zero _ _ _
+  have hf : ∀ n, ∫⁻ v in Ioi 0, ENNReal.ofReal (f n v) = ENNReal.ofReal (t n) := by
+    intro n
+    rw [← ofReal_integral_eq_lintegral_ofReal (hint n) (Eventually.of_forall fun v => hnn n v)]
+    congr 1
+    simp only [f, t]; split_ifs with h
+    · exact integral_term_d hs0 h.1
+    · simp
+  -- the pointwise sum is the count
+  have hsum : ∀ v, ∑' n, ENNReal.ofReal (f n v) =
+      ENNReal.ofReal (s * rexp (-(s * v)) * cntLt X (rexp v)) := by
+    intro v
+    rw [tsum_eq_sum (s := Finset.range ⌈rexp v⌉₊)]
+    · rw [← ENNReal.ofReal_sum_of_nonneg (fun n _ => hnn n v)]
+      congr 1
+      rw [cntLt, Finset.card_filter, Nat.cast_sum, Finset.mul_sum]
+      refine Finset.sum_congr rfl fun n hn => ?_
+      have hlt := Nat.lt_ceil.mp (Finset.mem_range.mp hn)
+      simp only [f]
+      split_ifs with h
+      · have hn' : (0 : ℝ) < n := by exact_mod_cast h.1
+        have : Real.log n < v := by rw [Real.log_lt_iff_lt_exp hn']; exact hlt
+        simp [indicator, this]
+      · simp
+    · intro n hn
+      rw [Finset.mem_range, not_lt, Nat.ceil_le] at hn
+      simp only [f]; split_ifs with h
+      · have hn' : (0 : ℝ) < n := by exact_mod_cast h.1
+        have : v ≤ Real.log n := by rw [Real.le_log_iff_exp_le hn']; exact hn
+        simp [indicator, not_lt.mpr this]
+      · simp
+  -- the bound
+  set g : ℝ → ℝ := fun v => s * C * 3 ^ β * (rexp (-((s - α) * v)) + v ^ β * rexp (-(s - α) * v ^ (1 : ℝ)))
+  have hg : IntegrableOn g (Ioi 0) := by
+    have i1 := exp_neg_integrableOn_Ioi 0 (show 0 < s - α by linarith)
+    have i2 := integrableOn_rpow_mul_exp_neg_mul_rpow (p := 1) (s := β) (b := s - α) (by linarith)
+      le_rfl (by linarith)
+    have := (i1.add i2).const_mul (s * C * 3 ^ β)
+    have hfun : g = fun x => s * C * 3 ^ β *
+        (((fun x => rexp (-(s - α) * x)) + fun x => x ^ β * rexp (-(s - α) * x ^ (1 : ℝ))) x) := by
+      funext v; simp only [g, Pi.add_apply, neg_mul]
+    rw [hfun]; exact this
+  have hle : ∀ v ∈ Ioi (0 : ℝ), s * rexp (-(s * v)) * cntLt X (rexp v) ≤ g v := by
+    intro v hv
+    have hv' : 0 < v := hv
+    have hcnt : cntLt X (rexp v) ≤ C * (rexp (α * v) * Real.log (rexp 1 + rexp v) ^ β) := by
+      have := le_trans (cntLt_le_cnt X (rexp v)) (hb _ (exp_pos v))
+      rwa [← Real.exp_mul, mul_comm v α] at this
+    have hl0 : 0 ≤ Real.log (rexp 1 + rexp v) :=
+      Real.log_nonneg (by linarith [Real.add_one_le_exp 1, exp_pos v])
+    have hlog : Real.log (rexp 1 + rexp v) ^ β ≤ 3 ^ β * (1 + v ^ β) :=
+      le_trans (Real.rpow_le_rpow hl0 (log_e_add_exp_le hv'.le) hβ) (two_add_le hv'.le β hβ)
+    have e1 : rexp (-(s * v)) * rexp (α * v) = rexp (-((s - α) * v)) := by
+      rw [← Real.exp_add]; congr 1; ring
+    calc s * rexp (-(s * v)) * cntLt X (rexp v)
+        ≤ s * rexp (-(s * v)) * (C * (rexp (α * v) * (3 ^ β * (1 + v ^ β)))) := by
+          gcongr; exact le_trans hcnt (by gcongr)
+      _ = s * C * 3 ^ β * (rexp (-((s - α) * v)) * (1 + v ^ β)) := by rw [← e1]; ring
+      _ = g v := by simp only [g, Real.rpow_one]; ring_nf
+  have hfin : ∑' n, ENNReal.ofReal (t n) ≠ ⊤ := by
+    rw [← tsum_congr hf, ← lintegral_tsum (fun n => (hint n).aemeasurable.ennreal_ofReal)]
+    simp_rw [hsum]
+    refine (lt_of_le_of_lt (lintegral_mono_ae ?_) hg.lintegral_lt_top).ne
+    exact (ae_restrict_iff' measurableSet_Ioi).mpr
+      (Eventually.of_forall fun v hv => ENNReal.ofReal_le_ofReal (hle v hv))
+  have := ENNReal.summable_toReal hfin
+  simpa [ENNReal.toReal_ofReal (ht0 _)] using this
+
 /-- **The Abelian theorem for the Dirichlet transform.**  If `A(x) ~ c x^α (log x)^β` with
-`α > 0`, `β ≥ 0`, and `Z(s)` converges for `s > α`, then
-`ε^{β+1} Z(α + ε) → c α Γ(β + 1)` as `ε → 0⁺`. -/
+`α > 0`, `β ≥ 0`, then `ε^{β+1} Z(α + ε) → c α Γ(β + 1)` as `ε → 0⁺` (convergence for `s > α`
+follows from the count, `dirichlet_summable`).  This is a normalized limit; it reads as
+`Z(α + ε) ~ c α Γ(β + 1) ε^{−(β+1)}` only when `c > 0`. -/
 theorem dirichlet_abelian {α β c : ℝ} (hα : 0 < α) (hβ : 0 ≤ β)
-    (hA : Tendsto (fun x => cnt X x / (x ^ α * Real.log x ^ β)) atTop (𝓝 c))
-    (hconv : ∀ s, α < s → Summable fun n : ℕ => if 1 ≤ n ∧ X n then (n : ℝ) ^ (-s) else 0) :
+    (hA : Tendsto (fun x => cnt X x / (x ^ α * Real.log x ^ β)) atTop (𝓝 c)) :
     Tendsto (fun ε => dirichlet X (α + ε) * ε ^ (β + 1)) (𝓝[>] 0)
       (𝓝 (c * α * Real.Gamma (β + 1))) := by
   obtain ⟨C, hC, hb⟩ := cnt_bound X hα hβ hA
@@ -473,7 +563,7 @@ theorem dirichlet_abelian {α β c : ℝ} (hα : 0 < α) (hβ : 0 ≤ β)
       dirichlet X (α + ε) * ε ^ (β + 1) = ∫ w in Ioi 0, F ε w := by
     filter_upwards [self_mem_nhdsWithin] with ε hε
     have hε' : 0 < ε := hε
-    rw [dirichlet_eq_integral X (by linarith) (hconv _ (by linarith))]
+    rw [dirichlet_eq_integral X (by linarith) (dirichlet_summable X hα hβ hA (by linarith))]
     set G : ℝ → ℝ := fun v => (α + ε) * rexp (-((α + ε) * v)) * cntLt X (rexp v)
     have hsub := integral_comp_mul_left_Ioi G 0 (inv_pos.mpr hε')
     simp only [mul_zero, inv_inv, smul_eq_mul] at hsub

@@ -323,8 +323,40 @@ the images of the children's solutions, and every solution reaches a leaf. Measu
 
 No leaf here is "explicitly solved". A certificate that closes a nonempty class this way needs,
 for each surviving unit equation, a proved complete solution list. That is the same global
-problem, but now on 109 unit equations instead of 64 classes with large right sides. This is the
-research direction, and nothing in this section is promoted.
+problem, but now on 109 unit equations instead of 64 classes with large right sides. This
+measurement itself promotes nothing.
+
+**Worked instance: `D = 23`** (`python/make_lean_minus23.py`, `Generated/Minus23.lean`,
+`receipts/minus23_certificate.json`). The three open classes of `D = 23` need only two of the 109
+unit equations.
+
+| class | `M` | descent prime | nodes | leaves carried | complete list |
+|---|---|---|---|---|---|
+| 8 | `729 = 3⁶` | 3 | 7 | `F₁` | `(2, 1)` |
+| 9 | `512 = 2⁹` | 2 | 48 | `F₁` | `(1, 1)` |
+| 10 | `27 = 3³` | 3 | 3 | `F₁`, `F₂` | `(−3, 0)` |
+
+The two unit equations are `F₁ = −u³ − 3u²v + 6uv² + 4v³ = 1` and
+`F₂ = −u³ − 6u²v + 69uv² + 46v³ = 1`.
+- **The field.** `ℤ[x]` with `x³ = 6x + 3`, discriminant 621. The embeddings are
+  `φ₁ = 5 + x − x²` and `φ₂ = 14 + 3x − 3x²`. The norm identity `N(c₀a − bφ) = c₀²F(a, b)` is
+  proved by `ring`, so the field correspondence is explicit, not read off a field label.
+- **The unit equations, under Matveev only.**
+  - Unit generation is proved: `ε₁ = −2 − x`, `ε₂ = −1 − 2x`, with a box of 8 units.
+  - Norm `1` needs no representative search (`NormRepProof.normRep_one`: the adjugate is the
+    inverse).
+  - The analytic certificates have precision margins of 41–47 bits, and the reductions end at
+    `H ≤ 6`.
+  - The box and the small-`b` search give `F₁ = 1 ⇔ (u, v) = (−1, 0)`, and the same for `F₂`
+    (`class_u1`, `class_u2`).
+- **The descent.**
+  - Each node carries its prime.
+  - Pruned children are lifting leaves at their own prime (2, 3, 5 or 7).
+  - A unit leaf `G = ±1` cites `F₁` or `F₂` through a checked unimodular map `F_c ∘ T = s·G`,
+    `Tinv · T = I`.
+  - `DescentLists.root_iff` gives each class's exact solution set as a `Finset`.
+- **The curve.** `minus23`: the integral points are exactly `(3, ±2)`, under `matveev_u1` and
+  `matveev_u2`. This agrees with the Sage census.
 
 ### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)
 

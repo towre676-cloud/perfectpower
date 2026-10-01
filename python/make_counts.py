@@ -20,10 +20,11 @@ def _std(l):
 audited = [l for l in report if 'depend' in l]
 standard = [l for l in audited if _std(l)]
 generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' not in l
-             and '.cert_' not in l and '.Genus1.' not in l and '.Field756.' not in l and '.D72Unit.' not in l
+             and '.cert_' not in l and '.Genus1.' not in l and '.Field756.' not in l and '.D72Unit.' not in l and '.Minus23.' not in l
              and '.BoundedPlans.' not in l]
 # theorems that hold only under a named external hypothesis (an exponent bound), reported apart
-conditional = [l for l in audited if '.Field756.minus' in l or 'D72Residual.residual_empty' in l]
+conditional = [l for l in audited if '.Field756.minus' in l or 'D72Residual.residual_empty' in l
+               or '.Minus23.minus23' in l]
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
@@ -31,7 +32,7 @@ lines = [
     f'`Quot.sound` (or a subset): **{len(standard)}**.',
     f'- Machine-generated Lean hit-set certificates: **{len(generated)}**.',
     f'- Theorems conditional on named premises (Matveev\'s lower bound, three explicit instances per class; not counted as closed): **{len(conditional)}** '
-    '(`Field756.minus7`, `minus28`, `minus63`; `D72Residual.residual_empty`).',
+    '(`Field756.minus7`, `minus28`, `minus63`; `Minus23.minus23`; `D72Residual.residual_empty`).',
     '- Atlas families by certification label: '
     + ', '.join(f'`{k}` {v}' for k, v in sorted(labels.items())) + '.',
 ]

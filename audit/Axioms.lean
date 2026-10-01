@@ -809,6 +809,7 @@ open PerfectPower
 #print axioms PerfectPower.NormRepProof.beta_succ_s
 #print axioms PerfectPower.NormRepProof.decomp756
 #print axioms PerfectPower.NormRepProof.normRep756
+#print axioms PerfectPower.NormRepProof.normRep_one
 #print axioms PerfectPower.Generated.Field756.normRep_576_proved
 #print axioms PerfectPower.Generated.Field756.normRep_256_proved
 #print axioms PerfectPower.Generated.Field756.normRep_8_proved
@@ -874,9 +875,33 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Field756.unitGen_proved
 #print axioms PerfectPower.D72Residual.H72_eq
 -- DescentLists
+#print axioms PerfectPower.DescentLists.app_mulM
+#print axioms PerfectPower.DescentLists.evalF_scaleF
 #print axioms PerfectPower.DescentLists.nodeL_step
 #print axioms PerfectPower.DescentLists.descL_complete
 #print axioms PerfectPower.DescentLists.root_iff
+#print axioms PerfectPower.DescentLists.sources_cons
+#print axioms PerfectPower.DescentLists.sources_nil
+#print axioms PerfectPower.Generated.Minus23.e1_inv
+#print axioms PerfectPower.Generated.Minus23.e2_inv
+#print axioms PerfectPower.Generated.Minus23.unitGen_proved
+#print axioms PerfectPower.Generated.Minus23.normRep_one_proved
+#print axioms PerfectPower.Generated.Minus23.analytic_u1_proved
+#print axioms PerfectPower.Generated.Minus23.analytic_u2_proved
+#print axioms PerfectPower.Generated.Minus23.class_u1
+#print axioms PerfectPower.Generated.Minus23.class_u2
+#print axioms PerfectPower.Generated.Minus23.src_1_complete
+#print axioms PerfectPower.Generated.Minus23.src_12_complete
+#print axioms PerfectPower.Generated.Minus23.desc_8
+#print axioms PerfectPower.Generated.Minus23.desc_9
+#print axioms PerfectPower.Generated.Minus23.desc_10
+#print axioms PerfectPower.Generated.Minus23.root_8
+#print axioms PerfectPower.Generated.Minus23.root_9
+#print axioms PerfectPower.Generated.Minus23.root_10
+#print axioms PerfectPower.Generated.Minus23.class_8
+#print axioms PerfectPower.Generated.Minus23.class_9
+#print axioms PerfectPower.Generated.Minus23.class_10
+#print axioms PerfectPower.Generated.Minus23.minus23
 -- AbelianTransforms
 #print axioms PerfectPower.AbelianTransforms.integral_term
 #print axioms PerfectPower.AbelianTransforms.summable_exp
@@ -899,6 +924,7 @@ open PerfectPower
 #print axioms PerfectPower.AbelianTransforms.dirichlet_eq_integral
 #print axioms PerfectPower.AbelianTransforms.log_e_add_exp_le
 #print axioms PerfectPower.AbelianTransforms.two_add_le
+#print axioms PerfectPower.AbelianTransforms.dirichlet_summable
 #print axioms PerfectPower.AbelianTransforms.dirichlet_abelian
 #print axioms PerfectPower.AbelianTransforms.heat_finite
 -- SqrtTwoDefs

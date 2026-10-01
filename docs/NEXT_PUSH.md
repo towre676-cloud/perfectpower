@@ -103,7 +103,12 @@ git.
      `root_iff` prove
      `S(F, M) = p·S(F, M/p³) ∪ ⋃_λ T_λ S(G_λ, M/p^{s_λ})`, filtered by evaluation, from complete
      leaves (`LeafComplete`, a hypothesis).
-   - **Still open:** complete lists at the leaves. In the measured workload
+   - **Since then:** every node carries its prime (splits and lifting leaves), unit leaves are
+     carried from source equations by checked unimodular maps, and the root's solutions are a
+     `Finset` (`rootSet`, duplicates removed).
+   - **Worked instance:** `D = 23` (`Generated/Minus23.lean`): classes 8, 9, 10 through two unit
+     equations in the field 621, under Matveev for those two equations.
+   - **Still open:** complete lists at the other leaves. In the measured workload
      (`receipts/descent_residual.json`) they are 109 distinct unit equations `G = ±1` in other
      cubic fields, so each needs a Thue bound (the field-756 pipeline, applied per field).
 4. **A consumer-accepted replacement.**

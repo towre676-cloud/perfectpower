@@ -213,6 +213,23 @@ pair, taken modulo the unit periods, in the following admissible tables:
 These are necessary filters, not completeness results. Tables for different moduli share periods,
 so their survival fractions do not multiply.
 
+## A third field: discriminant 621 (`Generated/Minus23.lean`)
+
+The same pipeline closes the two unit equations behind `y² = x³ − 23`. Write
+`F₁ = (−1, −3, 6, 4)` and `F₂ = (−1, −6, 69, 46)`, each with right side `1`.
+
+| item | field 621, `x³ = 6x + 3` |
+|---|---|
+| units | `ε₁ = −2 − x`, `ε₂ = −1 − 2x`; box `7, 2, 2` with 8 units (`unitGen_proved`) |
+| norm representatives | norm `1`: `NormRepProof.normRep_one`, no search |
+| `φ` | `φ₁ = 5 + x − x²`, `φ₂ = 14 + 3x − 3x²` (`N(c₀a − bφ) = c₀²F` by `ring`) |
+| analytic | `analytic_u1_proved`, `analytic_u2_proved` from `matveev_u1`, `matveev_u2`; margins 41–47 bits |
+| reduction | `H ≤ 6` for both; boxes of `13²` elements |
+| lists | `F₁ = 1 ⇔ (u, v) = (−1, 0)`; `F₂ = 1 ⇔ (u, v) = (−1, 0)` |
+
+The classes of `D = 23` reach these leaves by solution-carrying descent (`DescentLists`), not
+directly; see `MORDELL_BRANCH.md` §7.2.
+
 ## Next
 
 - Matveev's theorem is the boundary that stays external. It is stated per class as three explicit

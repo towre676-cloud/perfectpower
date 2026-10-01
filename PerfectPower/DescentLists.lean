@@ -4,47 +4,67 @@ import PerfectPower.ThueLocal
 # Descent that carries solutions
 
 `ThueLocal.descB` proves that `F(a, b) = M` has **no** solution: every child of a split must be
-empty.  Point-carrying obligations need the same split with **complete lists** at the leaves:
+empty.  Point-carrying obligations need the same split with **complete lists** at the leaves.  At a
+split node with prime `p ∣ M`,
 
-  `S(F, M) = p · S(F, M/p³) ∪ ⋃_λ T_λ S(G_λ, M/p^{s_λ})`,
+  `S(F, M) = 1_{p³ ∣ M} · p S(F, M/p³) ∪ ⋃_λ T_λ S(G_λ, M/p^{s_λ})`,
 
-where the zero child exists only when `p³ ∣ M`, and every primitive solution lies on a listed line
-`T_λ` with `F ∘ T_λ = p^{s_λ} G_λ` (the same residue cover as `descB`).
+where every primitive solution lies on a listed line `T_λ` with `F ∘ T_λ = p^{s_λ} G_λ` (the
+residue cover of `descB`).
 
-* A node is a lifting leaf (no solution, `lvl`), a **given** leaf whose complete list is supplied
-  (`KindL.given k`, the `k`-th list), or a split.
-* `candL` computes the candidate list bottom-up: the zero child scaled by `p`, and each line
-  child mapped by its matrix.
-* **`descL_complete`**: if `descL` holds and every given leaf's list is complete, then every
-  solution of every node is in its candidate list.  So the root's solutions are exactly the
-  candidates that satisfy it (`root_iff`): soundness is a filter, checked by evaluation.
-
-The given lists are hypotheses (`LeafComplete`).  For a leaf that is a Thue equation, a complete
-list comes from a class theorem (`UnitBox.thue_list`, under that class's premises).
+* **Every node carries its own prime.**  A split uses its prime `p`.  A lifting leaf
+  (`KindL.leaf q e`) is empty modulo `q^e` for its own `q`.  This matches the measured descent
+  (`python/descent_residual.py`), which splits at the least prime of the current right side and
+  prunes children by lifting at other primes.
+* A **given** leaf `KindL.given c T Tinv s` cites a source equation `sources[c] = (F₀, L₀)` with
+  `F₀ = 1 ⇒ (a, b) ∈ L₀`.  The checker verifies `F₀ ∘ T = s · G`, `M = s = ±1` and
+  `Tinv · T = I`.  The leaf's list is then `Tinv L₀`, the source list carried back.
+* `candL` composes the candidate list bottom-up: the zero child scaled by `p`, and each line child
+  mapped by its matrix.
+* **`root_iff`**: if `descL` holds and the sources are complete (`SourcesComplete`), then the
+  root's solutions are exactly `rootSet`.  This is the candidate `Finset` (duplicates from
+  overlapping branches removed), filtered by evaluation.
 -/
 
 namespace PerfectPower.DescentLists
 
 open PerfectPower ThueLocal
 
-/-- Node kinds: a lifting leaf (no solution), a leaf with a supplied list, or a split. -/
+/-- Node kinds: a lifting leaf at prime `q` (no solution), a leaf carried from a source equation,
+or a split at prime `p`. -/
 inductive KindL
-  | leaf (e : ℕ)
-  | given (k : ℕ)
-  | split (zero : Option ℕ) (lines : List (Option ℕ × ℕ × ℕ))
+  | leaf (q e : ℕ)
+  | given (c : ℕ) (T Tinv : Mat) (s : ℤ)
+  | split (p : ℕ) (zero : Option ℕ) (lines : List (Option ℕ × ℕ × ℕ))
   deriving DecidableEq, Repr
 
 /-- Apply a matrix to a pair. -/
 def app (T : Mat) (uv : ℤ × ℤ) : ℤ × ℤ := (T.1.1 * uv.1 + T.1.2 * uv.2, T.2.1 * uv.1 + T.2.2 * uv.2)
 
-/-- One node's check: the same conditions as `ThueLocal.nodeB`, and a given leaf is accepted. -/
-def nodeL (p : ℕ) (nodes : List (Form × ℤ × KindL)) (i : ℕ) : Bool :=
+/-- The matrix product. -/
+def mulM (S T : Mat) : Mat :=
+  ((S.1.1 * T.1.1 + S.1.2 * T.2.1, S.1.1 * T.1.2 + S.1.2 * T.2.2),
+   (S.2.1 * T.1.1 + S.2.2 * T.2.1, S.2.1 * T.1.2 + S.2.2 * T.2.2))
+
+/-- `s · G`, coefficientwise. -/
+def scaleF (s : ℤ) (G : Form) : Form := (s * G.1, s * G.2.1, s * G.2.2.1, s * G.2.2.2)
+
+lemma app_mulM (S T : Mat) (x : ℤ × ℤ) : app S (app T x) = app (mulM S T) x := by
+  simp only [app, mulM, Prod.mk.injEq]; constructor <;> ring
+
+lemma evalF_scaleF (s : ℤ) (G : Form) (u v : ℤ) : evalF (scaleF s G) u v = s * evalF G u v := by
+  simp only [evalF, scaleF]; ring
+
+/-- One node's check. -/
+def nodeL (sources : List (Form × List (ℤ × ℤ))) (nodes : List (Form × ℤ × KindL)) (i : ℕ) : Bool :=
   match nodes[i]? with
   | none => false
-  | some (F, M, KindL.leaf e) => decide (lvl F M p e = [])
-  | some (_, _, KindL.given _) => true
-  | some (F, M, KindL.split zero lines) =>
-    decide (M % p = 0) &&
+  | some (F, M, KindL.leaf q e) => decide (0 < q) && decide (lvl F M q e = [])
+  | some (F, M, KindL.given c T Tinv s) =>
+    decide ((sources[c]?.map fun x => compF x.1 T) = some (scaleF s F)) &&
+      decide (M = s) && decide (s = 1 ∨ s = -1) && decide (mulM Tinv T = ((1, 0), (0, 1)))
+  | some (F, M, KindL.split p zero lines) =>
+    decide (0 < p) && decide (M % p = 0) &&
     (match zero with
       | none => decide (M % ((p : ℤ) ^ 3) ≠ 0)
       | some j => decide (i < j) && decide (M % ((p : ℤ) ^ 3) = 0) &&
@@ -59,55 +79,69 @@ def nodeL (p : ℕ) (nodes : List (Form × ℤ × KindL)) (i : ℕ) : Bool :=
           some (divF (compF F (lineMat p ln.1)) ((p : ℤ) ^ ln.2.1), M / (p : ℤ) ^ ln.2.1))
 
 /-- The whole certificate. -/
-def descL (p : ℕ) (nodes : List (Form × ℤ × KindL)) : Bool :=
-  decide (0 < p) && (List.range nodes.length).all (nodeL p nodes)
+def descL (sources : List (Form × List (ℤ × ℤ))) (nodes : List (Form × ℤ × KindL)) : Bool :=
+  (List.range nodes.length).all (nodeL sources nodes)
 
 /-- The candidate list of node `i` (fuel bounds the depth; children come after parents). -/
-def candL (p : ℕ) (nodes : List (Form × ℤ × KindL)) (leaves : List (List (ℤ × ℤ))) :
+def candL (sources : List (Form × List (ℤ × ℤ))) (nodes : List (Form × ℤ × KindL)) :
     ℕ → ℕ → List (ℤ × ℤ)
   | 0, _ => []
   | f + 1, i =>
     match nodes[i]? with
     | none => []
-    | some (_, _, KindL.leaf _) => []
-    | some (_, _, KindL.given k) => leaves.getD k []
-    | some (_, _, KindL.split zero lines) =>
+    | some (_, _, KindL.leaf _ _) => []
+    | some (_, _, KindL.given c _ Tinv _) => ((sources[c]?.map Prod.snd).getD []).map (app Tinv)
+    | some (_, _, KindL.split p zero lines) =>
       (match zero with
         | none => []
-        | some j => (candL p nodes leaves f j).map fun uv => ((p : ℤ) * uv.1, (p : ℤ) * uv.2)) ++
-      lines.flatMap fun ln => (candL p nodes leaves f ln.2.2).map (app (lineMat p ln.1))
+        | some j => (candL sources nodes f j).map fun uv => ((p : ℤ) * uv.1, (p : ℤ) * uv.2)) ++
+      lines.flatMap fun ln => (candL sources nodes f ln.2.2).map (app (lineMat p ln.1))
 
-/-- Every given leaf's list is complete. -/
-def LeafComplete (nodes : List (Form × ℤ × KindL)) (leaves : List (List (ℤ × ℤ))) : Prop :=
-  ∀ (i : ℕ) (F : Form) (M : ℤ) (k : ℕ), nodes[i]? = some (F, M, KindL.given k) →
-    ∀ a b, evalF F a b = M → (a, b) ∈ leaves.getD k []
+/-- Every source list is complete for its equation `F₀ = 1`. -/
+def SourcesComplete (sources : List (Form × List (ℤ × ℤ))) : Prop :=
+  ∀ (c : ℕ) (F : Form) (L : List (ℤ × ℤ)), sources[c]? = some (F, L) →
+    ∀ a b, evalF F a b = 1 → (a, b) ∈ L
 
 /-- **One node is complete given its children.** -/
-theorem nodeL_step (p : ℕ) (hp : 0 < p) (nodes : List (Form × ℤ × KindL))
-    (leaves : List (List (ℤ × ℤ))) (hleaf : LeafComplete nodes leaves) (f i : ℕ)
-    (hi : nodeL p nodes i = true)
+theorem nodeL_step (sources : List (Form × List (ℤ × ℤ))) (hsrc : SourcesComplete sources)
+    (nodes : List (Form × ℤ × KindL)) (f i : ℕ) (hi : nodeL sources nodes i = true)
     (child : ∀ j : ℕ, i < j → ∀ m : Form × ℤ × KindL, nodes[j]? = some m →
-      ∀ a b : ℤ, evalF m.1 a b = m.2.1 → (a, b) ∈ candL p nodes leaves f j) :
+      ∀ a b : ℤ, evalF m.1 a b = m.2.1 → (a, b) ∈ candL sources nodes f j) :
     ∀ n : Form × ℤ × KindL, nodes[i]? = some n →
-      ∀ a b : ℤ, evalF n.1 a b = n.2.1 → (a, b) ∈ candL p nodes leaves (f + 1) i := by
+      ∀ a b : ℤ, evalF n.1 a b = n.2.1 → (a, b) ∈ candL sources nodes (f + 1) i := by
   intro n hn a b hab
-  have hpz : (0 : ℤ) < p := by exact_mod_cast hp
   obtain ⟨F, M, kind⟩ := n
   simp only at hab
   unfold nodeL at hi
   rw [hn] at hi
   cases kind with
-  | leaf e =>
-    simp only [decide_eq_true_eq] at hi
-    exact absurd hab (no_solution_of_lvl F M p e hp hi a b)
-  | given k =>
+  | leaf q e =>
+    simp only [Bool.and_eq_true, decide_eq_true_eq] at hi
+    exact absurd hab (no_solution_of_lvl F M q e hi.1 hi.2 a b)
+  | given c T Tinv s =>
+    simp only [Bool.and_eq_true, decide_eq_true_eq] at hi
+    obtain ⟨⟨⟨hF, hM⟩, hs⟩, hinv⟩ := hi
     simp only [candL, hn]
-    exact hleaf i F M k hn a b hab
-  | split zero lines =>
+    cases hc : sources[c]? with
+    | none => rw [hc] at hF; simp at hF
+    | some x =>
+      rw [hc] at hF
+      simp only [Option.map_some, Option.some.injEq] at hF
+      obtain ⟨F0, L0⟩ := x
+      simp only [Option.map_some, Option.getD_some, List.mem_map]
+      have h1 : evalF F0 (app T (a, b)).1 (app T (a, b)).2 = 1 := by
+        have := evalF_compF F0 T a b
+        rw [hF, evalF_scaleF, hab, hM] at this
+        simp only [app]
+        rcases hs with rfl | rfl <;> simp_all
+      refine ⟨app T (a, b), hsrc c F0 L0 hc _ _ h1, ?_⟩
+      rw [app_mulM, hinv]; simp [app]
+  | split p zero lines =>
     simp only [candL, hn, List.mem_append, List.mem_flatMap, List.mem_map]
     simp only [Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_range,
       Bool.or_eq_true, List.any_eq_true] at hi
-    obtain ⟨⟨⟨hMp, hz⟩, hcover⟩, hlines⟩ := hi
+    obtain ⟨⟨⟨⟨hp, hMp⟩, hz⟩, hcover⟩, hlines⟩ := hi
+    have hpz : (0 : ℤ) < p := by exact_mod_cast hp
     by_cases hab0 : (p : ℤ) ∣ a ∧ (p : ℤ) ∣ b
     · left
       obtain ⟨⟨a', rfl⟩, ⟨b', rfl⟩⟩ := hab0
@@ -183,14 +217,13 @@ theorem nodeL_step (p : ℕ) (hp : 0 < p) (nodes : List (Form × ℤ × KindL))
           · rw [← hT, Int.mul_ediv_cancel_left _ (by positivity)]
           · simp only [app, Prod.mk.injEq]; exact ⟨hu.symm, hv.symm⟩
 
-/-- **Completeness of a solution-carrying certificate**: with complete given leaves, every
-solution of node `i` is a candidate (fuel `f ≥ length − i`). -/
-theorem descL_complete (p : ℕ) (nodes : List (Form × ℤ × KindL)) (leaves : List (List (ℤ × ℤ)))
-    (h : descL p nodes = true) (hleaf : LeafComplete nodes leaves) :
+/-- **Completeness of a solution-carrying certificate**: with complete sources, every solution of
+node `i` is a candidate (fuel `f ≥ length − i`). -/
+theorem descL_complete (sources : List (Form × List (ℤ × ℤ))) (hsrc : SourcesComplete sources)
+    (nodes : List (Form × ℤ × KindL)) (h : descL sources nodes = true) :
     ∀ f i, nodes.length - i ≤ f → ∀ n, nodes[i]? = some n →
-      ∀ a b : ℤ, evalF n.1 a b = n.2.1 → (a, b) ∈ candL p nodes leaves f i := by
-  simp only [descL, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_range] at h
-  obtain ⟨hp, hall⟩ := h
+      ∀ a b : ℤ, evalF n.1 a b = n.2.1 → (a, b) ∈ candL sources nodes f i := by
+  simp only [descL, List.all_eq_true, List.mem_range] at h
   intro f
   induction f with
   | zero =>
@@ -200,19 +233,38 @@ theorem descL_complete (p : ℕ) (nodes : List (Form × ℤ × KindL)) (leaves :
     intro i hi n hn
     have hlt : i < nodes.length := by
       by_contra hc; push_neg at hc; rw [List.getElem?_eq_none hc] at hn; simp at hn
-    exact nodeL_step p hp nodes leaves hleaf f i (hall i hlt)
+    exact nodeL_step sources hsrc nodes f i (h i hlt)
       (fun j hj m hm => ih j (by omega) m hm) _ hn
 
-/-- **The root's solutions, exactly**: `F(a, b) = M` iff `(a, b)` is a candidate satisfying it. -/
-theorem root_iff (p : ℕ) (F : Form) (M : ℤ) (kind : KindL) (rest : List (Form × ℤ × KindL))
-    (leaves : List (List (ℤ × ℤ))) (h : descL p ((F, M, kind) :: rest) = true)
-    (hleaf : LeafComplete ((F, M, kind) :: rest) leaves) (a b : ℤ) :
-    evalF F a b = M ↔ (a, b) ∈ (candL p ((F, M, kind) :: rest) leaves (rest.length + 1) 0).filter
-      (fun uv => decide (evalF F uv.1 uv.2 = M)) := by
-  rw [List.mem_filter, decide_eq_true_eq]
+/-- The root's solution set: the candidates, without duplicates, that satisfy the root. -/
+def rootSet (sources : List (Form × List (ℤ × ℤ))) (F : Form) (M : ℤ) (kind : KindL)
+    (rest : List (Form × ℤ × KindL)) : Finset (ℤ × ℤ) :=
+  ((candL sources ((F, M, kind) :: rest) (rest.length + 1) 0).toFinset).filter
+    (fun uv => evalF F uv.1 uv.2 = M)
+
+/-- **The root's solutions, exactly**: `F(a, b) = M` iff `(a, b) ∈ rootSet`, a `Finset`, so its
+cardinality is the number of solutions. -/
+theorem root_iff (sources : List (Form × List (ℤ × ℤ))) (hsrc : SourcesComplete sources)
+    (F : Form) (M : ℤ) (kind : KindL) (rest : List (Form × ℤ × KindL))
+    (h : descL sources ((F, M, kind) :: rest) = true) (a b : ℤ) :
+    evalF F a b = M ↔ (a, b) ∈ rootSet sources F M kind rest := by
+  rw [rootSet, Finset.mem_filter, List.mem_toFinset]
   constructor
   · intro hab
-    exact ⟨descL_complete p _ leaves h hleaf _ 0 (by simp) _ rfl a b hab, hab⟩
+    exact ⟨descL_complete sources hsrc _ h _ 0 (by simp) _ rfl a b hab, hab⟩
   · exact fun h => h.2
+
+/-- A source given by a class theorem `F₀ = 1 ↔ (a, b) ∈ L₀` is complete. -/
+lemma sources_cons {F0 : Form} {L0 : List (ℤ × ℤ)} {rest : List (Form × List (ℤ × ℤ))}
+    (h0 : ∀ a b, evalF F0 a b = 1 → (a, b) ∈ L0) (hr : SourcesComplete rest) :
+    SourcesComplete ((F0, L0) :: rest) := by
+  intro c F L hc
+  cases c with
+  | zero => simp only [List.getElem?_cons_zero, Option.some.injEq, Prod.mk.injEq] at hc
+            obtain ⟨rfl, rfl⟩ := hc; exact h0
+  | succ c => exact hr c F L (by simpa using hc)
+
+lemma sources_nil : SourcesComplete [] := by
+  intro c F L hc; simp at hc
 
 end PerfectPower.DescentLists

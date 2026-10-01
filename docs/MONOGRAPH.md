@@ -313,8 +313,12 @@ For the same nonnegative indicator, Z_X(s)=Σ_{n≥1}X(n)n^(−s) and K_X(t)=Σ_
 **Proved in Lean** (`AbelianTransforms.lean`), for any hit set with `A(x) = #{1 ≤ n ≤ x}`:
 - `heat_eq_integral`: K_X(t) = ∫₀^∞ e^(−u) A₋(u/t) du (Tonelli, with A₋ the strict count);
 - `heat_abelian`: if A(x) ~ c x^α (log x)^β with α > 0, β ≥ 0, then K_X(t) ~ c Γ(α+1) t^(−α) (log(1/t))^β as t ↓ 0;
-- `dirichlet_eq_integral`, `dirichlet_abelian`: under the same hypothesis, with Z_X(s) convergent for s > α, ε^(β+1) Z_X(α+ε) → c α Γ(β+1) as ε ↓ 0;
+- `dirichlet_summable`: the same hypothesis already gives convergence of Z_X(s) for every s > α;
+- `dirichlet_eq_integral`, `dirichlet_abelian`: under the same hypothesis, ε^(β+1) Z_X(α+ε) → c α Γ(β+1) as ε ↓ 0;
 - `heat_finite`: for finite support, K_X(t) tends to the exact number of hits and Z_X is the finite Dirichlet polynomial.
+
+These are normalized limits. They read as asymptotic equivalences (`~`) only when c > 0; for c = 0 they
+state that the transform is o(t^(−α)(log 1/t)^β), respectively o(ε^(−(β+1))).
 
 Each proof is dominated convergence after a change of variables. A Potter-type bound
 A(x) ≤ C x^α (log(e+x))^β supplies the domination. Still open in Lean: β < 0 (the domination needs

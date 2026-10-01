@@ -53,6 +53,7 @@ receipts:
 	$(PY) python/unit_basis_witness.py
 	$(PY) python/norm_rep_localization.py
 	$(PY) python/make_lean_unit_fields.py
+	$(PY) python/make_lean_minus23.py
 	$(PY) python/make_mordell_registry.py
 	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py
