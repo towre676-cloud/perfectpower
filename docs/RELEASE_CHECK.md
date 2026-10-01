@@ -1,6 +1,6 @@
 # Release check
 
-`make release-verify` was run on commit `bf6ac5f` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
+`make release-verify` was run on commit `f6568eb` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -12,22 +12,22 @@ The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12, mpmath 1.3
 - `crosscheck/thue_fields_pari.py`, which writes `receipts/thue_fields.json`;
 - `crosscheck/field756_pilot.py`, which writes `receipts/field756_pilot.json`;
 - `crosscheck/d72_unit_pilot.py 40`, which writes `receipts/d72_unit_pilot.json` (positive control passed);
-- `crosscheck/thue_bound_d72.py`, which writes `receipts/d72_thue_bound.json` (`H ≤ 35`, `V = 1`);
-- `crosscheck/thue_bound_field756.py`, which writes `receipts/field756_bound.json` (`H ≤ 13`, `V ≤ 1` for all seven classes).
+- `crosscheck/thue_bound_d72.py`, which writes `receipts/d72_thue_bound.json` (direct reduction: `H ≤ 4`, `V = 1`);
+- `crosscheck/thue_bound_field756.py`, which writes `receipts/field756_bound.json` (direct reduction: `H ≤ 5, 7, 5, 6, 6, 6, 5`, `V ≤ 1`).
 
 ```
 Build completed successfully.
-axiom audit passed: 747 declarations
--- Found 0 errors in 1125 declarations (plus 3265 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 762 declarations
+-- Found 0 errors in 1180 declarations (plus 3924 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
 z3-solver: present: adapter/certificate tests run
-Ran 191 tests in 50.534s
+Ran 192 tests in 51.430s
 OK
-Ran 14 tests in 11.531s (continuation_tests)
+Ran 14 tests in 11.323s (continuation_tests)
 OK
-Ran 10 tests in 0.027s (expert_push)
+Ran 10 tests in 0.029s (expert_push)
 OK
-Ran 8 tests in 0.010s (galois_merge)
+Ran 8 tests in 0.011s (galois_merge)
 OK
 19/19 certificates passed
 binomial gate OK: {'C(n,2)=m^3': [1, 2], 'C(n,3)=m^2': [1, 2, 3, 4, 50]}
@@ -36,16 +36,22 @@ Theorem G gate OK: 462 cases, genus computed in 462, places at infinity in 453, 
 399 genus-one reduction theorems
 1163 Mordell curves without integral points
 59 curves y^2 = x^3 - D: 26 complete lists emitted, 33 with open branches; complete lists agree with Sage 26/26, with published counts 26/26; ranks {'0': 10, '1': 12, '2': 4}
-class  0: B=11 V=1 box 529 hits [(1, 1), (10, -2)] small [(1, 1)]
-class  1: B=13 V=1 box 729 hits [(-11, 1), (1, 1)] small [(-11, 1), (1, 1)]
-class  2: B=10 V=1 box 441 hits [(-2, 0), (1, -3)] small [(-2, 0)]
-class 18: B=12 V=1 box 625 hits [(2, -1), (6, 1)] small [(2, -1), (6, 1)]
-class 19: B=13 V=1 box 729 hits [(-8, 0), (2, 1)] small [(-8, 0), (2, 1)]
-class 20: B=12 V=1 box 625 hits [(-4, 0), (2, -1)] small [(-4, 0), (2, -1)]
-class 50: B=10 V=0 box 441 hits [(-4, 0), (2, -6)] small [(-4, 0)]
-D=7: classes [0, 1, 2], 12 open branches, points [(32, -181), (2, -1), (2, 1), (32, 181)]
-D=28: classes [18, 19, 20], 12 open branches, points [(37, -225), (8, -22), (4, -6), (4, 6), (8, 22), (37, 225)]
-D=63: classes [50], 4 open branches, points [(568, -13537), (4, -1), (4, 1), (568, 13537)]
+x^3 - 6x - 2: disc 756, index primes [2, 3], p=2: {'0': 3} max=True tot=True, p=3: {'2': 3} max=True tot=True; targets [8, 64, 256, 512, 576, 8192] all unique
+x^3 - 9x - 6: disc 1944, index primes [2, 3], p=2: {'0': 1, '1': 2} max=True tot=False, p=3: {'0': 3} max=True tot=True; targets [9, -9] all unique
+x^3 - 6x - 2: unit box {'box': [9, 3, 3], 'triples': 931, 'candidates': 12}
+0: B=5 V=1 box 121 steps 8 hits [(1, 1), (10, -2)]
+1: B=7 V=1 box 225 steps 7 hits [(-11, 1), (1, 1)]
+2: B=5 V=1 box 121 steps 7 hits [(-2, 0), (1, -3)]
+18: B=6 V=1 box 169 steps 7 hits [(2, -1), (6, 1)]
+19: B=6 V=1 box 169 steps 7 hits [(-8, 0), (2, 1)]
+20: B=6 V=1 box 169 steps 7 hits [(-4, 0), (2, -1)]
+50: B=5 V=0 box 121 steps 7 hits [(-4, 0), (2, -6)]
+D=7: classes [0, 1, 2], points [(32, -181), (2, -1), (2, 1), (32, 181)]
+D=28: classes [18, 19, 20], points [(37, -225), (8, -22), (4, -6), (4, 6), (8, 22), (37, 225)]
+D=63: classes [50], points [(568, -13537), (4, -1), (4, 1), (568, 13537)]
+x^3 - 9x - 6: unit box {'box': [28, 8, 5], 'triples': 10659, 'candidates': 8}
+1: B=4 V=1 box 81 steps 6 hits []
+-1: B=4 V=1 box 81 steps 6 hits []
 36 registry entries, all checked against their Lean statements -> receipts/mordell_registry.json
 pairs_square_1e9: 24 solutions, 32 orbit steps, seeds [(2, 0)]
 25 plan theorems -> PerfectPower/Generated/Plans.lean
@@ -61,9 +67,7 @@ descent gate OK
 verify: OK
 ```
 
-**Field 756** (`python/make_lean_field756.py`, run by `make verify`). The seven class theorems and `minus7`, `minus28`, `minus63` are kernel-checked **conditional on the named hypotheses `bound_i`**, the external exponent bounds. In every class the box hits equal PARI's solution list, and each curve's points equal the Sage census. These three curves are not counted among the 26 closed ones.
-
-**D = 72.** `D72Residual.residual_empty` is kernel-checked conditional on `ExtBound 35 1`.
+**Unit fields** (`python/make_lean_unit_fields.py`, run by `make verify`; [UNIT_PREMISES.md](UNIT_PREMISES.md)). The field-756 class theorems, `minus7`, `minus28`, `minus63` and `D72Residual.residual_empty` are kernel-checked **under three named premises**: `unitGen`, `normRep_i` and `analytic_i`. The direct-H reduction chains (56 stages), norm identities, boxes and small cases are evaluated by the kernel. In every class the box hits equal PARI's solution list, and each curve's points equal the Sage census. These curves are not counted among the 26 closed ones. `python/unit_basis_witness.py` (exact fundamental-domain witness) and `python/norm_rep_localization.py` (Dedekind's criterion, total ramification) run in `make verify` too.
 
 **Bounded Pell.** `Generated/BoundedPlans.lean` (`pairs_square_1e9`) is unconditional; the adapter's default bounded-Pell path runs the kernel per query (`lean_kernel_checked`).
 
