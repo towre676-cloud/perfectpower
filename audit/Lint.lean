@@ -53,6 +53,10 @@ import PerfectPower.Generated.Minus23
 import PerfectPower.Generated.Minus45
 import PerfectPower.Generated.Minus18
 import PerfectPower.Generated.Minus89
+import PerfectPower.BVWorkflow
+import PerfectPower.ArithmeticWorkflow
+import PerfectPower.Generated.WorkflowInstances
+import PerfectPower.Generated.WorkflowContexts
 import PerfectPower.MonomialCount
 import PerfectPower.ThueLocal
 import PerfectPower.DescentThue

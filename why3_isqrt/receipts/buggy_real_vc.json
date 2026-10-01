@@ -1,0 +1,23 @@
+{
+  "mutation": "res = res_g + 1 instead of res_g * (1 << m)",
+  "population": "ground slice of mutated original VC, quantified assumptions omitted",
+  "witness": {
+    "x": 0,
+    "num": 0,
+    "res_g": 0,
+    "res": 1,
+    "m": 0,
+    "bits_g": 0,
+    "bits": 0
+  },
+  "steps": 1,
+  "original": {
+    "status": "sat",
+    "seconds": 0.009138625000105094
+  },
+  "accelerated": {
+    "status": "sat",
+    "seconds": 0.0104494209999757
+  },
+  "full_quantified_task": "both replay arms timed out; no SAT claim for the quantified file"
+}

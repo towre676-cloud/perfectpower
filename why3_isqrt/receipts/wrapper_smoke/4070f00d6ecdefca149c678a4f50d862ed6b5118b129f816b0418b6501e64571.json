@@ -1,0 +1,23 @@
+{
+  "task_sha256": "4070f00d6ecdefca149c678a4f50d862ed6b5118b129f816b0418b6501e64571",
+  "policy": "goal",
+  "prepare_seconds": 0.013397846999851026,
+  "total_seconds": 0.023324223999679816,
+  "certificate": {
+    "schema": "pp-unsigned-sub/1",
+    "task_sha256": "4070f00d6ecdefca149c678a4f50d862ed6b5118b129f816b0418b6501e64571",
+    "steps": [
+      {
+        "term_assertion": 22,
+        "guard_assertion": 21,
+        "upper_assertion": null,
+        "n": "x",
+        "b": "num",
+        "x": "x",
+        "width": 64,
+        "fact": "(bvule (bvsub x num) x)"
+      }
+    ]
+  },
+  "fallback": null
+}

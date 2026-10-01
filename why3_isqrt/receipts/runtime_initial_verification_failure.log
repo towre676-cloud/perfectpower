@@ -1,0 +1,40 @@
+All file hashes verified; 307 arithmetic instances rechecked.
+RUN /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python -m unittest -v test_unsigned_adapter test_arithmetic_oracles
+test_aliases_are_not_assumed (test_unsigned_adapter.Tests.test_aliases_are_not_assumed) ... ok
+test_all_exhaustive_small_words (test_unsigned_adapter.Tests.test_all_exhaustive_small_words) ... ok
+test_buggy_program_ground_slice_remains_satisfiable (test_unsigned_adapter.Tests.test_buggy_program_ground_slice_remains_satisfiable) ... ok
+test_command_looking_strings_do_not_create_queries (test_unsigned_adapter.Tests.test_command_looking_strings_do_not_create_queries) ... ok
+test_comment_looking_quoted_symbol_is_not_removed (test_unsigned_adapter.Tests.test_comment_looking_quoted_symbol_is_not_removed) ... ok
+test_cross_context_not_combined (test_unsigned_adapter.Tests.test_cross_context_not_combined) ... ok
+test_each_step_field_mutation_rejected (test_unsigned_adapter.Tests.test_each_step_field_mutation_rejected) ... ok
+test_future_assertion_not_used (test_unsigned_adapter.Tests.test_future_assertion_not_used) ... ok
+test_guard_is_essential (test_unsigned_adapter.Tests.test_guard_is_essential) ... ok
+test_incremental_scopes_rejected (test_unsigned_adapter.Tests.test_incremental_scopes_rejected) ... ok
+test_no_unsigned_reinterpretation (test_unsigned_adapter.Tests.test_no_unsigned_reinterpretation) ... ok
+test_policy_keeps_irrelevant_assertions_intact (test_unsigned_adapter.Tests.test_policy_keeps_irrelevant_assertions_intact) ... ok
+test_real_certificate (test_unsigned_adapter.Tests.test_real_certificate) ... ok
+test_reset_assertions_rejected (test_unsigned_adapter.Tests.test_reset_assertions_rejected) ... ok
+test_source_mutation_rejected (test_unsigned_adapter.Tests.test_source_mutation_rejected) ... ok
+test_valid_unsat (test_unsigned_adapter.Tests.test_valid_unsat) ... ok
+test_lower_polynomial_identity (test_arithmetic_oracles.Oracles.test_lower_polynomial_identity) ... ok
+test_scaled_newton_against_python_isqrt (test_arithmetic_oracles.Oracles.test_scaled_newton_against_python_isqrt) ... ok
+test_upper_polynomial_identity (test_arithmetic_oracles.Oracles.test_upper_polynomial_identity) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.151s
+
+OK
+RUN /workspace/scratch/109155aec88d/lean_runtime/lean-4.20.0-linux/bin/lean --version
+error: failed to locate application
+Traceback (most recent call last):
+  File "/workspace/scratch/109155aec88d/perfectpower_real_workflow_push/verify_handoff.py", line 29, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/109155aec88d/perfectpower_real_workflow_push/verify_handoff.py", line 23, in main
+    run([a.lean,'--version'])
+  File "/workspace/scratch/109155aec88d/perfectpower_real_workflow_push/verify_handoff.py", line 7, in run
+    print('RUN',*cmd,flush=True);subprocess.run(cmd,check=True,**kw)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/workspace/scratch/109155aec88d/lean_runtime/lean-4.20.0-linux/bin/lean', '--version']' returned non-zero exit status 1.

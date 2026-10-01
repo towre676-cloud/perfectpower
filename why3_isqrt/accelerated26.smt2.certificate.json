@@ -1,0 +1,46 @@
+{
+  "schema": "pp-unsigned-sub/1",
+  "task_sha256": "dfb71258c2c87bd81869eec260bd82f7e503160aa087563a6b74fa45e2801e9e",
+  "steps": [
+    {
+      "term_assertion": 23,
+      "guard_assertion": 22,
+      "upper_assertion": null,
+      "n": "x",
+      "b": "num",
+      "x": "x",
+      "width": 64,
+      "fact": "(bvule (bvsub x num) x)"
+    },
+    {
+      "term_assertion": 23,
+      "guard_assertion": 22,
+      "upper_assertion": 25,
+      "n": "x",
+      "b": "num",
+      "x": "(bvsub (bvmul (bvadd res_g (bvshl #x0000000000000001 m))\n              (bvadd res_g (bvshl #x0000000000000001 m)))\n       #x0000000000000001)",
+      "width": 64,
+      "fact": "(let ((a!1 (bvsub (bvmul (bvadd res_g (bvshl #x0000000000000001 m))\n                         (bvadd res_g (bvshl #x0000000000000001 m)))\n                  #x0000000000000001)))\n  (bvule (bvsub x num) a!1))"
+    },
+    {
+      "term_assertion": 37,
+      "guard_assertion": 36,
+      "upper_assertion": null,
+      "n": "num",
+      "b": "(bvor res bits)",
+      "x": "num",
+      "width": 64,
+      "fact": "(bvule (bvsub num (bvor res bits)) num)"
+    },
+    {
+      "term_assertion": 37,
+      "guard_assertion": 36,
+      "upper_assertion": 22,
+      "n": "num",
+      "b": "(bvor res bits)",
+      "x": "x",
+      "width": 64,
+      "fact": "(bvule (bvsub num (bvor res bits)) x)"
+    }
+  ]
+}

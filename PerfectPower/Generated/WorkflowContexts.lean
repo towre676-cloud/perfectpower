@@ -1,0 +1,212 @@
+import PerfectPower.BVWorkflow
+set_option linter.unusedVariables false
+namespace PerfectPower.WorkflowContexts
+
+-- Original task SHA256 6ee22861e9125a8150e59b18222badb2c6630efb75c2dda552a125c46d151f82
+theorem vc0
+    (v0 : BitVec 16)
+    (v1 : BitVec 16)
+    (v2 : BitVec 16)
+    (v3 : BitVec 16)
+    (v4 : BitVec 16)
+    (v5 : BitVec 16)
+    (v6 : BitVec 16)
+    (v7 : BitVec 16)
+    (v8 : BitVec 16)
+    (v9 : BitVec 16)
+    (v10 : BitVec 16)
+    (v11 : BitVec 16)
+    (v12 : BitVec 16)
+    (v13 : BitVec 16)
+    (h16 : ((v4) ≤ (8 : BitVec 16)))
+    (h17 : ((v2) = (if ((v4) = (0 : BitVec 16)) then (0 : BitVec 16) else ((1 : BitVec 16) <<< ((v4) - (1 : BitVec 16)).toNat))))
+    (h18 : ((v0) = ((v2) * (v2))))
+    (h19 : (((v11) &&& (((1 : BitVec 16) <<< (v4).toNat) - (1 : BitVec 16))) = (0 : BitVec 16)))
+    (h20 : ((v11) < (256 : BitVec 16)))
+    (h21 : ((v8) = ((v11) * ((1 : BitVec 16) <<< (v4).toNat))))
+    (h22 : ((v6) ≤ (v13)))
+    (h23 : (((v13) - (v6)) = ((v11) * (v11))))
+    (h24 : (((v11) + ((1 : BitVec 16) <<< (v4).toNat)) ≤ (256 : BitVec 16)))
+    (h25 : ((v13) ≤ ((((v11) + ((1 : BitVec 16) <<< (v4).toNat)) * ((v11) + ((1 : BitVec 16) <<< (v4).toNat))) - (1 : BitVec 16))))
+    (h26 : (¬ ((v0) = (0 : BitVec 16))))
+    (h27 : (¬ ((v4) = (0 : BitVec 16))))
+    (h28 : ((v5) = ((v4) - (1 : BitVec 16))))
+    (h29 : ((v4) = ((v5) + (1 : BitVec 16))))
+    (h30 : ((v8) = ((v11) * ((1 : BitVec 16) <<< ((v5) + (1 : BitVec 16)).toNat))))
+    (h31 : ((v2) = ((1 : BitVec 16) <<< (v5).toNat)))
+    (h32 : (((v8) ||| (v0)) = ((v8) + (v0))))
+    (h33 : (((v8) ||| (v0)) = ((((2 : BitVec 16) * (v11)) + (v2)) * ((1 : BitVec 16) <<< (v5).toNat))))
+    (h34 : ((v9) = ((v8) >>> (1 : BitVec 16).toNat)))
+    (h35 : ((v9) = ((v11) * ((1 : BitVec 16) <<< (v5).toNat))))
+    (h36 : (((v8) ||| (v0)) ≤ (v6)))
+    (h37 : ((v7) = ((v6) - ((v8) ||| (v0)))))
+    (h38 : ((v10) = ((v9) ||| (v0))))
+    (h39 : ((v10) = ((v9) + (v0))))
+    (h40 : ((v10) = (((v11) + (v2)) * ((1 : BitVec 16) <<< (v5).toNat))))
+    (h41 : ((v12) = ((v11) + (v2))))
+    (h42 : ((v1) = ((v0) >>> (2 : BitVec 16).toNat)))
+    (h43 : ((v3) = ((v2) >>> (1 : BitVec 16).toNat)))
+    (h44 : ((v5) ≤ (8 : BitVec 16)))
+    (h45 : ((v3) = (if ((v5) = (0 : BitVec 16)) then (0 : BitVec 16) else ((1 : BitVec 16) <<< ((v5) - (1 : BitVec 16)).toNat))))
+    (h46 : ((v1) = ((v3) * (v3))))
+    (h47 : (((v12) &&& (((1 : BitVec 16) <<< (v5).toNat) - (1 : BitVec 16))) = (0 : BitVec 16)))
+    (h48 : ((v12) < (256 : BitVec 16)))
+    (h49 : ((v10) = ((v12) * ((1 : BitVec 16) <<< (v5).toNat))))
+    : ((v7) ≤ (v13)) := by
+  have d0 := PerfectPower.BVWorkflow.sub_le_bound (v13) (v6) (v13) h22 (show (v13) ≤ (v13) from by simp [BitVec.le_def])
+  have d1 := PerfectPower.BVWorkflow.sub_le_bound (v13) (v6) ((((v11) + ((1 : BitVec 16) <<< (v4).toNat)) * ((v11) + ((1 : BitVec 16) <<< (v4).toNat))) - (1 : BitVec 16)) h22 h25
+  have d2 := PerfectPower.BVWorkflow.sub_le_bound (v6) ((v8) ||| (v0)) (v6) h36 (show (v6) ≤ (v6) from by simp [BitVec.le_def])
+  have d3 := PerfectPower.BVWorkflow.sub_le_bound (v6) ((v8) ||| (v0)) (v13) h36 h22
+  rw [h37]
+  exact d3
+
+
+-- Original task SHA256 df67dabc3bc19a1bdf407304d0ffdc01bd8bc90ccbd5a1034640c32cf2ec61ce
+theorem vc1
+    (v0 : BitVec 32)
+    (v1 : BitVec 32)
+    (v2 : BitVec 32)
+    (v3 : BitVec 32)
+    (v4 : BitVec 32)
+    (v5 : BitVec 32)
+    (v6 : BitVec 32)
+    (v7 : BitVec 32)
+    (v8 : BitVec 32)
+    (v9 : BitVec 32)
+    (v10 : BitVec 32)
+    (v11 : BitVec 32)
+    (v12 : BitVec 32)
+    (v13 : BitVec 32)
+    (h16 : ((v4) ≤ (16 : BitVec 32)))
+    (h17 : ((v2) = (if ((v4) = (0 : BitVec 32)) then (0 : BitVec 32) else ((1 : BitVec 32) <<< ((v4) - (1 : BitVec 32)).toNat))))
+    (h18 : ((v0) = ((v2) * (v2))))
+    (h19 : (((v11) &&& (((1 : BitVec 32) <<< (v4).toNat) - (1 : BitVec 32))) = (0 : BitVec 32)))
+    (h20 : ((v11) < (65536 : BitVec 32)))
+    (h21 : ((v8) = ((v11) * ((1 : BitVec 32) <<< (v4).toNat))))
+    (h22 : ((v6) ≤ (v13)))
+    (h23 : (((v13) - (v6)) = ((v11) * (v11))))
+    (h24 : (((v11) + ((1 : BitVec 32) <<< (v4).toNat)) ≤ (65536 : BitVec 32)))
+    (h25 : ((v13) ≤ ((((v11) + ((1 : BitVec 32) <<< (v4).toNat)) * ((v11) + ((1 : BitVec 32) <<< (v4).toNat))) - (1 : BitVec 32))))
+    (h26 : (¬ ((v0) = (0 : BitVec 32))))
+    (h27 : (¬ ((v4) = (0 : BitVec 32))))
+    (h28 : ((v5) = ((v4) - (1 : BitVec 32))))
+    (h29 : ((v4) = ((v5) + (1 : BitVec 32))))
+    (h30 : ((v8) = ((v11) * ((1 : BitVec 32) <<< ((v5) + (1 : BitVec 32)).toNat))))
+    (h31 : ((v2) = ((1 : BitVec 32) <<< (v5).toNat)))
+    (h32 : (((v8) ||| (v0)) = ((v8) + (v0))))
+    (h33 : (((v8) ||| (v0)) = ((((2 : BitVec 32) * (v11)) + (v2)) * ((1 : BitVec 32) <<< (v5).toNat))))
+    (h34 : ((v9) = ((v8) >>> (1 : BitVec 32).toNat)))
+    (h35 : ((v9) = ((v11) * ((1 : BitVec 32) <<< (v5).toNat))))
+    (h36 : (((v8) ||| (v0)) ≤ (v6)))
+    (h37 : ((v7) = ((v6) - ((v8) ||| (v0)))))
+    (h38 : ((v10) = ((v9) ||| (v0))))
+    (h39 : ((v10) = ((v9) + (v0))))
+    (h40 : ((v10) = (((v11) + (v2)) * ((1 : BitVec 32) <<< (v5).toNat))))
+    (h41 : ((v12) = ((v11) + (v2))))
+    (h42 : ((v1) = ((v0) >>> (2 : BitVec 32).toNat)))
+    (h43 : ((v3) = ((v2) >>> (1 : BitVec 32).toNat)))
+    (h44 : ((v5) ≤ (16 : BitVec 32)))
+    (h45 : ((v3) = (if ((v5) = (0 : BitVec 32)) then (0 : BitVec 32) else ((1 : BitVec 32) <<< ((v5) - (1 : BitVec 32)).toNat))))
+    (h46 : ((v1) = ((v3) * (v3))))
+    (h47 : (((v12) &&& (((1 : BitVec 32) <<< (v5).toNat) - (1 : BitVec 32))) = (0 : BitVec 32)))
+    (h48 : ((v12) < (65536 : BitVec 32)))
+    (h49 : ((v10) = ((v12) * ((1 : BitVec 32) <<< (v5).toNat))))
+    : ((v7) ≤ (v13)) := by
+  have d0 := PerfectPower.BVWorkflow.sub_le_bound (v13) (v6) (v13) h22 (show (v13) ≤ (v13) from by simp [BitVec.le_def])
+  have d1 := PerfectPower.BVWorkflow.sub_le_bound (v13) (v6) ((((v11) + ((1 : BitVec 32) <<< (v4).toNat)) * ((v11) + ((1 : BitVec 32) <<< (v4).toNat))) - (1 : BitVec 32)) h22 h25
+  have d2 := PerfectPower.BVWorkflow.sub_le_bound (v6) ((v8) ||| (v0)) (v6) h36 (show (v6) ≤ (v6) from by simp [BitVec.le_def])
+  have d3 := PerfectPower.BVWorkflow.sub_le_bound (v6) ((v8) ||| (v0)) (v13) h36 h22
+  rw [h37]
+  exact d3
+
+
+-- Original task SHA256 dfb71258c2c87bd81869eec260bd82f7e503160aa087563a6b74fa45e2801e9e
+theorem vc2
+    (v0 : BitVec 64)
+    (v1 : BitVec 64)
+    (v2 : BitVec 64)
+    (v3 : BitVec 64)
+    (v4 : BitVec 64)
+    (v5 : BitVec 64)
+    (v6 : BitVec 64)
+    (v7 : BitVec 64)
+    (v8 : BitVec 64)
+    (v9 : BitVec 64)
+    (v10 : BitVec 64)
+    (v11 : BitVec 64)
+    (v12 : BitVec 64)
+    (v13 : BitVec 64)
+    (h16 : ((v4) ≤ (32 : BitVec 64)))
+    (h17 : ((v2) = (if ((v4) = (0 : BitVec 64)) then (0 : BitVec 64) else ((1 : BitVec 64) <<< ((v4) - (1 : BitVec 64)).toNat))))
+    (h18 : ((v0) = ((v2) * (v2))))
+    (h19 : (((v11) &&& (((1 : BitVec 64) <<< (v4).toNat) - (1 : BitVec 64))) = (0 : BitVec 64)))
+    (h20 : ((v11) < (4294967296 : BitVec 64)))
+    (h21 : ((v8) = ((v11) * ((1 : BitVec 64) <<< (v4).toNat))))
+    (h22 : ((v6) ≤ (v13)))
+    (h23 : (((v13) - (v6)) = ((v11) * (v11))))
+    (h24 : (((v11) + ((1 : BitVec 64) <<< (v4).toNat)) ≤ (4294967296 : BitVec 64)))
+    (h25 : ((v13) ≤ ((((v11) + ((1 : BitVec 64) <<< (v4).toNat)) * ((v11) + ((1 : BitVec 64) <<< (v4).toNat))) - (1 : BitVec 64))))
+    (h26 : (¬ ((v0) = (0 : BitVec 64))))
+    (h27 : (¬ ((v4) = (0 : BitVec 64))))
+    (h28 : ((v5) = ((v4) - (1 : BitVec 64))))
+    (h29 : ((v4) = ((v5) + (1 : BitVec 64))))
+    (h30 : ((v8) = ((v11) * ((1 : BitVec 64) <<< ((v5) + (1 : BitVec 64)).toNat))))
+    (h31 : ((v2) = ((1 : BitVec 64) <<< (v5).toNat)))
+    (h32 : (((v8) ||| (v0)) = ((v8) + (v0))))
+    (h33 : (((v8) ||| (v0)) = ((((2 : BitVec 64) * (v11)) + (v2)) * ((1 : BitVec 64) <<< (v5).toNat))))
+    (h34 : ((v9) = ((v8) >>> (1 : BitVec 64).toNat)))
+    (h35 : ((v9) = ((v11) * ((1 : BitVec 64) <<< (v5).toNat))))
+    (h36 : (((v8) ||| (v0)) ≤ (v6)))
+    (h37 : ((v7) = ((v6) - ((v8) ||| (v0)))))
+    (h38 : ((v10) = ((v9) ||| (v0))))
+    (h39 : ((v10) = ((v9) + (v0))))
+    (h40 : ((v10) = (((v11) + (v2)) * ((1 : BitVec 64) <<< (v5).toNat))))
+    (h41 : ((v12) = ((v11) + (v2))))
+    (h42 : ((v1) = ((v0) >>> (2 : BitVec 64).toNat)))
+    (h43 : ((v3) = ((v2) >>> (1 : BitVec 64).toNat)))
+    (h44 : ((v5) ≤ (32 : BitVec 64)))
+    (h45 : ((v3) = (if ((v5) = (0 : BitVec 64)) then (0 : BitVec 64) else ((1 : BitVec 64) <<< ((v5) - (1 : BitVec 64)).toNat))))
+    (h46 : ((v1) = ((v3) * (v3))))
+    (h47 : (((v12) &&& (((1 : BitVec 64) <<< (v5).toNat) - (1 : BitVec 64))) = (0 : BitVec 64)))
+    (h48 : ((v12) < (4294967296 : BitVec 64)))
+    (h49 : ((v10) = ((v12) * ((1 : BitVec 64) <<< (v5).toNat))))
+    : ((v7) ≤ (v13)) := by
+  have d0 := PerfectPower.BVWorkflow.sub_le_bound (v13) (v6) (v13) h22 (show (v13) ≤ (v13) from by simp [BitVec.le_def])
+  have d1 := PerfectPower.BVWorkflow.sub_le_bound (v13) (v6) ((((v11) + ((1 : BitVec 64) <<< (v4).toNat)) * ((v11) + ((1 : BitVec 64) <<< (v4).toNat))) - (1 : BitVec 64)) h22 h25
+  have d2 := PerfectPower.BVWorkflow.sub_le_bound (v6) ((v8) ||| (v0)) (v6) h36 (show (v6) ≤ (v6) from by simp [BitVec.le_def])
+  have d3 := PerfectPower.BVWorkflow.sub_le_bound (v6) ((v8) ||| (v0)) (v13) h36 h22
+  rw [h37]
+  exact d3
+
+
+-- Original task SHA256 4070f00d6ecdefca149c678a4f50d862ed6b5118b129f816b0418b6501e64571
+theorem vc3
+    (v0 : BitVec 64)
+    (v1 : BitVec 64)
+    (v2 : BitVec 64)
+    (v3 : BitVec 64)
+    (v4 : BitVec 64)
+    (v5 : BitVec 64)
+    (v6 : BitVec 64)
+    (h15 : ((v2) ≤ (32 : BitVec 64)))
+    (h16 : ((v1) = (if ((v2) = (0 : BitVec 64)) then (0 : BitVec 64) else ((1 : BitVec 64) <<< ((v2) - (1 : BitVec 64)).toNat))))
+    (h17 : ((v0) = ((v1) * (v1))))
+    (h18 : (((v5) &&& (((1 : BitVec 64) <<< (v2).toNat) - (1 : BitVec 64))) = (0 : BitVec 64)))
+    (h19 : ((v5) < (4294967296 : BitVec 64)))
+    (h20 : ((v4) = ((v5) * ((1 : BitVec 64) <<< (v2).toNat))))
+    (h21 : ((v3) ≤ (v6)))
+    (h22 : (((v6) - (v3)) = ((v5) * (v5))))
+    (h23 : (((v5) + ((1 : BitVec 64) <<< (v2).toNat)) ≤ (4294967296 : BitVec 64)))
+    (h24 : ((v6) ≤ ((((v5) + ((1 : BitVec 64) <<< (v2).toNat)) * ((v5) + ((1 : BitVec 64) <<< (v2).toNat))) - (1 : BitVec 64))))
+    (h25 : ((v0) = (0 : BitVec 64)))
+    (h26 : ((v2) = (0 : BitVec 64)))
+    (h27 : ((v0) = (0 : BitVec 64)))
+    : (((v4) * (v4)) ≤ (v6)) := by
+  have d0 := PerfectPower.BVWorkflow.sub_le_bound (v6) (v3) (v6) h21 (show (v6) ≤ (v6) from by simp [BitVec.le_def])
+  have d1 := PerfectPower.BVWorkflow.sub_le_bound (v6) (v3) ((((v5) + ((1 : BitVec 64) <<< (v2).toNat)) * ((v5) + ((1 : BitVec 64) <<< (v2).toNat))) - (1 : BitVec 64)) h21 h24
+  have hr : v4 = v5 := by simpa [h26] using h20
+  rw [hr, ← h22]
+  exact d0
+
+
+end PerfectPower.WorkflowContexts

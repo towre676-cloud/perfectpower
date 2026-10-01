@@ -1,0 +1,111 @@
+{
+  "repo_base_commit": "63787ac700521dda01e1a34b6fcf69c89e4188cb",
+  "source_snapshot_prior_release_check": "1367fe1",
+  "python_version": "3.12.14",
+  "z3_version": "Z3 version 5.1.0 - 64 bit",
+  "why3_version": "1.6.0",
+  "lean_version": "4.20.0",
+  "primary_population": "134 original native-bitvector Why3 VCs from the unmodified pinned Von Neumann example",
+  "budget_seconds": 3,
+  "full_batch": {
+    "original": {
+      "solved": 128,
+      "tasks": 134,
+      "seconds_including_preparation": 26.739372459000606
+    },
+    "accelerated": {
+      "solved": 130,
+      "tasks": 134,
+      "seconds_including_preparation": 19.71181712599855
+    },
+    "eligible_tasks": 9,
+    "time_reduction_percent": 26.281676369845197
+  },
+  "ordinary_integer_controls": {
+    "tasks": 32,
+    "all_solved_before_acceleration": true
+  },
+  "existing_adapter_coverage": {
+    "tasks": 166,
+    "replacements": 0
+  },
+  "lean": {
+    "arithmetic_instances": 307,
+    "complete_ground_contexts": 4,
+    "nonstandard_axioms": []
+  },
+  "regression_tests": 19,
+  "cold_lean_build_in_solver_timing": false,
+  "python_process_startup_in_solver_timing": false,
+  "wrapper_process_startup": "not included in paired replay totals; the wrapper smoke is a separate integration test",
+  "goal_policy_hard_repetitions": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "original": {
+      "solved": 3,
+      "tasks": 35,
+      "seconds_including_preparation": 102.97604223699864
+    },
+    "accelerated": {
+      "solved": 13,
+      "tasks": 35,
+      "seconds_including_preparation": 68.98763705600413
+    }
+  },
+  "leads": [
+    {
+      "file": "isqrt_von_neumann-VonNeumann32-isqrt32qtvc29.smt2",
+      "original_solved": 0,
+      "accelerated_solved": 0,
+      "runs": 5,
+      "accelerated_median_seconds_including_preparation": 3.025165614999878
+    },
+    {
+      "file": "isqrt_von_neumann-VonNeumann32-isqrt32qtvc40.smt2",
+      "original_solved": 0,
+      "accelerated_solved": 0,
+      "runs": 5,
+      "accelerated_median_seconds_including_preparation": 3.0196727899997313
+    },
+    {
+      "file": "isqrt_von_neumann-VonNeumann32-isqrt32qtvc41.smt2",
+      "original_solved": 0,
+      "accelerated_solved": 3,
+      "runs": 5,
+      "accelerated_median_seconds_including_preparation": 1.1159577769999487
+    },
+    {
+      "file": "isqrt_von_neumann-VonNeumann64-isqrt64qtvc26.smt2",
+      "original_solved": 3,
+      "accelerated_solved": 5,
+      "runs": 5,
+      "accelerated_median_seconds_including_preparation": 0.027444483000181208
+    },
+    {
+      "file": "isqrt_von_neumann-VonNeumann64-isqrt64qtvc29.smt2",
+      "original_solved": 0,
+      "accelerated_solved": 0,
+      "runs": 5,
+      "accelerated_median_seconds_including_preparation": 3.023492496000472
+    },
+    {
+      "file": "isqrt_von_neumann-VonNeumann64-isqrt64qtvc40.smt2",
+      "original_solved": 0,
+      "accelerated_solved": 0,
+      "runs": 5,
+      "accelerated_median_seconds_including_preparation": 3.019195657000637
+    },
+    {
+      "file": "isqrt_von_neumann-VonNeumann64-isqrt64qtvc43.smt2",
+      "original_solved": 0,
+      "accelerated_solved": 5,
+      "runs": 5,
+      "accelerated_median_seconds_including_preparation": 0.018577662000097916
+    }
+  ]
+}
