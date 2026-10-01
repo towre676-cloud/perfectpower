@@ -873,6 +873,10 @@ open PerfectPower
 #print axioms PerfectPower.Generated.D72Unit.class_neg
 #print axioms PerfectPower.Generated.Field756.unitGen_proved
 #print axioms PerfectPower.D72Residual.H72_eq
+-- DescentLists
+#print axioms PerfectPower.DescentLists.nodeL_step
+#print axioms PerfectPower.DescentLists.descL_complete
+#print axioms PerfectPower.DescentLists.root_iff
 -- AbelianTransforms
 #print axioms PerfectPower.AbelianTransforms.integral_term
 #print axioms PerfectPower.AbelianTransforms.summable_exp

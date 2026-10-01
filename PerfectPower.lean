@@ -65,6 +65,7 @@ import PerfectPower.Generated.MordellBranch
 import PerfectPower.SqrtTwoBridges
 import PerfectPower.SqrtTwoDefs
 import PerfectPower.AbelianTransforms
+import PerfectPower.DescentLists
 import PerfectPower.MonomialCount
 import PerfectPower.ThueLocal
 import PerfectPower.DescentThue

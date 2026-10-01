@@ -96,13 +96,16 @@ git.
    - This closes two classes and no curve.
 3. **Descent certificates that carry nonempty lists.**
    - **Done for branch transport:** `DescentThueList.complete_of_lists` accepts obligations
-     `(G, M, L)` with complete lists and reads `y` off each listed solution. Still open: the same
-     for split nodes of a descent tree.
-   - **Target:** a checker whose split nodes prove
-     `S(F, M) = ⋃_λ T_λ S(G_λ, M/p^{s_λ}) ∪ p·S(F, M/p³)` and whose leaves carry proved complete
-     finite lists.
-   - **Foundations in Lean:** `Interfaces.sublattice_branch` (image condition included) and the
-     per-node prime of `descM`.
+     `(G, M, L)` with complete lists and reads `y` off each listed solution.
+   - **Done for split nodes** (`DescentLists.lean`). `descL` is the `descB` checker with leaves
+     that carry lists (`KindL.given`). `candL` composes the candidate list: the zero child scaled
+     by `p` (only when `p³ ∣ M`), and each line child mapped by its matrix. `descL_complete` and
+     `root_iff` prove
+     `S(F, M) = p·S(F, M/p³) ∪ ⋃_λ T_λ S(G_λ, M/p^{s_λ})`, filtered by evaluation, from complete
+     leaves (`LeafComplete`, a hypothesis).
+   - **Still open:** complete lists at the leaves. In the measured workload
+     (`receipts/descent_residual.json`) they are 109 distinct unit equations `G = ±1` in other
+     cubic fields, so each needs a Thue bound (the field-756 pipeline, applied per field).
 4. **A consumer-accepted replacement.**
    - **Target:** for one independently authored verification condition, a checked instance of
      `Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that a downstream verifier (Why3/GNATprove) accepts.
