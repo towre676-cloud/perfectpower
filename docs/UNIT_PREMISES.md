@@ -6,15 +6,15 @@ This page covers the two cubic fields behind the open Mordell work:
 - the field of discriminant 1944 (`δ³ = 9δ + 6`), which carries the `D = 72` residual
   `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`.
 
-Both are proved complete in Lean under **two kinds of named premise**. Unit generation, the
-third, is now a Lean theorem for both fields (`UnitGen.lean`, `unitGen_proved`). The remaining
-instances are:
-- one `normRep` per distinct `(N, γ₀)`: six for field 756, since classes 20 and 50 share
-  `normRep_64`, and one for `D = 72`, since `H = −1` is transported by sign;
-- one `analytic` per class: seven for field 756 and one for `D = 72`.
+Both are proved complete in Lean under **one kind of named premise**, the analytic one. There is
+one `analytic` premise per class: seven for field 756 and one for `D = 72`, since `H = −1` is
+transported by sign. The two structural premises are now Lean theorems for both fields:
+- unit generation (`UnitGen.lean`, `unitGen_proved`);
+- norm representatives (`NormRepProof.lean`, `normRep_*_proved`).
 
 Every other step is kernel-checked. The direct maximum-exponent reduction, the unit-domain witness, the residue sieve
-and the norm-representative localization come from the direct-H handoff, adapted here.
+and the norm-representative localization come from the direct-H handoff. The elementary
+norm-representative proof comes from the follow-up handoff. Both are adapted here.
 
 ## The chain
 
@@ -30,7 +30,7 @@ The steps:
 |---|---|---|
 | norm and lattice encoding | `nrm(enc(a, b)) = c₀² F(a, b)`; `dec(enc(a, b)) = (a, b)` | **Lean**: by `ring` per class; `UnitBox.dec_enc` |
 | unit generation | every unit of `ℤ[x]` is `±ε₁^a ε₂^b` (`UnitPremises.UnitGen`) | **Lean**: `UnitGenProof.unitGen_of_cert`, certificates by `decide +kernel` |
-| norm representatives | every element of norm `N` is `γ₀ · unit` (`UnitPremises.NormRep`) | **premise**; finite hypotheses checked exactly |
+| norm representatives | every element of norm `N` is `γ₀ · unit` (`UnitPremises.NormRep`) | **Lean**: `NormRepProof.normRep756`, `normRep_d72` (explicit division) |
 | analytic input | Siegel + Matveev: `\|κe₁ + e₂ + μ\| ≤ A e^{−cH}` and `H ≤ M₀` (`UnitPremises.Analytic`) | **premise** |
 | direct reduction | `H ≤ M₀ ⇒ … ⇒ H ≤ B` | **Lean**: `DirectReduction.chain_sound`, chains by `decide +kernel` |
 | the box | every lattice point of `±γ₀ ε₁^{e₁} ε₂^{e₂}`, `\|eᵢ\| ≤ B`, solving `F = M` is listed | **Lean**: `UnitBox.boxB` by `decide +kernel` |
@@ -99,22 +99,30 @@ Every step uses only the standard axioms.
 The exact Python witness (`python/unit_basis_witness.py`) stays as an independent cross-check.
 It uses atanh-series logarithm enclosures and the parallelogram exclusion.
 
-## Norm representatives (`python/norm_rep_localization.py`)
+## Norm representatives, proved by explicit division (`NormRepProof.lean`)
 
-Every norm target is supported on 2 and 3:
-- field 756: `576, 256, 8, 8192, 512, 64, 64`;
-- field 1944: `±9`.
+The proof works in the integer coordinates `g = A + Bx + Cx²` and uses no maximal order and no
+ideal theory.
 
-The script checks the finite hypotheses exactly:
-- **Dedekind's criterion at 2 and 3**, the only primes with `p² | disc`. For field 756,
-  `g ≡ x³ (mod 2)` with `h = −3x − 1`, and `g ≡ (x + 1)³ (mod 3)` with `h = −x² − 3x − 1`. Neither
-  `h` vanishes at the repeated root, so `ℤ[x]` is maximal.
-- **Total ramification** at every prime of the support: `(2) = 𝔭₂³`, `(3) = 𝔭₃³`.
+- **Adjugate** (`mul_adj`): `g · g# = N(g)` with
+  `g# = ((A + PC)² − (PB + QC)B) + (QC² − AB)x + (B² − AC − PC²)x²`. An element of norm `±1` is a
+  unit with inverse `±g#` (`unit_of_nrm`). The norm is multiplicative (`nrm_mul`, by `ring`).
+- **Field 1944**, `α = x² − 3x − 3`, `N(α) = 9`:
+  - if `9 ∣ N(g)`, then `3 ∣ A` and `3 ∣ B` (`d72_res`, all 729 residues modulo 9);
+  - so `g/α = (−3A + 2B − 2C) + (−A/3 − C)x + ((A − B)/3)x²` is integral, and `N(g/α) = 1`
+    (`d72_div`);
+  - hence `normRep_d72`. The target `−9` follows by the sign transport.
+- **Field 756**, `π₂ = x` (norm 2) and `π₃ = 1 + x` (norm −3):
+  - `2 ∣ N(g)` forces `2 ∣ A`, so `g/x = (B − 3A) + Cx + (A/2)x²` (`div2`);
+  - `3 ∣ N(g)` forces `3 ∣ A − B + C`, so `g/(1 + x)` is integral (`div3`). The residue checks run
+    over `ZMod 2` and `ZMod 3`.
+  - Induction on `N(g) = ±2^r 3^s` gives `g = x^r (1 + x)^s u` with `N(u) = ±1` (`decomp756`),
+    keeping track of the sign of `N(1 + x)`.
+  - Doing the same for `γ₀` and dividing gives `g = γ₀ · unit`: `normRep756`.
+  - This covers all six targets, `576, 256, 8, 8192, 512, 64`.
 
-The only ideal of norm `2^r 3^s` is then `𝔭₂^r 𝔭₃^s`. Any `γ` with the same absolute norm as the
-listed `γ₀` therefore generates the same ideal, so `γ = γ₀ · unit`. In field 1944 the prime 2 is
-not totally ramified (`x(x + 1)²`), but the targets `±9` only involve 3. Dedekind's criterion
-and the Dedekind–Kummer theorem are cited, not formalized, so `NormRep` remains a premise.
+The earlier exact checks of Dedekind's criterion and total ramification
+(`python/norm_rep_localization.py`) remain as a cross-check.
 
 ## The analytic premise
 
@@ -153,8 +161,6 @@ so their survival fractions do not multiply.
 
 ## Next
 
-- A Lean proof of `NormRep`. It needs the index criterion and ideal factorization for these
-  orders; the modular facts are done.
 - The analytic premise: Matveev's theorem is the boundary that stays external.
 - Bounded-Pell replacements carried through `push`/`pop` (`Γ ∧ B ∧ C ⇔ Γ ∧ B ∧ L`), and their
   reconstruction in Why3, as is already done for the Mordell replacement.

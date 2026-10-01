@@ -288,12 +288,10 @@ The whole remaining `D = 72` point-free problem is therefore **one unit Thue equ
   integers. The kernel checks the reduction chains, the box of `9²` elements of either sign, and
   the search `|v| ≤ 1`.
 - Unit generation is **proved** (`D72Unit.unitGen_proved`, [UNIT_PREMISES.md](UNIT_PREMISES.md)).
-  The proof rests on two named premises:
-  - `normRep_pos`: the elements of norm `9`. Supported by 3 being totally
-    ramified and `ℤ[δ]` being 3-maximal.
-  - `analytic_pos`: Siegel and Matveev.
-  - The target `H = −1` needs no premise of its own. The form, `enc` and the norm are odd, so
-    `UnitPremises.normRep_neg_of` and `analytic_neg_of` transport the `H = 1` premises.
+  So are the norm representatives (`D72Unit.normRep_pos_proved`: `9 ∣ N(g)` forces `3 ∣ A, B`,
+  and `g/α` is integral). The proof rests on **one** named premise, `analytic_pos` (Siegel and
+  Matveev). The target `H = −1` needs no premise of its own: the form, `enc` and the norm are
+  odd, so `UnitPremises.normRep_neg_of` and `analytic_neg_of` transport the `H = 1` facts.
 
 So the residual is **closed conditionally**, and its external part is now three separate,
 reusable statements instead of one opaque bound.
@@ -364,12 +362,11 @@ discriminant 756, is totally real, has class number 1 and unit rank 2, and is ce
 - **Unit generation is proved** (`Field756.unitGen_proved`, `UnitGen.lean`): real embeddings,
   log enclosures, rounding into a box of 425 triples, and an explicit `±ε₁^x ε₂^y` for each of the
   6 units there.
-- **The two remaining premises** (statements in `UnitPremises`, evidence in
-  [UNIT_PREMISES.md](UNIT_PREMISES.md)):
-  - `normRep_N`, one per distinct `(N, γ₀)` (classes 20 and 50 share `normRep_64`): every norm
-    target is supported on 2 and 3, which are totally ramified, and
-    `ℤ[x]` is maximal there (Dedekind's criterion, checked exactly).
-  - `analytic_i`: Siegel's identity, the conjugate estimates and Matveev's theorem.
+- **The norm representatives are proved** (`Field756.normRep_N_proved`, `NormRepProof.lean`):
+  every target is `±2^r 3^s`, and division by `x` and `1 + x` is exact when `2` or `3` divides
+  the norm.
+- **The remaining premise** is `analytic_i`, one per class: Siegel's identity, the conjugate
+  estimates and Matveev's theorem ([UNIT_PREMISES.md](UNIT_PREMISES.md)).
 - A field match is still not an equivalence: the 7 classes remain 7 obligations, sharing one unit
   group and one proof of unit generation.
 

@@ -788,6 +788,34 @@ open PerfectPower
 #print axioms PerfectPower.UnitPremises.mem_fam
 #print axioms PerfectPower.UnitPremises.extBound_of
 #print axioms PerfectPower.UnitPremises.unitBox_sound
+-- NormRepProof
+#print axioms PerfectPower.NormRepProof.mul_adj
+#print axioms PerfectPower.NormRepProof.nrm_mul
+#print axioms PerfectPower.NormRepProof.mul_comm'
+#print axioms PerfectPower.NormRepProof.one_mul'
+#print axioms PerfectPower.NormRepProof.nrm_one
+#print axioms PerfectPower.NormRepProof.unit_of_nrm
+#print axioms PerfectPower.NormRepProof.nrm_cast
+#print axioms PerfectPower.NormRepProof.val_mod
+#print axioms PerfectPower.NormRepProof.d72_res
+#print axioms PerfectPower.NormRepProof.d72_mod
+#print axioms PerfectPower.NormRepProof.d72_div
+#print axioms PerfectPower.NormRepProof.normRep_d72
+#print axioms PerfectPower.NormRepProof.f756_res2
+#print axioms PerfectPower.NormRepProof.f756_res3
+#print axioms PerfectPower.NormRepProof.div2
+#print axioms PerfectPower.NormRepProof.div3
+#print axioms PerfectPower.NormRepProof.beta_succ_r
+#print axioms PerfectPower.NormRepProof.beta_succ_s
+#print axioms PerfectPower.NormRepProof.decomp756
+#print axioms PerfectPower.NormRepProof.normRep756
+#print axioms PerfectPower.Generated.Field756.normRep_576_proved
+#print axioms PerfectPower.Generated.Field756.normRep_256_proved
+#print axioms PerfectPower.Generated.Field756.normRep_8_proved
+#print axioms PerfectPower.Generated.Field756.normRep_8192_proved
+#print axioms PerfectPower.Generated.Field756.normRep_512_proved
+#print axioms PerfectPower.Generated.Field756.normRep_64_proved
+#print axioms PerfectPower.Generated.D72Unit.normRep_pos_proved
 -- UnitGen
 #print axioms PerfectPower.UnitGenProof.sig_mul
 #print axioms PerfectPower.UnitGenProof.sig_one

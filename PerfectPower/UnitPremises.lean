@@ -11,8 +11,8 @@ statements, each reusable and each with its own evidence:
   **Proved** for both fields from a kernel-checked certificate (`UnitGen.lean`,
   `UnitGenProof.unitGen_of_cert`; the generated `unitGen_proved`).
 * `NormRep P Q N reps` (**one per norm target**): every element of norm `N` is `γ₀ u` for a listed
-  `γ₀` and a unit `u`.  Evidence: the ideal factorization above `2` and `3`
-  (`python/norm_rep_localization.py`), and PARI.
+  `γ₀` and a unit `u`.  **Proved** for every target in use by explicit division
+  (`NormRepProof.lean`).
 * `Analytic …` (**one per class**): for each solution with `|b| > V` and each way of writing
   `c₀a − bφ = ±γ₀ ε₁^{e₁} ε₂^{e₂}`, some case gives reals `κ, μ, c, A` inside its rational
   enclosures with `H ≤ M₀` and `|κ e₁ + e₂ + μ| ≤ A e^{−cH}`.  Evidence: Siegel's identity, the

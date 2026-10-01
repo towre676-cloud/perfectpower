@@ -3,9 +3,9 @@ classes of the field of discriminant 756 and the curves `y^2 = x^3 - D`, `D = 7,
 `PerfectPower/Generated/D72Unit.lean` (the `D = 72` residual `H(u, v) = ±1`).
 
 Unit generation is **proved** for each field (`unitGen_proved`, from the certificate `ugCert`
-built by `ug_cert` and checked by `UnitGenProof.ugCheck`).  Every theorem is stated under the two
-remaining named premises (`UnitPremises`):
-- `normRep_N` (one per distinct norm representative): every element of norm `c0^2 M` is `γ0 · unit`;
+built by `ug_cert` and checked by `UnitGenProof.ugCheck`), and so are the norm representatives
+(`normRep_N_proved`, `NormRepProof`: explicit division).  Every theorem is stated under the one
+remaining named premise (`UnitPremises`):
 - `analytic_i` (one per class): Siegel + Matveev, as rational enclosures and a first bound.
 From these, the kernel checks the direct-`H` reduction chains (`DirectReduction.chainCheck`), the
 norm identity, the exponent box, the small-`b` search and, for curves, the branch transport.
@@ -307,11 +307,37 @@ def field_preamble(P, Q, e1, e2, witness):
                             'lean_units': len(cert['reps'])}
 
 
+def _support(N):
+    r = s = 0
+    m = abs(N)
+    while m % 2 == 0:
+        m //= 2
+        r += 1
+    while m % 3 == 0:
+        m //= 3
+        s += 1
+    assert m == 1, f'norm {N} is not supported on 2 and 3'
+    return r, s
+
+
 def norm_rep_block(nname, P, Q, N, g0, labels):
-    return (f"/-- **Norm-representative premise** (shared by {', '.join(labels)}): every element of norm "
-            f"{N} is `{list(g0)}` times a unit.  Evidence: `python/norm_rep_localization.py`.  Not proved in "
-            f"Lean. -/\n"
-            f"def {nname} : Prop := UnitPremises.NormRep {P} {Q} {_i(N)} [{z3_lean(g0)}]\n\n")
+    """The `NormRep` statement and its proof (`NormRepProof`: explicit division)."""
+    assert nrm(P, Q, g0) == N
+    if (P, Q) == (6, 2):
+        r, s = _support(N)
+        side = 'Or.inl' if N > 0 else 'Or.inr'
+        proof = f"NormRepProof.normRep756 {_i(N)} {z3_lean(g0)} {r} {s} ({side} (by norm_num)) (by decide)"
+        how = f"`{_i(N)} = ±2^{r} 3^{s}`: divide by `x` and `1 + x` (`NormRepProof.normRep756`)"
+    elif (P, Q, N, tuple(g0)) == (9, 6, 9, (-3, -3, 1)):
+        proof = "NormRepProof.normRep_d72"
+        how = "divide by `α` (`NormRepProof.normRep_d72`)"
+    else:
+        raise SystemExit(f'no NormRep proof for {(P, Q, N, g0)}')
+    return (f"/-- The norm-representative statement (used by {', '.join(labels)}): every element of norm "
+            f"{N} is `{list(g0)}` times a unit. -/\n"
+            f"def {nname} : Prop := UnitPremises.NormRep {P} {Q} {_i(N)} [{z3_lean(g0)}]\n\n"
+            f"/-- **Proved** by explicit division: {how}. -/\n"
+            f"theorem {nname}_proved : {nname} :=\n  {proof}\n\n")
 
 
 def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=None):
@@ -330,17 +356,17 @@ def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=
         reps += (f"/-- Negative control: every chain of {label} with its final bound lowered by one is rejected "
                  f"by the kernel. -/\n"
                  f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB reps_{name} = true := by decide +kernel\n\n")
-        hyps = f"(hN : {nname}) (hA : analytic_{name})"
-        hN, hA = 'hN', 'hA'
+        hyps = f"(hA : analytic_{name})"
+        hN, hA = f'{nname}_proved', 'hA'
     else:
         reps = (f"/-- The representatives and cases of {label}: those of `{neg_of}`, negated. -/\n"
                 f"def reps_{name} : List (Z3 × List UnitPremises.Case) := UnitPremises.negReps reps_{neg_of}\n\n")
-        hyps = f"(hN : {nname}) (hA : analytic_{neg_of})"
-        hN = 'UnitPremises.normRep_neg_of (reps := reps_' + neg_of + ') hN'
+        hyps = f"(hA : analytic_{neg_of})"
+        hN = 'UnitPremises.normRep_neg_of (reps := reps_' + neg_of + f') {nname}_proved'
         hA = 'UnitPremises.analytic_neg_of hA'
     note = '' if neg_of is None else f"  Its norm and analytic premises are those of `{neg_of}`, transported by sign. "
     return (reps +
-            f"/-- **{label}, complete under the two remaining premises**: `{list(F)}` takes the value {M} exactly at "
+            f"/-- **{label}, complete under its analytic premise**: `{list(F)}` takes the value {M} exactly at "
             f"{len(L)} point(s).{note}  Kernel-checked: the reduction chains (to `H ≤ {B}`), the norm identity, "
             f"the box (`{2 * B + 1}²` elements) and the search `|b| ≤ {V}`. -/\n"
             f"theorem class_{name} {hyps} (u v : ℤ) :\n"
@@ -363,35 +389,37 @@ def box_hits(P, Q, F, M, phi, g0, e1, e1i, e2, e2i, B):
 
 
 def head(name, doc):
-    return (f"import PerfectPower.UnitGen\nimport PerfectPower.DescentThueList\n\n/-!\n{doc}\n-/\n\n"
+    return (f"import PerfectPower.UnitGen\nimport PerfectPower.NormRepProof\nimport PerfectPower.DescentThueList\n\n/-!\n{doc}\n-/\n\n"
             f"namespace PerfectPower.Generated.{name}\n\nopen PerfectPower ThueLocal UnitBox\n\n")
 
 
-DOC756 = """# The field 756: seven Thue classes and three curves, under two named premises
+DOC756 = """# The field 756: seven Thue classes and three curves, under one named premise per class
 (generated by `python/make_lean_unit_fields.py`)
 
 `K = ℚ(x)`, `x³ = 6x + 2`, `O_K = ℤ[x]`, discriminant 756.  Seven GL₂(ℤ)-classes of open branch
 equations of `y² = x³ − D`, `D ∈ {7, 28, 63}`, live in this field (`MORDELL_BRANCH.md` §7.3).
 
 * **Proved:** `unitGen_proved`, unit generation for `ℤ[x]` (`UnitGenProof.unitGen_of_cert`).
-* **Premises, not proved in Lean:** one `normRep_N` per distinct norm representative (classes 20
-  and 50 share `normRep_64`), and one `analytic_i` per class.  See `UnitPremises` for their
-  statements and evidence.
+* **Proved:** `normRep_N_proved`, the norm representatives (`NormRepProof.normRep756`; classes 20
+  and 50 share `normRep_64`).
+* **Premise, not proved in Lean:** one `analytic_i` per class.  See `UnitPremises` for its
+  statement and evidence.
 * **Kernel-checked:** the direct-`H` reduction chains, the exponent boxes, the small-`b` searches,
   the norm identities, and the branch transport.
 * `class_i`: the complete solution list.  `minusD`: the complete list of integral points of
   `y² = x³ − D`, under the premises of that curve's classes."""
 
-DOC72 = """# The `D = 72` residual `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`, under two named premises
+DOC72 = """# The `D = 72` residual `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`, under one named premise
 (generated by `python/make_lean_unit_fields.py`)
 
 `K = ℚ(δ)`, `δ³ = 9δ + 6`, `O_K = ℤ[δ]`, discriminant 1944.  The form `(−3, 0, 9, −2)` has
 `φ = β = 6 − δ²` (`NormForm.d72_beta_of_delta`), and `N(c₀u − βv) = 9 H(u, v)`.
 
 * **Proved:** `unitGen_proved`, unit generation for `ℤ[δ]`.
-* **Premises, not proved in Lean:** `normRep_pos` (norm 9) and `analytic_pos`.  The target
-  `H = −1` uses the same two, transported by sign (`UnitPremises.normRep_neg_of`,
-  `analytic_neg_of`: the form, `enc` and the norm are odd).
+* **Proved:** `normRep_pos_proved`, the norm representatives of norm 9 (`NormRepProof.normRep_d72`).
+* **Premise, not proved in Lean:** `analytic_pos`.  The target `H = −1` uses the same facts,
+  transported by sign (`UnitPremises.normRep_neg_of`, `analytic_neg_of`: the form, `enc` and the
+  norm are odd).
 * **Kernel-checked:** the reduction chains (`H ≤ 4`), the box of `9²` elements and the search
   `|v| ≤ 1`.  `class_pos`, `class_neg`: no solution."""
 
@@ -472,11 +500,9 @@ def main():
         mods = '[' + ', '.join('(' + ', '.join(_i(v) for v in t) + ')' for t in a['mods']) + ']'
         listed = '[' + ', '.join(
             f"({form_lean(gcls[i]['representative'])}, {gcls[i]['M']}, {pairs_lean(lists[i])})" for i in ids) + ']'
-        nn = sorted({nnames[i] for i in ids})
-        hyps = (' '.join(f'(h{n} : {n})' for n in nn) + ' '
-                + ' '.join(f'(hA{i} : analytic_{i})' for i in ids))
+        hyps = ' '.join(f'(hA{i} : analytic_{i})' for i in ids)
         pat = ' | '.join(['rfl'] * len(ids))
-        cases = ' '.join(f'| exact (class_{i} h{nnames[i]} hA{i} u v).mp' for i in ids)
+        cases = ' '.join(f'| exact (class_{i} hA{i} u v).mp' for i in ids)
         out.append(
             f"set_option maxHeartbeats 0 in\n"
             f"/-- **The integral points of `y^2 = x^3 - {D}`, under the premises of classes {ids}**: "
@@ -516,7 +542,8 @@ def main():
     (ROOT / 'PerfectPower' / 'Generated' / 'D72Unit.lean').write_text('\n'.join(out))
     report['fields'].append({'field': 'x^3 - 9x - 6', 'unit_witness': wrep, 'classes': rows})
 
-    report['label'] = ('Lean theorems conditional on the named premises unitGen, normRep_i, analytic_i '
+    report['label'] = ('Lean theorems conditional on the named analytic premises analytic_i (unitGen and '
+                       'normRep proved) '
                        '(Generated/Field756.lean, Generated/D72Unit.lean); reduction chains, norm identities, '
                        'boxes, small-b searches and branch transport are kernel-checked')
     (ROOT / 'receipts' / 'unit_fields_certificate.json').write_text(json.dumps(report, indent=1, default=list) + '\n')

@@ -30,7 +30,7 @@ lines = [
     f'- Lean declarations audited: **{len(audited)}**; using only `propext`, `Classical.choice`, '
     f'`Quot.sound` (or a subset): **{len(standard)}**.',
     f'- Machine-generated Lean hit-set certificates: **{len(generated)}**.',
-    f'- Theorems conditional on named premises (norm representatives, Siegel–Matveev; not counted as closed): **{len(conditional)}** '
+    f'- Theorems conditional on named premises (the analytic premise: Siegel–Matveev; not counted as closed): **{len(conditional)}** '
     '(`Field756.minus7`, `minus28`, `minus63`; `D72Residual.residual_empty`).',
     '- Atlas families by certification label: '
     + ', '.join(f'`{k}` {v}' for k, v in sorted(labels.items())) + '.',
