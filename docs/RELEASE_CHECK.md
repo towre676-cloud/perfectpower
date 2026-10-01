@@ -1,6 +1,6 @@
 # Release check
 
-`make release-verify` was run on commit `1367fe1` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
+`make release-verify` was run on commit `eeff6f2` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -17,15 +17,15 @@ The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12, mpmath 1.3
 
 ```
 Build completed successfully.
-axiom audit passed: 1005 declarations
--- Found 0 errors in 1890 declarations (plus 7012 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 1355 declarations
+-- Found 0 errors in 2232 declarations (plus 7516 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
 z3-solver: present: adapter/certificate tests run
-Ran 220 tests in 58.759s
+Ran 243 tests in 64.061s
 OK
-Ran 14 tests in 11.662s (continuation_tests)
+Ran 14 tests in 10.827s (continuation_tests)
 OK
-Ran 10 tests in 0.038s (expert_push)
+Ran 10 tests in 0.027s (expert_push)
 OK
 Ran 8 tests in 0.010s (galois_merge)
 OK
