@@ -52,6 +52,7 @@ import PerfectPower.DescentThue
 import PerfectPower.Interfaces
 import PerfectPower.NormForm
 import PerfectPower.BoundedPell
+import PerfectPower.D72Residual
 import Batteries.Tactic.Lint
 /-! Batteries' environment linters over the hand-written library, not the generated certificates (docstrings, unused haves,
 simp-normal forms, ...).  Run with `lake env lean audit/Lint.lean`; it must report 0 errors. -/

@@ -94,6 +94,7 @@ crosscheck:
 	$(SAGEPY) crosscheck/thue_fields_pari.py
 	$(SAGEPY) crosscheck/field756_pilot.py
 	$(SAGEPY) crosscheck/d72_unit_pilot.py 40
+	$(SAGEPY) crosscheck/thue_bound_d72.py
 
 # Host-solver adapter benchmark (constructed instances; needs z3-solver on PYTHONPATH)
 adapter-bench:

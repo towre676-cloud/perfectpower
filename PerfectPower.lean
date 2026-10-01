@@ -69,6 +69,7 @@ import PerfectPower.DescentThue
 import PerfectPower.Interfaces
 import PerfectPower.NormForm
 import PerfectPower.BoundedPell
+import PerfectPower.D72Residual
 import PerfectPower.Generated.BoundedPlans
 import PerfectPower.Generated.MordellThue
 import PerfectPower.Generated.OEISAuto

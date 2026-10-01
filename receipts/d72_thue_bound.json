@@ -1,0 +1,149 @@
+{
+ "label": "EXTERNAL certificate: Matveev + interval numerics in Python, structural input from PARI (bnfcertify); the finite search below the bound is exact and replayed in Lean",
+ "equation": "H(u,v) = -3u^3 + 9uv^2 - 2v^3 = \u00b11",
+ "field": "x^3 - 9x - 6, O_K = Z[x], h = 1",
+ "units": {
+  "eps1": [
+   -1,
+   -3,
+   1
+  ],
+  "eps2": [
+   -1,
+   0,
+   2
+  ]
+ },
+ "alpha": [
+  -3,
+  -3,
+  1
+ ],
+ "cases": [
+  {
+   "i0": 0,
+   "K1": "1.132640397",
+   "V0": 1,
+   "c2": "5.461495169",
+   "K": "22407.62387",
+   "A": [
+    "12.308064",
+    "22.167083",
+    "47.156011"
+   ],
+   "matveev_C": "1.8514717e+17",
+   "H0": "2.5806521e+18",
+   "reduction": [
+    {
+     "M": "2.5806521e+18",
+     "q_digits": 25,
+     "eps": "0.32751",
+     "bound_e1": "12.038421",
+     "new_H_bound": "12.038421"
+    },
+    {
+     "M": "12.0",
+     "q_digits": 8,
+     "eps": "0.29982",
+     "bound_e1": "4.6881454",
+     "new_H_bound": "4.6881454"
+    },
+    {
+     "M": "4.0",
+     "q_digits": 8,
+     "eps": "0.29982",
+     "bound_e1": "4.6881453",
+     "new_H_bound": "4.6881453"
+    }
+   ],
+   "H_reduced": 4
+  },
+  {
+   "i0": 1,
+   "K1": "0.07329426531",
+   "V0": 0,
+   "c2": "8.24758652",
+   "K": "32.67337925",
+   "A": [
+    "12.308064",
+    "22.167083",
+    "47.156011"
+   ],
+   "matveev_C": "1.8514717e+17",
+   "H0": "1.6903835e+18",
+   "reduction": [
+    {
+     "M": "1.6903835e+18",
+     "q_digits": 25,
+     "eps": "0.31583",
+     "bound_e1": "7.4470861",
+     "new_H_bound": "87.660235"
+    },
+    {
+     "M": "87.0",
+     "q_digits": 9,
+     "eps": "0.41041",
+     "bound_e1": "2.8844315",
+     "new_H_bound": "37.231067"
+    },
+    {
+     "M": "37.0",
+     "q_digits": 8,
+     "eps": "0.49317",
+     "bound_e1": "2.7068567",
+     "new_H_bound": "35.268404"
+    },
+    {
+     "M": "35.0",
+     "q_digits": 8,
+     "eps": "0.49317",
+     "bound_e1": "2.7068567",
+     "new_H_bound": "35.268404"
+    }
+   ],
+   "H_reduced": 35
+  },
+  {
+   "i0": 2,
+   "K1": "0.2428495506",
+   "V0": 0,
+   "c2": "5.809563031",
+   "K": "16275.39825",
+   "A": [
+    "12.308064",
+    "22.167083",
+    "47.156011"
+   ],
+   "matveev_C": "1.8514717e+17",
+   "H0": "2.4220997e+18",
+   "reduction": [
+    {
+     "M": "2.4220997e+18",
+     "q_digits": 25,
+     "eps": "0.15138",
+     "bound_e1": "11.320139",
+     "new_H_bound": "11.320139"
+    },
+    {
+     "M": "11.0",
+     "q_digits": 8,
+     "eps": "0.43087",
+     "bound_e1": "4.2767501",
+     "new_H_bound": "4.2767501"
+    },
+    {
+     "M": "4.0",
+     "q_digits": 7,
+     "eps": "0.41756",
+     "bound_e1": "4.090061",
+     "new_H_bound": "4.090061"
+    }
+   ],
+   "H_reduced": 4
+  }
+ ],
+ "V0": 1,
+ "small_v_solutions": [],
+ "H_bound": 35,
+ "statement": "every solution with |v| > 1 has gamma = \u00b1alpha eps1^e1 eps2^e2 with max(|e1|,|e2|) <= 35"
+}

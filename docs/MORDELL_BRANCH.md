@@ -279,9 +279,26 @@ two norm-±9 representatives up to units.
   lattice (Baker–Matveev on the unit equation, then reduction), and none is claimed.
 
 The whole remaining `D = 72` point-free problem is therefore **one unit Thue equation**.
-Closing it needs a global input: a unit-equation bound in the field of discriminant 1944, which
-`D = 18` and `D = 32` share, or the lattice condition `x ∣ a − y b` expressed as a
-maximal-order descent in `ℤ[√−2]`.
+
+**Exponent bound** (`crosscheck/thue_bound_d72.py`, `receipts/d72_thue_bound.json`; external).
+The standard Tzanakis–de Weger route, in 900-bit interval arithmetic:
+- Siegel's identity for each real embedding gives `|Λ| ≤ K₁/|v|³` for the linear form
+  `Λ = log|…| + e₁ log|ε₁…| + e₂ log|ε₂…|`, and `log|v| ≥ (H − b)/a` with `H = max |eᵢ|`.
+- Matveev's theorem (`n = 3`, degree 6) gives `H ≤ 2.6·10¹⁸`.
+- Dujella–Pethő reduction, with interval bounds on `‖qκ‖` and `‖qμ‖`, brings this to
+  `H ≤ 4, 35, 4` for the three embeddings, so `H ≤ 35` once `|v| > 1`.
+
+**Lean** (`D72Residual.lean`):
+- `box_ok` checks by kernel evaluation (`decide +kernel`, about 17 s) that none of the
+  `71 × 71` elements `α ε₁^{e₁} ε₂^{e₂}`, `|eᵢ| ≤ 35`, is in the lattice, with either sign.
+- `small_v` proves there is no solution with `|v| ≤ 1`.
+- **`residual_empty (hB : ExtBound 35 1)`**: `H(u, v) ≠ ±1` for all integers `u, v`.
+
+The hypothesis `ExtBound 35 1` is named and explicit. It says every solution with `|v| > 1` has
+`γ = ±α ε₁^{e₁} ε₂^{e₂}`, `|eᵢ| ≤ 35`. It rests on PARI (`h = 1`, the unit basis, the norm-9
+ideal), on Matveev's theorem, and on the interval reduction. None of these is in Lean. So the
+residual is **closed conditionally**: the finite part is a kernel theorem, and the bound is an
+external certificate.
 
 ### 7.2 Solution-preserving descent on the nonempty classes (`python/descent_residual.py`, `receipts/descent_residual.json`)
 

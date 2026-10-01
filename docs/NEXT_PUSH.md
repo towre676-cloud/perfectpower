@@ -90,8 +90,11 @@ git.
 2. **The `D = 72` residual equation.**
    - **Target:** `∀ u v, H72 u v ≠ 1 ∧ H72 u v ≠ −1`.
    - **Already in Lean** (`NormForm.lean`): the `δ` basis, the lattice criterion and the norms.
-   - **Missing:** that `ε₁, ε₂` generate the units, completeness of the norm-±9 representatives,
-     and the exponent bound.
+   - **Now in Lean, conditionally** (`D72Residual.lean`): `residual_empty (hB : ExtBound 35 1)`.
+     The box `|eᵢ| ≤ 35` and the small-`v` case are kernel-checked.
+   - **Missing:** a Lean proof of `ExtBound 35 1`. It is now an external certificate
+     (`crosscheck/thue_bound_d72.py`): PARI's unit basis and norm-9 ideal, Matveev, and the
+     interval reduction.
    - This closes two classes and no curve.
 3. **Descent certificates that carry nonempty lists.**
    - **Target:** a checker whose split nodes prove

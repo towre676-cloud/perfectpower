@@ -772,4 +772,10 @@ open PerfectPower
 #print axioms PerfectPower.BoundedPell.bounded_list
 #print axioms PerfectPower.BoundedPell.quad_iff_norm
 #print axioms PerfectPower.BoundedPell.quad_bounded
+-- D72Residual
+#print axioms PerfectPower.D72Residual.eps1_inv
+#print axioms PerfectPower.D72Residual.eps2_inv
+#print axioms PerfectPower.D72Residual.box_ok
+#print axioms PerfectPower.D72Residual.small_v
+#print axioms PerfectPower.D72Residual.residual_empty
 #print axioms PerfectPower.Generated.BoundedPlans.pairs_square_1e9
