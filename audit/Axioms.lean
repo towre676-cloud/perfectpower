@@ -873,6 +873,28 @@ open PerfectPower
 #print axioms PerfectPower.Generated.D72Unit.class_neg
 #print axioms PerfectPower.Generated.Field756.unitGen_proved
 #print axioms PerfectPower.D72Residual.H72_eq
+-- SqrtTwoDefs
+#print axioms PerfectPower.SqrtTwoDefs.A_lt_two_B
+#print axioms PerfectPower.SqrtTwoDefs.pow_eq
+#print axioms PerfectPower.SqrtTwoDefs.inv_sqrt2_sub_one
+#print axioms PerfectPower.SqrtTwoDefs.floor_step
+#print axioms PerfectPower.SqrtTwoDefs.A024537_eq
+#print axioms PerfectPower.SqrtTwoDefs.A018905_eq
+#print axioms PerfectPower.SqrtTwoDefs.four_c
+#print axioms PerfectPower.SqrtTwoDefs.A171842_eq
+#print axioms PerfectPower.SqrtTwoDefs.r163_eq
+#print axioms PerfectPower.SqrtTwoDefs.coprime_A_2B
+#print axioms PerfectPower.SqrtTwoDefs.A163271_eq
+#print axioms PerfectPower.SqrtTwoDefs.rtg_val
+#print axioms PerfectPower.SqrtTwoDefs.lift
+#print axioms PerfectPower.SqrtTwoDefs.reach_iff
+#print axioms PerfectPower.SqrtTwoDefs.good_iff
+#print axioms PerfectPower.SqrtTwoDefs.sum_front
+#print axioms PerfectPower.SqrtTwoDefs.cnt_succ
+#print axioms PerfectPower.SqrtTwoDefs.cnt_zero
+#print axioms PerfectPower.SqrtTwoDefs.cnt_rec
+#print axioms PerfectPower.SqrtTwoDefs.cnt_pell
+#print axioms PerfectPower.SqrtTwoDefs.A069306_eq
 -- RatInterval
 #print axioms PerfectPower.RatInterval.rdn_le
 #print axioms PerfectPower.RatInterval.le_rup

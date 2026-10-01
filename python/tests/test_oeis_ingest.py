@@ -67,8 +67,11 @@ class Promotion(unittest.TestCase):
     def test_atlas_outcomes(self):
         cands = json.loads((DATA / 'discovery_sqrt2.json').read_text())
         out = {r['oeis']: r for r in atlas(SeqDir(DATA), cands)}
-        # hand-written proofs only (SqrtTwoOrbit, SqrtTwoBatch); generated ones need `auto`
-        self.assertEqual(sum(r['outcome'] == 'DEFINITION_PROVED_EQUIVALENT' for r in out.values()), 24)
+        # hand-written proofs only (SqrtTwoOrbit, SqrtTwoBatch, SqrtTwoBridges, SqrtTwoDefs);
+        # generated ones need `auto`
+        self.assertEqual(sum(r['outcome'] == 'DEFINITION_PROVED_EQUIVALENT' for r in out.values()), 28)
+        for aid in ('A024537', 'A171842', 'A163271', 'A069306'):
+            self.assertEqual(out[aid]['outcome'], 'DEFINITION_PROVED_EQUIVALENT', aid)
         self.assertEqual(out['A001333']['outcome'], 'DEFINITION_PROVED_EQUIVALENT')   # convergents (SqrtTwoBridges)
         self.assertEqual(out['A052542']['outcome'], 'REJECTED')              # a(0) = 1, not 0
         self.assertEqual(out['A052542']['agrees_from_term'], 1)

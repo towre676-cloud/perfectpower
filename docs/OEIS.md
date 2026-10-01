@@ -146,8 +146,19 @@ only at $a(0)$; the generated theorems prove each equal to an orbit coordinate f
     `B`-index shifts: A000129 at 0, A048624 at 2, and A069306 at 1, the last as finite agreement
     only (`receipts/galois_adapters.json`). It promotes nothing.
 
-The five unproved √2 entries are A024537 and its duplicate A018905 (a floor recursion), A069306
-(binary arrays), A163271 (a "zero-transform") and A171842 (a binomial transform).
+**The last five √2 entries, proved from their own definitions** (`SqrtTwoDefs.lean`). No √2
+entry is now `TERMS_AGREE_UNPROVED`.
+
+| entry | definition (offset) | theorem | mechanism |
+|---|---|---|---|
+| A024537 | `a(n) = ⌊a(n-1)/(√2 − 1)⌋`, `a(0) = 1` (0) | `2a(n) = A_{n+1} + 1` | `(1+√2)a − a' = (√2(A+1) − 2B)/2 ∈ [0, 1)`, from `2B² ≤ (A+1)² < 2(B+1)²` |
+| A171842 | binomial transform of `1, 0, 1, 0, 2, 0, 4, …` (0) | `2a(n) = A_n + 1` | binomial theorem: `4c_j = 2[j = 0] + √2^j + (−√2)^j` |
+| A163271 | numerators of `r(n) = (r(n-1)+2)/(r(n-1)+1)`, `r(1) = 0` (1) | `a(n) = 2B_{n-1}` | `r = 2B/A`, and `(−B)(2B) + A·A = ±1`, so the fraction is reduced |
+| A069306 | `2 × n` binary arrays with an edge-adjacent path of 1s from the upper-left corner to the right column (2) | `a(n) = B_{n+1}` | frontier states (top, bottom, both): `reach_iff` covers paths that run back left; the counts satisfy `top + bottom = A_n`, `both = B_n` |
+| A018905 | "Duplicate of A024537" (0) | `a(n) = A024537(n + 1)` | `TRANSPORTED_WITH_SHIFT`: both records have offset 0, but the terms are A024537 from index 1 |
+
+A018905 is a recorded interpretation, like A048624: the label "Duplicate" is contradicted at the
+same index, and the shift is the one the terms fix.
 
 ## 4. The quadratic-unit orbit engine (`QuadOrbit.lean`)
 

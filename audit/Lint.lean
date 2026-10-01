@@ -46,6 +46,7 @@ import PerfectPower.EffectiveEnumeration
 import PerfectPower.DescentBranch
 import PerfectPower.MordellMinus1
 import PerfectPower.SqrtTwoBridges
+import PerfectPower.SqrtTwoDefs
 import PerfectPower.MonomialCount
 import PerfectPower.ThueLocal
 import PerfectPower.DescentThue

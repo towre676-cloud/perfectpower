@@ -336,7 +336,17 @@
    "map": "(A+1)/2",
    "coordinate": "(A+1)/2 on all powers, a(0 + i) at power index 2 + i",
    "terms_checked": 15,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "outcome": "TRANSPORTED_WITH_SHIFT",
+   "proof": {
+    "kind": "duplicate entry with a shift read from the terms",
+    "target": "A024537",
+    "shift_from_terms": 1,
+    "terms_compared": 15,
+    "lean": [
+     "PerfectPower.SqrtTwoDefs.A018905",
+     "PerfectPower.SqrtTwoDefs.A018905_eq"
+    ]
+   }
   },
   {
    "oeis": "A024537",
@@ -345,7 +355,22 @@
    "map": "(A+1)/2",
    "coordinate": "(A+1)/2 on all powers, a(0 + i) at power index 1 + i",
    "terms_checked": 31,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "floor recursion a(n) = floor(a(n-1)/(sqrt(2) - 1)), a(0) = 1",
+    "coordinate": "(A_{n+1}+1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoDefs.A024537",
+     "PerfectPower.SqrtTwoDefs.A024537_eq",
+     "PerfectPower.SqrtTwoDefs.floor_step"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 31,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A046090",
@@ -527,7 +552,23 @@
    "map": "B",
    "coordinate": "B on all powers, a(2 + i) at power index 3 + i",
    "terms_checked": 32,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "2 x n binary arrays with an edge-adjacent path of 1s from the upper-left corner to the right column (frontier transfer)",
+    "coordinate": "B_{n+1}",
+    "lean": [
+     "PerfectPower.SqrtTwoDefs.A069306",
+     "PerfectPower.SqrtTwoDefs.Good",
+     "PerfectPower.SqrtTwoDefs.reach_iff",
+     "PerfectPower.SqrtTwoDefs.A069306_eq"
+    ],
+    "offset_entry": 2,
+    "offset_lean": 2,
+    "terms_checked": 32,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A075870",
@@ -788,7 +829,23 @@
    "map": "2B",
    "coordinate": "2B on all powers, a(1 + i) at power index 0 + i",
    "terms_checked": 31,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "reduced numerators of r(n) = (r(n-1)+2)/(r(n-1)+1), r(1) = 0",
+    "coordinate": "2 B_{n-1}",
+    "lean": [
+     "PerfectPower.SqrtTwoDefs.A163271",
+     "PerfectPower.SqrtTwoDefs.r163",
+     "PerfectPower.SqrtTwoDefs.A163271_eq",
+     "PerfectPower.SqrtTwoDefs.coprime_A_2B"
+    ],
+    "offset_entry": 1,
+    "offset_lean": 1,
+    "terms_checked": 31,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A171842",
@@ -797,7 +854,22 @@
    "map": "(A+1)/2",
    "coordinate": "(A+1)/2 on all powers, a(0 + i) at power index 0 + i",
    "terms_checked": 34,
-   "outcome": "TERMS_AGREE_UNPROVED"
+   "proof": {
+    "kind": "binomial transform of 1,0,1,0,2,0,4,... (finite sum, binomial theorem)",
+    "coordinate": "(A_n+1)/2",
+    "lean": [
+     "PerfectPower.SqrtTwoDefs.A171842",
+     "PerfectPower.SqrtTwoDefs.c171842",
+     "PerfectPower.SqrtTwoDefs.A171842_eq"
+    ],
+    "offset_entry": 0,
+    "offset_lean": 0,
+    "terms_checked": 34,
+    "first_disagreement": null,
+    "missing_lean": [],
+    "ok": true
+   },
+   "outcome": "DEFINITION_PROVED_EQUIVALENT"
   },
   {
    "oeis": "A176981",

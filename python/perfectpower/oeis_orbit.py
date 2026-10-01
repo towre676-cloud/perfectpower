@@ -213,6 +213,24 @@ PROVED['A001333'] = {'offset': 0, 'kind': 'continued-fraction numerators of sqrt
                      'lean': [LC + 'A001333', LC + 'A001333_eq', LC + 'cf_sqrt2_s', LC + 'contsAux_sqrt2',
                               LC + 'convs_sqrt2']}
 
+# definitions proved from their own text (PerfectPower/SqrtTwoDefs.lean)
+LD = 'PerfectPower.SqrtTwoDefs.'
+PROVED.update({
+    'A024537': {'offset': 0, 'kind': 'floor recursion a(n) = floor(a(n-1)/(sqrt(2) - 1)), a(0) = 1',
+                'value': lambda n: (_A(n + 1) + 1) // 2, 'coordinate': '(A_{n+1}+1)/2',
+                'lean': [LD + 'A024537', LD + 'A024537_eq', LD + 'floor_step']},
+    'A171842': {'offset': 0, 'kind': 'binomial transform of 1,0,1,0,2,0,4,... (finite sum, binomial theorem)',
+                'value': lambda n: (_A(n) + 1) // 2, 'coordinate': '(A_n+1)/2',
+                'lean': [LD + 'A171842', LD + 'c171842', LD + 'A171842_eq']},
+    'A163271': {'offset': 1, 'kind': 'reduced numerators of r(n) = (r(n-1)+2)/(r(n-1)+1), r(1) = 0',
+                'value': lambda n: 2 * _B(n - 1), 'coordinate': '2 B_{n-1}',
+                'lean': [LD + 'A163271', LD + 'r163', LD + 'A163271_eq', LD + 'coprime_A_2B']},
+    'A069306': {'offset': 2, 'kind': '2 x n binary arrays with an edge-adjacent path of 1s from the '
+                                  'upper-left corner to the right column (frontier transfer)',
+                'value': lambda n: _B(n + 1), 'coordinate': 'B_{n+1}',
+                'lean': [LD + 'A069306', LD + 'Good', LD + 'reach_iff', LD + 'A069306_eq']},
+})
+
 
 def _lean_names() -> set[str]:
     names = set()
@@ -405,7 +423,11 @@ PROVED_OUTCOMES = ('DEFINITION_PROVED_EQUIVALENT', 'TRANSPORTED_FROM_DUPLICATE')
 # entries whose text says "Essentially a duplicate" with a shift fixed only by their terms:
 # (shift, Lean names of `a(n) = target(n + shift)`)
 SHIFTED_DUPLICATES = {'A048624': (2, ['PerfectPower.SqrtTwoBridges.A048624',
-                                      'PerfectPower.SqrtTwoBridges.A048624_eq'])}
+                                      'PerfectPower.SqrtTwoBridges.A048624_eq']),
+                      # "Duplicate of A024537", but both records have offset 0 and the terms are
+                      # A024537 from index 1: the label holds only with this shift
+                      'A018905': (1, ['PerfectPower.SqrtTwoDefs.A018905',
+                                      'PerfectPower.SqrtTwoDefs.A018905_eq'])}
 
 
 def transport(source, rows: list[dict]) -> None:
