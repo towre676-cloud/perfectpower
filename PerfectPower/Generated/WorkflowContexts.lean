@@ -1,8 +1,11 @@
 import PerfectPower.BVWorkflow
+import Batteries.Tactic.Lint.Misc
 set_option linter.unusedVariables false
 namespace PerfectPower.WorkflowContexts
 
 -- Original task SHA256 6ee22861e9125a8150e59b18222badb2c6630efb75c2dda552a125c46d151f82
+-- Every ground premise of the original VC is kept on purpose, used or not.
+@[nolint unusedArguments unusedHavesSuffices]
 theorem vc0
     (v0 : BitVec 16)
     (v1 : BitVec 16)
@@ -62,6 +65,8 @@ theorem vc0
 
 
 -- Original task SHA256 df67dabc3bc19a1bdf407304d0ffdc01bd8bc90ccbd5a1034640c32cf2ec61ce
+-- Every ground premise of the original VC is kept on purpose, used or not.
+@[nolint unusedArguments unusedHavesSuffices]
 theorem vc1
     (v0 : BitVec 32)
     (v1 : BitVec 32)
@@ -121,6 +126,8 @@ theorem vc1
 
 
 -- Original task SHA256 dfb71258c2c87bd81869eec260bd82f7e503160aa087563a6b74fa45e2801e9e
+-- Every ground premise of the original VC is kept on purpose, used or not.
+@[nolint unusedArguments unusedHavesSuffices]
 theorem vc2
     (v0 : BitVec 64)
     (v1 : BitVec 64)
@@ -180,6 +187,8 @@ theorem vc2
 
 
 -- Original task SHA256 4070f00d6ecdefca149c678a4f50d862ed6b5118b129f816b0418b6501e64571
+-- Every ground premise of the original VC is kept on purpose, used or not.
+@[nolint unusedArguments unusedHavesSuffices]
 theorem vc3
     (v0 : BitVec 64)
     (v1 : BitVec 64)

@@ -965,7 +965,7 @@ lemma reduced_of_slab {P Q : ℤ} {C : UGCert} {cands : List Z3} {w n : ℕ} (hw
   simp only at hl hh gb gc hnrm
   have gb' := abs_le.mp gb
   have gc' := abs_le.mp gc
-  set j := (y + C.bb).toNat with hj
+  set j := (y + C.bb).toNat
   have hjlt : j < 2 * C.bb + 1 := by omega
   have ht : j / w < n := by rw [Nat.div_lt_iff_lt_mul hw]; omega
   have hs := h (j / w) ht

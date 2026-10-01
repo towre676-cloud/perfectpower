@@ -44,7 +44,9 @@ def emit(text,cert,name):
         if k==z3.Z3_OP_TRUE:return 'True'
         if k==z3.Z3_OP_FALSE:return 'False'
         raise ValueError('unsupported term '+e.sexpr())
-    out=f'-- Original task SHA256 {cert["task_sha256"]}\ntheorem {name}\n'
+    out=(f'-- Original task SHA256 {cert["task_sha256"]}\n'
+         f'-- Every ground premise of the original VC is kept on purpose, used or not.\n'
+         f'@[nolint unusedArguments unusedHavesSuffices]\ntheorem {name}\n')
     for k,d in sorted(dd.items()):
         types=[sort(d.domain(j)) for j in range(d.arity())]+[sort(d.range())]
         out+=f'    ({names[k]} : '+(' → '.join(types))+')\n'
@@ -62,7 +64,7 @@ def emit(text,cert,name):
     return out
 
 def main():
-    out='import PerfectPower.BVWorkflow\nset_option linter.unusedVariables false\nnamespace PerfectPower.WorkflowContexts\n\n'
+    out='import PerfectPower.BVWorkflow\nimport Batteries.Tactic.Lint.Misc\nset_option linter.unusedVariables false\nnamespace PerfectPower.WorkflowContexts\n\n'
     selected=[]
     # Pin these source obligations explicitly, without altering their programs.
     for w in [16,32,64]:

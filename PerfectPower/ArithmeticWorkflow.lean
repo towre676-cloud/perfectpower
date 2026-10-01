@@ -27,7 +27,6 @@ theorem newton_upper (x y q z : ℤ) (hy : 0 ≤ y) (hq : 0 ≤ q) (hz : 0 ≤ z
 theorem scaler_le_approx (n m a : ℤ) (hm : 0 < m) (ha : 0 < a)
     (hscale : 4*m^4 ≤ n) (hu : n < 4*m^2*(a+1)^2) : m ≤ a := by
   by_contra h
-  have hle : a+1 ≤ m := by omega
   have hs : (a+1)^2 ≤ m^2 := by nlinarith
   have hp := mul_le_mul_of_nonneg_left hs (show 0 ≤ 4*m^2 by positivity)
   nlinarith
