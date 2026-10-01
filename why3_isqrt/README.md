@@ -38,6 +38,21 @@ python3 why3_isqrt/benchmark_adapter.py --z3 "$(which z3)" --budget 3 --seeds 0,
 The benchmark overwrites `receipts/paired_goal_*.json` and writes `certificates/`. Re-exporting from
 Why3 changes path comments and so the task hashes; regenerate certificates rather than reusing them.
 
+## Reproduced in this repository
+
+The paired benchmark was re-run here with the same Z3 (5.1.0), budget 3 s
+(`receipts/reproduced_paired_goal_*.json`):
+
+| population | handoff: original → adapted | here: original → adapted |
+|---|---|---|
+| all 134 VCs, seed 0: solved | 128 → 130 | 128 → 130 |
+| all 134 VCs, seed 0: seconds (with preparation) | 26.74 → 19.71 | 28.50 → 21.18 |
+| 7 hard VCs × seeds 0–4: solved | 3 → 13 of 35 | 3 → 13 of 35 |
+| 7 hard VCs × seeds 0–4: seconds | 102.98 → 68.99 | 103.67 → 69.79 |
+
+The same two VCs become provable in the full batch (`isqrt32qtvc41`, `isqrt64qtvc43`), and no VC that
+the original task proves is lost.
+
 ## What is not claimed
 
 - No Why3 proof session accepted the wrapper (the native scheduler could not open its socket in
