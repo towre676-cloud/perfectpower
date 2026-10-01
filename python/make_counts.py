@@ -20,7 +20,7 @@ def _std(l):
 audited = [l for l in report if 'depend' in l]
 standard = [l for l in audited if _std(l)]
 generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' not in l
-             and '.cert_' not in l and '.Genus1.' not in l and '.Field756.' not in l
+             and '.cert_' not in l and '.Genus1.' not in l and '.Field756.' not in l and '.D72Unit.' not in l
              and '.BoundedPlans.' not in l]
 # theorems that hold only under a named external hypothesis (an exponent bound), reported apart
 conditional = [l for l in audited if '.Field756.minus' in l or 'D72Residual.residual_empty' in l]
