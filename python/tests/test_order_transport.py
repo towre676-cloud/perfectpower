@@ -46,7 +46,7 @@ def check(e):
 class Tests(unittest.TestCase):
  def setUp(self):self.maps=json.loads((ROOT/'receipts'/'order_transports.json').read_text())['embeddings']
  def test_all_symbolic_identities(self):
-  self.assertEqual(len(self.maps),22)
+  self.assertEqual(len(self.maps),23)
   for e in self.maps:self.assertTrue(check(e),e)
  def test_matrix_entry_mutations(self):
   for e in self.maps:
@@ -83,6 +83,6 @@ class LeanMaps(unittest.TestCase):
      k,(p,q),phi0=s['via'];e=json.loads((ROOT/'receipts'/'order_transports.json').read_text())['embeddings'][k]
      self.assertEqual((tuple(e['domain']),tuple(e['codomain'])),((p,q),(cfg['P'],cfg['Q'])))
      self.assertEqual(emb(cfg['P'],cfg['Q'],e['generator_image'],phi0),tuple(s['phi']));n+=1
-  self.assertEqual(n,10)
+  self.assertEqual(n,14)
 
 if __name__=='__main__':unittest.main()

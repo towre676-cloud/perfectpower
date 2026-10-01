@@ -815,6 +815,43 @@
       "kind": "EMBEDDING",
       "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
       "lean": "Generated.OrderMaps.map_21"
+    },
+    {
+      "domain": [
+        18,
+        24
+      ],
+      "codomain": [
+        9,
+        6
+      ],
+      "generator_image": [
+        6,
+        1,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          6,
+          24
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          -2
+        ]
+      ],
+      "determinant": -2,
+      "index": 2,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_22"
     }
   ],
   "lean_isomorphisms": [
@@ -1106,11 +1143,47 @@
       ],
       "original_cost": 2880,
       "chosen_order": [
-        18,
-        24
+        9,
+        6
       ],
-      "unitgen_proxy_cost": 2880,
-      "transport": null
+      "unitgen_proxy_cost": 0,
+      "transport": {
+        "domain": [
+          18,
+          24
+        ],
+        "codomain": [
+          9,
+          6
+        ],
+        "generator_image": [
+          6,
+          1,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            6,
+            24
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            -1,
+            -2
+          ]
+        ],
+        "determinant": -2,
+        "index": 2,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_22"
+      }
     },
     {
       "domain": [
@@ -1866,13 +1939,13 @@
     {
       "D": 72,
       "old_unitgen": 2880,
-      "new_unitgen_proxy": 2880,
+      "new_unitgen_proxy": 0,
       "all_order_costs_available": true,
       "source_repricing_required": true,
       "chosen_orders": [
         [
-          18,
-          24
+          9,
+          6
         ]
       ]
     },

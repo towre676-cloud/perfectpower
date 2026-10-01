@@ -36,6 +36,10 @@ def check(m, p, rho):
 
 def steps_for(rho, eps):
     """The least `k ≥ 1` with `ρᵏ ≤ ε` (exact)."""
+    if any(isinstance(x, bool) or not isinstance(x, (int, Fraction)) for x in (rho, eps)):
+        raise TypeError("rho and eps must be exact integers or fractions")
+    if not 0 <= rho < 1 or eps <= 0:
+        raise ValueError("require 0 <= rho < 1 and eps > 0")
     rho, eps = Fraction(rho), Fraction(eps)
     k, r = 1, rho
     while r > eps:

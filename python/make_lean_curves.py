@@ -79,6 +79,21 @@ CURVES = {
                       'via': (8, (18, 26), (4, 2, 0))},
                      {'name': 'p9', 'form': (-1, -6, 6, 2), 'phi': (26, 3, -1), 'normrep': ('one',),
                       'via': (8, (18, 26), (2, 1, 0))}]},
+    # D = 72 in the order of its own residual: the four monic sources move from t³ = 18t + 24 into
+    # Order1944 (index 2, OrderMaps.map_22), and the residual H = (−3, 0, 9, −2) = 1 is D72Unit.class_pos
+    72: {'name': 'Minus72', 'P': 9, 'Q': 6, 'disc': 1944, 'units': [(-1, -3, 1), (-1, 0, 2)], 'order': 'Order1944',
+         'imports': ['PerfectPower.Generated.D72Unit'],
+         'sources': [{'name': 's1', 'form': (-1, -36, 216, 864), 'phi': (48, 6, -6), 'normrep': ('one',),
+                      'via': (22, (18, 24), (12, 6, 0))},
+                     {'name': 's2', 'form': (-1, -18, 54, 108), 'phi': (24, 3, -3), 'normrep': ('one',),
+                      'via': (22, (18, 24), (6, 3, 0))},
+                     {'name': 's3', 'form': (-1, -12, 24, 32), 'phi': (16, 2, -2), 'normrep': ('one',),
+                      'via': (22, (18, 24), (4, 2, 0))},
+                     {'name': 's4', 'form': (-1, -6, 6, 4), 'phi': (8, 1, -1), 'normrep': ('one',),
+                      'via': (22, (18, 24), (2, 1, 0))}],
+         'external': [{'name': 'h72', 'form': (-3, 0, 9, -2), 'list': [],
+                       'theorem': 'PerfectPower.Generated.D72Unit.class_pos',
+                       'premise': 'PerfectPower.Generated.D72Unit.matveev_pos'}]},
     # the order of the D = 72 residual: unit generation is imported, not re-checked
     18: {'name': 'Minus18', 'P': 9, 'Q': 6, 'disc': 1944, 'units': [(-1, -3, 1), (-1, 0, 2)], 'order': 'Order1944',
          'sources': [{'name': 'v1', 'form': (-1, -3, 6, 2), 'phi': (1, 1, 0), 'normrep': ('one',)},
@@ -108,6 +123,11 @@ def descent_tree(F, M, sources):
     nodes = [[tuple(F), M, None]]
     k = 0
     while k < len(nodes):
+        # A solved leaf may be followed by a locally pruned leaf.
+        # Never expand a node whose kind was already assigned.
+        if nodes[k][2] is not None:
+            k += 1
+            continue
         F, M, _ = nodes[k]
         if abs(M) == 1:
             H = F if M == 1 else neg(F)
@@ -147,9 +167,6 @@ def descent_tree(F, M, sources):
                 lines.append((lam, s, j))
         nodes[k][2] = ('split', p, zero, lines)
         k += 1
-        # skip already-decided leaves
-        while k < len(nodes) and nodes[k][2] is not None:
-            k += 1
     return [tuple(n) for n in nodes]
 
 
@@ -392,6 +409,8 @@ def build(D):
     if any('via' in s for s in cfg['sources']):
         hd = hd.replace('import PerfectPower.DescentLists\n',
                         'import PerfectPower.DescentLists\nimport PerfectPower.Generated.OrderMaps\n')
+    for imp in cfg.get('imports', []):
+        hd = hd.replace('import PerfectPower.DescentLists\n', f'import PerfectPower.DescentLists\nimport {imp}\n')
     if 'order' in cfg:
         hd = hd.replace('import PerfectPower.UnitGen\n', f"import PerfectPower.Generated.{cfg['order']}\n").replace(
             'open PerfectPower ThueLocal UnitBox\n', f"open PerfectPower ThueLocal UnitBox {cfg['order']}\n")
@@ -429,6 +448,14 @@ def build(D):
                                      if 'via' in s else {}),
                                   'gamma0': g0, 'B': B, 'V': V, 'list': L,
                                   'canonical': list(TG.canonical(F)[0]), 'analytic': cert['report']})
+    # source theorems proved elsewhere (another module, possibly another order), under their own premises
+    prem = {n: f'matveev_{n}' for n, _, _ in sources}
+    cls = {n: f'class_{n}' for n, _, _ in sources}
+    for x in cfg.get('external', []):
+        sources.append((x['name'], tuple(x['form']), list(x['list'])))
+        prem[x['name']], cls[x['name']] = x['premise'], x['theorem']
+        report['sources'].append({'name': x['name'], 'form': x['form'], 'list': x['list'], 'external': x['theorem'],
+                                  'premise': x['premise'], 'canonical': list(TG.canonical(tuple(x['form']))[0])})
     out.append('/-! ### Layer 3: descent and curve assembly -/\n')
     lists, src_defs, uses = {}, {}, {}
     for cid in ids:
@@ -443,10 +470,10 @@ def build(D):
         key = '_'.join(s[0] for s in srcs)
         if key not in src_defs:
             body = ', '.join(f"({U.form_lean(F)}, {U.pairs_lean(L)})" for _, F, L in srcs)
-            hyps = ' '.join(f"(hM_{n} : matveev_{n})" for n, _, _ in srcs)
+            hyps = ' '.join(f"(hM_{n} : {prem[n]})" for n, _, _ in srcs)
             proof = 'DescentLists.sources_nil'
             for n, _, _ in reversed(srcs):
-                proof = f"(DescentLists.sources_cons (fun a b h => (class_{n} hM_{n} a b).mp h) {proof})"
+                proof = f"(DescentLists.sources_cons (fun a b h => ({cls[n]} hM_{n} a b).mp h) {proof})"
             src_defs[key] = (hyps, ' '.join(f"hM_{n}" for n, _, _ in srcs))
             out.append(f"/-- The source equations {', '.join(s[0] for s in srcs)} with their complete lists. -/\n"
                        f"def src_{key} : List (Form × List (ℤ × ℤ)) := [{body}]\n\n"
@@ -507,7 +534,7 @@ def build(D):
     listed = '[' + ', '.join(f"({U.form_lean(gcls[i]['representative'])}, {gcls[i]['M']}, {U.pairs_lean(lists[i])})"
                              for i in ids) + ']'
     needed = sorted({n for cid in ids for n in uses[cid]})
-    hyps = ' '.join(f"(hM_{n} : matveev_{n})" for n in needed)
+    hyps = ' '.join(f"(hM_{n} : {prem[n]})" for n in needed)
     alts = ' | '.join(f"exact (class_{cid} {' '.join('hM_' + n for n in uses[cid])} u v).mp" for cid in ids)
     pat = ' | '.join(['rfl'] * len(ids))
     out.append(
@@ -528,12 +555,14 @@ def build(D):
     out.append(f'end PerfectPower.Generated.{name}\n')
     (ROOT / 'PerfectPower' / 'Generated' / f'{name}.lean').write_text('\n'.join(out))
     report['curve_points'] = pts
-    report['premises'] = [f'matveev_{n}' for n in needed]
+    report['premises'] = [prem[n] for n in needed]
     report['label'] = f'Lean theorem conditional on {", ".join(report["premises"])} (Generated/{name}.lean)'
     (ROOT / 'receipts' / f'minus{D}_certificate.json').write_text(json.dumps(report, indent=1, default=list) + '\n')
     for r in report['classes']:
         print(f"D={D} class {r['class']}: {r['nodes']} nodes, primes {r['primes']}, sources {r['sources']}, list {r['list']}")
     for r in report['sources']:
+        if 'external' in r:
+            continue
         print(f"D={D} {r['name']}: B={r['B']} V={r['V']} gamma0={r['gamma0']} list {r['list']}")
     print(f"D={D} points {pts}")
     return report

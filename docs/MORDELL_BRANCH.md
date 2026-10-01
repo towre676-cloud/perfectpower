@@ -450,6 +450,30 @@ of the workload comes from the order-transport review of `fb30592` (`python/orde
 - In `receipts/order_cost.json`, the unit-generation estimates were 733 (`D = 39`), 4,165
   (`D = 47`) and 3,870 (`D = 60`). The orders used cost 195, 720 and 1,942.
 
+**`D = 72` in the order of its own residual** (`Generated/Minus72.lean`). The four monic sources
+of classes 55 and 58 live in `t³ = 18t + 24`, which maps into Order1944 (`t³ = 9t + 6`) with index 2
+(`OrderMaps.map_22`, `t ↦ 6 + θ − θ²`). Classes 55, 56 and 57 also reach the residual
+`H = (−3, 0, 9, −2) = 1`, which `D72Unit.class_pos` proves has no solution. The curve module cites
+that theorem as an external source under its own premise, `D72Unit.matveev_pos`.
+
+| class | `M` | descent primes | nodes | sources | complete list |
+|---|---|---|---|---|---|
+| 55 | `1728 = 2⁶3³` | 2, 3 | 25 | `s4`, residual | `(0, 1)` |
+| 56 | `729 = 3⁶` | 3 | 27 | residual | — |
+| 57 | `729 = 3⁶` | 3 | 7 | residual | — |
+| 58 | `216 = 2³3³` | 2, 3 | 7 | `s1`–`s4` | `(−6, 0)` |
+
+- No new unit-generation proof: unit generation is imported from `Order1944`.
+- `minus72`: the integral points are exactly `(6, ±12)`, under `matveev_pos` and `matveev_s1`–`s4`.
+  This agrees with the Sage census.
+- The census of order maps now also offers the orders already proved in Lean as targets. Of these,
+  only `(18, 24) → (9, 6)` was new; it is appended as `map_22`, so the earlier indices are unchanged.
+- **Found by review:** a traversal bug in `descent_tree`. The loop could re-expand a node that already
+  carried a lifting certificate when that node followed a carried leaf. This made the descent of
+  classes 36, 43, 55 and 74 fail, so the assembly of `D = 48, 55, 72, 100` could not be priced. The
+  loop now skips every assigned node. Every complete list is unchanged; two existing trees shrink
+  from 11 nodes to 9 (`D = 18` class 6, `D = 45` class 32).
+
 **Choosing a unit basis by its proved cost.** `ε'₁ = ε₁^{U₁₁} ε₂^{U₂₁}`,
 `ε'₂ = ε₁^{U₁₂} ε₂^{U₂₂}` with `det U = ±1` generates the same group. `best_basis` searches
 `|Uᵢⱼ| ≤ 2` and minimizes the enumeration Lean actually runs.
@@ -480,16 +504,16 @@ exactly the set of sources that its classes' descents reach.
 
 **Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
 derived from the registered Lean theorems. The raw workload receipts are unchanged.
-- Classes: 15 locally discharged, 26 conditionally complete, 38 unresolved, out of 79.
-- Unit equations: 26 of 109 registered. These are the 25 curve sources and the `D = 72`
+- Classes: 15 locally discharged, 28 conditionally complete, 36 unresolved, out of 79.
+- Unit equations: 30 of 109 registered. These are the 29 curve sources and the `D = 72`
   residual `H = ±1` (`D72Unit.class_pos`, `class_neg`).
-- 83 are unregistered. That count includes leaves of classes already complete by another route
+- 79 are unregistered. That count includes leaves of classes already complete by another route
   (field 756, `D = 72`).
 - The workload that still blocks a class is
-  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **70** unit equations. Of these, 55 block
-  one class, 5 block two, 8 block three and 2 block four (`needed_by_class_count`).
-- Curves conditionally complete: `D = 7, 18, 23, 28, 39, 45, 47, 60, 63, 89`.
-- `curves_unresolved_workload` orders the 13 unresolved curves by the number of unit equations
+  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **66** unit equations. Of these, 52 block
+  one class, 4 block two, 8 block three and 2 block four (`needed_by_class_count`).
+- Curves conditionally complete: `D = 7, 18, 23, 28, 39, 45, 47, 60, 63, 72, 89`.
+- `curves_unresolved_workload` orders the 12 unresolved curves by the number of unit equations
   they still need.
 
 **Cost before proof** (`python/order_cost.py`, `receipts/order_cost.json`). The number of
@@ -519,9 +543,14 @@ ones. For each unresolved curve the receipt estimates
   - `D = 71` drops from 1.1 million to 2,600.
   - `D = 25`, `D = 100` drop from 419,000 to 7,100.
   - `D = 87` drops from 1.3 million to 51,000.
+  - Before the traversal fix, `D = 72` looked unpriceable. Afterwards its assembly priced at 32
+    nodes, giving an estimate of 3,424, so it went before `D = 95`. It is now proved (above).
   - `D = 95` (about 24,000) is the only remaining curve whose sources are all monic and priced. The
-    other twelve have a nonmonic source, which needs a residue norm-representative certificate
+    other eleven have a nonmonic source, which needs a residue norm-representative certificate
     before it can be priced.
+  - The total `C`, which sorts the curves, uses the original orders. `C_transported_proxy` and
+    `ranking_transported_proxy` mix transported unit costs with source costs estimated in the
+    original orders, so they are labeled as proxies.
 - These are estimates of kernel work, not proofs.
 
 ### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)

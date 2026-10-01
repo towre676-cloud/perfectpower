@@ -20,11 +20,11 @@ def _std(l):
 audited = [l for l in report if 'depend' in l]
 standard = [l for l in audited if _std(l)]
 generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' not in l
-             and '.cert_' not in l and '.Genus1.' not in l and '.Field756.' not in l and '.D72Unit.' not in l and '.Minus23.' not in l and '.Minus45.' not in l and '.Minus18.' not in l and '.Minus89.' not in l and '.Minus39.' not in l and '.Minus47.' not in l and '.Minus60.' not in l and '.OrderMaps.' not in l and '.Order1944.' not in l
+             and '.cert_' not in l and '.Genus1.' not in l and '.Field756.' not in l and '.D72Unit.' not in l and '.Minus23.' not in l and '.Minus45.' not in l and '.Minus18.' not in l and '.Minus89.' not in l and '.Minus39.' not in l and '.Minus47.' not in l and '.Minus60.' not in l and '.Minus72.' not in l and '.OrderMaps.' not in l and '.Order1944.' not in l
              and '.BoundedPlans.' not in l]
 # theorems that hold only under a named external hypothesis (an exponent bound), reported apart
 conditional = [l for l in audited if '.Field756.minus' in l or 'D72Residual.residual_empty' in l
-               or '.Minus23.minus23' in l or '.Minus45.minus45' in l or '.Minus18.minus18' in l or '.Minus89.minus89' in l or '.Minus39.minus39' in l or '.Minus47.minus47' in l or '.Minus60.minus60' in l]
+               or '.Minus23.minus23' in l or '.Minus45.minus45' in l or '.Minus18.minus18' in l or '.Minus89.minus89' in l or '.Minus39.minus39' in l or '.Minus47.minus47' in l or '.Minus60.minus60' in l or '.Minus72.minus72' in l]
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
@@ -32,7 +32,7 @@ lines = [
     f'`Quot.sound` (or a subset): **{len(standard)}**.',
     f'- Machine-generated Lean hit-set certificates: **{len(generated)}**.',
     f'- Theorems conditional on named premises (Matveev\'s lower bound, three explicit instances per class; not counted as closed): **{len(conditional)}** '
-    '(`Field756.minus7`, `minus28`, `minus63`; `Minus18.minus18`, `Minus23.minus23`, `Minus39.minus39`, `Minus45.minus45`, `Minus47.minus47`, `Minus60.minus60`, `Minus89.minus89`; `D72Residual.residual_empty`).',
+    '(`Field756.minus7`, `minus28`, `minus63`; `Minus18.minus18`, `Minus23.minus23`, `Minus39.minus39`, `Minus45.minus45`, `Minus47.minus47`, `Minus60.minus60`, `Minus72.minus72`, `Minus89.minus89`; `D72Residual.residual_empty`).',
     '- Atlas families by certification label: '
     + ', '.join(f'`{k}` {v}' for k, v in sorted(labels.items())) + '.',
 ]

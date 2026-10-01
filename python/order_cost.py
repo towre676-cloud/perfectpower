@@ -23,6 +23,9 @@ classes descend to (`receipts/descent_coverage.json`).  The estimated kernel wor
   `Generated/OrderMaps.lean`), an order may be replaced by a proved or cheaper target; each target is
   charged once per curve (`C_unitgen_transported`).  The sources must then be re-encoded and their
   analytic certificates recomputed in the target, so `C_sources` stays the estimate in the own order.
+  `C` (the sort key) uses original orders only; `C_transported_proxy` and `ranking_transported_proxy`
+  mix the two and are labeled proxies.  The target is chosen per order, not per curve: a shared
+  target that no single order prefers can be cheaper for the curve (a later refinement).
 
 These are estimates of kernel work, not proofs.  Run: python3 python/order_cost.py
 """
@@ -168,8 +171,12 @@ def main():
         via = {str(list(o)): {'target': list(effective[o][1]), 'map': effective[o][2]}
                for o in ords if effective[o] is not None and effective[o][2] is not None}
         unit_t = None if any(effective[o] is None for o in ords) else sum(targets.values())
+        src_c = [sources[F]['cost'] for F in forms]
+        proxy = (None if unit_t is None or nodes is None or any(c is None for c in src_c)
+                 else unit_t + sum(src_c) + nodes)
         curves.append({'D': w['D'], 'classes': w['unresolved_classes'], 'sources': [list(F) for F in forms],
                        'C_unitgen_transported': unit_t, 'transports': via,
+                       'C_transported_proxy': proxy,
                        'orders': [list(o) for o in ords],
                        'new_orders': [list(o) for o in ords if orders[o]['status'] != 'PROVED'],
                        'C_unitgen': sum(orders[o]['cost'] or 0 for o in ords),
@@ -178,9 +185,15 @@ def main():
                        'unpriced': [list(F) for F in forms if sources[F]['cost'] is None],
                        'sources_shared_with': {str(list(F)): v for F, v in shared.items() if v}})
     curves.sort(key=lambda c: (c['C'] is None, c['C'] or 0, c['D']))
+    proxy_rank = [[c['D'], c['C_transported_proxy']] for c in
+                  sorted(curves, key=lambda c: (c['C_transported_proxy'] is None, c['C_transported_proxy'] or 0, c['D']))]
     out = {'label': 'ESTIMATED kernel work (lattice points, box sizes, descent nodes) for the unresolved '
                     'curves; not a proof. Orders already proved in Lean are charged 0.',
            'row_weight': 3,
+           'ranking_transported_proxy': proxy_rank,
+           'proxy_note': 'C_transported_proxy mixes the transported unit-generation cost with source costs '
+                         'estimated in the original orders; the sources must be re-encoded and re-priced in '
+                         'the target before it is a price. C (the sort key of curves) uses original orders only.',
            'orders': [dict(v, key=list(k)) for k, v in sorted(orders.items())],
            'sources': list(sources.values()), 'curves': curves}
     (ROOT / 'receipts' / 'order_cost.json').write_text(json.dumps(out, indent=1, default=list) + '\n')

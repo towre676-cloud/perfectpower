@@ -118,13 +118,14 @@ git.
    - **Through order maps:** `D = 39, 47, 60` (`Generated/Minus39.lean`, `Minus47.lean`,
      `Minus60.lean`). Their sources are moved into one target order per curve along Lean-checked
      order maps (`OrderEmbedding.lean`, `Generated/OrderMaps.lean`).
-   - **Coverage** is derived (`receipts/descent_coverage.json`): 26 of 109 unit equations are
+   - **`D = 72`** (`Generated/Minus72.lean`): its monic sources move into Order1944 (index 2), and
+     its residual comes from `D72Unit`. No new unit proof was needed.
+   - **Coverage** is derived (`receipts/descent_coverage.json`): 30 of 109 unit equations are
      registered.
-   - **Still open:** the 88 unit equations in `U_needed`. `receipts/order_cost.json` prices the
-     curves by estimated kernel work. `D = 39`, `47` and `60` are done. The next fully priced
-     curve is `D = 95`. Most remaining curves are now blocked by nonmonic sources, not by units:
-     residue norm-representative searches are the next infrastructure. `D = 15` already has its
-     unit generation (through `t³ = 12t + 14`).
+   - **Still open:** the 66 unit equations in `U_needed`. `receipts/order_cost.json` prices the
+     curves by estimated kernel work. `D = 39, 47, 60, 72` are done. Most remaining curves are
+     blocked by nonmonic sources, not by units, so residue norm-representative searches are the
+     next infrastructure. `D = 15` already has its unit generation (through `t³ = 12t + 14`).
 4. **A consumer-accepted replacement.**
    - **Target:** for one independently authored verification condition, a checked instance of
      `Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that a downstream verifier (Why3/GNATprove) accepts.

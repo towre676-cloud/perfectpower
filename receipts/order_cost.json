@@ -1,6 +1,57 @@
 {
  "label": "ESTIMATED kernel work (lattice points, box sizes, descent nodes) for the unresolved curves; not a proof. Orders already proved in Lean are charged 0.",
  "row_weight": 3,
+ "ranking_transported_proxy": [
+  [
+   95,
+   24067
+  ],
+  [
+   15,
+   null
+  ],
+  [
+   25,
+   null
+  ],
+  [
+   26,
+   null
+  ],
+  [
+   48,
+   null
+  ],
+  [
+   53,
+   null
+  ],
+  [
+   55,
+   null
+  ],
+  [
+   61,
+   null
+  ],
+  [
+   71,
+   null
+  ],
+  [
+   79,
+   null
+  ],
+  [
+   87,
+   null
+  ],
+  [
+   100,
+   null
+  ]
+ ],
+ "proxy_note": "C_transported_proxy mixes the transported unit-generation cost with source costs estimated in the original orders; the sources must be re-encoded and re-priced in the target before it is a price. C (the sort key of curves) uses original orders only.",
  "orders": [
   {
    "P": 3,
@@ -573,57 +624,6 @@
    "key": [
     18,
     22
-   ]
-  },
-  {
-   "P": 18,
-   "Q": 24,
-   "disc": 7776,
-   "status": "PRICED",
-   "units": [
-    [
-     -31,
-     -3,
-     2
-    ],
-    [
-     -89,
-     -39,
-     12
-    ]
-   ],
-   "regulator": 15.601,
-   "basis_change": [
-    -2,
-    -1,
-    -1,
-    0
-   ],
-   "basis": [
-    [
-     -41,
-     -39,
-     -8
-    ],
-    [
-     -7,
-     -3,
-     1
-    ]
-   ],
-   "method": "slab",
-   "cost": 2880,
-   "box": 193515,
-   "slab_points": 885,
-   "slab_rows": 665,
-   "bounds": [
-    145,
-    17,
-    9
-   ],
-   "key": [
-    18,
-    24
    ]
   },
   {
@@ -1874,26 +1874,6 @@
   {
    "form": [
     -1,
-    -36,
-    216,
-    864
-   ],
-   "P": 18,
-   "Q": 24,
-   "phi": [
-    12,
-    6,
-    0
-   ],
-   "normrep": "one",
-   "B": 5,
-   "V": 0,
-   "steps": 7,
-   "cost": 128
-  },
-  {
-   "form": [
-    -1,
     -33,
     21,
     205
@@ -2056,26 +2036,6 @@
     -1,
     -18,
     54,
-    108
-   ],
-   "P": 18,
-   "Q": 24,
-   "phi": [
-    6,
-    3,
-    0
-   ],
-   "normrep": "one",
-   "B": 5,
-   "V": 0,
-   "steps": 7,
-   "cost": 128
-  },
-  {
-   "form": [
-    -1,
-    -18,
-    54,
     162
    ],
    "P": 18,
@@ -2150,26 +2110,6 @@
    "V": 0,
    "steps": 8,
    "cost": 129
-  },
-  {
-   "form": [
-    -1,
-    -12,
-    24,
-    32
-   ],
-   "P": 18,
-   "Q": 24,
-   "phi": [
-    4,
-    2,
-    0
-   ],
-   "normrep": "one",
-   "B": 5,
-   "V": 0,
-   "steps": 7,
-   "cost": 128
   },
   {
    "form": [
@@ -2270,26 +2210,6 @@
    "V": 1,
    "steps": 6,
    "cost": 87
-  },
-  {
-   "form": [
-    -1,
-    -6,
-    6,
-    4
-   ],
-   "P": 18,
-   "Q": 24,
-   "phi": [
-    2,
-    1,
-    0
-   ],
-   "normrep": "one",
-   "B": 5,
-   "V": 1,
-   "steps": 7,
-   "cost": 128
   },
   {
    "form": [
@@ -2527,6 +2447,7 @@
    ],
    "C_unitgen_transported": 23830,
    "transports": {},
+   "C_transported_proxy": 24067,
    "orders": [
     [
      18,
@@ -2596,6 +2517,7 @@
      "map": 7
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      12,
@@ -2697,6 +2619,7 @@
      "map": 11
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      15,
@@ -2735,7 +2658,7 @@
    ],
    "C_unitgen": 419426,
    "C_sources": 55,
-   "C_assembly": 28,
+   "C_assembly": 24,
    "C": null,
    "unpriced": [
     [
@@ -2802,6 +2725,7 @@
      "map": 9
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      9,
@@ -2824,7 +2748,7 @@
    ],
    "C_unitgen": 5301,
    "C_sources": 110,
-   "C_assembly": 21,
+   "C_assembly": 19,
    "C": null,
    "unpriced": [
     [
@@ -2884,6 +2808,7 @@
      "map": 0
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      3,
@@ -2906,7 +2831,7 @@
    ],
    "C_unitgen": 240,
    "C_sources": 2901,
-   "C_assembly": null,
+   "C_assembly": 46,
    "C": null,
    "unpriced": [
     [
@@ -2967,6 +2892,7 @@
      "map": 17
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      18,
@@ -2997,7 +2923,7 @@
    ],
    "C_unitgen": 13971506,
    "C_sources": 176,
-   "C_assembly": 21,
+   "C_assembly": 19,
    "C": null,
    "unpriced": [
     [
@@ -3057,6 +2983,7 @@
      "map": 19
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      12,
@@ -3079,7 +3006,7 @@
    ],
    "C_unitgen": 13365,
    "C_sources": 167,
-   "C_assembly": null,
+   "C_assembly": 14,
    "C": null,
    "unpriced": [
     [
@@ -3128,6 +3055,7 @@
      "map": 16
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      15,
@@ -3150,7 +3078,7 @@
    ],
    "C_unitgen": 734966,
    "C_sources": 174,
-   "C_assembly": 17,
+   "C_assembly": 15,
    "C": null,
    "unpriced": [
     [
@@ -3223,6 +3151,7 @@
      "map": 12
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      24,
@@ -3245,7 +3174,7 @@
    ],
    "C_unitgen": 1135094,
    "C_sources": 128,
-   "C_assembly": 46,
+   "C_assembly": 44,
    "C": null,
    "unpriced": [
     [
@@ -3267,59 +3196,6 @@
      19
     ]
    ],
-   "sources_shared_with": {}
-  },
-  {
-   "D": 72,
-   "classes": [
-    55,
-    58
-   ],
-   "sources": [
-    [
-     -1,
-     -36,
-     216,
-     864
-    ],
-    [
-     -1,
-     -18,
-     54,
-     108
-    ],
-    [
-     -1,
-     -12,
-     24,
-     32
-    ],
-    [
-     -1,
-     -6,
-     6,
-     4
-    ]
-   ],
-   "C_unitgen_transported": 2880,
-   "transports": {},
-   "orders": [
-    [
-     18,
-     24
-    ]
-   ],
-   "new_orders": [
-    [
-     18,
-     24
-    ]
-   ],
-   "C_unitgen": 2880,
-   "C_sources": 512,
-   "C_assembly": null,
-   "C": null,
-   "unpriced": [],
    "sources_shared_with": {}
   },
   {
@@ -3381,6 +3257,7 @@
    ],
    "C_unitgen_transported": null,
    "transports": {},
+   "C_transported_proxy": null,
    "orders": [
     [
      24,
@@ -3502,6 +3379,7 @@
      "map": 18
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      21,
@@ -3667,6 +3545,7 @@
      "map": 21
     }
    },
+   "C_transported_proxy": null,
    "orders": [
     [
      15,
@@ -3713,7 +3592,7 @@
    ],
    "C_unitgen": 419426,
    "C_sources": 289,
-   "C_assembly": null,
+   "C_assembly": 73,
    "C": null,
    "unpriced": [
     [

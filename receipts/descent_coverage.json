@@ -2,19 +2,19 @@
  "label": "DERIVED from registered Lean theorems; the raw workload is descent_residual.json and thue_graph.json (unchanged)",
  "classes_total": 79,
  "classes_locally_discharged": 15,
- "classes_conditionally_complete": 26,
- "classes_unresolved": 38,
+ "classes_conditionally_complete": 28,
+ "classes_unresolved": 36,
  "unit_equations_total": 109,
- "unit_equations_registered": 26,
- "unit_equations_unregistered": 83,
+ "unit_equations_registered": 30,
+ "unit_equations_unregistered": 79,
  "unit_equations_unregistered_note": "unregistered source equations, including leaves of classes already completed by another route (field 756, D = 72)",
- "unit_equations_needed": 70,
+ "unit_equations_needed": 66,
  "unit_equations_needed_note": "U_needed = union over UNRESOLVED classes C of (unit leaves of C minus registered): the workload that still blocks a class",
  "needed_by_class_count": {
-  "1": 55,
+  "1": 52,
   "4": 2,
   "3": 8,
-  "2": 5
+  "2": 4
  },
  "open_curves_raw": 23,
  "curves_conditionally_complete": [
@@ -27,6 +27,7 @@
   47,
   60,
   63,
+  72,
   89
  ],
  "curves_unresolved": [
@@ -38,7 +39,6 @@
   55,
   61,
   71,
-  72,
   79,
   87,
   95,
@@ -233,40 +233,6 @@
      -3,
      9,
      5
-    ]
-   ]
-  },
-  {
-   "D": 72,
-   "unresolved_classes": [
-    55,
-    58
-   ],
-   "unit_equations_needed": 4,
-   "forms": [
-    [
-     -1,
-     -36,
-     216,
-     864
-    ],
-    [
-     -1,
-     -18,
-     54,
-     108
-    ],
-    [
-     -1,
-     -12,
-     24,
-     32
-    ],
-    [
-     -1,
-     -6,
-     6,
-     4
     ]
    ]
   },
@@ -1110,8 +1076,8 @@
     72
    ],
    "M": 1728,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus72.lean (descent to s4, h72)"
   },
   {
    "class": 56,
@@ -1120,7 +1086,7 @@
    ],
    "M": 729,
    "status": "CONDITIONALLY_COMPLETE",
-   "via": "D72Residual.residual_empty (matveev_pos)"
+   "via": "Generated/Minus72.lean (descent to h72)"
   },
   {
    "class": 57,
@@ -1129,7 +1095,7 @@
    ],
    "M": 729,
    "status": "CONDITIONALLY_COMPLETE",
-   "via": "D72Residual.residual_empty (matveev_pos)"
+   "via": "Generated/Minus72.lean (descent to h72)"
   },
   {
    "class": 58,
@@ -1137,8 +1103,8 @@
     72
    ],
    "M": 216,
-   "status": "UNRESOLVED",
-   "via": null
+   "status": "CONDITIONALLY_COMPLETE",
+   "via": "Generated/Minus72.lean (descent to s1, s2, s3, s4)"
   },
   {
    "class": 59,
@@ -1802,9 +1768,9 @@
    ],
    "status": "REGISTERED",
    "source": {
-    "source": "D72Unit.class_pos",
+    "source": "h72",
     "curve": 72,
-    "premise": "matveev_pos",
+    "premise": "matveev_h72",
     "list": []
    },
    "needed": false,
@@ -2221,11 +2187,20 @@
    "classes": [
     58
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    58
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "s1",
+    "curve": 72,
+    "premise": "matveev_s1",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2497,11 +2472,20 @@
    "classes": [
     58
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    58
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "s2",
+    "curve": 72,
+    "premise": "matveev_s2",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2668,11 +2652,20 @@
    "classes": [
     58
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    58
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "s3",
+    "curve": 72,
+    "premise": "matveev_s3",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [
@@ -2884,12 +2877,20 @@
     55,
     58
    ],
-   "status": "UNREGISTERED",
-   "needed": true,
-   "blocks": [
-    55,
-    58
-   ]
+   "status": "REGISTERED",
+   "source": {
+    "source": "s4",
+    "curve": 72,
+    "premise": "matveev_s4",
+    "list": [
+     [
+      -1,
+      0
+     ]
+    ]
+   },
+   "needed": false,
+   "blocks": []
   },
   {
    "form": [

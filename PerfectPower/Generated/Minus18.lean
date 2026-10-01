@@ -197,7 +197,7 @@ def src_v1 : List (Form × List (ℤ × ℤ)) := [(((-1), (-3), 6, 2), [((-1), 0
 theorem src_v1_complete (hM_v1 : matveev_v1) : DescentLists.SourcesComplete src_v1 :=
   (DescentLists.sources_cons (fun a b h => (class_v1 hM_v1 a b).mp h) DescentLists.sources_nil)
 
-/-- The descent of class 6 (`[-2, -36, 108, 216] = 216`): 11 nodes, 5 splits, 5 lifting leaves, 1 leaves carried from the source equations. -/
+/-- The descent of class 6 (`[-2, -36, 108, 216] = 216`): 9 nodes, 4 splits, 4 lifting leaves, 1 leaves carried from the source equations. -/
 def kind_6 : DescentLists.KindL := DescentLists.KindL.split 2 (some 1) [((some 0), 3, 2), ((some 1), 1, 3), (none, 1, 4)]
 
 /-- The nodes of the descent of class 6 after the root (children after parents). -/
@@ -208,10 +208,8 @@ def rest_6 : List (Form × ℤ × DescentLists.KindL) :=
    (((-1), (-36), 216, 864), 108, DescentLists.KindL.split 2 none [((some 0), 2, 8)]),
    ((27, 27, (-18), (-2)), 1, DescentLists.KindL.leaf 3 2),
    ((1, 3, (-6), (-2)), 1, DescentLists.KindL.given 0 (((-1), 0), (0, (-1))) (((-1), 0), (0, (-1))) 1),
-   (((-2), (-42), 30, 286), 27, DescentLists.KindL.split 3 (some 9) [((some 2), 3, 10)]),
-   ((216, 108, (-36), (-2)), 27, DescentLists.KindL.leaf 2 1),
-   (((-2), (-42), 30, 286), 1, DescentLists.KindL.leaf 2 1),
-   ((6, (-18), (-18), (-2)), 1, DescentLists.KindL.leaf 2 1)]
+   (((-2), (-42), 30, 286), 27, DescentLists.KindL.leaf 2 1),
+   ((216, 108, (-36), (-2)), 27, DescentLists.KindL.leaf 2 1)]
 
 theorem desc_6 : DescentLists.descL src_v1 ((((-2), (-36), 108, 216), 216, kind_6) :: rest_6) = true := by
   decide +kernel

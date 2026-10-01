@@ -53,6 +53,13 @@ class ProjectorCertificate(unittest.TestCase):
 
     def test_steps(self):
         self.assertEqual(PC.steps_for(Q(1, 2), Q(1, 1024)), 10)
+        self.assertEqual(PC.steps_for(0, Q(1, 10)), 1)                              # boundary ρ = 0
+        for rho, eps in ((1, Q(1, 2)), (Q(1, 2), 0), (0, -1)):                      # would not terminate
+            with self.assertRaises(ValueError):
+                PC.steps_for(rho, eps)
+        for rho, eps in ((0.5, Q(1, 2)), (True, Q(1, 2)), (Q(1, 2), 0.1)):
+            with self.assertRaises(TypeError):
+                PC.steps_for(rho, eps)
         self.assertGreater(Q(95, 100) ** 3, Q(85, 100))      # 0.95³ ≈ 0.857 is not negligible
 
 
@@ -113,8 +120,8 @@ class ExactExamples(unittest.TestCase):
         self.assertEqual(PC.mm([[0, 0], [1, 0]], [[1], [0]]), [[0], [1]])
 
     def test_integral_closed_form(self):
-        # ∫ cos²(ax)/(1 + x⁴) dx over ℝ (the integrand of integ.txt simplifies to this) — a numerical
-        # cross-check of the closed form, not a certificate
+        # ∫₀^∞ cos²(ax)/(1 + x⁴) dx, which equals the whole-line integral of integ.txt (symmetrizing
+        # removes the 1/(1 + 4^x) weight) — a numerical cross-check of the closed form, not a certificate
         for a in (0, 0.5, 1, 2):
             s = math.sqrt(2) * abs(a)
             closed = math.pi / (4 * math.sqrt(2)) * (1 + math.exp(-s) * (math.cos(s) + math.sin(s)))

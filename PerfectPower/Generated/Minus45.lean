@@ -245,7 +245,7 @@ theorem class_31 (hM_w1 : matveev_w1) (u v : ℤ) :
   rw [DescentLists.root_iff src_w1 (src_w1_complete hM_w1) _ _ kind_31 rest_31 desc_31, root_31,
     List.mem_toFinset]
 
-/-- The descent of class 32 (`[-2, -18, 270, 270] = 216`): 11 nodes, 5 splits, 5 lifting leaves, 1 leaves carried from the source equations. -/
+/-- The descent of class 32 (`[-2, -18, 270, 270] = 216`): 9 nodes, 4 splits, 4 lifting leaves, 1 leaves carried from the source equations. -/
 def kind_32 : DescentLists.KindL := DescentLists.KindL.split 2 (some 1) [((some 0), 1, 2), ((some 1), 3, 3), (none, 1, 4)]
 
 /-- The nodes of the descent of class 32 after the root (children after parents). -/
@@ -257,9 +257,7 @@ def rest_32 : List (Form × ℤ × DescentLists.KindL) :=
    (((-2), (-18), 270, 270), 27, DescentLists.KindL.leaf 2 1),
    ((65, 57, (-12), (-2)), 1, DescentLists.KindL.leaf 3 2),
    ((4, 33, 84, 65), 1, DescentLists.KindL.given 0 ((0, (-1)), (1, 3)) ((3, 1), ((-1), 0)) 1),
-   ((270, 270, (-18), (-2)), 27, DescentLists.KindL.split 3 (some 9) [(none, 3, 10)]),
-   ((270, 270, (-18), (-2)), 1, DescentLists.KindL.leaf 2 1),
-   ((10, 30, (-6), (-2)), 1, DescentLists.KindL.leaf 2 1)]
+   ((270, 270, (-18), (-2)), 27, DescentLists.KindL.leaf 2 1)]
 
 theorem desc_32 : DescentLists.descL src_w1 ((((-2), (-18), 270, 270), 216, kind_32) :: rest_32) = true := by
   decide +kernel

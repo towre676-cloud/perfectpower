@@ -8,7 +8,8 @@ A map `R(p, q) → R(P, Q)` is fixed by the image `g` of the generator: `(a, b, 
 module `Generated/OrderMaps.lean` proves `map_mul` and `map_nrm` by `ring`, and records the
 determinant of the coordinate matrix `[1, g, g²]` (the additive index of the image).
 
-* `OrderMap`: multiplicative and norm-preserving.  An **embedding** of index `|det|`.  It carries
+* `OrderMap`: multiplicative and norm-preserving.  With `det ≠ 0` (checked for every generated map)
+  it is an **embedding** of index `|det|` (`emb_injective`).  It carries
   source equations forward: `enc_emb` and `nrm_enc_of_map` give `N_S(c₀u − vΨ(φ)) = N_R(c₀u − vφ)`,
   so a source certificate can be built in the larger order, where unit generation may be cheaper
   or already proved.  It does **not** pull unit generation back.
@@ -30,7 +31,9 @@ def det (P Q : ℤ) (g : Z3) : ℤ :=
   let g2 := mul P Q g g
   g.2.1 * g2.2.2 - g.2.2 * g2.2.1
 
-/-- A multiplicative, norm-preserving map `R(p, q) → R(P, Q)` (an embedding of index `|det|`). -/
+/-- A multiplicative, norm-preserving map `R(p, q) → R(P, Q)`.  It is an embedding (injective, of
+additive index `|det|`) exactly when `det ≠ 0` (`emb_injective`); the structure itself does not
+require that: `g = 0` in `R(0, 0)` is multiplicative and norm-preserving but not injective. -/
 structure OrderMap (p q P Q : ℤ) where
   /-- The image of the generator. -/
   g : Z3
@@ -43,6 +46,28 @@ structure OrderIso (p q P Q : ℤ) extends OrderMap p q P Q where
   inv : OrderMap P Q p q
   left : ∀ x : Z3, emb p q inv.g (emb P Q g x) = x
   right : ∀ y : Z3, emb P Q g (emb p q inv.g y) = y
+
+/-- **A nonzero determinant makes the map injective.** -/
+theorem emb_injective {P Q : ℤ} {g : Z3} (h : det P Q g ≠ 0) : Function.Injective (emb P Q g) := by
+  rintro ⟨a, b, c⟩ ⟨a', b', c'⟩ hxy
+  simp only [emb, det] at hxy h
+  generalize mul P Q g g = k at hxy h
+  obtain ⟨g1, g2, g3⟩ := g
+  obtain ⟨k1, k2, k3⟩ := k
+  simp only [Prod.mk.injEq] at hxy h ⊢
+  obtain ⟨e1, e2, e3⟩ := hxy
+  have hb : (g2 * k3 - g3 * k2) * (b - b') = 0 := by linear_combination k3 * e2 - k2 * e3
+  have hc : (g2 * k3 - g3 * k2) * (c - c') = 0 := by linear_combination g2 * e3 - g3 * e2
+  have hb' : b = b' := by
+    rcases mul_eq_zero.mp hb with h0 | h0
+    · exact absurd h0 h
+    · linarith
+  have hc' : c = c' := by
+    rcases mul_eq_zero.mp hc with h0 | h0
+    · exact absurd h0 h
+    · linarith
+  subst hb' hc'
+  exact ⟨by linarith, rfl, rfl⟩
 
 theorem emb_one (P Q : ℤ) (g : Z3) : emb P Q g (1, 0, 0) = (1, 0, 0) := by
   simp [emb]

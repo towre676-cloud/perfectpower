@@ -59,6 +59,7 @@ import PerfectPower.Generated.OrderMaps
 import PerfectPower.Generated.Minus39
 import PerfectPower.Generated.Minus47
 import PerfectPower.Generated.Minus60
+import PerfectPower.Generated.Minus72
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances
