@@ -71,58 +71,58 @@ Current counts (audited declarations, generated certificates, census sizes) are 
 - **Quartics.** Now listed, as evidence only.
 - **Manuscripts.** A single status table in the monograph, and related work marked unverified where primary texts were unreachable.
 
-**Next:** Theorems B and C (the general reductions) in Lean; one kernel-checked completeness proof for a nonrigid genus-one family; the primary-source comparison; the Bilu–Tichy counting sequel for one family.
+*(The "next" items listed at this point have since been done: Theorems B and C with explicit constants (`OPEN_PROBLEMS.md` §6, §8), unconditional nonempty genus-one lists (`MordellMinus2/4/13`, `MordellFLT3`, the 36 branch-compiler lists), and a narrow Bilu–Tichy counting module. The primary-source comparison is in `RELATED_WORK.md`.)*
 
-## Order of work after 0.6 (recommended)
+## Remaining theorem statements (current)
 
-The centre of gravity moves from proving more theorems to closing the gap between *scan evidence* and *certified statement*.
+Each item is stated as the theorem that would close it, with its first unproved dependency.
+Superseded recommendations from earlier rounds have been removed; the history is above and in
+git.
 
-1. **Done in this round.**
-   - Interval-sandwich certificates for $(10,2)$ and $(12,4)$.
-   - Cubic cross-validation against Sage: 622/622.
-   - Epistemic labels on every data row.
-   - `make verify`, trust boundary and licences.
-2. ~~Read LeVeque (1964) in the primary source.~~ Superseded by Theorem G, which derives the finite type from Siegel's theorem directly (`TRUST_BOUNDARY.md` §3).
-3. **Literature pass.** Cover Bilu–Tichy, Schinzel–Tijdeman, Walsh, Beukers–Tengely and existing formalisations. Write the result into `RELATED_WORK.md` before any announcement or priority claim.
-4. **Extend certification of the finite type.**
-   - Cover general Weierstrass models (e.g. $\binom n3$) in `crosscheck/`.
-   - Add quartic models.
-   - Produce Baker-type height bounds where Brindza applies.
-   - Lean can check final lists against sieve output, but never the Baker step.
-5. **Bilu–Tichy atlas** as the next monograph part (`OPEN_PROBLEMS.md` §2).
-6. **Upstreaming and outreach, to be done by the owner.** The actions:
-   - propose Mathlib PRs or Archive entries for the candidates in `OPEN_PROBLEMS.md` §5;
-   - post on the Lean Zulip about the certificate emitter;
-   - tag a release and mint a Zenodo DOI;
-   - post on arXiv in math.NT, cross-listed to cs.LO, aimed at CPP/ITP or experimental mathematics.
+1. **Complete lists for `D = 7, 28, 63`, from one shared field** (`MORDELL_BRANCH.md` §7.3).
+   - **Target:** `∀ x y, y² = x³ − D ↔ (x, y) ∈ L_D` for the three curves.
+   - **Route:** for each of the 7 classes `F_i = M_i`, every solution has
+     `c₀a − bφ = ±α_{i,j} ε₁^{e₁} ε₂^{e₂}` with `max |eᵢ| ≤ B_{i,j}`; then the finite search and the
+     branch transport.
+   - **First missing piece:** the bound `B_{i,j}` (linear forms in logarithms, then reduction).
+     After it: the norm = determinant identification for the field of discriminant 756, and
+     completeness of the norm representatives and of the unit basis (`h = 1`, certified externally).
+2. **The `D = 72` residual equation.**
+   - **Target:** `∀ u v, H72 u v ≠ 1 ∧ H72 u v ≠ −1`.
+   - **Already in Lean** (`NormForm.lean`): the `δ` basis, the lattice criterion and the norms.
+   - **Missing:** that `ε₁, ε₂` generate the units, completeness of the norm-±9 representatives,
+     and the exponent bound.
+   - This closes two classes and no curve.
+3. **Descent certificates that carry nonempty lists.**
+   - **Target:** a checker whose split nodes prove
+     `S(F, M) = ⋃_λ T_λ S(G_λ, M/p^{s_λ}) ∪ p·S(F, M/p³)` and whose leaves carry proved complete
+     finite lists.
+   - **Foundations in Lean:** `Interfaces.sublattice_branch` (image condition included) and the
+     per-node prime of `descM`.
+4. **A consumer-accepted replacement.**
+   - **Target:** for one independently authored verification condition, a checked instance of
+     `Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that a downstream verifier (Why3/GNATprove) accepts.
+   - **Today:** the curve theorem is Lean-proved, and the substitution into the SMT source is
+     checked in Python (`smt_cert.check_certificate`).
+5. **Default-checked bounded Pell plans.**
+   - **Target:** for a bounded query `lo ≤ N ≤ hi`, a Lean theorem listing every solution, so the
+     adapter can apply it without `--allow-unchecked`.
+   - **Obstacle:** large fundamental units. For `263n² + 1` the unit is about `8.4·10¹⁹`, so the
+     root box is impractical; a proved continued-fraction (or LMM) root characterization is the
+     direct route.
+6. **Positive `k`** (`MORDELL_BRANCH.md` §7.4).
+   - **Target:** seed coverage of `p² − |D|q² = k³` modulo cubes of the fundamental unit, with
+     ideal classes, exceptional primes and the integral readout.
+   - `orbit_mod_three` is only the exponent normalization.
+7. **Smaller formal items.**
+   - Coefficient-bound lemmas for `runge_uniform` (`OPEN_PROBLEMS.md` §7).
+   - Theorem T2 (the log-periodic second term) in Lean.
+   - Tauberian converses with minimal hypotheses.
+   - Effective genus-one enumeration outside the Mordell family (elliptic logarithms with
+     reduction).
 
-**Not worth effort:** uniformity in $d$ via Schinzel–Tijdeman (bounds too weak to compute with), and Erdős–Selfridge certificates beyond $k=12$ (already theorems; pure engineering).
+**Not worth effort:** uniformity in `d` via Schinzel–Tijdeman (the bounds are too weak to compute
+with), and Erdős–Selfridge certificates beyond `k = 12` (already theorems; pure engineering).
 
-## Formal kernel
-
-1. Done: Theorem P over $\mathbb Q[x]$ is `power_type_finite`, and Theorem R in integer form is `runge_finite`.
-2. Formalise the valuation characterisation of Theorem B: $c_1z^r$ is a $d$-th power iff $v_p(z)\equiv\tau_p \pmod t$ for all $p$, together with the sign condition. Mathlib's `padicValInt` and `Nat.factorization` suffice. The monomial count $A(N)=\lfloor N^{\gcd(r,d)/d}\rfloor$ for $n^r$ is done (`monomial_count`); the general case adds a twist $c$ and a rational root $\alpha$.
-3. Extend the certificate emitter to instances whose Runge plan needs a large $x_0$ or roots of $G_t$ beyond $x_0$. Examples are the consecutive products $(k,d)=(10,2)$ and $(12,4)$. Two routes: a verified range check by `decide` over a computable integer-root predicate, or emitting explicit factorisations of the $G_t$.
-4. Keep Boshernitzan and Siegel as named external boundaries. If a nonrigid statement is wanted formally, state it as a hypothesis-carrying theorem, `Siegel → …`.
-
-## Arithmetic
-
-1. **Effective finite type outside Runge.**
-   - Implement elliptic-logarithm enumeration for genus-one curves $m^2=\text{cubic}$ and $m^3=\text{quadratic}$. Candidates: a Baker bound plus LLL reduction; stdlib-only LLL is feasible.
-   - Test on the Mordell curves $m^2=n^3+k$ and on $n^3+n+4$ (hit at $n=4128$).
-2. **Uniform bounds.** Is there a hit-count bound in the Runge branch polynomial in $\log H(F)$? Theorem R gives $x_0-1+(2T+1)(d-1)q$, with $T$ polynomial in $H(F)$.
-3. **Large-sieve route to the $N^{1/2}$ barrier.** A proof that avoids Siegel (Cohen–Serre thin sets) would make the barrier effective.
-4. **Beyond polynomials.** For linear recurrences, factorials and exponential–polynomial sequences:
-   - Is the exponent spectrum discrete?
-   - Does a shift spectrum with finitely many critical shifts hold?
-
-## Analysis
-
-Theorem T covers exact asymptotics. The Tauberian converses — from $Z_X$ or $K_X$ back to $A(N)$ — remain to be stated with minimal hypotheses. For non-polynomial sequences, the log-log exponent can hide slowly varying factors, and the monograph's warnings apply.
-
-## Numerics
-
-- Keep exact, hash-reproducible receipts.
-- The atlas receipt already reaches $N=10^{24}$ structurally and cross-checks against scans at $10^5$.
-- Add runtime and memory instrumentation.
-- Never let a finite maximum masquerade as $H$ or $\alpha$.
+**Owner actions:** Mathlib or Archive proposals (`OPEN_PROBLEMS.md` §5), a Lean Zulip post, a
+tagged release with a DOI, and arXiv (math.NT, cross-listed to cs.LO).

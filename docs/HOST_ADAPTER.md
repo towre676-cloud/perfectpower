@@ -62,6 +62,17 @@ keeps it.
 - **Coverage.** Only the two shapes above are recognized. Most arithmetic verification
   conditions (inequalities, arrays, induction, division and modulo reasoning) fall outside them.
 
+## The consumer bridge (not done)
+
+The curve's complete list is a Lean theorem, and the substitution into the SMT source is checked
+in Python. **No downstream verifier accepts the whole replacement yet.** The target is, for one
+independently authored verification condition, a checked instance of
+`Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that Why3 or GNATprove accepts.
+- **Route:** emit the replacement as a lemma in the consumer's language, as a finite case split
+  plus a polynomial identity, with the complete list as a cited axiom or re-proved there.
+- **Prerequisite:** a verification condition that actually contains a supported conjunct. None
+  of the 12,860 independent queries does (`NEXT_PUSH.md`, item 4).
+
 ## Two verification-condition-shaped examples (`examples/smt/`)
 
 Both are constructed. Times are z3 5.1.0 wall clock on this container.
@@ -109,7 +120,7 @@ files with 12,801 incremental queries, 49 cvc5 regressions, and one crafted STAU
   bilinear product.
 - The flagged cvc5 cases are correctly rejected: the singular `x² = y³`, `x² = y`, and
   `int.pow2`.
-- Routing overhead is 0.7 ms per query, 1.5 % of z3's time.
+- Classifier overhead is 0.7 ms per query, 1.5 % of z3's time. This is classification only; certificate checking and bookkeeping are extra (about 25 s end to end for the whole ledger).
 
 The constructed benchmark above therefore shows the mechanism, and the independent corpus shows
 the fragment does not occur there. The report names the smallest workloads that would test it:

@@ -81,8 +81,8 @@ streams; the file time is never divided among its queries.
 
 The handoff's planning equation is `ΔT = N p (t_s − t_c − t_r) − N t_f − K t_g`.
 - On this corpus `p = 0`, so `ΔT = −N t_f`: pure routing overhead.
-- **Measured `t_f`:** the classifier takes 9.1 s over the 12,801 ELSTER queries, about 0.7 ms per
-  query, or 1.5 % of z3's 607 s on the same queries. The per-query share assumes each assertion
+- **Measured classifier overhead (part of `t_f`):** classification alone takes 9.1 s over the
+  12,801 ELSTER queries, about 0.7 ms per query, or 1.5 % of z3's 607 s on the same queries. The per-query share assumes each assertion
   is classified once, as the ledger does.
   - An earlier version took 340 s, 56 % of solve time, because it rebuilt the `define-fun` set
     for every assertion.

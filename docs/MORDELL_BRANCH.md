@@ -330,6 +330,13 @@ discriminant 756, is totally real, has class number 1 and unit rank 2, and is ce
   reduction. Below `B`, the check is a finite enumeration and could be Lean-checked. No bound is
   computed or claimed. A field match is not an equivalence: the 7 classes remain 7 obligations.
   What they share is the unit data a bound certificate would reduce against.
+- **Milestones to a complete certificate** (`NEXT_PUSH.md`, item 1). This field serves three
+  whole curves, so it is the highest-payoff global target; the `D = 72` residual closes two
+  classes and no curve. The steps, each dependent on the previous one:
+  1. a proved exponent bound per `(class, representative)`;
+  2. norm = determinant for this field, and completeness of the representatives and units;
+  3. a checked finite search;
+  4. branch transport into `complete_of_thue`.
 
 ### 7.4 Positive `k`
 
