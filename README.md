@@ -53,7 +53,7 @@ The classification is a **synthesis**, and we claim no priority for it. It combi
 their complete solution sets, each an exact equivalence over ℤ, and hands back the smaller task.
 - On two verification-condition-shaped examples, z3 alone returns `unknown`, and after the
   reduction it proves both in milliseconds.
-- On 48 constructed instances it solves 36 of 36 recognized tasks, where z3 alone solves 3.
+- On 48 constructed instances, the 24 impossibility tasks (no point satisfies the system) are proved by the adapter in all 24 cases, against 1 for z3 alone. On genuinely satisfiable instances z3 alone already finds 10 of 12 witnesses.
 - It costs about 2 ms on unrecognized tasks.
 
 These instances are constructed. On an independent corpus of 69 upstream QF_NIA files (12,860 queries, including 12,801 industrial ELSTER queries), the fail-closed script-level adapter finds **zero** replaceable conjuncts ([coverage report](independent_nia/reports/PERFECTPOWER_COVERAGE.md)).

@@ -78,19 +78,25 @@ times include recognition and replacement.
 
 | group | what it is | z3 alone solved | adapter + z3 solved | z3 alone, total s | adapter + z3, total s |
 |---|---|---|---|---|---|
-| `sat` | a disguised solved curve with points, plus a side constraint a point satisfies | 2 / 12 | 12 / 12 | 102.0 | 0.48 |
-| `unsat_side` | the side constraint excludes every point | 1 / 12 | 12 / 12 | 110.3 | 0.32 |
-| `no_points` | a curve proved to have no integral points | 0 / 12 | 12 / 12 | 872.2 | 0.05 |
-| `unsupported` | a cubic that is not a solved curve (control) | 12 / 12 | 12 / 12 | 2.69 | 3.12 |
+| `sat` | a disguised solved curve with points, plus a side constraint built around a stored, pre-checked witness `(n₀, m₀, w₀)` | 10 / 12 | 12 / 12 | 31.3 | 0.44 |
+| `unsat_side` | the side constraint `m² > B²` excludes every point | 1 / 12 | 12 / 12 | 110.3 | 0.35 |
+| `no_points` | a curve proved to have no integral points | 0 / 12 | 12 / 12 | 235.4 | 0.06 |
+| `unsupported` | a cubic that is not a solved curve (control) | 12 / 12 | 12 / 12 | 2.82 | 2.56 |
 
-- **Wherever both finished, the answers agree.** The script aborts on any mismatch.
-- **The `no_points` total is inflated.** One z3 call ignored its 10 s timeout and took 754 s, and
-  the total counts it as measured.
-- **On the controls the adapter only adds overhead.** Recognition takes about 2 ms per task. The
-  rest of the 0.43 s difference comes from z3 solving the same unchanged problem twice. That
-  run-to-run variation was not measured separately.
-- The 36 recognized tasks go from 3 solved to 36 solved. This is the expected outcome on instances
-  **built** to contain a solved conjunct, so it says nothing about how often such conjuncts occur.
+- **Wherever both finished, the answers agree.** The script aborts on any mismatch, on a SAT
+  witness that fails a conjunct, or on a SAT instance that reduces to non-SAT.
+- **Correction.** An earlier version of the `sat` group was not SAT. Its side constraint did not
+  guarantee its intended witness, and 10 of its 12 instances were UNSAT (found by an external
+  review). With real witnesses, z3 alone finds 10 of 12.
+  - **Where specialization matters is impossibility.** Proving that no point exists, which is
+    the `unsat_side` and `no_points` groups, is what the host cannot do (1 of 24) and the
+    replacement does at once (24 of 24).
+- **The `no_points` total exceeds 12 × 10 s** because some z3 calls overran their timeout. The
+  total counts them as measured.
+- **On the controls the adapter only adds overhead**: about 2 ms of recognition per task. The
+  rest of the difference is z3 run-to-run variation, which was not measured separately.
+- These instances are **built** to contain a solved conjunct, so they say nothing about how often
+  such conjuncts occur.
 
 ## An independent corpus: zero coverage (`independent_nia/reports/PERFECTPOWER_COVERAGE.md`)
 
