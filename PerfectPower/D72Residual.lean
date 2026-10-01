@@ -38,12 +38,16 @@ def mul (x y : Z3) : Z3 :=
   let c4 := c * f
   (c0 + 6 * c3, c1 + 9 * c3 + 6 * c4, c2 + 9 * c4)
 
+/-- The fundamental unit `ε₁ = δ² − 3δ − 1` (norm `−1`, `NormForm.d72_norm_eps1`). -/
 def eps1 : Z3 := (-1, -3, 1)
+/-- The fundamental unit `ε₂ = 2δ² − 1` (norm `−1`, `NormForm.d72_norm_eps2`). -/
 def eps2 : Z3 := (-1, 0, 2)
+/-- `α = δ² − 3δ − 3`, the generator of the norm-9 ideal `𝔭²` (`NormForm.d72_norm_alpha`). -/
 def alpha : Z3 := (-3, -3, 1)
 
-/-- The inverses, from the adjugate (the units have norm `−1`). -/
+/-- `ε₁⁻¹`, from the adjugate (the units have norm `−1`). -/
 def eps1inv : Z3 := (-1, -3, -1)
+/-- `ε₂⁻¹`, from the adjugate. -/
 def eps2inv : Z3 := (-289, -24, 34)
 
 theorem eps1_inv : mul eps1 eps1inv = (1, 0, 0) := by decide
