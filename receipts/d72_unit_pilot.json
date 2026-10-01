@@ -1,0 +1,52 @@
+{
+ "engine": "PARI via passagemath cypari2 (bnfinit, bnfcertify, bnfisintnorm, thue)",
+ "label": "EXTERNAL pilot; the exponent box is a search, not a bound; nothing promoted",
+ "beta_polynomial": "x^3 - 27*x - 18",
+ "polredabs": "x^3 - 9*x - 6",
+ "field_discriminant": 1944,
+ "polynomial_discriminant": 69984,
+ "class_number": 1,
+ "bnfcertify": 1,
+ "fundamental_units": [
+  "Mod(-1/2*x^2 + 1/2*x + 14, x^3 - 27*x - 18)",
+  "Mod(-2*x + 11, x^3 - 27*x - 18)"
+ ],
+ "regulator": 15.600513114414744,
+ "norm_pm9_representatives": [
+  "-1/2*x^2 + 1/2*x + 12",
+  "1/2*x^2 - 1/2*x - 12"
+ ],
+ "box": 40,
+ "elements_checked": 26244,
+ "lattice_hits": [],
+ "solutions_in_box": [],
+ "pari_thue_solutions_pm1": [],
+ "positive_control": {
+  "target_H": 4,
+  "expected": [
+   1,
+   1
+  ],
+  "checked": 78732,
+  "found": [
+   [
+    -2,
+    1
+   ],
+   [
+    -1,
+    -1
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    -1
+   ]
+  ],
+  "passed": true
+ },
+ "missing_for_completeness": "a proved bound B on max(|e1|, |e2|) for every representative and sign"
+}

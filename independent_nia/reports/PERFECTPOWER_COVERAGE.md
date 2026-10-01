@@ -88,6 +88,17 @@ The handoff's planning equation is `ΔT = N p (t_s − t_c − t_r) − N t_f �
     for every assertion.
   - With the fix, the category counts are identical.
 - Any positive business case therefore depends on a workload with `p > 0`. This corpus has none.
+- Per query, without averaging, the saving is
+
+  `ΔT = Σ_{q∈E} t_s(q) − Σ_{q∈Q} t_f(q) − Σ_{q∈E} [t_c(q) + t_r(q)] − Σ_{κ∈K} t_g(κ)`
+
+  over eligible queries `E`, all queries `Q` and distinct certified statements `K`. With
+  homogeneous averages and reuse `R = Np/K`, specialization pays only if
+  `t_s − t_c − t_r − t_f/p > 0` **and** `R > t_g / (t_s − t_c − t_r − t_f/p)`.
+- With `p = 0` the first condition cannot hold.
+- The 9.1 s figure is classification only. The whole ledger run, with bookkeeping and JSON
+  output, takes about 25 s. A deployed measurement must also include certificate checking and
+  the residual solve.
 
 ## What the adapter guarantees (`python/perfectpower/smt_cert.py`, `python/tests/test_smt_cert.py`)
 

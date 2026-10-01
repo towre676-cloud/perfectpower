@@ -256,6 +256,28 @@ points, also has this equation among its leaves; its points come through its oth
 - PARI's `thue` (external) finds no solution of `G = ±1`.
 - `G = ±1` is not locally obstructed at 2, 3, 5, 7, 11 or 13.
 
+**The norm interface, in Lean** (`PerfectPower/NormForm.lean`). For any binary cubic `F` with
+`c₀ ≠ 0`, put `β = c₀θ`, a root of the monic `X³ + c₁X² + c₀c₂X + c₀²c₃`.
+- `mulMat_spec`: `mulMat` is the matrix of multiplication by `γ = c₀a − βb` on `(1, β, β²)`, in
+  any commutative ring.
+- `det_mulMat`: `det = c₀² F(a, b)`.
+
+So `F(a, b) = M` iff `N(γ) = c₀² M` with `γ ∈ c₀ℤ + βℤ`: a nonmonic Thue equation is a scaled
+norm equation **plus** a lattice condition. For the `D = 72` residual this gives:
+- `d72_det`: `β³ − 27β − 18 = 0`, `γ = −3u − βv`, and `det = 9 H(u, v)`;
+- `d72_no_int_root`: `X³ − 27X − 18` has no integer root (none mod 5);
+- `d72_disc`: the polynomial discriminant is `69984`.
+
+**Unit pilot** (`crosscheck/d72_unit_pilot.py`, `receipts/d72_unit_pilot.json`; external, PARI).
+The field has discriminant 1944, class number 1 (certified) and two fundamental units. There are
+two norm-±9 representatives up to units.
+- Every `γ = ±α ε₁^{e₁} ε₂^{e₂}` with `|eᵢ| ≤ 40`, 26,244 elements in all, was reconstructed
+  exactly and tested for the lattice `C = 0`, `3 ∣ A`. **None lies in the lattice.**
+- A positive control runs the same pipeline at norm ±36 (`H = ±4`) and recovers `(1, 1)`,
+  `(−1, −1)`, `(2, −1)` and `(−2, 1)`. So the empty result is a real search result.
+- **The box is not a bound.** Completeness needs a proved `B` covering every solution in the
+  lattice (Baker–Matveev on the unit equation, then reduction), and none is claimed.
+
 The whole remaining `D = 72` point-free problem is therefore **one unit Thue equation**.
 Closing it needs a global input: a unit-equation bound in the field of discriminant 1944, which
 `D = 18` and `D = 32` share, or the lattice condition `x ∣ a − y b` expressed as a
