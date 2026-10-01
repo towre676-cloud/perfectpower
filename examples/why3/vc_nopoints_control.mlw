@@ -1,0 +1,6 @@
+(* control: the same goal without the imported curve theorem or the replacement *)
+module Control
+  use int.Int
+  use int.EuclideanDivision
+  goal vc: forall m n:int. ((m * m) = ((((2 * n) + 1) * ((2 * n) + 1) * ((2 * n) + 1)) - 5)) -> false
+end

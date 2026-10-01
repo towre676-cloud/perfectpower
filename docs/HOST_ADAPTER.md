@@ -62,16 +62,38 @@ keeps it.
 - **Coverage.** Only the two shapes above are recognized. Most arithmetic verification
   conditions (inequalities, arrays, induction, division and modulo reasoning) fall outside them.
 
-## The consumer bridge (not done)
+## The consumer bridge: Why3 accepts the replacement (`perfectpower/why3_bridge.py`)
 
-The curve's complete list is a Lean theorem, and the substitution into the SMT source is checked
-in Python. **No downstream verifier accepts the whole replacement yet.** The target is, for one
-independently authored verification condition, a checked instance of
-`Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that Why3 or GNATprove accepts.
-- **Route:** emit the replacement as a lemma in the consumer's language, as a finite case split
-  plus a polynomial identity, with the complete list as a cited axiom or re-proved there.
-- **Prerequisite:** a verification condition that actually contains a supported conjunct. None
-  of the 12,860 independent queries does (`NEXT_PUSH.md`, item 4).
+For a task with a checked certificate, `python3 -m perfectpower.why3_bridge TASK.smt2` writes a WhyML
+module and runs Why3 (prover z3) on it. The module has three parts:
+- `val lemma curve`: the Lean theorem's statement, generated from the statement re-parsed out of
+  the Lean source. This is the one **imported** fact; its proof is in Lean.
+- `let lemma replacement`: `C(n, m) ↔ ⋁ (n = a ∧ m = b)` for the source conjunct. **Why3 proves
+  it**, by calling `curve` at `x = r n + s`. The substitution was previously checked only in
+  Python.
+- `goal vc`: the query, `∀ vars. A₁ ∧ … ∧ A_k → false`.
+
+The verdict is `accepted` only if Why3 proves **both** the replacement and the VC. Why3 uses a
+`lemma` as a hypothesis for later goals even when the lemma itself is unproved, so "the VC is
+Valid" alone is not enough. The bridge caught exactly this before the instantiation was made
+explicit.
+
+| task (constructed, `examples/smt/`) | replacement | VC | control (no imported theorem) |
+|---|---|---|---|
+| `vc_minus56`: `m² = n³ − 56`, goal `2n + m ≤ 200` | Valid | Valid | Timeout |
+| `vc_affine56`: `m² = (3n + 15)³ − 56`, goal `n = 1` | Valid | Valid | Timeout |
+| `vc_nopoints`: `m² = (2n + 1)³ − 5` is impossible | Valid | Valid | Timeout |
+| `vc_pairs_square` (bounded Pell) | not bridged: the enumeration is unchecked Python | | |
+
+- A replacement with a dropped sign witness is **not** proved (`tests/test_why3_bridge.py`).
+- Reproduce with `make why3-bridge` (receipt `receipts/why3_bridge.json`, modules in
+  `examples/why3/`).
+
+**What is still missing:**
+- **GNATprove itself.** No SPARK toolchain is installable here. Why3 is the layer GNATprove
+  discharges its VCs through, but a SPARK project would generate its own Why3 session.
+- **An independently authored VC containing a supported conjunct.** None of the 12,860
+  independent queries has one.
 
 ## Two verification-condition-shaped examples (`examples/smt/`)
 

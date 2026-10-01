@@ -8,3 +8,4 @@
 (assert (= len (+ (* 2 n) m)))
 ; negated goal: len <= 200
 (assert (not (<= len 200)))
+(check-sat)

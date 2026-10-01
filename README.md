@@ -56,7 +56,7 @@ their complete solution sets, each an exact equivalence over ℤ, and hands back
 - On 48 constructed instances, the 24 impossibility tasks (no point satisfies the system) are proved by the adapter in all 24 cases, against 1 for z3 alone. On genuinely satisfiable instances z3 alone already finds 10 of 12 witnesses.
 - Recognition costs about 2 ms on unrecognized tasks (classifier overhead only).
 
-These instances are constructed. On an independent corpus of 69 upstream QF_NIA files (12,860 queries, including 12,801 industrial ELSTER queries), the fail-closed script-level adapter finds **zero** replaceable conjuncts ([coverage report](independent_nia/reports/PERFECTPOWER_COVERAGE.md)).
+**Why3 accepts the replacement:** on three constructed verification conditions, Why3 (with z3) proves both the replacement lemma and the VC from the imported Lean theorem, and fails without it ([details](docs/HOST_ADAPTER.md)). These instances are constructed. On an independent corpus of 69 upstream QF_NIA files (12,860 queries, including 12,801 industrial ELSTER queries), the fail-closed script-level adapter finds **zero** replaceable conjuncts ([coverage report](independent_nia/reports/PERFECTPOWER_COVERAGE.md)).
 
 **Try one in five minutes.** Follow the [tutorial](docs/TUTORIAL.md) to give the program $1+n+n^2+n^3+n^4$, find its square hit at $n=3$, and compile a Lean proof that there are no others.
 

@@ -8,3 +8,4 @@
 (assert (= (* N (- N 1)) (* 2 S S)))
 ; negated goal
 (assert (or (= (mod N 4) 0) (= (mod N 4) 3)))
+(check-sat)

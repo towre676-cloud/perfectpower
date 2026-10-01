@@ -1,0 +1,56 @@
+{
+ "label": "CONSTRUCTED example VCs; Why3 (prover z3) checks the replacement lemma and the VC; the curve theorem is imported as a val lemma whose proof is in Lean",
+ "why3": "Why3 platform, version 1.6.0",
+ "tasks": [
+  {
+   "task": "vc_affine56.smt2",
+   "bridged": true,
+   "theorems": [
+    "PerfectPower.Generated.MordellThue.minus56"
+   ],
+   "goals": {
+    "replacement_0": "Valid",
+    "vc": "Valid"
+   },
+   "accepted": true,
+   "control": {
+    "vc": "Timeout"
+   }
+  },
+  {
+   "task": "vc_minus56.smt2",
+   "bridged": true,
+   "theorems": [
+    "PerfectPower.Generated.MordellThue.minus56"
+   ],
+   "goals": {
+    "replacement_0": "Valid",
+    "vc": "Valid"
+   },
+   "accepted": true,
+   "control": {
+    "vc": "Timeout"
+   }
+  },
+  {
+   "task": "vc_nopoints.smt2",
+   "bridged": true,
+   "theorems": [
+    "PerfectPower.Generated.no_points_m5"
+   ],
+   "goals": {
+    "replacement_0": "Valid",
+    "vc": "Valid"
+   },
+   "accepted": true,
+   "control": {
+    "vc": "Timeout"
+   }
+  },
+  {
+   "task": "vc_pairs_square.smt2",
+   "bridged": false,
+   "reason": "no checked replacement in this query"
+  }
+ ]
+}

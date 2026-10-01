@@ -1,0 +1,6 @@
+(* control: the same goal without the imported curve theorem or the replacement *)
+module Control
+  use int.Int
+  use int.EuclideanDivision
+  goal vc: forall len m n:int. (n >= 1) /\ ((m * m) = ((n * n * n) - 56)) /\ (len = ((2 * n) + m)) /\ (not (len <= 200)) -> false
+end

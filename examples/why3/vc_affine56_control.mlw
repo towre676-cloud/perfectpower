@@ -1,0 +1,6 @@
+(* control: the same goal without the imported curve theorem or the replacement *)
+module Control
+  use int.Int
+  use int.EuclideanDivision
+  goal vc: forall m n:int. ((m * m) = ((((3 * n) + 15) * ((3 * n) + 15) * ((3 * n) + 15)) - 56)) /\ (not (n = 1)) -> false
+end

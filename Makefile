@@ -3,7 +3,7 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing
+.PHONY: verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing why3-bridge
 
 verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
@@ -105,6 +105,10 @@ nia-ledger:
 
 nia-timing:
 	$(PY) python/nia_query_timing.py independent_nia --query-timeout 2 --file-budget 120 --out independent_nia/reports/z3_query_timing.json
+
+# Why3 consumer bridge on the example VCs (needs why3 and z3; not part of verify)
+why3-bridge:
+	$(PY) python/make_why3_bridge.py
 
 # Differential fuzzers with fixed seeds (python/fuzz/); the finite-bucket scan goes to 1e8.
 fuzz:
