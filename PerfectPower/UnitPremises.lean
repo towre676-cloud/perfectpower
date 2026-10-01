@@ -2,14 +2,14 @@ import PerfectPower.UnitBox
 import PerfectPower.DirectReduction
 
 /-!
-# The external bound, split into three named premises
+# The external bound, split into three named statements
 
 `UnitBox.ExtBound` was one opaque premise per class.  Here it is **derived** from three smaller
 statements, each reusable and each with its own evidence:
 
 * `UnitGen P Q ε₁ ε₁⁻¹ ε₂ ε₂⁻¹` (**one per field**): every unit of `ℤ[x]` is `±ε₁^a ε₂^b`.
-  Evidence: the exact fundamental-domain witness (`python/unit_basis_witness.py`), whose finite
-  part is kernel-checked in the generated files.
+  **Proved** for both fields from a kernel-checked certificate (`UnitGen.lean`,
+  `UnitGenProof.unitGen_of_cert`; the generated `unitGen_proved`).
 * `NormRep P Q N reps` (**one per norm target**): every element of norm `N` is `γ₀ u` for a listed
   `γ₀` and a unit `u`.  Evidence: the ideal factorization above `2` and `3`
   (`python/norm_rep_localization.py`), and PARI.
@@ -18,7 +18,7 @@ statements, each reusable and each with its own evidence:
   enclosures with `H ≤ M₀` and `|κ e₁ + e₂ + μ| ≤ A e^{−cH}`.  Evidence: Siegel's identity, the
   conjugate estimates and Matveev's theorem (`crosscheck/thue_bound.py`).
 
-**Proved here**: `extBound_of`.  From the three premises, the norm identity of the class and a
+**Proved here**: `extBound_of`.  From the three statements, the norm identity of the class and a
 kernel check of every reduction chain (`DirectReduction.chainCheck`), every solution with
 `|b| > V` lies in the box `fam … B`.  So the reduction, the box and the bookkeeping between them
 are no longer assumptions.

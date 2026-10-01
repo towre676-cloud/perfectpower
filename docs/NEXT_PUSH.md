@@ -81,19 +81,19 @@ git.
 
 1. **Complete lists for `D = 7, 28, 63`, from one shared field** (`MORDELL_BRANCH.md` §7.3).
    - **Target:** `∀ x y, y² = x³ − D ↔ (x, y) ∈ L_D` for the three curves.
-   - **In Lean, under three named premises** (`Generated/Field756.lean`, `UnitPremises`):
+   - **In Lean, under two named premises** (`Generated/Field756.lean`, `UnitPremises`); unit
+     generation is proved (`unitGen_proved`):
      `minus7`, `minus28` and `minus63`. Kernel-checked: the direct-`H` reduction chains, norm
      identities, boxes, small-`b` searches and branch transport.
    - **Missing:** Lean proofs of the premises ([UNIT_PREMISES.md](UNIT_PREMISES.md)):
-     - `unitGen`: the real-log fundamental-domain argument. The finite part is done.
      - `normRep_N` (six of them; classes 20 and 50 share one): the index criterion and ideal factorization. The modular facts are done.
      - `analytic_i`: Siegel's identity and Matveev's theorem. Matveev is the boundary that stays
        external.
 2. **The `D = 72` residual equation.**
    - **Target:** `∀ u v, H72 u v ≠ 1 ∧ H72 u v ≠ −1`.
-   - **In Lean, under the same three kinds of premise** (`D72Residual.residual_empty`,
+   - **In Lean, under the same two kinds of premise** (`D72Residual.residual_empty`,
      `Generated/D72Unit.lean`). The bound drops to `H ≤ 4`, a box of 81 elements.
-   - **Missing:** the same three proofs for the field of discriminant 1944.
+   - **Missing:** the same two proofs for the field of discriminant 1944.
    - This closes two classes and no curve.
 3. **Descent certificates that carry nonempty lists.**
    - **Done for branch transport:** `DescentThueList.complete_of_lists` accepts obligations

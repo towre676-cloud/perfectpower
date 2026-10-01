@@ -287,9 +287,8 @@ The whole remaining `D = 72` point-free problem is therefore **one unit Thue equ
 - `Generated/D72Unit.lean` and `D72Residual.residual_empty` prove `H(u, v) ≠ ±1` for all
   integers. The kernel checks the reduction chains, the box of `9²` elements of either sign, and
   the search `|v| ≤ 1`.
-- The proof rests on three named premises:
-  - `unitGen`: the units are `±ε₁^a ε₂^b`. An exact fundamental-domain witness supports it;
-    10,659 triples, finite part in Lean.
+- Unit generation is **proved** (`D72Unit.unitGen_proved`, [UNIT_PREMISES.md](UNIT_PREMISES.md)).
+  The proof rests on two named premises:
   - `normRep_pos`: the elements of norm `9`. Supported by 3 being totally
     ramified and `ℤ[δ]` being 3-maximal.
   - `analytic_pos`: Siegel and Matveev.
@@ -357,21 +356,22 @@ discriminant 756, is totally real, has class number 1 and unit rank 2, and is ce
 
 - **Lean**:
   - `UnitBox.thue_list`: a complete list from the box and the small-`b` search (`UnitBox.cauchy`).
-  - `UnitPremises.extBound_of`: the box bound **derived** from three premises plus kernel-checked
+  - `UnitPremises.extBound_of`: the box bound **derived** from the premises plus kernel-checked
     reduction chains and norm identities.
   - `DescentThueList.complete_of_lists`: branch transport to classes with complete lists.
   - `Generated/Field756.lean`: `class_i` and `minus7`, `minus28`, `minus63`. The box hits are
     exactly PARI's solutions (positive control), and the points equal the Sage census.
-- **The three premises** (statements in `UnitPremises`, evidence in
+- **Unit generation is proved** (`Field756.unitGen_proved`, `UnitGen.lean`): real embeddings,
+  log enclosures, rounding into a box of 425 triples, and an explicit `±ε₁^x ε₂^y` for each of the
+  6 units there.
+- **The two remaining premises** (statements in `UnitPremises`, evidence in
   [UNIT_PREMISES.md](UNIT_PREMISES.md)):
-  - `unitGen`, one for the field. The exact fundamental-domain witness covers 931 triples and
-    replaces PARI's unit basis; its finite part is in Lean.
   - `normRep_N`, one per distinct `(N, γ₀)` (classes 20 and 50 share `normRep_64`): every norm
     target is supported on 2 and 3, which are totally ramified, and
     `ℤ[x]` is maximal there (Dedekind's criterion, checked exactly).
   - `analytic_i`: Siegel's identity, the conjugate estimates and Matveev's theorem.
 - A field match is still not an equivalence: the 7 classes remain 7 obligations, sharing one unit
-  group and one `unitGen`.
+  group and one proof of unit generation.
 
 ### 7.4 Positive `k`
 

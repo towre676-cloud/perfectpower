@@ -85,5 +85,19 @@ class TestField756(unittest.TestCase):
             self.assertFalse(RC.step_ok(wide, c['M0'], s['q'], s['B'], s['J']))
 
 
+    def test_unit_generation_certificates(self):
+        """The certificates `unitGen_proved` checks: every norm-±1 triple in the derived box has an
+        explicit representation ±ε1^x ε2^y, and the box is at most the witness's box."""
+        for P, Q, e1, e2, units in ((6, 2, (-5, 0, 1), (11, 1, -2), 6), (9, 6, (-1, -3, 1), (-1, 0, 2), 8)):
+            c = G.ug_cert(P, Q, e1, e2)
+            self.assertEqual(len(c['reps']), units)
+            e1i, e2i = G.inverse(P, Q, e1), G.inverse(P, Q, e2)
+            for s, x, y in c['reps']:
+                g = G.mul(P, Q, G.pw(P, Q, e1, x) if x >= 0 else G.pw(P, Q, e1i, -x),
+                          G.pw(P, Q, e2, y) if y >= 0 else G.pw(P, Q, e2i, -y))
+                self.assertIn(abs(G.nrm(P, Q, tuple(s * v for v in g))), (1,))
+            self.assertTrue(c['lo1'] < c['hi1'] < c['lo2'] < c['hi2'] < c['lo3'] < c['hi3'])
+
+
 if __name__ == '__main__':
     unittest.main()

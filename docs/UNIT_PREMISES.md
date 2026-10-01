@@ -6,12 +6,14 @@ This page covers the two cubic fields behind the open Mordell work:
 - the field of discriminant 1944 (`δ³ = 9δ + 6`), which carries the `D = 72` residual
   `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`.
 
-Both are proved complete in Lean under **three kinds of named premise**. The instances are:
-- one `unitGen` per field;
+Both are proved complete in Lean under **two kinds of named premise**. Unit generation, the
+third, is now a Lean theorem for both fields (`UnitGen.lean`, `unitGen_proved`). The remaining
+instances are:
 - one `normRep` per distinct `(N, γ₀)`: six for field 756, since classes 20 and 50 share
   `normRep_64`, and one for `D = 72`, since `H = −1` is transported by sign;
-- one `analytic` per class: seven for field 756 and one for `D = 72`. Every other step is
-kernel-checked. The direct maximum-exponent reduction, the unit-domain witness, the residue sieve
+- one `analytic` per class: seven for field 756 and one for `D = 72`.
+
+Every other step is kernel-checked. The direct maximum-exponent reduction, the unit-domain witness, the residue sieve
 and the norm-representative localization come from the direct-H handoff, adapted here.
 
 ## The chain
@@ -27,13 +29,13 @@ The steps:
 | step | statement | status |
 |---|---|---|
 | norm and lattice encoding | `nrm(enc(a, b)) = c₀² F(a, b)`; `dec(enc(a, b)) = (a, b)` | **Lean**: by `ring` per class; `UnitBox.dec_enc` |
-| unit generation | every unit of `ℤ[x]` is `±ε₁^a ε₂^b` (`UnitPremises.UnitGen`) | **premise**; finite part in Lean (`unit_box`) |
+| unit generation | every unit of `ℤ[x]` is `±ε₁^a ε₂^b` (`UnitPremises.UnitGen`) | **Lean**: `UnitGenProof.unitGen_of_cert`, certificates by `decide +kernel` |
 | norm representatives | every element of norm `N` is `γ₀ · unit` (`UnitPremises.NormRep`) | **premise**; finite hypotheses checked exactly |
 | analytic input | Siegel + Matveev: `\|κe₁ + e₂ + μ\| ≤ A e^{−cH}` and `H ≤ M₀` (`UnitPremises.Analytic`) | **premise** |
 | direct reduction | `H ≤ M₀ ⇒ … ⇒ H ≤ B` | **Lean**: `DirectReduction.chain_sound`, chains by `decide +kernel` |
 | the box | every lattice point of `±γ₀ ε₁^{e₁} ε₂^{e₂}`, `\|eᵢ\| ≤ B`, solving `F = M` is listed | **Lean**: `UnitBox.boxB` by `decide +kernel` |
 | small `b` | exhaustive search over `\|b\| ≤ V` below Cauchy's root bound | **Lean**: `UnitBox.cauchy`, `smallB` |
-| assembly | the three premises and the checks give the complete list | **Lean**: `UnitPremises.extBound_of`, `UnitBox.thue_list` |
+| assembly | the premises and the checks give the complete list | **Lean**: `UnitPremises.extBound_of`, `UnitBox.thue_list` |
 | curves | branch transport to classes with complete lists | **Lean**: `DescentThueList.complete_of_lists` |
 
 ## The direct reduction (`DirectReduction.lean`)
@@ -66,26 +68,36 @@ There are 24 cases and 56 stages in all. Each stage is replayed in Python
 fourteen field-756 solutions are still found in the smaller boxes, and the `D = 72` box has no
 lattice point.
 
-## Unit generation (`python/unit_basis_witness.py`)
+## Unit generation, proved (`UnitGen.lean`)
 
-Let `v_r` be the log-embedding of `ε_r`. Any unit `u` can be moved by `ε₁^{−e₁} ε₂^{−e₂}`
-(nearest integers to its coordinates) into the centered parallelogram
-`{r₁v₁ + r₂v₂ : −1/2 ≤ rᵢ < 1/2}`. There every conjugate satisfies
+`UnitGenProof.unitGen_of_cert` proves `UnitGen` from a certificate that the kernel checks by
+evaluation (`ugCheck`). The bridge from an arbitrary unit to the finite box is a Lean proof:
 
-  `|σᵢ(u)| ≤ Uᵢ = sqrt(max(|σᵢε₁|, 1/|σᵢε₁|) · max(|σᵢε₂|, 1/|σᵢε₂|))`.
+1. **Embeddings.** Rational brackets with a sign change give three real roots `tᵢ`, by the
+   intermediate value theorem (`root_in`). The maps `σᵢ(A, B, C) = A + Btᵢ + Ctᵢ²` are
+   multiplicative (`sig_mul`), and `nrm = σ₁σ₂σ₃` (`Roots.nrm_eq`). An element is determined by
+   its embeddings, by Lagrange interpolation (`Roots.coords`, `Roots.sig_inj`).
+2. **Logarithms.** For a unit, `Lᵢ = log|σᵢ|` sums to 0 (`Roots.L_sum`). The `2 × 2` log matrix
+   of `ε₁, ε₂` has nonzero determinant. Each entry is enclosed by
+   `n(1 − 1/s) ≤ log y ≤ n(s' − 1)` whenever `sⁿ ≤ y ≤ s'ⁿ` (`log_ge_of`, `log_le_of`), where
+   `y` is enclosed from the brackets (`encl_sound`).
+3. **Rounding** (`round_step`, `Roots.reduce_unit`). Multiply `u` by `ε₁^{−k₁} ε₂^{−k₂}`, with
+   `kᵣ` the nearest integers to its log coordinates. Then `|Lᵢ| ≤ (|Lᵢε₁| + |Lᵢε₂|)/2`, so
+   `|σᵢ|² ≤ max(|σᵢε₁|, |σᵢε₁|⁻¹) · max(|σᵢε₂|, |σᵢε₂|⁻¹) ≤ Uᵢ²`. No logarithm is evaluated in
+   this step.
+4. **The box** (`Roots.coord_bounds`). The bracket gaps bound the coordinates. Every norm-`±1`
+   triple in the box is listed with an explicit `±ε₁^x ε₂^y`, checked by evaluation, so the
+   parallelogram exclusion of the witness is not needed.
 
-Lagrange interpolation turns these bounds into a box for the integral coordinates:
-
-| field | box `(A, B, C)` | triples | norm `±1` | outside the parallelogram |
+| field | Lean box `(A, B, C)` | triples | units in the box | witness box (Python) |
 |---|---|---|---|---|
-| 756 | `9, 3, 3` | 931 | 12 | all but `±1` |
-| 1944 | `28, 8, 5` | 10,659 | 8 | all but `±1` |
+| 756 | `8, 2, 2` | 425 | 6 | `9, 3, 3`, 931 triples |
+| 1944 | `27, 7, 4` | 7,425 | 8 | `28, 8, 5`, 10,659 triples |
 
-The roots are isolated by rational bisection, and every logarithm is enclosed by a rational atanh
-series with an explicit remainder. No floating point is used. Lean checks the finite part:
-`unit_box` (`UnitPremises.unitBox_sound`) says every box triple of norm `±1` is a listed
-candidate. The real-log fundamental-domain argument is still Python, so `UnitGen` remains a
-premise. It no longer rests on PARI's unit basis.
+Every step uses only the standard axioms.
+
+The exact Python witness (`python/unit_basis_witness.py`) stays as an independent cross-check.
+It uses atanh-series logarithm enclosures and the parallelogram exclusion.
 
 ## Norm representatives (`python/norm_rep_localization.py`)
 
@@ -126,7 +138,7 @@ largest remaining dependency.
 
 ## Exponent residues (`python/d72_unit_sieve.py`, measurement)
 
-Assume unit generation. Reduce `ℤ[δ]` modulo `q`. Then every `D = 72` solution has its exponent
+Unit generation is proved, so these tables now apply unconditionally to the exponents. Reduce `ℤ[δ]` modulo `q`. Then every `D = 72` solution has its exponent
 pair, taken modulo the unit periods, in the following admissible tables:
 
 | q | periods | survivors |
@@ -141,8 +153,6 @@ so their survival fractions do not multiply.
 
 ## Next
 
-- A Lean proof of `UnitGen`. It needs the real embeddings, logarithm enclosures and the
-  fundamental-domain argument; the finite part is done.
 - A Lean proof of `NormRep`. It needs the index criterion and ideal factorization for these
   orders; the modular facts are done.
 - The analytic premise: Matveev's theorem is the boundary that stays external.

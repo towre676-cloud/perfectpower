@@ -788,6 +788,41 @@ open PerfectPower
 #print axioms PerfectPower.UnitPremises.mem_fam
 #print axioms PerfectPower.UnitPremises.extBound_of
 #print axioms PerfectPower.UnitPremises.unitBox_sound
+-- UnitGen
+#print axioms PerfectPower.UnitGenProof.sig_mul
+#print axioms PerfectPower.UnitGenProof.sig_one
+#print axioms PerfectPower.UnitGenProof.sig_neg
+#print axioms PerfectPower.UnitGenProof.sig_pow
+#print axioms PerfectPower.UnitGenProof.sig_zp
+#print axioms PerfectPower.UnitGenProof.Roots.sym
+#print axioms PerfectPower.UnitGenProof.Roots.nrm_eq
+#print axioms PerfectPower.UnitGenProof.Roots.nrm_mul
+#print axioms PerfectPower.UnitGenProof.Roots.coords
+#print axioms PerfectPower.UnitGenProof.Roots.sig_inj
+#print axioms PerfectPower.UnitGenProof.sig_ne_of_unit
+#print axioms PerfectPower.UnitGenProof.Roots.abs_prod
+#print axioms PerfectPower.UnitGenProof.mul_swap4
+#print axioms PerfectPower.UnitGenProof.isUnit_mul
+#print axioms PerfectPower.UnitGenProof.isUnit_zp
+#print axioms PerfectPower.UnitGenProof.Roots.L_sum
+#print axioms PerfectPower.UnitGenProof.exp_abs_log
+#print axioms PerfectPower.UnitGenProof.round_step
+#print axioms PerfectPower.UnitGenProof.L_mul
+#print axioms PerfectPower.UnitGenProof.L_zp
+#print axioms PerfectPower.UnitGenProof.Roots.reduce_unit
+#print axioms PerfectPower.UnitGenProof.root_in
+#print axioms PerfectPower.UnitGenProof.abs_le_max_of
+#print axioms PerfectPower.UnitGenProof.encl_sound
+#print axioms PerfectPower.UnitGenProof.log_ge_of
+#print axioms PerfectPower.UnitGenProof.log_le_of
+#print axioms PerfectPower.UnitGenProof.imul_sound
+#print axioms PerfectPower.UnitGenProof.term_le
+#print axioms PerfectPower.UnitGenProof.Roots.coord_bounds
+#print axioms PerfectPower.UnitGenProof.solve_u
+#print axioms PerfectPower.UnitGenProof.gap_le
+#print axioms PerfectPower.UnitGenProof.L_encl
+#print axioms PerfectPower.UnitGenProof.max_le_mB
+#print axioms PerfectPower.UnitGenProof.unitGen_of_cert
 #print axioms PerfectPower.UnitPremises.nrm_neg
 #print axioms PerfectPower.UnitPremises.neg_mul'
 #print axioms PerfectPower.UnitPremises.enc_neg
@@ -805,10 +840,10 @@ open PerfectPower
 -- Generated/D72Unit
 #print axioms PerfectPower.Generated.D72Unit.e1_inv
 #print axioms PerfectPower.Generated.D72Unit.e2_inv
-#print axioms PerfectPower.Generated.D72Unit.unit_box
+#print axioms PerfectPower.Generated.D72Unit.unitGen_proved
 #print axioms PerfectPower.Generated.D72Unit.class_pos
 #print axioms PerfectPower.Generated.D72Unit.class_neg
-#print axioms PerfectPower.Generated.Field756.unit_box
+#print axioms PerfectPower.Generated.Field756.unitGen_proved
 #print axioms PerfectPower.D72Residual.H72_eq
 -- UnitBox
 #print axioms PerfectPower.UnitBox.dec_enc

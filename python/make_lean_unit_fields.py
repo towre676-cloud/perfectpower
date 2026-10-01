@@ -2,9 +2,10 @@
 classes of the field of discriminant 756 and the curves `y^2 = x^3 - D`, `D = 7, 28, 63`) and
 `PerfectPower/Generated/D72Unit.lean` (the `D = 72` residual `H(u, v) = ±1`).
 
-Every theorem is stated under **three named premises** (`UnitPremises`):
-- `unitGen` (one per field): the units are `±ε1^a ε2^b`;
-- `normRep_i` (one per norm target): every element of norm `c0^2 M` is `γ0 · unit`;
+Unit generation is **proved** for each field (`unitGen_proved`, from the certificate `ugCert`
+built by `ug_cert` and checked by `UnitGenProof.ugCheck`).  Every theorem is stated under the two
+remaining named premises (`UnitPremises`):
+- `normRep_N` (one per distinct norm representative): every element of norm `c0^2 M` is `γ0 · unit`;
 - `analytic_i` (one per class): Siegel + Matveev, as rational enclosures and a first bound.
 From these, the kernel checks the direct-`H` reduction chains (`DirectReduction.chainCheck`), the
 norm identity, the exponent box, the small-`b` search and, for curves, the branch transport.
@@ -162,6 +163,114 @@ def check_cases(cases, B):
     return len(cases), sum(len(c['steps']) for c in cases)
 
 
+def _cub(P, Q, x):
+    return x ** 3 - P * x - Q
+
+
+def _sigq(x, g):
+    return g[0] + g[1] * x + g[2] * x * x
+
+
+def _encl(g, lo, hi):
+    rad = (hi - lo) * (abs(g[1]) + 2 * abs(g[2]) * max(abs(lo), abs(hi)))
+    v = abs(_sigq(lo, g))
+    return v - rad, v + rad
+
+
+def ug_cert(P, Q, e1, e2, bits=30, n=64, sbits=24):
+    """The unit-generation certificate checked by `UnitGenProof.ugCheck` (same definitions)."""
+    import math
+    R = 1 + abs(P) + abs(Q)
+    grid = [Fraction(i, 64) for i in range(-64 * R, 64 * R + 1)]
+    br = [(u, w) for u, w in zip(grid, grid[1:]) if _cub(P, Q, u) * _cub(P, Q, w) < 0]
+    assert len(br) == 3, 'needs three separated real roots'
+    brs = []
+    for lo, hi in br:
+        for _ in range(bits):
+            m = (lo + hi) / 2
+            if _cub(P, Q, lo) * _cub(P, Q, m) < 0:
+                hi = m
+            else:
+                lo = m
+        assert _cub(P, Q, lo) * _cub(P, Q, hi) < 0
+        brs.append((lo, hi))
+    (lo1, hi1), (lo2, hi2), (lo3, hi3) = brs
+
+    def witness(p, q):
+        s = Fraction(int(float(p) ** (1 / n) * 2 ** sbits), 2 ** sbits)
+        while s ** n > p:
+            s -= Fraction(1, 2 ** sbits)
+        S = Fraction(int(float(q) ** (1 / n) * 2 ** sbits) + 1, 2 ** sbits)
+        while S ** n < q:
+            S += Fraction(1, 2 ** sbits)
+        assert s > 0 and S > 0
+        return s, S
+    enc = {(r, i): _encl(e, *brs[i]) for r, e in ((1, e1), (2, e2)) for i in range(3)}
+    assert all(v[0] > 0 for v in enc.values())
+    wit = {(r, i): witness(*enc[(r, i)]) for r in (1, 2) for i in (0, 1)}
+    l = lambda s: n * (1 - 1 / s)         # noqa: E731
+    u = lambda S: n * (S - 1)             # noqa: E731
+
+    def imin(a, b, c, d):
+        return min(a * c, a * d, b * c, b * d)
+
+    def imax(a, b, c, d):
+        return max(a * c, a * d, b * c, b * d)
+    (s11, S11), (s21, S21) = wit[(1, 0)], wit[(1, 1)]
+    (s12, S12), (s22, S22) = wit[(2, 0)], wit[(2, 1)]
+    dlo = imin(l(s11), u(S11), l(s22), u(S22)) - imax(l(s12), u(S12), l(s21), u(S21))
+    dhi = imax(l(s11), u(S11), l(s22), u(S22)) - imin(l(s12), u(S12), l(s21), u(S21))
+    assert dlo > 0 or dhi < 0, 'log determinant not separated from 0'
+    mB = lambda r, i: max(enc[(r, i)][1], 1 / enc[(r, i)][0])   # noqa: E731
+    U = []
+    for i in range(3):
+        sq = mB(1, i) * mB(2, i)
+        Ui = Fraction(math.isqrt(int(sq * 2 ** 40)) + 1, 2 ** 20)
+        assert Ui * Ui >= sq
+        U.append(Ui)
+    g12, g13, g23 = lo2 - hi1, lo3 - hi1, lo3 - hi2
+    G = [g12 * g13, g12 * g23, g13 * g23]
+    m = [max(abs(lo1), abs(hi1)), max(abs(lo2), abs(hi2)), max(abs(lo3), abs(hi3))]
+    S = [max(abs(lo2 + lo3), abs(hi2 + hi3)), max(abs(lo1 + lo3), abs(hi1 + hi3)),
+         max(abs(lo1 + lo2), abs(hi1 + hi2))]
+    T = [m[1] * m[2], m[0] * m[2], m[0] * m[1]]
+    cB = sum(U[i] / G[i] for i in range(3))
+    bB = sum(S[i] * U[i] / G[i] for i in range(3))
+    aB = sum(T[i] * U[i] / G[i] for i in range(3))
+    bc, bb, ba = int(cB), int(bB), int(aB)        # floor: B < b + 1
+    e1i, e2i = inverse(P, Q, e1), inverse(P, Q, e2)
+
+    def zp(e, ei, k):
+        return pw(P, Q, e, k) if k >= 0 else pw(P, Q, ei, -k)
+    rep = {}
+    for k in range(0, 13):
+        for x in range(-k, k + 1):
+            for y in range(-k, k + 1):
+                g = mul(P, Q, zp(e1, e1i, x), zp(e2, e2i, y))
+                for sg in (1, -1):
+                    h = tuple(sg * c for c in g)
+                    if h not in rep:
+                        rep[h] = (sg, x, y)
+    reps = []
+    for A in range(-ba, ba + 1):
+        for B in range(-bb, bb + 1):
+            for Cc in range(-bc, bc + 1):
+                if abs(nrm(P, Q, (A, B, Cc))) == 1:
+                    assert (A, B, Cc) in rep, f'unit {(A, B, Cc)} has no small representation'
+                    reps.append(rep[(A, B, Cc)])
+    return {'lo1': lo1, 'hi1': hi1, 'lo2': lo2, 'hi2': hi2, 'lo3': lo3, 'hi3': hi3, 'n': n,
+            's11': s11, 'S11': S11, 's21': s21, 'S21': S21, 's12': s12, 'S12': S12, 's22': s22, 'S22': S22,
+            'U1': U[0], 'U2': U[1], 'U3': U[2], 'ba': ba, 'bb': bb, 'bc': bc, 'reps': reps}
+
+
+def ug_lean(c):
+    rs = '[' + ', '.join(f'({_i(s)}, {_i(x)}, {_i(y)})' for s, x, y in c['reps']) + ']'
+    f = [f'{k} := {q_lean(c[k])}' for k in ('lo1', 'hi1', 'lo2', 'hi2', 'lo3', 'hi3', 's11', 'S11', 's21',
+                                             'S21', 's12', 'S12', 's22', 'S22', 'U1', 'U2', 'U3')]
+    return ('{ ' + ',\n    '.join(f + [f"n := {c['n']}", f"ba := {c['ba']}", f"bb := {c['bb']}",
+                                    f"bc := {c['bc']}", f'reps := {rs}']) + ' }')
+
+
 def field_preamble(P, Q, e1, e2, witness):
     e1i, e2i = inverse(P, Q, e1), inverse(P, Q, e2)
     w = next(f for f in witness['fields'] if (f['P'], f['Q']) == (P, Q))
@@ -176,20 +285,26 @@ def field_preamble(P, Q, e1, e2, witness):
     for g in cands:
         if g not in ((1, 0, 0), (-1, 0, 0)):
             assert any(x['coordinates'] == list(g) and x['excluded_from_centered_domain'] for x in w['candidates'])
+    cert = ug_cert(P, Q, e1, e2)
     text = (f'/-- `ε₁`. -/\ndef e1 : Z3 := {z3_lean(e1)}\n/-- `ε₁⁻¹`. -/\ndef e1i : Z3 := {z3_lean(e1i)}\n'
             f'/-- `ε₂`. -/\ndef e2 : Z3 := {z3_lean(e2)}\n/-- `ε₂⁻¹`. -/\ndef e2i : Z3 := {z3_lean(e2i)}\n\n'
             f'theorem e1_inv : mul {P} {Q} e1 e1i = (1, 0, 0) := by decide\n'
             f'theorem e2_inv : mul {P} {Q} e2 e2i = (1, 0, 0) := by decide\n\n'
-            f'/-- **The unit-generation premise** for `ℤ[x]`, `x³ = {P}x + {Q}`: every unit is `±ε₁^a ε₂^b`.\n'
-            f'Evidence: the exact fundamental-domain witness (`python/unit_basis_witness.py`); its finite part\n'
-            f'is `unit_box` below.  Not proved in Lean. -/\n'
+            f'/-- The unit-generation statement for `ℤ[x]`, `x³ = {P}x + {Q}`: every unit is `±ε₁^a ε₂^b`. -/\n'
             f'def unitGen : Prop := UnitPremises.UnitGen {P} {Q} e1 e1i e2 e2i\n\n'
-            f'/-- The finite part of the unit-domain witness: the {(2*a+1)*(2*b+1)*(2*c+1)} triples with '
-            f'`|A| ≤ {a}`, `|B| ≤ {b}`, `|C| ≤ {c}` include exactly {len(cands)} of norm `±1`, all listed (and\n'
-            f'all but `±1` lie outside the centered parallelogram, by the exact log enclosures of the witness). -/\n'
-            f'theorem unit_box : UnitPremises.unitBoxB {P} {Q} {a} {b} {c} '
-            f'[{", ".join(z3_lean(g) for g in cands)}] = true := by decide +kernel\n')
-    return text, e1i, e2i, {'box': [a, b, c], 'triples': (2*a+1)*(2*b+1)*(2*c+1), 'candidates': len(cands)}
+            f'/-- The unit-generation certificate (`UnitGenProof.UGCert`): root brackets, log witnesses, '
+            f'the bounds `Uᵢ`, the box `{cert["ba"]}, {cert["bb"]}, {cert["bc"]}` and the {len(cert["reps"])} units in it '
+            f'as `±ε₁^x ε₂^y`. -/\n'
+            f'def ugCert : UnitGenProof.UGCert :=\n  {ug_lean(cert)}\n\n'
+            f'/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_cert`, certificate checked by the '
+            f'kernel).  This was a premise; it is now a theorem. -/\n'
+            f'theorem unitGen_proved : unitGen :=\n'
+            f'  UnitGenProof.unitGen_of_cert {P} {Q} e1 e1i e2 e2i ugCert (by decide +kernel)\n')
+    return text, e1i, e2i, {'witness_box': [a, b, c], 'witness_triples': (2*a+1)*(2*b+1)*(2*c+1),
+                            'witness_candidates': len(cands),
+                            'lean_box': [cert['ba'], cert['bb'], cert['bc']],
+                            'lean_triples': (2*cert['ba']+1)*(2*cert['bb']+1)*(2*cert['bc']+1),
+                            'lean_units': len(cert['reps'])}
 
 
 def norm_rep_block(nname, P, Q, N, g0, labels):
@@ -215,24 +330,24 @@ def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=
         reps += (f"/-- Negative control: every chain of {label} with its final bound lowered by one is rejected "
                  f"by the kernel. -/\n"
                  f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB reps_{name} = true := by decide +kernel\n\n")
-        hyps = f"(hU : unitGen) (hN : {nname}) (hA : analytic_{name})"
+        hyps = f"(hN : {nname}) (hA : analytic_{name})"
         hN, hA = 'hN', 'hA'
     else:
         reps = (f"/-- The representatives and cases of {label}: those of `{neg_of}`, negated. -/\n"
                 f"def reps_{name} : List (Z3 × List UnitPremises.Case) := UnitPremises.negReps reps_{neg_of}\n\n")
-        hyps = f"(hU : unitGen) (hN : {nname}) (hA : analytic_{neg_of})"
+        hyps = f"(hN : {nname}) (hA : analytic_{neg_of})"
         hN = 'UnitPremises.normRep_neg_of (reps := reps_' + neg_of + ') hN'
         hA = 'UnitPremises.analytic_neg_of hA'
     note = '' if neg_of is None else f"  Its norm and analytic premises are those of `{neg_of}`, transported by sign. "
     return (reps +
-            f"/-- **{label}, complete under the three premises**: `{list(F)}` takes the value {M} exactly at "
+            f"/-- **{label}, complete under the two remaining premises**: `{list(F)}` takes the value {M} exactly at "
             f"{len(L)} point(s).{note}  Kernel-checked: the reduction chains (to `H ≤ {B}`), the norm identity, "
             f"the box (`{2 * B + 1}²` elements) and the search `|b| ≤ {V}`. -/\n"
             f"theorem class_{name} {hyps} (u v : ℤ) :\n"
             f"    evalF {form_lean(F)} u v = {_i(M)} ↔ (u, v) ∈ ({pairs_lean(L)} : List (ℤ × ℤ)) :=\n"
             f"  thue_list {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} (reps_{name}.map Prod.fst) e1 e1i e2 e2i {B} {V} "
             f"{pairs_lean(L)}\n    (by decide) (by decide)\n"
-            f"    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_{name} hU ({hN})\n"
+            f"    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_{name} unitGen_proved ({hN})\n"
             f"      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) ({hA}) (by decide +kernel))\n"
             f"    (by decide +kernel) (by decide +kernel) (by decide +kernel) u v\n")
 
@@ -248,31 +363,34 @@ def box_hits(P, Q, F, M, phi, g0, e1, e1i, e2, e2i, B):
 
 
 def head(name, doc):
-    return (f"import PerfectPower.UnitPremises\nimport PerfectPower.DescentThueList\n\n/-!\n{doc}\n-/\n\n"
+    return (f"import PerfectPower.UnitGen\nimport PerfectPower.DescentThueList\n\n/-!\n{doc}\n-/\n\n"
             f"namespace PerfectPower.Generated.{name}\n\nopen PerfectPower ThueLocal UnitBox\n\n")
 
 
-DOC756 = """# The field 756: seven Thue classes and three curves, under three named premises
+DOC756 = """# The field 756: seven Thue classes and three curves, under two named premises
 (generated by `python/make_lean_unit_fields.py`)
 
 `K = ℚ(x)`, `x³ = 6x + 2`, `O_K = ℤ[x]`, discriminant 756.  Seven GL₂(ℤ)-classes of open branch
 equations of `y² = x³ − D`, `D ∈ {7, 28, 63}`, live in this field (`MORDELL_BRANCH.md` §7.3).
 
-* **Premises, not proved in Lean:** `unitGen` (one for the field), one `normRep_N` per distinct
-  norm representative (classes 20 and 50 share `normRep_64`), and one `analytic_i` per class.  See `UnitPremises` for their statements and evidence.
+* **Proved:** `unitGen_proved`, unit generation for `ℤ[x]` (`UnitGenProof.unitGen_of_cert`).
+* **Premises, not proved in Lean:** one `normRep_N` per distinct norm representative (classes 20
+  and 50 share `normRep_64`), and one `analytic_i` per class.  See `UnitPremises` for their
+  statements and evidence.
 * **Kernel-checked:** the direct-`H` reduction chains, the exponent boxes, the small-`b` searches,
   the norm identities, and the branch transport.
 * `class_i`: the complete solution list.  `minusD`: the complete list of integral points of
   `y² = x³ − D`, under the premises of that curve's classes."""
 
-DOC72 = """# The `D = 72` residual `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`, under three named premises
+DOC72 = """# The `D = 72` residual `H(u, v) = −3u³ + 9uv² − 2v³ = ±1`, under two named premises
 (generated by `python/make_lean_unit_fields.py`)
 
 `K = ℚ(δ)`, `δ³ = 9δ + 6`, `O_K = ℤ[δ]`, discriminant 1944.  The form `(−3, 0, 9, −2)` has
 `φ = β = 6 − δ²` (`NormForm.d72_beta_of_delta`), and `N(c₀u − βv) = 9 H(u, v)`.
 
-* **Premises, not proved in Lean:** `unitGen`, `normRep_pos` (norm 9) and `analytic_pos`.  The
-  target `H = −1` uses the same two, transported by sign (`UnitPremises.normRep_neg_of`,
+* **Proved:** `unitGen_proved`, unit generation for `ℤ[δ]`.
+* **Premises, not proved in Lean:** `normRep_pos` (norm 9) and `analytic_pos`.  The target
+  `H = −1` uses the same two, transported by sign (`UnitPremises.normRep_neg_of`,
   `analytic_neg_of`: the form, `enc` and the norm are odd).
 * **Kernel-checked:** the reduction chains (`H ≤ 4`), the box of `9²` elements and the search
   `|v| ≤ 1`.  `class_pos`, `class_neg`: no solution."""
@@ -355,10 +473,10 @@ def main():
         listed = '[' + ', '.join(
             f"({form_lean(gcls[i]['representative'])}, {gcls[i]['M']}, {pairs_lean(lists[i])})" for i in ids) + ']'
         nn = sorted({nnames[i] for i in ids})
-        hyps = ('(hU : unitGen) ' + ' '.join(f'(h{n} : {n})' for n in nn) + ' '
+        hyps = (' '.join(f'(h{n} : {n})' for n in nn) + ' '
                 + ' '.join(f'(hA{i} : analytic_{i})' for i in ids))
         pat = ' | '.join(['rfl'] * len(ids))
-        cases = ' '.join(f'| exact (class_{i} hU h{nnames[i]} hA{i} u v).mp' for i in ids)
+        cases = ' '.join(f'| exact (class_{i} h{nnames[i]} hA{i} u v).mp' for i in ids)
         out.append(
             f"set_option maxHeartbeats 0 in\n"
             f"/-- **The integral points of `y^2 = x^3 - {D}`, under the premises of classes {ids}**: "
