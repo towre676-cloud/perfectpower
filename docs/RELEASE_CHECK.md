@@ -1,6 +1,6 @@
 # Release check
 
-`make release-verify` was run on commit `3c4d588` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
+`make release-verify` was run on commit `7d3197f` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -17,15 +17,15 @@ The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12, mpmath 1.3
 
 ```
 Build completed successfully.
-axiom audit passed: 837 declarations
--- Found 0 errors in 1318 declarations (plus 4215 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 890 declarations
+-- Found 0 errors in 1552 declarations (plus 4698 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
 z3-solver: present: adapter/certificate tests run
-Ran 195 tests in 47.361s
+Ran 206 tests in 46.232s
 OK
-Ran 14 tests in 8.580s (continuation_tests)
+Ran 14 tests in 9.163s (continuation_tests)
 OK
-Ran 10 tests in 0.036s (expert_push)
+Ran 10 tests in 0.026s (expert_push)
 OK
 Ran 8 tests in 0.009s (galois_merge)
 OK
@@ -39,7 +39,7 @@ Theorem G gate OK: 462 cases, genus computed in 462, places at infinity in 453, 
 x^3 - 6x - 2: disc 756, index primes [2, 3], p=2: {'0': 3} max=True tot=True, p=3: {'2': 3} max=True tot=True; targets [8, 64, 256, 512, 576, 8192] all unique
 x^3 - 9x - 6: disc 1944, index primes [2, 3], p=2: {'0': 1, '1': 2} max=True tot=False, p=3: {'0': 3} max=True tot=True; targets [9, -9] all unique
 x^3 - 6x - 2: unit box {'witness_box': [9, 3, 3], 'witness_triples': 931, 'witness_candidates': 12, 'lean_box': [8, 2, 2], 'lean_triples': 425, 'lean_units': 6}
-0: B=5 V=1 box 121 steps 8 hits [(1, 1), (10, -2)]
+0: B=5 V=1 box 121 steps 7 hits [(1, 1), (10, -2)]
 1: B=7 V=1 box 225 steps 7 hits [(-11, 1), (1, 1)]
 2: B=5 V=1 box 121 steps 7 hits [(-2, 0), (1, -3)]
 18: B=6 V=1 box 169 steps 7 hits [(2, -1), (6, 1)]
@@ -67,7 +67,7 @@ descent gate OK
 verify: OK
 ```
 
-**Unit fields** (`python/make_lean_unit_fields.py`, run by `make verify`; [UNIT_PREMISES.md](UNIT_PREMISES.md)). The field-756 class theorems, `minus7`, `minus28`, `minus63` and `D72Residual.residual_empty` are kernel-checked **under one named premise per class**, `analytic_i`. Unit generation (`unitGen_proved`, `UnitGen.lean`) and the norm representatives (`normRep_*_proved`, `NormRepProof.lean`) are proved. The direct-H reduction chains (56 stages), their forged negative controls, norm identities, boxes and small cases are evaluated by the kernel. In every class the box hits equal PARI's solution list, and each curve's points equal the Sage census. These curves are not counted among the 26 closed ones. `python/unit_basis_witness.py` (exact fundamental-domain witness) and `python/norm_rep_localization.py` (Dedekind's criterion, total ramification) run in `make verify` too.
+**Unit fields** (`python/make_lean_unit_fields.py`, run by `make verify`; [UNIT_PREMISES.md](UNIT_PREMISES.md)). The field-756 class theorems, `minus7`, `minus28`, `minus63` and `D72Residual.residual_empty` are kernel-checked **under one named premise per class**, `matveev_i` (Matveev's lower bound, three explicit instances). Unit generation (`unitGen_proved`, `UnitGen.lean`), the norm representatives (`normRep_*_proved`, `NormRepProof.lean`) and the analytic inequality (`analytic_i_proved`, `AnalyticBridge.lean`; 24 interval certificates `caseOK_i_k` by `decide +kernel`, from `python/perfectpower/analytic_cert.py`) are proved. The direct-H reduction chains (56 stages), their forged negative controls, norm identities, boxes and small cases are evaluated by the kernel. In every class the box hits equal PARI's solution list, and each curve's points equal the Sage census. These curves are not counted among the 26 closed ones. `python/unit_basis_witness.py` (exact fundamental-domain witness) and `python/norm_rep_localization.py` (Dedekind's criterion, total ramification) run in `make verify` too.
 
 **Bounded Pell.** `Generated/BoundedPlans.lean` (`pairs_square_1e9`) is unconditional; the adapter's default bounded-Pell path runs the kernel per query (`lean_kernel_checked`).
 
