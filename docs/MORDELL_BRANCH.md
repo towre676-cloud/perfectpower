@@ -287,7 +287,7 @@ The whole remaining `D = 72` point-free problem is therefore **one unit Thue equ
 - `Generated/D72Unit.lean` and `D72Residual.residual_empty` prove `H(u, v) ≠ ±1` for all
   integers. The kernel checks the reduction chains, the box of `9²` elements of either sign, and
   the search `|v| ≤ 1`.
-- Unit generation is **proved** (`D72Unit.unitGen_proved`, [UNIT_PREMISES.md](UNIT_PREMISES.md)).
+- Unit generation is **proved** (`Order1944.unitGen_proved`, [UNIT_PREMISES.md](UNIT_PREMISES.md)).
   So are the norm representatives (`D72Unit.normRep_pos_proved`: `9 ∣ N(g)` forces `3 ∣ A, B`,
   and `g/α` is integral). So is the analytic inequality (`D72Unit.analytic_pos_proved`,
   `AnalyticBridge.analytic_of_cert`). The proof rests on **one** named premise, `matveev_pos`:
@@ -385,12 +385,31 @@ to `G = −2u³ − 6u²v + 3uv² + 4v³ = 1`.
 - **The curve.** `minus45`: the integral points are exactly `(21, ±96)`, under `matveev_w1`
   alone. This agrees with the Sage census.
 
+**Third instance: `D = 18`, a shared order** (`Generated/Minus18.lean`,
+`receipts/minus18_certificate.json`). Classes 6 and 7 descend to two monic unit equations in
+`ℤ[θ]`, `θ³ = 9θ + 6` (discriminant 1944), the order of the `D = 72` residual.
+
+| class | `M` | descent primes | nodes | sources | complete list |
+|---|---|---|---|---|---|
+| 6 | `216 = 2³3³` | 2, 3 | 11 | `v1` | `(0, 1)` |
+| 7 | `27 = 3³` | 3 | 3 | `v1`, `v2` | `(−3, 0)` |
+
+- **The sources.** `F₁ = −u³ − 3u²v + 6uv² + 2v³` and `F₂ = −u³ − 9u²v + 54uv² + 54v³`, with
+  `φ₁ = 1 + θ`, `φ₂ = 3 + 3θ` and `N(−u − vφᵢ) = Fᵢ(u, v)` (by `ring`). With the opposite sign,
+  `φ = −1 − θ`, the identity reads `Fᵢ(u, −v)`. Both have norm `1` (`normRep_one`), reduce to
+  `H ≤ 3`, and have the single solution `(−1, 0)`.
+- **The shared order.** Unit generation for `ℤ[θ]` is proved once, in `Generated/Order1944.lean`
+  (`ε₁ = θ² − 3θ − 1`, `ε₂ = 2θ² − 1`, a 7,425-triple box). `D72Unit` and `Minus18` both import
+  it, so neither re-checks the box.
+- **The curve.** `minus18`: the integral points are exactly `(3, ±3)`, under `matveev_v1` and
+  `matveev_v2`. This agrees with the Sage census.
+
 **The layers** (`python/make_lean_curves.py`). A curve is assembled from three separately checked
 layers:
 
 | layer | content | reused by |
 |---|---|---|
-| 1. field certificate | `unitGen_proved` | every source equation of the field |
+| 1. field certificate | `unitGen_proved` (in the curve module, or a shared order module such as `Order1944`) | every source equation of the order, across curves |
 | 2. source equation `j` | `normRep_j_proved`, `analytic_j_proved` (under `matveev_j`), reduction, box: `class_j` | every class whose descent reaches `j` |
 | 3. curve assembly | `desc_*`, `root_*`, `class_*` (`DescentLists`), `minus D` (`complete_of_lists`) | — |
 
@@ -399,9 +418,18 @@ exactly the set of sources that its classes' descents reach.
 
 **Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
 derived from the registered Lean theorems. The raw workload receipts are unchanged.
-- Classes: 15 locally discharged, 15 conditionally complete, 49 unresolved, out of 79.
-- Unit equations: 3 of 109 registered, 106 remaining.
-- Curves conditionally complete: `D = 7, 23, 28, 45, 63`.
+- Classes: 15 locally discharged, 17 conditionally complete, 47 unresolved, out of 79.
+- Unit equations: 6 of 109 registered. These are the five curve sources and the `D = 72` residual
+  `H = ±1` (`D72Unit.class_pos`, `class_neg`).
+- 103 are unregistered. That count includes leaves of classes already complete by another route
+  (field 756, `D = 72`).
+- The workload that still blocks a class is
+  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **90** unit equations. Of these, 72 block
+  one class, 6 block two, 10 block three and 2 block four (`needed_by_class_count`).
+- Curves conditionally complete: `D = 7, 18, 23, 28, 45, 63`.
+- `curves_unresolved_workload` orders the 17 unresolved curves by the unit equations they still
+  need. The cheapest is `D = 89` (classes 68, 69): two equations, `(−1, −18, 267, 534)` and
+  `(−1, −3, 12, 2)`.
 
 ### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)
 

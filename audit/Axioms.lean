@@ -872,10 +872,11 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Field756.forged_rejected_20
 #print axioms PerfectPower.Generated.Field756.forged_rejected_50
 #print axioms PerfectPower.Generated.D72Unit.forged_rejected_pos
+-- Generated/Order1944 (shared by D72Unit and Minus18)
+#print axioms PerfectPower.Generated.Order1944.e1_inv
+#print axioms PerfectPower.Generated.Order1944.e2_inv
+#print axioms PerfectPower.Generated.Order1944.unitGen_proved
 -- Generated/D72Unit
-#print axioms PerfectPower.Generated.D72Unit.e1_inv
-#print axioms PerfectPower.Generated.D72Unit.e2_inv
-#print axioms PerfectPower.Generated.D72Unit.unitGen_proved
 #print axioms PerfectPower.Generated.D72Unit.class_pos
 #print axioms PerfectPower.Generated.D72Unit.class_neg
 #print axioms PerfectPower.Generated.Field756.unitGen_proved
@@ -927,6 +928,23 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Minus45.class_31
 #print axioms PerfectPower.Generated.Minus45.class_32
 #print axioms PerfectPower.Generated.Minus45.minus45
+#print axioms PerfectPower.Generated.Minus18.normRep_v1_proved
+#print axioms PerfectPower.Generated.Minus18.normRep_v2_proved
+#print axioms PerfectPower.Generated.Minus18.analytic_v1_proved
+#print axioms PerfectPower.Generated.Minus18.analytic_v2_proved
+#print axioms PerfectPower.Generated.Minus18.forged_rejected_v1
+#print axioms PerfectPower.Generated.Minus18.forged_rejected_v2
+#print axioms PerfectPower.Generated.Minus18.class_v1
+#print axioms PerfectPower.Generated.Minus18.class_v2
+#print axioms PerfectPower.Generated.Minus18.src_v1_complete
+#print axioms PerfectPower.Generated.Minus18.src_v1_v2_complete
+#print axioms PerfectPower.Generated.Minus18.desc_6
+#print axioms PerfectPower.Generated.Minus18.desc_7
+#print axioms PerfectPower.Generated.Minus18.root_6
+#print axioms PerfectPower.Generated.Minus18.root_7
+#print axioms PerfectPower.Generated.Minus18.class_6
+#print axioms PerfectPower.Generated.Minus18.class_7
+#print axioms PerfectPower.Generated.Minus18.minus18
 -- AbelianTransforms
 #print axioms PerfectPower.AbelianTransforms.integral_term
 #print axioms PerfectPower.AbelianTransforms.summable_exp

@@ -51,6 +51,7 @@ import PerfectPower.AbelianTransforms
 import PerfectPower.DescentLists
 import PerfectPower.Generated.Minus23
 import PerfectPower.Generated.Minus45
+import PerfectPower.Generated.Minus18
 import PerfectPower.MonomialCount
 import PerfectPower.ThueLocal
 import PerfectPower.DescentThue
@@ -63,6 +64,7 @@ import PerfectPower.UnitGen
 import PerfectPower.NormRepProof
 import PerfectPower.RatInterval
 import PerfectPower.AnalyticBridge
+import PerfectPower.Generated.Order1944
 import PerfectPower.Generated.D72Unit
 import PerfectPower.D72Residual
 import PerfectPower.UnitBox

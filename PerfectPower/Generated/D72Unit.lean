@@ -1,4 +1,4 @@
-import PerfectPower.UnitGen
+import PerfectPower.Generated.Order1944
 import PerfectPower.NormRepProof
 import PerfectPower.AnalyticBridge
 import PerfectPower.DescentThueList
@@ -10,7 +10,7 @@ import PerfectPower.DescentThueList
 `K = ℚ(δ)`, `δ³ = 9δ + 6`, `O_K = ℤ[δ]`, discriminant 1944.  The form `(−3, 0, 9, −2)` has
 `φ = β = 6 − δ²` (`NormForm.d72_beta_of_delta`), and `N(c₀u − βv) = 9 H(u, v)`.
 
-* **Proved:** `unitGen_proved`, unit generation for `ℤ[δ]`.
+* **Proved:** `unitGen_proved`, unit generation for `ℤ[δ]` (imported from `Generated/Order1944.lean`).
 * **Proved:** `normRep_pos_proved`, the norm representatives of norm 9 (`NormRepProof.normRep_d72`).
 * **Proved:** `analytic_pos_proved`, from `matveev_pos` (`AnalyticBridge.analytic_of_cert`).
 * **Premise, not proved in Lean:** `matveev_pos`, Matveev's lower bound for the three linear forms.
@@ -22,52 +22,8 @@ import PerfectPower.DescentThueList
 
 namespace PerfectPower.Generated.D72Unit
 
-open PerfectPower ThueLocal UnitBox
+open PerfectPower ThueLocal UnitBox Order1944
 
-
-/-- `ε₁`. -/
-def e1 : Z3 := ((-1), (-3), 1)
-/-- `ε₁⁻¹`. -/
-def e1i : Z3 := ((-1), (-3), (-1))
-/-- `ε₂`. -/
-def e2 : Z3 := ((-1), 0, 2)
-/-- `ε₂⁻¹`. -/
-def e2i : Z3 := ((-289), (-24), 34)
-
-theorem e1_inv : mul 9 6 e1 e1i = (1, 0, 0) := by decide
-theorem e2_inv : mul 9 6 e2 e2i = (1, 0, 0) := by decide
-
-/-- The unit-generation statement for `ℤ[x]`, `x³ = 9x + 6`: every unit is `±ε₁^a ε₂^b`. -/
-def unitGen : Prop := UnitPremises.UnitGen 9 6 e1 e1i e2 e2i
-
-/-- The unit-generation certificate (`UnitGenProof.UGCert`): root brackets, log witnesses, the bounds `Uᵢ`, the box `27, 7, 4` and the 8 units in it as `±ε₁^x ε₂^y`. -/
-def ugCert : UnitGenProof.UGCert :=
-  { lo1 := ((-88793310113 : ℚ) / 34359738368),
-    hi1 := ((-177586620225 : ℚ) / 68719476736),
-    lo2 := ((-12124171091 : ℚ) / 17179869184),
-    hi2 := ((-48496684363 : ℚ) / 68719476736),
-    lo3 := ((226083304589 : ℚ) / 68719476736),
-    hi3 := ((113041652295 : ℚ) / 34359738368),
-    s11 := ((17472157 : ℚ) / 16777216),
-    S11 := ((8736079 : ℚ) / 8388608),
-    s21 := ((16903375 : ℚ) / 16777216),
-    S21 := ((1056461 : ℚ) / 1048576),
-    s12 := ((17449409 : ℚ) / 16777216),
-    S12 := ((8724705 : ℚ) / 8388608),
-    s22 := ((15385593 : ℚ) / 16777216),
-    S22 := ((7692797 : ℚ) / 8388608),
-    U1 := ((3377063 : ℚ) / 262144),
-    U2 := ((21285957 : ℚ) / 1048576),
-    U3 := ((22192129 : ℚ) / 1048576),
-    n := 64,
-    ba := 27,
-    bb := 7,
-    bc := 4,
-    reps := [(1, (-1), 0), (1, 1, 0), ((-1), 0, 0), (1, 0, 1), ((-1), 0, 1), (1, 0, 0), ((-1), 1, 0), ((-1), (-1), 0)] }
-
-/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_cert`, certificate checked by the kernel).  This was a premise; it is now a theorem. -/
-theorem unitGen_proved : unitGen :=
-  UnitGenProof.unitGen_of_cert 9 6 e1 e1i e2 e2i ugCert (by decide +kernel)
 
 /-- The norm-representative statement (used by `H = 1` (and, transported by sign, `H = -1`)): every element of norm 9 is `[-3, -3, 1]` times a unit. -/
 def normRep_pos : Prop := UnitPremises.NormRep 9 6 9 [((-3), (-3), 1)]

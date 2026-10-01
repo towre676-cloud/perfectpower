@@ -110,11 +110,15 @@ git.
      equations in the field 621, under Matveev for those two equations.
    - **Second instance:** `D = 45` (`Generated/Minus45.lean`): one nonmonic source equation
      (norm `4`, residue norm representatives) for classes 30, 31, 32, under `matveev_w1`.
-   - **Coverage** is derived (`receipts/descent_coverage.json`): 3 of 109 unit equations are
+   - **Third instance:** `D = 18` (`Generated/Minus18.lean`): two monic sources in the order of
+     the `D = 72` residual, whose unit generation is imported from the shared module
+     `Generated/Order1944.lean`; under `matveev_v1`, `matveev_v2`.
+   - **Coverage** is derived (`receipts/descent_coverage.json`): 6 of 109 unit equations are
      registered.
-   - **Still open:** complete lists at the other 106 leaves. In the measured workload
-     (`receipts/descent_residual.json`) they are 109 distinct unit equations `G = ±1` in other
-     cubic fields, so each needs a Thue bound (the field-756 pipeline, applied per field).
+   - **Still open:** the unit equations in `U_needed`, the unregistered leaves of unresolved
+     classes: 90 of them. Each needs a Thue bound (the field pipeline, applied per order). The
+     receipt orders the unresolved curves by this workload. The next is `D = 89`, which needs
+     two equations.
 4. **A consumer-accepted replacement.**
    - **Target:** for one independently authored verification condition, a checked instance of
      `Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that a downstream verifier (Why3/GNATprove) accepts.

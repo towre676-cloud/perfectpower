@@ -14,9 +14,15 @@ curves).  This script classifies every class and every unit equation:
 * `UNRESOLVED`: everything else.
 
 A unit equation is `REGISTERED` when a Lean source theorem (`class_<name>` of a curve
-certificate) proves its complete list; the match is by GL₂(ℤ)-canonical form.  Curves are
+certificate, or `D72Unit.class_pos` / `class_neg` for the `D = 72` residual) proves its complete
+list; the match is by GL₂(ℤ)-canonical form.  Curves are
 `CONDITIONALLY_COMPLETE` when a Lean curve theorem exists (`minus7`, `minus28`, `minus63`,
-`minus23`, `minus45`).
+`minus18`, `minus23`, `minus45`).
+
+`unit_equations_unregistered` counts every unit equation without a source theorem, including the
+leaves of classes already complete by another route.  The workload worth minimizing is
+`U_needed`: the union, over UNRESOLVED classes C, of the unit leaves of C that are not registered
+(`unit_equations_needed`; each row carries `needed` and the unresolved classes it `blocks`).
 
 Run: python3 python/descent_coverage.py   Writes receipts/descent_coverage.json.
 """
@@ -42,6 +48,11 @@ def main():
             key = tuple(TG.canonical(tuple(s['form']))[0])
             registered[key] = {'source': s['name'], 'curve': c['curve'], 'premise': f"matveev_{s['name']}",
                                'list': s['list']}
+    d72 = rec('d72_thue_bound.json')        # the D = 72 residual H = ±1: D72Unit.class_pos / class_neg
+    for sgn, nm in ((1, 'pos'), (-1, 'neg')):
+        key = tuple(TG.canonical(tuple(sgn * x for x in d72['form']))[0])
+        registered.setdefault(key, {'source': f'D72Unit.class_{nm}', 'curve': 72, 'premise': 'matveev_pos',
+                                    'list': []})
     status, via = {}, {}
     for cl in graph['classes']:
         if 'descent' in cl:
@@ -67,8 +78,28 @@ def main():
         r = registered.get(key)
         eqs.append({'form': u['form'], 'classes': u['classes'],
                     'status': 'REGISTERED' if r else 'UNREGISTERED', **({'source': r} if r else {})})
+    unresolved = {r['class'] for r in rows if r['status'] == 'UNRESOLVED'}
+    needed = [e for e in eqs if e['status'] == 'UNREGISTERED' and unresolved & set(e['classes'])]
+    for e in eqs:
+        e['needed'] = e in needed
+        e['blocks'] = sorted(unresolved & set(e['classes'])) if e['status'] == 'UNREGISTERED' else []
+    # how many unresolved classes each needed equation would unblock (a priority order)
+    needed_hist = {}
+    for e in needed:
+        k = str(len(e['blocks']))
+        needed_hist[k] = needed_hist.get(k, 0) + 1
     complete_curves = sorted({7, 28, 63} | {c['curve'] for c in curve_certs})
     open_curves = [c['D'] for c in graph['curves'] if c['status'] != 'COMPLETE']
+    # per unresolved curve: the unregistered unit equations its unresolved classes descend to
+    cls_of = {c['D']: c['classes'] for c in graph['curves']}
+    workload = []
+    for d in open_curves:
+        if d in complete_curves:
+            continue
+        cs = sorted(set(cls_of[d]) & unresolved)
+        eq = [e['form'] for e in needed if set(e['blocks']) & set(cs)]
+        workload.append({'D': d, 'unresolved_classes': cs, 'unit_equations_needed': len(eq), 'forms': eq})
+    workload.sort(key=lambda w: (w['unit_equations_needed'], w['D']))
     count = lambda s: sum(r['status'] == s for r in rows)   # noqa: E731
     out = {'label': 'DERIVED from registered Lean theorems; the raw workload is descent_residual.json and '
                     'thue_graph.json (unchanged)',
@@ -78,10 +109,17 @@ def main():
            'classes_unresolved': count('UNRESOLVED'),
            'unit_equations_total': len(eqs),
            'unit_equations_registered': sum(e['status'] == 'REGISTERED' for e in eqs),
-           'unit_equations_remaining': sum(e['status'] == 'UNREGISTERED' for e in eqs),
+           'unit_equations_unregistered': sum(e['status'] == 'UNREGISTERED' for e in eqs),
+           'unit_equations_unregistered_note': 'unregistered source equations, including leaves of classes '
+                                               'already completed by another route (field 756, D = 72)',
+           'unit_equations_needed': len(needed),
+           'unit_equations_needed_note': 'U_needed = union over UNRESOLVED classes C of (unit leaves of C minus '
+                                         'registered): the workload that still blocks a class',
+           'needed_by_class_count': needed_hist,
            'open_curves_raw': len(open_curves),
            'curves_conditionally_complete': complete_curves,
            'curves_unresolved': [d for d in open_curves if d not in complete_curves],
+           'curves_unresolved_workload': workload,
            'classes': rows, 'unit_equations': eqs}
     (ROOT / 'receipts' / 'descent_coverage.json').write_text(json.dumps(out, indent=1) + '\n')
     print({k: v for k, v in out.items() if not isinstance(v, list) or k.startswith('curves')})

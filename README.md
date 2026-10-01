@@ -108,7 +108,10 @@ their complete solution sets, each an exact equivalence over ℤ, and hands back
     - **D = 45, one nonmonic source equation for three classes, conditionally** (`Generated/Minus45.lean`). Classes 30, 31 and 32 descend to $-2u^3-6u^2v+3uv^2+4v^3=1$.
       - Its encoding has norm $4$. `NormRepProof.normRep_of_res` proves by a residue certificate modulo $8$ that every element of norm $4$ is $(4+x)\cdot$unit. No class number is used.
       - `minus45`: the integral points are exactly $(21,\pm96)$, under `matveev_w1` alone.
-    - **Coverage** (`receipts/descent_coverage.json`, derived from the registered Lean theorems): 3 of the 109 unit equations are registered, and $D=7,23,28,45,63$ are conditionally complete.
+    - **D = 18, in the order of the D = 72 residual, conditionally** (`Generated/Minus18.lean`). Classes 6 and 7 descend to $-u^3-3u^2v+6uv^2+2v^3=1$ and $-u^3-9u^2v+54uv^2+54v^3=1$ in $\mathbb{Z}[\theta]$, $\theta^3=9\theta+6$.
+      - Unit generation is imported from the shared module `Generated/Order1944.lean`, which `D72Unit` also imports. It is checked once.
+      - `minus18`: the integral points are exactly $(3,\pm3)$, under `matveev_v1` and `matveev_v2`. Class 6 needs only `matveev_v1`.
+    - **Coverage** (`receipts/descent_coverage.json`, derived from the registered Lean theorems): 6 of the 109 unit equations are registered (the five curve sources and the $D=72$ residual), and $D=7,18,23,28,45,63$ are conditionally complete. The workload that still blocks a class is $U_{\mathrm{needed}}$: 90 unit equations, the unregistered leaves of the 47 unresolved classes.
 
 ### 3. From constraints to certified plans
 The constraint compiler (`python -m perfectpower solve`, [guide](docs/CONSTRAINT_COMPILER.md)) accepts constraints that do not mention powers:

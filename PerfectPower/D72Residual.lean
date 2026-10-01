@@ -8,7 +8,7 @@ import PerfectPower.Generated.D72Unit
 `δ³ = 9δ + 6`, the element `γ = −3u − βv` is `(−3u − 6v) + v δ²` (`NormForm.d72_gamma_delta`), of
 norm `9 H(u, v)`.
 
-* **Proved:** `D72Unit.unitGen_proved`, the units of `ℤ[δ]` are `±ε₁^a ε₂^b`, with
+* **Proved:** `Order1944.unitGen_proved`, the units of `ℤ[δ]` are `±ε₁^a ε₂^b`, with
   `ε₁ = δ² − 3δ − 1`, `ε₂ = 2δ² − 1` (`UnitGenProof.unitGen_of_cert`, certificate checked by the
   kernel).
 * **Proved:** `D72Unit.normRep_pos_proved`, the elements of norm `9` are `α` times units,
@@ -46,7 +46,7 @@ theorem small_v (u v : ℤ) (hv : |v| ≤ 1) : H72 u v ≠ 1 ∧ H72 u v ≠ -1 
        interval_cases u <;> omega)
 
 /-- **The residual unit equation has no solution, under Matveev's bound.**  Unit generation
-(`Generated.D72Unit.unitGen_proved`), the norm representatives
+(`Generated.Order1944.unitGen_proved`), the norm representatives
 (`Generated.D72Unit.normRep_pos_proved`) and the analytic statement
 (`Generated.D72Unit.analytic_pos_proved`) are proved.  The target `H = −1` needs no premise of its
 own: it uses that of `H = 1`, transported by sign. -/

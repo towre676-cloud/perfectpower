@@ -230,6 +230,19 @@ The same pipeline closes the two unit equations behind `y² = x³ − 23`. Write
 The classes of `D = 23` reach these leaves by solution-carrying descent (`DescentLists`), not
 directly; see `MORDELL_BRANCH.md` §7.2.
 
+## A shared order: `ℤ[θ]`, `θ³ = 9θ + 6` (`Generated/Order1944.lean`, `Generated/Minus18.lean`)
+
+Unit generation for this order is proved once, in `Order1944.lean`. The `D = 72` residual
+(`D72Unit.lean`) and `y² = x³ − 18` (`Minus18.lean`) import it; neither re-checks the box.
+
+| item | `ℤ[θ]`, `θ³ = 9θ + 6` (discriminant 1944) |
+|---|---|
+| units | `ε₁ = θ² − 3θ − 1`, `ε₂ = 2θ² − 1`; box of 7,425 triples (`Order1944.unitGen_proved`) |
+| `φ` | `φ₁ = 1 + θ`, `φ₂ = 3 + 3θ`; `N(−u − vφᵢ) = Fᵢ(u, v)` by `ring` |
+| norm representatives | norm `1` (`normRep_one`) |
+| analytic, reduction | `analytic_v1_proved`, `analytic_v2_proved` from `matveev_v1`, `matveev_v2`; `H ≤ 3` |
+| lists | `F₁ = (−1, −3, 6, 2) = 1 ⇔ (u, v) = (−1, 0)`; `F₂ = (−1, −9, 54, 54) = 1 ⇔ (u, v) = (−1, 0)` |
+
 ## A nonmonic source: `ℤ[x]`, `x³ = 18x + 12` (`Generated/Minus45.lean`)
 
 `G = (−2, −6, 3, 4)` with right side `1` has leading coefficient `−2`, so its encoding has norm `4`.
