@@ -164,7 +164,6 @@ lemma pwHi_sound (p : ℕ) {z z2 : ℚ} (hz : 0 ≤ z) (h2 : (z : ℝ) ^ 2 ≤ (
     have h1 := pwHi_sound p hz h2 k
     refine le_trans ?_ (le_rup_R p _)
     push_cast
-    have hz' : (0 : ℝ) ≤ z := by exact_mod_cast hz
     calc (z : ℝ) ^ (2 * (k + 1) + 1) = (z : ℝ) ^ (2 * k + 1) * z ^ 2 := by ring
       _ ≤ ((pwHi p z z2 k : ℚ) : ℝ) * z2 := mul_le_mul h1 h2 (by positivity)
           (le_trans (by positivity) h1)
@@ -210,7 +209,7 @@ lemma sumLo_sound (p J : ℕ) {z : ℚ} (h0 : 0 ≤ z) (h1 : (z : ℝ) < 1) :
 lemma sumHi_sound (p J : ℕ) {z : ℚ} (h0 : 0 ≤ z) (hz2 : rup p (z * z) < 1) :
     Real.log ((1 + z) / (1 - z)) ≤ 2 * ((sumHi p J z : ℚ) : ℝ) := by
   have hz : (0 : ℝ) ≤ z := by exact_mod_cast h0
-  set z2 := rup p (z * z) with hz2def
+  set z2 := rup p (z * z)
   have z2b : (z : ℝ) ^ 2 ≤ ((z2 : ℚ) : ℝ) := by
     have := le_rup_R p (z * z); push_cast at this; nlinarith
   have hz2R : ((z2 : ℚ) : ℝ) < 1 := by exact_mod_cast hz2
@@ -311,7 +310,6 @@ lemma red_eq {y : ℚ} : (y : ℝ) = (2 : ℝ) ^ (red y).1 * ((red y).2 : ℝ) :
 lemma log_red {y : ℚ} (hw1 : 1 ≤ (red y).2) :
     Real.log y = (red y).1 * Real.log 2 +
       Real.log ((1 + (zOf (red y).2 : ℝ)) / (1 - (zOf (red y).2 : ℝ))) := by
-  have hw : (1 : ℝ) ≤ (red y).2 := by exact_mod_cast hw1
   have hz : (1 + (zOf (red y).2 : ℝ)) / (1 - (zOf (red y).2 : ℝ)) = (red y).2 := by
     simp only [zOf]; push_cast; field_simp; ring
   rw [hz, red_eq, Real.log_mul (by positivity) (by positivity), Real.log_zpow]

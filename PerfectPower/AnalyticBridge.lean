@@ -46,7 +46,6 @@ lemma siegel {b t pi pj pk gi gj gk N : ℝ} (hb : b ≠ 0) (hgi : gi = b * (t -
   have dj0 : 0 < |pj - pi| := abs_pos.mpr (sub_ne_zero.mpr (Ne.symm dij))
   have dk0 : 0 < |pk - pi| := abs_pos.mpr (sub_ne_zero.mpr (Ne.symm dik))
   have djk0 : 0 < |pj - pk| := abs_pos.mpr (sub_ne_zero.mpr djk)
-  have hN' : 0 < |N| := abs_pos.mpr hN0
   -- |pj − pi| ≤ |pj − t| + |t − pi| ≤ 2 |t − pj|
   have ej : |pj - pi| ≤ 2 * |t - pj| := by
     have := abs_sub_le pj t pi
@@ -371,8 +370,6 @@ lemma ratio_eq {phi phj phk gj gk gjr gkr e1j e1k e2j e2k s : ℝ} {x y : ℤ}
     (hj : gjr = s * (gj * (e1j ^ x * e2j ^ y))) (hk : gkr = s * (gk * (e1k ^ x * e2k ^ y))) :
     1 + ((phi - phj) * gkr / ((phi - phk) * gjr) - 1) =
       (phi - phj) * gk / ((phi - phk) * gj) * ((e1k / e1j) ^ x * (e2k / e2j) ^ y) := by
-  have a := zpow_ne_zero x he1
-  have b := zpow_ne_zero y he2
   rw [add_sub_cancel, hj, hk, div_zpow, div_zpow]
   field_simp
   ring
@@ -493,7 +490,6 @@ theorem real_case {p J em : ℕ} {Nq : ℚ} {V : ℕ} {Cm : ℚ} {B : Base} {C :
   have z_gj := nz_ne m_gj n_gj
   have z_gk := nz_ne m_gk n_gk
   have hs0 : s ≠ 0 := by rcases hs with h | h <;> rw [h] <;> norm_num
-  have hV0 : (0 : ℝ) ≤ V := by positivity
   have hb0 : 0 < |b| := by linarith
   have hbne : b ≠ 0 := abs_pos.mp hb0
   have hb3 : (0 : ℝ) < |b| ^ 3 := by positivity
