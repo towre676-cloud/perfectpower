@@ -50,7 +50,9 @@ receipts:
 	$(PY) python/make_pell_heat_receipt.py
 	$(PY) python/make_lean_mordell_branch.py
 	$(PY) python/make_lean_thue_branch.py
-	$(PY) python/make_lean_field756.py
+	$(PY) python/unit_basis_witness.py
+	$(PY) python/norm_rep_localization.py
+	$(PY) python/make_lean_unit_fields.py
 	$(PY) python/make_mordell_registry.py
 	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py
@@ -58,6 +60,7 @@ receipts:
 	$(PY) python/make_oeis_problems.py
 	$(PY) python/d72_local.py
 	$(PY) python/d72_delta_box.py 40
+	$(PY) python/d72_unit_sieve.py
 	$(PY) python/descent_residual.py
 	$(PY) galois_merge/run_repo_adapters.py
 	$(PY) python/make_oeis_auto.py

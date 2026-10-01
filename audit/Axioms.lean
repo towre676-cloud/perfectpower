@@ -773,11 +773,29 @@ open PerfectPower
 #print axioms PerfectPower.BoundedPell.quad_iff_norm
 #print axioms PerfectPower.BoundedPell.quad_bounded
 -- D72Residual
-#print axioms PerfectPower.D72Residual.eps1_inv
-#print axioms PerfectPower.D72Residual.eps2_inv
-#print axioms PerfectPower.D72Residual.box_ok
 #print axioms PerfectPower.D72Residual.small_v
 #print axioms PerfectPower.D72Residual.residual_empty
+-- DirectReduction
+#print axioms PerfectPower.DirectReduction.reduce
+#print axioms PerfectPower.DirectReduction.dist_int
+#print axioms PerfectPower.DirectReduction.abs_le_of_between
+#print axioms PerfectPower.DirectReduction.step_sound
+#print axioms PerfectPower.DirectReduction.chain_sound
+-- UnitPremises
+#print axioms PerfectPower.UnitPremises.mul_assoc'
+#print axioms PerfectPower.UnitPremises.mul_neg'
+#print axioms PerfectPower.UnitPremises.zpow_eq_zp
+#print axioms PerfectPower.UnitPremises.mem_fam
+#print axioms PerfectPower.UnitPremises.extBound_of
+#print axioms PerfectPower.UnitPremises.unitBox_sound
+-- Generated/D72Unit
+#print axioms PerfectPower.Generated.D72Unit.e1_inv
+#print axioms PerfectPower.Generated.D72Unit.e2_inv
+#print axioms PerfectPower.Generated.D72Unit.unit_box
+#print axioms PerfectPower.Generated.D72Unit.class_pos
+#print axioms PerfectPower.Generated.D72Unit.class_neg
+#print axioms PerfectPower.Generated.Field756.unit_box
+#print axioms PerfectPower.D72Residual.H72_eq
 -- UnitBox
 #print axioms PerfectPower.UnitBox.dec_enc
 #print axioms PerfectPower.UnitBox.cauchy

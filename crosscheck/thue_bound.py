@@ -22,8 +22,10 @@ checks).  For each `γ0` and each `i0`, the conjugate closest to `t = c0 a / b`:
    `(e1, e2) = M^{-1}(log|b| + r_j - log|γ0_j|, ...)` gives `log|b| >= (H - b')/a`.
 4. Matveev (real case; Bugeaud–Mignotte–Siksek 2006, Thm 9.4), `n = 3`, degree `D = 6`:
    `H < H0`.
-5. Dujella–Pethő reduction, iterated (valid for any integer `q`; the `e2` step as in
-   `thue_bound_d72.py`).
+5. The direct maximum-exponent reduction (`DirectReduction.reduce`): for an integer `q` with
+   `ε = ‖qμ‖ − M‖qκ‖ > 0`, `H ≤ log(qA/ε)/c`, bounding both exponents at once.  Each stage is
+   recorded exactly (rational enclosures of `κ, μ`, `c ≥ cl`, `A ≤ Au`, and `(q, B, J)` with a
+   Taylor certificate) and replayed by `perfectpower.reduction_check` and the Lean kernel.
 
 Output per `(γ0, i0)`: `V0` and `H_reduced`.  The solutions with `|b| <= V0` are listed by an exact
 search (`F(a, b) = M` with `b` fixed has its roots `a` within the Cauchy bound).
@@ -31,8 +33,13 @@ search (`F(a, b) = M` with `b` fixed has its roots `a` within the Cauchy bound).
 from __future__ import annotations
 
 from fractions import Fraction
+import sys
+from pathlib import Path
 
 from mpmath import iv, mp, mpf
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'python'))
+from perfectpower import reduction_check as RC  # noqa: E402
 
 iv.prec = 900
 mp.prec = 900
@@ -140,42 +147,63 @@ def case(K: Field, c0: int, M: int, phi, gamma0, eps1, eps2, i0: int) -> dict:
     assert H0 > C / c2
     kap, mu = l1 / l2, l3 / l2
     Acoef = Kc / _lo(abs(l2))
-    steps, Mb = [], H0
+    # rational enclosures (outward) of κ, μ, a lower bound for c and an upper bound for A
+    enc = {'kl': _q_down(kap.a, 256), 'ku': _q_up(kap.b, 256), 'ml': _q_down(mu.a, 256),
+           'mu': _q_up(mu.b, 256), 'cl': _q_down(c2, 64, slack=1), 'Au': _q_up(Acoef, 64, slack=1)}
+    M0 = int(mp.ceil(H0))
+    steps, Mb = [], M0
     for _ in range(16):
-        x = _mid(kap)
-        p0, p1, q0, q1 = 0, 1, 1, 0
-        best, y = None, x
-        for _ in range(600):
-            ai = int(mp.floor(y))
-            p0, p1 = p1, ai * p1 + p0
-            q0, q1 = q1, ai * q1 + q0
-            if q1 > 10 ** 6 * Mb:
-                qk, qm = q1 * kap, q1 * mu
-                dk = _hi(abs(qk - mp.nint(_mid(qk))))
-                nm = mp.nint(_mid(qm))
-                dm = min(_lo(abs(qm - nm)), _lo(abs(qm - nm - 1)), _lo(abs(qm - nm + 1)))
-                eps = dm - Mb * dk
-                if eps > 0:
-                    best = (q1, eps)
-                    break
-            frac = y - ai
-            if frac == 0:
-                break
-            y = 1 / frac
-        if best is None:
+        st = _direct_step(enc, Mb, c2, Acoef)
+        if st is None or st['B'] >= Mb:
             break
-        q, eps = best
-        X1 = mp.log(q * Acoef / eps) / c2
-        T = max(mpf(0), mp.log(Acoef) / c2)
-        newM = max(X1, T, X1 * _hi(abs(kap)) + _hi(abs(mu)) + 1)
-        steps.append({'M': mp.nstr(Mb, 8), 'q_digits': len(str(q)), 'eps': mp.nstr(eps, 5),
-                      'bound_e1': mp.nstr(X1, 8), 'new_H_bound': mp.nstr(newM, 8)})
-        if newM >= Mb * mpf('0.999'):
-            break
-        Mb = mp.floor(newM)
+        steps.append(st)
+        Mb = st['B']
+    assert RC.chain_ok(enc, M0, steps) and RC.chain_end(M0, steps) == Mb
     return {'i0': i0, 'K1': mp.nstr(_hi(K1), 10), 'V0': V0, 'c2': mp.nstr(c2, 10), 'K': mp.nstr(Kc, 10),
             'A': [mp.nstr(A1, 8), mp.nstr(A2, 8), mp.nstr(A3, 8)], 'matveev_C': mp.nstr(C, 8),
-            'H0': mp.nstr(H0, 8), 'reduction': steps, 'H_reduced': int(Mb)}
+            'H0': mp.nstr(H0, 8), 'M0': M0, 'enclosure': RC.enc_to_json(enc), 'steps': steps,
+            'H_reduced': Mb}
+
+
+def _q_exact(x):
+    """An mpf as an exact Fraction."""
+    sign, man, exp, _ = mpf(x)._mpf_
+    v = Fraction(int(man)) * (Fraction(2) ** exp)
+    return -v if sign else v
+
+
+def _q_down(x, bits, slack=0):
+    v = _q_exact(x) * 2 ** bits
+    return Fraction(v.numerator // v.denominator - slack, 2 ** bits)
+
+
+def _q_up(x, bits, slack=0):
+    v = _q_exact(x) * 2 ** bits
+    return Fraction(-((-v.numerator) // v.denominator) + slack, 2 ** bits)
+
+
+def _direct_step(enc, M, c2, Acoef):
+    """The direct maximum-exponent step (`DirectReduction.reduce`): a convergent denominator q of κ
+    with ε = δ − M η > 0, and the least B with a Taylor certificate."""
+    kmid = (enc['kl'] + enc['ku']) / 2
+    p0, p1, q0, q1 = 0, 1, 1, 0
+    y = kmid
+    for _ in range(2000):
+        ai = y.numerator // y.denominator
+        p0, p1 = p1, ai * p1 + p0
+        q0, q1 = q1, ai * q1 + q0
+        if q1 > 10 ** 6 * M:
+            eps = RC.delta_of(enc['ml'], enc['mu'], q1) - M * RC.eta_of(enc['kl'], enc['ku'], q1)
+            if eps > 0:
+                guess = int(mp.floor(mp.log(q1 * Acoef / mpf(eps.numerator) * eps.denominator) / c2))
+                r = RC.best_step(enc, M, q1, guess)
+                if r is not None:
+                    return {'q': q1, 'B': r[0], 'J': r[1]}
+        frac = y - ai
+        if frac == 0:
+            break
+        y = 1 / frac
+    return None
 
 
 def evalF(F, a, b):
