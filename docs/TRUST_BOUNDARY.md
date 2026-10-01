@@ -15,7 +15,7 @@ Given that kernel, the following are theorems:
   - For monomials $n^r$ the count is exact.
   - The hit indicator of $c\,a^n$ is $d$-periodic, so its density is $P/d$.
   - $2n^2+1$ has infinitely many square values and density zero.
-  - Ljunggren's quartic has hit set exactly $\lbrace 3\rbrace $.
+  - Ljunggren's quartic has hit set exactly $\lbrace 3\rbrace$.
 - **Runge reduction in integer form** (`runge_pointwise`, `runge_finite`).
 - **Generated hit sets.** Each statement of the form "for $n\ge1$, $F(n)=m^d$ is solvable iff $n\in H$", for the polynomials named in `PerfectPower/Generated/`. Python proposes the data, and Lean checks the proof. **A compiled generated theorem does not depend on the Python code being correct.**
 
@@ -47,7 +47,7 @@ abc is an ordinary proposition passed as an argument, so the axiom audit is unaf
 ## 2. What the Lean kernel does not prove
 
 - **The Python classifier's type assignments** (`atlas.py`): power, radical, Pell or finite. Nor does it prove the constants $\kappa$, the structural counts, or the shift spectrum. These are paper proofs, cross-checked against direct scans.
-- **Siegel's theorem, and anything resting on it.** Through Theorem G of the research notes, it now replaces the secondary-source LeVeque statement. That covers the finite type of the atlas, the exponent spectrum $\lbrace 0,1\rbrace \cup\lbrace 1/t\rbrace $ as a complete list, and Corollary K. Siegel's and Boshernitzan's theorems are likewise outside the kernel.
+- **Siegel's theorem, and anything resting on it.** Through Theorem G of the research notes, it now replaces the secondary-source LeVeque statement. That covers the finite type of the atlas, the exponent spectrum $\lbrace 0,1\rbrace \cup\lbrace 1/t\rbrace$ as a complete list, and Corollary K. Siegel's and Boshernitzan's theorems are likewise outside the kernel.
 - **That scan-only rows are complete.**
 - **Hall's conjecture, Pillai's conjecture, or any uniform integral-point bound.** No part of the repository proves these, and none is claimed. See `FRONTIER_PLAN.md`.
 - **Completeness of the Mordell census** (`data/mordell_census.csv`). That is Sage's claim: Mordell–Weil generators from mwrank, saturated, then elliptic-logarithm sieving. It is rigorous modulo the correctness of that software and of the proved rank. Lean checks no row of the census.
@@ -90,12 +90,12 @@ Every data row carries one label: `receipts/atlas_benchmarks.json`, `data/famili
 | `LEAN_REDUCTION_PLUS_INDEPENDENT_POINTS` | Lean proves the reduction to an elliptic curve, the congruence filtering, and that every surviving point is a hit (`PerfectPower/Binomial.lean`). Completeness of the curve's integral-point list is an explicit hypothesis, certified by Sage (`receipts/binomial_curves.json`: rank proved, basis saturated). |
 | `CONDITIONAL_ON_UNPROVEN_RANK` | A Sage integral-point list computed from generators whose rank mwrank could not prove. Complete only if the rank is right. Used in `data/mordell_census.csv`. |
 | `CONDITIONAL_ON_UNSATURATED_BASIS` | A Sage integral-point list whose generator basis Sage could not show saturated. Defined for `data/mordell_census.jsonl`; no row currently carries it. |
-| `SCAN_DISAGREEMENT` | Sage's list and our independent scan disagree for $|x|\le10^5$. Such a row is never certified. Defined for the census; no row currently carries it. |
+| `SCAN_DISAGREEMENT` | Sage's list and our independent scan disagree for $\lvert x\rvert \le10^5$. Such a row is never certified. Defined for the census; no row currently carries it. |
 | `EXACT_WITHIN_BOUND` | An exhaustive enumeration, complete up to the stated bound and silent beyond it. Used in `data/pillai_gaps.csv`. |
 | `SCAN_EVIDENCE_ONLY` | Finiteness is conditional on Siegel (Theorem G). The listed hits are those with $n\le10^5$. **No completeness claim is made.** |
 
 **The census gate.** `make receipts` runs `crosscheck/mordell_census.py --from-jsonl 10000`, which checks `data/mordell_census.jsonl` in plain Python before it rebuilds the CSV and summary.
-- *Domain.* The keys are exactly $\lbrace -10000,\dots,-1,1,\dots,10000\rbrace $, once each and in order, so a duplicated row cannot hide an omitted curve. Every curve is $[0,0,0,0,k]$, and every $x$-list and scan list is strictly increasing.
+- *Domain.* The keys are exactly $\lbrace -10000,\dots,-1,1,\dots,10000\rbrace$, once each and in order, so a duplicated row cannot hide an omitted curve. Every curve is $[0,0,0,0,k]$, and every $x$-list and scan list is strictly increasing.
 - *Rows.* The SHA-256 of each $x$-list is recomputed, each $x^3+k$ is checked to be a square, the stored scan is compared with the listed points for $|x|\le10^5$, and the label is recomputed from `rank_proved`, `saturation_index` and that comparison. A row whose scan cross-check fails cannot carry `INDEPENDENT_COMPUTATION`.
 - *Not rerun.* The scan itself is stored data here. Only the Sage run (`make crosscheck`) recomputes it.
 

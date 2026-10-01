@@ -16,14 +16,14 @@ and the count of that coordinate's values depends on how fast the coordinate gro
 - no value shared between two orbits above a threshold $V_0$.
 
 Then the accepted values $S$ satisfy
-$$\operatorname{card}\lbrace v\in S: v\le N\rbrace =\Big(\sum_\rho\frac{g_\rho}{P_\rho\log E_\rho}\Big)\log N+O(1).$$
+$$\lvert\lbrace v\in S: v\le N\rbrace\rvert=\Big(\sum_\rho\frac{g_\rho}{P_\rho\log E_\rho}\Big)\log N+O(1).$$
 Writing $E_\rho=\varepsilon^{r_\rho}$ gives the constant $\sum_\rho g_\rho/(P_\rho r_\rho\log\varepsilon)$: the
 degree $r$ of the observation enters, and duplicate images are excluded by hypothesis.
 
 The proof has three layers:
 - `count_between`: indices between two geometric bounds;
 - `filtered_obs_count`: periodic acceptance, split by residue class;
-- `value_count`: indices to values, with an error of at most $(\operatorname{card}R+1)(V_0+1)$.
+- `value_count`: indices to values, with an error of at most $(\mathrm{card}R+1)(V_0+1)$.
 
 **`observed_count_eventually`** needs monotonicity and the growth bounds only from an index
 $j_0(\rho)$ on. The first $j_0$ values change the count by a bounded amount, and
@@ -77,8 +77,8 @@ The relations the entries state about each other are theorems:
 
 **Counting.**
 - **The Pell numbers** are the union of the two observed orbits, disjoint by parity: even $B$
-  values are even and odd ones are odd. `observed_count` with $\operatorname{card}R=2$ gives
-  $\operatorname{card}\lbrace \text{Pell numbers}\le N\rbrace =2\log N/\log(3+2\sqrt2)+O(1)=\log N/\log(1+\sqrt2)+O(1)$
+  values are even and odd ones are odd. `observed_count` with $\mathrm{card}R=2$ gives
+  $\lvert\lbrace \text{Pell numbers}\le N\rbrace\rvert=2\log N/\log(3+2\sqrt2)+O(1)=\log N/\log(1+\sqrt2)+O(1)$
   (`pell_count`, `log_eps_eq`).
 - **Square triangular numbers** count at $\log N/(2\log\varepsilon)$ and the odd ones at
   $\log N/(4\log\varepsilon)$ (`SquareTriangular.sqTri_count`, `oddSqTri_count`).
@@ -182,7 +182,7 @@ $9+4\sqrt5=\varphi^6$ (`eps_eq`) into **six seed orbits**, three on each equatio
 - `cert_neg`: seeds $(1,1),(4,2),(11,5)$ on $x^2-5y^2=-4$, and `neg_iff`: the solutions are exactly
   $(L_{2n+1},F_{2n+1})$.
 
-**Inversion** (`fib_collision`): $F_i=F_j$ only for $i=j$ or $\lbrace i,j\rbrace =\lbrace 1,2\rbrace $. The value
+**Inversion** (`fib_collision`): $F_i=F_j$ only for $i=j$ or $\lbrace i,j\rbrace =\lbrace 1,2\rbrace$. The value
 determines the index except at $1=F_1=F_2$, and **the parity of the index repairs it**
 (`fib_parity_inj`): the two collide on different equations ($\Delta=-4$ and $\Delta=+4$).
 
@@ -199,7 +199,7 @@ The `%N` text of an entry is kept verbatim. When it has one of these forms, it i
 | encoding | form | Lean definition |
 |---|---|---|
 | `LinRec` | $a(n)=c_1a(n-1)+c_2a(n-2)+e$ for $n\ge s$, initial values from the text (or from the terms, recorded) | pattern-matching recursion |
-| `GF` | `Expansion of P(x)/Q(x)`, any rational expression, reduced, $\deg Q\in\lbrace 2,3\rbrace $ | `gf2`/`gf3`: the coefficient recursion of $Q\cdot A=P$ |
+| `GF` | `Expansion of P(x)/Q(x)`, any rational expression, reduced, $\deg Q\in\lbrace 2,3\rbrace$ | `gf2`/`gf3`: the coefficient recursion of $Q\cdot A=P$ |
 | `Coord` | `F(2n)`, `2*Fibonacci(2*n+2)`, `Lucas(2n)^2`, `Squares of Pell numbers` | the coordinate expression |
 | `SetSquare` | `Numbers k such that D*k^2 + c is a square` (and "Positive integers k ...") | the set, with its domain |
 
@@ -226,7 +226,7 @@ records `exact from index r`.
 
 **Domain.** A239365 says "Numbers n such that $10n^2+4$ is a square". $n=0$ is a solution, but the
 listed terms start at 12. The compiler reads "positive $n$", records why, and the Lean set is
-$\lbrace k\ge1\rbrace $, with merged index 0 (the seed $(2,0)$) skipped.
+$\lbrace k\ge1\rbrace$, with merged index 0 (the seed $(2,0)$) skipped.
 
 **Promotion** (`make_oeis_auto.py`) requires all three of:
 1. the encoding, read from the name, reproduces every term at the entry's offset;
@@ -265,7 +265,7 @@ A001075, A001353, A001835, A011944, A052530, A067900, A079935, A094347.
   $M=\begin{psmallmatrix}1&2&2\\2&1&2\\2&2&3\end{psmallmatrix}$ (`vM_eq`).
 - **Coprime splitting** (A078522): $(k+1)(2k+1)=m^2$ with coprime factors forces both factors to be
   squares (`Int.sq_of_isCoprime`), which puts $k$ on the odd orbit.
-- **Finite exceptional set** (A055792): "$a$ and $\lfloor a/2\rfloor$ squares" is $x^2-2y^2\in\lbrace 0,1\rbrace $.
+- **Finite exceptional set** (A055792): "$a$ and $\lfloor a/2\rfloor$ squares" is $x^2-2y^2\in\lbrace 0,1\rbrace$.
   The value $0$ comes from $x^2=2y^2$ (`sq_eq_two_sq`, from the irrationality of $\sqrt2$), the
   rest from the even orbit.
 - **Residue filter** (A046176): $k^2=m(2m-1)\iff(4m-1)^2-2(2k)^2=1$, with $4m-1\equiv3\pmod4$, which
@@ -302,7 +302,7 @@ so this certificate does not apply (`REAL_QUADRATIC`). For the 59 curves with $k
 **$y^2=x^3-1$.** The certificate fails in two places, and **neither is an arithmetic
 obstruction**:
 - **The unit $i$.** The table rejects the norm-1 representation $0^2+1^2$ (`UNIT_BEYOND_PM1`)
-  because it assumes the unit group is $\lbrace \pm1\rbrace $. Every Gaussian unit is a cube, since
+  because it assumes the unit group is $\lbrace \pm1\rbrace$. Every Gaussian unit is a cube, since
   $i=(-i)^3$ (a correction from the `expert_push` package: an earlier release named $i$ as the
   obstruction). A unit can therefore be absorbed into the cube.
 - **The ramified prime.** It also rejects $2^2+2^2=2^3$, and $2+2i=(i-1)^3$ is a cube
