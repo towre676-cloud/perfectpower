@@ -11,7 +11,7 @@ This is the general pipeline `thue_bound.py` (Siegel, Matveev, then the direct m
 reduction with exact rational stages) applied to this field with `|M| = 1`.
 
 Run: /opt/sagevenv/bin/python crosscheck/thue_bound_d72.py
-Writes receipts/d72_thue_bound.json, an input of python/make_lean_field756.py.
+Writes receipts/d72_thue_bound.json, an input of python/make_lean_unit_fields.py.
 """
 import json
 import sys

@@ -280,25 +280,22 @@ two norm-±9 representatives up to units.
 
 The whole remaining `D = 72` point-free problem is therefore **one unit Thue equation**.
 
-**Exponent bound** (`crosscheck/thue_bound_d72.py`, `receipts/d72_thue_bound.json`; external).
-The standard Tzanakis–de Weger route, in 900-bit interval arithmetic:
-- Siegel's identity for each real embedding gives `|Λ| ≤ K₁/|v|³` for the linear form
-  `Λ = log|…| + e₁ log|ε₁…| + e₂ log|ε₂…|`, and `log|v| ≥ (H − b)/a` with `H = max |eᵢ|`.
-- Matveev's theorem (`n = 3`, degree 6) gives `H ≤ 2.6·10¹⁸`.
-- Dujella–Pethő reduction, with interval bounds on `‖qκ‖` and `‖qμ‖`, brings this to
-  `H ≤ 4, 35, 4` for the three embeddings, so `H ≤ 35` once `|v| > 1`.
+**Exponent bound and Lean** ([UNIT_PREMISES.md](UNIT_PREMISES.md)).
+- Siegel's identity and Matveev's theorem give a first bound `H ≤ 2.6·10¹⁸`, with `H = max |eᵢ|`.
+  The direct maximum-exponent reduction (`DirectReduction.lean`), applied exactly, brings this to
+  **`H ≤ 4`** once `|v| > 1` (it was 35).
+- `Generated/D72Unit.lean` and `D72Residual.residual_empty` prove `H(u, v) ≠ ±1` for all
+  integers. The kernel checks the reduction chains, the box of `9²` elements of either sign, and
+  the search `|v| ≤ 1`.
+- The proof rests on three named premises:
+  - `unitGen`: the units are `±ε₁^a ε₂^b`. An exact fundamental-domain witness supports it;
+    10,659 triples, finite part in Lean.
+  - `normRep_pos` and `normRep_neg`: the elements of norm `±9`. Supported by 3 being totally
+    ramified and `ℤ[δ]` being 3-maximal.
+  - `analytic_pos` and `analytic_neg`: Siegel and Matveev.
 
-**Lean** (`D72Residual.lean`):
-- `box_ok` checks by kernel evaluation (`decide +kernel`, about 17 s) that none of the
-  `71 × 71` elements `α ε₁^{e₁} ε₂^{e₂}`, `|eᵢ| ≤ 35`, is in the lattice, with either sign.
-- `small_v` proves there is no solution with `|v| ≤ 1`.
-- **`residual_empty (hB : ExtBound 35 1)`**: `H(u, v) ≠ ±1` for all integers `u, v`.
-
-The hypothesis `ExtBound 35 1` is named and explicit. It says every solution with `|v| > 1` has
-`γ = ±α ε₁^{e₁} ε₂^{e₂}`, `|eᵢ| ≤ 35`. It rests on PARI (`h = 1`, the unit basis, the norm-9
-ideal), on Matveev's theorem, and on the interval reduction. None of these is in Lean. So the
-residual is **closed conditionally**: the finite part is a kernel theorem, and the bound is an
-external certificate.
+So the residual is **closed conditionally**, and its external part is now three separate,
+reusable statements instead of one opaque bound.
 
 ### 7.2 Solution-preserving descent on the nonempty classes (`python/descent_residual.py`, `receipts/descent_residual.json`)
 
@@ -342,36 +339,36 @@ discriminant 756, is totally real, has class number 1 and unit rank 2, and is ce
 - **Per class:** only the norm list and the solutions' exponents. Every class has **one** norm
   representative and **2** solutions. Every solution has unit exponents with `|nᵢ| ≤ 1`, or
   `≤ 2` for class 50.
-- **The bound** (`crosscheck/thue_bound_field756.py`, `receipts/field756_bound.json`; external).
-  It uses the same pipeline as §7.1 (`crosscheck/thue_bound.py`), which reproduces the `D = 72`
-  bound when run on that field. Results:
+- **The bound** (`crosscheck/thue_bound_field756.py`, `receipts/field756_bound.json`). It uses
+  the general pipeline `crosscheck/thue_bound.py`, also used for `D = 72`, with the direct
+  maximum-exponent reduction recorded exactly ([UNIT_PREMISES.md](UNIT_PREMISES.md)):
 
-  | class | D | M | `V` | `H` |
-  |---|---|---|---|---|
-  | 0 | 7 | 64 | 1 | 11 |
-  | 1 | 7 | 64 | 1 | 13 |
-  | 2 | 7 | 8 | 1 | 10 |
-  | 18 | 28 | 512 | 1 | 12 |
-  | 19 | 28 | 512 | 1 | 13 |
-  | 20 | 28 | 64 | 1 | 12 |
-  | 50 | 63 | 64 | 0 | 10 |
+  | class | D | M | `V` | `H` (was) | `H` (direct) |
+  |---|---|---|---|---|---|
+  | 0 | 7 | 64 | 1 | 11 | 5 |
+  | 1 | 7 | 64 | 1 | 13 | 7 |
+  | 2 | 7 | 8 | 1 | 10 | 5 |
+  | 18 | 28 | 512 | 1 | 12 | 6 |
+  | 19 | 28 | 512 | 1 | 13 | 6 |
+  | 20 | 28 | 64 | 1 | 12 | 6 |
+  | 50 | 63 | 64 | 0 | 10 | 5 |
 
-  Every solution with `|b| > V` has `c₀a − bφ = ±γ₀ ε₁^{n₁} ε₂^{n₂}` with `max |nᵢ| ≤ H`.
-- **Lean** (`UnitBox.lean`, `DescentThueList.lean`, `Generated/Field756.lean`):
-  - `UnitBox.thue_list`: under the named bound `ExtBound`, `F(a, b) = M ⇔ (a, b) ∈ L`. The kernel
-    checks the box (every lattice point of either sign that solves `F = M` is listed) and an
-    exhaustive search over `|b| ≤ V` below the Cauchy root bound (`UnitBox.cauchy`).
-  - `DescentThueList.complete_of_lists`: branch transport to obligations that carry complete
-    lists. Each listed solution, mapped back by the unimodular matrix, gives `y` exactly.
-  - `Field756.minus7`, `minus28` and `minus63`: the complete integral points, conditional on the
-    hypotheses `bound_i` of each curve's classes. The box hits are exactly PARI's solutions
-    (positive control), and the points equal the Sage census.
-- **What stays external:** the seven `bound_i`, which rest on PARI (`h = 1`, the unit basis, the
-  norm representatives), Matveev and the interval reduction. A field match is still not an
-  equivalence: the 7 classes remain 7 obligations, sharing one unit group.
-- **Milestones** (`NEXT_PUSH.md`, item 1). Done: the external bound, the checked finite search,
-  and branch transport with lists. Open: Lean proofs of the bounds, which need norm = determinant
-  for this field and completeness of the representatives and units.
+- **Lean**:
+  - `UnitBox.thue_list`: a complete list from the box and the small-`b` search (`UnitBox.cauchy`).
+  - `UnitPremises.extBound_of`: the box bound **derived** from three premises plus kernel-checked
+    reduction chains and norm identities.
+  - `DescentThueList.complete_of_lists`: branch transport to classes with complete lists.
+  - `Generated/Field756.lean`: `class_i` and `minus7`, `minus28`, `minus63`. The box hits are
+    exactly PARI's solutions (positive control), and the points equal the Sage census.
+- **The three premises** (statements in `UnitPremises`, evidence in
+  [UNIT_PREMISES.md](UNIT_PREMISES.md)):
+  - `unitGen`, one for the field. The exact fundamental-domain witness covers 931 triples and
+    replaces PARI's unit basis; its finite part is in Lean.
+  - `normRep_i`: every norm target is supported on 2 and 3, which are totally ramified, and
+    `ℤ[x]` is maximal there (Dedekind's criterion, checked exactly).
+  - `analytic_i`: Siegel's identity, the conjugate estimates and Matveev's theorem.
+- A field match is still not an equivalence: the 7 classes remain 7 obligations, sharing one unit
+  group and one `unitGen`.
 
 ### 7.4 Positive `k`
 

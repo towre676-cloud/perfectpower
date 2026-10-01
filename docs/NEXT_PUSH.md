@@ -81,25 +81,19 @@ git.
 
 1. **Complete lists for `D = 7, 28, 63`, from one shared field** (`MORDELL_BRANCH.md` §7.3).
    - **Target:** `∀ x y, y² = x³ − D ↔ (x, y) ∈ L_D` for the three curves.
-   - **Route:** for each of the 7 classes `F_i = M_i`, every solution has
-     `c₀a − bφ = ±α_{i,j} ε₁^{e₁} ε₂^{e₂}` with `max |eᵢ| ≤ B_{i,j}`; then the finite search and the
-     branch transport.
-   - **Now in Lean, conditionally** (`Generated/Field756.lean`): `minus7`, `minus28` and `minus63`,
-     each with the bounds `bound_i` of its classes as hypotheses. The box, the small-`b` search and
-     the branch transport (`DescentThueList.complete_of_lists`) are kernel-checked. The box hits
-     equal PARI's solution lists, and the points equal the Sage census.
-   - **Missing:** Lean proofs of the seven `bound_i`, which are external now
-     (`crosscheck/thue_bound_field756.py`: `H ≤ 13`, `V ≤ 1`). Each needs the norm = determinant
-     identification for this field, completeness of the norm representatives and of the unit
-     basis (`h = 1`, certified by PARI), and the linear-forms bound.
+   - **In Lean, under three named premises** (`Generated/Field756.lean`, `UnitPremises`):
+     `minus7`, `minus28` and `minus63`. Kernel-checked: the direct-`H` reduction chains, norm
+     identities, boxes, small-`b` searches and branch transport.
+   - **Missing:** Lean proofs of the premises ([UNIT_PREMISES.md](UNIT_PREMISES.md)):
+     - `unitGen`: the real-log fundamental-domain argument. The finite part is done.
+     - `normRep_i`: the index criterion and ideal factorization. The modular facts are done.
+     - `analytic_i`: Siegel's identity and Matveev's theorem. Matveev is the boundary that stays
+       external.
 2. **The `D = 72` residual equation.**
    - **Target:** `∀ u v, H72 u v ≠ 1 ∧ H72 u v ≠ −1`.
-   - **Already in Lean** (`NormForm.lean`): the `δ` basis, the lattice criterion and the norms.
-   - **Now in Lean, conditionally** (`D72Residual.lean`): `residual_empty (hB : ExtBound 35 1)`.
-     The box `|eᵢ| ≤ 35` and the small-`v` case are kernel-checked.
-   - **Missing:** a Lean proof of `ExtBound 35 1`. It is now an external certificate
-     (`crosscheck/thue_bound_d72.py`): PARI's unit basis and norm-9 ideal, Matveev, and the
-     interval reduction.
+   - **In Lean, under the same three kinds of premise** (`D72Residual.residual_empty`,
+     `Generated/D72Unit.lean`). The bound drops to `H ≤ 4`, a box of 81 elements.
+   - **Missing:** the same three proofs for the field of discriminant 1944.
    - This closes two classes and no curve.
 3. **Descent certificates that carry nonempty lists.**
    - **Done for branch transport:** `DescentThueList.complete_of_lists` accepts obligations

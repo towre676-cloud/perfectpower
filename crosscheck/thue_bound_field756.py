@@ -11,7 +11,7 @@ Per class `F = (c0, c1, c2, c3)`, `M`:
   comparison the Lean box check makes.
 
 Run: /opt/sagevenv/bin/python crosscheck/thue_bound_field756.py   (needs PARI and mpmath)
-Writes receipts/field756_bound.json, the input of python/make_lean_field756.py.
+Writes receipts/field756_bound.json, the input of python/make_lean_unit_fields.py.
 """
 import json
 import sys
