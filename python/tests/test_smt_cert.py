@@ -80,6 +80,32 @@ class Boundary(unittest.TestCase):
         self.assertFalse(self.sc.check_certificate(bad, SCRIPT)[0])
         self.assertFalse(self.sc.check_certificate({'version': 2}, SCRIPT)[0])
 
+    def test_relation_is_certified(self):
+        # the reviewer's attack: the same operands under '>' with every binding field consistent
+        import hashlib
+        cert = self.cert_of(SCRIPT)
+        ineq = SCRIPT.replace('(= (* m m) (- (* (+ (* 3 n) 15)', '(> (* m m) (- (* (+ (* 3 n) 15)')
+        self.assertNotEqual(ineq, SCRIPT)
+        cmds = self.sc.split_commands(ineq)
+        _, ctx = self.sc.replay(cmds)
+        idx = cert['command_index']
+        parsed = z3.parse_smt2_string('\n'.join(cmds[d] for d in ctx[idx]) + '\n' + cmds[idx])
+        atom = [c for a in parsed for c in self.sc._conjuncts(a) if z3.is_gt(c)][0]
+        forged = dict(cert, source_sha256=hashlib.sha256(ineq.encode()).hexdigest(),
+                      assert_sha256=hashlib.sha256(cmds[idx].encode()).hexdigest(), atom=atom.sexpr())
+        ok, why = self.sc.check_certificate(forged, ineq)
+        self.assertFalse(ok)
+        self.assertIn('equality', why)
+        # the inequality really differs from the replacement: (n, m) = (-5, 0) satisfies it
+        # ((3n + 15)^3 - 56 = -56 < 0), while the certified list only allows n = 1
+        point = [(z3.Int('n'), z3.IntVal(-5)), (z3.Int('m'), z3.IntVal(0))]
+        self.assertTrue(z3.is_true(z3.simplify(z3.substitute(atom, *point))))
+        self.assertTrue(z3.is_false(z3.simplify(z3.substitute(self.sc.replacement_formula(cert), *point))))
+        # a certificate that omits or changes the relation field is rejected too
+        self.assertFalse(self.sc.check_certificate(dict(cert, relation='>'), SCRIPT)[0])
+        self.assertFalse(self.sc.check_certificate({k: v for k, v in cert.items() if k != 'relation'}, SCRIPT)[0])
+        self.assertTrue(self.sc.check_certificate(cert, SCRIPT)[0])
+
     def test_even_power_sign_loss_rejected(self):
         cert = self.cert_of(SCRIPT)
         bad = copy.deepcopy(cert)

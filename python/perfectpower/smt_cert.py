@@ -31,7 +31,9 @@ candidate or as unsupported, and the solver keeps the original obligation.
 5. Witness and sign transport: the witnesses are exactly `{((t - s)/r, ±y) : (t, y) in L, r | t - s}`,
    and each one is re-evaluated on the source polynomial.
 6. Source binding: the certificate records the SHA-256 of the source script, the command index, the
-   exact assertion text and the normalized polynomial. `check_certificate` re-derives all of them
+   exact assertion text, the relation (`=`) and the normalized polynomial.  The checker requires a
+   binary equality *before* normalizing: an inequality such as `m^2 > n^3 - 56` has the same
+   operand polynomial but is not equivalent to the finite list. `check_certificate` re-derives all of them
    from the source.
 
 Bounded Pell/radical enumerations (`smt_adapter.bounded_quadratic_hits`) are executed in Python
@@ -375,7 +377,7 @@ def _certify(atom, assert_text, idx, source_sha):
     name, L = thm
     cert = {'version': 1, 'source_sha256': source_sha, 'command_index': idx,
             'assert_sha256': hashlib.sha256(assert_text.encode()).hexdigest(),
-            'atom': atom.sexpr(), 'unknowns': {'n': n, 'm': m, 'sort': 'Int'},
+            'atom': atom.sexpr(), 'relation': '=', 'unknowns': {'n': n, 'm': m, 'sort': 'Int'},
             'polynomial': _poly_key(P), 'affine': {'r': r, 's': s, 'k': k},
             'theorem': name, 'curve_points': sorted(map(list, L)),
             'witnesses': [list(w) for w in _witnesses(L, r, s)],
@@ -411,6 +413,12 @@ def check_certificate(cert: dict, source_text: str | None, _atom=None):
             atom = atoms[0]
         if atom is None:
             return False, 'no atom to check'
+        # the relation is part of the certified statement: only a binary Int equality qualifies,
+        # checked before any normalization (m^2 > n^3 - 56 has the same operand polynomial)
+        if not (z3.is_eq(atom) and atom.num_args() == 2 and cert.get('relation') == '='):
+            return False, 'atom is not a binary equality'
+        if atom.arg(0).sort() not in (z3.IntSort(), z3.RealSort()):
+            return False, 'atom is not arithmetic'
         n, m = cert['unknowns']['n'], cert['unknowns']['m']
         P = _padd(to_poly(atom.arg(0)), to_poly(atom.arg(1)), -1)
         if _poly_key(P) != cert['polynomial']:

@@ -751,3 +751,11 @@ open PerfectPower
 #print axioms PerfectPower.Interfaces.A048624_shift_unique
 #print axioms PerfectPower.Interfaces.A048624_shift_of_terms
 #print axioms PerfectPower.Interfaces.orbit_mod_three
+-- NormForm
+#print axioms PerfectPower.NormForm.mulMat_spec
+#print axioms PerfectPower.NormForm.det_mulMat
+#print axioms PerfectPower.NormForm.d72_det
+#print axioms PerfectPower.NormForm.d72_mulMat
+#print axioms PerfectPower.NormForm.d72_no_root_mod5
+#print axioms PerfectPower.NormForm.d72_no_int_root
+#print axioms PerfectPower.NormForm.d72_disc

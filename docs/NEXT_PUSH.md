@@ -13,7 +13,7 @@ Current counts (audited declarations, generated certificates, census sizes) are 
 - A decidable type, computed from root multiplicities.
 - Exact parametrisations and asymptotic constants for the power, radical and Pell types.
 - Finiteness for all other types (originally quoted from LeVeque; now Theorem G from Siegel).
-- The discrete exponent spectrum $\{0,1\}\cup\{1/t : t\mid d\}$, with an $N^{1/2}$ barrier for non-powers.
+- The discrete exponent spectrum $\lbrace 0,1\rbrace \cup\lbrace 1/t : t\mid d\rbrace $, with an $N^{1/2}$ barrier for non-powers.
 
 **Runge branch.** The branch is now completely enumerable, and at release 0.6 17 instances had machine-generated Lean certificates.
 
@@ -31,7 +31,7 @@ Current counts (audited declarations, generated certificates, census sizes) are 
 
 - **Provenance gate.** The axiom audit checks every declaration it lists (count in the README). The Mordell census has a per-curve JSONL record (curve, engine and version, rank method and proof status, generators, saturation index, $x$-list and hash, scan), and the CSV names the engine. `make receipts` re-checks every row and its label (`TRUST_BOUNDARY.md` §4).
 - **Theorem G** replaces the LeVeque dependency with a Riemann–Hurwitz computation plus Siegel's theorem.
-- **Binomial rows.** $\binom n2=m^3$ holds only for $n\in\{1,2\}$, and $\binom n3=m^2$ only for $n\in\{1,2,3,4,50\}$. Lean proves both reductions and hit lists; the integral points of the two curves are a Sage-certified hypothesis.
+- **Binomial rows.** $\binom n2=m^3$ holds only for $n\in\lbrace 1,2\rbrace $, and $\binom n3=m^2$ only for $n\in\lbrace 1,2,3,4,50\rbrace $. Lean proves both reductions and hit lists; the integral points of the two curves are a Sage-certified hypothesis.
 - **Theorem B valuation core** in Lean (`RadicalValuation.lean`).
 - **Theorem T2.** The heat transform of a Pell-type family has a log-periodic second-order term. Corrected after review: the hits are $n_j=\alpha E^j-B/(2A)+O(E^{-j})$, the shifted model has remainder $O(\tau)$, and the unshifted two-term form only $O(\tau\log(1/\tau))$ when $B\ne0$ (`receipts/pell_heat.json` records residual/scale).
 

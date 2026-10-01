@@ -64,7 +64,7 @@ $F(n)=0$ has only $y=0,-1$.
 **A composite, closed in Lean** (`tri_cube_complete`): with $n\ge1$ and $y\in\mathbb Z$,
 $y(y+1)/2=64n^3-120n^2+75n-16$ holds exactly for $(n,y)=(1,2)$ and $(1,-3)$. The proof composes
 the triangular reduction (giving $m^2=8F(n)+1=(8n-5)^3-2$) with the affine substitution
-$t=8n-5$, pulls back the complete list $\{(3,\pm5)\}$ of `MordellMinus2.points`, and computes the
+$t=8n-5$, pulls back the complete list $\lbrace (3,\pm5)\rbrace $ of `MordellMinus2.points`, and computes the
 pull-back by `decide`.
 
 ## 3. Output: a plan with one explicit outcome
@@ -153,7 +153,7 @@ with the common period `orderOf σ` (`orbit_period`). The theorems:
 
 **Deduplication.** A hit is counted as an orbit index, that is, a pair $(X,Y\ge0)$. $X$
 determines $n$, and the two signs of the root are handled inside the filter, so no hit is counted
-twice. Hence $\kappa=\big(\sum_{\text{seeds}}\#\text{marked}/\text{period}\big)/\log\varepsilon$.
+twice. Hence $\kappa=\big(\sum_{\text{seeds}}\operatorname{card}\text{marked}/\text{period}\big)/\log\varepsilon$.
 On 271 random infinite filtered Pell plans, $|A(N)-\kappa\log N|\le 2.03$ at $N=10^{40}$.
 
 **The count is a theorem** (`FilteredCount.lean`). Let the roots be one per orbit (canonical by
@@ -353,7 +353,7 @@ $|q|\le Q$:
   $j^3$.
 
 The second check is integral closedness at the primes of $j$, checked rather than assumed.
-`ClassTwo` allowed only $k\in\{1,4\}$; the generalization to all squares $k=j^2$ is what lets
+`ClassTwo` allowed only $k\in\lbrace 1,4\rbrace $; the generalization to all squares $k=j^2$ is what lets
 the Minkowski range grow with $D$ (for $D=74$, $K=17$ includes $k=9,16$).
 
 **The Lean chain.**

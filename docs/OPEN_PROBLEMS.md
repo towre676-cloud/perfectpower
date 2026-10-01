@@ -8,7 +8,7 @@ Each entry gives the precise problem, the current best approach, and the obstruc
    - *Problem:* for non-rigid $F$ of finite type, turn "finite" into an explicit height bound and a certified hit list.
    - *Approach:*
      - Use Baker's method, with Brindza's refinements, for $y^d=F(x)$ with enough simple roots.
-     - For $d=2$ and $\deg F\in\{3,4\}$, use Mordell–Weil generators with elliptic-logarithm sieving (Stroeker–Tzanakis, Gebel–Pethő–Zimmer). Sage implements the cubic Weierstrass case, and `crosscheck/cubics_sage.py` uses it.
+     - For $d=2$ and $\deg F\in\lbrace 3,4\rbrace $, use Mordell–Weil generators with elliptic-logarithm sieving (Stroeker–Tzanakis, Gebel–Pethő–Zimmer). Sage implements the cubic Weierstrass case, and `crosscheck/cubics_sage.py` uses it.
    - *Obstruction:*
      - Quartic and non-monic models need a conversion to Weierstrass form that keeps track of integrality.
      - Lean can check only the final list against the sieve output, never the Baker step.
@@ -48,7 +48,7 @@ Each entry gives the precise problem, the current best approach, and the obstruc
 ## Added after the third review
 
 9. **A kernel-checked completeness proof for one nonrigid genus-one family.**
-   - *Done for empty lists (2026-09-29):* `MordellDescent.lean` proves, with no hypothesis, that $y^2=x^3+k$ has no integral points for 1163 values $0<|k|\le10^4$, including $k=7$ (so $n^3+7$ is never a square). This is Mordell's classical elementary descent ($k=c^3-Db^2$, $D\in\{1,2,-2\}$), with congruences checked by the kernel. 28 of these curves rest in the Sage census on an unproved rank.
+   - *Done for empty lists (2026-09-29):* `MordellDescent.lean` proves, with no hypothesis, that $y^2=x^3+k$ has no integral points for 1163 values $0<|k|\le10^4$, including $k=7$ (so $n^3+7$ is never a square). This is Mordell's classical elementary descent ($k=c^3-Db^2$, $D\in\lbrace 1,2,-2\rbrace $), with congruences checked by the kernel. 28 of these curves rest in the Sage census on an unproved rank.
    - *Done for one nonempty family:* `MordellFLT3.lean` proves that the integral points of $y^2=x^3-432u^6$ are exactly $(12u^2,\pm36u^3)$, for every $u\ne0$, by reduction to Mathlib's `fermatLastTheoremThree` (the curve is the Fermat cubic). So $n^3-432u^6=m^2$ iff $n=12u^2$.
    - *Done for two rank-one curves:* $y^2=x^3-2$ (`MordellMinus2.lean`, descent in ℤ[√−2]) and $y^2=x^3-4$ (`MordellMinus4.lean`, descent in ℤ[i]), unconditionally. `Transport.lean` carries complete lists through $n\mapsto rn+s$ with exact counts, and replaces the genus-one premise by one restricted to the image of the change of variables (`cubic_sound_image`).
    - *Current state for other nonempty lists:* apart from these, $y^2=x^3-13$, the FLT3 family, the Runge certificates and the 36 branch-compiler lists of $y^2=x^3-D$ (`Generated/MordellBranch.lean`, `Generated/MordellThue.lean`; nonempty ones include $y^2=x^3-20$, $(6,\pm14)$, and $y^2=x^3-56$, $(18,\pm76)$), every nonempty genus-one list rests on Sage (`Genus1.lean` takes its point list as a hypothesis). The compiler now reaches all 36 lists through `mordell_complete`, so affine disguises $(rn+s)^3-D$ inherit them.

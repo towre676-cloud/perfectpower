@@ -3,7 +3,9 @@
 **The instances are constructed, not an independent workload.**  Each is a QF_NIA problem
 `m^2 = (r n + s)^3 + k  and  side(n, m, w)` with a random affine disguise and a side constraint
 coupling a third variable.  The groups are:
-- `sat`: a curve with points, and a side constraint one of the points satisfies;
+- `sat`: a curve with points and a side constraint built around a stored witness `(n0, m0, w0)`
+  (`w^2 + n w = w0^2 + n0 w0 + m^2 - m0^2`, `w >= 1`); every conjunct is evaluated at the witness
+  before timing, and the run aborts if the reduced problem is not SAT;
 - `unsat_side`: a curve with points, and a side constraint that excludes every point;
 - `no_points`: a curve proved to have no integral points;
 - `unsupported`: a control with a cubic that is not a solved curve (y^2 = x^3 + k with k outside
@@ -56,30 +58,33 @@ def instances(rng):
     out = []
     n, m, w = z3.Ints('n m w')
     for i in range(12):
+        # SAT by construction: a stored witness (n0, m0, w0) satisfies every conjunct, checked below
         c = rng.choice(with_pts)
-        x0, y0 = rng.choice(c['points'])
+        t0, m0 = rng.choice(c['points'])
         r = rng.choice([1, 1, 2, 3])
-        s = x0 - r * rng.randint(-3, 3)
-        n0 = (x0 - s) // r
+        n0 = rng.randint(-3, 3)
+        s = t0 - r * n0
+        w0 = rng.randint(1, 9)
         eq = m * m == cubic(n, r, s) - c['D']
-        out.append(('sat', c['D'], [eq, w * w + n * w == n0 * n0 + n0 + m * m - y0 * y0 + 0 * w, w >= 1]))
+        side = w * w + n * w == w0 * w0 + n0 * w0 + m * m - m0 * m0
+        out.append(('sat', c['D'], [eq, side, w >= 1], {'n': n0, 'm': m0, 'w': w0}))
     for i in range(12):
         c = rng.choice(with_pts)
         r, s = rng.choice([1, 2, 3]), rng.randint(-20, 20)
         eq = m * m == cubic(n, r, s) - c['D']
         big = max(abs(y) for _, y in c['points']) + 1
-        out.append(('unsat_side', c['D'], [eq, m * m > big * big, w * w == n + m * m]))
+        out.append(('unsat_side', c['D'], [eq, m * m > big * big, w * w == n + m * m], None))
     for i in range(12):
         c = rng.choice(empty)
         r, s = rng.choice([1, 2, 3]), rng.randint(-20, 20)
         eq = m * m == cubic(n, r, s) - c['D']
-        out.append(('no_points', c['D'], [eq, w * w + w == n]))
+        out.append(('no_points', c['D'], [eq, w * w + w == n], None))
     unsolved = [k for k in range(-100, 0) if mordell_complete(k) is None]
     for i in range(12):
         k = rng.choice(unsolved)
         r, s = rng.choice([1, 2]), rng.randint(-10, 10)
         eq = m * m == cubic(n, r, s) + k
-        out.append(('unsupported', -k, [eq, w * w + w == n, n <= 50, n >= -50]))
+        out.append(('unsupported', -k, [eq, w * w + w == n, n <= 50, n >= -50], None))
     return out
 
 
@@ -87,7 +92,12 @@ def main():
     timeout = int(float(sys.argv[1]) * 1000) if len(sys.argv) > 1 else 10000
     rng = random.Random(20261001)
     rows = []
-    for group, D, asserts in instances(rng):
+    for group, D, asserts, witness in instances(rng):
+        if witness is not None:
+            n, m, w = z3.Ints('n m w')
+            sub = [(n, z3.IntVal(witness['n'])), (m, z3.IntVal(witness['m'])), (w, z3.IntVal(witness['w']))]
+            if not all(z3.is_true(z3.simplify(z3.substitute(a, *sub))) for a in asserts):
+                raise SystemExit(f'constructed SAT witness fails for D={D}: {witness}')
         host, th = run(asserts, timeout)
         t = time.perf_counter()
         red = reduce_assertions(asserts)
@@ -96,7 +106,11 @@ def main():
         agree = None if 'unknown' in (host, after) else host == after
         if agree is False:
             raise SystemExit(f'answer mismatch on {group} D={D}: host {host}, reduced {after}')
-        rows.append({'group': group, 'D': D, 'host': host, 'host_s': round(th, 4),
+        if group == 'sat' and after != 'sat':
+            raise SystemExit(f'SAT instance D={D} reduced to {after}')
+        if group in ('unsat_side', 'no_points') and after not in ('unsat', 'unknown'):
+            raise SystemExit(f'{group} instance D={D} reduced to {after}')
+        rows.append({'group': group, 'D': D, 'witness': witness, 'host': host, 'host_s': round(th, 4),
                      'reduced': after, 'recognition_s': round(tr, 4), 'reduced_host_s': round(ta, 4),
                      'replaced': len(red.replacements),
                      'lean': red.replacements[0].lean[0] if red.replacements else None})

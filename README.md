@@ -8,7 +8,7 @@ PerfectPower classifies the possible long-term patterns for every integer polyno
 
 The [trust table](#what-to-trust-at-a-glance) says what is machine-checked and what relies on outside mathematics or software.
 
-> Take $F\in\mathbb Z[x]$ and $d\ge2$, and count the *hits* $A(N)=\#\{1\le n\le N : F(n)=m^d\}$.
+> Take $F\in\mathbb Z[x]$ and $d\ge2$, and count the *hits* $A(N)=\operatorname{card}\lbrace 1\le n\le N : F(n)=m^d\rbrace$.
 > Only four behaviours are possible:
 >
 > | type | $A(N)$ | example |
@@ -18,7 +18,7 @@ The [trust table](#what-to-trust-at-a-glance) says what is machine-checked and w
 > | **Pell** | $\kappa\log N+O(1)$ | $2n^2+1=m^2$: $\kappa=1/\log(3+2\sqrt2)=0.5673\ldots$ |
 > | **finite** | $O(1)$ | $n^4+1=m^2$: no positive hits |
 >
-> Root multiplicities identify the candidate families; exact residue and Pell-orbit tests determine whether a candidate has infinitely many hits. The constants $\kappa$ have exact formulas. The growth exponent always lies in $\{0,1\}\cup\{1/t: t\mid d\}$.
+> Root multiplicities identify the candidate families; exact residue and Pell-orbit tests determine whether a candidate has infinitely many hits. The constants $\kappa$ have exact formulas. The growth exponent always lies in $\lbrace 0,1\rbrace \cup\lbrace 1/t: t\mid d\rbrace $.
 
 The classification is a **synthesis**, and we claim no priority for it. It combines Siegel's theorem, through the Euler characteristic $\chi=d'(1-S)$ of the curve $y^d=F(x)$ (Theorem G), with classical Pell and valuation counting. For a general finite-type polynomial, knowing that the hits eventually stop does not yet give an algorithm that lists all of them.
 
@@ -44,7 +44,7 @@ The classification is a **synthesis**, and we claim no priority for it. It combi
    checks the resulting theorem about the original expression (`Generated/Plans.lean`,
    `plan_thue_minus56`):
 
-   $$1\le n \;\wedge\; m^2=27n^3+405n^2+2025n+3319 \iff (n,m)\in\{(1,-76),(1,76)\}.$$
+   $$1\le n \;\wedge\; m^2=27n^3+405n^2+2025n+3319 \iff (n,m)\in\lbrace (1,-76),(1,76)\rbrace .$$
 
    Nothing in that proof trusts the Python that found it.
 
@@ -114,7 +114,7 @@ It reduces them exactly (`Reduction.lean`) and emits a plan with one explicit ou
 ### 4. One orbit, many sequences
 A Pell orbit is one arithmetic object, and a sequence in a table is usually one **coordinate** of it.
 - **The counting law for observations** (`Observation.lean`): finitely many filtered orbits, with coordinates growing like $E^j$ and disjoint beyond a threshold, satisfy
-$$\#\{v\le N\}=\Big(\sum_\rho\frac{g_\rho}{P_\rho\log E_\rho}\Big)\log N+O(1).$$
+$$\operatorname{card}\lbrace v\le N\rbrace=\Big(\sum_\rho\frac{g_\rho}{P_\rho\log E_\rho}\Big)\log N+O(1).$$
   The observations need only be eventually increasing. The measured coordinate changes the constant, not the orbit.
 - **Thirteen OEIS entries from $(1+\sqrt2)^k$** (`SqrtTwoOrbit.lean`). Each entry's definition is read from its original OEIS text with its offset, and proved equal to an exact coordinate of the orbit:
   - A000129 (Pell numbers);

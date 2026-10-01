@@ -103,9 +103,9 @@ An enriched profile can retain (H, α, finite/infinite support, a logarithmic co
 
 Sections 4–5 establish that a nonsingular cubic $F$ has finitely many square hits, but finiteness is not a list. Until edition 0.7 every complete genus-one list in this repository rested on Sage's `integral_points`, an elliptic-logarithm computation that Lean never checks. This section describes the four ways the Lean library now closes such a list with no external hypothesis. It also describes the bridge that carries a closed list to an exact hit count.
 
-**1. Arithmetic obstruction: curves with no integral points** (`MordellDescent.lean`). Let $k=c^3-Db^2$ with $D\in\{1,2,-2\}$. An integral point of $y^2=x^3+k$ gives
+**1. Arithmetic obstruction: curves with no integral points** (`MordellDescent.lean`). Let $k=c^3-Db^2$ with $D\in\lbrace 1,2,-2\rbrace $. An integral point of $y^2=x^3+k$ gives
 $$y^2+Db^2=(x+c)\,q,\qquad q=x^2-cx+c^2=\tfrac14\big((2x-c)^2+3c^2\big)\ge0.$$
-Let $G_D$ be the residues mod 8 of the odd primes $p$ for which $-D$ is a square mod $p$: $\{1,5\}$, $\{1,3\}$ and $\{1,7\}$ respectively (Mathlib's supplementary laws). $G_D$ is closed under multiplication, so an odd $q$ with $q\bmod 8\notin G_D$ has a prime factor $p$ with $p\bmod 8\notin G_D$ (`exists_bad_prime`). The kernel evaluates every residue pair mod $M\in\{8,16,32\}$ and checks that the equation forces exactly this (`CongOK`). Such a $p$ divides $y^2+Db^2$, and $-D$ is not a square mod $p$, so $p\mid b$ (`good_of_dvd`). This is excluded by a certificate $b=2^jb_1$ with $b_1\mid u^2+D$ (`goodDivisors_of_cert`). The obstruction is arithmetic, not local: the curves have points modulo every integer. For $0<|k|\le10^4$ the search finds 1163 such $k$, 28 of them census rows whose Sage rank was unproved. For $D=3$ the mod-8 mechanism cannot work. $-3$ is a square modulo $p$ exactly when $p\equiv1\pmod3$, while $q\equiv(x+c)^2\pmod 3$ lies in $\{0,1\}$, so no congruence on $q$ can force a prime factor $\equiv2\pmod3$. (Such a prime may still divide $q$ when it divides $\gcd(x,c)$.) $D=-3$ is different and unexamined. The needed primes are $p\equiv\pm5\pmod{12}$, where $3$ is a non-residue, and a mod-12 version of the argument has not been attempted. An earlier edition wrongly stated that both signs fail.
+Let $G_D$ be the residues mod 8 of the odd primes $p$ for which $-D$ is a square mod $p$: $\lbrace 1,5\rbrace $, $\lbrace 1,3\rbrace $ and $\lbrace 1,7\rbrace $ respectively (Mathlib's supplementary laws). $G_D$ is closed under multiplication, so an odd $q$ with $q\bmod 8\notin G_D$ has a prime factor $p$ with $p\bmod 8\notin G_D$ (`exists_bad_prime`). The kernel evaluates every residue pair mod $M\in\lbrace 8,16,32\rbrace $ and checks that the equation forces exactly this (`CongOK`). Such a $p$ divides $y^2+Db^2$, and $-D$ is not a square mod $p$, so $p\mid b$ (`good_of_dvd`). This is excluded by a certificate $b=2^jb_1$ with $b_1\mid u^2+D$ (`goodDivisors_of_cert`). The obstruction is arithmetic, not local: the curves have points modulo every integer. For $0<|k|\le10^4$ the search finds 1163 such $k$, 28 of them census rows whose Sage rank was unproved. For $D=3$ the mod-8 mechanism cannot work. $-3$ is a square modulo $p$ exactly when $p\equiv1\pmod3$, while $q\equiv(x+c)^2\pmod 3$ lies in $\lbrace 0,1\rbrace $, so no congruence on $q$ can force a prime factor $\equiv2\pmod3$. (Such a prime may still divide $q$ when it divides $\gcd(x,c)$.) $D=-3$ is different and unexamined. The needed primes are $p\equiv\pm5\pmod{12}$, where $3$ is a non-residue, and a mod-12 version of the argument has not been attempted. An earlier edition wrongly stated that both signs fail.
 
 **2. Reduction to a formalised theorem: a nonempty infinite family** (`MordellFLT3.lean`). On $y^2=x^3-432u^6$,
 $$(36u^3+y)^3+(36u^3-y)^3=(6ux)^3,$$
@@ -118,7 +118,7 @@ so Mathlib's `fermatLastTheoremThree` forces a vanishing cube. This gives exactl
 These reprove in Lean 4 results that Baanen–Best–Coppola–Dahmen formalised in Lean 3 through class groups. For these two curves the route is elementary, because the rings are Euclidean.
 
 **3′. Class number two, without ideals: a template** (`ClassTwo.lean`; instances `MordellMinus13.lean`, `MordellMinus5.lean`, `MordellMinus6.lean`). When ℤ[√−D] has class number 2, unique factorisation fails. The classical proof shows that the ideal $I$ with $I^3=(y+\sqrt{-D})$ is principal, because $3\nmid h$. `ClassTwo` makes each ingredient explicit *for every $D>0$*, in integer arithmetic. Write $\alpha=y+\sqrt{-D}$ and $x^3=y^2+D$.
-- *The ideal $I$* is the lattice $\{(a,b): x\mid a-yb\}$ of index $x$.
+- *The ideal $I$* is the lattice $\lbrace (a,b): x\mid a-yb\rbrace $ of index $x$.
 - *Minkowski's bound* is Thue's pigeonhole lemma (`exists_short`, `box`, `short_relation`). Compare the pairs in $[0,A]\times[0,B]$ modulo $x$, with $A=\lfloor\sqrt{rx/t}\rfloor$ and $B=\lfloor\sqrt{tx/r}\rfloor$ for a rational box ratio $r/t\approx\sqrt D$. There are more than $x$ pairs, so two collide, and their difference is $v=(a,b)\ne0$ in the lattice. It satisfies $a^2+Db^2=kx$ with $1\le k\le K$ whenever $r^2+Dt^2<(K+1)rt$. No small-$x$ case remains.
 - *$I^3=(\alpha)$* is the congruence $\psi(z^3)\equiv\psi(z)^3\pmod{y^2+D}$ for $\psi(z)=z_{\mathrm{re}}+y\,z_{\mathrm{im}}$. Since $x\mid\psi(\bar v)$, $x^3$ divides both coordinates of $\alpha\bar v^3$, so $\alpha\bar v^3=x^3\beta$ with $N(\beta)=k^3$ and $k^3\alpha=\beta v^3$.
 - *"The class group has order 2"* is the only instance-specific input: a finite table `TableOK D K P Q`, decided by the kernel. For $k\le K$, $p^2+Dq^2=k^3$ forces $q=0$ and $(k,p)=(1,\pm1)$ or $(4,\pm8)$. The companion `HalvesOK D` is a residue check mod 8 that halves $v$ when $k=4$. Given both, `cube_of_table` concludes $\alpha=(p+q\sqrt{-D})^3$.
@@ -134,10 +134,10 @@ For $D=5,6$ the table rules out the norms $8$ and $27$, which is exactly where t
 This is the class-group argument of Baanen–Best–Coppola–Dahmen, reorganised so that no ideal or class group appears. It is *not* a line-by-line port of their Lean 3 code, which this environment could not fetch. A new $D$ needs only a box ratio and $K$ with $r^2+Dt^2<(K+1)rt$, the kernel's table and halving checks, and the Thue step. The table fails, as it should, when a norm $k^3$ with $k\le K$ is represented non-trivially. That happens when the class group has elements of order 3, or when the pigeonhole bound is too weak for $D$ to be reached with $K<8$.
 
 **4. Transport with integrality** (`Transport.lean`). Suppose a complete list is $\mathrm{CompleteArgs}(G,d,T)$: $G(t)$ is a $d$-th power iff $t\in T$, for every *integer* $t$. For $r\ne0$, the family $n\mapsto G(rn+s)$ then has hits exactly at $rn+s\in T$. By `affine_count`, the count is
-$$A(N)=\#\{t\in T:\ r\mid t-s,\ 1\le (t-s)/r\le N\},$$
-from the same hypothesis. For example, $(rn+s)^3-2$ is a square iff $rn+s=3$, so $A(N)\in\{0,1\}$ is decided by $r\mid 3-s$ and $1\le(3-s)/r\le N$ (`affine_cube_sub_two`).
+$$A(N)=\operatorname{card}\lbrace t\in T:\ r\mid t-s,\ 1\le (t-s)/r\le N\rbrace ,$$
+from the same hypothesis. For example, $(rn+s)^3-2$ is a square iff $rn+s=3$, so $A(N)\in\lbrace 0,1\rbrace $ is decided by $r\mid 3-s$ and $1\le(3-s)/r\le N$ (`affine_cube_sub_two`).
 
-The Weierstrass normalisation of `Genus1.lean` needs the same care. The old premise `IntegralPointsOn` asks for *every* integral point of the scaled model. A theorem about $m^2=F(n)$ only classifies the points in the image of $(n,m)\mapsto(9an+3b,\,27am)$. `IntegralPointsOnImage` asks only for those points (those with $9a\mid U-3b$ and $27a\mid V$), and `cubic_sound_image` proves the hit list from it. For $n^3-2$ the model is $V^2=U^3-1458$: `n3m2_image` discharges the image premise from `MordellMinus2.points`, and `n3m2_hits` recovers the unconditional list $\{3\}$ through the generic checker, without classifying the model's other integral points. The same distinction will be essential for quartic models, where the change of variables introduces denominators.
+The Weierstrass normalisation of `Genus1.lean` needs the same care. The old premise `IntegralPointsOn` asks for *every* integral point of the scaled model. A theorem about $m^2=F(n)$ only classifies the points in the image of $(n,m)\mapsto(9an+3b,\,27am)$. `IntegralPointsOnImage` asks only for those points (those with $9a\mid U-3b$ and $27a\mid V$), and `cubic_sound_image` proves the hit list from it. For $n^3-2$ the model is $V^2=U^3-1458$: `n3m2_image` discharges the image premise from `MordellMinus2.points`, and `n3m2_hits` recovers the unconditional list $\lbrace 3\rbrace $ through the generic checker, without classifying the model's other integral points. The same distinction will be essential for quartic models, where the change of variables introduces denominators.
 
 ### 5B. From structure to execution (edition 0.9)
 
@@ -175,15 +175,15 @@ The instances are:
 - **quadratic**: $m=2ay+b$, $m^2=4aF(n)+b^2-4ac$, back when $2a\mid m-b$ for $m$ or $-m$ and
   $y$ lies in its domain;
 - **triangular**: $m=2y+1$, $m^2=8F(n)+1$. Here $m$ is odd, so the way back never fails for
-  $y\in\mathbb Z$ or $y\ge0$. Hence `triangular_count`: $\#\{n\le N: F(n)\text{ triangular}\}=A_{8F}(2,1,N)$.
+  $y\in\mathbb Z$ or $y\ge0$. Hence `triangular_count`: $\operatorname{card}\lbrace n\le N: F(n)\text{ triangular}\rbrace =A_{8F}(2,1,N)$.
 
 A square discriminant is not enough in general: $2y^2+y=1$ has discriminant $9$ but no root
 $y\ge0$.
 
 **3. Worked example, fully in Lean** (`tri_cube_complete`). With $n\ge1$ and $y\in\mathbb Z$,
-$$\frac{y(y+1)}2=64n^3-120n^2+75n-16\iff (n,y)\in\{(1,2),(1,-3)\}.$$
+$$\frac{y(y+1)}2=64n^3-120n^2+75n-16\iff (n,y)\in\lbrace (1,2),(1,-3)\rbrace .$$
 The chain is: triangular, giving $m^2=(8n-5)^3-2$; then affine, $t=8n-5$; then `MordellMinus2.points`.
-The pull-back of $\{(3,\pm5)\}$ is computed by `decide`. The compiler finds the same plan
+The pull-back of $\lbrace (3,\pm5)\rbrace $ is computed by `decide`. The compiler finds the same plan
 automatically and emits the test `8*n + (-5) == 3`.
 
 **4. Worked examples, executed** (`receipts/constraint_demos.json`, regenerated by `make verify`).

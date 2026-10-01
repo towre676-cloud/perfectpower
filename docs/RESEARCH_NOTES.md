@@ -1,6 +1,6 @@
 # Beyond the 0–1 law: the exponent spectrum of polynomial perfect-power hits
 
-**Research notes for release 0.6 (28 September 2026).** These notes extend [the monograph](MONOGRAPH.md). Notation is unchanged: for $F\in\mathbb Z[x]$ and $d\ge 2$, a *hit* is an index $n\ge 1$ with $F(n)=m^d$ for some $m\in\mathbb Z$, and $A(N)=\#\{1\le n\le N: n \text{ is a hit}\}$. The shift $k$ of the monograph is absorbed into $F=S+k$ except in §7.
+**Research notes for release 0.6 (28 September 2026).** These notes extend [the monograph](MONOGRAPH.md). Notation is unchanged: for $F\in\mathbb Z[x]$ and $d\ge 2$, a *hit* is an index $n\ge 1$ with $F(n)=m^d$ for some $m\in\mathbb Z$, and $A(N)=\operatorname{card}\lbrace 1\le n\le N: n \text{ is a hit}\rbrace $. The shift $k$ of the monograph is absorbed into $F=S+k$ except in §7.
 
 Every result below carries one of the status labels of [the receipt policy](RECEIPTS.md). In summary:
 
@@ -30,19 +30,19 @@ The monograph proves that the hit density of $F(n)$ is $1$ if $F=G^d$ with $G\in
 
 **Positioning.** The atlas and the exponent spectrum below are a *synthesis*: Siegel's theorem (through the Euler-characteristic computation of Theorem G, which recovers LeVeque's 1964 exceptional patterns) combined with classical Pell and valuation counting, made explicit (with constants) and decidable (by an implementation). We make no priority claim for them until a literature pass, which must cover in particular the Bilu–Tichy and Schinzel–Tijdeman lineages, shows the packaging is new. The parts with a chance of being new are the certified pipeline: the rigid-branch enumerator, which must still be compared with the Runge implementations of Walsh and of Beukers–Tengely, and the Lean certificate emitter. See [RELATED_WORK.md](RELATED_WORK.md) and [TRUST_BOUNDARY.md](TRUST_BOUNDARY.md). LeVeque's theorem is no longer an input: it was only ever available to us in secondary sources, and Theorem G replaces it by a direct argument from Siegel.
 
-Write $F=c\prod_i(x-\alpha_i)^{r_i}$ over $\overline{\mathbb Q}$ with distinct $\alpha_i$, and put $t_i=d/\gcd(d,r_i)$. Call the multiset $\{t_i\}$ the *$t$-profile* of $(F,d)$. It is computable exactly from a squarefree decomposition, without factoring $F$.
+Write $F=c\prod_i(x-\alpha_i)^{r_i}$ over $\overline{\mathbb Q}$ with distinct $\alpha_i$, and put $t_i=d/\gcd(d,r_i)$. Call the multiset $\lbrace t_i\rbrace $ the *$t$-profile* of $(F,d)$. It is computable exactly from a squarefree decomposition, without factoring $F$.
 
 **Theorem A (atlas).** Let $F\in\mathbb Z[x]$ be nonconstant and $d\ge2$. Exactly one of the following holds.
 
 1. **Power type** (all $t_i=1$). Then $F=cG^d$ with $G\in\mathbb Q[x]$ monic. If $c$ is an integer $d$-th power, then $F$ is the $d$-th power of an integer polynomial and $A(N)=N$. Otherwise the hits are exactly the positive integer roots of $F$.
-2. **Radical type** ($t$-profile $\{t,1,\dots,1\}$, $t\ge2$). There is an explicit $\kappa\ge0$ with $A(N)=\kappa N^{1/t}+O(1)$; $\kappa$ is computed from one congruence count (Theorem B).
-3. **Pell type** ($t$-profile $\{2,2,1,\dots,1\}$, so $d$ is even). There is an explicit $\kappa\ge0$ with $A(N)=\kappa\log N+O(1)$; $\kappa$ is computed from Pell orbits modulo $2A$ (Theorem C).
+2. **Radical type** ($t$-profile $\lbrace t,1,\dots,1\rbrace $, $t\ge2$). There is an explicit $\kappa\ge0$ with $A(N)=\kappa N^{1/t}+O(1)$; $\kappa$ is computed from one congruence count (Theorem B).
+3. **Pell type** ($t$-profile $\lbrace 2,2,1,\dots,1\rbrace $, so $d$ is even). There is an explicit $\kappa\ge0$ with $A(N)=\kappa\log N+O(1)$; $\kappa$ is computed from Pell orbits modulo $2A$ (Theorem C).
 4. **Finite type** (every other profile). The hit set is finite.
 
 Parts 1–3 are elementary and are proved here. Part 4 follows from Siegel's theorem by Theorem G (§5).
 
 **Corollary A (exponent spectrum and the root barrier).** Let $\alpha(F,d)=\limsup_N \log(1+A(N))/\log N$. Then
-$$\alpha(F,d)\in\{0,1\}\cup\{1/t:\ t\mid d,\ t\ge2\},$$
+$$\alpha(F,d)\in\lbrace 0,1\rbrace \cup\lbrace 1/t:\ t\mid d,\ t\ge2\rbrace ,$$
 and every value in this set occurs. Moreover $\alpha=1$ exactly when $F$ is an integer-polynomial $d$-th power. Otherwise $A(N)=O(N^{1/p})$, where $p$ is the least prime factor of $d$. In particular $A(N)=O(N^{1/2})$ for every non-power $F$, and $A(N)=O(N^{1/3})$ when $d$ is odd. All these bounds are sharp.
 
 *Proof of the corollary from Theorem A.* In the radical type $t=d/\gcd(d,r)$ divides $d$ and exceeds $1$, so $t\ge p$. The Pell and finite types have $\alpha=0$. The monomial $F=x^{r}$ with $\gcd(r,d)=d/t$ has hits exactly at the $t$-th powers, so $A(N)=\lfloor N^{1/t}\rfloor$ realises $1/t$. This is Theorem B, and it is also the compiled Lean theorem `monomial_count`. For sharpness take $r=d/p$. $\square$
@@ -72,13 +72,13 @@ $$F=c\,(x-\alpha)^r\,G(x)^d,\qquad c=\operatorname{lc}(F),\ G\in\mathbb Q[x]\tex
 
 Put $K=\lceil r/d\rceil$ and $c_1=c\,v^{dK-r}\in\mathbb Z$. Let $g=\gcd(r,d)$, $t=d/g$, and $r'=r/g$. If $g$ divides $v_p(c_1)$ for every prime $p$, define
 $$\tau_p\equiv-\tfrac{v_p(c_1)}{g}\,(r')^{-1}\pmod t,\quad 0\le\tau_p<t,\qquad z_0=\prod_p p^{\tau_p}.$$
-The admissible signs are all $\sigma\in\{\pm1\}$ when $d$ is odd, and only $\sigma$ with $c_1\sigma^r>0$ when $d$ is even.
+The admissible signs are all $\sigma\in\lbrace \pm1\rbrace $ when $d$ is odd, and only $\sigma$ with $c_1\sigma^r>0$ when $d$ is even.
 
 **Theorem B.** In the radical type, $n\ge1$ is a hit if and only if either $F(n)=0$, or $g\mid v_p(c_1)$ for all $p$ and
 $$vn-u=\sigma z_0 w^t\quad\text{for an admissible sign }\sigma\text{ and an integer }w\ge1 .$$
 Let $\varrho$ be the number of residues $w \bmod v$ with $z_0w^t+u\equiv0\pmod v$. If $\sigma=+1$ is admissible and the divisibility condition holds, then
 $$A(N)=\kappa N^{1/t}+O(1),\qquad \kappa=\frac{\varrho}{v}\Big(\frac{v}{z_0}\Big)^{1/t}.$$
-Otherwise $A(N)=O(1)$. In particular $\alpha(F,d)\in\{0,1/t\}$.
+Otherwise $A(N)=O(1)$. In particular $\alpha(F,d)\in\lbrace 0,1/t\rbrace $.
 
 *Proof.* Let $n\ge1$ with $F(n)\ne0$, so $G(n)\ne0$ and $n\ne\alpha$. Then $F(n)=m^d$ with $m\in\mathbb Z$ if and only if $c(n-\alpha)^r$ is the $d$-th power of a rational number. One direction divides by $G(n)^d$. For the other, $F(n)=(\xi G(n))^d$ is an integer and a rational $d$-th power, hence an integer $d$-th power. With $z=vn-u\neq0$ we have $c(n-\alpha)^r=c z^r v^{-r}$. Multiplying by the $d$-th power $v^{dK}$ gives the equivalent condition that the *integer* $c_1z^r$ is a $d$-th power in $\mathbb Q$, hence in $\mathbb Z$.
 
@@ -97,23 +97,23 @@ For the count with $\sigma=+1$, the hits are $n=(z_0w^t+u)/v$ with $w$ in one of
 
 The monograph's linear formula $A(N)\sim R\,a^{1/d-1}N^{1/d}$ for $an+c$ is the special case $t=d$.
 
-**Proposition (Dirichlet series in the radical type).** If $u=0$ (the special root is $0$) and $G$ has no positive integer roots, then $Z_X(s)=\sum_{w\ge1}(z_0w^t)^{-s}=z_0^{-s}\zeta(ts)$ up to a Dirichlet polynomial. In general $Z_X$ is a finite sum over good classes $w\equiv\rho \pmod v$ of $\sum_k\big((z_0(\rho+vk)^t+u)/v\big)^{-s}$. Expanding $(1+u/(z_0w^t))^{-s}$ binomially for large $w$ writes this as a locally uniformly convergent series of Hurwitz zeta functions $\zeta\big(t(s+j),\rho/v\big)$. Hence $Z_X$ continues meromorphically to $\mathbb C$, with at most simple poles in $\{1/t-j:j\ge0\}$ and residue $\kappa/t$ at $s=1/t$.
+**Proposition (Dirichlet series in the radical type).** If $u=0$ (the special root is $0$) and $G$ has no positive integer roots, then $Z_X(s)=\sum_{w\ge1}(z_0w^t)^{-s}=z_0^{-s}\zeta(ts)$ up to a Dirichlet polynomial. In general $Z_X$ is a finite sum over good classes $w\equiv\rho \pmod v$ of $\sum_k\big((z_0(\rho+vk)^t+u)/v\big)^{-s}$. Expanding $(1+u/(z_0w^t))^{-s}$ binomially for large $w$ writes this as a locally uniformly convergent series of Hurwitz zeta functions $\zeta\big(t(s+j),\rho/v\big)$. Hence $Z_X$ continues meromorphically to $\mathbb C$, with at most simple poles in $\lbrace 1/t-j:j\ge0\rbrace $ and residue $\kappa/t$ at $s=1/t$.
 
 ## 4. The Pell type
 
 Suppose exactly two roots have $t\ne1$ and both have $t=2$. Then $d=2e$, and each special multiplicity $r$ satisfies $\gcd(r,d)=e$, so $r$ is an odd multiple of $e$ and $(x-\alpha)^r=(x-\alpha)^e\cdot(x-\alpha)^{r-e}$ with $d\mid r-e$. The two special roots form a Galois-stable set, so they are both rational or a conjugate pair. Their monic product $W$ lies in $\mathbb Q[x]$, has distinct roots, and
 $$F=c\,W^e H^d,\qquad H\in\mathbb Q[x]\text{ monic}.$$
 
-**Theorem C (reduction).** Let $\Gamma=\{\gamma\in\mathbb Q:\gamma^e=c\}$, which has at most two elements. For $\gamma=\gamma_1/\gamma_2\in\Gamma$ in lowest terms, and $L$ the least common denominator of $W$, put $P_\gamma(x)=\gamma_1\gamma_2L\cdot(L\,W(x))\in\mathbb Z[x]$. Then $n\ge1$ is a hit if and only if $F(n)=0$ or $P_\gamma(n)$ is a perfect square for some $\gamma\in\Gamma$. Each $P_\gamma$ is a quadratic with nonzero discriminant.
+**Theorem C (reduction).** Let $\Gamma=\lbrace \gamma\in\mathbb Q:\gamma^e=c\rbrace $, which has at most two elements. For $\gamma=\gamma_1/\gamma_2\in\Gamma$ in lowest terms, and $L$ the least common denominator of $W$, put $P_\gamma(x)=\gamma_1\gamma_2L\cdot(L\,W(x))\in\mathbb Z[x]$. Then $n\ge1$ is a hit if and only if $F(n)=0$ or $P_\gamma(n)$ is a perfect square for some $\gamma\in\Gamma$. Each $P_\gamma$ is a quadratic with nonzero discriminant.
 
 *Proof.* As in Theorem B, when $F(n)\ne0$, $n$ is a hit if and only if $cW(n)^e=y^{2e}$ for some $y\in\mathbb Q^\times$. Put $w=W(n)\ne0$ and $\gamma=y^2/w$. Then $\gamma^e=c$, so $\gamma\in\Gamma$ and $\gamma w=y^2$. Conversely, $\gamma w=y^2$ with $\gamma^e=c$ gives $cw^e=y^{2e}$. Finally $\gamma W(n)$ is a rational square if and only if $(\gamma_2L)^2\gamma W(n)=P_\gamma(n)$ is. Since $P_\gamma(n)$ is an integer, that means a perfect square. $\square$
 
-**Lemma Q (square values of a quadratic).** Let $P=An^2+Bn+C\in\mathbb Z[x]$ with $A\ne0$ and $\Delta=B^2-4AC\ne0$, and let $S=\{n\ge1: P(n)=m^2\}$.
+**Lemma Q (square values of a quadratic).** Let $P=An^2+Bn+C\in\mathbb Z[x]$ with $A\ne0$ and $\Delta=B^2-4AC\ne0$, and let $S=\lbrace n\ge1: P(n)=m^2\rbrace $.
 
 1. If $A<0$, then $S$ is finite, contained in $n\le(\sqrt\Delta+|B|)/(2|A|)$.
-2. If $A=s^2$, then $S$ is finite. Each hit gives a factorisation $(X-2sm)(X+2sm)=\Delta$ with $X=2An+B$, so $\#S\le 2\tau(|\Delta|)$.
+2. If $A=s^2$, then $S$ is finite. Each hit gives a factorisation $(X-2sm)(X+2sm)=\Delta$ with $X=2An+B$, so $\operatorname{card}S\le 2\tau(|\Delta|)$.
 3. If $A>0$ is not a square, let $\varepsilon=x_1+y_1\sqrt{4A}$ be the fundamental solution of $x^2-4Ay^2=1$. The solutions of $X^2-4AY^2=\Delta$ with $\eta=X+Y\sqrt{4A}>0$ fall into finitely many orbits $\mathcal O$ under multiplication by $\varepsilon$. Along each orbit the pair $(X,Y) \bmod 2A$ is purely periodic, with some period $\pi_{\mathcal O}$. Let $g_{\mathcal O}$ be the number of steps in one period with $X\equiv B\pmod{2A}$. Then
-$$\#(S\cap[1,N])=\kappa\log N+O(1),\qquad \kappa=\frac1{\log\varepsilon}\sum_{\mathcal O}\frac{g_{\mathcal O}}{\pi_{\mathcal O}} .$$
+$$\operatorname{card}(S\cap[1,N])=\kappa\log N+O(1),\qquad \kappa=\frac1{\log\varepsilon}\sum_{\mathcal O}\frac{g_{\mathcal O}}{\pi_{\mathcal O}} .$$
 
 *Proof.* We have $4A\,P(n)=X^2-\Delta$ with $X=2An+B$, and $n\mapsto X$ is a bijection onto $X\equiv B\pmod{2A}$. So $P(n)=m^2$ with $m\ge0$ if and only if $X^2-4Am^2=\Delta$. Parts 1 and 2 are immediate.
 
@@ -142,7 +142,7 @@ The finite type (part 4) no longer needs LeVeque's theorem as a black box. It fo
    - $d'$ points over every other $x$ (the cover is unramified there).
 3. Hence the affine part of each component has Euler characteristic
 $$\chi \;=\; 2-2g_C-n_\infty \;=\; d'\,(1-S).$$
-4. In particular, $y^d=F(x)$ has finitely many integral points whenever $S>1$. And $S\le1$ holds exactly for the $t$-profiles $\{1,\dots,1\}$ (power), $\{t,1,\dots,1\}$ (radical) and $\{2,2,1,\dots,1\}$ (Pell).
+4. In particular, $y^d=F(x)$ has finitely many integral points whenever $S>1$. And $S\le1$ holds exactly for the $t$-profiles $\lbrace 1,\dots,1\rbrace $ (power), $\lbrace t,1,\dots,1\rbrace $ (radical) and $\lbrace 2,2,1,\dots,1\rbrace $ (Pell).
 
 *Proof.* (1) We have $Y^d-F=\prod_\zeta\bigl(Y^{d'}-\zeta c^{1/g}\prod(x-\alpha_i)^{r_i/g}\bigr)$. Each factor is irreducible over $\overline{\mathbb Q}(x)$ by Capelli's theorem: the exponents $r_i/g$ have $\gcd(d',r_1/g,\dots,r_s/g)=1$, so the right-hand side is not a $p$-th power in $\overline{\mathbb Q}(x)$ for any prime $p\mid d'$. Over an algebraically closed field, Capelli's extra condition $-4w^4$ is subsumed.
 
@@ -176,7 +176,7 @@ Two observations connect the atlas to the monograph's rigid branch ($d\mid\deg F
 
 *Rigid polynomials are never of radical type.* In the radical type $\deg F=r+d\deg G\equiv r\not\equiv0\pmod d$.
 
-*Rigid polynomials of Pell type have finitely many hits.* Here $c=b^d=(b^2)^e$, so $\Gamma\subseteq\{b^2,-b^2\}$ and each $P_\gamma$ has leading coefficient $\pm$ a square. Lemma Q(1–2) then applies. This agrees with the Lean theorem `rigid_dichotomy`. For example, $n^2+1$ and $n(n+1)$ are rigid and of Pell type.
+*Rigid polynomials of Pell type have finitely many hits.* Here $c=b^d=(b^2)^e$, so $\Gamma\subseteq\lbrace b^2,-b^2\rbrace $ and each $P_\gamma$ has leading coefficient $\pm$ a square. Lemma Q(1–2) then applies. This agrees with the Lean theorem `rigid_dichotomy`. For example, $n^2+1$ and $n(n+1)$ are rigid and of Pell type.
 
 ## 6. Complete enumeration in the Runge branch
 
@@ -188,7 +188,7 @@ Assume $a(x_0)>0$ and, if $d$ is odd, $C(x_0)x_0^r<a(x_0)^dx_0^{dq}$. Then every
 $$G_t(x)=D^dF(x)-(P(x)+t)^d,\qquad |t|\le T(x_0).$$
 Consequently the number of hits is at most $x_0-1+(2T(x_0)+1)(d-1)q$. Since $T(x_0)\to0$, only $G_0=D^dR$ survives for large $x_0$.
 
-*Proof.* For $x\ge x_0$ the bounds $|Q(x)|\ge a(x_0)x^q>0$ and $|R(x)|\le C(x_0)x^r$ follow termwise. If $F(n)=m^d$, choose $y\in\{m,-m\}$ with $y^d=F(n)$ and $yQ(n)\ge0$. For even $d$ both signs are available. For odd $d$, $y=m$ works because $|R(n)|<|Q(n)|^d$ forces $F(n)=Q(n)^d+R(n)$ to have the sign of $Q(n)$. Write $y=sQ(n)$ with $s\ge0$. Then $s^d-1=R(n)/Q(n)^d$, and the elementary inequality $|s-1|\le|s^d-1|$ (Lean: `abs_sub_one_le_abs_pow_sub_one`) gives
+*Proof.* For $x\ge x_0$ the bounds $|Q(x)|\ge a(x_0)x^q>0$ and $|R(x)|\le C(x_0)x^r$ follow termwise. If $F(n)=m^d$, choose $y\in\lbrace m,-m\rbrace $ with $y^d=F(n)$ and $yQ(n)\ge0$. For even $d$ both signs are available. For odd $d$, $y=m$ works because $|R(n)|<|Q(n)|^d$ forces $F(n)=Q(n)^d+R(n)$ to have the sign of $Q(n)$. Write $y=sQ(n)$ with $s\ge0$. Then $s^d-1=R(n)/Q(n)^d$, and the elementary inequality $|s-1|\le|s^d-1|$ (Lean: `abs_sub_one_le_abs_pow_sub_one`) gives
 $$|Dy-P(n)|=D|Q(n)||s-1|\le \frac{D|R(n)|}{|Q(n)|^{d-1}}\le \frac{D\,C(x_0)\,n^{r-(d-1)q}}{a(x_0)^{d-1}}\le \frac{D\,C(x_0)\,x_0^{r-(d-1)q}}{a(x_0)^{d-1}},$$
 because $r<(d-1)q$ and $n\ge x_0$. So $t=Dy-P(n)$ is an integer with $|t|\le T(x_0)$, and $D^dF(n)=(Dy)^d=(P(n)+t)^d$.
 
@@ -222,7 +222,7 @@ The first case is precisely Corollary R′ with $d'=p$. In the second case $d$ i
 
 **Lean certificates.** For 17 of these instances the complete hit set is a compiled Lean theorem emitted by `lean_emit.py`; see `PerfectPower/Generated/Runge.lean` and the formal audit. The instances include all the consecutive-product pairs above. $(10,2)$ and $(12,4)$ use *interval-sandwich* certificates (`lean_sandwich.py`): $[1,\infty)$ is covered by intervals on which $(P+t)^d<D^dF<(P+t+1)^d$ is proved once, symbolically, by a Taylor shift split into nonnegative parts (`gcongr` and `positivity`), plus a tail and a few isolated points. For $(10,2)$ this takes 283 pieces below a tail at $n=20277$; for $(12,4)$, 49 pieces below $n=478$.
 
-**Formal status.** The two smallest named cases are compiled Lean theorems: `ljunggren_hitSet` (the hit set is exactly $\{3\}$) and `consecutive_four_hitSet` (empty). Each traps $2m$ or $m$ between consecutive integers, which is Theorem R with an explicit $t$-range. The analytic core — eventually $|y-Q(n)|<1/(2D)$ with $y\neq Q(n)$ — is the compiled Lean theorem `eventually_no_hit`. The formal 0–1 law `rigid_zero_one` states that on the rigid branch the hit density exists and equals $1$ if $F=G^d$ with $G \in \mathbb Z[X]$, and $0$ with a finite hit set otherwise. The reduction itself is compiled in integer form: `runge_pointwise`, `runge_uniform`, `runge_finite` in `PerfectPower/RungeReduction.lean`. Their hypotheses are the integer inequalities $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and for odd $d$, $<|P(n)|^d$. Only the derivation of these inequalities for all $n\ge x_0$ from $a(x_0)$ and $C(x_0)$ is not yet formalised.
+**Formal status.** The two smallest named cases are compiled Lean theorems: `ljunggren_hitSet` (the hit set is exactly $\lbrace 3\rbrace $) and `consecutive_four_hitSet` (empty). Each traps $2m$ or $m$ between consecutive integers, which is Theorem R with an explicit $t$-range. The analytic core — eventually $|y-Q(n)|<1/(2D)$ with $y\neq Q(n)$ — is the compiled Lean theorem `eventually_no_hit`. The formal 0–1 law `rigid_zero_one` states that on the rigid branch the hit density exists and equals $1$ if $F=G^d$ with $G \in \mathbb Z[X]$, and $0$ with a finite hit set otherwise. The reduction itself is compiled in integer form: `runge_pointwise`, `runge_uniform`, `runge_finite` in `PerfectPower/RungeReduction.lean`. Their hypotheses are the integer inequalities $|D^dF(n)-P(n)^d|<(T+1)|P(n)|^{d-1}$, and for odd $d$, $<|P(n)|^d$. Only the derivation of these inequalities for all $n\ge x_0$ from $a(x_0)$ and $C(x_0)$ is not yet formalised.
 
 ## 7. The shift spectrum
 
@@ -236,16 +236,16 @@ The monograph studies $S(n)+k$ for a fixed sequence $S$ and a variable shift $k$
 
 In particular, if $M\ge3$, then *for all but at most $M-1$ shifts $k$ the hit set of $S(n)+k$ is finite*, and polynomial or logarithmic growth can occur only at critical values. At most one $k$ makes $S+k$ an integer-polynomial $d$-th power. The reason is that $G_1^d-G_2^d$ is a nonzero constant only if both $G_1$ and $G_2$ are constant.
 
-*Examples.* For $S=n^3$ and $d=2$, $\mathcal K=\{0\}$: the Mordell curves $m^2=n^3+k$ have finitely many integral points for each $k\ne0$ (Siegel), while $k=0$ gives $\sqrt N$ hits. For $S=n^3-3n$ and $d=2$, $\mathcal K=\{\pm2\}$, and $n^3-3n+2=(n-1)^2(n+2)$ is of radical type with $\kappa=1$. For $S=n^2+n$, $\mathcal K=\emptyset$ over $\mathbb Z$ because the critical value $-1/4$ is not an integer. `python -m perfectpower shifts` computes $\mathcal K(S)$ exactly by resultant interpolation.
+*Examples.* For $S=n^3$ and $d=2$, $\mathcal K=\lbrace 0\rbrace $: the Mordell curves $m^2=n^3+k$ have finitely many integral points for each $k\ne0$ (Siegel), while $k=0$ gives $\sqrt N$ hits. For $S=n^3-3n$ and $d=2$, $\mathcal K=\lbrace \pm2\rbrace $, and $n^3-3n+2=(n-1)^2(n+2)$ is of radical type with $\kappa=1$. For $S=n^2+n$, $\mathcal K=\emptyset$ over $\mathbb Z$ because the critical value $-1/4$ is not an integer. `python -m perfectpower shifts` computes $\mathcal K(S)$ exactly by resultant interpolation.
 
-**Remark (all exponents at once).** Let $\mathcal P$ be the set of perfect powers $m^d$ with $|m|\ge2$ and $d\ge2$, and consider $A_{\mathcal P}(N)=\#\{n\le N: F(n)\in\mathcal P\}$. If $F$ has at least two distinct roots, the Schinzel–Tijdeman theorem (Acta Arith. 31 (1976)) bounds $d$ effectively in terms of $F$. So $A_{\mathcal P}$ is a finite union of the atlas counts over $d\le d_0(F)$, and it again has growth $N$, $N^{1/t}$, $\log N$ or $O(1)$. If $F=c(x-\alpha)^r$ has a single root, Theorem B applies to each $d$ separately, and the union is dominated by the smallest $t$.
+**Remark (all exponents at once).** Let $\mathcal P$ be the set of perfect powers $m^d$ with $|m|\ge2$ and $d\ge2$, and consider $A_{\mathcal P}(N)=\operatorname{card}\lbrace n\le N: F(n)\in\mathcal P\rbrace $. If $F$ has at least two distinct roots, the Schinzel–Tijdeman theorem (Acta Arith. 31 (1976)) bounds $d$ effectively in terms of $F$. So $A_{\mathcal P}$ is a finite union of the atlas counts over $d\le d_0(F)$, and it again has growth $N$, $N^{1/t}$, $\log N$ or $O(1)$. If $F=c(x-\alpha)^r$ has a single root, Theorem B applies to each $d$ separately, and the union is dominated by the smallest $t$.
 
 **Remark (integer-valued polynomials).** If $F\in\mathbb Q[x]$ takes integer values on $\mathbb Z$ and $L$ is its coefficient denominator, then $F$ and $L^dF\in\mathbb Z[x]$ have the same hits. Indeed $M^d=L^dF(n)$ makes $F(n)=(M/L)^d$ an integer that is a rational $d$-th power, hence an integer $d$-th power. The atlas therefore covers binomial coefficients (`atlas.integerize`).
 
 - *Square triangular numbers.* $n(n+1)/2$ is of Pell type with $\kappa=1/\log(3+2\sqrt2)$, and its hits are $1,8,49,288,1681,\dots$.
 - *Square values of $\binom n3$.* These are of finite type (an elliptic curve), with scan hits $n=3,4,50$ up to $10^5$. This agrees with the classical theorem that these are the only ones.
 
-**Application (sums of powers; Schäffer).** Let $S_k(n)=1^k+\cdots+n^k$, an integer-valued polynomial of degree $k+1$. Schäffer (1956) proved, via LeVeque's theorem (which Theorem G replaces here), that $S_k(n)=m^d$ has infinitely many solutions only for $(k,d)\in\{(1,2),(3,2),(3,4),(5,2)\}$. The atlas classifies every $(k,d)$ from the root multiplicities of $S_k$ and recovers exactly this list, which the receipt checks for $k\le10$, $d\le6$. It also supplies the constants:
+**Application (sums of powers; Schäffer).** Let $S_k(n)=1^k+\cdots+n^k$, an integer-valued polynomial of degree $k+1$. Schäffer (1956) proved, via LeVeque's theorem (which Theorem G replaces here), that $S_k(n)=m^d$ has infinitely many solutions only for $(k,d)\in\lbrace (1,2),(3,2),(3,4),(5,2)\rbrace $. The atlas classifies every $(k,d)$ from the root multiplicities of $S_k$ and recovers exactly this list, which the receipt checks for $k\le10$, $d\le6$. It also supplies the constants:
 
 | $(k,d)$ | type | first hits | growth |
 |---|---|---|---|
@@ -287,7 +287,7 @@ The receipt `heat_kernel_checks_theorem_T` evaluates $K_X(\tau)$ from exact stru
 - $2n^2+1$: about $-0.24$;
 - $3n^2+1$: about $0.005$.
 
-This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\beta$ imply" in the polynomial case, where only $(\alpha,\beta)\in\{(1,0),(1/t,0),(0,1),(0,0)\}$ occur.
+This answers the monograph's question "what does $A(N)\sim cN^\alpha(\log N)^\beta$ imply" in the polynomial case, where only $(\alpha,\beta)\in\lbrace (1,0),(1/t,0),(0,1),(0,0)\rbrace $ occur.
 
 **Theorem T2 (second-order heat asymptotics, Pell type).** Let $P=An^2+Bn+C$ be of Pell type with infinitely many square values, and put $\beta=-B/(2A)$. Apart from finitely many terms, the hits split into subsequences
 $$n_j=\alpha E^j+\beta+O(E^{-j}),\qquad j\ge0.$$
@@ -295,7 +295,7 @@ There is one subsequence for each positive Pell orbit $\mathcal O$ and each good
 $$K_X(\tau)=e^{-\tau\beta}\sum_{\text{classes}}\Big(\frac{\log(1/(\tau\alpha))-\gamma}{\log E}+\frac12+\Phi_E\big(\log(\tau\alpha)\big)\Big)+c_{\mathrm{int}}+O(\tau),$$
 where
 $$\Phi_E(u)=\frac2{\log E}\,\mathrm{Re}\sum_{m\ge1}\Gamma\!\Big(\frac{2\pi i m}{\log E}\Big)e^{-2\pi i m u/\log E}$$
-is continuous and $\log E$-periodic, and $c_{\mathrm{int}}=\#\{\text{hits}\le M\}-\#\{\text{model terms}\le M\}$ for any $M$ beyond which hits and model terms coincide. Expanding $e^{-\tau\beta}=1-\tau\beta+O(\tau^2)$ gives the two-term form
+is continuous and $\log E$-periodic, and $c_{\mathrm{int}}=\operatorname{card}\lbrace \text{hits}\le M\rbrace -\operatorname{card}\lbrace \text{model terms}\le M\rbrace $ for any $M$ beyond which hits and model terms coincide. Expanding $e^{-\tau\beta}=1-\tau\beta+O(\tau^2)$ gives the two-term form
 $$K_X(\tau)=\kappa\log\frac1\tau+C_0+\sum_{\text{classes}}\Phi_E\big(\log(\tau\alpha)\big)+O\big(\tau\log(1/\tau)\big),\qquad C_0=\sum_{\text{classes}}\Big(\frac{\log(1/\alpha)-\gamma}{\log E}+\frac12\Big)+c_{\mathrm{int}},$$
 with $\kappa$ the Lemma Q constant. The remainder is $O(\tau)$ when $B=0$. When $B\ne0$ the leading correction is $-\beta\kappa\,\tau\log(1/\tau)$, and $O(\tau)$ is false.
 
@@ -358,7 +358,7 @@ All these moduli divide $d$, so the intersection is empty or a single class modu
 
 **Shifted exponentials.** For $k\neq0$, $c\,a^n+k=m^d$ has only finitely many solutions (`THEOREM_EXTERNAL_DEPENDENCY`). Write $n=dq+r$ and $X=a^q$. The equation becomes $Y^d-c\,a^rX^d=k$. For $d\ge3$ this is a Thue equation, or it factors. For $d=2$ it is Pell-type, and the $X$-coordinates of a Pell class form a binary recurrence that meets the powers of $a$ only finitely often (S-unit theorem). So the shift destroys the positive density completely.
 
-The receipt `shifted_exponential_scans` lists all hits with $n\le400$ for $a\in\{2,3\}$, $|k|\le9$ and $d\in\{2,3\}$. These lists are `EXACT_COMPUTATION` only. Among them is Ramanujan–Nagell, $2^n-7=m^2$ only for $n=3,4,5,7,15$ (proved by Nagell in 1948), which the scan reproduces.
+The receipt `shifted_exponential_scans` lists all hits with $n\le400$ for $a\in\lbrace 2,3\rbrace $, $|k|\le9$ and $d\in\lbrace 2,3\rbrace $. These lists are `EXACT_COMPUTATION` only. Among them is Ramanujan–Nagell, $2^n-7=m^2$ only for $n=3,4,5,7,15$ (proved by Nagell in 1948), which the scan reproduces.
 
 ## 10. What remains open
 
@@ -372,7 +372,7 @@ The receipt `shifted_exponential_scans` lists all hits with $n\le400$ for $a\in\
    - The cross-validation also shows that scan horizons matter. Scans to $10^3$ or $10^4$ would have missed hits on 18 and 4 of the 622 curves; the largest hit is $n=80327$.
 2. **Formalisation of Theorems B, C, R in Lean.** The radical asymptotic (normalised family) and the exact Pell count (quadratic family) are compiled, and so is the atlas interface. Still open: the reductions of a general $F$ (Theorems B, C) in Lean, and the threshold inequalities of Theorem R. Siegel's theorem itself is far beyond current formal libraries and should remain an external boundary.
 3. **Uniformity.** Bound the number of hits in the finite type uniformly in the height of $F$. Theorem R gives such a bound in the Runge branch, $x_0-1+(2T(x_0)+1)(d-1)q$; is there a Runge-type bound polynomial in the height?
-4. **Beyond polynomials.** Exponential sequences ($a^n+k$; Catalan–Mihăilescu, Pillai), factorials (Brocard–Ramanujan), and linear recurrences each need their own theorems. The atlas shows that the polynomial exponent spectrum is discrete. Is the exponent spectrum of $\{S(n)+k\}$ discrete for every linear recurrence $S$?
+4. **Beyond polynomials.** Exponential sequences ($a^n+k$; Catalan–Mihăilescu, Pillai), factorials (Brocard–Ramanujan), and linear recurrences each need their own theorems. The atlas shows that the polynomial exponent spectrum is discrete. Is the exponent spectrum of $\lbrace S(n)+k\rbrace $ discrete for every linear recurrence $S$?
 5. **Thin sets.** Theorem A implies that the hit set of a non-power polynomial is contained in a thin set of type 2 with at most $O(N^{1/2})$ elements up to $N$, consistent with the Cohen–Serre bound for thin sets (Serre, *Topics in Galois Theory*, §3.4). A direct large-sieve proof of Corollary A's barrier, avoiding Siegel, would give an effective exponent bound in the finite type.
 
 ## References

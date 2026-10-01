@@ -67,6 +67,7 @@ import PerfectPower.MonomialCount
 import PerfectPower.ThueLocal
 import PerfectPower.DescentThue
 import PerfectPower.Interfaces
+import PerfectPower.NormForm
 import PerfectPower.Generated.MordellThue
 import PerfectPower.Generated.OEISAuto
 import PerfectPower.Generated.Plans
