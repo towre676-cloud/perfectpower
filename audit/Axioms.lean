@@ -778,4 +778,28 @@ open PerfectPower
 #print axioms PerfectPower.D72Residual.box_ok
 #print axioms PerfectPower.D72Residual.small_v
 #print axioms PerfectPower.D72Residual.residual_empty
+-- UnitBox
+#print axioms PerfectPower.UnitBox.dec_enc
+#print axioms PerfectPower.UnitBox.cauchy
+#print axioms PerfectPower.UnitBox.small_mem
+#print axioms PerfectPower.UnitBox.box_mem
+#print axioms PerfectPower.UnitBox.thue_list
+-- DescentThueList
+#print axioms PerfectPower.DescentThueList.branchL_entry
+#print axioms PerfectPower.DescentThueList.y_of_listB
+#print axioms PerfectPower.DescentThueList.y_mem_list
+#print axioms PerfectPower.DescentThueList.complete_of_lists
+-- Generated/Field756
+#print axioms PerfectPower.Generated.Field756.e1_inv
+#print axioms PerfectPower.Generated.Field756.e2_inv
+#print axioms PerfectPower.Generated.Field756.class_0
+#print axioms PerfectPower.Generated.Field756.class_1
+#print axioms PerfectPower.Generated.Field756.class_2
+#print axioms PerfectPower.Generated.Field756.class_18
+#print axioms PerfectPower.Generated.Field756.class_19
+#print axioms PerfectPower.Generated.Field756.class_20
+#print axioms PerfectPower.Generated.Field756.class_50
+#print axioms PerfectPower.Generated.Field756.minus7
+#print axioms PerfectPower.Generated.Field756.minus28
+#print axioms PerfectPower.Generated.Field756.minus63
 #print axioms PerfectPower.Generated.BoundedPlans.pairs_square_1e9

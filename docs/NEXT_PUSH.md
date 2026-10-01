@@ -84,9 +84,14 @@ git.
    - **Route:** for each of the 7 classes `F_i = M_i`, every solution has
      `c₀a − bφ = ±α_{i,j} ε₁^{e₁} ε₂^{e₂}` with `max |eᵢ| ≤ B_{i,j}`; then the finite search and the
      branch transport.
-   - **First missing piece:** the bound `B_{i,j}` (linear forms in logarithms, then reduction).
-     After it: the norm = determinant identification for the field of discriminant 756, and
-     completeness of the norm representatives and of the unit basis (`h = 1`, certified externally).
+   - **Now in Lean, conditionally** (`Generated/Field756.lean`): `minus7`, `minus28` and `minus63`,
+     each with the bounds `bound_i` of its classes as hypotheses. The box, the small-`b` search and
+     the branch transport (`DescentThueList.complete_of_lists`) are kernel-checked. The box hits
+     equal PARI's solution lists, and the points equal the Sage census.
+   - **Missing:** Lean proofs of the seven `bound_i`, which are external now
+     (`crosscheck/thue_bound_field756.py`: `H ≤ 13`, `V ≤ 1`). Each needs the norm = determinant
+     identification for this field, completeness of the norm representatives and of the unit
+     basis (`h = 1`, certified by PARI), and the linear-forms bound.
 2. **The `D = 72` residual equation.**
    - **Target:** `∀ u v, H72 u v ≠ 1 ∧ H72 u v ≠ −1`.
    - **Already in Lean** (`NormForm.lean`): the `δ` basis, the lattice criterion and the norms.
@@ -97,6 +102,9 @@ git.
      interval reduction.
    - This closes two classes and no curve.
 3. **Descent certificates that carry nonempty lists.**
+   - **Done for branch transport:** `DescentThueList.complete_of_lists` accepts obligations
+     `(G, M, L)` with complete lists and reads `y` off each listed solution. Still open: the same
+     for split nodes of a descent tree.
    - **Target:** a checker whose split nodes prove
      `S(F, M) = ⋃_λ T_λ S(G_λ, M/p^{s_λ}) ∪ p·S(F, M/p³)` and whose leaves carry proved complete
      finite lists.

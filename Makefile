@@ -50,6 +50,7 @@ receipts:
 	$(PY) python/make_pell_heat_receipt.py
 	$(PY) python/make_lean_mordell_branch.py
 	$(PY) python/make_lean_thue_branch.py
+	$(PY) python/make_lean_field756.py
 	$(PY) python/make_mordell_registry.py
 	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py
@@ -95,6 +96,7 @@ crosscheck:
 	$(SAGEPY) crosscheck/field756_pilot.py
 	$(SAGEPY) crosscheck/d72_unit_pilot.py 40
 	$(SAGEPY) crosscheck/thue_bound_d72.py
+	$(SAGEPY) crosscheck/thue_bound_field756.py
 
 # Host-solver adapter benchmark (constructed instances; needs z3-solver on PYTHONPATH)
 adapter-bench:

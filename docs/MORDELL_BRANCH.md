@@ -342,18 +342,36 @@ discriminant 756, is totally real, has class number 1 and unit rank 2, and is ce
 - **Per class:** only the norm list and the solutions' exponents. Every class has **one** norm
   representative and **2** solutions. Every solution has unit exponents with `|nᵢ| ≤ 1`, or
   `≤ 2` for class 50.
-- **Not done: the bound.** Completeness needs an explicit `B` with `max |nᵢ| ≤ B` for each
-  `(class, γ)`. The standard route is Baker–Matveev on Siegel's unit equation followed by LLL
-  reduction. Below `B`, the check is a finite enumeration and could be Lean-checked. No bound is
-  computed or claimed. A field match is not an equivalence: the 7 classes remain 7 obligations.
-  What they share is the unit data a bound certificate would reduce against.
-- **Milestones to a complete certificate** (`NEXT_PUSH.md`, item 1). This field serves three
-  whole curves, so it is the highest-payoff global target; the `D = 72` residual closes two
-  classes and no curve. The steps, each dependent on the previous one:
-  1. a proved exponent bound per `(class, representative)`;
-  2. norm = determinant for this field, and completeness of the representatives and units;
-  3. a checked finite search;
-  4. branch transport into `complete_of_thue`.
+- **The bound** (`crosscheck/thue_bound_field756.py`, `receipts/field756_bound.json`; external).
+  It uses the same pipeline as §7.1 (`crosscheck/thue_bound.py`), which reproduces the `D = 72`
+  bound when run on that field. Results:
+
+  | class | D | M | `V` | `H` |
+  |---|---|---|---|---|
+  | 0 | 7 | 64 | 1 | 11 |
+  | 1 | 7 | 64 | 1 | 13 |
+  | 2 | 7 | 8 | 1 | 10 |
+  | 18 | 28 | 512 | 1 | 12 |
+  | 19 | 28 | 512 | 1 | 13 |
+  | 20 | 28 | 64 | 1 | 12 |
+  | 50 | 63 | 64 | 0 | 10 |
+
+  Every solution with `|b| > V` has `c₀a − bφ = ±γ₀ ε₁^{n₁} ε₂^{n₂}` with `max |nᵢ| ≤ H`.
+- **Lean** (`UnitBox.lean`, `DescentThueList.lean`, `Generated/Field756.lean`):
+  - `UnitBox.thue_list`: under the named bound `ExtBound`, `F(a, b) = M ⇔ (a, b) ∈ L`. The kernel
+    checks the box (every lattice point of either sign that solves `F = M` is listed) and an
+    exhaustive search over `|b| ≤ V` below the Cauchy root bound (`UnitBox.cauchy`).
+  - `DescentThueList.complete_of_lists`: branch transport to obligations that carry complete
+    lists. Each listed solution, mapped back by the unimodular matrix, gives `y` exactly.
+  - `Field756.minus7`, `minus28` and `minus63`: the complete integral points, conditional on the
+    hypotheses `bound_i` of each curve's classes. The box hits are exactly PARI's solutions
+    (positive control), and the points equal the Sage census.
+- **What stays external:** the seven `bound_i`, which rest on PARI (`h = 1`, the unit basis, the
+  norm representatives), Matveev and the interval reduction. A field match is still not an
+  equivalence: the 7 classes remain 7 obligations, sharing one unit group.
+- **Milestones** (`NEXT_PUSH.md`, item 1). Done: the external bound, the checked finite search,
+  and branch transport with lists. Open: Lean proofs of the bounds, which need norm = determinant
+  for this field and completeness of the representatives and units.
 
 ### 7.4 Positive `k`
 

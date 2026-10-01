@@ -70,6 +70,9 @@ import PerfectPower.Interfaces
 import PerfectPower.NormForm
 import PerfectPower.BoundedPell
 import PerfectPower.D72Residual
+import PerfectPower.UnitBox
+import PerfectPower.DescentThueList
+import PerfectPower.Generated.Field756
 import PerfectPower.Generated.BoundedPlans
 import PerfectPower.Generated.MordellThue
 import PerfectPower.Generated.OEISAuto

@@ -92,7 +92,11 @@ their complete solution sets, each an exact equivalence over ℤ, and hands back
   - **Still open:** 23 curves have Thue branches that carry points. PARI solves them unconditionally and agrees with Sage; that is external, not Lean.
     - **D = 72** is among the 23. Its two point-free classes are everywhere locally soluble, including the branch restrictions (`receipts/d72_local.json`), so no local certificate can close them. Solution-preserving descent reduces both to one unit equation, $-3u^3+9uv^2-2v^3=\pm1$. An external bound (PARI unit data, Matveev, interval reduction) limits the unit exponents to 35. Lean checks the finite box and proves that the equation has no solution under that named bound (`D72Residual.residual_empty`).
     - Solution-preserving descent (`receipts/descent_residual.json`, measurement only) reduces the 64 classes without a descent certificate to 109 distinct unit equations. `ThueLocal.descM` adds multi-prime descent certificates, but they close nothing new: the only point-free classes left are `D = 72`'s two, which are locally soluble.
-    - A shared-field pilot (`receipts/field756_pilot.json`, external) serves 7 classes of D = 7, 28 and 63 from one certified field. Every solution has unit exponents at most 2. The exponent bound itself is not computed.
+    - **D = 7, 28, 63, from one shared field, conditionally** (`Generated/Field756.lean`). Seven classes of these three curves live in one cubic field of discriminant 756.
+      - An external certificate bounds the unit exponents of every class by 13 (`crosscheck/thue_bound_field756.py`: PARI unit data, Matveev, interval reduction).
+      - Below that bound, Lean checks the exponent box and the small cases by kernel evaluation. The box hits are exactly PARI's solutions.
+      - A new consumer, `DescentThueList.complete_of_lists`, accepts obligations that carry complete solution lists instead of empty ones.
+      - Result: `minus7`, `minus28` and `minus63` give the complete integral points (for example $(2,\pm1)$ and $(32,\pm181)$ on $y^2=x^3-7$). Each theorem takes the bounds of its classes as named hypotheses `bound_i`, which are not proved in Lean. These curves are therefore not counted among the closed ones.
 
 ### 3. From constraints to certified plans
 The constraint compiler (`python -m perfectpower solve`, [guide](docs/CONSTRAINT_COMPILER.md)) accepts constraints that do not mention powers:
