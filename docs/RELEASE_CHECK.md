@@ -1,6 +1,6 @@
 # Release check
 
-`make release-verify` was run on commit `6987f56` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
+`make release-verify` was run on commit `3c4d588` (branch `claude/laughing-lamport-qqzdo9`) with a clean working tree. It exited with status 0. `release-verify` is `make verify` with `z3-solver` required, so the adapter and certificate tests run instead of being skipped.
 
 This file archives the key lines of its output. The environment was:
 - Lean `leanprover/lean4:v4.20.0`, with Mathlib `v4.20.0` compiled from source;
@@ -17,17 +17,17 @@ The optional Sage/PARI steps (`make crosscheck`, passagemath 10.8.12, mpmath 1.3
 
 ```
 Build completed successfully.
-axiom audit passed: 810 declarations
--- Found 0 errors in 1288 declarations (plus 4179 automatically generated ones) in PerfectPower with 15 linters
+axiom audit passed: 837 declarations
+-- Found 0 errors in 1318 declarations (plus 4215 automatically generated ones) in PerfectPower with 15 linters
 -- All linting checks passed!
 z3-solver: present: adapter/certificate tests run
-Ran 195 tests in 53.308s
+Ran 195 tests in 47.361s
 OK
-Ran 14 tests in 11.604s (continuation_tests)
+Ran 14 tests in 8.580s (continuation_tests)
 OK
-Ran 10 tests in 0.027s (expert_push)
+Ran 10 tests in 0.036s (expert_push)
 OK
-Ran 8 tests in 0.010s (galois_merge)
+Ran 8 tests in 0.009s (galois_merge)
 OK
 19/19 certificates passed
 binomial gate OK: {'C(n,2)=m^3': [1, 2], 'C(n,3)=m^2': [1, 2, 3, 4, 50]}
@@ -67,7 +67,7 @@ descent gate OK
 verify: OK
 ```
 
-**Unit fields** (`python/make_lean_unit_fields.py`, run by `make verify`; [UNIT_PREMISES.md](UNIT_PREMISES.md)). The field-756 class theorems, `minus7`, `minus28`, `minus63` and `D72Residual.residual_empty` are kernel-checked **under two named premises**, `normRep_N` and `analytic_i`; unit generation is proved (`unitGen_proved`, `UnitGen.lean`) from a certificate the kernel checks. The direct-H reduction chains (56 stages), their forged negative controls, norm identities, boxes and small cases are evaluated by the kernel. In every class the box hits equal PARI's solution list, and each curve's points equal the Sage census. These curves are not counted among the 26 closed ones. `python/unit_basis_witness.py` (exact fundamental-domain witness) and `python/norm_rep_localization.py` (Dedekind's criterion, total ramification) run in `make verify` too.
+**Unit fields** (`python/make_lean_unit_fields.py`, run by `make verify`; [UNIT_PREMISES.md](UNIT_PREMISES.md)). The field-756 class theorems, `minus7`, `minus28`, `minus63` and `D72Residual.residual_empty` are kernel-checked **under one named premise per class**, `analytic_i`. Unit generation (`unitGen_proved`, `UnitGen.lean`) and the norm representatives (`normRep_*_proved`, `NormRepProof.lean`) are proved. The direct-H reduction chains (56 stages), their forged negative controls, norm identities, boxes and small cases are evaluated by the kernel. In every class the box hits equal PARI's solution list, and each curve's points equal the Sage census. These curves are not counted among the 26 closed ones. `python/unit_basis_witness.py` (exact fundamental-domain witness) and `python/norm_rep_localization.py` (Dedekind's criterion, total ramification) run in `make verify` too.
 
 **Bounded Pell.** `Generated/BoundedPlans.lean` (`pairs_square_1e9`) is unconditional; the adapter's default bounded-Pell path runs the kernel per query (`lean_kernel_checked`).
 
