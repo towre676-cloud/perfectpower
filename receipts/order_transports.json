@@ -1,0 +1,1928 @@
+{
+  "census_base_commit": "fb30592a288e0ee1e928802a94eeef2a921f3b46",
+  "orders": 32,
+  "embeddings": [
+    {
+      "domain": [
+        9,
+        9
+      ],
+      "codomain": [
+        3,
+        1
+      ],
+      "generator_image": [
+        4,
+        1,
+        -2
+      ],
+      "matrix": [
+        [
+          1,
+          4,
+          12
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -2,
+          -3
+        ]
+      ],
+      "determinant": -3,
+      "index": 3,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_0"
+    },
+    {
+      "domain": [
+        9,
+        9
+      ],
+      "codomain": [
+        3,
+        1
+      ],
+      "generator_image": [
+        -2,
+        -2,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -2,
+          0
+        ],
+        [
+          0,
+          -2,
+          -3
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "determinant": -3,
+      "index": 3,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_1"
+    },
+    {
+      "domain": [
+        9,
+        9
+      ],
+      "codomain": [
+        3,
+        1
+      ],
+      "generator_image": [
+        -2,
+        1,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -2,
+          6
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "determinant": -3,
+      "index": 3,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_2"
+    },
+    {
+      "domain": [
+        12,
+        4
+      ],
+      "codomain": [
+        12,
+        14
+      ],
+      "generator_image": [
+        -8,
+        -2,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -8,
+          8
+        ],
+        [
+          0,
+          -2,
+          -2
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "determinant": 2,
+      "index": 2,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_3"
+    },
+    {
+      "domain": [
+        12,
+        10
+      ],
+      "codomain": [
+        30,
+        62
+      ],
+      "generator_image": [
+        20,
+        3,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          20,
+          28
+        ],
+        [
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          -1,
+          -1
+        ]
+      ],
+      "determinant": -1,
+      "index": 1,
+      "kind": "ISOMORPHISM",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_4"
+    },
+    {
+      "domain": [
+        15,
+        10
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "generator_image": [
+        10,
+        2,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          10,
+          20
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          -1,
+          -1
+        ]
+      ],
+      "determinant": -2,
+      "index": 2,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_5"
+    },
+    {
+      "domain": [
+        18,
+        4
+      ],
+      "codomain": [
+        27,
+        52
+      ],
+      "generator_image": [
+        -18,
+        -3,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -18,
+          12
+        ],
+        [
+          0,
+          -3,
+          -2
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "determinant": 2,
+      "index": 2,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_6"
+    },
+    {
+      "domain": [
+        18,
+        18
+      ],
+      "codomain": [
+        12,
+        14
+      ],
+      "generator_image": [
+        8,
+        1,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          8,
+          36
+        ],
+        [
+          0,
+          1,
+          6
+        ],
+        [
+          0,
+          -1,
+          -3
+        ]
+      ],
+      "determinant": 3,
+      "index": 3,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_7"
+    },
+    {
+      "domain": [
+        18,
+        26
+      ],
+      "codomain": [
+        36,
+        82
+      ],
+      "generator_image": [
+        24,
+        3,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          24,
+          84
+        ],
+        [
+          0,
+          3,
+          10
+        ],
+        [
+          0,
+          -1,
+          -3
+        ]
+      ],
+      "determinant": 1,
+      "index": 1,
+      "kind": "ISOMORPHISM",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_8"
+    },
+    {
+      "domain": [
+        30,
+        16
+      ],
+      "codomain": [
+        9,
+        2
+      ],
+      "generator_image": [
+        6,
+        1,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          6,
+          32
+        ],
+        [
+          0,
+          1,
+          -4
+        ],
+        [
+          0,
+          -1,
+          -2
+        ]
+      ],
+      "determinant": -6,
+      "index": 6,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_9"
+    },
+    {
+      "domain": [
+        30,
+        20
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "generator_image": [
+        10,
+        1,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          10,
+          60
+        ],
+        [
+          0,
+          1,
+          10
+        ],
+        [
+          0,
+          -1,
+          -4
+        ]
+      ],
+      "determinant": 6,
+      "index": 6,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_10"
+    },
+    {
+      "domain": [
+        30,
+        20
+      ],
+      "codomain": [
+        30,
+        60
+      ],
+      "generator_image": [
+        20,
+        3,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          20,
+          40
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          -1,
+          -1
+        ]
+      ],
+      "determinant": -3,
+      "index": 3,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_11"
+    },
+    {
+      "domain": [
+        30,
+        38
+      ],
+      "codomain": [
+        24,
+        42
+      ],
+      "generator_image": [
+        -16,
+        -3,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -16,
+          4
+        ],
+        [
+          0,
+          -3,
+          -6
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "determinant": 3,
+      "index": 3,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_12"
+    },
+    {
+      "domain": [
+        30,
+        60
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "generator_image": [
+        -10,
+        -3,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -10,
+          -20
+        ],
+        [
+          0,
+          -3,
+          -10
+        ],
+        [
+          0,
+          1,
+          4
+        ]
+      ],
+      "determinant": -2,
+      "index": 2,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_13"
+    },
+    {
+      "domain": [
+        30,
+        62
+      ],
+      "codomain": [
+        12,
+        10
+      ],
+      "generator_image": [
+        8,
+        1,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          8,
+          44
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          -1,
+          -3
+        ]
+      ],
+      "determinant": -1,
+      "index": 1,
+      "kind": "ISOMORPHISM",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_14"
+    },
+    {
+      "domain": [
+        36,
+        82
+      ],
+      "codomain": [
+        18,
+        26
+      ],
+      "generator_image": [
+        -12,
+        -3,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -12,
+          -12
+        ],
+        [
+          0,
+          -3,
+          -10
+        ],
+        [
+          0,
+          1,
+          3
+        ]
+      ],
+      "determinant": 1,
+      "index": 1,
+      "kind": "ISOMORPHISM",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_15"
+    },
+    {
+      "domain": [
+        39,
+        2
+      ],
+      "codomain": [
+        15,
+        16
+      ],
+      "generator_image": [
+        10,
+        2,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          10,
+          36
+        ],
+        [
+          0,
+          2,
+          -4
+        ],
+        [
+          0,
+          -1,
+          -1
+        ]
+      ],
+      "determinant": -6,
+      "index": 6,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_16"
+    },
+    {
+      "domain": [
+        39,
+        34
+      ],
+      "codomain": [
+        27,
+        52
+      ],
+      "generator_image": [
+        18,
+        2,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          18,
+          116
+        ],
+        [
+          0,
+          2,
+          16
+        ],
+        [
+          0,
+          -1,
+          -5
+        ]
+      ],
+      "determinant": 6,
+      "index": 6,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_17"
+    },
+    {
+      "domain": [
+        39,
+        86
+      ],
+      "codomain": [
+        21,
+        32
+      ],
+      "generator_image": [
+        14,
+        2,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          14,
+          68
+        ],
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          0,
+          -1,
+          -3
+        ]
+      ],
+      "determinant": -2,
+      "index": 2,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_18"
+    },
+    {
+      "domain": [
+        42,
+        74
+      ],
+      "codomain": [
+        12,
+        6
+      ],
+      "generator_image": [
+        8,
+        1,
+        -1
+      ],
+      "matrix": [
+        [
+          1,
+          8,
+          52
+        ],
+        [
+          0,
+          1,
+          -2
+        ],
+        [
+          0,
+          -1,
+          -3
+        ]
+      ],
+      "determinant": -5,
+      "index": 5,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_19"
+    },
+    {
+      "domain": [
+        195,
+        830
+      ],
+      "codomain": [
+        15,
+        10
+      ],
+      "generator_image": [
+        -10,
+        2,
+        1
+      ],
+      "matrix": [
+        [
+          1,
+          -10,
+          140
+        ],
+        [
+          0,
+          2,
+          30
+        ],
+        [
+          0,
+          1,
+          -1
+        ]
+      ],
+      "determinant": -32,
+      "index": 32,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_20"
+    },
+    {
+      "domain": [
+        195,
+        830
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "generator_image": [
+        30,
+        4,
+        -3
+      ],
+      "matrix": [
+        [
+          1,
+          30,
+          420
+        ],
+        [
+          0,
+          4,
+          60
+        ],
+        [
+          0,
+          -3,
+          -29
+        ]
+      ],
+      "determinant": 64,
+      "index": 64,
+      "kind": "EMBEDDING",
+      "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+      "lean": "Generated.OrderMaps.map_21"
+    }
+  ],
+  "lean_isomorphisms": [
+    "iso_4_14",
+    "iso_8_15"
+  ],
+  "choices": [
+    {
+      "domain": [
+        3,
+        1
+      ],
+      "original_cost": 45,
+      "chosen_order": [
+        3,
+        1
+      ],
+      "unitgen_proxy_cost": 45,
+      "transport": null
+    },
+    {
+      "domain": [
+        9,
+        2
+      ],
+      "original_cost": 5301,
+      "chosen_order": [
+        9,
+        2
+      ],
+      "unitgen_proxy_cost": 5301,
+      "transport": null
+    },
+    {
+      "domain": [
+        9,
+        9
+      ],
+      "original_cost": 195,
+      "chosen_order": [
+        3,
+        1
+      ],
+      "unitgen_proxy_cost": 45,
+      "transport": {
+        "domain": [
+          9,
+          9
+        ],
+        "codomain": [
+          3,
+          1
+        ],
+        "generator_image": [
+          4,
+          1,
+          -2
+        ],
+        "matrix": [
+          [
+            1,
+            4,
+            12
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            -2,
+            -3
+          ]
+        ],
+        "determinant": -3,
+        "index": 3,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_0"
+      }
+    },
+    {
+      "domain": [
+        12,
+        4
+      ],
+      "original_cost": 3870,
+      "chosen_order": [
+        12,
+        14
+      ],
+      "unitgen_proxy_cost": 1942,
+      "transport": {
+        "domain": [
+          12,
+          4
+        ],
+        "codomain": [
+          12,
+          14
+        ],
+        "generator_image": [
+          -8,
+          -2,
+          1
+        ],
+        "matrix": [
+          [
+            1,
+            -8,
+            8
+          ],
+          [
+            0,
+            -2,
+            -2
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "determinant": 2,
+        "index": 2,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_3"
+      }
+    },
+    {
+      "domain": [
+        12,
+        6
+      ],
+      "original_cost": 13365,
+      "chosen_order": [
+        12,
+        6
+      ],
+      "unitgen_proxy_cost": 13365,
+      "transport": null
+    },
+    {
+      "domain": [
+        12,
+        10
+      ],
+      "original_cost": 195,
+      "chosen_order": [
+        12,
+        10
+      ],
+      "unitgen_proxy_cost": 195,
+      "transport": null
+    },
+    {
+      "domain": [
+        12,
+        14
+      ],
+      "original_cost": 1942,
+      "chosen_order": [
+        12,
+        14
+      ],
+      "unitgen_proxy_cost": 1942,
+      "transport": null
+    },
+    {
+      "domain": [
+        15,
+        10
+      ],
+      "original_cost": 55000,
+      "chosen_order": [
+        15,
+        20
+      ],
+      "unitgen_proxy_cost": 3562,
+      "transport": {
+        "domain": [
+          15,
+          10
+        ],
+        "codomain": [
+          15,
+          20
+        ],
+        "generator_image": [
+          10,
+          2,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            10,
+            20
+          ],
+          [
+            0,
+            2,
+            0
+          ],
+          [
+            0,
+            -1,
+            -1
+          ]
+        ],
+        "determinant": -2,
+        "index": 2,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_5"
+      }
+    },
+    {
+      "domain": [
+        15,
+        16
+      ],
+      "original_cost": 734966,
+      "chosen_order": [
+        15,
+        16
+      ],
+      "unitgen_proxy_cost": 734966,
+      "transport": null
+    },
+    {
+      "domain": [
+        15,
+        20
+      ],
+      "original_cost": 3562,
+      "chosen_order": [
+        15,
+        20
+      ],
+      "unitgen_proxy_cost": 3562,
+      "transport": null
+    },
+    {
+      "domain": [
+        18,
+        4
+      ],
+      "original_cost": 12444,
+      "chosen_order": [
+        18,
+        4
+      ],
+      "unitgen_proxy_cost": 12444,
+      "transport": null
+    },
+    {
+      "domain": [
+        18,
+        18
+      ],
+      "original_cost": 730,
+      "chosen_order": [
+        18,
+        18
+      ],
+      "unitgen_proxy_cost": 730,
+      "transport": null
+    },
+    {
+      "domain": [
+        18,
+        22
+      ],
+      "original_cost": 23830,
+      "chosen_order": [
+        18,
+        22
+      ],
+      "unitgen_proxy_cost": 23830,
+      "transport": null
+    },
+    {
+      "domain": [
+        18,
+        24
+      ],
+      "original_cost": 2880,
+      "chosen_order": [
+        18,
+        24
+      ],
+      "unitgen_proxy_cost": 2880,
+      "transport": null
+    },
+    {
+      "domain": [
+        18,
+        26
+      ],
+      "original_cost": 3445,
+      "chosen_order": [
+        36,
+        82
+      ],
+      "unitgen_proxy_cost": 720,
+      "transport": {
+        "domain": [
+          18,
+          26
+        ],
+        "codomain": [
+          36,
+          82
+        ],
+        "generator_image": [
+          24,
+          3,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            24,
+            84
+          ],
+          [
+            0,
+            3,
+            10
+          ],
+          [
+            0,
+            -1,
+            -3
+          ]
+        ],
+        "determinant": 1,
+        "index": 1,
+        "kind": "ISOMORPHISM",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_8"
+      }
+    },
+    {
+      "domain": [
+        21,
+        32
+      ],
+      "original_cost": 51414,
+      "chosen_order": [
+        21,
+        32
+      ],
+      "unitgen_proxy_cost": 51414,
+      "transport": null
+    },
+    {
+      "domain": [
+        24,
+        28
+      ],
+      "original_cost": 61310,
+      "chosen_order": [
+        24,
+        28
+      ],
+      "unitgen_proxy_cost": 61310,
+      "transport": null
+    },
+    {
+      "domain": [
+        24,
+        42
+      ],
+      "original_cost": 2646,
+      "chosen_order": [
+        24,
+        42
+      ],
+      "unitgen_proxy_cost": 2646,
+      "transport": null
+    },
+    {
+      "domain": [
+        27,
+        52
+      ],
+      "original_cost": 30748,
+      "chosen_order": [
+        27,
+        52
+      ],
+      "unitgen_proxy_cost": 30748,
+      "transport": null
+    },
+    {
+      "domain": [
+        30,
+        16
+      ],
+      "original_cost": null,
+      "chosen_order": [
+        9,
+        2
+      ],
+      "unitgen_proxy_cost": 5301,
+      "transport": {
+        "domain": [
+          30,
+          16
+        ],
+        "codomain": [
+          9,
+          2
+        ],
+        "generator_image": [
+          6,
+          1,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            6,
+            32
+          ],
+          [
+            0,
+            1,
+            -4
+          ],
+          [
+            0,
+            -1,
+            -2
+          ]
+        ],
+        "determinant": -6,
+        "index": 6,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_9"
+      }
+    },
+    {
+      "domain": [
+        30,
+        20
+      ],
+      "original_cost": 357346,
+      "chosen_order": [
+        30,
+        60
+      ],
+      "unitgen_proxy_cost": 3518,
+      "transport": {
+        "domain": [
+          30,
+          20
+        ],
+        "codomain": [
+          30,
+          60
+        ],
+        "generator_image": [
+          20,
+          3,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            20,
+            40
+          ],
+          [
+            0,
+            3,
+            0
+          ],
+          [
+            0,
+            -1,
+            -1
+          ]
+        ],
+        "determinant": -3,
+        "index": 3,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_11"
+      }
+    },
+    {
+      "domain": [
+        30,
+        34
+      ],
+      "original_cost": 1433544,
+      "chosen_order": [
+        30,
+        34
+      ],
+      "unitgen_proxy_cost": 1433544,
+      "transport": null
+    },
+    {
+      "domain": [
+        30,
+        38
+      ],
+      "original_cost": 1132448,
+      "chosen_order": [
+        24,
+        42
+      ],
+      "unitgen_proxy_cost": 2646,
+      "transport": {
+        "domain": [
+          30,
+          38
+        ],
+        "codomain": [
+          24,
+          42
+        ],
+        "generator_image": [
+          -16,
+          -3,
+          1
+        ],
+        "matrix": [
+          [
+            1,
+            -16,
+            4
+          ],
+          [
+            0,
+            -3,
+            -6
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        "determinant": 3,
+        "index": 3,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_12"
+      }
+    },
+    {
+      "domain": [
+        30,
+        60
+      ],
+      "original_cost": 3518,
+      "chosen_order": [
+        30,
+        60
+      ],
+      "unitgen_proxy_cost": 3518,
+      "transport": null
+    },
+    {
+      "domain": [
+        30,
+        62
+      ],
+      "original_cost": 538,
+      "chosen_order": [
+        12,
+        10
+      ],
+      "unitgen_proxy_cost": 195,
+      "transport": {
+        "domain": [
+          30,
+          62
+        ],
+        "codomain": [
+          12,
+          10
+        ],
+        "generator_image": [
+          8,
+          1,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            8,
+            44
+          ],
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            -1,
+            -3
+          ]
+        ],
+        "determinant": -1,
+        "index": 1,
+        "kind": "ISOMORPHISM",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_14"
+      }
+    },
+    {
+      "domain": [
+        36,
+        82
+      ],
+      "original_cost": 720,
+      "chosen_order": [
+        36,
+        82
+      ],
+      "unitgen_proxy_cost": 720,
+      "transport": null
+    },
+    {
+      "domain": [
+        39,
+        2
+      ],
+      "original_cost": null,
+      "chosen_order": [
+        15,
+        16
+      ],
+      "unitgen_proxy_cost": 734966,
+      "transport": {
+        "domain": [
+          39,
+          2
+        ],
+        "codomain": [
+          15,
+          16
+        ],
+        "generator_image": [
+          10,
+          2,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            10,
+            36
+          ],
+          [
+            0,
+            2,
+            -4
+          ],
+          [
+            0,
+            -1,
+            -1
+          ]
+        ],
+        "determinant": -6,
+        "index": 6,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_16"
+      }
+    },
+    {
+      "domain": [
+        39,
+        34
+      ],
+      "original_cost": 13928314,
+      "chosen_order": [
+        27,
+        52
+      ],
+      "unitgen_proxy_cost": 30748,
+      "transport": {
+        "domain": [
+          39,
+          34
+        ],
+        "codomain": [
+          27,
+          52
+        ],
+        "generator_image": [
+          18,
+          2,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            18,
+            116
+          ],
+          [
+            0,
+            2,
+            16
+          ],
+          [
+            0,
+            -1,
+            -5
+          ]
+        ],
+        "determinant": 6,
+        "index": 6,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_17"
+      }
+    },
+    {
+      "domain": [
+        39,
+        86
+      ],
+      "original_cost": 1247674,
+      "chosen_order": [
+        21,
+        32
+      ],
+      "unitgen_proxy_cost": 51414,
+      "transport": {
+        "domain": [
+          39,
+          86
+        ],
+        "codomain": [
+          21,
+          32
+        ],
+        "generator_image": [
+          14,
+          2,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            14,
+            68
+          ],
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            0,
+            -1,
+            -3
+          ]
+        ],
+        "determinant": -2,
+        "index": 2,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_18"
+      }
+    },
+    {
+      "domain": [
+        42,
+        74
+      ],
+      "original_cost": null,
+      "chosen_order": [
+        12,
+        6
+      ],
+      "unitgen_proxy_cost": 13365,
+      "transport": {
+        "domain": [
+          42,
+          74
+        ],
+        "codomain": [
+          12,
+          6
+        ],
+        "generator_image": [
+          8,
+          1,
+          -1
+        ],
+        "matrix": [
+          [
+            1,
+            8,
+            52
+          ],
+          [
+            0,
+            1,
+            -2
+          ],
+          [
+            0,
+            -1,
+            -3
+          ]
+        ],
+        "determinant": -5,
+        "index": 5,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_19"
+      }
+    },
+    {
+      "domain": [
+        195,
+        830
+      ],
+      "original_cost": null,
+      "chosen_order": [
+        15,
+        20
+      ],
+      "unitgen_proxy_cost": 3562,
+      "transport": {
+        "domain": [
+          195,
+          830
+        ],
+        "codomain": [
+          15,
+          20
+        ],
+        "generator_image": [
+          30,
+          4,
+          -3
+        ],
+        "matrix": [
+          [
+            1,
+            30,
+            420
+          ],
+          [
+            0,
+            4,
+            60
+          ],
+          [
+            0,
+            -3,
+            -29
+          ]
+        ],
+        "determinant": 64,
+        "index": 64,
+        "kind": "EMBEDDING",
+        "evidence": "EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide",
+        "lean": "Generated.OrderMaps.map_21"
+      }
+    }
+  ],
+  "curves": [
+    {
+      "D": 39,
+      "old_unitgen": 733,
+      "new_unitgen_proxy": 195,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          12,
+          10
+        ]
+      ]
+    },
+    {
+      "D": 60,
+      "old_unitgen": 3870,
+      "new_unitgen_proxy": 1942,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          12,
+          14
+        ]
+      ]
+    },
+    {
+      "D": 47,
+      "old_unitgen": 4165,
+      "new_unitgen_proxy": 720,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          36,
+          82
+        ]
+      ]
+    },
+    {
+      "D": 95,
+      "old_unitgen": 23830,
+      "new_unitgen_proxy": 23830,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          18,
+          22
+        ]
+      ]
+    },
+    {
+      "D": 15,
+      "old_unitgen": 6542,
+      "new_unitgen_proxy": 2672,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          12,
+          14
+        ],
+        [
+          18,
+          18
+        ]
+      ]
+    },
+    {
+      "D": 25,
+      "old_unitgen": 419426,
+      "new_unitgen_proxy": 7080,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          15,
+          20
+        ],
+        [
+          30,
+          60
+        ]
+      ]
+    },
+    {
+      "D": 26,
+      "old_unitgen": 5301,
+      "new_unitgen_proxy": 5301,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          9,
+          2
+        ]
+      ]
+    },
+    {
+      "D": 48,
+      "old_unitgen": 240,
+      "new_unitgen_proxy": 45,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "D": 53,
+      "old_unitgen": 13971506,
+      "new_unitgen_proxy": 43192,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          18,
+          4
+        ],
+        [
+          27,
+          52
+        ]
+      ]
+    },
+    {
+      "D": 55,
+      "old_unitgen": 13365,
+      "new_unitgen_proxy": 13365,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          12,
+          6
+        ]
+      ]
+    },
+    {
+      "D": 61,
+      "old_unitgen": 734966,
+      "new_unitgen_proxy": 734966,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          15,
+          16
+        ]
+      ]
+    },
+    {
+      "D": 71,
+      "old_unitgen": 1135094,
+      "new_unitgen_proxy": 2646,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          24,
+          42
+        ]
+      ]
+    },
+    {
+      "D": 72,
+      "old_unitgen": 2880,
+      "new_unitgen_proxy": 2880,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          18,
+          24
+        ]
+      ]
+    },
+    {
+      "D": 79,
+      "old_unitgen": 1494854,
+      "new_unitgen_proxy": 1494854,
+      "all_order_costs_available": false,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          24,
+          28
+        ],
+        [
+          30,
+          34
+        ]
+      ]
+    },
+    {
+      "D": 87,
+      "old_unitgen": 1299088,
+      "new_unitgen_proxy": 51414,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          21,
+          32
+        ]
+      ]
+    },
+    {
+      "D": 100,
+      "old_unitgen": 419426,
+      "new_unitgen_proxy": 7080,
+      "all_order_costs_available": true,
+      "source_repricing_required": true,
+      "chosen_orders": [
+        [
+          15,
+          20
+        ],
+        [
+          30,
+          60
+        ]
+      ]
+    }
+  ],
+  "warning": "The maps are Lean-checked (Generated/OrderMaps.lean); the unit-generation costs are estimates, and source certificates in a target order must be regenerated."
+}

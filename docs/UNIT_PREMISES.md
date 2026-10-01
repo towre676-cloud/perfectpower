@@ -243,6 +243,20 @@ Unit generation for this order is proved once, in `Order1944.lean`. The `D = 72`
 | analytic, reduction | `analytic_v1_proved`, `analytic_v2_proved` from `matveev_v1`, `matveev_v2`; `H ≤ 3` |
 | lists | `F₁ = (−1, −3, 6, 2) = 1 ⇔ (u, v) = (−1, 0)`; `F₂ = (−1, −9, 54, 54) = 1 ⇔ (u, v) = (−1, 0)` |
 
+## Orders related by maps (`OrderEmbedding.lean`, `Generated/OrderMaps.lean`)
+
+The image of the generator fixes a map `R(p, q) → R(P, Q)`. When it is multiplicative and preserves
+the norm, an encoding `φ` in `R(p, q)` becomes `Ψ(φ)` in `R(P, Q)` with the same norm form
+(`nrm_enc_of_map`). Unit generation for the target then covers the source equation. This holds for
+any index, because a larger order's unit group contains the images, and the source equation filters
+the rest. Only an isomorphism pulls unit generation back (`unitGen_transport`).
+
+| curve | target order | unit generation |
+|---|---|---|
+| `D = 39` | `t³ = 12t + 10` (≅ `t³ = 30t + 62`) | `ε₁ = −11 − t + t²`, `ε₂ = −3 − t`; box `6, 2, 1` (195 triples) |
+| `D = 47` | `t³ = 36t + 82` (≅ `t³ = 18t + 26`) | `ε₁ = −3 − t`, `ε₂ = −411 − 72t + 19t²`; slab of 153 points |
+| `D = 60` | `t³ = 12t + 14` (contains `t³ = 12t + 4` with index 2) | `ε₁ = −5 − 5t − t²`, `ε₂ = −11 − 12t − 3t²`; slab of 1,051 points |
+
 ## A slab instead of a box: `ℤ[θ]`, `θ³ = 15θ + 12` (`Generated/Minus89.lean`)
 
 | item | `ℤ[θ]`, `θ³ = 15θ + 12` (discriminant 9612) |

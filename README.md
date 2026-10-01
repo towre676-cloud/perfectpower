@@ -117,8 +117,12 @@ their complete solution sets, each an exact equivalence over ℤ, and hands back
       - Both live in $\mathbb{Z}[\theta]$, $\theta^3=15\theta+12$, with $\varphi_1=1+\theta$ and $\varphi_2=6+5\theta$. The second source's own generator is $5\theta$.
       - The unit box has 2,548,975 triples. `UnitGenProof.unitGen_of_slab` enumerates only the 33,217 lattice points that the three embedding bounds allow.
       - `minus89`: the integral points are exactly $(5,\pm6)$, under `matveev_t1` and `matveev_t2`.
-    - **Coverage** (`receipts/descent_coverage.json`, derived from the registered Lean theorems): 8 of the 109 unit equations are registered, and $D=7,18,23,28,45,63,89$ are conditionally complete. The workload that still blocks a class is $U_{\mathrm{needed}}$: 88 unit equations, the unregistered leaves of the 45 unresolved classes.
-    - **Cost before proof** (`receipts/order_cost.json`): an estimate of the kernel work $C(D)$ for each unresolved curve, with shared orders charged once. The cheapest priced curves are $D=39$, $60$, $47$ and $95$.
+    - **D = 39, 47, 60, through order maps, conditionally** (`Generated/Minus39.lean`, `Minus47.lean`, `Minus60.lean`). Each curve's sources are moved into one target order along a Lean-checked map (`OrderEmbedding`, `Generated/OrderMaps.lean`). Two of the maps are isomorphisms, and one embeds into a larger order of index 2.
+      - `minus39`: the integral points are $(4,\pm5)$, $(10,\pm31)$ and $(22,\pm103)$.
+      - `minus47`: $(6,\pm13)$, $(12,\pm41)$ and $(63,\pm500)$.
+      - `minus60`: $(4,\pm2)$ and $(136,\pm1586)$.
+    - **Coverage** (`receipts/descent_coverage.json`, derived from the registered Lean theorems): 26 of the 109 unit equations are registered, and $D=7,18,23,28,39,45,47,60,63,89$ are conditionally complete. The workload that still blocks a class is $U_{\mathrm{needed}}$: 70 unit equations, the unregistered leaves of the 38 unresolved classes.
+    - **Cost before proof** (`receipts/order_cost.json`): an estimate of the kernel work $C(D)$ for each unresolved curve, with shared orders charged once.
 
 ### 3. From constraints to certified plans
 The constraint compiler (`python -m perfectpower solve`, [guide](docs/CONSTRAINT_COMPILER.md)) accepts constraints that do not mention powers:
@@ -239,11 +243,12 @@ docker build -t perfectpower . && docker run --rm perfectpower
 - [MORDELL_BRANCH.md](docs/MORDELL_BRANCH.md): the branch compiler, the Gaussian pilot, the 26 closed curves, the tested prediction, the Thue branches.
 - [DEFINITION_LANGUAGE.md](docs/DEFINITION_LANGUAGE.md): grammar, semantics and the exact claim of the generated OEIS proofs.
 - [OEIS.md](docs/OEIS.md): observations of orbits, the orbit engine, the definition language and generated proofs, the withheld $\sqrt3$ test, snapshots, the promotion rule, the Mordell cross-check and obstruction classes.
+- [ARITHMETIC_WORKFLOW.md](docs/ARITHMETIC_WORKFLOW.md): the Why3 Von Neumann isqrt route; [ARCHIVE_SALVAGE.md](docs/ARCHIVE_SALVAGE.md): exact examples and corrections recovered from old notes, and the projector certificate.
 - [CERTIFICATE_FORMAT.md](docs/CERTIFICATE_FORMAT.md), [TRUST_BOUNDARY.md](docs/TRUST_BOUNDARY.md), [RELATED_WORK.md](docs/RELATED_WORK.md), [OPEN_PROBLEMS.md](docs/OPEN_PROBLEMS.md).
 
 **What is still open.**
 - Effective enumeration of the finite type outside Runge and the certified Mordell cases. The compiler states the missing premise exactly, and the OEIS cross-check ranks 82 nonempty curves with $|k|\le100$ as leads.
-- **The 23 negative-$k$ curves whose Thue branches carry points** (62 obligations). Local certificates cannot close them; this needs bounds for irreducible Thue equations (Baker with reduction, or Skolem's method), certified in Lean.
+- **The negative-$k$ curves whose Thue branches carry points.** 10 of the 23 are complete under Matveev premises (`receipts/descent_coverage.json`). Local certificates cannot close the other 13: they need bounds for irreducible Thue equations, and the remaining premise everywhere is Matveev's theorem itself.
 - **Positive $k$** (96 curves $|k|\le100$): the factorization is real quadratic, which this lattice argument does not cover. `Interfaces.orbit_mod_three` proves only the unit-exponent normalization (units mod cubes). Seed and ideal-class coverage, the exceptional primes and the integral readout are separate obligations.
 - Quartic genus-one models: `EffectiveEnumeration.lean` has the degree-two map and exact lifts, not a quartic solver.
 - The Bilu–Tichy classification: `MonomialCount.lean` has the finished counting pieces (monomials, filtered orbits, collisions, the $t^2$ outer polynomial), not the classification.

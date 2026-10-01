@@ -46,6 +46,39 @@ CURVES = {
     89: {'name': 'Minus89', 'P': 15, 'Q': 12, 'disc': 9612, 'units': [(37, 55, 13), (-131, -125, 37)],
          'sources': [{'name': 't1', 'form': (-1, -3, 12, 2), 'phi': (1, 1, 0), 'normrep': ('one',)},
                      {'name': 't2', 'form': (-1, -18, 267, 534), 'phi': (6, 5, 0), 'normrep': ('one',)}]},
+    # Sources moved into one target order along Lean-checked order maps (`Generated/OrderMaps.lean`):
+    # `'via': (k, (p, q), φ₀)` means φ = map_k(φ₀), with φ₀ the encoding in ℤ[t]/(t³ − pt − q).
+    39: {'name': 'Minus39', 'P': 12, 'Q': 10, 'disc': 4212, 'units': [(-11, -1, 1), (-3, -1, 0)],
+         'sources': [{'name': 'r1', 'form': (-1, -93, 117, 1209), 'phi': (111, 10, -10), 'normrep': ('one',),
+                      'via': (14, (30, 62), (31, 10, 0))},
+                     {'name': 'r2', 'form': (-1, -48, -18, 154), 'phi': (56, 5, -5), 'normrep': ('one',),
+                      'via': (14, (30, 62), (16, 5, 0))},
+                     {'name': 'r3', 'form': (-1, -18, 12, 8), 'phi': (22, 2, -2), 'normrep': ('one',),
+                      'via': (14, (30, 62), (6, 2, 0))},
+                     {'name': 'r4', 'form': (-1, -15, 117, 195), 'phi': (5, 4, 0), 'normrep': ('one',)},
+                     {'name': 'r5', 'form': (-1, -9, 21, 37), 'phi': (3, 2, 0), 'normrep': ('one',)},
+                     {'name': 'r6', 'form': (-1, -3, 9, 1), 'phi': (1, 1, 0), 'normrep': ('one',)}]},
+    60: {'name': 'Minus60', 'P': 12, 'Q': 14, 'disc': 1620, 'units': [(-5, -5, -1), (-11, -12, -3)],
+         'sources': [{'name': 'q1', 'form': (-1, -6, 180, 120), 'phi': (-30, -8, 4), 'normrep': ('one',),
+                      'via': (3, (12, 4), (2, 4, 0))},
+                     {'name': 'q2', 'form': (-1, -3, 9, 7), 'phi': (-7, -2, 1), 'normrep': ('one',),
+                      'via': (3, (12, 4), (1, 1, 0))},
+                     {'name': 'q3', 'form': (-1, -3, 45, 15), 'phi': (-15, -4, 2), 'normrep': ('one',),
+                      'via': (3, (12, 4), (1, 2, 0))}]},
+    47: {'name': 'Minus47', 'P': 36, 'Q': 82, 'disc': 5076, 'units': [(-3, -1, 0), (-411, -72, 19)],
+         'sources': [{'name': 'p1', 'form': (-1, -123, 141, 1927), 'phi': (41, 12, 0), 'normrep': ('one',)},
+                     {'name': 'p2', 'form': (-1, -63, -27, 243), 'phi': (21, 6, 0), 'normrep': ('one',)},
+                     {'name': 'p3', 'form': (-1, -42, -12, 72), 'phi': (14, 4, 0), 'normrep': ('one',)},
+                     {'name': 'p4', 'form': (-1, -39, 141, 611), 'phi': (157, 18, -6), 'normrep': ('one',),
+                      'via': (8, (18, 26), (13, 6, 0))},
+                     {'name': 'p5', 'form': (-1, -30, 24, 26), 'phi': (10, 3, 0), 'normrep': ('one',)},
+                     {'name': 'p6', 'form': (-1, -21, -3, 9), 'phi': (7, 2, 0), 'normrep': ('one',)},
+                     {'name': 'p7', 'form': (-1, -21, 15, 89), 'phi': (79, 9, -3), 'normrep': ('one',),
+                      'via': (8, (18, 26), (7, 3, 0))},
+                     {'name': 'p8', 'form': (-1, -12, 24, 16), 'phi': (52, 6, -2), 'normrep': ('one',),
+                      'via': (8, (18, 26), (4, 2, 0))},
+                     {'name': 'p9', 'form': (-1, -6, 6, 2), 'phi': (26, 3, -1), 'normrep': ('one',),
+                      'via': (8, (18, 26), (2, 1, 0))}]},
     # the order of the D = 72 residual: unit generation is imported, not re-checked
     18: {'name': 'Minus18', 'P': 9, 'Q': 6, 'disc': 1944, 'units': [(-1, -3, 1), (-1, 0, 2)], 'order': 'Order1944',
          'sources': [{'name': 'v1', 'form': (-1, -3, 6, 2), 'phi': (1, 1, 0), 'normrep': ('one',)},
@@ -284,6 +317,31 @@ def slab_layer(cfg, text, cert, size, e1i, e2i):
     return text, e1i, e2i, cert
 
 
+def via_layer(cfg, s):
+    """The encoding was moved from another order: `φ = map_k(φ₀)`, and the norm identity in the
+    target is the source order's one, transported (`OrderEmbedding.nrm_enc_of_map`).  The class
+    certificate does not depend on this (it checks its own norm identity by `ring`); it records
+    where `φ` comes from."""
+    import order_transport as OT
+    P, Q = cfg['P'], cfg['Q']
+    k, (p, q), phi0 = s['via']
+    tr = json.loads((ROOT / 'receipts' / 'order_transports.json').read_text())['embeddings'][k]
+    assert tuple(tr['domain']) == (p, q) and tuple(tr['codomain']) == (P, Q)
+    g = tuple(tr['generator_image'])
+    assert OT.emb(P, Q, g, phi0) == tuple(s['phi'])
+    n, c0 = s['name'], s['form'][0]
+    kind = 'an isomorphism' if abs(tr['determinant']) == 1 else f"an embedding of index {abs(tr['determinant'])}"
+    return (f"/-- `φ` for `{n}` is the image of `{z3txt(phi0)}` in `ℤ[t]/(t³ − {p}t − {q})` under "
+            f"`OrderMaps.map_{k}` ({kind}). -/\n"
+            f"theorem phi_{n}_via : OrderEmbedding.emb {P} {Q} {U.z3_lean(g)} {U.z3_lean(phi0)} = {U.z3_lean(s['phi'])} := "
+            f"by decide\n\n"
+            f"/-- The norm identity of `{n}` here is the one in `ℤ[t]/(t³ − {p}t − {q})`, transported. -/\n"
+            f"theorem nrm_{n}_via (a b : ℤ) : UnitPremises.nrm {P} {Q} (enc {U._i(c0)} {U.z3_lean(s['phi'])} a b) =\n"
+            f"    UnitPremises.nrm {p} {q} (enc {U._i(c0)} {U.z3_lean(phi0)} a b) := by\n"
+            f"  rw [← phi_{n}_via]\n"
+            f"  exact OrderEmbedding.nrm_enc_of_map Generated.OrderMaps.map_{k} {U._i(c0)} {U.z3_lean(phi0)} a b\n\n")
+
+
 def normrep_layer(cfg, s):
     P, Q = cfg['P'], cfg['Q']
     F = s['form']
@@ -331,6 +389,9 @@ def build(D):
     name = cfg['name']
     hd = U.head(name, doc(cfg, D, ', '.join(map(str, ids)))).replace(
         'import PerfectPower.DescentThueList\n', 'import PerfectPower.DescentThueList\nimport PerfectPower.DescentLists\n')
+    if any('via' in s for s in cfg['sources']):
+        hd = hd.replace('import PerfectPower.DescentLists\n',
+                        'import PerfectPower.DescentLists\nimport PerfectPower.Generated.OrderMaps\n')
     if 'order' in cfg:
         hd = hd.replace('import PerfectPower.UnitGen\n', f"import PerfectPower.Generated.{cfg['order']}\n").replace(
             'open PerfectPower ThueLocal UnitBox\n', f"open PerfectPower ThueLocal UnitBox {cfg['order']}\n")
@@ -352,6 +413,8 @@ def build(D):
                    for a in range(-4, 5) for b in range(-4, 5))
         nm, g0, nrtext = normrep_layer(cfg, s)
         out.append(nrtext)
+        if 'via' in s:
+            out.append(via_layer(cfg, s))
         cert = U.analytic_cert(P, Q, F, 1, phi, g0, E1, E2, 0)
         V, cases = cert['V'], cert['cases_json']
         B = max(x['H_reduced'] for x in cases)
@@ -362,6 +425,8 @@ def build(D):
                                  f'`{list(F)} = 1`', nm, cert=cert))
         sources.append((s['name'], F, L))
         report['sources'].append({'name': s['name'], 'form': F, 'phi': phi, 'normrep': list(s['normrep']),
+                                  **({'via': {'map': s['via'][0], 'from_order': s['via'][1], 'phi0': s['via'][2]}}
+                                     if 'via' in s else {}),
                                   'gamma0': g0, 'B': B, 'V': V, 'list': L,
                                   'canonical': list(TG.canonical(F)[0]), 'analytic': cert['report']})
     out.append('/-! ### Layer 3: descent and curve assembly -/\n')

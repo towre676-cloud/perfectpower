@@ -115,12 +115,16 @@ git.
      `Generated/Order1944.lean`; under `matveev_v1`, `matveev_v2`.
    - **Fourth instance:** `D = 89` (`Generated/Minus89.lean`): two sources in one order, whose
      2.5-million-triple unit box is checked as a 33,217-point slab (`unitGen_of_slab`).
-   - **Coverage** is derived (`receipts/descent_coverage.json`): 8 of 109 unit equations are
+   - **Through order maps:** `D = 39, 47, 60` (`Generated/Minus39.lean`, `Minus47.lean`,
+     `Minus60.lean`). Their sources are moved into one target order per curve along Lean-checked
+     order maps (`OrderEmbedding.lean`, `Generated/OrderMaps.lean`).
+   - **Coverage** is derived (`receipts/descent_coverage.json`): 26 of 109 unit equations are
      registered.
    - **Still open:** the 88 unit equations in `U_needed`. `receipts/order_cost.json` prices the
-     curves by estimated kernel work. Next: `D = 39` (two new orders), then `D = 60` (one new
-     order, three sources). Nonmonic sources need residue norm-representative searches before
-     they can be priced, and five orders need a stronger unit search.
+     curves by estimated kernel work. `D = 39`, `47` and `60` are done. The next fully priced
+     curve is `D = 95`. Most remaining curves are now blocked by nonmonic sources, not by units:
+     residue norm-representative searches are the next infrastructure. `D = 15` already has its
+     unit generation (through `t³ = 12t + 14`).
 4. **A consumer-accepted replacement.**
    - **Target:** for one independently authored verification condition, a checked instance of
      `Γ ∧ C ∧ ¬G ↔ Γ ∧ L ∧ ¬G` that a downstream verifier (Why3/GNATprove) accepts.

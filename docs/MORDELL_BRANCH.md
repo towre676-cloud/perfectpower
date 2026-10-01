@@ -423,6 +423,33 @@ to `G = −2u³ − 6u²v + 3uv² + 4v³ = 1`.
 - **The curve.** `minus89`: the integral points are exactly `(5, ±6)`, under `matveev_t1` and
   `matveev_t2`. This agrees with the Sage census.
 
+**Three curves through order maps: `D = 39, 47, 60`** (`Generated/Minus39.lean`, `Minus47.lean`,
+`Minus60.lean`; the maps are in `Generated/OrderMaps.lean`). The census of maps between the orders
+of the workload comes from the order-transport review of `fb30592` (`python/order_transport.py`).
+- A map `R(p, q) → R(P, Q)` is fixed by the image `g` of the generator.
+- `OrderEmbedding.lean` proves that such a map moves a source equation forward:
+  `N_S(c₀u − vΨ(φ)) = N_R(c₀u − vφ)` (`nrm_enc_of_map`).
+- When the map is an isomorphism (`OrderIso`), it also moves unit generation back
+  (`unitGen_transport`).
+- All 22 maps of the census are Lean-checked: `map_mul` and `map_nrm` by `ring`, the determinant by
+  `decide`. Two pairs are isomorphisms: `iso_4_14` gives `(12, 10) ≅ (30, 62)`, and `iso_8_15` gives
+  `(18, 26) ≅ (36, 82)`.
+
+| curve | target order | maps used | unit generation | sources | points |
+|---|---|---|---|---|---|
+| `D = 39` (classes 27–29) | `t³ = 12t + 10` | 3 of 6 sources moved from `(30, 62)` by the isomorphism | box of 195 triples | `r1`–`r6` | `(4, ±5)`, `(10, ±31)`, `(22, ±103)` |
+| `D = 47` (classes 33–35) | `t³ = 36t + 82` | 4 of 9 sources moved from `(18, 26)` by the isomorphism | slab of 153 points | `p1`–`p9` | `(6, ±13)`, `(12, ±41)`, `(63, ±500)` |
+| `D = 60` (class 46) | `t³ = 12t + 14` | all 3 sources moved from `(12, 4)` by an embedding of index 2 | slab of 1,051 points | `q1`–`q3` | `(4, ±2)`, `(136, ±1586)` |
+
+- For `D = 60`, the larger order's unit generation covers the encoded solutions. The source
+  equation and the readout filter whatever the larger order adds. No maximal order is used.
+- The class certificates check their own norm identities by `ring` in the target order. The
+  theorems `phi_*_via` and `nrm_*_via` record where each `φ` comes from, but soundness does not
+  depend on them.
+- Every curve agrees with the Sage census.
+- In `receipts/order_cost.json`, the unit-generation estimates were 733 (`D = 39`), 4,165
+  (`D = 47`) and 3,870 (`D = 60`). The orders used cost 195, 720 and 1,942.
+
 **Choosing a unit basis by its proved cost.** `ε'₁ = ε₁^{U₁₁} ε₂^{U₂₁}`,
 `ε'₂ = ε₁^{U₁₂} ε₂^{U₂₂}` with `det U = ±1` generates the same group. `best_basis` searches
 `|Uᵢⱼ| ≤ 2` and minimizes the enumeration Lean actually runs.
@@ -453,16 +480,16 @@ exactly the set of sources that its classes' descents reach.
 
 **Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
 derived from the registered Lean theorems. The raw workload receipts are unchanged.
-- Classes: 15 locally discharged, 19 conditionally complete, 45 unresolved, out of 79.
-- Unit equations: 8 of 109 registered. These are the seven curve sources and the `D = 72`
+- Classes: 15 locally discharged, 26 conditionally complete, 38 unresolved, out of 79.
+- Unit equations: 26 of 109 registered. These are the 25 curve sources and the `D = 72`
   residual `H = ±1` (`D72Unit.class_pos`, `class_neg`).
-- 101 are unregistered. That count includes leaves of classes already complete by another route
+- 83 are unregistered. That count includes leaves of classes already complete by another route
   (field 756, `D = 72`).
 - The workload that still blocks a class is
-  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **88** unit equations. Of these, 71 block
-  one class, 5 block two, 10 block three and 2 block four (`needed_by_class_count`).
-- Curves conditionally complete: `D = 7, 18, 23, 28, 45, 63, 89`.
-- `curves_unresolved_workload` orders the 16 unresolved curves by the number of unit equations
+  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **70** unit equations. Of these, 55 block
+  one class, 5 block two, 8 block three and 2 block four (`needed_by_class_count`).
+- Curves conditionally complete: `D = 7, 18, 23, 28, 39, 45, 47, 60, 63, 89`.
+- `curves_unresolved_workload` orders the 13 unresolved curves by the number of unit equations
   they still need.
 
 **Cost before proof** (`python/order_cost.py`, `receipts/order_cost.json`). The number of
@@ -481,9 +508,20 @@ ones. For each unresolved curve the receipt estimates
 - **Results.** 27 orders are priced. Five are unpriced because their units were not found:
   discriminants of `x³ − 30x − 16`, `x³ − 39x − 2`, `x³ − 42x − 74`, `x³ − 48x − 30` and
   `x³ − 195x − 830`.
-- **Ranking.** Fully priced curves, cheapest first: `D = 39` (about 1,900, two new orders), `D = 60`
-  (about 4,000, one new order serving its three sources), `D = 47` (about 5,700) and `D = 95`
-  (about 24,000). The other twelve curves contain a nonmonic source or an unpriced order.
+- **Ranking (before this round).** Fully priced curves, cheapest first: `D = 39` (about 1,900, two
+  new orders), `D = 60` (about 4,000), `D = 47` (about 5,700) and `D = 95` (about 24,000). The first
+  three are now proved through order maps (above).
+- **With the order maps** (`C_unitgen_transported`), an order is charged at the cheapest proved or
+  priced target it maps into, and each target is charged once per curve.
+  - `D = 15` needs no new unit proof: both of its orders map into `t³ = 12t + 14`, which was proved
+    for `D = 60`. What blocks it is two nonmonic sources.
+  - `D = 53` drops from about 14 million to 43,000.
+  - `D = 71` drops from 1.1 million to 2,600.
+  - `D = 25`, `D = 100` drop from 419,000 to 7,100.
+  - `D = 87` drops from 1.3 million to 51,000.
+  - `D = 95` (about 24,000) is the only remaining curve whose sources are all monic and priced. The
+    other twelve have a nonmonic source, which needs a residue norm-representative certificate
+    before it can be priced.
 - These are estimates of kernel work, not proofs.
 
 ### 7.3 A shared cubic-field pilot (`crosscheck/field756_pilot.py`, `receipts/field756_pilot.json`; external, PARI)

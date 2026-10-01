@@ -19,6 +19,10 @@ classes descend to (`receipts/descent_coverage.json`).  The estimated kernel wor
   `(2B + 1)²`, plus the reduction steps.  Nonmonic equations need a residue norm-representative
   certificate first; they are reported without a source price (`normrep: residue`).
 * **C_assembly.** The number of descent nodes of the curve's unresolved classes.
+* **Transports.** With the Lean-checked order maps (`receipts/order_transports.json`,
+  `Generated/OrderMaps.lean`), an order may be replaced by a proved or cheaper target; each target is
+  charged once per curve (`C_unitgen_transported`).  The sources must then be re-encoded and their
+  analytic certificates recomputed in the target, so `C_sources` stays the estimate in the own order.
 
 These are estimates of kernel work, not proofs.  Run: python3 python/order_cost.py
 """
@@ -38,7 +42,8 @@ import make_lean_curves as C  # noqa: E402
 # orders whose unit generation is already a Lean theorem (field 756, 1944, 621, 19440, 9612)
 PROVED = {(6, 2): 'Generated/Field756.lean', (9, 6): 'Generated/Order1944.lean',
           (6, 3): 'Generated/Minus23.lean', (18, 12): 'Generated/Minus45.lean',
-          (15, 12): 'Generated/Minus89.lean'}
+          (15, 12): 'Generated/Minus89.lean', (12, 10): 'Generated/Minus39.lean',
+          (36, 82): 'Generated/Minus47.lean', (12, 14): 'Generated/Minus60.lean'}
 
 
 def order_of(F):
@@ -103,7 +108,8 @@ def price_source(F, order):
 
 PROVED_UNITS = {(9, 6): ((-1, -3, 1), (-1, 0, 2)),
                 (6, 3): ((-2, -1, 0), (-1, -2, 0)), (18, 12): ((-7, -3, 1), (-41, -51, 13)),
-                (15, 12): ((37, 55, 13), (-131, -125, 37))}
+                (15, 12): ((37, 55, 13), (-131, -125, 37)), (12, 10): ((-11, -1, 1), (-3, -1, 0)),
+                (36, 82): ((-3, -1, 0), (-411, -72, 19)), (12, 14): ((-5, -5, -1), (-11, -12, -3))}
 
 
 def main():
@@ -122,6 +128,23 @@ def main():
             orders[(P, Q)] = price_order(P, Q)
         sources[F] = price_source(F, orders[(P, Q)])
         print(F, (P, Q), orders[(P, Q)]['status'], orders[(P, Q)]['cost'], sources[F].get('cost'), flush=True)
+    # order maps (receipts/order_transports.json, Lean: Generated/OrderMaps.lean): an order with a map
+    # into a proved or cheaper order is charged at the target, and a target is charged once per curve
+    tr = json.loads((ROOT / 'receipts' / 'order_transports.json').read_text())['embeddings']
+    priced = dict(orders)
+    effective = {}
+    for o in orders:
+        best = (orders[o]['cost'], o, None) if orders[o]['cost'] is not None else None
+        for k, e in enumerate(tr):
+            if tuple(e['domain']) != o:
+                continue
+            t = tuple(e['codomain'])
+            if t not in priced:
+                priced[t] = price_order(*t)
+            c = priced[t]['cost']
+            if c is not None and (best is None or c < best[0]):
+                best = (c, t, k)
+        effective[o] = best
     curves = []
     for w in cov['curves_unresolved_workload']:
         forms = [tuple(f) for f in w['forms']]
@@ -138,7 +161,15 @@ def main():
         total = None if any(p is None for p in parts) or nodes is None else sum(parts) + nodes
         shared = {F: [x['D'] for x in cov['curves_unresolved_workload']
                       if x['D'] != w['D'] and list(F) in x['forms']] for F in forms}
+        targets = {}
+        for o in ords:
+            if effective[o] is not None:
+                targets[effective[o][1]] = effective[o][0]
+        via = {str(list(o)): {'target': list(effective[o][1]), 'map': effective[o][2]}
+               for o in ords if effective[o] is not None and effective[o][2] is not None}
+        unit_t = None if any(effective[o] is None for o in ords) else sum(targets.values())
         curves.append({'D': w['D'], 'classes': w['unresolved_classes'], 'sources': [list(F) for F in forms],
+                       'C_unitgen_transported': unit_t, 'transports': via,
                        'orders': [list(o) for o in ords],
                        'new_orders': [list(o) for o in ords if orders[o]['status'] != 'PROVED'],
                        'C_unitgen': sum(orders[o]['cost'] or 0 for o in ords),
@@ -154,7 +185,8 @@ def main():
            'sources': list(sources.values()), 'curves': curves}
     (ROOT / 'receipts' / 'order_cost.json').write_text(json.dumps(out, indent=1, default=list) + '\n')
     for c in curves:
-        print(c['D'], c['C'], c['C_unitgen'], c['C_sources'], c['C_assembly'], c['new_orders'], len(c['unpriced']))
+        print(c['D'], c['C'], c['C_unitgen'], c['C_unitgen_transported'], c['C_sources'], c['C_assembly'],
+              c['new_orders'], c['transports'], len(c['unpriced']))
 
 
 if __name__ == '__main__':

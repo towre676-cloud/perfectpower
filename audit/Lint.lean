@@ -53,6 +53,12 @@ import PerfectPower.Generated.Minus23
 import PerfectPower.Generated.Minus45
 import PerfectPower.Generated.Minus18
 import PerfectPower.Generated.Minus89
+import PerfectPower.OrderEmbedding
+import PerfectPower.PowerCertificate
+import PerfectPower.Generated.OrderMaps
+import PerfectPower.Generated.Minus39
+import PerfectPower.Generated.Minus47
+import PerfectPower.Generated.Minus60
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances
