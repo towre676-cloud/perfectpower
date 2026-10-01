@@ -162,7 +162,7 @@ replacing a brute-force loop.
 
 **2. The reductions are theorems** (`Reduction.lean`). An exact reduction $P\rightsquigarrow Q$ is
 a map $\mathrm{fwd}$ of solutions and a partial inverse $\mathrm{bwd}:\ Q\text{-solutions}\to P
-\cup\{\bot\}$ with $\mathrm{bwd}(\mathrm{fwd}\,a)=a$. The general theorems are:
+\cup\lbrace\bot\rbrace$ with $\mathrm{bwd}(\mathrm{fwd}\,a)=a$. The general theorems are:
 - `Exact.iff`: $P(a)\iff\exists b,\ Q(b)\wedge\mathrm{bwd}(b)=a$.
 - `Exact.comp`: reductions compose, and their admissibility conditions compose.
 - `Exact.pull_complete`: a complete finite list for $Q$ pulls back to a complete finite list for
