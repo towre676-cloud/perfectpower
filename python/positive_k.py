@@ -276,6 +276,79 @@ def small_reps(G, R=60):
                   if TG.evalF(G, u, v) == 1 and math.gcd(u, v) == 1)
 
 
+# ---------------------------------------------------------------------------------- reducible classes
+
+def _divisors(n):
+    n = abs(n)
+    return [d for d in range(1, n + 1) if n % d == 0] if n else []
+
+
+def linear_factor(F):
+    """A primitive `(p, q)` with `pu + qv` dividing `F = (a, B, C, d)`, or None.  A rational root
+    `u₀ : v₀` of `F` (`v₀ ∣ a`, `u₀ ∣ d`, or `v₀ = 0`) gives the factor `v₀ u − u₀ v`."""
+    a, B, C, d = F
+    if a == 0:
+        return (0, 1)                                 # v divides F
+    if d == 0:
+        return (1, 0)
+    for v0 in _divisors(a):
+        for u0 in _divisors(d):
+            for su in (1, -1):
+                u1 = su * u0
+                if math.gcd(u1, v0) == 1 and TG.evalF(F, u1, v0) == 0:
+                    return (v0, -u1)
+    return None
+
+
+def red_cert(F):
+    """`(p, q, A, B, C, h, j)` with `F = (pu + qv)(Au² + Buv + Cv²)` and `ph + qj = 1` (exact)."""
+    lf = linear_factor(F)
+    if lf is None:
+        return None
+    p, q = lf
+    a, B, C, d = F
+    # divide: F = (pu + qv)(A u² + Bq u v + Cq v²)
+    if p != 0:
+        assert a % p == 0
+        A = a // p
+        assert (B - q * A) % p == 0
+        Bq = (B - q * A) // p
+        assert (C - q * Bq) % p == 0
+        Cq = (C - q * Bq) // p
+    else:
+        A, Bq, Cq = 0, 0, 0
+        assert q in (1, -1)
+        A, Bq, Cq = a * 0 + B // q, C // q, d // q
+    assert (a, B, C, d) == (p * A, p * Bq + q * A, p * Cq + q * Bq, q * Cq), (F, p, q)
+    g, h, j = _egcd(p, q)
+    if g != 1:
+        h, j = -h, -j
+    assert p * h + q * j == 1
+    return (p, q, A, Bq, Cq, h, j)
+
+
+def red_solutions(F, cert):
+    """Mirror of `ReducibleThue.redSols`, filtered to actual solutions."""
+    p, q, A, B, C, h, j = cert
+    out = []
+    for s in (1, -1):
+        al = A * q * q - B * q * p + C * p * p
+        be = s * (2 * A * h * q + B * (j * q - h * p) - 2 * C * j * p)
+        ga = s * s * (A * h * h + B * h * j + C * j * j) - s
+        if al != 0:
+            D = be * be - 4 * al * ga
+            if D < 0:
+                continue
+            r = math.isqrt(D)
+            ts = [(z - be) // (2 * al) for z in (r, -r) if (z - be) % (2 * al) == 0]
+        elif be != 0:
+            ts = [-ga // be] if ga % be == 0 else []
+        else:
+            raise AssertionError('degenerate quadratic')
+        out += [(s * h + q * t, s * j - p * t) for t in ts]
+    return sorted({w for w in out if TG.evalF(F, *w) == 1})
+
+
 def census_points():
     out = {}
     for row in csv.DictReader(open(ROOT / 'data' / 'mordell_census.csv')):
@@ -299,7 +372,11 @@ def run(K=100):
             m = local_impossible(G)
             sols = [] if m else small_reps(G)
             pts = sorted({p for (u, v) in sols for p in [point_of_rep(G, u, v)]})
+            rc = None if m else red_cert(G)
+            if rc:
+                assert red_solutions(G, rc) == sorted(tuple(w) for w in small_reps(G))
             cls.append({'form': list(G), 'disc': TG.disc(G), 'local_obstruction': m,
+                        'reducible': list(rc) if rc else None,
                         'representations': sols, 'points': pts})
         found = sorted({tuple(p) for c in cls for p in c['points']}
                        | {(x, -y) for c in cls for (x, y) in c['points']})
@@ -327,6 +404,12 @@ def run(K=100):
         'open_with_points': sum(r['open_with_points'] for r in rows),
         'open_point_free': sum(r['open_thue'] - r['open_with_points'] for r in rows),
         'agree_with_census': sum(r['agrees_with_census'] for r in rows),
+        'open_reducible': sum(1 for r in rows for c in r['class_detail']
+                              if c['local_obstruction'] is None and c['reducible']),
+        'open_irreducible': sum(1 for r in rows for c in r['class_detail']
+                                if c['local_obstruction'] is None and not c['reducible']),
+        'complete_without_matveev': [r['k'] for r in rows if all(
+            c['local_obstruction'] is not None or c['reducible'] for c in r['class_detail'])],
         'census_points_unmatched': sum(len(r['census_points_unmatched']) for r in rows),
     }
     out = {'label': 'Positive k through Mordell cubic forms: class lists complete by a stated reduction bound '
@@ -335,6 +418,7 @@ def run(K=100):
            'summary': summary, 'curves': rows}
     (ROOT / 'receipts' / 'positive_k.json').write_text(json.dumps(out, indent=1, default=list) + '\n')
     lean_module(rows)
+    lean_complete(rows)
     print(summary)
     return out
 
@@ -370,6 +454,54 @@ def lean_module(rows):
                    f"  no_point_of_cert hcls cert_{k} x y\n")
     out.append('end PerfectPower.Generated.PositiveK\n')
     (ROOT / 'PerfectPower' / 'Generated' / 'PositiveK.lean').write_text('\n'.join(out))
+
+
+def lean_complete(rows):
+    """`Generated/PositiveKComplete.lean`: complete point lists for the curves all of whose classes are
+    locally impossible or reducible (`PositiveKCurve.complete_of_sols`), under the class-list premise."""
+    out = ['import PerfectPower.PositiveKCurve\n\n/-!\n# Positive `k`: complete lists for `y² = x³ + k` without '
+           'Matveev, under the class-list premise\n(generated by `python/positive_k.py`)\n\n'
+           'For each curve, every class of forms `(a, 3b, 3c, d)` with `Δ = 4k` (stored as `(a, b, c, d)`) is\n'
+           'either locally impossible for the value 1 (`PositiveKCurve.solsIn_of_loc`) or reducible, with all\n'
+           'its solutions from a factorization certificate (`PositiveKCurve.solsIn_of_red`).  The points are\n'
+           'read off by the Hessian covariant (`PositiveKCurve.complete_of_sols`).  The premise `ClassList k`\n'
+           'is **not proved in Lean** (`MORDELL_BRANCH.md` §7.4).\n-/\n\n'
+           'namespace PerfectPower.Generated.PositiveKComplete\n\nopen PerfectPower MordellCubicForm ReducibleThue PositiveKCurve\n']
+    for r in rows:
+        if r['k'] not in r_complete(rows):
+            continue
+        k = r['k']
+        entries, proofs = [], []
+        for i, c in enumerate(r['class_detail']):
+            a, B, C, d = c['form']
+            G = f"({_i(a)}, {_i(B // 3)}, {_i(C // 3)}, {_i(d)})"
+            if c['local_obstruction'] is not None:
+                entries.append(f"({G}, [])")
+                proofs.append(f"solsIn_of_loc (m := {c['local_obstruction']}) (by norm_num) (by decide +kernel)")
+            else:
+                p_, q_, A_, B_, C_, h_, j_ = c['reducible']
+                cert = (f"⟨{_i(p_)}, {_i(q_)}, {_i(A_)}, {_i(B_)}, {_i(C_)}, {_i(h_)}, {_i(j_)}⟩")
+                entries.append(f"({G}, redSols {cert})")
+                proofs.append(f"solsIn_of_red (c := {cert}) (by decide +kernel)")
+        pts = r['census_points']
+        L = '[' + ', '.join(f'({_i(x)}, {_i(y)})' for x, y in pts) + ']'
+        n = len(entries)
+        out.append(f"/-- The {n} class(es) for `k = {k}` with their solution lists. -/\n"
+                   f"def cs_{k} : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [{', '.join(entries)}]\n\n"
+                   f"theorem sols_{k} : ∀ c ∈ cs_{k}, SolsIn c.1 c.2 := by\n"
+                   f"  intro c hc\n  simp only [cs_{k}, List.mem_cons, List.not_mem_nil, or_false] at hc\n"
+                   + (f"  rcases hc with {' | '.join(['rfl'] * n)}\n" if n > 1 else "  subst hc\n")
+                   + (f"  exacts [{', '.join(proofs)}]\n" if n > 1 else f"  exact {proofs[0]}\n")
+                   + f"\n/-- **`y² = x³ + {k}`: the integral points are exactly {L}**, under the class-list premise. -/\n"
+                   f"theorem plus{k}_complete (hcls : ClassList {k} (cs_{k}.map Prod.fst)) (x y : ℤ) :\n"
+                   f"    y ^ 2 = x ^ 3 + {k} ↔ (x, y) ∈ ({L} : List (ℤ × ℤ)) :=\n"
+                   f"  complete_of_sols hcls sols_{k} (by decide +kernel) x y\n")
+    out.append('end PerfectPower.Generated.PositiveKComplete\n')
+    (ROOT / 'PerfectPower' / 'Generated' / 'PositiveKComplete.lean').write_text('\n'.join(out))
+
+
+def r_complete(rows):
+    return {r['k'] for r in rows if all(c['local_obstruction'] is not None or c['reducible'] for c in r['class_detail'])}
 
 
 if __name__ == '__main__':

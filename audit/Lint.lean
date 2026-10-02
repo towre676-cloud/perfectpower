@@ -86,6 +86,9 @@ import PerfectPower.Generated.Covers8532
 import PerfectPower.Generated.Minus79
 import PerfectPower.MordellCubicForm
 import PerfectPower.Generated.PositiveK
+import PerfectPower.ReducibleThue
+import PerfectPower.PositiveKCurve
+import PerfectPower.Generated.PositiveKComplete
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances

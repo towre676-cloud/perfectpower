@@ -91,6 +91,29 @@ class Receipt(unittest.TestCase):
             for c in row['class_detail']:
                 self.assertEqual(PK.delta(tuple(c['form'])), 4 * row['k'])
 
+    def test_reducible(self):
+        r = json.loads((ROOT / 'receipts' / 'positive_k.json').read_text())
+        s = r['summary']
+        self.assertEqual((s['open_reducible'], s['open_irreducible']), (54, 104))
+        self.assertEqual(len(s['complete_without_matveev']), 39)
+        for k in (5, 7, 14, 16, 23, 27, 34, 50, 52, 59, 61, 70, 77, 86):
+            self.assertIn(k, s['complete_without_matveev'])
+        # every certificate factors its form, and its solutions are exactly the brute-force ones
+        for row in r['curves']:
+            for c in row['class_detail']:
+                if c['local_obstruction'] is None and c['reducible']:
+                    F = tuple(c['form'])
+                    p, q, A, B, C, h, j = c['reducible']
+                    self.assertEqual(F, (p * A, p * B + q * A, p * C + q * B, q * C))
+                    self.assertEqual(p * h + q * j, 1)
+                    self.assertEqual(PK.red_solutions(F, c['reducible']),
+                                     sorted(tuple(w) for w in c['representations']))
+
+    def test_forged_certificate_rejected(self):
+        F = (-1, 0, -3, -4)                       # k = 5
+        p, q, A, B, C, h, j = PK.red_cert(F)
+        self.assertNotEqual(F, (p * A, p * (B + 1) + q * A, p * C + q * (B + 1), q * C))
+
     def test_lean_module(self):
         text = (ROOT / 'PerfectPower' / 'Generated' / 'PositiveK.lean').read_text()
         r = json.loads((ROOT / 'receipts' / 'positive_k.json').read_text())
