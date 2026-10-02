@@ -1,4 +1,4 @@
-"""The layered curve pipeline (`python/make_lean_curves.py`): D = 15, 18, 23, 25, 26, 39, 45, 47, 48, 53, 55, 60, 71, 72, 87, 89, 95 and 100."""
+"""The layered curve pipeline (`python/make_lean_curves.py`): D = 15, 18, 23, 25, 26, 39, 45, 47, 48, 53, 55, 60, 61, 71, 72, 87, 89, 95 and 100."""
 import itertools
 import json
 import sys
@@ -99,6 +99,7 @@ class TestCurves(unittest.TestCase):
         self.assertEqual(sorted(map(tuple, rec(53)['curve_points'])), [(9, -26), (9, 26), (29, -156), (29, 156)])
         self.assertEqual(sorted(map(tuple, rec(87)['curve_points'])), [(7, -16), (7, 16)])
         self.assertEqual(sorted(map(tuple, rec(95)['curve_points'])), [(6, -11), (6, 11)])
+        self.assertEqual(sorted(map(tuple, rec(61)['curve_points'])), [(5, -8), (5, 8)])
         self.assertEqual(sorted(map(tuple, rec(100)['curve_points'])),
                          [(5, -5), (5, 5), (10, -30), (10, 30), (34, -198), (34, 198)])
 
@@ -185,7 +186,7 @@ class TestCurves(unittest.TestCase):
         reg |= {tuple(TG.canonical(tuple(s * x for x in d72))[0]) for s in (1, -1)}
         self.assertEqual(cov['unit_equations_registered'],
                          sum(tuple(e['form']) in reg for e in cov['unit_equations']))
-        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 15, 18, 23, 25, 26, 28, 39, 45, 47, 48, 53, 55, 60, 63, 71, 72, 87, 89, 95, 100])
+        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 15, 18, 23, 25, 26, 28, 39, 45, 47, 48, 53, 55, 60, 61, 63, 71, 72, 87, 89, 95, 100])
 
     def test_needed_workload(self):
         cov = json.loads((ROOT / 'receipts' / 'descent_coverage.json').read_text())

@@ -167,6 +167,13 @@ CURVES = {
                      {'name': 'h2', 'form': (-1, -15, 12, -2), 'phi': (41, 5, -2), 'normrep': ('one',)},
                      {'name': 'h3', 'form': (-1, -78, 159, 1378), 'phi': (26, 9, 0), 'normrep': ('one',)},
                      {'name': 'h4', 'form': (-1, -27, 0, 54), 'phi': (9, 3, 0), 'normrep': ('one',)}]},
+    # D = 61: the nonmonic source g1 (norm 36) moves from t³ = 39t + 2 into t³ = 15t + 16 (OrderMaps.map_16)
+    61: {'name': 'Minus61', 'P': 15, 'Q': 16, 'disc': 6588, 'units': [(-5, -3, 1), (-40907, -47810, -11056)],
+         'imports': ['PerfectPower.Generated.Covers6588'],
+         'sources': [{'name': 'g1', 'form': (-6, -3, 1098, 61), 'phi': (131, 26, -13),
+                      'normrep': ('cover', 'Covers6588'), 'via': (16, (39, 2), (1, 13, 0))},
+                     {'name': 'g2', 'form': (-1, -24, 183, 488), 'phi': (8, 5, 0), 'normrep': ('one',)},
+                     {'name': 'g3', 'form': (-1, -6, 3, 6), 'phi': (2, 1, 0), 'normrep': ('one',)}]},
     47: {'name': 'Minus47', 'P': 36, 'Q': 82, 'disc': 5076, 'units': [(-3, -1, 0), (-411, -72, 19)],
          'sources': [{'name': 'p1', 'form': (-1, -123, 141, 1927), 'phi': (41, 12, 0), 'normrep': ('one',)},
                      {'name': 'p2', 'form': (-1, -63, -27, 243), 'phi': (21, 6, 0), 'normrep': ('one',)},

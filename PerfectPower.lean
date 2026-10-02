@@ -93,6 +93,8 @@ import PerfectPower.Generated.Covers9396
 import PerfectPower.Generated.Minus53
 import PerfectPower.Generated.Minus87
 import PerfectPower.Generated.Minus95
+import PerfectPower.Generated.Covers6588
+import PerfectPower.Generated.Minus61
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances
