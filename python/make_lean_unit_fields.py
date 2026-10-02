@@ -624,7 +624,7 @@ def class_block_multi(name, P, Q, F, M, phi, g0s, certs, B, V, L, label, nname):
     reps = ', '.join(f"({z3_lean(g0)}, [{', '.join(f'case_{name}_{j}_{i}' for i in range(3))}])"
                      for j, g0 in enumerate(g0s))
     proj = [('hM' + '.2' * j + ('.1' if j < k - 1 else '')) for j in range(k)]
-    proof = 'UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _'
+    proof = '(UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _)'
     for j in reversed(range(k)):
         proof = f'(UnitPremises.analytic_cons (analytic_{name}_{j}_proved {proj[j]}) {proof})'
     out += (f"/-- The representatives of {label} with their analytic cases. -/\n"

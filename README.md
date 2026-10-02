@@ -122,7 +122,9 @@ their complete solution sets, each an exact equivalence over ℤ, and hands back
       - `minus47`: $(6,\pm13)$, $(12,\pm41)$ and $(63,\pm500)$.
       - `minus60`: $(4,\pm2)$ and $(136,\pm1586)$.
     - **D = 72, in the order of its own residual, conditionally** (`Generated/Minus72.lean`). Its four monic sources move into Order1944 with index 2, and its residual comes from `D72Unit`. `minus72`: the integral points are exactly $(6,\pm12)$.
-    - **Coverage** (`receipts/descent_coverage.json`, derived from the registered Lean theorems): 30 of the 109 unit equations are registered, and $D=7,18,23,28,39,45,47,60,63,72,89$ are conditionally complete. The workload that still blocks a class is $U_{\mathrm{needed}}$: 66 unit equations, the unregistered leaves of the 36 unresolved classes.
+    - **D = 15, 26, 48, 55, 71, with nonmonic sources, conditionally** (`Generated/Minus15.lean` and others). Their nonmonic sources get residue norm representatives, searched in a larger order (`python/norm_rep_search.py`). A nonmonic class that takes the value $\pm1$ is replaced by a monic representative. Sources with several representatives carry one analytic certificate per representative.
+      - $D=15$: $(4,\pm7)$. $D=26$: $(3,\pm1)$, $(35,\pm207)$. $D=48$: $(4,\pm4)$, $(28,\pm148)$. $D=55$: $(4,\pm3)$, $(56,\pm419)$. $D=71$: $(8,\pm21)$.
+    - **Coverage** (`receipts/descent_coverage.json`, derived from the registered Lean theorems): 53 of the 109 unit equations are registered, and 16 of the 23 curves with open branches are conditionally complete. The workload that still blocks a class is $U_{\mathrm{needed}}$: 43 unit equations, the unregistered leaves of the 23 unresolved classes.
     - **Cost before proof** (`receipts/order_cost.json`): an estimate of the kernel work $C(D)$ for each unresolved curve, with shared orders charged once.
 
 ### 3. From constraints to certified plans
@@ -249,7 +251,7 @@ docker build -t perfectpower . && docker run --rm perfectpower
 
 **What is still open.**
 - Effective enumeration of the finite type outside Runge and the certified Mordell cases. The compiler states the missing premise exactly, and the OEIS cross-check ranks 82 nonempty curves with $|k|\le100$ as leads.
-- **The negative-$k$ curves whose Thue branches carry points.** 11 of the 23 are complete under Matveev premises (`receipts/descent_coverage.json`). Local certificates cannot close the other 12: they need bounds for irreducible Thue equations, and the remaining premise everywhere is Matveev's theorem itself.
+- **The negative-$k$ curves whose Thue branches carry points.** 16 of the 23 are complete under Matveev premises (`receipts/descent_coverage.json`). Local certificates cannot close the other 7: they need bounds for irreducible Thue equations, and the remaining premise everywhere is Matveev's theorem itself.
 - **Positive $k$** (96 curves $|k|\le100$): the factorization is real quadratic, which this lattice argument does not cover. `Interfaces.orbit_mod_three` proves only the unit-exponent normalization (units mod cubes). Seed and ideal-class coverage, the exceptional primes and the integral readout are separate obligations.
 - Quartic genus-one models: `EffectiveEnumeration.lean` has the degree-two map and exact lifts, not a quartic solver.
 - The Bilu–Tichy classification: `MonomialCount.lean` has the finished counting pieces (monomials, filtered orbits, collisions, the $t^2$ outer polynomial), not the classification.

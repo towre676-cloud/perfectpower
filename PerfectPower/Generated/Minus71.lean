@@ -670,9 +670,9 @@ theorem class_d7 (hM : matveev_d7) (u v : ℤ) :
 /-! ### Layer 3: descent and curve assembly -/
 
 /-- The source equations  with their complete lists. -/
-def src_ : List (Form × List (ℤ × ℤ)) := []
+def src_none : List (Form × List (ℤ × ℤ)) := []
 
-theorem src__complete  : DescentLists.SourcesComplete src_ :=
+theorem src_none_complete  : DescentLists.SourcesComplete src_none :=
   DescentLists.sources_nil
 
 /-- The descent of class 51 (`[-5, -120, 1065, 2840] = 3375`): 16 nodes, 8 splits, 8 lifting leaves, 0 leaves carried from the source equations. -/
@@ -696,16 +696,16 @@ def rest_51 : List (Form × ℤ × DescentLists.KindL) :=
    ((140, 1770, 7395, 10215), 1, DescentLists.KindL.leaf 5 1),
    (((-5), (-45), 90, 140), 1, DescentLists.KindL.leaf 5 1)]
 
-theorem desc_51 : DescentLists.descL src_ ((((-5), (-120), 1065, 2840), 3375, kind_51) :: rest_51) = true := by
+theorem desc_51 : DescentLists.descL src_none ((((-5), (-120), 1065, 2840), 3375, kind_51) :: rest_51) = true := by
   decide +kernel
 
-theorem root_51 : DescentLists.rootSet src_ ((-5), (-120), 1065, 2840) 3375 kind_51 rest_51 =
+theorem root_51 : DescentLists.rootSet src_none ((-5), (-120), 1065, 2840) 3375 kind_51 rest_51 =
     ([] : List (ℤ × ℤ)).toFinset := by decide +kernel
 
 /-- **Class 51, complete**: `[-5, -120, 1065, 2840]` takes the value 3375 exactly at 0 point(s). -/
 theorem class_51  (u v : ℤ) :
     evalF ((-5), (-120), 1065, 2840) u v = 3375 ↔ (u, v) ∈ ([] : List (ℤ × ℤ)) := by
-  rw [DescentLists.root_iff src_ (src__complete ) _ _ kind_51 rest_51 desc_51, root_51,
+  rw [DescentLists.root_iff src_none (src_none_complete ) _ _ kind_51 rest_51 desc_51, root_51,
     List.mem_toFinset]
 
 /-- The source equations d1, d2, d3, d7 with their complete lists. -/

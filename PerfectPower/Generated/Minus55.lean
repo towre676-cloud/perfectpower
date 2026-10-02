@@ -271,7 +271,7 @@ def analytic_c1 : Prop :=
   UnitPremises.Analytic ((-5), (-18), 12, 8) 1 12 6 (22, 2, (-2)) e1 e1i e2 e2i 0 reps_c1
 
 theorem analytic_c1_proved (hM : matveev_c1) : analytic_c1 :=
-  (UnitPremises.analytic_cons (analytic_c1_0_proved hM.1) (UnitPremises.analytic_cons (analytic_c1_1_proved hM.2.1) (UnitPremises.analytic_cons (analytic_c1_2_proved hM.2.2) UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _)))
+  (UnitPremises.analytic_cons (analytic_c1_0_proved hM.1) (UnitPremises.analytic_cons (analytic_c1_1_proved hM.2.1) (UnitPremises.analytic_cons (analytic_c1_2_proved hM.2.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _))))
 
 /-- Negative control: every chain of `[-5, -18, 12, 8] = 1` with its final bound lowered by one is rejected. -/
 theorem forged_rejected_c1 : UnitPremises.forgedRejectedB reps_c1 = true := by decide +kernel
@@ -522,9 +522,9 @@ theorem class_c4 (hM : matveev_c4) (u v : ℤ) :
 /-! ### Layer 3: descent and curve assembly -/
 
 /-- The source equations  with their complete lists. -/
-def src_ : List (Form × List (ℤ × ℤ)) := []
+def src_none : List (Form × List (ℤ × ℤ)) := []
 
-theorem src__complete  : DescentLists.SourcesComplete src_ :=
+theorem src_none_complete  : DescentLists.SourcesComplete src_none :=
   DescentLists.sources_nil
 
 /-- The descent of class 42 (`[-7, -21, 1155, 385] = 2744`): 37 nodes, 19 splits, 18 lifting leaves, 0 leaves carried from the source equations. -/
@@ -569,16 +569,16 @@ def rest_42 : List (Form × ℤ × DescentLists.KindL) :=
    ((189, 3675, 23667, 50519), 1, DescentLists.KindL.leaf 7 1),
    (((-7), (-21), 273, 189), 1, DescentLists.KindL.leaf 7 1)]
 
-theorem desc_42 : DescentLists.descL src_ ((((-7), (-21), 1155, 385), 2744, kind_42) :: rest_42) = true := by
+theorem desc_42 : DescentLists.descL src_none ((((-7), (-21), 1155, 385), 2744, kind_42) :: rest_42) = true := by
   decide +kernel
 
-theorem root_42 : DescentLists.rootSet src_ ((-7), (-21), 1155, 385) 2744 kind_42 rest_42 =
+theorem root_42 : DescentLists.rootSet src_none ((-7), (-21), 1155, 385) 2744 kind_42 rest_42 =
     ([] : List (ℤ × ℤ)).toFinset := by decide +kernel
 
 /-- **Class 42, complete**: `[-7, -21, 1155, 385]` takes the value 2744 exactly at 0 point(s). -/
 theorem class_42  (u v : ℤ) :
     evalF ((-7), (-21), 1155, 385) u v = 2744 ↔ (u, v) ∈ ([] : List (ℤ × ℤ)) := by
-  rw [DescentLists.root_iff src_ (src__complete ) _ _ kind_42 rest_42 desc_42, root_42,
+  rw [DescentLists.root_iff src_none (src_none_complete ) _ _ kind_42 rest_42 desc_42, root_42,
     List.mem_toFinset]
 
 /-- The source equations c1, c4 with their complete lists. -/

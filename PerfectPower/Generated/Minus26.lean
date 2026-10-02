@@ -271,7 +271,7 @@ def analytic_b1 : Prop :=
   UnitPremises.Analytic ((-6), (-12), 117, 26) 1 9 2 (34, 5, (-5)) e1 e1i e2 e2i 0 reps_b1
 
 theorem analytic_b1_proved (hM : matveev_b1) : analytic_b1 :=
-  (UnitPremises.analytic_cons (analytic_b1_0_proved hM.1) (UnitPremises.analytic_cons (analytic_b1_1_proved hM.2.1) (UnitPremises.analytic_cons (analytic_b1_2_proved hM.2.2) UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _)))
+  (UnitPremises.analytic_cons (analytic_b1_0_proved hM.1) (UnitPremises.analytic_cons (analytic_b1_1_proved hM.2.1) (UnitPremises.analytic_cons (analytic_b1_2_proved hM.2.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _))))
 
 /-- Negative control: every chain of `[-6, -12, 117, 26] = 1` with its final bound lowered by one is rejected. -/
 theorem forged_rejected_b1 : UnitPremises.forgedRejectedB reps_b1 = true := by decide +kernel

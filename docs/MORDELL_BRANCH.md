@@ -538,16 +538,18 @@ exactly the set of sources that its classes' descents reach.
 
 **Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
 derived from the registered Lean theorems. The raw workload receipts are unchanged.
-- Classes: 15 locally discharged, 28 conditionally complete, 36 unresolved, out of 79.
-- Unit equations: 30 of 109 registered. These are the 29 curve sources and the `D = 72`
-  residual `H = ±1` (`D72Unit.class_pos`, `class_neg`).
-- 79 are unregistered. That count includes leaves of classes already complete by another route
+- Classes: 15 locally discharged, 41 conditionally complete, 23 unresolved, out of 79.
+- Unit equations: 53 of 109 registered. These are the curve sources and the `D = 72` residual
+  `H = ±1` (`D72Unit.class_pos`, `class_neg`). A class counts as registered once one of its
+  representatives (possibly a monic one) has a source theorem.
+- 56 are unregistered. That count includes leaves of classes already complete by another route
   (field 756, `D = 72`).
 - The workload that still blocks a class is
-  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **66** unit equations. Of these, 52 block
-  one class, 4 block two, 8 block three and 2 block four (`needed_by_class_count`).
-- Curves conditionally complete: `D = 7, 18, 23, 28, 39, 45, 47, 60, 63, 72, 89`.
-- `curves_unresolved_workload` orders the 12 unresolved curves by the number of unit equations
+  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **43** unit equations. Of these, 34 block
+  one class, 2 block two, 5 block three and 2 block four (`needed_by_class_count`).
+- Curves conditionally complete: `D = 7, 15, 18, 23, 26, 28, 39, 45, 47, 48, 55, 60, 63, 71, 72, 89`
+  (16 of the 23 with open branches).
+- `curves_unresolved_workload` orders the 7 unresolved curves by the number of unit equations
   they still need.
 
 **Cost before proof** (`python/order_cost.py`, `receipts/order_cost.json`). The number of

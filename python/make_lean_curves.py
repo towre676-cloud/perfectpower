@@ -528,7 +528,7 @@ def build(D):
         remap = {u: k for k, u in enumerate(used)}
         nodes = [(F, N, (k[0], remap[k[1]]) + tuple(k[2:]) if k[0] == 'given' else k) for F, N, k in nodes]
         srcs = [sources[u] for u in used]
-        key = '_'.join(s[0] for s in srcs)
+        key = '_'.join(s[0] for s in srcs) or 'none'
         if key not in src_defs:
             body = ', '.join(f"({U.form_lean(F)}, {U.pairs_lean(L)})" for _, F, L in srcs)
             hyps = ' '.join(f"(hM_{n} : {prem[n]})" for n, _, _ in srcs)

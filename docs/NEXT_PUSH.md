@@ -120,9 +120,14 @@ git.
      order maps (`OrderEmbedding.lean`, `Generated/OrderMaps.lean`).
    - **`D = 72`** (`Generated/Minus72.lean`): its monic sources move into Order1944 (index 2), and
      its residual comes from `D72Unit`. No new unit proof was needed.
-   - **Coverage** is derived (`receipts/descent_coverage.json`): 30 of 109 unit equations are
-     registered.
-   - **Still open:** the 66 unit equations in `U_needed`. `receipts/order_cost.json` prices the
+   - **Nonmonic sources:** `D = 15, 26, 48, 55, 71` (residue norm representatives found in a larger
+     order, monic representatives, several representatives per source).
+   - **Coverage** is derived (`receipts/descent_coverage.json`): 53 of 109 unit equations are
+     registered; 16 of the 23 curves are conditionally complete.
+   - **Still open:** the 43 unit equations in `U_needed`, for `D = 25, 53, 61, 79, 87, 95, 100`.
+     Most are nonmonic classes where the residue search fails in every order tried. That is the
+     signature of a non-principal ideal of norm `c₀²`, which needs class-group information rather
+     than a larger modulus (`receipts/norm_rep_search.json`). `D = 95` is all monic. `receipts/order_cost.json` prices the
      curves by estimated kernel work. `D = 39, 47, 60, 72` are done. Most remaining curves are
      blocked by nonmonic sources, not by units, so residue norm-representative searches are the
      next infrastructure. `D = 15` already has its unit generation (through `t³ = 12t + 14`).
