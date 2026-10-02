@@ -2691,6 +2691,15 @@ open PerfectPower
 #print axioms PerfectPower.Generated.ClassLists.K98.sols_irr0
 #print axioms PerfectPower.Generated.ClassLists.K98.classList
 #print axioms PerfectPower.Generated.ClassLists.K98.plus98
+-- DiophBridge
+#print axioms PerfectPower.DiophBridge.isHit_nat_iff
+#print axioms PerfectPower.DiophBridge.perfectPower_dioph
+#print axioms PerfectPower.DiophBridge.fixedPower_dioph
+#print axioms PerfectPower.DiophBridge.mordell_dioph
+#print axioms PerfectPower.DiophBridge.plus2_nat
+#print axioms PerfectPower.DiophBridge.plus3_nat
+#print axioms PerfectPower.RankOne.skolemData_of
+#print axioms PerfectPower.RankOne.slabB_of_chunks
 -- Generated/ClassLists/K5
 #print axioms PerfectPower.Generated.ClassLists.K5.classList
 #print axioms PerfectPower.Generated.ClassLists.K5.plus5

@@ -35,7 +35,7 @@ theorem isHit_nat_iff (d v : ℕ) : IsHit d v ↔ ∃ m : ℕ, v = m ^ d := by
     have h0 : (0 : ℤ) ≤ m ^ d := hm ▸ Nat.cast_nonneg v
     have : ((m.natAbs ^ d : ℕ) : ℤ) = m ^ d := by
       push_cast
-      rw [Int.natCast_natAbs, ← abs_pow, abs_of_nonneg h0]
+      rw [← abs_pow, abs_of_nonneg h0]
     exact_mod_cast hm.trans this.symm
   · rintro ⟨m, rfl⟩
     exact ⟨m, by push_cast; rfl⟩

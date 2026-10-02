@@ -270,23 +270,25 @@ docker build -t perfectpower . && docker run --rm perfectpower
 - Effective enumeration of the finite type outside Runge and the certified Mordell cases. The compiler states the missing premise exactly, and the OEIS cross-check ranks 82 nonempty curves with $|k|\le100$ as leads.
 - **The negative-$k$ curves whose Thue branches carry points.** All 23 are complete under Matveev premises (`receipts/descent_coverage.json`). The remaining premise everywhere is Matveev's theorem itself, one named hypothesis per source equation.
 - **Positive $k$** (96 curves $|k|\le100$): the factorization is real quadratic, which this lattice argument does not cover. The cubic-form route avoids it (`MordellCubicForm.lean`, `python/positive_k.py`): a point gives a form of discriminant $-108k$ representing 1, so each curve is a union of Thue equations in complex cubic fields (unit rank 1). Of 321 classes for $k\le100$, 163 are locally impossible and 54 are reducible (solved completely, `ReducibleThue.lean`).
-  - **44 curves are complete in Lean with no premise** (no Matveev, no class-list hypothesis; `Generated/ClassLists/K*.lean`).
+  - **55 curves are complete in Lean with no premise** (no Matveev, no class-list hypothesis; `Generated/ClassLists/K*.lean`).
     - For 39 of them every class is locally impossible or reducible: 25 with no integral point, and $k=5,7,14,16,23,27,34,50,52,59,61,70,77,86$ with their points.
-    - The other five, $k=2,4,33,49,81$, each have one irreducible source (below).
-    - The remaining 56 positive-$k$ curves $\le100$ are census evidence only. The negative-$k$ theorems with Thue branches are conditional on Matveev's bound. These three statuses are kept separate everywhere.
+    - The other sixteen, $k=2,3,4,10,25,33,41,43,44,48,49,54,57,81,82,98$, have irreducible sources (below).
+    - The remaining 45 positive-$k$ curves $\le100$ are census evidence only. The negative-$k$ theorems with Thue branches are conditional on Matveev's bound. These three statuses are kept separate everywhere.
   - The class-list premise is proved (`ClassListProof.classList_of`). The real reduction runs through a covariant positive definite form $q$ with $\det q=3/|D|$ and $q(v)^3\ge27F(v)^2/D^2$ (`CubicReduction.lean`). Then come Gauss reduction, an integer box with checked parameters, and kernel-checked transports for every form in the box.
   - **$k=2$: the first irreducible source, with no premise** (`Plus2.lean`, `Skolem3.lean`, `Generated/ClassLists/K2.lean`).
     - `Plus2.source` proves that $-u^3-3uv^2-2v^3=1$ only at $(-1,0)$.
     - The units of $\mathbb{Z}[z]$, $z^3+3z+2=0$, are $\pm\eta^n$, by a real-embedding box with no complex numbers.
     - The $z^2$ coordinate of $\eta^n$ vanishes only at $n=0$ for all integers $n$, by a 3-adic Skolem argument with integer valuations.
     - `K2.plus2`: the integral points of $y^2=x^3+2$ are exactly $(-1,\pm1)$.
-  - **$k=4,33,49,81$: the method made generic** (`SkolemP.lean`, `RankOne.lean`, `Generated/RankOneSources.lean`).
+  - **The method made generic: fifteen more curves** (`SkolemP.lean`, `RankOne.lean`, `Generated/RankOneSources/K*.lean`): $k=3,4,10,25,33,41,43,44,48,49,54,57,81,82,98$.
     - `SkolemP.corner_zero` is the zero set at any odd prime: if $A^M=1+pD$ with $p\nmid D_{20}$ and $p\nmid(A^r)_{20}$ for $0<r<M$, then $(A^N)_{20}=0$ only at $N=0$.
-    - `RankOne.units_eq` proves unit generation for any $z^3=Pz+Q$ with a complex pair. It uses a slab check of 15–31 elements, because $|j|\le J$ and $|\mathrm{re}|\le1$ leave only a few $(a,b)$ per $c$.
-    - The four sources are the bounded $p=3$ candidates of the second OEIS handoff. Their inverses are proved fundamental.
-    - The points: $y^2=x^3+4$: $(0,\pm2)$; $y^2=x^3+33$: $(-2,\pm5)$; $y^2=x^3+49$: $(0,\pm7)$; $y^2=x^3+81$: $(0,\pm9)$.
+    - `RankOne.units_eq` proves unit generation for any $z^3=Pz+Q$ with a complex pair. It uses a slab check, because $|j|\le J$ and $|\mathrm{re}|\le1$ leave only a few $(a,b)$ per $c$.
+    - Shifted sources $F(u,v)=-N((u+hv)-vz)$ are handled, and so are curves with two or three irreducible sources ($k=44,57$).
+    - The Skolem primes range up to $p=67$ ($k=10$, period 22). They are checked on powers in $\mathbb Z[z]$ (`skolemB`).
+    - The four $p=3$ candidates of the second OEIS handoff ($k=4,33,49,81$) are the inverses of the proved fundamental units.
+    - The full table is in [MORDELL_BRANCH.md](docs/MORDELL_BRANCH.md) §7.4.
   - OEIS regression (`receipts/positive_k_oeis.json`): all 100 positive-$k$ point lists agree with the seven original OEIS definitions `A081119`, `A134108`, `A054504` and `A134220`–`A134223` (0 mismatches). This is independent evidence, not a completeness proof.
-  - Still open: a rank-1 Thue pipeline for the other 99 irreducible equations.
+  - Still open: 86 irreducible equations. Their blockers are recorded in `receipts/rank_one_blockers.json`: large slab checks, several solutions, nonmonic leading coefficients, and units not yet found.
 - Quartic genus-one models: `EffectiveEnumeration.lean` has the degree-two map and exact lifts, not a quartic solver.
 - The Bilu–Tichy classification: `MonomialCount.lean` has the finished counting pieces (monomials, filtered orbits, collisions, the $t^2$ outer polynomial), not the classification.
 

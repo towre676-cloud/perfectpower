@@ -835,24 +835,36 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
     4·10⁵ elements.
   - The side conditions are rational inequalities, also checked by the kernel (`condB`).
 - **Source theorem** (`RankOne.source`): `−u³ + Puv² + Qv³ = 1 ↔ (u, v) = (−1, 0)`.
-- **Four new curves, each with one irreducible source and no premise.** In each case the
-  handoff's bounded `p = 3` candidate is `ε`, the slab check proves `η = ε⁻¹` fundamental, and
-  `p = 3`, `M = 3` works for `η` and `ε`. The other classes of each curve are impossible modulo 2,
-  3, 7 or 9.
+- **Fifteen curves through this engine, with no premise** (`python/rank_one_sources.py`, `Generated/RankOneSources/K*.lean`, `Generated/ClassLists/K*.lean`).
+  - Each irreducible source is `F(u, v) = −N((u + hv) − vz)` in a monic order. It is certified by a fundamental unit (proved fundamental by the slab check), a root bracket, and an odd Skolem prime `p` with period `M` for both `η` and `η⁻¹`.
+  - The other classes of each curve are locally impossible or reducible.
+  - For `k = 4, 33, 49, 81` the bounded `p = 3` candidate of the second OEIS handoff is `η⁻¹`. The units for the other curves were found by a search along `j ≈ 0`, `re ≈ 0` (`python/rank_one_scan.py`).
 
-  | `k` | source `F` (standard) | order | `η` | points | Lean |
-  |---:|---|---|---|---|---|
-  | 4 | `(−1, 0, 0, −4)` | `z³ = −4` | `5 − 3z + 2z²` | `(0, ±2)` | `K4.plus4` |
-  | 33 | `(−1, 0, −6, −10)` | `z³ = −6z − 10` | `77 − 13z + 10z²` | `(−2, ±5)` | `K33.plus33` |
-  | 49 | `(−1, 0, 0, −14)` | `z³ = −14` | `29 − 12z + 5z²` | `(0, ±7)` | `K49.plus49` |
-  | 81 | `(−1, 0, 0, −18)` | `z³ = −18` | `55 − 21z + 8z²` | `(0, ±9)` | `K81.plus81` |
+  | `k` | irreducible source(s): `F`, order, shift, fundamental unit, Skolem prime and period | points | Lean |
+  |---:|---|---|---|
+  | 3 | `(-1, -3, 0, -2)`, z³ = 3z − 4, h = 1, η = 9 − 11z + 5z², p = 3, M = 3 | (1, ±2) | `K3.plus3` |
+  | 4 | `(-1, 0, 0, -4)`, z³ = −4, h = 0, η = 5 − 3z + 2z², p = 3, M = 3 | (0, ±2) | `K4.plus4` |
+  | 10 | `(-1, 0, -3, -6)`, z³ = −3z − 6, h = 0, η = 11521 − 3185z + 2473z², p = 67, M = 22 | (-1, ±3) | `K10.plus10` |
+  | 25 | `(-1, 0, 0, -10)`, z³ = −10, h = 0, η = 181 − 84z + 39z², p = 3, M = 1 | (0, ±5) | `K25.plus25` |
+  | 33 | `(-1, 0, -6, -10)`, z³ = −6z − 10, h = 0, η = 77 − 13z + 10z², p = 3, M = 3 | (-2, ±5) | `K33.plus33` |
+  | 41 | `(-1, -3, 3, -9)`, z³ = 6z − 14, h = 1, η = 1201 − 888z + 276z², p = 3, M = 1 | (2, ±7) | `K41.plus41` |
+  | 43 | `(-1, 0, -9, -8)`, z³ = −9z − 8, h = 0, η = 308121 − 26292z + 31822z², p = 23, M = 11 | (-3, ±4) | `K43.plus43` |
+  | 44 | `(-1, -6, 3, -4)`, z³ = 15z − 26, h = 2, η = 1731 − 1379z + 303z², p = 53, M = 13; `(-1, 0, -6, -12)`, z³ = −6z − 12, h = 0, η = 9337 − 1682z + 1144z², p = 53, M = 13 | (-2, ±6), (5, ±13) | `K44.plus44` |
+  | 48 | `(-1, 0, 3, -14)`, z³ = 3z − 14, h = 0, η = 779 − 443z + 157z², p = 3, M = 3 | (1, ±7) | `K48.plus48` |
+  | 49 | `(-1, 0, 0, -14)`, z³ = −14, h = 0, η = 29 − 12z + 5z², p = 3, M = 3 | (0, ±7) | `K49.plus49` |
+  | 54 | `(-1, -3, 6, -10)`, z³ = 9z − 18, h = 1, η = 121 − 93z + 25z², p = 3, M = 3 | (3, ±9) | `K54.plus54` |
+  | 57 | `(-1, -9, -6, -4)`, z³ = 21z − 40, h = 3, η = 1109 − 790z + 148z², p = 3, M = 3; `(-1, -6, 0, -6)`, z³ = 12z − 22, h = 2, η = 5 − 4z + z², p = 3, M = 3; `(-1, 0, -6, -14)`, z³ = −6z − 14, h = 0, η = 69 − 13z + 8z², p = 3, M = 3 | (-2, ±7), (4, ±11), (7, ±20) | `K57.plus57` |
+  | 81 | `(-1, 0, 0, -18)`, z³ = −18, h = 0, η = 55 − 21z + 8z², p = 3, M = 3 | (0, ±9) | `K81.plus81` |
+  | 82 | `(-1, 0, -3, -18)`, z³ = −3z − 18, h = 0, η = 9577 − 2675z + 1193z², p = 29, M = 24 | (-1, ±9) | `K82.plus82` |
+  | 98 | `(-1, -9, -6, -6)`, z³ = 21z − 42, h = 3, η = 4201 − 2883z + 537z², p = 3, M = 1 | (7, ±21) | `K98.plus98` |
 
+  The Skolem conditions are checked by the kernel on powers in `ℤ[z]` (`RankOne.skolemB`, linear in `M`), not on matrix powers. Matrix powers with `M = 22` exhausted memory.
 - `Plus2.lean` is the hand-written `k = 2` case of the same argument. It is kept as it was
   released.
 
 *Still open.*
-- A rank-1 Thue pipeline for the remaining 99 irreducible equations (`k = 2, 4, 33, 49, 81` are done).
-  - The monic sources with `h = B/(3a) ≠ 0` need a shift.
+- A rank-1 Thue pipeline for the remaining 86 irreducible equations (18 have Lean source theorems; `receipts/rank_one_blockers.json` gives the blocker of each).
+  - Five curves (`k = 22, 26, 28, 71, 94`) are ready but their slab checks are large (0.4–5 million elements).
   - The nonmonic ones need norm representatives.
   - Sources with several solutions need a source theorem with a longer list.
   - Sources where no small prime satisfies the Skolem conditions need another zero-set

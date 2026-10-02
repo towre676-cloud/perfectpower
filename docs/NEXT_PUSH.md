@@ -156,9 +156,9 @@ git.
      `Generated/ClassLists/K2.lean`). Unit generation comes from a real-embedding box, and the
      zero set from a 3-adic Skolem argument over all integer exponents. `K2.plus2` has no premise.
    - **Done: the method made generic** (`SkolemP.lean`, `RankOne.lean`,
-     `Generated/RankOneSources.lean`). `k = 4, 33, 49, 81` are complete with no premise.
-   - **Next:** the other 99 irreducible equations.
-     - The shifted monic sources (`h ≠ 0`): add the shift `u + hv` to `RankOne.source`.
+     `Generated/RankOneSources.lean`). Fifteen curves are complete with no premise (`k = 3, 4, 10, 25, 33, 41, 43, 44, 48, 49, 54, 57, 81, 82, 98`). They include shifted sources and curves with several sources.
+   - **Next:** the other 86 irreducible equations (`receipts/rank_one_blockers.json`).
+     - Large slab checks (`k = 22, 26, 28, 71, 94`): a cheaper fundamental-unit proof, for example an index argument with a lower regulator bound.
      - Sources with several solutions: a list-valued source theorem.
      - Nonmonic sources: norm representatives, as for negative `k`.
      - Search the unit and box per order.

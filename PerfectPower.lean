@@ -113,6 +113,7 @@ import PerfectPower.Plus2
 import PerfectPower.Generated.ClassLists.K2
 import PerfectPower.SkolemP
 import PerfectPower.RankOne
+import PerfectPower.DiophBridge
 import PerfectPower.Generated.RankOneSources.K4
 import PerfectPower.Generated.RankOneSources.K33
 import PerfectPower.Generated.RankOneSources.K49

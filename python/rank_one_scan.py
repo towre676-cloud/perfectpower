@@ -2,7 +2,8 @@
 
 For each irreducible class of `receipts/positive_k_next.json` this script records what stands
 between it and a Lean source theorem, using the exact mirrors of `python/rank_one_sources.py`:
-* `lean_source`: certified in `Generated/RankOneSources/K{k}.lean` (`RankOne.source`);
+* `lean_source`: certified in `Generated/RankOneSources/K{k}.lean` (`RankOne.source`), or `k = 2`
+  (`Plus2.source`);
 * `ready_large_slab`: fundamental unit and Skolem prime found, but the slab check is large
   (its kernel cost is the obstacle);
 * `several_solutions`: more than one known solution, so a list-valued source theorem is needed;
@@ -89,7 +90,7 @@ def classify(e, certified, cmax):
 
 def main(cmax=2_000_000):
     eqs = json.loads((ROOT / 'receipts' / 'positive_k_next.json').read_text())['equations']
-    certified = {(k, tuple(F)) for k, F, *_ in R.TARGETS}
+    certified = {(k, tuple(F)) for k, F, *_ in R.TARGETS} | {(2, (-1, 0, -3, -2))}   # Plus2.source
     rows = [classify(e, certified, cmax) for e in eqs]
     tally = {}
     for r in rows:

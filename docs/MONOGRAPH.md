@@ -407,7 +407,9 @@ is proved fundamental:
 | 81 | $-u^3-18v^3$ | $z^3=-18$ | $55-21z+8z^2$ | $(0,\pm9)$ |
 
 With the proved class lists, `K4.plus4`, `K33.plus33`, `K49.plus49` and
-`K81.plus81` hold with no premise. Ninety-nine irreducible equations remain.
+`K81.plus81` hold with no premise. The same engine handles shifted sources
+and curves with several sources, and closes eleven more curves
+(`MORDELL_BRANCH.md` §7.4). Eighty-six irreducible equations remain.
 
 **An exact bridge to OEIS** (`python/positive_k_oeis.py`). Write
 $P_k=\lbrace(x,y)\in\mathbb Z^2:y^2=x^3+k\rbrace$, $T_k$ for its size,
@@ -419,8 +421,8 @@ $x$. For $1\le k\le100$:
 - `A134220`–`A134223` list the $k$ with $R_k=1,2,3,4$.
 
 All 100 point lists of `receipts/positive_k.json` agree with these seven
-definitions (`receipts/positive_k_oeis.json`). Of these rows, 44 are
-Lean-complete and 56 are census evidence. The agreement is an independent
+definitions (`receipts/positive_k_oeis.json`). Of these rows, 55 are
+Lean-complete and 45 are census evidence. The agreement is an independent
 regression of the hit semantics, including the single $y=0$ point. It is not
 a completeness proof.
 
