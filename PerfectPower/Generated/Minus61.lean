@@ -323,7 +323,7 @@ def analytic_g1 : Prop :=
 theorem analytic_g1_proved (hM : matveev_g1) : analytic_g1 :=
   (UnitPremises.analytic_cons (analytic_g1_0_proved hM.1) (UnitPremises.analytic_cons (analytic_g1_1_proved hM.2.1) (UnitPremises.analytic_cons (analytic_g1_2_proved hM.2.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _))))
 
-/-- Negative control: every chain of `[-6, -3, 1098, 61] = 1` with its final bound lowered by one is rejected by the kernel. -/
+/-- Negative control: every chain of `[-6, -3, 1098, 61] = 1` with its final bound lowered by one is rejected. -/
 theorem forged_rejected_g1 : UnitPremises.forgedRejectedB reps_g1 = true := by decide +kernel
 
 /-- **`[-6, -3, 1098, 61] = 1`, complete under Matveev's bound** (3 norm representatives): `[-6, -3, 1098, 61]` takes the value 1 exactly at 0 point(s). -/

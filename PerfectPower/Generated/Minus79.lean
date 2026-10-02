@@ -234,7 +234,7 @@ def analytic_s1 : Prop :=
 theorem analytic_s1_proved (hM : matveev_s1) : analytic_s1 :=
   (UnitPremises.analytic_cons (analytic_s1_0_proved hM.1) (UnitPremises.analytic_cons (analytic_s1_1_proved hM.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _)))
 
-/-- Negative control: every chain of `[-7, -45, 1659, 1185] = 1` with its final bound lowered by one is rejected by the kernel. -/
+/-- Negative control: every chain of `[-7, -45, 1659, 1185] = 1` with its final bound lowered by one is rejected. -/
 theorem forged_rejected_s1 : UnitPremises.forgedRejectedB reps_s1 = true := by decide +kernel
 
 /-- **`[-7, -45, 1659, 1185] = 1`, complete under Matveev's bound** (2 norm representatives): `[-7, -45, 1659, 1185]` takes the value 1 exactly at 0 point(s). -/
@@ -388,7 +388,7 @@ def analytic_s2 : Prop :=
 theorem analytic_s2_proved (hM : matveev_s2) : analytic_s2 :=
   (UnitPremises.analytic_cons (analytic_s2_0_proved hM.1) (UnitPremises.analytic_cons (analytic_s2_1_proved hM.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _)))
 
-/-- Negative control: every chain of `[-7, -33, 387, 349] = 1` with its final bound lowered by one is rejected by the kernel. -/
+/-- Negative control: every chain of `[-7, -33, 387, 349] = 1` with its final bound lowered by one is rejected. -/
 theorem forged_rejected_s2 : UnitPremises.forgedRejectedB reps_s2 = true := by decide +kernel
 
 /-- **`[-7, -33, 387, 349] = 1`, complete under Matveev's bound** (2 norm representatives): `[-7, -33, 387, 349]` takes the value 1 exactly at 0 point(s). -/
@@ -542,7 +542,7 @@ def analytic_s3 : Prop :=
 theorem analytic_s3_proved (hM : matveev_s3) : analytic_s3 :=
   (UnitPremises.analytic_cons (analytic_s3_0_proved hM.1) (UnitPremises.analytic_cons (analytic_s3_1_proved hM.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _)))
 
-/-- Negative control: every chain of `[-7, -6, 108, -8] = 1` with its final bound lowered by one is rejected by the kernel. -/
+/-- Negative control: every chain of `[-7, -6, 108, -8] = 1` with its final bound lowered by one is rejected. -/
 theorem forged_rejected_s3 : UnitPremises.forgedRejectedB reps_s3 = true := by decide +kernel
 
 /-- **`[-7, -6, 108, -8] = 1`, complete under Matveev's bound** (2 norm representatives): `[-7, -6, 108, -8]` takes the value 1 exactly at 0 point(s). -/
@@ -696,7 +696,7 @@ def analytic_s4 : Prop :=
 theorem analytic_s4_proved (hM : matveev_s4) : analytic_s4 :=
   (UnitPremises.analytic_cons (analytic_s4_0_proved hM.1) (UnitPremises.analytic_cons (analytic_s4_1_proved hM.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _)))
 
-/-- Negative control: every chain of `[-7, -3, 27, -1] = 1` with its final bound lowered by one is rejected by the kernel. -/
+/-- Negative control: every chain of `[-7, -3, 27, -1] = 1` with its final bound lowered by one is rejected. -/
 theorem forged_rejected_s4 : UnitPremises.forgedRejectedB reps_s4 = true := by decide +kernel
 
 /-- **`[-7, -3, 27, -1] = 1`, complete under Matveev's bound** (2 norm representatives): `[-7, -3, 27, -1]` takes the value 1 exactly at 1 point(s). -/
