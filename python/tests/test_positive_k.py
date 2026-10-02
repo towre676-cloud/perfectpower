@@ -44,6 +44,36 @@ class Correspondence(unittest.TestCase):
         self.assertTrue(all((TG.evalF(G, u, v) - 1) % 9 for u in range(9) for v in range(9)))
 
 
+class Completeness(unittest.TestCase):
+    def test_k17_rational_root_class(self):
+        # the class missed by the old stabilizing search: Y(3X² + 17Y²), least leading coefficient 17
+        reps, _ = PK.classes(17)
+        F = (0, 3, 0, 17)
+        key, T = PK.canonical(F)
+        self.assertTrue(key in reps or any(PK.equivalent(key, G) for G in reps))
+
+    def test_bound_identities(self):
+        # det q = 3/|D| and q(v)^3 >= 27 F(v)^2/|D|^2 on random forms of negative discriminant
+        random.seed(3)
+        n = 0
+        while n < 200:
+            F = tuple(random.randint(-9, 9) for _ in range(4))
+            D = TG.disc(F)
+            if F[0] == 0 or D >= 0:
+                continue
+            n += 1
+            A, B, C = PK.covariant_q(F)
+            self.assertAlmostEqual((A * C - B * B / 4) * abs(D), 3, places=6)
+            for u, v in ((1, 0), (0, 1), (1, 1), (2, -3)):
+                q = A * u * u + B * u * v + C * v * v
+                self.assertGreaterEqual(q ** 3 * (1 + 1e-9), 27 * TG.evalF(F, u, v) ** 2 / D ** 2)
+
+    def test_check_complete(self):
+        for k in (6, 17, 23, 100):
+            reps, _ = PK.classes(k)
+            self.assertGreater(PK.check_complete(k, reps), 0)
+
+
 class Receipt(unittest.TestCase):
     def test_summary(self):
         r = json.loads((ROOT / 'receipts' / 'positive_k.json').read_text())
@@ -51,8 +81,9 @@ class Receipt(unittest.TestCase):
         self.assertEqual(s['curves'], 100)
         self.assertEqual(s['agree_with_census'], 100)
         self.assertEqual(s['census_points_unmatched'], 0)
-        self.assertEqual(len(s['all_classes_locally_impossible']), 30)
-        self.assertEqual(s['open_thue_equations'], 127)
+        self.assertEqual(len(s['all_classes_locally_impossible']), 25)
+        self.assertEqual(s['open_thue_equations'], 158)
+        self.assertEqual(s['classes'], 321)
         # a curve with an open-free certificate has no census points
         for row in r['curves']:
             if row['open_thue'] == 0:

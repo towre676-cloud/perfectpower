@@ -14,7 +14,8 @@ A route to the curves `y² = x³ + k` that needs no quadratic field (for `k > 0`
   values are those of `F` at `T (u, v)`.
 * `ClassList k Gs`: every form with `Δ = 4k` is `G ∘ T` for some `G ∈ Gs`, `T ∈ GL₂(ℤ)`.  This is
   the finiteness of the classes, a **premise** here: the reduction bound that proves it is not
-  formalized (`python/positive_k.py` lists the classes by search).
+  formalized (`python/positive_k.py` enumerates the classes inside a stated reduction bound and
+  checks the list exactly; the bound itself is a paper argument).
 * `no_point_of_classes`: under `ClassList k Gs`, if no `G ∈ Gs` represents `1`, the curve has no
   integral point.  `locImpB_sound` gives "no representation" from a finite residue check.
 -/

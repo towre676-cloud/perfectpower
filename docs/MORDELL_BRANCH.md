@@ -744,25 +744,42 @@ This route avoids the real quadratic field (Mordell, *Diophantine Equations*, ch
   Thue equations `G = 1`. Since the discriminant is `−108k < 0`, each lies in a complex cubic field
   with **unit rank 1**.
 
-*Classes.* The Hessian is indefinite here, so the classes are canonicalized by a covariant
-positive-definite quadratic built from the roots. It is computed in floating point, and merges are
-exact matrices. The class lists come from a search that grows until the classes stabilize.
-**They are not proved complete.**
+*Classes.* The Hessian is indefinite here, so the classes are canonicalized by the covariant
+positive-definite quadratic `q = (X − ρY)²/F'(ρ)² + 2|X − θY|²/|F'(θ)|²`, built from the real
+root `ρ` and a complex root `θ`. It is computed in floating point, and merges are exact matrices.
+
+*Completeness bound* (a paper argument, checked exactly in Python, **not a Lean theorem**).
+- **Invariant.** `det q = 3/|D|`.
+- **AM-GM.** Weighted AM-GM on `w₁ℓ_ρ² + (w₂/2)|ℓ_θ|² + (w₂/2)|ℓ_θ|²` gives
+  `q(v)³ ≥ 27F(v)²/|D|²`.
+- **Leading coefficient.** For Gauss-reduced `q = (A, B, C)`, `3A² ≤ 4 det q`, so
+  `|a| = |F(1, 0)| ≤ √(8/27)|D|^{1/4}`.
+- **Other coefficients.** If `a ≠ 0`, then `A ≥ 3|D|^{-2/3}`. This bounds `C` and the values of
+  `F` at `(0, 1)` and `(1, ±1)`, hence `b` and `c`.
+- **Rational roots.** Forms with a rational root are enumerated separately (root at infinity, `c`
+  reduced mod `2b`).
+- **Result.** For `k = 100` the box is `a ≤ 6`, `|b|, |c| ≤ 20`.
+- **Correction.** An earlier search that stopped when the class count stabilized missed 83 of the
+  321 classes. One example is `Y(3X² + 17Y²)` for `k = 17`, whose least leading coefficient is 17.
 
 *Results for `1 ≤ k ≤ 100`.*
-- 238 classes in all.
-- 111 classes are locally impossible for the value 1, by an exact residue check modulo 2, 3, 7 or 9.
-- 127 Thue equations remain: 96 carry points and 31 are point-free.
+- 321 classes in all.
+- 163 classes are locally impossible for the value 1, by an exact residue check.
+- 158 Thue equations remain: 96 carry points and 62 are point-free.
 - All 100 curves agree with the census, and every census point lands in a listed class.
-- In 30 curves every class is locally impossible. 28 of them were among the open curves.
+- In 25 curves every class is locally impossible.
+- With the incomplete search, 30 curves had looked that way. For `k = 23, 34, 59, 70, 86` the
+  missed classes are not locally impossible. The `ClassList` premise of those five earlier Lean
+  theorems was therefore false, so the theorems were vacuous. They are withdrawn.
 
-*Lean.* `Generated/PositiveK.lean` proves `y² = x³ + k` has no integral point for those 30 values
+*Lean.* `Generated/PositiveK.lean` proves `y² = x³ + k` has no integral point for those 25 values
 of `k`. Each theorem has the hypothesis `ClassList k cs_k`, which says the list contains every
 class. The `Δ` values and residues are kernel-checked (`emptyCertB`, `no_point_of_cert`).
 
 *Still open.*
-- The class-list premise: a reduction bound for negative discriminant, formalized.
-- A rank-1 Thue pipeline for the 127 remaining equations. Its unit generation, analytic step and
+- The class-list premise in Lean: formalize the bound above (real roots, the covariant `q`, and
+  AM-GM), or an integral reduction theory.
+- A rank-1 Thue pipeline for the 158 remaining equations. Its unit generation, analytic step and
   reduction are one-dimensional versions of the negative-`k` layers.
 
 ## 8. Not covered

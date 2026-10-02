@@ -1,44 +1,39 @@
 {
- "label": "Positive k through Mordell cubic forms: class search (NOT proved complete), exact local obstructions, representations of 1 by search (|u|, |v| <= 60), census cross-check",
+ "label": "Positive k through Mordell cubic forms: class lists complete by a stated reduction bound (paper argument, checked exactly in Python; a premise in Lean), exact local obstructions, representations of 1 by search (|u|, |v| <= 60), census cross-check",
  "summary": {
   "curves": 100,
-  "classes": 238,
-  "classes_locally_impossible": 111,
+  "classes": 321,
+  "classes_locally_impossible": 163,
   "all_classes_locally_impossible": [
    6,
    13,
    20,
    21,
-   23,
    29,
    32,
-   34,
    42,
    45,
    51,
    53,
    58,
-   59,
    60,
    67,
    69,
-   70,
    74,
    75,
    78,
    83,
    84,
    85,
-   86,
    87,
    88,
    93,
    95,
    96
   ],
-  "open_thue_equations": 127,
+  "open_thue_equations": 158,
   "open_with_points": 96,
-  "open_point_free": 31,
+  "open_point_free": 62,
   "agree_with_census": 100,
   "census_points_unmatched": 0
  },
@@ -47,20 +42,15 @@
    "k": 1,
    "rank": 0,
    "classes": 2,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 2,
+    "bc_max": 7
+   },
+   "complete_by_bound": {
+    "a_max": 2,
+    "bc_max": 7,
+    "forms_checked": 37
+   },
    "locally_impossible": 0,
    "open_thue": 2,
    "open_with_points": 2,
@@ -169,20 +159,15 @@
    "k": 2,
    "rank": 1,
    "classes": 2,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 3,
+    "bc_max": 8
+   },
+   "complete_by_bound": {
+    "a_max": 3,
+    "bc_max": 8,
+    "forms_checked": 45
+   },
    "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
@@ -249,20 +234,15 @@
    "k": 3,
    "rank": 1,
    "classes": 2,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 3,
+    "bc_max": 9
+   },
+   "complete_by_bound": {
+    "a_max": 3,
+    "bc_max": 9,
+    "forms_checked": 41
+   },
    "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
@@ -329,20 +309,15 @@
    "k": 4,
    "rank": 0,
    "classes": 3,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ]
-   ],
+   "search": {
+    "a_max": 3,
+    "bc_max": 9
+   },
+   "complete_by_bound": {
+    "a_max": 3,
+    "bc_max": 9,
+    "forms_checked": 36
+   },
    "locally_impossible": 2,
    "open_thue": 1,
    "open_with_points": 1,
@@ -421,24 +396,15 @@
    "k": 5,
    "rank": 1,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 3,
+    "bc_max": 10
+   },
+   "complete_by_bound": {
+    "a_max": 3,
+    "bc_max": 10,
+    "forms_checked": 20
+   },
    "locally_impossible": 0,
    "open_thue": 2,
    "open_with_points": 1,
@@ -505,24 +471,15 @@
    "k": 6,
    "rank": 0,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 3,
+    "bc_max": 10
+   },
+   "complete_by_bound": {
+    "a_max": 3,
+    "bc_max": 10,
+    "forms_checked": 36
+   },
    "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
@@ -561,24 +518,15 @@
    "k": 7,
    "rank": 0,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 3,
+    "bc_max": 10
+   },
+   "complete_by_bound": {
+    "a_max": 3,
+    "bc_max": 10,
+    "forms_checked": 28
+   },
    "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 0,
@@ -617,24 +565,15 @@
    "k": 8,
    "rank": 1,
    "classes": 4,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     32,
-     4
-    ]
-   ],
+   "search": {
+    "a_max": 3,
+    "bc_max": 11
+   },
+   "complete_by_bound": {
+    "a_max": 3,
+    "bc_max": 11,
+    "forms_checked": 55
+   },
    "locally_impossible": 0,
    "open_thue": 4,
    "open_with_points": 3,
@@ -793,24 +732,15 @@
    "k": 9,
    "rank": 1,
    "classes": 5,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     5
-    ],
-    [
-     32,
-     5
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 11
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 11,
+    "forms_checked": 122
+   },
    "locally_impossible": 1,
    "open_thue": 4,
    "open_with_points": 4,
@@ -1015,24 +945,15 @@
    "k": 10,
    "rank": 1,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 11
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 11,
+    "forms_checked": 26
+   },
    "locally_impossible": 0,
    "open_thue": 2,
    "open_with_points": 1,
@@ -1099,24 +1020,15 @@
    "k": 11,
    "rank": 1,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 12
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 12,
+    "forms_checked": 32
+   },
    "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 0,
@@ -1155,24 +1067,15 @@
    "k": 12,
    "rank": 1,
    "classes": 4,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     32,
-     4
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 12
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 12,
+    "forms_checked": 88
+   },
    "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 2,
@@ -1289,24 +1192,15 @@
    "k": 13,
    "rank": 0,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 12
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 12,
+    "forms_checked": 14
+   },
    "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
@@ -1345,24 +1239,15 @@
    "k": 14,
    "rank": 0,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 12
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 12,
+    "forms_checked": 28
+   },
    "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 0,
@@ -1401,24 +1286,15 @@
    "k": 15,
    "rank": 2,
    "classes": 2,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     2
-    ],
-    [
-     32,
-     2
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 12
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 12,
+    "forms_checked": 24
+   },
    "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
@@ -1509,24 +1385,15 @@
    "k": 16,
    "rank": 0,
    "classes": 4,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     32,
-     4
-    ]
-   ],
+   "search": {
+    "a_max": 4,
+    "bc_max": 13
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 13,
+    "forms_checked": 53
+   },
    "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 1,
@@ -1616,23 +1483,18 @@
   {
    "k": 17,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 4,
+    "bc_max": 13
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 13,
+    "forms_checked": 118
+   },
    "locally_impossible": 0,
-   "open_thue": 4,
+   "open_thue": 5,
    "open_with_points": 4,
    "census_points": [
     [
@@ -1888,28 +1750,35 @@
        282
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -17
+     ],
+     "disc": -1836,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 18,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 4,
+    "bc_max": 13
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 13,
+    "forms_checked": 38
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -1956,29 +1825,36 @@
        -19
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -18
+     ],
+     "disc": -1944,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 19,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 4,
+    "bc_max": 13
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 13,
+    "forms_checked": 28
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -2024,28 +1900,35 @@
        -12
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -19
+     ],
+     "disc": -2052,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 20,
    "rank": 0,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 4,
+   "search": {
+    "a_max": 4,
+    "bc_max": 13
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 13,
+    "forms_checked": 62
+   },
+   "locally_impossible": 4,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -2088,28 +1971,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -20
+     ],
+     "disc": -2160,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 21,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 4,
+    "bc_max": 14
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 14,
+    "forms_checked": 14
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -2128,28 +2018,35 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -21
+     ],
+     "disc": -2268,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 22,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 4,
+    "bc_max": 14
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 14,
+    "forms_checked": 28
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -2196,29 +2093,36 @@
        -7
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -22
+     ],
+     "disc": -2376,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 23,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 4,
+    "bc_max": 14
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 14,
+    "forms_checked": 20
+   },
    "locally_impossible": 1,
-   "open_thue": 0,
+   "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -2236,28 +2140,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -23
+     ],
+     "disc": -2484,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 24,
    "rank": 2,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 4,
+   "search": {
+    "a_max": 4,
+    "bc_max": 14
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 14,
+    "forms_checked": 55
+   },
+   "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 2,
    "census_points": [
@@ -2402,28 +2313,35 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -24
+     ],
+     "disc": -2592,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 25,
    "rank": 0,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 5,
+   "search": {
+    "a_max": 4,
+    "bc_max": 14
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 14,
+    "forms_checked": 110
+   },
+   "locally_impossible": 4,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -2506,29 +2424,36 @@
        -5
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -25
+     ],
+     "disc": -2700,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 26,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 4,
+    "bc_max": 14
+   },
+   "complete_by_bound": {
+    "a_max": 4,
+    "bc_max": 14,
+    "forms_checked": 24
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -2574,28 +2499,35 @@
        -5
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -26
+     ],
+     "disc": -2808,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 27,
    "rank": 0,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 14
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 14,
+    "forms_checked": 53
+   },
+   "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
@@ -2658,6 +2590,18 @@
        0
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -27
+     ],
+     "disc": -2916,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
@@ -2665,24 +2609,15 @@
    "k": 28,
    "rank": 1,
    "classes": 4,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     4
-    ]
-   ],
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 66
+   },
    "locally_impossible": 0,
    "open_thue": 4,
    "open_with_points": 2,
@@ -2798,22 +2733,17 @@
   {
    "k": 29,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 14
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -2832,28 +2762,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -29
+     ],
+     "disc": -3132,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 30,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 36
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -2900,28 +2837,35 @@
        83
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -30
+     ],
+     "disc": -3240,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 31,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 32
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -2968,28 +2912,35 @@
        -2
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -31
+     ],
+     "disc": -3348,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 32,
    "rank": 0,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 77
+   },
+   "locally_impossible": 4,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -3032,28 +2983,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -32
+     ],
+     "disc": -3456,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 33,
    "rank": 1,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 5,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 122
+   },
+   "locally_impossible": 4,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -3136,29 +3094,36 @@
        -5
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -33
+     ],
+     "disc": -3564,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 34,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 28
+   },
    "locally_impossible": 1,
-   "open_thue": 0,
+   "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -3176,29 +3141,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -34
+     ],
+     "disc": -3672,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 35,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 20
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -3244,32 +3216,35 @@
        -6
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -35
+     ],
+     "disc": -3780,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 36,
    "rank": 1,
-   "classes": 6,
-   "search": [
-    [
-     4,
-     5
-    ],
-    [
-     8,
-     6
-    ],
-    [
-     16,
-     6
-    ],
-    [
-     32,
-     6
-    ]
-   ],
-   "locally_impossible": 2,
+   "classes": 7,
+   "search": {
+    "a_max": 5,
+    "bc_max": 15
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 15,
+    "forms_checked": 136
+   },
+   "locally_impossible": 3,
    "open_thue": 4,
    "open_with_points": 4,
    "census_points": [
@@ -3454,33 +3429,36 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -36
+     ],
+     "disc": -3888,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 37,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ],
-    [
-     32,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 86
+   },
    "locally_impossible": 0,
-   "open_thue": 4,
+   "open_thue": 5,
    "open_with_points": 3,
    "census_points": [
     [
@@ -3614,28 +3592,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -37
+     ],
+     "disc": -3996,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 38,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 34
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -3682,28 +3667,35 @@
        37
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -38
+     ],
+     "disc": -4104,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 39,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 34
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
@@ -3722,32 +3714,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -39
+     ],
+     "disc": -4212,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 40,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 75
+   },
+   "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
@@ -3818,29 +3813,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -40
+     ],
+     "disc": -4320,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 41,
    "rank": 1,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 126
+   },
    "locally_impossible": 3,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -3922,28 +3924,35 @@
        -7
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -41
+     ],
+     "disc": -4428,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 42,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 28
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -3962,29 +3971,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -42
+     ],
+     "disc": -4536,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 43,
    "rank": 2,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 30
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -4030,33 +4046,36 @@
        -4
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -43
+     ],
+     "disc": -4644,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 44,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 60
+   },
    "locally_impossible": 0,
-   "open_thue": 3,
+   "open_thue": 4,
    "open_with_points": 2,
    "census_points": [
     [
@@ -4152,32 +4171,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -44
+     ],
+     "disc": -4752,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 45,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     0
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     32,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 6
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -4196,28 +4218,35 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -45
+     ],
+     "disc": -4860,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 46,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 24
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
@@ -4236,28 +4265,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -46
+     ],
+     "disc": -4968,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 47,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 16
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 16,
+    "forms_checked": 24
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
@@ -4276,32 +4312,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -47
+     ],
+     "disc": -5076,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 48,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 2,
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 64
+   },
+   "locally_impossible": 3,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -4372,28 +4411,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -48
+     ],
+     "disc": -5184,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 49,
    "rank": 0,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 5,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 108
+   },
+   "locally_impossible": 4,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -4476,29 +4522,36 @@
        -7
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -49
+     ],
+     "disc": -5292,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 50,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 24
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -4544,28 +4597,35 @@
        -7
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -50
+     ],
+     "disc": -5400,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 51,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 24
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -4584,33 +4644,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -51
+     ],
+     "disc": -5508,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 52,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 46
+   },
    "locally_impossible": 2,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -4680,32 +4743,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -52
+     ],
+     "disc": -5616,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 53,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     0
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     32,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 6
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -4724,28 +4790,35 @@
      "local_obstruction": 7,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -53
+     ],
+     "disc": -5724,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 54,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     3
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ]
-   ],
-   "locally_impossible": 2,
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 39
+   },
+   "locally_impossible": 3,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -4816,29 +4889,36 @@
        -9
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -54
+     ],
+     "disc": -5832,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 55,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 34
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -4884,32 +4964,35 @@
        28
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -55
+     ],
+     "disc": -5940,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 56,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     3
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 46
+   },
+   "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
@@ -4980,28 +5063,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -56
+     ],
+     "disc": -6048,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 57,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 5,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 78
+   },
+   "locally_impossible": 2,
    "open_thue": 3,
    "open_with_points": 3,
    "census_points": [
@@ -5136,28 +5226,35 @@
        -7
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -57
+     ],
+     "disc": -6156,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 58,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 24
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -5176,29 +5273,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -58
+     ],
+     "disc": -6264,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 59,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 30
+   },
    "locally_impossible": 1,
-   "open_thue": 0,
+   "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -5216,32 +5320,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -59
+     ],
+     "disc": -6372,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 60,
    "rank": 0,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 4,
+   "search": {
+    "a_max": 5,
+    "bc_max": 17
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 17,
+    "forms_checked": 72
+   },
+   "locally_impossible": 4,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -5284,33 +5391,36 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -60
+     ],
+     "disc": -6480,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 61,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     0
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     32,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 18,
+    "forms_checked": 6
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -5328,29 +5438,36 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -61
+     ],
+     "disc": -6588,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 62,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 5,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 18,
+    "forms_checked": 28
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -5368,28 +5485,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -62
+     ],
+     "disc": -6696,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 63,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 5,
+   "search": {
+    "a_max": 5,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 18,
+    "forms_checked": 104
+   },
+   "locally_impossible": 1,
    "open_thue": 4,
    "open_with_points": 2,
    "census_points": [
@@ -5498,33 +5622,36 @@
        -8
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -63
+     ],
+     "disc": -6804,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 64,
    "rank": 0,
-   "classes": 6,
-   "search": [
-    [
-     4,
-     5
-    ],
-    [
-     8,
-     6
-    ],
-    [
-     16,
-     6
-    ],
-    [
-     32,
-     6
-    ]
-   ],
+   "classes": 7,
+   "search": {
+    "a_max": 5,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 18,
+    "forms_checked": 93
+   },
    "locally_impossible": 3,
-   "open_thue": 3,
+   "open_thue": 4,
    "open_with_points": 3,
    "census_points": [
     [
@@ -5674,28 +5801,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -64
+     ],
+     "disc": -6912,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 65,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 5,
+   "search": {
+    "a_max": 5,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 5,
+    "bc_max": 18,
+    "forms_checked": 126
+   },
+   "locally_impossible": 2,
    "open_thue": 3,
    "open_with_points": 3,
    "census_points": [
@@ -5854,28 +5988,35 @@
        -8
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -65
+     ],
+     "disc": -7020,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 66,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 22
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
@@ -5894,28 +6035,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -66
+     ],
+     "disc": -7128,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 67,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 24
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -5934,33 +6082,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -67
+     ],
+     "disc": -7236,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 68,
    "rank": 1,
-   "classes": 6,
-   "search": [
-    [
-     4,
-     5
-    ],
-    [
-     8,
-     5
-    ],
-    [
-     16,
-     6
-    ],
-    [
-     32,
-     6
-    ]
-   ],
+   "classes": 7,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 172
+   },
    "locally_impossible": 5,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -6090,32 +6241,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -68
+     ],
+     "disc": -7344,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 69,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     0
-    ],
-    [
-     8,
-     0
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     32,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 6
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -6134,29 +6288,36 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -69
+     ],
+     "disc": -7452,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 70,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 30
+   },
    "locally_impossible": 1,
-   "open_thue": 0,
+   "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -6174,29 +6335,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -70
+     ],
+     "disc": -7560,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 71,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 26
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -6242,32 +6410,35 @@
        -14
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -71
+     ],
+     "disc": -7668,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 72,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 4,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 56
+   },
+   "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
@@ -6338,29 +6509,36 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -72
+     ],
+     "disc": -7776,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 73,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 94
+   },
    "locally_impossible": 0,
-   "open_thue": 4,
+   "open_thue": 5,
    "open_with_points": 4,
    "census_points": [
     [
@@ -6568,28 +6746,35 @@
        -611
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -73
+     ],
+     "disc": -7884,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 74,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 32
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -6608,28 +6793,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -74
+     ],
+     "disc": -7992,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 75,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 28
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -6648,32 +6840,35 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -75
+     ],
+     "disc": -8100,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 76,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 4,
+   "search": {
+    "a_max": 6,
+    "bc_max": 18
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 18,
+    "forms_checked": 54
+   },
+   "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
@@ -6744,33 +6939,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -76
+     ],
+     "disc": -8208,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 77,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     0
-    ],
-    [
-     8,
-     0
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     32,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 6
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -6788,28 +6986,35 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -77
+     ],
+     "disc": -8316,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 78,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 42
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -6828,29 +7033,36 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -78
+     ],
+     "disc": -8424,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 79,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 130
+   },
    "locally_impossible": 3,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -6932,33 +7144,36 @@
        -302
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -79
+     ],
+     "disc": -8532,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 80,
    "rank": 1,
-   "classes": 6,
-   "search": [
-    [
-     4,
-     5
-    ],
-    [
-     8,
-     5
-    ],
-    [
-     16,
-     6
-    ],
-    [
-     32,
-     6
-    ]
-   ],
+   "classes": 7,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 112
+   },
    "locally_impossible": 2,
-   "open_thue": 4,
+   "open_thue": 5,
    "open_with_points": 4,
    "census_points": [
     [
@@ -7142,28 +7357,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -80
+     ],
+     "disc": -8640,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 81,
    "rank": 0,
-   "classes": 6,
-   "search": [
-    [
-     4,
-     6
-    ],
-    [
-     8,
-     6
-    ],
-    [
-     16,
-     6
-    ]
-   ],
-   "locally_impossible": 5,
+   "classes": 7,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 117
+   },
+   "locally_impossible": 6,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -7270,29 +7492,36 @@
      "local_obstruction": 7,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -81
+     ],
+     "disc": -8748,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 82,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 30
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -7338,28 +7567,35 @@
        -9
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -82
+     ],
+     "disc": -8856,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 83,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 26
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -7378,32 +7614,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -83
+     ],
+     "disc": -8964,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 84,
    "rank": 0,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 4,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 54
+   },
+   "locally_impossible": 4,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -7446,32 +7685,35 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -84
+     ],
+     "disc": -9072,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 85,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     0
-    ],
-    [
-     8,
-     0
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     32,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 6
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -7490,29 +7732,36 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -85
+     ],
+     "disc": -9180,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 86,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 42
+   },
    "locally_impossible": 1,
-   "open_thue": 0,
+   "open_thue": 1,
    "open_with_points": 0,
    "census_points": [],
    "points_found": [],
@@ -7530,28 +7779,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -86
+     ],
+     "disc": -9288,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 87,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 34
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -7570,32 +7826,35 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -87
+     ],
+     "disc": -9396,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 88,
    "rank": 0,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 4,
+   "search": {
+    "a_max": 6,
+    "bc_max": 19
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 19,
+    "forms_checked": 44
+   },
+   "locally_impossible": 4,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -7638,29 +7897,36 @@
      "local_obstruction": 7,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -88
+     ],
+     "disc": -9504,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 89,
    "rank": 2,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 130
+   },
    "locally_impossible": 0,
-   "open_thue": 4,
+   "open_thue": 5,
    "open_with_points": 4,
    "census_points": [
     [
@@ -7820,28 +8086,35 @@
        -9
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -89
+     ],
+     "disc": -9612,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 90,
    "rank": 0,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 5,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 104
+   },
+   "locally_impossible": 1,
    "open_thue": 4,
    "open_with_points": 0,
    "census_points": [],
@@ -7896,29 +8169,36 @@
      "local_obstruction": null,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -90
+     ],
+     "disc": -9720,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 91,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 28
+   },
    "locally_impossible": 0,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -7964,32 +8244,35 @@
        8
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -91
+     ],
+     "disc": -9828,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 92,
    "rank": 1,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 4,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 46
+   },
+   "locally_impossible": 2,
    "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
@@ -8060,32 +8343,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -92
+     ],
+     "disc": -9936,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 93,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     0
-    ],
-    [
-     8,
-     0
-    ],
-    [
-     16,
-     1
-    ],
-    [
-     32,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 6
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -8104,28 +8390,35 @@
      "local_obstruction": 3,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -93
+     ],
+     "disc": -10044,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 94,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 28
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -8172,28 +8465,35 @@
        -11
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -94
+     ],
+     "disc": -10152,
+     "local_obstruction": 9,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 95,
    "rank": 0,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 1,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 48
+   },
+   "locally_impossible": 2,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -8212,32 +8512,35 @@
      "local_obstruction": 9,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -95
+     ],
+     "disc": -10260,
+     "local_obstruction": 7,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 96,
    "rank": 0,
-   "classes": 3,
-   "search": [
-    [
-     4,
-     2
-    ],
-    [
-     8,
-     2
-    ],
-    [
-     16,
-     3
-    ],
-    [
-     32,
-     3
-    ]
-   ],
-   "locally_impossible": 3,
+   "classes": 4,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 74
+   },
+   "locally_impossible": 4,
    "open_thue": 0,
    "open_with_points": 0,
    "census_points": [],
@@ -8280,29 +8583,36 @@
      "local_obstruction": 2,
      "representations": [],
      "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -96
+     ],
+     "disc": -10368,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 97,
    "rank": 1,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 122
+   },
    "locally_impossible": 3,
-   "open_thue": 1,
+   "open_thue": 2,
    "open_with_points": 1,
    "census_points": [
     [
@@ -8384,29 +8694,36 @@
        77
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -97
+     ],
+     "disc": -10476,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 98,
    "rank": 1,
-   "classes": 4,
-   "search": [
-    [
-     4,
-     4
-    ],
-    [
-     8,
-     4
-    ],
-    [
-     16,
-     4
-    ]
-   ],
+   "classes": 5,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 96
+   },
    "locally_impossible": 2,
-   "open_thue": 2,
+   "open_thue": 3,
    "open_with_points": 1,
    "census_points": [
     [
@@ -8488,28 +8805,35 @@
        -21
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -98
+     ],
+     "disc": -10584,
+     "local_obstruction": null,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 99,
    "rank": 1,
-   "classes": 1,
-   "search": [
-    [
-     4,
-     1
-    ],
-    [
-     8,
-     1
-    ],
-    [
-     16,
-     1
-    ]
-   ],
-   "locally_impossible": 0,
+   "classes": 2,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 32
+   },
+   "locally_impossible": 1,
    "open_thue": 1,
    "open_with_points": 1,
    "census_points": [
@@ -8556,33 +8880,36 @@
        -10
       ]
      ]
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -99
+     ],
+     "disc": -10692,
+     "local_obstruction": 3,
+     "representations": [],
+     "points": []
     }
    ]
   },
   {
    "k": 100,
    "rank": 1,
-   "classes": 6,
-   "search": [
-    [
-     4,
-     5
-    ],
-    [
-     8,
-     5
-    ],
-    [
-     16,
-     6
-    ],
-    [
-     32,
-     6
-    ]
-   ],
+   "classes": 7,
+   "search": {
+    "a_max": 6,
+    "bc_max": 20
+   },
+   "complete_by_bound": {
+    "a_max": 6,
+    "bc_max": 20,
+    "forms_checked": 150
+   },
    "locally_impossible": 2,
-   "open_thue": 4,
+   "open_thue": 5,
    "open_with_points": 4,
    "census_points": [
     [
@@ -8812,6 +9139,18 @@
      ],
      "disc": -10800,
      "local_obstruction": 2,
+     "representations": [],
+     "points": []
+    },
+    {
+     "form": [
+      0,
+      -3,
+      0,
+      -100
+     ],
+     "disc": -10800,
+     "local_obstruction": null,
      "representations": [],
      "points": []
     }

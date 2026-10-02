@@ -23,9 +23,12 @@ It is positive definite and `q(F ∘ T) = q(F) ∘ T` for `T ∈ GL₂(ℤ)`.  I
 point, and classes are then merged by explicit matrices (`F ∘ T = G`, exact).
 
 **Evidence.**
-* The class lists come from a coefficient search that grows until the set of classes stabilizes
-  (`SEARCH_STABLE`). They are **not proved complete**: that needs a reduction bound, here or in
-  Lean.
+* The class lists come from an enumeration that is complete by a stated bound (`box_bounds`:
+  `det q = 3/|D|` and `q(v)³ ≥ 27 F(v)²/|D|²` bound a reduced representative; forms with a rational
+  root are enumerated separately, `reducible_forms`), checked exactly here (`check_complete`).
+  The bound is a paper argument, **not a Lean theorem**: in Lean the class list stays a premise.
+  An earlier coefficient search that stopped when the class count stabilized missed 83 of the
+  321 classes (for example `Y(3X² + 17Y²)` for `k = 17`, whose least leading coefficient is 17).
 * "Locally impossible" (`G = 1` has no solution mod `m`) is exact.
 * The points are matched against the independent census (`data/mordell_census.csv`).
 * Nothing here is a Lean completeness theorem for positive `k`.
@@ -168,10 +171,11 @@ def equivalent(F, G, R=4):
 
 # ---------------------------------------------------------------------------------- the class search
 
-def forms_with_delta(k, R):
-    """Forms `(a, 3b, 3c, d)` with `Δ = 4k`, `|a|, |b|, |c| ≤ R`, `d` solved from `Δ` (quadratic in d)."""
+def forms_with_delta(k, R, amax=None):
+    """Forms `(a, 3b, 3c, d)` with `Δ = 4k`, `1 ≤ a ≤ amax` (default `R`), `|b|, |c| ≤ R`, `d` solved
+    from `Δ` (quadratic in d)."""
     out = []
-    for a in range(1, R + 1):                     # F and −F: −F(u, v) = F(−u, −v), same class
+    for a in range(1, (R if amax is None else amax) + 1):                     # F and −F: −F(u, v) = F(−u, −v), same class
         for b in range(-R, R + 1):
             for c in range(-R, R + 1):
                 # Δ = a²d² + d(−2abc − 4a·... ) ... solve exactly: Δ(d) is quadratic in d
@@ -194,24 +198,69 @@ def forms_with_delta(k, R):
     return out
 
 
-def classes(k, R0=4, Rmax=40):
-    """Grow the search box until the classes stop changing for two doublings."""
-    reps, history, R = {}, [], R0
-    while R <= Rmax:
-        for F in forms_with_delta(k, R):
-            if TG.disc(F) == 0:
-                continue
-            key, _ = canonical(F)
-            if key in reps:
-                continue
-            if any(equivalent(key, G) for G in reps):
-                continue
-            reps[key] = F
-        history.append((R, len(reps)))
-        if len(history) >= 3 and history[-1][1] == history[-2][1] == history[-3][1]:
-            break
-        R *= 2
-    return sorted(reps), history
+# ---------------------------------------------------------------------------------- completeness bound
+
+def box_bounds(k):
+    """Coefficient bounds for a reduced representative of every class with `F(1, 0) ≠ 0` at the
+    reduced minimum of `q` (MORDELL_BRANCH.md §7.4).  With `|D| = 108k`: `det q = 3/|D|` and
+    `q(v)³ ≥ 27 F(v)²/|D|²` (weighted AM-GM), so for Gauss-reduced `q = (A, B, C)`:
+    `A ≤ 2/√|D|`, `|a| ≤ √(8/27)|D|^{1/4}`; `|a| ≥ 1` gives `A ≥ 3|D|^{-2/3}`, hence
+    `C ≤ 3/(|D|A) + A/4` and `q ≤ qmax` at `(0, 1)`, `(1, ±1)`; `|F| ≤ M = |D| qmax^{3/2}/√27` there, so
+    `|3b|, |3c| ≤ 2M`.  Rounded outward (floats only enlarge the box)."""
+    D = 108 * k
+    amax = math.floor((8 / 27) ** 0.5 * D ** 0.25 * 1.001) + 1
+    qmax = max(6.75 * D ** (-2 / 3) + D ** (-1 / 3), 6 / D ** 0.5) * 1.001
+    M = D * qmax ** 1.5 / 27 ** 0.5 * 1.001
+    return amax, math.floor(2 * M / 3) + 1           # bounds for a and for b, c (coefficients 3b, 3c)
+
+
+def reducible_forms(k):
+    """Every class with a rational root has a representative `(0, 3b, 3c, d)`: the root at infinity,
+    `c` reduced mod `2|b|` (`X ↦ X + tY` sends `c` to `c + 2bt`); `Δ = b²(4bd − 3c²) = 4k`."""
+    out = []
+    for b in range(1, 2 * k + 1):
+        if (4 * k) % (b * b):
+            continue
+        r = 4 * k // (b * b)
+        for c in range(-b + 1, b + 1):
+            for sb in (b, -b):
+                if (r + 3 * c * c) % (4 * sb) == 0:
+                    F = (0, 3 * sb, 3 * c, (r + 3 * c * c) // (4 * sb))
+                    assert delta(F) == 4 * k
+                    out.append(F)
+    return out
+
+
+def check_complete(k, reps):
+    """Independent re-check: every form of the box or with a rational root maps by an explicit
+    matrix (`F ∘ T = G`, exact) onto a listed class.  Returns the number of forms checked."""
+    amax, bmax = box_bounds(k)
+    keys = set(reps)
+    n = 0
+    for F in forms_with_delta(k, bmax, amax=amax) + reducible_forms(k):
+        if TG.disc(F) == 0:
+            continue
+        n += 1
+        key, T = canonical(F)
+        assert TG.compose(F, T) == key
+        if key not in keys and not any(equivalent(key, G) for G in reps):
+            raise AssertionError(f'k={k}: {F} not in the class list')
+    return n
+
+
+def classes(k):
+    """The classes: every form of the bound box (`box_bounds`) and every form with a rational root
+    (`reducible_forms`), merged by explicit matrices.  By the bound, this list is complete."""
+    amax, bmax = box_bounds(k)
+    reps = {}
+    for F in forms_with_delta(k, bmax, amax=amax) + reducible_forms(k):
+        if TG.disc(F) == 0:
+            continue
+        key, _ = canonical(F)
+        if key in reps or any(equivalent(key, G) for G in reps):
+            continue
+        reps[key] = F
+    return sorted(reps), {'a_max': amax, 'bc_max': bmax}
 
 
 def local_impossible(G, mods=(2, 3, 4, 5, 7, 8, 9, 13, 16, 19, 27, 37)):
@@ -258,8 +307,11 @@ def run(K=100):
         missing = [p for p in cen[k]['points'] if not any(
             equivalent(canonical(form_of_point(*p))[0], tuple(c['form'])) or
             canonical(form_of_point(*p))[0] == tuple(c['form']) for c in cls)]
+        checked = check_complete(k, reps)
         open_classes = [c for c in cls if c['local_obstruction'] is None]
         rows.append({'k': k, 'rank': cen[k]['rank'], 'classes': len(cls), 'search': hist,
+                     'complete_by_bound': {'a_max': box_bounds(k)[0], 'bc_max': box_bounds(k)[1],
+                                           'forms_checked': checked},
                      'locally_impossible': len(cls) - len(open_classes), 'open_thue': len(open_classes),
                      'open_with_points': sum(bool(c['points']) for c in open_classes),
                      'census_points': cen[k]['points'], 'points_found': found,
@@ -277,7 +329,8 @@ def run(K=100):
         'agree_with_census': sum(r['agrees_with_census'] for r in rows),
         'census_points_unmatched': sum(len(r['census_points_unmatched']) for r in rows),
     }
-    out = {'label': 'Positive k through Mordell cubic forms: class search (NOT proved complete), exact '
+    out = {'label': 'Positive k through Mordell cubic forms: class lists complete by a stated reduction bound '
+                    '(paper argument, checked exactly in Python; a premise in Lean), exact '
                     'local obstructions, representations of 1 by search (|u|, |v| <= 60), census cross-check',
            'summary': summary, 'curves': rows}
     (ROOT / 'receipts' / 'positive_k.json').write_text(json.dumps(out, indent=1, default=list) + '\n')
@@ -296,10 +349,11 @@ def lean_module(rows):
     out = ['import PerfectPower.MordellCubicForm\n\n/-!\n# Positive `k`: curves `y² = x³ + k` with no integral point, '
            'under the class-list premise\n(generated by `python/positive_k.py`)\n\n'
            'Each `cs_k` lists the `GL₂(ℤ)` classes of forms `(a, 3b, 3c, d)` with `Δ = 4k` (stored as\n'
-           '`(a, b, c, d)`) found by `python/positive_k.py`, each with a modulus `m` such that the form never\n'
+           '`(a, b, c, d)`) enumerated by `python/positive_k.py`, each with a modulus `m` such that the form never\n'
            'takes the value `1` modulo `m`.  The kernel checks `Δ` and the residues (`emptyCertB`).  The\n'
-           'premise `ClassList k` (that the list contains every class) is **not proved**: it is the hypothesis\n'
-           'of each theorem.\n-/\n\nnamespace PerfectPower.Generated.PositiveK\n\nopen PerfectPower MordellCubicForm\n']
+           'premise `ClassList k` (that the list contains every class) is **not proved in Lean**: it is the\n'
+           'hypothesis of each theorem.  `python/positive_k.py` checks it exactly against a stated reduction\n'
+           'bound (a paper argument, `MORDELL_BRANCH.md` §7.4).\n-/\n\nnamespace PerfectPower.Generated.PositiveK\n\nopen PerfectPower MordellCubicForm\n']
     for r in rows:
         if r['open_thue']:
             continue
