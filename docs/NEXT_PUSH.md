@@ -149,10 +149,14 @@ git.
      continued-fraction (or LMM) root characterization would replace the box.
    - **Remaining:** ranges crossing `2qN + p = 0` (split at the turning point, with the
      single-`N` case checked directly), and a Why3 emission for these lists.
-6. **Positive `k`** (`MORDELL_BRANCH.md` §7.4).
-   - **Target:** seed coverage of `p² − |D|q² = k³` modulo cubes of the fundamental unit, with
-     ideal classes, exceptional primes and the integral readout.
-   - `orbit_mod_three` is only the exponent normalization.
+6. **Positive `k`** (`MORDELL_BRANCH.md` §7.4), through Mordell's cubic forms.
+   - **Done:** 39 curves `k ≤ 100` complete in Lean with no premise. The class lists are proved
+     (`ClassListProof.lean`), and reducible classes are solved (`ReducibleThue.lean`).
+   - **Next:** a rank-1 unit bridge for the 104 irreducible equations: one real embedding and a
+     complex pair. Then either a complex-logarithm lower bound, or a p-adic Skolem zero certificate
+     piloted on one source.
+   - The real-quadratic route (`orbit_mod_three`, seed coverage of `p² − |D|q² = k³`) is no
+     longer needed.
 7. **Smaller formal items.**
    - Coefficient-bound lemmas for `runge_uniform` (`OPEN_PROBLEMS.md` §7).
    - Theorem T2 (the log-periodic second term) in Lean.

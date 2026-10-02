@@ -772,14 +772,33 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
   missed classes are not locally impossible. The `ClassList` premise of those five earlier Lean
   theorems was therefore false, so the theorems were vacuous. They are withdrawn.
 
-*Lean.* `Generated/PositiveK.lean` proves `y² = x³ + k` has no integral point for those 25 values
-of `k`. Each theorem has the hypothesis `ClassList k cs_k`, which says the list contains every
-class. The `Δ` values and residues are kernel-checked (`emptyCertB`, `no_point_of_cert`).
+*Lean.* The modules are layered as follows.
+- `Generated/PositiveK.lean` proves that `y² = x³ + k` has no integral point for those 25 values
+  of `k`, under `ClassList k cs_k`.
+- `Generated/PositiveKComplete.lean` gives complete lists for 39 curves under the same premise.
+  - Every class is locally impossible or reducible.
+  - The reducible ones are solved by `ReducibleThue.redSolsIn`: the factor, a Bezout pair, and the
+    integer square root of a discriminant (54 certificates, matching the five-frontiers review).
+  - The points are read off by the Hessian covariant (`PositiveKCurve`).
+
+*The class-list premise, proved* (`CubicReduction.lean`, `ClassListProof.lean`,
+`Generated/ClassLists/K*.lean`).
+- **Reduction over ℝ.** A real root gives `F = (X − ρY)Q₂` and `D = −δR²`. Then
+  `q = (X − ρY)²/R² + 2Q₂/(Rδ)` has `det q = 3/|D|` and `27F(v)² ≤ D²q(v)³`. The cube step is
+  `(x₁ + 2x₂)³ − 27x₁x₂² = (x₁ − x₂)²(x₁ + 8x₂)`. No complex numbers are used.
+- **Gauss reduction.** There is a basis with `q(v₁) ≤ q(v₂) ≤ q(v₂ ± v₁)`.
+- **Box.** `int_bounds` turns this into an integer box, using rational parameters checked by
+  `norm_num` (`ParamsOK`).
+- **Rational-root forms.** These are shifted into `|c| ≤ |b|`, `b² ≤ 4k`.
+- **Transports.** Every box form with `Δ = 4k` gets a kernel-checked transport to a listed class
+  (`boxCertB`, sliced by `a`). Its last coefficient is solved from `Δ` with a checked integer
+  square root.
+- **Result.** For the 39 curves, `plus{k}` is now `y² = x³ + k ↔ (x, y) ∈ L` **with no premise**.
+- **Cost.** About 1 to 5 minutes and up to about 4.7 GB per curve.
 
 *Still open.*
-- The class-list premise in Lean: formalize the bound above (real roots, the covariant `q`, and
-  AM-GM), or an integral reduction theory.
-- A rank-1 Thue pipeline for the 158 remaining equations. Its unit generation, analytic step and
+- A rank-1 Thue pipeline for the 104 irreducible equations: one real embedding and a complex pair.
+  The analytic step needs a complex-logarithm lower bound, or a p-adic (Skolem) zero certificate. Its unit generation, analytic step and
   reduction are one-dimensional versions of the negative-`k` layers.
 
 ## 8. Not covered
