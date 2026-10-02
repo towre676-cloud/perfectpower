@@ -66,6 +66,11 @@ import PerfectPower.Generated.Minus26
 import PerfectPower.Generated.Minus48
 import PerfectPower.Generated.Minus55
 import PerfectPower.Generated.Minus71
+import PerfectPower.NormCover
+import PerfectPower.Generated.Covers2700
+import PerfectPower.Generated.Order2700
+import PerfectPower.Generated.Minus25
+import PerfectPower.Generated.Minus100
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances

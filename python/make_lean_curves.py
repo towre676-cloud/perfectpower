@@ -107,6 +107,48 @@ CURVES = {
                      {'name': 'd5', 'form': (-1, -33, 21, 205), 'phi': (11, 4, 0), 'normrep': ('one',)},
                      {'name': 'd6', 'form': (-1, -15, 21, 19), 'phi': (5, 2, 0), 'normrep': ('one',)},
                      {'name': 'd7', 'form': (-1, -9, -3, 3), 'phi': (3, 1, 0), 'normrep': ('one',)}]},
+    # Sources whose norm representatives come from composed divisor covers (python/norm_cover.py),
+    # all in t³ = 15t + 20 (`Order2700`, `Covers2700`)
+    25: {'name': 'Minus25', 'P': 15, 'Q': 20, 'disc': 2700, 'units': [(-1, 1, 1), (-59, -22, 8)],
+         'order': 'Order2700', 'imports': ['PerfectPower.Generated.Covers2700'],
+         'sources': [{'name': 'e1', 'form': (-6, -24, 93, 83), 'phi': (58, 5, -5), 'normrep': ('cover', 'Covers2700'),
+                      'via': (10, (30, 20), (8, 5, 0))},
+                     {'name': 'e2', 'form': (-2, -48, -9, 101), 'phi': (-34, -15, 5), 'normrep': ('cover', 'Covers2700'),
+                      'via': (13, (30, 60), (16, 5, 0))},
+                     {'name': 'e3', 'form': (-2, -15, 150, 125), 'phi': (55, 10, -5), 'normrep': ('cover', 'Covers2700'),
+                      'via': (5, (15, 10), (5, 5, 0))},
+                     {'name': 'e4', 'form': (-1, 6, 3, -2), 'phi': (-2, -1, 0), 'normrep': ('one',)},
+                     {'name': 'e5', 'form': (-1, -30, 75, 250), 'phi': (10, 5, 0), 'normrep': ('one',)}]},
+    100: {'name': 'Minus100', 'P': 15, 'Q': 20, 'disc': 2700, 'units': [(-1, 1, 1), (-59, -22, 8)],
+          'order': 'Order2700', 'imports': ['PerfectPower.Generated.Covers2700'],
+          'sources': [{'name': 'f1', 'form': (-64, -144, 267, 98), 'phi': (448, 80, -40),
+                       'normrep': ('cover', 'Covers2700'), 'via': (5, (15, 10), (48, 40, 0))},
+                      {'name': 'f2', 'form': (-8, -42, 114, 129), 'phi': (114, 20, -10),
+                       'normrep': ('cover', 'Covers2700'), 'via': (5, (15, 10), (14, 10, 0))},
+                      {'name': 'f3', 'form': (-4, -66, 12, 147), 'phi': (22, 10, 0), 'normrep': ('cover', 'Covers2700')},
+                      {'name': 'f4', 'form': (-4, -60, 75, 125), 'phi': (20, 10, 0), 'normrep': ('cover', 'Covers2700')},
+                      {'name': 'f5', 'form': (1, -42, 33, -4), 'phi': (4, 4, 1), 'normrep': ('one',)},
+                      {'name': 'f6', 'form': (-3, -30, 900, 1000), 'phi': (110, 10, -10),
+                       'normrep': ('cover', 'Covers2700'), 'via': (10, (30, 20), (10, 10, 0))},
+                      {'name': 'f7', 'form': (-3, -15, 225, 125), 'phi': (55, 5, -5),
+                       'normrep': ('cover', 'Covers2700'), 'via': (10, (30, 20), (5, 5, 0))},
+                      {'name': 'f8', 'form': (-3, -6, 36, 8), 'phi': (22, 2, -2),
+                       'normrep': ('cover', 'Covers2700'), 'via': (10, (30, 20), (2, 2, 0))},
+                      {'name': 'f9', 'form': (-1, 9, 3, -3), 'phi': (7, 3, -1), 'normrep': ('one',)},
+                      {'name': 'f10', 'form': (-1, -90, 300, 3000), 'phi': (-70, -30, 10), 'normrep': ('one',),
+                       'via': (13, (30, 60), (30, 10, 0))},
+                      {'name': 'f11', 'form': (-1, -45, 75, 375), 'phi': (-35, -15, 5), 'normrep': ('one',),
+                       'via': (13, (30, 60), (15, 5, 0))},
+                      {'name': 'f12', 'form': (-1, -30, 1200, 4000), 'phi': (110, 20, -10), 'normrep': ('one',),
+                       'via': (5, (15, 10), (10, 10, 0))},
+                      {'name': 'f13', 'form': (-1, -18, 12, 24), 'phi': (-14, -6, 2), 'normrep': ('one',),
+                       'via': (13, (30, 60), (6, 2, 0))},
+                      {'name': 'f14', 'form': (-1, -15, 300, 500), 'phi': (55, 10, -5), 'normrep': ('one',),
+                       'via': (5, (15, 10), (5, 5, 0))},
+                      {'name': 'f15', 'form': (-1, -6, 48, 32), 'phi': (22, 4, -2), 'normrep': ('one',),
+                       'via': (5, (15, 10), (2, 2, 0))},
+                      {'name': 'f16', 'form': (-1, -3, 12, 4), 'phi': (11, 2, -1), 'normrep': ('one',),
+                       'via': (5, (15, 10), (1, 1, 0))}]},
     47: {'name': 'Minus47', 'P': 36, 'Q': 82, 'disc': 5076, 'units': [(-3, -1, 0), (-411, -72, 19)],
          'sources': [{'name': 'p1', 'form': (-1, -123, 141, 1927), 'phi': (41, 12, 0), 'normrep': ('one',)},
                      {'name': 'p2', 'form': (-1, -63, -27, 243), 'phi': (21, 6, 0), 'normrep': ('one',)},
@@ -414,6 +456,21 @@ def normrep_layer(cfg, s):
                                f"def {nm} : Prop := UnitPremises.NormRep {P} {Q} 1 [(1, 0, 0)]\n\n"
                                f"/-- **Proved**: an element of norm `1` is a unit (`NormRepProof.normRep_one`). -/\n"
                                f"theorem {nm}_proved : {nm} := NormRepProof.normRep_one {P} {Q}\n\n")
+    if s['normrep'][0] == 'cover':
+        # composed divisor covers, shared per order (python/norm_cover.py, Generated/Covers*.lean)
+        _, module = s['normrep']
+        rec = json.loads((ROOT / 'receipts' / 'norm_covers.json').read_text())
+        row = next(r for r in rec['orders'] if r['module'] == module)
+        gs = [tuple(x) for x in row['lists'][str(N)]]
+        assert all(U.nrm(P, Q, x) == N for x in gs), gs
+        txt = ', '.join(f'`{z3txt(x)}`' for x in gs)
+        return nm, (gs if len(gs) > 1 else gs[0]), (
+            f"/-- Norm representatives for `{s['name']}`: every element of norm `{N}` is one of {len(gs)} "
+            f"elements times a unit. -/\n"
+            f"def {nm} : Prop := UnitPremises.NormRep {P} {Q} {N} Generated.{module}.L_{N}\n\n"
+            f"/-- **Proved from composed divisor covers** (`Generated.{module}.rep_{N}`, "
+            f"`NormCover.normRep_of_abs`). -/\n"
+            f"theorem {nm}_proved : {nm} := NormCover.normRep_of_abs Generated.{module}.rep_{N}\n\n")
     _, g, m = s['normrep']
     gs = [tuple(x) for x in g] if isinstance(g[0], (tuple, list)) else [tuple(g)]
     # NormRep asks for norm exactly N: a representative of norm −N is replaced by its negative
@@ -630,7 +687,8 @@ def build(D):
 
 
 # Orders whose unit generation several curve modules share (`'order': name` in a curve).
-SHARED_ORDERS = {'Order1620': {'P': 12, 'Q': 14, 'disc': 1620, 'units': [(-5, -5, -1), (-11, -12, -3)]}}
+SHARED_ORDERS = {'Order1620': {'P': 12, 'Q': 14, 'disc': 1620, 'units': [(-5, -5, -1), (-11, -12, -3)]},
+                 'Order2700': {'P': 15, 'Q': 20, 'disc': 2700, 'units': [(-1, 1, 1), (-59, -22, 8)]}}
 
 
 def shared_order(name):

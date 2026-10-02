@@ -494,9 +494,38 @@ many of them.
   and `D = 55` use three representatives each (moduli 36 and 25).
 - **Shared order.** Unit generation for `t³ = 12t + 14` now lives in `Generated/Order1620.lean`,
   which `D = 15` and `D = 60` both import.
-- **Limit.** A residue certificate is local. When an ideal of norm `c₀²` is not principal, no
-  modulus covers its residue classes, and the statement needs class-group information. 18 nonmonic
-  classes remain open in `receipts/norm_rep_search.json`.
+- **Correction (review of `6a7bc79`).** An earlier version of this page read the failed searches as
+  non-principal ideals. That was premature: the search failed for two other reasons.
+  - Its candidate box, radius 8, missed representatives. In `t³ = 15t + 20`, the element
+    `C = −11 − 2t + t²` of norm 4 is outside it, and with `C` the norm-4 table passes already
+    modulo 4.
+  - Its modulus budget could not reach targets such as `4096`.
+
+**Composable divisor covers** (`NormCover.lean`, `python/norm_cover.py`,
+`Generated/Covers2700.lean`). Instead of one residue table per norm, the generator uses small
+covers and composes them.
+- **Cover.** A cover for `d` is a list of elements of norm `±d` that divides every element whose
+  norm `d` divides (`coverB`, checked modulo `m`, with `d ∣ m`). In `t³ = 15t + 20`:
+  - for `d = 4`: the three elements `A, B, C`, checked modulo 4 (64 residues);
+  - for `d = 9`: the single element `η`, checked modulo 9 (729 residues).
+- **Quotient.** `cover_sound` turns a cover into a quotient: `d ∣ N(g)` gives `g = γ u`, with
+  `u = γ# g / N(γ)` explicit (`div_of_adj`).
+- **Induction step.** `normRepAbs_step` combines a cover for `d` with representatives of norm
+  `±N'`. A decidable closure check, `assocB`, verifies that every product is associate to a listed
+  element. Together they give representatives of norm `±d N'`.
+- **Sizes.** The lists for `4, 16, 64, 256, 1024, 4096` have `3, 5, 7, 9, 11, 13` elements, which
+  is `2r + 1`. The review explained this with the unit relation `A C ε₂ = −B²`; the closure check
+  finds the reduction without being told. Each kept element is a small associate.
+- **Cost.** The whole module, with chains up to 4096, checks in seconds.
+
+| curve | order | sources | integral points |
+|---|---|---|---|
+| `D = 25` (classes 11–14) | `t³ = 15t + 20` (`Order2700`) | 3 nonmonic (norms 36, 4, 4; 3 representatives each), 1 monic representative, 1 monic | `(5, ±10)` |
+| `D = 100` (classes 74–78) | `t³ = 15t + 20` (`Order2700`) | 7 nonmonic (norms 4096, 64, 16, 16, 9, 9, 9; up to 13 representatives), 2 monic representatives, 7 monic | `(5, ±5)`, `(10, ±30)`, `(34, ±198)` |
+
+Every source of the two curves reaches `t³ = 15t + 20` along a Lean-checked map, or is in it
+already. Both curves agree with the Sage census. Each source premise is the conjunction of one
+Matveev instance per representative.
 
 | curve | order | sources | integral points |
 |---|---|---|---|
@@ -538,18 +567,18 @@ exactly the set of sources that its classes' descents reach.
 
 **Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
 derived from the registered Lean theorems. The raw workload receipts are unchanged.
-- Classes: 15 locally discharged, 41 conditionally complete, 23 unresolved, out of 79.
-- Unit equations: 53 of 109 registered. These are the curve sources and the `D = 72` residual
+- Classes: 15 locally discharged, 50 conditionally complete, 14 unresolved, out of 79.
+- Unit equations: 74 of 109 registered. These are the curve sources and the `D = 72` residual
   `H = ±1` (`D72Unit.class_pos`, `class_neg`). A class counts as registered once one of its
   representatives (possibly a monic one) has a source theorem.
-- 56 are unregistered. That count includes leaves of classes already complete by another route
+- 35 are unregistered. That count includes leaves of classes already complete by another route
   (field 756, `D = 72`).
 - The workload that still blocks a class is
-  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **43** unit equations. Of these, 34 block
-  one class, 2 block two, 5 block three and 2 block four (`needed_by_class_count`).
-- Curves conditionally complete: `D = 7, 15, 18, 23, 26, 28, 39, 45, 47, 48, 55, 60, 63, 71, 72, 89`
-  (16 of the 23 with open branches).
-- `curves_unresolved_workload` orders the 7 unresolved curves by the number of unit equations
+  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **22** unit equations. Of these, 17 block
+  one class, 1 blocks two and 4 block three (`needed_by_class_count`).
+- Curves conditionally complete: `D = 7, 15, 18, 23, 25, 26, 28, 39, 45, 47, 48, 55, 60, 63, 71, 72,
+  89, 100` (18 of the 23 with open branches).
+- `curves_unresolved_workload` orders the 5 unresolved curves by the number of unit equations
   they still need.
 
 **Cost before proof** (`python/order_cost.py`, `receipts/order_cost.json`). The number of

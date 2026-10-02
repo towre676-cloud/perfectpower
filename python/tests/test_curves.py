@@ -1,4 +1,4 @@
-"""The layered curve pipeline (`python/make_lean_curves.py`): D = 15, 18, 23, 26, 39, 45, 47, 48, 55, 60, 71, 72 and 89."""
+"""The layered curve pipeline (`python/make_lean_curves.py`): D = 15, 18, 23, 25, 26, 39, 45, 47, 48, 55, 60, 71, 72, 89 and 100."""
 import itertools
 import json
 import sys
@@ -95,6 +95,25 @@ class TestCurves(unittest.TestCase):
         self.assertEqual(sorted(map(tuple, rec(48)['curve_points'])), [(4, -4), (4, 4), (28, -148), (28, 148)])
         self.assertEqual(sorted(map(tuple, rec(55)['curve_points'])), [(4, -3), (4, 3), (56, -419), (56, 419)])
         self.assertEqual(sorted(map(tuple, rec(71)['curve_points'])), [(8, -21), (8, 21)])
+        self.assertEqual(sorted(map(tuple, rec(25)['curve_points'])), [(5, -10), (5, 10)])
+        self.assertEqual(sorted(map(tuple, rec(100)['curve_points'])),
+                         [(5, -5), (5, 5), (10, -30), (10, 30), (34, -198), (34, 198)])
+
+    def test_norm_covers(self):
+        import norm_cover as NC
+        rec_ = json.loads((ROOT / 'receipts' / 'norm_covers.json').read_text())['orders'][0]
+        P, Q = rec_['order']
+        for d, c in rec_['covers'].items():
+            self.assertTrue(NC.cover_ok(P, Q, int(d), c['modulus'], [tuple(x) for x in c['reps']]))
+        # without C the norm-4 cover fails (the representative the box of radius 8 missed)
+        self.assertFalse(NC.cover_ok(P, Q, 4, 4, [(-4, -4, -1), (-6, -3, 1)]))
+        self.assertEqual({n: rec_['sizes'][str(4 ** r)] for r, n in enumerate([1, 4, 16, 64, 256, 1024, 4096])},
+                         {1: 1, 4: 3, 16: 5, 64: 7, 256: 9, 1024: 11, 4096: 13})       # 2r + 1
+        # the unit relation A C ε₂ = −B² from the review
+        A, B, C_, e2 = (-4, -4, -1), (-6, -3, 1), (-11, -2, 1), (-59, -22, 8)
+        self.assertEqual(U.mul(P, Q, U.mul(P, Q, A, C_), e2), tuple(-x for x in U.mul(P, Q, B, B)))
+        for n, L in rec_['lists'].items():
+            self.assertTrue(all(U.nrm(P, Q, tuple(g)) == int(n) for g in L))
 
     def test_slab_covers_reduced_units(self):
         # every box triple within the embedding bounds Uᵢ lies in the slab that Lean enumerates
@@ -163,7 +182,7 @@ class TestCurves(unittest.TestCase):
         reg |= {tuple(TG.canonical(tuple(s * x for x in d72))[0]) for s in (1, -1)}
         self.assertEqual(cov['unit_equations_registered'],
                          sum(tuple(e['form']) in reg for e in cov['unit_equations']))
-        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 15, 18, 23, 26, 28, 39, 45, 47, 48, 55, 60, 63, 71, 72, 89])
+        self.assertEqual(sorted(cov['curves_conditionally_complete']), [7, 15, 18, 23, 25, 26, 28, 39, 45, 47, 48, 55, 60, 63, 71, 72, 89, 100])
 
     def test_needed_workload(self):
         cov = json.loads((ROOT / 'receipts' / 'descent_coverage.json').read_text())

@@ -122,12 +122,15 @@ git.
      its residual comes from `D72Unit`. No new unit proof was needed.
    - **Nonmonic sources:** `D = 15, 26, 48, 55, 71` (residue norm representatives found in a larger
      order, monic representatives, several representatives per source).
-   - **Coverage** is derived (`receipts/descent_coverage.json`): 53 of 109 unit equations are
-     registered; 16 of the 23 curves are conditionally complete.
-   - **Still open:** the 43 unit equations in `U_needed`, for `D = 25, 53, 61, 79, 87, 95, 100`.
-     Most are nonmonic classes where the residue search fails in every order tried. That is the
-     signature of a non-principal ideal of norm `c₀²`, which needs class-group information rather
-     than a larger modulus (`receipts/norm_rep_search.json`). `D = 95` is all monic. `receipts/order_cost.json` prices the
+   - **Coverage** is derived (`receipts/descent_coverage.json`): 74 of 109 unit equations are
+     registered; 18 of the 23 curves are conditionally complete.
+   - **Composable divisor covers:** `D = 25, 100` (`NormCover.lean`, `Generated/Covers2700.lean`).
+   - **Still open:** the 22 unit equations in `U_needed`, for `D = 53, 61, 79, 87, 95`.
+     - The failed searches are not evidence of non-principal ideals. They come from candidate boxes
+       and modulus budgets.
+     - The next step is covers per order. Then a provably complete representative box from the
+       centered-log reduction (`|σᵢ(g')| ≤ |N|^{1/3} Uᵢ`), which needs only two independent units.
+     - `D = 95` is all monic. `receipts/order_cost.json` prices the
      curves by estimated kernel work. `D = 39, 47, 60, 72` are done. Most remaining curves are
      blocked by nonmonic sources, not by units, so residue norm-representative searches are the
      next infrastructure. `D = 15` already has its unit generation (through `t³ = 12t + 14`).

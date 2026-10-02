@@ -12,8 +12,10 @@ mirror of `NormRepProof.resRepB`; the search only proposes, and the kernel decid
 * `search`: the least modulus `m ∈ {N, 2N, …}` (with `m³` below a budget) for which the representatives
   pass, then a greedy minimal subset.  Each source is tried in its own order and in every order it maps
   into (`receipts/order_transports.json`): a larger order often needs a much smaller modulus.
-* **Limit.** A residue certificate is local.  If an ideal of norm `N` is not principal, its residue
-  classes cannot be covered by any modulus, and the statement needs class-group information instead.
+* **Limits of this search.** The candidate box (radius 8) can miss representatives, and the modulus
+  budget cannot reach large targets such as `4096`.  A failure here is therefore not evidence of a
+  non-principal ideal.  Composable divisor covers (`python/norm_cover.py`, `NormCover.lean`) handle
+  large targets.
 
 Run: python3 python/norm_rep_search.py
 """
