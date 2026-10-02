@@ -55,7 +55,6 @@ lemma dvd_term (hp3 : 3 ≤ p) (m k e : ℕ) (hk : 2 ≤ k) (hkm : k ≤ m) (he 
     have := (padicValNat_dvd_iff_le (p := p) hne).mp h1
     rwa [padicValNat.mul (by omega) hc.ne'] at this
   have hvk := vk_le hp3 k hk
-  have hp0 : p ≠ 0 := hp.out.ne_zero
   have hne2 : Nat.choose m k * p ^ k ≠ 0 := by positivity
   rw [padicValNat_dvd_iff_le hne2, padicValNat.mul hc.ne' (by positivity), padicValNat.prime_pow]
   omega
