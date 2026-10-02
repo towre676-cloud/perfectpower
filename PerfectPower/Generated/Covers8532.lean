@@ -1,4 +1,5 @@
 import PerfectPower.NormCover
+import PerfectPower.NormRepSlices
 
 /-!
 # Divisor covers and norm representatives in `ℤ[t]`, `t³ = 60t + 178`
@@ -46,8 +47,113 @@ def L_9 : List Z3 := [(25, 10, 1)]
 theorem rep_9 : NormRepAbs 60 178 9 L_9 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_3 rep_3 (by decide +kernel)
 
-/-- A residue certificate modulo `49` for norm `49` (`NormRepProof.resRepB`), checked once and shared by every source that needs it. -/
-theorem res_49 : NormRepProof.resRepB 60 178 49 49 [((-3), 23, 5), ((-15), (-12), (-2))] = true := by
-  decide +kernel
+/-- The representatives of the residue certificate for norm `49`. -/
+def resReps_49 : List Z3 := [((-3), 23, 5), ((-15), (-12), (-2))]
+
+theorem resHead_49 : NormRepSlices.resHeadB 60 178 49 49 resReps_49 = true := by decide +kernel
+
+theorem resSlice_49_0 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 0 = true := by decide +kernel
+
+theorem resSlice_49_1 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 1 = true := by decide +kernel
+
+theorem resSlice_49_2 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 2 = true := by decide +kernel
+
+theorem resSlice_49_3 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 3 = true := by decide +kernel
+
+theorem resSlice_49_4 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 4 = true := by decide +kernel
+
+theorem resSlice_49_5 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 5 = true := by decide +kernel
+
+theorem resSlice_49_6 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 6 = true := by decide +kernel
+
+theorem resSlice_49_7 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 7 = true := by decide +kernel
+
+theorem resSlice_49_8 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 8 = true := by decide +kernel
+
+theorem resSlice_49_9 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 9 = true := by decide +kernel
+
+theorem resSlice_49_10 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 10 = true := by decide +kernel
+
+theorem resSlice_49_11 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 11 = true := by decide +kernel
+
+theorem resSlice_49_12 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 12 = true := by decide +kernel
+
+theorem resSlice_49_13 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 13 = true := by decide +kernel
+
+theorem resSlice_49_14 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 14 = true := by decide +kernel
+
+theorem resSlice_49_15 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 15 = true := by decide +kernel
+
+theorem resSlice_49_16 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 16 = true := by decide +kernel
+
+theorem resSlice_49_17 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 17 = true := by decide +kernel
+
+theorem resSlice_49_18 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 18 = true := by decide +kernel
+
+theorem resSlice_49_19 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 19 = true := by decide +kernel
+
+theorem resSlice_49_20 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 20 = true := by decide +kernel
+
+theorem resSlice_49_21 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 21 = true := by decide +kernel
+
+theorem resSlice_49_22 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 22 = true := by decide +kernel
+
+theorem resSlice_49_23 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 23 = true := by decide +kernel
+
+theorem resSlice_49_24 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 24 = true := by decide +kernel
+
+theorem resSlice_49_25 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 25 = true := by decide +kernel
+
+theorem resSlice_49_26 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 26 = true := by decide +kernel
+
+theorem resSlice_49_27 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 27 = true := by decide +kernel
+
+theorem resSlice_49_28 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 28 = true := by decide +kernel
+
+theorem resSlice_49_29 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 29 = true := by decide +kernel
+
+theorem resSlice_49_30 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 30 = true := by decide +kernel
+
+theorem resSlice_49_31 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 31 = true := by decide +kernel
+
+theorem resSlice_49_32 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 32 = true := by decide +kernel
+
+theorem resSlice_49_33 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 33 = true := by decide +kernel
+
+theorem resSlice_49_34 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 34 = true := by decide +kernel
+
+theorem resSlice_49_35 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 35 = true := by decide +kernel
+
+theorem resSlice_49_36 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 36 = true := by decide +kernel
+
+theorem resSlice_49_37 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 37 = true := by decide +kernel
+
+theorem resSlice_49_38 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 38 = true := by decide +kernel
+
+theorem resSlice_49_39 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 39 = true := by decide +kernel
+
+theorem resSlice_49_40 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 40 = true := by decide +kernel
+
+theorem resSlice_49_41 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 41 = true := by decide +kernel
+
+theorem resSlice_49_42 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 42 = true := by decide +kernel
+
+theorem resSlice_49_43 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 43 = true := by decide +kernel
+
+theorem resSlice_49_44 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 44 = true := by decide +kernel
+
+theorem resSlice_49_45 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 45 = true := by decide +kernel
+
+theorem resSlice_49_46 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 46 = true := by decide +kernel
+
+theorem resSlice_49_47 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 47 = true := by decide +kernel
+
+theorem resSlice_49_48 : NormRepSlices.resSliceB 60 178 49 49 resReps_49 48 = true := by decide +kernel
+
+/-- A residue certificate modulo `49` for norm `49` (`NormRepProof.resRepB`), checked in 49 slices (`NormRepSlices.resRepB_of_slices`) and shared by every source that needs it. -/
+theorem res_49 : NormRepProof.resRepB 60 178 49 49 resReps_49 = true :=
+  NormRepSlices.resRepB_of_slices resHead_49 (fun a ha => by
+    interval_cases a
+    exacts [resSlice_49_0, resSlice_49_1, resSlice_49_2, resSlice_49_3, resSlice_49_4, resSlice_49_5, resSlice_49_6, resSlice_49_7, resSlice_49_8, resSlice_49_9, resSlice_49_10, resSlice_49_11, resSlice_49_12, resSlice_49_13, resSlice_49_14, resSlice_49_15, resSlice_49_16, resSlice_49_17, resSlice_49_18, resSlice_49_19, resSlice_49_20, resSlice_49_21, resSlice_49_22, resSlice_49_23, resSlice_49_24, resSlice_49_25, resSlice_49_26, resSlice_49_27, resSlice_49_28, resSlice_49_29, resSlice_49_30, resSlice_49_31, resSlice_49_32, resSlice_49_33, resSlice_49_34, resSlice_49_35, resSlice_49_36, resSlice_49_37, resSlice_49_38, resSlice_49_39, resSlice_49_40, resSlice_49_41, resSlice_49_42, resSlice_49_43, resSlice_49_44, resSlice_49_45, resSlice_49_46, resSlice_49_47, resSlice_49_48])
 
 end PerfectPower.Generated.Covers8532
