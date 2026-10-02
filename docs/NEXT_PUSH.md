@@ -123,9 +123,11 @@ git.
    - **Nonmonic sources:** `D = 15, 26, 48, 55, 71` (residue norm representatives found in a larger
      order, monic representatives, several representatives per source).
    - **Coverage** is derived (`receipts/descent_coverage.json`): 74 of 109 unit equations are
-     registered; 18 of the 23 curves are conditionally complete.
+     registered (now 96); all 23 curves are conditionally complete.
    - **Composable divisor covers:** `D = 25, 100` (`NormCover.lean`, `Generated/Covers2700.lean`).
-   - **Still open:** the 22 unit equations in `U_needed`, for `D = 53, 61, 79, 87, 95`.
+   - **Closed since:** `D = 53, 61, 79, 87, 95` (covers per order; `D = 79` through the common
+     overorder `t³ = 60t + 178`, `Generated/OrderMaps8532.lean`). `U_needed` is empty.
+   - **History of the last five** (kept for the record):
      - The failed searches are not evidence of non-principal ideals. They come from candidate boxes
        and modulus budgets.
      - The next step is covers per order. Then a provably complete representative box from the

@@ -567,19 +567,30 @@ exactly the set of sources that its classes' descents reach.
 
 **Coverage** (`python/descent_coverage.py`, `receipts/descent_coverage.json`). This receipt is
 derived from the registered Lean theorems. The raw workload receipts are unchanged.
-- Classes: 15 locally discharged, 50 conditionally complete, 14 unresolved, out of 79.
-- Unit equations: 74 of 109 registered. These are the curve sources and the `D = 72` residual
+- Classes: 15 locally discharged, 64 conditionally complete, 0 unresolved, out of 79.
+- Unit equations: 96 of 109 registered. These are the curve sources and the `D = 72` residual
   `H = ±1` (`D72Unit.class_pos`, `class_neg`). A class counts as registered once one of its
   representatives (possibly a monic one) has a source theorem.
-- 35 are unregistered. That count includes leaves of classes already complete by another route
+- 13 are unregistered. That count includes leaves of classes already complete by another route
   (field 756, `D = 72`).
 - The workload that still blocks a class is
-  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`: **22** unit equations. Of these, 17 block
-  one class, 1 blocks two and 4 block three (`needed_by_class_count`).
-- Curves conditionally complete: `D = 7, 15, 18, 23, 25, 26, 28, 39, 45, 47, 48, 55, 60, 63, 71, 72,
-  89, 100` (18 of the 23 with open branches).
-- `curves_unresolved_workload` orders the 5 unresolved curves by the number of unit equations
-  they still need.
+  `U_needed = ⋃_{C unresolved} (U(C) ∖ U_registered)`. It is now **empty**: no class is
+  unresolved.
+- Curves conditionally complete: all 23 with open branches, `D = 7, 15, 18, 23, 25, 26, 28, 39, 45,
+  47, 48, 53, 55, 60, 61, 63, 71, 72, 79, 87, 89, 95, 100`.
+- The last five:
+  - `D = 95`: four monic sources in `t³ = 18t + 22`.
+  - `D = 87`: a norm-4 cover in `t³ = 21t + 32` (`Covers9396`).
+  - `D = 53`: covers for 2 and 3 in `t³ = 27t + 52` (`Covers5724`, norm 36).
+  - `D = 61`: covers for 2 and 3 in `t³ = 15t + 16` (`Covers6588`), reached along `OrderMaps.map_16`.
+  - `D = 79`: its three orders `t³ = 24t + 28, 30t + 34, 48t + 30` have discriminants `948·s²`
+    (`s = 6, 9, 21`). They embed with index 2, 3, 7 into `t³ = 60t + 178` (discriminant
+    `948·3²`, `Generated/OrderMaps8532.lean`), which was not in the census. That order's unit
+    basis has slab cost 10,034. In it, 2 and 3 have one-element covers (`Covers8532`), and
+    `t³ − 60t − 178 ≡ (t + 1)(t² − t − 3) mod 7` with an irreducible quadratic, so `7 = p₁p₂` with
+    `N(p₂) = 49`. No norm-7 cover exists, because multiples of `p₂` need not be multiples of `p₁`.
+    Norm 49 is a residue certificate mod 49 with the two classes `p₁²` and `p₂`.
+  - All agree with the independent census (`data/mordell_census.csv`).
 
 **Cost before proof** (`python/order_cost.py`, `receipts/order_cost.json`). The number of
 equations is a poor proxy, because one order with a large unit box can outweigh several cheap
