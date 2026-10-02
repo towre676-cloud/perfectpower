@@ -20,8 +20,14 @@ The Plan states exactly one outcome:
                             whether infinitely many survive the filter is not decided
   CLASSIFIED_FINITE         finitely many solutions (Siegel via Theorem G), no complete list;
                             iteration may still be exact to any given N (exact_to_any_N)
+  CONDITIONAL_COMPLETE      a complete finite list from a Lean theorem that assumes named
+                            premises (Matveev's lower bound); the premises are listed in the plan
   NOT_ENUMERATED            finitely many solutions (Siegel via Theorem G) and no effective
                             enumeration here; only bounded_evidence(N), labelled as such
+
+Plan.answer folds these into the four answers a consumer acts on: `complete_list`, `generator`,
+`conditional` (with its premises) and `unresolved`.  Plan.certificate states the boundary: the Lean
+theorems, the named premises, the Python reduction steps, and that execution is not verified.
 
 and separately where its justification comes from: Lean theorem names, pp-cert/1 certificates
 checked in Lean, or the Python structural algorithm (tested against scans, not formally
@@ -53,6 +59,7 @@ STRUCTURED_INFINITE = 'STRUCTURED_INFINITE'
 STRUCTURED_FILTERED = 'STRUCTURED_FILTERED'
 CLASSIFIED_FINITE = 'CLASSIFIED_FINITE'
 NOT_ENUMERATED = 'NOT_ENUMERATED'
+CONDITIONAL_COMPLETE = 'CONDITIONAL_COMPLETE'
 BOUNDED_EVIDENCE = 'BOUNDED_EVIDENCE'
 
 DOMAINS = {'int': lambda y: True, 'nonneg': lambda y: y >= 0, 'pos': lambda y: y >= 1}
@@ -292,14 +299,34 @@ def _generated_complete() -> dict[int, tuple]:
     out = {}
     if not path.exists():
         return out
-    for c in json.loads(path.read_text())['curves']:
-        T: dict[int, list[int]] = {}
-        for x, y in c['points']:
-            T.setdefault(x, [])
-            if y >= 0:
-                T[x].append(y)
-        out[-c['D']] = ({t: sorted(ms) for t, ms in T.items()}, [c['lean'], c['via']])
+    reg = json.loads(path.read_text())
+    for c in reg['curves']:
+        out[-c['D']] = (_table(c['points']), [c['lean'], c['via']])
+    for c in reg.get('positive_curves', []):
+        out[c['k']] = (_table(c['points']), [c['lean'], 'PerfectPower.PositiveKCurve.complete_of_sols'])
     return out
+
+
+def _table(points) -> dict[int, list[int]]:
+    T: dict[int, list[int]] = {}
+    for x, y in points:
+        T.setdefault(x, [])
+        if y >= 0:
+            T[x].append(y)
+    return {t: sorted(ms) for t, ms in T.items()}
+
+
+def mordell_conditional(k: int):
+    """({t: [m >= 0]}, lean names, premises) when y^2 = t^3 + k has a complete list in Lean
+    conditional on named Matveev hypotheses (`receipts/mordell_registry.json`, conditional_curves)."""
+    path = ROOT / 'receipts' / 'mordell_registry.json'
+    if not path.exists():
+        return None
+    for c in json.loads(path.read_text()).get('conditional_curves', []):
+        if -c['D'] == k:
+            return (_table(c['points']), [c['lean'], 'PerfectPower.DescentThueList.complete_of_lists'],
+                    c['premises'])
+    return None
 
 
 _NO_POINTS = None
@@ -683,13 +710,39 @@ class Plan:
         if self.status in (STRUCTURED_INFINITE, STRUCTURED_FILTERED):
             return 'infinite family: ' + ('a counting law (Pell orbits)' if 'Pell' in self.method
                                           else 'an exact generator')
+        if self.status == CONDITIONAL_COMPLETE:
+            return 'complete finite list conditional on named premises: ' + ', '.join(self.data.get('premises', []))
         if self.status == NOT_ENUMERATED:
             return 'missing premise: ' + (self.data.get('missing_premise') or {}).get('premise', '?')
         return 'finite, exact to any N, no complete list'
 
+    @property
+    def answer(self) -> str:
+        """One of the four answers a consumer acts on."""
+        if self.status == COMPLETE_FINITE:
+            return 'complete_list'
+        if self.status in (STRUCTURED_INFINITE, STRUCTURED_FILTERED):
+            return 'generator'
+        if self.status == CONDITIONAL_COMPLETE:
+            return 'conditional'
+        return 'unresolved'
+
+    @property
+    def certificate(self) -> dict:
+        """The certificate boundary: what is proved where, and what is assumed."""
+        lean = [j for j in self.justification if j.startswith('PerfectPower.')]
+        return {'answer': self.answer,
+                'lean_theorems': lean,
+                'premises': list(self.data.get('premises', [])),
+                'missing_premise': (self.data.get('missing_premise') or {}).get('premise'),
+                'python_steps': [s.explain() for s in self.chain] + [self.method],
+                'python_only': [j for j in self.justification if not j.startswith('PerfectPower.')],
+                'execution_verified': self.execution_verified}
+
     def explain(self, galois: bool = False) -> dict:
         extra = {'galois': self.galois()} if galois else {}
-        return {**extra, 'mechanism': self.mechanism, 'constraint': self.original.describe(),
+        return {**extra, 'answer': self.answer, 'certificate': self.certificate,
+                'mechanism': self.mechanism, 'constraint': self.original.describe(),
                 'reductions': [s.explain() for s in self.chain],
                 'reduced': self.reduced.describe(), 'method': self.method,
                 'status': self.status, 'justification': self.justification,
@@ -725,6 +778,26 @@ def _power_plan(pc: PowerConstraint) -> dict:
                             justification=lean + ['PerfectPower.Transport.affine_count',
                                                   'PerfectPower.Reduction.affine'],
                             data={'substitution': f't = {r}*n + ({s})', 'curve': f'm^2 = t^3 + ({k})',
+                                  'complete_arguments': sorted(T),
+                                  'specialized_test': ' or '.join(f'{r}*n + ({s}) == {t}' for t in sorted(T))
+                                  or 'False'},
+                            finite=hits, contains=lambda n: (r * n + s) in T,
+                            hits=lambda N: {n: w for n, w in hits.items() if n <= N})
+            cond = mordell_conditional(k)
+            if cond is not None:
+                T, lean, prem = cond
+                hits = {}
+                for t, ms in T.items():
+                    if (t - s) % r == 0 and (t - s) // r >= 1:
+                        hits[(t - s) // r] = sorted({x for mm in ms for x in (mm, -mm)})
+                return dict(method='affine transport to a Mordell curve complete under named premises',
+                            status=CONDITIONAL_COMPLETE,
+                            justification=lean + ['PerfectPower.Transport.affine_count',
+                                                  'PerfectPower.Reduction.affine'],
+                            data={'substitution': f't = {r}*n + ({s})', 'curve': f'm^2 = t^3 + ({k})',
+                                  'premises': prem,
+                                  'premise_meaning': "instances of Matveev's lower bound for linear forms "
+                                                     'in logarithms, stated in Lean and not proved there',
                                   'complete_arguments': sorted(T),
                                   'specialized_test': ' or '.join(f'{r}*n + ({s}) == {t}' for t in sorted(T))
                                   or 'False'},

@@ -3,7 +3,8 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing why3-bridge order-cost
+
+.PHONY: why3-session verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing why3-bridge order-cost
 
 verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
 	@echo "verify: OK"
@@ -66,6 +67,7 @@ receipts:
 	$(PY) python/skolem3_scan.py --receipt receipts/positive_k_next.json --radius 6 --output receipts/skolem3_candidates.json
 	$(PY) python/positive_k_oeis.py
 	$(PY) python/make_mordell_registry.py
+	$(PY) python/gap_atlas.py
 	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py
 	$(PY) python/constraint_demos.py
@@ -148,3 +150,7 @@ bench:
 
 paper:
 	cd paper && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && pdflatex -interaction=nonstopmode perfectpower.tex >/dev/null && rm -f *.aux *.log *.out
+
+# Native Why3 sessions (why3_isqrt/sessions): replay the committed sessions with `why3 replay`.
+why3-session:
+	$(PY) why3_isqrt/native_session.py --check

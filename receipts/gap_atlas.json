@@ -1,0 +1,2295 @@
+{
+ "scope": "Pillai's equation at fixed exponents (2, 3): positive solutions of a^2 - b^3 = \u00b1k, 1 <= k <= 100, with the status of the curve that settles each direction",
+ "summary": {
+  "gaps": 100,
+  "directions_by_status": {
+   "census": 69,
+   "lean": 108,
+   "matveev": 23
+  },
+  "catalan_check": [
+   [
+    3,
+    2
+   ]
+  ]
+ },
+ "rows": [
+  {
+   "k": 1,
+   "square_above_cube": {
+    "curve_k": 1,
+    "solutions": [
+     [
+      3,
+      2
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -1,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.MordellMinus1.points_iff",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 2,
+   "square_above_cube": {
+    "curve_k": 2,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K2.plus2",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -2,
+    "solutions": [
+     [
+      5,
+      3
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.MordellMinus2.points",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 3,
+   "square_above_cube": {
+    "curve_k": 3,
+    "solutions": [
+     [
+      2,
+      1
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -3,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 4,
+   "square_above_cube": {
+    "curve_k": 4,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K4.plus4",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -4,
+    "solutions": [
+     [
+      2,
+      2
+     ],
+     [
+      11,
+      5
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.MordellMinus4.points",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 5,
+   "square_above_cube": {
+    "curve_k": 5,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K5.plus5",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -5,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.MordellMinus5.no_points",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 6,
+   "square_above_cube": {
+    "curve_k": 6,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K6.plus6",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -6,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.MordellMinus6.no_points",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 7,
+   "square_above_cube": {
+    "curve_k": 7,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K7.plus7",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -7,
+    "solutions": [
+     [
+      1,
+      2
+     ],
+     [
+      181,
+      32
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Field756.minus7",
+    "trivial_base": true
+   }
+  },
+  {
+   "k": 8,
+   "square_above_cube": {
+    "curve_k": 8,
+    "solutions": [
+     [
+      3,
+      1
+     ],
+     [
+      4,
+      2
+     ],
+     [
+      312,
+      46
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -8,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus8",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 9,
+   "square_above_cube": {
+    "curve_k": 9,
+    "solutions": [
+     [
+      6,
+      3
+     ],
+     [
+      15,
+      6
+     ],
+     [
+      253,
+      40
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -9,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 10,
+   "square_above_cube": {
+    "curve_k": 10,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -10,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 11,
+   "square_above_cube": {
+    "curve_k": 11,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -11,
+    "solutions": [
+     [
+      4,
+      3
+     ],
+     [
+      58,
+      15
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus11",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 12,
+   "square_above_cube": {
+    "curve_k": 12,
+    "solutions": [
+     [
+      47,
+      13
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -12,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 13,
+   "square_above_cube": {
+    "curve_k": 13,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K13.plus13",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -13,
+    "solutions": [
+     [
+      70,
+      17
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.MordellMinus13.points",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 14,
+   "square_above_cube": {
+    "curve_k": 14,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K14.plus14",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -14,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 15,
+   "square_above_cube": {
+    "curve_k": 15,
+    "solutions": [
+     [
+      4,
+      1
+     ],
+     [
+      1138,
+      109
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -15,
+    "solutions": [
+     [
+      7,
+      4
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus15.minus15",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 16,
+   "square_above_cube": {
+    "curve_k": 16,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K16.plus16",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -16,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus16",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 17,
+   "square_above_cube": {
+    "curve_k": 17,
+    "solutions": [
+     [
+      5,
+      2
+     ],
+     [
+      9,
+      4
+     ],
+     [
+      23,
+      8
+     ],
+     [
+      282,
+      43
+     ],
+     [
+      375,
+      52
+     ],
+     [
+      378661,
+      5234
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -17,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 18,
+   "square_above_cube": {
+    "curve_k": 18,
+    "solutions": [
+     [
+      19,
+      7
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -18,
+    "solutions": [
+     [
+      3,
+      3
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus18.minus18",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 19,
+   "square_above_cube": {
+    "curve_k": 19,
+    "solutions": [
+     [
+      12,
+      5
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -19,
+    "solutions": [
+     [
+      18,
+      7
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus19",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 20,
+   "square_above_cube": {
+    "curve_k": 20,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K20.plus20",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -20,
+    "solutions": [
+     [
+      14,
+      6
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus20",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 21,
+   "square_above_cube": {
+    "curve_k": 21,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K21.plus21",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -21,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 22,
+   "square_above_cube": {
+    "curve_k": 22,
+    "solutions": [
+     [
+      7,
+      3
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -22,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 23,
+   "square_above_cube": {
+    "curve_k": 23,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K23.plus23",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -23,
+    "solutions": [
+     [
+      2,
+      3
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus23.minus23",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 24,
+   "square_above_cube": {
+    "curve_k": 24,
+    "solutions": [
+     [
+      5,
+      1
+     ],
+     [
+      32,
+      10
+     ],
+     [
+      736844,
+      8158
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -24,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus24",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 25,
+   "square_above_cube": {
+    "curve_k": 25,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -25,
+    "solutions": [
+     [
+      10,
+      5
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus25.minus25",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 26,
+   "square_above_cube": {
+    "curve_k": 26,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -26,
+    "solutions": [
+     [
+      1,
+      3
+     ],
+     [
+      207,
+      35
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus26.minus26",
+    "trivial_base": true
+   }
+  },
+  {
+   "k": 27,
+   "square_above_cube": {
+    "curve_k": 27,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K27.plus27",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -27,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus27",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 28,
+   "square_above_cube": {
+    "curve_k": 28,
+    "solutions": [
+     [
+      6,
+      2
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -28,
+    "solutions": [
+     [
+      6,
+      4
+     ],
+     [
+      22,
+      8
+     ],
+     [
+      225,
+      37
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Field756.minus28",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 29,
+   "square_above_cube": {
+    "curve_k": 29,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K29.plus29",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -29,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus29",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 30,
+   "square_above_cube": {
+    "curve_k": 30,
+    "solutions": [
+     [
+      83,
+      19
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -30,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 31,
+   "square_above_cube": {
+    "curve_k": 31,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -31,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus31",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 32,
+   "square_above_cube": {
+    "curve_k": 32,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K32.plus32",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -32,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus32",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 33,
+   "square_above_cube": {
+    "curve_k": 33,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K33.plus33",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -33,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 34,
+   "square_above_cube": {
+    "curve_k": 34,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K34.plus34",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -34,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 35,
+   "square_above_cube": {
+    "curve_k": 35,
+    "solutions": [
+     [
+      6,
+      1
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -35,
+    "solutions": [
+     [
+      36,
+      11
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus35",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 36,
+   "square_above_cube": {
+    "curve_k": 36,
+    "solutions": [
+     [
+      10,
+      4
+     ],
+     [
+      42,
+      12
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -36,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus36",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 37,
+   "square_above_cube": {
+    "curve_k": 37,
+    "solutions": [
+     [
+      8,
+      3
+     ],
+     [
+      3788,
+      243
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -37,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 38,
+   "square_above_cube": {
+    "curve_k": 38,
+    "solutions": [
+     [
+      37,
+      11
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -38,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus38",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 39,
+   "square_above_cube": {
+    "curve_k": 39,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -39,
+    "solutions": [
+     [
+      5,
+      4
+     ],
+     [
+      31,
+      10
+     ],
+     [
+      103,
+      22
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus39.minus39",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 40,
+   "square_above_cube": {
+    "curve_k": 40,
+    "solutions": [
+     [
+      16,
+      6
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -40,
+    "solutions": [
+     [
+      52,
+      14
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus40",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 41,
+   "square_above_cube": {
+    "curve_k": 41,
+    "solutions": [
+     [
+      7,
+      2
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -41,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 42,
+   "square_above_cube": {
+    "curve_k": 42,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K42.plus42",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -42,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 43,
+   "square_above_cube": {
+    "curve_k": 43,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -43,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 44,
+   "square_above_cube": {
+    "curve_k": 44,
+    "solutions": [
+     [
+      13,
+      5
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -44,
+    "solutions": [
+     [
+      9,
+      5
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus44",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 45,
+   "square_above_cube": {
+    "curve_k": 45,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K45.plus45",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -45,
+    "solutions": [
+     [
+      96,
+      21
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus45.minus45",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 46,
+   "square_above_cube": {
+    "curve_k": 46,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -46,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 47,
+   "square_above_cube": {
+    "curve_k": 47,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -47,
+    "solutions": [
+     [
+      13,
+      6
+     ],
+     [
+      41,
+      12
+     ],
+     [
+      500,
+      63
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus47.minus47",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 48,
+   "square_above_cube": {
+    "curve_k": 48,
+    "solutions": [
+     [
+      7,
+      1
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -48,
+    "solutions": [
+     [
+      4,
+      4
+     ],
+     [
+      148,
+      28
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus48.minus48",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 49,
+   "square_above_cube": {
+    "curve_k": 49,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K49.plus49",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -49,
+    "solutions": [
+     [
+      524,
+      65
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 50,
+   "square_above_cube": {
+    "curve_k": 50,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K50.plus50",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -50,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus50",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 51,
+   "square_above_cube": {
+    "curve_k": 51,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K51.plus51",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -51,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus51",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 52,
+   "square_above_cube": {
+    "curve_k": 52,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K52.plus52",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -52,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus52",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 53,
+   "square_above_cube": {
+    "curve_k": 53,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K53.plus53",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -53,
+    "solutions": [
+     [
+      26,
+      9
+     ],
+     [
+      156,
+      29
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus53.minus53",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 54,
+   "square_above_cube": {
+    "curve_k": 54,
+    "solutions": [
+     [
+      9,
+      3
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -54,
+    "solutions": [
+     [
+      17,
+      7
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus54",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 55,
+   "square_above_cube": {
+    "curve_k": 55,
+    "solutions": [
+     [
+      28,
+      9
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -55,
+    "solutions": [
+     [
+      3,
+      4
+     ],
+     [
+      419,
+      56
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus55.minus55",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 56,
+   "square_above_cube": {
+    "curve_k": 56,
+    "solutions": [
+     [
+      8,
+      2
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -56,
+    "solutions": [
+     [
+      76,
+      18
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus56",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 57,
+   "square_above_cube": {
+    "curve_k": 57,
+    "solutions": [
+     [
+      11,
+      4
+     ],
+     [
+      20,
+      7
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -57,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 58,
+   "square_above_cube": {
+    "curve_k": 58,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K58.plus58",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -58,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 59,
+   "square_above_cube": {
+    "curve_k": 59,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K59.plus59",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -59,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus59",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 60,
+   "square_above_cube": {
+    "curve_k": 60,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K60.plus60",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -60,
+    "solutions": [
+     [
+      2,
+      4
+     ],
+     [
+      1586,
+      136
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus60.minus60",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 61,
+   "square_above_cube": {
+    "curve_k": 61,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K61.plus61",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -61,
+    "solutions": [
+     [
+      8,
+      5
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus61.minus61",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 62,
+   "square_above_cube": {
+    "curve_k": 62,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -62,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 63,
+   "square_above_cube": {
+    "curve_k": 63,
+    "solutions": [
+     [
+      8,
+      1
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -63,
+    "solutions": [
+     [
+      1,
+      4
+     ],
+     [
+      13537,
+      568
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Field756.minus63",
+    "trivial_base": true
+   }
+  },
+  {
+   "k": 64,
+   "square_above_cube": {
+    "curve_k": 64,
+    "solutions": [
+     [
+      24,
+      8
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -64,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus64",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 65,
+   "square_above_cube": {
+    "curve_k": 65,
+    "solutions": [
+     [
+      53,
+      14
+     ],
+     [
+      14113,
+      584
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -65,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 66,
+   "square_above_cube": {
+    "curve_k": 66,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -66,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 67,
+   "square_above_cube": {
+    "curve_k": 67,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K67.plus67",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -67,
+    "solutions": [
+     [
+      110,
+      23
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus67",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 68,
+   "square_above_cube": {
+    "curve_k": 68,
+    "solutions": [
+     [
+      1874,
+      152
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -68,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus68",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 69,
+   "square_above_cube": {
+    "curve_k": 69,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K69.plus69",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -69,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 70,
+   "square_above_cube": {
+    "curve_k": 70,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K70.plus70",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -70,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 71,
+   "square_above_cube": {
+    "curve_k": 71,
+    "solutions": [
+     [
+      14,
+      5
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -71,
+    "solutions": [
+     [
+      21,
+      8
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus71.minus71",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 72,
+   "square_above_cube": {
+    "curve_k": 72,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -72,
+    "solutions": [
+     [
+      12,
+      6
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus72.minus72",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 73,
+   "square_above_cube": {
+    "curve_k": 73,
+    "solutions": [
+     [
+      9,
+      2
+     ],
+     [
+      10,
+      3
+     ],
+     [
+      17,
+      6
+     ],
+     [
+      611,
+      72
+     ],
+     [
+      6717,
+      356
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -73,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 74,
+   "square_above_cube": {
+    "curve_k": 74,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K74.plus74",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -74,
+    "solutions": [
+     [
+      985,
+      99
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 75,
+   "square_above_cube": {
+    "curve_k": 75,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K75.plus75",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -75,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus75",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 76,
+   "square_above_cube": {
+    "curve_k": 76,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -76,
+    "solutions": [
+     [
+      7,
+      5
+     ],
+     [
+      1015,
+      101
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus76",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 77,
+   "square_above_cube": {
+    "curve_k": 77,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K77.plus77",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -77,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus77",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 78,
+   "square_above_cube": {
+    "curve_k": 78,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K78.plus78",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -78,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 79,
+   "square_above_cube": {
+    "curve_k": 79,
+    "solutions": [
+     [
+      302,
+      45
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -79,
+    "solutions": [
+     [
+      89,
+      20
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus79.minus79",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 80,
+   "square_above_cube": {
+    "curve_k": 80,
+    "solutions": [
+     [
+      9,
+      1
+     ],
+     [
+      12,
+      4
+     ],
+     [
+      292,
+      44
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -80,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus80",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 81,
+   "square_above_cube": {
+    "curve_k": 81,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K81.plus81",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -81,
+    "solutions": [
+     [
+      46,
+      13
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus81",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 82,
+   "square_above_cube": {
+    "curve_k": 82,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -82,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 83,
+   "square_above_cube": {
+    "curve_k": 83,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K83.plus83",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -83,
+    "solutions": [
+     [
+      140,
+      27
+     ]
+    ],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus83",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 84,
+   "square_above_cube": {
+    "curve_k": 84,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K84.plus84",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -84,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus84",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 85,
+   "square_above_cube": {
+    "curve_k": 85,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K85.plus85",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -85,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 86,
+   "square_above_cube": {
+    "curve_k": 86,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K86.plus86",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -86,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus86",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 87,
+   "square_above_cube": {
+    "curve_k": 87,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K87.plus87",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -87,
+    "solutions": [
+     [
+      16,
+      7
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus87.minus87",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 88,
+   "square_above_cube": {
+    "curve_k": 88,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K88.plus88",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -88,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus88",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 89,
+   "square_above_cube": {
+    "curve_k": 89,
+    "solutions": [
+     [
+      33,
+      10
+     ],
+     [
+      408,
+      55
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -89,
+    "solutions": [
+     [
+      6,
+      5
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus89.minus89",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 90,
+   "square_above_cube": {
+    "curve_k": 90,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -90,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 91,
+   "square_above_cube": {
+    "curve_k": 91,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -91,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 92,
+   "square_above_cube": {
+    "curve_k": 92,
+    "solutions": [
+     [
+      10,
+      2
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -92,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellThue.minus92",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 93,
+   "square_above_cube": {
+    "curve_k": 93,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K93.plus93",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -93,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 94,
+   "square_above_cube": {
+    "curve_k": 94,
+    "solutions": [
+     [
+      11,
+      3
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -94,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 95,
+   "square_above_cube": {
+    "curve_k": 95,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K95.plus95",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -95,
+    "solutions": [
+     [
+      11,
+      6
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus95.minus95",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 96,
+   "square_above_cube": {
+    "curve_k": 96,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.ClassLists.K96.plus96",
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -96,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellBranch.minus96",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 97,
+   "square_above_cube": {
+    "curve_k": 97,
+    "solutions": [
+     [
+      77,
+      18
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -97,
+    "solutions": [],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 98,
+   "square_above_cube": {
+    "curve_k": 98,
+    "solutions": [
+     [
+      21,
+      7
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -98,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 99,
+   "square_above_cube": {
+    "curve_k": 99,
+    "solutions": [
+     [
+      10,
+      1
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": true
+   },
+   "cube_above_square": {
+    "curve_k": -99,
+    "solutions": [],
+    "status": "lean",
+    "theorem": "PerfectPower.Generated.MordellDescent (no integral point)",
+    "trivial_base": false
+   }
+  },
+  {
+   "k": 100,
+   "square_above_cube": {
+    "curve_k": 100,
+    "solutions": [
+     [
+      15,
+      5
+     ],
+     [
+      90,
+      20
+     ],
+     [
+      118,
+      24
+     ],
+     [
+      137190,
+      2660
+     ]
+    ],
+    "status": "census",
+    "theorem": null,
+    "trivial_base": false
+   },
+   "cube_above_square": {
+    "curve_k": -100,
+    "solutions": [
+     [
+      5,
+      5
+     ],
+     [
+      30,
+      10
+     ],
+     [
+      198,
+      34
+     ]
+    ],
+    "status": "matveev",
+    "theorem": "PerfectPower.Generated.Minus100.minus100",
+    "trivial_base": false
+   }
+  }
+ ]
+}

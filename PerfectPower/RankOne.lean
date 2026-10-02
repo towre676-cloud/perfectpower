@@ -176,6 +176,23 @@ def slabSliceB (P Q : ℤ) (η : Z3) (c : Cert) (l : ℕ) : Bool :=
 def slabB (P Q : ℤ) (η : Z3) (c : Cert) : Bool :=
   (List.range (2 * c.C + 1)).all (slabSliceB P Q η c)
 
+/-- The slab check from chunks of `w` slices, checked separately. -/
+theorem slabB_of_chunks {P Q : ℤ} {η : Z3} {c : Cert} {w n : ℕ} (hw : 2 * c.C + 1 ≤ n * w)
+    (h : ∀ m < n, (List.range' (m * w) w).all (slabSliceB P Q η c) = true) : slabB P Q η c = true := by
+  simp only [slabB, List.all_eq_true, List.mem_range]
+  intro i hi
+  have hw0 : 0 < w := by
+    rcases Nat.eq_zero_or_pos w with h0 | h0
+    · simp [h0] at hw
+    · exact h0
+  have hm : i / w < n := by
+    rw [Nat.div_lt_iff_lt_mul hw0]; omega
+  have := h (i / w) hm
+  simp only [List.all_eq_true, List.mem_range'_1] at this
+  exact this i ⟨Nat.div_mul_le_self i w, by
+    have := Nat.lt_div_mul_add (a := i) hw0
+    linarith [Nat.div_add_mod i w, Nat.mod_lt i hw0, mul_comm (i / w) w]⟩
+
 lemma mem_ints {l h : ℚ} {x : ℤ} (h1 : l ≤ x) (h2 : (x : ℚ) ≤ h) : x ∈ ints l h := by
   have e1 : ⌈l⌉ ≤ x := Int.ceil_le.mpr h1
   have e2 : x ≤ ⌊h⌋ := Int.le_floor.mpr h2

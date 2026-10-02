@@ -8,6 +8,10 @@ PerfectPower classifies the possible long-term patterns for every integer polyno
 
 The [trust table](#what-to-trust-at-a-glance) says what is machine-checked and what relies on outside mathematics or software.
 
+**New here? Start with [PerfectPower in the history of perfect powers](docs/HISTORY.md).** It is an essay on where this work sits: from Catalan, Pillai and Tijdeman to the machine-checked Mordell-curve theorems. It also explains why "complete" here means a proof that reaches every input. Two companion pages:
+- [The square–cube gap atlas](docs/GAP_ATLAS.md) gives Pillai's equation $a^2-b^3=\pm k$ for every $k\le100$, with the status of each answer.
+- The compiler's four answers are: a complete list, a generator, an answer conditional on a named premise, or unresolved ([below](#the-four-answers)).
+
 > Take $F\in\mathbb Z[x]$ and $d\ge2$. A *hit* is an $n\ge1$ with $F(n)=m^d$ for some integer $m$, and $A(N)$ counts the hits with $n\le N$.
 > Only four behaviours are possible:
 >
@@ -47,6 +51,17 @@ The classification is a **synthesis**, and we claim no priority for it. It combi
    $$1\le n \;\wedge\; m^2=27n^3+405n^2+2025n+3319 \iff n=1 \;\wedge\; m=\pm76.$$
 
    Nothing in that proof trusts the Python that found it.
+
+<a id="the-four-answers"></a>**The four answers.** Every plan reports `plan.answer`, one of four things a consumer can act on, and `plan.certificate`, the boundary of what is proved where:
+
+| `answer` | meaning | example |
+|---|---|---|
+| `complete_list` | every solution, with a Lean theorem and no added premise | $n^3+33=m^2$: none with $n\ge1$ (`ClassLists.K33.plus33`) |
+| `generator` | infinitely many, generated exactly (power, radical or Pell orbit) | $2n^2+1=m^2$ |
+| `conditional` | a complete list from a Lean theorem that assumes named premises, listed in the certificate | $n^3-15=m^2$: $n=4$, under `matveev_n1`…`matveev_n4` (`Minus15.minus15`) |
+| `unresolved` | finite by Siegel, no complete list here; the plan refuses to enumerate and names the missing premise | $n^3+1=m^2$ |
+
+`plan.certificate` lists the Lean theorems, the named premises, the Python reduction steps, and `execution_verified: false`: the Python that runs a plan is not itself verified.
 
 **As a component of another solver** ([HOST_ADAPTER.md](docs/HOST_ADAPTER.md)).
 `python3 -m perfectpower.smt_adapter TASK.smt2` replaces solved conjuncts of an SMT-LIB task by

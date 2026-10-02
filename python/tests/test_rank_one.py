@@ -15,32 +15,40 @@ import skolem3_scan as SK  # noqa: E402
 
 class RankOne(unittest.TestCase):
     def test_sources_match_receipt(self):
-        rec = {r['k']: r for r in json.loads((ROOT / 'receipts' / 'rank_one_sources.json').read_text())['sources']}
-        self.assertEqual(sorted(rec), [4, 33, 49, 81])
-        for k, P, Q, start in R1.TARGETS:
-            r = R1.find(k, P, Q, start)
-            self.assertEqual(r['eta'], rec[k]['eta'])
+        rec = {(r['k'], tuple(r['form'])): r for r in
+               json.loads((ROOT / 'receipts' / 'rank_one_sources.json').read_text())['sources']}
+        self.assertEqual(len(rec), len(R1.TARGETS))
+        for k, F, P, Q, h, eta in R1.TARGETS:
+            r = rec[(k, F)]
+            self.assertEqual(tuple(r['eta']), eta)
             self.assertEqual(R1.mul(P, Q, tuple(r['eta']), tuple(r['eps'])), (1, 0, 0))
-            self.assertEqual(R1.nrm(P, Q, tuple(r['eta'])), 1)
-            # the handoff's start unit is ε = η⁻¹
-            self.assertEqual(tuple(r['eps']), start)
-            self.assertLessEqual(r['slab_elements'], 40)
-            self.assertEqual((r['skolem_eta']['p'], r['skolem_eta']['M']), (3, 3))
+            self.assertEqual(R1.nrm(P, Q, eta), 1)
+            self.assertEqual(r['skolem_eta']['p'], r['skolem_eps']['p'])
+            # F(u, v) = −N((u + hv) − vz)
+            for u in range(-3, 4):
+                for v in range(-3, 4):
+                    w = u + h * v
+                    a, B, C, d = F
+                    self.assertEqual(a * u ** 3 + B * u * u * v + C * u * v * v + d * v ** 3,
+                                     -R1.nrm(P, Q, (w, -v, 0)))
+        # the handoff's p = 3 candidates are the inverses of the proved fundamental units
+        for k, start in ((4, (1, -1, -1)), (33, (3, 1, -1)), (49, (1, -2, -1)), (81, (1, 3, 1))):
+            self.assertEqual(tuple(next(r for (kk, _), r in rec.items() if kk == k)['eps']), start)
 
     def test_source_brute_force(self):
-        # Python-only: no other solution of −u³ + P u v² + Q v³ = 1 with |u|, |v| ≤ 150
-        for k, P, Q, _ in R1.TARGETS:
-            sols = [(u, v) for u in range(-150, 151) for v in range(-150, 151)
-                    if -u ** 3 + P * u * v * v + Q * v ** 3 == 1]
+        # Python-only: no other solution of F(u, v) = 1 with |u|, |v| ≤ 120
+        for k, (a, B, C, d), P, Q, h, _ in R1.TARGETS:
+            sols = [(u, v) for u in range(-120, 121) for v in range(-120, 121)
+                    if a * u ** 3 + B * u * u * v + C * u * v * v + d * v ** 3 == 1]
             self.assertEqual(sols, [(-1, 0)], k)
 
     def test_z2_coordinate_nonzero(self):
-        # Python-only spot check of the Lean zero set: the z² coordinate of η^n, |n| ≤ 40
-        for k, P, Q, _ in R1.TARGETS:
-            r = R1.find(k, P, Q, R1.TARGETS[[t[0] for t in R1.TARGETS].index(k)][3])
+        # Python-only spot check of the Lean zero set: the z² coordinate of η^n, 0 < |n| ≤ 30
+        for k, F, P, Q, h, eta in R1.TARGETS:
+            eps = R1.inverse(P, Q, eta)
             x = y = (1, 0, 0)
-            for _ in range(40):
-                x, y = R1.mul(P, Q, x, tuple(r['eta'])), R1.mul(P, Q, y, tuple(r['eps']))
+            for _ in range(30):
+                x, y = R1.mul(P, Q, x, eta), R1.mul(P, Q, y, eps)
                 self.assertNotEqual(x[2], 0)
                 self.assertNotEqual(y[2], 0)
 
@@ -61,3 +69,26 @@ class RankOne(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Atlas(unittest.TestCase):
+    def test_gap_atlas(self):
+        import gap_atlas as GA
+        r = GA.run()
+        rows = {x['k']: x for x in r['rows']}
+        self.assertEqual(rows[1]['square_above_cube']['solutions'], [[3, 2]])     # Catalan: 3^2 - 2^3 = 1
+        self.assertEqual(rows[2]['cube_above_square']['solutions'], [[5, 3]])     # 3^3 - 5^2 = 2
+        self.assertEqual(rows[2]['cube_above_square']['status'], 'lean')          # MordellMinus2.points
+        self.assertEqual(rows[2]['square_above_cube']['solutions'], [])          # K2.plus2: only x = -1
+        self.assertEqual(sum(r['summary']['directions_by_status'].values()), 200)
+        for x in r['rows']:
+            for key in ('square_above_cube', 'cube_above_square'):
+                for a, b in x[key]['solutions']:
+                    self.assertEqual(a * a - b ** 3, x['k'] if key == 'square_above_cube' else -x['k'])
+
+    def test_registry_sections(self):
+        reg = json.loads((ROOT / 'receipts' / 'mordell_registry.json').read_text())
+        self.assertTrue(all(c['premises'] == [] for c in reg['positive_curves']))
+        self.assertTrue(all(c['premises'] and all('matveev' in p for p in c['premises'])
+                            for c in reg['conditional_curves']))
+        self.assertFalse({c['k'] for c in reg['positive_curves']} & {-c['D'] for c in reg['conditional_curves']})

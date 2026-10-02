@@ -22,9 +22,30 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# (k, P, Q, start unit from the handoff scan)
-TARGETS = [(4, 0, -4, (1, -1, -1)), (33, -6, -10, (3, 1, -1)), (49, 0, -14, (1, -2, -1)),
-           (81, 0, -18, (1, 3, 1))]
+# (k, standard form F = (−1, B, C, d), P, Q, shift h, η).  F(u, v) = −N((u + hv) − vz) in ℤ[z],
+# z³ = Pz + Q.  The units η were found offline (`python/rank_one_scan.py`); here the slab check
+# re-derives that η is fundamental, and the Lean kernel re-checks everything.
+TARGETS = [
+    (4, (-1, 0, 0, -4), 0, -4, 0, (5, -3, 2)),
+    (33, (-1, 0, -6, -10), -6, -10, 0, (77, -13, 10)),
+    (49, (-1, 0, 0, -14), 0, -14, 0, (29, -12, 5)),
+    (81, (-1, 0, 0, -18), 0, -18, 0, (55, -21, 8)),
+    (3, (-1, -3, 0, -2), 3, -4, 1, (9, -11, 5)),
+    (10, (-1, 0, -3, -6), -3, -6, 0, (11521, -3185, 2473)),
+    (25, (-1, 0, 0, -10), 0, -10, 0, (181, -84, 39)),
+    (41, (-1, -3, 3, -9), 6, -14, 1, (1201, -888, 276)),
+    (43, (-1, 0, -9, -8), -9, -8, 0, (308121, -26292, 31822)),
+    (44, (-1, -6, 3, -4), 15, -26, 2, (1731, -1379, 303)),
+    (44, (-1, 0, -6, -12), -6, -12, 0, (9337, -1682, 1144)),
+    (48, (-1, 0, 3, -14), 3, -14, 0, (779, -443, 157)),
+    (54, (-1, -3, 6, -10), 9, -18, 1, (121, -93, 25)),
+    (57, (-1, -9, -6, -4), 21, -40, 3, (1109, -790, 148)),
+    (57, (-1, -6, 0, -6), 12, -22, 2, (5, -4, 1)),
+    (57, (-1, 0, -6, -14), -6, -14, 0, (69, -13, 8)),
+    (82, (-1, 0, -3, -18), -3, -18, 0, (9577, -2675, 1193)),
+    (98, (-1, -9, -6, -6), 21, -42, 3, (4201, -2883, 537)),
+]
+PRIMES = (3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97)
 
 
 def mul(P, Q, x, y):
@@ -179,7 +200,7 @@ def fundamental(P, Q, start):
         eta = normalize(P, Q, t, min(smaller, key=lambda g: abs(sig(t, g))))
 
 
-def skolem(P, Q, g, primes=(3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47), Mmax=60):
+def skolem(P, Q, g, primes=PRIMES, Mmax=200):
     """`(p, M, D)` with `Mx(g)^M = 1 + pD`, `p ∤ D₂₀`, `p ∤ (Mx(g)^r)₂₀` for `0 < r < M`."""
     A = Mx(P, Q, g)
     for p in primes:
@@ -199,16 +220,20 @@ def skolem(P, Q, g, primes=(3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47)
     return None
 
 
-def find(k, P, Q, start):
+def find(k, F, P, Q, h, start):
     eta, c = fundamental(P, Q, start)
+    assert tuple(eta) == tuple(start), (k, eta, start)
     eps = inverse(P, Q, eta)
     se, sx = skolem(P, Q, eta), skolem(P, Q, eps)
-    return {'k': k, 'P': P, 'Q': Q, 'start': list(start), 'eta': list(eta), 'eps': list(eps),
+    assert se and sx and se[0] == sx[0], k
+    # F(u, v) = −(u + hv)³ + P (u + hv) v² + Q v³
+    a, B, C, d = F
+    assert (a, B, C, d) == (-1, -3 * h, -3 * h * h + P, -h ** 3 + P * h + Q), (k, F)
+    return {'k': k, 'form': list(F), 'P': P, 'Q': Q, 'h': h, 'eta': list(eta), 'eps': list(eps),
             'cert': {x: str(v) for x, v in c.items() if not x.startswith('_')},
             'slab_elements': sum(1 for _ in slab(P, c)),
-            'skolem_eta': se and {'p': se[0], 'M': se[1], 'D': se[2]},
-            'skolem_eps': sx and {'p': sx[0], 'M': sx[1], 'D': sx[2]},
-            'eta_from_start': tuple(eta) == normalize(P, Q, real_root(P, Q), start),
+            'skolem_eta': {'p': se[0], 'M': se[1], 'D': se[2]},
+            'skolem_eps': {'p': sx[0], 'M': sx[1], 'D': sx[2]},
             '_c': c}
 
 
@@ -229,48 +254,63 @@ def _mat(D):
     return '!![' + '; '.join(', '.join(_i(x) for x in row) for row in D) + ']'
 
 
-def lean_block(r):
-    k, P, Q, c = r['k'], r['P'], r['Q'], r['_c']
+def lean_block(r, i, chunk=20000):
+    P, Q, c = r['P'], r['Q'], r['_c']
     se, sx = r['skolem_eta'], r['skolem_eps']
     PQ = f'{_i(P)} {_i(Q)}'
-    out = [f"/-! ### `k = {k}`: `−u³ + ({P}) u v² + ({Q}) v³ = 1`, `z³ = {P} z + {Q}` -/\n",
-           f"/-- The unit `η` with `σ(η) > 1` for `k = {k}`. -/\ndef η{k} : Z3 := {_z3(r['eta'])}\n",
-           f"/-- `ε = η⁻¹` for `k = {k}`. -/\ndef ε{k} : Z3 := {_z3(r['eps'])}\n",
-           f"/-- The rank-one certificate for `k = {k}`. -/\n"
-           f"def c{k} : Cert := ⟨{_q(c['lo'])}, {_q(c['hi'])}, {_q(c['J'])}, {c['C']}⟩\n",
-           f"theorem h1_{k} : mul {PQ} η{k} ε{k} = (1, 0, 0) := by decide\n",
-           f"theorem h2_{k} : mul {PQ} ε{k} η{k} = (1, 0, 0) := by decide\n",
-           f"theorem n1_{k} : nrm {PQ} η{k} = 1 := by decide\n",
-           f"theorem n2_{k} : nrm {PQ} ε{k} = 1 := by decide\n",
-           f"theorem cond_{k} : condB {PQ} η{k} c{k} = true := by decide +kernel\n"]
-    out.append(f"theorem slab_{k} : slabB {PQ} η{k} c{k} = true := by decide +kernel\n")
+    n_c = 2 * c['C'] + 1
+    per = max(1, r['slab_elements'] // n_c)
+    w = max(1, min(n_c, chunk // per))
+    n = -(-n_c // w)
+    out = [f"/-! ### Source {i}: `F = {tuple(r['form'])}`, `z³ = ({P}) z + ({Q})`, shift `h = {r['h']}` -/\n",
+           f"/-- The fundamental unit `η` (`σ(η) > 1`) of source {i}. -/\ndef η{i} : Z3 := {_z3(r['eta'])}\n",
+           f"/-- `ε = η⁻¹` for source {i}. -/\ndef ε{i} : Z3 := {_z3(r['eps'])}\n",
+           f"/-- The rank-one certificate for source {i}. -/\n"
+           f"def c{i} : Cert := ⟨{_q(c['lo'])}, {_q(c['hi'])}, {_q(c['J'])}, {c['C']}⟩\n",
+           f"theorem h1_{i} : mul {PQ} η{i} ε{i} = (1, 0, 0) := by decide\n",
+           f"theorem h2_{i} : mul {PQ} ε{i} η{i} = (1, 0, 0) := by decide\n",
+           f"theorem n1_{i} : nrm {PQ} η{i} = 1 := by decide\n",
+           f"theorem n2_{i} : nrm {PQ} ε{i} = 1 := by decide\n",
+           f"theorem cond_{i} : condB {PQ} η{i} c{i} = true := by decide +kernel\n"]
+    if n == 1:
+        out.append(f"theorem slab_{i} : slabB {PQ} η{i} c{i} = true := by decide +kernel\n")
+    else:
+        for m in range(n):
+            out.append(f"set_option maxRecDepth 100000 in\nset_option maxHeartbeats 0 in\n"
+                       f"theorem chunk{i}_{m} : (List.range' ({m} * {w}) {w}).all (slabSliceB {PQ} η{i} c{i}) = true := "
+                       f"by decide +kernel\n")
+        out.append(f"theorem slab_{i} : slabB {PQ} η{i} c{i} = true :=\n"
+                   f"  slabB_of_chunks (w := {w}) (n := {n}) (by decide) fun m hm => by\n"
+                   f"    interval_cases m\n    exacts [{', '.join(f'chunk{i}_{m}' for m in range(n))}]\n")
     for nm, g, sk in (('η', 'η', se), ('ε', 'ε', sx)):
-        out.append(f"theorem sk{nm}_{k} : SkolemData {sk['p']} {sk['M']} (Mx {PQ} {g}{k}) {_mat(sk['D'])} :=\n"
+        out.append(f"set_option maxRecDepth 100000 in\n"
+                   f"theorem sk{nm}_{i} : SkolemData {sk['p']} {sk['M']} (Mx {PQ} {g}{i}) {_mat(sk['D'])} :=\n"
                    f"  ⟨by norm_num, by ext i j; fin_cases i <;> fin_cases j <;> decide, by decide,\n"
                    f"    by intro r h0 hr; interval_cases r <;> decide⟩\n")
-    assert se['p'] == sx['p']
-    out.append(f"/-- **The source theorem for `k = {k}`**: `−u³ + ({P}) u v² + ({Q}) v³ = 1 ↔ (u, v) = (−1, 0)`. -/\n"
-               f"theorem source{k} (u v : ℤ) : -u ^ 3 + {_i(P)} * u * v ^ 2 + {_i(Q)} * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) :=\n"
-               f"  source h1_{k} h2_{k} n1_{k} n2_{k} cond_{k} slab_{k} (p := {se['p']}) (by norm_num) skη_{k} skε_{k} u v\n")
+    out.append(f"/-- **Source {i}**: `−u³ + ({P}) u v² + ({Q}) v³ = 1 ↔ (u, v) = (−1, 0)`. -/\n"
+               f"theorem source{i} (u v : ℤ) : -u ^ 3 + {_i(P)} * u * v ^ 2 + {_i(Q)} * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) :=\n"
+               f"  haveI : Fact (Nat.Prime {se['p']}) := ⟨by norm_num⟩\n"
+               f"  source h1_{i} h2_{i} n1_{i} n2_{i} cond_{i} slab_{i} (p := {se['p']}) (by norm_num) skη_{i} skε_{i} u v\n")
     return '\n'.join(out)
 
 
 HEAD = """import PerfectPower.RankOne
 
 /-!
-# Rank-one monic sources, certified (generated by `python/rank_one_sources.py`)
+# Rank-one monic sources for `k = {k}`, certified (generated by `python/rank_one_sources.py`)
 
-Each block proves `−u³ + P u v² + Q v³ = 1 ↔ (u, v) = (−1, 0)` with `RankOne.source`.
-- **Units.** Unit generation in `ℤ[z]`, `z³ = P z + Q`, comes from a kernel-checked certificate
-  (`condB`) and a slab check (`slabB`).
+Each source `F(u, v) = −N((u + hv) − vz)` in `ℤ[z]`, `z³ = Pz + Q`, gets
+`−u³ + P u v² + Q v³ = 1 ↔ (u, v) = (−1, 0)` from `RankOne.source`. Applied at `u + hv`, this is
+the source theorem for `F`.
+- **Units.** Unit generation comes from a kernel-checked certificate (`condB`) and a slab check
+  (`slabB`, in chunks when large). The slab check also shows that `η` is fundamental.
 - **Zero set.** The `z²` coordinate of `ηⁿ` vanishes only at `n = 0`, by
   `SkolemP.corner_zero` at the prime given.
-
-The starting units are the bounded `p = 3` candidates of the second OEIS handoff
-(`receipts/skolem3_candidates.json`). The box shows that `η = ε⁻¹` generates the units.
 -/
 
-namespace PerfectPower.Generated.RankOneSources
+set_option Elab.async false
+
+namespace PerfectPower.Generated.RankOneSources.K{k}
 
 open PerfectPower UnitBox UnitPremises RankOne
 
@@ -278,25 +318,33 @@ open PerfectPower UnitBox UnitPremises RankOne
 
 
 def main(ks=None):
-    rows, blocks = [], []
-    for k, P, Q, s in TARGETS:
-        if ks and k not in ks:
+    rows = []
+    by_k = {}
+    for t in TARGETS:
+        if ks and t[0] not in ks:
             continue
-        r = find(k, P, Q, s)
-        assert r['skolem_eta'] and r['skolem_eps']
-        blocks.append(lean_block(r))
-        r.pop('_c')
-        rows.append(r)
-    text = HEAD + '\n'.join(blocks) + '\nend PerfectPower.Generated.RankOneSources\n'
-    (ROOT / 'PerfectPower' / 'Generated' / 'RankOneSources.lean').write_text(text)
-    (ROOT / 'receipts' / 'rank_one_sources.json').write_text(json.dumps(
-        {'scope': 'search for RankOne.source certificates; every condition is re-checked by the Lean kernel',
-         'sources': rows}, indent=1) + '\n')
+        by_k.setdefault(t[0], []).append(t)
+    d = ROOT / 'PerfectPower' / 'Generated' / 'RankOneSources'
+    d.mkdir(exist_ok=True)
+    for k, ts in by_k.items():
+        blocks = []
+        for i, (k_, F, P, Q, h, eta) in enumerate(ts):
+            r = find(k, F, P, Q, h, eta)
+            blocks.append(lean_block(r, i))
+            r.pop('_c')
+            r['index'] = i
+            rows.append(r)
+        text = HEAD.replace('{k}', str(k)) + '\n'.join(blocks) + f'\nend PerfectPower.Generated.RankOneSources.K{k}\n'
+        (d / f'K{k}.lean').write_text(text)
+    if not ks:
+        (ROOT / 'receipts' / 'rank_one_sources.json').write_text(json.dumps(
+            {'scope': 'RankOne.source certificates; every condition is re-checked by the Lean kernel',
+             'sources': rows}, indent=1) + '\n')
     return rows
 
 
 if __name__ == '__main__':
     import sys
     for r in main([int(a) for a in sys.argv[1:]] or None):
-        print(r['k'], r['eta'], r['cert']['C'], r['slab_elements'],
+        print(r['k'], r['index'], r['eta'], r['cert']['C'], r['slab_elements'],
               r['skolem_eta']['p'], r['skolem_eta']['M'])
