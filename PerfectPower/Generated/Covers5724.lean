@@ -28,11 +28,17 @@ def L_2 : List Z3 := [((-3), (-1), 0), (6, (-1), 0)]
 theorem rep_2 : NormRepAbs 27 52 2 L_2 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_2 (normRepAbs_one 27 52) (by decide +kernel)
 
+/-- The 2 representatives of norm `±2` are pairwise nonassociate (`assocB`): with `rep_2`, there are exactly 2 associate classes of norm `±2`. -/
+theorem distinct_2 : L_2.Pairwise (fun x y => assocB 27 52 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±4` (3). -/
 def L_4 : List Z3 := [(9, 6, 1), (14, 3, (-1)), ((-12), 0, 1)]
 
 theorem rep_4 : NormRepAbs 27 52 4 L_4 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_2 rep_2 (by decide +kernel)
+
+/-- The 3 representatives of norm `±4` are pairwise nonassociate (`assocB`): with `rep_4`, there are exactly 3 associate classes of norm `±4`. -/
+theorem distinct_4 : L_4.Pairwise (fun x y => assocB 27 52 x y = false) := by decide +kernel
 
 /-- Representatives of norm `±12` (3). -/
 def L_12 : List Z3 := [((-29), 2, 3), ((-6), (-5), (-1)), (12, 4, (-1))]
@@ -40,10 +46,16 @@ def L_12 : List Z3 := [((-29), 2, 3), ((-6), (-5), (-1)), (12, 4, (-1))]
 theorem rep_12 : NormRepAbs 27 52 12 L_12 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_3 rep_4 (by decide +kernel)
 
+/-- The 3 representatives of norm `±12` are pairwise nonassociate (`assocB`): with `rep_12`, there are exactly 3 associate classes of norm `±12`. -/
+theorem distinct_12 : L_12.Pairwise (fun x y => assocB 27 52 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±36` (3). -/
 def L_36 : List Z3 := [((-11), (-2), 1), ((-50), (-11), 1), (4, 4, 1)]
 
 theorem rep_36 : NormRepAbs 27 52 36 L_36 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_3 rep_12 (by decide +kernel)
+
+/-- The 3 representatives of norm `±36` are pairwise nonassociate (`assocB`): with `rep_36`, there are exactly 3 associate classes of norm `±36`. -/
+theorem distinct_36 : L_36.Pairwise (fun x y => assocB 27 52 x y = false) := by decide +kernel
 
 end PerfectPower.Generated.Covers5724

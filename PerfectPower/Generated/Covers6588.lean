@@ -28,11 +28,17 @@ def L_2 : List Z3 := [(1, 1, 0), (10, 2, (-1))]
 theorem rep_2 : NormRepAbs 15 16 2 L_2 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_2 (normRepAbs_one 15 16) (by decide +kernel)
 
+/-- The 2 representatives of norm `±2` are pairwise nonassociate (`assocB`): with `rep_2`, there are exactly 2 associate classes of norm `±2`. -/
+theorem distinct_2 : L_2.Pairwise (fun x y => assocB 15 16 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±4` (3). -/
 def L_4 : List Z3 := [(1, 2, 1), ((-6), (-3), 1), (36, (-4), (-1))]
 
 theorem rep_4 : NormRepAbs 15 16 4 L_4 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_2 rep_2 (by decide +kernel)
+
+/-- The 3 representatives of norm `±4` are pairwise nonassociate (`assocB`): with `rep_4`, there are exactly 3 associate classes of norm `±4`. -/
+theorem distinct_4 : L_4.Pairwise (fun x y => assocB 15 16 x y = false) := by decide +kernel
 
 /-- Representatives of norm `±12` (3). -/
 def L_12 : List Z3 := [(79, 12, (-7)), ((-2), (-3), (-1)), ((-4), 1, 0)]
@@ -40,10 +46,16 @@ def L_12 : List Z3 := [(79, 12, (-7)), ((-2), (-3), (-1)), ((-4), 1, 0)]
 theorem rep_12 : NormRepAbs 15 16 12 L_12 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_3 rep_4 (by decide +kernel)
 
+/-- The 3 representatives of norm `±12` are pairwise nonassociate (`assocB`): with `rep_12`, there are exactly 3 associate classes of norm `±12`. -/
+theorem distinct_12 : L_12.Pairwise (fun x y => assocB 15 16 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±36` (3). -/
 def L_36 : List Z3 := [((-11), (-2), 1), (106, 49, (-17)), (4, 1, (-2))]
 
 theorem rep_36 : NormRepAbs 15 16 36 L_36 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_3 rep_12 (by decide +kernel)
+
+/-- The 3 representatives of norm `±36` are pairwise nonassociate (`assocB`): with `rep_36`, there are exactly 3 associate classes of norm `±36`. -/
+theorem distinct_36 : L_36.Pairwise (fun x y => assocB 15 16 x y = false) := by decide +kernel
 
 end PerfectPower.Generated.Covers6588

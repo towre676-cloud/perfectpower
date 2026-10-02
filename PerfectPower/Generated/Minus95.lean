@@ -1,4 +1,4 @@
-import PerfectPower.UnitGen
+import PerfectPower.UnitGenResidue
 import PerfectPower.NormRepProof
 import PerfectPower.AnalyticBridge
 import PerfectPower.DescentThueList
@@ -75,22 +75,28 @@ theorem ugCore_ok : UnitGenProof.ugCore 18 22 e1 e1i e2 e2i ugCert = true := by 
 /-- The 4 units of the slab. -/
 def ugCands : List Z3 := ugCert.reps.map (UnitGenProof.evalRep 18 22 e1 e1i e2 e2i)
 
-theorem ugSlab_0 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 0 = true := by decide +kernel
-theorem ugSlab_1 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 1 = true := by decide +kernel
-theorem ugSlab_2 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 2 = true := by decide +kernel
-theorem ugSlab_3 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 3 = true := by decide +kernel
-theorem ugSlab_4 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 4 = true := by decide +kernel
-theorem ugSlab_5 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 5 = true := by decide +kernel
-theorem ugSlab_6 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 6 = true := by decide +kernel
-theorem ugSlab_7 : UnitGenProof.unitSlabSlice 18 22 ugCert ugCands 9 7 = true := by decide +kernel
+/-- Residues `a mod 8`, `a mod 9` that admit norm `±1`, per `(b, c)` (`UnitGenResidue.ResTables`). -/
+def resTables : UnitGenResidue.ResTables where
+  p8 := [[[1], [5], [1], [5], [1], [5], [1], [5]], [[5], [7], [1], [3], [5], [7], [1], [3]], [[1], [1], [1], [1], [1], [1], [1], [1]], [[1], [7], [5], [3], [1], [7], [5], [3]], [[1], [5], [1], [5], [1], [5], [1], [5]], [[5], [7], [1], [3], [5], [7], [1], [3]], [[1], [1], [1], [1], [1], [1], [1], [1]], [[1], [7], [5], [3], [1], [7], [5], [3]]]
+  n8 := [[[7], [3], [7], [3], [7], [3], [7], [3]], [[7], [5], [3], [1], [7], [5], [3], [1]], [[7], [7], [7], [7], [7], [7], [7], [7]], [[3], [5], [7], [1], [3], [5], [7], [1]], [[7], [3], [7], [3], [7], [3], [7], [3]], [[7], [5], [3], [1], [7], [5], [3], [1]], [[7], [7], [7], [7], [7], [7], [7], [7]], [[3], [5], [7], [1], [3], [5], [7], [1]]]
+  p9 := [[[1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8]], [[], [], [1, 4, 7], [], [], [1, 4, 7], [], [], [1, 4, 7]], [[], [], [], [], [], [], [], [], []], [[1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8]], [[], [], [1, 4, 7], [], [], [1, 4, 7], [], [], [1, 4, 7]], [[], [], [], [], [], [], [], [], []], [[1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8]], [[], [], [1, 4, 7], [], [], [1, 4, 7], [], [], [1, 4, 7]], [[], [], [], [], [], [], [], [], []]]
+  n9 := [[[2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], []], [[], [], [], [], [], [], [], [], []], [[], [2, 5, 8], [], [], [2, 5, 8], [], [], [2, 5, 8], []], [[2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], []], [[], [], [], [], [], [], [], [], []], [[], [2, 5, 8], [], [], [2, 5, 8], [], [], [2, 5, 8], []], [[2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], []], [[], [], [], [], [], [], [], [], []], [[], [2, 5, 8], [], [], [2, 5, 8], [], [], [2, 5, 8], []]]
 
-/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_slab`): the box of 797847 triples is the bounding box of a slab of 17413 lattice points in 2139 rows `(B, C)`, checked in 8 slices of 9 values of `B`. -/
+/-- The tables are complete (`8³ + 9³` triples per sign). -/
+theorem resTables_ok : UnitGenResidue.tablesB 18 22 resTables = true := by decide +kernel
+
+theorem ugRes_0 : UnitGenResidue.unitResidueSlice 18 22 ugCert resTables ugCands 18 0 = true := by decide +kernel
+theorem ugRes_1 : UnitGenResidue.unitResidueSlice 18 22 ugCert resTables ugCands 18 1 = true := by decide +kernel
+theorem ugRes_2 : UnitGenResidue.unitResidueSlice 18 22 ugCert resTables ugCands 18 2 = true := by decide +kernel
+theorem ugRes_3 : UnitGenResidue.unitResidueSlice 18 22 ugCert resTables ugCands 18 3 = true := by decide +kernel
+
+/-- **Unit generation, proved** (`UnitGenResidue.unitGen_of_residueSlab`): the slab of 17413 lattice points in 2139 rows `(B, C)`, filtered by the residue tables, leaves 482 points in 1173 rows; checked in 4 slices of 18 values of `B`. -/
 theorem unitGen_proved : unitGen :=
-  UnitGenProof.unitGen_of_slab 18 22 e1 e1i e2 e2i ugCert (w := 9) (n := 8) ugCore_ok
+  UnitGenResidue.unitGen_of_residueSlab 18 22 e1 e1i e2 e2i ugCert resTables (w := 18) (n := 4) ugCore_ok resTables_ok
     (by norm_num) (by decide)
-    (fun (t : ℕ) (ht : t < 8) => by
+    (fun (t : ℕ) (ht : t < 4) => by
       interval_cases t
-      exacts [ugSlab_0, ugSlab_1, ugSlab_2, ugSlab_3, ugSlab_4, ugSlab_5, ugSlab_6, ugSlab_7])
+      exacts [ugRes_0, ugRes_1, ugRes_2, ugRes_3])
 
 /-! ### Layer 2: the source equations -/
 

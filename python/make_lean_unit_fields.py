@@ -329,6 +329,54 @@ def slab_cost(c, row_weight=3, exact=True):
     return pts + row_weight * rows, pts, rows
 
 
+def res_tables(P, Q):
+    """The residue tables of `UnitGenResidue.ResTables`: for `m = 8, 9` and the norm sign `s`, entry
+    `[b][c]` lists the `a mod m` with `N(a, b, c) ≡ s (mod m)` (complete, so `tabB` accepts)."""
+    def tab(m, s):
+        return [[[a for a in range(m) if (nrm(P, Q, (a, b, c)) - s) % m == 0] for c in range(m)] for b in range(m)]
+    return {'p8': tab(8, 1), 'n8': tab(8, -1), 'p9': tab(9, 1), 'n9': tab(9, -1)}
+
+
+def res_mask(T, b, c):
+    """Exact mirror of `UnitGenResidue.mask` (with repetitions, in the same order)."""
+    def crt(A, B):
+        return [(9 * a8 - 8 * a9) % 72 for a8 in A for a9 in B]
+    return (crt(T['p8'][b % 8][c % 8], T['p9'][b % 9][c % 9]) +
+            crt(T['n8'][b % 8][c % 8], T['n9'][b % 9][c % 9]))
+
+
+def residue_rows(c, T):
+    """Per row `(j, B, C)`: the mask and the points `unitResidueSlice` enumerates."""
+    for j in range(2 * c['bb'] + 1):
+        for k in range(2 * c['bc'] + 1):
+            b, cc = j - c['bb'], k - c['bc']
+            mk = res_mask(T, b, cc)
+            if not mk:
+                yield j, b, cc, mk, []
+                continue
+            l, h = _aint(c, b, cc)
+            pts = []
+            for r in mk:
+                a0 = l + (r - l) % 72
+                pts.extend((a0 + 72 * i, b, cc) for i in range(max(0, (h - a0) // 72 + 1)))
+            yield j, b, cc, mk, pts
+
+
+def residue_cost(c, T, row_weight=3, mask_weight=1):
+    """Kernel work of the residue-filtered slab: points, `row_weight` per row with a nonempty mask
+    (its interval), `mask_weight` per mask entry and per row."""
+    pts = rows_ne = ment = rows = 0
+    per_j = {}
+    for j, b, cc, mk, ps in residue_rows(c, T):
+        rows += 1
+        ment += len(mk)
+        rows_ne += bool(mk)
+        pts += len(ps)
+        per_j[j] = per_j.get(j, 0) + len(ps) + mask_weight * (1 + len(mk)) + row_weight * bool(mk)
+    return {'cost': pts + row_weight * rows_ne + mask_weight * (rows + ment), 'points': pts,
+            'rows': rows, 'rows_nonempty': rows_ne, 'mask_entries': ment, 'per_j': per_j}
+
+
 def box_size(c):
     return (2 * c['ba'] + 1) * (2 * c['bb'] + 1) * (2 * c['bc'] + 1)
 

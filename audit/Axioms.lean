@@ -1906,13 +1906,20 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Covers2700.cover_4
 #print axioms PerfectPower.Generated.Covers2700.cover_9
 #print axioms PerfectPower.Generated.Covers2700.rep_4
+#print axioms PerfectPower.Generated.Covers2700.distinct_4
 #print axioms PerfectPower.Generated.Covers2700.rep_9
 #print axioms PerfectPower.Generated.Covers2700.rep_16
+#print axioms PerfectPower.Generated.Covers2700.distinct_16
 #print axioms PerfectPower.Generated.Covers2700.rep_36
+#print axioms PerfectPower.Generated.Covers2700.distinct_36
 #print axioms PerfectPower.Generated.Covers2700.rep_64
+#print axioms PerfectPower.Generated.Covers2700.distinct_64
 #print axioms PerfectPower.Generated.Covers2700.rep_256
+#print axioms PerfectPower.Generated.Covers2700.distinct_256
 #print axioms PerfectPower.Generated.Covers2700.rep_1024
+#print axioms PerfectPower.Generated.Covers2700.distinct_1024
 #print axioms PerfectPower.Generated.Covers2700.rep_4096
+#print axioms PerfectPower.Generated.Covers2700.distinct_4096
 -- Generated/Order2700
 #print axioms PerfectPower.Generated.Order2700.e1_inv
 #print axioms PerfectPower.Generated.Order2700.e2_inv
@@ -2115,12 +2122,17 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Covers5724.cover_2
 #print axioms PerfectPower.Generated.Covers5724.cover_3
 #print axioms PerfectPower.Generated.Covers5724.rep_2
+#print axioms PerfectPower.Generated.Covers5724.distinct_2
 #print axioms PerfectPower.Generated.Covers5724.rep_4
+#print axioms PerfectPower.Generated.Covers5724.distinct_4
 #print axioms PerfectPower.Generated.Covers5724.rep_12
+#print axioms PerfectPower.Generated.Covers5724.distinct_12
 #print axioms PerfectPower.Generated.Covers5724.rep_36
+#print axioms PerfectPower.Generated.Covers5724.distinct_36
 -- Generated/Covers9396
 #print axioms PerfectPower.Generated.Covers9396.cover_4
 #print axioms PerfectPower.Generated.Covers9396.rep_4
+#print axioms PerfectPower.Generated.Covers9396.distinct_4
 -- Generated/Minus53
 #print axioms PerfectPower.Generated.Minus53.e1_inv
 #print axioms PerfectPower.Generated.Minus53.e2_inv
@@ -2164,6 +2176,7 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Minus87.e1_inv
 #print axioms PerfectPower.Generated.Minus87.e2_inv
 #print axioms PerfectPower.Generated.Minus87.ugCore_ok
+#print axioms PerfectPower.Generated.Minus87.resTables_ok
 #print axioms PerfectPower.Generated.Minus87.unitGen_proved
 #print axioms PerfectPower.Generated.Minus87.normRep_g1_proved
 #print axioms PerfectPower.Generated.Minus87.phi_g1_via
@@ -2200,6 +2213,7 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Minus95.e1_inv
 #print axioms PerfectPower.Generated.Minus95.e2_inv
 #print axioms PerfectPower.Generated.Minus95.ugCore_ok
+#print axioms PerfectPower.Generated.Minus95.resTables_ok
 #print axioms PerfectPower.Generated.Minus95.unitGen_proved
 #print axioms PerfectPower.Generated.Minus95.normRep_k1_proved
 #print axioms PerfectPower.Generated.Minus95.analytic_k1_proved
@@ -2230,13 +2244,18 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Covers6588.cover_2
 #print axioms PerfectPower.Generated.Covers6588.cover_3
 #print axioms PerfectPower.Generated.Covers6588.rep_2
+#print axioms PerfectPower.Generated.Covers6588.distinct_2
 #print axioms PerfectPower.Generated.Covers6588.rep_4
+#print axioms PerfectPower.Generated.Covers6588.distinct_4
 #print axioms PerfectPower.Generated.Covers6588.rep_12
+#print axioms PerfectPower.Generated.Covers6588.distinct_12
 #print axioms PerfectPower.Generated.Covers6588.rep_36
+#print axioms PerfectPower.Generated.Covers6588.distinct_36
 -- Generated/Minus61
 #print axioms PerfectPower.Generated.Minus61.e1_inv
 #print axioms PerfectPower.Generated.Minus61.e2_inv
 #print axioms PerfectPower.Generated.Minus61.ugCore_ok
+#print axioms PerfectPower.Generated.Minus61.resTables_ok
 #print axioms PerfectPower.Generated.Minus61.unitGen_proved
 #print axioms PerfectPower.Generated.Minus61.normRep_g1_proved
 #print axioms PerfectPower.Generated.Minus61.phi_g1_via
@@ -2289,6 +2308,14 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Covers8532.res_49
 -- NormRepSlices
 #print axioms PerfectPower.NormRepSlices.resRepB_of_slices
+-- UnitGenResidue
+#print axioms PerfectPower.UnitGenResidue.nrm_emod
+#print axioms PerfectPower.UnitGenResidue.tab_sound
+#print axioms PerfectPower.UnitGenResidue.crt_mem
+#print axioms PerfectPower.UnitGenResidue.mem_mask
+#print axioms PerfectPower.UnitGenResidue.progression
+#print axioms PerfectPower.UnitGenResidue.reduced_of_residueSlab
+#print axioms PerfectPower.UnitGenResidue.unitGen_of_residueSlab
 -- Generated/Minus79
 #print axioms PerfectPower.Generated.Minus79.e1_inv
 #print axioms PerfectPower.Generated.Minus79.e2_inv

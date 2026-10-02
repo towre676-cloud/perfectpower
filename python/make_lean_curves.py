@@ -149,12 +149,12 @@ CURVES = {
                        'via': (5, (15, 10), (2, 2, 0))},
                       {'name': 'f16', 'form': (-1, -3, 12, 4), 'phi': (11, 2, -1), 'normrep': ('one',),
                        'via': (5, (15, 10), (1, 1, 0))}]},
-    95: {'name': 'Minus95', 'P': 18, 'Q': 22, 'disc': 10260, 'units': [(-5, -5, -1), (707, 59, -44)],
+    95: {'name': 'Minus95', 'unit_check': 'residue', 'P': 18, 'Q': 22, 'disc': 10260, 'units': [(-5, -5, -1), (707, 59, -44)],
          'sources': [{'name': 'k1', 'form': (-1, -33, 285, 1045), 'phi': (11, 6, 0), 'normrep': ('one',)},
                      {'name': 'k2', 'form': (-1, -18, 54, 162), 'phi': (6, 3, 0), 'normrep': ('one',)},
                      {'name': 'k3', 'form': (-1, -12, 24, 48), 'phi': (4, 2, 0), 'normrep': ('one',)},
                      {'name': 'k4', 'form': (-1, -6, 6, 6), 'phi': (2, 1, 0), 'normrep': ('one',)}]},
-    87: {'name': 'Minus87', 'P': 21, 'Q': 32, 'disc': 9396, 'units': [(-15, -1, 1), (-379, -322, -62)],
+    87: {'name': 'Minus87', 'unit_check': 'residue', 'P': 21, 'Q': 32, 'disc': 9396, 'units': [(-15, -1, 1), (-379, -322, -62)],
          'imports': ['PerfectPower.Generated.Covers9396'],
          'sources': [{'name': 'g1', 'form': (-2, -129, 522, 3741), 'phi': (225, 26, -13),
                       'normrep': ('cover', 'Covers9396'), 'via': (18, (39, 86), (43, 13, 0))},
@@ -189,7 +189,7 @@ CURVES = {
                      {'name': 'u1', 'form': (-2, -6, 6, 3), 'phi': (42, 4, -1),
                       'normrep': ('cover', 'Covers8532'), 'via': (('OrderMaps8532', 0), (24, 28), (2, 1, 0))}]},
     # D = 61: the nonmonic source g1 (norm 36) moves from t³ = 39t + 2 into t³ = 15t + 16 (OrderMaps.map_16)
-    61: {'name': 'Minus61', 'P': 15, 'Q': 16, 'disc': 6588, 'units': [(-5, -3, 1), (-40907, -47810, -11056)],
+    61: {'name': 'Minus61', 'unit_check': 'residue', 'P': 15, 'Q': 16, 'disc': 6588, 'units': [(-5, -3, 1), (-40907, -47810, -11056)],
          'imports': ['PerfectPower.Generated.Covers6588'],
          'sources': [{'name': 'g1', 'form': (-6, -3, 1098, 61), 'phi': (131, 26, -13),
                       'normrep': ('cover', 'Covers6588'), 'via': (16, (39, 2), (1, 13, 0))},
@@ -425,9 +425,52 @@ def basis_change(cfg):
     return b['e1'], b['e2'], b['U'], b
 
 
+def residue_layer(cfg, text, cert, size, e1i, e2i):
+    """The slab, filtered by norm residues mod 8 and 9 combined by CRT
+    (`UnitGenResidue.unitGen_of_residueSlab`): only first coordinates in the allowed classes mod 72."""
+    P, Q = cfg['P'], cfg['Q']
+    T = U.res_tables(P, Q)
+    rc = U.residue_cost(cert, T)
+    _, pts0, rows = U.slab_cost(cert)
+    nb = 2 * cert['bb'] + 1
+    n = max(1, -(-rc['cost'] // 3000))
+    w = -(-nb // n)
+    n = -(-nb // w)
+    def tab(t):
+        return '[' + ', '.join('[' + ', '.join('[' + ', '.join(map(str, e)) + ']' for e in row) + ']' for row in t) + ']'
+    text += (f'/-- The certificate without the enumeration (`UnitGenProof.ugCore`). -/\n'
+             f'theorem ugCore_ok : UnitGenProof.ugCore {P} {Q} e1 e1i e2 e2i ugCert = true := by decide +kernel\n\n'
+             f'/-- The {len(cert["reps"])} units of the slab. -/\n'
+             f'def ugCands : List Z3 := ugCert.reps.map (UnitGenProof.evalRep {P} {Q} e1 e1i e2 e2i)\n\n'
+             f'/-- Residues `a mod 8`, `a mod 9` that admit norm `±1`, per `(b, c)` (`UnitGenResidue.ResTables`). -/\n'
+             f"def resTables : UnitGenResidue.ResTables where\n  p8 := {tab(T['p8'])}\n  n8 := {tab(T['n8'])}\n"
+             f"  p9 := {tab(T['p9'])}\n  n9 := {tab(T['n9'])}\n\n"
+             f'/-- The tables are complete (`8³ + 9³` triples per sign). -/\n'
+             f'theorem resTables_ok : UnitGenResidue.tablesB {P} {Q} resTables = true := by decide +kernel\n\n')
+    for t in range(n):
+        text += (f'theorem ugRes_{t} : UnitGenResidue.unitResidueSlice {P} {Q} ugCert resTables ugCands {w} {t} = true := '
+                 f'by decide +kernel\n')
+    text += (f'\n/-- **Unit generation, proved** (`UnitGenResidue.unitGen_of_residueSlab`): the slab of {pts0} '
+             f'lattice points in {rows} rows `(B, C)`, filtered by the residue tables, leaves {rc["points"]} points '
+             f'in {rc["rows_nonempty"]} rows; checked in {n} slices of {w} values of `B`. -/\n'
+             f'theorem unitGen_proved : unitGen :=\n'
+             f'  UnitGenResidue.unitGen_of_residueSlab {P} {Q} e1 e1i e2 e2i ugCert resTables (w := {w}) (n := {n}) '
+             f'ugCore_ok resTables_ok\n'
+             f'    (by norm_num) (by decide)\n'
+             f'    (fun (t : ℕ) (ht : t < {n}) => by\n      interval_cases t\n      exacts [{", ".join(f"ugRes_{t}" for t in range(n))}])\n')
+    cert['slab'] = {'points': pts0, 'rows': rows, 'slices': n, 'width': w, 'box': size,
+                    'residue_filter': {k: v for k, v in rc.items() if k != 'per_j'}}
+    if 'basis_choice' in cfg:
+        cert['slab']['basis_choice'] = cfg['basis_choice']
+    assert 'basis_change' not in cfg
+    return text, e1i, e2i, cert
+
+
 def slab_layer(cfg, text, cert, size, e1i, e2i):
     """A large box: enumerate only the slab (`UnitGenProof.unitGen_of_slab`), in slices of the
     second coordinate, each a separate kernel evaluation."""
+    if cfg.get('unit_check') == 'residue':
+        return residue_layer(cfg, text, cert, size, e1i, e2i)
     P, Q = cfg['P'], cfg['Q']
     cost, pts, rows = U.slab_cost(cert)
     nb = 2 * cert['bb'] + 1
@@ -572,6 +615,8 @@ def build(D):
                         f'import PerfectPower.DescentLists\nimport PerfectPower.Generated.{mod}\n')
     for imp in cfg.get('imports', []):
         hd = hd.replace('import PerfectPower.DescentLists\n', f'import PerfectPower.DescentLists\nimport {imp}\n')
+    if cfg.get('unit_check') == 'residue':
+        hd = hd.replace('import PerfectPower.UnitGen\n', 'import PerfectPower.UnitGenResidue\n')
     if 'order' in cfg:
         hd = hd.replace('import PerfectPower.UnitGen\n', f"import PerfectPower.Generated.{cfg['order']}\n").replace(
             'open PerfectPower ThueLocal UnitBox\n', f"open PerfectPower ThueLocal UnitBox {cfg['order']}\n")

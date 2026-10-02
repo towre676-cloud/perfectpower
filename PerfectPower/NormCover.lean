@@ -31,7 +31,7 @@ lemma div_of_adj {P Q : ℤ} {γ g : Z3} (hd0 : nrm P Q γ ≠ 0)
     (h1 : nrm P Q γ ∣ (mul P Q g (adj P Q γ)).1) (h2 : nrm P Q γ ∣ (mul P Q g (adj P Q γ)).2.1)
     (h3 : nrm P Q γ ∣ (mul P Q g (adj P Q γ)).2.2) :
     ∃ u, mul P Q γ u = g ∧ nrm P Q γ * nrm P Q u = nrm P Q g := by
-  set d := nrm P Q γ with hd
+  set d := nrm P Q γ
   obtain ⟨k1, hk1⟩ := h1
   obtain ⟨k2, hk2⟩ := h2
   obtain ⟨k3, hk3⟩ := h3

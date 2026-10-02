@@ -23,4 +23,7 @@ def L_4 : List Z3 := [((-3), (-1), 0), (4, 4, 1), (9, 5, 0), ((-17), (-2), 1)]
 theorem rep_4 : NormRepAbs 21 32 4 L_4 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_4 (normRepAbs_one 21 32) (by decide +kernel)
 
+/-- The 4 representatives of norm `±4` are pairwise nonassociate (`assocB`): with `rep_4`, there are exactly 4 associate classes of norm `±4`. -/
+theorem distinct_4 : L_4.Pairwise (fun x y => assocB 21 32 x y = false) := by decide +kernel
+
 end PerfectPower.Generated.Covers9396

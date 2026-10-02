@@ -28,6 +28,9 @@ def L_4 : List Z3 := [(4, 4, 1), ((-6), (-3), 1), (9, 4, (-1))]
 theorem rep_4 : NormRepAbs 15 20 4 L_4 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_4 (normRepAbs_one 15 20) (by decide +kernel)
 
+/-- The 3 representatives of norm `±4` are pairwise nonassociate (`assocB`): with `rep_4`, there are exactly 3 associate classes of norm `±4`. -/
+theorem distinct_4 : L_4.Pairwise (fun x y => assocB 15 20 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±9` (1). -/
 def L_9 : List Z3 := [((-11), (-1), 1)]
 
@@ -40,11 +43,17 @@ def L_16 : List Z3 := [((-4), 1, 0), ((-4), (-1), 1), ((-4), (-2), 0), (6, 2, 0)
 theorem rep_16 : NormRepAbs 15 20 16 L_16 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_4 rep_4 (by decide +kernel)
 
+/-- The 5 representatives of norm `±16` are pairwise nonassociate (`assocB`): with `rep_16`, there are exactly 5 associate classes of norm `±16`. -/
+theorem distinct_16 : L_16.Pairwise (fun x y => assocB 15 20 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±36` (3). -/
 def L_36 : List Z3 := [(16, 5, (-2)), ((-14), (-1), 1), (1, 2, 1)]
 
 theorem rep_36 : NormRepAbs 15 20 36 L_36 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_9 rep_4 (by decide +kernel)
+
+/-- The 3 representatives of norm `±36` are pairwise nonassociate (`assocB`): with `rep_36`, there are exactly 3 associate classes of norm `±36`. -/
+theorem distinct_36 : L_36.Pairwise (fun x y => assocB 15 20 x y = false) := by decide +kernel
 
 /-- Representatives of norm `±64` (7). -/
 def L_64 : List Z3 := [(4, 3, 0), (4, (-1), (-1)), ((-16), 0, 2), ((-16), (-6), 2), (4, 0, 0), (14, (-12), 2), ((-11), (-12), (-3))]
@@ -52,11 +61,17 @@ def L_64 : List Z3 := [(4, 3, 0), (4, (-1), (-1)), ((-16), 0, 2), ((-16), (-6), 
 theorem rep_64 : NormRepAbs 15 20 64 L_64 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_4 rep_16 (by decide +kernel)
 
+/-- The 7 representatives of norm `±64` are pairwise nonassociate (`assocB`): with `rep_64`, there are exactly 7 associate classes of norm `±64`. -/
+theorem distinct_64 : L_64.Pairwise (fun x y => assocB 15 20 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±256` (9). -/
 def L_256 : List Z3 := [(16, (-8), 1), (36, 15, (-5)), (16, 4, (-2)), ((-24), (-2), 2), (16, 16, 4), ((-24), (-12), 4), (36, 16, (-4)), (6, 0, (-2)), (1, 4, 1)]
 
 theorem rep_256 : NormRepAbs 15 20 256 L_256 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_4 rep_64 (by decide +kernel)
+
+/-- The 9 representatives of norm `±256` are pairwise nonassociate (`assocB`): with `rep_256`, there are exactly 9 associate classes of norm `±256`. -/
+theorem distinct_256 : L_256.Pairwise (fun x y => assocB 15 20 x y = false) := by decide +kernel
 
 /-- Representatives of norm `±1024` (11). -/
 def L_1024 : List Z3 := [((-16), (-8), 3), ((-36), (-7), 3), ((-16), (-20), (-6)), (24, 26, 6), ((-16), 4, 0), ((-16), (-4), 4), ((-16), (-8), 0), (24, 8, 0), ((-76), (-16), 4), (14, 8, (-2)), (9, 20, 9)]
@@ -64,10 +79,16 @@ def L_1024 : List Z3 := [((-16), (-8), 3), ((-36), (-7), 3), ((-16), (-20), (-6)
 theorem rep_1024 : NormRepAbs 15 20 1024 L_1024 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_4 rep_256 (by decide +kernel)
 
+/-- The 11 representatives of norm `±1024` are pairwise nonassociate (`assocB`): with `rep_1024`, there are exactly 11 associate classes of norm `±1024`. -/
+theorem distinct_1024 : L_1024.Pairwise (fun x y => assocB 15 20 x y = false) := by decide +kernel
+
 /-- Representatives of norm `±4096` (13). -/
 def L_4096 : List Z3 := [(16, 24, 9), ((-44), (-37), (-7)), (56, 42, 8), (56, 18, (-10)), (16, 12, 0), (16, (-4), (-4)), ((-64), 0, 8), ((-64), (-24), 8), (16, 0, 0), (56, 48, 8), ((-44), (-48), (-12)), (46, 56, 14), ((-59), (-28), 5)]
 
 theorem rep_4096 : NormRepAbs 15 20 4096 L_4096 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_4 rep_1024 (by decide +kernel)
+
+/-- The 13 representatives of norm `±4096` are pairwise nonassociate (`assocB`): with `rep_4096`, there are exactly 13 associate classes of norm `±4096`. -/
+theorem distinct_4096 : L_4096.Pairwise (fun x y => assocB 15 20 x y = false) := by decide +kernel
 
 end PerfectPower.Generated.Covers2700

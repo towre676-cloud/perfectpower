@@ -1,4 +1,4 @@
-import PerfectPower.UnitGen
+import PerfectPower.UnitGenResidue
 import PerfectPower.NormRepProof
 import PerfectPower.AnalyticBridge
 import PerfectPower.DescentThueList
@@ -77,144 +77,53 @@ theorem ugCore_ok : UnitGenProof.ugCore 15 16 e1 e1i e2 e2i ugCert = true := by 
 /-- The 8 units of the slab. -/
 def ugCands : List Z3 := ugCert.reps.map (UnitGenProof.evalRep 15 16 e1 e1i e2 e2i)
 
-theorem ugSlab_0 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 0 = true := by decide +kernel
-theorem ugSlab_1 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 1 = true := by decide +kernel
-theorem ugSlab_2 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 2 = true := by decide +kernel
-theorem ugSlab_3 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 3 = true := by decide +kernel
-theorem ugSlab_4 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 4 = true := by decide +kernel
-theorem ugSlab_5 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 5 = true := by decide +kernel
-theorem ugSlab_6 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 6 = true := by decide +kernel
-theorem ugSlab_7 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 7 = true := by decide +kernel
-theorem ugSlab_8 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 8 = true := by decide +kernel
-theorem ugSlab_9 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 9 = true := by decide +kernel
-theorem ugSlab_10 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 10 = true := by decide +kernel
-theorem ugSlab_11 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 11 = true := by decide +kernel
-theorem ugSlab_12 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 12 = true := by decide +kernel
-theorem ugSlab_13 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 13 = true := by decide +kernel
-theorem ugSlab_14 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 14 = true := by decide +kernel
-theorem ugSlab_15 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 15 = true := by decide +kernel
-theorem ugSlab_16 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 16 = true := by decide +kernel
-theorem ugSlab_17 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 17 = true := by decide +kernel
-theorem ugSlab_18 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 18 = true := by decide +kernel
-theorem ugSlab_19 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 19 = true := by decide +kernel
-theorem ugSlab_20 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 20 = true := by decide +kernel
-theorem ugSlab_21 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 21 = true := by decide +kernel
-theorem ugSlab_22 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 22 = true := by decide +kernel
-theorem ugSlab_23 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 23 = true := by decide +kernel
-theorem ugSlab_24 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 24 = true := by decide +kernel
-theorem ugSlab_25 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 25 = true := by decide +kernel
-theorem ugSlab_26 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 26 = true := by decide +kernel
-theorem ugSlab_27 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 27 = true := by decide +kernel
-theorem ugSlab_28 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 28 = true := by decide +kernel
-theorem ugSlab_29 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 29 = true := by decide +kernel
-theorem ugSlab_30 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 30 = true := by decide +kernel
-theorem ugSlab_31 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 31 = true := by decide +kernel
-theorem ugSlab_32 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 32 = true := by decide +kernel
-theorem ugSlab_33 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 33 = true := by decide +kernel
-theorem ugSlab_34 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 34 = true := by decide +kernel
-theorem ugSlab_35 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 35 = true := by decide +kernel
-theorem ugSlab_36 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 36 = true := by decide +kernel
-theorem ugSlab_37 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 37 = true := by decide +kernel
-theorem ugSlab_38 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 38 = true := by decide +kernel
-theorem ugSlab_39 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 39 = true := by decide +kernel
-theorem ugSlab_40 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 40 = true := by decide +kernel
-theorem ugSlab_41 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 41 = true := by decide +kernel
-theorem ugSlab_42 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 42 = true := by decide +kernel
-theorem ugSlab_43 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 43 = true := by decide +kernel
-theorem ugSlab_44 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 44 = true := by decide +kernel
-theorem ugSlab_45 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 45 = true := by decide +kernel
-theorem ugSlab_46 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 46 = true := by decide +kernel
-theorem ugSlab_47 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 47 = true := by decide +kernel
-theorem ugSlab_48 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 48 = true := by decide +kernel
-theorem ugSlab_49 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 49 = true := by decide +kernel
-theorem ugSlab_50 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 50 = true := by decide +kernel
-theorem ugSlab_51 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 51 = true := by decide +kernel
-theorem ugSlab_52 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 52 = true := by decide +kernel
-theorem ugSlab_53 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 53 = true := by decide +kernel
-theorem ugSlab_54 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 54 = true := by decide +kernel
-theorem ugSlab_55 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 55 = true := by decide +kernel
-theorem ugSlab_56 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 56 = true := by decide +kernel
-theorem ugSlab_57 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 57 = true := by decide +kernel
-theorem ugSlab_58 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 58 = true := by decide +kernel
-theorem ugSlab_59 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 59 = true := by decide +kernel
-theorem ugSlab_60 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 60 = true := by decide +kernel
-theorem ugSlab_61 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 61 = true := by decide +kernel
-theorem ugSlab_62 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 62 = true := by decide +kernel
-theorem ugSlab_63 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 63 = true := by decide +kernel
-theorem ugSlab_64 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 64 = true := by decide +kernel
-theorem ugSlab_65 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 65 = true := by decide +kernel
-theorem ugSlab_66 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 66 = true := by decide +kernel
-theorem ugSlab_67 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 67 = true := by decide +kernel
-theorem ugSlab_68 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 68 = true := by decide +kernel
-theorem ugSlab_69 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 69 = true := by decide +kernel
-theorem ugSlab_70 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 70 = true := by decide +kernel
-theorem ugSlab_71 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 71 = true := by decide +kernel
-theorem ugSlab_72 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 72 = true := by decide +kernel
-theorem ugSlab_73 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 73 = true := by decide +kernel
-theorem ugSlab_74 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 74 = true := by decide +kernel
-theorem ugSlab_75 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 75 = true := by decide +kernel
-theorem ugSlab_76 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 76 = true := by decide +kernel
-theorem ugSlab_77 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 77 = true := by decide +kernel
-theorem ugSlab_78 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 78 = true := by decide +kernel
-theorem ugSlab_79 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 79 = true := by decide +kernel
-theorem ugSlab_80 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 80 = true := by decide +kernel
-theorem ugSlab_81 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 81 = true := by decide +kernel
-theorem ugSlab_82 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 82 = true := by decide +kernel
-theorem ugSlab_83 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 83 = true := by decide +kernel
-theorem ugSlab_84 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 84 = true := by decide +kernel
-theorem ugSlab_85 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 85 = true := by decide +kernel
-theorem ugSlab_86 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 86 = true := by decide +kernel
-theorem ugSlab_87 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 87 = true := by decide +kernel
-theorem ugSlab_88 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 88 = true := by decide +kernel
-theorem ugSlab_89 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 89 = true := by decide +kernel
-theorem ugSlab_90 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 90 = true := by decide +kernel
-theorem ugSlab_91 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 91 = true := by decide +kernel
-theorem ugSlab_92 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 92 = true := by decide +kernel
-theorem ugSlab_93 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 93 = true := by decide +kernel
-theorem ugSlab_94 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 94 = true := by decide +kernel
-theorem ugSlab_95 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 95 = true := by decide +kernel
-theorem ugSlab_96 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 96 = true := by decide +kernel
-theorem ugSlab_97 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 97 = true := by decide +kernel
-theorem ugSlab_98 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 98 = true := by decide +kernel
-theorem ugSlab_99 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 99 = true := by decide +kernel
-theorem ugSlab_100 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 100 = true := by decide +kernel
-theorem ugSlab_101 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 101 = true := by decide +kernel
-theorem ugSlab_102 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 102 = true := by decide +kernel
-theorem ugSlab_103 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 103 = true := by decide +kernel
-theorem ugSlab_104 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 104 = true := by decide +kernel
-theorem ugSlab_105 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 105 = true := by decide +kernel
-theorem ugSlab_106 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 106 = true := by decide +kernel
-theorem ugSlab_107 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 107 = true := by decide +kernel
-theorem ugSlab_108 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 108 = true := by decide +kernel
-theorem ugSlab_109 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 109 = true := by decide +kernel
-theorem ugSlab_110 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 110 = true := by decide +kernel
-theorem ugSlab_111 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 111 = true := by decide +kernel
-theorem ugSlab_112 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 112 = true := by decide +kernel
-theorem ugSlab_113 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 113 = true := by decide +kernel
-theorem ugSlab_114 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 114 = true := by decide +kernel
-theorem ugSlab_115 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 115 = true := by decide +kernel
-theorem ugSlab_116 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 116 = true := by decide +kernel
-theorem ugSlab_117 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 117 = true := by decide +kernel
-theorem ugSlab_118 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 118 = true := by decide +kernel
-theorem ugSlab_119 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 119 = true := by decide +kernel
-theorem ugSlab_120 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 120 = true := by decide +kernel
-theorem ugSlab_121 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 121 = true := by decide +kernel
-theorem ugSlab_122 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 122 = true := by decide +kernel
-theorem ugSlab_123 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 123 = true := by decide +kernel
-theorem ugSlab_124 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 124 = true := by decide +kernel
-theorem ugSlab_125 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 125 = true := by decide +kernel
-theorem ugSlab_126 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 126 = true := by decide +kernel
-theorem ugSlab_127 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 127 = true := by decide +kernel
-theorem ugSlab_128 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 128 = true := by decide +kernel
-theorem ugSlab_129 : UnitGenProof.unitSlabSlice 15 16 ugCert ugCands 2 129 = true := by decide +kernel
+/-- Residues `a mod 8`, `a mod 9` that admit norm `±1`, per `(b, c)` (`UnitGenResidue.ResTables`). -/
+def resTables : UnitGenResidue.ResTables where
+  p8 := [[[1], [], [1], [], [1], [], [1], []], [[], [1], [], [5], [], [1], [], [5]], [[5], [], [5], [], [5], [], [5], []], [[], [1], [], [5], [], [1], [], [5]], [[1], [], [1], [], [1], [], [1], []], [[], [1], [], [5], [], [1], [], [5]], [[5], [], [5], [], [5], [], [5], []], [[], [1], [], [5], [], [1], [], [5]]]
+  n8 := [[[7], [], [7], [], [7], [], [7], []], [[], [3], [], [7], [], [3], [], [7]], [[3], [], [3], [], [3], [], [3], []], [[], [3], [], [7], [], [3], [], [7]], [[7], [], [7], [], [7], [], [7], []], [[], [3], [], [7], [], [3], [], [7]], [[3], [], [3], [], [3], [], [3], []], [[], [3], [], [7], [], [3], [], [7]]]
+  p9 := [[[1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8]], [[], [], [1, 4, 7], [], [], [1, 4, 7], [], [], [1, 4, 7]], [[], [], [], [], [], [], [], [], []], [[1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8]], [[], [], [1, 4, 7], [], [], [1, 4, 7], [], [], [1, 4, 7]], [[], [], [], [], [], [], [], [], []], [[1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8]], [[], [], [1, 4, 7], [], [], [1, 4, 7], [], [], [1, 4, 7]], [[], [], [], [], [], [], [], [], []]]
+  n9 := [[[2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], []], [[], [], [], [], [], [], [], [], []], [[], [2, 5, 8], [], [], [2, 5, 8], [], [], [2, 5, 8], []], [[2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], []], [[], [], [], [], [], [], [], [], []], [[], [2, 5, 8], [], [], [2, 5, 8], [], [], [2, 5, 8], []], [[2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], [], [2, 5, 8], [1, 4, 7], []], [[], [], [], [], [], [], [], [], []], [[], [2, 5, 8], [], [], [2, 5, 8], [], [], [2, 5, 8], []]]
 
-/-- **Unit generation, proved** (`UnitGenProof.unitGen_of_slab`): the box of 32055135 triples is the bounding box of a slab of 648719 lattice points in 28749 rows `(B, C)`, checked in 130 slices of 2 values of `B`. -/
+/-- The tables are complete (`8³ + 9³` triples per sign). -/
+theorem resTables_ok : UnitGenResidue.tablesB 15 16 resTables = true := by decide +kernel
+
+theorem ugRes_0 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 0 = true := by decide +kernel
+theorem ugRes_1 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 1 = true := by decide +kernel
+theorem ugRes_2 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 2 = true := by decide +kernel
+theorem ugRes_3 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 3 = true := by decide +kernel
+theorem ugRes_4 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 4 = true := by decide +kernel
+theorem ugRes_5 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 5 = true := by decide +kernel
+theorem ugRes_6 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 6 = true := by decide +kernel
+theorem ugRes_7 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 7 = true := by decide +kernel
+theorem ugRes_8 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 8 = true := by decide +kernel
+theorem ugRes_9 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 9 = true := by decide +kernel
+theorem ugRes_10 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 10 = true := by decide +kernel
+theorem ugRes_11 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 11 = true := by decide +kernel
+theorem ugRes_12 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 12 = true := by decide +kernel
+theorem ugRes_13 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 13 = true := by decide +kernel
+theorem ugRes_14 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 14 = true := by decide +kernel
+theorem ugRes_15 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 15 = true := by decide +kernel
+theorem ugRes_16 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 16 = true := by decide +kernel
+theorem ugRes_17 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 17 = true := by decide +kernel
+theorem ugRes_18 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 18 = true := by decide +kernel
+theorem ugRes_19 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 19 = true := by decide +kernel
+theorem ugRes_20 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 20 = true := by decide +kernel
+theorem ugRes_21 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 21 = true := by decide +kernel
+theorem ugRes_22 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 22 = true := by decide +kernel
+theorem ugRes_23 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 23 = true := by decide +kernel
+theorem ugRes_24 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 24 = true := by decide +kernel
+theorem ugRes_25 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 25 = true := by decide +kernel
+theorem ugRes_26 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 26 = true := by decide +kernel
+theorem ugRes_27 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 27 = true := by decide +kernel
+theorem ugRes_28 : UnitGenResidue.unitResidueSlice 15 16 ugCert resTables ugCands 9 28 = true := by decide +kernel
+
+/-- **Unit generation, proved** (`UnitGenResidue.unitGen_of_residueSlab`): the slab of 648719 lattice points in 28749 rows `(B, C)`, filtered by the residue tables, leaves 9012 points in 8011 rows; checked in 29 slices of 9 values of `B`. -/
 theorem unitGen_proved : unitGen :=
-  UnitGenProof.unitGen_of_slab 15 16 e1 e1i e2 e2i ugCert (w := 2) (n := 130) ugCore_ok
+  UnitGenResidue.unitGen_of_residueSlab 15 16 e1 e1i e2 e2i ugCert resTables (w := 9) (n := 29) ugCore_ok resTables_ok
     (by norm_num) (by decide)
-    (fun (t : ℕ) (ht : t < 130) => by
+    (fun (t : ℕ) (ht : t < 29) => by
       interval_cases t
-      exacts [ugSlab_0, ugSlab_1, ugSlab_2, ugSlab_3, ugSlab_4, ugSlab_5, ugSlab_6, ugSlab_7, ugSlab_8, ugSlab_9, ugSlab_10, ugSlab_11, ugSlab_12, ugSlab_13, ugSlab_14, ugSlab_15, ugSlab_16, ugSlab_17, ugSlab_18, ugSlab_19, ugSlab_20, ugSlab_21, ugSlab_22, ugSlab_23, ugSlab_24, ugSlab_25, ugSlab_26, ugSlab_27, ugSlab_28, ugSlab_29, ugSlab_30, ugSlab_31, ugSlab_32, ugSlab_33, ugSlab_34, ugSlab_35, ugSlab_36, ugSlab_37, ugSlab_38, ugSlab_39, ugSlab_40, ugSlab_41, ugSlab_42, ugSlab_43, ugSlab_44, ugSlab_45, ugSlab_46, ugSlab_47, ugSlab_48, ugSlab_49, ugSlab_50, ugSlab_51, ugSlab_52, ugSlab_53, ugSlab_54, ugSlab_55, ugSlab_56, ugSlab_57, ugSlab_58, ugSlab_59, ugSlab_60, ugSlab_61, ugSlab_62, ugSlab_63, ugSlab_64, ugSlab_65, ugSlab_66, ugSlab_67, ugSlab_68, ugSlab_69, ugSlab_70, ugSlab_71, ugSlab_72, ugSlab_73, ugSlab_74, ugSlab_75, ugSlab_76, ugSlab_77, ugSlab_78, ugSlab_79, ugSlab_80, ugSlab_81, ugSlab_82, ugSlab_83, ugSlab_84, ugSlab_85, ugSlab_86, ugSlab_87, ugSlab_88, ugSlab_89, ugSlab_90, ugSlab_91, ugSlab_92, ugSlab_93, ugSlab_94, ugSlab_95, ugSlab_96, ugSlab_97, ugSlab_98, ugSlab_99, ugSlab_100, ugSlab_101, ugSlab_102, ugSlab_103, ugSlab_104, ugSlab_105, ugSlab_106, ugSlab_107, ugSlab_108, ugSlab_109, ugSlab_110, ugSlab_111, ugSlab_112, ugSlab_113, ugSlab_114, ugSlab_115, ugSlab_116, ugSlab_117, ugSlab_118, ugSlab_119, ugSlab_120, ugSlab_121, ugSlab_122, ugSlab_123, ugSlab_124, ugSlab_125, ugSlab_126, ugSlab_127, ugSlab_128, ugSlab_129])
+      exacts [ugRes_0, ugRes_1, ugRes_2, ugRes_3, ugRes_4, ugRes_5, ugRes_6, ugRes_7, ugRes_8, ugRes_9, ugRes_10, ugRes_11, ugRes_12, ugRes_13, ugRes_14, ugRes_15, ugRes_16, ugRes_17, ugRes_18, ugRes_19, ugRes_20, ugRes_21, ugRes_22, ugRes_23, ugRes_24, ugRes_25, ugRes_26, ugRes_27, ugRes_28])
 
 /-! ### Layer 2: the source equations -/
 
@@ -414,7 +323,7 @@ def analytic_g1 : Prop :=
 theorem analytic_g1_proved (hM : matveev_g1) : analytic_g1 :=
   (UnitPremises.analytic_cons (analytic_g1_0_proved hM.1) (UnitPremises.analytic_cons (analytic_g1_1_proved hM.2.1) (UnitPremises.analytic_cons (analytic_g1_2_proved hM.2.2) (UnitPremises.analytic_nil _ _ _ _ _ _ _ _ _ _))))
 
-/-- Negative control: every chain of `[-6, -3, 1098, 61] = 1` with its final bound lowered by one is rejected. -/
+/-- Negative control: every chain of `[-6, -3, 1098, 61] = 1` with its final bound lowered by one is rejected by the kernel. -/
 theorem forged_rejected_g1 : UnitPremises.forgedRejectedB reps_g1 = true := by decide +kernel
 
 /-- **`[-6, -3, 1098, 61] = 1`, complete under Matveev's bound** (3 norm representatives): `[-6, -3, 1098, 61]` takes the value 1 exactly at 0 point(s). -/

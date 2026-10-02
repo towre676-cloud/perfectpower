@@ -130,6 +130,10 @@ def build(P, Q):
                    f"def L_{n} : List Z3 := [{', '.join(z(g) for g in lists[n])}]\n\n"
                    f"theorem rep_{n} : NormRepAbs {P} {Q} {n} L_{n} :=\n"
                    f"  normRepAbs_step' (by norm_num) (by norm_num) cover_{d} {prev_thm} (by decide +kernel)\n")
+        if len(lists[n]) > 1:
+            out.append(f"/-- The {len(lists[n])} representatives of norm `±{n}` are pairwise nonassociate (`assocB`): with "
+                       f"`rep_{n}`, there are exactly {len(lists[n])} associate classes of norm `±{n}`. -/\n"
+                       f"theorem distinct_{n} : L_{n}.Pairwise (fun x y => assocB {P} {Q} x y = false) := by decide +kernel\n")
     for N, (m, reps) in cfg.get('res', {}).items():
         reps = [g if U.nrm(P, Q, g) == N else tuple(-c for c in g) for g in reps]
         assert all(U.nrm(P, Q, g) == N for g in reps) and m % N == 0
