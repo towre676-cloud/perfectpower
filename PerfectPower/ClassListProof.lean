@@ -213,6 +213,80 @@ theorem dQuad_eq (k a b c d : ℤ) :
     delta (a, b, c, d) - 4 * k = (dQuad k a b c).1 * d ^ 2 + (dQuad k a b c).2.1 * d + (dQuad k a b c).2.2 := by
   simp only [delta, dQuad]; ring
 
+/-- Binary search for `⌊√n⌋` with fuel (structural recursion, kernel-friendly).  Its result is
+checked (`r² ≤ n < (r + 1)²`) wherever it is used, so it needs no correctness proof. -/
+def isqrtF (n : ℕ) : ℕ → ℕ → ℕ → ℕ
+  | 0, lo, _ => lo
+  | fuel + 1, lo, hi =>
+    if hi ≤ lo + 1 then lo
+    else if ((lo + hi) / 2) * ((lo + hi) / 2) ≤ n then isqrtF n fuel ((lo + hi) / 2) hi
+    else isqrtF n fuel lo ((lo + hi) / 2)
+
+/-- The candidate roots of `α t² + β t + γ = 0`, with a checked square root of the discriminant;
+`none` if the check fails. -/
+def tCandsC (α β γ : ℤ) : Option (List ℤ) :=
+  if α ≠ 0 then
+    let D := β ^ 2 - 4 * α * γ
+    if D < 0 then some [] else
+    let r : ℤ := isqrtF D.toNat 200 0 (D.toNat + 1)
+    if r ^ 2 ≤ D ∧ D < (r + 1) ^ 2 then
+      some (([r, -r].filter fun z => (z - β) % (2 * α) = 0).map fun z => (z - β) / (2 * α))
+    else none
+  else if β ≠ 0 then some (if γ % β = 0 then [-γ / β] else []) else none
+
+theorem mem_tCandsC {α β γ t : ℤ} {L : List ℤ} (hL : tCandsC α β γ = some L)
+    (ht : α * t ^ 2 + β * t + γ = 0) : t ∈ L := by
+  unfold tCandsC at hL
+  by_cases hα : α ≠ 0
+  · simp only [hα, ne_eq, not_false_eq_true, ↓reduceIte] at hL
+    have hsq : (2 * α * t + β) ^ 2 = β ^ 2 - 4 * α * γ := by linear_combination 4 * α * ht
+    by_cases hD : β ^ 2 - 4 * α * γ < 0
+    · exfalso; nlinarith [sq_nonneg (2 * α * t + β)]
+    simp only [hD, ↓reduceIte] at hL
+    set r : ℤ := (isqrtF (β ^ 2 - 4 * α * γ).toNat 200 0 ((β ^ 2 - 4 * α * γ).toNat + 1) : ℤ) with hr
+    split_ifs at hL with hrc
+    · obtain ⟨hr1, hr2⟩ := hrc
+      have hrpos : 0 ≤ r := by positivity
+      have habs : |2 * α * t + β| = r := by
+        have h1 : r ^ 2 ≤ |2 * α * t + β| ^ 2 := by rw [sq_abs, hsq]; exact hr1
+        have h2 : |2 * α * t + β| ^ 2 < (r + 1) ^ 2 := by rw [sq_abs, hsq]; exact hr2
+        have a1 : r ≤ |2 * α * t + β| := by
+          rcases lt_or_le (|2 * α * t + β|) r with hc | hc
+          · have := pow_lt_pow_left₀ hc (abs_nonneg _) (by norm_num : (2 : ℕ) ≠ 0)
+            linarith
+          · exact hc
+        have a2 : |2 * α * t + β| < r + 1 := by
+          rcases lt_or_le (|2 * α * t + β|) (r + 1) with hc | hc
+          · exact hc
+          · have := pow_le_pow_left₀ (by linarith) hc 2
+            linarith
+        omega
+      have h2 : (2 * α) ≠ 0 := by positivity
+      simp only [Option.some.injEq] at hL
+      subst hL
+      simp only [List.mem_map, List.mem_filter, List.mem_cons, List.not_mem_nil, or_false, decide_eq_true_eq]
+      rcases abs_eq hrpos |>.mp habs with he | he
+      · refine ⟨r, ⟨Or.inl rfl, ?_⟩, ?_⟩
+        · rw [← he]; simp [Int.mul_emod_right]
+        · rw [← he, show 2 * α * t + β - β = 2 * α * t by ring, Int.mul_ediv_cancel_left _ h2]
+      · refine ⟨-r, ⟨Or.inr rfl, ?_⟩, ?_⟩
+        · rw [show -r = 2 * α * t + β by linarith]; simp [Int.mul_emod_right]
+        · rw [show -r = 2 * α * t + β by linarith, show 2 * α * t + β - β = 2 * α * t by ring,
+            Int.mul_ediv_cancel_left _ h2]
+  · have hα0 : α = 0 := not_not.mp hα
+    subst hα0
+    simp only [ne_eq, not_true_eq_false, ↓reduceIte] at hL
+    by_cases hβ : β = 0
+    · simp [hβ] at hL
+    simp only [hβ, not_false_eq_true, ↓reduceIte, Option.some.injEq] at hL
+    subst hL
+    have hbt : β * t = -γ := by linarith
+    have hd : γ % β = 0 := by
+      have : γ = β * (-t) := by linarith
+      rw [this]; simp
+    simp only [hd, ↓reduceIte, List.mem_singleton]
+    rw [show -γ = β * t by linarith, Int.mul_ediv_cancel_left _ hβ]
+
 /-- A transport certificate: the form, a listed class, and `(p, q, r, s)` with `act G p q r s = F`. -/
 abbrev Cert := (ℤ × ℤ × ℤ × ℤ) × (ℤ × ℤ × ℤ × ℤ) × ℤ × ℤ × ℤ × ℤ
 
@@ -230,9 +304,10 @@ def boxCertB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs :
       let b : ℤ := j - bmax
       let c : ℤ := l - bmax
       let Qd := dQuad k a b c
-      (decide (Qd.1 ≠ 0 ∨ Qd.2.1 ≠ 0) || decide (Qd.2.2 ≠ 0)) &&
-      (tCands Qd.1 Qd.2.1 Qd.2.2).all fun d =>
-        decide (delta (a, b, c, d) ≠ 4 * k) || certs.any (certOK Gs (a, b, c, d))
+      if Qd.1 = 0 ∧ Qd.2.1 = 0 then decide (Qd.2.2 ≠ 0) else
+      match tCandsC Qd.1 Qd.2.1 Qd.2.2 with
+      | none => false
+      | some L => L.all fun d => decide (delta (a, b, c, d) ≠ 4 * k) || certs.any (certOK Gs (a, b, c, d))
 
 theorem box_sound {k amax bmax : ℤ} {Gs : List (ℤ × ℤ × ℤ × ℤ)} {certs : List Cert}
     (h : boxCertB k amax bmax Gs certs = true) (F : ℤ × ℤ × ℤ × ℤ) (hF : delta F = 4 * k)
@@ -242,25 +317,21 @@ theorem box_sound {k amax bmax : ℤ} {Gs : List (ℤ × ℤ × ℤ × ℤ)} {ce
   have ha' := abs_le.mp ha
   have hb' := abs_le.mp hb
   have hc' := abs_le.mp hc
-  simp only [boxCertB, List.all_eq_true, List.mem_range, Bool.and_eq_true, Bool.or_eq_true,
-    decide_eq_true_eq] at h
+  simp only [boxCertB, List.all_eq_true, List.mem_range] at h
   have hh := h (a + amax).toNat (by omega) (b + bmax).toNat (by omega) (c + bmax).toNat (by omega)
   have e1 : ((a + amax).toNat : ℤ) - amax = a := by omega
   have e2 : ((b + bmax).toNat : ℤ) - bmax = b := by omega
   have e3 : ((c + bmax).toNat : ℤ) - bmax = c := by omega
   simp only [e1, e2, e3] at hh
-  obtain ⟨hnd, hall⟩ := hh
   have hq := dQuad_eq k a b c d
   rw [hF, sub_self] at hq
-  have hne : (dQuad k a b c).1 ≠ 0 ∨ (dQuad k a b c).2.1 ≠ 0 := by
-    rcases hnd with h1 | h1
-    · exact h1
-    · by_contra hc0
-      rw [not_or, not_not, not_not] at hc0
-      rw [hc0.1, hc0.2] at hq
-      exact h1 (by linarith)
-  have hd := mem_tCands (t := d) (γ := (dQuad k a b c).2.2) hne (by linarith)
-  rcases hall d hd with h1 | h1
+  split_ifs at hh with hz
+  · exfalso; rw [hz.1, hz.2] at hq; simp at hh; exact hh (by linarith)
+  split at hh
+  · exact absurd hh (by simp)
+  rename_i L hL
+  simp only [List.all_eq_true, Bool.or_eq_true, decide_eq_true_eq] at hh
+  rcases hh d (mem_tCandsC hL (by linarith)) with h1 | h1
   · exact absurd hF h1
   · obtain ⟨e, -, he⟩ := List.any_eq_true.mp h1
     simp only [certOK, Bool.and_eq_true, decide_eq_true_eq] at he
