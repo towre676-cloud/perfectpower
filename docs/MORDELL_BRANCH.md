@@ -606,7 +606,7 @@ Most slab points fail to have norm `±1` for local reasons. The module works as 
 
 | order | slab points | filtered points | rows with a nonempty mask | module build, slab → residue |
 |---|---|---|---|---|
-| `t³ = 15t + 16` (`D = 61`) | 648,719 | 9,012 | 8,011 of 28,749 | MINUS61 |
+| `t³ = 15t + 16` (`D = 61`) | 648,719 | 9,012 | 8,011 of 28,749 | 2342 s → 494 s |
 | `t³ = 21t + 32` (`D = 87`) | 34,431 | 482 | 945 of 5,661 | 441 s → 243 s |
 | `t³ = 18t + 22` (`D = 95`) | 17,413 | 482 | 1,173 of 2,139 | 234 s → 178 s |
 
