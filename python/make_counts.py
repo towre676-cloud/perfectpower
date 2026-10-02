@@ -25,6 +25,13 @@ generated = [l for l in audited if 'PerfectPower.Generated.' in l and 'Mordell' 
 # theorems that hold only under a named external hypothesis (an exponent bound), reported apart
 conditional = [l for l in audited if '.Field756.minus' in l or 'D72Residual.residual_empty' in l
                or re.search(r'\.Minus(\d+)\.minus\1\b', l)]
+cond_names = sorted({m.group(0).split(' ')[-1].replace('PerfectPower.Generated.', '').replace('PerfectPower.', '').strip("'")
+                     for l in conditional for m in [re.search(r'PerfectPower\.\S+', l)] if m},
+                    key=lambda n: (0 if n.startswith('Field756') else 2 if n.startswith('D72') else 1,
+                                   int(re.sub(r'\D', '', n.split('.')[0]) or 0), n))
+posk = sorted({int(m.group(1)) for l in audited for m in [re.search(r'\.ClassLists\.K(\d+)\.plus\1\b', l)] if m})
+_pk = json.loads((root / 'receipts' / 'positive_k.json').read_text())['summary']
+posk_empty = set(_pk['all_classes_locally_impossible'])
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
@@ -32,7 +39,10 @@ lines = [
     f'`Quot.sound` (or a subset): **{len(standard)}**.',
     f'- Machine-generated Lean hit-set certificates: **{len(generated)}**.',
     f'- Theorems conditional on named premises (Matveev\'s lower bound, three explicit instances per class; not counted as closed): **{len(conditional)}** '
-    '(`Field756.minus7`, `minus28`, `minus63`; `Minus15.minus15`, `Minus25.minus25`, `Minus18.minus18`, `Minus23.minus23`, `Minus26.minus26`, `Minus39.minus39`, `Minus45.minus45`, `Minus47.minus47`, `Minus48.minus48`, `Minus53.minus53`, `Minus55.minus55`, `Minus60.minus60`, `Minus71.minus71`, `Minus72.minus72`, `Minus87.minus87`, `Minus89.minus89`, `Minus95.minus95`, `Minus100.minus100`; `D72Residual.residual_empty`).',
+    '(' + ', '.join(f'`{n}`' for n in cond_names) + ').',
+    f'- Positive $k$: curves $y^2=x^3+k$, $1\\le k\\le100$, with complete integral-point lists in Lean and **no** premise '
+    f'(class lists proved, reducible classes solved; `Generated/ClassLists/K*.lean`): **{len(posk)}** '
+    f'({sum(1 for k in posk if k in posk_empty)} empty).',
     '- Atlas families by certification label: '
     + ', '.join(f'`{k}` {v}' for k, v in sorted(labels.items())) + '.',
 ]
