@@ -41,24 +41,72 @@ theorem cond_0 : condB (-9) (-8) η0 c0 = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-theorem chunk0_0 : (List.range' (0 * 20000) 20000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+theorem chunk0_0 : (List.range' (0 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-theorem chunk0_1 : (List.range' (1 * 20000) 20000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+theorem chunk0_1 : (List.range' (1 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-theorem chunk0_2 : (List.range' (2 * 20000) 20000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+theorem chunk0_2 : (List.range' (2 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
 
 set_option maxRecDepth 100000 in
 set_option maxHeartbeats 0 in
-theorem chunk0_3 : (List.range' (3 * 20000) 20000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+theorem chunk0_3 : (List.range' (3 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_4 : (List.range' (4 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_5 : (List.range' (5 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_6 : (List.range' (6 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_7 : (List.range' (7 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_8 : (List.range' (8 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_9 : (List.range' (9 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_10 : (List.range' (10 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_11 : (List.range' (11 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_12 : (List.range' (12 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_13 : (List.range' (13 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_14 : (List.range' (14 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_15 : (List.range' (15 * 4000) 4000).all (slabSliceB (-9) (-8) η0 c0) = true := by decide +kernel
 
 theorem slab_0 : slabB (-9) (-8) η0 c0 = true :=
-  slabB_of_chunks (w := 20000) (n := 4) (by decide) fun m hm => by
+  slabB_of_chunks (w := 4000) (n := 16) (by decide) fun m hm => by
     interval_cases m
-    exacts [chunk0_0, chunk0_1, chunk0_2, chunk0_3]
+    exacts [chunk0_0, chunk0_1, chunk0_2, chunk0_3, chunk0_4, chunk0_5, chunk0_6, chunk0_7, chunk0_8, chunk0_9, chunk0_10, chunk0_11, chunk0_12, chunk0_13, chunk0_14, chunk0_15]
 
 theorem skη_0 : skolemB (-9) (-8) η0 23 11 = true := by decide +kernel
 
