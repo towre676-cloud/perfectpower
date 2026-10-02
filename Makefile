@@ -59,6 +59,7 @@ receipts:
 	$(PY) python/descent_coverage.py
 	$(PY) python/positive_k.py
 	$(PY) python/class_list_cert.py
+	$(PY) python/positive_k_next.py
 	$(PY) python/make_mordell_registry.py
 	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py

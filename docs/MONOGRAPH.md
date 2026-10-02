@@ -330,6 +330,37 @@ When ordinary density h exists, t K_X(t)→h. In general limsup_(t↓0)t K_X(t)�
 
 ### 7. Formalization and research receipts
 
+#### Positive-`k` irreducible workload and the rank-one boundary (October 2026)
+
+The exact triage in `receipts/positive_k_next.json`, derived by
+`python/positive_k_next.py` from the positive-`k` class receipt, leaves 104
+locally admissible irreducible Thue equations across 61 curves. The absolute
+leading coefficients are 1 in 68 equations, 2 in 25, 3 in 10, and 4 in one.
+Eighty-seven equations have at least one known representation in the bounded
+search, which is evidence of a hit and cannot establish a complete list.
+The 39 curves whose classes are locally impossible or reducible have a
+separate Lean class-list construction in progress; its running release build
+is not certified by this receipt.
+
+For $F(u,v)=au^3+B u^2v+Cuv^2+dv^3$ with $a=\pm1$ and $3\mid B$, set
+$h=B/(3a)$, $p=C/a-3h^2$, and $q=d/a-(C/a)h+2h^3$. If
+$z^3+pz+q=0$, direct multiplication gives
+$$F(u,v)=aN_{\mathbb Q(z)/\mathbb Q}((u+hv)-vz).$$
+The discriminant $-4p^3-27q^2=-108k$ is checked for each monic row. Thus
+$F=1$ gives a unit of $\mathbb Z[z]$ immediately. This identity removes
+the norm-representative question for 68 equations, but a complete unit
+generator and a complete zero set for the associated exponent recurrence
+are still required. See `docs/POSITIVE_K_NEXT.md` for the first pilot,
+$k=2$, where $F=-u^3-3uv^2-2v^3=-N(u-vz)$ with $z^3+3z+2=0$.
+
+If units are proved to be $\{\pm\varepsilon^n:n\in\mathbb Z\}$, writing
+$\varepsilon^n=A_n+B_nz+C_nz^2$ reduces this monic source to the exact
+zero problem $C_n=0$ together with the norm sign. A bounded scan of $n$
+cannot close that recurrence. A complete certificate needs an effective
+exponent bound with exhaustive reduction, or residue-class $p$-adic
+analytic arguments that cover every integer exponent. This is the
+mathematical boundary for the proposed rank-one source engine.
+
 The Lean sources specify the hit predicate and elementary proofs. As of release 0.6 they compile against Lean and Mathlib `v4.20.0`: exact definitions, HasDensity⇒H, the bounded-count squeeze, the exact finite-surgery identity, periodic rationality, the rigid truncation, the integer-closure step, and the analytic finite-hit theorem are all `LEAN_VERIFIED`, and three files needed tactic repairs first (a source line containing neither `sorry` nor `axiom` could and did fail to elaborate). A verified numerical cutoff remains to be layered on. Boshernitzan's criterion belongs in a named external-assumption boundary until a formal statement and proof are imported. A Lean theorem must not be inferred from an exact Python certificate, nor a Python test from an uncompiled Lean term.
 
 The τ monotonicity assertion should be a runtime property of actual manifests or a hypothesis of a rational-valued structure; it is false for a generic list, for example [1,0]. An uninterpreted proposition named an obstruction has no consequences until related to a mathematical construction. The old periodic zeta and heat statements are true with their hypotheses; heat density has a broader Abelian version. The tropical maximum and cofinite Čech statement are elementary observations. The BSD receipt should be replaced by the shifted-curve application of Siegel. The research ledger in this package distinguishes these theorem dependencies, executable checks, and open questions.
