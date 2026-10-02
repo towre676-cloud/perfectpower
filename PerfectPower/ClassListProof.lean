@@ -297,8 +297,8 @@ def certOK (Gs : List (ℤ × ℤ × ℤ × ℤ)) (F : ℤ × ℤ × ℤ × ℤ)
 
 /-- **The box check**: every `(a, b, c, d)` with `|a| ≤ amax`, `|b|, |c| ≤ bmax` and `Δ = 4k` has a
 certificate (`d` runs over the integer roots of `Δ = 4k`, `ReducibleThue.tCands`). -/
-def boxCertB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs : List Cert) : Bool :=
-  (List.range (2 * amax + 1).toNat).all fun i => (List.range (2 * bmax + 1).toNat).all fun j =>
+def boxSliceB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs : List Cert) (i : ℕ) : Bool :=
+  (List.range (2 * bmax + 1).toNat).all fun j =>
     (List.range (2 * bmax + 1).toNat).all fun l =>
       let a : ℤ := i - amax
       let b : ℤ := j - bmax
@@ -309,6 +309,16 @@ def boxCertB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs :
       | none => false
       | some L => L.all fun d => decide (delta (a, b, c, d) ≠ 4 * k) || certs.any (certOK Gs (a, b, c, d))
 
+def boxCertB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs : List Cert) : Bool :=
+  (List.range (2 * amax + 1).toNat).all (boxSliceB k amax bmax Gs certs)
+
+/-- The box check from its slices (one kernel evaluation per value of `a`). -/
+theorem boxCertB_of_slices {k amax bmax : ℤ} {Gs : List (ℤ × ℤ × ℤ × ℤ)} {certs : List Cert}
+    (h : ∀ i < (2 * amax + 1).toNat, boxSliceB k amax bmax Gs certs i = true) :
+    boxCertB k amax bmax Gs certs = true := by
+  simp only [boxCertB, List.all_eq_true, List.mem_range]
+  exact h
+
 theorem box_sound {k amax bmax : ℤ} {Gs : List (ℤ × ℤ × ℤ × ℤ)} {certs : List Cert}
     (h : boxCertB k amax bmax Gs certs = true) (F : ℤ × ℤ × ℤ × ℤ) (hF : delta F = 4 * k)
     (ha : |F.1| ≤ amax) (hb : |F.2.1| ≤ bmax) (hc : |F.2.2.1| ≤ bmax) : ∃ G ∈ Gs, Equiv G F := by
@@ -317,7 +327,7 @@ theorem box_sound {k amax bmax : ℤ} {Gs : List (ℤ × ℤ × ℤ × ℤ)} {ce
   have ha' := abs_le.mp ha
   have hb' := abs_le.mp hb
   have hc' := abs_le.mp hc
-  simp only [boxCertB, List.all_eq_true, List.mem_range] at h
+  simp only [boxCertB, boxSliceB, List.all_eq_true, List.mem_range] at h
   have hh := h (a + amax).toNat (by omega) (b + bmax).toNat (by omega) (c + bmax).toNat (by omega)
   have e1 : ((a + amax).toNat : ℤ) - amax = a := by omega
   have e2 : ((b + bmax).toNat : ℤ) - bmax = b := by omega

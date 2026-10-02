@@ -89,6 +89,8 @@ import PerfectPower.Generated.PositiveK
 import PerfectPower.ReducibleThue
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.PositiveKComplete
+import PerfectPower.CubicReduction
+import PerfectPower.ClassListProof
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances

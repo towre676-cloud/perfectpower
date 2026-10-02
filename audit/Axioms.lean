@@ -2549,3 +2549,142 @@ open PerfectPower
 #print axioms PerfectPower.Generated.PositiveKComplete.plus95_complete
 #print axioms PerfectPower.Generated.PositiveKComplete.sols_96
 #print axioms PerfectPower.Generated.PositiveKComplete.plus96_complete
+-- CubicReduction
+#print axioms PerfectPower.CubicReduction.cubic_root
+#print axioms PerfectPower.CubicReduction.factor
+#print axioms PerfectPower.CubicReduction.disc_factor
+#print axioms PerfectPower.CubicReduction.amgm
+#print axioms PerfectPower.CubicReduction.q_eq
+#print axioms PerfectPower.CubicReduction.q_det
+#print axioms PerfectPower.CubicReduction.value_bound
+#print axioms PerfectPower.CubicReduction.gauss_reduce
+#print axioms PerfectPower.CubicReduction.reduce_box
+#print axioms PerfectPower.CubicReduction.int_bounds
+-- ClassListProof
+#print axioms PerfectPower.ClassListProof.act_comp
+#print axioms PerfectPower.ClassListProof.equiv_trans
+#print axioms PerfectPower.ClassListProof.equiv_symm
+#print axioms PerfectPower.ClassListProof.lead_ne
+#print axioms PerfectPower.ClassListProof.reduce_int
+#print axioms PerfectPower.ClassListProof.shift_zero
+#print axioms PerfectPower.ClassListProof.mem_tCandsC
+#print axioms PerfectPower.ClassListProof.box_sound
+#print axioms PerfectPower.ClassListProof.boxCertB_of_slices
+#print axioms PerfectPower.ClassListProof.classList_of
+-- Generated/ClassLists/K5
+#print axioms PerfectPower.Generated.ClassLists.K5.classList
+#print axioms PerfectPower.Generated.ClassLists.K5.plus5
+-- Generated/ClassLists/K6
+#print axioms PerfectPower.Generated.ClassLists.K6.classList
+#print axioms PerfectPower.Generated.ClassLists.K6.plus6
+-- Generated/ClassLists/K7
+#print axioms PerfectPower.Generated.ClassLists.K7.classList
+#print axioms PerfectPower.Generated.ClassLists.K7.plus7
+-- Generated/ClassLists/K13
+#print axioms PerfectPower.Generated.ClassLists.K13.classList
+#print axioms PerfectPower.Generated.ClassLists.K13.plus13
+-- Generated/ClassLists/K14
+#print axioms PerfectPower.Generated.ClassLists.K14.classList
+#print axioms PerfectPower.Generated.ClassLists.K14.plus14
+-- Generated/ClassLists/K16
+#print axioms PerfectPower.Generated.ClassLists.K16.classList
+#print axioms PerfectPower.Generated.ClassLists.K16.plus16
+-- Generated/ClassLists/K20
+#print axioms PerfectPower.Generated.ClassLists.K20.classList
+#print axioms PerfectPower.Generated.ClassLists.K20.plus20
+-- Generated/ClassLists/K21
+#print axioms PerfectPower.Generated.ClassLists.K21.classList
+#print axioms PerfectPower.Generated.ClassLists.K21.plus21
+-- Generated/ClassLists/K23
+#print axioms PerfectPower.Generated.ClassLists.K23.classList
+#print axioms PerfectPower.Generated.ClassLists.K23.plus23
+-- Generated/ClassLists/K27
+#print axioms PerfectPower.Generated.ClassLists.K27.classList
+#print axioms PerfectPower.Generated.ClassLists.K27.plus27
+-- Generated/ClassLists/K29
+#print axioms PerfectPower.Generated.ClassLists.K29.classList
+#print axioms PerfectPower.Generated.ClassLists.K29.plus29
+-- Generated/ClassLists/K32
+#print axioms PerfectPower.Generated.ClassLists.K32.classList
+#print axioms PerfectPower.Generated.ClassLists.K32.plus32
+-- Generated/ClassLists/K34
+#print axioms PerfectPower.Generated.ClassLists.K34.classList
+#print axioms PerfectPower.Generated.ClassLists.K34.plus34
+-- Generated/ClassLists/K42
+#print axioms PerfectPower.Generated.ClassLists.K42.classList
+#print axioms PerfectPower.Generated.ClassLists.K42.plus42
+-- Generated/ClassLists/K45
+#print axioms PerfectPower.Generated.ClassLists.K45.classList
+#print axioms PerfectPower.Generated.ClassLists.K45.plus45
+-- Generated/ClassLists/K50
+#print axioms PerfectPower.Generated.ClassLists.K50.classList
+#print axioms PerfectPower.Generated.ClassLists.K50.plus50
+-- Generated/ClassLists/K51
+#print axioms PerfectPower.Generated.ClassLists.K51.classList
+#print axioms PerfectPower.Generated.ClassLists.K51.plus51
+-- Generated/ClassLists/K52
+#print axioms PerfectPower.Generated.ClassLists.K52.classList
+#print axioms PerfectPower.Generated.ClassLists.K52.plus52
+-- Generated/ClassLists/K53
+#print axioms PerfectPower.Generated.ClassLists.K53.classList
+#print axioms PerfectPower.Generated.ClassLists.K53.plus53
+-- Generated/ClassLists/K58
+#print axioms PerfectPower.Generated.ClassLists.K58.classList
+#print axioms PerfectPower.Generated.ClassLists.K58.plus58
+-- Generated/ClassLists/K59
+#print axioms PerfectPower.Generated.ClassLists.K59.classList
+#print axioms PerfectPower.Generated.ClassLists.K59.plus59
+-- Generated/ClassLists/K60
+#print axioms PerfectPower.Generated.ClassLists.K60.classList
+#print axioms PerfectPower.Generated.ClassLists.K60.plus60
+-- Generated/ClassLists/K61
+#print axioms PerfectPower.Generated.ClassLists.K61.classList
+#print axioms PerfectPower.Generated.ClassLists.K61.plus61
+-- Generated/ClassLists/K67
+#print axioms PerfectPower.Generated.ClassLists.K67.classList
+#print axioms PerfectPower.Generated.ClassLists.K67.plus67
+-- Generated/ClassLists/K69
+#print axioms PerfectPower.Generated.ClassLists.K69.classList
+#print axioms PerfectPower.Generated.ClassLists.K69.plus69
+-- Generated/ClassLists/K70
+#print axioms PerfectPower.Generated.ClassLists.K70.classList
+#print axioms PerfectPower.Generated.ClassLists.K70.plus70
+-- Generated/ClassLists/K74
+#print axioms PerfectPower.Generated.ClassLists.K74.classList
+#print axioms PerfectPower.Generated.ClassLists.K74.plus74
+-- Generated/ClassLists/K75
+#print axioms PerfectPower.Generated.ClassLists.K75.classList
+#print axioms PerfectPower.Generated.ClassLists.K75.plus75
+-- Generated/ClassLists/K77
+#print axioms PerfectPower.Generated.ClassLists.K77.classList
+#print axioms PerfectPower.Generated.ClassLists.K77.plus77
+-- Generated/ClassLists/K78
+#print axioms PerfectPower.Generated.ClassLists.K78.classList
+#print axioms PerfectPower.Generated.ClassLists.K78.plus78
+-- Generated/ClassLists/K83
+#print axioms PerfectPower.Generated.ClassLists.K83.classList
+#print axioms PerfectPower.Generated.ClassLists.K83.plus83
+-- Generated/ClassLists/K84
+#print axioms PerfectPower.Generated.ClassLists.K84.classList
+#print axioms PerfectPower.Generated.ClassLists.K84.plus84
+-- Generated/ClassLists/K85
+#print axioms PerfectPower.Generated.ClassLists.K85.classList
+#print axioms PerfectPower.Generated.ClassLists.K85.plus85
+-- Generated/ClassLists/K86
+#print axioms PerfectPower.Generated.ClassLists.K86.classList
+#print axioms PerfectPower.Generated.ClassLists.K86.plus86
+-- Generated/ClassLists/K87
+#print axioms PerfectPower.Generated.ClassLists.K87.classList
+#print axioms PerfectPower.Generated.ClassLists.K87.plus87
+-- Generated/ClassLists/K88
+#print axioms PerfectPower.Generated.ClassLists.K88.classList
+#print axioms PerfectPower.Generated.ClassLists.K88.plus88
+-- Generated/ClassLists/K93
+#print axioms PerfectPower.Generated.ClassLists.K93.classList
+#print axioms PerfectPower.Generated.ClassLists.K93.plus93
+-- Generated/ClassLists/K95
+#print axioms PerfectPower.Generated.ClassLists.K95.classList
+#print axioms PerfectPower.Generated.ClassLists.K95.plus95
+-- Generated/ClassLists/K96
+#print axioms PerfectPower.Generated.ClassLists.K96.classList
+#print axioms PerfectPower.Generated.ClassLists.K96.plus96
