@@ -338,9 +338,9 @@ locally admissible irreducible Thue equations across 61 curves. The absolute
 leading coefficients are 1 in 68 equations, 2 in 25, 3 in 10, and 4 in one.
 Eighty-seven equations have at least one known representation in the bounded
 search, which is evidence of a hit and cannot establish a complete list.
-The 39 curves whose classes are locally impossible or reducible have a
-separate Lean class-list construction in progress; its running release build
-is not certified by this receipt.
+The 39 curves whose classes are locally impossible or reducible are
+complete in Lean with proved class lists (`Generated/ClassLists/K*.lean`);
+this receipt does not certify them.
 
 For $F(u,v)=au^3+B u^2v+Cuv^2+dv^3$ with $a=\pm1$ and $3\mid B$, set
 $h=B/(3a)$, $p=C/a-3h^2$, and $q=d/a-(C/a)h+2h^3$. If
@@ -360,6 +360,19 @@ cannot close that recurrence. A complete certificate needs an effective
 exponent bound with exhaustive reduction, or residue-class $p$-adic
 analytic arguments that cover every integer exponent. This is the
 mathematical boundary for the proposed rank-one source engine.
+
+For $k=2$ both steps are now proved in Lean (`Plus2.lean`, `Skolem3.lean`).
+The units of $\mathbb Z[z]$ are $\pm\eta^n$ with $\eta=17-3z+5z^2=\varepsilon^{-1}$,
+$\varepsilon=1+z-z^2$. The proof uses a real-embedding reduction and a
+kernel-checked box, and the norm is split as
+$N(g)=\sigma(g)(\mathrm{re}^2+\kappa^2j^2)$ without complex numbers. The $z^2$
+coordinate of $\eta^n$ vanishes only at $n=0$, for every integer $n$. This is a
+3-adic argument by integer valuations: $\eta^3$ and $\eta^{-3}$ are
+$\equiv 1 \pmod 3$ with a nonzero linear term, and the residues $n\not\equiv0$
+are excluded modulo 3. Hence $-u^3-3uv^2-2v^3=1$ only at $(-1,0)$. With the
+proved class list, `K2.plus2` states that the integral points of $y^2=x^3+2$ are
+exactly $(-1,\pm1)$, with no premise. The other 103 irreducible equations
+remain.
 
 The Lean sources specify the hit predicate and elementary proofs. As of release 0.6 they compile against Lean and Mathlib `v4.20.0`: exact definitions, HasDensity⇒H, the bounded-count squeeze, the exact finite-surgery identity, periodic rationality, the rigid truncation, the integer-closure step, and the analytic finite-hit theorem are all `LEAN_VERIFIED`, and three files needed tactic repairs first (a source line containing neither `sorry` nor `axiom` could and did fail to elaborate). A verified numerical cutoff remains to be layered on. Boshernitzan's criterion belongs in a named external-assumption boundary until a formal statement and proof are imported. A Lean theorem must not be inferred from an exact Python certificate, nor a Python test from an uncompiled Lean term.
 

@@ -47,6 +47,35 @@ class ClassListCert(unittest.TestCase):
         for c in r['curves']:
             self.assertTrue((ROOT / 'PerfectPower' / 'Generated' / 'ClassLists' / f"K{c['k']}.lean").exists())
 
+    def test_k2_box_certified(self):
+        # the k = 2 module (`Generated/ClassLists/K2.lean`): every box form has a transport
+        P, certs = CL.build(2, [(-1, 0, -1, -2), (0, -1, 0, -2)])
+        self.assertEqual((P['amax'], P['bmax'], len(certs)), (3, 8, 110))
+        for F, G, p, q, r, s in certs:
+            self.assertEqual(CL.act(G, p, q, r, s), F)
+        self.assertTrue((ROOT / 'PerfectPower' / 'Generated' / 'ClassLists' / 'K2.lean').exists())
+
+    def test_plus2_source_data(self):
+        # Python-only sanity checks of the data in `Plus2.lean` (the proof is in Lean)
+        def mul(x, y):  # z^3 = -3z - 2
+            a, b, c = x
+            d, e, f = y
+            c0, c1, c2, c3, c4 = a * d, a * e + b * d, a * f + b * e + c * d, b * f + c * e, c * f
+            # z^4 = -3z^2 - 2z
+            c2 += -3 * c4
+            c1 += -2 * c4
+            return (c0 - 2 * c3, c1 - 3 * c3, c2)
+        eta, eps = (17, -3, 5), (1, 1, -1)
+        self.assertEqual(mul(eta, eps), (1, 0, 0))
+        x, y = (1, 0, 0), (1, 0, 0)
+        for n in range(1, 60):
+            x, y = mul(x, eta), mul(y, eps)
+            self.assertNotEqual(x[2], 0)
+            self.assertNotEqual(y[2], 0)
+        sols = [(u, v) for u in range(-60, 61) for v in range(-60, 61)
+                if -u ** 3 - 3 * u * v * v - 2 * v ** 3 == 1]
+        self.assertEqual(sols, [(-1, 0)])
+
 
 if __name__ == '__main__':
     unittest.main()

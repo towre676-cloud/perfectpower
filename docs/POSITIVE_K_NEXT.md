@@ -33,6 +33,9 @@ The discriminant check `-4p³-27q²=-108k` is performed for every monic
 row by the receipt generator. An equality of discriminants alone does not
 identify orders; order sharing still requires explicit maps.
 
+**Status: done** (`Plus2.source`, `Generated/ClassLists/K2.lean`, `K2.plus2`; see
+`MORDELL_BRANCH.md` §7.4). The plan as written:
+
 The first pilot is `k=2`. Its two classes are
 `(-1,0,-3,-2)` and `(0,-3,0,-2)`. The latter has no representation of 1
 modulo 9. For the former, let `z³+3z+2=0`; then

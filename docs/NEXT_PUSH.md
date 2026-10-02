@@ -152,9 +152,13 @@ git.
 6. **Positive `k`** (`MORDELL_BRANCH.md` §7.4), through Mordell's cubic forms.
    - **Done:** 39 curves `k ≤ 100` complete in Lean with no premise. The class lists are proved
      (`ClassListProof.lean`), and reducible classes are solved (`ReducibleThue.lean`).
-   - **Next:** a rank-1 unit bridge for the 104 irreducible equations: one real embedding and a
-     complex pair. Then either a complex-logarithm lower bound, or a p-adic Skolem zero certificate
-     piloted on one source.
+   - **Done: `k = 2`**, the first irreducible source (`Plus2.lean`, `Skolem3.lean`,
+     `Generated/ClassLists/K2.lean`). Unit generation comes from a real-embedding box, and the
+     zero set from a 3-adic Skolem argument over all integer exponents. `K2.plus2` has no premise.
+   - **Next:** generalize the `k = 2` pilot to the other 103 irreducible equations.
+     - Search the unit and box per order.
+     - Find a Skolem prime per source; where no single prime suffices, use a complex-logarithm
+       bound.
    - The real-quadratic route (`orbit_mod_three`, seed coverage of `p² − |D|q² = k³`) is no
      longer needed.
 7. **Smaller formal items.**

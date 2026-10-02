@@ -796,8 +796,32 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
 - **Result.** For the 39 curves, `plus{k}` is now `y² = x³ + k ↔ (x, y) ∈ L` **with no premise**.
 - **Cost.** About 1 to 5 minutes and up to about 4.7 GB per curve.
 
+*The first irreducible source: `k = 2`* (`Skolem3.lean`, `Plus2.lean`,
+`Generated/ClassLists/K2.lean`). The class `(−1, 0, −3, −2)` of `y² = x³ + 2` is
+`F(u, v) = −u³ − 3uv² − 2v³ = −N(u − vz)` in `ℤ[z]`, `z³ = −3z − 2`.
+- **Unit generation** (`units_eq`). Every `w` with `N(w) = ±1` has multiplication matrix `±ηⁿ`
+  for some integer `n`, where `η = 17 − 3z + 5z²` and `η⁻¹ = ε = 1 + z − z²`.
+  - The real root `ρ` is bracketed in `[−0.5961, −0.5960]`.
+  - Dividing by a power of `η` puts `|σ(w)|` in `[1, σ(η))`, with `σ(η) ≈ 20.56`.
+  - Over ℝ only, `N(g) = σ(g)(re² + κ²j²)` with `κ² = 3ρ²/4 + 3` (`norm_split`). So `re² ≤ 1` and
+    `j² ≤ 1/3`, and inverting gives the box `|a| ≤ 24`, `|b| ≤ 3`, `|c| ≤ 5`.
+  - A kernel check of the box finds only `±1` and `±η` there.
+- **The zero set** (`corner_eq_zero`, `Skolem3.corner_zero`). For **all integers** `n`, the `z²`
+  coordinate of `ηⁿ` vanishes only at `n = 0`.
+  - This is Skolem's method at `p = 3`, with integer valuations only.
+  - Both `η³` and `ε³` are `1 + 3D` with `3 ∤ D₂₀`.
+  - For `n = 3m`, the binomial expansion of `(1 + 3D)^m` has a linear term of exact valuation
+    `v₃(m) + 1`, and every other term is divisible by `3^{v₃(m)+2}`.
+  - For `n ≢ 0 (mod 3)`, the coordinate is `≢ 0 (mod 3)`.
+  - No finite exponent check or parity argument is involved.
+- **The source theorem** (`Plus2.source`): `−u³ − 3uv² − 2v³ = 1 ↔ (u, v) = (−1, 0)`. Here
+  `u − vz` has norm `−1`, so it is `±ηⁿ`. Its `z²` coordinate is `0`, so `n = 0`.
+- **The curve** (`K2.plus2`): `y² = x³ + 2 ↔ (x, y) ∈ {(−1, ±1)}`, **with no premise**.
+  - The class list is proved as above (110 box forms).
+  - The second class `(0, −3, 0, −2)` is impossible modulo 9.
+
 *Still open.*
-- A rank-1 Thue pipeline for the 104 irreducible equations: one real embedding and a complex pair.
+- A rank-1 Thue pipeline for the remaining 103 irreducible equations (`k = 2` is done): one real embedding and a complex pair.
   The analytic step needs a complex-logarithm lower bound, or a p-adic (Skolem) zero certificate. Its unit generation, analytic step and
   reduction are one-dimensional versions of the negative-`k` layers.
 
