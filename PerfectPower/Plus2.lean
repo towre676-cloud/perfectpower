@@ -142,6 +142,7 @@ theorem box_ok : boxB = true := by decide +kernel
 
 set_option maxHeartbeats 1000000 in
 /-- **The reduced unit is `±1` or `±η`.** -/
+@[nolint unusedHavesSuffices]
 theorem reduced_mem {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) (ht : t ^ 3 = (P : ℝ) * t + Q) (v : Z3)
     (hv : nrm P Q v = 1 ∨ nrm P Q v = -1) (hs1 : 1 ≤ |sig t v|) (hs2 : |sig t v| ≤ 2057 / 100) :
     v ∈ [((1 : ℤ), (0 : ℤ), (0 : ℤ)), (-1, 0, 0), η, UnitBox.neg η] := by
@@ -258,6 +259,7 @@ theorem reduced_mem {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) (ht : t ^ 
     linarith only [this, hp', hs1]
 
 /-- **Unit generation**: every `w` with `N(w) = ±1` has `Mx w = ±ηⁿ`. -/
+@[nolint unusedHavesSuffices]
 theorem units_eq (w : Z3) (hw : nrm P Q w = 1 ∨ nrm P Q w = -1) :
     ∃ n : ℤ, Mx w = ((uη ^ n : (Matrix (Fin 3) (Fin 3) ℤ)ˣ) : Matrix (Fin 3) (Fin 3) ℤ) ∨
       Mx w = -((uη ^ n : (Matrix (Fin 3) (Fin 3) ℤ)ˣ) : Matrix (Fin 3) (Fin 3) ℤ) := by
@@ -306,5 +308,38 @@ theorem units_eq (w : Z3) (hw : nrm P Q w = 1 ∨ nrm P Q w = -1) :
   · refine ⟨n + 1, Or.inr ?_⟩
     rw [hMw, Mx_neg, neg_mul, show Mx η = ((uη : (Matrix (Fin 3) (Fin 3) ℤ)ˣ) : Matrix (Fin 3) (Fin 3) ℤ) from rfl,
       ← Units.val_mul, (Commute.self_zpow uη n).eq, ← zpow_add_one]
+
+/-! ### The source theorem -/
+
+theorem Mx_col (g : Z3) : Mx g 0 0 = g.1 ∧ Mx g 1 0 = g.2.1 := by
+  obtain ⟨a, b, c⟩ := g
+  simp [Mx, mul]
+
+/-- **The source theorem**: `−u³ − 3uv² − 2v³ = 1` has the single integer solution `(−1, 0)`. -/
+theorem source (u v : ℤ) : -u ^ 3 - 3 * u * v ^ 2 - 2 * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) := by
+  constructor
+  · intro h
+    have hn : nrm P Q (u, -v, 0) = -1 := by simp only [nrm, P, Q]; linear_combination -h
+    obtain ⟨n, hM⟩ := units_eq (u, -v, 0) (Or.inr hn)
+    have hc := Mx_corner (u, -v, 0)
+    have hcol := Mx_col (u, -v, 0)
+    simp only at hc hcol
+    have hz : ((uη ^ n : (Matrix (Fin 3) (Fin 3) ℤ)ˣ) : Matrix (Fin 3) (Fin 3) ℤ) 2 0 = 0 := by
+      rcases hM with hM | hM <;> rw [hM] at hc
+      · exact hc
+      · simpa using hc
+    have h0 := corner_eq_zero n hz
+    subst h0
+    simp only [zpow_zero, Units.val_one] at hM
+    have hv : v = 0 := by
+      rcases hM with hM | hM <;> rw [hM] at hcol <;> simp at hcol <;> omega
+    subst hv
+    have hu : u ^ 3 = -1 := by linarith
+    have : u = -1 := by
+      rcases hM with hM | hM <;> rw [hM] at hcol <;> simp at hcol
+      · subst hcol; norm_num at hu
+      · omega
+    exact ⟨this, rfl⟩
+  · rintro ⟨rfl, rfl⟩; norm_num
 
 end PerfectPower.Plus2

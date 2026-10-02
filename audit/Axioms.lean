@@ -2571,6 +2571,20 @@ open PerfectPower
 #print axioms PerfectPower.ClassListProof.box_sound
 #print axioms PerfectPower.ClassListProof.boxCertB_of_slices
 #print axioms PerfectPower.ClassListProof.classList_of
+-- Skolem3
+#print axioms PerfectPower.Skolem3.sum_ne_zero
+#print axioms PerfectPower.Skolem3.corner_zero
+-- Plus2
+#print axioms PerfectPower.Plus2.corner_eq_zero
+#print axioms PerfectPower.Plus2.norm_split
+#print axioms PerfectPower.Plus2.box_ok
+#print axioms PerfectPower.Plus2.reduced_mem
+#print axioms PerfectPower.Plus2.units_eq
+#print axioms PerfectPower.Plus2.source
+-- Generated/ClassLists/K2
+#print axioms PerfectPower.Generated.ClassLists.K2.sols_irr
+#print axioms PerfectPower.Generated.ClassLists.K2.classList
+#print axioms PerfectPower.Generated.ClassLists.K2.plus2
 -- Generated/ClassLists/K5
 #print axioms PerfectPower.Generated.ClassLists.K5.classList
 #print axioms PerfectPower.Generated.ClassLists.K5.plus5

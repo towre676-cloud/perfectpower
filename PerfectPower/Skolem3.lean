@@ -1,3 +1,4 @@
+import Batteries.Tactic.Lint.Misc
 import Mathlib.Tactic
 import Mathlib.NumberTheory.Padics.PadicVal.Basic
 
@@ -16,6 +17,7 @@ power `(1 + 3A)^m` with no `p`-adic analysis (`Plus2.lean`).
 namespace PerfectPower.Skolem3
 
 /-- `t + 2 ≤ 3ᵗ` fails only at `t = 0`... used as: `v₃(k) + 2 ≤ k` for `k ≥ 2`. -/
+@[nolint unusedHavesSuffices]
 lemma vk_le (k : ℕ) (hk : 2 ≤ k) : padicValNat 3 k + 2 ≤ k := by
   have hk0 : k ≠ 0 := by omega
   set t := padicValNat 3 k

@@ -108,6 +108,9 @@ import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.PositiveKComplete
 import PerfectPower.CubicReduction
 import PerfectPower.ClassListProof
+import PerfectPower.Skolem3
+import PerfectPower.Plus2
+import PerfectPower.Generated.ClassLists.K2
 import PerfectPower.Generated.ClassLists.K5
 import PerfectPower.Generated.ClassLists.K6
 import PerfectPower.Generated.ClassLists.K7
