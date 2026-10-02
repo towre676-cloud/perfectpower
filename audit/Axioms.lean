@@ -2585,6 +2585,37 @@ open PerfectPower
 #print axioms PerfectPower.Generated.ClassLists.K2.sols_irr
 #print axioms PerfectPower.Generated.ClassLists.K2.classList
 #print axioms PerfectPower.Generated.ClassLists.K2.plus2
+-- SkolemP
+#print axioms PerfectPower.SkolemP.sum_ne_zero
+#print axioms PerfectPower.SkolemP.corner_zero
+-- RankOne
+#print axioms PerfectPower.RankOne.corner_eq_zero
+#print axioms PerfectPower.RankOne.norm_split
+#print axioms PerfectPower.RankOne.mem_ints
+#print axioms PerfectPower.RankOne.reduced_mem
+#print axioms PerfectPower.RankOne.units_eq
+#print axioms PerfectPower.RankOne.source
+-- Generated/RankOneSources
+#print axioms PerfectPower.Generated.RankOneSources.source4
+#print axioms PerfectPower.Generated.RankOneSources.source33
+#print axioms PerfectPower.Generated.RankOneSources.source49
+#print axioms PerfectPower.Generated.RankOneSources.source81
+-- Generated/ClassLists/K4
+#print axioms PerfectPower.Generated.ClassLists.K4.sols_irr
+#print axioms PerfectPower.Generated.ClassLists.K4.classList
+#print axioms PerfectPower.Generated.ClassLists.K4.plus4
+-- Generated/ClassLists/K33
+#print axioms PerfectPower.Generated.ClassLists.K33.sols_irr
+#print axioms PerfectPower.Generated.ClassLists.K33.classList
+#print axioms PerfectPower.Generated.ClassLists.K33.plus33
+-- Generated/ClassLists/K49
+#print axioms PerfectPower.Generated.ClassLists.K49.sols_irr
+#print axioms PerfectPower.Generated.ClassLists.K49.classList
+#print axioms PerfectPower.Generated.ClassLists.K49.plus49
+-- Generated/ClassLists/K81
+#print axioms PerfectPower.Generated.ClassLists.K81.sols_irr
+#print axioms PerfectPower.Generated.ClassLists.K81.classList
+#print axioms PerfectPower.Generated.ClassLists.K81.plus81
 -- Generated/ClassLists/K5
 #print axioms PerfectPower.Generated.ClassLists.K5.classList
 #print axioms PerfectPower.Generated.ClassLists.K5.plus5

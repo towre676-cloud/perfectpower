@@ -34,7 +34,7 @@ row by the receipt generator. An equality of discriminants alone does not
 identify orders; order sharing still requires explicit maps.
 
 **Status: done** (`Plus2.source`, `Generated/ClassLists/K2.lean`, `K2.plus2`; see
-`MORDELL_BRANCH.md` §7.4). The plan as written:
+`MORDELL_BRANCH.md` §7.4). The generic version (`RankOne.lean`) also closes `k = 4, 33, 49, 81`. The plan as written:
 
 The first pilot is `k=2`. Its two classes are
 `(-1,0,-3,-2)` and `(0,-3,0,-2)`. The latter has no representation of 1

@@ -111,6 +111,13 @@ import PerfectPower.ClassListProof
 import PerfectPower.Skolem3
 import PerfectPower.Plus2
 import PerfectPower.Generated.ClassLists.K2
+import PerfectPower.SkolemP
+import PerfectPower.RankOne
+import PerfectPower.Generated.RankOneSources
+import PerfectPower.Generated.ClassLists.K4
+import PerfectPower.Generated.ClassLists.K33
+import PerfectPower.Generated.ClassLists.K49
+import PerfectPower.Generated.ClassLists.K81
 import PerfectPower.Generated.ClassLists.K5
 import PerfectPower.Generated.ClassLists.K6
 import PerfectPower.Generated.ClassLists.K7

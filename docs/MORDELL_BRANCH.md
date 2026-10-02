@@ -820,10 +820,43 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
   - The class list is proved as above (110 box forms).
   - The second class `(0, −3, 0, −2)` is impossible modulo 9.
 
+*The rank-one method, generically* (`SkolemP.lean`, `RankOne.lean`,
+`Generated/RankOneSources.lean`, `python/rank_one_sources.py`).
+- **Zero set at any odd prime** (`SkolemP.corner_zero`). Suppose `A^M = 1 + pD` with `p ∤ D₂₀`
+  and `p ∤ (A^r)₂₀` for `0 < r < M`. Then `(A^N)₂₀ = 0` only at `N = 0`. Applied to `η` and to
+  `ε = η⁻¹`, this covers every integer exponent. This is the proposed matrix lemma of the second
+  OEIS handoff, now proved.
+- **Unit generation for any `z³ = Pz + Q` with a complex pair** (`RankOne.units_eq`).
+  - `N(g) = σ(g)(re² + κ²j²)` with `κ² = 3ρ²/4 − P` (`norm_split`).
+  - A reduced unit has `|re| ≤ 1` and `|j| ≤ J` with `κ²J² ≥ 1`, and `|c| ≤ C`.
+  - So for each `c` only one or two `b` are possible (`b = j + cρ`), and about three `a`
+    (`a = re + bρ/2 − cP + cρ²/2`).
+  - The kernel checks these slabs (`slabB`, 15–31 elements here) instead of a box of up to
+    4·10⁵ elements.
+  - The side conditions are rational inequalities, also checked by the kernel (`condB`).
+- **Source theorem** (`RankOne.source`): `−u³ + Puv² + Qv³ = 1 ↔ (u, v) = (−1, 0)`.
+- **Four new curves, each with one irreducible source and no premise.** In each case the
+  handoff's bounded `p = 3` candidate is `ε`, the slab check proves `η = ε⁻¹` fundamental, and
+  `p = 3`, `M = 3` works for `η` and `ε`. The other classes of each curve are impossible modulo 2,
+  3, 7 or 9.
+
+  | `k` | source `F` (standard) | order | `η` | points | Lean |
+  |---:|---|---|---|---|---|
+  | 4 | `(−1, 0, 0, −4)` | `z³ = −4` | `5 − 3z + 2z²` | `(0, ±2)` | `K4.plus4` |
+  | 33 | `(−1, 0, −6, −10)` | `z³ = −6z − 10` | `77 − 13z + 10z²` | `(−2, ±5)` | `K33.plus33` |
+  | 49 | `(−1, 0, 0, −14)` | `z³ = −14` | `29 − 12z + 5z²` | `(0, ±7)` | `K49.plus49` |
+  | 81 | `(−1, 0, 0, −18)` | `z³ = −18` | `55 − 21z + 8z²` | `(0, ±9)` | `K81.plus81` |
+
+- `Plus2.lean` is the hand-written `k = 2` case of the same argument. It is kept as it was
+  released.
+
 *Still open.*
-- A rank-1 Thue pipeline for the remaining 103 irreducible equations (`k = 2` is done): one real embedding and a complex pair.
-  The analytic step needs a complex-logarithm lower bound, or a p-adic (Skolem) zero certificate. Its unit generation, analytic step and
-  reduction are one-dimensional versions of the negative-`k` layers.
+- A rank-1 Thue pipeline for the remaining 99 irreducible equations (`k = 2, 4, 33, 49, 81` are done).
+  - The monic sources with `h = B/(3a) ≠ 0` need a shift.
+  - The nonmonic ones need norm representatives.
+  - Sources with several solutions need a source theorem with a longer list.
+  - Sources where no small prime satisfies the Skolem conditions need another zero-set
+    certificate, for example a complex-logarithm lower bound.
 
 ## 8. Not covered
 

@@ -43,7 +43,8 @@ lines = [
     f'- Positive $k$: curves $y^2=x^3+k$, $1\\le k\\le100$, with complete integral-point lists in Lean and **no** premise '
     f'(class lists proved, reducible classes solved; `Generated/ClassLists/K*.lean`): **{len(posk)}** '
     f'({sum(1 for k in posk if k in posk_empty)} empty'
-    + (', and $k=2$ through the irreducible source `Plus2.source`' if 2 in posk else '') + ').',
+    + (f', and $k={",".join(str(k) for k in sorted(set(posk) & {2, 4, 33, 49, 81}))}$ through an irreducible rank-one source'
+       if set(posk) & {2, 4, 33, 49, 81} else '') + ').',
     '- Atlas families by certification label: '
     + ', '.join(f'`{k}` {v}' for k, v in sorted(labels.items())) + '.',
 ]

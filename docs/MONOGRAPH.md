@@ -371,8 +371,58 @@ coordinate of $\eta^n$ vanishes only at $n=0$, for every integer $n$. This is a
 $\equiv 1 \pmod 3$ with a nonzero linear term, and the residues $n\not\equiv0$
 are excluded modulo 3. Hence $-u^3-3uv^2-2v^3=1$ only at $(-1,0)$. With the
 proved class list, `K2.plus2` states that the integral points of $y^2=x^3+2$ are
-exactly $(-1,\pm1)$, with no premise. The other 103 irreducible equations
-remain.
+exactly $(-1,\pm1)$, with no premise.
+
+**The integer Skolem lemma at an odd prime** (`SkolemP.corner_zero`). This
+lemma was proposed in the second OEIS handoff and is now proved in Lean. Let
+$A$ be an integer $3\times3$ matrix, $p$ an odd prime and $M\ge1$, and suppose
+$$A^M=I+pD,\qquad p\nmid D_{20},\qquad p\nmid (A^r)_{20}\ \text{for}\ 0<r<M.$$
+Then $(A^N)_{20}=0$ only for $N=0$.
+
+For $N=Mm+r$ with $r\ne0$, reduction modulo $p$ leaves $(A^r)_{20}$. For
+$N=Mm$ with $m>0$, expand
+$(I+pD)^m=I+pmD+\sum_{j\ge2}\binom mj p^jD^j$. If $e=v_p(m)$, the linear
+corner term has valuation exactly $e+1$. Every later term has valuation at
+least $e+2$, because $\binom mj=(m/j)\binom{m-1}{j-1}$ and $j-v_p(j)\ge2$.
+Applied to $\eta$ and to $\eta^{-1}$, the lemma covers every integer
+exponent.
+
+**Rank-one sources, generically** (`RankOne.lean`). For $z^3=Pz+Q$ with a
+complex pair, the norm splits as $N(g)=\sigma(g)(\mathrm{re}^2+\kappa^2j^2)$
+with $\kappa^2=3\rho^2/4-P$. A reduced unit has $|\mathrm{re}|\le1$ and
+$|j|\le J$, where $\kappa^2J^2\ge1$. Since $b=j+c\rho$ and
+$a=\mathrm{re}+b\rho/2-cP+c\rho^2/2$, each $c$ admits only one or two $b$,
+and each $(b,c)$ about three $a$. The kernel checks these slabs (15–31
+elements) instead of a box of up to $4\cdot10^5$ elements.
+
+The second handoff's bounded scan found $p=3$ candidates for one-source
+curves. In each case the candidate is $\varepsilon$, and $\eta=\varepsilon^{-1}$
+is proved fundamental:
+
+| $k$ | source | order | $\eta$ | points |
+|---:|---|---|---|---|
+| 4 | $-u^3-4v^3$ | $z^3=-4$ | $5-3z+2z^2$ | $(0,\pm2)$ |
+| 33 | $-u^3-6uv^2-10v^3$ | $z^3=-6z-10$ | $77-13z+10z^2$ | $(-2,\pm5)$ |
+| 49 | $-u^3-14v^3$ | $z^3=-14$ | $29-12z+5z^2$ | $(0,\pm7)$ |
+| 81 | $-u^3-18v^3$ | $z^3=-18$ | $55-21z+8z^2$ | $(0,\pm9)$ |
+
+With the proved class lists, `K4.plus4`, `K33.plus33`, `K49.plus49` and
+`K81.plus81` hold with no premise. Ninety-nine irreducible equations remain.
+
+**An exact bridge to OEIS** (`python/positive_k_oeis.py`). Write
+$P_k=\lbrace(x,y)\in\mathbb Z^2:y^2=x^3+k\rbrace$, $T_k$ for its size,
+$R_k$ for the number of its points with $y\ge0$, and $Z_k$ for the number with
+$y=0$. Sign symmetry gives $T_k=2R_k-Z_k$, and $R_k$ is the number of distinct
+$x$. For $1\le k\le100$:
+- `A081119` states $T_k$, and `A134108` states $R_k$.
+- `A054504` lists the $k$ with $T_k=0$.
+- `A134220`–`A134223` list the $k$ with $R_k=1,2,3,4$.
+
+All 100 point lists of `receipts/positive_k.json` agree with these seven
+definitions (`receipts/positive_k_oeis.json`). Of these rows, 44 are
+Lean-complete and 56 are census evidence. The agreement is an independent
+regression of the hit semantics, including the single $y=0$ point. It is not
+a completeness proof.
 
 The Lean sources specify the hit predicate and elementary proofs. As of release 0.6 they compile against Lean and Mathlib `v4.20.0`: exact definitions, HasDensity⇒H, the bounded-count squeeze, the exact finite-surgery identity, periodic rationality, the rigid truncation, the integer-closure step, and the analytic finite-hit theorem are all `LEAN_VERIFIED`, and three files needed tactic repairs first (a source line containing neither `sorry` nor `axiom` could and did fail to elaborate). A verified numerical cutoff remains to be layered on. Boshernitzan's criterion belongs in a named external-assumption boundary until a formal statement and proof are imported. A Lean theorem must not be inferred from an exact Python certificate, nor a Python test from an uncompiled Lean term.
 

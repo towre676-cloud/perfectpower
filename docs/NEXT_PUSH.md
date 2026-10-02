@@ -155,7 +155,12 @@ git.
    - **Done: `k = 2`**, the first irreducible source (`Plus2.lean`, `Skolem3.lean`,
      `Generated/ClassLists/K2.lean`). Unit generation comes from a real-embedding box, and the
      zero set from a 3-adic Skolem argument over all integer exponents. `K2.plus2` has no premise.
-   - **Next:** generalize the `k = 2` pilot to the other 103 irreducible equations.
+   - **Done: the method made generic** (`SkolemP.lean`, `RankOne.lean`,
+     `Generated/RankOneSources.lean`). `k = 4, 33, 49, 81` are complete with no premise.
+   - **Next:** the other 99 irreducible equations.
+     - The shifted monic sources (`h ≠ 0`): add the shift `u + hv` to `RankOne.source`.
+     - Sources with several solutions: a list-valued source theorem.
+     - Nonmonic sources: norm representatives, as for negative `k`.
      - Search the unit and box per order.
      - Find a Skolem prime per source; where no single prime suffices, use a complex-logarithm
        bound.
