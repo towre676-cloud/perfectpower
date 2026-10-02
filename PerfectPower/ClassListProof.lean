@@ -161,4 +161,159 @@ theorem reduce_int {k : ℤ} (hk : 0 < k) {P : Params} (hP : ParamsOK k P) (F : 
   · exact Or.inl r
   · exact Or.inr r
 
+theorem delta_zero (b c d : ℤ) : delta (0, b, c, d) = b ^ 2 * (4 * b * d - 3 * c ^ 2) := by
+  simp only [delta]; ring
+
+/-- **A form with a rational root** (`a = 0`) is equivalent to one with `a = 0`, `b² ≤ 4k` and
+`|c| ≤ |b|` (`X ↦ X + tY` moves `c` by `2bt`). -/
+theorem shift_zero {k : ℤ} (hk : 0 < k) (G : ℤ × ℤ × ℤ × ℤ) (hG : delta G = 4 * k) (ha : G.1 = 0) :
+    ∃ G', Equiv G G' ∧ delta G' = 4 * k ∧ G'.1 = 0 ∧ G'.2.1 ^ 2 ≤ 4 * k ∧ |G'.2.2.1| ≤ |G'.2.1| := by
+  obtain ⟨a, b, c, d⟩ := G
+  simp only at ha; subst ha
+  rw [delta_zero] at hG
+  have hb : b ≠ 0 := by rintro rfl; simp at hG; omega
+  have hb2 : b ^ 2 ≤ 4 * k := by
+    have hpos : 0 < b ^ 2 := by positivity
+    have hq : 0 < 4 * b * d - 3 * c ^ 2 := by
+      by_contra hc; push_neg at hc
+      have : b ^ 2 * (4 * b * d - 3 * c ^ 2) ≤ 0 := mul_nonpos_of_nonneg_of_nonpos hpos.le hc
+      omega
+    nlinarith
+  set B := |b| with hB
+  have hBpos : 0 < B := abs_pos.mpr hb
+  set m := 2 * B
+  have hm : 0 < m := by omega
+  set q := (c + B - 1) / m
+  set r := (c + B - 1) % m
+  have hr0 : 0 ≤ r := Int.emod_nonneg _ hm.ne'
+  have hr1 : r < m := Int.emod_lt_of_pos _ hm
+  have hqr : c + B - 1 = m * q + r := (Int.ediv_add_emod _ _).symm
+  -- t with 2 b t = −m q
+  obtain ⟨t, ht⟩ : ∃ t, 2 * b * t = -(m * q) := by
+    rcases lt_or_gt_of_ne hb with hneg | hpos
+    · refine ⟨q, ?_⟩; simp only [m, hB, abs_of_neg hneg]; ring
+    · refine ⟨-q, ?_⟩; simp only [m, hB, abs_of_pos hpos]; ring
+  refine ⟨act (0, b, c, d) 1 t 0 1, ⟨1, t, 0, 1, by norm_num, rfl⟩, ?_, ?_, ?_, ?_⟩
+  · rw [delta_act, delta_zero, hG]; ring
+  · simp [act]
+  · simp [act]; exact hb2
+  · simp only [act]
+    have hc' : 0 * 1 * t ^ 2 + b * (2 * 1 * t * 1 + t ^ 2 * 0) + c * (1 * 1 ^ 2 + 2 * t * 0 * 1) + d * 0 * 1 ^ 2 =
+        c + 2 * b * t := by ring
+    have hb' : 0 * 1 ^ 2 * t + b * (1 ^ 2 * 1 + 2 * 1 * t * 0) + c * (t * 0 ^ 2 + 2 * 1 * 0 * 1) + d * 0 ^ 2 * 1 = b := by
+      ring
+    rw [hc', hb', ht, ← hB, abs_le]
+    constructor <;> omega
+
+/-- `Δ(a, b, c, d) − 4k` as a quadratic in `d`. -/
+def dQuad (k a b c : ℤ) : ℤ × ℤ × ℤ :=
+  (a ^ 2, -2 * a * b * c - 4 * b * (a * c - b ^ 2), b ^ 2 * c ^ 2 + 4 * c ^ 2 * (a * c - b ^ 2) - 4 * k)
+
+theorem dQuad_eq (k a b c d : ℤ) :
+    delta (a, b, c, d) - 4 * k = (dQuad k a b c).1 * d ^ 2 + (dQuad k a b c).2.1 * d + (dQuad k a b c).2.2 := by
+  simp only [delta, dQuad]; ring
+
+/-- A transport certificate: the form, a listed class, and `(p, q, r, s)` with `act G p q r s = F`. -/
+abbrev Cert := (ℤ × ℤ × ℤ × ℤ) × (ℤ × ℤ × ℤ × ℤ) × ℤ × ℤ × ℤ × ℤ
+
+def certOK (Gs : List (ℤ × ℤ × ℤ × ℤ)) (F : ℤ × ℤ × ℤ × ℤ) (e : Cert) : Bool :=
+  decide (e.1 = F) && decide (e.2.1 ∈ Gs) &&
+  decide ((e.2.2.1 * e.2.2.2.2.2 - e.2.2.2.1 * e.2.2.2.2.1) ^ 2 = 1) &&
+  decide (act e.2.1 e.2.2.1 e.2.2.2.1 e.2.2.2.2.1 e.2.2.2.2.2 = F)
+
+/-- **The box check**: every `(a, b, c, d)` with `|a| ≤ amax`, `|b|, |c| ≤ bmax` and `Δ = 4k` has a
+certificate (`d` runs over the integer roots of `Δ = 4k`, `ReducibleThue.tCands`). -/
+def boxCertB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs : List Cert) : Bool :=
+  (List.range (2 * amax + 1).toNat).all fun i => (List.range (2 * bmax + 1).toNat).all fun j =>
+    (List.range (2 * bmax + 1).toNat).all fun l =>
+      let a : ℤ := i - amax
+      let b : ℤ := j - bmax
+      let c : ℤ := l - bmax
+      let Qd := dQuad k a b c
+      (decide (Qd.1 ≠ 0 ∨ Qd.2.1 ≠ 0) || decide (Qd.2.2 ≠ 0)) &&
+      (tCands Qd.1 Qd.2.1 Qd.2.2).all fun d =>
+        decide (delta (a, b, c, d) ≠ 4 * k) || certs.any (certOK Gs (a, b, c, d))
+
+theorem box_sound {k amax bmax : ℤ} {Gs : List (ℤ × ℤ × ℤ × ℤ)} {certs : List Cert}
+    (h : boxCertB k amax bmax Gs certs = true) (F : ℤ × ℤ × ℤ × ℤ) (hF : delta F = 4 * k)
+    (ha : |F.1| ≤ amax) (hb : |F.2.1| ≤ bmax) (hc : |F.2.2.1| ≤ bmax) : ∃ G ∈ Gs, Equiv G F := by
+  obtain ⟨a, b, c, d⟩ := F
+  simp only at ha hb hc
+  have ha' := abs_le.mp ha
+  have hb' := abs_le.mp hb
+  have hc' := abs_le.mp hc
+  simp only [boxCertB, List.all_eq_true, List.mem_range, Bool.and_eq_true, Bool.or_eq_true,
+    decide_eq_true_eq] at h
+  have hh := h (a + amax).toNat (by omega) (b + bmax).toNat (by omega) (c + bmax).toNat (by omega)
+  have e1 : ((a + amax).toNat : ℤ) - amax = a := by omega
+  have e2 : ((b + bmax).toNat : ℤ) - bmax = b := by omega
+  have e3 : ((c + bmax).toNat : ℤ) - bmax = c := by omega
+  simp only [e1, e2, e3] at hh
+  obtain ⟨hnd, hall⟩ := hh
+  have hq := dQuad_eq k a b c d
+  rw [hF, sub_self] at hq
+  have hne : (dQuad k a b c).1 ≠ 0 ∨ (dQuad k a b c).2.1 ≠ 0 := by
+    rcases hnd with h1 | h1
+    · exact h1
+    · by_contra hc0
+      rw [not_or, not_not, not_not] at hc0
+      rw [hc0.1, hc0.2] at hq
+      exact h1 (by linarith)
+  have hd := mem_tCands (t := d) (γ := (dQuad k a b c).2.2) hne (by linarith)
+  rcases hall d hd with h1 | h1
+  · exact absurd hF h1
+  · obtain ⟨e, -, he⟩ := List.any_eq_true.mp h1
+    simp only [certOK, Bool.and_eq_true, decide_eq_true_eq] at he
+    obtain ⟨⟨⟨he1, he2⟩, he3⟩, he4⟩ := he
+    exact ⟨e.2.1, he2, e.2.2.1, e.2.2.2.1, e.2.2.2.2.1, e.2.2.2.2.2, he3, he4.trans rfl⟩
+
+/-- **`ClassList k Gs`, proved**: from checked parameters and a checked box certificate. -/
+theorem classList_of {k amax bmax : ℤ} (hk : 0 < k) {P : Params} (hP : ParamsOK k P)
+    (hA : (P.amax : ℚ) ≤ amax) (hB1 : P.M + P.amax ≤ 3 * bmax) (hB2 : 2 * P.M ≤ 3 * bmax)
+    (hB3 : 4 * k ≤ bmax ^ 2) (hB0 : 0 ≤ bmax) {Gs : List (ℤ × ℤ × ℤ × ℤ)} {certs : List Cert}
+    (hbox : boxCertB k amax bmax Gs certs = true) : ClassList k Gs := by
+  intro F hF
+  have hamax0 : (0 : ℚ) ≤ amax := le_trans hP.2.2.2.2.2.2.2.2.2 hA
+  have hamax0' : 0 ≤ amax := by exact_mod_cast hamax0
+  obtain ⟨G1, hFG1, hd1, ha1⟩ := lead_ne hk F hF
+  obtain ⟨G2, hG12, hd2, hcase⟩ := reduce_int hk hP G1 hd1 ha1
+  have hFG2 := equiv_trans hFG1 hG12
+  suffices hfin : ∃ G ∈ Gs, Equiv G G2 by
+    obtain ⟨G, hG, hGG2⟩ := hfin
+    exact ⟨G, hG, equiv_trans hGG2 (equiv_symm hFG2)⟩
+  rcases hcase with h0 | ⟨r1, r2, r3, r4⟩
+  · obtain ⟨G3, hG23, hd3, ha3, hb3, hc3⟩ := shift_zero hk G2 hd2 h0
+    obtain ⟨G, hG, hGG3⟩ := box_sound hbox G3 hd3 (by rw [ha3]; simp; omega) (by
+      rw [abs_le]; constructor <;> nlinarith [sq_abs G3.2.1, abs_nonneg G3.2.1]) (by
+      have : |G3.2.1| ≤ bmax := by
+        rw [abs_le]; constructor <;> nlinarith [sq_abs G3.2.1, abs_nonneg G3.2.1]
+      linarith)
+    exact ⟨G, hG, equiv_trans hGG3 (equiv_symm hG23)⟩
+  · obtain ⟨a, b, c, d⟩ := G2
+    simp only at r1 r2 r3 r4
+    have hA' : (P.amax : ℝ) ≤ amax := by exact_mod_cast hA
+    have hB1' : (P.M : ℝ) + P.amax ≤ 3 * bmax := by exact_mod_cast hB1
+    have hB2' : 2 * (P.M : ℝ) ≤ 3 * bmax := by exact_mod_cast hB2
+    rw [abs_le] at r1 r2 r3 r4
+    push_cast at r3 r4
+    have ia : |a| ≤ amax := by
+      rw [abs_le]; constructor
+      · have : (-(amax : ℝ)) ≤ a := by linarith
+        exact_mod_cast this
+      · have : (a : ℝ) ≤ amax := by linarith
+        exact_mod_cast this
+    have ib : |b| ≤ bmax := by
+      rw [abs_le]; constructor
+      · have : (-(bmax : ℝ)) ≤ b := by linarith
+        exact_mod_cast this
+      · have : (b : ℝ) ≤ bmax := by linarith
+        exact_mod_cast this
+    have ic : |c| ≤ bmax := by
+      rw [abs_le]; constructor
+      · have : (-(bmax : ℝ)) ≤ c := by linarith
+        exact_mod_cast this
+      · have : (c : ℝ) ≤ bmax := by linarith
+        exact_mod_cast this
+    exact box_sound hbox (a, b, c, d) hd2 ia ib ic
+
 end PerfectPower.ClassListProof
