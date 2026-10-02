@@ -327,6 +327,87 @@ theorem gauss_reduce {A B C : ℝ} (hA : 0 < A) (hΔ : 0 < 4 * A * C - B ^ 2) :
         -(L + 2 * n * A1) + A1 := by simp only [qv, A1, L]; push_cast; ring
     push_cast at e ⊢; linarith
 
+lemma det_transport (A B C : ℝ) (x1 y1 x2 y2 : ℝ) :
+    4 * qv A B C x1 y1 * qv A B C x2 y2 -
+      (qv A B C (x1 + x2) (y1 + y2) - qv A B C x1 y1 - qv A B C x2 y2) ^ 2 =
+    (4 * A * C - B ^ 2) * (x1 * y2 - x2 * y1) ^ 2 := by
+  simp only [qv]; ring
+
+lemma parallelogram (A B C : ℝ) (x1 y1 x2 y2 : ℝ) :
+    qv A B C (x2 - x1) (y2 - y1) =
+      2 * qv A B C x1 y1 + 2 * qv A B C x2 y2 - qv A B C (x1 + x2) (y1 + y2) := by
+  simp only [qv]; ring
+
+/-- **The reduced basis.**  For `a ≠ 0` and `D < 0` there are `v₁, v₂` (`det = 1`) and reals
+`s = q(v₁)`, `c = q(v₂)`, `b = q(v₁ + v₂) − s − c` with `|b| ≤ s ≤ c`, `(4sc − b²)|D| = 12`, and
+`27 F(v)² ≤ D² q(v)³` at `v₁`, `v₂`, `v₁ + v₂`, `v₁ − v₂`. -/
+theorem reduce_box {a B C d : ℝ} (ha : a ≠ 0) (hD : disc4 a B C d < 0) :
+    ∃ x1 y1 x2 y2 : ℤ, x1 * y2 - x2 * y1 = 1 ∧ ∃ s b c : ℝ, 0 < s ∧ |b| ≤ s ∧ s ≤ c ∧
+      (4 * s * c - b ^ 2) * |disc4 a B C d| = 12 ∧
+      27 * ev4 a B C d x1 y1 ^ 2 ≤ disc4 a B C d ^ 2 * s ^ 3 ∧
+      27 * ev4 a B C d x2 y2 ^ 2 ≤ disc4 a B C d ^ 2 * c ^ 3 ∧
+      27 * ev4 a B C d (x1 + x2) (y1 + y2) ^ 2 ≤ disc4 a B C d ^ 2 * (s + b + c) ^ 3 ∧
+      27 * ev4 a B C d (x1 - x2) (y1 - y2) ^ 2 ≤ disc4 a B C d ^ 2 * (s - b + c) ^ 3 := by
+  obtain ⟨ρ, hρ⟩ := cubic_root a B C d ha
+  set β := B + a * ρ with hβ
+  set γ := C + β * ρ with hγ
+  set R := a * ρ ^ 2 + β * ρ + γ with hRdef
+  set δ := 4 * a * γ - β ^ 2 with hδdef
+  have hdisc : disc4 a B C d = -δ * R ^ 2 := by rw [disc_factor hρ]
+  have hRδ : 0 < δ * R ^ 2 := by linarith
+  have hR : R ≠ 0 := by intro h0; rw [h0] at hRδ; simp at hRδ
+  have hδ : 0 < δ := by by_contra hc; push_neg at hc; nlinarith [sq_nonneg R]
+  set qa := qA a ρ β γ
+  set qb := qB a ρ β γ
+  set qc := qC a ρ β γ
+  have hdet : 4 * qa * qc - qb ^ 2 = 12 / (R ^ 2 * δ) := q_det a ρ β γ hR hδ.ne'
+  have hdetpos : 0 < 4 * qa * qc - qb ^ 2 := by rw [hdet]; positivity
+  have hqa : 0 < qa := by
+    have e := q_eq a ρ β γ 1 0 hR hδ.ne'
+    have hv : qv qa qb qc 1 0 = qa := by simp [qv]
+    rw [hv] at e
+    rw [e]
+    have hQR : 0 ≤ a / (R * δ) := by
+      have haR : 0 < a * R := by
+        have : 4 * a * R = (2 * a * ρ + β) ^ 2 + δ := by simp only [hRdef, hδdef]; ring
+        nlinarith [sq_nonneg (2 * a * ρ + β)]
+      rw [show a / (R * δ) = (a * R) / (R ^ 2 * δ) by field_simp; ring]
+      positivity
+    have : (1 - ρ * 0) ^ 2 / R ^ 2 > 0 := by simp; positivity
+    have h2 : 0 ≤ 2 * (a * 1 ^ 2 + β * 1 * 0 + γ * 0 ^ 2) / (R * δ) := by
+      simp only [one_pow, mul_one, mul_zero, add_zero, ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true,
+        zero_pow]
+      rw [mul_div_assoc]; positivity
+    linarith
+  obtain ⟨x1, y1, x2, y2, hdet1, hq1, h12, hp, hm⟩ := gauss_reduce hqa hdetpos
+  set sv := qv qa qb qc x1 y1
+  set cv := qv qa qb qc x2 y2
+  set bv := qv qa qb qc ((x1 : ℝ) + x2) ((y1 : ℝ) + y2) - sv - cv
+  have hpar := parallelogram qa qb qc x1 y1 x2 y2
+  refine ⟨x1, y1, x2, y2, hdet1, sv, bv, cv, hq1, ?_, h12, ?_, ?_, ?_, ?_, ?_⟩
+  · rw [abs_le]; constructor
+    · have e : qv qa qb qc ((x2 : ℝ) + x1) ((y2 : ℝ) + y1) = qv qa qb qc ((x1 : ℝ) + x2) ((y1 : ℝ) + y2) := by
+        rw [add_comm (x2 : ℝ), add_comm (y2 : ℝ)]
+      simp only [bv]; rw [e] at hp; linarith
+    · simp only [bv]; rw [hpar] at hm; linarith
+  · have e := det_transport qa qb qc x1 y1 x2 y2
+    have hd1 : ((x1 : ℝ) * y2 - x2 * y1) = 1 := by exact_mod_cast hdet1
+    rw [hd1, one_pow, mul_one, hdet] at e
+    have : 4 * sv * cv - bv ^ 2 = 12 / (R ^ 2 * δ) := by simp only [sv, cv, bv]; linarith
+    rw [this, hdisc, abs_of_neg (by nlinarith), show -(-δ * R ^ 2) = R ^ 2 * δ by ring]
+    field_simp
+  · have := value_bound hρ hD x1 y1; exact this
+  · have := value_bound hρ hD x2 y2; exact this
+  · have := value_bound hρ hD ((x1 : ℝ) + x2) ((y1 : ℝ) + y2)
+    have e : sv + bv + cv = qv qa qb qc ((x1 : ℝ) + x2) ((y1 : ℝ) + y2) := by simp only [bv]; ring
+    rw [e]; exact this
+  · have := value_bound hρ hD ((x1 : ℝ) - x2) ((y1 : ℝ) - y2)
+    have e : sv - bv + cv = qv qa qb qc ((x1 : ℝ) - x2) ((y1 : ℝ) - y2) := by
+      have : qv qa qb qc ((x1 : ℝ) - x2) ((y1 : ℝ) - y2) = qv qa qb qc ((x2 : ℝ) - x1) ((y2 : ℝ) - y1) := by
+        simp only [qv]; ring
+      rw [this, hpar]; simp only [bv]; ring
+    rw [e]; exact this
+
 end
 
 end PerfectPower.CubicReduction
