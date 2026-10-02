@@ -408,6 +408,94 @@ theorem reduce_box {a B C d : ℝ} (ha : a ≠ 0) (hD : disc4 a B C d < 0) :
       rw [this, hpar]; simp only [bv]; ring
     rw [e]; exact this
 
+/-- **From the reduced basis to integer bounds**, with explicit parameters (checked per `k` by
+`norm_num`): `X₁ = F(v₁)` is `0` or `|X₁| ≤ amax`, and then `|X₂|, |X₃|, |X₄| ≤ M`. -/
+theorem int_bounds {Dabs s b c s0 s1 H M amax : ℝ} {X1 X2 X3 X4 : ℤ} (hD : 0 < Dabs)
+    (hs : 0 < s) (hb : |b| ≤ s) (hsc : s ≤ c) (hdet : (4 * s * c - b ^ 2) * Dabs = 12)
+    (h1 : 27 * (X1 : ℝ) ^ 2 ≤ Dabs ^ 2 * s ^ 3) (h2 : 27 * (X2 : ℝ) ^ 2 ≤ Dabs ^ 2 * c ^ 3)
+    (h3 : 27 * (X3 : ℝ) ^ 2 ≤ Dabs ^ 2 * (s + b + c) ^ 3) (h4 : 27 * (X4 : ℝ) ^ 2 ≤ Dabs ^ 2 * (s - b + c) ^ 3)
+    (hs0 : 0 < s0) (hp0 : Dabs ^ 2 * s0 ^ 3 ≤ 27) (hp1 : 4 ≤ Dabs * s1 ^ 2) (hs01 : s0 ≤ s1)
+    (hH0 : 9 * s0 ^ 2 * Dabs + 12 ≤ 4 * H * s0 * Dabs) (hH1 : 9 * s1 ^ 2 * Dabs + 12 ≤ 4 * H * s1 * Dabs)
+    (hM : Dabs ^ 2 * H ^ 3 ≤ 27 * M ^ 2) (hA : Dabs ^ 2 * s1 ^ 3 ≤ 27 * amax ^ 2) (hM0 : 0 ≤ M) (hA0 : 0 ≤ amax) :
+    X1 = 0 ∨ (|(X1 : ℝ)| ≤ amax ∧ |(X2 : ℝ)| ≤ M ∧ |(X3 : ℝ)| ≤ M ∧ |(X4 : ℝ)| ≤ M) := by
+  rcases eq_or_ne X1 0 with h0 | h0
+  · exact Or.inl h0
+  right
+  have hb2 : b ^ 2 ≤ s ^ 2 := by rw [← sq_abs b]; exact pow_le_pow_left₀ (abs_nonneg b) hb 2
+  have hs1pos : 0 < s1 := lt_of_lt_of_le hs0 hs01
+  -- s ≤ s1
+  have e1 : s * s ≤ s * c := mul_le_mul_of_nonneg_left hsc hs.le
+  have e2 : 3 * s ^ 2 ≤ 4 * s * c - b ^ 2 := by
+    have : s ^ 2 = s * s := by ring
+    linarith
+  have e3 : 3 * s ^ 2 * Dabs ≤ 12 := by
+    have := mul_le_mul_of_nonneg_right e2 hD.le
+    have e : (4 * s * c - b ^ 2) * Dabs = 12 := hdet
+    linarith
+  have hs1 : s ≤ s1 := by
+    have : s ^ 2 ≤ s1 ^ 2 := by
+      have h' : s ^ 2 * Dabs ≤ s1 ^ 2 * Dabs := by linarith
+      exact le_of_mul_le_mul_right h' hD
+    exact (pow_le_pow_iff_left₀ hs.le hs1pos.le (by norm_num : (2 : ℕ) ≠ 0)).mp this
+  -- s ≥ s0
+  have hX1 : (1 : ℝ) ≤ (X1 : ℝ) ^ 2 := by
+    have : (1 : ℤ) ≤ X1 ^ 2 := by
+      have := Int.one_le_abs h0
+      nlinarith [sq_abs X1]
+    exact_mod_cast this
+  have hs0' : s0 ≤ s := by
+    have h' : s0 ^ 3 * Dabs ^ 2 ≤ s ^ 3 * Dabs ^ 2 := by linarith
+    have : s0 ^ 3 ≤ s ^ 3 := le_of_mul_le_mul_right h' (by positivity)
+    exact (pow_le_pow_iff_left₀ hs0.le hs.le (by norm_num : (3 : ℕ) ≠ 0)).mp this
+  -- 4 s c D ≤ 12 + s² D
+  have hc : 4 * s * c * Dabs ≤ 12 + s ^ 2 * Dabs := by
+    have e : 4 * s * c * Dabs = 12 + b ^ 2 * Dabs := by linear_combination hdet
+    have := mul_le_mul_of_nonneg_right hb2 hD.le; linarith
+  -- p(s) = 9 s² D + 12 − 4 H s D ≤ 0 on [s0, s1] (convexity)
+  have hp : 9 * s ^ 2 * Dabs + 12 ≤ 4 * H * s * Dabs := by
+    rcases eq_or_lt_of_le hs01 with heq | hlt
+    · have : s = s0 := le_antisymm (heq ▸ hs1) hs0'
+      rw [this]; exact hH0
+    · have key : (9 * s ^ 2 * Dabs + 12 - 4 * H * s * Dabs) * (s1 - s0) =
+          (9 * s0 ^ 2 * Dabs + 12 - 4 * H * s0 * Dabs) * (s1 - s) +
+          (9 * s1 ^ 2 * Dabs + 12 - 4 * H * s1 * Dabs) * (s - s0) +
+          9 * Dabs * (s - s0) * (s - s1) * (s1 - s0) := by ring
+      have t1 : (9 * s0 ^ 2 * Dabs + 12 - 4 * H * s0 * Dabs) * (s1 - s) ≤ 0 :=
+        mul_nonpos_of_nonpos_of_nonneg (by linarith) (by linarith)
+      have t2 : (9 * s1 ^ 2 * Dabs + 12 - 4 * H * s1 * Dabs) * (s - s0) ≤ 0 :=
+        mul_nonpos_of_nonpos_of_nonneg (by linarith) (by linarith)
+      have t3 : 9 * Dabs * (s - s0) * (s - s1) * (s1 - s0) ≤ 0 := by
+        have : 0 ≤ 9 * Dabs * (s - s0) := mul_nonneg (by positivity) (by linarith)
+        have : 9 * Dabs * (s - s0) * (s - s1) ≤ 0 := mul_nonpos_of_nonneg_of_nonpos this (by linarith)
+        exact mul_nonpos_of_nonpos_of_nonneg this (by linarith)
+      have : (9 * s ^ 2 * Dabs + 12 - 4 * H * s * Dabs) * (s1 - s0) ≤ 0 := by linarith
+      have := nonpos_of_mul_nonpos_left this (by linarith : 0 < s1 - s0)
+      linarith
+  have hq : 2 * s + c ≤ H := by
+    have h' : (2 * s + c) * (4 * s * Dabs) ≤ H * (4 * s * Dabs) := by
+      have : (2 * s + c) * (4 * s * Dabs) = 8 * s ^ 2 * Dabs + 4 * s * c * Dabs := by ring
+      have : H * (4 * s * Dabs) = 4 * H * s * Dabs := by ring
+      linarith
+    exact le_of_mul_le_mul_right h' (by positivity)
+  have hcpos : 0 < c := by linarith
+  have hb' := abs_le.mp hb
+  have bound : ∀ X : ℤ, ∀ q : ℝ, 0 ≤ q → q ≤ H → 27 * (X : ℝ) ^ 2 ≤ Dabs ^ 2 * q ^ 3 → |(X : ℝ)| ≤ M := by
+    intro X q hq0 hqH hX
+    have hq3 : q ^ 3 ≤ H ^ 3 := pow_le_pow_left₀ hq0 hqH 3
+    have : 27 * (X : ℝ) ^ 2 ≤ 27 * M ^ 2 := by
+      calc 27 * (X : ℝ) ^ 2 ≤ Dabs ^ 2 * q ^ 3 := hX
+        _ ≤ Dabs ^ 2 * H ^ 3 := by gcongr
+        _ ≤ 27 * M ^ 2 := hM
+    exact abs_le_of_sq_le_sq' (by linarith) hM0 |> fun h => abs_le.mpr ⟨h.1, h.2⟩
+  refine ⟨?_, bound X2 c hcpos.le (by linarith) h2, bound X3 (s + b + c) (by linarith) (by linarith) h3,
+    bound X4 (s - b + c) (by linarith) (by linarith) h4⟩
+  have hs3 : s ^ 3 ≤ s1 ^ 3 := pow_le_pow_left₀ hs.le hs1 3
+  have : 27 * (X1 : ℝ) ^ 2 ≤ 27 * amax ^ 2 := by
+    calc 27 * (X1 : ℝ) ^ 2 ≤ Dabs ^ 2 * s ^ 3 := h1
+      _ ≤ Dabs ^ 2 * s1 ^ 3 := by gcongr
+      _ ≤ 27 * amax ^ 2 := hA
+  exact abs_le_of_sq_le_sq' (by linarith) hA0 |> fun h => abs_le.mpr ⟨h.1, h.2⟩
+
 end
 
 end PerfectPower.CubicReduction
