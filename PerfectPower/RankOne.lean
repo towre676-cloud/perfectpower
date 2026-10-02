@@ -12,10 +12,10 @@ this module turns a small certificate into the complete solution set of
 * **The norm without complex numbers** (`norm_split`): `N(g) = σ(g) (re² + κ² j²)` with
   `κ² = 3ρ²/4 − P`, `re = a − bρ/2 + c(P − ρ²/2)` and `j = b − cρ`.
 * **Unit generation** (`units_eq`). Every `w` with `N(w) = ±1` has `Mx w = ±ηⁿ`, from a rational
-  bracket of `ρ`, a bound `J ≥ 1/κ`, and integer box bounds `A, B, C`.
+  bracket of `ρ`, a bound `J ≥ 1/κ`, and a bound `C` on the `z²` coordinate.
   - All the side conditions are rational inequalities checked by the kernel (`condB`).
-  - A kernel box check (`boxB`) finds only `±1, ±η` among the units of the box with
-    `|σ| ≥ 1`.
+  - `|j| ≤ J` leaves one or two `b` per `c`, and `|re| ≤ 1` about three `a` per `(b, c)`.
+  - A kernel check of these slabs (`slabB`) finds only `±1, ±η` among the units with `|σ| ≥ 1`.
 * **The zero set** (`SkolemP.corner_zero`, at an odd prime `p`): the `z²` coordinate of `ηⁿ`
   vanishes only at `n = 0`, for every integer `n`.
 * **The source theorem** (`source`): `−u³ + P u v² + Q v³ = 1 ↔ (u, v) = (−1, 0)`.
@@ -119,7 +119,7 @@ lemma nrm_zp (P Q : ℤ) {η ε : Z3} (hη : nrm P Q η = 1) (hε : nrm P Q ε =
   · exact nrm_pow P Q η hη _
   · exact nrm_pow P Q ε hε _
 
-/-- A rank-one certificate: a bracket `[lo, hi]` of the real root, `J ≥ 1/κ`, and the box. -/
+/-- A rank-one certificate: a bracket `[lo, hi]` of the real root, `J ≥ 1/κ`, and `|c| ≤ C`. -/
 structure Cert where
   /-- The bracket of the real root. -/
   lo : ℚ
@@ -127,11 +127,7 @@ structure Cert where
   hi : ℚ
   /-- A bound `|j| ≤ J`, valid when `K J² ≥ 1`. -/
   J : ℚ
-  /-- The box: `|a| ≤ A`. -/
-  A : ℕ
-  /-- The box: `|b| ≤ B`. -/
-  B : ℕ
-  /-- The box: `|c| ≤ C`. -/
+  /-- The bound `|c| ≤ C` on the `z²` coordinate of a reduced unit. -/
   C : ℕ
 
 /-- `max |lo| |hi|`. -/
@@ -150,19 +146,68 @@ def condB (P Q : ℤ) (η : Z3) (c : Cert) : Bool :=
   decide (c.lo ≤ c.hi) && decide (cub P Q c.lo * cub P Q c.hi < 0) && decide (0 < c.K P) &&
   decide (0 ≤ c.J) && decide (1 ≤ c.K P * c.J ^ 2) && decide (0 < c.Dn P) &&
   decide (1 < sigQ c.lo η - rad η c.lo c.hi) &&
-  decide (c.E η + 1 + 3 / 2 * c.T * c.J < (c.C + 1) * c.Dn P) &&
-  decide (c.J + c.C * c.T < c.B + 1) &&
-  decide (c.E η + c.B * c.T + c.C * c.T ^ 2 < c.A + 1)
+  decide (c.E η + 1 + 3 / 2 * c.T * c.J < (c.C + 1) * c.Dn P)
 
-/-- **The box**: every unit `g` with `|a| ≤ A`, `|b| ≤ B`, `|c| ≤ C` is `±1`, `±η`, or has
-`|σ(g)| < 1`. -/
-def boxB (P Q : ℤ) (η : Z3) (c : Cert) : Bool :=
-  (List.range (2 * c.A + 1)).all fun i => (List.range (2 * c.B + 1)).all fun j =>
-    (List.range (2 * c.C + 1)).all fun l =>
-      let g : Z3 := ((i : ℤ) - c.A, (j : ℤ) - c.B, (l : ℤ) - c.C)
-      decide (nrm P Q g ≠ 1 ∧ nrm P Q g ≠ -1) ||
-        decide (g ∈ [((1 : ℤ), (0 : ℤ), (0 : ℤ)), (-1, 0, 0), η, UnitBox.neg η]) ||
-        decide (pHi g c.lo c.hi < 1)
+/-- The lower end of `x · [lo, hi]`. -/
+def lmin (x lo hi : ℚ) : ℚ := if 0 ≤ x then x * lo else x * hi
+/-- The upper end of `x · [lo, hi]`. -/
+def lmax (x lo hi : ℚ) : ℚ := if 0 ≤ x then x * hi else x * lo
+
+/-- The integers in `[l, h]`. -/
+def ints (l h : ℚ) : List ℤ := (List.range ((⌊h⌋ - ⌈l⌉ + 1).toNat)).map fun i : ℕ => ⌈l⌉ + (i : ℤ)
+
+/-- The candidates for `b` given `c`: `b = j + cρ` with `|j| ≤ J`. -/
+def bRange (c : Cert) (cc : ℤ) : List ℤ := ints (lmin cc c.lo c.hi - c.J) (lmax cc c.lo c.hi + c.J)
+
+/-- The candidates for `a` given `b, c`: `a = re + bρ/2 − cP + cρ²/2` with `|re| ≤ 1`. -/
+def aRange (P : ℤ) (c : Cert) (b cc : ℤ) : List ℤ :=
+  ints (-1 + lmin b c.lo c.hi / 2 - cc * P + lmin cc c.t2lo (c.T ^ 2) / 2)
+    (1 + lmax b c.lo c.hi / 2 - cc * P + lmax cc c.t2lo (c.T ^ 2) / 2)
+
+/-- One slab of the reduction: `c = l − C`, and the few `(a, b)` allowed by `|j| ≤ J`, `|re| ≤ 1`. -/
+def slabSliceB (P Q : ℤ) (η : Z3) (c : Cert) (l : ℕ) : Bool :=
+  (bRange c ((l : ℤ) - c.C)).all fun b => (aRange P c b ((l : ℤ) - c.C)).all fun a =>
+    let g : Z3 := (a, b, (l : ℤ) - c.C)
+    decide (nrm P Q g ≠ 1 ∧ nrm P Q g ≠ -1) ||
+      decide (g ∈ [((1 : ℤ), (0 : ℤ), (0 : ℤ)), (-1, 0, 0), η, UnitBox.neg η]) ||
+      decide (pHi g c.lo c.hi < 1)
+
+/-- **The reduction check**: every unit `g` in the slabs is `±1`, `±η`, or has `|σ(g)| < 1`. -/
+def slabB (P Q : ℤ) (η : Z3) (c : Cert) : Bool :=
+  (List.range (2 * c.C + 1)).all (slabSliceB P Q η c)
+
+lemma mem_ints {l h : ℚ} {x : ℤ} (h1 : l ≤ x) (h2 : (x : ℚ) ≤ h) : x ∈ ints l h := by
+  have e1 : ⌈l⌉ ≤ x := Int.ceil_le.mpr h1
+  have e2 : x ≤ ⌊h⌋ := Int.le_floor.mpr h2
+  unfold ints
+  apply List.mem_map.mpr
+  refine ⟨(x - ⌈l⌉).toNat, List.mem_range.mpr ?_, ?_⟩
+  · have : (x - ⌈l⌉).toNat < (⌊h⌋ - ⌈l⌉ + 1).toNat := by omega
+    exact this
+  · show ⌈l⌉ + ((x - ⌈l⌉).toNat : ℤ) = x
+    omega
+
+lemma lmin_le (x : ℚ) {lo hi : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) :
+    ((lmin x lo hi : ℚ) : ℝ) ≤ x * t := by
+  unfold lmin
+  split_ifs with h
+  · push_cast
+    have : (0 : ℝ) ≤ x := by exact_mod_cast h
+    exact mul_le_mul_of_nonneg_left h1 this
+  · push_cast
+    have : (x : ℝ) < 0 := by exact_mod_cast not_le.mp h
+    nlinarith
+
+lemma le_lmax (x : ℚ) {lo hi : ℚ} {t : ℝ} (h1 : (lo : ℝ) ≤ t) (h2 : t ≤ hi) :
+    x * t ≤ ((lmax x lo hi : ℚ) : ℝ) := by
+  unfold lmax
+  split_ifs with h
+  · push_cast
+    have : (0 : ℝ) ≤ x := by exact_mod_cast h
+    exact mul_le_mul_of_nonneg_left h2 this
+  · push_cast
+    have : (x : ℝ) < 0 := by exact_mod_cast not_le.mp h
+    nlinarith
 
 lemma t2lo_le {c : Cert} {t : ℝ} (h1 : (c.lo : ℝ) ≤ t) (h2 : t ≤ c.hi) : ((c.t2lo : ℚ) : ℝ) ≤ t ^ 2 := by
   unfold Cert.t2lo
@@ -178,12 +223,12 @@ lemma t2lo_le {c : Cert} {t : ℝ} (h1 : (c.lo : ℝ) ≤ t) (h2 : t ≤ c.hi) :
 set_option maxHeartbeats 1000000 in
 /-- **The reduced unit is `±1` or `±η`.** -/
 @[nolint unusedHavesSuffices]
-theorem reduced_mem {P Q : ℤ} {η : Z3} {c : Cert} (hc : condB P Q η c = true) (hbox : boxB P Q η c = true)
+theorem reduced_mem {P Q : ℤ} {η : Z3} {c : Cert} (hc : condB P Q η c = true) (hbox : slabB P Q η c = true)
     {t : ℝ} (h1 : (c.lo : ℝ) ≤ t) (h2 : t ≤ c.hi) (ht : t ^ 3 = (P : ℝ) * t + Q) (v : Z3)
     (hv : nrm P Q v = 1 ∨ nrm P Q v = -1) (hs1 : 1 ≤ |sig t v|) (hs2 : |sig t v| ≤ ((c.E η : ℚ) : ℝ)) :
     v ∈ [((1 : ℤ), (0 : ℤ), (0 : ℤ)), (-1, 0, 0), η, UnitBox.neg η] := by
   simp only [condB, Bool.and_eq_true, decide_eq_true_eq] at hc
-  obtain ⟨⟨⟨⟨⟨⟨⟨⟨⟨_, _⟩, hK⟩, hJ0⟩, hKJ⟩, hDn⟩, _⟩, hcC⟩, hcB⟩, hcA⟩ := hc
+  obtain ⟨⟨⟨⟨⟨⟨⟨_, _⟩, hK⟩, hJ0⟩, hKJ⟩, hDn⟩, _⟩, hcC⟩ := hc
   obtain ⟨a, b, cc⟩ := v
   have hsplit := norm_split ht (a, b, cc)
   simp only at hsplit
@@ -238,11 +283,9 @@ theorem reduced_mem {P Q : ℤ} {η : Z3} {c : Cert} (hc : condB P Q η c = true
       have := mul_lt_mul_of_pos_left hcon hK'
       linarith
     exact abs_le_of_sq_le_sq' hsq hJ0' |> fun h => abs_le.mpr h
-  -- invert: c (3t² − P) = s − re − (3t/2) j, b = j + c t, a = s − b t − c t²
+  -- invert: c (3t² − P) = s − re − (3t/2) j
   have ec : (cc : ℝ) * (3 * t ^ 2 - P) = s - re - 3 * t / 2 * j := by
     rw [hsdef, hredef, hjdef]; simp only [sig]; ring
-  have eb : (b : ℝ) = j + cc * t := by rw [hjdef]; ring
-  have ea : (a : ℝ) = s - b * t - cc * t ^ 2 := by rw [hsdef]; simp only [sig]; ring
   have htj : |t| * |j| ≤ T * J := mul_le_mul hta hj' (abs_nonneg j) (le_trans (abs_nonneg t) hta)
   have hden : 3 * t2l - P ≤ 3 * t ^ 2 - P := by linarith
   have hpos : (0 : ℝ) < 3 * t ^ 2 - P := by linarith
@@ -272,50 +315,41 @@ theorem reduced_mem {P Q : ℤ} {η : Z3} {c : Cert} (hc : condB P Q η c = true
     have : |(cc : ℝ)| < ((c.C : ℤ) : ℝ) + 1 := by exact_mod_cast hcR
     have : |cc| < (c.C : ℤ) + 1 := by exact_mod_cast this
     omega
-  have icR : |(cc : ℝ)| ≤ c.C := by exact_mod_cast ic
-  have hct : |(cc : ℝ)| * |t| ≤ c.C * T := mul_le_mul icR hta (abs_nonneg t) (Nat.cast_nonneg _)
-  have hbR : |(b : ℝ)| < c.B + 1 := by
-    rw [eb]
-    have : |j + cc * t| ≤ |j| + |(cc : ℝ)| * |t| := by rw [← abs_mul]; exact abs_add_le _ _
-    have hq : J + c.C * T < c.B + 1 := by
-      rw [hJdef, hTdef]
-      have := (Rat.cast_lt (K := ℝ)).mpr hcB
-      push_cast at this
-      exact this
-    linarith only [this, hj', hct, hq]
-  have ib : |b| ≤ c.B := by
-    have : |(b : ℝ)| < ((c.B : ℤ) : ℝ) + 1 := by exact_mod_cast hbR
-    have : |b| < (c.B : ℤ) + 1 := by exact_mod_cast this
-    omega
-  have ibR : |(b : ℝ)| ≤ c.B := by exact_mod_cast ib
-  have hbt : |(b : ℝ)| * |t| ≤ c.B * T := mul_le_mul ibR hta (abs_nonneg t) (Nat.cast_nonneg _)
-  have hct2 : |(cc : ℝ)| * t ^ 2 ≤ c.C * T ^ 2 := mul_le_mul icR ht2h (sq_nonneg t) (Nat.cast_nonneg _)
-  have haR : |(a : ℝ)| < c.A + 1 := by
-    rw [ea]
-    have h1' := abs_sub (s - b * t) (cc * t ^ 2)
-    have h2' := abs_sub s (b * t)
-    rw [abs_mul (b : ℝ) t] at h2'
-    rw [abs_mul (cc : ℝ) (t ^ 2), abs_of_nonneg (sq_nonneg t)] at h1'
-    have hq : E + c.B * T + c.C * T ^ 2 < c.A + 1 := by
-      rw [hEdef, hTdef]
-      have := (Rat.cast_lt (K := ℝ)).mpr hcA
-      push_cast at this
-      exact this
-    linarith only [h1', h2', hs2, hbt, hct2, hq]
-  have ia : |a| ≤ c.A := by
-    have : |(a : ℝ)| < ((c.A : ℤ) : ℝ) + 1 := by exact_mod_cast haR
-    have : |a| < (c.A : ℤ) + 1 := by exact_mod_cast this
-    omega
-  simp only [boxB, List.all_eq_true, List.mem_range, Bool.or_eq_true, decide_eq_true_eq] at hbox
-  have ia' := abs_le.mp ia
-  have ib' := abs_le.mp ib
+  -- the slab: b from |j| ≤ J, a from |re| ≤ 1
+  have hj2 := abs_le.mp hj'
+  have hre3 := abs_le.mp hre'
+  have hb : b ∈ bRange c cc := by
+    have l1 := lmin_le (cc : ℚ) h1 h2
+    have l2 := le_lmax (cc : ℚ) h1 h2
+    push_cast at l1 l2
+    apply mem_ints
+    · have : ((lmin cc c.lo c.hi - c.J : ℚ) : ℝ) ≤ (b : ℝ) := by
+        push_cast; rw [← hJdef]; linarith only [l1, hj2.1, hjdef]
+      exact_mod_cast this
+    · have : (b : ℝ) ≤ ((lmax cc c.lo c.hi + c.J : ℚ) : ℝ) := by
+        push_cast; rw [← hJdef]; linarith only [l2, hj2.2, hjdef]
+      exact_mod_cast this
+  have ht2h' : t ^ 2 ≤ (((c.T ^ 2 : ℚ)) : ℝ) := by push_cast; rw [← hTdef]; exact ht2h
+  have ht2l' : (((c.t2lo : ℚ)) : ℝ) ≤ t ^ 2 := by rw [← ht2ldef]; exact ht2l
+  have ha : a ∈ aRange P c b cc := by
+    have l1 := lmin_le (b : ℚ) h1 h2
+    have l2 := le_lmax (b : ℚ) h1 h2
+    have l3 := lmin_le (cc : ℚ) ht2l' ht2h'
+    have l4 := le_lmax (cc : ℚ) ht2l' ht2h'
+    push_cast at l1 l2 l3 l4
+    apply mem_ints
+    · have : ((-1 + lmin b c.lo c.hi / 2 - cc * P + lmin cc c.t2lo (c.T ^ 2) / 2 : ℚ) : ℝ) ≤ (a : ℝ) := by
+        push_cast; linarith only [l1, l3, hre3.1, hredef]
+      exact_mod_cast this
+    · have : (a : ℝ) ≤ ((1 + lmax b c.lo c.hi / 2 - cc * P + lmax cc c.t2lo (c.T ^ 2) / 2 : ℚ) : ℝ) := by
+        push_cast; linarith only [l2, l4, hre3.2, hredef]
+      exact_mod_cast this
+  simp only [slabB, List.all_eq_true, List.mem_range] at hbox
   have ic' := abs_le.mp ic
-  have hh := hbox (a + c.A).toNat (by omega) (b + c.B).toNat (by omega) (cc + c.C).toNat (by omega)
-  have e1 : ((a + c.A).toNat : ℤ) - c.A = a := by omega
-  have e2 : ((b + c.B).toNat : ℤ) - c.B = b := by omega
+  have hh := hbox (cc + c.C).toNat (by omega)
   have e3 : ((cc + c.C).toNat : ℤ) - c.C = cc := by omega
-  simp only [e1, e2, e3] at hh
-  rcases hh with (hn | hm) | hp
+  simp only [slabSliceB, e3, List.all_eq_true, Bool.or_eq_true, decide_eq_true_eq] at hh
+  rcases hh b hb a ha with (hn | hm) | hp
   · exfalso; rcases hv with h | h <;> simp [h] at hn
   · exact hm
   · exfalso
@@ -328,12 +362,12 @@ theorem reduced_mem {P Q : ℤ} {η : Z3} {c : Cert} (hc : condB P Q η c = true
 @[nolint unusedHavesSuffices]
 theorem units_eq {P Q : ℤ} {η ε : Z3} (h1 : mul P Q η ε = (1, 0, 0)) (h2 : mul P Q ε η = (1, 0, 0))
     (hnη : nrm P Q η = 1) (hnε : nrm P Q ε = 1) {c : Cert} (hc : condB P Q η c = true)
-    (hbox : boxB P Q η c = true) (w : Z3) (hw : nrm P Q w = 1 ∨ nrm P Q w = -1) :
+    (hbox : slabB P Q η c = true) (w : Z3) (hw : nrm P Q w = 1 ∨ nrm P Q w = -1) :
     ∃ n : ℤ, Mx P Q w = ((uη P Q η ε h1 h2 ^ n : (Matrix (Fin 3) (Fin 3) ℤ)ˣ) : Matrix (Fin 3) (Fin 3) ℤ) ∨
       Mx P Q w = -((uη P Q η ε h1 h2 ^ n : (Matrix (Fin 3) (Fin 3) ℤ)ˣ) : Matrix (Fin 3) (Fin 3) ℤ) := by
   have hc' := hc
   simp only [condB, Bool.and_eq_true, decide_eq_true_eq] at hc'
-  obtain ⟨⟨⟨⟨⟨⟨⟨⟨⟨hle, hsgn⟩, _⟩, _⟩, _⟩, _⟩, hηlo⟩, _⟩, _⟩, _⟩ := hc'
+  obtain ⟨⟨⟨⟨⟨⟨⟨hle, hsgn⟩, _⟩, _⟩, _⟩, _⟩, hηlo⟩, _⟩ := hc'
   obtain ⟨t, ht1, ht2, ht⟩ := root_in P Q c.lo c.hi hle hsgn
   set E := sig t η with hE
   have hnear := sig_near η ht1 ht2
@@ -385,7 +419,7 @@ theorem units_eq {P Q : ℤ} {η ε : Z3} (h1 : mul P Q η ε = (1, 0, 0)) (h2 :
 /-- **The source theorem**: `−u³ + P u v² + Q v³ = 1` has the single integer solution `(−1, 0)`. -/
 theorem source {P Q : ℤ} {η ε : Z3} (h1 : mul P Q η ε = (1, 0, 0)) (h2 : mul P Q ε η = (1, 0, 0))
     (hnη : nrm P Q η = 1) (hnε : nrm P Q ε = 1) {c : Cert} (hc : condB P Q η c = true)
-    (hbox : boxB P Q η c = true) {p : ℕ} [Fact p.Prime] (hp3 : 3 ≤ p) {M M' : ℕ}
+    (hbox : slabB P Q η c = true) {p : ℕ} [Fact p.Prime] (hp3 : 3 ≤ p) {M M' : ℕ}
     {D D' : Matrix (Fin 3) (Fin 3) ℤ} (hη : SkolemData p M (Mx P Q η) D)
     (hε : SkolemData p M' (Mx P Q ε) D') (u v : ℤ) :
     -u ^ 3 + P * u * v ^ 2 + Q * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) := by

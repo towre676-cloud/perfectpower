@@ -59,7 +59,12 @@ receipts:
 	$(PY) python/descent_coverage.py
 	$(PY) python/positive_k.py
 	$(PY) python/class_list_cert.py
+	$(PY) python/class_list_cert.py k2
+	$(PY) python/rank_one_sources.py
+	$(PY) python/class_list_cert.py rank1
 	$(PY) python/positive_k_next.py
+	$(PY) python/skolem3_scan.py --receipt receipts/positive_k_next.json --radius 6 --output receipts/skolem3_candidates.json
+	$(PY) python/positive_k_oeis.py
 	$(PY) python/make_mordell_registry.py
 	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py
