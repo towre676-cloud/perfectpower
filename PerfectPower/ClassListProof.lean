@@ -1,3 +1,4 @@
+import Batteries.Tactic.Lint.Misc
 import PerfectPower.CubicReduction
 import PerfectPower.MordellCubicForm
 import PerfectPower.ReducibleThue
@@ -87,10 +88,15 @@ theorem lead_ne {k : ℤ} (hk : 0 < k) (F : ℤ × ℤ × ℤ × ℤ) (hF : delt
 
 /-- Numeric parameters for `CubicReduction.int_bounds` at `|D| = 108k`, checked per `k`. -/
 structure Params where
+  /-- A lower bound for `q(v₁)` when `F(v₁) ≠ 0`: `|D|² s0³ ≤ 27`. -/
   s0 : ℚ
+  /-- An upper bound for `q(v₁)`: `4 ≤ |D| s1²`. -/
   s1 : ℚ
+  /-- A bound for `2 q(v₁) + q(v₂)` on `[s0, s1]`. -/
   H : ℚ
+  /-- The resulting bound for `|F(v₂)|`, `|F(v₁ ± v₂)|`. -/
   M : ℚ
+  /-- The resulting bound for `|F(v₁)|`. -/
   amax : ℚ
 
 /-- The side conditions of `int_bounds`, as rational inequalities (decidable, `norm_num`). -/
@@ -234,6 +240,7 @@ def tCandsC (α β γ : ℤ) : Option (List ℤ) :=
     else none
   else if β ≠ 0 then some (if γ % β = 0 then [-γ / β] else []) else none
 
+@[nolint unusedHavesSuffices]
 theorem mem_tCandsC {α β γ t : ℤ} {L : List ℤ} (hL : tCandsC α β γ = some L)
     (ht : α * t ^ 2 + β * t + γ = 0) : t ∈ L := by
   unfold tCandsC at hL
@@ -290,13 +297,14 @@ theorem mem_tCandsC {α β γ t : ℤ} {L : List ℤ} (hL : tCandsC α β γ = s
 /-- A transport certificate: the form, a listed class, and `(p, q, r, s)` with `act G p q r s = F`. -/
 abbrev Cert := (ℤ × ℤ × ℤ × ℤ) × (ℤ × ℤ × ℤ × ℤ) × ℤ × ℤ × ℤ × ℤ
 
+/-- One certificate entry checks: it is about `F`, its class is listed, `det = ±1`, and the transport is exact. -/
 def certOK (Gs : List (ℤ × ℤ × ℤ × ℤ)) (F : ℤ × ℤ × ℤ × ℤ) (e : Cert) : Bool :=
   decide (e.1 = F) && decide (e.2.1 ∈ Gs) &&
   decide ((e.2.2.1 * e.2.2.2.2.2 - e.2.2.2.1 * e.2.2.2.2.1) ^ 2 = 1) &&
   decide (act e.2.1 e.2.2.1 e.2.2.2.1 e.2.2.2.2.1 e.2.2.2.2.2 = F)
 
-/-- **The box check**: every `(a, b, c, d)` with `|a| ≤ amax`, `|b|, |c| ≤ bmax` and `Δ = 4k` has a
-certificate (`d` runs over the integer roots of `Δ = 4k`, `ReducibleThue.tCands`). -/
+/-- The box check for one value of `a` (index `i`, `a = i − amax`): every `(a, b, c, d)` with
+`|b|, |c| ≤ bmax` and `Δ = 4k` has a certificate (`d` runs over the integer roots of `Δ = 4k`). -/
 def boxSliceB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs : List Cert) (i : ℕ) : Bool :=
   (List.range (2 * bmax + 1).toNat).all fun j =>
     (List.range (2 * bmax + 1).toNat).all fun l =>
@@ -309,6 +317,7 @@ def boxSliceB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs 
       | none => false
       | some L => L.all fun d => decide (delta (a, b, c, d) ≠ 4 * k) || certs.any (certOK Gs (a, b, c, d))
 
+/-- **The box check**: all slices, `|a| ≤ amax`. -/
 def boxCertB (k amax bmax : ℤ) (Gs : List (ℤ × ℤ × ℤ × ℤ)) (certs : List Cert) : Bool :=
   (List.range (2 * amax + 1).toNat).all (boxSliceB k amax bmax Gs certs)
 

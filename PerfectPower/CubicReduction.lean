@@ -1,3 +1,4 @@
+import Batteries.Tactic.Lint.Misc
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic
@@ -21,6 +22,7 @@ noncomputable section
 open Real
 
 /-- A real cubic polynomial with nonzero leading coefficient has a real root. -/
+@[nolint unusedHavesSuffices]
 theorem cubic_root (a B C d : ℝ) (ha : a ≠ 0) : ∃ ρ : ℝ, a * ρ ^ 3 + B * ρ ^ 2 + C * ρ + d = 0 := by
   -- reduce to a > 0
   wlog hpos : 0 < a generalizing a B C d
@@ -76,12 +78,6 @@ def ev4 (a B C d x y : ℝ) : ℝ := a * x ^ 3 + B * x ^ 2 * y + C * x * y ^ 2 +
 def disc4 (a B C d : ℝ) : ℝ :=
   B ^ 2 * C ^ 2 - 4 * a * C ^ 3 - 4 * B ^ 3 * d - 27 * a ^ 2 * d ^ 2 + 18 * a * B * C * d
 
-/-- The data of the real factorization `F = (X − ρY)(aX² + βXY + γY²)` at a root `ρ`. -/
-structure Fac where
-  ρ : ℝ
-  β : ℝ
-  γ : ℝ
-
 theorem factor {a B C d ρ : ℝ} (hρ : a * ρ ^ 3 + B * ρ ^ 2 + C * ρ + d = 0) (x y : ℝ) :
     ev4 a B C d x y = (x - ρ * y) * (a * x ^ 2 + (B + a * ρ) * x * y + (C + (B + a * ρ) * ρ) * y ^ 2) := by
   have hd : d = -(C + (B + a * ρ) * ρ) * ρ := by linear_combination hρ
@@ -94,6 +90,7 @@ theorem disc_factor {a B C d ρ : ℝ} (hρ : a * ρ ^ 3 + B * ρ ^ 2 + C * ρ +
   simp only [disc4]; rw [hd]; ring
 
 /-- **The AM-GM step**: `(x₁ + 2x₂)³ ≥ 27 x₁ x₂²` for `x₁, x₂ ≥ 0`. -/
+@[nolint unusedHavesSuffices]
 theorem amgm (x₁ x₂ : ℝ) (h1 : 0 ≤ x₁) (h2 : 0 ≤ x₂) : 27 * x₁ * x₂ ^ 2 ≤ (x₁ + 2 * x₂) ^ 3 := by
   have : (x₁ + 2 * x₂) ^ 3 - 27 * x₁ * x₂ ^ 2 = (x₁ - x₂) ^ 2 * (x₁ + 8 * x₂) := by ring
   nlinarith [sq_nonneg (x₁ - x₂), mul_nonneg (sq_nonneg (x₁ - x₂)) (by linarith : 0 ≤ x₁ + 8 * x₂)]
@@ -101,8 +98,10 @@ theorem amgm (x₁ x₂ : ℝ) (h1 : 0 ≤ x₁) (h2 : 0 ≤ x₂) : 27 * x₁ *
 /-- The covariant quadratic form `q = (X − ρY)²/R² + 2Q₂/(Rδ)`, as coefficients `(A, B, C)`. -/
 noncomputable def qA (a ρ β γ : ℝ) : ℝ :=
   1 / (a * ρ ^ 2 + β * ρ + γ) ^ 2 + 2 * a / ((a * ρ ^ 2 + β * ρ + γ) * (4 * a * γ - β ^ 2))
+/-- The middle coefficient of `q`. -/
 noncomputable def qB (a ρ β γ : ℝ) : ℝ :=
   -2 * ρ / (a * ρ ^ 2 + β * ρ + γ) ^ 2 + 2 * β / ((a * ρ ^ 2 + β * ρ + γ) * (4 * a * γ - β ^ 2))
+/-- The last coefficient of `q`. -/
 noncomputable def qC (a ρ β γ : ℝ) : ℝ :=
   ρ ^ 2 / (a * ρ ^ 2 + β * ρ + γ) ^ 2 + 2 * γ / ((a * ρ ^ 2 + β * ρ + γ) * (4 * a * γ - β ^ 2))
 
@@ -126,6 +125,7 @@ theorem q_det (a ρ β γ : ℝ) (hR : a * ρ ^ 2 + β * ρ + γ ≠ 0) (hδ : 4
   ring
 
 /-- **The value bound** `27 F(v)² ≤ D² q(v)³`, with the sign facts it needs. -/
+@[nolint unusedHavesSuffices]
 theorem value_bound {a B C d ρ : ℝ} (hρ : a * ρ ^ 3 + B * ρ ^ 2 + C * ρ + d = 0)
     (hD : disc4 a B C d < 0) (x y : ℝ) :
     27 * ev4 a B C d x y ^ 2 ≤ disc4 a B C d ^ 2 *
@@ -185,6 +185,7 @@ lemma q_lower_x (A B C x y : ℝ) :
     simp only [qv]; ring
   nlinarith [sq_nonneg (B * x + 2 * C * y)]
 
+@[nolint unusedHavesSuffices]
 lemma q_pos {A B C : ℝ} (hA : 0 < A) (hΔ : 0 < 4 * A * C - B ^ 2) {x y : ℤ} (h : (x, y) ≠ (0, 0)) :
     0 < qv A B C x y := by
   have e : 4 * A * qv A B C x y = (2 * A * x + B * y) ^ 2 + (4 * A * C - B ^ 2) * (y : ℝ) ^ 2 := by
@@ -209,6 +210,7 @@ lemma int_abs_le_sq (x : ℤ) : |x| ≤ x ^ 2 := by
 
 /-- **Gauss reduction** over `ℤ²` for a real positive definite form: a basis `v₁, v₂` (`det = 1`)
 with `q(v₁) ≤ q(v₂) ≤ q(v₂ ± v₁)`. -/
+@[nolint unusedHavesSuffices]
 theorem gauss_reduce {A B C : ℝ} (hA : 0 < A) (hΔ : 0 < 4 * A * C - B ^ 2) :
     ∃ x1 y1 x2 y2 : ℤ, x1 * y2 - x2 * y1 = 1 ∧ 0 < qv A B C x1 y1 ∧
       qv A B C x1 y1 ≤ qv A B C x2 y2 ∧ qv A B C x2 y2 ≤ qv A B C (x2 + x1) (y2 + y1) ∧
@@ -341,6 +343,7 @@ lemma parallelogram (A B C : ℝ) (x1 y1 x2 y2 : ℝ) :
 /-- **The reduced basis.**  For `a ≠ 0` and `D < 0` there are `v₁, v₂` (`det = 1`) and reals
 `s = q(v₁)`, `c = q(v₂)`, `b = q(v₁ + v₂) − s − c` with `|b| ≤ s ≤ c`, `(4sc − b²)|D| = 12`, and
 `27 F(v)² ≤ D² q(v)³` at `v₁`, `v₂`, `v₁ + v₂`, `v₁ − v₂`. -/
+@[nolint unusedHavesSuffices]
 theorem reduce_box {a B C d : ℝ} (ha : a ≠ 0) (hD : disc4 a B C d < 0) :
     ∃ x1 y1 x2 y2 : ℤ, x1 * y2 - x2 * y1 = 1 ∧ ∃ s b c : ℝ, 0 < s ∧ |b| ≤ s ∧ s ≤ c ∧
       (4 * s * c - b ^ 2) * |disc4 a B C d| = 12 ∧
@@ -410,6 +413,7 @@ theorem reduce_box {a B C d : ℝ} (ha : a ≠ 0) (hD : disc4 a B C d < 0) :
 
 /-- **From the reduced basis to integer bounds**, with explicit parameters (checked per `k` by
 `norm_num`): `X₁ = F(v₁)` is `0` or `|X₁| ≤ amax`, and then `|X₂|, |X₃|, |X₄| ≤ M`. -/
+@[nolint unusedHavesSuffices]
 theorem int_bounds {Dabs s b c s0 s1 H M amax : ℝ} {X1 X2 X3 X4 : ℤ} (hD : 0 < Dabs)
     (hs : 0 < s) (hb : |b| ≤ s) (hsc : s ≤ c) (hdet : (4 * s * c - b ^ 2) * Dabs = 12)
     (h1 : 27 * (X1 : ℝ) ^ 2 ≤ Dabs ^ 2 * s ^ 3) (h2 : 27 * (X2 : ℝ) ^ 2 ≤ Dabs ^ 2 * c ^ 3)

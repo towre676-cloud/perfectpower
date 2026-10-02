@@ -1,3 +1,4 @@
+import Batteries.Tactic.Lint.Misc
 import Mathlib.Tactic
 
 /-!
@@ -22,17 +23,26 @@ def evS (F : ℤ × ℤ × ℤ × ℤ) (u v : ℤ) : ℤ :=
 
 /-- A factorization certificate: `F = (pu + qv)(Au² + Buv + Cv²)` and `ph + qj = 1`. -/
 structure RedCert where
+  /-- The linear factor `pu + qv`. -/
   p : ℤ
+  /-- The linear factor `pu + qv`. -/
   q : ℤ
+  /-- The quadratic factor `Au² + Buv + Cv²`. -/
   A : ℤ
+  /-- The quadratic factor. -/
   B : ℤ
+  /-- The quadratic factor. -/
   C : ℤ
+  /-- The Bezout pair `ph + qj = 1`. -/
   h : ℤ
+  /-- The Bezout pair. -/
   j : ℤ
 
 /-- The quadratic in `t` for the sign `s`: `α t² + β t + γ`. -/
 def alpha (c : RedCert) : ℤ := c.A * c.q ^ 2 - c.B * c.q * c.p + c.C * c.p ^ 2
+/-- The middle coefficient of the quadratic in `t` (sign `s`). -/
 def beta (c : RedCert) (s : ℤ) : ℤ := s * (2 * c.A * c.h * c.q + c.B * (c.j * c.q - c.h * c.p) - 2 * c.C * c.j * c.p)
+/-- The constant coefficient of the quadratic in `t` (sign `s`). -/
 def gamma (c : RedCert) (s : ℤ) : ℤ := s ^ 2 * (c.A * c.h ^ 2 + c.B * c.h * c.j + c.C * c.j ^ 2) - s
 
 /-- The only possible integer roots of `α t² + β t + γ = 0` (one of `α`, `β` nonzero). -/
@@ -42,6 +52,7 @@ def tCands (α β γ : ℤ) : List ℤ :=
     ([r, -r].filter fun z => (z - β) % (2 * α) = 0).map fun z => (z - β) / (2 * α)
   else if β ≠ 0 then (if γ % β = 0 then [-γ / β] else []) else []
 
+@[nolint unusedHavesSuffices]
 theorem mem_tCands {α β γ t : ℤ} (hne : α ≠ 0 ∨ β ≠ 0) (ht : α * t ^ 2 + β * t + γ = 0) :
     t ∈ tCands α β γ := by
   unfold tCands
