@@ -8,7 +8,7 @@ PerfectPower classifies the possible long-term patterns for every integer polyno
 
 The [trust table](#what-to-trust-at-a-glance) says what is machine-checked and what relies on outside mathematics or software.
 
-**New here? Start with [PerfectPower in the history of perfect powers](docs/HISTORY.md).** It is an essay on where this work sits: from Catalan, Pillai and Tijdeman to the machine-checked Mordell-curve theorems. It also explains why "complete" here means a proof that reaches every input. Two companion pages:
+**New here? Start with [PerfectPower in the history of perfect powers](docs/HISTORY.md)**, and its companion [Perfect powers, computation, and the limits of solving equations](docs/HILBERT10.md) (Hilbert's tenth problem, and why complete answers exist for some families but not for all equations). The first essay is on where this work sits: from Catalan, Pillai and Tijdeman to the machine-checked Mordell-curve theorems. It also explains why "complete" here means a proof that reaches every input. Two companion pages:
 - [The square–cube gap atlas](docs/GAP_ATLAS.md) gives Pillai's equation $a^2-b^3=\pm k$ for every $k\le100$, with the status of each answer.
 - The compiler's four answers are: a complete list, a generator, an answer conditional on a named premise, or unresolved ([below](#the-four-answers)).
 
