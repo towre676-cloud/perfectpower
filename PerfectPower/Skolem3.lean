@@ -97,3 +97,59 @@ theorem sum_ne_zero (m : ℕ) (hm : 0 < m) (x : ℕ → ℤ) (h0 : x 0 = 0) (h1 
   simpa [Int.natAbs_mul, Int.natAbs_pow] using this
 
 end PerfectPower.Skolem3
+
+namespace PerfectPower.Skolem3
+
+open Matrix
+
+/-- `(1 + 3D)^m = 1 + 3W` for an integer matrix `W`. -/
+lemma one_add_three_pow (D : Matrix (Fin 3) (Fin 3) ℤ) (m : ℕ) :
+    ∃ W : Matrix (Fin 3) (Fin 3) ℤ, (1 + 3 • D) ^ m = 1 + 3 • W := by
+  induction m with
+  | zero => exact ⟨0, by simp⟩
+  | succ m ih =>
+    obtain ⟨W, hW⟩ := ih
+    refine ⟨W + D + 3 • (W * D), ?_⟩
+    rw [pow_succ, hW]
+    simp only [add_mul, mul_add, one_mul, mul_one, smul_mul_assoc, mul_smul_comm, smul_add, smul_smul]
+    abel
+
+/-- The binomial expansion of the corner entry: `((1 + 3D)^m)₂₀ = Σ C(m, k) 3ᵏ (Dᵏ)₂₀`. -/
+lemma corner_pow (D : Matrix (Fin 3) (Fin 3) ℤ) (m : ℕ) :
+    ((1 + 3 • D : Matrix (Fin 3) (Fin 3) ℤ) ^ m) 2 0 =
+      ∑ k ∈ Finset.range (m + 1), (Nat.choose m k : ℤ) * 3 ^ k * (D ^ k) 2 0 := by
+  rw [show (1 + 3 • D : Matrix (Fin 3) (Fin 3) ℤ) = 3 • D + 1 from add_comm _ _,
+    (Commute.one_right (3 • D)).add_pow]
+  simp only [one_pow, mul_one, smul_pow, Matrix.sum_apply]
+  apply Finset.sum_congr rfl
+  intro k _
+  rw [← (Nat.cast_commute _ _).eq, ← nsmul_eq_mul, Matrix.smul_apply, Matrix.smul_apply, nsmul_eq_mul,
+    nsmul_eq_mul]
+  push_cast
+  ring
+
+/-- **The zero set of a corner entry of matrix powers.**  If `A³ = 1 + 3D` with `3 ∤ D₂₀`, and
+`3 ∤ A₂₀`, `3 ∤ (A²)₂₀`, then `(A^N)₂₀ = 0` only for `N = 0`. -/
+theorem corner_zero {A D : Matrix (Fin 3) (Fin 3) ℤ} (hA : A ^ 3 = 1 + 3 • D) (hD : ¬ (3 : ℤ) ∣ D 2 0)
+    (h1 : ¬ (3 : ℤ) ∣ A 2 0) (h2 : ¬ (3 : ℤ) ∣ (A ^ 2) 2 0) (N : ℕ) (hN : (A ^ N) 2 0 = 0) : N = 0 := by
+  obtain ⟨m, r, hr, rfl⟩ : ∃ m r, r < 3 ∧ N = 3 * m + r := ⟨N / 3, N % 3, Nat.mod_lt _ (by norm_num),
+    (Nat.div_add_mod N 3).symm⟩
+  rw [pow_add, pow_mul, hA] at hN
+  interval_cases r
+  · -- r = 0: Skolem
+    simp only [pow_zero, mul_one] at hN
+    rcases Nat.eq_zero_or_pos m with hm | hm
+    · simp [hm]
+    · exfalso
+      rw [corner_pow] at hN
+      exact sum_ne_zero m hm (fun k => (D ^ k) 2 0) (by simp) (by simpa using hD) hN
+  all_goals
+    exfalso
+    obtain ⟨W, hW⟩ := one_add_three_pow D m
+    rw [hW, add_mul, one_mul, smul_mul_assoc, Matrix.add_apply, Matrix.smul_apply, nsmul_eq_mul] at hN
+    try simp only [pow_one] at hN
+    first
+    | exact h1 ⟨-((W * A) 2 0), by push_cast at hN; linarith⟩
+    | exact h2 ⟨-((W * A ^ 2) 2 0), by push_cast at hN; linarith⟩
+
+end PerfectPower.Skolem3
