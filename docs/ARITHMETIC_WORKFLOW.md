@@ -215,7 +215,25 @@ The existing complete-solution-set machinery remains valuable for its supported 
 
 ## The next substantial work
 
-The immediate next milestone is a successful Why3 proof-session run using the supplied wrapper on a machine where the local scheduler can open its Unix socket. This environment successfully ran Why3 parsing, typechecking, splitting and native SMT export, and successfully ran Z3 and the wrapper on the exported files. It could not run Why3's built-in prover scheduler because its local socket connection was denied. The host-status receipt records the exact failure. A scheduler acceptance result remains necessary before calling this a completed native Why3 integration.
+**Native Why3 proof sessions: done, and the result is neutral** (`why3_isqrt/native_session.py`, `why3_isqrt/sessions/`, `receipts/why3_session.json`).
+
+Setup:
+- The program is Why3's own `examples/isqrt_von_neumann.mlw`, unmodified in the baseline arm.
+- The rule arm adds one lemma per module, `ule b n -> ule n x -> ule (sub n b) x` (`BVWorkflow.sub_le_bound`). Why3 must prove the lemma itself in the session; nothing is admitted.
+- Both arms run the same automatic script: `split_vc`, then Z3 5.1.0 at 3 s on every leaf, with no manual step.
+- Why3 1.6.0's shell cannot add a file non-interactively, so the sessions are built with Why3's own tools. A skeleton session names the top-level goals, and `why3 replay -f` expands `split_vc` and computes the shapes. A Z3 attempt is then attached to every leaf, and `why3 replay -f` runs them and records the results.
+- `make why3-session` replays both committed sessions with `why3 replay` (no `-f`). Both replay with exit code 0.
+
+Results:
+
+| arm | goals | proved | prover time |
+|---|---:|---:|---:|
+| baseline | 132 | 125 | 22.15 s |
+| rule (lemma for every goal) | 133 (incl. the lemma) | 125 | 19.97 s |
+
+The global lemma discharges **no new goal** and loses one (`isqrt32'vc.41`), while total prover time falls by about 10%. The seven baseline failures are `isqrt32'vc.29, .40, .42` and `isqrt64'vc.26, .29, .40, .43`. This agrees with the SMT experiment: injecting the rule everywhere is not a sound performance strategy, and the 128 → 130 gain there came from the selective policy.
+
+The next native step is that policy: keep the lemma only in the selected goals (Why3's `remove` transformation on the others), and measure again. The scheduler problem recorded earlier was environment-specific: here the scheduler runs.
 
 After that, run the pinned SPARK regression through GNATprove and count matches honestly. A zero-match result is still useful information: it says that the relevant GNATprove encoding needs a different bridge. Maintain explicit widths, signedness and overflow hypotheses. Do not claim that the Why3 measurements automatically transfer to Ada's checked arithmetic or to GNATprove's exact encoding.
 

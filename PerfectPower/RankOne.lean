@@ -80,6 +80,37 @@ theorem Mx_zp (P Q : ℤ) (η ε : Z3) (h1 : mul P Q η ε = (1, 0, 0)) (h2 : mu
 def SkolemData (p M : ℕ) (A D : Matrix (Fin 3) (Fin 3) ℤ) : Prop :=
   0 < M ∧ A ^ M = 1 + p • D ∧ ¬ (p : ℤ) ∣ D 2 0 ∧ ∀ r, 0 < r → r < M → ¬ (p : ℤ) ∣ (A ^ r) 2 0
 
+/-- **The Skolem conditions as one kernel check**, on powers in `ℤ[z]` (linear in `M`) instead
+of matrix powers: `Mx(g^M) ≡ 1 (mod p)` entrywise, `p ∤ (g^M)₂ / p`, and `p ∤ (g^r)₂` for
+`0 < r < M`. -/
+def skolemB (P Q : ℤ) (g : Z3) (p M : ℕ) : Bool :=
+  let h := pow P Q g M
+  decide (0 < M) &&
+    (List.finRange 3).all (fun i => (List.finRange 3).all fun j =>
+      decide ((p : ℤ) ∣ Mx P Q h i j - (1 : Matrix (Fin 3) (Fin 3) ℤ) i j)) &&
+    decide (¬ (p : ℤ) ∣ h.2.2 / p) &&
+    (List.range M).all (fun r => decide (r = 0) || decide (¬ (p : ℤ) ∣ (pow P Q g r).2.2))
+
+theorem skolemData_of {P Q : ℤ} {g : Z3} {p M : ℕ} (hp : 0 < p) (h : skolemB P Q g p M = true) :
+    ∃ D, SkolemData p M (Mx P Q g) D := by
+  simp only [skolemB, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_finRange,
+    true_implies, List.mem_range, Bool.or_eq_true] at h
+  obtain ⟨⟨⟨hM, hdiv⟩, hD⟩, hr⟩ := h
+  have hp' : (p : ℤ) ≠ 0 := by exact_mod_cast hp.ne'
+  refine ⟨Matrix.of fun i j => (Mx P Q (pow P Q g M) i j - (1 : Matrix (Fin 3) (Fin 3) ℤ) i j) / p,
+    hM, ?_, ?_, ?_⟩
+  · rw [← Mx_pow]
+    ext i j
+    rw [Matrix.add_apply, Matrix.smul_apply, Matrix.of_apply, nsmul_eq_mul, Int.mul_ediv_cancel' (hdiv i j)]
+    ring
+  · simp only [Matrix.of_apply, (Mx_col P Q _).2.2, Matrix.one_apply]
+    simpa using hD
+  · intro r h0 hrM
+    rw [← Mx_pow, (Mx_col P Q _).2.2]
+    rcases hr r hrM with h' | h'
+    · omega
+    · exact h'
+
 /-- **The `z²` coordinate of `ηⁿ` vanishes only at `n = 0`**, for every integer `n`. -/
 theorem corner_eq_zero {P Q : ℤ} {η ε : Z3} (h1 : mul P Q η ε = (1, 0, 0)) (h2 : mul P Q ε η = (1, 0, 0))
     {p : ℕ} [Fact p.Prime] (hp3 : 3 ≤ p) {M M' : ℕ} {D D' : Matrix (Fin 3) (Fin 3) ℤ}
@@ -437,9 +468,10 @@ theorem units_eq {P Q : ℤ} {η ε : Z3} (h1 : mul P Q η ε = (1, 0, 0)) (h2 :
 theorem source {P Q : ℤ} {η ε : Z3} (h1 : mul P Q η ε = (1, 0, 0)) (h2 : mul P Q ε η = (1, 0, 0))
     (hnη : nrm P Q η = 1) (hnε : nrm P Q ε = 1) {c : Cert} (hc : condB P Q η c = true)
     (hbox : slabB P Q η c = true) {p : ℕ} [Fact p.Prime] (hp3 : 3 ≤ p) {M M' : ℕ}
-    {D D' : Matrix (Fin 3) (Fin 3) ℤ} (hη : SkolemData p M (Mx P Q η) D)
-    (hε : SkolemData p M' (Mx P Q ε) D') (u v : ℤ) :
+    (hηB : skolemB P Q η p M = true) (hεB : skolemB P Q ε p M' = true) (u v : ℤ) :
     -u ^ 3 + P * u * v ^ 2 + Q * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) := by
+  obtain ⟨D, hη⟩ := skolemData_of (by omega) hηB
+  obtain ⟨D', hε⟩ := skolemData_of (by omega) hεB
   constructor
   · intro h
     have hn : nrm P Q (u, -v, 0) = -1 := by simp only [nrm]; linear_combination -h

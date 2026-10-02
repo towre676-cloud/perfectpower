@@ -1,0 +1,2579 @@
+{
+ "scope": "blockers for the irreducible positive-k sources; a search, not a proof (only lean_source is a theorem)",
+ "large_slab_threshold": 200000,
+ "unit_search_cmax": 2000000,
+ "summary": {
+  "sources": 104,
+  "by_status": {
+   "lean_source": 18,
+   "no_unit_found": 6,
+   "nonmonic": 36,
+   "ready": 21,
+   "ready_large_slab": 9,
+   "several_solutions": 14
+  },
+  "monic_orders": 68,
+  "orders_shared_by_several_sources": {}
+ },
+ "sources": [
+  {
+   "k": 1,
+   "form": [
+    -1,
+    0,
+    0,
+    -2
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "P": 0,
+   "Q": -2,
+   "h": 0,
+   "order": [
+    0,
+    2
+   ],
+   "eta": [
+    1,
+    -1,
+    1
+   ],
+   "slab_elements": 11,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 2,
+   "form": [
+    -1,
+    0,
+    -3,
+    -2
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -3,
+   "Q": -2,
+   "h": 0,
+   "order": [
+    -3,
+    2
+   ],
+   "eta": [
+    17,
+    -3,
+    5
+   ],
+   "slab_elements": 23,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 3,
+   "form": [
+    -1,
+    -3,
+    0,
+    -2
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -4,
+   "h": 1,
+   "order": [
+    3,
+    4
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 4,
+   "form": [
+    -1,
+    0,
+    0,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 0,
+   "Q": -4,
+   "h": 0,
+   "order": [
+    0,
+    4
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 8,
+   "form": [
+    -1,
+    -3,
+    0,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -6,
+   "h": 1,
+   "order": [
+    3,
+    6
+   ],
+   "eta": [
+    79,
+    -73,
+    31
+   ],
+   "slab_elements": 231,
+   "skolem": {
+    "p": 29,
+    "M": 14
+   },
+   "status": "ready"
+  },
+  {
+   "k": 8,
+   "form": [
+    -1,
+    -3,
+    3,
+    -3
+   ],
+   "known_representations": [
+    [
+     -4,
+     1
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 6,
+   "Q": -8,
+   "h": 1,
+   "order": [
+    6,
+    8
+   ],
+   "eta": [
+    3,
+    -3,
+    1
+   ],
+   "slab_elements": 19,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 9,
+   "form": [
+    -2,
+    -3,
+    -6,
+    -1
+   ],
+   "known_representations": [
+    [
+     0,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 9,
+   "form": [
+    -2,
+    0,
+    0,
+    -3
+   ],
+   "known_representations": [
+    [
+     1,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 9,
+   "form": [
+    -1,
+    0,
+    -6,
+    -2
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     3
+    ]
+   ],
+   "P": -6,
+   "Q": -2,
+   "h": 0,
+   "order": [
+    -6,
+    2
+   ],
+   "eta": [
+    55,
+    -3,
+    9
+   ],
+   "slab_elements": 39,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 9,
+   "form": [
+    -1,
+    0,
+    0,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 0,
+   "Q": -6,
+   "h": 0,
+   "order": [
+    0,
+    6
+   ],
+   "eta": [
+    109,
+    -60,
+    33
+   ],
+   "slab_elements": 171,
+   "skolem": {
+    "p": 3,
+    "M": 1
+   },
+   "status": "ready"
+  },
+  {
+   "k": 10,
+   "form": [
+    -1,
+    0,
+    -3,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -3,
+   "Q": -6,
+   "h": 0,
+   "order": [
+    -3,
+    6
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 11,
+   "form": [
+    -2,
+    0,
+    -3,
+    -3
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 12,
+   "form": [
+    -2,
+    -3,
+    0,
+    -3
+   ],
+   "known_representations": [
+    [
+     -2,
+     1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 12,
+   "form": [
+    -1,
+    0,
+    -6,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -6,
+   "Q": -4,
+   "h": 0,
+   "order": [
+    -6,
+    4
+   ],
+   "eta": [
+    51,
+    -5,
+    8
+   ],
+   "slab_elements": 31,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 15,
+   "form": [
+    -1,
+    -3,
+    0,
+    -6
+   ],
+   "known_representations": [
+    [
+     -7,
+     2
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -8,
+   "h": 1,
+   "order": [
+    3,
+    8
+   ],
+   "eta": [
+    13,
+    -10,
+    4
+   ],
+   "slab_elements": 27,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 17,
+   "form": [
+    -2,
+    0,
+    -6,
+    -1
+   ],
+   "known_representations": [
+    [
+     0,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 17,
+   "form": [
+    -1,
+    -3,
+    3,
+    -5
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     4,
+     -1
+    ]
+   ],
+   "P": 6,
+   "Q": -10,
+   "h": 1,
+   "order": [
+    6,
+    10
+   ],
+   "eta": [
+    3,
+    -3,
+    1
+   ],
+   "slab_elements": 15,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 17,
+   "form": [
+    -1,
+    0,
+    -6,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     23,
+     -26
+    ]
+   ],
+   "P": -6,
+   "Q": -6,
+   "h": 0,
+   "order": [
+    -6,
+    6
+   ],
+   "eta": [
+    7,
+    -1,
+    1
+   ],
+   "slab_elements": 7,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 17,
+   "form": [
+    -1,
+    0,
+    -3,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     3,
+     -2
+    ]
+   ],
+   "P": -3,
+   "Q": -8,
+   "h": 0,
+   "order": [
+    -3,
+    8
+   ],
+   "eta": [
+    21,
+    -6,
+    4
+   ],
+   "slab_elements": 11,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 18,
+   "form": [
+    -2,
+    0,
+    -3,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 19,
+   "form": [
+    -2,
+    -3,
+    -6,
+    1
+   ],
+   "known_representations": [
+    [
+     0,
+     1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 22,
+   "form": [
+    -1,
+    -6,
+    -3,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 9,
+   "Q": -14,
+   "h": 2,
+   "order": [
+    9,
+    14
+   ],
+   "eta": [
+    388537,
+    -357959,
+    99671
+   ],
+   "slab_elements": 971659,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 24,
+   "form": [
+    -1,
+    -3,
+    0,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -10,
+   "h": 1,
+   "order": [
+    3,
+    10
+   ],
+   "eta": [
+    19,
+    -13,
+    5
+   ],
+   "slab_elements": 31,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 24,
+   "form": [
+    -1,
+    0,
+    -6,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     31,
+     -28
+    ]
+   ],
+   "P": -6,
+   "Q": -8,
+   "h": 0,
+   "order": [
+    -6,
+    8
+   ],
+   "eta": [
+    7,
+    -1,
+    1
+   ],
+   "slab_elements": 7,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 25,
+   "form": [
+    -1,
+    0,
+    0,
+    -10
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 0,
+   "Q": -10,
+   "h": 0,
+   "order": [
+    0,
+    10
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 26,
+   "form": [
+    -1,
+    0,
+    -3,
+    -10
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -3,
+   "Q": -10,
+   "h": 0,
+   "order": [
+    -3,
+    10
+   ],
+   "eta": [
+    7059693,
+    -2037577,
+    1199361
+   ],
+   "slab_elements": 4228129,
+   "skolem": {
+    "p": 5,
+    "M": 8
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 28,
+   "form": [
+    -1,
+    -3,
+    3,
+    -7
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 6,
+   "Q": -12,
+   "h": 1,
+   "order": [
+    6,
+    12
+   ],
+   "eta": [
+    199,
+    -163,
+    52
+   ],
+   "slab_elements": 355,
+   "skolem": {
+    "p": 53,
+    "M": 6
+   },
+   "status": "ready"
+  },
+  {
+   "k": 28,
+   "form": [
+    -1,
+    0,
+    -9,
+    -2
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -9,
+   "Q": -2,
+   "h": 0,
+   "order": [
+    -9,
+    2
+   ],
+   "eta": [
+    1475017,
+    -36028,
+    163006
+   ],
+   "slab_elements": 433861,
+   "skolem": {
+    "p": 17,
+    "M": 8
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 30,
+   "form": [
+    -2,
+    -3,
+    0,
+    -5
+   ],
+   "known_representations": [
+    [
+     2,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 31,
+   "form": [
+    -1,
+    0,
+    -9,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -9,
+   "Q": -4,
+   "h": 0,
+   "order": [
+    -9,
+    4
+   ],
+   "status": "no_unit_found",
+   "cmax": 2000000
+  },
+  {
+   "k": 33,
+   "form": [
+    -1,
+    0,
+    -6,
+    -10
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -6,
+   "Q": -10,
+   "h": 0,
+   "order": [
+    -6,
+    10
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 35,
+   "form": [
+    -1,
+    -3,
+    0,
+    -10
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -12,
+   "h": 1,
+   "order": [
+    3,
+    12
+   ],
+   "status": "no_unit_found",
+   "cmax": 2000000
+  },
+  {
+   "k": 36,
+   "form": [
+    -3,
+    0,
+    0,
+    -4
+   ],
+   "known_representations": [
+    [
+     1,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 36,
+   "form": [
+    -1,
+    -6,
+    0,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 12,
+   "Q": -20,
+   "h": 2,
+   "order": [
+    12,
+    20
+   ],
+   "eta": [
+    409,
+    -345,
+    84
+   ],
+   "slab_elements": 835,
+   "skolem": {
+    "p": 3,
+    "M": 1
+   },
+   "status": "ready"
+  },
+  {
+   "k": 36,
+   "form": [
+    -1,
+    0,
+    -9,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -9,
+   "Q": -6,
+   "h": 0,
+   "order": [
+    -9,
+    6
+   ],
+   "eta": [
+    3489013,
+    -236574,
+    370902
+   ],
+   "slab_elements": 973073,
+   "skolem": {
+    "p": 3,
+    "M": 1
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 36,
+   "form": [
+    -1,
+    0,
+    0,
+    -12
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 0,
+   "Q": -12,
+   "h": 0,
+   "order": [
+    0,
+    12
+   ],
+   "eta": [
+    9073,
+    -3963,
+    1731
+   ],
+   "slab_elements": 6987,
+   "skolem": {
+    "p": 3,
+    "M": 1
+   },
+   "status": "ready"
+  },
+  {
+   "k": 37,
+   "form": [
+    -2,
+    -3,
+    -6,
+    3
+   ],
+   "known_representations": [
+    [
+     -2,
+     -5
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 37,
+   "form": [
+    -1,
+    -3,
+    6,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 9,
+   "Q": -16,
+   "h": 1,
+   "order": [
+    9,
+    16
+   ],
+   "eta": [
+    38119,
+    -31865,
+    8713
+   ],
+   "slab_elements": 68643,
+   "skolem": {
+    "p": 41,
+    "M": 4
+   },
+   "status": "ready"
+  },
+  {
+   "k": 37,
+   "form": [
+    -1,
+    0,
+    -3,
+    -12
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -3,
+   "Q": -12,
+   "h": 0,
+   "order": [
+    -3,
+    12
+   ],
+   "eta": [
+    130975,
+    -37715,
+    20289
+   ],
+   "slab_elements": 68643,
+   "skolem": {
+    "p": 41,
+    "M": 4
+   },
+   "status": "ready"
+  },
+  {
+   "k": 38,
+   "form": [
+    -2,
+    0,
+    -3,
+    -6
+   ],
+   "known_representations": [
+    [
+     1,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 39,
+   "form": [
+    -3,
+    0,
+    -3,
+    -4
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 40,
+   "form": [
+    -3,
+    -3,
+    0,
+    -4
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 40,
+   "form": [
+    -1,
+    -6,
+    6,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 18,
+   "Q": -32,
+   "h": 2,
+   "order": [
+    18,
+    32
+   ],
+   "eta": [
+    2303,
+    -1761,
+    356
+   ],
+   "slab_elements": 4807,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 41,
+   "form": [
+    -1,
+    -3,
+    3,
+    -9
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 6,
+   "Q": -14,
+   "h": 1,
+   "order": [
+    6,
+    14
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 43,
+   "form": [
+    -1,
+    0,
+    -9,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -9,
+   "Q": -8,
+   "h": 0,
+   "order": [
+    -9,
+    8
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 44,
+   "form": [
+    -1,
+    -6,
+    3,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 15,
+   "Q": -26,
+   "h": 2,
+   "order": [
+    15,
+    26
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 44,
+   "form": [
+    -1,
+    0,
+    -6,
+    -12
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -6,
+   "Q": -12,
+   "h": 0,
+   "order": [
+    -6,
+    12
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 46,
+   "form": [
+    -3,
+    -3,
+    -6,
+    2
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 47,
+   "form": [
+    -2,
+    0,
+    3,
+    -7
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 48,
+   "form": [
+    -1,
+    0,
+    3,
+    -14
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -14,
+   "h": 0,
+   "order": [
+    3,
+    14
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 49,
+   "form": [
+    -1,
+    0,
+    0,
+    -14
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 0,
+   "Q": -14,
+   "h": 0,
+   "order": [
+    0,
+    14
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 54,
+   "form": [
+    -1,
+    -3,
+    6,
+    -10
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 9,
+   "Q": -18,
+   "h": 1,
+   "order": [
+    9,
+    18
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 55,
+   "form": [
+    -2,
+    0,
+    -9,
+    -1
+   ],
+   "known_representations": [
+    [
+     0,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 56,
+   "form": [
+    -2,
+    -3,
+    0,
+    -7
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 56,
+   "form": [
+    -1,
+    -3,
+    3,
+    -11
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 6,
+   "Q": -16,
+   "h": 1,
+   "order": [
+    6,
+    16
+   ],
+   "eta": [
+    23683,
+    -16069,
+    4877
+   ],
+   "slab_elements": 26663,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 57,
+   "form": [
+    -1,
+    -9,
+    -6,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 21,
+   "Q": -40,
+   "h": 3,
+   "order": [
+    21,
+    40
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 57,
+   "form": [
+    -1,
+    -6,
+    0,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 12,
+   "Q": -22,
+   "h": 2,
+   "order": [
+    12,
+    22
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 57,
+   "form": [
+    -1,
+    0,
+    -6,
+    -14
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -6,
+   "Q": -14,
+   "h": 0,
+   "order": [
+    -6,
+    14
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 62,
+   "form": [
+    -2,
+    0,
+    3,
+    -8
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 63,
+   "form": [
+    -2,
+    -3,
+    -6,
+    5
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 63,
+   "form": [
+    -2,
+    0,
+    -9,
+    -3
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 63,
+   "form": [
+    -1,
+    0,
+    -9,
+    -12
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -9,
+   "Q": -12,
+   "h": 0,
+   "order": [
+    -9,
+    12
+   ],
+   "status": "no_unit_found",
+   "cmax": 2000000
+  },
+  {
+   "k": 63,
+   "form": [
+    -1,
+    0,
+    3,
+    -16
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -16,
+   "h": 0,
+   "order": [
+    3,
+    16
+   ],
+   "status": "no_unit_found",
+   "cmax": 2000000
+  },
+  {
+   "k": 64,
+   "form": [
+    -3,
+    -3,
+    -9,
+    -1
+   ],
+   "known_representations": [
+    [
+     0,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 64,
+   "form": [
+    -1,
+    0,
+    0,
+    -16
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 0,
+   "Q": -16,
+   "h": 0,
+   "order": [
+    0,
+    16
+   ],
+   "eta": [
+    16001,
+    -6350,
+    2520
+   ],
+   "slab_elements": 9239,
+   "skolem": {
+    "p": 5,
+    "M": 1
+   },
+   "status": "ready"
+  },
+  {
+   "k": 65,
+   "form": [
+    -2,
+    0,
+    -6,
+    -7
+   ],
+   "known_representations": [
+    [
+     -1,
+     1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 65,
+   "form": [
+    -1,
+    0,
+    -12,
+    -2
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     6
+    ]
+   ],
+   "P": -12,
+   "Q": -2,
+   "h": 0,
+   "order": [
+    -12,
+    2
+   ],
+   "eta": [
+    433,
+    -6,
+    36
+   ],
+   "slab_elements": 75,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 65,
+   "form": [
+    -1,
+    0,
+    -3,
+    -16
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -3,
+   "Q": -16,
+   "h": 0,
+   "order": [
+    -3,
+    16
+   ],
+   "eta": [
+    3739,
+    -1057,
+    497
+   ],
+   "slab_elements": 1579,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 66,
+   "form": [
+    -2,
+    0,
+    -3,
+    -8
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 68,
+   "form": [
+    -1,
+    0,
+    -12,
+    -4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     3
+    ]
+   ],
+   "P": -12,
+   "Q": -4,
+   "h": 0,
+   "order": [
+    -12,
+    4
+   ],
+   "eta": [
+    109,
+    -3,
+    9
+   ],
+   "slab_elements": 15,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 71,
+   "form": [
+    -1,
+    -6,
+    3,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 15,
+   "Q": -28,
+   "h": 2,
+   "order": [
+    15,
+    28
+   ],
+   "eta": [
+    1582941,
+    -1192642,
+    259662
+   ],
+   "slab_elements": 2292001,
+   "skolem": {
+    "p": 59,
+    "M": 29
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 72,
+   "form": [
+    -2,
+    -3,
+    0,
+    -8
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 72,
+   "form": [
+    -1,
+    0,
+    -6,
+    -16
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -6,
+   "Q": -16,
+   "h": 0,
+   "order": [
+    -6,
+    16
+   ],
+   "eta": [
+    5175,
+    -1001,
+    569
+   ],
+   "slab_elements": 1583,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 73,
+   "form": [
+    -1,
+    -6,
+    6,
+    -6
+   ],
+   "known_representations": [
+    [
+     -7,
+     1
+    ],
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 18,
+   "Q": -34,
+   "h": 2,
+   "order": [
+    18,
+    34
+   ],
+   "eta": [
+    7,
+    -5,
+    1
+   ],
+   "slab_elements": 19,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 73,
+   "form": [
+    -1,
+    -3,
+    3,
+    -13
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 6,
+   "Q": -18,
+   "h": 1,
+   "order": [
+    6,
+    18
+   ],
+   "eta": [
+    27961,
+    -17622,
+    5232
+   ],
+   "slab_elements": 26431,
+   "skolem": {
+    "p": 3,
+    "M": 1
+   },
+   "status": "ready"
+  },
+  {
+   "k": 73,
+   "form": [
+    -1,
+    -3,
+    6,
+    -12
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 9,
+   "Q": -20,
+   "h": 1,
+   "order": [
+    9,
+    20
+   ],
+   "eta": [
+    10523,
+    -7519,
+    1989
+   ],
+   "slab_elements": 12147,
+   "skolem": {
+    "p": 89,
+    "M": 88
+   },
+   "status": "ready"
+  },
+  {
+   "k": 73,
+   "form": [
+    -1,
+    0,
+    -12,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     2
+    ]
+   ],
+   "P": -12,
+   "Q": -6,
+   "h": 0,
+   "order": [
+    -12,
+    6
+   ],
+   "eta": [
+    49,
+    -2,
+    4
+   ],
+   "slab_elements": 11,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 76,
+   "form": [
+    -3,
+    -3,
+    -3,
+    5
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 76,
+   "form": [
+    -1,
+    -3,
+    -12,
+    4
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -9,
+   "Q": 14,
+   "h": 1,
+   "order": [
+    -9,
+    14
+   ],
+   "eta": [
+    519935,
+    63471,
+    48551
+   ],
+   "slab_elements": 121139,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready"
+  },
+  {
+   "k": 79,
+   "form": [
+    -2,
+    0,
+    3,
+    -9
+   ],
+   "known_representations": [
+    [
+     -2,
+     1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 80,
+   "form": [
+    -3,
+    -3,
+    3,
+    -5
+   ],
+   "known_representations": [
+    [
+     -2,
+     1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 80,
+   "form": [
+    -1,
+    -6,
+    0,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 12,
+   "Q": -24,
+   "h": 2,
+   "order": [
+    12,
+    24
+   ],
+   "eta": [
+    1068385,
+    -788110,
+    187306
+   ],
+   "slab_elements": 1325975,
+   "skolem": {
+    "p": 29,
+    "M": 20
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 80,
+   "form": [
+    -1,
+    0,
+    -12,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -12,
+   "Q": -8,
+   "h": 0,
+   "order": [
+    -12,
+    8
+   ],
+   "eta": [
+    7217721,
+    -374612,
+    581361
+   ],
+   "slab_elements": 1326391,
+   "skolem": {
+    "p": 29,
+    "M": 20
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 81,
+   "form": [
+    -1,
+    0,
+    0,
+    -18
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 0,
+   "Q": -18,
+   "h": 0,
+   "order": [
+    0,
+    18
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 82,
+   "form": [
+    -1,
+    0,
+    -3,
+    -18
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -3,
+   "Q": -18,
+   "h": 0,
+   "order": [
+    -3,
+    18
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 89,
+   "form": [
+    -3,
+    -3,
+    -9,
+    1
+   ],
+   "known_representations": [
+    [
+     0,
+     1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 89,
+   "form": [
+    -3,
+    -3,
+    -6,
+    4
+   ],
+   "known_representations": [
+    [
+     -1,
+     -2
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 89,
+   "form": [
+    -1,
+    0,
+    -12,
+    -10
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -12,
+   "Q": -10,
+   "h": 0,
+   "order": [
+    -12,
+    10
+   ],
+   "eta": [
+    303,
+    -19,
+    24
+   ],
+   "slab_elements": 55,
+   "skolem": {
+    "p": 5,
+    "M": 8
+   },
+   "status": "ready"
+  },
+  {
+   "k": 89,
+   "form": [
+    -1,
+    0,
+    -6,
+    -18
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -6,
+   "Q": -18,
+   "h": 0,
+   "order": [
+    -6,
+    18
+   ],
+   "eta": [
+    745,
+    -147,
+    78
+   ],
+   "slab_elements": 207,
+   "skolem": {
+    "p": 3,
+    "M": 1
+   },
+   "status": "ready"
+  },
+  {
+   "k": 90,
+   "form": [
+    -3,
+    0,
+    -9,
+    -2
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -3
+  },
+  {
+   "k": 90,
+   "form": [
+    -2,
+    -6,
+    3,
+    -5
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 90,
+   "form": [
+    -2,
+    -3,
+    0,
+    -9
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 90,
+   "form": [
+    -2,
+    0,
+    -9,
+    -6
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 91,
+   "form": [
+    -1,
+    -3,
+    -12,
+    6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": -9,
+   "Q": 16,
+   "h": 1,
+   "order": [
+    -9,
+    16
+   ],
+   "status": "no_unit_found",
+   "cmax": 2000000
+  },
+  {
+   "k": 92,
+   "form": [
+    -2,
+    -3,
+    -12,
+    -3
+   ],
+   "known_representations": [],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 92,
+   "form": [
+    -1,
+    -3,
+    3,
+    -15
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 6,
+   "Q": -20,
+   "h": 1,
+   "order": [
+    6,
+    20
+   ],
+   "eta": [
+    6886619,
+    -4069245,
+    1183709
+   ],
+   "slab_elements": 5607581,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 94,
+   "form": [
+    -1,
+    -3,
+    6,
+    -14
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 9,
+   "Q": -22,
+   "h": 1,
+   "order": [
+    9,
+    22
+   ],
+   "eta": [
+    5420333,
+    -3629613,
+    945653
+   ],
+   "slab_elements": 5294219,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready_large_slab"
+  },
+  {
+   "k": 97,
+   "form": [
+    -2,
+    0,
+    -6,
+    -9
+   ],
+   "known_representations": [
+    [
+     1,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -2
+  },
+  {
+   "k": 98,
+   "form": [
+    -1,
+    -9,
+    -6,
+    -6
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 21,
+   "Q": -42,
+   "h": 3,
+   "order": [
+    21,
+    42
+   ],
+   "status": "lean_source"
+  },
+  {
+   "k": 99,
+   "form": [
+    -1,
+    0,
+    3,
+    -20
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 3,
+   "Q": -20,
+   "h": 0,
+   "order": [
+    3,
+    20
+   ],
+   "status": "no_unit_found",
+   "cmax": 2000000
+  },
+  {
+   "k": 100,
+   "form": [
+    -4,
+    0,
+    0,
+    -5
+   ],
+   "known_representations": [
+    [
+     1,
+     -1
+    ]
+   ],
+   "status": "nonmonic",
+   "leading": -4
+  },
+  {
+   "k": 100,
+   "form": [
+    -1,
+    -6,
+    3,
+    -8
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ]
+   ],
+   "P": 15,
+   "Q": -30,
+   "h": 2,
+   "order": [
+    15,
+    30
+   ],
+   "eta": [
+    1981,
+    -1418,
+    306
+   ],
+   "slab_elements": 2331,
+   "skolem": {
+    "p": 23,
+    "M": 22
+   },
+   "status": "ready"
+  },
+  {
+   "k": 100,
+   "form": [
+    -1,
+    0,
+    -12,
+    -12
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ]
+   ],
+   "P": -12,
+   "Q": -12,
+   "h": 0,
+   "order": [
+    -12,
+    12
+   ],
+   "eta": [
+    13,
+    -1,
+    1
+   ],
+   "slab_elements": 7,
+   "skolem": null,
+   "status": "several_solutions"
+  },
+  {
+   "k": 100,
+   "form": [
+    -1,
+    0,
+    0,
+    -20
+   ],
+   "known_representations": [
+    [
+     -1,
+     0
+    ],
+    [
+     19,
+     -7
+    ]
+   ],
+   "P": 0,
+   "Q": -20,
+   "h": 0,
+   "order": [
+    0,
+    20
+   ],
+   "eta": [
+    361,
+    -133,
+    49
+   ],
+   "slab_elements": 159,
+   "skolem": null,
+   "status": "several_solutions"
+  }
+ ]
+}

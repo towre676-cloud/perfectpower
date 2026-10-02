@@ -282,11 +282,8 @@ def lean_block(r, i, chunk=20000):
         out.append(f"theorem slab_{i} : slabB {PQ} η{i} c{i} = true :=\n"
                    f"  slabB_of_chunks (w := {w}) (n := {n}) (by decide) fun m hm => by\n"
                    f"    interval_cases m\n    exacts [{', '.join(f'chunk{i}_{m}' for m in range(n))}]\n")
-    for nm, g, sk in (('η', 'η', se), ('ε', 'ε', sx)):
-        out.append(f"set_option maxRecDepth 100000 in\n"
-                   f"theorem sk{nm}_{i} : SkolemData {sk['p']} {sk['M']} (Mx {PQ} {g}{i}) {_mat(sk['D'])} :=\n"
-                   f"  ⟨by norm_num, by ext i j; fin_cases i <;> fin_cases j <;> decide, by decide,\n"
-                   f"    by intro r h0 hr; interval_cases r <;> decide⟩\n")
+    for nm, sk in (('η', se), ('ε', sx)):
+        out.append(f"theorem sk{nm}_{i} : skolemB {PQ} {nm}{i} {sk['p']} {sk['M']} = true := by decide +kernel\n")
     out.append(f"/-- **Source {i}**: `−u³ + ({P}) u v² + ({Q}) v³ = 1 ↔ (u, v) = (−1, 0)`. -/\n"
                f"theorem source{i} (u v : ℤ) : -u ^ 3 + {_i(P)} * u * v ^ 2 + {_i(Q)} * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) :=\n"
                f"  haveI : Fact (Nat.Prime {se['p']}) := ⟨by norm_num⟩\n"

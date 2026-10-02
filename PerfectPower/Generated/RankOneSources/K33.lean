@@ -41,15 +41,9 @@ theorem cond_0 : condB (-6) (-10) η0 c0 = true := by decide +kernel
 
 theorem slab_0 : slabB (-6) (-10) η0 c0 = true := by decide +kernel
 
-set_option maxRecDepth 100000 in
-theorem skη_0 : SkolemData 3 3 (Mx (-6) (-10) η0) !![315034, (-409630), 532630; (-53263), 69256, (-90052); 40963, (-53263), 69256] :=
-  ⟨by norm_num, by ext i j; fin_cases i <;> fin_cases j <;> decide, by decide,
-    by intro r h0 hr; interval_cases r <;> decide⟩
+theorem skη_0 : skolemB (-6) (-10) η0 3 3 = true := by decide +kernel
 
-set_option maxRecDepth 100000 in
-theorem skε_0 : SkolemData 3 3 (Mx (-6) (-10) ε0) !![92, 400, (-190); 19, 332, 286; (-40), 19, 332] :=
-  ⟨by norm_num, by ext i j; fin_cases i <;> fin_cases j <;> decide, by decide,
-    by intro r h0 hr; interval_cases r <;> decide⟩
+theorem skε_0 : skolemB (-6) (-10) ε0 3 3 = true := by decide +kernel
 
 /-- **Source 0**: `−u³ + (-6) u v² + (-10) v³ = 1 ↔ (u, v) = (−1, 0)`. -/
 theorem source0 (u v : ℤ) : -u ^ 3 + (-6) * u * v ^ 2 + (-10) * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) :=
