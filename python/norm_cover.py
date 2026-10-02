@@ -32,6 +32,13 @@ COVERS = {
                'covers': {4: (4, [(-4, -4, -1), (-6, -3, 1), (-11, -2, 1)]), 9: (9, [(-11, -1, 1)])},
                # each target as its chain of factors (applied left to right, starting from 1)
                'targets': {4: [4], 16: [4, 4], 64: [4, 4, 4], 4096: [4, 4, 4, 4, 4, 4], 9: [9], 36: [4, 9]}},
+    # prime covers found with a candidate box of radius 25 (python/norm_rep_search.reps_of_norm)
+    (27, 52): {'name': 'Covers5724', 'units': [(-5, -2, 0), (-253, -170, -28)],
+               'covers': {2: (2, [(-3, -1, 0), (-6, 1, 0)]), 3: (3, [(-7, -2, 0)])},
+               'targets': {36: [2, 2, 3, 3]}},
+    (21, 32): {'name': 'Covers9396', 'units': [(-15, -1, 1), (-379, -322, -62)],
+               'covers': {4: (4, [(-3, -1, 0), (-4, -4, -1), (-9, -5, 0), (-17, -2, 1)])},
+               'targets': {4: [4]}},
 }
 
 
