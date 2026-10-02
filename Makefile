@@ -57,6 +57,7 @@ receipts:
 	$(PY) python/norm_cover.py
 	$(PY) python/make_lean_curves.py
 	$(PY) python/descent_coverage.py
+	$(PY) python/positive_k.py
 	$(PY) python/make_mordell_registry.py
 	$(PY) python/make_lean_bounded.py
 	$(PY) python/make_lean_plans.py

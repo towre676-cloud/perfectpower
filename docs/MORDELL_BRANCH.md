@@ -704,7 +704,36 @@ four separate obligations, and each must be discharged before any positive-`k` l
 - **Exceptional primes:** 2, 3 and the primes of `D`.
 - **Integral readout of each reduced branch:** square `k` needs separate treatment.
 
-Nothing is claimed for positive `k` yet.
+**The cubic-form route** (`python/positive_k.py`, `MordellCubicForm.lean`, `receipts/positive_k.json`).
+This route avoids the real quadratic field (Mordell, *Diophantine Equations*, ch. 24). It works as follows.
+- **Forward.** A point gives `F = X³ − 3xXY² − 2yY³` with `F(1, 0) = 1`. Write forms as
+  `(a, 3b, 3c, d)`; then `Δ = (ad − bc)² − 4(ac − b²)(bd − c²) = 4k` (`form_of_point`).
+- **Invariance.** `Δ(F ∘ T) = det(T)⁶ Δ(F)` (`delta_act`).
+- **Way back.** A form `(1, 0, c, d)` with `Δ = 4k` is the point `(−c, −d/2)` (`point_of_monic`).
+- **Reduction to Thue.** The curve is the union, over the `GL₂(ℤ)` classes of these forms, of the
+  Thue equations `G = 1`. Since the discriminant is `−108k < 0`, each lies in a complex cubic field
+  with **unit rank 1**.
+
+*Classes.* The Hessian is indefinite here, so the classes are canonicalized by a covariant
+positive-definite quadratic built from the roots. It is computed in floating point, and merges are
+exact matrices. The class lists come from a search that grows until the classes stabilize.
+**They are not proved complete.**
+
+*Results for `1 ≤ k ≤ 100`.*
+- 238 classes in all.
+- 111 classes are locally impossible for the value 1, by an exact residue check modulo 2, 3, 7 or 9.
+- 127 Thue equations remain: 96 carry points and 31 are point-free.
+- All 100 curves agree with the census, and every census point lands in a listed class.
+- In 30 curves every class is locally impossible. 28 of them were among the open curves.
+
+*Lean.* `Generated/PositiveK.lean` proves `y² = x³ + k` has no integral point for those 30 values
+of `k`. Each theorem has the hypothesis `ClassList k cs_k`, which says the list contains every
+class. The `Δ` values and residues are kernel-checked (`emptyCertB`, `no_point_of_cert`).
+
+*Still open.*
+- The class-list premise: a reduction bound for negative discriminant, formalized.
+- A rank-1 Thue pipeline for the 127 remaining equations. Its unit generation, analytic step and
+  reduction are one-dimensional versions of the negative-`k` layers.
 
 ## 8. Not covered
 
