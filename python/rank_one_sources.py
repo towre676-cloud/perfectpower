@@ -254,7 +254,7 @@ def _mat(D):
     return '!![' + '; '.join(', '.join(_i(x) for x in row) for row in D) + ']'
 
 
-def lean_block(r, i, chunk=20000):
+def lean_block(r, i, chunk=4000):
     P, Q, c = r['P'], r['Q'], r['_c']
     se, sx = r['skolem_eta'], r['skolem_eps']
     PQ = f'{_i(P)} {_i(Q)}'
