@@ -2285,6 +2285,7 @@ open PerfectPower
 #print axioms PerfectPower.Generated.Covers8532.rep_3
 #print axioms PerfectPower.Generated.Covers8532.rep_4
 #print axioms PerfectPower.Generated.Covers8532.rep_9
+#print axioms PerfectPower.Generated.Covers8532.res_49
 -- Generated/Minus79
 #print axioms PerfectPower.Generated.Minus79.e1_inv
 #print axioms PerfectPower.Generated.Minus79.e2_inv

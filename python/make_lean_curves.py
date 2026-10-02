@@ -168,17 +168,18 @@ CURVES = {
                      {'name': 'h3', 'form': (-1, -78, 159, 1378), 'phi': (26, 9, 0), 'normrep': ('one',)},
                      {'name': 'h4', 'form': (-1, -27, 0, 54), 'phi': (9, 3, 0), 'normrep': ('one',)}]},
     # D = 79: the three orders t³ = 24t + 28, 30t + 34, 48t + 30 embed (index 2, 3, 7) into t³ = 60t + 178
-    # (OrderMaps8532); norm 49 has two classes (p₁² and p₂, 7 = p₁p₂), certified by residues mod 49
+    # (OrderMaps8532); norm 49 has two classes (p₁² and p₂, 7 = p₁p₂), certified once by residues mod 49
+    # (Covers8532.res_49, shared by the four sources)
     79: {'name': 'Minus79', 'P': 60, 'Q': 178, 'disc': 8532, 'units': [(-151, -19, 4), (-101, -45, -5)],
          'imports': ['PerfectPower.Generated.Covers8532'],
          'sources': [{'name': 's1', 'form': (-7, -45, 1659, 1185), 'phi': (-1265, -144, 32),
-                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (15, 16, 0))},
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49, 'Covers8532'), 'via': (('OrderMaps8532', 2), (48, 30), (15, 16, 0))},
                      {'name': 's2', 'form': (-7, -33, 387, 349), 'phi': (-629, -72, 16),
-                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (11, 8, 0))},
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49, 'Covers8532'), 'via': (('OrderMaps8532', 2), (48, 30), (11, 8, 0))},
                      {'name': 's3', 'form': (-7, -6, 108, -8), 'phi': (-318, -36, 8),
-                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (2, 4, 0))},
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49, 'Covers8532'), 'via': (('OrderMaps8532', 2), (48, 30), (2, 4, 0))},
                      {'name': 's4', 'form': (-7, -3, 27, -1), 'phi': (-159, -18, 4),
-                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (1, 2, 0))},
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49, 'Covers8532'), 'via': (('OrderMaps8532', 2), (48, 30), (1, 2, 0))},
                      {'name': 't1', 'form': (-3, -51, 711, 1343), 'phi': (-383, -50, 10),
                       'normrep': ('cover', 'Covers8532'), 'via': (('OrderMaps8532', 1), (30, 34), (17, 10, 0))},
                      {'name': 't2', 'form': (-3, -30, 150, 250), 'phi': (-190, -25, 5),
@@ -524,7 +525,7 @@ def normrep_layer(cfg, s):
             f"/-- **Proved from composed divisor covers** (`Generated.{module}.rep_{N}`, "
             f"`NormCover.normRep_of_abs`). -/\n"
             f"theorem {nm}_proved : {nm} := NormCover.normRep_of_abs Generated.{module}.rep_{N}\n\n")
-    _, g, m = s['normrep']
+    _, g, m, *shared = s['normrep']
     gs = [tuple(x) for x in g] if isinstance(g[0], (tuple, list)) else [tuple(g)]
     # NormRep asks for norm exactly N: a representative of norm −N is replaced by its negative
     gs = [x if U.nrm(P, Q, x) == N else tuple(-c for c in x) for x in gs]
@@ -536,7 +537,8 @@ def normrep_layer(cfg, s):
         f"def {nm} : Prop := UnitPremises.NormRep {P} {Q} {N} [{', '.join(U.z3_lean(x) for x in gs)}]\n\n"
         f"/-- **Proved by a residue certificate modulo {m}** (`NormRepProof.normRep_of_res`): every "
         f"residue class of norm `≡ {N}` is divisible by one of {txt}, and the quotient has norm `±1`. -/\n"
-        f"theorem {nm}_proved : {nm} :=\n  NormRepProof.normRep_of_res (m := {m}) (by norm_num) (by decide +kernel)\n\n")
+        f"theorem {nm}_proved : {nm} :=\n  NormRepProof.normRep_of_res (m := {m}) (by norm_num) "
+        + (f"Generated.{shared[0]}.res_{N}" if shared else "(by decide +kernel)") + "\n\n")
 
 
 def doc(cfg, D, lists_info):

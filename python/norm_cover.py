@@ -46,7 +46,9 @@ COVERS = {
     # 7 = p₁p₂ with N(p₂) = 49, so there is no cover for 7; norm 49 is a residue certificate in Minus79
     (60, 178): {'name': 'Covers8532', 'units': [(-151, -19, 4), (-101, -45, -5)],
                 'covers': {2: (2, [(-4, -1, 0)]), 3: (3, [(-5, -1, 0)])},
-                'targets': {4: [2, 2], 9: [3, 3]}},
+                'targets': {4: [2, 2], 9: [3, 3]},
+                # norm 49 has no cover (7 = p₁p₂): one residue certificate, shared by the D = 79 sources
+                'res': {49: (49, [(-3, 23, 5), (-15, -12, -2)])}},
 }
 
 
@@ -127,12 +129,20 @@ def build(P, Q):
                    f"def L_{n} : List Z3 := [{', '.join(z(g) for g in lists[n])}]\n\n"
                    f"theorem rep_{n} : NormRepAbs {P} {Q} {n} L_{n} :=\n"
                    f"  normRepAbs_step' (by norm_num) (by norm_num) cover_{d} {prev_thm} (by decide +kernel)\n")
+    for N, (m, reps) in cfg.get('res', {}).items():
+        reps = [g if U.nrm(P, Q, g) == N else tuple(-c for c in g) for g in reps]
+        assert all(U.nrm(P, Q, g) == N for g in reps) and m % N == 0
+        out.append(f"/-- A residue certificate modulo `{m}` for norm `{N}` (`NormRepProof.resRepB`), checked once and "
+                   f"shared by every source that needs it. -/\n"
+                   f"theorem res_{N} : NormRepProof.resRepB {P} {Q} {N} {m} [{', '.join(z(g) for g in reps)}] = true := by\n"
+                   f"  decide +kernel\n")
     out.append(f"end PerfectPower.Generated.{name}\n")
     (ROOT / 'PerfectPower' / 'Generated' / f'{name}.lean').write_text('\n'.join(out))
     return {'order': [P, Q], 'module': name,
             'covers': {str(d): {'modulus': m, 'reps': reps} for d, (m, reps) in cfg['covers'].items()},
             'lists': {str(n): L for n, L in sorted(lists.items())},
-            'sizes': {str(n): len(L) for n, L in sorted(lists.items())}}
+            'sizes': {str(n): len(L) for n, L in sorted(lists.items())},
+            'residue_certificates': {str(N): {'modulus': m, 'reps': r} for N, (m, r) in cfg.get('res', {}).items()}}
 
 
 def main():

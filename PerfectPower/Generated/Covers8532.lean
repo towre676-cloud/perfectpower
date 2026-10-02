@@ -46,4 +46,8 @@ def L_9 : List Z3 := [(25, 10, 1)]
 theorem rep_9 : NormRepAbs 60 178 9 L_9 :=
   normRepAbs_step' (by norm_num) (by norm_num) cover_3 rep_3 (by decide +kernel)
 
+/-- A residue certificate modulo `49` for norm `49` (`NormRepProof.resRepB`), checked once and shared by every source that needs it. -/
+theorem res_49 : NormRepProof.resRepB 60 178 49 49 [((-3), 23, 5), ((-15), (-12), (-2))] = true := by
+  decide +kernel
+
 end PerfectPower.Generated.Covers8532
