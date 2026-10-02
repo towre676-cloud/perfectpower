@@ -579,9 +579,7 @@ def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=
                 f"def analytic_{name} : Prop :=\n  UnitPremises.Analytic {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} "
                 f"e1 e1i e2 e2i {V} reps_{name}\n\n")
         reps += analytic_block(name, P, Q, F, M, phi, g0, cert, V, label)
-        reps += (f"/-- Negative control: every chain of {label} with its final bound lowered by one is rejected "
-                 f"by the kernel. -/\n"
-                 f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB reps_{name} = true := by decide +kernel\n\n")
+        reps += forged_block(name, label, cases)
         hyps = f"(hM : matveev_{name})"
         hN, hA = f'{nname}_proved', f'analytic_{name}_proved hM'
     else:
@@ -602,6 +600,21 @@ def class_block(name, P, Q, F, M, phi, g0, cases, B, V, L, label, nname, neg_of=
             f"    (UnitPremises.extBound_of _ _ _ _ _ _ _ _ _ _ _ reps_{name} unitGen_proved ({hN})\n"
             f"      (fun a b => by simp only [UnitPremises.nrm, enc, evalF]; ring) ({hA}) (by decide +kernel))\n"
             f"    (by decide +kernel) (by decide +kernel) (by decide +kernel) u v\n")
+
+
+def forged_block(name, label, cases):
+    """The negative control.  A chain whose final bound is already `0` cannot be lowered (`lowerLast`
+    subtracts in `ℕ`), so those chains are left out of the control; the others must all be rejected."""
+    ends = [RC.chain_end(c['M0'], c['steps']) for c in cases]
+    if min(ends) > 0:
+        return (f"/-- Negative control: every chain of {label} with its final bound lowered by one is rejected "
+                f"by the kernel. -/\n"
+                f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB reps_{name} = true := by decide +kernel\n\n")
+    return (f"/-- Negative control: every chain of {label} with a positive final bound, lowered by one, is rejected "
+            f"by the kernel ({ends.count(0)} chain(s) already end at `0` and cannot be lowered). -/\n"
+            f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB\n"
+            f"    (reps_{name}.map fun r => (r.1, r.2.filter fun C => "
+            f"PerfectPower.DirectReduction.chainEnd C.M0 C.steps != 0)) = true := by\n  decide +kernel\n\n")
 
 
 def class_block_multi(name, P, Q, F, M, phi, g0s, certs, B, V, L, label, nname):
@@ -635,8 +648,7 @@ def class_block_multi(name, P, Q, F, M, phi, g0s, certs, B, V, L, label, nname):
             f"def analytic_{name} : Prop :=\n  UnitPremises.Analytic {form_lean(F)} {_i(M)} {P} {Q} {z3_lean(phi)} "
             f"e1 e1i e2 e2i {V} reps_{name}\n\n"
             f"theorem analytic_{name}_proved (hM : matveev_{name}) : analytic_{name} :=\n  {proof}\n\n"
-            f"/-- Negative control: every chain of {label} with its final bound lowered by one is rejected. -/\n"
-            f"theorem forged_rejected_{name} : UnitPremises.forgedRejectedB reps_{name} = true := by decide +kernel\n\n")
+            + forged_block(name, label, [c for cert in certs for c in cert['cases_json']]))
     out += (f"/-- **{label}, complete under Matveev's bound** ({k} norm representatives): `{list(F)}` takes the "
             f"value {M} exactly at {len(L)} point(s). -/\n"
             f"theorem class_{name} (hM : matveev_{name}) (u v : ℤ) :\n"
