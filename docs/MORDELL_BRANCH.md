@@ -592,6 +592,36 @@ derived from the registered Lean theorems. The raw workload receipts are unchang
     Norm 49 is a residue certificate mod 49 with the two classes `p₁²` and `p₂`.
   - All agree with the independent census (`data/mordell_census.csv`).
 
+**Residue-filtered unit slabs** (`UnitGenResidue.lean`; design from the CRT-slab review of `1a7fad9`).
+Most slab points fail to have norm `±1` for local reasons. The module works as follows.
+- **Tables.** It checks, once per order, tables of the residues `a mod 8` and `a mod 9` that admit
+  `N(a, b, c) ≡ s` for each sign `s = ±1` (`tabB`, `8³ + 9³` triples per sign).
+- **Mask** (`mem_mask`). For a unit of norm `s`, `a mod 72` is the CRT combination
+  `9a₈ − 8a₉ mod 72` of two entries **of the same sign**.
+- **Enumeration.** The slab rows are enumerated only in the allowed classes:
+  `a₀ = L + ((r − L) mod 72)`, then `a₀ + 72k` (`progression`).
+- **Short-circuit.** A row whose mask is empty never evaluates its interval bounds.
+- **Interface.** `unitGen_of_residueSlab` feeds the unchanged `unitGen_of_core`, and the plain
+  `unitGen_of_slab` remains available.
+
+| order | slab points | filtered points | rows with a nonempty mask | module build, slab → residue |
+|---|---|---|---|---|
+| `t³ = 15t + 16` (`D = 61`) | 648,719 | 9,012 | 8,011 of 28,749 | MINUS61 |
+| `t³ = 21t + 32` (`D = 87`) | 34,431 | 482 | 945 of 5,661 | 441 s → 243 s |
+| `t³ = 18t + 22` (`D = 95`) | 17,413 | 482 | 1,173 of 2,139 | 234 s → 178 s |
+
+- The build times are for the whole curve module (unit generation, analytic certificates,
+  descent), on one machine. They are not isolated kernel measurements of the unit check.
+- The filtered scans keep exactly the 8, 6 and 4 units of the plain slabs
+  (`python/tests/test_unit_residue.py`).
+
+**Distinct classes.** Every cover module proves `distinct_N`: its representatives of norm `±N`
+are pairwise nonassociate (`assocB`). With `rep_N` this gives exactly `|L_N|` associate classes of
+norm `±N` in that order; for example, 13 at norm 4096 in `t³ = 15t + 20`. This says nothing about
+the class group of the maximal order. For `t³ = 60t + 178` and norm 49, the residue certificate
+mod 49 is checked in 49 slices (`NormRepSlices.resRepB_of_slices`), because the single check ran
+out of memory.
+
 **Cost before proof** (`python/order_cost.py`, `receipts/order_cost.json`). The number of
 equations is a poor proxy, because one order with a large unit box can outweigh several cheap
 ones. For each unresolved curve the receipt estimates
