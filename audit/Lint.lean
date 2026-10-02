@@ -78,6 +78,9 @@ import PerfectPower.Generated.Minus87
 import PerfectPower.Generated.Minus95
 import PerfectPower.Generated.Covers6588
 import PerfectPower.Generated.Minus61
+import PerfectPower.Generated.OrderMaps8532
+import PerfectPower.Generated.Covers8532
+import PerfectPower.Generated.Minus79
 import PerfectPower.BVWorkflow
 import PerfectPower.ArithmeticWorkflow
 import PerfectPower.Generated.WorkflowInstances

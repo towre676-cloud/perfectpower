@@ -42,6 +42,11 @@ COVERS = {
     (15, 16): {'name': 'Covers6588', 'units': [(-5, -3, 1), (-40907, -47810, -11056)],
                'covers': {2: (2, [(-1, -1, 0), (-10, -2, 1)]), 3: (3, [(-9, -10, -2)])},
                'targets': {36: [2, 2, 3, 3]}},
+    # t³ = 60t + 178 (disc 8532): a common overorder of the D = 79 orders (python/order_transport.EXTRA_TARGETS).
+    # 7 = p₁p₂ with N(p₂) = 49, so there is no cover for 7; norm 49 is a residue certificate in Minus79
+    (60, 178): {'name': 'Covers8532', 'units': [(-151, -19, 4), (-101, -45, -5)],
+                'covers': {2: (2, [(-4, -1, 0)]), 3: (3, [(-5, -1, 0)])},
+                'targets': {4: [2, 2], 9: [3, 3]}},
 }
 
 

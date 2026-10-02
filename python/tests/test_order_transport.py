@@ -80,9 +80,17 @@ class LeanMaps(unittest.TestCase):
   for cfg in C.CURVES.values():
    for s in cfg['sources']:
     if 'via' in s:
-     k,(p,q),phi0=s['via'];e=json.loads((ROOT/'receipts'/'order_transports.json').read_text())['embeddings'][k]
+     k,(p,q),phi0=s['via'];e=C.via_map(k)[0]
      self.assertEqual((tuple(e['domain']),tuple(e['codomain'])),((p,q),(cfg['P'],cfg['Q'])))
      self.assertEqual(emb(cfg['P'],cfg['Q'],e['generator_image'],phi0),tuple(s['phi']));n+=1
-  self.assertEqual(n,39)
+  self.assertEqual(n,47)
+
+ def test_extra_maps(self):
+  # OrderMaps8532: the three D = 79 orders into the common overorder t³ = 60t + 178
+  ex=json.loads((ROOT/'receipts'/'ordermaps8532.json').read_text())['embeddings']
+  self.assertEqual([(tuple(e['domain']),e['index']) for e in ex],[((24,28),2),((30,34),3),((48,30),7)])
+  for e in ex:
+   (p,q),(P,Q)=e['domain'],e['codomain']
+   self.assertEqual(e['determinant']**2*(4*P**3-27*Q*Q),4*p**3-27*q*q)
 
 if __name__=='__main__':unittest.main()

@@ -167,6 +167,26 @@ CURVES = {
                      {'name': 'h2', 'form': (-1, -15, 12, -2), 'phi': (41, 5, -2), 'normrep': ('one',)},
                      {'name': 'h3', 'form': (-1, -78, 159, 1378), 'phi': (26, 9, 0), 'normrep': ('one',)},
                      {'name': 'h4', 'form': (-1, -27, 0, 54), 'phi': (9, 3, 0), 'normrep': ('one',)}]},
+    # D = 79: the three orders t³ = 24t + 28, 30t + 34, 48t + 30 embed (index 2, 3, 7) into t³ = 60t + 178
+    # (OrderMaps8532); norm 49 has two classes (p₁² and p₂, 7 = p₁p₂), certified by residues mod 49
+    79: {'name': 'Minus79', 'P': 60, 'Q': 178, 'disc': 8532, 'units': [(-151, -19, 4), (-101, -45, -5)],
+         'imports': ['PerfectPower.Generated.Covers8532'],
+         'sources': [{'name': 's1', 'form': (-7, -45, 1659, 1185), 'phi': (-1265, -144, 32),
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (15, 16, 0))},
+                     {'name': 's2', 'form': (-7, -33, 387, 349), 'phi': (-629, -72, 16),
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (11, 8, 0))},
+                     {'name': 's3', 'form': (-7, -6, 108, -8), 'phi': (-318, -36, 8),
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (2, 4, 0))},
+                     {'name': 's4', 'form': (-7, -3, 27, -1), 'phi': (-159, -18, 4),
+                      'normrep': ('res', [(-3, 23, 5), (-15, -12, -2)], 49), 'via': (('OrderMaps8532', 2), (48, 30), (1, 2, 0))},
+                     {'name': 't1', 'form': (-3, -51, 711, 1343), 'phi': (-383, -50, 10),
+                      'normrep': ('cover', 'Covers8532'), 'via': (('OrderMaps8532', 1), (30, 34), (17, 10, 0))},
+                     {'name': 't2', 'form': (-3, -30, 150, 250), 'phi': (-190, -25, 5),
+                      'normrep': ('cover', 'Covers8532'), 'via': (('OrderMaps8532', 1), (30, 34), (10, 5, 0))},
+                     {'name': 't3', 'form': (-3, -12, 24, 16), 'phi': (-76, -10, 2),
+                      'normrep': ('cover', 'Covers8532'), 'via': (('OrderMaps8532', 1), (30, 34), (4, 2, 0))},
+                     {'name': 'u1', 'form': (-2, -6, 6, 3), 'phi': (42, 4, -1),
+                      'normrep': ('cover', 'Covers8532'), 'via': (('OrderMaps8532', 0), (24, 28), (2, 1, 0))}]},
     # D = 61: the nonmonic source g1 (norm 36) moves from t³ = 39t + 2 into t³ = 15t + 16 (OrderMaps.map_16)
     61: {'name': 'Minus61', 'P': 15, 'Q': 16, 'disc': 6588, 'units': [(-5, -3, 1), (-40907, -47810, -11056)],
          'imports': ['PerfectPower.Generated.Covers6588'],
@@ -445,6 +465,14 @@ def slab_layer(cfg, text, cert, size, e1i, e2i):
     return text, e1i, e2i, cert
 
 
+def via_map(k):
+    """A map index: `k` is `OrderMaps.map_k`; `(module, k)` is `module.map_k` (`order_transport.EXTRA_TARGETS`)."""
+    if isinstance(k, int):
+        return json.loads((ROOT / 'receipts' / 'order_transports.json').read_text())['embeddings'][k], 'OrderMaps', k
+    mod, k = k
+    return json.loads((ROOT / 'receipts' / f'{mod.lower()}.json').read_text())['embeddings'][k], mod, k
+
+
 def via_layer(cfg, s):
     """The encoding was moved from another order: `φ = map_k(φ₀)`, and the norm identity in the
     target is the source order's one, transported (`OrderEmbedding.nrm_enc_of_map`).  The class
@@ -453,21 +481,21 @@ def via_layer(cfg, s):
     import order_transport as OT
     P, Q = cfg['P'], cfg['Q']
     k, (p, q), phi0 = s['via']
-    tr = json.loads((ROOT / 'receipts' / 'order_transports.json').read_text())['embeddings'][k]
+    tr, mod, k = via_map(k)
     assert tuple(tr['domain']) == (p, q) and tuple(tr['codomain']) == (P, Q)
     g = tuple(tr['generator_image'])
     assert OT.emb(P, Q, g, phi0) == tuple(s['phi'])
     n, c0 = s['name'], s['form'][0]
     kind = 'an isomorphism' if abs(tr['determinant']) == 1 else f"an embedding of index {abs(tr['determinant'])}"
     return (f"/-- `φ` for `{n}` is the image of `{z3txt(phi0)}` in `ℤ[t]/(t³ − {p}t − {q})` under "
-            f"`OrderMaps.map_{k}` ({kind}). -/\n"
+            f"`{mod}.map_{k}` ({kind}). -/\n"
             f"theorem phi_{n}_via : OrderEmbedding.emb {P} {Q} {U.z3_lean(g)} {U.z3_lean(phi0)} = {U.z3_lean(s['phi'])} := "
             f"by decide\n\n"
             f"/-- The norm identity of `{n}` here is the one in `ℤ[t]/(t³ − {p}t − {q})`, transported. -/\n"
             f"theorem nrm_{n}_via (a b : ℤ) : UnitPremises.nrm {P} {Q} (enc {U._i(c0)} {U.z3_lean(s['phi'])} a b) =\n"
             f"    UnitPremises.nrm {p} {q} (enc {U._i(c0)} {U.z3_lean(phi0)} a b) := by\n"
             f"  rw [← phi_{n}_via]\n"
-            f"  exact OrderEmbedding.nrm_enc_of_map Generated.OrderMaps.map_{k} {U._i(c0)} {U.z3_lean(phi0)} a b\n\n")
+            f"  exact OrderEmbedding.nrm_enc_of_map Generated.{mod}.map_{k} {U._i(c0)} {U.z3_lean(phi0)} a b\n\n")
 
 
 def normrep_layer(cfg, s):
@@ -537,9 +565,9 @@ def build(D):
     name = cfg['name']
     hd = U.head(name, doc(cfg, D, ', '.join(map(str, ids)))).replace(
         'import PerfectPower.DescentThueList\n', 'import PerfectPower.DescentThueList\nimport PerfectPower.DescentLists\n')
-    if any('via' in s for s in cfg['sources']):
+    for mod in sorted({via_map(s['via'][0])[1] for s in cfg['sources'] if 'via' in s}):
         hd = hd.replace('import PerfectPower.DescentLists\n',
-                        'import PerfectPower.DescentLists\nimport PerfectPower.Generated.OrderMaps\n')
+                        f'import PerfectPower.DescentLists\nimport PerfectPower.Generated.{mod}\n')
     for imp in cfg.get('imports', []):
         hd = hd.replace('import PerfectPower.DescentLists\n', f'import PerfectPower.DescentLists\nimport {imp}\n')
     if 'order' in cfg:

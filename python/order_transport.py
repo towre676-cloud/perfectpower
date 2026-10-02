@@ -146,6 +146,25 @@ def census(cost):
             edges.extend(embeddings(s, t))
     return edges
 
+# orders found outside the census (a common overorder of several census orders), with the census
+# orders mapped into them; written as separate modules so that `OrderMaps.lean` (imported by most
+# curve modules) does not change
+EXTRA_TARGETS = {'OrderMaps8532': ((60, 178), [(24, 28), (30, 34), (48, 30)])}
+
+
+def extra_maps(root):
+ for name,(t,domains) in EXTRA_TARGETS.items():
+  edges=[e for d in domains for e in embeddings(d,t)]
+  text,_=lean_maps(edges)
+  text=text.replace('namespace PerfectPower.Generated.OrderMaps\n',f'namespace PerfectPower.Generated.{name}\n').replace(
+   'end PerfectPower.Generated.OrderMaps\n',f'end PerfectPower.Generated.{name}\n').replace(
+   '# Maps between the cubic orders of the Thue workload',f'# Maps into `ℤ[t]/(t³ − {t[0]}t − {t[1]})`, a common overorder of census orders')
+  (root/'PerfectPower'/'Generated'/f'{name}.lean').write_text(text)
+  for i,e in enumerate(edges):e['lean']=f'Generated.{name}.map_{i}';e['evidence']='EXACT_INTEGER_ARITHMETIC; Lean: map_mul, map_nrm by ring, det by decide'
+  (root/'receipts'/f'{name.lower()}.json').write_text(json.dumps({'module':name,'target':list(t),'embeddings':edges},indent=2)+'\n')
+  print(name,[(e['domain'],e['index']) for e in edges])
+
+
 def main():
  root=pathlib.Path(__file__).resolve().parents[1]
  ap=argparse.ArgumentParser();ap.add_argument('cost_receipt',nargs='?',default=str(root/'receipts'/'order_cost_fb30592.json'));ap.add_argument('--output',default=str(root/'receipts'/'order_transports.json'));args=ap.parse_args()
@@ -189,6 +208,7 @@ def main():
  out={'census_base_commit':'fb30592a288e0ee1e928802a94eeef2a921f3b46','orders':len(orders),'embeddings':edges,'lean_isomorphisms':[f'iso_{i}_{j}' for i,j in isos],
       'choices':choices,'curves':curves,'warning':'The maps are Lean-checked (Generated/OrderMaps.lean); the unit-generation costs are estimates, and source certificates in a target order must be regenerated.'}
  pathlib.Path(args.output).write_text(json.dumps(out,indent=2)+'\n')
+ extra_maps(root)
  print('orders',len(orders),'checked directed maps',len(edges),'orders with costs',len(choices),'chosen targets',len({tuple(c['chosen_order']) for c in choices}))
  for c in choices:
   if c['domain']!=c['chosen_order']:print(c['domain'],'->',c['chosen_order'],'index',c['transport']['index'],'cost',c['original_cost'],'->',c['unitgen_proxy_cost'])
