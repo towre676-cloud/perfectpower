@@ -33,10 +33,8 @@ theorem complete_square (a1 a2 a3 a4 a6 x y : ℤ) :
   constructor
   · intro h; linear_combination 4 * h
   · intro h
-    have h4 : 4 * (y ^ 2 + a1 * x * y + a3 * y - (x ^ 3 + a2 * x ^ 2 + a4 * x + a6)) = 0 := by
-      linear_combination h
-    have := (mul_eq_zero.mp h4).resolve_left (by norm_num)
-    linarith
+    apply mul_left_cancel₀ (show (4 : ℤ) ≠ 0 by norm_num)
+    linear_combination h
 
 /-- The parity needed for the integral inverse follows from the equation itself. -/
 theorem parity_of_sq {a1 a2 a3 a4 a6 x Y : ℤ} (h : Y ^ 2 = quartRHS a1 a2 a3 a4 a6 x) :
