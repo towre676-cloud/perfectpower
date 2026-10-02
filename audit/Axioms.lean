@@ -2460,3 +2460,10 @@ open PerfectPower
 #print axioms PerfectPower.Generated.PositiveK.plus95
 #print axioms PerfectPower.Generated.PositiveK.cert_96
 #print axioms PerfectPower.Generated.PositiveK.plus96
+-- Weierstrass
+#print axioms PerfectPower.Weierstrass.complete_square
+#print axioms PerfectPower.Weierstrass.parity_of_sq
+#print axioms PerfectPower.Weierstrass.readout
+#print axioms PerfectPower.Weierstrass.defect_comp
+#print axioms PerfectPower.Weierstrass.chain_map
+#print axioms PerfectPower.Weierstrass.defect_map
