@@ -273,7 +273,7 @@ docker build -t perfectpower . && docker run --rm perfectpower
   - **71 curves are complete in Lean with no premise** (no Matveev, no class-list hypothesis; `Generated/ClassLists/K*.lean`).
     - For 39 of them every class is locally impossible or reducible: 25 with no integral point, and $k=5,7,14,16,23,27,34,50,52,59,61,70,77,86$ with their points.
     - The other 32 have irreducible sources (below): $k=1,2,3,4,8,9,10,12,15,17,18,24,25,33,37,41,43,44,48,49,54,57,64,65,68,73,81,82,89,97,98,100$. They include $y^2=x^3+17$ with its 16 points up to $x=5234$, and $y^2=x^3+24$ with $(8158,\pm736844)$.
-    - The remaining 45 positive-$k$ curves $\le100$ are census evidence only. The negative-$k$ theorems with Thue branches are conditional on Matveev's bound. These three statuses are kept separate everywhere.
+    - The remaining 29 positive-$k$ curves $\le100$ are census evidence only. The negative-$k$ theorems with Thue branches are conditional on Matveev's bound. These three statuses are kept separate everywhere.
   - The class-list premise is proved (`ClassListProof.classList_of`). The real reduction runs through a covariant positive definite form $q$ with $\det q=3/|D|$ and $q(v)^3\ge27F(v)^2/D^2$ (`CubicReduction.lean`). Then come Gauss reduction, an integer box with checked parameters, and kernel-checked transports for every form in the box.
   - **$k=2$: the first irreducible source, with no premise** (`Plus2.lean`, `Skolem3.lean`, `Generated/ClassLists/K2.lean`).
     - `Plus2.source` proves that $-u^3-3uv^2-2v^3=1$ only at $(-1,0)$.

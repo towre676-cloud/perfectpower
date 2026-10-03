@@ -938,9 +938,12 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
 
 ## 8. Not covered
 
-- **Positive `k`** (96 curves): `y² − k = x³` factors in a real quadratic field. This lattice
-  argument is for imaginary `√−D`.
-- **Irreducible Thue branches with solutions:** no Lean method here. Point-free branches close by
-  the descent certificates of §6.
+- **Positive `k`**: `y² − k = x³` factors in a real quadratic field, so this lattice argument (for
+  imaginary `√−D`) does not apply. Positive `k` goes through cubic forms instead (§7.4): 71 curves
+  are complete there with no premise.
+- **Irreducible Thue branches with solutions, for negative `k`:** these still need Matveev's bound
+  (§6). For positive `k` the rank-one engine handles them: `RankOne.source` for one solution and
+  `RankOneZeros.source_list` for several (§7.4). Point-free negative-`k` branches close by the
+  descent certificates of §6.
 - **The Sage census:** external (mwrank ranks, elliptic logarithms), as before. Four of the 26
   closed curves have rank 2 in Sage. Their Lean lists do not use the rank at all.

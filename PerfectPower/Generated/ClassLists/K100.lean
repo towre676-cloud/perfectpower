@@ -164,6 +164,7 @@ theorem classList : ClassList 100 (cs_100.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
+set_option maxRecDepth 100000 in
 /-- **`y² = x³ + 100`: the integral points are exactly [((-4), (-6)), ((-4), 6), (0, (-10)), (0, 10), (5, (-15)), (5, 15), (20, (-90)), (20, 90), (24, (-118)), (24, 118), (2660, (-137190)), (2660, 137190)]**, with no premise. -/
 theorem plus100 (x y : ℤ) : y ^ 2 = x ^ 3 + 100 ↔ (x, y) ∈ ([((-4), (-6)), ((-4), 6), (0, (-10)), (0, 10), (5, (-15)), (5, 15), (20, (-90)), (20, 90), (24, (-118)), (24, 118), (2660, (-137190)), (2660, 137190)] : List (ℤ × ℤ)) :=
   complete_of_sols classList sols_100 (by decide +kernel) x y

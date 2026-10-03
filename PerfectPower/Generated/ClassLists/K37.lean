@@ -130,6 +130,7 @@ theorem classList : ClassList 37 (cs_37.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
+set_option maxRecDepth 100000 in
 /-- **`y² = x³ + 37`: the integral points are exactly [((-1), (-6)), ((-1), 6), (3, (-8)), (3, 8), (243, (-3788)), (243, 3788)]**, with no premise. -/
 theorem plus37 (x y : ℤ) : y ^ 2 = x ^ 3 + 37 ↔ (x, y) ∈ ([((-1), (-6)), ((-1), 6), (3, (-8)), (3, 8), (243, (-3788)), (243, 3788)] : List (ℤ × ℤ)) :=
   complete_of_sols classList sols_37 (by decide +kernel) x y

@@ -138,6 +138,7 @@ theorem classList : ClassList 65 (cs_65.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
+set_option maxRecDepth 100000 in
 /-- **`y² = x³ + 65`: the integral points are exactly [((-4), (-1)), ((-4), 1), ((-1), (-8)), ((-1), 8), (14, (-53)), (14, 53), (584, (-14113)), (584, 14113)]**, with no premise. -/
 theorem plus65 (x y : ℤ) : y ^ 2 = x ^ 3 + 65 ↔ (x, y) ∈ ([((-4), (-1)), ((-4), 1), ((-1), (-8)), ((-1), 8), (14, (-53)), (14, 53), (584, (-14113)), (584, 14113)] : List (ℤ × ℤ)) :=
   complete_of_sols classList sols_65 (by decide +kernel) x y

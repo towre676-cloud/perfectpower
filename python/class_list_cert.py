@@ -418,6 +418,8 @@ def lean_rank1(k, srcs, zsrcs=None):
             f"theorem classList : ClassList {k} (cs_{k}.map Prod.fst) :=\n"
             f"  classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)\n"
             f"    (by simp only [P]; norm_num) (by norm_num) (by norm_num) box\n\n"
+            # large points: the final point check needs a deeper recursion limit
+            + ("set_option maxRecDepth 100000 in\n" if max(abs(y) for _, y in pts) > 1000 else "") +
             f"/-- **`y² = x³ + {k}`: the integral points are exactly {L}**, with no premise. -/\n"
             f"theorem plus{k} (x y : ℤ) : y ^ 2 = x ^ 3 + {k} ↔ (x, y) ∈ ({L} : List (ℤ × ℤ)) :=\n"
             f"  complete_of_sols classList sols_{k} (by decide +kernel) x y\n\n"
