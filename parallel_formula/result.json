@@ -1,0 +1,20 @@
+{
+  "source": "independent_nia/corpus/cvc5__cvc5/test/regress/cli/regress1/nl/disj-eval.smt2",
+  "sha256": "e0db798188db6dc568ee3638f4946eb9e90db88cc11b1c924f08cbaa23646ef4",
+  "solver": "5.1.0",
+  "runs": [
+    {
+      "name": "original",
+      "answer": "sat",
+      "seconds": 0.021471110000220506,
+      "model": "[y = 9, x = 27]"
+    },
+    {
+      "name": "parametrized",
+      "answer": "sat",
+      "seconds": 0.0065777260001596005,
+      "model": "[t = 3]"
+    }
+  ],
+  "performance_claim": "none; this source is an easy regression"
+}
