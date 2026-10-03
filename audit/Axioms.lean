@@ -3010,3 +3010,4 @@ open PerfectPower
 #print axioms PerfectPower.CurveScaling.phi_injective
 #print axioms PerfectPower.CurveScaling.phi_surjective
 #print axioms PerfectPower.CurveScaling.phiEquiv
+#print axioms PerfectPower.CurveScaling.residual_zero_iff_of_isUnit

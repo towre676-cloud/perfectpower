@@ -8,6 +8,8 @@ For `E : y² = x³ + Ax + B` over a field and `Z ≠ 0`, `φ_Z(x, y) = (Z²x, Z�
 of RFC 5639: `Z` is chosen with `AZ⁴ = −3`. It is an isomorphism over the same field, not a
 quadratic twist.
 * `residual`: `(Z³y)² − (Z²x)³ − (AZ⁴)(Z²x) − BZ⁶ = Z⁶ (y² − x³ − Ax − B)`, in any commutative ring.
+* `residual_zero_iff_of_isUnit`: curve-equation membership is preserved over any commutative ring
+  when `Z` is invertible, even without a field or primality assumption.
 * `equation_iff`, `nonsingular_iff`: membership and nonsingularity are preserved, for `Z ≠ 0`.
 * `phi`: the map on Mathlib's points (`WeierstrassCurve.Affine.Point`), with `0 ↦ 0`.
 * **`phi_add`**: `φ_Z(P + Q) = φ_Z(P) + φ_Z(Q)` for Mathlib's group law; so `phiHom` is an
@@ -29,6 +31,15 @@ variable {R : Type*} [CommRing R]
 theorem residual (A B Z x y : R) :
     (Z ^ 3 * y) ^ 2 - (Z ^ 2 * x) ^ 3 - (A * Z ^ 4) * (Z ^ 2 * x) - B * Z ^ 6 =
       Z ^ 6 * (y ^ 2 - x ^ 3 - A * x - B) := by ring
+
+/-- Curve-equation membership is preserved over any commutative ring when the
+scale is a unit. This includes residue rings without a primality assumption;
+nonzero alone is insufficient in a ring with zero divisors. -/
+theorem residual_zero_iff_of_isUnit (A B Z x y : R) (hZ : IsUnit Z) :
+    (Z ^ 3 * y) ^ 2 - (Z ^ 2 * x) ^ 3 - (A * Z ^ 4) * (Z ^ 2 * x) - B * Z ^ 6 = 0 ↔
+      y ^ 2 - x ^ 3 - A * x - B = 0 := by
+  rw [residual]
+  exact (hZ.pow 6).mul_right_eq_zero
 
 end Ring
 

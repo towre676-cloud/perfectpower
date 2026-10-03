@@ -12,6 +12,7 @@ not a quadratic twist.
 | theorem | statement |
 |---|---|
 | `residual` | (Z³y)² − (Z²x)³ − (AZ⁴)(Z²x) − BZ⁶ = Z⁶(y² − x³ − Ax − B), in any commutative ring |
+| `residual_zero_iff_of_isUnit` | curve-equation membership is equivalent in any commutative ring when Z is a unit, including composite residue rings |
 | `equation_iff`, `nonsingular_iff` | a point is on E (nonsingular) iff its image is on E′ (nonsingular), for Z ≠ 0 |
 | `slope_scale` | the chord and tangent slope scales by Z, including the degenerate cases |
 | **`phi_add`** | φ_Z(P + Q) = φ_Z(P) + φ_Z(Q) for Mathlib's group law on `WeierstrassCurve.Affine.Point` |
@@ -30,7 +31,9 @@ was not reachable from this environment. The checks are integer congruences modu
 ## Not claimed
 
 - **Primality of p.** It is not proved, so the field theorems are not yet applied to these
-  constants inside ZMod p. They become applicable from a primality certificate.
+  constants inside ZMod p. They become applicable from a primality certificate. The ring-level
+  `residual_zero_iff_of_isUnit` needs only invertibility of Z to preserve the equation; it does
+  not establish the point-group isomorphism over these concrete constants.
 - **No implementation is verified.** There is no TLS code, no P-384 or Brainpool scalar-multiplication
   code, and no proof that any library exports the right coordinate.
 - **Nothing about constant-time behaviour or side channels.** Algebraic equivalence says nothing
