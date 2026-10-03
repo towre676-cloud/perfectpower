@@ -1,0 +1,146 @@
+{
+ "scope": "source-change experiment, VonNeumann16; fresh sessions per variant, apply goals re-derived automatically; legitimate changes must stay proved, planted bugs must fail",
+ "all_as_expected": true,
+ "variants": [
+  {
+   "variant": "ORIG",
+   "kind": "original",
+   "change": "unmodified",
+   "apply_goals": [
+    "isqrt16'vc.26"
+   ],
+   "arms": {
+    "baseline": {
+     "goals": 44,
+     "valid": 44,
+     "failing": []
+    },
+    "apply": {
+     "goals": 45,
+     "valid": 45,
+     "failing": []
+    }
+   },
+   "expected_outcome": true
+  },
+  {
+   "variant": "L1",
+   "kind": "legitimate",
+   "change": "branch test written as ule b !num",
+   "apply_goals": [
+    "isqrt16'vc.26"
+   ],
+   "arms": {
+    "baseline": {
+     "goals": 44,
+     "valid": 44,
+     "failing": []
+    },
+    "apply": {
+     "goals": 45,
+     "valid": 45,
+     "failing": []
+    }
+   },
+   "expected_outcome": true
+  },
+  {
+   "variant": "L2",
+   "kind": "legitimate",
+   "change": "b computed by add instead of bw_or",
+   "apply_goals": [
+    "isqrt16'vc.26"
+   ],
+   "arms": {
+    "baseline": {
+     "goals": 44,
+     "valid": 44,
+     "failing": []
+    },
+    "apply": {
+     "goals": 45,
+     "valid": 45,
+     "failing": []
+    }
+   },
+   "expected_outcome": true
+  },
+  {
+   "variant": "B1",
+   "kind": "bug",
+   "change": "subtracts one too much",
+   "apply_goals": [
+    "isqrt16'vc.26"
+   ],
+   "arms": {
+    "baseline": {
+     "goals": 44,
+     "valid": 42,
+     "failing": [
+      "isqrt16'vc.26",
+      "isqrt16'vc.27"
+     ]
+    },
+    "apply": {
+     "goals": 45,
+     "valid": 43,
+     "failing": [
+      "isqrt16'vc.26",
+      "isqrt16'vc.27"
+     ]
+    }
+   },
+   "expected_outcome": true
+  },
+  {
+   "variant": "B2",
+   "kind": "bug",
+   "change": "shifts res by 2 instead of 1",
+   "apply_goals": [
+    "isqrt16'vc.26"
+   ],
+   "arms": {
+    "baseline": {
+     "goals": 44,
+     "valid": 43,
+     "failing": [
+      "isqrt16'vc.16"
+     ]
+    },
+    "apply": {
+     "goals": 45,
+     "valid": 44,
+     "failing": [
+      "isqrt16'vc.16"
+     ]
+    }
+   },
+   "expected_outcome": true
+  },
+  {
+   "variant": "B3",
+   "kind": "bug",
+   "change": "strict comparison skips num = b",
+   "apply_goals": [
+    "isqrt16'vc.26"
+   ],
+   "arms": {
+    "baseline": {
+     "goals": 44,
+     "valid": 43,
+     "failing": [
+      "isqrt16'vc.40"
+     ]
+    },
+    "apply": {
+     "goals": 45,
+     "valid": 44,
+     "failing": [
+      "isqrt16'vc.40"
+     ]
+    }
+   },
+   "expected_outcome": true
+  }
+ ]
+}

@@ -215,25 +215,49 @@ The existing complete-solution-set machinery remains valuable for its supported 
 
 ## The next substantial work
 
-**Native Why3 proof sessions: done, and the result is neutral** (`why3_isqrt/native_session.py`, `why3_isqrt/sessions/`, `receipts/why3_session.json`).
+**Native Why3 proof sessions** (`why3_isqrt/native_session.py`, `why3_isqrt/sessions/`, `receipts/why3_session.json`, `why3_session_repeat.json`, `why3_mutants.json`).
 
 Setup:
-- The program is Why3's own `examples/isqrt_von_neumann.mlw`, unmodified in the baseline arm.
-- The rule arm adds one lemma per module, `ule b n -> ule n x -> ule (sub n b) x` (`BVWorkflow.sub_le_bound`). Why3 must prove the lemma itself in the session; nothing is admitted.
-- Both arms run the same automatic script: `split_vc`, then Z3 5.1.0 at 3 s on every leaf, with no manual step.
-- Why3 1.6.0's shell cannot add a file non-interactively, so the sessions are built with Why3's own tools. A skeleton session names the top-level goals, and `why3 replay -f` expands `split_vc` and computes the shapes. A Z3 attempt is then attached to every leaf, and `why3 replay -f` runs them and records the results.
-- `make why3-session` replays both committed sessions with `why3 replay` (no `-f`). Both replay with exit code 0.
+- The program is Why3's own `examples/isqrt_von_neumann.mlw`, unmodified in the baseline.
+- The rule enters as one lemma per module, `ule b n -> ule n x -> ule (sub n b) x` (`BVWorkflow.sub_le_bound`). Why3 must prove the lemma itself; nothing is admitted.
+- Every arm uses `split_vc` and Z3 5.1.0 at 3 s, with no manual step.
+- Why3 1.6's shell cannot add a file non-interactively, so the sessions are built with Why3's own `why3 replay -f`. A skeleton names the top-level goals; Why3 expands the transformations and records the results.
+- `make why3-session` replays the committed sessions with `why3 replay --use-steps`, using Z3's recorded step counts so that goals near the time limit do not flip.
 
-Results:
+Four arms:
+- **baseline**: the unmodified program.
+- **rule**: the lemma in every goal's context.
+- **selective**: the lemma kept only in the 12 goals picked by a syntax policy (an unsigned upper-bound conclusion whose bound term also bounds a hypothesis). It is removed elsewhere with Why3's `remove`.
+- **apply**: the rule used as a proof step, the native counterpart of the SMT adapter's ground instances. On each goal `ule A X` whose context defines `A = sub N B`, the session runs `subst_all` and then `apply pp_sub_le_bound`, and Z3 closes the two premises. The goal also keeps its direct Z3 attempt, so the arm cannot lose a goal the baseline proves. The policy is syntactic, fixed before any run, and selects the three subtraction-invariant goals `isqrt{16,32,64}'vc.26`.
 
-| arm | goals | proved | prover time |
-|---|---:|---:|---:|
-| baseline | 132 | 125 | 22.15 s |
-| rule (lemma for every goal) | 133 (incl. the lemma) | 125 | 19.97 s |
+Five fresh runs of every arm (`--repeat 5`):
 
-The global lemma discharges **no new goal** and loses one (`isqrt32'vc.41`), while total prover time falls by about 10%. The seven baseline failures are `isqrt32'vc.29, .40, .42` and `isqrt64'vc.26, .29, .40, .43`. This agrees with the SMT experiment: injecting the rule everywhere is not a sound performance strategy, and the 128 → 130 gain there came from the selective policy.
+| arm | goals proved in all 5 runs | never proved |
+|---|---:|---:|
+| baseline | 125 | 6 |
+| rule (lemma everywhere) | 125 | 7 |
+| selective (lemma in 12 goals) | 125 | 6 |
+| **apply** (rule as a proof step) | **126** | **5** |
 
-The next native step is that policy: keep the lemma only in the selected goals (Why3's `remove` transformation on the others), and measure again. The scheduler problem recorded earlier was environment-specific: here the scheduler runs.
+- **The apply arm proves `isqrt64'vc.26` in 5 of 5 runs; the baseline never proves it (0 of 5).** That is the 64-bit subtraction invariant `ule num x` after `num := sub num b`. Each of the two premises takes about 1,350 Z3 steps. The apply arm loses nothing.
+- A lemma left in the context does not help. The global lemma also loses `isqrt32'vc.42` in all 5 runs, a goal at the time limit that the baseline proves in 2 of 5. The SMT gain (128 → 130) and this one both come from using the rule at the right goal with the right terms.
+- The remaining failures (`isqrt32'vc.29, .40` and `isqrt64'vc.29, .40, .43`) are square-identity invariants and the 64-bit terminal bound. They are not subtraction-shaped, so they need a different theorem family.
+- The apply session replays from scratch. The selective session failed the replay check in one run, and that is recorded in the receipt.
+
+**Source changes and planted bugs** (`--mutants`, on the 16-bit module, which the baseline proves completely). Each variant gets fresh sessions. The apply goals are re-derived from the changed code, with no manual annotation.
+
+| variant | change | baseline | apply |
+|---|---|---|---|
+| original | — | 44/44 | 45/45 (incl. the lemma) |
+| L1 (legitimate) | branch test `uge !num b` written as `ule b !num` | 44/44 | 45/45 |
+| L2 (legitimate) | `b` computed by `add` instead of `bw_or` | 44/44 | 45/45 |
+| B1 (bug) | subtracts `b + 1` | fails `vc.26`, `vc.27` | fails `vc.26`, `vc.27` |
+| B2 (bug) | shifts `res` by 2 | fails `vc.16` | fails `vc.16` |
+| B3 (bug) | strict comparison skips `num = b` | fails `vc.40` | fails `vc.40` |
+
+Legitimate changes stay proved, and the policy re-selects its goal automatically. Every planted bug is still caught, at the same goals in both arms, so the rule masks nothing. In B1 the apply step is selected, but its premise `ule (b + 1) num` is false, so the wrong invariant fails as it should.
+
+**GNATprove** cannot be installed in this environment. Ubuntu packages GNAT 13 and gprbuild, which are installed, but not SPARK. Building GNATprove from source (the `GNAT-FSF-builds` recipes) needs the `spark2014` sources from GitHub and a GCC source tarball from gcc.gnu.org. Both hosts are denied by this environment's network policy.
 
 After that, run the pinned SPARK regression through GNATprove and count matches honestly. A zero-match result is still useful information: it says that the relevant GNATprove encoding needs a different bridge. Maintain explicit widths, signedness and overflow hypotheses. Do not claim that the Why3 measurements automatically transfer to Ada's checked arithmetic or to GNATprove's exact encoding.
 

@@ -281,26 +281,26 @@ def mutate16(src: str, old: str, new: str) -> str:
 
 
 def mutants() -> dict:
-    """Each variant gets fresh sessions (baseline and selective), with the selective goals re-derived
+    """Each variant gets fresh sessions (baseline and apply), with the apply goals re-derived
     from the changed source: no manual step.  Legitimate changes must stay proved; bugs must fail."""
     th16 = [THEORIES[0]]
     src = UPSTREAM.read_text()
     rows = []
     for name, kind, what, old, new in [('ORIG', 'original', 'unmodified', None, None)] + MUTANTS:
         msrc = src if old is None else mutate16(src, old, new)
-        keep = {g for g in selected_goals(rule_source(msrc)) if g.startswith('isqrt16')}
+        keep = {g for g in apply_goals(rule_source(msrc)) if g.startswith('isqrt16')}
         res = {}
-        for arm, text, lemmas, kp in (('baseline', msrc, ['sqr_add2'], None),
-                                      ('selective', rule_source(msrc), ['sqr_add2', 'pp_sub_le_bound'], keep)):
-            r = create(f'_mut_{arm}', text, lemmas, kp, th16)['results']
+        for arm, text, lemmas, ap in (('baseline', msrc, ['sqr_add2'], None),
+                                      ('apply', rule_source(msrc), ['sqr_add2', 'pp_sub_le_bound'], keep)):
+            r = create(f'_mut_{arm}', text, lemmas, None, th16, apply=ap)['results']
             shutil.rmtree(SESS / f'_mut_{arm}')
             fails = sorted(g for g, v in r.items() if v['status'] != 'valid')
             res[arm] = {'goals': len(r), 'valid': len(r) - len(fails), 'failing': fails}
-        detected = bool(res['baseline']['failing']) and bool(res['selective']['failing'])
+        detected = bool(res['baseline']['failing']) and bool(res['apply']['failing'])
         ok = (not detected) if kind != 'bug' else detected
-        rows.append({'variant': name, 'kind': kind, 'change': what, 'selected_goals': sorted(keep),
+        rows.append({'variant': name, 'kind': kind, 'change': what, 'apply_goals': sorted(keep),
                      'arms': res, 'expected_outcome': ok})
-    out = {'scope': 'source-change experiment, VonNeumann16; fresh sessions per variant, selective goals '
+    out = {'scope': 'source-change experiment, VonNeumann16; fresh sessions per variant, apply goals '
                     're-derived automatically; legitimate changes must stay proved, planted bugs must fail',
            'all_as_expected': all(r['expected_outcome'] for r in rows), 'variants': rows}
     (ROOT / 'receipts' / 'why3_mutants.json').write_text(json.dumps(out, indent=1) + '\n')
@@ -312,7 +312,7 @@ def main():
         out = mutants()
         for r in out['variants']:
             print(r['variant'], r['kind'], r['change'], {a: (v['valid'], v['goals'], v['failing'][:3]) for a, v in r['arms'].items()},
-                  'selected', len(r['selected_goals']), 'OK' if r['expected_outcome'] else 'UNEXPECTED')
+                  'apply goals', r['apply_goals'], 'OK' if r['expected_outcome'] else 'UNEXPECTED')
         return
     if sys.argv[1:2] == ['--repeat']:
         print(json.dumps(repeat(int(sys.argv[2])), indent=1))

@@ -4,7 +4,8 @@
  "always_proved": {
   "baseline": 125,
   "rule": 125,
-  "selective": 125
+  "selective": 125,
+  "apply": 126
  },
  "never_proved": {
   "baseline": [
@@ -31,13 +32,27 @@
    "isqrt64'vc.29",
    "isqrt64'vc.40",
    "isqrt64'vc.43"
+  ],
+  "apply": [
+   "isqrt32'vc.29",
+   "isqrt32'vc.40",
+   "isqrt64'vc.29",
+   "isqrt64'vc.40",
+   "isqrt64'vc.43"
   ]
  },
  "goals_that_differ_or_flip": {
   "isqrt32'vc.42": {
-   "baseline": 1,
+   "baseline": 2,
    "rule": 0,
-   "selective": 2
+   "selective": 1,
+   "apply": 1
+  },
+  "isqrt64'vc.26": {
+   "baseline": 0,
+   "rule": 0,
+   "selective": 0,
+   "apply": 5
   }
  }
 }

@@ -1,21 +1,429 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
-"https://www.why3.org/why3session.dtd">
+"http://why3.lri.fr/why3session.dtd">
 <why3session shape_version="6">
 <prover id="0" name="Z3" version="5.1.0" timelimit="3" steplimit="0" memlimit="1000"/>
 <file format="whyml">
 <path name=".."/><path name="isqrt_von_neumann.mlw"/>
 <theory name="VonNeumann16">
- <goal name="sqr_add2"><proof prover="0"><result status="valid" time="0.00"/></proof></goal>
- <goal name="isqrt16&apos;vc"><transf name="split_vc"></transf></goal>
+ <goal name="sqr_add2" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="1503"/></proof>
+ </goal>
+ <goal name="isqrt16&#39;vc" expl="VC for isqrt16">
+ <transf name="split_vc" >
+  <goal name="isqrt16&#39;vc.0" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.1" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.2" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.3" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.4" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.5" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.6" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.7" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.8" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.9" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.10" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.11" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.12" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.13" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.14" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.15" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.16" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.17" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.18" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.19" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.20" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.21" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.22" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.23" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.24" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.25" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.26" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.27" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.28" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.29" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.30" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.31" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.32" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.33" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.34" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.35" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.36" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.37" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.38" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.39" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.40" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.41" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt16&#39;vc.42" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+ </transf>
+ </goal>
 </theory>
 <theory name="VonNeumann32">
- <goal name="sqr_add2"><proof prover="0"><result status="valid" time="0.00"/></proof></goal>
- <goal name="isqrt32&apos;vc"><transf name="split_vc"></transf></goal>
+ <goal name="sqr_add2" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="1503"/></proof>
+ </goal>
+ <goal name="isqrt32&#39;vc" expl="VC for isqrt32">
+ <transf name="split_vc" >
+  <goal name="isqrt32&#39;vc.0" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.1" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.2" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.3" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.4" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.5" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.6" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.7" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.8" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.9" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.10" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.11" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.12" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.13" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.14" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.15" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.16" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.17" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.18" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.19" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.20" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.21" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.22" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.23" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.24" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.25" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.26" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.27" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.28" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.29" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.30" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.31" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.32" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.33" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.34" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.35" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.36" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.37" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.38" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.39" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.40" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.41" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt32&#39;vc.42" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+ </transf>
+ </goal>
 </theory>
 <theory name="VonNeumann64">
- <goal name="sqr_add2"><proof prover="0"><result status="valid" time="0.00"/></proof></goal>
- <goal name="isqrt64&apos;vc"><transf name="split_vc"></transf></goal>
+ <goal name="sqr_add2" proved="true">
+ <proof prover="0"><result status="valid" time="0.00" steps="1503"/></proof>
+ </goal>
+ <goal name="isqrt64&#39;vc" expl="VC for isqrt64">
+ <transf name="split_vc" >
+  <goal name="isqrt64&#39;vc.0" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.1" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.2" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.3" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.4" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.5" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.6" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.7" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.8" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.9" expl="loop invariant init">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.10" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.11" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.12" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.13" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.14" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.15" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.16" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.17" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.18" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.19" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.20" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.21" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.22" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.23" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.24" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.25" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.26" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.27" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.28" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.29" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.30" expl="loop variant decrease">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.31" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.32" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.33" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.34" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.35" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.36" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.37" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.38" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.39" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.40" expl="loop invariant preservation">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.41" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.42" expl="assertion">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.43" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+  <goal name="isqrt64&#39;vc.44" expl="postcondition">
+  <proof prover="0"><result status="valid" time="0.00"/></proof>
+  </goal>
+ </transf>
+ </goal>
 </theory>
 </file>
 </why3session>

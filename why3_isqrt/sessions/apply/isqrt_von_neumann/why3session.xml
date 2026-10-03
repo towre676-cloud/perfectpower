@@ -57,7 +57,11 @@
   </transf>
   </goal>
   <goal name="isqrt16&#39;vc.6" expl="loop invariant init" proved="true">
-  <proof prover="0"><result status="valid" time="0.00" steps="768"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt16&#39;vc.6.0" expl="loop invariant init" proved="true">
+   <proof prover="0"><result status="valid" time="0.00" steps="731"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt16&#39;vc.7" expl="loop invariant init" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -194,6 +198,26 @@
   </goal>
   <goal name="isqrt16&#39;vc.26" expl="loop invariant preservation" proved="true">
   <proof prover="0"><result status="valid" time="0.00" steps="171364"/></proof>
+  <transf name="subst_all" proved="true" >
+   <goal name="isqrt16&#39;vc.26.0" expl="loop invariant preservation" proved="true">
+   <transf name="apply" proved="true" arg1="pp_sub_le_bound">
+    <goal name="isqrt16&#39;vc.26.0.0" expl="apply premises" proved="true">
+    <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+     <goal name="isqrt16&#39;vc.26.0.0.0" expl="apply premises" proved="true">
+     <proof prover="0"><result status="valid" time="0.00" steps="1312"/></proof>
+     </goal>
+    </transf>
+    </goal>
+    <goal name="isqrt16&#39;vc.26.0.1" expl="apply premises" proved="true">
+    <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+     <goal name="isqrt16&#39;vc.26.0.1.0" expl="apply premises" proved="true">
+     <proof prover="0"><result status="valid" time="0.00" steps="1312"/></proof>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt16&#39;vc.27" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -212,7 +236,7 @@
   <goal name="isqrt16&#39;vc.29" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt16&#39;vc.29.0" expl="loop invariant preservation" proved="true">
-   <proof prover="0"><result status="valid" time="0.00" steps="565643"/></proof>
+   <proof prover="0"><result status="valid" time="0.11" steps="565643"/></proof>
    </goal>
   </transf>
   </goal>
@@ -266,7 +290,11 @@
   </transf>
   </goal>
   <goal name="isqrt16&#39;vc.37" expl="loop invariant preservation" proved="true">
-  <proof prover="0"><result status="valid" time="0.00" steps="1262"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt16&#39;vc.37.0" expl="loop invariant preservation" proved="true">
+   <proof prover="0"><result status="valid" time="0.00" steps="1225"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt16&#39;vc.38" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -290,7 +318,11 @@
   </transf>
   </goal>
   <goal name="isqrt16&#39;vc.41" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" time="0.00" steps="78536"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt16&#39;vc.41.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.00" steps="323309"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt16&#39;vc.42" expl="postcondition" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -354,7 +386,11 @@
   </transf>
   </goal>
   <goal name="isqrt32&#39;vc.6" expl="loop invariant init" proved="true">
-  <proof prover="0"><result status="valid" time="0.00" steps="768"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt32&#39;vc.6.0" expl="loop invariant init" proved="true">
+   <proof prover="0"><result status="valid" time="0.00" steps="731"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt32&#39;vc.7" expl="loop invariant init" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -491,6 +527,26 @@
   </goal>
   <goal name="isqrt32&#39;vc.26" expl="loop invariant preservation" proved="true">
   <proof prover="0"><result status="valid" time="0.57" steps="2651935"/></proof>
+  <transf name="subst_all" proved="true" >
+   <goal name="isqrt32&#39;vc.26.0" expl="loop invariant preservation" proved="true">
+   <transf name="apply" proved="true" arg1="pp_sub_le_bound">
+    <goal name="isqrt32&#39;vc.26.0.0" expl="apply premises" proved="true">
+    <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+     <goal name="isqrt32&#39;vc.26.0.0.0" expl="apply premises" proved="true">
+     <proof prover="0"><result status="valid" time="0.00" steps="1312"/></proof>
+     </goal>
+    </transf>
+    </goal>
+    <goal name="isqrt32&#39;vc.26.0.1" expl="apply premises" proved="true">
+    <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+     <goal name="isqrt32&#39;vc.26.0.1.0" expl="apply premises" proved="true">
+     <proof prover="0"><result status="valid" time="0.00" steps="1312"/></proof>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt32&#39;vc.27" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -509,7 +565,7 @@
   <goal name="isqrt32&#39;vc.29" expl="loop invariant preservation">
   <transf name="remove" arg1="pp_sub_le_bound">
    <goal name="isqrt32&#39;vc.29.0" expl="loop invariant preservation">
-   <proof prover="0"><result status="timeout" time="3.00" steps="13241806"/></proof>
+   <proof prover="0"><result status="timeout" time="3.00" steps="13661628"/></proof>
    </goal>
   </transf>
   </goal>
@@ -563,7 +619,11 @@
   </transf>
   </goal>
   <goal name="isqrt32&#39;vc.37" expl="loop invariant preservation" proved="true">
-  <proof prover="0"><result status="valid" time="0.00" steps="1262"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt32&#39;vc.37.0" expl="loop invariant preservation" proved="true">
+   <proof prover="0"><result status="valid" time="0.00" steps="1225"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt32&#39;vc.38" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -582,17 +642,21 @@
   <goal name="isqrt32&#39;vc.40" expl="loop invariant preservation">
   <transf name="remove" arg1="pp_sub_le_bound">
    <goal name="isqrt32&#39;vc.40.0" expl="loop invariant preservation">
-   <proof prover="0"><result status="timeout" time="3.00" steps="13079228"/></proof>
+   <proof prover="0"><result status="timeout" time="3.00" steps="13154398"/></proof>
    </goal>
   </transf>
   </goal>
   <goal name="isqrt32&#39;vc.41" expl="postcondition" proved="true">
-  <proof prover="0"><result status="valid" time="2.50" steps="13033162"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt32&#39;vc.41.0" expl="postcondition" proved="true">
+   <proof prover="0"><result status="valid" time="0.39" steps="1837440"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt32&#39;vc.42" expl="postcondition">
   <transf name="remove" arg1="pp_sub_le_bound">
    <goal name="isqrt32&#39;vc.42.0" expl="postcondition">
-   <proof prover="0"><result status="timeout" time="3.00" steps="13169741"/></proof>
+   <proof prover="0"><result status="timeout" time="3.00" steps="12646159"/></proof>
    </goal>
   </transf>
   </goal>
@@ -651,7 +715,11 @@
   </transf>
   </goal>
   <goal name="isqrt64&#39;vc.6" expl="loop invariant init" proved="true">
-  <proof prover="0"><result status="valid" time="0.00" steps="768"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt64&#39;vc.6.0" expl="loop invariant init" proved="true">
+   <proof prover="0"><result status="valid" time="0.00" steps="731"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt64&#39;vc.7" expl="loop invariant init" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -705,21 +773,21 @@
   <goal name="isqrt64&#39;vc.14" expl="assertion" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.14.0" expl="assertion" proved="true">
-   <proof prover="0"><result status="valid" time="0.16" steps="699430"/></proof>
+   <proof prover="0"><result status="valid" time="0.17" steps="699430"/></proof>
    </goal>
   </transf>
   </goal>
   <goal name="isqrt64&#39;vc.15" expl="assertion" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.15.0" expl="assertion" proved="true">
-   <proof prover="0"><result status="valid" time="0.53" steps="3022167"/></proof>
+   <proof prover="0"><result status="valid" time="0.52" steps="3022167"/></proof>
    </goal>
   </transf>
   </goal>
   <goal name="isqrt64&#39;vc.16" expl="assertion" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.16.0" expl="assertion" proved="true">
-   <proof prover="0"><result status="valid" time="0.49" steps="2793252"/></proof>
+   <proof prover="0"><result status="valid" time="0.51" steps="2793252"/></proof>
    </goal>
   </transf>
   </goal>
@@ -733,7 +801,7 @@
   <goal name="isqrt64&#39;vc.18" expl="assertion" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.18.0" expl="assertion" proved="true">
-   <proof prover="0"><result status="valid" time="0.56" steps="3146236"/></proof>
+   <proof prover="0"><result status="valid" time="0.57" steps="3146236"/></proof>
    </goal>
   </transf>
   </goal>
@@ -761,7 +829,7 @@
   <goal name="isqrt64&#39;vc.22" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.22.0" expl="loop invariant preservation" proved="true">
-   <proof prover="0"><result status="valid" time="0.24" steps="1016748"/></proof>
+   <proof prover="0"><result status="valid" time="0.22" steps="1016748"/></proof>
    </goal>
   </transf>
   </goal>
@@ -786,8 +854,28 @@
    </goal>
   </transf>
   </goal>
-  <goal name="isqrt64&#39;vc.26" expl="loop invariant preservation">
-  <proof prover="0"><result status="timeout" time="3.00" steps="14916760"/></proof>
+  <goal name="isqrt64&#39;vc.26" expl="loop invariant preservation" proved="true">
+  <proof prover="0"><result status="timeout" time="3.00" steps="15565332"/></proof>
+  <transf name="subst_all" proved="true" >
+   <goal name="isqrt64&#39;vc.26.0" expl="loop invariant preservation" proved="true">
+   <transf name="apply" proved="true" arg1="pp_sub_le_bound">
+    <goal name="isqrt64&#39;vc.26.0.0" expl="apply premises" proved="true">
+    <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+     <goal name="isqrt64&#39;vc.26.0.0.0" expl="apply premises" proved="true">
+     <proof prover="0"><result status="valid" time="0.00" steps="1312"/></proof>
+     </goal>
+    </transf>
+    </goal>
+    <goal name="isqrt64&#39;vc.26.0.1" expl="apply premises" proved="true">
+    <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+     <goal name="isqrt64&#39;vc.26.0.1.0" expl="apply premises" proved="true">
+     <proof prover="0"><result status="valid" time="0.00" steps="1312"/></proof>
+     </goal>
+    </transf>
+    </goal>
+   </transf>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt64&#39;vc.27" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -799,14 +887,14 @@
   <goal name="isqrt64&#39;vc.28" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.28.0" expl="loop invariant preservation" proved="true">
-   <proof prover="0"><result status="valid" time="0.11" steps="431688"/></proof>
+   <proof prover="0"><result status="valid" time="0.12" steps="431688"/></proof>
    </goal>
   </transf>
   </goal>
   <goal name="isqrt64&#39;vc.29" expl="loop invariant preservation">
   <transf name="remove" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.29.0" expl="loop invariant preservation">
-   <proof prover="0"><result status="timeout" time="3.00" steps="8546946"/></proof>
+   <proof prover="0"><result status="timeout" time="3.00" steps="8775002"/></proof>
    </goal>
   </transf>
   </goal>
@@ -834,7 +922,7 @@
   <goal name="isqrt64&#39;vc.33" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.33.0" expl="loop invariant preservation" proved="true">
-   <proof prover="0"><result status="valid" time="0.23" steps="1135299"/></proof>
+   <proof prover="0"><result status="valid" time="0.24" steps="1135299"/></proof>
    </goal>
   </transf>
   </goal>
@@ -860,7 +948,11 @@
   </transf>
   </goal>
   <goal name="isqrt64&#39;vc.37" expl="loop invariant preservation" proved="true">
-  <proof prover="0"><result status="valid" time="0.00" steps="1262"/></proof>
+  <transf name="remove" proved="true" arg1="pp_sub_le_bound">
+   <goal name="isqrt64&#39;vc.37.0" expl="loop invariant preservation" proved="true">
+   <proof prover="0"><result status="valid" time="0.00" steps="1225"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt64&#39;vc.38" expl="loop invariant preservation" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
@@ -879,7 +971,7 @@
   <goal name="isqrt64&#39;vc.40" expl="loop invariant preservation">
   <transf name="remove" arg1="pp_sub_le_bound">
    <goal name="isqrt64&#39;vc.40.0" expl="loop invariant preservation">
-   <proof prover="0"><result status="timeout" time="3.00" steps="11945423"/></proof>
+   <proof prover="0"><result status="timeout" time="3.00" steps="11360086"/></proof>
    </goal>
   </transf>
   </goal>
@@ -898,7 +990,11 @@
   </transf>
   </goal>
   <goal name="isqrt64&#39;vc.43" expl="postcondition">
-  <proof prover="0"><result status="timeout" time="3.00" steps="18116801"/></proof>
+  <transf name="remove" arg1="pp_sub_le_bound">
+   <goal name="isqrt64&#39;vc.43.0" expl="postcondition">
+   <proof prover="0"><result status="timeout" time="3.00" steps="15006416"/></proof>
+   </goal>
+  </transf>
   </goal>
   <goal name="isqrt64&#39;vc.44" expl="postcondition" proved="true">
   <transf name="remove" proved="true" arg1="pp_sub_le_bound">
