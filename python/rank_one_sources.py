@@ -44,6 +44,28 @@ TARGETS = [
     (57, (-1, 0, -6, -14), -6, -14, 0, (69, -13, 8)),
     (82, (-1, 0, -3, -18), -3, -18, 0, (9577, -2675, 1193)),
     (98, (-1, -9, -6, -6), 21, -42, 3, (4201, -2883, 537)),
+    (12, (-1, 0, -6, -4), -6, -4, 0, (51, -5, 8)),
+    (37, (-1, -3, 6, -8), 9, -16, 1, (38119, -31865, 8713)),
+    (37, (-1, 0, -3, -12), -3, -12, 0, (130975, -37715, 20289)),
+    (64, (-1, 0, 0, -16), 0, -16, 0, (16001, -6350, 2520)),
+    (89, (-1, 0, -12, -10), -12, -10, 0, (303, -19, 24)),
+    (89, (-1, 0, -6, -18), -6, -18, 0, (745, -147, 78)),
+    # Witness-normalized nonmonic sources (`python/witness_monic.py`): the class `F` has a recorded
+    # point `F(p, q) = 1`, `U = (α β; γ δ)` has first column `(−p, −q)` and `det U = 1`, and
+    # `G(u, v) = F(U(u, v)) = −u³ + P u v² + Q v³`.  The certified source is for `G`.
+    (9, (-2, -3, -6, -1), 9, 12, 0, (235, 243, 69), ((0, -1), (1, 2))),
+    (9, (-2, 0, 0, -3), 18, 30, 0, (19, 15, 3), ((-1, -3), (1, 2))),
+    (12, (-2, -3, 0, -3), 39, -94, 0, (365, -202, 28), ((2, -7), (-1, 4))),
+    (17, (-2, 0, -6, -1), 12, 18, 0, (13, 12, 3), ((0, -1), (1, 2))),
+    (18, (-2, 0, -3, -4), 21, -38, 0, (981, -727, 137), ((1, -2), (-1, 3))),
+    (36, (-3, 0, 0, -4), 36, 84, 0, (37, 21, 3), ((-1, -4), (1, 3))),
+    (37, (-2, -3, -6, 3), 729, 7576, 0, (30133, 3866, 124), ((2, 31), (5, 78))),
+    (64, (-3, -3, -9, -1), 24, 48, 0, (25, 17, 3), ((0, -1), (1, 3))),
+    (65, (-2, 0, -6, -7), 42, -106, 0, (85, -45, 6), ((1, -3), (-1, 4))),
+    (89, (-3, -3, -9, 1), 30, -66, 0, (31, -19, 3), ((0, 1), (-1, 3))),
+    (89, (-3, -3, -6, 4), 165, 816, 0, (3301, 890, 60), ((1, 7), (2, 15))),
+    (97, (-2, 0, -6, -9), 54, 154, 0, (109, 51, 6), ((-1, -5), (1, 4))),
+    (100, (-4, 0, 0, -5), 60, 180, 0, (61, 27, 3), ((-1, -5), (1, 4))),
 ]
 PRIMES = (3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97)
 
@@ -220,7 +242,23 @@ def skolem(P, Q, g, primes=PRIMES, Mmax=200):
     return None
 
 
-def find(k, F, P, Q, h, start):
+def cubic(F, u, v):
+    a, b, c, d = F
+    return a * u ** 3 + b * u ** 2 * v + c * u * v ** 2 + d * v ** 3
+
+
+def witness_check(F, U, P, Q):
+    """`det U = 1` and `F(U(u, v)) = −u³ + P u v² + Q v³` (checked at enough points for a cubic)."""
+    (al, be), (ga, de) = U
+    assert al * de - be * ga == 1
+    for u, v in ((1, 0), (0, 1), (1, 1), (1, -1), (2, 1), (1, 2), (3, -2)):
+        assert cubic(F, al * u + be * v, ga * u + de * v) == -u ** 3 + P * u * v ** 2 + Q * v ** 3, (F, U)
+
+
+def find(k, F, P, Q, h, start, U=None):
+    if U is not None:
+        witness_check(F, U, P, Q)
+        F0, F = F, (-1, 0, P, Q)
     eta, c = fundamental(P, Q, start)
     assert tuple(eta) == tuple(start), (k, eta, start)
     eps = inverse(P, Q, eta)
@@ -234,7 +272,7 @@ def find(k, F, P, Q, h, start):
             'slab_elements': sum(1 for _ in slab(P, c)),
             'skolem_eta': {'p': se[0], 'M': se[1], 'D': se[2]},
             'skolem_eps': {'p': sx[0], 'M': sx[1], 'D': sx[2]},
-            '_c': c}
+            '_c': c, **({'witness_form': list(F0), 'U': [list(U[0]), list(U[1])]} if U is not None else {})}
 
 
 def _i(n):
@@ -262,7 +300,9 @@ def lean_block(r, i, chunk=4000):
     per = max(1, r['slab_elements'] // n_c)
     w = max(1, min(n_c, chunk // per))
     n = -(-n_c // w)
-    out = [f"/-! ### Source {i}: `F = {tuple(r['form'])}`, `z³ = ({P}) z + ({Q})`, shift `h = {r['h']}` -/\n",
+    wit = (f" (witness normalization of the class `{tuple(r['witness_form'])}` by `U = {r['U']}`)"
+           if 'U' in r else '')
+    out = [f"/-! ### Source {i}: `F = {tuple(r['form'])}`, `z³ = ({P}) z + ({Q})`, shift `h = {r['h']}`{wit} -/\n",
            f"/-- The fundamental unit `η` (`σ(η) > 1`) of source {i}. -/\ndef η{i} : Z3 := {_z3(r['eta'])}\n",
            f"/-- `ε = η⁻¹` for source {i}. -/\ndef ε{i} : Z3 := {_z3(r['eps'])}\n",
            f"/-- The rank-one certificate for source {i}. -/\n"
@@ -325,8 +365,8 @@ def main(ks=None):
     d.mkdir(exist_ok=True)
     for k, ts in by_k.items():
         blocks = []
-        for i, (k_, F, P, Q, h, eta) in enumerate(ts):
-            r = find(k, F, P, Q, h, eta)
+        for i, (k_, F, P, Q, h, eta, *U) in enumerate(ts):
+            r = find(k, F, P, Q, h, eta, *U)
             blocks.append(lean_block(r, i))
             r.pop('_c')
             r['index'] = i

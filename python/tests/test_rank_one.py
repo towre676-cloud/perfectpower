@@ -15,11 +15,15 @@ import skolem3_scan as SK  # noqa: E402
 
 class RankOne(unittest.TestCase):
     def test_sources_match_receipt(self):
-        rec = {(r['k'], tuple(r['form'])): r for r in
+        rec = {(r['k'], tuple(r.get('witness_form', r['form']))): r for r in
                json.loads((ROOT / 'receipts' / 'rank_one_sources.json').read_text())['sources']}
         self.assertEqual(len(rec), len(R1.TARGETS))
-        for k, F, P, Q, h, eta in R1.TARGETS:
+        for k, F, P, Q, h, eta, *U in R1.TARGETS:
             r = rec[(k, F)]
+            if U:
+                self.assertEqual(r['U'], [list(U[0][0]), list(U[0][1])])
+                R1.witness_check(F, U[0], P, Q)
+                F = (-1, 0, P, Q)
             self.assertEqual(tuple(r['eta']), eta)
             self.assertEqual(R1.mul(P, Q, tuple(r['eta']), tuple(r['eps'])), (1, 0, 0))
             self.assertEqual(R1.nrm(P, Q, eta), 1)
@@ -37,20 +41,38 @@ class RankOne(unittest.TestCase):
 
     def test_source_brute_force(self):
         # Python-only: no other solution of F(u, v) = 1 with |u|, |v| ≤ 120
-        for k, (a, B, C, d), P, Q, h, _ in R1.TARGETS:
+        for k, (a, B, C, d), P, Q, h, _, *U in R1.TARGETS:
             sols = [(u, v) for u in range(-120, 121) for v in range(-120, 121)
                     if a * u ** 3 + B * u * u * v + C * u * v * v + d * v ** 3 == 1]
-            self.assertEqual(sols, [(-1, 0)], k)
+            # a witness source has only its recorded point, the first column of U negated
+            self.assertEqual(sols, [(-U[0][0][0], -U[0][1][0])] if U else [(-1, 0)], k)
 
     def test_z2_coordinate_nonzero(self):
         # Python-only spot check of the Lean zero set: the z² coordinate of η^n, 0 < |n| ≤ 30
-        for k, F, P, Q, h, eta in R1.TARGETS:
+        for k, F, P, Q, h, eta, *_ in R1.TARGETS:
             eps = R1.inverse(P, Q, eta)
             x = y = (1, 0, 0)
             for _ in range(30):
                 x, y = R1.mul(P, Q, x, eta), R1.mul(P, Q, y, eps)
                 self.assertNotEqual(x[2], 0)
                 self.assertNotEqual(y[2], 0)
+
+    def test_witness_monic(self):
+        # review item 1: every recorded point of a nonmonic source normalizes to leading −1
+        import witness_monic as W
+        rec = json.loads((ROOT / 'receipts' / 'witness_monic.json').read_text())
+        self.assertEqual(rec['summary']['nonmonic_sources'], 36)
+        self.assertEqual(rec['summary']['with_witness'], 19)
+        for r in rec['sources']:
+            for rep in r['known_representations']:
+                U, G, mo = W.normalize(tuple(r['form']), tuple(rep))
+                self.assertEqual(G[0], -1)
+                self.assertEqual(mo['u_shift'], 0)
+                (al, be), (ga, de) = U
+                self.assertEqual(al * de - be * ga, 1)
+        ready = {(r['k'], tuple(r['form'])) for r in rec['sources'] if r['status'] == 'ready'}
+        targets = {(k, F) for k, F, *rest in R1.TARGETS if len(rest) == 5}
+        self.assertEqual(ready, targets)
 
     def test_skolem_scan_receipt(self):
         out = SK.scan(ROOT / 'receipts' / 'positive_k_next.json', 6)

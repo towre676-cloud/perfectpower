@@ -300,7 +300,7 @@ def lean_rank1(k, srcs):
     `F(u, v) = −N((u + hv) − vz)` certified in `RankOneSources.K{k}`; the other classes must be
     locally impossible or reducible."""
     row = next(r for r in json.loads((ROOT / 'receipts' / 'positive_k.json').read_text())['curves'] if r['k'] == k)
-    src = {tuple(F): (i, P, Q, h) for i, (F, P, Q, h) in enumerate(srcs)}
+    src = {tuple(F): (i, P, Q, h, U) for i, (F, P, Q, h, U) in enumerate(srcs)}
     Gs, sols, proofs, bullets, irr = [], [], [], [], []
     for c in row['class_detail']:
         a, B, C, d = c['form']
@@ -318,14 +318,23 @@ def lean_rank1(k, srcs):
             bullets.append(f"* `({a}, {B}, {C}, {d})` is reducible, solved by `ReducibleThue` (factor, Bezout pair, "
                            f"integer square root).")
         else:
-            i, P, Q, h = src[(a, B, C, d)]
-            assert c['representations'] == [[-1, 0]], (k, c)
-            sols.append('[((-1), 0)]')
+            i, P, Q, h, U = src[(a, B, C, d)]
             proofs.append(f'sols_irr{i}')
-            irr.append((i, G, P, Q, h))
-            bullets.append(f"* `({a}, {B}, {C}, {d})` is irreducible: `F(u, v) = −N((u + {h}v) − vz)` in `ℤ[z]`, "
-                           f"`z³ = ({P}) z + ({Q})`. Its only solution `(−1, 0)` comes from "
-                           f"`RankOneSources.K{k}.source{i}` (unit generation and the Skolem zero set).")
+            irr.append((i, G, P, Q, h, U))
+            if U is None:
+                assert c['representations'] == [[-1, 0]], (k, c)
+                sols.append('[((-1), 0)]')
+                bullets.append(f"* `({a}, {B}, {C}, {d})` is irreducible: `F(u, v) = −N((u + {h}v) − vz)` in `ℤ[z]`, "
+                               f"`z³ = ({P}) z + ({Q})`. Its only solution `(−1, 0)` comes from "
+                               f"`RankOneSources.K{k}.source{i}` (unit generation and the Skolem zero set).")
+            else:
+                (al, be), (ga, de) = U
+                assert c['representations'] == [[-al, -ga]], (k, c)
+                sols.append(f'[({_i(-al)}, {_i(-ga)})]')
+                bullets.append(f"* `({a}, {B}, {C}, {d})` is irreducible and nonmonic. Its recorded point `({-al}, {-ga})` "
+                               f"gives `U = ({al} {be}; {ga} {de})`, `det U = 1`, with `F ∘ U = −u³ + ({P}) u v² + ({Q}) v³` "
+                               f"(witness normalization); `RankOneSources.K{k}.source{i}` proves that form has only "
+                               f"`(−1, 0)`, so `F` has only `({-al}, {-ga})`.")
     assert len(irr) == len(srcs)
     cs = ', '.join(f'({_f(G)}, {S})' for G, S in zip(Gs, sols))
     P_, certs = build(k, Gs)
@@ -336,7 +345,20 @@ def lean_rank1(k, srcs):
     chunk_defs = ''.join(f"def certs_{j} : List Cert := [{', '.join(ch)}]\n" for j, ch in enumerate(chunks))
     cl = ' ++ '.join(f'certs_{j}' for j in range(len(chunks)))
     n = 2 * P_['amax'] + 1
-    irr_thms = ''.join(
+    def wit_thm(i, G, P, Q, U):
+        (al, be), (ga, de) = U
+        u, v = f'({_i(de)} * x - {_i(be)} * y)', f'({_i(-ga)} * x + {_i(al)} * y)'
+        return (f"/-- **Irreducible source {i}** (witness normalization): `RankOneSources.K{k}.source{i}` at `U⁻¹(x, y)`. -/\n"
+                f"theorem sols_irr{i} : SolsIn {_f(G)} [({_i(-al)}, {_i(-ga)})] := by\n"
+                f"  intro x y h\n"
+                f"  have h' : -{u} ^ 3 + {_i(P)} * {u} * {v} ^ 2 + {_i(Q)} * {v} ^ 3 = 1 := by\n"
+                f"    simp only [ev] at h; linear_combination h\n"
+                f"  obtain ⟨h1, h2⟩ := (Generated.RankOneSources.K{k}.source{i} _ _).mp h'\n"
+                f"  obtain rfl : x = {_i(-al)} := by linear_combination {_i(al)} * h1 + {_i(be)} * h2\n"
+                f"  obtain rfl : y = {_i(-ga)} := by linear_combination {_i(ga)} * h1 + {_i(de)} * h2\n"
+                f"  simp\n\n")
+
+    irr_thms = ''.join(wit_thm(i, G, P, Q, U) for i, G, P, Q, h, U in irr if U is not None) + ''.join(
         f"/-- **Irreducible source {i}**: `RankOneSources.K{k}.source{i}` at `u + {h}v`. -/\n"
         f"theorem sols_irr{i} : SolsIn {_f(G)} [((-1), 0)] := by\n"
         f"  intro u v h\n"
@@ -344,7 +366,7 @@ def lean_rank1(k, srcs):
         f"    simp only [ev] at h; linear_combination h\n"
         f"  obtain ⟨h1, rfl⟩ := (Generated.RankOneSources.K{k}.source{i} (u + {h} * v) v).mp h'\n"
         f"  obtain rfl : u = -1 := by linarith\n"
-        f"  simp\n\n" for i, G, P, Q, h in irr)
+        f"  simp\n\n" for i, G, P, Q, h, U in irr if U is None)
     text = (R1_HEAD.replace('{k}', str(k)).replace('{bullets}', '\n'.join(bullets)) +
             f"/-- The {len(Gs)} classes for `k = {k}` with their solution lists. -/\n"
             f"def cs_{k} : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [{cs}]\n\n"
@@ -386,8 +408,8 @@ if __name__ == '__main__':
         ks = [int(a) for a in sys.argv[2:]]
         import rank_one_sources as R1
         by_k = {}
-        for k, F, P, Q, h, _ in R1.TARGETS:
-            by_k.setdefault(k, []).append((F, P, Q, h))
+        for k, F, P, Q, h, _, *U in R1.TARGETS:
+            by_k.setdefault(k, []).append((F, P, Q, h, U[0] if U else None))
         for k, srcs in by_k.items():
             if not ks or k in ks:
                 print(lean_rank1(k, srcs))

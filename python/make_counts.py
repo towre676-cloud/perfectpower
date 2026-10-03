@@ -32,6 +32,9 @@ cond_names = sorted({m.group(0).split(' ')[-1].replace('PerfectPower.Generated.'
 posk = sorted({int(m.group(1)) for l in audited for m in [re.search(r'\.ClassLists\.K(\d+)\.plus\1\b', l)] if m})
 _pk = json.loads((root / 'receipts' / 'positive_k.json').read_text())['summary']
 posk_empty = set(_pk['all_classes_locally_impossible'])
+_cl = root / 'PerfectPower' / 'Generated' / 'ClassLists'
+posk_src = sorted(k for k in posk if k == 2 or 'RankOneSources' in (_cl / f'K{k}.lean').read_text())
+posk_wit = sorted(k for k in posk_src if 'witness normalization' in (_cl / f'K{k}.lean').read_text())
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
@@ -43,8 +46,10 @@ lines = [
     f'- Positive $k$: curves $y^2=x^3+k$, $1\\le k\\le100$, with complete integral-point lists in Lean and **no** premise '
     f'(class lists proved, reducible classes solved; `Generated/ClassLists/K*.lean`): **{len(posk)}** '
     f'({sum(1 for k in posk if k in posk_empty)} empty'
-    + (f', and $k={",".join(str(k) for k in sorted(set(posk) & {2, 4, 33, 49, 81}))}$ through an irreducible rank-one source'
-       if set(posk) & {2, 4, 33, 49, 81} else '') + ').',
+    + (f'; {len(posk_src)} through irreducible rank-one sources, $k={",".join(map(str, posk_src))}$'
+       if posk_src else '')
+    + (f', of which $k={",".join(map(str, posk_wit))}$ use a witness-normalized nonmonic source' if posk_wit else '')
+    + ').',
     '- Atlas families by certification label: '
     + ', '.join(f'`{k}` {v}' for k, v in sorted(labels.items())) + '.',
 ]

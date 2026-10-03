@@ -1,0 +1,18 @@
+{
+ "scope": "GNATprove on AdaCore's QA31-008 Von Neumann square-root regression (testsuite/gnatprove/tests/QA31-008__von_neumann_sqrt, spark2014 commit 627d89b), unmodified, and with a selective ghost-lemma variant",
+ "toolchain": {"gnat": "GNAT 13.3.0 (Ubuntu)", "gnatprove": "spark2014 fsf-13 branch, built from source in this environment", "why3": "AdaCore Why3 fork (fsf-13), 'Why3 for gnatprove version 1.5.0+git'", "cvc5": "1.1.2", "z3": "5.1.0 (as reported by z3 --version on PATH)"},
+ "command": "gnatprove -P p.gpr --prover=cvc5,z3 --report=all -j2 --level=L",
+ "runs": [
+  {"arm": "baseline", "level": 2, "proved": 37, "unproved": 8, "wall_seconds": 64,
+   "unproved_checks": "p.adb:88-93 loop invariant preservation (6), p.adb:98:26 range check, p.ads:15:19 postcondition",
+   "matches_adacore_test_out": "yes for all 8; AdaCore's test.out has one further medium line (p.adb:71:22 implicit Always_Terminates), which this fsf-13 build does not emit"},
+  {"arm": "baseline", "level": 4, "timeout_seconds": 60, "proved": 37, "unproved": 8, "wall_seconds": 620,
+   "unproved_checks": "the same 8"},
+  {"arm": "selective (spark_pilot/selective/p.adb)", "level": 2, "proved": 386, "unproved": 93, "wall_seconds": 772,
+   "what_changed": "ghost table M_Of(I) for the 16 values of M; ghost Big partial root RB with Y = RB*M, UX = X - RB*RB*M, X < (RB+1)^2*M; two ghost lemmas (one loop step; the original shift invariants from the algebraic ones) proved by a 16-way case split with literal constants. Original invariants and contract unchanged.",
+   "result": "The six original invariants (lines 88-93 of the upstream file) are now proved preserved, but only relative to the two lemmas' postconditions, which remain unproved. The return range check and the postcondition remain unproved. No AdaCore check is closed outright.",
+   "remaining_obstacles": ["GNATprove's 2 ** K with a variable exponent is not evaluated at literal arguments (pragma Assert (2 ** Integer (I) = 64) fails inside the I = 6 branch)", "overflow checks on Big products need bounds the provers do not derive", "the disjoint-or facts (Y or c) = Y + c need Y mod 2c = 0 stated per row"]}
+ ],
+ "engineer_time": "about 36 minutes of edit-and-rerun across four variants (2026-10-03 00:55 to 01:31 UTC), not counting building GNATprove",
+ "not_claimed": "No unproved AdaCore check was closed. PerfectPower's guarded-subtraction rule does not address these obligations: none of the eight remaining checks is subtraction-shaped."
+}

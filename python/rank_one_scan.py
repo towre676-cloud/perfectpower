@@ -10,7 +10,8 @@ between it and a Lean source theorem, using the exact mirrors of `python/rank_on
 * `no_skolem_prime`: no odd prime `p ≤ 97` with period `M ≤ 200` satisfies the Skolem conditions
   for both `η` and `η⁻¹`;
 * `no_unit_found`: no unit with `c < cmax` (a large regulator);
-* `nonmonic`: leading coefficient `±2, ±3, ±4`, which needs norm representatives.
+* `nonmonic`: leading coefficient `±2, ±3, ±4` and no certified witness normalization
+  (`python/witness_monic.py` handles the ones with a recorded point).
 Monic sources are grouped by their order `ℤ[z]`, `z³ = Pz + Q` (up to `z ↦ −z`), so unit work can
 be charged once per order.
 
@@ -59,6 +60,10 @@ def classify(e, certified, cmax):
     mo = e['monic_order']
     row = {'k': e['k'], 'form': e['form'], 'known_representations': e['known_representations']}
     if mo is None:
+        if (e['k'], tuple(e['form'])) in certified:   # witness-normalized (python/witness_monic.py)
+            row['status'] = 'lean_source'
+            row['witness_normalized'] = True
+            return row
         row['status'] = 'nonmonic'
         row['leading'] = e['form'][0]
         return row

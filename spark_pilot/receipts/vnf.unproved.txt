@@ -1,0 +1,93 @@
+p.adb:110:27: high: range check might fail, cannot prove upper bound for Y
+p.adb:111:27: high: range check might fail, cannot prove bounds for UX
+p.adb:111:35: medium: overflow check might fail, cannot prove upper bound for X - 4 * RB * RB * Big (M_Of (I))
+p.adb:111:44: medium: overflow check might fail, cannot prove upper bound for 4 * RB * RB
+p.adb:111:49: medium: overflow check might fail, cannot prove upper bound for 4 * RB * RB * Big (M_Of (I))
+p.adb:112:39: medium: overflow check might fail, cannot prove upper bound for 4 * (RB + 1) * (RB + 1)
+p.adb:112:50: medium: overflow check might fail, cannot prove upper bound for 4 * (RB + 1) * (RB + 1) * Big (M_Of (I))
+p.adb:113:19: medium: postcondition might fail, cannot prove Big (Y or M_Of (I)) = (4 * RB + 1) * Big (M_Of (I))
+p.adb:113:54: medium: overflow check might fail, cannot prove upper bound for (4 * RB + 1) * Big (M_Of (I))
+p.adb:117:33: medium: range check might fail, cannot prove upper bound for UX - (Y or M_Of (I))
+p.adb:117:56: medium: overflow check might fail, cannot prove upper bound for X - (2 * RB + 1) * (2 * RB + 1) * Big (M_Of (I))
+p.adb:117:71: medium: overflow check might fail, cannot prove lower bound for (2 * RB + 1) * (2 * RB + 1)
+p.adb:119:51: medium: overflow check might fail, cannot prove upper bound for (2 * RB + 2) * (2 * RB + 2)
+p.adb:119:66: medium: overflow check might fail, cannot prove upper bound for (2 * RB + 2) * (2 * RB + 2) * Big (M_Of (I))
+p.adb:121:49: medium: overflow check might fail, cannot prove lower bound for (2 * RB) * (2 * RB)
+p.adb:121:60: medium: overflow check might fail, cannot prove lower bound for (2 * RB) * (2 * RB) * Big (M_Of (I))
+p.adb:122:51: medium: overflow check might fail, cannot prove upper bound for (2 * RB + 1) * (2 * RB + 1)
+p.adb:122:66: medium: overflow check might fail, cannot prove upper bound for (2 * RB + 1) * (2 * RB + 1) * Big (M_Of (I))
+p.adb:133:28: medium: assertion might fail
+p.adb:134:28: medium: assertion might fail
+p.adb:137:28: medium: assertion might fail
+p.adb:138:28: medium: assertion might fail
+p.adb:141:28: medium: assertion might fail
+p.adb:142:28: medium: assertion might fail
+p.adb:145:28: medium: assertion might fail
+p.adb:146:28: medium: assertion might fail
+p.adb:149:28: medium: assertion might fail
+p.adb:150:28: medium: assertion might fail
+p.adb:153:28: medium: assertion might fail
+p.adb:154:28: medium: assertion might fail
+p.adb:157:28: medium: assertion might fail
+p.adb:158:28: medium: assertion might fail
+p.adb:161:28: medium: assertion might fail
+p.adb:162:28: medium: assertion might fail
+p.adb:165:28: medium: assertion might fail
+p.adb:166:28: medium: assertion might fail
+p.adb:169:28: medium: assertion might fail
+p.adb:170:28: medium: assertion might fail
+p.adb:173:28: medium: assertion might fail
+p.adb:174:28: medium: assertion might fail
+p.adb:177:28: medium: assertion might fail
+p.adb:178:28: medium: assertion might fail
+p.adb:181:28: medium: assertion might fail
+p.adb:182:28: medium: assertion might fail
+p.adb:185:28: medium: assertion might fail
+p.adb:186:28: medium: assertion might fail
+p.adb:189:28: medium: assertion might fail
+p.adb:190:28: medium: assertion might fail
+p.adb:200:27: high: range check might fail, cannot prove upper bound for Y
+p.adb:201:27: high: range check might fail, cannot prove bounds for UX
+p.adb:201:40: medium: overflow check might fail, cannot prove upper bound for RB * RB
+p.adb:201:45: medium: overflow check might fail, cannot prove upper bound for RB * RB * Big (M_Of (I))
+p.adb:203:35: medium: overflow check might fail, cannot prove upper bound for (RB + 1) * (RB + 1)
+p.adb:203:46: medium: overflow check might fail, cannot prove upper bound for (RB + 1) * (RB + 1) * Big (M_Of (I))
+p.adb:205:22: medium: postcondition might fail, cannot prove Y mod M_Of (I) = 0
+p.adb:207:27: medium: range check might fail, cannot prove upper bound for Shift_Right (Y, Integer (32 - 2 * I))
+p.adb:252:28: medium: assertion might fail
+p.adb:252:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:258:28: medium: assertion might fail
+p.adb:258:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:264:28: medium: assertion might fail
+p.adb:264:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:270:28: medium: assertion might fail
+p.adb:270:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:276:28: medium: assertion might fail
+p.adb:276:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:282:28: medium: assertion might fail
+p.adb:282:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:288:28: medium: assertion might fail
+p.adb:288:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:294:28: medium: assertion might fail
+p.adb:294:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:300:28: medium: assertion might fail
+p.adb:300:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:306:28: medium: assertion might fail
+p.adb:306:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:312:28: medium: assertion might fail
+p.adb:312:30: medium: overflow check might fail, cannot prove upper bound for 2 ** Integer (I)
+p.adb:338:10: medium: precondition might fail, cannot prove Big (Y) = 4 * RB * Big (M_Of (I))
+p.adb:355:13: medium: precondition might fail, cannot prove Big (UX) = X - RB * RB * Big (M_Of (I))
+p.adb:359:36: medium: loop invariant might not be preserved by an arbitrary iteration
+p.adb:359:49: medium: overflow check might fail, cannot prove lower bound for RB * Big (M)
+p.adb:360:36: medium: loop invariant might fail in first iteration
+p.adb:360:36: medium: loop invariant might not be preserved by an arbitrary iteration
+p.adb:360:41: medium: range check might fail, cannot prove upper bound for UX
+p.adb:360:55: medium: overflow check might fail, cannot prove upper bound for Big (X) - RB * RB * Big (M)
+p.adb:360:60: medium: overflow check might fail, cannot prove lower bound for RB * RB
+p.adb:360:65: medium: overflow check might fail, cannot prove lower bound for RB * RB * Big (M)
+p.adb:362:36: medium: loop invariant might not be preserved by an arbitrary iteration
+p.adb:362:55: medium: overflow check might fail, cannot prove upper bound for (RB + 1) * (RB + 1)
+p.adb:362:66: medium: overflow check might fail, cannot prove lower bound for (RB + 1) * (RB + 1) * Big (M)
+p.adb:374:26: medium: range check might fail, cannot prove upper bound for Y
+p.ads:15:19: medium: postcondition might fail, cannot prove Sqrt_Von_Neumann'Result * Sqrt_Von_Neumann'Result <= X

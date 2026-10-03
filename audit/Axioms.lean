@@ -2825,3 +2825,64 @@ open PerfectPower
 -- Generated/ClassLists/K96
 #print axioms PerfectPower.Generated.ClassLists.K96.classList
 #print axioms PerfectPower.Generated.ClassLists.K96.plus96
+-- Generated/RankOneSources/K9 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K9.source0
+#print axioms PerfectPower.Generated.RankOneSources.K9.source1
+-- Generated/RankOneSources/K12 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K12.source0
+#print axioms PerfectPower.Generated.RankOneSources.K12.source1
+-- Generated/RankOneSources/K17 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K17.source0
+-- Generated/RankOneSources/K18 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K18.source0
+-- Generated/RankOneSources/K36 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K36.source0
+-- Generated/RankOneSources/K37 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K37.source0
+#print axioms PerfectPower.Generated.RankOneSources.K37.source1
+#print axioms PerfectPower.Generated.RankOneSources.K37.source2
+-- Generated/RankOneSources/K64 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K64.source0
+#print axioms PerfectPower.Generated.RankOneSources.K64.source1
+-- Generated/RankOneSources/K65 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K65.source0
+-- Generated/RankOneSources/K89 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K89.source0
+#print axioms PerfectPower.Generated.RankOneSources.K89.source1
+#print axioms PerfectPower.Generated.RankOneSources.K89.source2
+#print axioms PerfectPower.Generated.RankOneSources.K89.source3
+-- Generated/RankOneSources/K97 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K97.source0
+-- Generated/RankOneSources/K100 (witness normalization where noted in the module)
+#print axioms PerfectPower.Generated.RankOneSources.K100.source0
+-- Generated/ClassLists/K12
+#print axioms PerfectPower.Generated.ClassLists.K12.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K12.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K12.classList
+#print axioms PerfectPower.Generated.ClassLists.K12.plus12
+-- Generated/ClassLists/K18
+#print axioms PerfectPower.Generated.ClassLists.K18.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K18.classList
+#print axioms PerfectPower.Generated.ClassLists.K18.plus18
+-- Generated/ClassLists/K37
+#print axioms PerfectPower.Generated.ClassLists.K37.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K37.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K37.sols_irr2
+#print axioms PerfectPower.Generated.ClassLists.K37.classList
+#print axioms PerfectPower.Generated.ClassLists.K37.plus37
+-- Generated/ClassLists/K64
+#print axioms PerfectPower.Generated.ClassLists.K64.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K64.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K64.classList
+#print axioms PerfectPower.Generated.ClassLists.K64.plus64
+-- Generated/ClassLists/K89
+#print axioms PerfectPower.Generated.ClassLists.K89.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K89.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K89.sols_irr2
+#print axioms PerfectPower.Generated.ClassLists.K89.sols_irr3
+#print axioms PerfectPower.Generated.ClassLists.K89.classList
+#print axioms PerfectPower.Generated.ClassLists.K89.plus89
+-- Generated/ClassLists/K97
+#print axioms PerfectPower.Generated.ClassLists.K97.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K97.classList
+#print axioms PerfectPower.Generated.ClassLists.K97.plus97

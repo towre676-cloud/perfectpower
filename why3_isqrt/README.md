@@ -56,7 +56,7 @@ the original task proves is lost.
 ## What is not claimed
 
 - No Why3 proof session accepted the wrapper (the native scheduler could not open its socket in
-  the handoff environment), and GNATprove was not run. The AdaCore files are leads.
+  the handoff environment), and this directory's measurements are Why3 only. GNATprove was later run on the AdaCore regression ([`spark_pilot/`](../spark_pilot/README.md)): no check closed.
 - The SMT-to-Lean translation is Python over Z3's parser, not a verified import. The four contexts
   prove the normalized ground implications with every ground premise kept; quantified premises
   are omitted, which makes the implication stronger.

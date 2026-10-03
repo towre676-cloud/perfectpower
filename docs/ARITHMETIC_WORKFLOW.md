@@ -18,7 +18,7 @@ The main example is `examples/isqrt_von_neumann.mlw` from the independently auth
 
 The ordinary control is `examples/isqrt.mlw` from the same tree. Its loop invariants already express the square relation effectively, and all 32 exported obligations solve quickly without this extension. A micro-C square-root example and a counterexample benchmark are also retained as leads. They are not added to the primary timing population.
 
-AdaCore's independently authored SPARK regression files are retained at commit `627d89b487155aa5f925a96e4492931047ca0f8b`. The Von Neumann test lives in `testsuite/gnatprove/tests/QA31-008__von_neumann_sqrt`; a separate counterexample square-root test includes an intentionally nonconforming variant. Those files make the industrial connection concrete: there is actual SPARK arithmetic verification work in this neighborhood. Their saved warnings were inspected, but GNATprove was not run and no AdaCore warning is claimed to be fixed by this experiment. AdaCore's manual-proof documentation, https://docs.adacore.com/spark2014-docs/html/ug/en/source/manual_proof.html, explains the role of external proof support in that workflow.
+AdaCore's independently authored SPARK regression files are retained at commit `627d89b487155aa5f925a96e4492931047ca0f8b`. The Von Neumann test lives in `testsuite/gnatprove/tests/QA31-008__von_neumann_sqrt`; a separate counterexample square-root test includes an intentionally nonconforming variant. Those files make the industrial connection concrete: there is actual SPARK arithmetic verification work in this neighborhood. GNATprove has since been run on the regression ([`spark_pilot/`](../spark_pilot/README.md)): it reproduces AdaCore's 8 unproved checks, and no AdaCore warning is claimed to be fixed. AdaCore's manual-proof documentation, https://docs.adacore.com/spark2014-docs/html/ug/en/source/manual_proof.html, explains the role of external proof support in that workflow.
 
 A second independent mathematical source is Mark Dickinson's CPython integer-square-root proof, from `mdickinson/snippets` at commit `41ce2d256fef06fb32f24fe7014cfa95173ac5e0`. The handoff includes the source proof and its license. This round adapts its scaled-Newton statement to the repository's older Lean 4.20 toolchain and proves the exact division statement. That is useful proof infrastructure; it is not a performance result for CPython and does not prove the compiled Python interpreter correct.
 
@@ -257,9 +257,23 @@ Five fresh runs of every arm (`--repeat 5`):
 
 Legitimate changes stay proved, and the policy re-selects its goal automatically. Every planted bug is still caught, at the same goals in both arms, so the rule masks nothing. In B1 the apply step is selected, but its premise `ule (b + 1) num` is false, so the wrong invariant fails as it should.
 
-**GNATprove** cannot be installed in this environment. Ubuntu packages GNAT 13 and gprbuild, which are installed, but not SPARK. Building GNATprove from source (the `GNAT-FSF-builds` recipes) needs the `spark2014` sources from GitHub and a GCC source tarball from gcc.gnu.org. Both hosts are denied by this environment's network policy.
+**GNATprove** now runs here ([`spark_pilot/`](../spark_pilot/README.md)). The `spark2014` fsf-13 sources, AdaCore's Why3 fork and the GCC 13.3 sources were supplied as uploads, and GNATprove was built from source against Ubuntu's GNAT 13.3, with cvc5 1.1.2 and z3.
 
-After that, run the pinned SPARK regression through GNATprove and count matches honestly. A zero-match result is still useful information: it says that the relevant GNATprove encoding needs a different bridge. Maintain explicit widths, signedness and overflow hypotheses. Do not claim that the Why3 measurements automatically transfer to Ada's checked arithmetic or to GNATprove's exact encoding.
+On AdaCore's unmodified QA31-008 regression it proves 37 checks and leaves 8, exactly the checks that AdaCore's recorded `test.out` lists:
+- six loop-invariant preservations, at `p.adb:88`–`93`;
+- the return range check;
+- the postcondition.
+
+The one difference is an implicit `Always_Terminates` line that this build does not emit. Level 4 with a 60 s timeout leaves the same 8.
+
+A selective ghost-lemma variant keeps the original invariants and contract. It adds:
+- a 16-row table for `M`;
+- a ghost partial root;
+- two lemmas proved by literal-constant case splits.
+
+With it, the six invariants are proved preserved relative to the lemmas, but the lemmas themselves are not discharged. **No AdaCore check is closed outright**; the attempt took about 36 minutes.
+
+The guarded-subtraction rule does not apply: none of the eight checks is subtraction-shaped. The concrete blockers are GNATprove's variable-exponent `2 ** K`, which is not evaluated at literal arguments, and bounds for products of the ghost integer. Do not claim that the Why3 measurements transfer to Ada's checked arithmetic or to GNATprove's exact encoding.
 
 The residual genuine hard obligations concern shifts, square identities and word range invariants. They are better next proof problems for this software workflow than another curve chosen solely because its number-theory pipeline is ready. A guarded multiplication theorem must prove that the required product does not wrap; a shift theorem must carry its range restriction; an inequality transport must distinguish signed and unsigned order. Add each rule with a satisfiable control, a forged-certificate test, and a full-population timing replay.
 

@@ -91,7 +91,7 @@ def skolemB (P Q : ℤ) (g : Z3) (p M : ℕ) : Bool :=
     decide (¬ (p : ℤ) ∣ h.2.2 / p) &&
     (List.range M).all (fun r => decide (r = 0) || decide (¬ (p : ℤ) ∣ (pow P Q g r).2.2))
 
-theorem skolemData_of {P Q : ℤ} {g : Z3} {p M : ℕ} (hp : 0 < p) (h : skolemB P Q g p M = true) :
+theorem skolemData_of {P Q : ℤ} {g : Z3} {p M : ℕ} (h : skolemB P Q g p M = true) :
     ∃ D, SkolemData p M (Mx P Q g) D := by
   simp only [skolemB, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_finRange,
     true_implies, List.mem_range, Bool.or_eq_true] at h
@@ -469,8 +469,8 @@ theorem source {P Q : ℤ} {η ε : Z3} (h1 : mul P Q η ε = (1, 0, 0)) (h2 : m
     (hbox : slabB P Q η c = true) {p : ℕ} [Fact p.Prime] (hp3 : 3 ≤ p) {M M' : ℕ}
     (hηB : skolemB P Q η p M = true) (hεB : skolemB P Q ε p M' = true) (u v : ℤ) :
     -u ^ 3 + P * u * v ^ 2 + Q * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) := by
-  obtain ⟨D, hη⟩ := skolemData_of (by omega) hηB
-  obtain ⟨D', hε⟩ := skolemData_of (by omega) hεB
+  obtain ⟨D, hη⟩ := skolemData_of hηB
+  obtain ⟨D', hε⟩ := skolemData_of hεB
   constructor
   · intro h
     have hn : nrm P Q (u, -v, 0) = -1 := by simp only [nrm]; linear_combination -h
