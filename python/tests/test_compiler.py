@@ -127,7 +127,7 @@ class Reductions(unittest.TestCase):
             p.all_hits()
         ev = p.bounded_evidence(100)
         self.assertEqual(ev['label'], BOUNDED_EVIDENCE)
-        self.assertEqual([n for n, _ in ev['hits']], [2, 4, 8, 43, 52])
+        self.assertEqual([n for n, _ in ev['hits']], [3])          # census: (3, ±7)
 
     def test_execution_is_never_claimed_verified(self):
         for con in (PowerConstraint((1, 0, 2), 2), TriangularConstraint((0, 0, 1))):
