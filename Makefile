@@ -15,7 +15,7 @@ release-verify:
 	$(MAKE) verify
 
 lean:
-	lake build
+	./scripts/build_heavy.sh
 
 audit: lean
 	./audit/check_axioms.sh
