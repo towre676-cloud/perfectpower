@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # re-derives that η is fundamental, and the Lean kernel re-checks everything.
 TARGETS = [
     (4, (-1, 0, 0, -4), 0, -4, 0, (5, -3, 2)),
+    (22, (-1, -6, -3, -4), 9, -14, 2, (388537, -357959, 99671)),
     (33, (-1, 0, -6, -10), -6, -10, 0, (77, -13, 10)),
     (49, (-1, 0, 0, -14), 0, -14, 0, (29, -12, 5)),
     (81, (-1, 0, 0, -18), 0, -18, 0, (55, -21, 8)),
@@ -374,12 +375,19 @@ def main(ks=None):
         blocks = []
         for i, (k_, F, P, Q, h, eta, *U) in enumerate(ts):
             r = find(k, F, P, Q, h, eta, *U)
-            blocks.append(lean_block(r, i))
+            if k != 22:
+                blocks.append(lean_block(r, i))
             r.pop('_c')
             r['index'] = i
             rows.append(r)
-        text = HEAD.replace('{k}', str(k)) + '\n'.join(blocks) + f'\nend PerfectPower.Generated.RankOneSources.K{k}\n'
-        (d / f'K{k}.lean').write_text(text)
+        if k == 22:
+            import subprocess
+            import sys
+            subprocess.run([sys.executable, str(ROOT / 'python/rank_one_split.py'),
+                            '--integer', '--slices', '2000'], cwd=ROOT, check=True)
+        else:
+            text = HEAD.replace('{k}', str(k)) + '\n'.join(blocks) + f'\nend PerfectPower.Generated.RankOneSources.K{k}\n'
+            (d / f'K{k}.lean').write_text(text)
     if not ks:
         (ROOT / 'receipts' / 'rank_one_sources.json').write_text(json.dumps(
             {'scope': 'RankOne.source certificates; every condition is re-checked by the Lean kernel',

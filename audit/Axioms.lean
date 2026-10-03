@@ -3030,3 +3030,8 @@ open PerfectPower
 #print axioms PerfectPower.QuarticPilot.nonzero_not_even_power
 #print axioms PerfectPower.SparkStep.final_range
 #print axioms PerfectPower.RankOneIntegerSlab.slice_eq
+
+#print axioms PerfectPower.Generated.RankOneSources.K22.source0
+#print axioms PerfectPower.Generated.ClassLists.K22.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K22.classList
+#print axioms PerfectPower.Generated.ClassLists.K22.plus22

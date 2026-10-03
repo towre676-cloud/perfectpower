@@ -1,0 +1,6 @@
+(set-logic QF_NIA)
+(declare-const x Int)
+(declare-const y Int)
+(assert (or (and (= x 3) (= y (- 7))) (and (= x 3) (= y 7))))
+(assert (> x 3))
+(check-sat)

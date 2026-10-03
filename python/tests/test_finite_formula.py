@@ -31,13 +31,14 @@ class FiniteFormulaTests(unittest.TestCase):
             self.assertEqual(out.source_sha256,hashlib.sha256(text.encode()).hexdigest())
 
     def test_existing_registry(self):
-        self.assertGreaterEqual(sum(_positive_source(k) is not None for k in range(1,101)),72)
+        self.assertGreaterEqual(sum(_positive_source(k) is not None for k in range(1,101)),73)
         out=emit_finite_query(script(1,0,1,0,17))
         self.assertIn((5234,378661),out.points)
         self.assertIn((5234,-378661),out.points)
         self.assertEqual(len(out.points),16)
         self.assertEqual(emit_finite_query(script(1,0,1,0,11)).points,[])
-        self.assertIsNone(_positive_source(22))
+        self.assertEqual(emit_finite_query(script(1,0,1,0,22)).points,[(3,-7),(3,7)])
+        self.assertIsNone(_positive_source(19))
 
     def test_extra_variable(self):
         text=script(3,2,2,1,2).replace('(check-sat)',
@@ -72,7 +73,7 @@ class FiniteFormulaTests(unittest.TestCase):
 
     def test_unsupported(self):
         base=script(1,0,1,0,2)
-        for text in [script(1,0,1,0,22),script(1,0,1,0,0),
+        for text in [script(1,0,1,0,19),script(1,0,1,0,0),
                      base.replace('m Int','m Real'),base+'(check-sat)',
                      base.replace('(check-sat)','(push 1)(check-sat)'),
                      base.replace('(check-sat)','(assert (= (div n 2) m))(check-sat)'),

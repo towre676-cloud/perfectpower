@@ -15,6 +15,9 @@ if args.chunk < 1: parser.error('chunk must be positive')
 import os
 os.chdir(Path(__file__).resolve().parents[1])
 import rank_one_sources as s
+from rank_one_proof_inputs import proof_hash
+receipt_path=Path('receipts/k22_split.json')
+previous=json.loads(receipt_path.read_text()) if receipt_path.exists() else {}
 r=s.find(22,(-1,-6,-3,-4),9,-14,2,(388537,-357959,99671))
 root=Path('PerfectPower/Generated/RankOneSources/K22Parts');root.mkdir(parents=True,exist_ok=True)
 for old in root.glob('Chunk*.lean'): old.unlink()
@@ -41,5 +44,17 @@ for i,t in enumerate(chunks):
  (root/f'Chunk{i}.lean').write_text(f'import PerfectPower.Generated.RankOneSources.K22Parts.{dependency}\nset_option Elab.async false\n'+ns+t+'\nend PerfectPower.Generated.RankOneSources.K22\n')
  imports.append(name)
 Path('PerfectPower/Generated/RankOneSources/K22.lean').write_text('\n'.join('import '+x for x in imports)+'\nset_option Elab.async false\n'+ns+b[end:]+'\nend PerfectPower.Generated.RankOneSources.K22\n')
-Path('receipts/k22_split.json').write_text(json.dumps({k:v for k,v in r.items() if k!='_c'}|{'chunk_modules':len(chunks),'integer_endpoints':args.integer,'status':'generated; compilation pending'},indent=2)+'\n')
+receipt={k:v for k,v in r.items() if k!='_c'}|{'chunk_modules':len(chunks),'integer_endpoints':args.integer,'status':'generated; compilation pending'}
+project_root=Path.cwd()
+checked={}
+for path in root.glob('Chunk*.lean'):
+ fingerprint=proof_hash(project_root,path.resolve())
+ if previous.get('checked_proof_inputs',{}).get(path.stem)==fingerprint:
+  checked[path.stem]=fingerprint
+if checked:
+ receipt.update(status='partial kernel check; source not proved',checked_chunks=sorted(checked,key=lambda n:int(n[5:])),checked_proof_inputs=checked)
+source_hash=proof_hash(project_root,Path('PerfectPower/Generated/RankOneSources/K22.lean').resolve())
+if len(checked)==len(chunks) and previous.get('source_proof_inputs')==source_hash and previous.get('status')=='all chunks and source theorem kernel checked':
+ receipt.update(status=previous['status'],source_proof_inputs=source_hash)
+receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
 print('GENERATED',len(chunks),r['slab_elements'],flush=True)

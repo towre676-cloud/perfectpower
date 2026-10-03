@@ -112,11 +112,11 @@ class Reductions(unittest.TestCase):
         self.assertEqual(991 * n * n + 1, ms[1] ** 2)
 
     def test_not_enumerated_is_not_empty(self):
-        # n^3 + 22: census evidence only (its source's slab check is large); n^3 + 17 is now a theorem
+        # n^3 + 19: census evidence only; n^3 + 17 is now a theorem
         p = compile_constraint(PowerConstraint(parse_poly('n**3 + 17'), 2))
         self.assertEqual(p.status, COMPLETE_FINITE)
         self.assertEqual([n for n, _ in p.all_hits()], [2, 4, 8, 43, 52, 5234])   # n >= 0
-        p = compile_constraint(PowerConstraint(parse_poly('n**3 + 22'), 2))
+        p = compile_constraint(PowerConstraint(parse_poly('n**3 + 19'), 2))
         self.assertEqual(p.status, NOT_ENUMERATED)
         self.assertNotIn('iter_hits', p.supports)
         with self.assertRaises(NotEnumerable):
@@ -127,7 +127,7 @@ class Reductions(unittest.TestCase):
             p.all_hits()
         ev = p.bounded_evidence(100)
         self.assertEqual(ev['label'], BOUNDED_EVIDENCE)
-        self.assertEqual([n for n, _ in ev['hits']], [3])          # census: (3, ±7)
+        self.assertEqual([n for n, _ in ev['hits']], [5])          # census: (5, ±12)
 
     def test_execution_is_never_claimed_verified(self):
         for con in (PowerConstraint((1, 0, 2), 2), TriangularConstraint((0, 0, 1))):
@@ -298,11 +298,11 @@ class Geometry(unittest.TestCase):
             self.assertTrue(p.mechanism.startswith('complete finite list'))
 
     def test_missing_premise_is_explicit(self):
-        p = compile_constraint(PowerConstraint(parse_poly('n**3 + 22'), 2))
+        p = compile_constraint(PowerConstraint(parse_poly('n**3 + 19'), 2))
         self.assertEqual(p.status, NOT_ENUMERATED)
         mp = p.data['missing_premise']
         self.assertIn('Transport.IntegralPointsOnImage', mp['premise'])
-        self.assertEqual(mp["model"], "V^2 = U^3 + (0) U + (16038)")
+        self.assertEqual(mp["model"], "V^2 = U^3 + (0) U + (13851)")
         self.assertTrue(p.mechanism.startswith('missing premise: Transport.IntegralPointsOnImage'))
 
     def test_counting_law_mechanism(self):

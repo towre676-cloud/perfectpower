@@ -1,0 +1,37 @@
+{
+  "status": "whole-query equivalence kernel checked; standard axioms only",
+  "source_sha256": "e3a1bd8856b33a95013280c551d01728128daed12faf4b113da0eab69fabc5f8",
+  "points": [
+    [
+      3,
+      -7
+    ],
+    [
+      3,
+      7
+    ]
+  ],
+  "imports": [
+    "PerfectPower.FormulaAffine",
+    "PerfectPower.Generated.ClassLists.K22"
+  ],
+  "scope": "one local example; timing includes solver check only; not an industrial speedup claim",
+  "solver": "5.1.0",
+  "results": [
+    {
+      "file": "beyond_points.smt2",
+      "sha256": "e3a1bd8856b33a95013280c551d01728128daed12faf4b113da0eab69fabc5f8",
+      "answer": "unknown",
+      "seconds": 3.004047000000355,
+      "timeout_ms": 3000,
+      "reason": "timeout"
+    },
+    {
+      "file": "reduced.smt2",
+      "sha256": "f1a49cb8852e83d4090a0836782664676b973aabdf34a7c7cec85d96dda61b91",
+      "answer": "unsat",
+      "seconds": 0.0013360590000957018,
+      "timeout_ms": 3000
+    }
+  ]
+}

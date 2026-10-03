@@ -2,8 +2,7 @@
 import argparse
 import json
 import subprocess
-import hashlib
-import re
+import sys
 import time
 from pathlib import Path
 
@@ -20,19 +19,10 @@ receipt_path=ROOT/'receipts/k22_split.json'
 receipt=json.loads(receipt_path.read_text())
 if args.limit is None and len(chunks) != receipt['chunk_modules']:
     parser.error('regenerate the complete split with python3 python/rank_one_split.py first')
+sys.path.insert(0, str(ROOT/'python'))
+from rank_one_proof_inputs import proof_hash as _proof_hash
 def proof_hash(src):
-    seen=set()
-    def visit(path):
-        if path in seen: return b''
-        seen.add(path)
-        data=path.read_bytes()
-        dependencies=b''
-        for module in re.findall(rb'^import (\S+)',data,re.M):
-            if module.startswith(b'PerfectPower.'):
-                dependencies+=visit(ROOT/(module.decode().replace('.','/')+'.lean'))
-        return str(path.relative_to(ROOT)).encode()+b'\0'+data+dependencies
-    config=(ROOT/'lean-toolchain').read_bytes()+(ROOT/'lake-manifest.json').read_bytes()
-    return hashlib.sha256(config+visit(src)).hexdigest()
+    return _proof_hash(ROOT, src)
 previous=receipt.get('checked_proof_inputs',{}) if args.resume else {}
 receipt.pop('failed_module',None)
 receipt.update(status='partial kernel check; source not proved',checked_chunks=[],checked_proof_inputs={})
@@ -68,4 +58,5 @@ for src in files:
     receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
 if args.limit is None:
     receipt['status']='all chunks and source theorem kernel checked'
+    receipt['source_proof_inputs']=proof_hash(ROOT/'PerfectPower/Generated/RankOneSources/K22.lean')
     receipt_path.write_text(json.dumps(receipt,indent=2)+'\n')
