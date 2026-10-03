@@ -925,12 +925,19 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
 
   The ε direction uses the same prime and period, with the same auxiliary primes in every case.
 - With these, `k = 1, 8, 9, 12, 15, 17, 18, 24, 37, 64, 65, 68, 73, 89, 97, 100` join the curves
-  complete with no premise (71 in all). The class lists are `Generated/ClassLists/K{k}.lean`.
+  complete with no premise.
+
+*A nonmonic source with no point* (`RankOneNorm.lean`, `python/rank_one_norm.py`, `receipts/rank_one_norm.json`).
+- `normN_eq`: every `w` with `N(w) = ±N` is `γηⁿ` with `γ` in a list checked by a slab with `|re| ≤ R₀`, `κ²J² ≥ N`.
+- `orbit_ne`: if `η^M ≡ 1 (mod q)` and `q ∤ (γη^r)₂` for every `r < M`, the coordinate never vanishes on the orbit.
+- `k = 11`, class `(−2, 0, −3, −3)`: the monic reduction gives `N(w) = 4` in `z³ = −6z + 12`. The only
+  representatives are `±(16 + 3z + 2z²)`, and modulo 19 (period 18 both ways) the `z²` coordinate never
+  vanishes. So `y² = x³ + 11` has no integral point (72 curves in all). The class lists are `Generated/ClassLists/K{k}.lean`.
 - `Plus2.lean` is the hand-written `k = 2` case of the same argument. It is kept as it was
   released.
 
 *Still open.*
-- A rank-1 Thue pipeline for the remaining 45 irreducible equations (59 of 104 have Lean source theorems; `receipts/rank_one_blockers.json` gives the blocker of each).
+- A rank-1 Thue pipeline for the remaining 44 irreducible equations (60 of 104 have Lean source theorems; `receipts/rank_one_blockers.json` gives the blocker of each).
   - Five curves (`k = 22, 26, 28, 71, 94`) are ready but their slab checks are large (0.4–5 million elements).
   - The nonmonic ones without a known point need norm representatives.
   - Sources where no small prime satisfies the Skolem conditions need another zero-set
@@ -939,7 +946,7 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
 ## 8. Not covered
 
 - **Positive `k`**: `y² − k = x³` factors in a real quadratic field, so this lattice argument (for
-  imaginary `√−D`) does not apply. Positive `k` goes through cubic forms instead (§7.4): 71 curves
+  imaginary `√−D`) does not apply. Positive `k` goes through cubic forms instead (§7.4): 72 curves
   are complete there with no premise.
 - **Irreducible Thue branches with solutions, for negative `k`:** these still need Matveev's bound
   (§6). For positive `k` the rank-one engine handles them: `RankOne.source` for one solution and

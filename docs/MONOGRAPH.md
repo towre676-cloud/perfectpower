@@ -421,8 +421,8 @@ $x$. For $1\le k\le100$:
 - `A134220`–`A134223` list the $k$ with $R_k=1,2,3,4$.
 
 All 100 point lists of `receipts/positive_k.json` agree with these seven
-definitions (`receipts/positive_k_oeis.json`). Of these rows, 71 are
-Lean-complete and 29 are census evidence. The agreement is an independent
+definitions (`receipts/positive_k_oeis.json`). Of these rows, 72 are
+Lean-complete and 28 are census evidence. The agreement is an independent
 regression of the hit semantics, including the single $y=0$ point. It is not
 a completeness proof.
 

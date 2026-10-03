@@ -6,6 +6,7 @@ stage separately, from the existing receipts (no new search):
 * `normalization`: `monic`, `witness` (`python/witness_monic.py`), or `none` (nonmonic, no point);
 * `unit`: `found` (with the slab size) or `not_found`;
 * `zero_set`: `skolem` (one solution, `RankOne.source`), `finite_list` (`RankOneZeros.source_list`),
+  `orbit_congruence` (no solution, `RankOneNorm.no_corner_zero` after the monic reduction),
   `none_found`, or `not_reached`;
 * `lean`: whether a Lean source theorem exists (`Generated/RankOneSources`, `RankOneZeros`, `Plus2`).
 Only `lean = true` is a theorem.
@@ -32,6 +33,8 @@ def main():
     zer = {(r['k'], tuple(r['form'])): r for r in json.loads((ROOT / 'receipts' / 'rank_one_zeros.json').read_text())['sources']}
     lean1 = {(k, tuple(F)) for k, F, *_ in R.TARGETS} | {(2, (-1, 0, -3, -2))}
     leanz = {(k, tuple(F)) for k, F, *_ in RZ.TARGETS if zer.get((k, tuple(F)), {}).get('status') == 'ok'}
+    nf = ROOT / 'receipts' / 'rank_one_norm.json'
+    leann = {(r['k'], tuple(r['form'])) for r in json.loads(nf.read_text())['sources'] if r['status'] == 'empty'} if nf.exists() else set()
     rows = []
     for r in led:
         key = (r['k'], tuple(r['form']))
@@ -47,7 +50,12 @@ def main():
             row['normalization'] = 'none'
             src = None
         st = src['status'] if src else 'no_witness'
-        if key in lean1 or key in leanz:
+        if key in leann:
+            row['normalization'] = 'monic_reduction'
+            row['unit'] = 'found'
+            row['zero_set'] = 'orbit_congruence'
+            row['lean'] = True
+        elif key in lean1 or key in leanz:
             row['unit'] = 'found'
             row['zero_set'] = 'finite_list' if key in leanz else 'skolem'
             row['lean'] = True

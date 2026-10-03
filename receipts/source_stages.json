@@ -4,31 +4,33 @@
   "normalization": {
    "monic": 68,
    "witness": 19,
-   "none": 17
+   "monic_reduction": 1,
+   "none": 16
   },
   "unit": {
-   "found": 80,
-   "not_reached": 17,
-   "not_found": 7
+   "found": 81,
+   "not_found": 7,
+   "not_reached": 16
   },
   "zero_set": {
    "finite_list": 14,
    "skolem": 45,
-   "not_reached": 24,
+   "orbit_congruence": 1,
    "none_found": 2,
-   "found": 19
+   "found": 19,
+   "not_reached": 23
   },
   "lean": {
-   "true": 59,
-   "false": 45
+   "true": 60,
+   "false": 44
   },
   "blocker": {
-   "none (theorem)": 59,
-   "normalization (nonmonic, no known point)": 17,
+   "none (theorem)": 60,
    "no Skolem prime": 2,
    "large slab check": 12,
    "not compiled (another class of the curve is open)": 7,
-   "unit not found": 7
+   "unit not found": 7,
+   "normalization (nonmonic, no known point)": 16
   }
  },
  "sources": [
@@ -262,11 +264,10 @@
     -3
    ],
    "known_representations": [],
-   "normalization": "none",
-   "lean": false,
-   "unit": "not_reached",
-   "zero_set": "not_reached",
-   "blocker": "normalization (nonmonic, no known point)"
+   "normalization": "monic_reduction",
+   "unit": "found",
+   "zero_set": "orbit_congruence",
+   "lean": true
   },
   {
    "k": 12,
