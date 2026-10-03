@@ -3001,3 +3001,12 @@ open PerfectPower
 #print axioms PerfectPower.Brainpool384.gen_on_curves
 #print axioms PerfectPower.Brainpool384.z_unit
 #print axioms PerfectPower.Brainpool384.export_matters
+#print axioms PerfectPower.CurveScaling.residual
+#print axioms PerfectPower.CurveScaling.equation_iff
+#print axioms PerfectPower.CurveScaling.nonsingular_iff
+#print axioms PerfectPower.CurveScaling.slope_scale
+#print axioms PerfectPower.CurveScaling.phi_add
+#print axioms PerfectPower.CurveScaling.phi_zsmul
+#print axioms PerfectPower.CurveScaling.phi_injective
+#print axioms PerfectPower.CurveScaling.phi_surjective
+#print axioms PerfectPower.CurveScaling.phiEquiv
