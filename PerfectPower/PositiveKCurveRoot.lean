@@ -21,9 +21,15 @@ def rootOkB (k : ℤ) (L : List (ℤ × ℤ)) (p : ℤ × ℤ) : Bool :=
     (decide (0 ≤ p.2) && decide (p.2 ^ 2 ≤ n) && decide (n < (p.2 + 1) ^ 2) &&
       (decide (p.2 ^ 2 ≠ n) || (decide ((p.1, p.2) ∈ L) && decide ((p.1, -p.2) ∈ L))))
 
-/-- The finite check with supplied roots `XS`. -/
+/-- The `Int.sqrt` check of `PositiveKCurve.pointsB` for one small `x`. -/
+def sqrtOkB (k : ℤ) (L : List (ℤ × ℤ)) (x : ℤ) : Bool :=
+  let n := x ^ 3 + k
+  decide (Int.sqrt n ^ 2 ≠ n) || (decide ((x, Int.sqrt n) ∈ L) && decide ((x, -Int.sqrt n) ∈ L))
+
+/-- The finite check with supplied roots `XS`; an `x` without a supplied root falls back to
+`Int.sqrt` (used for the small candidates of reducible classes). -/
 def pointsRB (k : ℤ) (X : List ℤ) (XS L : List (ℤ × ℤ)) : Bool :=
-  (X.all fun x => XS.any fun p => decide (p.1 = x)) && XS.all (rootOkB k L) &&
+  (X.all fun x => XS.any (fun p => decide (p.1 = x)) || sqrtOkB k L x) && XS.all (rootOkB k L) &&
     L.all fun w => decide (w.2 ^ 2 = w.1 ^ 3 + k)
 
 lemma abs_eq_of_floor {y s : ℤ} (hs : 0 ≤ s) (h1 : s ^ 2 ≤ y ^ 2) (h2 : y ^ 2 < (s + 1) ^ 2) :
@@ -40,11 +46,19 @@ theorem complete_of_sols_root {k : ℤ} {cs : List ((ℤ × ℤ × ℤ × ℤ) �
     (hcls : ClassList k (cs.map Prod.fst)) (hs : ∀ c ∈ cs, SolsIn c.1 c.2)
     (hL : pointsRB k (cs.flatMap fun c => c.2.map fun w => hess c.1 w.1 w.2) XS L = true) (x y : ℤ) :
     y ^ 2 = x ^ 3 + k ↔ (x, y) ∈ L := by
-  simp only [pointsRB, Bool.and_eq_true, List.all_eq_true, List.any_eq_true, decide_eq_true_eq] at hL
+  simp only [pointsRB, Bool.and_eq_true, List.all_eq_true, List.any_eq_true, Bool.or_eq_true,
+    decide_eq_true_eq] at hL
   obtain ⟨⟨hX, hR⟩, hP⟩ := hL
   constructor
   · intro h
-    obtain ⟨p, hp, rfl⟩ := hX x (x_mem hcls hs h)
+    rcases hX x (x_mem hcls hs h) with ⟨p, hp, rfl⟩ | hq
+    swap
+    · simp only [sqrtOkB, Bool.or_eq_true, Bool.and_eq_true, decide_eq_true_eq] at hq
+      rcases hq with hn | ⟨h1, h2⟩
+      · exact absurd (sqrt_sq_of h) hn
+      · rcases sq_cases h with e | e <;> rw [e]
+        · exact h1
+        · exact h2
     have hr := hR p hp
     simp only [rootOkB, Bool.or_eq_true, Bool.and_eq_true, decide_eq_true_eq] at hr
     rcases hr with hn | ⟨⟨⟨hs0, h1⟩, h2⟩, hne | ⟨hm1, hm2⟩⟩

@@ -2995,3 +2995,9 @@ open PerfectPower
 #print axioms PerfectPower.Generated.ClassLists.K11.classList
 #print axioms PerfectPower.Generated.ClassLists.K11.plus11
 #print axioms PerfectPower.PositiveKCurveRoot.complete_of_sols_root
+#print axioms PerfectPower.Brainpool384.a_scaled
+#print axioms PerfectPower.Brainpool384.b_scaled
+#print axioms PerfectPower.Brainpool384.gen_scaled
+#print axioms PerfectPower.Brainpool384.gen_on_curves
+#print axioms PerfectPower.Brainpool384.z_unit
+#print axioms PerfectPower.Brainpool384.export_matters

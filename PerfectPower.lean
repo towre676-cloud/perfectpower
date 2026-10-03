@@ -256,3 +256,4 @@ import PerfectPower.RankOneNorm
 import PerfectPower.Generated.RankOneNorm.K11
 import PerfectPower.Generated.ClassLists.K11
 import PerfectPower.PositiveKCurveRoot
+import PerfectPower.Brainpool384
