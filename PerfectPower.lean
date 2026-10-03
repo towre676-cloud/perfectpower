@@ -252,3 +252,6 @@ import PerfectPower.Generated.ClassLists.K8
 import PerfectPower.Generated.ClassLists.K9
 import PerfectPower.SkolemZeros
 import PerfectPower.RankOneZeros
+import PerfectPower.RankOneNorm
+import PerfectPower.Generated.RankOneNorm.K11
+import PerfectPower.Generated.ClassLists.K11

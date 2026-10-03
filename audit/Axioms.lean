@@ -2985,3 +2985,12 @@ open PerfectPower
 #print axioms PerfectPower.RankOneZeros.source_sub
 #print axioms PerfectPower.RankOneZeros.source_list
 #print axioms PerfectPower.RankOneZeros.zeros1_of
+#print axioms PerfectPower.RankOneNorm.normN_eq
+#print axioms PerfectPower.RankOneNorm.orbit_ne
+#print axioms PerfectPower.RankOneNorm.no_corner_zero
+-- Generated/RankOneNorm/K11
+#print axioms PerfectPower.Generated.RankOneNorm.K11.empty
+-- Generated/ClassLists/K11
+#print axioms PerfectPower.Generated.ClassLists.K11.sols_empty
+#print axioms PerfectPower.Generated.ClassLists.K11.classList
+#print axioms PerfectPower.Generated.ClassLists.K11.plus11

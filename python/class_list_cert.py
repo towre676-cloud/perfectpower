@@ -295,14 +295,14 @@ open PerfectPower MordellCubicForm ClassListProof PositiveKCurve ReducibleThue
 """
 
 
-def lean_rank1(k, srcs, zsrcs=None):
+def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
     """`Generated/ClassLists/K{k}.lean` for a curve whose irreducible classes are all monic sources
     `F(u, v) = −N((u + hv) − vz)` certified in `RankOneSources.K{k}`; the other classes must be
     locally impossible or reducible."""
     row = next(r for r in json.loads((ROOT / 'receipts' / 'positive_k.json').read_text())['curves'] if r['k'] == k)
     src = {tuple(F): (i, P, Q, h, U) for i, (F, P, Q, h, U) in enumerate(srcs)}
     zsrc = {tuple(F): (i, P, Q, h, L) for i, (F, P, Q, h, L) in enumerate(zsrcs or [])}
-    Gs, sols, proofs, bullets, irr, zirr = [], [], [], [], [], []
+    Gs, sols, proofs, bullets, irr, zirr, nirr = [], [], [], [], [], [], []
     for c in row['class_detail']:
         a, B, C, d = c['form']
         G = (a, B // 3, C // 3, d)
@@ -318,6 +318,14 @@ def lean_rank1(k, srcs, zsrcs=None):
             proofs.append(f"solsIn_of_red (c := {cert}) (by decide +kernel)")
             bullets.append(f"* `({a}, {B}, {C}, {d})` is reducible, solved by `ReducibleThue` (factor, Bezout pair, "
                            f"integer square root).")
+        elif (a, B, C, d) in (nsrcs or {}):
+            assert c['representations'] == [], (k, c)
+            sols.append('[]')
+            proofs.append('sols_empty')
+            nirr.append(G)
+            bullets.append(f"* `({a}, {B}, {C}, {d})` is irreducible and nonmonic with no solution: its monic reduction gives "
+                           f"an element of norm `a²` with `z²` coordinate `0`, which `RankOneNorm.K{k}.empty` excludes "
+                           f"(norm representatives, unit generation and an orbit congruence).")
         elif (a, B, C, d) in zsrc:
             i, P, Q, h, Ls = zsrc[(a, B, C, d)]
             Lo = [(u - h * v, v) for u, v in Ls]
@@ -382,7 +390,13 @@ def lean_rank1(k, srcs, zsrcs=None):
                 f"  simp only [List.mem_cons, List.not_mem_nil, or_false, Prod.mk.injEq] at hm\n"
                 f"  rcases hm with {pat}\n" + branches + "\n")
 
-    irr_thms = ''.join(z_thm(*z) for z in zirr) + ''.join(wit_thm(i, G, P, Q, U) for i, G, P, Q, h, U in irr if U is not None) + ''.join(
+    irr_thms = ''.join(
+        f"/-- **The empty nonmonic source**: `RankOneNorm.K{k}.empty`. -/\n"
+        f"theorem sols_empty : SolsIn {_f(G)} [] := by\n"
+        f"  intro u v h\n"
+        f"  exfalso\n"
+        f"  exact Generated.RankOneNorm.K{k}.empty u v (by simp only [ev] at h; linear_combination h)\n\n"
+        for G in nirr) + ''.join(z_thm(*z) for z in zirr) + ''.join(wit_thm(i, G, P, Q, U) for i, G, P, Q, h, U in irr if U is not None) + ''.join(
         f"/-- **Irreducible source {i}**: `RankOneSources.K{k}.source{i}` at `u + {h}v`. -/\n"
         f"theorem sols_irr{i} : SolsIn {_f(G)} [((-1), 0)] := by\n"
         f"  intro u v h\n"
@@ -392,7 +406,8 @@ def lean_rank1(k, srcs, zsrcs=None):
         f"  obtain rfl : u = -1 := by linarith\n"
         f"  simp\n\n" for i, G, P, Q, h, U in irr if U is None)
     imports = '\n'.join(([f'import PerfectPower.Generated.RankOneSources.K{k}'] if srcs else []) +
-                        ([f'import PerfectPower.Generated.RankOneZeros.K{k}'] if zsrcs else []))
+                        ([f'import PerfectPower.Generated.RankOneZeros.K{k}'] if zsrcs else []) +
+                        ([f'import PerfectPower.Generated.RankOneNorm.K{k}'] if nsrcs else []))
     text = (R1_HEAD.replace('{imports}', imports).replace('{k}', str(k)).replace('{bullets}', '\n'.join(bullets)) +
             f"/-- The {len(Gs)} classes for `k = {k}` with their solution lists. -/\n"
             f"def cs_{k} : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [{cs}]\n\n"
@@ -419,7 +434,7 @@ def lean_rank1(k, srcs, zsrcs=None):
             f"  classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)\n"
             f"    (by simp only [P]; norm_num) (by norm_num) (by norm_num) box\n\n"
             # large points: the final point check needs a deeper recursion limit
-            + ("set_option maxRecDepth 100000 in\n" if max(abs(y) for _, y in pts) > 1000 else "") +
+            + ("set_option maxRecDepth 100000 in\n" if max([abs(y) for _, y in pts] or [0]) > 1000 else "") +
             f"/-- **`y² = x³ + {k}`: the integral points are exactly {L}**, with no premise. -/\n"
             f"theorem plus{k} (x y : ℤ) : y ^ 2 = x ^ 3 + {k} ↔ (x, y) ∈ ({L} : List (ℤ × ℤ)) :=\n"
             f"  complete_of_sols classList sols_{k} (by decide +kernel) x y\n\n"
@@ -442,9 +457,15 @@ if __name__ == '__main__':
         for r in json.loads((ROOT / 'receipts' / 'rank_one_zeros.json').read_text())['sources']:
             if r['status'] == 'ok':
                 zby.setdefault(r['k'], []).append((tuple(r['form']), r['P'], r['Q'], r['h'], r['solutions_shifted']))
-        for k in sorted(set(by_k) | set(zby)):
+        nby = {}
+        f = ROOT / 'receipts' / 'rank_one_norm.json'
+        if f.exists():
+            for r in json.loads(f.read_text())['sources']:
+                if r['status'] == 'empty':
+                    nby.setdefault(r['k'], set()).add(tuple(r['form']))
+        for k in sorted(set(by_k) | set(zby) | set(nby)):
             if (not ks and k in by_k) or k in ks:
-                print(lean_rank1(k, by_k.get(k, []), zby.get(k)))
+                print(lean_rank1(k, by_k.get(k, []), zby.get(k), nby.get(k)))
         sys.exit(0)
     if sys.argv[1:] == ['k2']:
         print(lean_k2())
