@@ -273,3 +273,10 @@ import PerfectPower.QuarticPilot
 import PerfectPower.SparkStep
 import PerfectPower.CurveReadout
 import PerfectPower.BrainpoolReadout
+
+-- Complete nonempty norm lists and integral native cubic transport.
+import PerfectPower.WeightedNormList
+import PerfectPower.WeightedNorm107
+import PerfectPower.NativeCubicNorm
+import PerfectPower.NativeCubicBridge
+import PerfectPower.RankOneIntegerSlab

@@ -1,0 +1,22 @@
+{
+  "status": "whole-query equivalence kernel checked; only standard axioms",
+  "scope": "one local example; not an industrial performance claim",
+  "solver": "5.1.0",
+  "results": [
+    {
+      "file": "nonnegative.smt2",
+      "sha256": "7bdeb4831f0bef12e40ec9d6c43a3fc83725daa962267c50b3afd072457fe0b5",
+      "answer": "unknown",
+      "seconds": 3.011481408999998,
+      "timeout_ms": 3000,
+      "reason": "timeout"
+    },
+    {
+      "file": "reduced.smt2",
+      "sha256": "90139e8bf38411617b9348242692e5386ce49f9b83edda6981f230f9fdeca55d",
+      "answer": "unsat",
+      "seconds": 0.0007728230000338954,
+      "timeout_ms": 3000
+    }
+  ]
+}

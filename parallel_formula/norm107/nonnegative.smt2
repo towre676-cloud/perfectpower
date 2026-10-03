@@ -1,0 +1,6 @@
+(set-logic QF_NIA)
+(declare-const u Int)
+(declare-const v Int)
+(assert (= (+ (* u u u) (* 4 v v v)) 107))
+(assert (>= u 0))
+(check-sat)

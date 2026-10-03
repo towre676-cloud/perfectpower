@@ -17,4 +17,12 @@ theorem reject_bounds (X r m : ℤ)
     (2*r)^2*m ≤ X ∧ X < (2*r+1)^2*m := by
   constructor <;> nlinarith
 
+/-- A nonnegative root of a signed 31-bit input fits below 46341. -/
+theorem final_range (X r : ℤ) (hX : X ≤ 2147483647) (hr : 0 ≤ r)
+    (hroot : r^2 ≤ X) : 0 ≤ r ∧ r ≤ 46340 := by
+  refine ⟨hr,?_⟩
+  by_contra h
+  have hlarge : 46341 ≤ r := by omega
+  nlinarith [sq_nonneg (r-46341)]
+
 end PerfectPower.SparkStep

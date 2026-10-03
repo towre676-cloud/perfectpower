@@ -1,0 +1,6 @@
+(set-logic QF_LIA)
+(declare-const u Int)
+(declare-const v Int)
+(assert (and (= u (- 1)) (= v 3)))
+(assert (>= u 0))
+(check-sat)

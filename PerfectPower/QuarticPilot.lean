@@ -28,4 +28,12 @@ theorem nonzero_not_square (u : ℤ) (hu : u ≠ 0) :
   rintro ⟨v,hv⟩
   exact hu ((complete u v).mp hv).1
 
+/-- Every positive even exponent is excluded at a nonzero argument. -/
+theorem nonzero_not_even_power (u : ℤ) (hu : u ≠ 0) (d : ℕ) :
+    ¬ ∃ v : ℤ, v^(2*d)=3*u^4+3*u^2+1 := by
+  rintro ⟨v,hv⟩
+  apply nonzero_not_square u hu
+  refine ⟨v^d,?_⟩
+  simpa only [← pow_mul, Nat.mul_comm] using hv
+
 end PerfectPower.QuarticPilot

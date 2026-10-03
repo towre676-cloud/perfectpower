@@ -1,3 +1,8 @@
+import PerfectPower.NativeCubicBridge
+import PerfectPower.WeightedNorm107
+import PerfectPower.QuarticPilot
+import PerfectPower.SparkStep
+import PerfectPower.RankOneIntegerSlab
 import PerfectPower
 /-! Axiom audit: every public theorem must depend only on `propext`, `Classical.choice` and
 `Quot.sound` (no `sorryAx`, no custom axioms).  Run with `lake env lean audit/Axioms.lean`. -/
@@ -3011,3 +3016,17 @@ open PerfectPower
 #print axioms PerfectPower.CurveScaling.phi_surjective
 #print axioms PerfectPower.CurveScaling.phiEquiv
 #print axioms PerfectPower.CurveScaling.residual_zero_iff_of_isUnit
+
+#print axioms PerfectPower.NativeCubic.norm_mul
+#print axioms PerfectPower.NativeCubic.index_form
+#print axioms PerfectPower.NativeCubic.norm_encoded
+#print axioms PerfectPower.NativeCubicBridge.inverse_embed
+#print axioms PerfectPower.NativeCubicBridge.embed_inverse
+#print axioms PerfectPower.NativeCubicBridge.embed_mul
+#print axioms PerfectPower.NativeCubicBridge.norm_embed
+#print axioms PerfectPower.WeightedNormList.complete_of_cert
+#print axioms PerfectPower.WeightedNorm107.complete
+#print axioms PerfectPower.WeightedNorm107.cubic107
+#print axioms PerfectPower.QuarticPilot.nonzero_not_even_power
+#print axioms PerfectPower.SparkStep.final_range
+#print axioms PerfectPower.RankOneIntegerSlab.slice_eq

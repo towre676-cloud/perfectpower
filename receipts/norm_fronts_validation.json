@@ -1,0 +1,28 @@
+{
+  "lean": "4.20.0",
+  "scope": "sequential local module and consumer checks; full repository build and make verify not rerun",
+  "checked_modules": [
+    "NativeCubicNorm",
+    "NativeCubicBridge",
+    "WeightedNormList",
+    "WeightedNorm107",
+    "QuarticPilot",
+    "SparkStep",
+    "RankOneIntegerSlab"
+  ],
+  "audited_declarations": 13,
+  "standard_axioms_only": true,
+  "whole_query_consumer": "parallel_formula/norm107/nonnegative.lean",
+  "custom_axioms": false,
+  "native_decide": false,
+  "python_tests_run": 356,
+  "python_tests_passed": 352,
+  "python_tests_skipped": 4,
+  "independent_certificates_passed": 19,
+  "k22_checked_chunks": [
+    "Chunk0"
+  ],
+  "k22_total_chunks": 100,
+  "k22_status": "partial; source not proved",
+  "k22_resume_reuse_checked": true
+}
