@@ -859,14 +859,78 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
   | 98 | `(-1, -9, -6, -6)`, z³ = 21z − 42, h = 3, η = 4201 − 2883z + 537z², p = 3, M = 1 | (7, ±21) | `K98.plus98` |
 
   The Skolem conditions are checked by the kernel on powers in `ℤ[z]` (`RankOne.skolemB`, linear in `M`), not on matrix powers. Matrix powers with `M = 22` exhausted memory.
+*Nonmonic sources with a known point* (`python/witness_monic.py`, `receipts/witness_monic.json`).
+- `F(p, q) = 1` forces `gcd(p, q) = 1`, so Bézout gives `U = (−p r; −q s)` with `det U = 1`.
+  Then `G = F ∘ U` has `G(1, 0) = −1`. The forms here have `3 ∣ B, C`, a property kept by
+  `GL₂(ℤ)`, so `G = −(u + hv)³ + …` with an integer shift. The second column is moved to make `h = 0`.
+- Completeness transports exactly (`LatticeTransport.complete_of_unimodular`). In the generated class
+  lists the pull-back is two `linear_combination` steps (`sols_irr{i}`).
+- 19 of the 36 nonmonic sources have a recorded point. 13 are certified:
+
+  | `k` | class `F` | point | `U` | order of `F ∘ U` | Skolem |
+  |---:|---|---|---|---|---|
+  | 9 | `(-2, -3, -6, -1)` | `(0, -1)` | `((0, -1), (1, 2))` | z³ = 9z + 12 | p = 3, M = 1 |
+  | 9 | `(-2, 0, 0, -3)` | `(1, -1)` | `((-1, -3), (1, 2))` | z³ = 18z + 30 | p = 3, M = 1 |
+  | 12 | `(-2, -3, 0, -3)` | `(-2, 1)` | `((2, -7), (-1, 4))` | z³ = 39z + -94 | p = 3, M = 3 |
+  | 17 | `(-2, 0, -6, -1)` | `(0, -1)` | `((0, -1), (1, 2))` | z³ = 12z + 18 | p = 3, M = 1 |
+  | 18 | `(-2, 0, -3, -4)` | `(-1, 1)` | `((1, -2), (-1, 3))` | z³ = 21z + -38 | p = 3, M = 3 |
+  | 36 | `(-3, 0, 0, -4)` | `(1, -1)` | `((-1, -4), (1, 3))` | z³ = 36z + 84 | p = 3, M = 1 |
+  | 37 | `(-2, -3, -6, 3)` | `(-2, -5)` | `((2, 31), (5, 78))` | z³ = 729z + 7576 | p = 41, M = 4 |
+  | 64 | `(-3, -3, -9, -1)` | `(0, -1)` | `((0, -1), (1, 3))` | z³ = 24z + 48 | p = 5, M = 2 |
+  | 65 | `(-2, 0, -6, -7)` | `(-1, 1)` | `((1, -3), (-1, 4))` | z³ = 42z + -106 | p = 3, M = 1 |
+  | 89 | `(-3, -3, -9, 1)` | `(0, 1)` | `((0, 1), (-1, 3))` | z³ = 30z + -66 | p = 11, M = 20 |
+  | 89 | `(-3, -3, -6, 4)` | `(-1, -2)` | `((1, 7), (2, 15))` | z³ = 165z + 816 | p = 5, M = 1 |
+  | 97 | `(-2, 0, -6, -9)` | `(1, -1)` | `((-1, -5), (1, 4))` | z³ = 54z + 154 | p = 3, M = 1 |
+  | 100 | `(-4, 0, 0, -5)` | `(1, -1)` | `((-1, -5), (1, 4))` | z³ = 60z + 180 | p = 3, M = 1 |
+
+  The other six stall later: no unit with `c < 2·10⁶` (`k = 30, 38, 55, 79`), or no Skolem prime
+  (`k = 19, 80`).
+
+*Sources with several solutions* (`SkolemZeros.lean`, `RankOneZeros.lean`, `python/rank_one_zeros.py`).
+- `SkolemZeros.corner_zeros2`: let `A^M = 1 + pD` and `AB = 1`. Every class `r < M` must pass one test:
+  - `p ∤ (A^r)₂₀`;
+  - `(A^r)₂₀ = 0` and `p ∤ (D A^r)₂₀` (the root `r`; `SkolemP.sum_ne_zero` recentred there);
+  - `0 < r`, `(B^{M−r})₂₀ = 0` and `p ∤ (D B^{M−r})₂₀` (recentring at the root `−(M − r)` of the inverse:
+    `A^{Mm+r} = (1 + pD)^{m+1} B^{M−r}`, so the class has no zero with `N ≥ 0`);
+  - an auxiliary prime: `A^{M_q} = 1 + qD_q` and `q ∤ (A^s)₂₀` for all `s < M_q` with
+    `s ≡ r (mod gcd(M, M_q))`, so `(A^N)₂₀ ≢ 0 (mod q)` on the class.
+
+  Then every zero lies below `M`.
+- Without recentring, the η-classes next to an ε-root have `p ∣ (A^r)₂₀ ≠ 0`: a `p`-adic zero at a
+  negative exponent, which no refinement modulo powers of `p` can exclude. The recentred test
+  reduces to `v_p((g^r)₂) = 1`.
+- `RankOneZeros.skolemZB2` runs the tests on precomputed power lists in `ℤ[z]`: `p·(D A^r)₂₀ = (g^{M+r})₂ − (g^r)₂`
+  and `p·(D B^{M−r})₂₀ = (g^r)₂ − (h^{M−r})₂`. `source_list` filters the candidates `±` (coordinates of
+  `η^N`, `ε^N`) by the equation in one kernel check.
+- All 14 several-solution sources are certified, and each list equals the recorded representations:
+
+  | `k` | `F` | order, shift | Skolem | auxiliary primes `(q, M_q)` | solutions |
+  |---:|---|---|---|---|---|
+  | 1 | `(-1, 0, 0, -2)` | z³ = 0z + -2, h = 0 | p = 3, M = 3 | — | (-1, 0), (1, -1) |
+  | 8 | `(-1, -3, 3, -3)` | z³ = 6z + -8, h = 1 | p = 17, M = 96 | (3, 3), (13, 168), (23, 176) | (-4, 1), (-1, 0) |
+  | 9 | `(-1, 0, -6, -2)` | z³ = -6z + -2, h = 0 | p = 11, M = 40 | (5, 8) | (-1, 0), (-1, 3) |
+  | 15 | `(-1, -3, 0, -6)` | z³ = 3z + -8, h = 1 | p = 5, M = 20 | (11, 120) | (-7, 2), (-1, 0) |
+  | 17 | `(-1, -3, 3, -5)` | z³ = 6z + -10, h = 1 | p = 7, M = 16 | (5, 4), (31, 240) | (-1, 0), (4, -1) |
+  | 17 | `(-1, 0, -6, -6)` | z³ = -6z + -6, h = 0 | p = 17, M = 136 | (7, 16), (13, 12) | (-1, 0), (-1, 1), (23, -26) |
+  | 17 | `(-1, 0, -3, -8)` | z³ = -3z + -8, h = 0 | p = 11, M = 10 | — | (-1, 0), (3, -2) |
+  | 24 | `(-1, 0, -6, -8)` | z³ = -6z + -8, h = 0 | p = 13, M = 168 | (3, 3), (5, 24), (29, 420) | (-1, 0), (1, -1), (31, -28) |
+  | 65 | `(-1, 0, -12, -2)` | z³ = -12z + -2, h = 0 | p = 5, M = 20 | (11, 10), (19, 45) | (-1, 0), (-1, 6) |
+  | 68 | `(-1, 0, -12, -4)` | z³ = -12z + -4, h = 0 | p = 7, M = 24 | (37, 342), (53, 468), (89, 24) | (-1, 0), (-1, 3) |
+  | 73 | `(-1, -6, 6, -6)` | z³ = 18z + -34, h = 2 | p = 3, M = 3 | — | (-7, 1), (-1, 0) |
+  | 73 | `(-1, 0, -12, -6)` | z³ = -12z + -6, h = 0 | p = 3, M = 3 | — | (-1, 0), (-1, 2) |
+  | 100 | `(-1, 0, -12, -12)` | z³ = -12z + -12, h = 0 | p = 3, M = 3 | — | (-1, 0), (-1, 1) |
+  | 100 | `(-1, 0, 0, -20)` | z³ = 0z + -20, h = 0 | p = 3, M = 3 | — | (-1, 0), (19, -7) |
+
+  The ε direction uses the same prime and period, with the same auxiliary primes in every case.
+- With these, `k = 1, 8, 9, 12, 15, 17, 18, 24, 37, 64, 65, 68, 73, 89, 97, 100` join the curves
+  complete with no premise (71 in all). The class lists are `Generated/ClassLists/K{k}.lean`.
 - `Plus2.lean` is the hand-written `k = 2` case of the same argument. It is kept as it was
   released.
 
 *Still open.*
-- A rank-1 Thue pipeline for the remaining 86 irreducible equations (18 have Lean source theorems; `receipts/rank_one_blockers.json` gives the blocker of each).
+- A rank-1 Thue pipeline for the remaining 45 irreducible equations (59 of 104 have Lean source theorems; `receipts/rank_one_blockers.json` gives the blocker of each).
   - Five curves (`k = 22, 26, 28, 71, 94`) are ready but their slab checks are large (0.4–5 million elements).
-  - The nonmonic ones need norm representatives.
-  - Sources with several solutions need a source theorem with a longer list.
+  - The nonmonic ones without a known point need norm representatives.
   - Sources where no small prime satisfies the Skolem conditions need another zero-set
     certificate, for example a complex-logarithm lower bound.
 
