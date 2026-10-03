@@ -1,4 +1,5 @@
 """The four answers of the constraint compiler (`Plan.answer`, `Plan.certificate`)."""
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -12,6 +13,38 @@ from perfectpower.compiler import (CONDITIONAL_COMPLETE, NotEnumerable, PowerCon
 
 def plan(F, d=2):
     return compile_constraint(PowerConstraint(F, d))
+
+
+class RegistryTransport(unittest.TestCase):
+    """Exercise every registered list, including points beyond a short scan.
+
+    Expected answers come from the committed curve lists, pulled back directly
+    through x = a*n+b; they do not use the compiler's reduction helpers.
+    """
+
+    def test_all_registered_curves_under_affine_transport(self):
+        registry = json.loads((ROOT / 'receipts' / 'mordell_registry.json').read_text())
+        rows = [(r['k'], r, 'complete_list') for r in registry['positive_curves']]
+        rows += [(-r['D'], r, 'complete_list') for r in registry['curves']]
+        rows += [(-r['D'], r, 'conditional') for r in registry['conditional_curves']]
+        for k, row, answer in rows:
+            for a, b in ((1, 0), (2, 1), (3, -7), (-2, 9)):
+                with self.subTest(k=k, a=a, b=b):
+                    # (a*n+b)^3+k, in ascending coefficient order.
+                    p = plan((b**3 + k, 3*a*b*b, 3*a*a*b, a**3))
+                    expected = {}
+                    for x, y in row['points']:
+                        if (x - b) % a == 0:
+                            n = (x - b) // a
+                            if n >= 1:
+                                expected.setdefault(n, []).append(y)
+                    hits = [(n, sorted(ys)) for n, ys in sorted(expected.items())]
+                    self.assertEqual(p.answer, answer)
+                    self.assertEqual(p.all_hits(), hits)
+                    self.assertEqual(p.certificate['premises'], row.get('premises', []))
+                    self.assertFalse(p.certificate['execution_verified'])
+                    for n, ys in hits:
+                        self.assertEqual(p.contains(n), ys)
 
 
 class Answers(unittest.TestCase):
