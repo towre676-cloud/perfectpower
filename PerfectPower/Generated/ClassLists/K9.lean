@@ -2,6 +2,7 @@ import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K9
 import PerfectPower.Generated.RankOneZeros.K9
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 9` through irreducible rank-one sources, with no premise
@@ -141,8 +142,8 @@ theorem classList : ClassList 9 (cs_9.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-/-- **`y² = x³ + 9`: the integral points are exactly [((-2), (-1)), ((-2), 1), (0, (-3)), (0, 3), (3, (-6)), (3, 6), (6, (-15)), (6, 15), (40, (-253)), (40, 253)]**, with no premise. -/
+/-- **`y² = x³ + 9`: the integral points are exactly [((-2), (-1)), ((-2), 1), (0, (-3)), (0, 3), (3, (-6)), (3, 6), (6, (-15)), (6, 15), (40, (-253)), (40, 253)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus9 (x y : ℤ) : y ^ 2 = x ^ 3 + 9 ↔ (x, y) ∈ ([((-2), (-1)), ((-2), 1), (0, (-3)), (0, 3), (3, (-6)), (3, 6), (6, (-15)), (6, 15), (40, (-253)), (40, 253)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_9 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-2), 1), (0, 3), (3, 6), (6, 15), (40, 253)]) classList sols_9 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K9

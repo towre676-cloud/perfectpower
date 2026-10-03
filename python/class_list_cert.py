@@ -420,7 +420,7 @@ def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
         f"  obtain rfl : u = -1 := by linarith\n"
         f"  simp\n\n" for i, G, P, Q, h, U in irr if U is None)
     # large points: the kernel's `Int.sqrt` overflows, so supply the roots (`PositiveKCurveRoot`)
-    big = max([abs(y) for _, y in pts] or [0]) > 1000
+    big = max([abs(y) for _, y in pts] or [0]) > 100
     sols_py = []
     for c in row['class_detail']:
         if c['local_obstruction']:

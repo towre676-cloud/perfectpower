@@ -1,6 +1,7 @@
 import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K89
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 89` through irreducible rank-one sources, with no premise
@@ -150,8 +151,8 @@ theorem classList : ClassList 89 (cs_89.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-/-- **`y² = x³ + 89`: the integral points are exactly [((-4), (-5)), ((-4), 5), ((-2), (-9)), ((-2), 9), (10, (-33)), (10, 33), (55, (-408)), (55, 408)]**, with no premise. -/
+/-- **`y² = x³ + 89`: the integral points are exactly [((-4), (-5)), ((-4), 5), ((-2), (-9)), ((-2), 9), (10, (-33)), (10, 33), (55, (-408)), (55, 408)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus89 (x y : ℤ) : y ^ 2 = x ^ 3 + 89 ↔ (x, y) ∈ ([((-4), (-5)), ((-4), 5), ((-2), (-9)), ((-2), 9), (10, (-33)), (10, 33), (55, (-408)), (55, 408)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_89 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-4), 5), ((-2), 9), (10, 33), (55, 408)]) classList sols_89 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K89

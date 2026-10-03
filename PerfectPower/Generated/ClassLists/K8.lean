@@ -2,6 +2,7 @@ import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K8
 import PerfectPower.Generated.RankOneZeros.K8
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 8` through irreducible rank-one sources, with no premise
@@ -107,8 +108,8 @@ theorem classList : ClassList 8 (cs_8.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-/-- **`y² = x³ + 8`: the integral points are exactly [((-2), 0), (1, (-3)), (1, 3), (2, (-4)), (2, 4), (46, (-312)), (46, 312)]**, with no premise. -/
+/-- **`y² = x³ + 8`: the integral points are exactly [((-2), 0), (1, (-3)), (1, 3), (2, (-4)), (2, 4), (46, (-312)), (46, 312)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus8 (x y : ℤ) : y ^ 2 = x ^ 3 + 8 ↔ (x, y) ∈ ([((-2), 0), (1, (-3)), (1, 3), (2, (-4)), (2, 4), (46, (-312)), (46, 312)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_8 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-2), 0), (1, 3), (2, 4), (46, 312)]) classList sols_8 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K8
