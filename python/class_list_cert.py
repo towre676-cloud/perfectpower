@@ -309,6 +309,39 @@ def plus_root(k, L, Gs, sols_py):
             f"  PositiveKCurveRoot.complete_of_sols_root (XS := {xs}) classList sols_{k} (by decide +kernel) x y\n\n")
 
 
+# Curves whose box slices exhaust memory in one Lean process: the slices go to separate modules.
+SPLIT = {97}
+SLICES_PER_FILE = 4
+
+
+def write_split(k, text):
+    """Write `K{k}Data.lean` (classes, sources, parameters, certificates), `K{k}S{j}.lean` (a few box
+    slices each) and `K{k}.lean` (box, class list, curve theorem), so each Lean process stays small."""
+    d = ROOT / 'PerfectPower' / 'Generated' / 'ClassLists'
+    ns = f'namespace PerfectPower.Generated.ClassLists.K{k}'
+    i0 = text.index(ns)
+    head_imports, rest = text[:i0], text[i0:]
+    preamble = rest[:rest.index('\n\n', rest.index('open ')) + 2]   # namespace + open line
+    body = rest[len(preamble):]
+    mark = 'set_option maxRecDepth 100000 in\nset_option maxHeartbeats 0 in\ntheorem slice_'
+    a = body.index(mark)
+    b = body.index('\ntheorem box')
+    data, slices, tail = body[:a], body[a:b], body[b:]
+    parts = [mark + x for x in slices.split(mark) if x]
+    end = f'\nend PerfectPower.Generated.ClassLists.K{k}\n'
+    tail = tail.replace(end, '')
+    (d / f'K{k}Data.lean').write_text(head_imports.replace('# `y²', '# Data for `y²', 1) + preamble + data + end)
+    groups = [parts[i:i + SLICES_PER_FILE] for i in range(0, len(parts), SLICES_PER_FILE)]
+    for j, g in enumerate(groups):
+        (d / f'K{k}S{j}.lean').write_text(
+            f'import PerfectPower.Generated.ClassLists.K{k}Data\n\n/-! Box slices for `k = {k}` (part {j}). -/\n\n'
+            'set_option Elab.async false\n\n' + preamble + ''.join(g) + end)
+    (d / f'K{k}.lean').write_text(
+        ''.join(f'import PerfectPower.Generated.ClassLists.K{k}S{j}\n' for j in range(len(groups))) +
+        f'\n/-! The box, the class list and the curve theorem for `k = {k}` (data in `K{k}Data`). -/\n\n'
+        'set_option Elab.async false\n\n' + preamble + tail.lstrip('\n') + end)
+
+
 def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
     """`Generated/ClassLists/K{k}.lean` for a curve whose irreducible classes are all monic sources
     `F(u, v) = −N((u + hv) − vz)` certified in `RankOneSources.K{k}`; the other classes must be
@@ -461,7 +494,7 @@ def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
             f"theorem plus{k} (x y : ℤ) : y ^ 2 = x ^ 3 + {k} ↔ (x, y) ∈ ({L} : List (ℤ × ℤ)) :=\n"
             f"  complete_of_sols classList sols_{k} (by decide +kernel) x y\n\n") +
             f"end PerfectPower.Generated.ClassLists.K{k}\n")
-    (ROOT / 'PerfectPower' / 'Generated' / 'ClassLists' / f'K{k}.lean').write_text(text)
+    write_split(k, text) if k in SPLIT else (ROOT / 'PerfectPower' / 'Generated' / 'ClassLists' / f'K{k}.lean').write_text(text)
     return {'k': k, 'amax': P_['amax'], 'bmax': P_['bmax'], 'box_forms': len(certs), 'points': pts,
             'sources': len(srcs)}
 

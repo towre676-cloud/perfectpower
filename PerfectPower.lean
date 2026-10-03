@@ -258,3 +258,8 @@ import PerfectPower.Generated.ClassLists.K11
 import PerfectPower.PositiveKCurveRoot
 import PerfectPower.Brainpool384
 import PerfectPower.CurveScaling
+import PerfectPower.Generated.ClassLists.K97Data
+import PerfectPower.Generated.ClassLists.K97S0
+import PerfectPower.Generated.ClassLists.K97S1
+import PerfectPower.Generated.ClassLists.K97S2
+import PerfectPower.Generated.ClassLists.K97S3

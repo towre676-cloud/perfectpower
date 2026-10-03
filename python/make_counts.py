@@ -33,8 +33,13 @@ posk = sorted({int(m.group(1)) for l in audited for m in [re.search(r'\.ClassLis
 _pk = json.loads((root / 'receipts' / 'positive_k.json').read_text())['summary']
 posk_empty = set(_pk['all_classes_locally_impossible'])
 _cl = root / 'PerfectPower' / 'Generated' / 'ClassLists'
-posk_src = sorted(k for k in posk if k == 2 or 'RankOneSources' in (_cl / f'K{k}.lean').read_text())
-posk_wit = sorted(k for k in posk_src if 'witness normalization' in (_cl / f'K{k}.lean').read_text())
+def _cltext(k):
+    # a split class list keeps its classes and sources in `K{k}Data.lean`
+    return ''.join(f.read_text() for f in (_cl / f'K{k}.lean', _cl / f'K{k}Data.lean') if f.exists())
+
+
+posk_src = sorted(k for k in posk if k == 2 or any(m in _cltext(k) for m in ('RankOneSources', 'RankOneZeros', 'RankOneNorm')))
+posk_wit = sorted(k for k in posk_src if 'witness normalization' in _cltext(k))
 atlas = json.loads((root / 'receipts' / 'atlas_benchmarks.json').read_text())
 labels = Counter(r['certification'] for r in atlas['rows'])
 lines = [
