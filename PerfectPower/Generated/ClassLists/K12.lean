@@ -1,6 +1,7 @@
 import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K12
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 12` through irreducible rank-one sources, with no premise
@@ -112,8 +113,8 @@ theorem classList : ClassList 12 (cs_12.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-/-- **`y² = x³ + 12`: the integral points are exactly [((-2), (-2)), ((-2), 2), (13, (-47)), (13, 47)]**, with no premise. -/
+/-- **`y² = x³ + 12`: the integral points are exactly [((-2), (-2)), ((-2), 2), (13, (-47)), (13, 47)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus12 (x y : ℤ) : y ^ 2 = x ^ 3 + 12 ↔ (x, y) ∈ ([((-2), (-2)), ((-2), 2), (13, (-47)), (13, 47)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_12 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-2), 2), (13, 47)]) classList sols_12 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K12

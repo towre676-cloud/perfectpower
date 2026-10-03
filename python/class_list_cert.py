@@ -311,6 +311,8 @@ def plus_root(k, L, Gs, sols_py):
 
 # Curves whose box slices exhaust memory in one Lean process: the slices go to separate modules.
 SPLIT = {97}
+# Curves whose reducible classes need supplied square roots (the kernel's `Int.sqrt` exhausts memory).
+REDROOT = {97}
 SLICES_PER_FILE = 4
 
 
@@ -358,6 +360,18 @@ def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
             sols.append('[]')
             proofs.append(f"solsIn_of_loc (m := {c['local_obstruction']}) (by norm_num) (by decide +kernel)")
             bullets.append(f"* `({a}, {B}, {C}, {d})` is impossible modulo {c['local_obstruction']}.")
+        elif c['reducible'] and k in REDROOT:
+            p_, q_, A_, B_, C_, h_, j_ = c['reducible']
+            cert = f"⟨{_i(p_)}, {_i(q_)}, {_i(A_)}, {_i(B_)}, {_i(C_)}, {_i(h_)}, {_i(j_)}⟩"
+            al = A_ * q_ ** 2 - B_ * q_ * p_ + C_ * p_ ** 2
+            rs = []
+            for sg in (1, -1):
+                be = sg * (2 * A_ * h_ * q_ + B_ * (j_ * q_ - h_ * p_) - 2 * C_ * j_ * p_)
+                ga = sg * sg * (A_ * h_ ** 2 + B_ * h_ * j_ + C_ * j_ ** 2) - sg
+                rs.append(math.isqrt(max(be * be - 4 * al * ga, 0)))
+            sols.append(f'PositiveKCurveRoot.redSolsR {cert} {_i(rs[0])} {_i(rs[1])}')
+            proofs.append(f"PositiveKCurveRoot.solsIn_of_redR (c := {cert}) (by decide +kernel) (by decide +kernel) "
+                          f"(by decide +kernel)")
         elif c['reducible']:
             p_, q_, A_, B_, C_, h_, j_ = c['reducible']
             cert = f"⟨{_i(p_)}, {_i(q_)}, {_i(A_)}, {_i(B_)}, {_i(C_)}, {_i(h_)}, {_i(j_)}⟩"
@@ -453,7 +467,7 @@ def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
         f"  obtain rfl : u = -1 := by linarith\n"
         f"  simp\n\n" for i, G, P, Q, h, U in irr if U is None)
     # large points: the kernel's `Int.sqrt` overflows, so supply the roots (`PositiveKCurveRoot`)
-    big = max([abs(y) for _, y in pts] or [0]) > 100
+    big = max([abs(y) for _, y in pts] or [0]) > 20
     sols_py = []
     for c in row['class_detail']:
         if c['local_obstruction']:
@@ -463,7 +477,7 @@ def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
     imports = '\n'.join(([f'import PerfectPower.Generated.RankOneSources.K{k}'] if srcs else []) +
                         ([f'import PerfectPower.Generated.RankOneZeros.K{k}'] if zsrcs else []) +
                         ([f'import PerfectPower.Generated.RankOneNorm.K{k}'] if nsrcs else []) +
-                        (['import PerfectPower.PositiveKCurveRoot'] if big else []))
+                        (['import PerfectPower.PositiveKCurveRoot'] if big or k in REDROOT else []))
     text = (R1_HEAD.replace('{imports}', imports).replace('{k}', str(k)).replace('{bullets}', '\n'.join(bullets)) +
             f"/-- The {len(Gs)} classes for `k = {k}` with their solution lists. -/\n"
             f"def cs_{k} : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [{cs}]\n\n"

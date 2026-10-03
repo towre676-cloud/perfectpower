@@ -1,6 +1,7 @@
 import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K97
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # Data for `y² = x³ + 97` through irreducible rank-one sources, with no premise
@@ -11,7 +12,6 @@ The classes for `k = 97` (`positive_k.json`):
 * `(-2, -6, 6, -5)` is impossible modulo 9.
 * `(-2, -3, -6, 7)` is impossible modulo 9.
 * `(-2, 0, -6, -9)` is irreducible and nonmonic. Its recorded point `(1, -1)` gives `U = (-1 -5; 1 4)`, `det U = 1`, with `F ∘ U = −u³ + (54) u v² + (154) v³` (witness normalization); `RankOneSources.K97.source0` proves that form has only `(−1, 0)`, so `F` has only `(1, -1)`.
-* `(0, -3, 0, -97)` is reducible, solved by `ReducibleThue` (factor, Bezout pair, integer square root).
 
 The class-list premise is proved by `ClassListProof.classList_of` (parameters by `norm_num`,
 transports by the kernel), and `PositiveKCurve.complete_of_sols` reads off the points.
@@ -24,7 +24,7 @@ namespace PerfectPower.Generated.ClassLists.K97
 open PerfectPower MordellCubicForm ClassListProof PositiveKCurve ReducibleThue
 
 /-- The 5 classes for `k = 97` with their solution lists. -/
-def cs_97 : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [(((-3), (-2), (-4), (-2)), []), (((-2), (-2), 2, (-5)), []), (((-2), (-1), (-2), 7), []), (((-2), 0, (-2), (-9)), [(1, (-1))]), ((0, (-1), 0, (-97)), redSols ⟨0, 1, (-3), 0, (-97), 0, 1⟩)]
+def cs_97 : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [(((-3), (-2), (-4), (-2)), []), (((-2), (-2), 2, (-5)), []), (((-2), (-1), (-2), 7), []), (((-2), 0, (-2), (-9)), [(1, (-1))]), ((0, (-1), 0, (-97)), PositiveKCurveRoot.redSolsR ⟨0, 1, (-3), 0, (-97), 0, 1⟩ 0 0)]
 
 /-- **Irreducible source 0** (witness normalization): `RankOneSources.K97.source0` at `U⁻¹(x, y)`. -/
 theorem sols_irr0 : SolsIn ((-2), 0, (-2), (-9)) [(1, (-1))] := by
@@ -40,7 +40,7 @@ theorem sols_97 : ∀ c ∈ cs_97, SolsIn c.1 c.2 := by
   intro c hc
   simp only [cs_97, List.mem_cons, List.not_mem_nil, or_false] at hc
   rcases hc with rfl | rfl | rfl | rfl | rfl
-  exacts [solsIn_of_loc (m := 9) (by norm_num) (by decide +kernel), solsIn_of_loc (m := 9) (by norm_num) (by decide +kernel), solsIn_of_loc (m := 9) (by norm_num) (by decide +kernel), sols_irr0, solsIn_of_red (c := ⟨0, 1, (-3), 0, (-97), 0, 1⟩) (by decide +kernel)]
+  exacts [solsIn_of_loc (m := 9) (by norm_num) (by decide +kernel), solsIn_of_loc (m := 9) (by norm_num) (by decide +kernel), solsIn_of_loc (m := 9) (by norm_num) (by decide +kernel), sols_irr0, PositiveKCurveRoot.solsIn_of_redR (c := ⟨0, 1, (-3), 0, (-97), 0, 1⟩) (by decide +kernel) (by decide +kernel) (by decide +kernel)]
 
 /-- Parameters for `|D| = 10476`. -/
 def P : Params := ⟨(6259 / 1000000 : ℚ), (489 / 25000 : ℚ), (29921 / 500000 : ℚ), (29516591 / 1000000 : ℚ), (5515823 / 1000000 : ℚ)⟩

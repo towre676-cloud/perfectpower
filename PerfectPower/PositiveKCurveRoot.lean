@@ -72,4 +72,57 @@ theorem complete_of_sols_root {k : ℤ} {cs : List ((ℤ × ℤ × ℤ × ℤ) �
   · intro hm
     exact hP _ hm
 
+/-! ### Reducible classes with supplied square roots
+
+`ReducibleThue.redSols` computes `Int.sqrt` of a discriminant in the kernel; for some curves
+(`k = 97`) that unfolding exhausts memory. `redSolsR` takes the two roots as data, and `rootB`
+checks them by multiplication only. -/
+
+open ReducibleThue
+
+/-- `r` is the integer square root of `D` (`r = 0` when `D < 0`). -/
+def rootB (D r : ℤ) : Bool :=
+  decide (0 ≤ r) && decide (r * r ≤ max D 0) && decide (max D 0 < (r + 1) * (r + 1))
+
+lemma sqrt_of_rootB {D r : ℤ} (h : rootB D r = true) : Int.sqrt D = r := by
+  simp only [rootB, Bool.and_eq_true, decide_eq_true_eq] at h
+  obtain ⟨⟨h0, h1⟩, h2⟩ := h
+  have hD : ((D.toNat : ℕ) : ℤ) = max D 0 := Int.toNat_eq_max D
+  have hr : ((r.toNat : ℕ) : ℤ) = r := Int.toNat_of_nonneg h0
+  have e : r.toNat = Nat.sqrt D.toNat := by
+    rw [Nat.eq_sqrt]
+    constructor
+    · zify; rw [hD, hr]; exact h1
+    · zify; rw [hD, hr]; exact h2
+  rw [Int.sqrt, ← e, hr]
+
+/-- `tCands` with the square root supplied. -/
+def tCandsR (α β γ r : ℤ) : List ℤ :=
+  if α ≠ 0 then
+    ([r, -r].filter fun z => (z - β) % (2 * α) = 0).map fun z => (z - β) / (2 * α)
+  else if β ≠ 0 then (if γ % β = 0 then [-γ / β] else []) else []
+
+lemma tCands_eq {α β γ r : ℤ} (h : rootB (β ^ 2 - 4 * α * γ) r = true) : tCands α β γ = tCandsR α β γ r := by
+  unfold tCands tCandsR
+  rw [sqrt_of_rootB h]
+
+/-- `redSols` with the two square roots supplied (`s = 1`, `s = −1`). -/
+def redSolsR (c : RedCert) (r₁ r₂ : ℤ) : List (ℤ × ℤ) :=
+  (tCandsR (alpha c) (beta c 1) (gamma c 1) r₁).map (fun t => (1 * c.h + c.q * t, 1 * c.j - c.p * t)) ++
+    (tCandsR (alpha c) (beta c (-1)) (gamma c (-1)) r₂).map (fun t => (-1 * c.h + c.q * t, -1 * c.j - c.p * t))
+
+lemma redSols_eq {c : RedCert} {r₁ r₂ : ℤ}
+    (h₁ : rootB (beta c 1 ^ 2 - 4 * alpha c * gamma c 1) r₁ = true)
+    (h₂ : rootB (beta c (-1) ^ 2 - 4 * alpha c * gamma c (-1)) r₂ = true) :
+    redSols c = redSolsR c r₁ r₂ := by
+  simp only [redSols, redSolsR, List.flatMap_cons, List.flatMap_nil, List.append_nil, tCands_eq h₁, tCands_eq h₂]
+
+/-- **A reducible class with supplied roots.** -/
+theorem solsIn_of_redR {G : ℤ × ℤ × ℤ × ℤ} {c : RedCert} {r₁ r₂ : ℤ}
+    (h : redCertB (G.1, 3 * G.2.1, 3 * G.2.2.1, G.2.2.2) c = true)
+    (h₁ : rootB (beta c 1 ^ 2 - 4 * alpha c * gamma c 1) r₁ = true)
+    (h₂ : rootB (beta c (-1) ^ 2 - 4 * alpha c * gamma c (-1)) r₂ = true) :
+    SolsIn G (redSolsR c r₁ r₂) := by
+  rw [← redSols_eq h₁ h₂]; exact solsIn_of_red h
+
 end PerfectPower.PositiveKCurveRoot

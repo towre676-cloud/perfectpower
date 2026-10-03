@@ -1,6 +1,7 @@
 import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K98
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 98` through irreducible rank-one sources, with no premise
@@ -117,8 +118,8 @@ theorem classList : ClassList 98 (cs_98.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-/-- **`y² = x³ + 98`: the integral points are exactly [(7, (-21)), (7, 21)]**, with no premise. -/
+/-- **`y² = x³ + 98`: the integral points are exactly [(7, (-21)), (7, 21)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus98 (x y : ℤ) : y ^ 2 = x ^ 3 + 98 ↔ (x, y) ∈ ([(7, (-21)), (7, 21)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_98 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [(7, 21)]) classList sols_98 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K98
