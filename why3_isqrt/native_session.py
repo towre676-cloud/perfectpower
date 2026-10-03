@@ -24,7 +24,13 @@ Why3's `remove pp_sub_le_bound` transformation.  The goal formulas come from Why
 (`why3 prove -a split_vc -D why3`); the task files are matched to the session goals by index, and
 the match is checked against the `expl` labels.
 
-Run:  python3 why3_isqrt/native_session.py          (create the three sessions, write the receipt)
+**Apply arm** (`apply`).  The rule used as a proof step, as the SMT adapter used ground instances:
+on every goal whose conclusion is `ule A X` with `A = sub N B` defined in the context (the
+subtraction shape), the session applies `subst_all` and then `apply pp_sub_le_bound`.  The two premises
+`ule B N` and `ule N X` are left to Z3.  The goal keeps its direct Z3 attempt as well, so this arm
+cannot lose a goal the baseline proves.  The selection is syntactic and fixed before any run.
+
+Run:  python3 why3_isqrt/native_session.py          (create the four sessions, write the receipt)
       python3 why3_isqrt/native_session.py --check  (replay the committed sessions)
 """
 from __future__ import annotations
@@ -103,6 +109,50 @@ def selected_goals(src: str) -> list[str]:
     return sorted(sel)
 
 
+def apply_goals(src: str) -> list[str]:
+    """Goals `ule A X` with `A = sub N B` in their context (the subtraction shape)."""
+    import tempfile
+    with tempfile.TemporaryDirectory() as tmp:
+        f = Path(tmp) / 'r.mlw'
+        f.write_text(src)
+        out = Path(tmp) / 'tasks'
+        out.mkdir()
+        subprocess.run(['why3', 'prove', '-a', 'split_vc', '-D', 'why3', '-o', str(out), str(f)],
+                       capture_output=True, text=True, timeout=600, check=True)
+        sel = []
+        for task in sorted(out.glob('*qtvc*.why')):
+            txt = task.read_text()
+            i = txt.rindex('\ngoal ')
+            goal = re.sub(r'\[@[^\]]*\]', '', txt[i:])
+            ctx = ' '.join(re.sub(r'\[@[^\]]*\]', '', txt[:i]).split())
+            body = ' '.join(goal.split(':', 1)[1].replace('\nend', '').split())
+            m = re.search(r'VonNeumann(\d+)-isqrt\d+qtvc(\d*)\.why', task.name)
+            name = f"isqrt{m.group(1)}'vc.{m.group(2) or '0'}"
+            mm = re.match(r'ule\d* ([A-Za-z_][A-Za-z_0-9]*) ([A-Za-z_][A-Za-z_0-9]*)$', body)
+            if mm and re.search(rf'\b{mm.group(1)} = sub\d* \S+ \S+', ctx):
+                sel.append(name)
+    return sorted(sel)
+
+
+def insert_apply(xml: str, goals: set[str]) -> str:
+    """Put `subst_all; apply pp_sub_le_bound` under each selected goal (Why3 expands it on replay)."""
+    def go(m):
+        name = m.group(2).replace('&#39;', "'")
+        if name not in goals:
+            return m.group(0)
+        return (f'{m.group(1)}\n{m.group(3)}<transf name="subst_all"><goal name="{m.group(2)}.0">'
+                f'<transf name="apply" arg1="pp_sub_le_bound"></transf></goal></transf>\n{m.group(3)}</goal>')
+    return re.sub(r'(<goal name="([^"]*)"[^>]*>)\n(\s*)</goal>', go, xml)
+
+
+def with_prover(xml: str) -> str:
+    if '<prover id="0"' in xml:
+        return xml
+    return xml.replace('<why3session shape_version="6">',
+                       f'<why3session shape_version="6">\n<prover id="0" name="Z3" version="5.1.0" timelimit="{TIME}" '
+                       'steplimit="0" memlimit="1000"/>', 1)
+
+
 def attach_selective(xml: str, keep: set[str]) -> str:
     """Z3 directly on the kept goals and the lemmas; `remove pp_sub_le_bound` then Z3 elsewhere."""
     attempt = '<proof prover="0"><result status="valid" time="0.00"/></proof>'
@@ -128,7 +178,17 @@ def replay(d: Path, force: bool) -> tuple[int, str, float]:
 
 
 def results(xml: str) -> dict[str, dict]:
-    """Leaf goal name -> {status, time} from a session file."""
+    """Program goal name -> {status, time} from a session file (`valid` when Why3 marks it proved)."""
+    out = {}
+    for m in re.finditer(r'<goal name="([^"]*(?:vc\.\d+|sqr_add2|pp_sub_le_bound))"([^>]*)>', xml):
+        name = m.group(1).replace('&#39;', "'")
+        tm = re.search(r'<result status="\w+" time="([\d.]+)"', xml[m.end():m.end() + 400])
+        out[name] = {'status': 'valid' if 'proved="true"' in m.group(2) else 'unproved',
+                     'time': float(tm.group(1)) if tm else 0.0}
+    return out
+
+
+def _results_leaf(xml: str) -> dict[str, dict]:
     out = {}
     for m in re.finditer(r'<goal name="([^"]*)"[^>]*>\s*(?:<transf name="remove"[^>]*>\s*<goal name="[^"]*"[^>]*>\s*)?'
                          r'<proof prover="0"[^>]*><result status="(\w+)" time="([\d.]+)"', xml):
@@ -136,7 +196,8 @@ def results(xml: str) -> dict[str, dict]:
     return out
 
 
-def create(arm: str, src: str, lemmas: list[str], keep: set[str] | None = None, theories=None) -> dict:
+def create(arm: str, src: str, lemmas: list[str], keep: set[str] | None = None, theories=None,
+           apply: set[str] | None = None) -> dict:
     base = SESS / arm
     if base.exists():
         shutil.rmtree(base)
@@ -145,7 +206,18 @@ def create(arm: str, src: str, lemmas: list[str], keep: set[str] | None = None, 
     xml = base / NAME / 'why3session.xml'
     xml.write_text(skeleton(lemmas, theories))
     replay(base / NAME, True)                       # Why3 expands split_vc
-    xml.write_text(attach_attempts(xml.read_text()) if keep is None else attach_selective(xml.read_text(), keep))
+    if apply:
+        xml.write_text(with_prover(insert_apply(xml.read_text(), apply)))
+        replay(base / NAME, True)                   # Why3 expands subst_all; apply
+        # every selected goal also keeps its direct Z3 attempt
+        x = xml.read_text()
+        for g in apply:
+            gx = g.replace("'", '&#39;')
+            x = re.sub(rf'(<goal name="{re.escape(gx)}"[^>]*>\n)(\s*)(<transf name="subst_all")',
+                       lambda m: f'{m.group(1)}{m.group(2)}<proof prover="0"><result status="valid" time="0.00"/></proof>\n'
+                                 f'{m.group(2)}{m.group(3)}', x)
+        xml.write_text(x)
+    xml.write_text(with_prover(attach_attempts(xml.read_text()) if keep is None else attach_selective(xml.read_text(), keep)))
     code, log, secs = replay(base / NAME, True)     # Why3 runs Z3 on every leaf
     res = results(xml.read_text())
     return {'arm': arm, 'mlw_sha256': hashlib.sha256(src.encode()).hexdigest(), 'goals': len(res),
@@ -156,7 +228,7 @@ def create(arm: str, src: str, lemmas: list[str], keep: set[str] | None = None, 
 
 def check() -> dict:
     out = {}
-    for arm in ('baseline', 'rule', 'selective'):
+    for arm in ('baseline', 'rule', 'selective', 'apply'):
         code, log, secs = replay(SESS / arm / NAME, False)
         out[arm] = {'exit_code': code, 'wall_seconds': round(secs, 2), 'tail': log.strip().splitlines()[-1:]}
     return out
@@ -169,11 +241,13 @@ def repeat(n: int) -> dict:
     keep = set(selected_goals(rule_source(src)))
     specs = {'baseline': (src, ['sqr_add2'], None),
              'rule': (rule_source(src), ['sqr_add2', 'pp_sub_le_bound'], None),
-             'selective': (rule_source(src), ['sqr_add2', 'pp_sub_le_bound'], keep)}
+             'selective': (rule_source(src), ['sqr_add2', 'pp_sub_le_bound'], keep),
+             'apply': (rule_source(src), ['sqr_add2', 'pp_sub_le_bound'], set())}
+    app = set(apply_goals(rule_source(src)))
     freq = {a: {} for a in specs}
     for _ in range(n):
         for arm, (text, lemmas, kp) in specs.items():
-            r = create(f'_repeat_{arm}', text, lemmas, kp)['results']
+            r = create(f'_repeat_{arm}', text, lemmas, kp, apply=app if arm == 'apply' else None)['results']
             for g, v in r.items():
                 freq[arm][g] = freq[arm].get(g, 0) + (v['status'] == 'valid')
             shutil.rmtree(SESS / f'_repeat_{arm}')
@@ -248,9 +322,11 @@ def main():
         return
     src = UPSTREAM.read_text()
     keep = selected_goals(rule_source(src))
+    app = apply_goals(rule_source(src))
     arms = [create('baseline', src, ['sqr_add2']),
             create('rule', rule_source(src), ['sqr_add2', 'pp_sub_le_bound']),
-            create('selective', rule_source(src), ['sqr_add2', 'pp_sub_le_bound'], set(keep))]
+            create('selective', rule_source(src), ['sqr_add2', 'pp_sub_le_bound'], set(keep)),
+            create('apply', rule_source(src), ['sqr_add2', 'pp_sub_le_bound'], set(), apply=set(app))]
     b = arms[0]['results']
 
     def diff(r):
@@ -258,6 +334,7 @@ def main():
                 sorted(g for g in b if b[g]['status'] == 'valid' and r.get(g, {}).get('status') != 'valid'))
     newly, regress = diff(arms[1]['results'])
     s_new, s_reg = diff(arms[2]['results'])
+    a_new, a_reg = diff(arms[3]['results'])
     replays = check()
     versions = {'why3': subprocess.run(['why3', '--version'], capture_output=True, text=True).stdout.strip(),
                 'z3': subprocess.run(['z3', '--version'], capture_output=True, text=True).stdout.strip()}
@@ -273,11 +350,13 @@ def main():
            'newly_discharged': newly, 'regressions': regress,
            'selective_policy_goals': keep,
            'selective_newly_discharged': s_new, 'selective_regressions': s_reg,
+           'apply_policy_goals': app,
+           'apply_newly_discharged': a_new, 'apply_regressions': a_reg,
            'replay_check': replays,
            'arms': arms}
     (ROOT / 'receipts' / 'why3_session.json').write_text(json.dumps(out, indent=1) + '\n')
     print(json.dumps(out['summary'], indent=1), 'new:', newly, 'regressions:', regress,
-          'selective new:', s_new, 'selective regressions:', s_reg)
+          'selective new:', s_new, 'selective regressions:', s_reg, 'apply new:', a_new, 'apply regressions:', a_reg)
     print(json.dumps(replays))
 
 

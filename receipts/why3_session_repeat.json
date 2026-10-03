@@ -1,0 +1,43 @@
+{
+ "runs": 5,
+ "time_limit_seconds": 3,
+ "always_proved": {
+  "baseline": 125,
+  "rule": 125,
+  "selective": 125
+ },
+ "never_proved": {
+  "baseline": [
+   "isqrt32'vc.29",
+   "isqrt32'vc.40",
+   "isqrt64'vc.26",
+   "isqrt64'vc.29",
+   "isqrt64'vc.40",
+   "isqrt64'vc.43"
+  ],
+  "rule": [
+   "isqrt32'vc.29",
+   "isqrt32'vc.40",
+   "isqrt32'vc.42",
+   "isqrt64'vc.26",
+   "isqrt64'vc.29",
+   "isqrt64'vc.40",
+   "isqrt64'vc.43"
+  ],
+  "selective": [
+   "isqrt32'vc.29",
+   "isqrt32'vc.40",
+   "isqrt64'vc.26",
+   "isqrt64'vc.29",
+   "isqrt64'vc.40",
+   "isqrt64'vc.43"
+  ]
+ },
+ "goals_that_differ_or_flip": {
+  "isqrt32'vc.42": {
+   "baseline": 1,
+   "rule": 0,
+   "selective": 2
+  }
+ }
+}
