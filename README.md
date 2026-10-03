@@ -287,7 +287,7 @@ docker build -t perfectpower . && docker run --rm perfectpower
     - The Skolem primes range up to $p=67$ ($k=10$, period 22). They are checked on powers in $\mathbb Z[z]$ (`skolemB`).
     - The four $p=3$ candidates of the second OEIS handoff ($k=4,33,49,81$) are the inverses of the proved fundamental units.
     - The full table is in [MORDELL_BRANCH.md](docs/MORDELL_BRANCH.md) §7.4.
-  - **Nonmonic sources with a known point** (`python/witness_monic.py`): $F(p,q)=1$ forces $\gcd(p,q)=1$, and Bézout completes $(-p,-q)$ to a determinant-one matrix $U$ with $F\circ U$ monic. These Mordell forms keep $3\mid B, C$ under $\mathrm{GL}_2(\mathbb Z)$, so $F\circ U=-u^3+Puv^2+Qv^3$ directly. 19 of the 36 nonmonic sources have a recorded point. 13 of them go through the unit engine (Lean source theorems pulled back through $U$); the other six still lack a unit (4) or a Skolem prime (2).
+  - **Nonmonic sources with a known point** (`python/witness_monic.py`): $F(p,q)=1$ forces $\gcd(p,q)=1$, and Bézout completes $(-p,-q)$ to a determinant-one matrix $U$ with $F\circ U$ monic. These Mordell forms keep $3\mid B, C$ under $\mathrm{GL}_2(\mathbb Z)$, so $F\circ U=-u^3+Puv^2+Qv^3$ directly. 19 of the 36 nonmonic sources have a recorded point. 13 of them go through the unit engine (Lean source theorems pulled back through $U$); the other six have large slab checks (3), no unit found (1) or no Skolem prime (2).
   - **Sources with several solutions** (`SkolemZeros.lean`, `RankOneZeros.lean`, `python/rank_one_zeros.py`). `SkolemZeros.corner_zeros2` proves that every zero of $(A^N)_{20}$ lies below the period $M$, class by class:
     - $p\nmid(A^r)_{20}$;
     - or $(A^r)_{20}=0$ with a nonvanishing first-order term (the root $r$);

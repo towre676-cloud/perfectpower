@@ -883,8 +883,10 @@ root `ρ` and a complex root `θ`. It is computed in floating point, and merges 
   | 97 | `(-2, 0, -6, -9)` | `(1, -1)` | `((-1, -5), (1, 4))` | z³ = 54z + 154 | p = 3, M = 1 |
   | 100 | `(-4, 0, 0, -5)` | `(1, -1)` | `((-1, -5), (1, 4))` | z³ = 60z + 180 | p = 3, M = 1 |
 
-  The other six stall later: no unit with `c < 2·10⁶` (`k = 30, 38, 55, 79`), or no Skolem prime
-  (`k = 19, 80`).
+  The other six stall later:
+  - units found, but the slab checks are large (`k = 30, 38, 79`: 10⁷ to 10⁸ elements);
+  - no unit with `c < 2·10⁶` (`k = 55`);
+  - no Skolem prime (`k = 19, 80`).
 
 *Sources with several solutions* (`SkolemZeros.lean`, `RankOneZeros.lean`, `python/rank_one_zeros.py`).
 - `SkolemZeros.corner_zeros2`: let `A^M = 1 + pD` and `AB = 1`. Every class `r < M` must pass one test:

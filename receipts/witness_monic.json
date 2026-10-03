@@ -1,14 +1,15 @@
 {
  "scope": "witness-based monic normalization of the nonmonic positive-k sources; a search, not a proof (statuses as in rank_one_blockers.json)",
- "unit_search_cmax": 200000,
+ "unit_search_cmax": 2000000,
  "summary": {
   "nonmonic_sources": 36,
   "with_witness": 19,
   "by_status": {
    "no_skolem_prime": 2,
-   "no_unit_found": 4,
+   "no_unit_found": 1,
    "no_witness": 17,
-   "ready": 13
+   "ready": 13,
+   "ready_large_slab": 3
   }
  },
  "sources": [
@@ -403,8 +404,17 @@
     57,
     166
    ],
-   "status": "no_unit_found",
-   "cmax": 200000,
+   "eta": [
+    21210309,
+    9715457,
+    1114169
+   ],
+   "slab_elements": 53786773,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready_large_slab",
    "witness": [
     2,
     -1
@@ -574,8 +584,17 @@
     33,
     74
    ],
-   "status": "no_unit_found",
-   "cmax": 200000,
+   "eta": [
+    4527821,
+    2700687,
+    406505
+   ],
+   "slab_elements": 10103929,
+   "skolem": {
+    "p": 3,
+    "M": 3
+   },
+   "status": "ready_large_slab",
    "witness": [
     1,
     -1
@@ -674,7 +693,7 @@
     56
    ],
    "status": "no_unit_found",
-   "cmax": 200000,
+   "cmax": 2000000,
    "witness": [
     0,
     -1
@@ -928,8 +947,17 @@
     135,
     604
    ],
-   "status": "no_unit_found",
-   "cmax": 200000,
+   "eta": [
+    60632137,
+    -18070920,
+    1346862
+   ],
+   "slab_elements": 95143371,
+   "skolem": {
+    "p": 3,
+    "M": 1
+   },
+   "status": "ready_large_slab",
    "witness": [
     -2,
     1
