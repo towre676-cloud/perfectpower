@@ -1,5 +1,7 @@
 # Industrial performance checkpoint
 
+The later [bounded replay push](REPLAY_README.md) preserves the original solver strategy and targets command-scanning and transport overhead. Its full-corpus scanner comparison checks 3,602,272 exact command slices, and its paired replay reports are separate from the negative strategy-portfolio result below. See [the replay monograph](REPLAY_MONOGRAPH.md) for the mathematical sequence justification, measurements and scope.
+
 This opt-in experiment acquires all 181 ELSTER incremental QF_NIA files from SMT-LIB/benchmark-submission at commit `bdae77b0a144895098f82b51a531bc2b566df9e6`. The files total 307,442,420 bytes. Acquisition verifies Git blob SHA-1 and records SHA-256, byte counts and paths. The upstream headers describe industrial tax-form test-data generation and carry the upstream licensing information. Preserve those headers when using or redistributing the corpus.
 
 Install `z3-solver`, then run from the repository root:

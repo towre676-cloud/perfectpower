@@ -1,0 +1,2735 @@
+{
+  "complete": true,
+  "revision": "bdae77b0a144895098f82b51a531bc2b566df9e6",
+  "workers": 3,
+  "code_sha256": {
+    "industrial_performance/check_scanner.py": "1739b69df5a55b41fb1346f6e546e7929d5a8010b928ece4a27b24a0c2925739",
+    "python/perfectpower/smt_stream.py": "bee7c6bccda7017c3bcdba2561fed72dddd5eb1bc7e255de8a003e0bcba3b834",
+    "python/perfectpower/smt_cert.py": "fe80d1a8e91295a215a68b64b7f06782dfdb9ca509a9f7d2c737499c6cab87e2"
+  },
+  "files": 181,
+  "bytes": 307442420,
+  "commands": 3602272,
+  "batch_seconds": 12.568479866999951,
+  "seconds": {
+    "classic": 26.303943543003243,
+    "fast": 9.64024139799767
+  },
+  "rows": [
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_1.smt2",
+        "bytes": 62784,
+        "blob_sha": "afb03cee018b2f7863e88867644f10c8e51c6580",
+        "sha256": "a83087c271ed5083dbd10961024367be8f4eef459e0f03c306620678766ffad9"
+      },
+      "commands": 2106,
+      "command_slices_sha256": "680117a34434d458db5d12432a0344eda7d12079569a7e5d0e8a21843a5d4405",
+      "seconds": {
+        "classic": 0.006096371000239742,
+        "fast": 0.002637272999891138
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_10.smt2",
+        "bytes": 45781,
+        "blob_sha": "7e3bfbf44772bec98346c77071fe9c57338d55e6",
+        "sha256": "8704b4d74a436c23d324da01df7c6edc64c7e1d1260ce91bbb983ec5feaa461f"
+      },
+      "commands": 1182,
+      "command_slices_sha256": "74668f90076aff3e06e94d3c3331a1ae657341ee93fb574baac41d5eb96d211b",
+      "seconds": {
+        "fast": 0.0016857539999364235,
+        "classic": 0.003674907999993593
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_2.smt2",
+        "bytes": 50768,
+        "blob_sha": "d0ec313e5ce9d9890ae2cbc50ad40ff59bb40336",
+        "sha256": "39aa0af3bb8c700af86959e728016b5fe52a8f09dfcfaafbda88320e5d219d6d"
+      },
+      "commands": 1423,
+      "command_slices_sha256": "fe0a0850ad5e589ebb1cc17b5a7acc030623b43329ab56dbf2a435548f0377d0",
+      "seconds": {
+        "classic": 0.0042280659999960335,
+        "fast": 0.0020276510003895964
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_3.smt2",
+        "bytes": 55686,
+        "blob_sha": "d87c0a0e4c434d6fef517793a96501fb998a4ac9",
+        "sha256": "3f661d8fefcc3f22e44bd6cabf3c16f826bfdcb8bf73caf97cfd3af3bd4f0d95"
+      },
+      "commands": 1725,
+      "command_slices_sha256": "e7ab18e84ebb27a6db8c510d0b3e56d109b28f38312609a39fc8ead5ea8b27fd",
+      "seconds": {
+        "fast": 0.002205334000336734,
+        "classic": 0.004562782999983028
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_4.smt2",
+        "bytes": 57219,
+        "blob_sha": "55c8cf95fabd1448aa7c5d744b53ef7e38836fb7",
+        "sha256": "0c795a503d2a7c9d8183b93a4f1a08100383019e7a98683fad0dbf77b4cfcddf"
+      },
+      "commands": 1805,
+      "command_slices_sha256": "cedf896711c55e96efde54f09a26935e0daafb504dda00d5af6baf1c20ecbb52",
+      "seconds": {
+        "classic": 0.004549212000256375,
+        "fast": 0.0022873759999129106
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_5.smt2",
+        "bytes": 46225,
+        "blob_sha": "d65da9cc480d204daf4f2d138739d49aea8eb83d",
+        "sha256": "7a268f6533800b70df8541de4eaadc260589fa6264c8bf799382096cb50bfc01"
+      },
+      "commands": 1109,
+      "command_slices_sha256": "2d94a8aa3738d4a063c5977a2d4573ea4ec2fb17636f385594805f8463bcc65f",
+      "seconds": {
+        "fast": 0.0015053780002745043,
+        "classic": 0.004213378000258672
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_6.smt2",
+        "bytes": 65442,
+        "blob_sha": "1b78e7f9b10585667e8f9e827f435d7ed5712476",
+        "sha256": "9473371a20632b0b5fa0869a1b853fcd28ccb10602a30306822afe34996a1c3f"
+      },
+      "commands": 2133,
+      "command_slices_sha256": "a30476d736f0c190f84789c75d766cd694dbec398b72f4603a0f5ce3b5c03f68",
+      "seconds": {
+        "classic": 0.0056906940003500495,
+        "fast": 0.0022958380000090983
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_7.smt2",
+        "bytes": 68671,
+        "blob_sha": "d18bb7123329d44e4a4931b9bff4d95c5cb3c63f",
+        "sha256": "966485849a059282b2211900d29f6e7d13acad7668ed270dfb766552b04eecb9"
+      },
+      "commands": 2283,
+      "command_slices_sha256": "ccc702a9494c52efef195cbfc42b46dd99e613ea75933740387668576f9735dc",
+      "seconds": {
+        "fast": 0.002533039999889297,
+        "classic": 0.005884960999992472
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_8.smt2",
+        "bytes": 52057,
+        "blob_sha": "1370dcacdac100ad14473082ed7a468e7b94444b",
+        "sha256": "011a109a846a80f93516046f7f5816ec214fafeab3b45030b7fd6eeb0c95b63a"
+      },
+      "commands": 1284,
+      "command_slices_sha256": "3e1a3273b771d7fce2a7233f00555b31febfd6da35b8c28163b264f5de27f588",
+      "seconds": {
+        "classic": 0.004628211000181182,
+        "fast": 0.0020187179998174543
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/A/A_htc_9.smt2",
+        "bytes": 47072,
+        "blob_sha": "f1432d15c810cd585462d332f234b7a8fedc6402",
+        "sha256": "1bcb3c638a1b9e79786940664f94bd5a2a67e47ba76ef2795c6789e9fcc76ec6"
+      },
+      "commands": 1278,
+      "command_slices_sha256": "e437e82ec8745b4886b1a8b0406dd192e1501c7a81883b446a6d837e70655d57",
+      "seconds": {
+        "fast": 0.0016610290003882255,
+        "classic": 0.003715991000262875
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_1.smt2",
+        "bytes": 1636833,
+        "blob_sha": "372785a857cb620c2a1640f8b227ad8cabf8336f",
+        "sha256": "bf40eff90251b159f66a1e5a455ca75ceb3329fa549e0d601ef4eb0581999b1e"
+      },
+      "commands": 31415,
+      "command_slices_sha256": "3257378622d9f4269f9d17c70dba50cc4a4e6c3d84ee48c69efe9824cf132606",
+      "seconds": {
+        "classic": 0.1637776610000401,
+        "fast": 0.046309703000133595
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_10.smt2",
+        "bytes": 1794399,
+        "blob_sha": "0a4cc755fb4ff87ae8829e7517a4c87ebc6cc2e8",
+        "sha256": "fe963b4c3eb69c2d490194a9f328079d83d19ad4613a1729166adc01c5b9623d"
+      },
+      "commands": 35221,
+      "command_slices_sha256": "b027d342a077cf6b773f200c5d68c1b452e8146ee311d1f757c560c76849466c",
+      "seconds": {
+        "fast": 0.05161110999961238,
+        "classic": 0.14754041500009407
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_2.smt2",
+        "bytes": 1580697,
+        "blob_sha": "847056c42ae1dfa72fecb4b537e95e0df456c0dd",
+        "sha256": "68d72b0ffbb842fddbce5f29e082b93e7e48e68f9016af3e773cc0b4dc09248a"
+      },
+      "commands": 28390,
+      "command_slices_sha256": "6904d06c6efdf37ec92f58f7a34b995c7bd57effff52e7c25bacbd939ed56a52",
+      "seconds": {
+        "classic": 0.12942217499994513,
+        "fast": 0.04214388599984886
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_3.smt2",
+        "bytes": 2029173,
+        "blob_sha": "c8dd095963e2fae4d2d0ffb7df6615f333967e2b",
+        "sha256": "c8e48e17458c9d0892af1f35fdf8b2f589e25229d98a3bb6e4d9c18bbd9b0bf5"
+      },
+      "commands": 48179,
+      "command_slices_sha256": "662c2acdb7fd8bd985f80fb7a266575cd494f77a4089c41e8866ae6bff05a4d5",
+      "seconds": {
+        "fast": 0.056656298999769206,
+        "classic": 0.17149833100029355
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_4.smt2",
+        "bytes": 1670368,
+        "blob_sha": "3445f6a53986d852c65379d2ceda194e9787a6f1",
+        "sha256": "ce2d2a59d2c62c729f5228c2d2294c9c8c1d75f10884f4f75c63ef3482845be8"
+      },
+      "commands": 33590,
+      "command_slices_sha256": "f8d6325ae2924acb2d1352a6aba511cab1d9ce99986ee38ff15fd14fe1a12348",
+      "seconds": {
+        "classic": 0.13593731000037224,
+        "fast": 0.044702694000079646
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_5.smt2",
+        "bytes": 1612080,
+        "blob_sha": "c00c0cec2d25191b27aab19af3cd3e67331270b4",
+        "sha256": "11027de558c5f13961b86a0a164a7c630fa8a3bf71fe412655dde847658edf82"
+      },
+      "commands": 30155,
+      "command_slices_sha256": "7b942c874760d9d358901064c67fe0dba356f9ff392b0eab3b8ef90faff66c95",
+      "seconds": {
+        "fast": 0.04096648299992012,
+        "classic": 0.1325335209999139
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_6.smt2",
+        "bytes": 1595130,
+        "blob_sha": "45bd0f37bdc95a8e2d5d920f12d9af1c898c614d",
+        "sha256": "d8422ef174b318de4eb7dd1a2845e19c7c136e439d06d0f1e87372f004d4e720"
+      },
+      "commands": 29038,
+      "command_slices_sha256": "9617963430de7113d7a76fc46e5f9adcd7b083b0759202abd63eb8e1b1d9f864",
+      "seconds": {
+        "classic": 0.13127442600034556,
+        "fast": 0.04482570600021063
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_7.smt2",
+        "bytes": 1605459,
+        "blob_sha": "33bd85e9538dbc5ffadde6cd87d4dd5f74559157",
+        "sha256": "31b2cb5d984f6bfccb9a2b412d45c959ce212654cecae23c70c624926e4d412f"
+      },
+      "commands": 29765,
+      "command_slices_sha256": "79feef8625b13ea9cd9d3efadb226646d3b9791370d00894b19011363b425da9",
+      "seconds": {
+        "fast": 0.042002206000233855,
+        "classic": 0.14370691099975375
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_8.smt2",
+        "bytes": 2020134,
+        "blob_sha": "4d02774389b68586e950f2beee99c7f1da6ca9d4",
+        "sha256": "5865cd587ab537099ec07f47c682bd8bde405a12761a4dc3ba9dea20dabdd7a8"
+      },
+      "commands": 48331,
+      "command_slices_sha256": "5874e3036ba985d9b96151ffd6d6afc9d0ea3a6bf7bf806f193564700075d100",
+      "seconds": {
+        "classic": 0.18017722199965647,
+        "fast": 0.05966122700010601
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/B/B_htc_9.smt2",
+        "bytes": 1451473,
+        "blob_sha": "b3b0230c6bb76889a63930c05209b3e48f9fd674",
+        "sha256": "ca465b0df1a73fad7e298cb2de5add8b6bfd1fd01eef701da3775099ceacf8b1"
+      },
+      "commands": 21559,
+      "command_slices_sha256": "5a6debb42b3d9833c00298554e7ccb125750d577c347d6de891cdf7b2183f392",
+      "seconds": {
+        "fast": 0.0361805990000903,
+        "classic": 0.11774167400017177
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_1.smt2",
+        "bytes": 4617189,
+        "blob_sha": "d3c8ff776aed70daf8f14a3ca35c8888c6f67d2c",
+        "sha256": "bce06bd20fa548d372a24cafc7210777114420c45fc55040114f80b27043d982"
+      },
+      "commands": 21354,
+      "command_slices_sha256": "59cbd5f9fe5f9c1e5771b2e675f602f70dc9efd9dc532c09c2ba0fcccaa29b50",
+      "seconds": {
+        "classic": 0.3943637000002127,
+        "fast": 0.1404922919996352
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_10.smt2",
+        "bytes": 3427997,
+        "blob_sha": "c2e7b18e78ef095a807f9a75d8379d8604f09179",
+        "sha256": "072b35b312e41dc31ba8b2a868b1dd183992cdb6de5ce336aeff3cb49ace6e85"
+      },
+      "commands": 12907,
+      "command_slices_sha256": "8dbed28c43f7a4b4f58d51d61525001646c08aa496ec70f6d60dbd9715c20f77",
+      "seconds": {
+        "fast": 0.10190486099963891,
+        "classic": 0.2899602499996945
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_2.smt2",
+        "bytes": 4740926,
+        "blob_sha": "f0a23807f245c20f29a0bd24dc39fd9d92d749ae",
+        "sha256": "33a9a296af3a075abc74ecc7351885d26d3ceb6dc309ad9e8e294650f7654a3e"
+      },
+      "commands": 22947,
+      "command_slices_sha256": "e167feeee0733e589060294c68de001ebe2a2d5587563697dbc7967ecf8ec267",
+      "seconds": {
+        "classic": 0.39230915899997854,
+        "fast": 0.162085425999976
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_3.smt2",
+        "bytes": 4750909,
+        "blob_sha": "766198206733161a9628946646e01aa0a3dc7139",
+        "sha256": "7cdbb3504729e7fa7bd5c933eed9818ddf59caad669fad90da17c116c6f42940"
+      },
+      "commands": 22655,
+      "command_slices_sha256": "a556d0aa67b56c52fcb1e2ba95b16490169a1821bcbb4167c78146ed88505152",
+      "seconds": {
+        "fast": 0.15339923800001998,
+        "classic": 0.4187598639996395
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_4.smt2",
+        "bytes": 4666096,
+        "blob_sha": "6ae71fbc72cbb47157b071f4cf7827fe6996c261",
+        "sha256": "d69c14f644402d3f2599752c5781150233cd0ca9dba4d2d436c731f3f24fc36e"
+      },
+      "commands": 25357,
+      "command_slices_sha256": "7eb201caf39760a5fb0903658aca663b7dc819c90754ee174bfff53372f66e55",
+      "seconds": {
+        "classic": 0.4149825919998875,
+        "fast": 0.17119326900001397
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_5.smt2",
+        "bytes": 3418559,
+        "blob_sha": "f2508ecfd37929d2c8e8d48edeeaec5f2660dfc1",
+        "sha256": "edc469415d6a9262208f5d21fbb2e40a49ce9b93f0d4607905c495fe5a7325ba"
+      },
+      "commands": 12566,
+      "command_slices_sha256": "e867cd8db358c7f5951b75742f628c6d2848a93a752077d87282fc83a034f316",
+      "seconds": {
+        "fast": 0.0992641719999483,
+        "classic": 0.3015278540001418
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_6.smt2",
+        "bytes": 4685097,
+        "blob_sha": "78a9741804737a94862d9e6f41af395be64aa862",
+        "sha256": "f3aada6a0dee5937d3fe12cc19081068db8f6433cdae545ca78471f287d85c17"
+      },
+      "commands": 34460,
+      "command_slices_sha256": "996190d38f9198827130ce35318ef74f1225a88fd17e5f78f793cbfd6f5787ec",
+      "seconds": {
+        "classic": 0.4394602520001172,
+        "fast": 0.1575254659996972
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_7.smt2",
+        "bytes": 4646252,
+        "blob_sha": "6eb1565969b2e4ca36a660675947bf5c4639a1a6",
+        "sha256": "76a9ae482044f91d9b11a40e72eccc3af3e08e6483ffc8b83a6288e23d2c90ec"
+      },
+      "commands": 30398,
+      "command_slices_sha256": "a90868fae45aa0d0fad8172012299ebaf4360d8632b6a3731c1671425edd81e2",
+      "seconds": {
+        "fast": 0.14685323799994876,
+        "classic": 0.45284866100018917
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_8.smt2",
+        "bytes": 4728173,
+        "blob_sha": "79adfb9562d1e1ccf247a1b115a1efacc69a857b",
+        "sha256": "93504b0cca5bbfc0ef1c1381d0fa039e5243f22fbb10e228c6ff51b881f48a68"
+      },
+      "commands": 40189,
+      "command_slices_sha256": "ca8acbb7fb5c44b8c641413a7ce24a05a17bff58d8a85e0e5716e9e63b7e1633",
+      "seconds": {
+        "classic": 0.39476750799985894,
+        "fast": 0.1432973339997261
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/C/C_htc_9.smt2",
+        "bytes": 3476895,
+        "blob_sha": "3c096d6a5423dd1d710ebd3eab1d7edc54a2d84a",
+        "sha256": "2004b1fef673f6d17e979d760fdd74b03150e3cdb2f34da9aca9a6cd8f2b56f5"
+      },
+      "commands": 13826,
+      "command_slices_sha256": "65aa8ee0f34f32ffd63ec1a8e5aecf7aaf0f0d45e8772a31b2b9566fcf13a806",
+      "seconds": {
+        "fast": 0.14738628699979017,
+        "classic": 0.3533366419997037
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_1.smt2",
+        "bytes": 3068656,
+        "blob_sha": "8561c30d46d032e786dec23c1d02a3e794bacf83",
+        "sha256": "9fff3616cf38e9101dd2837db467a5d18e30962ca53b29fad4f089d675061d15"
+      },
+      "commands": 24228,
+      "command_slices_sha256": "b5d087e789ef4768f86c3fd6b18dd6fda56cf0ed6b3062c0186dc3c94d88b33d",
+      "seconds": {
+        "classic": 0.2510932350000985,
+        "fast": 0.08900606600036554
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_10.smt2",
+        "bytes": 2541081,
+        "blob_sha": "a81817bf99c8098625e9efc9896c3b498d73dead",
+        "sha256": "5abb6aaa29e135ef3aa32cb24493501da894d85f5792dd382740c8d8362111b0"
+      },
+      "commands": 23704,
+      "command_slices_sha256": "ff7149eb42b99d72bbcbdef9519a4981b936e0fc255368e7bb1161822c7029ff",
+      "seconds": {
+        "fast": 0.09188282500008427,
+        "classic": 0.26726569600032235
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_2.smt2",
+        "bytes": 3183610,
+        "blob_sha": "0a58dc0396a4759a69881fbe3433a0b903af06a2",
+        "sha256": "2dfa63b7dad4e745faea6c39dd064609b7c455cfe62a93563095a117b44cf430"
+      },
+      "commands": 34090,
+      "command_slices_sha256": "42a72ea26ee4b53167a925ed1029a8cf18061c0eb8a8eb83d235d14a737af517",
+      "seconds": {
+        "classic": 0.2890525980001257,
+        "fast": 0.09203614199986987
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_3.smt2",
+        "bytes": 3100840,
+        "blob_sha": "2b8f453327c1efa0ec70335c8f4a220f2c4013cb",
+        "sha256": "04dca3b770043c2a3c6857a1d83f85a56a6d6aa6749b8e7072637aeab62b9231"
+      },
+      "commands": 47453,
+      "command_slices_sha256": "bf08a9bd72951bf0365a4131c4725858cd4d0fe2132235a883f5221564732765",
+      "seconds": {
+        "fast": 0.09176504099968952,
+        "classic": 0.26633437700002105
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_4.smt2",
+        "bytes": 2482679,
+        "blob_sha": "1136f3fef860a8076df7f388887f8ea46fcd64e6",
+        "sha256": "c28eef3713c23a835db5e8f0315f4db2d664b10503f2e1cdcc95bde329c39361"
+      },
+      "commands": 16705,
+      "command_slices_sha256": "21fc41e4a155bf60e1a8389a3461d8df5f9c4c25351d09aec598b1ba5aa57ae1",
+      "seconds": {
+        "classic": 0.2105681809998714,
+        "fast": 0.06900533899988659
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_5.smt2",
+        "bytes": 3196952,
+        "blob_sha": "6d4b1a40ea638819a64261ab85165331b18a4133",
+        "sha256": "01c6588d3062c8667b73a0564456d09350252c0e7d0c2ae20aa8421414c2b0cb"
+      },
+      "commands": 37469,
+      "command_slices_sha256": "d3939f07c3aa2c9ca03498a13e0a8d67da6534a17e733d7272c532ecb23639be",
+      "seconds": {
+        "fast": 0.10135986199975378,
+        "classic": 0.26837175399987245
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_6.smt2",
+        "bytes": 2477623,
+        "blob_sha": "4ba4db288cf5e1a847de7151c3ac95bfcbb5f568",
+        "sha256": "2bb45c8316a9dd82d3aca1f7f78d9977ece2019c734c623f4dca0c71ddb7f898"
+      },
+      "commands": 16343,
+      "command_slices_sha256": "7683afb4b3a3a58619c8c115e1fe0e8c2dc7c6b2ad19b7a5eb318e3006461bf2",
+      "seconds": {
+        "classic": 0.25358064800002467,
+        "fast": 0.06768556099996204
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_7.smt2",
+        "bytes": 3136512,
+        "blob_sha": "6975480a333396fb44df1ee04408ff04a6381c86",
+        "sha256": "c882c8c7569d739c262daadcfe97f1f5641c5cceaf480b39cb947b162f40eaf9"
+      },
+      "commands": 46345,
+      "command_slices_sha256": "7a2e7d4abe95260ed7a55943ea1a5693e771c17f64eec620582a0f4b5dd73464",
+      "seconds": {
+        "fast": 0.1550542879999739,
+        "classic": 0.2600785949998681
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_8.smt2",
+        "bytes": 2498459,
+        "blob_sha": "58cbf7422ba691b04c6671c81b5b919ae635de4c",
+        "sha256": "6a13a878cb924a2426e0708e3bcef5db3bdc33966b32da44a824daaba3c5687b"
+      },
+      "commands": 16594,
+      "command_slices_sha256": "49316a950057a1216a3d2323bbf93a9a4bd71f880ddb7f152abf2c727772b3e8",
+      "seconds": {
+        "classic": 0.2013801200000671,
+        "fast": 0.06932228300001952
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/D/D_htc_9.smt2",
+        "bytes": 2524772,
+        "blob_sha": "5e9f6bdbc79e04d84431962eff5a553bde5c796f",
+        "sha256": "bb218e139b46b841dd7d44e3026195632e379c1bcc0a4f3e34943dbf07484caf"
+      },
+      "commands": 22871,
+      "command_slices_sha256": "9ebdf2ccaf23e30787e805cb8bcb02999308b2b81b27388470e208d1dacbbcdc",
+      "seconds": {
+        "fast": 0.0723802689999502,
+        "classic": 0.2032447599999614
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_1.smt2",
+        "bytes": 3472373,
+        "blob_sha": "34859a1ca9edd977b2290621135570cfcedf39b6",
+        "sha256": "4a97e76423047cef831846cf396625048c511b99fa482ce53c9906587876f887"
+      },
+      "commands": 75693,
+      "command_slices_sha256": "8f97e6a7055ca6f930c658441109c1855823640bfd6cd25721ea84b2b49b35f6",
+      "seconds": {
+        "classic": 0.3089721010001085,
+        "fast": 0.11863263700024618
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_10.smt2",
+        "bytes": 2153548,
+        "blob_sha": "26c539b37e9c443bbff166f319c10e8f8ed85342",
+        "sha256": "2e4e1ae1a1a2d4f0f79a15333458648c887ba96438fc15dd93e534daeda9855a"
+      },
+      "commands": 35239,
+      "command_slices_sha256": "506f4f079f1f931d4d44dbd014dabdd5fea101c5bd10e81d35046e6732330fc4",
+      "seconds": {
+        "fast": 0.09356672699959745,
+        "classic": 0.1741366870001002
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_2.smt2",
+        "bytes": 2732579,
+        "blob_sha": "ad2bdaff86ab5bc707d4b2eb436a33285b3492ec",
+        "sha256": "ae7fb0a9ca2374786fa312e47e64e133c3f8bb65f0a1db12bf9169032c35d518"
+      },
+      "commands": 41499,
+      "command_slices_sha256": "f3819eb617edb40ab9a5d6a6ae52c2f515deaa4978b4bf4350ca149282d60193",
+      "seconds": {
+        "classic": 0.22239255100021182,
+        "fast": 0.08211391599979834
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_3.smt2",
+        "bytes": 2035741,
+        "blob_sha": "1bd03cd05eef6feffee593fe5e1afaa47242ef15",
+        "sha256": "842239c1249c3ad604e08419e9df1acdbf93ac1e86ba9a512ebb659386b6e4f0"
+      },
+      "commands": 26698,
+      "command_slices_sha256": "066b7cea15a8b71d3a9a2b6cfb3a9e3bf15831d03dbdae7d74710154d111b20b",
+      "seconds": {
+        "fast": 0.06048487299995031,
+        "classic": 0.16479604300002393
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_4.smt2",
+        "bytes": 3305806,
+        "blob_sha": "c5d1ba7874415d5a9aef86811db649273e93b869",
+        "sha256": "9413a26c223d2d64755657714c76fafab0fb7c3584755541ed485ee084c1b480"
+      },
+      "commands": 73115,
+      "command_slices_sha256": "2860f62fdc0ce26183f38aadd5ef1b2c0b5f83ec69d52e9d1ffa0f690bf18f96",
+      "seconds": {
+        "classic": 0.268151938000301,
+        "fast": 0.10290583999994851
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_5.smt2",
+        "bytes": 2380768,
+        "blob_sha": "568a5f1a4cd47bb36949bf8d68989ec887cd987f",
+        "sha256": "9e6159a55d695b000b2ea1c4e6c78fb8718cccc0fc7d78a2806f3e7710716775"
+      },
+      "commands": 33386,
+      "command_slices_sha256": "e1aed03484b528ff8663ead757b445037b413c8119a35b6481b2445ef780d93a",
+      "seconds": {
+        "fast": 0.07639358999995238,
+        "classic": 0.19791134600018268
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_6.smt2",
+        "bytes": 2446924,
+        "blob_sha": "b2af5f6123cd4f14f444ba6ecef58bc92effcd25",
+        "sha256": "5aa1a9cfa73b0a7ca8643b29eeb3c71f32a5a59acba91179837f1f161a415ea1"
+      },
+      "commands": 37589,
+      "command_slices_sha256": "94fc2b974b26534f70bae57515b6eaecb213626fd6a99fd06e2cfdaafba27268",
+      "seconds": {
+        "classic": 0.19957670199983113,
+        "fast": 0.07560398000032365
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_7.smt2",
+        "bytes": 2893806,
+        "blob_sha": "fdc9b28504802577093950e538905af7956f0bff",
+        "sha256": "9d237d2218c081ee6b514da659379658627c0cdee3fcc0d520d90a904f5c7ef3"
+      },
+      "commands": 61398,
+      "command_slices_sha256": "e1ad27c601206188c3ad9e2ce0710b3cf3f294926d87a256535df264a2d70eca",
+      "seconds": {
+        "fast": 0.09117157199989379,
+        "classic": 0.23843085899989092
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_8.smt2",
+        "bytes": 2670812,
+        "blob_sha": "51c98ea208f0232df9ff9afc4f8b3e5b615630d6",
+        "sha256": "06dc3759a81226f94bd271479443b22b93500668ee993d8249dc66c2f39f88f8"
+      },
+      "commands": 60156,
+      "command_slices_sha256": "36943fb27972b22a9b25b80d6251a17327fdd2d875f1062c7f0a3307a0643a78",
+      "seconds": {
+        "classic": 0.21582407799996872,
+        "fast": 0.10561650099998587
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc/E/E_htc_9.smt2",
+        "bytes": 2231507,
+        "blob_sha": "2b8d1b8633a549e9e078fa4c1e8920ee849933c7",
+        "sha256": "064fcfc916932030e3a3a89e0813ed8ac786f9fdc54286fea03991befa45f4eb"
+      },
+      "commands": 39496,
+      "command_slices_sha256": "03c382af10deca11f5e9e558c4e9c57801cc6534c5242890c1aef923c784a14b",
+      "seconds": {
+        "fast": 0.06654408099984721,
+        "classic": 0.20201699300014297
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_1.smt2",
+        "bytes": 46495,
+        "blob_sha": "704c21f890c1c793d902ac185b41793fb37744b2",
+        "sha256": "4026441c9f477c9efe26ed0b43f2c040d1856fb0ebe418da879a20c00002974f"
+      },
+      "commands": 1060,
+      "command_slices_sha256": "77854bdfcafe918f5cbeb8110bce11f1da75ae371970b8663ef63b3195b0d278",
+      "seconds": {
+        "classic": 0.003810871000041516,
+        "fast": 0.0018646099997567944
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_10.smt2",
+        "bytes": 56000,
+        "blob_sha": "b92a6725ebe0aa4d1a0dde46564959d08ef6c534",
+        "sha256": "0a7cad5b83a35abaa6632ecf3ebbee01173e92b9e5b6f2f52dd0524eb9110aa1"
+      },
+      "commands": 1430,
+      "command_slices_sha256": "ab79192ee5b0a7217bcf183176e4173ac1343e28abbbc15ad3365dc13afe06bf",
+      "seconds": {
+        "fast": 0.0020204600000397477,
+        "classic": 0.004570575000343524
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_2.smt2",
+        "bytes": 46864,
+        "blob_sha": "a94f0673bb05c554ee018dc15bfdb0101da76b0b",
+        "sha256": "39d260bdbd8c3e196afaa28a9d273a6078d2ffb97a0ffbd38db9b348592d999b"
+      },
+      "commands": 1040,
+      "command_slices_sha256": "0170cb2217cf069236a9ae2366dc3abd4bc2b8390eb741264ee2ab7faafb39d1",
+      "seconds": {
+        "classic": 0.0036869069999738713,
+        "fast": 0.0017046130001290294
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_3.smt2",
+        "bytes": 46124,
+        "blob_sha": "d61531ac6e4d88660a3a34082e6d0540316523be",
+        "sha256": "3a4bd8448d4307da977776602bcdb29ddf68aa6b6b2d80e679460d2613a392f2"
+      },
+      "commands": 810,
+      "command_slices_sha256": "f22acb7d30599ce8d985645e4ca8216ddcdb42c01b10ee41bbec2778484eb93b",
+      "seconds": {
+        "fast": 0.0017707410002003598,
+        "classic": 0.00366455399989718
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_4.smt2",
+        "bytes": 39469,
+        "blob_sha": "d13aea6e8ee11b7bfa0e2f1e92456519bb2bf139",
+        "sha256": "760c7e2adb1e4a1f0bc037eeccb659f9ae1923b20d4c835b0388151d76e39bcf"
+      },
+      "commands": 690,
+      "command_slices_sha256": "1e30afb0cb8cb91c056f3a57ce3d8a7ea9865cb623f29557119b6cf07f523e42",
+      "seconds": {
+        "classic": 0.003381034000085492,
+        "fast": 0.001393041000028461
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_5.smt2",
+        "bytes": 37999,
+        "blob_sha": "2f337b789da0f609db31e2b6cade020a9482a9a0",
+        "sha256": "2ebce0fe4811931b3e63d93098ef3efebdb58fc0becea221e84459d7d91490d3"
+      },
+      "commands": 580,
+      "command_slices_sha256": "d93d8cdedc93bcf2eef4d9c0a3f561c5c15f59cd4dbe705db69f81e1dde5cf88",
+      "seconds": {
+        "fast": 0.0013279949998832308,
+        "classic": 0.002960771999823919
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_6.smt2",
+        "bytes": 53685,
+        "blob_sha": "f0b572e13901e14791a849f8bf8b53091ed04735",
+        "sha256": "7bcb0e52350f87998e61822b43f76606eca56f046902e24e4a7dbf68b9e876e2"
+      },
+      "commands": 1170,
+      "command_slices_sha256": "da16e7cf94f86df733fbbe4e3e79bb2150bd349b0f765c5d5b4f8b4fa29b883f",
+      "seconds": {
+        "classic": 0.004438008999841259,
+        "fast": 0.001986570999633841
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_7.smt2",
+        "bytes": 40813,
+        "blob_sha": "c4577743fc4a5513fb699a16a71d7a6977968a6c",
+        "sha256": "8fb2d6ec850fcc3a633cff2ec752173cf6e28c2d85c01e4039032301d24e3c78"
+      },
+      "commands": 695,
+      "command_slices_sha256": "07b990d9bd6afb33a37fb1a4707bd894d03f90bd31870b89b7c432b7f129029d",
+      "seconds": {
+        "fast": 0.0016356009996343346,
+        "classic": 0.003224090999992768
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_8.smt2",
+        "bytes": 44216,
+        "blob_sha": "036bea4a47cc9cdb6c37910e79356b7869913988",
+        "sha256": "71399952e3c92d9208ada68d80cdac3fc01a989e5f29820300484cf996eef1c7"
+      },
+      "commands": 880,
+      "command_slices_sha256": "0ac682efe3f4e6d2046af63ad35618af20b5a1ddc3485edf0ce62f0239d6e9ac",
+      "seconds": {
+        "classic": 0.003451098000368802,
+        "fast": 0.0016187050000553427
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/A/A_htc_check_9.smt2",
+        "bytes": 41945,
+        "blob_sha": "29ce0dd6e91eeef60c98ef7af1176d9128b88276",
+        "sha256": "18e9eddb905c63da6870e9cc502cc408dea923883f4594fb8d3e2b02b0190a40"
+      },
+      "commands": 820,
+      "command_slices_sha256": "5a95389e481d04727154adb11f2b5682b9df8c0e06f72b1430df7ac814b15cc0",
+      "seconds": {
+        "fast": 0.0016459260000374343,
+        "classic": 0.003567781000128889
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_1.smt2",
+        "bytes": 1423346,
+        "blob_sha": "f905d36b44f173fdb79c885c127fac25c749725e",
+        "sha256": "46f2ff08d3bef66d1bf4fc2e09ab6dc9972b2f9f9a57cf8aecdea6528d20450e"
+      },
+      "commands": 17260,
+      "command_slices_sha256": "225b957cfb71c657b4988d99c2e97b33bacd988da02892d97dfaa4d398655188",
+      "seconds": {
+        "classic": 0.11465491900025881,
+        "fast": 0.0347652460000063
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_10.smt2",
+        "bytes": 1433689,
+        "blob_sha": "737ea2d96479bea3fb1f5b4aa35c11f285be7c03",
+        "sha256": "a44251f93de85db7ee23e93d299a69535bdd2698522197c0c69cb9e44ac56e0f"
+      },
+      "commands": 17465,
+      "command_slices_sha256": "ddcd7edb3d4c7eda1108a44480df947cc3e7fbab9f9c002337baa4df48821a8a",
+      "seconds": {
+        "fast": 0.03743347999989055,
+        "classic": 0.11620369199999914
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_2.smt2",
+        "bytes": 1436934,
+        "blob_sha": "8bcbc229daa5d4301df71cecc7976c3105ee32c5",
+        "sha256": "1909f4a456f62993ac3b4072e1df61a5e52aff9c03f8e11f9e7f4ac8eee0fb82"
+      },
+      "commands": 17375,
+      "command_slices_sha256": "0ecacbbf0ef6d1808c3d408ba3516211e33a44c085b1f76c5252731e8daacde2",
+      "seconds": {
+        "classic": 0.11491733799994108,
+        "fast": 0.03542943799993736
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_3.smt2",
+        "bytes": 1419232,
+        "blob_sha": "a6f090d44c37ac901cb6718b8750829f15d0747f",
+        "sha256": "2c48ea4db943eb6f59dc114985ba7ddc98c541a3fbabd1003458775e73d453d3"
+      },
+      "commands": 17205,
+      "command_slices_sha256": "fe4e8dfd23814e985370010df938c0a1d6179c7e177320389477872d2ad34160",
+      "seconds": {
+        "fast": 0.035727710999708506,
+        "classic": 0.11432177599999704
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_4.smt2",
+        "bytes": 1429175,
+        "blob_sha": "ed5b7903f1272ad0e111a8f39a1a221a80180120",
+        "sha256": "51a228eec9f7cd70bdb3547139e38b29396cac3c03a88f9559032ba0d898c4fb"
+      },
+      "commands": 17340,
+      "command_slices_sha256": "de908cad0337edfa6df5b959fe09b148996f1105df2425582cdee7cc04329ae5",
+      "seconds": {
+        "classic": 0.12000933399986025,
+        "fast": 0.03626536599995234
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_5.smt2",
+        "bytes": 1418397,
+        "blob_sha": "38ebfcab6b0518f2188faf72d35b20ccc5b4a08a",
+        "sha256": "d4d978471a4ce0484974d57cf58b33b25c90f90530cd3e13fc3b7cd1d0650419"
+      },
+      "commands": 17015,
+      "command_slices_sha256": "7c05eb5a0af24c622aaa33594a06efd07e5b22431bee03e37ada89034a5d0d19",
+      "seconds": {
+        "fast": 0.03696177700021508,
+        "classic": 0.11745767699994758
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_6.smt2",
+        "bytes": 1421274,
+        "blob_sha": "89d7caf1d1ebbd306f4cf33365d52f0a64dc7c68",
+        "sha256": "87755f11027f5f3e370fc6c21c6561090bdde76c2478acaa60e2c4dce3870482"
+      },
+      "commands": 17055,
+      "command_slices_sha256": "2139fdd042267ea0b58dcc84c2dd1a164c9f2d4a683763a9b49276d669399a84",
+      "seconds": {
+        "classic": 0.11629484700006287,
+        "fast": 0.054030508999858284
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_7.smt2",
+        "bytes": 1431596,
+        "blob_sha": "5d5533f5833801499876948bdb384fefca712c4c",
+        "sha256": "e685164f91cf3ee1b24111d6724a8d6f63e2465b158d30cae55207bee5bdc016"
+      },
+      "commands": 17035,
+      "command_slices_sha256": "8b932d946424e51b2dcaf439d054475e47beb3414adfbea2a01fd1d15a826c4c",
+      "seconds": {
+        "fast": 0.0357402690001436,
+        "classic": 0.1428946310002175
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_8.smt2",
+        "bytes": 1429497,
+        "blob_sha": "8838f00dca476b42364cfda8f12abb63662b2f86",
+        "sha256": "e82886c7e5ce8ad118952a72a36639b712197a1ec842dbec3c24a07e1000e82f"
+      },
+      "commands": 17400,
+      "command_slices_sha256": "a13de1e8ff6f03ad5664dd60c0370eb1cba052f9666946bc7b68dc64bf280cf0",
+      "seconds": {
+        "classic": 0.118538936999812,
+        "fast": 0.037649934999990364
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/B/B_htc_check_9.smt2",
+        "bytes": 1432769,
+        "blob_sha": "5486946131a948a500cdee59fe16762c2e7f1289",
+        "sha256": "d3b30527841d1971e27b445cfa69a3b3beedac3151d168485a1642cc4e9f902a"
+      },
+      "commands": 17320,
+      "command_slices_sha256": "a34ccd712107616afa3579b5525394343c36d4905d4e6bf461f5dfc94327be49",
+      "seconds": {
+        "fast": 0.06440987199994197,
+        "classic": 0.13368463599999814
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_1.smt2",
+        "bytes": 3436265,
+        "blob_sha": "65e66b9ddb493ba4b659fec2dbf919934879be42",
+        "sha256": "b8df7266388a19de58226ceb9acb22b8b819879985523a2f5db79929e1a145b6"
+      },
+      "commands": 12761,
+      "command_slices_sha256": "b060e78b6810b28e86ccfeb7ef886ff860cbe192d2e8ddfbcd9c9bc07a824045",
+      "seconds": {
+        "classic": 0.3388437129997328,
+        "fast": 0.10105851600019378
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_10.smt2",
+        "bytes": 4734488,
+        "blob_sha": "0bc7efa5a2a4daed20e5028602003f526e59bac6",
+        "sha256": "e472667232e1d2d787baa4a4eafbac70ee035af9f9471b54ebd4ef3e96682a1d"
+      },
+      "commands": 15431,
+      "command_slices_sha256": "7d83f3ac443d90b41fc0bb24842fb739d782ccfad502a55253c96103d6c64b1b",
+      "seconds": {
+        "fast": 0.14033361700012392,
+        "classic": 0.3895925410001837
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_2.smt2",
+        "bytes": 3455860,
+        "blob_sha": "9120ddc27d30d7e5ae12f94322e4cfc5a42f2807",
+        "sha256": "c218862eee3ac61a003df5feecea95165df90459667ab8555dd943699e29c727"
+      },
+      "commands": 12758,
+      "command_slices_sha256": "b2339d7ec2dc6bbed7e4c0ef56420c13f937902b0b1a8bd7b1bfa4c320ce1718",
+      "seconds": {
+        "classic": 0.2960444919999645,
+        "fast": 0.09896933300024102
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_3.smt2",
+        "bytes": 4250692,
+        "blob_sha": "f9de8ffb2d7371793760f67817b00069386e27cf",
+        "sha256": "51d764b62ffae299168abf86e75fa358df909f7bce30d69cf44211799f71b567"
+      },
+      "commands": 15112,
+      "command_slices_sha256": "30043179cc8b3444b29991f59356ac925d9ae08809401219e4a0aa7f045a18f4",
+      "seconds": {
+        "fast": 0.1260888229999182,
+        "classic": 0.356586640000387
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_4.smt2",
+        "bytes": 3434762,
+        "blob_sha": "711935339d740a1edfd467e89dc42c54682231f3",
+        "sha256": "4727768b0b17b72a89a1ac4e78c6f203003c8605cd503dff635e34a1345dc4b9"
+      },
+      "commands": 12761,
+      "command_slices_sha256": "9610ff7bdfe3a322dab7f3fedf476b47a01edec6115a726658fbc54c88475173",
+      "seconds": {
+        "classic": 0.2808127280000008,
+        "fast": 0.09835734700027388
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_5.smt2",
+        "bytes": 3642181,
+        "blob_sha": "de15e3fd31af9e007703e2ed1282c4ac1f5bf425",
+        "sha256": "9e70382d6ff15da1ca16f20a4c53f1417425278dbdcc73dc9affbd0940609f50"
+      },
+      "commands": 13376,
+      "command_slices_sha256": "0463d26e154a640ad83d40c4dd6aba261c82086879fa1cc5bf151b8bc7a08fc6",
+      "seconds": {
+        "fast": 0.11507303899998078,
+        "classic": 0.29450435199987623
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_6.smt2",
+        "bytes": 4468169,
+        "blob_sha": "bb666c32b77c9bbacd041182e80529e4b121ad6d",
+        "sha256": "005e627d60c9c2a8a8100a9dfda2ba8d811a19dc1e17e8820f9f37ad8bb4461c"
+      },
+      "commands": 15241,
+      "command_slices_sha256": "f3164cdd76280e33018c5bc40ad75f02462d1213b96a11555598c6cbed648021",
+      "seconds": {
+        "classic": 0.36268471499988664,
+        "fast": 0.13442539100014983
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_7.smt2",
+        "bytes": 4675719,
+        "blob_sha": "d360c70973d78b8e8824e71c0f8f39b216ed3fba",
+        "sha256": "f03964cabebfc81c568ab147a7f17a2ba7136e080e7c20961fc032bca75048b2"
+      },
+      "commands": 14857,
+      "command_slices_sha256": "e43c1759e6e6daaf33d8082c25b7394ef7797ef7f78707b33f368f56a3ea83e4",
+      "seconds": {
+        "fast": 0.1364164179999534,
+        "classic": 0.41230008100001214
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_8.smt2",
+        "bytes": 3427840,
+        "blob_sha": "7ff7c55d3eddca85681b5e6f57f3edd10e2b10c5",
+        "sha256": "8b2871bb735bf63cd179135f5079b35a37a0e88b10fab01333f04e189d30a4b9"
+      },
+      "commands": 12761,
+      "command_slices_sha256": "b05349553bedacfb04e1a0741908528a2f344779171a84f3c5dfc15355b7e2ed",
+      "seconds": {
+        "classic": 0.27950928800009933,
+        "fast": 0.12479901300002894
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/C/C_htc_check_9.smt2",
+        "bytes": 5132657,
+        "blob_sha": "32b74465a48019e9f85346deb96898f4885fc0bd",
+        "sha256": "91d17a1128b75185beb53e709212acb7aab9f849b6643421cd525ff791710213"
+      },
+      "commands": 15661,
+      "command_slices_sha256": "304b172b210eb350153eb9359245efe8e481f4c72ff837f63504b28044b4bddf",
+      "seconds": {
+        "fast": 0.168986539999878,
+        "classic": 0.44148632799988263
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_1.smt2",
+        "bytes": 2661753,
+        "blob_sha": "12df68f76667fd76d7b6e7a1d5072a4f16fcc84c",
+        "sha256": "11b55132f4064a70668285d150b574949c9d3dcc32171d22ff0d376fe178e34d"
+      },
+      "commands": 22705,
+      "command_slices_sha256": "d36074e903eed938624d9122f6ebf6ceb243e81d57aa65d52dab7700d48242ca",
+      "seconds": {
+        "classic": 0.21461537000004682,
+        "fast": 0.07507974499958436
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_10.smt2",
+        "bytes": 2661695,
+        "blob_sha": "c961b478eed9fbe665823b6422863c0c0c97fb3a",
+        "sha256": "243476d28d1426cad62a54097facf49b6db3b6a79d5a56b887fdcac5a7a3207d"
+      },
+      "commands": 21698,
+      "command_slices_sha256": "5a3246e5453b29bae3539fd1b915a06f71a2d26a2fedd091ad658c78e3fc0222",
+      "seconds": {
+        "fast": 0.07447170399973402,
+        "classic": 0.2116136770000594
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_2.smt2",
+        "bytes": 2628426,
+        "blob_sha": "ecffb1be0e926fb38d63a72dae959744103eb09b",
+        "sha256": "284293934289c0c67889c4333016d5a7d6372ecdaf1231ef582bdec010f6cd7f"
+      },
+      "commands": 22421,
+      "command_slices_sha256": "9b9b05988dc7c92baea04296b46f87807b1bc413b1d22f6743809c6a1181fa1f",
+      "seconds": {
+        "classic": 0.21543008600019675,
+        "fast": 0.07389256699980251
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_3.smt2",
+        "bytes": 2608325,
+        "blob_sha": "623678ac87654f8d26b762785a9d9e68bb9024f1",
+        "sha256": "9ae1c3138deecc023348278095d2288833a24705c5fc19176f9f01e034c39769"
+      },
+      "commands": 20931,
+      "command_slices_sha256": "60a0b14284f459ec7508cc5b5a4c0d02ac37a1efd66aea9d4beef12ee3c9cd7c",
+      "seconds": {
+        "fast": 0.08913447099985206,
+        "classic": 0.23387075999971785
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_4.smt2",
+        "bytes": 2554372,
+        "blob_sha": "f4c9b9447d6569d266b9fc92515e75f7ff2d071c",
+        "sha256": "3053ce03894725ec5a0266fe16be8a3db4a80a2504ad23c74f18ca6946e0e139"
+      },
+      "commands": 21142,
+      "command_slices_sha256": "08851ad5407ee18dc8eaf2f33b117d17b4b568e324c1089e7eaf0049c8ee0ca2",
+      "seconds": {
+        "classic": 0.2096867549998933,
+        "fast": 0.0713054379998539
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_5.smt2",
+        "bytes": 2906955,
+        "blob_sha": "233c2df7fc1c36fdc8d59d37e42d9d6d154cd63f",
+        "sha256": "3071aca71d5660b0d1c18e86bd0f48895204450676eb973889a3da34051b029d"
+      },
+      "commands": 20425,
+      "command_slices_sha256": "0da47f115ebddc04fe57641451d5e5c0067b2ef7ed067b046e098b7e48cced8a",
+      "seconds": {
+        "fast": 0.0913669410001603,
+        "classic": 0.2411097740000514
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_6.smt2",
+        "bytes": 2589797,
+        "blob_sha": "d26917f1cef43e91f4b444ceb73bac5a0d451a57",
+        "sha256": "5b5a03af6bcfea33864bede143cecaf7f6c8e388d203d5ec5793dd6eb76b4243"
+      },
+      "commands": 21287,
+      "command_slices_sha256": "c84b1374f1bee81fad66b14d843f9cec3e5bdae5637cb74d6820d2e174697d5c",
+      "seconds": {
+        "classic": 0.21185980100017332,
+        "fast": 0.07431832800011762
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_7.smt2",
+        "bytes": 3496527,
+        "blob_sha": "951c889a37c05f4d85d76f0e5952dd68c83f3f9f",
+        "sha256": "70d20c680ef05af1f6fa0325cb43194447b159f094082d4bcd5ef2facbe3a1ae"
+      },
+      "commands": 21415,
+      "command_slices_sha256": "67ff2c72f3a2ebf16f6593c554da1e913847c947285c50d15be8dcf3c03bffc7",
+      "seconds": {
+        "fast": 0.09988100199961991,
+        "classic": 0.2832350620001307
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_8.smt2",
+        "bytes": 2958764,
+        "blob_sha": "8fa8abd2eaa62f731c8cec9dc9f55846389f7d0e",
+        "sha256": "fd38f464bf284c995656972fd2b9f18728d630f5b7ed1cdf45a6f76c7a82c317"
+      },
+      "commands": 22231,
+      "command_slices_sha256": "77a56ea4e758d2c99717fbe90b793b3a9693934c24b3744a546f7f4a46065a59",
+      "seconds": {
+        "classic": 0.25029026199990767,
+        "fast": 0.09031749799987665
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/D/D_htc_check_9.smt2",
+        "bytes": 2933278,
+        "blob_sha": "b5d51f248568841192814f2b3a801c940be424b8",
+        "sha256": "7d481047d137c972e5b67672155a631264631d45871849edb7eb86327449c3ae"
+      },
+      "commands": 21940,
+      "command_slices_sha256": "2fb5ffd6e9c3925d11d0c4286c111500fec4df3bd6ba35a13f50335505ccb508",
+      "seconds": {
+        "fast": 0.0880227909997302,
+        "classic": 0.24268256200002725
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_1.smt2",
+        "bytes": 1995054,
+        "blob_sha": "21b223a58199f1da7bf4ff43fca89a18f94cdc13",
+        "sha256": "d8369ef29eb46d8f2cdebe9f25a1dc987f4f93c265cb0ed55d34e83d19bb00f3"
+      },
+      "commands": 25744,
+      "command_slices_sha256": "109be62e07bff37c047e990fea3154c3e925396b3acd0cbc19073535c885fb2b",
+      "seconds": {
+        "classic": 0.17420254500029841,
+        "fast": 0.058944683999925473
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_10.smt2",
+        "bytes": 2547646,
+        "blob_sha": "2ea22669614f60769804a4b8ad60665a271f2a70",
+        "sha256": "6babd7bf75c3891192ab7f6b8b272f72c631b435e81e3c430209e69be8b959c9"
+      },
+      "commands": 45358,
+      "command_slices_sha256": "16d84a7006a49681a6e95882c0c46a348caeed1846047a19b1de76de4fdde7ae",
+      "seconds": {
+        "fast": 0.08516929799998252,
+        "classic": 0.21700971399968694
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_2.smt2",
+        "bytes": 2209775,
+        "blob_sha": "381f87a05f00794f54871384fb7e7a9dbe7f6875",
+        "sha256": "8d4459b827f9d4b5cd92feaf331fa4b9f752cec642bbe8d613ca0f839ce4d2bb"
+      },
+      "commands": 31682,
+      "command_slices_sha256": "4da4d97bda5136e61f5835aa4ef3c832eadde338f3200e7a0aa215bddb803f16",
+      "seconds": {
+        "classic": 0.18370536999964315,
+        "fast": 0.068412977999742
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_3.smt2",
+        "bytes": 1994662,
+        "blob_sha": "00f2b3588c42e89dba649decd3a08963a8984cae",
+        "sha256": "781df56951e0494a22796afe21621912ae53dc8010fb225add3f50954d8a0d60"
+      },
+      "commands": 25743,
+      "command_slices_sha256": "ef59c27cdc177099b46b587127092989082466e03040a08a89c8943967137732",
+      "seconds": {
+        "fast": 0.06152729499990528,
+        "classic": 0.16502574299966
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_4.smt2",
+        "bytes": 1994762,
+        "blob_sha": "cb52915ea2ea6dd02172ef9859723f9a6a1869bc",
+        "sha256": "d80315fee84f5b21dd4a99be95b02709294203db28ddad6fe6eed4401dd214ab"
+      },
+      "commands": 25745,
+      "command_slices_sha256": "22e009bd025d1d3058635d38ce8bcfafc98d03acdc57b9b14d6b4e6c39204387",
+      "seconds": {
+        "classic": 0.1623584550002306,
+        "fast": 0.05988396400016427
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_5.smt2",
+        "bytes": 1994783,
+        "blob_sha": "1d83f62e26f1b94765dbd4b41fcc8d5aa4ebc11d",
+        "sha256": "e28059f45ae3a8b8ad7ea2dbfa0ab32d37d3a3c1d32f74e6849243738ede2cf9"
+      },
+      "commands": 25744,
+      "command_slices_sha256": "33852aff44ffaff199804f2a9f6824bda47d61c0a02c69f6e054365038233263",
+      "seconds": {
+        "fast": 0.0655768189999435,
+        "classic": 0.16396645499980878
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_6.smt2",
+        "bytes": 1995096,
+        "blob_sha": "5e5eada04e3243cbd3c581a80169649c13b0e141",
+        "sha256": "1c668ff7339d1e7cb184af31d22abb8ff5a75e749148bf630424755a6fa591c3"
+      },
+      "commands": 25744,
+      "command_slices_sha256": "9d5974cb58e2eca05d1c80e4bbb6a4c0201d1efb2b93755bf403c92c2cd137ca",
+      "seconds": {
+        "classic": 0.1629073280000739,
+        "fast": 0.05948418200023298
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_7.smt2",
+        "bytes": 1994607,
+        "blob_sha": "1fcb2c277300967ad368b1e59c519a9e36bb2cbc",
+        "sha256": "2dcc7e5bced584d738d40d5bc1ea8789be0cd8f1adb98c92cb0f7f609fb2016e"
+      },
+      "commands": 25743,
+      "command_slices_sha256": "c0804f6ade4c0f244f0b64f1b3aee9a1e3e6533cd10dd69350c96422d0f1a3af",
+      "seconds": {
+        "fast": 0.06058740500020576,
+        "classic": 0.15866761199959
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_8.smt2",
+        "bytes": 2903840,
+        "blob_sha": "db0cfcadac7e777676616c455818541faf3269e4",
+        "sha256": "5ed1308b320d3f5eb334877b9fea0d9c301002009478d8a686c5cc6741fe586c"
+      },
+      "commands": 31105,
+      "command_slices_sha256": "a89cabf9f01eb5e5123a8bb83a6e879b44c4514af0929b557e4da337065b93d0",
+      "seconds": {
+        "classic": 0.24243811999986065,
+        "fast": 0.08967127100004291
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_check/E/E_htc_check_9.smt2",
+        "bytes": 1995252,
+        "blob_sha": "c75709dbcc2412c9da76ee677b286a35e4a8eabc",
+        "sha256": "1b3a1d8163becc78330bf22d1f72e03487d9f2ca5c25ba578deb25aee5c6b4a0"
+      },
+      "commands": 25743,
+      "command_slices_sha256": "1659e97ba714b0bf7b92233ff4b31cc5a8894557396f3161d575b4fa5f4842a2",
+      "seconds": {
+        "fast": 0.0657337610000468,
+        "classic": 0.16563914000016666
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_1.smt2",
+        "bytes": 22298,
+        "blob_sha": "eeaaffd93f51ad4b3248aff986bdd93f56adde1f",
+        "sha256": "f69cae0e96bb5ec93124afb904ff03db47133564e1ce934fa0a07dec99162905"
+      },
+      "commands": 404,
+      "command_slices_sha256": "d3c091aecdcc02789e4b2d7484e69e6bc180d77bed15a474d527832ea14e059e",
+      "seconds": {
+        "classic": 0.001724142000057327,
+        "fast": 0.0008167480000338401
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_10.smt2",
+        "bytes": 43553,
+        "blob_sha": "2e34b510a91d83f4781f3cd915be32e487329d6f",
+        "sha256": "96ddd96b7fda8409e4741de9cf9b0404b003d8c8e812d2b53a4baf4302b8d9f0"
+      },
+      "commands": 984,
+      "command_slices_sha256": "35046e31473f5954d862d3bbe7c70436b7e7336feb68f00a1b58e8bc9a797055",
+      "seconds": {
+        "fast": 0.0014782969997213513,
+        "classic": 0.003430166999805806
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_2.smt2",
+        "bytes": 23323,
+        "blob_sha": "547f85c14f4426799bd332e8cccbc28c8eda9efb",
+        "sha256": "e9af148b24b98f72ae9427034c9deabf3a365974d9e56f1a9fc5777f768563aa"
+      },
+      "commands": 443,
+      "command_slices_sha256": "2f4a05f41b2c1561fa9988ff2bf555a23b2e6097b0bb8cbe6c00e12f5e6c8c2c",
+      "seconds": {
+        "classic": 0.001806554000268079,
+        "fast": 0.0008308690003104857
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_3.smt2",
+        "bytes": 23028,
+        "blob_sha": "ae97fc4ce0bd43a481b14dfe51891b33eaf0b156",
+        "sha256": "a8d8d442ef3e13fda7122ed29bb3c75b228ebeb6cdf05269535db79a5c252361"
+      },
+      "commands": 451,
+      "command_slices_sha256": "5ce8df3a2c66b5827e81c20235fe9b96c122416eec33f895ef08bbdda5ab1a49",
+      "seconds": {
+        "fast": 0.0008111100000860461,
+        "classic": 0.0017798240000956866
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_4.smt2",
+        "bytes": 22618,
+        "blob_sha": "5dd8e3904c60b849ba1f185f92152aff0b38e632",
+        "sha256": "d087c28b6d964e57dab1ec93b8609d1f8914b18163a2677b238cbb0836d185f0"
+      },
+      "commands": 429,
+      "command_slices_sha256": "614647e340521ac3d65b4974d92683bd005461d71107e3820f1fa7a6a7a5cd26",
+      "seconds": {
+        "classic": 0.0017524340000818484,
+        "fast": 0.0008152659997904266
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_5.smt2",
+        "bytes": 32001,
+        "blob_sha": "7ab7dd83d3e9b2d74f4c5f6c67979c26938f2447",
+        "sha256": "d6f8b4e9513ca0d9107533ae04d8d252642d82cf6285128c62deb83d014ad171"
+      },
+      "commands": 742,
+      "command_slices_sha256": "78bd373964e5fc47fe8010532a9cfa115dbdfb330bb09c8cd56a2d83614fe182",
+      "seconds": {
+        "fast": 0.0011047759999200935,
+        "classic": 0.002498027000001457
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_6.smt2",
+        "bytes": 23700,
+        "blob_sha": "2056858df9c5ce1d5ed6f4fdc19d0fd60f340310",
+        "sha256": "3bc229141047d6d145723998a901a5063ef71e2d8a439b58da26f1dbbf47e52a"
+      },
+      "commands": 427,
+      "command_slices_sha256": "dce75753b12d80eb1fa576d9f792a3cb60063bb9890eeefa145c96a5c8b00b39",
+      "seconds": {
+        "classic": 0.001812442000300507,
+        "fast": 0.0008632969997961482
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_7.smt2",
+        "bytes": 14280,
+        "blob_sha": "554155c3fe486204663d7675b3b43df6a08a2058",
+        "sha256": "231ca08ec27cac20ae391d26da7675f05d3d6dff071112d66d9bb8c360e3a86b"
+      },
+      "commands": 262,
+      "command_slices_sha256": "9e96cec1c48ce519199e7588ae7e0df3011de268382ead61dc5698d76a893849",
+      "seconds": {
+        "fast": 0.0004930800000693125,
+        "classic": 0.0010765729998638562
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_8.smt2",
+        "bytes": 2602,
+        "blob_sha": "d67cb144586ba78eb8d03ac9b4e3ed00268f2a32",
+        "sha256": "e9dde5360646edfb318554156aee20b6f98e41812895e7add14a9728ce08d2c8"
+      },
+      "commands": 39,
+      "command_slices_sha256": "2cf307e4fa3eabdc4050b9ed6238b7a37c926675bb3599b31fba9470b0da0306",
+      "seconds": {
+        "classic": 0.0001363219998893328,
+        "fast": 6.127100004960084e-05
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/A/A_htc_fill_9.smt2",
+        "bytes": 43553,
+        "blob_sha": "1bd897beeca5cba14b971b439303b29ac4ca03e3",
+        "sha256": "2c74894749f3de1e4e7f79f0279f5113cdf5388fdc7350dc1803259d35f4b480"
+      },
+      "commands": 984,
+      "command_slices_sha256": "7a03c77dd054b3efe044084b1dcf701f312863c255cdc81f66af98228f036359",
+      "seconds": {
+        "fast": 0.0014680430003863876,
+        "classic": 0.0034222150002278795
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_1.smt2",
+        "bytes": 527281,
+        "blob_sha": "a99eb67e29fed86b31723123461c877255fa9314",
+        "sha256": "4022605b976a0e034c855804481f5d29f9a36d4aba1e88e09d9fa40b4ca31d3e"
+      },
+      "commands": 14809,
+      "command_slices_sha256": "85251afad8f8e5a1ab96433fdf6dd7138aec41d9f42dac23b35fb3285421dd99",
+      "seconds": {
+        "classic": 0.04266310599996359,
+        "fast": 0.0175811019998946
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_10.smt2",
+        "bytes": 1261121,
+        "blob_sha": "157e7934314dd8e5b9a8a4e7d0e35830e04ee7aa",
+        "sha256": "f9385abce629c7586d87f4ef955ae36992eaa124516ef033047e3840ff51c38f"
+      },
+      "commands": 21312,
+      "command_slices_sha256": "7328954d5a6182b50e786439c835afd69001d8df4875c39a514958a122226e1b",
+      "seconds": {
+        "fast": 0.030822929999885673,
+        "classic": 0.09986695099996723
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_2.smt2",
+        "bytes": 608800,
+        "blob_sha": "3a5d2568d82575177f862c7b38abba90e7fc04b9",
+        "sha256": "0ccc90f4787fdb408f005fd868ba75cb92a6d7d8fdc1c1fefde97be76d03ea2f"
+      },
+      "commands": 16485,
+      "command_slices_sha256": "2847bf9e34b916eb483d2ae781ad35c0d726929881dd08697fffb4be6c5332e6",
+      "seconds": {
+        "classic": 0.050750554999922315,
+        "fast": 0.02243735000001834
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_3.smt2",
+        "bytes": 657026,
+        "blob_sha": "a79fe7f056a06a01914cdd03a63e2a5553f9a24c",
+        "sha256": "97a307b04c68a5ac7b4425f967638f330566332e8db7f28882ffdabff711f676"
+      },
+      "commands": 13035,
+      "command_slices_sha256": "b091e4de00202a70e0f2009aaaf894f00a90d771706e15889c673c7dcbffbadd",
+      "seconds": {
+        "fast": 0.018634490999829723,
+        "classic": 0.05373471199982305
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_4.smt2",
+        "bytes": 422860,
+        "blob_sha": "ec0a8669102c08d1f7e70090500553ca470fb541",
+        "sha256": "079607f8f6de54ae771fef3c744a507ca2a183e382aea420fa0c1184fbd6e30f"
+      },
+      "commands": 12199,
+      "command_slices_sha256": "dac2c0750ddacd39a7a9e04a2c88d1684737b6c24452f817b04d72db1b7bc94e",
+      "seconds": {
+        "classic": 0.03419413999972676,
+        "fast": 0.014276380000410427
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_5.smt2",
+        "bytes": 535708,
+        "blob_sha": "ddd6a60e768d3547218fc43649d2df8cd3146501",
+        "sha256": "b3d81b3592f2730abd4edf2a20b7f5d9e96725a6b730913c0abc0289552d2c23"
+      },
+      "commands": 14487,
+      "command_slices_sha256": "ee31a05a6faaed91f1ed8fdacc0ce4886916d1042fb9b45608e81fbb5e985753",
+      "seconds": {
+        "fast": 0.019400304000100732,
+        "classic": 0.04537065300019094
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_6.smt2",
+        "bytes": 536831,
+        "blob_sha": "9d696dc8a8403b68423b51bdf88ad3acaa240ec2",
+        "sha256": "4b995c231ca9def37512677bed7468d1bdfd5a230f6bd1b15b79d8f2264a193f"
+      },
+      "commands": 15010,
+      "command_slices_sha256": "a01862f69662c810e59ff080a5fab0d1570e8ef282deef4a81a57587fdfca0fc",
+      "seconds": {
+        "classic": 0.04521047600019301,
+        "fast": 0.018807646999903227
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_7.smt2",
+        "bytes": 532306,
+        "blob_sha": "a7a70d341368adfef1df3fb296880d18e95f3a91",
+        "sha256": "29a3fd5582eb63daa1c05b81a325f5c8f38b2890aa1c0470151a27197ac55945"
+      },
+      "commands": 14841,
+      "command_slices_sha256": "ea2ddb2de699ed9d23d43ae0cbd34a7b7ad08d0ffecdd077080d2b20fbc57547",
+      "seconds": {
+        "fast": 0.01804959500032055,
+        "classic": 0.04271084599986352
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_8.smt2",
+        "bytes": 661459,
+        "blob_sha": "d1d00d9fa0945a402d65125a1c626d9e6af25d68",
+        "sha256": "47c63ade57d9c01616b6def9a75952d378e9bbff13977fe1d68c15003fe76fb4"
+      },
+      "commands": 13124,
+      "command_slices_sha256": "52c581710a89fa399a418c5955d598fecb803180158fbe0588b0d7f2de6d1b12",
+      "seconds": {
+        "classic": 0.05599811199999749,
+        "fast": 0.018911350000053062
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/B/B_htc_fill_9.smt2",
+        "bytes": 1354148,
+        "blob_sha": "7100f746997ed47b8697b263cacedb1074a55876",
+        "sha256": "0dcd881618f002edda40df89d35c197aeb585c54b81d64e26c2ef9d3aabc908b"
+      },
+      "commands": 23954,
+      "command_slices_sha256": "1b607994d7c76a1a428d33a40682adb8b6293608a43f0c73f2c7d86b2ff84f06",
+      "seconds": {
+        "fast": 0.03491622899991853,
+        "classic": 0.14852799499976754
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_1.smt2",
+        "bytes": 879010,
+        "blob_sha": "214c214fd5500f58f87505661ddc0b1bf3c92140",
+        "sha256": "3f564a2a422291715ec740d3fee72eca13706a2426f06288a0d83586b48ec0ec"
+      },
+      "commands": 14086,
+      "command_slices_sha256": "4b4118778c6aa83f454c7941e6d2383d17ca58a8b2935555e003e40f5a030f25",
+      "seconds": {
+        "classic": 0.07106941900019592,
+        "fast": 0.03052089300035732
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_10.smt2",
+        "bytes": 3538892,
+        "blob_sha": "052d35024a5148611cfd568a1d1c0863cde4d7a4",
+        "sha256": "9731fd9507e3e82b4932fadd2cb51466f4ce7ada2cf59962b7f794a76d6cf5bd"
+      },
+      "commands": 21021,
+      "command_slices_sha256": "784c5c3a96d3504752cff31afef9f427cf7052a9bbb1a953e8c84fb8160938b4",
+      "seconds": {
+        "fast": 0.1478629700000056,
+        "classic": 0.3176387429998613
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_2.smt2",
+        "bytes": 1449783,
+        "blob_sha": "990a77e229696aa92cf60efe94141e10f0813e54",
+        "sha256": "633e8e9fb6c9c95699e192e766ae5685d1c119f06cd2eb07d3078fdcd51d258e"
+      },
+      "commands": 15286,
+      "command_slices_sha256": "b6c428489af8be8000e38357c5da09df29528326c331d61312c80d84d356068e",
+      "seconds": {
+        "classic": 0.1167128249999223,
+        "fast": 0.04315369100004318
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_3.smt2",
+        "bytes": 1725808,
+        "blob_sha": "ccc418d6b0fcf8a2e61ac11bece46f6be6fe2f87",
+        "sha256": "47597eec02301bb98cd29340d11b2742750b37895d4644ec42195c100f93f4bc"
+      },
+      "commands": 15927,
+      "command_slices_sha256": "983c0bee453f3703f1dd45b936824ea911712fdf018658b3058ccf68291733a6",
+      "seconds": {
+        "fast": 0.05726236400005291,
+        "classic": 0.1406117690003157
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_4.smt2",
+        "bytes": 915437,
+        "blob_sha": "015d3381188c1c91045fd38a237ade75b3d935cd",
+        "sha256": "91f379179c38282af0afe04b5a68d6d7ba2edae934e1ea80f2bafc1718254dd3"
+      },
+      "commands": 13154,
+      "command_slices_sha256": "1cc2dfc09a3a4c65e991496fcb47ff934f6f2917c1c66c8b1e76be33732cd4b4",
+      "seconds": {
+        "classic": 0.07367105899993476,
+        "fast": 0.03000321699983033
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_5.smt2",
+        "bytes": 1721261,
+        "blob_sha": "c9e006f79530b45c4d4cad96394ccda89c53d709",
+        "sha256": "457c17f4e49da6f7346435d51a1c1b46ab77ed3ab093d97bb2b7332a0c1ede71"
+      },
+      "commands": 17691,
+      "command_slices_sha256": "e616d9b84b4813a25c2dd56243cd02378e5d9e27a6517f2c32f2a232a9549970",
+      "seconds": {
+        "fast": 0.05813157000011415,
+        "classic": 0.1432573140000386
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_6.smt2",
+        "bytes": 1034297,
+        "blob_sha": "1184c81ae77634ea898368bb36a76c2f2b8ccb50",
+        "sha256": "6b03d0e47fff2e25cf318b59f44a34ce5de9c87504d71e250f78d1202075dae8"
+      },
+      "commands": 12330,
+      "command_slices_sha256": "7792747450d0b8a48a5bdb401fc78581255763875fe594e7a3fd7eb1cd9649c0",
+      "seconds": {
+        "classic": 0.10030914699973437,
+        "fast": 0.05624089200000526
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_7.smt2",
+        "bytes": 1410252,
+        "blob_sha": "b2113283a0898552052b5c4599460012ccfc3842",
+        "sha256": "f7ee18670e3f1e8e9032d558f86d465258c891b500f5649ff992857764fdbd6f"
+      },
+      "commands": 15502,
+      "command_slices_sha256": "b969320f15ca70a0924e949d3f3ab1fb21292e125274656a513f6db98eb39c9c",
+      "seconds": {
+        "fast": 0.060374940000201605,
+        "classic": 0.1162362810000559
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_8.smt2",
+        "bytes": 546210,
+        "blob_sha": "d9e0f5853469aa8eaea6c306800fd8cd86db062c",
+        "sha256": "0db53a11a0671259034d19a7071a1bfe8f8b1ea63b6c1282b012d62d611c581c"
+      },
+      "commands": 9422,
+      "command_slices_sha256": "e6b9281f62d62f92e80dd64a70ced76fc41b44113f2667ff2e521d56cfaff067",
+      "seconds": {
+        "classic": 0.045215933000235964,
+        "fast": 0.019213807999676646
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/C/C_htc_fill_9.smt2",
+        "bytes": 3380109,
+        "blob_sha": "b8580137447d04d77596bf2a24cacdd788bd8f00",
+        "sha256": "8f6d24f0d52b1b288b4a12900265b84935cda3f2560692dc8755166c273eb556"
+      },
+      "commands": 20725,
+      "command_slices_sha256": "94781e7d863da538346fe24880fadde8ccf9fae22613913564f7a6a9b12db568",
+      "seconds": {
+        "fast": 0.1117800739998529,
+        "classic": 0.277009347999865
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_1.smt2",
+        "bytes": 1458917,
+        "blob_sha": "b9ad194facb6559f360e9468fd14f9f6c57f25c1",
+        "sha256": "fe62638555e46e27d895fd26aba0c82d12d796f36cf5093f9a05fe48d34b1be4"
+      },
+      "commands": 22909,
+      "command_slices_sha256": "a542148b6eead8defaed1f34952a8cc41c7335c7e2ab3715798fd38ddf2d0ba6",
+      "seconds": {
+        "classic": 0.1205370360003144,
+        "fast": 0.04463570500001879
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_10.smt2",
+        "bytes": 1595882,
+        "blob_sha": "09c2608fdd0c0f760350e6c62aa008e88ae3c206",
+        "sha256": "bb98d686acde3171f7c9b62de548ca804a36770a48d810450b3877904c2dedc3"
+      },
+      "commands": 14840,
+      "command_slices_sha256": "8b75ee0568ba33ec256b73d82c27fe6e9d506a0196922884821efb7b365468c1",
+      "seconds": {
+        "fast": 0.047554665000006935,
+        "classic": 0.1278614360003303
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_2.smt2",
+        "bytes": 724813,
+        "blob_sha": "f87843690a5ec054a30ef0034ae301e6e90748c1",
+        "sha256": "cab77afd093ea323865abdec4801d916c018b07abcbd17babeb6cbf8fd59eaa7"
+      },
+      "commands": 17187,
+      "command_slices_sha256": "90696e175cf50d1b01c58fdb709a59bc95616e5c625b407384cb99b0ab1858e4",
+      "seconds": {
+        "classic": 0.06543038299969339,
+        "fast": 0.022697563999827253
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_3.smt2",
+        "bytes": 450855,
+        "blob_sha": "bc623d0f684fe8535c957e983ae03ad53a6ea808",
+        "sha256": "9293582cbae748464e08e266d16e1ba70522fe223d97a16c6bb558b1ecfa3a6e"
+      },
+      "commands": 11646,
+      "command_slices_sha256": "1970ece162979d5bd4d68b7c959e687b51f27a4798e4c3bec60eb20fd142870d",
+      "seconds": {
+        "fast": 0.01597539600015807,
+        "classic": 0.037252486999932444
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_4.smt2",
+        "bytes": 1783240,
+        "blob_sha": "a645202d9eb6084e6f40851cf7c3b30649cc7df7",
+        "sha256": "3ec57afe99c022cd5a8ecf4a7baee05826dd7ed2bb6a6f8c9deed04d7d7e8a04"
+      },
+      "commands": 27170,
+      "command_slices_sha256": "e52e932bb3ba58ad647d244735de73857d98bf6c0c85760e453c41cbf090482a",
+      "seconds": {
+        "classic": 0.17572061200007738,
+        "fast": 0.04944574399996782
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_5.smt2",
+        "bytes": 603613,
+        "blob_sha": "4c947e187015d6d15bae3b38ab5bcb8ca0a9d049",
+        "sha256": "980fad01db93aef8d9faea01c3806e4bdd972e5c6be365d12e85a74f76b0b000"
+      },
+      "commands": 11507,
+      "command_slices_sha256": "3c9a62d96b9aeae208a112d2a511414a3349ceda2cf3af4ad60ccd5f679cfd5b",
+      "seconds": {
+        "fast": 0.03027467899983094,
+        "classic": 0.07177742199974091
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_6.smt2",
+        "bytes": 1098826,
+        "blob_sha": "595b4ebf945b3d46bd8503a264fe2a6917ded58f",
+        "sha256": "7943c6e17fb03280242e79976e9dc941eed846c84cbe322a516170983826d8b6"
+      },
+      "commands": 14793,
+      "command_slices_sha256": "b78ffc605c38418827ce591ca4cc3b474ca98bd1cb9f820e87c043d2fb849ac4",
+      "seconds": {
+        "classic": 0.09314736599981188,
+        "fast": 0.03689068199992107
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_7.smt2",
+        "bytes": 392185,
+        "blob_sha": "f9d793a05affdbd5d835f6e1d10a39ae5af40643",
+        "sha256": "411634ab6da5f2e3fe185f819abdc058065507c0784ccea5044239bfb12af683"
+      },
+      "commands": 9218,
+      "command_slices_sha256": "ca417dd3b3608313f561fa1c5a215e1ec503eced1d33eedcfaa78644c4686c3e",
+      "seconds": {
+        "fast": 0.015410498000164807,
+        "classic": 0.034588364000228466
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_8.smt2",
+        "bytes": 1130154,
+        "blob_sha": "243363a7528f2e6c04e883a850342bc25e727669",
+        "sha256": "f96089fbc4e169b40baadca96d819da3a9f7f4a87b542245c294a80b4d25453e"
+      },
+      "commands": 13177,
+      "command_slices_sha256": "0b52c978319a12d00944832c8db8a3a3b6fabc1c2d906581708ba74762a0af21",
+      "seconds": {
+        "classic": 0.09852940200016747,
+        "fast": 0.03867016499998499
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/D/D_htc_fill_9.smt2",
+        "bytes": 1445300,
+        "blob_sha": "9930860a8246302dfb50fd7fb819e54ce2872dbc",
+        "sha256": "c354c953b75771caf6ac7b2662e716554caaee2827a6ca5e507eed01eb34feda"
+      },
+      "commands": 27781,
+      "command_slices_sha256": "eb0c29c12ce03e680d891726489c062be9d009caaaa2a9a20111e1da160a51ad",
+      "seconds": {
+        "fast": 0.04278688800013697,
+        "classic": 0.11775721199956024
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_1.smt2",
+        "bytes": 705448,
+        "blob_sha": "96b8ab98a5885df3326da6001b8c134307a1e966",
+        "sha256": "619c7d2ef09a92da3a3e729c20f29991d8390f2cb1b714f5ed1f178622c134a7"
+      },
+      "commands": 17319,
+      "command_slices_sha256": "afecbddefa41e2cadbb1332d670403431068b2b8430f1ebb0bb04c43b44c6f69",
+      "seconds": {
+        "classic": 0.057945454999753565,
+        "fast": 0.022581362999972043
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_10.smt2",
+        "bytes": 1993932,
+        "blob_sha": "6be0c18ae9a8b49e6774213e56896faa4fc24923",
+        "sha256": "6d8212ade176d25ca49b4fead851007f1df04b3a36fe256c11817d6b698adbc3"
+      },
+      "commands": 27451,
+      "command_slices_sha256": "eef27af15a985a63e2621d01a44f820712e72876afd598f63662cf9c7fd134c4",
+      "seconds": {
+        "fast": 0.061326559000008274,
+        "classic": 0.16734212799974557
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_2.smt2",
+        "bytes": 1327353,
+        "blob_sha": "4639a81ef17d8488c1c4b655f322b729ae4e5f68",
+        "sha256": "fbd24127e03deee5b7cbf1ecdc17a3ec7aaa0603195e6ecfbb453127857c3f7e"
+      },
+      "commands": 23110,
+      "command_slices_sha256": "e8f67f0c3b04f02e649625229746d7cb4325661328f4db68f36fb771d3c4b6fb",
+      "seconds": {
+        "classic": 0.11246738399995593,
+        "fast": 0.045993061999979545
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_3.smt2",
+        "bytes": 1983322,
+        "blob_sha": "36d1e983ca2c48fbf0148eaab4e9e4bb8a609622",
+        "sha256": "6f0756bca0c39a46751b0e71ca31e116aaf0bf7ffa7a3ac9f80e370673064cef"
+      },
+      "commands": 31325,
+      "command_slices_sha256": "d54ef717ec88f9a58c5c26274af2ac9135e8409246f994fd0d01c098d374f322",
+      "seconds": {
+        "fast": 0.0583910539999124,
+        "classic": 0.1614298280001094
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_4.smt2",
+        "bytes": 658173,
+        "blob_sha": "6784d273cb217f43580990d62d97a9342de40d4b",
+        "sha256": "4741d718800efd188ec8d2ecf385cddd61430ea16bdc643c301f79d6f3ed3bc3"
+      },
+      "commands": 16820,
+      "command_slices_sha256": "536723a15afe4a3f632582fa407fc4f77fdffdcd620c9c221b1317efe6a868fd",
+      "seconds": {
+        "classic": 0.057036309000068286,
+        "fast": 0.02379605400028595
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_5.smt2",
+        "bytes": 1535597,
+        "blob_sha": "7400b1f490469cb28ff7cd48083d483619a80aea",
+        "sha256": "41128b1859a6da9b067c82892f10a8b40a2cf7373d7cfd02645b123cb0c40453"
+      },
+      "commands": 34929,
+      "command_slices_sha256": "24539f828b881ba121b15f7dac8fdba651c3a45e8d48140f98c26239997a8a69",
+      "seconds": {
+        "fast": 0.04844723400037765,
+        "classic": 0.1296155439999893
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_6.smt2",
+        "bytes": 1310681,
+        "blob_sha": "557d3399301fc6f71b0dc269da94d076ab2245b7",
+        "sha256": "18d8b332b26224ba70ea8da87da2778adf08dff6cf17d8b073146ba8a4fed8a9"
+      },
+      "commands": 36136,
+      "command_slices_sha256": "ca475a8c86265002be24510d569e2ec7b8b243810558d94cf803d85065c33c5a",
+      "seconds": {
+        "classic": 0.11158384200007276,
+        "fast": 0.044821366999713064
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_7.smt2",
+        "bytes": 793309,
+        "blob_sha": "21cf53c19c9a8d5c1b13c7cbf29465bd616bf807",
+        "sha256": "b6b21137a12a0c4297c17b26507039e0d41011140f9f69160f75135182f66100"
+      },
+      "commands": 22572,
+      "command_slices_sha256": "5a790064f16eb78216dd6c3b3e2d2ff8593742b5d56028c9354b56cd58be8137",
+      "seconds": {
+        "fast": 0.02762275899976885,
+        "classic": 0.06637574300020788
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_8.smt2",
+        "bytes": 790816,
+        "blob_sha": "1ea17d9cc65509c1baac516b4e41c723305cd1d0",
+        "sha256": "27b92d83699e86636e282cd95f5cd1e0a24294b965f1317ce8428eca6e54908f"
+      },
+      "commands": 22882,
+      "command_slices_sha256": "68e8b1f4acc5c934a43f9688ef174b15c25f6ad34591c7390c5296f1796a78ce",
+      "seconds": {
+        "classic": 0.0646123430001353,
+        "fast": 0.02664347900008579
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type1/htc_fill/E/E_htc_fill_9.smt2",
+        "bytes": 1960579,
+        "blob_sha": "aa383b26e71bddd801ed621fd19330127420b1f0",
+        "sha256": "ada1491dfa9e52e10fe231916d1a0f158ed3062b5335f1372bccaa2294376a92"
+      },
+      "commands": 31365,
+      "command_slices_sha256": "9ae619492ab7ce18004153528dfa37eb16e0d7ca4f06c9553352384996899867",
+      "seconds": {
+        "fast": 0.06027319999975589,
+        "classic": 0.1594516699997257
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_1.smt2",
+        "bytes": 1518324,
+        "blob_sha": "3a51046439c0e91554c123a5154bb2bcb3405c92",
+        "sha256": "14d2e182da30d98813cdbcffd12e5c4e8b0f6a3c52b630ca097071185a643cf7"
+      },
+      "commands": 24928,
+      "command_slices_sha256": "d36cd77132a334976f31b3352a4fee29fb217c9db1d44be9950c58fbdba06a4d",
+      "seconds": {
+        "classic": 0.12508858399996825,
+        "fast": 0.040601369999876624
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_10.smt2",
+        "bytes": 1731366,
+        "blob_sha": "d4a6c21f57c20b6ac40babd429473f8195e2067b",
+        "sha256": "2c421effd5f54f99a4f3c0f77c295007dc75e6066fe863d2ba2771f0eb8d8e18"
+      },
+      "commands": 32087,
+      "command_slices_sha256": "ed65e3fb0c0774f0924e3ffaded88218d8f71d4f0c23ac261c3f653d0e8dab9c",
+      "seconds": {
+        "fast": 0.04624925100006294,
+        "classic": 0.14303161299994827
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_2.smt2",
+        "bytes": 1539438,
+        "blob_sha": "11afbff054c72de4192b8d499874ff6b668a5552",
+        "sha256": "5da6f289309589d79a9f134a814cd3d4c3614058af6a0dd57719d66f765670b7"
+      },
+      "commands": 26213,
+      "command_slices_sha256": "3f6b005b7359c1986029c61881ee59188c6babecf4596d23692682e9f57d2b6f",
+      "seconds": {
+        "classic": 0.12707538500035298,
+        "fast": 0.04228673499983415
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_3.smt2",
+        "bytes": 1576280,
+        "blob_sha": "001d61855ed17d7bf96d2bb14fd540370258a59d",
+        "sha256": "f3e7a7e07f61a20b4f9b2b2aee306b9ec8fff602c7a7d1d6b95b4d962b62b5e3"
+      },
+      "commands": 28242,
+      "command_slices_sha256": "a9f193fc5d6a24ddb84f68a8bd123c4e33524e086c6b33862e78ae40062816e9",
+      "seconds": {
+        "fast": 0.041155510999942635,
+        "classic": 0.12993522700026006
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_4.smt2",
+        "bytes": 2015767,
+        "blob_sha": "a2443bc4add85cf337b57ace27677d7a86a0e056",
+        "sha256": "aea4e11e14aa3d80d8a20bbb8ed6b73f58d193acd85d3ba0d1b2b7cb2b274ca0"
+      },
+      "commands": 47904,
+      "command_slices_sha256": "f63593676ba8829b3e51dbe26c9a2789986e51f071a78aaee028e69d013f1dc3",
+      "seconds": {
+        "classic": 0.16687312300018675,
+        "fast": 0.06023835099995267
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_5.smt2",
+        "bytes": 2011255,
+        "blob_sha": "2dfec45d05e716145234ea14face357bcd755f15",
+        "sha256": "e3d47196f5f3318512558c819b035e2b93ca17affb99a5f012249f5991a02293"
+      },
+      "commands": 48161,
+      "command_slices_sha256": "da1fb76c26d09355664cf7fa4a3cd52209d01da01ab183133f3844b6e12b942b",
+      "seconds": {
+        "fast": 0.05867393600010473,
+        "classic": 0.1914275579997593
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_6.smt2",
+        "bytes": 1567958,
+        "blob_sha": "be6f18d750426e4b62f8e3f495e708b3c792ab8e",
+        "sha256": "a272c6ec5891b5fba6ed8b5fc68f4de377cb9aed77c84fec3909f012f6c3c8e6"
+      },
+      "commands": 27672,
+      "command_slices_sha256": "5d032b9e6c9234c42d84988fb147c1177dc381d814a66b012769c6ac7b2fc876",
+      "seconds": {
+        "classic": 0.12731450199999017,
+        "fast": 0.043082880999918416
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_7.smt2",
+        "bytes": 1548547,
+        "blob_sha": "f3e3dc3e5c351a37ecdb7ef4f175849f169f9e6a",
+        "sha256": "b58ef0d0bf12fa353c455611031860e4ec37ca838dcbf91d2a9d3b77a8511f24"
+      },
+      "commands": 26736,
+      "command_slices_sha256": "da91e29a085708ef5664ee5dbef29ad979256581b752b9e236bfb64c91082e65",
+      "seconds": {
+        "fast": 0.06912246999991112,
+        "classic": 0.1262276029997338
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_8.smt2",
+        "bytes": 1517665,
+        "blob_sha": "b6099ec6109c711e12756fbe1881db98c2b666f3",
+        "sha256": "bea8c7297a595c13c4d30b6eabe038eb64e72955974ae7fe312b450cb6b783de"
+      },
+      "commands": 24973,
+      "command_slices_sha256": "84fc302aac8c779408ba5401325b2cd25409b8c915975730ab1963e3ccb06fe8",
+      "seconds": {
+        "classic": 0.12505239400024948,
+        "fast": 0.03928179700005785
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc/B/B_htc_9.smt2",
+        "bytes": 1414424,
+        "blob_sha": "3f7848e7c11b11e7669dc36dc35ab675f551a239",
+        "sha256": "dc9dd427b61c5f02411d5f62e04d8500ded7243fc69824f2817e29ac91582f7c"
+      },
+      "commands": 19498,
+      "command_slices_sha256": "943bbbc85f3302c22cb0e5893d6cbe11398c60c127fee98419033ddf0557f887",
+      "seconds": {
+        "fast": 0.040156811000088055,
+        "classic": 0.11995061300012821
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_1.smt2",
+        "bytes": 1413624,
+        "blob_sha": "91390280235f6fb588c587a651ae551f6b61c0d3",
+        "sha256": "025d8aaf861b832c49ebbf897820a9109e9e9b98ca802dc93b0df056ab2744d7"
+      },
+      "commands": 17258,
+      "command_slices_sha256": "171d13aec59a5094288f8d59fad9bae3a54e0203cf1712343bedcee386442136",
+      "seconds": {
+        "classic": 0.12497905500003981,
+        "fast": 0.06339643499995873
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_10.smt2",
+        "bytes": 1409716,
+        "blob_sha": "351aaf30db266bbaa3e2be7080da040dead9d0c3",
+        "sha256": "d9dbf42a9ebe5dc59bfb0a3aa9acebc143059bc316f4679f989fd73eaddceea2"
+      },
+      "commands": 16498,
+      "command_slices_sha256": "ce1cbb0db613b49b90badafe10b7a5c11702d414f415b536f389329654e3b29e",
+      "seconds": {
+        "fast": 0.03491505400006645,
+        "classic": 0.13237906799986376
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_2.smt2",
+        "bytes": 1441997,
+        "blob_sha": "7a9bcd5e9ec9d14371eed9663faf525509ca6605",
+        "sha256": "efb3edde1b935c0b62cc4773727c6f6a6acbf3f26981dfbbb26f89d79452f340"
+      },
+      "commands": 18193,
+      "command_slices_sha256": "2a2df7d8d205c84a23809fa82fea5cdcd15fde3ae088de12a704a1b4373003e3",
+      "seconds": {
+        "classic": 0.16085249700017812,
+        "fast": 0.03942959500000143
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_3.smt2",
+        "bytes": 1437229,
+        "blob_sha": "6349ed0f73185e5853465f0f52f6060c327d0267",
+        "sha256": "6f604be4f3e2c81f444e726c2dc38644e05805821fd73e1a481858fbc70a9c34"
+      },
+      "commands": 18078,
+      "command_slices_sha256": "ba8561282f1147ac6253bd1ad4e52bd37b68bdbbd7dcf9243363be723e8b31be",
+      "seconds": {
+        "fast": 0.0438226270002815,
+        "classic": 0.1149357509998481
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_4.smt2",
+        "bytes": 1418578,
+        "blob_sha": "65256dd94cce8700776cf89565e0fb396c7d76a6",
+        "sha256": "40ccbc401cc32db69cad99e986aace576fafbaacda3f9af62d99cb818e3958d8"
+      },
+      "commands": 16958,
+      "command_slices_sha256": "a32f83843e3da290d7a4cdff8d130c6b566bd67795926ac4e23b1af2160ea84b",
+      "seconds": {
+        "classic": 0.11466461100008019,
+        "fast": 0.035793051999917225
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_5.smt2",
+        "bytes": 1428801,
+        "blob_sha": "ae1a32130936a61d4f77606d1545c4f4f939dd0d",
+        "sha256": "facd5fdb992b3903618cd508f1fb4482bb455459e59e4b613cd4128ea092f11c"
+      },
+      "commands": 17493,
+      "command_slices_sha256": "6d90936c738499f3f5c1c9a9855fe77d99af8cf710ae4ac4267d48d6576f890e",
+      "seconds": {
+        "fast": 0.038889063999704376,
+        "classic": 0.12733904800006712
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_6.smt2",
+        "bytes": 1413553,
+        "blob_sha": "9f9dd2a763b686beca75999c27a2591ba262afb4",
+        "sha256": "3a6c39685a39fc9cb58202ddd7165bea2dfa3fd568d4890a9a0e955a5739e4a3"
+      },
+      "commands": 16893,
+      "command_slices_sha256": "99d8f1bf7e5b9379c1f30c8ff383c921491168e9ed26b8cad278100c5781bb58",
+      "seconds": {
+        "classic": 0.1160027999999329,
+        "fast": 0.035186064000299666
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_7.smt2",
+        "bytes": 1424289,
+        "blob_sha": "b777f030e0f2f182a96c04c058da81daef05ed7b",
+        "sha256": "0405b6ff8538bb394ae47e136cd6d05d070a601c4443ebc06d8b881c073c5034"
+      },
+      "commands": 17408,
+      "command_slices_sha256": "35ae61becc11d4f7330756958f988829c4fd467ddf465934894515dae6f078eb",
+      "seconds": {
+        "fast": 0.035705432999748155,
+        "classic": 0.11420736399986708
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_8.smt2",
+        "bytes": 1440046,
+        "blob_sha": "1481686c4240f789988b6077f46c7df3ffe3dbcf",
+        "sha256": "dceba785b081e1af8c8266adde76b8bb9fc1aa87f6ffd9fd28a94647c5bb9dc2"
+      },
+      "commands": 17948,
+      "command_slices_sha256": "90dc89bdd21cd1e3f45cdcd2a1e5db05bbecba089483cf33eda450ce765a8c92",
+      "seconds": {
+        "classic": 0.12734822099992016,
+        "fast": 0.038626055999884557
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_check/B/B_htc_check_9.smt2",
+        "bytes": 1424320,
+        "blob_sha": "7fd7a6f8c49f580ffc6ddf0955d22d5a6ec63534",
+        "sha256": "47b8b7137c909a3bbb5f081803547bdb780003e35c37ac8e91e25b12f7f2de49"
+      },
+      "commands": 16898,
+      "command_slices_sha256": "f5bf457f496d6f23cbbc321b450390231fcc1c186ae82d23b2331c2de05f4ab4",
+      "seconds": {
+        "fast": 0.03832898500013471,
+        "classic": 0.15917630600006305
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_1.smt2",
+        "bytes": 582027,
+        "blob_sha": "cb2d0311c8022ec620ea47050bf95776bfb7264e",
+        "sha256": "579a4ff60cc6f828098bef48a8845147406ab1b33077cc3a115cd2f808cc9cf5"
+      },
+      "commands": 16343,
+      "command_slices_sha256": "52508f1f874c3d0350886232fb7b75464a8dadfa80166f5a739146fe75b8365b",
+      "seconds": {
+        "classic": 0.04789040700006808,
+        "fast": 0.03394699099999343
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_10.smt2",
+        "bytes": 1365038,
+        "blob_sha": "42a27620be8e46d0b9941149e58d97dd48f8f622",
+        "sha256": "49c24743cf3cf92c9e5bc406e4bce62af314bec3cc4158937b90c4056575d4df"
+      },
+      "commands": 23834,
+      "command_slices_sha256": "a12440459b985ae481cda141ac53028adfe36fc286c4f2838d04c7538a3c3c27",
+      "seconds": {
+        "fast": 0.06009653099999923,
+        "classic": 0.1139121169999271
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_2.smt2",
+        "bytes": 563836,
+        "blob_sha": "45de122aa5675dc45fff5931414836f79d90f4ba",
+        "sha256": "95d74e6b41c2e6d8edaa220110cb40dfd6f23ca2d8eeb8aff6931b936b781a7f"
+      },
+      "commands": 15707,
+      "command_slices_sha256": "5bda4b3454defb54014c5d099743d5acb3aa985953e0e702475e6910f6126200",
+      "seconds": {
+        "classic": 0.04816581400018549,
+        "fast": 0.020823156999995263
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_3.smt2",
+        "bytes": 562838,
+        "blob_sha": "ca0453641dd76038c13de0254d1c5069644c0328",
+        "sha256": "e423d843c7f644efce569b48fee17c24b30d0070e2e10866c74bb124183eb48c"
+      },
+      "commands": 15967,
+      "command_slices_sha256": "c708497fcfa88754ab597cf2faa4471f36eec063e2cd8e9874d2f6f4977fda79",
+      "seconds": {
+        "fast": 0.020184341999993194,
+        "classic": 0.04876590200001374
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_4.smt2",
+        "bytes": 668893,
+        "blob_sha": "b7da1093905f85a56c541a4fae479202b4700a03",
+        "sha256": "f35029361ea5013df2a088262bf8d3e2995ee4e421dee52b735190372f3a792c"
+      },
+      "commands": 12628,
+      "command_slices_sha256": "e22d0b59e5e71923495e0efae8d6ae027f8fadb9fe053d748b73af775c079e5c",
+      "seconds": {
+        "classic": 0.05815723200021239,
+        "fast": 0.02050108100002035
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_5.smt2",
+        "bytes": 690878,
+        "blob_sha": "a6d277fc2ded6a8f2efca73c7a78fe9508b29d7e",
+        "sha256": "7f8ab1c3f01c0083c5a211feba1758e7b7b0a1cc99f40f1bb978676f12cba267"
+      },
+      "commands": 13709,
+      "command_slices_sha256": "897d99f1a33fe1bd52ec03664733c9248f1b2bfc257109611ae6e600b2a2d449",
+      "seconds": {
+        "fast": 0.020359020000341843,
+        "classic": 0.05789881900000182
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_6.smt2",
+        "bytes": 518316,
+        "blob_sha": "a2b005feaf7a3c79b5bfbfb443a74ed5b9088969",
+        "sha256": "d0aa654374c3d7252ff79eb79fb60b0e7b0a78f84ad8343dda9db9f97eb12dee"
+      },
+      "commands": 14696,
+      "command_slices_sha256": "9924bbd6597aedb5366ac9e7553f9cf930f20a880297b961c176b7582de439f4",
+      "seconds": {
+        "classic": 0.04253580199974749,
+        "fast": 0.016520148999916273
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_7.smt2",
+        "bytes": 586617,
+        "blob_sha": "9cc4ca70a1eff0258fcea1f40f963e3fd1681989",
+        "sha256": "d95e5068cbd7551cab7188ef1040dd053cf569e2a526e2a6f867a72a5d25e40f"
+      },
+      "commands": 15892,
+      "command_slices_sha256": "38a79c773a33b4bca9d6398d99599313bbe617931ba60d372d9021de9f807dbf",
+      "seconds": {
+        "fast": 0.019016362999991543,
+        "classic": 0.04962192899984075
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_8.smt2",
+        "bytes": 605214,
+        "blob_sha": "6a9d69a13e81b94d7a49c0eba6d26b35f1afc5f7",
+        "sha256": "45eff44f824a9062958d6f06e16fb592fbbea61917ae01bb97298a9569c8f53c"
+      },
+      "commands": 16855,
+      "command_slices_sha256": "f5006f6209c577e8c2d6a1ce3b529123d8ac6102bb2d7209723678fc5dfefe38",
+      "seconds": {
+        "classic": 0.04935989100022198,
+        "fast": 0.019664313000248512
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/htc_fill/B/B_htc_fill_9.smt2",
+        "bytes": 1350639,
+        "blob_sha": "25e9565f86e11324ac10975fda7a8497e4c1af6c",
+        "sha256": "ca301c8fb5eda19bee2bf848b4dd8f4d360ec0d2e0a1fce21ebf6f68cd19e77d"
+      },
+      "commands": 23945,
+      "command_slices_sha256": "bef693b10c306a3564f07cef12a40197a33c5f5a800a891783f9701af36313f1",
+      "seconds": {
+        "fast": 0.03645303000030253,
+        "classic": 0.11282018100018831
+      },
+      "exact_match": true
+    },
+    {
+      "source": {
+        "path": "incremental/QF_NIA/20260619-elster/type2/min/B_min.smt2",
+        "bytes": 1308284,
+        "blob_sha": "3bb79597a7fe56a017f3bfc68b8a19912b159e64",
+        "sha256": "f16b987c44a85df72707c895c0571beefbc6130bc46dcedfbfd6a342efe6e705"
+      },
+      "commands": 13344,
+      "command_slices_sha256": "9da475b4598499c307b878361d8d8a18c6cc1ac1b7bc3e3d2af2864bf4b9253f",
+      "seconds": {
+        "classic": 0.10553116300025067,
+        "fast": 0.03184994699995514
+      },
+      "exact_match": true
+    }
+  ]
+}

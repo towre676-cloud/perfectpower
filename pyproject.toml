@@ -11,6 +11,9 @@ requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
 dependencies = []          # standard library only
 
+[project.optional-dependencies]
+industrial = ["z3-solver==5.1.0.0"]
+
 [project.scripts]
 perfectpower = "perfectpower.__main__:main"
 
