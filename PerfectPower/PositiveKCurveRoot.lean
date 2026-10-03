@@ -38,7 +38,6 @@ lemma abs_eq_of_floor {y s : ℤ} (hs : 0 ≤ s) (h1 : s ^ 2 ≤ y ^ 2) (h2 : y 
   have hy0 : 0 ≤ |y| := abs_nonneg y
   have l1 : s ≤ |y| := by nlinarith
   have l2 : |y| < s + 1 := by nlinarith
-  have : |y| = s := by omega
   rcases abs_choice y with h | h <;> [left; right] <;> omega
 
 /-- **The complete list**, under the class-list premise, with supplied square roots. -/

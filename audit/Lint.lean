@@ -120,6 +120,14 @@ import PerfectPower.SkolemP
 import PerfectPower.RankOne
 import PerfectPower.DiophBridge
 import PerfectPower.LatticeTransport
+import PerfectPower.SkolemZeros
+import PerfectPower.RankOneZeros
+import PerfectPower.RankOneNorm
+import PerfectPower.PositiveKCurveRoot
+import PerfectPower.CurveScaling
+import PerfectPower.Brainpool384
 /-! Batteries' environment linters over the hand-written library, not the generated certificates (docstrings, unused haves,
 simp-normal forms, ...).  Run with `lake env lean audit/Lint.lean`; it must report 0 errors. -/
+
+
 #lint in PerfectPower
