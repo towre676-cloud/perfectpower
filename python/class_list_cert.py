@@ -295,6 +295,20 @@ open PerfectPower MordellCubicForm ClassListProof PositiveKCurve ReducibleThue
 """
 
 
+def plus_root(k, L, Gs, sols_py):
+    """The curve theorem through `PositiveKCurveRoot.complete_of_sols_root` (supplied square roots)."""
+    if any(S is None for S in sols_py):
+        raise ValueError(f'k = {k}: reducible classes with large points are not supported here')
+    X = sorted({(G[1] ** 2 - G[0] * G[2]) * u * u + (G[1] * G[2] - G[0] * G[3]) * u * v + (G[2] ** 2 - G[1] * G[3]) * v * v
+                for G, S in zip(Gs, sols_py) for u, v in S})
+    XS = [(x, math.isqrt(max(x ** 3 + k, 0))) for x in X]
+    xs = '[' + ', '.join(f'({_i(x)}, {_i(r)})' for x, r in XS) + ']'
+    return (f"/-- **`y² = x³ + {k}`: the integral points are exactly {L}**, with no premise "
+            f"(square roots supplied, `PositiveKCurveRoot`). -/\n"
+            f"theorem plus{k} (x y : ℤ) : y ^ 2 = x ^ 3 + {k} ↔ (x, y) ∈ ({L} : List (ℤ × ℤ)) :=\n"
+            f"  PositiveKCurveRoot.complete_of_sols_root (XS := {xs}) classList sols_{k} (by decide +kernel) x y\n\n")
+
+
 def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
     """`Generated/ClassLists/K{k}.lean` for a curve whose irreducible classes are all monic sources
     `F(u, v) = −N((u + hv) − vz)` certified in `RankOneSources.K{k}`; the other classes must be
@@ -405,9 +419,18 @@ def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
         f"  obtain ⟨h1, rfl⟩ := (Generated.RankOneSources.K{k}.source{i} (u + {h} * v) v).mp h'\n"
         f"  obtain rfl : u = -1 := by linarith\n"
         f"  simp\n\n" for i, G, P, Q, h, U in irr if U is None)
+    # large points: the kernel's `Int.sqrt` overflows, so supply the roots (`PositiveKCurveRoot`)
+    big = max([abs(y) for _, y in pts] or [0]) > 1000
+    sols_py = []
+    for c in row['class_detail']:
+        if c['local_obstruction']:
+            sols_py.append([])
+        else:
+            sols_py.append([tuple(x) for x in c['representations']])
     imports = '\n'.join(([f'import PerfectPower.Generated.RankOneSources.K{k}'] if srcs else []) +
                         ([f'import PerfectPower.Generated.RankOneZeros.K{k}'] if zsrcs else []) +
-                        ([f'import PerfectPower.Generated.RankOneNorm.K{k}'] if nsrcs else []))
+                        ([f'import PerfectPower.Generated.RankOneNorm.K{k}'] if nsrcs else []) +
+                        (['import PerfectPower.PositiveKCurveRoot'] if big else []))
     text = (R1_HEAD.replace('{imports}', imports).replace('{k}', str(k)).replace('{bullets}', '\n'.join(bullets)) +
             f"/-- The {len(Gs)} classes for `k = {k}` with their solution lists. -/\n"
             f"def cs_{k} : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [{cs}]\n\n"
@@ -433,11 +456,10 @@ def lean_rank1(k, srcs, zsrcs=None, nsrcs=None):
             f"theorem classList : ClassList {k} (cs_{k}.map Prod.fst) :=\n"
             f"  classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)\n"
             f"    (by simp only [P]; norm_num) (by norm_num) (by norm_num) box\n\n"
-            # large points: the final point check needs a deeper recursion limit
-            + ("set_option maxRecDepth 100000 in\n" if max([abs(y) for _, y in pts] or [0]) > 1000 else "") +
+            + (plus_root(k, L, Gs, sols_py) if big else
             f"/-- **`y² = x³ + {k}`: the integral points are exactly {L}**, with no premise. -/\n"
             f"theorem plus{k} (x y : ℤ) : y ^ 2 = x ^ 3 + {k} ↔ (x, y) ∈ ({L} : List (ℤ × ℤ)) :=\n"
-            f"  complete_of_sols classList sols_{k} (by decide +kernel) x y\n\n"
+            f"  complete_of_sols classList sols_{k} (by decide +kernel) x y\n\n") +
             f"end PerfectPower.Generated.ClassLists.K{k}\n")
     (ROOT / 'PerfectPower' / 'Generated' / 'ClassLists' / f'K{k}.lean').write_text(text)
     return {'k': k, 'amax': P_['amax'], 'bmax': P_['bmax'], 'box_forms': len(certs), 'points': pts,

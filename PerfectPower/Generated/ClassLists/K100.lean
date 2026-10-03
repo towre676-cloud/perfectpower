@@ -2,6 +2,7 @@ import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K100
 import PerfectPower.Generated.RankOneZeros.K100
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 100` through irreducible rank-one sources, with no premise
@@ -164,9 +165,8 @@ theorem classList : ClassList 100 (cs_100.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-set_option maxRecDepth 100000 in
-/-- **`y² = x³ + 100`: the integral points are exactly [((-4), (-6)), ((-4), 6), (0, (-10)), (0, 10), (5, (-15)), (5, 15), (20, (-90)), (20, 90), (24, (-118)), (24, 118), (2660, (-137190)), (2660, 137190)]**, with no premise. -/
+/-- **`y² = x³ + 100`: the integral points are exactly [((-4), (-6)), ((-4), 6), (0, (-10)), (0, 10), (5, (-15)), (5, 15), (20, (-90)), (20, 90), (24, (-118)), (24, 118), (2660, (-137190)), (2660, 137190)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus100 (x y : ℤ) : y ^ 2 = x ^ 3 + 100 ↔ (x, y) ∈ ([((-4), (-6)), ((-4), 6), (0, (-10)), (0, 10), (5, (-15)), (5, 15), (20, (-90)), (20, 90), (24, (-118)), (24, 118), (2660, (-137190)), (2660, 137190)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_100 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-4), 6), (0, 10), (5, 15), (20, 90), (24, 118), (2660, 137190)]) classList sols_100 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K100

@@ -2,6 +2,7 @@ import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K24
 import PerfectPower.Generated.RankOneZeros.K24
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 24` through irreducible rank-one sources, with no premise
@@ -115,9 +116,8 @@ theorem classList : ClassList 24 (cs_24.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-set_option maxRecDepth 100000 in
-/-- **`y² = x³ + 24`: the integral points are exactly [((-2), (-4)), ((-2), 4), (1, (-5)), (1, 5), (10, (-32)), (10, 32), (8158, (-736844)), (8158, 736844)]**, with no premise. -/
+/-- **`y² = x³ + 24`: the integral points are exactly [((-2), (-4)), ((-2), 4), (1, (-5)), (1, 5), (10, (-32)), (10, 32), (8158, (-736844)), (8158, 736844)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus24 (x y : ℤ) : y ^ 2 = x ^ 3 + 24 ↔ (x, y) ∈ ([((-2), (-4)), ((-2), 4), (1, (-5)), (1, 5), (10, (-32)), (10, 32), (8158, (-736844)), (8158, 736844)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_24 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-2), 4), (1, 5), (10, 32), (8158, 736844)]) classList sols_24 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K24

@@ -1,6 +1,7 @@
 import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K37
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 37` through irreducible rank-one sources, with no premise
@@ -130,9 +131,8 @@ theorem classList : ClassList 37 (cs_37.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-set_option maxRecDepth 100000 in
-/-- **`y² = x³ + 37`: the integral points are exactly [((-1), (-6)), ((-1), 6), (3, (-8)), (3, 8), (243, (-3788)), (243, 3788)]**, with no premise. -/
+/-- **`y² = x³ + 37`: the integral points are exactly [((-1), (-6)), ((-1), 6), (3, (-8)), (3, 8), (243, (-3788)), (243, 3788)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus37 (x y : ℤ) : y ^ 2 = x ^ 3 + 37 ↔ (x, y) ∈ ([((-1), (-6)), ((-1), 6), (3, (-8)), (3, 8), (243, (-3788)), (243, 3788)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_37 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-1), 6), (3, 8), (243, 3788)]) classList sols_37 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K37

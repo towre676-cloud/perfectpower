@@ -2994,3 +2994,4 @@ open PerfectPower
 #print axioms PerfectPower.Generated.ClassLists.K11.sols_empty
 #print axioms PerfectPower.Generated.ClassLists.K11.classList
 #print axioms PerfectPower.Generated.ClassLists.K11.plus11
+#print axioms PerfectPower.PositiveKCurveRoot.complete_of_sols_root

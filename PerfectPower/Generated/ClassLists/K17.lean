@@ -2,6 +2,7 @@ import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K17
 import PerfectPower.Generated.RankOneZeros.K17
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 17` through irreducible rank-one sources, with no premise
@@ -150,9 +151,8 @@ theorem classList : ClassList 17 (cs_17.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-set_option maxRecDepth 100000 in
-/-- **`y² = x³ + 17`: the integral points are exactly [((-2), (-3)), ((-2), 3), ((-1), (-4)), ((-1), 4), (2, (-5)), (2, 5), (4, (-9)), (4, 9), (8, (-23)), (8, 23), (43, (-282)), (43, 282), (52, (-375)), (52, 375), (5234, (-378661)), (5234, 378661)]**, with no premise. -/
+/-- **`y² = x³ + 17`: the integral points are exactly [((-2), (-3)), ((-2), 3), ((-1), (-4)), ((-1), 4), (2, (-5)), (2, 5), (4, (-9)), (4, 9), (8, (-23)), (8, 23), (43, (-282)), (43, 282), (52, (-375)), (52, 375), (5234, (-378661)), (5234, 378661)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus17 (x y : ℤ) : y ^ 2 = x ^ 3 + 17 ↔ (x, y) ∈ ([((-2), (-3)), ((-2), 3), ((-1), (-4)), ((-1), 4), (2, (-5)), (2, 5), (4, (-9)), (4, 9), (8, (-23)), (8, 23), (43, (-282)), (43, 282), (52, (-375)), (52, 375), (5234, (-378661)), (5234, 378661)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_17 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-2), 3), ((-1), 4), (2, 5), (4, 9), (8, 23), (43, 282), (52, 375), (5234, 378661)]) classList sols_17 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K17

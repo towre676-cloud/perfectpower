@@ -2,6 +2,7 @@ import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneSources.K73
 import PerfectPower.Generated.RankOneZeros.K73
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 73` through irreducible rank-one sources, with no premise
@@ -152,9 +153,8 @@ theorem classList : ClassList 73 (cs_73.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-set_option maxRecDepth 100000 in
-/-- **`y² = x³ + 73`: the integral points are exactly [((-4), (-3)), ((-4), 3), (2, (-9)), (2, 9), (3, (-10)), (3, 10), (6, (-17)), (6, 17), (72, (-611)), (72, 611), (356, (-6717)), (356, 6717)]**, with no premise. -/
+/-- **`y² = x³ + 73`: the integral points are exactly [((-4), (-3)), ((-4), 3), (2, (-9)), (2, 9), (3, (-10)), (3, 10), (6, (-17)), (6, 17), (72, (-611)), (72, 611), (356, (-6717)), (356, 6717)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus73 (x y : ℤ) : y ^ 2 = x ^ 3 + 73 ↔ (x, y) ∈ ([((-4), (-3)), ((-4), 3), (2, (-9)), (2, 9), (3, (-10)), (3, 10), (6, (-17)), (6, 17), (72, (-611)), (72, 611), (356, (-6717)), (356, 6717)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_73 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-4), 3), (2, 9), (3, 10), (6, 17), (72, 611), (356, 6717)]) classList sols_73 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K73

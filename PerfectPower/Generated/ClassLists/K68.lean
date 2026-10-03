@@ -1,6 +1,7 @@
 import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
 import PerfectPower.Generated.RankOneZeros.K68
+import PerfectPower.PositiveKCurveRoot
 
 /-!
 # `y² = x³ + 68` through irreducible rank-one sources, with no premise
@@ -133,9 +134,8 @@ theorem classList : ClassList 68 (cs_68.map Prod.fst) :=
   classList_of (by norm_num) P_ok (by simp only [P]; norm_num) (by simp only [P]; norm_num)
     (by simp only [P]; norm_num) (by norm_num) (by norm_num) box
 
-set_option maxRecDepth 100000 in
-/-- **`y² = x³ + 68`: the integral points are exactly [((-4), (-2)), ((-4), 2), (152, (-1874)), (152, 1874)]**, with no premise. -/
+/-- **`y² = x³ + 68`: the integral points are exactly [((-4), (-2)), ((-4), 2), (152, (-1874)), (152, 1874)]**, with no premise (square roots supplied, `PositiveKCurveRoot`). -/
 theorem plus68 (x y : ℤ) : y ^ 2 = x ^ 3 + 68 ↔ (x, y) ∈ ([((-4), (-2)), ((-4), 2), (152, (-1874)), (152, 1874)] : List (ℤ × ℤ)) :=
-  complete_of_sols classList sols_68 (by decide +kernel) x y
+  PositiveKCurveRoot.complete_of_sols_root (XS := [((-4), 2), (152, 1874)]) classList sols_68 (by decide +kernel) x y
 
 end PerfectPower.Generated.ClassLists.K68
