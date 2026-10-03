@@ -284,3 +284,8 @@ import PerfectPower.RankOneIntegerSlab
 -- Complete k=22 source and integral point list.
 import PerfectPower.Generated.RankOneSources.K22
 import PerfectPower.Generated.ClassLists.K22
+
+-- Native effective enumeration and finite-field polynomial points.
+import PerfectPower.NativeNearSquare
+import PerfectPower.FunctionFieldPower
+import PerfectPower.Tactic.NativePower

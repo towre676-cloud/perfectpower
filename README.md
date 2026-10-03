@@ -1,5 +1,7 @@
 # PerfectPower
 
+**Lean-native effective enumeration:** [the native power module](docs/NATIVE_POWER_START_HERE.md) proves coefficient-derived global bounds and computes complete integer point lists for `y² = (x² + ax + b)² + k`, with `k ≠ 0`. `native_near_square` emits an explicit set and its kernel-checked completeness theorem without Sage, Singular, Python or JSON. The same push classifies polynomial Fermat points over finite fields when `n ≥ 3` and the exponent is nonzero in the field, including all eight points of `f⁴ + g⁴ = 1` over `F₇[t]`, while explicitly retaining the Frobenius exception. These are supported families, not a universal Diophantine solver. [Mathematics, examples and remaining scope](docs/NATIVE_POWER_MONOGRAPH.md).
+
 **When is $F(n)$ a perfect power, and how often?**
 PerfectPower classifies the possible long-term patterns for every integer polynomial. It gives exact counts for the power, radical and Pell families, and complete hit lists when a finite-case certificate or an independently established integral-point list is available. It has three layers:
 - **A Lean 4 library.** It proves the counts, complete solution sets, and the counting law for Pell orbits, and ties the orbits to published integer sequences.

@@ -1,0 +1,27 @@
+{
+  "status": "all new modules and focused audit compile",
+  "lean": "4.20.0",
+  "mathlib_revision": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "source_sha256": {
+    "PerfectPower/NativeNearSquare.lean": "1a43caad240636c8506440fab93311299381e372708e3a1097b791e62e3544b2",
+    "PerfectPower/FunctionFieldPower.lean": "1d623dba86a35a6a9fedee6a95aefa9efa98f1056d5afc602c4036224c459cdb",
+    "PerfectPower/Tactic/NativePower.lean": "81bad372afb750b089ec881a18dcad4f109b986c749916549d842df2e48015a4",
+    "audit/NativePower.lean": "8ffde860dc314bef9e4708cc30682be0919e67af03fb1d4379556b50d2009a94",
+    "scripts/check_native_power.sh": "78fc9369ba3face7e542a0b09da7977a86cb20cc639684a4a9201d2ee6a952a3"
+  },
+  "audited_declarations": 12,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "native_generated_families": 6,
+  "finite_field_quartic_points": 8,
+  "negative_checks": [
+    "infinite k=0 rejected",
+    "incorrect empty set rejected"
+  ],
+  "audit_sha256": "c86090c0e87c0be83c70c93bfdd0744b32ca5acdcb87609074e29b2496cf759f",
+  "scope": "focused new-module check, not full repository rebuild",
+  "executor_launcher": "readlink fallback for own /proc/PID/exe using AT_EXECFN; no kernel or evaluator modification"
+}
