@@ -1,0 +1,1 @@
+(declare-const n Int)(declare-const m Int)(declare-const z Int)(assert (= (* (+ (* 2 m) 1) (+ (* 2 m) 1)) (+ (* (+ (* 3 n) 2) (+ (* 3 n) 2) (+ (* 3 n) 2)) 2)))(assert (and (= z (+ n m)) (>= z 0)))(check-sat)

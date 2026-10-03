@@ -1,0 +1,5 @@
+(declare-const u Int)
+(declare-const v Int)
+(assert (or (and (= u 0) (= v (- 1))) (and (= u 0) (= v 1))))
+(assert (> u 0))
+(check-sat)

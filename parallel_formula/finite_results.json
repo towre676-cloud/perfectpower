@@ -1,0 +1,138 @@
+{
+  "solver": "5.1.0",
+  "timeout_ms": 2000,
+  "scope": "authored proof fixtures; no independent industrial speedup claim",
+  "cases": [
+    {
+      "source": "parallel_formula/finite/affine_positive.smt2",
+      "sha256": "1521b47b6533dd3000fec11f8f62bc285c14cf9cc837969c7c5c1776372327ad",
+      "lifted_points": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "original": {
+        "answer": "unknown",
+        "seconds": 2.0022274570001173,
+        "model": null
+      },
+      "reduced": {
+        "answer": "unsat",
+        "seconds": 0.0012317209993852885,
+        "model": null
+      }
+    },
+    {
+      "source": "parallel_formula/finite/cancelled_extra.smt2",
+      "sha256": "a9d86e7c81e1c80912d3c0d2d1bd49e656bfcc9064bea9c6a388adc3bdc43bc5",
+      "lifted_points": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "original": {
+        "answer": "sat",
+        "seconds": 0.007249410999975225,
+        "model": "[m = 1, z = 0, n = -1]"
+      },
+      "reduced": {
+        "answer": "sat",
+        "seconds": 0.0010727789995144121,
+        "model": "[m = -1, z = -2, n = -1]"
+      }
+    },
+    {
+      "source": "parallel_formula/finite/empty_lattice.smt2",
+      "sha256": "c86782a1a91a3b53d23e2b413a68c4512e8db15c3d3134c829236446ed22ecc2",
+      "lifted_points": [],
+      "original": {
+        "answer": "unsat",
+        "seconds": 0.005365275999793084,
+        "model": null
+      },
+      "reduced": {
+        "answer": "unsat",
+        "seconds": 4.798000009031966e-05,
+        "model": null
+      }
+    },
+    {
+      "source": "parallel_formula/finite/negative_scale.smt2",
+      "sha256": "bb2f321274cd7450ab0b8c227d0b3edab6e571bcf604b22130ebaca6d3a7e58e",
+      "lifted_points": [
+        [
+          0,
+          0
+        ]
+      ],
+      "original": {
+        "answer": "sat",
+        "seconds": 0.007336378999752924,
+        "model": "[m = 0, n = 0]"
+      },
+      "reduced": {
+        "answer": "sat",
+        "seconds": 0.0007625950001965975,
+        "model": "[m = 0, n = 0]"
+      }
+    },
+    {
+      "source": "parallel_formula/finite/plus5.smt2",
+      "sha256": "477081b5786d89134a6d9f12498fcf3b1aa13175709d95a2ed4f623594c0c7d0",
+      "lifted_points": [
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          2
+        ]
+      ],
+      "original": {
+        "answer": "unknown",
+        "seconds": 2.0010065329997815,
+        "model": null
+      },
+      "reduced": {
+        "answer": "unsat",
+        "seconds": 0.0010721879998527584,
+        "model": null
+      }
+    },
+    {
+      "source": "parallel_formula/finite/quartic.smt2",
+      "sha256": "79cd9ec345a2a3b792468bdec5360f9a365f6d3062733c40ee0197026951267b",
+      "lifted_points": [
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "original": {
+        "answer": "unknown",
+        "seconds": 2.001079104999917,
+        "model": null
+      },
+      "reduced": {
+        "answer": "unsat",
+        "seconds": 0.0010267709994877805,
+        "model": null
+      }
+    }
+  ]
+}

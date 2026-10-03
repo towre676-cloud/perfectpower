@@ -1,0 +1,6 @@
+(declare-const n Int)
+(declare-const m Int)
+(declare-const z Int)
+(assert (or (and (= n (- 1)) (= m (- 1))) (and (= n (- 1)) (= m 0))))
+(assert (and (= z (+ n m)) (>= z 0)))
+(check-sat)
