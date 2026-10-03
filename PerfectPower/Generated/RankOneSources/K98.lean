@@ -39,7 +39,18 @@ theorem n2_0 : nrm 21 (-42) ε0 = 1 := by decide
 
 theorem cond_0 : condB 21 (-42) η0 c0 = true := by decide +kernel
 
-theorem slab_0 : slabB 21 (-42) η0 c0 = true := by decide +kernel
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_0 : (List.range' (0 * 800) 800).all (slabSliceB 21 (-42) η0 c0) = true := by decide +kernel
+
+set_option maxRecDepth 100000 in
+set_option maxHeartbeats 0 in
+theorem chunk0_1 : (List.range' (1 * 800) 800).all (slabSliceB 21 (-42) η0 c0) = true := by decide +kernel
+
+theorem slab_0 : slabB 21 (-42) η0 c0 = true :=
+  slabB_of_chunks (w := 800) (n := 2) (by decide) fun m hm => by
+    interval_cases m
+    exacts [chunk0_0, chunk0_1]
 
 theorem skη_0 : skolemB 21 (-42) η0 3 1 = true := by decide +kernel
 
