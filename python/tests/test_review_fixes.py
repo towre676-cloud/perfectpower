@@ -18,8 +18,11 @@ from perfectpower.specialize import parse_poly  # noqa: E402
 
 class RegisteredCompleteLists(unittest.TestCase):
     def test_all_generated_lists_registered(self):
-        # 26 branch-compiler lists + 10 transported-Thue lists
-        self.assertEqual(len(_generated_complete()), 36)
+        # 26 branch-compiler lists + 10 transported-Thue lists (k < 0), and the 72 positive-k class-list
+        # theorems (`receipts/mordell_registry.json`, positive_curves)
+        g = _generated_complete()
+        self.assertEqual(sum(k < 0 for k in g), 36)
+        self.assertEqual(sum(k > 0 for k in g), 72)
         self.assertEqual(mordell_complete(-56)[0], {18: [76]})
         self.assertIn('PerfectPower.DescentThue.complete_of_thue', mordell_complete(-56)[1])
 

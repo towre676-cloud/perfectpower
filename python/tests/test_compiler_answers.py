@@ -33,7 +33,8 @@ class Answers(unittest.TestCase):
 
     def test_generator_and_unresolved(self):
         self.assertEqual(plan((1, 0, 2)).answer, 'generator')          # 2n^2 + 1 = m^2: Pell
-        p = plan((1, 0, 0, 1))                                          # n^3 + 1: census only
+        self.assertEqual(plan((1, 0, 0, 1)).answer, 'complete_list')    # n^3 + 1: K1.plus1
+        p = plan((22, 0, 0, 1))                                         # n^3 + 22: census only
         self.assertEqual(p.answer, 'unresolved')
         with self.assertRaises(NotEnumerable):
             list(p.iter_hits(100))
