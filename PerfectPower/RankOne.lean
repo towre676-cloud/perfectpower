@@ -96,7 +96,6 @@ theorem skolemData_of {P Q : ℤ} {g : Z3} {p M : ℕ} (hp : 0 < p) (h : skolemB
   simp only [skolemB, Bool.and_eq_true, decide_eq_true_eq, List.all_eq_true, List.mem_finRange,
     true_implies, List.mem_range, Bool.or_eq_true] at h
   obtain ⟨⟨⟨hM, hdiv⟩, hD⟩, hr⟩ := h
-  have hp' : (p : ℤ) ≠ 0 := by exact_mod_cast hp.ne'
   refine ⟨Matrix.of fun i j => (Mx P Q (pow P Q g M) i j - (1 : Matrix (Fin 3) (Fin 3) ℤ) i j) / p,
     hM, ?_, ?_, ?_⟩
   · rw [← Mx_pow]

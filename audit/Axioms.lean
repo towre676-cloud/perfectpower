@@ -2700,6 +2700,14 @@ open PerfectPower
 #print axioms PerfectPower.DiophBridge.plus3_nat
 #print axioms PerfectPower.RankOne.skolemData_of
 #print axioms PerfectPower.RankOne.slabB_of_chunks
+-- LatticeTransport
+#print axioms PerfectPower.LatticeTransport.complete_of_complete
+#print axioms PerfectPower.LatticeTransport.empty_of_filter
+#print axioms PerfectPower.LatticeTransport.complete_of_unimodular
+#print axioms PerfectPower.LatticeTransport.monic_identity
+#print axioms PerfectPower.LatticeTransport.monic_complete
+#print axioms PerfectPower.LatticeTransport.disc_monic
+#print axioms PerfectPower.LatticeTransport.monic_filter_needed
 -- Generated/ClassLists/K5
 #print axioms PerfectPower.Generated.ClassLists.K5.classList
 #print axioms PerfectPower.Generated.ClassLists.K5.plus5
