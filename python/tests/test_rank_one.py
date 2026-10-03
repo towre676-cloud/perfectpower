@@ -74,6 +74,27 @@ class RankOne(unittest.TestCase):
         targets = {(k, F) for k, F, *rest in R1.TARGETS if len(rest) == 5}
         self.assertEqual(ready, targets)
 
+    def test_rank_one_zeros(self):
+        # review item 2: the zero-set certificates are re-derived and the lists brute-forced (Python-only)
+        import rank_one_zeros as RZ
+        res = RZ.main(write=False)
+        rec = json.loads((ROOT / 'receipts' / 'rank_one_zeros.json').read_text())['sources']
+        self.assertEqual(len(res), 14)
+        for r, s in zip(res, rec):
+            self.assertEqual(r['status'], 'ok')
+            self.assertEqual(r['solutions'], s['solutions'])
+            P, Q, h = r['P'], r['Q'], r['h']
+            a, B, C, d = r['form']
+            sols = sorted((u, v) for u in range(-150, 151) for v in range(-150, 151)
+                          if a * u ** 3 + B * u * u * v + C * u * v * v + d * v ** 3 == 1)
+            self.assertEqual(sols, sorted(map(tuple, r['solutions'])), r['k'])
+            for (g, hh), dd in zip(((tuple(r['eta']), tuple(r['eps'])), (tuple(r['eps']), tuple(r['eta']))),
+                                   r['zeros']['dirs']):
+                self.assertTrue(RZ.zb2(P, Q, g, hh, r['zeros']['p'], dd['M'], dd['aux'], dd['K']))
+                # a wrong (too small) period must fail
+                self.assertFalse(RZ.zb2(P, Q, g, hh, r['zeros']['p'], 1, [], dd['K']) and dd['M'] > 1
+                                 and any(x[2] == 0 for x in RZ.pows(P, Q, g, dd['M'])[1:]))
+
     def test_skolem_scan_receipt(self):
         out = SK.scan(ROOT / 'receipts' / 'positive_k_next.json', 6)
         rec = json.loads((ROOT / 'receipts' / 'skolem3_candidates.json').read_text())

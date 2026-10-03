@@ -273,7 +273,7 @@ def lean_k2():
 
 R1_HEAD = """import PerfectPower.ClassListProof
 import PerfectPower.PositiveKCurve
-import PerfectPower.Generated.RankOneSources.K{k}
+{imports}
 
 /-!
 # `y² = x³ + {k}` through irreducible rank-one sources, with no premise
@@ -295,13 +295,14 @@ open PerfectPower MordellCubicForm ClassListProof PositiveKCurve ReducibleThue
 """
 
 
-def lean_rank1(k, srcs):
+def lean_rank1(k, srcs, zsrcs=None):
     """`Generated/ClassLists/K{k}.lean` for a curve whose irreducible classes are all monic sources
     `F(u, v) = −N((u + hv) − vz)` certified in `RankOneSources.K{k}`; the other classes must be
     locally impossible or reducible."""
     row = next(r for r in json.loads((ROOT / 'receipts' / 'positive_k.json').read_text())['curves'] if r['k'] == k)
     src = {tuple(F): (i, P, Q, h, U) for i, (F, P, Q, h, U) in enumerate(srcs)}
-    Gs, sols, proofs, bullets, irr = [], [], [], [], []
+    zsrc = {tuple(F): (i, P, Q, h, L) for i, (F, P, Q, h, L) in enumerate(zsrcs or [])}
+    Gs, sols, proofs, bullets, irr, zirr = [], [], [], [], [], []
     for c in row['class_detail']:
         a, B, C, d = c['form']
         G = (a, B // 3, C // 3, d)
@@ -317,6 +318,16 @@ def lean_rank1(k, srcs):
             proofs.append(f"solsIn_of_red (c := {cert}) (by decide +kernel)")
             bullets.append(f"* `({a}, {B}, {C}, {d})` is reducible, solved by `ReducibleThue` (factor, Bezout pair, "
                            f"integer square root).")
+        elif (a, B, C, d) in zsrc:
+            i, P, Q, h, Ls = zsrc[(a, B, C, d)]
+            Lo = [(u - h * v, v) for u, v in Ls]
+            assert sorted(map(tuple, c['representations'])) == sorted(Lo), (k, c)
+            sols.append('[' + ', '.join(f'({_i(u)}, {_i(v)})' for u, v in Lo) + ']')
+            proofs.append(f'sols_zirr{i}')
+            zirr.append((i, G, P, Q, h, Ls, Lo))
+            bullets.append(f"* `({a}, {B}, {C}, {d})` is irreducible with {len(Lo)} solutions: `F(u, v) = −N((u + {h}v) − vz)`, "
+                           f"`z³ = ({P}) z + ({Q})`; the list comes from `RankOneZeros.K{k}.source{i}` (unit generation, "
+                           f"and a finite zero set by recentred Skolem classes and auxiliary primes).")
         else:
             i, P, Q, h, U = src[(a, B, C, d)]
             proofs.append(f'sols_irr{i}')
@@ -358,7 +369,20 @@ def lean_rank1(k, srcs):
                 f"  obtain rfl : y = {_i(-ga)} := by linear_combination {_i(ga)} * h1 + {_i(de)} * h2\n"
                 f"  simp\n\n")
 
-    irr_thms = ''.join(wit_thm(i, G, P, Q, U) for i, G, P, Q, h, U in irr if U is not None) + ''.join(
+    def z_thm(i, G, P, Q, h, Ls, Lo):
+        Lt = '[' + ', '.join(f'({_i(u)}, {_i(v)})' for u, v in Lo) + ']'
+        branches = ''.join(f"  · obtain rfl : u = {_i(uo)} := by linarith\n    simp\n" for (us, vs), (uo, vo) in zip(Ls, Lo))
+        pat = ' | '.join(['⟨h1, rfl⟩'] * len(Ls))
+        return (f"/-- **Irreducible source {i}** (several solutions): `RankOneZeros.K{k}.source{i}` at `u + {h}v`. -/\n"
+                f"theorem sols_zirr{i} : SolsIn {_f(G)} {Lt} := by\n"
+                f"  intro u v h\n"
+                f"  have h' : -(u + {h} * v) ^ 3 + {_i(P)} * (u + {h} * v) * v ^ 2 + {_i(Q)} * v ^ 3 = 1 := by\n"
+                f"    simp only [ev] at h; linear_combination h\n"
+                f"  have hm := (Generated.RankOneZeros.K{k}.source{i} (u + {h} * v) v).mp h'\n"
+                f"  simp only [List.mem_cons, List.not_mem_nil, or_false, Prod.mk.injEq] at hm\n"
+                f"  rcases hm with {pat}\n" + branches + "\n")
+
+    irr_thms = ''.join(z_thm(*z) for z in zirr) + ''.join(wit_thm(i, G, P, Q, U) for i, G, P, Q, h, U in irr if U is not None) + ''.join(
         f"/-- **Irreducible source {i}**: `RankOneSources.K{k}.source{i}` at `u + {h}v`. -/\n"
         f"theorem sols_irr{i} : SolsIn {_f(G)} [((-1), 0)] := by\n"
         f"  intro u v h\n"
@@ -367,7 +391,9 @@ def lean_rank1(k, srcs):
         f"  obtain ⟨h1, rfl⟩ := (Generated.RankOneSources.K{k}.source{i} (u + {h} * v) v).mp h'\n"
         f"  obtain rfl : u = -1 := by linarith\n"
         f"  simp\n\n" for i, G, P, Q, h, U in irr if U is None)
-    text = (R1_HEAD.replace('{k}', str(k)).replace('{bullets}', '\n'.join(bullets)) +
+    imports = '\n'.join(([f'import PerfectPower.Generated.RankOneSources.K{k}'] if srcs else []) +
+                        ([f'import PerfectPower.Generated.RankOneZeros.K{k}'] if zsrcs else []))
+    text = (R1_HEAD.replace('{imports}', imports).replace('{k}', str(k)).replace('{bullets}', '\n'.join(bullets)) +
             f"/-- The {len(Gs)} classes for `k = {k}` with their solution lists. -/\n"
             f"def cs_{k} : List ((ℤ × ℤ × ℤ × ℤ) × List (ℤ × ℤ)) := [{cs}]\n\n"
             + irr_thms +
@@ -410,9 +436,13 @@ if __name__ == '__main__':
         by_k = {}
         for k, F, P, Q, h, _, *U in R1.TARGETS:
             by_k.setdefault(k, []).append((F, P, Q, h, U[0] if U else None))
-        for k, srcs in by_k.items():
-            if not ks or k in ks:
-                print(lean_rank1(k, srcs))
+        zby = {}
+        for r in json.loads((ROOT / 'receipts' / 'rank_one_zeros.json').read_text())['sources']:
+            if r['status'] == 'ok':
+                zby.setdefault(r['k'], []).append((tuple(r['form']), r['P'], r['Q'], r['h'], r['solutions_shifted']))
+        for k in sorted(set(by_k) | set(zby)):
+            if (not ks and k in by_k) or k in ks:
+                print(lean_rank1(k, by_k.get(k, []), zby.get(k)))
         sys.exit(0)
     if sys.argv[1:] == ['k2']:
         print(lean_k2())

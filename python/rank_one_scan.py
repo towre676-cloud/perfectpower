@@ -6,7 +6,8 @@ between it and a Lean source theorem, using the exact mirrors of `python/rank_on
   (`Plus2.source`);
 * `ready_large_slab`: fundamental unit and Skolem prime found, but the slab check is large
   (its kernel cost is the obstacle);
-* `several_solutions`: more than one known solution, so a list-valued source theorem is needed;
+* `several_solutions`: more than one known solution and no `RankOneZeros` certificate yet
+  (`python/rank_one_zeros.py` certifies the ones it can as `lean_source`);
 * `no_skolem_prime`: no odd prime `p ≤ 97` with period `M ≤ 200` satisfies the Skolem conditions
   for both `η` and `η⁻¹`;
 * `no_unit_found`: no unit with `c < cmax` (a large regulator);
@@ -56,6 +57,14 @@ def slab_unit(P, Q, t, cmax):
     return None
 
 
+def certified_zeros():
+    """Several-solution sources certified by `RankOneZeros.source_list` (`python/rank_one_zeros.py`)."""
+    f = ROOT / 'receipts' / 'rank_one_zeros.json'
+    if not f.exists():
+        return set()
+    return {(r['k'], tuple(r['form'])) for r in json.loads(f.read_text())['sources'] if r['status'] == 'ok'}
+
+
 def classify(e, certified, cmax):
     mo = e['monic_order']
     row = {'k': e['k'], 'form': e['form'], 'known_representations': e['known_representations']}
@@ -85,7 +94,7 @@ def classify(e, certified, cmax):
     row['slab_elements'] = sum(1 for _ in R.slab(P, c))
     row['skolem'] = se and sx and se[0] == sx[0] and {'p': se[0], 'M': se[1]}
     if len(e['known_representations']) > 1:
-        row['status'] = 'several_solutions'
+        row['status'] = 'lean_source' if (e['k'], tuple(e['form'])) in certified_zeros() else 'several_solutions'
     elif not row['skolem']:
         row['status'] = 'no_skolem_prime'
     else:

@@ -18,36 +18,68 @@ namespace PerfectPower.Generated.RankOneSources.K65
 
 open PerfectPower UnitBox UnitPremises RankOne
 
-/-! ### Source 0: `F = (-1, 0, 42, -106)`, `z³ = (42) z + (-106)`, shift `h = 0` (witness normalization of the class `(-2, 0, -6, -7)` by `U = [[1, -3], [-1, 4]]`) -/
+/-! ### Source 0: `F = (-1, 0, -3, -16)`, `z³ = (-3) z + (-16)`, shift `h = 0` -/
 
 /-- The fundamental unit `η` (`σ(η) > 1`) of source 0. -/
-def η0 : Z3 := (85, (-45), 6)
+def η0 : Z3 := (3739, (-1057), 497)
 
 /-- `ε = η⁻¹` for source 0. -/
-def ε0 : Z3 := ((-101), 9, 3)
+def ε0 : Z3 := ((-13), (-21), (-7))
 
 /-- The rank-one certificate for source 0. -/
-def c0 : Cert := ⟨(-749308817 / 100000000 : ℚ), (-7493088169 / 1000000000 : ℚ), (1509083 / 500000 : ℚ), 6⟩
+def c0 : Cert := ⟨(-531692333 / 250000000 : ℚ), (-2126769331 / 1000000000 : ℚ), (197761 / 500000 : ℚ), 497⟩
 
-theorem h1_0 : mul 42 (-106) η0 ε0 = (1, 0, 0) := by decide
+theorem h1_0 : mul (-3) (-16) η0 ε0 = (1, 0, 0) := by decide
 
-theorem h2_0 : mul 42 (-106) ε0 η0 = (1, 0, 0) := by decide
+theorem h2_0 : mul (-3) (-16) ε0 η0 = (1, 0, 0) := by decide
 
-theorem n1_0 : nrm 42 (-106) η0 = 1 := by decide
+theorem n1_0 : nrm (-3) (-16) η0 = 1 := by decide
 
-theorem n2_0 : nrm 42 (-106) ε0 = 1 := by decide
+theorem n2_0 : nrm (-3) (-16) ε0 = 1 := by decide
 
-theorem cond_0 : condB 42 (-106) η0 c0 = true := by decide +kernel
+theorem cond_0 : condB (-3) (-16) η0 c0 = true := by decide +kernel
 
-theorem slab_0 : slabB 42 (-106) η0 c0 = true := by decide +kernel
+theorem slab_0 : slabB (-3) (-16) η0 c0 = true := by decide +kernel
 
-theorem skη_0 : skolemB 42 (-106) η0 3 1 = true := by decide +kernel
+theorem skη_0 : skolemB (-3) (-16) η0 3 3 = true := by decide +kernel
 
-theorem skε_0 : skolemB 42 (-106) ε0 3 1 = true := by decide +kernel
+theorem skε_0 : skolemB (-3) (-16) ε0 3 3 = true := by decide +kernel
 
-/-- **Source 0**: `−u³ + (42) u v² + (-106) v³ = 1 ↔ (u, v) = (−1, 0)`. -/
-theorem source0 (u v : ℤ) : -u ^ 3 + 42 * u * v ^ 2 + (-106) * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) :=
+/-- **Source 0**: `−u³ + (-3) u v² + (-16) v³ = 1 ↔ (u, v) = (−1, 0)`. -/
+theorem source0 (u v : ℤ) : -u ^ 3 + (-3) * u * v ^ 2 + (-16) * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) :=
   haveI : Fact (Nat.Prime 3) := ⟨by norm_num⟩
   source h1_0 h2_0 n1_0 n2_0 cond_0 slab_0 (p := 3) (by norm_num) skη_0 skε_0 u v
+
+/-! ### Source 1: `F = (-1, 0, 42, -106)`, `z³ = (42) z + (-106)`, shift `h = 0` (witness normalization of the class `(-2, 0, -6, -7)` by `U = [[1, -3], [-1, 4]]`) -/
+
+/-- The fundamental unit `η` (`σ(η) > 1`) of source 1. -/
+def η1 : Z3 := (85, (-45), 6)
+
+/-- `ε = η⁻¹` for source 1. -/
+def ε1 : Z3 := ((-101), 9, 3)
+
+/-- The rank-one certificate for source 1. -/
+def c1 : Cert := ⟨(-749308817 / 100000000 : ℚ), (-7493088169 / 1000000000 : ℚ), (1509083 / 500000 : ℚ), 6⟩
+
+theorem h1_1 : mul 42 (-106) η1 ε1 = (1, 0, 0) := by decide
+
+theorem h2_1 : mul 42 (-106) ε1 η1 = (1, 0, 0) := by decide
+
+theorem n1_1 : nrm 42 (-106) η1 = 1 := by decide
+
+theorem n2_1 : nrm 42 (-106) ε1 = 1 := by decide
+
+theorem cond_1 : condB 42 (-106) η1 c1 = true := by decide +kernel
+
+theorem slab_1 : slabB 42 (-106) η1 c1 = true := by decide +kernel
+
+theorem skη_1 : skolemB 42 (-106) η1 3 1 = true := by decide +kernel
+
+theorem skε_1 : skolemB 42 (-106) ε1 3 1 = true := by decide +kernel
+
+/-- **Source 1**: `−u³ + (42) u v² + (-106) v³ = 1 ↔ (u, v) = (−1, 0)`. -/
+theorem source1 (u v : ℤ) : -u ^ 3 + 42 * u * v ^ 2 + (-106) * v ^ 3 = 1 ↔ (u = -1 ∧ v = 0) :=
+  haveI : Fact (Nat.Prime 3) := ⟨by norm_num⟩
+  source h1_1 h2_1 n1_1 n2_1 cond_1 slab_1 (p := 3) (by norm_num) skη_1 skε_1 u v
 
 end PerfectPower.Generated.RankOneSources.K65

@@ -2886,3 +2886,102 @@ open PerfectPower
 #print axioms PerfectPower.Generated.ClassLists.K97.sols_irr0
 #print axioms PerfectPower.Generated.ClassLists.K97.classList
 #print axioms PerfectPower.Generated.ClassLists.K97.plus97
+-- Generated/RankOneSources/K100
+#print axioms PerfectPower.Generated.RankOneSources.K100.source1
+-- Generated/RankOneSources/K24
+#print axioms PerfectPower.Generated.RankOneSources.K24.source0
+-- Generated/RankOneSources/K65
+#print axioms PerfectPower.Generated.RankOneSources.K65.source1
+-- Generated/RankOneSources/K73
+#print axioms PerfectPower.Generated.RankOneSources.K73.source0
+#print axioms PerfectPower.Generated.RankOneSources.K73.source1
+-- Generated/RankOneSources/K8
+#print axioms PerfectPower.Generated.RankOneSources.K8.source0
+-- Generated/RankOneSources/K9
+#print axioms PerfectPower.Generated.RankOneSources.K9.source2
+-- Generated/RankOneZeros/K1
+#print axioms PerfectPower.Generated.RankOneZeros.K1.source0
+-- Generated/RankOneZeros/K100
+#print axioms PerfectPower.Generated.RankOneZeros.K100.source0
+#print axioms PerfectPower.Generated.RankOneZeros.K100.source1
+-- Generated/RankOneZeros/K15
+#print axioms PerfectPower.Generated.RankOneZeros.K15.source0
+-- Generated/RankOneZeros/K17
+#print axioms PerfectPower.Generated.RankOneZeros.K17.source0
+#print axioms PerfectPower.Generated.RankOneZeros.K17.source1
+#print axioms PerfectPower.Generated.RankOneZeros.K17.source2
+-- Generated/RankOneZeros/K24
+#print axioms PerfectPower.Generated.RankOneZeros.K24.source0
+-- Generated/RankOneZeros/K65
+#print axioms PerfectPower.Generated.RankOneZeros.K65.source0
+-- Generated/RankOneZeros/K68
+#print axioms PerfectPower.Generated.RankOneZeros.K68.source0
+-- Generated/RankOneZeros/K73
+#print axioms PerfectPower.Generated.RankOneZeros.K73.source0
+#print axioms PerfectPower.Generated.RankOneZeros.K73.source1
+-- Generated/RankOneZeros/K8
+#print axioms PerfectPower.Generated.RankOneZeros.K8.source0
+-- Generated/RankOneZeros/K9
+#print axioms PerfectPower.Generated.RankOneZeros.K9.source0
+-- Generated/ClassLists/K1
+#print axioms PerfectPower.Generated.ClassLists.K1.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K1.classList
+#print axioms PerfectPower.Generated.ClassLists.K1.plus1
+-- Generated/ClassLists/K100
+#print axioms PerfectPower.Generated.ClassLists.K100.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K100.sols_zirr1
+#print axioms PerfectPower.Generated.ClassLists.K100.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K100.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K100.classList
+#print axioms PerfectPower.Generated.ClassLists.K100.plus100
+-- Generated/ClassLists/K15
+#print axioms PerfectPower.Generated.ClassLists.K15.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K15.classList
+#print axioms PerfectPower.Generated.ClassLists.K15.plus15
+-- Generated/ClassLists/K17
+#print axioms PerfectPower.Generated.ClassLists.K17.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K17.sols_zirr1
+#print axioms PerfectPower.Generated.ClassLists.K17.sols_zirr2
+#print axioms PerfectPower.Generated.ClassLists.K17.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K17.classList
+#print axioms PerfectPower.Generated.ClassLists.K17.plus17
+-- Generated/ClassLists/K24
+#print axioms PerfectPower.Generated.ClassLists.K24.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K24.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K24.classList
+#print axioms PerfectPower.Generated.ClassLists.K24.plus24
+-- Generated/ClassLists/K65
+#print axioms PerfectPower.Generated.ClassLists.K65.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K65.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K65.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K65.classList
+#print axioms PerfectPower.Generated.ClassLists.K65.plus65
+-- Generated/ClassLists/K68
+#print axioms PerfectPower.Generated.ClassLists.K68.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K68.classList
+#print axioms PerfectPower.Generated.ClassLists.K68.plus68
+-- Generated/ClassLists/K73
+#print axioms PerfectPower.Generated.ClassLists.K73.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K73.sols_zirr1
+#print axioms PerfectPower.Generated.ClassLists.K73.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K73.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K73.classList
+#print axioms PerfectPower.Generated.ClassLists.K73.plus73
+-- Generated/ClassLists/K8
+#print axioms PerfectPower.Generated.ClassLists.K8.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K8.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K8.classList
+#print axioms PerfectPower.Generated.ClassLists.K8.plus8
+-- Generated/ClassLists/K9
+#print axioms PerfectPower.Generated.ClassLists.K9.sols_zirr0
+#print axioms PerfectPower.Generated.ClassLists.K9.sols_irr1
+#print axioms PerfectPower.Generated.ClassLists.K9.sols_irr2
+#print axioms PerfectPower.Generated.ClassLists.K9.sols_irr0
+#print axioms PerfectPower.Generated.ClassLists.K9.classList
+#print axioms PerfectPower.Generated.ClassLists.K9.plus9
+#print axioms PerfectPower.SkolemZeros.corner_zeros
+#print axioms PerfectPower.SkolemZeros.corner_zeros2
+#print axioms PerfectPower.RankOneZeros.zeros2_of
+#print axioms PerfectPower.RankOneZeros.source_sub
+#print axioms PerfectPower.RankOneZeros.source_list
+#print axioms PerfectPower.RankOneZeros.zeros1_of
