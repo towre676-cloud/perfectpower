@@ -1,0 +1,47 @@
+{
+  "lean_version": "4.20.0",
+  "scope": "local open-front checks; full make verify/global axiom audit not run",
+  "kernel_checked_modules": [
+    "NativeCubic",
+    "WeightedSkolem",
+    "OrbitLattice",
+    "QuarticPilot",
+    "SparkStep",
+    "CurveReadout",
+    "BrainpoolReadout",
+    "Generated/RankOneSources/K22Parts/Defs",
+    "Generated/RankOneSources/K22Parts/Chunk0"
+  ],
+  "python_test_counts": [
+    310,
+    14,
+    10,
+    8
+  ],
+  "python_tests": "all passed; two Why3 skips",
+  "independent_certificate_audit": "19/19 passed",
+  "axiom_checks": [
+    "'PerfectPower.NativeCubic.mul_assoc' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.WeightedSkolem.weighted_corner_zeros_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.OrbitLattice.image_iff' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.OrbitLattice.weighted_entry_mod' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.QuarticPilot.complete' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.QuarticPilot.nonzero_not_square' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.SparkStep.accept_remainder' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.SparkStep.accept_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.SparkStep.reject_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.BrainpoolReadout.inverse_scale' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.BrainpoolReadout.equation_iff' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.BrainpoolReadout.generator_export' depends on axioms: [propext, Quot.sound]"
+  ],
+  "open": [
+    "k22 remaining 3986 chunks and curve integration",
+    "native order norm and overorder embeddings",
+    "signed weighted norm-orbit assembly",
+    "Matveev premise discharge",
+    "Bilu\u2013Tichy and higher powers",
+    "original GNATprove obligation",
+    "Brainpool prime certificate and concrete field group"
+  ],
+  "base_commit": "9d09c0f194eacd49f6976aad4a9a34590956bd57"
+}

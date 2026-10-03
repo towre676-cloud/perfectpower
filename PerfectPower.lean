@@ -264,3 +264,12 @@ import PerfectPower.Generated.ClassLists.K97S0
 import PerfectPower.Generated.ClassLists.K97S1
 import PerfectPower.Generated.ClassLists.K97S2
 import PerfectPower.Generated.ClassLists.K97S3
+
+-- Open-front foundations; k=22 partial slab is deliberately not a complete source import.
+import PerfectPower.NativeCubic
+import PerfectPower.WeightedSkolem
+import PerfectPower.OrbitLattice
+import PerfectPower.QuarticPilot
+import PerfectPower.SparkStep
+import PerfectPower.CurveReadout
+import PerfectPower.BrainpoolReadout

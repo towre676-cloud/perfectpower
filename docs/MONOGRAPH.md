@@ -437,3 +437,8 @@ The most useful next proof problems concern rates and exceptional arithmetic ins
 ### Sources and dependency boundary
 
 Michael D. Boshernitzan, “Uniform distribution and Hardy fields,” *Journal d'Analyse Mathématique* 62 (1994), 225–240, DOI [10.1007/BF02835955](https://doi.org/10.1007/BF02835955). The precise theorem is restated as Theorem 1.1 in Michael Reilly, [“A criterion for weighted uniform distribution along functions from a Hardy field”](https://arxiv.org/abs/2606.08040) (2026). Joseph H. Silverman, [*The Arithmetic of Elliptic Curves*, Chapter IX](https://www.math.ens.psl.eu/~obenoist/refs/Silverman.pdf), proves the relevant finiteness theorem of Siegel and explains its non-effective aspect. E. Bombieri and J. Pila, [“The Number of Integral Points on Arcs and Ovals”](https://people.maths.ox.ac.uk/pila/Ovals.pdf), establishes integral-point estimates in specified boxes; no general α bound is silently imported from that paper here.
+
+
+## Open-front implementation checkpoint
+
+The next implementation checkpoint is recorded in [OPEN_FRONTS.md](OPEN_FRONTS.md). It adds native cubic multiplication laws, weighted finite-zero and lattice-period lemmas, a complete even-quartic pilot, square-root arithmetic refinements, and concrete residue-ring coordinate export. The k=22 slab and named Matveev premises remain open; no additional Mordell completeness is claimed.

@@ -1,0 +1,333 @@
+{
+  "k11_weighted_lattice": {
+    "modulus": 8,
+    "periods": [
+      4
+    ],
+    "allowed_residues": [
+      [
+        1
+      ]
+    ],
+    "tested_residues": 4,
+    "status": "exact Python residue filter; not an exponent bound or Lean certificate"
+  },
+  "negative63_class50": {
+    "modulus": 8,
+    "periods": [
+      8,
+      16
+    ],
+    "allowed_residues": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        0,
+        12
+      ],
+      [
+        0,
+        15
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        1,
+        10
+      ],
+      [
+        1,
+        13
+      ],
+      [
+        1,
+        14
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        11
+      ],
+      [
+        2,
+        12
+      ],
+      [
+        2,
+        15
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        3,
+        10
+      ],
+      [
+        3,
+        13
+      ],
+      [
+        3,
+        14
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        11
+      ],
+      [
+        4,
+        12
+      ],
+      [
+        4,
+        15
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        5,
+        13
+      ],
+      [
+        5,
+        14
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        6,
+        12
+      ],
+      [
+        6,
+        15
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        7,
+        14
+      ]
+    ],
+    "tested_residues": 128,
+    "status": "exact Python residue filter; not an exponent bound or Lean certificate",
+    "encoding": "(4u-17v,-4v,4v); plane w1+w2=0; 4|w0 and 4|w2"
+  },
+  "analytic_premises": [
+    {
+      "module": "Field756",
+      "name": "matveev_0",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 6 2 acert_0 (17, 4, (-4)) ((-20), (-4), 4) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    },
+    {
+      "module": "Field756",
+      "name": "matveev_1",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 6 2 acert_1 (22, 0, (-4)) (0, (-8), (-4)) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    },
+    {
+      "module": "Field756",
+      "name": "matveev_2",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 6 2 acert_2 (1, 2, 0) (2, 0, 0) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    },
+    {
+      "module": "Field756",
+      "name": "matveev_18",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 6 2 acert_18 (8, 16, 0) (0, 16, 0) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    },
+    {
+      "module": "Field756",
+      "name": "matveev_19",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 6 2 acert_19 ((-10), (-16), 8) (8, 0, 0) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    },
+    {
+      "module": "Field756",
+      "name": "matveev_20",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 6 2 acert_20 (22, 0, (-4)) (4, 0, 0) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    },
+    {
+      "module": "Field756",
+      "name": "matveev_50",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 6 2 acert_50 (17, 4, (-4)) (4, 0, 0) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    },
+    {
+      "module": "D72Unit",
+      "name": "matveev_pos",
+      "statement": "\u2200 i, AnalyticBridge.MatveevCase 9 6 acert_pos (6, 0, (-1)) ((-3), (-3), 1) e1 e2 i",
+      "status": "named unproved analytic premise; residue exclusions do not remove it"
+    }
+  ]
+}
