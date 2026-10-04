@@ -289,3 +289,6 @@ import PerfectPower.Generated.ClassLists.K22
 import PerfectPower.NativeNearSquare
 import PerfectPower.FunctionFieldPower
 import PerfectPower.Tactic.NativePower
+
+import PerfectPower.NativePolynomialSquare
+import PerfectPower.Tactic.NativePolynomialPower

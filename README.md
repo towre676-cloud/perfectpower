@@ -311,3 +311,5 @@ docker build -t perfectpower . && docker run --rm perfectpower
 ## Licence and citation
 
 Code and Lean sources are licensed under [Apache-2.0](LICENSE); `docs/` and `paper/` under [CC-BY-4.0](LICENSE-docs). The OEIS entries in `data/oeis/` are unmodified copies under CC BY-SA 4.0 (the OEIS Foundation; see [data/oeis/SOURCE.md](data/oeis/SOURCE.md)). To cite, see [CITATION.cff](CITATION.cff).
+
+Native square-plus-constant automation now supports **arbitrary degree and nonmonic integer polynomials** through ascending coefficient lists: `native_polynomial_square example_points for [0, 0, 0, 2], 1` emits a complete theorem for `y² = (2x³)² + 1`. This is a supported family, not a general solver for arbitrary polynomial power values. See [the mathematical account](docs/NATIVE_POLYNOMIAL_MONOGRAPH.md) and run `scripts/check_native_polynomial_power.sh` for both native audit suites.

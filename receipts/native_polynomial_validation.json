@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "lean": "4.20.0",
+  "mathlib_revision": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "source_sha256": {
+    "PerfectPower/NativePolynomialSquare.lean": "196428c3ff5ec8be4b1f22fd5445cc954b67500aa2a2fdeca1a23f0fa0cb2b86",
+    "PerfectPower/Tactic/NativePolynomialPower.lean": "9beb59003376960d53700a25d64ee067744e4d6a6aea3953e8b53c735984acba",
+    "audit/NativePolynomialPower.lean": "f58e5b3162d48148522cb57c1612a146e3681ddfe53987164fae1bd92e51cb07",
+    "scripts/check_native_polynomial_power.sh": "4a67a9dc36185142cafd80132b4ef4ef0dd6bfcaf91f8f06e525f38e2c9d5f8b"
+  },
+  "log_sha256": "274de2e070dc01ebd11064fe4fdc23e1bc37071db843d37be1751be06177d78d",
+  "audited_declarations": [
+    "PerfectPower.NativePowerExamples.quartic_one_complete",
+    "PerfectPower.NativePowerExamples.shifted_four_complete",
+    "PerfectPower.NativePowerExamples.quartic_minus_one_complete",
+    "PerfectPower.NativePowerExamples.quartic_eight_complete",
+    "PerfectPower.NativePowerExamples.empty_shift_complete",
+    "PerfectPower.NativePowerExamples.large_shift_complete",
+    "PerfectPower.NativeNearSquare.explicit_bounds",
+    "PerfectPower.NativeNearSquare.complete",
+    "PerfectPower.FunctionFieldPower.complete",
+    "PerfectPower.FunctionFieldPower.frobenius_family",
+    "PerfectPower.FunctionFieldPower.Seven.quartic_complete",
+    "PerfectPower.FunctionFieldPower.Seven.quartic_list",
+    "PerfectPower.NativePolynomialSquare.eval_abs_ge_one",
+    "PerfectPower.NativePolynomialSquare.eval_bound",
+    "PerfectPower.NativePolynomialSquare.complete",
+    "PerfectPower.NativePolynomialSquare.polynomial_complete",
+    "PerfectPower.NativePolynomialAudit.nonmonic_cubic_complete",
+    "PerfectPower.NativePolynomialAudit.sextic_eight_complete",
+    "PerfectPower.NativePolynomialAudit.sextic_minus_one_complete",
+    "PerfectPower.NativePolynomialAudit.degree_fourteen_complete",
+    "PerfectPower.NativePolynomialAudit.shifted_cubic_complete",
+    "PerfectPower.NativePolynomialAudit.empty_nonmonic_complete",
+    "PerfectPower.NativePolynomialAudit.expanded_nonmonic"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "new_complete_families": 6,
+  "new_negative_checks": 4,
+  "maximum_example_equation_degree": 14,
+  "scope": "Both focused native audit suites; not the full repository build",
+  "launcher_note": "Local LD_PRELOAD only restores executable-path lookup in this runtime; kernel inference and evaluation unchanged."
+}
