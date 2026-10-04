@@ -15,22 +15,36 @@ def add_commands(sub):
     p=sub.add_parser('conformal-metric',help='smooth differential metric and curvature in original curve charts')
     p.add_argument('--coeff',required=True);p.add_argument('--d',required=True,type=int)
     p.add_argument('--point',type=json.loads,default=[.3,.7])
+    p=sub.add_parser('certified-voronoi',help='exact rational polyhedral Voronoi boundary enclosure')
+    p.add_argument('--coeff',required=True);p.add_argument('--resolution',type=int,default=6)
+    p.add_argument('--sites',type=int,default=4);p.add_argument('--depth',type=int,default=2)
+    p=sub.add_parser('surface-homology',help='integral symplectic basis on a curve-derived surface mesh')
+    p.add_argument('--coeff',required=True);p.add_argument('--resolution',type=int,default=6)
     p=sub.add_parser('conformal-voronoi',help='curve-derived hyperelliptic mesh and intrinsic heat Voronoi approximation')
     p.add_argument('--coeff',required=True);p.add_argument('--resolution',type=int,default=6)
     p.add_argument('--sites',type=int,default=8)
 
 
 def dispatch(args):
-    if args.command not in ('intrinsic-voronoi','analytic-periods','conformal-metric','conformal-voronoi'):return False
+    if args.command not in ('intrinsic-voronoi','analytic-periods','conformal-metric','conformal-voronoi','certified-voronoi','surface-homology'):return False
     if args.command=='intrinsic-voronoi':
         from .intrinsic_torus import legendre_torus,legendre_point
         p=legendre_torus(args.lam,args.sites,args.terms)
         p['curve_sites']=[legendre_point(Fraction(args.lam),complex(*s),p['height']) for s in p['sites']]
     else:
         coeff=[int(a) for a in args.coeff.split(',')]
-        if args.command=='conformal-voronoi':
+        if args.command in ('conformal-voronoi','certified-voronoi','surface-homology'):
             from .conformal_mesh import hyperelliptic_mesh,heat_voronoi
-            mesh=hyperelliptic_mesh(coeff,args.resolution);p={'mesh':mesh,'voronoi':heat_voronoi(mesh,args.sites)}
+            mesh=hyperelliptic_mesh(coeff,args.resolution)
+            if args.command=='surface-homology':
+                from .symplectic_surface import surface_basis
+                p=surface_basis(mesh)
+            else:
+                heat=heat_voronoi(mesh,args.sites)
+                if args.command=='certified-voronoi':
+                    from .certified_voronoi import boundary_enclosure
+                    p=boundary_enclosure(mesh,heat['sites'],heat['distance_fields'],args.depth)
+                else:p={'mesh':mesh,'voronoi':heat}
         else:
             from .analytic_surface import AnalyticSurface
             s=AnalyticSurface(coeff,args.d)
