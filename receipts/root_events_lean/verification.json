@@ -1,0 +1,30 @@
+{
+  "schema": "root-events-verification/1",
+  "baseline_commit": "af68d0dc1a6efdd8ff88b4564c8604dff572ea6f",
+  "lean": "4.20.0",
+  "proof_modules": 91,
+  "audited_declarations": 553,
+  "root_examples": 7,
+  "root_nodes": 57,
+  "rational_source_models": 64,
+  "distinct_graph_laws": 14,
+  "inclusion_moments": 444,
+  "mixed_event_assignments_in_distinct_laws": 4788,
+  "python_tests": {
+    "run": 690,
+    "passed": 686,
+    "skipped": 4
+  },
+  "full_historical_build_rerun": false,
+  "scope": "Complete integer-root trees, local signed-remainder algebra, general mixed-event moment theorem and bounds, closed rational graph laws. Classical real-root Sturm theorem and 120 nonsingular nonrational-kernel models remain open.",
+  "integrated_parent_commit": "67baee33566eaa4a23fc88029025a4a995ce974c",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "inputs_sha256": "b142c54fb474b95f044b9597ccf12580ddee9b7cea3046bd6820874ae1392348",
+  "axioms_sha256": "aa4b7e71d171a867d11b6e64e9b3e73ff15da5fc9ca2aedcc3f4d6148385fdd6",
+  "generator_reproducible": true,
+  "historical_optional_adapter_attempt": "Enabling Lean for the historical adapter suite reached the absent BoundedPell.olean cache. The standard Python command skips four optional tests; all 91 new modules were compiled separately."
+}

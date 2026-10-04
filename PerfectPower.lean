@@ -353,3 +353,9 @@ import PerfectPower.IntegerRootFibres
 import PerfectPower.GeneratedOperatorAlgebra
 import PerfectPower.ConnectionProjection
 import PerfectPower.ExceptionalQuartic
+import PerfectPower.BernsteinRootTree
+import PerfectPower.SturmChainAlgebra
+import PerfectPower.DeterminantalEvents
+import PerfectPower.FiniteGraphProbability
+import PerfectPower.TriangularDeterminant
+import PerfectPower.PaddedPrincipalMinor

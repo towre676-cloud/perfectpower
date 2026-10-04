@@ -6,7 +6,7 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 
 | Subject | Guides |
 |---|---|
-| Constraint plans and complete integer solving | [Compiler](CONSTRAINT_COMPILER.md), [integrated engine and optimization](ENHANCED_MACHINERY_MONOGRAPH.md), [Sturm roots and sharper power gaps](MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [factored local filters](LOCALITY_AND_OBSERVABLE_MACHINES.md) |
+| Constraint plans and complete integer solving | [Compiler](CONSTRAINT_COMPILER.md), [integrated engine and optimization](ENHANCED_MACHINERY_MONOGRAPH.md), [Sturm roots and sharper power gaps](MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [checked integer-root trees](ROOT_EVENTS_LEAN_MONOGRAPH.md), [factored local filters](LOCALITY_AND_OBSERVABLE_MACHINES.md) |
 | Native Lean enumeration | [Getting started](NATIVE_POWER_START_HERE.md), [square-plus-constant polynomials](NATIVE_POLYNOMIAL_MONOGRAPH.md), [Runge squares](NATIVE_RUNGE_MONOGRAPH.md), [higher powers](NATIVE_RUNGE_POWER_MONOGRAPH.md) |
 | Quartics and divisor sums | [Effective quartic solver](QUARTIC_EFFECTIVE_SOLVER_MONOGRAPH.md), [divisor route](DIVISOR_REUSE_MONOGRAPH.md), [divisor-sum results](DIVISOR_SUM_RESULTS_MONOGRAPH.md) |
 | Mordell curves, descent, and units | [Mordell branch](MORDELL_BRANCH.md), [unit premises](UNIT_PREMISES.md), [weighted norm lists](WEIGHTED_NORM_LISTS.md), [k = 22 proof](K22_PROOF.md) |
@@ -35,7 +35,7 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 | Subject | Guides |
 |---|---|
 | Exact branching, monodromy, and finite surface models | [Branched geometry](BRANCHED_GEOMETRY_MONOGRAPH.md) |
-| Collision strata and connection determinants | [Positive geometry](POSITIVE_GEOMETRY_MONOGRAPH.md) |
+| Collision strata and connection determinants | [Positive geometry](POSITIVE_GEOMETRY_MONOGRAPH.md), [finite graph-event laws](ROOT_EVENTS_LEAN_MONOGRAPH.md) |
 | Differential bases and Legendre period enclosures | [Holomorphic bases](HOLOMORPHIC_BASIS_MONOGRAPH.md) |
 | Intrinsic Voronoi and numerical curve geometry | [Analytic geometry](ANALYTIC_GEOMETRY_MONOGRAPH.md), [certified finite surface geometry](CERTIFIED_SURFACE_GEOMETRY.md) |
 | Homology cycles, periods, and canonical metrics | [Symplectic analytic geometry](SYMPLECTIC_ANALYTIC_MONOGRAPH.md) |

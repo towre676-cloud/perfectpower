@@ -35,3 +35,7 @@ The enhanced-machinery transport now has `AffinePowerComposition.complete` and `
 ## Monograph push: new Lean coverage
 
 The follow-up in `docs/MONOGRAPH_LEAN_MONOGRAPH.md` proves exceptional-root finite-search assembly and the complete exceptional quartic, the nonnegative rational-grid sharp gap, direct giant integer-root examples, connection projection algebra, and exact generated-word spans for all 139 rational operator fixtures. The focused check is `scripts/check_monograph_push.sh`. General Sturm transcript correctness, all sharp-gap sign/threshold branches, full graph probabilities, and commutant/bicommutant certification still need proofs.
+
+## Integer-root and graph-event formalization
+
+`ROOT_EVENTS_LEAN_MONOGRAPH.md` documents unconditional Bernstein-certified integer-root trees, local signed Sturm-chain algebra, arbitrary finite mixed-event identities and conditional bounds, and closed inclusion laws for all 64 stored rational-kernel models. The classical real-root variation theorem and the 120 nonsingular nonrational-kernel models remain open. General weighted Cauchy–Binet inclusion laws are also separate from the checked finite instances.

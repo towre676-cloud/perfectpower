@@ -1,0 +1,644 @@
+import PerfectPower.BernsteinRootTree
+import PerfectPower.SturmChainAlgebra
+import PerfectPower.DeterminantalEvents
+import PerfectPower.FiniteGraphProbability
+import PerfectPower.TriangularDeterminant
+import PerfectPower.PaddedPrincipalMinor
+import PerfectPower.Generated.RootEventFixtures
+import PerfectPower.Generated.GraphProbability00Data
+import PerfectPower.Generated.GraphProbability00Moments00
+import PerfectPower.Generated.GraphProbability00
+import PerfectPower.Generated.GraphProbability01Data
+import PerfectPower.Generated.GraphProbability01Moments00
+import PerfectPower.Generated.GraphProbability01Moments01
+import PerfectPower.Generated.GraphProbability01
+import PerfectPower.Generated.GraphProbability02Data
+import PerfectPower.Generated.GraphProbability02Moments00
+import PerfectPower.Generated.GraphProbability02Moments01
+import PerfectPower.Generated.GraphProbability02Moments02
+import PerfectPower.Generated.GraphProbability02Moments03
+import PerfectPower.Generated.GraphProbability02
+import PerfectPower.Generated.GraphProbability03Data
+import PerfectPower.Generated.GraphProbability03Moments00
+import PerfectPower.Generated.GraphProbability03Moments01
+import PerfectPower.Generated.GraphProbability03Moments02
+import PerfectPower.Generated.GraphProbability03Moments03
+import PerfectPower.Generated.GraphProbability03Moments04
+import PerfectPower.Generated.GraphProbability03Moments05
+import PerfectPower.Generated.GraphProbability03Moments06
+import PerfectPower.Generated.GraphProbability03Moments07
+import PerfectPower.Generated.GraphProbability03
+import PerfectPower.Generated.GraphProbability04Data
+import PerfectPower.Generated.GraphProbability04Moments00
+import PerfectPower.Generated.GraphProbability04Moments01
+import PerfectPower.Generated.GraphProbability04Moments02
+import PerfectPower.Generated.GraphProbability04Moments03
+import PerfectPower.Generated.GraphProbability04Moments04
+import PerfectPower.Generated.GraphProbability04Moments05
+import PerfectPower.Generated.GraphProbability04Moments06
+import PerfectPower.Generated.GraphProbability04Moments07
+import PerfectPower.Generated.GraphProbability04Moments08
+import PerfectPower.Generated.GraphProbability04Moments09
+import PerfectPower.Generated.GraphProbability04Moments10
+import PerfectPower.Generated.GraphProbability04Moments11
+import PerfectPower.Generated.GraphProbability04Moments12
+import PerfectPower.Generated.GraphProbability04Moments13
+import PerfectPower.Generated.GraphProbability04Moments14
+import PerfectPower.Generated.GraphProbability04Moments15
+import PerfectPower.Generated.GraphProbability04
+import PerfectPower.Generated.GraphProbability05Data
+import PerfectPower.Generated.GraphProbability05Moments00
+import PerfectPower.Generated.GraphProbability05Moments01
+import PerfectPower.Generated.GraphProbability05Moments02
+import PerfectPower.Generated.GraphProbability05Moments03
+import PerfectPower.Generated.GraphProbability05Moments04
+import PerfectPower.Generated.GraphProbability05Moments05
+import PerfectPower.Generated.GraphProbability05Moments06
+import PerfectPower.Generated.GraphProbability05Moments07
+import PerfectPower.Generated.GraphProbability05
+import PerfectPower.Generated.GraphProbability06Data
+import PerfectPower.Generated.GraphProbability06Moments00
+import PerfectPower.Generated.GraphProbability06Moments01
+import PerfectPower.Generated.GraphProbability06Moments02
+import PerfectPower.Generated.GraphProbability06Moments03
+import PerfectPower.Generated.GraphProbability06
+import PerfectPower.Generated.GraphProbability07Data
+import PerfectPower.Generated.GraphProbability07Moments00
+import PerfectPower.Generated.GraphProbability07Moments01
+import PerfectPower.Generated.GraphProbability07
+import PerfectPower.Generated.GraphProbability08Data
+import PerfectPower.Generated.GraphProbability08Moments00
+import PerfectPower.Generated.GraphProbability08Moments01
+import PerfectPower.Generated.GraphProbability08Moments02
+import PerfectPower.Generated.GraphProbability08Moments03
+import PerfectPower.Generated.GraphProbability08
+import PerfectPower.Generated.GraphProbability09Data
+import PerfectPower.Generated.GraphProbability09Moments00
+import PerfectPower.Generated.GraphProbability09
+import PerfectPower.Generated.GraphProbability10Data
+import PerfectPower.Generated.GraphProbability10Moments00
+import PerfectPower.Generated.GraphProbability10Moments01
+import PerfectPower.Generated.GraphProbability10
+import PerfectPower.Generated.GraphProbability11Data
+import PerfectPower.Generated.GraphProbability11Moments00
+import PerfectPower.Generated.GraphProbability11Moments01
+import PerfectPower.Generated.GraphProbability11
+import PerfectPower.Generated.GraphProbability12Data
+import PerfectPower.Generated.GraphProbability12Moments00
+import PerfectPower.Generated.GraphProbability12
+import PerfectPower.Generated.GraphProbability13Data
+import PerfectPower.Generated.GraphProbability13Moments00
+import PerfectPower.Generated.GraphProbability13
+#print axioms PerfectPower.BernsteinRootTree.form_pos
+#print axioms PerfectPower.BernsteinRootTree.excludes
+#print axioms PerfectPower.BernsteinRootTree.Tree.complete
+#print axioms PerfectPower.BernsteinRootTree.global_complete
+#print axioms PerfectPower.BernsteinRootTree.integer_complete
+#print axioms PerfectPower.SturmChainAlgebra.remainder_opposite
+#print axioms PerfectPower.SturmChainAlgebra.zero_propagates
+#print axioms PerfectPower.SturmChainAlgebra.bezout_separates
+#print axioms PerfectPower.SturmChainAlgebra.multiplicity_roots
+#print axioms PerfectPower.DeterminantalEvents.row_expansion
+#print axioms PerfectPower.DeterminantalEvents.signed_rows
+#print axioms PerfectPower.DeterminantalEvents.mixed_expansion
+#print axioms PerfectPower.DeterminantalEvents.diagonal_mixed
+#print axioms PerfectPower.DeterminantalEvents.expectation_mixed
+#print axioms PerfectPower.FiniteGraphProbability.product_indicator
+#print axioms PerfectPower.FiniteGraphProbability.product_avoid
+#print axioms PerfectPower.FiniteGraphProbability.padded_indicator
+#print axioms PerfectPower.FiniteGraphProbability.mixed_probability
+#print axioms PerfectPower.FiniteGraphProbability.event_bounds
+#print axioms PerfectPower.FiniteGraphProbability.rational_event_bounds
+#print axioms PerfectPower.FiniteGraphProbability.refinement_le
+#print axioms PerfectPower.FiniteGraphProbability.conditional_bounds
+#print axioms PerfectPower.TriangularDeterminant.checked
+#print axioms PerfectPower.PaddedPrincipalMinor.padded_det
+#print axioms PerfectPower.PaddedPrincipalMinor.mixed_principal
+#print axioms PerfectPower.RootEventFixtures.giant_roots_checked
+#print axioms PerfectPower.RootEventFixtures.giant_complete
+#print axioms PerfectPower.RootEventFixtures.repeated_roots_checked
+#print axioms PerfectPower.RootEventFixtures.repeated_complete
+#print axioms PerfectPower.RootEventFixtures.no_real_roots_checked
+#print axioms PerfectPower.RootEventFixtures.no_real_complete
+#print axioms PerfectPower.RootEventFixtures.fractional_roots_checked
+#print axioms PerfectPower.RootEventFixtures.fractional_complete
+#print axioms PerfectPower.RootEventFixtures.negative_roots_checked
+#print axioms PerfectPower.RootEventFixtures.negative_complete
+#print axioms PerfectPower.RootEventFixtures.repeated_small_roots_checked
+#print axioms PerfectPower.RootEventFixtures.repeated_small_complete
+#print axioms PerfectPower.RootEventFixtures.sparse_roots_checked
+#print axioms PerfectPower.RootEventFixtures.sparse_complete
+#print axioms PerfectPower.GraphProbability00.nonnegative
+#print axioms PerfectPower.GraphProbability00.normalized
+#print axioms PerfectPower.GraphProbability00.inclusion_000
+#print axioms PerfectPower.GraphProbability00.inclusion_001
+#print axioms PerfectPower.GraphProbability00.inclusion_002
+#print axioms PerfectPower.GraphProbability00.inclusion_003
+#print axioms PerfectPower.GraphProbability00.inclusion_004
+#print axioms PerfectPower.GraphProbability00.inclusion_005
+#print axioms PerfectPower.GraphProbability00.inclusion_006
+#print axioms PerfectPower.GraphProbability00.inclusion_007
+#print axioms PerfectPower.GraphProbability00.inclusion_checked
+#print axioms PerfectPower.GraphProbability00.all_events
+#print axioms PerfectPower.GraphProbability00.probability_bounds
+#print axioms PerfectPower.GraphProbability01.nonnegative
+#print axioms PerfectPower.GraphProbability01.normalized
+#print axioms PerfectPower.GraphProbability01.inclusion_000
+#print axioms PerfectPower.GraphProbability01.inclusion_001
+#print axioms PerfectPower.GraphProbability01.inclusion_002
+#print axioms PerfectPower.GraphProbability01.inclusion_003
+#print axioms PerfectPower.GraphProbability01.inclusion_004
+#print axioms PerfectPower.GraphProbability01.inclusion_005
+#print axioms PerfectPower.GraphProbability01.inclusion_006
+#print axioms PerfectPower.GraphProbability01.inclusion_007
+#print axioms PerfectPower.GraphProbability01.inclusion_008
+#print axioms PerfectPower.GraphProbability01.inclusion_009
+#print axioms PerfectPower.GraphProbability01.inclusion_010
+#print axioms PerfectPower.GraphProbability01.inclusion_011
+#print axioms PerfectPower.GraphProbability01.inclusion_012
+#print axioms PerfectPower.GraphProbability01.inclusion_013
+#print axioms PerfectPower.GraphProbability01.inclusion_014
+#print axioms PerfectPower.GraphProbability01.inclusion_015
+#print axioms PerfectPower.GraphProbability01.inclusion_checked
+#print axioms PerfectPower.GraphProbability01.all_events
+#print axioms PerfectPower.GraphProbability01.probability_bounds
+#print axioms PerfectPower.GraphProbability02.nonnegative
+#print axioms PerfectPower.GraphProbability02.normalized
+#print axioms PerfectPower.GraphProbability02.inclusion_000
+#print axioms PerfectPower.GraphProbability02.inclusion_001
+#print axioms PerfectPower.GraphProbability02.inclusion_002
+#print axioms PerfectPower.GraphProbability02.inclusion_003
+#print axioms PerfectPower.GraphProbability02.inclusion_004
+#print axioms PerfectPower.GraphProbability02.inclusion_005
+#print axioms PerfectPower.GraphProbability02.inclusion_006
+#print axioms PerfectPower.GraphProbability02.inclusion_007
+#print axioms PerfectPower.GraphProbability02.inclusion_008
+#print axioms PerfectPower.GraphProbability02.inclusion_009
+#print axioms PerfectPower.GraphProbability02.inclusion_010
+#print axioms PerfectPower.GraphProbability02.inclusion_011
+#print axioms PerfectPower.GraphProbability02.inclusion_012
+#print axioms PerfectPower.GraphProbability02.inclusion_013
+#print axioms PerfectPower.GraphProbability02.inclusion_014
+#print axioms PerfectPower.GraphProbability02.inclusion_015
+#print axioms PerfectPower.GraphProbability02.inclusion_016
+#print axioms PerfectPower.GraphProbability02.inclusion_017
+#print axioms PerfectPower.GraphProbability02.inclusion_018
+#print axioms PerfectPower.GraphProbability02.inclusion_019
+#print axioms PerfectPower.GraphProbability02.inclusion_020
+#print axioms PerfectPower.GraphProbability02.inclusion_021
+#print axioms PerfectPower.GraphProbability02.inclusion_022
+#print axioms PerfectPower.GraphProbability02.inclusion_023
+#print axioms PerfectPower.GraphProbability02.inclusion_024
+#print axioms PerfectPower.GraphProbability02.inclusion_025
+#print axioms PerfectPower.GraphProbability02.inclusion_026
+#print axioms PerfectPower.GraphProbability02.inclusion_027
+#print axioms PerfectPower.GraphProbability02.inclusion_028
+#print axioms PerfectPower.GraphProbability02.inclusion_029
+#print axioms PerfectPower.GraphProbability02.inclusion_030
+#print axioms PerfectPower.GraphProbability02.inclusion_031
+#print axioms PerfectPower.GraphProbability02.inclusion_checked
+#print axioms PerfectPower.GraphProbability02.all_events
+#print axioms PerfectPower.GraphProbability02.probability_bounds
+#print axioms PerfectPower.GraphProbability03.nonnegative
+#print axioms PerfectPower.GraphProbability03.normalized
+#print axioms PerfectPower.GraphProbability03.inclusion_000
+#print axioms PerfectPower.GraphProbability03.inclusion_001
+#print axioms PerfectPower.GraphProbability03.inclusion_002
+#print axioms PerfectPower.GraphProbability03.inclusion_003
+#print axioms PerfectPower.GraphProbability03.inclusion_004
+#print axioms PerfectPower.GraphProbability03.inclusion_005
+#print axioms PerfectPower.GraphProbability03.inclusion_006
+#print axioms PerfectPower.GraphProbability03.inclusion_007
+#print axioms PerfectPower.GraphProbability03.inclusion_008
+#print axioms PerfectPower.GraphProbability03.inclusion_009
+#print axioms PerfectPower.GraphProbability03.inclusion_010
+#print axioms PerfectPower.GraphProbability03.inclusion_011
+#print axioms PerfectPower.GraphProbability03.inclusion_012
+#print axioms PerfectPower.GraphProbability03.inclusion_013
+#print axioms PerfectPower.GraphProbability03.inclusion_014
+#print axioms PerfectPower.GraphProbability03.inclusion_015
+#print axioms PerfectPower.GraphProbability03.inclusion_016
+#print axioms PerfectPower.GraphProbability03.inclusion_017
+#print axioms PerfectPower.GraphProbability03.inclusion_018
+#print axioms PerfectPower.GraphProbability03.inclusion_019
+#print axioms PerfectPower.GraphProbability03.inclusion_020
+#print axioms PerfectPower.GraphProbability03.inclusion_021
+#print axioms PerfectPower.GraphProbability03.inclusion_022
+#print axioms PerfectPower.GraphProbability03.inclusion_023
+#print axioms PerfectPower.GraphProbability03.inclusion_024
+#print axioms PerfectPower.GraphProbability03.inclusion_025
+#print axioms PerfectPower.GraphProbability03.inclusion_026
+#print axioms PerfectPower.GraphProbability03.inclusion_027
+#print axioms PerfectPower.GraphProbability03.inclusion_028
+#print axioms PerfectPower.GraphProbability03.inclusion_029
+#print axioms PerfectPower.GraphProbability03.inclusion_030
+#print axioms PerfectPower.GraphProbability03.inclusion_031
+#print axioms PerfectPower.GraphProbability03.inclusion_032
+#print axioms PerfectPower.GraphProbability03.inclusion_033
+#print axioms PerfectPower.GraphProbability03.inclusion_034
+#print axioms PerfectPower.GraphProbability03.inclusion_035
+#print axioms PerfectPower.GraphProbability03.inclusion_036
+#print axioms PerfectPower.GraphProbability03.inclusion_037
+#print axioms PerfectPower.GraphProbability03.inclusion_038
+#print axioms PerfectPower.GraphProbability03.inclusion_039
+#print axioms PerfectPower.GraphProbability03.inclusion_040
+#print axioms PerfectPower.GraphProbability03.inclusion_041
+#print axioms PerfectPower.GraphProbability03.inclusion_042
+#print axioms PerfectPower.GraphProbability03.inclusion_043
+#print axioms PerfectPower.GraphProbability03.inclusion_044
+#print axioms PerfectPower.GraphProbability03.inclusion_045
+#print axioms PerfectPower.GraphProbability03.inclusion_046
+#print axioms PerfectPower.GraphProbability03.inclusion_047
+#print axioms PerfectPower.GraphProbability03.inclusion_048
+#print axioms PerfectPower.GraphProbability03.inclusion_049
+#print axioms PerfectPower.GraphProbability03.inclusion_050
+#print axioms PerfectPower.GraphProbability03.inclusion_051
+#print axioms PerfectPower.GraphProbability03.inclusion_052
+#print axioms PerfectPower.GraphProbability03.inclusion_053
+#print axioms PerfectPower.GraphProbability03.inclusion_054
+#print axioms PerfectPower.GraphProbability03.inclusion_055
+#print axioms PerfectPower.GraphProbability03.inclusion_056
+#print axioms PerfectPower.GraphProbability03.inclusion_057
+#print axioms PerfectPower.GraphProbability03.inclusion_058
+#print axioms PerfectPower.GraphProbability03.inclusion_059
+#print axioms PerfectPower.GraphProbability03.inclusion_060
+#print axioms PerfectPower.GraphProbability03.inclusion_061
+#print axioms PerfectPower.GraphProbability03.inclusion_062
+#print axioms PerfectPower.GraphProbability03.inclusion_063
+#print axioms PerfectPower.GraphProbability03.inclusion_checked
+#print axioms PerfectPower.GraphProbability03.all_events
+#print axioms PerfectPower.GraphProbability03.probability_bounds
+#print axioms PerfectPower.GraphProbability04.nonnegative
+#print axioms PerfectPower.GraphProbability04.normalized
+#print axioms PerfectPower.GraphProbability04.inclusion_000
+#print axioms PerfectPower.GraphProbability04.inclusion_001
+#print axioms PerfectPower.GraphProbability04.inclusion_002
+#print axioms PerfectPower.GraphProbability04.inclusion_003
+#print axioms PerfectPower.GraphProbability04.inclusion_004
+#print axioms PerfectPower.GraphProbability04.inclusion_005
+#print axioms PerfectPower.GraphProbability04.inclusion_006
+#print axioms PerfectPower.GraphProbability04.inclusion_007
+#print axioms PerfectPower.GraphProbability04.inclusion_008
+#print axioms PerfectPower.GraphProbability04.inclusion_009
+#print axioms PerfectPower.GraphProbability04.inclusion_010
+#print axioms PerfectPower.GraphProbability04.inclusion_011
+#print axioms PerfectPower.GraphProbability04.inclusion_012
+#print axioms PerfectPower.GraphProbability04.inclusion_013
+#print axioms PerfectPower.GraphProbability04.inclusion_014
+#print axioms PerfectPower.GraphProbability04.inclusion_015
+#print axioms PerfectPower.GraphProbability04.inclusion_016
+#print axioms PerfectPower.GraphProbability04.inclusion_017
+#print axioms PerfectPower.GraphProbability04.inclusion_018
+#print axioms PerfectPower.GraphProbability04.inclusion_019
+#print axioms PerfectPower.GraphProbability04.inclusion_020
+#print axioms PerfectPower.GraphProbability04.inclusion_021
+#print axioms PerfectPower.GraphProbability04.inclusion_022
+#print axioms PerfectPower.GraphProbability04.inclusion_023
+#print axioms PerfectPower.GraphProbability04.inclusion_024
+#print axioms PerfectPower.GraphProbability04.inclusion_025
+#print axioms PerfectPower.GraphProbability04.inclusion_026
+#print axioms PerfectPower.GraphProbability04.inclusion_027
+#print axioms PerfectPower.GraphProbability04.inclusion_028
+#print axioms PerfectPower.GraphProbability04.inclusion_029
+#print axioms PerfectPower.GraphProbability04.inclusion_030
+#print axioms PerfectPower.GraphProbability04.inclusion_031
+#print axioms PerfectPower.GraphProbability04.inclusion_032
+#print axioms PerfectPower.GraphProbability04.inclusion_033
+#print axioms PerfectPower.GraphProbability04.inclusion_034
+#print axioms PerfectPower.GraphProbability04.inclusion_035
+#print axioms PerfectPower.GraphProbability04.inclusion_036
+#print axioms PerfectPower.GraphProbability04.inclusion_037
+#print axioms PerfectPower.GraphProbability04.inclusion_038
+#print axioms PerfectPower.GraphProbability04.inclusion_039
+#print axioms PerfectPower.GraphProbability04.inclusion_040
+#print axioms PerfectPower.GraphProbability04.inclusion_041
+#print axioms PerfectPower.GraphProbability04.inclusion_042
+#print axioms PerfectPower.GraphProbability04.inclusion_043
+#print axioms PerfectPower.GraphProbability04.inclusion_044
+#print axioms PerfectPower.GraphProbability04.inclusion_045
+#print axioms PerfectPower.GraphProbability04.inclusion_046
+#print axioms PerfectPower.GraphProbability04.inclusion_047
+#print axioms PerfectPower.GraphProbability04.inclusion_048
+#print axioms PerfectPower.GraphProbability04.inclusion_049
+#print axioms PerfectPower.GraphProbability04.inclusion_050
+#print axioms PerfectPower.GraphProbability04.inclusion_051
+#print axioms PerfectPower.GraphProbability04.inclusion_052
+#print axioms PerfectPower.GraphProbability04.inclusion_053
+#print axioms PerfectPower.GraphProbability04.inclusion_054
+#print axioms PerfectPower.GraphProbability04.inclusion_055
+#print axioms PerfectPower.GraphProbability04.inclusion_056
+#print axioms PerfectPower.GraphProbability04.inclusion_057
+#print axioms PerfectPower.GraphProbability04.inclusion_058
+#print axioms PerfectPower.GraphProbability04.inclusion_059
+#print axioms PerfectPower.GraphProbability04.inclusion_060
+#print axioms PerfectPower.GraphProbability04.inclusion_061
+#print axioms PerfectPower.GraphProbability04.inclusion_062
+#print axioms PerfectPower.GraphProbability04.inclusion_063
+#print axioms PerfectPower.GraphProbability04.inclusion_064
+#print axioms PerfectPower.GraphProbability04.inclusion_065
+#print axioms PerfectPower.GraphProbability04.inclusion_066
+#print axioms PerfectPower.GraphProbability04.inclusion_067
+#print axioms PerfectPower.GraphProbability04.inclusion_068
+#print axioms PerfectPower.GraphProbability04.inclusion_069
+#print axioms PerfectPower.GraphProbability04.inclusion_070
+#print axioms PerfectPower.GraphProbability04.inclusion_071
+#print axioms PerfectPower.GraphProbability04.inclusion_072
+#print axioms PerfectPower.GraphProbability04.inclusion_073
+#print axioms PerfectPower.GraphProbability04.inclusion_074
+#print axioms PerfectPower.GraphProbability04.inclusion_075
+#print axioms PerfectPower.GraphProbability04.inclusion_076
+#print axioms PerfectPower.GraphProbability04.inclusion_077
+#print axioms PerfectPower.GraphProbability04.inclusion_078
+#print axioms PerfectPower.GraphProbability04.inclusion_079
+#print axioms PerfectPower.GraphProbability04.inclusion_080
+#print axioms PerfectPower.GraphProbability04.inclusion_081
+#print axioms PerfectPower.GraphProbability04.inclusion_082
+#print axioms PerfectPower.GraphProbability04.inclusion_083
+#print axioms PerfectPower.GraphProbability04.inclusion_084
+#print axioms PerfectPower.GraphProbability04.inclusion_085
+#print axioms PerfectPower.GraphProbability04.inclusion_086
+#print axioms PerfectPower.GraphProbability04.inclusion_087
+#print axioms PerfectPower.GraphProbability04.inclusion_088
+#print axioms PerfectPower.GraphProbability04.inclusion_089
+#print axioms PerfectPower.GraphProbability04.inclusion_090
+#print axioms PerfectPower.GraphProbability04.inclusion_091
+#print axioms PerfectPower.GraphProbability04.inclusion_092
+#print axioms PerfectPower.GraphProbability04.inclusion_093
+#print axioms PerfectPower.GraphProbability04.inclusion_094
+#print axioms PerfectPower.GraphProbability04.inclusion_095
+#print axioms PerfectPower.GraphProbability04.inclusion_096
+#print axioms PerfectPower.GraphProbability04.inclusion_097
+#print axioms PerfectPower.GraphProbability04.inclusion_098
+#print axioms PerfectPower.GraphProbability04.inclusion_099
+#print axioms PerfectPower.GraphProbability04.inclusion_100
+#print axioms PerfectPower.GraphProbability04.inclusion_101
+#print axioms PerfectPower.GraphProbability04.inclusion_102
+#print axioms PerfectPower.GraphProbability04.inclusion_103
+#print axioms PerfectPower.GraphProbability04.inclusion_104
+#print axioms PerfectPower.GraphProbability04.inclusion_105
+#print axioms PerfectPower.GraphProbability04.inclusion_106
+#print axioms PerfectPower.GraphProbability04.inclusion_107
+#print axioms PerfectPower.GraphProbability04.inclusion_108
+#print axioms PerfectPower.GraphProbability04.inclusion_109
+#print axioms PerfectPower.GraphProbability04.inclusion_110
+#print axioms PerfectPower.GraphProbability04.inclusion_111
+#print axioms PerfectPower.GraphProbability04.inclusion_112
+#print axioms PerfectPower.GraphProbability04.inclusion_113
+#print axioms PerfectPower.GraphProbability04.inclusion_114
+#print axioms PerfectPower.GraphProbability04.inclusion_115
+#print axioms PerfectPower.GraphProbability04.inclusion_116
+#print axioms PerfectPower.GraphProbability04.inclusion_117
+#print axioms PerfectPower.GraphProbability04.inclusion_118
+#print axioms PerfectPower.GraphProbability04.inclusion_119
+#print axioms PerfectPower.GraphProbability04.inclusion_120
+#print axioms PerfectPower.GraphProbability04.inclusion_121
+#print axioms PerfectPower.GraphProbability04.inclusion_122
+#print axioms PerfectPower.GraphProbability04.inclusion_123
+#print axioms PerfectPower.GraphProbability04.inclusion_124
+#print axioms PerfectPower.GraphProbability04.inclusion_125
+#print axioms PerfectPower.GraphProbability04.inclusion_126
+#print axioms PerfectPower.GraphProbability04.inclusion_127
+#print axioms PerfectPower.GraphProbability04.inclusion_checked
+#print axioms PerfectPower.GraphProbability04.all_events
+#print axioms PerfectPower.GraphProbability04.probability_bounds
+#print axioms PerfectPower.GraphProbability05.nonnegative
+#print axioms PerfectPower.GraphProbability05.normalized
+#print axioms PerfectPower.GraphProbability05.inclusion_000
+#print axioms PerfectPower.GraphProbability05.inclusion_001
+#print axioms PerfectPower.GraphProbability05.inclusion_002
+#print axioms PerfectPower.GraphProbability05.inclusion_003
+#print axioms PerfectPower.GraphProbability05.inclusion_004
+#print axioms PerfectPower.GraphProbability05.inclusion_005
+#print axioms PerfectPower.GraphProbability05.inclusion_006
+#print axioms PerfectPower.GraphProbability05.inclusion_007
+#print axioms PerfectPower.GraphProbability05.inclusion_008
+#print axioms PerfectPower.GraphProbability05.inclusion_009
+#print axioms PerfectPower.GraphProbability05.inclusion_010
+#print axioms PerfectPower.GraphProbability05.inclusion_011
+#print axioms PerfectPower.GraphProbability05.inclusion_012
+#print axioms PerfectPower.GraphProbability05.inclusion_013
+#print axioms PerfectPower.GraphProbability05.inclusion_014
+#print axioms PerfectPower.GraphProbability05.inclusion_015
+#print axioms PerfectPower.GraphProbability05.inclusion_016
+#print axioms PerfectPower.GraphProbability05.inclusion_017
+#print axioms PerfectPower.GraphProbability05.inclusion_018
+#print axioms PerfectPower.GraphProbability05.inclusion_019
+#print axioms PerfectPower.GraphProbability05.inclusion_020
+#print axioms PerfectPower.GraphProbability05.inclusion_021
+#print axioms PerfectPower.GraphProbability05.inclusion_022
+#print axioms PerfectPower.GraphProbability05.inclusion_023
+#print axioms PerfectPower.GraphProbability05.inclusion_024
+#print axioms PerfectPower.GraphProbability05.inclusion_025
+#print axioms PerfectPower.GraphProbability05.inclusion_026
+#print axioms PerfectPower.GraphProbability05.inclusion_027
+#print axioms PerfectPower.GraphProbability05.inclusion_028
+#print axioms PerfectPower.GraphProbability05.inclusion_029
+#print axioms PerfectPower.GraphProbability05.inclusion_030
+#print axioms PerfectPower.GraphProbability05.inclusion_031
+#print axioms PerfectPower.GraphProbability05.inclusion_032
+#print axioms PerfectPower.GraphProbability05.inclusion_033
+#print axioms PerfectPower.GraphProbability05.inclusion_034
+#print axioms PerfectPower.GraphProbability05.inclusion_035
+#print axioms PerfectPower.GraphProbability05.inclusion_036
+#print axioms PerfectPower.GraphProbability05.inclusion_037
+#print axioms PerfectPower.GraphProbability05.inclusion_038
+#print axioms PerfectPower.GraphProbability05.inclusion_039
+#print axioms PerfectPower.GraphProbability05.inclusion_040
+#print axioms PerfectPower.GraphProbability05.inclusion_041
+#print axioms PerfectPower.GraphProbability05.inclusion_042
+#print axioms PerfectPower.GraphProbability05.inclusion_043
+#print axioms PerfectPower.GraphProbability05.inclusion_044
+#print axioms PerfectPower.GraphProbability05.inclusion_045
+#print axioms PerfectPower.GraphProbability05.inclusion_046
+#print axioms PerfectPower.GraphProbability05.inclusion_047
+#print axioms PerfectPower.GraphProbability05.inclusion_048
+#print axioms PerfectPower.GraphProbability05.inclusion_049
+#print axioms PerfectPower.GraphProbability05.inclusion_050
+#print axioms PerfectPower.GraphProbability05.inclusion_051
+#print axioms PerfectPower.GraphProbability05.inclusion_052
+#print axioms PerfectPower.GraphProbability05.inclusion_053
+#print axioms PerfectPower.GraphProbability05.inclusion_054
+#print axioms PerfectPower.GraphProbability05.inclusion_055
+#print axioms PerfectPower.GraphProbability05.inclusion_056
+#print axioms PerfectPower.GraphProbability05.inclusion_057
+#print axioms PerfectPower.GraphProbability05.inclusion_058
+#print axioms PerfectPower.GraphProbability05.inclusion_059
+#print axioms PerfectPower.GraphProbability05.inclusion_060
+#print axioms PerfectPower.GraphProbability05.inclusion_061
+#print axioms PerfectPower.GraphProbability05.inclusion_062
+#print axioms PerfectPower.GraphProbability05.inclusion_063
+#print axioms PerfectPower.GraphProbability05.inclusion_checked
+#print axioms PerfectPower.GraphProbability05.all_events
+#print axioms PerfectPower.GraphProbability05.probability_bounds
+#print axioms PerfectPower.GraphProbability06.nonnegative
+#print axioms PerfectPower.GraphProbability06.normalized
+#print axioms PerfectPower.GraphProbability06.inclusion_000
+#print axioms PerfectPower.GraphProbability06.inclusion_001
+#print axioms PerfectPower.GraphProbability06.inclusion_002
+#print axioms PerfectPower.GraphProbability06.inclusion_003
+#print axioms PerfectPower.GraphProbability06.inclusion_004
+#print axioms PerfectPower.GraphProbability06.inclusion_005
+#print axioms PerfectPower.GraphProbability06.inclusion_006
+#print axioms PerfectPower.GraphProbability06.inclusion_007
+#print axioms PerfectPower.GraphProbability06.inclusion_008
+#print axioms PerfectPower.GraphProbability06.inclusion_009
+#print axioms PerfectPower.GraphProbability06.inclusion_010
+#print axioms PerfectPower.GraphProbability06.inclusion_011
+#print axioms PerfectPower.GraphProbability06.inclusion_012
+#print axioms PerfectPower.GraphProbability06.inclusion_013
+#print axioms PerfectPower.GraphProbability06.inclusion_014
+#print axioms PerfectPower.GraphProbability06.inclusion_015
+#print axioms PerfectPower.GraphProbability06.inclusion_016
+#print axioms PerfectPower.GraphProbability06.inclusion_017
+#print axioms PerfectPower.GraphProbability06.inclusion_018
+#print axioms PerfectPower.GraphProbability06.inclusion_019
+#print axioms PerfectPower.GraphProbability06.inclusion_020
+#print axioms PerfectPower.GraphProbability06.inclusion_021
+#print axioms PerfectPower.GraphProbability06.inclusion_022
+#print axioms PerfectPower.GraphProbability06.inclusion_023
+#print axioms PerfectPower.GraphProbability06.inclusion_024
+#print axioms PerfectPower.GraphProbability06.inclusion_025
+#print axioms PerfectPower.GraphProbability06.inclusion_026
+#print axioms PerfectPower.GraphProbability06.inclusion_027
+#print axioms PerfectPower.GraphProbability06.inclusion_028
+#print axioms PerfectPower.GraphProbability06.inclusion_029
+#print axioms PerfectPower.GraphProbability06.inclusion_030
+#print axioms PerfectPower.GraphProbability06.inclusion_031
+#print axioms PerfectPower.GraphProbability06.inclusion_checked
+#print axioms PerfectPower.GraphProbability06.all_events
+#print axioms PerfectPower.GraphProbability06.probability_bounds
+#print axioms PerfectPower.GraphProbability07.nonnegative
+#print axioms PerfectPower.GraphProbability07.normalized
+#print axioms PerfectPower.GraphProbability07.inclusion_000
+#print axioms PerfectPower.GraphProbability07.inclusion_001
+#print axioms PerfectPower.GraphProbability07.inclusion_002
+#print axioms PerfectPower.GraphProbability07.inclusion_003
+#print axioms PerfectPower.GraphProbability07.inclusion_004
+#print axioms PerfectPower.GraphProbability07.inclusion_005
+#print axioms PerfectPower.GraphProbability07.inclusion_006
+#print axioms PerfectPower.GraphProbability07.inclusion_007
+#print axioms PerfectPower.GraphProbability07.inclusion_008
+#print axioms PerfectPower.GraphProbability07.inclusion_009
+#print axioms PerfectPower.GraphProbability07.inclusion_010
+#print axioms PerfectPower.GraphProbability07.inclusion_011
+#print axioms PerfectPower.GraphProbability07.inclusion_012
+#print axioms PerfectPower.GraphProbability07.inclusion_013
+#print axioms PerfectPower.GraphProbability07.inclusion_014
+#print axioms PerfectPower.GraphProbability07.inclusion_015
+#print axioms PerfectPower.GraphProbability07.inclusion_checked
+#print axioms PerfectPower.GraphProbability07.all_events
+#print axioms PerfectPower.GraphProbability07.probability_bounds
+#print axioms PerfectPower.GraphProbability08.nonnegative
+#print axioms PerfectPower.GraphProbability08.normalized
+#print axioms PerfectPower.GraphProbability08.inclusion_000
+#print axioms PerfectPower.GraphProbability08.inclusion_001
+#print axioms PerfectPower.GraphProbability08.inclusion_002
+#print axioms PerfectPower.GraphProbability08.inclusion_003
+#print axioms PerfectPower.GraphProbability08.inclusion_004
+#print axioms PerfectPower.GraphProbability08.inclusion_005
+#print axioms PerfectPower.GraphProbability08.inclusion_006
+#print axioms PerfectPower.GraphProbability08.inclusion_007
+#print axioms PerfectPower.GraphProbability08.inclusion_008
+#print axioms PerfectPower.GraphProbability08.inclusion_009
+#print axioms PerfectPower.GraphProbability08.inclusion_010
+#print axioms PerfectPower.GraphProbability08.inclusion_011
+#print axioms PerfectPower.GraphProbability08.inclusion_012
+#print axioms PerfectPower.GraphProbability08.inclusion_013
+#print axioms PerfectPower.GraphProbability08.inclusion_014
+#print axioms PerfectPower.GraphProbability08.inclusion_015
+#print axioms PerfectPower.GraphProbability08.inclusion_016
+#print axioms PerfectPower.GraphProbability08.inclusion_017
+#print axioms PerfectPower.GraphProbability08.inclusion_018
+#print axioms PerfectPower.GraphProbability08.inclusion_019
+#print axioms PerfectPower.GraphProbability08.inclusion_020
+#print axioms PerfectPower.GraphProbability08.inclusion_021
+#print axioms PerfectPower.GraphProbability08.inclusion_022
+#print axioms PerfectPower.GraphProbability08.inclusion_023
+#print axioms PerfectPower.GraphProbability08.inclusion_024
+#print axioms PerfectPower.GraphProbability08.inclusion_025
+#print axioms PerfectPower.GraphProbability08.inclusion_026
+#print axioms PerfectPower.GraphProbability08.inclusion_027
+#print axioms PerfectPower.GraphProbability08.inclusion_028
+#print axioms PerfectPower.GraphProbability08.inclusion_029
+#print axioms PerfectPower.GraphProbability08.inclusion_030
+#print axioms PerfectPower.GraphProbability08.inclusion_031
+#print axioms PerfectPower.GraphProbability08.inclusion_checked
+#print axioms PerfectPower.GraphProbability08.all_events
+#print axioms PerfectPower.GraphProbability08.probability_bounds
+#print axioms PerfectPower.GraphProbability09.nonnegative
+#print axioms PerfectPower.GraphProbability09.normalized
+#print axioms PerfectPower.GraphProbability09.inclusion_000
+#print axioms PerfectPower.GraphProbability09.inclusion_001
+#print axioms PerfectPower.GraphProbability09.inclusion_002
+#print axioms PerfectPower.GraphProbability09.inclusion_003
+#print axioms PerfectPower.GraphProbability09.inclusion_004
+#print axioms PerfectPower.GraphProbability09.inclusion_005
+#print axioms PerfectPower.GraphProbability09.inclusion_006
+#print axioms PerfectPower.GraphProbability09.inclusion_007
+#print axioms PerfectPower.GraphProbability09.inclusion_checked
+#print axioms PerfectPower.GraphProbability09.all_events
+#print axioms PerfectPower.GraphProbability09.probability_bounds
+#print axioms PerfectPower.GraphProbability10.nonnegative
+#print axioms PerfectPower.GraphProbability10.normalized
+#print axioms PerfectPower.GraphProbability10.inclusion_000
+#print axioms PerfectPower.GraphProbability10.inclusion_001
+#print axioms PerfectPower.GraphProbability10.inclusion_002
+#print axioms PerfectPower.GraphProbability10.inclusion_003
+#print axioms PerfectPower.GraphProbability10.inclusion_004
+#print axioms PerfectPower.GraphProbability10.inclusion_005
+#print axioms PerfectPower.GraphProbability10.inclusion_006
+#print axioms PerfectPower.GraphProbability10.inclusion_007
+#print axioms PerfectPower.GraphProbability10.inclusion_008
+#print axioms PerfectPower.GraphProbability10.inclusion_009
+#print axioms PerfectPower.GraphProbability10.inclusion_010
+#print axioms PerfectPower.GraphProbability10.inclusion_011
+#print axioms PerfectPower.GraphProbability10.inclusion_012
+#print axioms PerfectPower.GraphProbability10.inclusion_013
+#print axioms PerfectPower.GraphProbability10.inclusion_014
+#print axioms PerfectPower.GraphProbability10.inclusion_015
+#print axioms PerfectPower.GraphProbability10.inclusion_checked
+#print axioms PerfectPower.GraphProbability10.all_events
+#print axioms PerfectPower.GraphProbability10.probability_bounds
+#print axioms PerfectPower.GraphProbability11.nonnegative
+#print axioms PerfectPower.GraphProbability11.normalized
+#print axioms PerfectPower.GraphProbability11.inclusion_000
+#print axioms PerfectPower.GraphProbability11.inclusion_001
+#print axioms PerfectPower.GraphProbability11.inclusion_002
+#print axioms PerfectPower.GraphProbability11.inclusion_003
+#print axioms PerfectPower.GraphProbability11.inclusion_004
+#print axioms PerfectPower.GraphProbability11.inclusion_005
+#print axioms PerfectPower.GraphProbability11.inclusion_006
+#print axioms PerfectPower.GraphProbability11.inclusion_007
+#print axioms PerfectPower.GraphProbability11.inclusion_008
+#print axioms PerfectPower.GraphProbability11.inclusion_009
+#print axioms PerfectPower.GraphProbability11.inclusion_010
+#print axioms PerfectPower.GraphProbability11.inclusion_011
+#print axioms PerfectPower.GraphProbability11.inclusion_012
+#print axioms PerfectPower.GraphProbability11.inclusion_013
+#print axioms PerfectPower.GraphProbability11.inclusion_014
+#print axioms PerfectPower.GraphProbability11.inclusion_015
+#print axioms PerfectPower.GraphProbability11.inclusion_checked
+#print axioms PerfectPower.GraphProbability11.all_events
+#print axioms PerfectPower.GraphProbability11.probability_bounds
+#print axioms PerfectPower.GraphProbability12.nonnegative
+#print axioms PerfectPower.GraphProbability12.normalized
+#print axioms PerfectPower.GraphProbability12.inclusion_000
+#print axioms PerfectPower.GraphProbability12.inclusion_001
+#print axioms PerfectPower.GraphProbability12.inclusion_002
+#print axioms PerfectPower.GraphProbability12.inclusion_003
+#print axioms PerfectPower.GraphProbability12.inclusion_004
+#print axioms PerfectPower.GraphProbability12.inclusion_005
+#print axioms PerfectPower.GraphProbability12.inclusion_006
+#print axioms PerfectPower.GraphProbability12.inclusion_007
+#print axioms PerfectPower.GraphProbability12.inclusion_checked
+#print axioms PerfectPower.GraphProbability12.all_events
+#print axioms PerfectPower.GraphProbability12.probability_bounds
+#print axioms PerfectPower.GraphProbability13.nonnegative
+#print axioms PerfectPower.GraphProbability13.normalized
+#print axioms PerfectPower.GraphProbability13.inclusion_000
+#print axioms PerfectPower.GraphProbability13.inclusion_001
+#print axioms PerfectPower.GraphProbability13.inclusion_002
+#print axioms PerfectPower.GraphProbability13.inclusion_003
+#print axioms PerfectPower.GraphProbability13.inclusion_checked
+#print axioms PerfectPower.GraphProbability13.all_events
+#print axioms PerfectPower.GraphProbability13.probability_bounds
