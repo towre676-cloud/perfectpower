@@ -332,3 +332,18 @@ import PerfectPower.Tactic.RungePolynomial
 import PerfectPower.NativePowerRoots
 import PerfectPower.RungePower
 import PerfectPower.Tactic.RungePower
+
+import PerfectPower.WeightedHodge
+import PerfectPower.PowerComposition
+import PerfectPower.DivisorCoordinates
+import PerfectPower.PolyhedralVoronoi
+import PerfectPower.SymplecticTransport
+import PerfectPower.FiniteWeilAlgebra
+import PerfectPower.PowerSumRecovery
+import PerfectPower.PSGRecovery
+import PerfectPower.QuarticPowerAtlas
+import PerfectPower.CanonicalMetric
+
+import PerfectPower.AffinePowerComposition
+import PerfectPower.ResidueCover
+import PerfectPower.IntegerOptimization

@@ -1,0 +1,44 @@
+{
+  "schema": "parallel-lean-verification/1",
+  "baseline_commit": "62caf6a50382430f3ff1420317608675645b15ae",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "status": "COMPLETE_FOCUSED_KERNEL_CHECK",
+  "compiled_new_modules": 177,
+  "audited_declarations": 12835,
+  "audited_groups": 577,
+  "bundle_custom_axiom_probe": "A deliberately inserted axiom appeared in the proof-carrier closure; rejection strategy checked.",
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "plain_lift_packet_checks": 6160,
+  "affine_lift_packet_checks": 6160,
+  "complete_registry_cases": 3080,
+  "coordinate_exponents": "all nonzero natural exponents, with nonzero affine slope and scale as required",
+  "surface_matrix_records": 7,
+  "hodge_genera": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    7
+  ],
+  "input_manifest_sha256": "6b2ab518e9812b4b63143f1462422c6265d7470ff0d2e8ff62ca6c2d68e75548",
+  "axiom_log_sha256": "d6e68d548b1bab8680c649a298a77d1e3c37ba457919d2fc85f4f83ac3ed7fe6",
+  "python_tests": {
+    "run": 640,
+    "passed": 636,
+    "skipped": 4,
+    "suites": [
+      608,
+      14,
+      10,
+      8
+    ]
+  },
+  "full_historical_repository_build": "not rerun; focused new-module compilation and exact-name axiom audit performed",
+  "scope": "Literal lifts relative to previously kernel-checked outer packets; generic finite solver completeness is independently proved. Numerical periods, normal-form discovery, optimizer replay and global analytic bounds are not certified.",
+  "resource_strategy": "Sequential row-block matrix reductions; genus-seven scalar entry proofs."
+}
