@@ -1,0 +1,3 @@
+(set-logic QF_LIA)
+(assert false)
+(check-sat)

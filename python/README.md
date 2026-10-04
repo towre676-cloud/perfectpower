@@ -48,3 +48,17 @@ Each command takes `--coeff` and `--d`. For an end-to-end example, see `docs/TUT
 `covering` replays Fisher's explicit 571a1 example using exact cubic-algebra identities, local witnesses, Hensel lifting and Hilbert symbols; global interpretation is source-backed, not Lean-certified. Its two-isogeny covering functions check rational point maps. `integral_lattice` computes determinantal divisors, Smith factors, prime-power lengths and inverse-image congruences; `orbit_lattice.order_image_allowed` integrates those congruences with the existing unit sieve. `decomposition` checks supplied compositions without unjustified outer cancellation. Console commands are `covering-replay` and `lattice`. See [the complete mathematical chapter](../docs/COVERING_LATTICE_MONOGRAPH.md) and `python/covering_lattice_receipt.py`.
 
 The compiler now recognizes effective quartic linear perturbations and square-leading quartics with nonzero normalized remainder. `python -m perfectpower solve --expr='n**4+n**3+n**2+n+1' --d=2 --N=1000000` returns the complete positive-input answer. `python -m perfectpower lean --coeff=1,1,1,1,1 --d=2 --name=repunit` emits a kernel-checked native point theorem. See `docs/QUARTIC_EFFECTIVE_SOLVER_MONOGRAPH.md` and the two new check scripts.
+
+
+### Complete integer lifts and query projection
+
+`integer_lifting.solve_integer(A,b)` returns every integer solution as a particular vector plus a saturated integer kernel, or a concrete divisibility/image obstruction. `integral_task_section`, `integral_intertwiners` and `compare_column_lattices` use the same replayable unimodular certificates. These are exact Python calculations, not new Lean proofs.
+
+```sh
+PYTHONPATH=python python -m perfectpower integer-lift --matrix '[[2,3]]' --vector '[1]'
+PYTHONPATH=python python -m perfectpower integral-task-section --carrier '[[2,3]]' --target '[[1,5]]'
+PYTHONPATH=python python -m perfectpower integer-project source.smt2 --output projected.smt2 --certificate-output certificate.json
+python python/recover_integer_lifting.py --z3
+```
+
+The query route eliminates direct affine equalities over the integers and preserves every residual constraint. Its model-lifting API reconstructs original coordinates from fresh integer parameters. See [the complete explanation](../docs/INTEGER_LIFTING_MONOGRAPH.md).

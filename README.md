@@ -2,6 +2,8 @@
 
 Start with the [three end-to-end examples](docs/SHOWCASE_MONOGRAPH.md): ten complete nonlinear integer pairs near 10³⁰, exact square-triangular counts and residue filters under a 1,000-digit bound, and elimination of a complete arithmetic relation from whole SMT queries. Run `python python/run_showcase.py` to rebuild their results and standalone programs.
 
+The [integer lifting monograph](docs/INTEGER_LIFTING_MONOGRAPH.md) completes the rational operator interface: all whole-number lifts, saturated integer kernels, simultaneous integral intertwiners, embedded lattice comparisons and exact affine elimination from whole queries. Run `python python/recover_integer_lifting.py` to replay the examples and all 23 existing order maps.
+
 The [operator recovery monograph](docs/OPERATOR_RECOVERY_MONOGRAPH.md) adds constructive task sections, exact invisible-state witnesses, simultaneous intertwiners and Fitting decompositions. It processes all 135 recovered recurrence models, establishes all-future equality for seven supplied generating-function models, and applies the recovered carriers to all seven field-756 Thue packets, recovering their 14 listed points in a signed unit box.
 
 The [sequence recovery monograph](docs/SEQUENCE_RECOVERY_MONOGRAPH.md) recovers reusable machinery from the Padovan, tube-operator, Wilson and Formation work: exact signed recurrences, bounded modular reconstruction, formal differential operators, quotient projectors and phase-sensitive finite subgroup censuses. The new sequence atlas checks all 149 staged OEIS sequence files and records 135 finite-prefix recurrence candidates, with seven supplied generating-function bridges.

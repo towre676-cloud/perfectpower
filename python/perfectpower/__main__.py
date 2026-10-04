@@ -70,6 +70,19 @@ def main():
     p.add_argument('--vector', type=json.loads, help='JSON integer vector to pull back')
     p.add_argument('--prime', type=int, help='optional prime-power torsion profile')
     p.add_argument('--minor-limit', type=int, default=100_000)
+    p = sub.add_parser('integer-lift', help='complete integral fibre with a replayable Smith certificate')
+    p.add_argument('--matrix', required=True, type=json.loads)
+    p.add_argument('--vector', required=True, type=json.loads)
+    p.add_argument('--operation-limit', type=int, default=100_000)
+    p = sub.add_parser('integral-task-section', help='construct every integral target lift through a carrier')
+    p.add_argument('--target', required=True, type=json.loads)
+    p.add_argument('--carrier', required=True, type=json.loads)
+    p.add_argument('--operation-limit', type=int, default=100_000)
+    p = sub.add_parser('integer-project', help='eliminate affine equalities with exact integer parameters')
+    p.add_argument('source', type=Path)
+    p.add_argument('--output', required=True, type=Path)
+    p.add_argument('--certificate-output', type=Path)
+    p.add_argument('--operation-limit', type=int, default=100_000)
     p = sub.add_parser('recurrence', help='execute an exact supplied recurrence')
     p.add_argument('--coeff', required=True, type=coefficients)
     p.add_argument('--initial', required=True, type=coefficients)
@@ -143,6 +156,21 @@ def main():
     if args.command == 'covering-replay':
         from .covering import fisher_571_replay
         print(json.dumps(fisher_571_replay(),indent=2))
+        return
+    if args.command in ('integer-lift','integral-task-section','integer-project'):
+        from .integer_lifting import solve_integer,integral_task_section
+        if args.command=='integer-lift':
+            out=solve_integer(args.matrix,args.vector,operation_limit=args.operation_limit)
+        elif args.command=='integral-task-section':
+            out=integral_task_section(args.target,args.carrier,operation_limit=args.operation_limit)
+        else:
+            from .integer_projection import project_integer_query
+            projection=project_integer_query(args.source.read_text(),operation_limit=args.operation_limit)
+            args.output.write_text(projection.smt)
+            out={'symbols':projection.symbols,'parameters':projection.parameters,
+                 'bindings':projection.bindings,'linear':projection.linear,'solution':projection.solution}
+            if args.certificate_output: args.certificate_output.write_text(json.dumps(out,indent=2)+'\n')
+        print(json.dumps(out,indent=2))
         return
     if args.command == 'lattice':
         from .integral_lattice import smith_invariants,lattice_membership,local_torsion_profile
