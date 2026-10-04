@@ -349,3 +349,7 @@ The [branched-geometry module](docs/BRANCHED_GEOMETRY_MONOGRAPH.md) attaches 12,
 ### Positive geometry and branch degeneration extension
 
 The new [mathematical monograph](docs/POSITIVE_GEOMETRY_MONOGRAPH.md) connects labelled root collisions, associahedral real branch chambers, canonical forms, exact cyclic connection determinant polytopes, period normalization contracts and polynomial Descartes curvature orbits. The deterministic corpus has 1,939 collision strata, 196 connection patterns and 5,438 associahedron faces, with a source-linked connection index over the preceding 12,320 quartic topology records. Run `PYTHONPATH=python python python/build_positive_geometry.py` to rebuild it. These new results are exact Python computations; [the Lean handoff](docs/POSITIVE_GEOMETRY_LEAN_HANDOFF.md) supports separate formalization.
+
+### Explicit differentials and enclosed Legendre periods
+
+The [holomorphic-basis extension](docs/HOLOMORPHIC_BASIS_MONOGRAPH.md) constructs actual differential numerators on normalized cyclic components, including repeated-root cancellations, deck eigenspaces and polynomial differential operators. It connects the quartic and collision atlases to explicit bases. `branched-geometry --differentials` returns formulas; `legendre-period-bounds --lambda 1/2 --terms 80` returns exact rational enclosures of normalized real and imaginary Legendre periods and their ratio. These classical analytic constructions are implemented in Python and are not yet formalized in Lean.

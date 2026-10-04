@@ -1,0 +1,5 @@
+# Explicit holomorphic bases and Legendre interval periods
+
+See [the monograph](../../docs/HOLOMORPHIC_BASIS_MONOGRAPH.md). quartic_characters.json links every existing curve/exponent profile to its deck eigenspace dimensions. representative_bases.json retains actual full differential formulas for twelve representative curves. collision_characters.json links to the positive-geometry collision strata; its polynomials use synthetic distinct cluster locations and describe normalization rather than stable limits. examples.json includes cancellations and an exact supplied-period correction. legendre_period_intervals.json contains rational enclosures of normalized analytic periods, with explicit series-tail bounds.
+
+All new computations carry formalized=false. No new Lean source is included. The classical normalization and Euler-integral arguments are explained in the monograph. Full formulas for any supported input are available through branched-geometry --differentials. Existing checked Lean theorems retain their independent status.

@@ -148,6 +148,10 @@ def main():
     p.add_argument('--k',default=0,type=int)
     p.add_argument('--connection',action='store_true')
     p.add_argument('--cells',action='store_true')
+    p.add_argument('--differentials',action='store_true')
+    p = sub.add_parser('legendre-period-bounds', help='exact rational enclosures of normalized Legendre periods')
+    p.add_argument('--lambda', dest='lam', required=True)
+    p.add_argument('--terms',type=int,default=64)
     from .positive_geometry_cli import add_commands
     add_commands(sub)
     p = sub.add_parser('verify')
@@ -156,12 +160,19 @@ def main():
     from .positive_geometry_cli import dispatch
     if dispatch(args):
         return
+    if args.command == 'legendre-period-bounds':
+        from .legendre_period_bounds import legendre_period_packet
+        print(json.dumps(legendre_period_packet(args.lam,args.terms),indent=2))
+        return
     if args.command == 'branched-geometry':
         from .branched_geometry import profile,faithful_laplacian,cell_surface
         coeff=list(args.coeff);coeff[0]+=args.k
         result=profile(coeff,args.d)
         if args.connection:result['connection']=faithful_laplacian(result['root_multiplicities'],args.d)
         if args.cells:result['cell_model_per_component']=cell_surface(result['genus_per_component'])
+        if args.differentials:
+            from .holomorphic_basis import differential_basis
+            result['holomorphic_basis']=differential_basis(coeff,args.d)
         print(json.dumps(result,indent=2,default=str))
         return
     if args.command == 'divisor-sum':
