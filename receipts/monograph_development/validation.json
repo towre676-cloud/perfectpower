@@ -1,0 +1,75 @@
+{
+  "baseline_commit": "62caf6a50382430f3ff1420317608675645b15ae",
+  "cold_copy": {
+    "all_49_passed": true,
+    "archive_bytes": 20165477,
+    "byte_identical_runner_receipts": [
+      "arithmetic/corpus.json",
+      "arithmetic/hard_examples.json",
+      "arithmetic/corpus_integer_metric.json",
+      "arithmetic/integer_batches.json",
+      "arithmetic/integer_cells.json",
+      "arithmetic/summary.json",
+      "root_and_gap_examples.json",
+      "connection_corpus.json",
+      "large_connection.json",
+      "operator_algebras.json",
+      "summary.json"
+    ],
+    "new_tests": 27,
+    "previous_integrated_tests": 22,
+    "scope": "code and corpus checked before addition of these validation logs/metadata",
+    "standard_library_only": true,
+    "tree": "67bd2a5755a7ed6da6e88ccf261b1c3fff020afe",
+    "working_directory_outside_checkout": true
+  },
+  "concurrent_formalization": {
+    "audited_declarations": 12835,
+    "audited_groups": 577,
+    "commit": "fb20e9fd8dced27829b28a487ad78ef1dada4fd4",
+    "inherited_recorded_compiled_modules": 177,
+    "input_manifest_and_axiom_log_hashes_verified": true,
+    "lean_recompiled_in_this_development": false,
+    "ledger_exact_name_and_axiom_audit_replayed": true,
+    "scope": "Inherited earlier algebra and lifting proofs; not formal verification of the four new Python mechanisms."
+  },
+  "date_utc": "2026-10-04",
+  "deterministic_receipt_sha256": {
+    "arithmetic/corpus.json": "11f6e1092154eb119098ee893fc2527aa8f5d271253069fe874a5e6f5d94a45a",
+    "arithmetic/corpus_integer_metric.json": "4c50c6a73bdbcae57218a9e3a33e478208ff8d468d98098653e6cf28a94bf786",
+    "arithmetic/hard_examples.json": "371baf257666aea6ab807f4786131a11e1a0bbf9fa0c600f76b6de81b11c16c8",
+    "arithmetic/integer_batches.json": "c9ec5db8fa697efc489b6cac1698de486dc176bc9172204a3375a8885b9a4601",
+    "arithmetic/integer_cells.json": "c12411bb96607c66d66a5579a1f61f88d65b3574f1da200111b6b414b5e07186",
+    "arithmetic/summary.json": "57bc9fd6b975739c3ea9e204a7fbc42f8d480c15dd1f84a27e236edce164d7d5",
+    "connection_corpus.json": "8f3696362ebe3940eded24d77dbab5b133f9715b3905d28a425fa1b9b29e5af9",
+    "large_connection.json": "6568bebdc364a104a7ce9a9b00b67739d22ea472edc3b51522c2e41127e448e7",
+    "operator_algebras.json": "8dce785f27319265a3cdff02d511357675a8ff22bdd728c7aa8fc23134fa16e9",
+    "root_and_gap_examples.json": "2a58710ae1f05afae3a3fed46cc97f39e352e2469ada22bdbff8e898a6fcc62b",
+    "summary.json": "704af82c90beaa97447fede6b745c3482b0afd4c5fd1002fb2a36bda8fe97a0d"
+  },
+  "execution_verified": false,
+  "full_python_tests": {
+    "log": "receipts/monograph_development/python_tests.log",
+    "passed": 631,
+    "scope": "Full suite rerun after integration of the concurrent formalization",
+    "seconds": 67.484,
+    "skipped": 4,
+    "tests": 635
+  },
+  "large_monograph_headings_indexed": 403,
+  "large_monograph_text_lines_scanned": 14110,
+  "new_lean_compilations": 0,
+  "publication_parent": "fb20e9fd8dced27829b28a487ad78ef1dada4fd4",
+  "scope": "complete supported arithmetic and exact supplied graph/algebra models; no general integer solver, new Lean compilation or industrial speed comparison",
+  "source_sha256": {
+    "python/develop_monographs.py": "de9b960f05778571fbd0d36d139da83e2c87e8cae787ece096ca58fbfbd1e456",
+    "python/perfectpower/arithmetic_engine.py": "a2167c530a7e03a77ed7a5a5e3accea9bf40959f47ec860d6355800a1f90cd24",
+    "python/perfectpower/compiler.py": "5c2fc9ab176608eb5b2cf9ed872656303f64582a085372f82b053f75e52bca01",
+    "python/perfectpower/connection_measure.py": "ad5c63046c4733766e4a302b3d5d5e331067220865891cb69fc7c539e6bd868a",
+    "python/perfectpower/enhanced_cli.py": "ffc9cab4747c1498d4432a31dc02c66526c50f719fcb02848375f786aafcaecb",
+    "python/perfectpower/operator_algebra.py": "c4599c1df2a15d1a5f2937fa79046d4f3827ccfccbe54e6213cfb8adf63fab15",
+    "python/perfectpower/sharp_power_gap.py": "a2d30d4daa77623d14a3466b1e84fe99c581ec310fc7a3ed4bcae82e4e97497a",
+    "python/perfectpower/sturm_fibres.py": "047c236e178c0c0b922ba5eace53a36a549efee31cfebabc7ce29d676660bedf",
+    "python/tests/test_monograph_development.py": "aad6a0f465c9c8bb8200204b012d36a1e84641d57e4a2065115647d46863e626"
+  }
+}

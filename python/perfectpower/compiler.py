@@ -761,6 +761,31 @@ def _lift_status(status: str, chain: list[Step]) -> str:
 _structural_engine = None
 
 
+def _sturm_divisor_plan(coefficients,k):
+    from .sturm_fibres import square_fibres
+    from .divisor_square import WorkLimit
+    try:result=square_fibres(coefficients,k)
+    except WorkLimit:return None
+    fin={}
+    for n,y in result['points']:
+        if n>=1:fin.setdefault(n,[]).append(y)
+    return dict(method='factor pairs and certified Sturm polynomial fibres',status=COMPLETE_FINITE,
+        justification=['factor-pair equivalence and exact Sturm certificate replay; Python execution is not verified'],
+        data={'sturm_fibres':result},finite=fin,contains=lambda n:n in fin,
+        hits=lambda N:{n:w for n,w in fin.items() if n<=N})
+
+
+def _prefer_sturm_fibres(coefficients):
+    """Keep cheap integral translations; use Sturm for a costly centered constant."""
+    if len(coefficients)<3 or max(abs(c).bit_length() for c in coefficients)<=128:return False
+    from fractions import Fraction
+    from .centered_divisor import shift_polynomial
+    degree=len(coefficients)-1;mean=Fraction(-coefficients[-2],degree*coefficients[-1])
+    floor=mean.numerator//mean.denominator;shift=floor if mean-floor<=Fraction(1,2) else floor+1
+    centered=shift_polynomial(coefficients,shift)
+    return min(abs(centered[0]),abs(coefficients[0])).bit_length()>128
+
+
 def _structural_plan(F, d):
     """Use the redesigned all-integer engine after the cheaper existing routes.
 
@@ -803,11 +828,14 @@ def _power_plan(pc: PowerConstraint) -> dict:
         match = match_square_plus_constant(F)
         if match is not None and match[1] != 0:
             coefficients, k = match
+            if _prefer_sturm_fibres(coefficients):
+                certified=_sturm_divisor_plan(coefficients,k)
+                if certified is not None:return certified
             try:
                 result = solve_centered(coefficients, k)
             except WorkLimit:
-                # Preserve existing effective/unresolved routes when trial division is costly.
-                pass
+                certified=_sturm_divisor_plan(coefficients,k)
+                if certified is not None:return certified
             else:
                 fin = {}
                 for n, y in result['points']:

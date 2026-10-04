@@ -24,7 +24,14 @@ def _degree(d):
 def _same(a,b):return json.dumps(a,sort_keys=True)==json.dumps(b,sort_keys=True)
 
 
-def _bound(f,d):
+def _bound(f,d,*,root_node_limit=100000):
+    from .sharp_power_gap import sharp_bound
+    sharp=sharp_bound(f,d,root_node_limit=root_node_limit)
+    if sharp is not None:return sharp
+    return _legacy_bound(f,d)
+
+
+def _legacy_bound(f,d):
     if d==2:
         p=LP.match(f)
         if p:
@@ -58,12 +65,27 @@ def affine_power_reductions(coefficients,degree):
     powers=[q for q in range(1,g+1) if g%q==0]
     out=[]
     for q in reversed(powers):
-        outer=centered[::q];s=lcm(*(c.denominator for c in outer))
+        outer=centered[::q];den=lcm(*(c.denominator for c in outer))
+        # Denominators divide a^n. Clear them with s^d, not necessarily s:
+        # s=a^ceil(n/d) is safe, and an exact d-th root of den is better still.
+        scales=[den,a**((n+degree-1)//degree)]
+        root=integer_power_root(den,degree)
+        if root is not None:scales.append(root)
+        s=min(v for v in scales if v**degree%den==0)
         h=integer_polynomial(int(c*s**degree) for c in outer)
         expanded=[0]*(q*(len(h)-1)+1)
         for i,c in enumerate(h):expanded[i*q]=c
         if P.scale(centered,s**degree)!=P.poly(expanded):raise AssertionError('normal-form identity failed')
         out.append({'a':a,'b':b,'power':q,'witness_scale':s,'outer_coefficients':h})
+    if a>1:
+        floor=center.numerator//center.denominator
+        shift=floor if center-floor<=Q(1,2) else floor+1
+        integer_center={'a':1,'b':-shift,'power':1,'witness_scale':1,
+            'outer_coefficients':integer_polynomial(map(int,P.compose_linear(P.poly(f),shift,1)))}
+        # A rational q=1 map changes no degree and can inflate the leaf.
+        # Prefer its bijective integer-centered counterpart after compression.
+        index=next((i for i,v in enumerate(out) if v['power']==1),len(out))
+        out.insert(index,integer_center)
     if not any(p['a']==1 and p['b']==0 and p['power']==1 and p['witness_scale']==1 for p in out):
         out.append({'a':1,'b':0,'power':1,'witness_scale':1,'outer_coefficients':f})
     return out
@@ -96,9 +118,13 @@ class ArithmeticEngine:
         self.misses+=1;cover=residue_cover(f,d);bound=None
         if cover['global_obstruction']:scan={'points':[],'interval':None,'interval_size':0,'candidates_checked':0}
         else:
-            bound=_bound(f,d)
+            bound=_bound(f,d,root_node_limit=self.work_limit)
             if bound is None:return None
-            b=bound['bound'];scan=scan_cover(cover,-b,b,work_limit=self.work_limit)
+            if bound['kind']=='sharp_horner':
+                from .sharp_power_gap import scan_sharp
+                scan=scan_sharp(cover,bound,work_limit=self.work_limit)
+            else:
+                b=bound['bound'];scan=scan_cover(cover,-b,b,work_limit=self.work_limit)
         leaf={'coefficients':f,'degree':d,'cover':cover,'bound_certificate':bound,**scan}
         self._cache[key]=leaf
         if len(self._cache)>self.cache_limit:self._cache.popitem(last=False)
@@ -178,10 +204,17 @@ def verify_result(result,*,work_limit=100000):
                 c=bound['certificate'];cert=RigidCertificate(**{k:tuple(v) if isinstance(v,list) else v for k,v in c.items()})
                 if cert.coefficients!=h or cert.d!=d or not verify_certificate(cert) or cert.exact_identity or bound['bound']!=cert.cutoff-1:return False
                 if any(type(v) is not int for v in (cert.denominator,cert.cutoff,*cert.root_numerators,*cert.remainder_numerators)):return False
-            elif not _same(_bound(h,d),bound):return False
+            elif bound['kind']=='sharp_horner':
+                from .sharp_power_gap import verify_bound
+                if not verify_bound(bound,h,d,root_node_limit=work_limit):return False
+            elif not _same(_legacy_bound(h,d),bound):return False
             bnd=bound['bound']
             if type(bnd) is not int or bnd<0:return False
-            scan=scan_cover(cover,-bnd,bnd,work_limit=work_limit);points=scan['points']
+            if bound['kind']=='sharp_horner':
+                from .sharp_power_gap import scan_sharp
+                scan=scan_sharp(cover,bound,work_limit=work_limit)
+            else:scan=scan_cover(cover,-bnd,bnd,work_limit=work_limit)
+            points=scan['points']
         if any(not _same(scan[k],leaf[k]) for k in scan):return False
         return _same(points,leaf['points']) and _same(_lift(reduction,points,f,d),result['points'])
     except (ValueError,TypeError,KeyError,IndexError,ArithmeticError,OverflowError):return False
