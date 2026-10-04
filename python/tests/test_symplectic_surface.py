@@ -1,4 +1,5 @@
 import unittest
+from importlib.util import find_spec
 from perfectpower.symplectic_surface import symplectic_reduce,pairing,surface_basis
 from perfectpower.integer_lifting import verify_smith
 
@@ -8,6 +9,7 @@ class SymplecticTests(unittest.TestCase):
             r=symplectic_reduce(a)
             self.assertEqual(pairing(a,r['basis_columns']),r['standard_intersection'])
             self.assertTrue(all(verify_smith(c) for c in r['smith_transcripts']))
+    @unittest.skipUnless(find_spec('numpy'), 'optional NumPy not installed')
     def test_period_normalization_contract(self):
         from perfectpower.symplectic_surface import normalize_periods
         r=symplectic_reduce([[0,1],[-1,0]])
@@ -18,6 +20,7 @@ class SymplecticTests(unittest.TestCase):
         self.assertFalse(p['analytic_integrals_certified'])
     def test_nonsaturated_rejected(self):
         with self.assertRaises(ValueError):symplectic_reduce([[0,2],[-2,0]])
+    @unittest.skipUnless(find_spec('numpy') and find_spec('scipy'), 'optional numerical dependencies not installed')
     def test_actual_surfaces(self):
         from perfectpower.conformal_mesh import hyperelliptic_mesh
         for coeff,g in [([-1,0,0,0,1],1),([0,-1,0,0,0,1],2),([-1,0,0,0,0,0,0,1],3)]:
