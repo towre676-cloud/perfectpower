@@ -1,0 +1,5 @@
+(set-logic QF_LIA)
+(declare-const z Int)
+(declare-const w Int)
+(assert (or (and (= z 10) (= w (+ z 1))) (and (= z 36) (= w (+ z 1)))))
+(check-sat)

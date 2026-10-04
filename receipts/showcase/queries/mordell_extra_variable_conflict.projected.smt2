@@ -1,0 +1,5 @@
+(set-logic QF_LIA)
+(declare-const z Int)
+(declare-const w Int)
+(assert (and (= z 383895) (= w (+ (* 2 z) 1)) (<= w 1000)))
+(check-sat)

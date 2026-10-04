@@ -88,6 +88,9 @@ def iroot(v, d):
             return None
         r = iroot(-v, d)
         return None if r is None else -r
+    if d == 2:
+        r = isqrt(v)
+        return r if r*r == v else None
     lo, hi = 0, 1
     while hi ** d <= v:
         hi *= 2

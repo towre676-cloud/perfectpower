@@ -762,12 +762,13 @@ def _power_plan(pc: PowerConstraint) -> dict:
     """Solver for F(n) = m^d: method, status, justification, data and the operations."""
     F, d = pc.F, pc.d
     if d == 2:
-        from .divisor_square import match_square_plus_constant, solve, WorkLimit
+        from .divisor_square import match_square_plus_constant, WorkLimit
+        from .centered_divisor import solve_centered
         match = match_square_plus_constant(F)
         if match is not None and match[1] != 0:
             coefficients, k = match
             try:
-                result = solve(coefficients, k)
+                result = solve_centered(coefficients, k)
             except WorkLimit:
                 # Preserve existing effective/unresolved routes when trial division is costly.
                 pass
@@ -782,6 +783,8 @@ def _power_plan(pc: PowerConstraint) -> dict:
                                            'Python instance; execution is not verified'],
                             data={'square_polynomial': list(coefficients), 'constant': k,
                                   'divisor_trials': result['divisor_trials'],
+                                  'coordinate_shift': result['coordinate_shift'],
+                                  'centered_coefficients': result['centered_coefficients'],
                                   'execution_verified': False},
                             finite=fin, contains=lambda n: n in fin,
                             hits=lambda N: {n: w for n, w in fin.items() if n <= N})

@@ -104,6 +104,25 @@ def main():
     p.add_argument('--work-limit', type=int, default=100_000)
     p.add_argument('--emit-lean', action='store_true')
     p.add_argument('--name', default='quartic_points')
+    p = sub.add_parser('centered-divisor', help='complete square-plus-constant solve after integer centering')
+    p.add_argument('--coeff', required=True, type=coefficients)
+    p.add_argument('--k', required=True, type=int)
+    p.add_argument('--work-limit', type=int, default=1_000_000)
+    p = sub.add_parser('square-triangular-query', help='exact count with residue filters and a monotone boundary')
+    bound=p.add_mutually_exclusive_group(required=True)
+    bound.add_argument('--bound', type=int)
+    bound.add_argument('--power-ten', type=int, help='bound=10**exponent')
+    p.add_argument('--filter', action='append', default=[], help='index:modulus:residue or root:modulus:residue')
+    p.add_argument('--state-limit', type=int, default=100_000)
+    p = sub.add_parser('showcase', help='build the three complete-family demonstration packets')
+    p.add_argument('--output', required=True, type=Path)
+    p.add_argument('--benchmark', action='store_true')
+    p.add_argument('--timeout-ms', type=int, default=2000)
+    p.add_argument('--repeats', type=int, default=3)
+    p = sub.add_parser('finite-project', help='eliminate a supported complete finite relation from an SMT query')
+    p.add_argument('source', type=Path)
+    p.add_argument('--output', required=True, type=Path)
+    p.add_argument('--lean-output', type=Path)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
@@ -181,6 +200,39 @@ def main():
         from .norm_operator_replay import field_operator_replay
         out=field_operator_replay(json.loads(args.packet.read_text()),radius=args.radius)
         print(json.dumps(out,indent=2,default=str))
+        return
+    if args.command == 'centered-divisor':
+        from .centered_divisor import solve_centered
+        print(json.dumps(solve_centered(args.coeff,args.k,work_limit=args.work_limit),indent=2))
+        return
+    if args.command == 'square-triangular-query':
+        from .square_triangular_queries import query
+        if args.power_ten is not None and not 0 <= args.power_ten <= 2000:
+            raise ValueError('power-ten exponent must be from zero to 2000')
+        filters=[]
+        for raw in args.filter:
+            coordinate,modulus,residue=raw.split(':')
+            filters.append((coordinate,int(modulus),int(residue)))
+        bound=args.bound if args.bound is not None else 10**args.power_ten
+        print(json.dumps(query(bound,filters,state_limit=args.state_limit),indent=2))
+        return
+    if args.command == 'showcase':
+        from .showcase import build_examples,benchmark_queries
+        r=build_examples(args.output)
+        summary={'finite_points':len(r['hidden_needle']['complete_points']),
+                 'square_triangular_count':r['square_triangular']['query']['unfiltered_count'],
+                 'filtered_count':r['square_triangular']['query']['filtered_count'],
+                 'queries':len(r['whole_queries'])}
+        if args.benchmark:summary['timings']=benchmark_queries(args.output,timeout_ms=args.timeout_ms,repeats=args.repeats)['summary']
+        print(json.dumps(summary,indent=2))
+        return
+    if args.command == 'finite-project':
+        from .finite_projection import project_finite_query
+        p=project_finite_query(args.source.read_text())
+        args.output.write_text(p.smt)
+        if args.lean_output:args.lean_output.write_text(p.emission.lean)
+        print(json.dumps({'eliminated':p.emission.eliminated_symbols,'remaining':p.emission.remaining_symbols,
+                          'finite_choices':len(p.emission.points),'linear':p.linear,'execution_verified':False},indent=2))
         return
     if args.command == 'verify':
         obj = RigidCertificate(**json.loads(args.certificate.read_text()))

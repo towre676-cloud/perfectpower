@@ -1,0 +1,8 @@
+(set-logic QF_NIA)
+(declare-const x Int)
+(declare-const y Int)
+(declare-const z Int)
+(declare-const w Int)
+(assert (= (* (+ (* 1 y) 0) (+ (* 1 y) 0)) (+ (* (+ (* 1 x) (- 1000000000000000000000000000000)) (+ (* 1 x) (- 1000000000000000000000000000000)) (+ (* 1 x) (- 1000000000000000000000000000000))) 17)))
+(assert (>= x 1000000000000000000000000005235))
+(check-sat)

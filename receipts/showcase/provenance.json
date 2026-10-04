@@ -1,0 +1,106 @@
+{
+  "schema": "pp-showcase-provenance/1",
+  "integrated_base": "f0915edfcfbb6b6005bbdde07ea6059bef447036",
+  "source_theorems": [
+    {
+      "path": "PerfectPower/NativeDivisorSquare.lean",
+      "sha256": "34e5d70c86f22fce7a639c13a4e30221914721ed1f1a02cdd9c6464e87419006"
+    },
+    {
+      "path": "PerfectPower/SquareTriangular.lean",
+      "sha256": "8749bb0db3cb4ed644140c3de2984a1517c36e81494e580d473b76d40cdba349"
+    },
+    {
+      "path": "PerfectPower/Generated/ClassLists/K17.lean",
+      "sha256": "e43160b9b26f75bff318cd25eef98c70d5f412a848fbc00c56523bbb4ed8f983"
+    },
+    {
+      "path": "PerfectPower/Generated/ClassLists/K22.lean",
+      "sha256": "be6a60a4c76b3ab799c00e43b1208c6f931a351bf1b5bc93619e0be6027c564a"
+    },
+    {
+      "path": "PerfectPower/QuarticPilot.lean",
+      "sha256": "438dc63f6741fd479cde31d8c5e0bce73543c8dea6f0c3eb7eb5c6f2e7afca98"
+    },
+    {
+      "path": "PerfectPower/FormulaAffine.lean",
+      "sha256": "5cc65061b893ebfdb3a4d4a0be97ed7beb118c9903334e11f250535af981e629"
+    }
+  ],
+  "cases": "six mathematically designed queries; not an industrial corpus",
+  "source_queries": [
+    {
+      "path": "receipts/showcase/queries/mordell_beyond_last_point.projected.smt2",
+      "sha256": "11d4874f8626282da01b8d4c92dbb77f08650afc4b49fe9a3923aa04645c6348"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_beyond_last_point.reduced.smt2",
+      "sha256": "6243f5b8032a49df536313de114fff01c7410b8b4c1105124c6716221faa2263"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_beyond_last_point.smt2",
+      "sha256": "04a379c51f1158f1b9240097151bc7a04f51c2ce8324cba22d36b81e7e37aa74"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_extra_variable_conflict.projected.smt2",
+      "sha256": "e3339961cb365923f6f48e128bff423973b4f3046a151c0522d2142b48f4e2f1"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_extra_variable_conflict.reduced.smt2",
+      "sha256": "3ea454bdb586246ad37ea53c7bd9be7f2ba93ae9c5930cbc67740745a5132132"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_extra_variable_conflict.smt2",
+      "sha256": "b6a1203fcd71ac9199db7703652cf46696ab505148d7c9f25a8ba2947f2d3735"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_integral_image_empty.projected.smt2",
+      "sha256": "11d4874f8626282da01b8d4c92dbb77f08650afc4b49fe9a3923aa04645c6348"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_integral_image_empty.reduced.smt2",
+      "sha256": "0df2169d594fd6116d7202c69ea482c79ed00a1302d5494592928035386c95a4"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_integral_image_empty.smt2",
+      "sha256": "955a951118a3d8dcab78882d921ec65128f317e1ff62f0f175001073c8d5d577"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_small_positive_witness.projected.smt2",
+      "sha256": "8f9987164cce981c376031376402fad4b918fd9f4636f60d0259997ad066634b"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_small_positive_witness.reduced.smt2",
+      "sha256": "5c1e26ab0d88ef97d8f36ba7599567ad14fbd748ad726f220bfa8e64dbea0a8d"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_small_positive_witness.smt2",
+      "sha256": "41fc540dfc948f36abca74191802dcfaef49c0ce949e33c85b4bdcc2c9cd3c0e"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_witness_with_extra_variables.projected.smt2",
+      "sha256": "86d15945e7dbc6b40d09dff47c23644ed49a4df509246fb55439f73161d2e17e"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_witness_with_extra_variables.reduced.smt2",
+      "sha256": "aa1ec87379b8e4c73d9bb19b6cca03b28c845c8b988a5539477e21abe0c6e75d"
+    },
+    {
+      "path": "receipts/showcase/queries/mordell_witness_with_extra_variables.smt2",
+      "sha256": "1ee027d7523a0db49ecf0da196a6f62ac02d2e31615c1ad8d84be27256d1acda"
+    },
+    {
+      "path": "receipts/showcase/queries/quartic_product_conflict.projected.smt2",
+      "sha256": "1bc349297eeebc35f97180ac1322f75a79aa7451e9415f32346be5fd142eb571"
+    },
+    {
+      "path": "receipts/showcase/queries/quartic_product_conflict.reduced.smt2",
+      "sha256": "88af8f9f3da09197c4bdae67427c171eef0a5479fd3985e3dd94ba39f5e53800"
+    },
+    {
+      "path": "receipts/showcase/queries/quartic_product_conflict.smt2",
+      "sha256": "cac1b5198e3c007dfec18bf64f981d7289c9a105ab05c53c300ef01c6cb5c771"
+    }
+  ],
+  "new_lean_instances": "EMITTED_NOT_COMPILED_IN_THIS_RUN"
+}

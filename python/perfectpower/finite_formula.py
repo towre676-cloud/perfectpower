@@ -22,6 +22,9 @@ class Emission:
     source_sha256: str
     imports: list[str]
     smt: str
+    eliminated_symbols: tuple[str, str] = ()
+    residual_assertions: tuple = ()
+    remaining_symbols: tuple[str, ...] = ()
 
 
 
@@ -198,7 +201,8 @@ theorem original_iff_finite {binders} :
             commands.append(f'(assert {replacement})');replaced=True
         else: commands.append(command)
     smt='\n'.join(commands)+'\n'
-    return Emission(lean,lifts,kind,sha,['PerfectPower.FormulaAffine',module],smt)
+    return Emission(lean,lifts,kind,sha,['PerfectPower.FormulaAffine',module],smt,
+                    (x,y),tuple(residual),tuple(extras))
 
 
 def main():

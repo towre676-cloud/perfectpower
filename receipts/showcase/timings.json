@@ -1,0 +1,714 @@
+{
+  "schema": "pp-showcase-timing/1",
+  "z3_version": "5.1.0",
+  "timeout_ms": 2000,
+  "repeats": 3,
+  "ledger": [
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "original",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.006696825999824796,
+      "solve_seconds": 2.012360331000309,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "reduced",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00034150499959650915,
+      "solve_seconds": 0.0013759989997197408,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "projected",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00015344199891842436,
+      "solve_seconds": 6.124299943621736e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "projected",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00013200899957155343,
+      "solve_seconds": 5.1978000556118786e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "reduced",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00022747399998479523,
+      "solve_seconds": 0.0011654909994831542,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "original",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.00017149900122603867,
+      "solve_seconds": 2.001267210000151,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "original",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.00027623700043477584,
+      "solve_seconds": 2.0017731040006765,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "reduced",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.0003270540000812616,
+      "solve_seconds": 0.0012926130002597347,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_beyond_last_point",
+      "variant": "projected",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00015020599857962225,
+      "solve_seconds": 5.771800169895869e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "original",
+      "repetition": 0,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.0001799809997464763,
+      "solve_seconds": 0.085725012999319,
+      "reason_unknown": null,
+      "model": {
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "w": "767791",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "reduced",
+      "repetition": 0,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.0002549050004745368,
+      "solve_seconds": 0.003794693000600091,
+      "reason_unknown": null,
+      "model": {
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "w": "767791",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "projected",
+      "repetition": 0,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00012766300096700434,
+      "solve_seconds": 0.0006915350004419452,
+      "reason_unknown": null,
+      "model": {
+        "w": "767791",
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "projected",
+      "repetition": 1,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.0001384290007990785,
+      "solve_seconds": 0.0006465370006480953,
+      "reason_unknown": null,
+      "model": {
+        "w": "767791",
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "reduced",
+      "repetition": 1,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00024103399846353568,
+      "solve_seconds": 0.003900060999512789,
+      "reason_unknown": null,
+      "model": {
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "w": "767791",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "original",
+      "repetition": 1,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.0001495260003139265,
+      "solve_seconds": 0.07882765499925881,
+      "reason_unknown": null,
+      "model": {
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "w": "767791",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "original",
+      "repetition": 2,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00015474300016649067,
+      "solve_seconds": 0.16088568900158862,
+      "reason_unknown": null,
+      "model": {
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "w": "767791",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "reduced",
+      "repetition": 2,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00027042799956689123,
+      "solve_seconds": 0.012471538999307086,
+      "reason_unknown": null,
+      "model": {
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "w": "767791",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_witness_with_extra_variables",
+      "variant": "projected",
+      "repetition": 2,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00012475800031097606,
+      "solve_seconds": 0.0007434740000462625,
+      "reason_unknown": null,
+      "model": {
+        "w": "767791",
+        "z": "383895",
+        "x": "1000000000000000000000000005234",
+        "y": "378661"
+      }
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "original",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00018258599993714597,
+      "solve_seconds": 0.0008477809988107765,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "reduced",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00022726300085196272,
+      "solve_seconds": 0.0021365180000429973,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "projected",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00018295700101589318,
+      "solve_seconds": 0.0007055459991534008,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "projected",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00014231499881134368,
+      "solve_seconds": 0.0006170819997350918,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "reduced",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00021612599994114134,
+      "solve_seconds": 0.0016159710012288997,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "original",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.0001792900002328679,
+      "solve_seconds": 0.0008868989989423426,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "original",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.0001742229997034883,
+      "solve_seconds": 0.0007774139994580764,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "reduced",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00022586100021726452,
+      "solve_seconds": 0.0017742700001690537,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_extra_variable_conflict",
+      "variant": "projected",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.0001524700001027668,
+      "solve_seconds": 0.0006434719998651417,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "original",
+      "repetition": 0,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00018202499995823018,
+      "solve_seconds": 0.0031236489994626027,
+      "reason_unknown": null,
+      "model": {
+        "y": "9",
+        "x": "1000000000000000000000000000004",
+        "w": "37",
+        "z": "36"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "reduced",
+      "repetition": 0,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00020883599972876254,
+      "solve_seconds": 0.004903197001112858,
+      "reason_unknown": null,
+      "model": {
+        "y": "9",
+        "x": "1000000000000000000000000000004",
+        "w": "37",
+        "z": "36"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "projected",
+      "repetition": 0,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00012484900071285665,
+      "solve_seconds": 0.0013268749989947537,
+      "reason_unknown": null,
+      "model": {
+        "z": "36",
+        "w": "37",
+        "x": "1000000000000000000000000000004",
+        "y": "9"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "projected",
+      "repetition": 1,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.0001364660001854645,
+      "solve_seconds": 0.00120156500088342,
+      "reason_unknown": null,
+      "model": {
+        "z": "36",
+        "w": "37",
+        "x": "1000000000000000000000000000004",
+        "y": "9"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "reduced",
+      "repetition": 1,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00020993699945393018,
+      "solve_seconds": 0.003118810998785193,
+      "reason_unknown": null,
+      "model": {
+        "y": "9",
+        "x": "1000000000000000000000000000004",
+        "w": "37",
+        "z": "36"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "original",
+      "repetition": 1,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.0001557949999551056,
+      "solve_seconds": 0.006853822998891701,
+      "reason_unknown": null,
+      "model": {
+        "y": "9",
+        "x": "1000000000000000000000000000004",
+        "w": "37",
+        "z": "36"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "original",
+      "repetition": 2,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00023859999964770395,
+      "solve_seconds": 0.006566420001036022,
+      "reason_unknown": null,
+      "model": {
+        "y": "9",
+        "x": "1000000000000000000000000000004",
+        "w": "37",
+        "z": "36"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "reduced",
+      "repetition": 2,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00023827000040910207,
+      "solve_seconds": 0.0030793610003456706,
+      "reason_unknown": null,
+      "model": {
+        "y": "9",
+        "x": "1000000000000000000000000000004",
+        "w": "37",
+        "z": "36"
+      }
+    },
+    {
+      "case": "mordell_small_positive_witness",
+      "variant": "projected",
+      "repetition": 2,
+      "expected": "sat",
+      "status": "sat",
+      "parse_seconds": 0.00012587000128405634,
+      "solve_seconds": 0.0012201629997434793,
+      "reason_unknown": null,
+      "model": {
+        "z": "10",
+        "w": "11",
+        "x": "1000000000000000000000000000002",
+        "y": "5"
+      }
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "original",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.00019126900042465422,
+      "solve_seconds": 2.001308106000579,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "reduced",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.0002668529996299185,
+      "solve_seconds": 7.376099893008359e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "projected",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00013220000073488336,
+      "solve_seconds": 6.522800140373874e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "projected",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00012352600060694385,
+      "solve_seconds": 4.232399987813551e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "reduced",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00012504900041676592,
+      "solve_seconds": 0.00015818900101294275,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "original",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.00013806799870508257,
+      "solve_seconds": 2.001217554001414,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "original",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.00028368899984343443,
+      "solve_seconds": 2.0019800040008704,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "reduced",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.0002719309995882213,
+      "solve_seconds": 6.0460999520728365e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "mordell_integral_image_empty",
+      "variant": "projected",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00013155800115782768,
+      "solve_seconds": 6.823299918323755e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "original",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.00015099799929885194,
+      "solve_seconds": 2.0012368250008876,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "reduced",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00031802000012248755,
+      "solve_seconds": 0.0008209699990402441,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "projected",
+      "repetition": 0,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.0001480530008848291,
+      "solve_seconds": 7.472200013580732e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "projected",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00013727799887419678,
+      "solve_seconds": 6.91639997967286e-05,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "reduced",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00013291100003698375,
+      "solve_seconds": 0.0006997670006967383,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "original",
+      "repetition": 1,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.00015185899974312633,
+      "solve_seconds": 2.004537982000329,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "original",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unknown",
+      "parse_seconds": 0.0002500569989933865,
+      "solve_seconds": 2.0012691049996647,
+      "reason_unknown": "timeout",
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "reduced",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00030522099950758275,
+      "solve_seconds": 0.0008046250004554167,
+      "reason_unknown": null,
+      "model": null
+    },
+    {
+      "case": "quartic_product_conflict",
+      "variant": "projected",
+      "repetition": 2,
+      "expected": "unsat",
+      "status": "unsat",
+      "parse_seconds": 0.00014723200001753867,
+      "solve_seconds": 6.957499863347039e-05,
+      "reason_unknown": null,
+      "model": null
+    }
+  ],
+  "summary": {
+    "original": {
+      "decisive": 9,
+      "trials": 18,
+      "summed_solve_seconds": 18.37144456400165,
+      "summed_parse_seconds": 0.009907270998155582
+    },
+    "reduced": {
+      "decisive": 18,
+      "trials": 18,
+      "summed_solve_seconds": 0.04324629700022342,
+      "summed_parse_seconds": 0.004408677998071653
+    },
+    "projected": {
+      "decisive": 18,
+      "trials": 18,
+      "summed_solve_seconds": 0.008356434000234003,
+      "summed_parse_seconds": 0.0025112810035352595
+    }
+  },
+  "scope": "six curated examples, local fresh solvers; excludes proof-generation time and does not imply industrial speedup",
+  "execution_verified": false
+}
