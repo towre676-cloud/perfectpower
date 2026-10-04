@@ -1,5 +1,7 @@
 # From branch topology to explicit differentials and period intervals
 
+Subsequent Lean formalization now proves the finite/infinity regularity arithmetic, checks all 1,939 collision profiles and twelve saved full representative profiles, and proves convergence, the tail bound and formal differential equation for the Legendre series. The analytic normalization/basis-completeness and Euler-period identities remain open. See [the completed proof sweep](LEAN_BACKLOG_MONOGRAPH.md).
+
 PerfectPower now computes actual algebraic holomorphic differential formulas on the compact complex normalization of a cyclic curve, rather than retaining only their dimension. It links those formulas to the existing genus, monodromy and period-contract layers. A second executable computes exact rational enclosures of the normalized periods of the real Legendre family. These are classical mathematical constructions made available as reproducible repo computations. This release adds no Lean source and does not claim new mathematical theorems. The positive-geometry Lean handoff remains assigned to the separate formalization session.
 
 ## The component equation

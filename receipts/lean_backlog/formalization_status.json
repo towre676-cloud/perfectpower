@@ -1,0 +1,55 @@
+{
+  "schema": "pp-formalization-status/1",
+  "baseline_commit": "7014ee5",
+  "completed_targets": {
+    "descartes_reflection_involution": "PerfectPower.PositiveGeometry.descartes_reflection_involution",
+    "descartes_reflection_preservation": "PerfectPower.PositiveGeometry.descartes_reflection_preserves",
+    "descartes_quadratic_orbit": "PerfectPower.PositiveGeometry.descartes_quadratic_orbit",
+    "interval_canonical_additivity": "PerfectPower.PositiveGeometry.interval_canonical_additivity",
+    "pentagon_collision_chart": "PerfectPower.PositiveGeometry.pentagon_collision_residue",
+    "theta_determinant": "PerfectPower.PositiveGeometry.theta_determinant",
+    "theta_jacobian_numerator": "PerfectPower.PositiveGeometry.theta_canonical_jacobian",
+    "theta_pullback": "PerfectPower.PositiveGeometry.theta_canonical_pullback",
+    "polyhedral_metric_arithmetic": "PerfectPower.PositiveGeometry.descartes_polyhedral_defect",
+    "finite_period_correction": "PerfectPower.PeriodNormalization.period_correction",
+    "legendre_recurrence": "PerfectPower.LegendreBounds.legendre_formal_period_recurrence",
+    "formal_legendre_ode": "PerfectPower.LegendreBounds.legendre_formal_ode",
+    "real_series_tail": "PerfectPower.LegendreBounds.geometric_tail",
+    "legendre_series_interval": "PerfectPower.LegendreBounds.series_interval",
+    "finite_valuation_regularity": "PerfectPower.HolomorphicArithmetic.finite_regular_numerator",
+    "infinity_degree_cutoff": "PerfectPower.HolomorphicArithmetic.infinity_regular_iff",
+    "all_saved_geometry_arithmetic_profiles": "PerfectPower.LeanBacklogPackets.all_profiles",
+    "two_column_weighted_cauchy_binet": "PerfectPower.ConnectionDeterminant.weighted_cauchy_binet_two",
+    "historical_exponent_image_iff": "PerfectPower.MonomialConsequences.exponent_image_iff",
+    "historical_rational_cube_necessity": "PerfectPower.MonomialConsequences.middle_equations_force_cube",
+    "historical_eliminations": [
+      "PerfectPower.MonomialConsequences.eliminate_K",
+      "PerfectPower.MonomialConsequences.eliminate_E"
+    ],
+    "positive_signed_product_example": "PerfectPower.MonomialConsequences.signed_product_complete",
+    "sharp_quartic_cutoff": "PerfectPower.QuarticCutoff.complete"
+  },
+  "finite_only": [
+    "six saved associahedral face vectors and boundary sums",
+    "eight saved quotient metric packets"
+  ],
+  "remaining_structural_targets": [
+    "general weighted Cauchy-Binet in arbitrary column dimension",
+    "general cyclic gain-graph support rank",
+    "matroid greedy optimality",
+    "normalized cyclic-curve local parameters and holomorphic-basis completeness",
+    "general character-dimension sum formula",
+    "Euler-integral identification of the Legendre series with periods",
+    "general associahedral/moduli-space compactification",
+    "analytic meromorphic residue/existence theorem",
+    "general positive-rational monomial solver completeness and its implementation",
+    "general positive-integer monomial solver completeness and its implementation"
+  ],
+  "remaining_research_fronts": [
+    "general Baker bounds",
+    "arbitrary-polynomial perfect-power automation",
+    "number-ring solvers",
+    "GPU/WASM deployment"
+  ],
+  "trust_boundary": "Arithmetic packets and algebraic identities are proved; original geometry receipts retain their historical formalized=false labels."
+}

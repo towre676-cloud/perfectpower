@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-for module in SquareLeadingQuartic Tactic/SquareLeadingQuartic Generated/RepunitQuartic; do
+for module in SquareLeadingQuartic QuarticCutoff Tactic/SquareLeadingQuartic Generated/RepunitQuartic; do
   lake env lean "PerfectPower/$module.lean" -o ".lake/build/lib/lean/PerfectPower/$module.olean"
 done
 log=$(mktemp)

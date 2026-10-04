@@ -1,0 +1,38 @@
+import PerfectPower.PositiveGeometry
+import PerfectPower.HolomorphicArithmetic
+import PerfectPower.PeriodNormalization
+import PerfectPower.MonomialConsequences
+import PerfectPower.ConnectionDeterminant
+import PerfectPower.LegendreBounds
+
+#print axioms PerfectPower.PositiveGeometry.descartes_reflection_involution
+#print axioms PerfectPower.PositiveGeometry.descartes_reflection_preserves
+#print axioms PerfectPower.PositiveGeometry.curvature_recurrence
+#print axioms PerfectPower.PositiveGeometry.descartes_quadratic_orbit
+#print axioms PerfectPower.PositiveGeometry.seed_curvature
+#print axioms PerfectPower.PositiveGeometry.interval_canonical_additivity
+#print axioms PerfectPower.PositiveGeometry.pentagon_collision_residue
+#print axioms PerfectPower.PositiveGeometry.theta_determinant
+#print axioms PerfectPower.PositiveGeometry.theta_canonical_jacobian
+#print axioms PerfectPower.PositiveGeometry.theta_canonical_pullback
+#print axioms PerfectPower.PositiveGeometry.descartes_polyhedral_defect
+#print axioms PerfectPower.HolomorphicArithmetic.gcd_dvd_remainder
+#print axioms PerfectPower.HolomorphicArithmetic.finite_regular_numerator
+#print axioms PerfectPower.HolomorphicArithmetic.infinity_regular_iff
+#print axioms PerfectPower.HolomorphicArithmetic.extra_zero_order
+#print axioms PerfectPower.PeriodNormalization.period_correction
+#print axioms PerfectPower.MonomialConsequences.eliminate_K
+#print axioms PerfectPower.MonomialConsequences.eliminate_E
+#print axioms PerfectPower.MonomialConsequences.cube_compatibility_valuation
+#print axioms PerfectPower.MonomialConsequences.ratio_cube
+#print axioms PerfectPower.MonomialConsequences.middle_equations_force_cube
+#print axioms PerfectPower.MonomialConsequences.exponent_image_iff
+#print axioms PerfectPower.MonomialConsequences.signed_product_complete
+#print axioms PerfectPower.ConnectionDeterminant.weighted_cauchy_binet_two
+#print axioms PerfectPower.LegendreBounds.coefficient_positive
+#print axioms PerfectPower.LegendreBounds.coefficient_step_le
+#print axioms PerfectPower.LegendreBounds.coefficient_antitone
+#print axioms PerfectPower.LegendreBounds.legendre_formal_period_recurrence
+#print axioms PerfectPower.LegendreBounds.geometric_tail
+#print axioms PerfectPower.LegendreBounds.series_interval
+#print axioms PerfectPower.LegendreBounds.legendre_formal_ode

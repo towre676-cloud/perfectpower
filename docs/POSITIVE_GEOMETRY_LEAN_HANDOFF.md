@@ -1,5 +1,7 @@
 # Lean handoff for the positive-geometry extension
 
+The subsequent [Lean backlog sweep](LEAN_BACKLOG_MONOGRAPH.md) completed the algebraic Descartes, interval, collision-chart, theta, metric and finite period-normalization targets, together with two-column weighted Cauchy–Binet and the saved face-vector checks. The general graph-rank, matroid, compactification and analytic targets remain open. The original handoff below records the earlier release; current theorem names and scope are in `receipts/lean_backlog/formalization_status.json`.
+
 The user is formalizing this extension in a separate session. This push changes no Lean source. Start with docs/POSITIVE_GEOMETRY_MONOGRAPH.md and receipts/positive_geometry/lean_handoff.json. The executable definitions live in python/perfectpower/connection_polytope.py, degeneration_atlas.py, period_boundary.py and descartes_orbits.py.
 
 The base commit c7058c1 already includes PerfectPower/BranchedGeometry.lean. Reuse its conventions where suitable. New Python computations carry formalized=false; existing compiled theorems retain their own independent status. Coefficients are low-to-high. Graph rows encode f_target-zeta^r*f_source. Loops and parallel edges are valid. Empty and disconnected supports must retain isolated vertices when counting balanced components.

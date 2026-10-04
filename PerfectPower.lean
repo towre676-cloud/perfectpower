@@ -317,3 +317,11 @@ import PerfectPower.Generated.RepunitQuartic
 import PerfectPower.DivisorSum
 import PerfectPower.BranchedGeometry
 import PerfectPower.IntegerLiftRecovery
+
+import PerfectPower.PositiveGeometry
+import PerfectPower.HolomorphicArithmetic
+import PerfectPower.PeriodNormalization
+import PerfectPower.MonomialConsequences
+import PerfectPower.ConnectionDeterminant
+import PerfectPower.LegendreBounds
+import PerfectPower.QuarticCutoff

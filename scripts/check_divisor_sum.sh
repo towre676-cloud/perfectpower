@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 mkdir -p .lake/build/lib/lean/PerfectPower/Tactic .lake/build/lib/lean/PerfectPower/Generated
-for module in NativeNearSquare NativePolynomialSquare FastDivisors LinearPerturbation Tactic/LinearPerturbation SquareLeadingQuartic Tactic/SquareLeadingQuartic Generated/RepunitQuartic; do
+for module in NativeNearSquare NativePolynomialSquare FastDivisors LinearPerturbation Tactic/LinearPerturbation SquareLeadingQuartic QuarticCutoff Tactic/SquareLeadingQuartic Generated/RepunitQuartic; do
   lake env lean -s 65536 "PerfectPower/$module.lean" -o ".lake/build/lib/lean/PerfectPower/$module.olean"
 done
 mkdir -p .lake/build/lib/lean/PerfectPower

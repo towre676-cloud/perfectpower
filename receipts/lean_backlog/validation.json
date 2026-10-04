@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "audited_declarations": 57,
+  "log_report_counts": [
+    31,
+    21,
+    5
+  ],
+  "source_sha256": {
+    "PerfectPower/LegendreBounds.lean": "37b77559c0e3c872de591e1b219233a1294efcb5c0849d7ff35b9bc8a3af7276",
+    "PerfectPower/PeriodNormalization.lean": "71498d4b711db06c23fefe1dd6f6d62ea354bea81468f3a84a87f4eb965eab63",
+    "PerfectPower/MonomialConsequences.lean": "69763416996cd086ae09867cf5a89d6a3c808f5226a3dac6e2ede6f2d867ab26",
+    "PerfectPower/ConnectionDeterminant.lean": "9bb47196a36acd6d3c3fef6b63ba2aa1e0b4078c6365ef154da64283cee67106",
+    "PerfectPower/HolomorphicArithmetic.lean": "5c72a55550e2664223304fda1b1edf182dde41f6ca345171f731356519ca3ec7",
+    "PerfectPower/QuarticCutoff.lean": "1f24d1525116957cb96b521eee2c4390b64ef66ed67aae00ad2382309f9ced2f",
+    "PerfectPower/PositiveGeometry.lean": "126f666449db9c586aa34e4a91ddd1d1632c2c69b5a7bd60c1afab85a68b1d52",
+    "audit/LeanBacklog.lean": "8853365691e0857e3f2df778b5e63ee87fedb51cf8e39e2c94b3709101a7290e",
+    "scripts/check_lean_backlog.sh": "89d981bdf34fde26ab563a1ac368cbc6f31a59f4d220069f6bf1f31a626720d4",
+    "python/build_lean_backlog_packets.py": "eacc5a02a4f42c3349a8b61f0970f082f8ae35baedad401c117b07e750f33f32",
+    "receipts/lean_backlog/ArithmeticPackets.lean": "345b7e532d9d50d4b35097dab12c0c3212443e909b13e888d72b4320255ad340",
+    "PerfectPower/Tactic/SquareLeadingQuartic.lean": "ecd2e47fe2a5fed8dbc937240b6dbf39fc25e8fd41477f913232d2d858e7f5a9",
+    "audit/QuarticCutoff.lean": "dd218479121eb2e5e7a288cb0fa54c1cc5d6c3124d3654633e0b6a4b33344542",
+    "scripts/check_quartic_cutoff.sh": "6f54041678bb96f7e48b5bef5b45fce34deec2e5872673314c498d69cbfce7d9"
+  },
+  "log_sha256": {
+    "receipts/lean_backlog/axioms.log": "12da11fdfc6e370b9c8bc78bdbea881f525028770361a0896aeb4accd2ad4f76",
+    "receipts/lean_backlog/packets.log": "3d0938ade09edaf4141b104fbd8401c8789b9c564e4d7e235ed6153483a2a14c",
+    "receipts/lean_backlog/quartic_axioms.log": "ddff3ed7b686b9f6070f09c9d2da36a555ea131db798ebc02f699ec967c1f44b"
+  },
+  "packet_input_receipt": "receipts/lean_backlog/packet_inputs.json",
+  "scope": "Seven new modules and their audits; analytic interpretations and the full heavy root build are separate.",
+  "lean_version": "4.20.0",
+  "mathlib_revision": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "launcher_note": "Executable-path lookup restored through LD_PRELOAD in this runtime; Lean kernel inference and evaluation unchanged."
+}

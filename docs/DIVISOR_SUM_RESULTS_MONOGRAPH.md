@@ -1,5 +1,7 @@
 # Divisor sums, perfect powers, and complete quartic classifications
 
+The subsequent Lean backlog sweep closes all remaining 394 literal-list obligations: **all 3,080 quartic lists and all 3,080 packet equalities are now kernel checked**. The original catalogue source hash is unchanged. The stronger cutoff and preserved exceptional fibre are described in [the proof-sweep monograph](LEAN_BACKLOG_MONOGRAPH.md).
+
 PerfectPower can now answer a familiar arithmetic question: when does adding all the positive divisors of a number produce a perfect power? The new collection connects that question to the repository's effective quartic machinery, adds an exact census through one million, and classifies square divisor sums throughout an explicit two-prime-power grid. These are different kinds of results, with different domains of completeness. Every packet records that domain.
 
 The photograph that motivated this work displays the classical multiplicative formula for the sum of divisors. If n is the product of distinct primes p raised to exponents a, then sigma(n) is the product of the geometric sums 1+p+...+p^a. Each divisor independently chooses one exponent for each prime. Expanding the product therefore enumerates each divisor once. The formula requires a genuine prime factorization; treating a composite base as a prime would give the wrong divisor sum.

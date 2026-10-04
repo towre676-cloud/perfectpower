@@ -54,7 +54,8 @@ with tempfile.TemporaryDirectory(prefix='pp-sigma-lean-') as temp,log.open('w') 
             'logs':sorted(set(logs+[log.name])),
             'lean_version':subprocess.check_output(['lean','--version'],text=True).strip(),
             'python_execution_verified':False,
-            'scope':'only listed indices have kernel-checked literal point lists; other lists use proved family bounds and Python enumeration'}
+            'scope':('all catalogue literal point lists and packet equalities are kernel checked' if len(checked)==total
+                     else 'only listed indices have kernel-checked literal point lists; other lists use proved family bounds and Python enumeration')}
         validation_file.write_text(json.dumps(validation,indent=2)+'\n')
         print(f'Cases {begin} through {end-1}: {len(checked)}/{total} complete lists and packet equalities checked',flush=True)
 print(f'Finished requested interval in {perf_counter()-start:.2f}s',flush=True)
