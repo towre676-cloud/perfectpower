@@ -1,0 +1,23 @@
+# Lean handoff for the positive-geometry extension
+
+The user is formalizing this extension in a separate session. This push changes no Lean source. Start with docs/POSITIVE_GEOMETRY_MONOGRAPH.md and receipts/positive_geometry/lean_handoff.json. The executable definitions live in python/perfectpower/connection_polytope.py, degeneration_atlas.py, period_boundary.py and descartes_orbits.py.
+
+The base commit c7058c1 already includes PerfectPower/BranchedGeometry.lean. Reuse its conventions where suitable. New Python computations carry formalized=false; existing compiled theorems retain their own independent status. Coefficients are low-to-high. Graph rows encode f_target-zeta^r*f_source. Loops and parallel edges are valid. Empty and disconnected supports must retain isolated vertices when counting balanced components.
+
+Begin with Descartes algebra. For b satisfying (sum b)^2=2*sum(b_i^2), replacement of b_i by 2*sum_(j!=i)b_j-b_i preserves the equation and is involutive. Two fixed indices with curvature sum s give the alternating recurrence b_(n+2)=2*b_(n+1)-b_n+2s and formula b_n=u+(v-u-s)*n+s*n^2. The principal fixture is seed (-1,2,2,3), fixed indices (0,1), polynomial (2,0,1), and the witness b_5=27=3^3. Scans start at zero and have exclusive stop endpoints; bounded cube lists have no completeness claim.
+
+The theta fixture has two vertices, voltages (0,2,1) modulo four, and weights (a,b,c). Its determinant is Q=4ab+2ac+2bc. Define q_1=2bc/Q,q_2=2ac/Q,q_3=4ab/Q. With c fixed, the Jacobian numerator after expressing both derivatives over Q^2 is 16*a*b*c^2*Q. The denominator product is 16*a^2*b^2*c^2/Q^3, so the canonical pullback coefficient is 1/(a*b), assuming nonzero a,b,c,Q. The data packet contains coefficients, edge bases, marginal probabilities and loss cases.
+
+The ordered branch form with r free coordinates has denominator the product of consecutive gaps between zero, the coordinates, and one. For r=2, x=t*u,y=t gives dx wedge dy=t du wedge dt and coefficient 1/[u*(1-u)*t*(1-t)]. Fix the wedge order before proving the residue sign. This is the first collision-chart identity. General stable compactification is an analytic/geometric theorem separate from this rational identity.
+
+The interval identity Omega_[a,b]=Omega_[a,c]+Omega_[c,b] is a direct rational identity, assuming all denominators are nonzero. The period-normalization fixture solves M*c=t-p for an invertible supplied rational matrix, then checks p+M*c=t. It is not a theorem that actual analytic periods are rational. Residue compatibility and the genus-dimensional analytic ambiguity remain separate inputs to that finite contract.
+
+The equilateral metric packets record corner counts, rational defects divided by pi, Euler characteristic and dual face charge for genera zero through seven. Prove sum_v(2-corners_v/3)=2*(V-E+F), using three corners per triangle and two incidences per edge. These are quotient cell metrics, not intrinsic Voronoi meshes of the original conformal curves.
+
+The associahedral f-vectors include the full face in the final entry. The full-polytope alternating sum is one; the boundary sum is 1+(-1)^(dimension-1). Faces are indexed by noncrossing diagonals. Collision splits use the cyclic interval from i through j-1 for diagonal (i,j), with its complement on the other side. These combinatorial certificates do not alone establish the moduli-space identification.
+
+For the formal Legendre period series, a_n=binomial(2n,n)^2/16^n and (n+1)^2*a_(n+1)=(n+1/2)^2*a_n. The resulting formal differential equation is lambda*(1-lambda)*Pi''+(1-2lambda)*Pi'-Pi/4=0. The analytic interpretation as periods needs an independent theorem. The special-node normalization maps are x=v^2+1,y=x*v at lambda=0 and x=v^2,y=(x-1)*v at lambda=1.
+
+The larger structural goals are Cauchy-Binet for the exact Hermitian Gram matrix, the cyclic support-rank theorem, the forest coefficient factorization and matroid greedy optimality. The graph field is Q[z]/Phi_d; use the standard cyclotomic construction or state its field theorem explicitly. Positivity refers to the chosen complex embedding's squared minor norms, not coordinatewise positivity in the rational cyclotomic basis. Tests compare exact rational multiplication-block ranks with graph-potential certificates.
+
+Rebuild the corpus with PYTHONPATH=python python python/build_positive_geometry.py. Run the focused suite with PYTHONPATH=python python -m unittest discover -s python/tests -p test_positive_geometry.py -v. The machine-readable contract supplies target names and their fixture files. New theorem claims should be added only after the corresponding Lean file actually compiles.

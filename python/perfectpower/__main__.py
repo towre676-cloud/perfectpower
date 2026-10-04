@@ -148,9 +148,14 @@ def main():
     p.add_argument('--k',default=0,type=int)
     p.add_argument('--connection',action='store_true')
     p.add_argument('--cells',action='store_true')
+    from .positive_geometry_cli import add_commands
+    add_commands(sub)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .positive_geometry_cli import dispatch
+    if dispatch(args):
+        return
     if args.command == 'branched-geometry':
         from .branched_geometry import profile,faithful_laplacian,cell_surface
         coeff=list(args.coeff);coeff[0]+=args.k
