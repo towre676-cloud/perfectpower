@@ -1,0 +1,10 @@
+{
+  "base_commit": "57435bb",
+  "full_python_suite": {"tests": 373, "skipped": 4, "result": "OK", "seconds": 41.406},
+  "additional_focused_suite_after_two_added_tests": {"tests": 24, "result": "OK"},
+  "checks": ["git diff --check", "Python compileall", "installed module CLI JSON", "integration receipt reproduction"],
+  "lean_changes": false,
+  "lean_build_run": false,
+  "execution_verified": false,
+  "limitations": ["finite-domain optimality only", "no global exponent bound", "diagonal affine transports only", "caller-supplied exact predicates"]
+}

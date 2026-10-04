@@ -38,3 +38,7 @@ The CLI exposes these commands:
 - `certificate`, `verify` and `surgery`, kept from v0.5
 
 Each command takes `--coeff` and `--d`. For an end-to-end example, see `docs/TUTORIAL.md`.
+
+## Target-conditioned arithmetic information
+
+`perfectpower.information.InformationProblem` returns ambiguity witnesses and minimum-cost sufficient observation sets on explicitly finite domains, with a target decoder and work budgets. `AffineTransport` preserves rational inverse and intermediate integrality restrictions. `compile_square_query` consumes complete or partial divisor charts without treating unresolved fibres as empty. The `information` CLI compiles bounded polynomial residue decoders. See [the mathematical chapter](../docs/ARITHMETIC_INFORMATION_COMPILER.md) and `python/information_receipt.py` for signed-unit integration and reproducible results. This is exact Python execution, not a Lean certificate or a global exponent bound.

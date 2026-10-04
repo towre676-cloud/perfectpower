@@ -56,9 +56,23 @@ def main():
     p.add_argument('--names', type=Path, help='local names(.gz), for reading leads only')
     p.add_argument('--reviewed', type=Path, help='JSON {A-number: review note} of checked definitions')
     p.add_argument('--retrieved', help='date the snapshot was downloaded (recorded in the atlas)')
+    p = sub.add_parser('information', help='minimal residue decoder on an explicit finite interval')
+    p.add_argument('--coeff', required=True, type=coefficients)
+    p.add_argument('--d', type=int, required=True)
+    p.add_argument('--lo', type=int, required=True)
+    p.add_argument('--hi', type=int, required=True)
+    p.add_argument('--moduli', required=True, help='comma-separated integer moduli')
+    p.add_argument('--pair-limit', type=int, default=1_000_000)
+    p.add_argument('--subset-limit', type=int, default=1_000_000)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    if args.command == 'information':
+        from .information import polynomial_information
+        plan = polynomial_information(args.coeff,args.d,args.lo,args.hi,
+            [int(m) for m in args.moduli.split(',')],pair_limit=args.pair_limit)
+        print(json.dumps(plan.compile(subset_limit=args.subset_limit),indent=2))
+        return
     if args.command == 'verify':
         obj = RigidCertificate(**json.loads(args.certificate.read_text()))
         result = verify_certificate(obj)

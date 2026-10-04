@@ -50,3 +50,35 @@ def allowed(P, Q, units, gamma, modulus, leading, shift=0, plane=(0,0,1), extra_
     return {'modulus': modulus, 'periods': [len(xs) for xs in powers],
             'allowed_residues': rows, 'tested_residues': len(powers[0]) * (len(powers[1]) if len(powers)==2 else 1),
             'status': 'exact Python residue filter; not an exponent bound or Lean certificate'}
+
+
+def information_plan(P, Q, units, gamma, modulus, leading, *, scope,
+                     extra_divisibility=(), plane=(0,0,1), shift=0,
+                     costs=None, subset_limit=1_000_000, pair_limit=1_000_000):
+    """Minimal readouts deciding this modular unit-orbit admissibility test.
+
+    Uses the SAME certified period tables as allowed(). Covers residue classes,
+    including signed exponents by reduction, but supplies no global height bound.
+    """
+    from perfectpower.information import InformationProblem, Observation
+    table = allowed(P,Q,units,gamma,modulus,leading,shift,plane,extra_divisibility)
+    periods = table['periods']
+    states = ([(i,) for i in range(periods[0])] if len(periods)==1 else
+              [(i,j) for i in range(periods[0]) for j in range(periods[1])])
+    powers = [matrix_period(Mx(P,Q,u),modulus) for u in units]
+    vectors = {s:apply(powers[0][s[0]] if len(s)==1 else
+                      mm(powers[0][s[0]],powers[1][s[1]]),gamma) for s in states}
+    predicates = [('plane',lambda s:sum(plane[t]*vectors[s][t] for t in range(3)) % modulus == 0),
+                  ('lattice',lambda s:(vectors[s][0]+shift*vectors[s][1]) % abs(leading)==0)]
+    predicates += [(f'extra_{i}',lambda s,row=row,d=d:
+                     sum(row[t]*vectors[s][t] for t in range(3)) % d==0)
+                   for i,(row,d) in enumerate(extra_divisibility)]
+    accepted={tuple(s) for s in table['allowed_residues']}
+    observations=[Observation(name,read,(costs or {}).get(name,1)) for name,read in predicates]
+    problem=InformationProblem(states,lambda s:s in accepted,observations,
+        scope=scope,pair_limit=pair_limit)
+    result=problem.compile(subset_limit=subset_limit)
+    result.update(modulus=modulus,periods=periods,
+                  allowed_residue_count=len(accepted),global_exponent_bound=False,
+                  signed_exponents='reduce modulo certified matrix periods')
+    return result
