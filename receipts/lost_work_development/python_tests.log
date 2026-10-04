@@ -1,0 +1,14 @@
+...................................................................ss........................................................................................................................................................................................................................................./workspace/scratch/54e076b76e97/perfectpower/python/tests/test_gates.py:17: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/54e076b76e97/perfectpower/data/mordell_census.jsonl' mode='r' encoding='UTF-8'>
+  cls.rows = [json.loads(line) for line in open(ROOT / 'data' / 'mordell_census.jsonl')]
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.............................................................................................................................................../workspace/scratch/54e076b76e97/perfectpower/python/tests/test_mordell_descent.py:13: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/54e076b76e97/perfectpower/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../workspace/scratch/54e076b76e97/perfectpower/python/tests/test_mordell_descent.py:35: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/54e076b76e97/perfectpower/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+.................................................................................................................................................................................................................ss
+----------------------------------------------------------------------
+Ran 658 tests in 79.496s
+
+OK (skipped=4)

@@ -1,0 +1,55 @@
+{
+  "baseline_commit": "af68d0dc1a6efdd8ff88b4564c8604dff572ea6f",
+  "cold_copy": {
+    "all_byte_identical": true,
+    "archive_bytes": 20638755,
+    "deterministic_files": [
+      "arithmetic/corpus.json",
+      "arithmetic/corpus_integer_metric.json",
+      "arithmetic/hard_examples.json",
+      "arithmetic/integer_batches.json",
+      "arithmetic/integer_cells.json",
+      "arithmetic/summary.json",
+      "locality_examples.json",
+      "observable_examples.json",
+      "recurrence_machines.json",
+      "summary.json"
+    ],
+    "new_tests_passed": 23,
+    "scope": "cold archived code and corpus before validation logs/metadata were added",
+    "standard_library_only": true,
+    "tree": "0d7001cbab9f978562cbf5310551291e551e7ac4"
+  },
+  "date_utc": "2026-10-04",
+  "deterministic_receipt_sha256": {
+    "arithmetic/corpus.json": "11f6e1092154eb119098ee893fc2527aa8f5d271253069fe874a5e6f5d94a45a",
+    "arithmetic/corpus_integer_metric.json": "4c50c6a73bdbcae57218a9e3a33e478208ff8d468d98098653e6cf28a94bf786",
+    "arithmetic/hard_examples.json": "ba537ae1476380d72c43e3799e916099bb423c50197e3b4b77fd369d0000574c",
+    "arithmetic/integer_batches.json": "c9ec5db8fa697efc489b6cac1698de486dc176bc9172204a3375a8885b9a4601",
+    "arithmetic/integer_cells.json": "c12411bb96607c66d66a5579a1f61f88d65b3574f1da200111b6b414b5e07186",
+    "arithmetic/summary.json": "57bc9fd6b975739c3ea9e204a7fbc42f8d480c15dd1f84a27e236edce164d7d5",
+    "locality_examples.json": "1534643bcb87acabb02834616b0cfc6a94f56641592d4b6d1d22605a13290919",
+    "observable_examples.json": "54f3fb01546dd9e8b9adbc87c78cf0dbab1ed5a90b47fa6b4966a250471db883",
+    "recurrence_machines.json": "18e74d5ed76e4cef5d31c9b14f56ad12463e3200b2f2c1adb44e99a9a3859cc2",
+    "summary.json": "d3ee4cae987a4d875f35c9a0d031fb269809f68b27725cb0e51ff839010054f8"
+  },
+  "execution_verified": false,
+  "full_python_tests": {
+    "log": "receipts/lost_work_development/python_tests.log",
+    "passed": 654,
+    "seconds": 79.496,
+    "skipped": 4,
+    "tests": 658
+  },
+  "new_lean_compilations": 0,
+  "new_tests": 23,
+  "source_sha256": {
+    "python/develop_lost_work.py": "8406a020c3669da6a8bfa87e052867ff159ea270a8578036e032f06582722a0e",
+    "python/perfectpower/arithmetic_engine.py": "4d47d155b5a3eef14aac925a1e5bf301cb8105a7d28b6408c91168e1a9984e4d",
+    "python/perfectpower/enhanced_cli.py": "d31e588ce231beb8d5a9534f59447021a809f74a15db58de28d013f842c4ef36",
+    "python/perfectpower/factored_sieve.py": "b29d1918fcfe5333f39cff8f44ad96eeb28bf7c0fce75cebb356b1f53611e463",
+    "python/perfectpower/observable_machine.py": "77901010149145876ecf87e82b14f1d7273e207a70cf79c701be4192c5d7ccb9",
+    "python/perfectpower/residue_cover.py": "ca40ebf7afe559bc159ca529fbbc4e8b54960667df33dc55b004b4c67f33db83",
+    "python/tests/test_lost_work_machinery.py": "95d7229a8c24cb5d5de22eaab714cc66bcb422319ea07036ff8f1192ca25cde3"
+  }
+}

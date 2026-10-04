@@ -46,8 +46,10 @@ See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRA
 | Compile polynomial power, triangular-number, and quadratic-root constraints | `solve`, `prove` | [Constraint compiler](docs/CONSTRAINT_COMPILER.md) |
 | Classify and count perfect-power hits; generate Pell and radical families | `classify`, `count`, `enumerate` | [Mathematical overview](docs/MONOGRAPH.md) |
 | Solve supported polynomial equations over all integers | `exact-solve`, `square-fibres`, `integer-roots` | [Arithmetic engine](docs/ENHANCED_MACHINERY_MONOGRAPH.md), [roots and search bounds](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
+| Search a bounded power range using factored local filters | `factored-scan` | [Local arithmetic filters](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md) |
 | Solve exact integer linear systems and find every tied nearest lattice point | `integer-lift`, `nearest-lift` | [Integer coordinates](docs/INTEGER_LIFTING_MONOGRAPH.md), [optimization](docs/ENHANCED_MACHINERY_MONOGRAPH.md) |
-| Analyze recurrence operators, generated algebras, and graph events | `recurrence`, `operator-algebra`, `connection-measure` | [Operators and graph measures](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
+| Analyze operators and share exact state machines across recurrence models | `recurrence-batch`, `observable-machine`, `operator-algebra` | [Shared output machines](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md), [operator algebras](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
+| Query graph events without enumerating every basis | `connection-measure` | [Graph measures](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
 | Compute branched-cover topology, differentials, and surface geometry | `branched-geometry`, `legendre-period-bounds`, `intrinsic-voronoi` | [Geometry documentation](docs/README.md#geometry) |
 | Compare arithmetic families with local OEIS records | `oeis`, `sequence-atlas` | [OEIS integration](docs/OEIS.md) |
 

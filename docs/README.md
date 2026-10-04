@@ -6,7 +6,7 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 
 | Subject | Guides |
 |---|---|
-| Constraint plans and complete integer solving | [Compiler](CONSTRAINT_COMPILER.md), [integrated engine and optimization](ENHANCED_MACHINERY_MONOGRAPH.md), [Sturm roots and sharper power gaps](MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
+| Constraint plans and complete integer solving | [Compiler](CONSTRAINT_COMPILER.md), [integrated engine and optimization](ENHANCED_MACHINERY_MONOGRAPH.md), [Sturm roots and sharper power gaps](MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [factored local filters](LOCALITY_AND_OBSERVABLE_MACHINES.md) |
 | Native Lean enumeration | [Getting started](NATIVE_POWER_START_HERE.md), [square-plus-constant polynomials](NATIVE_POLYNOMIAL_MONOGRAPH.md), [Runge squares](NATIVE_RUNGE_MONOGRAPH.md), [higher powers](NATIVE_RUNGE_POWER_MONOGRAPH.md) |
 | Quartics and divisor sums | [Effective quartic solver](QUARTIC_EFFECTIVE_SOLVER_MONOGRAPH.md), [divisor route](DIVISOR_REUSE_MONOGRAPH.md), [divisor-sum results](DIVISOR_SUM_RESULTS_MONOGRAPH.md) |
 | Mordell curves, descent, and units | [Mordell branch](MORDELL_BRANCH.md), [unit premises](UNIT_PREMISES.md), [weighted norm lists](WEIGHTED_NORM_LISTS.md), [k = 22 proof](K22_PROOF.md) |
@@ -25,7 +25,7 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 
 | Subject | Guides |
 |---|---|
-| Recurrence and operator machinery | [Sequences](SEQUENCE_RECOVERY_MONOGRAPH.md), [operators](OPERATOR_RECOVERY_MONOGRAPH.md), [generated algebras and graph events](MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
+| Recurrence and operator machinery | [Sequences](SEQUENCE_RECOVERY_MONOGRAPH.md), [operators](OPERATOR_RECOVERY_MONOGRAPH.md), [generated algebras and graph events](MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [minimal shared output machines](LOCALITY_AND_OBSERVABLE_MACHINES.md) |
 | Divisor-coordinate operators | [Arithmetic kernels](DIVISOR_KERNEL_RECOVERY_MONOGRAPH.md) |
 | Weighted Hodge, power composition, and finite Fourier algebra | [Constructions](DEEP_GEMS_MONOGRAPH.md), [Lean proof map](PARALLEL_LEAN_MONOGRAPH.md) |
 | OEIS comparison and definition translation | [OEIS integration](OEIS.md), [definition language](DEFINITION_LANGUAGE.md), [source snapshot](../data/oeis/SOURCE.md) |

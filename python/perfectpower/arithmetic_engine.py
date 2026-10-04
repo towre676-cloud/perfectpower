@@ -120,7 +120,11 @@ class ArithmeticEngine:
         else:
             bound=_bound(f,d,root_node_limit=self.work_limit)
             if bound is None:return None
-            if bound['kind']=='sharp_horner':
+            from .factored_sieve import adaptive_cover
+            b=bound['bound'];cover=adaptive_cover(cover,-b,b)
+            if cover['global_obstruction']:
+                bound=None;scan={'points':[],'interval':None,'interval_size':0,'candidates_checked':0}
+            elif bound['kind']=='sharp_horner':
                 from .sharp_power_gap import scan_sharp
                 scan=scan_sharp(cover,bound,work_limit=self.work_limit)
             else:
@@ -153,6 +157,7 @@ class ArithmeticEngine:
                 'statistics':{'original_degree':len(f)-1,'leaf_degree':len(h)-1,'original_coefficient_bits':max(abs(c).bit_length() for c in f),
                     'leaf_coefficient_bits':max(abs(c).bit_length() for c in h),'interval_size':leaf['interval_size'],
                     'candidates_checked':leaf['candidates_checked'],'cache_hits':self.hits,'cache_misses':self.misses,
+                    'sieve_candidates_tested':leaf.get('sieve_candidates_tested',leaf['candidates_checked']),
                     'outer_points':len(leaf['points']),'retained_points':len(points)}}
         identity=rigid_certificate(f,degree)
         if identity is not None and identity.exact_identity:

@@ -52,19 +52,29 @@ def residue_cover(coefficients,degree,moduli=(16,9,5,7),*,period_limit=65536,wor
 
 
 def verify_cover(cover):
+    if not isinstance(cover,dict):return False
     try:
+        if cover.get('schema')=='pp-factored-cover/1':
+            from .factored_sieve import verify_factored_cover
+            return verify_factored_cover(cover)
         rebuilt=residue_cover(cover['coefficients'],cover['degree'],[t['modulus'] for t in cover['tables']])
         return all(json.dumps(rebuilt[k],sort_keys=True)==json.dumps(cover[k],sort_keys=True) for k in ('modulus','allowed','tables','global_obstruction'))
     except (ValueError,KeyError,TypeError,IndexError):return False
 
 
 def candidate_count(cover,lo,hi):
+    if cover.get('schema')=='pp-factored-cover/1':
+        from .factored_sieve import factored_candidate_count
+        return factored_candidate_count(cover,lo,hi)
     if type(lo) is not int or type(hi) is not int or hi<lo:raise ValueError('ordered closed integer interval required')
     m=cover['modulus']
     return sum((hi-r)//m-(lo-1-r)//m for r in cover['allowed'])
 
 
 def scan_cover(cover,lo,hi,*,work_limit=100000):
+    if cover.get('schema')=='pp-factored-cover/1':
+        from .factored_sieve import scan_factored
+        return scan_factored(cover,lo,hi,work_limit=work_limit)
     if type(work_limit) is not int or work_limit<1:raise ValueError('positive candidate budget required')
     if not verify_cover(cover):raise ValueError('invalid local residue cover')
     count=candidate_count(cover,lo,hi)
