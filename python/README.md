@@ -62,3 +62,4 @@ python python/recover_integer_lifting.py --z3
 ```
 
 The query route eliminates direct affine equalities over the integers and preserves every residual constraint. Its model-lifting API reconstructs original coordinates from fresh integer parameters. See [the complete explanation](../docs/INTEGER_LIFTING_MONOGRAPH.md).
+The divisor-sum application is available through `python -m perfectpower divisor-sum --factors '[[2,1],[11,1]]'` and `python -m perfectpower sigma-quartic --shift 0`. Rebuild the full results collection from the repository root with `PYTHONPATH=python python python/build_divisor_sum_atlas.py`. See `docs/DIVISOR_SUM_RESULTS_MONOGRAPH.md` for global-versus-bounded scope and proof status.

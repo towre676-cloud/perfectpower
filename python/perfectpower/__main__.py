@@ -136,9 +136,29 @@ def main():
     p.add_argument('source', type=Path)
     p.add_argument('--output', required=True, type=Path)
     p.add_argument('--lean-output', type=Path)
+    p = sub.add_parser('divisor-sum', help='exact sum of divisors from validated prime factorization')
+    p.add_argument('--factors', required=True, type=json.loads, help='JSON list [[prime,exponent],...]')
+    p = sub.add_parser('sigma-quartic', help='complete prime and integer inputs for sigma(p^4)+shift square')
+    p.add_argument('--shift', type=int, default=0)
+    p.add_argument('--emit-lean', action='store_true')
+    p.add_argument('--name', default='sigma_quartic_points')
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    if args.command == 'divisor-sum':
+        from .divisor_sum import sigma_from_factorization,exact_root
+        result=sigma_from_factorization(args.factors)
+        result['power_roots']={str(d):exact_root(result['sigma'],d) for d in range(2,9)}
+        print(json.dumps(result,indent=2))
+        return
+    if args.command == 'sigma-quartic':
+        from .divisor_sum import repunit_quartic
+        from .linear_perturbation import emit_square_leading
+        if args.emit_lean:
+            print(emit_square_leading(1,1,1,1,1+args.shift,name=args.name),end='')
+        else:
+            print(json.dumps(repunit_quartic(args.shift),indent=2))
+        return
     if args.command == 'linear-perturbation':
         from .linear_perturbation import solve,emit_lean
         if len(args.parameters)!=5:parser.error('five parameters L,a,b,c,d required')
