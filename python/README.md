@@ -71,3 +71,17 @@ The divisor-sum application is available through `python -m perfectpower divisor
 New console routes are `collision-atlas`, `associahedron`, `legendre`, `branch-form`, `connection-polytope`, `descartes-orbit`, `period-normalize` and `branch-signs`. Exact rational inputs may be strings such as `"2/7"`; floats are rejected in this extension. The connection route supports loops, parallel edges, zero-weight outages and a `--costs` minimum-cost basis route that avoids enumerating every maximal minor. See [the monograph](../docs/POSITIVE_GEOMETRY_MONOGRAPH.md) for complete conventions and examples. The standalone corpus builder is `python/build_positive_geometry.py`, and `scripts/check_positive_geometry.sh` runs the focused mathematical checks and rebuilds all records.
 
 `python -m perfectpower branched-geometry --coeff=0,-1,0,0,0,1 --d=2 --differentials` constructs the explicit component basis. `python -m perfectpower legendre-period-bounds --lambda 1/2 --terms 80` encloses normalized Legendre periods with exact rational tail bounds. `python python/build_holomorphic_basis.py` rebuilds both atlas links, bases and interval receipts. See docs/HOLOMORPHIC_BASIS_MONOGRAPH.md for valuations, conventions and the formalization boundary.
+
+### Recovered multiplicative constraints
+
+Rows of `A` encode `product(x[j]**A[i][j]) = rhs[i]`. `monomial.solve_rational_monomial` returns a complete positive-rational multiplicative fibre or a prime-exponent obstruction. `solve_monomial` returns every positive-integer solution when a checked positive row combination bounds the variables; budget failure raises without a partial list. `eliminate_exponents` returns all cancelling row combinations, and distinguishes consequences from complete integer projection.
+
+```sh
+PYTHONPATH=python python -m perfectpower monomial-recovery
+PYTHONPATH=python python -m perfectpower monomial-solve --matrix '[[2,3]]' --rhs '[557256278016]'
+PYTHONPATH=python python -m perfectpower monomial-rational --matrix '[[2,-3],[1,1]]' --rhs '["4/27",6]'
+PYTHONPATH=python python -m perfectpower monomial-project source.smt2 --output projected.smt2
+python python/recover_monomial.py --z3
+```
+
+These are exact Python calculations, with stated positive domains; new Lean proofs are not claimed. See [the monograph](../docs/MONOMIAL_RECOVERY_MONOGRAPH.md).

@@ -1,0 +1,24 @@
+{
+  "primary_recovery": {
+    "source": "Prior conversation on August 17, 2025, retrieved from personal context",
+    "recorded_equations": ["T^6 K^3 = P^4", "K^18 tau = R^9", "E^60 = tau^5 g^24", "a^5 = zeta E^2"],
+    "variable_order": ["T", "K", "P", "tau", "R", "E", "g", "a", "zeta"],
+    "recorded_eliminations": ["T^36 R^9 = P^24 tau", "a^150 = zeta^30 tau^5 g^24"],
+    "old_claimed_smith_factors": [1, 1, 1, 1],
+    "recomputed_smith_factors": [1, 1, 1, 3],
+    "independent_methods": ["unimodular transcript", "714 exhaustive determinantal minors"],
+    "recovered_correction": "For positive rational constants in the four exponent equations, rhs[2]/rhs[1] must be a rational cube. The integer kernel still has rank five.",
+    "unrecovered_artifact": "MASTER_FREEZE_SpareRelations_Trimmed_2025-08-17.json was mentioned in history; its contents were not retrieved or reproduced.",
+    "status_boundary": "The explicit recorded equations are executable inputs. No empirical Standard Model identity, historical freeze replication, or B5 Weyl action is asserted."
+  },
+  "other_old_material_inspected": {
+    "name": "PSG_Q_U_L_Z.txt",
+    "library_file_id": "libfile_80209b1e93fc8191b98970bf1b138b41",
+    "created_at": "2026-03-25T16:48:20.313563Z",
+    "name_2": "PSG_resultant_symmetry_probe.txt",
+    "library_file_id_2": "libfile_9c32bf81bc588191a4c96dbe6d03daa7",
+    "created_at_2": "2026-03-16T13:33:53.442959Z",
+    "decision": "Read the full polynomial and symmetry probe; no original source-resultant certificate or physical-branch proof was inferred. The older 2025 exponent construction was chosen for this build."
+  },
+  "new_claim_boundary": "Exact Python arithmetic on explicit inputs and current repository data; no new compiled Lean declaration or industrial performance claim."
+}

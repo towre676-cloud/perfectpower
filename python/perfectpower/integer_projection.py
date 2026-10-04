@@ -32,7 +32,7 @@ class IntegerProjection:
                 for i,name in enumerate(self.symbols)}
 
 
-def project_integer_query(script, **budgets):
+def _parse_integer_query(script):
     names,assertions=[],[];seen_logic=False;checks=0
     for raw in split_commands(script):
         node=_sexpr(raw)
@@ -76,6 +76,11 @@ def project_integer_query(script, **budgets):
         if sort(node)!='Bool': raise ValueError('Boolean assertion required')
         atoms.extend(flatten(node))
     if len(atoms)>1000: raise ValueError('assertion budget exceeded')
+    return names,atoms
+
+
+def project_integer_query(script, **budgets):
+    names,atoms=_parse_integer_query(script)
     rows,rhs,residual=[],[],[]
     for atom in atoms:
         linear=None

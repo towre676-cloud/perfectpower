@@ -1,5 +1,7 @@
 # PerfectPower
 
+The [August 2025 recovery monograph](docs/MONOMIAL_RECOVERY_MONOGRAPH.md) adds exact multiplicative equation solving: hidden-variable exponent elimination, complete positive-rational families, bounded positive-integer fibres and whole-query substitution. Recomputing the old four-equation presentation reveals a missed factor of three and its cube-compatibility condition. Run `python python/recover_monomial.py` to replay the recovered equations and all 1,562 stored prime-power and square-product cases.
+
 Start with the [three end-to-end examples](docs/SHOWCASE_MONOGRAPH.md): ten complete nonlinear integer pairs near 10³⁰, exact square-triangular counts and residue filters under a 1,000-digit bound, and elimination of a complete arithmetic relation from whole SMT queries. Run `python python/run_showcase.py` to rebuild their results and standalone programs.
 
 The [integer lifting monograph](docs/INTEGER_LIFTING_MONOGRAPH.md) completes the rational operator interface: all whole-number lifts, saturated integer kernels, simultaneous integral intertwiners, embedded lattice comparisons and exact affine elimination from whole queries. Run `python python/recover_integer_lifting.py` to replay the examples and all 23 existing order maps.

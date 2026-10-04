@@ -152,11 +152,16 @@ def main():
     p = sub.add_parser('legendre-period-bounds', help='exact rational enclosures of normalized Legendre periods')
     p.add_argument('--lambda', dest='lam', required=True)
     p.add_argument('--terms',type=int,default=64)
+    from .monomial_cli import add_commands as add_monomial_commands
+    add_monomial_commands(sub)
     from .positive_geometry_cli import add_commands
     add_commands(sub)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .monomial_cli import dispatch as dispatch_monomial
+    if dispatch_monomial(args):
+        return
     from .positive_geometry_cli import dispatch
     if dispatch(args):
         return
