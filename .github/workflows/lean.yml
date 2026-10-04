@@ -11,6 +11,8 @@ jobs:
         uses: leanprover/lean-action@v1
       - name: Native Runge complete-point and rejection audit
         run: scripts/check_native_runge.sh
+      - name: Native higher-power Runge and binary-root audit
+        run: scripts/check_native_runge_power.sh
       - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
       - name: Batteries linters on the hand-written library

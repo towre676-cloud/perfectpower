@@ -1,0 +1,69 @@
+{
+  "base_commit": "08dfed120557653a086f27e7d6fe858f0168135f",
+  "lean_version": "4.20.0",
+  "mathlib_commit": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "focused_module_count": 9,
+  "standard_axiom_declarations": 124,
+  "compatibility_declarations": 1,
+  "explicit_finite_packets": 20,
+  "certificate_only_cases": 2,
+  "exact_power_families": 3,
+  "mathematical_rejection_cases": 8,
+  "shell_input_cases": 9,
+  "maximum_audited_degree": 40,
+  "audited_exponents": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "generic_bound_exponents": "all natural d >= 2",
+  "root_specification_exponents": "all nonzero natural d",
+  "huge_root_test": "seventh root of 10^84 is 10^12; preceding integer floor root is 10^12-1",
+  "python_tests": {
+    "run": 525,
+    "skipped": 4,
+    "status": "passed"
+  },
+  "proof_inputs_sha256": {
+    "PerfectPower/NativeNearSquare.lean": "1a43caad240636c8506440fab93311299381e372708e3a1097b791e62e3544b2",
+    "PerfectPower/NativePolynomialSquare.lean": "196428c3ff5ec8be4b1f22fd5445cc954b67500aa2a2fdeca1a23f0fa0cb2b86",
+    "PerfectPower/FastDivisors.lean": "5c5aca6ad458c698fb1309057360cbbb8951f1f84ccba0165996538843b66253",
+    "PerfectPower/NativePolynomialRoots.lean": "0e3df300ed4ae3874d087aa4fb8717c34e72a5a509c9afd331e2091839d247d0",
+    "PerfectPower/LinearPerturbation.lean": "2ee9caaaacb03381b43f56c0e25fe6011170f0aab16e1046dee19342564ca7a5",
+    "PerfectPower/RungePolynomial.lean": "0d24019dc5543c5e717cfc719d2b37c0900288b2cc8a653b7c4607925c3776e1",
+    "PerfectPower/NativePowerRoots.lean": "f9b10c1bc1324fa491424828ed240a3245c56f2519b41517ab0a41677fe30cbd",
+    "PerfectPower/RungePower.lean": "bfb610345998aa135524b6842b6f56a864a58afaa35f7281dd3750caac2f9df6",
+    "PerfectPower/Tactic/RungePower.lean": "2a046bfc3b41c17e4facc274837ab589a4818dc23225b6a9bf8fe2891dd24003",
+    "PerfectPower/Tactic/RungePolynomial.lean": "604f8ecb7c62c818ec7b63fd03977801324358f5b5a693ba129d15d27b77eebd",
+    "audit/NativeRungePower.lean": "c64b59ae93df0caec510af45ff695812ed9517596ccc3caafe9337bb5d08434b",
+    "audit/RungePowerCompatibility.lean": "257e11e4ebdcaf04c14afb4541284a52c2bfa6e9356bf4b3f268124f6a4ae0bc",
+    "scripts/check_native_runge_power.sh": "3432f5df0b88e5c8915db8e3feae0b8873d257b7aa7f5c98c47dfd85f4f4b185",
+    "scripts/solve_native_runge_power.sh": "9f595d1ca1248d47cec9374105bfe9aba3bf354acac297e191efb3bdebffe42a"
+  },
+  "complete_point_proofs": "unconditional over all integer x and y, on the original equation",
+  "native_computation": "proposes coefficient identities and point packets; correctness checked by Lean kernel",
+  "binary_root": "function specification and complete signed fibres proved in Lean",
+  "large_bound_status": "coordinate bound and complete finite-search equivalence proved; packet not evaluated",
+  "local_environment": "process-path shim repairs unavailable /proc executable links; no Lean kernel changes",
+  "unperformed_checks": [
+    "full historical PerfectPower root rebuild",
+    "historical global axiom report regeneration",
+    "GitHub hosted runner availability"
+  ],
+  "open_scope": [
+    "universal symbolic specification of the coefficient proposal generator",
+    "sharper coefficient bounds",
+    "other leading coefficients",
+    "general Runge curves",
+    "general Baker bounds",
+    "number-ring solvers",
+    "general function-field solvers",
+    "GPU/WASM deployment"
+  ]
+}

@@ -328,3 +328,7 @@ import PerfectPower.QuarticCutoff
 
 import PerfectPower.RungePolynomial
 import PerfectPower.Tactic.RungePolynomial
+
+import PerfectPower.NativePowerRoots
+import PerfectPower.RungePower
+import PerfectPower.Tactic.RungePower

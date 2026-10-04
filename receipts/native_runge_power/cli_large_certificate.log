@@ -1,0 +1,6 @@
+runge_result_complete (x✝ y✝ : ℤ) :
+  y✝ ^ 3 = PerfectPower.NativePolynomialSquare.eval [1000000000000000000000000000001, 1, 0, 0, 0, 0, 1] x✝ ↔
+    (x✝, y✝) ∈
+      PerfectPower.RungePower.points [1000000000000000000000000000001, 1, 0, 0, 0, 0, 1] [0, 0, 0, 0, 1]
+        [1000000000000000000000000000001, 1] 3
+'runge_result_complete' depends on axioms: [propext, Classical.choice, Quot.sound]

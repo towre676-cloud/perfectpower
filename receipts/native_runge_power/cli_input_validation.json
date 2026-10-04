@@ -1,0 +1,81 @@
+[
+  {
+    "arguments": [],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--unknown",
+      "1,0,0,1",
+      "3"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,0,1",
+      "3;echo invalid"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,0,1",
+      "-3"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,0,1;echo invalid",
+      "3"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,0,1\n#print False",
+      "3"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      " 1, 0, 0, -1 ",
+      "3"
+    ],
+    "exit_code": 0,
+    "expected": 0
+  },
+  {
+    "arguments": [
+      "--certificate-only",
+      "--source-only",
+      "10001,1,0,0,0,0,1",
+      "3"
+    ],
+    "exit_code": 0,
+    "expected": 0
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,0,1",
+      "3",
+      "extra"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  }
+]

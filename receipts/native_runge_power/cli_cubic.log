@@ -1,0 +1,5 @@
+runge_result_complete (x✝ y✝ : ℤ) :
+  y✝ ^ 3 = PerfectPower.NativePolynomialSquare.eval [1, 1, 0, 1] x✝ ↔ (x✝, y✝) ∈ runge_result
+'runge_result_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+def runge_result : Finset (ℤ × ℤ) :=
+[(-1, -1), (0, 1)].toFinset
