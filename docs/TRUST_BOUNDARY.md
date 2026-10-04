@@ -4,7 +4,7 @@ This page states what each artifact in the repository establishes, what it takes
 
 ## 1. What the Lean kernel proves
 
-The Lean files are in `PerfectPower/`, including the machine-generated `PerfectPower/Generated/`. They are compiled against Lean `v4.20.0` and Mathlib `v4.20.0`, both pinned in `lean-toolchain` and `lake-manifest.json`. `audit/check_axioms.sh` checks every audited declaration: each may depend only on `propext`, `Classical.choice` and `Quot.sound`, so there is no `sorryAx`, no `Lean.ofReduceBool` and no custom axiom. The audited count is generated into the README by `make counts`.
+The Lean files are in `PerfectPower/`, including the machine-generated `PerfectPower/Generated/`. They are compiled against Lean `v4.20.0` and Mathlib `v4.20.0`, both pinned in `lean-toolchain` and `lake-manifest.json`. `audit/check_axioms.sh` checks every audited declaration: each may depend only on `propext`, `Classical.choice` and `Quot.sound`, so there is no `sorryAx`, no `Lean.ofReduceBool` and no custom axiom. The audited count is generated into [STATUS.md](STATUS.md) by `make counts`.
 
 Given that kernel, the following are theorems:
 

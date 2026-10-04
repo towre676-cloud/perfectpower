@@ -1,6 +1,6 @@
 # Research roadmap after release 0.6
 
-Current counts (audited declarations, generated certificates, census sizes) are generated into the README by `make counts`; the numbers in the "Done in 0.6" section below are historical snapshots of that release.
+Current counts (audited declarations, generated certificates, census sizes) are generated into [STATUS.md](STATUS.md) by `make counts`; the numbers in the "Done in 0.6" section below are historical snapshots of that release.
 
 ## Done in 0.6
 

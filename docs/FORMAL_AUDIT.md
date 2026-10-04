@@ -4,7 +4,7 @@
 
 In the build environment of this release, the Mathlib cache and release servers were unreachable, so Mathlib was compiled from source (about 1900 modules). CI uses `leanprover/lean-action` and the ordinary cache.
 
-`./audit/check_axioms.sh` runs `#print axioms` on every audited declaration; the current number is generated into the README by `make counts`, so it is never typed by hand. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. `audit/Lint.lean` runs Batteries' `#lint` over the hand-written library and reports 0 errors; the generated certificates are excluded, since their redundant `have`s are harmless machine output. Both checks are part of `make verify`. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
+`./audit/check_axioms.sh` runs `#print axioms` on every audited declaration; the current number is generated into [STATUS.md](STATUS.md) by `make counts`, so it is never typed by hand. It fails unless each depends only on `propext`, `Classical.choice` and `Quot.sound`, which excludes both `sorryAx` and custom axioms. This check passed for release 0.6. `audit/Lint.lean` runs Batteries' `#lint` over the hand-written library and reports 0 errors; the generated certificates are excluded, since their redundant `have`s are harmless machine output. Both checks are part of `make verify`. The results below are therefore `LEAN_VERIFIED` in the sense of [the receipt policy](RECEIPTS.md).
 
 ## What changed from 0.5
 

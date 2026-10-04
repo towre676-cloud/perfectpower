@@ -104,7 +104,7 @@ oeis:
 
 # Regenerated files must match the committed ones exactly.
 check-clean:
-	git diff --exit-code -- receipts/ certs/ data/ docs/figures/ PerfectPower/Generated/ README.md audit/axioms_report.txt
+	git diff --exit-code -- receipts/ certs/ data/ docs/figures/ docs/STATUS.md PerfectPower/Generated/ README.md audit/axioms_report.txt
 
 # Optional: needs Sage or passagemath (see crosscheck/README.md).
 crosscheck:
