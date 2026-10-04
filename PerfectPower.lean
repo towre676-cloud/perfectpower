@@ -294,3 +294,9 @@ import PerfectPower.NativePolynomialSquare
 import PerfectPower.Tactic.NativePolynomialPower
 import PerfectPower.LocalQuarticObstruction
 import PerfectPower.NativeSquareChart
+
+-- Literature-derived effective projection, cubic covariants, and signed unit sieves.
+import PerfectPower.QuadraticProjection
+import PerfectPower.MixedRunge
+import PerfectPower.CubicCovariants
+import PerfectPower.RankTwoSieve

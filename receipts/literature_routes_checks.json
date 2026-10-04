@@ -1,0 +1,51 @@
+{
+  "base_commit": "6eda0d769e5051da709a232d50d400b36bde0b86",
+  "lean_version": "4.20.0",
+  "new_modules": [
+    "QuadraticProjection",
+    "MixedRunge",
+    "CubicCovariants",
+    "RankTwoSieve"
+  ],
+  "audit_reports": 14,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "targeted_python_tests": 9,
+  "python_suite": {
+    "run": 362,
+    "skipped": 4,
+    "result": "OK"
+  },
+  "mixed_points": [
+    [
+      -1,
+      -4
+    ],
+    [
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      -1,
+      2
+    ]
+  ],
+  "mixed_coordinate_interval": [
+    -25,
+    23
+  ],
+  "mixed_enumeration": "Lean kernel decide",
+  "remaining_obligations": [
+    "Concrete rank-two Matveev lower bound/global exponent bound",
+    "Certified global Mordell x-bound and applicable reduced-Hessian transport",
+    "Formal refinement of Python implementations to Lean specifications"
+  ],
+  "scope": "Targeted new Lean modules and audits; no claim of a fresh full historical Lean build"
+}
