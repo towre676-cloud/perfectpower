@@ -18,6 +18,13 @@ def add_commands(sub):
     p=sub.add_parser('certified-voronoi',help='exact rational polyhedral Voronoi boundary enclosure')
     p.add_argument('--coeff',required=True);p.add_argument('--resolution',type=int,default=6)
     p.add_argument('--sites',type=int,default=4);p.add_argument('--depth',type=int,default=2)
+    p=sub.add_parser('symplectic-periods',help='actual continued-sheet integrals over mesh symplectic cycles')
+    p.add_argument('--coeff',required=True);p.add_argument('--resolution',type=int,default=6)
+    p.add_argument('--tolerance',type=float,default=1e-10)
+    p=sub.add_parser('integrate-path',help='continued-sheet finite path on a cyclic component')
+    p.add_argument('--coeff',required=True);p.add_argument('--d',required=True,type=int)
+    p.add_argument('--points',required=True,type=json.loads);p.add_argument('--charts',type=json.loads)
+    p.add_argument('--sheet',type=int,default=0);p.add_argument('--tolerance',type=float,default=1e-10)
     p=sub.add_parser('surface-homology',help='integral symplectic basis on a curve-derived surface mesh')
     p.add_argument('--coeff',required=True);p.add_argument('--resolution',type=int,default=6)
     p=sub.add_parser('conformal-voronoi',help='curve-derived hyperelliptic mesh and intrinsic heat Voronoi approximation')
@@ -26,17 +33,23 @@ def add_commands(sub):
 
 
 def dispatch(args):
-    if args.command not in ('intrinsic-voronoi','analytic-periods','conformal-metric','conformal-voronoi','certified-voronoi','surface-homology'):return False
+    if args.command not in ('intrinsic-voronoi','analytic-periods','conformal-metric','conformal-voronoi','certified-voronoi','surface-homology','symplectic-periods','integrate-path'):return False
     if args.command=='intrinsic-voronoi':
         from .intrinsic_torus import legendre_torus,legendre_point
         p=legendre_torus(args.lam,args.sites,args.terms)
         p['curve_sites']=[legendre_point(Fraction(args.lam),complex(*s),p['height']) for s in p['sites']]
     else:
         coeff=[int(a) for a in args.coeff.split(',')]
-        if args.command in ('conformal-voronoi','certified-voronoi','surface-homology'):
+        if args.command=='integrate-path':
+            from .surface_periods import integrate_path
+            p=integrate_path(coeff,args.d,args.points,args.charts,args.sheet,args.tolerance)
+        elif args.command in ('conformal-voronoi','certified-voronoi','surface-homology','symplectic-periods'):
             from .conformal_mesh import hyperelliptic_mesh,heat_voronoi
             mesh=hyperelliptic_mesh(coeff,args.resolution)
-            if args.command=='surface-homology':
+            if args.command=='symplectic-periods':
+                from .surface_periods import symplectic_period_matrix
+                p=symplectic_period_matrix(mesh,args.tolerance)
+            elif args.command=='surface-homology':
                 from .symplectic_surface import surface_basis
                 p=surface_basis(mesh)
             else:

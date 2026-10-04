@@ -28,7 +28,7 @@ def hyperelliptic_mesh(coefficients,resolution=5,ring_count=16):
     infinity=len(coords);coords.append(None)
     if m%2:branch.add(infinity)
     base_faces=[(f,False) for f in plane_faces]+[((infinity,ring[k],ring[(k+1)%ring_count]),True) for k in range(ring_count)]
-    mids={};faces=[];edge_chart={}
+    mids={};faces=[];face_caps=[];edge_chart={}
     def chart_coord(v,cap):
         z=coords[v];return (0j if z is None else 1/z) if cap else z
     def midpoint(a,b,cap):
@@ -45,7 +45,7 @@ def hyperelliptic_mesh(coefficients,resolution=5,ring_count=16):
         else:center=(coords[a]+coords[b]+coords[c])/3
         center_id=len(coords);coords.append(center)
         for tri in ((a,ab,center_id),(ab,b,center_id),(b,bc,center_id),(bc,c,center_id),(c,ca,center_id),(ca,a,center_id)):
-            faces.append(tri)
+            faces.append(tri);face_caps.append(cap)
             for u,v in zip(tri,tri[1:]+tri[:1]):edge_chart[tuple(sorted((u,v)))]=edge_chart.get(tuple(sorted((u,v))),False) or cap
     def parity(a,b,cap):
         if a in branch or b in branch:raise AssertionError('branch edges have no regular transition')
@@ -136,6 +136,8 @@ def hyperelliptic_mesh(coefficients,resolution=5,ring_count=16):
     return {'schema':'pp-conformal-hyperelliptic-mesh/1','coefficients':list(coefficients),'genus':g,
             'resolution':resolution,'ring_count':ring_count,'vertices':len(labels),'edges':len(lifted_edges),'faces':len(triangles),
             'euler':chi,'connected':True,'closed_manifold_vertex_links':True,'orientable':True,'face_orientation_signs':[signs[i] for i in range(len(triangles))],'triangles':triangles,'triangle_local_coordinates':local,'triangle_areas':areas,
+            'face_inverse_chart':[cap for cap in face_caps for _ in range(2)],
+            'base_edge_inverse_chart':[[a,b,cap] for (a,b),cap in sorted(edge_chart.items())],
             'vertex_chart_labels':[[v,sh] for v,sh in labels],
             'base_coordinates':[None if z is None else pair(z) for z in coords],
             'edge_lengths':[[a,b,l] for (a,b),l in lifted_edges.items()],

@@ -1,0 +1,73 @@
+{
+  "period_vector": [
+    [
+      -0.1701408395358351,
+      0.14683343142949762
+    ]
+  ],
+  "start_sheet": 0,
+  "end_sheet": 2,
+  "endpoint": [
+    0.6,
+    0.8
+  ],
+  "endpoint_log_polynomial": [
+    0.6768855847071653,
+    -3.3214461533822712
+  ],
+  "closed_lift": false,
+  "quadrature_error_estimate": 7.496953830495088e-15,
+  "continuation_residual": 1.1102230246251565e-16,
+  "minimum_chart_clearance": 0.8170461643639153,
+  "root_diagnostics": {
+    "minimum_separation": 1.7320508075688772,
+    "polynomial_root_residual": 7.711855592701269e-16,
+    "certified": false
+  },
+  "certified_error_bound": false,
+  "component_equation": {
+    "power": 3,
+    "monic_polynomial": [
+      "-1",
+      "0",
+      "0",
+      "1"
+    ],
+    "scalar_normalization": "over C; not an arithmetic descent to Q"
+  },
+  "forms": [
+    {
+      "index": 0,
+      "character_j": 2,
+      "x_power": 0,
+      "numerator": [
+        "1"
+      ],
+      "denominator_z_power": 2,
+      "finite_orders_before_x_power": [
+        {
+          "reduced_multiplicity": 1,
+          "distinct_roots": 3,
+          "places_per_root": 1,
+          "order": 0
+        }
+      ],
+      "extra_zero_divisor_degree": 0,
+      "order_at_each_infinity": 0,
+      "divisor_degree": 0,
+      "coefficient_operator": {
+        "derivative": [
+          "-3",
+          "0",
+          "0",
+          "3"
+        ],
+        "zeroth": [
+          "0",
+          "0",
+          "6"
+        ]
+      }
+    }
+  ]
+}
