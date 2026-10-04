@@ -1,0 +1,1604 @@
+{
+  "schema": "pp-covering-lattice/1",
+  "execution_verified": false,
+  "fisher_571": {
+    "schema": "pp-covering/1",
+    "quartics": [
+      [
+        -11,
+        68,
+        -52,
+        -164,
+        -64
+      ],
+      [
+        -4,
+        -60,
+        -232,
+        -52,
+        -3
+      ],
+      [
+        -31,
+        -78,
+        32,
+        102,
+        -53
+      ]
+    ],
+    "invariants": [
+      "44608",
+      "18842960",
+      "-2338816"
+    ],
+    "gamma": [
+      "20/9",
+      "-64/9",
+      "-16/3"
+    ],
+    "local_checks": [
+      {
+        "place": 3,
+        "point": [
+          1,
+          1,
+          0
+        ],
+        "quartic_residue": 1,
+        "gamma_core_residue": 2,
+        "symbol": 1
+      },
+      {
+        "place": 5,
+        "point": [
+          0,
+          1,
+          1
+        ],
+        "quartic_residue": 1,
+        "gamma_core_residue": 3,
+        "symbol": 1
+      },
+      {
+        "place": 7,
+        "point": [
+          1,
+          1,
+          1
+        ],
+        "quartic_residue": 1,
+        "gamma_core_residue": 5,
+        "symbol": 1
+      },
+      {
+        "place": 11,
+        "point": [
+          3,
+          3,
+          1
+        ],
+        "quartic_residue": 9,
+        "gamma_core_residue": 7,
+        "symbol": 1
+      },
+      {
+        "place": 571,
+        "point": [
+          2,
+          195,
+          1
+        ],
+        "quartic_residue": 339,
+        "gamma_core_residue": 547,
+        "symbol": 1
+      },
+      {
+        "place": 2,
+        "hensel": {
+          "prime": 2,
+          "exponent": 12,
+          "root": 2416,
+          "modulus": 4096,
+          "residual": 0,
+          "execution_verified": false
+        },
+        "gamma_square_class": 5,
+        "symbol": 1
+      },
+      {
+        "place": "infinity",
+        "point": [
+          15,
+          4
+        ],
+        "quartic_value": 101,
+        "gamma_core": -27,
+        "symbol": -1
+      }
+    ],
+    "finite_product": -1,
+    "pairing_matrix_mod2": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "execution_verified": false,
+    "source": "https://arxiv.org/abs/2208.14977",
+    "source_example": "3.4",
+    "status": "SOURCE_BACKED_OBSTRUCTION_REPLAY",
+    "global_dependencies": [
+      "Fisher Theorem 3.1 and Example 3.4",
+      "source 2-descent identifies the quartics as Selmer classes",
+      "source good-prime argument covers all unlisted places"
+    ],
+    "lean_certified": false,
+    "general_selmer_solver": false
+  },
+  "order_maps": [
+    {
+      "map_index": 0,
+      "domain": [
+        9,
+        9
+      ],
+      "codomain": [
+        3,
+        1
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "smith_factors": [
+          1,
+          1,
+          3
+        ],
+        "torsion_factors": [
+          3
+        ],
+        "torsion_order": 3,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            4,
+            4
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            0
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -2,
+            -1
+          ],
+          "modulus": 3
+        }
+      ]
+    },
+    {
+      "map_index": 1,
+      "domain": [
+        9,
+        9
+      ],
+      "codomain": [
+        3,
+        1
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "smith_factors": [
+          1,
+          1,
+          3
+        ],
+        "torsion_factors": [
+          3
+        ],
+        "torsion_order": 3,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            -2,
+            -2
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -1
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            2
+          ],
+          "modulus": 3
+        }
+      ]
+    },
+    {
+      "map_index": 2,
+      "domain": [
+        9,
+        9
+      ],
+      "codomain": [
+        3,
+        1
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "smith_factors": [
+          1,
+          1,
+          3
+        ],
+        "torsion_factors": [
+          3
+        ],
+        "torsion_order": 3,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            -2,
+            4
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            0,
+            1
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            -1
+          ],
+          "modulus": 3
+        }
+      ]
+    },
+    {
+      "map_index": 3,
+      "domain": [
+        12,
+        4
+      ],
+      "codomain": [
+        12,
+        14
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "smith_factors": [
+          1,
+          1,
+          2
+        ],
+        "torsion_factors": [
+          2
+        ],
+        "torsion_order": 2,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            4,
+            16
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            0,
+            1
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -2
+          ],
+          "modulus": 2
+        }
+      ]
+    },
+    {
+      "map_index": 4,
+      "domain": [
+        12,
+        10
+      ],
+      "codomain": [
+        30,
+        62
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "smith_factors": [
+          1,
+          1,
+          1
+        ],
+        "torsion_factors": [],
+        "torsion_order": 1,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            8,
+            44
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            2
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -3
+          ],
+          "modulus": 1
+        }
+      ]
+    },
+    {
+      "map_index": 5,
+      "domain": [
+        15,
+        10
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "smith_factors": [
+          1,
+          1,
+          2
+        ],
+        "torsion_factors": [
+          2
+        ],
+        "torsion_order": 2,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            5,
+            20
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            0
+          ],
+          "modulus": 2
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -2
+          ],
+          "modulus": 2
+        }
+      ]
+    },
+    {
+      "map_index": 6,
+      "domain": [
+        18,
+        4
+      ],
+      "codomain": [
+        27,
+        52
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "smith_factors": [
+          1,
+          1,
+          2
+        ],
+        "torsion_factors": [
+          2
+        ],
+        "torsion_order": 2,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            6,
+            36
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            0,
+            1
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -3
+          ],
+          "modulus": 2
+        }
+      ]
+    },
+    {
+      "map_index": 7,
+      "domain": [
+        18,
+        18
+      ],
+      "codomain": [
+        12,
+        14
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "smith_factors": [
+          1,
+          1,
+          3
+        ],
+        "torsion_factors": [
+          3
+        ],
+        "torsion_order": 3,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            -4,
+            4
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -2
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            1
+          ],
+          "modulus": 3
+        }
+      ]
+    },
+    {
+      "map_index": 8,
+      "domain": [
+        18,
+        26
+      ],
+      "codomain": [
+        36,
+        82
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "smith_factors": [
+          1,
+          1,
+          1
+        ],
+        "torsion_factors": [],
+        "torsion_order": 1,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            -12,
+            -12
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -3,
+            -10
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            3
+          ],
+          "modulus": 1
+        }
+      ]
+    },
+    {
+      "map_index": 9,
+      "domain": [
+        30,
+        16
+      ],
+      "codomain": [
+        9,
+        2
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          6
+        ],
+        "smith_factors": [
+          1,
+          1,
+          6
+        ],
+        "torsion_factors": [
+          6
+        ],
+        "torsion_order": 6,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            3,
+            10,
+            28
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            1,
+            -2
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -1
+          ],
+          "modulus": 6
+        }
+      ]
+    },
+    {
+      "map_index": 10,
+      "domain": [
+        30,
+        20
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          6
+        ],
+        "smith_factors": [
+          1,
+          1,
+          6
+        ],
+        "torsion_factors": [
+          6
+        ],
+        "torsion_order": 6,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            3,
+            -10,
+            20
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            -2,
+            -5
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            1,
+            1
+          ],
+          "modulus": 6
+        }
+      ]
+    },
+    {
+      "map_index": 11,
+      "domain": [
+        30,
+        20
+      ],
+      "codomain": [
+        30,
+        60
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "smith_factors": [
+          1,
+          1,
+          3
+        ],
+        "torsion_factors": [
+          3
+        ],
+        "torsion_order": 3,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            3,
+            20,
+            120
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            1,
+            0
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -3
+          ],
+          "modulus": 3
+        }
+      ]
+    },
+    {
+      "map_index": 12,
+      "domain": [
+        30,
+        38
+      ],
+      "codomain": [
+        24,
+        42
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "smith_factors": [
+          1,
+          1,
+          3
+        ],
+        "torsion_factors": [
+          3
+        ],
+        "torsion_order": 3,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            3,
+            20,
+            108
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            1,
+            6
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -3
+          ],
+          "modulus": 3
+        }
+      ]
+    },
+    {
+      "map_index": 13,
+      "domain": [
+        30,
+        60
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "smith_factors": [
+          1,
+          1,
+          2
+        ],
+        "torsion_factors": [
+          2
+        ],
+        "torsion_order": 2,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            -10,
+            -20
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -2,
+            -5
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            3
+          ],
+          "modulus": 2
+        }
+      ]
+    },
+    {
+      "map_index": 14,
+      "domain": [
+        30,
+        62
+      ],
+      "codomain": [
+        12,
+        10
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "smith_factors": [
+          1,
+          1,
+          1
+        ],
+        "torsion_factors": [],
+        "torsion_order": 1,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            20,
+            28
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            3,
+            2
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -1
+          ],
+          "modulus": 1
+        }
+      ]
+    },
+    {
+      "map_index": 15,
+      "domain": [
+        36,
+        82
+      ],
+      "codomain": [
+        18,
+        26
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "smith_factors": [
+          1,
+          1,
+          1
+        ],
+        "torsion_factors": [],
+        "torsion_order": 1,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            24,
+            84
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            3,
+            10
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -3
+          ],
+          "modulus": 1
+        }
+      ]
+    },
+    {
+      "map_index": 16,
+      "domain": [
+        39,
+        2
+      ],
+      "codomain": [
+        15,
+        16
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          6
+        ],
+        "smith_factors": [
+          1,
+          1,
+          6
+        ],
+        "torsion_factors": [
+          6
+        ],
+        "torsion_order": 6,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            3,
+            13,
+            56
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            1,
+            -4
+          ],
+          "modulus": 6
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -2
+          ],
+          "modulus": 6
+        }
+      ]
+    },
+    {
+      "map_index": 17,
+      "domain": [
+        39,
+        34
+      ],
+      "codomain": [
+        27,
+        52
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          6
+        ],
+        "smith_factors": [
+          1,
+          1,
+          6
+        ],
+        "torsion_factors": [
+          6
+        ],
+        "torsion_order": 6,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            3,
+            -13,
+            28
+          ],
+          "modulus": 3
+        },
+        {
+          "row": [
+            0,
+            -5,
+            -16
+          ],
+          "modulus": 6
+        },
+        {
+          "row": [
+            0,
+            1,
+            2
+          ],
+          "modulus": 6
+        }
+      ]
+    },
+    {
+      "map_index": 18,
+      "domain": [
+        39,
+        86
+      ],
+      "codomain": [
+        21,
+        32
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "smith_factors": [
+          1,
+          1,
+          2
+        ],
+        "torsion_factors": [
+          2
+        ],
+        "torsion_order": 2,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            13,
+            40
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            3,
+            4
+          ],
+          "modulus": 2
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -2
+          ],
+          "modulus": 2
+        }
+      ]
+    },
+    {
+      "map_index": 19,
+      "domain": [
+        42,
+        74
+      ],
+      "codomain": [
+        12,
+        6
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          5
+        ],
+        "smith_factors": [
+          1,
+          1,
+          5
+        ],
+        "torsion_factors": [
+          5
+        ],
+        "torsion_order": 5,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            5,
+            28,
+            68
+          ],
+          "modulus": 5
+        },
+        {
+          "row": [
+            0,
+            3,
+            -2
+          ],
+          "modulus": 5
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -1
+          ],
+          "modulus": 5
+        }
+      ]
+    },
+    {
+      "map_index": 20,
+      "domain": [
+        195,
+        830
+      ],
+      "codomain": [
+        15,
+        10
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          32
+        ],
+        "smith_factors": [
+          1,
+          1,
+          32
+        ],
+        "torsion_factors": [
+          32
+        ],
+        "torsion_order": 32,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            16,
+            -65,
+            290
+          ],
+          "modulus": 16
+        },
+        {
+          "row": [
+            0,
+            1,
+            30
+          ],
+          "modulus": 32
+        },
+        {
+          "row": [
+            0,
+            1,
+            -2
+          ],
+          "modulus": 32
+        }
+      ]
+    },
+    {
+      "map_index": 21,
+      "domain": [
+        195,
+        830
+      ],
+      "codomain": [
+        15,
+        20
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          64
+        ],
+        "smith_factors": [
+          1,
+          1,
+          64
+        ],
+        "torsion_factors": [
+          64
+        ],
+        "torsion_order": 64,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            32,
+            -195,
+            60
+          ],
+          "modulus": 32
+        },
+        {
+          "row": [
+            0,
+            -29,
+            -60
+          ],
+          "modulus": 64
+        },
+        {
+          "row": [
+            0,
+            3,
+            4
+          ],
+          "modulus": 64
+        }
+      ]
+    },
+    {
+      "map_index": 22,
+      "domain": [
+        18,
+        24
+      ],
+      "codomain": [
+        9,
+        6
+      ],
+      "lattice": {
+        "rank": 3,
+        "free_rank": 0,
+        "determinantal_divisors": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "smith_factors": [
+          1,
+          1,
+          2
+        ],
+        "torsion_factors": [
+          2
+        ],
+        "torsion_order": 2,
+        "minors_tested": 19,
+        "execution_verified": false
+      },
+      "inverse_conditions": [
+        {
+          "row": [
+            1,
+            6,
+            12
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            1,
+            0
+          ],
+          "modulus": 1
+        },
+        {
+          "row": [
+            0,
+            -1,
+            -1
+          ],
+          "modulus": 2
+        }
+      ]
+    }
+  ],
+  "order_map_count": 23,
+  "prime_power_example": {
+    "rank": 2,
+    "free_rank": 0,
+    "determinantal_divisors": [
+      1,
+      19,
+      6859
+    ],
+    "smith_factors": [
+      19,
+      361
+    ],
+    "torsion_factors": [
+      19,
+      361
+    ],
+    "torsion_order": 6859,
+    "minors_tested": 5,
+    "execution_verified": false
+  },
+  "two_isogeny_example": {
+    "source_point": [
+      "1",
+      "1"
+    ],
+    "target_point": [
+      "1",
+      "0"
+    ],
+    "source_model": [
+      -1,
+      1
+    ],
+    "target_model": [
+      2,
+      -3
+    ]
+  },
+  "nonmonic_image_exclusion": {
+    "modulus": 6,
+    "periods": [
+      1
+    ],
+    "allowed_residues": [],
+    "tested_residues": 1,
+    "status": "exact Python residue filter; not an exponent bound or Lean certificate",
+    "requested_modulus": 2,
+    "order_lattice": {
+      "rank": 3,
+      "free_rank": 0,
+      "determinantal_divisors": [
+        1,
+        1,
+        1,
+        3
+      ],
+      "smith_factors": [
+        1,
+        1,
+        3
+      ],
+      "torsion_factors": [
+        3
+      ],
+      "torsion_order": 3,
+      "minors_tested": 19,
+      "execution_verified": false
+    },
+    "inverse_conditions": [
+      {
+        "row": [
+          1,
+          0,
+          0
+        ],
+        "modulus": 3
+      },
+      {
+        "row": [
+          0,
+          1,
+          0
+        ],
+        "modulus": 1
+      },
+      {
+        "row": [
+          0,
+          0,
+          1
+        ],
+        "modulus": 1
+      }
+    ],
+    "global_exponent_bound": false
+  },
+  "nonmonic_inverse_witness": {
+    "member": false,
+    "coordinates": null,
+    "obstructions": [
+      {
+        "row": [
+          1,
+          0,
+          0
+        ],
+        "modulus": 3,
+        "residue": 1
+      }
+    ],
+    "execution_verified": false
+  },
+  "outer_cancellation_counterexample": {
+    "identities_checked": true,
+    "execution_verified": false,
+    "outer": [
+      "0",
+      "0",
+      "1"
+    ],
+    "left_inner": [
+      "0",
+      "1"
+    ],
+    "right_inner": [
+      "0",
+      "-1"
+    ],
+    "equivalence_to_inner_equality": false,
+    "status": "FORWARD_ONLY",
+    "residual_obligation": "classify distinct outer fibres; do not cancel the outer polynomial",
+    "bilu_tichy_classification": false
+  }
+}

@@ -82,3 +82,23 @@ def information_plan(P, Q, units, gamma, modulus, leading, *, scope,
                   allowed_residue_count=len(accepted),global_exponent_bound=False,
                   signed_exponents='reduce modulo certified matrix periods')
     return result
+
+
+def order_image_allowed(matrix,P,Q,units,gamma,modulus,leading,shift=0,plane=(0,0,1)):
+    """Add every integral inverse-image restriction of an existing order map.
+
+    The filter modulus is enlarged to a multiple of all inverse denominators.
+    Membership modulo it is necessary, not sufficient for an infinite orbit.
+    """
+    from math import lcm
+    from perfectpower.integral_lattice import inverse_lattice_conditions, smith_invariants
+    conditions=inverse_lattice_conditions(matrix)
+    divisors=[c['modulus'] for c in conditions if c['modulus']>1]
+    if type(modulus) is not int or modulus<2 or type(leading) is not int or not leading:
+        raise ValueError('modulus at least two and nonzero integer leading coefficient required')
+    enlarged=lcm(modulus,abs(leading),*divisors)
+    result=allowed(P,Q,units,gamma,enlarged,leading,shift,plane,
+                   [(c['row'],c['modulus']) for c in conditions if c['modulus']>1])
+    result.update(requested_modulus=modulus,order_lattice=smith_invariants(matrix),
+                  inverse_conditions=conditions,global_exponent_bound=False)
+    return result

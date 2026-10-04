@@ -64,6 +64,12 @@ def main():
     p.add_argument('--moduli', required=True, help='comma-separated integer moduli')
     p.add_argument('--pair-limit', type=int, default=1_000_000)
     p.add_argument('--subset-limit', type=int, default=1_000_000)
+    sub.add_parser('covering-replay', help='recompute source-backed Fisher 571a1 obstruction')
+    p = sub.add_parser('lattice', help='integer presentation invariants and optional image membership')
+    p.add_argument('--matrix', required=True, type=json.loads, help='JSON integer matrix; columns generate image')
+    p.add_argument('--vector', type=json.loads, help='JSON integer vector to pull back')
+    p.add_argument('--prime', type=int, help='optional prime-power torsion profile')
+    p.add_argument('--minor-limit', type=int, default=100_000)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
@@ -72,6 +78,19 @@ def main():
         plan = polynomial_information(args.coeff,args.d,args.lo,args.hi,
             [int(m) for m in args.moduli.split(',')],pair_limit=args.pair_limit)
         print(json.dumps(plan.compile(subset_limit=args.subset_limit),indent=2))
+        return
+    if args.command == 'covering-replay':
+        from .covering import fisher_571_replay
+        print(json.dumps(fisher_571_replay(),indent=2))
+        return
+    if args.command == 'lattice':
+        from .integral_lattice import smith_invariants,lattice_membership,local_torsion_profile
+        out = smith_invariants(args.matrix,minor_limit=args.minor_limit)
+        if args.vector is not None:
+            out['membership'] = lattice_membership(args.matrix,args.vector,minor_limit=args.minor_limit)
+        if args.prime is not None:
+            out['local_profile'] = local_torsion_profile(args.matrix,args.prime,minor_limit=args.minor_limit)
+        print(json.dumps(out,indent=2))
         return
     if args.command == 'verify':
         obj = RigidCertificate(**json.loads(args.certificate.read_text()))

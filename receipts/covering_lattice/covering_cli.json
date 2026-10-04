@@ -1,0 +1,138 @@
+{
+  "schema": "pp-covering/1",
+  "quartics": [
+    [
+      -11,
+      68,
+      -52,
+      -164,
+      -64
+    ],
+    [
+      -4,
+      -60,
+      -232,
+      -52,
+      -3
+    ],
+    [
+      -31,
+      -78,
+      32,
+      102,
+      -53
+    ]
+  ],
+  "invariants": [
+    "44608",
+    "18842960",
+    "-2338816"
+  ],
+  "gamma": [
+    "20/9",
+    "-64/9",
+    "-16/3"
+  ],
+  "local_checks": [
+    {
+      "place": 3,
+      "point": [
+        1,
+        1,
+        0
+      ],
+      "quartic_residue": 1,
+      "gamma_core_residue": 2,
+      "symbol": 1
+    },
+    {
+      "place": 5,
+      "point": [
+        0,
+        1,
+        1
+      ],
+      "quartic_residue": 1,
+      "gamma_core_residue": 3,
+      "symbol": 1
+    },
+    {
+      "place": 7,
+      "point": [
+        1,
+        1,
+        1
+      ],
+      "quartic_residue": 1,
+      "gamma_core_residue": 5,
+      "symbol": 1
+    },
+    {
+      "place": 11,
+      "point": [
+        3,
+        3,
+        1
+      ],
+      "quartic_residue": 9,
+      "gamma_core_residue": 7,
+      "symbol": 1
+    },
+    {
+      "place": 571,
+      "point": [
+        2,
+        195,
+        1
+      ],
+      "quartic_residue": 339,
+      "gamma_core_residue": 547,
+      "symbol": 1
+    },
+    {
+      "place": 2,
+      "hensel": {
+        "prime": 2,
+        "exponent": 12,
+        "root": 2416,
+        "modulus": 4096,
+        "residual": 0,
+        "execution_verified": false
+      },
+      "gamma_square_class": 5,
+      "symbol": 1
+    },
+    {
+      "place": "infinity",
+      "point": [
+        15,
+        4
+      ],
+      "quartic_value": 101,
+      "gamma_core": -27,
+      "symbol": -1
+    }
+  ],
+  "finite_product": -1,
+  "pairing_matrix_mod2": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "execution_verified": false,
+  "source": "https://arxiv.org/abs/2208.14977",
+  "source_example": "3.4",
+  "status": "SOURCE_BACKED_OBSTRUCTION_REPLAY",
+  "global_dependencies": [
+    "Fisher Theorem 3.1 and Example 3.4",
+    "source 2-descent identifies the quartics as Selmer classes",
+    "source good-prime argument covers all unlisted places"
+  ],
+  "lean_certified": false,
+  "general_selmer_solver": false
+}
