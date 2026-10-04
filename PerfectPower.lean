@@ -315,3 +315,5 @@ import PerfectPower.SquareLeadingQuartic
 import PerfectPower.Tactic.SquareLeadingQuartic
 import PerfectPower.Generated.RepunitQuartic
 import PerfectPower.DivisorSum
+import PerfectPower.BranchedGeometry
+import PerfectPower.IntegerLiftRecovery

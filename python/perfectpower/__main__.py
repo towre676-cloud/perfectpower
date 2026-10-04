@@ -142,9 +142,23 @@ def main():
     p.add_argument('--shift', type=int, default=0)
     p.add_argument('--emit-lean', action='store_true')
     p.add_argument('--name', default='sigma_quartic_points')
+    p = sub.add_parser('branched-geometry', help='exact normalized-cover topology and faithful connection')
+    p.add_argument('--coeff',required=True,type=coefficients)
+    p.add_argument('--d',required=True,type=int)
+    p.add_argument('--k',default=0,type=int)
+    p.add_argument('--connection',action='store_true')
+    p.add_argument('--cells',action='store_true')
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    if args.command == 'branched-geometry':
+        from .branched_geometry import profile,faithful_laplacian,cell_surface
+        coeff=list(args.coeff);coeff[0]+=args.k
+        result=profile(coeff,args.d)
+        if args.connection:result['connection']=faithful_laplacian(result['root_multiplicities'],args.d)
+        if args.cells:result['cell_model_per_component']=cell_surface(result['genus_per_component'])
+        print(json.dumps(result,indent=2,default=str))
+        return
     if args.command == 'divisor-sum':
         from .divisor_sum import sigma_from_factorization,exact_root
         result=sigma_from_factorization(args.factors)

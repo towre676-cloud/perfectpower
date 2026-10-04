@@ -1,0 +1,19 @@
+import PerfectPower.BranchedGeometry
+import PerfectPower.IntegerLiftRecovery
+#print axioms PerfectPower.BranchedGeometry.trivalent_charge
+#print axioms PerfectPower.BranchedGeometry.hurwitz_euler
+#print axioms PerfectPower.BranchedGeometry.gram_kernel
+#print axioms PerfectPower.BranchedGeometry.gram_energy
+#print axioms PerfectPower.BranchedGeometry.parallel_seed_iff
+#print axioms PerfectPower.BranchedGeometry.cyclic_seed_iff
+#print axioms PerfectPower.BranchedGeometry.polynomial_power_differential
+#print axioms PerfectPower.BranchedGeometry.single_sub_dot
+#print axioms PerfectPower.BranchedGeometry.bouquet_kernel
+#print axioms PerfectPower.BranchedGeometry.bouquet_spectral_iff
+#print axioms PerfectPower.BranchedGeometry.bouquet_cyclic_iff
+#print axioms PerfectPower.BranchedGeometry.hodge_one_kernel
+#print axioms PerfectPower.IntegerLiftRecovery.transformed_fibre
+#print axioms PerfectPower.IntegerLiftRecovery.lift_transformed
+#print axioms PerfectPower.IntegerLiftRecovery.affine_fibre
+#print axioms PerfectPower.IntegerLiftRecovery.two_three
+#print axioms PerfectPower.IntegerLiftRecovery.four_six_no_point

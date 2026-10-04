@@ -1,0 +1,13 @@
+PerfectPower/IntegerLiftRecovery.lean:25:0: warning: automatically included section variable(s) unused in theorem 'PerfectPower.IntegerLiftRecovery.lift_transformed':
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+PerfectPower/IntegerLiftRecovery.lean:35:0: warning: automatically included section variable(s) unused in theorem 'PerfectPower.IntegerLiftRecovery.affine_fibre':
+  [Fintype m]
+  [DecidableEq m]
+  [DecidableEq n]
+  [DecidableEq p]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype m] [DecidableEq m] [DecidableEq n] [DecidableEq p] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`

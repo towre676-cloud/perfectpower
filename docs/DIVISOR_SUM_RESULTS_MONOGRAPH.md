@@ -78,7 +78,7 @@ The practical mathematical value of this collection is that a simple divisor-sum
 
 ## Completed release checks
 
-This push compiled six divisor-sum bridge theorems and 2,007 complete literal quartic lists, with 2,007 kernel proofs equating those lists to the saved packet points. All 4,020 axiom reports contain only the standard logical axioms. The checked catalogue indices are recorded explicitly, including all shifts from -3 through 3. The remaining 1,073 emitted instances are not claimed to have been compiled in this push.
+This push compiled six divisor-sum bridge theorems and 2,686 complete literal quartic lists, with 2,686 kernel proofs equating those lists to the saved packet points. All 5,378 axiom reports contain only the standard logical axioms. The checked catalogue indices are recorded explicitly, including all shifts from -3 through 3. The remaining 394 emitted instances are not claimed to have been compiled in this push.
 
 The full Python suite passes 464 tests with four existing skips; all nine focused divisor-sum tests pass. A cold rebuild reproduces every core mathematical JSON file, the full Lean catalogue, and all static proof chunks byte for byte. The offline browser embeds all 3,080 curves and all 218 joins, preserves exact integers as decimal strings, and passes JavaScript syntax checking.
 

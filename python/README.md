@@ -63,3 +63,5 @@ python python/recover_integer_lifting.py --z3
 
 The query route eliminates direct affine equalities over the integers and preserves every residual constraint. Its model-lifting API reconstructs original coordinates from fresh integer parameters. See [the complete explanation](../docs/INTEGER_LIFTING_MONOGRAPH.md).
 The divisor-sum application is available through `python -m perfectpower divisor-sum --factors '[[2,1],[11,1]]'` and `python -m perfectpower sigma-quartic --shift 0`. Rebuild the full results collection from the repository root with `PYTHONPATH=python python python/build_divisor_sum_atlas.py`. See `docs/DIVISOR_SUM_RESULTS_MONOGRAPH.md` for global-versus-bounded scope and proof status.
+
+`branched-geometry --coeff=0,-1,0,0,0,1 --d=2 --connection --cells` computes normalization invariants, an exact faithful connection Laplacian and a canonical cell model. `--k` shifts the constant coefficient. Topology supports exponents through 64; exact cyclotomic matrices have an explicit smaller work limit. See [the monograph](../docs/BRANCHED_GEOMETRY_MONOGRAPH.md) and `python/build_branched_geometry.py` for the full atlas.

@@ -341,3 +341,7 @@ The [sequence-recovery Lean foundations](docs/SEQUENCE_RECOVERY_LEAN.md) prove b
 ### Divisor-sum results
 
 The [divisor-sum atlas](receipts/divisor_sum/README.md) connects sigma to the complete quartic solvers, supplies 3,080 complete quartic lists, a perfect-power divisor-sum census through one million, and all square divisor sums in a specified two-prime-power grid. The [monograph](docs/DIVISOR_SUM_RESULTS_MONOGRAPH.md) explains the mathematics and exact scope. Use `PYTHONPATH=python python -m perfectpower sigma-quartic --shift 0` for the complete prime-fourth-power application, or `divisor-sum --factors '[[2,1],[11,1]]'` for exact factorization-based arithmetic.
+
+### Branched geometry and faithful connection operators
+
+The [branched-geometry module](docs/BRANCHED_GEOMETRY_MONOGRAPH.md) attaches 12,320 normalization profiles to the quartic atlas, with exact cyclotomic connection matrices, canonical surface cell models, dual face charges, and finite Hodge operators. Lean proves the explicit bouquet Laplacian kernel criterion for faithful root-of-unity transport, the energy and Hodge kernel identities, and integer-coordinate recovery from five concrete unimodular packets. Use `PYTHONPATH=python python -m perfectpower branched-geometry --coeff=0,-1,0,0,0,1 --d=2 --connection --cells`. The cell models describe topological type; intrinsic Voronoi geometry and analytic periods remain separate work.

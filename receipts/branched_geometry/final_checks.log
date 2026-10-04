@@ -1,0 +1,30 @@
+PerfectPower/BranchedGeometry.lean:122:6: warning: try 'simp at he' instead of 'simpa using he'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+PerfectPower/IntegerLiftRecovery.lean:25:0: warning: automatically included section variable(s) unused in theorem 'PerfectPower.IntegerLiftRecovery.lift_transformed':
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+PerfectPower/IntegerLiftRecovery.lean:35:0: warning: automatically included section variable(s) unused in theorem 'PerfectPower.IntegerLiftRecovery.affine_fibre':
+  [Fintype m]
+  [DecidableEq m]
+  [DecidableEq n]
+  [DecidableEq p]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype m] [DecidableEq m] [DecidableEq n] [DecidableEq p] in theorem ...
+note: this linter can be disabled with `set_option linter.unusedSectionVars false`
+test_cells_hodge_and_dual_charge (test_branched_geometry.BranchedGeometryTests.test_cells_hodge_and_dual_charge) ... ok
+test_cyclotomic_decomposition (test_branched_geometry.BranchedGeometryTests.test_cyclotomic_decomposition) ... ok
+test_domains_and_disconnected_graph (test_branched_geometry.BranchedGeometryTests.test_domains_and_disconnected_graph) ... ok
+test_exact_character_laplacians (test_branched_geometry.BranchedGeometryTests.test_exact_character_laplacians) ... ok
+test_gauge_invariance (test_branched_geometry.BranchedGeometryTests.test_gauge_invariance) ... ok
+test_holonomic_operator_for_actual_power (test_branched_geometry.BranchedGeometryTests.test_holonomic_operator_for_actual_power) ... ok
+test_random_integer_power_reconstruction (test_branched_geometry.BranchedGeometryTests.test_random_integer_power_reconstruction) ... ok
+test_repeated_roots_and_content_obstruction (test_branched_geometry.BranchedGeometryTests.test_repeated_roots_and_content_obstruction) ... ok
+test_squarefree_genus_formula (test_branched_geometry.BranchedGeometryTests.test_squarefree_genus_formula) ... ok
+test_transport_vs_explicit_sheet_enumeration (test_branched_geometry.BranchedGeometryTests.test_transport_vs_explicit_sheet_enumeration) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.522s
+
+OK
