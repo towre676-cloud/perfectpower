@@ -300,3 +300,6 @@ import PerfectPower.QuadraticProjection
 import PerfectPower.MixedRunge
 import PerfectPower.CubicCovariants
 import PerfectPower.RankTwoSieve
+import PerfectPower.IntegralPullback
+import PerfectPower.CoveringMaps
+import PerfectPower.TargetDecoder
