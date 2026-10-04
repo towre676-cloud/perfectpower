@@ -347,3 +347,9 @@ import PerfectPower.CanonicalMetric
 import PerfectPower.AffinePowerComposition
 import PerfectPower.ResidueCover
 import PerfectPower.IntegerOptimization
+import PerfectPower.ExceptionalPowerSearch
+import PerfectPower.SharpPowerGap
+import PerfectPower.IntegerRootFibres
+import PerfectPower.GeneratedOperatorAlgebra
+import PerfectPower.ConnectionProjection
+import PerfectPower.ExceptionalQuartic
