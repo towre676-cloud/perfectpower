@@ -293,3 +293,4 @@ import PerfectPower.Tactic.NativePower
 import PerfectPower.NativePolynomialSquare
 import PerfectPower.Tactic.NativePolynomialPower
 import PerfectPower.LocalQuarticObstruction
+import PerfectPower.NativeSquareChart

@@ -115,6 +115,45 @@ def match_square_plus_constant(coefficients):
     return tuple(q), f[0]-sq[0]
 
 
+def analyse(coefficients, k, *, parameter_work_limit=1_000_000,
+            fibre_work_limit=1_000_000):
+    """Return exact solved fibres and explicit residual parameter obligations.
+
+    Exhausting the coverage budget raises: an incomplete parameter cover cannot
+    support this contract. Exhausting a fibre budget retains that entire fibre
+    as unresolved. Python results still require independent Lean checking.
+    """
+    coefficients = _integers(coefficients)
+    if len(coefficients) < 2 or type(k) is not int or k == 0:
+        raise ValueError('a nonconstant polynomial and nonzero integer k are required')
+    Budget(fibre_work_limit)  # Validate even when the parameter set is empty.
+    budget = Budget(parameter_work_limit)
+    parameters = set()
+    for u in signed_divisors(k, budget):
+        v = k//u
+        if (v-u) % 2 == 0 and (v+u) % 2 == 0:
+            parameters.add(((v-u)//2, (v+u)//2))
+    roots, unresolved = {}, set()
+    for p in sorted({p for p, _ in parameters}):
+        try:
+            roots[p] = integer_roots((coefficients[0]-p,) + coefficients[1:],
+                                     Budget(fibre_work_limit))
+        except WorkLimit:
+            unresolved.add(p)
+    solved = sorted((p, y) for p, y in parameters if p not in unresolved)
+    residual = sorted((p, y) for p, y in parameters if p in unresolved)
+    fibres = [{'parameter': (p, y), 'points': [(x, y) for x in roots[p]],
+               'cardinality': len(roots[p])} for p, y in solved]
+    known = sorted({point for fibre in fibres for point in fibre['points']})
+    return {'coefficients': list(coefficients), 'k': k,
+            'parameters': sorted(parameters), 'solved_parameters': solved,
+            'residual_parameters': residual, 'fibres': fibres, 'known_points': known,
+            'known_cardinality': len(known), 'complete': not residual,
+            'status': 'PARTIAL' if residual else 'COMPLETE',
+            'execution_verified': False,
+            'contract': 'PerfectPower.NativeSquareChart.chart'}
+
+
 def emit_lean(coefficients, k, name='divisor_solution'):
     """Emit a native command; its point list is independently kernel checked."""
     import re

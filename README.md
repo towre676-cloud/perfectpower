@@ -4,6 +4,8 @@ PerfectPower helps answer a deceptively simple question: **when does a formula p
 
 The new divisor route solves `y² = P(x)² + k` for every nonconstant integer polynomial `P` and nonzero integer `k`, using factor pairs and integer roots instead of a coordinate scan. For example, `y² = (x + 1000000)² + 1` has exactly `(-1000000, ±1)`. The Python compiler recognizes expanded inputs of this form; the native Lean command independently checks a complete point list. [Algorithm, reusable arithmetic, and verification](docs/DIVISOR_REUSE_MONOGRAPH.md).
 
+The new [solution-chart framework](docs/GEOMETRIC_LANGLANDS_CONNECTION.md) also preserves partial progress: proved reconstructed cases, exact remaining obligations, and the number of original solutions over each reduced case. It takes a proof-organization lesson from Geometric Langlands and implements independent finite-set theorems; it does not claim a Langlands solution to arbitrary integer equations.
+
 **Lean-native effective enumeration:** [the native power module](docs/NATIVE_POWER_START_HERE.md) proves coefficient-derived global bounds and computes complete integer point lists for `y² = (x² + ax + b)² + k`, with `k ≠ 0`. `native_near_square` emits an explicit set and its kernel-checked completeness theorem without Sage, Singular, Python or JSON. The same push classifies polynomial Fermat points over finite fields when `n ≥ 3` and the exponent is nonzero in the field, including all eight points of `f⁴ + g⁴ = 1` over `F₇[t]`, while explicitly retaining the Frobenius exception. These are supported families, not a universal Diophantine solver. [Mathematics, examples and remaining scope](docs/NATIVE_POWER_MONOGRAPH.md).
 
 **When is $F(n)$ a perfect power, and how often?**
