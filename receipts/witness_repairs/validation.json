@@ -1,0 +1,39 @@
+{
+  "cold_archive": {
+    "byte_identical_deterministic_receipts": 5,
+    "bytes": 20893529,
+    "focused_tests": 21,
+    "outside_repository_cwd": true,
+    "scope": "source and deterministic receipts, before retained validation metadata and concurrent Lean merge",
+    "seconds": 3.656,
+    "stdlib_only": true,
+    "tree": "bfa4f240f43197c14318979c092c35ea9b9bef4b"
+  },
+  "date": "2026-10-04",
+  "deterministic_receipts_sha256": {
+    "graph_repairs.json": "df5a21d3382ae313ca21def25354e27de66b20596564a44afee6e1e993ae8b0f",
+    "large_graph_repair.json": "c97cf0e36b507784f6bd561cc990d526cea114133cdd2eae52293e2738f3aede",
+    "recurrence_resolvents.json": "9c3bf52df38c1568848a93da7aacf9ab5ccb0b78ad450e32fab333bbd5998b48",
+    "summary.json": "78ae548049c4795fc3d64b2dfccbd63729baf236134e9b612e2af27ee538f742",
+    "witness_examples.json": "8acdc91d33b472c4f7376c515d8ec360fe4eae66788a8500a546d9e3c8db138a"
+  },
+  "execution_verified": false,
+  "focused_tests": 21,
+  "integrated_remote_parent": "c7b5bc496447b8399cf075d917ef2071a7cdc107",
+  "new_lean_compilations": 0,
+  "python_tests": {
+    "passed": 675,
+    "seconds": 74.72,
+    "skipped": 4,
+    "total": 679
+  },
+  "schema": "pp-witness-repairs-validation/1",
+  "source_sha256": {
+    "python/develop_witness_repairs.py": "7e4160bc31aa2bb17dea3a5a2f7de3526937e142908f92e23b6814142f18075f",
+    "python/perfectpower/connection_updates.py": "c9f41c18084e19c9b26748692fbcbccfa6e51efbf8a89c1e49c2d0b09e70701e",
+    "python/perfectpower/enhanced_cli.py": "94ef87361fd3e09ff40e036506f1f9c83f96045e026b51805927531ea6c14acd",
+    "python/perfectpower/witness_resolvent.py": "cabe5633f6b92e6eef5e666fa312184ec732f4334a6cc2051c65bae3971bb28d",
+    "python/tests/test_witness_repairs.py": "8dc5d1dccef751a00b765f1964cbb32ac426815e044237eb4d69180adb83e94c"
+  },
+  "tested_base": "67baee33566eaa4a23fc88029025a4a995ce974c"
+}

@@ -49,7 +49,8 @@ See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRA
 | Search a bounded power range using factored local filters | `factored-scan` | [Local arithmetic filters](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md) |
 | Solve exact integer linear systems and find every tied nearest lattice point | `integer-lift`, `nearest-lift` | [Integer coordinates](docs/INTEGER_LIFTING_MONOGRAPH.md), [optimization](docs/ENHANCED_MACHINERY_MONOGRAPH.md) |
 | Analyze operators and share exact state machines across recurrence models | `recurrence-batch`, `observable-machine`, `operator-algebra` | [Shared output machines](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md), [operator algebras](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
-| Query graph events without enumerating every basis | `connection-measure` | [Graph measures](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
+| Certify matrix-output generating functions and sampled subsequences | `witness-resolvent` | [Witness resolvents](docs/WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md) |
+| Query graph events and update edge weights without enumerating every basis | `connection-measure`, `connection-reweight` | [Graph measures](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [weight repairs](docs/WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md) |
 | Compute branched-cover topology, differentials, and surface geometry | `branched-geometry`, `legendre-period-bounds`, `intrinsic-voronoi` | [Geometry documentation](docs/README.md#geometry) |
 | Compare arithmetic families with local OEIS records | `oeis`, `sequence-atlas` | [OEIS integration](docs/OEIS.md) |
 

@@ -5,6 +5,14 @@ from .deep_recovery_cli import exact_json
 
 
 def add_commands(sub):
+    p=sub.add_parser('witness-resolvent',help='certify the rational generating functions of exact matrix outputs')
+    p.add_argument('--matrix',type=json.loads,required=True);p.add_argument('--seed',type=json.loads,required=True)
+    p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--index',type=int,default=100)
+    p.add_argument('--offset',type=int,default=0);p.add_argument('--step',type=int,default=1);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('connection-reweight',help='repair graph measures through a small exact defect matrix')
+    p.add_argument('--vertices',type=int,required=True);p.add_argument('--edges',type=json.loads,required=True)
+    p.add_argument('--power',type=int,required=True);p.add_argument('--weights',type=json.loads,required=True)
+    p.add_argument('--new-weights',type=json.loads,required=True);p.add_argument('--verify',action='store_true')
     p=sub.add_parser('observable-machine',help='minimal exact state machine preserving all supplied operator-word outputs')
     p.add_argument('--operators',type=json.loads,required=True);p.add_argument('--seed',type=json.loads,required=True)
     p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--word',type=json.loads,default=[])
@@ -41,7 +49,19 @@ def add_commands(sub):
 
 
 def dispatch(args):
-    if args.command=='observable-machine':
+    if args.command=='witness-resolvent':
+        from .witness_resolvent import subsequence_resolvent,verify_resolvent,resolvent_value
+        result=subsequence_resolvent(args.matrix,args.seed,args.readouts,offset=args.offset,step=args.step)
+        result['sampling']={'offset':args.offset,'step':args.step};result['index']=args.index
+        result['output']=[resolvent_value(result,args.index,i) for i in range(len(args.readouts))]
+        if args.verify:result['certificate_replay']=verify_resolvent(result)
+    elif args.command=='connection-reweight':
+        from .connection_polytope import ConnectionGraph
+        from .connection_measure import ConnectionMeasure
+        from .connection_updates import reweight,verify_reweight
+        result=reweight(ConnectionMeasure(ConnectionGraph(args.vertices,tuple(args.edges),args.power),args.weights),args.new_weights)
+        if args.verify:result['certificate_replay']=verify_reweight(result)
+    elif args.command=='observable-machine':
         from .observable_machine import minimal_machine,verify_machine,word_output
         result=minimal_machine(args.operators,args.seed,args.readouts)
         result['output']=word_output(result,args.word,order=args.order)
