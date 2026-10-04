@@ -85,3 +85,5 @@ python python/recover_monomial.py --z3
 ```
 
 These are exact Python calculations, with stated positive domains; new Lean proofs are not claimed. See [the monograph](../docs/MONOMIAL_RECOVERY_MONOGRAPH.md).
+
+The optional analytic backend uses `pip install -r python/requirements-analytic.txt`. `intrinsic-voronoi` computes period-derived torus cells; `analytic-periods` integrates closed lifted cycles with continued logarithms; `conformal-metric` evaluates the original component's differential metric; `conformal-voronoi` constructs a closed hyperelliptic cover mesh and intrinsic heat-distance cells. Run `PYTHONPATH=python python python/build_analytic_geometry.py` to rebuild the examples. See docs/ANALYTIC_GEOMETRY_MONOGRAPH.md for accuracy levels and supported domains.

@@ -1,0 +1,5 @@
+# Original-curve analytic geometry
+
+See [the monograph](../../docs/ANALYTIC_GEOMETRY_MONOGRAPH.md). legendre_intrinsic_voronoi.json contains seven period-derived flat tori, continuous-distance cells, and eighty-four curve-site inversions. analytic_periods_and_metrics.json contains five cyclic surfaces, closed lifted circle and word periods, and finite/branch/infinity metric charts. conformal_curve_meshes.json retains three actual branched-cover meshes with integrated metric lengths. higher_genus_intrinsic_voronoi.json contains heat-distance fields and clipped intrinsic triangle regions. mesh_refinement.json exposes the varying area under refinement.
+
+The Legendre lattice enclosure is rational; floating polygons, theta inversion, general quadrature and mesh/heat computations are numerical. General period vectors are not declared a symplectic basis. Higher-genus cells are geodesic approximations, not certified exact boundaries. No new Lean theorem is claimed. The saved data carry these distinctions explicitly.
