@@ -70,6 +70,19 @@ def main():
     p.add_argument('--vector', type=json.loads, help='JSON integer vector to pull back')
     p.add_argument('--prime', type=int, help='optional prime-power torsion profile')
     p.add_argument('--minor-limit', type=int, default=100_000)
+    p = sub.add_parser('recurrence', help='execute an exact supplied recurrence')
+    p.add_argument('--coeff', required=True, type=coefficients)
+    p.add_argument('--initial', required=True, type=coefficients)
+    p.add_argument('--index', type=int, required=True)
+    p.add_argument('--modulus', type=int, help='also count modular zeros before --stop')
+    p.add_argument('--stop', type=int, default=0)
+    p = sub.add_parser('sequence-atlas', help='discover prefix recurrences in actual staged .seq files')
+    p.add_argument('--seq-dir', required=True, type=Path)
+    p = sub.add_parser('primary-module', help='phase-sensitive cyclic subgroup counts')
+    p.add_argument('--prime', type=int, required=True)
+    p.add_argument('--exponents', required=True, help='comma-separated positive exponents')
+    p.add_argument('--census', action='store_true', help='enumerate all subgroups within small-module budgets')
+    sub.add_parser('operator-replay', help='exact recovered hypergeometric/Weyl prefix replay')
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
@@ -91,6 +104,32 @@ def main():
         if args.prime is not None:
             out['local_profile'] = local_torsion_profile(args.matrix,args.prime,minor_limit=args.minor_limit)
         print(json.dumps(out,indent=2))
+        return
+    if args.command == 'recurrence':
+        from .recurrence import Recurrence,filter_count
+        rec=Recurrence(tuple(args.coeff),tuple(args.initial))
+        num,den=rec.generating_function()
+        out={'value':str(rec.nth(args.index)),'index':args.index,
+             'numerator':list(map(str,num)),'denominator':list(map(str,den)),
+             'execution_verified':False,'scope':'supplied recurrence'}
+        if args.modulus is not None:
+            cert=rec.residue_filter(args.modulus,lambda s:s[0]==0)
+            out['modular_zero_count']=filter_count(cert,args.stop)
+            out['period']=cert['period'];out['preperiod']=cert['preperiod']
+        print(json.dumps(out,indent=2))
+        return
+    if args.command == 'sequence-atlas':
+        from .recurrence import scan_seq_directory
+        print(json.dumps(scan_seq_directory(args.seq_dir),indent=2))
+        return
+    if args.command == 'primary-module':
+        from .primary_modules import primary_cyclic_counts,subgroup_census
+        exponents=tuple(int(x) for x in args.exponents.split(','))
+        print(json.dumps((subgroup_census if args.census else primary_cyclic_counts)(args.prime,exponents),indent=2))
+        return
+    if args.command == 'operator-replay':
+        from .exact_operators import hypergeometric_replay
+        print(json.dumps(hypergeometric_replay(),indent=2))
         return
     if args.command == 'verify':
         obj = RigidCertificate(**json.loads(args.certificate.read_text()))

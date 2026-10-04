@@ -1,5 +1,7 @@
 # PerfectPower
 
+The [sequence recovery monograph](docs/SEQUENCE_RECOVERY_MONOGRAPH.md) recovers reusable machinery from the Padovan, tube-operator, Wilson and Formation work: exact signed recurrences, bounded modular reconstruction, formal differential operators, quotient projectors and phase-sensitive finite subgroup censuses. The new sequence atlas checks all 149 staged OEIS sequence files and records 135 finite-prefix recurrence candidates, with seven supplied generating-function bridges.
+
 PerfectPower helps answer a deceptively simple question: **when does a formula produce an exact square, cube, or other whole-number power?** A search can find examples and still miss a distant answer. For the families this project supports, it can produce a complete list or an exact rule for generating answers, together with a machine-checked proof. It also says explicitly when the answer remains unresolved. This makes it useful for replacing repeated searches with reusable, checkable results.
 
 The new divisor route solves `y² = P(x)² + k` for every nonconstant integer polynomial `P` and nonzero integer `k`, using factor pairs and integer roots instead of a coordinate scan. For example, `y² = (x + 1000000)² + 1` has exactly `(-1000000, ±1)`. The Python compiler recognizes expanded inputs of this form; the native Lean command independently checks a complete point list. [Algorithm, reusable arithmetic, and verification](docs/DIVISOR_REUSE_MONOGRAPH.md).
