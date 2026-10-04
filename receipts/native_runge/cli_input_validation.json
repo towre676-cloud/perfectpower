@@ -1,0 +1,56 @@
+[
+  {
+    "arguments": [],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--bad",
+      "1,0,1"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,$(touch /tmp/native-runge-injection)"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,1;exit 0"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      "1,0,1\n#print axioms False.elim"
+    ],
+    "exit_code": 2,
+    "expected": 2
+  },
+  {
+    "arguments": [
+      "--source-only",
+      " 1, 0, -1 "
+    ],
+    "exit_code": 0,
+    "expected": 0
+  },
+  {
+    "arguments": [
+      "--certificate-only",
+      "--source-only",
+      "10001,1,0,0,0,0,1"
+    ],
+    "exit_code": 0,
+    "expected": 0
+  }
+]

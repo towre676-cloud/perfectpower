@@ -325,3 +325,6 @@ import PerfectPower.MonomialConsequences
 import PerfectPower.ConnectionDeterminant
 import PerfectPower.LegendreBounds
 import PerfectPower.QuarticCutoff
+
+import PerfectPower.RungePolynomial
+import PerfectPower.Tactic.RungePolynomial

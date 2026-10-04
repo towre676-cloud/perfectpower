@@ -1,5 +1,7 @@
 # PerfectPower
 
+The [native Runge recognizer](docs/NATIVE_RUNGE_MONOGRAPH.md) now takes expanded even-degree polynomials with positive square leading coefficient, proves an unconditional effective bound, and generates complete integer square-value lists directly in Lean. `native_runge sextic for [1,1,0,0,0,0,1]` proves all four points of `y²=x⁶+x+1`; exact squares receive parameterized relations. Certificate-only mode proves completeness of a finite search without evaluating a huge packet. Run `scripts/check_native_runge.sh` or `scripts/solve_native_runge.sh '1,1,0,0,0,0,1'`.
+
 The [August 2025 recovery monograph](docs/MONOMIAL_RECOVERY_MONOGRAPH.md) adds exact multiplicative equation solving: hidden-variable exponent elimination, complete positive-rational families, bounded positive-integer fibres and whole-query substitution. Recomputing the old four-equation presentation reveals a missed factor of three and its cube-compatibility condition. Run `python python/recover_monomial.py` to replay the recovered equations and all 1,562 stored prime-power and square-product cases.
 
 Start with the [three end-to-end examples](docs/SHOWCASE_MONOGRAPH.md): ten complete nonlinear integer pairs near 10³⁰, exact square-triangular counts and residue filters under a 1,000-digit bound, and elimination of a complete arithmetic relation from whole SMT queries. Run `python python/run_showcase.py` to rebuild their results and standalone programs.

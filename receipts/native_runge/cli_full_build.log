@@ -1,0 +1,13 @@
+✔ [2812/2818] Built PerfectPower.FastDivisors
+✔ [2813/2818] Built PerfectPower.NativeNearSquare
+✔ [2814/2818] Built PerfectPower.NativePolynomialSquare
+✔ [2815/2818] Built PerfectPower.NativePolynomialRoots
+✔ [2816/2818] Built PerfectPower.LinearPerturbation
+✔ [2817/2818] Built PerfectPower.RungePolynomial
+✔ [2818/2818] Built PerfectPower.Tactic.RungePolynomial
+Build completed successfully.
+runge_result_complete (x✝ y✝ : ℤ) :
+  y✝ ^ 2 = PerfectPower.NativePolynomialSquare.eval [1, 1, 0, 0, 0, 0, 1] x✝ ↔ (x✝, y✝) ∈ runge_result
+'runge_result_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+def runge_result : Finset (ℤ × ℤ) :=
+[(-1, -1), (-1, 1), (0, -1), (0, 1)].toFinset

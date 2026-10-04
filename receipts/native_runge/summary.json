@@ -1,0 +1,47 @@
+{
+  "base_commit": "dba73d4ff8394499294d8251b4868baf6d8a1ddc",
+  "lean_version": "4.20.0",
+  "mathlib_commit": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "focused_module_count": 7,
+  "standard_axiom_declarations": 79,
+  "explicit_finite_packets": 16,
+  "certificate_only_cases": 2,
+  "exact_square_families": 2,
+  "mathematical_rejection_cases": 6,
+  "shell_input_cases": 7,
+  "maximum_audited_degree": 20,
+  "python_tests": {
+    "run": 525,
+    "skipped": 4,
+    "status": "passed"
+  },
+  "proof_inputs_sha256": {
+    "PerfectPower/NativeNearSquare.lean": "1a43caad240636c8506440fab93311299381e372708e3a1097b791e62e3544b2",
+    "PerfectPower/NativePolynomialSquare.lean": "196428c3ff5ec8be4b1f22fd5445cc954b67500aa2a2fdeca1a23f0fa0cb2b86",
+    "PerfectPower/FastDivisors.lean": "5c5aca6ad458c698fb1309057360cbbb8951f1f84ccba0165996538843b66253",
+    "PerfectPower/NativePolynomialRoots.lean": "0e3df300ed4ae3874d087aa4fb8717c34e72a5a509c9afd331e2091839d247d0",
+    "PerfectPower/LinearPerturbation.lean": "2ee9caaaacb03381b43f56c0e25fe6011170f0aab16e1046dee19342564ca7a5",
+    "PerfectPower/RungePolynomial.lean": "0d24019dc5543c5e717cfc719d2b37c0900288b2cc8a653b7c4607925c3776e1",
+    "PerfectPower/Tactic/RungePolynomial.lean": "604f8ecb7c62c818ec7b63fd03977801324358f5b5a693ba129d15d27b77eebd",
+    "audit/NativeRunge.lean": "7177f3e0ae25b5452b70bf72be866a04902be13dea45c903bac7c09f228c4018",
+    "scripts/check_native_runge.sh": "aee694138f1a402233dc0d540518b0f2cc0b63650ff1f2a5be5f3b6f4f13c116",
+    "scripts/solve_native_runge.sh": "f8107adf6b362270126cfcb9e098fb87740f28d3c7986228c1d4d909be625810"
+  },
+  "complete_point_proofs": "unconditional; all integer coordinates and both signs of y",
+  "native_computation": "proposes data; polynomial identities and finite packets checked by the Lean kernel",
+  "large_bound_status": "complete finite-search equivalence and coordinate bound proved; point packet not evaluated",
+  "local_environment": "LD_PRELOAD process-path shim repairs unavailable /proc executable links; no Lean kernel changes",
+  "unperformed_checks": [
+    "full historical PerfectPower root rebuild",
+    "historical global axiom report regeneration",
+    "GitHub hosted runner availability"
+  ],
+  "open_scope": [
+    "general Runge curves",
+    "general Baker bounds",
+    "arbitrary polynomial power exponents",
+    "number-ring solvers",
+    "arbitrary function-field equations",
+    "GPU/WASM deployment"
+  ]
+}
