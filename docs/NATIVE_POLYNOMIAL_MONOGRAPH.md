@@ -1,5 +1,7 @@
 # Native effective bounds for square-plus-constant polynomial equations
 
+**Algorithm update, 4 October 2026.** The bounds and rectangle completeness theorem below remain available. Native polynomial commands now enumerate factor pairs and complete integer polynomial fibres, with a Lean proof that their set equals the prior rectangle set. Expanded-input recognition and arithmetic reuse are in [the divisor monograph](DIVISOR_REUSE_MONOGRAPH.md). The rectangle discussion below describes the retained earlier implementation.
+
 This extension proves an unconditional, computable finite search for the equation y²=P(x)²+k, where P is any nonconstant integer polynomial and k is a nonzero integer. The degree and leading coefficient are unrestricted. It extends the earlier monic quadratic near-square solver to arbitrary degree, while retaining a deliberately precise mathematical scope: it does not decide arbitrary equations yᵈ=F(x), discharge general linear-forms-in-logarithms premises, or implement general Runge theory.
 
 ## The coefficient representation
@@ -35,7 +37,7 @@ native_polynomial_square cubic_points for [0, 0, 0, 2], 1
 
 The command creates a concrete finite set and a theorem characterizing all solutions of y²=(2x³)²+1. Its complete set is {(0,−1),(0,1)}. The audit also transports this generated theorem to the expanded equation y²=4x⁶+1.
 
-The command's elaborator evaluates closed input terms, runs an exact integer search, and proposes a point list. This metaprogram is not trusted to establish completeness. The emitted proof uses `decide +kernel` to check that the proposed set is the formally defined filtered rectangle, then applies the general completeness theorem. An incorrect list is rejected. The native evaluator contributes data, while the proof's finite computation is checked by the Lean kernel. Neither Python nor `native_decide` participates in this path.
+The command's elaborator evaluates closed input terms, runs an exact integer search, and proposes a point list. This metaprogram is not trusted to establish completeness. The emitted proof uses `decide +kernel` to check that the proposed set is the formally defined divisor/fibre set, then applies the general completeness theorem. An incorrect list is rejected. The native evaluator contributes data, while the proof's finite computation is checked by the Lean kernel. Neither Python nor `native_decide` participates in this path.
 
 The tactic `decide_polynomial_square coefficients, k => expected_points` provides the same check for a user-supplied finite set. It proves the coefficient validity, nonconstant condition, and nonzero k requirement before applying completeness. The command rejects constant lists, zero final coefficients, and k=0 with targeted diagnostics. When k=0, y=P(x) already gives infinitely many points, so a finite-list result would be false.
 

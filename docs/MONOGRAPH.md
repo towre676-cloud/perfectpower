@@ -4,6 +4,8 @@
 
 ## 0. Status of every result (edition 0.8)
 
+The 4 October extension replaces coordinate scanning for square-plus-constant polynomial equations with proved divisor enumeration and complete integer fibres. It also adds exact quotient-algebra proposal arithmetic and kernel-checked primitive quartic residue exclusions. See [the extension monograph](DIVISOR_REUSE_MONOGRAPH.md) and its separate verification record for scope and actual checks.
+
 This table is the single source of truth. The research notes, the paper, the README and the trust boundary state the same claims. Labels: **Lean** means compiled and axiom-audited (only `propext`, `Classical.choice`, `Quot.sound`). **Lean ⇐ H** means compiled, with a named hypothesis that is not proved. **Paper** means a written proof. **External** means a computation by third-party software (Sage, Singular). **Evidence** means exact within a stated bound and silent beyond it.
 
 | Result | Status | Depends on | Where |

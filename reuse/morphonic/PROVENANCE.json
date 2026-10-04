@@ -1,0 +1,20 @@
+{
+  "source_archive": "morphonic-kernel-v1.74.0.zip",
+  "archive_sha256": "59d33dabcc3c13abb3d6f3eee9654a4df7def33420a4f1cf3c4a06fe572f50f8",
+  "license": "MIT",
+  "sources": {
+    "web/src/integers/finite_extensions.js": "63fb3ab959277d5a8b10dabd6b64e2494be602320ddaaada4a4dff57829f7fe7",
+    "web/src/integers/local_quartic_solubility.js": "1a9e48a04cf31b3cf9676deb57e8ec5e6d4e905a3f407e1cb0d6ef91262f124a",
+    "web/src/integers/arithmetic_geometry.js": "7491be4971a2763c4cb358664703cc207c5297413905050a6f5fecc9ce884365"
+  },
+  "adaptations": {
+    "finite_extensions.js": "python/perfectpower/quotient_algebra.py",
+    "local_quartic_solubility.js": "python/perfectpower/local_quartic.py; PerfectPower/LocalQuarticObstruction.lean"
+  },
+  "not_imported": [
+    "arithmetic_geometry.js: ideal/class-group computations require separate proof integration",
+    "frontier Lean placeholders: True := trivial is not arithmetic certification",
+    "sampled floating derivative bounds: insufficient for rigorous intervals"
+  ],
+  "trust": "Exact Python proposal generation is not verified execution. Lean certifies supported finite instances."
+}

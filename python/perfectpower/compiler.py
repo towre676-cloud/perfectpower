@@ -761,6 +761,30 @@ def _lift_status(status: str, chain: list[Step]) -> str:
 def _power_plan(pc: PowerConstraint) -> dict:
     """Solver for F(n) = m^d: method, status, justification, data and the operations."""
     F, d = pc.F, pc.d
+    if d == 2:
+        from .divisor_square import match_square_plus_constant, solve, WorkLimit
+        match = match_square_plus_constant(F)
+        if match is not None and match[1] != 0:
+            coefficients, k = match
+            try:
+                result = solve(coefficients, k)
+            except WorkLimit:
+                # Preserve existing effective/unresolved routes when trial division is costly.
+                pass
+            else:
+                fin = {}
+                for n, y in result['points']:
+                    if n >= 1:
+                        fin.setdefault(n, []).append(y)
+                return dict(method='factor pairs and complete integer polynomial fibres',
+                            status=COMPLETE_FINITE,
+                            justification=['PerfectPower.NativeDivisorSquare.complete',
+                                           'Python instance; execution is not verified'],
+                            data={'square_polynomial': list(coefficients), 'constant': k,
+                                  'divisor_trials': result['divisor_trials'],
+                                  'execution_verified': False},
+                            finite=fin, contains=lambda n: n in fin,
+                            hits=lambda N: {n: w for n, w in fin.items() if n <= N})
     # 1. affine transport to a Mordell curve solved in Lean
     if d == 2:
         m = match_affine_cube(F)
