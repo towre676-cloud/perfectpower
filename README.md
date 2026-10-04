@@ -1,5 +1,7 @@
 # PerfectPower
 
+The [operator recovery monograph](docs/OPERATOR_RECOVERY_MONOGRAPH.md) adds constructive task sections, exact invisible-state witnesses, simultaneous intertwiners and Fitting decompositions. It processes all 135 recovered recurrence models, establishes all-future equality for seven supplied generating-function models, and applies the recovered carriers to all seven field-756 Thue packets, recovering their 14 listed points in a signed unit box.
+
 The [sequence recovery monograph](docs/SEQUENCE_RECOVERY_MONOGRAPH.md) recovers reusable machinery from the Padovan, tube-operator, Wilson and Formation work: exact signed recurrences, bounded modular reconstruction, formal differential operators, quotient projectors and phase-sensitive finite subgroup censuses. The new sequence atlas checks all 149 staged OEIS sequence files and records 135 finite-prefix recurrence candidates, with seven supplied generating-function bridges.
 
 PerfectPower helps answer a deceptively simple question: **when does a formula produce an exact square, cube, or other whole-number power?** A search can find examples and still miss a distant answer. For the families this project supports, it can produce a complete list or an exact rule for generating answers, together with a machine-checked proof. It also says explicitly when the answer remains unresolved. This makes it useful for replacing repeated searches with reusable, checkable results.

@@ -1,0 +1,2602 @@
+{
+  "schema": "pp-operator-recovery/1",
+  "execution_verified": false,
+  "source_scope": "recovered methods and two source cubics; no original Wilson carrier claimed",
+  "staged_files": 149,
+  "recurrence_models": 135,
+  "rejected_prefixes": 14,
+  "fitting_models": [
+    {
+      "id": "A000032",
+      "offset": 0,
+      "sha256": "4ac12aad8aee67b40a89a6979f054858104cfc56b7f24f5f6c99d034bb93bbfa",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A000045",
+      "offset": 0,
+      "sha256": "96e9cbfae39c5e07462def8d649ef586bdf4a8c64b143a0cd99e26525d3aa553",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A000129",
+      "offset": 0,
+      "sha256": "3f2589d62dc8b55231379828b85eb8e90ffb24dde647122ce313181b4535fdc9",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A000204",
+      "offset": 1,
+      "sha256": "c397b2778c53c2ae6481b958e35540157f41c7d3909cb827b5c3ce5e570b5f5d",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001075",
+      "offset": 0,
+      "sha256": "3dac11fef6bf13e33c3685d4490db6146b1a4db4a660aa609f87aef2a7e3d100",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001108",
+      "offset": 0,
+      "sha256": "2522b851639ea0f6d6f4478bf1ad7336869be86d83c713fcda41ea3fa6ea7a2a",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001109",
+      "offset": 0,
+      "sha256": "dd133e9a606a26b87bcd935ad464ad8716df645a00bac6c608d6b870c6f6af05",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001110",
+      "offset": 0,
+      "sha256": "d81a2da6cd1f724206cd576b10983af67b87adfb889965b9bfaf74685c3aaa47",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001254",
+      "offset": 0,
+      "sha256": "b4d016f5884cafb94d901f2a7bdb81f984d22035fa6ade495492c6d173c3a616",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001333",
+      "offset": 0,
+      "sha256": "0484aaa12aeff05ec7b9f91097e45b15b29303f76a693f04f6e4a9076c756a34",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001353",
+      "offset": 0,
+      "sha256": "dced243ef7ab3d890cd7a672d5c53b97020b64fb36ed8744226fa6d81df6724e",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001519",
+      "offset": 0,
+      "sha256": "fb65d66a2ce80a7b1b86c7dbe3a5a63af5b5c829bf8e55070fa998a7963fb552",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001541",
+      "offset": 0,
+      "sha256": "ceec146fab18de08bc39dd6d7ca06dd03b7a914c6c8c4af9a1c4998e2b5a11a0",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001542",
+      "offset": 0,
+      "sha256": "bad3bdfcf93eefc1ed4a2aa9b109c598b0453ce90b6a70cecf6957fbce79821b",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001652",
+      "offset": 0,
+      "sha256": "2eee24c09279b9490d688676738a82d65bab628aaa39b27a1d4910269a010b0d",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001653",
+      "offset": 1,
+      "sha256": "8eec255c46c907123ab3546f02a0eedcca570f6511ef99234566913e8672fbf2",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001835",
+      "offset": 0,
+      "sha256": "24ad5018e81e64d279e7cbcfa40fa33aa3c496249a27616bb282b61f64c6dd4a",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A001906",
+      "offset": 0,
+      "sha256": "aa6a87dd5a055640dc62e31f8faa140ce80bea293a0c916d912af6213156618e",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A002315",
+      "offset": 0,
+      "sha256": "45e65b7a74d81f0cb6fd1cc99b6dbfb67f2fb0b00d1bd4d27ff9ecd1faad022a",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A002878",
+      "offset": 0,
+      "sha256": "be05e2671d8728381a932be00bbd940b615ac4350e06170af68b2cc602236da0",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A005248",
+      "offset": 0,
+      "sha256": "259997729e0bb6a2f88b3730a7aa292ef0d1bd4e09913c3c061039cea94fda7c",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A005319",
+      "offset": 0,
+      "sha256": "b395bec0fca25c2bdbec2e9395fa31375fc63c1c560c5d8d810a19a541d4b651",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A006355",
+      "offset": 0,
+      "sha256": "9a9975c3548f0498f3b4bdc919541616a4ea1b26582effe4e763af0889e6cf02",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A007598",
+      "offset": 0,
+      "sha256": "625841edb765fdf8de953a8220f7ce163498969331307ed4c667bca390d5c962",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A007654",
+      "offset": 1,
+      "sha256": "5fb2b8eeca7df014bdd6ff081d4d4407990670bddaa1dd7262e181121255c430",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A008843",
+      "offset": 0,
+      "sha256": "b0eb08f00fd947219bb26fae99a6d1fc5f96861acc9b4a3a022797f16e4efffb",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A008844",
+      "offset": 0,
+      "sha256": "2a4a26cec9a339875664f7ec8d9ebadce8ca27b6fe71a017361b5ceea311b5a3",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A010905",
+      "offset": 0,
+      "sha256": "4009ac175f2080275f3e26672bfc0306bae7437b4ce88fd133cf327f64df4d71",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A011783",
+      "offset": 0,
+      "sha256": "2a59171b50d74a3ad9c079e8364866b209069ebe1151079742e1980307471bf9",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A011943",
+      "offset": 1,
+      "sha256": "3ee74581904004f7a77746a7105443b0c640ecd7282a602669478d5fd9b8cf5d",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A011944",
+      "offset": 0,
+      "sha256": "920768902d97cef9fad22413882afb5aab3ab30d234c50aeda1014e604952d5b",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A018905",
+      "offset": 0,
+      "sha256": "79d9f39d3358cddc5617025e7f2957a9e3e17ba0835cb10d06d7a879e514248f",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A020695",
+      "offset": 0,
+      "sha256": "94569ca5974c8a8407979fc2b34a6715ca55bbaa42c1fdc0012fcfcc6d011ca9",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A020701",
+      "offset": 0,
+      "sha256": "a3a0296bfcff9c1c53f27178f39090e4c1c7f7a1d518a6a545ed89f00695e4b3",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A020712",
+      "offset": 0,
+      "sha256": "fbd04bd14130607e01501113b9fefc8be34bb46209e800083283164eb7544fe5",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A024537",
+      "offset": 0,
+      "sha256": "613f76b5301a3b0b14dcd798b4e94fbfd7de619da5f2ea98e8d39da4b159db4e",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A025169",
+      "offset": 0,
+      "sha256": "696a8c2bb79503b9ee86a4eeb60f424c1875bc7fa96ee57cfb2e4194e032cbfe",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A028230",
+      "offset": 1,
+      "sha256": "fd01cb0706ae4e0b8ef10b23002c4ae0b87c7c184de1151a5d156272b6080661",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A033192",
+      "offset": 0,
+      "sha256": "5d02ab0e35d969ea5a318a27305a779a464f9f58e6591c165aa71eaf030d9a36",
+      "order": 5,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 5,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A033888",
+      "offset": 0,
+      "sha256": "81f5afb3ff8ce1372193d5c97ddec450ea50ce5d8af4f5acded78d3ccb42cf77",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A033890",
+      "offset": 0,
+      "sha256": "f9a2f0f783b77151811b2a904f7f46a8e0c715f634facfaecd8d90403ea87038",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A046090",
+      "offset": 0,
+      "sha256": "011a2e77806d7299cb1fe7fc07cdf81f72471af0dab4ca148554fb4f20b6768d",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A046176",
+      "offset": 1,
+      "sha256": "f4797763bc0ac3ada959998d5891a665827e8a6281900166a68da3cb9e2a48bc",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A048575",
+      "offset": 0,
+      "sha256": "e78c9b7245cbacfc8ce5bb8b70e99a158d2dff32efd34cdd5586f6d62580a037",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A048624",
+      "offset": 0,
+      "sha256": "a093444bbc12fde60e5df652090459a8eb4d6f447019b4e7e909fba6c0207cb0",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A048739",
+      "offset": 0,
+      "sha256": "c7ba1ff695a8e09a1e781de73371bed2a5ce596eaa5ebe5ccf04839986fc746c",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A049684",
+      "offset": 0,
+      "sha256": "2393a1245fb38b8e3d076c7238666c48586bbfc038e85836a837214e5682b6e3",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A052454",
+      "offset": 1,
+      "sha256": "16c0a87f264d0f36d6c3272e18d1df18c112f646f59c1c2a7433da0124b9cda3",
+      "order": 6,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 6,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A052530",
+      "offset": 0,
+      "sha256": "1010a89dc23816f8430e9502cd82ad28d423e6e4d999f265c7b1e370bc29e1d1",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A052542",
+      "offset": 0,
+      "sha256": "06ec77e1ee4416b446b182bb0f72f17a81607e5358d56f72aec93029883b3e3b",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A052995",
+      "offset": 0,
+      "sha256": "6bc5d4e285c7d00aad97f18b5fdda210cddceb27e5faaa949a9a427982bc3429",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A054886",
+      "offset": 0,
+      "sha256": "288ae0e7dce30d38f9924d7a4131ff5418b78abd75fc2d17337b34a6871a9390",
+      "order": 4,
+      "stabilization_index": 2,
+      "nilpotent_dimension": 2,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A055389",
+      "offset": 0,
+      "sha256": "f56bfdd1bde7bf6d2f24b7b0554228d975ed1a5aa9ba3e26b4fb079e489c5cc4",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A055792",
+      "offset": 0,
+      "sha256": "d3c690554f3c52548e900ee30ce22830eb75b452f005740a0fd868e742ce8905",
+      "order": 4,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A055793",
+      "offset": 1,
+      "sha256": "201d523f7458ab742345abb218c727a45c066789b1fc0aa55de6d033b9b44a7a",
+      "order": 4,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A055819",
+      "offset": 0,
+      "sha256": "ad42f451b82d5f5129385f64f00af48ff02269ebfe5a6dd1af79b33732c140cb",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A055997",
+      "offset": 1,
+      "sha256": "32cb923d62b58cbb87380516bb7d0a1df37d5fcb7b4e0e84a03e2ae5b497cc79",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A067900",
+      "offset": 0,
+      "sha256": "cc699f8085e29999c2cae9c6d845eb6e98c859139d27e5c0ee334a82f56ef957",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A068922",
+      "offset": 1,
+      "sha256": "548a9fb18dd1c7ccee81b20803b67007f9fde0e686be715b41baad8e5afbfb5f",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A069306",
+      "offset": 2,
+      "sha256": "730ef2c2b6ee08ce7ed84f95151938e13f71e954322888b08677207c9b302ae7",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A071679",
+      "offset": 1,
+      "sha256": "04f2a3d9da5878f7bc370abd8c92403d7e07298352610c83533a124f8d759908",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A074061",
+      "offset": 0,
+      "sha256": "68c55cb8e197ab84989c4fd6fbc5301e9ed64d75b74f09ce7962c999057f701d",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075796",
+      "offset": 1,
+      "sha256": "77cd951a04f52383f87544e6b16e5df023c6880f60846f9b120b2eed6de5dfa0",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075835",
+      "offset": 1,
+      "sha256": "3299d0679dfd3a87a46f0654bc6b37f4688f548132385e5d1ef25114ea0a04af",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075836",
+      "offset": 1,
+      "sha256": "c21bf9486cc2bdcf634836a8e48cb70960b304942a243c64fc01aa44c4ed206c",
+      "order": 6,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 6,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075839",
+      "offset": 1,
+      "sha256": "3b2f35ec377c77435d09da0df3e54bc57b15cbf5fd538b44251c180c0d9b507a",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075841",
+      "offset": 1,
+      "sha256": "9649f2d99bcc5b8789463c6e0272ef6be9addd0bdfda1c96817e06d2e20ec1db",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075843",
+      "offset": 0,
+      "sha256": "31abfdd458184ac5092aeaf329d53d318a721d43120cde22d9f59ff316b43cd8",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075844",
+      "offset": 0,
+      "sha256": "f865865658daf321a03ccc8c9ddc2bf6f8d0d3b14254f6283117ca04cfd075f8",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075848",
+      "offset": 0,
+      "sha256": "415899a90fb6c50c034f9feb62812df550fa032bcb041c35b54eee02259317c8",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075869",
+      "offset": 1,
+      "sha256": "8f71855f5002f6b2833f61067b281a8899de3f38b5ddfa59dd825ece646dac9f",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075870",
+      "offset": 1,
+      "sha256": "c000f946268ff8a33054fb8f960fda0bb493446b4e4f6f7f28c0d841d56aaf19",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A075871",
+      "offset": 1,
+      "sha256": "7f969f79901390305b92902d6bc91c638bf3e0e4426391479533cd845b393f81",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A077373",
+      "offset": 1,
+      "sha256": "089ba0d55a2d4b3c401a75781c421d2a9282ba88c33f56f173ad0e74959a3b97",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A077446",
+      "offset": 1,
+      "sha256": "7a645440f2b9cf58c6f84faeb805797ad5e0bd72ed469be029bb50cfc3599669",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A078057",
+      "offset": 0,
+      "sha256": "b5c5f444f7b392791d516831852435ba63652e64234d049bd99695f5d9e70a02",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A078522",
+      "offset": 1,
+      "sha256": "1cf5398dc24cb16083ca395cc959be5e5825f81da222b9944ab1fdcf90fd6772",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A078642",
+      "offset": 1,
+      "sha256": "089210c60747abd11b7cbcbcf156cad28c4ae1a883ba0b5a3d89061cd99bda17",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A079291",
+      "offset": 0,
+      "sha256": "9153a64db23bdc5dc0bff4ccb1efe067a68848deafa7dcdcf7ad388dd0a129da",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A079935",
+      "offset": 1,
+      "sha256": "49904343ce64ced38b11bc929d54fe3fd7a41ca2e195b7be2eea60d0fdd1a321",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A080023",
+      "offset": 1,
+      "sha256": "69eadb52140aaeebbfe0a3d9e763d502a1adf923166ae594b3f8d90fb57a7bcd",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A080806",
+      "offset": 1,
+      "sha256": "9f22a601598d72e959058c8b92e51eb1610c4dc9bf13f7fb1badc637b4e34cce",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A081068",
+      "offset": 0,
+      "sha256": "8a6e6efccb52363ca9df9c801223c2f28d79d82634995d56525f9f5cc67796a8",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A081069",
+      "offset": 0,
+      "sha256": "66d3fd7a9c3c96737f57d2dcfc2d1d6b66c7bec0f8d21d92c62fe68550dcbcf6",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A081071",
+      "offset": 0,
+      "sha256": "c287e79dbfcfcac8f6f5bcbe388f625d6d60276d4fbed6aa7b49e8960171b087",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A082405",
+      "offset": 0,
+      "sha256": "152df5b706ffca48f7460dcac07fcd10aaec6703880fa7d2f97c80b25aa1cc1f",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A082651",
+      "offset": 1,
+      "sha256": "b8045f8700afe95c05573a5611b17b2b7b36248e9f8d5452bae74fba4644b388",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A084703",
+      "offset": 0,
+      "sha256": "fe8403883ac23f6f90eac88e1f892ef57f3134dd407bf91989ac56333d555f46",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A088305",
+      "offset": 0,
+      "sha256": "19d9fcc453d181ba28e1c1ad7781e60ce022d5c24e47d0de4f62f62c8002e5b6",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A090390",
+      "offset": 0,
+      "sha256": "ac4897c43f839de7cc7cd2c4e30bba7a345cbf10d7f6971176beea95402ca6e2",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A090757",
+      "offset": 0,
+      "sha256": "18a8c1232392ec8fe6f106154225cca0f2bfffe25983c7a8a88271144674c9e2",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A090991",
+      "offset": 1,
+      "sha256": "07bf785425430dca49dd2f524059b3f9baf44420eb6011cd0c19b6a7d693b62e",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A093960",
+      "offset": 1,
+      "sha256": "0ae14737389e76fcd95103caed4481f05f8fb5fc0e707522633051e960bb7f1c",
+      "order": 4,
+      "stabilization_index": 2,
+      "nilpotent_dimension": 2,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A094347",
+      "offset": 0,
+      "sha256": "eba3468d596193bbca2db2d5aad0b0792c2c7a582d2740d401d34602a5f4dfe9",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A098301",
+      "offset": 0,
+      "sha256": "db5f2a85c9390afd048fe630bfa16ce27641289216aadde882fad65399b45eb4",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A098602",
+      "offset": 0,
+      "sha256": "8195d6908f0c2f141f9dee6b80f0b8cdfbaa358368bfb9addfc898b0a0c4c1a5",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A102344",
+      "offset": 1,
+      "sha256": "4a4cd69e9242142cc97901655b606d95ce66021d714ef5fec9d600c866294465",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A103974",
+      "offset": 1,
+      "sha256": "2242de9963077637fd5099d83020e6a76170d74ee8849e0b0dbba882944ff374",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A106256",
+      "offset": 1,
+      "sha256": "bab060f913fb47763df2c1dda85283a677694bf77e1d58a6ab8363e509df9ab7",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A111282",
+      "offset": 1,
+      "sha256": "697c0e65cc211a0fcc5bb157cbb205bc9bd58522a113b17db2cc8ea841752a83",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A115598",
+      "offset": 1,
+      "sha256": "b7928eed5028d25ab25e01c4d527b3ed421531b64d21d8207ec637f9875286ae",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A115599",
+      "offset": 1,
+      "sha256": "c75f121f4b1ef2170365dd59a0018976a474c037e17b965f74f2213e548c0bc2",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A118658",
+      "offset": 0,
+      "sha256": "376309dee7ba8a8ed6eb178d051631efe0beeac04758071175ef6cc9d56d9d1e",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A122367",
+      "offset": 0,
+      "sha256": "ca19b7c74df3cae8541d4bb41a119e490cc98fcc56ac236e7beb07b9a8368632",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A122769",
+      "offset": 1,
+      "sha256": "d1c4d98b66ea27385dd6e42cad1fecd761551d1ce343352cced956d79cee4faf",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A126358",
+      "offset": 0,
+      "sha256": "c7dab6274b328613cd66278a6684c55714579cc134184f6899283edda07a7fb1",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A128588",
+      "offset": 1,
+      "sha256": "c73ef1c4be4afa1f3f001aa61a1c40719c61aa71114e7c7a493b5977a8a99be5",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A133283",
+      "offset": 1,
+      "sha256": "15317d4905d886c4612e3bc980edd64217b8521631a4f955279c6b9730abbdcc",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A133326",
+      "offset": 1,
+      "sha256": "0482074f31c1e08ac94a0109f3f8c453f3391279e059f7d341b075e1e16f6504",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A135064",
+      "offset": 1,
+      "sha256": "02a0b2ce0c56687a0ba9076a709cd223a63dec3a16881613405138cf28b06817",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A144797",
+      "offset": 1,
+      "sha256": "b8ccc39ea452c279396d495c06fc38f8b4b71e93397cf6992b11680e7d6c8aed",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A163271",
+      "offset": 1,
+      "sha256": "2688735a6a1ef48f212c42cc93fea45b26326df4b06fdfb6feebc6b87c4cdbc1",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A163733",
+      "offset": 1,
+      "sha256": "f4fc384c83f973d783de34d2120ff69eae8d9fc89e45b0396c5d1d21133836e2",
+      "order": 4,
+      "stabilization_index": 2,
+      "nilpotent_dimension": 2,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A169985",
+      "offset": 0,
+      "sha256": "10c85f6c12fad4817f375fe29007effa0d67d713427f28a5e1dfa5c7798c1795",
+      "order": 4,
+      "stabilization_index": 2,
+      "nilpotent_dimension": 2,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A171842",
+      "offset": 0,
+      "sha256": "ab222e603f239f3015919806bdb33c73c40cf061df6a983ae8ad2531f7be42ed",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A176981",
+      "offset": 0,
+      "sha256": "7c6a27d52ca8a96224a3c7b751d42fd204933e804efc82c255e6f46e20259c7a",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A182435",
+      "offset": 0,
+      "sha256": "bd4629b63fd7c529424961c88fbc82cf6dbe8b116ed82c1b47039b92a3ac5211",
+      "order": 3,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A189356",
+      "offset": 1,
+      "sha256": "11a2f0b5e9480a388b1b99fd448208c9eba57975259cbbaeab68eb8f0fee759a",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A195503",
+      "offset": 1,
+      "sha256": "7911c5c641366b92363798298b15453f4e43597d875ec43d2f5faf8ef50ad82e",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A198834",
+      "offset": 1,
+      "sha256": "02181125e549ee4589f166b81d21c519f605793dbe98ac9b6cd0e0cf0cba53a0",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A212804",
+      "offset": 0,
+      "sha256": "7270bce1a94b662296e4005970b87644dc11de668af0cc887160fd95921c60a1",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A215928",
+      "offset": 0,
+      "sha256": "23b945ba509138bf32e616c34eaedf2672ce2a3d2f1070f6512c88a8f5bf8db6",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A237268",
+      "offset": 1,
+      "sha256": "d8b35f2e71323c2f090a23d45654196a3389adeb7dae94c1e9b2c0a49da827cd",
+      "order": 4,
+      "stabilization_index": 2,
+      "nilpotent_dimension": 2,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A239365",
+      "offset": 1,
+      "sha256": "5b0c20c44856e86c9fb7d0cba4c5499fb9007ce99ea2a953838d3e3ef2861c23",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A259131",
+      "offset": 1,
+      "sha256": "4518ec4ec019e4ff2752e6d54a2cef75a9bd0196ec8068c845ac6328412143d8",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A273052",
+      "offset": 1,
+      "sha256": "ebce61b8eb93de2a791c0f32f3738b21d6e131b9ad26a7183d3a84197bf432a7",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A273053",
+      "offset": 1,
+      "sha256": "ac129aa6967445817e527b2806442d3b84d72b1813903b7b4582091d014f8e21",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A273054",
+      "offset": 1,
+      "sha256": "05ccaf668f25b5dff2468171d5c702809528dca27e4576800f122f03d1cf381d",
+      "order": 4,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 4,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A284647",
+      "offset": 0,
+      "sha256": "a58b6ea623ccb4ac618421abb01b2860ec36311c0103254a16f89d2d3afc5ef1",
+      "order": 5,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 5,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A286810",
+      "offset": 0,
+      "sha256": "e1434e62efb5fa6ce5fb9126d3f00d53d6bbb9f429786b8efe6b8122cc905313",
+      "order": 4,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 3,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A288219",
+      "offset": 0,
+      "sha256": "99ff3ba742ba6b4d3d11012d2d81dbcb75c444d9c91f2fdbb2c211b9d5cc7132",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A309330",
+      "offset": 1,
+      "sha256": "f1cc98901e68a82537eb8850c3677dbcd874914dc12c3fac768af06bef06cea1",
+      "order": 2,
+      "stabilization_index": 0,
+      "nilpotent_dimension": 0,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A324969",
+      "offset": 1,
+      "sha256": "50655f06999d20085842dc718864f5e10d7f33db0aa88f90fa33d4a5cfc89ae8",
+      "order": 3,
+      "stabilization_index": 1,
+      "nilpotent_dimension": 1,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A329723",
+      "offset": 0,
+      "sha256": "63a9480f2d8d874b5132a08640d8301e29fb3e765af0ed33f937cfeba8dbdd90",
+      "order": 4,
+      "stabilization_index": 2,
+      "nilpotent_dimension": 2,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    },
+    {
+      "id": "A373566",
+      "offset": 0,
+      "sha256": "6a8e1205ac4c1f73385c687a6c38e840487d3cb40f49f26256062d86edc3a804",
+      "order": 4,
+      "stabilization_index": 2,
+      "nilpotent_dimension": 2,
+      "stable_dimension": 2,
+      "scope": "the reconstructed recurrence model, not the OEIS definition"
+    }
+  ],
+  "fitting_histogram": {
+    "nil=0,stable=2": 65,
+    "nil=0,stable=3": 29,
+    "nil=1,stable=2": 19,
+    "nil=0,stable=5": 2,
+    "nil=0,stable=6": 2,
+    "nil=2,stable=2": 7,
+    "nil=1,stable=3": 3,
+    "nil=0,stable=4": 8
+  },
+  "all_future_GF_model_comparisons": [
+    {
+      "id": "A048739",
+      "offset": 0,
+      "sha256": "c7ba1ff695a8e09a1e781de73371bed2a5ce596eaa5ebe5ccf04839986fc746c",
+      "comparison": {
+        "status": "ZERO_FOR_ALL_NONNEGATIVE_INDICES",
+        "reachable_dimension": 3,
+        "orbit_basis": [
+          [
+            "1",
+            "3",
+            "8",
+            "1",
+            "3",
+            "8"
+          ],
+          [
+            "3",
+            "8",
+            "20",
+            "3",
+            "8",
+            "20"
+          ],
+          [
+            "8",
+            "20",
+            "49",
+            "8",
+            "20",
+            "49"
+          ]
+        ],
+        "closure_coefficients": [
+          "-1",
+          "-1",
+          "3"
+        ],
+        "field": "Q",
+        "execution_verified": false,
+        "definition_scope": "the two supplied exact recurrence definitions; n>=0"
+      },
+      "oeis_definition_proved": false
+    },
+    {
+      "id": "A052995",
+      "offset": 0,
+      "sha256": "6bc5d4e285c7d00aad97f18b5fdda210cddceb27e5faaa949a9a427982bc3429",
+      "comparison": {
+        "status": "ZERO_FOR_ALL_NONNEGATIVE_INDICES",
+        "reachable_dimension": 3,
+        "orbit_basis": [
+          [
+            "0",
+            "2",
+            "4",
+            "0",
+            "2",
+            "4"
+          ],
+          [
+            "2",
+            "4",
+            "10",
+            "2",
+            "4",
+            "10"
+          ],
+          [
+            "4",
+            "10",
+            "26",
+            "4",
+            "10",
+            "26"
+          ]
+        ],
+        "closure_coefficients": [
+          "0",
+          "-1",
+          "3"
+        ],
+        "field": "Q",
+        "execution_verified": false,
+        "definition_scope": "the two supplied exact recurrence definitions; n>=0"
+      },
+      "oeis_definition_proved": false
+    },
+    {
+      "id": "A078057",
+      "offset": 0,
+      "sha256": "b5c5f444f7b392791d516831852435ba63652e64234d049bd99695f5d9e70a02",
+      "comparison": {
+        "status": "ZERO_FOR_ALL_NONNEGATIVE_INDICES",
+        "reachable_dimension": 2,
+        "orbit_basis": [
+          [
+            "1",
+            "3",
+            "1",
+            "3"
+          ],
+          [
+            "3",
+            "7",
+            "3",
+            "7"
+          ]
+        ],
+        "closure_coefficients": [
+          "1",
+          "2"
+        ],
+        "field": "Q",
+        "execution_verified": false,
+        "definition_scope": "the two supplied exact recurrence definitions; n>=0"
+      },
+      "oeis_definition_proved": false
+    },
+    {
+      "id": "A128588",
+      "offset": 1,
+      "sha256": "c73ef1c4be4afa1f3f001aa61a1c40719c61aa71114e7c7a493b5977a8a99be5",
+      "comparison": {
+        "status": "ZERO_FOR_ALL_NONNEGATIVE_INDICES",
+        "reachable_dimension": 3,
+        "orbit_basis": [
+          [
+            "1",
+            "2",
+            "4",
+            "1",
+            "2",
+            "4",
+            "6"
+          ],
+          [
+            "2",
+            "4",
+            "6",
+            "2",
+            "4",
+            "6",
+            "10"
+          ],
+          [
+            "4",
+            "6",
+            "10",
+            "4",
+            "6",
+            "10",
+            "16"
+          ]
+        ],
+        "closure_coefficients": [
+          "0",
+          "1",
+          "1"
+        ],
+        "field": "Q",
+        "execution_verified": false,
+        "definition_scope": "the two supplied exact recurrence definitions; n>=0"
+      },
+      "oeis_definition_proved": false
+    },
+    {
+      "id": "A176981",
+      "offset": 0,
+      "sha256": "7c6a27d52ca8a96224a3c7b751d42fd204933e804efc82c255e6f46e20259c7a",
+      "comparison": {
+        "status": "ZERO_FOR_ALL_NONNEGATIVE_INDICES",
+        "reachable_dimension": 3,
+        "orbit_basis": [
+          [
+            "1",
+            "0",
+            "-1",
+            "1",
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "-1",
+            "-2",
+            "0",
+            "-1",
+            "-2"
+          ],
+          [
+            "-1",
+            "-2",
+            "-5",
+            "-1",
+            "-2",
+            "-5"
+          ]
+        ],
+        "closure_coefficients": [
+          "0",
+          "1",
+          "2"
+        ],
+        "field": "Q",
+        "execution_verified": false,
+        "definition_scope": "the two supplied exact recurrence definitions; n>=0"
+      },
+      "oeis_definition_proved": false
+    },
+    {
+      "id": "A212804",
+      "offset": 0,
+      "sha256": "7270bce1a94b662296e4005970b87644dc11de668af0cc887160fd95921c60a1",
+      "comparison": {
+        "status": "ZERO_FOR_ALL_NONNEGATIVE_INDICES",
+        "reachable_dimension": 2,
+        "orbit_basis": [
+          [
+            "1",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "1"
+          ]
+        ],
+        "closure_coefficients": [
+          "1",
+          "1"
+        ],
+        "field": "Q",
+        "execution_verified": false,
+        "definition_scope": "the two supplied exact recurrence definitions; n>=0"
+      },
+      "oeis_definition_proved": false
+    },
+    {
+      "id": "A373566",
+      "offset": 0,
+      "sha256": "6a8e1205ac4c1f73385c687a6c38e840487d3cb40f49f26256062d86edc3a804",
+      "comparison": {
+        "status": "ZERO_FOR_ALL_NONNEGATIVE_INDICES",
+        "reachable_dimension": 4,
+        "orbit_basis": [
+          [
+            "1",
+            "3",
+            "3",
+            "5",
+            "1",
+            "3",
+            "3",
+            "5"
+          ],
+          [
+            "3",
+            "3",
+            "5",
+            "8",
+            "3",
+            "3",
+            "5",
+            "8"
+          ],
+          [
+            "3",
+            "5",
+            "8",
+            "13",
+            "3",
+            "5",
+            "8",
+            "13"
+          ],
+          [
+            "5",
+            "8",
+            "13",
+            "21",
+            "5",
+            "8",
+            "13",
+            "21"
+          ]
+        ],
+        "closure_coefficients": [
+          "0",
+          "0",
+          "1",
+          "1"
+        ],
+        "field": "Q",
+        "execution_verified": false,
+        "definition_scope": "the two supplied exact recurrence definitions; n>=0"
+      },
+      "oeis_definition_proved": false
+    }
+  ],
+  "padovan_fitting": {
+    "stabilization_index": 0,
+    "nilpotent_dimension": 0,
+    "stable_dimension": 3,
+    "basis": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "inverse_basis": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "operator_in_basis": [
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ]
+    ],
+    "nilpotent_projector": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "stable_projector": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "kernel_free": true,
+    "execution_verified": false,
+    "field": "Q"
+  },
+  "fibonacci_next_target": {
+    "status": "EXACT_TARGET_FACTOR",
+    "decoder": [
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "execution_verified": false,
+    "field": "Q"
+  },
+  "padovan_missing_third_coordinate": {
+    "status": "AMBIGUOUS",
+    "invisible_vector": [
+      "0",
+      "0",
+      "1"
+    ],
+    "target_difference": [
+      "1"
+    ],
+    "execution_verified": false,
+    "field": "Q"
+  },
+  "task_section": {
+    "status": "INJECTIVE_TASK_SECTION",
+    "lift": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "lift_rank": 3,
+    "constructed_lift_integral": true,
+    "target_kernel_dimension": 2,
+    "carrier_kernel_dimension": 3,
+    "field": "Q",
+    "execution_verified": false
+  },
+  "nonintegral_section": {
+    "status": "TASK_SECTION",
+    "lift": [
+      [
+        "1/2"
+      ]
+    ],
+    "lift_rank": 1,
+    "constructed_lift_integral": false,
+    "target_kernel_dimension": 0,
+    "carrier_kernel_dimension": 0,
+    "field": "Q",
+    "execution_verified": false
+  },
+  "nilpotent_chain": {
+    "stabilization_index": 2,
+    "nilpotent_dimension": 2,
+    "stable_dimension": 1,
+    "basis": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4"
+      ]
+    ],
+    "inverse_basis": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1/4"
+      ]
+    ],
+    "operator_in_basis": [
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2"
+      ]
+    ],
+    "nilpotent_projector": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "stable_projector": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "kernel_free": false,
+    "execution_verified": false,
+    "field": "Q"
+  },
+  "source_cubics": [
+    {
+      "name": "Nahm free direction",
+      "modulus": [
+        1,
+        -1,
+        -2,
+        1
+      ],
+      "polynomial_discriminant": "49",
+      "theta_matrix": [
+        [
+          "0",
+          "0",
+          "-1"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "2"
+        ]
+      ],
+      "self_hom": {
+        "dimension": 3,
+        "basis": [
+          [
+            [
+              "-1",
+              "-1",
+              "0"
+            ],
+            [
+              "-2",
+              "0",
+              "-1"
+            ],
+            [
+              "1",
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-2",
+              "0",
+              "-1"
+            ],
+            [
+              "1",
+              "-2",
+              "1"
+            ],
+            [
+              "0",
+              "1",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "constraint_rank": 6,
+        "variables": 9,
+        "contexts": 1,
+        "field": "Q",
+        "execution_verified": false
+      }
+    },
+    {
+      "name": "geometric critical factor",
+      "modulus": [
+        -1,
+        5,
+        -4,
+        1
+      ],
+      "polynomial_discriminant": "-23",
+      "theta_matrix": [
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "-5"
+        ],
+        [
+          "0",
+          "1",
+          "4"
+        ]
+      ],
+      "self_hom": {
+        "dimension": 3,
+        "basis": [
+          [
+            [
+              "5",
+              "1",
+              "0"
+            ],
+            [
+              "-4",
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "0",
+              "0"
+            ]
+          ],
+          [
+            [
+              "-4",
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "-4",
+              "-5"
+            ],
+            [
+              "0",
+              "1",
+              "0"
+            ]
+          ],
+          [
+            [
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "1"
+            ]
+          ]
+        ],
+        "constraint_rank": 6,
+        "variables": 9,
+        "contexts": 1,
+        "field": "Q",
+        "execution_verified": false
+      }
+    }
+  ],
+  "cubic_rank_profiles": [
+    [
+      {
+        "contexts": [
+          "power_1"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      }
+    ],
+    [
+      {
+        "contexts": [
+          "power_1"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3",
+          "power_4"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_2",
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      },
+      {
+        "contexts": [
+          "power_1",
+          "power_2",
+          "power_3",
+          "power_4",
+          "power_5"
+        ],
+        "rank": 3
+      }
+    ]
+  ],
+  "cross_cubic_hom": {
+    "dimension": 0,
+    "basis": [],
+    "constraint_rank": 9,
+    "variables": 9,
+    "contexts": 1,
+    "field": "Q",
+    "execution_verified": false
+  },
+  "five_arrow_algebra": {
+    "dimension": 8,
+    "radical_dimension": 5,
+    "radical_square_zero": true,
+    "regular_determinant": "3240",
+    "expected_regular_determinant": "3240",
+    "carrier_determinant": "93750",
+    "expected_carrier_determinant": "93750",
+    "inverse_regular_identity": true
+  }
+}

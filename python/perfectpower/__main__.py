@@ -83,6 +83,22 @@ def main():
     p.add_argument('--exponents', required=True, help='comma-separated positive exponents')
     p.add_argument('--census', action='store_true', help='enumerate all subgroups within small-module budgets')
     sub.add_parser('operator-replay', help='exact recovered hypergeometric/Weyl prefix replay')
+    p = sub.add_parser('operator-atlas', help='exact operator recovery on staged recurrence models')
+    p.add_argument('--seq-dir', required=True, type=Path)
+    p = sub.add_parser('fitting', help='construct rational nilpotent/stable decomposition')
+    p.add_argument('--matrix', required=True, type=json.loads)
+    p = sub.add_parser('task-section', help='construct a rational target lift through a carrier')
+    p.add_argument('--target', required=True, type=json.loads)
+    p.add_argument('--carrier', required=True, type=json.loads)
+    p.add_argument('--injective', action='store_true')
+    p = sub.add_parser('recurrence-identity', help='all-future equality of supplied recurrence definitions')
+    p.add_argument('--left-coeff', required=True, type=coefficients)
+    p.add_argument('--left-initial', required=True, type=coefficients)
+    p.add_argument('--right-coeff', required=True, type=coefficients)
+    p.add_argument('--right-initial', required=True, type=coefficients)
+    p = sub.add_parser('norm-operator-replay', help='exact unit operators and task planes from a source packet')
+    p.add_argument('--packet', required=True, type=Path)
+    p.add_argument('--radius', type=int, default=3)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
@@ -130,6 +146,28 @@ def main():
     if args.command == 'operator-replay':
         from .exact_operators import hypergeometric_replay
         print(json.dumps(hypergeometric_replay(),indent=2))
+        return
+    if args.command in ('operator-atlas','fitting','task-section','recurrence-identity'):
+        if args.command == 'operator-atlas':
+            from .operator_recovery import recovery_receipt
+            out=recovery_receipt(args.seq_dir)
+        elif args.command == 'fitting':
+            from .exact_linear import fitting_decomposition
+            out=fitting_decomposition(args.matrix)
+        elif args.command == 'task-section':
+            from .exact_linear import task_section
+            out=task_section(args.target,args.carrier,injective=args.injective)
+        else:
+            from .recurrence import Recurrence
+            from .recurrence_identity import compare_recurrences
+            out=compare_recurrences(Recurrence(tuple(args.left_coeff),tuple(args.left_initial)),
+                                    Recurrence(tuple(args.right_coeff),tuple(args.right_initial)))
+        print(json.dumps(out,indent=2,default=str))
+        return
+    if args.command == 'norm-operator-replay':
+        from .norm_operator_replay import field_operator_replay
+        out=field_operator_replay(json.loads(args.packet.read_text()),radius=args.radius)
+        print(json.dumps(out,indent=2,default=str))
         return
     if args.command == 'verify':
         obj = RigidCertificate(**json.loads(args.certificate.read_text()))
