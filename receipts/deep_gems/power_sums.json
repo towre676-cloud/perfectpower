@@ -1,0 +1,80 @@
+{
+  "bounded_quartic_search": {
+    "bound": 200,
+    "complete_in_domain": true,
+    "degree": 4,
+    "domain": "1 <= a1 <= ... <= a3 < target <= 200",
+    "execution_verified": false,
+    "globally_complete": false,
+    "pair_entries": 20100,
+    "primitive_only": false,
+    "search_loops": 19900,
+    "solutions": [],
+    "terms": 3
+  },
+  "bounded_quintic_search": {
+    "bound": 144,
+    "complete_in_domain": true,
+    "degree": 5,
+    "domain": "1 <= a1 <= ... <= a4 < target <= 144",
+    "execution_verified": false,
+    "globally_complete": false,
+    "pair_entries": 10440,
+    "primitive_only": true,
+    "search_loops": 497640,
+    "solutions": [
+      [
+        27,
+        84,
+        110,
+        133,
+        144
+      ]
+    ],
+    "terms": 4
+  },
+  "historical_gcd_127_claim_correct": false,
+  "historical_scan_payload_recovered": false,
+  "historical_witnesses": [
+    {
+      "degree": 4,
+      "exact_replay": true,
+      "execution_verified": false,
+      "gcd": 1,
+      "normalized_target": 422481,
+      "normalized_terms": [
+        95800,
+        217519,
+        414560
+      ],
+      "primitive": true,
+      "target": 422481,
+      "terms": [
+        95800,
+        217519,
+        414560
+      ]
+    },
+    {
+      "degree": 5,
+      "exact_replay": true,
+      "execution_verified": false,
+      "gcd": 1,
+      "normalized_target": 144,
+      "normalized_terms": [
+        27,
+        84,
+        110,
+        133
+      ],
+      "primitive": true,
+      "target": 144,
+      "terms": [
+        27,
+        84,
+        110,
+        133
+      ]
+    }
+  ]
+}

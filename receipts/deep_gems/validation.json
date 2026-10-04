@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "full_suite": {
+    "tests_run": 586,
+    "skips": 4,
+    "seconds": 64.453,
+    "log": "tests.log",
+    "log_sha256": "9925c77ec3a930ddade5d1c6a867477ef83e0f4d42d54b23f1aa6a6fdc1e2227"
+  },
+  "focused_tests": 29,
+  "cold_replay": {
+    "status": "passed",
+    "archive_source_tree": "e328357f908e57e025c01700ef5b46f1eba61426",
+    "archive_entries": 2261,
+    "archive_bytes": 19731217,
+    "third_party_packages_disabled": true,
+    "focused_tests": 29,
+    "byte_identical_result_files": {
+      "finite_weil.json": "c90017ae6604b6adbe910ec8370e5b73ec7f75fd06ee5f44cf65bc5ede6a435a",
+      "polynomial_quotient.json": "104ec84e80c41f604f05bf791fa94bdc59ca0833cf667d67f4743063396b439f",
+      "power_sums.json": "c05adfdceb645f9faee243a8a035ab6ffa1e9da127ca37b02f773cb9cb6db180",
+      "quartic_pullbacks.json": "3c127ba9aa1942e3bb134736b3ad6d96206bf56502341851467e93342924abe4",
+      "summary.json": "fcbfcc8f6b686d1542b9404fabe0055fdc943532d20445b4f17b6fd58c39ee2f",
+      "weighted_hodge.json": "2ac9abfb85ca96a8cfc238721069f938f6ca9196e17e0531cc31eba3899c0535"
+    },
+    "scope": "runner and focused tests from exported staged archive, outside the source checkout"
+  },
+  "source_sha256": {
+    "python/perfectpower/__main__.py": "cfb0d476c54789925901165b7840b9e3ca1c666592b9a38dbfa42e65f091bd86",
+    "python/perfectpower/deep_recovery_cli.py": "c41576c184ed3e5fbf4773be7b037c7b72aa397feabcb0d9b1ca983dbc64ba33",
+    "python/perfectpower/finite_weil.py": "a50a80307784a1cddaa7e707075c26f201f596766c057c4411b80201749f180e",
+    "python/perfectpower/polynomial_symmetry.py": "b8b8f8e6c02aaf24a94a88db754f96752ce9f8d4d61d273735d86afc0c0397d6",
+    "python/perfectpower/power_sums.py": "6cbd73cbe16a0b92f639fd202e8a76866ba002b187f023ea58364fc0574614b9",
+    "python/perfectpower/weighted_hodge.py": "390c99b2473d1452f80addfd19fac072f800ed3e5bdcbd00f6162c41b2225318",
+    "python/recover_deep_gems.py": "1317cfefdc493e4bdbeb661108af66128425b5a62697f4575b3dc1b12155c983",
+    "python/tests/test_deep_gems.py": "20ef79b05f1fbe3ab24642567a640ef8a4b3a20f78601c1bb6464b7981fe88fb"
+  },
+  "new_lean_compilations": 0,
+  "scope": "exact Python computations, inherited hash-pinned outer kernel ledger, full regression suite and cold stdlib replay"
+}

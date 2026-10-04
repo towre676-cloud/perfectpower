@@ -1,0 +1,45 @@
+{
+  "recovery_date": "2026-10-04",
+  "baseline_commit": "a9d7c15b1063944c4cb76d009db987bf4ea6770f",
+  "sources": [
+    {
+      "family": "weighted_hodge",
+      "conversation_date": "2025-02-16",
+      "evidence_type": "retrieved prior assistant output and user request",
+      "assistant_formula_time": "2025-02-16T17:08:18Z",
+      "recovered": "weighted adjoint, regularized constraint filter, finite chain idea",
+      "corrections": ["rectangular maps require separate domain and codomain masses", "positive regularization is generally not an exact projector"],
+      "unreproduced": "nonlinear gravity implementation and damping comparisons"
+    },
+    {
+      "family": "power_sums",
+      "conversation_date": "2025-03-29",
+      "evidence_type": "retrieved prior assistant output; integer identities independently checked",
+      "identity_times": ["2025-03-29T10:37:33Z", "2025-03-29T10:38:47Z"],
+      "recovered": "primitive quartic three-term and quintic four-term identities",
+      "corrections": ["quartic common divisor is 1, not 127", "bounded absence is not unbounded nonexistence"],
+      "historical_scan_payload_recovered": false
+    },
+    {
+      "family": "polynomial_symmetry",
+      "conversation_dates": ["2026-03-16", "2026-03-25", "2026-03-26"],
+      "source_files": [
+        {"name": "PSG_Q_U_L_Z.txt", "source_id": "libfile_80209b1e93fc8191b98970bf1b138b41", "created_at": "2026-03-25T16:48:20.313563Z", "read_lines": [1,1]},
+        {"name": "PSG_resultant_symmetry_probe.txt", "source_id": "libfile_9c32bf81bc588191a4c96dbe6d03daa7", "created_at": "2026-03-16T13:33:53.442959Z", "read_lines": [1,68]}
+      ],
+      "saved_source_scope": "complete Q expression and complete Qtilde numerator; prose and other probe expressions excluded",
+      "corrections": ["square outer coefficient ratio does not prove a full reversal identity", "quotient coordinates retain integer power-image conditions", "inverse deweighting chart requires nonzero scale"],
+      "original_P_resultant_chain_rebuilt": false
+    },
+    {
+      "family": "finite_weil",
+      "conversation_period": "2026-06",
+      "source_file": {"name": "level_deformation_monograph_v4_26_0.html", "source_id": "libfile_ade793106c288191bcadcdd15260a786", "created_at": "2026-06-19T03:31:44.352228Z", "read_lines": [9237,9248], "retained_section": "CS, before section CU"},
+      "convention": "S_N[x,y]=zeta_N^(xy)/sqrt(N), T_N[x,x]=zeta_N^(x*x) for all levels; replay uses unnormalized F_N",
+      "recovered": ["finite commutants", "clock/shift distinction", "twisted scaled CRT", "Fourier degeneracy identities"],
+      "general_prime_power_dimension_theorem_proved_here": false,
+      "hardware_benchmark_reproduced": false
+    }
+  ],
+  "trust": "Retrieved prior assistant claims are leads. Saved exact expressions and current explicit replays establish the reported finite identities; formal execution verification and general analytic/physical conclusions are not inferred."
+}

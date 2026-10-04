@@ -152,6 +152,8 @@ def main():
     p = sub.add_parser('legendre-period-bounds', help='exact rational enclosures of normalized Legendre periods')
     p.add_argument('--lambda', dest='lam', required=True)
     p.add_argument('--terms',type=int,default=64)
+    from .deep_recovery_cli import add_commands as add_deep_commands
+    add_deep_commands(sub)
     from .divisor_kernel_cli import add_commands as add_divisor_kernel_commands
     add_divisor_kernel_commands(sub)
     from .analytic_geometry_cli import add_commands as add_analytic_commands
@@ -163,6 +165,9 @@ def main():
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .deep_recovery_cli import dispatch as dispatch_deep
+    if dispatch_deep(args):
+        return
     from .divisor_kernel_cli import dispatch as dispatch_divisor_kernel
     if dispatch_divisor_kernel(args):
         return
