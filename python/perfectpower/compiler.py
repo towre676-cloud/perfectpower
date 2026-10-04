@@ -758,6 +758,42 @@ def _lift_status(status: str, chain: list[Step]) -> str:
     return status
 
 
+_structural_engine = None
+
+
+def _structural_plan(F, d):
+    """Use the redesigned all-integer engine after the cheaper existing routes.
+
+    Only a complete finite result is promoted; generators and unsupported
+    branches continue through the existing classification/transport machinery.
+    """
+    global _structural_engine
+    if len(_trim(F))<5:return None
+    from .arithmetic_engine import ArithmeticEngine
+    from .divisor_square import WorkLimit
+    # Preserve the existing theorem-backed radical/Pell reduction of exact
+    # polynomial powers. Its generator/count interface is richer than a new
+    # finite-leaf shortcut and already carries the appropriate dependency.
+    from .core import rigid_certificate
+    for exponent in range(2,d):
+        if d%exponent==0:
+            certificate=rigid_certificate(F,exponent)
+            if certificate is not None and certificate.exact_identity:return None
+    if _structural_engine is None:_structural_engine=ArithmeticEngine()
+    try:result=_structural_engine.solve(F,d)
+    except WorkLimit:return None
+    if result['status']!='COMPLETE':return None
+    fin={}
+    for n,y in result['points']:
+        if n>=1:fin.setdefault(n,[]).append(y)
+    proof=result['proof'];leaf=proof.get('leaf',{});bound=leaf.get('bound_certificate') or {}
+    theorem=bound.get('theorem','exact residue and coordinate identities')
+    return dict(method='exact structural reduction, residue cover and integer image lifting',status=COMPLETE_FINITE,
+                justification=[theorem,'Python arithmetic-engine instance; execution is not verified'],
+                data={'arithmetic_engine':result},finite=fin,contains=lambda n:n in fin,
+                hits=lambda N:{n:w for n,w in fin.items() if n<=N})
+
+
 def _power_plan(pc: PowerConstraint) -> dict:
     """Solver for F(n) = m^d: method, status, justification, data and the operations."""
     F, d = pc.F, pc.d
@@ -826,6 +862,8 @@ def _power_plan(pc: PowerConstraint) -> dict:
                             data={k:v for k,v in result.items() if k!='points'},
                             finite=fin,contains=lambda n:n in fin,
                             hits=lambda N:{n:w for n,w in fin.items() if n<=N})
+    structural=_structural_plan(F,d)
+    if structural is not None:return structural
     # 1. affine transport to a Mordell curve solved in Lean
     if d == 2:
         m = match_affine_cube(F)

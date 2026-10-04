@@ -1,0 +1,474 @@
+{
+  "baseline_commit": "9bf8506efbad7165a71dbd6dfdd85598941a88bd",
+  "classical_background": [
+    {
+      "claim": "Classical background, not a novelty claim.",
+      "topic": "Exact lattice basis reduction and bounded ellipsoid enumeration",
+      "url": "https://cseweb.ucsd.edu/~daniele/LatticeLinks/Enum.html"
+    }
+  ],
+  "document_count": 22,
+  "documents": [
+    {
+      "decision": "retained complementary",
+      "document": "docs/ANALYTIC_GEOMETRY_MONOGRAPH.md",
+      "family": "Intrinsic Voronoi geometry, equation-derived meshes, continued-sheet periods",
+      "rationale": "Numerical geometry keeps its existing diagnostics; it is not a finite integer certificate.",
+      "sections": [
+        "A conformal torus belonging to the actual curve",
+        "Intrinsic Voronoi cells without a mesh graph",
+        "Putting the sites back on the curve",
+        "Actual periods with continuous sheet transport",
+        "Smooth metrics on higher-genus components",
+        "A closed mesh from the equation, not just its genus",
+        "Higher-genus intrinsic Voronoi approximations",
+        "Running and extending the computation"
+      ],
+      "sha256": "c78fc0042e09294fbc6234f0bd8338a57079dcb6ada752231bae67f7a900823e",
+      "title": "Intrinsic geometry, conformal metrics and analytic periods on PerfectPower curves"
+    },
+    {
+      "decision": "applied now",
+      "document": "docs/BRANCHED_GEOMETRY_MONOGRAPH.md",
+      "family": "Exact component topology and cell models",
+      "rationale": "Stored genus-0 through genus-4 models supply integer coclosed constraints to the new optimizer.",
+      "sections": [
+        "The result that is now a Lean theorem",
+        "Repeated roots and connected components",
+        "Arithmetic content remains necessary",
+        "Exact finite transport and cyclotomic matrices",
+        "Cells, dual graphs and finite Hodge operators",
+        "The integrated collection",
+        "Lean work recovered from recent pushes",
+        "Running the module",
+        "Verification of this release"
+      ],
+      "sha256": "e03e6034c5c9eb71d8d28087acc33ba7982f204c1e637c2d61a0eeedc0a0cb52",
+      "title": "Perfect powers as branched surfaces and exact connection operators"
+    },
+    {
+      "decision": "adapted now",
+      "document": "docs/COVERING_LATTICE_MONOGRAPH.md",
+      "family": "Covering obstructions, binary invariants and integral lattice presentations",
+      "rationale": "Whole integer images and checked local obstructions inform both redesigned engines; general covering descent remains separate.",
+      "sections": [
+        "What this release adds",
+        "Binary quartic conventions and arithmetic",
+        "Replaying the recovered example",
+        "Two-isogeny covering interface",
+        "Integral presentations rather than rational fingerprints",
+        "Integration with the current order and orbit machinery",
+        "Supplied polynomial decomposition",
+        "Reproduction, validation and remaining mathematical work"
+      ],
+      "sha256": "6588f0e286a9dbbcd56e586f13010a3a8faf71ca6b7b72ef19f769a0257924e0",
+      "title": "Recovered covering obstructions and integral lattice arithmetic"
+    },
+    {
+      "decision": "adapted now",
+      "document": "docs/DEEP_GEMS_MONOGRAPH.md",
+      "family": "Weighted Hodge, primitive power sums, polynomial power quotients, finite Weil operators",
+      "rationale": "Power quotients and weighted geometry are integrated with exact image tests and integer optimization; power sums and Weil operators remain complementary.",
+      "sections": [
+        "Where the ideas were found",
+        "Weighted constraint geometry",
+        "Sums of powers with complete finite domains",
+        "Polynomial quotients and exact integer lifting",
+        "Exact finite Fourier and chirp operators",
+        "Reproduction and validation"
+      ],
+      "sha256": "2e1d58446c7d378a5e2b2b7e884631cc56d3db2f56f4b366bbf4cce293925a53",
+      "title": "Four recovered constructions, with their domains intact"
+    },
+    {
+      "decision": "applied now",
+      "document": "docs/DIVISOR_KERNEL_RECOVERY_MONOGRAPH.md",
+      "family": "Divisor incidence, GCD operators, exact Gram matrices, linear fibres",
+      "rationale": "The actual seven-channel corpus Gram matrix becomes the exact integer optimizer metric.",
+      "sections": [
+        "Recovery and corrections",
+        "Exact divisor coordinates",
+        "Normalized blocks and threshold Gram factors",
+        "An integral inverse inside the normalized model",
+        "Actual perfect-power corpus work",
+        "Reproduction and scope"
+      ],
+      "sha256": "38f74316c385c5b7a59cb151fb2e856f7d14ade65c8bb8e69fe2dc92de6fb13a",
+      "title": "Divisor coordinates and the recovered occupancy operator"
+    },
+    {
+      "decision": "retained preferred route",
+      "document": "docs/DIVISOR_REUSE_MONOGRAPH.md",
+      "family": "Polynomial square-plus-constant divisor factorization",
+      "rationale": "Compiler keeps this cheaper algebraic elimination ahead of the new structural route.",
+      "sections": [
+        "Practical value",
+        "Factor pairs instead of coordinate rectangles",
+        "Complete polynomial fibres",
+        "Proof-producing use",
+        "Exact arithmetic reuse",
+        "Quartic charts and finite exclusions",
+        "Verification and remaining scope"
+      ],
+      "sha256": "5b9bdffb5e150c60e55f6a77257fb386c39bf8ba4f39f97f26a0e46299a3f360",
+      "title": "Complete square-plus-constant lists through divisors"
+    },
+    {
+      "decision": "applied now",
+      "document": "docs/DIVISOR_SUM_RESULTS_MONOGRAPH.md",
+      "family": "Complete quartic corpus, multiplicative prime-power joins",
+      "rationale": "All 3,080 source packets and the saved kernel ledger are audited and used as independent corpus references.",
+      "sections": [
+        "What was built",
+        "The interaction that matters",
+        "Why the quartic lists are complete",
+        "Exact census machinery",
+        "Reproducing and using the collection",
+        "Validation and scope",
+        "Completed release checks"
+      ],
+      "sha256": "a3e88fa98824d26a97e451d8b5e13e492dbd87ce4f14d2c6061c56f3a6d7b6a1",
+      "title": "Divisor sums, perfect powers, and complete quartic classifications"
+    },
+    {
+      "decision": "retained complementary",
+      "document": "docs/HOLOMORPHIC_BASIS_MONOGRAPH.md",
+      "family": "Exact holomorphic character dimensions and period intervals",
+      "rationale": "Differential and character data remain geometric interfaces, without an unsupported integer height bound.",
+      "sections": [
+        "The component equation",
+        "A basis with every pole removed",
+        "Character information useful for Jacobians",
+        "Connecting the two existing atlases",
+        "An actual analytic family: Legendre periods",
+        "Rebuilding and formalization boundary"
+      ],
+      "sha256": "4b07b35b3b48b93218bddf9c7780ca443ff7f569fdc9a1bb9f9d4f35634e1328",
+      "title": "From branch topology to explicit differentials and period intervals"
+    },
+    {
+      "decision": "adapted now",
+      "document": "docs/INTEGER_LIFTING_MONOGRAPH.md",
+      "family": "Saturated Smith kernels, integral intertwiners and affine elimination",
+      "rationale": "Smith fibres now support all closest integer solutions and exact dual obstructions.",
+      "sections": [
+        "What the old work contributed",
+        "Constructive reduction and completeness",
+        "Interfaces that use the complete fibre",
+        "Repository replay and verification"
+      ],
+      "sha256": "04926bf7e78b321f9adcd14ee65dbe4f6b9c284c32afd6ad5a56c63ebc8e36d0",
+      "title": "Recovering the missing whole-number lift"
+    },
+    {
+      "decision": "retained foundations",
+      "document": "docs/LEAN_BACKLOG_MONOGRAPH.md",
+      "family": "Formal graph rank, determinant identities, monomial compatibility, sharp quartic cutoffs",
+      "rationale": "Existing compiled obligations and the complete quartic ledger are inherited; the new engine does not claim their Python execution is Lean verified. Native sharp cutoffs remain available in their existing proof-producing route.",
+      "sections": [
+        "Reflection dynamics and rational positive geometry",
+        "A determinant theorem beyond the fixture",
+        "Differential regularity arithmetic",
+        "Formal Legendre equations and actual series bounds",
+        "Recovered multiplicative equations",
+        "Making the unfinished quartic checks feasible",
+        "Scope, reproduction, and remaining mathematics"
+      ],
+      "sha256": "b4568a182b56c3f8aa664ec20d909bc8a4c609602cea1c8f404c586cb3f2dade",
+      "title": "Completing the recent Lean backlog"
+    },
+    {
+      "decision": "retained foundations",
+      "document": "docs/MONOGRAPH.md",
+      "family": "Power classification, rational truncation, Pell counts, Mordell descent and proof map",
+      "rationale": "Rational truncation is extended to both signs through an explicit absolute-value derivation; unsupported general effectiveness remains explicit.",
+      "sections": [
+        "Exact definitions, a polynomial dichotomy, finite-hit certificates, and the arithmetic of the zero branch",
+        "0. Status of every result (edition 0.8)",
+        "1. The object of study",
+        "2. The convergence bridge and finite surgery",
+        "3. The polynomial 0\u20131 theorem",
+        "4. An explicit certificate for the rigid branch",
+        "5. What zero density contains",
+        "5A. Genus one without an external point list (edition 0.8)",
+        "5B. From structure to execution (edition 0.9)",
+        "6. Dirichlet and heat transforms",
+        "7. Formalization and research receipts",
+        "Positive-`k` irreducible workload and the rank-one boundary (October 2026)",
+        "8. Program ahead",
+        "Sources and dependency boundary",
+        "Open-front implementation checkpoint",
+        "Complete nonempty norm orbits and native cubic transport \u2014 October 3, 2026",
+        "Closing k=22 and joining the parallel replay push \u2014 October 3, 2026"
+      ],
+      "sha256": "d1ab6f1175f4f7b32710e32f7bb71c5a428607598d6538495f0e70a41107f443",
+      "title": "Perfect-Power Hits Beyond Density"
+    },
+    {
+      "decision": "retained complementary",
+      "document": "docs/MONOMIAL_RECOVERY_MONOGRAPH.md",
+      "family": "Smith exponent elimination and positive rational families",
+      "rationale": "Whole-query multiplicative solving and modulus-three compatibility remain their specialized route.",
+      "sections": [
+        "The recovered equations and their actual arithmetic",
+        "Hidden-variable elimination",
+        "Every positive-rational solution",
+        "Complete positive-integer lists from a checked product",
+        "Whole queries and current corpus replay",
+        "Reproduction and checks"
+      ],
+      "sha256": "c53c07f69899b6e3ed563f82ce98dd0f14393281a3383021fcc1c451a56ba3be",
+      "title": "August 2025 recovered: multiplicative equations as integer exponent geometry"
+    },
+    {
+      "decision": "retained foundations",
+      "document": "docs/NATIVE_POLYNOMIAL_MONOGRAPH.md",
+      "family": "Kernel-checked polynomial arithmetic and recognizers",
+      "rationale": "New coefficient transports use exact Python identities; existing native proof-producing arithmetic is preserved.",
+      "sections": [
+        "The coefficient representation",
+        "An effective bound without an analytic premise",
+        "Native proof-producing use",
+        "Validation and remaining work"
+      ],
+      "sha256": "034821e246bbd42829eb72c159ebd7433b1eb045638b4126e8c8193a3e098140",
+      "title": "Native effective bounds for square-plus-constant polynomial equations"
+    },
+    {
+      "decision": "retained preferred route",
+      "document": "docs/NATIVE_POWER_MONOGRAPH.md",
+      "family": "Native near-square enumeration and polynomial Fermat classification",
+      "rationale": "These existing formal families remain available; no new Lean proof compilation occurred.",
+      "sections": [],
+      "sha256": "c6335fff3f5b844eac7b0451c10398c89a66a012d8ce86dc9abc9b6178c6fc2a",
+      "title": "Native effective bounds, proof-producing enumeration, and function fields"
+    },
+    {
+      "decision": "adapted now",
+      "document": "docs/NATIVE_RUNGE_MONOGRAPH.md",
+      "family": "Effective root-gap recognition and exact finite bounds",
+      "rationale": "Reuse exact rational truncation inequalities in a reusable finite leaf with full integer-domain replay.",
+      "sections": [
+        "Use directly in Lean",
+        "Polynomial square-root truncation",
+        "Effective bound without an analytic premise",
+        "Exact squares and large bounds",
+        "Verification and scope"
+      ],
+      "sha256": "0f20c82aeba4d934d2b9c3a2d7b20f1180c03f5733ee4c4f5f2f2d7e91eceee4",
+      "title": "Native effective Runge recognition for expanded square-value equations"
+    },
+    {
+      "decision": "adapted now",
+      "document": "docs/NATIVE_RUNGE_POWER_MONOGRAPH.md",
+      "family": "Higher powers, signed roots and cutoff certificates",
+      "rationale": "New leaf handles d from 2 through 64 and retains negative odd witnesses; Lean execution remains separate.",
+      "sections": [
+        "Direct use",
+        "The integer power gap",
+        "Root truncation and denominator clearing",
+        "An unconditional coordinate bound",
+        "Verified integer root extraction",
+        "Exact powers, large searches and remaining scope"
+      ],
+      "sha256": "d9760fbc58c1f612e72e2bc8ae409fa2cb913160d07fad86cf8980ebc72d1a33",
+      "title": "Native Runge bounds and complete integer points for higher perfect powers"
+    },
+    {
+      "decision": "adapted now",
+      "document": "docs/OPERATOR_RECOVERY_MONOGRAPH.md",
+      "family": "Task sections, invisible-state witnesses, intertwiners, Fitting decomposition",
+      "rationale": "Replace rational task sections with closest whole-number points on the entire Smith fibre; operator/Thue bridges remain complementary.",
+      "sections": [
+        "The recovered distinction: rank, transport and task recovery",
+        "Fitting decomposition is more than a kernel check",
+        "From finite agreement to an identity of supplied definitions",
+        "Five arrows, square-zero radical and the unit gate",
+        "Two saved cubic models expose a transport obstruction",
+        "Application to the actual field-756 Thue packets",
+        "Reproduction and artifacts"
+      ],
+      "sha256": "8619bb30aebeaf417e5b27f935c81b74d5fa86c6f4a83f3ea99dc59d8fddb786",
+      "title": "Operator recovery: exact sections, transients and all-future identities"
+    },
+    {
+      "decision": "retained complementary",
+      "document": "docs/POSITIVE_GEOMETRY_MONOGRAPH.md",
+      "family": "Gain-graph rank, matroid flags, determinant geometry",
+      "rationale": "Exact rank and positivity principles inform metric validation; no new general matroid optimization theorem is asserted.",
+      "sections": [
+        "Reader's orientation",
+        "1. From a perfect-power equation to a normalized cover",
+        "2. Euler polyhedra and Descartes angular defect",
+        "3. Labelled collision strata",
+        "4. Ordered branch configurations and associahedra",
+        "5. Canonical forms and collision residues",
+        "6. The Legendre family and its two monodromies",
+        "7. Why residues need periods on positive-genus curves",
+        "8. Cyclic connections and exact support rank",
+        "9. Forest determinants and Newton polytopes",
+        "10. The three-edge triangle and its logarithmic form",
+        "11. Minimum-cost witnesses without enumerating every basis",
+        "12. Descartes circle reflections and polynomial arithmetic",
+        "13. Descartes signs as a real-branch tool",
+        "14. The corpus and its integration",
+        "15. Reproduction and Lean handoff",
+        "16. What this release makes possible next",
+        "References"
+      ],
+      "sha256": "fb492a680672205ab223c23d4c1d5c8fb10257ece14975dab715b6dbb3a91ccf",
+      "title": "Branch degenerations, positive geometry, and exact monodromy witnesses"
+    },
+    {
+      "decision": "applied now",
+      "document": "docs/QUARTIC_EFFECTIVE_SOLVER_MONOGRAPH.md",
+      "family": "Integral and rational square-leading complete quartic bounds",
+      "rationale": "Provide finite solver leaves before generic truncation; existing native sharper cutoffs are separate.",
+      "sections": [
+        "What changed for a user",
+        "A concrete completed problem",
+        "The elementary global bound",
+        "Exact fibres and native point lists",
+        "Removing the integral-completion restriction",
+        "A checked catalogue, not a bounded guess",
+        "Compiler and command-line use",
+        "Validation and practical limits"
+      ],
+      "sha256": "8544b541609fa5360da0d2de2e0973d3bc68ad2af92f8c81ce16b6c87d42bef6",
+      "title": "Complete effective quartic solving, from theorem to compiler"
+    },
+    {
+      "decision": "adapted now",
+      "document": "docs/SEQUENCE_RECOVERY_MONOGRAPH.md",
+      "family": "Signed recurrence, modular reconstruction, quotient projectors, phase-sensitive subgroups",
+      "rationale": "Full local phases and shared canonical discovery are reused as design principles; prefix recurrence candidates remain finite evidence.",
+      "sections": [
+        "Signed recurrence arithmetic",
+        "Bounded reconstruction and the actual sequence atlas",
+        "Exact operator replay and polynomial projectors",
+        "Formation phases and finite primary modules",
+        "Reproduction"
+      ],
+      "sha256": "f50db84e72d774a590da45f8d1fc429ddde12572adda29c40570f5c8678cad25",
+      "title": "More arithmetic recovered from our old work"
+    },
+    {
+      "decision": "extended now",
+      "document": "docs/SHOWCASE_MONOGRAPH.md",
+      "family": "Huge-coordinate nonlinear solutions, Pell counting and whole SMT elimination",
+      "rationale": "New expanded degree-12, degree-40 and degree-15 examples at 10^30 now enter the existing compiler.",
+      "sections": [
+        "A nonlinear answer hidden near a huge coordinate",
+        "Exact size planning under a 1,000-digit bound",
+        "Remove a nonlinear arithmetic subsystem from a whole query",
+        "The measured local result",
+        "Running and extending the examples"
+      ],
+      "sha256": "9a5508501b6325830b16078dbe51330022af1666691b001dc0b9d301c16a2e52",
+      "title": "Three complete answers instead of three endless searches"
+    },
+    {
+      "decision": "retained complementary",
+      "document": "docs/SYMPLECTIC_ANALYTIC_MONOGRAPH.md",
+      "family": "Integral cycle bases, numerical symplectic periods and Abel-Jacobi coordinates",
+      "rationale": "Exact topology is preserved; numerical periods do not enter integer completeness or exact metrics.",
+      "sections": [
+        "The represented curve and its forms",
+        "Realizing the cycles analytically",
+        "Normalization and bilinear checks",
+        "General continued paths",
+        "Canonical conformal metric",
+        "Abel\u2013Jacobi coordinates and lattice reduction",
+        "Results and remaining frontier",
+        "Reproduction"
+      ],
+      "sha256": "7a4a83d0bfd3fc482dbbf29d7a6d41be24d24b60798023850d058e121b41b3b2",
+      "title": "From sheeted surface cycles to analytic period matrices"
+    }
+  ],
+  "execution_verified": false,
+  "historical_inspirations": [
+    {
+      "adaptation_and_boundary": "Keep exact component identities and budget accounting; reject unsupported RH/BSD or spectral equivalence claims.",
+      "idea": "Lakeland spectral carriers and explicit error budgets",
+      "period": "October-November 2024"
+    },
+    {
+      "adaptation_and_boundary": "Use canonical coordinates while preserving the full integer image.",
+      "idea": "Orbit/stabilizer quotients and integral GL orbits",
+      "period": "January 18, 2025"
+    },
+    {
+      "adaptation_and_boundary": "Extend the corrected unregularized exact projector to all closest integer lifts.",
+      "idea": "Weighted constraint projectors",
+      "period": "February 16, 2025"
+    },
+    {
+      "adaptation_and_boundary": "Retain the previous corrected complete bounded search; no unconditional new search-bound claim.",
+      "idea": "Explicit sums of powers and primitive gcd tests",
+      "period": "March 29, 2025"
+    },
+    {
+      "adaptation_and_boundary": "Use measured exact rank and reuse; do not infer tower collapse from a finite prefix.",
+      "idea": "Compression index and stabilized entropy proposals",
+      "period": "April 19, 2025"
+    },
+    {
+      "adaptation_and_boundary": "Retain full modulus data rather than a mod-prime shadow; no fusion classification or theory closure claim.",
+      "idea": "E8 cyclotomic and modular experiments",
+      "period": "April 22, 2025"
+    },
+    {
+      "adaptation_and_boundary": "Build complete local power tables with negative and zero coordinates, without inferring density from local solvability.",
+      "idea": "Power residuals, gcd strata and local prime operators",
+      "period": "May 9, 2025"
+    },
+    {
+      "adaptation_and_boundary": "Use verified algebraic normal forms; existing invariant arithmetic remains complementary.",
+      "idea": "Weyl reflections and binary-cubic invariant identities",
+      "period": "June 27-28, 2025"
+    },
+    {
+      "adaptation_and_boundary": "Preserve saturation and modulus-three image obstructions; retain earlier full multiplicative solver.",
+      "idea": "Monomial exponent geometry and Smith compatibility",
+      "period": "August 2025"
+    },
+    {
+      "adaptation_and_boundary": "Keep phase-sensitive exact filters; existing recurrence and held-out reconstruction modules remain in place.",
+      "idea": "Padovan/tube signed modular filters",
+      "period": "November 2025"
+    },
+    {
+      "adaptation_and_boundary": "Use the actual stored exact Gram matrix as an integer optimization metric.",
+      "idea": "Divisor and GCD feature kernels",
+      "period": "January 8, 2026"
+    },
+    {
+      "adaptation_and_boundary": "Generalize to automatic rational centering, witness scaling and exact affine/power lifts.",
+      "idea": "Power-symmetry geometry and polynomial coordinates",
+      "period": "March 2026"
+    },
+    {
+      "adaptation_and_boundary": "Keep full residue phases and image restrictions; retain finite Weil module without claiming quantum acceleration.",
+      "idea": "Finite Fourier/Weil phases and scaled CRT twists",
+      "period": "June 2026"
+    },
+    {
+      "adaptation_and_boundary": "Separate discovery from exact certificate replay and preserve source-bound comparisons.",
+      "idea": "Tube modular reconstruction and independent held-out checks",
+      "period": "August 2026"
+    },
+    {
+      "adaptation_and_boundary": "Reuse canonical leaf and residue tables plus Smith/metric decompositions, with explicit height and work budgets.",
+      "idea": "Wilson/Forge/Formation shared carriers, residual factors, delayed quotients",
+      "period": "September 19-23, 2026"
+    },
+    {
+      "adaptation_and_boundary": "Retain positive-index and witness-domain restrictions in every backward map.",
+      "idea": "Structural compiler transport",
+      "period": "September 30, 2026"
+    }
+  ],
+  "new_lean_compilations": 0,
+  "scope": "All 22 existing top-level monographs plus retrieved older inspirations; accessible-source audit, not a claim of access to every past conversation. Adaptations are newly built algorithms, not exact historical experiment reproductions."
+}

@@ -1,0 +1,51 @@
+{
+  "baseline_commit": "9bf8506efbad7165a71dbd6dfdd85598941a88bd",
+  "cold_copy": {
+    "new_tests": 22,
+    "passed": 22,
+    "scope": "implementation and corpus checked before adding the validation metadata itself",
+    "six_runner_receipts_byte_identical": [
+      "corpus.json",
+      "hard_examples.json",
+      "corpus_integer_metric.json",
+      "integer_batches.json",
+      "integer_cells.json",
+      "summary.json"
+    ],
+    "snapshot_archive_bytes": 19894132,
+    "snapshot_tree": "dcc8e5c8a28a6d8f5844921c88b909830a5a5b80",
+    "standard_library_only": true,
+    "working_directory_outside_checkout": true
+  },
+  "corpus_queries": 12320,
+  "date_utc": "2026-10-04",
+  "deterministic_receipt_sha256": {
+    "corpus.json": "cd2e25c6c9177583712902de89eaadea9f8e9309a0bd14ce417368eafe79e136",
+    "corpus_integer_metric.json": "4c50c6a73bdbcae57218a9e3a33e478208ff8d468d98098653e6cf28a94bf786",
+    "hard_examples.json": "55671cc7350e3c52798e66376ba677c936a6a701150ed5f2936f8ec5f7520858",
+    "integer_batches.json": "c9ec5db8fa697efc489b6cac1698de486dc176bc9172204a3375a8885b9a4601",
+    "integer_cells.json": "c12411bb96607c66d66a5579a1f61f88d65b3574f1da200111b6b414b5e07186",
+    "summary.json": "b093aa814a665dc58f295b7e2aa8c2a086cde1ed290809989e80b151d5ac4699"
+  },
+  "execution_verified": false,
+  "full_python_tests": {
+    "log": "receipts/enhanced_machinery/python_tests.log",
+    "passed": 604,
+    "seconds": 113.561,
+    "skipped": 4,
+    "tests": 608
+  },
+  "historical_inventory_documents": 22,
+  "new_lean_compilations": 0,
+  "performance_scope": "Stored mathematical corpus and constructed affine variants; no industrial comparison or world-class superiority claim.",
+  "source_sha256": {
+    "python/enhance_machinery.py": "91ebe9a3b421d2cd801ac86f180dc89ebafdfe3bce94b13e6301bdffd8b9ef8f",
+    "python/perfectpower/__main__.py": "5ab2b54e770f6930149315ea6dc17838659803a63465af4368072892de38fd23",
+    "python/perfectpower/arithmetic_engine.py": "b0a8b5163e87ef697824a814a587160587f3782533bc8646f56446dfcc229bda",
+    "python/perfectpower/closest_integer.py": "2679bb808800c18e81c2d0eb81bdeb71177976863c5ca9b7f5d28cfdf994d7e0",
+    "python/perfectpower/compiler.py": "5654bef7315cc8def09b0f957f6ca93e07d0bd1c27acb3244f2919dbc1e8e2c5",
+    "python/perfectpower/enhanced_cli.py": "c4aabc0e9e652de5ae972093a2f5e7d8174a0657c66daa5a24e477330c40b87e",
+    "python/perfectpower/residue_cover.py": "42cd36b05365cf9d61ae3606cebd26d0633b959401fde30d9f88e78b0c39ac3c",
+    "python/tests/test_enhanced_machinery.py": "1894cffed797cb60e32cf0f07f49ef4e6e5c019a28ce0185ec5f025824100a59"
+  }
+}
