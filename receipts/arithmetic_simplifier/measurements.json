@@ -1,0 +1,62 @@
+{
+  "scope": "internal integration measurements; no claimed speedup",
+  "queries": [
+    {
+      "name": "coupled_parameter",
+      "seconds": 0.015426648998982273,
+      "variables_removed": 2,
+      "local_relations": 0,
+      "input_bytes": 160,
+      "residual_bytes": 116
+    },
+    {
+      "name": "integer_obstruction",
+      "seconds": 0.0003577089955797419,
+      "variables_removed": 2,
+      "local_relations": 0,
+      "input_bytes": 105,
+      "residual_bytes": 46
+    },
+    {
+      "name": "local_residual",
+      "seconds": 0.00043949200335191563,
+      "variables_removed": 0,
+      "local_relations": 1,
+      "input_bytes": 109,
+      "residual_bytes": 334
+    },
+    {
+      "name": "noninjective_outer",
+      "seconds": 0.0011704139978974126,
+      "variables_removed": 0,
+      "local_relations": 0,
+      "input_bytes": 122,
+      "residual_bytes": 122
+    }
+  ],
+  "unsupported_global": "UNRESOLVED",
+  "bounded": "COMPLETE",
+  "candidate_statistics": {
+    "interval_size": 2001,
+    "candidates_checked": 3,
+    "sieve_candidates_tested": 221
+  },
+  "pullback": [
+    [
+      -1,
+      -1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      0,
+      1
+    ]
+  ]
+}

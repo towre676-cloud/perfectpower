@@ -19,6 +19,8 @@ jobs:
         run: scripts/check_monograph_push.sh
       - name: Integer-root and finite graph-event audit
         run: scripts/check_root_events.sh
+      - name: Arithmetic simplifier composition audit
+        run: scripts/check_arithmetic_simplifier.sh
       - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
       - name: Batteries linters on the hand-written library

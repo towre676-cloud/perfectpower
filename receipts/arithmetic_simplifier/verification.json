@@ -1,0 +1,47 @@
+{
+  "base_commit": "68b61c4",
+  "parallel_commit_preserved": "68b61c4",
+  "lean": {
+    "new_theorems": 19,
+    "axioms": "standard only",
+    "names": [
+      "PerfectPower.ArithmeticSimplifier.coprime_power_parameter",
+      "PerfectPower.ArithmeticSimplifier.substitute_definition",
+      "PerfectPower.ArithmeticSimplifier.parameter_context",
+      "PerfectPower.ArithmeticSimplifier.necessary_context",
+      "PerfectPower.ArithmeticSimplifier.pullback_complete",
+      "PerfectPower.ArithmeticSimplifier.shared_outer_fibres",
+      "PerfectPower.ArithmeticSimplifier.bounded_question",
+      "PerfectPower.ArithmeticSimplifier.global_question",
+      "PerfectPower.WoodburyRepair.left_inverse",
+      "PerfectPower.WoodburyRepair.right_inverse",
+      "PerfectPower.WitnessResolvent.unique_series",
+      "PerfectPower.WitnessResolvent.cross_equal",
+      "PerfectPower.WitnessResolvent.all_coefficients",
+      "PerfectPower.WitnessResolvent.orbit_resolvent",
+      "PerfectPower.WitnessResolvent.orbit_right_resolvent",
+      "PerfectPower.ArithmeticSimplifierExamples.coupled_system",
+      "PerfectPower.ArithmeticSimplifierExamples.signed_fifth_cube",
+      "PerfectPower.ArithmeticSimplifierExamples.cannot_cancel_shared_square",
+      "PerfectPower.ArithmeticSimplifierExamples.polynomial_pullback_identity"
+    ],
+    "full_historical_build": false
+  },
+  "python": {
+    "tests_run": 725,
+    "passed": 721,
+    "skipped": 4,
+    "focused_tests": 14
+  },
+  "sources": {
+    "PerfectPower/ArithmeticSimplifier.lean": "c4c3abcf2047369fc8ecaa8ae1074c3a732b0b0a1d857ecf10f5d27236d4e748",
+    "PerfectPower/WitnessResolvent.lean": "16b85810c6a74028a684c529e35d771c9bac7f4cabf1fc927f21e244cef3c37b",
+    "PerfectPower/WoodburyRepair.lean": "8aec65051c6b69b530b51ff35e9f5b2d4ed17fbd1537c376a6dfec3c96164737",
+    "audit/ArithmeticSimplifier.lean": "a7927e992b9e24cbc9c2ea83abf34f2a8beb41b2ab16d5a2c98b07b7a9b37771",
+    "audit/ArithmeticSimplifierExamples.lean": "0e3d9c57e3be7b75249fbb512af580e74793d8fb7d6f548468bc0bbcce557778",
+    "python/perfectpower/simplifier.py": "98302c8256716a06e47d5d97d1832612862b08b0f059f1a4ebd600fa6710d9bb",
+    "python/tests/test_simplifier.py": "7729653c8c95b88905ee3a660ad22081394a054344583af0dde82856f82d4e31",
+    "scripts/check_arithmetic_simplifier.sh": "66b87ffa6d269800bc78a2232f61b8117ba6a241b300393ab1649a6f9942a831"
+  },
+  "claims": "mathematical composition laws plus Python replay; not end-to-end kernel certification of the compiler"
+}

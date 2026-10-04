@@ -39,3 +39,11 @@ The follow-up in `docs/MONOGRAPH_LEAN_MONOGRAPH.md` proves exceptional-root fini
 ## Integer-root and graph-event formalization
 
 `ROOT_EVENTS_LEAN_MONOGRAPH.md` documents unconditional Bernstein-certified integer-root trees, local signed Sturm-chain algebra, arbitrary finite mixed-event identities and conditional bounds, and closed inclusion laws for all 64 stored rational-kernel models. The classical real-root variation theorem and the 120 nonsingular nonrational-kernel models remain open. General weighted Cauchy–Binet inclusion laws are also separate from the checked finite instances.
+
+## Unified arithmetic simplifier checkpoint
+
+The initial exact compiler, partial/bounded analysis, supplied polynomial pullbacks,
+question scopes and eight Lean composition laws are implemented. See
+[the monograph](ARITHMETIC_SIMPLIFIER_MONOGRAPH.md) for APIs, evidence and remaining
+compiler/formalization obligations. General decomposition discovery, coefficient-bearing
+infinite monomial parameterizations and whole-compiler kernel proof emission remain open.

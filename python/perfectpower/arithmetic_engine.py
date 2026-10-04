@@ -111,6 +111,11 @@ class ArithmeticEngine:
         if any(type(n) is not int or n<1 for n in (work_limit,cache_limit)):raise ValueError('positive work and cache limits required')
         self.work_limit=work_limit;self.cache_limit=cache_limit;self._cache=OrderedDict();self.hits=0;self.misses=0
 
+    def analyze(self,coefficients,degree=2,*,interval=None):
+        """Expose necessary restrictions and bounded completeness independently."""
+        from .simplifier import analyze_power
+        return analyze_power(coefficients,degree,interval=interval,work_limit=self.work_limit)
+
     def _leaf(self,f,d):
         key=(f,d)
         if key in self._cache:
@@ -167,7 +172,8 @@ class ArithmeticEngine:
         if strict:
             if budget_failure:raise WorkLimit('all supported complete leaves exceeded the candidate budget')
             raise ValueError('no supported complete finite reduction')
-        return {**base,'status':'UNRESOLVED','points':None,'attempts':attempts,'complete':False}
+        return {**base,'status':'UNRESOLVED','points':None,'attempts':attempts,'complete':False,
+                'necessary_restrictions':{'kind':'residue_cover','certificate':cover}}
 
 
 def verify_result(result,*,work_limit=100000):

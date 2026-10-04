@@ -359,3 +359,6 @@ import PerfectPower.DeterminantalEvents
 import PerfectPower.FiniteGraphProbability
 import PerfectPower.TriangularDeterminant
 import PerfectPower.PaddedPrincipalMinor
+import PerfectPower.ArithmeticSimplifier
+import PerfectPower.WoodburyRepair
+import PerfectPower.WitnessResolvent

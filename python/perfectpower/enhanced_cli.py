@@ -13,6 +13,18 @@ def add_commands(sub):
     p.add_argument('--vertices',type=int,required=True);p.add_argument('--edges',type=json.loads,required=True)
     p.add_argument('--power',type=int,required=True);p.add_argument('--weights',type=json.loads,required=True)
     p.add_argument('--new-weights',type=json.loads,required=True);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('simplify-query',help='compose exact reductions and retain the residual SMT query')
+    p.add_argument('--script',required=True);p.add_argument('--branch-limit',type=int,default=128)
+    p.add_argument('--model',type=json.loads,help='lift a residual integer model back to an original witness')
+    p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('analyze-power',help='global result, necessary residues and optional complete bounded query')
+    p.add_argument('--coeff',type=json.loads,required=True);p.add_argument('--d',type=int,default=2)
+    p.add_argument('--interval',type=json.loads);p.add_argument('--work-limit',type=int,default=100000)
+    p.add_argument('--question',type=json.loads);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('polynomial-pullback',help='lift a complete outer solve through all integer polynomial fibres')
+    p.add_argument('--outer',type=json.loads,required=True);p.add_argument('--inner',type=json.loads,required=True)
+    p.add_argument('--d',type=int,default=2);p.add_argument('--work-limit',type=int,default=100000)
+    p.add_argument('--verify',action='store_true')
     p=sub.add_parser('observable-machine',help='minimal exact state machine preserving all supplied operator-word outputs')
     p.add_argument('--operators',type=json.loads,required=True);p.add_argument('--seed',type=json.loads,required=True)
     p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--word',type=json.loads,default=[])
@@ -61,6 +73,22 @@ def dispatch(args):
         from .connection_updates import reweight,verify_reweight
         result=reweight(ConnectionMeasure(ConnectionGraph(args.vertices,tuple(args.edges),args.power),args.weights),args.new_weights)
         if args.verify:result['certificate_replay']=verify_reweight(result)
+    elif args.command=='simplify-query':
+        from .simplifier import simplify_query,verify_simplification,lift_model
+        result=simplify_query(args.script,branch_limit=args.branch_limit)
+        if args.model is not None:result['original_model']=lift_model(result,args.model)
+        if args.verify:
+            clean={k:v for k,v in result.items() if k!='original_model'}
+            result['certificate_replay']=verify_simplification(clean)
+    elif args.command=='analyze-power':
+        from .simplifier import analyze_power,verify_analysis,answer_points
+        result=analyze_power(args.coeff,args.d,interval=args.interval,work_limit=args.work_limit)
+        if args.verify:result['certificate_replay']=verify_analysis(result,work_limit=args.work_limit)
+        if args.question:result['question']=answer_points(result,args.question)
+    elif args.command=='polynomial-pullback':
+        from .simplifier import polynomial_pullback,verify_pullback
+        result=polynomial_pullback(args.outer,args.inner,args.d,work_limit=args.work_limit)
+        if args.verify:result['certificate_replay']=verify_pullback(result,work_limit=args.work_limit)
     elif args.command=='observable-machine':
         from .observable_machine import minimal_machine,verify_machine,word_output
         result=minimal_machine(args.operators,args.seed,args.readouts)

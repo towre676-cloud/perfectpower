@@ -1,0 +1,20 @@
+import PerfectPower.ArithmeticSimplifier
+import PerfectPower.WoodburyRepair
+import PerfectPower.WitnessResolvent
+#print axioms PerfectPower.ArithmeticSimplifier.coprime_power_parameter
+#print axioms PerfectPower.ArithmeticSimplifier.substitute_definition
+#print axioms PerfectPower.ArithmeticSimplifier.parameter_context
+#print axioms PerfectPower.ArithmeticSimplifier.necessary_context
+#print axioms PerfectPower.ArithmeticSimplifier.pullback_complete
+#print axioms PerfectPower.ArithmeticSimplifier.shared_outer_fibres
+#print axioms PerfectPower.ArithmeticSimplifier.bounded_question
+#print axioms PerfectPower.ArithmeticSimplifier.global_question
+
+#print axioms PerfectPower.WoodburyRepair.left_inverse
+#print axioms PerfectPower.WoodburyRepair.right_inverse
+#print axioms PerfectPower.WitnessResolvent.unique_series
+#print axioms PerfectPower.WitnessResolvent.cross_equal
+#print axioms PerfectPower.WitnessResolvent.all_coefficients
+
+#print axioms PerfectPower.WitnessResolvent.orbit_resolvent
+#print axioms PerfectPower.WitnessResolvent.orbit_right_resolvent
