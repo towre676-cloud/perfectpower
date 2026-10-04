@@ -1,0 +1,63 @@
+{
+  "recovered_conversation_date": "2026-01-08",
+  "conversation_access": "Personal-context retrieval summaries; original experiment payload not recovered",
+  "artifact_evidence": [
+    {
+      "name": "Occupancy-Kernel-M29 Dashboard.pptx",
+      "library_file_id": "libfile_da11b85d61288191888a4fe78ab9c4dd",
+      "created_at": "2026-04-19T05:20:21.403032Z",
+      "size_bytes": 16184880,
+      "read_lines": [
+        1,
+        400
+      ],
+      "complete_file_read": false
+    },
+    {
+      "name": "occupancy_kernel_m29_presentation.pptx.html",
+      "library_file_id": "libfile_56edb2a97b808191a8e09c02904ee840",
+      "created_at": "2026-04-19T05:20:02.910234Z",
+      "size_bytes": 140601,
+      "read_lines": [
+        1,
+        400
+      ],
+      "complete_file_read": false
+    }
+  ],
+  "recovered_formulas": [
+    "K(i,j)=w(gcd(i,j))/max(i,j)",
+    "w(gcd(i,j)) = sum_{d|gcd(i,j)} g(d), g=w*mu",
+    "y_i = sum_{d|i} g(d) sum_{j:d|j} x_j/max(i,j)"
+  ],
+  "corrections": [
+    {
+      "old_claim": "upward-multiple Mobius coefficient sum",
+      "replacement": "g(n)=sum_{d|n} mu(n/d)w(d)"
+    },
+    {
+      "old_claim": "positive arbitrary w implies PSD",
+      "replacement": "false; w=(1,1/10), x=(1,-2) gives normalized energy -4/5"
+    },
+    {
+      "old_claim": "kernel solver-effort changes demonstrate non-normality",
+      "replacement": "both displayed real kernels are symmetric and Euclidean-normal"
+    }
+  ],
+  "historical_claims_not_reproduced": [
+    "two spectral growth bands",
+    "historical runtimes",
+    "large-alpha rank-one interpretation",
+    "M29 monoid, liability and autonomous-vehicle outcomes"
+  ],
+  "primary_reference": {
+    "title": "GCD matrices, posets, and nonintersecting paths",
+    "authors": [
+      "Ercan Altinisik",
+      "Bruce E. Sagan",
+      "Naim Tuglu"
+    ],
+    "url": "https://arxiv.org/abs/math/0406155"
+  },
+  "new_scope": "Classical exact factorization, complete raw linear fibres, elementary normalized threshold Gram and inverse, and replay of bounded repository census"
+}

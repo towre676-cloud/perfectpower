@@ -1,0 +1,77 @@
+{
+  "n": 50000,
+  "dense_entries_avoided": 2500000000,
+  "dense_float64_bytes_avoided": 20000000000,
+  "divisor_visits": 548725,
+  "raw_exact_action_seconds": 0.06830356899445178,
+  "raw_complete_integer_solve_seconds": 0.197704791004071,
+  "raw_recovered_coordinates": 50000,
+  "normalized_float_action_seconds": 0.18997885000135284,
+  "normalized_sampled_dense_rows": [
+    {
+      "index": 1,
+      "matrix_free": -2.276524909554377,
+      "direct": -2.276524909554377,
+      "absolute_difference": 0.0
+    },
+    {
+      "index": 2,
+      "matrix_free": -19.40859801810187,
+      "direct": -19.40859801810187,
+      "absolute_difference": 0.0
+    },
+    {
+      "index": 3,
+      "matrix_free": 5.5289445224463165,
+      "direct": 5.5289445224463165,
+      "absolute_difference": 0.0
+    },
+    {
+      "index": 17,
+      "matrix_free": 4.398377157525742,
+      "direct": 4.398377157525741,
+      "absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "index": 127,
+      "matrix_free": 7.167369207055504,
+      "direct": 7.167369207055504,
+      "absolute_difference": 0.0
+    },
+    {
+      "index": 997,
+      "matrix_free": 10.999986384915864,
+      "direct": 10.999986384915864,
+      "absolute_difference": 0.0
+    },
+    {
+      "index": 9999,
+      "matrix_free": 7.543560194641548,
+      "direct": 7.543560194641547,
+      "absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "index": 25001,
+      "matrix_free": -8.680547971156196,
+      "direct": -8.680547971156196,
+      "absolute_difference": 0.0
+    },
+    {
+      "index": 49999,
+      "matrix_free": 10.000060002800057,
+      "direct": 10.000060002800057,
+      "absolute_difference": 0.0
+    },
+    {
+      "index": 50000,
+      "matrix_free": 19.86516,
+      "direct": 19.86516,
+      "absolute_difference": 0.0
+    }
+  ],
+  "floating_sample_tolerance": {
+    "relative": 2e-10,
+    "absolute": 2e-09
+  },
+  "scope": "One current-host run; complete raw inverse replay, ten direct normalized rows. Not a proof of floating accuracy in every coordinate or historical benchmark reproduction."
+}

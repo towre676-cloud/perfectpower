@@ -91,3 +91,15 @@ The optional analytic backend uses `pip install -r python/requirements-analytic.
 `certified-voronoi` produces conservative boundary enclosures using rational Lipschitz lower bounds and explicit-path upper bounds. `surface-homology` produces tree/cotree dual cycles and replayable integral symplectic reduction. See `docs/CERTIFIED_SURFACE_GEOMETRY.md` for the exact scope; no smooth-curve or analytic period certification is asserted.
 
 `symplectic-periods --coeff=0,-1,0,0,0,1 --resolution 6` connects the mesh homology basis to actual numerical analytic integration. `integrate-path --coeff=-1,0,0,1 --d 3 --points '[[0.3,0.7],[0.6,0.8]]'` supports a continued open path on a cubic cyclic component. `surface_periods.bergman_metric` and `surface_periods.jacobian_coordinates` use the computed A-normalization. See `docs/SYMPLECTIC_ANALYTIC_MONOGRAPH.md` for the exact scope and generated six-curve corpus.
+### Recovered divisor kernels
+
+`divisor_kernel` supplies exact divisor and multiple transforms, their Möbius inverses, matrix-free raw/normalized GCD kernels, complete raw rational/integer affine fibres, sparse divisor feature pairings and the integral tridiagonal inverse `threshold_solve`. Exact inputs accept integers and `Fraction`; numerical mode is explicit. Positivity is checked through the appropriate factorization, with inconclusive signed normalized cases reported honestly.
+
+```sh
+PYTHONPATH=python python -m perfectpower divisor-kernel --family sigma --N 4 --vector '[1,0,1,0]'
+PYTHONPATH=python python -m perfectpower divisor-kernel --weights '[1,3,4,7]' --rhs '[1,2,3,4]' --domain integer
+PYTHONPATH=python python -m perfectpower divisor-kernel --N 12 --degree 0 --normalized --vector '[1,0,0,0,0,0,0,0,0,0,0,0]'
+python python/recover_divisor_kernel.py --benchmark
+```
+
+The runner replays all 8,358 stored power-hit records and the million-coordinate sigma identity, then constructs their seven-set arithmetic Gram matrix. See [the recovery monograph](../docs/DIVISOR_KERNEL_RECOVERY_MONOGRAPH.md) for proofs, historical corrections and scope. These calculations add no Lean compilation claim.
