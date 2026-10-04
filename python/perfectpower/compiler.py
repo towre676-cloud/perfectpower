@@ -785,6 +785,44 @@ def _power_plan(pc: PowerConstraint) -> dict:
                                   'execution_verified': False},
                             finite=fin, contains=lambda n: n in fin,
                             hits=lambda N: {n: w for n, w in fin.items() if n <= N})
+    if d == 2:
+        from .linear_perturbation import match as match_linear_perturbation, solve as solve_linear_perturbation
+        parameters = match_linear_perturbation(F)
+        if parameters is not None:
+            try:
+                result = solve_linear_perturbation(*parameters)
+            except WorkLimit:
+                pass
+            else:
+                fin = {}
+                for n, y in result['points']:
+                    if n >= 1:
+                        fin.setdefault(n, []).append(y)
+                return dict(method='effective quartic linear perturbation', status=COMPLETE_FINITE,
+                            justification=['PerfectPower.LinearPerturbation.complete',
+                                           'Python instance; execution is not verified'],
+                            data={k: v for k, v in result.items() if k != 'points'},
+                            finite=fin, contains=lambda n: n in fin,
+                            hits=lambda N: {n: w for n, w in fin.items() if n <= N})
+    if d == 2:
+        from .linear_perturbation import match_square_leading, solve_square_leading
+        raw = match_square_leading(F)
+        if raw is not None and match_linear_perturbation(F) is None:
+            try:
+                result = solve_square_leading(*raw)
+            except WorkLimit:
+                pass
+            else:
+                fin = {}
+                for n, y in result['points']:
+                    if n >= 1:
+                        fin.setdefault(n, []).append(y)
+                return dict(method='effective square-leading quartic',status=COMPLETE_FINITE,
+                            justification=['PerfectPower.SquareLeadingQuartic.complete',
+                                           'Python instance; execution is not verified'],
+                            data={k:v for k,v in result.items() if k!='points'},
+                            finite=fin,contains=lambda n:n in fin,
+                            hits=lambda N:{n:w for n,w in fin.items() if n<=N})
     # 1. affine transport to a Mordell curve solved in Lean
     if d == 2:
         m = match_affine_cube(F)

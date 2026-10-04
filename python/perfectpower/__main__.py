@@ -99,9 +99,22 @@ def main():
     p = sub.add_parser('norm-operator-replay', help='exact unit operators and task planes from a source packet')
     p.add_argument('--packet', required=True, type=Path)
     p.add_argument('--radius', type=int, default=3)
+    p = sub.add_parser('linear-perturbation', help='complete integer points on a quadratic square plus a linear perturbation')
+    p.add_argument('--parameters', required=True, type=coefficients, help='L,a,b,c,d')
+    p.add_argument('--work-limit', type=int, default=100_000)
+    p.add_argument('--emit-lean', action='store_true')
+    p.add_argument('--name', default='quartic_points')
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    if args.command == 'linear-perturbation':
+        from .linear_perturbation import solve,emit_lean
+        if len(args.parameters)!=5:parser.error('five parameters L,a,b,c,d required')
+        if args.emit_lean:
+            print(emit_lean(*args.parameters,name=args.name),end='')
+        else:
+            print(json.dumps(solve(*args.parameters,work_limit=args.work_limit),indent=2))
+        return
     if args.command == 'information':
         from .information import polynomial_information
         plan = polynomial_information(args.coeff,args.d,args.lo,args.hi,
@@ -219,6 +232,15 @@ def main():
         parser.error('d >= 2 required')
     if args.command == 'lean':
         from .lean_emit import emit
+        if args.d == 2:
+            from .linear_perturbation import match,match_square_leading,emit_lean,emit_square_leading
+            direct,raw = match(args.coeff),match_square_leading(args.coeff)
+            if direct is not None:
+                print(emit_lean(*direct,name=args.name),end='')
+                return
+            if raw is not None:
+                print(emit_square_leading(*raw,name=args.name),end='')
+                return
         if args.method == 'sandwich':
             from .lean_sandwich import emit_sandwich
             try:

@@ -1,0 +1,36 @@
+{
+  "base_commit": "ec264a8967385cbc69f97bbd179d376462553040",
+  "lean_version": "4.20.0",
+  "catalogue_equations": 420,
+  "catalogue_points": 850,
+  "empty_equations": 132,
+  "catalogue_census": "Lean kernel theorems total_points and empty_curves",
+  "lean_axiom_reports": 438,
+  "python_tests": 428,
+  "skipped_tests": 4,
+  "focused_tests": 9,
+  "new_solver_families": [
+    "integer quadratic squares plus nonzero linear perturbations",
+    "square-leading quartics with nonzero normalized remainder"
+  ],
+  "explicit_positive_example": {
+    "polynomial": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "all_positive_inputs": [
+      3
+    ],
+    "witnesses": [
+      -11,
+      11
+    ],
+    "theorem": "PerfectPower.RepunitQuartic.positive"
+  },
+  "trusted_extra_axioms": [],
+  "execution_verified": false,
+  "scope": "New modules, native catalogue, CLI emitter and full Python suite; no full historical Lean build"
+}

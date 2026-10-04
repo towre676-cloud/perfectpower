@@ -1,0 +1,98 @@
+{
+  "galois": {
+    "orbits": [
+      {
+        "size": 4,
+        "factor": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "group": "C4",
+        "discriminant": "125",
+        "multiplicity": 1,
+        "t": 2
+      }
+    ],
+    "unit_fields": [],
+    "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)"
+  },
+  "answer": "complete_list",
+  "certificate": {
+    "answer": "complete_list",
+    "lean_theorems": [
+      "PerfectPower.SquareLeadingQuartic.complete"
+    ],
+    "premises": [],
+    "missing_premise": null,
+    "python_steps": [
+      "effective square-leading quartic"
+    ],
+    "python_only": [
+      "Python instance; execution is not verified"
+    ],
+    "execution_verified": false
+  },
+  "mechanism": "complete finite list, with a proof that no solution is missed",
+  "constraint": "n^4 + n^3 + n^2 + n + 1 = m^2,  n >= 1, m in Z",
+  "reductions": [],
+  "reduced": "n^4 + n^3 + n^2 + n + 1 = m^2,  n >= 1, m in Z",
+  "method": "effective square-leading quartic",
+  "status": "COMPLETE_FINITE",
+  "justification": [
+    "PerfectPower.SquareLeadingQuartic.complete",
+    "Python instance; execution is not verified"
+  ],
+  "supports": [
+    "contains",
+    "explain",
+    "bounded_evidence",
+    "iter_hits",
+    "count",
+    "all_hits"
+  ],
+  "execution_verified": false,
+  "data": {
+    "parameters": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "coordinate_bound": 103,
+    "fibres_examined": 207,
+    "complete": true,
+    "execution_verified": false,
+    "theorem": "PerfectPower.SquareLeadingQuartic.complete",
+    "normalization_scale": 8,
+    "normalized_parameters": [
+      8,
+      4,
+      3,
+      40,
+      55
+    ]
+  },
+  "hits": [
+    [
+      3,
+      [
+        -11,
+        11
+      ]
+    ]
+  ],
+  "N": 1000000,
+  "all_hits": [
+    [
+      3,
+      [
+        -11,
+        11
+      ]
+    ]
+  ]
+}

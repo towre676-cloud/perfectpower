@@ -308,3 +308,9 @@ import PerfectPower.RecoveredOperators
 import PerfectPower.RecurrenceRecovery
 import PerfectPower.OrbitRecovery
 import PerfectPower.Generated.OrbitRecovery
+import PerfectPower.LinearPerturbation
+import PerfectPower.Tactic.LinearPerturbation
+import PerfectPower.Generated.LinearCatalogue
+import PerfectPower.SquareLeadingQuartic
+import PerfectPower.Tactic.SquareLeadingQuartic
+import PerfectPower.Generated.RepunitQuartic
