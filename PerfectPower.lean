@@ -306,3 +306,5 @@ import PerfectPower.TargetDecoder
 import PerfectPower.BoundedReconstruction
 import PerfectPower.RecoveredOperators
 import PerfectPower.RecurrenceRecovery
+import PerfectPower.OrbitRecovery
+import PerfectPower.Generated.OrbitRecovery
