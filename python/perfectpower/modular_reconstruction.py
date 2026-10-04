@@ -49,7 +49,8 @@ def reconstruct_system(residues,A,B):
             raise ValueError('reconstruction fails an input modulus')
     return {'value':str(value),'combined_residue':r,'modulus':M,
             'numerator_bound':A,'denominator_bound':B,
-            'uniqueness':M>2*A*B,'execution_verified':False}
+            'uniqueness':M>2*A*B,'execution_verified':False,
+            'uniqueness_theorem':'PerfectPower.BoundedReconstruction.unique'}
 
 
 def berlekamp_massey(terms,p):

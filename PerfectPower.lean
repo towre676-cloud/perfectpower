@@ -303,3 +303,6 @@ import PerfectPower.RankTwoSieve
 import PerfectPower.IntegralPullback
 import PerfectPower.CoveringMaps
 import PerfectPower.TargetDecoder
+import PerfectPower.BoundedReconstruction
+import PerfectPower.RecoveredOperators
+import PerfectPower.RecurrenceRecovery
