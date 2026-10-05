@@ -27,6 +27,8 @@ jobs:
         run: scripts/check_semilinear_capacity.sh
       - name: Coefficient power charts and recurrence dynamics
         run: scripts/check_query_space.sh
+      - name: Voronoi enclosure and metric transport
+        run: scripts/check_voronoi_enclosure.sh
       - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
       - name: Batteries linters on the hand-written library

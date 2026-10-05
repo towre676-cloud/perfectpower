@@ -375,3 +375,5 @@ import PerfectPower.SemilinearPowerSearch
 
 import PerfectPower.CoefficientPowerCharts
 import PerfectPower.RecurrenceDomains
+
+import PerfectPower.VoronoiEnclosure

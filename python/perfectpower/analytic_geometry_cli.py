@@ -4,6 +4,12 @@ from fractions import Fraction
 
 
 def add_commands(sub):
+    p=sub.add_parser('voronoi-witness',help='explicit rational Voronoi witnesses from a supplied closed mesh')
+    p.add_argument('--mesh',required=True);p.add_argument('--fields',required=True)
+    p.add_argument('--sites',required=True,type=json.loads);p.add_argument('--depth',type=int,default=2)
+    p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('voronoi-check',help='producer-independent replay of a Voronoi witness packet')
+    p.add_argument('--mesh',required=True);p.add_argument('--certificate',required=True)
     p=sub.add_parser('intrinsic-voronoi',help='Legendre conformal torus and continuous intrinsic cells')
     p.add_argument('--lambda',dest='lam',required=True);p.add_argument('--terms',type=int,default=256)
     p.add_argument('--sites',type=json.loads,help='JSON sites in actual normalized torus coordinates')
@@ -33,6 +39,21 @@ def add_commands(sub):
 
 
 def dispatch(args):
+    if args.command in ('voronoi-witness','voronoi-check'):
+        from pathlib import Path
+        from .voronoi_certificate import produce,verify
+        mesh=json.loads(Path(args.mesh).read_text())
+        if args.command=='voronoi-check':
+            certificate=json.loads(Path(args.certificate).read_text())
+            ok=verify(mesh,certificate)
+            print(json.dumps({'verified':ok,'kernel_checked':False,'smooth_curve_metric_certified':False}))
+            if not ok: raise SystemExit(1)
+        else:
+            fields=json.loads(Path(args.fields).read_text())
+            certificate=produce(mesh,args.sites,fields,args.depth)
+            if args.verify and not verify(mesh,certificate): raise ValueError('witness verification failed')
+            print(json.dumps(certificate,indent=2))
+        return True
     if args.command not in ('intrinsic-voronoi','analytic-periods','conformal-metric','conformal-voronoi','certified-voronoi','surface-homology','symplectic-periods','integrate-path'):return False
     if args.command=='intrinsic-voronoi':
         from .intrinsic_torus import legendre_torus,legendre_point

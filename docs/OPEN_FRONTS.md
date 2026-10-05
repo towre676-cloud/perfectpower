@@ -126,3 +126,16 @@ recurrence examples are checked. The generic noncoprime chart compiler,
 factorization and orbit transcript producer, cache implementation and general
 Sturm variation remain open as formalization work. Arbitrary nonlinear global
 images and industrial performance remain separate fronts.
+
+## Independent Voronoi witnesses and global enclosure laws
+
+The polyhedral backend now has a producer-independent witness checker, explicit
+path and affine-field packets, exact prefix-tree patch coverage and reusable
+`SurfaceSpace` point queries. Three saved genus-two/genus-three surfaces replay
+through the checker. `VoronoiEnclosure` adds seventeen audited declarations,
+including midpoint coverage, convex radii, global field control from explicit
+distance-approximating chains, nearest-tie enclosure and conditional metric
+transfer. See `VORONOI_ENCLOSURE_MONOGRAPH.md`. The Python checker and individual
+packets are not kernel-verified; constructing the actual polyhedral quotient
+metric in Lean and identifying it with the JSON surface remain open. Certified
+smooth comparisons, validated periods and general Sturm variation remain open.
