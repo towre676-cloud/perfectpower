@@ -1,0 +1,67 @@
+{
+  "fields": {
+    "cube_side": [
+      0,
+      0,
+      1
+    ],
+    "elements": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "square_side": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  "kind": "domain",
+  "predicate": {
+    "args": [
+      {
+        "poly": [
+          -1,
+          1
+        ],
+        "relation": ">="
+      },
+      {
+        "poly": [
+          -1000000000000000000000000000000,
+          1
+        ],
+        "relation": "<="
+      },
+      {
+        "args": [
+          {
+            "modulus": 8,
+            "poly": [
+              0,
+              1
+            ],
+            "relation": "=",
+            "value": 0
+          },
+          {
+            "modulus": 8,
+            "poly": [
+              0,
+              1
+            ],
+            "relation": "=",
+            "value": 3
+          }
+        ],
+        "op": "or"
+      }
+    ],
+    "op": "and"
+  }
+}

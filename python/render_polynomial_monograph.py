@@ -22,6 +22,13 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'population':{
+            'title':'Exact populations',
+            'subtitle':'Configurations, datasets<br/>and addressable mathematics',
+            'description':'Finite exact configuration spaces, reversible global ranks, sampling without replacement, original-coordinate lookup and reproducible mathematical datasets.',
+            'metrics':[('768','related arithmetic tasks'),('156','sourced unit domains'),('512','sourced index records')],
+            'scope':'Standard-library application layer over existing complete arithmetic. Sampling and rank transport are independently tested; no new Lean proof or industrial performance claim is made.',
+        },
         'polynomial':{
             'title':'Polynomial capacity',
             'subtitle':'Coordinates, integer domains<br/>and discrete dynamics',
@@ -105,7 +112,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/(args.edition.upper()+'_CAPACITY_MONOGRAPH.md')
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/('POPULATION_MONOGRAPH.md' if args.edition=='population' else args.edition.upper()+'_CAPACITY_MONOGRAPH.md')
     render(source,args.output,edition=args.edition)

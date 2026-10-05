@@ -164,9 +164,14 @@ def main():
     add_monomial_commands(sub)
     from .positive_geometry_cli import add_commands
     add_commands(sub)
+    from .population_cli import add_commands as add_population_commands
+    add_population_commands(sub)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .population_cli import dispatch as dispatch_population
+    if dispatch_population(args):
+        return
     from .enhanced_cli import dispatch as dispatch_enhanced
     if dispatch_enhanced(args):
         return

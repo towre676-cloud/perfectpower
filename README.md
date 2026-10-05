@@ -41,6 +41,8 @@ See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRA
 
 ## What it does
 
+For configuration generation and mathematical datasets, the new [`ExactPopulation`](docs/POPULATION_MONOGRAPH.md) interface compiles a finite supported domain or curve into a reusable object. It counts, selects and locates original objects by rank, samples without replacement, partitions work into balanced rank shards and exports seeded JSONL datasets. Run `python -m perfectpower population --spec receipts/populations/compatible_layouts.spec.json` for a configuration example. The [application roadmap](docs/DIRECT_USE_BUILD_ROADMAP.md) connects this common layer to the proposed direct uses.
+
 | Task | Interface | Guide |
 |---|---|---|
 | Compile polynomial power, triangular-number, and quadratic-root constraints | `solve`, `prove` | [Constraint compiler](docs/CONSTRAINT_COMPILER.md) |
