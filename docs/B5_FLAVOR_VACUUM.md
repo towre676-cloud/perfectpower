@@ -132,6 +132,8 @@ We now have a concrete answer to a narrower version of the user's question: **a 
 
 ## Reproduce and reuse
 
+The follow-up [B5_FLAVOR_COMPLETION.md](B5_FLAVOR_COMPLETION.md) implements an explicit 34-chiral-field constraint sector, a holomorphic golden coefficient, actual auxiliary relaxation and leading full-singlet quantum corrections. It also proves a scalar-only counterterm obstruction and tests the quark-operator freedom. The protected equations remain initialized model inputs; the quark CKM relation and a global or cosmological vacuum-selection result are not inferred from that completion.
+
 ```sh
 PYTHONPATH=python OPENBLAS_NUM_THREADS=1 python python/develop_flavor_vacuum.py
 PYTHONPATH=python OPENBLAS_NUM_THREADS=1 python python/plot_flavor_vacuum.py

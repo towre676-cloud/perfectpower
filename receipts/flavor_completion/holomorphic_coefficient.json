@@ -1,0 +1,77 @@
+{
+  "additional_fields": [
+    {
+      "R_charge": 0,
+      "name": "T"
+    },
+    {
+      "R_charge": 2,
+      "name": "Dgold"
+    }
+  ],
+  "additional_superpotential_terms": [
+    {
+      "M_power": 1,
+      "coefficient": 1,
+      "fields": [
+        "Dgold",
+        "T"
+      ]
+    },
+    {
+      "M_power": 2,
+      "coefficient": "-2",
+      "fields": [
+        "Dgold"
+      ]
+    },
+    {
+      "M_power": 1,
+      "coefficient": "1",
+      "fields": [
+        "Dgold",
+        "Z4"
+      ]
+    },
+    {
+      "M_power": 1,
+      "coefficient": "1",
+      "fields": [
+        "Dgold",
+        "Z6"
+      ]
+    },
+    {
+      "M_power": 1,
+      "coefficient": "-1",
+      "fields": [
+        "Dgold",
+        "Z14"
+      ]
+    }
+  ],
+  "coefficient_polynomial": [
+    "2",
+    "0",
+    "0",
+    "0",
+    "-1",
+    "0",
+    "-1",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "0",
+    "1"
+  ],
+  "extended_allowed_pure_singlet_W_count": 2907,
+  "extended_chiral_field_count": 34,
+  "golden_identity_remainder": [
+    "0"
+  ],
+  "operator_relation": "T=1-z^12-z^48 modulo Phi60; T^2-3T+1=0 at F-flat zeros",
+  "scope": "explicit holomorphic extension with chosen coefficients; T is real at unbroken-SUSY vacua. A generic deformed solution need not keep T real."
+}
