@@ -1,0 +1,28 @@
+import PerfectPower.SemilinearPowerSearch
+import PerfectPower.SemilinearCapacity
+import PerfectPower.SignedPowerCharts
+#print axioms PerfectPower.SemilinearCapacity.residue_coordinate
+#print axioms PerfectPower.SemilinearCapacity.lattice_bounds
+#print axioms PerfectPower.SemilinearCapacity.residue_interval_image
+#print axioms PerfectPower.SemilinearCapacity.residue_interval_count
+#print axioms PerfectPower.SemilinearCapacity.residue_set_count
+#print axioms PerfectPower.SemilinearCapacity.accepted_rank
+#print axioms PerfectPower.SemilinearCapacity.affine_image
+#print axioms PerfectPower.SemilinearCapacity.affine_fibre
+#print axioms PerfectPower.SemilinearCapacity.step_residue
+#print axioms PerfectPower.SemilinearCapacity.period_descent
+#print axioms PerfectPower.SemilinearCapacity.fibre_product
+#print axioms PerfectPower.SemilinearCapacity.horner_residue
+#print axioms PerfectPower.SemilinearCapacity.horner_period
+#print axioms PerfectPower.SemilinearCapacity.global_candidate_bound
+#print axioms PerfectPower.SemilinearCapacity.global_optimizer_iff
+#print axioms PerfectPower.SignedPowerCharts.sign_choice
+#print axioms PerfectPower.SignedPowerCharts.magnitude_parameter
+#print axioms PerfectPower.SignedPowerCharts.signed_charts
+#print axioms PerfectPower.SignedPowerCharts.gcd_signed_charts
+#print axioms PerfectPower.SignedPowerCharts.shared_offset_charts
+#print axioms PerfectPower.SemilinearCapacity.period_optimizer_iff
+#print axioms PerfectPower.SemilinearPowerSearch.complete
+#print axioms PerfectPower.SemilinearPowerSearch.negative_quartic_domain
+#print axioms PerfectPower.SemilinearPowerSearch.negative_quartic_packet
+#print axioms PerfectPower.SemilinearPowerSearch.negative_quartic_complete

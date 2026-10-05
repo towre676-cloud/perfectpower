@@ -23,6 +23,8 @@ jobs:
         run: scripts/check_arithmetic_simplifier.sh
       - name: Gamma arithmetic and integral output transport audit
         run: scripts/check_gamma_arithmetic.sh
+      - name: Signed charts and semilinear certificate audit
+        run: scripts/check_semilinear_capacity.sh
       - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
       - name: Batteries linters on the hand-written library

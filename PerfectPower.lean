@@ -367,3 +367,8 @@ import PerfectPower.HypergeometricTransport
 import PerfectPower.IntegralOutputTransport
 
 import PerfectPower.PolynomialCapacity
+
+import PerfectPower.SemilinearCapacity
+import PerfectPower.SignedPowerCharts
+
+import PerfectPower.SemilinearPowerSearch

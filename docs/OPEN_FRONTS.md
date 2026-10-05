@@ -94,3 +94,16 @@ whole-compiler proof emission remain open. So do coefficient-bearing primitive
 power charts, general nonlinear parameter-image classification and broader
 separated-polynomial classification. A complete generator can have a finite or
 unclassified original image and is not itself a claim of infinitely many points.
+
+## Signed-family and semilinear Lean checkpoint
+
+The parallel semilinear expansion now has 29 audited declarations: arbitrary
+positive-exponent signed gcd charts with a unique zero chart; exact affine
+integer images; residue interval images and floor-quotient counts; disjoint
+residue counting; modular Horner periodicity; infinite-domain optimizer
+interpretation from certified bounds/descent; and complete even-power search
+from finite sign domains. Concrete large-count and tied-minimum examples and
+the complete negative quartic are checked. See `SEMILINEAR_LEAN_MONOGRAPH.md`.
+General Sturm variation, proof-producing transcript assembly, rank-selection
+algorithm correctness, coefficient-bearing charts and nonlinear global images
+remain open. Numerical corpus rows are not all independently promoted to Lean.

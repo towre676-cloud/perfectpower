@@ -56,3 +56,5 @@ Read [the history](HISTORY.md), [Hilbert's tenth problem](HILBERT10.md), [resear
 [Gamma arithmetic: factorial languages, valuations, hypergeometric transport and Lean](GAMMA_ARITHMETIC_MONOGRAPH.md).
 
 [Polynomial capacity Lean certificate layer](POLYNOMIAL_CAPACITY_LEAN.md): thirteen checked transport, Boolean-cell and discrete-optimizer statements, with explicit remaining obligations.
+
+[Semilinear Lean monograph](SEMILINEAR_LEAN_MONOGRAPH.md): signed gcd charts, exact floor-quotient counts, infinite-domain optimizer certificates and complete even-power search from finite sign domains.

@@ -127,3 +127,5 @@ python python/render_polynomial_monograph.py --edition semilinear --output /tmp/
 ```
 
 The finite-image curve example returns the three tied optimizers described above. The family example is (x⁴+x+1)²=y³; its complete fibre at parameter one contains (-1,1) and (0,1). To reproduce the baseline comparison, add --baseline-python pointing to the prior checkout's python directory. Saved new receipts are under receipts/semilinear_capacity, with final test logs and a regression summary. The four final Python suites ran 822 tests: 818 passed and four were skipped. The focused module contains 34 tests, including randomized independent references, negative slopes, all sign branches, nonlinear fibres, tampering, work limits, empty sets, constant objectives and huge coordinates.
+
+The follow-up [Lean monograph](SEMILINEAR_LEAN_MONOGRAPH.md) records 29 checked declarations for signed charts, residue counts, optimizer interpretation and sign-domain finite search. Its scope is narrower than whole Python execution.
