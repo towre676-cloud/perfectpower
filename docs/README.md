@@ -27,6 +27,7 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 |---|---|
 | Recurrence and operator machinery | [Sequences](SEQUENCE_RECOVERY_MONOGRAPH.md), [operators](OPERATOR_RECOVERY_MONOGRAPH.md), [generated algebras and graph events](MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [minimal shared output machines](LOCALITY_AND_OBSERVABLE_MACHINES.md), [witness resolvents and graph repairs](WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md) |
 | Divisor-coordinate operators | [Arithmetic kernels](DIVISOR_KERNEL_RECOVERY_MONOGRAPH.md) |
+| Integral state compression and observation congruences | [Integer output machines](INTEGRAL_OUTPUT_MACHINES.md) |
 | Weighted Hodge, power composition, and finite Fourier algebra | [Constructions](DEEP_GEMS_MONOGRAPH.md), [Lean proof map](PARALLEL_LEAN_MONOGRAPH.md) |
 | OEIS comparison and definition translation | [OEIS integration](OEIS.md), [definition language](DEFINITION_LANGUAGE.md), [source snapshot](../data/oeis/SOURCE.md) |
 

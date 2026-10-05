@@ -1,0 +1,1139 @@
+{
+  "accepted_observation": [
+    4,
+    12
+  ],
+  "complete_state_fibre": {
+    "complete": true,
+    "execution_verified": false,
+    "kernel_basis": [],
+    "original_kernel_basis": [],
+    "original_particular": [
+      1,
+      2
+    ],
+    "parameter_count": 0,
+    "parameter_domain": "Z",
+    "particular": [
+      1,
+      1
+    ],
+    "quotient_state": [
+      1,
+      1
+    ],
+    "scope": "all integer states in the saturated reachable space with these finite witness observations; not seed-orbit membership",
+    "status": "INTEGER_AFFINE_FIBRE",
+    "transformed_rhs": [
+      4,
+      4
+    ]
+  },
+  "invisible_direction": {
+    "execution_verified": false,
+    "field": "Z",
+    "invisible_kernel": [
+      [
+        0
+      ],
+      [
+        1
+      ]
+    ],
+    "minimal_dimension": 1,
+    "observation_image_factors": [
+      1
+    ],
+    "observation_matrix": [
+      [
+        1,
+        0
+      ]
+    ],
+    "observation_smith": {
+      "certificate_kind": "unimodular operation transcript",
+      "diagonal_matrix": [
+        [
+          1,
+          0
+        ]
+      ],
+      "execution_verified": false,
+      "left": [
+        [
+          1
+        ]
+      ],
+      "matrix": [
+        [
+          1,
+          0
+        ]
+      ],
+      "operation_count": 0,
+      "operations": [],
+      "rank": 1,
+      "right": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "smith_factors": [
+        1
+      ]
+    },
+    "operators_minimal": [
+      [
+        [
+          2
+        ]
+      ]
+    ],
+    "quotient": [
+      [
+        1,
+        0
+      ]
+    ],
+    "rational_certificate": {
+      "closure_products": 3,
+      "execution_verified": false,
+      "field": "Q",
+      "hankel_columns": [
+        0
+      ],
+      "hankel_determinant": "1",
+      "hankel_minor": [
+        [
+          "1"
+        ]
+      ],
+      "minimal_dimension": 1,
+      "observable_rows": [
+        [
+          "1",
+          "2"
+        ]
+      ],
+      "operators": [
+        [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "0",
+            "3"
+          ]
+        ]
+      ],
+      "operators_minimal": [
+        [
+          [
+            "2"
+          ]
+        ]
+      ],
+      "reachable_basis": [
+        [
+          "1",
+          "2"
+        ],
+        [
+          "1",
+          "3"
+        ]
+      ],
+      "reachable_dimension": 2,
+      "reachable_seed": [
+        "1",
+        "0"
+      ],
+      "readout_words": [
+        [
+          0,
+          []
+        ]
+      ],
+      "readouts": [
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "readouts_minimal": [
+        [
+          "1"
+        ]
+      ],
+      "restricted_operators": [
+        [
+          [
+            "0",
+            "-6"
+          ],
+          [
+            "1",
+            "5"
+          ]
+        ]
+      ],
+      "schema": "pp-observable-machine/1",
+      "scope": "all finite operator words and supplied readouts; minimal linear state dimension, not integral coordinates or primitive-call optimality",
+      "seed": [
+        "1",
+        "1"
+      ],
+      "seed_minimal": [
+        "1"
+      ],
+      "state_dimension": 2,
+      "state_words": [
+        [],
+        [
+          0
+        ]
+      ],
+      "word_order": "chronological column-vector execution"
+    },
+    "reachable_coordinates": [
+      [
+        1,
+        0
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "reachable_dimension": 2,
+    "reachable_lift": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "reachable_operators": [
+      [
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    ],
+    "reachable_seed": [
+      1,
+      0
+    ],
+    "reachable_smith": {
+      "certificate_kind": "unimodular operation transcript",
+      "diagonal_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "execution_verified": false,
+      "left": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "matrix": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "operation_count": 2,
+      "operations": [
+        [
+          "row",
+          "add",
+          1,
+          0,
+          -1
+        ],
+        [
+          "column",
+          "add",
+          1,
+          0,
+          -2
+        ]
+      ],
+      "rank": 2,
+      "right": [
+        [
+          1,
+          -2
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "smith_factors": [
+        1,
+        1
+      ]
+    },
+    "readouts_minimal": [
+      [
+        1
+      ]
+    ],
+    "schema": "pp-integral-machine/1",
+    "scope": "minimal integral realization of fixed-seed future outputs on the saturated rational reachable lattice; not an exact integral orbit-word module or primitive-cost optimum",
+    "section": [
+      [
+        1
+      ],
+      [
+        0
+      ]
+    ],
+    "seed_minimal": [
+      1
+    ],
+    "selected_word_lattice_index": 1,
+    "state_dimension": 2,
+    "word_order": "chronological column-vector execution"
+  },
+  "invisible_state_fibre": {
+    "complete": true,
+    "execution_verified": false,
+    "kernel_basis": [
+      [
+        0,
+        1
+      ]
+    ],
+    "original_kernel_basis": [
+      [
+        0,
+        1
+      ]
+    ],
+    "original_particular": [
+      5,
+      5
+    ],
+    "parameter_count": 1,
+    "parameter_domain": "Z",
+    "particular": [
+      5,
+      0
+    ],
+    "quotient_state": [
+      5
+    ],
+    "scope": "all integer states in the saturated reachable space with these finite witness observations; not seed-orbit membership",
+    "status": "INTEGER_AFFINE_FIBRE",
+    "transformed_rhs": [
+      5
+    ]
+  },
+  "noncommuting": {
+    "execution_verified": false,
+    "field": "Z",
+    "invisible_kernel": [
+      [],
+      []
+    ],
+    "minimal_dimension": 2,
+    "observation_image_factors": [
+      1,
+      1
+    ],
+    "observation_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "observation_smith": {
+      "certificate_kind": "unimodular operation transcript",
+      "diagonal_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "execution_verified": false,
+      "left": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "operation_count": 1,
+      "operations": [
+        [
+          "row",
+          "add",
+          1,
+          0,
+          -1
+        ]
+      ],
+      "rank": 2,
+      "right": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "smith_factors": [
+        1,
+        1
+      ]
+    },
+    "operators_minimal": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "quotient": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "rational_certificate": {
+      "closure_products": 8,
+      "execution_verified": false,
+      "field": "Q",
+      "hankel_columns": [
+        0,
+        1
+      ],
+      "hankel_determinant": "1",
+      "hankel_minor": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "2"
+        ]
+      ],
+      "minimal_dimension": 2,
+      "observable_rows": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "2"
+        ]
+      ],
+      "operators": [
+        [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ]
+      ],
+      "operators_minimal": [
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "2"
+          ]
+        ],
+        [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "1"
+          ]
+        ]
+      ],
+      "reachable_basis": [
+        [
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "reachable_dimension": 2,
+      "reachable_seed": [
+        "1",
+        "0"
+      ],
+      "readout_words": [
+        [
+          0,
+          []
+        ],
+        [
+          0,
+          [
+            0
+          ]
+        ]
+      ],
+      "readouts": [
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "readouts_minimal": [
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "restricted_operators": [
+        [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "1",
+            "2"
+          ]
+        ]
+      ],
+      "schema": "pp-observable-machine/1",
+      "scope": "all finite operator words and supplied readouts; minimal linear state dimension, not integral coordinates or primitive-call optimality",
+      "seed": [
+        "1",
+        "0"
+      ],
+      "seed_minimal": [
+        "1",
+        "1"
+      ],
+      "state_dimension": 2,
+      "state_words": [
+        [],
+        [
+          1
+        ]
+      ],
+      "word_order": "chronological column-vector execution"
+    },
+    "reachable_coordinates": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "reachable_dimension": 2,
+    "reachable_lift": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "reachable_operators": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    ],
+    "reachable_seed": [
+      1,
+      0
+    ],
+    "reachable_smith": {
+      "certificate_kind": "unimodular operation transcript",
+      "diagonal_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "execution_verified": false,
+      "left": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "operation_count": 1,
+      "operations": [
+        [
+          "column",
+          "add",
+          1,
+          0,
+          -1
+        ]
+      ],
+      "rank": 2,
+      "right": [
+        [
+          1,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "smith_factors": [
+        1,
+        1
+      ]
+    },
+    "readouts_minimal": [
+      [
+        1,
+        0
+      ]
+    ],
+    "schema": "pp-integral-machine/1",
+    "scope": "minimal integral realization of fixed-seed future outputs on the saturated rational reachable lattice; not an exact integral orbit-word module or primitive-cost optimum",
+    "section": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "seed_minimal": [
+      1,
+      0
+    ],
+    "selected_word_lattice_index": 1,
+    "state_dimension": 2,
+    "word_order": "chronological column-vector execution"
+  },
+  "obstruction": {
+    "annihilator": [
+      1,
+      0
+    ],
+    "annihilator_times_matrix": [
+      4,
+      0
+    ],
+    "execution_verified": false,
+    "modulus": 4,
+    "pairing": 2,
+    "residue": 2,
+    "scope": "all integer states in the saturated reachable space with these finite witness observations; not seed-orbit membership",
+    "status": "DIVISIBILITY_OBSTRUCTION"
+  },
+  "rejected_observation": [
+    2,
+    0
+  ],
+  "scaled_observation": {
+    "execution_verified": false,
+    "field": "Z",
+    "invisible_kernel": [
+      [],
+      []
+    ],
+    "minimal_dimension": 2,
+    "observation_image_factors": [
+      4,
+      4
+    ],
+    "observation_matrix": [
+      [
+        4,
+        0
+      ],
+      [
+        8,
+        4
+      ]
+    ],
+    "observation_smith": {
+      "certificate_kind": "unimodular operation transcript",
+      "diagonal_matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "execution_verified": false,
+      "left": [
+        [
+          1,
+          0
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "matrix": [
+        [
+          4,
+          0
+        ],
+        [
+          8,
+          4
+        ]
+      ],
+      "operation_count": 1,
+      "operations": [
+        [
+          "row",
+          "add",
+          1,
+          0,
+          -2
+        ]
+      ],
+      "rank": 2,
+      "right": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "smith_factors": [
+        4,
+        4
+      ]
+    },
+    "operators_minimal": [
+      [
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    ],
+    "quotient": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "rational_certificate": {
+      "closure_products": 4,
+      "execution_verified": false,
+      "field": "Q",
+      "hankel_columns": [
+        0,
+        1
+      ],
+      "hankel_determinant": "-64",
+      "hankel_minor": [
+        [
+          "0",
+          "8"
+        ],
+        [
+          "8",
+          "16"
+        ]
+      ],
+      "minimal_dimension": 2,
+      "observable_rows": [
+        [
+          "0",
+          "8"
+        ],
+        [
+          "8",
+          "16"
+        ]
+      ],
+      "operators": [
+        [
+          [
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ]
+      ],
+      "operators_minimal": [
+        [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "2"
+          ]
+        ]
+      ],
+      "reachable_basis": [
+        [
+          "0",
+          "2"
+        ],
+        [
+          "2",
+          "2"
+        ]
+      ],
+      "reachable_dimension": 2,
+      "reachable_seed": [
+        "1",
+        "0"
+      ],
+      "readout_words": [
+        [
+          0,
+          []
+        ],
+        [
+          0,
+          [
+            0
+          ]
+        ]
+      ],
+      "readouts": [
+        [
+          "4",
+          "0"
+        ]
+      ],
+      "readouts_minimal": [
+        [
+          "1",
+          "0"
+        ]
+      ],
+      "restricted_operators": [
+        [
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "1",
+            "2"
+          ]
+        ]
+      ],
+      "schema": "pp-observable-machine/1",
+      "scope": "all finite operator words and supplied readouts; minimal linear state dimension, not integral coordinates or primitive-call optimality",
+      "seed": [
+        "0",
+        "2"
+      ],
+      "seed_minimal": [
+        "0",
+        "8"
+      ],
+      "state_dimension": 2,
+      "state_words": [
+        [],
+        [
+          0
+        ]
+      ],
+      "word_order": "chronological column-vector execution"
+    },
+    "reachable_coordinates": [
+      [
+        1,
+        0
+      ],
+      [
+        -1,
+        1
+      ]
+    ],
+    "reachable_dimension": 2,
+    "reachable_lift": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "reachable_operators": [
+      [
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ]
+    ],
+    "reachable_seed": [
+      0,
+      2
+    ],
+    "reachable_smith": {
+      "certificate_kind": "unimodular operation transcript",
+      "diagonal_matrix": [
+        [
+          2,
+          0
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "execution_verified": false,
+      "left": [
+        [
+          1,
+          0
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "matrix": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "operation_count": 2,
+      "operations": [
+        [
+          "column",
+          "swap",
+          0,
+          1,
+          0
+        ],
+        [
+          "row",
+          "add",
+          1,
+          0,
+          -1
+        ]
+      ],
+      "rank": 2,
+      "right": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "smith_factors": [
+        2,
+        2
+      ]
+    },
+    "readouts_minimal": [
+      [
+        4,
+        0
+      ]
+    ],
+    "schema": "pp-integral-machine/1",
+    "scope": "minimal integral realization of fixed-seed future outputs on the saturated rational reachable lattice; not an exact integral orbit-word module or primitive-cost optimum",
+    "section": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "seed_minimal": [
+      0,
+      2
+    ],
+    "selected_word_lattice_index": 4,
+    "state_dimension": 2,
+    "word_order": "chronological column-vector execution"
+  },
+  "scope": "integer states in saturated reachable spaces; fibres are not seed-orbit membership"
+}

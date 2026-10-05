@@ -5,6 +5,11 @@ from .deep_recovery_cli import exact_json
 
 
 def add_commands(sub):
+    p=sub.add_parser('integral-machine',help='minimal integer state realization preserving future outputs and observation divisibility')
+    p.add_argument('--operators',type=json.loads,required=True);p.add_argument('--seed',type=json.loads,required=True)
+    p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--word',type=json.loads,default=[])
+    p.add_argument('--order',choices=('execution','written'),default='execution');p.add_argument('--observations',type=json.loads)
+    p.add_argument('--verify',action='store_true')
     p=sub.add_parser('witness-resolvent',help='certify the rational generating functions of exact matrix outputs')
     p.add_argument('--matrix',type=json.loads,required=True);p.add_argument('--seed',type=json.loads,required=True)
     p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--index',type=int,default=100)
@@ -61,7 +66,13 @@ def add_commands(sub):
 
 
 def dispatch(args):
-    if args.command=='witness-resolvent':
+    if args.command=='integral-machine':
+        from .integral_machine import integral_machine,integral_word_output,observation_fibre,verify_integral_machine
+        result=integral_machine(args.operators,args.seed,args.readouts)
+        result['output']=integral_word_output(result,args.word,order=args.order)
+        if args.observations is not None:result['observation_fibre']=observation_fibre(result,args.observations)
+        if args.verify:result['certificate_replay']=verify_integral_machine(result)
+    elif args.command=='witness-resolvent':
         from .witness_resolvent import subsequence_resolvent,verify_resolvent,resolvent_value
         result=subsequence_resolvent(args.matrix,args.seed,args.readouts,offset=args.offset,step=args.step)
         result['sampling']={'offset':args.offset,'step':args.step};result['index']=args.index
