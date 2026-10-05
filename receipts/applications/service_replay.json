@@ -1,0 +1,564 @@
+{
+  "compilations": 6,
+  "registrations": [
+    {
+      "id": "bd7dd8fa23eaed1defdcd1bfe660f71347f96e91d21818f96e2cfc3072cb554b",
+      "kind": "population",
+      "name": "population"
+    },
+    {
+      "id": "c61d47e377addce5ca28e4e5cc489182fe946e645628ff5daadcf38d5030bef1",
+      "kind": "sequence",
+      "name": "sequence"
+    },
+    {
+      "id": "4f3a45c0c90aa7824495f59105465c35eea8e8eafa93bfb1d6e7e5f2969428d0",
+      "kind": "inverse",
+      "name": "inverse"
+    },
+    {
+      "id": "2d2ff6b3f52e04e9c56e81c52378c148927c2cf752f76ba5826b77c500f8296f",
+      "kind": "graph",
+      "name": "graph"
+    },
+    {
+      "id": "ae1b39713cccad61d532b083f45096704b52c68e352e0ea9fbba0cdbfd81f3a2",
+      "kind": "geometry",
+      "name": "geometry"
+    },
+    {
+      "id": "1834558c1daf5c8abf2cf5118f5f3b3e861920e7a59784e526d8ee0e2794f894",
+      "kind": "combinatorial",
+      "name": "combinatorial"
+    }
+  ],
+  "responses": [
+    {
+      "request": {
+        "args": {
+          "rank": 2
+        },
+        "method": "select",
+        "object": "population",
+        "op": "call"
+      },
+      "result": {
+        "chart": 0,
+        "parameter": 3,
+        "population_id": "6de5e09065dd0b11b77afbc5431310542316a5afd7146b31916ff5b46f0fad48",
+        "rank": 2,
+        "values": {
+          "column_block": 9,
+          "row_block": 27,
+          "tile_elements": 243
+        }
+      }
+    },
+    {
+      "request": {
+        "args": {
+          "index": 1000000000000000,
+          "modulus": 1000000007
+        },
+        "method": "terms",
+        "object": "sequence",
+        "op": "call"
+      },
+      "result": {
+        "fibonacci": 648325137,
+        "lucas": 618265960,
+        "next_fibonacci": 133295545
+      }
+    },
+    {
+      "request": {
+        "args": {
+          "observation": [
+            20,
+            18
+          ],
+          "target": [
+            "9/2",
+            "25/4",
+            "35/4"
+          ]
+        },
+        "method": "solve",
+        "object": "inverse",
+        "op": "call"
+      },
+      "result": {
+        "basis_reduction_operations": 0,
+        "complete": true,
+        "continuous_minimum": "7/48",
+        "continuous_point": [
+          "55/12",
+          "79/12",
+          "53/6"
+        ],
+        "enumeration_nodes": 1,
+        "execution_verified": false,
+        "initial_radius_squared": "125/48",
+        "minimizer_parameters": [
+          [
+            7
+          ]
+        ],
+        "minimizers": [
+          [
+            5,
+            7,
+            8
+          ]
+        ],
+        "minimum_energy": "11/4",
+        "parameter_dimension": 1,
+        "proof": {
+          "basis_operations": [],
+          "kernel_basis": [
+            [
+              1,
+              1,
+              -2
+            ]
+          ],
+          "mass": [
+            [
+              "2",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "3"
+            ]
+          ],
+          "smith": {
+            "certificate_kind": "unimodular operation transcript",
+            "diagonal_matrix": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ],
+            "execution_verified": false,
+            "left": [
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                -1
+              ]
+            ],
+            "matrix": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                2,
+                0,
+                1
+              ]
+            ],
+            "operation_count": 6,
+            "operations": [
+              [
+                "row",
+                "add",
+                1,
+                0,
+                -2
+              ],
+              [
+                "column",
+                "add",
+                1,
+                0,
+                -1
+              ],
+              [
+                "column",
+                "add",
+                2,
+                0,
+                -1
+              ],
+              [
+                "column",
+                "swap",
+                1,
+                2,
+                0
+              ],
+              [
+                "row",
+                "negate",
+                1,
+                0,
+                0
+              ],
+              [
+                "column",
+                "add",
+                2,
+                1,
+                -2
+              ]
+            ],
+            "rank": 2,
+            "right": [
+              [
+                1,
+                -1,
+                1
+              ],
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                -2
+              ]
+            ],
+            "smith_factors": [
+              1,
+              1
+            ]
+          }
+        },
+        "rhs": [
+          20,
+          18
+        ],
+        "scope": "all minimum-energy integer points satisfying the exact observation",
+        "shared_decomposition_calls": 1,
+        "status": "OPTIMAL_INTEGER_LIFTS",
+        "target": [
+          "9/2",
+          "25/4",
+          "35/4"
+        ]
+      }
+    },
+    {
+      "request": {
+        "args": {
+          "excluded": [
+            0
+          ],
+          "seed": 22,
+          "size": 8
+        },
+        "method": "sample",
+        "object": "graph",
+        "op": "call"
+      },
+      "result": {
+        "basis_enumerations": 0,
+        "conditioning_probability": "10/13",
+        "distribution": "determinant-weighted bases, independent draws with replacement",
+        "excluded": [
+          0
+        ],
+        "execution_verified": false,
+        "included": [],
+        "samples": [
+          {
+            "conditional_probability": "3/10",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": true,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": true,
+                "probability": "3/4"
+              },
+              {
+                "edge": 3,
+                "included": false,
+                "probability": "0"
+              }
+            ],
+            "edges": [
+              1,
+              2
+            ]
+          },
+          {
+            "conditional_probability": "1/10",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": true,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": false,
+                "probability": "3/4"
+              },
+              {
+                "edge": 3,
+                "included": true,
+                "probability": "1"
+              }
+            ],
+            "edges": [
+              1,
+              3
+            ]
+          },
+          {
+            "conditional_probability": "3/10",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": true,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": true,
+                "probability": "3/4"
+              },
+              {
+                "edge": 3,
+                "included": false,
+                "probability": "0"
+              }
+            ],
+            "edges": [
+              1,
+              2
+            ]
+          },
+          {
+            "conditional_probability": "3/5",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": false,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": true,
+                "probability": "1"
+              },
+              {
+                "edge": 3,
+                "included": true,
+                "probability": "1"
+              }
+            ],
+            "edges": [
+              2,
+              3
+            ]
+          },
+          {
+            "conditional_probability": "3/10",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": true,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": true,
+                "probability": "3/4"
+              },
+              {
+                "edge": 3,
+                "included": false,
+                "probability": "0"
+              }
+            ],
+            "edges": [
+              1,
+              2
+            ]
+          },
+          {
+            "conditional_probability": "3/5",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": false,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": true,
+                "probability": "1"
+              },
+              {
+                "edge": 3,
+                "included": true,
+                "probability": "1"
+              }
+            ],
+            "edges": [
+              2,
+              3
+            ]
+          },
+          {
+            "conditional_probability": "3/10",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": true,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": true,
+                "probability": "3/4"
+              },
+              {
+                "edge": 3,
+                "included": false,
+                "probability": "0"
+              }
+            ],
+            "edges": [
+              1,
+              2
+            ]
+          },
+          {
+            "conditional_probability": "3/5",
+            "decisions": [
+              {
+                "edge": 1,
+                "included": false,
+                "probability": "2/5"
+              },
+              {
+                "edge": 2,
+                "included": true,
+                "probability": "1"
+              },
+              {
+                "edge": 3,
+                "included": true,
+                "probability": "1"
+              }
+            ],
+            "edges": [
+              2,
+              3
+            ]
+          }
+        ],
+        "schema": "pp-graph-sample/1",
+        "seed": 22
+      }
+    },
+    {
+      "request": {
+        "args": {
+          "end": [
+            "1/4",
+            0
+          ],
+          "panel": "branch_0",
+          "start": [
+            "-1/4",
+            0
+          ]
+        },
+        "method": "segment",
+        "object": "geometry",
+        "op": "call"
+      },
+      "result": {
+        "claim": "Length bounds for the straight path in this certified chart; not unrestricted geodesic distance.",
+        "end": [
+          "1/4",
+          "0"
+        ],
+        "global_distance_comparison": false,
+        "kernel_checked": false,
+        "schema": "pp-contained-chart-segment/1",
+        "squared_path_length_interval": [
+          "9801/10000",
+          "10609/10000"
+        ],
+        "start": [
+          "-1/4",
+          "0"
+        ]
+      }
+    },
+    {
+      "request": {
+        "args": {
+          "bound": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        },
+        "method": "sizes",
+        "object": "combinatorial",
+        "op": "call"
+      },
+      "result": {
+        "bound": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "boundary_power_evaluations": 16,
+        "complete": true,
+        "execution_verified": false,
+        "filtered_count": 131,
+        "first_point_above_bound": [
+          28230653909326282648148260869016719879220057490997116766950850453859472613180806012328583829937703200,
+          19962086816615132201030109348061553237699379811537018431693710708365767676708173510857792660763728460
+        ],
+        "last_orbit_index": 131,
+        "last_unfiltered_point": [
+          4843614461518319140324345214803946686862653226843276574077708528115347132709723993554580846758195761,
+          3424952631192831306793806306151219954658024452616821761179431217378357803762908507916210322415778979
+        ],
+        "schedule": {
+          "cycle_hits": [
+            0,
+            1
+          ],
+          "execution_verified": false,
+          "filters": [],
+          "initial_state": [
+            1,
+            0
+          ],
+          "period": 2,
+          "prefix_hits": [],
+          "preperiod": 0,
+          "state_modulus": 2
+        },
+        "scope": "positive triangular indices n<=bound; nonnegative square roots",
+        "theorem": "PerfectPower.SquareTriangular.triIdx_iff",
+        "unfiltered_count": 131
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{"kind":"population","name":"population","op":"register","specification":{"fields":{"column_block":[0,0,1],"row_block":[0,0,0,1],"tile_elements":[0,0,0,0,0,1]},"kind":"domain","predicate":{"args":[{"poly":[-1,1],"relation":">="},{"poly":[-4,1],"relation":"<="}],"op":"and"}}}
+{"kind":"sequence","name":"sequence","op":"register","specification":{"operator":[[1,1],[1,0]],"readouts":{"fibonacci":[1,0],"lucas":[1,2],"next_fibonacci":[1,1]},"seed":[0,1]}}
+{"kind":"inverse","name":"inverse","op":"register","specification":{"matrix":[[1,1,1],[2,0,1]],"metric":[[2,0,0],[0,1,0],[0,0,3]]}}
+{"kind":"graph","name":"graph","op":"register","specification":{"edges":[[0,1,0],[0,1,1],[0,0,1],[1,1,1]],"power":2,"vertices":2,"weights":[1,2,3,1]}}
+{"kind":"geometry","name":"geometry","op":"register","specification":{"coefficients":[0,-1,0,1],"panels":{"branch_0":{"box":["-1/4","1/4","-1/4","1/4"],"branch":0,"chart":"branch","depth":2,"lower_scale":"99/100","reference_density":4,"upper_scale":"103/100"},"finite":{"box":[2,3,0,"1/4"],"chart":"finite","depth":2,"lower_scale":"1/6","upper_scale":"1/2"},"infinity":{"box":["-1/4","1/4","-1/4","1/4"],"chart":"infinity","depth":2,"lower_scale":"99/100","reference_density":4,"upper_scale":"103/100"}}}}
+{"kind":"combinatorial","name":"combinatorial","op":"register","specification":{"degree":2,"expression":{"kind":"binomial","width":2}}}
+{"args":{"rank":2},"method":"select","object":"population","op":"call"}
+{"args":{"index":1000000000000000,"modulus":1000000007},"method":"terms","object":"sequence","op":"call"}
+{"args":{"observation":[20,18],"target":["9/2","25/4","35/4"]},"method":"solve","object":"inverse","op":"call"}
+{"args":{"excluded":[0],"seed":22,"size":8},"method":"sample","object":"graph","op":"call"}
+{"args":{"end":["1/4",0],"panel":"branch_0","start":["-1/4",0]},"method":"segment","object":"geometry","op":"call"}
+{"args":{"bound":10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000},"method":"sizes","object":"combinatorial","op":"call"}

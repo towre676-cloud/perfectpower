@@ -43,6 +43,8 @@ See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRA
 
 For configuration generation and mathematical datasets, the new [`ExactPopulation`](docs/POPULATION_MONOGRAPH.md) interface compiles a finite supported domain or curve into a reusable object. It counts, selects and locates original objects by rank, samples without replacement, partitions work into balanced rank shards and exports seeded JSONL datasets. Run `python -m perfectpower population --spec receipts/populations/compatible_layouts.spec.json` for a configuration example. The [application roadmap](docs/DIRECT_USE_BUILD_ROADMAP.md) connects this common layer to the proposed direct uses.
 
+The [executable applications](docs/APPLICATIONS_MONOGRAPH.md) add a persistent SQLite catalogue and JSONL service for populations, shared sequences, integer inverse design, rational gain-graph ensembles, local geometry and combinatorial sizes. Run `python -m perfectpower service --database /tmp/pp.sqlite < receipts/applications/service_requests.jsonl` or `python python/develop_applications.py --output /tmp/pp-apps`. An offline geometry workbench, grouped task protocol and measured matrix tuner have portable receipts. The conventional matrix baseline wins the demo; global geometry, broader effective backends and physical derivations remain open. See the [handoff](CLAUDE_CODE_APPLICATIONS_START_HERE.md).
+
 | Task | Interface | Guide |
 |---|---|---|
 | Compile polynomial power, triangular-number, and quadratic-root constraints | `solve`, `prove` | [Constraint compiler](docs/CONSTRAINT_COMPILER.md) |

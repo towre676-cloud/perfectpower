@@ -1,0 +1,510 @@
+{
+  "definition": {
+    "operator": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "readouts": {
+      "fibonacci": [
+        1,
+        0
+      ],
+      "lucas": [
+        1,
+        2
+      ],
+      "next_fibonacci": [
+        1,
+        1
+      ]
+    },
+    "seed": [
+      0,
+      1
+    ]
+  },
+  "experiment": {
+    "cost": "5",
+    "left_value": 0,
+    "name": "fibonacci",
+    "right_value": 1,
+    "scope": "minimum supplied cost among compiled witness words; not among all words",
+    "status": "DISTINGUISHED_BY_WORD",
+    "word": []
+  },
+  "identity": {
+    "cross_difference": [
+      "0"
+    ],
+    "execution_verified": false,
+    "status": "EQUAL_FOR_ALL_NONNEGATIVE_INDICES"
+  },
+  "long_index_modular": {
+    "fibonacci": 648325137,
+    "lucas": 618265960,
+    "next_fibonacci": 133295545
+  },
+  "reference": "literal two-state iteration for indices 0..39",
+  "subsequence": {
+    "denominator": [
+      "1",
+      "-4",
+      "-1"
+    ],
+    "execution_verified": false,
+    "field": "Q",
+    "operator": [
+      [
+        "3",
+        "2"
+      ],
+      [
+        "2",
+        "1"
+      ]
+    ],
+    "outputs": [
+      {
+        "denominator": [
+          "1",
+          "-4",
+          "-1"
+        ],
+        "numerator": [
+          "5",
+          "1"
+        ],
+        "recurrence_order": 2
+      },
+      {
+        "denominator": [
+          "1",
+          "-4",
+          "-1"
+        ],
+        "numerator": [
+          "8",
+          "2"
+        ],
+        "recurrence_order": 2
+      },
+      {
+        "denominator": [
+          "1",
+          "-4",
+          "-1"
+        ],
+        "numerator": [
+          "11",
+          "3"
+        ],
+        "recurrence_order": 2
+      }
+    ],
+    "reachable_dimension": 2,
+    "readouts": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "2"
+      ]
+    ],
+    "schema": "pp-witness-resolvent/1",
+    "scope": "all nonnegative powers of the supplied exact matrix and readouts; formal series, not an external sequence definition",
+    "seed": [
+      "5",
+      "3"
+    ],
+    "vector_numerator": [
+      [
+        "5",
+        "3"
+      ],
+      [
+        "1",
+        "1"
+      ]
+    ]
+  },
+  "summary": {
+    "laws": [
+      {
+        "denominator": [
+          "1",
+          "-1",
+          "-1"
+        ],
+        "numerator": [
+          "0",
+          "1"
+        ],
+        "recurrence_order": 2
+      },
+      {
+        "denominator": [
+          "1",
+          "-1",
+          "-1"
+        ],
+        "numerator": [
+          "1"
+        ],
+        "recurrence_order": 2
+      },
+      {
+        "denominator": [
+          "1",
+          "-1",
+          "-1"
+        ],
+        "numerator": [
+          "2",
+          "-1"
+        ],
+        "recurrence_order": 2
+      }
+    ],
+    "names": [
+      "fibonacci",
+      "next_fibonacci",
+      "lucas"
+    ],
+    "shared_dimension": 2,
+    "state_dimension": 2
+  },
+  "terms": [
+    {
+      "index": 0,
+      "values": {
+        "fibonacci": "0",
+        "lucas": "2",
+        "next_fibonacci": "1"
+      }
+    },
+    {
+      "index": 1,
+      "values": {
+        "fibonacci": "1",
+        "lucas": "1",
+        "next_fibonacci": "1"
+      }
+    },
+    {
+      "index": 2,
+      "values": {
+        "fibonacci": "1",
+        "lucas": "3",
+        "next_fibonacci": "2"
+      }
+    },
+    {
+      "index": 3,
+      "values": {
+        "fibonacci": "2",
+        "lucas": "4",
+        "next_fibonacci": "3"
+      }
+    },
+    {
+      "index": 4,
+      "values": {
+        "fibonacci": "3",
+        "lucas": "7",
+        "next_fibonacci": "5"
+      }
+    },
+    {
+      "index": 5,
+      "values": {
+        "fibonacci": "5",
+        "lucas": "11",
+        "next_fibonacci": "8"
+      }
+    },
+    {
+      "index": 6,
+      "values": {
+        "fibonacci": "8",
+        "lucas": "18",
+        "next_fibonacci": "13"
+      }
+    },
+    {
+      "index": 7,
+      "values": {
+        "fibonacci": "13",
+        "lucas": "29",
+        "next_fibonacci": "21"
+      }
+    },
+    {
+      "index": 8,
+      "values": {
+        "fibonacci": "21",
+        "lucas": "47",
+        "next_fibonacci": "34"
+      }
+    },
+    {
+      "index": 9,
+      "values": {
+        "fibonacci": "34",
+        "lucas": "76",
+        "next_fibonacci": "55"
+      }
+    },
+    {
+      "index": 10,
+      "values": {
+        "fibonacci": "55",
+        "lucas": "123",
+        "next_fibonacci": "89"
+      }
+    },
+    {
+      "index": 11,
+      "values": {
+        "fibonacci": "89",
+        "lucas": "199",
+        "next_fibonacci": "144"
+      }
+    },
+    {
+      "index": 12,
+      "values": {
+        "fibonacci": "144",
+        "lucas": "322",
+        "next_fibonacci": "233"
+      }
+    },
+    {
+      "index": 13,
+      "values": {
+        "fibonacci": "233",
+        "lucas": "521",
+        "next_fibonacci": "377"
+      }
+    },
+    {
+      "index": 14,
+      "values": {
+        "fibonacci": "377",
+        "lucas": "843",
+        "next_fibonacci": "610"
+      }
+    },
+    {
+      "index": 15,
+      "values": {
+        "fibonacci": "610",
+        "lucas": "1364",
+        "next_fibonacci": "987"
+      }
+    },
+    {
+      "index": 16,
+      "values": {
+        "fibonacci": "987",
+        "lucas": "2207",
+        "next_fibonacci": "1597"
+      }
+    },
+    {
+      "index": 17,
+      "values": {
+        "fibonacci": "1597",
+        "lucas": "3571",
+        "next_fibonacci": "2584"
+      }
+    },
+    {
+      "index": 18,
+      "values": {
+        "fibonacci": "2584",
+        "lucas": "5778",
+        "next_fibonacci": "4181"
+      }
+    },
+    {
+      "index": 19,
+      "values": {
+        "fibonacci": "4181",
+        "lucas": "9349",
+        "next_fibonacci": "6765"
+      }
+    },
+    {
+      "index": 20,
+      "values": {
+        "fibonacci": "6765",
+        "lucas": "15127",
+        "next_fibonacci": "10946"
+      }
+    },
+    {
+      "index": 21,
+      "values": {
+        "fibonacci": "10946",
+        "lucas": "24476",
+        "next_fibonacci": "17711"
+      }
+    },
+    {
+      "index": 22,
+      "values": {
+        "fibonacci": "17711",
+        "lucas": "39603",
+        "next_fibonacci": "28657"
+      }
+    },
+    {
+      "index": 23,
+      "values": {
+        "fibonacci": "28657",
+        "lucas": "64079",
+        "next_fibonacci": "46368"
+      }
+    },
+    {
+      "index": 24,
+      "values": {
+        "fibonacci": "46368",
+        "lucas": "103682",
+        "next_fibonacci": "75025"
+      }
+    },
+    {
+      "index": 25,
+      "values": {
+        "fibonacci": "75025",
+        "lucas": "167761",
+        "next_fibonacci": "121393"
+      }
+    },
+    {
+      "index": 26,
+      "values": {
+        "fibonacci": "121393",
+        "lucas": "271443",
+        "next_fibonacci": "196418"
+      }
+    },
+    {
+      "index": 27,
+      "values": {
+        "fibonacci": "196418",
+        "lucas": "439204",
+        "next_fibonacci": "317811"
+      }
+    },
+    {
+      "index": 28,
+      "values": {
+        "fibonacci": "317811",
+        "lucas": "710647",
+        "next_fibonacci": "514229"
+      }
+    },
+    {
+      "index": 29,
+      "values": {
+        "fibonacci": "514229",
+        "lucas": "1149851",
+        "next_fibonacci": "832040"
+      }
+    },
+    {
+      "index": 30,
+      "values": {
+        "fibonacci": "832040",
+        "lucas": "1860498",
+        "next_fibonacci": "1346269"
+      }
+    },
+    {
+      "index": 31,
+      "values": {
+        "fibonacci": "1346269",
+        "lucas": "3010349",
+        "next_fibonacci": "2178309"
+      }
+    },
+    {
+      "index": 32,
+      "values": {
+        "fibonacci": "2178309",
+        "lucas": "4870847",
+        "next_fibonacci": "3524578"
+      }
+    },
+    {
+      "index": 33,
+      "values": {
+        "fibonacci": "3524578",
+        "lucas": "7881196",
+        "next_fibonacci": "5702887"
+      }
+    },
+    {
+      "index": 34,
+      "values": {
+        "fibonacci": "5702887",
+        "lucas": "12752043",
+        "next_fibonacci": "9227465"
+      }
+    },
+    {
+      "index": 35,
+      "values": {
+        "fibonacci": "9227465",
+        "lucas": "20633239",
+        "next_fibonacci": "14930352"
+      }
+    },
+    {
+      "index": 36,
+      "values": {
+        "fibonacci": "14930352",
+        "lucas": "33385282",
+        "next_fibonacci": "24157817"
+      }
+    },
+    {
+      "index": 37,
+      "values": {
+        "fibonacci": "24157817",
+        "lucas": "54018521",
+        "next_fibonacci": "39088169"
+      }
+    },
+    {
+      "index": 38,
+      "values": {
+        "fibonacci": "39088169",
+        "lucas": "87403803",
+        "next_fibonacci": "63245986"
+      }
+    },
+    {
+      "index": 39,
+      "values": {
+        "fibonacci": "63245986",
+        "lucas": "141422324",
+        "next_fibonacci": "102334155"
+      }
+    }
+  ]
+}

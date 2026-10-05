@@ -22,6 +22,13 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'applications':{
+            'title':'Executable applications',
+            'subtitle':'Persistent objects, exact workflows<br/>and measured configuration design',
+            'description':'Shared sequences, discrete calibration, conditional graph sampling, local geometry, combinatorial sizes, mathematical tasks and a persistent query service.',
+            'metrics':[('6','persistent object kinds'),('256','grouped arithmetic tasks'),('28','measured kernel trials')],
+            'scope':'Tested standard-library application integrations. The conventional kernel wins the demo; global geometry and physical derivations remain open.',
+        },
         'population':{
             'title':'Exact populations',
             'subtitle':'Configurations, datasets<br/>and addressable mathematics',
@@ -112,7 +119,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/('POPULATION_MONOGRAPH.md' if args.edition=='population' else args.edition.upper()+'_CAPACITY_MONOGRAPH.md')
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

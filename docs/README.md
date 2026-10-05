@@ -6,6 +6,8 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 
 [Exact populations](POPULATION_MONOGRAPH.md): configuration generation, reversible global ranks, seeded datasets, huge finite populations and sourced combinatorial domains. [Direct-use build roadmap](DIRECT_USE_BUILD_ROADMAP.md) and [handoff](../CLAUDE_CODE_POPULATIONS_START_HERE.md).
 
+[Executable applications](APPLICATIONS_MONOGRAPH.md): persistent queries, shared sequence laws, integer calibration, exact conditional graph sampling, local geometry, combinatorial sizes, held-out tasks and measured tuning. [Handoff](../CLAUDE_CODE_APPLICATIONS_START_HERE.md).
+
 | Subject | Guides |
 |---|---|
 | Automatic polynomial coordinates, complete integer sign domains and global optimization | [Polynomial capacity](POLYNOMIAL_CAPACITY_MONOGRAPH.md) |

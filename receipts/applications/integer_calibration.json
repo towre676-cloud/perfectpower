@@ -1,0 +1,175 @@
+{
+  "independent_bounded_reference": "eliminate two variables, scan first increment -30..30; global completeness comes from the exact optimizer",
+  "model": "three signed integer actuator increments, two exact linear observations",
+  "result": {
+    "basis_reduction_operations": 0,
+    "complete": true,
+    "continuous_minimum": "7/48",
+    "continuous_point": [
+      "55/12",
+      "79/12",
+      "53/6"
+    ],
+    "enumeration_nodes": 1,
+    "execution_verified": false,
+    "initial_radius_squared": "125/48",
+    "minimizer_parameters": [
+      [
+        7
+      ]
+    ],
+    "minimizers": [
+      [
+        5,
+        7,
+        8
+      ]
+    ],
+    "minimum_energy": "11/4",
+    "parameter_dimension": 1,
+    "proof": {
+      "basis_operations": [],
+      "kernel_basis": [
+        [
+          1,
+          1,
+          -2
+        ]
+      ],
+      "mass": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "3"
+        ]
+      ],
+      "smith": {
+        "certificate_kind": "unimodular operation transcript",
+        "diagonal_matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ],
+        "execution_verified": false,
+        "left": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "matrix": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "operation_count": 6,
+        "operations": [
+          [
+            "row",
+            "add",
+            1,
+            0,
+            -2
+          ],
+          [
+            "column",
+            "add",
+            1,
+            0,
+            -1
+          ],
+          [
+            "column",
+            "add",
+            2,
+            0,
+            -1
+          ],
+          [
+            "column",
+            "swap",
+            1,
+            2,
+            0
+          ],
+          [
+            "row",
+            "negate",
+            1,
+            0,
+            0
+          ],
+          [
+            "column",
+            "add",
+            2,
+            1,
+            -2
+          ]
+        ],
+        "rank": 2,
+        "right": [
+          [
+            1,
+            -1,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            -2
+          ]
+        ],
+        "smith_factors": [
+          1,
+          1
+        ]
+      }
+    },
+    "rhs": [
+      20,
+      18
+    ],
+    "scope": "all minimum-energy integer points satisfying the exact observation",
+    "shared_decomposition_calls": 1,
+    "status": "OPTIMAL_INTEGER_LIFTS",
+    "target": [
+      "9/2",
+      "25/4",
+      "35/4"
+    ]
+  }
+}

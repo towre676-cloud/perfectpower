@@ -166,9 +166,14 @@ def main():
     add_commands(sub)
     from .population_cli import add_commands as add_population_commands
     add_population_commands(sub)
+    from .query_service import add_commands as add_service_commands
+    add_service_commands(sub)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .query_service import cli as service_cli
+    if service_cli(args):
+        return
     from .population_cli import dispatch as dispatch_population
     if dispatch_population(args):
         return

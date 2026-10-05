@@ -1,24 +1,24 @@
 # Direct-use build roadmap
 
-The first release builds one shared exact-population interface and exercises configuration design, mathematical data generation and sourced combinatorial domains. It does not claim to ship all proposed applications. Related products should reuse the same object semantics rather than create disconnected samplers or count implementations.
+The population release supplied a common exact object interface. The applications release adds tested APIs, persistence, portable receipts and runnable clients for the remaining software workflows. Integrated means implemented on the stated models. New mathematical research and application-specific performance retain separate status.
 
-| Application | This release | Next concrete integration |
-|---|---|---|
-| Exact configuration generator | Finite domains, fields, count, select, next, restrictions, optimization | A real application schema with measured or supplied objectives |
-| Compatible square/cubic layouts | Huge capacity family and emitted compatible dimensions | Add real storage or simulation constraints |
-| Compiler autotuning | Addressable admissible candidates and rank shards | Connect one kernel and collect hardware measurements |
-| Constrained mathematical data | Seeded exact rank sampling and JSONL publication | Application-specific distributions and corpus management |
-| Mathematical AI tasks | 768 related tasks generated from 256 curve objects | Held-out protocols, task schemas and agent evaluation |
-| Integer inverse design | Existing complete fibres and nearest-point engine retained | Expose a real discrete calibration problem through a configuration interface |
-| Shared sequence execution | Existing rational/integer machines retained | Library compiler and independent workload integration |
-| Model-distinguishing experiments | Existing separating readout words retained | Cost-aware experiment interfaces |
-| Executable sequence laws | Existing resolvents and all-future comparisons retained | Persistent sequence objects and definition corpus |
-| Combinatorial size design | 156 sourced recurrence-unit populations and 512 index records | Add chosen Gamma/Pell design workflows |
-| Embedded query service | ExactPopulation Python object and CLI | Service protocol, persistence and interactive clients |
-| Compact mathematical database | Counts, rank addresses and pagination | Ordering contracts, query bindings and supported joins |
-| Graph ensembles | Existing measures/events/reweighting retained | Justified sampler and domain-specific workbench |
-| Curve geometry workbench | Existing metric/arithmetic packets retained | Visualization and broader compatible chart atlas |
-| Arithmetic research instrument | Population access to supported curve results | Broader effective backends and compositional research workflows |
-| Symmetry/flavor exploration | Existing research preserved | Derive the golden frame coefficient and physical phase |
+| Application and beneficiary | Implemented direct use | Evidence and entry point | Remaining scope |
+|---|---|---|---|
+| Exact configuration generator — engineers | Count, address, constrain, sample and optimize identities; persist definitions | ExactPopulation; Catalogue; service transcript | Real application schemas and objectives |
+| Square/cubic layouts — compute/storage authors | Row n³ and column n² satisfy row²=column³; enormous prior capacities remain available | Four real matrix configurations; prior layout receipts | Storage/simulation measurements and constraints |
+| Compiler autotuning — kernel developers | Execute all bounded candidates, check outputs, interleave trials and select medians | configuration_tuning.tune; 28 real matrix trials | Conventional baseline wins demo; compiled/hardware speedup needs measurements |
+| Mathematical data — dataset builders | Exact identity sampling, exports and reusable source definitions | Population exports; 256-task corpus; portable specs | Custom distributions and corpus policies |
+| Mathematical AI tasks — benchmark authors | Group signed siblings, publish answer-free tasks and evaluate exact predictions | 178 train/40 validation/38 test; task_protocol.py | Blind agent evaluation and unseen-family protocols |
+| Integer inverse design — calibration authors | Reuse decomposition and return all closest integer settings | InverseDesign; signed actuator model; independent search | Physical data and arbitrary inequality constraints |
+| Shared sequence execution — recurrence authors | Named outputs share a machine; huge-index modular execution | Fibonacci/next/Lucas; 40 independent term checks | Additional reviewed definitions and workloads |
+| Distinguishing experiments — diagnostics researchers | Separating word and exact readouts; minimum supplied cost among certificate witnesses | SequenceLibrary.experiment; replay tests | Global optimum over arbitrary words |
+| Executable sequence laws — exact signal authors | Persist definitions; all-future comparison, first difference and subsequences | Catalogue sequence kind; witness resolvents | Classes beyond integer linear machines |
+| Combinatorial size design — combinatorial engineers | Chosen Gamma/binomial analysis and complete filtered Pell size selection | Sizes below 10^100; twelve selected sizes; sourced prior domains | New effective Gamma power analyses |
+| Embedded service — application developers | Persistent JSONL requests, IDs, isolated errors and method allowlists | python -m perfectpower service; six kinds exercised | Host-specific HTTP/UI deployment |
+| Compact database — pipeline developers | Content addresses, aliases, compile cache, rank zip and complete bounded equality joins | SQLite restart and multiplicity tests | General symbolic huge-population joins unsupported |
+| Graph ensembles — stochastic gain-network researchers | Exact rational conditional samples, include/exclude conditions and derived repairs | 72 demo samples; exact random-path and basis-sum checks | Higher-order algebraic comparison and actual network models |
+| Geometry workbench — geometry researchers | Offline interactive finite/branch/infinity panels; density and local path bounds | geometry_workbench.html; three certified panels | Compatible atlas, transitions and global geodesic/Voronoi geometry |
+| Arithmetic research instrument — arithmetic researchers | Persistent queries compose supported curve, population, sequence and combinatorial engines | Catalogue, service and original-coordinate receipts | Broader effective backends and new compositional theorems |
+| Symmetry/flavor — mathematical physics researchers | Existing research preserved for inspection | Existing research notes and receipts | Golden frame coefficient and physical phase still open |
 
-Sampling is over full configuration identities or disjoint original curve points. Projected values require a separate image and multiplicity model before being called a uniformly sampled population. Hardware, network and physics claims must come from their actual application models and measurements.
+Sampling is over full identities or disjoint original points. Uniform projected-value sampling needs its own image/multiplicity model. Graph probabilities belong to the specified gain-graph model. Performance and physical conclusions require actual measurements and assumptions. See [the monograph](APPLICATIONS_MONOGRAPH.md) for contracts, reproduction and results.

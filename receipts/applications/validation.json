@@ -1,0 +1,16 @@
+{
+  "schema": "pp-applications-validation/1",
+  "new_tests": 21,
+  "total_tests": 974,
+  "passed": 970,
+  "skipped": 4,
+  "optional_skip_scope": "existing optional Lean replay tests",
+  "receipt_files_byte_identical_on_replay": 19,
+  "pdf_pages_visually_checked": 7,
+  "offline_client": "three-panel DOM/canvas harness; native browser executable unavailable",
+  "commands": [
+    "make test",
+    "python -m unittest discover -s python/tests -p test_applications.py",
+    "python python/develop_applications.py --output /tmp/perfectpower-applications-replay"
+  ]
+}

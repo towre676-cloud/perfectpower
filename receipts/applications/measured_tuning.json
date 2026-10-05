@@ -1,0 +1,289 @@
+{
+  "candidates": [
+    {
+      "max_ns": 8512245,
+      "median_ns": 6966536,
+      "min_ns": 6250479,
+      "record": {
+        "chart": 0,
+        "parameter": 1,
+        "population_id": "6de5e09065dd0b11b77afbc5431310542316a5afd7146b31916ff5b46f0fad48",
+        "rank": 0,
+        "values": {
+          "column_block": 1,
+          "row_block": 1,
+          "tile_elements": 1
+        }
+      },
+      "trials_ns": [
+        6777369,
+        6958122,
+        6977217,
+        8512245,
+        6250479,
+        6966536,
+        7727364
+      ]
+    },
+    {
+      "max_ns": 3468200,
+      "median_ns": 3117682,
+      "min_ns": 2998226,
+      "record": {
+        "chart": 0,
+        "parameter": 2,
+        "population_id": "6de5e09065dd0b11b77afbc5431310542316a5afd7146b31916ff5b46f0fad48",
+        "rank": 1,
+        "values": {
+          "column_block": 4,
+          "row_block": 8,
+          "tile_elements": 32
+        }
+      },
+      "trials_ns": [
+        2998226,
+        3011754,
+        3007728,
+        3411350,
+        3289238,
+        3117682,
+        3468200
+      ]
+    },
+    {
+      "max_ns": 3528381,
+      "median_ns": 2528049,
+      "min_ns": 2376649,
+      "record": {
+        "chart": 0,
+        "parameter": 3,
+        "population_id": "6de5e09065dd0b11b77afbc5431310542316a5afd7146b31916ff5b46f0fad48",
+        "rank": 2,
+        "values": {
+          "column_block": 9,
+          "row_block": 27,
+          "tile_elements": 243
+        }
+      },
+      "trials_ns": [
+        2482691,
+        2699309,
+        2382859,
+        3273919,
+        3528381,
+        2376649,
+        2528049
+      ]
+    },
+    {
+      "max_ns": 2353844,
+      "median_ns": 2199235,
+      "min_ns": 2111660,
+      "record": {
+        "chart": 0,
+        "parameter": 4,
+        "population_id": "6de5e09065dd0b11b77afbc5431310542316a5afd7146b31916ff5b46f0fad48",
+        "rank": 3,
+        "values": {
+          "column_block": 16,
+          "row_block": 64,
+          "tile_elements": 1024
+        }
+      },
+      "trials_ns": [
+        2311387,
+        2353844,
+        2229585,
+        2197861,
+        2111660,
+        2113425,
+        2199235
+      ]
+    }
+  ],
+  "comparison_scope": "Different Python loop organizations; conventional baseline timed separately. Timings do not establish compiled-kernel or hardware speedup.",
+  "conventional": {
+    "kernel": "Python dot products using sum/zip",
+    "median_ns": 2140204,
+    "trials_ns": [
+      2216466,
+      1940068,
+      1989626,
+      2140204,
+      2355859,
+      2291391,
+      2000514
+    ]
+  },
+  "environment": {
+    "machine": "x86_64",
+    "python": "3.12.14",
+    "system": "Linux"
+  },
+  "ledger": [
+    {
+      "elapsed_ns": 6777369,
+      "rank": 0,
+      "round": 0
+    },
+    {
+      "elapsed_ns": 2311387,
+      "rank": 3,
+      "round": 0
+    },
+    {
+      "elapsed_ns": 2998226,
+      "rank": 1,
+      "round": 0
+    },
+    {
+      "elapsed_ns": 2482691,
+      "rank": 2,
+      "round": 0
+    },
+    {
+      "elapsed_ns": 2353844,
+      "rank": 3,
+      "round": 1
+    },
+    {
+      "elapsed_ns": 2699309,
+      "rank": 2,
+      "round": 1
+    },
+    {
+      "elapsed_ns": 3011754,
+      "rank": 1,
+      "round": 1
+    },
+    {
+      "elapsed_ns": 6958122,
+      "rank": 0,
+      "round": 1
+    },
+    {
+      "elapsed_ns": 2229585,
+      "rank": 3,
+      "round": 2
+    },
+    {
+      "elapsed_ns": 3007728,
+      "rank": 1,
+      "round": 2
+    },
+    {
+      "elapsed_ns": 6977217,
+      "rank": 0,
+      "round": 2
+    },
+    {
+      "elapsed_ns": 2382859,
+      "rank": 2,
+      "round": 2
+    },
+    {
+      "elapsed_ns": 3273919,
+      "rank": 2,
+      "round": 3
+    },
+    {
+      "elapsed_ns": 8512245,
+      "rank": 0,
+      "round": 3
+    },
+    {
+      "elapsed_ns": 3411350,
+      "rank": 1,
+      "round": 3
+    },
+    {
+      "elapsed_ns": 2197861,
+      "rank": 3,
+      "round": 3
+    },
+    {
+      "elapsed_ns": 3289238,
+      "rank": 1,
+      "round": 4
+    },
+    {
+      "elapsed_ns": 6250479,
+      "rank": 0,
+      "round": 4
+    },
+    {
+      "elapsed_ns": 2111660,
+      "rank": 3,
+      "round": 4
+    },
+    {
+      "elapsed_ns": 3528381,
+      "rank": 2,
+      "round": 4
+    },
+    {
+      "elapsed_ns": 3117682,
+      "rank": 1,
+      "round": 5
+    },
+    {
+      "elapsed_ns": 2113425,
+      "rank": 3,
+      "round": 5
+    },
+    {
+      "elapsed_ns": 2376649,
+      "rank": 2,
+      "round": 5
+    },
+    {
+      "elapsed_ns": 6966536,
+      "rank": 0,
+      "round": 5
+    },
+    {
+      "elapsed_ns": 2199235,
+      "rank": 3,
+      "round": 6
+    },
+    {
+      "elapsed_ns": 3468200,
+      "rank": 1,
+      "round": 6
+    },
+    {
+      "elapsed_ns": 7727364,
+      "rank": 0,
+      "round": 6
+    },
+    {
+      "elapsed_ns": 2528049,
+      "rank": 2,
+      "round": 6
+    }
+  ],
+  "minimum_median_ns": 2199235,
+  "population_id": "6de5e09065dd0b11b77afbc5431310542316a5afd7146b31916ff5b46f0fad48",
+  "repeats": 7,
+  "schema": "pp-measured-tuning/1",
+  "scope": "minimum measured median among all supplied candidates on this host/workload; no universal speedup claim",
+  "seed": 61,
+  "warmups": 1,
+  "winners": [
+    {
+      "chart": 0,
+      "parameter": 4,
+      "population_id": "6de5e09065dd0b11b77afbc5431310542316a5afd7146b31916ff5b46f0fad48",
+      "rank": 3,
+      "values": {
+        "column_block": 16,
+        "row_block": 64,
+        "tile_elements": 1024
+      }
+    }
+  ],
+  "workload": {
+    "candidate_semantics": "row tile n^3, column tile n^2, tile capacity n^5, n=1..4",
+    "kernel": "32x32 exact integer matrix product"
+  }
+}
