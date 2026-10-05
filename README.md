@@ -2,7 +2,7 @@
 
 **Exact integer arithmetic, complete solution families, and Lean proof support.**
 
-PerfectPower answers questions such as “when is this polynomial a square?” and “which integers satisfy this arithmetic constraint?” For supported equations, it replaces a candidate-by-candidate search with a complete finite answer or an exact generator of an infinite family. When global solving remains unresolved, it can still return necessary congruences, a smaller equivalent problem, or a complete bounded answer. Results describe their mathematical justification and any remaining assumptions.
+PerfectPower answers questions such as “when is this polynomial a square?” and “which integers satisfy this arithmetic constraint?” For supported equations, it replaces a candidate-by-candidate search with a complete finite answer or an exact structured generator. Supported solution spaces can be restricted by polynomial and modular conditions, counted, queried by rank and optimized in their original coordinates. When global solving remains unresolved, it can still return necessary congruences, a smaller equivalent problem, or a complete bounded answer. Results describe their mathematical justification and any remaining assumptions.
 
 The core combines a Python constraint compiler with a Lean 4 library. It handles polynomial perfect powers, Pell equations, selected Mordell curves, effective quartic and Runge families, and exact changes of integer coordinates. Related modules provide integer lattice solving and optimization, operator algebras, sequence comparisons, and branched-curve geometry.
 
@@ -47,6 +47,7 @@ See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRA
 | Classify and count perfect-power hits; generate Pell and radical families | `classify`, `count`, `enumerate` | [Mathematical overview](docs/MONOGRAPH.md) |
 | Solve supported polynomial equations over all integers | `exact-solve`, `square-fibres`, `integer-roots` | [Arithmetic engine](docs/ENHANCED_MACHINERY_MONOGRAPH.md), [roots and search bounds](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
 | Discover polynomial coordinates; solve integer sign domains and global polynomial optimization | `polynomial-decompose`, `polynomial-relation`, `polynomial-domain`, `polynomial-optimize` | [Polynomial capacity](docs/POLYNOMIAL_CAPACITY_MONOGRAPH.md) |
+| Count and select polynomial/modular domains; query signed power curves and composed generators | `semilinear-domain`, `semilinear-optimize`, `polynomial-charts`, `curve-query`, `family-evaluate` | [Semilinear capacity](docs/SEMILINEAR_CAPACITY_MONOGRAPH.md) |
 | Compile Gamma shifts, factorials and binomial inputs; test factorial-ratio powers and derive exact hypergeometric recurrences | `gamma-analyze`, `gamma-unit`, `gamma-domain`, `gamma-optimize` | [Gamma arithmetic](docs/GAMMA_ARITHMETIC_MONOGRAPH.md) |
 | Compose arithmetic reductions and recover original models; retain partial and bounded information | `simplify-query`, `analyze-power`, `polynomial-pullback` | [Arithmetic simplifier](docs/ARITHMETIC_SIMPLIFIER_MONOGRAPH.md) |
 | Search a bounded power range using factored local filters | `factored-scan` | [Local arithmetic filters](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md) |
@@ -58,6 +59,8 @@ See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRA
 | Compare arithmetic families with local OEIS records | `oeis`, `sequence-atlas` | [OEIS integration](docs/OEIS.md) |
 
 For solver integration, the [SMT adapter](docs/HOST_ADAPTER.md) replaces recognized arithmetic relations with their complete solution sets. The separate [incremental replay tool](industrial_performance/REPLAY_README.md) handles SMT-LIB command transport. Coverage and performance measurements are documented with their workloads in those guides.
+
+For example, `curve-query --left '[1,0,-2,0,1]' --right '[0,0,0,1]' --objective 'x*x+y*y' --verify` solves `(x²−1)²=y³` completely and returns all three tied minimizers. The [new corpus](receipts/semilinear_capacity/summary.json) closes 262 finite-image presentations, including 238 previously unresolved cases, and independently checks 3,080 constrained quartic optima and 676 Bober recurrence domains. See the [monograph](docs/SEMILINEAR_CAPACITY_MONOGRAPH.md) for the defined workloads and proof scope.
 
 ## Results and guarantees
 

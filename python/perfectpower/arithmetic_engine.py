@@ -175,10 +175,33 @@ class ArithmeticEngine:
             root=tuple(c//identity.denominator for c in identity.root_numerators)
             return {**base,'status':'GENERATOR','points':None,'proof':{'kind':'exact_power','root_coefficients':root},
                 'generator':{'x':'any integer','y':'P(x) and -P(x)' if degree%2==0 else 'P(x)','root_coefficients':root}}
+        if degree%2==0 and len(f)>=3 and (len(f)-1)%2==0 and f[-1]<0:
+            try:
+                from .polynomial_images import sign_domain_solve
+                return sign_domain_solve(f,degree,work_limit=self.work_limit)
+            except WorkLimit as error:
+                budget_failure=True;attempts.append({'method':'finite_sign_domain','reason':str(error)})
+        if len(f)>=3:
+            try:
+                from .polynomial_charts import parameterize_relation
+                charts=parameterize_relation(f,[0]*degree+[1],node_limit=self.work_limit)
+                if charts['complete']:
+                    if any(c[n]['kind']=='fibre' for c in charts['charts'] for n in ('x','y')):
+                        from .polynomial_images import refine_charts
+                        try:refined=refine_charts(charts,work_limit=self.work_limit)
+                        except WorkLimit:refined={'complete':False}
+                        if refined['complete']:
+                            return {**base,'status':'COMPLETE','points':refined['points'],
+                                    'proof':{'kind':'family_refinement','refinement':refined}}
+                    return {**base,'status':charts['status'],'points':charts['points'],
+                            'proof':{'kind':'power_charts','parameterization':charts},
+                            'generator':{'kind':'polynomial_charts','charts':charts['charts']}}
+            except WorkLimit:
+                pass
         if decomposition:
             from .polynomial_composition import PolynomialCompiler
             composed=PolynomialCompiler(work_limit=self.work_limit,engine=self).solve(f,degree)
-            if composed['status']=='COMPLETE':return composed
+            if composed['status'] in ('COMPLETE','GENERATOR'):return composed
         if strict:
             if budget_failure:raise WorkLimit('all supported complete leaves exceeded the candidate budget')
             raise ValueError('no supported complete finite reduction')
@@ -198,6 +221,20 @@ def verify_result(result,*,work_limit=100000):
         if kind in ('polynomial_composition','mordell_registry','content_power'):
             from .polynomial_composition import verify_compiled
             return verify_compiled(result,work_limit=work_limit)
+        if kind=='power_charts':
+            from .polynomial_charts import verify_parameterization
+            c=proof['parameterization']
+            return (_same(c['left'],f) and _same(c['right'],[0]*d+[1])
+                    and verify_parameterization(c,node_limit=work_limit)
+                    and result['status']==c['status'] and _same(result['points'],c['points'])
+                    and _same(result['generator'],{'kind':'polynomial_charts','charts':c['charts']}))
+        if kind=='finite_sign_domain':
+            from .polynomial_images import verify_sign_solve
+            return verify_sign_solve(result,work_limit=work_limit)
+        if kind=='family_refinement':
+            from .polynomial_images import verify_refinement
+            r=proof['refinement'];c=r['generator']
+            return result['status']=='COMPLETE' and _same(c['left'],f) and _same(c['right'],[0]*d+[1]) and verify_refinement(r,work_limit=work_limit) and _same(result['points'],r['points'])
         if kind=='constant':
             if len(f)!=1:return False
             r=integer_power_root(f[0],d)

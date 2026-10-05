@@ -20,7 +20,24 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
                                 Image, Preformatted, Table, TableStyle)
 
 
-def render(source,output):
+def render(source,output,*,edition='polynomial'):
+    editions={
+        'polynomial':{
+            'title':'Polynomial capacity',
+            'subtitle':'Coordinates, integer domains<br/>and discrete dynamics',
+            'description':'Automatic polynomial decomposition, complete nonlinear integer pullbacks, Boolean sign domains, global discrete optimization and a domain-aware Gamma interface.',
+            'metrics':[('6,422','equations matched'),('141','new completions'),('3,080','global optima checked')],
+            'scope':'Exact Python arithmetic and replayable evidence. Existing outer theorem provenance is preserved. This expansion does not add a Lean proof of the general Sturm solver or Python compiler.',
+        },
+        'semilinear':{
+            'title':'Semilinear capacity',
+            'subtitle':'Queryable equations<br/>and exact integer dynamics',
+            'description':'Complete polynomial and modular domains, enormous-range counting and rank selection, signed power-curve charts, nonlinear integer fibres and every original-coordinate optimizer.',
+            'metrics':[('262','finite-image cases closed'),('238','new complete answers'),('3,080','constrained optima checked')],
+            'scope':'Exact Python evidence and independent reference checks. The prior Lean transport layer is preserved. This expansion adds no Lean proof of the general periodic-domain producer or whole compiler.',
+        },
+    }
+    profile=editions[edition]
     output=Path(output);output.parent.mkdir(parents=True,exist_ok=True)
     temporary=output.parent/'math';temporary.mkdir(exist_ok=True)
     fonts=Path('/usr/share/fonts/truetype/dejavu')
@@ -38,12 +55,12 @@ def render(source,output):
     metric=ParagraphStyle('metric',fontName='LabelBold',fontSize=22,leading=30,textColor=teal,alignment=TA_CENTER)
     caption=ParagraphStyle('caption',fontName='Label',fontSize=9,leading=14,textColor=navy,alignment=TA_CENTER)
     story=[Spacer(1,37),Paragraph('PERFECTPOWER / TECHNICAL MONOGRAPH',small),Spacer(1,20),
-           Paragraph('Polynomial capacity',title),Paragraph('Coordinates, integer domains<br/>and discrete dynamics',ParagraphStyle('subtitle',parent=heading,fontSize=20,leading=28,textColor=navy)),
-           Spacer(1,30),Paragraph('Automatic polynomial decomposition, complete nonlinear integer pullbacks, Boolean sign domains, global discrete optimization and a domain-aware Gamma interface.',body),Spacer(1,22)]
-    table=Table([[Paragraph('6,422',metric),Paragraph('141',metric),Paragraph('3,080',metric)],
-                 [Paragraph('equations matched',caption),Paragraph('new completions',caption),Paragraph('global optima checked',caption)]],colWidths=[160]*3)
+           Paragraph(profile['title'],title),Paragraph(profile['subtitle'],ParagraphStyle('subtitle',parent=heading,fontSize=20,leading=28,textColor=navy)),
+           Spacer(1,30),Paragraph(profile['description'],body),Spacer(1,22)]
+    table=Table([[Paragraph(number,metric) for number,label in profile['metrics']],
+                 [Paragraph(label,caption) for number,label in profile['metrics']]],colWidths=[160]*3)
     table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),colors.HexColor('#F0F4F6')),('TOPPADDING',(0,0),(-1,0),12),('BOTTOMPADDING',(0,1),(-1,1),15)]))
-    story+=[table,Spacer(1,27),Paragraph('Exact Python arithmetic and replayable evidence. Existing outer theorem provenance is preserved. This expansion does not add a Lean proof of the general Sturm solver or Python compiler.',small),Spacer(1,18),Paragraph('Source, corpus receipts and reproduction commands accompany the repository snapshot.',small),PageBreak()]
+    story+=[table,Spacer(1,27),Paragraph(profile['scope'],small),Spacer(1,18),Paragraph('Source, corpus receipts and reproduction commands accompany the repository snapshot.',small),PageBreak()]
     def inline(s):
         s=escape(s).replace('\u2013','-').replace('\u2014','-')
         s=re.sub(r'`([^`]+)`',r'<font name="Code" size="8.6">\1</font>',s)
@@ -77,15 +94,18 @@ def render(source,output):
     def furniture(canvas,doc):
         canvas.saveState();canvas.setStrokeColor(colors.HexColor('#D0DBE0'));canvas.setLineWidth(.5)
         canvas.line(57,49,538,49);canvas.setFont('Label',8);canvas.setFillColor(navy)
-        canvas.drawString(57,34,'PERFECTPOWER  /  POLYNOMIAL CAPACITY');canvas.drawRightString(538,34,str(doc.page))
+        canvas.drawString(57,34,'PERFECTPOWER  /  '+profile['title'].upper());canvas.drawRightString(538,34,str(doc.page))
         if doc.page>1:canvas.setFont('Label',8);canvas.drawString(57,807,'Exact domains, preserved integer images, complete ties')
         canvas.restoreState()
     document=SimpleDocTemplate(str(output),pagesize=(595.28,841.89),rightMargin=57,leftMargin=57,topMargin=57,bottomMargin=66,
-                               title='Polynomial capacity: coordinates, integer domains and discrete dynamics',author='PerfectPower')
+                               title=profile['title']+': '+re.sub('<br/>',' ',profile['subtitle']).lower(),author='PerfectPower')
     document.build(story,onFirstPage=furniture,onLaterPages=furniture)
     print(output)
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path,default=Path(__file__).resolve().parents[1]/'docs'/'POLYNOMIAL_CAPACITY_MONOGRAPH.md')
-    parser.add_argument('--output',type=Path,required=True);args=parser.parse_args();render(args.source,args.output)
+    parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
+    parser.add_argument('--edition',choices=('polynomial','semilinear'),default='polynomial')
+    parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/(args.edition.upper()+'_CAPACITY_MONOGRAPH.md')
+    render(source,args.output,edition=args.edition)

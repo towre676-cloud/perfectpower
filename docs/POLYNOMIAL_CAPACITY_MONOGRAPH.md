@@ -1,5 +1,7 @@
 # Polynomial capacity: coordinates, integer domains and discrete dynamics
 
+This account describes the first polynomial-capacity release and its recorded baseline. The follow-up [Semilinear capacity](SEMILINEAR_CAPACITY_MONOGRAPH.md) adds modular domains, counting and selection, signed curve queries, generator pullback and finite nonlinear-image refinement. The concurrent thirteen Lean laws are documented in [Polynomial capacity Lean](POLYNOMIAL_CAPACITY_LEAN.md).
+
 PerfectPower's useful unit is an exact reduction with a preserved integer image. A finite registry can then serve infinitely many polynomial presentations. This expansion adds automatic rational polynomial decomposition, complete nonlinear integer pullbacks, two-sided polynomial transport, complete Boolean sign domains, and global integer polynomial optimization. It integrates the reductions with the arithmetic engine and whole-query simplifier.
 
 The stored experiment contains 6,422 nonlinear pullback equations. Every expanded result agrees with an independent reference construction; 141 equations previously unresolved become complete. All 3,080 quartic objectives agree with independently bounded exhaustive optimization, including every tie. Another 311,080 integer predicate evaluations agree with the returned sign domains. These are reproducible mathematical corpus results. They establish neither a world record nor superiority to general computer algebra systems.
@@ -174,6 +176,6 @@ The domain example returns exactly [-1,1]. The optimization example returns valu
 
 ## What to build next
 
-The immediate high-value extensions are complete generator pullback through certified integer-image conditions, a generic Lean transcript interpreter for sign domains and discrete optimization, and independently sourced industrial queries that stress these exact reductions. General separated-polynomial classification needs a genuinely broader mathematical backend; additional catalogue entries alone are not enough.
+The semilinear follow-up now implements generator pullback through retained integer-image conditions and complete per-parameter fibres. The remaining high-value extensions are a generic Lean transcript interpreter for periodic domains and discrete optimization, coefficient-bearing power charts and independently sourced industrial queries. General separated-polynomial classification needs a broader mathematical backend; additional catalogue entries alone are not enough.
 
 For practical use, retain the new complete univariate domain object as a shared intermediate representation. It can drive exact count queries, optimizer queries, host-solver replacements and domain checks for normalized Gamma expressions. This turns an equation result into a reusable computational object while keeping its domain and proof scope visible.

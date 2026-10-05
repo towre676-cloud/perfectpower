@@ -50,6 +50,22 @@ def solve_relation(left, right, *, work_limit=100000, algebra_limit=2000000):
                                  'numerator':(other[0]-c,)+other[1:],'denominator':b,
                                  'admissibility':'denominator divides numerator at the free coordinate'},
                     'proof':{'kind':'affine','swapped':swapped}}
+    from .polynomial_charts import parameterize_relation
+    try:
+        charts=parameterize_relation(left,right,node_limit=work_limit,algebra_limit=algebra_limit)
+        if charts['complete']:
+            if any(c[n]['kind']=='fibre' for c in charts['charts'] for n in ('x','y')):
+                from .polynomial_images import refine_charts
+                try:refined=refine_charts(charts,work_limit=work_limit)
+                except WorkLimit:refined={'complete':False}
+                if refined['complete']:
+                    return {**base,'status':'COMPLETE','points':refined['points'],
+                            'proof':{'kind':'chart_refinement','refinement':refined}}
+            return {**base,'status':charts['status'],'points':charts['points'],
+                    'generator':{'kind':'polynomial_charts','charts':charts['charts']},
+                    'proof':{'kind':'polynomial_charts','parameterization':charts}}
+    except WorkLimit:
+        pass
     compiler=PolynomialCompiler(work_limit=work_limit,algebra_limit=algebra_limit);attempts=[]
     for side,other,swapped in ((right,left,False),(left,right,True)):
         for presentation in _presentations(side,other):
@@ -78,7 +94,20 @@ def solve_relation(left, right, *, work_limit=100000, algebra_limit=2000000):
 def verify_relation(result,*,work_limit=100000):
     try:
         if result['schema']!='pp-polynomial-relation/1' or result['domain']!='all integer x and y' or result['execution_verified'] is not False:return False
-        left=integer_polynomial(result['left']);right=integer_polynomial(result['right']);proof=result['proof'];swapped=proof['swapped']
+        left=integer_polynomial(result['left']);right=integer_polynomial(result['right']);proof=result['proof']
+        if proof['kind']=='chart_refinement':
+            from .polynomial_images import verify_refinement
+            r=proof['refinement'];same=lambda a,b:json.dumps(a,sort_keys=True)==json.dumps(b,sort_keys=True)
+            return result['status']=='COMPLETE' and same(r['generator']['left'],left) and same(r['generator']['right'],right) and verify_refinement(r,work_limit=work_limit) and same(result['points'],r['points'])
+        if proof['kind']=='polynomial_charts':
+            from .polynomial_charts import verify_parameterization
+            charts=proof['parameterization']
+            same=lambda a,b:json.dumps(a,sort_keys=True)==json.dumps(b,sort_keys=True)
+            return (same(charts['left'],left) and same(charts['right'],right)
+                    and verify_parameterization(charts,node_limit=work_limit)
+                    and result['status']==charts['status'] and same(result['points'],charts['points'])
+                    and same(result['generator'],{'kind':'polynomial_charts','charts':charts['charts']}))
+        swapped=proof['swapped']
         if type(swapped) is not bool or len(left)<2 or len(right)<2:return False
         side,other=(left,right) if swapped else (right,left)
         if proof['kind']=='affine':

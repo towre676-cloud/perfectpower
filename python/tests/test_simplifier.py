@@ -53,8 +53,11 @@ class SimplifierTests(unittest.TestCase):
     def test_nonlinear_outer_not_cancelled(self):
         s=query('xy',['(= (* x x) (* y y))','(distinct x y)'])
         r=simplify_query(s)
-        self.assertEqual(r['status'],'UNCHANGED')
-        self.assertEqual(r['residual'],s)
+        self.assertIn('polynomial_charts',[p['method'] for p in r['steps']])
+        self.assertTrue(verify_simplification(r))
+        from perfectpower.simplifier import lift_model
+        m=lift_model(r,{'_pp_curve':2})
+        self.assertEqual(m['x'],-m['y']);self.assertNotEqual(m['x'],m['y'])
 
     def test_pullback_all_integer_fibres(self):
         r=polynomial_pullback([1,0,0,0,1],[0,1,1])

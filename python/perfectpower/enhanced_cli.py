@@ -5,7 +5,24 @@ from .deep_recovery_cli import exact_json
 
 
 def add_commands(sub):
+    p=sub.add_parser('family-evaluate',help='complete per-parameter evaluation of composed arithmetic generators')
+    p.add_argument('--coeff',type=json.loads,required=True);p.add_argument('--d',type=int,default=2);p.add_argument('--parameter',type=int,required=True)
+    p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('semilinear-domain',help='complete polynomial/modular integer domains, exact counts and rank selection')
+    p.add_argument('--predicate',type=json.loads,required=True);p.add_argument('--interval',type=json.loads);p.add_argument('--select',type=int)
+    p.add_argument('--start',type=int,default=0);p.add_argument('--period-limit',type=int,default=65536);p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('semilinear-optimize',help='global polynomial min/max on complete congruence-restricted integer domains')
+    p.add_argument('--predicate',type=json.loads,default=True);p.add_argument('--objective',type=json.loads,required=True)
+    p.add_argument('--sense',choices=('min','max'),default='min');p.add_argument('--period-limit',type=int,default=65536);p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('polynomial-charts',help='complete signed power-curve families with integer coordinate images and nonlinear fibres')
+    p.add_argument('--left',type=json.loads,required=True);p.add_argument('--right',type=json.loads,required=True)
+    p.add_argument('--parameter',type=int);p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--period-limit',type=int,default=65536);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('curve-query',help='exact power-curve counts and global bivariate polynomial optimization without box scanning')
+    p.add_argument('--left',type=json.loads,required=True);p.add_argument('--right',type=json.loads,required=True);p.add_argument('--predicate',type=json.loads,default=True)
+    p.add_argument('--objective');p.add_argument('--sense',choices=('min','max'),default='min');p.add_argument('--point-limit',type=int,default=128)
+    p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--period-limit',type=int,default=65536);p.add_argument('--verify',action='store_true')
     p=sub.add_parser('gamma-domain',help='complete natural-index sign domains of normalized fixed Gamma/product/binomial expressions')
+    p.add_argument('--predicate',type=json.loads,default=True)
     p.add_argument('--spec',type=json.loads,required=True);p.add_argument('--relation',choices=('=','!=','<','<=','>','>='),default='>=')
     p.add_argument('--threshold',default='0');p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
     p=sub.add_parser('gamma-optimize',help='global exact rational optimum and every natural-index tie for fixed expressions')
@@ -98,9 +115,39 @@ def add_commands(sub):
 
 
 def dispatch(args):
-    if args.command=='gamma-domain':
+    if args.command=='family-evaluate':
+        from .arithmetic_engine import ArithmeticEngine
+        from .arithmetic_families import family_points,verify_family_evaluation
+        source=ArithmeticEngine(work_limit=args.node_limit).solve(args.coeff,args.d)
+        result={'solution':source,'evaluation':None}
+        if source['status']=='GENERATOR':
+            result['evaluation']=family_points(source,args.parameter,node_limit=args.node_limit)
+            if args.verify:result['certificate_replay']=verify_family_evaluation(source,result['evaluation'],node_limit=args.node_limit)
+    elif args.command=='semilinear-domain':
+        from .semilinear_domains import semilinear_domain,count_domain,select,verify_domain
+        result=semilinear_domain(args.predicate,node_limit=args.node_limit,period_limit=args.period_limit)
+        if args.interval is not None:
+            if not isinstance(args.interval,list) or len(args.interval)!=2:raise ValueError('closed interval pair required')
+            result['query_count']=count_domain(result,*args.interval)
+        if args.select is not None:result['selected']=select(result,args.select,start=args.start)
+        if args.verify:result['certificate_replay']=verify_domain(result,node_limit=args.node_limit,period_limit=args.period_limit)
+    elif args.command=='semilinear-optimize':
+        from .semilinear_domains import optimize_semilinear,verify_optimization
+        result=optimize_semilinear(args.predicate,args.objective,sense=args.sense,node_limit=args.node_limit,period_limit=args.period_limit)
+        if args.verify:result['certificate_replay']=verify_optimization(result,node_limit=args.node_limit,period_limit=args.period_limit)
+    elif args.command=='polynomial-charts':
+        from .polynomial_charts import parameterize_relation,verify_parameterization,evaluate_parameterization,verify_evaluation
+        result=parameterize_relation(args.left,args.right,node_limit=args.node_limit,period_limit=args.period_limit)
+        if args.parameter is not None:result['evaluation']=evaluate_parameterization(result,args.parameter,node_limit=args.node_limit)
+        if args.verify and args.parameter is not None:result['evaluation_replay']=verify_evaluation(result,result['evaluation'],node_limit=args.node_limit)
+        if args.verify:result['certificate_replay']=verify_parameterization(result,node_limit=args.node_limit,period_limit=args.period_limit)
+    elif args.command=='curve-query':
+        from .curve_queries import query_curve,verify_curve_query
+        result=query_curve(args.left,args.right,args.predicate,objective=args.objective,sense=args.sense,point_limit=args.point_limit,node_limit=args.node_limit,period_limit=args.period_limit)
+        if args.verify:result['certificate_replay']=verify_curve_query(result,node_limit=args.node_limit,period_limit=args.period_limit)
+    elif args.command=='gamma-domain':
         from .gamma_polynomial import gamma_domain,verify_gamma_domain
-        result=gamma_domain(args.spec,args.relation,args.threshold,node_limit=args.node_limit)
+        result=gamma_domain(args.spec,args.relation,args.threshold,predicate=args.predicate,node_limit=args.node_limit)
         if args.verify:result['certificate_replay']=verify_gamma_domain(result,node_limit=args.node_limit)
     elif args.command=='gamma-optimize':
         from .gamma_polynomial import optimize_gamma,verify_gamma_optimum

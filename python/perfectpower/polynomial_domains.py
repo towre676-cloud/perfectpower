@@ -224,17 +224,13 @@ def verify_optimization(result, *, node_limit=100000, atom_limit=128):
     except (ValueError,TypeError,KeyError,IndexError,ArithmeticError): return False
 
 
-def project_univariate_query(script, *, node_limit=100000):
-    """Replace a whole one-variable polynomial Boolean query by linear cells.
-
-    The variable itself is preserved: every integer model has the same value.
-    This supports degree 64, independently of the older degree-eight matcher.
-    """
+def _query_predicate(script, *, allow_mod=False):
+    """Shared exact single-coordinate SMT polynomial/modular normalization."""
     from .integer_projection import _parse_integer_query
     from .finite_projection import _literal, _simplify, _render
     names, atoms = _parse_integer_query(script)
     if len(names) != 1: raise ValueError('one integer variable required')
-    name = names[0]; nonlinear = False; operations = 0
+    name = names[0]; nonlinear = False; modular = False; operations = 0
     def term(node, depth=0):
         nonlocal operations
         operations += 1
@@ -253,7 +249,7 @@ def project_univariate_query(script, *, node_limit=100000):
             integer_polynomial(int(c) for c in out)
         return out
     def boolean(node):
-        nonlocal nonlinear
+        nonlocal nonlinear,modular
         if node=='true': return True
         if node=='false': return False
         if not isinstance(node,list) or not node: raise ValueError('polynomial Boolean expression required')
@@ -265,6 +261,15 @@ def project_univariate_query(script, *, node_limit=100000):
             return out
         if op in RELATIONS or op=='distinct':
             if len(args)<2: raise ValueError('comparison arity')
+            if allow_mod and len(args)==2 and any(isinstance(a,list) and a and a[0]=='mod' for a in args):
+                left,right=args;relation='!=' if op=='distinct' else op
+                if not (isinstance(left,list) and left and left[0]=='mod'):
+                    left,right=right,left;relation={'<':'>','<=':'>=','>':'<','>=':'<=','=':'=','!=':'!='}[relation]
+                if len(left)!=3:raise ValueError('mod arity')
+                modulus=term(left[2]);value=term(right)
+                if len(modulus)!=1 or modulus[0]<=0 or len(value)!=1:raise ValueError('constant positive modulus and integer threshold required')
+                polynomial=term(left[1]);modular=True
+                return {'poly':[int(c) for c in polynomial],'modulus':int(modulus[0]),'relation':relation,'value':int(value[0])}
             terms=[term(a) for a in args]
             pairs=[(a,b) for i,a in enumerate(terms) for b in terms[i+1:]] if op=='distinct' else list(zip(terms,terms[1:]))
             comparisons=[]
@@ -274,6 +279,13 @@ def project_univariate_query(script, *, node_limit=100000):
             return {'op':'and','args':comparisons}
         raise ValueError('unsupported Boolean polynomial operator')
     predicate={'op':'and','args':[boolean(a) for a in atoms]}
+    return name,predicate,nonlinear,modular
+
+
+def project_univariate_query(script, *, node_limit=100000):
+    """Pointwise replacement of a whole polynomial query by integer cells."""
+    from .finite_projection import _literal, _simplify, _render
+    name,predicate,nonlinear,modular=_query_predicate(script)
     if not nonlinear: raise ValueError('query has no nonlinear polynomial predicate')
     domain=integer_domain(predicate,node_limit=node_limit)
     branches=[]

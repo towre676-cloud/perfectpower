@@ -211,7 +211,9 @@ class PolynomialRelationTests(unittest.TestCase):
         for x in range(-10,11):
             g=r['generator'];numerator=evaluate(g['numerator'],x)
             if numerator%g['denominator']==0:self.assertEqual(x*x+7,-3*(numerator//g['denominator'])-2)
-        self.assertEqual(solve_relation([0,0,1],[0,0,1])['status'],'UNRESOLVED')
+        charts=solve_relation([0,0,1],[0,0,1])
+        self.assertEqual(charts['status'],'GENERATOR');self.assertTrue(verify_relation(charts))
+        self.assertEqual(len(charts['generator']['charts']),4)
 
     def test_whole_query_preserves_side_conditions_and_model(self):
         s=query('xyz',['(= (+ (* 4 y y) (* (- 4) y) 1) (- (* x x x) 2))','(> z x)'])

@@ -97,6 +97,12 @@ def polynomial_pullback(outer,inner,degree=2,*,work_limit=100000):
     solved=ArithmeticEngine(work_limit=work_limit).solve(outer,degree)
     result={'schema':'pp-polynomial-pullback/1','coefficients':f,'outer':outer,'inner':inner,
             'degree':degree,'outer_result':solved,'status':'UNRESOLVED','points':None,'fibres':[]}
+    if solved['status']=='GENERATOR':
+        lifted=ArithmeticEngine(work_limit=work_limit).solve(f,degree)
+        if lifted['status']=='GENERATOR':
+            result.update(status='GENERATOR',generator=lifted['generator'],lifted_result=lifted,
+                          complete=True,execution_verified=False)
+        return result
     if solved['status']!='COMPLETE':return result
     points=set()
     try:
@@ -229,13 +235,15 @@ def simplify_query(script, *, rounds=16, branch_limit=128):
     from .monomial_projection import project_monomial_query
     from .finite_projection import project_finite_query
     from .polynomial_relations import project_polynomial_query
+    from .parametric_projection import project_parameterized_query
     if any(type(n) is not int or n<1 for n in (rounds,branch_limit)):raise ValueError('positive budgets required')
     _parse_integer_query(script)
     current=script;steps=[];attempts=[]
     routes=[('square_cube',_square_cube),('coprime_power',_coprime_power),('substitution',_definition),('integer_lattice',lambda s:project_integer_query(s).smt),
             ('positive_monomial',lambda s:project_monomial_query(s,point_limit=branch_limit).smt),
             ('finite_relation',lambda s:project_finite_query(s,branch_limit=branch_limit).smt),
-            ('polynomial_relation',lambda s:project_polynomial_query(s,branch_limit=branch_limit).smt)]
+            ('polynomial_relation',lambda s:project_polynomial_query(s,branch_limit=branch_limit).smt),
+            ('polynomial_charts',lambda s:project_parameterized_query(s,branch_limit=branch_limit).smt)]
     import re
     def size(s):return len(re.findall(r'\(declare-(?:const|fun)\s',s))
     for _ in range(rounds):
@@ -251,6 +259,15 @@ def simplify_query(script, *, rounds=16, branch_limit=128):
             current=reduced;changed=True;break
         if not changed:break
     current,necessary=_local_filters(current)
+    try:
+        from .semilinear_domains import project_semilinear_query
+        reduced=project_semilinear_query(current,branch_limit=branch_limit)['smt']
+        if len(reduced)<=max(4096,4*len(current)):
+            steps.append({'method':'semilinear_domain','before':current,'after':reduced,
+                          'variables_removed':0,'meaning':'pointwise integer equivalence'})
+            current=reduced
+    except ValueError:
+        pass
     # One free integer coordinate permits complete Boolean sign elimination,
     # even when no global integer-point theorem for the original curve exists.
     try:
@@ -336,8 +353,17 @@ def lift_model(result,model):
         names,atoms=_parse_integer_query(step['before']);method=step['method']
         if method=='integer_lattice':
             current=project_integer_query(step['before']).lift(current)
-        elif method=='univariate_domain':
+        elif method in ('univariate_domain','semilinear_domain'):
             pass  # Same integer coordinate, now described by linear intervals.
+        elif method=='polynomial_charts':
+            from .parametric_projection import project_parameterized_query
+            from .polynomial_charts import chart_points
+            projection=project_parameterized_query(step['before'],branch_limit=result['budgets']['branch_limit'])
+            t=current[projection.parameter];points=[]
+            for chart in projection.query['generator']['charts']:points.extend(chart_points(chart,t)['points'])
+            current=next((dict(zip(projection.eliminated_symbols,p)) for p in points
+                          if all(_eval(a,dict(zip(projection.eliminated_symbols,p))) for a in atoms)),None)
+            if current is None:raise ValueError('parameter does not lift to an original model')
         elif method in ('square_cube','coprime_power'):
             parameter=next(n for n in current if n not in names)
             selected=None

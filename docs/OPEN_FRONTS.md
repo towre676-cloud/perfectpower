@@ -51,7 +51,7 @@ and global discrete polynomial optimization are now implemented in Python. The s
 experiment closes all 6,422 pullbacks, including 141 previous unresolved cases, and
 matches 3,080 independently checked global optima. See
 [Polynomial capacity](POLYNOMIAL_CAPACITY_MONOGRAPH.md). General Sturm variation,
-the generic optimizer theorem, generator pullback, coefficient-bearing infinite monomial
+the generic optimizer theorem, coefficient-bearing infinite monomial
 parameterizations and whole-compiler kernel proof emission remain open.
 
 ## Gamma arithmetic checkpoint
@@ -74,3 +74,23 @@ both tied optimizer examples. See `POLYNOMIAL_CAPACITY_LEAN.md` and
 `scripts/check_polynomial_capacity.sh`. General Sturm variation, normalized
 component uniqueness,  unbounded-tail optimizer
 interpretation and proof-producing whole-compiler execution remain open.
+
+## Semilinear and curve-query checkpoint
+
+Complete Boolean polynomial/modular domains, floor-sum counting, rank selection,
+period-step polynomial optimization, all signed shared-offset power charts,
+affine integer images and complete per-parameter nonlinear fibres are implemented
+in Python. Arithmetic generators now survive content scaling and polynomial
+pullback. Finite nonlinear-image refinement closes all 262 stored presentations,
+including 238 left unresolved by the preceding polynomial engine. Negative-leading
+even-degree/even-power equations have a complete finite sign-domain route.
+The new corpus independently checks 3,080 constrained optima, 3,080 negative
+quartics, 676 domains from 52 Bober recurrence families and 128 boxed curve queries.
+See [Semilinear capacity](SEMILINEAR_CAPACITY_MONOGRAPH.md).
+
+The earlier Lean polynomial laws are preserved; this expansion adds no Lean module.
+Generic interval/residue interpretation, period-step optimizer assembly and complete
+whole-compiler proof emission remain open. So do coefficient-bearing primitive
+power charts, general nonlinear parameter-image classification and broader
+separated-polynomial classification. A complete generator can have a finite or
+unclassified original image and is not itself a claim of infinitely many points.

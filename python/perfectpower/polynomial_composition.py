@@ -144,7 +144,11 @@ class PolynomialCompiler:
         if content_root is not None and content_root>1:
             before=self._fibre_used
             child=self._node(tuple(c//content for c in f),d)
-            if child['status']=='COMPLETE':
+            if child['status'] in ('COMPLETE','GENERATOR'):
+                if child['status']=='GENERATOR':
+                    return {**base,'status':'GENERATOR','points':None,
+                            'generator':{'kind':'scaled_witness','scale':content_root,'source':child['generator']},
+                            'proof':{'kind':'content_power','root':content_root,'outer_result':child}}
                 return {**base,'status':'COMPLETE',
                         'points':sorted((x,content_root*y) for x,y in child['points']),
                         'proof':{'kind':'content_power','root':content_root,'outer_result':child}}
@@ -162,6 +166,12 @@ class PolynomialCompiler:
             leaf=integer_polynomial(int(c*scale**d) for c in outer)
             before=self._fibre_used
             child=self._node(leaf,d)
+            if child['status']=='GENERATOR':
+                return {**base,'status':'GENERATOR','points':None,
+                        'generator':{'kind':'polynomial_pullback','inner':list(reduction['inner']),
+                                     'witness_scale':scale,'outer':child['generator']},
+                        'proof':{'kind':'polynomial_composition','decomposition':reduction,
+                                 'witness_scale':scale,'outer_result':child,'fibres':[]}}
             if child['status']!='COMPLETE':
                 self._fibre_used=before; attempts.append({'inner_degree':reduction['inner_degree'],'reason':'outer equation is not complete finite'}); continue
             inner=tuple(reduction['inner']); fibres=[]; points=set()
@@ -201,11 +211,13 @@ def verify_compiled(result,*,work_limit=100000):
             return rebuilt is not None and json.dumps(rebuilt,sort_keys=True)==json.dumps(node,sort_keys=True)
         if kind=='content_power':
             root=node['proof']['root']; child=node['proof']['outer_result']
-            if type(root) is not int or root<=1 or child['status']!='COMPLETE' or child['degree']!=d:return False
+            if type(root) is not int or root<=1 or child['status'] not in ('COMPLETE','GENERATOR') or child['degree']!=d:return False
             if tuple(root**d*c for c in child['coefficients'])!=f or not walk(child):return False
+            if child['status']=='GENERATOR':
+                return node['status']=='GENERATOR' and node['points'] is None and json.dumps(node['generator'],sort_keys=True)==json.dumps({'kind':'scaled_witness','scale':root,'source':child['generator']},sort_keys=True)
             return node['status']=='COMPLETE' and json.dumps(sorted((x,root*y) for x,y in child['points']))==json.dumps(node['points'])
         if kind!='polynomial_composition': return verify_result(node,work_limit=work_limit)
-        if node['status']!='COMPLETE': return False
+        if node['status'] not in ('COMPLETE','GENERATOR'): return False
         proof=node['proof']; reduction=proof['decomposition']
         if not verify_decomposition(f,reduction): return False
         outer=P.poly(Q(c) for c in reduction['outer']); scale=proof['witness_scale']
@@ -213,7 +225,11 @@ def verify_compiled(result,*,work_limit=100000):
         scaled=P.scale(outer,scale**d)
         if any(c.denominator!=1 for c in scaled): return False
         child=proof['outer_result']
-        if child['degree']!=d or tuple(child['coefficients'])!=tuple(map(int,scaled)) or child['status']!='COMPLETE' or not walk(child): return False
+        if child['degree']!=d or tuple(child['coefficients'])!=tuple(map(int,scaled)) or child['status'] not in ('COMPLETE','GENERATOR') or not walk(child): return False
+        if child['status']=='GENERATOR':
+            expected={'kind':'polynomial_pullback','inner':list(reduction['inner']),'witness_scale':scale,'outer':child['generator']}
+            return node['status']=='GENERATOR' and node['points'] is None and proof['fibres']==[] and json.dumps(node['generator'],sort_keys=True)==json.dumps(expected,sort_keys=True)
+        if node['status']!='COMPLETE':return False
         inner=tuple(reduction['inner']); values=sorted({u for u,v in child['points'] if v%scale==0}); points=set()
         if [r['value'] for r in proof['fibres']]!=values: return False
         for fibre in proof['fibres']:
