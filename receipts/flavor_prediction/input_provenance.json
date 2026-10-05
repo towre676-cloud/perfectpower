@@ -1,0 +1,13 @@
+{
+  "edition": "PDG 2025 fixed reviews; CODATA2022 constants",
+  "Vus": {"source": "sources/ckm_matrix.pdf", "equation": "12.8", "value": 0.22431, "sigma": 0.00085},
+  "Vcb": {"source": "sources/ckm_matrix.pdf", "equation": "12.11", "value": 0.0411, "sigma": 0.0012, "note": "combined inclusive/exclusive value with scaled uncertainty"},
+  "Rtdts": {"source": "sources/ckm_matrix.pdf", "equation": "12.14", "value": 0.207, "errors": [0.001, 0.003], "treatment": "quadrature, Standard Model mixing extraction"},
+  "gamma": {"source": "sources/ckm_angles.pdf", "equation": "76.15", "value_degrees": 66.4, "lower68": 2.8, "upper68": 2.7, "note": "tree decay average, not CKM global-fit gamma"},
+  "Vub_heldout": {"source": "sources/ckm_matrix.pdf", "equation": "12.12", "value": 0.00382, "sigma": 0.0002},
+  "sin2beta_heldout": {"source": "sources/ckm_matrix.pdf", "equation": "12.20", "value": 0.709, "sigma": 0.011},
+  "alpha_s": {"source": "sources/qcd.pdf", "equation": "9.25", "value_at_MZ": 0.1180, "sigma": 0.0009},
+  "alpha_mpme": {"source": "sources/codata_extracted.json"},
+  "license": "PDG review source PDFs: CC BY 4.0 except where otherwise noted; credit S. Navas et al., Phys. Rev. D110 030001 (2024), 2025 update. NIST constants: US government data.",
+  "correlations": "No full cross-observable covariance supplied; independent anchor model is explicit. Quark masses and correlated global-fit CKM entries are not silently mixed into the forecast."
+}

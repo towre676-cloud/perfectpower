@@ -52,3 +52,5 @@ A valid evidence calculation must normalize the finite-model prior and sum likel
 ## Assessment
 
 The upgrade is a reproducible mathematical scaffold with explicit physical responsibilities. PerfectPower's strength here is complete finite candidate handling, arithmetic structure and recovery of all admissible outcomes. It cannot turn approximate experimental mass ratios into exact polynomial power identities or create a physical mechanism from the size of a search group. The revised machinery gives the original idea a much firmer route to falsifiable testing and makes its useful combinatorics available without the original inference errors.
+
+The subsequent [real-data prediction monograph](B5_FLAVOR_PREDICTION.md) implements a shared CKM coefficient, ingests pinned physical reviews, evaluates the full lattice, and supplies actual withheld-observable predictions and comparisons.

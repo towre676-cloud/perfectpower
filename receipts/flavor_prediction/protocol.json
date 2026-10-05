@@ -1,0 +1,58 @@
+{
+  "status": "retrospective withheld-observable experiment; measurements already known to author",
+  "training": [
+    "Vus",
+    "Vcb",
+    "Rtdts",
+    "gamma"
+  ],
+  "heldout": [
+    "Vub",
+    "sin2beta"
+  ],
+  "basis": [
+    "alpha(0) CODATA2022",
+    "alpha_s(MZ) PDG2025",
+    "pi",
+    "phi",
+    "proton/electron CODATA2022"
+  ],
+  "physics_hypothesis": "s13 = C s12 s23; C is an independently labeled B5 monomial; delta/pi is a finite rational",
+  "exponent_numerators": [
+    -2,
+    -1,
+    1,
+    2
+  ],
+  "exponent_denominators": [
+    1,
+    2,
+    3,
+    5,
+    12
+  ],
+  "support_max": 3,
+  "phase_denominators": [
+    3,
+    4,
+    5,
+    12,
+    18,
+    30
+  ],
+  "prior": "normalized exp(-.8 support-.15 sum(log reduced denominator)); condition C<=2 at reference anchor",
+  "error_model": "independent Gaussian anchors; split-normal gamma; no published full covariance supplied",
+  "model_scope": "phenomenological discrete CKM prior; not a derivation of Yukawa matrices",
+  "no_tuning_to_heldout": true,
+  "baselines": [
+    "smooth C uniform(0,2) with same phase alphabet",
+    "historical C=5/13, delta=2pi/5"
+  ],
+  "sensitivity": [
+    "flat exponents prior",
+    "stronger support penalty",
+    "omit phi",
+    "phase denominators enlarged",
+    "Hermite order3 vs5"
+  ]
+}

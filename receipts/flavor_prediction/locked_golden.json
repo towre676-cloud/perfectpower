@@ -1,0 +1,108 @@
+{
+  "best_reference_MAP": {
+    "chi2": 0.3208895999168097,
+    "coefficient": 0.3819660112501051,
+    "phase_pi": "11/30",
+    "predictions": {
+      "J": 2.8877773923489935e-05,
+      "Rtdts": 0.2087233187384513,
+      "Vub": 0.0035214421827599357,
+      "gamma": 65.96706845402693,
+      "sin2beta": 0.6908883115837059
+    }
+  },
+  "coefficient_posterior_top10": [
+    {
+      "coefficient": 0.3819660112501051,
+      "probability": 1.0
+    }
+  ],
+  "conditional_evidence_without_common_density_normalizers": 0.8319965164659557,
+  "effective_sample_size": 257310.7632603996,
+  "exponent_domain_count": 1,
+  "maximum_single_formula_probability": 1.0,
+  "method": "direct Gaussian nuisance sampling and training likelihood weighting; fixed nominated formula",
+  "model": "locked",
+  "phase_count": 1,
+  "phase_posterior": [
+    {
+      "degrees": 66.0,
+      "pi": "11/30",
+      "probability": 1.0
+    }
+  ],
+  "posterior_samples": 262144,
+  "predictions": {
+    "J": {
+      "credible68": [
+        2.718601650674018e-05,
+        3.0565491814432824e-05
+      ],
+      "credible95": [
+        2.5622288286716896e-05,
+        3.228477421614282e-05
+      ],
+      "mean": 2.887556738004688e-05,
+      "median": 2.8848292989121655e-05
+    },
+    "Rtdts": {
+      "credible68": [
+        0.20782596029124656,
+        0.20940613740539385
+      ],
+      "credible95": [
+        0.2070525494714351,
+        0.21018129376933353
+      ],
+      "mean": 0.20861548299486388,
+      "median": 0.20861452862785534
+    },
+    "Vub": {
+      "credible68": [
+        0.0034166069748876554,
+        0.003622958635265004
+      ],
+      "credible95": [
+        0.0033167386222312987,
+        0.0037236490720564275
+      ],
+      "mean": 0.0035197435624787013,
+      "median": 0.0035196133515071532
+    },
+    "gamma": {
+      "credible68": [
+        65.96512148725873,
+        65.96895510593951
+      ],
+      "credible95": [
+        65.9631834479174,
+        65.97073394521406
+      ],
+      "mean": 65.96703830488784,
+      "median": 65.96706558727368
+    },
+    "sin2beta": {
+      "credible68": [
+        0.6907887249044941,
+        0.6910191806063306
+      ],
+      "credible95": [
+        0.6906755103604214,
+        0.6911313306496153
+      ],
+      "mean": 0.6909039389701156,
+      "median": 0.6909043928723497
+    }
+  },
+  "prior": {
+    "denominator_penalty": 0.15,
+    "omit_phi": false,
+    "support_penalty": 0.8
+  },
+  "quadrature_nodes": 0,
+  "quadrature_order": 1,
+  "reference_physical_count": 1,
+  "seed": 5052026,
+  "structural_candidates": 1,
+  "training_hash": "a48af059ba9984bb47c07edba51b815666f71981316e6a0f3457e7fc43568c64"
+}
