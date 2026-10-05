@@ -50,3 +50,5 @@ The [formal audit](FORMAL_AUDIT.md), [certificate format](CERTIFICATE_FORMAT.md)
 Read [the history](HISTORY.md), [Hilbert's tenth problem](HILBERT10.md), [research notes](RESEARCH_NOTES.md), or [related work](RELATED_WORK.md) for context. The [open-front checkpoint](OPEN_FRONTS.md) tracks implementation obligations; [open problems](OPEN_PROBLEMS.md) and the [frontier plan](FRONTIER_PLAN.md) describe the broader mathematical questions. Detailed monographs retain their experiments, corrections, and provenance.
 
 [Arithmetic simplifier: partial results, system composition, pullbacks and Lean laws](ARITHMETIC_SIMPLIFIER_MONOGRAPH.md).
+
+[Gamma arithmetic: factorial languages, valuations, hypergeometric transport and Lean](GAMMA_ARITHMETIC_MONOGRAPH.md).

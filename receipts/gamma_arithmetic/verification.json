@@ -1,0 +1,62 @@
+{
+  "base_commit": "e51bedaec26311c01e3f23d486276d7f8192a2f8",
+  "parallel_integral_push_preserved": true,
+  "lean": {
+    "compiled_theorems": 20,
+    "standard_axioms_only": true,
+    "names": [
+      "PerfectPower.GammaArithmetic.gamma_factorial",
+      "PerfectPower.GammaArithmetic.gamma_fixed_shift",
+      "PerfectPower.GammaArithmetic.gamma_three_polynomial",
+      "PerfectPower.GammaArithmetic.central_prime_once",
+      "PerfectPower.GammaArithmetic.central_not_power",
+      "PerfectPower.GammaArithmetic.central_not_int_power",
+      "PerfectPower.GammaArithmetic.central_gamma",
+      "PerfectPower.GammaArithmetic.central_gamma_not_int_power",
+      "PerfectPower.GammaArithmetic.binomial_denominator",
+      "PerfectPower.GammaArithmetic.binomial_polynomial",
+      "PerfectPower.GammaArithmetic.factorial_step",
+      "PerfectPower.GammaArithmetic.prime_exponent_obstruction",
+      "PerfectPower.GammaArithmetic.legendre_sum",
+      "PerfectPower.GammaArithmetic.recurrence_unique",
+      "PerfectPower.GammaArithmetic.delta_periodic",
+      "PerfectPower.HypergeometricTransport.generating_equation",
+      "PerfectPower.IntegralOutputTransport.quotient_words",
+      "PerfectPower.IntegralOutputTransport.all_outputs",
+      "PerfectPower.IntegralOutputTransport.output_fibre",
+      "PerfectPower.IntegralOutputTransport.diagonal_integer_image"
+    ],
+    "full_historical_build": false
+  },
+  "python": {
+    "tests_run": 763,
+    "passed": 759,
+    "skipped": 4,
+    "focused_tests": 21
+  },
+  "cold_archive": {
+    "focused_tests": 21,
+    "independent_decision_checks": 1404,
+    "families": 52
+  },
+  "independent_corpus": {
+    "source": "https://arxiv.org/html/0709.1977v1",
+    "source_sha256": "355e0ef464daaa42c44b7b0c5deadaf1256dcdb5a4a11175d6215954280cc733",
+    "landau_cells": 1314,
+    "hypergeometric_families": 52,
+    "n1000_square_obstructions": 52
+  },
+  "sources": {
+    "PerfectPower/GammaArithmetic.lean": "e44528f2976dd2750489f50ddd5910b4f3ef9cd36aa1a53630ae27bddbcb0fe7",
+    "PerfectPower/HypergeometricTransport.lean": "2c932e1d6c7ebc9fcd2712d7a9eea9a25432e74486437f93c9d1dd43418ff097",
+    "PerfectPower/IntegralOutputTransport.lean": "099edadf306b5c75c6894d1e70ca82a6592e4ecf4d729e9ea9bb3ae97e95cf16",
+    "audit/GammaArithmetic.lean": "e7bd1e74c5556b5dfc6061374592423b982ccd783a2a477815962977005db14b",
+    "python/perfectpower/gamma_arithmetic.py": "a454498826f0f8059aad09f7989fe3e7c91db8785654bd5af291d64edc0051e2",
+    "python/tests/test_gamma_arithmetic.py": "64d5a91c1d777160e3c4a7b2bc2dc5fef51077ead52373be4d438490d513ee65",
+    "data/gamma_bober52.json": "9c2968e4d465a0bf9ff8b72185e3f8080255af745ff3e86ded44411df94eedcb",
+    "python/ingest_gamma_corpus.py": "7df163f41e0ea9b7be7f18fe5ed1ad6dd2896f099fbe764d9dce7b0ebed1bfb6",
+    "python/benchmark_gamma.py": "b1fdd528aca401e32110337e325084cb7bc5a0954707568fe0bc78f4e996609b",
+    "scripts/check_gamma_arithmetic.sh": "b431f01c92e1e6ac89f4213f92d8df8cb89f3cf4a408b97a27142b42ba569ee6"
+  },
+  "scope": "exact Python compiler and reusable Lean mathematics; full Landau equivalence, unit algorithm correctness and analytic error bounds remain open"
+}

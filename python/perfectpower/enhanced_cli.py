@@ -10,6 +10,20 @@ def add_commands(sub):
     p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--word',type=json.loads,default=[])
     p.add_argument('--order',choices=('execution','written'),default='execution');p.add_argument('--observations',type=json.loads)
     p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('gamma-analyze',help='exact Gamma/product normalization, factorial valuations and hypergeometric transport')
+    p.add_argument('--spec',type=json.loads,required=True);p.add_argument('--d',type=int,default=2)
+    p.add_argument('--n',type=int);p.add_argument('--interval',type=json.loads)
+    p.add_argument('--complete',action='store_true');p.add_argument('--work-limit',type=int,default=100000)
+    p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('gamma-unit',help='factorial-ratio valuation and stripped-unit power obstruction')
+    p.add_argument('--numerator',type=json.loads,required=True);p.add_argument('--denominator',type=json.loads,required=True)
+    p.add_argument('--n',type=int,required=True);p.add_argument('--d',type=int,default=2)
+    p.add_argument('--prime',type=int,required=True);p.add_argument('--depth',type=int,default=3)
+    p.add_argument('--work-limit',type=int,default=100000)
+    p=sub.add_parser('beta-period',help='exact symbolic Beta/Gamma reference for a symmetric branch integral')
+    p.add_argument('--m',type=int,required=True)
+    p=sub.add_parser('finite-mellin',help='exact integer Mellin value of a finite positive hit set')
+    p.add_argument('--indices',type=json.loads,required=True);p.add_argument('--s',type=int,required=True)
     p=sub.add_parser('witness-resolvent',help='certify the rational generating functions of exact matrix outputs')
     p.add_argument('--matrix',type=json.loads,required=True);p.add_argument('--seed',type=json.loads,required=True)
     p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--index',type=int,default=100)
@@ -72,6 +86,19 @@ def dispatch(args):
         result['output']=integral_word_output(result,args.word,order=args.order)
         if args.observations is not None:result['observation_fibre']=observation_fibre(result,args.observations)
         if args.verify:result['certificate_replay']=verify_integral_machine(result)
+    elif args.command=='gamma-analyze':
+        from .gamma_arithmetic import analyze_gamma,verify_gamma
+        result=analyze_gamma(args.spec,args.d,n=args.n,interval=args.interval,complete=args.complete,work_limit=args.work_limit)
+        if args.verify:result['certificate_replay']=verify_gamma(result)
+    elif args.command=='gamma-unit':
+        from .gamma_arithmetic import local_factorial_obstruction
+        result=local_factorial_obstruction(args.n,args.numerator,args.denominator,args.d,args.prime,args.depth,work_limit=args.work_limit)
+    elif args.command=='beta-period':
+        from .gamma_arithmetic import beta_period
+        result=beta_period(args.m)
+    elif args.command=='finite-mellin':
+        from .gamma_arithmetic import finite_mellin
+        result=finite_mellin(args.indices,args.s)
     elif args.command=='witness-resolvent':
         from .witness_resolvent import subsequence_resolvent,verify_resolvent,resolvent_value
         result=subsequence_resolvent(args.matrix,args.seed,args.readouts,offset=args.offset,step=args.step)

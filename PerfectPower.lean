@@ -362,3 +362,6 @@ import PerfectPower.PaddedPrincipalMinor
 import PerfectPower.ArithmeticSimplifier
 import PerfectPower.WoodburyRepair
 import PerfectPower.WitnessResolvent
+import PerfectPower.GammaArithmetic
+import PerfectPower.HypergeometricTransport
+import PerfectPower.IntegralOutputTransport

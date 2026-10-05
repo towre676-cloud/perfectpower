@@ -116,6 +116,11 @@ class ArithmeticEngine:
         from .simplifier import analyze_power
         return analyze_power(coefficients,degree,interval=interval,work_limit=self.work_limit)
 
+    def analyze_gamma(self,spec,degree=2,*,n=None,interval=None,complete=False):
+        """Exact special-function input compiler, retaining domains and images."""
+        from .gamma_arithmetic import analyze_gamma
+        return analyze_gamma(spec,degree,n=n,interval=interval,complete=complete,work_limit=self.work_limit)
+
     def _leaf(self,f,d):
         key=(f,d)
         if key in self._cache:

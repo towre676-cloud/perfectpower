@@ -1,0 +1,24 @@
+import PerfectPower.GammaArithmetic
+import PerfectPower.HypergeometricTransport
+import PerfectPower.IntegralOutputTransport
+
+#print axioms PerfectPower.GammaArithmetic.gamma_factorial
+#print axioms PerfectPower.GammaArithmetic.gamma_fixed_shift
+#print axioms PerfectPower.GammaArithmetic.gamma_three_polynomial
+#print axioms PerfectPower.GammaArithmetic.central_prime_once
+#print axioms PerfectPower.GammaArithmetic.central_not_power
+#print axioms PerfectPower.GammaArithmetic.central_not_int_power
+#print axioms PerfectPower.GammaArithmetic.central_gamma
+#print axioms PerfectPower.GammaArithmetic.central_gamma_not_int_power
+#print axioms PerfectPower.GammaArithmetic.binomial_denominator
+#print axioms PerfectPower.GammaArithmetic.binomial_polynomial
+#print axioms PerfectPower.GammaArithmetic.factorial_step
+#print axioms PerfectPower.GammaArithmetic.prime_exponent_obstruction
+#print axioms PerfectPower.GammaArithmetic.legendre_sum
+#print axioms PerfectPower.GammaArithmetic.recurrence_unique
+#print axioms PerfectPower.GammaArithmetic.delta_periodic
+#print axioms PerfectPower.HypergeometricTransport.generating_equation
+#print axioms PerfectPower.IntegralOutputTransport.quotient_words
+#print axioms PerfectPower.IntegralOutputTransport.all_outputs
+#print axioms PerfectPower.IntegralOutputTransport.output_fibre
+#print axioms PerfectPower.IntegralOutputTransport.diagonal_integer_image

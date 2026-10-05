@@ -2,7 +2,7 @@
 
 **Exact integer arithmetic, complete solution families, and Lean proof support.**
 
-PerfectPower answers questions such as “when is this polynomial a square?” and “which integers satisfy this arithmetic constraint?” For supported equations, it replaces a candidate-by-candidate search with a complete finite answer or an exact generator of an infinite family. Results describe their mathematical justification and any remaining assumptions.
+PerfectPower answers questions such as “when is this polynomial a square?” and “which integers satisfy this arithmetic constraint?” For supported equations, it replaces a candidate-by-candidate search with a complete finite answer or an exact generator of an infinite family. When global solving remains unresolved, it can still return necessary congruences, a smaller equivalent problem, or a complete bounded answer. Results describe their mathematical justification and any remaining assumptions.
 
 The core combines a Python constraint compiler with a Lean 4 library. It handles polynomial perfect powers, Pell equations, selected Mordell curves, effective quartic and Runge families, and exact changes of integer coordinates. Related modules provide integer lattice solving and optimization, operator algebras, sequence comparisons, and branched-curve geometry.
 
@@ -46,6 +46,8 @@ See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRA
 | Compile polynomial power, triangular-number, and quadratic-root constraints | `solve`, `prove` | [Constraint compiler](docs/CONSTRAINT_COMPILER.md) |
 | Classify and count perfect-power hits; generate Pell and radical families | `classify`, `count`, `enumerate` | [Mathematical overview](docs/MONOGRAPH.md) |
 | Solve supported polynomial equations over all integers | `exact-solve`, `square-fibres`, `integer-roots` | [Arithmetic engine](docs/ENHANCED_MACHINERY_MONOGRAPH.md), [roots and search bounds](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
+| Compile Gamma shifts, factorials and binomial inputs; test factorial-ratio powers and derive exact hypergeometric recurrences | `gamma-analyze`, `gamma-unit` | [Gamma arithmetic](docs/GAMMA_ARITHMETIC_MONOGRAPH.md) |
+| Compose arithmetic reductions and recover original models; retain partial and bounded information | `simplify-query`, `analyze-power`, `polynomial-pullback` | [Arithmetic simplifier](docs/ARITHMETIC_SIMPLIFIER_MONOGRAPH.md) |
 | Search a bounded power range using factored local filters | `factored-scan` | [Local arithmetic filters](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md) |
 | Solve exact integer linear systems and find every tied nearest lattice point | `integer-lift`, `nearest-lift` | [Integer coordinates](docs/INTEGER_LIFTING_MONOGRAPH.md), [optimization](docs/ENHANCED_MACHINERY_MONOGRAPH.md) |
 | Analyze operators and share exact state machines across recurrence models | `recurrence-batch`, `observable-machine`, `integral-machine`, `operator-algebra` | [Shared output machines](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md), [integer states and congruences](docs/INTEGRAL_OUTPUT_MACHINES.md), [operator algebras](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
@@ -71,7 +73,7 @@ Constraint plans expose an `answer` describing what a caller can use:
 <a id="what-to-trust-at-a-glance"></a>
 **A complete mathematical answer and a formally verified program are separate guarantees.** Inspect the result's certificate for the theorem names, premises, domain, and reduction steps. Lean checks the statements of compiled theorems. Python discovers and executes plans and can replay exact certificates, but its execution is not formally verified. Emitted Lean source becomes a checked theorem only after compilation.
 
-Some modules return bounded evidence or numerical approximations. A finite scan does not establish completeness, and a numerical period matrix does not certify analytic error bounds. General polynomial integer solving remains outside the supported scope. The [trust boundary](docs/TRUST_BOUNDARY.md), [certificate format](docs/CERTIFICATE_FORMAT.md), and each module's guide describe the precise guarantees.
+Some modules return bounded evidence or numerical approximations. A bounded scan does not establish global completeness, and a numerical period matrix does not certify analytic error bounds. General polynomial integer solving remains outside the supported scope. The [trust boundary](docs/TRUST_BOUNDARY.md), [certificate format](docs/CERTIFICATE_FORMAT.md), and each module's guide describe the precise guarantees.
 
 ## Build and develop
 

@@ -47,3 +47,14 @@ question scopes and eight Lean composition laws are implemented. See
 [the monograph](ARITHMETIC_SIMPLIFIER_MONOGRAPH.md) for APIs, evidence and remaining
 compiler/formalization obligations. General decomposition discovery, coefficient-bearing
 infinite monomial parameterizations and whole-compiler kernel proof emission remain open.
+
+## Gamma arithmetic checkpoint
+
+Fixed-shift/product/binomial normalization, natural-index factorial ratios,
+Landau step certificates, valuation/unit obstructions and exact hypergeometric
+transport are integrated. The 52 independently sourced Bober families pass the
+exact corpus. Lean now closes the whole central-binomial non-power family and
+reusable Gamma, recurrence and integral-output transport statements. See
+[GAMMA_ARITHMETIC_MONOGRAPH.md](GAMMA_ARITHMETIC_MONOGRAPH.md). General Landau
+criterion equivalence, factorial-unit algorithm correctness, controlled complex
+Gamma evaluation and infinite Pell Mellin/heat error bounds remain open.
