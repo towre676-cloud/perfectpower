@@ -1,0 +1,367 @@
+{
+  "certificates": [
+    {
+      "column_dual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "cost": [
+        [
+          "0",
+          "3",
+          "6"
+        ],
+        [
+          "5",
+          "0",
+          "2"
+        ],
+        [
+          "4",
+          "7",
+          "0"
+        ]
+      ],
+      "optimum": "0",
+      "proof": "For every doubly stochastic B, E=sum alpha+sum beta+sum reduced_ij B_ij >= optimum. A winning permutation is unitary and attains the bound.",
+      "reduced_cost": [
+        [
+          "0",
+          "3",
+          "6"
+        ],
+        [
+          "5",
+          "0",
+          "2"
+        ],
+        [
+          "4",
+          "7",
+          "0"
+        ]
+      ],
+      "row_dual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "scope": "Exact global orientation result only on fixed-norm orthogonal frames. Degenerate costs can leave mixed and CP-violating flat directions; those are not uniquely selected predictions.",
+      "winning_permutations": [
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "column_dual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "cost": [
+        [
+          "4",
+          "0",
+          "3"
+        ],
+        [
+          "0",
+          "6",
+          "1"
+        ],
+        [
+          "2",
+          "5",
+          "0"
+        ]
+      ],
+      "optimum": "0",
+      "proof": "For every doubly stochastic B, E=sum alpha+sum beta+sum reduced_ij B_ij >= optimum. A winning permutation is unitary and attains the bound.",
+      "reduced_cost": [
+        [
+          "4",
+          "0",
+          "3"
+        ],
+        [
+          "0",
+          "6",
+          "1"
+        ],
+        [
+          "2",
+          "5",
+          "0"
+        ]
+      ],
+      "row_dual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "scope": "Exact global orientation result only on fixed-norm orthogonal frames. Degenerate costs can leave mixed and CP-violating flat directions; those are not uniquely selected predictions.",
+      "winning_permutations": [
+        [
+          1,
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "column_dual": [
+        "-3",
+        "-5",
+        "-2"
+      ],
+      "cost": [
+        [
+          "-3",
+          "4",
+          "8"
+        ],
+        [
+          "2",
+          "-5",
+          "1"
+        ],
+        [
+          "7",
+          "3",
+          "-2"
+        ]
+      ],
+      "optimum": "-10",
+      "proof": "For every doubly stochastic B, E=sum alpha+sum beta+sum reduced_ij B_ij >= optimum. A winning permutation is unitary and attains the bound.",
+      "reduced_cost": [
+        [
+          "0",
+          "9",
+          "10"
+        ],
+        [
+          "5",
+          "0",
+          "3"
+        ],
+        [
+          "10",
+          "8",
+          "0"
+        ]
+      ],
+      "row_dual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "scope": "Exact global orientation result only on fixed-norm orthogonal frames. Degenerate costs can leave mixed and CP-violating flat directions; those are not uniquely selected predictions.",
+      "winning_permutations": [
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "column_dual": [
+        "1",
+        "1",
+        "1"
+      ],
+      "cost": [
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "optimum": "3",
+      "proof": "For every doubly stochastic B, E=sum alpha+sum beta+sum reduced_ij B_ij >= optimum. A winning permutation is unitary and attains the bound.",
+      "reduced_cost": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "row_dual": [
+        "0",
+        "0",
+        "0"
+      ],
+      "scope": "Exact global orientation result only on fixed-norm orthogonal frames. Degenerate costs can leave mixed and CP-violating flat directions; those are not uniquely selected predictions.",
+      "winning_permutations": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ]
+    }
+  ],
+  "degree_eight_capability_example": {
+    "B": [
+      [
+        0.3333333333333334,
+        0.3333333333333334,
+        0.3333333333333334
+      ],
+      [
+        0.3333333333333334,
+        0.3333333333333334,
+        0.3333333333333333
+      ],
+      [
+        0.3333333333333334,
+        0.3333333333333333,
+        0.3333333333333333
+      ]
+    ],
+    "CKM_magnitudes": "all 1/sqrt(3)",
+    "J": 0.09622504486493769,
+    "J_absolute_exact": "1/(6*sqrt(3))",
+    "golden_hierarchical_solution": false,
+    "interaction": "sum_ij |U_i^dagger D_j|^4 / Lambda^4, equal fixed norms",
+    "minimum_sum_B_squared": "1",
+    "proof": "Each normalized row obeys sum_j B_ij^2 >= 1/3. Equality requires B_ij=1/3; the Fourier matrix is unitary and attains it.",
+    "scalar_degree": 8,
+    "scope": "Shows a CP-even higher-degree orientation potential can select nonzero |J| with conjugate CP partners. Other degree-eight invariants have independent coefficients under the declared symmetry; no UV generation of this coefficient pattern is supplied."
+  },
+  "golden_observable_target": {
+    "CP_phase_not_fixed": true,
+    "branches": "p,q,r>0; r<1; C=sqrt(r)*(1-r)/sqrt(p*q)<1 selects phi^-2 rather than phi^2.",
+    "coefficients": [
+      {
+        "coefficient": 1,
+        "powers": [
+          0,
+          0,
+          2
+        ]
+      },
+      {
+        "coefficient": -4,
+        "powers": [
+          0,
+          0,
+          3
+        ]
+      },
+      {
+        "coefficient": 6,
+        "powers": [
+          0,
+          0,
+          4
+        ]
+      },
+      {
+        "coefficient": -4,
+        "powers": [
+          0,
+          0,
+          5
+        ]
+      },
+      {
+        "coefficient": 1,
+        "powers": [
+          0,
+          0,
+          6
+        ]
+      },
+      {
+        "coefficient": -7,
+        "powers": [
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "coefficient": 14,
+        "powers": [
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "coefficient": -7,
+        "powers": [
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "coefficient": 1,
+        "powers": [
+          2,
+          2,
+          0
+        ]
+      }
+    ],
+    "equation": "[r(1-r)^2]^2 - 7*p*q*r(1-r)^2 + (p*q)^2 = 0",
+    "formal_max_scalar_degree_of_raw_overlap_expression": 24,
+    "scope": "Observable target, not an independently derived scalar interaction. Squaring this expression into an energy term would encode the desired relation by construction.",
+    "variables": [
+      "p",
+      "q",
+      "r"
+    ]
+  }
+}

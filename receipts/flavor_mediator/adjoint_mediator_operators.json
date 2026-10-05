@@ -1,0 +1,1667 @@
+{
+  "adjoint_terms": "Both Sigma and its conjugate have independent up/down mediator couplings.",
+  "count": 82,
+  "fermions": [
+    {
+      "color_triality": 1,
+      "flavor": -1,
+      "hypercharge_sixths": 1,
+      "name": "Q",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 2
+    },
+    {
+      "color_triality": 1,
+      "flavor": -1,
+      "hypercharge_sixths": 4,
+      "name": "X_u",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 1,
+      "hypercharge_sixths": -4,
+      "name": "Xc_u",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 0,
+      "hypercharge_sixths": -4,
+      "name": "u1c",
+      "phase_charges": [
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 0,
+      "hypercharge_sixths": -4,
+      "name": "u2c",
+      "phase_charges": [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 0,
+      "hypercharge_sixths": -4,
+      "name": "u3c",
+      "phase_charges": [
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 1,
+      "flavor": -1,
+      "hypercharge_sixths": -2,
+      "name": "X_d",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 1,
+      "hypercharge_sixths": 2,
+      "name": "Xc_d",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 0,
+      "hypercharge_sixths": 2,
+      "name": "d1c",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 0,
+      "hypercharge_sixths": 2,
+      "name": "d2c",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": -1,
+      "flavor": 0,
+      "hypercharge_sixths": 2,
+      "name": "d3c",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "weak_dimension": 1
+    }
+  ],
+  "heavy_color_triplet_Dirac_species": 6,
+  "independent_real_coefficients": true,
+  "matching_interactions": "M_f X_f.X_f^c + h_f Q.H_f.X_f^c + sum_i lambda_fi X_f.F_fi.f_i^c + h.c.",
+  "neutral_terms": "Every declared neutral scalar and its conjugate can enter a flavor-universal mediator mass with an independent real CP-even coefficient.",
+  "operators": [
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "Q",
+        "Xc_u",
+        "H"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "Q",
+        "Xc_d",
+        "H_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 1,
+      "fields": [
+        "X_u",
+        "Xc_u"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z1"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z1_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z2"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z2_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z3"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z3_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z4"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z4_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z5"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z5_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z6"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z6_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z7"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z7_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z8"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z8_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z9"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z9_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z10"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z10_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z11"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z11_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z12"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z12_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z13"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z13_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z14"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z14_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z15"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z15_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z16"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Z16_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "T"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "T_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Sigma"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "Xc_u",
+        "Sigma_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "u1c",
+        "F_u1"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "u2c",
+        "F_u2"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_u",
+        "u3c",
+        "F_u3"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 1,
+      "fields": [
+        "X_d",
+        "Xc_d"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z1"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z1_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z2"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z2_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z3"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z3_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z4"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z4_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z5"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z5_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z6"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z6_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z7"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z7_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z8"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z8_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z9"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z9_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z10"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z10_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z11"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z11_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z12"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z12_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z13"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z13_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z14"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z14_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z15"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z15_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z16"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Z16_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "T"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "T_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Sigma"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "Xc_d",
+        "Sigma_conjugate"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "d1c",
+        "F_d1"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "d2c",
+        "F_d2"
+      ],
+      "flavor_contraction_multiplicity": 1
+    },
+    {
+      "coefficient_dimension": 0,
+      "fields": [
+        "X_d",
+        "d3c",
+        "F_d3"
+      ],
+      "flavor_contraction_multiplicity": 1
+    }
+  ],
+  "scalars": [
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 3,
+      "name": "H",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 2
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": -3,
+      "name": "H_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 2
+    },
+    {
+      "color_triality": 0,
+      "flavor": 1,
+      "hypercharge_sixths": 0,
+      "name": "F_u1",
+      "phase_charges": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": -1,
+      "hypercharge_sixths": 0,
+      "name": "F_u1_conjugate",
+      "phase_charges": [
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 1,
+      "hypercharge_sixths": 0,
+      "name": "F_u2",
+      "phase_charges": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": -1,
+      "hypercharge_sixths": 0,
+      "name": "F_u2_conjugate",
+      "phase_charges": [
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 1,
+      "hypercharge_sixths": 0,
+      "name": "F_u3",
+      "phase_charges": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": -1,
+      "hypercharge_sixths": 0,
+      "name": "F_u3_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 1,
+      "hypercharge_sixths": 0,
+      "name": "F_d1",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": -1,
+      "hypercharge_sixths": 0,
+      "name": "F_d1_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        -1,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 1,
+      "hypercharge_sixths": 0,
+      "name": "F_d2",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": -1,
+      "hypercharge_sixths": 0,
+      "name": "F_d2_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 1,
+      "hypercharge_sixths": 0,
+      "name": "F_d3",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": -1,
+      "hypercharge_sixths": 0,
+      "name": "F_d3_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z1",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z1_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z2",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z2_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z3",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z3_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z4",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z4_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z5",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z5_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z6",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z6_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z7",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z7_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z8",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z8_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z9",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z9_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z10",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z10_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z11",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z11_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z12",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z12_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z13",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z13_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z14",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z14_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z15",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z15_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z16",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "Z16_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "T",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 0,
+      "hypercharge_sixths": 0,
+      "name": "T_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 8,
+      "hypercharge_sixths": 0,
+      "name": "Sigma",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    },
+    {
+      "color_triality": 0,
+      "flavor": 8,
+      "hypercharge_sixths": 0,
+      "name": "Sigma_conjugate",
+      "phase_charges": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weak_dimension": 1
+    }
+  ],
+  "scope": "Complete stated two-fermion mass/Yukawa sector only. Ordinary non-SUSY Weyl notation, one SM Higgs plus its conjugate. No lepton, baryon-violating or gauged flavor completion; the 34-field singlet driving sector is not included as a unified theory.",
+  "symmetry": "SM gauge x global SU(3)_F x U(1)^6 x CP"
+}

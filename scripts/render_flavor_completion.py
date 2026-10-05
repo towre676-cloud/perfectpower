@@ -16,6 +16,7 @@ from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/B5_FLAVOR_COMPLETION.md'
+SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md']
 DEST=ROOT/'output/pdf/B5_Protected_Flavor_Monograph.pdf'
 
 EQUATIONS={
@@ -26,7 +27,10 @@ EQUATIONS={
  'A holomorphic golden-coefficient extension':r'$T=2-z^4-z^6+z^{14},\qquad T^2-3T+1=0$',
  'Full-circuit leading quantum calculation':r'$A=J^{\dagger}J,\qquad B=\sum_k\overline{F_k}\,H_k$',
  'A derived texture counterexample':r'$V_{\rm CKM}=U_u^{\dagger}U_d,\qquad U_f^{\dagger}Y_fY_f^{\dagger}U_f={\rm diag}(y_f^2)$',
- 'Scale evolution as a separate matching test':r'$16\pi^2\,\frac{dY_u}{d\log\mu}=\left[\frac{3}{2}(H_u-H_d)+\alpha_u I\right]Y_u$'}
+ 'Scale evolution as a separate matching test':r'$16\pi^2\,\frac{dY_u}{d\log\mu}=\left[\frac{3}{2}(H_u-H_d)+\alpha_u I\right]Y_u$',
+ 'The exact observable target':r'$C_{\rm eff}=\frac{w(1-w^2)}{uv}=\phi^{-2}$',
+ 'Canonical tree matching without a small-flavon expansion':r'$A=M^{-1}L,\qquad K=I+A^{\dagger}A,\qquad Y=-h A K^{-1/2}$',
+ 'A rational global certificate for the orientation obstruction':r'$E=\sum_i\alpha_i+\sum_j\beta_j+\sum_{ij}R_{ij}B_{ij}\geq E_{\rm permutation}$'}
 
 
 def equation_image(expression):
@@ -48,14 +52,18 @@ def main():
     heading=ParagraphStyle('ReaderHeading',fontName='SansBold',fontSize=13.3,leading=17,spaceBefore=15,spaceAfter=9,textColor=HexColor('#123d58'),keepWithNext=True)
     title=ParagraphStyle('ReaderTitle',fontName='SansBold',fontSize=27,leading=34,textColor=HexColor('#123d58'),spaceAfter=20)
     subtitle=ParagraphStyle('ReaderSubtitle',fontName='Sans',fontSize=13.3,leading=20,textColor=HexColor('#43586b'),spaceAfter=15)
-    story=[Spacer(1,68),Paragraph('Protected equations,<br/>selected vacua and a<br/>quark-operator obstruction',title),
-        Paragraph('An explicit 34-field singlet construction, complete declared operator spaces and leading quantum corrections',subtitle),
+    story=[Spacer(1,68),Paragraph('Protected vacua,<br/>shared mediators and<br/>the alignment boundary',title),
+        Paragraph('Singlet vacuum dynamics, canonical quark matching and explicit limits on flavor alignment',subtitle),
         Spacer(1,25),Paragraph('PerfectPower research monograph<br/>5 October 2026',subtitle),Spacer(1,25),
         Paragraph('The selected model admits controlled vacua near +/-66 degrees. Its initialized equations receive perturbative supersymmetric protection; its energy selection, physical coefficient readout and quark couplings remain separately specified interactions.',body),
         Paragraph('Exact rational results and numerical scenario results are distinguished throughout. The worked construction is conditional and does not claim an independently derived theory of flavor.',body),PageBreak()]
-    text=SOURCE.read_text()
+    text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in SOURCES)
     for block in text.split('\n\n'):
         block=block.strip()
+        if block=='CHAPTER_BREAK':
+            story.append(PageBreak())
+            story.append(Paragraph('Shared mediators and the alignment boundary',title))
+            continue
         if not block or block.startswith('# '):continue
         if block.startswith('## '):
             label=block[3:].strip()
@@ -80,7 +88,7 @@ def main():
             canvas.setFont('Sans',7.5);canvas.drawString(58,806,'Exact equations, declared interactions, computed departures')
         canvas.restoreState()
     doc=SimpleDocTemplate(str(DEST),pagesize=(595.28,841.89),leftMargin=58,rightMargin=58,topMargin=54,bottomMargin=62,
-        title='Protected equations, selected vacua and a quark-operator obstruction',author='PerfectPower research')
+        title='Protected vacua, shared mediators and the alignment boundary',author='PerfectPower research')
     doc.build(story,onFirstPage=furniture,onLaterPages=furniture)
     print(DEST)
 
