@@ -1,0 +1,124 @@
+{
+  "generic_fourier": [
+    {
+      "Vub68_given_valid_chart": [
+        0.003508990554261173,
+        0.003532768604452102
+      ],
+      "coefficient68": [
+        0.380615433477898,
+        0.3831945420832585
+      ],
+      "invalid_chart_fraction": 0.0,
+      "leaves_66_degree_basin_fraction": 0.0,
+      "phase_degrees68": [
+        65.99660941368045,
+        66.00308351164557
+      ],
+      "relative_rms_fourier_noise": 0.0001
+    },
+    {
+      "Vub68_given_valid_chart": [
+        0.0033973974888619994,
+        0.0036353506955873623
+      ],
+      "coefficient68": [
+        0.36851136944841373,
+        0.39432119018586376
+      ],
+      "invalid_chart_fraction": 0.0,
+      "leaves_66_degree_basin_fraction": 0.0,
+      "phase_degrees68": [
+        65.96618722772773,
+        66.03098129571332
+      ],
+      "relative_rms_fourier_noise": 0.001
+    },
+    {
+      "Vub68_given_valid_chart": [
+        0.002324252846242631,
+        0.004716985848920791
+      ],
+      "coefficient68": [
+        0.2520221853591236,
+        0.5116397984943611
+      ],
+      "invalid_chart_fraction": 0.00048828125,
+      "leaves_66_degree_basin_fraction": 0.0,
+      "phase_degrees68": [
+        65.66984709000378,
+        66.32221788169684
+      ],
+      "relative_rms_fourier_noise": 0.01
+    }
+  ],
+  "linear_response": {
+    "angular_curvature": 12.209242420836944,
+    "coefficient_derivative_per_radian": 22.825356391083762,
+    "dC_depsilon": [
+      1.707886528205956,
+      2.7786401329474884,
+      -1.7331353046456037,
+      -7.437092628048861,
+      -4.673786383364909,
+      6.593238500417545,
+      12.800628224246099,
+      3.109551454356458,
+      -13.612221403993763,
+      -16.19047095942327,
+      2.1495923164956765,
+      21.336167979219876
+    ],
+    "dtheta_depsilon_radians": [
+      0.07482409032058336,
+      0.12173479727277794,
+      -0.07593026259702197,
+      -0.32582591485642703,
+      -0.2047629094278074,
+      0.28885588410759944,
+      0.5608073760130374,
+      0.1362323286908737,
+      -0.5963640247611243,
+      -0.7093195252691753,
+      0.09417562992950107,
+      0.9347572766729897
+    ],
+    "fourier_coefficients": [
+      "11/12",
+      "0",
+      "1",
+      "2/3",
+      "0",
+      "2/5",
+      "0",
+      "0",
+      "1/4",
+      "-2/9",
+      "0",
+      "0",
+      "-1/6"
+    ],
+    "phase_degrees": 66.00000000000006,
+    "scope": "linear response to epsilon*cos(n theta), angular EFT normalization fixed; not scalar masses"
+  },
+  "samples": 2048,
+  "scope": "hypothetical independent CP-even coupling perturbations; no asserted radiative uncertainty distribution",
+  "seed": 6052026,
+  "structured_multiplier": [
+    {
+      "relative_rms_multiplier_noise": 0.01,
+      "remains_at_66_fraction": 1.0,
+      "samples": 512
+    },
+    {
+      "relative_rms_multiplier_noise": 0.05,
+      "remains_at_66_fraction": 0.935546875,
+      "samples": 512
+    },
+    {
+      "relative_rms_multiplier_noise": 0.1,
+      "remains_at_66_fraction": 0.755859375,
+      "samples": 512
+    }
+  ]
+}

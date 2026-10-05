@@ -1,5 +1,7 @@
 # A real-data B₅ flavor prediction: the golden cyclotomic candidate
 
+The follow-up [vacuum-selection monograph](B5_FLAVOR_VACUUM.md) constructs an explicit rational CP-even potential with global minima at ±66° and a golden-coefficient portal, and measures the coupling relations and sensitivity still needing a physical explanation. It adds a conditional mechanism rather than new fit evidence.
+
 The nominated candidate is
 
 \[
