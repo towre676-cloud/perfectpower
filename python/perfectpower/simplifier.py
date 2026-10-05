@@ -228,12 +228,14 @@ def simplify_query(script, *, rounds=16, branch_limit=128):
     from .integer_projection import project_integer_query,_parse_integer_query
     from .monomial_projection import project_monomial_query
     from .finite_projection import project_finite_query
+    from .polynomial_relations import project_polynomial_query
     if any(type(n) is not int or n<1 for n in (rounds,branch_limit)):raise ValueError('positive budgets required')
     _parse_integer_query(script)
     current=script;steps=[];attempts=[]
     routes=[('square_cube',_square_cube),('coprime_power',_coprime_power),('substitution',_definition),('integer_lattice',lambda s:project_integer_query(s).smt),
             ('positive_monomial',lambda s:project_monomial_query(s,point_limit=branch_limit).smt),
-            ('finite_relation',lambda s:project_finite_query(s,branch_limit=branch_limit).smt)]
+            ('finite_relation',lambda s:project_finite_query(s,branch_limit=branch_limit).smt),
+            ('polynomial_relation',lambda s:project_polynomial_query(s,branch_limit=branch_limit).smt)]
     import re
     def size(s):return len(re.findall(r'\(declare-(?:const|fun)\s',s))
     for _ in range(rounds):
@@ -249,6 +251,17 @@ def simplify_query(script, *, rounds=16, branch_limit=128):
             current=reduced;changed=True;break
         if not changed:break
     current,necessary=_local_filters(current)
+    # One free integer coordinate permits complete Boolean sign elimination,
+    # even when no global integer-point theorem for the original curve exists.
+    try:
+        from .polynomial_domains import project_univariate_query
+        reduced=project_univariate_query(current)['smt']
+        if len(reduced)<=max(4096,4*len(current)):
+            steps.append({'method':'univariate_domain','before':current,'after':reduced,
+                          'variables_removed':0,'meaning':'pointwise integer equivalence'})
+            current=reduced
+    except ValueError:
+        pass
     return {'schema':'pp-simplifier/1','original':script,'residual':current,'steps':steps,
             'necessary':necessary,'attempts':attempts,'budgets':{'rounds':rounds,'branch_limit':branch_limit},
             'status':'REDUCED' if steps or necessary else 'UNCHANGED','execution_verified':False}
@@ -323,6 +336,8 @@ def lift_model(result,model):
         names,atoms=_parse_integer_query(step['before']);method=step['method']
         if method=='integer_lattice':
             current=project_integer_query(step['before']).lift(current)
+        elif method=='univariate_domain':
+            pass  # Same integer coordinate, now described by linear intervals.
         elif method in ('square_cube','coprime_power'):
             parameter=next(n for n in current if n not in names)
             selected=None
@@ -359,6 +374,10 @@ def lift_model(result,model):
             elif method=='finite_relation':
                 projection=project_finite_query(step['before'],branch_limit=result['budgets']['branch_limit'])
                 eliminated=projection.emission.eliminated_symbols;points=projection.emission.points
+            elif method=='polynomial_relation':
+                from .polynomial_relations import project_polynomial_query
+                projection=project_polynomial_query(step['before'],branch_limit=result['budgets']['branch_limit'])
+                eliminated=projection.eliminated_symbols;points=projection.points
             else:raise ValueError('unknown reduction method')
             candidates=[dict(current,**dict(zip(eliminated,p))) for p in points]
             current=next((m for m in candidates if all(_eval(a,m) for a in atoms)),None)

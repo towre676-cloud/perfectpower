@@ -144,9 +144,10 @@ class ArithmeticEngine:
         if len(self._cache)>self.cache_limit:self._cache.popitem(last=False)
         return leaf
 
-    def solve(self,coefficients,degree=2,*,strict=False):
+    def solve(self,coefficients,degree=2,*,strict=False,decomposition=True):
         f=integer_polynomial(coefficients);_degree(degree)
         if type(strict) is not bool:raise ValueError('strict must be boolean')
+        if type(decomposition) is not bool:raise ValueError('decomposition must be boolean')
         base={'coefficients':f,'degree':degree,'domain':'all integer x and y','execution_verified':False}
         if len(f)==1:
             r=integer_power_root(f[0],degree)
@@ -174,6 +175,10 @@ class ArithmeticEngine:
             root=tuple(c//identity.denominator for c in identity.root_numerators)
             return {**base,'status':'GENERATOR','points':None,'proof':{'kind':'exact_power','root_coefficients':root},
                 'generator':{'x':'any integer','y':'P(x) and -P(x)' if degree%2==0 else 'P(x)','root_coefficients':root}}
+        if decomposition:
+            from .polynomial_composition import PolynomialCompiler
+            composed=PolynomialCompiler(work_limit=self.work_limit,engine=self).solve(f,degree)
+            if composed['status']=='COMPLETE':return composed
         if strict:
             if budget_failure:raise WorkLimit('all supported complete leaves exceeded the candidate budget')
             raise ValueError('no supported complete finite reduction')
@@ -190,6 +195,9 @@ def verify_result(result,*,work_limit=100000):
     try:
         if result['domain']!='all integer x and y' or result['execution_verified'] is not False:return False
         f=integer_polynomial(result['coefficients']);d=result['degree'];_degree(d);proof=result['proof'];kind=proof['kind']
+        if kind in ('polynomial_composition','mordell_registry','content_power'):
+            from .polynomial_composition import verify_compiled
+            return verify_compiled(result,work_limit=work_limit)
         if kind=='constant':
             if len(f)!=1:return False
             r=integer_power_root(f[0],d)

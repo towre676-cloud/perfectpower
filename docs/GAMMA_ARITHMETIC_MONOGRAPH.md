@@ -168,3 +168,7 @@ Lean tests were skipped. The new Gamma-focused suite has 21 passing tests.
 
 A fresh extracted repository ZIP also passed the 21 focused tests and all 1,404
 independent corpus decisions.
+
+## Complete polynomial domains and optima
+
+The polynomial capacity expansion adds `gamma-domain` and `gamma-optimize` for fixed normalized expressions. They preserve the nonnegative index domain and positive normalization denominator. Comparisons accept exact rational thresholds and clear positive denominators; global optimization scales the exact numerator optimum while preserving every tie. Serialized replay checks normalization and complete domain or forward-difference evidence. These routes do not turn variable-width factorial ratios into polynomials and add no new Lean proof. See [Polynomial capacity](POLYNOMIAL_CAPACITY_MONOGRAPH.md).

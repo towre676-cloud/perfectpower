@@ -45,8 +45,14 @@ The follow-up in `docs/MONOGRAPH_LEAN_MONOGRAPH.md` proves exceptional-root fini
 The initial exact compiler, partial/bounded analysis, supplied polynomial pullbacks,
 question scopes and eight Lean composition laws are implemented. See
 [the monograph](ARITHMETIC_SIMPLIFIER_MONOGRAPH.md) for APIs, evidence and remaining
-compiler/formalization obligations. General decomposition discovery, coefficient-bearing
-infinite monomial parameterizations and whole-compiler kernel proof emission remain open.
+compiler/formalization obligations. Automatic rational decomposition discovery, complete
+nonlinear finite pullbacks, two-sided power transport, univariate Boolean integer domains
+and global discrete polynomial optimization are now implemented in Python. The stored
+experiment closes all 6,422 pullbacks, including 141 previous unresolved cases, and
+matches 3,080 independently checked global optima. See
+[Polynomial capacity](POLYNOMIAL_CAPACITY_MONOGRAPH.md). General Sturm variation,
+the generic optimizer theorem, generator pullback, coefficient-bearing infinite monomial
+parameterizations and whole-compiler kernel proof emission remain open.
 
 ## Gamma arithmetic checkpoint
 

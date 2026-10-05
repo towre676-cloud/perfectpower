@@ -37,11 +37,11 @@ class SimplifierTests(unittest.TestCase):
     def test_compact_parameter_then_whole_system_substitution(self):
         s=query('xyz',['(= (* x x) (* y y y))','(= z (+ x 1))','(> z 3)'])
         r=simplify_query(s)
-        self.assertEqual([p['method'] for p in r['steps']],['square_cube','substitution'])
+        self.assertEqual([p['method'] for p in r['steps']],['square_cube','substitution','univariate_domain'])
         self.assertEqual(sum(p['variables_removed'] for p in r['steps']),2)
-        self.assertIn('(* _pp_power _pp_power _pp_power)',r['residual'])
+        self.assertIn('(>= _pp_power 2)',r['residual'])
         self.assertTrue(verify_simplification(r))
-        r['residual']=r['residual'].replace('3','4')
+        r['residual']=r['residual'].replace('>= _pp_power 2','>= _pp_power 3')
         self.assertFalse(verify_simplification(r))
 
     def test_lattice_keeps_integer_image(self):
@@ -79,7 +79,7 @@ class SimplifierTests(unittest.TestCase):
         s=query('xy',['(= (* x x x) (* y y y y y))','(< x 0)'])
         r=simplify_query(s)
         self.assertEqual(r['steps'][0]['method'],'coprime_power')
-        self.assertIn('(* _pp_power _pp_power _pp_power _pp_power _pp_power)',r['residual'])
+        self.assertIn('(<= _pp_power (- 1))',r['residual'])
         self.assertTrue(verify_simplification(r))
 
     def test_host_receives_local_restrictions(self):

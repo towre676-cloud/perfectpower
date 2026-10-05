@@ -1,0 +1,314 @@
+{
+  "schema": "pp-gamma-polynomial-optimum/1",
+  "normalization": {
+    "schema": "pp-gamma-normalization/1",
+    "source": {
+      "kind": "binomial",
+      "width": 2
+    },
+    "numerator": [
+      0,
+      -1,
+      1
+    ],
+    "denominator": 2,
+    "domain": {
+      "index": "n",
+      "lower": 0
+    },
+    "meaning": "exact finite product on the stated natural-index domain",
+    "execution_verified": false
+  },
+  "predicate": true,
+  "numerator_optimum": {
+    "schema": "pp-integer-polynomial-optimum/1",
+    "objective": [
+      0,
+      -1,
+      1
+    ],
+    "sense": "min",
+    "feasible_domain": {
+      "schema": "pp-integer-polynomial-domain/1",
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "poly": [
+              0,
+              1
+            ],
+            "relation": ">="
+          },
+          true
+        ]
+      },
+      "tree": {
+        "op": "and",
+        "args": [
+          {
+            "atom": 0
+          },
+          true
+        ]
+      },
+      "atoms": [
+        {
+          "poly": [
+            0,
+            1
+          ],
+          "relation": ">="
+        }
+      ],
+      "root_certificates": [
+        {
+          "coefficients": [
+            0,
+            1
+          ],
+          "domain": [
+            null,
+            null
+          ],
+          "leading_coefficient": "1",
+          "squarefree_factors": [
+            [
+              1,
+              [
+                "0",
+                "1"
+              ]
+            ]
+          ],
+          "squarefree": [
+            "0",
+            "1"
+          ],
+          "sturm_chain": [
+            [
+              0,
+              1
+            ],
+            [
+              1
+            ]
+          ],
+          "root_bound": 2,
+          "clipped_interval": [
+            -2,
+            2
+          ],
+          "nodes": [
+            [
+              -3,
+              2,
+              1,
+              0
+            ],
+            [
+              -3,
+              -1,
+              1,
+              1
+            ],
+            [
+              -1,
+              2,
+              1,
+              0
+            ],
+            [
+              -1,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              0
+            ]
+          ],
+          "roots": [
+            0
+          ],
+          "nodes_checked": 5,
+          "complete": true,
+          "execution_verified": false
+        }
+      ],
+      "cells": [
+        {
+          "interval": [
+            null,
+            -2
+          ],
+          "sample": -2,
+          "values": [
+            -2
+          ],
+          "accepted": false
+        },
+        {
+          "interval": [
+            -1,
+            -1
+          ],
+          "sample": -1,
+          "values": [
+            -1
+          ],
+          "accepted": false
+        },
+        {
+          "interval": [
+            0,
+            0
+          ],
+          "sample": 0,
+          "values": [
+            0
+          ],
+          "accepted": true
+        },
+        {
+          "interval": [
+            1,
+            null
+          ],
+          "sample": 1,
+          "values": [
+            1
+          ],
+          "accepted": true
+        }
+      ],
+      "intervals": [
+        [
+          0,
+          null
+        ]
+      ],
+      "cardinality": null,
+      "root_nodes": 5,
+      "complete": true,
+      "domain": "all integers",
+      "execution_verified": false
+    },
+    "difference": [
+      0,
+      2
+    ],
+    "difference_certificate": {
+      "coefficients": [
+        0,
+        2
+      ],
+      "domain": [
+        null,
+        null
+      ],
+      "leading_coefficient": "2",
+      "squarefree_factors": [
+        [
+          1,
+          [
+            "0",
+            "1"
+          ]
+        ]
+      ],
+      "squarefree": [
+        "0",
+        "1"
+      ],
+      "sturm_chain": [
+        [
+          0,
+          1
+        ],
+        [
+          1
+        ]
+      ],
+      "root_bound": 2,
+      "clipped_interval": [
+        -2,
+        2
+      ],
+      "nodes": [
+        [
+          -3,
+          2,
+          1,
+          0
+        ],
+        [
+          -3,
+          -1,
+          1,
+          1
+        ],
+        [
+          -1,
+          2,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0
+        ]
+      ],
+      "roots": [
+        0
+      ],
+      "nodes_checked": 5,
+      "complete": true,
+      "execution_verified": false
+    },
+    "root_nodes": 10,
+    "complete": true,
+    "execution_verified": false,
+    "status": "OPTIMAL",
+    "value": 0,
+    "optimizers": [
+      [
+        0,
+        1
+      ]
+    ],
+    "candidates": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "attainment": "finite integer endpoints and discrete turning regions"
+  },
+  "status": "OPTIMAL",
+  "value": "0",
+  "optimizers": [
+    [
+      0,
+      1
+    ]
+  ],
+  "complete": true,
+  "execution_verified": false,
+  "certificate_replay": true
+}

@@ -5,6 +5,24 @@ from .deep_recovery_cli import exact_json
 
 
 def add_commands(sub):
+    p=sub.add_parser('gamma-domain',help='complete natural-index sign domains of normalized fixed Gamma/product/binomial expressions')
+    p.add_argument('--spec',type=json.loads,required=True);p.add_argument('--relation',choices=('=','!=','<','<=','>','>='),default='>=')
+    p.add_argument('--threshold',default='0');p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('gamma-optimize',help='global exact rational optimum and every natural-index tie for fixed expressions')
+    p.add_argument('--spec',type=json.loads,required=True);p.add_argument('--predicate',type=json.loads,default=True)
+    p.add_argument('--sense',choices=('min','max'),default='min');p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('polynomial-domain',help='complete Boolean polynomial constraints over all integers as interval unions')
+    p.add_argument('--predicate',type=json.loads,required=True);p.add_argument('--node-limit',type=int,default=100000)
+    p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('polynomial-optimize',help='exact global integer polynomial min/max including every tie')
+    p.add_argument('--predicate',type=json.loads,default=True);p.add_argument('--objective',type=json.loads,required=True)
+    p.add_argument('--sense',choices=('min','max'),default='min');p.add_argument('--node-limit',type=int,default=100000)
+    p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('polynomial-decompose',help='discover rational functional decompositions through exact polynomial coordinates')
+    p.add_argument('--coeff',type=json.loads,required=True);p.add_argument('--algebra-limit',type=int,default=2000000)
+    p=sub.add_parser('polynomial-relation',help='complete two-sided polynomial equations through quadratic and power transport')
+    p.add_argument('--left',type=json.loads,required=True);p.add_argument('--right',type=json.loads,required=True)
+    p.add_argument('--work-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
     p=sub.add_parser('integral-machine',help='minimal integer state realization preserving future outputs and observation divisibility')
     p.add_argument('--operators',type=json.loads,required=True);p.add_argument('--seed',type=json.loads,required=True)
     p.add_argument('--readouts',type=json.loads,required=True);p.add_argument('--word',type=json.loads,default=[])
@@ -80,7 +98,30 @@ def add_commands(sub):
 
 
 def dispatch(args):
-    if args.command=='integral-machine':
+    if args.command=='gamma-domain':
+        from .gamma_polynomial import gamma_domain,verify_gamma_domain
+        result=gamma_domain(args.spec,args.relation,args.threshold,node_limit=args.node_limit)
+        if args.verify:result['certificate_replay']=verify_gamma_domain(result,node_limit=args.node_limit)
+    elif args.command=='gamma-optimize':
+        from .gamma_polynomial import optimize_gamma,verify_gamma_optimum
+        result=optimize_gamma(args.spec,args.predicate,sense=args.sense,node_limit=args.node_limit)
+        if args.verify:result['certificate_replay']=verify_gamma_optimum(result,node_limit=args.node_limit)
+    elif args.command=='polynomial-domain':
+        from .polynomial_domains import integer_domain,verify_domain
+        result=integer_domain(args.predicate,node_limit=args.node_limit)
+        if args.verify:result['certificate_replay']=verify_domain(result,node_limit=args.node_limit)
+    elif args.command=='polynomial-optimize':
+        from .polynomial_domains import optimize_polynomial,verify_optimization
+        result=optimize_polynomial(args.predicate,args.objective,sense=args.sense,node_limit=args.node_limit)
+        if args.verify:result['certificate_replay']=verify_optimization(result,node_limit=args.node_limit)
+    elif args.command=='polynomial-decompose':
+        from .polynomial_composition import discover_decompositions
+        result=discover_decompositions(args.coeff,algebra_limit=args.algebra_limit)
+    elif args.command=='polynomial-relation':
+        from .polynomial_relations import solve_relation,verify_relation
+        result=solve_relation(args.left,args.right,work_limit=args.work_limit)
+        if args.verify:result['certificate_replay']=verify_relation(result,work_limit=args.work_limit)
+    elif args.command=='integral-machine':
         from .integral_machine import integral_machine,integral_word_output,observation_fibre,verify_integral_machine
         result=integral_machine(args.operators,args.seed,args.readouts)
         result['output']=integral_word_output(result,args.word,order=args.order)
