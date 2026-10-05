@@ -16,7 +16,7 @@ from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/B5_FLAVOR_COMPLETION.md'
-SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md']
+SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md']
 DEST=ROOT/'output/pdf/B5_Protected_Flavor_Monograph.pdf'
 
 EQUATIONS={
@@ -58,11 +58,12 @@ def main():
         Paragraph('The selected model admits controlled vacua near +/-66 degrees. Its initialized equations receive perturbative supersymmetric protection; its energy selection, physical coefficient readout and quark couplings remain separately specified interactions.',body),
         Paragraph('Exact rational results and numerical scenario results are distinguished throughout. The worked construction is conditional and does not claim an independently derived theory of flavor.',body),PageBreak()]
     text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in SOURCES)
+    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame'])
     for block in text.split('\n\n'):
         block=block.strip()
         if block=='CHAPTER_BREAK':
             story.append(PageBreak())
-            story.append(Paragraph('Shared mediators and the alignment boundary',title))
+            story.append(Paragraph(next(chapter_titles),title))
             continue
         if not block or block.startswith('# '):continue
         if block.startswith('## '):
