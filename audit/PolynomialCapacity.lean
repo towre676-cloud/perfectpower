@@ -1,0 +1,14 @@
+import PerfectPower.PolynomialCapacity
+#print axioms PerfectPower.PolynomialCapacity.denominator_transport
+#print axioms PerfectPower.PolynomialCapacity.witness_image
+#print axioms PerfectPower.PolynomialCapacity.outer_cancel
+#print axioms PerfectPower.PolynomialCapacity.minimizers_in_candidates
+#print axioms PerfectPower.PolynomialCapacity.candidate_lower_bound
+#print axioms PerfectPower.PolynomialCapacity.optimizer_iff
+#print axioms PerfectPower.PolynomialCapacity.right_descent
+#print axioms PerfectPower.PolynomialCapacity.left_descent
+#print axioms PerfectPower.PolynomialCapacity.quartic_ties
+#print axioms PerfectPower.PolynomialCapacity.binomial_two_ties
+#print axioms PerfectPower.PolynomialCapacity.positive_denominator_order
+#print axioms PerfectPower.PolynomialCapacity.boolean_cell
+#print axioms PerfectPower.PolynomialCapacity.content_power

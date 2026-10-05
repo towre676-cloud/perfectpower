@@ -365,3 +365,5 @@ import PerfectPower.WitnessResolvent
 import PerfectPower.GammaArithmetic
 import PerfectPower.HypergeometricTransport
 import PerfectPower.IntegralOutputTransport
+
+import PerfectPower.PolynomialCapacity

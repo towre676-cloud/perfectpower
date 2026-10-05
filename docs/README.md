@@ -53,3 +53,5 @@ Read [the history](HISTORY.md), [Hilbert's tenth problem](HILBERT10.md), [resear
 [Arithmetic simplifier: partial results, system composition, pullbacks and Lean laws](ARITHMETIC_SIMPLIFIER_MONOGRAPH.md).
 
 [Gamma arithmetic: factorial languages, valuations, hypergeometric transport and Lean](GAMMA_ARITHMETIC_MONOGRAPH.md).
+
+[Polynomial capacity Lean certificate layer](POLYNOMIAL_CAPACITY_LEAN.md): thirteen checked transport, Boolean-cell and discrete-optimizer statements, with explicit remaining obligations.

@@ -64,3 +64,13 @@ reusable Gamma, recurrence and integral-output transport statements. See
 [GAMMA_ARITHMETIC_MONOGRAPH.md](GAMMA_ARITHMETIC_MONOGRAPH.md). General Landau
 criterion equivalence, factorial-unit algorithm correctness, controlled complex
 Gamma evaluation and infinite Pell Mellin/heat error bounds remain open.
+
+## Polynomial-capacity Lean checkpoint
+
+The parallel polynomial push now has thirteen checked statements for denominator
+transport, witness image, positive-denominator comparisons, injective outer
+cancellation, descent-based optimizer certificates, Boolean-cell composition and
+both tied optimizer examples. See `POLYNOMIAL_CAPACITY_LEAN.md` and
+`scripts/check_polynomial_capacity.sh`. General Sturm variation, normalized
+component uniqueness,  unbounded-tail optimizer
+interpretation and proof-producing whole-compiler execution remain open.
