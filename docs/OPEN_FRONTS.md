@@ -153,3 +153,17 @@ comparisons include branch and infinity charts. See
 Global smooth atlas/mesh identification, construction of the metric quotient,
 semantic correctness of the complete native checker, raw JSON parsing, general
 period-normalized metrics and unrestricted geodesic comparison remain open.
+
+## M22 flavor transport and the remaining quark interaction
+
+The recovered C5 scalar adjacency obeys B²=X+6I exactly. The canonical
+five-letter cap connection has S5 holonomy and no parallel rank-three
+projector; its orientation cover has A5 holonomy and an explicit positive
+projector-alignment interaction. Exact Valentiner residual frames have a
+nonzero-entry gap at 0.0759431758699, and retaining involutions in both quark
+sectors gives a separate fixed-entry obstruction. These scoped results and
+their independently checked receipts are in `M22_TRANSPORT_INTERACTIONS.md`.
+Three light global families, controlled residual breaking, the relative
+up/down interaction, the golden observable coefficient, and a physical
+66-degree CP phase remain open. Publication novelty requires specialist
+review; no particle-physics derivation is claimed.

@@ -59,3 +59,5 @@ Read [the history](HISTORY.md), [Hilbert's tenth problem](HILBERT10.md), [resear
 [Polynomial capacity Lean certificate layer](POLYNOMIAL_CAPACITY_LEAN.md): thirteen checked transport, Boolean-cell and discrete-optimizer statements, with explicit remaining obligations.
 
 [Semilinear Lean monograph](SEMILINEAR_LEAN_MONOGRAPH.md): signed gcd charts, exact floor-quotient counts, infinite-domain optimizer certificates and complete even-power search from finite sign domains.
+
+[M22 triplet transport and residual-frame obstructions](M22_TRANSPORT_INTERACTIONS.md): exact S5 holonomy, a rank-three orientation-cover interaction, and certified complete/partial residual gaps in the Valentiner triplet. This is a research draft; the golden CKM coefficient and 66-degree phase remain underived.

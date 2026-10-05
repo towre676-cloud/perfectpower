@@ -16,7 +16,7 @@ from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/B5_FLAVOR_COMPLETION.md'
-SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md']
+SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md']
 DEST=ROOT/'output/pdf/B5_Protected_Flavor_Monograph.pdf'
 
 EQUATIONS={
@@ -30,7 +30,13 @@ EQUATIONS={
  'Scale evolution as a separate matching test':r'$16\pi^2\,\frac{dY_u}{d\log\mu}=\left[\frac{3}{2}(H_u-H_d)+\alpha_u I\right]Y_u$',
  'The exact observable target':r'$C_{\rm eff}=\frac{w(1-w^2)}{uv}=\phi^{-2}$',
  'Canonical tree matching without a small-flavon expansion':r'$A=M^{-1}L,\qquad K=I+A^{\dagger}A,\qquad Y=-h A K^{-1/2}$',
- 'A rational global certificate for the orientation obstruction':r'$E=\sum_i\alpha_i+\sum_j\beta_j+\sum_{ij}R_{ij}B_{ij}\geq E_{\rm permutation}$'}
+ 'A rational global certificate for the orientation obstruction':r'$E=\sum_i\alpha_i+\sum_j\beta_j+\sum_{ij}R_{ij}B_{ij}\geq E_{\rm permutation}$',
+ 'Exact scalar identity and the 42-cap component':r'$B^2=X+6I,\qquad B^3=4X+11B+6D$',
+ 'A canonical decorated transport':r'$\Omega=\frac{E G_2}{\sqrt{5}},\qquad \Omega^2=I,\qquad \Omega T=-T\Omega$',
+ 'What edge symmetry actually enforces':r'$\dim\operatorname{Hom}_{D_5}(3,3^t)=1,\qquad \dim\operatorname{Hom}_{D_5}(3,{3\prime}^t)=2$',
+ 'An explicit protected alignment interaction':r'$J_{v,s}=(-1)^s\Omega_v,\qquad P_\pm=\frac{I\pm J}{2}$',
+ 'Exact complex-triplet residual gap':r'$|V_{ij}|\in\{0\}\cup[0.0759431758\ldots,\,0.9566183482\ldots]\cup\{1\}$',
+ 'Partial residuals and the fixed-line obstruction':r'$|V_{ij}|^2\in\left\{0,\frac{3-\sqrt{5}}{8},\frac{1}{4},\frac{1}{2},\frac{3+\sqrt{5}}{8},1\right\}$'}
 
 
 def equation_image(expression):
@@ -43,12 +49,18 @@ def equation_image(expression):
 
 
 def main():
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--transport-paper',action='store_true')
+    args=parser.parse_args()
+    standalone=args.transport_paper
+    destination=ROOT/'output/pdf/M22_Triplet_Transport_and_CKM_Obstructions.pdf' if standalone else DEST
     DEST.parent.mkdir(parents=True,exist_ok=True)
     fontroot=Path('/usr/share/fonts/truetype/dejavu')
     for name,filename in (('Body','DejaVuSerif.ttf'),('BodyBold','DejaVuSerif-Bold.ttf'),('Sans','DejaVuSans.ttf'),('SansBold','DejaVuSans-Bold.ttf')):
         pdfmetrics.registerFont(TTFont(name,str(fontroot/filename)))
     styles=getSampleStyleSheet()
-    body=ParagraphStyle('ReaderBody',fontName='Body',fontSize=9.7,leading=14.4,spaceAfter=9,textColor=HexColor('#1d2933'))
+    body=ParagraphStyle('ReaderBody',fontName='Body',fontSize=9.5,leading=14.0,spaceAfter=8,textColor=HexColor('#1d2933'))
     heading=ParagraphStyle('ReaderHeading',fontName='SansBold',fontSize=13.3,leading=17,spaceBefore=15,spaceAfter=9,textColor=HexColor('#123d58'),keepWithNext=True)
     title=ParagraphStyle('ReaderTitle',fontName='SansBold',fontSize=27,leading=34,textColor=HexColor('#123d58'),spaceAfter=20)
     subtitle=ParagraphStyle('ReaderSubtitle',fontName='Sans',fontSize=13.3,leading=20,textColor=HexColor('#43586b'),spaceAfter=15)
@@ -57,8 +69,13 @@ def main():
         Spacer(1,25),Paragraph('PerfectPower research monograph<br/>5 October 2026',subtitle),Spacer(1,25),
         Paragraph('The selected model admits controlled vacua near +/-66 degrees. Its initialized equations receive perturbative supersymmetric protection; its energy selection, physical coefficient readout and quark couplings remain separately specified interactions.',body),
         Paragraph('Exact rational results and numerical scenario results are distinguished throughout. The worked construction is conditional and does not claim an independently derived theory of flavor.',body),PageBreak()]
-    text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in SOURCES)
-    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame'])
+    if standalone:
+        story=[Spacer(1,45),Paragraph('Triplet transport on<br/>M22 cap geometry',title),
+            Paragraph('Exact transport obstructions, an orientation-cover alignment interaction and certified quark residual gaps',subtitle),
+            Spacer(1,18),Paragraph('PerfectPower research draft / 5 October 2026',subtitle),
+            Paragraph('Mathematical results with reproducible certificates. Publication novelty and the particle-physics interpretation require independent review. The nominated golden CKM coefficient and 66-degree phase are not derived.',body),PageBreak()]
+    text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in ([SOURCES[-1]] if standalone else SOURCES))
+    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions'])
     for block in text.split('\n\n'):
         block=block.strip()
         if block=='CHAPTER_BREAK':
@@ -83,15 +100,15 @@ def main():
         canvas.saveState()
         canvas.setStrokeColor(HexColor('#c2ced7'));canvas.line(58,47,537,47)
         canvas.setFont('Sans',8);canvas.setFillColor(HexColor('#506372'))
-        canvas.drawString(58,33,'PERFECTPOWER / PROTECTED FLAVOR CONSTRUCTION')
+        canvas.drawString(58,33,'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / PROTECTED FLAVOR CONSTRUCTION')
         canvas.drawRightString(537,33,str(doc.page))
         if doc.page>1:
             canvas.setFont('Sans',7.5);canvas.drawString(58,806,'Exact equations, declared interactions, computed departures')
         canvas.restoreState()
-    doc=SimpleDocTemplate(str(DEST),pagesize=(595.28,841.89),leftMargin=58,rightMargin=58,topMargin=54,bottomMargin=62,
-        title='Protected vacua, shared mediators and the alignment boundary',author='PerfectPower research')
+    doc=SimpleDocTemplate(str(destination),pagesize=(595.28,841.89),leftMargin=58,rightMargin=58,topMargin=54,bottomMargin=62,
+        title='Triplet transport on M22 cap geometry' if standalone else 'Protected vacua, shared mediators and the alignment boundary',author='PerfectPower research')
     doc.build(story,onFirstPage=furniture,onLaterPages=furniture)
-    print(DEST)
+    print(destination)
 
 
 if __name__=='__main__':main()
