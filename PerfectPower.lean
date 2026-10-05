@@ -372,3 +372,6 @@ import PerfectPower.SemilinearCapacity
 import PerfectPower.SignedPowerCharts
 
 import PerfectPower.SemilinearPowerSearch
+
+import PerfectPower.CoefficientPowerCharts
+import PerfectPower.RecurrenceDomains

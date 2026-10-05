@@ -110,12 +110,34 @@ def add_commands(sub):
     p.add_argument('--include',type=json.loads,default=[]);p.add_argument('--exclude',type=json.loads,default=[])
     p.add_argument('--verify',action='store_true')
 
+    p=sub.add_parser('coefficient-charts',help='primitive signed charts for c*x^p=d*y^q')
+    p.add_argument('--c',type=int,required=True);p.add_argument('--p',type=int,required=True)
+    p.add_argument('--d',type=int,required=True);p.add_argument('--q',type=int,required=True)
+    p.add_argument('--factor-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('recurrence-orbit',help='exact modular polynomial-coefficient orbit and hit domain')
+    p.add_argument('--p',type=json.loads,required=True);p.add_argument('--q',type=json.loads,required=True)
+    p.add_argument('--modulus',type=int,required=True);p.add_argument('--seed',type=int,required=True)
+    p.add_argument('--power',type=int,default=2);p.add_argument('--step-limit',type=int,default=100000)
+    p.add_argument('--objective',type=json.loads);p.add_argument('--sense',choices=['min','max'],default='min')
+    p.add_argument('--through',type=int);p.add_argument('--rank',type=int);p.add_argument('--verify',action='store_true')
+
     p=sub.add_parser('operator-algebra',help='exact generated algebra, commutant and double-commutant certificates')
     p.add_argument('--operators',type=json.loads,required=True);p.add_argument('--verify',action='store_true')
 
 
 def dispatch(args):
-    if args.command=='family-evaluate':
+    if args.command=='coefficient-charts':
+        from .coefficient_charts import primitive_power_charts,verify_primitive_charts
+        result=primitive_power_charts(args.c,args.p,args.d,args.q,factor_limit=args.factor_limit)
+        if args.verify:result['certificate_replay']=verify_primitive_charts(result,factor_limit=args.factor_limit)
+    elif args.command=='recurrence-orbit':
+        from .recurrence_domains import recurrence_orbit,orbit_domain,orbit_count,orbit_select,verify_orbit_domain,orbit_optimize
+        result=orbit_domain(recurrence_orbit(args.p,args.q,args.modulus,args.seed,step_limit=args.step_limit),power=args.power)
+        if args.verify:result['certificate_replay']=verify_orbit_domain(result,step_limit=args.step_limit)
+        if args.through is not None:result['count']=orbit_count(result,0,args.through)
+        if args.rank is not None:result['selected_index']=orbit_select(result,args.rank)
+        if args.objective is not None:result['optimization']=orbit_optimize(json.loads(json.dumps(result)),args.objective,sense=args.sense)
+    elif args.command=='family-evaluate':
         from .arithmetic_engine import ArithmeticEngine
         from .arithmetic_families import family_points,verify_family_evaluation
         source=ArithmeticEngine(work_limit=args.node_limit).solve(args.coeff,args.d)

@@ -1,0 +1,16 @@
+import PerfectPower.CoefficientPowerCharts
+import PerfectPower.RecurrenceDomains
+#print axioms PerfectPower.CoefficientPowerCharts.valuation_balance
+#print axioms PerfectPower.CoefficientPowerCharts.valuation_gcd
+#print axioms PerfectPower.CoefficientPowerCharts.exponent_line
+#print axioms PerfectPower.CoefficientPowerCharts.primitive_row
+#print axioms PerfectPower.CoefficientPowerCharts.chart_sound
+#print axioms PerfectPower.CoefficientPowerCharts.coprime_complete
+#print axioms PerfectPower.CoefficientPowerCharts.two_square_three_cube
+#print axioms PerfectPower.RecurrenceDomains.unit_step
+#print axioms PerfectPower.RecurrenceDomains.repeat_future
+#print axioms PerfectPower.RecurrenceDomains.observable_period
+#print axioms PerfectPower.RecurrenceDomains.hit_period
+#print axioms PerfectPower.RecurrenceDomains.phase_step
+#print axioms PerfectPower.RecurrenceDomains.zero_denominator
+#print axioms PerfectPower.RecurrenceDomains.image_readout

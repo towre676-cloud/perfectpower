@@ -11,7 +11,7 @@ from .sturm_fibres import root_certificate,verify_roots
 from .divisor_square import WorkLimit
 
 
-def family_points(result,parameter,*,node_limit=100000):
+def family_points(result,parameter,*,node_limit=100000,image_index=None):
     if result['status']!='GENERATOR' or not verify_result(result,work_limit=node_limit):raise ValueError('complete arithmetic generator required')
     if type(parameter) is not int or abs(parameter).bit_length()>16384 or type(node_limit) is not int or node_limit<1:
         raise ValueError('bounded integer parameter and positive node budget required')
@@ -27,7 +27,7 @@ def family_points(result,parameter,*,node_limit=100000):
             points=set();rows=[]
             for i,chart in enumerate(proof['parameterization']['charts']):
                 if used>=node_limit:raise WorkLimit('shared generator evaluation node budget exceeded')
-                row=chart_points(chart,parameter,node_limit=node_limit-used);used+=row['root_nodes'];points.update(row['points']);rows.append({'chart':i,**row})
+                row=chart_points(chart,parameter,node_limit=node_limit-used,image_index=image_index);used+=row['root_nodes'];points.update(row['points']);rows.append({'chart':i,**row})
             points=sorted(points);evidence['charts']=rows
         elif kind=='content_power':
             child,evidence['child']=walk(proof['outer_result']);points=sorted((x,proof['root']*y) for x,y in child)
@@ -35,7 +35,7 @@ def family_points(result,parameter,*,node_limit=100000):
             child,evidence['child']=walk(proof['outer_result']);scale=proof['witness_scale'];inner=proof['decomposition']['inner'];points=set();fibres=[]
             for u in sorted({u for u,v in child if v%scale==0}):
                 if used>=node_limit:raise WorkLimit('shared generator pullback node budget exceeded')
-                f=list(inner);f[0]-=u;cert=root_certificate(f,node_limit=node_limit-used);used+=cert['nodes_checked'];fibres.append({'value':u,'certificate':cert})
+                f=list(inner);f[0]-=u;cert=(image_index.fibre(f,node_limit=node_limit-used) if image_index is not None else root_certificate(f,node_limit=node_limit-used));used+=cert['nodes_checked'];fibres.append({'value':u,'certificate':cert})
                 points.update((x,v//scale) for x in cert['roots'] for cu,v in child if cu==u and v%scale==0)
             points=sorted(points);evidence['fibres']=fibres
         else:raise ValueError('unsupported generator interpreter')

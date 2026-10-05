@@ -2,6 +2,8 @@
 
 The [semilinear and curve-query guide](../docs/SEMILINEAR_CAPACITY_MONOGRAPH.md) documents the newest complete-domain interfaces. `perfectpower.semilinear_domains` supplies `semilinear_domain`, `count_domain`, `select` and `optimize_semilinear` for Boolean polynomial/modular predicates. `perfectpower.curve_queries.query_curve` counts and optimizes supported signed power curves in their original coordinates. `perfectpower.arithmetic_families.family_points` evaluates every original integer fibre of a composed generator at one parameter. Each layer has an exact evidence-replay function; Python execution remains unverified.
 
+`perfectpower.query_space.CurveSpace` compiles a coefficient-bearing power family once and supports repeated `query` and cached `evaluate` calls. `perfectpower.recurrence_domains` provides modular recurrence orbits, exact hit counts, rank selection and polynomial index optimization, retaining singular denominators explicitly. See the [query-space guide](../docs/QUERY_SPACE_MONOGRAPH.md).
+
 The package installs from the repository root with `pip install .` and provides the `perfectpower` command. The CLI and the function API are stable within the 0.6 series.
 
 ## Function API

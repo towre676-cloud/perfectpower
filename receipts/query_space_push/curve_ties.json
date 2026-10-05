@@ -1,0 +1,4383 @@
+{
+  "schema": "pp-polynomial-curve-query/1",
+  "generator": {
+    "charts": [
+      {
+        "parameter_domain": {
+          "atoms": [
+            {
+              "poly": [
+                0,
+                1
+              ],
+              "relation": "="
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0
+              ],
+              "relation": "=",
+              "value": 0
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0
+              ],
+              "relation": "=",
+              "value": 0
+            }
+          ],
+          "cardinality": 1,
+          "cell_records": [
+            {
+              "interval": [
+                null,
+                -2
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                false
+              ],
+              "residues": []
+            },
+            {
+              "interval": [
+                -1,
+                -1
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                false
+              ],
+              "residues": []
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                true
+              ],
+              "residues": [
+                0
+              ]
+            },
+            {
+              "interval": [
+                1,
+                null
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                false
+              ],
+              "residues": []
+            }
+          ],
+          "cells": [
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "complete": true,
+          "domain": "all integers",
+          "execution_verified": false,
+          "nonnegative_density": "0",
+          "period": 1,
+          "predicate": {
+            "args": [
+              {
+                "poly": [
+                  0,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0
+                ],
+                "relation": "=",
+                "value": 0
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0
+                ],
+                "relation": "=",
+                "value": 0
+              }
+            ],
+            "op": "and"
+          },
+          "root_nodes": 5,
+          "schema": "pp-semilinear-domain/1",
+          "sign_domain": {
+            "atoms": [
+              {
+                "poly": [
+                  0,
+                  1
+                ],
+                "relation": "="
+              }
+            ],
+            "cardinality": 1,
+            "cells": [
+              {
+                "accepted": false,
+                "interval": [
+                  null,
+                  -2
+                ],
+                "sample": -2,
+                "values": [
+                  -2
+                ]
+              },
+              {
+                "accepted": false,
+                "interval": [
+                  -1,
+                  -1
+                ],
+                "sample": -1,
+                "values": [
+                  -1
+                ]
+              },
+              {
+                "accepted": true,
+                "interval": [
+                  0,
+                  0
+                ],
+                "sample": 0,
+                "values": [
+                  0
+                ]
+              },
+              {
+                "accepted": false,
+                "interval": [
+                  1,
+                  null
+                ],
+                "sample": 1,
+                "values": [
+                  1
+                ]
+              }
+            ],
+            "complete": true,
+            "domain": "all integers",
+            "execution_verified": false,
+            "intervals": [
+              [
+                0,
+                0
+              ]
+            ],
+            "predicate": {
+              "args": [
+                {
+                  "poly": [
+                    0,
+                    1
+                  ],
+                  "relation": "="
+                }
+              ],
+              "op": "and"
+            },
+            "root_certificates": [
+              {
+                "clipped_interval": [
+                  -2,
+                  2
+                ],
+                "coefficients": [
+                  0,
+                  1
+                ],
+                "complete": true,
+                "domain": [
+                  null,
+                  null
+                ],
+                "execution_verified": false,
+                "leading_coefficient": "1",
+                "nodes": [
+                  [
+                    -3,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -3,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    2,
+                    0,
+                    0
+                  ]
+                ],
+                "nodes_checked": 5,
+                "root_bound": 2,
+                "roots": [
+                  0
+                ],
+                "squarefree": [
+                  "0",
+                  "1"
+                ],
+                "squarefree_factors": [
+                  [
+                    1,
+                    [
+                      "0",
+                      "1"
+                    ]
+                  ]
+                ],
+                "sturm_chain": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              }
+            ],
+            "root_nodes": 5,
+            "schema": "pp-integer-polynomial-domain/1",
+            "tree": {
+              "args": [
+                {
+                  "atom": 0
+                }
+              ],
+              "op": "and"
+            }
+          },
+          "tree": {
+            "args": [
+              {
+                "atom": 0
+              },
+              {
+                "atom": 1
+              },
+              {
+                "atom": 2
+              }
+            ],
+            "op": "and"
+          },
+          "work": 8
+        },
+        "predicate": {
+          "args": [
+            {
+              "poly": [
+                0,
+                1
+              ],
+              "relation": "="
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0
+              ],
+              "relation": "=",
+              "value": 0
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0
+              ],
+              "relation": "=",
+              "value": 0
+            }
+          ],
+          "op": "and"
+        },
+        "signs": [
+          1,
+          1
+        ],
+        "x": {
+          "denominator": 1,
+          "kind": "polynomial",
+          "numerator": [
+            0
+          ]
+        },
+        "y": {
+          "denominator": 1,
+          "kind": "polynomial",
+          "numerator": [
+            0
+          ]
+        },
+        "zero_chart": true
+      },
+      {
+        "parameter_domain": {
+          "atoms": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": ">="
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                0,
+                18
+              ],
+              "relation": "=",
+              "value": 0
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "=",
+              "value": 0
+            }
+          ],
+          "cardinality": null,
+          "cell_records": [
+            {
+              "interval": [
+                null,
+                -1
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                false
+              ],
+              "residues": []
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                false
+              ],
+              "residues": []
+            },
+            {
+              "interval": [
+                1,
+                1
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                true
+              ],
+              "residues": [
+                0
+              ]
+            },
+            {
+              "interval": [
+                2,
+                null
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                true
+              ],
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "cells": [
+            {
+              "interval": [
+                1,
+                null
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "complete": true,
+          "domain": "all integers",
+          "execution_verified": false,
+          "nonnegative_density": "1",
+          "period": 1,
+          "predicate": {
+            "args": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": ">="
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  0,
+                  18
+                ],
+                "relation": "=",
+                "value": 0
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "=",
+                "value": 0
+              }
+            ],
+            "op": "and"
+          },
+          "root_nodes": 7,
+          "schema": "pp-semilinear-domain/1",
+          "sign_domain": {
+            "atoms": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": "="
+              }
+            ],
+            "cardinality": 1,
+            "cells": [
+              {
+                "accepted": false,
+                "interval": [
+                  null,
+                  -1
+                ],
+                "sample": -1,
+                "values": [
+                  -2
+                ]
+              },
+              {
+                "accepted": false,
+                "interval": [
+                  0,
+                  0
+                ],
+                "sample": 0,
+                "values": [
+                  -1
+                ]
+              },
+              {
+                "accepted": true,
+                "interval": [
+                  1,
+                  1
+                ],
+                "sample": 1,
+                "values": [
+                  0
+                ]
+              },
+              {
+                "accepted": false,
+                "interval": [
+                  2,
+                  null
+                ],
+                "sample": 2,
+                "values": [
+                  1
+                ]
+              }
+            ],
+            "complete": true,
+            "domain": "all integers",
+            "execution_verified": false,
+            "intervals": [
+              [
+                1,
+                1
+              ]
+            ],
+            "predicate": {
+              "args": [
+                {
+                  "poly": [
+                    -1,
+                    1
+                  ],
+                  "relation": "="
+                }
+              ],
+              "op": "and"
+            },
+            "root_certificates": [
+              {
+                "clipped_interval": [
+                  -3,
+                  3
+                ],
+                "coefficients": [
+                  -1,
+                  1
+                ],
+                "complete": true,
+                "domain": [
+                  null,
+                  null
+                ],
+                "execution_verified": false,
+                "leading_coefficient": "1",
+                "nodes": [
+                  [
+                    -4,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -4,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    3,
+                    0,
+                    0
+                  ]
+                ],
+                "nodes_checked": 7,
+                "root_bound": 3,
+                "roots": [
+                  1
+                ],
+                "squarefree": [
+                  "-1",
+                  "1"
+                ],
+                "squarefree_factors": [
+                  [
+                    1,
+                    [
+                      "-1",
+                      "1"
+                    ]
+                  ]
+                ],
+                "sturm_chain": [
+                  [
+                    -1,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              }
+            ],
+            "root_nodes": 7,
+            "schema": "pp-integer-polynomial-domain/1",
+            "tree": {
+              "args": [
+                {
+                  "atom": 0
+                }
+              ],
+              "op": "and"
+            }
+          },
+          "tree": {
+            "args": [
+              {
+                "atom": 0
+              },
+              {
+                "atom": 1
+              },
+              {
+                "atom": 2
+              }
+            ],
+            "op": "and"
+          },
+          "work": 8
+        },
+        "predicate": {
+          "args": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": ">="
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                0,
+                18
+              ],
+              "relation": "=",
+              "value": 0
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "=",
+              "value": 0
+            }
+          ],
+          "op": "and"
+        },
+        "signs": [
+          1,
+          1
+        ],
+        "x": {
+          "denominator": 1,
+          "kind": "polynomial",
+          "numerator": [
+            0,
+            0,
+            0,
+            18
+          ]
+        },
+        "y": {
+          "denominator": 1,
+          "kind": "polynomial",
+          "numerator": [
+            0,
+            0,
+            6
+          ]
+        },
+        "zero_chart": false
+      },
+      {
+        "parameter_domain": {
+          "atoms": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": ">="
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                0,
+                -18
+              ],
+              "relation": "=",
+              "value": 0
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "=",
+              "value": 0
+            }
+          ],
+          "cardinality": null,
+          "cell_records": [
+            {
+              "interval": [
+                null,
+                -1
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                false
+              ],
+              "residues": []
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                false
+              ],
+              "residues": []
+            },
+            {
+              "interval": [
+                1,
+                1
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                true
+              ],
+              "residues": [
+                0
+              ]
+            },
+            {
+              "interval": [
+                2,
+                null
+              ],
+              "modulus": 1,
+              "ordinary_truth": [
+                true
+              ],
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "cells": [
+            {
+              "interval": [
+                1,
+                null
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "complete": true,
+          "domain": "all integers",
+          "execution_verified": false,
+          "nonnegative_density": "1",
+          "period": 1,
+          "predicate": {
+            "args": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": ">="
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  0,
+                  -18
+                ],
+                "relation": "=",
+                "value": 0
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "=",
+                "value": 0
+              }
+            ],
+            "op": "and"
+          },
+          "root_nodes": 7,
+          "schema": "pp-semilinear-domain/1",
+          "sign_domain": {
+            "atoms": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": "="
+              }
+            ],
+            "cardinality": 1,
+            "cells": [
+              {
+                "accepted": false,
+                "interval": [
+                  null,
+                  -1
+                ],
+                "sample": -1,
+                "values": [
+                  -2
+                ]
+              },
+              {
+                "accepted": false,
+                "interval": [
+                  0,
+                  0
+                ],
+                "sample": 0,
+                "values": [
+                  -1
+                ]
+              },
+              {
+                "accepted": true,
+                "interval": [
+                  1,
+                  1
+                ],
+                "sample": 1,
+                "values": [
+                  0
+                ]
+              },
+              {
+                "accepted": false,
+                "interval": [
+                  2,
+                  null
+                ],
+                "sample": 2,
+                "values": [
+                  1
+                ]
+              }
+            ],
+            "complete": true,
+            "domain": "all integers",
+            "execution_verified": false,
+            "intervals": [
+              [
+                1,
+                1
+              ]
+            ],
+            "predicate": {
+              "args": [
+                {
+                  "poly": [
+                    -1,
+                    1
+                  ],
+                  "relation": "="
+                }
+              ],
+              "op": "and"
+            },
+            "root_certificates": [
+              {
+                "clipped_interval": [
+                  -3,
+                  3
+                ],
+                "coefficients": [
+                  -1,
+                  1
+                ],
+                "complete": true,
+                "domain": [
+                  null,
+                  null
+                ],
+                "execution_verified": false,
+                "leading_coefficient": "1",
+                "nodes": [
+                  [
+                    -4,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -4,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    3,
+                    0,
+                    0
+                  ]
+                ],
+                "nodes_checked": 7,
+                "root_bound": 3,
+                "roots": [
+                  1
+                ],
+                "squarefree": [
+                  "-1",
+                  "1"
+                ],
+                "squarefree_factors": [
+                  [
+                    1,
+                    [
+                      "-1",
+                      "1"
+                    ]
+                  ]
+                ],
+                "sturm_chain": [
+                  [
+                    -1,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ]
+              }
+            ],
+            "root_nodes": 7,
+            "schema": "pp-integer-polynomial-domain/1",
+            "tree": {
+              "args": [
+                {
+                  "atom": 0
+                }
+              ],
+              "op": "and"
+            }
+          },
+          "tree": {
+            "args": [
+              {
+                "atom": 0
+              },
+              {
+                "atom": 1
+              },
+              {
+                "atom": 2
+              }
+            ],
+            "op": "and"
+          },
+          "work": 8
+        },
+        "predicate": {
+          "args": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": ">="
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                0,
+                -18
+              ],
+              "relation": "=",
+              "value": 0
+            },
+            {
+              "modulus": 1,
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "=",
+              "value": 0
+            }
+          ],
+          "op": "and"
+        },
+        "signs": [
+          -1,
+          1
+        ],
+        "x": {
+          "denominator": 1,
+          "kind": "polynomial",
+          "numerator": [
+            0,
+            0,
+            0,
+            -18
+          ]
+        },
+        "y": {
+          "denominator": 1,
+          "kind": "polynomial",
+          "numerator": [
+            0,
+            0,
+            6
+          ]
+        },
+        "zero_chart": false
+      }
+    ],
+    "complete": true,
+    "domain": "all integer x and y",
+    "execution_verified": false,
+    "image_scope": "complete semilinear parameter images",
+    "left": [
+      0,
+      0,
+      2
+    ],
+    "left_presentation": {
+      "coefficient": 2,
+      "coordinate": [
+        0,
+        1
+      ],
+      "offset": 0,
+      "power": 2
+    },
+    "points": null,
+    "primitive": {
+      "complete": true,
+      "execution_verified": false,
+      "gcd": 1,
+      "left_coefficient": 2,
+      "left_factors": [
+        [
+          2,
+          1
+        ]
+      ],
+      "left_power": 2,
+      "left_scale": 18,
+      "left_step": 3,
+      "obstruction": null,
+      "right_coefficient": 3,
+      "right_factors": [
+        [
+          3,
+          1
+        ]
+      ],
+      "right_power": 3,
+      "right_scale": 6,
+      "right_step": 2,
+      "schema": "pp-primitive-power-charts/1",
+      "signs": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "valuation_rows": [
+        {
+          "left_exponent": 1,
+          "left_valuation": 1,
+          "prime": 2,
+          "right_exponent": 1,
+          "right_valuation": 0
+        },
+        {
+          "left_exponent": 2,
+          "left_valuation": 0,
+          "prime": 3,
+          "right_exponent": 1,
+          "right_valuation": 1
+        }
+      ],
+      "zero_point": [
+        0,
+        0
+      ]
+    },
+    "right": [
+      0,
+      0,
+      0,
+      3
+    ],
+    "right_presentation": {
+      "coefficient": 3,
+      "coordinate": [
+        0,
+        1
+      ],
+      "offset": 0,
+      "power": 3
+    },
+    "root_nodes": 19,
+    "schema": "pp-coefficient-polynomial-charts/1",
+    "status": "GENERATOR"
+  },
+  "predicate": {
+    "expr": "y",
+    "relation": ">"
+  },
+  "objective": "x*x+y*y",
+  "sense": "min",
+  "point_limit": 128,
+  "execution_verified": false,
+  "status": "COMPLETE",
+  "complete": true,
+  "charts": [
+    {
+      "chart": 0,
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "args": [
+              {
+                "poly": [
+                  0,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0
+                ],
+                "relation": "=",
+                "value": 0
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0
+                ],
+                "relation": "=",
+                "value": 0
+              }
+            ],
+            "op": "and"
+          },
+          {
+            "poly": [
+              0
+            ],
+            "relation": ">"
+          }
+        ]
+      },
+      "domain": {
+        "schema": "pp-semilinear-domain/1",
+        "predicate": {
+          "op": "and",
+          "args": [
+            {
+              "args": [
+                {
+                  "poly": [
+                    0,
+                    1
+                  ],
+                  "relation": "="
+                },
+                {
+                  "modulus": 1,
+                  "poly": [
+                    0
+                  ],
+                  "relation": "=",
+                  "value": 0
+                },
+                {
+                  "modulus": 1,
+                  "poly": [
+                    0
+                  ],
+                  "relation": "=",
+                  "value": 0
+                }
+              ],
+              "op": "and"
+            },
+            {
+              "poly": [
+                0
+              ],
+              "relation": ">"
+            }
+          ]
+        },
+        "tree": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "atom": 0
+                },
+                {
+                  "atom": 1
+                },
+                {
+                  "atom": 2
+                }
+              ]
+            },
+            {
+              "atom": 3
+            }
+          ]
+        },
+        "atoms": [
+          {
+            "poly": [
+              0,
+              1
+            ],
+            "relation": "="
+          },
+          {
+            "poly": [
+              0
+            ],
+            "relation": "=",
+            "modulus": 1,
+            "value": 0
+          },
+          {
+            "poly": [
+              0
+            ],
+            "relation": "=",
+            "modulus": 1,
+            "value": 0
+          },
+          {
+            "poly": [
+              0
+            ],
+            "relation": ">"
+          }
+        ],
+        "sign_domain": {
+          "schema": "pp-integer-polynomial-domain/1",
+          "predicate": {
+            "op": "and",
+            "args": [
+              {
+                "poly": [
+                  0,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "poly": [
+                  0
+                ],
+                "relation": "="
+              }
+            ]
+          },
+          "tree": {
+            "op": "and",
+            "args": [
+              {
+                "atom": 0
+              },
+              {
+                "atom": 1
+              }
+            ]
+          },
+          "atoms": [
+            {
+              "poly": [
+                0,
+                1
+              ],
+              "relation": "="
+            },
+            {
+              "poly": [
+                0
+              ],
+              "relation": "="
+            }
+          ],
+          "root_certificates": [
+            {
+              "coefficients": [
+                0,
+                1
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "1",
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "0",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 2,
+              "clipped_interval": [
+                -2,
+                2
+              ],
+              "nodes": [
+                [
+                  -3,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  -3,
+                  -1,
+                  1,
+                  1
+                ],
+                [
+                  -1,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0
+                ]
+              ],
+              "roots": [
+                0
+              ],
+              "nodes_checked": 5,
+              "complete": true,
+              "execution_verified": false
+            }
+          ],
+          "cells": [
+            {
+              "interval": [
+                null,
+                -2
+              ],
+              "sample": -2,
+              "values": [
+                -2,
+                0
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                -1,
+                -1
+              ],
+              "sample": -1,
+              "values": [
+                -1,
+                0
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "sample": 0,
+              "values": [
+                0,
+                0
+              ],
+              "accepted": true
+            },
+            {
+              "interval": [
+                1,
+                null
+              ],
+              "sample": 1,
+              "values": [
+                1,
+                0
+              ],
+              "accepted": false
+            }
+          ],
+          "intervals": [
+            [
+              0,
+              0
+            ]
+          ],
+          "cardinality": 1,
+          "root_nodes": 5,
+          "complete": true,
+          "domain": "all integers",
+          "execution_verified": false
+        },
+        "period": 1,
+        "cells": [],
+        "cell_records": [
+          {
+            "interval": [
+              null,
+              -2
+            ],
+            "ordinary_truth": [
+              false,
+              false
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              -1,
+              -1
+            ],
+            "ordinary_truth": [
+              false,
+              false
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              0,
+              0
+            ],
+            "ordinary_truth": [
+              true,
+              false
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              1,
+              null
+            ],
+            "ordinary_truth": [
+              false,
+              false
+            ],
+            "modulus": 1,
+            "residues": []
+          }
+        ],
+        "work": 10,
+        "root_nodes": 5,
+        "complete": true,
+        "execution_verified": false,
+        "domain": "all integers",
+        "cardinality": 0,
+        "nonnegative_density": "0"
+      },
+      "objective_numerator": [
+        0
+      ],
+      "objective_denominator": 1,
+      "optimum": {
+        "schema": "pp-semilinear-optimum/1",
+        "objective": [
+          0
+        ],
+        "sense": "min",
+        "feasible_domain": {
+          "schema": "pp-semilinear-domain/1",
+          "predicate": {
+            "op": "and",
+            "args": [
+              {
+                "args": [
+                  {
+                    "poly": [
+                      0,
+                      1
+                    ],
+                    "relation": "="
+                  },
+                  {
+                    "modulus": 1,
+                    "poly": [
+                      0
+                    ],
+                    "relation": "=",
+                    "value": 0
+                  },
+                  {
+                    "modulus": 1,
+                    "poly": [
+                      0
+                    ],
+                    "relation": "=",
+                    "value": 0
+                  }
+                ],
+                "op": "and"
+              },
+              {
+                "poly": [
+                  0
+                ],
+                "relation": ">"
+              }
+            ]
+          },
+          "tree": {
+            "op": "and",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "atom": 0
+                  },
+                  {
+                    "atom": 1
+                  },
+                  {
+                    "atom": 2
+                  }
+                ]
+              },
+              {
+                "atom": 3
+              }
+            ]
+          },
+          "atoms": [
+            {
+              "poly": [
+                0,
+                1
+              ],
+              "relation": "="
+            },
+            {
+              "poly": [
+                0
+              ],
+              "relation": "=",
+              "modulus": 1,
+              "value": 0
+            },
+            {
+              "poly": [
+                0
+              ],
+              "relation": "=",
+              "modulus": 1,
+              "value": 0
+            },
+            {
+              "poly": [
+                0
+              ],
+              "relation": ">"
+            }
+          ],
+          "sign_domain": {
+            "schema": "pp-integer-polynomial-domain/1",
+            "predicate": {
+              "op": "and",
+              "args": [
+                {
+                  "poly": [
+                    0,
+                    1
+                  ],
+                  "relation": "="
+                },
+                {
+                  "poly": [
+                    0
+                  ],
+                  "relation": "="
+                }
+              ]
+            },
+            "tree": {
+              "op": "and",
+              "args": [
+                {
+                  "atom": 0
+                },
+                {
+                  "atom": 1
+                }
+              ]
+            },
+            "atoms": [
+              {
+                "poly": [
+                  0,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "poly": [
+                  0
+                ],
+                "relation": "="
+              }
+            ],
+            "root_certificates": [
+              {
+                "coefficients": [
+                  0,
+                  1
+                ],
+                "domain": [
+                  null,
+                  null
+                ],
+                "leading_coefficient": "1",
+                "squarefree_factors": [
+                  [
+                    1,
+                    [
+                      "0",
+                      "1"
+                    ]
+                  ]
+                ],
+                "squarefree": [
+                  "0",
+                  "1"
+                ],
+                "sturm_chain": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                "root_bound": 2,
+                "clipped_interval": [
+                  -2,
+                  2
+                ],
+                "nodes": [
+                  [
+                    -3,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -3,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    2,
+                    0,
+                    0
+                  ]
+                ],
+                "roots": [
+                  0
+                ],
+                "nodes_checked": 5,
+                "complete": true,
+                "execution_verified": false
+              }
+            ],
+            "cells": [
+              {
+                "interval": [
+                  null,
+                  -2
+                ],
+                "sample": -2,
+                "values": [
+                  -2,
+                  0
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  -1,
+                  -1
+                ],
+                "sample": -1,
+                "values": [
+                  -1,
+                  0
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  0,
+                  0
+                ],
+                "sample": 0,
+                "values": [
+                  0,
+                  0
+                ],
+                "accepted": true
+              },
+              {
+                "interval": [
+                  1,
+                  null
+                ],
+                "sample": 1,
+                "values": [
+                  1,
+                  0
+                ],
+                "accepted": false
+              }
+            ],
+            "intervals": [
+              [
+                0,
+                0
+              ]
+            ],
+            "cardinality": 1,
+            "root_nodes": 5,
+            "complete": true,
+            "domain": "all integers",
+            "execution_verified": false
+          },
+          "period": 1,
+          "cells": [],
+          "cell_records": [
+            {
+              "interval": [
+                null,
+                -2
+              ],
+              "ordinary_truth": [
+                false,
+                false
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                -1,
+                -1
+              ],
+              "ordinary_truth": [
+                false,
+                false
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "ordinary_truth": [
+                true,
+                false
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                1,
+                null
+              ],
+              "ordinary_truth": [
+                false,
+                false
+              ],
+              "modulus": 1,
+              "residues": []
+            }
+          ],
+          "work": 10,
+          "root_nodes": 5,
+          "complete": true,
+          "execution_verified": false,
+          "domain": "all integers",
+          "cardinality": 0,
+          "nonnegative_density": "0"
+        },
+        "difference_certificates": [],
+        "root_nodes": 5,
+        "complete": true,
+        "execution_verified": false,
+        "status": "EMPTY",
+        "value": null,
+        "points": [],
+        "optimizer_domain": null,
+        "candidates": [],
+        "candidate_work": 0
+      }
+    },
+    {
+      "chart": 1,
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "args": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": ">="
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  0,
+                  18
+                ],
+                "relation": "=",
+                "value": 0
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "=",
+                "value": 0
+              }
+            ],
+            "op": "and"
+          },
+          {
+            "poly": [
+              0,
+              0,
+              6
+            ],
+            "relation": ">"
+          }
+        ]
+      },
+      "domain": {
+        "schema": "pp-semilinear-domain/1",
+        "predicate": {
+          "op": "and",
+          "args": [
+            {
+              "args": [
+                {
+                  "poly": [
+                    -1,
+                    1
+                  ],
+                  "relation": ">="
+                },
+                {
+                  "modulus": 1,
+                  "poly": [
+                    0,
+                    0,
+                    0,
+                    18
+                  ],
+                  "relation": "=",
+                  "value": 0
+                },
+                {
+                  "modulus": 1,
+                  "poly": [
+                    0,
+                    0,
+                    6
+                  ],
+                  "relation": "=",
+                  "value": 0
+                }
+              ],
+              "op": "and"
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": ">"
+            }
+          ]
+        },
+        "tree": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "atom": 0
+                },
+                {
+                  "atom": 1
+                },
+                {
+                  "atom": 2
+                }
+              ]
+            },
+            {
+              "atom": 3
+            }
+          ]
+        },
+        "atoms": [
+          {
+            "poly": [
+              -1,
+              1
+            ],
+            "relation": ">="
+          },
+          {
+            "poly": [
+              0,
+              0,
+              0,
+              18
+            ],
+            "relation": "=",
+            "modulus": 1,
+            "value": 0
+          },
+          {
+            "poly": [
+              0,
+              0,
+              6
+            ],
+            "relation": "=",
+            "modulus": 1,
+            "value": 0
+          },
+          {
+            "poly": [
+              0,
+              0,
+              6
+            ],
+            "relation": ">"
+          }
+        ],
+        "sign_domain": {
+          "schema": "pp-integer-polynomial-domain/1",
+          "predicate": {
+            "op": "and",
+            "args": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "="
+              }
+            ]
+          },
+          "tree": {
+            "op": "and",
+            "args": [
+              {
+                "atom": 0
+              },
+              {
+                "atom": 1
+              }
+            ]
+          },
+          "atoms": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": "="
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "="
+            }
+          ],
+          "root_certificates": [
+            {
+              "coefficients": [
+                -1,
+                1
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "1",
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "-1",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "-1",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  -1,
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 3,
+              "clipped_interval": [
+                -3,
+                3
+              ],
+              "nodes": [
+                [
+                  -4,
+                  3,
+                  1,
+                  0
+                ],
+                [
+                  -4,
+                  -1,
+                  1,
+                  1
+                ],
+                [
+                  -1,
+                  3,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  3,
+                  0,
+                  0
+                ]
+              ],
+              "roots": [
+                1
+              ],
+              "nodes_checked": 7,
+              "complete": true,
+              "execution_verified": false
+            },
+            {
+              "coefficients": [
+                0,
+                0,
+                6
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "6",
+              "squarefree_factors": [
+                [
+                  2,
+                  [
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "0",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 2,
+              "clipped_interval": [
+                -2,
+                2
+              ],
+              "nodes": [
+                [
+                  -3,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  -3,
+                  -1,
+                  1,
+                  1
+                ],
+                [
+                  -1,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0
+                ]
+              ],
+              "roots": [
+                0
+              ],
+              "nodes_checked": 5,
+              "complete": true,
+              "execution_verified": false
+            }
+          ],
+          "cells": [
+            {
+              "interval": [
+                null,
+                -2
+              ],
+              "sample": -2,
+              "values": [
+                -3,
+                24
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                -1,
+                -1
+              ],
+              "sample": -1,
+              "values": [
+                -2,
+                6
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "sample": 0,
+              "values": [
+                -1,
+                0
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                1,
+                1
+              ],
+              "sample": 1,
+              "values": [
+                0,
+                6
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                2,
+                null
+              ],
+              "sample": 2,
+              "values": [
+                1,
+                24
+              ],
+              "accepted": false
+            }
+          ],
+          "intervals": [],
+          "cardinality": 0,
+          "root_nodes": 12,
+          "complete": true,
+          "domain": "all integers",
+          "execution_verified": false
+        },
+        "period": 1,
+        "cells": [
+          {
+            "interval": [
+              1,
+              null
+            ],
+            "modulus": 1,
+            "residues": [
+              0
+            ]
+          }
+        ],
+        "cell_records": [
+          {
+            "interval": [
+              null,
+              -2
+            ],
+            "ordinary_truth": [
+              false,
+              true
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              -1,
+              -1
+            ],
+            "ordinary_truth": [
+              false,
+              true
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              0,
+              0
+            ],
+            "ordinary_truth": [
+              false,
+              false
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              1,
+              1
+            ],
+            "ordinary_truth": [
+              true,
+              true
+            ],
+            "modulus": 1,
+            "residues": [
+              0
+            ]
+          },
+          {
+            "interval": [
+              2,
+              null
+            ],
+            "ordinary_truth": [
+              true,
+              true
+            ],
+            "modulus": 1,
+            "residues": [
+              0
+            ]
+          }
+        ],
+        "work": 14,
+        "root_nodes": 12,
+        "complete": true,
+        "execution_verified": false,
+        "domain": "all integers",
+        "cardinality": null,
+        "nonnegative_density": "1"
+      },
+      "objective_numerator": [
+        0,
+        0,
+        0,
+        0,
+        36,
+        0,
+        324
+      ],
+      "objective_denominator": 1,
+      "optimum": {
+        "schema": "pp-semilinear-optimum/1",
+        "objective": [
+          0,
+          0,
+          0,
+          0,
+          36,
+          0,
+          324
+        ],
+        "sense": "min",
+        "feasible_domain": {
+          "schema": "pp-semilinear-domain/1",
+          "predicate": {
+            "op": "and",
+            "args": [
+              {
+                "args": [
+                  {
+                    "poly": [
+                      -1,
+                      1
+                    ],
+                    "relation": ">="
+                  },
+                  {
+                    "modulus": 1,
+                    "poly": [
+                      0,
+                      0,
+                      0,
+                      18
+                    ],
+                    "relation": "=",
+                    "value": 0
+                  },
+                  {
+                    "modulus": 1,
+                    "poly": [
+                      0,
+                      0,
+                      6
+                    ],
+                    "relation": "=",
+                    "value": 0
+                  }
+                ],
+                "op": "and"
+              },
+              {
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": ">"
+              }
+            ]
+          },
+          "tree": {
+            "op": "and",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "atom": 0
+                  },
+                  {
+                    "atom": 1
+                  },
+                  {
+                    "atom": 2
+                  }
+                ]
+              },
+              {
+                "atom": 3
+              }
+            ]
+          },
+          "atoms": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": ">="
+            },
+            {
+              "poly": [
+                0,
+                0,
+                0,
+                18
+              ],
+              "relation": "=",
+              "modulus": 1,
+              "value": 0
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "=",
+              "modulus": 1,
+              "value": 0
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": ">"
+            }
+          ],
+          "sign_domain": {
+            "schema": "pp-integer-polynomial-domain/1",
+            "predicate": {
+              "op": "and",
+              "args": [
+                {
+                  "poly": [
+                    -1,
+                    1
+                  ],
+                  "relation": "="
+                },
+                {
+                  "poly": [
+                    0,
+                    0,
+                    6
+                  ],
+                  "relation": "="
+                }
+              ]
+            },
+            "tree": {
+              "op": "and",
+              "args": [
+                {
+                  "atom": 0
+                },
+                {
+                  "atom": 1
+                }
+              ]
+            },
+            "atoms": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "="
+              }
+            ],
+            "root_certificates": [
+              {
+                "coefficients": [
+                  -1,
+                  1
+                ],
+                "domain": [
+                  null,
+                  null
+                ],
+                "leading_coefficient": "1",
+                "squarefree_factors": [
+                  [
+                    1,
+                    [
+                      "-1",
+                      "1"
+                    ]
+                  ]
+                ],
+                "squarefree": [
+                  "-1",
+                  "1"
+                ],
+                "sturm_chain": [
+                  [
+                    -1,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                "root_bound": 3,
+                "clipped_interval": [
+                  -3,
+                  3
+                ],
+                "nodes": [
+                  [
+                    -4,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -4,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    3,
+                    0,
+                    0
+                  ]
+                ],
+                "roots": [
+                  1
+                ],
+                "nodes_checked": 7,
+                "complete": true,
+                "execution_verified": false
+              },
+              {
+                "coefficients": [
+                  0,
+                  0,
+                  6
+                ],
+                "domain": [
+                  null,
+                  null
+                ],
+                "leading_coefficient": "6",
+                "squarefree_factors": [
+                  [
+                    2,
+                    [
+                      "0",
+                      "1"
+                    ]
+                  ]
+                ],
+                "squarefree": [
+                  "0",
+                  "1"
+                ],
+                "sturm_chain": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                "root_bound": 2,
+                "clipped_interval": [
+                  -2,
+                  2
+                ],
+                "nodes": [
+                  [
+                    -3,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -3,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    2,
+                    0,
+                    0
+                  ]
+                ],
+                "roots": [
+                  0
+                ],
+                "nodes_checked": 5,
+                "complete": true,
+                "execution_verified": false
+              }
+            ],
+            "cells": [
+              {
+                "interval": [
+                  null,
+                  -2
+                ],
+                "sample": -2,
+                "values": [
+                  -3,
+                  24
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  -1,
+                  -1
+                ],
+                "sample": -1,
+                "values": [
+                  -2,
+                  6
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  0,
+                  0
+                ],
+                "sample": 0,
+                "values": [
+                  -1,
+                  0
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  1,
+                  1
+                ],
+                "sample": 1,
+                "values": [
+                  0,
+                  6
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  2,
+                  null
+                ],
+                "sample": 2,
+                "values": [
+                  1,
+                  24
+                ],
+                "accepted": false
+              }
+            ],
+            "intervals": [],
+            "cardinality": 0,
+            "root_nodes": 12,
+            "complete": true,
+            "domain": "all integers",
+            "execution_verified": false
+          },
+          "period": 1,
+          "cells": [
+            {
+              "interval": [
+                1,
+                null
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "cell_records": [
+            {
+              "interval": [
+                null,
+                -2
+              ],
+              "ordinary_truth": [
+                false,
+                true
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                -1,
+                -1
+              ],
+              "ordinary_truth": [
+                false,
+                true
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "ordinary_truth": [
+                false,
+                false
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                1,
+                1
+              ],
+              "ordinary_truth": [
+                true,
+                true
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            },
+            {
+              "interval": [
+                2,
+                null
+              ],
+              "ordinary_truth": [
+                true,
+                true
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "work": 14,
+          "root_nodes": 12,
+          "complete": true,
+          "execution_verified": false,
+          "domain": "all integers",
+          "cardinality": null,
+          "nonnegative_density": "1"
+        },
+        "difference_certificates": [
+          {
+            "modulus": 1,
+            "certificate": {
+              "coefficients": [
+                360,
+                2088,
+                5076,
+                6624,
+                4860,
+                1944
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "1944",
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "5/27",
+                    "29/27",
+                    "47/18",
+                    "92/27",
+                    "5/2",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "5/27",
+                "29/27",
+                "47/18",
+                "92/27",
+                "5/2",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  10,
+                  58,
+                  141,
+                  184,
+                  135,
+                  54
+                ],
+                [
+                  29,
+                  141,
+                  276,
+                  270,
+                  135
+                ],
+                [
+                  -3,
+                  -13,
+                  -21,
+                  -14
+                ],
+                [
+                  -407,
+                  -1383,
+                  -1383
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 5,
+              "clipped_interval": [
+                -5,
+                5
+              ],
+              "nodes": [
+                [
+                  -6,
+                  5,
+                  3,
+                  2
+                ],
+                [
+                  -6,
+                  -1,
+                  3,
+                  3
+                ],
+                [
+                  -1,
+                  5,
+                  3,
+                  2
+                ],
+                [
+                  -1,
+                  2,
+                  3,
+                  2
+                ],
+                [
+                  -1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  2,
+                  2
+                ],
+                [
+                  2,
+                  5,
+                  2,
+                  2
+                ]
+              ],
+              "roots": [],
+              "nodes_checked": 7,
+              "complete": true,
+              "execution_verified": false
+            }
+          }
+        ],
+        "root_nodes": 19,
+        "complete": true,
+        "execution_verified": false,
+        "status": "OPTIMAL",
+        "value": 360,
+        "points": [
+          1
+        ],
+        "optimizer_domain": null,
+        "candidates": [
+          [
+            1,
+            360
+          ]
+        ],
+        "candidate_work": 10
+      }
+    },
+    {
+      "chart": 2,
+      "predicate": {
+        "op": "and",
+        "args": [
+          {
+            "args": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": ">="
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  0,
+                  -18
+                ],
+                "relation": "=",
+                "value": 0
+              },
+              {
+                "modulus": 1,
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "=",
+                "value": 0
+              }
+            ],
+            "op": "and"
+          },
+          {
+            "poly": [
+              0,
+              0,
+              6
+            ],
+            "relation": ">"
+          }
+        ]
+      },
+      "domain": {
+        "schema": "pp-semilinear-domain/1",
+        "predicate": {
+          "op": "and",
+          "args": [
+            {
+              "args": [
+                {
+                  "poly": [
+                    -1,
+                    1
+                  ],
+                  "relation": ">="
+                },
+                {
+                  "modulus": 1,
+                  "poly": [
+                    0,
+                    0,
+                    0,
+                    -18
+                  ],
+                  "relation": "=",
+                  "value": 0
+                },
+                {
+                  "modulus": 1,
+                  "poly": [
+                    0,
+                    0,
+                    6
+                  ],
+                  "relation": "=",
+                  "value": 0
+                }
+              ],
+              "op": "and"
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": ">"
+            }
+          ]
+        },
+        "tree": {
+          "op": "and",
+          "args": [
+            {
+              "op": "and",
+              "args": [
+                {
+                  "atom": 0
+                },
+                {
+                  "atom": 1
+                },
+                {
+                  "atom": 2
+                }
+              ]
+            },
+            {
+              "atom": 3
+            }
+          ]
+        },
+        "atoms": [
+          {
+            "poly": [
+              -1,
+              1
+            ],
+            "relation": ">="
+          },
+          {
+            "poly": [
+              0,
+              0,
+              0,
+              -18
+            ],
+            "relation": "=",
+            "modulus": 1,
+            "value": 0
+          },
+          {
+            "poly": [
+              0,
+              0,
+              6
+            ],
+            "relation": "=",
+            "modulus": 1,
+            "value": 0
+          },
+          {
+            "poly": [
+              0,
+              0,
+              6
+            ],
+            "relation": ">"
+          }
+        ],
+        "sign_domain": {
+          "schema": "pp-integer-polynomial-domain/1",
+          "predicate": {
+            "op": "and",
+            "args": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "="
+              }
+            ]
+          },
+          "tree": {
+            "op": "and",
+            "args": [
+              {
+                "atom": 0
+              },
+              {
+                "atom": 1
+              }
+            ]
+          },
+          "atoms": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": "="
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "="
+            }
+          ],
+          "root_certificates": [
+            {
+              "coefficients": [
+                -1,
+                1
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "1",
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "-1",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "-1",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  -1,
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 3,
+              "clipped_interval": [
+                -3,
+                3
+              ],
+              "nodes": [
+                [
+                  -4,
+                  3,
+                  1,
+                  0
+                ],
+                [
+                  -4,
+                  -1,
+                  1,
+                  1
+                ],
+                [
+                  -1,
+                  3,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  3,
+                  0,
+                  0
+                ]
+              ],
+              "roots": [
+                1
+              ],
+              "nodes_checked": 7,
+              "complete": true,
+              "execution_verified": false
+            },
+            {
+              "coefficients": [
+                0,
+                0,
+                6
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "6",
+              "squarefree_factors": [
+                [
+                  2,
+                  [
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "0",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 2,
+              "clipped_interval": [
+                -2,
+                2
+              ],
+              "nodes": [
+                [
+                  -3,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  -3,
+                  -1,
+                  1,
+                  1
+                ],
+                [
+                  -1,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  2,
+                  0,
+                  0
+                ]
+              ],
+              "roots": [
+                0
+              ],
+              "nodes_checked": 5,
+              "complete": true,
+              "execution_verified": false
+            }
+          ],
+          "cells": [
+            {
+              "interval": [
+                null,
+                -2
+              ],
+              "sample": -2,
+              "values": [
+                -3,
+                24
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                -1,
+                -1
+              ],
+              "sample": -1,
+              "values": [
+                -2,
+                6
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "sample": 0,
+              "values": [
+                -1,
+                0
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                1,
+                1
+              ],
+              "sample": 1,
+              "values": [
+                0,
+                6
+              ],
+              "accepted": false
+            },
+            {
+              "interval": [
+                2,
+                null
+              ],
+              "sample": 2,
+              "values": [
+                1,
+                24
+              ],
+              "accepted": false
+            }
+          ],
+          "intervals": [],
+          "cardinality": 0,
+          "root_nodes": 12,
+          "complete": true,
+          "domain": "all integers",
+          "execution_verified": false
+        },
+        "period": 1,
+        "cells": [
+          {
+            "interval": [
+              1,
+              null
+            ],
+            "modulus": 1,
+            "residues": [
+              0
+            ]
+          }
+        ],
+        "cell_records": [
+          {
+            "interval": [
+              null,
+              -2
+            ],
+            "ordinary_truth": [
+              false,
+              true
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              -1,
+              -1
+            ],
+            "ordinary_truth": [
+              false,
+              true
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              0,
+              0
+            ],
+            "ordinary_truth": [
+              false,
+              false
+            ],
+            "modulus": 1,
+            "residues": []
+          },
+          {
+            "interval": [
+              1,
+              1
+            ],
+            "ordinary_truth": [
+              true,
+              true
+            ],
+            "modulus": 1,
+            "residues": [
+              0
+            ]
+          },
+          {
+            "interval": [
+              2,
+              null
+            ],
+            "ordinary_truth": [
+              true,
+              true
+            ],
+            "modulus": 1,
+            "residues": [
+              0
+            ]
+          }
+        ],
+        "work": 14,
+        "root_nodes": 12,
+        "complete": true,
+        "execution_verified": false,
+        "domain": "all integers",
+        "cardinality": null,
+        "nonnegative_density": "1"
+      },
+      "objective_numerator": [
+        0,
+        0,
+        0,
+        0,
+        36,
+        0,
+        324
+      ],
+      "objective_denominator": 1,
+      "optimum": {
+        "schema": "pp-semilinear-optimum/1",
+        "objective": [
+          0,
+          0,
+          0,
+          0,
+          36,
+          0,
+          324
+        ],
+        "sense": "min",
+        "feasible_domain": {
+          "schema": "pp-semilinear-domain/1",
+          "predicate": {
+            "op": "and",
+            "args": [
+              {
+                "args": [
+                  {
+                    "poly": [
+                      -1,
+                      1
+                    ],
+                    "relation": ">="
+                  },
+                  {
+                    "modulus": 1,
+                    "poly": [
+                      0,
+                      0,
+                      0,
+                      -18
+                    ],
+                    "relation": "=",
+                    "value": 0
+                  },
+                  {
+                    "modulus": 1,
+                    "poly": [
+                      0,
+                      0,
+                      6
+                    ],
+                    "relation": "=",
+                    "value": 0
+                  }
+                ],
+                "op": "and"
+              },
+              {
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": ">"
+              }
+            ]
+          },
+          "tree": {
+            "op": "and",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "atom": 0
+                  },
+                  {
+                    "atom": 1
+                  },
+                  {
+                    "atom": 2
+                  }
+                ]
+              },
+              {
+                "atom": 3
+              }
+            ]
+          },
+          "atoms": [
+            {
+              "poly": [
+                -1,
+                1
+              ],
+              "relation": ">="
+            },
+            {
+              "poly": [
+                0,
+                0,
+                0,
+                -18
+              ],
+              "relation": "=",
+              "modulus": 1,
+              "value": 0
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": "=",
+              "modulus": 1,
+              "value": 0
+            },
+            {
+              "poly": [
+                0,
+                0,
+                6
+              ],
+              "relation": ">"
+            }
+          ],
+          "sign_domain": {
+            "schema": "pp-integer-polynomial-domain/1",
+            "predicate": {
+              "op": "and",
+              "args": [
+                {
+                  "poly": [
+                    -1,
+                    1
+                  ],
+                  "relation": "="
+                },
+                {
+                  "poly": [
+                    0,
+                    0,
+                    6
+                  ],
+                  "relation": "="
+                }
+              ]
+            },
+            "tree": {
+              "op": "and",
+              "args": [
+                {
+                  "atom": 0
+                },
+                {
+                  "atom": 1
+                }
+              ]
+            },
+            "atoms": [
+              {
+                "poly": [
+                  -1,
+                  1
+                ],
+                "relation": "="
+              },
+              {
+                "poly": [
+                  0,
+                  0,
+                  6
+                ],
+                "relation": "="
+              }
+            ],
+            "root_certificates": [
+              {
+                "coefficients": [
+                  -1,
+                  1
+                ],
+                "domain": [
+                  null,
+                  null
+                ],
+                "leading_coefficient": "1",
+                "squarefree_factors": [
+                  [
+                    1,
+                    [
+                      "-1",
+                      "1"
+                    ]
+                  ]
+                ],
+                "squarefree": [
+                  "-1",
+                  "1"
+                ],
+                "sturm_chain": [
+                  [
+                    -1,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                "root_bound": 3,
+                "clipped_interval": [
+                  -3,
+                  3
+                ],
+                "nodes": [
+                  [
+                    -4,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -4,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    3,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    1,
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    3,
+                    0,
+                    0
+                  ]
+                ],
+                "roots": [
+                  1
+                ],
+                "nodes_checked": 7,
+                "complete": true,
+                "execution_verified": false
+              },
+              {
+                "coefficients": [
+                  0,
+                  0,
+                  6
+                ],
+                "domain": [
+                  null,
+                  null
+                ],
+                "leading_coefficient": "6",
+                "squarefree_factors": [
+                  [
+                    2,
+                    [
+                      "0",
+                      "1"
+                    ]
+                  ]
+                ],
+                "squarefree": [
+                  "0",
+                  "1"
+                ],
+                "sturm_chain": [
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    1
+                  ]
+                ],
+                "root_bound": 2,
+                "clipped_interval": [
+                  -2,
+                  2
+                ],
+                "nodes": [
+                  [
+                    -3,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -3,
+                    -1,
+                    1,
+                    1
+                  ],
+                  [
+                    -1,
+                    2,
+                    1,
+                    0
+                  ],
+                  [
+                    -1,
+                    0,
+                    1,
+                    0
+                  ],
+                  [
+                    0,
+                    2,
+                    0,
+                    0
+                  ]
+                ],
+                "roots": [
+                  0
+                ],
+                "nodes_checked": 5,
+                "complete": true,
+                "execution_verified": false
+              }
+            ],
+            "cells": [
+              {
+                "interval": [
+                  null,
+                  -2
+                ],
+                "sample": -2,
+                "values": [
+                  -3,
+                  24
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  -1,
+                  -1
+                ],
+                "sample": -1,
+                "values": [
+                  -2,
+                  6
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  0,
+                  0
+                ],
+                "sample": 0,
+                "values": [
+                  -1,
+                  0
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  1,
+                  1
+                ],
+                "sample": 1,
+                "values": [
+                  0,
+                  6
+                ],
+                "accepted": false
+              },
+              {
+                "interval": [
+                  2,
+                  null
+                ],
+                "sample": 2,
+                "values": [
+                  1,
+                  24
+                ],
+                "accepted": false
+              }
+            ],
+            "intervals": [],
+            "cardinality": 0,
+            "root_nodes": 12,
+            "complete": true,
+            "domain": "all integers",
+            "execution_verified": false
+          },
+          "period": 1,
+          "cells": [
+            {
+              "interval": [
+                1,
+                null
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "cell_records": [
+            {
+              "interval": [
+                null,
+                -2
+              ],
+              "ordinary_truth": [
+                false,
+                true
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                -1,
+                -1
+              ],
+              "ordinary_truth": [
+                false,
+                true
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                0,
+                0
+              ],
+              "ordinary_truth": [
+                false,
+                false
+              ],
+              "modulus": 1,
+              "residues": []
+            },
+            {
+              "interval": [
+                1,
+                1
+              ],
+              "ordinary_truth": [
+                true,
+                true
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            },
+            {
+              "interval": [
+                2,
+                null
+              ],
+              "ordinary_truth": [
+                true,
+                true
+              ],
+              "modulus": 1,
+              "residues": [
+                0
+              ]
+            }
+          ],
+          "work": 14,
+          "root_nodes": 12,
+          "complete": true,
+          "execution_verified": false,
+          "domain": "all integers",
+          "cardinality": null,
+          "nonnegative_density": "1"
+        },
+        "difference_certificates": [
+          {
+            "modulus": 1,
+            "certificate": {
+              "coefficients": [
+                360,
+                2088,
+                5076,
+                6624,
+                4860,
+                1944
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "1944",
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "5/27",
+                    "29/27",
+                    "47/18",
+                    "92/27",
+                    "5/2",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "5/27",
+                "29/27",
+                "47/18",
+                "92/27",
+                "5/2",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  10,
+                  58,
+                  141,
+                  184,
+                  135,
+                  54
+                ],
+                [
+                  29,
+                  141,
+                  276,
+                  270,
+                  135
+                ],
+                [
+                  -3,
+                  -13,
+                  -21,
+                  -14
+                ],
+                [
+                  -407,
+                  -1383,
+                  -1383
+                ],
+                [
+                  1,
+                  2
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 5,
+              "clipped_interval": [
+                -5,
+                5
+              ],
+              "nodes": [
+                [
+                  -6,
+                  5,
+                  3,
+                  2
+                ],
+                [
+                  -6,
+                  -1,
+                  3,
+                  3
+                ],
+                [
+                  -1,
+                  5,
+                  3,
+                  2
+                ],
+                [
+                  -1,
+                  2,
+                  3,
+                  2
+                ],
+                [
+                  -1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  0,
+                  2,
+                  2,
+                  2
+                ],
+                [
+                  2,
+                  5,
+                  2,
+                  2
+                ]
+              ],
+              "roots": [],
+              "nodes_checked": 7,
+              "complete": true,
+              "execution_verified": false
+            }
+          }
+        ],
+        "root_nodes": 19,
+        "complete": true,
+        "execution_verified": false,
+        "status": "OPTIMAL",
+        "value": 360,
+        "points": [
+          1
+        ],
+        "optimizer_domain": null,
+        "candidates": [
+          [
+            1,
+            360
+          ]
+        ],
+        "candidate_work": 10
+      }
+    }
+  ],
+  "root_nodes": 62,
+  "algebra_work": 139,
+  "solution_count": null,
+  "points": null,
+  "optimization": {
+    "status": "OPTIMAL",
+    "value": "360",
+    "optimizer_count": 2,
+    "optimizer_points": [
+      [
+        -18,
+        6
+      ],
+      [
+        18,
+        6
+      ]
+    ],
+    "optimizer_charts": [
+      {
+        "chart": 1,
+        "parameters": {
+          "kind": "points",
+          "values": [
+            1
+          ]
+        }
+      },
+      {
+        "chart": 2,
+        "parameters": {
+          "kind": "points",
+          "values": [
+            1
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -56,6 +56,13 @@ def refine_charts(generator,*,work_limit=100000):
         domain=chart['parameter_domain']
         if domain['cardinality']==0:
             rows.append({'chart':i,'coordinate':None,'restriction':None,'parameters':[],'evaluations':[]});continue
+        if chart.get('zero_chart'):
+            if domain['cardinality']!=1 or not contains(domain,0):raise ValueError('invalid canonical zero chart')
+            if used>=work_limit:raise WorkLimit('shared zero-fibre node budget exceeded')
+            evaluation=chart_points(chart,0,node_limit=work_limit-used)
+            used+=evaluation['root_nodes'];points.update(evaluation['points'])
+            rows.append({'chart':i,'coordinate':'zero_chart','restriction':None,'parameters':[0],'evaluations':[evaluation]})
+            continue
         restriction=None;coordinate=None
         for name in ('x','y'):
             c=chart[name]
@@ -87,6 +94,10 @@ def verify_refinement(result,*,work_limit=100000):
             if name is None:
                 if domain['cardinality']!=0 or restriction is not None or row['parameters']!=[] or row['evaluations']!=[]:return False
                 continue
+            if name=='zero_chart':
+                if chart.get('zero_chart') is not True or domain['cardinality']!=1 or not contains(domain,0) or restriction is not None or row['parameters']!=[0] or len(row['evaluations'])!=1:return False
+                values,nodes=checked_chart_points(chart,row['evaluations'][0],0,node_limit=work_limit-used)
+                used+=nodes;points.update(values);continue
             if name not in ('x','y') or chart[name]['kind']!='fibre':return False
             c=chart[name]
             if not same(restriction['left'],c['coordinate']) or not same(restriction['right'],c['target']) or restriction['status']!='COMPLETE' or not verify_relation(restriction,work_limit=work_limit):return False

@@ -142,6 +142,14 @@ def query_curve(left,right,predicate=True,*,objective=None,sense='min',point_lim
     """
     if sense not in ('min','max') or type(point_limit) is not int or point_limit<0:raise ValueError('sense and nonnegative point budget required')
     generator=parameterize_relation(left,right,node_limit=node_limit,period_limit=period_limit,algebra_limit=algebra_limit)
+    return _query_prepared_curve(generator,predicate,objective=objective,sense=sense,point_limit=point_limit,
+                                 node_limit=node_limit,period_limit=period_limit,work_limit=work_limit,algebra_limit=algebra_limit)
+
+
+def _query_prepared_curve(generator,predicate=True,*,objective=None,sense='min',point_limit=128,
+                          node_limit=100000,period_limit=65536,work_limit=1000000,algebra_limit=2000000):
+    if sense not in ('min','max') or type(point_limit) is not int or point_limit<0:raise ValueError('sense and nonnegative point budget required')
+    if generator.get('root_nodes',0)>node_limit:raise WorkLimit('prepared generator exceeds query root budget')
     base={'schema':'pp-polynomial-curve-query/1','generator':generator,'predicate':deepcopy(predicate),
           'objective':objective,'sense':sense,'point_limit':point_limit,'execution_verified':False}
     if not generator['complete']:return {**base,'status':'UNRESOLVED','complete':False,'reason':generator['reason']}

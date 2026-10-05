@@ -1,0 +1,70 @@
+{
+  "schema": "pp-query-space-push/1",
+  "base_commit": "f5d72ac26082cf2fcc0b22721985b68d4acf9c06",
+  "lean_version": "4.20.0",
+  "lean_audited_declarations": 19,
+  "axioms": "standard only",
+  "focused_tests": 18,
+  "previous_semilinear_tests": 34,
+  "full_python": {
+    "run": 891,
+    "passed": 887,
+    "skipped": 4
+  },
+  "source_sha256": {
+    "PerfectPower/CoefficientPowerCharts.lean": "ce99262b53767c77c5079aec09ccfa840ca1413760475531e0b8980602cbb0b9",
+    "PerfectPower/RecurrenceDomains.lean": "cd6e624fbcd51888234d1fe4e708e8e59b781e0e878b258aa0064533204e3c70",
+    "audit/QuerySpace.lean": "7a847a37a25c85c993c0025fdb5bad8c986eb5b32a94c8d49874f5850d10958b",
+    "audit/QuerySpaceExamples.lean": "be51a4dad152207b7ee7c64f6bdfcf71b34ca18226e632110324b17fa029dc36",
+    "python/perfectpower/coefficient_charts.py": "d4727f7e984ba4e8095edc8a65ea8eddbec0d04b8ef8de00ba2540ed1a25c09d",
+    "python/perfectpower/recurrence_domains.py": "3dc09f3c3ed0f06cf9deddb70d5e0c304b18fa1562494a72bd8c788ccfdbda8b",
+    "python/perfectpower/integer_image_index.py": "a78e5fa113baf4b027bb1b473f5f5aa62d4aac359730c7bbfcae57a7473218cc",
+    "python/perfectpower/query_space.py": "0d6ae86401356047139924d056a75956624b30f6cb7872f3302de4d46c98d8a3",
+    "python/perfectpower/polynomial_charts.py": "ce338499deb972a0eafcb6c8baf0a91eb284cbf80452d676b03f029240428c00",
+    "python/perfectpower/polynomial_images.py": "e35f83c9ae9c81fc0cbb932bf2d3c99aef9be8637203c3088b5fa70677382a11",
+    "python/perfectpower/curve_queries.py": "0ad00670b24b667c3eb231ae3639edc67b39ab058ef4e79744abc988ff6a9d99",
+    "python/perfectpower/arithmetic_families.py": "7177399b7f41140438b1927ed4ea8b8ad3abd419912b0c9d9cceda7c979eeda3",
+    "python/perfectpower/enhanced_cli.py": "fae498121081562fc6bdca5a1a77c0e9e9334c27b26fe6474b1c28c94c8ae1f4",
+    "python/tests/test_query_space_push.py": "f8eee67aa1a6457c249acd731c4db99f4e3240d4fd227ae52b662b3dcc423c70",
+    "python/develop_query_space.py": "e486c595a1b4acdb27484aa68a41e3294bc88beebcd1da7ff6cf6ee584e80cea",
+    "scripts/check_query_space.sh": "cbc74e6e8193a317b72acb305dc190b16675783420a7d5886989695744b455e8"
+  },
+  "corpus_summary": {
+    "coefficient_cases": 4096,
+    "independent_pair_checks": 2560000,
+    "coefficient_mismatches": 0,
+    "coefficient_seconds": 0.34813845099961327,
+    "recurrence_cases": 720,
+    "periodic": 344,
+    "singular": 376,
+    "independent_transition_checks": 105248,
+    "reused_fibres": {
+      "cached_fibres": 32,
+      "hits": 64,
+      "misses": 32,
+      "nodes_constructed": 590
+    },
+    "huge_curve_parameter_bound": 10000000000000000000000000000000000000000,
+    "huge_curve_count": 20000000000000000000000000000000000000001,
+    "curve_space": {
+      "compilations": 1,
+      "queries": 2,
+      "integer_images": {
+        "cached_fibres": 0,
+        "hits": 0,
+        "misses": 0,
+        "nodes_constructed": 0
+      }
+    },
+    "huge_recurrence_through": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+    "huge_recurrence_count": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+    "huge_selected_rank": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001,
+    "scope": "Constructed mathematical workloads; no industrial speedup claim. Modular power residues are necessary conditions, not integer perfect-power completeness."
+  },
+  "historical_heavy_lean_build_rerun": false,
+  "python_execution_verified": false,
+  "scope": "Constructed arithmetic workloads and focused Lean theorems; no industrial speedup claim.",
+  "previous_arithmetic_base": "624e1e763d6adcc96201acf8adc884ca477f1ac7",
+  "preserved_parallel_push": "f5d72ac26082cf2fcc0b22721985b68d4acf9c06",
+  "parallel_focused_tests": 25
+}

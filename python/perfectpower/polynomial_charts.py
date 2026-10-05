@@ -58,7 +58,9 @@ def parameterize_relation(left,right,*,algebra_limit=2000000,period_limit=65536,
     base={'schema':'pp-polynomial-charts/1','left':left,'right':right,'domain':'all integer x and y','execution_verified':False}
     lp=power_presentations(left,algebra_limit=algebra_limit);rp=power_presentations(right,algebra_limit=algebra_limit)
     pairs=[(a,b) for a in lp for b in rp if a['offset']==b['offset']]
-    if not pairs:return {**base,'status':'UNRESOLVED','points':None,'complete':False,'reason':'no common-offset integral power presentations'}
+    if not pairs:
+        from .coefficient_charts import parameterize_coefficients
+        return parameterize_coefficients(left,right,algebra_limit=algebra_limit,period_limit=period_limit,node_limit=node_limit)
     # Prefer explicit affine coordinates, then the strongest exponent reduction.
     a,b=min(pairs,key=lambda pair:(len(pair[0]['coordinate'])+len(pair[1]['coordinate']),-pair[0]['power']-pair[1]['power']))
     p,q=a['power'],b['power'];g=gcd(p,q);px,py=q//g,p//g;charts=[];used=0
@@ -81,6 +83,9 @@ def parameterize_relation(left,right,*,algebra_limit=2000000,period_limit=65536,
 def verify_parameterization(result,*,node_limit=100000,period_limit=65536):
     """Replay chosen identities and sign charts; do not discover presentations."""
     try:
+        if result.get('schema')=='pp-coefficient-polynomial-charts/1':
+            from .coefficient_charts import verify_coefficient_parameterization
+            return verify_coefficient_parameterization(result,node_limit=node_limit,period_limit=period_limit)
         if result['schema']!='pp-polynomial-charts/1' or result['complete'] is not True or result['execution_verified'] is not False or result['domain']!='all integer x and y':return False
         a,b=result['left_presentation'],result['right_presentation'];left=integer_polynomial(result['left']);right=integer_polynomial(result['right'])
         for f,r in ((left,a),(right,b)):
@@ -106,7 +111,7 @@ def verify_parameterization(result,*,node_limit=100000,period_limit=65536):
     except (ValueError,TypeError,KeyError,IndexError,ArithmeticError):return False
 
 
-def chart_points(chart,t,*,node_limit=100000):
+def chart_points(chart,t,*,node_limit=100000,image_index=None):
     """Every original pair in one chart at t; exact complete nonlinear fibres."""
     if type(t) is not int or abs(t).bit_length()>16384:raise ValueError('bounded integer parameter required')
     if not contains(chart['parameter_domain'],t):return {'parameter':t,'points':[],'fibres':[],'root_nodes':0,'complete':True,'execution_verified':False}
@@ -120,17 +125,17 @@ def chart_points(chart,t,*,node_limit=100000):
         else:
             target=evaluate(c['target'],t);f=list(c['coordinate']);f[0]-=target
             if used>=node_limit:raise WorkLimit('shared nonlinear fibre budget exceeded')
-            cert=root_certificate(f,node_limit=node_limit-used);used+=cert['nodes_checked']
+            cert=(image_index.fibre(f,node_limit=node_limit-used) if image_index is not None else root_certificate(f,node_limit=node_limit-used));used+=cert['nodes_checked']
             fibres.append({'coordinate':name,'target':target,'certificate':cert});values.append(cert['roots'])
     return {'parameter':t,'points':sorted((x,y) for x in values[0] for y in values[1]),'fibres':fibres,'root_nodes':used,'complete':True,'execution_verified':False}
 
 
-def evaluate_parameterization(result,t,*,node_limit=100000):
+def evaluate_parameterization(result,t,*,node_limit=100000,image_index=None):
     points=set();rows=[];used=0
     if result.get('complete') is not True:raise ValueError('complete chart generator required')
     for i,chart in enumerate(result['charts']):
         if used>=node_limit:raise WorkLimit('shared parameter evaluation root budget exceeded')
-        row=chart_points(chart,t,node_limit=node_limit-used);used+=row['root_nodes'];rows.append({'chart':i,**row});points.update(row['points'])
+        row=chart_points(chart,t,node_limit=node_limit-used,image_index=image_index);used+=row['root_nodes'];rows.append({'chart':i,**row});points.update(row['points'])
     if any(evaluate(result['left'],x)!=evaluate(result['right'],y) for x,y in points):raise AssertionError('chart point violates original relation')
     return {'schema':'pp-chart-evaluation/1','parameter':t,'points':sorted(points),'charts':rows,'root_nodes':used,'complete':True,'execution_verified':False}
 

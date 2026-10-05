@@ -107,3 +107,22 @@ the complete negative quartic are checked. See `SEMILINEAR_LEAN_MONOGRAPH.md`.
 General Sturm variation, proof-producing transcript assembly, rank-selection
 algorithm correctness, coefficient-bearing charts and nonlinear global images
 remain open. Numerical corpus rows are not all independently promoted to Lean.
+
+## Coefficient families and reusable recurrence domains
+
+Coefficient-bearing primitive signed power charts, expanded integral coordinate
+recognition, reusable `CurveSpace` objects and an integer-fibre index are now
+implemented. Modular polynomial-coefficient recurrences expose exact eventual
+periods and transient hit domains, counting, rank selection and global polynomial
+index optimization. Singular denominators return exact successor congruences
+and terminate deterministic coverage. The constructed corpus checks 4,096
+coefficient cases and 720 recurrence cases. See `QUERY_SPACE_MONOGRAPH.md`.
+
+Nineteen new Lean declarations close valuation balance, gcd compatibility,
+primitive exponent lines, coefficient chart soundness and coprime completeness
+under explicit denominator hypotheses, including the complete 2x²=3y³ family.
+Unit-denominator transport, all-future state repetition and actual modular
+recurrence examples are checked. The generic noncoprime chart compiler,
+factorization and orbit transcript producer, cache implementation and general
+Sturm variation remain open as formalization work. Arbitrary nonlinear global
+images and industrial performance remain separate fronts.
