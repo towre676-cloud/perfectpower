@@ -10,6 +10,7 @@ def add_commands(sub):
     p.add_argument('--verify',action='store_true')
     p=sub.add_parser('voronoi-check',help='producer-independent replay of a Voronoi witness packet')
     p.add_argument('--mesh',required=True);p.add_argument('--certificate',required=True)
+    p.add_argument('--lean-out',help='export exact packet data and native kernel acceptance theorem')
     p=sub.add_parser('intrinsic-voronoi',help='Legendre conformal torus and continuous intrinsic cells')
     p.add_argument('--lambda',dest='lam',required=True);p.add_argument('--terms',type=int,default=256)
     p.add_argument('--sites',type=json.loads,help='JSON sites in actual normalized torus coordinates')
@@ -48,6 +49,10 @@ def dispatch(args):
             ok=verify(mesh,certificate)
             print(json.dumps({'verified':ok,'kernel_checked':False,'smooth_curve_metric_certified':False}))
             if not ok: raise SystemExit(1)
+            if args.lean_out:
+                from .voronoi_lean import emit
+                source='import PerfectPower.RationalVoronoiPacket\nset_option maxHeartbeats 20000000\nset_option maxRecDepth 100000\nnamespace PerfectPower.ExportedVoronoi\nopen PerfectPower.RationalVoronoiPacket\n'+emit('exported',mesh,certificate)+'\nend PerfectPower.ExportedVoronoi\n'
+                Path(args.lean_out).write_text(source)
         else:
             fields=json.loads(Path(args.fields).read_text())
             certificate=produce(mesh,args.sites,fields,args.depth)

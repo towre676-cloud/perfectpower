@@ -139,3 +139,17 @@ transfer. See `VORONOI_ENCLOSURE_MONOGRAPH.md`. The Python checker and individua
 packets are not kernel-verified; constructing the actual polyhedral quotient
 metric in Lean and identifying it with the JSON surface remain open. Certified
 smooth comparisons, validated periods and general Sturm variation remain open.
+
+## Shared metric/arithmetic box certificates
+
+`BernsteinBoxes`, `RationalVoronoiPacket` and `UniformHyperellipticMetric` now
+supply exact bivariate positivity/support laws, literal metric and ideal-
+separator proofs, native acceptance of three explicit Voronoi witness packets,
+and a genus-independent local metric envelope for y²=x^(2g+1)-x. Polynomial
+multipliers, affine elimination and exact zero strata support complete bounded
+integer models in 108 of 144 constructed cases. Point and contained-path
+comparisons include branch and infinity charts. See
+`METRIC_ARITHMETIC_COMPILER_MONOGRAPH.md` and `scripts/check_metric_boxes.sh`.
+Global smooth atlas/mesh identification, construction of the metric quotient,
+semantic correctness of the complete native checker, raw JSON parsing, general
+period-normalized metrics and unrestricted geodesic comparison remain open.

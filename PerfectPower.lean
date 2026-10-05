@@ -377,3 +377,7 @@ import PerfectPower.CoefficientPowerCharts
 import PerfectPower.RecurrenceDomains
 
 import PerfectPower.VoronoiEnclosure
+
+import PerfectPower.BernsteinBoxes
+import PerfectPower.RationalVoronoiPacket
+import PerfectPower.UniformHyperellipticMetric

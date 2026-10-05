@@ -5,6 +5,19 @@ from .deep_recovery_cli import exact_json
 
 
 def add_commands(sub):
+    p=sub.add_parser('box-faces',help='complete bounded integer models from affine elimination and Bernstein zero faces')
+    p.add_argument('--equations',type=json.loads,required=True);p.add_argument('--box',type=json.loads,required=True)
+    p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('box-exclude',help='exact bivariate ideal separators and necessary residual boxes')
+    p.add_argument('--equations',type=json.loads,required=True);p.add_argument('--box',type=json.loads,required=True)
+    p.add_argument('--weights',type=json.loads);p.add_argument('--depth',type=int,default=4)
+    p.add_argument('--node-limit',type=int,default=10000);p.add_argument('--verify',action='store_true')
+    p=sub.add_parser('metric-box',help='exact pointwise hyperelliptic chart metric brackets')
+    p.add_argument('--coeff',type=json.loads,required=True);p.add_argument('--chart',choices=('finite','branch','infinity'),required=True)
+    p.add_argument('--branch');p.add_argument('--box',type=json.loads,required=True)
+    p.add_argument('--scales',type=json.loads,required=True);p.add_argument('--density',default='1')
+    p.add_argument('--depth',type=int,default=4);p.add_argument('--node-limit',type=int,default=10000)
+    p.add_argument('--verify',action='store_true')
     p=sub.add_parser('family-evaluate',help='complete per-parameter evaluation of composed arithmetic generators')
     p.add_argument('--coeff',type=json.loads,required=True);p.add_argument('--d',type=int,default=2);p.add_argument('--parameter',type=int,required=True)
     p.add_argument('--node-limit',type=int,default=100000);p.add_argument('--verify',action='store_true')
@@ -126,6 +139,23 @@ def add_commands(sub):
 
 
 def dispatch(args):
+    if args.command=='box-faces':
+        from .bernstein_boxes import solve_affine_faces,verify_affine_faces
+        p=solve_affine_faces(args.equations,args.box)
+        if args.verify and not verify_affine_faces(p):raise ValueError('face-model replay failed')
+        print(json.dumps(p,indent=2));return True
+    if args.command=='box-exclude':
+        from .bernstein_boxes import compile_system,candidate_boxes,verify_exclusion
+        p=(compile_system(args.equations,args.box,depth=args.depth,node_limit=args.node_limit)
+           if args.weights is None else candidate_boxes(args.equations,args.weights,args.box,depth=args.depth,node_limit=args.node_limit))
+        if args.verify and not verify_exclusion(p):raise ValueError('exclusion replay failed')
+        print(json.dumps(p,indent=2));return True
+    if args.command=='metric-box':
+        from .metric_boxes import compare,verify
+        p=compare(args.coeff,args.chart,args.box,*args.scales,args.density,args.branch,depth=args.depth,node_limit=args.node_limit)
+        if args.verify and not verify(p):raise ValueError('metric replay failed')
+        print(json.dumps(p,indent=2));return True
+
     if args.command=='coefficient-charts':
         from .coefficient_charts import primitive_power_charts,verify_primitive_charts
         result=primitive_power_charts(args.c,args.p,args.d,args.q,factor_limit=args.factor_limit)

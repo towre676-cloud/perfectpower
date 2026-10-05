@@ -41,7 +41,7 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 | Exact branching, monodromy, and finite surface models | [Branched geometry](BRANCHED_GEOMETRY_MONOGRAPH.md) |
 | Collision strata and connection determinants | [Positive geometry](POSITIVE_GEOMETRY_MONOGRAPH.md), [finite graph-event laws](ROOT_EVENTS_LEAN_MONOGRAPH.md) |
 | Differential bases and Legendre period enclosures | [Holomorphic bases](HOLOMORPHIC_BASIS_MONOGRAPH.md) |
-| Intrinsic Voronoi and numerical curve geometry | [Analytic geometry](ANALYTIC_GEOMETRY_MONOGRAPH.md), [certified finite surface geometry](CERTIFIED_SURFACE_GEOMETRY.md), [independent Voronoi witnesses](VORONOI_ENCLOSURE_MONOGRAPH.md) |
+| Intrinsic Voronoi and numerical curve geometry | [Analytic geometry](ANALYTIC_GEOMETRY_MONOGRAPH.md), [certified finite surface geometry](CERTIFIED_SURFACE_GEOMETRY.md), [independent Voronoi witnesses](VORONOI_ENCLOSURE_MONOGRAPH.md), [shared metric/arithmetic compiler](METRIC_ARITHMETIC_COMPILER_MONOGRAPH.md) |
 | Homology cycles, periods, and canonical metrics | [Symplectic analytic geometry](SYMPLECTIC_ANALYTIC_MONOGRAPH.md) |
 
 ## Proofs and evidence

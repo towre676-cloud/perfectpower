@@ -1,0 +1,243 @@
+{
+  "mesh": {
+    "vertices": 4,
+    "triangles": [
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        0,
+        3,
+        2
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "edge_lengths": [
+      [
+        0,
+        1,
+        "1"
+      ],
+      [
+        0,
+        2,
+        "1"
+      ],
+      [
+        0,
+        3,
+        "1"
+      ],
+      [
+        1,
+        2,
+        "1"
+      ],
+      [
+        1,
+        3,
+        "1"
+      ],
+      [
+        2,
+        3,
+        "1"
+      ]
+    ]
+  },
+  "packet": {
+    "schema": "pp-voronoi-witness/1",
+    "sites": [
+      0,
+      1
+    ],
+    "depth": 0,
+    "fields": [
+      [
+        "0",
+        "3/4",
+        "0",
+        "0"
+      ]
+    ],
+    "paths": [
+      [
+        [
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ]
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        [
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    ],
+    "pieces": [
+      {
+        "face": 0,
+        "barycentric_triangle": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "site": null,
+        "face_area_fraction": "1",
+        "center_upper": [
+          "2479700525/4294967296",
+          "2479700525/4294967296"
+        ],
+        "center_lower": [
+          "1/4",
+          "1/2"
+        ],
+        "radius_upper": "2479700525/4294967296",
+        "address": []
+      },
+      {
+        "face": 1,
+        "barycentric_triangle": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "site": null,
+        "face_area_fraction": "1",
+        "center_upper": [
+          "2479700525/4294967296",
+          "2479700525/4294967296"
+        ],
+        "center_lower": [
+          "1/4",
+          "1/2"
+        ],
+        "radius_upper": "2479700525/4294967296",
+        "address": []
+      },
+      {
+        "face": 2,
+        "barycentric_triangle": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "site": null,
+        "face_area_fraction": "1",
+        "center_upper": [
+          "2479700525/4294967296",
+          "6774667821/4294967296"
+        ],
+        "center_lower": [
+          "0",
+          "3/4"
+        ],
+        "radius_upper": "2479700525/4294967296",
+        "address": []
+      },
+      {
+        "face": 3,
+        "barycentric_triangle": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "site": null,
+        "face_area_fraction": "1",
+        "center_upper": [
+          "6774667821/4294967296",
+          "2479700525/4294967296"
+        ],
+        "center_lower": [
+          "1/4",
+          "1/2"
+        ],
+        "radius_upper": "2479700525/4294967296",
+        "address": []
+      }
+    ],
+    "smooth_curve_metric_certified": false,
+    "scope": "Closed connected oriented rational polyhedral surface; unresolved leaves enclose all distance ties."
+  }
+}

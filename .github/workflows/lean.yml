@@ -29,6 +29,8 @@ jobs:
         run: scripts/check_query_space.sh
       - name: Voronoi enclosure and metric transport
         run: scripts/check_voronoi_enclosure.sh
+      - name: Exact chart bounds, bivariate arithmetic and kernel packet replay
+        run: scripts/check_metric_boxes.sh
       - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
       - name: Batteries linters on the hand-written library
