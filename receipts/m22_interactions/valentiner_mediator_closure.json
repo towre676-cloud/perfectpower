@@ -1,0 +1,1007 @@
+{
+  "SU3_27_projector_rank": 27,
+  "complete_finite_mediator_scalar_census": {
+    "CP_coset_group_elements_checked": 1080,
+    "CP_even": [
+      3,
+      11,
+      58,
+      3,
+      50
+    ],
+    "CP_matrix_common_factor_squared": "(3+sqrt(5))/128",
+    "CP_odd": [
+      1,
+      6,
+      41,
+      1,
+      27
+    ],
+    "CP_trace_formula": "For K=Ad(g) CP on 8, T=(g X)(g X)*: trace(K^odd)=trace(T^odd)-1, trace(K^even)=|trace(T^(even/2))|^2-1.",
+    "before_CP": [
+      4,
+      17,
+      99,
+      4,
+      77
+    ],
+    "complete_scalar_coefficients_with_Higgs": 251,
+    "complete_scalar_coefficients_without_Higgs": 238,
+    "group_order": 1080,
+    "labels": [
+      "W_quadratic",
+      "W_cubic",
+      "W_quartic",
+      "single_sector_source2_W",
+      "single_sector_source2_W2"
+    ],
+    "representation": "W=Sym2(8)-1-8=8prime+9+5+5prime, real dimension 27",
+    "scope": "All nonderivative scalar monomials through degree four for the declared 20 odd source coordinates, even real W27, Higgs, sector Z2 and generalized CP. Tadpoles and Higgs-linear-W cubics vanish because W has no singlet."
+  },
+  "completions": {
+    "fermion_safe_finite": {
+      "full_Hessian_minimum": 1.1258382369894166e-05,
+      "full_Hessian_schur_error": 1.1102230246251565e-16,
+      "groups": [
+        {
+          "certificate": {
+            "matching_error": 6.938893903907228e-18,
+            "rank": 1
+          },
+          "dimension": 8,
+          "down": -1.6393879969923797,
+          "kind": "finite",
+          "name": "finite_adjoint",
+          "projector_index": 2,
+          "up": 1.9836594763607798
+        },
+        {
+          "certificate": {
+            "matching_error": 3.469446951953614e-18,
+            "rank": 1
+          },
+          "dimension": 9,
+          "down": -1.9738213528460202,
+          "kind": "finite",
+          "name": "finite_nine",
+          "projector_index": 3,
+          "up": 1.263245665821453
+        },
+        {
+          "certificate": {
+            "matching_error": 0.0,
+            "rank": 1
+          },
+          "dimension": 10,
+          "down": 0.9771261436661198,
+          "kind": "finite",
+          "name": "CP_pair_five",
+          "projector_index": 4,
+          "up": 1.6513431827957425
+        }
+      ],
+      "mass": 10.0,
+      "matching_contact_cross_residual": 1.0408340855860843e-16,
+      "mediator_vacuum": [
+        0.0009239737658187577,
+        -0.007495732400893924,
+        0.0008211528612429692,
+        -0.006931996233602827,
+        0.006314983707138698,
+        -0.006789239978810649,
+        -0.0034360030950995653,
+        -0.0012515401464920255,
+        0.001382381884506152,
+        -0.00022631309356945295,
+        0.0023050920621335695,
+        -0.0002457488956836128,
+        0.0012960228950787878,
+        -0.005116002173136223,
+        0.006436701434764326,
+        0.0001552964734124239,
+        0.012441976262450995,
+        0.002817840878466356,
+        -0.0005521052459054221,
+        -0.0014279538099604512,
+        -0.003462935603774417,
+        0.0011394096812043359,
+        0.002453881222339878,
+        -0.0009729666535163282,
+        -0.007240887504139253,
+        0.003244087365830598,
+        -0.0067610728701910225
+      ],
+      "neutral_scalar_count": 48,
+      "one_loop_paired_vertex_reality_with_new_fermion_vertices_zero": 2.7516862346698805e-17,
+      "real_mediator_count": 27,
+      "scope": "Positive Gaussian-square completion of declared source coefficients; additional symmetry-allowed scalar interactions have zero chosen coefficients. Not a symmetry-enforced prediction.",
+      "source_contact_coefficients": [
+        0.9999999999999998,
+        0.0008588624878189084,
+        -0.0020383058139057724,
+        0.0021086163662448793,
+        1.0000000000000004,
+        4.271703063074184e-05,
+        -0.001781205260714219,
+        -0.0007280219667464206,
+        0.0012922352458119765,
+        0.0007446819334812833,
+        1.0079308655053172,
+        0.008045205810525887,
+        0.9999999999999999,
+        -0.001129801133896481,
+        -0.000863509153220981,
+        0.0014651113033846072,
+        1.0,
+        0.0006507861176320112,
+        -0.0005532056325433262,
+        0.0013285401587293047,
+        -0.00017727772932857406,
+        -0.0003518597388210739,
+        1.0065312119510004,
+        0.00862029748272074,
+        -0.000396060417956725,
+        0.0013447715091552783,
+        8.010431512172885e-05,
+        0.0019012210241430498,
+        0.001811450174487295,
+        -0.0017424152405886666,
+        0.0011836286105370382,
+        0.0017122621977219488,
+        -0.0002892378491917949,
+        0.0010433482942706965,
+        0.0007590532378258214,
+        0.0009879390236532037,
+        -0.0006529226638042716,
+        0.00017917319401740178,
+        0.0010288467524256428,
+        -0.00029293687167237956,
+        -0.0018733713421814316,
+        -0.0017381072612750862,
+        0.000724797233448213,
+        0.0021067550686976115,
+        -0.0013098230025464332,
+        0.0015755307047908866,
+        -0.0009895720381759726,
+        0.0011266641401212955,
+        0.0013963339568986634,
+        2.0816681711721685e-17,
+        1.0408340855860843e-16,
+        1.3877787807814457e-17
+      ],
+      "source_observables_identical": {
+        "J": 0.00026225346207613386,
+        "K": 0.00027695442989679036,
+        "N": -0.033282494419450775,
+        "cos_standard_phase": -0.9999578961553848,
+        "depth": 7.724655452410484,
+        "golden_polynomial": 0.017712132966181966,
+        "golden_scaled_residual": 3143.8528108699556,
+        "phase_carrier_polynomial": 5.835922997834428e-15,
+        "phase_scaled_residual": 0.9919191813771565,
+        "positive_66_branch": false,
+        "small_golden_branch": false,
+        "squared_magnitudes": [
+          0.07501680000628531,
+          0.03164067901063802,
+          0.4176900226031852,
+          0.44926242756043006
+        ],
+        "t": 0.5823099773968148,
+        "unitarity_polynomial_scaled_residual": -3.914731289510489e-15,
+        "unitary_CP_polynomial": -1.0842021724855044e-18
+      }
+    },
+    "universal": {
+      "allowed_adjoint_heavy_Yukawa_test": {
+        "UV_phase_coefficient": 1.5171601135345033e-17,
+        "one_loop_mass_phase": -7.411039291576714e-11,
+        "real_coefficient": 0.05,
+        "relative_correction_norm": 0.03268352144718143,
+        "scope": "Actual completed scalar Hessian and equivariant ordinary-adjoint heavy-mass vertex. Neutral-scalar mass threshold only, not a complete gauge matching calculation.",
+        "tree_determinant": "(4.665599889693453e-05-4.456497565527674e-21j)"
+      },
+      "full_Hessian_minimum": 1.125744953099603e-05,
+      "full_Hessian_schur_error": 2.220446049250313e-16,
+      "groups": [
+        {
+          "certificate": {
+            "matching_error": 8.673617379884035e-19,
+            "rank": 4,
+            "singular_values": [
+              0.003279677391294494,
+              0.0028110449941689147,
+              0.001356814907624999,
+              0.0002539237117778087
+            ]
+          },
+          "dimension": 1,
+          "down": [
+            [
+              -0.3119875478326616,
+              -0.14057139412407105,
+              0.11040301236882662,
+              -0.11743171061086871
+            ],
+            [
+              0.26886790488335177,
+              0.3563493177203789,
+              0.01631081642481377,
+              -0.09096712789568771
+            ],
+            [
+              -0.20054497973341234,
+              0.08563475894675437,
+              -0.3341627436657164,
+              -0.026803012963948783
+            ],
+            [
+              -0.3436906602661384,
+              0.35640711888409055,
+              0.10752619976426814,
+              0.05107587159559837
+            ]
+          ],
+          "kind": "quadratic",
+          "name": "singlet",
+          "up": [
+            [
+              0.056214251754222753,
+              -0.43377163962468657,
+              -0.11488026188275292,
+              -0.07537513647477806
+            ],
+            [
+              0.5669730623703905,
+              0.05831438895968483,
+              0.029364503396287656,
+              -0.0059517423840538776
+            ],
+            [
+              0.03689638944533373,
+              -0.29510906596145037,
+              0.11964259101399576,
+              0.12141351101924015
+            ],
+            [
+              -0.04458587244185983,
+              -0.049565464809903356,
+              0.32757807092050173,
+              -0.07024454486836786
+            ]
+          ]
+        },
+        {
+          "certificate": {
+            "matching_error": 1.0842021724855044e-18,
+            "rank": 3,
+            "singular_values": [
+              0.0030474957914730775,
+              0.0026363914180379806,
+              0.0019112303368916644
+            ]
+          },
+          "dimension": 8,
+          "down": [
+            [
+              -0.5078837569304049,
+              -0.20098786185826414,
+              0.008245138244795095
+            ],
+            [
+              0.16824587589572312,
+              -0.3824772559710247,
+              -0.2594603271095409
+            ],
+            [
+              -0.13600365376579454,
+              0.2774061460283761,
+              -0.35176041568189664
+            ]
+          ],
+          "kind": "adjoint",
+          "name": "ordinary_adjoint",
+          "up": [
+            [
+              -0.18390523340465895,
+              -0.47124057341795583,
+              -0.09447772633863295
+            ],
+            [
+              0.4937289607539339,
+              -0.19519378205741067,
+              0.1030706453056713
+            ],
+            [
+              -0.16480339070093813,
+              -0.05891393056517624,
+              0.41421423803548973
+            ]
+          ]
+        },
+        {
+          "certificate": {
+            "matching_error": 0.0,
+            "rank": 1
+          },
+          "dimension": 8,
+          "down": -1.8033267966916178,
+          "kind": "finite",
+          "name": "finite_adjoint",
+          "projector_index": 2,
+          "up": 1.8033267966916178
+        },
+        {
+          "certificate": {
+            "matching_error": 3.469446951953614e-18,
+            "rank": 1
+          },
+          "dimension": 9,
+          "down": -1.5790570822768162,
+          "kind": "finite",
+          "name": "finite_nine",
+          "projector_index": 3,
+          "up": 1.5790570822768162
+        },
+        {
+          "certificate": {
+            "matching_error": 3.469446951953614e-18,
+            "rank": 1
+          },
+          "dimension": 10,
+          "down": 1.2702639867659558,
+          "kind": "finite",
+          "name": "CP_pair_five",
+          "projector_index": 4,
+          "up": 1.2702639867659558
+        }
+      ],
+      "mass": 10.0,
+      "matching_contact_cross_residual": 9.29486522471823e-16,
+      "mediator_vacuum": [
+        0.004078977172022756,
+        0.0021838102373915235,
+        -0.0033031904028951163,
+        0.0017240627954718802,
+        -0.000256642706703348,
+        -0.0010319444046330306,
+        -0.0020571962096802916,
+        -0.00028083189186908135,
+        -0.0004475724640015494,
+        -0.0029737238340472746,
+        0.0001880973571023553,
+        -0.0020963193615644816,
+        -0.0029471163924628453,
+        0.002204260468382096,
+        -0.0006914953243380356,
+        0.001071164482606264,
+        -0.003628408605249279,
+        0.0014794658311601968,
+        0.004908180456350889,
+        -0.0030189891112759803,
+        -0.00013892270263878362,
+        0.0002640785447880408,
+        -0.0009327028572292739,
+        0.0008173376291225753,
+        -0.0008208939586090231,
+        0.00042505383843936443,
+        0.0008129432511154064,
+        -0.0015455479943761118,
+        0.0011544901221269754,
+        -0.007612847748912875,
+        0.0006420730489182439,
+        -0.007370822459688604,
+        0.006736982998042239,
+        -0.006855310737827932,
+        -0.0034345904469801967,
+        -0.0014606149144052937,
+        0.0007590194480440318,
+        -5.6119006745494194e-05,
+        0.0020101996167833846,
+        5.893337792288178e-06,
+        0.0007122038001208197,
+        -0.005424305810074053,
+        0.006270571672999878,
+        0.0001688042356321695,
+        0.011958276755687702,
+        0.001977260323864515,
+        0.0005706712629311281,
+        -0.0015833963492761615,
+        -0.0030666035701404446,
+        0.0003879037196734671,
+        0.0018913756738423962,
+        -0.0016056998871205625,
+        -0.006430208151110406,
+        0.0027427593579273913,
+        -0.005889221466298473
+      ],
+      "neutral_scalar_count": 76,
+      "one_loop_paired_vertex_reality_with_new_fermion_vertices_zero": 2.7522090735637127e-17,
+      "real_mediator_count": 55,
+      "scope": "Positive Gaussian-square completion of declared source coefficients; additional symmetry-allowed scalar interactions have zero chosen coefficients. Not a symmetry-enforced prediction.",
+      "source_contact_coefficients": [
+        1.0010509838160593,
+        0.001930741629661286,
+        -0.0014142538417844775,
+        0.002173624140113613,
+        1.0016287835935527,
+        0.001233352989674712,
+        -0.001430287036213802,
+        0.0005531190828806622,
+        0.0014816034560909926,
+        0.00047292948260622465,
+        1.0071875680918276,
+        0.010197437454533732,
+        1.0007153778932285,
+        -0.0009619542424332175,
+        -0.001278763145418612,
+        0.0012009463566683121,
+        1.0010390792380308,
+        0.0027728346862187824,
+        -3.889874138857639e-05,
+        0.002855172702430359,
+        -7.309307714944022e-05,
+        -0.0007290169674035493,
+        1.0079148878935384,
+        0.008148294660443946,
+        3.9676378502107035e-16,
+        1.24683249835833e-16,
+        -7.231628490478315e-17,
+        -5.139118297581291e-17,
+        3.380542373809803e-16,
+        1.971079549578647e-16,
+        -4.859394137080031e-16,
+        4.9439619065339e-17,
+        -2.949029909160572e-17,
+        -1.8778381627448937e-16,
+        9.29486522471823e-16,
+        -1.214306433183765e-17,
+        -2.7050844203513336e-16,
+        -8.61940727125976e-17,
+        -1.0495077029659683e-16,
+        1.7618285302889447e-17,
+        -2.2854981795994433e-16,
+        -9.085614205428527e-17,
+        -4.607859233063394e-17,
+        6.158268339717665e-17,
+        1.0256552551712872e-16,
+        -1.0018028073766061e-16,
+        8.890457814381136e-18,
+        -1.2793585635328952e-16,
+        -1.3595895242968226e-16,
+        -3.469446951953614e-17,
+        -1.3877787807814457e-17,
+        -2.7755575615628914e-17
+      ],
+      "source_observables_identical": {
+        "J": 0.00026225346207613386,
+        "K": 0.00027695442989679036,
+        "N": -0.033282494419450775,
+        "cos_standard_phase": -0.9999578961553848,
+        "depth": 7.724655452410484,
+        "golden_polynomial": 0.017712132966181966,
+        "golden_scaled_residual": 3143.8528108699556,
+        "phase_carrier_polynomial": 5.835922997834428e-15,
+        "phase_scaled_residual": 0.9919191813771565,
+        "positive_66_branch": false,
+        "small_golden_branch": false,
+        "squared_magnitudes": [
+          0.07501680000628531,
+          0.03164067901063802,
+          0.4176900226031852,
+          0.44926242756043006
+        ],
+        "t": 0.5823099773968148,
+        "unitarity_polynomial_scaled_residual": -3.914731289510489e-15,
+        "unitary_CP_polynomial": -1.0842021724855044e-18
+      }
+    }
+  },
+  "exact_SU3_27_certificate": {
+    "SU3_adjoint_covariant_Gram": "5/6 times identity_8",
+    "enforced_finite_channel_relation": "lambda_8prime=lambda_9=lambda_CP_pair5",
+    "mixed_invariant": "Tr(A B)^2 - 6/5 Tr(A^2 B^2) + 11/40 Tr(A^2) Tr(B^2)",
+    "projector_27_rank": 27,
+    "scope": "Exact SU(3) projector identity and unsplit 27-plet tree coefficient relation. Finite-group mass splitting and other SU(3)-breaking interactions remove the equality.",
+    "self_invariant": "27/40 [Tr(A^2)]^2"
+  },
+  "exact_rank_one_running_certificate": {
+    "beta_a": "72*a**2 + 2*b**2",
+    "beta_b": "24*a*b + 16*b**2 + 24*b*c",
+    "beta_c": "2*b**2 + 72*c**2",
+    "preserved_nontrivial_radial_case": "u=v",
+    "rank_one_relation": "b^2-4*a*c=0",
+    "rank_one_relation_beta_on_surface": "-128*k**3*u**2*v**2*(u - v)**2",
+    "scope": "Exact pure-light-scalar one-loop EFT result, 16*pi^2 beta normalization. Failure of a tree matching identity under running does not rule out calculable UV matching."
+  },
+  "finite_mediated_fixed_mass_observable_response": [
+    [
+      -22.393833887544847,
+      10.119700632804651,
+      -25.034902156939598
+    ],
+    [
+      -8.438004048982872,
+      3.6924738310989413,
+      -9.977073865196502
+    ],
+    [
+      -23.72099082126322,
+      13.815306305370312,
+      -18.269704053164304
+    ],
+    [
+      -31.948421465172185,
+      17.39412157578113,
+      -28.072918280663828
+    ]
+  ],
+  "finite_mediated_fixed_mass_response_singular_values": [
+    67.66777007639887,
+    5.895677319512161,
+    0.06814324251585872
+  ],
+  "heavy_vertex_exact_counterexample": {
+    "Hermitian_heavy_mass_vertex": "Matrix([[0, I], [-I, 0]])",
+    "Hermitian_source_vertex": "Matrix([[0, 1], [1, 0]])",
+    "heavy_singular_values": [
+      "2",
+      "3"
+    ],
+    "heavy_state_vertex_pair": "21/25 - 3*I/25",
+    "imaginary_part": "-3/25",
+    "scope": "Counterexample to termwise vertex reality, not a standalone complete CP-breaking vacuum or all-diagram theta calculation.",
+    "source_eigenvalues": [
+      "3/2",
+      "8/3"
+    ]
+  },
+  "matching_certificates": {
+    "Gaussian_mass_coefficients": 19,
+    "allowed_heavy_mass_Yukawas_for_each_singlet_or_ordinary8_copy_per_sector": 1,
+    "fermion_bilinear_representation": "3bar tensor 3 = 1 + ordinary 8",
+    "finite_only_real_coordinates": 27,
+    "finite_only_total_neutral_coordinates_with_sources_Higgs": 48,
+    "finite_orientation_parameter_Jacobian_determinant": "-(a*d - b*c)*(a*d + b*c)",
+    "finite_orientation_scope": "Two finite-eight/pair self coefficients and their two cross coefficients are generically independently adjustable; radial contacts compensate radial self terms.",
+    "new_fermion_couplings_for_finite_8prime_9_5pair": 0,
+    "rank_one_mixed_dimension": {
+      "adjoint_3_by_3": 5,
+      "finite_channels": 3,
+      "singlet_4_by_4": 7,
+      "total": 15
+    },
+    "scope": "Gaussian tree matching on the declared triplets. Extra mediator self interactions and source contacts are allowed, not claimed forbidden.",
+    "single_mediator_cross_matrix_rank_at_most": 1,
+    "single_per_channel_cubic_coefficients": 20,
+    "single_per_channel_mixed_codimension": 13,
+    "single_per_channel_real_coordinates": 36,
+    "universal_minimum_multiplets": 10,
+    "universal_minimum_real_coordinates": 55,
+    "universal_source_current_coefficients": 56
+  },
+  "projector_certificate": {
+    "CP_channel_permutation": [
+      3,
+      1,
+      2,
+      0,
+      4,
+      5
+    ],
+    "CP_even_channel_ranks": [
+      1,
+      8,
+      8,
+      9,
+      10
+    ],
+    "SU3_adjoint_identification_error": 4.101462472316662e-14,
+    "canonical_CP_even_channels": [
+      "singlet_1",
+      "SU3_adjoint_8",
+      "finite_adjoint_8",
+      "finite_9",
+      "CP_pair_5_plus_5"
+    ],
+    "complex_quartic_channels": [
+      5,
+      8,
+      8,
+      5,
+      9,
+      1
+    ],
+    "idempotence_error": 3.525339979444167e-15,
+    "max_CP_even_invariance_error": 6.175294426298746e-14,
+    "max_generator_invariance_error": 6.016128368451751e-14
+  },
+  "rational_table_maximum_error": 3.126388037344441e-13,
+  "scalar_loop_compilation": {
+    "basis_condition_number": 606.8512105104737,
+    "field_count": 20,
+    "fit_relative_error": 1.8459056682917742e-15,
+    "minimum_basis_singular_value": 3.2402267577958375,
+    "normalization": "16*pi^2 beta(V4)=Tr[(Hess V4)^2]/2",
+    "off_grid_relative_errors": [
+      1.379788748286322e-15,
+      1.036247221370121e-15,
+      3.0562412274964264e-15,
+      4.335827687181047e-16,
+      4.007972101310914e-15,
+      3.212274190533549e-15
+    ],
+    "operator_count": 52,
+    "sample_count": 128,
+    "scope": "Canonical-real-scalar quartic contribution only. Numerical operator reconstruction, no gauge, Yukawa, Higgs or matching-threshold terms."
+  },
+  "scalar_loop_fixed_mass_drift": {
+    "fixed_mass_J_response_16pi2": -0.09382535304328912,
+    "fixed_mass_depth_response_16pi2": 262.60230985286626,
+    "quartic_beta_coefficients_16pi2": [
+      72.00007674860727,
+      0.061808370651639466,
+      -0.09748587086050298,
+      0.15178427583784776,
+      72.00011775117511,
+      0.004470213782522787,
+      -0.14249983782867928,
+      -0.07574034153154402,
+      0.06204074142894159,
+      0.03571864884721383,
+      128.06472810722258,
+      0.19421761036328888,
+      72.00003353673046,
+      -0.08136245552840474,
+      -0.041370901823675824,
+      0.10544550333781964,
+      72.00006034162642,
+      0.06771345715962086,
+      -0.04425550707493001,
+      0.1381969835017428,
+      -0.008510372575029424,
+      -0.016900564615051156,
+      127.99913423098457,
+      -0.002609428870745745,
+      -0.018962124454015603,
+      0.06470981837776102,
+      0.0019685772136343762,
+      0.1977924312739462,
+      0.08709256570891141,
+      -0.08348809219033788,
+      0.028257832546568704,
+      0.17813727972479582,
+      -0.006912058571322978,
+      0.02506620063595493,
+      -4.623624116252971e-05,
+      0.07916328048442944,
+      -0.06792064540838438,
+      0.018653909479693413,
+      0.08233045663900351,
+      -0.04271645753651851,
+      -0.000675535450055861,
+      -0.0006253971320227663,
+      0.011729724271259966,
+      0.0007189045244000026,
+      -0.0004162448346182053,
+      0.025427009269807063,
+      -0.0159450488159483,
+      0.018139655978637568,
+      0.053662335668270125,
+      1.0511254708655602,
+      0.8037145208887767,
+      -0.5190940026201022
+    ],
+    "scope": "Sensitivity to the scalar-only quartic counterterm with compensating quadratic parameters, not a complete physical CKM renormalization group evolution."
+  },
+  "scalar_loop_subalgebras": {
+    "SU3_unified_27": {
+      "closure_projection_error": 3.552713678800501e-14,
+      "dimension": 5,
+      "dimension_history": [
+        3,
+        4,
+        5
+      ]
+    },
+    "one_finite_channel": {
+      "closure_projection_error": 2.1316282072803006e-14,
+      "dimension": 9,
+      "dimension_history": [
+        3,
+        4,
+        8,
+        9
+      ],
+      "seeds": [
+        "norm2_up",
+        "norm2_down",
+        "finite8_cross"
+      ],
+      "support": [
+        "norm2_up",
+        "finite8_self_up",
+        "norm2_down",
+        "finite8_self_down",
+        "adjoint_norm_up__adjoint_norm_down",
+        "A2_8_up_dot_A2_8_down",
+        "finite8_cross",
+        "finite9_cross",
+        "CP_pair5_cross"
+      ]
+    },
+    "radial": {
+      "closure_projection_error": 0.0,
+      "dimension": 2,
+      "dimension_history": [
+        2
+      ],
+      "seeds": [
+        "norm2_up",
+        "norm2_down"
+      ],
+      "support": [
+        "norm2_up",
+        "norm2_down"
+      ]
+    },
+    "three_finite_channels": {
+      "closure_projection_error": 2.1316282072803006e-14,
+      "dimension": 9,
+      "dimension_history": [
+        5,
+        8,
+        9
+      ],
+      "seeds": [
+        "norm2_up",
+        "norm2_down",
+        "finite8_cross",
+        "finite9_cross",
+        "CP_pair5_cross"
+      ],
+      "support": [
+        "norm2_up",
+        "finite8_self_up",
+        "norm2_down",
+        "finite8_self_down",
+        "adjoint_norm_up__adjoint_norm_down",
+        "A2_8_up_dot_A2_8_down",
+        "finite8_cross",
+        "finite9_cross",
+        "CP_pair5_cross"
+      ]
+    }
+  },
+  "scope": "Constructive matching and light-scalar counterterms. No derived golden CKM interaction; thresholds and complete UV operator census are distinct.",
+  "single_mediator_mixed_parameter_Jacobian_rank": 15,
+  "six_UV_current_coupling_finite_checks": [
+    {
+      "coupling": 1,
+      "finite_response": [
+        0.31178062227105174,
+        0.0993721935380748,
+        1.793645116210385,
+        1.8830471448516573
+      ],
+      "group": "finite_adjoint",
+      "implicit_response": [
+        0.31178045447471936,
+        0.09937211278149283,
+        1.7936448310218456,
+        1.8830467796160377
+      ],
+      "relative_response_error": 1.9053393333234963e-07,
+      "sector": "down",
+      "sides": [
+        {
+          "48_scalar_Hessian_minimum": 1.1266180691688493e-05,
+          "J": 0.00026233164492457884,
+          "complete_mass_change": 4.440892098500626e-16,
+          "depth": 7.72472626362104,
+          "equation_residual": 7.224039075270916e-16,
+          "sign": -1,
+          "squared_magnitudes": [
+            0.07501617615872508,
+            0.03164048017845219,
+            0.41768643426711627,
+            0.44925866033754636
+          ]
+        },
+        {
+          "48_scalar_Hessian_minimum": 1.1250588753573421e-05,
+          "J": 0.00026217529059697364,
+          "complete_mass_change": 4.440892098500626e-16,
+          "depth": 7.72458470101294,
+          "equation_residual": 1.0358813145368989e-13,
+          "sign": 1,
+          "squared_magnitudes": [
+            0.07501742328121416,
+            0.03164087766722634,
+            0.4176936088475811,
+            0.44926619252612576
+          ]
+        }
+      ]
+    },
+    {
+      "coupling": 2,
+      "finite_response": [
+        0.19974483177545577,
+        0.07288285285185492,
+        0.27268949454040126,
+        0.343328929494624
+      ],
+      "group": "finite_nine",
+      "implicit_response": [
+        0.19974482172446795,
+        0.07288284318077154,
+        0.27268946595215837,
+        0.34332889095600727
+      ],
+      "relative_response_error": 1.025496419515168e-07,
+      "sector": "up",
+      "sides": [
+        {
+          "48_scalar_Hessian_minimum": 1.1260101657762665e-05,
+          "J": 0.00026227081200717146,
+          "complete_mass_change": 4.440892098500626e-16,
+          "depth": 7.724696006913499,
+          "equation_residual": 1.6706423841984092e-14,
+          "sign": -1,
+          "squared_magnitudes": [
+            0.07501640050682724,
+            0.03164053324181899,
+            0.41768947718772076,
+            0.44926174086312026
+          ]
+        },
+        {
+          "48_scalar_Hessian_minimum": 1.1256663230602857e-05,
+          "J": 0.0002622361117572108,
+          "complete_mass_change": 6.661338147750939e-16,
+          "depth": 7.72461490036032,
+          "equation_residual": 2.8358459786166634e-15,
+          "sign": 1,
+          "squared_magnitudes": [
+            0.07501719948615435,
+            0.031640824773230394,
+            0.4176905679456989,
+            0.44926311417883824
+          ]
+        }
+      ]
+    },
+    {
+      "coupling": 0,
+      "finite_response": [
+        -0.112248562965378,
+        0.0015107175423828556,
+        -0.46008418930210127,
+        -0.4539110632084675
+      ],
+      "group": "finite_adjoint",
+      "implicit_response": [
+        -0.11224867012965545,
+        0.0015106510001250406,
+        -0.4600842481994327,
+        -0.45391118916326967
+      ],
+      "relative_response_error": 2.8619300510010023e-07,
+      "sector": "up",
+      "sides": [
+        {
+          "48_scalar_Hessian_minimum": 1.1253827195820181e-05,
+          "J": 0.0002622105883538151,
+          "complete_mass_change": 2.220446049250313e-16,
+          "depth": 7.7246405684365405,
+          "equation_residual": 9.987941463479588e-15,
+          "sign": -1,
+          "squared_magnitudes": [
+            0.07501702446922848,
+            0.031640675977296334,
+            0.41769094269145485,
+            0.449263335290756
+          ]
+        },
+        {
+          "48_scalar_Hessian_minimum": 1.1262937996158703e-05,
+          "J": 0.0002622963256904072,
+          "complete_mass_change": 4.440892098500626e-16,
+          "depth": 7.724670343480296,
+          "equation_residual": 2.214296590053247e-14,
+          "sign": 1,
+          "squared_magnitudes": [
+            0.07501657547497662,
+            0.031640682020166504,
+            0.41768910235469764,
+            0.4492615196465032
+          ]
+        }
+      ]
+    },
+    {
+      "coupling": 5,
+      "finite_response": [
+        0.3344757290128786,
+        0.12422022391961329,
+        1.090304977205414,
+        1.2082013127745483
+      ],
+      "group": "CP_pair_five",
+      "implicit_response": [
+        0.3344756145384764,
+        0.12422015951973897,
+        1.090304871914638,
+        1.2082011429381811
+      ],
+      "relative_response_error": 1.435274955828659e-07,
+      "sector": "down",
+      "sides": [
+        {
+          "48_scalar_Hessian_minimum": 1.1263158417702549e-05,
+          "J": 0.00026230063403074265,
+          "complete_mass_change": 6.661338147750939e-16,
+          "depth": 7.724728996428601,
+          "equation_residual": 8.881784197001252e-16,
+          "sign": -1,
+          "squared_magnitudes": [
+            0.07501613094029036,
+            0.03164043053517862,
+            0.41768784156688243,
+            0.4492600106984862
+          ]
+        },
+        {
+          "48_scalar_Hessian_minimum": 1.1253608129503882e-05,
+          "J": 0.00026220629535767757,
+          "complete_mass_change": 4.440892098500626e-16,
+          "depth": 7.72458193319243,
+          "equation_residual": 7.563394355258879e-16,
+          "sign": 1,
+          "squared_magnitudes": [
+            0.07501746884320641,
+            0.0316409274160743,
+            0.41769220278679126,
+            0.4492648435037373
+          ]
+        }
+      ]
+    }
+  ],
+  "six_UV_current_coupling_finite_rank_check": {
+    "finite_implicit_error_spectral_norm": 5.812788379302288e-07,
+    "finite_singular_values": [
+      3.205037262294978,
+      0.198476888394603,
+      0.04509330142969059,
+      3.9553792916458895e-06
+    ]
+  },
+  "six_UV_current_coupling_fixed_mass_response_singular_values": [
+    3.2347242374529324,
+    0.22181060955976903,
+    0.054650353365295806,
+    4.233174489688633e-06
+  ],
+  "soft_mediator_counterterm_certificate": {
+    "EFT_tree_exchange": "-g^2 (u*x^2+v*y^2)^2/(2*M^2)",
+    "UV_quartic_counterterm_16pi2": "72*a**2*x**4 + 72*b**2*y**4",
+    "UV_scalar_counterterm_16pi2": "M**4/2 + 2*S**2*g**2*u**2 + 2*S**2*g**2*v**2 + 24*S*a*g*u*x**2 + 24*S*b*g*v*y**2 + 72*a**2*x**4 + 72*b**2*y**4 + 4*g**2*u**2*x**2 + 4*g**2*v**2*y**2",
+    "no_hard_mediator_quartic_counterterm": true,
+    "no_source_cross_quartic_in_this_separated_UV_fixture": true,
+    "power_counting": "Every external mediator needs a dimension-one current coupling. A local divergent counterterm of dimension d has coefficient dimension 4-d, with no inverse masses. For mediator cubics, mediator quartics and mediator2*source2 quartics the required coupling degree exceeds 4-d.",
+    "scope": "Renormalizable perturbative soft-current theory in a mass-independent scheme, without hard mediator gauge/Yukawa/scalar couplings. Finite thresholds and higher-dimensional effective interactions are not zero."
+  },
+  "source_receipt": "valentiner_nonet_joint.json",
+  "sources": [
+    {
+      "title": "One-loop algebras and fixed flow trajectories in adjoint multi-scalar gauge theory",
+      "url": "https://arxiv.org/abs/2303.13884"
+    },
+    {
+      "title": "RG-stable parameter relations of a scalar field theory in absence of a symmetry",
+      "url": "https://arxiv.org/abs/2502.11011"
+    }
+  ]
+}
