@@ -184,3 +184,5 @@ The flavor model now has an exact stationarity-space audit (rank eight in a 13-c
 ## Curve-family differential checkpoint
 
 CurveFamily now derives exact Gauss-Manin reduction identities and observable differential operators over Q(t) for declared monic hyperelliptic families of odd x degrees 3, 5 and 7. Marked numerical periods, matrix/scalar continuation, de Rham monodromy and exact rational-segment pole exclusion are integrated with parameter populations and bounded arithmetic queries. Local Frobenius execution at degeneration, general cyclic/even-degree families, exact integral homology marking, rigorous interval ODE continuation and Lean proofs remain open. See CURVE_FAMILIES_MONOGRAPH.md.
+
+The connected closures continuation closes general ordered weighted Cauchy–Binet, bounded original-source polynomial image count/selection emission, and native integral-candidate uniqueness. See `CONNECTED_CLOSURES_MONOGRAPH.md` and `receipts/connected_closures`. Unordered-subset packaging, generic Sturm/semilinear compiler refinement, and analytic cycle-marking refinement remain open.

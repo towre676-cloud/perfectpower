@@ -174,3 +174,13 @@ paper:
 # Native Why3 sessions (why3_isqrt/sessions): replay the committed sessions with `why3 replay`.
 why3-session:
 	$(PY) why3_isqrt/native_session.py --check
+
+.PHONY: connected-closures-lean connected-closures-receipts
+connected-closures-lean:
+	lake build PerfectPower.CauchyBinet PerfectPower.IntegralRecognition PerfectPower.FiniteDomainCertificate
+	lake env lean audit/ConnectedClosures.lean
+	lake env lean audit/PopulationGenerated.lean
+	lake env lean audit/PopulationEdgeCases.lean
+
+connected-closures-receipts:
+	$(PY) python/develop_connected_closures.py --periods

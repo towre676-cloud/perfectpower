@@ -1,0 +1,60 @@
+{
+  "cardinality": 10,
+  "execution_verified": false,
+  "lean": "import PerfectPower.FiniteDomainCertificate\nnamespace PerfectPower.GeneratedPopulation\nopen PerfectPower.FiniteDomainCertificate\nprivate def accepts (x : \u2124) : Prop := ((((((0) + x * (((1) + x * (0))))) % (4)) < (2)) \u2228 (((-9) + x * (((0) + x * (((1) + x * (0)))))) = (0)))\nprivate instance : DecidablePred accepts := fun x => by unfold accepts; infer_instance\nprivate def imageMap (x : \u2124) : \u2124 := ((0) + x * (((0) + x * (((1) + x * (0))))))\nprivate def transcript : Domain := boundedImage (-12) (12) accepts imageMap\n\ntheorem source_complete (z : \u2124) :\n    z \u2208 evaluate transcript \u2194 \u2203 x : \u2124, (-12) \u2264 x \u2227 x \u2264 (12) \u2227 accepts x \u2227 imageMap x = z :=\n  bounded_image_complete (-12) (12) accepts imageMap z\n\ntheorem count_checked : (evaluate transcript).card = 10 := by decide +kernel\n\ntheorem selection_0 :\n    (\u2203 x : \u2124, (-12) \u2264 x \u2227 x \u2264 (12) \u2227 accepts x \u2227 imageMap x = (0)) \u2227\n    \u2200 z, (\u2203 x : \u2124, (-12) \u2264 x \u2227 x \u2264 (12) \u2227 accepts x \u2227 imageMap x = z) \u2192\n      rank (evaluate transcript) z = 0 \u2192 z = (0) := by\n  exact bounded_image_select (-12) (12) accepts imageMap 0 (0)\n    (by decide +kernel) (by decide +kernel)\n\ntheorem selection_1 :\n    (\u2203 x : \u2124, (-12) \u2264 x \u2227 x \u2264 (12) \u2227 accepts x \u2227 imageMap x = (16)) \u2227\n    \u2200 z, (\u2203 x : \u2124, (-12) \u2264 x \u2227 x \u2264 (12) \u2227 accepts x \u2227 imageMap x = z) \u2192\n      rank (evaluate transcript) z = 3 \u2192 z = (16) := by\n  exact bounded_image_select (-12) (12) accepts imageMap 3 (16)\n    (by decide +kernel) (by decide +kernel)\n\ntheorem selection_2 :\n    (\u2203 x : \u2124, (-12) \u2264 x \u2227 x \u2264 (12) \u2227 accepts x \u2227 imageMap x = (144)) \u2227\n    \u2200 z, (\u2203 x : \u2124, (-12) \u2264 x \u2227 x \u2264 (12) \u2227 accepts x \u2227 imageMap x = z) \u2192\n      rank (evaluate transcript) z = 9 \u2192 z = (144) := by\n  exact bounded_image_select (-12) (12) accepts imageMap 9 (144)\n    (by decide +kernel) (by decide +kernel)\n\nend PerfectPower.GeneratedPopulation\n",
+  "ordering": "increasing distinct numeric image value",
+  "schema": "pp-native-population-certificate/1",
+  "scope": "bounded source; compile emitted Lean to check count and selection proofs",
+  "selections": [
+    {
+      "rank": 0,
+      "value": 0
+    },
+    {
+      "rank": 3,
+      "value": 16
+    },
+    {
+      "rank": 9,
+      "value": 144
+    }
+  ],
+  "source_sha256": "59e485f069689cba61f16972b9382579664c3b0bfc60b03c097bb699606f4730",
+  "specification": {
+    "lower": -12,
+    "polynomial": [
+      0,
+      0,
+      1
+    ],
+    "predicate": {
+      "args": [
+        {
+          "modulus": 4,
+          "poly": [
+            0,
+            1
+          ],
+          "relation": "<",
+          "value": 2
+        },
+        {
+          "poly": [
+            -9,
+            0,
+            1
+          ],
+          "relation": "="
+        }
+      ],
+      "op": "or"
+    },
+    "ranks": [
+      0,
+      3,
+      9
+    ],
+    "upper": 12
+  },
+  "specification_sha256": "ffaa54a990a81a2253d8f1142b8011696afccff367527636e956c6474711d86f"
+}

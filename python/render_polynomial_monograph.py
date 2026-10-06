@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'closures':{
+            'title':'General identities and native certificates',
+            'subtitle':'Cauchy–Binet, bounded source populations<br/>and marked Legendre generators',
+            'description':'Arbitrary-dimensional weighted squared minors, kernel-checked distinct-image counts and numeric selections, conditional integral uniqueness, and replay-bound rational marked continuation.',
+            'metrics':[('7','reusable theorem declarations audited'),('14','generated population declarations checked'),('2','general Lean modules added')],
+            'scope':'Focused native proofs and bounded executable certificates. The complete tracked archive preserves the separate flavor merge and the historical research receipts.',
+            'running':'General determinants, native populations and the remaining research program',
+        },
         'frontier':{
             'title':'Connected non-flavor advances',
             'subtitle':'Native arithmetic proofs, bounded streams<br/>and certified marked monodromy',
@@ -208,7 +216,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

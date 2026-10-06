@@ -141,3 +141,5 @@ structural reduction to exact counts and checkable completeness, with honest
 trust labels. Avoid novelty claims for Yun's algorithm, Runge enumeration,
 Siegel's theorem, or classical radical/Pell reductions. A precise formal API
 and a complete certificate pipeline are defensible contributions to develop.
+
+Connected closures continuation: run `make connected-closures-lean` for the general determinant and integral uniqueness proofs plus generated population fixtures; run `make connected-closures-receipts` for bounded population output and marked Legendre loops. Existing flavor commits are preserved. Bounded numeric image ranks differ from canonical-owner projection ranks. Period replay recomputes the same analytic producer and is not an independent Lean proof. Current evidence is under `receipts/connected_closures`.

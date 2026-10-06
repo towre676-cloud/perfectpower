@@ -2,7 +2,7 @@ from fractions import Fraction as Q
 import random
 import unittest
 from perfectpower.period_matrix_balls import (inverse_matrix_ball, multiply_matrix_balls,
-    recognize_integral_matrix, marked_legendre_monodromy, exact_inverse)
+    recognize_integral_matrix, marked_legendre_monodromy, exact_inverse, verify_marked_legendre_monodromy)
 from perfectpower.certified_period_transport import Gaussian as G, rownorm, certified_transport
 
 
@@ -51,6 +51,19 @@ class PeriodMatrixBallTests(unittest.TestCase):
         self.assertLess(Q(result['enclosure']['row_error_bound']), Q(1, 2))
         with self.assertRaises(ValueError):
             marked_legendre_monodromy(['1/2', '9/16'])
+
+    def test_monodromy_replay_binds_every_field_and_external_path(self):
+        import copy
+        path=['1/2','1/2']
+        receipt=marked_legendre_monodromy(path)
+        self.assertTrue(verify_marked_legendre_monodromy(path,receipt))
+        for mutate in (lambda r:r['monodromy'][0].__setitem__(0,True),
+                       lambda r:r['enclosure'].__setitem__('row_error_bound','0'),
+                       lambda r:r.__setitem__('integrality_argument','different marking'),
+                       lambda r:r['initial'].__setitem__('seed_terms',47)):
+            bad=copy.deepcopy(receipt);mutate(bad)
+            self.assertFalse(verify_marked_legendre_monodromy(path,bad))
+        self.assertFalse(verify_marked_legendre_monodromy(['1/2','9/16'],receipt))
 
     def test_outward_rounding_encloses_exponential_series(self):
         for bits in (16,32,128):

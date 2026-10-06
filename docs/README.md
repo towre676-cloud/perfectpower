@@ -96,3 +96,5 @@ The [complete degree-six joint potential](VALENTINER_JOINT_POTENTIAL.md) enumera
 [Hermitian flavor sources and exact one-loop mass-phase cancellation](VALENTINER_HERMITIAN_INTERACTIONS.md): a five-coupling canonical fermion action, exact finite spectra, a scalar-degree-eight nine-word determinant certificate, a locally positive 91-scalar EFT branch and 128 mass-only affine branch pairs. The unified fitted benchmark retains exact first-order one-loop phase cancellation; fitted scalar-center inputs are explicitly recorded.
 
 [The Sommerfeld constant and exact 66-degree carrier](SOMMERFELD_CONSTANT_AND_66_DEGREES.md): exact cyclotomic identities, the electromagnetic determinant threshold sum rule, a continuous weak-phase orbit at fixed photon screening and explicit gauge normalization inputs.
+
+The connected closures continuation proves general ordered weighted Cauchy–Binet, emits kernel-checked bounded source population counts and numeric image selections, and adds integral-recognition uniqueness and marked monodromy replay. See [the monograph](CONNECTED_CLOSURES_MONOGRAPH.md), `make connected-closures-lean`, and `make connected-closures-receipts`.

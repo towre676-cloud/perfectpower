@@ -1,0 +1,42 @@
+lake build PerfectPower.CauchyBinet PerfectPower.IntegralRecognition PerfectPower.FiniteDomainCertificate
+Build completed successfully.
+lake env lean audit/ConnectedClosures.lean
+'PerfectPower.CauchyBinet.ordered_cauchy_binet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.CauchyBinet.weighted_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.CauchyBinet.gram_det_zero_of_minors_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.IntegralRecognition.integer_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.IntegralRecognition.matrix_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.bounded_image_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.bounded_image_select' depends on axioms: [propext, Classical.choice, Quot.sound]
+-- Found 0 errors in 4 declarations (plus 13 automatically generated ones) in PerfectPower.CauchyBinet with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 2 declarations (plus 0 automatically generated ones) in PerfectPower.IntegralRecognition with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 17 declarations (plus 113 automatically generated ones) in PerfectPower.FiniteDomainCertificate with 15 linters
+
+
+-- All linting checks passed!
+lake env lean audit/PopulationGenerated.lean
+'PerfectPower.GeneratedPopulation.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulation.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulation.selection_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulation.selection_1' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulation.selection_2' depends on axioms: [propext, Classical.choice, Quot.sound]
+lake env lean audit/PopulationEdgeCases.lean
+audit/PopulationEdgeCases.lean:4:21: warning: unused variable `x`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+'PerfectPower.GeneratedPopulationFixture0.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulationFixture0.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+audit/PopulationEdgeCases.lean:22:21: warning: unused variable `x`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+'PerfectPower.GeneratedPopulationFixture1.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulationFixture1.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulationFixture1.selection_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulationFixture2.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulationFixture2.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulationFixture2.selection_0' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneratedPopulationFixture2.selection_1' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,3 +1,5 @@
+import PerfectPower.CauchyBinet
+import PerfectPower.IntegralRecognition
 import PerfectPower.QuarticCollision
 import PerfectPower.NativeRationalRoots
 import PerfectPower.EllipticPointDivision

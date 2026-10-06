@@ -1,3 +1,5 @@
+import PerfectPower.CauchyBinet
+import PerfectPower.IntegralRecognition
 import PerfectPower.QuarticCollision
 import PerfectPower.NativeRationalRoots
 import PerfectPower.EllipticPointDivision
@@ -3105,3 +3107,11 @@ open PerfectPower
 #print axioms PerfectPower.QuarticCollision.collision_identity
 #print axioms PerfectPower.QuarticCollision.collision_iff
 #print axioms PerfectPower.QuarticCollision.circle_bounds
+
+#print axioms PerfectPower.CauchyBinet.ordered_cauchy_binet
+#print axioms PerfectPower.CauchyBinet.weighted_gram
+#print axioms PerfectPower.CauchyBinet.gram_det_zero_of_minors_zero
+#print axioms PerfectPower.IntegralRecognition.integer_unique
+#print axioms PerfectPower.IntegralRecognition.matrix_unique
+#print axioms PerfectPower.FiniteDomainCertificate.bounded_image_complete
+#print axioms PerfectPower.FiniteDomainCertificate.bounded_image_select

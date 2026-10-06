@@ -247,3 +247,5 @@ make lean
 The [documentation index](docs/README.md) organizes mathematical accounts, implementation guides, proof audits and benchmark reports by subject. For background, read [the history of perfect powers](docs/HISTORY.md) or [computation and the limits of solving equations](docs/HILBERT10.md).
 
 Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). Included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
+
+The connected closures continuation proves general ordered weighted Cauchy–Binet, emits kernel-checked bounded source population counts and numeric image selections, and adds integral-recognition uniqueness and marked monodromy replay. See [the monograph](docs/CONNECTED_CLOSURES_MONOGRAPH.md), `make connected-closures-lean`, and `make connected-closures-receipts`.

@@ -1,4 +1,5 @@
 import Mathlib.Data.Finset.Card
+import Mathlib.Data.Int.Interval
 import Mathlib.Tactic
 
 /-! A finite-domain transcript language. Its semantics retains the original
@@ -75,5 +76,31 @@ theorem source_select_unique (D : Domain) (P : ℤ → Prop)
   intro y hy hry
   exact select_unique (evaluate D) i y x
     ((evaluate_complete D y).mpr ((hP y).mpr hy)) hx hry hr
+
+/-- A bounded source predicate followed by an arbitrary integer image. -/
+def boundedImage (lo hi : ℤ) (P : ℤ → Prop) [DecidablePred P] (f : ℤ → ℤ) : Domain :=
+  .image (.filter (.literal (Finset.Icc lo hi)) P inferInstance) f
+
+/-- Completeness refers to the original bounded source, including duplicate images. -/
+theorem bounded_image_complete (lo hi : ℤ) (P : ℤ → Prop) [DecidablePred P]
+    (f : ℤ → ℤ) (x : ℤ) :
+    x ∈ evaluate (boundedImage lo hi P f) ↔
+      ∃ y, lo ≤ y ∧ y ≤ hi ∧ P y ∧ f y = x := by
+  rw [evaluate_complete]
+  simp only [boundedImage, meaning, Finset.mem_Icc]
+  aesop
+
+/-- Checked membership and rank determine the unique image value at that rank. -/
+theorem bounded_image_select (lo hi : ℤ) (P : ℤ → Prop) [DecidablePred P]
+    (f : ℤ → ℤ) (i : ℕ) (x : ℤ)
+    (hx : x ∈ evaluate (boundedImage lo hi P f))
+    (hr : rank (evaluate (boundedImage lo hi P f)) x = i) :
+    (∃ y, lo ≤ y ∧ y ≤ hi ∧ P y ∧ f y = x) ∧
+      ∀ z, (∃ y, lo ≤ y ∧ y ≤ hi ∧ P y ∧ f y = z) →
+        rank (evaluate (boundedImage lo hi P f)) z = i → z = x := by
+  refine ⟨(bounded_image_complete lo hi P f x).mp hx, ?_⟩
+  intro z hz hrz
+  exact select_unique _ i z x
+    ((bounded_image_complete lo hi P f z).mpr hz) hx hrz hr
 
 end PerfectPower.FiniteDomainCertificate

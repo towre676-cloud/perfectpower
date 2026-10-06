@@ -40,6 +40,12 @@ def dispatch(catalogue, request):
         from .elliptic_certificate_verifier import verify_halves,verify_independence
         checker=verify_halves if op=='verify_elliptic_halves' else verify_independence
         return dict(valid=checker(**args),execution_verified=False)
+    if op == 'population_certificate':
+        from .native_population_certificate import population_certificate
+        return population_certificate(**args)
+    if op == 'verify_marked_legendre_monodromy':
+        from .period_matrix_balls import verify_marked_legendre_monodromy
+        return dict(valid=verify_marked_legendre_monodromy(**args), execution_verified=False)
     if op in {'inverse_matrix_ball','multiply_matrix_balls','recognize_integral_matrix','marked_legendre_monodromy'}:
         from .period_matrix_balls import inverse_matrix_ball,multiply_matrix_balls,recognize_integral_matrix,marked_legendre_monodromy
         operations=dict(inverse_matrix_ball=inverse_matrix_ball,multiply_matrix_balls=multiply_matrix_balls,

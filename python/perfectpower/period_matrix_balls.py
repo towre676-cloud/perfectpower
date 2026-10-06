@@ -134,3 +134,21 @@ def marked_legendre_monodromy(path, order=18, seed_terms=48, rounding_bits=128, 
                 recognition=recognition,
                 integrality_argument='Closed continuation transports the standard integral a,b cycles; their intersection is preserved.',
                 scope='standard marked Legendre periods only; analytic estimates and cycle marking are not Lean verified')
+
+
+def verify_marked_legendre_monodromy(path, receipt, order=18, seed_terms=48,
+                                     rounding_bits=128, step_limit=256):
+    """Replay from the externally supplied path, checking every serialized field.
+
+    This recomputes exact rational analytic bounds; it is a replay checker, not
+    an independent analytic proof or a Lean verification of the integrality premise.
+    """
+    import json
+    try:
+        expected = marked_legendre_monodromy(path, order, seed_terms, rounding_bits, step_limit)
+        # JSON equality distinguishes booleans from integers and binds the entire
+        # transcript, including marking, errors and each continuation disk.
+        return json.dumps(receipt, sort_keys=True, separators=(',', ':'), allow_nan=False) == \
+            json.dumps(expected, sort_keys=True, separators=(',', ':'), allow_nan=False)
+    except (ValueError, TypeError, ArithmeticError, OverflowError):
+        return False
