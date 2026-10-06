@@ -22,6 +22,13 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'families':{
+            'title':'Curve family execution',
+            'subtitle':'Polynomial structure, differential systems<br/>and marked period continuation',
+            'description':'Exact hyperelliptic family connections, selected-observable operators, rational parameter-path exclusion, numerical marked periods and persistent arithmetic queries.',
+            'metrics':[('5','compiled family definitions'),('4 to 1','isotrivial observable reduction'),('63','recorded period samples')],
+            'scope':'Standard-library exact algebra on declared monic odd-degree families. Numerical roots, quadrature and ODE continuation retain their stated error scope. No new Lean theorem.',
+        },
         'policies':{
             'title':'Exact decision policies',
             'subtitle':'Operating regions, collision geometry<br/>and adaptive diagnostics',
@@ -133,7 +140,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

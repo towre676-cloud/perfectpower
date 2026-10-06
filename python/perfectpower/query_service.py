@@ -6,6 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    curve_family={'summary','evidence','specialize','observable','parameter_domain','parameter_population','integer_points','marked_period','transport','period_path'},
     calibration_policy={'summary','evidence','decide'},diagnostic_policy={'summary','evidence','step','run'},
     projected={'summary','count','select','rank','page','sample','partition','locate','multiplicity','evidence'},
     factorial={'summary','terms','residues'},

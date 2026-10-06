@@ -40,6 +40,8 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 
 ## Geometry
 
+[Curve family compiler](CURVE_FAMILIES_MONOGRAPH.md): exact rational-function connections, selected period operators, exact parameter-path exclusions, marked numerical continuation and integer parameter populations. [Handoff](../CLAUDE_CODE_CURVE_FAMILIES_START_HERE.md).
+
 | Subject | Guides |
 |---|---|
 | Exact branching, monodromy, and finite surface models | [Branched geometry](BRANCHED_GEOMETRY_MONOGRAPH.md) |

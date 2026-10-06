@@ -22,7 +22,8 @@ def compile_object(kind, specification):
     from .factorial_library import FactorialLibrary
     from .decision_regions import CalibrationPolicy
     from .diagnostic_programs import DiagnosticPolicy
-    constructors = dict(calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
+    from .curve_families import CurveFamily
+    constructors = dict(curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
                         graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign,projected=ProjectedPopulation,factorial=FactorialLibrary)
     if kind not in constructors:
         raise ValueError('unsupported catalogue kind')

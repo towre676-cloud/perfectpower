@@ -27,3 +27,7 @@ See [the open-content monograph](OPEN_CONTENT_MONOGRAPH.md), [release receipts](
 ## Reusable decision-policy extension
 
 The next three machinery moves are implemented in [DECISION_POLICIES_MONOGRAPH.md](DECISION_POLICIES_MONOGRAPH.md): exact closed operating regions for bounded calibration, complete cubic collision geometry and strictly discrete-monotone higher-degree projection, and globally minimum worst-case resettable diagnostic trees. The integrated example has fifteen cells and a diagnosis cost three versus four for its cheapest single complete readout. Vertex-oracle discovery certifies a one-setting window among 231 feasible settings using four queries. Ten catalogue kinds include both new policy objects. No new benchmark or physical flavor derivation is inferred.
+
+## Curve families into differential execution
+
+The [curve-family compiler](CURVE_FAMILIES_MONOGRAPH.md) derives exact rational-function period connections and selected-observable operators for monic hyperelliptic families of x degree 3, 5 or 7. It adds exact pole exclusion on rational complex parameter segments, marked numerical continuation, integer parameter populations and bounded arithmetic specializations. The isotrivial genus-two example reduces its first observable from four period coordinates to order one. Numerical evaluation remains separate from exact algebra; general cyclic families and certified interval continuation remain open. Eleven persistent object kinds now include curve_family.
