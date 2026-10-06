@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'halvesrefinement':{
+            'title':'The original elliptic interface is connected',
+            'subtitle':'Actual group transport, literal outputs<br/>and complete signed quartic lifts',
+            'description':'An explicit additive equivalence for generalized Weierstrass square completion, native equality with returned coordinate lists, and nonsquare or wrong-sign lift elimination.',
+            'metrics':[('16','reusable theorem declarations audited'),('9','fully connected worked packets'),('3','previous interface gaps closed')],
+            'scope':'Actual original-model halving and exact literal rational output semantics within certificate budgets. Generic JSON parser refinement, efficient Sturm proofs and global rank remain separate.',
+            'running':'Original-model elliptic transport and complete literal halving fibres',
+        },
         'nativehalves':{
             'title':'Complete native elliptic halving fibres',
             'subtitle':'Checked anchors, torsion cosets<br/>and root-free obstructions',
@@ -248,7 +256,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

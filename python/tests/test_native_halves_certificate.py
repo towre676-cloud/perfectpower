@@ -23,7 +23,7 @@ class NativeHalvesTests(unittest.TestCase):
             p=halves_certificate(spec,target)
             self.assertEqual(p['method'],'root_free_quartic');self.assertEqual(p['quartic_packet']['roots'],[])
             self.assertEqual(p['completed_points'],[]);self.assertIn('no_half_of_quartic_root_free',p['lean'])
-            self.assertEqual(p['lean'].count('import '),2)
+            self.assertEqual(p['lean'].count('import '),3)
     def test_infinity(self):
         p=halves_certificate([-1,0],None)
         self.assertEqual(p['method'],'two_torsion');self.assertEqual(len(p['completed_points']),4)

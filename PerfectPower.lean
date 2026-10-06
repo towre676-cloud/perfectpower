@@ -1,3 +1,5 @@
+import PerfectPower.EllipticSquareTransport
+import PerfectPower.EllipticQuarticLifts
 import PerfectPower.PicardLefschetz
 import PerfectPower.ResiduePopulation
 import PerfectPower.CauchyBinet

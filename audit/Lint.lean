@@ -1,3 +1,5 @@
+import PerfectPower.EllipticSquareTransport
+import PerfectPower.EllipticQuarticLifts
 import PerfectPower.PicardLefschetz
 import PerfectPower.ResiduePopulation
 import PerfectPower.CauchyBinet
@@ -143,3 +145,6 @@ simp-normal forms, ...).  Run with `lake env lean audit/Lint.lean`; it must repo
 
 
 #lint in PerfectPower
+
+#lint in PerfectPower.EllipticSquareTransport
+#lint in PerfectPower.EllipticQuarticLifts

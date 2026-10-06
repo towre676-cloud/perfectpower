@@ -213,3 +213,10 @@ native-halves-receipts:
 native-halves-lean:
 	lake build PerfectPower.EllipticPointDivision
 	lake env lean audit/NativeHalves.lean
+
+.PHONY: native-halves-refinement-receipts native-halves-refinement-lean
+native-halves-refinement-receipts:
+	$(PY) python/develop_native_halves_refinement.py
+native-halves-refinement-lean:
+	lake build PerfectPower.EllipticQuarticLifts
+	lake env lean audit/NativeHalvesRefinement.lean

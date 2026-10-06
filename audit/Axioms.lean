@@ -1,3 +1,5 @@
+import PerfectPower.EllipticSquareTransport
+import PerfectPower.EllipticQuarticLifts
 import PerfectPower.PicardLefschetz
 import PerfectPower.ResiduePopulation
 import PerfectPower.CauchyBinet
@@ -3144,3 +3146,9 @@ open PerfectPower
 
 #print axioms PerfectPower.EllipticPointDivision.half_supplies_quartic_root
 #print axioms PerfectPower.EllipticPointDivision.no_half_of_quartic_root_free
+
+#print axioms PerfectPower.EllipticSquareTransport.forward_add
+#print axioms PerfectPower.EllipticSquareTransport.fibre
+#print axioms PerfectPower.EllipticSquareTransport.list_transport
+#print axioms PerfectPower.EllipticQuarticLifts.mem_lifts
+#print axioms PerfectPower.EllipticQuarticLifts.fibre_complete
