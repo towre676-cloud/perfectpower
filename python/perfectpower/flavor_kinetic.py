@@ -10,6 +10,8 @@ import numpy as np
 
 
 def matrix(a):
+    if isinstance(a, mp.matrix):
+        return a.copy()
     a = np.asarray(a, complex)
     return mp.matrix([[mp.mpc(str(z.real), str(z.imag)) for z in row] for row in a])
 

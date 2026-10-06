@@ -1,0 +1,940 @@
+{
+  "CP_partner": {
+    "energy_residual": 5.4569682106375694e-12,
+    "observables": {
+      "J": 2.6767484942069597e-05,
+      "Rtdts": 0.010671160133271199,
+      "Vcb": 0.03844131203935463,
+      "Vub": 0.0751751685518108,
+      "Vus": 0.8847415557024658,
+      "delta_degrees": 1.3014647301526219,
+      "depth": 2.197852229959296,
+      "gamma": 1.2995054836850264,
+      "sin2beta": -0.8503978626692932,
+      "spectra": [
+        [
+          0.00015792898447585007,
+          0.006647978321950533,
+          0.12041550084230933
+        ],
+        [
+          1.3272494320465086e-07,
+          0.0001288208840219828,
+          0.013815592030002275
+        ]
+      ],
+      "unitarity_residual": 6.661343037946603e-16
+    },
+    "stationarity_max": 2.4787616403898483e-11
+  },
+  "adjoint_character_certificate": {
+    "End_Sym2_adjoint_singlets": 6,
+    "Sym3_adjoint_singlets": 1,
+    "full_adjoint_cube_singlets": 2
+  },
+  "branch_search": "Numerical seed from a bounded 15-trial search over five prescribed ray-pair/penalty choices and three coupling strengths. The first retained full-rank physical-CP witness seeds full 70-field minimization. No golden coefficient, phase, mixing anchor or observed quark mass is used as a target.",
+  "conclusion": "A specified CP-even joint source/link/adjoint potential with every allowed renormalizable scalar channel nonzero has a locally stable full-rank three-family vacuum and physical weak CP. Canonical heavy matching uses universal source couplings. CKM magnitudes do not fit observation and the golden relation is not enforced. Global energy selection, complete high-degree UV matching and radiative behavior remain open.",
+  "derivative_directional_absolute_error": 5.812264082149854e-08,
+  "field_content": {
+    "complex_flavor_fields": 35,
+    "family_group": "3.A6_u x 3.A6_d x 3.A6_H x C6_A x C6_B x CP",
+    "link": "L=(3_u,3bar_d)",
+    "mediator": "S=(1_u,1_d,8_H), charge (-1,+1)",
+    "quark_column_couplings_per_sector": 1,
+    "real_scalar_coordinates": 70,
+    "sources": [
+      "A=(3_u,3bar_H)",
+      "B=(3_d,3bar_H)"
+    ]
+  },
+  "fixed_mass_kinetic_test": {
+    "four_response_singular_values": [
+      2.000721207868944,
+      1.1863950118531592,
+      0.76777800352754,
+      0.00992277847394684
+    ],
+    "metrics": [
+      {
+        "kind": "real",
+        "metric_operator_distance_from_identity": 0.0007361461871644961,
+        "minimum_bare_metric_eigenvalue": 0.9992643970862584,
+        "observables": {
+          "J": -2.676748481972302e-05,
+          "Rtdts": 0.010671160133274609,
+          "Vcb": 0.03844130670419215,
+          "Vub": 0.07517517127998075,
+          "Vus": 0.8847415889620325,
+          "delta_degrees": -1.301464990447903,
+          "depth": 2.1978525312258186,
+          "gamma": -1.2995057441407687,
+          "sin2beta": 0.8503976801774109,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320526922e-07,
+              0.00012882088402198284,
+              0.013815592030002285
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          1
+        ],
+        "positive_completion_error": 7.488746956915523e-77,
+        "rotation": -1e-07,
+        "target_H_error": 1.4005777889518856e-89
+      },
+      {
+        "kind": "real",
+        "metric_operator_distance_from_identity": 0.0007361444198067167,
+        "minimum_bare_metric_eigenvalue": 0.9992643953297105,
+        "observables": {
+          "J": -2.6767485064346785e-05,
+          "Rtdts": 0.01067116013327762,
+          "Vcb": 0.038441317374517774,
+          "Vub": 0.07517516582364028,
+          "Vus": 0.8847415224428908,
+          "delta_degrees": -1.301464469854062,
+          "depth": 2.197851928692824,
+          "gamma": -1.2995052232315347,
+          "sin2beta": 0.8503980451598959,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320451568e-07,
+              0.00012882088402198295,
+              0.013815592030002289
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          1
+        ],
+        "positive_completion_error": 7.497864343027081e-77,
+        "rotation": 1e-07,
+        "target_H_error": 1.0791481227348375e-89
+      },
+      {
+        "kind": "imaginary",
+        "metric_operator_distance_from_identity": 0.0007251836873137567,
+        "minimum_bare_metric_eigenvalue": 0.9992753417872461,
+        "observables": {
+          "J": -2.6767479577874398e-05,
+          "Rtdts": 0.010671160133275822,
+          "Vcb": 0.03844130674321501,
+          "Vub": 0.07517517126002604,
+          "Vus": 0.8847415872435813,
+          "delta_degrees": -1.3014647277329536,
+          "depth": 2.197852532686876,
+          "gamma": -1.2995054818022715,
+          "sin2beta": 0.8503980482605096,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.327249432050137e-07,
+              0.0001288208840219826,
+              0.01381559203000229
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          1
+        ],
+        "positive_completion_error": 7.49270346996704e-77,
+        "rotation": -1e-07,
+        "target_H_error": 7.191594209923277e-90
+      },
+      {
+        "kind": "imaginary",
+        "metric_operator_distance_from_identity": 0.000725183725176037,
+        "minimum_bare_metric_eigenvalue": 0.9992753418213258,
+        "observables": {
+          "J": -2.6767490306139896e-05,
+          "Rtdts": 0.010671160133264747,
+          "Vcb": 0.03844131733549483,
+          "Vub": 0.07517516584359482,
+          "Vus": 0.884741524161337,
+          "delta_degrees": -1.301464732566187,
+          "depth": 2.197851927231778,
+          "gamma": -1.299505485567435,
+          "sin2beta": 0.8503976770788682,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.327249432051241e-07,
+              0.0001288208840219822,
+              0.01381559203000229
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          1
+        ],
+        "positive_completion_error": 7.493906801293745e-77,
+        "rotation": 1e-07,
+        "target_H_error": 4.1387517111912535e-90
+      },
+      {
+        "kind": "real",
+        "metric_operator_distance_from_identity": 0.0048310276086276525,
+        "minimum_bare_metric_eigenvalue": 0.995192196919293,
+        "observables": {
+          "J": -2.6765920515578467e-05,
+          "Rtdts": 0.010670687771490155,
+          "Vcb": 0.03844131203935476,
+          "Vub": 0.075175167590307,
+          "Vus": 0.8847415557435485,
+          "delta_degrees": -1.3013886693830865,
+          "depth": 2.1978522020658433,
+          "gamma": -1.2994295374273628,
+          "sin2beta": 0.8504246303085928,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320576045e-07,
+              0.00012882088402198238,
+              0.01381559203000229
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          2
+        ],
+        "positive_completion_error": 7.519067459104108e-77,
+        "rotation": -1e-07,
+        "target_H_error": 8.591093340643042e-90
+      },
+      {
+        "kind": "real",
+        "metric_operator_distance_from_identity": 0.0048310297020998936,
+        "minimum_bare_metric_eigenvalue": 0.9951921989925646,
+        "observables": {
+          "J": -2.676904936840807e-05,
+          "Rtdts": 0.010671632501920516,
+          "Vcb": 0.03844131203935476,
+          "Vub": 0.07517516951344588,
+          "Vus": 0.8847415556613749,
+          "delta_degrees": -1.3015407909128398,
+          "depth": 2.1978522578565496,
+          "gamma": -1.2995814299398438,
+          "sin2beta": 0.8503710951980411,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320509722e-07,
+              0.00012882088402198236,
+              0.01381559203000229
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          2
+        ],
+        "positive_completion_error": 7.467274493946591e-77,
+        "rotation": 1e-07,
+        "target_H_error": 2.6879114448953925e-89
+      },
+      {
+        "kind": "imaginary",
+        "metric_operator_distance_from_identity": 0.004831738108137268,
+        "minimum_bare_metric_eigenvalue": 0.9951915117785943,
+        "observables": {
+          "J": -2.6767505123745372e-05,
+          "Rtdts": 0.010671420330028554,
+          "Vcb": 0.038441312039354816,
+          "Vub": 0.07517526819008107,
+          "Vus": 0.8847415472596778,
+          "delta_degrees": -1.3014639890583144,
+          "depth": 2.1978551308857868,
+          "gamma": -1.2995047410818277,
+          "sin2beta": 0.8504444434049209,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320527168e-07,
+              0.00012882088402198233,
+              0.013815592030002289
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          2
+        ],
+        "positive_completion_error": 7.469853828333743e-77,
+        "rotation": -1e-07,
+        "target_H_error": 5.761263431402052e-90
+      },
+      {
+        "kind": "imaginary",
+        "metric_operator_distance_from_identity": 0.004831721481496187,
+        "minimum_bare_metric_eigenvalue": 0.9951914953066512,
+        "observables": {
+          "J": -2.676746476035219e-05,
+          "Rtdts": 0.010670899956877975,
+          "Vcb": 0.03844131203935482,
+          "Vub": 0.0751750689135398,
+          "Vus": 0.8847415641452444,
+          "delta_degrees": -1.301465471246885,
+          "depth": 2.1978493290327097,
+          "gamma": -1.299506226290418,
+          "sin2beta": 0.8503512728973154,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320540236e-07,
+              0.00012882088402198214,
+              0.013815592030002289
+            ]
+          ]
+        },
+        "plane": [
+          0,
+          2
+        ],
+        "positive_completion_error": 7.516471232921659e-77,
+        "rotation": 1e-07,
+        "target_H_error": 4.024668621780114e-90
+      },
+      {
+        "kind": "real",
+        "metric_operator_distance_from_identity": 0.009347574412136558,
+        "minimum_bare_metric_eigenvalue": 0.9907389880752999,
+        "observables": {
+          "J": -2.6765245264279147e-05,
+          "Rtdts": 0.01067086306267451,
+          "Vcb": 0.03844124252602973,
+          "Vub": 0.07517516855181078,
+          "Vus": 0.8847415557024667,
+          "delta_degrees": -1.3013581659548048,
+          "depth": 2.19785620433697,
+          "gamma": -1.2993990834293183,
+          "sin2beta": 0.8504991669964019,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320619953e-07,
+              0.00012882088402198282,
+              0.013815592030002289
+            ]
+          ]
+        },
+        "plane": [
+          1,
+          2
+        ],
+        "positive_completion_error": 7.498063480478364e-77,
+        "rotation": -1e-07,
+        "target_H_error": 2.7079115662826375e-90
+      },
+      {
+        "kind": "real",
+        "metric_operator_distance_from_identity": 0.00934757990827779,
+        "minimum_bare_metric_eigenvalue": 0.9907389934653911,
+        "observables": {
+          "J": -2.6769724619735147e-05,
+          "Rtdts": 0.010671457298785514,
+          "Vcb": 0.03844138155281193,
+          "Vub": 0.07517516855181082,
+          "Vus": 0.884741555702466,
+          "delta_degrees": -1.30157129395959,
+          "depth": 2.197848255588424,
+          "gamma": -1.2996118835550867,
+          "sin2beta": 0.8502965324216015,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320613793e-07,
+              0.00012882088402198228,
+              0.013815592030002289
+            ]
+          ]
+        },
+        "plane": [
+          1,
+          2
+        ],
+        "positive_completion_error": 7.487351124903076e-77,
+        "rotation": 1e-07,
+        "target_H_error": 1.600889117066071e-89
+      },
+      {
+        "kind": "imaginary",
+        "metric_operator_distance_from_identity": 0.009346925973558896,
+        "minimum_bare_metric_eigenvalue": 0.9907396305407821,
+        "observables": {
+          "J": -2.6769569034343355e-05,
+          "Rtdts": 0.010672172031034028,
+          "Vcb": 0.03844124064895549,
+          "Vub": 0.0751751685518108,
+          "Vus": 0.8847415557024673,
+          "delta_degrees": -1.3015684924535813,
+          "depth": 2.1978563116576275,
+          "gamma": -1.2996090934483524,
+          "sin2beta": 0.8504256484666863,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.3272494320595492e-07,
+              0.00012882088402198165,
+              0.013815592030002289
+            ]
+          ]
+        },
+        "plane": [
+          1,
+          2
+        ],
+        "positive_completion_error": 7.425872693681687e-77,
+        "rotation": -1e-07,
+        "target_H_error": 2.4309211210925446e-90
+      },
+      {
+        "kind": "imaginary",
+        "metric_operator_distance_from_identity": 0.00934692539835142,
+        "minimum_bare_metric_eigenvalue": 0.9907396299277833,
+        "observables": {
+          "J": -2.6765400849643184e-05,
+          "Rtdts": 0.010670148244783066,
+          "Vcb": 0.03844138342987943,
+          "Vub": 0.07517516855181079,
+          "Vus": 0.8847415557024655,
+          "delta_degrees": -1.3013609682291116,
+          "depth": 2.197848148268938,
+          "gamma": -1.2994018743050817,
+          "sin2beta": 0.8503700688848984,
+          "spectra": [
+            [
+              0.00015792898447585898,
+              0.006647978321950522,
+              0.12041550084230936
+            ],
+            [
+              1.327249432049112e-07,
+              0.00012882088402198312,
+              0.013815592030002289
+            ]
+          ]
+        },
+        "plane": [
+          1,
+          2
+        ],
+        "positive_completion_error": 7.559828272201901e-77,
+        "rotation": 1e-07,
+        "target_H_error": 1.654140376594882e-89
+      }
+    ],
+    "scope": "Allowed higher kinetic operators remain an independent UV input; this is a fixed-mass protection test, not a fit of CKM targets.",
+    "six_mass_max_log_residual": 7.105649402180682e-12,
+    "source_vacuum_and_superpotential_unchanged": true
+  },
+  "fully_reminimized_one_percent_UV_deformations": [
+    {
+      "coefficient_fractional_change": -0.01,
+      "observables": {
+        "J": -2.6716470970716832e-05,
+        "Rtdts": 0.010658017537938989,
+        "Vcb": 0.03845066904429754,
+        "Vub": 0.07517760659320649,
+        "Vus": 0.8846977799124148,
+        "delta_degrees": -1.2984535899545082,
+        "depth": 2.1974965619052242,
+        "gamma": -1.2964978840146095,
+        "sin2beta": 0.8521750007206164,
+        "spectra": [
+          [
+            0.0001578310585989643,
+            0.0066456530910384125,
+            0.12043067435512853
+          ],
+          [
+            1.3269013244563328e-07,
+            0.00012884056143328847,
+            0.013817909095395167
+          ]
+        ],
+        "unitarity_residual": 4.443678806288647e-16
+      },
+      "operator": "Tr(LL-dagger AA-dagger)",
+      "stationarity": {
+        "energy_scaled": -4210.966885181512,
+        "iterations": 78,
+        "minimum_canonical_scalar_mass_squared": 9.512524607841059e-07,
+        "minimum_scaled_Hessian_eigenvalue": 7.922267100900259,
+        "stationarity_max": 7.488232256491756e-12
+      }
+    },
+    {
+      "coefficient_fractional_change": 0.01,
+      "observables": {
+        "J": -2.6818587279195394e-05,
+        "Rtdts": 0.01068434766370364,
+        "Vcb": 0.03843194549630546,
+        "Vub": 0.07517272344063164,
+        "Vus": 0.8847853812729063,
+        "delta_degrees": -1.3044832378855244,
+        "depth": 2.198208306354564,
+        "gamma": -1.3025204453650057,
+        "sin2beta": 0.8486088508856631,
+        "spectra": [
+          [
+            0.00015802706328032985,
+            0.006650306387127202,
+            0.12040031459346308
+          ],
+          [
+            1.327601091415694e-07,
+            0.00012880117336036076,
+            0.013813273178809378
+          ]
+        ],
+        "unitarity_residual": 1.2212630298102978e-15
+      },
+      "operator": "Tr(LL-dagger AA-dagger)",
+      "stationarity": {
+        "energy_scaled": -4195.6399383654125,
+        "iterations": 78,
+        "minimum_canonical_scalar_mass_squared": 9.511661681182051e-07,
+        "minimum_scaled_Hessian_eigenvalue": 7.925199939098309,
+        "stationarity_max": 8.175071730676109e-12
+      }
+    }
+  ],
+  "mediator_quartic_projectors": {
+    "CP_channel_permutation": [
+      3,
+      1,
+      2,
+      0,
+      4,
+      5
+    ],
+    "CP_even_channel_ranks": [
+      1,
+      8,
+      8,
+      9,
+      10
+    ],
+    "SU3_adjoint_identification_error": 4.101462472316662e-14,
+    "canonical_CP_even_channels": [
+      "singlet_1",
+      "SU3_adjoint_8",
+      "finite_adjoint_8",
+      "finite_9",
+      "CP_pair_5_plus_5"
+    ],
+    "complex_quartic_channels": [
+      5,
+      8,
+      8,
+      5,
+      9,
+      1
+    ],
+    "idempotence_error": 3.525339979444167e-15,
+    "max_CP_even_invariance_error": 6.175294426298746e-14,
+    "max_generator_invariance_error": 6.016128368451751e-14
+  },
+  "parameters": {
+    "cross_source_coefficients": [
+      0.2,
+      0.3,
+      0.1,
+      0.07,
+      0.05,
+      0.04
+    ],
+    "epsilon": 300.0,
+    "mediator_mass": 10.0,
+    "mediator_quartic_coefficients": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5
+    ],
+    "mediator_source_quartic_coefficients": [
+      0.1,
+      0.2,
+      0.3,
+      0.01,
+      0.02,
+      0.03,
+      0.04
+    ],
+    "radius_unit": 0.1,
+    "renormalizable_dressed_vertex_k": 1.7320508075688779,
+    "source_penalties": [
+      30.0,
+      30.0
+    ]
+  },
+  "quark_matching_scope": "Ordinary Dirac messengers in u,d,H family spaces, with both allowed orientations of the link and heavy-source vertices. The H-messenger phase charge permits the unique S-dagger bare-quark vertex in the up sector and S in the down sector. All ten mass/Yukawa coefficients per charge sector are nonzero real benchmark inputs. Canonical bare matter metrics remain an independent assumption; no all-degree or radiative UV completion is asserted.",
+  "quark_shared_adjoint_contractions": {
+    "coefficient_relations": "Representation fixes component contractions. Overall scalar and fermion coupling constants remain independent.",
+    "down_readout": "A S",
+    "heavy_modes_per_sector": 9,
+    "independent_real_coefficients_per_sector": 10,
+    "light_right_modes_per_sector": 3,
+    "triplet_adjoint_triplet_singlet_multiplicity": 1,
+    "up_readout": "L B S-dagger"
+  },
+  "radial_stabilizer": {
+    "coefficient": 1e-10,
+    "coercivity_proof": "The five positive mediator quartics sum to a positive lower bound times ||s||^4. Young inequality bounds the dressed quartic below by minus a constant times the squared total source norm after absorbing half this mediator quartic. Negative holomorphic source terms grow at most as the cubed total norm. The positive degree-twelve radial term dominates these terms, making the polynomial potential coercive. This proves existence of global minima, not that the retained CP-breaking minimum is global.",
+    "flavor_field_degree": 12,
+    "invariant": "(N_L+N_A+N_B)^6"
+  },
+  "scalar_operator_certificate": {
+    "CP_even_source_scalar_counts_through_six": {
+      "2": 3,
+      "3": 1,
+      "4": 12,
+      "5": 3,
+      "6": 47
+    },
+    "balanced_source_trace_basis": [
+      {
+        "degree": 2,
+        "evaluation_minor_rows": [
+          0,
+          1,
+          2
+        ],
+        "operators": [
+          "Tr(Aa)",
+          "Tr(Bb)",
+          "Tr(Ll)"
+        ],
+        "rank": 3
+      },
+      {
+        "degree": 4,
+        "evaluation_minor_rows": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "operators": [
+          "Tr(Aa)*Tr(Aa)",
+          "Tr(Aa)*Tr(Bb)",
+          "Tr(Aa)*Tr(Ll)",
+          "Tr(AaAa)",
+          "Tr(AaLl)",
+          "Tr(AbBa)",
+          "Tr(Bb)*Tr(Bb)",
+          "Tr(Bb)*Tr(Ll)",
+          "Tr(BbBb)",
+          "Tr(BblL)",
+          "Tr(Ll)*Tr(Ll)",
+          "Tr(LlLl)"
+        ],
+        "rank": 12
+      },
+      {
+        "degree": 6,
+        "evaluation_minor_rows": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "operators": [
+          "Tr(Aa)*Tr(Aa)*Tr(Aa)",
+          "Tr(Aa)*Tr(Aa)*Tr(Bb)",
+          "Tr(Aa)*Tr(Aa)*Tr(Ll)",
+          "Tr(Aa)*Tr(AaAa)",
+          "Tr(Aa)*Tr(AaLl)",
+          "Tr(Aa)*Tr(AbBa)",
+          "Tr(Aa)*Tr(Bb)*Tr(Bb)",
+          "Tr(Aa)*Tr(Bb)*Tr(Ll)",
+          "Tr(Aa)*Tr(BbBb)",
+          "Tr(Aa)*Tr(BblL)",
+          "Tr(Aa)*Tr(Ll)*Tr(Ll)",
+          "Tr(Aa)*Tr(LlLl)",
+          "Tr(AaAaAa)",
+          "Tr(AaAaLl)",
+          "Tr(AaAbBa)",
+          "Tr(AaLBbl)",
+          "Tr(AaLlLl)",
+          "Tr(AbBaLl)",
+          "Tr(AbBbBa)",
+          "Tr(Abl)*Tr(BaL)",
+          "Tr(AblLBa)",
+          "Tr(Bb)*Tr(AaAa)",
+          "Tr(Bb)*Tr(AaLl)",
+          "Tr(Bb)*Tr(AbBa)",
+          "Tr(Bb)*Tr(Bb)*Tr(Bb)",
+          "Tr(Bb)*Tr(Bb)*Tr(Ll)",
+          "Tr(Bb)*Tr(BbBb)",
+          "Tr(Bb)*Tr(BblL)",
+          "Tr(Bb)*Tr(Ll)*Tr(Ll)",
+          "Tr(Bb)*Tr(LlLl)",
+          "Tr(BbBbBb)",
+          "Tr(BbBblL)",
+          "Tr(BblLlL)",
+          "Tr(Ll)*Tr(AaAa)",
+          "Tr(Ll)*Tr(AaLl)",
+          "Tr(Ll)*Tr(AbBa)",
+          "Tr(Ll)*Tr(BbBb)",
+          "Tr(Ll)*Tr(BblL)",
+          "Tr(Ll)*Tr(Ll)*Tr(Ll)",
+          "Tr(Ll)*Tr(LlLl)",
+          "Tr(LlLlLl)"
+        ],
+        "rank": 41
+      }
+    ],
+    "complete_renormalizable_scalar_counts_with_adjoint": {
+      "cubic": 1,
+      "quadratic": 4,
+      "quartic": 25,
+      "total": 30
+    },
+    "prime": 1000003,
+    "quartic_partition": {
+      "linear_mediator_dressed_source": 1,
+      "pure_mediator_CP_even": 5,
+      "source_and_link": 12,
+      "two_mediator_and_source_bilinear": 7
+    },
+    "scope": "Zero matter/Higgs slice. Source/link higher operators include the sextic breaking EFT. No claim of a complete all-degree EFT or full SM scalar action."
+  },
+  "schema": "pp-valentiner-adjoint-uv/1",
+  "source_seed_CP_geometry": {
+    "canonical_ray_pair": [
+      5,
+      36
+    ],
+    "fixed_by_declared_CP_coset": false,
+    "group_column_indices": [
+      19,
+      36
+    ]
+  },
+  "vacuum": {
+    "abs_CKM": [
+      [
+        0.4599794274164766,
+        0.8847415557024646,
+        0.07517516855181071
+      ],
+      [
+        0.8879291157722705,
+        0.4583711933494147,
+        0.03844131203935477
+      ],
+      [
+        0.0009009536523498227,
+        0.08442883820482512,
+        0.9964291041323011
+      ]
+    ],
+    "field_coordinates": [
+      0.21557305040110972,
+      0.26310131763112793,
+      -0.40267601222028704,
+      0.42006706288968887,
+      0.6934419401721006,
+      -0.49352555660208625,
+      -0.5116444949362408,
+      -0.241405303671658,
+      1.2285802795517857,
+      0.4436135026530882,
+      0.3576353644413072,
+      -0.3360135171844943,
+      0.6748992387652921,
+      0.3585264888525224,
+      -0.46630792152000705,
+      -0.8643026114296429,
+      0.017637129462984607,
+      0.5586201847015823,
+      -0.4241359777882653,
+      0.2749527507899873,
+      -0.34817608339268574,
+      -0.4959998216601327,
+      0.30227460143307516,
+      -0.4205076781721383,
+      1.0719048129154785,
+      -0.2108882013389579,
+      0.3217975364601215,
+      -0.2580928202998372,
+      -0.021579478887060494,
+      0.556490325728959,
+      0.4336371609876476,
+      0.18526180722288307,
+      0.7203081969903095,
+      -0.016214795338821968,
+      -0.39118890695815317,
+      0.06306782985608937,
+      -0.25151819909915385,
+      0.1831149974378405,
+      0.20203415808319453,
+      -0.3049851783138728,
+      0.3435007577347691,
+      0.11531000848230774,
+      -0.3214936963783149,
+      -0.6883951599722672,
+      0.3686468283961821,
+      0.2175585704982699,
+      0.05620228346732004,
+      -0.11944894475306146,
+      0.4171303590223332,
+      0.07639537834354534,
+      -0.01817642786804569,
+      0.30292291292943707,
+      -0.6232560120825391,
+      0.6574003699536574,
+      0.4738454219969103,
+      0.7084019137284518,
+      0.399420603972302,
+      0.5493690414458977,
+      -1.819341787834325,
+      -1.1314646036288374,
+      -3.3416121364138567,
+      -2.0049484653485163,
+      2.6999130634809596,
+      1.4115275975514927,
+      -1.5350462570445729,
+      -2.889521950041168,
+      -0.023255385794871443,
+      -0.26612910929186373,
+      0.6468733225511325,
+      -0.7056296349630647
+    ],
+    "observables": {
+      "J": -2.676748494198633e-05,
+      "Rtdts": 0.01067116013327225,
+      "Vcb": 0.03844131203935477,
+      "Vub": 0.07517516855181071,
+      "Vus": 0.8847415557024645,
+      "delta_degrees": -1.3014647301485667,
+      "depth": 2.197852229959289,
+      "gamma": -1.2995054836852524,
+      "sin2beta": 0.8503978626693081,
+      "spectra": [
+        [
+          0.00015792898447585898,
+          0.006647978321950522,
+          0.12041550084230936
+        ],
+        [
+          1.3272494320525644e-07,
+          0.00012882088402198284,
+          0.01381559203000229
+        ]
+      ],
+      "unitarity_residual": 6.662023032407784e-16
+    },
+    "stationarity": {
+      "energy_scaled": -4203.3016028852335,
+      "iterations": 75,
+      "minimum_canonical_scalar_mass_squared": 9.512093286846365e-07,
+      "minimum_scaled_Hessian_eigenvalue": 7.923733619983192,
+      "stationarity_max": 7.968792292700755e-12
+    },
+    "weak_basis_CP": {
+      "J_from_weak_basis_invariant": "-0.000026767484942043171699355183209601320357460390990433001660942897013",
+      "commutator_determinant_imaginary": "-2.9963118338079273147605364812644971717331854076659871030165915959e-28"
+    }
+  }
+}
