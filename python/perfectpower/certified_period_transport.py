@@ -49,10 +49,11 @@ def exp_upper(x):
     n=max(1,2*(x.numerator//x.denominator+1));return (1-x/n)**(-n)
 
 
-def certified_transport(matrix,path,order=18,step_limit=128):
+def certified_transport(matrix,path,order=18,step_limit=128,rounding_bits=None):
     module=DifferentialModule({'matrix':matrix});n=module.dimension
     if n>6 or type(order) is not int or not 4<=order<=40 or type(step_limit) is not int or not 1<=step_limit<=256:raise ValueError('dimension at most 6, order 4 through 40, bounded steps required')
     if not isinstance(path,list) or not 2<=len(path)<=65:raise ValueError('2 through 65 rational complex vertices required')
+    if rounding_bits is not None and (type(rounding_bits) is not int or not 16<=rounding_bits<=4096):raise ValueError('rounding precision 16 through 4096 bits required')
     path=list(map(Gaussian.parse,path));a=module.connection
     total=[[Gaussian(i==j) for j in range(n)] for i in range(n)];error=Q(0);receipts=[]
     for target in path[1:]:
@@ -69,7 +70,9 @@ def certified_transport(matrix,path,order=18,step_limit=128):
                         numerator=centered(r.n,c);upper=sum(v.norm()*radius**j for j,v in enumerate(numerator));brow.append(upper/lower)
                     if not valid:break
                     bounds.append(sum(brow))
-                if valid:break
+                # A bounded exponential also avoids giant, uninformative
+                # Cauchy estimates near poles in the rounded long-path mode.
+                if valid and (rounding_bits is None or max(bounds)*radius<=1):break
                 h=h/2
                 if h.norm()<Q(1,10**12):raise ValueError('no certified ordinary disk at this path point')
             if len(receipts)>=step_limit:raise ValueError('certified transport step budget exhausted')
@@ -82,18 +85,29 @@ def certified_transport(matrix,path,order=18,step_limit=128):
             rho=h.norm()/radius;tail=n*exp_upper(M*radius)*rho**(order+1)/(1-rho)
             error=rownorm(step)*error+tail*rownorm(total)+tail*error
             total=multiply(step,total)
+            if rounding_bits is not None:
+                # Centre rounding has <=2*n/scale row error; round the error
+                # upward too, so neither centres nor bounds accumulate huge
+                # denominators across hundreds of continuation steps.
+                scale=1<<rounding_bits
+                total=[[Gaussian(Q(v.a.numerator*scale//v.a.denominator,scale),
+                                 Q(v.b.numerator*scale//v.b.denominator,scale)) for v in row] for row in total]
+                error+=Q(2*n,scale)
+                error=Q(-(-error.numerator*scale//error.denominator),scale)
             if any(max(abs(v.a.numerator).bit_length(),v.a.denominator.bit_length(),abs(v.b.numerator).bit_length(),v.b.denominator.bit_length())>100000 for row in total for v in row):raise ValueError('transport coefficient bit budget exhausted')
             receipts.append(dict(start=c.packet(),end=(c+h).packet(),radius=str(radius),connection_row_bound=str(M),step_row_error_bound=str(tail),order=order));c=c+h
-    return dict(schema='pp-certified-complex-transport/1',matrix=[[v.packet() for v in row] for row in total],row_error_bound=str(error),steps=receipts,
+    result=dict(schema='pp-certified-complex-transport/1',matrix=[[v.packet() for v in row] for row in total],row_error_bound=str(error),steps=receipts,
         certified=True,tail_argument='On the pole-free radius-R disk ||S||<=exp(MR); Cauchy tail <= dimension*exp(MR)*rho^(N+1)/(1-rho). All modulus estimates and arithmetic are rational upper bounds.',
         scope='ordinary analytic continuation along this polygon; fundamental matrix starts at identity; singular endpoints and automatic integer monodromy recognition are excluded')
+    if rounding_bits is not None:result['rounding_bits']=rounding_bits
+    return result
 
 
-def legendre_marked_periods(path,order=18,seed_terms=48):
+def legendre_marked_periods(path,order=18,seed_terms=48,rounding_bits=None,step_limit=128):
     if type(seed_terms) is not int or not 8<=seed_terms<=256:raise ValueError('seed terms 8 through 256 required')
     if not path or Gaussian.parse(path[0]).packet()!=Gaussian(Q(1,2)).packet():raise ValueError('marked Legendre seed requires initial parameter 1/2')
     t=RF([0,1]);z=t.coerce(0);one=t.coerce(1);a=[[z,one],[1/(4*t*(1-t)),(2*t-1)/(t*(1-t))]]
-    receipt=certified_transport([[v.packet() for v in row] for row in a],path,order)
+    receipt=certified_transport([[v.packet() for v in row] for row in a],path,order,step_limit,rounding_bits)
     N=seed_terms;q=Q(1,2);F=sum(Q(comb(2*k,k)**2,16**k)*q**k for k in range(N+1));dF=sum(Q(comb(2*k,k)**2,16**k)*k*q**(k-1) for k in range(1,N+1))
     ef=q**(N+1)/(1-q);ed=q**N*((N+1)-N*q)/(1-q)**2
     seed=[[Gaussian(F),Gaussian(0,F)],[Gaussian(dF),Gaussian(0,-dF)]]

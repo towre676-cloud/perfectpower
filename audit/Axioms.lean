@@ -1,3 +1,10 @@
+import PerfectPower.QuarticCollision
+import PerfectPower.NativeRationalRoots
+import PerfectPower.EllipticPointDivision
+import PerfectPower.FiniteDomainCertificate
+import PerfectPower.RectangularDeterminant
+import PerfectPower.GeneralCRT
+import PerfectPower.FactorialWindow
 import PerfectPower.NativeCubicBridge
 import PerfectPower.WeightedNorm107
 import PerfectPower.QuarticPilot
@@ -3053,3 +3060,48 @@ open PerfectPower
 #print axioms PerfectPower.Generated.ClassLists.K22.sols_irr0
 #print axioms PerfectPower.Generated.ClassLists.K22.classList
 #print axioms PerfectPower.Generated.ClassLists.K22.plus22
+
+#print axioms PerfectPower.NativeRationalRoots.roots
+#print axioms PerfectPower.NativeRationalRoots.complete
+#print axioms PerfectPower.NativeRationalRoots.normalize
+#print axioms PerfectPower.NativeRationalRoots.normalize_root_iff
+#print axioms PerfectPower.NativeRationalRoots.complete_nonmonic
+#print axioms PerfectPower.EllipticPointDivision.completed
+#print axioms PerfectPower.EllipticPointDivision.equation_completed
+#print axioms PerfectPower.EllipticPointDivision.double_eq_zero_iff
+#print axioms PerfectPower.EllipticPointDivision.affine_two_torsion_iff
+#print axioms PerfectPower.EllipticPointDivision.two_torsion_root
+#print axioms PerfectPower.EllipticPointDivision.actual_doubling_x_iff
+#print axioms PerfectPower.EllipticPointDivision.branchPoint
+#print axioms PerfectPower.EllipticPointDivision.torsionList
+#print axioms PerfectPower.EllipticPointDivision.torsion_list_complete
+#print axioms PerfectPower.EllipticPointDivision.cubicPolynomial
+#print axioms PerfectPower.EllipticPointDivision.eval_cubicPolynomial
+#print axioms PerfectPower.EllipticPointDivision.native_torsion_complete
+#print axioms PerfectPower.EllipticPointDivision.native_halves_complete
+#print axioms PerfectPower.FiniteDomainCertificate.Domain
+#print axioms PerfectPower.FiniteDomainCertificate.meaning
+#print axioms PerfectPower.FiniteDomainCertificate.evaluate
+#print axioms PerfectPower.FiniteDomainCertificate.evaluate_complete
+#print axioms PerfectPower.FiniteDomainCertificate.rank
+#print axioms PerfectPower.FiniteDomainCertificate.rank_strict
+#print axioms PerfectPower.FiniteDomainCertificate.select_unique
+#print axioms PerfectPower.FiniteDomainCertificate.source_select_unique
+#print axioms PerfectPower.RectangularDeterminant.det_mul_expansion
+#print axioms PerfectPower.RectangularDeterminant.repeated_selection_zero
+#print axioms PerfectPower.RectangularDeterminant.det_mul_injective
+#print axioms PerfectPower.GeneralCRT.compatible_iff
+#print axioms PerfectPower.GeneralCRT.anchor
+#print axioms PerfectPower.GeneralCRT.intersection_iff
+#print axioms PerfectPower.GeneralCRT.anchor_lt
+#print axioms PerfectPower.FactorialWindow.window
+#print axioms PerfectPower.FactorialWindow.valuation
+#print axioms PerfectPower.FactorialWindow.legendre_window
+#print axioms PerfectPower.FactorialWindow.not_power
+
+#print axioms PerfectPower.GeneralCRT.integer_intersection_iff
+
+#print axioms PerfectPower.QuarticCollision.value
+#print axioms PerfectPower.QuarticCollision.collision_identity
+#print axioms PerfectPower.QuarticCollision.collision_iff
+#print axioms PerfectPower.QuarticCollision.circle_bounds

@@ -1,3 +1,7 @@
+# Current continuation — 6 October 2026
+
+The active branch is `claude/laughing-lamport-qqzdo9`; this continuation starts from `a5d0f04aa6c8f666dfd9428747abbbdf3811fe50`. Read `docs/NONFLAVOR_FRONTIER_MONOGRAPH.md` and `receipts/nonflavor_frontier/summary.json` before the historical handoff below. Use `make nonflavor-frontier-lean` for the seven new Lean modules and generated factorial witness; use `make nonflavor-frontier-receipts` for source-bound executable reproduction. Flavor is reserved for a separate session. Preserve concurrent remote changes when publishing. The old whole-repository census counts are not the focused audit counts.
+
 # Continuation handoff — 2026-09-29
 
 ## Start with the source, not earlier status numbers

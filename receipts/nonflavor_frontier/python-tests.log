@@ -1,0 +1,35 @@
+Final main command: PYTHONPATH=python python -m unittest discover -s python/tests
+.................................................................................................................................ss........................................................................................................................................................................................................................................................................................................................................................................................................................./workspace/scratch/2a03c213a98a/perfectpower/python/tests/test_gates.py:17: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/2a03c213a98a/perfectpower/data/mordell_census.jsonl' mode='r' encoding='UTF-8'>
+  cls.rows = [json.loads(line) for line in open(ROOT / 'data' / 'mordell_census.jsonl')]
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+........................................................................................................................................................................................................................../workspace/scratch/2a03c213a98a/perfectpower/python/tests/test_mordell_descent.py:13: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/2a03c213a98a/perfectpower/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../workspace/scratch/2a03c213a98a/perfectpower/python/tests/test_mordell_descent.py:35: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/2a03c213a98a/perfectpower/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+..............................................................................................................................................................................................................................................................................................................................................................................ss.....................
+----------------------------------------------------------------------
+Ran 1149 tests in 417.316s
+
+OK (skipped=4)
+
+Auxiliary suites from make test:
+python3 -m unittest discover -s continuation_tests
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 13.020s
+
+OK
+python3 -m unittest discover -s expert_push/tests
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.026s
+
+OK
+python3 -m unittest discover -s galois_merge/tests
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.009s
+
+OK

@@ -15,7 +15,8 @@ def _substitute(node,offset):
 class ProjectedPopulation:
     """Uniform distinct values, with the least source parameter as owner.
 
-    Cubic off-diagonal collisions are finite; higher degrees require strict
+    Cubic off-diagonal collisions are finite; even quartics have reflection
+    and finite circle branches. Other higher degrees require strict
     discrete monotonicity on the convex hull of the supplied source domain.
 
     For f(n)=a*n²+b*n+c, the only distinct collision is m=-b/a-n.
@@ -42,6 +43,13 @@ class ProjectedPopulation:
             self.collision=cubic_collisions(f)
             removed=sorted({y for x,y in self.collision['pairs'] if self.source.locate(parameter=x) is not None and self.source.locate(parameter=y) is not None})
             predicate={'op':'and','args':[predicate]+[{'poly':[-y,1],'relation':'!='} for y in removed]}
+        elif P.degree(f)==4 and not f[1] and not f[3]:
+            from .collision_geometry import biquadratic_collisions
+            self.collision=biquadratic_collisions(f);reflection=0
+            ownership={'op':'or','args':[{'poly':[0,1],'relation':'<='},
+                {'op':'not','args':[_substitute(spec['predicate'],0)]}]}
+            removed=sorted({y for x,y in self.collision['pairs'] if self.source.locate(parameter=x) is not None and self.source.locate(parameter=y) is not None})
+            predicate={'op':'and','args':[predicate,ownership]+[{'poly':[-y,1],'relation':'!='} for y in removed]}
         elif P.degree(f)>3:
             # Strict discrete monotonicity on the convex source hull suffices.
             delta=P.add(P.compose_linear(f,1,1),P.scale(f,-1))
@@ -100,11 +108,31 @@ def _curve_predicate(node,variable):
     return dict(op=node['op'],args=[_curve_predicate(a,variable) for a in node['args']])
 
 
-def symbolic_join(left,right,left_field,right_field):
+def join_fields(a,b,left_field=None,right_field=None,left_fields=None,right_fields=None):
+    """Normalize one-column compatibility calls and explicit tuple keys."""
+    if left_fields is None and right_fields is None:
+        left_fields,right_fields=[left_field],[right_field]
+    elif left_field is not None or right_field is not None:
+        raise ValueError('use scalar fields or tuple fields, not both')
+    if (not isinstance(left_fields,(list,tuple)) or not isinstance(right_fields,(list,tuple))
+        or not 1<=len(left_fields)==len(right_fields)<=64):
+        raise ValueError('matching nonempty field lists of length at most 64 required')
+    if (any(not isinstance(f,str) or f not in a['fields'] for f in left_fields)
+        or any(not isinstance(f,str) or f not in b['fields'] for f in right_fields)):
+        raise ValueError('existing polynomial join fields required')
+    return tuple(left_fields),tuple(right_fields)
+
+
+def symbolic_join(left,right,left_field=None,right_field=None,*,left_fields=None,right_fields=None):
     a,b=left.specification,right.specification
     if a['kind']!='domain' or b['kind']!='domain':raise ValueError('symbolic joins require parameter-domain populations')
-    if left_field not in a['fields'] or right_field not in b['fields']:raise ValueError('existing polynomial join fields required')
-    spec=dict(kind='curve',left=a['fields'][left_field],right=b['fields'][right_field],
-        predicate={'op':'and','args':[_curve_predicate(a['predicate'],'x'),_curve_predicate(b['predicate'],'y')]})
+    lf,rf=join_fields(a,b,left_field,right_field,left_fields,right_fields)
+    predicates=[_curve_predicate(a['predicate'],'x'),_curve_predicate(b['predicate'],'y')]
+    for l,r in zip(lf[1:],rf[1:]):
+        lhs=_curve_predicate({'poly':a['fields'][l]},'x')['expr']
+        rhs=_curve_predicate({'poly':b['fields'][r]},'y')['expr']
+        predicates.append({'expr':f'({lhs})-({rhs})','relation':'='})
+    spec=dict(kind='curve',left=a['fields'][lf[0]],right=b['fields'][rf[0]],
+        predicate={'op':'and','args':predicates})
     # Completeness is enforced by ExactPopulation; unsupported relations fail.
     return ExactPopulation(spec)

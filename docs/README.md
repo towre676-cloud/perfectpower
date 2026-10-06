@@ -1,5 +1,7 @@
 # Documentation
 
+[Connected non-flavor advances and the remaining research program](NONFLAVOR_FRONTIER_MONOGRAPH.md): seven Lean modules, source-bound streaming and service receipts, native elliptic fibres, variable-width factorial obstructions, even-quartic images and certified marked monodromy.
+
 [Canonical quarks, currents and strong CP](VALENTINER_CANONICAL_RESULTS.md): a changed fermion assignment enforces a renormalizable Nelson–Barr structure at the shared-adjoint vacuum, with tree determinant protection, scale-independent decoupling frames, complete finite-mass current matching and an explicit higher-operator protection boundary.
 
 [Supersymmetric Valentiner vacua](VALENTINER_SUSY_VACUA.md): an isolated link branch, stable source vacua with weak CP, an exact orthogonal-frame hierarchy obstruction, and an allowed cross-sector response. The [input audit](FLAVOR_SEARCH_INPUT_AUDIT.md) separates the physical assumptions from the calculated results. These are conditional flavor research, with no derived golden CKM relation.

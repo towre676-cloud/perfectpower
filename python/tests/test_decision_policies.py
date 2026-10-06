@@ -52,7 +52,9 @@ class DecisionPolicies(unittest.TestCase):
         p=ProjectedPopulation(dict(source=source([0,1,0,0,0,1],-10**50,10**50),field='f'))
         self.assertEqual(p.count(),2*10**50+1);self.assertEqual(p.multiplicity(0),1)
         self.assertEqual(p.evidence()['collision_geometry']['direction'],'increasing')
-        with self.assertRaises(ValueError):ProjectedPopulation(dict(source=source([0,0,-3,0,1]),field='f'))
+        p=ProjectedPopulation(dict(source=source([0,0,-3,0,1]),field='f'))
+        self.assertTrue(p.evidence()['collision_geometry']['complete'])
+        with self.assertRaises(ValueError):ProjectedPopulation(dict(source=source([0,1,-3,0,1]),field='f'))
 
     def test_one_dimensional_regions_all_boundaries(self):
         p=CalibrationPolicy(dict(matrix=[[1,1]],observation=[4],lower=[0,0],upper=[4,4],target_origin=[0,4],target_basis=[[1],[-1]],target_box=[0,4]))

@@ -38,7 +38,26 @@ def _name(s: str) -> str:
     out = re.sub(r'[^A-Za-z0-9_]', '_', s)
     if not out or not out[0].isalpha():
         out = 'v_' + out
-    return out.lower() if out[0].isupper() else out
+    out = out.lower() if out[0].isupper() else out
+    # x,y are local names in the imported curve lemma; reserve them too.
+    reserved = {'x','y','true','false','not','if','then','else','let','in','forall','exists',
+                'module','end','use','import','clone','type','val','lemma','goal','axiom',
+                'function','predicate','constant','assert','assume','ensures','requires',
+                'result','old','at','match','with','do','done','while','for','to','downto',
+                'exception','raise','try','rec','and','or','unit','int','bool'}
+    return 'v_'+out if out in reserved else out
+
+
+def _allocate_name(symbol, names):
+    if symbol not in names:
+        base = _name(symbol)
+        candidate, suffix = base, 0
+        used = set(names.values())
+        while candidate in used:
+            suffix += 1
+            candidate = f'{base}_{suffix}'
+        names[symbol] = candidate
+    return names[symbol]
 
 
 def to_why(e, names: dict) -> str:
@@ -59,7 +78,7 @@ def to_why(e, names: dict) -> str:
     if z3.is_const(e) and e.decl().kind() == z3.Z3_OP_UNINTERPRETED:
         if e.sort() not in (z3.IntSort(), z3.BoolSort()):
             raise Untranslatable(f'sort {e.sort()}')
-        return names.setdefault(str(e), _name(str(e)))
+        return _allocate_name(str(e), names)
     k = e.decl().kind()
     a = [to_why(c, names) for c in e.children()] if k != z3.Z3_OP_POWER else None
     bin_ops = {z3.Z3_OP_LE: '<=', z3.Z3_OP_LT: '<', z3.Z3_OP_GE: '>=', z3.Z3_OP_GT: '>'}
@@ -102,6 +121,8 @@ def to_why(e, names: dict) -> str:
         n = ex.as_long() if z3.is_int_value(ex) else ex.numerator_as_long()
         if n < 0 or (z3.is_rational_value(ex) and ex.denominator_as_long() != 1):
             raise Untranslatable('exponent')
+        if n > 4096:
+            raise Untranslatable('expanded exponent exceeds translation budget')
         b = to_why(base, names)
         return '(' + ' * '.join([b] * n) + ')' if n else '1'
     raise Untranslatable(str(e.decl()))
@@ -136,10 +157,20 @@ def emit(task_text: str, query: int = 0):
                     raise Untranslatable(f'certificate rejected: {why}')
                 certs.append(r.certificate)
         parsed = z3.parse_smt2_string('\n'.join(cmds[d] for d in ctx[i]) + '\n' + cmds[i])
+        # The emitted goal quantifies mathematical integers. A free Boolean
+        # constant needs a separately typed binder, which this bridge does not
+        # implement; reject it instead of silently emitting an integer binder.
+        stack = list(parsed)
+        while stack:
+            term = stack.pop()
+            if (z3.is_const(term) and term.decl().kind() == z3.Z3_OP_UNINTERPRETED
+                    and term.sort() != z3.IntSort()):
+                raise Untranslatable('only integer free variables are supported by the Why3 bridge')
+            stack.extend(term.children())
         atoms += [to_why(a, names) for a in parsed]
     if not certs:
         raise Untranslatable('no checked replacement in this query')
-    consts = '\n'.join(f'  (* {orig} *)' for orig in names)
+    consts = '\n'.join(f'  (* source symbol UTF-8 hex: {orig.encode().hex()} *)' for orig in names)
     vars_ = ' '.join(sorted(names.values()))
     body = ' /\\ '.join(atoms)
     goal = f'  goal vc: forall {vars_}:int. {body} -> false\n'

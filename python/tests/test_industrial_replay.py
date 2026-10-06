@@ -2,7 +2,7 @@ import random
 import unittest
 from unittest.mock import patch
 import z3
-from perfectpower.industrial_replay import solve_replay
+from perfectpower.industrial_replay import solve_replay, solve_replay_stream
 from perfectpower.industrial_portfolio import solve_stream
 
 
@@ -72,6 +72,33 @@ class IndustrialReplayTests(unittest.TestCase):
     def test_validation(self):
         with self.assertRaises(ValueError):
             solve_replay('(check-sat)', batch_chars=-1)
+
+    def test_stream_matches_control_at_all_boundaries(self):
+        s = '(declare-const |x;()| Int)(assert (= |x;()| 1))(check-sat)(push 1)(assert (= |x;()| 2))(check-sat)(pop 1)(check-sat)'
+        for width in (1, 2, 7, 64):
+            for bound in (0, 1, 79, 262144):
+                chunks = (s[i:i+width] for i in range(0, len(s), width))
+                result = solve_replay_stream(chunks, batch_chars=bound)
+                self.assertEqual(result['errors'], [])
+                self.assertEqual([q['answer'] for q in result['queries']], ['sat', 'unsat', 'sat'])
+                self.assertEqual(result['source_commands'], 8)
+
+    def test_stream_sink_is_online_and_bad_tail_stops(self):
+        rows = []
+        def source():
+            yield '(check-sat)'
+            self.assertEqual([r['answer'] for r in rows], ['sat'])
+            yield '(bad'
+        result = solve_replay_stream(source(), query_sink=rows.append)
+        self.assertEqual(result['queries'], [])
+        self.assertEqual(result['query_count'], 1)
+        self.assertTrue(result['errors'])
+        self.assertEqual(result['source_commands'], 1)
+
+    def test_stream_oversized_input_never_reaches_solver(self):
+        result = solve_replay_stream(['(declare-const long_name Int)(check-sat)'], max_command_chars=12)
+        self.assertTrue(result['errors'])
+        self.assertEqual(result['native_calls'], 0)
 
 
 if __name__ == '__main__':

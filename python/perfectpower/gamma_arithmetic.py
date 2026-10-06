@@ -40,6 +40,50 @@ def _prime(p):
 def _same(a,b):return json.dumps(a,sort_keys=True)==json.dumps(b,sort_keys=True)
 
 
+def factorial_window_obstruction(index,width,degree,primes=(2,3,5,7,11,13,17,19,23,29,31)):
+    """Variable-width N!/(N-W)!: seek a complete local non-power witness.
+
+    Work grows with the bit length of N and the supplied prime list, not W.
+    Passing all tested valuations yields UNKNOWN, never a completeness claim.
+    """
+    _natural(index);_natural(width);_degree(degree)
+    if width>index:raise ValueError('window width must not exceed the factorial index')
+    if not isinstance(primes,(list,tuple)) or not 1<=len(primes)<=64 or len(set(primes))!=len(primes) or any(not _prime(p) for p in primes):
+        raise ValueError('one through 64 distinct certified primes at most 2000000 required')
+    rows=[]
+    for p in primes:
+        top=legendre(index,p);bottom=legendre(index-width,p)
+        exponent=top['exponent']-bottom['exponent']
+        rows.append(dict(prime=p,exponent=exponent,top=top,bottom=bottom))
+        if exponent%degree:
+            return dict(schema='pp-factorial-window-obstruction/1',index=index,width=width,degree=degree,
+                        status='NOT_POWER',witness=rows[-1],tested=rows,complete_obstruction=True,
+                        scope='exact integer Gamma ratio N!/(N-W)!; one prime valuation disproves a degree-th power')
+    return dict(schema='pp-factorial-window-obstruction/1',index=index,width=width,degree=degree,
+                status='UNKNOWN',tested=rows,complete_obstruction=False,
+                scope='tested local necessary conditions only; no complete prime factorization claimed')
+
+
+def factorial_window_lean(receipt):
+    """Emit a kernel-checkable local obstruction without evaluating N! in Lean."""
+    expected=factorial_window_obstruction(receipt['index'],receipt['width'],receipt['degree'],
+                                          [row['prime'] for row in receipt['tested']])
+    if not _same(expected,receipt) or receipt['status']!='NOT_POWER':raise ValueError('a valid local non-power witness is required')
+    n,w,d=receipt['index'],receipt['width'],receipt['degree'];p=receipt['witness']['prime']
+    bound=1;power=p
+    while power<=n:bound+=1;power*=p
+    def log_bound(value):
+        return '(by simp)' if value==0 else '(Nat.log_lt_of_lt_pow (by decide +kernel) (by decide +kernel))'
+    return (f'import PerfectPower.FactorialWindow\n\n'
+            f'private instance : Fact (Nat.Prime {p}) := ⟨by norm_num⟩\n'
+            f'theorem factorial_window_not_power : ¬∃ a:ℕ, a≠0 ∧ '
+            f'PerfectPower.FactorialWindow.window {n} {w}=a^{d} := by\n'
+            f'  apply PerfectPower.FactorialWindow.not_power {p} {n} {w} {d}\n'
+            f'  rw [PerfectPower.FactorialWindow.legendre_window {p} {n} {w} {bound}\n'
+            f'    {log_bound(n)} {log_bound(n-w)}]\n'
+            f'  decide +kernel\n')
+
+
 def normalize(spec):
     """Compile fixed-width expressions to numerator/denominator, preserving domain."""
     if not isinstance(spec,dict):raise ValueError('structured Gamma expression required')

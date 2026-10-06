@@ -1,0 +1,75 @@
+lake build PerfectPower.NativeRationalRoots PerfectPower.EllipticPointDivision PerfectPower.FiniteDomainCertificate PerfectPower.RectangularDeterminant PerfectPower.GeneralCRT PerfectPower.FactorialWindow PerfectPower.QuarticCollision
+Build completed successfully.
+lake env lean audit/NonFlavorFrontier.lean
+'PerfectPower.NativeRationalRoots.roots' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.NativeRationalRoots.complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.NativeRationalRoots.normalize' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.NativeRationalRoots.normalize_root_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.NativeRationalRoots.complete_nonmonic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.completed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.equation_completed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.double_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.affine_two_torsion_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.two_torsion_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.actual_doubling_x_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.branchPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.torsionList' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.torsion_list_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.cubicPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.eval_cubicPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.native_torsion_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticPointDivision.native_halves_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.Domain' depends on axioms: [propext, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.meaning' depends on axioms: [propext, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.evaluate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.evaluate_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.rank' depends on axioms: [propext, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.rank_strict' depends on axioms: [propext, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.select_unique' depends on axioms: [propext, Quot.sound]
+'PerfectPower.FiniteDomainCertificate.source_select_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RectangularDeterminant.det_mul_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RectangularDeterminant.repeated_selection_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RectangularDeterminant.det_mul_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneralCRT.compatible_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneralCRT.anchor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneralCRT.intersection_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneralCRT.anchor_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FactorialWindow.window' does not depend on any axioms
+'PerfectPower.FactorialWindow.valuation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FactorialWindow.legendre_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FactorialWindow.not_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeneralCRT.integer_intersection_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+-- Found 0 errors in 5 declarations (plus 36 automatically generated ones) in PerfectPower.NativeRationalRoots with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 13 declarations (plus 21 automatically generated ones) in PerfectPower.EllipticPointDivision with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 14 declarations (plus 118 automatically generated ones) in PerfectPower.FiniteDomainCertificate with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 3 declarations (plus 13 automatically generated ones) in PerfectPower.RectangularDeterminant with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 5 declarations (plus 15 automatically generated ones) in PerfectPower.GeneralCRT with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 4 declarations (plus 15 automatically generated ones) in PerfectPower.FactorialWindow with 15 linters
+
+
+-- All linting checks passed!
+'PerfectPower.QuarticCollision.value' depends on axioms: [propext]
+'PerfectPower.QuarticCollision.collision_identity' depends on axioms: [propext, Quot.sound]
+'PerfectPower.QuarticCollision.collision_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.QuarticCollision.circle_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+-- Found 0 errors in 4 declarations (plus 15 automatically generated ones) in PerfectPower.QuarticCollision with 15 linters
+
+
+-- All linting checks passed!
+lake env lean audit/FactorialWindowGenerated.lean
+'factorial_window_not_power' depends on axioms: [propext, Classical.choice, Quot.sound]

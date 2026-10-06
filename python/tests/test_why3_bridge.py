@@ -17,6 +17,24 @@ except ImportError:
 
 @unittest.skipIf(z3 is None, 'z3-solver not installed')
 class Emission(unittest.TestCase):
+    def test_identifier_hygiene_and_translation_budget(self):
+        from perfectpower.why3_bridge import to_why, Untranslatable
+        names = {}
+        symbols = [z3.Int(v) for v in ('x','y','if','a-b','a_b','A','a','has*)comment')]
+        rendered = [to_why(v,names) for v in symbols]
+        self.assertEqual(len(set(rendered)),len(symbols))
+        self.assertNotIn('x',rendered)
+        self.assertNotIn('y',rendered)
+        self.assertNotIn('if',rendered)
+        self.assertEqual([to_why(v,names) for v in symbols],rendered)
+        with self.assertRaises(Untranslatable):to_why(z3.Int('n')**100000000,{})
+
+    def test_free_booleans_fail_closed(self):
+        from perfectpower.why3_bridge import emit, Untranslatable
+        task=(ROOT/'examples/smt/vc_minus56.smt2').read_text()
+        task=task.replace('(check-sat)','(declare-const flag Bool)(assert flag)(check-sat)')
+        with self.assertRaisesRegex(Untranslatable,'integer free variables'):emit(task)
+
     def test_imports_the_parsed_lean_statement(self):
         from perfectpower.why3_bridge import emit
         why, control, meta = emit((ROOT / 'examples' / 'smt' / 'vc_affine56.smt2').read_text())

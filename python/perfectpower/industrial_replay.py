@@ -26,11 +26,40 @@ def solve_replay(script, query_ms=250, batch_chars=262144, fast_split=False):
     else:
         commands = split_commands(script)
     parsed = time.perf_counter()
+    result = _replay(iter(commands), query_ms, batch_chars)
+    result.update(wall_seconds=time.perf_counter()-started, parse_seconds=parsed-started,
+                  fast_split=fast_split)
+    return result
+
+
+def solve_replay_stream(chunks, query_ms=250, batch_chars=262144, *,
+                        max_command_chars=1000000, max_chunk_chars=65536, query_sink=None):
+    """Replay without retaining the source or a command list.
+
+    A query sink also avoids retaining query rows. Solver state is not bounded.
+    Malformed later input stops replay but keeps completed earlier queries.
+    Bounds count Unicode characters; UTF-8 uses at most four bytes per character.
+    """
+    if query_ms < 2 or batch_chars < 0:
+        raise ValueError('Invalid query budget or batch bound')
+    from .smt_stream import iter_commands
+    started = time.perf_counter()
+    result = _replay(iter_commands(chunks, max_command_chars=max_command_chars,
+                                  max_chunk_chars=max_chunk_chars),
+                     query_ms, batch_chars, query_sink=query_sink)
+    result.update(wall_seconds=time.perf_counter()-started, streaming=True,
+                  max_command_chars=max_command_chars, max_chunk_chars=max_chunk_chars)
+    return result
+
+
+def _replay(commands, query_ms, batch_chars, query_sink=None):
     context = z3.Context()
     rows, errors, pending = [], [], []
     pending_chars = 0
     calls = ingestion_calls = peak_batch_chars = 0
     ingestion_seconds = 0.0
+    source_commands = query_count = 0
+    query_seconds = 0.0
 
     def evaluate(command, ingestion=False):
         nonlocal calls, ingestion_calls, ingestion_seconds, peak_batch_chars
@@ -59,6 +88,7 @@ def solve_replay(script, query_ms=250, batch_chars=262144, fast_split=False):
 
     try:
         for command in commands:
+            source_commands += 1
             op = head(command)
             if op in OBSERVERS:
                 continue
@@ -82,12 +112,17 @@ def solve_replay(script, query_ms=250, batch_chars=262144, fast_split=False):
             evaluate('(set-option :timeout 0)')
             if answer not in ('sat', 'unsat', 'unknown'):
                 raise ValueError(f'Unexpected query output: {answer!r}')
-            rows.append(dict(answer=answer, seconds=time.perf_counter()-t))
+            row = dict(answer=answer, seconds=time.perf_counter()-t)
+            query_count += 1
+            query_seconds += row['seconds']
+            if query_sink is None:
+                rows.append(row)
+            else:
+                query_sink(row)
         flush()
     except (ValueError, z3.Z3Exception) as e:
         errors.append(str(e))
-    return dict(queries=rows, errors=errors, wall_seconds=time.perf_counter()-started,
-                parse_seconds=parsed-started, ingestion_seconds=ingestion_seconds,
-                query_seconds=sum(q['seconds'] for q in rows), native_calls=calls,
+    return dict(queries=rows, errors=errors, ingestion_seconds=ingestion_seconds,
+                query_seconds=query_seconds, query_count=query_count, native_calls=calls,
                 ingestion_calls=ingestion_calls, peak_batch_chars=peak_batch_chars,
-                batch_chars=batch_chars, fast_split=fast_split, source_commands=len(commands))
+                batch_chars=batch_chars, source_commands=source_commands)

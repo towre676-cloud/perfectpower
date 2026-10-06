@@ -40,6 +40,17 @@ def dispatch(catalogue, request):
         from .elliptic_certificate_verifier import verify_halves,verify_independence
         checker=verify_halves if op=='verify_elliptic_halves' else verify_independence
         return dict(valid=checker(**args),execution_verified=False)
+    if op in {'inverse_matrix_ball','multiply_matrix_balls','recognize_integral_matrix','marked_legendre_monodromy'}:
+        from .period_matrix_balls import inverse_matrix_ball,multiply_matrix_balls,recognize_integral_matrix,marked_legendre_monodromy
+        operations=dict(inverse_matrix_ball=inverse_matrix_ball,multiply_matrix_balls=multiply_matrix_balls,
+                        recognize_integral_matrix=recognize_integral_matrix,marked_legendre_monodromy=marked_legendre_monodromy)
+        return operations[op](**args)
+    if op in {'cluster_graph_metric','verify_cluster_graph_metric'}:
+        from .cluster_graph_metric import cluster_graph_metric,verify_cluster_graph_metric
+        return (cluster_graph_metric if op=='cluster_graph_metric' else verify_cluster_graph_metric)(**args)
+    if op=='factorial_window_obstruction':
+        from .gamma_arithmetic import factorial_window_obstruction
+        return factorial_window_obstruction(**args)
     if op in {'genus_three_tower','richelot','formal_two_isogeny','branch_braid','reflection_kernel','root_clusters','simultaneous_nodes','certified_transport','marked_legendre','frobenius','zeta','frobenius_deformation','tower_frobenius','sunrise'}:
         from .curve_correspondences import genus_three_elliptic_tower,richelot_correspondence
         from .formal_isogenies import elliptic_two_isogeny

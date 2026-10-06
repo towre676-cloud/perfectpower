@@ -111,7 +111,8 @@ class Catalogue:
         rows = self.db.execute('SELECT id,kind FROM objects ORDER BY id LIMIT ? OFFSET ?', (size, offset)).fetchall()
         return [dict(id=i, kind=k, aliases=[r[0] for r in self.db.execute('SELECT name FROM aliases WHERE id=? ORDER BY name', (i,))]) for i, k in rows]
 
-    def join(self, left, right, *, mode='rank', start=0, size=100, left_field=None, right_field=None, row_limit=10000):
+    def join(self, left, right, *, mode='rank', start=0, size=100, left_field=None, right_field=None,
+             left_fields=None, right_fields=None, row_limit=10000):
         """Rank zip, or complete bounded value join preserving multiplicities."""
         if any(self.definition(r)['kind'] != 'population' for r in (left, right)):
             raise ValueError('joins require two population objects')
@@ -126,12 +127,17 @@ class Catalogue:
             raise ValueError('join mode rank or value required')
         if a.cardinality+b.cardinality > row_limit:
             raise WorkLimit('complete value join inputs exceed row budget')
+        from .projected_populations import join_fields
+        def fields(population):
+            spec=population.specification
+            return spec if spec['kind']=='domain' else dict(fields={'x':None,'y':None})
+        lf,rf=join_fields(fields(a),fields(b),left_field,right_field,left_fields,right_fields)
         index = {}
         for r in b.page(0, b.cardinality):
-            value = r['values'][right_field]; index.setdefault(value, []).append(r)
+            value = tuple(r['values'][f] for f in rf); index.setdefault(value, []).append(r)
         result = []
         for l in a.page(0, a.cardinality):
-            for r in index.get(l['values'][left_field], []):
+            for r in index.get(tuple(l['values'][f] for f in lf), []):
                 if len(result) == row_limit:
                     raise WorkLimit('complete join output exceeds row budget; no partial result returned')
                 result.append(dict(left=l, right=r))

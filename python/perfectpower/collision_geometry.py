@@ -28,3 +28,29 @@ def cubic_collisions(coefficients,work_limit=100000):
         pairs=sorted(pairs),complete=True,execution_verified=False,
         identity='(3*a*(x+y)+2*b)^2+3*a^2*(x-y)^2=4*b^2-12*a*c',
         scope='all off-diagonal integer pairs x<y for the supplied cubic, before domain restriction')
+
+
+def biquadratic_collisions(coefficients,work_limit=100000):
+    """Even quartics: infinite reflection plus a complete finite circle branch."""
+    f=P.poly(tuple(map(_q,coefficients)))
+    if P.degree(f)!=4 or f[1] or f[3] or any(c.denominator!=1 for c in f):
+        raise ValueError('integer even quartic required')
+    if type(work_limit) is not int or work_limit<1:raise ValueError('positive collision budget required')
+    c,_,b,_,a=map(int,f)
+    radius=-b//a if b%a==0 and -b//a>=0 else None
+    bound=isqrt(radius) if radius is not None else 0
+    if bound+1>work_limit:raise WorkLimit('quartic collision circle exceeds work budget')
+    pairs=set()
+    if radius is not None:
+        for x in range(bound+1):
+            y=isqrt(radius-x*x)
+            if x*x+y*y!=radius or x*x==y*y:continue
+            for u in {x,-x}:
+                for v in {y,-y}:
+                    if u<v:pairs.add((u,v))
+    if any(P.evaluate(f,x)!=P.evaluate(f,y) for x,y in pairs):raise ArithmeticError('quartic collision replay failed')
+    return dict(schema='pp-biquadratic-collisions/1',coefficients=list(map(int,f)),
+                reflection=0,circle_radius_squared=radius,coordinate_bound=bound,
+                pairs=sorted(pairs),complete=True,execution_verified=False,
+                identity='f(x)-f(y)=(x^2-y^2)*(a*(x^2+y^2)+b)',
+                scope='all collisions of the supplied even quartic: x=y, x=-y, or the listed finite circle pairs; before source restriction')

@@ -42,6 +42,15 @@ elliptic-division-lean:
 	lake build PerfectPower.EllipticDivision
 	lake env lean audit/EllipticDivision.lean
 
+.PHONY: nonflavor-frontier-lean nonflavor-frontier-receipts
+nonflavor-frontier-lean:
+	lake build PerfectPower.NativeRationalRoots PerfectPower.EllipticPointDivision PerfectPower.FiniteDomainCertificate PerfectPower.RectangularDeterminant PerfectPower.GeneralCRT PerfectPower.FactorialWindow PerfectPower.QuarticCollision
+	lake env lean audit/NonFlavorFrontier.lean
+	lake env lean audit/FactorialWindowGenerated.lean
+
+nonflavor-frontier-receipts:
+	$(PY) python/develop_nonflavor_frontier.py --monodromy
+
 cert-audit:
 	$(PY) python/independent_cert_audit.py
 
