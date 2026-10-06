@@ -6,8 +6,9 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    multi_curve_family={'summary','evidence','specialize','deformation','projective_deformation','root_motion','observable'},
     elliptic_quotient={'summary','evidence','specialize','observable','collisions','root_motion','period_path','point_image','rational_lifts'},
-    curve_family={'summary','evidence','specialize','observable','deformation','root_motion','collisions','parameter_domain','parameter_population','integer_points','marked_period','transport','period_path'},
+    curve_family={'summary','evidence','specialize','observable','deformation','projective_deformation','root_motion','collisions','local_analysis','frobenius_jet','de_rham_pairing','horizontal_projectors','check_projector','parameter_domain','parameter_population','integer_points','marked_period','transport','period_path'},
     calibration_policy={'summary','evidence','decide'},diagnostic_policy={'summary','evidence','step','run'},
     projected={'summary','count','select','rank','page','sample','partition','locate','multiplicity','evidence'},
     factorial={'summary','terms','residues'},
@@ -35,6 +36,18 @@ def dispatch(catalogue, request):
     if op == 'construct_quotient':
         from .elliptic_quotients import translated_even_specification
         return dict(kind='elliptic_quotient',specification=translated_even_specification(**args))
+    if op == 'projective_deformation':
+        from .projective_deformation import projective_deformation
+        return projective_deformation(request['specification'], **args)
+    if op == 'discover_rational_quotients':
+        from .rational_curve_quotients import discover_rational_quotients
+        return discover_rational_quotients(request['specification'], **args)
+    if op == 'verify_rational_quotient':
+        from .rational_curve_quotients import verify_rational_quotient
+        return verify_rational_quotient(request['specification'], **args)
+    if op == 'cycle_map':
+        from .integral_cycle_maps import simplicial_cycle_map
+        return simplicial_cycle_map(**args)
     if op == 'join':
         return catalogue.join(request['object'], request['other'], **args)
     if op == 'symbolic_join':

@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'research':{
+            'title':'Projective curve research',
+            'subtitle':'Local execution, simultaneous deformations<br/>and exact structural searches',
+            'description':'Binary-form projective tangents, several-parameter flat connections, Laurent and logarithmic Frobenius execution, reciprocal elliptic quotients, continuous de Rham pairings and integral simplicial cycle maps.',
+            'metrics':[('3','simultaneous parameters supported'),('2','reciprocal elliptic quotient maps'),('6','connected research extensions')],
+            'scope':'Exact standard-library identities and finite formal execution within declared budgets. Integral maps require an explicit simplicial map. Differential projectors do not certify Jacobian factors or rational Betti structures. No new kernel proof or rigorous numerical continuation.',
+            'running':'Projective geometry, local differential execution and marked topology',
+        },
         'structure':{
             'title':'Geometry inside the polynomial',
             'subtitle':'Deformation, collision residues<br/>and hidden elliptic quotient systems',
@@ -91,6 +99,7 @@ def render(source,output,*,edition='polynomial'):
     pdfmetrics.registerFontFamily('Body',normal='Body',bold='BodyBold',italic='Body',boldItalic='BodyBold')
     navy=colors.HexColor('#173348');teal=colors.HexColor('#157A86')
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
+    if edition=='research':body.leading=14.8;body.spaceAfter=8
     heading=ParagraphStyle('heading',fontName='LabelBold',fontSize=14,leading=19,spaceBefore=18,spaceAfter=9,textColor=teal,keepWithNext=True)
     small=ParagraphStyle('small',fontName='Label',fontSize=9,leading=14,spaceAfter=10,textColor=navy)
     title=ParagraphStyle('title',fontName='LabelBold',fontSize=30,leading=37,textColor=navy,spaceAfter=20)
@@ -149,7 +158,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

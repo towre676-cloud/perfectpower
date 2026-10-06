@@ -1,0 +1,11 @@
+{"kind":"curve_family","name":"legendre","op":"register","request_id":1,"specification":{"coefficients":[[0],[0,1],[-1,-1],[1]]}}
+{"method":"projective_deformation","object":"legendre","op":"call","request_id":2}
+{"args":{"parameter":0},"method":"local_analysis","object":"legendre","op":"call","request_id":3}
+{"args":{"parameter":"infinity"},"method":"local_analysis","object":"legendre","op":"call","request_id":4}
+{"args":{"log_degree":0,"seed":[1,0]},"method":"frobenius_jet","object":"legendre","op":"call","request_id":5}
+{"method":"de_rham_pairing","object":"legendre","op":"call","request_id":6}
+{"kind":"multi_curve_family","name":"universal","op":"register","request_id":7,"specification":{"coefficients":[{"terms":[{"coefficient":1,"powers":[0,1]}]},{"terms":[{"coefficient":1,"powers":[1,0]}]},0,1],"parameters":["a","b"]}}
+{"method":"deformation","object":"universal","op":"call","request_id":8}
+{"args":{"parameter":"b"},"method":"observable","object":"universal","op":"call","request_id":9}
+{"op":"discover_rational_quotients","request_id":10,"specification":{"coefficients":[[1],[1],[2],[3,1],[2],[1],[1]]}}
+{"args":{"source":{"face_orientation_signs":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"triangles":[[0,3,4],[0,4,1],[1,4,5],[1,5,2],[2,5,3],[2,3,0],[3,6,7],[3,7,4],[4,7,8],[4,8,5],[5,8,6],[5,6,3],[6,0,1],[6,1,7],[7,1,2],[7,2,8],[8,2,0],[8,0,6]],"vertices":9},"target":{"face_orientation_signs":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"triangles":[[0,3,4],[0,4,1],[1,4,5],[1,5,2],[2,5,3],[2,3,0],[3,6,7],[3,7,4],[4,7,8],[4,8,5],[5,8,6],[5,6,3],[6,0,1],[6,1,7],[7,1,2],[7,2,8],[8,2,0],[8,0,6]],"vertices":9},"vertex_map":[0,1,2,3,4,5,6,7,8]},"op":"cycle_map","request_id":11}

@@ -81,13 +81,26 @@ For translated-even sextics, `elliptic_quotient` adds a complementary genus-two 
 
 The bridge combines established deformation, de Rham, Gauss–Manin, Picard–Fuchs and elliptic-cover mathematics in one executable research object. Its value here is the linked explanation and exact execution; worldwide mathematical priority is not established. See [the family compiler](docs/CURVE_FAMILIES_MONOGRAPH.md), [geometry inside the polynomial](docs/CURVE_STRUCTURE_MONOGRAPH.md), and the [ten-request service example](receipts/curve_structure/service_requests.jsonl). The current input degree limit is 8; the original family monograph describes the earlier degree-4 limit.
 
+The [projective research extension](docs/CURVE_RESEARCH_MONOGRAPH.md) connects six further capacities to these objects:
+
+| Research operation | Delivered machinery | Exact scope |
+|---|---|---|
+| Move branch coordinates projectively | `projective_deformation` on binary forms of degrees 4, 6 and 8 | Full projective tangent quotient, including a moving infinity and form scaling, on an explicit generic chart. |
+| Execute near repeated-root fibres and parameter infinity | `local_analysis`, `frobenius_jet` | Exact Laurent charts, branch multiplicities, diagonal Fuchsian gauges and finite logarithmic jets at rational parameters or infinity; positive resonances are reported. |
+| Vary several parameters together | `MultiCurveFamily`, catalogue `multi_curve_family` | One through three parameters, exact simultaneous connections, zero-curvature replay, joint essential deformation rank and directional observable equations, within algebra budgets. |
+| Discover broader explicit quotient maps | `discover_rational_quotients`, `verify_rational_quotient` | Reciprocal and translated-reflection templates, or a supplied finite rational-map candidate list, with exact identities and differential pullbacks. The reciprocal sextic examples compile two elliptic systems. |
+| Search for horizontal projectors | `de_rham_pairing`, `horizontal_projectors`, `check_projector` | Continuous residue pairing and complete bounded linear ansatz for horizontal, holomorphic-filtration-preserving, self-adjoint endomorphisms; finite idempotent candidate search. Betti rationality and Jacobian splitting are not inferred. |
+| Transfer integral cycles through a marked surface map | `simplicial_cycle_map`, service `cycle_map` | Actual integral homology maps from an explicit simplicial vertex map, with Smith bases and boundary witnesses. Matching the triangulations to an algebraic quotient's period marking remains an additional obligation. |
+
+Run `PYTHONPATH=python python python/develop_curve_research.py` to reproduce the [exact research corpus](receipts/curve_research/summary.json), or replay its [service transcript](receipts/curve_research/service_requests.jsonl). New kernel proofs and rigorous numerical continuation remain separate work.
+
 ## Populations, policies and persistent research objects
 
 [`ExactPopulation`](docs/POPULATION_MONOGRAPH.md) compiles supported finite domains and curves into reusable query spaces. It counts, selects and locates original objects by rank, samples without replacement, partitions work into balanced rank shards and exports seeded JSONL datasets. Distinct projections use complete cubic collision geometry or supported higher-degree discrete monotonicity certificates. Symbolic joins and projections have defined supported families; arbitrary polynomial image closure is not assumed.
 
 [`CalibrationPolicy` and `DiagnosticPolicy`](docs/DECISION_POLICIES_MONOGRAPH.md) turn exact optimization into executable decisions. Calibration fixes a bounded feasible integer model and a positive definite rational metric, then computes all winning regions on a one- or two-dimensional target slice, including lower-dimensional regions and ties. Optimizer-driven discovery can avoid listing settings that never win. Diagnostics supports at most 16 finite hypotheses and minimizes worst-case total cost over adaptive trees under noiseless readouts, zero-cost reset and strictly positive operator costs. Both compilers have explicit budgets and reject incomplete compilation.
 
-The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **12 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family` and `elliptic_quotient`. The JSONL service and local HTTP console expose the supported public operations:
+The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **13 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family`, `elliptic_quotient` and `multi_curve_family`. The JSONL service and local HTTP console expose the supported public operations:
 
 ```sh
 # Interactive local console and persistent catalogue.
@@ -144,6 +157,8 @@ Global solving, finite exact calculation and numerical exploration have distinct
 
 The repository also contains a separate mathematical-physics investigation of finite-group representations, invariant interactions and quark-flavor models. Its machinery includes an exact independent census of 263 CP-even scalar contractions through degree six for the declared field content, explicit interaction models, local-vacuum calculations and physical CP diagnostics. The [joint-potential analysis](docs/VALENTINER_JOINT_POTENTIAL.md) exhibits nonorthogonal local vacua and independent mixing deformations even with six masses fixed. These results do not derive the observed CKM matrix or establish a protected golden amplitude relation. Read the [supersymmetric-vacuum analysis](docs/VALENTINER_SUSY_VACUA.md) and [input audit](docs/FLAVOR_SEARCH_INPUT_AUDIT.md) for assumptions and open derivations.
 
+The [CP-even kinetic freedom proof](docs/FLAVOR_KINETIC_FREEDOM.md) constructs nine real polynomial covariants spanning a complete Hermitian quark metric at a CP-breaking vacuum. Positive bare metrics preserve the scalar vacuum and all six quark masses while changing all four CKM parameters. It also derives a shared non-Abelian source-label contraction and a stable rank-one heavy-family branch. The [scientific receipt](receipts/m22_interactions/flavor_kinetic.json) and [validation](receipts/m22_interactions/flavor_kinetic_validation.json) include 14 positive countermetrics, 32 passing checks and byte-identical fresh replay. The golden relation remains an obligation for full UV kinetic matching.
+
 ## Build and develop
 
 Run the core Python tests directly from the checkout:
@@ -166,5 +181,3 @@ make lean
 The [documentation index](docs/README.md) organizes mathematical accounts, implementation guides, proof audits and benchmark reports by subject. For background, read [the history of perfect powers](docs/HISTORY.md) or [computation and the limits of solving equations](docs/HILBERT10.md).
 
 Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). Included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
-
-The [CP-even kinetic freedom proof](docs/FLAVOR_KINETIC_FREEDOM.md) constructs nine real polynomial covariants spanning a complete Hermitian quark metric at a CP-breaking vacuum. Positive bare metrics preserve the scalar vacuum and all six quark masses while changing all four CKM parameters. It also derives a shared non-Abelian source-label contraction and a stable rank-one heavy-family branch. The [scientific receipt](receipts/m22_interactions/flavor_kinetic.json) and [validation](receipts/m22_interactions/flavor_kinetic_validation.json) include 14 positive countermetrics, 32 passing checks and byte-identical fresh replay. The golden relation remains an obligation for full UV kinetic matching.

@@ -117,6 +117,32 @@ class CurveFamily:
         from .curve_structure import collisions
         return collisions(self)
 
+    def projective_deformation(self):
+        from .projective_deformation import projective_deformation
+        return projective_deformation(self.specification)
+
+    def local_analysis(self, parameter=0, order=8):
+        from .local_curve_execution import local_analysis
+        return local_analysis(self, parameter, order)
+
+    def frobenius_jet(self, parameter=0, order=8, exponent=0, seed=None, log_degree=None):
+        from .local_curve_execution import frobenius_jet
+        return frobenius_jet(self, parameter, order, exponent, seed, log_degree)
+
+    def de_rham_pairing(self):
+        from .horizontal_projectors import de_rham_pairing
+        return dict(pairing=encode_matrix(de_rham_pairing(self)),
+                    construction='residue of a local primitive times a differential at infinity',
+                    pairing_identity_checked=True, integral_cycle_marking=False)
+
+    def horizontal_projectors(self, degree=0, denominator=None, candidate_limit=128):
+        from .horizontal_projectors import search_horizontal_projectors
+        return search_horizontal_projectors(self, degree, denominator, candidate_limit)
+
+    def check_projector(self, matrix):
+        from .horizontal_projectors import projector_check
+        return projector_check(self, matrix)
+
     def specialize(self, parameter):
         t = _q(parameter); disc = P.evaluate(self.discriminant,t)
         if not disc: raise ValueError('singular family parameter')
