@@ -52,6 +52,7 @@ def rational_certificate(coefficients, *, receipt=None, divisor_work_limit=1024,
     expr=_poly(f);norm=_poly(normalized);ints='['+','.join(map(str,g))+']'
     rootset='({' + ','.join(_literal(r) for r in roots) + '} : Finset ℚ)' if roots else '(∅ : Finset ℚ)'
     source=f'''import PerfectPower.NativeRationalRoots
+import PerfectPower.TypedDivisionPackets
 namespace {namespace}
 open Polynomial PerfectPower
 noncomputable def source : Polynomial ℚ := {expr}
@@ -92,6 +93,19 @@ private theorem scaling : scaled.map (Int.castRingHom ℚ) =
 theorem native_roots_checked : NativeRationalRoots.roots coefficients ({D}) = {rootset} := by
   decide +kernel
 
+noncomputable def typedPacket : TypedDivisionPackets.RationalPacket
+    (NativeRationalRoots.normalize source) where
+  coefficients := coefficients
+  scale := ({D})
+  scale_ne_zero := by norm_num
+  valid := by decide +kernel
+  monic := scaled_monic
+  scaling := scaling
+
+theorem typed_roots_complete (r : ℚ) :
+    (NativeRationalRoots.normalize source).eval r=0 ↔ r ∈ typedPacket.interpret :=
+  typedPacket.complete r
+
 theorem source_complete (r : ℚ) : source.eval r = 0 ↔ r ∈ {rootset} := by
   rw [← native_roots_checked]
   exact NativeRationalRoots.complete_nonmonic source source_nonzero coefficients ({D})
@@ -99,6 +113,7 @@ theorem source_complete (r : ℚ) : source.eval r = 0 ↔ r ∈ {rootset} := by
 end {namespace}
 #print axioms {namespace}.native_roots_checked
 #print axioms {namespace}.source_complete
+#print axioms {namespace}.typed_roots_complete
 '''
     return dict(schema='pp-native-rational-certificate/1',original_coefficients=canonical,
         receipt=packet,roots=[rational_literal(r) for r in roots],namespace=namespace,

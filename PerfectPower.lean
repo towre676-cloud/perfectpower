@@ -395,3 +395,8 @@ import PerfectPower.BernsteinBoxes
 import PerfectPower.RationalVoronoiPacket
 import PerfectPower.UniformHyperellipticMetric
 import PerfectPower.EllipticDivision
+import PerfectPower.EllipticPointLaw
+import PerfectPower.TriplingCoordinates
+import PerfectPower.TypedDivisionPackets
+import PerfectPower.PolynomialSourceSemantics
+import PerfectPower.SubgroupDivisionClosure

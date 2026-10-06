@@ -1,0 +1,4122 @@
+{
+  "closed_primes": [
+    2,
+    3
+  ],
+  "coefficient_bound": 2,
+  "complete_mordell_weil_group": false,
+  "curve": {
+    "ainvs": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "1"
+    ]
+  },
+  "execution_verified": false,
+  "generators": [
+    [
+      "-1",
+      "0"
+    ],
+    [
+      "0",
+      "1"
+    ]
+  ],
+  "initial_reductions": [],
+  "max_steps": 8,
+  "membership_limit": 100000,
+  "node_limit": 100000,
+  "primes": [
+    2,
+    3
+  ],
+  "root_nodes": 252,
+  "schema": "pp-bounded-elliptic-saturation/1",
+  "source_points": [],
+  "stages": [
+    {
+      "closure_witnesses": null,
+      "generators": [
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "preimage": {
+        "complete": true,
+        "complete_mordell_weil_group": false,
+        "curve": {
+          "ainvs": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "execution_verified": false,
+        "generators": [
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "kernel_fibre": {
+          "anchor": null,
+          "complete": true,
+          "curve": {
+            "ainvs": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ]
+          },
+          "division_certificate": null,
+          "execution_verified": false,
+          "method": "two_torsion",
+          "node_limit": 100000,
+          "points": [
+            null,
+            [
+              "-1",
+              "0"
+            ]
+          ],
+          "root_nodes": 7,
+          "schema": "pp-rational-halves/1",
+          "target": null,
+          "two_torsion_certificate": {
+            "coefficients": [
+              "1",
+              "0",
+              "0",
+              "1"
+            ],
+            "denominator_scale": "1",
+            "integer_certificate": {
+              "clipped_interval": [
+                -3,
+                3
+              ],
+              "coefficients": [
+                1,
+                0,
+                0,
+                1
+              ],
+              "complete": true,
+              "domain": [
+                null,
+                null
+              ],
+              "execution_verified": false,
+              "leading_coefficient": "1",
+              "nodes": [
+                [
+                  -4,
+                  3,
+                  2,
+                  1
+                ],
+                [
+                  -4,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -4,
+                  -3,
+                  2,
+                  2
+                ],
+                [
+                  -3,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -3,
+                  -2,
+                  2,
+                  2
+                ],
+                [
+                  -2,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -1,
+                  3,
+                  1,
+                  1
+                ]
+              ],
+              "nodes_checked": 7,
+              "root_bound": 3,
+              "roots": [
+                -1
+              ],
+              "squarefree": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ],
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "1",
+                    "0",
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "sturm_chain": [
+                [
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  -1
+                ]
+              ]
+            },
+            "roots": [
+              "-1"
+            ],
+            "schema": "pp-rational-roots/1"
+          }
+        },
+        "node_limit": 100000,
+        "prime": 2,
+        "projective_fibres": [],
+        "relation_basis": [],
+        "relation_dimension": 0,
+        "replacement_equations": [],
+        "replacement_points": [],
+        "root_nodes": 7,
+        "schema": "pp-elliptic-subgroup-preimage/1",
+        "scope": "complete generators for the rational prime-preimage of the supplied subgroup",
+        "source_points": []
+      },
+      "reductions": []
+    },
+    {
+      "closure_witnesses": [
+        [
+          1
+        ]
+      ],
+      "generators": [
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "preimage": {
+        "complete": true,
+        "complete_mordell_weil_group": false,
+        "curve": {
+          "ainvs": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "execution_verified": false,
+        "generators": [
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "kernel_fibre": {
+          "anchor": null,
+          "complete": true,
+          "curve": {
+            "ainvs": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ]
+          },
+          "division_certificate": null,
+          "execution_verified": false,
+          "method": "two_torsion",
+          "node_limit": 99993,
+          "points": [
+            null,
+            [
+              "-1",
+              "0"
+            ]
+          ],
+          "root_nodes": 7,
+          "schema": "pp-rational-halves/1",
+          "target": null,
+          "two_torsion_certificate": {
+            "coefficients": [
+              "1",
+              "0",
+              "0",
+              "1"
+            ],
+            "denominator_scale": "1",
+            "integer_certificate": {
+              "clipped_interval": [
+                -3,
+                3
+              ],
+              "coefficients": [
+                1,
+                0,
+                0,
+                1
+              ],
+              "complete": true,
+              "domain": [
+                null,
+                null
+              ],
+              "execution_verified": false,
+              "leading_coefficient": "1",
+              "nodes": [
+                [
+                  -4,
+                  3,
+                  2,
+                  1
+                ],
+                [
+                  -4,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -4,
+                  -3,
+                  2,
+                  2
+                ],
+                [
+                  -3,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -3,
+                  -2,
+                  2,
+                  2
+                ],
+                [
+                  -2,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -1,
+                  3,
+                  1,
+                  1
+                ]
+              ],
+              "nodes_checked": 7,
+              "root_bound": 3,
+              "roots": [
+                -1
+              ],
+              "squarefree": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ],
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "1",
+                    "0",
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "sturm_chain": [
+                [
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  -1
+                ]
+              ]
+            },
+            "roots": [
+              "-1"
+            ],
+            "schema": "pp-rational-roots/1"
+          }
+        },
+        "node_limit": 99993,
+        "prime": 2,
+        "projective_fibres": [
+          {
+            "coefficients": [
+              1
+            ],
+            "fibre": {
+              "anchor": null,
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": {
+                "coefficients": [
+                  "4",
+                  "-8",
+                  "0",
+                  "4",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -4,
+                    4
+                  ],
+                  "coefficients": [
+                    4,
+                    -8,
+                    0,
+                    4,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -5,
+                      4,
+                      2,
+                      0
+                    ],
+                    [
+                      -5,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -5,
+                      -3,
+                      2,
+                      2
+                    ],
+                    [
+                      -3,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -3,
+                      -2,
+                      2,
+                      1
+                    ],
+                    [
+                      -2,
+                      -1,
+                      1,
+                      1
+                    ],
+                    [
+                      -1,
+                      4,
+                      1,
+                      0
+                    ],
+                    [
+                      -1,
+                      1,
+                      1,
+                      0
+                    ],
+                    [
+                      -1,
+                      0,
+                      1,
+                      1
+                    ],
+                    [
+                      0,
+                      1,
+                      1,
+                      0
+                    ],
+                    [
+                      1,
+                      4,
+                      0,
+                      0
+                    ]
+                  ],
+                  "nodes_checked": 11,
+                  "root_bound": 4,
+                  "roots": [],
+                  "squarefree": [
+                    "-2",
+                    "2",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      2,
+                      [
+                        "-2",
+                        "2",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      -2,
+                      2,
+                      1
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1
+                    ]
+                  ]
+                },
+                "roots": [],
+                "schema": "pp-rational-roots/1"
+              },
+              "execution_verified": false,
+              "method": "empty_division_fibre",
+              "node_limit": 99986,
+              "points": [],
+              "root_nodes": 18,
+              "schema": "pp-rational-halves/1",
+              "target": [
+                "-1",
+                "0"
+              ],
+              "two_torsion_certificate": {
+                "coefficients": [
+                  "1",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -3,
+                    3
+                  ],
+                  "coefficients": [
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -4,
+                      3,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -3,
+                      2,
+                      2
+                    ],
+                    [
+                      -3,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -3,
+                      -2,
+                      2,
+                      2
+                    ],
+                    [
+                      -2,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      3,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 7,
+                  "root_bound": 3,
+                  "roots": [
+                    -1
+                  ],
+                  "squarefree": [
+                    "1",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "1",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "-1"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          }
+        ],
+        "relation_basis": [],
+        "relation_dimension": 0,
+        "replacement_equations": [],
+        "replacement_points": [
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "root_nodes": 25,
+        "schema": "pp-elliptic-subgroup-preimage/1",
+        "scope": "complete generators for the rational prime-preimage of the supplied subgroup",
+        "source_points": [
+          [
+            "-1",
+            "0"
+          ]
+        ]
+      },
+      "reductions": []
+    },
+    {
+      "closure_witnesses": null,
+      "generators": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "preimage": {
+        "complete": true,
+        "complete_mordell_weil_group": false,
+        "curve": {
+          "ainvs": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "execution_verified": false,
+        "generators": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "kernel_fibre": {
+          "anchor": null,
+          "complete": true,
+          "curve": {
+            "ainvs": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ]
+          },
+          "division_certificate": null,
+          "execution_verified": false,
+          "method": "three_torsion",
+          "node_limit": 99968,
+          "points": [
+            null,
+            [
+              "0",
+              "-1"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          "root_nodes": 13,
+          "schema": "pp-rational-thirds/1",
+          "target": null,
+          "three_torsion_certificate": {
+            "coefficients": [
+              "0",
+              "4",
+              "0",
+              "0",
+              "1"
+            ],
+            "denominator_scale": "1",
+            "integer_certificate": {
+              "clipped_interval": [
+                -6,
+                6
+              ],
+              "coefficients": [
+                0,
+                4,
+                0,
+                0,
+                1
+              ],
+              "complete": true,
+              "domain": [
+                null,
+                null
+              ],
+              "execution_verified": false,
+              "leading_coefficient": "1",
+              "nodes": [
+                [
+                  -7,
+                  6,
+                  3,
+                  1
+                ],
+                [
+                  -7,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -7,
+                  -4,
+                  3,
+                  3
+                ],
+                [
+                  -4,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -4,
+                  -3,
+                  3,
+                  3
+                ],
+                [
+                  -3,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -3,
+                  -2,
+                  3,
+                  3
+                ],
+                [
+                  -2,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -1,
+                  6,
+                  2,
+                  1
+                ],
+                [
+                  -1,
+                  2,
+                  2,
+                  1
+                ],
+                [
+                  -1,
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  2,
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  6,
+                  1,
+                  1
+                ]
+              ],
+              "nodes_checked": 13,
+              "root_bound": 6,
+              "roots": [
+                0
+              ],
+              "squarefree": [
+                "0",
+                "4",
+                "0",
+                "0",
+                "1"
+              ],
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "0",
+                    "4",
+                    "0",
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "sturm_chain": [
+                [
+                  0,
+                  4,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1
+                ]
+              ]
+            },
+            "roots": [
+              "0"
+            ],
+            "schema": "pp-rational-roots/1"
+          }
+        },
+        "node_limit": 99968,
+        "prime": 3,
+        "projective_fibres": [
+          {
+            "coefficients": [
+              1
+            ],
+            "fibre": {
+              "anchor": [
+                "-1",
+                "0"
+              ],
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": null,
+              "execution_verified": false,
+              "method": "torsion_coset",
+              "node_limit": 99955,
+              "points": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "2",
+                  "-3"
+                ],
+                [
+                  "2",
+                  "3"
+                ]
+              ],
+              "root_nodes": 13,
+              "schema": "pp-rational-thirds/1",
+              "target": [
+                "-1",
+                "0"
+              ],
+              "three_torsion_certificate": {
+                "coefficients": [
+                  "0",
+                  "4",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -6,
+                    6
+                  ],
+                  "coefficients": [
+                    0,
+                    4,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -7,
+                      6,
+                      3,
+                      1
+                    ],
+                    [
+                      -7,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -7,
+                      -4,
+                      3,
+                      3
+                    ],
+                    [
+                      -4,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -4,
+                      -3,
+                      3,
+                      3
+                    ],
+                    [
+                      -3,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -3,
+                      -2,
+                      3,
+                      3
+                    ],
+                    [
+                      -2,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -1,
+                      6,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      2,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      6,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 13,
+                  "root_bound": 6,
+                  "roots": [
+                    0
+                  ],
+                  "squarefree": [
+                    "0",
+                    "4",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "0",
+                        "4",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      0,
+                      4,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      -1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "0"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          }
+        ],
+        "relation_basis": [
+          [
+            1
+          ]
+        ],
+        "relation_dimension": 1,
+        "replacement_equations": [
+          {
+            "coefficients": [
+              1
+            ],
+            "pivot": 0,
+            "preimage": [
+              "-1",
+              "0"
+            ]
+          }
+        ],
+        "replacement_points": [
+          [
+            "-1",
+            "0"
+          ]
+        ],
+        "root_nodes": 26,
+        "schema": "pp-elliptic-subgroup-preimage/1",
+        "scope": "complete generators for the rational prime-preimage of the supplied subgroup",
+        "source_points": [
+          [
+            "-1",
+            "0"
+          ]
+        ]
+      },
+      "reductions": [
+        {
+          "coefficients": [
+            0,
+            -1
+          ],
+          "index": 1
+        }
+      ]
+    },
+    {
+      "closure_witnesses": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "generators": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "preimage": {
+        "complete": true,
+        "complete_mordell_weil_group": false,
+        "curve": {
+          "ainvs": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "execution_verified": false,
+        "generators": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "kernel_fibre": {
+          "anchor": null,
+          "complete": true,
+          "curve": {
+            "ainvs": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ]
+          },
+          "division_certificate": null,
+          "execution_verified": false,
+          "method": "two_torsion",
+          "node_limit": 99942,
+          "points": [
+            null,
+            [
+              "-1",
+              "0"
+            ]
+          ],
+          "root_nodes": 7,
+          "schema": "pp-rational-halves/1",
+          "target": null,
+          "two_torsion_certificate": {
+            "coefficients": [
+              "1",
+              "0",
+              "0",
+              "1"
+            ],
+            "denominator_scale": "1",
+            "integer_certificate": {
+              "clipped_interval": [
+                -3,
+                3
+              ],
+              "coefficients": [
+                1,
+                0,
+                0,
+                1
+              ],
+              "complete": true,
+              "domain": [
+                null,
+                null
+              ],
+              "execution_verified": false,
+              "leading_coefficient": "1",
+              "nodes": [
+                [
+                  -4,
+                  3,
+                  2,
+                  1
+                ],
+                [
+                  -4,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -4,
+                  -3,
+                  2,
+                  2
+                ],
+                [
+                  -3,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -3,
+                  -2,
+                  2,
+                  2
+                ],
+                [
+                  -2,
+                  -1,
+                  2,
+                  1
+                ],
+                [
+                  -1,
+                  3,
+                  1,
+                  1
+                ]
+              ],
+              "nodes_checked": 7,
+              "root_bound": 3,
+              "roots": [
+                -1
+              ],
+              "squarefree": [
+                "1",
+                "0",
+                "0",
+                "1"
+              ],
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "1",
+                    "0",
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "sturm_chain": [
+                [
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  -1
+                ]
+              ]
+            },
+            "roots": [
+              "-1"
+            ],
+            "schema": "pp-rational-roots/1"
+          }
+        },
+        "node_limit": 99942,
+        "prime": 2,
+        "projective_fibres": [
+          {
+            "coefficients": [
+              0,
+              1
+            ],
+            "fibre": {
+              "anchor": [
+                "0",
+                "-1"
+              ],
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": null,
+              "execution_verified": false,
+              "method": "torsion_coset",
+              "node_limit": 99935,
+              "points": [
+                [
+                  "0",
+                  "-1"
+                ],
+                [
+                  "2",
+                  "3"
+                ]
+              ],
+              "root_nodes": 7,
+              "schema": "pp-rational-halves/1",
+              "target": [
+                "0",
+                "1"
+              ],
+              "two_torsion_certificate": {
+                "coefficients": [
+                  "1",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -3,
+                    3
+                  ],
+                  "coefficients": [
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -4,
+                      3,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -3,
+                      2,
+                      2
+                    ],
+                    [
+                      -3,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -3,
+                      -2,
+                      2,
+                      2
+                    ],
+                    [
+                      -2,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      3,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 7,
+                  "root_bound": 3,
+                  "roots": [
+                    -1
+                  ],
+                  "squarefree": [
+                    "1",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "1",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "-1"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          },
+          {
+            "coefficients": [
+              1,
+              0
+            ],
+            "fibre": {
+              "anchor": null,
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": {
+                "coefficients": [
+                  "4",
+                  "-8",
+                  "0",
+                  "4",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -4,
+                    4
+                  ],
+                  "coefficients": [
+                    4,
+                    -8,
+                    0,
+                    4,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -5,
+                      4,
+                      2,
+                      0
+                    ],
+                    [
+                      -5,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -5,
+                      -3,
+                      2,
+                      2
+                    ],
+                    [
+                      -3,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -3,
+                      -2,
+                      2,
+                      1
+                    ],
+                    [
+                      -2,
+                      -1,
+                      1,
+                      1
+                    ],
+                    [
+                      -1,
+                      4,
+                      1,
+                      0
+                    ],
+                    [
+                      -1,
+                      1,
+                      1,
+                      0
+                    ],
+                    [
+                      -1,
+                      0,
+                      1,
+                      1
+                    ],
+                    [
+                      0,
+                      1,
+                      1,
+                      0
+                    ],
+                    [
+                      1,
+                      4,
+                      0,
+                      0
+                    ]
+                  ],
+                  "nodes_checked": 11,
+                  "root_bound": 4,
+                  "roots": [],
+                  "squarefree": [
+                    "-2",
+                    "2",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      2,
+                      [
+                        "-2",
+                        "2",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      -2,
+                      2,
+                      1
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1
+                    ]
+                  ]
+                },
+                "roots": [],
+                "schema": "pp-rational-roots/1"
+              },
+              "execution_verified": false,
+              "method": "empty_division_fibre",
+              "node_limit": 99928,
+              "points": [],
+              "root_nodes": 18,
+              "schema": "pp-rational-halves/1",
+              "target": [
+                "-1",
+                "0"
+              ],
+              "two_torsion_certificate": {
+                "coefficients": [
+                  "1",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -3,
+                    3
+                  ],
+                  "coefficients": [
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -4,
+                      3,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -3,
+                      2,
+                      2
+                    ],
+                    [
+                      -3,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -3,
+                      -2,
+                      2,
+                      2
+                    ],
+                    [
+                      -2,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      3,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 7,
+                  "root_bound": 3,
+                  "roots": [
+                    -1
+                  ],
+                  "squarefree": [
+                    "1",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "1",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "-1"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          },
+          {
+            "coefficients": [
+              1,
+              1
+            ],
+            "fibre": {
+              "anchor": null,
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": {
+                "coefficients": [
+                  "-8",
+                  "-8",
+                  "0",
+                  "-8",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -10,
+                    10
+                  ],
+                  "coefficients": [
+                    -8,
+                    -8,
+                    0,
+                    -8,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -11,
+                      10,
+                      3,
+                      1
+                    ],
+                    [
+                      -11,
+                      -1,
+                      3,
+                      3
+                    ],
+                    [
+                      -1,
+                      10,
+                      3,
+                      1
+                    ],
+                    [
+                      -1,
+                      4,
+                      3,
+                      2
+                    ],
+                    [
+                      -1,
+                      1,
+                      3,
+                      2
+                    ],
+                    [
+                      -1,
+                      0,
+                      3,
+                      2
+                    ],
+                    [
+                      0,
+                      1,
+                      2,
+                      2
+                    ],
+                    [
+                      1,
+                      4,
+                      2,
+                      2
+                    ],
+                    [
+                      4,
+                      10,
+                      2,
+                      1
+                    ],
+                    [
+                      4,
+                      7,
+                      2,
+                      2
+                    ],
+                    [
+                      7,
+                      10,
+                      2,
+                      1
+                    ],
+                    [
+                      7,
+                      8,
+                      2,
+                      2
+                    ],
+                    [
+                      8,
+                      10,
+                      2,
+                      1
+                    ],
+                    [
+                      8,
+                      9,
+                      2,
+                      1
+                    ],
+                    [
+                      9,
+                      10,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 15,
+                  "root_bound": 10,
+                  "roots": [],
+                  "squarefree": [
+                    "-8",
+                    "-8",
+                    "0",
+                    "-8",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "-8",
+                        "-8",
+                        "0",
+                        "-8",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      -8,
+                      -8,
+                      0,
+                      -8,
+                      1
+                    ],
+                    [
+                      -2,
+                      0,
+                      -6,
+                      1
+                    ],
+                    [
+                      2,
+                      1,
+                      2
+                    ],
+                    [
+                      -2,
+                      -1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [],
+                "schema": "pp-rational-roots/1"
+              },
+              "execution_verified": false,
+              "method": "empty_division_fibre",
+              "node_limit": 99910,
+              "points": [],
+              "root_nodes": 22,
+              "schema": "pp-rational-halves/1",
+              "target": [
+                "2",
+                "-3"
+              ],
+              "two_torsion_certificate": {
+                "coefficients": [
+                  "1",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -3,
+                    3
+                  ],
+                  "coefficients": [
+                    1,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -4,
+                      3,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -4,
+                      -3,
+                      2,
+                      2
+                    ],
+                    [
+                      -3,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -3,
+                      -2,
+                      2,
+                      2
+                    ],
+                    [
+                      -2,
+                      -1,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      3,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 7,
+                  "root_bound": 3,
+                  "roots": [
+                    -1
+                  ],
+                  "squarefree": [
+                    "1",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "1",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "-1"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          }
+        ],
+        "relation_basis": [
+          [
+            0,
+            1
+          ]
+        ],
+        "relation_dimension": 1,
+        "replacement_equations": [
+          {
+            "coefficients": [
+              0,
+              1
+            ],
+            "pivot": 1,
+            "preimage": [
+              "0",
+              "-1"
+            ]
+          }
+        ],
+        "replacement_points": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "root_nodes": 54,
+        "schema": "pp-elliptic-subgroup-preimage/1",
+        "scope": "complete generators for the rational prime-preimage of the supplied subgroup",
+        "source_points": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ]
+      },
+      "reductions": []
+    },
+    {
+      "closure_witnesses": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "generators": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "preimage": {
+        "complete": true,
+        "complete_mordell_weil_group": false,
+        "curve": {
+          "ainvs": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ]
+        },
+        "execution_verified": false,
+        "generators": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "kernel_fibre": {
+          "anchor": null,
+          "complete": true,
+          "curve": {
+            "ainvs": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ]
+          },
+          "division_certificate": null,
+          "execution_verified": false,
+          "method": "three_torsion",
+          "node_limit": 99888,
+          "points": [
+            null,
+            [
+              "0",
+              "-1"
+            ],
+            [
+              "0",
+              "1"
+            ]
+          ],
+          "root_nodes": 13,
+          "schema": "pp-rational-thirds/1",
+          "target": null,
+          "three_torsion_certificate": {
+            "coefficients": [
+              "0",
+              "4",
+              "0",
+              "0",
+              "1"
+            ],
+            "denominator_scale": "1",
+            "integer_certificate": {
+              "clipped_interval": [
+                -6,
+                6
+              ],
+              "coefficients": [
+                0,
+                4,
+                0,
+                0,
+                1
+              ],
+              "complete": true,
+              "domain": [
+                null,
+                null
+              ],
+              "execution_verified": false,
+              "leading_coefficient": "1",
+              "nodes": [
+                [
+                  -7,
+                  6,
+                  3,
+                  1
+                ],
+                [
+                  -7,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -7,
+                  -4,
+                  3,
+                  3
+                ],
+                [
+                  -4,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -4,
+                  -3,
+                  3,
+                  3
+                ],
+                [
+                  -3,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -3,
+                  -2,
+                  3,
+                  3
+                ],
+                [
+                  -2,
+                  -1,
+                  3,
+                  2
+                ],
+                [
+                  -1,
+                  6,
+                  2,
+                  1
+                ],
+                [
+                  -1,
+                  2,
+                  2,
+                  1
+                ],
+                [
+                  -1,
+                  0,
+                  2,
+                  1
+                ],
+                [
+                  0,
+                  2,
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  6,
+                  1,
+                  1
+                ]
+              ],
+              "nodes_checked": 13,
+              "root_bound": 6,
+              "roots": [
+                0
+              ],
+              "squarefree": [
+                "0",
+                "4",
+                "0",
+                "0",
+                "1"
+              ],
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "0",
+                    "4",
+                    "0",
+                    "0",
+                    "1"
+                  ]
+                ]
+              ],
+              "sturm_chain": [
+                [
+                  0,
+                  4,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  -1
+                ],
+                [
+                  -1
+                ]
+              ]
+            },
+            "roots": [
+              "0"
+            ],
+            "schema": "pp-rational-roots/1"
+          }
+        },
+        "node_limit": 99888,
+        "prime": 3,
+        "projective_fibres": [
+          {
+            "coefficients": [
+              0,
+              1
+            ],
+            "fibre": {
+              "anchor": null,
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": {
+                "coefficients": [
+                  "64",
+                  "0",
+                  "0",
+                  "48",
+                  "0",
+                  "0",
+                  "-96",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -98,
+                    98
+                  ],
+                  "coefficients": [
+                    64,
+                    0,
+                    0,
+                    48,
+                    0,
+                    0,
+                    -96,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -99,
+                      98,
+                      4,
+                      1
+                    ],
+                    [
+                      -99,
+                      -1,
+                      4,
+                      4
+                    ],
+                    [
+                      -1,
+                      98,
+                      4,
+                      1
+                    ],
+                    [
+                      -1,
+                      48,
+                      4,
+                      1
+                    ],
+                    [
+                      -1,
+                      23,
+                      4,
+                      1
+                    ],
+                    [
+                      -1,
+                      11,
+                      4,
+                      1
+                    ],
+                    [
+                      -1,
+                      5,
+                      4,
+                      1
+                    ],
+                    [
+                      -1,
+                      2,
+                      4,
+                      2
+                    ],
+                    [
+                      -1,
+                      0,
+                      4,
+                      3
+                    ],
+                    [
+                      0,
+                      2,
+                      3,
+                      2
+                    ],
+                    [
+                      0,
+                      1,
+                      3,
+                      3
+                    ],
+                    [
+                      1,
+                      2,
+                      3,
+                      2
+                    ],
+                    [
+                      2,
+                      5,
+                      2,
+                      1
+                    ],
+                    [
+                      2,
+                      3,
+                      2,
+                      2
+                    ],
+                    [
+                      3,
+                      5,
+                      2,
+                      1
+                    ],
+                    [
+                      3,
+                      4,
+                      2,
+                      2
+                    ],
+                    [
+                      4,
+                      5,
+                      2,
+                      1
+                    ],
+                    [
+                      5,
+                      11,
+                      1,
+                      1
+                    ],
+                    [
+                      11,
+                      23,
+                      1,
+                      1
+                    ],
+                    [
+                      23,
+                      48,
+                      1,
+                      1
+                    ],
+                    [
+                      48,
+                      98,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 21,
+                  "root_bound": 98,
+                  "roots": [],
+                  "squarefree": [
+                    "64",
+                    "0",
+                    "0",
+                    "48",
+                    "0",
+                    "0",
+                    "-96",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "64",
+                        "0",
+                        "0",
+                        "48",
+                        "0",
+                        "0",
+                        "-96",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      64,
+                      0,
+                      0,
+                      48,
+                      0,
+                      0,
+                      -96,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      16,
+                      0,
+                      0,
+                      -64,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      -2,
+                      0,
+                      0,
+                      -1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      0,
+                      -2,
+                      0,
+                      0,
+                      7
+                    ],
+                    [
+                      14,
+                      0,
+                      0,
+                      5
+                    ],
+                    [
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [],
+                "schema": "pp-rational-roots/1"
+              },
+              "execution_verified": false,
+              "method": "empty_division_fibre",
+              "node_limit": 99875,
+              "points": [],
+              "root_nodes": 34,
+              "schema": "pp-rational-thirds/1",
+              "target": [
+                "0",
+                "-1"
+              ],
+              "three_torsion_certificate": {
+                "coefficients": [
+                  "0",
+                  "4",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -6,
+                    6
+                  ],
+                  "coefficients": [
+                    0,
+                    4,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -7,
+                      6,
+                      3,
+                      1
+                    ],
+                    [
+                      -7,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -7,
+                      -4,
+                      3,
+                      3
+                    ],
+                    [
+                      -4,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -4,
+                      -3,
+                      3,
+                      3
+                    ],
+                    [
+                      -3,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -3,
+                      -2,
+                      3,
+                      3
+                    ],
+                    [
+                      -2,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -1,
+                      6,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      2,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      6,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 13,
+                  "root_bound": 6,
+                  "roots": [
+                    0
+                  ],
+                  "squarefree": [
+                    "0",
+                    "4",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "0",
+                        "4",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      0,
+                      4,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      -1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "0"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          },
+          {
+            "coefficients": [
+              1,
+              0
+            ],
+            "fibre": {
+              "anchor": [
+                "-1",
+                "0"
+              ],
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": null,
+              "execution_verified": false,
+              "method": "torsion_coset",
+              "node_limit": 99841,
+              "points": [
+                [
+                  "-1",
+                  "0"
+                ],
+                [
+                  "2",
+                  "-3"
+                ],
+                [
+                  "2",
+                  "3"
+                ]
+              ],
+              "root_nodes": 13,
+              "schema": "pp-rational-thirds/1",
+              "target": [
+                "-1",
+                "0"
+              ],
+              "three_torsion_certificate": {
+                "coefficients": [
+                  "0",
+                  "4",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -6,
+                    6
+                  ],
+                  "coefficients": [
+                    0,
+                    4,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -7,
+                      6,
+                      3,
+                      1
+                    ],
+                    [
+                      -7,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -7,
+                      -4,
+                      3,
+                      3
+                    ],
+                    [
+                      -4,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -4,
+                      -3,
+                      3,
+                      3
+                    ],
+                    [
+                      -3,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -3,
+                      -2,
+                      3,
+                      3
+                    ],
+                    [
+                      -2,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -1,
+                      6,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      2,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      6,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 13,
+                  "root_bound": 6,
+                  "roots": [
+                    0
+                  ],
+                  "squarefree": [
+                    "0",
+                    "4",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "0",
+                        "4",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      0,
+                      4,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      -1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "0"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          },
+          {
+            "coefficients": [
+              1,
+              1
+            ],
+            "fibre": {
+              "anchor": null,
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": {
+                "coefficients": [
+                  "64",
+                  "0",
+                  "-288",
+                  "48",
+                  "0",
+                  "-144",
+                  "-96",
+                  "0",
+                  "-18",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -290,
+                    290
+                  ],
+                  "coefficients": [
+                    64,
+                    0,
+                    -288,
+                    48,
+                    0,
+                    -144,
+                    -96,
+                    0,
+                    -18,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -291,
+                      290,
+                      6,
+                      3
+                    ],
+                    [
+                      -291,
+                      -1,
+                      6,
+                      6
+                    ],
+                    [
+                      -1,
+                      290,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      144,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      71,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      35,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      17,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      8,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      3,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      1,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      0,
+                      6,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      4
+                    ],
+                    [
+                      1,
+                      3,
+                      4,
+                      4
+                    ],
+                    [
+                      3,
+                      8,
+                      4,
+                      4
+                    ],
+                    [
+                      8,
+                      17,
+                      4,
+                      4
+                    ],
+                    [
+                      17,
+                      35,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      26,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      21,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      19,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      18,
+                      4,
+                      4
+                    ],
+                    [
+                      18,
+                      19,
+                      4,
+                      3
+                    ],
+                    [
+                      19,
+                      21,
+                      3,
+                      3
+                    ],
+                    [
+                      21,
+                      26,
+                      3,
+                      3
+                    ],
+                    [
+                      26,
+                      35,
+                      3,
+                      3
+                    ],
+                    [
+                      35,
+                      71,
+                      3,
+                      3
+                    ],
+                    [
+                      71,
+                      144,
+                      3,
+                      3
+                    ],
+                    [
+                      144,
+                      290,
+                      3,
+                      3
+                    ]
+                  ],
+                  "nodes_checked": 27,
+                  "root_bound": 290,
+                  "roots": [],
+                  "squarefree": [
+                    "64",
+                    "0",
+                    "-288",
+                    "48",
+                    "0",
+                    "-144",
+                    "-96",
+                    "0",
+                    "-18",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "64",
+                        "0",
+                        "-288",
+                        "48",
+                        "0",
+                        "-144",
+                        "-96",
+                        "0",
+                        "-18",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      64,
+                      0,
+                      -288,
+                      48,
+                      0,
+                      -144,
+                      -96,
+                      0,
+                      -18,
+                      1
+                    ],
+                    [
+                      0,
+                      -64,
+                      16,
+                      0,
+                      -80,
+                      -64,
+                      0,
+                      -16,
+                      1
+                    ],
+                    [
+                      -2,
+                      4,
+                      6,
+                      -1,
+                      5,
+                      6,
+                      1,
+                      1
+                    ],
+                    [
+                      34,
+                      -6,
+                      -114,
+                      23,
+                      -6,
+                      -33,
+                      -11
+                    ],
+                    [
+                      10,
+                      -10,
+                      -32,
+                      19,
+                      -10,
+                      -14
+                    ],
+                    [
+                      -524,
+                      -134,
+                      1590,
+                      -458,
+                      97
+                    ],
+                    [
+                      778,
+                      370,
+                      -2320,
+                      215
+                    ],
+                    [
+                      326,
+                      184,
+                      -955
+                    ],
+                    [
+                      -1,
+                      -24
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [],
+                "schema": "pp-rational-roots/1"
+              },
+              "execution_verified": false,
+              "method": "empty_division_fibre",
+              "node_limit": 99828,
+              "points": [],
+              "root_nodes": 40,
+              "schema": "pp-rational-thirds/1",
+              "target": [
+                "2",
+                "3"
+              ],
+              "three_torsion_certificate": {
+                "coefficients": [
+                  "0",
+                  "4",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -6,
+                    6
+                  ],
+                  "coefficients": [
+                    0,
+                    4,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -7,
+                      6,
+                      3,
+                      1
+                    ],
+                    [
+                      -7,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -7,
+                      -4,
+                      3,
+                      3
+                    ],
+                    [
+                      -4,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -4,
+                      -3,
+                      3,
+                      3
+                    ],
+                    [
+                      -3,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -3,
+                      -2,
+                      3,
+                      3
+                    ],
+                    [
+                      -2,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -1,
+                      6,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      2,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      6,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 13,
+                  "root_bound": 6,
+                  "roots": [
+                    0
+                  ],
+                  "squarefree": [
+                    "0",
+                    "4",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "0",
+                        "4",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      0,
+                      4,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      -1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "0"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          },
+          {
+            "coefficients": [
+              1,
+              2
+            ],
+            "fibre": {
+              "anchor": null,
+              "complete": true,
+              "curve": {
+                "ainvs": [
+                  "0",
+                  "0",
+                  "0",
+                  "0",
+                  "1"
+                ]
+              },
+              "division_certificate": {
+                "coefficients": [
+                  "64",
+                  "0",
+                  "-288",
+                  "48",
+                  "0",
+                  "-144",
+                  "-96",
+                  "0",
+                  "-18",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -290,
+                    290
+                  ],
+                  "coefficients": [
+                    64,
+                    0,
+                    -288,
+                    48,
+                    0,
+                    -144,
+                    -96,
+                    0,
+                    -18,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -291,
+                      290,
+                      6,
+                      3
+                    ],
+                    [
+                      -291,
+                      -1,
+                      6,
+                      6
+                    ],
+                    [
+                      -1,
+                      290,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      144,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      71,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      35,
+                      6,
+                      3
+                    ],
+                    [
+                      -1,
+                      17,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      8,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      3,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      1,
+                      6,
+                      4
+                    ],
+                    [
+                      -1,
+                      0,
+                      6,
+                      5
+                    ],
+                    [
+                      0,
+                      1,
+                      5,
+                      4
+                    ],
+                    [
+                      1,
+                      3,
+                      4,
+                      4
+                    ],
+                    [
+                      3,
+                      8,
+                      4,
+                      4
+                    ],
+                    [
+                      8,
+                      17,
+                      4,
+                      4
+                    ],
+                    [
+                      17,
+                      35,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      26,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      21,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      19,
+                      4,
+                      3
+                    ],
+                    [
+                      17,
+                      18,
+                      4,
+                      4
+                    ],
+                    [
+                      18,
+                      19,
+                      4,
+                      3
+                    ],
+                    [
+                      19,
+                      21,
+                      3,
+                      3
+                    ],
+                    [
+                      21,
+                      26,
+                      3,
+                      3
+                    ],
+                    [
+                      26,
+                      35,
+                      3,
+                      3
+                    ],
+                    [
+                      35,
+                      71,
+                      3,
+                      3
+                    ],
+                    [
+                      71,
+                      144,
+                      3,
+                      3
+                    ],
+                    [
+                      144,
+                      290,
+                      3,
+                      3
+                    ]
+                  ],
+                  "nodes_checked": 27,
+                  "root_bound": 290,
+                  "roots": [],
+                  "squarefree": [
+                    "64",
+                    "0",
+                    "-288",
+                    "48",
+                    "0",
+                    "-144",
+                    "-96",
+                    "0",
+                    "-18",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "64",
+                        "0",
+                        "-288",
+                        "48",
+                        "0",
+                        "-144",
+                        "-96",
+                        "0",
+                        "-18",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      64,
+                      0,
+                      -288,
+                      48,
+                      0,
+                      -144,
+                      -96,
+                      0,
+                      -18,
+                      1
+                    ],
+                    [
+                      0,
+                      -64,
+                      16,
+                      0,
+                      -80,
+                      -64,
+                      0,
+                      -16,
+                      1
+                    ],
+                    [
+                      -2,
+                      4,
+                      6,
+                      -1,
+                      5,
+                      6,
+                      1,
+                      1
+                    ],
+                    [
+                      34,
+                      -6,
+                      -114,
+                      23,
+                      -6,
+                      -33,
+                      -11
+                    ],
+                    [
+                      10,
+                      -10,
+                      -32,
+                      19,
+                      -10,
+                      -14
+                    ],
+                    [
+                      -524,
+                      -134,
+                      1590,
+                      -458,
+                      97
+                    ],
+                    [
+                      778,
+                      370,
+                      -2320,
+                      215
+                    ],
+                    [
+                      326,
+                      184,
+                      -955
+                    ],
+                    [
+                      -1,
+                      -24
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [],
+                "schema": "pp-rational-roots/1"
+              },
+              "execution_verified": false,
+              "method": "empty_division_fibre",
+              "node_limit": 99788,
+              "points": [],
+              "root_nodes": 40,
+              "schema": "pp-rational-thirds/1",
+              "target": [
+                "2",
+                "-3"
+              ],
+              "three_torsion_certificate": {
+                "coefficients": [
+                  "0",
+                  "4",
+                  "0",
+                  "0",
+                  "1"
+                ],
+                "denominator_scale": "1",
+                "integer_certificate": {
+                  "clipped_interval": [
+                    -6,
+                    6
+                  ],
+                  "coefficients": [
+                    0,
+                    4,
+                    0,
+                    0,
+                    1
+                  ],
+                  "complete": true,
+                  "domain": [
+                    null,
+                    null
+                  ],
+                  "execution_verified": false,
+                  "leading_coefficient": "1",
+                  "nodes": [
+                    [
+                      -7,
+                      6,
+                      3,
+                      1
+                    ],
+                    [
+                      -7,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -7,
+                      -4,
+                      3,
+                      3
+                    ],
+                    [
+                      -4,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -4,
+                      -3,
+                      3,
+                      3
+                    ],
+                    [
+                      -3,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -3,
+                      -2,
+                      3,
+                      3
+                    ],
+                    [
+                      -2,
+                      -1,
+                      3,
+                      2
+                    ],
+                    [
+                      -1,
+                      6,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      2,
+                      2,
+                      1
+                    ],
+                    [
+                      -1,
+                      0,
+                      2,
+                      1
+                    ],
+                    [
+                      0,
+                      2,
+                      1,
+                      1
+                    ],
+                    [
+                      2,
+                      6,
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes_checked": 13,
+                  "root_bound": 6,
+                  "roots": [
+                    0
+                  ],
+                  "squarefree": [
+                    "0",
+                    "4",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "squarefree_factors": [
+                    [
+                      1,
+                      [
+                        "0",
+                        "4",
+                        "0",
+                        "0",
+                        "1"
+                      ]
+                    ]
+                  ],
+                  "sturm_chain": [
+                    [
+                      0,
+                      4,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    [
+                      0,
+                      -1
+                    ],
+                    [
+                      -1
+                    ]
+                  ]
+                },
+                "roots": [
+                  "0"
+                ],
+                "schema": "pp-rational-roots/1"
+              }
+            }
+          }
+        ],
+        "relation_basis": [
+          [
+            1,
+            0
+          ]
+        ],
+        "relation_dimension": 1,
+        "replacement_equations": [
+          {
+            "coefficients": [
+              1,
+              0
+            ],
+            "pivot": 0,
+            "preimage": [
+              "-1",
+              "0"
+            ]
+          }
+        ],
+        "replacement_points": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ],
+        "root_nodes": 140,
+        "schema": "pp-elliptic-subgroup-preimage/1",
+        "scope": "complete generators for the rational prime-preimage of the supplied subgroup",
+        "source_points": [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "-1"
+          ]
+        ]
+      },
+      "reductions": [
+        {
+          "coefficients": [
+            0,
+            -1
+          ],
+          "index": 1
+        }
+      ]
+    }
+  ],
+  "status": "closed"
+}

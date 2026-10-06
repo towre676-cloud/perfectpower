@@ -3,6 +3,10 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
+.PHONY: elliptic-bridges
+elliptic-bridges:
+	bash scripts/check_elliptic_bridges.sh
+
 
 .PHONY: why3-session verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing why3-bridge order-cost
 

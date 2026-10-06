@@ -1,0 +1,28 @@
+{
+  "analytic_identity": "DLMF 19.12.1 and 19.12.3, real positive complementary modulus",
+  "bits": 192,
+  "coefficients": [],
+  "complement": "0",
+  "endpoint_regularization": "K(1-z)+(1/2) log(z) tends to log(4)",
+  "execution_verified": false,
+  "finite_part": [
+    "2175477684985608827238781545112397082682172448338067872507/1569275433846670190958947355801916604025588861116008628224",
+    "543869421246402206809695386278099270670543112084516968159/392318858461667547739736838950479151006397215279002157056"
+  ],
+  "lean_endpoint_identity_verified": false,
+  "log_coefficient": "-1/2",
+  "log_complement": null,
+  "log_terms": 128,
+  "method": "regularized_endpoint",
+  "normalization": "K(m)=integral_0^(pi/2) (1-m sin(t)^2)^(-1/2) dt",
+  "ordinary_endpoint_finite": false,
+  "parameter": "1",
+  "period_interval": null,
+  "regularized_interval": [
+    "2175477684985608827238781545112397082682172448338067872507/1569275433846670190958947355801916604025588861116008628224",
+    "543869421246402206809695386278099270670543112084516968159/392318858461667547739736838950479151006397215279002157056"
+  ],
+  "schema": "pp-real-legendre-endpoint/1",
+  "tail_upper_bound": "0",
+  "terms": 48
+}

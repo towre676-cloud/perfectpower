@@ -290,6 +290,12 @@ class EllipticCurve:
         from .elliptic_subgroups import subgroup_preimage
         return subgroup_preimage(self,points,prime,node_limit)
 
+    def bounded_saturation(self,points,primes=None,max_steps=8,coefficient_bound=2,
+                           membership_limit=100000,node_limit=100000):
+        from .elliptic_saturation import bounded_saturation
+        return bounded_saturation(self,points,primes,max_steps,coefficient_bound,
+                                  membership_limit,node_limit)
+
     def model_transport(self,p,target):
         other=EllipticCurve(target);mapping=self.isomorphism(other)
         if mapping is None:raise ValueError('unsupported rational model isomorphism')

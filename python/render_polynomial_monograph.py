@@ -30,6 +30,14 @@ def render(source,output,*,edition='polynomial'):
             'scope':'Actual original-model halving and exact literal rational output semantics within certificate budgets. Generic JSON parser refinement, efficient Sturm proofs and global rank remain separate.',
             'running':'Original-model elliptic transport and complete literal halving fibres',
         },
+        'bridges':{
+            'title':'Elliptic bridges and bounded saturation',
+            'subtitle':'Point laws, typed packets<br/>and explicit research boundaries',
+            'description':'Kernel-checked generalized addition and binary multiplication, tripling identities, typed root and fibre semantics, bounded repeated prime preimages and real Legendre finite-part enclosures.',
+            'metrics':[('5','new formal modules'),('6','worked saturation packets'),('5','real endpoint packets')],
+            'scope':'Specified formal interfaces and bounded arithmetic. Global Mordell bounds, Matveev, full JSON/compiler semantics and arbitrary singular periods remain open.',
+            'running':'Point-law refinement, bounded saturation and singular finite parts',
+        },
         'nativehalves':{
             'title':'Complete native elliptic halving fibres',
             'subtitle':'Checked anchors, torsion cosets<br/>and root-free obstructions',
@@ -187,6 +195,7 @@ def render(source,output,*,edition='polynomial'):
     pdfmetrics.registerFontFamily('Body',normal='Body',bold='BodyBold',italic='Body',boldItalic='BodyBold')
     navy=colors.HexColor('#173348');teal=colors.HexColor('#157A86')
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
+    if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
     if edition=='research':body.leading=14.8;body.spaceAfter=8
     heading=ParagraphStyle('heading',fontName='LabelBold',fontSize=14,leading=19,spaceBefore=18,spaceAfter=9,textColor=teal,keepWithNext=True)
     small=ParagraphStyle('small',fontName='Label',fontSize=9,leading=14,spaceAfter=10,textColor=navy)
@@ -256,7 +265,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

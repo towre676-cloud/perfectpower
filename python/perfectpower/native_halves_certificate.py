@@ -118,10 +118,19 @@ noncomputable def halves : List (EllipticPointDivision.completed {abc}).Point :=
 theorem actual_halves_complete (Q : (EllipticPointDivision.completed {abc}).Point) :
     (2 : ℤ) • Q = target ↔ Q ∈ halves :=
   EllipticQuarticLifts.fibre_complete {abc} {_literal(u)} {_literal(v)} smooth_checked target_on_curve {rootlistq} quartic_complete Q'''
-    source+='\nnamespace '+ns+'\nopen PerfectPower\n'+'\n'.join(defs)+'\n'+proof+'\nend '+ns+'\n'
+    typed=f'''
+noncomputable def typedFibre : TypedDivisionPackets.FibrePacket 2 target where
+  points := halves
+  sound_complete := actual_halves_complete
+
+theorem typed_fibre_complete (Q : (EllipticPointDivision.completed {abc}).Point) :
+    (2 : ℤ) • Q=target ↔ Q ∈ typedFibre.points := typedFibre.sound_complete Q
+'''
+    source+='\nnamespace '+ns+'\nopen PerfectPower\n'+'\n'.join(defs)+'\n'+proof+'\n'+typed+'\nend '+ns+'\n'
     source=source.replace(rootset+'.toList',rootlist)
     source='import PerfectPower.EllipticQuarticLifts\n'+source
     source+=f'#print axioms {ns}.actual_halves_complete\n'
+    source+=f'#print axioms {ns}.typed_fibre_complete\n'
     if method=='torsion_coset':source+=f'#print axioms {ns}.anchor_checked\n'
     if method=='root_free_quartic':source+=f'#print axioms {ns}.quartic_root_free\n'
     for name,doc in [('source','The original rational polynomial bound to this packet.'),
@@ -131,6 +140,14 @@ theorem actual_halves_complete (Q : (EllipticPointDivision.completed {abc}).Poin
         source=source.replace('noncomputable def '+name+' ', '/-- '+doc+' -/\nnoncomputable def '+name+' ')
     from .native_halves_refinement import refine
     source=refine(source,ns,E,points,abc,target,quartic)
+    source+=f'''
+namespace {ns}
+noncomputable def typedOriginalFibre : PerfectPower.TypedDivisionPackets.FibrePacket 2 originalTarget where
+  points := originalHalves
+  sound_complete := original_halves_complete
+end {ns}
+#print axioms {ns}.typedOriginalFibre
+'''
     return dict(schema='pp-native-halves-certificate/2',curve=E.specification,target=encode_point(target),
         anchor=encode_point(anchor),completed_target=encode_point(E.complete(target)),
         completed_anchor=encode_point(E.complete(anchor)),completed_points=[encode_point(E.complete(p)) for p in points],original_points=[encode_point(p) for p in points],

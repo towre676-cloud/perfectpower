@@ -1,0 +1,17 @@
+CHECK PerfectPower/NativePolynomialSquare.lean
+CHECK PerfectPower/NativeRationalRoots.lean
+CHECK PerfectPower/EllipticDivision.lean
+CHECK PerfectPower/EllipticPointDivision.lean
+CHECK PerfectPower/TriplingCoordinates.lean
+CHECK PerfectPower/TypedDivisionPackets.lean
+CHECK PerfectPower/PolynomialSourceSemantics.lean
+CHECK PerfectPower/EllipticPointLaw.lean
+'PerfectPower.EllipticPointLaw.add_refinement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.TriplingCoordinates.psi_displacement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.TriplingCoordinates.expanded_phi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.TriplingCoordinates.tripling_numerator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.TriplingCoordinates.tripling_x_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.TypedDivisionPackets.RationalPacket.complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.TypedDivisionPackets.compose_complete' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PolynomialSourceSemantics.compile_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PolynomialSourceSemantics.equality_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
