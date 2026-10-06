@@ -381,3 +381,4 @@ import PerfectPower.VoronoiEnclosure
 import PerfectPower.BernsteinBoxes
 import PerfectPower.RationalVoronoiPacket
 import PerfectPower.UniformHyperellipticMetric
+import PerfectPower.EllipticDivision

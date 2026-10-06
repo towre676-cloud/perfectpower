@@ -7,6 +7,24 @@ import PerfectPower
 /-! Axiom audit: every public theorem must depend only on `propext`, `Classical.choice` and
 `Quot.sound` (no `sorryAx`, no custom axioms).  Run with `lake env lean audit/Axioms.lean`. -/
 open PerfectPower
+-- Exact elliptic division fibres and rational-root transport
+#print axioms EllipticDivision.divisionKernel
+#print axioms EllipticDivision.mem_divisionKernel
+#print axioms EllipticDivision.fibre_iff
+#print axioms EllipticDivision.fibre_eq_coset
+#print axioms EllipticDivision.fibreEquiv
+#print axioms EllipticDivision.fibre_list_complete
+#print axioms EllipticDivision.translate_injective
+#print axioms EllipticDivision.transport_fibre
+#print axioms EllipticDivision.cubic
+#print axioms EllipticDivision.halvingPolynomial
+#print axioms EllipticDivision.halving_identity
+#print axioms EllipticDivision.doubling_x_iff
+#print axioms EllipticDivision.complete_square_identity
+#print axioms EllipticDivision.complete_square_iff
+#print axioms EllipticDivision.short_translation_identity
+#print axioms EllipticDivision.scaled_root_integral
+#print axioms EllipticDivision.rational_root_list_complete
 -- Basic / Density
 #print axioms H_eq_of_hasDensity
 #print axioms hasDensity_zero_of_finite

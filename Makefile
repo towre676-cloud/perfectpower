@@ -37,6 +37,11 @@ elliptic-witnesses:
 	$(PY) -m unittest discover -s python/tests -p 'test_elliptic_*.py'
 	$(PY) python/develop_elliptic_witnesses.py
 
+.PHONY: elliptic-division-lean
+elliptic-division-lean:
+	lake build PerfectPower.EllipticDivision
+	lake env lean audit/EllipticDivision.lean
+
 cert-audit:
 	$(PY) python/independent_cert_audit.py
 

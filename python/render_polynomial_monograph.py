@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'division':{
+            'title':'Exact elliptic division in Lean',
+            'subtitle':'Kernel cosets, halving quartics<br/>and complete rational-root transport',
+            'description':'Reusable group fibre equivalences, explicit generalized Weierstrass normalization, nonexceptional doubling algebra and integer-to-rational root completeness, with a current repository frontier review.',
+            'metrics':[('17','audited public Lean declarations'),('2','directions of complete root transport'),('4','degree of the exact halving polynomial')],
+            'scope':'Mathematical Lean foundations with explicit hypotheses. Python root search, parsing, point-law refinement and independence interpretation remain separate obligations.',
+            'running':'Formal division fibres and the current repository frontier',
+        },
         'elliptic':{
             'title':'Exact elliptic witnesses',
             'subtitle':'Complete rational division fibres<br/>and replayable independence lower bounds',
@@ -192,7 +200,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

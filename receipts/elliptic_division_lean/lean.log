@@ -1,0 +1,25 @@
+lake build PerfectPower.EllipticDivision
+✔ [1614/1614] Built PerfectPower.EllipticDivision
+Build completed successfully.
+lake env lean audit/EllipticDivision.lean
+'PerfectPower.EllipticDivision.divisionKernel' depends on axioms: [propext]
+'PerfectPower.EllipticDivision.mem_divisionKernel' depends on axioms: [propext]
+'PerfectPower.EllipticDivision.fibre_iff' depends on axioms: [propext]
+'PerfectPower.EllipticDivision.fibre_eq_coset' depends on axioms: [propext]
+'PerfectPower.EllipticDivision.fibreEquiv' depends on axioms: [propext]
+'PerfectPower.EllipticDivision.fibre_list_complete' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EllipticDivision.translate_injective' does not depend on any axioms
+'PerfectPower.EllipticDivision.transport_fibre' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EllipticDivision.cubic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.halvingPolynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.halving_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.doubling_x_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.complete_square_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.complete_square_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.short_translation_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.scaled_root_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.EllipticDivision.rational_root_list_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+-- Found 0 errors in 17 declarations (plus 34 automatically generated ones) in PerfectPower.EllipticDivision with 15 linters
+
+
+-- All linting checks passed!

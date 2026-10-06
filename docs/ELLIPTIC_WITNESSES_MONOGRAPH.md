@@ -1,5 +1,7 @@
 # Exact elliptic witnesses and complete rational division fibres
 
+The subsequent [Lean division foundation](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md) proves the reusable mathematical fibre, coordinate and root-scaling bridges. The Python implementation and its independent checker retain the execution scope stated in this original release chapter.
+
 ## What a caller can now do
 
 The repository's polynomial machinery uses complete solution families with explicit inverse transport. This chapter adds a public rational elliptic arithmetic object to that workflow. A caller can register a nonsingular generalized Weierstrass model, add or multiply rational points, transport them between supported rationally isomorphic models, evaluate a rational two-isogeny, obtain every rational half of one point, and certify a lower bound for the rank of a supplied rational witness span modulo torsion. Definitions persist through SQLite restart and all operations have an explicit service allowlist.

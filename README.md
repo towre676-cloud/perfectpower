@@ -8,6 +8,8 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [elliptic division Lean foundation](docs/ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md) proves complete kernel-coset fibres, the halving quartic, generalized coordinate normalization and complete rational-root transport from an integer list. Its focused audit instantiates the group theorem on Mathlib's elliptic points. The chapter also reviews the current repository frontier; Python execution and independence certificates retain their separate scopes.
+
 | User and direct use | Current output | Why the structure matters |
 |---|---|---|
 | Algebraic-curve researchers investigating a polynomial family | Exact discriminant, de Rham connection, selected Picard–Fuchs operator, affine deformation class, simultaneous root velocities and simple nodal residues | Connects coefficient changes to shape changes, degeneration directions and differential order, with replayable polynomial identities rather than only plots or numerical fits. |

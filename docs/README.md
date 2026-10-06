@@ -8,6 +8,8 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 
 ## Arithmetic
 
+[Elliptic division in Lean and the repository frontier](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md), with its [PDF](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.pdf), proves group fibre equivalences, coordinate normalization, halving algebra and rational-root completeness transport. Run `make elliptic-division-lean`; the focused validation does not rebuild the historical census.
+
 [Exact elliptic witnesses](ELLIPTIC_WITNESSES_MONOGRAPH.md), with its [PDF](ELLIPTIC_WITNESSES_MONOGRAPH.pdf), covers generalized Weierstrass arithmetic, complete rational halving fibres, model and two-isogeny transport, independently checked witness lower bounds and public persistent queries. The [handoff](../CLAUDE_CODE_ELLIPTIC_WITNESSES_START_HERE.md) and [scientific corpus](../receipts/elliptic_witnesses/summary.json) retain exact scopes and reproduction commands. Lower bounds are not complete bases or integral-point censuses.
 
 [Exact populations](POPULATION_MONOGRAPH.md): configuration generation, reversible global ranks, seeded datasets, huge finite populations and sourced combinatorial domains. [Direct-use build roadmap](DIRECT_USE_BUILD_ROADMAP.md) and [handoff](../CLAUDE_CODE_POPULATIONS_START_HERE.md).
