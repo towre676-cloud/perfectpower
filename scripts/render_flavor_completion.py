@@ -16,10 +16,16 @@ from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/B5_FLAVOR_COMPLETION.md'
-SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md']
+SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md',ROOT/'docs/VALENTINER_CP_AND_GLOBAL_MODES.md']
 DEST=ROOT/'output/pdf/B5_Protected_Flavor_Monograph.pdf'
 
 EQUATIONS={
+ 'Exact CP on the elementary field content':r'$X\overline{R(g)}X^{-1}=R(u(g)),\qquad X\overline{X}=I$',
+ 'Cross-sector sequestering and its exact operator boundary':r'$G_u\times G_d,\qquad \left|\phi_{ui}^{\dagger}\Lambda\phi_{dj}\right|^2\quad (\mathrm{degree}\ 6)$',
+ 'A representation-derived positive link interaction':r'$I_6(U)=\langle T,T\circ U\rangle,\qquad \operatorname{Re} I_6(U)\leq\|T\|^2=16$',
+ 'Physical CP established through quark invariants':r'$J\neq0,\qquad \operatorname{Im}\det[H_u,H_d]\neq0,\qquad J_{\rm CP}=-J$',
+ 'A global three-mode operator with explicit breaking':r'$\dim\ker M^2=3,\qquad \lambda_{\rm next}(M^2)=\frac{1}{2},\qquad N=44\,352$',
+
  'The unique sextic in the recovered basis':r'$F_6=x^6+y^6+z^6+A(x^4y^2+y^4z^2+z^4x^2)+B(x^2y^4+y^2z^4+z^2x^4)+Dx^2y^2z^2$',
  'Three light modes and canonical projectors':r'$K_f=I+A_f^{\dagger}A_f,\quad Y_f=-h_fA_fK_f^{-1/2},\quad |V_{ij}|^2=\operatorname{Tr}(P_i^uP_j^d)$',
  'The original exact carrier and energy winner':r'$V_{\rm lock}^{\prime}(x)=P(x)\,[2\lambda P^{\prime}(x)+\eta Q(x)]$',
@@ -55,10 +61,12 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--transport-paper',action='store_true')
     parser.add_argument('--invariant-paper',action='store_true')
+    parser.add_argument('--cp-paper',action='store_true')
     args=parser.parse_args()
-    standalone=args.transport_paper or args.invariant_paper
+    standalone=args.transport_paper or args.invariant_paper or args.cp_paper
     destination=ROOT/'output/pdf/M22_Triplet_Transport_and_CKM_Obstructions.pdf' if standalone else DEST
     if args.invariant_paper:destination=ROOT/'output/pdf/Valentiner_Invariant_Interactions.pdf'
+    if args.cp_paper:destination=ROOT/'output/pdf/Valentiner_CP_and_Global_Modes.pdf'
     DEST.parent.mkdir(parents=True,exist_ok=True)
     fontroot=Path('/usr/share/fonts/truetype/dejavu')
     for name,filename in (('Body','DejaVuSerif.ttf'),('BodyBold','DejaVuSerif-Bold.ttf'),('Sans','DejaVuSans.ttf'),('SansBold','DejaVuSans-Bold.ttf')):
@@ -80,8 +88,10 @@ def main():
             Paragraph('Mathematical results with reproducible certificates. Publication novelty and the particle-physics interpretation require independent review. The nominated golden CKM coefficient and 66-degree phase are not derived.',body),PageBreak()]
     if args.invariant_paper:
         story=[Spacer(1,45),Paragraph('Valentiner invariant<br/>interactions',title),Paragraph('A fixed sextic tensor, three light families and an allowed-deformation test',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026',subtitle),Paragraph('The invariant and matching results are exact. Local vacuum response is numerical. The golden CKM relation and physical CP phase remain underived.',body),PageBreak()]
-    text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in ([SOURCES[-1] if args.invariant_paper else SOURCES[-2]] if standalone else SOURCES))
-    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary'])
+    if args.cp_paper:
+        story=[Spacer(1,45),Paragraph('Cross-sector links,<br/>physical CP and<br/>global cap modes',title),Paragraph('Exact elementary CP, representation-derived alignment and a complete conditional mass spectrum',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026',subtitle),Paragraph('The product symmetry removes a quartic deformation. Higher-degree mixed interactions, physical vacuum selection and the global chiral completion remain open.',body),PageBreak()]
+    text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in ([SOURCES[-1] if args.cp_paper else SOURCES[-2] if args.invariant_paper else SOURCES[-3]] if standalone else SOURCES))
+    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary','Product-family CP and the global spectrum'])
     for block in text.split('\n\n'):
         block=block.strip()
         if block=='CHAPTER_BREAK':
@@ -106,13 +116,13 @@ def main():
         canvas.saveState()
         canvas.setStrokeColor(HexColor('#c2ced7'));canvas.line(58,47,537,47)
         canvas.setFont('Sans',8);canvas.setFillColor(HexColor('#506372'))
-        canvas.drawString(58,33,'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / PROTECTED FLAVOR CONSTRUCTION')
+        canvas.drawString(58,33,'PERFECTPOWER / CP AND GLOBAL MODES' if args.cp_paper else 'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / PROTECTED FLAVOR CONSTRUCTION')
         canvas.drawRightString(537,33,str(doc.page))
         if doc.page>1:
             canvas.setFont('Sans',7.5);canvas.drawString(58,806,'Exact equations, declared interactions, computed departures')
         canvas.restoreState()
     doc=SimpleDocTemplate(str(destination),pagesize=(595.28,841.89),leftMargin=58,rightMargin=58,topMargin=54,bottomMargin=62,
-        title='Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Protected vacua, shared mediators and the alignment boundary',author='PerfectPower research')
+        title='Cross-sector links, physical CP and global cap modes' if args.cp_paper else 'Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Protected vacua, shared mediators and the alignment boundary',author='PerfectPower research')
     doc.build(story,onFirstPage=furniture,onLaterPages=furniture)
     print(destination)
 

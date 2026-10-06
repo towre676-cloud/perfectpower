@@ -1,0 +1,379 @@
+{
+  "all_degree_one_to_three_monomials": [
+    {
+      "contractions": 0,
+      "degree": 1,
+      "fields": [
+        "Lambda"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 1,
+      "fields": [
+        "A"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 1,
+      "fields": [
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 1,
+      "fields": [
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "Lambda",
+        "Lambda"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "Lambda",
+        "A"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "Lambda",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "Lambda",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "A",
+        "A"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 2,
+      "fields": [
+        "A",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "A_tilde",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 2,
+      "fields": [
+        "A_tilde",
+        "B"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 2,
+      "fields": [
+        "B",
+        "B"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "Lambda",
+        "Lambda"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "Lambda",
+        "A"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "Lambda",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "Lambda",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "A",
+        "A"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "A",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "A_tilde",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "A_tilde",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "B",
+        "B"
+      ]
+    },
+    {
+      "contractions": 4,
+      "degree": 3,
+      "fields": [
+        "A",
+        "A",
+        "A"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "A",
+        "A",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "A",
+        "A",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "A",
+        "A_tilde",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "A",
+        "A_tilde",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "A",
+        "B",
+        "B"
+      ]
+    },
+    {
+      "contractions": 4,
+      "degree": 3,
+      "fields": [
+        "A_tilde",
+        "A_tilde",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "A_tilde",
+        "A_tilde",
+        "B"
+      ]
+    },
+    {
+      "contractions": 0,
+      "degree": 3,
+      "fields": [
+        "A_tilde",
+        "B",
+        "B"
+      ]
+    },
+    {
+      "contractions": 4,
+      "degree": 3,
+      "fields": [
+        "B",
+        "B",
+        "B"
+      ]
+    }
+  ],
+  "field_dimensions": {
+    "A": 36,
+    "A_tilde": 36,
+    "B": 100,
+    "Lambda": 9
+  },
+  "matching": "W=M6 A.A_tilde + M10 B.B/2 + y2 A.(Lambda Lambda)36 + y3 B.(A_tilde Lambda)100 generates W_eff=-(y2*y3)^2 I6(Lambda)/(2*M6^2*M10) in compatible invariant normalizations.",
+  "nonzero_contractions": [
+    {
+      "contractions": 1,
+      "degree": 2,
+      "fields": [
+        "A",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 2,
+      "fields": [
+        "B",
+        "B"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "Lambda",
+        "Lambda"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "Lambda",
+        "A"
+      ]
+    },
+    {
+      "contractions": 1,
+      "degree": 3,
+      "fields": [
+        "Lambda",
+        "A_tilde",
+        "B"
+      ]
+    },
+    {
+      "contractions": 4,
+      "degree": 3,
+      "fields": [
+        "A",
+        "A",
+        "A"
+      ]
+    },
+    {
+      "contractions": 4,
+      "degree": 3,
+      "fields": [
+        "A_tilde",
+        "A_tilde",
+        "A_tilde"
+      ]
+    },
+    {
+      "contractions": 4,
+      "degree": 3,
+      "fields": [
+        "B",
+        "B",
+        "B"
+      ]
+    }
+  ],
+  "real_ten_bilinear_certificate": {
+    "dimension": 10,
+    "exact_matrix_identities": 100,
+    "nondegenerate": true,
+    "orthonormal_bilinear": "Q10 dagger Q10=(8/5)I",
+    "sextic": "F6(phi)=Sym3(phi)^T Q10 Sym3(phi)"
+  },
+  "scope": "Renormalizable supersymmetric family messenger sector and leading tree holomorphic matching. Additional allowed self-cubics are included in the audit and affect effective coefficients or higher orders. A complete softly broken scalar vacuum and radiative mixed-operator matching are not derived."
+}

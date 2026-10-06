@@ -1,0 +1,257 @@
+{
+  "CP_square_identity": true,
+  "all_representatives_fail_class_inversion": true,
+  "conjugacy_classes": 17,
+  "exact_generator_checks": 4,
+  "exact_sextic_coefficient_checks": 28,
+  "group_order": 1080,
+  "inner_adjustment_element": 32,
+  "inner_adjustment_word": "qhf",
+  "normalization_squared": "6 - 2*sqrt(5)",
+  "outer_class_representatives": [
+    {
+      "class_inverting": false,
+      "class_permutation": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "failed_inverse_classes": [
+        3,
+        4,
+        6,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "inverse_class_permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        10,
+        7,
+        8,
+        9,
+        6,
+        15,
+        16,
+        14,
+        13,
+        11,
+        12
+      ]
+    },
+    {
+      "class_inverting": false,
+      "class_permutation": [
+        0,
+        8,
+        2,
+        3,
+        4,
+        7,
+        6,
+        5,
+        1,
+        9,
+        10,
+        13,
+        12,
+        11,
+        15,
+        14,
+        16
+      ],
+      "failed_inverse_classes": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "inverse_class_permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        10,
+        7,
+        8,
+        9,
+        6,
+        15,
+        16,
+        14,
+        13,
+        11,
+        12
+      ]
+    },
+    {
+      "class_inverting": false,
+      "class_permutation": [
+        0,
+        8,
+        2,
+        4,
+        3,
+        5,
+        10,
+        7,
+        1,
+        9,
+        6,
+        15,
+        16,
+        14,
+        13,
+        11,
+        12
+      ],
+      "failed_inverse_classes": [
+        1,
+        8
+      ],
+      "inverse_class_permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        10,
+        7,
+        8,
+        9,
+        6,
+        15,
+        16,
+        14,
+        13,
+        11,
+        12
+      ]
+    },
+    {
+      "class_inverting": false,
+      "class_permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        7,
+        10,
+        5,
+        8,
+        9,
+        6,
+        14,
+        16,
+        15,
+        11,
+        13,
+        12
+      ],
+      "failed_inverse_classes": [
+        5,
+        7,
+        11,
+        13,
+        14,
+        15
+      ],
+      "inverse_class_permutation": [
+        0,
+        1,
+        2,
+        4,
+        3,
+        5,
+        10,
+        7,
+        8,
+        9,
+        6,
+        15,
+        16,
+        14,
+        13,
+        11,
+        12
+      ]
+    }
+  ],
+  "scope": "Consistent anti-linear involution on the specified triplet/singlet field content. Not a class-inverting CP action valid for arbitrary irreducible field content.",
+  "sextic_CP_identity": "F6(X conjugate(phi))=conjugate(F6(phi))",
+  "sources": [
+    "https://arxiv.org/abs/1307.5308 equation (34)",
+    "https://arxiv.org/abs/1402.0507"
+  ],
+  "unitary_CP_matrix": [
+    [
+      "sqrt(6 - 2*sqrt(5))/4",
+      "(sqrt(2) - sqrt(6)*I)/(4*sqrt(3 - sqrt(5)))",
+      "(-sqrt(10) + sqrt(2) - sqrt(30)*I + sqrt(6)*I)/(8*sqrt(3 - sqrt(5)))"
+    ],
+    [
+      "(sqrt(2) - sqrt(6)*I)/(4*sqrt(3 - sqrt(5)))",
+      "sqrt(2)*(-3 + sqrt(5) - sqrt(15)*I + 3*sqrt(3)*I)/(8*sqrt(3 - sqrt(5)))",
+      "(-sqrt(2) + sqrt(10) - sqrt(30)*I + sqrt(6)*I)/(8*sqrt(3 - sqrt(5)))"
+    ],
+    [
+      "(-sqrt(10) + sqrt(2) - sqrt(30)*I + sqrt(6)*I)/(8*sqrt(3 - sqrt(5)))",
+      "(-sqrt(2) + sqrt(10) - sqrt(30)*I + sqrt(6)*I)/(8*sqrt(3 - sqrt(5)))",
+      "sqrt(2)*(-sqrt(5) + 5 - sqrt(3)*I + sqrt(15)*I)/(8*sqrt(3 - sqrt(5)))"
+    ]
+  ],
+  "unnormalized_intertwiner": [
+    [
+      "3/2 - sqrt(5)/2",
+      "1/2 - sqrt(3)*I/2",
+      "-sqrt(5)/4 + 1/4 - sqrt(15)*I/4 + sqrt(3)*I/4"
+    ],
+    [
+      "1/2 - sqrt(3)*I/2",
+      "-3/4 + sqrt(5)/4 - sqrt(15)*I/4 + 3*sqrt(3)*I/4",
+      "-1/4 + sqrt(5)/4 - sqrt(15)*I/4 + sqrt(3)*I/4"
+    ],
+    [
+      "-sqrt(5)/4 + 1/4 - sqrt(15)*I/4 + sqrt(3)*I/4",
+      "-1/4 + sqrt(5)/4 - sqrt(15)*I/4 + sqrt(3)*I/4",
+      "-sqrt(5)/4 + 5/4 - sqrt(3)*I/4 + sqrt(15)*I/4"
+    ]
+  ]
+}
