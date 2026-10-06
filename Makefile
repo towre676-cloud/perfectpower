@@ -189,3 +189,15 @@ connected-closures-lean:
 
 connected-closures-receipts:
 	$(PY) python/develop_connected_closures.py --periods
+
+.PHONY: native-bridges-lean native-bridges-receipts
+native-bridges-receipts:
+	$(PY) python/develop_native_bridges.py
+
+native-bridges-lean:
+	lake build PerfectPower.NativeRationalRoots PerfectPower.EllipticPointDivision PerfectPower.PicardLefschetz PerfectPower.ResiduePopulation
+	lake env lean audit/NativeBridges.lean
+	lake env lean audit/NativeBridge_rational.lean
+	lake env lean audit/NativeBridge_residue.lean
+	lake env lean audit/NativeBridge_braid.lean
+	lake env lean audit/NativeBridge_torsion.lean

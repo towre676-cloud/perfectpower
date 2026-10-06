@@ -1,0 +1,475 @@
+lake build PerfectPower.NativeRationalRoots PerfectPower.EllipticPointDivision PerfectPower.PicardLefschetz PerfectPower.ResiduePopulation
+Build completed successfully.
+lake env lean audit/NativeBridges.lean
+'PerfectPower.PicardLefschetz.skew' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PicardLefschetz.preserves' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PicardLefschetz.untwist_twist' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PicardLefschetz.twist_untwist' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PicardLefschetz.commute' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PicardLefschetz.braid' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PicardLefschetz.twistMatrix_action' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePopulation.mem_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePopulation.interval_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePopulation.card_values' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePopulation.population_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePopulation.population_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+-- Found 0 errors in 11 declarations (plus 63 automatically generated ones) in PerfectPower.PicardLefschetz with 15 linters
+
+
+-- All linting checks passed!
+-- Found 0 errors in 17 declarations (plus 57 automatically generated ones) in PerfectPower.ResiduePopulation with 15 linters
+
+
+-- All linting checks passed!
+lake env lean audit/NativeBridge_rational.lean
+audit/NativeBridge_rational.lean:10:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:10:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:20:83: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:20:83: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:20:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:28:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:30:84: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:32:91: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:28:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:30:84: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:32:91: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:32:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_c8717b1530123a75.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_c8717b1530123a75.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_rational.lean:57:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:57:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:67:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:67:79: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:75:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:77:88: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:75:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:77:88: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:79:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:79:87: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_6c82bbb1f983c0d6.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_6c82bbb1f983c0d6.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_rational.lean:104:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:104:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:114:69: warning: 'monicity!' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:114:83: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:114:69: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:114:83: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:122:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:124:75: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:126:71: warning: 'compute_degree!' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:126:91: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:122:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:124:75: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:126:71: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:126:91: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:130:21: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_68a90152c04505f5.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_68a90152c04505f5.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_rational.lean:151:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:151:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:161:83: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:161:83: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:161:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:169:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:171:81: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:173:91: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:169:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:171:81: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:173:91: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:173:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_93938bee38185b2d.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_93938bee38185b2d.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_rational.lean:198:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:198:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:208:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:208:79: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:216:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:218:109: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:216:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:218:109: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:220:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:220:87: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_c1119b20b8a3acf4.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_c1119b20b8a3acf4.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_rational.lean:245:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:245:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:255:83: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:255:83: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:255:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:263:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:265:81: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:267:91: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:263:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:265:81: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:267:91: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:267:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_6e54adb2f5a6689c.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_6e54adb2f5a6689c.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_rational.lean:292:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:292:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:302:83: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:302:83: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:302:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:310:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:312:98: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:314:91: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:310:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:312:98: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:314:91: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:314:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_8917093f60850a1e.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_8917093f60850a1e.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_rational.lean:339:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:339:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:349:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:349:79: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:357:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:359:82: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_rational.lean:357:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:359:82: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_rational.lean:361:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_rational.lean:361:87: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_fff8a185ca722a1c.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_fff8a185ca722a1c.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+lake env lean audit/NativeBridge_residue.lean
+audit/NativeBridge_residue.lean:12:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_residue.lean:17:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_residue.lean:25:73: warning: 'omega' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:25:73: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:25:14: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_residue.lean:25:30: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_residue.lean:29:45: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.ResiduePacket_db96a4a822f92ced.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePacket_db96a4a822f92ced.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+audit/NativeBridge_residue.lean:40:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_residue.lean:57:45: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.ResiduePacket_75c940a75a65b7ec.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePacket_75c940a75a65b7ec.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+audit/NativeBridge_residue.lean:68:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_residue.lean:85:45: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.ResiduePacket_529921e165bf028e.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePacket_529921e165bf028e.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+audit/NativeBridge_residue.lean:91:22: warning: unused variable `x`
+note: this linter can be disabled with `set_option linter.unusedVariables false`
+audit/NativeBridge_residue.lean:96:59: warning: 'omega' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:96:59: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:101:18: warning: 'norm_num [cells]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:101:18: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:109:18: warning: 'fin_cases j' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:109:34: warning: 'simp [cells, accepts] at hx hy hij' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:109:73: warning: 'omega' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:109:18: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:109:34: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:109:73: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:113:49: warning: 'decide +kernel' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:113:49: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+'PerfectPower.ResiduePacket_fcbcf165908dd18a.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePacket_fcbcf165908dd18a.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+audit/NativeBridge_residue.lean:124:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_residue.lean:129:18: warning: 'norm_num [cells]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:129:18: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:137:18: warning: 'fin_cases j' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:137:34: warning: 'simp [cells, accepts] at hx hy hij' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:137:73: warning: 'omega' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:137:18: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:137:34: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:137:73: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_residue.lean:141:49: warning: 'decide +kernel' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_residue.lean:141:49: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+'PerfectPower.ResiduePacket_001712ad3c093b50.source_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.ResiduePacket_001712ad3c093b50.count_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+lake env lean audit/NativeBridge_braid.lean
+'PerfectPower.BraidPacket_242ac5af3fd38b1d.word_action_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_242ac5af3fd38b1d.integral_symplectic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_b6e2fdbea30fa578.word_action_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_b6e2fdbea30fa578.integral_symplectic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_8d4ae824ca2ae4f4.word_action_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_8d4ae824ca2ae4f4.integral_symplectic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_63eac896ddb7a171.word_action_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_63eac896ddb7a171.integral_symplectic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_effc2e59da94fea1.word_action_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.BraidPacket_effc2e59da94fea1.integral_symplectic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+lake env lean audit/NativeBridge_torsion.lean
+audit/NativeBridge_torsion.lean:10:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:10:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:20:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_torsion.lean:20:79: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_torsion.lean:28:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:30:86: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:28:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:30:86: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:32:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_torsion.lean:32:87: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_7da4dfe32819e3cc.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_7da4dfe32819e3cc.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_torsion.lean:67:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_7da4dfe32819e3cc.smooth_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RationalPacket_7da4dfe32819e3cc.actual_two_torsion_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_torsion.lean:78:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:78:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:88:83: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:88:83: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:88:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_torsion.lean:96:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:98:82: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:100:91: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:96:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:98:82: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:100:91: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:100:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_dbd5d8ec75600244.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_dbd5d8ec75600244.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_torsion.lean:135:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_dbd5d8ec75600244.smooth_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RationalPacket_dbd5d8ec75600244.actual_two_torsion_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_torsion.lean:146:94: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:146:94: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:156:83: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:156:83: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:156:65: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+audit/NativeBridge_torsion.lean:164:17: warning: 'ring' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:166:115: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:168:91: warning: 'norm_num [Polynomial.coeff_one, Polynomial.coeff_X]' tactic does nothing
+note: this linter can be disabled with `set_option linter.unusedTactic false`
+audit/NativeBridge_torsion.lean:164:17: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:166:115: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:168:91: warning: this tactic is never executed
+note: this linter can be disabled with `set_option linter.unreachableTactic false`
+audit/NativeBridge_torsion.lean:168:67: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_7ec2af249a5afc27.native_roots_checked' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.RationalPacket_7ec2af249a5afc27.source_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+audit/NativeBridge_torsion.lean:203:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.RationalPacket_7ec2af249a5afc27.smooth_checked' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RationalPacket_7ec2af249a5afc27.actual_two_torsion_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

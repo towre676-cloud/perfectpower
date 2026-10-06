@@ -30,6 +30,14 @@ def render(source,output,*,edition='polynomial'):
             'scope':'Complete rational fibres in bounded exact Python with discovery-free replay. Existing Lean fibre foundations are preserved; no new interpreter proof, complete rank claim or global integral-point bound.',
             'running':'Complete rational tripling and compositional division',
         },
+        'nativebridges':{
+            'title':'Native bridges across exact mathematics',
+            'subtitle':'Rational roots, nonenumerating populations<br/>and marked Picard–Lefschetz actions',
+            'description':'Original-source rational root completeness, huge affine residue counts, general bilinear transvection laws and checked signed-cycle-word execution through genus four.',
+            'metrics':[('12','reusable native theorem declarations'),('48','generated declarations audited'),('21','source-bound producer packets')],
+            'scope':'Two reusable Lean modules and four public native certificate operations. The complete repository archive preserves the concurrent flavor advances and the prior research receipts.',
+            'running':'Arithmetic, populations, marked topology and the remaining bridges',
+        },
         'closures':{
             'title':'General identities and native certificates',
             'subtitle':'Cauchy–Binet, bounded source populations<br/>and marked Legendre generators',
@@ -224,7 +232,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

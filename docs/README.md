@@ -101,3 +101,5 @@ The [complete degree-six joint potential](VALENTINER_JOINT_POTENTIAL.md) enumera
 [The Sommerfeld constant and exact 66-degree carrier](SOMMERFELD_CONSTANT_AND_66_DEGREES.md): exact cyclotomic identities, the electromagnetic determinant threshold sum rule, a continuous weak-phase orbit at fixed photon screening and explicit gauge normalization inputs.
 
 The connected closures continuation proves general ordered weighted Cauchy–Binet, emits kernel-checked bounded source population counts and numeric image selections, and adds integral-recognition uniqueness and marked monodromy replay. See [the monograph](CONNECTED_CLOSURES_MONOGRAPH.md), `make connected-closures-lean`, and `make connected-closures-receipts`.
+
+The native bridges connect original rational-root packets, nonenumerated affine residue counts and marked braid words to Lean. See [the monograph](NATIVE_BRIDGES_MONOGRAPH.md), `make native-bridges-receipts` and `make native-bridges-lean`.

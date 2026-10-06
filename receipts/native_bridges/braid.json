@@ -1,0 +1,779 @@
+[
+  {
+    "execution_verified": false,
+    "genus": 1,
+    "lean": "import PerfectPower.PicardLefschetz\nnamespace PerfectPower.BraidPacket_242ac5af3fd38b1d\nopen scoped BigOperators\nopen PerfectPower.PicardLefschetz\nprivate def intersection : Matrix (Fin 2) (Fin 2) \u2124 := !![(0),(1);(-1),(0)]\nprivate def cycle_0 : Fin 2 \u2192 \u2124 := ![(1),(0)]\nprivate def factor_0 : Matrix (Fin 2) (Fin 2) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_0 i * \u2211 l, cycle_0 l * intersection l j)\nprivate def cycle_1 : Fin 2 \u2192 \u2124 := ![(0),(1)]\nprivate def factor_1 : Matrix (Fin 2) (Fin 2) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_1 i * \u2211 l, cycle_1 l * intersection l j)\nprivate def cycle_2 : Fin 2 \u2192 \u2124 := ![(-1),(0)]\nprivate def factor_2 : Matrix (Fin 2) (Fin 2) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_2 i * \u2211 l, cycle_2 l * intersection l j)\nprivate def cycle_3 : Fin 2 \u2192 \u2124 := ![(-1),(0)]\nprivate def factor_3 : Matrix (Fin 2) (Fin 2) \u2124 :=\n  1 + Matrix.of (fun i j => (-1) * cycle_3 i * \u2211 l, cycle_3 l * intersection l j)\nprivate def cycle_4 : Fin 2 \u2192 \u2124 := ![(0),(1)]\nprivate def factor_4 : Matrix (Fin 2) (Fin 2) \u2124 :=\n  1 + Matrix.of (fun i j => (-1) * cycle_4 i * \u2211 l, cycle_4 l * intersection l j)\nprivate def cycle_5 : Fin 2 \u2192 \u2124 := ![(1),(0)]\nprivate def factor_5 : Matrix (Fin 2) (Fin 2) \u2124 :=\n  1 + Matrix.of (fun i j => (-1) * cycle_5 i * \u2211 l, cycle_5 l * intersection l j)\nprivate def stage_0 : Matrix (Fin 2) (Fin 2) \u2124 := !![(1),(0);(0),(1)]\nprivate def stage_1 : Matrix (Fin 2) (Fin 2) \u2124 := !![(1),(1);(0),(1)]\nprivate def stage_2 : Matrix (Fin 2) (Fin 2) \u2124 := !![(0),(1);(-1),(1)]\nprivate def stage_3 : Matrix (Fin 2) (Fin 2) \u2124 := !![(0),(1);(-1),(0)]\nprivate def stage_4 : Matrix (Fin 2) (Fin 2) \u2124 := !![(0),(1);(-1),(1)]\nprivate def stage_5 : Matrix (Fin 2) (Fin 2) \u2124 := !![(1),(1);(0),(1)]\nprivate def stage_6 : Matrix (Fin 2) (Fin 2) \u2124 := !![(1),(0);(0),(1)]\nprivate theorem step_0 : stage_0 * factor_0 = stage_1 := by decide +kernel\nprivate theorem step_1 : stage_1 * factor_1 = stage_2 := by decide +kernel\nprivate theorem step_2 : stage_2 * factor_2 = stage_3 := by decide +kernel\nprivate theorem step_3 : stage_3 * factor_3 = stage_4 := by decide +kernel\nprivate theorem step_4 : stage_4 * factor_4 = stage_5 := by decide +kernel\nprivate theorem step_5 : stage_5 * factor_5 = stage_6 := by decide +kernel\nprivate def steps : List ((Fin 2 \u2192 \u2124) \u00d7 \u2124) := [(cycle_0, (1)),(cycle_1, (1)),(cycle_2, (1)),(cycle_3, (-1)),(cycle_4, (-1)),(cycle_5, (-1))]\ndef action : Matrix (Fin 2) (Fin 2) \u2124 := wordMatrix intersection steps\n\ntheorem word_action_checked : action = !![(1),(0);(0),(1)] := by\n  change (((((((1 : Matrix (Fin 2) (Fin 2) \u2124) * factor_0) * factor_1) * factor_2) * factor_3) * factor_4) * factor_5) = stage_6\n  rw [show (1 : Matrix (Fin 2) (Fin 2) \u2124) = stage_0 by decide +kernel]\n  rw [step_0, step_1, step_2, step_3, step_4, step_5]\n\ntheorem integral_symplectic : action.transpose * intersection * action = intersection := by\n  rw [word_action_checked]\n  decide +kernel\nend PerfectPower.BraidPacket_242ac5af3fd38b1d\n#print axioms PerfectPower.BraidPacket_242ac5af3fd38b1d.word_action_checked\n#print axioms PerfectPower.BraidPacket_242ac5af3fd38b1d.integral_symplectic\n",
+    "namespace": "PerfectPower.BraidPacket_242ac5af3fd38b1d",
+    "native_step_count": 6,
+    "receipt": {
+      "braid_relations_checked": true,
+      "genus": 1,
+      "integral_symplectic_checked": true,
+      "intersection": [
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "schema": "pp-marked-branch-braid/1",
+      "scope": "action of the declared braid on the standard marked double cover; no automatic polynomial-loop braid extraction",
+      "vanishing_cycles": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          -1,
+          0
+        ]
+      ],
+      "word": [
+        1,
+        2,
+        3,
+        -3,
+        -2,
+        -1
+      ]
+    },
+    "schema": "pp-native-braid-certificate/1",
+    "scope": "compile Lean to check each native rank-one factor product and symplectic identity; supplied branch marking is the geometric premise",
+    "source_sha256": "0d18b23b928af2262f8e6eb41367b85b08204a8edfcfc4ded826c0fb055a67d5",
+    "word": [
+      1,
+      2,
+      3,
+      -3,
+      -2,
+      -1
+    ]
+  },
+  {
+    "execution_verified": false,
+    "genus": 2,
+    "lean": "import PerfectPower.PicardLefschetz\nnamespace PerfectPower.BraidPacket_b6e2fdbea30fa578\nopen scoped BigOperators\nopen PerfectPower.PicardLefschetz\nprivate def intersection : Matrix (Fin 4) (Fin 4) \u2124 := !![(0),(0),(1),(0);(0),(0),(0),(1);(-1),(0),(0),(0);(0),(-1),(0),(0)]\nprivate def cycle_0 : Fin 4 \u2192 \u2124 := ![(1),(0),(0),(0)]\nprivate def factor_0 : Matrix (Fin 4) (Fin 4) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_0 i * \u2211 l, cycle_0 l * intersection l j)\nprivate def cycle_1 : Fin 4 \u2192 \u2124 := ![(0),(0),(1),(0)]\nprivate def factor_1 : Matrix (Fin 4) (Fin 4) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_1 i * \u2211 l, cycle_1 l * intersection l j)\nprivate def cycle_2 : Fin 4 \u2192 \u2124 := ![(1),(0),(0),(0)]\nprivate def factor_2 : Matrix (Fin 4) (Fin 4) \u2124 :=\n  1 + Matrix.of (fun i j => (-1) * cycle_2 i * \u2211 l, cycle_2 l * intersection l j)\nprivate def cycle_3 : Fin 4 \u2192 \u2124 := ![(-1),(1),(0),(0)]\nprivate def factor_3 : Matrix (Fin 4) (Fin 4) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_3 i * \u2211 l, cycle_3 l * intersection l j)\nprivate def cycle_4 : Fin 4 \u2192 \u2124 := ![(0),(0),(0),(1)]\nprivate def factor_4 : Matrix (Fin 4) (Fin 4) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_4 i * \u2211 l, cycle_4 l * intersection l j)\nprivate def cycle_5 : Fin 4 \u2192 \u2124 := ![(0),(-1),(0),(0)]\nprivate def factor_5 : Matrix (Fin 4) (Fin 4) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_5 i * \u2211 l, cycle_5 l * intersection l j)\nprivate def stage_0 : Matrix (Fin 4) (Fin 4) \u2124 := !![(1),(0),(0),(0);(0),(1),(0),(0);(0),(0),(1),(0);(0),(0),(0),(1)]\nprivate def stage_1 : Matrix (Fin 4) (Fin 4) \u2124 := !![(1),(0),(1),(0);(0),(1),(0),(0);(0),(0),(1),(0);(0),(0),(0),(1)]\nprivate def stage_2 : Matrix (Fin 4) (Fin 4) \u2124 := !![(0),(0),(1),(0);(0),(1),(0),(0);(-1),(0),(1),(0);(0),(0),(0),(1)]\nprivate def stage_3 : Matrix (Fin 4) (Fin 4) \u2124 := !![(0),(0),(1),(0);(0),(1),(0),(0);(-1),(0),(2),(0);(0),(0),(0),(1)]\nprivate def stage_4 : Matrix (Fin 4) (Fin 4) \u2124 := !![(0),(0),(1),(0);(0),(1),(-1),(1);(-1),(0),(1),(1);(0),(0),(0),(1)]\nprivate def stage_5 : Matrix (Fin 4) (Fin 4) \u2124 := !![(0),(0),(1),(0);(0),(0),(-1),(1);(-1),(-1),(1),(1);(0),(-1),(0),(1)]\nprivate def stage_6 : Matrix (Fin 4) (Fin 4) \u2124 := !![(0),(0),(1),(0);(0),(0),(-1),(1);(-1),(-1),(1),(0);(0),(-1),(0),(0)]\nprivate theorem step_0 : stage_0 * factor_0 = stage_1 := by decide +kernel\nprivate theorem step_1 : stage_1 * factor_1 = stage_2 := by decide +kernel\nprivate theorem step_2 : stage_2 * factor_2 = stage_3 := by decide +kernel\nprivate theorem step_3 : stage_3 * factor_3 = stage_4 := by decide +kernel\nprivate theorem step_4 : stage_4 * factor_4 = stage_5 := by decide +kernel\nprivate theorem step_5 : stage_5 * factor_5 = stage_6 := by decide +kernel\nprivate def steps : List ((Fin 4 \u2192 \u2124) \u00d7 \u2124) := [(cycle_0, (1)),(cycle_1, (1)),(cycle_2, (-1)),(cycle_3, (1)),(cycle_4, (1)),(cycle_5, (1))]\ndef action : Matrix (Fin 4) (Fin 4) \u2124 := wordMatrix intersection steps\n\ntheorem word_action_checked : action = !![(0),(0),(1),(0);(0),(0),(-1),(1);(-1),(-1),(1),(0);(0),(-1),(0),(0)] := by\n  change (((((((1 : Matrix (Fin 4) (Fin 4) \u2124) * factor_0) * factor_1) * factor_2) * factor_3) * factor_4) * factor_5) = stage_6\n  rw [show (1 : Matrix (Fin 4) (Fin 4) \u2124) = stage_0 by decide +kernel]\n  rw [step_0, step_1, step_2, step_3, step_4, step_5]\n\ntheorem integral_symplectic : action.transpose * intersection * action = intersection := by\n  rw [word_action_checked]\n  decide +kernel\nend PerfectPower.BraidPacket_b6e2fdbea30fa578\n#print axioms PerfectPower.BraidPacket_b6e2fdbea30fa578.word_action_checked\n#print axioms PerfectPower.BraidPacket_b6e2fdbea30fa578.integral_symplectic\n",
+    "namespace": "PerfectPower.BraidPacket_b6e2fdbea30fa578",
+    "native_step_count": 6,
+    "receipt": {
+      "braid_relations_checked": true,
+      "genus": 2,
+      "integral_symplectic_checked": true,
+      "intersection": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0
+        ]
+      ],
+      "matrix": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0
+        ]
+      ],
+      "schema": "pp-marked-branch-braid/1",
+      "scope": "action of the declared braid on the standard marked double cover; no automatic polynomial-loop braid extraction",
+      "vanishing_cycles": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0,
+          0
+        ]
+      ],
+      "word": [
+        1,
+        2,
+        -1,
+        3,
+        4,
+        5
+      ]
+    },
+    "schema": "pp-native-braid-certificate/1",
+    "scope": "compile Lean to check each native rank-one factor product and symplectic identity; supplied branch marking is the geometric premise",
+    "source_sha256": "65ec71fabf015ddc170ade12465e585bde59102c9e232abe7ab752a8a977b8cd",
+    "word": [
+      1,
+      2,
+      -1,
+      3,
+      4,
+      5
+    ]
+  },
+  {
+    "execution_verified": false,
+    "genus": 3,
+    "lean": "import PerfectPower.PicardLefschetz\nnamespace PerfectPower.BraidPacket_8d4ae824ca2ae4f4\nopen scoped BigOperators\nopen PerfectPower.PicardLefschetz\nprivate def intersection : Matrix (Fin 6) (Fin 6) \u2124 := !![(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(1);(-1),(0),(0),(0),(0),(0);(0),(-1),(0),(0),(0),(0);(0),(0),(-1),(0),(0),(0)]\nprivate def cycle_0 : Fin 6 \u2192 \u2124 := ![(1),(0),(0),(0),(0),(0)]\nprivate def factor_0 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (-1) * cycle_0 i * \u2211 l, cycle_0 l * intersection l j)\nprivate def cycle_1 : Fin 6 \u2192 \u2124 := ![(0),(0),(0),(1),(0),(0)]\nprivate def factor_1 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_1 i * \u2211 l, cycle_1 l * intersection l j)\nprivate def cycle_2 : Fin 6 \u2192 \u2124 := ![(-1),(1),(0),(0),(0),(0)]\nprivate def factor_2 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_2 i * \u2211 l, cycle_2 l * intersection l j)\nprivate def cycle_3 : Fin 6 \u2192 \u2124 := ![(0),(0),(0),(0),(1),(0)]\nprivate def factor_3 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_3 i * \u2211 l, cycle_3 l * intersection l j)\nprivate def cycle_4 : Fin 6 \u2192 \u2124 := ![(0),(-1),(1),(0),(0),(0)]\nprivate def factor_4 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (-1) * cycle_4 i * \u2211 l, cycle_4 l * intersection l j)\nprivate def cycle_5 : Fin 6 \u2192 \u2124 := ![(0),(0),(0),(0),(0),(1)]\nprivate def factor_5 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_5 i * \u2211 l, cycle_5 l * intersection l j)\nprivate def cycle_6 : Fin 6 \u2192 \u2124 := ![(0),(0),(-1),(0),(0),(0)]\nprivate def factor_6 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_6 i * \u2211 l, cycle_6 l * intersection l j)\nprivate def cycle_7 : Fin 6 \u2192 \u2124 := ![(1),(0),(0),(0),(0),(0)]\nprivate def factor_7 : Matrix (Fin 6) (Fin 6) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_7 i * \u2211 l, cycle_7 l * intersection l j)\nprivate def stage_0 : Matrix (Fin 6) (Fin 6) \u2124 := !![(1),(0),(0),(0),(0),(0);(0),(1),(0),(0),(0),(0);(0),(0),(1),(0),(0),(0);(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(1)]\nprivate def stage_1 : Matrix (Fin 6) (Fin 6) \u2124 := !![(1),(0),(0),(-1),(0),(0);(0),(1),(0),(0),(0),(0);(0),(0),(1),(0),(0),(0);(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(1)]\nprivate def stage_2 : Matrix (Fin 6) (Fin 6) \u2124 := !![(2),(0),(0),(-1),(0),(0);(0),(1),(0),(0),(0),(0);(0),(0),(1),(0),(0),(0);(-1),(0),(0),(1),(0),(0);(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(1)]\nprivate def stage_3 : Matrix (Fin 6) (Fin 6) \u2124 := !![(2),(0),(0),(1),(-2),(0);(0),(1),(0),(-1),(1),(0);(0),(0),(1),(0),(0),(0);(-1),(0),(0),(0),(1),(0);(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(1)]\nprivate def stage_4 : Matrix (Fin 6) (Fin 6) \u2124 := !![(2),(2),(0),(1),(-2),(0);(0),(0),(0),(-1),(1),(0);(0),(0),(1),(0),(0),(0);(-1),(-1),(0),(0),(1),(0);(0),(-1),(0),(0),(1),(0);(0),(0),(0),(0),(0),(1)]\nprivate def stage_5 : Matrix (Fin 6) (Fin 6) \u2124 := !![(2),(2),(0),(1),(-4),(2);(0),(0),(0),(-1),(1),(0);(0),(0),(1),(0),(1),(-1);(-1),(-1),(0),(0),(2),(-1);(0),(-1),(0),(0),(2),(-1);(0),(0),(0),(0),(0),(1)]\nprivate def stage_6 : Matrix (Fin 6) (Fin 6) \u2124 := !![(2),(2),(-2),(1),(-4),(2);(0),(0),(0),(-1),(1),(0);(0),(0),(2),(0),(1),(-1);(-1),(-1),(1),(0),(2),(-1);(0),(-1),(1),(0),(2),(-1);(0),(0),(-1),(0),(0),(1)]\nprivate def stage_7 : Matrix (Fin 6) (Fin 6) \u2124 := !![(2),(2),(-2),(1),(-4),(0);(0),(0),(0),(-1),(1),(0);(0),(0),(2),(0),(1),(1);(-1),(-1),(1),(0),(2),(0);(0),(-1),(1),(0),(2),(0);(0),(0),(-1),(0),(0),(0)]\nprivate def stage_8 : Matrix (Fin 6) (Fin 6) \u2124 := !![(2),(2),(-2),(3),(-4),(0);(0),(0),(0),(-1),(1),(0);(0),(0),(2),(0),(1),(1);(-1),(-1),(1),(-1),(2),(0);(0),(-1),(1),(0),(2),(0);(0),(0),(-1),(0),(0),(0)]\nprivate theorem step_0 : stage_0 * factor_0 = stage_1 := by decide +kernel\nprivate theorem step_1 : stage_1 * factor_1 = stage_2 := by decide +kernel\nprivate theorem step_2 : stage_2 * factor_2 = stage_3 := by decide +kernel\nprivate theorem step_3 : stage_3 * factor_3 = stage_4 := by decide +kernel\nprivate theorem step_4 : stage_4 * factor_4 = stage_5 := by decide +kernel\nprivate theorem step_5 : stage_5 * factor_5 = stage_6 := by decide +kernel\nprivate theorem step_6 : stage_6 * factor_6 = stage_7 := by decide +kernel\nprivate theorem step_7 : stage_7 * factor_7 = stage_8 := by decide +kernel\nprivate def steps : List ((Fin 6 \u2192 \u2124) \u00d7 \u2124) := [(cycle_0, (-1)),(cycle_1, (1)),(cycle_2, (1)),(cycle_3, (1)),(cycle_4, (-1)),(cycle_5, (1)),(cycle_6, (1)),(cycle_7, (1))]\ndef action : Matrix (Fin 6) (Fin 6) \u2124 := wordMatrix intersection steps\n\ntheorem word_action_checked : action = !![(2),(2),(-2),(3),(-4),(0);(0),(0),(0),(-1),(1),(0);(0),(0),(2),(0),(1),(1);(-1),(-1),(1),(-1),(2),(0);(0),(-1),(1),(0),(2),(0);(0),(0),(-1),(0),(0),(0)] := by\n  change (((((((((1 : Matrix (Fin 6) (Fin 6) \u2124) * factor_0) * factor_1) * factor_2) * factor_3) * factor_4) * factor_5) * factor_6) * factor_7) = stage_8\n  rw [show (1 : Matrix (Fin 6) (Fin 6) \u2124) = stage_0 by decide +kernel]\n  rw [step_0, step_1, step_2, step_3, step_4, step_5, step_6, step_7]\n\ntheorem integral_symplectic : action.transpose * intersection * action = intersection := by\n  rw [word_action_checked]\n  decide +kernel\nend PerfectPower.BraidPacket_8d4ae824ca2ae4f4\n#print axioms PerfectPower.BraidPacket_8d4ae824ca2ae4f4.word_action_checked\n#print axioms PerfectPower.BraidPacket_8d4ae824ca2ae4f4.integral_symplectic\n",
+    "namespace": "PerfectPower.BraidPacket_8d4ae824ca2ae4f4",
+    "native_step_count": 8,
+    "receipt": {
+      "braid_relations_checked": true,
+      "genus": 3,
+      "integral_symplectic_checked": true,
+      "intersection": [
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "matrix": [
+        [
+          2,
+          2,
+          -2,
+          3,
+          -4,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          1,
+          -1,
+          2,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "schema": "pp-marked-branch-braid/1",
+      "scope": "action of the declared braid on the standard marked double cover; no automatic polynomial-loop braid extraction",
+      "vanishing_cycles": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0
+        ]
+      ],
+      "word": [
+        -1,
+        2,
+        3,
+        4,
+        -5,
+        6,
+        7,
+        1
+      ]
+    },
+    "schema": "pp-native-braid-certificate/1",
+    "scope": "compile Lean to check each native rank-one factor product and symplectic identity; supplied branch marking is the geometric premise",
+    "source_sha256": "98c4deac88e60c6784e94050cdae907ed3216d24caf610cfb8b262352fa34ad9",
+    "word": [
+      -1,
+      2,
+      3,
+      4,
+      -5,
+      6,
+      7,
+      1
+    ]
+  },
+  {
+    "execution_verified": false,
+    "genus": 4,
+    "lean": "import PerfectPower.PicardLefschetz\nnamespace PerfectPower.BraidPacket_63eac896ddb7a171\nopen scoped BigOperators\nopen PerfectPower.PicardLefschetz\nprivate def intersection : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1);(-1),(0),(0),(0),(0),(0),(0),(0);(0),(-1),(0),(0),(0),(0),(0),(0);(0),(0),(-1),(0),(0),(0),(0),(0);(0),(0),(0),(-1),(0),(0),(0),(0)]\nprivate def cycle_0 : Fin 8 \u2192 \u2124 := ![(1),(0),(0),(0),(0),(0),(0),(0)]\nprivate def factor_0 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_0 i * \u2211 l, cycle_0 l * intersection l j)\nprivate def cycle_1 : Fin 8 \u2192 \u2124 := ![(0),(0),(0),(0),(1),(0),(0),(0)]\nprivate def factor_1 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_1 i * \u2211 l, cycle_1 l * intersection l j)\nprivate def cycle_2 : Fin 8 \u2192 \u2124 := ![(-1),(1),(0),(0),(0),(0),(0),(0)]\nprivate def factor_2 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_2 i * \u2211 l, cycle_2 l * intersection l j)\nprivate def cycle_3 : Fin 8 \u2192 \u2124 := ![(0),(0),(0),(0),(0),(1),(0),(0)]\nprivate def factor_3 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_3 i * \u2211 l, cycle_3 l * intersection l j)\nprivate def cycle_4 : Fin 8 \u2192 \u2124 := ![(0),(-1),(1),(0),(0),(0),(0),(0)]\nprivate def factor_4 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_4 i * \u2211 l, cycle_4 l * intersection l j)\nprivate def cycle_5 : Fin 8 \u2192 \u2124 := ![(0),(0),(0),(0),(0),(0),(1),(0)]\nprivate def factor_5 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_5 i * \u2211 l, cycle_5 l * intersection l j)\nprivate def cycle_6 : Fin 8 \u2192 \u2124 := ![(0),(0),(-1),(1),(0),(0),(0),(0)]\nprivate def factor_6 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_6 i * \u2211 l, cycle_6 l * intersection l j)\nprivate def cycle_7 : Fin 8 \u2192 \u2124 := ![(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def factor_7 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_7 i * \u2211 l, cycle_7 l * intersection l j)\nprivate def cycle_8 : Fin 8 \u2192 \u2124 := ![(0),(0),(0),(-1),(0),(0),(0),(0)]\nprivate def factor_8 : Matrix (Fin 8) (Fin 8) \u2124 :=\n  1 + Matrix.of (fun i j => (1) * cycle_8 i * \u2211 l, cycle_8 l * intersection l j)\nprivate def stage_0 : Matrix (Fin 8) (Fin 8) \u2124 := !![(1),(0),(0),(0),(0),(0),(0),(0);(0),(1),(0),(0),(0),(0),(0),(0);(0),(0),(1),(0),(0),(0),(0),(0);(0),(0),(0),(1),(0),(0),(0),(0);(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_1 : Matrix (Fin 8) (Fin 8) \u2124 := !![(1),(0),(0),(0),(1),(0),(0),(0);(0),(1),(0),(0),(0),(0),(0),(0);(0),(0),(1),(0),(0),(0),(0),(0);(0),(0),(0),(1),(0),(0),(0),(0);(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_2 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(1),(0),(0),(0),(0),(0),(0);(0),(0),(1),(0),(0),(0),(0),(0);(0),(0),(0),(1),(0),(0),(0),(0);(-1),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_3 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(1),(0),(0),(-1),(1),(0),(0);(0),(0),(1),(0),(0),(0),(0),(0);(0),(0),(0),(1),(0),(0),(0),(0);(-1),(0),(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_4 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(-1),(1),(0),(0);(0),(0),(1),(0),(0),(0),(0),(0);(0),(0),(0),(1),(0),(0),(0),(0);(-1),(-1),(0),(0),(0),(1),(0),(0);(0),(-1),(0),(0),(0),(1),(0),(0);(0),(0),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_5 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(-1),(1),(0),(0);(0),(0),(1),(0),(0),(-1),(1),(0);(0),(0),(0),(1),(0),(0),(0),(0);(-1),(-1),(0),(0),(0),(0),(1),(0);(0),(-1),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_6 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(-1),(1),(0),(0);(0),(0),(0),(0),(0),(-1),(1),(0);(0),(0),(0),(1),(0),(0),(0),(0);(-1),(-1),(-1),(0),(0),(0),(1),(0);(0),(-1),(-1),(0),(0),(0),(1),(0);(0),(0),(-1),(0),(0),(0),(1),(0);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_7 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(-1),(1),(0),(0);(0),(0),(0),(0),(0),(-1),(1),(0);(0),(0),(0),(1),(0),(0),(-1),(1);(-1),(-1),(-1),(0),(0),(0),(0),(1);(0),(-1),(-1),(0),(0),(0),(0),(1);(0),(0),(-1),(0),(0),(0),(0),(1);(0),(0),(0),(0),(0),(0),(0),(1)]\nprivate def stage_8 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(-1),(1),(0),(0);(0),(0),(0),(0),(0),(-1),(1),(0);(0),(0),(0),(0),(0),(0),(-1),(1);(-1),(-1),(-1),(-1),(0),(0),(0),(1);(0),(-1),(-1),(-1),(0),(0),(0),(1);(0),(0),(-1),(-1),(0),(0),(0),(1);(0),(0),(0),(-1),(0),(0),(0),(1)]\nprivate def stage_9 : Matrix (Fin 8) (Fin 8) \u2124 := !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(-1),(1),(0),(0);(0),(0),(0),(0),(0),(-1),(1),(0);(0),(0),(0),(0),(0),(0),(-1),(1);(-1),(-1),(-1),(-1),(0),(0),(0),(0);(0),(-1),(-1),(-1),(0),(0),(0),(0);(0),(0),(-1),(-1),(0),(0),(0),(0);(0),(0),(0),(-1),(0),(0),(0),(0)]\nprivate theorem step_0 : stage_0 * factor_0 = stage_1 := by decide +kernel\nprivate theorem step_1 : stage_1 * factor_1 = stage_2 := by decide +kernel\nprivate theorem step_2 : stage_2 * factor_2 = stage_3 := by decide +kernel\nprivate theorem step_3 : stage_3 * factor_3 = stage_4 := by decide +kernel\nprivate theorem step_4 : stage_4 * factor_4 = stage_5 := by decide +kernel\nprivate theorem step_5 : stage_5 * factor_5 = stage_6 := by decide +kernel\nprivate theorem step_6 : stage_6 * factor_6 = stage_7 := by decide +kernel\nprivate theorem step_7 : stage_7 * factor_7 = stage_8 := by decide +kernel\nprivate theorem step_8 : stage_8 * factor_8 = stage_9 := by decide +kernel\nprivate def steps : List ((Fin 8 \u2192 \u2124) \u00d7 \u2124) := [(cycle_0, (1)),(cycle_1, (1)),(cycle_2, (1)),(cycle_3, (1)),(cycle_4, (1)),(cycle_5, (1)),(cycle_6, (1)),(cycle_7, (1)),(cycle_8, (1))]\ndef action : Matrix (Fin 8) (Fin 8) \u2124 := wordMatrix intersection steps\n\ntheorem word_action_checked : action = !![(0),(0),(0),(0),(1),(0),(0),(0);(0),(0),(0),(0),(-1),(1),(0),(0);(0),(0),(0),(0),(0),(-1),(1),(0);(0),(0),(0),(0),(0),(0),(-1),(1);(-1),(-1),(-1),(-1),(0),(0),(0),(0);(0),(-1),(-1),(-1),(0),(0),(0),(0);(0),(0),(-1),(-1),(0),(0),(0),(0);(0),(0),(0),(-1),(0),(0),(0),(0)] := by\n  change ((((((((((1 : Matrix (Fin 8) (Fin 8) \u2124) * factor_0) * factor_1) * factor_2) * factor_3) * factor_4) * factor_5) * factor_6) * factor_7) * factor_8) = stage_9\n  rw [show (1 : Matrix (Fin 8) (Fin 8) \u2124) = stage_0 by decide +kernel]\n  rw [step_0, step_1, step_2, step_3, step_4, step_5, step_6, step_7, step_8]\n\ntheorem integral_symplectic : action.transpose * intersection * action = intersection := by\n  rw [word_action_checked]\n  decide +kernel\nend PerfectPower.BraidPacket_63eac896ddb7a171\n#print axioms PerfectPower.BraidPacket_63eac896ddb7a171.word_action_checked\n#print axioms PerfectPower.BraidPacket_63eac896ddb7a171.integral_symplectic\n",
+    "namespace": "PerfectPower.BraidPacket_63eac896ddb7a171",
+    "native_step_count": 9,
+    "receipt": {
+      "braid_relations_checked": true,
+      "genus": 4,
+      "integral_symplectic_checked": true,
+      "intersection": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          -1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -1,
+          1
+        ],
+        [
+          -1,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "schema": "pp-marked-branch-braid/1",
+      "scope": "action of the declared braid on the standard marked double cover; no automatic polynomial-loop braid extraction",
+      "vanishing_cycles": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          -1,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "word": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    "schema": "pp-native-braid-certificate/1",
+    "scope": "compile Lean to check each native rank-one factor product and symplectic identity; supplied branch marking is the geometric premise",
+    "source_sha256": "6bd98c2b61a87dc890b2ad172ae18deff4670bbcb4ef5f0f3b9d314a47049623",
+    "word": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "execution_verified": false,
+    "genus": 2,
+    "lean": "import PerfectPower.PicardLefschetz\nnamespace PerfectPower.BraidPacket_effc2e59da94fea1\nopen scoped BigOperators\nopen PerfectPower.PicardLefschetz\nprivate def intersection : Matrix (Fin 4) (Fin 4) \u2124 := !![(0),(0),(1),(0);(0),(0),(0),(1);(-1),(0),(0),(0);(0),(-1),(0),(0)]\n\nprivate def stage_0 : Matrix (Fin 4) (Fin 4) \u2124 := !![(1),(0),(0),(0);(0),(1),(0),(0);(0),(0),(1),(0);(0),(0),(0),(1)]\n\nprivate def steps : List ((Fin 4 \u2192 \u2124) \u00d7 \u2124) := []\ndef action : Matrix (Fin 4) (Fin 4) \u2124 := wordMatrix intersection steps\n\ntheorem word_action_checked : action = !![(1),(0),(0),(0);(0),(1),(0),(0);(0),(0),(1),(0);(0),(0),(0),(1)] := by\n  decide +kernel\n\ntheorem integral_symplectic : action.transpose * intersection * action = intersection := by\n  rw [word_action_checked]\n  decide +kernel\nend PerfectPower.BraidPacket_effc2e59da94fea1\n#print axioms PerfectPower.BraidPacket_effc2e59da94fea1.word_action_checked\n#print axioms PerfectPower.BraidPacket_effc2e59da94fea1.integral_symplectic\n",
+    "namespace": "PerfectPower.BraidPacket_effc2e59da94fea1",
+    "native_step_count": 0,
+    "receipt": {
+      "braid_relations_checked": true,
+      "genus": 2,
+      "integral_symplectic_checked": true,
+      "intersection": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0,
+          0
+        ]
+      ],
+      "matrix": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ],
+      "schema": "pp-marked-branch-braid/1",
+      "scope": "action of the declared braid on the standard marked double cover; no automatic polynomial-loop braid extraction",
+      "vanishing_cycles": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0,
+          0
+        ]
+      ],
+      "word": []
+    },
+    "schema": "pp-native-braid-certificate/1",
+    "scope": "compile Lean to check each native rank-one factor product and symplectic identity; supplied branch marking is the geometric premise",
+    "source_sha256": "e83594891e8e0bc3337fe47efd6c84a22dd02bee039f31c421c25f2475f5fcf9",
+    "word": []
+  }
+]

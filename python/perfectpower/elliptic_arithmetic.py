@@ -349,3 +349,9 @@ class EllipticCurve:
                 x=Q(n,d);y=sqrtq(P.evaluate(self.cubic,x))
                 if y is not None:out.update(self.uncomplete((x,yy)) for yy in {y,-y})
         return dict(points=[encode_point(p) for p in sorted(out)],complete_within_search=True,numerators=numerators,denominators=denominators)
+
+    def native_two_torsion(self, *, divisor_work_limit=1024, node_limit=100000):
+        """Emit native completed-model smoothness and complete two-torsion proofs."""
+        from .native_rational_certificate import two_torsion_certificate
+        return two_torsion_certificate(self.specification,
+            divisor_work_limit=divisor_work_limit,node_limit=node_limit)

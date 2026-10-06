@@ -1,0 +1,574 @@
+[
+  {
+    "completed_coefficients": [
+      "0",
+      "-1",
+      "0"
+    ],
+    "curve": {
+      "ainvs": [
+        "0",
+        "0",
+        "0",
+        "-1",
+        "0"
+      ]
+    },
+    "execution_verified": false,
+    "lean": "import PerfectPower.NativeRationalRoots\nimport PerfectPower.EllipticPointDivision\nnamespace PerfectPower.RationalPacket_7da4dfe32819e3cc\nopen Polynomial PerfectPower\nnoncomputable def source : Polynomial \u211a := C (-1) * X + X^3\nprivate def coefficients : List \u2124 := [0,-1,0,1]\nprivate noncomputable def scaled : Polynomial \u2124 := NativePolynomialSquare.polynomial coefficients\nprivate theorem source_degree : source.natDegree = 3 := by unfold source; compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_leading : source.leadingCoeff = (1) := by\n  rw [Polynomial.leadingCoeff, source_degree]\n  norm_num [source, Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_nonzero : source \u2260 0 := by\n  intro hz\n  have hc := source_leading\n  rw [hz] at hc\n  norm_num at hc\nprivate theorem scaled_monic : scaled.Monic := by\n  simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> monicity! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem scaling : scaled.map (Int.castRingHom \u211a) =\n    (NativeRationalRoots.normalize source).scaleRoots (1) := by\n  have hn : NativeRationalRoots.normalize source = (C (-1) * X + X^3 : Polynomial \u211a) := by\n    unfold NativeRationalRoots.normalize\n    rw [source_leading]\n    unfold source\n    simp only [mul_add, \u2190 mul_assoc, \u2190 Polynomial.C_mul]\n    norm_num <;> ring\n  rw [hn]\n  have hd : (C (-1) * X + X^3 : Polynomial \u211a).natDegree = 3 := by compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  have hg : scaled.natDegree = 3 := by\n    simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  ext i\n  rw [Polynomial.coeff_map, Polynomial.coeff_scaleRoots, hd]\n  by_cases hi : i \u2264 3\n  \u00b7 interval_cases i <;> norm_num [scaled, coefficients, NativePolynomialSquare.polynomial, Polynomial.coeff_one, Polynomial.coeff_X]\n  \u00b7 have hi' : 3 < i := by omega\n    rw [Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hg]; exact hi'),\n      Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hd]; exact hi')]\n    simp\n\ntheorem native_roots_checked : NativeRationalRoots.roots coefficients (1) = ({(-1),(0),(1)} : Finset \u211a) := by\n  decide +kernel\n\ntheorem source_complete (r : \u211a) : source.eval r = 0 \u2194 r \u2208 ({(-1),(0),(1)} : Finset \u211a) := by\n  rw [\u2190 native_roots_checked]\n  exact NativeRationalRoots.complete_nonmonic source source_nonzero coefficients (1)\n    (by norm_num) (by decide +kernel) scaled_monic scaling r\nend PerfectPower.RationalPacket_7da4dfe32819e3cc\n#print axioms PerfectPower.RationalPacket_7da4dfe32819e3cc.native_roots_checked\n#print axioms PerfectPower.RationalPacket_7da4dfe32819e3cc.source_complete\n\nnamespace PerfectPower.RationalPacket_7da4dfe32819e3cc\nopen PerfectPower\n\ntheorem smooth_checked : (EllipticPointDivision.completed ((0) : \u211a) (-1) (0)).\u0394 \u2260 0 := by\n  norm_num [EllipticPointDivision.completed, WeierstrassCurve.\u0394, WeierstrassCurve.b\u2082,\n    WeierstrassCurve.b\u2084, WeierstrassCurve.b\u2086, WeierstrassCurve.b\u2088]\n\ntheorem actual_two_torsion_complete (P : (EllipticPointDivision.completed ((0) : \u211a) (-1) (0)).Point) :\n    (2 : \u2124) \u2022 P = 0 \u2194 P \u2208 EllipticPointDivision.torsionList ((0) : \u211a) (-1) (0)\n      smooth_checked ({(-1),(0),(1)} : Finset \u211a).toList := by\n  apply EllipticPointDivision.torsion_list_complete\n  intro x\n  have h := source_complete x\n  have he : source.eval x = EllipticDivision.cubic ((0) : \u211a) (-1) (0) x := by\n    norm_num [source, EllipticDivision.cubic] <;> ring\n  rw [he] at h\n  simpa only [Finset.mem_toList] using h\nend PerfectPower.RationalPacket_7da4dfe32819e3cc\n#print axioms PerfectPower.RationalPacket_7da4dfe32819e3cc.smooth_checked\n#print axioms PerfectPower.RationalPacket_7da4dfe32819e3cc.actual_two_torsion_complete\n",
+    "namespace": "PerfectPower.RationalPacket_7da4dfe32819e3cc",
+    "rational_root_packet": {
+      "execution_verified": false,
+      "lean": "import PerfectPower.NativeRationalRoots\nnamespace PerfectPower.RationalPacket_7da4dfe32819e3cc\nopen Polynomial PerfectPower\nnoncomputable def source : Polynomial \u211a := C (-1) * X + X^3\nprivate def coefficients : List \u2124 := [0,-1,0,1]\nprivate noncomputable def scaled : Polynomial \u2124 := NativePolynomialSquare.polynomial coefficients\nprivate theorem source_degree : source.natDegree = 3 := by unfold source; compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_leading : source.leadingCoeff = (1) := by\n  rw [Polynomial.leadingCoeff, source_degree]\n  norm_num [source, Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_nonzero : source \u2260 0 := by\n  intro hz\n  have hc := source_leading\n  rw [hz] at hc\n  norm_num at hc\nprivate theorem scaled_monic : scaled.Monic := by\n  simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> monicity! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem scaling : scaled.map (Int.castRingHom \u211a) =\n    (NativeRationalRoots.normalize source).scaleRoots (1) := by\n  have hn : NativeRationalRoots.normalize source = (C (-1) * X + X^3 : Polynomial \u211a) := by\n    unfold NativeRationalRoots.normalize\n    rw [source_leading]\n    unfold source\n    simp only [mul_add, \u2190 mul_assoc, \u2190 Polynomial.C_mul]\n    norm_num <;> ring\n  rw [hn]\n  have hd : (C (-1) * X + X^3 : Polynomial \u211a).natDegree = 3 := by compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  have hg : scaled.natDegree = 3 := by\n    simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  ext i\n  rw [Polynomial.coeff_map, Polynomial.coeff_scaleRoots, hd]\n  by_cases hi : i \u2264 3\n  \u00b7 interval_cases i <;> norm_num [scaled, coefficients, NativePolynomialSquare.polynomial, Polynomial.coeff_one, Polynomial.coeff_X]\n  \u00b7 have hi' : 3 < i := by omega\n    rw [Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hg]; exact hi'),\n      Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hd]; exact hi')]\n    simp\n\ntheorem native_roots_checked : NativeRationalRoots.roots coefficients (1) = ({(-1),(0),(1)} : Finset \u211a) := by\n  decide +kernel\n\ntheorem source_complete (r : \u211a) : source.eval r = 0 \u2194 r \u2208 ({(-1),(0),(1)} : Finset \u211a) := by\n  rw [\u2190 native_roots_checked]\n  exact NativeRationalRoots.complete_nonmonic source source_nonzero coefficients (1)\n    (by norm_num) (by decide +kernel) scaled_monic scaling r\nend PerfectPower.RationalPacket_7da4dfe32819e3cc\n#print axioms PerfectPower.RationalPacket_7da4dfe32819e3cc.native_roots_checked\n#print axioms PerfectPower.RationalPacket_7da4dfe32819e3cc.source_complete\n",
+      "namespace": "PerfectPower.RationalPacket_7da4dfe32819e3cc",
+      "original_coefficients": [
+        "0",
+        "-1",
+        "0",
+        "1"
+      ],
+      "receipt": {
+        "coefficients": [
+          "0",
+          "-1",
+          "0",
+          "1"
+        ],
+        "denominator_scale": "1",
+        "integer_certificate": {
+          "clipped_interval": [
+            -3,
+            3
+          ],
+          "coefficients": [
+            0,
+            -1,
+            0,
+            1
+          ],
+          "complete": true,
+          "domain": [
+            null,
+            null
+          ],
+          "execution_verified": false,
+          "leading_coefficient": "1",
+          "nodes": [
+            [
+              -4,
+              3,
+              3,
+              0
+            ],
+            [
+              -4,
+              -1,
+              3,
+              2
+            ],
+            [
+              -4,
+              -3,
+              3,
+              3
+            ],
+            [
+              -3,
+              -1,
+              3,
+              2
+            ],
+            [
+              -3,
+              -2,
+              3,
+              3
+            ],
+            [
+              -2,
+              -1,
+              3,
+              2
+            ],
+            [
+              -1,
+              3,
+              2,
+              0
+            ],
+            [
+              -1,
+              1,
+              2,
+              0
+            ],
+            [
+              -1,
+              0,
+              2,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              3,
+              0,
+              0
+            ]
+          ],
+          "nodes_checked": 11,
+          "root_bound": 3,
+          "roots": [
+            -1,
+            0,
+            1
+          ],
+          "squarefree": [
+            "0",
+            "-1",
+            "0",
+            "1"
+          ],
+          "squarefree_factors": [
+            [
+              1,
+              [
+                "0",
+                "-1",
+                "0",
+                "1"
+              ]
+            ]
+          ],
+          "sturm_chain": [
+            [
+              0,
+              -1,
+              0,
+              1
+            ],
+            [
+              -1,
+              0,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        "roots": [
+          "-1",
+          "0",
+          "1"
+        ],
+        "schema": "pp-rational-roots/1"
+      },
+      "roots": [
+        "-1",
+        "0",
+        "1"
+      ],
+      "schema": "pp-native-rational-certificate/1",
+      "scope": "compile the emitted Lean to prove original-source root completeness; native divisor budget applies",
+      "source_sha256": "c7c865092b60a3be8aad06abcdda22e95d495c9214e7d7c5a2603af7c331fc55"
+    },
+    "schema": "pp-native-two-torsion-certificate/1",
+    "scope": "compile Lean to prove smoothness and complete rational two-torsion on the completed-square model; original-model transport remains separate",
+    "source_sha256": "70e6b3815f4172b47ca023f68d824905f54b41377866fc22b2c1606b2b3ac592",
+    "two_torsion_cardinality": 4
+  },
+  {
+    "completed_coefficients": [
+      "0",
+      "0",
+      "-2"
+    ],
+    "curve": {
+      "ainvs": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2"
+      ]
+    },
+    "execution_verified": false,
+    "lean": "import PerfectPower.NativeRationalRoots\nimport PerfectPower.EllipticPointDivision\nnamespace PerfectPower.RationalPacket_dbd5d8ec75600244\nopen Polynomial PerfectPower\nnoncomputable def source : Polynomial \u211a := C (-2) + X^3\nprivate def coefficients : List \u2124 := [-2,0,0,1]\nprivate noncomputable def scaled : Polynomial \u2124 := NativePolynomialSquare.polynomial coefficients\nprivate theorem source_degree : source.natDegree = 3 := by unfold source; compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_leading : source.leadingCoeff = (1) := by\n  rw [Polynomial.leadingCoeff, source_degree]\n  norm_num [source, Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_nonzero : source \u2260 0 := by\n  intro hz\n  have hc := source_leading\n  rw [hz] at hc\n  norm_num at hc\nprivate theorem scaled_monic : scaled.Monic := by\n  simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> monicity! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem scaling : scaled.map (Int.castRingHom \u211a) =\n    (NativeRationalRoots.normalize source).scaleRoots (1) := by\n  have hn : NativeRationalRoots.normalize source = (C (-2) + X^3 : Polynomial \u211a) := by\n    unfold NativeRationalRoots.normalize\n    rw [source_leading]\n    unfold source\n    simp only [mul_add, \u2190 mul_assoc, \u2190 Polynomial.C_mul]\n    norm_num <;> ring\n  rw [hn]\n  have hd : (C (-2) + X^3 : Polynomial \u211a).natDegree = 3 := by compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  have hg : scaled.natDegree = 3 := by\n    simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  ext i\n  rw [Polynomial.coeff_map, Polynomial.coeff_scaleRoots, hd]\n  by_cases hi : i \u2264 3\n  \u00b7 interval_cases i <;> norm_num [scaled, coefficients, NativePolynomialSquare.polynomial, Polynomial.coeff_one, Polynomial.coeff_X]\n  \u00b7 have hi' : 3 < i := by omega\n    rw [Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hg]; exact hi'),\n      Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hd]; exact hi')]\n    simp\n\ntheorem native_roots_checked : NativeRationalRoots.roots coefficients (1) = (\u2205 : Finset \u211a) := by\n  decide +kernel\n\ntheorem source_complete (r : \u211a) : source.eval r = 0 \u2194 r \u2208 (\u2205 : Finset \u211a) := by\n  rw [\u2190 native_roots_checked]\n  exact NativeRationalRoots.complete_nonmonic source source_nonzero coefficients (1)\n    (by norm_num) (by decide +kernel) scaled_monic scaling r\nend PerfectPower.RationalPacket_dbd5d8ec75600244\n#print axioms PerfectPower.RationalPacket_dbd5d8ec75600244.native_roots_checked\n#print axioms PerfectPower.RationalPacket_dbd5d8ec75600244.source_complete\n\nnamespace PerfectPower.RationalPacket_dbd5d8ec75600244\nopen PerfectPower\n\ntheorem smooth_checked : (EllipticPointDivision.completed ((0) : \u211a) (0) (-2)).\u0394 \u2260 0 := by\n  norm_num [EllipticPointDivision.completed, WeierstrassCurve.\u0394, WeierstrassCurve.b\u2082,\n    WeierstrassCurve.b\u2084, WeierstrassCurve.b\u2086, WeierstrassCurve.b\u2088]\n\ntheorem actual_two_torsion_complete (P : (EllipticPointDivision.completed ((0) : \u211a) (0) (-2)).Point) :\n    (2 : \u2124) \u2022 P = 0 \u2194 P \u2208 EllipticPointDivision.torsionList ((0) : \u211a) (0) (-2)\n      smooth_checked (\u2205 : Finset \u211a).toList := by\n  apply EllipticPointDivision.torsion_list_complete\n  intro x\n  have h := source_complete x\n  have he : source.eval x = EllipticDivision.cubic ((0) : \u211a) (0) (-2) x := by\n    norm_num [source, EllipticDivision.cubic] <;> ring\n  rw [he] at h\n  simpa only [Finset.mem_toList] using h\nend PerfectPower.RationalPacket_dbd5d8ec75600244\n#print axioms PerfectPower.RationalPacket_dbd5d8ec75600244.smooth_checked\n#print axioms PerfectPower.RationalPacket_dbd5d8ec75600244.actual_two_torsion_complete\n",
+    "namespace": "PerfectPower.RationalPacket_dbd5d8ec75600244",
+    "rational_root_packet": {
+      "execution_verified": false,
+      "lean": "import PerfectPower.NativeRationalRoots\nnamespace PerfectPower.RationalPacket_dbd5d8ec75600244\nopen Polynomial PerfectPower\nnoncomputable def source : Polynomial \u211a := C (-2) + X^3\nprivate def coefficients : List \u2124 := [-2,0,0,1]\nprivate noncomputable def scaled : Polynomial \u2124 := NativePolynomialSquare.polynomial coefficients\nprivate theorem source_degree : source.natDegree = 3 := by unfold source; compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_leading : source.leadingCoeff = (1) := by\n  rw [Polynomial.leadingCoeff, source_degree]\n  norm_num [source, Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_nonzero : source \u2260 0 := by\n  intro hz\n  have hc := source_leading\n  rw [hz] at hc\n  norm_num at hc\nprivate theorem scaled_monic : scaled.Monic := by\n  simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> monicity! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem scaling : scaled.map (Int.castRingHom \u211a) =\n    (NativeRationalRoots.normalize source).scaleRoots (1) := by\n  have hn : NativeRationalRoots.normalize source = (C (-2) + X^3 : Polynomial \u211a) := by\n    unfold NativeRationalRoots.normalize\n    rw [source_leading]\n    unfold source\n    simp only [mul_add, \u2190 mul_assoc, \u2190 Polynomial.C_mul]\n    norm_num <;> ring\n  rw [hn]\n  have hd : (C (-2) + X^3 : Polynomial \u211a).natDegree = 3 := by compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  have hg : scaled.natDegree = 3 := by\n    simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  ext i\n  rw [Polynomial.coeff_map, Polynomial.coeff_scaleRoots, hd]\n  by_cases hi : i \u2264 3\n  \u00b7 interval_cases i <;> norm_num [scaled, coefficients, NativePolynomialSquare.polynomial, Polynomial.coeff_one, Polynomial.coeff_X]\n  \u00b7 have hi' : 3 < i := by omega\n    rw [Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hg]; exact hi'),\n      Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hd]; exact hi')]\n    simp\n\ntheorem native_roots_checked : NativeRationalRoots.roots coefficients (1) = (\u2205 : Finset \u211a) := by\n  decide +kernel\n\ntheorem source_complete (r : \u211a) : source.eval r = 0 \u2194 r \u2208 (\u2205 : Finset \u211a) := by\n  rw [\u2190 native_roots_checked]\n  exact NativeRationalRoots.complete_nonmonic source source_nonzero coefficients (1)\n    (by norm_num) (by decide +kernel) scaled_monic scaling r\nend PerfectPower.RationalPacket_dbd5d8ec75600244\n#print axioms PerfectPower.RationalPacket_dbd5d8ec75600244.native_roots_checked\n#print axioms PerfectPower.RationalPacket_dbd5d8ec75600244.source_complete\n",
+      "namespace": "PerfectPower.RationalPacket_dbd5d8ec75600244",
+      "original_coefficients": [
+        "-2",
+        "0",
+        "0",
+        "1"
+      ],
+      "receipt": {
+        "coefficients": [
+          "-2",
+          "0",
+          "0",
+          "1"
+        ],
+        "denominator_scale": "1",
+        "integer_certificate": {
+          "clipped_interval": [
+            -4,
+            4
+          ],
+          "coefficients": [
+            -2,
+            0,
+            0,
+            1
+          ],
+          "complete": true,
+          "domain": [
+            null,
+            null
+          ],
+          "execution_verified": false,
+          "leading_coefficient": "1",
+          "nodes": [
+            [
+              -5,
+              4,
+              1,
+              0
+            ],
+            [
+              -5,
+              -1,
+              1,
+              1
+            ],
+            [
+              -1,
+              4,
+              1,
+              0
+            ],
+            [
+              -1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              4,
+              1,
+              0
+            ],
+            [
+              1,
+              2,
+              1,
+              0
+            ],
+            [
+              2,
+              4,
+              0,
+              0
+            ]
+          ],
+          "nodes_checked": 7,
+          "root_bound": 4,
+          "roots": [],
+          "squarefree": [
+            "-2",
+            "0",
+            "0",
+            "1"
+          ],
+          "squarefree_factors": [
+            [
+              1,
+              [
+                "-2",
+                "0",
+                "0",
+                "1"
+              ]
+            ]
+          ],
+          "sturm_chain": [
+            [
+              -2,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        },
+        "roots": [],
+        "schema": "pp-rational-roots/1"
+      },
+      "roots": [],
+      "schema": "pp-native-rational-certificate/1",
+      "scope": "compile the emitted Lean to prove original-source root completeness; native divisor budget applies",
+      "source_sha256": "4ca1d1c497d27d0d9975c8c60e57513dd128328f539ffd820e305f6c45368ce2"
+    },
+    "schema": "pp-native-two-torsion-certificate/1",
+    "scope": "compile Lean to prove smoothness and complete rational two-torsion on the completed-square model; original-model transport remains separate",
+    "source_sha256": "347258a73680a7727f2c843112fa7851c83209b6c748c0329eb105c336169992",
+    "two_torsion_cardinality": 1
+  },
+  {
+    "completed_coefficients": [
+      "9/4",
+      "-5/2",
+      "29/4"
+    ],
+    "curve": {
+      "ainvs": [
+        "1",
+        "2",
+        "3",
+        "-4",
+        "5"
+      ]
+    },
+    "execution_verified": false,
+    "lean": "import PerfectPower.NativeRationalRoots\nimport PerfectPower.EllipticPointDivision\nnamespace PerfectPower.RationalPacket_7ec2af249a5afc27\nopen Polynomial PerfectPower\nnoncomputable def source : Polynomial \u211a := C (29/4) + C (-5/2) * X + C (9/4) * X^2 + X^3\nprivate def coefficients : List \u2124 := [464,-40,9,1]\nprivate noncomputable def scaled : Polynomial \u2124 := NativePolynomialSquare.polynomial coefficients\nprivate theorem source_degree : source.natDegree = 3 := by unfold source; compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_leading : source.leadingCoeff = (1) := by\n  rw [Polynomial.leadingCoeff, source_degree]\n  norm_num [source, Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_nonzero : source \u2260 0 := by\n  intro hz\n  have hc := source_leading\n  rw [hz] at hc\n  norm_num at hc\nprivate theorem scaled_monic : scaled.Monic := by\n  simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> monicity! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem scaling : scaled.map (Int.castRingHom \u211a) =\n    (NativeRationalRoots.normalize source).scaleRoots (4) := by\n  have hn : NativeRationalRoots.normalize source = (C (29/4) + C (-5/2) * X + C (9/4) * X^2 + X^3 : Polynomial \u211a) := by\n    unfold NativeRationalRoots.normalize\n    rw [source_leading]\n    unfold source\n    simp only [mul_add, \u2190 mul_assoc, \u2190 Polynomial.C_mul]\n    norm_num <;> ring\n  rw [hn]\n  have hd : (C (29/4) + C (-5/2) * X + C (9/4) * X^2 + X^3 : Polynomial \u211a).natDegree = 3 := by compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  have hg : scaled.natDegree = 3 := by\n    simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  ext i\n  rw [Polynomial.coeff_map, Polynomial.coeff_scaleRoots, hd]\n  by_cases hi : i \u2264 3\n  \u00b7 interval_cases i <;> norm_num [scaled, coefficients, NativePolynomialSquare.polynomial, Polynomial.coeff_one, Polynomial.coeff_X]\n  \u00b7 have hi' : 3 < i := by omega\n    rw [Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hg]; exact hi'),\n      Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hd]; exact hi')]\n    simp\n\ntheorem native_roots_checked : NativeRationalRoots.roots coefficients (4) = (\u2205 : Finset \u211a) := by\n  decide +kernel\n\ntheorem source_complete (r : \u211a) : source.eval r = 0 \u2194 r \u2208 (\u2205 : Finset \u211a) := by\n  rw [\u2190 native_roots_checked]\n  exact NativeRationalRoots.complete_nonmonic source source_nonzero coefficients (4)\n    (by norm_num) (by decide +kernel) scaled_monic scaling r\nend PerfectPower.RationalPacket_7ec2af249a5afc27\n#print axioms PerfectPower.RationalPacket_7ec2af249a5afc27.native_roots_checked\n#print axioms PerfectPower.RationalPacket_7ec2af249a5afc27.source_complete\n\nnamespace PerfectPower.RationalPacket_7ec2af249a5afc27\nopen PerfectPower\n\ntheorem smooth_checked : (EllipticPointDivision.completed ((9/4) : \u211a) (-5/2) (29/4)).\u0394 \u2260 0 := by\n  norm_num [EllipticPointDivision.completed, WeierstrassCurve.\u0394, WeierstrassCurve.b\u2082,\n    WeierstrassCurve.b\u2084, WeierstrassCurve.b\u2086, WeierstrassCurve.b\u2088]\n\ntheorem actual_two_torsion_complete (P : (EllipticPointDivision.completed ((9/4) : \u211a) (-5/2) (29/4)).Point) :\n    (2 : \u2124) \u2022 P = 0 \u2194 P \u2208 EllipticPointDivision.torsionList ((9/4) : \u211a) (-5/2) (29/4)\n      smooth_checked (\u2205 : Finset \u211a).toList := by\n  apply EllipticPointDivision.torsion_list_complete\n  intro x\n  have h := source_complete x\n  have he : source.eval x = EllipticDivision.cubic ((9/4) : \u211a) (-5/2) (29/4) x := by\n    norm_num [source, EllipticDivision.cubic] <;> ring\n  rw [he] at h\n  simpa only [Finset.mem_toList] using h\nend PerfectPower.RationalPacket_7ec2af249a5afc27\n#print axioms PerfectPower.RationalPacket_7ec2af249a5afc27.smooth_checked\n#print axioms PerfectPower.RationalPacket_7ec2af249a5afc27.actual_two_torsion_complete\n",
+    "namespace": "PerfectPower.RationalPacket_7ec2af249a5afc27",
+    "rational_root_packet": {
+      "execution_verified": false,
+      "lean": "import PerfectPower.NativeRationalRoots\nnamespace PerfectPower.RationalPacket_7ec2af249a5afc27\nopen Polynomial PerfectPower\nnoncomputable def source : Polynomial \u211a := C (29/4) + C (-5/2) * X + C (9/4) * X^2 + X^3\nprivate def coefficients : List \u2124 := [464,-40,9,1]\nprivate noncomputable def scaled : Polynomial \u2124 := NativePolynomialSquare.polynomial coefficients\nprivate theorem source_degree : source.natDegree = 3 := by unfold source; compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_leading : source.leadingCoeff = (1) := by\n  rw [Polynomial.leadingCoeff, source_degree]\n  norm_num [source, Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem source_nonzero : source \u2260 0 := by\n  intro hz\n  have hc := source_leading\n  rw [hz] at hc\n  norm_num at hc\nprivate theorem scaled_monic : scaled.Monic := by\n  simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> monicity! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\nprivate theorem scaling : scaled.map (Int.castRingHom \u211a) =\n    (NativeRationalRoots.normalize source).scaleRoots (4) := by\n  have hn : NativeRationalRoots.normalize source = (C (29/4) + C (-5/2) * X + C (9/4) * X^2 + X^3 : Polynomial \u211a) := by\n    unfold NativeRationalRoots.normalize\n    rw [source_leading]\n    unfold source\n    simp only [mul_add, \u2190 mul_assoc, \u2190 Polynomial.C_mul]\n    norm_num <;> ring\n  rw [hn]\n  have hd : (C (29/4) + C (-5/2) * X + C (9/4) * X^2 + X^3 : Polynomial \u211a).natDegree = 3 := by compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  have hg : scaled.natDegree = 3 := by\n    simp [scaled, coefficients, NativePolynomialSquare.polynomial] <;> compute_degree! <;> norm_num [Polynomial.coeff_one, Polynomial.coeff_X]\n  ext i\n  rw [Polynomial.coeff_map, Polynomial.coeff_scaleRoots, hd]\n  by_cases hi : i \u2264 3\n  \u00b7 interval_cases i <;> norm_num [scaled, coefficients, NativePolynomialSquare.polynomial, Polynomial.coeff_one, Polynomial.coeff_X]\n  \u00b7 have hi' : 3 < i := by omega\n    rw [Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hg]; exact hi'),\n      Polynomial.coeff_eq_zero_of_natDegree_lt (by rw [hd]; exact hi')]\n    simp\n\ntheorem native_roots_checked : NativeRationalRoots.roots coefficients (4) = (\u2205 : Finset \u211a) := by\n  decide +kernel\n\ntheorem source_complete (r : \u211a) : source.eval r = 0 \u2194 r \u2208 (\u2205 : Finset \u211a) := by\n  rw [\u2190 native_roots_checked]\n  exact NativeRationalRoots.complete_nonmonic source source_nonzero coefficients (4)\n    (by norm_num) (by decide +kernel) scaled_monic scaling r\nend PerfectPower.RationalPacket_7ec2af249a5afc27\n#print axioms PerfectPower.RationalPacket_7ec2af249a5afc27.native_roots_checked\n#print axioms PerfectPower.RationalPacket_7ec2af249a5afc27.source_complete\n",
+      "namespace": "PerfectPower.RationalPacket_7ec2af249a5afc27",
+      "original_coefficients": [
+        "29/4",
+        "-5/2",
+        "9/4",
+        "1"
+      ],
+      "receipt": {
+        "coefficients": [
+          "29/4",
+          "-5/2",
+          "9/4",
+          "1"
+        ],
+        "denominator_scale": "4",
+        "integer_certificate": {
+          "clipped_interval": [
+            -466,
+            466
+          ],
+          "coefficients": [
+            464,
+            -40,
+            9,
+            1
+          ],
+          "complete": true,
+          "domain": [
+            null,
+            null
+          ],
+          "execution_verified": false,
+          "leading_coefficient": "1",
+          "nodes": [
+            [
+              -467,
+              466,
+              2,
+              1
+            ],
+            [
+              -467,
+              -1,
+              2,
+              1
+            ],
+            [
+              -467,
+              -234,
+              2,
+              2
+            ],
+            [
+              -234,
+              -1,
+              2,
+              1
+            ],
+            [
+              -234,
+              -118,
+              2,
+              2
+            ],
+            [
+              -118,
+              -1,
+              2,
+              1
+            ],
+            [
+              -118,
+              -60,
+              2,
+              2
+            ],
+            [
+              -60,
+              -1,
+              2,
+              1
+            ],
+            [
+              -60,
+              -31,
+              2,
+              2
+            ],
+            [
+              -31,
+              -1,
+              2,
+              1
+            ],
+            [
+              -31,
+              -16,
+              2,
+              2
+            ],
+            [
+              -16,
+              -1,
+              2,
+              1
+            ],
+            [
+              -16,
+              -9,
+              2,
+              1
+            ],
+            [
+              -16,
+              -13,
+              2,
+              1
+            ],
+            [
+              -16,
+              -15,
+              2,
+              2
+            ],
+            [
+              -15,
+              -13,
+              2,
+              1
+            ],
+            [
+              -15,
+              -14,
+              2,
+              1
+            ],
+            [
+              -14,
+              -13,
+              1,
+              1
+            ],
+            [
+              -13,
+              -9,
+              1,
+              1
+            ],
+            [
+              -9,
+              -1,
+              1,
+              1
+            ],
+            [
+              -1,
+              466,
+              1,
+              1
+            ]
+          ],
+          "nodes_checked": 21,
+          "root_bound": 466,
+          "roots": [],
+          "squarefree": [
+            "464",
+            "-40",
+            "9",
+            "1"
+          ],
+          "squarefree_factors": [
+            [
+              1,
+              [
+                "464",
+                "-40",
+                "9",
+                "1"
+              ]
+            ]
+          ],
+          "sturm_chain": [
+            [
+              464,
+              -40,
+              9,
+              1
+            ],
+            [
+              -40,
+              18,
+              3
+            ],
+            [
+              -756,
+              67
+            ],
+            [
+              -1
+            ]
+          ]
+        },
+        "roots": [],
+        "schema": "pp-rational-roots/1"
+      },
+      "roots": [],
+      "schema": "pp-native-rational-certificate/1",
+      "scope": "compile the emitted Lean to prove original-source root completeness; native divisor budget applies",
+      "source_sha256": "a5cf04f80c5f88263226e36aefdd1e431e528dd5569d96e2ae8bb7db6babd810"
+    },
+    "schema": "pp-native-two-torsion-certificate/1",
+    "scope": "compile Lean to prove smoothness and complete rational two-torsion on the completed-square model; original-model transport remains separate",
+    "source_sha256": "c2dc96166c31fa8d9c3b5bec5d826038287aaeef205d351067b645a64bd576a5",
+    "two_torsion_cardinality": 1
+  }
+]

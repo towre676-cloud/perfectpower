@@ -6,7 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
-    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','model_transport','two_isogeny','independence'},
+    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','model_transport','two_isogeny','independence','native_two_torsion'},
     differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
     superelliptic_family={'summary','evidence','observable'},
     binomial_sum={'summary','evidence','term','terms','telescoper','elliptic_bridge'},
@@ -44,6 +44,18 @@ def dispatch(catalogue, request):
         from .elliptic_division_verifier import verify_thirds,verify_division
         checker=verify_thirds if op=='verify_elliptic_thirds' else verify_division
         return dict(valid=checker(**args),execution_verified=False)
+    if op == 'native_two_torsion_certificate':
+        from .native_rational_certificate import two_torsion_certificate
+        return two_torsion_certificate(**args)
+    if op == 'native_rational_certificate':
+        from .native_rational_certificate import rational_certificate
+        return rational_certificate(**args)
+    if op == 'native_residue_certificate':
+        from .native_residue_certificate import residue_certificate
+        return residue_certificate(**args)
+    if op == 'native_braid_certificate':
+        from .native_braid_certificate import braid_certificate
+        return braid_certificate(**args)
     if op == 'population_certificate':
         from .native_population_certificate import population_certificate
         return population_certificate(**args)

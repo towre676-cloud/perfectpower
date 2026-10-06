@@ -254,3 +254,5 @@ The [documentation index](docs/README.md) organizes mathematical accounts, imple
 Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). Included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
 
 The connected closures continuation proves general ordered weighted Cauchy–Binet, emits kernel-checked bounded source population counts and numeric image selections, and adds integral-recognition uniqueness and marked monodromy replay. See [the monograph](docs/CONNECTED_CLOSURES_MONOGRAPH.md), `make connected-closures-lean`, and `make connected-closures-receipts`.
+
+The native bridges connect original rational-root packets, nonenumerated affine residue counts and marked braid words to Lean. See [the monograph](docs/NATIVE_BRIDGES_MONOGRAPH.md), `make native-bridges-receipts` and `make native-bridges-lean`.

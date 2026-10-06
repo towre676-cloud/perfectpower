@@ -1,3 +1,5 @@
+import PerfectPower.PicardLefschetz
+import PerfectPower.ResiduePopulation
 import PerfectPower.CauchyBinet
 import PerfectPower.IntegralRecognition
 import PerfectPower.QuarticCollision
