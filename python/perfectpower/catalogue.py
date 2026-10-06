@@ -18,18 +18,21 @@ def _bad(value):
 def compile_object(kind, specification):
     from .populations import ExactPopulation
     from .application_objects import SequenceLibrary, InverseDesign, GraphEnsemble, GeometryWorkbench, CombinatorialDesign
+    from .projected_populations import ProjectedPopulation
+    from .factorial_library import FactorialLibrary
     constructors = dict(population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
-                        graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign)
+                        graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign,projected=ProjectedPopulation,factorial=FactorialLibrary)
     if kind not in constructors:
         raise ValueError('unsupported catalogue kind')
     return constructors[kind](specification)
 
 
 class Catalogue:
-    def __init__(self, path, *, cache_limit=32):
+    def __init__(self, path, *, cache_limit=32, allow_thread_change=False):
         if type(cache_limit) is not int or not 1 <= cache_limit <= 256:
             raise ValueError('cache limit 1 through 256 required')
-        self.db = sqlite3.connect(path)
+        if type(allow_thread_change) is not bool:raise ValueError('thread option must be Boolean')
+        self.db = sqlite3.connect(path,check_same_thread=not allow_thread_change)
         self.db.execute('PRAGMA foreign_keys=ON')
         self.db.executescript('''CREATE TABLE IF NOT EXISTS objects
             (id TEXT PRIMARY KEY, kind TEXT NOT NULL, specification TEXT NOT NULL);

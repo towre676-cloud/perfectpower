@@ -1,0 +1,53 @@
+{
+  "schema": "pp-open-content-validation/1",
+  "base_commit": "af403fc9a1d021a56fa986311cb903f8b7ad3e04",
+  "full_python_suite": {
+    "total": 994,
+    "passed": 990,
+    "skipped": 4,
+    "groups": [
+      962,
+      14,
+      10,
+      8
+    ],
+    "skip_scope": "optional Lean-dependent checks"
+  },
+  "new_tests": 20,
+  "cold_archive_tests": {
+    "total": 20,
+    "passed": 20
+  },
+  "service_replayed_requests": 17,
+  "graph_decisions": "all decisions in all 504 samples independently replayed",
+  "source_inventory": "all four complete source texts and hashes match current files",
+  "clients": "both shipped scripts executed in DOM/canvas mocks; actual HTTP round trips passed",
+  "pdf": {
+    "pages": 9,
+    "all_pages_rendered": true,
+    "visual_review": "passed"
+  },
+  "lean": "not rebuilt: pinned Mathlib artifacts unavailable; no new Lean theorem",
+  "archive_size_limit": null,
+  "performance": "both C controls and every candidate interleaved; each full output independently checked; cache-friendly untiled control remains faster than compatible candidates",
+  "lossless_receipt_compression": {
+    "algebraic_graphs.json.gz": {
+      "uncompressed_bytes": 1924127,
+      "gzip_bytes": 60956,
+      "uncompressed_sha256": "9935557d3d39794adfc7335b9c383029e3f3a324b66745e69a067ddd21ab43d3",
+      "roundtrip": "byte identical"
+    },
+    "flavor_identifiability.json.gz": {
+      "uncompressed_bytes": 1072306,
+      "gzip_bytes": 24292,
+      "uncompressed_sha256": "326604c846999f00c0db6fe53cfc261e46e50d540f159548d0c6b1301b3edcae",
+      "roundtrip": "byte identical"
+    },
+    "nonlinear_factorial_library.json.gz": {
+      "uncompressed_bytes": 789581,
+      "gzip_bytes": 174230,
+      "uncompressed_sha256": "764e3ac60db7de0a3a24333adb55bf3912bc1d30906abcba2770330197ca00a1",
+      "roundtrip": "byte identical"
+    }
+  }
+}

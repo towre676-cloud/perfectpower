@@ -22,6 +22,13 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'opencontent':{
+            'title':'Open content',
+            'subtitle':'Exact direct-use workflows<br/>and research diagnostics',
+            'description':'Bounded integer design, globally cheapest experiments, algebraic graph sampling, nonlinear sequence execution, distinct populations, symbolic joins, compatible charts and a local object console.',
+            'metrics':[('8','persistent object kinds'),('52','nonlinear families'),('512','family-partitioned tasks')],
+            'scope':'Full source and evidence without an archive cap. Tested Python and measured C kernels; general mathematical proofs, global smooth geometry and physical derivations retain their stated open scope.',
+        },
         'applications':{
             'title':'Executable applications',
             'subtitle':'Persistent objects, exact workflows<br/>and measured configuration design',
@@ -119,7 +126,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

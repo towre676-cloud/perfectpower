@@ -6,9 +6,11 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    projected={'summary','count','select','rank','page','sample','partition','locate','multiplicity','evidence'},
+    factorial={'summary','terms','residues'},
     population={'summary', 'count', 'select', 'rank', 'locate', 'page', 'next', 'sample', 'partition', 'optimize', 'evidence'},
-    sequence={'summary', 'terms', 'subsequence', 'experiment'}, inverse={'solve'},
-    graph={'event', 'sample'}, geometry={'point', 'segment', 'grid'},
+    sequence={'summary', 'terms', 'subsequence', 'experiment', 'witness_experiment'}, inverse={'solve', 'solve_box'},
+    graph={'event', 'sample'}, geometry={'point', 'segment', 'grid', 'transition', 'transport'},
     combinatorial={'gamma', 'sizes', 'select_size'})
 
 
@@ -26,6 +28,11 @@ def dispatch(catalogue, request):
         return catalogue.definition(request['object'])
     if op == 'join':
         return catalogue.join(request['object'], request['other'], **args)
+    if op == 'symbolic_join':
+        from .projected_populations import symbolic_join
+        if any(catalogue.definition(r)['kind']!='population' for r in (request['object'],request['other'])):raise ValueError('symbolic join requires population objects')
+        derived=symbolic_join(catalogue.get(request['object']),catalogue.get(request['other']),**args)
+        return catalogue.register('population',derived.specification,request.get('name'))
     definition = catalogue.definition(request['object'])
     obj = catalogue.get(request['object'])
     if op == 'restrict' and definition['kind'] == 'population':
@@ -74,11 +81,17 @@ def serve(catalogue, source, destination, *, request_byte_limit=1000000):
 def add_commands(sub):
     p = sub.add_parser('service', help='persistent exact object catalogue over JSONL stdin/stdout')
     p.add_argument('--database', required=True)
+    p.add_argument('--http-port',type=int,help='serve the local HTTP console on this port (0 selects a free port)')
 
 
 def cli(args):
     if args.command != 'service':
         return False
+    if args.http_port is not None:
+        if not 0<=args.http_port<=65535:raise ValueError('HTTP port 0 through 65535 required')
+        from .http_service import run
+        run(args.database,args.http_port)
+        return True
     with Catalogue(args.database) as catalogue:
         serve(catalogue, sys.stdin, sys.stdout)
     return True

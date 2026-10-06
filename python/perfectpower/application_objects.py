@@ -43,7 +43,15 @@ class SequenceLibrary:
                                     offset=offset, step=step)
 
     def experiment(self, left, right, operator_cost=1, readout_costs=None):
-        """Cheapest separating witness in the compiled finite witness set."""
+        """Globally cheapest finite separating word for positive operator cost."""
+        from .optimal_experiments import cheapest_experiment
+        result = cheapest_experiment(self.machine, left, right, [operator_cost], readout_costs)
+        if 'readout' in result:
+            result['name'] = self.names[result['readout']]
+        return result
+
+    def witness_experiment(self, left, right, operator_cost=1, readout_costs=None):
+        """Legacy finite-witness comparison, retained for reproduction."""
         from .integral_machine import distinguish_states
         from .observable_machine import _word, _apply
         answer = distinguish_states(self.machine, left, right)
@@ -78,20 +86,19 @@ class InverseDesign:
     def solve(self, observation, target):
         return self.optimizer.nearest(observation, [Q(x) for x in target])
 
+    def solve_box(self, observation, target, lower, upper, inequalities=(), node_limit=100000):
+        from .bounded_inverse import closest_in_box
+        return closest_in_box(self.optimizer.certificate['matrix'], observation, target,
+                              lower, upper, self.optimizer.mass, inequalities, node_limit=node_limit)
+
 
 class GraphEnsemble:
-    """Exact conditional sampling for rational cyclotomic event probabilities.
-
-    Power 2, 3, 4 and 6 have rational real subfields. Higher orders are
-    deliberately rejected until exact algebraic comparison is implemented.
-    """
+    """Exact conditional sampling with rational or algebraic probabilities."""
     def __init__(self, specification):
         from .connection_polytope import ConnectionGraph
         from .connection_measure import ConnectionMeasure
         if set(specification) - {'vertices', 'edges', 'power', 'weights'}:
             raise ValueError('unknown graph field')
-        if specification['power'] not in (2, 3, 4, 6):
-            raise ValueError('sampling requires rational real cyclotomic probabilities (power 2,3,4,6)')
         graph = ConnectionGraph(specification['vertices'], tuple(specification['edges']), specification['power'])
         self.measure = ConnectionMeasure(graph, specification.get('weights'))
         if self.measure.kernel is None:
@@ -104,7 +111,11 @@ class GraphEnsemble:
         return Q(value.coefficients[0])
 
     def event(self, included=(), excluded=()):
-        return self._rational(self.measure.event(included, excluded))
+        return self._probability(self.measure.event(included, excluded))
+
+    def _probability(self, value):
+        if not any(value.coefficients[1:]):return self._rational(value)
+        return dict(order=self.measure.graph.power, coefficients=list(map(str,value.coefficients)))
 
     def sample(self, size, seed=0, included=(), excluded=(), rng=None):
         from random import Random
@@ -113,8 +124,8 @@ class GraphEnsemble:
         inc, exc = tuple(included), tuple(excluded)
         if size * max(1, len(self.measure.graph.edges))**4 > self.measure.work_limit:
             raise WorkLimit('aggregate sequential event work exceeds sampling budget')
-        probability = self.event(inc, exc)
-        if not probability:
+        probability = self.measure.event(inc, exc)
+        if probability == self.measure.field.element(0):
             raise ValueError('conditioning event has zero probability')
         random = Random(seed) if rng is None else rng
         records = []
@@ -123,12 +134,11 @@ class GraphEnsemble:
             for edge in range(len(self.measure.graph.edges)):
                 if edge in yes or edge in no:
                     continue
-                numerator = self.event(yes + [edge], no)
-                p = numerator / denominator
-                if not 0 <= p <= 1:
-                    raise AssertionError('invalid conditional probability')
-                take = bool(p) and (p == 1 or random.randrange(p.denominator) < p.numerator)
-                decisions.append(dict(edge=edge, probability=str(p), included=take))
+                numerator = self.measure.event(yes + [edge], no)
+                p = numerator * denominator.inverse()
+                from .cyclotomic_real import exact_bernoulli
+                take, decision = exact_bernoulli(p, self.measure.graph.power, random)
+                decisions.append(dict(edge=edge, probability=self._probability(p), included=take, comparison=decision))
                 if take:
                     yes.append(edge); denominator = numerator
                 else:
@@ -136,9 +146,11 @@ class GraphEnsemble:
             yes.sort()
             if len(yes) != self.measure.graph.vertices or self.measure.graph.support(yes)['rank'] != len(yes):
                 raise AssertionError('sample is not a complete graph basis')
-            records.append(dict(edges=yes, conditional_probability=str(denominator/probability), decisions=decisions))
-        return dict(schema='pp-graph-sample/1', seed=seed, included=inc, excluded=exc,
-                    conditioning_probability=str(probability), samples=records,
+            value = self._probability(denominator * probability.inverse())
+            records.append(dict(edges=yes, conditional_probability=str(value) if isinstance(value,Q) else value, decisions=decisions))
+        value = self._probability(probability)
+        return dict(schema='pp-graph-sample/2', seed=seed, included=inc, excluded=exc,
+                    conditioning_probability=str(value) if isinstance(value,Q) else value, samples=records,
                     distribution='determinant-weighted bases, independent draws with replacement',
                     basis_enumerations=0, execution_verified=False)
 
@@ -165,7 +177,7 @@ class GeometryWorkbench:
         from .metric_boxes import compare, MetricBoxSpace
         if set(specification) != {'coefficients', 'panels'} or not 1 <= len(specification['panels']) <= 16:
             raise ValueError('coefficients and one through 16 named panels required')
-        self.packets, self.spaces = {}, {}
+        self.packets, self.spaces, self.transitions = {}, {}, {}
         for name, panel in specification['panels'].items():
             packet = compare(specification['coefficients'], **panel)
             self.spaces[name] = MetricBoxSpace(packet)
@@ -187,6 +199,26 @@ class GeometryWorkbench:
     def write_html(self, path, resolution=9):
         from .geometry_workbench import write_html
         return write_html(self, path, resolution)
+
+    def transition(self, source, target):
+        from .chart_transitions import certify_transition
+        a,b=self.packets[source],self.packets[target]
+        if b['chart_data']['chart']!='finite':raise ValueError('target panel must be a finite chart')
+        key=(source,target)
+        if key not in self.transitions:
+            data=a['chart_data']
+            self.transitions[key]=certify_transition(data['coefficients'],data['chart'],a['box'],b['box'],data['branch'])
+        return deepcopy(self.transitions[key])
+
+    def transport(self, source, target, point):
+        from .chart_transitions import transport_point
+        result=transport_point(self.transition(source,target),point)
+        a=self.point(source,result['source_point']);b=self.point(target,result['target_point']);factor=Q(result['density_multiplier'])
+        interval=[max(Q(a['density_interval'][0]),factor*Q(b['density_interval'][0])),
+                  min(Q(a['density_interval'][1]),factor*Q(b['density_interval'][1]))]
+        if interval[0]>interval[1]:raise AssertionError('compatible density enclosures disagree')
+        return dict(result,source_density=a['density_interval'],target_density=b['density_interval'],
+                    common_source_density=list(map(str,interval)),compatible=True)
 
 
 class CombinatorialDesign:

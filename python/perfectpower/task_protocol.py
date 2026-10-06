@@ -43,3 +43,46 @@ def evaluate_tasks(packet, predictions, split='test'):
     correct = sum(t['correct'] for t in details)
     return dict(split=split, total=len(details), answered=len(predictions), correct=correct,
                 accuracy=None if not details else str(__import__('fractions').Fraction(correct, len(details))), details=details)
+
+
+def heldout_families(families,*,size_per_family=64,seed=0):
+    """Split whole declared mathematical families, rejecting cross-split aliases."""
+    from .populations import ExactPopulation
+    if not isinstance(families,list) or not 1<=len(families)<=64:raise ValueError('one through 64 family definitions required')
+    if type(size_per_family) is not int or not 0<=size_per_family<=100000:raise ValueError('bounded nonnegative family sample size required')
+    splits={};populations={};tasks=[];sources=[];identities=set()
+    for i,family in enumerate(families):
+        if set(family)!={'family','split','specification'} or family['split'] not in ('train','validation','test'):
+            raise ValueError('family name, split and population specification required')
+        name=family['family'];split=family['split']
+        if not isinstance(name,str) or not name:raise ValueError('nonempty source-family label required')
+        if name in splits and splits[name]!=split:raise ValueError('source family appears in multiple splits')
+        splits[name]=split;p=ExactPopulation(family['specification'])
+        if p.population_id in populations and populations[p.population_id]!=split:raise ValueError('population alias crosses held-out splits')
+        populations[p.population_id]=split
+        packet=heldout_tasks(p,min(size_per_family,p.cardinality),seed=seed+i,family=name)
+        for task in packet['tasks']:
+            if task['task_id'] in identities:raise ValueError('duplicate source task identity')
+            identities.add(task['task_id']);task['split']=split;tasks.append(task)
+        sources.append(dict(family=name,split=split,population_id=p.population_id,cardinality=p.cardinality))
+    return dict(schema='pp-heldout-families/1',seed=seed,sources=sources,tasks=tasks,
+        protocol='entire declared source families held out; no population alias may cross partitions')
+
+
+def solve_public_tasks(tasks):
+    """Measured exact-solver baseline reading only public prompt fields."""
+    from .populations import ExactPopulation
+    from .catalogue import encoded
+    from time import perf_counter_ns
+    cache={};predictions={};ledger=[]
+    for task in tasks:
+        prompt=task['prompt']
+        if prompt['operation']!='recover_rank':raise ValueError('unsupported public task operation')
+        key=encoded(prompt['population']);start=perf_counter_ns()
+        if key not in cache:cache[key]=ExactPopulation(prompt['population'])
+        population=cache[key];rank=population.locate(**prompt['values'])
+        elapsed=perf_counter_ns()-start
+        predictions[task['task_id']]=dict(rank=rank)
+        ledger.append(dict(task_id=task['task_id'],elapsed_ns=elapsed))
+    return dict(predictions=predictions,ledger=ledger,compiled_definitions=len(cache),
+        provenance='exact-solver baseline executes public prompts; no private answers read; not an LLM benchmark')

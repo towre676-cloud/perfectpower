@@ -167,3 +167,10 @@ Three light global families, controlled residual breaking, the relative
 up/down interaction, the golden observable coefficient, and a physical
 66-degree CP phase remain open. Publication novelty requires specialist
 review; no particle-physics derivation is claimed.
+
+
+## Uncapped open-content application extension
+
+The concrete application gaps now have exact bounded calibration with linear inequalities, global cheapest positive-cost separating experiments, algebraic graph sampling through order 64, whole-family task partitions, a local HTTP console, actual compiled configuration measurements with two controls, distinct quadratic image populations, supported huge symbolic equality joins, and certified branch/infinity-to-finite overlap transport. A nonlinear factorial library covers all 52 sourced Bober parameter families. See `OPEN_CONTENT_MONOGRAPH.md` and the updated `DIRECT_USE_BUILD_ROADMAP.md` for contracts and evidence. These are tested Python extensions, not new Lean proofs.
+
+The flavor model now has an exact stationarity-space audit (rank eight in a 13-coefficient degree-12 harmonic space) and an allowed-deformation response that breaks the nominated scalar golden closure. This narrows what the current symmetries establish; deriving the physical golden frame coefficient and phase from a specified noncentral interaction remains open. General effective arithmetic, kernel foundations, analytic normalization and global smooth geometry retain their unresolved scope. The full historical open notes are preserved with hashes; extracted keywords require current proof review. The archive has no size cap.

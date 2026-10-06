@@ -12,8 +12,8 @@ def poly(terms):
     out={}
     if isinstance(terms,dict): terms=[(i,j,c) for (i,j),c in terms.items()]
     for i,j,c in terms:
-        if type(i) is not int or type(j) is not int or not 0<=i<=32 or not 0<=j<=32:
-            raise ValueError('degrees must be integers in 0..32')
+        if type(i) is not int or type(j) is not int or not 0<=i<=64 or not 0<=j<=64:
+            raise ValueError('degrees must be integers in 0..64')
         c=Q(c)
         if max(c.numerator.bit_length(),c.denominator.bit_length())>4096: raise WorkLimit('coefficient size')
         out[i,j]=out.get((i,j),Q(0))+c

@@ -5,7 +5,7 @@ from time import perf_counter_ns
 import platform
 
 
-def tune(population, run, expected, *, repeats=5, warmups=1, candidate_limit=64, seed=0, clock=perf_counter_ns):
+def tune(population, run, expected, *, repeats=5, warmups=1, candidate_limit=64, seed=0, clock=perf_counter_ns, comparison=None, controls=None):
     """Interleave all candidates; check every result against a supplied reference.
 
     `run` is a Python callable, never source evaluated by the service. The
@@ -17,27 +17,43 @@ def tune(population, run, expected, *, repeats=5, warmups=1, candidate_limit=64,
         raise ValueError('nonempty population must fit candidate budget')
     if type(repeats) is not int or not 1 <= repeats <= 100 or type(warmups) is not int or not 0 <= warmups <= 10:
         raise ValueError('repeats 1..100 and warmups 0..10 required')
+    controls={} if controls is None else controls
+    if not isinstance(controls,dict) or len(controls)>8 or any(not isinstance(k,str) or not callable(v) for k,v in controls.items()):
+        raise ValueError('at most eight named callable comparison controls required')
+    comparators=([('comparison',comparison)] if comparison is not None else [])+list(controls.items())
+    if len({k for k,_ in comparators})!=len(comparators):raise ValueError('duplicate comparison control name')
     records = [population.select(i) for i in range(population.cardinality)]
-    times = [[] for _ in records]; ledger = []; random = Random(seed)
+    times = [[] for _ in records]; control_times={k:[] for k,_ in comparators}; ledger = []; random = Random(seed)
     for round_index in range(-warmups, repeats):
-        order = list(range(len(records))); random.shuffle(order)
+        order = list(range(len(records)+len(comparators))); random.shuffle(order)
         for rank in order:
-            start = clock(); actual = run(records[rank]['values']); elapsed = clock()-start
+            comparator = rank >= len(records)
+            label,call=(comparators[rank-len(records)] if comparator else (None,None))
+            start = clock(); actual = call() if comparator else run(records[rank]['values']); elapsed = clock()-start
             if actual != expected:
                 raise ValueError(f'kernel result differs from independent reference at rank {rank}')
             if elapsed < 0:
                 raise ValueError('clock must be monotone')
             if round_index >= 0:
-                times[rank].append(elapsed)
-                ledger.append(dict(round=round_index, rank=rank, elapsed_ns=elapsed))
+                if comparator:control_times[label].append(elapsed)
+                else:times[rank].append(elapsed)
+                item=dict(round=round_index, rank=None if comparator else rank, elapsed_ns=elapsed)
+                if comparator:item['comparison']=True if label=='comparison' else label
+                ledger.append(item)
     scores = [dict(record=r, median_ns=median(t), min_ns=min(t), max_ns=max(t), trials_ns=t)
               for r, t in zip(records, times)]
     best = min(x['median_ns'] for x in scores)
-    return dict(schema='pp-measured-tuning/1', population_id=population.population_id,
+    result = dict(schema='pp-measured-tuning/1', population_id=population.population_id,
                 candidates=scores, winners=[x['record'] for x in scores if x['median_ns'] == best],
                 minimum_median_ns=best, ledger=ledger, repeats=repeats, warmups=warmups, seed=seed,
                 environment=dict(python=platform.python_version(), machine=platform.machine(), system=platform.system()),
                 scope='minimum measured median among all supplied candidates on this host/workload; no universal speedup claim')
+    for label,trials in control_times.items():
+        statistics=dict(median_ns=median(trials),min_ns=min(trials),max_ns=max(trials),trials_ns=trials,
+            interleaved=True,baseline_over_best_median=None if not best else median(trials)/best)
+        if label=='comparison':result[label]=statistics
+        else:result.setdefault('controls',{})[label]=statistics
+    return result
 
 
 def blocked_matmul(left, right, row_block, column_block):

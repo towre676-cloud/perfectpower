@@ -161,7 +161,7 @@ class Applications(unittest.TestCase):
             graph=GraphEnsemble(dict(GRAPH,power=order))
             self.assertEqual(graph.event([2]),Q(1,2))
             self.assertEqual(len(graph.sample(2)['samples']),2)
-        with self.assertRaises(ValueError):GraphEnsemble(dict(GRAPH,power=5))
+        self.assertEqual(len(GraphEnsemble(dict(GRAPH,power=5)).sample(1)['samples']),1)
         with self.assertRaises(ValueError):GraphEnsemble(dict(GRAPH,edges=[[0,0,0]]*3))
         with self.assertRaises(ValueError):GraphEnsemble(GRAPH).sample(1,included=[0,1])
         with self.assertRaises(WorkLimit):GraphEnsemble(dict(vertices=1,edges=[[0,0,1]]*40,power=2)).sample(1)
