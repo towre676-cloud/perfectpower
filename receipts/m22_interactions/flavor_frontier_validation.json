@@ -1,0 +1,28 @@
+{
+  "base_commit": "0352069fd21c81746bb0f25f7479fd1d005cd2c9",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "fresh_extraction_test_count": 82,
+  "fresh_scientific_receipts_byte_identical": true,
+  "new_frontier_tests": 22,
+  "pdf_page_counts": {
+    "B5_Protected_Flavor_Monograph.pdf": 100,
+    "Flavor_Exact_Tensors_Running_and_Vacuum_Selection.pdf": 8
+  },
+  "scientific_receipt_sha256": {
+    "receipts/m22_interactions/flavor_frontier.json": "1395ac6ff95a69908bfc51dcac0dcf30f0f47cb75e37a63e10e2ebf8da9674b1",
+    "receipts/m22_interactions/nonet_exact_tensor_proof.json": "177fad888124a0338bb5055efb7ae778faa47a594c9e55adab2c5cbd48b899db",
+    "receipts/m22_interactions/nonet_higgs_exact_loop_algebra.json": "48dd0da50685ad5858b388fbe86803bc695b5f478fd9196d80eb3ecb67ce2dad"
+  },
+  "scope": "Focused and adjacent flavor tests; exact Python tensor identities, not new Lean proofs. Full two-loop matching, all higher operators and the absolute global vacuum are not certified.",
+  "test_count": 82,
+  "test_files": [
+    "test_flavor_frontier.py",
+    "test_valentiner_nonet_joint.py",
+    "test_valentiner_mediator_closure.py",
+    "test_flavor_electromagnetic.py",
+    "test_valentiner_hermitian.py"
+  ]
+}
