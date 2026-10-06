@@ -1,0 +1,115 @@
+{
+  "audited_commit": "c7cdb4cf9814a7be006c17965678084b85211612",
+  "empirical": {
+    "PDG_equations": {
+      "Vcb": "12.11",
+      "Vub": "12.12",
+      "Vus": "12.8",
+      "sin2beta": "12.20"
+    },
+    "central_measured_effective_coefficient": 0.42608866876504814,
+    "checked_date": "2026-10-06",
+    "combined_measurements": {
+      "Vcb": [
+        0.0407,
+        0.0013
+      ],
+      "Vub": [
+        0.00389,
+        0.00016
+      ],
+      "Vus": [
+        0.22431,
+        0.00085
+      ],
+      "sin2beta": [
+        0.71,
+        0.011
+      ]
+    },
+    "golden_coefficient": 0.3819660112501051,
+    "independent_linear_sigma": 0.022247600749814037,
+    "nominal_independent_error_offset_in_sigma": 1.983254644450227,
+    "reference_2025_anchor_predictions": {
+      "J": 2.8877773923489935e-05,
+      "Rtdts": 0.2087233187384513,
+      "Vub": 0.0035214421827599357,
+      "gamma": 65.96706845402693,
+      "sin2beta": 0.6908883115837059
+    },
+    "scope": "Illustrative independent-error comparison, not a global fit, exclusion significance, posterior update or evidence of discovery. Historical inputs remain unchanged.",
+    "source": "https://pdg.lbl.gov/2026/reviews/rpp2026-rev-ckm-matrix.pdf",
+    "source_revision": "March 2026",
+    "updated_anchor_conditional_predictions": {
+      "J": 2.8318868861798734e-05,
+      "Rtdts": 0.20872321147459189,
+      "Vub": 0.003487169401730858,
+      "gamma": 65.96770671454419,
+      "sin2beta": 0.6908818409690595
+    }
+  },
+  "input_sha256": {
+    "python/develop_m22_global_modes.py": "251a5c7af0143e9cd8a18e3ebc80b35ea3f4fb60a921ba1ef95189773fea9e1c",
+    "python/develop_valentiner_cp.py": "e2aaa5b691aff2f6dc71f7ab5f2ebf041dba69e657310053e98db005dfd7f87a",
+    "python/develop_valentiner_link.py": "2f8f152016b536d2c718abe01273a166a17ec5ac078698fc49802e574fc3d97f",
+    "python/develop_valentiner_messenger.py": "8fcfaf477f89fee042cb424a7d5d22ee185c13b1e86c6372a65c6d081ac5cdb2",
+    "python/perfectpower/flavor_identifiability.py": "9e62d0d17331675f8e297a34eeb7a4c4e731b0408c6e5602392f0aed89fcda06",
+    "receipts/flavor_prediction/training.json": "b44c036239b192d87cf3090fd9bdaf67f9a6b70c279c44619e2ac90244b020ae",
+    "receipts/m22_interactions/m22_global_modes.json": "9ee024eff2360b893228a2184252e651cca1045927b7cb896b084fab108f68fd",
+    "receipts/m22_interactions/valentiner_cp.json": "f8a29635e8a017cce7a5e750735c9722e43ec2601a234bd318266913998f62b3",
+    "receipts/m22_interactions/valentiner_invariants.json": "e8c7d8c1b8c2027a7985a64b6071b95b7f2d438bd7821cca56f80994f7cb433b",
+    "receipts/m22_interactions/valentiner_link.json": "bb856a5482a3cf1ef8f268a7da0f0b86c9585ccbbf45d97d62acbce00b01c105",
+    "receipts/m22_interactions/valentiner_messenger.json": "f56990be6072fc4c7590470ff7094e6b5a3be981fc718121a198f9de85c94506"
+  },
+  "schema": "pp-flavor-input-audit/1",
+  "sextic_scalar_matching": {
+    "Euler_derivative_at_identity": 96,
+    "canonical_F_potential_for_W_kappa_I6_on_rI": "3072*abs(kappa)^2*r^10",
+    "exact_reduced_density": [
+      [
+        "16/3",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "16/3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "16/3"
+      ]
+    ],
+    "gradient_I6_at_identity": [
+      [
+        32,
+        0,
+        0
+      ],
+      [
+        0,
+        32,
+        0
+      ],
+      [
+        0,
+        0,
+        32
+      ]
+    ],
+    "nonzero_group_link_is_radially_stationary_for_sextic_only": false,
+    "scope": "An isolated holomorphic sextic does not generate the chosen nonzero scalar alignment vacuum. Other allowed superpotential, kinetic and soft terms must be matched.",
+    "tensor_norm_squared": 16
+  },
+  "stationarity": {
+    "degree": 8,
+    "minimal_polynomial": "x**8 - 7*x**6 + 14*x**4 - 8*x**2 + 1",
+    "rational_six_harmonic_rank": 4,
+    "rational_twelve_harmonic_rank": 8,
+    "real_single_angle_rank": 1,
+    "scope": "Rational coefficients imply stationarity at all conjugate roots; real coefficients do not.",
+    "two_harmonic_real_stationary_example_c3": "(-sqrt(sqrt(5)/8 + 5/8) + sqrt(3)*(1/4 - sqrt(5)/4))/(3/4 - 3*sqrt(5)/4)"
+  }
+}

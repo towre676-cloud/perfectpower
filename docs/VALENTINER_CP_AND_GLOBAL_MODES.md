@@ -1,5 +1,7 @@
 # Product-family interactions, physical CP, and global cap modes
 
+The subsequent [input audit](FLAVOR_SEARCH_INPUT_AUDIT.md) distinguishes these separate constructions and checks their missing matching steps. In particular, the supersymmetric messenger superpotential is not the supplied positive scalar alignment potential, and the nonsupersymmetric quark example's conjugate-link reverse coupling cannot be copied unchanged into a superpotential with just one chiral link. The audit also retains updated experimental comparisons without changing the historical inputs.
+
 ## Concrete advance and remaining boundary
 
 This push constrains the problematic cross-sector interaction by changing the specified family group to G_u x G_d, with each G_f=3.A6, and joining the sectors with a bifundamental link. The bare absolute overlap quartic is forbidden. The first dressed overlap is degree six. The link has a unique new holomorphic sextic tensor, whose component ratios come from the previously derived Valentiner invariant. A renormalizable supersymmetric messenger chain generates this contraction at leading tree order, with its complete allowed holomorphic operator audit retained. A positive alignment interaction has exact zero-energy states at every group matrix, without inserting a CKM angle.
