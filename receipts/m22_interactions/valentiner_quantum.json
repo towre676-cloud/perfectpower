@@ -1,0 +1,1390 @@
+{
+  "fermion_vacuum_backreaction": {
+    "CW_scale_ratio": 9.999999999999927e-21,
+    "Higgs_soft_mass_matching_shift": 9.340325986041532e-14,
+    "expected_ratio": 1e-20,
+    "maximum_linearized_flavor_coordinate_shift": 5.532321927667793e-18,
+    "scope": "Fermionic Coleman-Weinberg contribution and linearized flavor response after Higgs tadpole matching; scalar-loop feedback is not included."
+  },
+  "finite_EFT_quality_bounds": [
+    {
+      "coefficient_absolute_bound": 1.0,
+      "combined_absolute_phase_bound": 2.935201996004339e-08,
+      "cutoff": 1000000000.0,
+      "scope": "Uniform finite-EFT bound for all higher Higgs and heavy-mass/source terms through three scalar insertions; independent coefficients inside the stated norm domain. No assertion about operators beyond the stated order.",
+      "sectors": [
+        {
+          "absolute_phase_bound": 1.4508911019809605e-08,
+          "relative_operator_norm_bound": 1.2090759175865347e-09
+        },
+        {
+          "absolute_phase_bound": 1.4843108940233786e-08,
+          "relative_operator_norm_bound": 1.2369257442544896e-09
+        }
+      ],
+      "tensor_normalization": "unit Frobenius norm"
+    },
+    {
+      "coefficient_absolute_bound": 1.0,
+      "combined_absolute_phase_bound": 2.93520199265529e-09,
+      "cutoff": 10000000000.0,
+      "scope": "Uniform finite-EFT bound for all higher Higgs and heavy-mass/source terms through three scalar insertions; independent coefficients inside the stated norm domain. No assertion about operators beyond the stated order.",
+      "sectors": [
+        {
+          "absolute_phase_bound": 1.4508911003346968e-09,
+          "relative_operator_norm_bound": 1.2090759168724873e-10
+        },
+        {
+          "absolute_phase_bound": 1.4843108923205928e-09,
+          "relative_operator_norm_bound": 1.2369257435239948e-10
+        }
+      ],
+      "tensor_normalization": "unit Frobenius norm"
+    },
+    {
+      "coefficient_absolute_bound": 1.0,
+      "combined_absolute_phase_bound": 2.9352019923203823e-10,
+      "cutoff": 100000000000.0,
+      "scope": "Uniform finite-EFT bound for all higher Higgs and heavy-mass/source terms through three scalar insertions; independent coefficients inside the stated norm domain. No assertion about operators beyond the stated order.",
+      "sectors": [
+        {
+          "absolute_phase_bound": 1.4508911001700691e-10,
+          "relative_operator_norm_bound": 1.2090759168010815e-11
+        },
+        {
+          "absolute_phase_bound": 1.4843108921503131e-10,
+          "relative_operator_norm_bound": 1.2369257434509443e-11
+        }
+      ],
+      "tensor_normalization": "unit Frobenius norm"
+    },
+    {
+      "coefficient_absolute_bound": 1.0,
+      "combined_absolute_phase_bound": 2.935201992286891e-11,
+      "cutoff": 1000000000000.0,
+      "scope": "Uniform finite-EFT bound for all higher Higgs and heavy-mass/source terms through three scalar insertions; independent coefficients inside the stated norm domain. No assertion about operators beyond the stated order.",
+      "sectors": [
+        {
+          "absolute_phase_bound": 1.450891100153606e-11,
+          "relative_operator_norm_bound": 1.2090759167939408e-12
+        },
+        {
+          "absolute_phase_bound": 1.484310892133285e-11,
+          "relative_operator_norm_bound": 1.2369257434436393e-12
+        }
+      ],
+      "tensor_normalization": "unit Frobenius norm"
+    },
+    {
+      "coefficient_absolute_bound": 1.0,
+      "combined_absolute_phase_bound": 2.935201992283542e-12,
+      "cutoff": 10000000000000.0,
+      "scope": "Uniform finite-EFT bound for all higher Higgs and heavy-mass/source terms through three scalar insertions; independent coefficients inside the stated norm domain. No assertion about operators beyond the stated order.",
+      "sectors": [
+        {
+          "absolute_phase_bound": 1.45089110015196e-12,
+          "relative_operator_norm_bound": 1.2090759167932268e-13
+        },
+        {
+          "absolute_phase_bound": 1.484310892131582e-12,
+          "relative_operator_norm_bound": 1.2369257434429086e-13
+        }
+      ],
+      "tensor_normalization": "unit Frobenius norm"
+    }
+  ],
+  "hierarchical_inverse_matching": {
+    "CKM_magnitude_error": 4.440892098500626e-16,
+    "CKM_reference": "PDG 2026 review, equation 12.28, central inputs",
+    "matched_observables": {
+      "J": 3.1593716289270404e-05,
+      "Rtdts": 0.2095573887174162,
+      "Vcb": 0.0418897034142103,
+      "Vub": 0.003763000000000072,
+      "Vus": 0.22516840577172914,
+      "abs_CKM": [
+        [
+          0.9743125929973495,
+          0.22516840577172914,
+          0.003763000000000072
+        ],
+        [
+          0.22503457194900944,
+          0.9734498929968588,
+          0.0418897034142103
+        ],
+        [
+          0.008626271182162566,
+          0.04116424257316412,
+          0.9991151548139329
+        ]
+      ],
+      "delta_degrees": 66.11932955809647,
+      "depth": 0.39894527900954063,
+      "gamma": 66.08357337674455,
+      "sin2beta": 0.7165276152032612,
+      "spectra": [
+        [
+          1e-05,
+          0.003,
+          0.9
+        ],
+        [
+          1.9999999999999924e-05,
+          0.0003999999999999969,
+          0.020000000000000007
+        ]
+      ]
+    },
+    "scope": "Constructive decoupling EFT matching with fitted real kinetic coefficients and illustrative hierarchical Yukawas. These field-dependent metrics are a distinct action from the canonical-bare one-loop benchmark.",
+    "sectors": [
+      {
+        "bare_Higgs_coefficient": 1.2,
+        "minimum_bare_metric_eigenvalue": 1.752621756797359,
+        "positive_completion_error_90_digits": 1.8707682492759622e-72,
+        "real_metric_coefficients": [
+          "23773.146091130402124093675765478686839375282179306455006281901208962615417227065",
+          "76207.269509669507559882089148615864572210673099373134296192472005951731211472568",
+          "20417.702952128068739046757410612311687383775761841813606254225157740660761051365",
+          "59553.827040358690095096056193315968766402208212434354843607013517717462870525322",
+          "-5127.5601920888080540687809932331217171857821375314836521755113848998393609808389",
+          "14070.967059220550412685980373972238954949405555505773524106120261562145097686254",
+          "-27500.709705542879626208959294432645232514560729959908583635777571980641665517813",
+          "21523.621046527179917005824919907481351205975807114546702377689167810762389457143",
+          "51184.261311798118919157127938593101454173127681103622143397183653104419427804017"
+        ],
+        "sector": "up",
+        "target_H_error_90_digits": 1.2272733663244316e-91,
+        "target_Yukawa_eigenvalues": [
+          1e-05,
+          0.003,
+          0.9
+        ]
+      },
+      {
+        "bare_Higgs_coefficient": 0.57,
+        "minimum_bare_metric_eigenvalue": 812.2420058336721,
+        "positive_completion_error_90_digits": 8.173659390587656e-74,
+        "real_metric_coefficients": [
+          "7992.2815449459942927862793516485687545976772923576825428775627193699284092759942",
+          "19116.912064559418821820278179861136232204632979208739065839126828601812280516007",
+          "2841.2972901569835886576246313579510683210846052926528547862324339914840594732785",
+          "14193.741018092318634198191662350688871195782293159685982476863318421365593704567",
+          "-7925.1835258384333863033974079402370109105626982224096420748556018773431106292865",
+          "2778.5538889088769289457914211114849119858192177124883880146455921772305564502763",
+          "-4887.2027244697824052993680596681388663831028680241410548712591521607675342050729",
+          "1989.0001454109243823113756337401564004733349243491250765684578531500003370409327",
+          "8774.0309159378831299353921825869698768035335845355724900169246604570381089563265"
+        ],
+        "sector": "down",
+        "target_H_error_90_digits": 1.0175342656342212e-90,
+        "target_Yukawa_eigenvalues": [
+          2e-05,
+          0.0004,
+          0.02
+        ]
+      }
+    ]
+  },
+  "higher_fermion_operator_census": {
+    "Higgs_covariant_counts_by_degree": [
+      1,
+      2,
+      9,
+      21
+    ],
+    "character_power_classes": 16,
+    "covariants": [
+      {
+        "fields": {},
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 0
+      },
+      {
+        "fields": {},
+        "left": "D",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 0
+      },
+      {
+        "fields": {},
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 0
+      },
+      {
+        "fields": {},
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 0
+      },
+      {
+        "fields": {
+          "L": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "A": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "B": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "S": 1
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "L-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "A-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "B-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 1
+      },
+      {
+        "fields": {
+          "L": 2
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B": 1,
+          "L": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "L": 1
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A": 1,
+          "S": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A": 1,
+          "L-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 2,
+        "right": "H_A",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 2,
+        "right": "H_B",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 2,
+        "right": "H_A",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 2,
+        "right": "H_B",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B": 1,
+          "S-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B-dagger": 1,
+          "S": 1
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 3,
+        "right": "H_A",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 3,
+        "right": "H_B",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "L-dagger": 2
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "B-dagger": 1,
+          "L-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 2
+      },
+      {
+        "fields": {
+          "L": 3
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 3
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 3
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 3
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "L": 2
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 2,
+          "L-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B-dagger": 1,
+          "L": 2
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1,
+          "L": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "B": 1,
+          "L": 1
+        },
+        "left": "H_A",
+        "multiplicity": 2,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1,
+          "L": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "L": 1,
+          "S-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 1,
+          "L-dagger": 1,
+          "S": 1
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 1,
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 1,
+          "L-dagger": 2
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B-dagger": 1,
+          "L": 1,
+          "L-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L": 1,
+          "L-dagger": 1,
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "L": 1,
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 2,
+          "A-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1,
+          "B": 1
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "B": 1,
+          "B-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 2,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "L-dagger": 1,
+          "S": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1,
+          "S": 1
+        },
+        "left": "H_A",
+        "multiplicity": 4,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "B-dagger": 1,
+          "S": 1
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "bare",
+        "multiplicity": 3,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1,
+          "L-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "B-dagger": 1,
+          "L-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 2,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 2
+        },
+        "left": "H_A",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1,
+          "B-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A": 1,
+          "A-dagger": 1,
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 4,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 2,
+          "B-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1,
+          "S": 1
+        },
+        "left": "H_A",
+        "multiplicity": 4,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 3,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "L-dagger": 2
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1,
+          "L-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "B": 1,
+          "B-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 2,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "B": 1,
+          "S-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 2
+        },
+        "left": "H_B",
+        "multiplicity": 2,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B": 1,
+          "B-dagger": 1,
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 4,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "S": 2,
+          "S-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 8,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B-dagger": 1,
+          "L-dagger": 1,
+          "S": 1
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L-dagger": 1,
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "H_A",
+        "multiplicity": 3,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "B-dagger": 1,
+          "S": 1,
+          "S-dagger": 1
+        },
+        "left": "H_B",
+        "multiplicity": 3,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "S": 1,
+          "S-dagger": 2
+        },
+        "left": "H_B",
+        "multiplicity": 8,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L-dagger": 3
+        },
+        "left": "bare",
+        "multiplicity": 1,
+        "right": "bare",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L-dagger": 3
+        },
+        "left": "D",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L-dagger": 3
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "H_A",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "L-dagger": 3
+        },
+        "left": "H_B",
+        "multiplicity": 1,
+        "right": "H_B",
+        "scalar_degree": 3
+      },
+      {
+        "fields": {
+          "A-dagger": 1,
+          "L-dagger": 2
+        },
+        "left": "H_A",
+        "multiplicity": 1,
+        "right": "D",
+        "scalar_degree": 3
+      }
+    ],
+    "group_order": 1080,
+    "heavy_mass_covariant_counts_by_degree": [
+      3,
+      6,
+      29,
+      85
+    ],
+    "maximum_scalar_degree": 3,
+    "scope": "Exact complex covariant dimensions; real CP couplings pair conjugate contractions. Scalar insertions only, no derivative operators."
+  },
+  "input_vacuum_receipt": "valentiner_adjoint_uv.json",
+  "joint_branch_scan": [
+    {
+      "combined_scalar_delta_theta": 2.4113456540838025e-12,
+      "joint_vacuum": {
+        "Higgs_mass_parameter_squared": 0.00025500380397268927,
+        "Higgs_quartic": 0.13,
+        "energy_scaled_flavor_portal": -4013.9858524152146,
+        "iterations": 77,
+        "minimum_71_scalar_mass_squared": 9.404056807544388e-07,
+        "portals": [
+          0.0001,
+          0.0002,
+          0.0003,
+          0.0004
+        ],
+        "stationarity_scaled_max": 9.630518604808458e-12,
+        "vev": 0.03
+      },
+      "scalar_threshold_by_sector": [
+        {
+          "UV_phase_coefficient": 1.374801210288913e-17,
+          "delta_theta": 1.5360379543296188e-12,
+          "relative_correction_norm": 0.02040451065240631
+        },
+        {
+          "UV_phase_coefficient": -2.998211901904598e-17,
+          "delta_theta": 8.753076997541837e-13,
+          "relative_correction_norm": 0.010422274496400336
+        }
+      ],
+      "spurion": 1.0,
+      "weak_CP_quartet": 1.1570605359733959e-06
+    },
+    {
+      "combined_scalar_delta_theta": 6.316445525510766e-11,
+      "joint_vacuum": {
+        "Higgs_mass_parameter_squared": 2.3405595953524262e-05,
+        "Higgs_quartic": 0.13,
+        "energy_scaled_flavor_portal": -4201.405671358869,
+        "iterations": 76,
+        "minimum_71_scalar_mass_squared": 9.511022095650117e-07,
+        "portals": [
+          0.0001,
+          0.0002,
+          0.0003,
+          0.0004
+        ],
+        "stationarity_scaled_max": 8.290992892234783e-12,
+        "vev": 0.003
+      },
+      "scalar_threshold_by_sector": [
+        {
+          "UV_phase_coefficient": 2.965298747982777e-17,
+          "delta_theta": 5.485599658626113e-11,
+          "relative_correction_norm": 0.014186887851914047
+        },
+        {
+          "UV_phase_coefficient": -2.3880865351839252e-18,
+          "delta_theta": 8.308458668846527e-12,
+          "relative_correction_norm": 0.012848020454398309
+        }
+      ],
+      "spurion": 0.1,
+      "weak_CP_quartet": 1.1362589463987676e-06
+    },
+    {
+      "combined_scalar_delta_theta": 1.122265039943863e-10,
+      "joint_vacuum": {
+        "Higgs_mass_parameter_squared": 2.1089609531583848e-05,
+        "Higgs_quartic": 0.13,
+        "energy_scaled_flavor_portal": -4203.282643293863,
+        "iterations": 15,
+        "minimum_71_scalar_mass_squared": 4.678760004024046e-08,
+        "portals": [
+          0.0001,
+          0.0002,
+          0.0003,
+          0.0004
+        ],
+        "stationarity_scaled_max": 4.394346553304729e-10,
+        "vev": 0.0003
+      },
+      "scalar_threshold_by_sector": [
+        {
+          "UV_phase_coefficient": 1.5849456628549204e-17,
+          "delta_theta": 1.0785683068333467e-10,
+          "relative_correction_norm": 0.01956125916873426
+        },
+        {
+          "UV_phase_coefficient": 1.7860980220244552e-17,
+          "delta_theta": 4.369673311051617e-12,
+          "relative_correction_norm": 0.01760889311626257
+        }
+      ],
+      "spurion": 0.01,
+      "weak_CP_quartet": 1.1360542761218033e-06
+    },
+    {
+      "combined_scalar_delta_theta": 2.593462464495348e-11,
+      "joint_vacuum": {
+        "Higgs_mass_parameter_squared": 2.1066449666935172e-05,
+        "Higgs_quartic": 0.13,
+        "energy_scaled_flavor_portal": -4203.301413289286,
+        "iterations": 0,
+        "minimum_71_scalar_mass_squared": 4.678760530473886e-10,
+        "portals": [
+          0.0001,
+          0.0002,
+          0.0003,
+          0.0004
+        ],
+        "stationarity_scaled_max": 1.0640400747861023e-11,
+        "vev": 3e-05
+      },
+      "scalar_threshold_by_sector": [
+        {
+          "UV_phase_coefficient": -2.709403615092024e-17,
+          "delta_theta": 2.915083437123555e-11,
+          "relative_correction_norm": 0.02493566801362528
+        },
+        {
+          "UV_phase_coefficient": -1.1154547115299063e-17,
+          "delta_theta": -3.2162097262820685e-12,
+          "relative_correction_norm": 0.022384074278607367
+        }
+      ],
+      "spurion": 0.001,
+      "weak_CP_quartet": 1.1360522276980261e-06
+    },
+    {
+      "combined_scalar_delta_theta": 1.4470866633543617e-14,
+      "joint_vacuum": {
+        "Higgs_mass_parameter_squared": 2.106621575230838e-05,
+        "Higgs_quartic": 0.13,
+        "energy_scaled_flavor_portal": -4203.301602866274,
+        "iterations": 0,
+        "minimum_71_scalar_mass_squared": 4.678759843278e-14,
+        "portals": [
+          0.0001,
+          0.0002,
+          0.0003,
+          0.0004
+        ],
+        "stationarity_scaled_max": 5.788147989021621e-09,
+        "vev": 3.0000000000000004e-07
+      },
+      "scalar_threshold_by_sector": [
+        {
+          "UV_phase_coefficient": 3.1863651120741783e-18,
+          "delta_theta": 2.2284855689847635e-14,
+          "relative_correction_norm": 0.03568445512024743
+        },
+        {
+          "UV_phase_coefficient": 2.2907496620903915e-17,
+          "delta_theta": -7.813989056304016e-15,
+          "relative_correction_norm": 0.031934401770259795
+        }
+      ],
+      "spurion": 1e-05,
+      "weak_CP_quartet": 1.136052208581408e-06
+    }
+  ],
+  "loop_scope": "Finite zero-external-momentum neutral-real-scalar mass threshold, canonical bare fermion metrics, all 71 physical neutral scalar modes. This is not an all-loop strong-CP theorem. No inferred loop claim for the separately fitted kinetic action.",
+  "references": {
+    "CKM_benchmark": "https://pdg.lbl.gov/2026/reviews/rpp2026-rev-ckm-matrix.pdf",
+    "neutral_scalar_matching": "https://arxiv.org/html/2407.16202v2#A1"
+  },
+  "scalar_threshold_60_digit_trace_checks": [
+    "0.0000000000000222848563071055553037226980134878340248404326",
+    "-7.81398736709613895424214077926652881897883333e-15"
+  ],
+  "schema": "pp-valentiner-quantum/1",
+  "selected_CP_partner": {
+    "combined_scalar_delta_theta": -1.3155462348439563e-14,
+    "joint_vacuum": {
+      "Higgs_mass_parameter_squared": 2.1066215752308385e-05,
+      "Higgs_quartic": 0.13,
+      "energy_scaled_flavor_portal": -4203.301602866269,
+      "iterations": 0,
+      "minimum_71_scalar_mass_squared": 4.67876038831768e-14,
+      "portals": [
+        0.0001,
+        0.0002,
+        0.0003,
+        0.0004
+      ],
+      "stationarity_scaled_max": 5.8788919293750906e-09,
+      "vev": 3e-07
+    },
+    "opposite_phase_absolute_error": 1.3154042851040548e-15,
+    "weak_CP_quartet": -1.1360522081138343e-06
+  },
+  "selected_field_coordinates": [
+    0.21557305040110972,
+    0.26310131763112793,
+    -0.40267601222028704,
+    0.42006706288968887,
+    0.6934419401721006,
+    -0.49352555660208625,
+    -0.5116444949362408,
+    -0.241405303671658,
+    1.2285802795517857,
+    0.4436135026530882,
+    0.3576353644413072,
+    -0.3360135171844943,
+    0.6748992387652921,
+    0.3585264888525224,
+    -0.46630792152000705,
+    -0.8643026114296429,
+    0.017637129462984607,
+    0.5586201847015823,
+    -0.4241359777882653,
+    0.2749527507899873,
+    -0.34817608339268574,
+    -0.4959998216601327,
+    0.30227460143307516,
+    -0.4205076781721383,
+    1.0719048129154785,
+    -0.2108882013389579,
+    0.3217975364601215,
+    -0.2580928202998372,
+    -0.021579478887060494,
+    0.556490325728959,
+    0.4336371609876476,
+    0.18526180722288307,
+    0.7203081969903095,
+    -0.016214795338821968,
+    -0.39118890695815317,
+    0.06306782985608937,
+    -0.25151819909915385,
+    0.1831149974378405,
+    0.20203415808319453,
+    -0.3049851783138728,
+    0.3435007577347691,
+    0.11531000848230774,
+    -0.3214936963783149,
+    -0.6883951599722672,
+    0.3686468283961821,
+    0.2175585704982699,
+    0.05620228346732004,
+    -0.11944894475306146,
+    0.4171303590223332,
+    0.07639537834354534,
+    -0.01817642786804569,
+    0.30292291292943707,
+    -0.6232560120825391,
+    0.6574003699536574,
+    0.4738454219969103,
+    0.7084019137284518,
+    0.399420603972302,
+    0.5493690414458977,
+    -1.819341787834325,
+    -1.1314646036288374,
+    -3.3416121364138567,
+    -2.0049484653485163,
+    2.6999130634809596,
+    1.4115275975514927,
+    -1.5350462570445729,
+    -2.889521950041168,
+    -0.023255385794871443,
+    -0.26612910929186373,
+    0.6468733225511325,
+    -0.7056296349630647
+  ],
+  "spurion_selection": {
+    "Higgs_to_heavy_power": "epsilon^2",
+    "bare_heavy_source_power": "conjugate(epsilon)",
+    "fixed_background_full_current_scale_residual": 7.000247603805576e-12,
+    "heavy_mass_power": "epsilon",
+    "new_Z6_charges": {
+      "bare_quarks": 2,
+      "epsilon": 1,
+      "heavy_left": 1,
+      "heavy_right": 0,
+      "scalars_and_Higgs": 0
+    },
+    "scope": "Real positive spurion benchmark; technically small breaking parameter is an input. Weak currents stay fixed when Higgs and all fermion masses scale together."
+  }
+}

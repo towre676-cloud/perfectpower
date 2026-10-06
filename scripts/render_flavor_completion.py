@@ -16,7 +16,7 @@ from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/B5_FLAVOR_COMPLETION.md'
-SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md',ROOT/'docs/VALENTINER_CP_AND_GLOBAL_MODES.md',ROOT/'docs/FLAVOR_SEARCH_INPUT_AUDIT.md',ROOT/'docs/VALENTINER_SUSY_VACUA.md',ROOT/'docs/VALENTINER_JOINT_POTENTIAL.md',ROOT/'docs/FLAVOR_KINETIC_FREEDOM.md',ROOT/'docs/VALENTINER_ADJOINT_UV.md',ROOT/'docs/VALENTINER_CANONICAL_RESULTS.md']
+SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md',ROOT/'docs/VALENTINER_CP_AND_GLOBAL_MODES.md',ROOT/'docs/FLAVOR_SEARCH_INPUT_AUDIT.md',ROOT/'docs/VALENTINER_SUSY_VACUA.md',ROOT/'docs/VALENTINER_JOINT_POTENTIAL.md',ROOT/'docs/FLAVOR_KINETIC_FREEDOM.md',ROOT/'docs/VALENTINER_ADJOINT_UV.md',ROOT/'docs/VALENTINER_CANONICAL_RESULTS.md',ROOT/'docs/VALENTINER_QUANTUM_COMPLETION.md']
 DEST=ROOT/'output/pdf/B5_Protected_Flavor_Monograph.pdf'
 
 EQUATIONS={
@@ -93,15 +93,17 @@ def main():
     parser.add_argument('--kinetic-paper',action='store_true')
     parser.add_argument('--adjoint-paper',action='store_true')
     parser.add_argument('--canonical-paper',action='store_true')
+    parser.add_argument('--quantum-paper',action='store_true')
     parser.add_argument('--cp-paper',action='store_true')
     parser.add_argument('--susy-paper',action='store_true')
     args=parser.parse_args()
-    standalone=args.transport_paper or args.invariant_paper or args.cp_paper or args.susy_paper or args.joint_paper or args.kinetic_paper or args.adjoint_paper or args.canonical_paper
+    standalone=args.transport_paper or args.invariant_paper or args.cp_paper or args.susy_paper or args.joint_paper or args.kinetic_paper or args.adjoint_paper or args.canonical_paper or args.quantum_paper
     destination=ROOT/'output/pdf/M22_Triplet_Transport_and_CKM_Obstructions.pdf' if standalone else DEST
     if args.invariant_paper:destination=ROOT/'output/pdf/Valentiner_Invariant_Interactions.pdf'
     if args.cp_paper:destination=ROOT/'output/pdf/Valentiner_CP_and_Global_Modes.pdf'
     if args.susy_paper:destination=ROOT/'output/pdf/Valentiner_SUSY_Vacua_and_CKM_Boundary.pdf'
     if args.adjoint_paper:destination=ROOT/'output/pdf/Valentiner_Rank_Lifting_and_Physical_CP.pdf'
+    if args.quantum_paper:destination=ROOT/'output/pdf/Valentiner_Electroweak_Quantum_and_Spectra.pdf'
     if args.canonical_paper:destination=ROOT/'output/pdf/Valentiner_Canonical_Quarks_and_Strong_CP.pdf'
     if args.kinetic_paper:destination=ROOT/'output/pdf/CP_Even_Kinetic_Freedom_at_Fixed_Masses.pdf'
     if args.joint_paper:destination=ROOT/'output/pdf/Valentiner_Joint_Potential_and_Protection.pdf'
@@ -138,9 +140,11 @@ def main():
         story=[Spacer(1,45),Paragraph('Universal source couplings,<br/>three-family rank lifting<br/>and physical CP',title),Paragraph('A stable 70-field vacuum, complete mediator contractions and canonical quark matching',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026 (UTC)',subtitle),Paragraph('A specified CP-even interaction produces six nonzero quark masses and physical weak CP without a target angle. The scalar slice is complete through degree four; an observed CKM fit and exact golden protection remain open.',body),PageBreak()]
     if args.canonical_paper:
         story=[Spacer(1,45),Paragraph('Canonical quarks,<br/>physical currents and<br/>strong CP',title),Paragraph('A representation-enforced Nelson–Barr assignment with a shared adjoint and fixed mixing frames',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026 (UTC)',subtitle),Paragraph('Tree determinant protection and exact canonical matching at a specified flavor vacuum. Higher operators, quantum strong CP, observed flavor fits and golden protection remain separate requirements.',body),PageBreak()]
-    selected_source=SOURCES[11] if args.canonical_paper else SOURCES[10] if args.adjoint_paper else SOURCES[9] if args.kinetic_paper else SOURCES[8] if args.joint_paper else SOURCES[7] if args.susy_paper else SOURCES[5] if args.cp_paper else SOURCES[4] if args.invariant_paper else SOURCES[3]
+    if args.quantum_paper:
+        story=[Spacer(1,45),Paragraph('Electroweak completion,<br/>one-loop strong CP<br/>and flavor spectra',title),Paragraph('A stable joint branch, 156 exact fermion covariants and constructive hierarchical matching',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026 (UTC)',subtitle),Paragraph('Completed calculations with explicit action, coefficient inputs, precision checks and reproducible scientific receipts.',body),PageBreak()]
+    selected_source=SOURCES[12] if args.quantum_paper else SOURCES[11] if args.canonical_paper else SOURCES[10] if args.adjoint_paper else SOURCES[9] if args.kinetic_paper else SOURCES[8] if args.joint_paper else SOURCES[7] if args.susy_paper else SOURCES[5] if args.cp_paper else SOURCES[4] if args.invariant_paper else SOURCES[3]
     text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in ([selected_source] if standalone else SOURCES))
-    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary','Product-family CP and the global spectrum','Audit of the flavor search inputs','Supersymmetric vacua and the CKM boundary','The joint potential and the protection test','CP-even kinetic freedom at fixed quark masses','Universal sources, rank lifting and physical CP','Canonical quarks, currents and strong CP'])
+    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary','Product-family CP and the global spectrum','Audit of the flavor search inputs','Supersymmetric vacua and the CKM boundary','The joint potential and the protection test','CP-even kinetic freedom at fixed quark masses','Universal sources, rank lifting and physical CP','Canonical quarks, currents and strong CP','Electroweak completion, quantum matching and attainable spectra'])
     for block in text.split('\n\n'):
         block=block.strip()
         if block=='CHAPTER_BREAK':
@@ -176,13 +180,13 @@ def main():
         canvas.saveState()
         canvas.setStrokeColor(HexColor('#c2ced7'));canvas.line(58,47,537,47)
         canvas.setFont('Sans',8);canvas.setFillColor(HexColor('#506372'))
-        canvas.drawString(58,33,'PERFECTPOWER / CANONICAL QUARKS AND STRONG CP' if args.canonical_paper else 'PERFECTPOWER / RANK LIFTING AND PHYSICAL CP' if args.adjoint_paper else 'PERFECTPOWER / CP-EVEN KINETIC FREEDOM' if args.kinetic_paper else 'PERFECTPOWER / JOINT POTENTIAL AND PROTECTION' if args.joint_paper else 'PERFECTPOWER / SUSY VACUA AND CKM BOUNDARY' if args.susy_paper else 'PERFECTPOWER / CP AND GLOBAL MODES' if args.cp_paper else 'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / FLAVOR MECHANISMS')
+        canvas.drawString(58,33,'PERFECTPOWER / ELECTROWEAK AND QUANTUM MATCHING' if args.quantum_paper else 'PERFECTPOWER / CANONICAL QUARKS AND STRONG CP' if args.canonical_paper else 'PERFECTPOWER / RANK LIFTING AND PHYSICAL CP' if args.adjoint_paper else 'PERFECTPOWER / CP-EVEN KINETIC FREEDOM' if args.kinetic_paper else 'PERFECTPOWER / JOINT POTENTIAL AND PROTECTION' if args.joint_paper else 'PERFECTPOWER / SUSY VACUA AND CKM BOUNDARY' if args.susy_paper else 'PERFECTPOWER / CP AND GLOBAL MODES' if args.cp_paper else 'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / FLAVOR MECHANISMS')
         canvas.drawRightString(537,33,str(doc.page))
         if doc.page>1:
             canvas.setFont('Sans',7.5);canvas.drawString(58,806,'Exact equations, declared interactions, computed departures')
         canvas.restoreState()
     doc=SimpleDocTemplate(str(destination),pagesize=(595.28,841.89),leftMargin=58,rightMargin=58,topMargin=54,bottomMargin=62,
-        title='Canonical quarks, physical currents and strong CP' if args.canonical_paper else 'Universal source couplings, three-family rank lifting and physical CP' if args.adjoint_paper else 'CP-even kinetic freedom at fixed quark masses' if args.kinetic_paper else 'The joint potential, nonorthogonal vacua and the protection test' if args.joint_paper else 'Supersymmetric links, stable source vacua and the CKM boundary' if args.susy_paper else 'Cross-sector links, physical CP and global cap modes' if args.cp_paper else 'Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Flavor mechanisms, vacuum alignment and predictive limits',author='PerfectPower research')
+        title='Electroweak completion, one-loop strong CP and attainable spectra' if args.quantum_paper else 'Canonical quarks, physical currents and strong CP' if args.canonical_paper else 'Universal source couplings, three-family rank lifting and physical CP' if args.adjoint_paper else 'CP-even kinetic freedom at fixed quark masses' if args.kinetic_paper else 'The joint potential, nonorthogonal vacua and the protection test' if args.joint_paper else 'Supersymmetric links, stable source vacua and the CKM boundary' if args.susy_paper else 'Cross-sector links, physical CP and global cap modes' if args.cp_paper else 'Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Flavor mechanisms, vacuum alignment and predictive limits',author='PerfectPower research')
     doc.build(story,onFirstPage=furniture,onLaterPages=furniture)
     print(destination)
 
