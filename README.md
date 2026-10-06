@@ -2,7 +2,7 @@
 
 **Exact polynomial arithmetic, reusable decision policies, and algebraic-curve research from the defining polynomial.**
 
-PerfectPower turns supported polynomial and arithmetic models into executable mathematical objects. It can return complete integer solution families, make finite solution spaces countable and addressable by rank, compile optimal calibration and diagnostic policies, and derive a curve family's differential equations directly from its polynomial. The geometry machinery explains coefficient motion, root collisions and hidden elliptic quotients while retaining the original equation and coordinates.
+PerfectPower turns supported polynomial and arithmetic models into executable mathematical objects. It can return complete integer solution families, make finite solution spaces countable and addressable by rank, compile optimal calibration and diagnostic policies, and derive a curve family's differential equations directly from its polynomial. The geometry machinery connects coefficient motion, algebraic root collisions, local branches, logarithmic differential execution and verified quotient maps while retaining the original equation and coordinates.
 
 The common approach is to expose structure that can be reused: a solution generator instead of another search, an exact population instead of a materialized dataset, a complete operating policy instead of one optimal setting, or a differential system and quotient maps instead of an unexplained numerical period. The program combines a Python compiler and exact algebra engines with a Lean 4 theorem library. Numerical geometry and solver integration are optional extensions.
 
@@ -94,13 +94,32 @@ The [projective research extension](docs/CURVE_RESEARCH_MONOGRAPH.md) connects s
 
 Run `PYTHONPATH=python python python/develop_curve_research.py` to reproduce the [exact research corpus](receipts/curve_research/summary.json), or replay its [service transcript](receipts/curve_research/service_requests.jsonl). New kernel proofs and rigorous numerical continuation remain separate work.
 
+The [algebraic curve extension](docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.md) now joins differential field arithmetic to those geometric operations. Finite étale algebras retain conjugate algebraic values without radical choices, extend up to three commuting parameter derivations, compute fixed algebras and cyclic Hilbert–90 witnesses, and construct primitive models of complete tensor products. `algebraic_degenerations` covers the finite discriminant support, including repeated discriminant roots, and `node_branches` executes conjugate local branches at algebraic ordinary double points. `resonant_frobenius` resolves positive resonances through simultaneous logarithmic recurrences; the corpus completes the Legendre infinity jet through order 12. `ramified_scaling_chart` constructs and verifies smooth models for the supported centered-binomial class at finite rational or algebraic points and infinity.
+
+`SymmetryCurve` accepts a supplied finite Möbius action on a smooth hyperelliptic polynomial of degree 3 through 8. It verifies the curve automorphisms, closes the action, constructs generators of the actual quotient function field, derives the quotient equation and its independent de Rham connection, and checks the complete differential pullback. Group averages give horizontal, filtration-preserving geometric projectors. For a verified non-hyperelliptic involution, `involution_decomposition` constructs both complementary double covers and certifies their induced Jacobian isogeny; the corpus includes degree-4 genus-two and degree-8 genus-three cases. This conclusion uses the actual maps and their norm/pullback identities. A differential projector alone still does not imply a Jacobian decomposition.
+
+```python
+from perfectpower.symmetry_quotients import SymmetryCurve
+
+# y² = x⁵ + t x³ + x, with x -> 1/x and y -> y/x³.
+curve = SymmetryCurve({
+    "coefficients": [0, 1, 0, [0, 1], 0, 1],
+    "generators": [{"matrix": [[0, 1], [1, 0]], "y_scale": 1}],
+})
+print(curve.quotient()["target_genus"])             # 1
+print(curve.observable(sector="quotient")["order"]) # 2
+print(curve.involution_decomposition()["isogeny_degree"]) # 4
+```
+
+The arithmetic check also supplies a useful negative result: the two rank-two differential projectors for `y²=x⁵+t` select character sets that are not closed under cyclotomic Galois conjugacy. `cyclic_projector_obstruction` certifies that these cannot be rational Betti projectors compatible with the verified cyclic action. See the [complete monograph and proofs](docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.pdf), [interactive receipt workbench](docs/algebraic_curve_workbench.html), and [reproducible corpus](receipts/algebraic_curve_extensions/summary.json). Run `PYTHONPATH=python python python/develop_algebraic_curve_extensions.py` or replay `receipts/algebraic_curve_extensions/service_requests.jsonl`. Algebraic maps do not yet supply automatically marked integral cycle matrices or explicit isogeny-kernel generators; formal jets do not certify analytic continuation.
+
 ## Populations, policies and persistent research objects
 
 [`ExactPopulation`](docs/POPULATION_MONOGRAPH.md) compiles supported finite domains and curves into reusable query spaces. It counts, selects and locates original objects by rank, samples without replacement, partitions work into balanced rank shards and exports seeded JSONL datasets. Distinct projections use complete cubic collision geometry or supported higher-degree discrete monotonicity certificates. Symbolic joins and projections have defined supported families; arbitrary polynomial image closure is not assumed.
 
 [`CalibrationPolicy` and `DiagnosticPolicy`](docs/DECISION_POLICIES_MONOGRAPH.md) turn exact optimization into executable decisions. Calibration fixes a bounded feasible integer model and a positive definite rational metric, then computes all winning regions on a one- or two-dimensional target slice, including lower-dimensional regions and ties. Optimizer-driven discovery can avoid listing settings that never win. Diagnostics supports at most 16 finite hypotheses and minimizes worst-case total cost over adaptive trees under noiseless readouts, zero-cost reset and strictly positive operator costs. Both compilers have explicit budgets and reject incomplete compilation.
 
-The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **13 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family`, `elliptic_quotient` and `multi_curve_family`. The JSONL service and local HTTP console expose the supported public operations:
+The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **15 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family`, `elliptic_quotient`, `multi_curve_family`, `differential_extension` and `symmetry_curve`. The JSONL service and local HTTP console expose the supported public operations:
 
 ```sh
 # Interactive local console and persistent catalogue.

@@ -6,9 +6,11 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    differential_extension={'summary','evidence','element_data','fixed_algebra','hilbert90'},
+    symmetry_curve={'summary','evidence','projectors','quotient','observable','involution_decomposition'},
     multi_curve_family={'summary','evidence','specialize','deformation','projective_deformation','root_motion','observable'},
     elliptic_quotient={'summary','evidence','specialize','observable','collisions','root_motion','period_path','point_image','rational_lifts'},
-    curve_family={'summary','evidence','specialize','observable','deformation','projective_deformation','root_motion','collisions','local_analysis','frobenius_jet','de_rham_pairing','horizontal_projectors','check_projector','parameter_domain','parameter_population','integer_points','marked_period','transport','period_path'},
+    curve_family={'summary','evidence','specialize','observable','deformation','projective_deformation','root_motion','collisions','local_analysis','frobenius_jet','algebraic_local_chart','algebraic_degenerations','resonant_frobenius','node_branches','ramified_scaling_chart','cyclic_projector_obstruction','de_rham_pairing','horizontal_projectors','check_projector','parameter_domain','parameter_population','integer_points','marked_period','transport','period_path'},
     calibration_policy={'summary','evidence','decide'},diagnostic_policy={'summary','evidence','step','run'},
     projected={'summary','count','select','rank','page','sample','partition','locate','multiplicity','evidence'},
     factorial={'summary','terms','residues'},
@@ -48,6 +50,10 @@ def dispatch(catalogue, request):
     if op == 'cycle_map':
         from .integral_cycle_maps import simplicial_cycle_map
         return simplicial_cycle_map(**args)
+    if op == 'tensor_primitive':
+        from .differential_extensions import DifferentialExtension,tensor_primitive
+        left=DifferentialExtension(args['left']);right=DifferentialExtension(args['right'])
+        return tensor_primitive(left.algebra,right.algebra,args.get('candidate_limit',32))
     if op == 'join':
         return catalogue.join(request['object'], request['other'], **args)
     if op == 'symbolic_join':

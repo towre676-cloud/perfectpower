@@ -95,6 +95,23 @@ The optional analytic backend uses `pip install -r python/requirements-analytic.
 `certified-voronoi` produces conservative boundary enclosures using rational Lipschitz lower bounds and explicit-path upper bounds. `surface-homology` produces tree/cotree dual cycles and replayable integral symplectic reduction. See `docs/CERTIFIED_SURFACE_GEOMETRY.md` for the exact scope; no smooth-curve or analytic period certification is asserted.
 
 `symplectic-periods --coeff=0,-1,0,0,0,1 --resolution 6` connects the mesh homology basis to actual numerical analytic integration. `integrate-path --coeff=-1,0,0,1 --d 3 --points '[[0.3,0.7],[0.6,0.8]]'` supports a continued open path on a cubic cyclic component. `surface_periods.bergman_metric` and `surface_periods.jacobian_coordinates` use the computed A-normalization. See `docs/SYMPLECTIC_ANALYTIC_MONOGRAPH.md` for the exact scope and generated six-curve corpus.
+### Algebraic curve execution and differential extensions
+
+`DifferentialExtension` in `perfectpower.differential_extensions` compiles squarefree finite étale algebras over one through three rational parameters. It exposes exact algebraic derivatives, trace/norm/minimal polynomials, fixed-algebra multiplication and cyclic scalar Hilbert–90. `tensor_primitive` retains a complete tensor product and returns generator-recovery identities. A nonunit has a factor witness; irreducibility is not assumed.
+
+`CurveFamily` now exposes `algebraic_local_chart`, `algebraic_degenerations`, `resonant_frobenius`, `node_branches`, `ramified_scaling_chart` and `cyclic_projector_obstruction`. Algebraic parameters use `{"modulus": [...], "element": [...]}`; the element is optional and defaults to the algebra generator. Coefficients are constant-first. Formal local precision, ramification and algebra budgets are explicit.
+
+`SymmetryCurve` in `perfectpower.symmetry_quotients` verifies supplied finite Möbius actions on degree-3-through-8 hyperelliptic polynomials. Its `quotient`, `projectors`, `observable` and `involution_decomposition` operations return actual quotient equations, independent differential systems and, for complementary double covers, specific Jacobian isogeny certificates. The latter supplies the degree and kernel annihilator, not explicit torsion generators or integral markings.
+
+```sh
+PYTHONPATH=python python python/develop_algebraic_curve_extensions.py
+PYTHONPATH=python python -m perfectpower service \
+  --database /tmp/pp-algebraic.sqlite \
+  < receipts/algebraic_curve_extensions/service_requests.jsonl
+```
+
+The catalogue kinds are `differential_extension` and `symmetry_curve`; the service also exposes standalone `tensor_primitive`. See the [complete mathematical derivations](../docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.md), [receipt workbench](../docs/algebraic_curve_workbench.html), and [handoff guide](../CLAUDE_CODE_ALGEBRAIC_CURVES_START_HERE.md).
+
 ### Recovered divisor kernels
 
 `divisor_kernel` supplies exact divisor and multiple transforms, their Möbius inverses, matrix-free raw/normalized GCD kernels, complete raw rational/integer affine fibres, sparse divisor feature pairings and the integral tridiagonal inverse `threshold_solve`. Exact inputs accept integers and `Fraction`; numerical mode is explicit. Positivity is checked through the appropriate factorization, with inconclusive signed normalized cases reported honestly.

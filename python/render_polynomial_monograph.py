@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'extensions':{
+            'title':'Algebraic curve execution',
+            'subtitle':'Differential fields, local geometry<br/>and actual quotient maps',
+            'description':'Finite etale differential arithmetic, algebraic degeneration charts, resolved logarithmic resonances, explicit finite-action quotients and paired-cover Jacobian isogenies.',
+            'metrics':[('15','persistent object kinds'),('8','verified symmetry quotients'),('4 / 8','paired-cover isogeny degrees')],
+            'scope':'Exact polynomial and differential identities within explicit budgets. Paired actual double covers certify specific Jacobian isogenies. General stable reduction, marked integral kernels, arbitrary correspondences and rigorous analytic continuation remain open.',
+            'running':'Differential extensions, local branches and geometric quotient sectors',
+        },
         'research':{
             'title':'Projective curve research',
             'subtitle':'Local execution, simultaneous deformations<br/>and exact structural searches',
@@ -158,7 +166,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

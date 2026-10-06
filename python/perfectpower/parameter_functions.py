@@ -146,9 +146,11 @@ class ParameterFunction:
 
     def __bool__(self):return any(self.n)
     def __eq__(self,value):
+        if getattr(value,'_accepts_scalar',lambda _:False)(self):return NotImplemented
         other=self.coerce(value);return self.n==other.n and self.d==other.d
     def __neg__(self):return ParameterFunction(self.parameters,scale(self.n,-1),self.d,self.budget)
     def __add__(self,value):
+        if getattr(value,'_accepts_scalar',lambda _:False)(self):return NotImplemented
         b=self.coerce(value)
         if not self:return b
         if not b:return self
@@ -156,9 +158,12 @@ class ParameterFunction:
         g=gcd(self.d,b.d,self.zero);a1=divide(self.d,g,self.zero)[0];b1=divide(b.d,g,self.zero)[0]
         return ParameterFunction(self.parameters,add(mul(self.n,b1,self.zero),mul(b.n,a1,self.zero),self.zero),mul(self.d,b1,self.zero),self.budget)
     __radd__=__add__
-    def __sub__(self,value):return self+-self.coerce(value)
+    def __sub__(self,value):
+        if getattr(value,'_accepts_scalar',lambda _:False)(self):return NotImplemented
+        return self+-self.coerce(value)
     def __rsub__(self,value):return self.coerce(value)+-self
     def __mul__(self,value):
+        if getattr(value,'_accepts_scalar',lambda _:False)(self):return NotImplemented
         b=self.coerce(value)
         if not self or not b:return self.coerce(0)
         if self==1:return b
@@ -168,6 +173,7 @@ class ParameterFunction:
         return ParameterFunction(self.parameters,mul(divide(self.n,g,self.zero)[0],divide(b.n,h,self.zero)[0],self.zero),mul(divide(self.d,h,self.zero)[0],divide(b.d,g,self.zero)[0],self.zero),self.budget)
     __rmul__=__mul__
     def __truediv__(self,value):
+        if getattr(value,'_accepts_scalar',lambda _:False)(self):return NotImplemented
         b=self.coerce(value)
         if not b:raise ZeroDivisionError('zero parameter function')
         if self==b:return self.coerce(1)

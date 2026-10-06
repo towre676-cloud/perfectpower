@@ -143,6 +143,30 @@ class CurveFamily:
         from .horizontal_projectors import projector_check
         return projector_check(self, matrix)
 
+    def algebraic_local_chart(self, parameter=0, order=8, ramification=1):
+        from .algebraic_local_curves import local_chart
+        return local_chart(self, parameter, order, ramification)
+
+    def algebraic_degenerations(self, order=6, ramification=1):
+        from .algebraic_local_curves import algebraic_degenerations
+        return algebraic_degenerations(self, order, ramification)
+
+    def resonant_frobenius(self, parameter=0, order=8, ramification=1, exponent=0, seed=None, log_degree=None):
+        from .algebraic_local_curves import resonant_frobenius
+        return resonant_frobenius(self, parameter, order, ramification, exponent, seed, log_degree)
+
+    def node_branches(self, parameter, order=8):
+        from .algebraic_local_curves import node_branches
+        return node_branches(self, parameter, order)
+
+    def ramified_scaling_chart(self, parameter=0):
+        from .arithmetic_curve_structure import ramified_scaling_chart
+        return ramified_scaling_chart(self, parameter)
+
+    def cyclic_projector_obstruction(self, matrix=None):
+        from .arithmetic_curve_structure import cyclic_projector_obstruction
+        return cyclic_projector_obstruction(self, matrix)
+
     def specialize(self, parameter):
         t = _q(parameter); disc = P.evaluate(self.discriminant,t)
         if not disc: raise ValueError('singular family parameter')

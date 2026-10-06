@@ -25,7 +25,9 @@ def compile_object(kind, specification):
     from .curve_families import CurveFamily
     from .multi_curve_families import MultiCurveFamily
     from .elliptic_quotients import EllipticQuotientFamily
-    constructors = dict(multi_curve_family=MultiCurveFamily,elliptic_quotient=EllipticQuotientFamily,curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
+    from .differential_extensions import DifferentialExtension
+    from .symmetry_quotients import SymmetryCurve
+    constructors = dict(differential_extension=DifferentialExtension,symmetry_curve=SymmetryCurve,multi_curve_family=MultiCurveFamily,elliptic_quotient=EllipticQuotientFamily,curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
                         graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign,projected=ProjectedPopulation,factorial=FactorialLibrary)
     if kind not in constructors:
         raise ValueError('unsupported catalogue kind')

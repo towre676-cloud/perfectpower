@@ -54,23 +54,29 @@ class RationalFunction:
 
     def __bool__(self): return not P.is_zero(self.n)
     def __eq__(self, value):
+        if getattr(value, '_accepts_scalar', lambda _: False)(self):return NotImplemented
         other = self.coerce(value)
         return self.n == other.n and self.d == other.d
     def __neg__(self): return RationalFunction(P.scale(self.n, -1), self.d, budget=self.budget)
     def __add__(self, value):
+        if getattr(value, '_accepts_scalar', lambda _: False)(self):return NotImplemented
         b = self.coerce(value); g = P.gcd_poly(self.d, b.d)
         a1, b1 = P.exact_div(self.d, g), P.exact_div(b.d, g)
         return RationalFunction(P.add(mul(self.n, b1), mul(b.n, a1)), mul(self.d, b1), budget=self.budget or b.budget)
     __radd__ = __add__
-    def __sub__(self, value): return self + -self.coerce(value)
+    def __sub__(self, value):
+        if getattr(value, '_accepts_scalar', lambda _: False)(self):return NotImplemented
+        return self + -self.coerce(value)
     def __rsub__(self, value): return self.coerce(value) + -self
     def __mul__(self, value):
+        if getattr(value, '_accepts_scalar', lambda _: False)(self):return NotImplemented
         b = self.coerce(value)
         g, h = P.gcd_poly(self.n, b.d), P.gcd_poly(b.n, self.d)
         return RationalFunction(mul(P.exact_div(self.n, g), P.exact_div(b.n, h)),
             mul(P.exact_div(self.d, h), P.exact_div(b.d, g)), budget=self.budget or b.budget)
     __rmul__ = __mul__
     def __truediv__(self, value):
+        if getattr(value, '_accepts_scalar', lambda _: False)(self):return NotImplemented
         b = self.coerce(value)
         if not b: raise ZeroDivisionError('zero rational function')
         return self * RationalFunction(b.d, b.n, budget=self.budget or b.budget)

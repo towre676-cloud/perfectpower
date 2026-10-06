@@ -1,0 +1,74 @@
+{
+  "checks": {
+    "focused": {
+      "passed": true,
+      "seconds": 81.707,
+      "skipped": 0,
+      "tests_run": 38
+    },
+    "full_regression": {
+      "collection_note": "Collected before the concurrent physics merge; added function-based physics checks were executed directly afterward. Final nested-product automorphism change is covered by the 38-test focused run.",
+      "passed": true,
+      "seconds": 337.411,
+      "skipped": 4,
+      "tests_run": 1097
+    },
+    "merged_adjoint_physics": {
+      "passed": true,
+      "seconds": 5.614,
+      "skipped": 0,
+      "tests_run": 14
+    },
+    "merged_kinetic_physics": {
+      "passed": true,
+      "seconds": 0.545,
+      "skipped": 0,
+      "tests_run": 8
+    }
+  },
+  "date": "2026-10-06",
+  "merged_physics_commit": "2662dba",
+  "monograph": {
+    "cover_and_formula_layout_inspected": true,
+    "pages": 10,
+    "sha256": "f4b091d566b0d68585a46f5827da1ae0e3cea50b4312e3f6e3b90df6f3d46ce0"
+  },
+  "new_lean_compilation": false,
+  "schema": "pp-algebraic-curve-validation/1",
+  "scientific_receipt_sha256": {
+    "receipts/algebraic_curve_extensions/algebraic_local_execution.json": "c849de967e7c464d0e44d2d4151a504d407feac0f80c40b9a7dc2e1089cc753e",
+    "receipts/algebraic_curve_extensions/arithmetic_projector_obstructions.json": "d7056a9f94dc144a2b14bb52cdc8536bdac023f40964a79daf05b9b9b3dcbd0a",
+    "receipts/algebraic_curve_extensions/differential_extensions.json": "bfaf02445dc80d432b8c2701d7b6dd3f969b64c24a5bb40f75024e92e68696ba",
+    "receipts/algebraic_curve_extensions/jacobian_isogenies.json": "3794fdea8fad33b50935ca169b4e1ab87c3e00ba50bbac18aa90b5cdbafe4ab5",
+    "receipts/algebraic_curve_extensions/ramified_smooth_models.json": "b23f83a9d8593a25815061b314f56e6317f2d01afe8474f1d5cb5ed80dd72752",
+    "receipts/algebraic_curve_extensions/service_replay.json": "e4cea4ff4aea2befe68c378969aae9e844a8758060807139acac05be55d6c5dc",
+    "receipts/algebraic_curve_extensions/summary.json": "fb57fc7b381c82e36e135be142bdf0b86a2f5f65b651467bb8c0f9707ed5e704",
+    "receipts/algebraic_curve_extensions/symmetry_quotients.json": "96464f99abf5bf9e7a1d6ed949b150ac35657840d3c0e7653875ddc573bc5a0c"
+  },
+  "scope": "exact Python identities and finite formal execution, with actual paired-cover isogeny certificates; general stable reduction, explicit integral kernels and analytic convergence remain open",
+  "service_cli": {
+    "exact_receipt_match": true,
+    "fresh_sqlite": true,
+    "requests": 23
+  },
+  "source_sha256": {
+    "python/perfectpower/algebraic_local_curves.py": "579687fef469f08098279c43b046da3a0618a635485c0cf43fada7d64c2dc3d2",
+    "python/perfectpower/arithmetic_curve_structure.py": "540888fb6d37c5045474a7d1e51ba203be1bc655beadff47a5e7d3a8931a6100",
+    "python/perfectpower/catalogue.py": "d2abd4351be9fa0a34738d6263a562ef42403e9c87e4c86c3b3b30b4e5527845",
+    "python/perfectpower/curve_families.py": "8ab013535b07a22c5e6053447bb339830f8b540addea9845fb2140391e9df140",
+    "python/perfectpower/differential_extensions.py": "14d544cab59f21ea64bff09e771a169ebd71f0c501fd95223198f5f77f6354af",
+    "python/perfectpower/parameter_functions.py": "2a8840abd3932dc1a6dc352d47c2959edcd0e8dea58d5546f1332fc0b0df3f0c",
+    "python/perfectpower/query_service.py": "9ea88e88d9cab8ad899b4bd9c26ee4c102886989964ffcbcc2a4fec0b312ba6b",
+    "python/perfectpower/rational_functions.py": "35bd97babef6d034ed38c60ab46b02b84ac6b36023b874b8e614d18c61ed0bf3",
+    "python/perfectpower/symmetry_quotients.py": "1372aeb76e52e5ad0d38eb7638e37fa29c6e328c9560c85468bd9e3deb932e82"
+  },
+  "workbench": {
+    "browser_rendering_checked": false,
+    "dom_harness_orbit_states": 12,
+    "dom_harness_receipt_selections": 22,
+    "dom_harness_tabs": 4,
+    "embedded_receipt_sections": 7,
+    "javascript_syntax_checked": true,
+    "reason": "No local headless browser executable available"
+  }
+}
