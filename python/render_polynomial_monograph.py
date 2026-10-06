@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'literature':{
+            'title':'Literature into executable curves',
+            'subtitle':'Actual maps, marked kernels<br/>and certified differential arithmetic',
+            'description':'Composed elliptic towers, formal isogeny reconstruction, Richelot correspondences, superelliptic reduction, tensor invariants, binomial periods, marked analytic bounds, root clusters, Frobenius and relative sunrise integrals.',
+            'metrics':[('18','persistent mathematical object kinds'),('22','worked research receipts'),('32','degree of the three-factor isogeny')],
+            'scope':'Exact identities and bounded analytic/p-adic certificates in specified classes. General correspondences, singular-endpoint continuation, arbitrary arithmetic stable models and differential Galois classifications remain open.',
+            'running':'Geometry, differential algebra, marked topology and arithmetic',
+        },
         'extensions':{
             'title':'Algebraic curve execution',
             'subtitle':'Differential fields, local geometry<br/>and actual quotient maps',
@@ -132,6 +140,16 @@ def render(source,output,*,edition='polynomial'):
         if not line.strip():i+=1;continue
         if line.startswith('# '):i+=1;continue
         if line.startswith('## '):story.append(Paragraph(inline(line[3:]),heading));i+=1;continue
+        if line.startswith('|'):
+            table_rows=[]
+            while i<len(lines) and lines[i].startswith('|'):
+                cells=[c.strip() for c in lines[i].strip().strip('|').split('|')]
+                if not all(re.fullmatch(r':?-+:?',c) for c in cells):table_rows.append(cells)
+                i+=1
+            width=len(table_rows[0]);table_style=ParagraphStyle('tablecell',parent=small,fontSize=8,leading=11,spaceAfter=0)
+            grid=Table([[Paragraph(inline(c),table_style) for c in row] for row in table_rows],colWidths=[480/width]*width,repeatRows=1)
+            grid.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#E3EEF0')),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.3,colors.HexColor('#B6C7CE')),('TOPPADDING',(0,0),(-1,-1),7),('BOTTOMPADDING',(0,0),(-1,-1),7)]))
+            story.extend([grid,Spacer(1,12)]);continue
         if line=='$$':
             j=i+1
             while lines[j]!='$$':j+=1
@@ -166,7 +184,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

@@ -1,0 +1,36 @@
+{
+  "schema": "pp-kedlaya-prime-field-frobenius/1",
+  "p": 5,
+  "precision": 2,
+  "modulus": 25,
+  "matrix": [
+    [
+      0,
+      15
+    ],
+    [
+      18,
+      22
+    ]
+  ],
+  "characteristic_residues": [
+    1,
+    3,
+    5
+  ],
+  "exact_truncated_matrix": [
+    [
+      "23373384054363248427073656595389546549176295175/64970069403332376997250100947474145935913315591",
+      "-1728377460589355098112567384436087902205263360/1273922929477105431318629430342630312468888541"
+    ],
+    [
+      "-804256166224122498683901195371063107867789536256/844610902243320900964251312317163897166873102683",
+      "31732505885786911531792681176582016808766099001/16560998083202370607142182594454194062095551033"
+    ]
+  ],
+  "binomial_terms": 5,
+  "tail_valuation_lower_bound": 2,
+  "precision_certified": true,
+  "precision_argument": "Expand every numerator in powers of the monic f, with remainders of degree <=2g. Kedlaya Lemmas 2 and 3 bound negative and positive y-power reductions by floor(log_p(abs(y exponent))). For term k the loss is bounded conservatively by floor(log_p(2pk+p))+floor(log_p(2p deg(f)+1)), and the coefficient has valuation >=k+1. This lower bound is nondecreasing for k>=1.",
+  "scope": "prime-field good reduction, odd monic models degree<p<=19, precision<=4; exact rational reduction, not an optimized arbitrary-field backend"
+}

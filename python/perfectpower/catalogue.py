@@ -27,7 +27,10 @@ def compile_object(kind, specification):
     from .elliptic_quotients import EllipticQuotientFamily
     from .differential_extensions import DifferentialExtension
     from .symmetry_quotients import SymmetryCurve
-    constructors = dict(differential_extension=DifferentialExtension,symmetry_curve=SymmetryCurve,multi_curve_family=MultiCurveFamily,elliptic_quotient=EllipticQuotientFamily,curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
+    from .differential_modules import DifferentialModule
+    from .superelliptic_families import SuperellipticFamily
+    from .binomial_periods import BinomialSum
+    constructors = dict(differential_module=DifferentialModule,superelliptic_family=SuperellipticFamily,binomial_sum=BinomialSum,differential_extension=DifferentialExtension,symmetry_curve=SymmetryCurve,multi_curve_family=MultiCurveFamily,elliptic_quotient=EllipticQuotientFamily,curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
                         graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign,projected=ProjectedPopulation,factorial=FactorialLibrary)
     if kind not in constructors:
         raise ValueError('unsupported catalogue kind')

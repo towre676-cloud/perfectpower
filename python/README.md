@@ -112,6 +112,14 @@ PYTHONPATH=python python -m perfectpower service \
 
 The catalogue kinds are `differential_extension` and `symmetry_curve`; the service also exposes standalone `tensor_primitive`. See the [complete mathematical derivations](../docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.md), [receipt workbench](../docs/algebraic_curve_workbench.html), and [handoff guide](../CLAUDE_CODE_ALGEBRAIC_CURVES_START_HERE.md).
 
+### Literature-driven curve research
+
+Three new catalogue kinds are `differential_module`, `superelliptic_family` and `binomial_sum`. They provide exact tensor representations, bounded horizontal section/endomorphism searches, matrix descent, coprime superelliptic reduction with retained primitives, rational constant-term compilation and certified named telescopers. See [the complete mathematical/API map](../docs/LITERATURE_CURVE_EXECUTION_MONOGRAPH.md).
+
+The JSONL service also exposes `genus_three_tower`, `richelot`, `formal_two_isogeny`, `branch_braid`, `reflection_kernel`, `root_clusters`, `simultaneous_nodes`, `certified_transport`, `marked_legendre`, `frobenius`, `zeta`, `frobenius_deformation`, `tower_frobenius` and `sunrise`. Each operation accepts keyword arguments through the existing `args` field and returns a scope-bearing receipt. For example `{"op":"formal_two_isogeny","args":{"a":1,"b":2}}` reconstructs and verifies the full rational map, and `{"op":"frobenius","args":{"coefficients":[1,1,0,1],"p":5,"precision":2}}` returns an actual cohomological Frobenius matrix modulo 25. `{"op":"sunrise"}` derives the exact relative integral certificate.
+
+Rebuild all twenty-two example receipts with `PYTHONPATH=python python python/literature_curve_corpus.py`. Run the focused suite with `PYTHONPATH=python python -m unittest discover -s python/tests -p test_literature_curve_execution.py`. All core algorithms use the standard library; PDF rendering uses optional ReportLab and Matplotlib.
+
 ### Recovered divisor kernels
 
 `divisor_kernel` supplies exact divisor and multiple transforms, their Möbius inverses, matrix-free raw/normalized GCD kernels, complete raw rational/integer affine fibres, sparse divisor feature pairings and the integral tridiagonal inverse `threshold_solve`. Exact inputs accept integers and `Fraction`; numerical mode is explicit. Positivity is checked through the appropriate factorization, with inconclusive signed normalized cases reported honestly.

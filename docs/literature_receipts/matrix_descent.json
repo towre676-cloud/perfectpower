@@ -1,0 +1,93 @@
+{
+  "schema": "pp-quadratic-differential-descent/1",
+  "invariant_frame": [
+    [
+      {
+        "numerator": [
+          "2"
+        ],
+        "denominator": [
+          "1"
+        ]
+      },
+      {
+        "numerator": [
+          "0"
+        ],
+        "denominator": [
+          "1"
+        ]
+      }
+    ],
+    [
+      {
+        "numerator": [
+          "0"
+        ],
+        "denominator": [
+          "1"
+        ]
+      },
+      {
+        "numerator": [
+          "0",
+          "2"
+        ],
+        "denominator": [
+          "1"
+        ]
+      }
+    ]
+  ],
+  "descended": {
+    "schema": "pp-differential-module/1",
+    "dimension": 2,
+    "label": "over u=t^2",
+    "convention": "Y'=A Y",
+    "connection": [
+      [
+        {
+          "numerator": [
+            "0"
+          ],
+          "denominator": [
+            "1"
+          ]
+        },
+        {
+          "numerator": [
+            "1/2"
+          ],
+          "denominator": [
+            "0",
+            "1"
+          ]
+        }
+      ],
+      [
+        {
+          "numerator": [
+            "0",
+            "1/2"
+          ],
+          "denominator": [
+            "1"
+          ]
+        },
+        {
+          "numerator": [
+            "1/2"
+          ],
+          "denominator": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    ]
+  },
+  "cocycle_identity_checked": true,
+  "horizontal_intertwining_checked": true,
+  "frame_descent_checked": true,
+  "scope": "full rank matrix semilinear descent under the declared parameter involution, including chain-rule connection; no automatic arbitrary Galois descent search"
+}

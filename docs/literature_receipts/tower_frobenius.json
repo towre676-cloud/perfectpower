@@ -1,0 +1,292 @@
+{
+  "schema": "pp-geometric-tower-frobenius/1",
+  "p": 7,
+  "precision": 2,
+  "delta": "1",
+  "matrix": [
+    [
+      0,
+      21,
+      0,
+      42,
+      0,
+      42
+    ],
+    [
+      35,
+      0,
+      7,
+      0,
+      14,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      35
+    ],
+    [
+      41,
+      0,
+      18,
+      0,
+      30,
+      0
+    ],
+    [
+      0,
+      18,
+      0,
+      44,
+      0,
+      13
+    ],
+    [
+      19,
+      0,
+      12,
+      0,
+      37,
+      0
+    ]
+  ],
+  "elliptic_blocks": [
+    {
+      "schema": "pp-kedlaya-prime-field-frobenius/1",
+      "p": 7,
+      "precision": 2,
+      "modulus": 49,
+      "matrix": [
+        [
+          0,
+          21
+        ],
+        [
+          23,
+          0
+        ]
+      ],
+      "characteristic_residues": [
+        1,
+        0,
+        7
+      ],
+      "exact_truncated_matrix": [
+        [
+          "0",
+          "10889754743979124754346641/4077892350771200"
+        ],
+        [
+          "-54373485065663738149375/11641380921617154048",
+          "0"
+        ]
+      ],
+      "binomial_terms": 4,
+      "tail_valuation_lower_bound": 2,
+      "precision_certified": true,
+      "precision_argument": "Expand every numerator in powers of the monic f, with remainders of degree <=2g. Kedlaya Lemmas 2 and 3 bound negative and positive y-power reductions by floor(log_p(abs(y exponent))). For term k the loss is bounded conservatively by floor(log_p(2pk+p))+floor(log_p(2p deg(f)+1)), and the coefficient has valuation >=k+1. This lower bound is nondecreasing for k>=1.",
+      "scope": "prime-field good reduction, odd monic models degree<p<=19, precision<=4; exact rational reduction, not an optimized arbitrary-field backend"
+    },
+    {
+      "schema": "pp-kedlaya-prime-field-frobenius/1",
+      "p": 7,
+      "precision": 2,
+      "modulus": 49,
+      "matrix": [
+        [
+          21,
+          35
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "characteristic_residues": [
+        1,
+        45,
+        7
+      ],
+      "exact_truncated_matrix": [
+        [
+          "20145167721540559542245680084639350206230926679444904982535254828672381781853477386249303911427122929653545036745578647519/37271382735312610264332066148192813213373654393746892720947265625000000000000000000000",
+          "265992668833479640603324898530909235675992629721609178156965454675590318373416566085313207510290019744158687844265832329751/1105658243822670735114156986214332258004385919814501123779296875000000000000000000000000"
+        ],
+        [
+          "-137515673928239267697962331966210308915773950028622069395430858252803906297212280431952240573224075141317660982846010460803/977046935576578890513306514835185682700662325739438544544000000000000000000000000000",
+          "-7092690605953741874370775004563520493102818510109712458828449227511473190334894777248105012909978238547394273422500925427/113219404167441483275689675388347623219649118189004915075000000000000000000000000000"
+        ]
+      ],
+      "binomial_terms": 4,
+      "tail_valuation_lower_bound": 2,
+      "precision_certified": true,
+      "precision_argument": "Expand every numerator in powers of the monic f, with remainders of degree <=2g. Kedlaya Lemmas 2 and 3 bound negative and positive y-power reductions by floor(log_p(abs(y exponent))). For term k the loss is bounded conservatively by floor(log_p(2pk+p))+floor(log_p(2p deg(f)+1)), and the coefficient has valuation >=k+1. This lower bound is nondecreasing for k>=1.",
+      "scope": "prime-field good reduction, odd monic models degree<p<=19, precision<=4; exact rational reduction, not an optimized arbitrary-field backend"
+    },
+    {
+      "schema": "pp-kedlaya-prime-field-frobenius/1",
+      "p": 7,
+      "precision": 2,
+      "modulus": 49,
+      "matrix": [
+        [
+          28,
+          35
+        ],
+        [
+          12,
+          17
+        ]
+      ],
+      "characteristic_residues": [
+        1,
+        4,
+        7
+      ],
+      "exact_truncated_matrix": [
+        [
+          "-20145167721540559542245680084639350206230926679444904982535254828672381781853477386249303911427122929653545036745578647519/37271382735312610264332066148192813213373654393746892720947265625000000000000000000000",
+          "265992668833479640603324898530909235675992629721609178156965454675590318373416566085313207510290019744158687844265832329751/1105658243822670735114156986214332258004385919814501123779296875000000000000000000000000"
+        ],
+        [
+          "-137515673928239267697962331966210308915773950028622069395430858252803906297212280431952240573224075141317660982846010460803/977046935576578890513306514835185682700662325739438544544000000000000000000000000000",
+          "7092690605953741874370775004563520493102818510109712458828449227511473190334894777248105012909978238547394273422500925427/113219404167441483275689675388347623219649118189004915075000000000000000000000000000"
+        ]
+      ],
+      "binomial_terms": 4,
+      "tail_valuation_lower_bound": 2,
+      "precision_certified": true,
+      "precision_argument": "Expand every numerator in powers of the monic f, with remainders of degree <=2g. Kedlaya Lemmas 2 and 3 bound negative and positive y-power reductions by floor(log_p(abs(y exponent))). For term k the loss is bounded conservatively by floor(log_p(2pk+p))+floor(log_p(2p deg(f)+1)), and the coefficient has valuation >=k+1. This lower bound is nondecreasing for k>=1.",
+      "scope": "prime-field good reduction, odd monic models degree<p<=19, precision<=4; exact rational reduction, not an optimized arbitrary-field backend"
+    }
+  ],
+  "source_zeta": {
+    "schema": "pp-exact-hyperelliptic-zeta/1",
+    "p": 7,
+    "genus": 3,
+    "extension_counts": [
+      8,
+      60,
+      344
+    ],
+    "extension_moduli": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1
+      ]
+    ],
+    "weil_polynomial_high_to_low": [
+      1,
+      0,
+      5,
+      0,
+      35,
+      0,
+      343
+    ],
+    "zeta_numerator_low_to_high": [
+      1,
+      0,
+      5,
+      0,
+      35,
+      0,
+      343
+    ],
+    "scope": "complete finite-field enumeration in degrees 1 through genus, Newton identities and the curve functional equation; not a large-prime scalable point counter"
+  },
+  "factor_zetas": [
+    {
+      "schema": "pp-exact-hyperelliptic-zeta/1",
+      "p": 7,
+      "genus": 1,
+      "extension_counts": [
+        8
+      ],
+      "extension_moduli": [
+        [
+          0,
+          1
+        ]
+      ],
+      "weil_polynomial_high_to_low": [
+        1,
+        0,
+        7
+      ],
+      "zeta_numerator_low_to_high": [
+        1,
+        0,
+        7
+      ],
+      "scope": "complete finite-field enumeration in degrees 1 through genus, Newton identities and the curve functional equation; not a large-prime scalable point counter"
+    },
+    {
+      "schema": "pp-exact-hyperelliptic-zeta/1",
+      "p": 7,
+      "genus": 1,
+      "extension_counts": [
+        4
+      ],
+      "extension_moduli": [
+        [
+          0,
+          1
+        ]
+      ],
+      "weil_polynomial_high_to_low": [
+        1,
+        -4,
+        7
+      ],
+      "zeta_numerator_low_to_high": [
+        1,
+        -4,
+        7
+      ],
+      "scope": "complete finite-field enumeration in degrees 1 through genus, Newton identities and the curve functional equation; not a large-prime scalable point counter"
+    },
+    {
+      "schema": "pp-exact-hyperelliptic-zeta/1",
+      "p": 7,
+      "genus": 1,
+      "extension_counts": [
+        12
+      ],
+      "extension_moduli": [
+        [
+          0,
+          1
+        ]
+      ],
+      "weil_polynomial_high_to_low": [
+        1,
+        4,
+        7
+      ],
+      "zeta_numerator_low_to_high": [
+        1,
+        4,
+        7
+      ],
+      "scope": "complete finite-field enumeration in degrees 1 through genus, Newton identities and the curve functional equation; not a large-prime scalable point counter"
+    }
+  ],
+  "independent_counts_match": true,
+  "precision_certified": true,
+  "scope": "good split specialization of the actual three-cover tower; six-dimensional Frobenius obtained from three two-dimensional computations via functorial pullback"
+}

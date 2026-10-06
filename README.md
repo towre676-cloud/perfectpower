@@ -2,7 +2,7 @@
 
 **Exact polynomial arithmetic, reusable decision policies, and algebraic-curve research from the defining polynomial.**
 
-PerfectPower turns supported polynomial and arithmetic models into executable mathematical objects. It can return complete integer solution families, make finite solution spaces countable and addressable by rank, compile optimal calibration and diagnostic policies, and derive a curve family's differential equations directly from its polynomial. The geometry machinery connects coefficient motion, algebraic root collisions, local branches, logarithmic differential execution and verified quotient maps while retaining the original equation and coordinates.
+PerfectPower turns supported polynomial and arithmetic models into executable mathematical objects. It can return complete integer solution families, make finite solution spaces countable and addressable by rank, compile optimal calibration and diagnostic policies, and derive a curve family's differential equations directly from its polynomial. The geometry machinery connects coefficient motion, algebraic root collisions, local branches, logarithmic execution, actual quotient towers, explicit isogeny kernels, superelliptic periods, certified ordinary continuation and arithmetic Frobenius while retaining the original equation and coordinates.
 
 The common approach is to expose structure that can be reused: a solution generator instead of another search, an exact population instead of a materialized dataset, a complete operating policy instead of one optimal setting, or a differential system and quotient maps instead of an unexplained numerical period. The program combines a Python compiler and exact algebra engines with a Lean 4 theorem library. Numerical geometry and solver integration are optional extensions.
 
@@ -20,6 +20,35 @@ The common approach is to expose structure that can be reused: a solution genera
 | Graph and special-function researchers | Exact conditional graph measures and sampling; factorial-ratio valuations, stripped units, modular execution and hypergeometric recurrences | Produces reusable algebraic measures and arithmetic execution rules, including operations at indices too large for direct factorial expansion. |
 
 These are implemented capabilities within the scopes below. The [application roadmap](docs/DIRECT_USE_BUILD_ROADMAP.md) also records proposed extensions; a roadmap entry is not itself a delivered feature. Workload-specific [solver measurements](docs/HOST_ADAPTER.md) and [incremental replay measurements](industrial_performance/REPLAY_README.md) describe performance evidence without asserting a general speed advantage over conventional tools.
+
+## Literature into executable research
+
+All of the latest literature directions have concrete implementations and worked receipts. The [full monograph](docs/LITERATURE_CURVE_EXECUTION_MONOGRAPH.pdf), [mathematical source and literature map](docs/LITERATURE_CURVE_EXECUTION_MONOGRAPH.md), and [twenty-two reproducible receipts](docs/literature_receipts/manifest.json) give algorithms, proofs and boundaries. The core remains standard-library Python.
+
+| Research capacity | Current concrete result | Direct use and supported scope |
+|---|---|---|
+| Composed actual quotient geometry | `genus_three_tower` decomposes `y²=x⁷+t x⁵+t x³+x` into three elliptic systems after `delta⁴=-4(t-3)`, with rank-six pullback and a degree-32 Jacobian isogeny | Execute each rank-two factor and transport results through verified maps. The quartic base change is essential; no splitting over `Q(t)` is claimed. |
+| Formal map reconstruction and explicit kernels | `formal_two_isogeny` lifts a tangent map through formal logarithms and reconstructs a verified rational map; `richelot` builds a genus-two correspondence and divisor kernel; `reflection_kernel` supplies marked integral norm/transfer maps and torus kernel generators | Investigate actual degree-two and degree-four isogenies, with explicit kernels in supported classes. General endomorphism rings and arbitrary tower kernels remain open. |
+| Broader polynomial periods | Persistent `superelliptic_family` reduces `y^d=f(x,t)` with exact primitives, character blocks and holomorphic basis indices; `y³=x⁴+x+t` is a genus-three example | Derive period equations beyond hyperelliptic input. Coprime monic smooth models have degrees 2 through 8 and state dimension at most 32. |
+| Tensor structure, invariant searches and descent | Persistent `differential_module` constructs tensor, dual, Hom, symmetric and exterior modules, rational horizontal sections, filtered polarized endomorphisms, gauges and full matrix descent under `t→-t` | Turn differential equations into reusable representation objects and descend compatible systems to `u=t²`. Searches are complete inside their stated rational ansatz, not a full differential Galois classification. |
+| Combinatorics meets curves | Persistent `binomial_sum` compiles affine binomial sums into rational constant terms; Vandermonde and both Apéry families have exact telescopers; the zeta(2) operator matches an independently derived elliptic family | Move between exact sequence values, proved recurrences and polynomial period geometry. A general multivariate telescoping solver is not supplied. |
+| Controlled marked execution | `certified_transport` returns Gaussian-rational centers with proved Taylor tail and propagation bounds; `marked_legendre` adds certified standard integral-cycle seeds | Continue periods along certified ordinary polygons. Singular endpoints and automatic integral monodromy recognition require further methods. |
+| Integral topology and degeneration geometry | `branch_braid` executes marked Picard–Lefschetz actions; `root_clusters` builds split-root p-adic cluster trees and geometric semistable graphs; `simultaneous_nodes` resolves several quadratic collisions | Obtain exact cycle actions, graph genera and local branch contacts. Braids are supplied; cluster component twists and minimal arithmetic models are not inferred. |
+| Arithmetic cohomology and deformation | `frobenius` computes actual cohomological matrices with proved p-adic tail precision; `frobenius_deformation` supplies horizontal formal jets; `tower_frobenius` reuses three elliptic blocks | At `delta=1,p=7`, the rank-six tower matrix agrees with independent counts and has polynomial `X⁶+5X⁴+35X²+343`. The backend uses bounded prime fields and good reduction. |
+| Relative Feynman periods | `sunrise` derives an exact bivariate divergence certificate for the equal-mass two-dimensional sunrise integral, proves the boundary term `-6` and supplies a rank-three augmented amplitude system | Distinguish the physical relative integral from its rank-two homogeneous elliptic period system using the same Symanzik polynomial. General diagrams and masses are not claimed. |
+
+```python
+from perfectpower.curve_correspondences import genus_three_elliptic_tower
+from perfectpower.arithmetic_frobenius import tower_frobenius
+from perfectpower.sunrise_relative import sunrise_certificate
+
+tower = genus_three_elliptic_tower()
+print(tower["isogeny_degree"])                        # 32
+print(tower_frobenius(tower)["independent_counts_match"])  # True
+print(sunrise_certificate()["boundary"]["integrated_value"])  # -6
+```
+
+Run `PYTHONPATH=python python python/literature_curve_corpus.py` to rebuild every direction. These exact Python calculations and analytic/p-adic bounds do not add new Lean kernel proofs. The finite mesh/Hodge objects elsewhere are not identified with these continuous de Rham structures, and differential projectors alone still do not certify algebraic correspondences.
 
 ## Quick start
 
@@ -92,7 +121,7 @@ The [projective research extension](docs/CURVE_RESEARCH_MONOGRAPH.md) connects s
 | Search for horizontal projectors | `de_rham_pairing`, `horizontal_projectors`, `check_projector` | Continuous residue pairing and complete bounded linear ansatz for horizontal, holomorphic-filtration-preserving, self-adjoint endomorphisms; finite idempotent candidate search. Betti rationality and Jacobian splitting are not inferred. |
 | Transfer integral cycles through a marked surface map | `simplicial_cycle_map`, service `cycle_map` | Actual integral homology maps from an explicit simplicial vertex map, with Smith bases and boundary witnesses. Matching the triangulations to an algebraic quotient's period marking remains an additional obligation. |
 
-Run `PYTHONPATH=python python python/develop_curve_research.py` to reproduce the [exact research corpus](receipts/curve_research/summary.json), or replay its [service transcript](receipts/curve_research/service_requests.jsonl). New kernel proofs and rigorous numerical continuation remain separate work.
+Run `PYTHONPATH=python python python/develop_curve_research.py` to reproduce the [exact research corpus](receipts/curve_research/summary.json), or replay its [service transcript](receipts/curve_research/service_requests.jsonl). These earlier numerical paths remain uncertified; the new `certified_transport` and `marked_legendre` routes above provide separate proved ordinary continuation bounds. New Lean kernel proofs remain separate work.
 
 The [algebraic curve extension](docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.md) now joins differential field arithmetic to those geometric operations. Finite étale algebras retain conjugate algebraic values without radical choices, extend up to three commuting parameter derivations, compute fixed algebras and cyclic Hilbert–90 witnesses, and construct primitive models of complete tensor products. `algebraic_degenerations` covers the finite discriminant support, including repeated discriminant roots, and `node_branches` executes conjugate local branches at algebraic ordinary double points. `resonant_frobenius` resolves positive resonances through simultaneous logarithmic recurrences; the corpus completes the Legendre infinity jet through order 12. `ramified_scaling_chart` constructs and verifies smooth models for the supported centered-binomial class at finite rational or algebraic points and infinity.
 
@@ -111,7 +140,7 @@ print(curve.observable(sector="quotient")["order"]) # 2
 print(curve.involution_decomposition()["isogeny_degree"]) # 4
 ```
 
-The arithmetic check also supplies a useful negative result: the two rank-two differential projectors for `y²=x⁵+t` select character sets that are not closed under cyclotomic Galois conjugacy. `cyclic_projector_obstruction` certifies that these cannot be rational Betti projectors compatible with the verified cyclic action. See the [complete monograph and proofs](docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.pdf), [interactive receipt workbench](docs/algebraic_curve_workbench.html), and [reproducible corpus](receipts/algebraic_curve_extensions/summary.json). Run `PYTHONPATH=python python python/develop_algebraic_curve_extensions.py` or replay `receipts/algebraic_curve_extensions/service_requests.jsonl`. Algebraic maps do not yet supply automatically marked integral cycle matrices or explicit isogeny-kernel generators; formal jets do not certify analytic continuation.
+The arithmetic check also supplies a useful negative result: the two rank-two differential projectors for `y²=x⁵+t` select character sets that are not closed under cyclotomic Galois conjugacy. `cyclic_projector_obstruction` certifies that these cannot be rational Betti projectors compatible with the verified cyclic action. See the [earlier monograph and proofs](docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.pdf), [interactive receipt workbench](docs/algebraic_curve_workbench.html), and [reproducible corpus](receipts/algebraic_curve_extensions/summary.json). Run `PYTHONPATH=python python python/develop_algebraic_curve_extensions.py` or replay `receipts/algebraic_curve_extensions/service_requests.jsonl`. General automatically marked integral matrices and arbitrary isogeny kernels remain open; the new reflection, Richelot and elliptic routes supply explicit supported kernels. Formal local jets remain distinct from the new certified ordinary analytic continuation.
 
 ## Populations, policies and persistent research objects
 
@@ -119,7 +148,7 @@ The arithmetic check also supplies a useful negative result: the two rank-two di
 
 [`CalibrationPolicy` and `DiagnosticPolicy`](docs/DECISION_POLICIES_MONOGRAPH.md) turn exact optimization into executable decisions. Calibration fixes a bounded feasible integer model and a positive definite rational metric, then computes all winning regions on a one- or two-dimensional target slice, including lower-dimensional regions and ties. Optimizer-driven discovery can avoid listing settings that never win. Diagnostics supports at most 16 finite hypotheses and minimizes worst-case total cost over adaptive trees under noiseless readouts, zero-cost reset and strictly positive operator costs. Both compilers have explicit budgets and reject incomplete compilation.
 
-The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **15 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family`, `elliptic_quotient`, `multi_curve_family`, `differential_extension` and `symmetry_curve`. The JSONL service and local HTTP console expose the supported public operations:
+The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **18 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family`, `elliptic_quotient`, `multi_curve_family`, `differential_extension`, `symmetry_curve`, `differential_module`, `superelliptic_family` and `binomial_sum`. The JSONL service and local HTTP console expose the supported public operations:
 
 ```sh
 # Interactive local console and persistent catalogue.

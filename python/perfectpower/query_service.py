@@ -6,6 +6,9 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
+    superelliptic_family={'summary','evidence','observable'},
+    binomial_sum={'summary','evidence','term','terms','telescoper','elliptic_bridge'},
     differential_extension={'summary','evidence','element_data','fixed_algebra','hilbert90'},
     symmetry_curve={'summary','evidence','projectors','quotient','observable','involution_decomposition'},
     multi_curve_family={'summary','evidence','specialize','deformation','projective_deformation','root_motion','observable'},
@@ -32,6 +35,19 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'genus_three_tower','richelot','formal_two_isogeny','branch_braid','reflection_kernel','root_clusters','simultaneous_nodes','certified_transport','marked_legendre','frobenius','zeta','frobenius_deformation','tower_frobenius','sunrise'}:
+        from .curve_correspondences import genus_three_elliptic_tower,richelot_correspondence
+        from .formal_isogenies import elliptic_two_isogeny
+        from .marked_curve_topology import braid_monodromy,reflection_kernel
+        from .root_cluster_geometry import cluster_geometry,simultaneous_quadratic_nodes
+        from .certified_period_transport import certified_transport,legendre_marked_periods
+        from .arithmetic_frobenius import frobenius_matrix,zeta_by_counting,frobenius_deformation,tower_frobenius
+        from .sunrise_relative import sunrise_certificate
+        operations=dict(genus_three_tower=genus_three_elliptic_tower,richelot=richelot_correspondence,formal_two_isogeny=elliptic_two_isogeny,
+          branch_braid=braid_monodromy,reflection_kernel=reflection_kernel,root_clusters=cluster_geometry,simultaneous_nodes=simultaneous_quadratic_nodes,
+          certified_transport=certified_transport,marked_legendre=legendre_marked_periods,frobenius=frobenius_matrix,zeta=zeta_by_counting,
+          frobenius_deformation=frobenius_deformation,tower_frobenius=tower_frobenius,sunrise=sunrise_certificate)
+        return operations[op](**args)
     if op == 'discover_quotients':
         from .elliptic_quotients import discover_elliptic_quotients
         return discover_elliptic_quotients(request['specification'])

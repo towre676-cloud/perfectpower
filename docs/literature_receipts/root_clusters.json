@@ -1,0 +1,154 @@
+{
+  "schema": "pp-split-root-cluster-geometry/1",
+  "p": 3,
+  "roots": [
+    "0",
+    "3",
+    "1",
+    "4",
+    "2",
+    "5"
+  ],
+  "clusters": [
+    {
+      "id": 0,
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "depth": 0,
+      "parent": null,
+      "children": [
+        1,
+        2,
+        3
+      ],
+      "singletons": []
+    },
+    {
+      "id": 1,
+      "indices": [
+        0,
+        1
+      ],
+      "depth": 1,
+      "parent": 0,
+      "children": [],
+      "singletons": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "indices": [
+        2,
+        3
+      ],
+      "depth": 1,
+      "parent": 0,
+      "children": [],
+      "singletons": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": 3,
+      "indices": [
+        4,
+        5
+      ],
+      "depth": 1,
+      "parent": 0,
+      "children": [],
+      "singletons": [
+        4,
+        5
+      ]
+    }
+  ],
+  "vertices": [
+    {
+      "id": 0,
+      "cluster": 0,
+      "sheet": 0,
+      "genus": 0,
+      "odd_branch_flags": 0
+    },
+    {
+      "id": 1,
+      "cluster": 0,
+      "sheet": 1,
+      "genus": 0,
+      "odd_branch_flags": 0
+    },
+    {
+      "id": 2,
+      "cluster": 1,
+      "sheet": 0,
+      "genus": 0,
+      "odd_branch_flags": 2
+    },
+    {
+      "id": 3,
+      "cluster": 2,
+      "sheet": 0,
+      "genus": 0,
+      "odd_branch_flags": 2
+    },
+    {
+      "id": 4,
+      "cluster": 3,
+      "sheet": 0,
+      "genus": 0,
+      "odd_branch_flags": 2
+    }
+  ],
+  "edges": [
+    {
+      "source": 0,
+      "target": 2,
+      "length": "1",
+      "ramified": false
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "length": "1",
+      "ramified": false
+    },
+    {
+      "source": 0,
+      "target": 3,
+      "length": "1",
+      "ramified": false
+    },
+    {
+      "source": 1,
+      "target": 3,
+      "length": "1",
+      "ramified": false
+    },
+    {
+      "source": 0,
+      "target": 4,
+      "length": "1",
+      "ramified": false
+    },
+    {
+      "source": 1,
+      "target": 4,
+      "length": "1",
+      "ramified": false
+    }
+  ],
+  "graph_cycle_rank": 2,
+  "total_genus": 2,
+  "genus_identity_checked": true,
+  "scope": "geometric semistable marked double-cover graph after sufficient tame base change; edge lengths may be half-integral; no component twist, minimal regular model or arithmetic Frobenius action claimed"
+}

@@ -1,0 +1,175 @@
+{
+  "evidence": {
+    "schema": "pp-binomial-sum/1",
+    "factors": [
+      [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "family": "vandermonde",
+    "constant_term": {
+      "A": [
+        {
+          "variable": 0,
+          "one_plus_power": 1,
+          "variable_power": 0
+        },
+        {
+          "variable": 1,
+          "one_plus_power": 1,
+          "variable_power": 0
+        }
+      ],
+      "B": [
+        {
+          "variable": 0,
+          "one_plus_power": 0,
+          "variable_power": -1
+        },
+        {
+          "variable": 1,
+          "one_plus_power": 0,
+          "variable_power": -1
+        }
+      ],
+      "C": [
+        {
+          "variable": 0,
+          "one_plus_power": 0,
+          "variable_power": 0
+        },
+        {
+          "variable": 1,
+          "one_plus_power": 0,
+          "variable_power": 0
+        }
+      ],
+      "generating_function": "CT_z C / ((1-t A)(1-t A B))",
+      "formal_expansion": "sum over n>=k>=0, in powers of t"
+    },
+    "scope": "exact rational constant-term compiler for the supplied sum; a general creative telescoper is not claimed"
+  },
+  "terms": [
+    1,
+    2,
+    6,
+    20,
+    70,
+    252,
+    924,
+    3432,
+    12870,
+    48620,
+    184756,
+    705432
+  ],
+  "telescoper": {
+    "schema": "pp-binomial-telescoper/1",
+    "family": "vandermonde",
+    "recurrence": [
+      "n+1",
+      "-2(2n+1)",
+      "0"
+    ],
+    "theta_operator": [
+      [
+        0,
+        1
+      ],
+      [
+        -2,
+        -4
+      ]
+    ],
+    "shift_certificate": {
+      "numerator_k_coefficients": [
+        {
+          "numerator": [
+            "-3",
+            "-3"
+          ],
+          "denominator": [
+            "1"
+          ]
+        },
+        {
+          "numerator": [
+            "2"
+          ],
+          "denominator": [
+            "1"
+          ]
+        }
+      ],
+      "denominator_k_coefficients": [
+        {
+          "numerator": [
+            "1",
+            "2",
+            "1"
+          ],
+          "denominator": [
+            "1"
+          ]
+        },
+        {
+          "numerator": [
+            "-2",
+            "-2"
+          ],
+          "denominator": [
+            "1"
+          ]
+        },
+        {
+          "numerator": [
+            "1"
+          ],
+          "denominator": [
+            "1"
+          ]
+        }
+      ],
+      "k_power": 2,
+      "identity": "D(k) P(k+1)-k^power P(k)=D(k) L(T)/T",
+      "boundary": "G(n,0)=G(n,n+2)=0 after factorial cancellation; n>=1"
+    },
+    "exact_polynomial_identity_checked": true,
+    "initial_values": [
+      1,
+      2
+    ],
+    "module": {
+      "schema": "pp-differential-module/1",
+      "dimension": 1,
+      "label": "vandermonde period",
+      "convention": "Y'=A Y",
+      "connection": [
+        [
+          {
+            "numerator": [
+              "-1/2"
+            ],
+            "denominator": [
+              "-1/4",
+              "1"
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}

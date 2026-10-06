@@ -1,0 +1,79 @@
+{
+  "schema": "pp-certified-marked-legendre-periods/1",
+  "period_state": [
+    [
+      [
+        "457351142028317255985800320668307656190180661572580173625575800115203508806683585507638725497712537/375933718322080174501523820285841172170075995934770887510679322976710671737392736804041327300837376",
+        "0"
+      ],
+      [
+        "0",
+        "431856094509984642150278519405691505855671503570163264506813176724046639451936664246323604865341337/375933718322080174501523820285841172170075995934770887510679322976710671737392736804041327300837376"
+      ]
+    ],
+    [
+      [
+        "1832613273049190905042536877522844359821921446785088861968872586944328486475895016395440468103201/2936982174391251363293154845983134157578718718240397558677182210755552122948380756281572869537792",
+        "0"
+      ],
+      [
+        "0",
+        "-2784234208425676984571843758424068955731893645938270056620614131606882391285520499394666877551073/5873964348782502726586309691966268315157437436480795117354364421511104245896761512563145739075584"
+      ]
+    ]
+  ],
+  "row_error_bound": "2241586065467226881782041269068323180368107871544298060016441756785448044969/30644189296639523615876256691837480773708810557466555597890961844238452971591564263424",
+  "transport": {
+    "schema": "pp-certified-complex-transport/1",
+    "matrix": [
+      [
+        [
+          "71631816648026499405224872861/71491037268730710875424423936",
+          "0"
+        ],
+        [
+          "403129834944322189180953941/6412142547235993142641557504",
+          "0"
+        ]
+      ],
+      [
+        [
+          "141940099017107252840840837/2234094914647834714857013248",
+          "0"
+        ],
+        [
+          "208853843376724601871916434709/205188561511551780564529840128",
+          "0"
+        ]
+      ]
+    ],
+    "row_error_bound": "1/32614907904",
+    "steps": [
+      {
+        "start": [
+          "1/2",
+          "0"
+        ],
+        "end": [
+          "9/16",
+          "0"
+        ],
+        "radius": "1/4",
+        "connection_row_bound": "4",
+        "step_row_error_bound": "1/32614907904",
+        "order": 18
+      }
+    ],
+    "certified": true,
+    "tail_argument": "On the pole-free radius-R disk ||S||<=exp(MR); Cauchy tail <= dimension*exp(MR)*rho^(N+1)/(1-rho). All modulus estimates and arithmetic are rational upper bounds.",
+    "scope": "ordinary analytic continuation along this polygon; fundamental matrix starts at identity; singular endpoints and automatic integer monodromy recognition are excluded"
+  },
+  "normalization": "periods of dx/y divided by 2*pi; columns a,b; intersection a.b=1; seed columns [F(t),Fprime(t)] and [i F(1-t),-i Fprime(1-t)], F=2 K(t)/pi",
+  "seed_terms": 48,
+  "seed_bounds": [
+    "1/281474976710656",
+    "25/70368744177664"
+  ],
+  "seed_certified": true,
+  "scope": "standard marked Legendre cycles and their analytic continuation; no identification with unrelated mesh or finite Hodge objects"
+}

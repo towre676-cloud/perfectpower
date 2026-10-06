@@ -1,0 +1,106 @@
+{
+  "schema": "pp-simultaneous-quadratic-node-jets/1",
+  "parameter": "t=r^2",
+  "centres": [
+    "0",
+    "3",
+    "7"
+  ],
+  "root_jets": [
+    [
+      "0",
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "3",
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "3",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "7",
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "7",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ]
+  ],
+  "contact_orders": [
+    [
+      null,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      null,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      null,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      null,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      null,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      null
+    ]
+  ],
+  "exact_factor_identity": "(x-a-r)(x-a+r)=(x-a)^2-t",
+  "branches_are_exact": true,
+  "scope": "entire product-of-transverse-quadratics family; not arbitrary Puiseux factorization"
+}
