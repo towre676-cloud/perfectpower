@@ -1,0 +1,47 @@
+{
+  "BLAS_threads": 1,
+  "exact_operator_counts": {
+    "CP_reduction": "CP exchanges the inequivalent 5 and 5-prime channels; their difference is odd. The displayed 28 operators are even and independent.",
+    "group_order": 1080,
+    "mixed_CP_even_quartics": 28,
+    "mixed_CP_odd_quartics": 1,
+    "mixed_quartics_before_CP": 29,
+    "pure_adjoint_self_quartics": 2,
+    "scalar_coefficients_with_Higgs": 70,
+    "scalar_coefficients_without_Higgs": 60,
+    "scope": "Two real (8+1+1) sectors with independent odd Z2 charges, diagonal 3.A6, and the declared generalized CP. Excludes higher-degree and derivative operators.",
+    "single_sector_quadratics": 4,
+    "single_sector_quartics": 12
+  },
+  "finite_rank_check": {
+    "finite_response_determinant": 0.5164703713687202,
+    "implicit_singular_values": [
+      85.84500072232035,
+      12.90450652583474,
+      0.8102086119814944,
+      0.0005754440643585376
+    ],
+    "response_discrepancy_spectral_norm": 0.00011204844892725229,
+    "scope": "Numerical finite/implicit agreement, not an interval-arithmetic proof.",
+    "singular_values": [
+      85.84510154304883,
+      12.904499007760013,
+      0.8102087110336915,
+      0.0005754291210702998
+    ]
+  },
+  "focused_new_tests": 16,
+  "fresh_archive_tests_passed": 40,
+  "fresh_scientific_receipt_byte_identical": true,
+  "numpy": "2.3.5",
+  "pytest": "9.1.1",
+  "python": "3.12.14",
+  "related_tests": 24,
+  "scalar_minimum_hessian_eigenvalue": 1.1262305321776498e-05,
+  "scientific_receipt_sha256": "6f7ec579079c7af61c0663189e6c9ba6d4928ed7a6ff34db9042a218e7235b6d",
+  "scipy": "1.17.0",
+  "scope": "Focused scientific verification. No full-repository regression or formal interval certification of numerical vacua.",
+  "sympy": "1.14.0",
+  "total_passed": 40,
+  "weak_J": 0.00026225346207613386
+}
