@@ -1,0 +1,20 @@
+{
+  "byte_identical_regeneration": true,
+  "discovery_free_replay": {
+    "discovery_free_replay": true
+  },
+  "existing_decay_tests": 18,
+  "focused_tests": 31,
+  "formal_verification": false,
+  "full_repository_regression": false,
+  "new_tests": 13,
+  "positivity_certificates": 12,
+  "python": "3.12.14",
+  "receipt_sha256": "35bdbbd984b7dfd9d18de2664cba176e8aba8f6a3f0029ed02c9688177b68025",
+  "schema": "pp-flavor-polynomial-validation/1",
+  "tested_commands": [
+    "PYTHONPATH=python python -m unittest discover -s python/tests -p 'test_flavor*py'",
+    "PYTHONPATH=python python python/develop_flavor_polynomial_bounds.py",
+    "PYTHONPATH=python python python/develop_flavor_polynomial_bounds.py --verify"
+  ]
+}

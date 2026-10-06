@@ -30,9 +30,9 @@ for i,part in enumerate(parts):
 def footer(canvas,doc):
     canvas.setFont("Times-Roman",8)
     canvas.setFillColor(colors.grey)
-    canvas.drawString(45,25,"Perfectpower | flavor cosmology | exact trial profiles and stated physical limits")
+    canvas.drawString(45,25,"Perfectpower | polynomial flavor bounds | exact certificates and physical limits")
     canvas.drawRightString(A4[0]-45,25,str(doc.page))
 SimpleDocTemplate(str(out),pagesize=A4,rightMargin=45,leftMargin=45,
                   topMargin=45,bottomMargin=43,invariant=1,
-                  title="Flavor cosmology: metastable decay, CP walls and constrained bias",
+                  title="Polynomial certification in flavor physics: decay, EFT control and CP constraints",
                   author="Perfectpower research repository").build(story,onFirstPage=footer,onLaterPages=footer)
