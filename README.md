@@ -1,17 +1,32 @@
 # PerfectPower
 
-**Exact integer arithmetic, complete solution families, and Lean proof support.**
+**Exact polynomial arithmetic, reusable decision policies, and algebraic-curve research from the defining polynomial.**
 
-PerfectPower answers questions such as “when is this polynomial a square?” and “which integers satisfy this arithmetic constraint?” For supported equations, it replaces a candidate-by-candidate search with a complete finite answer or an exact structured generator. Supported solution spaces can be restricted by polynomial and modular conditions, counted, queried by rank and optimized in their original coordinates. When global solving remains unresolved, it can still return necessary congruences, a smaller equivalent problem, or a complete bounded answer. Results describe their mathematical justification and any remaining assumptions.
+PerfectPower turns supported polynomial and arithmetic models into executable mathematical objects. It can return complete integer solution families, make finite solution spaces countable and addressable by rank, compile optimal calibration and diagnostic policies, and derive a curve family's differential equations directly from its polynomial. The geometry machinery explains coefficient motion, root collisions and hidden elliptic quotients while retaining the original equation and coordinates.
 
-The core combines a Python constraint compiler with a Lean 4 library. It handles polynomial perfect powers, Pell equations, selected Mordell curves, effective quartic and Runge families, and exact changes of integer coordinates. Related modules provide integer lattice solving and optimization, operator algebras, sequence comparisons, and branched-curve geometry.
+The common approach is to expose structure that can be reused: a solution generator instead of another search, an exact population instead of a materialized dataset, a complete operating policy instead of one optimal setting, or a differential system and quotient maps instead of an unexplained numerical period. The program combines a Python compiler and exact algebra engines with a Lean 4 theorem library. Numerical geometry and solver integration are optional extensions.
+
+## What you can build with it
+
+| User and direct use | Current output | Why the structure matters |
+|---|---|---|
+| Algebraic-curve researchers investigating a polynomial family | Exact discriminant, de Rham connection, selected Picard–Fuchs operator, affine deformation class, simultaneous root velocities and simple nodal residues | Connects coefficient changes to shape changes, degeneration directions and differential order, with replayable polynomial identities rather than only plots or numerical fits. |
+| Researchers studying symmetric genus-two curves | Translated-reflection discovery, two explicit elliptic quotient maps, an independently derived connection splitting into two elliptic blocks, rational fibres and original-coordinate integrality | Explains a reduction through actual maps and differential pullbacks; the smaller systems can be queried and executed separately. |
+| Calibration and quantized-control engineers | Complete nearest-setting regions on a declared target interval or rectangle, switching contacts and every tie | Compiles repeated optimization into a reusable policy covering the entire supported target region. |
+| Authors of finite diagnostic procedures | An adaptive experiment tree with globally minimum worst-case cost for the declared resettable, noiseless model | Identifies a whole hypothesis set through observations and branches, instead of assembling pairwise distinguishing experiments manually. |
+| Configuration, dataset and exact-sampling authors | Count, rank, selection, paging, sampling without replacement, rank shards, supported distinct images and symbolic joins | Gives direct access to large structured design spaces without first listing every object; duplicate-value geometry becomes part of the population definition. |
+| Number theorists and arithmetic solver authors | Complete lists or generators for supported integer equations, exact coordinate recovery, constrained optimization and replayable certificates | Reuses a mathematical reduction across a family and retains the original integer restrictions. Unsupported global cases remain explicitly unresolved. |
+| Operator, recurrence and sequence researchers | Shared observable machines, exact state reductions, generating-function witnesses, subsequences and cheapest separating experiments | Makes the requested output and its distinguishing experiments executable across related models. |
+| Graph and special-function researchers | Exact conditional graph measures and sampling; factorial-ratio valuations, stripped units, modular execution and hypergeometric recurrences | Produces reusable algebraic measures and arithmetic execution rules, including operations at indices too large for direct factorial expansion. |
+
+These are implemented capabilities within the scopes below. The [application roadmap](docs/DIRECT_USE_BUILD_ROADMAP.md) also records proposed extensions; a roadmap entry is not itself a delivered feature. Workload-specific [solver measurements](docs/HOST_ADAPTER.md) and [incremental replay measurements](industrial_performance/REPLAY_README.md) describe performance evidence without asserting a general speed advantage over conventional tools.
 
 ## Quick start
 
-Requires **Python 3.10 or later**. The core Python package has no runtime dependencies. Run from a repository checkout so the compiler can access the accompanying data and proof records.
+Requires **Python 3.10 or later**. The core Python package has no runtime dependencies. Use a repository checkout so the compiler can access the accompanying data and proof records. The current machinery is on `claude/laughing-lamport-qqzdo9`:
 
 ```sh
-git clone https://github.com/towre676-cloud/perfectpower.git
+git clone --branch claude/laughing-lamport-qqzdo9 https://github.com/towre676-cloud/perfectpower.git
 cd perfectpower
 python -m pip install .
 python -m perfectpower solve --expr '(5*n - 7)**3 - 2'
@@ -27,8 +42,6 @@ python -m perfectpower exact-solve --coeff '[-199,1,1,1,1]' --d 2 --verify
 
 The complete answer is **`(x,y) = (7,−51)` or `(7,51)`**. Here `--verify` replays the exact Python certificate; it does not invoke Lean.
 
-The function API exposes the same constraint plans:
-
 ```python
 from perfectpower.compiler import PowerConstraint, compile_constraint
 
@@ -39,37 +52,76 @@ print(plan.all_hits())  # [(2, [-5, 5])]
 
 See the [Python API](python/README.md), [constraint compiler guide](docs/CONSTRAINT_COMPILER.md), and [worked examples](docs/SHOWCASE_MONOGRAPH.md). Run `python -m perfectpower --help` for the full command list.
 
-## What it does
+## From polynomial structure to differential execution
 
-For configuration generation and mathematical datasets, the new [`ExactPopulation`](docs/POPULATION_MONOGRAPH.md) interface compiles a finite supported domain or curve into a reusable object. It counts, selects and locates original objects by rank, samples without replacement, partitions work into balanced rank shards and exports seeded JSONL datasets. Run `python -m perfectpower population --spec receipts/populations/compatible_layouts.spec.json` for a configuration example. The [application roadmap](docs/DIRECT_USE_BUILD_ROADMAP.md) connects this common layer to the proposed direct uses.
+`CurveFamily` accepts a monic family `y² = P(x,t)` of degree 3, 5 or 7 in `x`, with rational polynomial parameter coefficients of degree at most 8. Smooth fibres have genus 1, 2 or 3. It derives the discriminant, an exact rational Gauss–Manin connection and a scalar Picard–Fuchs operator for a requested observable. The scalar order is the minimum universal order for that observable on the full period module; a particular cycle may satisfy a smaller equation.
 
-The [open-content release](docs/OPEN_CONTENT_MONOGRAPH.md) adds eight persistent object kinds, a local HTTP console, inequality-constrained integer calibration, globally cheapest distinguishing experiments, exact graph sampling for cyclotomic orders 2 through 64, nonlinear factorial-ratio execution, distinct-value populations, huge symbolic joins, whole-family task splits and certified local chart transitions. Run `python python/develop_open_content.py --output /tmp/pp-open` or `python -m perfectpower service --database /tmp/pp.sqlite --http-port 8080`. [Full receipts](receipts/open_content/summary.json) include 504 graph samples, 52 nonlinear families and 512 tasks. Compatible C tiles beat the conventional dot-product examples, while the cache-friendly untiled C control is faster still. The [earlier Python demo](docs/APPLICATIONS_MONOGRAPH.md) remains historical evidence. Exact flavor diagnostics expose coefficient constraints and an allowed deformation; general effective arithmetic, global smooth geometry and physical derivations remain open. See the [dense roadmap](docs/DIRECT_USE_BUILD_ROADMAP.md) and [handoff](CLAUDE_CODE_APPLICATIONS_START_HERE.md). The full archive has no size cap.
+```python
+from perfectpower.curve_families import CurveFamily
 
-| Task | Interface | Guide |
+# P(x,t) = x^5 - x + t; each entry is a polynomial in t,
+# and both coefficient lists run from constant term upward.
+family = CurveFamily({"coefficients": [[0, 1], [-1], [0], [0], [0], [1]]})
+print(family.deformation()["coordinate_only_generic"])  # False
+print(family.collisions()["covered_simple_roots"])      # 4
+print(family.observable()["order"])                     # 4
+```
+
+The structural queries connect several interpretations of the same polynomial:
+
+| Query | Exact mathematical output | What it clarifies |
 |---|---|---|
-| Compile polynomial power, triangular-number, and quadratic-root constraints | `solve`, `prove` | [Constraint compiler](docs/CONSTRAINT_COMPILER.md) |
-| Classify and count perfect-power hits; generate Pell and radical families | `classify`, `count`, `enumerate` | [Mathematical overview](docs/MONOGRAPH.md) |
-| Solve supported polynomial equations over all integers | `exact-solve`, `square-fibres`, `integer-roots` | [Arithmetic engine](docs/ENHANCED_MACHINERY_MONOGRAPH.md), [roots and search bounds](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
-| Discover polynomial coordinates; solve integer sign domains and global polynomial optimization | `polynomial-decompose`, `polynomial-relation`, `polynomial-domain`, `polynomial-optimize` | [Polynomial capacity](docs/POLYNOMIAL_CAPACITY_MONOGRAPH.md) |
-| Count and select polynomial/modular domains; query signed power curves and composed generators | `semilinear-domain`, `semilinear-optimize`, `polynomial-charts`, `curve-query`, `family-evaluate` | [Semilinear capacity](docs/SEMILINEAR_CAPACITY_MONOGRAPH.md) |
-| Query coefficient-bearing power families, reuse integer fibres and count modular recurrence domains | `coefficient-charts`, `curve-query`, `recurrence-orbit`, Python `CurveSpace` | [Reusable query spaces](docs/QUERY_SPACE_MONOGRAPH.md) |
-| Compile Gamma shifts, factorials and binomial inputs; test factorial-ratio powers and derive exact hypergeometric recurrences | `gamma-analyze`, `gamma-unit`, `gamma-domain`, `gamma-optimize` | [Gamma arithmetic](docs/GAMMA_ARITHMETIC_MONOGRAPH.md) |
-| Compose arithmetic reductions and recover original models; retain partial and bounded information | `simplify-query`, `analyze-power`, `polynomial-pullback` | [Arithmetic simplifier](docs/ARITHMETIC_SIMPLIFIER_MONOGRAPH.md) |
-| Search a bounded power range using factored local filters | `factored-scan` | [Local arithmetic filters](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md) |
-| Solve exact integer linear systems and find every tied nearest lattice point | `integer-lift`, `nearest-lift` | [Integer coordinates](docs/INTEGER_LIFTING_MONOGRAPH.md), [optimization](docs/ENHANCED_MACHINERY_MONOGRAPH.md) |
-| Analyze operators and share exact state machines across recurrence models | `recurrence-batch`, `observable-machine`, `integral-machine`, `operator-algebra` | [Shared output machines](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md), [integer states and congruences](docs/INTEGRAL_OUTPUT_MACHINES.md), [operator algebras](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md) |
-| Certify matrix-output generating functions and sampled subsequences | `witness-resolvent` | [Witness resolvents](docs/WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md) |
-| Query graph events and update edge weights without enumerating every basis | `connection-measure`, `connection-reweight` | [Graph measures](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [weight repairs](docs/WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md) |
-| Compute branched-cover topology, differentials, and surface geometry | `branched-geometry`, `legendre-period-bounds`, `intrinsic-voronoi` | [Geometry documentation](docs/README.md#geometry) |
-| Derive a curve family's differential system and continue marked periods | catalogue kind `curve_family` via `service` | [Curve family compiler](docs/CURVE_FAMILIES_MONOGRAPH.md) |
-| Explain coefficient motion and nodal residues; discover two elliptic systems inside a translated sextic | `curve_family` structural queries, `elliptic_quotient`, `discover_quotients`, `construct_quotient` | [Geometry inside the polynomial](docs/CURVE_STRUCTURE_MONOGRAPH.md) |
-| Compare arithmetic families with local OEIS records | `oeis`, `sequence-atlas` | [OEIS integration](docs/OEIS.md) |
+| `deformation` | Decomposition of `P_t` modulo the translation and scaling directions `P_x` and `x P_x − mP`, with chart pivots and replayed identities | Which coefficient motion changes shape in this affine chart. For `x⁵+t`, scaling explains the first-order observable `10t F′+3F=0`; `x⁵−x+t` has essential shape motion. |
+| `root_motion` | The rational polynomial representative of `−P_t/P_x` modulo `P`, checked by a polynomial identity | Every simple root's velocity without solving roots in radicals or choosing a numerical ordering. |
+| `collisions` | Collision coordinates and connection residues at every simple finite discriminant root, using exact squarefree rational quotient algebras and splitting on nonunits | Where roots collide and how that collision enters period space. Repeated discriminant roots and infinity require separate local analysis. |
+| `observable` | Exact derivative rows, their first dependency, and rational and primitive polynomial differential operators | The differential complexity of the chosen output, including additional scalar singularities distinct from singular fibres. |
+| `period_path` | Marked numerical initialization and continuation, backed by exact exclusion of declared polynomial zeros along whole rational path segments | How to execute the derived system along a specified path. Numerical quadrature and ODE errors are not certified. |
 
-For solver integration, the [SMT adapter](docs/HOST_ADAPTER.md) replaces recognized arithmetic relations with their complete solution sets. The separate [incremental replay tool](industrial_performance/REPLAY_README.md) handles SMT-LIB command transport. Coverage and performance measurements are documented with their workloads in those guides.
+For translated-even sextics, `elliptic_quotient` adds a complementary genus-two route. It discovers the reflection center, checks the odd-coefficient conditions, constructs two elliptic quotient maps and checks that an independently derived residue-free four-dimensional connection intertwines with their two-dimensional blocks. `construct_quotient` builds a sextic from a chosen first elliptic cubic and center; `point_image` and `rational_lifts` retain arithmetic information in the original coordinates. This supports this explicit reflection class, not arbitrary elliptic-cover discovery or gluing of arbitrary curve pairs.
 
-For example, `curve-query --left '[1,0,-2,0,1]' --right '[0,0,0,1]' --objective 'x*x+y*y' --verify` solves `(x²−1)²=y³` completely and returns all three tied minimizers. The [new corpus](receipts/semilinear_capacity/summary.json) closes 262 finite-image presentations, including 238 previously unresolved cases, and independently checks 3,080 constrained quartic optima and 676 Bober recurrence domains. See the [monograph](docs/SEMILINEAR_CAPACITY_MONOGRAPH.md) for the defined workloads and proof scope.
+The bridge combines established deformation, de Rham, Gauss–Manin, Picard–Fuchs and elliptic-cover mathematics in one executable research object. Its value here is the linked explanation and exact execution; worldwide mathematical priority is not established. See [the family compiler](docs/CURVE_FAMILIES_MONOGRAPH.md), [geometry inside the polynomial](docs/CURVE_STRUCTURE_MONOGRAPH.md), and the [ten-request service example](receipts/curve_structure/service_requests.jsonl). The current input degree limit is 8; the original family monograph describes the earlier degree-4 limit.
 
-The [decision-policy release](docs/DECISION_POLICIES_MONOGRAPH.md) compiles bounded calibration models into complete operating regions and finite operator hypotheses into globally optimal resettable diagnostic trees. Cubic collision geometry and discrete monotonicity extend distinct-value populations. Ten catalogue kinds now include both policies. Run `python python/develop_decision_policies.py`; the [receipts](receipts/decision_policies/summary.json) and offline SVG workbench show the coupled configuration-to-diagnosis example. See the [handoff](CLAUDE_CODE_DECISION_POLICIES_START_HERE.md).
+## Populations, policies and persistent research objects
+
+[`ExactPopulation`](docs/POPULATION_MONOGRAPH.md) compiles supported finite domains and curves into reusable query spaces. It counts, selects and locates original objects by rank, samples without replacement, partitions work into balanced rank shards and exports seeded JSONL datasets. Distinct projections use complete cubic collision geometry or supported higher-degree discrete monotonicity certificates. Symbolic joins and projections have defined supported families; arbitrary polynomial image closure is not assumed.
+
+[`CalibrationPolicy` and `DiagnosticPolicy`](docs/DECISION_POLICIES_MONOGRAPH.md) turn exact optimization into executable decisions. Calibration fixes a bounded feasible integer model and a positive definite rational metric, then computes all winning regions on a one- or two-dimensional target slice, including lower-dimensional regions and ties. Optimizer-driven discovery can avoid listing settings that never win. Diagnostics supports at most 16 finite hypotheses and minimizes worst-case total cost over adaptive trees under noiseless readouts, zero-cost reset and strictly positive operator costs. Both compilers have explicit budgets and reject incomplete compilation.
+
+The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **12 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family` and `elliptic_quotient`. The JSONL service and local HTTP console expose the supported public operations:
+
+```sh
+# Interactive local console and persistent catalogue.
+python -m perfectpower service --database /tmp/pp.sqlite --http-port 8080
+
+# Alternatively, replay the curve-structure research transcript.
+python -m perfectpower service --database /tmp/pp-structure.sqlite \
+  < receipts/curve_structure/service_requests.jsonl
+```
+
+Run `python -m perfectpower population --spec receipts/populations/compatible_layouts.spec.json` for a configuration population, or `python python/develop_decision_policies.py` for the coupled configuration-to-diagnosis example. See [catalogue and service foundations](docs/OPEN_CONTENT_MONOGRAPH.md), [decision-policy receipts](receipts/decision_policies/summary.json) and [curve-structure receipts](receipts/curve_structure/summary.json). Older release monographs record the catalogue counts at their publication dates.
+
+## Arithmetic, operator and geometry interfaces
+
+| Capacity | Entry points | Scope and documentation |
+|---|---|---|
+| Compile polynomial power, triangular-number and quadratic-root constraints | `solve`, `prove`, `classify`, `count`, `enumerate` | Complete supported reductions, Pell and radical generators; [compiler](docs/CONSTRAINT_COMPILER.md), [overview](docs/MONOGRAPH.md). |
+| Solve polynomial equations over all integers | `exact-solve`, `square-fibres`, `integer-roots` | Selected Mordell, effective quartic, Runge and other supported families; [arithmetic engine](docs/ENHANCED_MACHINERY_MONOGRAPH.md), [roots and bounds](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md). |
+| Discover polynomial coordinates and solve sign domains or polynomial optima | `polynomial-decompose`, `polynomial-relation`, `polynomial-domain`, `polynomial-optimize` | Exact supported coordinate identities and global domain reasoning; [polynomial capacity](docs/POLYNOMIAL_CAPACITY_MONOGRAPH.md). |
+| Query polynomial/modular domains and signed power curves | `semilinear-domain`, `semilinear-optimize`, `polynomial-charts`, `coefficient-charts`, `curve-query`, `family-evaluate`, Python `CurveSpace` | Count, select, restrict and optimize reusable families; [semilinear capacity](docs/SEMILINEAR_CAPACITY_MONOGRAPH.md), [query spaces](docs/QUERY_SPACE_MONOGRAPH.md). |
+| Simplify arithmetic models and recover original coordinates | `simplify-query`, `analyze-power`, `polynomial-pullback`, `factored-scan` | Exact reductions, necessary local conditions and explicit bounded searches; [simplifier](docs/ARITHMETIC_SIMPLIFIER_MONOGRAPH.md), [local filters](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md). |
+| Execute Gamma, factorial-ratio and binomial arithmetic | `gamma-analyze`, `gamma-unit`, `gamma-domain`, `gamma-optimize`, catalogue `factorial` | Valuations, stripped units, modular values and exact hypergeometric recurrences; integrality and modular evaluation are separate claims; [Gamma arithmetic](docs/GAMMA_ARITHMETIC_MONOGRAPH.md), [nonlinear execution](docs/OPEN_CONTENT_MONOGRAPH.md). |
+| Solve integer linear systems and nearest-setting problems | `integer-lift`, `nearest-lift`, catalogue `inverse`, `calibration_policy` | Exact fibres, inequality-constrained bounded calibration, every tied nearest point and complete supported target policies; [integer lifting](docs/INTEGER_LIFTING_MONOGRAPH.md), [policies](docs/DECISION_POLICIES_MONOGRAPH.md). |
+| Recover monomial models and project exact relations | `monomial-solve`, `monomial-rational`, `monomial-eliminate`, `monomial-recovery`, `monomial-project` | Supported integer/rational recovery and elimination; [monomial recovery](docs/MONOMIAL_RECOVERY_MONOGRAPH.md). |
+| Share operator and recurrence state; design experiments | `recurrence-batch`, `recurrence-orbit`, `observable-machine`, `integral-machine`, `operator-algebra`, catalogue `sequence`, `diagnostic_policy` | Exact observable compression, modular domains, cheapest separating experiments and finite adaptive diagnosis; [output machines](docs/LOCALITY_AND_OBSERVABLE_MACHINES.md), [integer states](docs/INTEGRAL_OUTPUT_MACHINES.md), [policies](docs/DECISION_POLICIES_MONOGRAPH.md). |
+| Certify matrix-output generating functions and subsequences | `witness-resolvent` | Exact generating-function witnesses; [witness resolvents](docs/WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md). |
+| Query, sample and reweight graph bases | `connection-measure`, `connection-reweight`, catalogue `graph` | Supported gain graphs, conditional measures and exact cyclotomic arithmetic at orders 2 through 64; [graph measures](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [weight repairs](docs/WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md), [sampling](docs/OPEN_CONTENT_MONOGRAPH.md). |
+| Compute finite algebraic and differential models | `weighted-hodge`, `finite-weil`, `divisor-kernel`, `finite-mellin` | Exact finite Hodge, Fourier and divisor calculations; [deep gems](docs/DEEP_GEMS_MONOGRAPH.md), [geometry guides](docs/README.md#geometry). |
+| Compute branched-curve topology, differentials and local geometry | `branched-geometry`, `branch-form`, `period-normalize`, `surface-homology`, `symplectic-periods`, `integrate-path` | Supported branched models and explicit differential/period data; [geometry documentation](docs/README.md#geometry). |
+| Analyze metrics, periods and Voronoi geometry | `legendre-period-bounds`, `analytic-periods`, `intrinsic-voronoi`, `certified-voronoi`, `conformal-metric`, `conformal-voronoi` | Exact local identities and rational polyhedral enclosures have different guarantees from numerical continuous geometry; [analytic geometry](docs/ANALYTIC_GEOMETRY_MONOGRAPH.md), [enclosures](docs/VORONOI_ENCLOSURE_MONOGRAPH.md). |
+| Derive and explain polynomial-family geometry | Python `CurveFamily`, `EllipticQuotientFamily`; catalogue `curve_family`, `elliptic_quotient`; service `discover_quotients`, `construct_quotient` | Exact connections, deformation classes, root motion, simple collision residues, explicit quotient reductions and marked numerical continuation; [family compiler](docs/CURVE_FAMILIES_MONOGRAPH.md), [structural machinery](docs/CURVE_STRUCTURE_MONOGRAPH.md). |
+| Compare arithmetic families with local sequence records | `oeis`, `sequence-atlas` | Local OEIS matching with source attribution; [OEIS integration](docs/OEIS.md). |
+
+For example, `curve-query --left '[1,0,-2,0,1]' --right '[0,0,0,1]' --objective 'x*x+y*y' --verify` solves `(x²−1)²=y³` completely and returns all three tied minimizers. The [semilinear receipts](receipts/semilinear_capacity/summary.json) record the defined closure and constrained-optimization workloads. For solver integration, the [SMT adapter](docs/HOST_ADAPTER.md) replaces recognized arithmetic relations with their complete solution sets; the separate [incremental replay tool](industrial_performance/REPLAY_README.md) transports SMT-LIB commands.
 
 ## Results and guarantees
 
@@ -84,9 +136,13 @@ Constraint plans expose an `answer` describing what a caller can use:
 | `unresolved` | The available method does not establish a complete answer. |
 
 <a id="what-to-trust-at-a-glance"></a>
-**A complete mathematical answer and a formally verified program are separate guarantees.** Inspect the result's certificate for the theorem names, premises, domain, and reduction steps. Lean checks the statements of compiled theorems. Python discovers and executes plans and can replay exact certificates, but its execution is not formally verified. Emitted Lean source becomes a checked theorem only after compilation.
+**A complete mathematical answer and a formally verified program are separate guarantees.** Inspect the result's certificate for theorem names, premises, domain and reduction steps. Lean checks the statements of compiled theorems. Python discovers and executes plans and can replay exact certificates, but its execution is not formally verified. Emitted Lean source becomes a checked theorem only after compilation.
 
-Some modules return bounded evidence or numerical approximations. A bounded scan does not establish global completeness, and a numerical period matrix does not certify analytic error bounds. General polynomial integer solving remains outside the supported scope. The [trust boundary](docs/TRUST_BOUNDARY.md), [certificate format](docs/CERTIFICATE_FORMAT.md), and each module's guide describe the precise guarantees.
+Global solving, finite exact calculation and numerical exploration have distinct scopes. A bounded scan or bounded integer-fibre query does not establish a global point census. Deformation charts do not classify all projective equivalences; simple collision residues do not supply a marked integral monodromy matrix. Exact path exclusion does not certify numerical period error. Generic smoothness checks and explicit algebra, degree and coefficient-size budgets constrain the family compilers. General polynomial integer solving and arbitrary algebraic-curve compilation remain outside the delivered scope. See the [trust boundary](docs/TRUST_BOUNDARY.md), [certificate format](docs/CERTIFICATE_FORMAT.md) and each module's guide.
+
+## Representation and flavor research
+
+The repository also contains a separate mathematical-physics investigation of finite-group representations, invariant interactions and quark-flavor models. Its machinery includes an exact independent census of 263 CP-even scalar contractions through degree six for the declared field content, explicit interaction models, local-vacuum calculations and physical CP diagnostics. The [joint-potential analysis](docs/VALENTINER_JOINT_POTENTIAL.md) exhibits nonorthogonal local vacua and independent mixing deformations even with six masses fixed. These results do not derive the observed CKM matrix or establish a protected golden amplitude relation. Read the [supersymmetric-vacuum analysis](docs/VALENTINER_SUSY_VACUA.md) and [input audit](docs/FLAVOR_SEARCH_INPUT_AUDIT.md) for assumptions and open derivations.
 
 ## Build and develop
 
@@ -103,10 +159,10 @@ lake exe cache get
 make lean
 ```
 
-`make test` runs the Python suites across the repository. `make verify` builds Lean, checks axioms, runs tests, regenerates receipts and [status summaries](docs/STATUS.md), and checks for drift. Individual formalization guides provide focused check scripts. Optional SMT integration dependencies install with `python -m pip install '.[industrial]'`; numerical geometry dependencies are described in its [guide](docs/ANALYTIC_GEOMETRY_MONOGRAPH.md).
+`make test` runs the Python suites across the repository. `make verify` builds Lean, checks axioms, runs tests, regenerates receipts and [status summaries](docs/STATUS.md), and checks for drift. Individual formalization guides provide focused check scripts. Optional SMT integration dependencies install with `python -m pip install '.[industrial]'`; numerical geometry uses optional NumPy/SciPy dependencies described in its [guide](docs/ANALYTIC_GEOMETRY_MONOGRAPH.md).
 
 ## Documentation and license
 
-The [documentation index](docs/README.md) organizes the mathematical accounts, implementation guides, proof audits, and benchmark reports by subject. For context, read [the history of perfect powers](docs/HISTORY.md) or [computation and the limits of solving equations](docs/HILBERT10.md).
+The [documentation index](docs/README.md) organizes mathematical accounts, implementation guides, proof audits and benchmark reports by subject. For background, read [the history of perfect powers](docs/HISTORY.md) or [computation and the limits of solving equations](docs/HILBERT10.md).
 
-Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). The included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
+Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). Included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
