@@ -278,6 +278,14 @@ class EllipticCurve:
                     method=method,anchor=encode_point(anchor),two_torsion_certificate=torsion,
                     division_certificate=division,node_limit=node_limit,root_nodes=used)
 
+    def rational_thirds(self,p,node_limit=100000):
+        from .elliptic_division import rational_thirds
+        return rational_thirds(self,p,node_limit)
+
+    def rational_division(self,p,scalar,node_limit=100000,branch_limit=64):
+        from .elliptic_division import rational_division
+        return rational_division(self,p,scalar,node_limit,branch_limit)
+
     def model_transport(self,p,target):
         other=EllipticCurve(target);mapping=self.isomorphism(other)
         if mapping is None:raise ValueError('unsupported rational model isomorphism')

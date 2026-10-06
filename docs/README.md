@@ -1,4 +1,7 @@
-# Documentation
+# Mathematical documentation
+
+[Complete rational tripling and composite division](ELLIPTIC_COMPOSED_DIVISION_MONOGRAPH.md), with its [PDF](ELLIPTIC_COMPOSED_DIVISION_MONOGRAPH.pdf), adds complete rational multiplication fibres through 36, generalized rational nine-torsion examples, discovery-free replay and persisted service calls. The [handoff](../CLAUDE_CODE_ELLIPTIC_DIVISION_START_HERE.md) and [corpus](../receipts/elliptic_composed_division/summary.json) retain the precise scope.
+
 
 [Connected non-flavor advances and the remaining research program](NONFLAVOR_FRONTIER_MONOGRAPH.md): seven Lean modules, source-bound streaming and service receipts, native elliptic fibres, variable-width factorial obstructions, even-quartic images and certified marked monodromy.
 

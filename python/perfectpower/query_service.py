@@ -6,7 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
-    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','model_transport','two_isogeny','independence'},
+    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','model_transport','two_isogeny','independence'},
     differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
     superelliptic_family={'summary','evidence','observable'},
     binomial_sum={'summary','evidence','term','terms','telescoper','elliptic_bridge'},
@@ -39,6 +39,10 @@ def dispatch(catalogue, request):
     if op in {'verify_elliptic_halves','verify_elliptic_independence'}:
         from .elliptic_certificate_verifier import verify_halves,verify_independence
         checker=verify_halves if op=='verify_elliptic_halves' else verify_independence
+        return dict(valid=checker(**args),execution_verified=False)
+    if op in {'verify_elliptic_thirds','verify_elliptic_division'}:
+        from .elliptic_division_verifier import verify_thirds,verify_division
+        checker=verify_thirds if op=='verify_elliptic_thirds' else verify_division
         return dict(valid=checker(**args),execution_verified=False)
     if op == 'population_certificate':
         from .native_population_certificate import population_certificate

@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'tripling':{
+            'title':'Complete rational elliptic division',
+            'subtitle':'Tripling, torsion cosets<br/>and composite multiplication fibres',
+            'description':'Exact generalized Weierstrass tripling, complete rational-root evidence, rational nine-torsion and staged division through multipliers up to thirty-six.',
+            'metrics':[('19','worked scientific packets'),('14','supported multiplication scalars'),('9','rational kernel points demonstrated')],
+            'scope':'Complete rational fibres in bounded exact Python with discovery-free replay. Existing Lean fibre foundations are preserved; no new interpreter proof, complete rank claim or global integral-point bound.',
+            'running':'Complete rational tripling and compositional division',
+        },
         'closures':{
             'title':'General identities and native certificates',
             'subtitle':'Cauchy–Binet, bounded source populations<br/>and marked Legendre generators',
@@ -216,7 +224,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

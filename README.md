@@ -8,6 +8,9 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [complete rational tripling and composite-division interface](docs/ELLIPTIC_COMPOSED_DIVISION_MONOGRAPH.md) solves exact rational multiplication fibres for fourteen scalars through 36 with prime factors 2 and 3. It retains every intermediate fibre, handles generalized rational nine-torsion, and exposes persisted service operations with discovery-free replay. Run `make elliptic-composed-division`; these fibres do not supply a complete rank or global integral-point bound.
+
+
 The [non-flavor frontier continuation](docs/NONFLAVOR_FRONTIER_MONOGRAPH.md) adds native rational roots and actual elliptic fibres, finite-domain/rank certificates, noncoprime CRT, factorial-window obstructions, even-quartic collision geometry, arbitrary-dimensional rectangular determinants, bounded SMT streaming, tuple joins, cluster graph metrics and certified marked Legendre monodromy. Its receipts distinguish new proofs from the remaining global research premises.
 
 The [elliptic division Lean foundation](docs/ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md) proves complete kernel-coset fibres, the halving quartic, generalized coordinate normalization and complete rational-root transport from an integer list. Its focused audit instantiates the group theorem on Mathlib's elliptic points. The chapter also reviews the current repository frontier; Python execution and independence certificates retain their separate scopes.

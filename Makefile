@@ -37,6 +37,11 @@ elliptic-witnesses:
 	$(PY) -m unittest discover -s python/tests -p 'test_elliptic_*.py'
 	$(PY) python/develop_elliptic_witnesses.py
 
+.PHONY: elliptic-composed-division
+elliptic-composed-division:
+	$(PY) -m unittest discover -s python/tests -p 'test_elliptic_division.py'
+	$(PY) python/develop_elliptic_division.py
+
 .PHONY: elliptic-division-lean
 elliptic-division-lean:
 	lake build PerfectPower.EllipticDivision
