@@ -6,6 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','model_transport','two_isogeny','independence'},
     differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
     superelliptic_family={'summary','evidence','observable'},
     binomial_sum={'summary','evidence','term','terms','telescoper','elliptic_bridge'},
@@ -35,6 +36,10 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'verify_elliptic_halves','verify_elliptic_independence'}:
+        from .elliptic_certificate_verifier import verify_halves,verify_independence
+        checker=verify_halves if op=='verify_elliptic_halves' else verify_independence
+        return dict(valid=checker(**args),execution_verified=False)
     if op in {'genus_three_tower','richelot','formal_two_isogeny','branch_braid','reflection_kernel','root_clusters','simultaneous_nodes','certified_transport','marked_legendre','frobenius','zeta','frobenius_deformation','tower_frobenius','sunrise'}:
         from .curve_correspondences import genus_three_elliptic_tower,richelot_correspondence
         from .formal_isogenies import elliptic_two_isogeny

@@ -1,0 +1,65 @@
+make test
+z3-solver: present: adapter/certificate tests run
+python3 -m unittest discover -s python/tests
+..............................................................................................................................ss................................................................................................................................................................................................................................................................................................................................................................................................................../workspace/scratch/8176e44df27c/repo/python/tests/test_gates.py:17: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/8176e44df27c/repo/data/mordell_census.jsonl' mode='r' encoding='UTF-8'>
+  cls.rows = [json.loads(line) for line in open(ROOT / 'data' / 'mordell_census.jsonl')]
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+......................................................................................................................................................................................................................./workspace/scratch/8176e44df27c/repo/python/tests/test_mordell_descent.py:13: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/8176e44df27c/repo/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../workspace/scratch/8176e44df27c/repo/python/tests/test_mordell_descent.py:35: ResourceWarning: unclosed file <_io.TextIOWrapper name='/workspace/scratch/8176e44df27c/repo/data/mordell_census.csv' mode='r' encoding='UTF-8'>
+  census = {int(r['k']): r for r in csv.DictReader((ROOT / 'data' / 'mordell_census.csv').open())}
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+................................................................................................................................................................................................................................................................................................................................................................ss.....................
+----------------------------------------------------------------------
+Ran 1122 tests in 615.890s
+
+OK (skipped=4)
+python3 -m unittest discover -s continuation_tests
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 19.880s
+
+OK
+python3 -m unittest discover -s expert_push/tests
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.032s
+
+OK
+python3 -m unittest discover -s galois_merge/tests
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.011s
+
+OK
+
+
+make elliptic-witnesses (final)
+python3 -m unittest discover -s python/tests -p 'test_elliptic_*.py'
+.................
+----------------------------------------------------------------------
+Ran 17 tests in 0.406s
+
+OK
+python3 python/develop_elliptic_witnesses.py
+{"complete_mordell_weil_basis": false, "complete_rational_halving_fibres": 4, "execution_verified": false, "files": {"dependent_pair.json": "808ecac9542c723679658d98076df2258b86bede701a6d7421ac4f7fc7b67fa3", "empty_half.json": "8a27f836307a1db6ad5e4f28e54d4f178d4a06575645a5f233054698683d111d", "four_halves.json": "a7c8321f830f1d31fcabc4473d2f0441c04b5040aa87f333b2cca74ac0f8d53a", "halved_pair.json": "5ce9faf3e08805c5dbf39e57636796de102c9d92ae7d4cb6b52788ccd3e4bd7f", "independent_pair.json": "3e64199d0a70dc004d091c7fe725747827a288a62f5b3937b03a7ca3b7859c76", "infinity.json": "26d7c7e2f5be4caec111ac193133e91dd0de07fa128773c5a3ff6b25951344a1", "model_transport.json": "f04bd74cd8a3a61509dbc8fcbc5b174e47a383896534ec386d504aefd69dd682", "quotient_lifts.json": "fcc0721374de41527a49d7c1893c666ed451de49bef9c92628b4f1c0264e2444", "service_requests.jsonl": "5aa404ae4d585783d1d02fc13b73ea935ef6a083b577e8b938781a6e01a2c4ff", "service_responses.jsonl": "6b6b9f87781e28483045f2df289adfccc02a5e919a599f54fdfcf1c2437fae22", "single_half.json": "85ff8648a422c463005a25a4b217caafe0e4e59d5b7674fc4a2a6a194227fc98", "torsion_halving.json": "34f957dd479c312822ede55dccf90af755760c20f7a0e3aa21ec20796b529d4a", "two_isogeny.json": "e07978249dc59ea310401d4f3006669b04f9680a9917a8bd851892c475d6488c"}, "independent_witness_pair_rank": 2, "recorded_pair_halvings": 2, "schema": "pp-elliptic-witness-corpus/1", "scientific_packets": 11, "service_requests": 7}
+
+
+curve structure
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 35.652s
+
+OK
+
+
+literature execution
+.......................................
+----------------------------------------------------------------------
+Ran 39 tests in 93.142s
+
+OK
+
+
+Corpus replay: 14 files byte-identical; 7 fresh SQLite JSONL responses byte-identical.

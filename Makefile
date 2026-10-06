@@ -31,6 +31,12 @@ test:
 	$(PY) -m unittest discover -s expert_push/tests
 	$(PY) -m unittest discover -s galois_merge/tests
 
+# Public elliptic witnesses, complete rational [2] fibres and discovery-free replay.
+.PHONY: elliptic-witnesses
+elliptic-witnesses:
+	$(PY) -m unittest discover -s python/tests -p 'test_elliptic_*.py'
+	$(PY) python/develop_elliptic_witnesses.py
+
 cert-audit:
 	$(PY) python/independent_cert_audit.py
 

@@ -148,7 +148,7 @@ The arithmetic check also supplies a useful negative result: the two rank-two di
 
 [`CalibrationPolicy` and `DiagnosticPolicy`](docs/DECISION_POLICIES_MONOGRAPH.md) turn exact optimization into executable decisions. Calibration fixes a bounded feasible integer model and a positive definite rational metric, then computes all winning regions on a one- or two-dimensional target slice, including lower-dimensional regions and ties. Optimizer-driven discovery can avoid listing settings that never win. Diagnostics supports at most 16 finite hypotheses and minimizes worst-case total cost over adaptive trees under noiseless readouts, zero-cost reset and strictly positive operator costs. Both compilers have explicit budgets and reject incomplete compilation.
 
-The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **18 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family`, `elliptic_quotient`, `multi_curve_family`, `differential_extension`, `symmetry_curve`, `differential_module`, `superelliptic_family` and `binomial_sum`. The JSONL service and local HTTP console expose the supported public operations:
+The SQLite catalogue stores immutable, content-addressed definitions with aliases. Its **19 object kinds** are `population`, `projected`, `sequence`, `inverse`, `graph`, `geometry`, `combinatorial`, `factorial`, `calibration_policy`, `diagnostic_policy`, `curve_family`, `elliptic_quotient`, `multi_curve_family`, `differential_extension`, `symmetry_curve`, `differential_module`, `superelliptic_family`, `binomial_sum` and `elliptic_curve`. The JSONL service and local HTTP console expose the supported public operations:
 
 ```sh
 # Interactive local console and persistent catalogue.
@@ -162,6 +162,8 @@ python -m perfectpower service --database /tmp/pp-structure.sqlite \
 Run `python -m perfectpower population --spec receipts/populations/compatible_layouts.spec.json` for a configuration population, or `python python/develop_decision_policies.py` for the coupled configuration-to-diagnosis example. See [catalogue and service foundations](docs/OPEN_CONTENT_MONOGRAPH.md), [decision-policy receipts](receipts/decision_policies/summary.json) and [curve-structure receipts](receipts/curve_structure/summary.json). Older release monographs record the catalogue counts at their publication dates.
 
 ## Arithmetic, operator and geometry interfaces
+
+[`EllipticCurve`](docs/ELLIPTIC_WITNESSES_MONOGRAPH.md) exposes exact generalized Weierstrass arithmetic, supported rational model transport, rational two-isogenies and **complete rational halving fibres**. A separate bounded checker replays witness-span rank lower bounds with independently implemented local characters and binary elimination. On `y²=x³−4x+1`, it certifies two independent rational witnesses and recovers them from their doubles through recorded halving steps. The [eleven-packet corpus](receipts/elliptic_witnesses/summary.json) also retains a genus-two quotient point with no rational lift, preserving the original square-coordinate restriction. Run `make elliptic-witnesses`; [read the PDF](docs/ELLIPTIC_WITNESSES_MONOGRAPH.pdf). These are exact Python certificates, with no new Lean proof, full Mordell–Weil basis or global integer-point census.
 
 | Capacity | Entry points | Scope and documentation |
 |---|---|---|

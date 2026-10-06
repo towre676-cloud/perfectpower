@@ -42,7 +42,7 @@ def rational_literal(a):
 def point(p):
     if p is None:return None
     if not isinstance(p,(list,tuple)) or len(p)!=2:raise ValueError('point is [x,y] or infinity null')
-    return tuple(q(v) for v in p)
+    return tuple(q(v,12000) for v in p)
 
 
 def encode_point(p):return None if p is None else [rational_literal(v) for v in p]
@@ -61,6 +61,7 @@ def primes(bound):
 
 def rational_roots(f,node_limit=100000):
     """Complete rational roots: monic integral transform and integer Sturm tree."""
+    root_budget(node_limit)
     f=P.monic(P.poly(f));n=P.degree(f)
     if n<1:return []
     D=lcm(*(c.denominator for c in f));g=P.poly(c*D**(n-i) for i,c in enumerate(f))
@@ -85,6 +86,36 @@ def rational_roots(f,node_limit=100000):
         else:
             mid=(a+b)//2;stack.extend([(mid,b),(a,mid)])
     return sorted(out)
+
+
+def root_budget(node_limit):
+    if type(node_limit) is not int or not 1 <= node_limit <= 100000:
+        raise ValueError('root node budget 1 through 100000 required')
+
+
+def rational_root_certificate(f, node_limit=100000):
+    """Reduce rational roots to an integer Sturm certificate, with no divisor scan.
+
+    If f is monic and D clears its coefficients, a rational root r gives
+    the algebraic integer D*r. Being rational, D*r is an integer.
+    """
+    from .sturm_fibres import root_certificate
+    root_budget(node_limit)
+    f=P.poly(q(c) for c in f)
+    if P.is_zero(f):raise ValueError('zero polynomial has infinitely many roots')
+    f=P.monic(f);n=P.degree(f);D=lcm(*(c.denominator for c in f))
+    g=[int(c*D**(n-i)) for i,c in enumerate(f)]
+    if max(abs(c).bit_length() for c in g)>12000:
+        raise WorkLimit('rational-root certificate coefficient budget')
+    certificate=root_certificate(g,node_limit=node_limit)
+    # Bound the emitted signed-remainder data too: intermediate Sturm
+    # coefficients can be larger than the original polynomial coefficients.
+    from .elliptic_certificate_verifier import CheckBudget
+    try:CheckBudget(2000000).packet(certificate)
+    except ValueError as error:raise WorkLimit('rational-root packet exceeds replay allocation budget') from error
+    return dict(schema='pp-rational-roots/1',coefficients=[rational_literal(c) for c in f],
+                denominator_scale=rational_literal(Q(D)),integer_certificate=certificate,
+                roots=[rational_literal(Q(r,D)) for r in certificate['roots']])
 
 
 def reconstruct(a,m):
@@ -114,7 +145,9 @@ def discovered_roots(f):
 
 class EllipticCurve:
     def __init__(self,specification):
+        if isinstance(specification,dict) and set(specification)!={'ainvs'}:raise ValueError('only ainvs is supported')
         raw=specification.get('ainvs') if isinstance(specification,dict) else specification
+        if not isinstance(raw,(list,tuple)):raise ValueError('Weierstrass coefficient list required')
         if len(raw)==2:raw=[0,0,0,*raw]
         if len(raw)!=5:raise ValueError('five Weierstrass a-invariants required')
         self.a=tuple(q(v,8192) for v in raw);a1,a2,a3,a4,a6=self.a
@@ -183,6 +216,7 @@ class EllipticCurve:
         s,f=self.integral_cubic();return tuple(self.uncomplete((r/(4*s*s),Q(0))) for r in rational_roots(f))
 
     def halves(self,p,node_limit=100000):
+        root_budget(node_limit)
         p=self.checked(p)
         if p is None:return [None,*self.two_torsion()]
         x0,_=self.complete(p);C,B,A,_=self.cubic
@@ -205,7 +239,56 @@ class EllipticCurve:
     def evidence(self):return dict(self.summary(),equation='y^2+a1*x*y+a3*y=x^3+a2*x^2+a4*x+a6',cubic=[rational_literal(v) for v in self.cubic],coordinate_identity_checked=True)
     def point_add(self,left,right):return encode_point(self.add(left,right))
     def point_multiply(self,p,scalar):return encode_point(self.mul(p,scalar))
-    def rational_halves(self,p,node_limit=100000):return dict(points=[encode_point(h) for h in self.halves(p,node_limit)],complete=True)
+    def division_polynomial(self,p):
+        p=self.checked(p)
+        if p is None:raise ValueError('affine target required')
+        x0,_=self.complete(p);C,B,A,_=self.cubic
+        return P.poly((B*B-4*A*C-4*x0*C,-8*C-4*x0*B,-2*B-4*x0*A,-4*x0,Q(1)))
+
+    def rational_halves(self,p,node_limit=100000):
+        """Complete Q-rational [2] fibre with independently replayable evidence."""
+        root_budget(node_limit);p=self.checked(p)
+        torsion=rational_root_certificate(self.cubic,node_limit)
+        used=torsion['integer_certificate']['nodes_checked']
+        two=[self.uncomplete((q(r),Q(0))) for r in torsion['roots']]
+        anchor=None;division=None
+        if p is None:
+            out=[None,*two];method='two_torsion'
+        else:
+            f=self.division_polynomial(p)
+            def lift(xs):
+                for x in xs:
+                    y=sqrtq(P.evaluate(self.cubic,x))
+                    if y is not None:
+                        for yy in sorted({y,-y}):
+                            h=self.uncomplete((x,yy))
+                            if self.mul(h,2)==p:return h
+                return None
+            anchor=lift(discovered_roots(f))
+            if anchor is None:
+                if used>=node_limit:raise WorkLimit('shared halving root budget exhausted')
+                division=rational_root_certificate(f,node_limit-used)
+                used+=division['integer_certificate']['nodes_checked']
+                anchor=lift(q(r) for r in division['roots'])
+            out=[] if anchor is None else [self.add(anchor,t) for t in (None,*two)]
+            method='empty_division_fibre' if anchor is None else 'torsion_coset'
+        out=sorted(out,key=lambda v:encode_point(v) or [])
+        return dict(schema='pp-rational-halves/1',curve=self.specification,target=encode_point(p),
+                    points=[encode_point(h) for h in out],complete=True,execution_verified=False,
+                    method=method,anchor=encode_point(anchor),two_torsion_certificate=torsion,
+                    division_certificate=division,node_limit=node_limit,root_nodes=used)
+
+    def model_transport(self,p,target):
+        other=EllipticCurve(target);mapping=self.isomorphism(other)
+        if mapping is None:raise ValueError('unsupported rational model isomorphism')
+        return dict(map=mapping,point=encode_point(self.transport(p,other)))
+
+    def two_isogeny(self,kernel,p=None):
+        return dict(map=self.isogeny(kernel),point=encode_point(self.isogeny_point(p,kernel)))
+
+    def independence(self,points,prime_bound=500,halving_limit=32,node_limit=100000):
+        from .elliptic_certificates import certify_independence
+        return certify_independence(self,points,prime_bound,halving_limit,node_limit)
 
     def isogeny(self,kernel):
         t=self.checked(kernel)
