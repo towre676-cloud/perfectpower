@@ -8,6 +8,8 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [complete rational subgroup-preimage operation](docs/ELLIPTIC_SUBGROUPS_MONOGRAPH.md) tests every coefficient line over F2 or F3 and returns generators for all rational points whose double or triple lies in a supplied subgroup. It recovers hidden index-two and index-three witness enlargements and demonstrates a subgroup saturated at both primes. Run `make elliptic-subgroups`; the input scope is at most four generators.
+
 The [complete rational tripling and composite-division interface](docs/ELLIPTIC_COMPOSED_DIVISION_MONOGRAPH.md) solves exact rational multiplication fibres for fourteen scalars through 36 with prime factors 2 and 3. It retains every intermediate fibre, handles generalized rational nine-torsion, and exposes persisted service operations with discovery-free replay. Run `make elliptic-composed-division`; these fibres do not supply a complete rank or global integral-point bound.
 
 

@@ -286,6 +286,10 @@ class EllipticCurve:
         from .elliptic_division import rational_division
         return rational_division(self,p,scalar,node_limit,branch_limit)
 
+    def subgroup_preimage(self,points,prime=2,node_limit=100000):
+        from .elliptic_subgroups import subgroup_preimage
+        return subgroup_preimage(self,points,prime,node_limit)
+
     def model_transport(self,p,target):
         other=EllipticCurve(target);mapping=self.isomorphism(other)
         if mapping is None:raise ValueError('unsupported rational model isomorphism')

@@ -6,7 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
-    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','model_transport','two_isogeny','independence','native_two_torsion','native_halves'},
+    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','subgroup_preimage','model_transport','two_isogeny','independence','native_two_torsion','native_halves'},
     differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
     superelliptic_family={'summary','evidence','observable'},
     binomial_sum={'summary','evidence','term','terms','telescoper','elliptic_bridge'},
@@ -59,6 +59,9 @@ def dispatch(catalogue, request):
     if op == 'native_braid_certificate':
         from .native_braid_certificate import braid_certificate
         return braid_certificate(**args)
+    if op == 'verify_elliptic_subgroup_preimage':
+        from .elliptic_subgroup_verifier import verify_subgroup_preimage
+        return dict(valid=verify_subgroup_preimage(**args),execution_verified=False)
     if op == 'population_certificate':
         from .native_population_certificate import population_certificate
         return population_certificate(**args)

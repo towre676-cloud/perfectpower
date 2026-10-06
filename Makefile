@@ -42,6 +42,11 @@ elliptic-composed-division:
 	$(PY) -m unittest discover -s python/tests -p 'test_elliptic_division.py'
 	$(PY) python/develop_elliptic_division.py
 
+.PHONY: elliptic-subgroups
+elliptic-subgroups:
+	$(PY) -m unittest discover -s python/tests -p 'test_elliptic_subgroups.py'
+	$(PY) python/develop_elliptic_subgroups.py
+
 .PHONY: elliptic-division-lean
 elliptic-division-lean:
 	lake build PerfectPower.EllipticDivision

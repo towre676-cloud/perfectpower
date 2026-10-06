@@ -30,6 +30,14 @@ def render(source,output,*,edition='polynomial'):
             'scope':'Native completed-model point semantics. Original-model transport, literal output-list refinement and general nonsquare lifting remain open.',
             'running':'Native actual-point halving and the remaining arithmetic interfaces',
         },
+        'subgroups':{
+            'title':'Complete rational subgroup preimages',
+            'subtitle':'Hidden division relations<br/>and exact witness saturation',
+            'description':'All coefficient lines over F2 and F3, complete rational prime fibres, exact replacement generators and a witness subgroup saturated at both primes.',
+            'metrics':[('10','worked prime-preimage packets'),('40','maximum projective coefficient lines'),('2 / 3','hidden relative indices recovered')],
+            'scope':'Complete rational preimage generators for supplied subgroups with at most four sources. Prime saturation of a specified witness subgroup; ambient rank, other primes and global integral bounds remain open.',
+            'running':'Rational subgroup preimages and hidden divisibility',
+        },
         'tripling':{
             'title':'Complete rational elliptic division',
             'subtitle':'Tripling, torsion cosets<br/>and composite multiplication fibres',
@@ -240,7 +248,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)
