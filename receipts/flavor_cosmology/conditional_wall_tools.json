@@ -1,0 +1,159 @@
+{
+  "schema": "pp-flavor-cosmology/1",
+  "base_commit": "a5d0f04aa6c8f666dfd9428747abbbdf3811fe50",
+  "coordination": {
+    "other_flavor_session": "Exact quartic algebra, mechanisms, matching/running, quantum/higher operators, vacuum/physical-parameter tests and publication.",
+    "this_session": "Conditional cosmological consequences and rational wall/bias interfaces.",
+    "visibility": "Published commits and user reports only; no live view of other sessions."
+  },
+  "validation": {
+    "checks": 104,
+    "status": "passed",
+    "arithmetic": "BigInt rational",
+    "scope": "module checks only; no full repository suite or physics matching",
+    "runtime": "Available V8 functions runtime; source exports and test import removed only for evaluation.",
+    "not_run": [
+      "Node CLI",
+      "Python",
+      "Lean",
+      "full repository suite"
+    ]
+  },
+  "scientific_scope": "Conditional mathematical adapters and toy examples; no actual repository wall tension, matched bias response or finite-temperature potential.",
+  "sources": [
+    "https://arxiv.org/abs/2212.00039",
+    "https://arxiv.org/abs/2212.03882",
+    "https://arxiv.org/abs/1703.02576",
+    "https://arxiv.org/abs/2504.07902"
+  ],
+  "examples": {
+    "path": {
+      "scope": "Conditional variational upper bound between supplied degenerate global vacua; V must equal their potential excess along the supplied path with Euclidean canonical metric. Global minimality and composition are caller hypotheses.",
+      "potential_excess": [
+        "0",
+        "0",
+        "4",
+        "-8",
+        "4"
+      ],
+      "path_coordinates": [
+        [
+          "-1",
+          "2"
+        ]
+      ],
+      "endpoint_potential": [
+        "0",
+        "0"
+      ],
+      "endpoint_derivative": [
+        "0",
+        "0"
+      ],
+      "residual_potential": [
+        "4"
+      ],
+      "nonnegative": {
+        "certified": true,
+        "bernstein_coefficients": [
+          "4"
+        ]
+      },
+      "integral_potential": "2/15",
+      "integral_speed_squared": "4",
+      "tension_upper_squared": "16/15"
+    },
+    "bias": {
+      "scope": "Exact linear-response optimization for supplied homogeneous constraints and coefficient ellipsoid; no response is calculated here.",
+      "metric": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "3"
+        ]
+      ],
+      "bias_vector": [
+        "2",
+        "2",
+        "2"
+      ],
+      "independent_constraints": [
+        [
+          "1",
+          "1",
+          "0"
+        ]
+      ],
+      "radius_squared": "1",
+      "projected_direction": [
+        "0",
+        "0",
+        "2/3"
+      ],
+      "direction_norm_squared": "4/3",
+      "maximum_bias_squared": "4/3",
+      "constraint_residuals": [
+        "0",
+        "0"
+      ],
+      "witness_rule": "c = sqrt(radius_squared/direction_norm_squared) * projected_direction."
+    },
+    "zero": {
+      "scope": "Exact linear-response optimization for supplied homogeneous constraints and coefficient ellipsoid; no response is calculated here.",
+      "metric": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "bias_vector": [
+        "2",
+        "2"
+      ],
+      "independent_constraints": [
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "radius_squared": "1",
+      "projected_direction": [
+        "0",
+        "0"
+      ],
+      "direction_norm_squared": "0",
+      "maximum_bias_squared": "0",
+      "constraint_residuals": [
+        "0"
+      ],
+      "witness_rule": "No allowed linear bias direction."
+    },
+    "thermal": {
+      "scope": "One real CP-odd scalar only: V=lambda*(a^2-v^2)^2/4 + c*T^2*a^2/2. Not a repository thermal matching.",
+      "critical_temperature_squared": "6",
+      "broken_minimum_squared": "v^2 - c*T^2/lambda when positive",
+      "conjugate_energy_bias": "0"
+    },
+    "scaling": {
+      "scope": "Phenomenological classical horizon-curvature convention rho_wall=area*sigma*H, H_ann=DeltaV/(annihilation*sigma); not a network simulation or rigorous viability bound.",
+      "domination_H": "1/100",
+      "required_bias_strictly_greater_than": "3",
+      "annihilation_law": "H_ann=DeltaV/(annihilation*sigma)",
+      "recent_simulation_caveat": "arXiv:2504.07902 reports different bias scaling in its simulated model; this screen is not universal."
+    }
+  }
+}
