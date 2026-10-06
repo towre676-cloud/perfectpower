@@ -1,0 +1,496 @@
+{
+  "schema": "pp-valentiner-susy-vacua/1",
+  "canonical_scalar_superpotential": "W=a*det(K)+b*I6bar(K)+c*det(K)^2+sum_i kappa_i*F6bar(Phi_i)",
+  "family_group": "3.A6_u x 3.A6_d",
+  "chiral_link": "(3bar_u,3_d)",
+  "physical_Dirac_link": "L=conjugate(K)",
+  "six_source_fields": "three (3bar_u,1), three (1,3bar_d), each with its own C6 charge",
+  "all_scalar_holomorphic_contractions_through_degree_six": 9,
+  "scalar_sector_scope": "Link and six source flavons; no extra driving fields, canonical Kahler potential, no soft breaking, matter and Higgs scalar backgrounds zero. Independent nonzero source coefficients.",
+  "derivatives": {
+    "exact_two_index_density_entries": 81,
+    "density": "(4/3)*(delta_ik*delta_jl+delta_il*delta_jk)",
+    "I6_second_derivative_at_I": "40*(Tr(E)*Tr(F)+Tr(E*F))",
+    "W_second_derivative_at_rI_on_F_flat_branch": "r^4*((8*b+2*c)*Tr(E)*Tr(F)+72*b*Tr(E*F))"
+  },
+  "source_obstruction": {
+    "full_support_Groebner_basis": [
+      "1"
+    ],
+    "two_support_resultant": "67797/32 - 35235*sqrt(15)*I/32",
+    "one_support_derivative": "3",
+    "cyclic_reduction_verified": true,
+    "gradient_F6_zero_iff_triplet_zero": true,
+    "conjugate_triplet_same_result": true,
+    "generic_nonzero_source_coefficients_imply_all_six_sources_zero": true,
+    "scalar_source_complex_modes_with_no_quadratic_mass_at_origin": 18,
+    "source_F_energy_first_nonzero_degree": 10
+  },
+  "group_branch": "r^3=-a/(32*b+2*c), K=r*conjugate(R(g))",
+  "group_branch_stability_conditions": "a!=0, 32*b+2*c!=0, b!=0, 16*b+c!=0",
+  "coupling_variations": [
+    {
+      "a": -0.0324,
+      "b": 0.5,
+      "c": 0.2,
+      "real_radius": 0.12547784577638685,
+      "F_gradient_scalar": -1.0842021724855044e-19,
+      "singlet_fermion_mass": 0.0121964466094648,
+      "adjoint_fermion_mass": 0.008924229226437659,
+      "real_scalar_mass_squared_levels": [
+        {
+          "mass_squared": 0.0001487533098975254,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 7.96418672860041e-05,
+          "multiplicity": 16
+        }
+      ],
+      "isolated_link_minimum": true,
+      "origin_also_F_flat": true
+    },
+    {
+      "a": -0.0324,
+      "b": 1.0,
+      "c": 0.2,
+      "real_radius": 0.1,
+      "F_gradient_scalar": 5.421010862427522e-20,
+      "singlet_fermion_mass": 0.009720000000000001,
+      "adjoint_fermion_mass": 0.0072000000000000015,
+      "real_scalar_mass_squared_levels": [
+        {
+          "mass_squared": 9.447840000000003e-05,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 5.1840000000000025e-05,
+          "multiplicity": 16
+        }
+      ],
+      "isolated_link_minimum": true,
+      "origin_also_F_flat": true
+    },
+    {
+      "a": -0.0324,
+      "b": 1.5,
+      "c": 0.2,
+      "real_radius": 0.08747820899988618,
+      "F_gradient_scalar": 0.0,
+      "singlet_fermion_mass": 0.008502881914788936,
+      "adjoint_fermion_mass": 0.006324457622570283,
+      "real_scalar_mass_squared_levels": [
+        {
+          "mass_squared": 7.229900085684477e-05,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 3.9998764219687355e-05,
+          "multiplicity": 16
+        }
+      ],
+      "isolated_link_minimum": true,
+      "origin_also_F_flat": true
+    },
+    {
+      "a": -0.0324,
+      "b": 1.0,
+      "c": -0.1,
+      "real_radius": 0.10062501622612617,
+      "F_gradient_scalar": 5.421010862427522e-20,
+      "singlet_fermion_mass": 0.009780751577179465,
+      "adjoint_fermion_mass": 0.007381699303531671,
+      "real_scalar_mass_squared_levels": [
+        {
+          "mass_squared": 9.566310141449858e-05,
+          "multiplicity": 2
+        },
+        {
+          "mass_squared": 5.448948460775996e-05,
+          "multiplicity": 16
+        }
+      ],
+      "isolated_link_minimum": true,
+      "origin_also_F_flat": true
+    }
+  ],
+  "group_branch_family_orbits": 1,
+  "CP_phase_center_compensations": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      -0.5000000000000003,
+      -0.8660254037844385
+    ],
+    [
+      -0.4999999999999993,
+      0.8660254037844392
+    ]
+  ],
+  "group_link_only_CP_is_unbroken_up_to_family": true,
+  "complete_classification_of_all_link_F_flat_vacua": false,
+  "higher_invariant_deformations": "A nonsingular group branch persists locally: its diagonal-group fixed subspace is scalar matrices, and the singlet implicit-function derivative is nonzero. This is not a guarantee of global selection or stability under large deformations.",
+  "quark_superpotential": "h_u Q.H_u U^c+mu_u U.U^c+sum_i lambda_ui u_i^c Phi_ui^T U + h_d Q.H_d D_u^c+mu D_u.D_u^c+md D_d.D_d^c+g D_u^T K D_d^c+sum_i lambda_di d_i^c Phi_di^T D_d+eta D_d^T adj(K) D_u^c",
+  "reverse_vertex_degree": 4,
+  "reverse_vertex_has_independent_coefficient": true,
+  "quark_scope": "Specified holomorphic interaction with canonical tree matching, matter parity and baryon conservation. The degree-four cofactor vertex is retained; a complete higher-degree quark EFT operator census and UV completion are not claimed.",
+  "spurion_breaking_source_branches": [
+    {
+      "radius": 0.1,
+      "kappa": 1.0,
+      "t": -26.0,
+      "tachyon_parameter_m2": 2.4000000000000014e-07,
+      "holomorphic_breaking_A": -0.0026000000000000003,
+      "real_scalar_mass_squared": [
+        8.160000000000005e-06,
+        9.360000000000005e-06,
+        4.702633403898975e-07,
+        8.497366596101033e-07,
+        4.702633403898975e-07,
+        8.497366596101033e-07
+      ],
+      "energy": -4.000000000000002e-09,
+      "stable_open_t_interval_with_positive_m2": "-30<t<-(90+72*sqrt(10))/(6+3*sqrt(10))",
+      "source_F_norm": 6.0000000000000015e-05,
+      "scope": "Locally stable axis branch and its group transforms. No claim that these are all source vacua or the global winners."
+    },
+    {
+      "radius": 0.1,
+      "kappa": 1.0,
+      "t": -24.0,
+      "tachyon_parameter_m2": 3.600000000000002e-07,
+      "holomorphic_breaking_A": -0.0024000000000000002,
+      "real_scalar_mass_squared": [
+        8.640000000000004e-06,
+        8.640000000000004e-06,
+        5.400000000000002e-07,
+        5.400000000000002e-07,
+        5.400000000000002e-07,
+        5.400000000000002e-07
+      ],
+      "energy": -4.8000000000000024e-09,
+      "stable_open_t_interval_with_positive_m2": "-30<t<-(90+72*sqrt(10))/(6+3*sqrt(10))",
+      "source_F_norm": 6.0000000000000015e-05,
+      "scope": "Locally stable axis branch and its group transforms. No claim that these are all source vacua or the global winners."
+    },
+    {
+      "radius": 0.1,
+      "kappa": 1.0,
+      "t": -22.0,
+      "tachyon_parameter_m2": 4.800000000000003e-07,
+      "holomorphic_breaking_A": -0.0022000000000000006,
+      "real_scalar_mass_squared": [
+        9.120000000000004e-06,
+        7.920000000000004e-06,
+        2.3026334038989736e-07,
+        6.097366596101031e-07,
+        2.3026334038989736e-07,
+        6.097366596101031e-07
+      ],
+      "energy": -5.600000000000003e-09,
+      "stable_open_t_interval_with_positive_m2": "-30<t<-(90+72*sqrt(10))/(6+3*sqrt(10))",
+      "source_F_norm": 6.0000000000000015e-05,
+      "scope": "Locally stable axis branch and its group transforms. No claim that these are all source vacua or the global winners."
+    }
+  ],
+  "orthogonal_axis_census": {
+    "projective_axis_rays": 45,
+    "orthogonal_unordered_axis_frames": 30,
+    "orthogonal_axis_group_orbit_sizes": [
+      15,
+      15
+    ],
+    "complete_ordered_frame_pair_census_size": 900,
+    "frame_pair_J_range": [
+      -0.054126587736527496,
+      0.05412658773652749
+    ],
+    "within_same_frame_orbit_max_abs_J": 8.673617379884035e-17,
+    "mixed_frame_orbit_max_abs_J": 0.054126587736527496,
+    "CP_witness_frame_orbits": [
+      0,
+      1
+    ],
+    "exact_group_entry_squared_values": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1/4",
+        "0"
+      ],
+      [
+        "3/8",
+        "-1/8"
+      ],
+      [
+        "3/8",
+        "1/8"
+      ],
+      [
+        "1/2",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "sqrt5_rational_enclosure": [
+      "2236067977499789/1000000000000000",
+      "223606797749979/100000000000000"
+    ],
+    "exact_nonzero_magnitude_lower_bound": "3/10",
+    "exact_smallest_nonzero_magnitude": "(sqrt(5)-1)/4",
+    "smallest_nonzero_group_entry_magnitude": 0.3090169943749474,
+    "coordinate_frame_group_link_max_abs_J": 5.848652325104331e-17,
+    "first_frame_pair_CP_witness_index": 4,
+    "frame_pair_CP_witness_J": -0.054126587736527426,
+    "exact_frame_pair_CP_witness_J": "-sqrt(3)/32",
+    "CP_witness_up_down_frames": [
+      [
+        [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ]
+        ],
+        [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            -0.5,
+            0.0
+          ],
+          [
+            0.5,
+            0.0
+          ],
+          [
+            0.09549150281252611,
+            -0.7006292692220368
+          ]
+        ],
+        [
+          [
+            -0.8090169943749475,
+            0.0
+          ],
+          [
+            -0.15450849718747367,
+            0.2676165673298175
+          ],
+          [
+            -0.2499999999999999,
+            0.43301270189221935
+          ]
+        ],
+        [
+          [
+            0.30901699437494745,
+            0.0
+          ],
+          [
+            0.4045084971874739,
+            0.7006292692220368
+          ],
+          [
+            -0.5,
+            0.0
+          ]
+        ]
+      ]
+    ],
+    "scope": "Complete finite orthogonal-axis branch census, not all nonorthogonal or other source extrema. Exact field arithmetic identifies projectors, orthogonality, generator action and frame orbits. Group links permute these frames, so all frame pairs include every link choice. The magnitude lower bound and witness J are exact; numerical magnitudes and the full J range are cross-checks."
+  },
+  "joint_breaking_vacuum": {
+    "CP_pair": [
+      {
+        "Vus": 0.4999999999999997,
+        "Vcb": 0.49999999999999983,
+        "Vub": 0.7071067811865474,
+        "J": -0.05412658773652739,
+        "depth": 1.4142135623730967,
+        "delta_degrees": -142.23875609296508,
+        "spectra": [
+          [
+            0.004666525520807101,
+            0.02065441789394726,
+            0.059702231412599366
+          ],
+          [
+            0.0003113506376367548,
+            0.0010506000362169577,
+            0.0033010572583351133
+          ]
+        ],
+        "unitarity_residual": 3.9656238716345344e-16
+      },
+      {
+        "Vus": 0.4999999999999996,
+        "Vcb": 0.49999999999999967,
+        "Vub": 0.7071067811865479,
+        "J": 0.054126587736527565,
+        "depth": 1.4142135623730963,
+        "delta_degrees": 142.2387560929648,
+        "spectra": [
+          [
+            0.004666525520807045,
+            0.020654417893947247,
+            0.05970223141259936
+          ],
+          [
+            0.0003113506376367609,
+            0.001050600036216958,
+            0.003301057258335113
+          ]
+        ],
+        "unitarity_residual": 2.346807038586151e-16
+      }
+    ],
+    "commutator_determinant_imaginary": -5.18744027772761e-26,
+    "source_stationary_directions": "Group-rotated axis columns in the retained up/down frames; chiral Phi=conjugate(physical columns).",
+    "frame_selection": "First enumerated orthogonal frame pair with nonzero J; a witness, not an energy preference.",
+    "universal_quark_scalar_breaking_mass_squared": 0.0001,
+    "source_induced_matter_B_operator_norm_bound": 5.400000000000002e-05,
+    "matter_scalar_mass_squared_lower_bound": 4.5999999999999986e-05,
+    "computed_up_down_matter_scalar_minima": [
+      9.999647093452114e-05,
+      9.999846162600457e-05
+    ],
+    "Higgs_supersymmetric_mu": 0.2,
+    "positive_Higgs_breaking_mass_squared": 0.0001,
+    "scope": "Joint locally stable link/source branch with positive matter scalar masses and nonzero weak CP. No global vacuum selection, EW breaking, unique CP sign, realistic mass fit or golden relation."
+  },
+  "allowed_cross_sector_response": {
+    "operator": "epsilon*|phi_u1^dagger L phi_d1|^2",
+    "source_overlap_probability": 0.25000000000000006,
+    "source_tangential_force_norm_squared_per_epsilon_squared": 1.8750000000000016e-11,
+    "minimum_54_real_flavor_Hessian_eigenvalue": 5.399994373570195e-07,
+    "linear_stationary_response_residual": 4.235164736271502e-21,
+    "maximum_source_displacement_per_unit_epsilon": 8.023973217618751,
+    "canonical_observable_first_derivatives": {
+      "J": 0.03590189929028598,
+      "depth": 9.615582743593976,
+      "Vus": -2.943302895574984,
+      "Vcb": -0.17147374378745361,
+      "Vub": -0.4028320040316835,
+      "delta_degrees": -54.721280207559175
+    },
+    "linear_continuation_cases": [
+      {
+        "epsilon": -1e-06,
+        "observables": {
+          "Vus": 0.5000029432819926,
+          "Vcb": 0.5000001714561044,
+          "Vub": 0.7071071840340343,
+          "J": -0.05412662362960448,
+          "depth": 1.414203946924069,
+          "delta_degrees": -142.2387013740783,
+          "spectra": [
+            [
+              0.004666539022486047,
+              0.02065441789440099,
+              0.05970223141360871
+            ],
+            [
+              0.0003113516660375408,
+              0.0010505999601530867,
+              0.0033010570190607495
+            ]
+          ],
+          "unitarity_residual": 1.776403978374482e-15
+        }
+      },
+      {
+        "epsilon": 0.0,
+        "observables": {
+          "Vus": 0.4999999999999997,
+          "Vcb": 0.49999999999999983,
+          "Vub": 0.7071067811865474,
+          "J": -0.05412658773652739,
+          "depth": 1.4142135623730967,
+          "delta_degrees": -142.23875609296508,
+          "spectra": [
+            [
+              0.004666525520807101,
+              0.02065441789394726,
+              0.059702231412599366
+            ],
+            [
+              0.0003113506376367548,
+              0.0010506000362169577,
+              0.0033010572583351133
+            ]
+          ],
+          "unitarity_residual": 3.9656238716345344e-16
+        }
+      },
+      {
+        "epsilon": 1e-06,
+        "observables": {
+          "Vus": 0.4999970566762014,
+          "Vcb": 0.49999982850861685,
+          "Vub": 0.7071063783700262,
+          "J": -0.0541265518258059,
+          "depth": 1.4142231780895562,
+          "delta_degrees": -142.2388108166387,
+          "spectra": [
+            [
+              0.004666512018763533,
+              0.020654417894400996,
+              0.05970223141360868
+            ],
+            [
+              0.0003113496091589688,
+              0.0010506001125019887,
+              0.003301057497738055
+            ]
+          ],
+          "unitarity_residual": 1.1102970145439426e-15
+        }
+      }
+    ],
+    "scope": "Numerical implicit-function response using the full positive link/source Hessian. Cases are a first-order continuation, not newly minimized finite-epsilon vacua or experimental uncertainty. The counterterm is permitted by family, shaping and CP symmetries."
+  },
+  "conclusion": "Stable discrete link alignment is derived on a locally isolated F-flat branch. Exact SUSY forces zero sources. Specified spurion breaking gives locally stable nonzero source vacua and physical weak CP, but every orthogonal axis branch fails the CKM magnitude hierarchy. No golden relation or unique physical phase is predicted."
+}

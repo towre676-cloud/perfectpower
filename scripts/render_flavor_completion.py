@@ -6,7 +6,7 @@ import re
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak, KeepTogether
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak, KeepTogether, LongTable, TableStyle
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.colors import HexColor
 from reportlab.lib.enums import TA_LEFT
@@ -16,10 +16,15 @@ from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/B5_FLAVOR_COMPLETION.md'
-SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md',ROOT/'docs/VALENTINER_CP_AND_GLOBAL_MODES.md']
+SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md',ROOT/'docs/VALENTINER_CP_AND_GLOBAL_MODES.md',ROOT/'docs/FLAVOR_SEARCH_INPUT_AUDIT.md',ROOT/'docs/VALENTINER_SUSY_VACUA.md']
 DEST=ROOT/'output/pdf/B5_Protected_Flavor_Monograph.pdf'
 
 EQUATIONS={
+ 'The group-aligned branch and all nine link masses':r'$r^3=-\frac{a}{32b+2c},\qquad m_1=|96b+6c|\,|r|^4,\quad m_8=|72b|\,|r|^4$',
+ 'What exact supersymmetry does to the sources':r'$\nabla F_6(\phi)=0\ \Longleftrightarrow\ \phi=0$',
+ 'A specified breaking extension with stable nonzero sources':r'$V_\phi=\kappa^2\|\nabla F_6\|^2-m^2\|\phi\|^2+2A\kappa\,\operatorname{Re} F_6$',
+ 'A complete obstruction for the orthogonal axis branch':r'$|V_{ij}|=0\quad\mathrm{or}\quad |V_{ij}|\geq\frac{\sqrt{5}-1}{4}\simeq0.309$',
+ 'The permitted interaction still moves the solved frame':r'$H\,\Delta q=-\nabla O,\qquad O=|\phi_{u1}^{\dagger}L\phi_{d1}|^2$',
  'Exact CP on the elementary field content':r'$X\overline{R(g)}X^{-1}=R(u(g)),\qquad X\overline{X}=I$',
  'Cross-sector sequestering and its exact operator boundary':r'$G_u\times G_d,\qquad \left|\phi_{ui}^{\dagger}\Lambda\phi_{dj}\right|^2\quad (\mathrm{degree}\ 6)$',
  'A representation-derived positive link interaction':r'$I_6(U)=\langle T,T\circ U\rangle,\qquad \operatorname{Re} I_6(U)\leq\|T\|^2=16$',
@@ -62,11 +67,13 @@ def main():
     parser.add_argument('--transport-paper',action='store_true')
     parser.add_argument('--invariant-paper',action='store_true')
     parser.add_argument('--cp-paper',action='store_true')
+    parser.add_argument('--susy-paper',action='store_true')
     args=parser.parse_args()
-    standalone=args.transport_paper or args.invariant_paper or args.cp_paper
+    standalone=args.transport_paper or args.invariant_paper or args.cp_paper or args.susy_paper
     destination=ROOT/'output/pdf/M22_Triplet_Transport_and_CKM_Obstructions.pdf' if standalone else DEST
     if args.invariant_paper:destination=ROOT/'output/pdf/Valentiner_Invariant_Interactions.pdf'
     if args.cp_paper:destination=ROOT/'output/pdf/Valentiner_CP_and_Global_Modes.pdf'
+    if args.susy_paper:destination=ROOT/'output/pdf/Valentiner_SUSY_Vacua_and_CKM_Boundary.pdf'
     DEST.parent.mkdir(parents=True,exist_ok=True)
     fontroot=Path('/usr/share/fonts/truetype/dejavu')
     for name,filename in (('Body','DejaVuSerif.ttf'),('BodyBold','DejaVuSerif-Bold.ttf'),('Sans','DejaVuSans.ttf'),('SansBold','DejaVuSans-Bold.ttf')):
@@ -76,9 +83,9 @@ def main():
     heading=ParagraphStyle('ReaderHeading',fontName='SansBold',fontSize=13.3,leading=17,spaceBefore=15,spaceAfter=9,textColor=HexColor('#123d58'),keepWithNext=True)
     title=ParagraphStyle('ReaderTitle',fontName='SansBold',fontSize=27,leading=34,textColor=HexColor('#123d58'),spaceAfter=20)
     subtitle=ParagraphStyle('ReaderSubtitle',fontName='Sans',fontSize=13.3,leading=20,textColor=HexColor('#43586b'),spaceAfter=15)
-    story=[Spacer(1,68),Paragraph('Protected vacua,<br/>shared mediators and<br/>the alignment boundary',title),
-        Paragraph('Singlet vacuum dynamics, canonical quark matching and explicit limits on flavor alignment',subtitle),
-        Spacer(1,25),Paragraph('PerfectPower research monograph<br/>5 October 2026',subtitle),Spacer(1,25),
+    story=[Spacer(1,68),Paragraph('Flavor mechanisms,<br/>vacuum alignment and<br/>predictive limits',title),
+        Paragraph('Singlet dynamics, exact finite symmetries, canonical quark matching and the input audit',subtitle),
+        Spacer(1,25),Paragraph('PerfectPower research monograph<br/>6 October 2026 (UTC)',subtitle),Spacer(1,25),
         Paragraph('The selected model admits controlled vacua near +/-66 degrees. Its initialized equations receive perturbative supersymmetric protection; its energy selection, physical coefficient readout and quark couplings remain separately specified interactions.',body),
         Paragraph('Exact rational results and numerical scenario results are distinguished throughout. The worked construction is conditional and does not claim an independently derived theory of flavor.',body),PageBreak()]
     if standalone:
@@ -90,8 +97,11 @@ def main():
         story=[Spacer(1,45),Paragraph('Valentiner invariant<br/>interactions',title),Paragraph('A fixed sextic tensor, three light families and an allowed-deformation test',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026',subtitle),Paragraph('The invariant and matching results are exact. Local vacuum response is numerical. The golden CKM relation and physical CP phase remain underived.',body),PageBreak()]
     if args.cp_paper:
         story=[Spacer(1,45),Paragraph('Cross-sector links,<br/>physical CP and<br/>global cap modes',title),Paragraph('Exact elementary CP, representation-derived alignment and a complete conditional mass spectrum',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026',subtitle),Paragraph('The product symmetry removes a quartic deformation. Higher-degree mixed interactions, physical vacuum selection and the global chiral completion remain open.',body),PageBreak()]
-    text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in ([SOURCES[-1] if args.cp_paper else SOURCES[-2] if args.invariant_paper else SOURCES[-3]] if standalone else SOURCES))
-    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary','Product-family CP and the global spectrum'])
+    if args.susy_paper:
+        story=[Spacer(1,45),Paragraph('Supersymmetric links,<br/>stable source vacua and<br/>the CKM boundary',title),Paragraph('An isolated alignment branch, physical weak CP and an exact orthogonal-frame obstruction',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026 (UTC)',subtitle),Paragraph('Joint local vacua are calculated without a nominated angle. The orthogonal axis branch fails the observed hierarchy. Global selection, operator protection and a golden CKM relation remain open.',body),PageBreak()]
+    selected_source=SOURCES[7] if args.susy_paper else SOURCES[5] if args.cp_paper else SOURCES[4] if args.invariant_paper else SOURCES[3]
+    text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in ([selected_source] if standalone else SOURCES))
+    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary','Product-family CP and the global spectrum','Audit of the flavor search inputs','Supersymmetric vacua and the CKM boundary'])
     for block in text.split('\n\n'):
         block=block.strip()
         if block=='CHAPTER_BREAK':
@@ -109,6 +119,16 @@ def main():
             path=(SOURCE.parent/match.group(1)).resolve()
             width,height=ImageReader(str(path)).getSize()
             story.append(Image(str(path),width=475,height=475*height/width));story.append(Spacer(1,10))
+        elif block.startswith('|'):
+            rows=[]
+            cellstyle=ParagraphStyle('TableCell',parent=body,fontSize=7,leading=10,spaceAfter=0)
+            for line in block.splitlines():
+                cells=[t.strip().replace('`','') for t in line.strip().strip('|').split('|')]
+                if all(set(t)<=set('-: ') for t in cells):continue
+                rows.append([Paragraph(escape(t),cellstyle) for t in cells])
+            table=LongTable(rows,colWidths=[150,137,190],repeatRows=1,hAlign='LEFT')
+            table.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('BACKGROUND',(0,0),(-1,0),HexColor('#e4edf3')),('LINEBELOW',(0,0),(-1,0),.6,HexColor('#506372')),('LINEBELOW',(0,1),(-1,-1),.25,HexColor('#c2ced7')),('LEFTPADDING',(0,0),(-1,-1),5),('RIGHTPADDING',(0,0),(-1,-1),5),('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5)]))
+            story.extend([table,Spacer(1,12)])
         else:
             content=escape(' '.join(block.splitlines()))
             story.append(Paragraph(content,body))
@@ -116,13 +136,13 @@ def main():
         canvas.saveState()
         canvas.setStrokeColor(HexColor('#c2ced7'));canvas.line(58,47,537,47)
         canvas.setFont('Sans',8);canvas.setFillColor(HexColor('#506372'))
-        canvas.drawString(58,33,'PERFECTPOWER / CP AND GLOBAL MODES' if args.cp_paper else 'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / PROTECTED FLAVOR CONSTRUCTION')
+        canvas.drawString(58,33,'PERFECTPOWER / SUSY VACUA AND CKM BOUNDARY' if args.susy_paper else 'PERFECTPOWER / CP AND GLOBAL MODES' if args.cp_paper else 'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / FLAVOR MECHANISMS')
         canvas.drawRightString(537,33,str(doc.page))
         if doc.page>1:
             canvas.setFont('Sans',7.5);canvas.drawString(58,806,'Exact equations, declared interactions, computed departures')
         canvas.restoreState()
     doc=SimpleDocTemplate(str(destination),pagesize=(595.28,841.89),leftMargin=58,rightMargin=58,topMargin=54,bottomMargin=62,
-        title='Cross-sector links, physical CP and global cap modes' if args.cp_paper else 'Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Protected vacua, shared mediators and the alignment boundary',author='PerfectPower research')
+        title='Supersymmetric links, stable source vacua and the CKM boundary' if args.susy_paper else 'Cross-sector links, physical CP and global cap modes' if args.cp_paper else 'Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Flavor mechanisms, vacuum alignment and predictive limits',author='PerfectPower research')
     doc.build(story,onFirstPage=furniture,onLaterPages=furniture)
     print(destination)
 
