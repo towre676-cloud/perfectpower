@@ -69,3 +69,6 @@ Read [the history](HISTORY.md), [Hilbert's tenth problem](HILBERT10.md), [resear
 [Semilinear Lean monograph](SEMILINEAR_LEAN_MONOGRAPH.md): signed gcd charts, exact floor-quotient counts, infinite-domain optimizer certificates and complete even-power search from finite sign domains.
 
 [M22 triplet transport and residual-frame obstructions](M22_TRANSPORT_INTERACTIONS.md): exact S5 holonomy, a rank-three orientation-cover interaction, and certified complete/partial residual gaps in the Valentiner triplet. This is a research draft; the golden CKM coefficient and 66-degree phase remain underived.
+# Nonorthogonal joint potential
+
+The [complete degree-six joint potential](VALENTINER_JOINT_POTENTIAL.md) enumerates 263 independent CP-even scalar contractions, solves nonorthogonal local vacua with physical weak CP, and calculates a full-rank observable response to allowed interactions and independent quark-column coefficients. It escapes the orthogonal-frame bound but does not predict the golden relation or observed CKM values.
