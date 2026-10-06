@@ -1,5 +1,7 @@
 # Documentation
 
+[Canonical quarks, currents and strong CP](VALENTINER_CANONICAL_RESULTS.md): a changed fermion assignment enforces a renormalizable Nelson–Barr structure at the shared-adjoint vacuum, with tree determinant protection, scale-independent decoupling frames, complete finite-mass current matching and an explicit higher-operator protection boundary.
+
 [Supersymmetric Valentiner vacua](VALENTINER_SUSY_VACUA.md): an isolated link branch, stable source vacua with weak CP, an exact orthogonal-frame hierarchy obstruction, and an allowed cross-sector response. The [input audit](FLAVOR_SEARCH_INPUT_AUDIT.md) separates the physical assumptions from the calculated results. These are conditional flavor research, with no derived golden CKM relation.
 
 Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower, the [worked examples](SHOWCASE_MONOGRAPH.md) to see complete workflows, or the [Python API](../python/README.md) to integrate it into a program. The [mathematical overview](MONOGRAPH.md) explains the arithmetic classification. The [trust boundary](TRUST_BOUNDARY.md) distinguishes compiled theorems, named premises, exact Python computations, bounded evidence, and numerical geometry.
