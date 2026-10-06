@@ -17,11 +17,19 @@ from reportlab.lib.enums import TA_CENTER
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
-                                Image, Preformatted, Table, TableStyle)
+                                Image, Preformatted, Table, TableStyle, KeepTogether)
 
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'structure':{
+            'title':'Geometry inside the polynomial',
+            'subtitle':'Deformation, collision residues<br/>and hidden elliptic quotient systems',
+            'description':'Exact explanations of coordinate motion, simultaneous root velocities, nodal period residues, translated reflection symmetry and two elliptic quotients of a genus-two sextic.',
+            'metrics':[('17','simple collision roots analyzed'),('2 + 2','elliptic period blocks'),('183','recorded root geometries')],
+            'scope':'Exact rational and squarefree-algebra identities on declared families. Root plots and marked period execution are numerical approximations. No new Lean theorem or worldwide priority claim.',
+            'running':'Root motion, deformation geometry and quotient equations',
+        },
         'families':{
             'title':'Curve family execution',
             'subtitle':'Polynomial structure, differential systems<br/>and marked period continuation',
@@ -121,7 +129,8 @@ def render(source,output,*,edition='polynomial'):
             while j<len(lines) and not lines[j].startswith('```'):
                 chunks=textwrap.wrap(lines[j],width=91,break_long_words=False,break_on_hyphens=False) or ['']
                 block.extend((('  ' if k else '')+c+(' \\' if k<len(chunks)-1 else '')) for k,c in enumerate(chunks));j+=1
-            story.append(Preformatted('\n'.join(block),code));i=j+1;continue
+            rendered=Preformatted('\n'.join(block),code)
+            story.append(KeepTogether([rendered]) if edition=='structure' else rendered);i=j+1;continue
         paragraph=[line];i+=1
         while i<len(lines) and lines[i].strip() and not lines[i].startswith(('#','```','$$')):
             paragraph.append(lines[i]);i+=1
@@ -130,7 +139,7 @@ def render(source,output,*,edition='polynomial'):
         canvas.saveState();canvas.setStrokeColor(colors.HexColor('#D0DBE0'));canvas.setLineWidth(.5)
         canvas.line(57,49,538,49);canvas.setFont('Label',8);canvas.setFillColor(navy)
         canvas.drawString(57,34,'PERFECTPOWER  /  '+profile['title'].upper());canvas.drawRightString(538,34,str(doc.page))
-        if doc.page>1:canvas.setFont('Label',8);canvas.drawString(57,807,'Exact domains, preserved integer images, complete ties')
+        if doc.page>1:canvas.setFont('Label',8);canvas.drawString(57,807,profile.get('running','Exact domains, preserved integer images, complete ties'))
         canvas.restoreState()
     document=SimpleDocTemplate(str(output),pagesize=(595.28,841.89),rightMargin=57,leftMargin=57,topMargin=57,bottomMargin=66,
                                title=profile['title']+': '+re.sub('<br/>',' ',profile['subtitle']).lower(),author='PerfectPower')
@@ -140,7 +149,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

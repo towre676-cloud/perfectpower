@@ -50,7 +50,7 @@ def primitive_operator(coefficients, budget):
 
 
 class CurveFamily:
-    def __init__(self, specification):
+    def __init__(self, specification, *, _parameter_degree_limit=8):
         if not isinstance(specification, dict) or not {'coefficients'} <= set(specification) or set(specification)-{'coefficients','work_limit','degree_limit','bit_limit'}:
             raise ValueError('family coefficient arrays and optional algebra budgets required')
         self.specification = deepcopy(specification)
@@ -60,8 +60,8 @@ class CurveFamily:
         if not isinstance(coefficients, (list, tuple)) or len(coefficients) not in (4,6,8):
             raise ValueError('monic odd x degree 3, 5 or 7 required')
         self.f = [RF.parse(c, budget) for c in coefficients]
-        if any(a.d != P.ONE or P.degree(a.n) > 4 for a in self.f) or self.f[-1] != 1:
-            raise ValueError('polynomial parameter degree at most four and monic x polynomial required')
+        if any(a.d != P.ONE or P.degree(a.n) > _parameter_degree_limit for a in self.f) or self.f[-1] != 1:
+            raise ValueError(f'polynomial parameter degree at most {_parameter_degree_limit} and monic x polynomial required')
         m = len(self.f)-1; self.dimension = m-1; self.genus = (m-1)//2
         df = xderivative(self.f); zero = RF.parse(0, budget)
         # Sylvester resultant det, both input polynomials use descending x order.
@@ -104,6 +104,18 @@ class CurveFamily:
 
     def summary(self): return dict(genus=self.genus,state_dimension=self.dimension,discriminant=list(map(str,self.discriminant)),complete=True)
     def evidence(self): return deepcopy(self.packet)
+
+    def deformation(self):
+        from .curve_structure import deformation
+        return deformation(self)
+
+    def root_motion(self):
+        from .curve_structure import root_motion
+        return root_motion(self)
+
+    def collisions(self):
+        from .curve_structure import collisions
+        return collisions(self)
 
     def specialize(self, parameter):
         t = _q(parameter); disc = P.evaluate(self.discriminant,t)

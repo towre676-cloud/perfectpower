@@ -62,6 +62,7 @@ The [open-content release](docs/OPEN_CONTENT_MONOGRAPH.md) adds eight persistent
 | Query graph events and update edge weights without enumerating every basis | `connection-measure`, `connection-reweight` | [Graph measures](docs/MONOGRAPH_DEVELOPMENT_MONOGRAPH.md), [weight repairs](docs/WITNESS_RESOLVENTS_AND_GRAPH_REPAIRS.md) |
 | Compute branched-cover topology, differentials, and surface geometry | `branched-geometry`, `legendre-period-bounds`, `intrinsic-voronoi` | [Geometry documentation](docs/README.md#geometry) |
 | Derive a curve family's differential system and continue marked periods | catalogue kind `curve_family` via `service` | [Curve family compiler](docs/CURVE_FAMILIES_MONOGRAPH.md) |
+| Explain coefficient motion and nodal residues; discover two elliptic systems inside a translated sextic | `curve_family` structural queries, `elliptic_quotient`, `discover_quotients`, `construct_quotient` | [Geometry inside the polynomial](docs/CURVE_STRUCTURE_MONOGRAPH.md) |
 | Compare arithmetic families with local OEIS records | `oeis`, `sequence-atlas` | [OEIS integration](docs/OEIS.md) |
 
 For solver integration, the [SMT adapter](docs/HOST_ADAPTER.md) replaces recognized arithmetic relations with their complete solution sets. The separate [incremental replay tool](industrial_performance/REPLAY_README.md) handles SMT-LIB command transport. Coverage and performance measurements are documented with their workloads in those guides.

@@ -1,0 +1,10 @@
+{"kind":"curve_family","name":"quintic","op":"register","specification":{"coefficients":[[0,1],[-1],[0],[0],[0],[1]]}}
+{"method":"deformation","object":"quintic","op":"call"}
+{"method":"root_motion","object":"quintic","op":"call"}
+{"method":"collisions","object":"quintic","op":"call"}
+{"args":{"A":2,"B":-1,"C":[1,1],"center":[0,1]},"op":"construct_quotient"}
+{"op":"discover_quotients","specification":{"coefficients":[[1],[0],[0],[0,1],[0],[0],[1]]}}
+{"kind":"elliptic_quotient","name":"split","op":"register","specification":{"coefficients":[["1","1","-1","0","2","0","1"],["0","2","0","-8","0","-6"],["-1","0","12","0","15"],["0","-8","0","-20"],["2","0","15"],["0","-6"],["1"]]}}
+{"args":{"sector":"second"},"method":"observable","object":"split","op":"call"}
+{"args":{"parameter":1,"x":2,"y":2},"method":"point_image","object":"split","op":"call"}
+{"args":{"parameter":1,"sector":"second","u":1,"v":2},"method":"rational_lifts","object":"split","op":"call"}

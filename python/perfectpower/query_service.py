@@ -6,7 +6,8 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
-    curve_family={'summary','evidence','specialize','observable','parameter_domain','parameter_population','integer_points','marked_period','transport','period_path'},
+    elliptic_quotient={'summary','evidence','specialize','observable','collisions','root_motion','period_path','point_image','rational_lifts'},
+    curve_family={'summary','evidence','specialize','observable','deformation','root_motion','collisions','parameter_domain','parameter_population','integer_points','marked_period','transport','period_path'},
     calibration_policy={'summary','evidence','decide'},diagnostic_policy={'summary','evidence','step','run'},
     projected={'summary','count','select','rank','page','sample','partition','locate','multiplicity','evidence'},
     factorial={'summary','terms','residues'},
@@ -28,6 +29,12 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op == 'discover_quotients':
+        from .elliptic_quotients import discover_elliptic_quotients
+        return discover_elliptic_quotients(request['specification'])
+    if op == 'construct_quotient':
+        from .elliptic_quotients import translated_even_specification
+        return dict(kind='elliptic_quotient',specification=translated_even_specification(**args))
     if op == 'join':
         return catalogue.join(request['object'], request['other'], **args)
     if op == 'symbolic_join':

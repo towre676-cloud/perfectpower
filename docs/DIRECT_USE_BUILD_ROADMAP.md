@@ -31,3 +31,7 @@ The next three machinery moves are implemented in [DECISION_POLICIES_MONOGRAPH.m
 ## Curve families into differential execution
 
 The [curve-family compiler](CURVE_FAMILIES_MONOGRAPH.md) derives exact rational-function period connections and selected-observable operators for monic hyperelliptic families of x degree 3, 5 or 7. It adds exact pole exclusion on rational complex parameter segments, marked numerical continuation, integer parameter populations and bounded arithmetic specializations. The isotrivial genus-two example reduces its first observable from four period coordinates to order one. Numerical evaluation remains separate from exact algebra; general cyclic families and certified interval continuation remain open. Eleven persistent object kinds now include curve_family.
+
+## Polynomial explanations and elliptic quotient research
+
+The [structural extension](CURVE_STRUCTURE_MONOGRAPH.md) explains affine coordinate motion, derives simultaneous root velocities, covers simple nodal discriminant roots in split exact algebras, and discovers translated reflections in sextics. Two explicit elliptic maps explain and split an independently derived residue-free genus-two connection. Inverse construction from a desired cubic quotient and complete rational fibres supply direct research uses beyond period execution. The catalogue now has twelve kinds. Broader projective symmetries, algebraic correspondences, integral cycle transport and multiple-root local models remain the next mathematical extensions.

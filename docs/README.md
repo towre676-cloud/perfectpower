@@ -72,3 +72,7 @@ Read [the history](HISTORY.md), [Hilbert's tenth problem](HILBERT10.md), [resear
 # Nonorthogonal joint potential
 
 The [complete degree-six joint potential](VALENTINER_JOINT_POTENTIAL.md) enumerates 263 independent CP-even scalar contractions, solves nonorthogonal local vacua with physical weak CP, and calculates a full-rank observable response to allowed interactions and independent quark-column coefficients. It escapes the orthogonal-frame bound but does not predict the golden relation or observed CKM values.
+
+## Geometry inside the polynomial
+
+[Curve structure](CURVE_STRUCTURE_MONOGRAPH.md) connects coefficient deformations, simultaneous root motion, exact nodal connection residues and translated-even-sextic elliptic quotients. It derives a residue-free genus-two connection and checks its two elliptic blocks, constructs families from a cubic quotient, and retains original-coordinate rational lifts. Twelve persistent kinds and a root-geometry workbench make these explanations executable. Multiple-root degeneration, full projective deformation and continuous Hodge identification remain further work.
