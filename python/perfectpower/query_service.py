@@ -6,10 +6,11 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    calibration_policy={'summary','evidence','decide'},diagnostic_policy={'summary','evidence','step','run'},
     projected={'summary','count','select','rank','page','sample','partition','locate','multiplicity','evidence'},
     factorial={'summary','terms','residues'},
     population={'summary', 'count', 'select', 'rank', 'locate', 'page', 'next', 'sample', 'partition', 'optimize', 'evidence'},
-    sequence={'summary', 'terms', 'subsequence', 'experiment', 'witness_experiment'}, inverse={'solve', 'solve_box'},
+    sequence={'summary', 'terms', 'subsequence', 'experiment', 'witness_experiment','diagnostic'}, inverse={'solve', 'solve_box','policy'},
     graph={'event', 'sample'}, geometry={'point', 'segment', 'grid', 'transition', 'transport'},
     combinatorial={'gamma', 'sizes', 'select_size'})
 

@@ -20,7 +20,9 @@ def compile_object(kind, specification):
     from .application_objects import SequenceLibrary, InverseDesign, GraphEnsemble, GeometryWorkbench, CombinatorialDesign
     from .projected_populations import ProjectedPopulation
     from .factorial_library import FactorialLibrary
-    constructors = dict(population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
+    from .decision_regions import CalibrationPolicy
+    from .diagnostic_programs import DiagnosticPolicy
+    constructors = dict(calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
                         graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign,projected=ProjectedPopulation,factorial=FactorialLibrary)
     if kind not in constructors:
         raise ValueError('unsupported catalogue kind')

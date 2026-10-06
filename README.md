@@ -67,6 +67,8 @@ For solver integration, the [SMT adapter](docs/HOST_ADAPTER.md) replaces recogni
 
 For example, `curve-query --left '[1,0,-2,0,1]' --right '[0,0,0,1]' --objective 'x*x+y*y' --verify` solves `(x²−1)²=y³` completely and returns all three tied minimizers. The [new corpus](receipts/semilinear_capacity/summary.json) closes 262 finite-image presentations, including 238 previously unresolved cases, and independently checks 3,080 constrained quartic optima and 676 Bober recurrence domains. See the [monograph](docs/SEMILINEAR_CAPACITY_MONOGRAPH.md) for the defined workloads and proof scope.
 
+The [decision-policy release](docs/DECISION_POLICIES_MONOGRAPH.md) compiles bounded calibration models into complete operating regions and finite operator hypotheses into globally optimal resettable diagnostic trees. Cubic collision geometry and discrete monotonicity extend distinct-value populations. Ten catalogue kinds now include both policies. Run `python python/develop_decision_policies.py`; the [receipts](receipts/decision_policies/summary.json) and offline SVG workbench show the coupled configuration-to-diagnosis example. See the [handoff](CLAUDE_CODE_DECISION_POLICIES_START_HERE.md).
+
 ## Results and guarantees
 
 <a id="the-four-answers"></a>

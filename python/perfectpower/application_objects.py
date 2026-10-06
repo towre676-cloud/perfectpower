@@ -50,6 +50,17 @@ class SequenceLibrary:
             result['name'] = self.names[result['readout']]
         return result
 
+    def diagnostic(self,hypotheses,operator_cost=1,readout_costs=None):
+        from .diagnostic_programs import DiagnosticPolicy
+        spec=dict(operators=[self.specification['operator']],readouts=self.specification['readouts'],hypotheses=hypotheses,operator_costs=[operator_cost])
+        if readout_costs is not None:
+            if not isinstance(readout_costs,dict):
+                readout_costs=list(readout_costs)
+                if len(readout_costs)!=len(self.names):raise ValueError('matching readout costs required')
+                readout_costs=dict(zip(self.names,readout_costs))
+            spec['readout_costs']=readout_costs
+        return DiagnosticPolicy(spec).evidence()
+
     def witness_experiment(self, left, right, operator_cost=1, readout_costs=None):
         """Legacy finite-witness comparison, retained for reproduction."""
         from .integral_machine import distinguish_states
@@ -85,6 +96,12 @@ class InverseDesign:
 
     def solve(self, observation, target):
         return self.optimizer.nearest(observation, [Q(x) for x in target])
+
+    def policy(self, observation, lower, upper, target_origin, target_basis, target_box, inequalities=(), node_limit=500000):
+        from .decision_regions import CalibrationPolicy
+        return CalibrationPolicy(dict(matrix=self.optimizer.certificate['matrix'],metric=self.optimizer.mass,
+            observation=observation,lower=lower,upper=upper,target_origin=target_origin,target_basis=target_basis,target_box=target_box,
+            inequalities=inequalities,node_limit=node_limit)).evidence()
 
     def solve_box(self, observation, target, lower, upper, inequalities=(), node_limit=100000):
         from .bounded_inverse import closest_in_box

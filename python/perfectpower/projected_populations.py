@@ -1,4 +1,4 @@
-"""Distinct linear/quadratic values and complete supported symbolic joins."""
+"""Distinct polynomial values through exact collision and monotonicity geometry."""
 from copy import deepcopy
 from .populations import ExactPopulation
 from .integer_image_index import IntegerImageIndex
@@ -15,6 +15,9 @@ def _substitute(node,offset):
 class ProjectedPopulation:
     """Uniform distinct values, with the least source parameter as owner.
 
+    Cubic off-diagonal collisions are finite; higher degrees require strict
+    discrete monotonicity on the convex hull of the supplied source domain.
+
     For f(n)=a*n²+b*n+c, the only distinct collision is m=-b/a-n.
     If -b/a is not integral, every integer parameter has a distinct value.
     """
@@ -25,7 +28,7 @@ class ProjectedPopulation:
         if spec['kind']!='domain' or field not in spec['fields']:raise ValueError('existing domain field required')
         self.field=field;self.polynomial=spec['fields'][field];self.images=IntegerImageIndex()
         f=P.poly(self.polynomial)
-        if P.degree(f)>2:raise ValueError('complete distinct projection supports degrees zero, one and two')
+        self.collision=None
         predicate=spec['predicate'];reflection=None
         if P.degree(f)==0:
             predicate=False if not self.source.cardinality else {'poly':[-self.source.select(0)['parameter'],1],'relation':'='}
@@ -34,6 +37,23 @@ class ProjectedPopulation:
             ownership={'op':'or','args':[{'poly':[-reflection,2],'relation':'<='},
                 {'op':'not','args':[_substitute(spec['predicate'],reflection)]}]}
             predicate={'op':'and','args':[predicate,ownership]}
+        elif P.degree(f)==3:
+            from .collision_geometry import cubic_collisions
+            self.collision=cubic_collisions(f)
+            removed=sorted({y for x,y in self.collision['pairs'] if self.source.locate(parameter=x) is not None and self.source.locate(parameter=y) is not None})
+            predicate={'op':'and','args':[predicate]+[{'poly':[-y,1],'relation':'!='} for y in removed]}
+        elif P.degree(f)>3:
+            # Strict discrete monotonicity on the convex source hull suffices.
+            delta=P.add(P.compose_linear(f,1,1),P.scale(f,-1))
+            if self.source.cardinality:
+                lo=self.source.select(0)['parameter'];hi=self.source.select(self.source.cardinality-1)['parameter']-1
+                hull=[{'poly':[-lo,1],'relation':'>='},{'poly':[-hi,1],'relation':'<='}]
+                bad=[]
+                for relation in ('<=','>='):
+                    bad.append(ExactPopulation(dict(kind='domain',predicate={'op':'and','args':hull+[{'poly':list(map(int,delta)),'relation':relation}]})).count())
+                if all(bad):raise ValueError('projection needs a complete collision backend or strict discrete monotonicity')
+                self.collision=dict(route='strict_discrete_monotonicity',difference=list(map(int,delta)),hull=[lo,hi],direction='increasing' if not bad[0] else 'decreasing',violating_counts=bad,complete=True)
+            else:self.collision=dict(route='empty_source',complete=True)
         self.reflection=reflection
         self.population=ExactPopulation(dict(kind='domain',predicate=predicate,fields={field:self.polynomial}))
 
@@ -68,7 +88,7 @@ class ProjectedPopulation:
 
     def evidence(self):
         return dict(source=self.source.evidence(),representatives=self.population.evidence(),reflection=self.reflection,
-            collision_identity='f(n)-f(m)=(n-m)*(a*(n+m)+b) for quadratic f',execution_verified=False)
+            collision_identity=(self.collision.get('identity',self.collision.get('route')) if self.collision else 'f(n)-f(m)=(n-m)*(a*(n+m)+b) for quadratic f'),collision_geometry=deepcopy(self.collision),execution_verified=False)
 
 
 def _curve_predicate(node,variable):

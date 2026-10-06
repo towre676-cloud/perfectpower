@@ -22,6 +22,13 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'policies':{
+            'title':'Exact decision policies',
+            'subtitle':'Operating regions, collision geometry<br/>and adaptive diagnostics',
+            'description':'Complete bounded calibration regions through vertex-oracle discovery, distinct cubic and monotone polynomial images, and globally optimal resettable diagnostic programs.',
+            'metrics':[('15','coupled operating cells'),('231','lazy-window feasible settings'),('3','optimal diagnostic cost')],
+            'scope':'Exact reusable policies on declared bounded models. Complete cubic collision geometry; positive-cost resettable minimax diagnostics. Python evidence, no new Lean theorem or physical derivation.',
+        },
         'opencontent':{
             'title':'Open content',
             'subtitle':'Exact direct-use workflows<br/>and research diagnostics',
@@ -126,7 +133,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)
