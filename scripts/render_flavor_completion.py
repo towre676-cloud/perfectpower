@@ -16,10 +16,13 @@ from reportlab.lib.utils import ImageReader
 
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'docs/B5_FLAVOR_COMPLETION.md'
-SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md',ROOT/'docs/VALENTINER_CP_AND_GLOBAL_MODES.md',ROOT/'docs/FLAVOR_SEARCH_INPUT_AUDIT.md',ROOT/'docs/VALENTINER_SUSY_VACUA.md',ROOT/'docs/VALENTINER_JOINT_POTENTIAL.md',ROOT/'docs/FLAVOR_KINETIC_FREEDOM.md',ROOT/'docs/VALENTINER_ADJOINT_UV.md',ROOT/'docs/VALENTINER_CANONICAL_RESULTS.md',ROOT/'docs/VALENTINER_QUANTUM_COMPLETION.md',ROOT/'docs/VALENTINER_HERMITIAN_INTERACTIONS.md']
+SOURCES=[SOURCE,ROOT/'docs/B5_FLAVOR_MEDIATOR.md',ROOT/'docs/M22_FLAVOR_FRAME.md',ROOT/'docs/M22_TRANSPORT_INTERACTIONS.md',ROOT/'docs/VALENTINER_INVARIANT_INTERACTIONS.md',ROOT/'docs/VALENTINER_CP_AND_GLOBAL_MODES.md',ROOT/'docs/FLAVOR_SEARCH_INPUT_AUDIT.md',ROOT/'docs/VALENTINER_SUSY_VACUA.md',ROOT/'docs/VALENTINER_JOINT_POTENTIAL.md',ROOT/'docs/FLAVOR_KINETIC_FREEDOM.md',ROOT/'docs/VALENTINER_ADJOINT_UV.md',ROOT/'docs/VALENTINER_CANONICAL_RESULTS.md',ROOT/'docs/VALENTINER_QUANTUM_COMPLETION.md',ROOT/'docs/VALENTINER_HERMITIAN_INTERACTIONS.md',ROOT/'docs/SOMMERFELD_CONSTANT_AND_66_DEGREES.md']
 DEST=ROOT/'output/pdf/B5_Protected_Flavor_Monograph.pdf'
 
 EQUATIONS={
+ 'The exact 66-degree algebraic relation':r'$\theta=11\pi/30,\qquad 1-2\cos(12\theta)=(3-\sqrt{5})/2$',
+ 'A photon theorem for the protected canonical action':r'$\sum_{i=1}^{6}\log(\mu/m_i)=6\log\mu-3\log(vym)$',
+ 'The independent gauge boundary and the mechanism requirement':r'$\mathcal{L}_{\gamma}=-\frac{k_0}{4}F_{\mu\nu}F^{\mu\nu},\qquad\alpha^{-1}=4\pi k_0$',
  'A low-degree invariant basis with an exact determinant':r'$\det\mathcal{W}=\chi^3,\qquad\chi=\operatorname{Im}\operatorname{Tr}(R^2T^2RT)$',
  'Exact finite spectra and physical currents':r'$h_i^2=\frac{(a^2-\ell_i^2)(m^2-\ell_i^2)}{\ell_i^2},\qquad M_i=\frac{am}{\ell_i}$',
  'An exact one-loop phase theorem':r'$G_{IK}G_{KI}\in\mathbb{R}\quad\Longrightarrow\quad\operatorname{Im}\operatorname{Tr}(D^{-1}\delta D)=0$',
@@ -99,10 +102,11 @@ def main():
     parser.add_argument('--canonical-paper',action='store_true')
     parser.add_argument('--quantum-paper',action='store_true')
     parser.add_argument('--hermitian-paper',action='store_true')
+    parser.add_argument('--electromagnetic-paper',action='store_true')
     parser.add_argument('--cp-paper',action='store_true')
     parser.add_argument('--susy-paper',action='store_true')
     args=parser.parse_args()
-    standalone=args.transport_paper or args.invariant_paper or args.cp_paper or args.susy_paper or args.joint_paper or args.kinetic_paper or args.adjoint_paper or args.canonical_paper or args.quantum_paper or args.hermitian_paper
+    standalone=args.transport_paper or args.invariant_paper or args.cp_paper or args.susy_paper or args.joint_paper or args.kinetic_paper or args.adjoint_paper or args.canonical_paper or args.quantum_paper or args.hermitian_paper or args.electromagnetic_paper
     destination=ROOT/'output/pdf/M22_Triplet_Transport_and_CKM_Obstructions.pdf' if standalone else DEST
     if args.invariant_paper:destination=ROOT/'output/pdf/Valentiner_Invariant_Interactions.pdf'
     if args.cp_paper:destination=ROOT/'output/pdf/Valentiner_CP_and_Global_Modes.pdf'
@@ -113,6 +117,7 @@ def main():
     if args.kinetic_paper:destination=ROOT/'output/pdf/CP_Even_Kinetic_Freedom_at_Fixed_Masses.pdf'
     if args.joint_paper:destination=ROOT/'output/pdf/Valentiner_Joint_Potential_and_Protection.pdf'
     if args.hermitian_paper:destination=ROOT/'output/pdf/Hermitian_Flavor_and_One_Loop_CP.pdf'
+    if args.electromagnetic_paper:destination=ROOT/'output/pdf/Sommerfeld_Constant_and_66_Degrees.pdf'
     DEST.parent.mkdir(parents=True,exist_ok=True)
     fontroot=Path('/usr/share/fonts/truetype/dejavu')
     for name,filename in (('Body','DejaVuSerif.ttf'),('BodyBold','DejaVuSerif-Bold.ttf'),('Sans','DejaVuSans.ttf'),('SansBold','DejaVuSans-Bold.ttf')):
@@ -150,9 +155,11 @@ def main():
         story=[Spacer(1,45),Paragraph('Electroweak completion,<br/>one-loop strong CP<br/>and flavor spectra',title),Paragraph('A stable joint branch, 156 exact fermion covariants and constructive hierarchical matching',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026 (UTC)',subtitle),Paragraph('Completed calculations with explicit action, coefficient inputs, precision checks and reproducible scientific receipts.',body),PageBreak()]
     if args.hermitian_paper:
         story=[Spacer(1,45),Paragraph('Hermitian flavor sources<br/>and exact one-loop<br/>mass-phase cancellation',title),Paragraph('A complete canonical fermion action, finite hierarchical matching and an exact covariant determinant',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026 (UTC)',subtitle),Paragraph('Termwise one-loop protection with arbitrary real scalar mixing. Explicit source-center inputs, locally positive scalar EFT and a complete mass-only affine candidate calculation.',body),PageBreak()]
-    selected_source=SOURCES[13] if args.hermitian_paper else SOURCES[12] if args.quantum_paper else SOURCES[11] if args.canonical_paper else SOURCES[10] if args.adjoint_paper else SOURCES[9] if args.kinetic_paper else SOURCES[8] if args.joint_paper else SOURCES[7] if args.susy_paper else SOURCES[5] if args.cp_paper else SOURCES[4] if args.invariant_paper else SOURCES[3]
+    if args.electromagnetic_paper:
+        story=[Spacer(1,45),Paragraph('The Sommerfeld constant<br/>and the exact<br/>66-degree angle carrier',title),Paragraph('Electromagnetic spectral invariance, a determinant threshold sum rule and the gauge boundary',subtitle),Spacer(1,20),Paragraph('PerfectPower research draft / 6 October 2026 (UTC)',subtitle),Paragraph('An exact golden-coefficient identity and a continuous weak-phase orbit at fixed one-loop photon screening. Explicit separation of electromagnetic coupling inputs, scalar angles and physical CP.',body),PageBreak()]
+    selected_source=SOURCES[14] if args.electromagnetic_paper else SOURCES[13] if args.hermitian_paper else SOURCES[12] if args.quantum_paper else SOURCES[11] if args.canonical_paper else SOURCES[10] if args.adjoint_paper else SOURCES[9] if args.kinetic_paper else SOURCES[8] if args.joint_paper else SOURCES[7] if args.susy_paper else SOURCES[5] if args.cp_paper else SOURCES[4] if args.invariant_paper else SOURCES[3]
     text='\n\nCHAPTER_BREAK\n\n'.join(p.read_text() for p in ([selected_source] if standalone else SOURCES))
-    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary','Product-family CP and the global spectrum','Audit of the flavor search inputs','Supersymmetric vacua and the CKM boundary','The joint potential and the protection test','CP-even kinetic freedom at fixed quark masses','Universal sources, rank lifting and physical CP','Canonical quarks, currents and strong CP','Electroweak completion, quantum matching and attainable spectra','Hermitian sources and exact one-loop mass-phase cancellation'])
+    chapter_titles=iter(['Shared mediators and the alignment boundary', 'Recovered M22 geometry and the flavor frame','Triplet transport and exact residual obstructions','Valentiner interactions and the protection boundary','Product-family CP and the global spectrum','Audit of the flavor search inputs','Supersymmetric vacua and the CKM boundary','The joint potential and the protection test','CP-even kinetic freedom at fixed quark masses','Universal sources, rank lifting and physical CP','Canonical quarks, currents and strong CP','Electroweak completion, quantum matching and attainable spectra','Hermitian sources and exact one-loop mass-phase cancellation','The Sommerfeld constant and the exact angle carrier'])
     for block in text.split('\n\n'):
         block=block.strip()
         if block=='CHAPTER_BREAK':
@@ -188,13 +195,13 @@ def main():
         canvas.saveState()
         canvas.setStrokeColor(HexColor('#c2ced7'));canvas.line(58,47,537,47)
         canvas.setFont('Sans',8);canvas.setFillColor(HexColor('#506372'))
-        canvas.drawString(58,33,'PERFECTPOWER / HERMITIAN FLAVOR AND ONE-LOOP CP' if args.hermitian_paper else 'PERFECTPOWER / ELECTROWEAK AND QUANTUM MATCHING' if args.quantum_paper else 'PERFECTPOWER / CANONICAL QUARKS AND STRONG CP' if args.canonical_paper else 'PERFECTPOWER / RANK LIFTING AND PHYSICAL CP' if args.adjoint_paper else 'PERFECTPOWER / CP-EVEN KINETIC FREEDOM' if args.kinetic_paper else 'PERFECTPOWER / JOINT POTENTIAL AND PROTECTION' if args.joint_paper else 'PERFECTPOWER / SUSY VACUA AND CKM BOUNDARY' if args.susy_paper else 'PERFECTPOWER / CP AND GLOBAL MODES' if args.cp_paper else 'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / FLAVOR MECHANISMS')
+        canvas.drawString(58,33,'PERFECTPOWER / SOMMERFELD CONSTANT AND EXACT ANGLES' if args.electromagnetic_paper else 'PERFECTPOWER / HERMITIAN FLAVOR AND ONE-LOOP CP' if args.hermitian_paper else 'PERFECTPOWER / ELECTROWEAK AND QUANTUM MATCHING' if args.quantum_paper else 'PERFECTPOWER / CANONICAL QUARKS AND STRONG CP' if args.canonical_paper else 'PERFECTPOWER / RANK LIFTING AND PHYSICAL CP' if args.adjoint_paper else 'PERFECTPOWER / CP-EVEN KINETIC FREEDOM' if args.kinetic_paper else 'PERFECTPOWER / JOINT POTENTIAL AND PROTECTION' if args.joint_paper else 'PERFECTPOWER / SUSY VACUA AND CKM BOUNDARY' if args.susy_paper else 'PERFECTPOWER / CP AND GLOBAL MODES' if args.cp_paper else 'PERFECTPOWER / VALENTINER INTERACTIONS' if args.invariant_paper else 'PERFECTPOWER / M22 TRIPLET TRANSPORT' if standalone else 'PERFECTPOWER / FLAVOR MECHANISMS')
         canvas.drawRightString(537,33,str(doc.page))
         if doc.page>1:
             canvas.setFont('Sans',7.5);canvas.drawString(58,806,'Exact equations, declared interactions, computed departures')
         canvas.restoreState()
     doc=SimpleDocTemplate(str(destination),pagesize=(595.28,841.89),leftMargin=58,rightMargin=58,topMargin=54,bottomMargin=62,
-        title='Hermitian flavor sources and exact one-loop mass-phase cancellation' if args.hermitian_paper else 'Electroweak completion, one-loop strong CP and attainable spectra' if args.quantum_paper else 'Canonical quarks, physical currents and strong CP' if args.canonical_paper else 'Universal source couplings, three-family rank lifting and physical CP' if args.adjoint_paper else 'CP-even kinetic freedom at fixed quark masses' if args.kinetic_paper else 'The joint potential, nonorthogonal vacua and the protection test' if args.joint_paper else 'Supersymmetric links, stable source vacua and the CKM boundary' if args.susy_paper else 'Cross-sector links, physical CP and global cap modes' if args.cp_paper else 'Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Flavor mechanisms, vacuum alignment and predictive limits',author='PerfectPower research')
+        title='The Sommerfeld constant and the exact 66-degree angle carrier' if args.electromagnetic_paper else 'Hermitian flavor sources and exact one-loop mass-phase cancellation' if args.hermitian_paper else 'Electroweak completion, one-loop strong CP and attainable spectra' if args.quantum_paper else 'Canonical quarks, physical currents and strong CP' if args.canonical_paper else 'Universal source couplings, three-family rank lifting and physical CP' if args.adjoint_paper else 'CP-even kinetic freedom at fixed quark masses' if args.kinetic_paper else 'The joint potential, nonorthogonal vacua and the protection test' if args.joint_paper else 'Supersymmetric links, stable source vacua and the CKM boundary' if args.susy_paper else 'Cross-sector links, physical CP and global cap modes' if args.cp_paper else 'Valentiner invariant interactions' if args.invariant_paper else 'Triplet transport on M22 cap geometry' if standalone else 'Flavor mechanisms, vacuum alignment and predictive limits',author='PerfectPower research')
     doc.build(story,onFirstPage=furniture,onLaterPages=furniture)
     print(destination)
 
