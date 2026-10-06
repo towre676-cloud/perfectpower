@@ -201,3 +201,10 @@ native-bridges-lean:
 	lake env lean audit/NativeBridge_residue.lean
 	lake env lean audit/NativeBridge_braid.lean
 	lake env lean audit/NativeBridge_torsion.lean
+
+.PHONY: native-halves-receipts native-halves-lean
+native-halves-receipts:
+	$(PY) python/develop_native_halves.py
+native-halves-lean:
+	lake build PerfectPower.EllipticPointDivision
+	lake env lean audit/NativeHalves.lean

@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'nativehalves':{
+            'title':'Complete native elliptic halving fibres',
+            'subtitle':'Checked anchors, torsion cosets<br/>and root-free obstructions',
+            'description':'Concrete rational doubling in Mathlib, complete actual-point halving fibres without height bounds, and quartic-root obstructions including branch targets.',
+            'metrics':[('2','new reusable point-group theorems'),('6','worked native fibre packets'),('3','complementary certificate routes')],
+            'scope':'Native completed-model point semantics. Original-model transport, literal output-list refinement and general nonsquare lifting remain open.',
+            'running':'Native actual-point halving and the remaining arithmetic interfaces',
+        },
         'tripling':{
             'title':'Complete rational elliptic division',
             'subtitle':'Tripling, torsion cosets<br/>and composite multiplication fibres',
@@ -232,7 +240,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

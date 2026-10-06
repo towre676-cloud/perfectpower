@@ -256,3 +256,5 @@ Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [C
 The connected closures continuation proves general ordered weighted Cauchy–Binet, emits kernel-checked bounded source population counts and numeric image selections, and adds integral-recognition uniqueness and marked monodromy replay. See [the monograph](docs/CONNECTED_CLOSURES_MONOGRAPH.md), `make connected-closures-lean`, and `make connected-closures-receipts`.
 
 The native bridges connect original rational-root packets, nonenumerated affine residue counts and marked braid words to Lean. See [the monograph](docs/NATIVE_BRIDGES_MONOGRAPH.md), `make native-bridges-receipts` and `make native-bridges-lean`.
+
+Native actual halving certificates now check concrete doubling anchors and prove complete torsion cosets, or prove empty fibres from a root-free quartic, including branch targets. The public operation is `native_halves_certificate`; registered elliptic objects expose `native_halves`. See `docs/NATIVE_HALVES_MONOGRAPH.md`. Original-model group transport, literal output-list refinement and nonsquare quartic lifts remain open.

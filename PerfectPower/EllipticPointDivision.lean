@@ -12,11 +12,13 @@ variable {F : Type*} [Field F]
 def completed (A B C : F) : Affine F :=
   (⟨0, A, 0, B, C⟩ : WeierstrassCurve F).toAffine
 
+/-- The completed model has the declared cubic equation. -/
 theorem equation_completed (A B C x y : F) :
     (completed A B C).Equation x y ↔ y ^ 2 = EllipticDivision.cubic A B C x := by
   rw [equation_iff']
   simp [completed, EllipticDivision.cubic, sub_eq_zero]
 
+/-- A point doubles to zero exactly when it equals its negation. -/
 theorem double_eq_zero_iff {W : Affine F} (P : W.Point) :
     (2 : ℤ) • P = 0 ↔ P = -P := by
   rw [show (2 : ℤ) • P = P + P by simp [two_smul], add_eq_zero_iff_eq_neg]
@@ -110,6 +112,7 @@ noncomputable def cubicPolynomial (A B C : ℚ) : Polynomial ℚ :=
   Polynomial.X^3 + Polynomial.C A * Polynomial.X^2 +
     Polynomial.C B * Polynomial.X + Polynomial.C C
 
+/-- Evaluation of the native polynomial is the completed cubic. -/
 @[simp] theorem eval_cubicPolynomial (A B C x : ℚ) :
     (cubicPolynomial A B C).eval x = EllipticDivision.cubic A B C x := by
   simp [cubicPolynomial, EllipticDivision.cubic]
@@ -138,5 +141,38 @@ theorem native_halves_complete (A B C : ℚ) (hΔ : (completed A B C).Δ ≠ 0)
       (torsionList A B C hΔ (NativeRationalRoots.roots as D).toList).map (fun T => H+T) :=
   EllipticDivision.fibre_list_complete 2 P H hH _
     (native_torsion_complete A B C hΔ as D hD hv hm hs) Q
+
+/-- Every half of a nonzero affine target supplies a root of its halving quartic. -/
+theorem half_supplies_quartic_root (A B C u v : ℚ)
+    (hp : (completed A B C).Nonsingular u v)
+    (Q : (completed A B C).Point) (hQ : (2 : ℤ) • Q = Point.some hp) :
+    ∃ x, EllipticDivision.halvingPolynomial A B C u x = 0 := by
+  cases Q with
+  | zero =>
+    change (2 : ℤ) • (0 : (completed A B C).Point) = Point.some hp at hQ
+    rw [zsmul_zero] at hQ
+    exact False.elim (Point.some_ne_zero hp hQ.symm)
+  | @some x y h =>
+    have hy : y ≠ 0 := by
+      intro hy
+      have ht := (affine_two_torsion_iff A B C x y h (by norm_num)).mpr hy
+      rw [ht] at hQ
+      exact Point.some_ne_zero hp hQ.symm
+    have hn : y ≠ (completed A B C).negY x y := by
+      simp only [completed, negY, zero_mul, sub_zero, neg_zero, zero_add]
+      intro he
+      apply hy
+      linear_combination (1 / 2 : ℚ) * he
+    rw [two_zsmul, Point.add_self_of_Y_ne hn, Point.some.injEq] at hQ
+    exact ⟨x, (actual_doubling_x_iff A B C u x y h (mul_ne_zero (by norm_num) hy)).mp hQ.1⟩
+
+/-- A root-free quartic proves an empty actual halving fibre, including branch targets. -/
+theorem no_half_of_quartic_root_free (A B C u v : ℚ)
+    (hp : (completed A B C).Nonsingular u v)
+    (hroot : ∀ x, EllipticDivision.halvingPolynomial A B C u x ≠ 0)
+    (Q : (completed A B C).Point) : (2 : ℤ) • Q ≠ Point.some hp := by
+  intro hQ
+  obtain ⟨x, hx⟩ := half_supplies_quartic_root A B C u v hp Q hQ
+  exact hroot x hx
 
 end PerfectPower.EllipticPointDivision

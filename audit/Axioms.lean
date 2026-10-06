@@ -3141,3 +3141,6 @@ open PerfectPower
 #print axioms PerfectPower.ResiduePopulation.population_complete
 
 #print axioms PerfectPower.ResiduePopulation.population_count
+
+#print axioms PerfectPower.EllipticPointDivision.half_supplies_quartic_root
+#print axioms PerfectPower.EllipticPointDivision.no_half_of_quartic_root_free

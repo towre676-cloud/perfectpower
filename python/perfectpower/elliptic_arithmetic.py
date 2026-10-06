@@ -355,3 +355,9 @@ class EllipticCurve:
         from .native_rational_certificate import two_torsion_certificate
         return two_torsion_certificate(self.specification,
             divisor_work_limit=divisor_work_limit,node_limit=node_limit)
+
+    def native_halves(self,target,*,anchor=None,divisor_work_limit=1024,node_limit=100000):
+        """Emit a complete actual-point halving certificate on the completed model."""
+        from .native_halves_certificate import halves_certificate
+        return halves_certificate(self.specification,target,anchor=anchor,
+            divisor_work_limit=divisor_work_limit,node_limit=node_limit)
