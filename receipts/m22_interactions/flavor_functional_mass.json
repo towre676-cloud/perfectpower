@@ -1,0 +1,200 @@
+{
+  "charges_and_operator_space": {
+    "allowed_cross_operator": "bar(U_up,L) [A_down**2 - Tr(A_down**2)*I/3] U_up,R / Lambda + h.c.",
+    "excluded_opposite_adjoint_coefficients": 6,
+    "included_fields": "The two original source singlets eta,s and one ordinary adjoint A per sector; one heavy triplet bilinear. No mediator fields or higher operators counted.",
+    "linear_source_heavy_mass_forbidden_by_existing_Z2": true,
+    "ordinary_phase_charge_implication": "constant heavy mass + Higgs ordinary Yukawa + same-source mixing + same-source heavy Yukawa imply Higgs-heavy Yukawa allowed",
+    "quadratic_heavy_mass_contractions_per_quark_sector": 14,
+    "quadratic_source_decomposition": "2 singlets plus one ordinary 8: singlet multiplicity 4, ordinary 8 multiplicity 3",
+    "reason_for_doubling": "Either same-sector quadratic or opposite-sector quadratic is even under both shaping signs. Mixed up-down degree-two products are forbidden.",
+    "same_source_scope": "At this degree the same-source heavy mass commutes with C=z I+g A; all adjoint off-diagonal derivatives have a real common divided-difference factor.",
+    "single_source_contractions": [
+      "eta**2 I",
+      "s**2 I",
+      "eta*s I",
+      "Tr(A**2) I",
+      "eta*A",
+      "s*A",
+      "A**2-Tr(A**2)*I/3"
+    ],
+    "sufficient_linear_protected_slice_dimension": 22,
+    "two_sector_total": 28
+  },
+  "exact_hierarchy": {
+    "exactly_three_states_above": 10,
+    "exactly_three_states_below": 1,
+    "fermion_operator_dimension": 7,
+    "polynomial_coefficients": [
+      "101/1000",
+      "0",
+      "-1/500",
+      "0",
+      "1/100000"
+    ],
+    "positive_mass_function": "1/1000 + (C**2 - 100*I)**2/100000",
+    "rows": [
+      {
+        "characteristic_polynomial": "lambda**2 - 101000001*lambda/1000000 + 1/1000000",
+        "heavy_mass_entry": "1/1000",
+        "heavy_mass_strictly_above": 10,
+        "light_mass_interval": [
+          "9/100000",
+          "1/10000"
+        ],
+        "source_eigenvalue": "-10"
+      },
+      {
+        "characteristic_polynomial": "lambda**2 - 401811801*lambda/1000000 + 811801/1000000",
+        "heavy_mass_entry": "901/1000",
+        "heavy_mass_strictly_above": 10,
+        "light_mass_interval": [
+          "11/250",
+          "23/500"
+        ],
+        "source_eigenvalue": "-20"
+      },
+      {
+        "characteristic_polynomial": "lambda**2 - 941972801*lambda/1000000 + 40972801/1000000",
+        "heavy_mass_entry": "6401/1000",
+        "heavy_mass_strictly_above": 10,
+        "light_mass_interval": [
+          "26/125",
+          "21/100"
+        ],
+        "source_eigenvalue": "30"
+      }
+    ],
+    "scope": "Constructive hierarchy with explicit source and coefficient inputs; no measured mass or mixing prediction.",
+    "source_degree": 4,
+    "source_trace": "0",
+    "strict_light_mass_ratio_lower_bounds": [
+      "440",
+      "104/23"
+    ]
+  },
+  "exact_scalar_running_tensor": {
+    "basis_norms": [
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "2",
+      "6"
+    ],
+    "derivation": "Cross term of beta V=(1/32 pi^2)Tr[(H_V+H_insertion)^2] on the canonical eight real Au coordinates; external fermion bilinear treated as a single insertion.",
+    "exact_general_Hermitian_tensor_identity": true,
+    "induced_wrong_source_dimension5_insertion": "kappa_cross bar(U_up,L) [Ad**2-Tr(Ad**2)I/3] U_up,R / Lambda + h.c.",
+    "ordinary_portal_definition": "lambda Tr[(Au**2-Tr(Au**2)I/3)(Ad**2-Tr(Ad**2)I/3)]",
+    "same_source_dimension5_insertion": "kappa bar(U_up,L) Au**2 U_up,R / Lambda + h.c.",
+    "scalar_loop_beta_times_16pi_squared": "10*kappa*lambda/3",
+    "scope": "Exact one-loop scalar mixing tensor, not the complete dimension5 anomalous dimension including fermion and gauge diagrams.",
+    "singlet_channel_eigenvalue": "32/3",
+    "tensor_map": "S(X) = (10/3) X + (22/9) Tr(X) I",
+    "traceless_channel_eigenvalue": "10/3"
+  },
+  "exact_source_multiplicities": {
+    "CP_even_witness": "All seven independent displayed matrix contractions are CP covariant with real coefficients, saturating the unitary count.",
+    "exact_ordinary_adjoint_multiplicity": 3,
+    "exact_singlet_multiplicity": 4,
+    "group_order": 1080
+  },
+  "exact_wrong_source_resolvent": {
+    "nonzero_exactly": true,
+    "rational_resolvent_first_order_phase_without_loop_prefactor": "-32913340238412403971776661617802060238497725485764633235696639842057989010178307300801030514217054929086080000/397039702043408307068598257815684352520143113723381806713707713053264682256570601783150345331106364860028144776093",
+    "scope": "Exact real resolvent-kernel termwise-protection counterexample; the physical B0 threshold is computed separately.",
+    "tree_determinant_positive": true
+  },
+  "fixed_spectrum_orientation": {
+    "Jacobian": [
+      [
+        0.9698416505443674,
+        0.0,
+        -0.000759067100841726,
+        0.0
+      ],
+      [
+        0.0,
+        0.997445506419059,
+        -0.0001397174632933318,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.9945257318020977,
+        2.1684043449710089e-13
+      ],
+      [
+        0.00011265321248441634,
+        0.0006615218658602851,
+        0.007576203264804426,
+        1.1867310628112249e-05
+      ]
+    ],
+    "Jacobian_determinant": 1.1417166744742096e-05,
+    "Jacobian_rank": 4,
+    "benchmark_parameters": [
+      0.22,
+      0.04,
+      0.0035,
+      1.15
+    ],
+    "observables": [
+      0.21687542885490096,
+      0.03991911272161015,
+      0.0034808542748083304,
+      2.6517469387266577e-05
+    ],
+    "scope": "Relative source eigenframes vary; all six fermion masses in each sector and their doublet weights remain fixed. This is freedom, not a scalar-vacuum or CKM prediction."
+  },
+  "functional_benchmark": {
+    "UV_phase_coefficient": 8.028959686418035e-22,
+    "diagonalization_residual": 1.0658141036401503e-14,
+    "first_order_neutral_scalar_phase": -4.532805137316386e-21,
+    "heavy_mass_entries": [
+      0.901,
+      0.0010000000000000009,
+      6.401000000000001
+    ],
+    "light_doublet_weights_squared": [
+      0.9900990100951086,
+      0.9975162758483325,
+      0.9989844828433763
+    ],
+    "masses": [
+      9.950371853328352e-05,
+      0.044948431255289197,
+      0.20856367632204653,
+      10.049875670380155,
+      20.045193454754376,
+      30.69086675532183
+    ],
+    "maximum_mixed_vertex_pair_imaginary_part": 2.6636185344906754e-23,
+    "relative_correction_norm": 0.000954486081563887,
+    "scope": "Neutral-scalar first-order determinant phase and Hermitian seagull reality; full gauge/Yukawa EFT running and higher-loop phases are not computed."
+  },
+  "independent_high_precision_threshold": {
+    "decimal_digits": 80,
+    "first_order_B0_phase": "0.000000066132428801072970856184819757445489532653101848967059873026823419",
+    "method": "Direct Hermitian DDdagger functional calculus in the weak basis; no numpy Dirac SVD."
+  },
+  "wrong_source_threshold": {
+    "UV_phase_coefficient": -4.4605511933379093e-20,
+    "first_order_neutral_scalar_phase": 6.613242880104355e-08,
+    "heavy_mass_minimum_eigenvalue": 1.0018984724402786,
+    "maximum_imaginary_vertex_pair": 0.0006400938705410834,
+    "relative_correction_norm": 0.00032436351902040205,
+    "scalar_eigenvalues": [
+      0.7261692150071505,
+      0.8980019337531401,
+      1.475828851239709
+    ],
+    "scope": "Positive finite spectral counterexample for a permitted wrong-source operator and real scalar mixing; not a solved complete invariant scalar vacuum or all-diagram theta calculation.",
+    "source_CP_cycle": 0.00221,
+    "source_mass_commutator_norm": 0.004897620322156466,
+    "tree_determinant_phase": 5.271992587817041e-22
+  }
+}
