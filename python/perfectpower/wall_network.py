@@ -130,3 +130,96 @@ def annihilation_time(res, A_scaling, *, threshold=.5):
 def C_ann(tau_ann, eps1, lam, A_scaling):
     """C_ann=t_ann Delta V/(A sigma) with t=tau^2/2, Delta V/sigma=2 eps1/sigma_hat."""
     return tau_ann**2/2*2*eps1/(A_scaling*kink_tension(lam))
+
+
+def _gradients(f, dx):
+    return [(np.roll(f, -1, ax) - np.roll(f, 1, ax))/f.dtype.type(2*dx) for ax in range(3)]
+
+
+PAIRS = ((0, 0), (1, 1), (2, 2), (0, 1), (0, 2), (1, 2))
+
+
+def gw_energy_spectrum(du, dx, nbins=48):
+    """Transverse-traceless energy of the tensor velocity u'_ij, total and per log k bin.
+
+    With P=1-k k/k^2, Lambda u=PuP-(1/2)P tr(PuP), and
+    sum|Lambda u|^2=sum|PuP|^2-(1/2)|tr(PuP)|^2, tr(PuP)=tr u-khat.u.khat.
+    Returns <h'_ij h'_ij> (spatial mean) and its distribution in |k|.
+    """
+    N = du[0].shape[0]
+    U = {p: np.fft.rfftn(du[i]) for i, p in enumerate(PAIRS)}
+    def comp(i, j):
+        return U[(i, j)] if (i, j) in U else U[(j, i)]
+    kx = np.fft.fftfreq(N, d=dx)*2*np.pi
+    kz = np.fft.rfftfreq(N, d=dx)*2*np.pi
+    K = np.meshgrid(kx, kx, kz, indexing='ij')
+    kk = np.sqrt(K[0]**2 + K[1]**2 + K[2]**2)
+    safe = np.where(kk > 0, kk, 1.)
+    kh = [k/safe for k in K]
+    w = [sum(comp(i, l)*kh[l] for l in range(3)) for i in range(3)]
+    s = sum(kh[i]*w[i] for i in range(3))
+    tot = 0.
+    for i in range(3):
+        for j in range(3):
+            v = comp(i, j) - kh[i]*w[j] - w[i]*kh[j] + kh[i]*kh[j]*s
+            tot = tot + abs(v)**2
+    tr = comp(0, 0) + comp(1, 1) + comp(2, 2) - s
+    dens = tot - .5*abs(tr)**2
+    dens[kk == 0] = 0.
+    # rfft weights: interior z-planes count twice.
+    wgt = np.full(kz.shape, 2.); wgt[0] = 1.
+    if N % 2 == 0:
+        wgt[-1] = 1.
+    dens = dens*wgt[None, None, :]
+    mean = float(dens.sum())/N**6
+    edges = np.geomspace(2*np.pi/(N*dx), np.pi/dx*sqrt(3), nbins + 1)
+    idx = np.digitize(kk.ravel(), edges) - 1
+    ok = (idx >= 0) & (idx < nbins)
+    spec = np.bincount(idx[ok], weights=dens.ravel()[ok], minlength=nbins)/N**6
+    centers = np.sqrt(edges[:-1]*edges[1:])
+    return mean, centers, spec/np.log(edges[1:]/edges[:-1])
+
+
+def evolve_physical_gw(N, *, w_final=2., dx=1., dt=.2, tau_i=10., tau_f=None, seed=0, measure_every=10.):
+    """Physical (non-PRS) radiation-era walls with linear tensor modes sourced by d_i phi d_j phi.
+
+    phi''+2 phi'/tau-lap phi=-tau^2 lam phi(phi^2-1), a=tau, with
+    lam=2/(w_final*tau_f)^2 so the comoving width is w_final at tau_f.
+    u_ij''+2u_ij'/tau-lap u_ij=16 pi G d_i phi d_j phi with G=1 (h is linear
+    in G). GW energy rho_gw=<h'h'>/(32 pi G a^2); the efficiency is
+    eps_gw=rho_gw/(G A^2 sigma^2), sigma=(2 sqrt2/3)sqrt(lam) physical.
+    """
+    tau_f = N*dx/2 if tau_f is None else tau_f
+    lam = 2/(w_final*tau_f)**2
+    sigma = kink_tension(lam)
+    phi = initial_field(N, 3, seed)
+    vel = np.zeros_like(phi)
+    u = [np.zeros_like(phi) for _ in PAIRS]
+    du = [np.zeros_like(phi) for _ in PAIRS]
+    tau = tau_i
+    vol = (N*dx)**3
+    rows, next_measure = [], tau_i + measure_every
+    f32 = np.float32
+    while tau < tau_f - 1e-9:
+        d = dt/tau  # (1/2)*2/tau*dt
+        force = laplacian(phi, dx)
+        force -= f32(tau*tau*lam)*phi*(phi*phi - 1)
+        vel *= f32(1 - d); vel += f32(dt)*force; vel /= f32(1 + d)
+        g = _gradients(phi, dx)
+        for n, (i, j) in enumerate(PAIRS):
+            src = laplacian(u[n], dx)
+            src += f32(16*np.pi)*g[i]*g[j]
+            du[n] *= f32(1 - d); du[n] += f32(dt)*src; du[n] /= f32(1 + d)
+            u[n] += f32(dt)*du[n]
+        phi += f32(dt)*vel
+        tau += dt
+        if tau >= next_measure - 1e-9:
+            next_measure += measure_every
+            area = wall_area(phi, dx)
+            A = area/vol*tau/2
+            hh, k, spec = gw_energy_spectrum(du, dx)
+            rho = hh/(32*np.pi*tau*tau)
+            rows.append({'tau': tau, 'A': A, 'rho_gw': rho, 'eps_gw': rho/(A*A*sigma*sigma),
+                         'k': k.tolist(), 'drho_dlnk': (np.array(spec)/(32*np.pi*tau*tau)).tolist(),
+                         'width_comoving': sqrt(2/lam)/tau})
+    return {'lam': lam, 'sigma': sigma, 'rows': rows}

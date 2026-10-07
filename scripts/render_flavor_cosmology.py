@@ -29,7 +29,8 @@ for i,part in enumerate(parts):
     figure = {"Open-channel scattering and the shape resonance":"wall_jost_scattering.png",
               "Nonlinear radiation of the shape mode":"wall_shape_radiation.png",
               "Finite-temperature transition and nucleation":"wall_nucleation.png",
-              "Lattice calibration of the wall network":"wall_network.png"}
+              "Lattice calibration of the wall network":"wall_network.png",
+              "Gravitational waves from the lattice network":"wall_gw.png"}
     name = next((f for key,f in figure.items() if part.strip().startswith(key)),None)
     if name:
         image = root/"receipts/flavor_cosmology"/name
