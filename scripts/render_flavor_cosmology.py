@@ -26,8 +26,11 @@ for i,part in enumerate(parts):
         continue
     style = styles["Title"] if part.startswith("# ") else styles["BodyText"]
     story.append(Paragraph(escape(part.removeprefix("# ").replace("\n"," ")),style))
-    if part.strip().startswith("Open-channel scattering and the shape resonance"):
-        image = root/"receipts/flavor_cosmology/wall_scattering.png"
+    figure = {"Open-channel scattering and the shape resonance":"wall_scattering.png",
+              "Nonlinear radiation of the shape mode":"wall_shape_radiation.png"}
+    name = next((f for key,f in figure.items() if part.strip().startswith(key)),None)
+    if name:
+        image = root/"receipts/flavor_cosmology"/name
         iw,ih=ImageReader(str(image)).getSize()
         story.append(Image(str(image),width=465,height=465*ih/iw))
         story.append(Spacer(1,9))
