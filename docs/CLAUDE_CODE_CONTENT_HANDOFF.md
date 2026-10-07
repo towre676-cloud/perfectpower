@@ -70,6 +70,8 @@ An alternative bounded project is improving the existing unconditional coefficie
 
 ## Priority 5: generalize elliptic preimages without overstating saturation
 
+Status (7 October 2026 continuation): complete rational division at 5 (and 7), with budgets and every exceptional branch, has landed in `python/perfectpower/elliptic_prime_division.py`, with discovery-free replay via an independent Silverman b-invariant recurrence. See `docs/ELLIPTIC_PRIME_DIVISION_MONOGRAPH.md`. The composed division over 2,3,5,7 is a separate API; the 2/3 `rational_division` contract is unchanged. Still open: the reduced integer presentation for iterated subgroup preimages and the generic preimage-generation theorem.
+
 Read the newest of `docs/ELLIPTIC_SUBGROUPS_MONOGRAPH.md`, `docs/ELLIPTIC_COMPOSED_DIVISION_MONOGRAPH.md`, `docs/NATIVE_HALVES_REFINEMENT_MONOGRAPH.md` and `docs/ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md`. Python interfaces include `elliptic_division.rational_thirds`, `rational_division` and `elliptic_subgroups.subgroup_preimage`; Lean interfaces include `EllipticPointLaw.lean`, `EllipticPointDivision.lean`, `EllipticDivision.lean` and the native generated examples.
 
 Already present: complete rational halving/tripling and composition for supported 2/3 multipliers, exact generalized-coordinate transport, subgroup preimages using all projective coefficient lines, and several native point-law/refinement bridges. Older docs propose some of these as future work; inspect their latest actual files first. A witness-independence lower bound and testing divisions of individual generators do not prove a complete ambient Mordell-Weil basis.
