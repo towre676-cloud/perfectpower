@@ -30,6 +30,14 @@ def render(source,output,*,edition='polynomial'):
             'scope':'Coprime local products and complete declared rectangles. Generic traversal refinement and global arithmetic bounds retain their own obligations.',
             'running':'Complete CRT atlases and exact factored populations',
         },
+        'integervalued':{
+            'title':'Integer-valued rational polynomials',
+            'subtitle':'Exact integral domains<br/>and denominator-aware arithmetic',
+            'description':'Universal quotient divisors, complete residue charts, source-bound rational identities and a natural-index Gamma bridge with nonenumerating interval populations.',
+            'metrics':[('189','generic and generated declarations audited'),('13','source-bound worked packets'),('19,350','independent signed-domain checks')],
+            'scope':'Proved arithmetic on exact integral domains. Population execution, generic JSON/compiler refinement and global power-free density retain their separate obligations.',
+            'running':'Exact denominators, integral domains and universal quotient divisors',
+        },
         'residueatlas':{
             'title':'Complete prime-power residue atlases',
             'subtitle':'Every singular branch<br/>and exact populations in enormous rectangles',
@@ -243,7 +251,8 @@ def render(source,output,*,edition='polynomial'):
     pdfmetrics.registerFontFamily('Body',normal='Body',bold='BodyBold',italic='Body',boldItalic='BodyBold')
     navy=colors.HexColor('#173348');teal=colors.HexColor('#157A86')
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
-    if edition=='fixeddivisor':body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
+    if edition in ('fixeddivisor','integervalued'):body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
+    if edition=='integervalued':body.leading=14.1
     if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
     if edition=='research':body.leading=14.8;body.spaceAfter=8
     heading=ParagraphStyle('heading',fontName='LabelBold',fontSize=14,leading=19,spaceBefore=18,spaceAfter=9,textColor=teal,keepWithNext=True)
@@ -314,7 +323,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','fixeddivisor'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

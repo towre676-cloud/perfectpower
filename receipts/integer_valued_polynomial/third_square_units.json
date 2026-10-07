@@ -1,0 +1,168 @@
+{
+  "schema": "pp-integer-valued-polynomial/1",
+  "rational_coefficients": [
+    "0",
+    "0",
+    "1/3"
+  ],
+  "numerator": [
+    0,
+    0,
+    1
+  ],
+  "denominator": 3,
+  "numerator_fixed_divisor": 1,
+  "rational_value_lattice": "1/3",
+  "numerator_window": {
+    "schema": "pp-fixed-divisor/1",
+    "coefficients": [
+      0,
+      0,
+      1
+    ],
+    "start": 0,
+    "step": 1,
+    "pullback_coefficients": [
+      0,
+      0,
+      1
+    ],
+    "degree": 2,
+    "domain": "all signed integers n; original coordinate x=start+step*n",
+    "sample_values": [
+      0,
+      1,
+      4
+    ],
+    "sample_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "fixed_divisor": 1,
+    "sample_bezout_weights": [
+      0,
+      1,
+      0
+    ],
+    "forward_differences": [
+      0,
+      1,
+      2
+    ],
+    "primitive_binomial_coefficients": [
+      0,
+      1,
+      2
+    ],
+    "complete": true,
+    "kernel_checked": false,
+    "meaning": "q divides the fixed divisor iff q divides every value in the stated domain"
+  },
+  "integral_everywhere": false,
+  "integral_domain_empty": false,
+  "integral_residues": [
+    0
+  ],
+  "charts": [
+    {
+      "residue": 0,
+      "step": 3,
+      "coefficients": [
+        0,
+        0,
+        3
+      ],
+      "fixed_divisor": 3,
+      "finite_window": {
+        "schema": "pp-fixed-divisor/1",
+        "coefficients": [
+          0,
+          0,
+          3
+        ],
+        "start": 0,
+        "step": 1,
+        "pullback_coefficients": [
+          0,
+          0,
+          3
+        ],
+        "degree": 2,
+        "domain": "all signed integers n; original coordinate x=start+step*n",
+        "sample_values": [
+          0,
+          3,
+          12
+        ],
+        "sample_coordinates": [
+          0,
+          1,
+          2
+        ],
+        "fixed_divisor": 3,
+        "sample_bezout_weights": [
+          0,
+          1,
+          0
+        ],
+        "forward_differences": [
+          0,
+          3,
+          6
+        ],
+        "primitive_binomial_coefficients": [
+          0,
+          1,
+          2
+        ],
+        "complete": true,
+        "kernel_checked": false,
+        "meaning": "q divides the fixed divisor iff q divides every value in the stated domain"
+      }
+    }
+  ],
+  "integer_domain_fixed_divisor": 3,
+  "exponent": 1,
+  "prime_factors": [
+    [
+      3,
+      1
+    ]
+  ],
+  "locally_admissible_on_integer_domain": false,
+  "obstruction_prime": 3,
+  "interval": [
+    -10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+    10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  ],
+  "integral_input_count": 6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667,
+  "domain": "all signed integer x with F(x) divisible by L",
+  "complete": true,
+  "kernel_checked": false,
+  "density_proved": false,
+  "meaning": "q divides the integer-domain fixed divisor iff q divides every integral quotient value",
+  "lean": {
+    "namespace": "IntegerValued_9163a87c6a6bca50",
+    "source": "import PerfectPower.IntegerValuedPolynomial\nset_option maxHeartbeats 12000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nset_option linter.unnecessarySeqFocus false\nset_option linter.unusedVariables false\nnamespace IntegerValued_9163a87c6a6bca50\nopen PerfectPower Polynomial PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal PerfectPower.IntegerValuedPolynomial\nnoncomputable def source : Polynomial \u2124 := NativePolynomialSquare.polynomial [0, 0, 1]\ntheorem source_checked : source = C (1) * X^2 := by\n  norm_num [source, NativePolynomialSquare.polynomial]\n  <;> ring\ntheorem degree_checked : source.natDegree \u2264 2 := by\n  rw [source_checked]\n  compute_degree <;> norm_num\ntheorem numerator_gcd_checked : fixedDivisor source = 1 := by\n  rw [\u2190 windowGcd_eq_fixedDivisor source 2 degree_checked]\n  norm_num [windowGcd,source,NativePolynomialSquare.polynomial,List.range_succ,List.map_append,valueGcd,Nat.gcd_eq_zero_iff]\nnoncomputable def rationalSource : Polynomial \u211a := C ((1 : \u211a)/3) * X^2\ntheorem rational_source_checked : rationalSource * C (3 : \u211a) = source.map (Int.castRingHom \u211a) := by\n  rw [source_checked]\n  simp only [rationalSource,Polynomial.map_add,Polynomial.map_mul,Polynomial.map_pow,Polynomial.map_C,Polynomial.map_X,add_mul,mul_assoc,mul_left_comm,\u2190 Polynomial.C_mul]\n  ring_nf\n  norm_num [\u2190 Polynomial.C_mul,\u2190 Polynomial.C_pow]\n  <;> ring\ntheorem rational_value_checked (x : \u2124) (hx : IntegralAt source 3 x) :\n    rationalSource.eval (x : \u211a) = (quotientValue source 3 x : \u211a) := by\n  have he := congrArg (Polynomial.eval (x : \u211a)) rational_source_checked\n  have h : rationalSource.eval (x : \u211a) * (3 : \u211a) = ((source.eval x : \u2124) : \u211a) := by\n    simpa using he\n  rw [\u2190 quotient_rational_value source 3 (by norm_num) x hx]\n  exact (eq_div_iff (by norm_num : (3 : \u211a) \u2260 0)).mpr h\ntheorem residues_checked : rootResidues [0, 0, 1] 3 = ({0} : Finset \u2115) := by decide +kernel\ntheorem domain_checked (x : \u2124) : IntegralAt source 3 x \u2194\n    \u2203 r \u2208 ({0} : Finset \u2115), \u2203 n : \u2124, x = (r : \u2124)+3*n := by\n  simpa only [source, residues_checked] using integer_domain_cover [0, 0, 1] 3 (by norm_num) x\nnoncomputable def chart0 : Polynomial \u2124 := C (3) * X^2\ntheorem chart0_checked : source.comp (C (0 : \u2124)+C (3 : \u2124)*X) = C (3 : \u2124)*chart0 := by\n  rw [source_checked]\n  norm_num [chart0,Polynomial.add_comp,Polynomial.mul_comp,Polynomial.pow_comp,Polynomial.C_comp,Polynomial.X_comp]\n  <;> ring\ntheorem chart0_quotient (n : \u2124) : quotientValue source 3 (0+3*n) = chart0.eval n :=\n  chart_quotient source chart0 3 0 (by norm_num) chart0_checked n\ntheorem chart0_gcd : fixedDivisor chart0 = 3 := by\n  have hd : chart0.natDegree \u2264 2 := by unfold chart0; compute_degree <;> norm_num\n  rw [\u2190 windowGcd_eq_fixedDivisor chart0 2 hd]\n  norm_num [windowGcd,chart0,List.range_succ,List.map_append,valueGcd,Nat.gcd_eq_zero_iff]\nnoncomputable def charts (r : \u2115) : Polynomial \u2124 := if r = 0 then chart0 else (0)\ntheorem charts_checked (r : \u2115) (hr : r \u2208 rootResidues [0, 0, 1] 3) :\n    source.comp (C (r : \u2124)+C (3 : \u2124)*X) = C (3 : \u2124)*charts r := by\n  rw [residues_checked] at hr\n  simp only [Finset.mem_insert,Finset.mem_singleton,Finset.notMem_empty,or_false] at hr\n  rcases hr with rfl\n  \u00b7 simpa [charts] using chart0_checked\ntheorem family_members_checked (f : Polynomial \u2124) :\n    f \u2208 ((rootResidues [0, 0, 1] 3).toList.map charts) \u2194 f \u2208 [chart0] := by\n  simp [List.mem_map,Finset.mem_toList,residues_checked,charts,or_and_left,exists_or,eq_comm]\ntheorem family_gcd_checked : familyGcd ((rootResidues [0, 0, 1] 3).toList.map charts) = 3 := by\n  rw [familyGcd_congr _ [chart0] family_members_checked]\n  norm_num [familyGcd,chart0_gcd]\ntheorem domain_gcd_checked (q : \u2115) : q \u2223 3 \u2194 \u2200 x : \u2124, IntegralAt source 3 x \u2192\n    (q : \u2124) \u2223 quotientValue source 3 x := by\n  have h := domain_divisors_iff [0, 0, 1] 3 q (by norm_num) charts charts_checked\n  rw [family_gcd_checked] at h\n  exact h\ntheorem obstruction_checked (x : \u2124) (hx : IntegralAt source 3 x) :\n    \u00ac PowerFree 1 (quotientValue source 3 x) := by\n  intro h\n  apply h 3 (by norm_num)\n  have hd := (domain_gcd_checked (3^1)).mp (by norm_num : 3^1 \u2223 3)\n  simpa only [Nat.cast_pow] using hd x hx\nend IntegerValued_9163a87c6a6bca50\n",
+    "source_sha256": "8ea44df53c032b5a8e6b8d35ca8a89b499b4b74a50e32bc8540b52741a7b3121",
+    "declarations": [
+      "IntegerValued_9163a87c6a6bca50.source_checked",
+      "IntegerValued_9163a87c6a6bca50.degree_checked",
+      "IntegerValued_9163a87c6a6bca50.numerator_gcd_checked",
+      "IntegerValued_9163a87c6a6bca50.rational_source_checked",
+      "IntegerValued_9163a87c6a6bca50.rational_value_checked",
+      "IntegerValued_9163a87c6a6bca50.residues_checked",
+      "IntegerValued_9163a87c6a6bca50.domain_checked",
+      "IntegerValued_9163a87c6a6bca50.chart0_checked",
+      "IntegerValued_9163a87c6a6bca50.chart0_quotient",
+      "IntegerValued_9163a87c6a6bca50.chart0_gcd",
+      "IntegerValued_9163a87c6a6bca50.charts_checked",
+      "IntegerValued_9163a87c6a6bca50.family_members_checked",
+      "IntegerValued_9163a87c6a6bca50.family_gcd_checked",
+      "IntegerValued_9163a87c6a6bca50.domain_gcd_checked",
+      "IntegerValued_9163a87c6a6bca50.obstruction_checked"
+    ],
+    "kernel_checked": false
+  }
+}

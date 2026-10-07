@@ -100,6 +100,10 @@ def dispatch(catalogue, request):
         from .elliptic_division_verifier import verify_thirds,verify_division
         checker=verify_thirds if op=='verify_elliptic_thirds' else verify_division
         return dict(valid=checker(**args),execution_verified=False)
+    if op in {'integer_valued_polynomial','gamma_integer_arithmetic','native_integer_valued_certificate'}:
+        from .integer_valued_polynomial import analyze,gamma_packet,native_certificate
+        return {'integer_valued_polynomial':analyze,'gamma_integer_arithmetic':gamma_packet,
+                'native_integer_valued_certificate':native_certificate}[op](**args)
     if op in {'repeated_power_free','native_repeated_power_free'}:
         from .fixed_divisor import repeated_power_free,native_repeated_power_free
         return {'repeated_power_free':repeated_power_free,'native_repeated_power_free':native_repeated_power_free}[op](**args)

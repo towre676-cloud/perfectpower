@@ -311,3 +311,9 @@ The bounded saturation and formal point-law continuation is documented in [the m
 
 
 The wall resonance continuation derives a background-corrected polynomial radiation node and tests retuned localized candidates, including a 154.23 GeV candidate with the Higgs quartic fixed. See [the derivation and scope](docs/WALL_EMBEDDED_STATES_MONOGRAPH.md), [numerical receipts](receipts/flavor_cosmology/wall_embedded_states.json), and [the illustrated monograph](output/pdf/Retuned_Wall_Radiation_Nodes.pdf). The tuned leakage remains numerically unresolved; infinite-domain existence and quantum protection are open.
+
+### Denominator-aware integer-valued polynomials
+
+`perfectpower.integer_valued_polynomial` connects exact rational polynomials and fixed-width Gamma products to integer arithmetic on their complete integral domains. Global integrality is equivalent to the denominator dividing the numerator's fixed divisor; the quotient's fixed divisor then divides out that denominator. Partial domains become complete residue charts with integer coefficients, and their fixed divisors combine by gcd. This proves that `(x²+7)/2` is integral exactly on odd inputs and every integral value is divisible by 4, while binomial polynomials of widths through 64 have quotient fixed divisor 1 without factorial-period enumeration.
+
+The release checks 189 Lean declarations across the generic module and 13 source-bound packets, plus 20 focused and 79 neighbour Python tests. Its independent census checks 19,350 signed domain inputs, 1,350 quotient-divisibility periods and 672 signed chart identities. JSONL operations are `integer_valued_polynomial`, `gamma_integer_arithmetic` and `native_integer_valued_certificate`. Run `make integer-valued-check`; see [the source monograph](docs/INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md). Interval populations are exact tested Python; global power-free density and generic compiler/Gamma execution refinement remain separate.

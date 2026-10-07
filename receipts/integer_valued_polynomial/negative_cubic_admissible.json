@@ -1,0 +1,90 @@
+{
+  "schema": "pp-integer-valued-polynomial/1",
+  "rational_coefficients": [
+    "-12"
+  ],
+  "numerator": [
+    -12
+  ],
+  "denominator": 1,
+  "numerator_fixed_divisor": 12,
+  "rational_value_lattice": "12",
+  "numerator_window": {
+    "schema": "pp-fixed-divisor/1",
+    "coefficients": [
+      -12
+    ],
+    "start": 0,
+    "step": 1,
+    "pullback_coefficients": [
+      -12
+    ],
+    "degree": 0,
+    "domain": "all signed integers n; original coordinate x=start+step*n",
+    "sample_values": [
+      -12
+    ],
+    "sample_coordinates": [
+      0
+    ],
+    "fixed_divisor": 12,
+    "sample_bezout_weights": [
+      -1
+    ],
+    "forward_differences": [
+      -12
+    ],
+    "primitive_binomial_coefficients": [
+      -1
+    ],
+    "complete": true,
+    "kernel_checked": false,
+    "meaning": "q divides the fixed divisor iff q divides every value in the stated domain"
+  },
+  "integral_everywhere": true,
+  "integral_domain_empty": false,
+  "integral_residues": null,
+  "charts": [],
+  "integer_domain_fixed_divisor": 12,
+  "exponent": 3,
+  "prime_factors": [
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      1
+    ]
+  ],
+  "locally_admissible_on_integer_domain": true,
+  "obstruction_prime": null,
+  "interval": [
+    -10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+    10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  ],
+  "integral_input_count": 20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001,
+  "domain": "all signed integer x with F(x) divisible by L",
+  "complete": true,
+  "kernel_checked": false,
+  "density_proved": false,
+  "meaning": "q divides the integer-domain fixed divisor iff q divides every integral quotient value",
+  "lean": {
+    "namespace": "IntegerValued_69ad59ef09c6b25b",
+    "source": "import PerfectPower.IntegerValuedPolynomial\nset_option maxHeartbeats 12000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nset_option linter.unnecessarySeqFocus false\nset_option linter.unusedVariables false\nnamespace IntegerValued_69ad59ef09c6b25b\nopen PerfectPower Polynomial PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal PerfectPower.IntegerValuedPolynomial\nnoncomputable def source : Polynomial \u2124 := NativePolynomialSquare.polynomial [-12]\ntheorem source_checked : source = C (-12) := by\n  norm_num [source, NativePolynomialSquare.polynomial]\n  <;> ring\ntheorem degree_checked : source.natDegree \u2264 0 := by\n  rw [source_checked]\n  compute_degree <;> norm_num\ntheorem numerator_gcd_checked : fixedDivisor source = 12 := by\n  rw [\u2190 windowGcd_eq_fixedDivisor source 0 degree_checked]\n  norm_num [windowGcd,source,NativePolynomialSquare.polynomial,List.range_succ,List.map_append,valueGcd,Nat.gcd_eq_zero_iff]\nnoncomputable def rationalSource : Polynomial \u211a := C ((-12 : \u211a)/1)\ntheorem rational_source_checked : rationalSource * C (1 : \u211a) = source.map (Int.castRingHom \u211a) := by\n  rw [source_checked]\n  simp only [rationalSource,Polynomial.map_add,Polynomial.map_mul,Polynomial.map_pow,Polynomial.map_C,Polynomial.map_X,add_mul,mul_assoc,mul_left_comm,\u2190 Polynomial.C_mul]\n  ring_nf\n  norm_num [\u2190 Polynomial.C_mul,\u2190 Polynomial.C_pow]\n  <;> ring\ntheorem rational_value_checked (x : \u2124) (hx : IntegralAt source 1 x) :\n    rationalSource.eval (x : \u211a) = (quotientValue source 1 x : \u211a) := by\n  have he := congrArg (Polynomial.eval (x : \u211a)) rational_source_checked\n  have h : rationalSource.eval (x : \u211a) * (1 : \u211a) = ((source.eval x : \u2124) : \u211a) := by\n    simpa using he\n  rw [\u2190 quotient_rational_value source 1 (by norm_num) x hx]\n  exact (eq_div_iff (by norm_num : (1 : \u211a) \u2260 0)).mpr h\ntheorem integral_checked (x : \u2124) : IntegralAt source 1 x := by\n  apply (integral_everywhere_iff source 1).mpr\n  rw [numerator_gcd_checked] <;> norm_num\ntheorem domain_gcd_checked (q : \u2115) : q \u2223 12 \u2194 \u2200 x : \u2124, (q : \u2124) \u2223 quotientValue source 1 x := by\n  have hL : 1 \u2223 fixedDivisor source := by rw [numerator_gcd_checked] <;> norm_num\n  have h := quotient_divisors_iff source 1 q hL\n  rw [numerator_gcd_checked] at h\n  convert h using 1 <;> norm_num\ntheorem natural_gcd_checked (q : \u2115) : q \u2223 12 \u2194 \u2200 n : \u2115, (q : \u2124) \u2223 quotientValue source 1 n := by\n  have hL : 1 \u2223 fixedDivisor source := by rw [numerator_gcd_checked] <;> norm_num\n  have h := quotient_natural_divisors_iff source 1 q hL\n  rw [numerator_gcd_checked] at h\n  convert h using 1 <;> norm_num\ntheorem power_free_gcd_checked : PowerFree 3 (12 : \u2124) := by\n  intro p hp hd\n  have hd' : p^3 \u2223 12 := by\n    have hc : ((p^3 : \u2115) : \u2124) \u2223 (12 : \u2124) := by simpa only [Nat.cast_pow] using hd\n    have hh := Int.natCast_dvd.mp hc\n    simpa using hh\n  have hpd : p \u2223 12 := (dvd_pow_self p (by norm_num : 3 \u2260 0)).trans hd'\n  have hf : ([2, 2, 3] : List \u2115).Perm (12 : \u2115).primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n      rcases hp with rfl | rfl | rfl\n      all_goals norm_num\n  have hm := (Nat.mem_primeFactorsList_iff_dvd (by norm_num : 12 \u2260 0) hp).mpr hpd\n  rw [\u2190 hf.mem_iff] at hm\n  simp only [List.mem_cons, List.not_mem_nil, or_false] at hm\n  rcases hm with rfl | rfl | rfl\n  all_goals norm_num at hd\ntheorem admissible_checked : QuotientAdmissible source 1 3 := by\n  intro p hp\n  by_contra hn\n  have hu : \u2200 x : \u2124, IntegralAt source 1 x \u2192 (p : \u2124)^3 \u2223 quotientValue source 1 x := by\n    intro x hx\n    by_contra he\n    exact hn \u27e8x,hx,he\u27e9\n  have hd := (domain_gcd_checked (p^3)).mpr (by intro x; simpa only [Nat.cast_pow] using hu x (integral_checked x))\n  apply power_free_gcd_checked p hp\n  exact_mod_cast hd\nend IntegerValued_69ad59ef09c6b25b\n",
+    "source_sha256": "5d77d3997e32fd5d1aef722c47010082dbac0a649900a65fae67bcae1646894b",
+    "declarations": [
+      "IntegerValued_69ad59ef09c6b25b.source_checked",
+      "IntegerValued_69ad59ef09c6b25b.degree_checked",
+      "IntegerValued_69ad59ef09c6b25b.numerator_gcd_checked",
+      "IntegerValued_69ad59ef09c6b25b.rational_source_checked",
+      "IntegerValued_69ad59ef09c6b25b.rational_value_checked",
+      "IntegerValued_69ad59ef09c6b25b.integral_checked",
+      "IntegerValued_69ad59ef09c6b25b.domain_gcd_checked",
+      "IntegerValued_69ad59ef09c6b25b.natural_gcd_checked",
+      "IntegerValued_69ad59ef09c6b25b.power_free_gcd_checked",
+      "IntegerValued_69ad59ef09c6b25b.admissible_checked"
+    ],
+    "kernel_checked": false
+  }
+}

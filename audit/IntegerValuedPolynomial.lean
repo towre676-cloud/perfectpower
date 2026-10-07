@@ -1,0 +1,17 @@
+import PerfectPower.IntegerValuedPolynomial
+#print axioms PerfectPower.IntegerValuedPolynomial.integral_everywhere_iff
+#print axioms PerfectPower.IntegerValuedPolynomial.quotient_dvd_iff
+#print axioms PerfectPower.IntegerValuedPolynomial.quotient_divisors_iff
+#print axioms PerfectPower.IntegerValuedPolynomial.quotient_mod_transport
+#print axioms PerfectPower.IntegerValuedPolynomial.admissible_iff_quotientGcd
+#print axioms PerfectPower.IntegerValuedPolynomial.quotient_obstruction
+#print axioms PerfectPower.IntegerValuedPolynomial.canonical_coordinate
+#print axioms PerfectPower.IntegerValuedPolynomial.integer_domain_cover
+#print axioms PerfectPower.IntegerValuedPolynomial.chart_eval
+#print axioms PerfectPower.IntegerValuedPolynomial.chart_integral
+#print axioms PerfectPower.IntegerValuedPolynomial.chart_quotient
+#print axioms PerfectPower.IntegerValuedPolynomial.dvd_familyGcd_iff
+#print axioms PerfectPower.IntegerValuedPolynomial.domain_divisors_iff
+#print axioms PerfectPower.IntegerValuedPolynomial.familyGcd_congr
+#print axioms PerfectPower.IntegerValuedPolynomial.quotient_rational_value
+#print axioms PerfectPower.IntegerValuedPolynomial.quotient_natural_divisors_iff

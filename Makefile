@@ -270,3 +270,8 @@ fixed-divisor-check:
 .PHONY: check-residue-atlas-product
 check-residue-atlas-product:
 	bash scripts/check_residue_atlas_product.sh
+.PHONY: integer-valued-receipts integer-valued-check
+integer-valued-receipts:
+	PYTHONPATH=python python3 python/develop_integer_valued_polynomial.py
+integer-valued-check:
+	bash scripts/check_integer_valued_polynomial.sh

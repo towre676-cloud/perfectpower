@@ -19,3 +19,7 @@ This page is generated from `audit/axioms_report.txt` and the committed arithmet
 <!-- counts:end -->
 
 Run `make verify` to rebuild the main audit, regenerate the receipts and this summary, and check for drift. The [trust boundary](TRUST_BOUNDARY.md) explains the certification labels.
+
+## Integer-valued rational polynomial bridge
+
+The denominator-aware bridge now proves whole-domain integrality, quotient universal divisors and correct Lq modular transport, exact complete partial-domain residue charts, and the gcd criterion on all integral quotient outputs. Native packets bind literal rational polynomials to integer numerator and chart identities. Natural-index universal divisibility is proved separately for the Gamma/binomial interface. This release audits 16 reusable and 173 generated declarations with standard axioms only; 13 worked packets, 20 focused tests and 79 neighbour tests accompany a 150-polynomial independent census. Reproduce with `make integer-valued-check`. Exact interval counts are tested Python; generic JSON and Gamma normalization execution, high-denominator partial-domain compression, chartwise global power-free solving and separable density remain open.
