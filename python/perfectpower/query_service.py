@@ -36,6 +36,14 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'certified_weil_commutant', 'verify_weil_commutant', 'weil_crt_commutant'}:
+        from . import weil_commutant as wc
+        result = {'certified_weil_commutant': wc.certify_commutant,
+                  'verify_weil_commutant': wc.verify_commutant,
+                  'weil_crt_commutant': wc.certify_product}[op](**args)
+        if op == 'verify_weil_commutant':
+            return dict(valid=result, execution_verified=False)
+        return result
     if op in {'residue_atlas_product', 'compose_residue_atlases', 'verify_residue_atlas_product',
               'residue_product_contains', 'residue_product_population', 'residue_product_select',
               'residue_product_rank', 'residue_product_scan', 'native_residue_atlas_product'}:

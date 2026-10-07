@@ -1,10 +1,6 @@
 # PerfectPower
 
 
-The [complete multi-prime residue products](docs/RESIDUE_ATLAS_CRT_MONOGRAPH.md) compose every local root combination by coordinate CRT, retain large covers as factored tables, and provide exact rectangle counts, rank/select and complete source scans. Twelve general Lean theorems and six native worked products certify the arithmetic bridge. Run `make check-residue-atlas-product`; the [handoff](CLAUDE_CODE_RESIDUE_ATLAS_CRT_START_HERE.md) identifies the remaining generic traversal refinement.
-
-The latest wall result computes the outgoing source-shape resonance, resolves its Higgs-channel radiation width, and derives an exact polynomial leading-radiation node that the full coupled calculation shows is not an exact bound state. See [the updated monograph](docs/FLAVOR_COSMOLOGY_MONOGRAPH.md) and [scientific packet](receipts/flavor_cosmology/wall_scattering.json).
-
 **Exact polynomial arithmetic, reusable decision policies, and algebraic-curve research from the defining polynomial.**
 
 PerfectPower turns supported polynomial and arithmetic models into executable mathematical objects. It can return complete integer solution families, make finite solution spaces countable and addressable by rank, compile optimal calibration and diagnostic policies, and derive a curve family's differential equations directly from its polynomial. The geometry machinery connects coefficient motion, algebraic root collisions, local branches, logarithmic execution, actual quotient towers, explicit isogeny kernels, superelliptic periods, certified ordinary continuation and arithmetic Frobenius while retaining the original equation and coordinates.
@@ -12,6 +8,13 @@ PerfectPower turns supported polynomial and arithmetic models into executable ma
 The common approach is to expose structure that can be reused: a solution generator instead of another search, an exact population instead of a materialized dataset, a complete operating policy instead of one optimal setting, or a differential system and quotient maps instead of an unexplained numerical period. The program combines a Python compiler and exact algebra engines with a Lean 4 theorem library. Numerical geometry and solver integration are optional extensions.
 
 ## What you can build with it
+
+The [exact Fourier/chirp commutant bridge](docs/WEIL_CRT_MONOGRAPH.md) proves general Gauss and generator-separation identities in Lean and certifies every commutant dimension through level 64 using exact cyclotomic identities and modular rank minors. The accompanying [Mordell frontier](receipts/mordell_frontier.json) reconciles 457 remaining rank-conditional census rows. Run `make check-weil-commutant`.
+
+The [complete multi-prime residue products](docs/RESIDUE_ATLAS_CRT_MONOGRAPH.md) compose every local root combination by coordinate CRT, retain large covers as factored tables, and provide exact rectangle counts, rank/select and complete source scans. Twelve general Lean theorems and six native worked products certify the arithmetic bridge. Run `make check-residue-atlas-product`; the [handoff](CLAUDE_CODE_RESIDUE_ATLAS_CRT_START_HERE.md) identifies the remaining generic traversal refinement.
+
+The latest wall result computes the outgoing source-shape resonance, resolves its Higgs-channel radiation width, and derives an exact polynomial leading-radiation node that the full coupled calculation shows is not an exact bound state. See [the updated monograph](docs/FLAVOR_COSMOLOGY_MONOGRAPH.md) and [scientific packet](receipts/flavor_cosmology/wall_scattering.json).
+
 
 The [complete rational subgroup-preimage operation](docs/ELLIPTIC_SUBGROUPS_MONOGRAPH.md) tests every coefficient line over F2 or F3 and returns generators for all rational points whose double or triple lies in a supplied subgroup. It recovers hidden index-two and index-three witness enlargements and demonstrates a subgroup saturated at both primes. Run `make elliptic-subgroups`; the input scope is at most four generators.
 

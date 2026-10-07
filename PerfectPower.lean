@@ -410,3 +410,5 @@ import PerfectPower.BoundedResiduePatch
 import PerfectPower.ResidueAtlas
 import PerfectPower.ResidueAtlasCRT
 import PerfectPower.IntegerValuedPolynomial
+
+import PerfectPower.WeilCRT

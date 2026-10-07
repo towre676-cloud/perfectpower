@@ -275,3 +275,7 @@ integer-valued-receipts:
 	PYTHONPATH=python python3 python/develop_integer_valued_polynomial.py
 integer-valued-check:
 	bash scripts/check_integer_valued_polynomial.sh
+
+.PHONY: check-weil-commutant
+check-weil-commutant:
+	bash scripts/check_weil_commutant.sh

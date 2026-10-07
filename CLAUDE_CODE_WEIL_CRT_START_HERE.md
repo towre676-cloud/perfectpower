@@ -1,0 +1,9 @@
+# Exact Weil commutants and the reconciled Mordell frontier
+
+Read `docs/WEIL_CRT_MONOGRAPH.md` for the full mathematical argument and the precise kernel scope. `PerfectPower/WeilCRT.lean` contains seventeen general theorems: Gauss nonvanishing over finite rings with a half and primitive character, checked Fourier inverses, recovery from chirp words, projected finite-order powers and typed commutant separation. The all-level dimension/base-change assembly is a paper proof, not a single instantiated Lean theorem.
+
+The computational implementation is `python/perfectpower/weil_commutant.py`. It certifies exact dimensions by integer cyclotomic commuting bases and prime-field rank minors. The producer uses sparse elimination; replay reconstructs an original-equation minor and computes a dense determinant. The public service supports certification, replay and independently certified coprime products through product level 64. It does not use floating-point tolerances or presume the prime-power formulas.
+
+Run `make check-weil-commutant`. `receipts/weil_commutant/complete_packets.json.gz` stores all 63 complete packets, with deterministic gzip metadata. The JSON summary lists all 42 coprime pairs. `python/reconcile_mordell_frontier.py` produces the 457-case ledger in `receipts/mordell_frontier.json`, split into 323 empty computed lists and 134 nonempty lists. No new curve is claimed closed.
+
+Next prove the coefficient-expansion centralizer dimension lemma and assemble the all-level ZMod CRT instantiation. Preserve the convention T[x,x]=zeta_N^(x*x), including even levels. The odd a+1 and dyadic 2a-1 formulas require additional all-exponent arguments. Avoid translating the finite census or the generic separation-data theorem into claims of completed irreducibility, automatic rank proof or generic compiler refinement.

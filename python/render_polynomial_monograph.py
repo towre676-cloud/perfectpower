@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'weilcrt':{
+            'title':'Exact Fourier/chirp commutants',
+            'subtitle':'The CRT generator bridge<br/>and exact dimensions at 63 levels',
+            'description':'General Gauss-sum recovery and typed generator separation in Lean, with exact integer commuting operators and finite-field rank minors replacing numerical tolerances.',
+            'metrics':[('17','general Lean declarations'),('63','exact finite-level packets'),('457','reconciled Mordell cases')],
+            'scope':'Paper proof of general multiplicativity, kernel-proved algebraic components and exact finite dimensions. All-exponent local formulas and the final Lean dimension assembly remain open.',
+            'running':'Exact commutants, Gauss recovery and the CRT bridge',
+        },
         'residueatlascrt':{
             'title':'Complete multi-prime residue products',
             'subtitle':'Every CRT combination<br/>with exact factored populations',
@@ -323,7 +331,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)
