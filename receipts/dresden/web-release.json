@@ -1,0 +1,35 @@
+{
+  "schema": "pp-dresden-web-release/1",
+  "url": "https://dresden-codex-observatory.towre676.chatgpt.site",
+  "audience": "owner-private",
+  "deployment_status": "succeeded",
+  "site_source_commit": "ce8c3d7bf5ade46fd9c4b9b6494ed5f02bf09069",
+  "research_input_commit": "109d8a32cceaa670e3b44daabc66ec340749a906",
+  "views": [
+    "calendar",
+    "eclipse",
+    "venus",
+    "lunar",
+    "restarts",
+    "sources"
+  ],
+  "renderer": "Three.js WebGPURenderer; native WebGPU preference and WebGL 2 fallback",
+  "integer_arithmetic": "BigInt; independently compared with Python fixtures",
+  "checks": [
+    "TypeScript",
+    "production React build",
+    "static HTML build",
+    "embedded module JavaScript syntax",
+    "no external script or stylesheet dependency in standalone HTML",
+    "Python/browser arithmetic parity",
+    "24 focused Python tests",
+    "149 independent deep-research parity cases",
+    "14 retained raw numeral correction identities",
+    "all six primary and deep React views rendered through React server renderer"
+  ],
+  "not_executed": [
+    "Browser/GPU rendering",
+    "WebMCP registration and state-readback validation"
+  ],
+  "release": "expanded research instruments across all six views"
+}

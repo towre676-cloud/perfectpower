@@ -238,3 +238,13 @@ power-free-check:
 .PHONY: check-bounded-residue-patch
 check-bounded-residue-patch:
 	bash scripts/check_bounded_residue_patch.sh
+
+.PHONY: dresden dresden-test
+dresden:
+	PYTHONPATH=python $(PY) python/develop_dresden.py
+dresden-test:
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_dresden*.py' -v
+
+.PHONY: dresden-deep
+dresden-deep:
+	PYTHONPATH=python python3 python/develop_deep_dresden.py

@@ -1,0 +1,3001 @@
+{
+  "schema": "pp-dresden-deep-research/1",
+  "scope": "exact declared numerical models; descriptive supplied-corpus analysis",
+  "calendar": [
+    {
+      "input": {
+        "number": 1,
+        "sign": 19,
+        "haab": 338,
+        "venus": null,
+        "lo": "0",
+        "hi": "1000000000000000000000000000000",
+        "rank": "0"
+      },
+      "compatible": true,
+      "residue": "16780",
+      "modulus": "18980",
+      "count": "52687038988408851422550052",
+      "selected": "16780"
+    },
+    {
+      "input": {
+        "number": 4,
+        "sign": 19,
+        "haab": 348,
+        "venus": 0,
+        "lo": "0",
+        "hi": "37960000000000000000000000000000000",
+        "rank": "1000000000000000000000000000000"
+      },
+      "compatible": true,
+      "residue": "0",
+      "modulus": "37960",
+      "count": "1000000000000000000000000000001",
+      "selected": "37960000000000000000000000000000000"
+    },
+    {
+      "input": {
+        "number": 2,
+        "sign": 19,
+        "haab": 348,
+        "venus": null,
+        "lo": "0",
+        "hi": "1000000000000000000000000000000",
+        "rank": "0"
+      },
+      "compatible": true,
+      "residue": "8760",
+      "modulus": "18980",
+      "count": "52687038988408851422550053",
+      "selected": "8760"
+    },
+    {
+      "input": {
+        "number": 1,
+        "sign": 19,
+        "haab": 338,
+        "venus": 583,
+        "lo": "1",
+        "hi": "10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "rank": "1000000000000000000000000000000"
+      },
+      "compatible": false
+    }
+  ],
+  "venus": [
+    {
+      "model": 0,
+      "rounds": "0",
+      "reference": "583.9214",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "0",
+      "reference": "584",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "0",
+      "reference": "585",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "0",
+      "reference": "35620/61",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1",
+      "reference": "583.9214",
+      "execute": {
+        "day": 584,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "393/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "393/5000",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1",
+      "reference": "584",
+      "execute": {
+        "day": 584,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1",
+      "reference": "585",
+      "execute": {
+        "day": 584,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "-1",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-1",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1",
+      "reference": "35620/61",
+      "execute": {
+        "day": 584,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "4/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "4/61",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "121",
+      "reference": "583.9214",
+      "execute": {
+        "day": 70664,
+        "blocks": 121,
+        "remainder": 0,
+        "error_against_mean": "47553/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "47553/5000",
+        "candidate_rounds": [
+          0,
+          120,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "121",
+      "reference": "584",
+      "execute": {
+        "day": 70664,
+        "blocks": 121,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          120,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "121",
+      "reference": "585",
+      "execute": {
+        "day": 70664,
+        "blocks": 121,
+        "remainder": 0,
+        "error_against_mean": "-121",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-121",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          120,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "121",
+      "reference": "35620/61",
+      "execute": {
+        "day": 70664,
+        "blocks": 121,
+        "remainder": 0,
+        "error_against_mean": "484/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          120,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "122",
+      "reference": "583.9214",
+      "execute": {
+        "day": 71248,
+        "blocks": 122,
+        "remainder": 0,
+        "error_against_mean": "23973/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "23973/2500",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "122",
+      "reference": "584",
+      "execute": {
+        "day": 71248,
+        "blocks": 122,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "122",
+      "reference": "585",
+      "execute": {
+        "day": 71248,
+        "blocks": 122,
+        "remainder": 0,
+        "error_against_mean": "-122",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-122",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "122",
+      "reference": "35620/61",
+      "execute": {
+        "day": 71248,
+        "blocks": 122,
+        "remainder": 0,
+        "error_against_mean": "8",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "8",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "182",
+      "reference": "583.9214",
+      "execute": {
+        "day": 106288,
+        "blocks": 182,
+        "remainder": 0,
+        "error_against_mean": "35763/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "35763/2500",
+        "candidate_rounds": [
+          0,
+          181,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "182",
+      "reference": "584",
+      "execute": {
+        "day": 106288,
+        "blocks": 182,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          181,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "182",
+      "reference": "585",
+      "execute": {
+        "day": 106288,
+        "blocks": 182,
+        "remainder": 0,
+        "error_against_mean": "-182",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-182",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          181,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "182",
+      "reference": "35620/61",
+      "execute": {
+        "day": 106288,
+        "blocks": 182,
+        "remainder": 0,
+        "error_against_mean": "728/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "728/61",
+        "candidate_rounds": [
+          0,
+          181,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "183",
+      "reference": "583.9214",
+      "execute": {
+        "day": 106872,
+        "blocks": 183,
+        "remainder": 0,
+        "error_against_mean": "71919/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "71919/5000",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "183",
+      "reference": "584",
+      "execute": {
+        "day": 106872,
+        "blocks": 183,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "183",
+      "reference": "585",
+      "execute": {
+        "day": 106872,
+        "blocks": 183,
+        "remainder": 0,
+        "error_against_mean": "-183",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-183",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "183",
+      "reference": "35620/61",
+      "execute": {
+        "day": 106872,
+        "blocks": 183,
+        "remainder": 0,
+        "error_against_mean": "12",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "12",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "366",
+      "reference": "583.9214",
+      "execute": {
+        "day": 213744,
+        "blocks": 366,
+        "remainder": 0,
+        "error_against_mean": "71919/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "71919/2500",
+        "candidate_rounds": [
+          0,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "366",
+      "reference": "584",
+      "execute": {
+        "day": 213744,
+        "blocks": 366,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "366",
+      "reference": "585",
+      "execute": {
+        "day": 213744,
+        "blocks": 366,
+        "remainder": 0,
+        "error_against_mean": "-366",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-366",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "366",
+      "reference": "35620/61",
+      "execute": {
+        "day": 213744,
+        "blocks": 366,
+        "remainder": 0,
+        "error_against_mean": "24",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "24",
+        "candidate_rounds": [
+          0,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "583.9214",
+      "execute": {
+        "day": "584000000000000000000000000000000",
+        "blocks": "1000000000000000000000000000000",
+        "remainder": 0,
+        "error_against_mean": "78600000000000000000000000000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "78600000000000000000000000000",
+        "candidate_rounds": [
+          0,
+          "999999999999999999999999999999",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "584",
+      "execute": {
+        "day": "584000000000000000000000000000000",
+        "blocks": "1000000000000000000000000000000",
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          "999999999999999999999999999999",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "585",
+      "execute": {
+        "day": "584000000000000000000000000000000",
+        "blocks": "1000000000000000000000000000000",
+        "remainder": 0,
+        "error_against_mean": "-1000000000000000000000000000000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-1000000000000000000000000000000",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          "999999999999999999999999999999",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 0,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "35620/61",
+      "execute": {
+        "day": "584000000000000000000000000000000",
+        "blocks": "1000000000000000000000000000000",
+        "remainder": 0,
+        "error_against_mean": "4000000000000000000000000000000/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "4000000000000000000000000000000/61",
+        "candidate_rounds": [
+          0,
+          "999999999999999999999999999999",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "0",
+      "reference": "583.9214",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "0",
+      "reference": "584",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "0",
+      "reference": "585",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "0",
+      "reference": "35620/61",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1",
+      "reference": "583.9214",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "393/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "393/5000",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1",
+      "reference": "584",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1",
+      "reference": "585",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "-1",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-1",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1",
+      "reference": "35620/61",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "4/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "4/61",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "121",
+      "reference": "583.9214",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "47553/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "47553/5000",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "121",
+      "reference": "584",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "121",
+      "reference": "585",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "-121",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-121",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "121",
+      "reference": "35620/61",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "484/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "122",
+      "reference": "583.9214",
+      "execute": {
+        "day": 71240,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "3973/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "47553/5000",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "122",
+      "reference": "584",
+      "execute": {
+        "day": 71240,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "-8",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-8",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "122",
+      "reference": "585",
+      "execute": {
+        "day": 71240,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "-130",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-130",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "122",
+      "reference": "35620/61",
+      "execute": {
+        "day": 71240,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          121,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "182",
+      "reference": "583.9214",
+      "execute": {
+        "day": 106280,
+        "blocks": 1,
+        "remainder": 60,
+        "error_against_mean": "15763/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "47553/5000",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "182",
+      "reference": "584",
+      "execute": {
+        "day": 106280,
+        "blocks": 1,
+        "remainder": 60,
+        "error_against_mean": "-8",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-8",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "182",
+      "reference": "585",
+      "execute": {
+        "day": 106280,
+        "blocks": 1,
+        "remainder": 60,
+        "error_against_mean": "-190",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-190",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "182",
+      "reference": "35620/61",
+      "execute": {
+        "day": 106280,
+        "blocks": 1,
+        "remainder": 60,
+        "error_against_mean": "240/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "183",
+      "reference": "583.9214",
+      "execute": {
+        "day": 106864,
+        "blocks": 1,
+        "remainder": 61,
+        "error_against_mean": "31919/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "47553/5000",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "183",
+      "reference": "584",
+      "execute": {
+        "day": 106864,
+        "blocks": 1,
+        "remainder": 61,
+        "error_against_mean": "-8",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-8",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "183",
+      "reference": "585",
+      "execute": {
+        "day": 106864,
+        "blocks": 1,
+        "remainder": 61,
+        "error_against_mean": "-191",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-191",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "183",
+      "reference": "35620/61",
+      "execute": {
+        "day": 106864,
+        "blocks": 1,
+        "remainder": 61,
+        "error_against_mean": "4",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          121,
+          122,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "366",
+      "reference": "583.9214",
+      "execute": {
+        "day": 213720,
+        "blocks": 3,
+        "remainder": 0,
+        "error_against_mean": "11919/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "12689/1000",
+        "candidate_rounds": [
+          0,
+          121,
+          244,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "366",
+      "reference": "584",
+      "execute": {
+        "day": 213720,
+        "blocks": 3,
+        "remainder": 0,
+        "error_against_mean": "-24",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-24",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          244,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "366",
+      "reference": "585",
+      "execute": {
+        "day": 213720,
+        "blocks": 3,
+        "remainder": 0,
+        "error_against_mean": "-390",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-390",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          244,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "366",
+      "reference": "35620/61",
+      "execute": {
+        "day": 213720,
+        "blocks": 3,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          121,
+          244,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "583.9214",
+      "execute": {
+        "day": "583934426229508196721311475409840",
+        "blocks": "8196721311475409836065573770",
+        "remainder": 60,
+        "error_against_mean": "13026229508196721311475409840",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "65131147540983606557377049216027/5000",
+        "candidate_rounds": [
+          0,
+          121,
+          "999999999999999999999999999818",
+          "999999999999999999999999999939",
+          "999999999999999999999999999940",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "584",
+      "execute": {
+        "day": "583934426229508196721311475409840",
+        "blocks": "8196721311475409836065573770",
+        "remainder": 60,
+        "error_against_mean": "-65573770491803278688524590160",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-65573770491803278688524590160",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          "999999999999999999999999999818",
+          "999999999999999999999999999939",
+          "999999999999999999999999999940",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "585",
+      "execute": {
+        "day": "583934426229508196721311475409840",
+        "blocks": "8196721311475409836065573770",
+        "remainder": 60,
+        "error_against_mean": "-1065573770491803278688524590160",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-1065573770491803278688524590160",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121,
+          "999999999999999999999999999818",
+          "999999999999999999999999999939",
+          "999999999999999999999999999940",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 1,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "35620/61",
+      "execute": {
+        "day": "583934426229508196721311475409840",
+        "blocks": "8196721311475409836065573770",
+        "remainder": 60,
+        "error_against_mean": "240/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          121,
+          "999999999999999999999999999818",
+          "999999999999999999999999999939",
+          "999999999999999999999999999940",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "0",
+      "reference": "583.9214",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "0",
+      "reference": "584",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "0",
+      "reference": "585",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "0",
+      "reference": "35620/61",
+      "execute": {
+        "day": 0,
+        "blocks": 0,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0
+        ],
+        "horizon": 0
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1",
+      "reference": "583.9214",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "393/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "393/5000",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1",
+      "reference": "584",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1",
+      "reference": "585",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "-1",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-1",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1",
+      "reference": "35620/61",
+      "execute": {
+        "day": 584,
+        "blocks": 0,
+        "remainder": 1,
+        "error_against_mean": "4/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "4/61",
+        "candidate_rounds": [
+          0,
+          1
+        ],
+        "horizon": 1
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "121",
+      "reference": "583.9214",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "47553/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "47553/5000",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "121",
+      "reference": "584",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "121",
+      "reference": "585",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "-121",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-121",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "121",
+      "reference": "35620/61",
+      "execute": {
+        "day": 70664,
+        "blocks": 0,
+        "remainder": 121,
+        "error_against_mean": "484/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "484/61",
+        "candidate_rounds": [
+          0,
+          121
+        ],
+        "horizon": 121
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "122",
+      "reference": "583.9214",
+      "execute": {
+        "day": 71248,
+        "blocks": 0,
+        "remainder": 122,
+        "error_against_mean": "23973/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "23973/2500",
+        "candidate_rounds": [
+          0,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "122",
+      "reference": "584",
+      "execute": {
+        "day": 71248,
+        "blocks": 0,
+        "remainder": 122,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "122",
+      "reference": "585",
+      "execute": {
+        "day": 71248,
+        "blocks": 0,
+        "remainder": 122,
+        "error_against_mean": "-122",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-122",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "122",
+      "reference": "35620/61",
+      "execute": {
+        "day": 71248,
+        "blocks": 0,
+        "remainder": 122,
+        "error_against_mean": "8",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "8",
+        "candidate_rounds": [
+          0,
+          122
+        ],
+        "horizon": 122
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "182",
+      "reference": "583.9214",
+      "execute": {
+        "day": 106288,
+        "blocks": 0,
+        "remainder": 182,
+        "error_against_mean": "35763/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "35763/2500",
+        "candidate_rounds": [
+          0,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "182",
+      "reference": "584",
+      "execute": {
+        "day": 106288,
+        "blocks": 0,
+        "remainder": 182,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "182",
+      "reference": "585",
+      "execute": {
+        "day": 106288,
+        "blocks": 0,
+        "remainder": 182,
+        "error_against_mean": "-182",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-182",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "182",
+      "reference": "35620/61",
+      "execute": {
+        "day": 106288,
+        "blocks": 0,
+        "remainder": 182,
+        "error_against_mean": "728/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "728/61",
+        "candidate_rounds": [
+          0,
+          182
+        ],
+        "horizon": 182
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "183",
+      "reference": "583.9214",
+      "execute": {
+        "day": 106860,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "11919/5000",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "35763/2500",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "183",
+      "reference": "584",
+      "execute": {
+        "day": 106860,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "-12",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-12",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "183",
+      "reference": "585",
+      "execute": {
+        "day": 106860,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "-195",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-195",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "183",
+      "reference": "35620/61",
+      "execute": {
+        "day": 106860,
+        "blocks": 1,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "728/61",
+        "candidate_rounds": [
+          0,
+          182,
+          183
+        ],
+        "horizon": 183
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "366",
+      "reference": "583.9214",
+      "execute": {
+        "day": 213720,
+        "blocks": 2,
+        "remainder": 0,
+        "error_against_mean": "11919/2500",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "16689/1000",
+        "candidate_rounds": [
+          0,
+          182,
+          183,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "366",
+      "reference": "584",
+      "execute": {
+        "day": 213720,
+        "blocks": 2,
+        "remainder": 0,
+        "error_against_mean": "-24",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-24",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          183,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "366",
+      "reference": "585",
+      "execute": {
+        "day": 213720,
+        "blocks": 2,
+        "remainder": 0,
+        "error_against_mean": "-390",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-390",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          183,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "366",
+      "reference": "35620/61",
+      "execute": {
+        "day": 213720,
+        "blocks": 2,
+        "remainder": 0,
+        "error_against_mean": "0",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "728/61",
+        "candidate_rounds": [
+          0,
+          182,
+          183,
+          365,
+          366
+        ],
+        "horizon": 366
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "583.9214",
+      "execute": {
+        "day": "583934426229508196721311475409844",
+        "blocks": "5464480874316939890710382513",
+        "remainder": 121,
+        "error_against_mean": "13026229508196721311475409844",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "32565573770491803278688524616027/2500",
+        "candidate_rounds": [
+          0,
+          182,
+          "999999999999999999999999999696",
+          "999999999999999999999999999878",
+          "999999999999999999999999999879",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "584",
+      "execute": {
+        "day": "583934426229508196721311475409844",
+        "blocks": "5464480874316939890710382513",
+        "remainder": 121,
+        "error_against_mean": "-65573770491803278688524590156",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-65573770491803278688524590156",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          "999999999999999999999999999696",
+          "999999999999999999999999999878",
+          "999999999999999999999999999879",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "585",
+      "execute": {
+        "day": "583934426229508196721311475409844",
+        "blocks": "5464480874316939890710382513",
+        "remainder": 121,
+        "error_against_mean": "-1065573770491803278688524590156",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "-1065573770491803278688524590156",
+        "maximum": "0",
+        "candidate_rounds": [
+          0,
+          182,
+          "999999999999999999999999999696",
+          "999999999999999999999999999878",
+          "999999999999999999999999999879",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    },
+    {
+      "model": 2,
+      "rounds": "1000000000000000000000000000000",
+      "reference": "35620/61",
+      "execute": {
+        "day": "583934426229508196721311475409844",
+        "blocks": "5464480874316939890710382513",
+        "remainder": 121,
+        "error_against_mean": "484/61",
+        "reference_kind": "constant mean; not an ephemeris"
+      },
+      "envelope": {
+        "minimum": "0",
+        "maximum": "728/61",
+        "candidate_rounds": [
+          0,
+          182,
+          "999999999999999999999999999696",
+          "999999999999999999999999999878",
+          "999999999999999999999999999879",
+          "1000000000000000000000000000000"
+        ],
+        "horizon": "1000000000000000000000000000000"
+      }
+    }
+  ],
+  "windows": [
+    {
+      "span": 1,
+      "start": 0,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 29,
+          "count": 3780
+        },
+        {
+          "days": 30,
+          "count": 4270
+        },
+        {
+          "days": 31,
+          "count": 1
+        }
+      ],
+      "summary": {
+        "count": 8051,
+        "mean": "237751/8051",
+        "variance": "16159990/64818601",
+        "median": 30,
+        "central95": [
+          29,
+          30
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 1,
+      "start": 0,
+      "end": 4026,
+      "distribution": [
+        {
+          "days": 29,
+          "count": 1889
+        },
+        {
+          "days": 30,
+          "count": 2136
+        }
+      ],
+      "summary": {
+        "count": 4025,
+        "mean": "118861/4025",
+        "variance": "4034904/16200625",
+        "median": 30,
+        "central95": [
+          29,
+          30
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 1,
+      "start": 4026,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 29,
+          "count": 1891
+        },
+        {
+          "days": 30,
+          "count": 2133
+        },
+        {
+          "days": 31,
+          "count": 1
+        }
+      ],
+      "summary": {
+        "count": 4025,
+        "mean": "3396/115",
+        "variance": "23104/92575",
+        "median": 30,
+        "central95": [
+          29,
+          30
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 1,
+      "start": 100,
+      "end": 2000,
+      "distribution": [
+        {
+          "days": 29,
+          "count": 891
+        },
+        {
+          "days": 30,
+          "count": 1008
+        }
+      ],
+      "summary": {
+        "count": 1899,
+        "mean": "6231/211",
+        "variance": "11088/44521",
+        "median": 30,
+        "central95": [
+          29,
+          30
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 49,
+      "start": 0,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 1445,
+          "count": 4
+        },
+        {
+          "days": 1446,
+          "count": 2113
+        },
+        {
+          "days": 1447,
+          "count": 3768
+        },
+        {
+          "days": 1448,
+          "count": 2118
+        }
+      ],
+      "summary": {
+        "count": 8003,
+        "mean": "11580338/8003",
+        "variance": "33988732/64048009",
+        "median": 1447,
+        "central95": [
+          1446,
+          1448
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 49,
+      "start": 0,
+      "end": 4026,
+      "distribution": [
+        {
+          "days": 1445,
+          "count": 2
+        },
+        {
+          "days": 1446,
+          "count": 1057
+        },
+        {
+          "days": 1447,
+          "count": 1857
+        },
+        {
+          "days": 1448,
+          "count": 1061
+        }
+      ],
+      "summary": {
+        "count": 3977,
+        "mean": "1447",
+        "variance": "2126/3977",
+        "median": 1447,
+        "central95": [
+          1446,
+          1448
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 49,
+      "start": 4026,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 1445,
+          "count": 2
+        },
+        {
+          "days": 1446,
+          "count": 1043
+        },
+        {
+          "days": 1447,
+          "count": 1886
+        },
+        {
+          "days": 1448,
+          "count": 1046
+        }
+      ],
+      "summary": {
+        "count": 3977,
+        "mean": "5754718/3977",
+        "variance": "8339768/15816529",
+        "median": 1447,
+        "central95": [
+          1446,
+          1448
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 49,
+      "start": 100,
+      "end": 2000,
+      "distribution": [
+        {
+          "days": 1446,
+          "count": 494
+        },
+        {
+          "days": 1447,
+          "count": 866
+        },
+        {
+          "days": 1448,
+          "count": 491
+        }
+      ],
+      "summary": {
+        "count": 1851,
+        "mean": "892798/617",
+        "variance": "607742/1142067",
+        "median": 1447,
+        "central95": [
+          1446,
+          1448
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 81,
+      "start": 0,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 2391,
+          "count": 1403
+        },
+        {
+          "days": 2392,
+          "count": 5333
+        },
+        {
+          "days": 2393,
+          "count": 1235
+        }
+      ],
+      "summary": {
+        "count": 7971,
+        "mean": "6355488/2657",
+        "variance": "6999758/21178947",
+        "median": 2392,
+        "central95": [
+          2391,
+          2393
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 81,
+      "start": 0,
+      "end": 4026,
+      "distribution": [
+        {
+          "days": 2391,
+          "count": 696
+        },
+        {
+          "days": 2392,
+          "count": 2636
+        },
+        {
+          "days": 2393,
+          "count": 613
+        }
+      ],
+      "summary": {
+        "count": 3945,
+        "mean": "9436357/3945",
+        "variance": "5157116/15563025",
+        "median": 2392,
+        "central95": [
+          2391,
+          2393
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 81,
+      "start": 4026,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 2391,
+          "count": 690
+        },
+        {
+          "days": 2392,
+          "count": 2647
+        },
+        {
+          "days": 2393,
+          "count": 608
+        }
+      ],
+      "summary": {
+        "count": 3945,
+        "mean": "9436358/3945",
+        "variance": "5113886/15563025",
+        "median": 2392,
+        "central95": [
+          2391,
+          2393
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 81,
+      "start": 100,
+      "end": 2000,
+      "distribution": [
+        {
+          "days": 2391,
+          "count": 319
+        },
+        {
+          "days": 2392,
+          "count": 1220
+        },
+        {
+          "days": 2393,
+          "count": 280
+        }
+      ],
+      "summary": {
+        "count": 1819,
+        "mean": "4351009/1819",
+        "variance": "1088060/3308761",
+        "median": 2392,
+        "central95": [
+          2391,
+          2393
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 98,
+      "start": 0,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 2893,
+          "count": 440
+        },
+        {
+          "days": 2894,
+          "count": 7081
+        },
+        {
+          "days": 2895,
+          "count": 433
+        }
+      ],
+      "summary": {
+        "count": 7954,
+        "mean": "23018869/7954",
+        "variance": "6943793/63266116",
+        "median": 2894,
+        "central95": [
+          2893,
+          2895
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 98,
+      "start": 0,
+      "end": 4026,
+      "distribution": [
+        {
+          "days": 2893,
+          "count": 213
+        },
+        {
+          "days": 2894,
+          "count": 3504
+        },
+        {
+          "days": 2895,
+          "count": 211
+        }
+      ],
+      "summary": {
+        "count": 3928,
+        "mean": "5683815/1964",
+        "variance": "416367/3857296",
+        "median": 2894,
+        "central95": [
+          2893,
+          2895
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 98,
+      "start": 4026,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 2893,
+          "count": 221
+        },
+        {
+          "days": 2894,
+          "count": 3491
+        },
+        {
+          "days": 2895,
+          "count": 216
+        }
+      ],
+      "summary": {
+        "count": 3928,
+        "mean": "11367627/3928",
+        "variance": "1716511/15429184",
+        "median": 2894,
+        "central95": [
+          2893,
+          2895
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 98,
+      "start": 100,
+      "end": 2000,
+      "distribution": [
+        {
+          "days": 2893,
+          "count": 108
+        },
+        {
+          "days": 2894,
+          "count": 1588
+        },
+        {
+          "days": 2895,
+          "count": 106
+        }
+      ],
+      "summary": {
+        "count": 1802,
+        "mean": "2607493/901",
+        "variance": "96406/811801",
+        "median": 2894,
+        "central95": [
+          2893,
+          2895
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 405,
+      "start": 0,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 11959,
+          "count": 1117
+        },
+        {
+          "days": 11960,
+          "count": 6242
+        },
+        {
+          "days": 11961,
+          "count": 288
+        }
+      ],
+      "summary": {
+        "count": 7647,
+        "mean": "91457291/7647",
+        "variance": "10056794/58476609",
+        "median": 11960,
+        "central95": [
+          11959,
+          11961
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 405,
+      "start": 0,
+      "end": 4026,
+      "distribution": [
+        {
+          "days": 11959,
+          "count": 512
+        },
+        {
+          "days": 11960,
+          "count": 2978
+        },
+        {
+          "days": 11961,
+          "count": 131
+        }
+      ],
+      "summary": {
+        "count": 3621,
+        "mean": "14435593/1207",
+        "variance": "727714/4370547",
+        "median": 11960,
+        "central95": [
+          11959,
+          11961
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 405,
+      "start": 4026,
+      "end": 8052,
+      "distribution": [
+        {
+          "days": 11959,
+          "count": 549
+        },
+        {
+          "days": 11960,
+          "count": 2927
+        },
+        {
+          "days": 11961,
+          "count": 145
+        }
+      ],
+      "summary": {
+        "count": 3621,
+        "mean": "43306756/3621",
+        "variance": "2349758/13111641",
+        "median": 11960,
+        "central95": [
+          11959,
+          11961
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    },
+    {
+      "span": 405,
+      "start": 100,
+      "end": 2000,
+      "distribution": [
+        {
+          "days": 11959,
+          "count": 224
+        },
+        {
+          "days": 11960,
+          "count": 1211
+        },
+        {
+          "days": 11961,
+          "count": 60
+        }
+      ],
+      "summary": {
+        "count": 1495,
+        "mean": "17880036/1495",
+        "variance": "397684/2235025",
+        "median": 11960,
+        "central95": [
+          11959,
+          11961
+        ],
+        "scope": "descriptive population summaries; central range is not a confidence interval"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "a": 49,
+      "b": 81,
+      "offsets": [
+        1446,
+        2391
+      ],
+      "distance": "12645271/63791913"
+    },
+    {
+      "a": 98,
+      "b": 405,
+      "offsets": [
+        2893,
+        11959
+      ],
+      "distance": "2759969/30412119"
+    },
+    {
+      "a": 405,
+      "b": 405,
+      "offsets": [
+        11959,
+        11959
+      ],
+      "distance": "0"
+    },
+    {
+      "a": 1,
+      "b": 98,
+      "offsets": [
+        29,
+        2893
+      ],
+      "distance": "136720/330091"
+    }
+  ],
+  "ranks": [
+    {
+      "position": 0,
+      "start": "0",
+      "rank": "0",
+      "selected": "6"
+    },
+    {
+      "position": 0,
+      "start": "405",
+      "rank": "0",
+      "selected": "405"
+    },
+    {
+      "position": 0,
+      "start": "6000",
+      "rank": "100",
+      "selected": "6737"
+    },
+    {
+      "position": 0,
+      "start": "1000000000000000000000000000000",
+      "rank": "1000000000000000000000000000000",
+      "selected": "8290748898678414096916299559476"
+    },
+    {
+      "position": 1,
+      "start": "0",
+      "rank": "0",
+      "selected": "6"
+    },
+    {
+      "position": 1,
+      "start": "405",
+      "rank": "0",
+      "selected": "405"
+    },
+    {
+      "position": 1,
+      "start": "6000",
+      "rank": "100",
+      "selected": "6737"
+    },
+    {
+      "position": 1,
+      "start": "1000000000000000000000000000000",
+      "rank": "1000000000000000000000000000000",
+      "selected": "8290748898678414096916299559476"
+    },
+    {
+      "position": 2,
+      "start": "0",
+      "rank": "0",
+      "selected": "6"
+    },
+    {
+      "position": 2,
+      "start": "405",
+      "rank": "0",
+      "selected": "405"
+    },
+    {
+      "position": 2,
+      "start": "6000",
+      "rank": "100",
+      "selected": "6726"
+    },
+    {
+      "position": 2,
+      "start": "1000000000000000000000000000000",
+      "rank": "1000000000000000000000000000000",
+      "selected": "8290748898678414096916299559482"
+    },
+    {
+      "position": 3,
+      "start": "0",
+      "rank": "0",
+      "selected": "6"
+    },
+    {
+      "position": 3,
+      "start": "405",
+      "rank": "0",
+      "selected": "405"
+    },
+    {
+      "position": 3,
+      "start": "6000",
+      "rank": "100",
+      "selected": "6726"
+    },
+    {
+      "position": 3,
+      "start": "1000000000000000000000000000000",
+      "rank": "1000000000000000000000000000000",
+      "selected": "8290748898678414096916299559482"
+    },
+    {
+      "position": 4,
+      "start": "0",
+      "rank": "0",
+      "selected": "6"
+    },
+    {
+      "position": 4,
+      "start": "405",
+      "rank": "0",
+      "selected": "405"
+    },
+    {
+      "position": 4,
+      "start": "6000",
+      "rank": "100",
+      "selected": "6737"
+    },
+    {
+      "position": 4,
+      "start": "1000000000000000000000000000000",
+      "rank": "1000000000000000000000000000000",
+      "selected": "8290748898678414096916299559482"
+    }
+  ],
+  "policies": [
+    {
+      "long": "0.0972",
+      "short": "-0.42356",
+      "best": "5729/25000",
+      "winners": [
+        2
+      ],
+      "terminal": "-869/25000"
+    },
+    {
+      "long": "0",
+      "short": "0",
+      "best": "0",
+      "winners": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "terminal": "0"
+    },
+    {
+      "long": "1",
+      "short": "-4",
+      "best": "2",
+      "winners": [
+        2
+      ],
+      "terminal": "0"
+    },
+    {
+      "long": "-2",
+      "short": "1",
+      "best": "7",
+      "winners": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "terminal": "-7"
+    },
+    {
+      "long": "1/3",
+      "short": "-7/6",
+      "best": "2/3",
+      "winners": [
+        2
+      ],
+      "terminal": "1/6"
+    }
+  ],
+  "source_hashes": {
+    "research/dresden/lunar_source.json": "8ac31e0f8fd568b1d2741e7a483de9bee182eadd2017193ee3209a2f0da85b45",
+    "research/dresden/eclipse_stations.json": "9a203dad269dfdec5bfbead6e7e2fcd21ef9338c50b54d947015f4da1f112ba2",
+    "python/perfectpower/dresden_analysis.py": "6460fe9b393b170a5fe376cfa3c9769ecc790195ee9a67e674aecc19b7a5ef70"
+  }
+}

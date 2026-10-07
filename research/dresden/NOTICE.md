@@ -1,0 +1,7 @@
+# Source attribution and reuse
+
+John Justeson and Justin Lowry, 2025, Science Advances, DOI https://doi.org/10.1126/sciadv.adt9039. Article XML, figures 1 and 8, original supplementary PDF and Tables S1/S2 are retained under the article's Creative Commons Attribution 4.0 license, https://creativecommons.org/licenses/by/4.0/. Those third-party resources retain that license rather than the repository's code license. The files in `supplementary/` and the article/figure copies are unchanged. The JSON station transcription, integer-day extraction, distribution recomputation and arithmetic audit are derived research data; locations, hashes and transformations are recorded in the datasets and receipts.
+
+The S2 appearances are the authors' astronomical model outputs, not ancient recorded observations. No new ephemeris or visibility calculation is supplied. The acquisition script provides access to the original resources and records byte counts and SHA-256 digests.
+
+Gerardo Aldana's 2016 article, https://escholarship.org/uc/item/6cr1s6jd, supplies attributed Venus correction interpretations. Its full PDF is not redistributed here. The 260 numerical labels are extracted from Tables 1 and 2 of Juárez Nájera and Castellanos, 2020, https://doi.org/10.19130/iifl.ecm.2020.56.2.0004; publication coordinates and source digest are preserved. FAMSI's Förstemann facsimiles were consulted and are linked by the source registry rather than bundled. Wikipedia supplies the section map, not a numerical authority.
