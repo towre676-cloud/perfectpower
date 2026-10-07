@@ -1,0 +1,1945 @@
+{
+  "Poschl_Teller_limit": {
+    "convention": "Left-hand channels use D e_j, so the source transmission is -t_PT with t_PT=(q+ik)(q+2ik)/((q-ik)(q-2ik)).",
+    "inputs": "g=0 and kappa=0: source is the exact l=2 Poschl-Teller kink, Higgs is free",
+    "scattering": [
+      {
+        "E_over_v2": 0.25,
+        "Higgs_transmission_error": 8.398277037282524e-11,
+        "full_line_unitarity_defect": 4.4408913228813133e-16,
+        "source_reflection_probability": 9.592393763952571e-23,
+        "source_transmission_error": 3.723619190807619e-11
+      },
+      {
+        "E_over_v2": 0.5,
+        "Higgs_transmission_error": 8.888571645252246e-11,
+        "full_line_unitarity_defect": 4.440892227201206e-16,
+        "source_reflection_probability": 8.647560065098082e-24,
+        "source_transmission_error": 8.53257150543867e-11
+      },
+      {
+        "E_over_v2": 1.0,
+        "Higgs_transmission_error": 4.4419340141609916e-11,
+        "full_line_unitarity_defect": 4.440890704900654e-16,
+        "source_reflection_probability": 3.340421411285466e-26,
+        "source_transmission_error": 2.5261058606502298e-11
+      },
+      {
+        "E_over_v2": 3.0,
+        "Higgs_transmission_error": 3.2297719701399255e-09,
+        "full_line_unitarity_defect": 1.4935196835117302e-16,
+        "source_reflection_probability": 3.0765229157031743e-21,
+        "source_transmission_error": 2.728211247242128e-09
+      }
+    ],
+    "shape_pole": [
+      0.14999999999972638,
+      4.290119621179e-28
+    ],
+    "shape_pole_minus_3k2": -2.7361446441886983e-13,
+    "translation_pole": [
+      -2.1239635394172246e-13,
+      6.31088163244851e-18
+    ]
+  },
+  "conclusions": {
+    "certified": false,
+    "kink_reflectionless_property_broken_by_mediator": true,
+    "nonlinear_shape_radiation_included": false,
+    "pole_sheet": "Higgs channel continued from q>0 to Im q<0; source and mediator channels decaying (Im q>0)",
+    "shape_mode_is_open_channel_resonance": true,
+    "thermal_or_network_prediction_changed": false,
+    "translation_mode_is_continuum_bound_state": true
+  },
+  "coupling_ladder": {
+    "meaning": "coupling_scale multiplies only the phi-h entries of the fluctuation operator; the background wall is unchanged. Second-order theory predicts (E_pole-E_shape)/scale^2=Sigma+O(scale^2).",
+    "rows": [
+      {
+        "coupling_scale": 10000.0,
+        "iterations": 2,
+        "pole": [
+          0.14999972032556194,
+          -3.951416180167602e-10
+        ],
+        "reduced_shift": [
+          8.165694231898613e-18,
+          -3.951416180167602e-18
+        ],
+        "relative_difference_from_Sigma": 3.4927657100781395e-07
+      },
+      {
+        "coupling_scale": 30000.0,
+        "iterations": 3,
+        "pole": [
+          0.14999972685811602,
+          -3.5562743416406396e-09
+        ],
+        "reduced_shift": [
+          8.165692782440775e-18,
+          -3.951415935156266e-18
+        ],
+        "relative_difference_from_Sigma": 1.9190267692685478e-07
+      },
+      {
+        "coupling_scale": 100000.0,
+        "iterations": 2,
+        "pole": [
+          0.14999980116586928,
+          -3.9514131481489894e-08
+        ],
+        "reduced_shift": [
+          8.165687676031652e-18,
+          -3.9514131481489896e-18
+        ],
+        "relative_difference_from_Sigma": 5.03431833638251e-07
+      },
+      {
+        "coupling_scale": 300000.0,
+        "iterations": 3,
+        "pole": [
+          0.1500004544169302,
+          -3.5562497825922004e-07
+        ],
+        "reduced_shift": [
+          8.165643751908055e-18,
+          -3.951388647324667e-18
+        ],
+        "relative_difference_from_Sigma": 6.035973397756328e-06
+      }
+    ]
+  },
+  "declared_Higgs": {
+    "lam": 0.13,
+    "portal": 1e-07,
+    "v_GeV": 246.0
+  },
+  "declared_model": {
+    "bias_h0_GeV3": 0.0,
+    "bias_onset_GeV": 0.0,
+    "current_g_GeV": 3000.0,
+    "heavy_mass_GeV": 300000.0,
+    "lam": 0.1,
+    "thermal_c": 0.025000033333333335,
+    "v_GeV": 30000.0
+  },
+  "error_controls": {
+    "FEM_spacing_01_E_shape": 0.14999971951489116,
+    "FEM_spacing_01_Gamma_E": 7.902832421680622e-18,
+    "FEM_spacing_01_Jost_E_shape": [
+      0.14999971950949853,
+      1.4390555198887927e-26
+    ],
+    "box_length_factors": {
+      "16.0": {
+        "E_shape_FEM": 0.1499997195082917,
+        "Gamma_E": 7.902832421955533e-18,
+        "half_box_rho": 3826.6562953792004,
+        "max_phase_difference": 1.8089647507290613e-09
+      },
+      "8.0": {
+        "E_shape_FEM": 0.1499997195082917,
+        "Gamma_E": 7.902832421575245e-18,
+        "half_box_rho": 1913.3281476896002,
+        "max_phase_difference": 1.0214813679768023e-07
+      }
+    },
+    "max_phase_change": {
+      "Johnson_tail_h_02": 0.0002774075383404031,
+      "R_half": 4.1794321519340675e-07,
+      "R_three_quarter": 2.020614571098058e-08,
+      "h_core_half": 1.1986216879256074e-08,
+      "h_tail_half": 8.942781756276425e-10
+    },
+    "note": "Pure Johnson propagation over the 2870-unit Higgs tail is retained only as a contrast; its accumulated O(h^4) phase error is why the exact-reference tail is used."
+  },
+  "expansion_comparison": {
+    "H_at_T_eq_GeV": 3.0607566975343634e-13,
+    "T_where_Gamma_equals_H_GeV": 466.7212845779098,
+    "gstar": 106.75,
+    "scope": "Zero-temperature vacuum width compared with a radiation-era H(T) for an input g*. Plasma damping, thermal masses, nonlinear radiation and Higgs-bath occupation are not included."
+  },
+  "half_box_rho": 2869.9922215344004,
+  "input_dimensionful_receipt_sha256": "01b8b8adc9103f6223aa202e10d35474f22c75e82cfd85cfd46414d2c111cdd9",
+  "physical_direct_pole_check": {
+    "abs_F_at_1e-12_offset": 1.8747795841966718e-11,
+    "abs_F_at_predicted_pole": 3.710354136897748e-16,
+    "abs_F_at_real_axis_projection": 3.783607585543308e-16,
+    "meaning": "At the physical coupling the width is about 1e-17 of E_r, at the floating-point floor of the Jost function. The direct pole is consistent with, but not independent of, the second-order result; the ladder above is the independent numerical confirmation.",
+    "resolved": false
+  },
+  "physical_scattering": [
+    {
+      "E_over_v2": 2e-05,
+      "full_line_unitarity_defect": 4.889715643343978e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1407740407258484
+      ],
+      "reflection_probabilities": [
+        [
+          6.491973175854809e-08
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        5.551115123125783e-16
+      ],
+      "translation_phases": [
+        -0.0003090258422755579
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999350802679
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 3.0934664156114036e-05,
+      "full_line_unitarity_defect": 4.936473956664678e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1413809714375973
+      ],
+      "reflection_probabilities": [
+        [
+          1.0367534708595098e-09
+        ]
+      ],
+      "sector_unitarity_defects": [
+        4.440892098500626e-16,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -0.0002760794649106513
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999989632469
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 4.784767232257841e-05,
+      "full_line_unitarity_defect": 5.49260241800608e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1414807988598947
+      ],
+      "reflection_probabilities": [
+        [
+          2.5471056023723256e-09
+        ]
+      ],
+      "sector_unitarity_defects": [
+        5.551115123125783e-16,
+        0.0
+      ],
+      "translation_phases": [
+        -0.0002127924454371591
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999974528941
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 7.40075836975378e-05,
+      "full_line_unitarity_defect": 2.169401349101719e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415202683475107
+      ],
+      "reflection_probabilities": [
+        [
+          2.1704312744050134e-09
+        ]
+      ],
+      "sector_unitarity_defects": [
+        1.1102230246251565e-16,
+        4.440892098500626e-16
+      ],
+      "translation_phases": [
+        -0.0001655610175885991
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999978295684
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.0001144699873344417,
+      "full_line_unitarity_defect": 3.70140428283403e-17,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415412372386022
+      ],
+      "reflection_probabilities": [
+        [
+          1.5531521793511731e-09
+        ]
+      ],
+      "sector_unitarity_defects": [
+        0.0,
+        1.1102230246251565e-16
+      ],
+      "translation_phases": [
+        -0.00013023645472193626
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999984468477
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.0001770545307072792,
+      "full_line_unitarity_defect": 2.680271394117869e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415542447367235
+      ],
+      "reflection_probabilities": [
+        [
+          1.0498070228310613e-09
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        0.0
+      ],
+      "translation_phases": [
+        -0.00010321030438675328
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999989501931
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.00027385612223740304,
+      "full_line_unitarity_defect": 4.2101912110073667e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141563092789703
+      ],
+      "reflection_probabilities": [
+        [
+          6.918719284167203e-10
+        ]
+      ],
+      "sector_unitarity_defects": [
+        1.1102230246251565e-16,
+        4.440892098500626e-16
+      ],
+      "translation_phases": [
+        -8.216771707173428e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999993081281
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.0004235823584254892,
+      "full_line_unitarity_defect": 3.904447869772748e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415694655432014
+      ],
+      "reflection_probabilities": [
+        [
+          4.4939006656012774e-10
+        ]
+      ],
+      "sector_unitarity_defects": [
+        3.3306690738754696e-16,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -6.558569117886915e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999995506097
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.000655168900017362,
+      "full_line_unitarity_defect": 3.823440066340344e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.14157422142424
+      ],
+      "reflection_probabilities": [
+        [
+          2.886390259054217e-10
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        4.440892098500626e-16
+      ],
+      "translation_phases": [
+        -5.241092514977496e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999997113607
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.0010133714943783884,
+      "full_line_unitarity_defect": 1.8572553099828696e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141577846910324
+      ],
+      "reflection_probabilities": [
+        [
+          1.8326716825818455e-10
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -4.188192042976796e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999998167326
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.0015674153421987435,
+      "full_line_unitarity_defect": 3.794740373370421e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415806424062587
+      ],
+      "reflection_probabilities": [
+        [
+          1.1468606887472676e-10
+        ]
+      ],
+      "sector_unitarity_defects": [
+        3.3306690738754696e-16,
+        1.1102230246251565e-16
+      ],
+      "translation_phases": [
+        -3.3429499890297025e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999998853135
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.002424373360202934,
+      "full_line_unitarity_defect": 1.827816134142542e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415828072499
+      ],
+      "reflection_probabilities": [
+        [
+          7.03255529740064e-11
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        0.0
+      ],
+      "translation_phases": [
+        -2.6618406310734713e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999296745
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.0037498587843453756,
+      "full_line_unitarity_defect": 2.2245481486158397e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141584482554543
+      ],
+      "reflection_probabilities": [
+        [
+          4.1863965849589885e-11
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -2.1111509097805926e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999581362
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.005800031106328917,
+      "full_line_unitarity_defect": 4.839382616551095e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.14158577485341
+      ],
+      "reflection_probabilities": [
+        [
+          2.3854427803780313e-11
+        ]
+      ],
+      "sector_unitarity_defects": [
+        3.3306690738754696e-16,
+        4.440892098500626e-16
+      ],
+      "translation_phases": [
+        -1.6646935358237498e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999761449
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.008971100718464978,
+      "full_line_unitarity_defect": 2.9133264384131027e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141586771108952
+      ],
+      "reflection_probabilities": [
+        [
+          1.2749072117451952e-11
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        4.440892098500626e-16
+      ],
+      "translation_phases": [
+        -1.3023649406155982e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999872511
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.013875899391819383,
+      "full_line_unitarity_defect": 3.051050223696821e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141587548109451
+      ],
+      "reflection_probabilities": [
+        [
+          6.2140697087038e-12
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        1.1102230246251565e-16
+      ],
+      "translation_phases": [
+        -1.0091087510244602e-05
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999937856
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.021462314377498,
+      "full_line_unitarity_defect": 3.1753392522202607e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141588176838406
+      ],
+      "reflection_probabilities": [
+        [
+          2.661549599224556e-12
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        0.0
+      ],
+      "translation_phases": [
+        -7.739602654802994e-06
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999973381
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.033196474364041946,
+      "full_line_unitarity_defect": 2.5814641321542044e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415887206503346
+      ],
+      "reflection_probabilities": [
+        [
+          9.559925242585821e-13
+        ]
+      ],
+      "sector_unitarity_defects": [
+        1.1102230246251565e-16,
+        1.1102230246251565e-16
+      ],
+      "translation_phases": [
+        -5.888436862515914e-06
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999990439
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.051346089280934384,
+      "full_line_unitarity_defect": 2.3166823033562225e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415892271944648
+      ],
+      "reflection_probabilities": [
+        [
+          2.722477852430824e-13
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446049250313e-16,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -4.469942711605796e-06
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999997278
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.07941870138177759,
+      "full_line_unitarity_defect": 5.690755975551472e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.1415897190025572
+      ],
+      "reflection_probabilities": [
+        [
+          5.751954878711049e-14
+        ]
+      ],
+      "sector_unitarity_defects": [
+        6.661338147750939e-16,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -3.414251905474909e-06
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999423
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.12283954274800007,
+      "full_line_unitarity_defect": 3.7865928991328383e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141590192600547
+      ],
+      "reflection_probabilities": [
+        [
+          8.350273953433866e-15
+        ]
+      ],
+      "sector_unitarity_defects": [
+        1.1102230246251565e-16,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -2.643748912968484e-06
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999916
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.19,
+      "full_line_unitarity_defect": 1.298926389638275e-16,
+      "open_channels": [
+        0
+      ],
+      "opposite_phases": [
+        3.141590628844103
+      ],
+      "reflection_probabilities": [
+        [
+          7.564787482014003e-16
+        ]
+      ],
+      "sector_unitarity_defects": [
+        0.0,
+        2.220446049250313e-16
+      ],
+      "translation_phases": [
+        -2.07975400793446e-06
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999993
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.205,
+      "full_line_unitarity_defect": 4.440940677486659e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.141590699564414,
+        -0.9262622422365201
+      ],
+      "reflection_probabilities": [
+        [
+          4.715167925032782e-16,
+          3.958512862846587e-17
+        ],
+        [
+          3.9585128628296636e-17,
+          1.4001299009928328e-10
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.2340654094607644e-16,
+        2.2240189810777377e-16
+      ],
+      "translation_phases": [
+        -1.9974542543800288e-06,
+        2.215306745936302
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999991,
+          2.910831150062137e-16
+        ],
+        [
+          2.910831150053273e-16,
+          0.9999999998599871
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.2832554926404266,
+      "full_line_unitarity_defect": 3.659397621865122e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415909799018444,
+        -2.969023546269259
+      ],
+      "reflection_probabilities": [
+        [
+          5.0674799324508444e-17,
+          7.216507612662564e-20
+        ],
+        [
+          7.21650761077985e-20,
+          4.3915375950398065e-13
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.2231965475252333e-16,
+        2.221189291653779e-16
+      ],
+      "translation_phases": [
+        -1.6879251957114208e-06,
+        0.1725677819469875
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999996,
+          2.560302581128473e-16
+        ],
+        [
+          2.5603025811150253e-16,
+          0.9999999999995604
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.3913837761510769,
+      "full_line_unitarity_defect": 6.568556938044048e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415912256088965,
+        2.5378266144314425
+      ],
+      "reflection_probabilities": [
+        [
+          3.706292675009532e-18,
+          1.0261049641211132e-21
+        ],
+        [
+          1.0261049666496013e-21,
+          1.2820902482784298e-14
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.220446328149729e-16,
+        8.8855254848154e-16
+      ],
+      "translation_phases": [
+        -1.4318312437335197e-06,
+        -0.6037662656171991
+      ],
+      "transmission_probabilities": [
+        [
+          1.0,
+          2.5940047678616267e-16
+        ],
+        [
+          2.594004767874182e-16,
+          0.9999999999999873
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.5407883137811889,
+      "full_line_unitarity_defect": 3.896295685185851e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415914375724867,
+        2.0390132533312593
+      ],
+      "reflection_probabilities": [
+        [
+          1.8826937750366718e-19,
+          1.528360490347516e-23
+        ],
+        [
+          1.5283604908405425e-23,
+          4.0423567524551277e-16
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.2204460499776443e-16,
+        1.6806894880835193e-18
+      ],
+      "translation_phases": [
+        -1.2168851068493133e-06,
+        -1.1025794404697602
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999998,
+          2.619890704630179e-16
+        ],
+        [
+          2.6198907046315667e-16,
+          0.9999999999999996
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 0.7472256596793964,
+      "full_line_unitarity_defect": 6.885044060526958e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415916188222015,
+        1.674593535475524
+      ],
+      "reflection_probabilities": [
+        [
+          4.226217884851403e-21,
+          1.698897565642383e-25
+        ],
+        [
+          1.6988976605120125e-25,
+          9.722751916205818e-18
+        ]
+      ],
+      "sector_unitarity_defects": [
+        3.330669096004234e-16,
+        7.77184855654117e-16
+      ],
+      "translation_phases": [
+        -1.0348976105815422e-06,
+        -1.4669991243505347
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999996,
+          2.6390740316427823e-16
+        ],
+        [
+          2.6390740316478616e-16,
+          0.9999999999999996
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 1.0324671821758786,
+      "full_line_unitarity_defect": 3.710267007804742e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415917733610392,
+        1.3921506434152573
+      ],
+      "reflection_probabilities": [
+        [
+          4.648895243920017e-22,
+          1.1748098004575256e-27
+        ],
+        [
+          1.1747909510063152e-27,
+          1.4670647220278063e-19
+        ]
+      ],
+      "sector_unitarity_defects": [
+        2.228201558293788e-16,
+        4.44127124918056e-16
+      ],
+      "translation_phases": [
+        -8.80271876656573e-07,
+        -1.7494420109405815
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999998,
+          2.653153395448387e-16
+        ],
+        [
+          2.6531533953584005e-16,
+          0.9999999999999998
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 1.4265951235234224,
+      "full_line_unitarity_defect": 4.685858469392168e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.141591905020032,
+        1.1659900846165252
+      ],
+      "reflection_probabilities": [
+        [
+          3.164191777695561e-23,
+          7.267955765936831e-30
+        ],
+        [
+          7.267913116538058e-30,
+          7.771898426113327e-22
+        ]
+      ],
+      "sector_unitarity_defects": [
+        4.443538322085187e-16,
+        4.446669294558641e-16
+      ],
+      "translation_phases": [
+        -7.485585109677788e-07,
+        -1.9756025690290242
+      ],
+      "transmission_probabilities": [
+        [
+          1.0,
+          2.6634310256405816e-16
+        ],
+        [
+          2.6634310256500597e-16,
+          1.0000000000000004
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 1.9711751439612548,
+      "full_line_unitarity_defect": 7.780381875829014e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415920174698386,
+        0.9812811966367837
+      ],
+      "reflection_probabilities": [
+        [
+          4.806708794793136e-25,
+          3.5910770401737817e-31
+        ],
+        [
+          3.59106645394264e-31,
+          2.6415633896306815e-23
+        ]
+      ],
+      "sector_unitarity_defects": [
+        6.661338176905615e-16,
+        2.2204461308741035e-16
+      ],
+      "translation_phases": [
+        -6.361185680191051e-07,
+        -2.1603114569427304
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999991,
+          2.670909645877809e-16
+        ],
+        [
+          2.6709096458919234e-16,
+          0.9999999999999996
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 2.7236399340649218,
+      "full_line_unitarity_defect": 1.154417777654969e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.141592114080376,
+        0.8285000120264079
+      ],
+      "reflection_probabilities": [
+        [
+          1.677544714552805e-23,
+          8.404372129625391e-32
+        ],
+        [
+          8.403865107150185e-32,
+          5.50834932378475e-22
+        ]
+      ],
+      "sector_unitarity_defects": [
+        1.0692991929192433e-17,
+        2.2204460651723587e-16
+      ],
+      "translation_phases": [
+        -5.395176088176286e-07,
+        -2.313092641610325
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999996,
+          2.6763410145856045e-16
+        ],
+        [
+          2.676341014588889e-16,
+          0.9999999999999998
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 3.7633462014570656,
+      "full_line_unitarity_defect": 2.935912231985937e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.141592198441425,
+        0.7010550481022508
+      ],
+      "reflection_probabilities": [
+        [
+          1.8802294561471116e-21,
+          4.529048266105682e-32
+        ],
+        [
+          4.529426339903744e-32,
+          6.72132657857469e-21
+        ]
+      ],
+      "sector_unitarity_defects": [
+        3.3306690852445774e-16,
+        1.1156582599284803e-16
+      ],
+      "translation_phases": [
+        -4.5523509172030927e-07,
+        -2.440537605323575
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999993,
+          2.6802806727002737e-16
+        ],
+        [
+          2.680280672708384e-16,
+          0.9999999999999996
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 5.1999438159521905,
+      "full_line_unitarity_defect": 4.564884969041898e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415922750142626,
+        0.5941294864168303
+      ],
+      "reflection_probabilities": [
+        [
+          4.711448339519735e-21,
+          6.471200138437556e-31
+        ],
+        [
+          6.470337026297906e-31,
+          1.5309282812344966e-21
+        ]
+      ],
+      "sector_unitarity_defects": [
+        4.448067648962098e-16,
+        2.2204460783654804e-16
+      ],
+      "translation_phases": [
+        -3.787128105167446e-07,
+        -2.5474631670947088
+      ],
+      "transmission_probabilities": [
+        [
+          1.0,
+          2.6831358412251167e-16
+        ],
+        [
+          2.6831358412176787e-16,
+          0.9999999999999998
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 7.184939742878427,
+      "full_line_unitarity_defect": 4.275440015278164e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.141592351224401,
+        0.5040593933535896
+      ],
+      "reflection_probabilities": [
+        [
+          1.1521855519257583e-19,
+          1.319253799421881e-31
+        ],
+        [
+          1.3187691115609725e-31,
+          5.552986113914313e-20
+        ]
+      ],
+      "sector_unitarity_defects": [
+        4.4408921600577e-16,
+        1.1102236205467976e-16
+      ],
+      "translation_phases": [
+        -3.030442694736988e-07,
+        -2.637533259764908
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999998,
+          2.6852036030289415e-16
+        ],
+        [
+          2.6852036030241866e-16,
+          1.0
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 9.927676324199068,
+      "full_line_unitarity_defect": 5.086909012959832e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415924404638043,
+        0.42797379701268334
+      ],
+      "reflection_probabilities": [
+        [
+          4.49398586673326e-19,
+          3.210759557106411e-31
+        ],
+        [
+          3.2111633515135683e-31,
+          1.4978554704390724e-21
+        ]
+      ],
+      "sector_unitarity_defects": [
+        4.441777466459694e-16,
+        1.116494285477142e-16
+      ],
+      "translation_phases": [
+        -2.144667330216501e-07,
+        -2.7136188564997057
+      ],
+      "transmission_probabilities": [
+        [
+          1.0,
+          2.6867000330860864e-16
+        ],
+        [
+          2.6867000330690603e-16,
+          1.0
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 13.717409014564423,
+      "full_line_unitarity_defect": 4.2369474667433353e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        3.1415925711998383,
+        0.3635731003063415
+      ],
+      "reflection_probabilities": [
+        [
+          1.4546714637693467e-18,
+          7.564454716036799e-31
+        ],
+        [
+          7.563737899807847e-31,
+          1.3967878752513996e-18
+        ]
+      ],
+      "sector_unitarity_defects": [
+        1.1102249094274661e-16,
+        3.330673730661114e-16
+      ],
+      "translation_phases": [
+        -8.480215002918692e-08,
+        -2.7780195556471674
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999991,
+          2.687781958493155e-16
+        ],
+        [
+          2.6877819584322997e-16,
+          1.0
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 18.95381194229596,
+      "full_line_unitarity_defect": 4.882806909301614e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        -3.1415925058431613,
+        0.30898527513742485
+      ],
+      "reflection_probabilities": [
+        [
+          3.655987612928801e-18,
+          5.016853196813777e-31
+        ],
+        [
+          5.016647853053501e-31,
+          4.9304087199256975e-18
+        ]
+      ],
+      "sector_unitarity_defects": [
+        5.557063342538788e-16,
+        4.445100632133802e-16
+      ],
+      "translation_phases": [
+        1.515707595193178e-07,
+        -2.8326073740114635
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999996,
+          2.6885630164208825e-16
+        ],
+        [
+          2.688563016417472e-16,
+          0.9999999999999993
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 26.189128483556296,
+      "full_line_unitarity_defect": 4.108143455012798e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        -3.1415920261340515,
+        0.26266816367432233
+      ],
+      "reflection_probabilities": [
+        [
+          1.960937840374859e-17,
+          5.296137715055824e-31
+        ],
+        [
+          5.295501441629857e-31,
+          1.3684548729428593e-17
+        ]
+      ],
+      "sector_unitarity_defects": [
+        3.340391282693943e-16,
+        4.440892106765421e-16
+      ],
+      "translation_phases": [
+        6.185992461272524e-07,
+        -2.8789244973139976
+      ],
+      "transmission_probabilities": [
+        [
+          1.0,
+          2.689125398110401e-16
+        ],
+        [
+          2.689125398118528e-16,
+          0.9999999999999996
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 36.18641214845449,
+      "full_line_unitarity_defect": 6.302392014366922e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        -3.1415910023039895,
+        0.22334028783163945
+      ],
+      "reflection_probabilities": [
+        [
+          7.212072838549836e-17,
+          9.007644313956005e-31
+        ],
+        [
+          9.00656923093744e-31,
+          7.811896256333967e-17
+        ]
+      ],
+      "sector_unitarity_defects": [
+        4.44089215274445e-16,
+        6.661338192270688e-16
+      ],
+      "translation_phases": [
+        1.634301018890041e-06,
+        -2.9182523834351404
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999996,
+          2.689528432650853e-16
+        ],
+        [
+          2.689528432651782e-16,
+          0.9999999999999998
+        ]
+      ]
+    },
+    {
+      "E_over_v2": 50.0,
+      "full_line_unitarity_defect": 5.585355289676929e-16,
+      "open_channels": [
+        0,
+        1
+      ],
+      "opposite_phases": [
+        -3.1415887514790795,
+        0.18993026572830835
+      ],
+      "reflection_probabilities": [
+        [
+          4.718906695499144e-17,
+          9.087386278159417e-31
+        ],
+        [
+          9.087331357437973e-31,
+          3.0773663933814975e-16
+        ]
+      ],
+      "sector_unitarity_defects": [
+        4.440892102232456e-16,
+        2.222507800411404e-16
+      ],
+      "translation_phases": [
+        3.888371853831851e-06,
+        -2.951662422946333
+      ],
+      "transmission_probabilities": [
+        [
+          0.9999999999999991,
+          2.6898148334331895e-16
+        ],
+        [
+          2.689814833430112e-16,
+          0.9999999999999993
+        ]
+      ]
+    }
+  ],
+  "real_axis_Breit_Wigner": [
+    {
+      "coupling_scale": 30000.0,
+      "max_Breit_Wigner_deviation": 9.634624125320489e-05,
+      "max_unitarity_defect": 3.3306690738754696e-16,
+      "phase": [
+        0.16628163168134533,
+        0.17347578619632253,
+        0.181318817758012,
+        0.18990237890507178,
+        0.19933618323650307,
+        0.20975265465867687,
+        0.2213131007229126,
+        0.23421600673456192,
+        0.24870833947206916,
+        0.26510121558398814,
+        0.2837920153632709,
+        0.305296264530116,
+        0.3302945854990449,
+        0.3597037529281365,
+        0.3947872539041799,
+        0.43733319414542743,
+        0.4899514957236862,
+        0.5565918850929733,
+        0.6434913179266819,
+        0.7609993174374305,
+        0.9272758071167365,
+        1.175975432489847,
+        1.5707480957907944,
+        2.214220331878288,
+        3.1414963073485027,
+        4.068810704359536,
+        4.712340687571735,
+        5.107150343091357,
+        5.3558706988850595,
+        5.5221591211325585,
+        5.639674401819153,
+        5.726578557185833,
+        5.793222156720167,
+        5.845842718777109,
+        5.88839031849796,
+        5.923475061626504,
+        5.95288518395118,
+        5.97788425759747,
+        5.99938910512879,
+        6.018080393334894,
+        6.034473669990471,
+        6.048966336642596,
+        6.061869523122549,
+        6.073430206416493,
+        6.083846880969553,
+        6.093280861483423,
+        6.101864576031052,
+        6.109707739725158,
+        6.116902010338091
+      ],
+      "phase_advance_over_window": 5.950620378656746,
+      "x_over_Gamma": [
+        -6.0,
+        -5.75,
+        -5.5,
+        -5.25,
+        -5.0,
+        -4.75,
+        -4.5,
+        -4.25,
+        -4.0,
+        -3.75,
+        -3.5,
+        -3.25,
+        -3.0,
+        -2.75,
+        -2.5,
+        -2.25,
+        -2.0,
+        -1.75,
+        -1.5,
+        -1.25,
+        -1.0,
+        -0.75,
+        -0.5,
+        -0.25,
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.25,
+        2.5,
+        2.75,
+        3.0,
+        3.25,
+        3.5,
+        3.75,
+        4.0,
+        4.25,
+        4.5,
+        4.75,
+        5.0,
+        5.25,
+        5.5,
+        5.75,
+        6.0
+      ]
+    },
+    {
+      "coupling_scale": 100000.0,
+      "max_Breit_Wigner_deviation": 1.0548944115898929e-05,
+      "max_unitarity_defect": 3.3306690738754696e-16,
+      "phase": [
+        0.16628052624878442,
+        0.1734747345255902,
+        0.18131782561266405,
+        0.18990145702104677,
+        0.1993353414151858,
+        0.20975190468622407,
+        0.22131245890064444,
+        0.23421549317296514,
+        0.24870797797507785,
+        0.2651010355252451,
+        0.2837920580786107,
+        0.3052965786728816,
+        0.33029524286289685,
+        0.3597048446367932,
+        0.39478890870603844,
+        0.4373356060258974,
+        0.4899549390869781,
+        0.5565967866565168,
+        0.6434983657815267,
+        0.7610096822784012,
+        0.9272916091650496,
+        1.1760006645820755,
+        1.5707901214009412,
+        2.2142886306670015,
+        3.141582104645677,
+        4.0688790669760735,
+        4.712382772558884,
+        5.107175558742547,
+        5.355886478217167,
+        5.522169480077495,
+        5.639681454870768,
+        5.726583458263494,
+        5.793225593854362,
+        5.845845130193183,
+        5.888391976833795,
+        5.923476152713292,
+        5.9528858404278,
+        5.977884572120239,
+        5.99938914692771,
+        6.018080213514256,
+        6.034473307635231,
+        6.04896582217133,
+        6.061868881483609,
+        6.073429457211901,
+        6.083846038498583,
+        6.093279938718097,
+        6.101863584217223,
+        6.109706686968612,
+        6.116900906029109
+      ],
+      "phase_advance_over_window": 5.950620379780324,
+      "x_over_Gamma": [
+        -6.0,
+        -5.75,
+        -5.5,
+        -5.25,
+        -5.0,
+        -4.75,
+        -4.5,
+        -4.25,
+        -4.0,
+        -3.75,
+        -3.5,
+        -3.25,
+        -3.0,
+        -2.75,
+        -2.5,
+        -2.25,
+        -2.0,
+        -1.75,
+        -1.5,
+        -1.25,
+        -1.0,
+        -0.75,
+        -0.5,
+        -0.25,
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        1.75,
+        2.0,
+        2.25,
+        2.5,
+        2.75,
+        3.0,
+        3.25,
+        3.5,
+        3.75,
+        4.0,
+        4.25,
+        4.5,
+        4.75,
+        5.0,
+        5.25,
+        5.5,
+        5.75,
+        6.0
+      ]
+    }
+  ],
+  "reflection_scaling": {
+    "Higgs_kappa_half": {
+      "E_over_v2": 0.001,
+      "reflection_ratio": 0.25000047317225055
+    },
+    "source_g_half": {
+      "E_over_v2": 0.3,
+      "reflection_ratio": 0.06249685436258392
+    }
+  },
+  "scope": "Linear coupled-channel scattering of the supplied unbiased spectator wall: radial Higgs, source and Gaussian mediator, all three channels retained. Floating-point numerics with step, matching-radius, box and mesh controls, a closed-form leading width and an operator-level coupling ladder. Not a rigorous enclosure, not a continuum stability theorem, and no angular Higgs, gauge, fermion, thermal-plasma, nonlinear (two-quantum) or network dynamics.",
+  "sensitivity": [
+    {
+      "Gamma_E": 7.901350991346375e-20,
+      "Gamma_GeV": 3.060182941391159e-15,
+      "Gamma_over_kappa2": 0.0007901350991346374,
+      "central_Higgs_GeV": 246.00259746060817,
+      "closed_form_relative_difference": 1.9144518894842477e-05,
+      "variation": "kappa=1e-8"
+    },
+    {
+      "Gamma_E": 7.111512157129933e-19,
+      "Gamma_GeV": 2.7542793902690196e-14,
+      "Gamma_over_kappa2": 0.0007901680174588815,
+      "central_Higgs_GeV": 246.00779246107834,
+      "closed_form_relative_difference": 6.080695673071901e-05,
+      "variation": "kappa=3e-8"
+    },
+    {
+      "Gamma_E": 7.115512919312003e-17,
+      "Gamma_GeV": 2.755828880238378e-12,
+      "Gamma_over_kappa2": 0.0007906125465902226,
+      "central_Higgs_GeV": 246.0779353098878,
+      "closed_form_relative_difference": 0.0006234166194634128,
+      "variation": "kappa=3e-7"
+    },
+    {
+      "Gamma_E": 7.917661725399395e-16,
+      "Gamma_GeV": 3.0665000673147697e-11,
+      "Gamma_over_kappa2": 0.0007917661725399395,
+      "central_Higgs_GeV": 246.25987682292416,
+      "closed_form_relative_difference": 0.0020834809003618115,
+      "variation": "kappa=1e-6"
+    },
+    {
+      "Gamma_E": 7.903027429477644e-18,
+      "Gamma_GeV": 3.060832223693059e-13,
+      "Gamma_over_kappa2": 0.0007903027429477645,
+      "central_Higgs_GeV": 246.0296640101148,
+      "closed_form_relative_difference": 0.000236617818440088,
+      "variation": "lambda_H=0.10"
+    },
+    {
+      "Gamma_E": 7.902602663918328e-18,
+      "Gamma_GeV": 3.060667712546272e-13,
+      "Gamma_over_kappa2": 0.000790260266391833,
+      "central_Higgs_GeV": 246.02087766787275,
+      "closed_form_relative_difference": 0.00016520606365322266,
+      "variation": "lambda_H=0.20"
+    },
+    {
+      "Gamma_E": 7.902845745731164e-18,
+      "Gamma_GeV": 3.060758996095306e-13,
+      "Gamma_over_kappa2": 0.0007902845745731164,
+      "central_Higgs_GeV": 246.0259757779464,
+      "closed_form_relative_difference": 0.00020832520492963802,
+      "variation": "g=0"
+    },
+    {
+      "Gamma_E": 7.901513000205286e-18,
+      "Gamma_GeV": 3.060528955180364e-13,
+      "Gamma_over_kappa2": 0.0007901513000205287,
+      "central_Higgs_GeV": 246.02597747168764,
+      "closed_form_relative_difference": 3.9648855516771775e-05,
+      "variation": "g=30000"
+    }
+  ],
+  "shape_resonance": {
+    "E_shape_FEM": 0.1499997195082917,
+    "E_shape_Jost": [
+      0.14999971950899252,
+      -3.796922969858707e-29
+    ],
+    "Gamma_E": 7.90283242195535e-18,
+    "Jost_iterations": 2,
+    "Sigma": [
+      8.165691063584299e-18,
+      -3.951416210977675e-18
+    ],
+    "closed_form_Gamma_E": 7.901199726678913e-18,
+    "closed_form_relative_difference": 0.00020663890711736244,
+    "golden_rule_Gamma_E": 7.90283242203212e-18,
+    "physical": {
+      "Gamma_GeV": 3.0607566975343634e-13,
+      "lifetime_s": 2.1504876798284297e-12,
+      "omega_GeV": 11618.93917522002,
+      "quality_factor": 3.796100220765611e+16
+    },
+    "standing_wave_overlap": -1.2370476491065788e-09,
+    "wronskian_relative_spread": 5.059101863934298e-12
+  },
+  "sudden_rotation_check": {
+    "Higgs_channel_phi_component": -8.200716843921819e-09,
+    "computed_conversion_at_highest_E": 2.6898148334331895e-16,
+    "meaning": "The eigenchannels at the two vacua are e_j and D e_j, so the mixing angle flips sign across the wall. A thin (sudden) wall converts with probability 4 theta^2.",
+    "predicted_high_energy_conversion": 2.6900702701673217e-16
+  },
+  "translation_zero_mode_pole": {
+    "below_Higgs_threshold": true,
+    "h_core_002": [
+      7.635099117299199e-14,
+      -5.70588651245263e-17
+    ],
+    "h_core_004": [
+      -2.1236799040648652e-13,
+      -2.9886163514240584e-17
+    ]
+  },
+  "units": "rho=v z; E=omega^2/v^2; Hessian in units of v^2; v=30000.0 GeV",
+  "vacuum_eigenchannels_columns": [
+    [
+      -8.200716843921819e-09,
+      0.9999979919820161,
+      0.0020040039758514316
+    ],
+    [
+      1.6401436555209512e-11,
+      -0.0020040039758514993,
+      0.9999979919820161
+    ],
+    [
+      1.0,
+      8.200733245278983e-09,
+      3.286553922015653e-14
+    ]
+  ],
+  "vacuum_thresholds_over_v2": [
+    1.7482399999986553e-05,
+    0.1999991984001852,
+    100.00040080159997
+  ],
+  "zero_portal_limit": {
+    "maximum_Higgs_phase_from_free": 8.876144264036157e-11,
+    "shape_state_is_embedded_but_decoupled": true,
+    "tables": [
+      {
+        "E_over_v2": 0.001,
+        "full_line_unitarity_defect": 1.1102230247379209e-15,
+        "open_channels": [
+          0
+        ],
+        "opposite_phases": [
+          3.141592653584128
+        ],
+        "reflection_probabilities": [
+          [
+            9.939906652433425e-29
+          ]
+        ],
+        "sector_unitarity_defects": [
+          4.440892098500626e-16,
+          8.881784197001252e-16
+        ],
+        "translation_phases": [
+          -5.645603611884056e-12
+        ],
+        "transmission_probabilities": [
+          [
+            1.0000000000000009
+          ]
+        ]
+      },
+      {
+        "E_over_v2": 0.1,
+        "full_line_unitarity_defect": 2.2204460237365006e-16,
+        "open_channels": [
+          0
+        ],
+        "opposite_phases": [
+          3.1415926535325323
+        ],
+        "reflection_probabilities": [
+          [
+            4.959625703760493e-28
+          ]
+        ],
+        "sector_unitarity_defects": [
+          0.0,
+          4.440892098500626e-16
+        ],
+        "translation_phases": [
+          -5.730534311330045e-11
+        ],
+        "transmission_probabilities": [
+          [
+            1.0
+          ]
+        ]
+      },
+      {
+        "E_over_v2": 0.3,
+        "full_line_unitarity_defect": 5.678652887370924e-16,
+        "open_channels": [
+          0,
+          1
+        ],
+        "opposite_phases": [
+          3.1415926535010317,
+          3.141575749539588
+        ],
+        "reflection_probabilities": [
+          [
+            4.218101314341594e-26,
+            0.0
+          ],
+          [
+            0.0,
+            2.2636806651250862e-13
+          ]
+        ],
+        "sector_unitarity_defects": [
+          2.2204460492970925e-16,
+          5.551115123129328e-16
+        ],
+        "translation_phases": [
+          -8.835079368980497e-11,
+          -1.7855613269930848e-05
+        ],
+        "transmission_probabilities": [
+          [
+            0.9999999999999998,
+            0.0
+          ],
+          [
+            0.0,
+            0.9999999999997731
+          ]
+        ]
+      }
+    ]
+  }
+}

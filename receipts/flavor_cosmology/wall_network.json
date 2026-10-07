@@ -1,0 +1,235 @@
+{
+ "annihilation_factor": {
+  "C_ann_A_half_values": [
+   1.2150051113410667,
+   1.1804181889796503,
+   1.1424841450993857,
+   1.080004543414264
+  ],
+  "C_ann_false_1pct_values": [
+   2.160009086828572,
+   2.14438918640728,
+   2.3608363779593007,
+   2.2849682901987713
+  ],
+  "C_ann_range": [
+   2.14438918640728,
+   2.3608363779593007
+  ],
+  "K_equals_C_ann_times_A": 1.792800000000009,
+  "definition": "t_ann=C_ann*A*sigma/DeltaV; primary t_ann where the false-vacuum volume fraction first drops below 1 percent, secondary where A falls back to half its scaling value"
+ },
+ "area_parameter": {
+  "A": 0.8066632731431248,
+  "A_final_range": [
+   0.832967122395838,
+   0.9729478624131824
+  ],
+  "note": "A is the plateau mean over tau>=30; it still drifts upward (dlnA/dlntau 0.07-0.18) and reaches 0.97 at tau=192 in the largest box, so the scaling value is uncertain at the +20 percent level.",
+  "resolution_and_box_systematic": 0.04116890177332144,
+  "scaling_slopes": [
+   0.07036942434693925,
+   0.10346000787002056,
+   0.08308742949814343,
+   0.07076030431436729,
+   0.17864090101856792,
+   0.13422233447457962
+  ],
+  "statistical": 0.006169445579427191
+ },
+ "biased": [
+  {
+   "C_ann_A_half": 1.2150051113410667,
+   "C_ann_false_1pct": 2.160009086828572,
+   "bias_over_barrier_at_A_half": 0.07920000000000046,
+   "params": {
+    "N": 256,
+    "eps1": 0.00015,
+    "lam": 0.5,
+    "seed": 0
+   },
+   "tau_A_half": 66.0000000000004,
+   "tau_false_below_1pct": 88.00000000000071
+  },
+  {
+   "C_ann_A_half": 1.1804181889796503,
+   "C_ann_false_1pct": 2.14438918640728,
+   "bias_over_barrier_at_A_half": 0.11040000000000026,
+   "params": {
+    "N": 256,
+    "eps1": 0.0003,
+    "lam": 0.5,
+    "seed": 0
+   },
+   "tau_A_half": 46.000000000000114,
+   "tau_false_below_1pct": 62.00000000000034
+  },
+  {
+   "C_ann_A_half": 1.1424841450993857,
+   "C_ann_false_1pct": 2.3608363779593007,
+   "bias_over_barrier_at_A_half": 0.1535999999999996,
+   "params": {
+    "N": 256,
+    "eps1": 0.0006,
+    "lam": 0.5,
+    "seed": 0
+   },
+   "tau_A_half": 31.99999999999992,
+   "tau_false_below_1pct": 46.000000000000114
+  },
+  {
+   "C_ann_A_half": 1.080004543414264,
+   "C_ann_false_1pct": 2.2849682901987713,
+   "bias_over_barrier_at_A_half": 0.21119999999999953,
+   "params": {
+    "N": 256,
+    "eps1": 0.0012,
+    "lam": 0.5,
+    "seed": 0
+   },
+   "tau_A_half": 21.999999999999954,
+   "tau_false_below_1pct": 31.99999999999992
+  }
+ ],
+ "declared_cosmology_update": {
+  "calibrated": [
+   {
+    "A": 0.8066632731431248,
+    "C_ann": 2.14438918640728,
+    "T_ann_GeV": 0.03533693919142,
+    "T_ann_over_declared": 1.1778979731066306,
+    "peak_Omega_h2": 1.247155745505503e-12,
+    "peak_Omega_ratio_to_declared": 0.5281702030639859,
+    "peak_frequency_Hz": 4.013336294584086e-09
+   },
+   {
+    "A": 0.8066632731431248,
+    "C_ann": 2.2224886885136717,
+    "T_ann_GeV": 0.03471050672269795,
+    "T_ann_over_declared": 1.1570168908148444,
+    "peak_Omega_h2": 1.3396538400548475e-12,
+    "peak_Omega_ratio_to_declared": 0.5673431271812998,
+    "peak_frequency_Hz": 3.942190229861012e-09
+   },
+   {
+    "A": 0.8066632731431248,
+    "C_ann": 2.3608363779593007,
+    "T_ann_GeV": 0.03367811605184597,
+    "T_ann_over_declared": 1.1226038684513795,
+    "peak_Omega_h2": 1.5116291279531776e-12,
+    "peak_Omega_ratio_to_declared": 0.6401746264215425,
+    "peak_frequency_Hz": 3.824938112265998e-09
+   },
+   {
+    "A": 0.9729478624131824,
+    "C_ann": 1.8426475551869392,
+    "T_ann_GeV": 0.03471050672269795,
+    "T_ann_over_declared": 1.1570168908148444,
+    "peak_Omega_h2": 1.9488892556380414e-12,
+    "peak_Omega_ratio_to_declared": 0.8253542010363314,
+    "peak_frequency_Hz": 3.942190229861012e-09
+   }
+  ],
+  "declared": {
+   "A": 0.8,
+   "C_ann": 3.0,
+   "T_ann_GeV": 0.029999999998489752
+  },
+  "scope": "Same classical pressure-balance and GW template as the earlier conditional estimate, with A and C_ann replaced by this lattice calibration. Efficiency, g* and spectral shape remain supplied inputs."
+ },
+ "lattice_kink_check": {
+  "0.25": {
+   "continuum_two_walls": 0.9428090415820635,
+   "lattice_final": 0.9388132980320874,
+   "lattice_initial": 0.9389268550353125,
+   "max_velocity": 0.00010584597525502425
+  },
+  "0.5": {
+   "continuum_two_walls": 1.3333333333333335,
+   "lattice_final": 1.321807259280034,
+   "lattice_initial": 1.3224763112470186,
+   "max_velocity": 0.00017712043243607557
+  }
+ },
+ "method": "PRS alpha=3 beta=0, a=tau, dx=1, dt=0.2, tau_i=1 to N/2; Gaussian initial field of rms 0.1 with modes above a quarter of the Nyquist frequency removed; float32; series recorded every 10 steps",
+ "plateau_from_tau": 30.0,
+ "scope": "PRS-modified phi^4 network in a periodic box (bias grown as eps1*tau to represent constant physical Delta V). Walls of the supplied model are phi^4 kinks to 1e-6. The physical bias is 25 orders too small to simulate, so C_ann is measured at small but finite bias/barrier ratios and its trend is reported. No GW extraction, no full (non-PRS) wall thinning, and A, C_ann carry the stated statistical and systematic spreads.",
+ "series_cache": {
+  "path": "receipts/flavor_cosmology/wall_network_series.json",
+  "sha256": "006085501865689429ab1a01260d23309c33b4cef928b318864e58d6860fa72d"
+ },
+ "unbiased": [
+  {
+   "A_final": 0.8628946940104253,
+   "A_mean": 0.8178421932012909,
+   "A_std_in_time": 0.025394640466767676,
+   "dlnA_dlntau": 0.07036942434693925,
+   "params": {
+    "N": 256,
+    "lam": 0.5,
+    "seed": 0
+   },
+   "tau_final": 128.00000000000128
+  },
+  {
+   "A_final": 0.8699035644531337,
+   "A_mean": 0.8055970847201237,
+   "A_std_in_time": 0.036574850511907044,
+   "dlnA_dlntau": 0.10346000787002056,
+   "params": {
+    "N": 256,
+    "lam": 0.5,
+    "seed": 1
+   },
+   "tau_final": 128.00000000000128
+  },
+  {
+   "A_final": 0.8587290445963627,
+   "A_mean": 0.7965505415079596,
+   "A_std_in_time": 0.02737607596046433,
+   "dlnA_dlntau": 0.08308742949814343,
+   "params": {
+    "N": 256,
+    "lam": 0.5,
+    "seed": 2
+   },
+   "tau_final": 128.00000000000128
+  },
+  {
+   "A_final": 0.8445078531901126,
+   "A_mean": 0.7939249123034885,
+   "A_std_in_time": 0.024259871549923668,
+   "dlnA_dlntau": 0.07076030431436729,
+   "params": {
+    "N": 256,
+    "lam": 0.25,
+    "seed": 0
+   },
+   "tau_final": 128.00000000000128
+  },
+  {
+   "A_final": 0.832967122395838,
+   "A_mean": 0.7816328160903053,
+   "A_std_in_time": 0.02993135781564656,
+   "dlnA_dlntau": 0.17864090101856792,
+   "params": {
+    "N": 128,
+    "lam": 0.5,
+    "seed": 0
+   },
+   "tau_final": 64.00000000000037
+  },
+  {
+   "A_final": 0.9729478624131824,
+   "A_mean": 0.8590110949746124,
+   "A_std_in_time": 0.05851303411334593,
+   "dlnA_dlntau": 0.13422233447457962,
+   "params": {
+    "N": 384,
+    "lam": 0.5,
+    "seed": 0
+   },
+   "tau_final": 191.99999999999764
+  }
+ ]
+}

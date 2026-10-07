@@ -1,0 +1,590 @@
+{
+  "CP_transition": {
+    "conclusion": "The resummed one-loop barrier comes only from the phi self-loop. Its loop parameter lam T/(8 pi m) at the would-be broken minimum is the same for every lam, so it is never parametrically perturbative. A real Z2 scalar has a continuous (3D Ising universality) transition, so no bubbles nucleate at the CP transition and the walls form by the Kibble mechanism.",
+    "declared_thermal_c": 0.025000033333333335,
+    "gauge_dependence": "phi is a gauge singlet: the one-loop potential along phi is gauge independent. Gauge fields enter only through Higgs loops, which are suppressed by kappa=1e-7.",
+    "heavy_mass_over_Tc": 4.936750045906613,
+    "heavy_mediator_phi_mass2_shift_over_cT2_at_Tc": 1.7408464476772768e-05,
+    "loop_parameter_by_lambda": {
+      "0.01": 0.09743080324617397,
+      "0.1": 0.09743080324615667,
+      "1.0": 0.09743080324615407
+    },
+    "one_loop_Debye_lam_over_4_plus_kappa_over_3": 0.025000033333333335,
+    "resummed_perturbative": {
+      "T0": 59999.96000004,
+      "Tc": 60768.72379810882,
+      "Tc_over_T0_minus_1": 0.012812738509630828,
+      "cubic_E": 0.004358637623494106,
+      "loop_parameter": 0.09743080324615386,
+      "m_over_T": 0.040837942875673175,
+      "phic_over_Tc": 0.058855904850812116
+    }
+  },
+  "Kibble_Zurek_estimate": {
+    "H_Tc_GeV": 5.213129621175122e-09,
+    "nu_3D_Ising": 0.63,
+    "rows": [
+      {
+        "domains_per_Hubble_length": 41420844.31712802,
+        "xi_KZ_GeV_inv": 4.631082622289287,
+        "z": 1.0
+      },
+      {
+        "domains_per_Hubble_length": 901469202.5175459,
+        "xi_KZ_GeV_inv": 0.2127896901878552,
+        "z": 2.0
+      }
+    ],
+    "scope": "Order-of-magnitude freeze-out estimate with declared exponents and microscopic scales; plasma dynamics not simulated.",
+    "tau_Q": "1/H(Tc)",
+    "xi0_tau0": "1/(sqrt(2c) Tc)"
+  },
+  "bounce_table": [
+    {
+      "d": 3,
+      "eps": 0.01,
+      "radius": 94.26462881026465,
+      "s": 35085.64770589245,
+      "thin_wall_ratio": 0.999444802512677,
+      "virial_defect": -2.576302356991377e-08
+    },
+    {
+      "d": 4,
+      "eps": 0.01,
+      "radius": 141.3979214650096,
+      "s": 13151498.132107565,
+      "thin_wall_ratio": 0.99935653633411,
+      "virial_defect": -3.856962770669508e-08
+    },
+    {
+      "d": 3,
+      "eps": 0.02,
+      "radius": 47.108026795234,
+      "s": 8757.44889352171,
+      "thin_wall_ratio": 0.9977789188461799,
+      "virial_defect": -2.1661974490421142e-08
+    },
+    {
+      "d": 4,
+      "eps": 0.02,
+      "radius": 70.66396719611991,
+      "s": 1640946.99141769,
+      "thin_wall_ratio": 0.9974264412164119,
+      "virial_defect": -3.2785128702519875e-08
+    },
+    {
+      "d": 3,
+      "eps": 0.05,
+      "radius": 18.77407348175171,
+      "s": 1385.527412164157,
+      "thin_wall_ratio": 0.986104481393783,
+      "virial_defect": -1.0807629318391945e-08
+    },
+    {
+      "d": 4,
+      "eps": 0.05,
+      "radius": 28.167394081396466,
+      "s": 103681.20665262363,
+      "thin_wall_ratio": 0.9839273081242234,
+      "virial_defect": -1.795739953470096e-08
+    },
+    {
+      "d": 3,
+      "eps": 0.1,
+      "radius": 9.26095565452249,
+      "s": 332.29950811513777,
+      "thin_wall_ratio": 0.9442104704843972,
+      "virial_defect": 4.1762087449833276e-10
+    },
+    {
+      "d": 4,
+      "eps": 0.1,
+      "radius": 13.903406820074732,
+      "s": 12362.595967886511,
+      "thin_wall_ratio": 0.9358787856736952,
+      "virial_defect": -2.324431914145566e-09
+    },
+    {
+      "d": 3,
+      "eps": 0.2,
+      "radius": 4.348888711151409,
+      "s": 68.53665478237181,
+      "thin_wall_ratio": 0.7727035132913972,
+      "virial_defect": 1.0757980359338815e-11
+    },
+    {
+      "d": 4,
+      "eps": 0.2,
+      "radius": 6.5511986442749714,
+      "s": 1246.895282950152,
+      "thin_wall_ratio": 0.7460470444025317,
+      "virial_defect": 1.3335756305992223e-11
+    },
+    {
+      "d": 3,
+      "eps": 0.3,
+      "radius": 2.429316382443415,
+      "s": 18.578740816248434,
+      "thin_wall_ratio": 0.4639864937092843,
+      "virial_defect": 5.84471845689762e-12
+    },
+    {
+      "d": 4,
+      "eps": 0.3,
+      "radius": 3.753824018294184,
+      "s": 220.59507571645645,
+      "thin_wall_ratio": 0.43514165980656466,
+      "virial_defect": 1.9326163110007087e-13
+    },
+    {
+      "d": 3,
+      "eps": 0.35,
+      "radius": 1.2856305746333205,
+      "s": 7.033878240066249,
+      "thin_wall_ratio": 0.23611082575789744,
+      "virial_defect": -7.731688678857898e-12
+    },
+    {
+      "d": 4,
+      "eps": 0.35,
+      "radius": 2.568843274641654,
+      "s": 74.40641374754414,
+      "thin_wall_ratio": 0.22871424264601461,
+      "virial_defect": -4.101120695520746e-11
+    },
+    {
+      "d": 3,
+      "eps": 0.38,
+      "radius": 1e-06,
+      "s": 1.2797942999194116,
+      "thin_wall_ratio": 0.05009113606744059,
+      "virial_defect": -9.148019374605021e-11
+    },
+    {
+      "d": 4,
+      "eps": 0.38,
+      "radius": 1e-06,
+      "s": 16.31752363599414,
+      "thin_wall_ratio": 0.06315192190659799,
+      "virial_defect": -3.578230119578982e-10
+    },
+    {
+      "d": 3,
+      "eps": 0.3845,
+      "radius": 1e-06,
+      "s": 0.18090345594719992,
+      "thin_wall_ratio": 0.00723338897243561,
+      "virial_defect": -9.86532861097602e-10
+    },
+    {
+      "d": 4,
+      "eps": 0.3845,
+      "radius": 1e-06,
+      "s": 3.85323423097968,
+      "thin_wall_ratio": 0.015398169657193737,
+      "virial_defect": -3.6149697666457363e-09
+    }
+  ],
+  "conclusions": {
+    "CP_transition_first_order_controlled": false,
+    "biased_vacuum_nucleation_with_declared_bias": false,
+    "bubble_nucleation_at_CP_transition": false,
+    "declared_bias_shortfall_orders_of_magnitude": 24.59404286793615,
+    "quantum_threshold_fraction_of_spinodal": 0.9765287806975852
+  },
+  "declared_Higgs": {
+    "lam": 0.13,
+    "portal": 1e-07,
+    "v_GeV": 246.0
+  },
+  "declared_model": {
+    "bias_h0_GeV3": 2.584366229533845e-13,
+    "bias_onset_GeV": 3000.0,
+    "current_g_GeV": 3000.0,
+    "heavy_mass_GeV": 300000.0,
+    "lam": 0.1,
+    "thermal_c": 0.025000033333333335,
+    "v_GeV": 30000.0
+  },
+  "input_dimensionful_receipt_sha256": "01b8b8adc9103f6223aa202e10d35474f22c75e82cfd85cfd46414d2c111cdd9",
+  "nucleation_threshold": [
+    {
+      "H_GeV": 4.0130668470560534e-22,
+      "T_GeV": 0.03,
+      "d3": {
+        "-20.0": {
+          "S_star": 167.97191317238386,
+          "eps_star": 0.3849001713487363,
+          "method": "near_spinodal_asymptotic",
+          "s_star": 5.311738285608386e-05
+        },
+        "0.0": {
+          "S_star": 188.1420136032488,
+          "eps_star": 0.3849001700247776,
+          "eps_star_over_eps_spinodal": 0.9999999754872213,
+          "h_star_GeV3": 1039230459066.5098,
+          "h_star_over_h_declared": 4.021219776416457e+24,
+          "method": "near_spinodal_asymptotic",
+          "s_star": 5.949572865567234e-05
+        },
+        "20.0": {
+          "S_star": 208.29464848431735,
+          "eps_star": 0.38490016865378057,
+          "method": "near_spinodal_asymptotic",
+          "s_star": 6.586855136346644e-05
+        }
+      },
+      "d4": {
+        "-20.0": {
+          "S_star": 225.4656574021632,
+          "eps_star": 0.37691575225050383,
+          "method": "bounce",
+          "s_star": 22.54656574021632
+        },
+        "0.0": {
+          "S_star": 245.63703162844823,
+          "eps_star": 0.3758661029381119,
+          "eps_star_over_eps_spinodal": 0.9765287806975852,
+          "h_star_GeV3": 1014838477932.5214,
+          "h_star_over_h_declared": 3.926836941438663e+24,
+          "method": "bounce",
+          "s_star": 24.563703162844824
+        },
+        "20.0": {
+          "S_star": 265.79477064224943,
+          "eps_star": 0.37480150127811807,
+          "method": "bounce",
+          "s_star": 26.579477064224942
+        }
+      },
+      "easier_channel": "quantum_O4",
+      "eps_declared": 9.571726775097694e-26,
+      "gstar": 10.75,
+      "h_spinodal_GeV3": 1039230484540.9366,
+      "v_T_GeV": 29999.99999999625
+    },
+    {
+      "H_GeV": 1.4116865984194725e-18,
+      "T_GeV": 1.0,
+      "d3": {
+        "-20.0": {
+          "S_star": 149.15767642759715,
+          "eps_star": 0.384899436796252,
+          "method": "near_spinodal_asymptotic",
+          "s_star": 0.001572259960250417
+        },
+        "0.0": {
+          "S_star": 169.34810504583277,
+          "eps_star": 0.3848992998195777,
+          "eps_star_over_eps_spinodal": 0.9999977146277924,
+          "h_star_GeV3": 1039228109079.8472,
+          "h_star_over_h_declared": 4.021211129728702e+24,
+          "method": "near_spinodal_asymptotic",
+          "s_star": 0.0017850857648422124
+        },
+        "20.0": {
+          "S_star": 189.516887667688,
+          "eps_star": 0.3848991593391694,
+          "method": "bounce",
+          "s_star": 0.001997683400598023
+        }
+      },
+      "d4": {
+        "-20.0": {
+          "S_star": 192.4871008560934,
+          "eps_star": 0.3785848871929514,
+          "method": "bounce",
+          "s_star": 19.24871008560934
+        },
+        "0.0": {
+          "S_star": 212.68668279010845,
+          "eps_star": 0.37757042628287424,
+          "eps_star_over_eps_spinodal": 0.9809567426360664,
+          "h_star_GeV3": 1019440150538.9929,
+          "h_star_over_h_declared": 3.9446431862484704e+24,
+          "method": "bounce",
+          "s_star": 21.268668279010846
+        },
+        "20.0": {
+          "S_star": 232.86798598872113,
+          "eps_star": 0.3765326721703391,
+          "method": "bounce",
+          "s_star": 23.286798598872114
+        }
+      },
+      "easier_channel": "quantum_O4",
+      "eps_declared": 9.571725716514307e-26,
+      "gstar": 107.75,
+      "h_spinodal_GeV3": 1039230484108.3129,
+      "v_T_GeV": 29999.999995833325
+    },
+    {
+      "H_GeV": 1.4116865984194725e-14,
+      "T_GeV": 100.0,
+      "d3": {
+        "-20.0": {
+          "S_star": 130.53697449154188,
+          "eps_star": 0.38462056284912854,
+          "method": "bounce",
+          "s_star": 0.1375982438625837
+        },
+        "0.0": {
+          "S_star": 150.75295335719963,
+          "eps_star": 0.384562461828028,
+          "eps_star_over_eps_spinodal": 0.9991225838548672,
+          "h_star_GeV3": 1038314320605.2157,
+          "h_star_over_h_declared": 4.022143899731175e+24,
+          "method": "bounce",
+          "s_star": 0.1589077862409989
+        },
+        "20.0": {
+          "S_star": 170.94147155691402,
+          "eps_star": 0.3845020677600626,
+          "method": "bounce",
+          "s_star": 0.18018838249572905
+        }
+      },
+      "d4": {
+        "-20.0": {
+          "S_star": 155.21530192279235,
+          "eps_star": 0.380369841235651,
+          "method": "bounce",
+          "s_star": 15.521530192279235
+        },
+        "0.0": {
+          "S_star": 175.46050345941723,
+          "eps_star": 0.37941632356566296,
+          "eps_star_over_eps_spinodal": 0.9857525244550814,
+          "h_star_GeV3": 1024419805190.9226,
+          "h_star_over_h_declared": 3.9683203712444015e+24,
+          "method": "bounce",
+          "s_star": 17.546050345941723
+        },
+        "20.0": {
+          "S_star": 195.67862279502256,
+          "eps_star": 0.3784264715447803,
+          "method": "bounce",
+          "s_star": 19.567862279502258
+        }
+      },
+      "easier_channel": "quantum_O4",
+      "eps_declared": 9.561131362150684e-26,
+      "gstar": 107.75,
+      "h_spinodal_GeV3": 1039226154411.5409,
+      "v_T_GeV": 29999.95833324884
+    },
+    {
+      "H_GeV": 1.4116865984194726e-12,
+      "T_GeV": 1000.0,
+      "d3": {
+        "-20.0": {
+          "S_star": 121.21550432890137,
+          "eps_star": 0.3800089692684082,
+          "method": "bounce",
+          "s_star": 1.2779011035126329
+        },
+        "0.0": {
+          "S_star": 141.44703737473077,
+          "eps_star": 0.37898417201042917,
+          "eps_star_over_eps_spinodal": 0.9846297617797292,
+          "h_star_GeV3": 1022830936275.7593,
+          "h_star_over_h_declared": 4.4524835147601507e+24,
+          "method": "bounce",
+          "s_star": 1.4911898123139984
+        },
+        "20.0": {
+          "S_star": 161.64727430898148,
+          "eps_star": 0.3779360229341992,
+          "method": "bounce",
+          "s_star": 1.7041485853060505
+        }
+      },
+      "d4": {
+        "-20.0": {
+          "S_star": 136.5376454401793,
+          "eps_star": 0.38120795909352695,
+          "method": "bounce",
+          "s_star": 13.653764544017928
+        },
+        "0.0": {
+          "S_star": 156.81457279005448,
+          "eps_star": 0.3802960977046331,
+          "eps_star_over_eps_spinodal": 0.9880382447169035,
+          "h_star_GeV3": 1026371659834.2351,
+          "h_star_over_h_declared": 4.467896632134014e+24,
+          "method": "bounce",
+          "s_star": 15.681457279005448
+        },
+        "20.0": {
+          "S_star": 177.05739256907125,
+          "eps_star": 0.3793393976431326,
+          "method": "bounce",
+          "s_star": 17.705739256907126
+        }
+      },
+      "easier_channel": "thermal_O3",
+      "eps_declared": 8.511747898764416e-26,
+      "gstar": 107.75,
+      "h_spinodal_GeV3": 1038797501333.883,
+      "v_T_GeV": 29995.83303838496
+    },
+    {
+      "H_GeV": 1.2696710677871335e-11,
+      "T_GeV": 2999.0,
+      "d3": {
+        "-20.0": {
+          "S_star": 116.76629543986155,
+          "eps_star": 0.3675443237019435,
+          "method": "bounce",
+          "s_star": 3.695863293536306
+        },
+        "0.0": {
+          "S_star": 137.0060716111574,
+          "eps_star": 0.3641275879359179,
+          "eps_star_over_eps_spinodal": 0.9460312241137708,
+          "h_star_GeV3": 979462450277.5806,
+          "h_star_over_h_declared": 5.685875960822484e+27,
+          "method": "bounce",
+          "s_star": 4.336488617300297
+        },
+        "20.0": {
+          "S_star": 157.2124306750085,
+          "eps_star": 0.3607267168514319,
+          "method": "bounce",
+          "s_star": 4.976056229501923
+        }
+      },
+      "d4": {
+        "-20.0": {
+          "S_star": 127.61175113519639,
+          "eps_star": 0.38159176639109105,
+          "method": "bounce",
+          "s_star": 12.761175113519638
+        },
+        "0.0": {
+          "S_star": 147.90693270050565,
+          "eps_star": 0.38070302497916697,
+          "eps_star_over_eps_spinodal": 0.9890954727886209,
+          "h_star_GeV3": 1024048520431.8138,
+          "h_star_over_h_declared": 5.944702487970773e+27,
+          "method": "bounce",
+          "s_star": 14.790693270050564
+        },
+        "20.0": {
+          "S_star": 168.16364133657132,
+          "eps_star": 0.3797647936017442,
+          "method": "bounce",
+          "s_star": 16.81636413365713
+        }
+      },
+      "easier_channel": "thermal_O3",
+      "eps_declared": 6.404071957335582e-29,
+      "gstar": 107.75,
+      "h_spinodal_GeV3": 1035338396145.5688,
+      "v_T_GeV": 29962.501510254442
+    }
+  ],
+  "scope": "Supplied spectator model only. Leading resummed high-T potential along the singlet direction; single-field bounces with the three-field sandwich; the fluctuation determinant is a declared band of exp(+-20). One-loop zero-temperature Coleman-Weinberg corrections (relative size lam/16pi^2) and two-loop thermal terms are not included. No lattice, real-time or network simulation.",
+  "spinodal": {
+    "C_exact": {
+      "3": 62.14844908991308,
+      "4": 179.36197452708896
+    },
+    "approach": {
+      "3": {
+        "C": 62.234613431338886,
+        "deltas": [
+          0.0001,
+          1e-05,
+          1e-06
+        ],
+        "ratios": [
+          63.02529852058214,
+          62.42207483594286,
+          62.234613431338886
+        ]
+      },
+      "4": {
+        "C": 179.9911410835213,
+        "deltas": [
+          0.0001,
+          1e-05,
+          1e-06
+        ],
+        "ratios": [
+          185.8086441440453,
+          181.363216633674,
+          179.9911410835213
+        ]
+      }
+    },
+    "cubic_bounce": {
+      "3": 43.66023671624231,
+      "4": 204.4284433419212
+    },
+    "eps_sp": 0.3849001794597505
+  },
+  "three_field_sandwich": {
+    "hypothesis": "The CGM reduced-functional characterisation of the least-action bounce, for the three-component field.",
+    "rows": [
+      {
+        "T_GeV": 0.03,
+        "d": 4,
+        "delta": 6.434112248504393e-07,
+        "eps": 0.3758661029381119,
+        "upper_factor": 1.0000012868228634
+      },
+      {
+        "T_GeV": 1.0,
+        "d": 4,
+        "delta": 6.72781839682041e-07,
+        "eps": 0.37757042628287424,
+        "upper_factor": 1.0000013455641317
+      },
+      {
+        "T_GeV": 100.0,
+        "d": 3,
+        "delta": 1.2071225159056962e-06,
+        "eps": 0.384562461828028,
+        "upper_factor": 1.0000018106843203
+      },
+      {
+        "T_GeV": 100.0,
+        "d": 4,
+        "delta": 7.171942639322005e-07,
+        "eps": 0.37941632356566296,
+        "upper_factor": 1.0000014343890424
+      },
+      {
+        "T_GeV": 1000.0,
+        "d": 3,
+        "delta": 8.789676978102935e-07,
+        "eps": 0.37898417201042917,
+        "upper_factor": 1.0000013184518364
+      },
+      {
+        "T_GeV": 1000.0,
+        "d": 4,
+        "delta": 7.447326270912116e-07,
+        "eps": 0.3802960977046331,
+        "upper_factor": 1.000001489465809
+      },
+      {
+        "T_GeV": 2999.0,
+        "d": 3,
+        "delta": 6.485106710126983e-07,
+        "eps": 0.3641275879359179,
+        "upper_factor": 1.000000972766164
+      },
+      {
+        "T_GeV": 2999.0,
+        "d": 4,
+        "delta": 7.581729207698194e-07,
+        "eps": 0.38070302497916697,
+        "upper_factor": 1.0000015163464162
+      }
+    ],
+    "statement": "For d=3,4 the bounce minimises R=(2/d)((d-2)/d)^{(d-2)/2} T^{d/2}/(-U)^{(d-2)/2} over configurations with U<0 (Coleman-Glaser-Martin). The three-field potential is the biased source quartic plus two nonnegative squares and has the same false-vacuum energy. So projection gives S1<=S3, and the valley lift (S=-a u^2/mu^2, eta^2=eta0^2-beta(u^2-1)) gives S3<=S1(1+delta)^{d/2}."
+  }
+}

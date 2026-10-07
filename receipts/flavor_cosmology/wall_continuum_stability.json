@@ -1,0 +1,191 @@
+{
+ "conclusions": {
+  "angular_Higgs_and_gauge_nonnegative": true,
+  "hypotheses_P1_to_P5_verified": true,
+  "opposite_sector_positive": true,
+  "status": "Exact operator identities; the qualitative hypotheses are checked on the floating-point profile (core) and by exponential-sum sign counting (tail). Not an interval-arithmetic enclosure of the profile.",
+  "translation_sector_nonnegative_kernel_Phi_prime": true
+ },
+ "consistency_with_Jost_census": {
+  "meaning": "The continuum Jost census finds the translation zero mode and no other state below the Higgs threshold, as the theorem requires.",
+  "opposite_lowest_state": 0.1499997195082917,
+  "translation_pole": [
+   7.635099117299199e-14,
+   -5.70588651245263e-17
+  ]
+ },
+ "declared_Higgs": {
+  "lam": 0.13,
+  "portal": 1e-07,
+  "v_GeV": 246.0
+ },
+ "declared_model": {
+  "bias_h0_GeV3": 0.0,
+  "bias_onset_GeV": 0.0,
+  "current_g_GeV": 3000.0,
+  "heavy_mass_GeV": 300000.0,
+  "lam": 0.1,
+  "thermal_c": 0.025000033333333335,
+  "v_GeV": 30000.0
+ },
+ "input_dimensionful_receipt_sha256": "01b8b8adc9103f6223aa202e10d35474f22c75e82cfd85cfd46414d2c111cdd9",
+ "physical": {
+  "Goldstone_factorization": {
+   "max_Goldstone_potential": 1.6853727760463187e-09,
+   "max_abs_difference": 1.3234889800848443e-23,
+   "min_Goldstone_potential": -9.815388938079917e-08
+  },
+  "h_ge_h0": {
+   "argmin_rho": 2869.9922215344004,
+   "min_h_minus_h0": 0.0
+  },
+  "opposite_sector_Schur": {
+   "Higgs_block_floor": 1.7382400000000005e-05,
+   "margin": 0.1999999999999991,
+   "max_relative_residual": 8.329872236310123e-10,
+   "mediator_block_floor": 100.0,
+   "nu_over_u2_max": 1.5476390107444384e-13,
+   "supersolution_coefficient": 0.20000000000015386
+  },
+  "signs_on_core": {
+   "P1_max_u": 0.9999970189627422,
+   "P1_min_one_minus_u": 2.981037257820951e-06,
+   "P1_min_u_over_rho_near0": 0.2199530681745426,
+   "P2_min_du": 1.3331557288257476e-06,
+   "P3_max_dy": -9.960335081506502e-11,
+   "P3_max_dy_over_rho_near0": -9.326247872589775e-05,
+   "P4_max_dh": -8.049468804324623e-16,
+   "P4_max_dh_over_rho_near0": -7.915490322325648e-10,
+   "P5_min_h": 0.008200773810438195,
+   "all_strict": true,
+   "h_minus_h0_min": 7.738104381947719e-07,
+   "mediator_decoupled": false,
+   "sampled_range": [
+    0.0,
+    30.0
+   ],
+   "slopes_at_0": {
+    "du": 0.2236067979717581,
+    "minus_ddh": 8.049468804324767e-10,
+    "minus_ddy": 9.960335081504942e-05
+   }
+  },
+  "tail": {
+   "R_t": 30.0,
+   "all_hold": true,
+   "decay_rates": [
+    0.004181196001144476,
+    0.4472126992832216,
+    10.000020040059917
+   ],
+   "decaying_mode_consistency": [
+    -4.718334348472809e-05,
+    -1.4905249965395371e-06,
+    -0.9105652408139059
+   ],
+   "mode_amplitudes": [
+    7.738104626415123e-07,
+    -2.9810432374455206e-06,
+    -9.01205173477155e-15
+   ],
+   "rows": {
+    "dh_negative": {
+     "coefficients_by_decay": [
+      -3.2354532120404483e-09,
+      1.093289275532786e-14,
+      2.9618653330161197e-27
+     ],
+     "holds": true,
+     "sign_changes": 1
+    },
+    "du_positive": {
+     "coefficients_by_decay": [
+      2.6533035653701057e-17,
+      1.3331577158879608e-06,
+      1.8060223699784954e-16
+     ],
+     "holds": true,
+     "sign_changes": 0
+    },
+    "dy_negative": {
+     "coefficients_by_decay": [
+      -5.306608058463024e-20,
+      -2.671658727815349e-09,
+      9.012051698579004e-14
+     ],
+     "holds": true,
+     "sign_changes": 1
+    },
+    "h_minus_h0_positive": {
+     "coefficients_by_decay": [
+      7.738104626415123e-07,
+      -2.444674038293357e-14,
+      -2.961859397432141e-28
+     ],
+     "holds": true,
+     "sign_changes": 1
+    },
+    "u_minus_1_negative": {
+     "coefficients_by_decay": [
+      -6.3458004949871855e-15,
+      -2.981037251457089e-06,
+      -1.8060187507060978e-17
+     ],
+     "holds": true,
+     "sign_changes": 0
+    }
+   }
+  },
+  "translation_identity": [
+   {
+    "lhs": 0.004397567550717676,
+    "rhs": 0.004397567776935086
+   },
+   {
+    "lhs": 0.01798382758847396,
+    "rhs": 0.017983829948644923
+   },
+   {
+    "lhs": 0.06688244147099646,
+    "rhs": 0.06688244240181354
+   }
+  ]
+ },
+ "variations": {
+  "box_16": {
+   "Schur_margin": 0.1999999999999991,
+   "identity_max_relative_gap": 1.3123850526756615e-07,
+   "min_h_minus_h0": 0.0,
+   "signs_all_strict": true,
+   "tail_all_hold": true
+  },
+  "box_8": {
+   "Schur_margin": 0.1999999999999991,
+   "identity_max_relative_gap": 1.3123850526756615e-07,
+   "min_h_minus_h0": 0.0,
+   "signs_all_strict": true,
+   "tail_all_hold": true
+  },
+  "g=0": {
+   "Schur_margin": 0.1999999999999991,
+   "identity_max_relative_gap": 1.31288767947542e-07,
+   "min_h_minus_h0": 0.0,
+   "signs_all_strict": true,
+   "tail_all_hold": true
+  },
+  "g=30000": {
+   "Schur_margin": 0.1999999999999991,
+   "identity_max_relative_gap": 1.264474518430867e-07,
+   "min_h_minus_h0": 0.0,
+   "signs_all_strict": true,
+   "tail_all_hold": true
+  },
+  "kappa=1e-6": {
+   "Schur_margin": 0.19999999999903212,
+   "identity_max_relative_gap": 1.3123850583748499e-07,
+   "min_h_minus_h0": 0.0,
+   "signs_all_strict": true,
+   "tail_all_hold": true
+  }
+ }
+}

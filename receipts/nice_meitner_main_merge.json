@@ -1,0 +1,19 @@
+{
+  "schema": "pp-branch-merge/1",
+  "main_branch": "claude/laughing-lamport-qqzdo9",
+  "merged_branch": "claude/nice-meitner-98foon",
+  "main_parent": "8ab0c96db7636485a48bc508fff04e4e4a6f8d66",
+  "merged_parent": "3d2f5f471ab2f563edcccb0bbf33857693c4dad0",
+  "unique_integration_tests_passed": 131,
+  "initial_skips": 4,
+  "initial_skip_reason": "python-flint Arb dependency absent",
+  "resolution": "Installed python-flint 0.9.0; all four certified genus-two tests rerun and passed",
+  "resolved_conflicts": [
+    "docs/FLAVOR_COSMOLOGY_MONOGRAPH.md",
+    "output/pdf/Flavor_Cosmology_and_Tree_Decay.pdf"
+  ],
+  "resolution_method": "Retained both source chapters; regenerated and visually inspected the combined PDF",
+  "combined_monograph_pages": 26,
+  "monograph_sha256": "ae761be089a7b656b954913d048f65f35672bfb2b957dd3fc26761c66ab71730",
+  "lean_build_scope": "Merge adds Python mathematics and scientific content; no new Lean source files on the merged branch"
+}
