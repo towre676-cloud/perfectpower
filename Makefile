@@ -3,6 +3,10 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
+.PHONY: residue-determinant
+residue-determinant:
+	bash scripts/check_residue_determinant.sh
+
 .PHONY: elliptic-bridges
 elliptic-bridges:
 	bash scripts/check_elliptic_bridges.sh

@@ -1,0 +1,3 @@
+# OpenAI mathematical source attribution
+
+The adapted proofs in PerfectPower/IntegralKernelWitness.lean and PerfectPower/ResidueDeterminantCertificate.lean originate from OpenAI's Apache-2.0 repository https://github.com/openai/math at commit adc7f1241b42e322a6451854ab7e4b4c146bf78a, specifically lean/OAI/NumberTheory/PowerFree/IntegralKernels.lean and ResidueRelations.lean. Copyright 2026 OpenAI. PerfectPower changes namespaces, uses its existing Mathlib/Lean 4.20.0 pin, adds explicit certificate interfaces, and independently compiles the selected declarations. No manuscript-wide verification or adoption of headline results is asserted. Upstream pins Lean 4.34.1; importing its full library is not part of this extraction.

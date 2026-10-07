@@ -30,6 +30,11 @@ The [elliptic division Lean foundation](docs/ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md
 
 These are implemented capabilities within the scopes below. The [application roadmap](docs/DIRECT_USE_BUILD_ROADMAP.md) also records proposed extensions; a roadmap entry is not itself a delivered feature. Workload-specific [solver measurements](docs/HOST_ADAPTER.md) and [incremental replay measurements](industrial_performance/REPLAY_README.md) describe performance evidence without asserting a general speed advantage over conventional tools.
 
+
+## Exact bounded auxiliary relations
+
+Integer point sets now produce source-bound auxiliary polynomial relations, with reusable Lean proofs of rational kernel spanning, weighted local-expansion determinant divisibility and exact vanishing from a strict magnitude bound. The [monograph](docs/RESIDUE_DETERMINANT_MONOGRAPH.pdf), [source and scope](docs/RESIDUE_DETERMINANT_MONOGRAPH.md), [handoff](CLAUDE_CODE_RESIDUE_DETERMINANT_START_HERE.md) and [worked receipts](receipts/residue_determinant/corpus.json) document the independently compiled extraction from OpenAI's mathematical collection. Run `make residue-determinant`. The integral-index counterexample is proved explicitly; no global point classification or integral saturation is asserted.
+
 ## Literature into executable research
 
 All of the latest literature directions have concrete implementations and worked receipts. The [full monograph](docs/LITERATURE_CURVE_EXECUTION_MONOGRAPH.pdf), [mathematical source and literature map](docs/LITERATURE_CURVE_EXECUTION_MONOGRAPH.md), and [twenty-two reproducible receipts](docs/literature_receipts/manifest.json) give algorithms, proofs and boundaries. The core remains standard-library Python.

@@ -1,0 +1,11 @@
+# Focused release validation
+
+Both new modules compiled under Lean 4.20.0 and the repository's pinned Mathlib. The axiom audit checks fourteen reusable theorem declarations and two concrete integral-index declarations. All eleven emitted native programs compiled, including the literal point-to-monomial evaluation identities and rational-spanning connections for nonzero-rank kernel examples. In total the focused logs contain 55 audited theorem records, all using only propext, Classical.choice and Quot.sound. No sorryAx or Lean.ofReduceBool occurs. Logs and the structured record are in receipts/residue_determinant.
+
+All fourteen new Python tests pass, including nine public query operations, source mutation rejection, nonunit transformation rejection, rank extremes and unresolved determinant bounds. The existing interface, query-space and native-bridge suites pass another 27 tests, for 41 focused and adjacent cases. No full historical Lean or Python rebuild is claimed. The twelve-packet corpus reproduces deterministically with python/develop_residue_determinant.py.
+
+The independent seeded cross-check compares determinant values and matrix ranks against SymPy on 120 cases in dimensions one through six. Thirty-one certificates meet the strict bound and all have zero exact determinant. Reproduce with PYTHONPATH=python python3 python/crosscheck_residue_determinant.py when SymPy is installed; the core producer has no SymPy dependency. The seed, engine version and outcomes are in receipts/residue_determinant/crosscheck.json.
+
+An initial larger rank-six quartic Gram reduction exhausted the default native stack. The release uses the smaller basis 1,x^4,y^2 for that worked curve and explicitly rejects native Gram ranks above four and determinant dimensions above four. The generic formal theorems remain arbitrary-dimensional. Native replay uses a 65536 KB Lean thread stack. These are explicit execution budgets and are not arithmetic nonexistence claims.
+
+The five-page PDF was rendered and every page visually inspected. Apache-2.0 source attribution is pinned to OpenAI commit adc7f1241b42e322a6451854ab7e4b4c146bf78a. The final complete source ZIP parts are independently checked against the published Git tree, with each part below 30,000,000 bytes; package-specific hashes accompany delivery outside this repository snapshot.

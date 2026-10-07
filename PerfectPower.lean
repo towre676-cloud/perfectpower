@@ -400,3 +400,6 @@ import PerfectPower.TriplingCoordinates
 import PerfectPower.TypedDivisionPackets
 import PerfectPower.PolynomialSourceSemantics
 import PerfectPower.SubgroupDivisionClosure
+
+import PerfectPower.IntegralKernelWitness
+import PerfectPower.ResidueDeterminantCertificate

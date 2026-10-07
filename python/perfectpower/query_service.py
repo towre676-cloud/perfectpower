@@ -36,6 +36,25 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'integral_kernel_packet', 'bounded_auxiliary_packet', 'residue_determinant_packet',
+              'verify_integral_kernel', 'verify_bounded_auxiliary', 'verify_residue_determinant',
+              'native_integral_kernel', 'native_bounded_auxiliary', 'native_residue_determinant'}:
+        from . import residue_determinant as rd
+        functions = {'integral_kernel_packet': rd.kernel_packet,
+                     'bounded_auxiliary_packet': rd.auxiliary_packet,
+                     'residue_determinant_packet': rd.determinant_packet,
+                     'verify_integral_kernel': rd.verify_kernel,
+                     'verify_bounded_auxiliary': rd.verify_auxiliary,
+                     'verify_residue_determinant': rd.verify_determinant,
+                     'native_integral_kernel': rd.native_kernel,
+                     'native_bounded_auxiliary': rd.native_auxiliary,
+                     'native_residue_determinant': rd.native_determinant}
+        result = functions[op](**args)
+        if op.startswith('verify_'):
+            return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'):
+            return dict(lean_source=result, execution_verified=False)
+        return result
     if op in {'verify_elliptic_halves','verify_elliptic_independence'}:
         from .elliptic_certificate_verifier import verify_halves,verify_independence
         checker=verify_halves if op=='verify_elliptic_halves' else verify_independence
