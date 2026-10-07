@@ -1,0 +1,82 @@
+{
+  "schema": "pp-fixed-divisor-admissibility/1",
+  "coefficients": [
+    -12
+  ],
+  "start": 0,
+  "step": 1,
+  "pullback_coefficients": [
+    -12
+  ],
+  "degree": 0,
+  "domain": "all signed integers n; original coordinate x=start+step*n",
+  "sample_values": [
+    -12
+  ],
+  "sample_coordinates": [
+    0
+  ],
+  "fixed_divisor": 12,
+  "sample_bezout_weights": [
+    -1
+  ],
+  "forward_differences": [
+    -12
+  ],
+  "primitive_binomial_coefficients": [
+    -1
+  ],
+  "complete": true,
+  "kernel_checked": false,
+  "meaning": "q divides the fixed divisor iff q divides every value in the stated domain",
+  "exponent": 2,
+  "prime_factors": [
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      1
+    ]
+  ],
+  "valuation_rows": [
+    {
+      "prime": 2,
+      "valuation": 2,
+      "universal_obstruction": true,
+      "witness_parameter": null,
+      "witness_coordinate": null,
+      "witness_value": null
+    },
+    {
+      "prime": 3,
+      "valuation": 1,
+      "universal_obstruction": false,
+      "witness_parameter": 0,
+      "witness_coordinate": 0,
+      "witness_value": -12
+    }
+  ],
+  "locally_admissible": false,
+  "fixed_divisor_prime": 2,
+  "zero_polynomial": false,
+  "density_proved": false,
+  "globally_power_free_value_produced": false,
+  "route": "finite consecutive-value gcd; no derivative Bezout hypothesis or residue enumeration",
+  "lean": {
+    "namespace": "FixedDivisor_0c9ba219fc8dcf5c",
+    "source": "import PerfectPower.FixedDivisor\nset_option maxHeartbeats 6000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nnamespace FixedDivisor_0c9ba219fc8dcf5c\nopen Polynomial PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal\nnoncomputable def original : Polynomial \u2124 := C (-12)\nnoncomputable def source : Polynomial \u2124 := C (-12)\ntheorem pullback_checked : source = original.comp (C (0 : \u2124) + C (1 : \u2124)*X) := by\n  norm_num [source, original, Polynomial.add_comp, Polynomial.mul_comp, Polynomial.pow_comp, Polynomial.C_comp, Polynomial.X_comp]\n  <;> ring\ntheorem degree_bound_checked : source.natDegree \u2264 0 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem window_checked : windowGcd source 0 = 12 := by\n  norm_num [windowGcd,source,List.range_succ, List.map_append, valueGcd, Nat.gcd_eq_zero_iff]\ntheorem all_divisors_checked (q : \u2115) : q \u2223 12 \u2194 \u2200 n : \u2124, (q : \u2124) \u2223 original.eval (0+1*n) := by\n  rw [\u2190 window_checked, dvd_windowGcd_iff source 0 q degree_bound_checked]\n  simp only [pullback_checked, Polynomial.eval_comp, Polynomial.eval_add, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]\ntheorem universal_checked (n : \u2124) : (12 : \u2124) \u2223 original.eval (0+1*n) :=\n  (all_divisors_checked 12).mp (dvd_refl _) n\ntheorem obstruction_checked (n : \u2124) : \u00ac PowerFree 2 (original.eval (0+1*n)) := by\n  intro h\n  apply h 2 (by norm_num)\n  exact (by norm_num : (2 : \u2124)^2 \u2223 12).trans (universal_checked n)\nend FixedDivisor_0c9ba219fc8dcf5c\n",
+    "source_sha256": "9e4d8eca0c814db2c32382031fa698af04a20bb971e3fbb9fa4288b5dbe01376",
+    "theorem": "FixedDivisor_0c9ba219fc8dcf5c.obstruction_checked",
+    "declarations": [
+      "FixedDivisor_0c9ba219fc8dcf5c.pullback_checked",
+      "FixedDivisor_0c9ba219fc8dcf5c.degree_bound_checked",
+      "FixedDivisor_0c9ba219fc8dcf5c.window_checked",
+      "FixedDivisor_0c9ba219fc8dcf5c.all_divisors_checked",
+      "FixedDivisor_0c9ba219fc8dcf5c.universal_checked",
+      "FixedDivisor_0c9ba219fc8dcf5c.obstruction_checked"
+    ],
+    "kernel_checked": false
+  }
+}

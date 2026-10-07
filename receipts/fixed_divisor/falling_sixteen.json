@@ -1,0 +1,242 @@
+{
+  "schema": "pp-fixed-divisor-admissibility/1",
+  "coefficients": [
+    0,
+    -1307674368000,
+    4339163001600,
+    -6165817614720,
+    5056995703824,
+    -2706813345600,
+    1009672107080,
+    -272803210680,
+    54631129553,
+    -8207628000,
+    928095740,
+    -78558480,
+    4899622,
+    -218400,
+    6580,
+    -120,
+    1
+  ],
+  "start": 0,
+  "step": 1,
+  "pullback_coefficients": [
+    0,
+    -1307674368000,
+    4339163001600,
+    -6165817614720,
+    5056995703824,
+    -2706813345600,
+    1009672107080,
+    -272803210680,
+    54631129553,
+    -8207628000,
+    928095740,
+    -78558480,
+    4899622,
+    -218400,
+    6580,
+    -120,
+    1
+  ],
+  "degree": 16,
+  "domain": "all signed integers n; original coordinate x=start+step*n",
+  "sample_values": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    20922789888000
+  ],
+  "sample_coordinates": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "fixed_divisor": 20922789888000,
+  "sample_bezout_weights": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "forward_differences": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    20922789888000
+  ],
+  "primitive_binomial_coefficients": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "complete": true,
+  "kernel_checked": false,
+  "meaning": "q divides the fixed divisor iff q divides every value in the stated domain",
+  "exponent": 2,
+  "prime_factors": [
+    [
+      2,
+      15
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      7,
+      2
+    ],
+    [
+      11,
+      1
+    ],
+    [
+      13,
+      1
+    ]
+  ],
+  "valuation_rows": [
+    {
+      "prime": 2,
+      "valuation": 15,
+      "universal_obstruction": true,
+      "witness_parameter": null,
+      "witness_coordinate": null,
+      "witness_value": null
+    },
+    {
+      "prime": 3,
+      "valuation": 6,
+      "universal_obstruction": true,
+      "witness_parameter": null,
+      "witness_coordinate": null,
+      "witness_value": null
+    },
+    {
+      "prime": 5,
+      "valuation": 3,
+      "universal_obstruction": true,
+      "witness_parameter": null,
+      "witness_coordinate": null,
+      "witness_value": null
+    },
+    {
+      "prime": 7,
+      "valuation": 2,
+      "universal_obstruction": true,
+      "witness_parameter": null,
+      "witness_coordinate": null,
+      "witness_value": null
+    },
+    {
+      "prime": 11,
+      "valuation": 1,
+      "universal_obstruction": false,
+      "witness_parameter": 16,
+      "witness_coordinate": 16,
+      "witness_value": 20922789888000
+    },
+    {
+      "prime": 13,
+      "valuation": 1,
+      "universal_obstruction": false,
+      "witness_parameter": 16,
+      "witness_coordinate": 16,
+      "witness_value": 20922789888000
+    }
+  ],
+  "locally_admissible": false,
+  "fixed_divisor_prime": 2,
+  "zero_polynomial": false,
+  "density_proved": false,
+  "globally_power_free_value_produced": false,
+  "route": "finite consecutive-value gcd; no derivative Bezout hypothesis or residue enumeration",
+  "lean": {
+    "namespace": "FixedDivisor_378be3568e03ce3a",
+    "source": "import PerfectPower.FixedDivisor\nset_option maxHeartbeats 6000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nnamespace FixedDivisor_378be3568e03ce3a\nopen Polynomial PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal\nnoncomputable def original : Polynomial \u2124 := C (-1307674368000) * X + C (4339163001600) * X^2 + C (-6165817614720) * X^3 + C (5056995703824) * X^4 + C (-2706813345600) * X^5 + C (1009672107080) * X^6 + C (-272803210680) * X^7 + C (54631129553) * X^8 + C (-8207628000) * X^9 + C (928095740) * X^10 + C (-78558480) * X^11 + C (4899622) * X^12 + C (-218400) * X^13 + C (6580) * X^14 + C (-120) * X^15 + C (1) * X^16\nnoncomputable def source : Polynomial \u2124 := C (-1307674368000) * X + C (4339163001600) * X^2 + C (-6165817614720) * X^3 + C (5056995703824) * X^4 + C (-2706813345600) * X^5 + C (1009672107080) * X^6 + C (-272803210680) * X^7 + C (54631129553) * X^8 + C (-8207628000) * X^9 + C (928095740) * X^10 + C (-78558480) * X^11 + C (4899622) * X^12 + C (-218400) * X^13 + C (6580) * X^14 + C (-120) * X^15 + C (1) * X^16\ntheorem pullback_checked : source = original.comp (C (0 : \u2124) + C (1 : \u2124)*X) := by\n  norm_num [source, original, Polynomial.add_comp, Polynomial.mul_comp, Polynomial.pow_comp, Polynomial.C_comp, Polynomial.X_comp]\n  <;> ring\ntheorem degree_bound_checked : source.natDegree \u2264 16 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem window_checked : windowGcd source 16 = 20922789888000 := by\n  norm_num [windowGcd,source,List.range_succ, List.map_append, valueGcd, Nat.gcd_eq_zero_iff]\ntheorem all_divisors_checked (q : \u2115) : q \u2223 20922789888000 \u2194 \u2200 n : \u2124, (q : \u2124) \u2223 original.eval (0+1*n) := by\n  rw [\u2190 window_checked, dvd_windowGcd_iff source 16 q degree_bound_checked]\n  simp only [pullback_checked, Polynomial.eval_comp, Polynomial.eval_add, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]\ntheorem universal_checked (n : \u2124) : (20922789888000 : \u2124) \u2223 original.eval (0+1*n) :=\n  (all_divisors_checked 20922789888000).mp (dvd_refl _) n\ntheorem obstruction_checked (n : \u2124) : \u00ac PowerFree 2 (original.eval (0+1*n)) := by\n  intro h\n  apply h 2 (by norm_num)\n  exact (by norm_num : (2 : \u2124)^2 \u2223 20922789888000).trans (universal_checked n)\nend FixedDivisor_378be3568e03ce3a\n",
+    "source_sha256": "b5094d6a00832d5bd901f3c8af12cac426a86cdc5448a561efb2c29a3d61552e",
+    "theorem": "FixedDivisor_378be3568e03ce3a.obstruction_checked",
+    "declarations": [
+      "FixedDivisor_378be3568e03ce3a.pullback_checked",
+      "FixedDivisor_378be3568e03ce3a.degree_bound_checked",
+      "FixedDivisor_378be3568e03ce3a.window_checked",
+      "FixedDivisor_378be3568e03ce3a.all_divisors_checked",
+      "FixedDivisor_378be3568e03ce3a.universal_checked",
+      "FixedDivisor_378be3568e03ce3a.obstruction_checked"
+    ],
+    "kernel_checked": false
+  }
+}

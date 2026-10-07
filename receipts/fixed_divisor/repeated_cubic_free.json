@@ -1,0 +1,100 @@
+{
+  "schema": "pp-fixed-divisor-admissibility/1",
+  "coefficients": [
+    0,
+    0,
+    1,
+    -2,
+    1
+  ],
+  "start": 0,
+  "step": 1,
+  "pullback_coefficients": [
+    0,
+    0,
+    1,
+    -2,
+    1
+  ],
+  "degree": 4,
+  "domain": "all signed integers n; original coordinate x=start+step*n",
+  "sample_values": [
+    0,
+    0,
+    4,
+    36,
+    144
+  ],
+  "sample_coordinates": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "fixed_divisor": 4,
+  "sample_bezout_weights": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "forward_differences": [
+    0,
+    0,
+    4,
+    24,
+    24
+  ],
+  "primitive_binomial_coefficients": [
+    0,
+    0,
+    1,
+    6,
+    6
+  ],
+  "complete": true,
+  "kernel_checked": false,
+  "meaning": "q divides the fixed divisor iff q divides every value in the stated domain",
+  "exponent": 3,
+  "prime_factors": [
+    [
+      2,
+      2
+    ]
+  ],
+  "valuation_rows": [
+    {
+      "prime": 2,
+      "valuation": 2,
+      "universal_obstruction": false,
+      "witness_parameter": 2,
+      "witness_coordinate": 2,
+      "witness_value": 4
+    }
+  ],
+  "locally_admissible": true,
+  "fixed_divisor_prime": null,
+  "zero_polynomial": false,
+  "density_proved": false,
+  "globally_power_free_value_produced": false,
+  "route": "finite consecutive-value gcd; no derivative Bezout hypothesis or residue enumeration",
+  "lean": {
+    "namespace": "FixedDivisor_6e61471d0236089c",
+    "source": "import PerfectPower.FixedDivisor\nset_option maxHeartbeats 6000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nnamespace FixedDivisor_6e61471d0236089c\nopen Polynomial PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal\nnoncomputable def original : Polynomial \u2124 := C (1) * X^2 + C (-2) * X^3 + C (1) * X^4\nnoncomputable def source : Polynomial \u2124 := C (1) * X^2 + C (-2) * X^3 + C (1) * X^4\ntheorem pullback_checked : source = original.comp (C (0 : \u2124) + C (1 : \u2124)*X) := by\n  norm_num [source, original, Polynomial.add_comp, Polynomial.mul_comp, Polynomial.pow_comp, Polynomial.C_comp, Polynomial.X_comp]\n  <;> ring\ntheorem degree_bound_checked : source.natDegree \u2264 4 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem window_checked : windowGcd source 4 = 4 := by\n  norm_num [windowGcd,source,List.range_succ, List.map_append, valueGcd, Nat.gcd_eq_zero_iff]\ntheorem all_divisors_checked (q : \u2115) : q \u2223 4 \u2194 \u2200 n : \u2124, (q : \u2124) \u2223 original.eval (0+1*n) := by\n  rw [\u2190 window_checked, dvd_windowGcd_iff source 4 q degree_bound_checked]\n  simp only [pullback_checked, Polynomial.eval_comp, Polynomial.eval_add, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]\ntheorem universal_checked (n : \u2124) : (4 : \u2124) \u2223 original.eval (0+1*n) :=\n  (all_divisors_checked 4).mp (dvd_refl _) n\ntheorem fixed_divisor_checked : fixedDivisor source = 4 := by\n  rw [\u2190 windowGcd_eq_fixedDivisor source 4 degree_bound_checked, window_checked]\ntheorem power_free_checked : PowerFree 3 (4 : \u2124) := by\n  intro p hp hd\n  have hd' : p^3 \u2223 4 := by exact_mod_cast hd\n  have hpd : p \u2223 4 := (dvd_pow_self p (by norm_num : 3 \u2260 0)).trans hd'\n  have hf : ([2, 2] : List \u2115).Perm (4 : \u2115).primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n      rcases hp with rfl | rfl\n      all_goals norm_num\n  have hm := (Nat.mem_primeFactorsList_iff_dvd (by norm_num : 4 \u2260 0) hp).mpr hpd\n  rw [\u2190 hf.mem_iff] at hm\n  simp only [List.mem_cons, List.not_mem_nil, or_false] at hm\n  rcases hm with rfl | rfl\n  all_goals norm_num at hd\ntheorem admissible_checked : LocallyAdmissible source 3 := by\n  rw [admissible_iff_fixedDivisor, fixed_divisor_checked]\n  exact power_free_checked\nend FixedDivisor_6e61471d0236089c\n",
+    "source_sha256": "ad089eeba3982f7ad16671003143c6aaa340827073ab20fb511dad20fdf4ef9f",
+    "theorem": "FixedDivisor_6e61471d0236089c.admissible_checked",
+    "declarations": [
+      "FixedDivisor_6e61471d0236089c.pullback_checked",
+      "FixedDivisor_6e61471d0236089c.degree_bound_checked",
+      "FixedDivisor_6e61471d0236089c.window_checked",
+      "FixedDivisor_6e61471d0236089c.all_divisors_checked",
+      "FixedDivisor_6e61471d0236089c.universal_checked",
+      "FixedDivisor_6e61471d0236089c.fixed_divisor_checked",
+      "FixedDivisor_6e61471d0236089c.power_free_checked",
+      "FixedDivisor_6e61471d0236089c.admissible_checked"
+    ],
+    "kernel_checked": false
+  }
+}

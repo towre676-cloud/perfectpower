@@ -1,0 +1,69 @@
+{
+  "schema": "pp-repeated-power-free/1",
+  "coefficients": [
+    0,
+    0,
+    1,
+    1
+  ],
+  "exponent": 2,
+  "repeated_factor": [
+    0,
+    1
+  ],
+  "multiplicity": 2,
+  "cofactor": [
+    1,
+    1
+  ],
+  "candidates": [
+    -1,
+    1
+  ],
+  "candidate_values": [
+    {
+      "input": -1,
+      "value": 0,
+      "prime_factors": [],
+      "power_free": false,
+      "obstruction_prime": 2
+    },
+    {
+      "input": 1,
+      "value": 2,
+      "prime_factors": [
+        [
+          2,
+          1
+        ]
+      ],
+      "power_free": true,
+      "obstruction_prime": null
+    }
+  ],
+  "solutions": [
+    1
+  ],
+  "complete": true,
+  "kernel_checked": false,
+  "global_finiteness": true,
+  "global_density": 0,
+  "meaning": "exact k-free values for all signed integer inputs; f=g^k*h forces g(x)=\u00b11",
+  "lean": {
+    "namespace": "RepeatedPowerFree_9d217fd78a01ba32",
+    "source": "import PerfectPower.FixedDivisor\nset_option maxHeartbeats 8000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nnamespace RepeatedPowerFree_9d217fd78a01ba32\nopen Polynomial PerfectPower PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal\nnoncomputable def source : Polynomial \u2124 := C (1) * X^2 + C (1) * X^3\nnoncomputable def repeated : Polynomial \u2124 := C (1) * X\nnoncomputable def cofactor : Polynomial \u2124 := C (1) + C (1) * X\ndef coefficients : List \u2124 := [0, 1]\ntheorem factorization_checked : source = repeated^2*cofactor := by\n  norm_num [source,repeated,cofactor]\n  <;> ring\ntheorem factor_source_checked : repeated = NativePolynomialSquare.polynomial coefficients := by\n  norm_num [repeated,coefficients,NativePolynomialSquare.polynomial]\n  <;> ring\ntheorem candidates_checked : NativePolynomialRoots.fibre coefficients 1 \u222a NativePolynomialRoots.fibre coefficients (-1) = ({-1,1} : Finset \u2124) := by\n  decide\ntheorem finite_reduction_checked (x : \u2124) (hx : PowerFree 2 (source.eval x)) : x \u2208 ({-1,1} : Finset \u2124) := by\n  rw [\u2190 candidates_checked]\n  exact repeated_candidate_complete source repeated cofactor coefficients 2 factorization_checked factor_source_checked (by decide) (by decide) x hx\ntheorem candidate_0_checked : \u00ac PowerFree 2 (source.eval (-1 : \u2124)) := by\n  intro hx\n  apply hx 2 (by norm_num)\n  norm_num [source]\ntheorem constant_1_checked : PowerFree 2 (2 : \u2124) := by\n  intro p hp hd\n  have hd' : p^2 \u2223 2 := by\n    have hc : ((p^2 : \u2115) : \u2124) \u2223 (2 : \u2124) := by simpa only [Nat.cast_pow] using hd\n    have hh := Int.natCast_dvd.mp hc\n    simpa using hh\n  have hpd : p \u2223 2 := (dvd_pow_self p (by norm_num : 2 \u2260 0)).trans hd'\n  have hf : ([2] : List \u2115).Perm (2 : \u2115).primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n      rcases hp with rfl\n      all_goals norm_num\n  have hm := (Nat.mem_primeFactorsList_iff_dvd (by norm_num : 2 \u2260 0) hp).mpr hpd\n  rw [\u2190 hf.mem_iff] at hm\n  simp only [List.mem_cons, List.not_mem_nil, or_false] at hm\n  rcases hm with rfl\n  all_goals norm_num at hd\ntheorem candidate_1_checked : PowerFree 2 (source.eval (1 : \u2124)) := by\n  have he : source.eval (1 : \u2124) = 2 := by norm_num [source]\n  rw [he]\n  exact constant_1_checked\ntheorem all_solutions_checked (x : \u2124) : PowerFree 2 (source.eval x) \u2194 x \u2208 ({1} : Finset \u2124) := by\n  constructor\n  \u00b7 intro hx\n    have hc := finite_reduction_checked x hx\n    simp only [Finset.mem_insert, Finset.mem_singleton, Finset.not_mem_empty] at hc\n    rcases hc with rfl | rfl\n    \u00b7 exact False.elim (candidate_0_checked hx)\n    \u00b7 decide\n  \u00b7 intro hx\n    simp only [Finset.mem_insert, Finset.mem_singleton, Finset.not_mem_empty] at hx\n    rcases hx with rfl\n    \u00b7 exact candidate_1_checked\nend RepeatedPowerFree_9d217fd78a01ba32\n",
+    "source_sha256": "5961cb8df7770e127284e9b7f2c2398f84871343b99f247232836296efb3efdd",
+    "theorem": "RepeatedPowerFree_9d217fd78a01ba32.all_solutions_checked",
+    "declarations": [
+      "RepeatedPowerFree_9d217fd78a01ba32.factorization_checked",
+      "RepeatedPowerFree_9d217fd78a01ba32.factor_source_checked",
+      "RepeatedPowerFree_9d217fd78a01ba32.candidates_checked",
+      "RepeatedPowerFree_9d217fd78a01ba32.finite_reduction_checked",
+      "RepeatedPowerFree_9d217fd78a01ba32.candidate_0_checked",
+      "RepeatedPowerFree_9d217fd78a01ba32.candidate_1_checked",
+      "RepeatedPowerFree_9d217fd78a01ba32.constant_1_checked",
+      "RepeatedPowerFree_9d217fd78a01ba32.all_solutions_checked"
+    ],
+    "kernel_checked": false
+  }
+}

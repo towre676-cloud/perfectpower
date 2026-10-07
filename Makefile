@@ -260,3 +260,9 @@ dresden-polynomial:
 .PHONY: check-residue-atlas
 check-residue-atlas:
 	bash scripts/check_residue_atlas.sh
+
+.PHONY: fixed-divisor-receipts fixed-divisor-check
+fixed-divisor-receipts:
+	PYTHONPATH=python python3 python/develop_fixed_divisor.py
+fixed-divisor-check:
+	bash scripts/check_fixed_divisor.sh

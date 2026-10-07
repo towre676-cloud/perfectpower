@@ -30,6 +30,14 @@ def render(source,output,*,edition='polynomial'):
             'scope':'Complete declared prime-power depths and exact modular populations. Global height bounds, general addressing refinement and compiler semantics retain independent obligations.',
             'running':'Complete residue atlases and exact original-coordinate populations',
         },
+        'fixeddivisor':{
+            'title':'Universal divisibility and complete repeated-factor arithmetic',
+            'subtitle':'Finite windows, exact progression obstructions<br/>and global power-free fibres',
+            'description':'A degree-plus-one gcd controls universal integer divisibility without separability. Repeated k-fold factors reduce global k-free values to complete finite unit fibres.',
+            'metrics':[('185','generic and generated declarations audited'),('2,700','independent local residue comparisons'),('8','complete global repeated-factor packets')],
+            'scope':'Kernel-checked finite-window and repeated-factor mathematics with source-bound worked packets. Separable polynomial density and generic compiler refinement remain open.',
+            'running':'Universal divisibility, integer-valued normalization and exact finite hits',
+        },
         'boundedpatch':{
             'title':'Complete bounded residue patches',
             'subtitle':'Smooth first lifts<br/>and auxiliary relations for every bounded solution',
@@ -227,6 +235,7 @@ def render(source,output,*,edition='polynomial'):
     pdfmetrics.registerFontFamily('Body',normal='Body',bold='BodyBold',italic='Body',boldItalic='BodyBold')
     navy=colors.HexColor('#173348');teal=colors.HexColor('#157A86')
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
+    if edition=='fixeddivisor':body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
     if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
     if edition=='research':body.leading=14.8;body.spaceAfter=8
     heading=ParagraphStyle('heading',fontName='LabelBold',fontSize=14,leading=19,spaceBefore=18,spaceAfter=9,textColor=teal,keepWithNext=True)
@@ -297,7 +306,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','fixeddivisor'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

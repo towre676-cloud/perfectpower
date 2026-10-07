@@ -1,0 +1,7 @@
+# Universal divisibility and complete repeated-factor arithmetic
+
+This release adds a Lean finite-window fixed-divisor theorem for every integer polynomial, with no separability assumption. `PerfectPower/FixedDivisor.lean` is the generic mathematical entry point. `python/perfectpower/fixed_divisor.py` computes exact progression divisors and emits source-bound local or global certificates. The repeated-factor route proves exact k-free input sets by reducing f=g^k*h to g=±1. `docs/FIXED_DIVISOR_MONOGRAPH.md` explains the mathematics, public operations, budgets and remaining scope.
+
+Run `make fixed-divisor-check` with the pinned Lean 4.20 toolchain and Mathlib cache. The retained release has 16 generic and 169 emitted declarations, 24 focused tests, 180 independent polynomial cases, 2700 residue comparisons, 1260 signed Newton reconstructions and 2408 global repeated-factor comparisons. The source hash and standard-axiom audit are in `receipts/fixed_divisor/summary.json`. Future emitted packets have not been compiled until a caller runs Lean on their source.
+
+The next arithmetic front is separable polynomial k-free density; arbitrary claims need their analytic hypotheses. Formal Newton/binomial and factorization execution, generic JSON/compiler refinement and wheel assembly remain distinct. Preserve all existing session changes; do not overwrite the flavor, elliptic, residue determinant or Dresden branches of mathematics.

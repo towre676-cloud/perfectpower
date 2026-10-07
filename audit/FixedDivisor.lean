@@ -1,0 +1,17 @@
+import PerfectPower.FixedDivisor
+#print axioms PerfectPower.FixedDivisor.difference_eval
+#print axioms PerfectPower.FixedDivisor.difference_degree_le
+#print axioms PerfectPower.FixedDivisor.dvd_eval_nat_of_window
+#print axioms PerfectPower.FixedDivisor.dvd_eval_int_of_window
+#print axioms PerfectPower.FixedDivisor.dvd_valueGcd
+#print axioms PerfectPower.FixedDivisor.dvd_windowGcd_iff
+#print axioms PerfectPower.FixedDivisor.dvd_fixedDivisor_iff
+#print axioms PerfectPower.FixedDivisor.rho_eq_iff_universal
+#print axioms PerfectPower.FixedDivisor.admissible_iff_fixedDivisor
+#print axioms PerfectPower.FixedDivisor.windowGcd_eq_fixedDivisor
+#print axioms PerfectPower.FixedDivisor.fixedDivisor_dvd_eval
+#print axioms PerfectPower.FixedDivisor.fixedDivisor_shift
+#print axioms PerfectPower.FixedDivisor.obstruction_of_fixedDivisor
+#print axioms PerfectPower.FixedDivisor.powerFree_power_factor_unit
+#print axioms PerfectPower.FixedDivisor.powerFree_repeated_factor
+#print axioms PerfectPower.FixedDivisor.repeated_candidate_complete

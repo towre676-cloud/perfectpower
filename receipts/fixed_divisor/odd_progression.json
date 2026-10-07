@@ -1,0 +1,86 @@
+{
+  "schema": "pp-fixed-divisor-admissibility/1",
+  "coefficients": [
+    1,
+    0,
+    1
+  ],
+  "start": 1,
+  "step": 2,
+  "pullback_coefficients": [
+    2,
+    4,
+    4
+  ],
+  "degree": 2,
+  "domain": "all signed integers n; original coordinate x=start+step*n",
+  "sample_values": [
+    2,
+    10,
+    26
+  ],
+  "sample_coordinates": [
+    1,
+    3,
+    5
+  ],
+  "fixed_divisor": 2,
+  "sample_bezout_weights": [
+    1,
+    0,
+    0
+  ],
+  "forward_differences": [
+    2,
+    8,
+    8
+  ],
+  "primitive_binomial_coefficients": [
+    1,
+    4,
+    4
+  ],
+  "complete": true,
+  "kernel_checked": false,
+  "meaning": "q divides the fixed divisor iff q divides every value in the stated domain",
+  "exponent": 2,
+  "prime_factors": [
+    [
+      2,
+      1
+    ]
+  ],
+  "valuation_rows": [
+    {
+      "prime": 2,
+      "valuation": 1,
+      "universal_obstruction": false,
+      "witness_parameter": 0,
+      "witness_coordinate": 1,
+      "witness_value": 2
+    }
+  ],
+  "locally_admissible": true,
+  "fixed_divisor_prime": null,
+  "zero_polynomial": false,
+  "density_proved": false,
+  "globally_power_free_value_produced": false,
+  "route": "finite consecutive-value gcd; no derivative Bezout hypothesis or residue enumeration",
+  "lean": {
+    "namespace": "FixedDivisor_f53fcc18cc212cad",
+    "source": "import PerfectPower.FixedDivisor\nset_option maxHeartbeats 6000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nnamespace FixedDivisor_f53fcc18cc212cad\nopen Polynomial PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal\nnoncomputable def original : Polynomial \u2124 := C (1) + C (1) * X^2\nnoncomputable def source : Polynomial \u2124 := C (2) + C (4) * X + C (4) * X^2\ntheorem pullback_checked : source = original.comp (C (1 : \u2124) + C (2 : \u2124)*X) := by\n  norm_num [source, original, Polynomial.add_comp, Polynomial.mul_comp, Polynomial.pow_comp, Polynomial.C_comp, Polynomial.X_comp]\n  <;> ring\ntheorem degree_bound_checked : source.natDegree \u2264 2 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem window_checked : windowGcd source 2 = 2 := by\n  norm_num [windowGcd,source,List.range_succ, List.map_append, valueGcd, Nat.gcd_eq_zero_iff]\ntheorem all_divisors_checked (q : \u2115) : q \u2223 2 \u2194 \u2200 n : \u2124, (q : \u2124) \u2223 original.eval (1+2*n) := by\n  rw [\u2190 window_checked, dvd_windowGcd_iff source 2 q degree_bound_checked]\n  simp only [pullback_checked, Polynomial.eval_comp, Polynomial.eval_add, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]\ntheorem universal_checked (n : \u2124) : (2 : \u2124) \u2223 original.eval (1+2*n) :=\n  (all_divisors_checked 2).mp (dvd_refl _) n\ntheorem fixed_divisor_checked : fixedDivisor source = 2 := by\n  rw [\u2190 windowGcd_eq_fixedDivisor source 2 degree_bound_checked, window_checked]\ntheorem power_free_checked : PowerFree 2 (2 : \u2124) := by\n  intro p hp hd\n  have hd' : p^2 \u2223 2 := by exact_mod_cast hd\n  have hpd : p \u2223 2 := (dvd_pow_self p (by norm_num : 2 \u2260 0)).trans hd'\n  have hf : ([2] : List \u2115).Perm (2 : \u2115).primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n      rcases hp with rfl\n      all_goals norm_num\n  have hm := (Nat.mem_primeFactorsList_iff_dvd (by norm_num : 2 \u2260 0) hp).mpr hpd\n  rw [\u2190 hf.mem_iff] at hm\n  simp only [List.mem_cons, List.not_mem_nil, or_false] at hm\n  rcases hm with rfl\n  all_goals norm_num at hd\ntheorem admissible_checked : LocallyAdmissible source 2 := by\n  rw [admissible_iff_fixedDivisor, fixed_divisor_checked]\n  exact power_free_checked\nend FixedDivisor_f53fcc18cc212cad\n",
+    "source_sha256": "675c4030c7072136a34e356424978ecf6355de62923742cc2dbe7a7fdb644c1c",
+    "theorem": "FixedDivisor_f53fcc18cc212cad.admissible_checked",
+    "declarations": [
+      "FixedDivisor_f53fcc18cc212cad.pullback_checked",
+      "FixedDivisor_f53fcc18cc212cad.degree_bound_checked",
+      "FixedDivisor_f53fcc18cc212cad.window_checked",
+      "FixedDivisor_f53fcc18cc212cad.all_divisors_checked",
+      "FixedDivisor_f53fcc18cc212cad.universal_checked",
+      "FixedDivisor_f53fcc18cc212cad.fixed_divisor_checked",
+      "FixedDivisor_f53fcc18cc212cad.power_free_checked",
+      "FixedDivisor_f53fcc18cc212cad.admissible_checked"
+    ],
+    "kernel_checked": false
+  }
+}

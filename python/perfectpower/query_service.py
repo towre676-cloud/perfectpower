@@ -86,6 +86,13 @@ def dispatch(catalogue, request):
         from .elliptic_division_verifier import verify_thirds,verify_division
         checker=verify_thirds if op=='verify_elliptic_thirds' else verify_division
         return dict(valid=checker(**args),execution_verified=False)
+    if op in {'repeated_power_free','native_repeated_power_free'}:
+        from .fixed_divisor import repeated_power_free,native_repeated_power_free
+        return {'repeated_power_free':repeated_power_free,'native_repeated_power_free':native_repeated_power_free}[op](**args)
+    if op in {'fixed_divisor','fixed_divisor_admissibility','native_fixed_divisor_certificate'}:
+        from .fixed_divisor import fixed_divisor,admissibility,native_certificate
+        operations={'fixed_divisor':fixed_divisor,'fixed_divisor_admissibility':admissibility,'native_fixed_divisor_certificate':native_certificate}
+        return operations[op](**args)
     if op in {'power_free_local','power_free_wheel','native_power_free_certificate'}:
         from .power_free_local import local_admissibility,power_free_wheel,native_certificate
         operations={'power_free_local':local_admissibility,'power_free_wheel':power_free_wheel,'native_power_free_certificate':native_certificate}

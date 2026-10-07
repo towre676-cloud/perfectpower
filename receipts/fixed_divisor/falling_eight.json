@@ -1,0 +1,164 @@
+{
+  "schema": "pp-fixed-divisor-admissibility/1",
+  "coefficients": [
+    0,
+    -5040,
+    13068,
+    -13132,
+    6769,
+    -1960,
+    322,
+    -28,
+    1
+  ],
+  "start": 0,
+  "step": 1,
+  "pullback_coefficients": [
+    0,
+    -5040,
+    13068,
+    -13132,
+    6769,
+    -1960,
+    322,
+    -28,
+    1
+  ],
+  "degree": 8,
+  "domain": "all signed integers n; original coordinate x=start+step*n",
+  "sample_values": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    40320
+  ],
+  "sample_coordinates": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "fixed_divisor": 40320,
+  "sample_bezout_weights": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "forward_differences": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    40320
+  ],
+  "primitive_binomial_coefficients": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "complete": true,
+  "kernel_checked": false,
+  "meaning": "q divides the fixed divisor iff q divides every value in the stated domain",
+  "exponent": 8,
+  "prime_factors": [
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      7,
+      1
+    ]
+  ],
+  "valuation_rows": [
+    {
+      "prime": 2,
+      "valuation": 7,
+      "universal_obstruction": false,
+      "witness_parameter": 8,
+      "witness_coordinate": 8,
+      "witness_value": 40320
+    },
+    {
+      "prime": 3,
+      "valuation": 2,
+      "universal_obstruction": false,
+      "witness_parameter": 8,
+      "witness_coordinate": 8,
+      "witness_value": 40320
+    },
+    {
+      "prime": 5,
+      "valuation": 1,
+      "universal_obstruction": false,
+      "witness_parameter": 8,
+      "witness_coordinate": 8,
+      "witness_value": 40320
+    },
+    {
+      "prime": 7,
+      "valuation": 1,
+      "universal_obstruction": false,
+      "witness_parameter": 8,
+      "witness_coordinate": 8,
+      "witness_value": 40320
+    }
+  ],
+  "locally_admissible": true,
+  "fixed_divisor_prime": null,
+  "zero_polynomial": false,
+  "density_proved": false,
+  "globally_power_free_value_produced": false,
+  "route": "finite consecutive-value gcd; no derivative Bezout hypothesis or residue enumeration",
+  "lean": {
+    "namespace": "FixedDivisor_81fcf57f2037334a",
+    "source": "import PerfectPower.FixedDivisor\nset_option maxHeartbeats 6000000\nset_option maxRecDepth 30000\nset_option linter.unusedTactic false\nset_option linter.unreachableTactic false\nnamespace FixedDivisor_81fcf57f2037334a\nopen Polynomial PerfectPower.FixedDivisor PerfectPower.PowerFreeLocal\nnoncomputable def original : Polynomial \u2124 := C (-5040) * X + C (13068) * X^2 + C (-13132) * X^3 + C (6769) * X^4 + C (-1960) * X^5 + C (322) * X^6 + C (-28) * X^7 + C (1) * X^8\nnoncomputable def source : Polynomial \u2124 := C (-5040) * X + C (13068) * X^2 + C (-13132) * X^3 + C (6769) * X^4 + C (-1960) * X^5 + C (322) * X^6 + C (-28) * X^7 + C (1) * X^8\ntheorem pullback_checked : source = original.comp (C (0 : \u2124) + C (1 : \u2124)*X) := by\n  norm_num [source, original, Polynomial.add_comp, Polynomial.mul_comp, Polynomial.pow_comp, Polynomial.C_comp, Polynomial.X_comp]\n  <;> ring\ntheorem degree_bound_checked : source.natDegree \u2264 8 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem window_checked : windowGcd source 8 = 40320 := by\n  norm_num [windowGcd,source,List.range_succ, List.map_append, valueGcd, Nat.gcd_eq_zero_iff]\ntheorem all_divisors_checked (q : \u2115) : q \u2223 40320 \u2194 \u2200 n : \u2124, (q : \u2124) \u2223 original.eval (0+1*n) := by\n  rw [\u2190 window_checked, dvd_windowGcd_iff source 8 q degree_bound_checked]\n  simp only [pullback_checked, Polynomial.eval_comp, Polynomial.eval_add, Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]\ntheorem universal_checked (n : \u2124) : (40320 : \u2124) \u2223 original.eval (0+1*n) :=\n  (all_divisors_checked 40320).mp (dvd_refl _) n\ntheorem fixed_divisor_checked : fixedDivisor source = 40320 := by\n  rw [\u2190 windowGcd_eq_fixedDivisor source 8 degree_bound_checked, window_checked]\ntheorem power_free_checked : PowerFree 8 (40320 : \u2124) := by\n  intro p hp hd\n  have hd' : p^8 \u2223 40320 := by exact_mod_cast hd\n  have hpd : p \u2223 40320 := (dvd_pow_self p (by norm_num : 8 \u2260 0)).trans hd'\n  have hf : ([2, 2, 2, 2, 2, 2, 2, 3, 3, 5, 7] : List \u2115).Perm (40320 : \u2115).primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n      rcases hp with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl\n      all_goals norm_num\n  have hm := (Nat.mem_primeFactorsList_iff_dvd (by norm_num : 40320 \u2260 0) hp).mpr hpd\n  rw [\u2190 hf.mem_iff] at hm\n  simp only [List.mem_cons, List.not_mem_nil, or_false] at hm\n  rcases hm with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl\n  all_goals norm_num at hd\ntheorem admissible_checked : LocallyAdmissible source 8 := by\n  rw [admissible_iff_fixedDivisor, fixed_divisor_checked]\n  exact power_free_checked\nend FixedDivisor_81fcf57f2037334a\n",
+    "source_sha256": "8ed35ee3bbed84d47d1bee2481e980928c61d332a137dc045cc38f1487ff31de",
+    "theorem": "FixedDivisor_81fcf57f2037334a.admissible_checked",
+    "declarations": [
+      "FixedDivisor_81fcf57f2037334a.pullback_checked",
+      "FixedDivisor_81fcf57f2037334a.degree_bound_checked",
+      "FixedDivisor_81fcf57f2037334a.window_checked",
+      "FixedDivisor_81fcf57f2037334a.all_divisors_checked",
+      "FixedDivisor_81fcf57f2037334a.universal_checked",
+      "FixedDivisor_81fcf57f2037334a.fixed_divisor_checked",
+      "FixedDivisor_81fcf57f2037334a.power_free_checked",
+      "FixedDivisor_81fcf57f2037334a.admissible_checked"
+    ],
+    "kernel_checked": false
+  }
+}

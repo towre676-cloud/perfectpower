@@ -111,3 +111,5 @@ Native actual halving certificates now check concrete doubling anchors and prove
 The version-two native halving interface closes original-model actual group transport, exact returned literal coordinate-list equality, and complete nonsquare/signed quartic lifting. New packets prove original-target coordinates and a full original-model literal fibre theorem; `route="quartic"` exercises both candidate signs. See `docs/NATIVE_HALVES_REFINEMENT_MONOGRAPH.md`. Generic parser implementation refinement and efficient Sturm checking remain separate.
 
 [Finite local power-free arithmetic](POWER_FREE_LOCAL_MONOGRAPH.md) develops all-prime local admissibility, original-coordinate obstructions and exact avoidance wheels.
+
+[Universal divisibility and complete repeated-factor arithmetic](FIXED_DIVISOR_MONOGRAPH.md) proves finite-window fixed-divisor semantics and complete finite k-free values from repeated factors; the [PDF edition](FIXED_DIVISOR_MONOGRAPH.pdf) accompanies the replayable release.
