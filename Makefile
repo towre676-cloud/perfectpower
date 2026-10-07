@@ -256,3 +256,7 @@ dresden-lean:
 .PHONY: dresden-polynomial
 dresden-polynomial:
 	PYTHONPATH=python $(PY) python/develop_dresden_polynomial.py
+
+.PHONY: check-residue-atlas
+check-residue-atlas:
+	bash scripts/check_residue_atlas.sh

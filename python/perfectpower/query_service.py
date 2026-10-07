@@ -36,6 +36,19 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'residue_atlas', 'verify_residue_atlas', 'residue_atlas_population',
+              'residue_atlas_select', 'residue_atlas_rank', 'residue_atlas_scan', 'native_residue_atlas'}:
+        from . import residue_atlas as ra
+        functions = {'residue_atlas': ra.atlas_packet, 'verify_residue_atlas': ra.verify_atlas,
+                     'residue_atlas_population': ra.atlas_population, 'residue_atlas_select': ra.atlas_select,
+                     'residue_atlas_rank': ra.atlas_rank, 'residue_atlas_scan': ra.atlas_scan,
+                     'native_residue_atlas': ra.native_atlas}
+        result = functions[op](**args)
+        if op.startswith('verify_'):
+            return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'):
+            return dict(lean_source=result, execution_verified=False)
+        return result
     if op in {'bounded_residue_patch', 'verify_bounded_residue_patch', 'native_bounded_residue_patch'}:
         from .bounded_residue_patch import patch_packet, verify_patch, native_patch
         result = {'bounded_residue_patch': patch_packet,

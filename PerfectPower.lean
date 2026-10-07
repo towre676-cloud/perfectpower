@@ -406,3 +406,4 @@ import PerfectPower.SubgroupDivisionClosure
 import PerfectPower.IntegralKernelWitness
 import PerfectPower.ResidueDeterminantCertificate
 import PerfectPower.BoundedResiduePatch
+import PerfectPower.ResidueAtlas

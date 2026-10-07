@@ -70,6 +70,10 @@ print(sunrise_certificate()["boundary"]["integrated_value"])  # -6
 
 Run `PYTHONPATH=python python python/literature_curve_corpus.py` to rebuild every direction. These exact Python calculations and analytic/p-adic bounds do not add new Lean kernel proofs. The finite mesh/Hodge objects elsewhere are not identified with these continuous de Rham structures, and differential projectors alone still do not certify algebraic correspondences.
 
+## Complete prime-power residue atlases
+
+`residue_atlas` retains every bivariate source root through the requested prime-power depth, including singular branch growth and death and horizontal or vertical smooth charts. Its disjoint residue cells support exact signed-rectangle counts without enumerating the box, direct class-major rank/select, and complete budgeted source scans. Native Lean packets prove complete source tables, all-coordinate survival, every child list, global empty-table exclusions and enormous-box counts. Reproduce with `make check-residue-atlas`; see `docs/RESIDUE_ATLAS_MONOGRAPH.md`. Candidate populations are necessary local conditions; source equality is still checked by the scan.
+
 ## Complete bounded residue patches
 
 `bounded_residue_patch` returns every solution of an explicit sparse integer source equation in a declared closed rectangle and smooth prime residue class. Independent replay scans the complete coarse residue grid; native Lean certificates prove the exact lift and solution lists, universal Taylor identities and auxiliary vanishing at any source solution in the box. Reproduce with `make check-bounded-residue-patch`; see `docs/BOUNDED_RESIDUE_PATCH_MONOGRAPH.md`. This includes a correction to the earlier Mordell interpolation example: (129,±1465) are not on y² = x³ - 2 and have been removed from that sample. Global height bounds and singular-chart branching remain separate.

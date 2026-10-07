@@ -1,0 +1,11 @@
+# Complete residue atlas handoff
+
+This push replaces the single smooth vertical residue patch as the only bivariate local route. It retains every source root at every requested prime-power level, chooses vertical or horizontal smooth charts and preserves all surviving singular children. An empty complete root table proves global impossibility. Nonempty tables supply exact modular candidate populations in arbitrarily wide signed rectangles, counted without scanning the rectangle.
+
+The main implementation is python/perfectpower/residue_atlas.py. The native theorem layer is PerfectPower/ResidueAtlas.lean and reuses PerfectPower/ResiduePopulation.lean. Public query operations are residue_atlas, verify_residue_atlas, residue_atlas_population, residue_atlas_select, residue_atlas_rank, residue_atlas_scan and native_residue_atlas. Run make check-residue-atlas. Read docs/RESIDUE_ATLAS_MONOGRAPH.md and docs/RESIDUE_ATLAS_VALIDATION.md. Seven complete worked atlases and every generated native source are in receipts/residue_atlas; python/crosscheck_residue_atlas.py independently checks 120 seeded sources.
+
+Selection order is by sorted residue class, then x, then y within that cell. It is not global lexicographic point order. Modular candidate count is not a source-solution count. Complete scans evaluate the original polynomial and reject oversized surviving populations before scanning. No branch or solution list is truncated. A returned native source is not an execution receipt; execution_verified remains false in API outputs.
+
+The next bounded extension is a coprime multi-prime atlas product with a proved coordinate CRT equivalence. Compose complete local tables, derive disjoint rectangle cells and retain factored representations when explicit CRT products exceed their budget. Prove and test count and addressing semantics before calling the product a complete arithmetic population. Global height bounds, generic JSON compiler refinement and integral lattice saturation remain separate research obligations.
+
+Preserve all concurrent flavor, thermal and Dresden code and documentation. Publish directly to claude/laughing-lamport-qqzdo9 with an expected-head guard. Every push must include the complete tracked source split below 30 MB and the monograph, not a patch-only archive.
