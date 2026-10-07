@@ -52,7 +52,8 @@ def solve_coupled_wall(model,bath=HiggsWall(),*,length_factor=12.,tol=2e-10,cent
     k=sqrt(model.lam/2);m=model.heavy_mass_GeV/model.v_GeV;a=model.current_g_GeV/model.v_GeV
     h0=bath.v_GeV/model.v_GeV;mh=sqrt(2*bath.lam)*h0;beta=bath.portal/bath.lam
     L=max(length_factor/k,length_factor/mh);core=min(18/k,L)
-    grid=np.unique(np.r_[np.linspace(0,core,central_nodes),np.geomspace(core,L,180)])
+    tail=np.geomspace(core,L,180) if L-core>1e-12*L else np.array([])
+    grid=np.unique(np.r_[np.linspace(0,core,central_nodes),tail])
     u=np.tanh(k*grid);p=k*(1-u*u);y=-a*u*u/m**2;q=-2*a*u*p/m**2
     amplitude=bath.portal*h0/(k*mh)
     h=h0+amplitude*np.exp(-mh*grid);r=-mh*amplitude*np.exp(-mh*grid)

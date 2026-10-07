@@ -1,5 +1,7 @@
 # PerfectPower
 
+The latest wall result computes the outgoing source-shape resonance, resolves its Higgs-channel radiation width, and derives an exact polynomial leading-radiation node that the full coupled calculation shows is not an exact bound state. See [the updated monograph](docs/FLAVOR_COSMOLOGY_MONOGRAPH.md) and [scientific packet](receipts/flavor_cosmology/wall_scattering.json).
+
 **Exact polynomial arithmetic, reusable decision policies, and algebraic-curve research from the defining polynomial.**
 
 PerfectPower turns supported polynomial and arithmetic models into executable mathematical objects. It can return complete integer solution families, make finite solution spaces countable and addressable by rank, compile optimal calibration and diagnostic policies, and derive a curve family's differential equations directly from its polynomial. The geometry machinery connects coefficient motion, algebraic root collisions, local branches, logarithmic execution, actual quotient towers, explicit isogeny kernels, superelliptic periods, certified ordinary continuation and arithmetic Frobenius while retaining the original equation and coordinates.

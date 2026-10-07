@@ -1,0 +1,913 @@
+{
+  "benchmark_pole_controls": [
+    {
+      "boundary_residual": 8.271806125530277e-25,
+      "current_identity_relative_error": 4.305128815721086e-11,
+      "energy_over_v2": [
+        0.14999971950573435,
+        -3.9514162115276725e-18
+      ],
+      "finite_domain_current_from_complex_energy": 1.1780909458917692e-16,
+      "finite_domain_outgoing_current": 1.1780909458410509e-16,
+      "mass_GeV": 11618.939175120975,
+      "maximum_BVP_relative_residual": 9.943933764564527e-09,
+      "mesh_nodes": 5016,
+      "open_channels": [
+        true,
+        false,
+        false
+      ],
+      "radius_rho": 2869.9922215344004,
+      "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+      "vacuum_matching_Hessian_error": 6.687278999635275e-14,
+      "width_GeV": 3.0607566979864814e-13
+    },
+    {
+      "boundary_residual": 8.271806125530277e-25,
+      "current_identity_relative_error": 1.6141774342821194e-12,
+      "energy_over_v2": [
+        0.1499997195090048,
+        -3.9514162107502255e-18
+      ],
+      "finite_domain_current_from_complex_energy": 1.1780909454319873e-16,
+      "finite_domain_outgoing_current": 1.1780909454300856e-16,
+      "mass_GeV": 11618.93917524764,
+      "maximum_BVP_relative_residual": 9.988896372099925e-10,
+      "mesh_nodes": 3467,
+      "open_channels": [
+        true,
+        false,
+        false
+      ],
+      "radius_rho": 1434.9961107672002,
+      "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+      "vacuum_matching_Hessian_error": 1.3907025309767894e-11,
+      "width_GeV": 3.0607566973509064e-13
+    },
+    {
+      "boundary_residual": 4.1359030627651384e-25,
+      "current_identity_relative_error": 2.418127356733319e-12,
+      "energy_over_v2": [
+        0.1499997195090048,
+        -3.9514162109002585e-18
+      ],
+      "finite_domain_current_from_complex_energy": 1.1780909454776717e-16,
+      "finite_domain_outgoing_current": 1.178090945474823e-16,
+      "mass_GeV": 11618.93917524764,
+      "maximum_BVP_relative_residual": 9.988896372099925e-10,
+      "mesh_nodes": 4578,
+      "open_channels": [
+        true,
+        false,
+        false
+      ],
+      "radius_rho": 2152.4941661508,
+      "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+      "vacuum_matching_Hessian_error": 6.938997123582626e-13,
+      "width_GeV": 3.0607566974671217e-13
+    },
+    {
+      "boundary_residual": 8.271806125530277e-25,
+      "current_identity_relative_error": 1.6171069758457728e-12,
+      "energy_over_v2": [
+        0.1499997195090048,
+        -3.951416210895221e-18
+      ],
+      "finite_domain_current_from_complex_energy": 1.1780909454752344e-16,
+      "finite_domain_outgoing_current": 1.1780909454733293e-16,
+      "linear_mode_energy_lifetime_seconds": 2.150487679878415e-12,
+      "mass_GeV": 11618.93917524764,
+      "maximum_BVP_relative_residual": 9.988896372099925e-10,
+      "mesh_nodes": 5690,
+      "open_channels": [
+        true,
+        false,
+        false
+      ],
+      "radius_rho": 2869.9922215344004,
+      "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+      "vacuum_matching_Hessian_error": 6.687278999635275e-14,
+      "width_GeV": 3.0607566974632195e-13
+    }
+  ],
+  "conclusions": {
+    "benchmark_shape_is_decaying_resonance": true,
+    "continuum_stability_certified": false,
+    "leading_form_factor_node_is_exact_BIC": false,
+    "nonlinear_wall_network_simulated": false
+  },
+  "decoupled_weak_portal_sweep": [
+    {
+      "analytic": {
+        "form_factor": -0.41182215168696734,
+        "imaginary_energy_over_v2": -3.950599863339457e-18,
+        "open": true,
+        "p": 1.7319498699442775,
+        "scope": "Leading kappa^2 radiation width of the decoupled g=0 kink into a free radial Higgs channel. Background and channel distortions enter higher portal orders; finite Gaussian mixing is separate.",
+        "width_GeV": 3.0601214956486024e-13
+      },
+      "numeric_to_leading_width": 1.0002083251916758,
+      "pole": {
+        "boundary_residual": 6.162975822039155e-33,
+        "current_identity_relative_error": 1.6183683438239377e-12,
+        "energy_over_v2": [
+          0.14999999999985184,
+          -3.95142287281127e-18
+        ],
+        "finite_domain_current_from_complex_energy": 1.1780866868670348e-16,
+        "finite_domain_outgoing_current": 1.1780866868651282e-16,
+        "mass_GeV": 11618.950038616513,
+        "maximum_BVP_relative_residual": 9.988773336308457e-10,
+        "mesh_nodes": 5690,
+        "open_channels": [
+          true,
+          false,
+          false
+        ],
+        "radius_rho": 2869.9922215344004,
+        "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+        "vacuum_matching_Hessian_error": 3.00691952890772e-15,
+        "width_GeV": 3.060758996045735e-13
+      },
+      "portal": 1e-07
+    },
+    {
+      "analytic": {
+        "form_factor": -0.41182215168696734,
+        "imaginary_energy_over_v2": -3.9505998633394565e-16,
+        "open": true,
+        "p": 1.7319498699442775,
+        "scope": "Leading kappa^2 radiation width of the decoupled g=0 kink into a free radial Higgs channel. Background and channel distortions enter higher portal orders; finite Gaussian mixing is separate.",
+        "width_GeV": 3.060121495648602e-11
+      },
+      "numeric_to_leading_width": 1.0020851690728225,
+      "pole": {
+        "boundary_residual": 6.617444900424222e-24,
+        "current_identity_relative_error": 8.405133926053254e-12,
+        "energy_over_v2": [
+          0.15000000001106908,
+          -3.958837532139658e-16
+        ],
+        "finite_domain_current_from_complex_energy": 1.1802973110431727e-14,
+        "finite_domain_outgoing_current": 1.1802973110332521e-14,
+        "mass_GeV": 11618.950039050955,
+        "maximum_BVP_relative_residual": 9.98877303096115e-10,
+        "mesh_nodes": 5690,
+        "open_channels": [
+          true,
+          false,
+          false
+        ],
+        "radius_rho": 2869.9922215344004,
+        "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+        "vacuum_matching_Hessian_error": 3.00691952890772e-15,
+        "width_GeV": 3.066502366350408e-11
+      },
+      "portal": 1e-06
+    },
+    {
+      "analytic": {
+        "form_factor": -0.41182215168696734,
+        "imaginary_energy_over_v2": -3.9505998633394566e-14,
+        "open": true,
+        "p": 1.7319498699442775,
+        "scope": "Leading kappa^2 radiation width of the decoupled g=0 kink into a free radial Higgs channel. Background and channel distortions enter higher portal orders; finite Gaussian mixing is separate.",
+        "width_GeV": 3.0601214956486028e-09
+      },
+      "numeric_to_leading_width": 1.0210443194626626,
+      "pole": {
+        "boundary_residual": 5.293955920339377e-23,
+        "current_identity_relative_error": 7.679837155379874e-11,
+        "energy_over_v2": [
+          0.15000000113260253,
+          -4.033737564161461e-14
+        ],
+        "finite_domain_current_from_complex_energy": 1.2026281729902842e-12,
+        "finite_domain_outgoing_current": 1.2026281728979243e-12,
+        "mass_GeV": 11618.950082487758,
+        "maximum_BVP_relative_residual": 9.988772735575014e-10,
+        "mesh_nodes": 5690,
+        "open_channels": [
+          true,
+          false,
+          false
+        ],
+        "radius_rho": 2869.9922215344004,
+        "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+        "vacuum_matching_Hessian_error": 5.303445316216109e-14,
+        "width_GeV": 3.1245196699975928e-09
+      },
+      "portal": 1e-05
+    }
+  ],
+  "execution_verified": false,
+  "illustrative_scattering_parameters": {
+    "Higgs_v_GeV": 3000.0,
+    "portal": 0.01,
+    "purpose": "wider resonance for resolved independent real-axis scattering; not the benchmark Higgs scale"
+  },
+  "illustrative_scattering_pole_controls": [
+    {
+      "boundary_residual": 5.204170427930421e-18,
+      "current_identity_relative_error": 1.7205564483693097e-11,
+      "energy_over_v2": [
+        0.15093754270167098,
+        -1.6407074728322753e-05
+      ],
+      "finite_domain_current_from_complex_energy": 0.0004882940180390762,
+      "finite_domain_outgoing_current": 0.0004882940180306748,
+      "mass_GeV": 11655.204366839043,
+      "maximum_BVP_relative_residual": 9.933993394808317e-10,
+      "mesh_nodes": 4310,
+      "open_channels": [
+        true,
+        false,
+        false
+      ],
+      "radius_rho": 176.5045216243656,
+      "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+      "vacuum_matching_Hessian_error": 7.528059306698485e-07,
+      "width_GeV": 1.2669333621899588
+    },
+    {
+      "boundary_residual": 3.469446951953614e-18,
+      "current_identity_relative_error": 9.393889868595422e-11,
+      "energy_over_v2": [
+        0.15093754268223675,
+        -1.640704106070976e-05
+      ],
+      "finite_domain_current_from_complex_energy": 0.0004895182878015751,
+      "finite_domain_outgoing_current": 0.0004895182877555903,
+      "mass_GeV": 11655.204366088628,
+      "maximum_BVP_relative_residual": 9.95444264077445e-09,
+      "mesh_nodes": 2794,
+      "open_channels": [
+        true,
+        false,
+        false
+      ],
+      "radius_rho": 235.3393621658208,
+      "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+      "vacuum_matching_Hessian_error": 5.872625621742054e-14,
+      "width_GeV": 1.2669307625014405
+    },
+    {
+      "boundary_residual": 1.734723475976807e-18,
+      "current_identity_relative_error": 2.2571825110866455e-11,
+      "energy_over_v2": [
+        0.15093754268237958,
+        -1.6407041060023217e-05
+      ],
+      "finite_domain_current_from_complex_energy": 0.0004895182877642243,
+      "finite_domain_outgoing_current": 0.0004895182877752736,
+      "mass_GeV": 11655.204366094145,
+      "maximum_BVP_relative_residual": 9.933993287647226e-10,
+      "mesh_nodes": 5402,
+      "open_channels": [
+        true,
+        false,
+        false
+      ],
+      "radius_rho": 235.3393621658208,
+      "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+      "vacuum_matching_Hessian_error": 5.872625621742054e-14,
+      "width_GeV": 1.266930762447827
+    }
+  ],
+  "polynomial_node_sweep": [
+    {
+      "exact_conditions": {
+        "channel_gap_over_v2": "1/20",
+        "form_factor_node_polynomial": "0",
+        "free_Higgs_threshold_over_v2": "1/10",
+        "leading_radiation_node": true,
+        "node_relation": "2*lambda_H*(v_H/v)^2=lambda; p^2=1. Only the leading portal radiation amplitude vanishes, not the complete coupled width.",
+        "open": true,
+        "shape_energy_over_v2": "3/20"
+      },
+      "pole": {
+        "boundary_residual": 8.470329472543003e-22,
+        "current_identity_relative_error": 2.693116178517285e-09,
+        "energy_over_v2": [
+          0.15000062524234103,
+          -1.7448767842463577e-12
+        ],
+        "finite_domain_current_from_complex_energy": 5.2022689805247376e-11,
+        "finite_domain_outgoing_current": 5.202268966514423e-11,
+        "mass_GeV": 0.3872991418042919,
+        "maximum_BVP_relative_residual": 9.991988737816375e-10,
+        "mesh_nodes": 1223,
+        "open_channels": [
+          true,
+          false,
+          false
+        ],
+        "radius_rho": 53.665631459994955,
+        "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+        "vacuum_matching_Hessian_error": 1.6690117311671295e-14,
+        "width_GeV": 4.505243094827383e-12
+      },
+      "portal": 0.0001
+    },
+    {
+      "exact_conditions": {
+        "channel_gap_over_v2": "1/20",
+        "form_factor_node_polynomial": "0",
+        "free_Higgs_threshold_over_v2": "1/10",
+        "leading_radiation_node": true,
+        "node_relation": "2*lambda_H*(v_H/v)^2=lambda; p^2=1. Only the leading portal radiation amplitude vanishes, not the complete coupled width.",
+        "open": true,
+        "shape_energy_over_v2": "3/20"
+      },
+      "pole": {
+        "boundary_residual": 3.3881317890172014e-21,
+        "current_identity_relative_error": 1.3515939822636199e-09,
+        "energy_over_v2": [
+          0.15000250660735645,
+          -2.7805525140925375e-11
+        ],
+        "finite_domain_current_from_complex_energy": 8.29033617822149e-10,
+        "finite_domain_outgoing_current": 8.290336167016322e-10,
+        "mass_GeV": 0.3873015706234051,
+        "maximum_BVP_relative_residual": 9.992241093670181e-10,
+        "mesh_nodes": 1223,
+        "open_channels": [
+          true,
+          false,
+          false
+        ],
+        "radius_rho": 53.665631459994955,
+        "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+        "vacuum_matching_Hessian_error": 1.6680652632310443e-14,
+        "width_GeV": 7.179295734889296e-11
+      },
+      "portal": 0.0002
+    },
+    {
+      "exact_conditions": {
+        "channel_gap_over_v2": "1/20",
+        "form_factor_node_polynomial": "0",
+        "free_Higgs_threshold_over_v2": "1/10",
+        "leading_radiation_node": true,
+        "node_relation": "2*lambda_H*(v_H/v)^2=lambda; p^2=1. Only the leading portal radiation amplitude vanishes, not the complete coupled width.",
+        "open": true,
+        "shape_energy_over_v2": "3/20"
+      },
+      "pole": {
+        "boundary_residual": 1.3552527156068805e-20,
+        "current_identity_relative_error": 6.812348013251719e-10,
+        "energy_over_v2": [
+          0.15001007108395886,
+          -4.4110518168277914e-10
+        ],
+        "finite_domain_current_from_complex_energy": 1.3153335778892382e-08,
+        "finite_domain_outgoing_current": 1.3153335769931872e-08,
+        "mass_GeV": 0.38731133611599705,
+        "maximum_BVP_relative_residual": 9.99680623665264e-10,
+        "mesh_nodes": 1223,
+        "open_channels": [
+          true,
+          false,
+          false
+        ],
+        "radius_rho": 53.665631459994955,
+        "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+        "vacuum_matching_Hessian_error": 1.6694935654652903e-14,
+        "width_GeV": 1.1388904494927337e-09
+      },
+      "portal": 0.0004
+    },
+    {
+      "exact_conditions": {
+        "channel_gap_over_v2": "1/20",
+        "form_factor_node_polynomial": "0",
+        "free_Higgs_threshold_over_v2": "1/10",
+        "leading_radiation_node": true,
+        "node_relation": "2*lambda_H*(v_H/v)^2=lambda; p^2=1. Only the leading portal radiation amplitude vanishes, not the complete coupled width.",
+        "open": true,
+        "shape_energy_over_v2": "3/20"
+      },
+      "pole": {
+        "boundary_residual": 5.421010862427522e-20,
+        "current_identity_relative_error": 2.8033697588321223e-10,
+        "energy_over_v2": [
+          0.15006375720989062,
+          -1.6731412596351404e-08
+        ],
+        "finite_domain_current_from_complex_energy": 4.993545591512003e-07,
+        "finite_domain_outgoing_current": 4.993545590112128e-07,
+        "mass_GeV": 0.3873806360801881,
+        "maximum_BVP_relative_residual": 9.944796276706289e-10,
+        "mesh_nodes": 1224,
+        "open_channels": [
+          true,
+          false,
+          false
+        ],
+        "radius_rho": 53.665631459994955,
+        "scope": "Numerical finite-radius outgoing pole of the supplied radial three-field wall, continued on one open Higgs channel. No continuum stability certificate or network decay rate.",
+        "vacuum_matching_Hessian_error": 1.666203879414959e-14,
+        "width_GeV": 4.319114338200423e-08
+      },
+      "portal": 0.001
+    }
+  ],
+  "real_axis_scattering": [
+    {
+      "detuning_in_imaginary_energy_units": -8,
+      "even_Higgs": {
+        "amplitude": [
+          0.9988981240516923,
+          -0.0469312024777796
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.1508062863538994,
+        "flux_error": 4.440892098500626e-16,
+        "maximum_BVP_relative_residual": 9.995950620169773e-09,
+        "mesh_nodes": 8363,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 4.440892098500626e-16,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534181690506397,
+          0.30165177759152395
+        ],
+        "boundary_residual": 1.1858461261560205e-20,
+        "energy_over_v2": 0.1508062863538994,
+        "flux_error": 4.440892098500626e-16,
+        "maximum_BVP_relative_residual": 9.998997469784833e-09,
+        "mesh_nodes": 8196,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.016737749423293615,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.9832622505767068
+    },
+    {
+      "detuning_in_imaginary_energy_units": -5,
+      "even_Higgs": {
+        "amplitude": [
+          0.9950858350564468,
+          0.09901606369682603
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15085550747707946,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.998247023327685e-09,
+        "mesh_nodes": 8401,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 2.220446049250313e-16,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534349708431822,
+          0.30159866772461186
+        ],
+        "boundary_residual": 8.673617379884035e-19,
+        "energy_over_v2": 0.15085550747707946,
+        "flux_error": 4.440892098500626e-16,
+        "maximum_BVP_relative_residual": 9.999191512802708e-09,
+        "mesh_nodes": 8199,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.040556739380395654,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.9594432606196046
+    },
+    {
+      "detuning_in_imaginary_energy_units": -3,
+      "even_Higgs": {
+        "amplitude": [
+          0.9400841976300246,
+          0.3409423725005635
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.1508883215591995,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.998563987641947e-09,
+        "mesh_nodes": 8517,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 4.440892098500626e-16,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534461652988908,
+          0.3015632767378026
+        ],
+        "boundary_residual": 8.673617379884035e-19,
+        "energy_over_v2": 0.1508883215591995,
+        "flux_error": 4.440892098500626e-16,
+        "maximum_BVP_relative_residual": 9.99802250235253e-09,
+        "mesh_nodes": 8198,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.10324801287079953,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.8967519871292009
+    },
+    {
+      "detuning_in_imaginary_energy_units": -2,
+      "even_Higgs": {
+        "amplitude": [
+          0.807007937848545,
+          0.5905405898407298
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15090472860025952,
+        "flux_error": 1.9984014443252818e-15,
+        "maximum_BVP_relative_residual": 9.999904607955907e-09,
+        "mesh_nodes": 8616,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 9.992007221626409e-16,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534517605123349,
+          0.3015455859002568
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.15090472860025952,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.99830596744201e-09,
+        "mesh_nodes": 8202,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.20431588453614047,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.7956841154638585
+    },
+    {
+      "detuning_in_imaginary_energy_units": -1,
+      "even_Higgs": {
+        "amplitude": [
+          0.29126737862825214,
+          0.95664168534887
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15092113564131956,
+        "flux_error": 9.992007221626409e-14,
+        "maximum_BVP_relative_residual": 9.997685199871661e-09,
+        "mesh_nodes": 8764,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 4.9960036108132044e-14,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.953457354378368,
+          0.30152789818158343
+        ],
+        "boundary_residual": 8.673617379884035e-19,
+        "energy_over_v2": 0.15092113564131956,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.999873331705057e-09,
+        "mesh_nodes": 8203,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.5053715662262834,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.4946284337737666
+    },
+    {
+      "detuning_in_imaginary_energy_units": -0.5,
+      "even_Higgs": {
+        "amplitude": [
+          -0.3409782878881621,
+          0.940071171342218
+        ],
+        "boundary_residual": 1.6653345369377348e-16,
+        "energy_over_v2": 0.15092933916184956,
+        "flux_error": 1.2789769243681803e-13,
+        "maximum_BVP_relative_residual": 9.994544476597133e-09,
+        "mesh_nodes": 8792,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 6.394884621840902e-14,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534601508073217,
+          0.3015190554881718
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.15092933916184956,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.998665538405637e-09,
+        "mesh_nodes": 8203,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.8042792907332852,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.19572070926665083
+    },
+    {
+      "detuning_in_imaginary_energy_units": -0.25,
+      "even_Higgs": {
+        "amplitude": [
+          -0.707036703277364,
+          0.7071768521513093
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15093344092211458,
+        "flux_error": 4.196643033083092e-14,
+        "maximum_BVP_relative_residual": 9.999762386891137e-09,
+        "mesh_nodes": 8735,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 2.1094237467877974e-14,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534615488939266,
+          0.3015146344388515
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15093344092211458,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.999581104700253e-09,
+        "mesh_nodes": 8202,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.9436782401458448,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.05632175985413407
+    },
+    {
+      "detuning_in_imaginary_energy_units": 0,
+      "even_Higgs": {
+        "amplitude": [
+          -0.9566461332459611,
+          0.2912527695071254
+        ],
+        "boundary_residual": 4.336808689942018e-19,
+        "energy_over_v2": 0.15093754268237958,
+        "flux_error": 1.9984014443252818e-14,
+        "maximum_BVP_relative_residual": 9.999528834773353e-09,
+        "mesh_nodes": 8628,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 9.992007221626409e-15,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534629468978494,
+          0.3015102135796872
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.15093754268237958,
+        "flux_error": 2.220446049250313e-16,
+        "maximum_BVP_relative_residual": 9.999334559556006e-09,
+        "mesh_nodes": 8202,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.9999711630414528,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 2.8836958557134553e-05
+    },
+    {
+      "detuning_in_imaginary_energy_units": 0.25,
+      "even_Higgs": {
+        "amplitude": [
+          -0.98115891771674,
+          -0.19320242799956433
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.15094164444264457,
+        "flux_error": 1.1546319456101628e-14,
+        "maximum_BVP_relative_residual": 9.999896154950783e-09,
+        "mesh_nodes": 8596,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 5.995204332975845e-15,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.953464344818557,
+          0.30150579291237545
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.15094164444264457,
+        "flux_error": 4.440892098500626e-16,
+        "maximum_BVP_relative_residual": 9.996650228238321e-09,
+        "mesh_nodes": 8204,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.9386241966985387,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.06137580330146735
+    },
+    {
+      "detuning_in_imaginary_energy_units": 0.5,
+      "even_Higgs": {
+        "amplitude": [
+          -0.8069853795456308,
+          -0.5905714158334708
+        ],
+        "boundary_residual": 6.776263578034403e-21,
+        "energy_over_v2": 0.1509457462029096,
+        "flux_error": 4.39648317751562e-14,
+        "maximum_BVP_relative_residual": 9.999716147224218e-09,
+        "mesh_nodes": 8655,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 2.1871393585115584e-14,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534657426558081,
+          0.30150137243768593
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.1509457462029096,
+        "flux_error": 2.220446049250313e-16,
+        "maximum_BVP_relative_residual": 9.999878465191384e-09,
+        "mesh_nodes": 8205,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.7956874109122868,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.20431258908769137
+    },
+    {
+      "detuning_in_imaginary_energy_units": 1,
+      "even_Higgs": {
+        "amplitude": [
+          -0.2912381367711895,
+          -0.9566505880884775
+        ],
+        "boundary_residual": 4.336808689942018e-19,
+        "energy_over_v2": 0.1509539497234396,
+        "flux_error": 1.6209256159527285e-14,
+        "maximum_BVP_relative_residual": 9.998336522812003e-09,
+        "mesh_nodes": 8725,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 8.104628079763643e-15,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534685380742333,
+          0.30149253208426985
+        ],
+        "boundary_residual": 1.3010426069826053e-18,
+        "energy_over_v2": 0.1509539497234396,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.999162613596659e-09,
+        "mesh_nodes": 8204,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.4946316961879903,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.5053683038120016
+    },
+    {
+      "detuning_in_imaginary_energy_units": 2,
+      "even_Higgs": {
+        "amplitude": [
+          0.3410142138877751,
+          -0.9400581396522703
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15097035676449963,
+        "flux_error": 1.554312234475219e-14,
+        "maximum_BVP_relative_residual": 9.999247530610032e-09,
+        "mesh_nodes": 8659,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 7.771561172376096e-15,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534741279077544,
+          0.30147485369520854
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15097035676449963,
+        "flux_error": 4.440892098500626e-16,
+        "maximum_BVP_relative_residual": 9.998033406550541e-09,
+        "mesh_nodes": 8206,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.1957239398462697,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.8042760601537225
+    },
+    {
+      "detuning_in_imaginary_energy_units": 3,
+      "even_Higgs": {
+        "amplitude": [
+          0.5906022548724227,
+          -0.8069628098863054
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.15098676380555964,
+        "flux_error": 8.43769498715119e-15,
+        "maximum_BVP_relative_residual": 9.998412105138742e-09,
+        "mesh_nodes": 8593,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 4.218847493575595e-15,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534797163962127,
+          0.301457178420083
+        ],
+        "boundary_residual": 8.673617379884035e-19,
+        "energy_over_v2": 0.15098676380555964,
+        "flux_error": 2.220446049250313e-16,
+        "maximum_BVP_relative_residual": 9.992779743171155e-09,
+        "mesh_nodes": 8206,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.09680399888150347,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.9031960011184923
+    },
+    {
+      "detuning_in_imaginary_energy_units": 5,
+      "even_Higgs": {
+        "amplitude": [
+          0.7710863295751742,
+          -0.6367306120662685
+        ],
+        "boundary_residual": 1.1102230246251565e-16,
+        "energy_over_v2": 0.1510195778876797,
+        "flux_error": 8.881784197001252e-16,
+        "maximum_BVP_relative_residual": 9.999391577712348e-09,
+        "mesh_nodes": 8456,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 6.661338147750939e-16,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9534908893465606,
+          0.30142183718686477
+        ],
+        "boundary_residual": 5.551115123125783e-17,
+        "energy_over_v2": 0.1510195778876797,
+        "flux_error": 2.220446049250313e-16,
+        "maximum_BVP_relative_residual": 9.999148955651546e-09,
+        "mesh_nodes": 8207,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.03642584948412997,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.9635741505158694
+    },
+    {
+      "detuning_in_imaginary_energy_units": 8,
+      "even_Higgs": {
+        "amplitude": [
+          0.8555811536084554,
+          -0.5176687064040322
+        ],
+        "boundary_residual": 6.098637220230962e-20,
+        "energy_over_v2": 0.15106879901085976,
+        "flux_error": 4.440892098500626e-16,
+        "maximum_BVP_relative_residual": 9.998763468648066e-09,
+        "mesh_nodes": 8405,
+        "parity": "opposite",
+        "radius_rho": 235.3393621658208
+      },
+      "full_line_flux_error": 0.0,
+      "odd_Higgs": {
+        "amplitude": [
+          -0.9535076387043295,
+          0.3013688486431435
+        ],
+        "boundary_residual": 8.470329472543003e-21,
+        "energy_over_v2": 0.15106879901085976,
+        "flux_error": 0.0,
+        "maximum_BVP_relative_residual": 9.998365321958764e-09,
+        "mesh_nodes": 8206,
+        "parity": "translation",
+        "radius_rho": 235.3393621658208
+      },
+      "reflection_probability": 0.01409380623765328,
+      "scope": "One open Higgs eigenchannel on both sides of the supplied reflection-symmetric wall. Parity reflection phases refer to the center. Finite-radius numerical scattering; not a network collision simulation.",
+      "transmission_probability": 0.9859061937623467
+    }
+  ],
+  "scope": "Numerical outgoing BVP, independent real-axis flux calculations and exact leading form-factor polynomial. No new kernel proof, cosmological lifetime or physical CKM prediction."
+}

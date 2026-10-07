@@ -27,7 +27,8 @@ for i,part in enumerate(parts):
     style = styles["Title"] if part.startswith("# ") else styles["BodyText"]
     story.append(Paragraph(escape(part.removeprefix("# ").replace("\n"," ")),style))
     if i == 1:
-        image = root/"receipts/flavor_cosmology/wall_stability.png"
+        image = root/"receipts/flavor_cosmology/wall_scattering.png"
+        if not image.exists():image=root/"receipts/flavor_cosmology/wall_stability.png"
         if not image.exists():image=root/"receipts/flavor_cosmology/dimensionful_walls.png"
         if not image.exists():image=root/"receipts/flavor_cosmology/tree_decay.png"
         iw,ih=ImageReader(str(image)).getSize()
@@ -36,9 +37,9 @@ for i,part in enumerate(parts):
 def footer(canvas,doc):
     canvas.setFont("Times-Roman",8)
     canvas.setFillColor(colors.grey)
-    canvas.drawString(45,25,"Perfectpower | coupled walls, exact thermal vacua and polynomial flavor bounds")
+    canvas.drawString(45,25,"Perfectpower | outgoing resonances, exact thermal vacua and polynomial flavor bounds")
     canvas.drawRightString(A4[0]-45,25,str(doc.page))
 SimpleDocTemplate(str(out),pagesize=A4,rightMargin=45,leftMargin=45,
                   topMargin=45,bottomMargin=43,invariant=1,
-                  title="Coupled wall stability, exact thermal vacua and polynomial flavor bounds",
+                  title="Outgoing wall resonances, exact thermal vacua and polynomial flavor bounds",
                   author="Perfectpower research repository").build(story,onFirstPage=footer,onLaterPages=footer)
