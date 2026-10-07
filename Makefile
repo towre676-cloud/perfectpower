@@ -14,7 +14,7 @@ elliptic-bridges:
 
 .PHONY: why3-session verify release-verify lean audit lint test cert-audit receipts counts descent-gate fresh oeis check-clean crosscheck fuzz bench paper adapter-bench nia-ledger nia-timing why3-bridge order-cost
 
-verify: lean audit lint test cert-audit receipts counts descent-gate check-clean
+verify: lean audit lint test cert-audit receipts counts descent-gate dresden-lean check-clean
 	@echo "verify: OK"
 
 # A release that advertises the SMT adapter must run its tests: fail if z3-solver is missing.
@@ -248,3 +248,11 @@ dresden-test:
 .PHONY: dresden-deep
 dresden-deep:
 	PYTHONPATH=python python3 python/develop_deep_dresden.py
+
+.PHONY: dresden-lean
+dresden-lean:
+	bash scripts/check_dresden_lean.sh
+
+.PHONY: dresden-polynomial
+dresden-polynomial:
+	PYTHONPATH=python $(PY) python/develop_dresden_polynomial.py

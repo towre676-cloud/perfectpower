@@ -25,6 +25,8 @@ jobs:
         run: scripts/check_gamma_arithmetic.sh
       - name: Signed charts and semilinear certificate audit
         run: scripts/check_semilinear_capacity.sh
+      - name: Dresden polynomial calendar and numerical-model axiom audit
+        run: bash scripts/check_dresden_lean.sh
       - name: Coefficient power charts and recurrence dynamics
         run: scripts/check_query_space.sh
       - name: Voronoi enclosure and metric transport

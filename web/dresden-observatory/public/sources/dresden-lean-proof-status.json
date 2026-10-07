@@ -1,0 +1,191 @@
+{
+  "schema": "dresden-lean-proof-status/1",
+  "toolchain": "Lean 4.20.0",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "status": "kernel_checked",
+  "library_theorems": 19,
+  "audit_examples": 3,
+  "declarations": [
+    {
+      "name": "PerfectPower.DresdenCalendar.polynomial_pullback",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.condition_pullback",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.chart_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.integer_pullback",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.accepted_membership",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.accepted_image",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.accepted_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.affine_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.accepted_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.selected_day",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.calendar_compatibility",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.calendar_period",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.joint_venus_period",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.long_count_uinal_carry",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.long_count_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.restart_activation",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.affine_envelope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.lunar_window_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenCalendar.lunar_split_count",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenAudit.huge_calendar_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenAudit.lunar_405_crossing",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.DresdenAudit.duplicate_tail_example",
+      "axioms": [
+        "propext"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "PerfectPower/DresdenCalendar.lean": "1d3d3b538cf426cdc0eb2dbfd52dc53eadbdcedcf69b9466150f7f8b521fbab9",
+    "audit/DresdenCalendar.lean": "10bc6a381b733ca3ade2bba7e3694aa24b380ef3b9b32d6fbe170042ab19533a",
+    "PerfectPower/GeneralCRT.lean": "5b8e15b86d0524eb5b8dac001ecae6a795dce51c768c9f3daa0ed06109244a53",
+    "PerfectPower/ResiduePopulation.lean": "ca7493b56087774e0fbd071e58e423bd86195638e4f1c5f0d8677b6055ed6ba3",
+    "PerfectPower/FiniteDomainCertificate.lean": "d4f7f86b0ba849660eb25b6ab2df21945bd539293ec0c2aafe50c4f8b18aa11a",
+    "PerfectPower/PolynomialSourceSemantics.lean": "a09bc9912ccf7099152a28268cf7300d5a8170de94a6cf6ca48bd24cbf404d70"
+  },
+  "scope": "Exact model mathematics: polynomial and Boolean pullback, original coordinates, finite counts and rank, CRT, canonical Long Count, restart activation, affine drift and lunar window counts",
+  "not_formalized": [
+    "General Sturm completeness",
+    "JSON parsing",
+    "Python and JavaScript execution",
+    "Historical source readings",
+    "Physical astronomical visibility"
+  ]
+}

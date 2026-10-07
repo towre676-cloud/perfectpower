@@ -11,6 +11,7 @@ import PerfectPower.EllipticPointDivision
 import PerfectPower.FiniteDomainCertificate
 import PerfectPower.RectangularDeterminant
 import PerfectPower.GeneralCRT
+import PerfectPower.DresdenCalendar
 import PerfectPower.FactorialWindow
 import PerfectPower.Basic
 import PerfectPower.Density
