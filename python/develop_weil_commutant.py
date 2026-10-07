@@ -23,7 +23,7 @@ def main():
         with gzip.GzipFile(filename='',mode='wb',fileobj=stream,mtime=0) as z:z.write(raw)
     summary={'levels':63,'maximum_level':64,'all_packets_replayed':True,'coprime_pairs':pairs,
       'dimensions':records,'uncompressed_packet_sha256':hashlib.sha256(raw).hexdigest(),
-      'prime_power_formulas':'consistent on tested levels only; no all-exponent theorem',
+      'prime_power_formulas':'PAPER_PROOF: docs/WEIL_LOCAL_DIMENSION_MONOGRAPH.md; not an all-level Lean theorem',
       'execution_verified':False,'method':'integer cyclotomic basis identities and nonzero prime-field rank minors'}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     print('Exact levels:',len(packets),'all coprime pairs:',len(pairs))

@@ -36,6 +36,9 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op == 'weil_orbit_certificate':
+        from .weil_orbit import exact_orbit_certificate
+        return exact_orbit_certificate(**args)
     if op in {'certified_weil_commutant', 'verify_weil_commutant', 'weil_crt_commutant'}:
         from . import weil_commutant as wc
         result = {'certified_weil_commutant': wc.certify_commutant,

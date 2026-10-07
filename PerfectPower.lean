@@ -414,3 +414,4 @@ import PerfectPower.IntegerValuedPolynomial
 import PerfectPower.WeilCRT
 
 import PerfectPower.WeilTensorDimension
+import PerfectPower.WeilOrbitSymmetry

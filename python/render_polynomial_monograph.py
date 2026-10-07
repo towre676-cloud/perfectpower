@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'weilorbit':{
+            'title':'All-level Weil dimensions and symmetry',
+            'subtitle':'Phase-labelled orbits<br/>and a commutative commutant algebra',
+            'description':'The odd and dyadic dimension formulas on paper, a transpose-reflection proof of commutativity, and the resulting multiplicity-free complex decomposition.',
+            'metrics':[('166','exact phase/reflection levels'),('12','general Lean declarations'),('63','prior exact dimensions matched')],
+            'scope':'All-level paper theorems with explicit classical group premises. Lean proves gauge and symmetry implications; concrete monomial fixed spaces and orbit classification remain to be formalized.',
+            'running':'Orbit dimensions, transpose symmetry and multiplicity-free decomposition',
+        },
         'weildimension':{
             'title':'Kernel-proved CRT commutant dimensions',
             'subtitle':'Explicit coefficient spaces<br/>and cyclic character multiplicativity',
@@ -339,7 +347,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

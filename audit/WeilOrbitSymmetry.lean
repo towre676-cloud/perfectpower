@@ -1,0 +1,14 @@
+import PerfectPower.WeilOrbitSymmetry
+
+#print axioms PerfectPower.WeilOrbitSymmetry.pairSpace_mul_mem
+#print axioms PerfectPower.WeilOrbitSymmetry.symmetric_product_iff_commute
+#print axioms PerfectPower.WeilOrbitSymmetry.commutative_of_symmetric
+#print axioms PerfectPower.WeilOrbitSymmetry.orbit_sum_symmetric
+#print axioms PerfectPower.WeilOrbitSymmetry.span_symmetric
+#print axioms PerfectPower.WeilOrbitSymmetry.commutative_of_orbit_span
+#print axioms PerfectPower.WeilOrbitSymmetry.odd_chirp_gauge
+#print axioms PerfectPower.WeilOrbitSymmetry.odd_fourier_gauge
+#print axioms PerfectPower.WeilOrbitSymmetry.odd_transpose_gauge
+#print axioms PerfectPower.WeilOrbitSymmetry.even_chirp_gauge
+#print axioms PerfectPower.WeilOrbitSymmetry.even_fourier_gauge
+#print axioms PerfectPower.WeilOrbitSymmetry.even_transpose_gauge

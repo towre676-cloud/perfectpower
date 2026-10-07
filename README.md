@@ -9,6 +9,8 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [all-level orbit dimension and symmetry chapter](docs/WEIL_LOCAL_DIMENSION_MONOGRAPH.md) proves the odd and dyadic dimension formulas, commutativity and multiplicity-free complex decomposition on paper. Twelve general Lean theorems prove the gauge and transpose-to-commutativity bridge; exact phase/reflection checks cover 166 levels. Run `make check-weil-orbit`; the all-level orbit classification remains a formalization target.
+
 The [kernel dimension extension](docs/WEIL_DIMENSION_MONOGRAPH.md) proves the general product dimension of separate matrix commutants and the cyclic CRT-compatible-character law in Lean. Its thirty new declarations derive the required packet and matrix identities from coprimality and primitive characters; run `make check-commutant-dimension`.
 
 The [exact Fourier/chirp commutant bridge](docs/WEIL_CRT_MONOGRAPH.md) proves general Gauss and generator-separation identities in Lean and certifies every commutant dimension through level 64 using exact cyclotomic identities and modular rank minors. The accompanying [Mordell frontier](receipts/mordell_frontier.json) reconciles 457 remaining rank-conditional census rows. Run `make check-weil-commutant`.
