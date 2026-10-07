@@ -279,6 +279,8 @@ The [Sommerfeld constant and exact-angle calculation](docs/SOMMERFELD_CONSTANT_A
 
 The [positive kinetic construction](docs/FLAVOR_KINETIC_FREEDOM.md) supplies nine real polynomial covariants spanning the Hermitian quark metric at the CP-breaking vacuum. The new inverse-matching benchmark constructs all six hierarchical Yukawa eigenvalues and reproduces the **PDG 2026 central CKM inputs** with magnitude error below **4.5 × 10⁻¹⁶**, while preserving the tree determinant phase. Its fitted real metric coefficients and illustrative mass inputs are explicit in the [receipt](receipts/m22_interactions/valentiner_quantum.json). These matched inputs establish attainable spectra; the canonical loop calculation and the fitted kinetic action have their own stated assumptions. The [release validation](receipts/m22_interactions/valentiner_quantum_validation.json) records **56 passing focused and related checks** and byte-identical fresh replay. [Read the full research chapter](docs/VALENTINER_QUANTUM_COMPLETION.md) for the exact action, calculation boundaries and reproduction commands.
 
+The [polynomial Fredholm hierarchy](docs/WALL_FREDHOLM_HIERARCHY_MONOGRAPH.md) derives the quadratic wall radiation-node correction and shape-energy shift from five universal forced responses. Exact coefficient identities and independent coupled solves support the formal order-by-order construction; the second correction gives eighth-power small-portal leakage in the outgoing tests. [Scientific receipt](receipts/flavor_cosmology/wall_fredholm_hierarchy.json) and [illustrated monograph](output/pdf/Polynomial_Wall_Fredholm_Hierarchy.pdf) retain the convergence and infinite-domain scope.
+
 ## Build and develop
 
 Run the core Python tests directly from the checkout:
