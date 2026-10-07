@@ -234,3 +234,7 @@ power-free-receipts:
 	$(PY) python/develop_power_free_local.py
 power-free-check:
 	bash scripts/check_power_free_local.sh
+
+.PHONY: check-bounded-residue-patch
+check-bounded-residue-patch:
+	bash scripts/check_bounded_residue_patch.sh

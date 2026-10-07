@@ -64,6 +64,10 @@ print(sunrise_certificate()["boundary"]["integrated_value"])  # -6
 
 Run `PYTHONPATH=python python python/literature_curve_corpus.py` to rebuild every direction. These exact Python calculations and analytic/p-adic bounds do not add new Lean kernel proofs. The finite mesh/Hodge objects elsewhere are not identified with these continuous de Rham structures, and differential projectors alone still do not certify algebraic correspondences.
 
+## Complete bounded residue patches
+
+`bounded_residue_patch` returns every solution of an explicit sparse integer source equation in a declared closed rectangle and smooth prime residue class. Independent replay scans the complete coarse residue grid; native Lean certificates prove the exact lift and solution lists, universal Taylor identities and auxiliary vanishing at any source solution in the box. Reproduce with `make check-bounded-residue-patch`; see `docs/BOUNDED_RESIDUE_PATCH_MONOGRAPH.md`. This includes a correction to the earlier Mordell interpolation example: (129,±1465) are not on y² = x³ - 2 and have been removed from that sample. Global height bounds and singular-chart branching remain separate.
+
 ## Quick start
 
 Requires **Python 3.10 or later**. The core Python package has no runtime dependencies. Use a repository checkout so the compiler can access the accompanying data and proof records. The current machinery is on `claude/laughing-lamport-qqzdo9`:

@@ -36,6 +36,16 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'bounded_residue_patch', 'verify_bounded_residue_patch', 'native_bounded_residue_patch'}:
+        from .bounded_residue_patch import patch_packet, verify_patch, native_patch
+        result = {'bounded_residue_patch': patch_packet,
+                  'verify_bounded_residue_patch': verify_patch,
+                  'native_bounded_residue_patch': native_patch}[op](**args)
+        if op.startswith('verify_'):
+            return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'):
+            return dict(lean_source=result, execution_verified=False)
+        return result
     if op in {'integral_kernel_packet', 'bounded_auxiliary_packet', 'residue_determinant_packet',
               'verify_integral_kernel', 'verify_bounded_auxiliary', 'verify_residue_determinant',
               'native_integral_kernel', 'native_bounded_auxiliary', 'native_residue_determinant'}:

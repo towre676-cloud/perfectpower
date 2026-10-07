@@ -1,0 +1,8 @@
+import PerfectPower.BoundedResiduePatch
+#print axioms PerfectPower.BoundedResiduePatch.residueValues_complete
+#print axioms PerfectPower.BoundedResiduePatch.solutions_complete
+#print axioms PerfectPower.BoundedResiduePatch.CoverPacket.complete
+#print axioms PerfectPower.BoundedResiduePatch.relation_on_box
+#print axioms PerfectPower.BoundedResiduePatch.empty_box
+#print axioms PerfectPower.BoundedResiduePatch.TaylorPacket.first_lift
+#print axioms PerfectPower.BoundedResiduePatch.TaylorPacket.vertical_unique

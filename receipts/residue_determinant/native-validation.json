@@ -6,7 +6,7 @@
   "audit_records": {
     "formal-audit.log": 16,
     "CenteredParabola.audit.log": 5,
-    "MordellSample.audit.log": 5,
+    "MordellSample.audit.log": 9,
     "Rectangular.audit.log": 5,
     "FullRank.audit.log": 2,
     "IndexGap.audit.log": 5,
@@ -17,6 +17,7 @@
     "Parabola.audit.log": 5,
     "ZeroRank.audit.log": 4
   },
-  "audit_record_count": 55,
-  "scope": "new modules and worked native programs; no full historical rebuild"
+  "audit_record_count": 59,
+  "scope": "new modules and worked native programs; no full historical rebuild",
+  "correction": "Mordell sample removes (129,\u00b11465), which are not on y\u00b2=x\u00b3\u22122; regenerated and recompiled"
 }

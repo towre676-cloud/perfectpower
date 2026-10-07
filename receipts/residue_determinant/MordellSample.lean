@@ -3,14 +3,14 @@ import PerfectPower.ResidueDeterminantCertificate
 import Mathlib.Tactic
 set_option maxRecDepth 100000
 set_option maxHeartbeats 0
-namespace Kernel_6f7ce8ecf658d7e7
+namespace Kernel_3008c76dc53b3669
 open Matrix
 open scoped BigOperators
-def A : Matrix (Fin 4) (Fin 3) ℤ := !![(1), (27), (25); (1), (27), (25); (1), (2146689), (2146225); (1), (2146689), (2146225)]
-def K : Matrix (Fin 3) (Fin 3) ℤ := !![(18325676722500), (-9187560270000), (9189538022700); (-9187560270000), (4606174440000), (-4607165984400); (9189538022700), (-4607165984400), (4608157742244)]
+def A : Matrix (Fin 2) (Fin 3) ℤ := !![(1), (27), (25); (1), (27), (25)]
+def K : Matrix (Fin 3) (Fin 3) ℤ := !![(1354), (-27), (-25); (-27), (626), (-675); (-25), (-675), (730)]
 theorem annihilates : A * K = 0 := by decide +kernel
-def B : Matrix (Fin 2) (Fin 3) ℤ := !![(1), (27), (25); (1), (2146689), (2146225)]
-def rowIndices : Fin 2 → Fin 4 := ![(0), (2)]
+def B : Matrix (Fin 1) (Fin 3) ℤ := !![(1), (27), (25)]
+def rowIndices : Fin 1 → Fin 2 := ![(0)]
 theorem B_is_selected : B = (fun i j => A (rowIndices i) j) := by decide +kernel
 theorem K_is_kernel : K = PerfectPower.IntegralKernelWitness.integralKernelMatrix B := by decide +kernel
 theorem gram_nonzero : (B * B.transpose).det ≠ 0 := by decide +kernel
@@ -31,18 +31,30 @@ theorem rational_spanning (x : Fin 3 → ℚ) (hx : (A.map (Int.castRingHom ℚ)
     simpa only [K_is_kernel, Bq] using (PerfectPower.IntegralKernelWitness.integralKernelMatrix_map (Int.castRingHom ℚ) B).symm
   simpa only [hk, Matrix.map_apply] using hs
 #print axioms rational_spanning
-def c0 : Fin 3 → ℤ := ![(101925), (-51100), (51111)]
+def c0 : Fin 3 → ℤ := ![(1354), (-27), (-25)]
 theorem relation0 : c0 ≠ 0 ∧ A *ᵥ c0 = 0 := by decide +kernel
 #print axioms relation0
+def c1 : Fin 3 → ℤ := ![(27), (-626), (675)]
+theorem relation1 : c1 ≠ 0 ∧ A *ᵥ c1 = 0 := by decide +kernel
+#print axioms relation1
+def c2 : Fin 3 → ℤ := ![(5), (135), (-146)]
+theorem relation2 : c2 ≠ 0 ∧ A *ᵥ c2 = 0 := by decide +kernel
+#print axioms relation2
 #print axioms annihilates
-def points : Matrix (Fin 4) (Fin 2) ℤ := !![(3), (5); (3), (-5); (129), (1465); (129), (-1465)]
+def points : Matrix (Fin 2) (Fin 2) ℤ := !![(3), (5); (3), (-5)]
 def exponents : Matrix (Fin 3) (Fin 2) ℕ := !![(0), (0); (3), (0); (0), (2)]
 def center : Fin 2 → ℤ := ![(0), (0)]
-def evaluations : Matrix (Fin 4) (Fin 3) ℤ := fun i j =>
+def evaluations : Matrix (Fin 2) (Fin 3) ℤ := fun i j =>
   ∏ t, (points i t - center t) ^ exponents j t
 theorem evaluation_source : A = evaluations := by decide +kernel
 #print axioms evaluation_source
 theorem source_relation0 : evaluations *ᵥ c0 = 0 := by
   rw [← evaluation_source]; exact relation0.2
 #print axioms source_relation0
-end Kernel_6f7ce8ecf658d7e7
+theorem source_relation1 : evaluations *ᵥ c1 = 0 := by
+  rw [← evaluation_source]; exact relation1.2
+#print axioms source_relation1
+theorem source_relation2 : evaluations *ᵥ c2 = 0 := by
+  rw [← evaluation_source]; exact relation2.2
+#print axioms source_relation2
+end Kernel_3008c76dc53b3669
