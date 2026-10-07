@@ -1,0 +1,114 @@
+{
+  "schema": "pp-power-free-local/1",
+  "coefficients": [
+    -3,
+    0,
+    2
+  ],
+  "exponent": 2,
+  "degree": 2,
+  "bezout": {
+    "u": [
+      -2
+    ],
+    "v": [
+      0,
+      1
+    ],
+    "constant": 6
+  },
+  "constant_factors": [
+    [
+      2,
+      1
+    ],
+    [
+      3,
+      1
+    ]
+  ],
+  "exceptional_primes": [
+    2,
+    3
+  ],
+  "local_roots": [
+    {
+      "prime": 2,
+      "exponent": 2,
+      "modulus": 4,
+      "roots": [],
+      "rho": 0,
+      "local_factor": "1",
+      "levels": [
+        {
+          "power": 1,
+          "modulus": 2,
+          "roots": []
+        },
+        {
+          "power": 2,
+          "modulus": 4,
+          "roots": []
+        }
+      ],
+      "work": 2
+    },
+    {
+      "prime": 3,
+      "exponent": 2,
+      "modulus": 9,
+      "roots": [],
+      "rho": 0,
+      "local_factor": "1",
+      "levels": [
+        {
+          "power": 1,
+          "modulus": 3,
+          "roots": [
+            0
+          ]
+        },
+        {
+          "power": 2,
+          "modulus": 9,
+          "roots": []
+        }
+      ],
+      "work": 6
+    }
+  ],
+  "locally_admissible": true,
+  "fixed_divisor_prime": null,
+  "exceptional_factor_product": "1",
+  "root_work": 8,
+  "complete": true,
+  "execution_verified": false,
+  "density_proved": false,
+  "scope": "all-prime absence or presence of a fixed prime-power divisor; no global density or point classification",
+  "upstream": {
+    "repository": "https://github.com/openai/math",
+    "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "path": "lean/OAI/NumberTheory/PowerFree/Sieve.lean",
+    "license": "Apache-2.0"
+  },
+  "lean": {
+    "namespace": "PerfectPower.PowerFreePacket_1af481b1a9bd3100",
+    "source": "import PerfectPower.PowerFreeLocal\nset_option maxHeartbeats 4000000\nset_option maxRecDepth 20000\nnamespace PerfectPower.PowerFreePacket_1af481b1a9bd3100\nopen Polynomial PerfectPower.PowerFreeLocal\ndef coefficients : List \u2124 := [-3, 0, 2]\nnoncomputable def source : Polynomial \u2124 := C (-3) + C (2) * X^2\nnoncomputable def u : Polynomial \u2124 := C (-2)\nnoncomputable def v : Polynomial \u2124 := C (1) * X\ntheorem source_polynomial : source = PerfectPower.NativePolynomialSquare.polynomial coefficients := by\n  norm_num [source, coefficients, PerfectPower.NativePolynomialSquare.polynomial]\n  <;> ring\ntheorem degree_checked : source.natDegree = 2 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem bezout_checked : Bezout source u v 6 := by\n  norm_num [Bezout,source,u,v,Polynomial.derivative_add,Polynomial.derivative_mul,Polynomial.derivative_pow]\n  <;> ring\ntheorem exceptional_checked : exceptional 6 2 = ({0,1,2,3} : Finset \u2115) := by\n  have hf : ([2, 3] : List \u2115).Perm (6 : \u2124).natAbs.primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n      rcases hp with rfl | rfl\n      all_goals norm_num\n  have hs := (List.toFinset_eq_of_perm _ _ hf).symm\n  rw [exceptional, hs]\n  decide\ntheorem roots_2_checked : rootResidues coefficients 4 = (\u2205 : Finset \u2115) := by decide\ntheorem rho_2_checked : rho source (2^2) = 0 := by\n  rw [source_polynomial, rho_coefficients, show (2^2 : \u2115) = 4 by norm_num, roots_2_checked]\n  decide\ntheorem roots_2_complete (x : \u2124) : (4 : \u2124) \u2223 source.eval x \u2194\n    (x % 4).toNat \u2208 (\u2205 : Finset \u2115) := by\n  rw [source_polynomial, PerfectPower.NativePolynomialSquare.polynomial_eval]\n  have h := rootResidues_complete coefficients 4 (by norm_num) x\n  norm_num only [Nat.cast_ofNat] at h\n  rwa [roots_2_checked] at h\ntheorem roots_3_checked : rootResidues coefficients 9 = (\u2205 : Finset \u2115) := by decide\ntheorem rho_3_checked : rho source (3^2) = 0 := by\n  rw [source_polynomial, rho_coefficients, show (3^2 : \u2115) = 9 by norm_num, roots_3_checked]\n  decide\ntheorem roots_3_complete (x : \u2124) : (9 : \u2124) \u2223 source.eval x \u2194\n    (x % 9).toNat \u2208 (\u2205 : Finset \u2115) := by\n  rw [source_polynomial, PerfectPower.NativePolynomialSquare.polynomial_eval]\n  have h := rootResidues_complete coefficients 9 (by norm_num) x\n  norm_num only [Nat.cast_ofNat] at h\n  rwa [roots_3_checked] at h\n\ntheorem locally_admissible_checked : LocallyAdmissible source 2 := by\n  apply (admissible_iff_finite source u v 6 2 bezout_checked (by norm_num) (by norm_num)).mpr\n  rw [degree_checked, exceptional_checked]\n  intro p hp hprime\n  simp only [Finset.mem_insert, Finset.mem_singleton] at hp\n  rcases hp with rfl | rfl | rfl | rfl\n  \u00b7 norm_num at hprime\n  \u00b7 norm_num at hprime\n  \u00b7 rw [rho_2_checked]; norm_num\n  \u00b7 rw [rho_3_checked]; norm_num\n\nend PerfectPower.PowerFreePacket_1af481b1a9bd3100\n",
+    "source_sha256": "d26ec9be14173ffd17888187592c4aefbfbd229404b6c800543d952b78cad0c8",
+    "theorem": "PerfectPower.PowerFreePacket_1af481b1a9bd3100.locally_admissible_checked",
+    "declarations": [
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.roots_2_checked",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.rho_2_checked",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.roots_2_complete",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.roots_3_checked",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.rho_3_checked",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.roots_3_complete",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.source_polynomial",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.degree_checked",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.bezout_checked",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.exceptional_checked",
+      "PerfectPower.PowerFreePacket_1af481b1a9bd3100.locally_admissible_checked"
+    ],
+    "kernel_checked": false
+  }
+}

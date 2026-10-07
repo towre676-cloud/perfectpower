@@ -200,6 +200,10 @@ Run `python -m perfectpower population --spec receipts/populations/compatible_la
 
 For example, `curve-query --left '[1,0,-2,0,1]' --right '[0,0,0,1]' --objective 'x*x+y*y' --verify` solves `(x²−1)²=y³` completely and returns all three tied minimizers. The [semilinear receipts](receipts/semilinear_capacity/summary.json) record the defined closure and constrained-optimization workloads. For solver integration, the [SMT adapter](docs/HOST_ADAPTER.md) replaces recognized arithmetic relations with their complete solution sets; the separate [incremental replay tool](industrial_performance/REPLAY_README.md) transports SMT-LIB commands.
 
+## Local power-free arithmetic
+
+The exact local arithmetic interface decides whether an integer polynomial has a fixed prime-power divisor at any prime, using a checked integer Bezout identity and finitely many complete root sets. Native packets prove all-prime admissibility or an obstruction for every signed integer input. Finite-prime avoidance wheels support exact interval counts without enumerating the interval. See [the monograph](docs/POWER_FREE_LOCAL_MONOGRAPH.md) and `make power-free-check`. Local admissibility is separate from a global density or integral-point theorem.
+
 ## Results and guarantees
 
 <a id="the-four-answers"></a>

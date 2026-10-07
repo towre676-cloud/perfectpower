@@ -1,0 +1,49 @@
+{
+  "schema": "pp-power-free-local/1",
+  "coefficients": [
+    -1,
+    1
+  ],
+  "exponent": 2,
+  "degree": 1,
+  "bezout": {
+    "u": [
+      0
+    ],
+    "v": [
+      1
+    ],
+    "constant": 1
+  },
+  "constant_factors": [],
+  "exceptional_primes": [],
+  "local_roots": [],
+  "locally_admissible": true,
+  "fixed_divisor_prime": null,
+  "exceptional_factor_product": "1",
+  "root_work": 0,
+  "complete": true,
+  "execution_verified": false,
+  "density_proved": false,
+  "scope": "all-prime absence or presence of a fixed prime-power divisor; no global density or point classification",
+  "upstream": {
+    "repository": "https://github.com/openai/math",
+    "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "path": "lean/OAI/NumberTheory/PowerFree/Sieve.lean",
+    "license": "Apache-2.0"
+  },
+  "lean": {
+    "namespace": "PerfectPower.PowerFreePacket_211bd412a3bac54a",
+    "source": "import PerfectPower.PowerFreeLocal\nset_option maxHeartbeats 4000000\nset_option maxRecDepth 20000\nnamespace PerfectPower.PowerFreePacket_211bd412a3bac54a\nopen Polynomial PerfectPower.PowerFreeLocal\ndef coefficients : List \u2124 := [-1, 1]\nnoncomputable def source : Polynomial \u2124 := C (-1) + C (1) * X\nnoncomputable def u : Polynomial \u2124 := 0\nnoncomputable def v : Polynomial \u2124 := C (1)\ntheorem source_polynomial : source = PerfectPower.NativePolynomialSquare.polynomial coefficients := by\n  norm_num [source, coefficients, PerfectPower.NativePolynomialSquare.polynomial]\n  <;> ring\ntheorem degree_checked : source.natDegree = 1 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem bezout_checked : Bezout source u v 1 := by\n  norm_num [Bezout,source,u,v,Polynomial.derivative_add,Polynomial.derivative_mul,Polynomial.derivative_pow]\n  <;> ring\ntheorem exceptional_checked : exceptional 1 1 = ({0,1} : Finset \u2115) := by\n  have hf : ([] : List \u2115).Perm (1 : \u2124).natAbs.primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n\n\n  have hs := (List.toFinset_eq_of_perm _ _ hf).symm\n  rw [exceptional, hs]\n  decide\n\ntheorem locally_admissible_checked : LocallyAdmissible source 2 := by\n  apply (admissible_iff_finite source u v 1 2 bezout_checked (by norm_num) (by norm_num)).mpr\n  rw [degree_checked, exceptional_checked]\n  intro p hp hprime\n  simp only [Finset.mem_insert, Finset.mem_singleton] at hp\n  rcases hp with rfl | rfl\n  \u00b7 norm_num at hprime\n  \u00b7 norm_num at hprime\n\nend PerfectPower.PowerFreePacket_211bd412a3bac54a\n",
+    "source_sha256": "82cc3232336916d535541d0e4337908ec1e301e2acee79ef1017ae32a700e06b",
+    "theorem": "PerfectPower.PowerFreePacket_211bd412a3bac54a.locally_admissible_checked",
+    "declarations": [
+      "PerfectPower.PowerFreePacket_211bd412a3bac54a.source_polynomial",
+      "PerfectPower.PowerFreePacket_211bd412a3bac54a.degree_checked",
+      "PerfectPower.PowerFreePacket_211bd412a3bac54a.bezout_checked",
+      "PerfectPower.PowerFreePacket_211bd412a3bac54a.exceptional_checked",
+      "PerfectPower.PowerFreePacket_211bd412a3bac54a.locally_admissible_checked"
+    ],
+    "kernel_checked": false
+  }
+}

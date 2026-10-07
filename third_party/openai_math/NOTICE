@@ -1,0 +1,8 @@
+Selected proof arguments adapted from OpenAI math (Apache-2.0).
+Upstream: https://github.com/openai/math
+Commit: adc7f1241b42e322a6451854ab7e4b4c146bf78a
+File: lean/OAI/NumberTheory/PowerFree/Sieve.lean
+Adaptation: PerfectPower/PowerFreeLocal.lean
+Changes: Lean 4.20 imports and APIs; exact integer Bezout identities replace
+resultant hypotheses; finite admissibility and original-coordinate packet
+interfaces added. No upstream analytic density theorem is included.

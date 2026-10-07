@@ -1,0 +1,44 @@
+{
+  "schema": "pp-power-free-release/1",
+  "upstream": {
+    "repository": "https://github.com/openai/math",
+    "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "path": "lean/OAI/NumberTheory/PowerFree/Sieve.lean",
+    "license": "Apache-2.0"
+  },
+  "publication_parent": "a14e128698e381a6a01e5e385f910f195e66f7f5",
+  "fixtures": 11,
+  "admissible_fixtures": 9,
+  "obstructed_fixtures": 2,
+  "census_polynomials": 64,
+  "independent_prime_square_checks": 512,
+  "huge_interval_width": "2000000000000000000000000000001",
+  "reusable_theorems": 11,
+  "generated_declarations": 121,
+  "generated_source_sha256": "c03364a7a68074b77c91bf69e5f2af9b00f19f6110c9e1b415dcb9617e3708e5",
+  "kernel_checked": true,
+  "remaining": [
+    "global power-free density",
+    "repeated-factor all-prime admissibility",
+    "generic JSON interpreter",
+    "formal prime-power lifting producer and wheel assembly"
+  ],
+  "source_hashes": {
+    "PerfectPower/PowerFreeLocal.lean": "b75ff9e592f51304190926f5b459aa2e646a5483d1be3a17f43e8dd6f963f5ff",
+    "python/perfectpower/power_free_local.py": "f7751368a553e923fbcd92d35b48c62b89c8af628794a9cc42590060f4c77e25",
+    "python/develop_power_free_local.py": "6a5f5772bf188beef1158a5c95240d834b045f624c0590b07c2ba2d69b9a9df9",
+    "python/perfectpower/query_service.py": "2aa37ac8c18de7914a67aca7012b0edb7d9ffb7ca65130e89ce39452b4e53322",
+    "python/tests/test_power_free_local.py": "c2266fa892fbede6b70b57e7c6119c7b72d39046c0b9f8745b5aebd6e9b1e9d7",
+    "scripts/check_power_free_local.sh": "7ead39f7518267b25a73f93f6d527db3f9106051918f8a97f79a0fc7110872ba",
+    "docs/POWER_FREE_LOCAL_MONOGRAPH.md": "67083adaa8b24abde20fa5d28a1466441e134c96ea06244e9a911ff44f06bfe4",
+    "docs/POWER_FREE_LOCAL_MONOGRAPH.pdf": "689858db8b9993be5d6f2ebac507108389f74b15171df843511f5153e0b768e6"
+  },
+  "focused_python_tests": 11,
+  "regression_tests": {
+    "bridge_tests.log": 7,
+    "query_space_tests.log": 18,
+    "semilinear_tests.log": 34,
+    "service_tests.log": 1
+  },
+  "total_focused_test_executions": 71
+}

@@ -1,3 +1,4 @@
+import PerfectPower.PowerFreeLocal
 import PerfectPower.EllipticSquareTransport
 import PerfectPower.EllipticQuarticLifts
 import PerfectPower.PicardLefschetz

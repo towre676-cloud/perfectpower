@@ -1,0 +1,79 @@
+{
+  "schema": "pp-power-free-local/1",
+  "coefficients": [
+    0,
+    1,
+    1
+  ],
+  "exponent": 1,
+  "degree": 2,
+  "bezout": {
+    "u": [
+      -4
+    ],
+    "v": [
+      1,
+      2
+    ],
+    "constant": 1
+  },
+  "constant_factors": [],
+  "exceptional_primes": [
+    2
+  ],
+  "local_roots": [
+    {
+      "prime": 2,
+      "exponent": 1,
+      "modulus": 2,
+      "roots": [
+        0,
+        1
+      ],
+      "rho": 2,
+      "local_factor": "0",
+      "levels": [
+        {
+          "power": 1,
+          "modulus": 2,
+          "roots": [
+            0,
+            1
+          ]
+        }
+      ],
+      "work": 2
+    }
+  ],
+  "locally_admissible": false,
+  "fixed_divisor_prime": 2,
+  "exceptional_factor_product": "0",
+  "root_work": 2,
+  "complete": true,
+  "execution_verified": false,
+  "density_proved": false,
+  "scope": "all-prime absence or presence of a fixed prime-power divisor; no global density or point classification",
+  "upstream": {
+    "repository": "https://github.com/openai/math",
+    "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+    "path": "lean/OAI/NumberTheory/PowerFree/Sieve.lean",
+    "license": "Apache-2.0"
+  },
+  "lean": {
+    "namespace": "PerfectPower.PowerFreePacket_13063aae1cb59d5d",
+    "source": "import PerfectPower.PowerFreeLocal\nset_option maxHeartbeats 4000000\nset_option maxRecDepth 20000\nnamespace PerfectPower.PowerFreePacket_13063aae1cb59d5d\nopen Polynomial PerfectPower.PowerFreeLocal\ndef coefficients : List \u2124 := [0, 1, 1]\nnoncomputable def source : Polynomial \u2124 := C (1) * X + C (1) * X^2\nnoncomputable def u : Polynomial \u2124 := C (-4)\nnoncomputable def v : Polynomial \u2124 := C (1) + C (2) * X\ntheorem source_polynomial : source = PerfectPower.NativePolynomialSquare.polynomial coefficients := by\n  norm_num [source, coefficients, PerfectPower.NativePolynomialSquare.polynomial]\n  <;> ring\ntheorem degree_checked : source.natDegree = 2 := by\n  unfold source\n  compute_degree <;> norm_num\ntheorem bezout_checked : Bezout source u v 1 := by\n  norm_num [Bezout,source,u,v,Polynomial.derivative_add,Polynomial.derivative_mul,Polynomial.derivative_pow]\n  <;> ring\ntheorem exceptional_checked : exceptional 1 2 = ({0,1,2} : Finset \u2115) := by\n  have hf : ([] : List \u2115).Perm (1 : \u2124).natAbs.primeFactorsList := by\n    apply Nat.primeFactorsList_unique\n    \u00b7 norm_num\n    \u00b7 intro p hp\n      simp only [List.mem_cons, List.not_mem_nil, or_false] at hp\n\n\n  have hs := (List.toFinset_eq_of_perm _ _ hf).symm\n  rw [exceptional, hs]\n  decide\ntheorem roots_2_checked : rootResidues coefficients 2 = ({0,1} : Finset \u2115) := by decide\ntheorem rho_2_checked : rho source (2^1) = 2 := by\n  rw [source_polynomial, rho_coefficients, show (2^1 : \u2115) = 2 by norm_num, roots_2_checked]\n  decide\ntheorem roots_2_complete (x : \u2124) : (2 : \u2124) \u2223 source.eval x \u2194\n    (x % 2).toNat \u2208 ({0,1} : Finset \u2115) := by\n  rw [source_polynomial, PerfectPower.NativePolynomialSquare.polynomial_eval]\n  have h := rootResidues_complete coefficients 2 (by norm_num) x\n  norm_num only [Nat.cast_ofNat] at h\n  rwa [roots_2_checked] at h\n\ntheorem fixed_divisor_checked (x : \u2124) : \u00ac PowerFree 1 (source.eval x) := by\n  apply fixed_divisor_obstruction source 2 1 (by norm_num)\n  rw [rho_2_checked]\n  norm_num\n\nend PerfectPower.PowerFreePacket_13063aae1cb59d5d\n",
+    "source_sha256": "68ff9d5e3272a34d3df7c73ce7762bfe32c9b09bcfcf635b56dc7759aa43eec4",
+    "theorem": "PerfectPower.PowerFreePacket_13063aae1cb59d5d.fixed_divisor_checked",
+    "declarations": [
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.roots_2_checked",
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.rho_2_checked",
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.roots_2_complete",
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.source_polynomial",
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.degree_checked",
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.bezout_checked",
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.exceptional_checked",
+      "PerfectPower.PowerFreePacket_13063aae1cb59d5d.fixed_divisor_checked"
+    ],
+    "kernel_checked": false
+  }
+}

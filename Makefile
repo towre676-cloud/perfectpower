@@ -228,3 +228,9 @@ native-halves-refinement-receipts:
 native-halves-refinement-lean:
 	lake build PerfectPower.EllipticQuarticLifts
 	lake env lean audit/NativeHalvesRefinement.lean
+
+.PHONY: power-free-receipts power-free-check
+power-free-receipts:
+	$(PY) python/develop_power_free_local.py
+power-free-check:
+	bash scripts/check_power_free_local.sh

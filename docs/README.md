@@ -109,3 +109,5 @@ The native bridges connect original rational-root packets, nonenumerated affine 
 Native actual halving certificates now check concrete doubling anchors and prove complete torsion cosets, or prove empty fibres from a root-free quartic, including branch targets. The public operation is `native_halves_certificate`; registered elliptic objects expose `native_halves`. See `docs/NATIVE_HALVES_MONOGRAPH.md`. Original-model group transport, literal output-list refinement and nonsquare quartic lifts remain open.
 
 The version-two native halving interface closes original-model actual group transport, exact returned literal coordinate-list equality, and complete nonsquare/signed quartic lifting. New packets prove original-target coordinates and a full original-model literal fibre theorem; `route="quartic"` exercises both candidate signs. See `docs/NATIVE_HALVES_REFINEMENT_MONOGRAPH.md`. Generic parser implementation refinement and efficient Sturm checking remain separate.
+
+[Finite local power-free arithmetic](POWER_FREE_LOCAL_MONOGRAPH.md) develops all-prime local admissibility, original-coordinate obstructions and exact avoidance wheels.

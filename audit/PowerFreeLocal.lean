@@ -1,0 +1,12 @@
+import PerfectPower.PowerFreeLocal
+#print axioms PerfectPower.PowerFreeLocal.derivative_not_dvd_of_bezout
+#print axioms PerfectPower.PowerFreeLocal.divided_difference_eval
+#print axioms PerfectPower.PowerFreeLocal.eval_sub_eq_mul_divided_difference
+#print axioms PerfectPower.PowerFreeLocal.prime_power_root_unique
+#print axioms PerfectPower.PowerFreeLocal.map_zmod_ne_zero_of_good
+#print axioms PerfectPower.PowerFreeLocal.rho_prime_pow_le_degree
+#print axioms PerfectPower.PowerFreeLocal.admissible_iff_finite
+#print axioms PerfectPower.PowerFreeLocal.rho_coefficients
+#print axioms PerfectPower.PowerFreeLocal.eval_mod_dvd
+#print axioms PerfectPower.PowerFreeLocal.rootResidues_complete
+#print axioms PerfectPower.PowerFreeLocal.fixed_divisor_obstruction

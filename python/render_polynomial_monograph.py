@@ -30,6 +30,14 @@ def render(source,output,*,edition='polynomial'):
             'scope':'Bounded point sets and explicit determinant bounds. Integral lattice saturation, global height bounds and manuscript-wide verification retain separate obligations.',
             'running':'Integral kernels, local expansions and exact bounded vanishing',
         },
+        'powerfree':{
+            'title':'Finite local arithmetic at every prime',
+            'subtitle':'Exact Bezout identities, prime-power roots<br/>and addressable avoidance domains',
+            'description':'A finite kernel-checked criterion for all-prime local admissibility, fixed-divisor obstructions for every signed integer, exact singular root lifting and nonenumerating interval counts.',
+            'metrics':[('132','reusable and generated declarations audited'),('64','independent polynomial census cases'),('512','independent prime-square root counts')],
+            'scope':'Local power-free arithmetic on the pinned Lean 4.20 toolchain. No global density, generic JSON interpreter or arbitrary repeated-factor admissibility claim.',
+            'running':'Finite local power-free arithmetic and exact avoidance domains',
+        },
         'halvesrefinement':{
             'title':'The original elliptic interface is connected',
             'subtitle':'Actual group transport, literal outputs<br/>and complete signed quartic lifts',
@@ -273,7 +281,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)
