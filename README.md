@@ -308,3 +308,6 @@ The version-two native halving interface closes original-model actual group tran
 ## Elliptic bridge continuation
 
 The bounded saturation and formal point-law continuation is documented in [the monograph](docs/ELLIPTIC_BRIDGES_MONOGRAPH.md) and [the implementation handoff](CLAUDE_CODE_ELLIPTIC_BRIDGES_START_HERE.md). `make elliptic-bridges` reproduces the focused Lean audit, six saturation packets and five real Legendre endpoint packets. The release preserves explicit global Mordell, Matveev and general compiler/period obligations.
+
+
+The wall resonance continuation derives a background-corrected polynomial radiation node and tests retuned localized candidates, including a 154.23 GeV candidate with the Higgs quartic fixed. See [the derivation and scope](docs/WALL_EMBEDDED_STATES_MONOGRAPH.md), [numerical receipts](receipts/flavor_cosmology/wall_embedded_states.json), and [the illustrated monograph](output/pdf/Retuned_Wall_Radiation_Nodes.pdf). The tuned leakage remains numerically unresolved; infinite-domain existence and quantum protection are open.
