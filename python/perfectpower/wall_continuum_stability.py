@@ -25,7 +25,7 @@ itself is exact algebra plus standard ground-state (Allegretto-Piepenbrink)
 arguments.
 """
 import numpy as np
-from .wall_scattering import _constants, hessian
+from .wall_jost_scattering import _constants, hessian
 
 
 def profile_and_derivatives(wall, rho):
@@ -52,7 +52,7 @@ def tail_certificate(wall, R_t=30.):
     [R_t, infinity). The Higgs-mode coefficient is evaluated from its exact
     eigenvector, so components far below double precision keep their sign.
     """
-    from .wall_scattering import vacuum_channels
+    from .wall_jost_scattering import vacuum_channels
     lam, a, m, h0, kap, lH = _constants(wall)
     mu, V = vacuum_channels(wall)
     z = wall['solution'].sol(R_t)

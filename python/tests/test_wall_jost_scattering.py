@@ -5,7 +5,7 @@ import numpy as np
 from scipy.integrate import solve_ivp
 from perfectpower.dimensionful_walls import WallModel
 from perfectpower.wall_fluctuations import HiggsWall, solve_coupled_wall, potential_and_hessian
-from perfectpower import wall_scattering as ws
+from perfectpower import wall_jost_scattering as ws
 
 MODEL = WallModel(30000., .1, .025000033333333335, 300000., 3000.)
 

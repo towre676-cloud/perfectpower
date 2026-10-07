@@ -41,7 +41,7 @@ def main():
                       'min_h_minus_h0': c['h_ge_h0']['min_h_minus_h0'],
                       'identity_max_relative_gap': max(abs(t['lhs'] - t['rhs'])/abs(t['rhs']) for t in c['translation_identity'])}
     out['variations'] = var
-    jr = json.loads((ROOT/'receipts/flavor_cosmology/wall_scattering.json').read_text())
+    jr = json.loads((ROOT/'receipts/flavor_cosmology/wall_jost_scattering.json').read_text())
     out['consistency_with_Jost_census'] = {'translation_pole': jr['translation_zero_mode_pole']['h_core_002'],
                                            'opposite_lowest_state': jr['shape_resonance']['E_shape_FEM'],
                                            'meaning': 'The continuum Jost census finds the translation zero mode and no other state below the Higgs threshold, as the theorem requires.'}

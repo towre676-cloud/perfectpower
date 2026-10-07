@@ -26,7 +26,7 @@ for i,part in enumerate(parts):
         continue
     style = styles["Title"] if part.startswith("# ") else styles["BodyText"]
     story.append(Paragraph(escape(part.removeprefix("# ").replace("\n"," ")),style))
-    figure = {"Open-channel scattering and the shape resonance":"wall_scattering.png",
+    figure = {"Open-channel scattering and the shape resonance":"wall_jost_scattering.png",
               "Nonlinear radiation of the shape mode":"wall_shape_radiation.png",
               "Finite-temperature transition and nucleation":"wall_nucleation.png",
               "Lattice calibration of the wall network":"wall_network.png"}

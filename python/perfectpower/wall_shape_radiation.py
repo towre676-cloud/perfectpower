@@ -15,7 +15,7 @@ from math import sqrt
 import numpy as np
 from scipy.sparse import coo_matrix
 from scipy.sparse.linalg import spsolve
-from .wall_scattering import _constants, hessian, vacuum_channels, channel_momenta
+from .wall_jost_scattering import _constants, hessian, vacuum_channels, channel_momenta
 
 
 def _profile(wall, rho):

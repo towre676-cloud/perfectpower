@@ -6,7 +6,7 @@ import hashlib, json
 import numpy as np
 from perfectpower.dimensionful_walls import WallModel, HBAR_GEV_S
 from perfectpower.wall_fluctuations import HiggsWall, solve_coupled_wall, potential_and_hessian
-from perfectpower import wall_scattering as ws
+from perfectpower import wall_jost_scattering as ws
 from perfectpower import wall_shape_radiation as sr
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,7 +18,7 @@ def summary(r):
 
 def main():
     source = ROOT/'receipts/flavor_cosmology/dimensionful_walls.json'
-    scat = ROOT/'receipts/flavor_cosmology/wall_scattering.json'
+    scat = ROOT/'receipts/flavor_cosmology/wall_jost_scattering.json'
     old = json.loads(source.read_text())
     lin = json.loads(scat.read_text())
     model = replace(WallModel(**old['declared_model_inputs']), bias_h0_GeV3=0., bias_onset_GeV=0.)

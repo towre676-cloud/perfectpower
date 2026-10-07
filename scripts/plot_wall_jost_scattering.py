@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 root=Path(__file__).resolve().parents[1]
-r=json.loads((root/'receipts/flavor_cosmology/wall_scattering.json').read_text())
+r=json.loads((root/'receipts/flavor_cosmology/wall_jost_scattering.json').read_text())
 plt.rcParams.update({'font.size':13,'axes.spines.top':False,'axes.spines.right':False})
 fig,axes=plt.subplots(2,2,figsize=(12,7.6),constrained_layout=True)
 a=axes[0,0];x=np.linspace(-6,6,400)
@@ -34,4 +34,4 @@ a.semilogx(k[o],g[o]*1e4,'o-',label='Feshbach, wall re-solved')
 a.axhline(r['shape_resonance']['closed_form_Gamma_E']/r['declared_Higgs']['portal']**2*1e4,color='grey',ls='--',label='closed form')
 a.set(xlabel=r'portal $\kappa$',ylabel=r'$10^4\,\Gamma_E/\kappa^2$',title='Shape-mode width scaling');a.legend(frameon=False,fontsize=10)
 fig.suptitle('Open-channel scattering of the coupled spectator wall',fontsize=17)
-fig.savefig(root/'receipts/flavor_cosmology/wall_scattering.png',dpi=170)
+fig.savefig(root/'receipts/flavor_cosmology/wall_jost_scattering.png',dpi=170)

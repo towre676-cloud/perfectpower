@@ -6,7 +6,7 @@ import hashlib, json
 import numpy as np
 from perfectpower.dimensionful_walls import WallModel, radiation_H
 from perfectpower.wall_fluctuations import HiggsWall, solve_coupled_wall
-from perfectpower import wall_scattering as ws
+from perfectpower import wall_jost_scattering as ws
 
 ROOT = Path(__file__).resolve().parents[1]
 EPS_LADDER = (1e4, 3e4, 1e5, 3e5)
@@ -208,7 +208,7 @@ def main():
                     'closed-form leading width and an operator-level coupling ladder. Not a rigorous enclosure, not a continuum '
                     'stability theorem, and no angular Higgs, gauge, fermion, thermal-plasma, nonlinear (two-quantum) or '
                     'network dynamics.')
-    path = ROOT/'receipts/flavor_cosmology/wall_scattering.json'
+    path = ROOT/'receipts/flavor_cosmology/wall_jost_scattering.json'
     path.write_text(json.dumps(out, indent=2, sort_keys=True)+'\n')
     print(json.dumps({'E_shape': res['E_shape_FEM'], 'Sigma': res['Sigma'], 'Gamma_GeV': res['physical']['Gamma_GeV'],
                       'lifetime_s': res['physical']['lifetime_s'],
