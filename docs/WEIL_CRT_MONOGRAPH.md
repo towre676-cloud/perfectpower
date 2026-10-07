@@ -1,5 +1,7 @@
 # Exact Fourier/chirp commutants and the CRT bridge
 
+The subsequent [kernel dimension extension](WEIL_DIMENSION_MONOGRAPH.md) completes the coefficient-expansion dimension proof and actual cyclic CRT-compatible-character instantiation in Lean. References below to the paper-only dimension assembly describe the preceding release. Independently chosen roots and coefficient-field normalization remain a separate transport task.
+
 ## The convention and the mathematical result
 
 At level N, this repository uses the unnormalized Fourier matrix F[x,y]=zeta_N to the power xy and the diagonal chirp T[x,x]=zeta_N to the power x squared. The even-level chirp uses an Nth root, not a 2Nth root. Changing that convention can change the answer. Write c(N) for the dimension, over the cyclotomic field, of the matrices commuting with both F and T.

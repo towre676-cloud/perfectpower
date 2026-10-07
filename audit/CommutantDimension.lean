@@ -1,0 +1,32 @@
+import PerfectPower.WeilTensorDimension
+
+#print axioms PerfectPower.SeparatedDimension.row_functional_mem
+#print axioms PerfectPower.SeparatedDimension.assemble_column
+#print axioms PerfectPower.SeparatedDimension.assemble_mem
+#print axioms PerfectPower.SeparatedDimension.assemble_injective
+#print axioms PerfectPower.SeparatedDimension.range_assemble
+#print axioms PerfectPower.SeparatedDimension.finrank_separated
+#print axioms PerfectPower.CommutantDimension.mul_left_entry
+#print axioms PerfectPower.CommutantDimension.left_mul_entry
+#print axioms PerfectPower.CommutantDimension.mul_right_entry
+#print axioms PerfectPower.CommutantDimension.right_mul_entry
+#print axioms PerfectPower.CommutantDimension.commute_left_iff
+#print axioms PerfectPower.CommutantDimension.commute_right_iff
+#print axioms PerfectPower.CommutantDimension.entrySpace_mem
+#print axioms PerfectPower.CommutantDimension.regroup_mem
+#print axioms PerfectPower.CommutantDimension.finrank_entrySpace
+#print axioms PerfectPower.CommutantDimension.fourSpace_finrank
+#print axioms PerfectPower.CommutantDimension.crt_finrank
+#print axioms PerfectPower.WeilTensorDimension.tensor_mul
+#print axioms PerfectPower.WeilTensorDimension.kronecker_power
+#print axioms PerfectPower.WeilTensorDimension.chirp_zero
+#print axioms PerfectPower.WeilTensorDimension.chirp_power
+#print axioms PerfectPower.WeilTensorDimension.projected_chirp
+#print axioms PerfectPower.WeilTensorDimension.recovery_word
+#print axioms PerfectPower.WeilTensorDimension.tensor_finrank
+#print axioms PerfectPower.WeilTensorDimension.productCharacter_primitive
+#print axioms PerfectPower.WeilTensorDimension.crtCharacter_primitive
+#print axioms PerfectPower.WeilTensorDimension.crt_fourier
+#print axioms PerfectPower.WeilTensorDimension.reindex_diagonal
+#print axioms PerfectPower.WeilTensorDimension.crt_chirp
+#print axioms PerfectPower.WeilTensorDimension.crt_character_finrank

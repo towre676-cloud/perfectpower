@@ -279,3 +279,7 @@ integer-valued-check:
 .PHONY: check-weil-commutant
 check-weil-commutant:
 	bash scripts/check_weil_commutant.sh
+
+.PHONY: check-commutant-dimension
+check-commutant-dimension:
+	bash scripts/check_commutant_dimension.sh

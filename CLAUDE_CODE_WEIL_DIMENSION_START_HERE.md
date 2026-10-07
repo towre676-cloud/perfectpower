@@ -1,0 +1,7 @@
+# The kernel dimension bridge
+
+Start with `docs/WEIL_DIMENSION_MONOGRAPH.md`. Thirty new general declarations in three modules close the coefficient-space dimension gap and build the cyclic CRT-compatible-character instantiation. `SeparatedDimension.finrank_separated` proves the product dimension of rectangular tensors with prescribed column and row subspaces. `CommutantDimension.fourSpace_finrank` applies it to ordinary separate matrix actions; `crt_finrank` composes it with the prior separation packet.
+
+`WeilTensorDimension.packet` derives the chirp projections, half-chirp, Fourier inverses and recovery word from positive coprime moduli and primitive additive characters, with an odd second factor. `tensor_finrank` proves its global product dimension. `crt_character_finrank` proves the law after actual cyclic CRT coordinate reindexing. Character primitivity and both matrix factorizations are proved internally.
+
+Run `make check-commutant-dimension`. The new proof is general and changes no finite-census Python code. Forty-seven general declarations across this extension and the preceding WeilCRT module have focused audits. The all-exponent local dimension formulas remain independent. The next normalization task is coefficient-field extension and cyclotomic automorphism transport for independently chosen primitive roots. Preserve the distinction between that normalization step and the completed common-field compatible-character theorem.

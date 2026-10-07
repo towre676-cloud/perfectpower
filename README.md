@@ -9,6 +9,8 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [kernel dimension extension](docs/WEIL_DIMENSION_MONOGRAPH.md) proves the general product dimension of separate matrix commutants and the cyclic CRT-compatible-character law in Lean. Its thirty new declarations derive the required packet and matrix identities from coprimality and primitive characters; run `make check-commutant-dimension`.
+
 The [exact Fourier/chirp commutant bridge](docs/WEIL_CRT_MONOGRAPH.md) proves general Gauss and generator-separation identities in Lean and certifies every commutant dimension through level 64 using exact cyclotomic identities and modular rank minors. The accompanying [Mordell frontier](receipts/mordell_frontier.json) reconciles 457 remaining rank-conditional census rows. Run `make check-weil-commutant`.
 
 The [complete multi-prime residue products](docs/RESIDUE_ATLAS_CRT_MONOGRAPH.md) compose every local root combination by coordinate CRT, retain large covers as factored tables, and provide exact rectangle counts, rank/select and complete source scans. Twelve general Lean theorems and six native worked products certify the arithmetic bridge. Run `make check-residue-atlas-product`; the [handoff](CLAUDE_CODE_RESIDUE_ATLAS_CRT_START_HERE.md) identifies the remaining generic traversal refinement.

@@ -412,3 +412,5 @@ import PerfectPower.ResidueAtlasCRT
 import PerfectPower.IntegerValuedPolynomial
 
 import PerfectPower.WeilCRT
+
+import PerfectPower.WeilTensorDimension
