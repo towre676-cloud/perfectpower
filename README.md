@@ -1,5 +1,8 @@
 # PerfectPower
 
+
+The [complete multi-prime residue products](docs/RESIDUE_ATLAS_CRT_MONOGRAPH.md) compose every local root combination by coordinate CRT, retain large covers as factored tables, and provide exact rectangle counts, rank/select and complete source scans. Twelve general Lean theorems and six native worked products certify the arithmetic bridge. Run `make check-residue-atlas-product`; the [handoff](CLAUDE_CODE_RESIDUE_ATLAS_CRT_START_HERE.md) identifies the remaining generic traversal refinement.
+
 The latest wall result computes the outgoing source-shape resonance, resolves its Higgs-channel radiation width, and derives an exact polynomial leading-radiation node that the full coupled calculation shows is not an exact bound state. See [the updated monograph](docs/FLAVOR_COSMOLOGY_MONOGRAPH.md) and [scientific packet](receipts/flavor_cosmology/wall_scattering.json).
 
 **Exact polynomial arithmetic, reusable decision policies, and algebraic-curve research from the defining polynomial.**

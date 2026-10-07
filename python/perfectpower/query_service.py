@@ -36,6 +36,20 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'residue_atlas_product', 'compose_residue_atlases', 'verify_residue_atlas_product',
+              'residue_product_contains', 'residue_product_population', 'residue_product_select',
+              'residue_product_rank', 'residue_product_scan', 'native_residue_atlas_product'}:
+        from . import residue_atlas_product as rp
+        result = {'residue_atlas_product': rp.product_packet, 'compose_residue_atlases': rp.compose_atlases,
+                  'verify_residue_atlas_product': rp.verify_product, 'residue_product_contains': rp.product_contains,
+                  'residue_product_population': rp.product_population, 'residue_product_select': rp.product_select,
+                  'residue_product_rank': rp.product_rank, 'residue_product_scan': rp.product_scan,
+                  'native_residue_atlas_product': rp.native_product}[op](**args)
+        if op.startswith('verify_'):
+            return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'):
+            return dict(lean_source=result, execution_verified=False)
+        return result
     if op in {'residue_atlas', 'verify_residue_atlas', 'residue_atlas_population',
               'residue_atlas_select', 'residue_atlas_rank', 'residue_atlas_scan', 'native_residue_atlas'}:
         from . import residue_atlas as ra

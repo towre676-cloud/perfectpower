@@ -408,3 +408,4 @@ import PerfectPower.IntegralKernelWitness
 import PerfectPower.ResidueDeterminantCertificate
 import PerfectPower.BoundedResiduePatch
 import PerfectPower.ResidueAtlas
+import PerfectPower.ResidueAtlasCRT

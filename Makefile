@@ -266,3 +266,7 @@ fixed-divisor-receipts:
 	PYTHONPATH=python python3 python/develop_fixed_divisor.py
 fixed-divisor-check:
 	bash scripts/check_fixed_divisor.sh
+
+.PHONY: check-residue-atlas-product
+check-residue-atlas-product:
+	bash scripts/check_residue_atlas_product.sh
