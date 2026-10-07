@@ -26,6 +26,11 @@ for i,part in enumerate(parts):
         continue
     style = styles["Title"] if part.startswith("# ") else styles["BodyText"]
     story.append(Paragraph(escape(part.removeprefix("# ").replace("\n"," ")),style))
+    if part.strip().startswith("Open-channel scattering and the shape resonance"):
+        image = root/"receipts/flavor_cosmology/wall_scattering.png"
+        iw,ih=ImageReader(str(image)).getSize()
+        story.append(Image(str(image),width=465,height=465*ih/iw))
+        story.append(Spacer(1,9))
     if i == 1:
         image = root/"receipts/flavor_cosmology/wall_stability.png"
         if not image.exists():image=root/"receipts/flavor_cosmology/dimensionful_walls.png"
