@@ -219,3 +219,29 @@ Newly opened:
 | N33 | KZ follow-ups: 3D networks with expansion, three-field evolution through the Higgs transition, bath matching, continuum critical calibration | `0087ca7` | P/M |
 | N34 | Thermal wall follow-ups: gauge-resummed thermal masses, damping kernels, real-time thermal wall evolution, loop matching | `e3140a2` | P/M |
 | N35 | Apply the field theorems in ZMod p for Brainpool-384 now that p is proved prime; Lean good-reduction kernel proof for 11/13 | `2fdc37d`, `0e34a9a` | L |
+
+## Fifth update (this branch, massive push)
+
+Closed on this branch:
+
+| Item | Commit | Monograph |
+|---|---|---|
+| Genus-2 periods with complex branch points, automatic symplectic marking, Riemann relations, Sp(4,Z) consistency | `eb121c6` | GENUS2_COMPLEX_PERIODS_MONOGRAPH |
+| 36 unresolved boxes: all 36 certified to *fail* (interior zeros; they are affine-face boxes, not metric boxes) | `71a8da9` | CURVE_CERTIFIED_CONTINUATION_MONOGRAPH |
+| Certified Legendre connection, Frobenius charts incl. the positive-resonance chart at infinity, integral Γ(2) monodromy | `71a8da9` | same |
+| Singular Richelot targets (E1×E2 or a Weil restriction); DDMM cluster stable reduction and conductors, any genus, p odd | `32856e1` | SINGULAR_RICHELOT_AND_CLUSTERS_MONOGRAPH |
+| Annihilation-phase GW: enhancement ≈1.47 over the unbiased network, ε_gw≈0.7, offset-law K≈1.95 | `3ab3cf1` | WALL_ANNIHILATION_GW_MONOGRAPH |
+| Nonlinear lifetime of the 154.225 GeV mode: real-time Gaussian pair emission reproduces Γ_GG to ~1–2% | `e01fa59` | WALL_MODE_LIFETIME_MONOGRAPH |
+| CW and two-loop nucleation corrections (CW dominates; S3/T falls up to ~27%); Arb-certified spectral gap (>125.35 GeV, within 0.13% of the threshold) | `8c04fd9` | WALL_NUCLEATION_CORRECTIONS_AND_CERTIFIED_STABILITY |
+
+Newly opened:
+
+| # | Item | Tier |
+|---|---|---|
+| N36 | Fix the CONNECTED_CLOSURES monograph's "metric boxes" wording (they are affine-face boxes) | P (doc) |
+| N37 | Asymptotic test of the p=1/2 annihilation law: larger boxes or earlier network formation | P (compute) |
+| N38 | The electroweak (gauged) lifetime in real time: WW/ZZ channels | P/M |
+| N39 | Certified gap for the declared λ=0.1 wall (main's checker coercivity constant is too large) and for the angular/gauge sectors | A |
+| N40 | Two-loop thermal diagrams computed with counterterms, replacing the estimates; interval bounces | P/A |
+| N41 | Cluster stable reduction at p=2 or with wild ramification; minimal regular models and Tamagawa numbers | P (research) |
+| N42 | Higher-rank resonant Frobenius charts and irregular singular points for the certified connection | A |
