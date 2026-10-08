@@ -289,6 +289,8 @@ The [polynomial Fredholm hierarchy](docs/WALL_FREDHOLM_HIERARCHY_MONOGRAPH.md) d
 
 The [finite Gaussian response calculation](docs/WALL_GAUSSIAN_FREDHOLM_MONOGRAPH.md) retains mediator gradients and derives the shifted radiation node and first portal correction. Independent Green-kernel and Fourier identities support the retuning, while outgoing tests distinguish second-, fourth- and sixth-power leakage. It predicts the fixed-Higgs source quartic within a few parts per million of the localized candidate. [Scientific receipt](receipts/flavor_cosmology/wall_gaussian_fredholm.json) and [illustrated monograph](output/pdf/Gaussian_Coupled_Radiation_Nodes.pdf) retain the finite-domain scope.
 
+The [wall Goldstone and gauge analysis](docs/WALL_GAUGE_CHANNELS_MONOGRAPH.md) proves exact quadratic radial decoupling and derives factorized angular and physical longitudinal operators. A positive Higgs barrier gives conditional vacuum-threshold bounds; the 154 GeV candidate is below the declared on-shell WW and ZZ pair thresholds. Nonzero cubic Ward overlaps keep the nonlinear lifetime question open. [Scientific receipt](receipts/flavor_cosmology/wall_gauge_channels.json) and [illustrated monograph](output/pdf/Wall_Goldstone_and_Gauge_Channels.pdf) separate these results from uncomputed off-shell and loop widths.
+
 ## Build and develop
 
 Run the core Python tests directly from the checkout:
