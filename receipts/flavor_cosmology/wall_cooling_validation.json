@@ -1,0 +1,55 @@
+{
+  "exact_identities_passed": 17,
+  "focused_tests_passed": 9,
+  "matched_Robin_action_comparisons": [
+    {
+      "relative_action_error": 0.00033396865267165676,
+      "temperature_GeV": 140.26845785535934
+    },
+    {
+      "relative_action_error": 0.00036975119436710724,
+      "temperature_GeV": 140.27145785535933
+    },
+    {
+      "relative_action_error": 0.00040830405146086157,
+      "temperature_GeV": 140.27408785765394
+    },
+    {
+      "relative_action_error": 0.0005011554714562383,
+      "temperature_GeV": 140.27488785765394
+    }
+  ],
+  "parent_commit": "4ec6504da0432bd97333aa67bfc85b84dc69386e",
+  "plots_visually_inspected": true,
+  "profiles": 16,
+  "refined_profile_controls": [
+    {
+      "absolute_central_Higgs_difference_GeV": 5.684341886080802e-14,
+      "absolute_tension_difference_GeV3": 0.0054473876953125,
+      "paired_action_difference_between_controls_GeV3": null,
+      "temperature_GeV": 0.0
+    },
+    {
+      "absolute_central_Higgs_difference_GeV": 5.732556651594223e-10,
+      "absolute_tension_difference_GeV3": 0.0068817138671875,
+      "paired_action_difference_between_controls_GeV3": 5.041126405203045e-10,
+      "temperature_GeV": 140.27145785535933
+    },
+    {
+      "absolute_central_Higgs_difference_GeV": 0.0,
+      "absolute_tension_difference_GeV3": 0.00299072265625,
+      "paired_action_difference_between_controls_GeV3": null,
+      "temperature_GeV": 600.0
+    }
+  ],
+  "runtime": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "scientific_receipt_full_byte_replay": true,
+  "scientific_receipt_sha256": "1548318bec6fbf38edefb9a6382665f26248993bdb40d86fd1a6b2289206f7b0",
+  "scope": "Exact symbolic polynomial identities and finite-box numerical static thermal continuation; not whole-repository CI, interval thermal proof, physical plasma matching or a real-time damping calculation."
+}
