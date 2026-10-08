@@ -1,0 +1,117 @@
+{
+  "benchmark": {
+    "parameters": {
+      "a": 0.1,
+      "b": 0.1,
+      "c": 0.1,
+      "eta": 0.0002,
+      "lambda": 0.0001
+    },
+    "scale_scan": [
+      {
+        "V1_at_tree_radius": -3.0404699441981675e-09,
+        "delta_m2_to_retain_radius": 1.6286924187331651e-07,
+        "linear_radius_shift": 5.78545085567887e-06,
+        "mu": 0.05,
+        "one_loop_potential_local_stationary_radius": -0.30867320862722625,
+        "radial_tadpole": -3.01645848695375e-07,
+        "relative_linear_radius_shift": -1.8742614867768182e-05
+      },
+      {
+        "V1_at_tree_radius": -1.891226748950918e-08,
+        "delta_m2_to_retain_radius": -2.809096606884855e-07,
+        "linear_radius_shift": -9.978489603720076e-06,
+        "mu": 0.1,
+        "one_loop_potential_local_stationary_radius": -0.308688960495578,
+        "radial_tadpole": 5.202654106477457e-07,
+        "relative_linear_radius_shift": 3.2326432679136235e-05
+      },
+      {
+        "V1_at_tree_radius": -3.4784065034819936e-08,
+        "delta_m2_to_retain_radius": -7.246885632502845e-07,
+        "linear_radius_shift": -2.5742430063118915e-05,
+        "mu": 0.2,
+        "one_loop_potential_local_stationary_radius": -0.308704975648868,
+        "radial_tadpole": 1.3421766699908608e-06,
+        "relative_linear_radius_shift": 8.339548022604031e-05
+      }
+    ],
+    "scope": "Local positive-mass stationary continuation; no assertion of global one-loop vacuum ordering or two-loop precision.",
+    "tree_mass_squared": [
+      0.008689782243426663,
+      0.008575443003381573,
+      0.0043491112551406,
+      0.0042728850951105415,
+      0.008575443003381571,
+      0.0042728850951105415
+    ],
+    "tree_radius": -0.30867895949930413
+  },
+  "radial_one_loop": {
+    "benchmark_exact_supertrace_derivative": "-11499421/3070625",
+    "calibration_counterterm_convention": "delta V=-delta_m2*Tr(Kdagger*K); delta_m2=V1_prime(r0)/(6*r0)",
+    "mass_squared_order": [
+      "singlet_real",
+      "singlet_imaginary",
+      "adjoint_real",
+      "adjoint_imaginary",
+      "singlet_Weyl",
+      "adjoint_Weyl"
+    ],
+    "off_shell_mass_squared": [
+      "6*a**2*r**2 + 1344*a*b*r**5 + 84*a*c*r**5 + 46080*b**2*r**8 + 5760*b*c*r**8 + 180*c**2*r**8 + 18*lambda*r**2 - 6*lambda*v2",
+      "2*a**2*r**2 - 64*a*b*r**5 - 4*a*c*r**5 + 5120*b**2*r**8 + 640*b*c*r**8 + 20*c**2*r**8 + 6*lambda*r**2 - 6*lambda*v2",
+      "48*a*b*r**5 - 6*a*c*r**5 + 6720*b**2*r**8 - 96*b*c*r**8 - 12*c**2*r**8 + 4*eta*r**2 + 6*lambda*r**2 - 6*lambda*v2",
+      "2*a**2*r**2 - 208*a*b*r**5 + 14*a*c*r**5 - 3520*b**2*r**8 - 224*b*c*r**8 + 20*c**2*r**8 + 6*lambda*r**2 - 6*lambda*v2",
+      "4*a**2*r**2 + 640*a*b*r**5 + 40*a*c*r**5 + 25600*b**2*r**8 + 3200*b*c*r**8 + 100*c**2*r**8",
+      "a**2*r**2 - 80*a*b*r**5 + 4*a*c*r**5 + 1600*b**2*r**8 - 160*b*c*r**8 + 4*c**2*r**8"
+    ],
+    "radius_shift": "-V1_prime(r0)/(6*m_singlet_real_squared)",
+    "scale_response": "mu*d(V1_prime)/dmu=-d(Str M4)/dr/(32*pi^2)",
+    "scope": "MS-bar chiral matter determinant with explicit hard scalar quartics; no gauge, quark or gravitational determinants, kinetic running or UV completion.",
+    "selected_mass_squared": [
+      "12*r**2*(768*b**2*r**6 + 96*b*c*r**6 + 3*c**2*r**6 + lambda)",
+      "36*r**8*(16*b + c)**2",
+      "4*r**2*(1296*b**2*r**6 + eta)",
+      "5184*b**2*r**8",
+      "36*r**8*(16*b + c)**2",
+      "5184*b**2*r**8"
+    ],
+    "supersymmetric_selected_potential_and_tadpole_cancel": true,
+    "supertrace_M4_polynomial": "24*a**4*r**4 + 1536*a**3*b*r**7 + 672*a**3*c*r**7 + 1253376*a**2*b**2*r**10 + 101376*a**2*b*c*r**10 + 6624*a**2*c**2*r**10 + 432*a**2*lambda*r**4 - 288*a**2*lambda*r**2*v2 + 78643200*a*b**3*r**13 + 9437184*a*b**2*c*r**13 + 589824*a*b*c**2*r**13 + 3072*a*b*eta*r**7 + 32256*a*b*lambda*r**7 + 19200*a*c**3*r**13 - 384*a*c*eta*r**7 + 3744*a*c*lambda*r**7 - 1728*a*c*lambda*r**5*v2 + 1258291200*b**4*r**16 + 220200960*b**3*c*r**16 + 17104896*b**2*c**2*r**16 + 430080*b**2*eta*r**10 + 2027520*b**2*lambda*r**10 - 921600*b**2*lambda*r**8*v2 + 786432*b*c**3*r**16 - 6144*b*c*eta*r**10 + 184320*b*c*lambda*r**10 - 46080*b*c*lambda*r**8*v2 + 16896*c**4*r**16 - 768*c**2*eta*r**10 + 7488*c**2*lambda*r**10 - 3168*c**2*lambda*r**8*v2 + 128*eta**2*r**4 + 384*eta*lambda*r**4 - 384*eta*lambda*r**2*v2 + 936*lambda**2*r**4 - 1440*lambda**2*r**2*v2 + 648*lambda**2*v2**2",
+    "supertrace_M4_selected_radial_derivative": "32*r**3*(112896*b**2*eta*r**6 + 214272*b**2*lambda*r**6 - 576*b*c*eta*r**6 + 19008*b*c*lambda*r**6 - 72*c**2*eta*r**6 + 594*c**2*lambda*r**6 + 16*eta**2 + 24*eta*lambda + 27*lambda**2)",
+    "supertrace_weights": [
+      1,
+      1,
+      8,
+      8,
+      -2,
+      -16
+    ],
+    "tree_radial_curvature": "72*r**2*(768*b**2*r**6 + 96*b*c*r**6 + 3*c**2*r**6 + lambda)"
+  },
+  "selected_stabilizer": {
+    "external_premise": "Takeshi Harui, Automorphism groups of smooth plane curves, Kodai Math. J. 42 (2019), 308-331, Theorem 2.5",
+    "full_SU3_tensor_stabilizer_order": 1080,
+    "known_exact_group_order": 1080,
+    "projective_image_order": 360,
+    "projective_scalar_kernel_order": 3,
+    "published_smooth_sextic_automorphism_upper_bound": 360,
+    "scope": "Complete selected global minimum set for the positive norm/Gram selector with bc>0; not a complete census of unperturbed F-flat vacua.",
+    "selected_global_minima": 1080,
+    "smoothness": {
+      "conjugate_triplet_same_result": true,
+      "cyclic_reduction_verified": true,
+      "full_support_Groebner_basis": [
+        "1"
+      ],
+      "generic_nonzero_source_coefficients_imply_all_six_sources_zero": true,
+      "gradient_F6_zero_iff_triplet_zero": true,
+      "one_support_derivative": "3",
+      "scalar_source_complex_modes_with_no_quadratic_mass_at_origin": 18,
+      "source_F_energy_first_nonzero_degree": 10,
+      "two_support_resultant": "67797/32 - 35235*sqrt(15)*I/32"
+    },
+    "source": "https://www.jstage.jst.go.jp/article/kodaimath/42/2/42_308/_pdf/-char/en"
+  }
+}
