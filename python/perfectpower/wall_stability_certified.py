@@ -24,7 +24,7 @@ The infinite tail x>22 is analytic: the trial is the exact vacuum there.
 """
 from fractions import Fraction
 from flint import arb, arb_poly, ctx
-from .wall_profile_intervals import ball, bernstein_range, absolute_bound, force, quintic, check_seed
+from .wall_profile_intervals import ball, bernstein_range, absolute_bound, force, quintic, check_seed, seed_nodes
 
 TANH_SECOND_MAX = '0.7699'   # max|tanh''| = 4/(3 sqrt 3) = 0.76980...
 SECH2_SECOND_MAX = '2'       # max|(sech^2)''| = max sech^2|6 tanh^2-2| = 2 (at x=0)
@@ -38,15 +38,18 @@ def _arb_from_string(s):
 def _cell_taylor_gap(p, f0, f1, dx, second_max):
     """sup_t |p(t)-f(x_m+dx(t-1/2))| from a first-order Taylor model plus remainder."""
     lin = arb_poly([f0 - f1*dx/2, f1*dx])
-    return absolute_bound(p - lin) + ball(Fraction(second_max))/2*(dx/2)**2
+    bound=second_max if isinstance(second_max,arb) else ball(Fraction(second_max))
+    return absolute_bound(p - lin) + bound/2*(dx/2)**2
 
 
-def certify_gap(seed, *, precision=160, tau='0.001', theta='0.001'):
+def certify_gap(seed, *, precision=160, tau='0.001', theta='0.001',coercivity='0.5',radius_ball='0.00001'):
     """Return Arb bounds proving the translation-complement gap of the certified wall."""
     old = ctx.prec
     ctx.prec = precision
     try:
-        base = check_seed(seed, precision=precision)
+        if not (ball(tau)>0 and ball(tau)<1 and ball(theta)>0 and ball(theta)<1):
+            raise ValueError('Schur fractions must lie strictly between zero and one')
+        base = check_seed(seed, precision=precision,coercivity=coercivity,radius_ball=radius_ball)
         return _certify(seed, base, ball(tau), ball(theta))
     finally:
         ctx.prec = old
@@ -58,7 +61,7 @@ def _certify(seed, base, tau, theta):
         P[name] = arb(P[name], ball(rad))
     l, a, m, H, h0, kap = [P[k] for k in ['lambda', 'alpha', 'mu', 'lambda_H', 'h0', 'kappa']]
     k2 = l/2
-    R = ball(seed['radius']); n = seed['segments']; dx = R/n
+    R = ball(seed['radius']); n = seed['segments']; xs=seed_nodes(seed)
     rows = [[ball(Fraction.from_float(float.fromhex(v))) for v in row] for row in seed['values_hex']]
     rows[0][0] = arb(0); rows[0][4] = arb(0); rows[0][5] = arb(0)
     rows[-1][0] = arb(1); rows[-1][1] = -a/m**2; rows[-1][2] = h0
@@ -69,18 +72,24 @@ def _certify(seed, base, tau, theta):
     hhh_min = arb(10)**6
     L2 = {'du_minus_sech2': arb(0), 'dy': arb(0), 'dh': arb(0)}
     for j in range(n):
+        dx=ball(xs[j+1]-xs[j])
         u, y, h = [quintic((rows[j][i], rows[j][i+3]), (rows[j+1][i], rows[j+1][i+3]), dd[j][i], dd[j+1][i], dx)
                    for i in range(3)]
-        xm = dx*j + dx/2
+        xm = ball(xs[j]) + dx/2
         umax = max(umax, absolute_bound(u)); hmax = max(hmax, absolute_bound(h))
         rsmax = max(rsmax, absolute_bound(y + (a/m**2)*u*u))
         rhmax = max(rhmax, absolute_bound(h*h - h0**2 + kap/H*(u*u - 1)))
         lo, _ = bernstein_range(H*(3*h*h - h0*h0) + kap*(u*u - 1))
         hhh_min = min(hhh_min, lo)
         t, s = xm.tanh(), xm.sech()**2
-        diff = max(diff, _cell_taylor_gap(u, t, s, dx, TANH_SECOND_MAX).upper())
+        # For x>=left>=0, sech^2 decreases. Local derivative bounds prevent
+        # a fictitious constant error over the long Higgs tail.
+        local_sech=ball(xs[j]).sech()**2
+        tanh_bound=min(ball(TANH_SECOND_MAX).upper(),(2*local_sech).upper()) if 'nodes_hex' in seed else TANH_SECOND_MAX
+        sech_bound=min(ball(SECH2_SECOND_MAX).upper(),(4*local_sech).upper()) if 'nodes_hex' in seed else SECH2_SECOND_MAX
+        diff = max(diff, _cell_taylor_gap(u, t, s, dx, tanh_bound).upper())
         du = u.derivative()*(1/dx)
-        g = _cell_taylor_gap(du, s, -2*s*t, dx, SECH2_SECOND_MAX)
+        g = _cell_taylor_gap(du, s, -2*s*t, dx, sech_bound)
         L2['du_minus_sech2'] += dx*g*g
         L2['dy'] += dx*absolute_bound(y.derivative()*(1/dx))**2
         L2['dh'] += dx*absolute_bound(h.derivative()*(1/dx))**2
@@ -94,7 +103,8 @@ def _certify(seed, base, tau, theta):
     eps = _arb_from_string(B['uniform_solution_error_upper']).upper()
     ey = _arb_from_string(B['singlet_solution_error_upper']).upper()
     res_L2 = _arb_from_string(B['residual_L2_upper']).upper()
-    d, c = ball('0.25'), ball('0.5')
+    d = _arb_from_string(B['gradient_floor']).lower()
+    c = _arb_from_string(B['common_L2_floor']).lower()
     eta = res_L2/c.sqrt()                      # ||w-a||_Q <= eta
     Bu, Bh = umax + eps, hmax + eps
     dev = diff + eps                           # |u-tanh| on the whole half-line

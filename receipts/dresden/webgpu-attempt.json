@@ -1,0 +1,16 @@
+{
+  "schema": "pp-dresden-webgpu-attempt/1",
+  "status": "failed",
+  "browser": "Chrome Headless Shell 151.0.7922.34",
+  "adapter_requested": "SwiftShader software Vulkan",
+  "arithmetic_fixture_suites": [
+    "math-parity.mjs",
+    "deep-parity.mjs",
+    "polynomial-parity.mjs"
+  ],
+  "arithmetic_fixture_suites_passed": true,
+  "page_errors": [
+    "OperationError: Instance dropped in popErrorScope"
+  ],
+  "scope": "Two software WebGPU attempts failed the strict no-page-error check. WebGPU execution is not certified by the successful CPU arithmetic comparisons."
+}

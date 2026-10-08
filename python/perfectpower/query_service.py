@@ -30,6 +30,11 @@ def dispatch(catalogue, request):
     op = request.get('op'); args = request.get('args', {})
     if not isinstance(args, dict):
         raise ValueError('args must be a JSON object')
+    if op in {'semistable_tamagawa','metric_component_group','resonant_frobenius','frobenius_gauge_tail'}:
+        from .semistable_tamagawa import rational_root_tamagawa,component_group
+        from .resonant_frobenius import normal_form,gauge_tail
+        return {'semistable_tamagawa':rational_root_tamagawa,'metric_component_group':component_group,
+                'resonant_frobenius':normal_form,'frobenius_gauge_tail':gauge_tail}[op](**args)
     if op == 'register':
         return catalogue.register(request['kind'], request['specification'], request.get('name'), replace=request.get('replace', False))
     if op == 'list':

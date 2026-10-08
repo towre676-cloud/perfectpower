@@ -1,0 +1,219 @@
+{
+  "schema": "pp-http-burst-load/1",
+  "before_192_requests": [
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 1,
+      "requests": 192,
+      "queue_size": 5,
+      "wall_seconds": 0.11656714999844553,
+      "requests_per_second": 1647.119278480776,
+      "latency_seconds": {
+        "median": 0.0005180490006750915,
+        "p95": 0.0009868739998637466,
+        "maximum": 0.0026444970008014934
+      },
+      "replay_mismatches": [],
+      "transport_failures": [],
+      "persistence_replayed": true,
+      "workload_sha256": "75d9db683ac56cdd7f9a12bd0094e38c6fc340d757c08ea6962394eec398f91b",
+      "all_replayed": true,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    },
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 8,
+      "requests": 192,
+      "queue_size": 5,
+      "wall_seconds": 1.0512648330004595,
+      "requests_per_second": 182.6371376392423,
+      "latency_seconds": {
+        "median": 0.0034615450003911974,
+        "p95": 0.008397740999498637,
+        "maximum": 1.0185210879990336
+      },
+      "replay_mismatches": [],
+      "transport_failures": [],
+      "persistence_replayed": true,
+      "workload_sha256": "75d9db683ac56cdd7f9a12bd0094e38c6fc340d757c08ea6962394eec398f91b",
+      "all_replayed": true,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    },
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 16,
+      "requests": 192,
+      "queue_size": 5,
+      "wall_seconds": 2.26154967399998,
+      "requests_per_second": 84.89753827092002,
+      "latency_seconds": {
+        "median": 0.0031423399996128865,
+        "p95": 1.0078886880000937,
+        "maximum": 1.2210341490008432
+      },
+      "replay_mismatches": [],
+      "transport_failures": [
+        {
+          "request_id": "load-1",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        }
+      ],
+      "persistence_replayed": true,
+      "workload_sha256": "75d9db683ac56cdd7f9a12bd0094e38c6fc340d757c08ea6962394eec398f91b",
+      "all_replayed": false,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    },
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 32,
+      "requests": 192,
+      "queue_size": 5,
+      "wall_seconds": 3.31264165399989,
+      "requests_per_second": 57.95978558929465,
+      "latency_seconds": {
+        "median": 0.0032132220003404655,
+        "p95": 1.6626143579997006,
+        "maximum": 2.260676493000574
+      },
+      "replay_mismatches": [],
+      "transport_failures": [
+        {
+          "request_id": "load-2",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-34",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-35",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-5",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-6",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-14",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-15",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-16",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-48",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-19",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-21",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-26",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        },
+        {
+          "request_id": "load-30",
+          "error": "ConnectionResetError: [Errno 104] Connection reset by peer"
+        }
+      ],
+      "persistence_replayed": true,
+      "workload_sha256": "75d9db683ac56cdd7f9a12bd0094e38c6fc340d757c08ea6962394eec398f91b",
+      "all_replayed": false,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    }
+  ],
+  "after_384_requests": [
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 1,
+      "requests": 384,
+      "queue_size": 128,
+      "wall_seconds": 0.2047620539997297,
+      "requests_per_second": 1875.3474703887612,
+      "latency_seconds": {
+        "median": 0.0004854599992540898,
+        "p95": 0.0008530630002496764,
+        "maximum": 0.0034558339993964182
+      },
+      "replay_mismatches": [],
+      "transport_failures": [],
+      "persistence_replayed": true,
+      "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+      "all_replayed": true,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    },
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 8,
+      "requests": 384,
+      "queue_size": 128,
+      "wall_seconds": 0.2536286119993747,
+      "requests_per_second": 1514.0247662631482,
+      "latency_seconds": {
+        "median": 0.004760496000017156,
+        "p95": 0.00789009999971313,
+        "maximum": 0.011873486999320448
+      },
+      "replay_mismatches": [],
+      "transport_failures": [],
+      "persistence_replayed": true,
+      "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+      "all_replayed": true,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    },
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 16,
+      "requests": 384,
+      "queue_size": 128,
+      "wall_seconds": 0.21614132200011227,
+      "requests_per_second": 1776.615394254878,
+      "latency_seconds": {
+        "median": 0.00839036099932855,
+        "p95": 0.011794148000262794,
+        "maximum": 0.016810778000944993
+      },
+      "replay_mismatches": [],
+      "transport_failures": [],
+      "persistence_replayed": true,
+      "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+      "all_replayed": true,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    },
+    {
+      "schema": "pp-http-concurrency/1",
+      "clients": 32,
+      "requests": 384,
+      "queue_size": 128,
+      "wall_seconds": 0.22396895800011407,
+      "requests_per_second": 1714.523313537961,
+      "latency_seconds": {
+        "median": 0.016640311001538066,
+        "p95": 0.025746924999111798,
+        "maximum": 0.027884622999408748
+      },
+      "replay_mismatches": [],
+      "transport_failures": [],
+      "persistence_replayed": true,
+      "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+      "all_replayed": true,
+      "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+    }
+  ],
+  "change": "accept backlog 5 ->128; single query worker preserved",
+  "speedup_claimed": false
+}

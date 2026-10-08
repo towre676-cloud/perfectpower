@@ -1,0 +1,47 @@
+{
+  "schema": "pp-stopped-front-validation/1",
+  "python": "3.12.14",
+  "dependencies": {
+    "python-flint": "0.9.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "z3-solver": "5.1.0.0"
+  },
+  "focused_tests": [
+    {
+      "file": "python/tests/test_remaining_fronts.py",
+      "passed": 9
+    },
+    {
+      "file": "python/tests/test_declared_wall_certificate.py",
+      "passed": 3
+    },
+    {
+      "file": "python/tests/test_wall_stability_certified.py",
+      "passed": 6
+    },
+    {
+      "file": "python/tests/test_wall_profile_intervals.py",
+      "passed": 9
+    },
+    {
+      "file": "python/tests/test_applications.py",
+      "passed": 21
+    }
+  ],
+  "focused_test_count": 48,
+  "public_protocol_smoke": true,
+  "source_sha256": {
+    "python/perfectpower/wall_profile_intervals.py": "337cbe02f16a4ce2785f8b4df08e3668f7f71ea1a3a15578581e0ce40b10b3b0",
+    "python/perfectpower/wall_stability_certified.py": "ba021ed389a40cbb9413a18b2824bcef8504f7c00c8484ffbc41e7756f9667b4",
+    "python/perfectpower/semistable_tamagawa.py": "f8e7f1c16e0e613cd89d1b2da7cab8ba9a95e9706c0245c3308b33f609c276d7",
+    "python/perfectpower/resonant_frobenius.py": "9432f5797c7f0329d7e6c48173fd6ebbf85759a814e7a3fe048378b6c434fd7f",
+    "python/perfectpower/http_load.py": "e89191fa1e981b36d10a9f3abb8d0106587264efd5059fac45486becc9d3d836",
+    "python/perfectpower/http_service.py": "f2930adc1e878de2bf1feb4e2bb5743595589f873a612a2c3d18329156b5e28f",
+    "python/perfectpower/query_service.py": "7e83399b2d80af2a266bb3e4cd262efeb0401e3bcce07fa7b14088db134c73c3",
+    "python/develop_remaining_fronts.py": "4d3d5dcfb1643e4b29cd0571a92050e9445f10b76a15176f5a5d40cf2572cab3",
+    "web/dresden-observatory/tests/browser-parity.mjs": "73a5354e8333228f9a091404a8853c5ef3bfbc63d69a45ce1ca7d4555f48b1fb"
+  },
+  "scope": "48 focused Python tests; exact arithmetic and Arb certificates; Chromium fixture/scene receipts separate; no new Lean or whole-repository build claim"
+}

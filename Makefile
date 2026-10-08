@@ -357,3 +357,13 @@ prediction-mechanisms-lean:
 	bash scripts/check_prediction_mechanisms_lean.sh
 prediction-mechanisms-receipts:
 	$(PY) python/develop_flavor_prediction_mechanisms.py
+
+.PHONY: remaining-fronts-receipts remaining-fronts-tests
+remaining-fronts-receipts:
+	$(PY) python/develop_remaining_fronts.py --http
+remaining-fronts-tests:
+	$(PY) python/tests/test_remaining_fronts.py
+	$(PY) python/tests/test_declared_wall_certificate.py
+	$(PY) python/tests/test_wall_stability_certified.py
+	$(PY) python/tests/test_wall_profile_intervals.py
+	$(PY) python/tests/test_applications.py

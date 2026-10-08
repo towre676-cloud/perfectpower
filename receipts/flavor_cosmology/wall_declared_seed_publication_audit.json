@@ -1,0 +1,47 @@
+{
+  "schema": "pp-generated-math-seed-publication-audit/1",
+  "gzip_sha256": "cf49c7ed8051e8bc919b84e354cd686f4c16edd91596a33398536e643fa4f6b9",
+  "decoded_sha256": "89e52011c7a0599b9a860f028f965746b2167c4e5da6ad7c595336d3d36036ac",
+  "compressed_bytes": 466492,
+  "decoded_bytes": 1720321,
+  "decoded_keys": [
+    "format",
+    "generator_scope",
+    "nodes_hex",
+    "parameter_radii",
+    "parameters",
+    "radius",
+    "segments",
+    "values_hex"
+  ],
+  "parameters": {
+    "lambda": "0.1",
+    "alpha": "0.1",
+    "mu": "10",
+    "lambda_H": "0.13",
+    "h0": "0.0082",
+    "kappa": "0.0000001"
+  },
+  "rows": 10121,
+  "columns": 6,
+  "all_data_values_are_finite_hexadecimal_floats": true,
+  "all_free_text_fields_match_declared_generator_constants": true,
+  "no_external_or_user_supplied_payloads": true,
+  "generator": "python/develop_remaining_fronts.py --regenerate-wall",
+  "generator_sha256": "4d3d5dcfb1643e4b29cd0571a92050e9445f10b76a15176f5a5d40cf2572cab3",
+  "purpose": "Reproduce the user-requested public perfectpower wall-gap calculation; generated numerical seed for the published mathematical module",
+  "example_mesh_first_last": [
+    "0x0.0p+0",
+    "0x1.5e00000000000p+10"
+  ],
+  "example_field_row": [
+    "0x0.0p+0",
+    "-0x1.0b5ee6cbaa71ap-20",
+    "0x1.0cb9d9555b5eap-7",
+    "0x1.000000044336cp+0",
+    "0x0.0p+0",
+    "0x0.0p+0"
+  ],
+  "independent_full_regeneration_matches_decoded_payload": true,
+  "public_seed_upload_status": "blocked_pending_explicit_user_authorization"
+}

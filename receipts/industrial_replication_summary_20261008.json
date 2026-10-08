@@ -1,0 +1,40 @@
+{
+  "schema": "pp-industrial-replication-summary/1",
+  "complete": true,
+  "revision": "bdae77b0a144895098f82b51a531bc2b566df9e6",
+  "protocol": "First min(cap, query_count) per file; alternating fresh contexts; query-only timeout; candidate classification and dual-context maintenance included.",
+  "z3": "5.1.0",
+  "cap": 8,
+  "timeout_ms": 250,
+  "workers": 3,
+  "summary": {
+    "files": 181,
+    "queries": 1439,
+    "counts": {
+      "original": {
+        "sat": 318,
+        "unsat": 253,
+        "unknown": 868
+      },
+      "portfolio": {
+        "sat": 280,
+        "unsat": 260,
+        "unknown": 899
+      }
+    },
+    "wall_seconds": {
+      "original": 313.8351423780023,
+      "portfolio": 466.3963533910064
+    },
+    "solved_delta": -31,
+    "gains": 30,
+    "losses": 61,
+    "sat_unsat_conflicts": 0,
+    "eligible_files": 150
+  },
+  "summed_portfolio_wall_ratio": 1.4861189535914052,
+  "ledger_sha256": "2095910ae4310aebc87b9c65d9c52a5f59351ea1c09a190e03de293fd20e1458",
+  "performance_improvement_demonstrated": false,
+  "ledger_path": "receipts/industrial_replication_20261008.json.gz",
+  "ledger_gzip_sha256": "c4a090500958ac268719999a4358736ab223490d0e04a334a0eb2e6382bcc52f"
+}

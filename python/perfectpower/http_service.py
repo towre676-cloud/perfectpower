@@ -19,6 +19,9 @@ document.getElementById('load').click();
 
 
 class QueryHTTPServer(HTTPServer):
+    # Burst clients wait for the single query worker instead of overflowing
+    # HTTPServer's five-connection accept queue. Database access stays serial.
+    request_queue_size=128
     def __init__(self,database,port=0):
         # One worker handles all requests. SQLite is shared across its creation
         # and serving thread, with no concurrent database queries.

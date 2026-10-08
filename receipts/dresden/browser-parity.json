@@ -1,0 +1,38 @@
+{
+  "schema": "pp-dresden-chromium-parity/1",
+  "browser": "151.0.7922.34",
+  "tests": [
+    {
+      "test": "math-parity.mjs",
+      "logs": [
+        "PASS: 25 Python calendar/Long Count fixtures up to 10^100; all five overlap policies at seven horizons; exhaustive small noncoprime CRT; exact huge counts; invalid inputs; minimax display."
+      ]
+    },
+    {
+      "test": "deep-parity.mjs",
+      "logs": [
+        "PASS: 4 calendar queries; 96 exact Venus experiments/envelopes; 20 recomputed corpus windows; 4 distribution comparisons; 20 exact ranked predictions; 5 rational restart policies including ties; all 14 raw corrections; invalid inputs."
+      ]
+    },
+    {
+      "test": "polynomial-parity.mjs",
+      "logs": [
+        "PASS: 220 independent Python/browser polynomial calendars, repeated and irrational roots, all relations, Boolean operations, huge coefficients/bounds/ranks, signed bounds, malformed inputs and budget exhaustion."
+      ]
+    }
+  ],
+  "rendering": {
+    "backend": "WebGL 2",
+    "canvasCount": 1,
+    "canvasSizes": [
+      [
+        1020,
+        425
+      ]
+    ],
+    "mathKernelLocation": "CPU BigInt/rational TypeScript; Three.js GPU coordinates are presentation only",
+    "screenshot_sha256": "5ec0ba63f26c3bf695aa186d68146a81ab05762de9618e5e09c0681716e48288"
+  },
+  "page_errors": [],
+  "scope": "Existing independent Python fixtures run inside Chromium; real Three.js scene initialized on software adapter. No numerical GPU kernel exists in this implementation; no physical GPU performance claim."
+}

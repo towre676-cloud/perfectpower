@@ -35,14 +35,19 @@ def force(fields, params):
     return [(l*u*(u*u-1)+2*a*u*rs+kap*u*rh)*(1/k2),m*m*rs*(1/k2),H*h*rh*(1/k2)]
 
 
-def generate_seed(*,radius=22,segments=4096,parameters=None,tol=1e-10):
+def generate_seed(*,radius=22,segments=4096,parameters=None,tol=1e-10,nodes=None):
     """Numerical proposal only. The checker trusts none of its accuracy claims."""
     import numpy as np
     from scipy.integrate import solve_bvp
     if radius<5 or segments<32 or tol<=0:raise ValueError('resolved box and controls required')
     params=dict(DEFAULT if parameters is None else parameters);z={n:float(Fraction(v)) for n,v in params.items()}
     l,a,m,H,h0,kap=[z[n] for n in ['lambda','alpha','mu','lambda_H','h0','kappa']];k2=l/2
-    grid=np.linspace(0,radius,1200);u=np.tanh(grid)
+    if nodes is not None:
+        nodes=np.asarray(nodes,dtype=float)
+        if nodes.ndim!=1 or len(nodes)<33 or nodes[0]!=0 or nodes[-1]!=radius or not np.all(np.diff(nodes)>0):
+            raise ValueError('strictly increasing nodes from zero to radius required')
+        segments=len(nodes)-1
+    grid=np.unique(np.r_[np.linspace(0,min(radius,22),1000),np.linspace(min(radius,22),radius,1200)]);u=np.tanh(grid)
     h=h0+kap*h0/np.sqrt(k2*2*H*h0*h0)*np.exp(-np.sqrt(2*H*h0*h0/k2)*grid)
     y=-a*u*u/m**2
     def rhs(x,w):
@@ -51,12 +56,33 @@ def generate_seed(*,radius=22,segments=4096,parameters=None,tol=1e-10):
     initial=np.vstack((u,y,h,1-u*u,-2*a*u*(1-u*u)/m**2,np.gradient(h,grid)))
     sol=solve_bvp(rhs,bc,grid,initial,tol=tol,max_nodes=40000)
     if not sol.success:raise ArithmeticError(sol.message)
-    values=sol.sol(np.linspace(0,radius,segments+1)).T
-    return {'format':'pp-wall-dyadic-seed/1','parameters':params,
+    values=sol.sol(np.linspace(0,radius,segments+1) if nodes is None else nodes).T
+    result={'format':'pp-wall-dyadic-seed/1','parameters':params,
             'parameter_radii':{'lambda':'0.000000000000001'} if parameters is None else {},
             'radius':str(radius),'segments':segments,
             'values_hex':[[float(x).hex() for x in row] for row in values],
             'generator_scope':'Untrusted SciPy proposal. Endpoint values and Neumann data are replaced by exact rational boundary conditions by the checker.'}
+    if nodes is not None:result['nodes_hex']=[float(x).hex() for x in nodes]
+    return result
+
+
+def seed_nodes(seed):
+    """Exact rational cell endpoints, including untrusted nonuniform meshes."""
+    R=Fraction(seed['radius']);n=seed['segments']
+    if type(n) is not int or n<32:raise ValueError('at least 32 cells required')
+    xs=([Fraction.from_float(float.fromhex(x)) for x in seed['nodes_hex']]
+        if 'nodes_hex' in seed else [R*j/n for j in range(n+1)])
+    if len(xs)!=n+1 or xs[0]!=0 or xs[-1]!=R or any(b<=a for a,b in zip(xs,xs[1:])):
+        raise ValueError('invalid exact mesh endpoints')
+    return xs
+
+
+def generate_declared_seed():
+    """Reproduce the lambda=0.1 proposal from declared equations and mesh."""
+    import numpy as np
+    params=dict(DEFAULT);params['lambda']='0.1'
+    xs=np.unique(np.r_[np.linspace(0,12,6001),np.linspace(12,40,1401),np.linspace(40,1400,2721)])
+    return generate_seed(radius=1400,nodes=xs,parameters=params,tol=1e-12)
 
 
 def quintic(left,right,dd_left,dd_right,dx):
@@ -65,7 +91,7 @@ def quintic(left,right,dd_left,dd_right,dx):
     return arb_poly([p0,p1,p2,10*a-4*b+c/2,-15*a+7*b-c,6*a-3*b+c/2])
 
 
-def check_seed(seed, *, radius_ball='0.00001',precision=160):
+def check_seed(seed, *, radius_ball='0.00001',precision=160,coercivity='0.5'):
     """Prove a whole-line solution in a specified energy ball, then the five signs.
 
     All returned 'certified' flags require strict outward-rounded inequalities.
@@ -74,18 +100,19 @@ def check_seed(seed, *, radius_ball='0.00001',precision=160):
     if seed.get('format')!='pp-wall-dyadic-seed/1':raise ValueError('unsupported seed')
     if precision<80:raise ValueError('at least 80 bits required')
     old_precision=ctx.prec;ctx.prec=precision
-    try:return _check_seed(seed,radius_ball=radius_ball,precision=precision)
+    try:return _check_seed(seed,radius_ball=radius_ball,precision=precision,coercivity=coercivity)
     finally:ctx.prec=old_precision
 
 
-def _check_seed(seed, *, radius_ball, precision):
+def _check_seed(seed, *, radius_ball, precision,coercivity):
     P={n:ball(q) for n,q in seed['parameters'].items()}
     for name,rad in seed.get('parameter_radii',{}).items():
         if ball(rad)<0:raise ValueError('nonnegative parameter radii required')
         P[name]=arb(P[name],ball(rad))
-    R=ball(seed['radius']);n=seed['segments'];dx=R/n
+    R=ball(seed['radius']);n=seed['segments'];xs=seed_nodes(seed)
     if not all(P[k]>0 for k in ['lambda','alpha','mu','lambda_H','h0','kappa']):raise ValueError('this five-sign theorem requires strictly positive parameters')
-    r=ball(radius_ball);d=ball('0.25');c=ball('0.5');tau=ball('0.001')
+    r=ball(radius_ball);d=ball('0.25');c=ball(coercivity);tau=ball('0.001')
+    if not c>0:raise ValueError('strictly positive proposed coercivity required')
     if not (R>=5 and r>0 and isinstance(n,int) and n>=32 and len(seed['values_hex'])==n+1):raise ValueError('invalid seed shape or radius')
     rows=[[ball(Fraction.from_float(float.fromhex(v))) for v in row] for row in seed['values_hex']]
     if any(len(v)!=6 for v in rows):raise ValueError('six values per node required')
@@ -97,20 +124,23 @@ def _check_seed(seed, *, radius_ball, precision):
     # polynomial data give a C2 constant-vacuum continuation for x>=R.
     dd=[force(row[:3],P) for row in rows]
     maxima=[arb(0)]*3;umin=arb(2);hmin=arb(2);rsmax=arb(0);rhmax=arb(0);difference=arb(0)
-    residual_max=[arb(0)]*3;source_start_slope=rows[0][3]
+    residual_max=[arb(0)]*3;residual_square_integral=arb(0);source_start_slope=rows[0][3]
     for j in range(n):
+        dx=ball(xs[j+1]-xs[j])
         fields=[quintic((rows[j][i],rows[j][i+3]),(rows[j+1][i],rows[j+1][i+3]),dd[j][i],dd[j+1][i],dx) for i in range(3)]
         rhs=force(fields,P)
         for i,p in enumerate(fields):
             maxima[i]=max(maxima[i],absolute_bound(p))
             residual= p.derivative().derivative()*(1/(dx*dx))-rhs[i]
-            residual_max[i]=max(residual_max[i],absolute_bound(residual))
+            residual_bound=absolute_bound(residual)
+            residual_max[i]=max(residual_max[i],residual_bound)
+            residual_square_integral+=dx*residual_bound**2
         u,y,h=fields;lo,hi=bernstein_range(h);hmin=min(hmin,lo)
         lo,hi=bernstein_range(u);umin=min(umin,lo)
         rsmax=max(rsmax,absolute_bound(y+(P['alpha']/P['mu']**2)*u*u))
         rhmax=max(rhmax,absolute_bound(h*h-P['h0']**2+P['kappa']/P['lambda_H']*(u*u-1)))
         # Comparing independent interval ranges is conservative but sufficient.
-        tlo=(dx*j).tanh().lower();thi=(dx*(j+1)).tanh().upper()
+        tlo=ball(xs[j]).tanh().lower();thi=ball(xs[j+1]).tanh().upper()
         difference=max(difference,abs(lo-thi).upper(),abs(hi-tlo).upper())
     l,a,m,H,h0,kap=[P[k] for k in ['lambda','alpha','mu','lambda_H','h0','kappa']];k2=l/2
     Bu,By,Bh=[v+r for v in maxima]
@@ -129,7 +159,7 @@ def _check_seed(seed, *, radius_ball, precision):
     # q >= d||e'||2+c||e||2. Sobolev: ||e||inf <= ||e||q/(dc)^(1/4).
     # Residual dual norm <= ||residual||L2/sqrt(c). Outward energy derivative
     # excludes a minimizer on the energy-ball boundary.
-    residual_L2=(R*sum(v*v for v in residual_max)).sqrt()
+    residual_L2=(residual_square_integral if 'nodes_hex' in seed else R*sum(v*v for v in residual_max)).sqrt()
     energy_radius=r*(d*c).root(4);dual=residual_L2/c.sqrt()
     if not dual<energy_radius:raise ArithmeticError('continuous residual/existence test failed: '+str(dual/energy_radius))
     uniform_error=dual/(d*c).root(4)
@@ -161,7 +191,7 @@ def _check_seed(seed, *, radius_ball, precision):
         'P4_Higgs_derivative_negative':bool(kap>0),'P5_Higgs_positive':True,
         'Higgs_at_least_vacuum_everywhere':True,'Higgs_strictly_above_vacuum_interior':bool(kap>0),
         'whole_line_asymptotic_vacuum_certified':True,'quantitative_exponential_tail_constants_certified':False,
-        'opposite_radial_sector_spectral_floor_over_k2':'1/2',
+        'opposite_radial_sector_spectral_floor_over_k2':coercivity,
         'translation_sector_nonnegative_with_translation_kernel':True,
         'physical_vector_vacuum_threshold_bound_hypotheses_certified':True,
         'TE_thermal_relative_determinant_nonnegative_hypotheses_certified':True,'original_floating_profile_itself_is_exact_solution':False,

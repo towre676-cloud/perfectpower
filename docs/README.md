@@ -15,6 +15,8 @@ Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower
 
 [From fitted flavor to prediction mechanisms](FLAVOR_PREDICTION_MECHANISMS.md) develops exact coupling rays, mixing moments, conditional gauge normalization and four compiled Lean modules, with explicit remaining physical and formal obligations.
 
+[Stopped-front continuation](REMAINING_FRONTS_CONTINUATION.md) adds the declared-wall interval gap, semistable Tamagawa groups, higher-rank resonant charts, HTTP burst replay, industrial replication and Chromium validation.
+
 ## Arithmetic
 
 [Elliptic division in Lean and the repository frontier](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md), with its [PDF](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.pdf), proves group fibre equivalences, coordinate normalization, halving algebra and rational-root completeness transport. Run `make elliptic-division-lean`; the focused validation does not rebuild the historical census.

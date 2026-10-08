@@ -1,0 +1,78 @@
+[
+  {
+    "schema": "pp-http-concurrency/1",
+    "clients": 1,
+    "requests": 384,
+    "queue_size": 128,
+    "wall_seconds": 0.20634778500061657,
+    "requests_per_second": 1860.9358951871113,
+    "latency_seconds": {
+      "median": 0.0005061400006525218,
+      "p95": 0.0009531809992040507,
+      "maximum": 0.002413915000943234
+    },
+    "replay_mismatches": [],
+    "transport_failures": [],
+    "persistence_replayed": true,
+    "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+    "all_replayed": true,
+    "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+  },
+  {
+    "schema": "pp-http-concurrency/1",
+    "clients": 8,
+    "requests": 384,
+    "queue_size": 128,
+    "wall_seconds": 0.21662794799885887,
+    "requests_per_second": 1772.6244630356873,
+    "latency_seconds": {
+      "median": 0.004261179999957676,
+      "p95": 0.005770164998466498,
+      "maximum": 0.009889602000839659
+    },
+    "replay_mismatches": [],
+    "transport_failures": [],
+    "persistence_replayed": true,
+    "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+    "all_replayed": true,
+    "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+  },
+  {
+    "schema": "pp-http-concurrency/1",
+    "clients": 16,
+    "requests": 384,
+    "queue_size": 128,
+    "wall_seconds": 0.25423692599906644,
+    "requests_per_second": 1510.4021514223707,
+    "latency_seconds": {
+      "median": 0.00931036199835944,
+      "p95": 0.010605585999655887,
+      "maximum": 0.013564369999585324
+    },
+    "replay_mismatches": [],
+    "transport_failures": [],
+    "persistence_replayed": true,
+    "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+    "all_replayed": true,
+    "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+  },
+  {
+    "schema": "pp-http-concurrency/1",
+    "clients": 32,
+    "requests": 384,
+    "queue_size": 128,
+    "wall_seconds": 0.23145997100073146,
+    "requests_per_second": 1659.034166209182,
+    "latency_seconds": {
+      "median": 0.018427863000397338,
+      "p95": 0.020336680001491914,
+      "maximum": 0.022476788999483688
+    },
+    "replay_mismatches": [],
+    "transport_failures": [],
+    "persistence_replayed": true,
+    "workload_sha256": "da1ef2012a7af8d39d5aa29f44e392b3514b631cc4157a30a42a6e5245fde9ac",
+    "all_replayed": true,
+    "scope": "Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test"
+  }
+]
