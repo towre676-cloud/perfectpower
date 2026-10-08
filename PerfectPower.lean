@@ -430,3 +430,8 @@ import PerfectPower.UnorderedWeightedDeterminant
 
 import PerfectPower.RationalPowerAtlas
 import PerfectPower.UnorderedWeightedGram
+
+import PerfectPower.FactorAddresses
+import PerfectPower.FlavorRG
+import PerfectPower.SpectralMoments
+import PerfectPower.WeilOldLevel

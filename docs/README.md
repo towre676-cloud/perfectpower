@@ -13,6 +13,8 @@
 
 Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower, the [worked examples](SHOWCASE_MONOGRAPH.md) to see complete workflows, or the [Python API](../python/README.md) to integrate it into a program. The [mathematical overview](MONOGRAPH.md) explains the arithmetic classification. The [trust boundary](TRUST_BOUNDARY.md) distinguishes compiled theorems, named premises, exact Python computations, bounded evidence, and numerical geometry.
 
+[From fitted flavor to prediction mechanisms](FLAVOR_PREDICTION_MECHANISMS.md) develops exact coupling rays, mixing moments, conditional gauge normalization and four compiled Lean modules, with explicit remaining physical and formal obligations.
+
 ## Arithmetic
 
 [Elliptic division in Lean and the repository frontier](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md), with its [PDF](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.pdf), proves group fibre equivalences, coordinate normalization, halving algebra and rational-root completeness transport. Run `make elliptic-division-lean`; the focused validation does not rebuild the historical census.

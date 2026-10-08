@@ -1,0 +1,1668 @@
+{
+  "CKM_inputs_used": false,
+  "SU3_complete_census": {
+    "both_ideal_inclusions_checked": true,
+    "complete": true,
+    "eliminant_factors": [
+      [
+        "a",
+        1
+      ],
+      [
+        "128*a - 1",
+        1
+      ],
+      [
+        "144*a - 1",
+        1
+      ],
+      [
+        "192*a - 1",
+        1
+      ],
+      [
+        "256*a - 1",
+        1
+      ],
+      [
+        "576*a - 1",
+        1
+      ],
+      [
+        "92160*a**2 - 1600*a + 7",
+        1
+      ],
+      [
+        "1808060645376*a**4 - 51962560512*a**3 + 617019392*a**2 - 3448184*a + 9099",
+        1
+      ],
+      [
+        "24015443853312*a**4 - 894081171456*a**3 + 13203448832*a**2 - 93934032*a + 277351",
+        1
+      ]
+    ],
+    "equations": [
+      "128*a**2 - a + 16*c**2 + 5*d**2/18 + 27*h**2/20",
+      "160*a*c + 16*c**2 - c + 25*d**2/18 + 27*h**2/4",
+      "32*a*d + 32*c*d + 6*d**2/5 + 108*d*h/25 - d + 4536*h**2/125",
+      "32*a*h + 32*c*h + 4*d**2/9 + 224*d*h/15 + 436*h**2/25 - h"
+    ],
+    "groebner_basis": [
+      "6096284463766339949543255318615004853964622135344291725688563084365052971607428211452936192*a**15/181373655656188606726162842222169348179734376730568990027 - 3795461911156941502951328589877977029778362967620899808976406315905044370363680739557376*a**14/1126544445069494451715297156659436945215741470376204907 + 143100862034636143376359185730879519325640350163415992040265765044111920574101396664614912*a**13/906868278280943033630814211110846740898671883652844950135 - 4147836787006117919244657229984873578369404527020277715424930446226342766338535751417856*a**12/906868278280943033630814211110846740898671883652844950135 + 3611209394031561330632872162247731144464128163818427497925529373874583260307975569408*a**11/39429055577432305810035400483080293082550951463167171745 - 93416233749228351868233753261474159691527530439173702145079864185006923603609911296*a**10/69759098329303310279293400854680518530667067973295765395 + 1081917400518944573340970199917204202926439763594519806443128987912595133177935167488*a**9/73456330540756385724095951099978586012792422575880440960935 - 27247975701091245102096344565440786436621798581751717169928843710544131887607054336*a**8/220368991622269157172287853299935758038377267727641322882805 + 75075059418809921549128834527440337651012636113068116020284645458392288495403008*a**7/94443853552401067359551937128543896302161686168989138378345 - 2569275809648523848678953135766701473090285235524982364019108348053097373761536*a**6/661106974866807471516863559899807274115131803182923968648415 + 9373758138063836385770180626471851313765717952756791221641420826400589348864*a**5/661106974866807471516863559899807274115131803182923968648415 - 502679990184727565597424690835887363861783472556209556498584589271498752*a**4/13491979078914438194221705304077699471737383738427019768335 + 129816740714990279411936680009757931208684603721210723549343925551104*a**3/1961741765183404959990693056082514166513744223094729877295 - 137944040153106293402619353693082011826588742720319193851176048256*a**2/1961741765183404959990693056082514166513744223094729877295 + 1239652593228188402656859878708079817884694506686690952*a/37424008058999083525083997264492674478664147655405 + h",
+      "36967771189825051924223170649587399814742501891061772204844945228289853745458112548120297472*a**15/906868278280943033630814211110846740898671883652844950135 - 160980664920437315474255978776542511682929209422798552628443881520378176026207564073009152*a**14/39429055577432305810035400483080293082550951463167171745 + 866475364782911217801364260350505587816127135146314617447247562167740458313628939758600192*a**13/4534341391404715168154071055554233704493359418264224750675 - 25100560099081863322020683153452921557843312217343076932462265370969883911682570128982016*a**12/4534341391404715168154071055554233704493359418264224750675 + 3120371891757283098491761452497988736992231848685909330294399791776526569797366841344*a**11/28163611126737361292882428916485923630393536759405122675 - 7342575767960326913513840344373370689735976306613590193528343637297677087233485570048*a**10/4534341391404715168154071055554233704493359418264224750675 + 80735286469839017610948150376619473041957001701394278080543981625217186530672508928*a**9/4534341391404715168154071055554233704493359418264224750675 - 2032896045083760315327168940623831568887264296992552274246266617676241454933999616*a**8/13603024174214145504462213166662701113480078254792674252025 + 39203523995147613624164674934918067477440445654329993149067408020338049229520896*a**7/40809072522642436513386639499988103340440234764378022756075 - 191658737300792783803796436685923126094894347029664543335506500179117018710016*a**6/40809072522642436513386639499988103340440234764378022756075 + 699277132860477684968015577944536098976152319568623581218051680291273048064*a**5/40809072522642436513386639499988103340440234764378022756075 - 262522698041297351977858294582365937059777225150207916510776757924265984*a**4/5829867503234633787626662785712586191491462109196860393725 + 9686445147992986926100937745981908154657575354926536506036358017024*a**3/121095170690333639505598336795216923858873100191032708475 - 10294337682585997926617662256786176219672608060779681929729887296*a**2/121095170690333639505598336795216923858873100191032708475 + 21351696991227892379444517848213974697814042055161732*a/533105527905969850784672325705023852972423755775 + d",
+      "-134872450177578703590807182200539912844509520065052511808943064630017024446213285897830400*a**15/5850763085683503442779446523295785425152721830018354517 + 595350220255304481831338486295220215074837653409657049180404547101190497299818350641152*a**14/254381003725369714903454196665034148919683557826884979 - 649590567003237028280503893788580010563132359774067131102913691121966922164025692258304*a**13/5850763085683503442779446523295785425152721830018354517 + 95359606010150557826686321740875201504128866206304282559410381333983011110615395598336*a**12/29253815428417517213897232616478927125763609150091772585 - 12014369180564842270424153513634223780466727944772173376611049318577951025192239104*a**11/181700716946692653502467283332167249228345398447774985 + 28651809543500102776124000988831327252822763124507466506563106293092733914917634048*a**10/29253815428417517213897232616478927125763609150091772585 - 319284186718736326518288657386000296845959080208917171505900190108060957473243136*a**9/29253815428417517213897232616478927125763609150091772585 + 2715954871662595605167989540798313174687901737660263614744679810846525885513728*a**8/29253815428417517213897232616478927125763609150091772585 - 3538829602951089498779573114299354872238375683081230033428470063905351139328*a**7/5850763085683503442779446523295785425152721830018354517 + 87670021032942074355411810196966758312132868671128612850319644973194018816*a**6/29253815428417517213897232616478927125763609150091772585 - 64834556011690684717402808079358660693602747757608346971168123181858816*a**5/5850763085683503442779446523295785425152721830018354517 + 123324440624683353479027440398458342198292953357138587318465465131008*a**4/4179116489773931030556747516639846732251944164298824655 - 4609611637797402212455748065996910694752291915140452950526169088*a**3/86806573971565332978923538921302454379120501929055705 + 4959392311482258950411094648570551056976797144603544440265408*a**2/86806573971565332978923538921302454379120501929055705 - 1217316478858162060387757321791806880451700889279841*a/44712076534049084259359614413969742507364573065 + c",
+      "a**16 - 167415167*a**15/1536799232 + 385995454153*a**14/69340381347840 - 3052345135506331*a**13/17254105771545722880 + 25891489423715201*a**12/6625576616273557585920 - 13466778860024491*a**11/212018451720753842749440 + 258564599723818277*a**10/329731096116116376243929088 - 2368106579560386461*a**9/316541852271471721194171924480 + 13503210518445190237*a**8/243104142544490281877124038000640 - 1246527970566402329*a**7/3889666280711844510033984608010240 + 22127173681745609*a**6/15558665122847378040135938432040960 - 7572769640370257*a**5/1593207308579571511309920095440994304 + 11757520804307009*a**4/1019652677490925767238348861082236354560 - 31071943501805*a**3/1631444283985481227581358177731578167296 + 4951184901199*a**2/261031085437676996413017308437052506767360 - 654271009*a/77342543833385776714968091388756298301440"
+    ],
+    "nonzero_real_ray_count": 5,
+    "real_roots_including_zero": [
+      {
+        "a_interval": [
+          "0",
+          "0"
+        ],
+        "approximate_coefficients": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "exact_coefficients": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "multiplicity": 1,
+        "zero_ray": true
+      },
+      {
+        "a_interval": [
+          "1/576",
+          "1/576"
+        ],
+        "approximate_coefficients": [
+          0.001736111111111111,
+          0.0,
+          0.006076388888888889,
+          0.025,
+          0.020833333333333332,
+          0.020833333333333332,
+          0.020833333333333332
+        ],
+        "exact_coefficients": [
+          "1/576",
+          "0",
+          "7/1152",
+          "1/40",
+          "1/48",
+          "1/48",
+          "1/48"
+        ],
+        "multiplicity": 1,
+        "zero_ray": false
+      },
+      {
+        "a_interval": [
+          "1/256",
+          "1/256"
+        ],
+        "approximate_coefficients": [
+          0.00390625,
+          0.0,
+          0.009765625,
+          0.01875,
+          0.015625,
+          0.015625,
+          0.015625
+        ],
+        "exact_coefficients": [
+          "1/256",
+          "0",
+          "5/512",
+          "3/160",
+          "1/64",
+          "1/64",
+          "1/64"
+        ],
+        "multiplicity": 1,
+        "zero_ray": false
+      },
+      {
+        "a_interval": [
+          "1/192",
+          "1/192"
+        ],
+        "approximate_coefficients": [
+          0.005208333333333333,
+          0.0,
+          0.010416666666666666,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "exact_coefficients": [
+          "1/192",
+          "0",
+          "1/96",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "multiplicity": 1,
+        "zero_ray": false
+      },
+      {
+        "a_interval": [
+          "1/144",
+          "1/144"
+        ],
+        "approximate_coefficients": [
+          0.006944444444444444,
+          0.0,
+          -0.006944444444444444,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "exact_coefficients": [
+          "1/144",
+          "0",
+          "-1/144",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "multiplicity": 1,
+        "zero_ray": false
+      },
+      {
+        "a_interval": [
+          "1/128",
+          "1/128"
+        ],
+        "approximate_coefficients": [
+          0.0078125,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "exact_coefficients": [
+          "1/128",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "multiplicity": 1,
+        "zero_ray": false
+      }
+    ],
+    "scope": "only the stated four-dimensional SU3 restriction",
+    "unique_back_substitution": true,
+    "variables": [
+      "h",
+      "d",
+      "c",
+      "a"
+    ]
+  },
+  "conditional_gauge_designs": {
+    "common_threshold_assumed": true,
+    "complete_over_all_matter": false,
+    "electromagnetic_input_used": false,
+    "menu_complete": true,
+    "rows": [
+      {
+        "Majorana_Y0_triplets": 0,
+        "beta": [
+          "81/10",
+          "-19/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "-2286",
+          "hypercharge_GUT_inverse": "-6948/5",
+          "log_scale_over_2pi": "-126",
+          "low_energy_alpha0_predicted": false,
+          "status": "no_physical_UV_unification",
+          "unified_inverse": "-369"
+        },
+        "real_Y0_triplets": 0
+      },
+      {
+        "Majorana_Y0_triplets": 0,
+        "beta": [
+          "81/10",
+          "-17/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "2376",
+          "hypercharge_GUT_inverse": "7038/5",
+          "log_scale_over_2pi": "126",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "387"
+        },
+        "real_Y0_triplets": 1
+      },
+      {
+        "Majorana_Y0_triplets": 0,
+        "beta": [
+          "81/10",
+          "-5/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "822",
+          "hypercharge_GUT_inverse": "2376/5",
+          "log_scale_over_2pi": "42",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "135"
+        },
+        "real_Y0_triplets": 2
+      },
+      {
+        "Majorana_Y0_triplets": 0,
+        "beta": [
+          "81/10",
+          "-13/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "2556/5",
+          "hypercharge_GUT_inverse": "7218/25",
+          "log_scale_over_2pi": "126/5",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "423/5"
+        },
+        "real_Y0_triplets": 3
+      },
+      {
+        "Majorana_Y0_triplets": 0,
+        "beta": [
+          "81/10",
+          "-11/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "378",
+          "hypercharge_GUT_inverse": "1044/5",
+          "log_scale_over_2pi": "18",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "63"
+        },
+        "real_Y0_triplets": 4
+      },
+      {
+        "Majorana_Y0_triplets": 1,
+        "beta": [
+          "81/10",
+          "-11/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "378",
+          "hypercharge_GUT_inverse": "1044/5",
+          "log_scale_over_2pi": "18",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "63"
+        },
+        "real_Y0_triplets": 0
+      },
+      {
+        "Majorana_Y0_triplets": 1,
+        "beta": [
+          "81/10",
+          "-3/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "304",
+          "hypercharge_GUT_inverse": "822/5",
+          "log_scale_over_2pi": "14",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "51"
+        },
+        "real_Y0_triplets": 1
+      },
+      {
+        "Majorana_Y0_triplets": 1,
+        "beta": [
+          "81/10",
+          "-7/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "2826/11",
+          "hypercharge_GUT_inverse": "7488/55",
+          "log_scale_over_2pi": "126/11",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "477/11"
+        },
+        "real_Y0_triplets": 2
+      },
+      {
+        "Majorana_Y0_triplets": 1,
+        "beta": [
+          "81/10",
+          "-5/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "2916/13",
+          "hypercharge_GUT_inverse": "7578/65",
+          "log_scale_over_2pi": "126/13",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "495/13"
+        },
+        "real_Y0_triplets": 3
+      },
+      {
+        "Majorana_Y0_triplets": 1,
+        "beta": [
+          "81/10",
+          "-1/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "1002/5",
+          "hypercharge_GUT_inverse": "2556/25",
+          "log_scale_over_2pi": "42/5",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "171/5"
+        },
+        "real_Y0_triplets": 4
+      },
+      {
+        "Majorana_Y0_triplets": 2,
+        "beta": [
+          "81/10",
+          "-1/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "1002/5",
+          "hypercharge_GUT_inverse": "2556/25",
+          "log_scale_over_2pi": "42/5",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "171/5"
+        },
+        "real_Y0_triplets": 0
+      },
+      {
+        "Majorana_Y0_triplets": 2,
+        "beta": [
+          "81/10",
+          "-1/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3096/17",
+          "hypercharge_GUT_inverse": "7758/85",
+          "log_scale_over_2pi": "126/17",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "531/17"
+        },
+        "real_Y0_triplets": 1
+      },
+      {
+        "Majorana_Y0_triplets": 2,
+        "beta": [
+          "81/10",
+          "1/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3186/19",
+          "hypercharge_GUT_inverse": "7848/95",
+          "log_scale_over_2pi": "126/19",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "549/19"
+        },
+        "real_Y0_triplets": 2
+      },
+      {
+        "Majorana_Y0_triplets": 2,
+        "beta": [
+          "81/10",
+          "1/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "156",
+          "hypercharge_GUT_inverse": "378/5",
+          "log_scale_over_2pi": "6",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "27"
+        },
+        "real_Y0_triplets": 3
+      },
+      {
+        "Majorana_Y0_triplets": 2,
+        "beta": [
+          "81/10",
+          "5/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3366/23",
+          "hypercharge_GUT_inverse": "8028/115",
+          "log_scale_over_2pi": "126/23",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "585/23"
+        },
+        "real_Y0_triplets": 4
+      },
+      {
+        "Majorana_Y0_triplets": 3,
+        "beta": [
+          "81/10",
+          "5/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3366/23",
+          "hypercharge_GUT_inverse": "8028/115",
+          "log_scale_over_2pi": "126/23",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "585/23"
+        },
+        "real_Y0_triplets": 0
+      },
+      {
+        "Majorana_Y0_triplets": 3,
+        "beta": [
+          "81/10",
+          "7/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3456/25",
+          "hypercharge_GUT_inverse": "8118/125",
+          "log_scale_over_2pi": "126/25",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "603/25"
+        },
+        "real_Y0_triplets": 1
+      },
+      {
+        "Majorana_Y0_triplets": 3,
+        "beta": [
+          "81/10",
+          "3/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "394/3",
+          "hypercharge_GUT_inverse": "304/5",
+          "log_scale_over_2pi": "14/3",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "23"
+        },
+        "real_Y0_triplets": 2
+      },
+      {
+        "Majorana_Y0_triplets": 3,
+        "beta": [
+          "81/10",
+          "11/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3636/29",
+          "hypercharge_GUT_inverse": "8298/145",
+          "log_scale_over_2pi": "126/29",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "639/29"
+        },
+        "real_Y0_triplets": 3
+      },
+      {
+        "Majorana_Y0_triplets": 3,
+        "beta": [
+          "81/10",
+          "13/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3726/31",
+          "hypercharge_GUT_inverse": "8388/155",
+          "log_scale_over_2pi": "126/31",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "657/31"
+        },
+        "real_Y0_triplets": 4
+      },
+      {
+        "Majorana_Y0_triplets": 4,
+        "beta": [
+          "81/10",
+          "13/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "3726/31",
+          "hypercharge_GUT_inverse": "8388/155",
+          "log_scale_over_2pi": "126/31",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "657/31"
+        },
+        "real_Y0_triplets": 0
+      },
+      {
+        "Majorana_Y0_triplets": 4,
+        "beta": [
+          "81/10",
+          "5/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "1272/11",
+          "hypercharge_GUT_inverse": "2826/55",
+          "log_scale_over_2pi": "42/11",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "225/11"
+        },
+        "real_Y0_triplets": 1
+      },
+      {
+        "Majorana_Y0_triplets": 4,
+        "beta": [
+          "81/10",
+          "17/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "558/5",
+          "hypercharge_GUT_inverse": "1224/25",
+          "log_scale_over_2pi": "18/5",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "99/5"
+        },
+        "real_Y0_triplets": 2
+      },
+      {
+        "Majorana_Y0_triplets": 4,
+        "beta": [
+          "81/10",
+          "19/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "108",
+          "hypercharge_GUT_inverse": "234/5",
+          "log_scale_over_2pi": "126/37",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "711/37"
+        },
+        "real_Y0_triplets": 3
+      },
+      {
+        "Majorana_Y0_triplets": 4,
+        "beta": [
+          "81/10",
+          "7/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "1362/13",
+          "hypercharge_GUT_inverse": "2916/65",
+          "log_scale_over_2pi": "42/13",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "243/13"
+        },
+        "real_Y0_triplets": 4
+      },
+      {
+        "Majorana_Y0_triplets": 5,
+        "beta": [
+          "81/10",
+          "7/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "1362/13",
+          "hypercharge_GUT_inverse": "2916/65",
+          "log_scale_over_2pi": "42/13",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "243/13"
+        },
+        "real_Y0_triplets": 0
+      },
+      {
+        "Majorana_Y0_triplets": 5,
+        "beta": [
+          "81/10",
+          "23/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "4176/41",
+          "hypercharge_GUT_inverse": "8838/205",
+          "log_scale_over_2pi": "126/41",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "747/41"
+        },
+        "real_Y0_triplets": 1
+      },
+      {
+        "Majorana_Y0_triplets": 5,
+        "beta": [
+          "81/10",
+          "25/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "4266/43",
+          "hypercharge_GUT_inverse": "8928/215",
+          "log_scale_over_2pi": "126/43",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "765/43"
+        },
+        "real_Y0_triplets": 2
+      },
+      {
+        "Majorana_Y0_triplets": 5,
+        "beta": [
+          "81/10",
+          "9/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "484/5",
+          "hypercharge_GUT_inverse": "1002/25",
+          "log_scale_over_2pi": "14/5",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "87/5"
+        },
+        "real_Y0_triplets": 3
+      },
+      {
+        "Majorana_Y0_triplets": 5,
+        "beta": [
+          "81/10",
+          "29/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "4446/47",
+          "hypercharge_GUT_inverse": "9108/235",
+          "log_scale_over_2pi": "126/47",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "801/47"
+        },
+        "real_Y0_triplets": 4
+      },
+      {
+        "Majorana_Y0_triplets": 6,
+        "beta": [
+          "81/10",
+          "29/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "4446/47",
+          "hypercharge_GUT_inverse": "9108/235",
+          "log_scale_over_2pi": "126/47",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "801/47"
+        },
+        "real_Y0_triplets": 0
+      },
+      {
+        "Majorana_Y0_triplets": 6,
+        "beta": [
+          "81/10",
+          "31/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "648/7",
+          "hypercharge_GUT_inverse": "1314/35",
+          "log_scale_over_2pi": "18/7",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "117/7"
+        },
+        "real_Y0_triplets": 1
+      },
+      {
+        "Majorana_Y0_triplets": 6,
+        "beta": [
+          "81/10",
+          "11/2",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "1542/17",
+          "hypercharge_GUT_inverse": "3096/85",
+          "log_scale_over_2pi": "42/17",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "279/17"
+        },
+        "real_Y0_triplets": 2
+      },
+      {
+        "Majorana_Y0_triplets": 6,
+        "beta": [
+          "81/10",
+          "35/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "4716/53",
+          "hypercharge_GUT_inverse": "9378/265",
+          "log_scale_over_2pi": "126/53",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "855/53"
+        },
+        "real_Y0_triplets": 3
+      },
+      {
+        "Majorana_Y0_triplets": 6,
+        "beta": [
+          "81/10",
+          "37/6",
+          "-3"
+        ],
+        "prediction": {
+          "UV_unification_assumed": true,
+          "electromagnetic_input_used": false,
+          "electromagnetic_inverse_at_anchor": "4806/55",
+          "hypercharge_GUT_inverse": "9468/275",
+          "log_scale_over_2pi": "126/55",
+          "low_energy_alpha0_predicted": false,
+          "status": "physical_above_anchor",
+          "unified_inverse": "873/55"
+        },
+        "real_Y0_triplets": 4
+      }
+    ],
+    "scope": "35 declared common-threshold one-loop gauge theories; no CKM or alpha(0) prediction",
+    "strong_inverse": "9",
+    "weak_inverse": "30"
+  },
+  "finite_channel_discovery": {
+    "CKM_inputs_used": false,
+    "complete": false,
+    "exact_rational_rays": [
+      {
+        "beta_equals_ray_exact": true,
+        "coefficients": [
+          "1/576",
+          "0",
+          "7/1152",
+          "1/40",
+          "1/48",
+          "1/48",
+          "1/48"
+        ],
+        "finite_anisotropy": false,
+        "global_bound": {
+          "alpha": "1/576",
+          "certified_coercive": true,
+          "cross": "1/288",
+          "margin": "1/576",
+          "scope": "exact SU3 trace-square decomposition with nonnegative trace-square coefficient"
+        },
+        "normalized_flow_eigenvalue_max_imaginary": 0.0,
+        "normalized_flow_eigenvalues": [
+          -1.0000000000000007,
+          -1.0,
+          -0.9999999999999996,
+          -0.999999999999999,
+          -0.3333333333333335,
+          -0.3333333333333333,
+          0.9999999999999991
+        ]
+      },
+      {
+        "beta_equals_ray_exact": true,
+        "coefficients": [
+          "1/256",
+          "0",
+          "5/512",
+          "3/160",
+          "1/64",
+          "1/64",
+          "1/64"
+        ],
+        "finite_anisotropy": false,
+        "global_bound": {
+          "alpha": "1/256",
+          "certified_coercive": true,
+          "cross": "1/128",
+          "margin": "1/256",
+          "scope": "exact SU3 trace-square decomposition with nonnegative trace-square coefficient"
+        },
+        "normalized_flow_eigenvalue_max_imaginary": 1.5700924586837752e-16,
+        "normalized_flow_eigenvalues": [
+          -0.7500000000000002,
+          -0.7500000000000002,
+          -0.7500000000000001,
+          -0.75,
+          -0.2500000000000001,
+          0.2500000000000002,
+          0.9999999999999991
+        ]
+      },
+      {
+        "beta_equals_ray_exact": true,
+        "coefficients": [
+          "1/192",
+          "0",
+          "1/96",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "finite_anisotropy": false,
+        "global_bound": {
+          "alpha": "1/192",
+          "certified_coercive": true,
+          "cross": "1/96",
+          "margin": "1/192",
+          "scope": "exact SU3 trace-square decomposition with nonnegative trace-square coefficient"
+        },
+        "normalized_flow_eigenvalue_max_imaginary": 0.0,
+        "normalized_flow_eigenvalues": [
+          -0.5000000000000001,
+          -0.5,
+          -0.5,
+          -0.5,
+          -0.5,
+          -0.5,
+          0.9999999999999998
+        ]
+      },
+      {
+        "beta_equals_ray_exact": true,
+        "coefficients": [
+          "1/144",
+          "0",
+          "-1/144",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "finite_anisotropy": false,
+        "global_bound": {
+          "alpha": "1/144",
+          "certified_coercive": true,
+          "cross": "-1/144",
+          "margin": "1/288",
+          "scope": "exact SU3 trace-square decomposition with nonnegative trace-square coefficient"
+        },
+        "normalized_flow_eigenvalue_max_imaginary": 0.0,
+        "normalized_flow_eigenvalues": [
+          -1.0,
+          -1.0,
+          -1.0,
+          -1.0,
+          -0.33333333333333337,
+          -0.3333333333333333,
+          0.9999999999999999
+        ]
+      },
+      {
+        "beta_equals_ray_exact": true,
+        "coefficients": [
+          "1/128",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "finite_anisotropy": false,
+        "global_bound": {
+          "alpha": "1/128",
+          "certified_coercive": true,
+          "cross": "0",
+          "margin": "1/128",
+          "scope": "exact SU3 trace-square decomposition with nonnegative trace-square coefficient"
+        },
+        "normalized_flow_eigenvalue_max_imaginary": 0.0,
+        "normalized_flow_eigenvalues": [
+          -0.75,
+          -0.75,
+          -0.75,
+          -0.75,
+          -0.25,
+          0.25,
+          1.0
+        ]
+      }
+    ],
+    "numerical_distinct_roots": 5,
+    "numerical_nonrational_or_unreconstructed": 0,
+    "random_starts": 512,
+    "seed": 20261008
+  },
+  "gauge_anchor_kind": "illustrative rational non-Abelian anchors, not a PDG fit",
+  "orientation_results": [
+    {
+      "coefficients": [
+        "1/576",
+        "0",
+        "7/1152",
+        "1/40",
+        "1/48",
+        "1/48",
+        "1/48"
+      ],
+      "orientation": {
+        "norm_product": "1/288",
+        "radial_self": "1/576",
+        "scope": "V=a(Nu^2+Nd^2)+norm_product*Nu*Nd+h(Tr AB)^2+L Tr(A^2 B^2)",
+        "trace_A2B2": "0",
+        "trace_AB_squared": "1/48"
+      },
+      "stationary_chart_rank": {
+        "L": "0",
+        "flat_probability_directions_at_stationarity": 3,
+        "h": "1/48",
+        "isolated_CP_violating_stationary_point_possible": false,
+        "linear_moment_gradient_rank": 2,
+        "orientation_hessian_rank": 1,
+        "reason": "independent moment gradients force L=0 at an interior stationary point; its Hessian then has rank at most one"
+      }
+    },
+    {
+      "coefficients": [
+        "1/256",
+        "0",
+        "5/512",
+        "3/160",
+        "1/64",
+        "1/64",
+        "1/64"
+      ],
+      "orientation": {
+        "norm_product": "1/128",
+        "radial_self": "1/256",
+        "scope": "V=a(Nu^2+Nd^2)+norm_product*Nu*Nd+h(Tr AB)^2+L Tr(A^2 B^2)",
+        "trace_A2B2": "0",
+        "trace_AB_squared": "1/64"
+      },
+      "stationary_chart_rank": {
+        "L": "0",
+        "flat_probability_directions_at_stationarity": 3,
+        "h": "1/64",
+        "isolated_CP_violating_stationary_point_possible": false,
+        "linear_moment_gradient_rank": 2,
+        "orientation_hessian_rank": 1,
+        "reason": "independent moment gradients force L=0 at an interior stationary point; its Hessian then has rank at most one"
+      }
+    },
+    {
+      "coefficients": [
+        "1/192",
+        "0",
+        "1/96",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "orientation": {
+        "norm_product": "1/96",
+        "radial_self": "1/192",
+        "scope": "V=a(Nu^2+Nd^2)+norm_product*Nu*Nd+h(Tr AB)^2+L Tr(A^2 B^2)",
+        "trace_A2B2": "0",
+        "trace_AB_squared": "0"
+      },
+      "stationary_chart_rank": {
+        "L": "0",
+        "flat_probability_directions_at_stationarity": 4,
+        "h": "0",
+        "isolated_CP_violating_stationary_point_possible": false,
+        "linear_moment_gradient_rank": 2,
+        "orientation_hessian_rank": 0,
+        "reason": "independent moment gradients force L=0 at an interior stationary point; its Hessian then has rank at most one"
+      }
+    },
+    {
+      "coefficients": [
+        "1/144",
+        "0",
+        "-1/144",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "orientation": {
+        "norm_product": "-1/144",
+        "radial_self": "1/144",
+        "scope": "V=a(Nu^2+Nd^2)+norm_product*Nu*Nd+h(Tr AB)^2+L Tr(A^2 B^2)",
+        "trace_A2B2": "0",
+        "trace_AB_squared": "0"
+      },
+      "stationary_chart_rank": {
+        "L": "0",
+        "flat_probability_directions_at_stationarity": 4,
+        "h": "0",
+        "isolated_CP_violating_stationary_point_possible": false,
+        "linear_moment_gradient_rank": 2,
+        "orientation_hessian_rank": 0,
+        "reason": "independent moment gradients force L=0 at an interior stationary point; its Hessian then has rank at most one"
+      }
+    },
+    {
+      "coefficients": [
+        "1/128",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "orientation": {
+        "norm_product": "0",
+        "radial_self": "1/128",
+        "scope": "V=a(Nu^2+Nd^2)+norm_product*Nu*Nd+h(Tr AB)^2+L Tr(A^2 B^2)",
+        "trace_A2B2": "0",
+        "trace_AB_squared": "0"
+      },
+      "stationary_chart_rank": {
+        "L": "0",
+        "flat_probability_directions_at_stationarity": 4,
+        "h": "0",
+        "isolated_CP_violating_stationary_point_possible": false,
+        "linear_moment_gradient_rank": 2,
+        "orientation_hessian_rank": 0,
+        "reason": "independent moment gradients force L=0 at an interior stationary point; its Hessian then has rank at most one"
+      }
+    }
+  ],
+  "physical_prediction_status": {
+    "alpha0_derived": false,
+    "missing_CKM_mechanism": "isolated orientation from correlated noncentral interactions with enough independent invariant forces",
+    "missing_alpha_mechanism": "justified UV normalization plus complete threshold and low-energy matching",
+    "observed_CKM_derived": false
+  },
+  "restricted_beta_tensor": [
+    [
+      [
+        0,
+        0,
+        "128"
+      ],
+      [
+        0,
+        1,
+        "32"
+      ],
+      [
+        1,
+        1,
+        "192/25"
+      ],
+      [
+        2,
+        2,
+        "16"
+      ],
+      [
+        3,
+        3,
+        "5/18"
+      ],
+      [
+        5,
+        5,
+        "9/20"
+      ],
+      [
+        6,
+        6,
+        "9/10"
+      ]
+    ],
+    [
+      [
+        0,
+        1,
+        "96"
+      ],
+      [
+        1,
+        1,
+        "136/5"
+      ],
+      [
+        4,
+        4,
+        "2"
+      ],
+      [
+        6,
+        6,
+        "-2"
+      ]
+    ],
+    [
+      [
+        0,
+        2,
+        "160"
+      ],
+      [
+        1,
+        2,
+        "32"
+      ],
+      [
+        2,
+        2,
+        "16"
+      ],
+      [
+        3,
+        3,
+        "25/18"
+      ],
+      [
+        4,
+        4,
+        "2"
+      ],
+      [
+        5,
+        5,
+        "9/4"
+      ],
+      [
+        6,
+        6,
+        "5/2"
+      ]
+    ],
+    [
+      [
+        0,
+        3,
+        "32"
+      ],
+      [
+        1,
+        3,
+        "32/5"
+      ],
+      [
+        2,
+        3,
+        "32"
+      ],
+      [
+        3,
+        3,
+        "6/5"
+      ],
+      [
+        3,
+        4,
+        "32/25"
+      ],
+      [
+        3,
+        5,
+        "36/25"
+      ],
+      [
+        3,
+        6,
+        "8/5"
+      ],
+      [
+        4,
+        4,
+        "576/125"
+      ],
+      [
+        4,
+        5,
+        "1296/125"
+      ],
+      [
+        4,
+        6,
+        "48/25"
+      ],
+      [
+        5,
+        5,
+        "54/125"
+      ],
+      [
+        5,
+        6,
+        "324/25"
+      ],
+      [
+        6,
+        6,
+        "6"
+      ]
+    ],
+    [
+      [
+        0,
+        4,
+        "32"
+      ],
+      [
+        1,
+        4,
+        "496/15"
+      ],
+      [
+        2,
+        4,
+        "32"
+      ],
+      [
+        3,
+        3,
+        "4/9"
+      ],
+      [
+        3,
+        4,
+        "32/5"
+      ],
+      [
+        3,
+        5,
+        "36/5"
+      ],
+      [
+        3,
+        6,
+        "4/3"
+      ],
+      [
+        4,
+        4,
+        "128/75"
+      ],
+      [
+        4,
+        5,
+        "196/25"
+      ],
+      [
+        4,
+        6,
+        "8/5"
+      ],
+      [
+        5,
+        5,
+        "54/25"
+      ],
+      [
+        5,
+        6,
+        "4/5"
+      ],
+      [
+        6,
+        6,
+        "10/3"
+      ]
+    ],
+    [
+      [
+        0,
+        5,
+        "32"
+      ],
+      [
+        1,
+        5,
+        "32/5"
+      ],
+      [
+        2,
+        5,
+        "32"
+      ],
+      [
+        3,
+        3,
+        "4/9"
+      ],
+      [
+        3,
+        4,
+        "32/5"
+      ],
+      [
+        3,
+        5,
+        "8/15"
+      ],
+      [
+        3,
+        6,
+        "8"
+      ],
+      [
+        4,
+        4,
+        "784/225"
+      ],
+      [
+        4,
+        5,
+        "96/25"
+      ],
+      [
+        4,
+        6,
+        "32/45"
+      ],
+      [
+        5,
+        5,
+        "4/25"
+      ],
+      [
+        5,
+        6,
+        "24/5"
+      ],
+      [
+        6,
+        6,
+        "40/9"
+      ]
+    ],
+    [
+      [
+        0,
+        6,
+        "32"
+      ],
+      [
+        1,
+        6,
+        "-224/15"
+      ],
+      [
+        2,
+        6,
+        "32"
+      ],
+      [
+        3,
+        3,
+        "4/9"
+      ],
+      [
+        3,
+        4,
+        "16/15"
+      ],
+      [
+        3,
+        5,
+        "36/5"
+      ],
+      [
+        3,
+        6,
+        "20/3"
+      ],
+      [
+        4,
+        4,
+        "16/25"
+      ],
+      [
+        4,
+        5,
+        "16/25"
+      ],
+      [
+        4,
+        6,
+        "16/3"
+      ],
+      [
+        5,
+        5,
+        "54/25"
+      ],
+      [
+        5,
+        6,
+        "8"
+      ],
+      [
+        6,
+        6,
+        "2/3"
+      ]
+    ]
+  ],
+  "schema": "pp-flavor-prediction-mechanisms/1",
+  "source_table_sha256": "48dd0da50685ad5858b388fbe86803bc695b5f478fd9196d80eb3ecb67ce2dad",
+  "source_tensor_replay": {
+    "SU3_trace_decomposition_coefficientwise": true,
+    "restricted_exact_tensor_proof": {
+      "arithmetic": "Python arbitrary-precision integers and rational fractions in Q(sqrt(5))",
+      "exact_zero_residual_for_every_product": true,
+      "nonzero_monomial_comparisons": 9973,
+      "operator_count": 9,
+      "polynomial_common_denominator": 240,
+      "scalar_loop_normalization": "16*pi^2 beta(V4)=Tr[(G^-1 Hess V4)^2]/2",
+      "symmetric_products_verified": 45
+    },
+    "source_projectors": {
+      "coefficient_field": "Q(sqrt(5))",
+      "exact_generalized_CP_checked": true,
+      "exact_generators_checked": 4,
+      "exact_idempotence_orthogonality_completeness": true,
+      "projector_denominator": 80,
+      "proof": "Integer-pair matrix identities with arbitrary-precision integers; numeric proposals become certified exact invariant projectors.",
+      "proposal_float_error_not_proof": 3.126388037344441e-13,
+      "ranks": [
+        1,
+        8,
+        8,
+        9,
+        10
+      ],
+      "rational_kinetic_metric": [
+        2,
+        6,
+        2,
+        6,
+        2,
+        6,
+        2,
+        6
+      ]
+    }
+  },
+  "sources": [
+    {
+      "title": "One-loop algebras and fixed flow trajectories in adjoint multi-scalar gauge theory",
+      "url": "https://arxiv.org/abs/2303.13884"
+    },
+    {
+      "title": "RG-stable parameter relations of a scalar field theory in absence of a symmetry",
+      "url": "https://arxiv.org/abs/2502.11011"
+    }
+  ],
+  "spectral_moment_example": {
+    "J_squared": "1/162",
+    "down": [
+      3,
+      5,
+      11
+    ],
+    "input_kind": "synthetic exact model, not measured CKM",
+    "moments": [
+      [
+        "3",
+        "19",
+        "155"
+      ],
+      [
+        "10",
+        "214/3",
+        "1886/3"
+      ],
+      [
+        "54",
+        "406",
+        "3686"
+      ]
+    ],
+    "probabilities": [
+      [
+        "1/2",
+        "1/3",
+        "1/6"
+      ],
+      [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      [
+        "1/6",
+        "1/3",
+        "1/2"
+      ]
+    ],
+    "up": [
+      1,
+      2,
+      7
+    ]
+  }
+}

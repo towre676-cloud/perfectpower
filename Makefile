@@ -351,3 +351,9 @@ weil-beyond64-receipts:
 .PHONY: check-elliptic-eleven-thirteen
 check-elliptic-eleven-thirteen:
 	bash scripts/check_elliptic_eleven_thirteen.sh
+
+.PHONY: prediction-mechanisms-lean prediction-mechanisms-receipts
+prediction-mechanisms-lean:
+	bash scripts/check_prediction_mechanisms_lean.sh
+prediction-mechanisms-receipts:
+	$(PY) python/develop_flavor_prediction_mechanisms.py

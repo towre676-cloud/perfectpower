@@ -1,0 +1,313 @@
+{
+  "schema": "pp-prediction-mechanisms-lean/1",
+  "status": "kernel_checked",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "declarations": [
+    {
+      "name": "PerfectPower.FactorAddresses.rank_select",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.select_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.rank_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.select_surjective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.rank_cons",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.address_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.no_address_of_zero_product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.empty_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.safe_pruning",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.source_rank_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.quadratic_ray",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.hypercharge_beta_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.hypercharge_fixed_point",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.no_common_gauge_ray",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.adjoint_yukawa_ratio",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.unified_solution_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.minimal_unification_below",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.radial_completed_square",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.su3_radial_fixed_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.radial_ray",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.difference_ray",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.joint_radial_ray",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.trace_ray_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.trace_ray_two",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.trace_force_cancels",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.two_by_two_moment_inverse",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.lagrange_vandermonde",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.recover",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.moments_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.moment_hessian_vanishes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.WeilOldLevel.gram",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.WeilOldLevel.isometry",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.WeilOldLevel.sqrt_normalization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.WeilOldLevel.normalized_isometry",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.WeilOldLevel.old_projector_idempotent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.WeilOldLevel.old_projector_symmetric",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "theorem_count": 36,
+  "source_sha256": {
+    "PerfectPower/FactorAddresses.lean": "33622bc2e90ca85a107cb775603f310eac161aae2b559638df1fb86790bb69d9",
+    "PerfectPower/FlavorRG.lean": "80bf2d2811f1c8c484faa266fe19c12890de49d58dcbc63bde94b9248f0fa3ec",
+    "PerfectPower/SpectralMoments.lean": "4a660b5958e7f43bf19a4142131cba39723d070291e87c1b6457891006d7ddea",
+    "PerfectPower/WeilOldLevel.lean": "6744e5936786869932bf9fe80002ac352d9dbf71b53047df71f337762b0041c2",
+    "audit/PredictionMechanisms.lean": "40257b5bcfb2c1543d0335532e661d4e75e58b6be6a28c8c450ccc8fb9d36c0d"
+  },
+  "scope": "Four focused modules, not a whole-repository build",
+  "not_formalized": [
+    "SU3 census completeness",
+    "Feynman-diagram derivation",
+    "physical trace diagonalization",
+    "JSON execution",
+    "weighted block offsets and CRT chart traversal",
+    "Fourier/chirp intertwining",
+    "observed CKM and alpha(0) prediction"
+  ]
+}
