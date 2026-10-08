@@ -1,0 +1,90 @@
+{
+  "schema": "pp-unordered-weighted-determinant/1",
+  "coefficients": [
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      2,
+      4,
+      6
+    ]
+  ],
+  "vectors": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "weights": [
+    0,
+    2,
+    1
+  ],
+  "modulus": 3,
+  "matrix": [
+    [
+      10,
+      27
+    ],
+    [
+      20,
+      54
+    ]
+  ],
+  "subsets": [
+    {
+      "subset": [
+        0,
+        1
+      ],
+      "weight": 2,
+      "coefficient_minor": 0,
+      "vector_minor": 1,
+      "alternating_coefficient": 0,
+      "term": 0
+    },
+    {
+      "subset": [
+        0,
+        2
+      ],
+      "weight": 1,
+      "coefficient_minor": 0,
+      "vector_minor": 1,
+      "alternating_coefficient": 0,
+      "term": 0
+    },
+    {
+      "subset": [
+        1,
+        2
+      ],
+      "weight": 3,
+      "coefficient_minor": 0,
+      "vector_minor": -1,
+      "alternating_coefficient": 0,
+      "term": 0
+    }
+  ],
+  "determinant": 0,
+  "unordered_sum": 0,
+  "subset_count": 3,
+  "minimum_active_weight": 0,
+  "guaranteed_divisor": 1,
+  "determinant_quotient": 0,
+  "row_product_bound": 2916,
+  "structural_zero": true,
+  "zero_from_divisor_bound": false,
+  "execution_verified": false
+}

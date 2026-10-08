@@ -1,0 +1,210 @@
+{
+  "schema": "pp-unordered-weighted-determinant/1",
+  "coefficients": [
+    [
+      1,
+      2,
+      0,
+      -1,
+      1
+    ],
+    [
+      0,
+      1,
+      2,
+      1,
+      -2
+    ],
+    [
+      1,
+      0,
+      1,
+      2,
+      1
+    ]
+  ],
+  "vectors": [
+    [
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      2
+    ]
+  ],
+  "weights": [
+    0,
+    1,
+    1,
+    2,
+    3
+  ],
+  "modulus": 3,
+  "matrix": [
+    [
+      10,
+      -30,
+      58
+    ],
+    [
+      -30,
+      72,
+      -93
+    ],
+    [
+      67,
+      -6,
+      73
+    ]
+  ],
+  "subsets": [
+    {
+      "subset": [
+        0,
+        1,
+        2
+      ],
+      "weight": 2,
+      "coefficient_minor": 5,
+      "vector_minor": -3,
+      "alternating_coefficient": -15,
+      "term": -135
+    },
+    {
+      "subset": [
+        0,
+        1,
+        3
+      ],
+      "weight": 3,
+      "coefficient_minor": 5,
+      "vector_minor": -3,
+      "alternating_coefficient": -15,
+      "term": -405
+    },
+    {
+      "subset": [
+        0,
+        1,
+        4
+      ],
+      "weight": 4,
+      "coefficient_minor": -4,
+      "vector_minor": 3,
+      "alternating_coefficient": -12,
+      "term": -972
+    },
+    {
+      "subset": [
+        0,
+        2,
+        3
+      ],
+      "weight": 3,
+      "coefficient_minor": 5,
+      "vector_minor": 0,
+      "alternating_coefficient": 0,
+      "term": 0
+    },
+    {
+      "subset": [
+        0,
+        2,
+        4
+      ],
+      "weight": 4,
+      "coefficient_minor": 2,
+      "vector_minor": 0,
+      "alternating_coefficient": 0,
+      "term": 0
+    },
+    {
+      "subset": [
+        0,
+        3,
+        4
+      ],
+      "weight": 5,
+      "coefficient_minor": 6,
+      "vector_minor": 0,
+      "alternating_coefficient": 0,
+      "term": 0
+    },
+    {
+      "subset": [
+        1,
+        2,
+        3
+      ],
+      "weight": 4,
+      "coefficient_minor": 5,
+      "vector_minor": -3,
+      "alternating_coefficient": -15,
+      "term": -1215
+    },
+    {
+      "subset": [
+        1,
+        2,
+        4
+      ],
+      "weight": 5,
+      "coefficient_minor": 9,
+      "vector_minor": -6,
+      "alternating_coefficient": -54,
+      "term": -13122
+    },
+    {
+      "subset": [
+        1,
+        3,
+        4
+      ],
+      "weight": 6,
+      "coefficient_minor": 13,
+      "vector_minor": -9,
+      "alternating_coefficient": -117,
+      "term": -85293
+    },
+    {
+      "subset": [
+        2,
+        3,
+        4
+      ],
+      "weight": 6,
+      "coefficient_minor": 7,
+      "vector_minor": 0,
+      "alternating_coefficient": 0,
+      "term": 0
+    }
+  ],
+  "determinant": -101142,
+  "unordered_sum": -101142,
+  "subset_count": 10,
+  "minimum_active_weight": 2,
+  "guaranteed_divisor": 9,
+  "determinant_quotient": -11238,
+  "row_product_bound": 2362572,
+  "structural_zero": false,
+  "zero_from_divisor_bound": false,
+  "execution_verified": false
+}

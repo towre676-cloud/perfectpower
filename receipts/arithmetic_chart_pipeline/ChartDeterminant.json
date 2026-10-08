@@ -1,0 +1,146 @@
+{
+  "schema": "pp-chart-weighted-determinant/1",
+  "leaf_id": 3,
+  "source_points": [
+    [
+      0,
+      0
+    ],
+    [
+      8,
+      0
+    ],
+    [
+      0,
+      8
+    ]
+  ],
+  "source_exponents": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "local_points": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "local_monomials": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ]
+  ],
+  "weighted_certificate": {
+    "schema": "pp-unordered-weighted-determinant/1",
+    "coefficients": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "vectors": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "weights": [
+      0,
+      1,
+      1
+    ],
+    "modulus": 8,
+    "matrix": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        0,
+        8,
+        0
+      ],
+      [
+        0,
+        0,
+        8
+      ]
+    ],
+    "subsets": [
+      {
+        "subset": [
+          0,
+          1,
+          2
+        ],
+        "weight": 2,
+        "coefficient_minor": -1,
+        "vector_minor": -1,
+        "alternating_coefficient": 1,
+        "term": 64
+      }
+    ],
+    "determinant": 64,
+    "unordered_sum": 64,
+    "subset_count": 1,
+    "minimum_active_weight": 2,
+    "guaranteed_divisor": 64,
+    "determinant_quotient": 1,
+    "row_product_bound": 384,
+    "structural_zero": false,
+    "zero_from_divisor_bound": false,
+    "execution_verified": false
+  },
+  "auxiliary": null,
+  "execution_verified": false
+}

@@ -1,0 +1,754 @@
+{
+  "patch": {
+    "schema": "pp-branching-residue-patch/2",
+    "terms": [
+      [
+        1,
+        0,
+        2
+      ],
+      [
+        -1,
+        3,
+        0
+      ]
+    ],
+    "bounds": [
+      [
+        -8,
+        8
+      ],
+      [
+        -8,
+        8
+      ]
+    ],
+    "prime": 2,
+    "exponent": 3,
+    "work_limit": 200000,
+    "work": 41,
+    "nodes": [
+      {
+        "id": 0,
+        "depth": 0,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 1,
+        "content": 1,
+        "terms": [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            -1,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": null,
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 2,
+            "child": 1,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 6,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "depth": 1,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 2,
+        "content": 4,
+        "terms": [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            -2,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 2,
+            "child": 2,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 5,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "depth": 2,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 4,
+        "content": 16,
+        "terms": [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            -4,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 2,
+            "child": 3,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 2,
+            "child": 4,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "depth": 3,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 8,
+        "content": 64,
+        "terms": [
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            -8,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 4,
+        "depth": 3,
+        "source_residue": [
+          4,
+          0
+        ],
+        "step": 8,
+        "content": 64,
+        "terms": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            2
+          ],
+          [
+            -6,
+            1,
+            0
+          ],
+          [
+            -12,
+            2,
+            0
+          ],
+          [
+            -8,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 5,
+        "depth": 2,
+        "source_residue": [
+          2,
+          0
+        ],
+        "step": 4,
+        "content": 8,
+        "terms": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            -6,
+            1,
+            0
+          ],
+          [
+            -12,
+            2,
+            0
+          ],
+          [
+            -8,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": [],
+        "branches": []
+      },
+      {
+        "id": 6,
+        "depth": 1,
+        "source_residue": [
+          1,
+          1
+        ],
+        "step": 2,
+        "content": 2,
+        "terms": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            -3,
+            1,
+            0
+          ],
+          [
+            -6,
+            2,
+            0
+          ],
+          [
+            -4,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 7,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 10,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "depth": 2,
+        "source_residue": [
+          1,
+          1
+        ],
+        "step": 4,
+        "content": 4,
+        "terms": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            4,
+            0,
+            2
+          ],
+          [
+            -3,
+            1,
+            0
+          ],
+          [
+            -12,
+            2,
+            0
+          ],
+          [
+            -16,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 8,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 9,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "depth": 3,
+        "source_residue": [
+          1,
+          1
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            2,
+            0,
+            1
+          ],
+          [
+            8,
+            0,
+            2
+          ],
+          [
+            -3,
+            1,
+            0
+          ],
+          [
+            -24,
+            2,
+            0
+          ],
+          [
+            -64,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 9,
+        "depth": 3,
+        "source_residue": [
+          1,
+          5
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            3,
+            0,
+            0
+          ],
+          [
+            10,
+            0,
+            1
+          ],
+          [
+            8,
+            0,
+            2
+          ],
+          [
+            -3,
+            1,
+            0
+          ],
+          [
+            -24,
+            2,
+            0
+          ],
+          [
+            -64,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 10,
+        "depth": 2,
+        "source_residue": [
+          1,
+          3
+        ],
+        "step": 4,
+        "content": 4,
+        "terms": [
+          [
+            2,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            4,
+            0,
+            2
+          ],
+          [
+            -3,
+            1,
+            0
+          ],
+          [
+            -12,
+            2,
+            0
+          ],
+          [
+            -16,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 11,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 12,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "depth": 3,
+        "source_residue": [
+          1,
+          3
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            6,
+            0,
+            1
+          ],
+          [
+            8,
+            0,
+            2
+          ],
+          [
+            -3,
+            1,
+            0
+          ],
+          [
+            -24,
+            2,
+            0
+          ],
+          [
+            -64,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 12,
+        "depth": 3,
+        "source_residue": [
+          1,
+          7
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            6,
+            0,
+            0
+          ],
+          [
+            14,
+            0,
+            1
+          ],
+          [
+            8,
+            0,
+            2
+          ],
+          [
+            -3,
+            1,
+            0
+          ],
+          [
+            -24,
+            2,
+            0
+          ],
+          [
+            -64,
+            3,
+            0
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      }
+    ],
+    "leaf_ids": [
+      3,
+      4,
+      8,
+      9,
+      11,
+      12
+    ],
+    "node_counts": {
+      "vertical": 0,
+      "horizontal": 7,
+      "singular": 5,
+      "dead_normalized_nodes": 1,
+      "box_pruned": 0
+    },
+    "chart_switch_count": 0,
+    "candidate_count": 31,
+    "complete_source_cover": true,
+    "complete_in_box": true,
+    "global_height_bound": false,
+    "execution_verified": false
+  },
+  "scan": {
+    "points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        4,
+        -8
+      ],
+      [
+        4,
+        8
+      ]
+    ],
+    "candidate_count": 31,
+    "complete_in_box": true,
+    "global_height_bound": false,
+    "execution_verified": false
+  }
+}

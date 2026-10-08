@@ -1,0 +1,21 @@
+import PerfectPower.IntegerValuedPowerCharts
+import PerfectPower.BranchingResidueCharts
+import PerfectPower.UnorderedWeightedDeterminant
+#print axioms PerfectPower.IntegerValuedPowerCharts.cleared_power_iff
+#print axioms PerfectPower.IntegerValuedPowerCharts.rational_power_iff
+#print axioms PerfectPower.IntegerValuedPowerCharts.chart_power_iff
+#print axioms PerfectPower.IntegerValuedPowerCharts.power_cover
+#print axioms PerfectPower.IntegerValuedPowerCharts.chart_interval
+#print axioms PerfectPower.IntegerValuedPowerCharts.chart_modular_survives
+#print axioms PerfectPower.BranchingResidueCharts.Chart.zero_iff
+#print axioms PerfectPower.BranchingResidueCharts.Chart.compose
+#print axioms PerfectPower.BranchingResidueCharts.split_zero_cover
+#print axioms PerfectPower.BranchingResidueCharts.content_zero_iff
+#print axioms PerfectPower.BranchingResidueCharts.boxZeros_complete
+#print axioms PerfectPower.UnorderedWeightedDeterminant.ordered_expansion
+#print axioms PerfectPower.UnorderedWeightedDeterminant.injective_expansion
+#print axioms PerfectPower.UnorderedWeightedDeterminant.unordered_expansion
+#print axioms PerfectPower.UnorderedWeightedDeterminant.unordered_divisibility
+
+#print axioms PerfectPower.UnorderedWeightedDeterminant.labels_mem_iff
+#print axioms PerfectPower.UnorderedWeightedDeterminant.powerset_expansion

@@ -36,6 +36,49 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'integer_power_charts', 'verify_integer_power_charts',
+              'integer_power_chart_population', 'integer_power_chart_select',
+              'integer_power_chart_rank', 'integer_power_chart_scan', 'native_integer_power_charts',
+              'branch_integer_power_charts', 'verify_branch_integer_power_charts',
+              'scan_branch_integer_power_charts'}:
+        from . import integer_valued_power_charts as pc
+        result = {'integer_power_charts': pc.power_charts,
+                  'verify_integer_power_charts': pc.verify_power_charts,
+                  'integer_power_chart_population': pc.chart_population,
+                  'integer_power_chart_select': pc.chart_select,
+                  'integer_power_chart_rank': pc.chart_rank,
+                  'integer_power_chart_scan': pc.chart_scan,
+                  'native_integer_power_charts': pc.native_power_charts,
+                  'branch_integer_power_charts': pc.branch_power_charts,
+                  'verify_branch_integer_power_charts': pc.verify_branch_power_charts,
+                  'scan_branch_integer_power_charts': pc.branch_power_scan}[op](**args)
+        if op.startswith('verify_'): return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'): return dict(lean_source=result, execution_verified=False)
+        return result
+    if op in {'branching_residue_patch', 'verify_branching_residue_patch',
+              'branching_patch_select', 'branching_patch_rank', 'branching_patch_scan',
+              'native_branching_residue_patch'}:
+        from . import branching_residue_patch as bp
+        result = {'branching_residue_patch': bp.branching_patch,
+                  'verify_branching_residue_patch': bp.verify_branching_patch,
+                  'branching_patch_select': bp.patch_select, 'branching_patch_rank': bp.patch_rank,
+                  'branching_patch_scan': bp.patch_scan,
+                  'native_branching_residue_patch': bp.native_branching_patch}[op](**args)
+        if op.startswith('verify_'): return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'): return dict(lean_source=result, execution_verified=False)
+        return result
+    if op in {'unordered_weighted_determinant', 'verify_unordered_weighted_determinant',
+              'native_unordered_weighted_determinant', 'chart_weighted_determinant',
+              'verify_chart_weighted_determinant'}:
+        from . import unordered_weighted_determinant as wd
+        result = {'unordered_weighted_determinant': wd.weighted_determinant,
+                  'verify_unordered_weighted_determinant': wd.verify_weighted_determinant,
+                  'native_unordered_weighted_determinant': wd.native_weighted_determinant,
+                  'chart_weighted_determinant': wd.chart_determinant,
+                  'verify_chart_weighted_determinant': wd.verify_chart_determinant}[op](**args)
+        if op.startswith('verify_'): return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'): return dict(lean_source=result, execution_verified=False)
+        return result
     if op in {'weil_spectral', 'weil_operator_spectrum', 'weil_projector_plan'}:
         from . import weil_spectral as ws
         return {'weil_spectral': ws.spectral_packet,

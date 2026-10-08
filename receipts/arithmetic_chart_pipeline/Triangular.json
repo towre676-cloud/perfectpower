@@ -1,0 +1,1490 @@
+{
+  "power_charts": {
+    "schema": "pp-integer-valued-power-charts/1",
+    "rational_coefficients": [
+      "0",
+      "-1/2",
+      "1/2"
+    ],
+    "numerator": [
+      0,
+      -1,
+      1
+    ],
+    "denominator": 2,
+    "exponent": 2,
+    "offset": 0,
+    "bounds": [
+      [
+        -20,
+        20
+      ],
+      [
+        -20,
+        20
+      ]
+    ],
+    "factors": [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "denominator_limit": 64,
+    "explicit_limit": 1,
+    "charts": [
+      {
+        "residue": 0,
+        "step": 2,
+        "coefficients": [
+          0,
+          -1,
+          2
+        ],
+        "terms": [
+          [
+            -1,
+            0,
+            2
+          ],
+          [
+            -1,
+            1,
+            0
+          ],
+          [
+            2,
+            2,
+            0
+          ]
+        ],
+        "parameter_interval": [
+          -10,
+          10
+        ],
+        "active": true,
+        "cover": {
+          "schema": "pp-residue-atlas-intersection-factored/1",
+          "constraints": [
+            {
+              "schema": "pp-residue-atlas/1",
+              "terms": [
+                [
+                  -1,
+                  0,
+                  2
+                ],
+                [
+                  -1,
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  0
+                ]
+              ],
+              "prime": 3,
+              "exponent": 2,
+              "modulus": 9,
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  8
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  3
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  7,
+                  8
+                ]
+              ],
+              "levels": [
+                {
+                  "power": 1,
+                  "modulus": 3,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1,
+                      2
+                    ],
+                    [
+                      2,
+                      0
+                    ]
+                  ],
+                  "nodes": []
+                },
+                {
+                  "power": 2,
+                  "modulus": 9,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      6
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1,
+                      8
+                    ],
+                    [
+                      4,
+                      1
+                    ],
+                    [
+                      4,
+                      8
+                    ],
+                    [
+                      5,
+                      0
+                    ],
+                    [
+                      5,
+                      3
+                    ],
+                    [
+                      5,
+                      6
+                    ],
+                    [
+                      7,
+                      1
+                    ],
+                    [
+                      7,
+                      8
+                    ]
+                  ],
+                  "nodes": [
+                    {
+                      "parent": [
+                        0,
+                        0
+                      ],
+                      "constant": 0,
+                      "dx": -1,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          3
+                        ],
+                        [
+                          0,
+                          6
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        1
+                      ],
+                      "constant": 0,
+                      "dx": 3,
+                      "dy": -2,
+                      "chart": "vertical",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          1,
+                          1
+                        ],
+                        [
+                          4,
+                          1
+                        ],
+                        [
+                          7,
+                          1
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        2
+                      ],
+                      "constant": -1,
+                      "dx": 3,
+                      "dy": -4,
+                      "chart": "vertical",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          1,
+                          8
+                        ],
+                        [
+                          4,
+                          8
+                        ],
+                        [
+                          7,
+                          8
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        2,
+                        0
+                      ],
+                      "constant": 2,
+                      "dx": 7,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          5,
+                          0
+                        ],
+                        [
+                          5,
+                          3
+                        ],
+                        [
+                          5,
+                          6
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "work": 21,
+              "complete_modular_cover": true,
+              "global_obstruction": false,
+              "execution_verified": false,
+              "global_height_bound": false
+            },
+            {
+              "schema": "pp-residue-atlas/1",
+              "terms": [
+                [
+                  -1,
+                  0,
+                  2
+                ],
+                [
+                  -1,
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  0
+                ]
+              ],
+              "prime": 2,
+              "exponent": 3,
+              "modulus": 8,
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  4,
+                  2
+                ],
+                [
+                  4,
+                  6
+                ]
+              ],
+              "levels": [
+                {
+                  "power": 1,
+                  "modulus": 2,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes": []
+                },
+                {
+                  "power": 2,
+                  "modulus": 4,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1,
+                      3
+                    ]
+                  ],
+                  "nodes": [
+                    {
+                      "parent": [
+                        0,
+                        0
+                      ],
+                      "constant": 0,
+                      "dx": -1,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          2
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        1
+                      ],
+                      "constant": 0,
+                      "dx": 3,
+                      "dy": -2,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          1,
+                          1
+                        ],
+                        [
+                          1,
+                          3
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "power": 3,
+                  "modulus": 8,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      4
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1,
+                      3
+                    ],
+                    [
+                      1,
+                      5
+                    ],
+                    [
+                      1,
+                      7
+                    ],
+                    [
+                      4,
+                      2
+                    ],
+                    [
+                      4,
+                      6
+                    ]
+                  ],
+                  "nodes": [
+                    {
+                      "parent": [
+                        0,
+                        0
+                      ],
+                      "constant": 0,
+                      "dx": -1,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          4
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        0,
+                        2
+                      ],
+                      "constant": -1,
+                      "dx": -1,
+                      "dy": -4,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          4,
+                          2
+                        ],
+                        [
+                          4,
+                          6
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        1
+                      ],
+                      "constant": 0,
+                      "dx": 3,
+                      "dy": -2,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          1,
+                          1
+                        ],
+                        [
+                          1,
+                          5
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        3
+                      ],
+                      "constant": -2,
+                      "dx": 3,
+                      "dy": -6,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          1,
+                          3
+                        ],
+                        [
+                          1,
+                          7
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "work": 16,
+              "complete_modular_cover": true,
+              "global_obstruction": false,
+              "execution_verified": false,
+              "global_height_bound": false
+            }
+          ],
+          "locals": [
+            {
+              "prime": 2,
+              "modulus": 8,
+              "constraint_ids": [
+                1
+              ],
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  5
+                ],
+                [
+                  1,
+                  7
+                ],
+                [
+                  4,
+                  2
+                ],
+                [
+                  4,
+                  6
+                ]
+              ]
+            },
+            {
+              "prime": 3,
+              "modulus": 9,
+              "constraint_ids": [
+                0
+              ],
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  8
+                ],
+                [
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  8
+                ],
+                [
+                  5,
+                  0
+                ],
+                [
+                  5,
+                  3
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  7,
+                  8
+                ]
+              ]
+            }
+          ],
+          "modulus": 72,
+          "combination_count": 96,
+          "roots": null,
+          "representation": "factored",
+          "explicit_limit": 1,
+          "complete_modular_cover": true,
+          "global_obstruction": false,
+          "execution_verified": false,
+          "global_height_bound": false
+        }
+      },
+      {
+        "residue": 1,
+        "step": 2,
+        "coefficients": [
+          0,
+          1,
+          2
+        ],
+        "terms": [
+          [
+            -1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            2,
+            0
+          ]
+        ],
+        "parameter_interval": [
+          -10,
+          9
+        ],
+        "active": true,
+        "cover": {
+          "schema": "pp-residue-atlas-intersection-factored/1",
+          "constraints": [
+            {
+              "schema": "pp-residue-atlas/1",
+              "terms": [
+                [
+                  -1,
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  0
+                ]
+              ],
+              "prime": 3,
+              "exponent": 2,
+              "modulus": 9,
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  2,
+                  8
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  3
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  8,
+                  8
+                ]
+              ],
+              "levels": [
+                {
+                  "power": 1,
+                  "modulus": 3,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      2,
+                      1
+                    ],
+                    [
+                      2,
+                      2
+                    ]
+                  ],
+                  "nodes": []
+                },
+                {
+                  "power": 2,
+                  "modulus": 9,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      3
+                    ],
+                    [
+                      0,
+                      6
+                    ],
+                    [
+                      2,
+                      1
+                    ],
+                    [
+                      2,
+                      8
+                    ],
+                    [
+                      4,
+                      0
+                    ],
+                    [
+                      4,
+                      3
+                    ],
+                    [
+                      4,
+                      6
+                    ],
+                    [
+                      5,
+                      1
+                    ],
+                    [
+                      5,
+                      8
+                    ],
+                    [
+                      8,
+                      1
+                    ],
+                    [
+                      8,
+                      8
+                    ]
+                  ],
+                  "nodes": [
+                    {
+                      "parent": [
+                        0,
+                        0
+                      ],
+                      "constant": 0,
+                      "dx": 1,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          3
+                        ],
+                        [
+                          0,
+                          6
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        0
+                      ],
+                      "constant": 1,
+                      "dx": 5,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          4,
+                          0
+                        ],
+                        [
+                          4,
+                          3
+                        ],
+                        [
+                          4,
+                          6
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        2,
+                        1
+                      ],
+                      "constant": 3,
+                      "dx": 9,
+                      "dy": -2,
+                      "chart": "vertical",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          2,
+                          1
+                        ],
+                        [
+                          5,
+                          1
+                        ],
+                        [
+                          8,
+                          1
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        2,
+                        2
+                      ],
+                      "constant": 2,
+                      "dx": 9,
+                      "dy": -4,
+                      "chart": "vertical",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          2,
+                          8
+                        ],
+                        [
+                          5,
+                          8
+                        ],
+                        [
+                          8,
+                          8
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "work": 21,
+              "complete_modular_cover": true,
+              "global_obstruction": false,
+              "execution_verified": false,
+              "global_height_bound": false
+            },
+            {
+              "schema": "pp-residue-atlas/1",
+              "terms": [
+                [
+                  -1,
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  2,
+                  0
+                ]
+              ],
+              "prime": 2,
+              "exponent": 3,
+              "modulus": 8,
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  2
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  7,
+                  3
+                ],
+                [
+                  7,
+                  5
+                ],
+                [
+                  7,
+                  7
+                ]
+              ],
+              "levels": [
+                {
+                  "power": 1,
+                  "modulus": 2,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes": []
+                },
+                {
+                  "power": 2,
+                  "modulus": 4,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      3,
+                      1
+                    ],
+                    [
+                      3,
+                      3
+                    ]
+                  ],
+                  "nodes": [
+                    {
+                      "parent": [
+                        0,
+                        0
+                      ],
+                      "constant": 0,
+                      "dx": 1,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          2
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        1
+                      ],
+                      "constant": 1,
+                      "dx": 5,
+                      "dy": -2,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          3,
+                          1
+                        ],
+                        [
+                          3,
+                          3
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "power": 3,
+                  "modulus": 8,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      4
+                    ],
+                    [
+                      4,
+                      2
+                    ],
+                    [
+                      4,
+                      6
+                    ],
+                    [
+                      7,
+                      1
+                    ],
+                    [
+                      7,
+                      3
+                    ],
+                    [
+                      7,
+                      5
+                    ],
+                    [
+                      7,
+                      7
+                    ]
+                  ],
+                  "nodes": [
+                    {
+                      "parent": [
+                        0,
+                        0
+                      ],
+                      "constant": 0,
+                      "dx": 1,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          4
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        0,
+                        2
+                      ],
+                      "constant": -1,
+                      "dx": 1,
+                      "dy": -4,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          4,
+                          2
+                        ],
+                        [
+                          4,
+                          6
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        3,
+                        1
+                      ],
+                      "constant": 5,
+                      "dx": 13,
+                      "dy": -2,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          7,
+                          1
+                        ],
+                        [
+                          7,
+                          5
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        3,
+                        3
+                      ],
+                      "constant": 3,
+                      "dx": 13,
+                      "dy": -6,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          7,
+                          3
+                        ],
+                        [
+                          7,
+                          7
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "work": 16,
+              "complete_modular_cover": true,
+              "global_obstruction": false,
+              "execution_verified": false,
+              "global_height_bound": false
+            }
+          ],
+          "locals": [
+            {
+              "prime": 2,
+              "modulus": 8,
+              "constraint_ids": [
+                1
+              ],
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  4
+                ],
+                [
+                  4,
+                  2
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  7,
+                  1
+                ],
+                [
+                  7,
+                  3
+                ],
+                [
+                  7,
+                  5
+                ],
+                [
+                  7,
+                  7
+                ]
+              ]
+            },
+            {
+              "prime": 3,
+              "modulus": 9,
+              "constraint_ids": [
+                0
+              ],
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  6
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  2,
+                  8
+                ],
+                [
+                  4,
+                  0
+                ],
+                [
+                  4,
+                  3
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  1
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  8,
+                  1
+                ],
+                [
+                  8,
+                  8
+                ]
+              ]
+            }
+          ],
+          "modulus": 72,
+          "combination_count": 96,
+          "roots": null,
+          "representation": "factored",
+          "explicit_limit": 1,
+          "complete_modular_cover": true,
+          "global_obstruction": false,
+          "execution_verified": false,
+          "global_height_bound": false
+        }
+      }
+    ],
+    "integral_domain_empty": false,
+    "global_modular_obstruction": false,
+    "complete_in_box": true,
+    "global_height_bound": false,
+    "execution_verified": false
+  },
+  "scan": {
+    "points": [
+      [
+        -8,
+        -6
+      ],
+      [
+        -8,
+        6
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        9,
+        -6
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "candidate_count": 46,
+    "complete_in_box": true,
+    "source_equation": "F(x)/L + offset = y^exponent on the exact integral domain",
+    "global_height_bound": false,
+    "execution_verified": false
+  },
+  "branched_scan": {
+    "points": [
+      [
+        -8,
+        -6
+      ],
+      [
+        -8,
+        6
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        -1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        9,
+        -6
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "candidate_count": 46,
+    "complete_in_box": true,
+    "global_height_bound": false,
+    "execution_verified": false
+  }
+}

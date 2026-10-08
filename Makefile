@@ -301,3 +301,7 @@ weil-spectral-receipts:
 .PHONY: check-residue-atlas-intersection-factored
 check-residue-atlas-intersection-factored:
 	bash scripts/check_residue_atlas_intersection_factored.sh
+
+.PHONY: arithmetic-chart-check
+arithmetic-chart-check:
+	bash scripts/check_arithmetic_chart_pipeline.sh

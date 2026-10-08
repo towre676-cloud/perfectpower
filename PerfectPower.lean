@@ -423,3 +423,7 @@ import PerfectPower.WeilSpectral
 import PerfectPower.ResidueAtlasIntersection
 
 import PerfectPower.ResidueAtlasIntersectionFactored
+
+import PerfectPower.IntegerValuedPowerCharts
+import PerfectPower.BranchingResidueCharts
+import PerfectPower.UnorderedWeightedDeterminant

@@ -1,0 +1,1225 @@
+{
+  "patch": {
+    "schema": "pp-branching-residue-patch/2",
+    "terms": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "bounds": [
+      [
+        -8,
+        8
+      ],
+      [
+        -8,
+        8
+      ]
+    ],
+    "prime": 2,
+    "exponent": 3,
+    "work_limit": 200000,
+    "work": 70,
+    "nodes": [
+      {
+        "id": 0,
+        "depth": 0,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 1,
+        "content": 1,
+        "terms": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": null,
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 2,
+            "child": 1,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 12,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 19,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "depth": 1,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 2,
+        "content": 4,
+        "terms": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 2,
+            "child": 2,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": true,
+            "removed_prime_exponent": 1,
+            "child": 6,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "vertical",
+            "switched": true,
+            "removed_prime_exponent": 1,
+            "child": 9,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "depth": 2,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 4,
+        "content": 16,
+        "terms": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "singular",
+            "switched": false,
+            "removed_prime_exponent": 2,
+            "child": 3,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": true,
+            "removed_prime_exponent": 1,
+            "child": 4,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "vertical",
+            "switched": true,
+            "removed_prime_exponent": 1,
+            "child": 5,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "depth": 3,
+        "source_residue": [
+          0,
+          0
+        ],
+        "step": 8,
+        "content": 64,
+        "terms": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "singular",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 4,
+        "depth": 3,
+        "source_residue": [
+          0,
+          4
+        ],
+        "step": 8,
+        "content": 32,
+        "terms": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 5,
+        "depth": 3,
+        "source_residue": [
+          4,
+          0
+        ],
+        "step": 8,
+        "content": 32,
+        "terms": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 6,
+        "depth": 2,
+        "source_residue": [
+          0,
+          2
+        ],
+        "step": 4,
+        "content": 8,
+        "terms": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 7,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 8,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "depth": 3,
+        "source_residue": [
+          0,
+          2
+        ],
+        "step": 8,
+        "content": 16,
+        "terms": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 8,
+        "depth": 3,
+        "source_residue": [
+          0,
+          6
+        ],
+        "step": 8,
+        "content": 16,
+        "terms": [
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 9,
+        "depth": 2,
+        "source_residue": [
+          2,
+          0
+        ],
+        "step": 4,
+        "content": 8,
+        "terms": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 10,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 11,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "depth": 3,
+        "source_residue": [
+          2,
+          0
+        ],
+        "step": 8,
+        "content": 16,
+        "terms": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 11,
+        "depth": 3,
+        "source_residue": [
+          6,
+          0
+        ],
+        "step": 8,
+        "content": 16,
+        "terms": [
+          [
+            3,
+            0,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 12,
+        "depth": 1,
+        "source_residue": [
+          0,
+          1
+        ],
+        "step": 2,
+        "content": 2,
+        "terms": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 13,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 16,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "depth": 2,
+        "source_residue": [
+          0,
+          1
+        ],
+        "step": 4,
+        "content": 4,
+        "terms": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 14,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 15,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "depth": 3,
+        "source_residue": [
+          0,
+          1
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 15,
+        "depth": 3,
+        "source_residue": [
+          0,
+          5
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            5,
+            1,
+            0
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 16,
+        "depth": 2,
+        "source_residue": [
+          0,
+          3
+        ],
+        "step": 4,
+        "content": 4,
+        "terms": [
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 17,
+            "active": true
+          },
+          {
+            "residue": [
+              0,
+              1
+            ],
+            "chart": "horizontal",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 18,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "depth": 3,
+        "source_residue": [
+          0,
+          3
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            3,
+            1,
+            0
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 18,
+        "depth": 3,
+        "source_residue": [
+          0,
+          7
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            7,
+            1,
+            0
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "horizontal",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 19,
+        "depth": 1,
+        "source_residue": [
+          1,
+          0
+        ],
+        "step": 2,
+        "content": 2,
+        "terms": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 20,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 23,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "depth": 2,
+        "source_residue": [
+          1,
+          0
+        ],
+        "step": 4,
+        "content": 4,
+        "terms": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 21,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 22,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "depth": 3,
+        "source_residue": [
+          1,
+          0
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 22,
+        "depth": 3,
+        "source_residue": [
+          5,
+          0
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            5,
+            0,
+            1
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 23,
+        "depth": 2,
+        "source_residue": [
+          3,
+          0
+        ],
+        "step": 4,
+        "content": 4,
+        "terms": [
+          [
+            3,
+            0,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "branches": [
+          {
+            "residue": [
+              0,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 24,
+            "active": true
+          },
+          {
+            "residue": [
+              1,
+              0
+            ],
+            "chart": "vertical",
+            "switched": false,
+            "removed_prime_exponent": 1,
+            "child": 25,
+            "active": true
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "depth": 3,
+        "source_residue": [
+          3,
+          0
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            3,
+            0,
+            1
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": null,
+        "branches": []
+      },
+      {
+        "id": 25,
+        "depth": 3,
+        "source_residue": [
+          7,
+          0
+        ],
+        "step": 8,
+        "content": 8,
+        "terms": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            8,
+            1,
+            1
+          ]
+        ],
+        "previous_chart": "vertical",
+        "roots": null,
+        "branches": []
+      }
+    ],
+    "leaf_ids": [
+      3,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      14,
+      15,
+      17,
+      18,
+      21,
+      22,
+      24,
+      25
+    ],
+    "node_counts": {
+      "vertical": 11,
+      "horizontal": 11,
+      "singular": 3,
+      "dead_normalized_nodes": 0,
+      "box_pruned": 0
+    },
+    "chart_switch_count": 4,
+    "candidate_count": 93,
+    "complete_source_cover": true,
+    "complete_in_box": true,
+    "global_height_bound": false,
+    "execution_verified": false
+  },
+  "scan": {
+    "points": [
+      [
+        -8,
+        0
+      ],
+      [
+        -7,
+        0
+      ],
+      [
+        -6,
+        0
+      ],
+      [
+        -5,
+        0
+      ],
+      [
+        -4,
+        0
+      ],
+      [
+        -3,
+        0
+      ],
+      [
+        -2,
+        0
+      ],
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        -8
+      ],
+      [
+        0,
+        -7
+      ],
+      [
+        0,
+        -6
+      ],
+      [
+        0,
+        -5
+      ],
+      [
+        0,
+        -4
+      ],
+      [
+        0,
+        -3
+      ],
+      [
+        0,
+        -2
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        7,
+        0
+      ],
+      [
+        8,
+        0
+      ]
+    ],
+    "candidate_count": 93,
+    "complete_in_box": true,
+    "global_height_bound": false,
+    "execution_verified": false
+  }
+}
