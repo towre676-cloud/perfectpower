@@ -1,0 +1,1064 @@
+{
+ "conclusions": {
+  "declared_bias_nucleates": false,
+  "dominant_correction": "zero-temperature one-loop Coleman-Weinberg (on-shell)",
+  "eps_star_relative_shifts_bounce_rows": [
+   [
+    0.03,
+    4,
+    -0.004919024638458169
+   ],
+   [
+    1.0,
+    4,
+    -0.004996398421831749
+   ],
+   [
+    25.0,
+    4,
+    -0.005061571732464909
+   ],
+   [
+    50.0,
+    4,
+    -0.0050754348265106275
+   ],
+   [
+    100.0,
+    3,
+    -0.0055613898164258435
+   ],
+   [
+    100.0,
+    4,
+    -0.005087169249626267
+   ],
+   [
+    150.0,
+    3,
+    -0.005535892472005366
+   ],
+   [
+    150.0,
+    4,
+    -0.0050907659885766066
+   ],
+   [
+    300.0,
+    3,
+    -0.005448510325815947
+   ],
+   [
+    300.0,
+    4,
+    -0.005077956746101342
+   ],
+   [
+    1000.0,
+    3,
+    -0.004845744021548359
+   ],
+   [
+    1000.0,
+    4,
+    -0.004727460334859379
+   ],
+   [
+    2000.0,
+    3,
+    -0.00343464863456866
+   ],
+   [
+    2000.0,
+    4,
+    -0.0037668203758162155
+   ],
+   [
+    2999.0,
+    3,
+    -0.0019574509316829802
+   ],
+   [
+    2999.0,
+    4,
+    -0.0028569140082959077
+   ]
+  ],
+  "nucleation_temperature_declared_bias": null,
+  "spinodal_relative_shift_OS": -0.005572070489550329
+ },
+ "declared_bias_thin_wall": {
+  "conclusion": "S3/T is of order 10^50 or more at every grid temperature with the declared bias; no correction changes its logarithm by more than 10^-3. No nucleation temperature exists for the declared bias.",
+  "rows": [
+   {
+    "T_GeV": 0.03,
+    "log10_S3_over_T_tree_thin_wall": 57.083379239263124,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 0.0,
+    "vector_relative_tension_shift": 0.0
+   },
+   {
+    "T_GeV": 1.0,
+    "log10_S3_over_T_tree_thin_wall": 55.56050058998397,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 0.0,
+    "vector_relative_tension_shift": 0.0
+   },
+   {
+    "T_GeV": 25.0,
+    "log10_S3_over_T_tree_thin_wall": 54.16262054210222,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 1.238485765293798e-12,
+    "vector_relative_tension_shift": 9.506082606664234e-13
+   },
+   {
+    "T_GeV": 50.0,
+    "log10_S3_over_T_tree_thin_wall": 53.8617707422104,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 2.1385215196350157e-11,
+    "vector_relative_tension_shift": 1.641384355054552e-11
+   },
+   {
+    "T_GeV": 100.0,
+    "log10_S3_over_T_tree_thin_wall": 53.56146190698954,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 1.7533556288086727e-10,
+    "vector_relative_tension_shift": 1.3457502502524072e-10
+   },
+   {
+    "T_GeV": 150.0,
+    "log10_S3_over_T_tree_thin_wall": 53.38657392588891,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 5.015210641472287e-10,
+    "vector_relative_tension_shift": 3.8493160048051814e-10
+   },
+   {
+    "T_GeV": 300.0,
+    "log10_S3_over_T_tree_thin_wall": 53.09207084868869,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 0.0,
+    "vector_relative_tension_shift": 0.0
+   },
+   {
+    "T_GeV": 1000.0,
+    "log10_S3_over_T_tree_thin_wall": 52.662383248827624,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 0.0,
+    "vector_relative_tension_shift": 0.0
+   },
+   {
+    "T_GeV": 2000.0,
+    "log10_S3_over_T_tree_thin_wall": 52.7683256442132,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 0.0,
+    "vector_relative_tension_shift": 0.0
+   },
+   {
+    "T_GeV": 2999.0,
+    "log10_S3_over_T_tree_thin_wall": 58.43204902262867,
+    "log10_shift_from_CW_tension": -0.0025899187150009665,
+    "log10_shift_from_vector": 0.0,
+    "vector_relative_tension_shift": 0.0
+   }
+  ]
+ },
+ "declared_model": {
+  "bias_h0_GeV3": 2.584366229533845e-13,
+  "bias_onset_GeV": 3000.0,
+  "current_g_GeV": 3000.0,
+  "heavy_mass_GeV": 300000.0,
+  "lam": 0.1,
+  "thermal_c": 0.025000033333333335,
+  "v_GeV": 30000.0
+ },
+ "input_dimensionful_receipt_sha256": "01b8b8adc9103f6223aa202e10d35474f22c75e82cfd85cfd46414d2c111cdd9",
+ "input_nucleation_receipt_sha256": "27d3fdc2ce1630d637c45d0e13eeca5f5bbc8c28515758b8b32e72f237a2a6a1",
+ "nucleation_temperature_benchmarks": {
+  "definition": "Highest T on the grid-interpolated (linear in T) curve where the amplified bias reaches the easier critical bias; bias shape (1-(T/3000 GeV)^2) as declared.",
+  "rows": [
+   {
+    "T_n_corrected_GeV": 268.402231326855,
+    "T_n_corrected_bracket_GeV": [
+     265.22350890846474,
+     271.60248729420914
+    ],
+    "T_n_tree_GeV": 175.45551920637894,
+    "amplification_over_declared": 3.9810076762378524e+24,
+    "q_eps_at_T0_over_eps_sp": 0.99
+   },
+   {
+    "T_n_corrected_GeV": 323.1033810709079,
+    "T_n_corrected_bracket_GeV": [
+     321.7551708990238,
+     324.46162867911227
+    ],
+    "T_n_tree_GeV": 267.3859528558942,
+    "amplification_over_declared": 4.001113775612791e+24,
+    "q_eps_at_T0_over_eps_sp": 0.995
+   },
+   {
+    "T_n_corrected_GeV": 358.0600802225494,
+    "T_n_corrected_bracket_GeV": [
+     356.59021277165806,
+     359.54083482760933
+    ],
+    "T_n_tree_GeV": 322.6081168988797,
+    "amplification_over_declared": 4.0212198749877296e+24,
+    "q_eps_at_T0_over_eps_sp": 1.0
+   }
+  ]
+ },
+ "rows": [
+  {
+   "H_GeV": 4.0130668470560534e-22,
+   "T_GeV": 0.03,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 3.9075207337725193e+24,
+   "bias_amplification_needed_tree": 3.9268369414386634e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.38275548852850383,
+   "d3": {
+    "S_star": 188.1420136032488,
+    "corrected_method": "near_spinodal_asymptotic_uncontrolled",
+    "eps_star_corrected": 0.38275547510957847,
+    "eps_star_corrected_over_tree_sp": 0.994427894647432,
+    "eps_star_relative_shift": -0.0055720809763765144,
+    "eps_star_tree": 0.3849001700247776,
+    "eps_star_tree_over_sp": 0.9999999754872213,
+    "s_star": 5.949572865567234e-05,
+    "tree_method": "near_spinodal_asymptotic"
+   },
+   "d4": {
+    "S_bracket_half_width": 1.0486246073213938,
+    "S_corrected_at_tree_eps": 209.0126101464644,
+    "S_corrected_at_tree_eps_over_S_star": 0.8509002439934134,
+    "S_star": 245.63703162844823,
+    "bracket_half_width_reduced_action": 0.10486246073213938,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.06512004957682348,
+     "thermal_one_loop_alternative": 3.1896731835070855e-10,
+     "two_loop_thermal_figure_eight": 0.0,
+     "two_loop_thermal_sunset_estimate": 0.0,
+     "two_loop_zero_T_beta_estimate": 0.03974241083634858
+    },
+    "corrected_bounce_s": 24.563703172814844,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -1946.9567135013576,
+    "eps_star_corrected": 0.3740172083169981,
+    "eps_star_corrected_bracket": [
+     0.37396334863947933,
+     0.37407106799451684
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9717252115651702,
+    "eps_star_relative_shift": -0.004919024638458169,
+    "eps_star_tree": 0.3758661029381119,
+    "eps_star_tree_over_sp": 0.9765287806975852,
+    "first_order_CW_shift_check": -3.592639296067681,
+    "s_star": 24.563703162844824,
+    "tree_method": "bounce",
+    "virial_defect": 5.562222881241154e-09,
+    "virial_defect_corrected_at_tree_eps": -1.4142885364349585e-08
+   },
+   "easier_channel_corrected": "quantum_O4",
+   "easier_channel_tree": "quantum_O4",
+   "eps_declared": 9.571726775097694e-26,
+   "eps_eff_corrected": 0.3740172083169981,
+   "eps_eff_corrected_bracket": [
+    0.37396334863947933,
+    0.37407106799451684
+   ],
+   "eps_eff_tree": 0.3758661029381119,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29999.99999999625
+  },
+  {
+   "H_GeV": 1.4116865984194725e-18,
+   "T_GeV": 1.0,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 3.9249341772580097e+24,
+   "bias_amplification_needed_tree": 3.944643186248471e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.38275548868784176,
+   "d3": {
+    "S_star": 169.34810504583277,
+    "corrected_method": "near_spinodal_asymptotic_uncontrolled",
+    "eps_star_corrected": 0.38275423761632715,
+    "eps_star_corrected_over_tree_sp": 0.9944246795456541,
+    "eps_star_relative_shift": -0.005573047818626997,
+    "eps_star_tree": 0.3848992998195777,
+    "eps_star_tree_over_sp": 0.9999977146277924,
+    "s_star": 0.0017850857648422124,
+    "tree_method": "near_spinodal_asymptotic"
+   },
+   "d4": {
+    "S_bracket_half_width": 1.0958028596669829,
+    "S_corrected_at_tree_eps": 173.62483525788636,
+    "S_corrected_at_tree_eps_over_S_star": 0.8163408868867893,
+    "S_star": 212.68668279010845,
+    "bracket_half_width_reduced_action": 0.10958028596669829,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.06806795026893388,
+     "thermal_one_loop_alternative": 3.2342736926294975e-07,
+     "two_loop_thermal_figure_eight": 0.0,
+     "two_loop_thermal_sunset_estimate": 0.0,
+     "two_loop_zero_T_beta_estimate": 0.041512012270395145
+    },
+    "corrected_bounce_s": 21.268668276361954,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2011.7113880475656,
+    "eps_star_corrected": 0.37568393400086414,
+    "eps_star_corrected_bracket": [
+     0.37562946282442317,
+     0.3757384051773051
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9760554919152743,
+    "eps_star_relative_shift": -0.004996398421831749,
+    "eps_star_tree": 0.37757042628287424,
+    "eps_star_tree_over_sp": 0.9809567426360664,
+    "first_order_CW_shift_check": -3.786821025764557,
+    "s_star": 21.268668279010846,
+    "tree_method": "bounce",
+    "virial_defect": 6.395384589033388e-09,
+    "virial_defect_corrected_at_tree_eps": -3.925370416502945e-09
+   },
+   "easier_channel_corrected": "quantum_O4",
+   "easier_channel_tree": "quantum_O4",
+   "eps_declared": 9.571725716514307e-26,
+   "eps_eff_corrected": 0.37568393400086414,
+   "eps_eff_corrected_bracket": [
+    0.37562946282442317,
+    0.3757384051773051
+   ],
+   "eps_eff_tree": 0.37757042628287424,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29999.999995833325
+  },
+  {
+   "H_GeV": 8.823041240121703e-16,
+   "T_GeV": 25.0,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 3.9384721508277024e+24,
+   "bias_amplification_needed_tree": 3.9585084251752934e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.38275558820428857,
+   "d3": {
+    "S_corrected_at_tree_eps": 0.0,
+    "S_corrected_at_tree_eps_note": "tree critical bias lies above the corrected spinodal: no barrier",
+    "S_star": 156.3528400344181,
+    "corrected_method": "near_spinodal_asymptotic_uncontrolled",
+    "eps_star_corrected": 0.3826733701690734,
+    "eps_star_corrected_over_tree_sp": 0.9942145797546712,
+    "eps_star_relative_shift": -0.005638161133236341,
+    "eps_star_tree": 0.3848431780177643,
+    "eps_star_tree_over_sp": 0.9998519059095627,
+    "s_star": 0.04120259467201243,
+    "tree_method": "bounce"
+   },
+   "d4": {
+    "S_bracket_half_width": 1.1428848061818078,
+    "S_corrected_at_tree_eps": 144.80261682479485,
+    "S_corrected_at_tree_eps_over_S_star": 0.7756946249361789,
+    "S_star": 186.67477144979398,
+    "bracket_half_width_reduced_action": 0.11428848061818077,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.07070450627704776,
+     "thermal_one_loop_alternative": 0.00020699723026855777,
+     "two_loop_thermal_figure_eight": 7.553060811593098e-15,
+     "two_loop_thermal_sunset_estimate": 3.6573529293205907e-09,
+     "two_loop_zero_T_beta_estimate": 0.04337697345350397
+    },
+    "corrected_bounce_s": 18.66747714639117,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2089.844360546067,
+    "eps_star_corrected": 0.37695371244093223,
+    "eps_star_corrected_bracket": [
+     0.37689902488487503,
+     0.37700839999698943
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9793544730741045,
+    "eps_star_relative_shift": -0.005061571732464909,
+    "eps_star_tree": 0.378871397195215,
+    "eps_star_tree_over_sp": 0.9843367642150815,
+    "first_order_CW_shift_check": -3.998447022283949,
+    "s_star": 18.667477144979397,
+    "tree_method": "bounce",
+    "virial_defect": -1.0473289041941145e-09,
+    "virial_defect_corrected_at_tree_eps": 5.928537788690399e-10
+   },
+   "easier_channel_corrected": "quantum_O4",
+   "easier_channel_tree": "quantum_O4",
+   "eps_declared": 9.571064565270884e-26,
+   "eps_eff_corrected": 0.37695371244093223,
+   "eps_eff_corrected_bracket": [
+    0.37689902488487503,
+    0.37700839999698943
+   ],
+   "eps_eff_tree": 0.378871397195215,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29999.99739582975
+  },
+  {
+   "H_GeV": 3.5292164960486813e-15,
+   "T_GeV": 50.0,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 3.942081370470568e+24,
+   "bias_amplification_needed_tree": 3.9621912137461096e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.3827558872323332,
+   "d3": {
+    "S_corrected_at_tree_eps": 0.0,
+    "S_corrected_at_tree_eps_note": "tree critical bias lies above the corrected spinodal: no barrier",
+    "S_star": 153.5531485674336,
+    "corrected_method": "near_spinodal_asymptotic_uncontrolled",
+    "eps_star_corrected": 0.38255364111694407,
+    "eps_star_corrected_over_tree_sp": 0.9939035145525261,
+    "eps_star_relative_shift": -0.005737177660510739,
+    "eps_star_tree": 0.384761083811622,
+    "eps_star_tree_over_sp": 0.9996386189054945,
+    "s_star": 0.08092964332783151,
+    "tree_method": "bounce"
+   },
+   "d4": {
+    "S_bracket_half_width": 1.15983704745078,
+    "S_corrected_at_tree_eps": 138.44390797262932,
+    "S_corrected_at_tree_eps_over_S_star": 0.7645936455107747,
+    "S_star": 181.06860916970354,
+    "bracket_half_width_reduced_action": 0.115983704745078,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.07130347185275943,
+     "thermal_one_loop_alternative": 0.0008370502515875074,
+     "two_loop_thermal_figure_eight": 4.2371799268942844e-14,
+     "two_loop_thermal_sunset_estimate": 2.4885169979372755e-08,
+     "two_loop_zero_T_beta_estimate": 0.043843157755518725
+    },
+    "corrected_bounce_s": 18.10686092173769,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2110.925325369628,
+    "eps_star_corrected": 0.3772208384382031,
+    "eps_star_corrected_bracket": [
+     0.37716589395326505,
+     0.3772757829231411
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9800484867730479,
+    "eps_star_relative_shift": -0.0050754348265106275,
+    "eps_star_tree": 0.37914516501301326,
+    "eps_star_tree_over_sp": 0.9850480338699372,
+    "first_order_CW_shift_check": -4.053193889653265,
+    "s_star": 18.106860916970355,
+    "tree_method": "bounce",
+    "virial_defect": 3.7155945161942097e-09,
+    "virial_defect_corrected_at_tree_eps": -2.0023772910272227e-08
+   },
+   "easier_channel_corrected": "quantum_O4",
+   "easier_channel_tree": "quantum_O4",
+   "eps_declared": 9.569077930858999e-26,
+   "eps_eff_corrected": 0.3772208384382031,
+   "eps_eff_corrected_bracket": [
+    0.37716589395326505,
+    0.3772757829231411
+   ],
+   "eps_eff_tree": 0.37914516501301326,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29999.989583317638
+  },
+  {
+   "H_GeV": 1.4116865984194725e-14,
+   "T_GeV": 100.0,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 3.948132853879142e+24,
+   "bias_amplification_needed_tree": 3.968320371244402e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.3827570833484053,
+   "d3": {
+    "S_bracket_half_width": 10.270609396188254,
+    "S_corrected_at_tree_eps": 0.0,
+    "S_corrected_at_tree_eps_note": "tree critical bias lies above the corrected spinodal: no barrier",
+    "S_star": 150.75295335719963,
+    "bracket_half_width_reduced_action": 0.010826187919696455,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.0035698219517499284,
+     "thermal_one_loop_alternative": 0.000603938627825794,
+     "two_loop_thermal_figure_eight": 8.463017587100588e-12,
+     "two_loop_thermal_sunset_estimate": 9.92034556552839e-07,
+     "two_loop_zero_T_beta_estimate": 0.006651435297101164
+    },
+    "bubble_radius_GeV_inv": 0.0006207382622315814,
+    "corrected_bounce_s": 0.1589077862485226,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "two_loop_zero_T_beta_estimate",
+    "ds_deps": -372.007867361257,
+    "eps_star_corrected": 0.38242376006903794,
+    "eps_star_corrected_bracket": [
+     0.38239465802881367,
+     0.3824528622578915
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9935660736916556,
+    "eps_star_relative_shift": -0.0055613898164258435,
+    "eps_star_tree": 0.384562461828028,
+    "eps_star_tree_over_sp": 0.9991225838548672,
+    "first_order_CW_shift_check": -0.7945626540917082,
+    "s_star": 0.1589077862409989,
+    "tree_method": "bounce",
+    "vector_tension_shift_S3_over_T": 5.2453812413185364e-05,
+    "virial_defect": -1.9849232339478215e-08
+   },
+   "d4": {
+    "S_bracket_half_width": 1.1960824921636095,
+    "S_corrected_at_tree_eps": 132.03362247777494,
+    "S_corrected_at_tree_eps_over_S_star": 0.7524976839492163,
+    "S_star": 175.46050345941723,
+    "bracket_half_width_reduced_action": 0.11960824921636094,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.0719018315453537,
+     "thermal_one_loop_alternative": 0.003387112409088496,
+     "two_loop_thermal_figure_eight": 3.85415861921001e-12,
+     "two_loop_thermal_sunset_estimate": 4.191298548385097e-07,
+     "two_loop_zero_T_beta_estimate": 0.04431888612820976
+    },
+    "corrected_bounce_s": 17.54605035047341,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2133.83637938378,
+    "eps_star_corrected": 0.3774861685116135,
+    "eps_star_corrected_bracket": [
+     0.3774301153622849,
+     0.3775422216609421
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9807378345249321,
+    "eps_star_relative_shift": -0.005087169249626267,
+    "eps_star_tree": 0.37941632356566296,
+    "eps_star_tree_over_sp": 0.9857525244550814,
+    "first_order_CW_shift_check": -4.1119818527293,
+    "s_star": 17.546050345941723,
+    "tree_method": "bounce",
+    "virial_defect": 3.149826179870702e-09,
+    "virial_defect_corrected_at_tree_eps": -4.473131812154968e-09
+   },
+   "easier_channel_corrected": "quantum_O4",
+   "easier_channel_tree": "quantum_O4",
+   "eps_declared": 9.561131362150684e-26,
+   "eps_eff_corrected": 0.3774861685116135,
+   "eps_eff_corrected_bracket": [
+    0.3774301153622849,
+    0.3775422216609421
+   ],
+   "eps_eff_tree": 0.37941632356566296,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29999.95833324884
+  },
+  {
+   "H_GeV": 3.1762948464438136e-14,
+   "T_GeV": 150.0,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 3.9552347352713604e+24,
+   "bias_amplification_needed_tree": 3.975472937691065e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.3827590768890361,
+   "d3": {
+    "S_bracket_half_width": 7.294634488648906,
+    "S_corrected_at_tree_eps": 0.0,
+    "S_corrected_at_tree_eps_note": "tree critical bias lies above the corrected spinodal: no barrier",
+    "S_star": 149.11470302815667,
+    "bracket_half_width_reduced_action": 0.01153386588470938,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.0039696100009388256,
+     "thermal_one_loop_alternative": 0.0012060586346562719,
+     "two_loop_thermal_figure_eight": 5.607422804584373e-11,
+     "two_loop_thermal_sunset_estimate": 2.939588007969869e-06,
+     "two_loop_zero_T_beta_estimate": 0.006355257605032084
+    },
+    "bubble_radius_GeV_inv": 0.0005469893780437986,
+    "corrected_bounce_s": 0.2357717839076422,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "two_loop_zero_T_beta_estimate",
+    "ds_deps": -331.35370126562145,
+    "eps_star_corrected": 0.3822070185884646,
+    "eps_star_corrected_bracket": [
+     0.3821722102678071,
+     0.3822418272797371
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9930029628069645,
+    "eps_star_relative_shift": -0.005535892472005366,
+    "eps_star_tree": 0.3843346539057523,
+    "eps_star_tree_over_sp": 0.9985307215112448,
+    "first_order_CW_shift_check": -0.7035808283867959,
+    "s_star": 0.2357717838832493,
+    "tree_method": "bounce",
+    "vector_tension_shift_S3_over_T": 7.766822633740005e-05,
+    "virial_defect": 1.1900087950110283e-08
+   },
+   "d4": {
+    "S_bracket_half_width": 1.2455010347286666,
+    "S_corrected_at_tree_eps": 128.2775896943441,
+    "S_corrected_at_tree_eps_over_S_star": 0.7450245203635637,
+    "S_star": 172.1790171842211,
+    "bracket_half_width_reduced_action": 0.12455010347286666,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.07228913684469462,
+     "thermal_one_loop_alternative": 0.007675842445965618,
+     "two_loop_thermal_figure_eight": 4.151341918868697e-11,
+     "two_loop_thermal_sunset_estimate": 2.201861277043504e-06,
+     "two_loop_zero_T_beta_estimate": 0.04458292227941596
+    },
+    "corrected_bounce_s": 17.217901735665865,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2148.1549642487607,
+    "eps_star_corrected": 0.37764134194288995,
+    "eps_star_corrected_bracket": [
+     0.3775833619062791,
+     0.3776993219795008
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9811409869253656,
+    "eps_star_relative_shift": -0.0050907659885766066,
+    "eps_star_tree": 0.3795736626347906,
+    "eps_star_tree_over_sp": 0.9861613033476984,
+    "first_order_CW_shift_check": -4.148427743115874,
+    "s_star": 17.21790171842211,
+    "tree_method": "bounce",
+    "virial_defect": 2.99439232780016e-08,
+    "virial_defect_corrected_at_tree_eps": -2.949887081610633e-08
+   },
+   "easier_channel_corrected": "quantum_O4",
+   "easier_channel_tree": "quantum_O4",
+   "eps_declared": 9.547886970530985e-26,
+   "eps_eff_corrected": 0.37764134194288995,
+   "eps_eff_corrected_bracket": [
+    0.3775833619062791,
+    0.3776993219795008
+   ],
+   "eps_eff_tree": 0.3795736626347906,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29999.906249728516
+  },
+  {
+   "H_GeV": 1.2705179385775254e-13,
+   "T_GeV": 300.0,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 3.987937560332442e+24,
+   "bias_amplification_needed_tree": 4.008291491150269e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.3827698423074823,
+   "d3": {
+    "S_bracket_half_width": 4.545297478623316,
+    "S_corrected_at_tree_eps": 0.0,
+    "S_corrected_at_tree_eps_note": "tree critical bias lies above the corrected spinodal: no barrier",
+    "S_star": 146.3136696721064,
+    "bracket_half_width_reduced_action": 0.01437367234773704,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.004664890791176294,
+     "thermal_one_loop_alternative": 0.003971903064724439,
+     "two_loop_thermal_figure_eight": 1.3937797256667864e-09,
+     "two_loop_thermal_sunset_estimate": 1.9074222078308746e-05,
+     "two_loop_zero_T_beta_estimate": 0.005717802875978272
+    },
+    "corrected_bounce_s": 0.46269023252757135,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "two_loop_zero_T_beta_estimate",
+    "ds_deps": -273.99719212296003,
+    "eps_star_corrected": 0.3814564932905358,
+    "eps_star_corrected_bracket": [
+     0.38140403409474494,
+     0.3815089524863267
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9910530408843968,
+    "eps_star_relative_shift": -0.005448510325815947,
+    "eps_star_tree": 0.3835462489885781,
+    "eps_star_tree_over_sp": 0.9964823854510205,
+    "first_order_CW_shift_check": -0.5740594651873177,
+    "s_star": 0.4626902326531257,
+    "tree_method": "bounce",
+    "virial_defect": -5.558193883790195e-08
+   },
+   "d4": {
+    "S_bracket_half_width": 1.489481864365903,
+    "S_corrected_at_tree_eps": 121.96868529906907,
+    "S_corrected_at_tree_eps_over_S_star": 0.7322476477812038,
+    "S_star": 166.5675344518326,
+    "bracket_half_width_reduced_action": 0.1489481864365903,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.07291276130675545,
+     "thermal_one_loop_alternative": 0.031101032321143817,
+     "two_loop_thermal_figure_eight": 2.897073462704411e-09,
+     "two_loop_thermal_sunset_estimate": 3.8389833781631345e-05,
+     "two_loop_zero_T_beta_estimate": 0.04489600007783594
+    },
+    "corrected_bounce_s": 16.65675345720775,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2174.3085219474874,
+    "eps_star_corrected": 0.3779115140138983,
+    "eps_star_corrected_bracket": [
+     0.37784301031033773,
+     0.3779800177174588
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9818429145560243,
+    "eps_star_relative_shift": -0.005077956746101342,
+    "eps_star_tree": 0.379840326763629,
+    "eps_star_tree_over_sp": 0.9868541170772547,
+    "first_order_CW_shift_check": -4.214240749164246,
+    "s_star": 16.656753445183263,
+    "tree_method": "bounce",
+    "virial_defect": 1.0782607005305583e-08,
+    "virial_defect_corrected_at_tree_eps": 3.054780057682464e-08
+   },
+   "easier_channel_corrected": "quantum_O4",
+   "easier_channel_tree": "quantum_O4",
+   "eps_declared": 9.476364870226175e-26,
+   "eps_eff_corrected": 0.3779115140138983,
+   "eps_eff_corrected_bracket": [
+    0.37784301031033773,
+    0.3779800177174588
+   ],
+   "eps_eff_tree": 0.379840326763629,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29999.624997156217
+  },
+  {
+   "H_GeV": 1.4116865984194726e-12,
+   "T_GeV": 1000.0,
+   "alternative_thermal": "declared high-T phi self-loop mass kept",
+   "bias_amplification_needed_corrected": 4.430907919387459e+24,
+   "bias_amplification_needed_tree": 4.4524835147601507e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1_removal"
+   ],
+   "corrected_spinodal_eps": 0.3829150253726179,
+   "d3": {
+    "S_bracket_half_width": 4.149511812536045,
+    "S_corrected_at_tree_eps": 103.93571379248966,
+    "S_corrected_at_tree_eps_over_S_star": 0.7348030451647873,
+    "S_star": 141.44703737473077,
+    "bracket_half_width_reduced_action": 0.04374577124961237,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.005655039763195779,
+     "thermal_one_loop_alternative": 0.03343455947617365,
+     "two_loop_thermal_figure_eight": 3.903687308085799e-07,
+     "two_loop_thermal_sunset_estimate": 0.0004330983056106986,
+     "two_loop_zero_T_beta_estimate": 0.004222683335901434
+    },
+    "corrected_bounce_s": 1.4911898145628046,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "thermal_one_loop_alternative",
+    "ds_deps": -209.5005833633645,
+    "eps_star_corrected": 0.37714771172464817,
+    "eps_star_corrected_bracket": [
+     0.37693890194212964,
+     0.3773565215071667
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9798584979981465,
+    "eps_star_relative_shift": -0.004845744021548359,
+    "eps_star_tree": 0.37898417201042917,
+    "eps_star_tree_over_sp": 0.9846297617797292,
+    "first_order_CW_shift_check": -0.4168022463806985,
+    "s_star": 1.4911898123139984,
+    "tree_method": "bounce",
+    "virial_defect": -5.215578293791443e-10,
+    "virial_defect_corrected_at_tree_eps": 2.638044170390866e-09
+   },
+   "d4": {
+    "S_bracket_half_width": 4.767152611585726,
+    "S_corrected_at_tree_eps": 114.05827843215009,
+    "S_corrected_at_tree_eps_over_S_star": 0.7273448915035013,
+    "S_star": 156.81457279005448,
+    "bracket_half_width_reduced_action": 0.47671526115857266,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.07409442573890129,
+     "thermal_one_loop_alternative": 0.354190365295325,
+     "two_loop_thermal_figure_eight": 4.932491146979111e-06,
+     "two_loop_thermal_sunset_estimate": 0.005772327884478474,
+     "two_loop_zero_T_beta_estimate": 0.04265320974872093
+    },
+    "corrected_bounce_s": 15.681457303882114,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "thermal_one_loop_alternative",
+    "ds_deps": -2224.7804805264336,
+    "eps_star_corrected": 0.3784982629872326,
+    "eps_star_corrected_bracket": [
+     0.3782839877967896,
+     0.3787125381776756
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9833673331056803,
+    "eps_star_relative_shift": -0.004727460334859379,
+    "eps_star_tree": 0.3802960977046331,
+    "eps_star_tree_over_sp": 0.9880382447169035,
+    "first_order_CW_shift_check": -4.341215953205026,
+    "s_star": 15.681457279005448,
+    "tree_method": "bounce",
+    "virial_defect": -2.314838381262469e-08,
+    "virial_defect_corrected_at_tree_eps": 4.3664583205469385e-08
+   },
+   "easier_channel_corrected": "thermal_O3",
+   "easier_channel_tree": "thermal_O3",
+   "eps_declared": 8.511747898764416e-26,
+   "eps_eff_corrected": 0.37714771172464817,
+   "eps_eff_corrected_bracket": [
+    0.37693890194212964,
+    0.3773565215071667
+   ],
+   "eps_eff_tree": 0.37898417201042917,
+   "thermal_JB_valid": false,
+   "v_T_GeV": 29995.83303838496
+  },
+  {
+   "H_GeV": 5.64674639367789e-12,
+   "T_GeV": 2000.0,
+   "alternative_thermal": "daisy-shifted Re J_B(m^2/T^2+lam/4)",
+   "bias_amplification_needed_corrected": 6.953251634965928e+24,
+   "bias_amplification_needed_tree": 6.977215920098985e+24,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1"
+   ],
+   "corrected_spinodal_eps": 0.3830414901926494,
+   "d3": {
+    "S_bracket_half_width": 0.4842490011039022,
+    "S_corrected_at_tree_eps": 126.9195082933737,
+    "S_corrected_at_tree_eps_over_S_star": 0.915431717936045,
+    "S_star": 138.6444295152123,
+    "bracket_half_width_reduced_action": 0.01021454165112492,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.005865015996069866,
+     "thermal_one_loop_alternative": 0.0001172691242498161,
+     "two_loop_thermal_figure_eight": 1.0550436518725528e-05,
+     "two_loop_thermal_sunset_estimate": 0.0014725310749051596,
+     "two_loop_zero_T_beta_estimate": 0.002749175019381353
+    },
+    "corrected_bounce_s": 2.9245063934479885,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -193.0175808009027,
+    "eps_star_corrected": 0.3703650202204774,
+    "eps_star_corrected_bracket": [
+     0.3703120999548273,
+     0.37041794048612753
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9622365485522122,
+    "eps_star_relative_shift": -0.00343464863456866,
+    "eps_star_tree": 0.37164147811583703,
+    "eps_star_tree_over_sp": 0.9655528834449402,
+    "first_order_CW_shift_check": -0.3607409391932587,
+    "s_star": 2.9245063939238287,
+    "tree_method": "bounce",
+    "virial_defect": -4.200910417901984e-08,
+    "virial_defect_corrected_at_tree_eps": 3.129873905626173e-08
+   },
+   "d4": {
+    "S_bracket_half_width": 1.4414705905299154,
+    "S_corrected_at_tree_eps": 116.24659847779058,
+    "S_corrected_at_tree_eps_over_S_star": 0.7688534732365874,
+    "S_star": 151.19473674019525,
+    "bracket_half_width_reduced_action": 0.14414705905299155,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.07631088576988987,
+     "thermal_one_loop_alternative": 0.002082598127891532,
+     "two_loop_thermal_figure_eight": 0.00033934509958896003,
+     "two_loop_thermal_sunset_estimate": 0.030782603225246095,
+     "two_loop_zero_T_beta_estimate": 0.034631626830375066
+    },
+    "corrected_bounce_s": 15.119473620162925,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2293.048101969308,
+    "eps_star_corrected": 0.37912044747733803,
+    "eps_star_corrected_bracket": [
+     0.3790575848365896,
+     0.3791833101180865
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9849838158284961,
+    "eps_star_relative_shift": -0.0037668203758162155,
+    "eps_star_tree": 0.38055392575898384,
+    "eps_star_tree_over_sp": 0.9887081016515318,
+    "first_order_CW_shift_check": -4.4947666271728135,
+    "s_star": 15.119473674019526,
+    "tree_method": "bounce",
+    "virial_defect": -3.2513354799340435e-08,
+    "virial_defect_corrected_at_tree_eps": 1.0041341472538756e-09
+   },
+   "easier_channel_corrected": "thermal_O3",
+   "easier_channel_tree": "thermal_O3",
+   "eps_declared": 5.326501033818724e-26,
+   "eps_eff_corrected": 0.3703650202204774,
+   "eps_eff_corrected_bracket": [
+    0.3703120999548273,
+    0.37041794048612753
+   ],
+   "eps_eff_tree": 0.37164147811583703,
+   "thermal_JB_valid": true,
+   "v_T_GeV": 29983.328678895323
+  },
+  {
+   "H_GeV": 1.2696710677871335e-11,
+   "T_GeV": 2999.0,
+   "alternative_thermal": "daisy-shifted Re J_B(m^2/T^2+lam/4)",
+   "bias_amplification_needed_corrected": 5.674746137625539e+27,
+   "bias_amplification_needed_tree": 5.685875960822485e+27,
+   "central_parts": [
+    "cw",
+    "heavy",
+    "thermal1"
+   ],
+   "corrected_spinodal_eps": 0.3832553808578797,
+   "d3": {
+    "S_bracket_half_width": 0.31946929174236216,
+    "S_corrected_at_tree_eps": 132.70811913296464,
+    "S_corrected_at_tree_eps_over_S_star": 0.968629474390077,
+    "S_star": 137.0060716111574,
+    "bracket_half_width_reduced_action": 0.01011177775500075,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.00572998108642408,
+     "thermal_one_loop_alternative": 0.00039873793180539193,
+     "two_loop_thermal_figure_eight": 6.591776634543631e-05,
+     "two_loop_thermal_sunset_estimate": 0.0023922649559997636,
+     "two_loop_zero_T_beta_estimate": 0.0015248760144260785
+    },
+    "corrected_bounce_s": 4.3364886122688,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -190.86933552090454,
+    "eps_star_corrected": 0.36341482604966124,
+    "eps_star_corrected_bracket": [
+     0.36336184856258924,
+     0.36346780353673325
+    ],
+    "eps_star_corrected_over_tree_sp": 0.9441794144127282,
+    "eps_star_relative_shift": -0.0019574509316829802,
+    "eps_star_tree": 0.3641275879359179,
+    "eps_star_tree_over_sp": 0.9460312241137708,
+    "first_order_CW_shift_check": -0.3376574553762648,
+    "s_star": 4.336488617300297,
+    "tree_method": "bounce",
+    "virial_defect": -6.2712380074761445e-09,
+    "virial_defect_corrected_at_tree_eps": 6.196032597469469e-09
+   },
+   "d4": {
+    "S_bracket_half_width": 1.6289593700522185,
+    "S_corrected_at_tree_eps": 120.966178121468,
+    "S_corrected_at_tree_eps_over_S_star": 0.8178533346128573,
+    "S_star": 147.90693270050565,
+    "bracket_half_width_reduced_action": 0.16289593700522184,
+    "bracket_pieces_reduced_action": {
+     "CW_IR_sensitivity_M_IR=1/R_core^2": 0.0781793757760811,
+     "thermal_one_loop_alternative": 0.009718692907376002,
+     "two_loop_thermal_figure_eight": 0.0028408906844246086,
+     "two_loop_thermal_sunset_estimate": 0.045486154861738924,
+     "two_loop_zero_T_beta_estimate": 0.026670822775601205
+    },
+    "corrected_bounce_s": 14.790693197202275,
+    "corrected_method": "bounce",
+    "dominant_bracket_piece": "CW_IR_sensitivity_M_IR=1/R_core^2",
+    "ds_deps": -2354.6385045351667,
+    "eps_star_corrected": 0.37961538917410337,
+    "eps_star_corrected_bracket": [
+     0.37954620830549385,
+     0.3796845700427129
+    ],
+    "eps_star_corrected_over_tree_sp": 0.986269712076869,
+    "eps_star_relative_shift": -0.0028569140082959077,
+    "eps_star_tree": 0.38070302497916697,
+    "eps_star_tree_over_sp": 0.9890954727886209,
+    "first_order_CW_shift_check": -4.6262988649892005,
+    "s_star": 14.790693270050564,
+    "tree_method": "bounce",
+    "virial_defect": 1.1217448973163698e-08,
+    "virial_defect_corrected_at_tree_eps": 4.351321364087091e-08
+   },
+   "easier_channel_corrected": "thermal_O3",
+   "easier_channel_tree": "thermal_O3",
+   "eps_declared": 6.404071957335582e-29,
+   "eps_eff_corrected": 0.36341482604966124,
+   "eps_eff_corrected_bracket": [
+    0.36336184856258924,
+    0.36346780353673325
+   ],
+   "eps_eff_tree": 0.3641275879359179,
+   "thermal_JB_valid": true,
+   "v_T_GeV": 29962.501510254442
+  }
+ ],
+ "scheme": "On-shell (zero-momentum) renormalisation: V_CW=(1/64 pi^2)[m^4(log(m^2/m_v^2)-3/2)+2 m^2 m_v^2] for phi (and the heavy mediator), so that at T=0 the vev v and curvature mass m_v^2=2 lam v^2 are the tree values. Re-part (log|m^2|) where m^2(phi)<0.",
+ "scope": "Supplied spectator model; single-field reduced bounces (the three-field sandwich of wall_nucleation is not recomputed for the corrected potential); fluctuation determinant still the declared exp(+-20) band, not included in the brackets above. Two-loop terms are estimates, not computed diagrams with counterterms. The thermal vector free energy belongs to the retuned radial candidate wall (another quartic) and is transported as an order-of-magnitude positive tension shift. Floating-point bounces, no interval enclosure.",
+ "vector_free_energy_source": {
+  "commit": "0546f5842deb2e3242b4bbc1ea0661a965b7d179",
+  "file": "receipts/flavor_cosmology/wall_pair_decay.json",
+  "key": "thermal_spacing_extrapolation[].O_spacing_squared_Richardson_GeV3",
+  "sha256": "71b8a6584f13e991ee71b0cf01114164fc8c2900dc3726b618f4b22dbb6daf1d"
+ },
+ "zero_temperature": {
+  "Higgs_loop_bound_reduced": 2.2205044001136535e-12,
+  "OS_conditions_d2V_at_v": 1.7097782420564297e-14,
+  "OS_conditions_dV_at_v": 0.0,
+  "heavy_mediator_max_abs_field_dependence_on_[-1.2,1.2]": 4.263256414560601e-14,
+  "heavy_mediator_reduced_coefficients_A0_A2": [
+   1000.0,
+   0.004
+  ],
+  "kink_tension_reduced_OS": 0.9409367532749464,
+  "kink_tension_reduced_tree": 0.9428090415820634,
+  "kink_tension_relative_shift_OS": -0.001985861637447961,
+  "note": "The near-spinodal cubic law of the corrected potential is listed for completeness only: the one-loop curvature has an IR log at m^2(phi)=0, next to the spinodal, so its asymptotic constants are not controlled. Bounces at the critical biases stay at Delta>=0.003 where the false-vacuum m^2 is O(0.1-0.2) lam v^2.",
+  "spinodal_MSbar_mu_mv": {
+   "C": {
+    "3": 49.74516121518699,
+    "4": 137.3140678553489
+   },
+   "cubic_a": 2.0696847014001207,
+   "eps_sp": 0.38496746590087233,
+   "x_s": -0.5826234222490516
+  },
+  "spinodal_OS": {
+   "C": {
+    "3": 47.71967583945904,
+    "4": 130.63242942416915
+   },
+   "cubic_a": 2.139670385314929,
+   "eps_sp": 0.3827554885283602,
+   "x_s": -0.5817197914437913
+  },
+  "spinodal_relative_shift_OS": -0.005572070489550329,
+  "spinodal_tree": {
+   "C": {
+    "3": 62.148395525495744,
+    "4": 179.36178902121125
+   },
+   "cubic_a": 1.7320520018238026,
+   "eps_sp": 0.3849001794597505,
+   "x_s": -0.5773502692107305
+  }
+ }
+}
