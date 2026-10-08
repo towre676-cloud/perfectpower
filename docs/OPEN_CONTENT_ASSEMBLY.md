@@ -159,3 +159,29 @@ Newly opened:
 | N15 | Completeness of the unperturbed vacuum set beyond the 130,681 lower bound | `065c0d5` | P/O |
 | N16 | Radiative stability of the radial calibration; a consistent gauge or dynamical-tensor UV completion | `065c0d5` | M/O |
 | N17 | Quark-source frame, golden CKM relation and physical CP selection from the selected frame | `065c0d5` | M/O |
+
+## Third update (main through `bb015b4`)
+
+Closed by main:
+
+| Item | Closed by |
+|---|---|
+| A1 subgroup preimages at 5 and 7, with Hermite/Smith presentations and actual free indices | `2c62fb8`, `4e61ecc` |
+| A2 bounded saturation at 5 and 7, including joint 2·3·5·7 closure | `2c62fb8`, `4e61ecc` |
+| F1/N7 whole-line wall existence, five profile signs and the positive Higgs barrier (Arb computer-assisted certificate) | `d84b568` |
+| N16, partly: one-loop supertrace of the selected frame and the radial calibration counterterm | `f57b2b8` |
+| N14, partly: multivariate effective W vanishes through degree 12 (first possible F-energy at degree 24); exact all-orders determinant criterion | `bb015b4` |
+| Selected-frame census: exactly 1,080 global vacua (via Harui's theorem) | `f57b2b8` |
+
+Newly opened:
+
+| # | Item | Opened by | Tier |
+|---|---|---|---|
+| N18 | Complete torsion-aware relation lattices and actual indices modulo torsion (the current index operation needs a trivial p-kernel and free witnesses) | `4e61ecc` | P |
+| N19 | Rational division and saturation at primes beyond 7 (11, 13, …) | `2c62fb8` | P |
+| N20 | Automatic termination of saturation, via height-pairing index bounds | `2c62fb8` | P |
+| N21 | Lean interpretation of the prime-fibre packets against the group-coset theorem | `4e61ecc` | L |
+| N22 | Upgrade the remaining wall results (continuum stability gap, pair widths, thermal shifts) from numerical controls to Arb enclosures on the certified profile | `d84b568`, `0546f58` | A |
+| N23 | Computational reproof of the 1,080-element automorphism group of the sextic, independent of Harui's classification | `f57b2b8` | P |
+| N24 | All-orders resolution of the massless orbit from the determinant criterion: a moduli space or an obstruction at degree ≥24 | `bb015b4` | P/O |
+| N25 | Global vacuum ordering beyond the local one-loop continuation; two-loop accuracy; gauge, quark and Higgs determinants in the supertrace | `f57b2b8` | M/O |
