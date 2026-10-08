@@ -52,7 +52,7 @@ A perturbative example uses a=b=c=0.1, lambda=0.0001 and eta=0.0002, with r0=-0.
 
 At the separate normalized benchmark a=-5,b=1,c=0 and K0=diag(1,omega,omega^2), retain the original three Hessian null vectors and invert the six-coordinate massive Hessian. Along each specified null direction (1,0,0), (1,1,0) and (1,1,1), recursively solve the six massive F equations through order eleven in the ray parameter over the exact algebraic field. Substitution into the original W verifies that every effective-W coefficient of degrees three through twelve vanishes on those rays. The receipt and replay test check the solved equations, rather than setting the massive coordinates to zero.
 
-Three ray restrictions do not determine a three-variable homogeneous polynomial and do not prove a moduli space. The previous complete multivariate cancellation through degree six remains the applicable general result. The next general obstruction could still occur at effective-W degree seven and effective F-energy degree twelve away from these rays. A full higher-degree multivariate elimination or an exact parametrized family would be needed to settle it.
+Three ray restrictions do not determine a three-variable homogeneous polynomial and do not prove a moduli space. The previous complete multivariate cancellation through degree six remains the applicable general result. The subsequent complete [multivariate elimination](VALENTINER_MULTIVARIATE_FLATNESS.md) closes this ray-only gap through effective-W degree twelve and moves the first possible effective F-energy degree to twenty-four. It also gives an exact all-orders determinant criterion; an all-orders parametrized family is not claimed.
 
 ## Reproduction and prediction boundary
 

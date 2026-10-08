@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'receipts/m22_interactions/valentiner_massless_rays.json'
 
 
-def ray_profile(direction=(1,0,0), order=12):
+def ray_profile(direction=(1,0,0), order=12, include_curve=False):
     data=json.loads((ROOT/'receipts/m22_interactions/valentiner_frame_selection.json').read_text())['nonlinear_massless_branch']
     field=s.QQ.algebraic_field(s.sqrt(5),s.I*s.sqrt(3));zero=field.zero;one=field.one
     cv=lambda z:field.from_sympy(s.sympify(z))
@@ -58,9 +58,12 @@ def ray_profile(direction=(1,0,0), order=12):
     residual=evaluate(gradients,order-1)
     assert all(not row for row in residual)
     effective=evaluate([W.rep.to_dict()],order)[0]
-    return {'null_direction':list(direction),'eliminated_gradient_verified_through':order-1,
+    record = {'null_direction':list(direction),'eliminated_gradient_verified_through':order-1,
             'effective_W_coefficients':{str(n):str(field.to_sympy(effective.get(n,zero))) for n in range(3,order+1)},
             'scope':'One-dimensional restriction; no inference of complete multivariate flatness.'}
+    if include_curve:
+        record['matrix_coordinate_series']=[{str(n):str(field.to_sympy(z)) for n,z in sorted(row.items())} for row in vals]
+    return record
 
 if __name__=='__main__':
     rows=[]
