@@ -1,0 +1,69 @@
+{
+ "schema": "pp-curve-certified-continuation-summary/1",
+ "affine_faces": {
+  "cases": 144,
+  "originally_complete": 108,
+  "originally_unresolved": 36,
+  "face_only_certified_false": 36,
+  "face_only_certified_true": 0,
+  "still_unresolved": 0,
+  "integer_models_complete": 36,
+  "brute_force_agree": 36
+ },
+ "legendre": {
+  "N0": [
+   [
+    1,
+    2
+   ],
+   [
+    0,
+    1
+   ]
+  ],
+  "N1": [
+   [
+    1,
+    0
+   ],
+   [
+    -2,
+    1
+   ]
+  ],
+  "Ninf_outer": [
+   [
+    1,
+    2
+   ],
+   [
+    -2,
+    -3
+   ]
+  ],
+  "relation": "N_outer = N1 N0 (gamma_0 then gamma_1)",
+  "frobenius_agree": true,
+  "gamma2": {
+   "gamma_0": true,
+   "gamma_1": true,
+   "gamma_infinity_outer": true
+  },
+  "log_coefficient_infinity": "-1/2",
+  "period_determinant": "8 pi i",
+  "taylor_steps": {
+   "gamma_0": 24,
+   "gamma_1": 24,
+   "gamma_infinity_outer": 60
+  },
+  "cycle_matrix_max_radius": {
+   "gamma_0": "[1.22869e-33 +/- 1.83e-40]",
+   "gamma_1": "[1.31594e-32 +/- 5.00e-38]",
+   "gamma_infinity_outer": "[6.83996e-30 +/- 3.51e-36]"
+  }
+ },
+ "receipts": {
+  "affine_faces_refined.json": "136bba2603ff5cc86a30fc93c5484b675f29da46ecf58d885c96909e9977879b",
+  "legendre_certified_connection.json": "730f78bd36bddf2107d652415d5a74b5167230cad8b3ed5add68f73037bfa2fe"
+ },
+ "kernel_checked": false
+}
