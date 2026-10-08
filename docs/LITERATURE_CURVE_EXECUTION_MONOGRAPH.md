@@ -250,6 +250,8 @@ Run PYTHONPATH=python python -m unittest discover -s python/tests -p test_litera
 
 All newly built capacities are bounded and include their inputs and conventions. Important unresolved generalizations include automatic higher-genus formal correspondences, integral cycle maps for arbitrary quotient towers, singular Richelot product targets, general Puiseux/cluster arithmetic with nonsplit roots, optimized arbitrary-field Frobenius, singular-endpoint certified analytic continuation and complete differential Galois groups. A differential projector alone still does not prove an algebraic correspondence or Jacobian decomposition. The actual-cover examples prove their specific decompositions through verified maps.
 
+Singular Richelot product targets and cluster arithmetic with quadratic (including ramified) roots are now treated in the [singular Richelot and cluster monograph](SINGULAR_RICHELOT_AND_CLUSTERS_MONOGRAPH.md). That treatment covers component twists through the inertia action and the conductor exponent; it constructs neither minimal regular models nor Frobenius on components.
+
 ## Primary literature
 
 J. S. Milne, Fields and Galois Theory: https://www.jmilne.org/math/CourseNotes/FT.pdf. J. S. Milne, Tannakian Categories: https://www.jmilne.org/math/xnotes/tc.pdf.

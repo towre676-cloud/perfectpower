@@ -1,0 +1,9783 @@
+{
+ "clusters": {
+  "padic_internal_sweep": {
+   "cases": 600,
+   "ddmm_criterion_equals_graph_action": true,
+   "seed": 9,
+   "tally": {
+    "ramified_genus2_conductor1": 1,
+    "ramified_genus2_conductor2": 10,
+    "ramified_genus2_conductor3": 21,
+    "ramified_genus2_conductor4": 33,
+    "ramified_genus3_conductor2": 3,
+    "ramified_genus3_conductor3": 13,
+    "ramified_genus3_conductor4": 18,
+    "ramified_genus3_conductor5": 15,
+    "ramified_genus3_conductor6": 21,
+    "ramified_genus4_conductor4": 6,
+    "ramified_genus4_conductor5": 22,
+    "ramified_genus4_conductor6": 19,
+    "ramified_genus4_conductor7": 18,
+    "ramified_genus4_conductor8": 10,
+    "rational_genus2_conductor0": 1,
+    "rational_genus2_conductor1": 14,
+    "rational_genus2_conductor2": 17,
+    "rational_genus2_conductor3": 13,
+    "rational_genus2_conductor4": 16,
+    "rational_genus3_conductor2": 8,
+    "rational_genus3_conductor3": 12,
+    "rational_genus3_conductor4": 16,
+    "rational_genus3_conductor5": 14,
+    "rational_genus3_conductor6": 16,
+    "rational_genus4_conductor3": 3,
+    "rational_genus4_conductor4": 5,
+    "rational_genus4_conductor5": 12,
+    "rational_genus4_conductor6": 10,
+    "rational_genus4_conductor7": 17,
+    "rational_genus4_conductor8": 11,
+    "unramified_genus2_conductor0": 5,
+    "unramified_genus2_conductor1": 11,
+    "unramified_genus2_conductor2": 20,
+    "unramified_genus2_conductor3": 7,
+    "unramified_genus2_conductor4": 30,
+    "unramified_genus3_conductor1": 4,
+    "unramified_genus3_conductor2": 7,
+    "unramified_genus3_conductor3": 11,
+    "unramified_genus3_conductor4": 22,
+    "unramified_genus3_conductor5": 8,
+    "unramified_genus3_conductor6": 13,
+    "unramified_genus4_conductor1": 2,
+    "unramified_genus4_conductor2": 2,
+    "unramified_genus4_conductor3": 6,
+    "unramified_genus4_conductor4": 13,
+    "unramified_genus4_conductor5": 14,
+    "unramified_genus4_conductor6": 15,
+    "unramified_genus4_conductor7": 7,
+    "unramified_genus4_conductor8": 8
+   }
+  },
+  "padic_named": [
+   {
+    "D": 1,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1,
+        2,
+        3
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "size": 6,
+       "twin": false,
+       "uebereven": true
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "2",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "2",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        2,
+        3
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 3,
+       "inertia_image": 3,
+       "nu": "2",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        4,
+        5
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": true,
+     "field": "Q_3",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 0,
+     "potential_toric_rank": 2,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 2,
+      "edge_permutation": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "inertia_invariants_dimension": 2,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed",
+       "3": "fixed"
+      },
+      "semistable_over_K": true,
+      "tame_part": 2,
+      "toric_rank": 2,
+      "vertex_permutation": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      "0",
+      "3",
+      "1",
+      "4",
+      "2",
+      "5"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         0,
+         3
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         3
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         0,
+         4
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         1,
+         4
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 0,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 0,
+        "cluster": 0,
+        "genus": 0,
+        "id": 1,
+        "sheet": 1
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 3,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 3,
+        "genus": 0,
+        "id": 4,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1,
+         2,
+         3
+        ],
+        "genus": 0,
+        "id": 0
+       },
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "three_twins",
+    "p": 3,
+    "pari_genus2red_conductor_exponent": 2
+   },
+   {
+    "D": 1,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1,
+        2,
+        3
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "1",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "size": 6,
+       "twin": false,
+       "uebereven": true
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "3",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "3",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        2,
+        3
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 3,
+       "inertia_image": 3,
+       "nu": "3",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        4,
+        5
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_3",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "leading_valuation": "1",
+     "potential_abelian_rank": 0,
+     "potential_toric_rank": 2,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 4,
+      "edge_permutation": [
+       1,
+       0,
+       3,
+       2,
+       5,
+       4
+      ],
+      "inertia_invariants_dimension": 0,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed",
+       "3": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 4,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       1,
+       0,
+       2,
+       3,
+       4
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      "0",
+      "3",
+      "1",
+      "4",
+      "2",
+      "5"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         0,
+         3
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         3
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         0,
+         4
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         1,
+         4
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 0,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 0,
+        "cluster": 0,
+        "genus": 0,
+        "id": 1,
+        "sheet": 1
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 3,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 3,
+        "genus": 0,
+        "id": 4,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1,
+         2,
+         3
+        ],
+        "genus": 0,
+        "id": 0
+       },
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 3,
+    "name": "three_twins_twisted",
+    "p": 3,
+    "pari_genus2red_conductor_exponent": 4
+   },
+   {
+    "D": 1,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2
+       ],
+       "cotwin": false,
+       "depth": "1",
+       "even": false,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "3",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "5",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        2
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_5",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 2,
+      "conductor_exponent": 2,
+      "edge_permutation": [
+       0,
+       2,
+       1
+      ],
+      "inertia_invariants_dimension": 2,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 2,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0,
+       1,
+       2
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      "0",
+      "5",
+      "25",
+      "1",
+      "2"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2"
+       },
+       {
+        "ends": [
+         1,
+         1
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1,
+         2
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "nested_triple",
+    "p": 5,
+    "pari_genus2red_conductor_exponent": 2
+   },
+   {
+    "D": 1,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "1",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2
+       ],
+       "cotwin": false,
+       "depth": "1",
+       "even": false,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "4",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "6",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        2
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_5",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "leading_valuation": "1",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 3,
+      "edge_permutation": [
+       0,
+       1,
+       2
+      ],
+      "inertia_invariants_dimension": 1,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 3,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1,
+       2
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      "0",
+      "5",
+      "25",
+      "1",
+      "2"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2"
+       },
+       {
+        "ends": [
+         1,
+         1
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1,
+         2
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 5,
+    "name": "nested_triple_twisted",
+    "p": 5,
+    "pari_genus2red_conductor_exponent": 3
+   },
+   {
+    "D": 1,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1,
+        2
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "4",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "2",
+       "roots": [
+        0,
+        1
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "3",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "6",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "3",
+       "roots": [
+        2,
+        3
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": true,
+     "field": "Q_7",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 0,
+     "potential_toric_rank": 2,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 2,
+      "edge_permutation": [
+       0,
+       1,
+       2,
+       3
+      ],
+      "inertia_invariants_dimension": 2,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed"
+      },
+      "semistable_over_K": true,
+      "tame_part": 2,
+      "toric_rank": 2,
+      "vertex_permutation": [
+       0,
+       1,
+       2
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      "0",
+      "49",
+      "1",
+      "344",
+      "2"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "3",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "3",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 2,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "ends": [
+         0,
+         0
+        ],
+        "length": "4"
+       },
+       {
+        "ends": [
+         0,
+         0
+        ],
+        "length": "6"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1,
+         2
+        ],
+        "genus": 0,
+        "id": 0
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "disjoint_twins_two_rates",
+    "p": 7,
+    "pari_genus2red_conductor_exponent": 2
+   },
+   {
+    "D": 1,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2
+       ],
+       "cotwin": false,
+       "depth": "1",
+       "even": false,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "3",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        3,
+        4
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "5",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        4
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_3",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 2,
+      "conductor_exponent": 2,
+      "edge_permutation": [
+       0,
+       2,
+       1
+      ],
+      "inertia_invariants_dimension": 2,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 2,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0,
+       1,
+       2
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "9"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2"
+       },
+       {
+        "ends": [
+         1,
+         1
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1,
+         2
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "cotwin_like",
+    "p": 3,
+    "pari_genus2red_conductor_exponent": 2
+   },
+   {
+    "D": 5,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": true,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": false,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "size": 6,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1/2",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "2",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1/2",
+       "roots": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "size": 4,
+       "twin": false,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_5(sqrt 5)",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": false,
+     "inertia_root_permutation": [
+      1,
+      0,
+      3,
+      2,
+      4,
+      5
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 3,
+      "edge_permutation": [
+       0,
+       1
+      ],
+      "inertia_invariants_dimension": 1,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 3,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "0",
+       "-1"
+      ],
+      [
+       "0",
+       "2"
+      ],
+      [
+       "0",
+       "-2"
+      ],
+      "1",
+      "2"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 2,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 4,
+        "cluster": 1,
+        "genus": 1,
+        "id": 1,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         0
+        ],
+        "length": "1"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1
+        ],
+        "genus": 1,
+        "id": 0
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "half_depth_cluster",
+    "p": 5,
+    "pari_genus2red_conductor_exponent": 3
+   },
+   {
+    "D": 5,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1/2",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "5/2",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_5(sqrt 5)",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": false,
+     "inertia_root_permutation": [
+      1,
+      0,
+      3,
+      2,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 2,
+     "potential_toric_rank": 0,
+     "potentially_good": true,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 4,
+      "edge_permutation": [],
+      "inertia_invariants_dimension": 0,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 4,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "0",
+       "-1"
+      ],
+      [
+       "0",
+       "2"
+      ],
+      [
+       "0",
+       "-2"
+      ],
+      "0"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 0,
+      "edges": [],
+      "vertices": [
+       {
+        "branch_flags": 6,
+        "cluster": 0,
+        "genus": 2,
+        "id": 0,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 0,
+      "edges": [],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 2,
+        "id": 0
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "half_depth_odd_cluster",
+    "p": 5,
+    "pari_genus2red_conductor_exponent": 4
+   },
+   {
+    "D": 3,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": true,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": false,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2,
+        3
+       ],
+       "cotwin": false,
+       "depth": "1/2",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "2",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1/2",
+       "roots": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "size": 4,
+       "twin": false,
+       "uebereven": true
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 3,
+       "nu": "5",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "3/2",
+       "roots": [
+        0,
+        2
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 3,
+       "inertia_image": 2,
+       "nu": "5",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "3/2",
+       "roots": [
+        1,
+        3
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_3(sqrt 3)",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": false,
+     "inertia_root_permutation": [
+      1,
+      0,
+      3,
+      2,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 0,
+     "potential_toric_rank": 2,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 3,
+      "edge_permutation": [
+       0,
+       1,
+       4,
+       5,
+       2,
+       3
+      ],
+      "inertia_invariants_dimension": 1,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "rep",
+       "3": "image"
+      },
+      "semistable_over_K": false,
+      "tame_part": 3,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1,
+       2,
+       4,
+       3
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "0",
+       "-1"
+      ],
+      [
+       "9",
+       "1"
+      ],
+      [
+       "9",
+       "-1"
+      ],
+      "1"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "1/2",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         3
+        ],
+        "length": "3/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         2,
+         3
+        ],
+        "length": "3/2",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         1,
+         4
+        ],
+        "length": "3/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         2,
+         4
+        ],
+        "length": "3/2",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 2,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 0,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 0,
+        "cluster": 1,
+        "genus": 0,
+        "id": 2,
+        "sheet": 1
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 3,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 3,
+        "genus": 0,
+        "id": 4,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "3"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "3"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1,
+         2,
+         3
+        ],
+        "genus": 0,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "swapped_twins",
+    "p": 3,
+    "pari_genus2red_conductor_exponent": 3
+   },
+   {
+    "D": 3,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1,
+        2
+       ],
+       "cotwin": false,
+       "depth": "1/2",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "3",
+       "parent": null,
+       "principal": false,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "size": 6,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": false,
+       "id": 1,
+       "inertia_image": 2,
+       "nu": "15/2",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "3/2",
+       "roots": [
+        0,
+        2,
+        4
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": false,
+       "id": 2,
+       "inertia_image": 1,
+       "nu": "15/2",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "3/2",
+       "roots": [
+        1,
+        3,
+        5
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_3(sqrt 3)",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": false,
+     "inertia_root_permutation": [
+      1,
+      0,
+      3,
+      2,
+      5,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 2,
+     "potential_toric_rank": 0,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 4,
+      "edge_permutation": [
+       1,
+       0
+      ],
+      "inertia_invariants_dimension": 0,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "rep",
+       "2": "image"
+      },
+      "semistable_over_K": false,
+      "tame_part": 4,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0,
+       2,
+       1
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "0",
+       "-1"
+      ],
+      [
+       "9",
+       "1"
+      ],
+      [
+       "9",
+       "-1"
+      ],
+      [
+       "18",
+       "1"
+      ],
+      [
+       "18",
+       "-1"
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 0,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "3/4",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 2,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "3/4",
+        "lift": 0,
+        "ramified": true
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 2,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 4,
+        "cluster": 1,
+        "genus": 1,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 4,
+        "cluster": 2,
+        "genus": 1,
+        "id": 2,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 0,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "3/2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         2
+        ],
+        "genus": 1,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "swapped_triples",
+    "p": 3,
+    "pari_genus2red_conductor_exponent": 4
+   },
+   {
+    "D": 3,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": false,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "6",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "2",
+       "roots": [
+        0,
+        1,
+        2
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": true,
+     "field": "Q_7(sqrt 3)",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 2,
+     "potential_toric_rank": 0,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 4,
+      "conductor_exponent": 0,
+      "edge_permutation": [
+       0
+      ],
+      "inertia_invariants_dimension": 4,
+      "jacobian_good_reduction_over_K": true,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed"
+      },
+      "semistable_over_K": true,
+      "tame_part": 0,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0,
+       1
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       "0",
+       "49"
+      ],
+      [
+       "0",
+       "-49"
+      ],
+      "0",
+      "1",
+      "2"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 0,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": true
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 4,
+        "cluster": 1,
+        "genus": 1,
+        "id": 1,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 0,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1
+        ],
+        "genus": 1,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "leading": 1,
+    "name": "unramified_triple",
+    "p": 7,
+    "pari_genus2red_conductor_exponent": 0
+   },
+   {
+    "D": 2,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "1",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "size": 6,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "5",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "2",
+       "roots": [
+        0,
+        1
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q_5(sqrt 2)",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "leading_valuation": "1",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 4,
+      "edge_permutation": [
+       1,
+       0
+      ],
+      "inertia_invariants_dimension": 0,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 4,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0,
+       1
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       "1",
+       "25"
+      ],
+      [
+       "1",
+       "-25"
+      ],
+      "0",
+      "2",
+      "3",
+      "4"
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         0
+        ],
+        "length": "4"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1
+        ],
+        "genus": 1,
+        "id": 0
+       }
+      ]
+     }
+    },
+    "leading": 5,
+    "name": "unramified_pair_twin",
+    "p": 5,
+    "pari_genus2red_conductor_exponent": 4
+   }
+  ],
+  "tadic_braid_sweep": {
+   "all_agree": true,
+   "cases": 120,
+   "seed": 8,
+   "tally": {
+    "genus2_conductor1_order1": 5,
+    "genus2_conductor2_order1": 11,
+    "genus2_conductor2_order2": 2,
+    "genus2_conductor2_order4": 3,
+    "genus2_conductor3_order2": 17,
+    "genus2_conductor3_order4": 7,
+    "genus2_conductor4_order2": 10,
+    "genus2_conductor4_order4": 3,
+    "genus3_conductor3_order1": 9,
+    "genus3_conductor3_order2": 3,
+    "genus3_conductor3_order4": 3,
+    "genus3_conductor4_order2": 15,
+    "genus3_conductor4_order4": 8,
+    "genus3_conductor5_order2": 4,
+    "genus3_conductor5_order4": 3,
+    "genus3_conductor6_order2": 6,
+    "genus3_conductor6_order4": 11
+   }
+  },
+  "tadic_named": [
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2
+       ],
+       "cotwin": false,
+       "depth": "1",
+       "even": false,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "3",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "5",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        2
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q((t))",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 2,
+      "conductor_exponent": 2,
+      "edge_permutation": [
+       0,
+       2,
+       1
+      ],
+      "inertia_invariants_dimension": 2,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 2,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0,
+       1,
+       2
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [],
+      [
+       [
+        "1",
+        "1"
+       ]
+      ],
+      [
+       [
+        "2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2"
+       },
+       {
+        "ends": [
+         1,
+         1
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1,
+         2
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -1,
+      -2,
+      -1,
+      -2,
+      -2,
+      -1,
+      -2,
+      -1
+     ],
+     "genus": 2,
+     "invariant_dimension": 2,
+     "leading_winding": 0,
+     "loop_radius_s": "1/4",
+     "monodromy": [
+      [
+       -1,
+       0,
+       2,
+       0
+      ],
+      [
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       -1,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       1
+      ]
+     ],
+     "potential_toric_rank": 1,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      -2,
+      -3,
+      -2,
+      -3,
+      -3,
+      -2,
+      -3,
+      -2
+     ],
+     "semisimple_order": 2,
+     "topological_conductor": 2
+    },
+    "name": "nested_rates_1_2"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "1",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2
+       ],
+       "cotwin": false,
+       "depth": "1",
+       "even": false,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "4",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "6",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        2
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q((t))",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4
+     ],
+     "leading_valuation": "1",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 3,
+      "edge_permutation": [
+       0,
+       1,
+       2
+      ],
+      "inertia_invariants_dimension": 1,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 3,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1,
+       2
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [],
+      [
+       [
+        "1",
+        "1"
+       ]
+      ],
+      [
+       [
+        "2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2"
+       },
+       {
+        "ends": [
+         1,
+         1
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1,
+         2
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -1,
+      -2,
+      -1,
+      -2,
+      -2,
+      -1,
+      -2,
+      -1
+     ],
+     "genus": 2,
+     "invariant_dimension": 1,
+     "leading_winding": 1,
+     "loop_radius_s": "1/4",
+     "monodromy": [
+      [
+       1,
+       0,
+       -2,
+       0
+      ],
+      [
+       0,
+       -1,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       -1
+      ]
+     ],
+     "potential_toric_rank": 1,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      -2,
+      -3,
+      -2,
+      -3,
+      -3,
+      -2,
+      -3,
+      -2
+     ],
+     "semisimple_order": 2,
+     "topological_conductor": 3
+    },
+    "name": "nested_rates_1_2_twisted"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1,
+        2,
+        3
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "size": 6,
+       "twin": false,
+       "uebereven": true
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "2",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "4",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "2",
+       "roots": [
+        2,
+        3
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "3",
+       "even": true,
+       "id": 3,
+       "inertia_image": 3,
+       "nu": "6",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "3",
+       "roots": [
+        4,
+        5
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": true,
+     "field": "Q((t))",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 0,
+     "potential_toric_rank": 2,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 2,
+      "edge_permutation": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "inertia_invariants_dimension": 2,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed",
+       "3": "fixed"
+      },
+      "semistable_over_K": true,
+      "tame_part": 2,
+      "toric_rank": 2,
+      "vertex_permutation": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [],
+      [
+       [
+        "1",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ],
+       [
+        "2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ],
+       [
+        "3",
+        "1"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         0,
+         3
+        ],
+        "length": "2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         3
+        ],
+        "length": "2",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         0,
+         4
+        ],
+        "length": "3",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         1,
+         4
+        ],
+        "length": "3",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 0,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 0,
+        "cluster": 0,
+        "genus": 0,
+        "id": 1,
+        "sheet": 1
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 3,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 3,
+        "genus": 0,
+        "id": 4,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "2"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "4"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "6"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1,
+         2,
+         3
+        ],
+        "genus": 0,
+        "id": 0
+       },
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -5,
+      -3,
+      -5,
+      -1,
+      -3,
+      -5,
+      -5,
+      -3,
+      -5,
+      -1,
+      -3,
+      -5
+     ],
+     "genus": 2,
+     "invariant_dimension": 2,
+     "leading_winding": 0,
+     "loop_radius_s": "1/4",
+     "monodromy": [
+      [
+       1,
+       0,
+       -6,
+       4
+      ],
+      [
+       0,
+       1,
+       4,
+       -10
+      ],
+      [
+       0,
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       1
+      ]
+     ],
+     "potential_toric_rank": 2,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      -5,
+      -1,
+      -1,
+      -5,
+      -1,
+      -3,
+      -5,
+      -1,
+      -1,
+      -5,
+      -1,
+      -3
+     ],
+     "semisimple_order": 1,
+     "topological_conductor": 2
+    },
+    "name": "disjoint_twins_rates_1_2_3"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+       ],
+       "size": 7,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "4",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "size": 4,
+       "twin": false,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": true,
+     "field": "Q((t))",
+     "genus": 3,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 2,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 4,
+      "conductor_exponent": 1,
+      "edge_permutation": [
+       0,
+       1
+      ],
+      "inertia_invariants_dimension": 5,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed"
+      },
+      "semistable_over_K": true,
+      "tame_part": 1,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [],
+      [
+       [
+        "1",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1",
+        "2"
+       ]
+      ],
+      [
+       [
+        "1",
+        "3"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "3"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 4,
+        "cluster": 1,
+        "genus": 1,
+        "id": 1,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       }
+      ],
+      "genus": 3,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1
+        ],
+        "genus": 1,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -1,
+      -2,
+      -1,
+      -3,
+      -2,
+      -1,
+      -1,
+      -2,
+      -1,
+      -3,
+      -2,
+      -1
+     ],
+     "genus": 3,
+     "invariant_dimension": 5,
+     "leading_winding": 0,
+     "loop_radius_s": "1/8",
+     "monodromy": [
+      [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       1,
+       0,
+       0,
+       -2,
+       0
+      ],
+      [
+       0,
+       0,
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       1
+      ]
+     ],
+     "potential_toric_rank": 1,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      -5,
+      -4,
+      -3,
+      -5,
+      -4,
+      -5,
+      -5,
+      -4,
+      -3,
+      -5,
+      -4,
+      -5
+     ],
+     "semisimple_order": 1,
+     "topological_conductor": 1
+    },
+    "name": "four_at_rate_1_genus_3"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": true,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": false,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+       ],
+       "size": 6,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1/2",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "2",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1/2",
+       "roots": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "size": 4,
+       "twin": false,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q((t))",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": false,
+     "inertia_root_permutation": [
+      1,
+      0,
+      3,
+      2,
+      4,
+      5
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 1,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 3,
+      "edge_permutation": [
+       0,
+       1
+      ],
+      "inertia_invariants_dimension": 1,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 3,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       [
+        "1/2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "-1"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "2"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "-2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 2,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 4,
+        "cluster": 1,
+        "genus": 1,
+        "id": 1,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 1,
+      "edges": [
+       {
+        "ends": [
+         0,
+         0
+        ],
+        "length": "1"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1
+        ],
+        "genus": 1,
+        "id": 0
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -1,
+      -2,
+      -1,
+      -3,
+      -2,
+      -1
+     ],
+     "genus": 2,
+     "invariant_dimension": 1,
+     "leading_winding": 0,
+     "loop_radius_s": "1/6",
+     "monodromy": [
+      [
+       -1,
+       0,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       0,
+       -1
+      ],
+      [
+       0,
+       0,
+       -1,
+       1
+      ],
+      [
+       0,
+       0,
+       0,
+       1
+      ]
+     ],
+     "potential_toric_rank": 1,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      2,
+      -4,
+      1,
+      -3,
+      -2,
+      -4,
+      -3,
+      -1,
+      -4,
+      -2
+     ],
+     "semisimple_order": 2,
+     "topological_conductor": 3
+    },
+    "name": "half_rate_pairs"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1/2",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "5/2",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q((t))",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": false,
+     "inertia_root_permutation": [
+      1,
+      0,
+      3,
+      2,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 2,
+     "potential_toric_rank": 0,
+     "potentially_good": true,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 4,
+      "edge_permutation": [],
+      "inertia_invariants_dimension": 0,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 4,
+      "toric_rank": 0,
+      "vertex_permutation": [
+       0
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       [
+        "1/2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "-1"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "2"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "-2"
+       ]
+      ],
+      []
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 0,
+      "edges": [],
+      "vertices": [
+       {
+        "branch_flags": 6,
+        "cluster": 0,
+        "genus": 2,
+        "id": 0,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 0,
+      "edges": [],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0
+        ],
+        "genus": 2,
+        "id": 0
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -1,
+      -2,
+      -1,
+      -3,
+      -2,
+      -4,
+      -1,
+      -3,
+      -2,
+      -1
+     ],
+     "genus": 2,
+     "invariant_dimension": 0,
+     "leading_winding": 0,
+     "loop_radius_s": "1/2",
+     "monodromy": [
+      [
+       0,
+       0,
+       1,
+       -1
+      ],
+      [
+       0,
+       0,
+       -1,
+       0
+      ],
+      [
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       1,
+       1,
+       0,
+       0
+      ]
+     ],
+     "potential_toric_rank": 0,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      -4,
+      -3,
+      -2,
+      -4,
+      -1,
+      -3,
+      -2,
+      -4,
+      -3,
+      -4
+     ],
+     "semisimple_order": 4,
+     "topological_conductor": 4
+    },
+    "name": "half_rate_odd_cluster"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1
+       ],
+       "cotwin": true,
+       "depth": "0",
+       "even": false,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": false,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4
+       ],
+       "size": 5,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2,
+        3
+       ],
+       "cotwin": false,
+       "depth": "1/2",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "2",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1/2",
+       "roots": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "size": 4,
+       "twin": false,
+       "uebereven": true
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 2,
+       "inertia_image": 3,
+       "nu": "5",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "3/2",
+       "roots": [
+        0,
+        1
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 3,
+       "inertia_image": 2,
+       "nu": "5",
+       "parent": 1,
+       "principal": false,
+       "relative_depth": "3/2",
+       "roots": [
+        2,
+        3
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q((t))",
+     "genus": 2,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": false,
+     "inertia_root_permutation": [
+      2,
+      3,
+      0,
+      1,
+      4
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 0,
+     "potential_toric_rank": 2,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 3,
+      "edge_permutation": [
+       0,
+       1,
+       4,
+       5,
+       2,
+       3
+      ],
+      "inertia_invariants_dimension": 1,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "rep",
+       "3": "image"
+      },
+      "semistable_over_K": false,
+      "tame_part": 3,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1,
+       2,
+       4,
+       3
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [
+       [
+        "1/2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "1"
+       ],
+       [
+        "2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "-1"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "-1"
+       ],
+       [
+        "2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         2
+        ],
+        "length": "1/2",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         3
+        ],
+        "length": "3/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         2,
+         3
+        ],
+        "length": "3/2",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         1,
+         4
+        ],
+        "length": "3/2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         2,
+         4
+        ],
+        "length": "3/2",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 2,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 0,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 0,
+        "cluster": 1,
+        "genus": 0,
+        "id": 2,
+        "sheet": 1
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 3,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 3,
+        "genus": 0,
+        "id": 4,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 2,
+      "edges": [
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "3"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "3"
+       }
+      ],
+      "genus": 2,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         1,
+         2,
+         3
+        ],
+        "genus": 0,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1
+        ],
+        "genus": 0,
+        "id": 1
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -3,
+      -1,
+      -1,
+      -3,
+      -1,
+      -3,
+      -2,
+      -3,
+      -1,
+      -2,
+      -3,
+      -1
+     ],
+     "genus": 2,
+     "invariant_dimension": 1,
+     "leading_winding": 0,
+     "loop_radius_s": "1/4",
+     "monodromy": [
+      [
+       -1,
+       0,
+       6,
+       -3
+      ],
+      [
+       1,
+       1,
+       -3,
+       -1
+      ],
+      [
+       0,
+       0,
+       -1,
+       1
+      ],
+      [
+       0,
+       0,
+       0,
+       1
+      ]
+     ],
+     "potential_toric_rank": 2,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      4,
+      3,
+      -1,
+      -4,
+      -4,
+      -1,
+      -3,
+      -4,
+      -3,
+      -1,
+      -2,
+      -1,
+      -3,
+      -2,
+      -1,
+      -3
+     ],
+     "semisimple_order": 2,
+     "topological_conductor": 3
+    },
+    "name": "swapped_twins_puiseux"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1,
+        4
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "0",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+       ],
+       "size": 10,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2
+       ],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "4",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "size": 4,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        3
+       ],
+       "cotwin": false,
+       "depth": "3",
+       "even": false,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "10",
+       "parent": 1,
+       "principal": true,
+       "relative_depth": "2",
+       "roots": [
+        0,
+        2,
+        3
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "5",
+       "even": true,
+       "id": 3,
+       "inertia_image": 3,
+       "nu": "14",
+       "parent": 2,
+       "principal": false,
+       "relative_depth": "2",
+       "roots": [
+        2,
+        3
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "2",
+       "even": true,
+       "id": 4,
+       "inertia_image": 4,
+       "nu": "4",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "2",
+       "roots": [
+        4,
+        5
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": true,
+     "field": "Q((t))",
+     "genus": 4,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "leading_valuation": "0",
+     "potential_abelian_rank": 1,
+     "potential_toric_rank": 3,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 2,
+      "conductor_exponent": 3,
+      "edge_permutation": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6
+      ],
+      "inertia_invariants_dimension": 5,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed",
+       "3": "fixed",
+       "4": "fixed"
+      },
+      "semistable_over_K": true,
+      "tame_part": 3,
+      "toric_rank": 3,
+      "vertex_permutation": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [],
+      [
+       [
+        "1",
+        "1"
+       ]
+      ],
+      [
+       [
+        "3",
+        "1"
+       ]
+      ],
+      [
+       [
+        "3",
+        "1"
+       ],
+       [
+        "5",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ],
+       [
+        "2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "3"
+       ]
+      ],
+      [
+       [
+        "0",
+        "4"
+       ]
+      ],
+      [
+       [
+        "0",
+        "5"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 3,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 3,
+        "ends": [
+         2,
+         3
+        ],
+        "length": "2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         2,
+         3
+        ],
+        "length": "2",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 4,
+        "ends": [
+         0,
+         4
+        ],
+        "length": "2",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 4,
+        "ends": [
+         0,
+         4
+        ],
+        "length": "2",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 4,
+        "cluster": 0,
+        "genus": 1,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 3,
+        "genus": 0,
+        "id": 3,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 4,
+        "genus": 0,
+        "id": 4,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 3,
+      "edges": [
+       {
+        "ends": [
+         0,
+         0
+        ],
+        "length": "4"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         2,
+         2
+        ],
+        "length": "4"
+       }
+      ],
+      "genus": 4,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         4
+        ],
+        "genus": 1,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1
+        ],
+        "genus": 0,
+        "id": 1
+       },
+       {
+        "clusters": [
+         2,
+         3
+        ],
+        "genus": 0,
+        "id": 2
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -2,
+      -1,
+      -2,
+      -5,
+      -1,
+      -1,
+      -2,
+      -1,
+      -3,
+      -2,
+      -1,
+      -3,
+      -5,
+      -2,
+      -3,
+      -2,
+      -2,
+      -3,
+      -2,
+      -5,
+      -3,
+      -3,
+      -2,
+      -3,
+      -1,
+      -2,
+      -3,
+      -1,
+      -5,
+      -2,
+      -1,
+      -2
+     ],
+     "genus": 4,
+     "invariant_dimension": 5,
+     "leading_winding": 0,
+     "loop_radius_s": "1/4",
+     "monodromy": [
+      [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       1,
+       0,
+       0,
+       0,
+       -6,
+       4,
+       0
+      ],
+      [
+       0,
+       0,
+       1,
+       0,
+       0,
+       4,
+       -4,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       4,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0,
+       1
+      ]
+     ],
+     "potential_toric_rank": 3,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      -9,
+      -6,
+      -5,
+      -6,
+      -5,
+      -9,
+      -5,
+      -6,
+      -5,
+      -6,
+      -7,
+      -6,
+      -5,
+      -6,
+      -7,
+      -6,
+      -9,
+      -6,
+      -7,
+      -6,
+      -7,
+      -9,
+      -7,
+      -6,
+      -7,
+      -6,
+      -5,
+      -6,
+      -7,
+      -6,
+      -5,
+      -6
+     ],
+     "semisimple_order": 1,
+     "topological_conductor": 3
+    },
+    "name": "genus_4_three_levels"
+   },
+   {
+    "agree": true,
+    "analysis": {
+     "clusters": [
+      {
+       "children": [
+        1,
+        4
+       ],
+       "cotwin": false,
+       "depth": "0",
+       "even": true,
+       "id": 0,
+       "inertia_image": 0,
+       "nu": "1",
+       "parent": null,
+       "principal": true,
+       "relative_depth": null,
+       "roots": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+       ],
+       "size": 8,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        2
+       ],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 1,
+       "inertia_image": 1,
+       "nu": "5",
+       "parent": 0,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2,
+        3
+       ],
+       "size": 4,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [
+        3
+       ],
+       "cotwin": false,
+       "depth": "2",
+       "even": false,
+       "id": 2,
+       "inertia_image": 2,
+       "nu": "8",
+       "parent": 1,
+       "principal": true,
+       "relative_depth": "1",
+       "roots": [
+        0,
+        1,
+        2
+       ],
+       "size": 3,
+       "twin": false,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "3",
+       "even": true,
+       "id": 3,
+       "inertia_image": 3,
+       "nu": "10",
+       "parent": 2,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        1,
+        2
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      },
+      {
+       "children": [],
+       "cotwin": false,
+       "depth": "1",
+       "even": true,
+       "id": 4,
+       "inertia_image": 4,
+       "nu": "3",
+       "parent": 0,
+       "principal": false,
+       "relative_depth": "1",
+       "roots": [
+        4,
+        5
+       ],
+       "size": 2,
+       "twin": true,
+       "uebereven": false
+      }
+     ],
+     "ddmm_semistable_over_K": false,
+     "field": "Q((t))",
+     "genus": 3,
+     "genus_identity_checked": true,
+     "inertia_fixes_roots": true,
+     "inertia_root_permutation": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     "leading_valuation": "1",
+     "potential_abelian_rank": 0,
+     "potential_toric_rank": 3,
+     "potentially_good": false,
+     "reduction_over_K": {
+      "abelian_part_invariants": 0,
+      "conductor_exponent": 5,
+      "edge_permutation": [
+       1,
+       0,
+       2,
+       3,
+       4,
+       6,
+       5
+      ],
+      "inertia_invariants_dimension": 1,
+      "jacobian_good_reduction_over_K": false,
+      "roles": {
+       "0": "fixed",
+       "1": "fixed",
+       "2": "fixed",
+       "3": "fixed",
+       "4": "fixed"
+      },
+      "semistable_over_K": false,
+      "tame_part": 5,
+      "toric_rank": 1,
+      "vertex_permutation": [
+       0,
+       1,
+       2,
+       3,
+       4
+      ],
+      "wild_part": 0
+     },
+     "roots": [
+      [],
+      [
+       [
+        "2",
+        "1"
+       ]
+      ],
+      [
+       [
+        "2",
+        "1"
+       ],
+       [
+        "3",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1"
+       ],
+       [
+        "1",
+        "1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "3"
+       ]
+      ]
+     ],
+     "schema": "pp-cluster-stable-reduction/1",
+     "semistable_graph": {
+      "cycle_rank": 3,
+      "edges": [
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 1,
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 2,
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1/2",
+        "lift": 0,
+        "ramified": true
+       },
+       {
+        "child": 3,
+        "ends": [
+         2,
+         3
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 3,
+        "ends": [
+         2,
+         3
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       },
+       {
+        "child": 4,
+        "ends": [
+         0,
+         4
+        ],
+        "length": "1",
+        "lift": 0,
+        "ramified": false
+       },
+       {
+        "child": 4,
+        "ends": [
+         0,
+         4
+        ],
+        "length": "1",
+        "lift": 1,
+        "ramified": false
+       }
+      ],
+      "vertices": [
+       {
+        "branch_flags": 2,
+        "cluster": 0,
+        "genus": 0,
+        "id": 0,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 1,
+        "genus": 0,
+        "id": 1,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 2,
+        "genus": 0,
+        "id": 2,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 3,
+        "genus": 0,
+        "id": 3,
+        "sheet": 0
+       },
+       {
+        "branch_flags": 2,
+        "cluster": 4,
+        "genus": 0,
+        "id": 4,
+        "sheet": 0
+       }
+      ]
+     },
+     "stable_graph": {
+      "cycle_rank": 3,
+      "edges": [
+       {
+        "ends": [
+         0,
+         0
+        ],
+        "length": "2"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         0,
+         1
+        ],
+        "length": "1"
+       },
+       {
+        "ends": [
+         1,
+         2
+        ],
+        "length": "1/2"
+       },
+       {
+        "ends": [
+         2,
+         2
+        ],
+        "length": "2"
+       }
+      ],
+      "genus": 3,
+      "vertices": [
+       {
+        "clusters": [
+         0,
+         4
+        ],
+        "genus": 0,
+        "id": 0
+       },
+       {
+        "clusters": [
+         1
+        ],
+        "genus": 0,
+        "id": 1
+       },
+       {
+        "clusters": [
+         2,
+         3
+        ],
+        "genus": 0,
+        "id": 2
+       }
+      ]
+     }
+    },
+    "braid": {
+     "braid_word": [
+      -2,
+      -1,
+      -2,
+      -1,
+      -5,
+      -3,
+      -2,
+      -1,
+      -3,
+      -2,
+      -3,
+      -3,
+      -2,
+      -3,
+      -2,
+      -5,
+      -1,
+      -2,
+      -3,
+      -2,
+      -1,
+      -2
+     ],
+     "genus": 3,
+     "invariant_dimension": 1,
+     "leading_winding": 1,
+     "loop_radius_s": "1/4",
+     "monodromy": [
+      [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0
+      ],
+      [
+       0,
+       -1,
+       0,
+       0,
+       4,
+       -2
+      ],
+      [
+       0,
+       0,
+       -1,
+       0,
+       -2,
+       2
+      ],
+      [
+       2,
+       0,
+       0,
+       1,
+       0,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       -1,
+       0
+      ],
+      [
+       0,
+       0,
+       0,
+       0,
+       0,
+       -1
+      ]
+     ],
+     "potential_toric_rank": 3,
+     "schema": "pp-cluster-braid-monodromy/1",
+     "scope": "numerically read braid words (matrix stable under refinement, invariants stable under a second projection) on an exactly bounded loop; exact integral monodromy",
+     "second_projection_word": [
+      -7,
+      -4,
+      -3,
+      -4,
+      -3,
+      -5,
+      -4,
+      -3,
+      -5,
+      -4,
+      -5,
+      -7,
+      -5,
+      -4,
+      -5,
+      -4,
+      -3,
+      -4,
+      -5,
+      -4,
+      -3,
+      -4
+     ],
+     "semisimple_order": 2,
+     "topological_conductor": 5
+    },
+    "name": "genus_3_twisted_nest"
+   }
+  ]
+ },
+ "richelot": {
+  "constructed_sweep": [
+   {
+    "D": 1,
+    "factors": [
+     [
+      "-21",
+      "12",
+      "-4"
+     ],
+     [
+      "10",
+      "-24",
+      "8"
+     ],
+     [
+      "3",
+      "12",
+      "-4"
+     ]
+    ],
+    "field_D": 1,
+    "primes_checked": 9
+   },
+   {
+    "D": 1,
+    "factors": [
+     [
+      "17",
+      "-10",
+      "9"
+     ],
+     [
+      "-3",
+      "30",
+      "-11"
+     ],
+     [
+      "-22",
+      "-4",
+      "-6"
+     ]
+    ],
+    "field_D": 1,
+    "primes_checked": 7
+   },
+   {
+    "D": 1,
+    "factors": [
+     [
+      "15",
+      "12",
+      "-12"
+     ],
+     [
+      "-6",
+      "-12",
+      "12"
+     ],
+     [
+      "11",
+      "-8",
+      "8"
+     ]
+    ],
+    "field_D": 1,
+    "primes_checked": 7
+   },
+   {
+    "D": 1,
+    "factors": [
+     [
+      "15",
+      "-12",
+      "-12"
+     ],
+     [
+      "30",
+      "12",
+      "12"
+     ],
+     [
+      "6",
+      "-12",
+      "-12"
+     ]
+    ],
+    "field_D": 1,
+    "primes_checked": 8
+   },
+   {
+    "D": 2,
+    "factors": [
+     [
+      "-42",
+      "28",
+      "-6"
+     ],
+     [
+      "-68",
+      "32",
+      "-4"
+     ],
+     [
+      "44",
+      "-24",
+      "4"
+     ]
+    ],
+    "field_D": 2,
+    "primes_checked": 8
+   },
+   {
+    "D": 2,
+    "factors": [
+     [
+      "108",
+      "48",
+      "6"
+     ],
+     [
+      "-36",
+      "0",
+      "-2"
+     ],
+     [
+      "-36",
+      "48",
+      "-2"
+     ]
+    ],
+    "field_D": 2,
+    "primes_checked": 8
+   },
+   {
+    "D": 2,
+    "factors": [
+     [
+      "-28",
+      "40",
+      "-4"
+     ],
+     [
+      "-124",
+      "-56",
+      "-4"
+     ],
+     [
+      "-114",
+      "-12",
+      "-6"
+     ]
+    ],
+    "field_D": 2,
+    "primes_checked": 9
+   },
+   {
+    "D": 2,
+    "factors": [
+     [
+      "-130",
+      "-44",
+      "-2"
+     ],
+     [
+      "-164",
+      "-56",
+      "-4"
+     ],
+     [
+      "102",
+      "36",
+      "6"
+     ]
+    ],
+    "field_D": 2,
+    "primes_checked": 8
+   },
+   {
+    "D": 3,
+    "factors": [
+     [
+      "0",
+      "36",
+      "-6"
+     ],
+     [
+      "144",
+      "60",
+      "-2"
+     ],
+     [
+      "-324",
+      "-72",
+      "-6"
+     ]
+    ],
+    "field_D": 3,
+    "primes_checked": 7
+   },
+   {
+    "D": 3,
+    "factors": [
+     [
+      "72",
+      "24",
+      "0"
+     ],
+     [
+      "126",
+      "36",
+      "6"
+     ],
+     [
+      "156",
+      "48",
+      "4"
+     ]
+    ],
+    "field_D": 3,
+    "primes_checked": 9
+   },
+   {
+    "D": 3,
+    "factors": [
+     [
+      "-28",
+      "-20",
+      "-4"
+     ],
+     [
+      "12",
+      "0",
+      "6"
+     ],
+     [
+      "-4",
+      "4",
+      "-4"
+     ]
+    ],
+    "field_D": 3,
+    "primes_checked": 8
+   },
+   {
+    "D": 3,
+    "factors": [
+     [
+      "40",
+      "-64",
+      "4"
+     ],
+     [
+      "184",
+      "80",
+      "4"
+     ],
+     [
+      "148",
+      "44",
+      "4"
+     ]
+    ],
+    "field_D": 3,
+    "primes_checked": 9
+   },
+   {
+    "D": 5,
+    "factors": [
+     [
+      "14",
+      "-4",
+      "6"
+     ],
+     [
+      "76",
+      "-36",
+      "4"
+     ],
+     [
+      "-58",
+      "28",
+      "-2"
+     ]
+    ],
+    "field_D": 5,
+    "primes_checked": 9
+   },
+   {
+    "D": 5,
+    "factors": [
+     [
+      "-134",
+      "-64",
+      "-6"
+     ],
+     [
+      "80",
+      "40",
+      "0"
+     ],
+     [
+      "94",
+      "44",
+      "6"
+     ]
+    ],
+    "field_D": 5,
+    "primes_checked": 7
+   },
+   {
+    "D": 5,
+    "factors": [
+     [
+      "124",
+      "52",
+      "4"
+     ],
+     [
+      "184",
+      "-8",
+      "4"
+     ],
+     [
+      "60",
+      "-60",
+      "0"
+     ]
+    ],
+    "field_D": 5,
+    "primes_checked": 8
+   },
+   {
+    "D": 5,
+    "factors": [
+     [
+      "4",
+      "-4",
+      "-4"
+     ],
+     [
+      "-116",
+      "-44",
+      "-4"
+     ],
+     [
+      "28",
+      "12",
+      "2"
+     ]
+    ],
+    "field_D": 5,
+    "primes_checked": 9
+   },
+   {
+    "D": -1,
+    "factors": [
+     [
+      "0",
+      "-16",
+      "4"
+     ],
+     [
+      "-16",
+      "32",
+      "-6"
+     ],
+     [
+      "-16",
+      "-8",
+      "4"
+     ]
+    ],
+    "field_D": -1,
+    "primes_checked": 9
+   },
+   {
+    "D": -1,
+    "factors": [
+     [
+      "72",
+      "24",
+      "0"
+     ],
+     [
+      "36",
+      "36",
+      "4"
+     ],
+     [
+      "-36",
+      "0",
+      "2"
+     ]
+    ],
+    "field_D": -1,
+    "primes_checked": 8
+   },
+   {
+    "D": -1,
+    "factors": [
+     [
+      "28",
+      "8",
+      "-4"
+     ],
+     [
+      "30",
+      "-36",
+      "6"
+     ],
+     [
+      "48",
+      "-16",
+      "0"
+     ]
+    ],
+    "field_D": -1,
+    "primes_checked": 9
+   },
+   {
+    "D": -1,
+    "factors": [
+     [
+      "-4",
+      "8",
+      "-2"
+     ],
+     [
+      "40",
+      "-20",
+      "2"
+     ],
+     [
+      "28",
+      "-16",
+      "2"
+     ]
+    ],
+    "field_D": -1,
+    "primes_checked": 8
+   },
+   {
+    "D": -2,
+    "factors": [
+     [
+      "10",
+      "-44",
+      "-6"
+     ],
+     [
+      "44",
+      "8",
+      "-4"
+     ],
+     [
+      "16",
+      "16",
+      "0"
+     ]
+    ],
+    "field_D": -2,
+    "primes_checked": 7
+   },
+   {
+    "D": -2,
+    "factors": [
+     [
+      "-56",
+      "-16",
+      "4"
+     ],
+     [
+      "-20",
+      "32",
+      "-2"
+     ],
+     [
+      "-152",
+      "32",
+      "4"
+     ]
+    ],
+    "field_D": -2,
+    "primes_checked": 9
+   },
+   {
+    "D": -2,
+    "factors": [
+     [
+      "28",
+      "32",
+      "6"
+     ],
+     [
+      "-40",
+      "-32",
+      "-4"
+     ],
+     [
+      "-16",
+      "-8",
+      "0"
+     ]
+    ],
+    "field_D": -2,
+    "primes_checked": 8
+   },
+   {
+    "D": -2,
+    "factors": [
+     [
+      "4",
+      "-16",
+      "-6"
+     ],
+     [
+      "20",
+      "16",
+      "2"
+     ],
+     [
+      "8",
+      "16",
+      "4"
+     ]
+    ],
+    "field_D": -2,
+    "primes_checked": 8
+   },
+   {
+    "D": -3,
+    "factors": [
+     [
+      "36",
+      "-12",
+      "-6"
+     ],
+     [
+      "48",
+      "24",
+      "2"
+     ],
+     [
+      "36",
+      "12",
+      "0"
+     ]
+    ],
+    "field_D": -3,
+    "primes_checked": 7
+   },
+   {
+    "D": -3,
+    "factors": [
+     [
+      "-84",
+      "-36",
+      "-2"
+     ],
+     [
+      "-60",
+      "-36",
+      "-4"
+     ],
+     [
+      "-36",
+      "-36",
+      "-6"
+     ]
+    ],
+    "field_D": -3,
+    "primes_checked": 7
+   },
+   {
+    "D": -3,
+    "factors": [
+     [
+      "84",
+      "36",
+      "2"
+     ],
+     [
+      "48",
+      "24",
+      "2"
+     ],
+     [
+      "108",
+      "60",
+      "6"
+     ]
+    ],
+    "field_D": -3,
+    "primes_checked": 7
+   },
+   {
+    "D": -3,
+    "factors": [
+     [
+      "-48",
+      "72",
+      "-6"
+     ],
+     [
+      "-64",
+      "16",
+      "2"
+     ],
+     [
+      "-16",
+      "-8",
+      "2"
+     ]
+    ],
+    "field_D": -3,
+    "primes_checked": 7
+   },
+   {
+    "D": -7,
+    "factors": [
+     [
+      "92",
+      "52",
+      "4"
+     ],
+     [
+      "72",
+      "-8",
+      "-6"
+     ],
+     [
+      "-160",
+      "-32",
+      "4"
+     ]
+    ],
+    "field_D": -7,
+    "primes_checked": 6
+   },
+   {
+    "D": -7,
+    "factors": [
+     [
+      "-218",
+      "176",
+      "-2"
+     ],
+     [
+      "404",
+      "-68",
+      "-4"
+     ],
+     [
+      "690",
+      "-144",
+      "-6"
+     ]
+    ],
+    "field_D": -7,
+    "primes_checked": 5
+   },
+   {
+    "D": -7,
+    "factors": [
+     [
+      "216",
+      "24",
+      "-4"
+     ],
+     [
+      "-576",
+      "48",
+      "6"
+     ],
+     [
+      "-828",
+      "132",
+      "6"
+     ]
+    ],
+    "field_D": -7,
+    "primes_checked": 8
+   },
+   {
+    "D": -7,
+    "factors": [
+     [
+      "-404",
+      "-68",
+      "4"
+     ],
+     [
+      "-168",
+      "-84",
+      "0"
+     ],
+     [
+      "-100",
+      "-184",
+      "-4"
+     ]
+    ],
+    "field_D": -7,
+    "primes_checked": 7
+   }
+  ],
+  "examples": {
+   "even_sextic": {
+    "kinds": [
+     "rational"
+    ],
+    "lpoly_rows": [
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       49
+      ],
+      "equal": true,
+      "jacobian_order": 48,
+      "kind": "rational",
+      "p": 7,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       49
+      ],
+      "product_order": 48
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       22,
+       0,
+       121
+      ],
+      "equal": true,
+      "jacobian_order": 144,
+      "kind": "rational",
+      "p": 11,
+      "product_lpoly": [
+       1,
+       0,
+       22,
+       0,
+       121
+      ],
+      "product_order": 144
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       14,
+       52,
+       169
+      ],
+      "equal": true,
+      "jacobian_order": 240,
+      "kind": "rational",
+      "p": 13,
+      "product_lpoly": [
+       1,
+       4,
+       14,
+       52,
+       169
+      ],
+      "product_order": 240
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       22,
+       -68,
+       289
+      ],
+      "equal": true,
+      "jacobian_order": 240,
+      "kind": "rational",
+      "p": 17,
+      "product_lpoly": [
+       1,
+       -4,
+       22,
+       -68,
+       289
+      ],
+      "product_order": 240
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       22,
+       0,
+       361
+      ],
+      "equal": true,
+      "jacobian_order": 384,
+      "kind": "rational",
+      "p": 19,
+      "product_lpoly": [
+       1,
+       0,
+       22,
+       0,
+       361
+      ],
+      "product_order": 384
+     },
+     {
+      "curve_lpoly": [
+       1,
+       8,
+       46,
+       184,
+       529
+      ],
+      "equal": true,
+      "jacobian_order": 768,
+      "kind": "rational",
+      "p": 23,
+      "product_lpoly": [
+       1,
+       8,
+       46,
+       184,
+       529
+      ],
+      "product_order": 768
+     },
+     {
+      "curve_lpoly": [
+       1,
+       12,
+       94,
+       348,
+       841
+      ],
+      "equal": true,
+      "jacobian_order": 1296,
+      "kind": "rational",
+      "p": 29,
+      "product_lpoly": [
+       1,
+       12,
+       94,
+       348,
+       841
+      ],
+      "product_order": 1296
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -8,
+       62,
+       -248,
+       961
+      ],
+      "equal": true,
+      "jacobian_order": 768,
+      "kind": "rational",
+      "p": 31,
+      "product_lpoly": [
+       1,
+       -8,
+       62,
+       -248,
+       961
+      ],
+      "product_order": 768
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       62,
+       148,
+       1369
+      ],
+      "equal": true,
+      "jacobian_order": 1584,
+      "kind": "rational",
+      "p": 37,
+      "product_lpoly": [
+       1,
+       4,
+       62,
+       148,
+       1369
+      ],
+      "product_order": 1584
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       22,
+       -164,
+       1681
+      ],
+      "equal": true,
+      "jacobian_order": 1536,
+      "kind": "rational",
+      "p": 41,
+      "product_lpoly": [
+       1,
+       -4,
+       22,
+       -164,
+       1681
+      ],
+      "product_order": 1536
+     },
+     {
+      "curve_lpoly": [
+       1,
+       8,
+       102,
+       344,
+       1849
+      ],
+      "equal": true,
+      "jacobian_order": 2304,
+      "kind": "rational",
+      "p": 43,
+      "product_lpoly": [
+       1,
+       8,
+       102,
+       344,
+       1849
+      ],
+      "product_order": 2304
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -8,
+       94,
+       -376,
+       2209
+      ],
+      "equal": true,
+      "jacobian_order": 1920,
+      "kind": "rational",
+      "p": 47,
+      "product_lpoly": [
+       1,
+       -8,
+       94,
+       -376,
+       2209
+      ],
+      "product_order": 1920
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       46,
+       -212,
+       2809
+      ],
+      "equal": true,
+      "jacobian_order": 2640,
+      "kind": "rational",
+      "p": 53,
+      "product_lpoly": [
+       1,
+       -4,
+       46,
+       -212,
+       2809
+      ],
+      "product_order": 2640
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       118,
+       0,
+       3481
+      ],
+      "equal": true,
+      "jacobian_order": 3600,
+      "kind": "rational",
+      "p": 59,
+      "product_lpoly": [
+       1,
+       0,
+       118,
+       0,
+       3481
+      ],
+      "product_order": 3600
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       62,
+       244,
+       3721
+      ],
+      "equal": true,
+      "jacobian_order": 4032,
+      "kind": "rational",
+      "p": 61,
+      "product_lpoly": [
+       1,
+       4,
+       62,
+       244,
+       3721
+      ],
+      "product_order": 4032
+     },
+     {
+      "curve_lpoly": [
+       1,
+       8,
+       150,
+       536,
+       4489
+      ],
+      "equal": true,
+      "jacobian_order": 5184,
+      "kind": "rational",
+      "p": 67,
+      "product_lpoly": [
+       1,
+       8,
+       150,
+       536,
+       4489
+      ],
+      "product_order": 5184
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       142,
+       0,
+       5041
+      ],
+      "equal": true,
+      "jacobian_order": 5184,
+      "kind": "rational",
+      "p": 71,
+      "product_lpoly": [
+       1,
+       0,
+       142,
+       0,
+       5041
+      ],
+      "product_order": 5184
+     },
+     {
+      "curve_lpoly": [
+       1,
+       12,
+       118,
+       876,
+       5329
+      ],
+      "equal": true,
+      "jacobian_order": 6336,
+      "kind": "rational",
+      "p": 73,
+      "product_lpoly": [
+       1,
+       12,
+       118,
+       876,
+       5329
+      ],
+      "product_order": 6336
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -24,
+       286,
+       -1896,
+       6241
+      ],
+      "equal": true,
+      "jacobian_order": 4608,
+      "kind": "rational",
+      "p": 79,
+      "product_lpoly": [
+       1,
+       -24,
+       286,
+       -1896,
+       6241
+      ],
+      "product_order": 4608
+     }
+    ],
+    "primes_checked": 19,
+    "splitting": {
+     "E1_cubic": [
+      "1",
+      "-14",
+      "49",
+      "-36"
+     ],
+     "E2_cubic": [
+      "-36",
+      "49",
+      "-14",
+      "1"
+     ],
+     "E2_is_conjugate_of_E1": null,
+     "a": [
+      "-1",
+      "-4",
+      "-9"
+     ],
+     "b": [
+      "1",
+      "1",
+      "1"
+     ],
+     "determinant": "0",
+     "differential_pullbacks": [
+      [
+       "-2",
+       "0"
+      ],
+      [
+       "0",
+       "2"
+      ]
+     ],
+     "factors": [
+      [
+       "-1",
+       "0",
+       "1"
+      ],
+      [
+       "-4",
+       "0",
+       "1"
+      ],
+      [
+       "-9",
+       "0",
+       "1"
+      ]
+     ],
+     "field_D": 1,
+     "gluing": {
+      "psi": "E1[2] -> E2[2], (-b_i/a_i,0) -> (-a_i/b_i,0); kernel of E1 x E2 -> J(C) is its graph",
+      "richelot_kernel": "classes of [roots of G_i] - [roots of G_j] in J(C)[2]",
+      "two_torsion": [
+       {
+        "E1_x": "1",
+        "E2_x": "1",
+        "factor": 1
+       },
+       {
+        "E1_x": "1/4",
+        "E2_x": "4",
+        "factor": 2
+       },
+       {
+        "E1_x": "1/9",
+        "E2_x": "9",
+        "factor": 3
+       }
+      ]
+     },
+     "identities_checked": [
+      "pencil decomposition G_i=a_i l1^2+b_i l2^2",
+      "l2^6 E1(l1^2/l2^2)=F=l1^6 E2(l2^2/l1^2)",
+      "phi1^*(dX/Y)=2W l1 dx/y, phi2^*(dX/Y)=-2W l2 dx/y, independent"
+     ],
+     "maps": {
+      "involution": "l1/l2 -> -l1/l2 (fixes both quotient maps)",
+      "phi1": "X=l1^2/l2^2, Y=y/l2^3 onto E1: Y^2=prod(a_i X+b_i)",
+      "phi2": "X=l2^2/l1^2, Y=y/l1^3 onto E2: Y^2=prod(a_i+b_i X)"
+     },
+     "pencil_discriminant": "144",
+     "schema": "pp-singular-richelot/1",
+     "scope": "binary-form input over Q with squarefree sextic and Richelot determinant zero; quotients are over Q or the quadratic field of the pencil squares",
+     "sextic_form": [
+      "-36",
+      "0",
+      "49",
+      "0",
+      "-14",
+      "0",
+      "1"
+     ],
+     "squares": [
+      {
+       "kappa": "-3",
+       "linear_form": [
+        "1",
+        "0"
+       ],
+       "member": [
+        "-3",
+        "0",
+        "0"
+       ]
+      },
+      {
+       "kappa": "-3",
+       "linear_form": [
+        "0",
+        "1"
+       ],
+       "member": [
+        "0",
+        "0",
+        "-3"
+       ]
+      }
+     ],
+     "wronskian": "-1"
+    }
+   },
+   "infinity_root_rational_pencil": {
+    "kinds": [
+     "rational"
+    ],
+    "lpoly_rows": [
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       14,
+       0,
+       49
+      ],
+      "equal": true,
+      "jacobian_order": 64,
+      "kind": "rational",
+      "p": 7,
+      "product_lpoly": [
+       1,
+       0,
+       14,
+       0,
+       49
+      ],
+      "product_order": 64
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       6,
+       0,
+       121
+      ],
+      "equal": true,
+      "jacobian_order": 128,
+      "kind": "rational",
+      "p": 11,
+      "product_lpoly": [
+       1,
+       0,
+       6,
+       0,
+       121
+      ],
+      "product_order": 128
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -8,
+       38,
+       -104,
+       169
+      ],
+      "equal": true,
+      "jacobian_order": 96,
+      "kind": "rational",
+      "p": 13,
+      "product_lpoly": [
+       1,
+       -8,
+       38,
+       -104,
+       169
+      ],
+      "product_order": 96
+     },
+     {
+      "curve_lpoly": [
+       1,
+       8,
+       46,
+       136,
+       289
+      ],
+      "equal": true,
+      "jacobian_order": 480,
+      "kind": "rational",
+      "p": 17,
+      "product_lpoly": [
+       1,
+       8,
+       46,
+       136,
+       289
+      ],
+      "product_order": 480
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       6,
+       -76,
+       361
+      ],
+      "equal": true,
+      "jacobian_order": 288,
+      "kind": "rational",
+      "p": 19,
+      "product_lpoly": [
+       1,
+       -4,
+       6,
+       -76,
+       361
+      ],
+      "product_order": 288
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       46,
+       -92,
+       529
+      ],
+      "equal": true,
+      "jacobian_order": 480,
+      "kind": "rational",
+      "p": 23,
+      "product_lpoly": [
+       1,
+       -4,
+       46,
+       -92,
+       529
+      ],
+      "product_order": 480
+     },
+     {
+      "curve_lpoly": [
+       1,
+       8,
+       70,
+       232,
+       841
+      ],
+      "equal": true,
+      "jacobian_order": 1152,
+      "kind": "rational",
+      "p": 29,
+      "product_lpoly": [
+       1,
+       8,
+       70,
+       232,
+       841
+      ],
+      "product_order": 1152
+     },
+     {
+      "curve_lpoly": [
+       1,
+       8,
+       62,
+       248,
+       961
+      ],
+      "equal": true,
+      "jacobian_order": 1280,
+      "kind": "rational",
+      "p": 31,
+      "product_lpoly": [
+       1,
+       8,
+       62,
+       248,
+       961
+      ],
+      "product_order": 1280
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       70,
+       0,
+       1369
+      ],
+      "equal": true,
+      "jacobian_order": 1440,
+      "kind": "rational",
+      "p": 37,
+      "product_lpoly": [
+       1,
+       0,
+       70,
+       0,
+       1369
+      ],
+      "product_order": 1440
+     },
+     {
+      "curve_lpoly": [
+       1,
+       12,
+       118,
+       492,
+       1681
+      ],
+      "equal": true,
+      "jacobian_order": 2304,
+      "kind": "rational",
+      "p": 41,
+      "product_lpoly": [
+       1,
+       12,
+       118,
+       492,
+       1681
+      ],
+      "product_order": 2304
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -16,
+       134,
+       -688,
+       1849
+      ],
+      "equal": true,
+      "jacobian_order": 1280,
+      "kind": "rational",
+      "p": 43,
+      "product_lpoly": [
+       1,
+       -16,
+       134,
+       -688,
+       1849
+      ],
+      "product_order": 1280
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       -2,
+       188,
+       2209
+      ],
+      "equal": true,
+      "jacobian_order": 2400,
+      "kind": "rational",
+      "p": 47,
+      "product_lpoly": [
+       1,
+       4,
+       -2,
+       188,
+       2209
+      ],
+      "product_order": 2400
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       70,
+       0,
+       2809
+      ],
+      "equal": true,
+      "jacobian_order": 2880,
+      "kind": "rational",
+      "p": 53,
+      "product_lpoly": [
+       1,
+       0,
+       70,
+       0,
+       2809
+      ],
+      "product_order": 2880
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -24,
+       262,
+       -1416,
+       3481
+      ],
+      "equal": true,
+      "jacobian_order": 2304,
+      "kind": "rational",
+      "p": 59,
+      "product_lpoly": [
+       1,
+       -24,
+       262,
+       -1416,
+       3481
+      ],
+      "product_order": 2304
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -28,
+       318,
+       -1708,
+       3721
+      ],
+      "equal": true,
+      "jacobian_order": 2304,
+      "kind": "rational",
+      "p": 61,
+      "product_lpoly": [
+       1,
+       -28,
+       318,
+       -1708,
+       3721
+      ],
+      "product_order": 2304
+     },
+     {
+      "curve_lpoly": [
+       1,
+       8,
+       86,
+       536,
+       4489
+      ],
+      "equal": true,
+      "jacobian_order": 5120,
+      "kind": "rational",
+      "p": 67,
+      "product_lpoly": [
+       1,
+       8,
+       86,
+       536,
+       4489
+      ],
+      "product_order": 5120
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -8,
+       142,
+       -568,
+       5041
+      ],
+      "equal": true,
+      "jacobian_order": 4608,
+      "kind": "rational",
+      "p": 71,
+      "product_lpoly": [
+       1,
+       -8,
+       142,
+       -568,
+       5041
+      ],
+      "product_order": 4608
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       134,
+       292,
+       5329
+      ],
+      "equal": true,
+      "jacobian_order": 5760,
+      "kind": "rational",
+      "p": 73,
+      "product_lpoly": [
+       1,
+       4,
+       134,
+       292,
+       5329
+      ],
+      "product_order": 5760
+     },
+     {
+      "curve_lpoly": [
+       1,
+       16,
+       222,
+       1264,
+       6241
+      ],
+      "equal": true,
+      "jacobian_order": 7744,
+      "kind": "rational",
+      "p": 79,
+      "product_lpoly": [
+       1,
+       16,
+       222,
+       1264,
+       6241
+      ],
+      "product_order": 7744
+     }
+    ],
+    "primes_checked": 19,
+    "splitting": {
+     "E1_cubic": [
+      "6",
+      "-5",
+      "-2",
+      "1"
+     ],
+     "E2_cubic": [
+      "1",
+      "-2",
+      "-5",
+      "6"
+     ],
+     "E2_is_conjugate_of_E1": null,
+     "a": [
+      "1",
+      "1",
+      "1"
+     ],
+     "b": [
+      "-1",
+      "2",
+      "-3"
+     ],
+     "determinant": "0",
+     "differential_pullbacks": [
+      [
+       "0",
+       "-2"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "factors": [
+      [
+       "-1",
+       "2",
+       "0"
+      ],
+      [
+       "2",
+       "-4",
+       "3"
+      ],
+      [
+       "-3",
+       "6",
+       "-2"
+      ]
+     ],
+     "field_D": 1,
+     "gluing": {
+      "psi": "E1[2] -> E2[2], (-b_i/a_i,0) -> (-a_i/b_i,0); kernel of E1 x E2 -> J(C) is its graph",
+      "richelot_kernel": "classes of [roots of G_i] - [roots of G_j] in J(C)[2]",
+      "two_torsion": [
+       {
+        "E1_x": "1",
+        "E2_x": "1",
+        "factor": 1
+       },
+       {
+        "E1_x": "-2",
+        "E2_x": "-1/2",
+        "factor": 2
+       },
+       {
+        "E1_x": "3",
+        "E2_x": "1/3",
+        "factor": 3
+       }
+      ]
+     },
+     "identities_checked": [
+      "pencil decomposition G_i=a_i l1^2+b_i l2^2",
+      "l2^6 E1(l1^2/l2^2)=F=l1^6 E2(l2^2/l1^2)",
+      "phi1^*(dX/Y)=2W l1 dx/y, phi2^*(dX/Y)=-2W l2 dx/y, independent"
+     ],
+     "maps": {
+      "involution": "l1/l2 -> -l1/l2 (fixes both quotient maps)",
+      "phi1": "X=l1^2/l2^2, Y=y/l2^3 onto E1: Y^2=prod(a_i X+b_i)",
+      "phi2": "X=l2^2/l1^2, Y=y/l1^3 onto E2: Y^2=prod(a_i+b_i X)"
+     },
+     "pencil_discriminant": "144",
+     "schema": "pp-singular-richelot/1",
+     "scope": "binary-form input over Q with squarefree sextic and Richelot determinant zero; quotients are over Q or the quadratic field of the pencil squares",
+     "sextic_form": [
+      "6",
+      "-36",
+      "85",
+      "-100",
+      "58",
+      "-12",
+      "0"
+     ],
+     "squares": [
+      {
+       "kappa": "3",
+       "linear_form": [
+        "0",
+        "1"
+       ],
+       "member": [
+        "0",
+        "0",
+        "3"
+       ]
+      },
+      {
+       "kappa": "3",
+       "linear_form": [
+        "-1",
+        "1"
+       ],
+       "member": [
+        "3",
+        "-6",
+        "3"
+       ]
+      }
+     ],
+     "wronskian": "-1"
+    }
+   },
+   "weil_restriction_sqrt2_with_infinity_root": {
+    "kinds": [
+     "inert",
+     "split"
+    ],
+    "lpoly_rows": [
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       9
+      ],
+      "equal": true,
+      "jacobian_order": 8,
+      "kind": "inert",
+      "p": 3,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       9
+      ],
+      "product_order": 8
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       2,
+       0,
+       25
+      ],
+      "equal": true,
+      "jacobian_order": 28,
+      "kind": "inert",
+      "p": 5,
+      "product_lpoly": [
+       1,
+       0,
+       2,
+       0,
+       25
+      ],
+      "product_order": 28
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       14,
+       28,
+       49
+      ],
+      "equal": true,
+      "jacobian_order": 96,
+      "kind": "split",
+      "p": 7,
+      "product_lpoly": [
+       1,
+       4,
+       14,
+       28,
+       49
+      ],
+      "product_order": 96
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       14,
+       0,
+       121
+      ],
+      "equal": true,
+      "jacobian_order": 136,
+      "kind": "inert",
+      "p": 11,
+      "product_lpoly": [
+       1,
+       0,
+       14,
+       0,
+       121
+      ],
+      "product_order": 136
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -14,
+       0,
+       169
+      ],
+      "equal": true,
+      "jacobian_order": 156,
+      "kind": "inert",
+      "p": 13,
+      "product_lpoly": [
+       1,
+       0,
+       -14,
+       0,
+       169
+      ],
+      "product_order": 156
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       22,
+       68,
+       289
+      ],
+      "equal": true,
+      "jacobian_order": 384,
+      "kind": "split",
+      "p": 17,
+      "product_lpoly": [
+       1,
+       4,
+       22,
+       68,
+       289
+      ],
+      "product_order": 384
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       361
+      ],
+      "equal": true,
+      "jacobian_order": 360,
+      "kind": "inert",
+      "p": 19,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       361
+      ],
+      "product_order": 360
+     },
+     {
+      "curve_lpoly": [
+       1,
+       12,
+       78,
+       276,
+       529
+      ],
+      "equal": true,
+      "jacobian_order": 896,
+      "kind": "split",
+      "p": 23,
+      "product_lpoly": [
+       1,
+       12,
+       78,
+       276,
+       529
+      ],
+      "product_order": 896
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       18,
+       0,
+       841
+      ],
+      "equal": true,
+      "jacobian_order": 860,
+      "kind": "inert",
+      "p": 29,
+      "product_lpoly": [
+       1,
+       0,
+       18,
+       0,
+       841
+      ],
+      "product_order": 860
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       961
+      ],
+      "equal": true,
+      "jacobian_order": 960,
+      "kind": "split",
+      "p": 31,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       961
+      ],
+      "product_order": 960
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       2,
+       0,
+       1369
+      ],
+      "equal": true,
+      "jacobian_order": 1372,
+      "kind": "inert",
+      "p": 37,
+      "product_lpoly": [
+       1,
+       0,
+       2,
+       0,
+       1369
+      ],
+      "product_order": 1372
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       22,
+       164,
+       1681
+      ],
+      "equal": true,
+      "jacobian_order": 1872,
+      "kind": "split",
+      "p": 41,
+      "product_lpoly": [
+       1,
+       4,
+       22,
+       164,
+       1681
+      ],
+      "product_order": 1872
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -18,
+       0,
+       1849
+      ],
+      "equal": true,
+      "jacobian_order": 1832,
+      "kind": "inert",
+      "p": 43,
+      "product_lpoly": [
+       1,
+       0,
+       -18,
+       0,
+       1849
+      ],
+      "product_order": 1832
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -8,
+       94,
+       -376,
+       2209
+      ],
+      "equal": true,
+      "jacobian_order": 1920,
+      "kind": "split",
+      "p": 47,
+      "product_lpoly": [
+       1,
+       -8,
+       94,
+       -376,
+       2209
+      ],
+      "product_order": 1920
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       2,
+       0,
+       2809
+      ],
+      "equal": true,
+      "jacobian_order": 2812,
+      "kind": "inert",
+      "p": 53,
+      "product_lpoly": [
+       1,
+       0,
+       2,
+       0,
+       2809
+      ],
+      "product_order": 2812
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -18,
+       0,
+       3481
+      ],
+      "equal": true,
+      "jacobian_order": 3464,
+      "kind": "inert",
+      "p": 59,
+      "product_lpoly": [
+       1,
+       0,
+       -18,
+       0,
+       3481
+      ],
+      "product_order": 3464
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       82,
+       0,
+       3721
+      ],
+      "equal": true,
+      "jacobian_order": 3804,
+      "kind": "inert",
+      "p": 61,
+      "product_lpoly": [
+       1,
+       0,
+       82,
+       0,
+       3721
+      ],
+      "product_order": 3804
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -98,
+       0,
+       4489
+      ],
+      "equal": true,
+      "jacobian_order": 4392,
+      "kind": "inert",
+      "p": 67,
+      "product_lpoly": [
+       1,
+       0,
+       -98,
+       0,
+       4489
+      ],
+      "product_order": 4392
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       46,
+       284,
+       5041
+      ],
+      "equal": true,
+      "jacobian_order": 5376,
+      "kind": "split",
+      "p": 71,
+      "product_lpoly": [
+       1,
+       4,
+       46,
+       284,
+       5041
+      ],
+      "product_order": 5376
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       86,
+       -292,
+       5329
+      ],
+      "equal": true,
+      "jacobian_order": 5120,
+      "kind": "split",
+      "p": 73,
+      "product_lpoly": [
+       1,
+       -4,
+       86,
+       -292,
+       5329
+      ],
+      "product_order": 5120
+     },
+     {
+      "curve_lpoly": [
+       1,
+       24,
+       286,
+       1896,
+       6241
+      ],
+      "equal": true,
+      "jacobian_order": 8448,
+      "kind": "split",
+      "p": 79,
+      "product_lpoly": [
+       1,
+       24,
+       286,
+       1896,
+       6241
+      ],
+      "product_order": 8448
+     }
+    ],
+    "primes_checked": 21,
+    "splitting": {
+     "E1_cubic": [
+      [
+       "-1/16",
+       "1/32"
+      ],
+      [
+       "1/16",
+       "1/32"
+      ],
+      [
+       "1/16",
+       "-1/32"
+      ],
+      [
+       "-1/16",
+       "-1/32"
+      ]
+     ],
+     "E2_cubic": [
+      [
+       "-1/16",
+       "-1/32"
+      ],
+      [
+       "1/16",
+       "-1/32"
+      ],
+      [
+       "1/16",
+       "1/32"
+      ],
+      [
+       "-1/16",
+       "1/32"
+      ]
+     ],
+     "E2_is_conjugate_of_E1": true,
+     "a": [
+      [
+       "1/2",
+       "0"
+      ],
+      [
+       "0",
+       "-1/8"
+      ],
+      [
+       "1/2",
+       "1/2"
+      ]
+     ],
+     "b": [
+      [
+       "1/2",
+       "0"
+      ],
+      [
+       "0",
+       "1/8"
+      ],
+      [
+       "1/2",
+       "-1/2"
+      ]
+     ],
+     "determinant": "0",
+     "differential_pullbacks": [
+      [
+       [
+        "-8",
+        "0"
+       ],
+       [
+        "0",
+        "4"
+       ]
+      ],
+      [
+       [
+        "-8",
+        "0"
+       ],
+       [
+        "0",
+        "-4"
+       ]
+      ]
+     ],
+     "factors": [
+      [
+       "2",
+       "0",
+       "1"
+      ],
+      [
+       "0",
+       "1",
+       "0"
+      ],
+      [
+       "2",
+       "-4",
+       "1"
+      ]
+     ],
+     "field_D": 2,
+     "gluing": {
+      "psi": "E1[2] -> E2[2], (-b_i/a_i,0) -> (-a_i/b_i,0); kernel of E1 x E2 -> J(C) is its graph",
+      "richelot_kernel": "classes of [roots of G_i] - [roots of G_j] in J(C)[2]",
+      "two_torsion": [
+       {
+        "E1_x": [
+         "-1",
+         "0"
+        ],
+        "E2_x": [
+         "-1",
+         "0"
+        ],
+        "factor": 1
+       },
+       {
+        "E1_x": [
+         "1",
+         "0"
+        ],
+        "E2_x": [
+         "1",
+         "0"
+        ],
+        "factor": 2
+       },
+       {
+        "E1_x": [
+         "3",
+         "-2"
+        ],
+        "E2_x": [
+         "3",
+         "2"
+        ],
+        "factor": 3
+       }
+      ]
+     },
+     "identities_checked": [
+      "pencil decomposition G_i=a_i l1^2+b_i l2^2",
+      "l2^6 E1(l1^2/l2^2)=F=l1^6 E2(l2^2/l1^2)",
+      "phi1^*(dX/Y)=2W l1 dx/y, phi2^*(dX/Y)=-2W l2 dx/y, independent"
+     ],
+     "maps": {
+      "involution": "l1/l2 -> -l1/l2 (fixes both quotient maps)",
+      "phi1": "X=l1^2/l2^2, Y=y/l2^3 onto E1: Y^2=prod(a_i X+b_i)",
+      "phi2": "X=l2^2/l1^2, Y=y/l1^3 onto E2: Y^2=prod(a_i+b_i X)"
+     },
+     "pencil_discriminant": "32",
+     "schema": "pp-singular-richelot/1",
+     "scope": "binary-form input over Q with squarefree sextic and Richelot determinant zero; quotients are over Q or the quadratic field of the pencil squares",
+     "sextic_form": [
+      "0",
+      "4",
+      "-8",
+      "4",
+      "-4",
+      "1",
+      "0"
+     ],
+     "squares": [
+      {
+       "kappa": [
+        "0",
+        "-1/4"
+       ],
+       "linear_form": [
+        [
+         "0",
+         "-1"
+        ],
+        [
+         "1",
+         "0"
+        ]
+       ],
+       "member": [
+        [
+         "0",
+         "-1/2"
+        ],
+        [
+         "1",
+         "0"
+        ],
+        [
+         "0",
+         "-1/4"
+        ]
+       ]
+      },
+      {
+       "kappa": [
+        "0",
+        "1/4"
+       ],
+       "linear_form": [
+        [
+         "0",
+         "1"
+        ],
+        [
+         "1",
+         "0"
+        ]
+       ],
+       "member": [
+        [
+         "0",
+         "1/2"
+        ],
+        [
+         "1",
+         "0"
+        ],
+        [
+         "0",
+         "1/4"
+        ]
+       ]
+      }
+     ],
+     "wronskian": [
+      "0",
+      "2"
+     ]
+    }
+   },
+   "weil_restriction_sqrt_minus1": {
+    "kinds": [
+     "inert",
+     "split"
+    ],
+    "lpoly_rows": [
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       9
+      ],
+      "equal": true,
+      "jacobian_order": 8,
+      "kind": "inert",
+      "p": 3,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       9
+      ],
+      "product_order": 8
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       49
+      ],
+      "equal": true,
+      "jacobian_order": 48,
+      "kind": "inert",
+      "p": 7,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       49
+      ],
+      "product_order": 48
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -10,
+       0,
+       121
+      ],
+      "equal": true,
+      "jacobian_order": 112,
+      "kind": "inert",
+      "p": 11,
+      "product_lpoly": [
+       1,
+       0,
+       -10,
+       0,
+       121
+      ],
+      "product_order": 112
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       30,
+       52,
+       169
+      ],
+      "equal": true,
+      "jacobian_order": 256,
+      "kind": "split",
+      "p": 13,
+      "product_lpoly": [
+       1,
+       4,
+       30,
+       52,
+       169
+      ],
+      "product_order": 256
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       22,
+       68,
+       289
+      ],
+      "equal": true,
+      "jacobian_order": 384,
+      "kind": "split",
+      "p": 17,
+      "product_lpoly": [
+       1,
+       4,
+       22,
+       68,
+       289
+      ],
+      "product_order": 384
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -10,
+       0,
+       361
+      ],
+      "equal": true,
+      "jacobian_order": 352,
+      "kind": "inert",
+      "p": 19,
+      "product_lpoly": [
+       1,
+       0,
+       -10,
+       0,
+       361
+      ],
+      "product_order": 352
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -34,
+       0,
+       529
+      ],
+      "equal": true,
+      "jacobian_order": 496,
+      "kind": "inert",
+      "p": 23,
+      "product_lpoly": [
+       1,
+       0,
+       -34,
+       0,
+       529
+      ],
+      "product_order": 496
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       62,
+       116,
+       841
+      ],
+      "equal": true,
+      "jacobian_order": 1024,
+      "kind": "split",
+      "p": 29,
+      "product_lpoly": [
+       1,
+       4,
+       62,
+       116,
+       841
+      ],
+      "product_order": 1024
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       961
+      ],
+      "equal": true,
+      "jacobian_order": 960,
+      "kind": "inert",
+      "p": 31,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       961
+      ],
+      "product_order": 960
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       62,
+       -148,
+       1369
+      ],
+      "equal": true,
+      "jacobian_order": 1280,
+      "kind": "split",
+      "p": 37,
+      "product_lpoly": [
+       1,
+       -4,
+       62,
+       -148,
+       1369
+      ],
+      "product_order": 1280
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -4,
+       22,
+       -164,
+       1681
+      ],
+      "equal": true,
+      "jacobian_order": 1536,
+      "kind": "split",
+      "p": 41,
+      "product_lpoly": [
+       1,
+       -4,
+       22,
+       -164,
+       1681
+      ],
+      "product_order": 1536
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       62,
+       0,
+       1849
+      ],
+      "equal": true,
+      "jacobian_order": 1912,
+      "kind": "inert",
+      "p": 43,
+      "product_lpoly": [
+       1,
+       0,
+       62,
+       0,
+       1849
+      ],
+      "product_order": 1912
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       2209
+      ],
+      "equal": true,
+      "jacobian_order": 2208,
+      "kind": "inert",
+      "p": 47,
+      "product_lpoly": [
+       1,
+       0,
+       -2,
+       0,
+       2209
+      ],
+      "product_order": 2208
+     },
+     {
+      "curve_lpoly": [
+       1,
+       4,
+       46,
+       212,
+       2809
+      ],
+      "equal": true,
+      "jacobian_order": 3072,
+      "kind": "split",
+      "p": 53,
+      "product_lpoly": [
+       1,
+       4,
+       46,
+       212,
+       2809
+      ],
+      "product_order": 3072
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       38,
+       0,
+       3481
+      ],
+      "equal": true,
+      "jacobian_order": 3520,
+      "kind": "inert",
+      "p": 59,
+      "product_lpoly": [
+       1,
+       0,
+       38,
+       0,
+       3481
+      ],
+      "product_order": 3520
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -20,
+       206,
+       -1220,
+       3721
+      ],
+      "equal": true,
+      "jacobian_order": 2688,
+      "kind": "split",
+      "p": 61,
+      "product_lpoly": [
+       1,
+       -20,
+       206,
+       -1220,
+       3721
+      ],
+      "product_order": 2688
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -18,
+       0,
+       4489
+      ],
+      "equal": true,
+      "jacobian_order": 4472,
+      "kind": "inert",
+      "p": 67,
+      "product_lpoly": [
+       1,
+       0,
+       -18,
+       0,
+       4489
+      ],
+      "product_order": 4472
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       46,
+       0,
+       5041
+      ],
+      "equal": true,
+      "jacobian_order": 5088,
+      "kind": "inert",
+      "p": 71,
+      "product_lpoly": [
+       1,
+       0,
+       46,
+       0,
+       5041
+      ],
+      "product_order": 5088
+     },
+     {
+      "curve_lpoly": [
+       1,
+       -12,
+       166,
+       -876,
+       5329
+      ],
+      "equal": true,
+      "jacobian_order": 4608,
+      "kind": "split",
+      "p": 73,
+      "product_lpoly": [
+       1,
+       -12,
+       166,
+       -876,
+       5329
+      ],
+      "product_order": 4608
+     },
+     {
+      "curve_lpoly": [
+       1,
+       0,
+       -34,
+       0,
+       6241
+      ],
+      "equal": true,
+      "jacobian_order": 6208,
+      "kind": "inert",
+      "p": 79,
+      "product_lpoly": [
+       1,
+       0,
+       -34,
+       0,
+       6241
+      ],
+      "product_order": 6208
+     }
+    ],
+    "primes_checked": 20,
+    "splitting": {
+     "E1_cubic": [
+      [
+       "-1/8",
+       "-1/16"
+      ],
+      [
+       "1/8",
+       "-1/16"
+      ],
+      [
+       "1/8",
+       "1/16"
+      ],
+      [
+       "-1/8",
+       "1/16"
+      ]
+     ],
+     "E2_cubic": [
+      [
+       "-1/8",
+       "1/16"
+      ],
+      [
+       "1/8",
+       "1/16"
+      ],
+      [
+       "1/8",
+       "-1/16"
+      ],
+      [
+       "-1/8",
+       "-1/16"
+      ]
+     ],
+     "E2_is_conjugate_of_E1": true,
+     "a": [
+      [
+       "1/2",
+       "0"
+      ],
+      [
+       "0",
+       "1/4"
+      ],
+      [
+       "1/2",
+       "1"
+      ]
+     ],
+     "b": [
+      [
+       "1/2",
+       "0"
+      ],
+      [
+       "0",
+       "-1/4"
+      ],
+      [
+       "1/2",
+       "-1"
+      ]
+     ],
+     "determinant": "0",
+     "differential_pullbacks": [
+      [
+       [
+        "4",
+        "0"
+       ],
+       [
+        "0",
+        "4"
+       ]
+      ],
+      [
+       [
+        "4",
+        "0"
+       ],
+       [
+        "0",
+        "-4"
+       ]
+      ]
+     ],
+     "factors": [
+      [
+       "-1",
+       "0",
+       "1"
+      ],
+      [
+       "0",
+       "1",
+       "0"
+      ],
+      [
+       "-1",
+       "4",
+       "1"
+      ]
+     ],
+     "field_D": -1,
+     "gluing": {
+      "psi": "E1[2] -> E2[2], (-b_i/a_i,0) -> (-a_i/b_i,0); kernel of E1 x E2 -> J(C) is its graph",
+      "richelot_kernel": "classes of [roots of G_i] - [roots of G_j] in J(C)[2]",
+      "two_torsion": [
+       {
+        "E1_x": [
+         "-1",
+         "0"
+        ],
+        "E2_x": [
+         "-1",
+         "0"
+        ],
+        "factor": 1
+       },
+       {
+        "E1_x": [
+         "1",
+         "0"
+        ],
+        "E2_x": [
+         "1",
+         "0"
+        ],
+        "factor": 2
+       },
+       {
+        "E1_x": [
+         "3/5",
+         "4/5"
+        ],
+        "E2_x": [
+         "3/5",
+         "-4/5"
+        ],
+        "factor": 3
+       }
+      ]
+     },
+     "identities_checked": [
+      "pencil decomposition G_i=a_i l1^2+b_i l2^2",
+      "l2^6 E1(l1^2/l2^2)=F=l1^6 E2(l2^2/l1^2)",
+      "phi1^*(dX/Y)=2W l1 dx/y, phi2^*(dX/Y)=-2W l2 dx/y, independent"
+     ],
+     "maps": {
+      "involution": "l1/l2 -> -l1/l2 (fixes both quotient maps)",
+      "phi1": "X=l1^2/l2^2, Y=y/l2^3 onto E1: Y^2=prod(a_i X+b_i)",
+      "phi2": "X=l2^2/l1^2, Y=y/l1^3 onto E2: Y^2=prod(a_i+b_i X)"
+     },
+     "pencil_discriminant": "-16",
+     "schema": "pp-singular-richelot/1",
+     "scope": "binary-form input over Q with squarefree sextic and Richelot determinant zero; quotients are over Q or the quadratic field of the pencil squares",
+     "sextic_form": [
+      "0",
+      "1",
+      "-4",
+      "-2",
+      "4",
+      "1",
+      "0"
+     ],
+     "squares": [
+      {
+       "kappa": [
+        "0",
+        "1/2"
+       ],
+       "linear_form": [
+        [
+         "0",
+         "-1"
+        ],
+        [
+         "1",
+         "0"
+        ]
+       ],
+       "member": [
+        [
+         "0",
+         "-1/2"
+        ],
+        [
+         "1",
+         "0"
+        ],
+        [
+         "0",
+         "1/2"
+        ]
+       ]
+      },
+      {
+       "kappa": [
+        "0",
+        "-1/2"
+       ],
+       "linear_form": [
+        [
+         "0",
+         "1"
+        ],
+        [
+         "1",
+         "0"
+        ]
+       ],
+       "member": [
+        [
+         "0",
+         "1/2"
+        ],
+        [
+         "1",
+         "0"
+        ],
+        [
+         "0",
+         "-1/2"
+        ]
+       ]
+      }
+     ],
+     "wronskian": [
+      "0",
+      "2"
+     ]
+    }
+   }
+  },
+  "exhaustive_box": {
+   "all_split_and_matched": true,
+   "by_field_D": {
+    "-1": 1824,
+    "-2": 640,
+    "-3": 256,
+    "-5": 64,
+    "-7": 32,
+    "1": 4608,
+    "10": 128,
+    "11": 64,
+    "13": 32,
+    "14": 32,
+    "17": 32,
+    "2": 2096,
+    "22": 32,
+    "3": 576,
+    "5": 480,
+    "6": 512,
+    "7": 192
+   },
+   "coefficients": "{-2..2}, unordered triples of distinct forms",
+   "lpoly_prime_checks": 41376,
+   "singular_squarefree_triples": 11600
+  },
+  "negative_control": {
+   "description": "E1 x (quadratic twist of E2 by 2) for the even sextic",
+   "rows": [
+    {
+     "equal": true,
+     "p": 7
+    },
+    {
+     "equal": true,
+     "p": 11
+    },
+    {
+     "equal": false,
+     "p": 13
+    },
+    {
+     "equal": true,
+     "p": 17
+    },
+    {
+     "equal": false,
+     "p": 19
+    },
+    {
+     "equal": true,
+     "p": 23
+    },
+    {
+     "equal": false,
+     "p": 29
+    },
+    {
+     "equal": true,
+     "p": 31
+    },
+    {
+     "equal": false,
+     "p": 37
+    },
+    {
+     "equal": true,
+     "p": 41
+    }
+   ]
+  },
+  "smooth_richelot_replay": {
+   "classical": {
+    "delta": "-2",
+    "rows": [
+     {
+      "equal": true,
+      "p": 5,
+      "source_lpoly": [
+       1,
+       2,
+       6,
+       10,
+       25
+      ],
+      "target_lpoly": [
+       1,
+       2,
+       6,
+       10,
+       25
+      ]
+     },
+     {
+      "equal": true,
+      "p": 13,
+      "source_lpoly": [
+       1,
+       2,
+       22,
+       26,
+       169
+      ],
+      "target_lpoly": [
+       1,
+       2,
+       22,
+       26,
+       169
+      ]
+     },
+     {
+      "equal": true,
+      "p": 17,
+      "source_lpoly": [
+       1,
+       0,
+       22,
+       0,
+       289
+      ],
+      "target_lpoly": [
+       1,
+       0,
+       22,
+       0,
+       289
+      ]
+     },
+     {
+      "equal": true,
+      "p": 23,
+      "source_lpoly": [
+       1,
+       4,
+       50,
+       92,
+       529
+      ],
+      "target_lpoly": [
+       1,
+       4,
+       50,
+       92,
+       529
+      ]
+     },
+     {
+      "equal": true,
+      "p": 29,
+      "source_lpoly": [
+       1,
+       0,
+       -22,
+       0,
+       841
+      ],
+      "target_lpoly": [
+       1,
+       0,
+       -22,
+       0,
+       841
+      ]
+     },
+     {
+      "equal": true,
+      "p": 31,
+      "source_lpoly": [
+       1,
+       10,
+       66,
+       310,
+       961
+      ],
+      "target_lpoly": [
+       1,
+       10,
+       66,
+       310,
+       961
+      ]
+     },
+     {
+      "equal": true,
+      "p": 37,
+      "source_lpoly": [
+       1,
+       0,
+       54,
+       0,
+       1369
+      ],
+      "target_lpoly": [
+       1,
+       0,
+       54,
+       0,
+       1369
+      ]
+     },
+     {
+      "equal": true,
+      "p": 41,
+      "source_lpoly": [
+       1,
+       8,
+       74,
+       328,
+       1681
+      ],
+      "target_lpoly": [
+       1,
+       8,
+       74,
+       328,
+       1681
+      ]
+     },
+     {
+      "equal": true,
+      "p": 43,
+      "source_lpoly": [
+       1,
+       0,
+       6,
+       0,
+       1849
+      ],
+      "target_lpoly": [
+       1,
+       0,
+       6,
+       0,
+       1849
+      ]
+     },
+     {
+      "equal": true,
+      "p": 47,
+      "source_lpoly": [
+       1,
+       -6,
+       38,
+       -282,
+       2209
+      ],
+      "target_lpoly": [
+       1,
+       -6,
+       38,
+       -282,
+       2209
+      ]
+     },
+     {
+      "equal": true,
+      "p": 53,
+      "source_lpoly": [
+       1,
+       4,
+       22,
+       212,
+       2809
+      ],
+      "target_lpoly": [
+       1,
+       4,
+       22,
+       212,
+       2809
+      ]
+     },
+     {
+      "equal": true,
+      "p": 59,
+      "source_lpoly": [
+       1,
+       6,
+       46,
+       354,
+       3481
+      ],
+      "target_lpoly": [
+       1,
+       6,
+       46,
+       354,
+       3481
+      ]
+     },
+     {
+      "equal": true,
+      "p": 61,
+      "source_lpoly": [
+       1,
+       2,
+       42,
+       122,
+       3721
+      ],
+      "target_lpoly": [
+       1,
+       2,
+       42,
+       122,
+       3721
+      ]
+     },
+     {
+      "equal": true,
+      "p": 67,
+      "source_lpoly": [
+       1,
+       8,
+       126,
+       536,
+       4489
+      ],
+      "target_lpoly": [
+       1,
+       8,
+       126,
+       536,
+       4489
+      ]
+     },
+     {
+      "equal": true,
+      "p": 71,
+      "source_lpoly": [
+       1,
+       -4,
+       106,
+       -284,
+       5041
+      ],
+      "target_lpoly": [
+       1,
+       -4,
+       106,
+       -284,
+       5041
+      ]
+     },
+     {
+      "equal": true,
+      "p": 73,
+      "source_lpoly": [
+       1,
+       -4,
+       6,
+       -292,
+       5329
+      ],
+      "target_lpoly": [
+       1,
+       -4,
+       6,
+       -292,
+       5329
+      ]
+     },
+     {
+      "equal": true,
+      "p": 79,
+      "source_lpoly": [
+       1,
+       8,
+       50,
+       632,
+       6241
+      ],
+      "target_lpoly": [
+       1,
+       8,
+       50,
+       632,
+       6241
+      ]
+     }
+    ],
+    "target": [
+     "10",
+     "86",
+     "249",
+     "280",
+     "112",
+     "18",
+     "1"
+    ],
+    "target_squarefree": true
+   },
+   "infinity_root": {
+    "delta": "3",
+    "rows": [
+     {
+      "equal": true,
+      "p": 7,
+      "source_lpoly": [
+       1,
+       0,
+       -10,
+       0,
+       49
+      ],
+      "target_lpoly": [
+       1,
+       0,
+       -10,
+       0,
+       49
+      ]
+     },
+     {
+      "equal": true,
+      "p": 13,
+      "source_lpoly": [
+       1,
+       -8,
+       34,
+       -104,
+       169
+      ],
+      "target_lpoly": [
+       1,
+       -8,
+       34,
+       -104,
+       169
+      ]
+     },
+     {
+      "equal": true,
+      "p": 17,
+      "source_lpoly": [
+       1,
+       4,
+       38,
+       68,
+       289
+      ],
+      "target_lpoly": [
+       1,
+       4,
+       38,
+       68,
+       289
+      ]
+     },
+     {
+      "equal": true,
+      "p": 23,
+      "source_lpoly": [
+       1,
+       -2,
+       -18,
+       -46,
+       529
+      ],
+      "target_lpoly": [
+       1,
+       -2,
+       -18,
+       -46,
+       529
+      ]
+     },
+     {
+      "equal": true,
+      "p": 29,
+      "source_lpoly": [
+       1,
+       -14,
+       102,
+       -406,
+       841
+      ],
+      "target_lpoly": [
+       1,
+       -14,
+       102,
+       -406,
+       841
+      ]
+     },
+     {
+      "equal": true,
+      "p": 31,
+      "source_lpoly": [
+       1,
+       -4,
+       -2,
+       -124,
+       961
+      ],
+      "target_lpoly": [
+       1,
+       -4,
+       -2,
+       -124,
+       961
+      ]
+     },
+     {
+      "equal": true,
+      "p": 37,
+      "source_lpoly": [
+       1,
+       4,
+       42,
+       148,
+       1369
+      ],
+      "target_lpoly": [
+       1,
+       4,
+       42,
+       148,
+       1369
+      ]
+     },
+     {
+      "equal": true,
+      "p": 41,
+      "source_lpoly": [
+       1,
+       2,
+       -30,
+       82,
+       1681
+      ],
+      "target_lpoly": [
+       1,
+       2,
+       -30,
+       82,
+       1681
+      ]
+     },
+     {
+      "equal": true,
+      "p": 43,
+      "source_lpoly": [
+       1,
+       -4,
+       -26,
+       -172,
+       1849
+      ],
+      "target_lpoly": [
+       1,
+       -4,
+       -26,
+       -172,
+       1849
+      ]
+     },
+     {
+      "equal": true,
+      "p": 47,
+      "source_lpoly": [
+       1,
+       -6,
+       54,
+       -282,
+       2209
+      ],
+      "target_lpoly": [
+       1,
+       -6,
+       54,
+       -282,
+       2209
+      ]
+     },
+     {
+      "equal": true,
+      "p": 53,
+      "source_lpoly": [
+       1,
+       0,
+       58,
+       0,
+       2809
+      ],
+      "target_lpoly": [
+       1,
+       0,
+       58,
+       0,
+       2809
+      ]
+     },
+     {
+      "equal": true,
+      "p": 59,
+      "source_lpoly": [
+       1,
+       -14,
+       118,
+       -826,
+       3481
+      ],
+      "target_lpoly": [
+       1,
+       -14,
+       118,
+       -826,
+       3481
+      ]
+     },
+     {
+      "equal": true,
+      "p": 61,
+      "source_lpoly": [
+       1,
+       4,
+       -58,
+       244,
+       3721
+      ],
+      "target_lpoly": [
+       1,
+       4,
+       -58,
+       244,
+       3721
+      ]
+     },
+     {
+      "equal": true,
+      "p": 67,
+      "source_lpoly": [
+       1,
+       0,
+       -98,
+       0,
+       4489
+      ],
+      "target_lpoly": [
+       1,
+       0,
+       -98,
+       0,
+       4489
+      ]
+     },
+     {
+      "equal": true,
+      "p": 71,
+      "source_lpoly": [
+       1,
+       4,
+       46,
+       284,
+       5041
+      ],
+      "target_lpoly": [
+       1,
+       4,
+       46,
+       284,
+       5041
+      ]
+     },
+     {
+      "equal": true,
+      "p": 73,
+      "source_lpoly": [
+       1,
+       -4,
+       70,
+       -292,
+       5329
+      ],
+      "target_lpoly": [
+       1,
+       -4,
+       70,
+       -292,
+       5329
+      ]
+     },
+     {
+      "equal": true,
+      "p": 79,
+      "source_lpoly": [
+       1,
+       -4,
+       30,
+       -316,
+       6241
+      ],
+      "target_lpoly": [
+       1,
+       -4,
+       30,
+       -316,
+       6241
+      ]
+     }
+    ],
+    "target": [
+     "-20/3",
+     "6",
+     "27",
+     "-2/3",
+     "-12",
+     "-4",
+     "-1/3"
+    ],
+    "target_squarefree": true
+   }
+  }
+ },
+ "schema": "pp-singular-richelot-and-clusters/1",
+ "scope": "exact identities and L-polynomial replays; braid words are read numerically on exactly bounded loops"
+}
