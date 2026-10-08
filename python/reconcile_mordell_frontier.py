@@ -20,7 +20,7 @@ def reconcile(root=ROOT):
     additional=sorted((set(conditional)&set(known))-set(closed))
     remaining=[]
     rank_results=root/'receipts/mordell_two_descent'
-    rank_determined=0;rank_corrections=[]
+    rank_determined=0;rank_corrections=[];backend_determined=0;backend_corrections=[]
     for k in sorted(set(conditional)-set(closed)-set(additional)):
         r=conditional[k]
         remaining.append({'k':k,'x_coordinates':r['x_coordinates'],'rank':r['rank'],
@@ -37,6 +37,16 @@ def reconcile(root=ROOT):
             remaining[-1].update(rank_lower_bound=lower,rank_upper_bound=upper,
                 census_rank=r['rank'],rank_evidence=str(rank_file.relative_to(root)),
                 lean_rank_proved=False)
+            assert evidence['field']['bnfcertify']==1 and evidence['field']['nfcertify']==[]
+            backend_lower=evidence['backend_reported_lower']
+            assert type(backend_lower) is int and 0<=backend_lower<=upper
+            backend_equal=backend_lower==upper
+            remaining[-1].update(backend_rank_lower_bound=backend_lower,
+                backend_rank_determined=backend_equal,witness_rank_determined=lower==upper,
+                rank_bound_source='PARI ellrank lower and upper endpoints; bnfcertify retained')
+            if backend_equal:
+                remaining[-1].update(rank=upper,rank_proved=True);backend_determined+=1
+                if upper!=r['rank']:backend_corrections.append(dict(k=k,census_rank=r['rank'],proved_rank=upper))
             if lower==upper:
                 remaining[-1].update(rank=lower,rank_proved=True);rank_determined+=1
                 if lower!=r['rank']:rank_corrections.append(dict(k=k,census_rank=r['rank'],proved_rank=lower))
@@ -46,8 +56,11 @@ def reconcile(root=ROOT):
       'additional_unconditional_list_closures':[{'k':k,'lean':known[k]} for k in additional],
       'remaining_count':len(remaining),'empty_computed_lists':sum(not r['x_coordinates'] for r in remaining),
       'nonempty_computed_lists':sum(bool(r['x_coordinates']) for r in remaining),
-      'ranks_determined_by_two_descent':rank_determined,'census_rank_corrections':rank_corrections,
-      'scope':'reconciled census, curve theorems and external PARI two-descent rank records; integral-list completeness remains separate',
+      'ranks_determined_by_two_descent':rank_determined,
+      'ranks_determined_by_backend_bounds':backend_determined,
+      'ranks_with_matching_point_witnesses':rank_determined,
+      'backend_census_rank_corrections':backend_corrections,'census_rank_corrections':rank_corrections,
+      'scope':'reconciled census and external PARI two-descent rank intervals, with point-witness ranks tracked separately; integral-list completeness remains separate',
       'remaining':remaining}
 
 if __name__=='__main__':

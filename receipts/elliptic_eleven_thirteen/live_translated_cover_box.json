@@ -1,0 +1,102 @@
+{
+  "schema": "pp-mordell-cover-box/1",
+  "k": -2,
+  "chart": {
+    "schema": "pp-mordell-cover-chart/1",
+    "k": -2,
+    "source_cover": {
+      "quartic": [
+        "-2",
+        "0",
+        "0",
+        "1"
+      ],
+      "x_numerator": [
+        "0",
+        "-2",
+        "0",
+        "0",
+        "1"
+      ],
+      "y_numerator": [
+        "4",
+        "0",
+        "0",
+        "-4",
+        "0",
+        "0",
+        "1"
+      ]
+    },
+    "matrix": [
+      [
+        1,
+        3
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "ordinate_scale": 1,
+    "cover": {
+      "quartic": [
+        "25",
+        "27",
+        "9",
+        "1"
+      ],
+      "x_numerator": [
+        "75",
+        "106",
+        "54",
+        "12",
+        "1"
+      ],
+      "y_numerator": [
+        "625",
+        "1350",
+        "1179",
+        "536",
+        "135",
+        "18",
+        "1"
+      ]
+    },
+    "determinant": 1,
+    "source_height_factor": 4,
+    "inverse_height_factor": 4,
+    "execution_verified": false
+  },
+  "numerator_bound": 2,
+  "denominator_min": 1,
+  "denominator_max": 1,
+  "timeout": 5,
+  "lifts": [
+    {
+      "chart_point": [
+        "0",
+        "5"
+      ],
+      "source_affine_point": [
+        "3",
+        "5"
+      ],
+      "source_pole": false,
+      "source_coordinates": [
+        3,
+        1,
+        5
+      ],
+      "mordell_point": [
+        "3",
+        "5"
+      ],
+      "target_integral": true
+    }
+  ],
+  "global_empty_proof": false,
+  "integral_point_completeness": false,
+  "execution_verified": false,
+  "status": "point_returned"
+}

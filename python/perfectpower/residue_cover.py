@@ -11,9 +11,10 @@ from .core import integer_power_root
 from .divisor_square import WorkLimit
 
 
-def integer_polynomial(coefficients):
+def integer_polynomial(coefficients,*,degree_limit=64):
     f=tuple(coefficients)
-    if not f or len(f)>65 or any(type(c) is not int for c in f):raise ValueError('integer polynomial of degree at most 64 required')
+    if type(degree_limit) is not int or not 1<=degree_limit<=256:raise ValueError('degree limit 1 through 256 required')
+    if not f or len(f)>degree_limit+1 or any(type(c) is not int for c in f):raise ValueError('integer polynomial exceeds degree limit')
     while len(f)>1 and f[-1]==0:f=f[:-1]
     if any(abs(c).bit_length()>16384 for c in f):raise WorkLimit('coefficient bit budget exceeded')
     return f

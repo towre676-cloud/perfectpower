@@ -80,7 +80,7 @@ class SaturationTests(unittest.TestCase):
 
     def test_controls_and_shared_budgets(self):
         for args in [dict(primes=[]),dict(primes=[3,2]),dict(primes=[2,2]),dict(primes=[True]),
-                     dict(primes=[11]),dict(max_steps=True),dict(max_steps=17),
+                     dict(primes=[17]),dict(max_steps=True),dict(max_steps=17),
                      dict(coefficient_bound=-1),dict(membership_limit=0)]:
             with self.assertRaises(ValueError):self.E.bounded_saturation([self.P],**args)
         with self.assertRaises(WorkLimit):self.E.bounded_saturation([self.P],node_limit=1)

@@ -1,0 +1,68 @@
+{
+  "schema": "pp-elliptic-eleven-thirteen-release/1",
+  "worked_packets": [
+    {
+      "file": "division_11.json.gz",
+      "schema": "pp-rational-prime-division/1"
+    },
+    {
+      "file": "kernel_11.json",
+      "schema": "pp-rational-prime-division/1"
+    },
+    {
+      "file": "empty_11.json",
+      "schema": "pp-rational-prime-division/2"
+    },
+    {
+      "file": "division_13.json.gz",
+      "schema": "pp-rational-prime-division/1"
+    },
+    {
+      "file": "kernel_13.json",
+      "schema": "pp-rational-prime-division/1"
+    },
+    {
+      "file": "empty_13.json",
+      "schema": "pp-rational-prime-division/2"
+    },
+    {
+      "file": "division_143.json.gz",
+      "schema": "pp-rational-division-general/1"
+    },
+    {
+      "file": "saturation_143.json",
+      "schema": "pp-elliptic-prime-saturation-presentation/1"
+    },
+    {
+      "file": "translated_cover_chart.json",
+      "schema": "pp-mordell-cover-chart-example/1"
+    },
+    {
+      "file": "live_translated_cover_box.json",
+      "schema": "pp-mordell-cover-box/1"
+    }
+  ],
+  "supported_primes": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13
+  ],
+  "source_generator_limit": 4,
+  "root_node_limit": 100000,
+  "sturm_degree_limit": 256,
+  "prime_division_degrees": {
+    "11": 121,
+    "13": 169
+  },
+  "source_to_target_chart_identity": true,
+  "backend_rank_determined": 457,
+  "matching_point_witnesses": 365,
+  "missing_witness_curves": 92,
+  "backend_rank_corrections": 12,
+  "integral_lists_promoted": 0,
+  "new_lean_theorems": 0,
+  "execution_verified": false
+}

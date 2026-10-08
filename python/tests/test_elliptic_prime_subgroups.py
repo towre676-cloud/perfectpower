@@ -131,7 +131,7 @@ class PrimeSubgroups(unittest.TestCase):
         self.assertEqual(indices,[5,1,7,1,1])
 
     def test_invalid_primes_and_shared_budgets(self):
-        for p in (4,6,11,True):
+        for p in (4,6,17,True):
             with self.assertRaises(ValueError):self.rank1.subgroup_presentation([],p)
         with self.assertRaises(WorkLimit):self.rank1.subgroup_presentation([self.A],7,node_limit=1)
         self.assertFalse(verify_subgroup_presentation(self.hidden[7],node_limit=1))

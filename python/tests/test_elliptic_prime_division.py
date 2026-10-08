@@ -66,11 +66,11 @@ class PrimeDivision(unittest.TestCase):
             self.assertFalse(verify_prime_division(cc))
 
     def test_budgets_and_rejections(self):
-        for n in (3, 11, True):
+        for n in (3, 17, True):
             with self.assertRaises(ValueError):
                 d.rational_prime_division(E37, None, n)
         with self.assertRaises(ValueError):
-            d.rational_division_general(E37, None, 11)
+            d.rational_division_general(E37, None, 17)
         with patch('perfectpower.elliptic_prime_division.discovered_roots', return_value=iter(())):
             with self.assertRaises(WorkLimit):
                 d.rational_prime_division(E37, E37.mul(E37.checked([0, 0]), 5), 5, node_limit=10)

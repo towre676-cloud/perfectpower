@@ -1,4 +1,4 @@
-"""Complete rational division by the odd primes 5 and 7, and composed division by 2,3,5,7.
+"""Complete rational division by the odd primes 5, 7, 11 and 13, and composed division by 2,3,5,7,11,13.
 
 Same certificate design as rational_thirds: the rational ell-torsion kernel is
 closed by a full rational-root certificate of psi_ell, one exact point of the
@@ -16,12 +16,33 @@ The division equation phi_ell-(x_T+A/3) f_ell^2 has degree ell^2.
 Budgets: a shared root-node budget, a coefficient bit budget, and a branch budget.
 """
 from fractions import Fraction as Q
+from collections import OrderedDict
+import json
 from . import polyalg as P
 from .elliptic_arithmetic import (encode_point, q, sqrtq, root_budget,
                                  rational_root_certificate, discovered_roots)
 from .divisor_square import WorkLimit
 
-PRIMES = (5, 7)
+PRIMES = (5, 7, 11, 13)
+
+
+_TORSION_ROOT_CACHE=OrderedDict()
+
+
+def _torsion_root_json(polynomial,node_limit):
+    # Only immutable, complete producer receipts are cached. A smaller caller
+    # budget still must cover every node in the returned proof. Replay of
+    # untrusted certificates never consults this cache.
+    if polynomial in _TORSION_ROOT_CACHE:
+        text=_TORSION_ROOT_CACHE[polynomial]
+        count=json.loads(text)['integer_certificate']['nodes_checked']
+        if count>node_limit:raise WorkLimit('complete torsion proof exceeds remaining root budget')
+        _TORSION_ROOT_CACHE.move_to_end(polynomial)
+        return text
+    text=json.dumps(rational_root_certificate(polynomial,node_limit))
+    _TORSION_ROOT_CACHE[polynomial]=text
+    if len(_TORSION_ROOT_CACHE)>32:_TORSION_ROOT_CACHE.popitem(last=False)
+    return text
 
 
 def short_model(E):
@@ -105,9 +126,9 @@ def local_root_obstruction(E, f):
 
 
 def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, local_obstructions=False):
-    """All rational P with ell P=p (p=None for the ell-torsion kernel), ell in {5,7}."""
+    """All rational P with ell P=p (p=None for the ell-torsion kernel), ell in {5,7,11,13}."""
     if type(ell) is not int or ell not in PRIMES:
-        raise ValueError('ell must be 5 or 7')
+        raise ValueError('ell must be 5, 7, 11 or 13')
     if type(bit_limit) is not int or not 64 <= bit_limit <= 65536:
         raise ValueError('bit limit 64 through 65536 required')
     root_budget(node_limit)
@@ -126,9 +147,16 @@ def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, loc
     psi, _ = odd_division_polynomials(E, ell)
     if coefficient_bits(psi) > bit_limit:
         raise WorkLimit('division polynomial coefficient bit budget exhausted')
-    torsion = rational_root_certificate(psi, node_limit)
-    used = torsion['integer_certificate']['nodes_checked']
-    kernel = ordered([None, *lifts(E, (q(x) for x in torsion['roots']), ell, None)])
+    torsion=None
+    if local_obstructions and ell in (11,13):
+        from .elliptic_reduction import trivial_prime_kernel
+        torsion=trivial_prime_kernel(E,ell)
+    if torsion is None:
+        torsion = json.loads(_torsion_root_json(tuple(psi),node_limit))
+        used = torsion['integer_certificate']['nodes_checked']
+        kernel = ordered([None, *lifts(E, (q(x) for x in torsion['roots']), ell, None)])
+    else:
+        used=0;kernel=[None]
     anchor = None
     division = None
     obstruction = None
@@ -167,20 +195,20 @@ def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, loc
 
 
 def general_factors(scalar):
-    if type(scalar) is not int or not 1 <= scalar <= 420:
-        raise ValueError('positive scalar 1 through 420 required')
+    if type(scalar) is not int or not 1 <= scalar <= 30030:
+        raise ValueError('positive scalar 1 through 30030 required')
     n, out = scalar, []
-    for prime in (2, 3, 5, 7):
+    for prime in (2, 3, 5, 7, 11, 13):
         while n % prime == 0:
             out.append(prime)
             n //= prime
     if n != 1:
-        raise ValueError('only prime factors 2, 3, 5 and 7 supported')
+        raise ValueError('only prime factors 2, 3, 5, 7, 11 and 13 supported')
     return out
 
 
 def rational_division_general(E, p, scalar, node_limit=100000, branch_limit=64, bit_limit=4096):
-    """Staged complete division by any product of 2,3,5,7 with shared budgets."""
+    """Staged complete division by any product of 2,3,5,7,11,13 with shared budgets."""
     from .elliptic_division import rational_thirds
     fs = general_factors(scalar)
     root_budget(node_limit)

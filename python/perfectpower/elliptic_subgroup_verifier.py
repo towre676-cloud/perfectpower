@@ -20,8 +20,8 @@ def _check(cert,budget,node_limit):
     if (version not in ('pp-elliptic-subgroup-preimage/1','pp-elliptic-subgroup-preimage/2') or cert['complete'] is not True
         or cert['execution_verified'] is not False or cert['complete_mordell_weil_group'] is not False
         or cert['scope']!='complete generators for the rational prime-preimage of the supplied subgroup'):return False
-    p=exact_int(cert['prime'],2,7 if version.endswith('/2') else 3);E=model(cert['curve'])
-    if p not in (2,3,5,7):return False
+    p=exact_int(cert['prime'],2,13 if version.endswith('/2') else 3);E=model(cert['curve'])
+    if p not in (2,3,5,7,11,13):return False
     if type(cert['source_points']) is not list or len(cert['source_points'])>4:return False
     source=[checked_point(E,h) for h in cert['source_points']];r=len(source)
     limit=min(node_limit,exact_int(cert['node_limit'],1,100000))

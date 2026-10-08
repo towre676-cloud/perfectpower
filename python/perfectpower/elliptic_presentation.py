@@ -10,8 +10,8 @@ from .integer_lifting import smith_certificate, verify_smith, _multiply
 
 
 def matrices(prime, basis, width):
-    if type(prime) is not int or prime not in (2, 3, 5, 7):
-        raise ValueError('prime 2, 3, 5 or 7 required')
+    if type(prime) is not int or prime not in (2, 3, 5, 7, 11, 13):
+        raise ValueError('prime 2, 3, 5, 7, 11 or 13 required')
     if type(width) is not int or not 0 <= width <= 4:
         raise ValueError('width zero through four required')
     if type(basis) is not list or len(basis) > width:

@@ -118,3 +118,10 @@ The cubic cross-validation shows why the last label matters. Among the 622 curve
 ## Torsion-aware actual indices and the complete Pell-7 family
 
 `elliptic_torsion_index.py` certifies actual nested subgroup indices and complete integer relation lattices when every source/preimage generator has coordinates in a witnessed free basis plus an injectively enumerated finite torsion product. It verifies exact elliptic equations and unimodular Smith transcripts. It requires full span of the free witness space, and does not classify the whole rational torsion subgroup or Mordell-Weil group. `pell7_complete.py` replays the complete terminal seed table for the inverse-unit descent; the all-solutions and uniqueness arguments are paper proofs in [the monograph](TORSION_INDEX_PELL7_MONOGRAPH.md). These new operations retain `execution_verified=false`; they add no kernel-certified declaration.
+
+
+## Eleven/thirteen arithmetic and constructive rank boundary
+
+Complete bounded rational division, subgroup preimages and saturation now support primes 11 and 13. Exact Mordell quartic charts retain projective poles and denominator windows. The ledger separates 457 ranks determined by equal external PARI bounds from 365 matching explicit point witnesses; 92 constructive witness gaps remain. No new Lean theorem or complete integral-point list is claimed. See ELEVENTHIRTEEN_CAPACITY_MONOGRAPH.md and ELEVENTHIRTEEN_HANDOFF.md.
+
+The eleven/thirteen local kernel shortcut uses prime-to-good-reduction torsion injectivity, with its formal-group proof recorded in the monograph. The verifier independently enumerates the finite reduction group and checks its order. This remains a paper/Python trust boundary; it is not a new Lean-certified good-reduction theorem. Full Sturm kernel proofs remain supported.

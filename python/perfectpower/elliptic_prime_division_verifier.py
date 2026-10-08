@@ -1,4 +1,4 @@
-"""Discovery-free replay for prime-5/7 and composed 2,3,5,7 division packets.
+"""Discovery-free replay for prime-5/7/11/13 and composed 2,3,5,7,11,13 division packets.
 
 Division polynomials are rebuilt independently of the producer. The producer
 uses the short model u=x+A/3. Here, as in Silverman (AEC, Exercise 3.7), the
@@ -58,8 +58,8 @@ def _verify_prime(cert, budget, node_limit):
     fields(cert, 'schema curve prime target points complete execution_verified method anchor torsion_certificate division_certificate node_limit bit_limit root_nodes'+(' obstruction_certificate' if version=='pp-rational-prime-division/2' else ' local_obstruction' if local else ''))
     if version not in ('pp-rational-prime-division/1','pp-rational-prime-division/2') or cert['complete'] is not True or cert['execution_verified'] is not False:
         return False
-    ell = exact_int(cert['prime'], 5, 7)
-    if ell not in (5, 7):
+    ell = exact_int(cert['prime'], 5, 13)
+    if ell not in (5, 7, 11, 13):
         return False
     E = model(cert['curve'])
     target = checked_point(E, cert['target'])
@@ -76,8 +76,14 @@ def _verify_prime(cert, budget, node_limit):
     psi, phi = silverman_division(E, ell)
     if _bits(psi) > bit_limit:
         return False
-    roots, used = check_rational_roots(cert['torsion_certificate'], psi, limit, budget)
-    kernel = canonical({None, *_lifted(E, roots, ell, None, budget)})
+    torsion=cert['torsion_certificate']
+    if type(torsion) is dict and torsion.get('schema')=='pp-prime-kernel-good-reduction/1':
+        from .elliptic_reduction import verify_trivial_prime_kernel
+        if not verify_trivial_prime_kernel(E,ell,torsion,budget):return False
+        used=0;kernel=[None]
+    else:
+        roots, used = check_rational_roots(torsion, psi, limit, budget)
+        kernel = canonical({None, *_lifted(E, roots, ell, None, budget)})
     anchor = checked_point(E, cert['anchor'])
     division = cert['division_certificate']
     if target is None:
@@ -140,9 +146,9 @@ def _verify_general(cert, budget, node_limit):
         return False
     E = model(cert['curve'])
     target = checked_point(E, cert['target'])
-    scalar = exact_int(cert['scalar'], 1, 420)
+    scalar = exact_int(cert['scalar'], 1, 30030)
     n, fs = scalar, []
-    for prime in (2, 3, 5, 7):
+    for prime in (2, 3, 5, 7, 11, 13):
         while n % prime == 0:
             fs.append(prime)
             n //= prime

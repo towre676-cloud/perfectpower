@@ -34,7 +34,7 @@ def verify_saturation(cert,*,work_limit=2000000,node_limit=100000):
         fields(cert,'schema curve source_points primes max_steps coefficient_bound membership_limit initial_reductions stages generators closed_primes status node_limit root_nodes complete_mordell_weil_group execution_verified')
         if cert['schema']!='pp-bounded-elliptic-saturation/1' or cert['complete_mordell_weil_group'] is not False or cert['execution_verified'] is not False:return False
         primes=cert['primes']
-        if type(primes) is not list or not primes or any(type(p) is not int or p not in (2,3,5,7) for p in primes) or primes!=sorted(set(primes)):return False
+        if type(primes) is not list or not primes or any(type(p) is not int or p not in (2,3,5,7,11,13) for p in primes) or primes!=sorted(set(primes)):return False
         steps=exact_int(cert['max_steps'],1,16);bound=exact_int(cert['coefficient_bound'],0,4)
         exact_int(cert['membership_limit'],1,1000000);limit=exact_int(cert['node_limit'],1,100000)
         E=model(cert['curve']);source=cert['source_points']

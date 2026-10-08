@@ -4,7 +4,10 @@ If a rational target has no ell-preimage after good reduction, it has none
 over Q. A failed local obstruction search makes no claim. The finite group
 is enumerated exactly on the completed model Y^2=x^3+A*x^2+B*x+C.
 """
-REDUCTION_PRIMES = (11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97)
+from math import isqrt
+
+REDUCTION_PRIMES = tuple(p for p in range(11, 998)
+                         if all(p%d for d in range(2, isqrt(p)+1)))
 
 
 def residue(q, modulus):
@@ -77,3 +80,25 @@ def verify_reduction_obstruction(E, target, ell, cert, budget):
         return tuple(reduced) not in {multiply(h, ell) for h in points}
     except (ValueError, TypeError, KeyError, ArithmeticError):
         return False
+
+
+def trivial_prime_kernel(E, ell):
+    """Prime-to-good-reduction torsion injects; coprime group order excludes it."""
+    for modulus in REDUCTION_PRIMES:
+        if modulus==ell:continue
+        try:points,_=reduction_group(E,modulus)
+        except ValueError:continue
+        if len(points)%ell:
+            return dict(schema='pp-prime-kernel-good-reduction/1',prime=modulus,group_order=len(points))
+    return None
+
+
+def verify_trivial_prime_kernel(E, ell, cert, budget):
+    from .elliptic_certificate_verifier import fields
+    fields(cert,'schema prime group_order')
+    if cert['schema']!='pp-prime-kernel-good-reduction/1':return False
+    modulus=cert['prime']
+    if type(modulus) is not int or modulus==ell:return False
+    budget.charge(100*modulus)
+    points,_=reduction_group(E,modulus)
+    return type(cert['group_order']) is int and cert['group_order']==len(points) and len(points)%ell!=0

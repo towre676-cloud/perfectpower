@@ -1,6 +1,6 @@
 """Complete prime-preimage generators for finitely generated rational subgroups.
 
-For p=2,3,5 or 7 enumerate coefficient lines in F_p^r. Complete rational division
+For p=2,3,5,7,11 or 13 enumerate coefficient lines in F_p^r. Complete rational division
 fibres identify the linear relation space in E(Q)/pE(Q). Its RREF pivots give
 exact replacement generators; the complete rational p-kernel is retained.
 No assumption of independence, rank completeness or torsion classification.
@@ -15,7 +15,7 @@ from .divisor_square import WorkLimit
 
 
 def parameters(prime,points):
-    if type(prime) is not int or prime not in (2,3,5,7):raise ValueError('prime 2, 3, 5 or 7 required')
+    if type(prime) is not int or prime not in (2,3,5,7,11,13):raise ValueError('prime 2, 3, 5, 7, 11 or 13 required')
     if not isinstance(points,(list,tuple)) or len(points)>4:raise ValueError('at most four subgroup generators')
 
 

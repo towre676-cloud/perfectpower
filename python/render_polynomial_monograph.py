@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'eleventhirteen':{
+            'title':'Prime division and exact Mordell charts',
+            'subtitle':'Complete eleven/thirteen fibres<br/>and constructive rank boundaries',
+            'description':'Independent division recurrences, complete projective coefficient lines and exact binary forms extend the arithmetic without discarding residue combinations.',
+            'metrics':[('11,13','new supported primes'),('457','backend ranks determined'),('92','point witnesses unfinished')],
+            'scope':'Exact bounded rational arithmetic and external PARI rank bounds. No new Lean theorem, automatic global saturation or integral-point completeness claim.',
+            'running':'Eleven/thirteen saturation, exact charts and explicit rank witnesses',
+        },
         'unitsweil':{
             'title':'Unit lattices and finite Weil dimensions',
             'subtitle':'Complete power-order unit bases<br/>and equation ranks through level 128',
@@ -376,7 +384,7 @@ def render(source,output,*,edition='polynomial'):
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
     if edition in ('atlasintersectionfactored','fixeddivisor','integervalued','weilmonomial'):body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
     if edition=='rationalpowerbridge':body.fontSize=9.5;body.leading=13.8;body.spaceAfter=7
-    if edition in ('primesubgroups','torsionpell'):body.fontSize=9.3;body.leading=12.8;body.spaceAfter=5;body.allowWidows=0;body.allowOrphans=0
+    if edition in ('primesubgroups','torsionpell','eleventhirteen'):body.fontSize=9.3;body.leading=12.8;body.spaceAfter=5;body.allowWidows=0;body.allowOrphans=0
     if edition=='integervalued':body.leading=14.1
     if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
     if edition=='mordellcoverpoints':body.allowWidows=0;body.allowOrphans=0
@@ -397,7 +405,7 @@ def render(source,output,*,edition='polynomial'):
     story+=[table,Spacer(1,27),Paragraph(profile['scope'],small),Spacer(1,18),Paragraph('Source, corpus receipts and reproduction commands accompany the repository snapshot.',small),PageBreak()]
     def inline(s):
         s=escape(s).replace('\u2013','-').replace('\u2014','-')
-        if edition=='torsionpell':
+        if edition in ('torsionpell','eleventhirteen'):
             def inline_math(match):
                 text=match.group(1)
                 for old,new in [(r'\mathbb{Q}','ℚ'),(r'\Gamma','Γ'),(r'\ldots','…'),(r'\leq','≤'),(r'\sqrt{2}','√2'),('{,}',',')]:
@@ -461,7 +469,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('unitsweil','mordellcoverpoints','mordelltwodescent','torsionpell','primesubgroups','ellipticfiveseven','rationalpowerbridge','arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('eleventhirteen','unitsweil','mordellcoverpoints','mordelltwodescent','torsionpell','primesubgroups','ellipticfiveseven','rationalpowerbridge','arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
     source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'unitsweil':'UNIT_LATTICES_WEIL_MONOGRAPH.md','mordellcoverpoints':'MORDELL_COVER_POINTS_MONOGRAPH.md','mordelltwodescent':'MORDELL_TWO_DESCENT_MONOGRAPH.md','torsionpell':'TORSION_INDEX_PELL7_MONOGRAPH.md','primesubgroups':'ELLIPTIC_PRIME_SUBGROUPS_MONOGRAPH.md','ellipticfiveseven':'ELLIPTIC_FIVE_SEVEN_MONOGRAPH.md','rationalpowerbridge':'ARITHMETIC_CHART_BRIDGE_MONOGRAPH.md','arithmeticcharts':'ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md','atlasintersectionfactored':'RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md','residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

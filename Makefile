@@ -348,3 +348,6 @@ power-order-unit-receipts:
 	PYTHONPATH=python $(PY) python/develop_power_order_units.py
 weil-beyond64-receipts:
 	PYTHONPATH=python $(PY) python/develop_weil_beyond64.py
+.PHONY: check-elliptic-eleven-thirteen
+check-elliptic-eleven-thirteen:
+	bash scripts/check_elliptic_eleven_thirteen.sh

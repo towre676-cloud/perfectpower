@@ -127,20 +127,31 @@ def reconstruct(a,m):
     return Q(r1,t1) if (r1-a*t1)%m==0 else None
 
 
+def _evaluate_mod(coefficients, x, modulus):
+    """Integer Horner evaluation, reducing before large intermediates grow."""
+    value=0
+    for coefficient in reversed(coefficients):value=(value*x+coefficient)%modulus
+    return value
+
+
 def discovered_roots(f):
     """Bounded p-adic discovery; every returned candidate is checked exactly."""
-    f=P.poly(f);D=lcm(*(c.denominator for c in f));g=tuple(int(c*D) for c in f);dg=P.derivative(g)
+    f=P.poly(f);D=lcm(*(c.denominator for c in f));g=tuple(int(c*D) for c in f);dg=tuple(int(c) for c in P.derivative(g))
     target=min(65536,4*max(abs(c).bit_length() for c in g)+128)
     for p in (3,5,7,11,13,17,19):
         if g[-1]%p==0:continue
-        roots=[r for r in range(p) if P.evaluate(g,r)%p==0 and P.evaluate(dg,r)%p]
+        roots=[r for r in range(p) if _evaluate_mod(g,r,p)==0 and _evaluate_mod(dg,r,p)]
         for r in roots:
             m=p
             while m.bit_length()<=target:
-                mm=m*m;r=(r-int(P.evaluate(g,r))*pow(int(P.evaluate(dg,r)),-1,mm))%mm;m=mm
+                mm=m*m;r=(r-_evaluate_mod(g,r,mm)*pow(_evaluate_mod(dg,r,mm),-1,mm))%mm;m=mm
                 if m.bit_length()<24:continue
                 a=reconstruct(r,m)
-                if a is not None and P.evaluate(f,a)==0:yield a;break
+                # Rational-root divisibility rejects large reconstruction noise
+                # before exact Fraction evaluation; true roots always pass.
+                if (a is not None and g[-1]%a.denominator==0
+                    and (not a.numerator or g[0]%a.numerator==0)
+                    and P.evaluate(f,a)==0):yield a;break
 
 
 class EllipticCurve:

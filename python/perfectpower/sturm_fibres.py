@@ -10,7 +10,11 @@ import json
 from . import polyalg as P
 from .core import evaluate
 from .divisor_square import Budget,WorkLimit,signed_divisors
-from .residue_cover import integer_polynomial
+from .residue_cover import integer_polynomial as _integer_polynomial
+
+def integer_polynomial(coefficients):
+    """Sturm certificates admit degree 256; residue atlases keep their 64 cap."""
+    return _integer_polynomial(coefficients,degree_limit=256)
 
 
 def _same(a,b):
@@ -63,7 +67,7 @@ def verify_roots(receipt,*,node_limit=100000):
         if f==(0,):return False
         leading=_rational([receipt['leading_coefficient']])[0];expanded=P.poly([leading]);sf=P.ONE;seen=set();total_degree=0
         for multiplicity,factor in receipt['squarefree_factors']:
-            if type(multiplicity) is not int or not 1<=multiplicity<=64 or multiplicity in seen:return False
+            if type(multiplicity) is not int or not 1<=multiplicity<=256 or multiplicity in seen:return False
             seen.add(multiplicity);p=_rational(factor)
             if P.degree(p)<1 or P.lead(p)!=1:return False
             total_degree+=multiplicity*P.degree(p)

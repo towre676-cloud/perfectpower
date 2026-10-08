@@ -31,3 +31,8 @@ The [generated reconciliation](../receipts/mordell_frontier.json), rebuilt by `p
 ## Torsion-aware subgroup indices and Pell-7
 
 The witnessed prime-preimage index operation now admits rational prime torsion, pure finite groups and redundant source generators. Complete integer relation bases and actual group invariant factors are replayed from Smith transcripts. The Pell example `(x²+7)/2=y²` is completely parametrized by the two positive seeds `(1,2)` and `(5,4)` under the unit `3+2√2`, with independent coordinate signs. See [the monograph](TORSION_INDEX_PELL7_MONOGRAPH.md) and `make check-torsion-index-pell7`. This is an exact-computation/paper-proof closure within the stated coordinate hypotheses, not a new Lean or global Mordell rank result.
+
+
+## Eleven/thirteen arithmetic and constructive rank boundary
+
+Complete bounded rational division, subgroup preimages and saturation now support primes 11 and 13. Exact Mordell quartic charts retain projective poles and denominator windows. The ledger separates 457 ranks determined by equal external PARI bounds from 365 matching explicit point witnesses; 92 constructive witness gaps remain. No new Lean theorem or complete integral-point list is claimed. See ELEVENTHIRTEEN_CAPACITY_MONOGRAPH.md and ELEVENTHIRTEEN_HANDOFF.md.
