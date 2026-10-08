@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'weilmonomial':{
+            'title':'Kernel-proved Heisenberg coordinates',
+            'subtitle':'Literal matrix actions<br/>and the odd orbit-quotient bridge',
+            'description':'Explicit analysis and synthesis construct the actual basis, derive both generator coefficient laws, and identify the odd-level commutant with functions on its orbit quotient.',
+            'metrics':[('41','audited declarations'),('2','new general Lean modules'),('10','retained orbit tests passed')],
+            'scope':'No assumed basis, rank or supplied spanning family. Arithmetic orbit classification, even sign-clock support reduction and independent-root field transport retain explicit obligations.',
+            'running':'Heisenberg coefficients, monomial fixed spaces and the orbit quotient',
+        },
         'weilorbit':{
             'title':'All-level Weil dimensions and symmetry',
             'subtitle':'Phase-labelled orbits<br/>and a commutative commutant algebra',
@@ -275,7 +283,7 @@ def render(source,output,*,edition='polynomial'):
     pdfmetrics.registerFontFamily('Body',normal='Body',bold='BodyBold',italic='Body',boldItalic='BodyBold')
     navy=colors.HexColor('#173348');teal=colors.HexColor('#157A86')
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
-    if edition in ('fixeddivisor','integervalued'):body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
+    if edition in ('fixeddivisor','integervalued','weilmonomial'):body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
     if edition=='integervalued':body.leading=14.1
     if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
     if edition=='research':body.leading=14.8;body.spaceAfter=8
@@ -347,7 +355,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

@@ -287,3 +287,7 @@ check-commutant-dimension:
 .PHONY: check-weil-orbit
 check-weil-orbit:
 	bash scripts/check_weil_orbit.sh
+
+.PHONY: check-weil-monomial
+check-weil-monomial:
+	bash scripts/check_weil_monomial.sh

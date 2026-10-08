@@ -9,6 +9,8 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [concrete Heisenberg bridge](docs/WEIL_MONOMIAL_MONOGRAPH.md) proves the actual matrix coefficient basis and corrected generator actions in Lean. Its forty-one audited declarations identify the odd-level commutant with functions on its orbit quotient and remove the supplied-spanning premise from the reflection argument. Run `make check-weil-monomial`; arithmetic orbit classification and the even support reduction remain formalization targets.
+
 The [all-level orbit dimension and symmetry chapter](docs/WEIL_LOCAL_DIMENSION_MONOGRAPH.md) proves the odd and dyadic dimension formulas, commutativity and multiplicity-free complex decomposition on paper. Twelve general Lean theorems prove the gauge and transpose-to-commutativity bridge; exact phase/reflection checks cover 166 levels. Run `make check-weil-orbit`; the all-level orbit classification remains a formalization target.
 
 The [kernel dimension extension](docs/WEIL_DIMENSION_MONOGRAPH.md) proves the general product dimension of separate matrix commutants and the cyclic CRT-compatible-character law in Lean. Its thirty new declarations derive the required packet and matrix identities from coprimality and primitive characters; run `make check-commutant-dimension`.

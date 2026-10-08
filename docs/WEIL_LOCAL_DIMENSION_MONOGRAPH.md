@@ -1,5 +1,7 @@
 # All-level Fourier/chirp dimensions and a commutative orbit algebra
 
+The subsequent [concrete Heisenberg bridge](WEIL_MONOMIAL_MONOGRAPH.md) now proves the literal basis, corrected generator actions, concrete coefficient membership equivalence and odd-level orbit-quotient dimension law in Lean. References below to those steps as future work describe this paper release; the arithmetic orbit classification and even support reduction remain to be formalized.
+
 ## The result and its proof status
 
 Use the repository convention F[x,y] = zeta_N raised to xy and T[x,x] = zeta_N raised to x squared. F is unnormalized. The chirp uses an Nth root at even levels as well as odd levels. Write c(N) for the dimension of their simultaneous commutant over Q(zeta_N). Level one is included, with c(1)=1.
