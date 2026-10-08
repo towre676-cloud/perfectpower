@@ -1,0 +1,286 @@
+{
+ "constants": {
+  "B_on_const": 0.186200635766,
+  "C_sun": -3.98413914197,
+  "kappa": 0.00633257397765
+ },
+ "contour_vs_highT_series_JB": [
+  {
+   "contour": [
+    8.43365618903,
+    7.56219003707
+   ],
+   "series": [
+    8.43365618904,
+    7.56219003707
+   ],
+   "y": -20.0
+  },
+  {
+   "contour": [
+    -3.22285179545,
+    1.08826189769
+   ],
+   "series": [
+    -3.22285179545,
+    1.08826189769
+   ],
+   "y": -2.0
+  },
+  {
+   "contour": [
+    -2.24448404999,
+    0.0155758994054
+   ],
+   "series": [
+    -2.24448404999,
+    0.0155758994054
+   ],
+   "y": -0.1
+  },
+  {
+   "contour": [
+    -2.09654765607,
+    0.0
+   ],
+   "series": [
+    -2.09654765607,
+    0.0
+   ],
+   "y": 0.1
+  },
+  {
+   "contour": [
+    -1.40886784781,
+    0.0
+   ],
+   "series": [
+    -1.40886784781,
+    0.0
+   ],
+   "y": 2.0
+  },
+  {
+   "contour": [
+    -0.19766663036,
+    0.0
+   ],
+   "series": [
+    -0.197666630363,
+    0.0
+   ],
+   "y": 20.0
+  }
+ ],
+ "contour_vs_log_sin_ReJB": [
+  {
+   "contour": 17.4311455021,
+   "wall_nucleation_corrections.re_JB": 17.4311455021,
+   "y": -30.0
+  },
+  {
+   "contour": -3.35103285661,
+   "wall_nucleation_corrections.re_JB": -3.35103285661,
+   "y": -5.0
+  },
+  {
+   "contour": -2.52825757256,
+   "wall_nucleation_corrections.re_JB": -2.52825757256,
+   "y": -0.5
+  },
+  {
+   "contour": -1.8908313667,
+   "wall_nucleation_corrections.re_JB": -1.8908313667,
+   "y": 0.5
+  },
+  {
+   "contour": -1.03324251478,
+   "wall_nucleation_corrections.re_JB": -1.03324251478,
+   "y": 4.0
+  },
+  {
+   "contour": -0.0919514236558,
+   "wall_nucleation_corrections.re_JB": -0.0919514236559,
+   "y": 30.0
+  }
+ ],
+ "figure_eight_massless": {
+  "expected": 0.0833333333333,
+  "i_T(0)": 0.0833333333333,
+  "note": "(lam_s/8) I_T(0)^2 = lam_s T^4/1152, the two-loop lam phi^4 free energy"
+ },
+ "matsubara_decomposition": {
+  "E": [
+   1.3,
+   0.7,
+   1.1
+  ],
+  "T": 1.0,
+  "brute_force_sum_N3000": 1.00256374758,
+  "formula": 1.00256374758,
+  "relative_difference": 9.10382880193e-14
+ },
+ "parwani_linear_term": {
+  "note": "lam_s=0.6: the M T^3 term of the figure-eight is cancelled by -Pi I_T/2 (each daisy counted once).",
+  "resummed_Im_F_over_s": [
+   {
+    "s": 0.01,
+    "value": 2.75405897153e-06
+   },
+   {
+    "s": 0.001,
+    "value": 2.79357684247e-08
+   }
+  ],
+  "unresummed_Im_F_over_s": [
+   {
+    "s": 0.01,
+    "value": -0.000989477539367
+   },
+   {
+    "s": 0.001,
+    "value": -0.000994441778957
+   }
+  ],
+  "unresummed_expected": -0.000994718394324
+ },
+ "scheme": [
+  {
+   "MSbar_one_loop_tree_matched_mu_spread_GeV4": 1550958965510000.0,
+   "MSbar_two_loop_one_loop_matched_mu_spread_GeV4": 13933564203100.0,
+   "OS_conditions_two_loop": {
+    "a2_GeV2": -2979.25318783,
+    "a4": 1.53960651104e-06,
+    "d2V_dphi2_at_v_GeV2": -0.0009765625,
+    "dV_dphi_at_v_GeV3": 0.0
+   },
+   "OS_two_loop_max_mu_dependence_GeV4": 0.03125,
+   "T_GeV": 0.0,
+   "mu_over_m_v": [
+    0.5,
+    0.707106781187,
+    1.0,
+    1.41421356237,
+    2.0
+   ],
+   "two_loop_size_GeV4": 749601652896.0
+  },
+  {
+   "MSbar_one_loop_tree_matched_mu_spread_GeV4": 1550958965510000.0,
+   "MSbar_two_loop_one_loop_matched_mu_spread_GeV4": 13931968865900.0,
+   "OS_two_loop_max_mu_dependence_GeV4": 0.03125,
+   "T_GeV": 2000.0,
+   "mu_over_m_v": [
+    0.5,
+    0.707106781187,
+    1.0,
+    1.41421356237,
+    2.0
+   ],
+   "two_loop_size_GeV4": 722021090378.0
+  },
+  {
+   "MSbar_one_loop_tree_matched_mu_spread_GeV4": 1550958965510000.0,
+   "MSbar_two_loop_one_loop_matched_mu_spread_GeV4": 13933043880700.0,
+   "OS_two_loop_max_mu_dependence_GeV4": 0.03125,
+   "T_GeV": 2999.0,
+   "mu_over_m_v": [
+    0.5,
+    0.707106781187,
+    1.0,
+    1.41421356237,
+    2.0
+   ],
+   "two_loop_size_GeV4": 574748410677.0
+  }
+ ],
+ "sunset_angular_check": [
+  {
+   "log_formula": [
+    -5.06627349159e-05,
+    -0.000329542311206
+   ],
+   "numerical_angle": [
+    -5.06627349159e-05,
+    -0.000329542311206
+   ],
+   "y": -15.0
+  },
+  {
+   "log_formula": [
+    -0.000405457887389,
+    0.000394310666895
+   ],
+   "numerical_angle": [
+    -0.000405457881844,
+    0.000394310660738
+   ],
+   "y": -2.0
+  },
+  {
+   "log_formula": [
+    0.00044108372795,
+    0.0
+   ],
+   "numerical_angle": [
+    0.000441083657568,
+    0.0
+   ],
+   "y": 0.3
+  },
+  {
+   "log_formula": [
+    4.22147584883e-05,
+    0.0
+   ],
+   "numerical_angle": [
+    4.2214758488e-05,
+    0.0
+   ],
+   "y": 2.0
+  }
+ ],
+ "sunset_small_m_limit": {
+  "derivation": "H_T -> T^2 kappa[1/(4eps)+1/2+log(mu/3m)] (3d sunset of the zero modes; the one- and no-zero-mode parts cancel at m=0 because the massless 4d sunset vanishes), minus the I_T(d) subdivergence pole and minus 3 I_T B_on; uses I_T(d)=T^2/12[1+eps(2log(mu/4piT)+2+2zeta'(-1)/zeta(-1))].",
+  "prediction": -0.00552312450094,
+  "values": [
+   {
+    "h2+log(m/T)/32pi^2": -0.00424367201928,
+    "y": 0.01
+   },
+   {
+    "h2+log(m/T)/32pi^2": -0.00500319331422,
+    "y": 0.001
+   },
+   {
+    "h2+log(m/T)/32pi^2": -0.00532290647676,
+    "y": 0.0001
+   },
+   {
+    "h2+log(m/T)/32pi^2": -0.0054486437374,
+    "y": 1e-05
+   },
+   {
+    "h2+log(m/T)/32pi^2": -0.00549606860071,
+    "y": 1e-06
+   }
+  ]
+ },
+ "tadpole_vs_wall_nucleation_corrections": [
+  {
+   "i_T": 0.0448211623269,
+   "tadpole_i/2pi^2": 0.0448211623269,
+   "y": 0.5
+  },
+  {
+   "i_T": 0.0148535441049,
+   "tadpole_i/2pi^2": 0.0148535441049,
+   "y": 4.0
+  },
+  {
+   "i_T": 0.000662644480574,
+   "tadpole_i/2pi^2": 0.000662644480573,
+   "y": 30.0
+  }
+ ]
+}

@@ -1,0 +1,1251 @@
+{
+ "IR_factor_scan": [
+  0.25,
+  4.0
+ ],
+ "S3_over_T_summary": [
+  {
+   "S3_over_T_one_loop_at_tree_eps": 103.935713792,
+   "S3_over_T_two_loop_at_tree_eps": 104.099612038,
+   "T_GeV": 1000.0,
+   "alternatives": {
+    "thermal_prescription_Re_continuation": 0.00464378511666
+   },
+   "eps_star_tree": 0.37898417201,
+   "eps_star_two_loop": 0.377156325169,
+   "eps_star_two_loop_scale_band": [
+    0.377153939566,
+    0.377158710772
+   ],
+   "eps_star_two_loop_total_band": [
+    0.37713336873,
+    0.377179281609
+   ],
+   "scale_half_width": 0.0480237634973
+  },
+  {
+   "S3_over_T_one_loop_at_tree_eps": 126.919508293,
+   "S3_over_T_two_loop_at_tree_eps": 126.996936203,
+   "T_GeV": 2000.0,
+   "alternatives": {
+    "IR_regulator_x0.25": -0.00033473849408,
+    "IR_regulator_x4": 0.00134157956705,
+    "no_resummation": 0.00013420733962
+   },
+   "eps_star_tree": 0.371641478116,
+   "eps_star_two_loop": 0.370373505207,
+   "eps_star_two_loop_scale_band": [
+    0.370370737098,
+    0.370376273316
+   ],
+   "eps_star_two_loop_total_band": [
+    0.370347503408,
+    0.370399507006
+   ],
+   "scale_half_width": 0.0249260862068
+  },
+  {
+   "S3_over_T_one_loop_at_tree_eps": 132.708119133,
+   "S3_over_T_two_loop_at_tree_eps": 132.745963297,
+   "T_GeV": 2999.0,
+   "alternatives": {
+    "IR_regulator_x0.25": -0.000652304575264,
+    "IR_regulator_x4": 0.00263264035541,
+    "no_resummation": 0.000184626437037
+   },
+   "eps_star_tree": 0.364127587936,
+   "eps_star_two_loop": 0.363421112662,
+   "eps_star_two_loop_scale_band": [
+    0.363417979615,
+    0.36342424571
+   ],
+   "eps_star_two_loop_total_band": [
+    0.3633932618,
+    0.363448963525
+   ],
+   "scale_half_width": 0.0186937894816
+  }
+ ],
+ "declared_model": {
+  "bias_h0_GeV3": 2.58436622953e-13,
+  "bias_onset_GeV": 3000.0,
+  "current_g_GeV": 3000.0,
+  "heavy_mass_GeV": 300000.0,
+  "lam": 0.1,
+  "thermal_c": 0.0250000333333,
+  "v_GeV": 30000.0
+ },
+ "input_dimensionful_receipt_sha256": "01b8b8adc9103f6223aa202e10d35474f22c75e82cfd85cfd46414d2c111cdd9",
+ "input_one_loop_receipt_sha256": "f95118e7f3a29e0522e5ea503641a4de75e4f318760398c2d8717bcab9003e74",
+ "mu_over_m_v_scan": [
+  0.5,
+  0.707106781187,
+  1.0,
+  1.41421356237,
+  2.0
+ ],
+ "nucleation_temperature_benchmarks": {
+  "definition": "as in wall_nucleation_corrections: highest grid-interpolated T where q eps_sp(1-(T/3000 GeV)^2)(v/v_T)^3 reaches the easier critical bias",
+  "rows": [
+   {
+    "T_n_one_loop_GeV": 268.402231327,
+    "T_n_tree_GeV": 175.455519206,
+    "T_n_two_loop_GeV": 268.050229255,
+    "T_n_two_loop_scale_band_GeV": [
+     267.931593081,
+     268.168863801
+    ],
+    "T_n_two_loop_total_band_GeV": [
+     266.730837797,
+     269.36945625
+    ],
+    "q_eps_at_T0_over_eps_sp": 0.99
+   },
+   {
+    "T_n_one_loop_GeV": 323.103381071,
+    "T_n_tree_GeV": 267.385952856,
+    "T_n_two_loop_GeV": 322.967589984,
+    "T_n_two_loop_scale_band_GeV": [
+     322.922101545,
+     323.013078241
+    ],
+    "T_n_two_loop_total_band_GeV": [
+     322.463671348,
+     323.471390868
+    ],
+    "q_eps_at_T0_over_eps_sp": 0.995
+   },
+   {
+    "T_n_one_loop_GeV": 358.060080223,
+    "T_n_tree_GeV": 322.608116899,
+    "T_n_two_loop_GeV": 357.923770272,
+    "T_n_two_loop_scale_band_GeV": [
+     357.878583131,
+     357.968957233
+    ],
+    "T_n_two_loop_total_band_GeV": [
+     357.426486287,
+     358.420938648
+    ],
+    "q_eps_at_T0_over_eps_sp": 1.0
+   }
+  ]
+ },
+ "rows": [
+  {
+   "T_GeV": 0.03,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_star": 188.142013603,
+    "eps_bracket_hi": 0.38073292134,
+    "eps_star_one_loop": 0.38275547511,
+    "eps_star_tree": 0.384900170025,
+    "eps_star_two_loop": null,
+    "one_loop_method": "near_spinodal_asymptotic_uncontrolled",
+    "s_star": 5.94957286557e-05,
+    "two_loop_method": "above_bounce_bracket_near_spinodal"
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {},
+    "S_one_loop_at_tree_eps_receipt": 209.012610146,
+    "S_one_loop_at_tree_eps_recomputed": 209.012610146,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     41.8088364721,
+     42.7428350215,
+     43.6768335709,
+     44.6108321203,
+     45.5448306697
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.402843955959,
+     -0.478798053565,
+     -0.508778497788,
+     -0.492972953372,
+     -0.431574373533
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0529672709145,
+    "S_star": 245.637031628,
+    "S_two_loop_at_tree_eps": 209.171277057,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0572311204953,
+     "os_polynomial": 0.510515979354,
+     "resummation": 0.0,
+     "scheme_conversion": 0.213061255597,
+     "sunset": -0.507675796363
+    },
+    "ds_deps": -1947.16560868,
+    "eps_bracket_hi": 0.38073292134,
+    "eps_star_one_loop": 0.374017208317,
+    "eps_star_scale_band": [
+     0.374022570681,
+     0.374028074339
+    ],
+    "eps_star_shift_vs_one_loop": 2.16947045193e-05,
+    "eps_star_total_band": [
+     0.373996563994,
+     0.374054081026
+    ],
+    "eps_star_tree": 0.375866102938,
+    "eps_star_two_loop": 0.37402532251,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0506393264093,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0506393264093
+    },
+    "s_star": 24.5637031628,
+    "scale_half_width_reduced_action": 0.00535826734497,
+    "scale_shifts_reduced_action": [
+     -0.0377965456701,
+     -0.0454261090051,
+     -0.04851308036,
+     -0.0470758778996,
+     -0.0411334392921
+    ],
+    "two_loop_bounce_s": 24.5637031618,
+    "two_loop_method": "bounce",
+    "virial_defect": 2.89817141673e-08,
+    "virial_defect_two_loop_at_tree_eps": 7.48434379006e-09
+   },
+   "easier_channel": "quantum_O4",
+   "eps_eff": 0.37402532251,
+   "eps_eff_one_loop": 0.374017208317,
+   "eps_eff_scale_band": [
+    0.374022570681,
+    0.374028074339
+   ],
+   "eps_eff_total_band": [
+    0.373996563994,
+    0.374054081026
+   ],
+   "eps_eff_tree": 0.375866102938,
+   "spinodal_one_loop": 0.382755488529,
+   "spinodal_two_loop_regulated": 0.38273292134,
+   "thermal_loops": false,
+   "v_T_GeV": 30000.0,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 1.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_star": 169.348105046,
+    "eps_bracket_hi": 0.380732921499,
+    "eps_star_one_loop": 0.382754237616,
+    "eps_star_tree": 0.38489929982,
+    "eps_star_two_loop": null,
+    "one_loop_method": "near_spinodal_asymptotic_uncontrolled",
+    "s_star": 0.00178508576484,
+    "two_loop_method": "above_bounce_bracket_near_spinodal"
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {},
+    "S_one_loop_at_tree_eps_receipt": 173.624835258,
+    "S_one_loop_at_tree_eps_recomputed": 173.624835258,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     44.9010567519,
+     45.7074465523,
+     46.5138363527,
+     47.3202261531,
+     48.1266159535
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.437833709583,
+     -0.514883232938,
+     -0.544429882579,
+     -0.526669497686,
+     -0.461803371082
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0532980864981,
+    "S_star": 212.68668279,
+    "S_two_loop_at_tree_eps": 173.783701365,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0573367577046,
+     "os_polynomial": 0.54661129905,
+     "resummation": 0.0,
+     "scheme_conversion": 0.237511780235,
+     "sunset": -0.567917392438
+    },
+    "ds_deps": -2012.07352789,
+    "eps_bracket_hi": 0.380732921499,
+    "eps_star_one_loop": 0.375683934001,
+    "eps_star_scale_band": [
+     0.375689182278,
+     0.375694448776
+    ],
+    "eps_star_shift_vs_one_loop": 2.09791416463e-05,
+    "eps_star_total_band": [
+     0.375663328892,
+     0.375720302162
+    ],
+    "eps_star_tree": 0.377570426283,
+    "eps_star_two_loop": 0.375691815527,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0520189131053,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0520189131053
+    },
+    "s_star": 21.268668279,
+    "scale_half_width_reduced_action": 0.00529829088518,
+    "scale_shifts_reduced_action": [
+     -0.0400016615631,
+     -0.047593823392,
+     -0.0505982433335,
+     -0.0490336351753,
+     -0.0429192321103
+    ],
+    "two_loop_bounce_s": 21.2686683352,
+    "two_loop_method": "bounce",
+    "virial_defect": 5.94373640085e-09,
+    "virial_defect_two_loop_at_tree_eps": 8.96459035837e-09
+   },
+   "easier_channel": "quantum_O4",
+   "eps_eff": 0.375691815527,
+   "eps_eff_one_loop": 0.375683934001,
+   "eps_eff_scale_band": [
+    0.375689182278,
+    0.375694448776
+   ],
+   "eps_eff_total_band": [
+    0.375663328892,
+    0.375720302162
+   ],
+   "eps_eff_tree": 0.377570426283,
+   "spinodal_one_loop": 0.382755488688,
+   "spinodal_two_loop_regulated": 0.382732921499,
+   "thermal_loops": false,
+   "v_T_GeV": 29999.9999958,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 25.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_star": 156.352840034,
+    "eps_bracket_hi": 0.38073302101,
+    "eps_star_one_loop": 0.382673370169,
+    "eps_star_tree": 0.384843178018,
+    "eps_star_two_loop": null,
+    "one_loop_method": "near_spinodal_asymptotic_uncontrolled",
+    "s_star": 0.041202594672,
+    "two_loop_method": "above_bounce_bracket_near_spinodal"
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {},
+    "S_one_loop_at_tree_eps_receipt": 144.802616825,
+    "S_one_loop_at_tree_eps_recomputed": 144.802616825,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     48.7491365175,
+     49.4572008513,
+     50.165265185,
+     50.8733295188,
+     51.5813938526
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.479850169092,
+     -0.559547489854,
+     -0.589248815254,
+     -0.569162922246,
+     -0.499504185031
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0546993230812,
+    "S_star": 186.67477145,
+    "S_two_loop_at_tree_eps": 144.960133115,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0577422945703,
+     "os_polynomial": 0.592041023271,
+     "resummation": 0.0,
+     "scheme_conversion": 0.26788550444,
+     "sunset": -0.644636667924
+    },
+    "ds_deps": -2090.39942669,
+    "eps_bracket_hi": 0.38073302101,
+    "eps_star_one_loop": 0.376953712441,
+    "eps_star_scale_band": [
+     0.376958775337,
+     0.376963849866
+    ],
+    "eps_star_shift_vs_one_loop": 2.01620530511e-05,
+    "eps_star_total_band": [
+     0.376933313586,
+     0.376989311617
+    ],
+    "eps_star_tree": 0.378871397195,
+    "eps_star_two_loop": 0.376961312602,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0532252295915,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0532252295915
+    },
+    "s_star": 18.667477145,
+    "scale_half_width_reduced_action": 0.0053038963351,
+    "scale_shifts_reduced_action": [
+     -0.0423451659063,
+     -0.0499888173473,
+     -0.0529529585765,
+     -0.0512568013669,
+     -0.044920097125
+    ],
+    "two_loop_bounce_s": 18.6674771665,
+    "two_loop_method": "bounce",
+    "virial_defect": 4.0735998703e-09,
+    "virial_defect_two_loop_at_tree_eps": 3.01385235814e-07
+   },
+   "easier_channel": "quantum_O4",
+   "eps_eff": 0.376961312602,
+   "eps_eff_one_loop": 0.376953712441,
+   "eps_eff_scale_band": [
+    0.376958775337,
+    0.376963849866
+   ],
+   "eps_eff_total_band": [
+    0.376933313586,
+    0.376989311617
+   ],
+   "eps_eff_tree": 0.378871397195,
+   "spinodal_one_loop": 0.382755588204,
+   "spinodal_two_loop_regulated": 0.38273302101,
+   "thermal_loops": false,
+   "v_T_GeV": 29999.9973958,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 50.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_star": 153.553148567,
+    "eps_bracket_hi": 0.38073332002,
+    "eps_star_one_loop": 0.382553641117,
+    "eps_star_tree": 0.384761083812,
+    "eps_star_two_loop": null,
+    "one_loop_method": "near_spinodal_asymptotic_uncontrolled",
+    "s_star": 0.0809296433278,
+    "two_loop_method": "above_bounce_bracket_near_spinodal"
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {},
+    "S_one_loop_at_tree_eps_receipt": 138.443907973,
+    "S_one_loop_at_tree_eps_recomputed": 138.443907973,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     49.8434299644,
+     50.5309353331,
+     51.2184407018,
+     51.9059460705,
+     52.5934514392
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.491606369606,
+     -0.572207123055,
+     -0.602031694348,
+     -0.581292935483,
+     -0.510209328829
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0552126623709,
+    "S_star": 181.06860917,
+    "S_two_loop_at_tree_eps": 138.60074668,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0578906535389,
+     "os_polynomial": 0.605022633816,
+     "resummation": 0.0,
+     "scheme_conversion": 0.27654570723,
+     "sunset": -0.666835359687
+    },
+    "ds_deps": -2111.54828665,
+    "eps_bracket_hi": 0.38073332002,
+    "eps_star_one_loop": 0.377220838438,
+    "eps_star_scale_band": [
+     0.377225846461,
+     0.377230878708
+    ],
+    "eps_star_shift_vs_one_loop": 1.99462637676e-05,
+    "eps_star_total_band": [
+     0.377200512973,
+     0.377256212196
+    ],
+    "eps_star_tree": 0.379145165013,
+    "eps_star_two_loop": 0.377228362585,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0534928841414,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0534928841414
+    },
+    "s_star": 18.106860917,
+    "scale_half_width_reduced_action": 0.00531291605187,
+    "scale_shifts_reduced_action": [
+     -0.0429439358988,
+     -0.0506107665304,
+     -0.0535697680025,
+     -0.0518403012637,
+     -0.0454422700927
+    ],
+    "two_loop_bounce_s": 18.1068609499,
+    "two_loop_method": "bounce",
+    "virial_defect": 1.01616243751e-08,
+    "virial_defect_two_loop_at_tree_eps": -2.49749842987e-08
+   },
+   "easier_channel": "quantum_O4",
+   "eps_eff": 0.377228362585,
+   "eps_eff_one_loop": 0.377220838438,
+   "eps_eff_scale_band": [
+    0.377225846461,
+    0.377230878708
+   ],
+   "eps_eff_total_band": [
+    0.377200512973,
+    0.377256212196
+   ],
+   "eps_eff_tree": 0.379145165013,
+   "spinodal_one_loop": 0.382755887232,
+   "spinodal_two_loop_regulated": 0.38273332002,
+   "thermal_loops": false,
+   "v_T_GeV": 29999.9895833,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 100.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_star": 150.752953357,
+    "eps_bracket_hi": 0.380734516064,
+    "eps_star_one_loop": 0.382423760069,
+    "eps_star_tree": 0.384562461828,
+    "eps_star_two_loop": null,
+    "one_loop_method": "bounce",
+    "s_star": 0.158907786241,
+    "two_loop_method": "above_bounce_bracket_near_spinodal"
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {},
+    "S_one_loop_at_tree_eps_receipt": 132.033622478,
+    "S_one_loop_at_tree_eps_recomputed": 132.033622478,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     51.0614425005,
+     51.7285281101,
+     52.3956137197,
+     53.0626993293,
+     53.7297849389
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.504660965365,
+     -0.586325465518,
+     -0.616315810441,
+     -0.594849458809,
+     -0.522149660103
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0558274225379,
+    "S_star": 175.460503459,
+    "S_two_loop_at_tree_eps": 132.189498098,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0580625338627,
+     "os_polynomial": 0.619492753196,
+     "resummation": 0.0,
+     "scheme_conversion": 0.286213860032,
+     "sunset": -0.691764025681
+    },
+    "ds_deps": -2134.52299267,
+    "eps_bracket_hi": 0.380734516064,
+    "eps_star_one_loop": 0.377486168512,
+    "eps_star_scale_band": [
+     0.377491115271,
+     0.377496105023
+    ],
+    "eps_star_shift_vs_one_loop": 1.97136647222e-05,
+    "eps_star_total_band": [
+     0.377465931612,
+     0.377521288683
+    ],
+    "eps_star_tree": 0.379416323566,
+    "eps_star_two_loop": 0.377493610147,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0537551002106,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0537551002106
+    },
+    "s_star": 17.5460503459,
+    "scale_half_width_reduced_action": 0.0053253703572,
+    "scale_shifts_reduced_action": [
+     -0.043583606276,
+     -0.0512789337436,
+     -0.0542343469904,
+     -0.0524693816639,
+     -0.0460041083842
+    ],
+    "two_loop_bounce_s": 17.5460503322,
+    "two_loop_method": "bounce",
+    "virial_defect": -1.72889583775e-09,
+    "virial_defect_two_loop_at_tree_eps": 1.79575482517e-08
+   },
+   "easier_channel": "quantum_O4",
+   "eps_eff": 0.377493610147,
+   "eps_eff_one_loop": 0.377486168512,
+   "eps_eff_scale_band": [
+    0.377491115271,
+    0.377496105023
+   ],
+   "eps_eff_total_band": [
+    0.377465931612,
+    0.377521288683
+   ],
+   "eps_eff_tree": 0.379416323566,
+   "spinodal_one_loop": 0.382757083348,
+   "spinodal_two_loop_regulated": 0.382734516064,
+   "thermal_loops": false,
+   "v_T_GeV": 29999.9583332,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 150.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_star": 149.114703028,
+    "eps_bracket_hi": 0.380736509485,
+    "eps_star_one_loop": 0.382207018588,
+    "eps_star_tree": 0.384334653906,
+    "eps_star_two_loop": null,
+    "one_loop_method": "bounce",
+    "s_star": 0.235771783883,
+    "two_loop_method": "above_bounce_bracket_near_spinodal"
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {},
+    "S_one_loop_at_tree_eps_receipt": 128.277589694,
+    "S_one_loop_at_tree_eps_recomputed": 128.277589694,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     51.8383310011,
+     52.4937929168,
+     53.1492548324,
+     53.8047167481,
+     54.4601786638
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.512945379438,
+     -0.59531360548,
+     -0.625422561034,
+     -0.603492772781,
+     -0.529750573457
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0562385907979,
+    "S_star": 172.179017184,
+    "S_two_loop_at_tree_eps": 128.432760065,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0581790841965,
+     "os_polynomial": 0.62873411412,
+     "resummation": 0.0,
+     "scheme_conversion": 0.29238997178,
+     "sunset": -0.707771403402
+    },
+    "ds_deps": -2148.89785164,
+    "eps_bracket_hi": 0.380736509485,
+    "eps_star_one_loop": 0.377641341943,
+    "eps_star_scale_band": [
+     0.377646249534,
+     0.377651214294
+    ],
+    "eps_star_shift_vs_one_loop": 1.95687560918e-05,
+    "eps_star_total_band": [
+     0.377621160426,
+     0.377676303403
+    ],
+    "eps_star_tree": 0.379573662635,
+    "eps_star_two_loop": 0.377648731914,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0539139311188,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0539139311188
+    },
+    "s_star": 17.2179017184,
+    "scale_half_width_reduced_action": 0.00533438126272,
+    "scale_shifts_reduced_action": [
+     -0.0439784039739,
+     -0.0516930715971,
+     -0.0546471664994,
+     -0.0528603215852,
+     -0.0463527256426
+    ],
+    "two_loop_bounce_s": 17.2179017828,
+    "two_loop_method": "bounce",
+    "virial_defect": 9.57409099301e-09,
+    "virial_defect_two_loop_at_tree_eps": -2.02446397858e-08
+   },
+   "easier_channel": "quantum_O4",
+   "eps_eff": 0.377648731914,
+   "eps_eff_one_loop": 0.377641341943,
+   "eps_eff_scale_band": [
+    0.377646249534,
+    0.377651214294
+   ],
+   "eps_eff_total_band": [
+    0.377621160426,
+    0.377676303403
+   ],
+   "eps_eff_tree": 0.379573662635,
+   "spinodal_one_loop": 0.382759076889,
+   "spinodal_two_loop_regulated": 0.382736509485,
+   "thermal_loops": false,
+   "v_T_GeV": 29999.9062497,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 300.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_star": 146.313669672,
+    "eps_bracket_hi": 0.380747274258,
+    "eps_star_one_loop": 0.381456493291,
+    "eps_star_tree": 0.383546248989,
+    "eps_star_two_loop": null,
+    "one_loop_method": "bounce",
+    "s_star": 0.462690232653,
+    "two_loop_method": "above_bounce_bracket_near_spinodal"
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {},
+    "S_one_loop_at_tree_eps_receipt": 121.968685299,
+    "S_one_loop_at_tree_eps_recomputed": 121.968685299,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     53.2685853198,
+     53.9055110722,
+     54.5424368246,
+     55.179362577,
+     55.8162883294
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.528063343296,
+     -0.611765206951,
+     -0.64211327306,
+     -0.619333827431,
+     -0.543658947576
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0570249648822,
+    "S_star": 166.567534452,
+    "S_two_loop_at_tree_eps": 122.122373081,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0584133318894,
+     "os_polynomial": 0.645771696648,
+     "resummation": 0.0,
+     "scheme_conversion": 0.303767497006,
+     "sunset": -0.737429832831
+    },
+    "ds_deps": -2175.13992399,
+    "eps_bracket_hi": 0.380747274258,
+    "eps_star_one_loop": 0.377911514014,
+    "eps_star_scale_band": [
+     0.377916348643,
+     0.377921270612
+    ],
+    "eps_star_shift_vs_one_loop": 1.93050839115e-05,
+    "eps_star_total_band": [
+     0.377891432444,
+     0.377946186811
+    ],
+    "eps_star_tree": 0.379840326764,
+    "eps_star_two_loop": 0.377918809627,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0541962198338,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0541962198338
+    },
+    "s_star": 16.6567534452,
+    "scale_half_width_reduced_action": 0.00535298570463,
+    "scale_shifts_reduced_action": [
+     -0.0446917009893,
+     -0.0524444049392,
+     -0.0553976723985,
+     -0.0535713447673,
+     -0.0469858107917
+    ],
+    "two_loop_bounce_s": 16.6567534303,
+    "two_loop_method": "bounce",
+    "virial_defect": 1.74880264573e-09,
+    "virial_defect_two_loop_at_tree_eps": 5.35346368784e-09
+   },
+   "easier_channel": "quantum_O4",
+   "eps_eff": 0.377918809627,
+   "eps_eff_one_loop": 0.377911514014,
+   "eps_eff_scale_band": [
+    0.377916348643,
+    0.377921270612
+   ],
+   "eps_eff_total_band": [
+    0.377891432444,
+    0.377946186811
+   ],
+   "eps_eff_tree": 0.379840326764,
+   "spinodal_one_loop": 0.382769842307,
+   "spinodal_two_loop_regulated": 0.382747274258,
+   "thermal_loops": false,
+   "v_T_GeV": 29999.6249972,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 1000.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_alternatives_at_tree_eps": {
+     "thermal_prescription_Re_continuation": 0.00464378511666
+    },
+    "S_one_loop_at_tree_eps_receipt": 103.935713792,
+    "S_one_loop_at_tree_eps_recomputed": 103.935713792,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     45.2525350273,
+     45.7223014554,
+     46.1920678834,
+     46.6618343114,
+     47.1316007395
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.450209999687,
+     -0.520501372409,
+     -0.546257526682,
+     -0.527661159147,
+     -0.464900386348
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0480237634973,
+    "S_star": 141.447037375,
+    "S_two_loop_at_tree_eps": 104.099612038,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.047340697675,
+     "os_polynomial": 0.547990708679,
+     "resummation": 0.0,
+     "scheme_conversion": 0.254907311414,
+     "sunset": -0.591685131067
+    },
+    "ds_deps": -209.567289716,
+    "eps_bracket_hi": 0.380892448611,
+    "eps_star_one_loop": 0.377147711725,
+    "eps_star_scale_band": [
+     0.377153939566,
+     0.377158710772
+    ],
+    "eps_star_shift_vs_one_loop": 2.28383845817e-05,
+    "eps_star_total_band": [
+     0.37713336873,
+     0.377179281609
+    ],
+    "eps_star_tree": 0.37898417201,
+    "eps_star_two_loop": 0.377156325169,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.00431097447361,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.00391170892234,
+     "thermal_prescription_Re_continuation": -0.000399265551271
+    },
+    "s_star": 1.49118981231,
+    "scale_half_width_reduced_action": 0.000499944324003,
+    "scale_shifts_reduced_action": [
+     -0.00439032276956,
+     -0.00511627780455,
+     -0.00539021141757,
+     -0.00521396122771,
+     -0.0045894186439
+    ],
+    "two_loop_bounce_s": 1.49118981716,
+    "two_loop_method": "bounce",
+    "virial_defect": 5.09953794272e-08,
+    "virial_defect_two_loop_at_tree_eps": 4.29674107146e-09
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {
+     "thermal_prescription_Re_continuation": -0.104830198842
+    },
+    "S_one_loop_at_tree_eps_receipt": 114.058278432,
+    "S_one_loop_at_tree_eps_recomputed": 114.058278432,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     55.2862739328,
+     55.8999744175,
+     56.5136749022,
+     57.1273753869,
+     57.7410758716
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.549470808731,
+     -0.635148147619,
+     -0.665872967576,
+     -0.641880017972,
+     -0.563410020053
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0582010794229,
+    "S_star": 156.81457279,
+    "S_two_loop_at_tree_eps": 114.209442,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0587359090166,
+     "os_polynomial": 0.669831679726,
+     "resummation": 0.0,
+     "scheme_conversion": 0.319928163772,
+     "sunset": -0.779858517098
+    },
+    "ds_deps": -2225.79115679,
+    "eps_bracket_hi": 0.380892448611,
+    "eps_star_one_loop": 0.378498262987,
+    "eps_star_scale_band": [
+     0.378502952037,
+     0.378507800666
+    ],
+    "eps_star_shift_vs_one_loop": 1.879365114e-05,
+    "eps_star_total_band": [
+     0.378474453404,
+     0.378536299299
+    ],
+    "eps_star_tree": 0.380296097705,
+    "eps_star_two_loop": 0.378505376352,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0634320059731,
+    "other_shifts_reduced_action": {
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0547088421667,
+     "thermal_prescription_Re_continuation": -0.00872316380636
+    },
+    "s_star": 15.681457279,
+    "scale_half_width_reduced_action": 0.00539601778474,
+    "scale_shifts_reduced_action": [
+     -0.0460599769208,
+     -0.0538954209135,
+     -0.0568520124903,
+     -0.0549500089579,
+     -0.0482102119595
+    ],
+    "two_loop_bounce_s": 15.6814572953,
+    "two_loop_method": "bounce",
+    "virial_defect": -5.93022603084e-09,
+    "virial_defect_two_loop_at_tree_eps": 1.95053737186e-09
+   },
+   "easier_channel": "thermal_O3",
+   "eps_eff": 0.377156325169,
+   "eps_eff_one_loop": 0.377147711725,
+   "eps_eff_scale_band": [
+    0.377153939566,
+    0.377158710772
+   ],
+   "eps_eff_total_band": [
+    0.37713336873,
+    0.377179281609
+   ],
+   "eps_eff_tree": 0.37898417201,
+   "spinodal_one_loop": 0.382915025373,
+   "spinodal_two_loop_regulated": 0.382892448611,
+   "thermal_loops": false,
+   "v_T_GeV": 29995.8330384,
+   "y_IR": 0.0
+  },
+  {
+   "T_GeV": 2000.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_alternatives_at_tree_eps": {
+     "IR_regulator_x0.25": -0.00033473849408,
+     "IR_regulator_x4": 0.00134157956705,
+     "no_resummation": 0.00013420733962
+    },
+    "S_one_loop_at_tree_eps_receipt": 126.919508293,
+    "S_one_loop_at_tree_eps_recomputed": 126.919508293,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     19.0158896394,
+     19.4821652984,
+     19.9484409574,
+     20.4147166164,
+     20.8809922754
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.182213815727,
+     -0.217793299623,
+     -0.232065988141,
+     -0.225118998324,
+     -0.197039996403
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0249260862068,
+    "S_star": 138.644429515,
+    "S_two_loop_at_tree_eps": 126.996936203,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0347776734019,
+     "os_polynomial": 0.232548270814,
+     "resummation": -4.86617615748e-07,
+     "scheme_conversion": 0.0902616486937,
+     "sunset": -0.210618255977
+    },
+    "ds_deps": -193.036038812,
+    "eps_bracket_hi": 0.381041490193,
+    "eps_star_one_loop": 0.37036502022,
+    "eps_star_scale_band": [
+     0.370370737098,
+     0.370376273316
+    ],
+    "eps_star_shift_vs_one_loop": 2.2909795427e-05,
+    "eps_star_total_band": [
+     0.370347503408,
+     0.370399507006
+    ],
+    "eps_star_tree": 0.371641478116,
+    "eps_star_two_loop": 0.370373505207,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.00448493942895,
+    "other_shifts_reduced_action": {
+     "IR_regulator": 2.53557582064e-05,
+     "no_resummation": 2.57612026897e-06,
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.00445700755048
+    },
+    "s_star": 2.92450639392,
+    "scale_half_width_reduced_action": 0.00053434481893,
+    "scale_shifts_reduced_action": [
+     -0.00376425003848,
+     -0.00452446834358,
+     -0.00483293967634,
+     -0.00469147872173,
+     -0.00410193014418
+    ],
+    "two_loop_bounce_s": 2.92450636273,
+    "two_loop_method": "bounce",
+    "virial_defect": 6.14628165568e-08,
+    "virial_defect_two_loop_at_tree_eps": -1.59097254098e-09
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {
+     "IR_regulator_x0.25": -0.00341818544767,
+     "IR_regulator_x4": 0.0139023724928,
+     "no_resummation": 0.000499253478915
+    },
+    "S_one_loop_at_tree_eps_receipt": 116.246598478,
+    "S_one_loop_at_tree_eps_recomputed": 116.246598478,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     56.1937218262,
+     56.8558540649,
+     57.5179863035,
+     58.1801185422,
+     58.8422507808
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.560918493055,
+     -0.645905581553,
+     -0.674171003441,
+     -0.646005029806,
+     -0.561665325632
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0566262551929,
+    "S_star": 151.19473674,
+    "S_two_loop_at_tree_eps": 116.280334602,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0754856564983,
+     "os_polynomial": 0.681150349053,
+     "resummation": 1.54366274669e-05,
+     "scheme_conversion": 0.366448987571,
+     "sunset": -0.937749632676
+    },
+    "ds_deps": -2295.76854473,
+    "eps_bracket_hi": 0.381041490193,
+    "eps_star_one_loop": 0.379120447477,
+    "eps_star_scale_band": [
+     0.379121882176,
+     0.379126564533
+    ],
+    "eps_star_shift_vs_one_loop": 9.9595712868e-06,
+    "eps_star_total_band": [
+     0.379096927757,
+     0.379151518952
+    ],
+    "eps_star_tree": 0.380553925759,
+    "eps_star_two_loop": 0.379124223354,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0572895700754,
+    "other_shifts_reduced_action": {
+     "IR_regulator": 0.000810906606243,
+     "no_resummation": 4.27912822761e-05,
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0564358721869
+    },
+    "s_star": 15.119473674,
+    "scale_half_width_reduced_action": 0.00537480400977,
+    "scale_shifts_reduced_action": [
+     -0.0478562593666,
+     -0.0557585204118,
+     -0.0586058673862,
+     -0.0564199299101,
+     -0.0492227571003
+    ],
+    "two_loop_bounce_s": 15.119473734,
+    "two_loop_method": "bounce",
+    "virial_defect": 4.69949326703e-09,
+    "virial_defect_two_loop_at_tree_eps": 2.45789095946e-07
+   },
+   "easier_channel": "thermal_O3",
+   "eps_eff": 0.370373505207,
+   "eps_eff_one_loop": 0.37036502022,
+   "eps_eff_scale_band": [
+    0.370370737098,
+    0.370376273316
+   ],
+   "eps_eff_total_band": [
+    0.370347503408,
+    0.370399507006
+   ],
+   "eps_eff_tree": 0.371641478116,
+   "spinodal_one_loop": 0.383041490193,
+   "spinodal_two_loop_regulated": 0.384363613919,
+   "thermal_loops": true,
+   "v_T_GeV": 29983.3286789,
+   "y_IR": 0.025
+  },
+  {
+   "T_GeV": 2999.0,
+   "a2_GeV2": -2979.25318783,
+   "a4": 1.53960651104e-06,
+   "d3": {
+    "S_alternatives_at_tree_eps": {
+     "IR_regulator_x0.25": -0.000652304575264,
+     "IR_regulator_x4": 0.00263264035541,
+     "no_resummation": 0.000184626437037
+    },
+    "S_one_loop_at_tree_eps_receipt": 132.708119133,
+    "S_one_loop_at_tree_eps_recomputed": 132.708119133,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     11.9459776775,
+     12.4171680561,
+     12.8883584346,
+     13.3595488132,
+     13.8307391917
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.109835648862,
+     -0.136078392797,
+     -0.147223227825,
+     -0.143329137197,
+     -0.124458440151
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0186937894816,
+    "S_star": 137.006071611,
+    "S_two_loop_at_tree_eps": 132.745963297,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0330920569831,
+     "os_polynomial": 0.147596425949,
+     "resummation": 2.9198512033e-06,
+     "scheme_conversion": 0.0592782697567,
+     "sunset": -0.135961215211
+    },
+    "ds_deps": -190.87277934,
+    "eps_bracket_hi": 0.381255380858,
+    "eps_star_one_loop": 0.36341482605,
+    "eps_star_scale_band": [
+     0.363417979615,
+     0.36342424571
+    ],
+    "eps_star_shift_vs_one_loop": 1.7298723977e-05,
+    "eps_star_total_band": [
+     0.3633932618,
+     0.363448963525
+    ],
+    "eps_star_tree": 0.364127587936,
+    "eps_star_two_loop": 0.363421112662,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.00471795800881,
+    "other_shifts_reduced_action": {
+     "IR_regulator": 8.04262071497e-05,
+     "no_resummation": 5.71180746859e-06,
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.00463181999419
+    },
+    "s_star": 4.3364886173,
+    "scale_half_width_reduced_action": 0.000598013532947,
+    "scale_shifts_reduced_action": [
+     -0.00345100309414,
+     -0.00428945235113,
+     -0.00464703016003,
+     -0.00452571027061,
+     -0.00392748776257
+    ],
+    "two_loop_bounce_s": 4.33648861508,
+    "two_loop_method": "bounce",
+    "virial_defect": 4.41714389323e-08,
+    "virial_defect_two_loop_at_tree_eps": 4.43813732501e-08
+   },
+   "d4": {
+    "S_alternatives_at_tree_eps": {
+     "IR_regulator_x0.25": -0.0159781600549,
+     "IR_regulator_x4": 0.0655397736401,
+     "no_resummation": -0.000960137527159
+    },
+    "S_one_loop_at_tree_eps_receipt": 120.966178121,
+    "S_one_loop_at_tree_eps_recomputed": 120.966178121,
+    "S_one_loop_scale_band_first_order_at_tree_eps": [
+     56.2352071179,
+     56.9772704576,
+     57.7193337974,
+     58.4613971372,
+     59.2034604769
+    ],
+    "S_scale_band_at_tree_eps": [
+     -0.56396528083,
+     -0.646328722169,
+     -0.670834795269,
+     -0.637763388669,
+     -0.547384283582
+    ],
+    "S_scale_band_half_width_at_tree_eps": 0.0617252558437,
+    "S_star": 147.906932701,
+    "S_two_loop_at_tree_eps": 120.787548671,
+    "S_two_loop_pieces_first_order_at_tree_eps": {
+     "figure_eight": -0.0547740569506,
+     "os_polynomial": 0.682324862523,
+     "resummation": 0.000276588311734,
+     "scheme_conversion": 0.458942282628,
+     "sunset": -1.26207382501
+    },
+    "ds_deps": -2360.43922332,
+    "eps_bracket_hi": 0.381255380858,
+    "eps_star_one_loop": 0.379615389174,
+    "eps_star_scale_band": [
+     0.379609987902,
+     0.379614433485
+    ],
+    "eps_star_shift_vs_one_loop": -8.37289654287e-06,
+    "eps_star_total_band": [
+     0.379583430286,
+     0.379640991101
+    ],
+    "eps_star_tree": 0.380703024979,
+    "eps_star_two_loop": 0.379612210694,
+    "one_loop_method": "bounce",
+    "other_half_width_reduced_action": 0.0626876390178,
+    "other_shifts_reduced_action": {
+     "IR_regulator": 0.00432107991078,
+     "no_resummation": -8.99351012489e-06,
+     "one_loop_CW_IR_M_IR=1/R_core^2": -0.0583575655969
+    },
+    "s_star": 14.7906932701,
+    "scale_half_width_reduced_action": 0.00524676384077,
+    "scale_shifts_reduced_action": [
+     -0.0495111471503,
+     -0.0573844075831,
+     -0.0600046748318,
+     -0.0573991329134,
+     -0.0495933177999
+    ],
+    "two_loop_bounce_s": 14.7906932098,
+    "two_loop_method": "bounce",
+    "virial_defect": 8.03186461531e-08,
+    "virial_defect_two_loop_at_tree_eps": -2.03518311203e-08
+   },
+   "easier_channel": "thermal_O3",
+   "eps_eff": 0.363421112662,
+   "eps_eff_one_loop": 0.36341482605,
+   "eps_eff_scale_band": [
+    0.363417979615,
+    0.36342424571
+   ],
+   "eps_eff_total_band": [
+    0.3633932618,
+    0.363448963525
+   ],
+   "eps_eff_tree": 0.364127587936,
+   "spinodal_one_loop": 0.383255380858,
+   "spinodal_two_loop_regulated": 0.384399941124,
+   "thermal_loops": true,
+   "v_T_GeV": 29962.5015103,
+   "y_IR": 0.025
+  }
+ ],
+ "scheme": "On-shell (zero-momentum) at two loops: V_tree(lam,v)+V_CW^OS+V_1T+(1/2)[kappa A+I_T] delta x+V_2+a2 phi^2+a4 phi^4 with V'(v)=0, V''(v)=2 lam v^2 at T=0; Parwani-type resummation of the thermal parts with Pi=(lam_s/2) Re I_T; Re of the x+i0 continuation (Weinberg-Wu); zero-mode IR regulator y_IR=Pi/T^2 (log cut and Gaussian smoothing in M^2).",
+ "scope": "Supplied spectator model, single-field reduced bounces; scalar-sector two loops only (gauge/Higgs loops enter through kappa=1e-7 and are not added); zero-momentum OS conditions (not the pole mass); Re of the analytically continued potential where m^2<0; zero-mode IR region regulated at the thermal mass scale; T<=1000 GeV central keeps the Boltzmann limit of wall_nucleation_corrections; fluctuation determinant still the declared exp(+-20) band; floating-point bounces; scale bands from first-order action shifts of the MS-bar evaluation with one-loop matched couplings over mu in [m_v/2, 2 m_v]."
+}
