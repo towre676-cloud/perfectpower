@@ -333,6 +333,15 @@ mordell-two-descent-receipts:
 	PYTHONPATH=python $(PY) python/reconcile_mordell_frontier.py
 
 .PHONY: check-mordell-cover-points mordell-cover-points
+.PHONY: check-quartic-invariants quartic-invariant-frontier
+check-quartic-invariants:
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_binary_invariants.py' -q
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_quartic_invariant_receipts.py' -q
+quartic-invariant-frontier:
+	PYTHONPATH=python $(PY) python/develop_quartic_invariants.py
+	PYTHONPATH=python $(PY) python/reconcile_mordell_frontier.py
+	PYTHONPATH=python $(PY) python/develop_mordell_two_descent.py --effort 3
+
 check-mordell-cover-points:
 	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_mordell_cover_search.py' -q
 mordell-cover-points:

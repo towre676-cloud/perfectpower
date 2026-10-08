@@ -1,0 +1,11 @@
+# Binary invariants and the remaining 90 witnesses
+
+Read BINARY_INVARIANTS_MONOGRAPH.md first. The exact arithmetic is in python/perfectpower/binary_invariants.py and quartic_cover_reduction.py. The former compiles typed alternating contractions; the latter proposes strictly smaller integral covering models while retaining actual matrices, weighted ordinate scales and original Mordell maps. Coefficients are constant-first, with an explicit homogeneous degree. Matching invariants do not certify equivalent covers.
+
+Run make check-quartic-invariants and the test_mordell*.py suite with PYTHONPATH=python. Independent symbolic tests require SymPy. Large discovery searches require PARI/GP; the committed rounds used version 2.15.4. Core contractions, reduction and native primitive-box search use the standard library.
+
+The original 92 gaps now number 90. New points on k=-6798 and k=-7099 are retained in receipts/mordell_two_descent, together with original-cover coordinates, weighted integer lifts and exact independence evidence. The frontier and descent summaries now count 367 matching witness ranks among 457 curves. Backend ranks were already determined on all 457. There are 89 rank-one witnesses still missing and one missing independent point on k=-9257. No integral-point list was promoted.
+
+receipts/quartic_invariants/contraction_atlas.json contains 1,027 covers. frontier.json retains all three search rounds; each originally deficient curve has a separate model and search receipt. The first round returned two points and timed out on 91 covers. Later rectangular rounds returned no further points. Do not interpret a timeout or a bounded empty return as global insolubility.
+
+The next algorithmic extension is a full arithmetic minimisation and covariant reduction implementation, following Cremona-Fisher-Stoll. The present reducer is a bounded integral-chart descent, not their complete algorithm. Any extension must preserve the original covering identity, the root at projective infinity, the rational orbit and the target integrality conditions. A new point must be lifted and tested for independence before incrementing the constructive rank count. The separately missing global tasks are complete bases, saturation index bounds, effective integral-point bounds and formal program refinement.

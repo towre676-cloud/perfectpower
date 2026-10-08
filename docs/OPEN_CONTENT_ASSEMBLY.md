@@ -209,7 +209,7 @@ Newly opened:
 
 | # | Item | Opened by | Tier |
 |---|---|---|---|
-| N26 | Explicit points on the 92 witness-deficient frontier curves, certified independent against the retained upper bounds | `0e34a9a` | P |
+| N26 | Explicit points on the remaining 90 witness-deficient frontier curves (two closed by invariant-guided cover reduction), certified independent against the retained upper bounds | `0e34a9a` | P |
 | N27 | k=−9257: a second independent point or a sharper upper bound; reconcile 12 historical census ranks with the backend bounds | `0e34a9a` | P |
 | N28 | Saturate the witness subgroups into complete bases, then rerun the affected integral-point lists | `2fdc37d` | P |
 | N29 | Attach torsion-aware index packets to every saturation stage; automatic coordinate extraction | `ce43361` | P |

@@ -132,3 +132,7 @@ python python/recover_divisor_kernel.py --benchmark
 ```
 
 The runner replays all 8,358 stored power-hit records and the million-coordinate sigma identity, then constructs their seven-set arithmetic Gram matrix. See [the recovery monograph](../docs/DIVISOR_KERNEL_RECOVERY_MONOGRAPH.md) for proofs, historical corrections and scope. These calculations add no Lean compilation claim.
+
+## Binary invariant contractions and Mordell cover reduction
+
+`perfectpower.binary_invariants` represents homogeneous binary forms with an explicit degree and supplies normalized epsilon contractions, a typed contraction compiler, quartic invariants and covariants, and cubic discriminants. `perfectpower.quartic_cover_reduction` selects strictly smaller integral covering models while retaining their rational charts to the original Mordell curve. Its primitive projective residue masks include infinity, and its native bounded enumeration retains both nonzero ordinate signs. Run `make check-quartic-invariants`; run `python python/develop_quartic_invariants.py --models-only` for the atlas without PARI. See [the monograph](../docs/BINARY_INVARIANTS_MONOGRAPH.md) for the exact scope and the two new frontier witnesses.

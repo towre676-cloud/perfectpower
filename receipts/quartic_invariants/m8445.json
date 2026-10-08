@@ -1,0 +1,133 @@
+{
+  "k": -8445,
+  "models": [
+    {
+      "schema": "pp-quartic-cover-reduction/1",
+      "k": -8445,
+      "chart": {
+        "schema": "pp-mordell-cover-chart/1",
+        "k": -8445,
+        "source_cover": {
+          "quartic": [
+            "-55",
+            "-80",
+            "90",
+            "-64",
+            "-11"
+          ],
+          "x_numerator": [
+            "1225",
+            "-2360",
+            "-570",
+            "-920",
+            "421"
+          ],
+          "y_numerator": [
+            "-56950",
+            "39450",
+            "-161250",
+            "48400",
+            "74550",
+            "-15810",
+            "9266"
+          ]
+        },
+        "matrix": [
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "ordinate_scale": 1,
+        "cover": {
+          "quartic": [
+            "-55",
+            "-80",
+            "90",
+            "-64",
+            "-11"
+          ],
+          "x_numerator": [
+            "1225",
+            "-2360",
+            "-570",
+            "-920",
+            "421"
+          ],
+          "y_numerator": [
+            "-56950",
+            "39450",
+            "-161250",
+            "48400",
+            "74550",
+            "-15810",
+            "9266"
+          ]
+        },
+        "determinant": 1,
+        "source_height_factor": 1,
+        "inverse_height_factor": 1,
+        "execution_verified": false
+      },
+      "steps": [],
+      "before_invariants": {
+        "I": "0",
+        "J": "14592960",
+        "discriminant": "-7887203020800"
+      },
+      "after_invariants": {
+        "I": "0",
+        "J": "14592960",
+        "discriminant": "-7887203020800"
+      },
+      "score_before": [
+        "7887203020800",
+        "90",
+        "300"
+      ],
+      "score_after": [
+        "7887203020800",
+        "90",
+        "300"
+      ],
+      "max_steps": 8,
+      "local_primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "global_minimality": false
+    }
+  ],
+  "attempts": [
+    {
+      "cover_index": 0,
+      "native": {
+        "schema": "pp-reduced-cover-box/1",
+        "height": 30,
+        "moduli": [
+          16,
+          9,
+          5,
+          7
+        ],
+        "square_tests": 22,
+        "residue_rejections": 1090,
+        "lifts": [],
+        "exceptional_zero_ordinates_excluded": true,
+        "global_empty_proof": false,
+        "integral_point_completeness": false
+      },
+      "pari_status": "no_point_returned"
+    }
+  ],
+  "rank_lower_before": 0,
+  "rank_lower_after": 0,
+  "rank_upper": 1,
+  "rank_determined": false
+}
