@@ -297,3 +297,7 @@ check-weil-spectral:
 	bash scripts/check_weil_spectral.sh
 weil-spectral-receipts:
 	PYTHONPATH=python $(PY) python/develop_weil_spectral.py
+
+.PHONY: check-residue-atlas-intersection-factored
+check-residue-atlas-intersection-factored:
+	bash scripts/check_residue_atlas_intersection_factored.sh

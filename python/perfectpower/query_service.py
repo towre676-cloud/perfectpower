@@ -64,6 +64,24 @@ def dispatch(catalogue, request):
         if op.startswith('verify_'):
             return dict(valid=result, execution_verified=False)
         return result
+    if op in {'intersect_residue_atlases_factored', 'verify_residue_atlas_intersection_factored',
+              'residue_intersection_factored_contains', 'residue_intersection_factored_population',
+              'residue_intersection_factored_select', 'residue_intersection_factored_rank',
+              'residue_intersection_factored_scan', 'native_residue_atlas_intersection_factored'}:
+        from . import residue_atlas_intersection_factored as ri
+        result = {'intersect_residue_atlases_factored': ri.intersect_atlases,
+                  'verify_residue_atlas_intersection_factored': ri.verify_intersection,
+                  'residue_intersection_factored_contains': ri.intersection_contains,
+                  'residue_intersection_factored_population': ri.intersection_population,
+                  'residue_intersection_factored_select': ri.intersection_select,
+                  'residue_intersection_factored_rank': ri.intersection_rank,
+                  'residue_intersection_factored_scan': ri.intersection_scan,
+                  'native_residue_atlas_intersection_factored': ri.native_intersection}[op](**args)
+        if op.startswith('verify_'):
+            return dict(valid=result, execution_verified=False)
+        if op.startswith('native_'):
+            return dict(lean_source=result, execution_verified=False)
+        return result
     if op in {'residue_atlas_product', 'compose_residue_atlases', 'verify_residue_atlas_product',
               'residue_product_contains', 'residue_product_population', 'residue_product_select',
               'residue_product_rank', 'residue_product_scan', 'native_residue_atlas_product'}:

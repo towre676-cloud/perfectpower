@@ -1,0 +1,15 @@
+import PerfectPower.ResidueAtlasIntersectionFactored
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.reduce_divisor
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.nested_complete
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.nested_card_le
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.pair_left
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.pair_right
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.roots_card
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.roots_complete
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.CoverPacket.empty_obstruction
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.candidates_complete
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.card_candidates
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.solutions_complete
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.ofAtlas
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.nested
+#print axioms PerfectPower.ResidueAtlasIntersectionFactored.merge

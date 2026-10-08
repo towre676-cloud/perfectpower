@@ -9,6 +9,8 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [factored intersection and predicate-cover extension](docs/RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md) strengthens the shared-factor service with complete factored covers, independent local replay and simultaneous source scans. Fourteen generic Lean declarations and six native examples prove actual nested/coprime cover completeness, bounded solution lists and exact counts in a square of radius ten to the fortieth. The existing explicit API is preserved. Run `make check-residue-atlas-intersection-factored`; see the [handoff](CLAUDE_CODE_RESIDUE_ATLAS_INTERSECTION_FACTORED_START_HERE.md) for traversal refinement.
+
 The [concrete Heisenberg bridge](docs/WEIL_MONOMIAL_MONOGRAPH.md) proves the actual matrix coefficient basis and corrected generator actions in Lean. Its forty-one audited declarations identify the odd-level commutant with functions on its orbit quotient and remove the supplied-spanning premise from the reflection argument. Run `make check-weil-monomial`; arithmetic orbit classification and the even support reduction remain formalization targets.
 
 The [all-level orbit dimension and symmetry chapter](docs/WEIL_LOCAL_DIMENSION_MONOGRAPH.md) proves the odd and dyadic dimension formulas, commutativity and multiplicity-free complex decomposition on paper. Twelve general Lean theorems prove the gauge and transpose-to-commutativity bridge; exact phase/reflection checks cover 166 levels. Run `make check-weil-orbit`; the all-level orbit classification remains a formalization target.

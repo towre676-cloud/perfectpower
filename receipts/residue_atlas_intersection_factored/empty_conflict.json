@@ -1,0 +1,238 @@
+{
+  "name": "empty_conflict",
+  "input_moduli": [
+    4,
+    2
+  ],
+  "packet": {
+    "schema": "pp-residue-atlas-intersection-factored/1",
+    "constraints": [
+      {
+        "schema": "pp-residue-atlas/1",
+        "terms": [
+          [
+            -1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "prime": 2,
+        "exponent": 1,
+        "modulus": 2,
+        "roots": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "levels": [
+          {
+            "power": 1,
+            "modulus": 2,
+            "roots": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "nodes": []
+          }
+        ],
+        "work": 4,
+        "complete_modular_cover": true,
+        "global_obstruction": false,
+        "execution_verified": false,
+        "global_height_bound": false
+      },
+      {
+        "schema": "pp-residue-atlas/1",
+        "terms": [
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "prime": 2,
+        "exponent": 2,
+        "modulus": 4,
+        "roots": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ]
+        ],
+        "levels": [
+          {
+            "power": 1,
+            "modulus": 2,
+            "roots": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "nodes": []
+          },
+          {
+            "power": 2,
+            "modulus": 4,
+            "roots": [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ],
+            "nodes": [
+              {
+                "parent": [
+                  0,
+                  0
+                ],
+                "constant": 0,
+                "dx": 0,
+                "dy": 1,
+                "chart": "vertical",
+                "obstructed": false,
+                "children": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    2,
+                    0
+                  ]
+                ]
+              },
+              {
+                "parent": [
+                  1,
+                  0
+                ],
+                "constant": 0,
+                "dx": 0,
+                "dy": 1,
+                "chart": "vertical",
+                "obstructed": false,
+                "children": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    3,
+                    0
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "work": 8,
+        "complete_modular_cover": true,
+        "global_obstruction": false,
+        "execution_verified": false,
+        "global_height_bound": false
+      }
+    ],
+    "locals": [
+      {
+        "prime": 2,
+        "modulus": 4,
+        "constraint_ids": [
+          0,
+          1
+        ],
+        "roots": []
+      }
+    ],
+    "modulus": 4,
+    "combination_count": 0,
+    "roots": [],
+    "representation": "explicit",
+    "explicit_limit": 1,
+    "complete_modular_cover": true,
+    "global_obstruction": true,
+    "execution_verified": false,
+    "global_height_bound": false
+  },
+  "population": {
+    "bounds": [
+      [
+        -8,
+        8
+      ],
+      [
+        -8,
+        8
+      ]
+    ],
+    "modulus": 4,
+    "count": 0,
+    "combination_count": 0,
+    "representation": "explicit",
+    "order": "sorted prime-group root tuples; within each CRT cell x then y ascending",
+    "scope": "complete simultaneous modular candidates; each source equality still required",
+    "execution_verified": false
+  },
+  "scan": {
+    "points": [],
+    "bounds": [
+      [
+        -8,
+        8
+      ],
+      [
+        -8,
+        8
+      ]
+    ],
+    "candidates_checked": 0,
+    "source_count": 2,
+    "complete_in_box": true,
+    "global_height_bound": false,
+    "execution_verified": false
+  }
+}
