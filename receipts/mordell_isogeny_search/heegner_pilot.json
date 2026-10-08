@@ -1,0 +1,142 @@
+{
+  "schema": "pp-mordell-heegner-pilot/1",
+  "rows": [
+    {
+      "k": 5935,
+      "partner_k": -160245,
+      "timeout": 30.0,
+      "stack_bytes": 512000000,
+      "lifts": [],
+      "status": "timeout"
+    },
+    {
+      "k": 7482,
+      "partner_k": -202014,
+      "timeout": 30.0,
+      "stack_bytes": 512000000,
+      "lifts": [],
+      "status": "backend_error",
+      "message": "  ***   Warning: new stack size = 512000000 (488.281 Mbytes).\n  ***   at top-level: E=ellinit([0,-202014]);P=ellheegner(E);print(\"\n  ***                                          ^---------------------\n  *** ellheegner: the PARI stack overflows !\n  current stack size: 512000000 (488.281 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n\n"
+    },
+    {
+      "k": 7823,
+      "partner_k": -211221,
+      "timeout": 30.0,
+      "stack_bytes": 512000000,
+      "lifts": [],
+      "status": "timeout"
+    },
+    {
+      "k": 8210,
+      "partner_k": -221670,
+      "timeout": 30.0,
+      "stack_bytes": 512000000,
+      "lifts": [],
+      "status": "backend_error",
+      "message": "  ***   Warning: new stack size = 512000000 (488.281 Mbytes).\n  ***   at top-level: E=ellinit([0,-221670]);P=ellheegner(E);print(\"\n  ***                                          ^---------------------\n  *** ellheegner: the PARI stack overflows !\n  current stack size: 512000000 (488.281 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n\n"
+    },
+    {
+      "k": 9454,
+      "partner_k": -255258,
+      "timeout": 30.0,
+      "stack_bytes": 512000000,
+      "lifts": [],
+      "status": "timeout"
+    }
+  ],
+  "errors": {},
+  "runs": [
+    {
+      "rows": [
+        {
+          "k": 5935,
+          "partner_k": -160245,
+          "timeout": 20.0,
+          "lifts": [],
+          "status": "timeout"
+        },
+        {
+          "k": 7482,
+          "partner_k": -202014,
+          "timeout": 20.0,
+          "lifts": [],
+          "status": "backend_error",
+          "message": "  ***   Warning: new stack size = 128000000 (122.070 Mbytes).\n  ***   at top-level: E=ellinit([0,-202014]);P=ellheegner(E);print(\"\n  ***                                          ^---------------------\n  *** ellheegner: the PARI stack overflows !\n  current stack size: 128000000 (122.070 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n\n"
+        },
+        {
+          "k": 7823,
+          "partner_k": -211221,
+          "timeout": 20.0,
+          "lifts": [],
+          "status": "backend_error",
+          "message": "  ***   Warning: new stack size = 128000000 (122.070 Mbytes).\n  ***   at top-level: E=ellinit([0,-211221]);P=ellheegner(E);print(\"\n  ***                                          ^---------------------\n  *** ellheegner: the PARI stack overflows !\n  current stack size: 128000000 (122.070 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n\n"
+        },
+        {
+          "k": 8210,
+          "partner_k": -221670,
+          "timeout": 20.0,
+          "lifts": [],
+          "status": "backend_error",
+          "message": "  ***   Warning: new stack size = 128000000 (122.070 Mbytes).\n  ***   at top-level: E=ellinit([0,-221670]);P=ellheegner(E);print(\"\n  ***                                          ^---------------------\n  *** ellheegner: the PARI stack overflows !\n  current stack size: 128000000 (122.070 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n\n"
+        },
+        {
+          "k": 9454,
+          "partner_k": -255258,
+          "timeout": 20.0,
+          "lifts": [],
+          "status": "timeout"
+        }
+      ],
+      "errors": {}
+    },
+    {
+      "rows": [
+        {
+          "k": 5935,
+          "partner_k": -160245,
+          "timeout": 30.0,
+          "stack_bytes": 512000000,
+          "lifts": [],
+          "status": "timeout"
+        },
+        {
+          "k": 7482,
+          "partner_k": -202014,
+          "timeout": 30.0,
+          "stack_bytes": 512000000,
+          "lifts": [],
+          "status": "backend_error",
+          "message": "  ***   Warning: new stack size = 512000000 (488.281 Mbytes).\n  ***   at top-level: E=ellinit([0,-202014]);P=ellheegner(E);print(\"\n  ***                                          ^---------------------\n  *** ellheegner: the PARI stack overflows !\n  current stack size: 512000000 (488.281 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n\n"
+        },
+        {
+          "k": 7823,
+          "partner_k": -211221,
+          "timeout": 30.0,
+          "stack_bytes": 512000000,
+          "lifts": [],
+          "status": "timeout"
+        },
+        {
+          "k": 8210,
+          "partner_k": -221670,
+          "timeout": 30.0,
+          "stack_bytes": 512000000,
+          "lifts": [],
+          "status": "backend_error",
+          "message": "  ***   Warning: new stack size = 512000000 (488.281 Mbytes).\n  ***   at top-level: E=ellinit([0,-221670]);P=ellheegner(E);print(\"\n  ***                                          ^---------------------\n  *** ellheegner: the PARI stack overflows !\n  current stack size: 512000000 (488.281 Mbytes)\n  [hint] set 'parisizemax' to a nonzero value in your GPRC\n\n"
+        },
+        {
+          "k": 9454,
+          "partner_k": -255258,
+          "timeout": 30.0,
+          "stack_bytes": 512000000,
+          "lifts": [],
+          "status": "timeout"
+        }
+      ],
+      "errors": {}
+    }
+  ],
+  "integral_lists_promoted": 0,
+  "analytic_rank_claimed": false
+}

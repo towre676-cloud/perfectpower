@@ -1,0 +1,197 @@
+{
+  "schema": "pp-mordell-isogeny-search/1",
+  "k": -5155,
+  "partner": {
+    "schema": "pp-mordell-isogeny-covers/1",
+    "k": -5155,
+    "partner_k": 139185,
+    "covers": [
+      {
+        "quartic": [
+          "-18",
+          "-69",
+          "45",
+          "9",
+          "18"
+        ],
+        "x_numerator": [
+          "6921/4",
+          "-711",
+          "4563/2",
+          "2619",
+          "-2079/4"
+        ],
+        "y_numerator": [
+          "-528741/8",
+          "475713/4",
+          "1254285/8",
+          "217890",
+          "-973215/8",
+          "257823/4",
+          "207279/8"
+        ]
+      }
+    ],
+    "completeness_claimed": false,
+    "rank_assertion": false
+  },
+  "runs": [
+    {
+      "height": 10000000,
+      "denominator_max": 1000000,
+      "timeout": 8.0,
+      "attempts": [
+        {
+          "cover_index": 0,
+          "reduction": {
+            "schema": "pp-quartic-cover-reduction/1",
+            "k": 139185,
+            "chart": {
+              "schema": "pp-mordell-cover-chart/1",
+              "k": 139185,
+              "source_cover": {
+                "quartic": [
+                  "-18",
+                  "-69",
+                  "45",
+                  "9",
+                  "18"
+                ],
+                "x_numerator": [
+                  "6921/4",
+                  "-711",
+                  "4563/2",
+                  "2619",
+                  "-2079/4"
+                ],
+                "y_numerator": [
+                  "-528741/8",
+                  "475713/4",
+                  "1254285/8",
+                  "217890",
+                  "-973215/8",
+                  "257823/4",
+                  "207279/8"
+                ]
+              },
+              "matrix": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "ordinate_scale": 1,
+              "cover": {
+                "quartic": [
+                  "-18",
+                  "-69",
+                  "45",
+                  "9",
+                  "18"
+                ],
+                "x_numerator": [
+                  "6921/4",
+                  "-711",
+                  "4563/2",
+                  "2619",
+                  "-2079/4"
+                ],
+                "y_numerator": [
+                  "-528741/8",
+                  "475713/4",
+                  "1254285/8",
+                  "217890",
+                  "-973215/8",
+                  "257823/4",
+                  "207279/8"
+                ]
+              },
+              "determinant": 1,
+              "source_height_factor": 1,
+              "inverse_height_factor": 1,
+              "execution_verified": false
+            },
+            "steps": [],
+            "before_invariants": {
+              "I": "0",
+              "J": "-3757995",
+              "discriminant": "-523056534075"
+            },
+            "after_invariants": {
+              "I": "0",
+              "J": "-3757995",
+              "discriminant": "-523056534075"
+            },
+            "score_before": [
+              "523056534075",
+              "69",
+              "159"
+            ],
+            "score_after": [
+              "523056534075",
+              "69",
+              "159"
+            ],
+            "max_steps": 8,
+            "local_primes": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "global_minimality": false
+          },
+          "status": "point_returned"
+        }
+      ],
+      "lifts": [
+        {
+          "cover_index": 0,
+          "partner_cover": {
+            "quartic": [
+              "-18",
+              "-69",
+              "45",
+              "9",
+              "18"
+            ],
+            "x_numerator": [
+              "6921/4",
+              "-711",
+              "4563/2",
+              "2619",
+              "-2079/4"
+            ],
+            "y_numerator": [
+              "-528741/8",
+              "475713/4",
+              "1254285/8",
+              "217890",
+              "-973215/8",
+              "257823/4",
+              "207279/8"
+            ]
+          },
+          "partner_coordinates": [
+            162,
+            49,
+            125256
+          ],
+          "partner_point": [
+            "145693924369/6972918016",
+            "224234469661339513/582266546008064"
+          ],
+          "mordell_point": [
+            "191846577298052379621539502101702449/1332109579551773773943852789117184",
+            "-83956825726479187929765821536898958911754227982187223/48619437183044360781969423753775553654095043530752"
+          ]
+        }
+      ],
+      "global_empty_proof": false
+    }
+  ]
+}

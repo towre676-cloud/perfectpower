@@ -209,8 +209,8 @@ Newly opened:
 
 | # | Item | Opened by | Tier |
 |---|---|---|---|
-| N26 | Explicit points on the remaining 90 witness-deficient frontier curves (two closed by invariant-guided cover reduction), certified independent against the retained upper bounds | `0e34a9a` | P |
-| N27 | k=−9257: a second independent point or a sharper upper bound; reconcile 12 historical census ranks with the backend bounds | `0e34a9a` | P |
+| N26 | Explicit points on the remaining five witness-deficient curves k=5935,7482,7823,8210,9454; 85 further gaps closed by original-cover search and exact 3-isogeny images | `0e34a9a` | P |
+| N27 | CLOSED: k=−9257 has an explicit independent pair; all 12 historical census rank corrections now have matching point witnesses | `0e34a9a`; see Mordell isogeny continuation | closed |
 | N28 | Saturate the witness subgroups into complete bases, then rerun the affected integral-point lists | `2fdc37d` | P |
 | N29 | Attach torsion-aware index packets to every saturation stage; automatic coordinate extraction | `ce43361` | P |
 | N30 | General norm representatives and an effective exponent-orbit bound (current runtime searches up to |e|≤64), plus arbitrary power orders | `d0fdfb3` | P |

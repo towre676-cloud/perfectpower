@@ -1,0 +1,270 @@
+{
+  "schema": "pp-mordell-isogeny-search/1",
+  "k": 7823,
+  "partner": {
+    "schema": "pp-mordell-isogeny-covers/1",
+    "k": 7823,
+    "partner_k": -211221,
+    "covers": [
+      {
+        "quartic": [
+          "-123",
+          "-48",
+          "18",
+          "336",
+          "33"
+        ],
+        "x_numerator": [
+          "513",
+          "20592",
+          "6102",
+          "1296",
+          "6957"
+        ],
+        "y_numerator": [
+          "-627048",
+          "-379890",
+          "-414720",
+          "-4363200",
+          "-1266840",
+          "-38070",
+          "573696"
+        ]
+      }
+    ],
+    "completeness_claimed": false,
+    "rank_assertion": false
+  },
+  "runs": [
+    {
+      "height": 10000000,
+      "denominator_max": 1000000,
+      "timeout": 8.0,
+      "attempts": [
+        {
+          "cover_index": 0,
+          "reduction": {
+            "schema": "pp-quartic-cover-reduction/1",
+            "k": -211221,
+            "chart": {
+              "schema": "pp-mordell-cover-chart/1",
+              "k": -211221,
+              "source_cover": {
+                "quartic": [
+                  "-123",
+                  "-48",
+                  "18",
+                  "336",
+                  "33"
+                ],
+                "x_numerator": [
+                  "513",
+                  "20592",
+                  "6102",
+                  "1296",
+                  "6957"
+                ],
+                "y_numerator": [
+                  "-627048",
+                  "-379890",
+                  "-414720",
+                  "-4363200",
+                  "-1266840",
+                  "-38070",
+                  "573696"
+                ]
+              },
+              "matrix": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "ordinate_scale": 1,
+              "cover": {
+                "quartic": [
+                  "-123",
+                  "-48",
+                  "18",
+                  "336",
+                  "33"
+                ],
+                "x_numerator": [
+                  "513",
+                  "20592",
+                  "6102",
+                  "1296",
+                  "6957"
+                ],
+                "y_numerator": [
+                  "-627048",
+                  "-379890",
+                  "-414720",
+                  "-4363200",
+                  "-1266840",
+                  "-38070",
+                  "573696"
+                ]
+              },
+              "determinant": 1,
+              "source_height_factor": 1,
+              "inverse_height_factor": 1,
+              "execution_verified": false
+            },
+            "steps": [],
+            "before_invariants": {
+              "I": "0",
+              "J": "364989888",
+              "discriminant": "-4933985864527872"
+            },
+            "after_invariants": {
+              "I": "0",
+              "J": "364989888",
+              "discriminant": "-4933985864527872"
+            },
+            "score_before": [
+              "4933985864527872",
+              "336",
+              "558"
+            ],
+            "score_after": [
+              "4933985864527872",
+              "336",
+              "558"
+            ],
+            "max_steps": 8,
+            "local_primes": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "global_minimality": false
+          },
+          "status": "timeout"
+        }
+      ],
+      "lifts": [],
+      "global_empty_proof": false
+    },
+    {
+      "height": 100000000,
+      "denominator_max": 100000000,
+      "timeout": 30.0,
+      "attempts": [
+        {
+          "cover_index": 0,
+          "reduction": {
+            "schema": "pp-quartic-cover-reduction/1",
+            "k": -211221,
+            "chart": {
+              "schema": "pp-mordell-cover-chart/1",
+              "k": -211221,
+              "source_cover": {
+                "quartic": [
+                  "-123",
+                  "-48",
+                  "18",
+                  "336",
+                  "33"
+                ],
+                "x_numerator": [
+                  "513",
+                  "20592",
+                  "6102",
+                  "1296",
+                  "6957"
+                ],
+                "y_numerator": [
+                  "-627048",
+                  "-379890",
+                  "-414720",
+                  "-4363200",
+                  "-1266840",
+                  "-38070",
+                  "573696"
+                ]
+              },
+              "matrix": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "ordinate_scale": 1,
+              "cover": {
+                "quartic": [
+                  "-123",
+                  "-48",
+                  "18",
+                  "336",
+                  "33"
+                ],
+                "x_numerator": [
+                  "513",
+                  "20592",
+                  "6102",
+                  "1296",
+                  "6957"
+                ],
+                "y_numerator": [
+                  "-627048",
+                  "-379890",
+                  "-414720",
+                  "-4363200",
+                  "-1266840",
+                  "-38070",
+                  "573696"
+                ]
+              },
+              "determinant": 1,
+              "source_height_factor": 1,
+              "inverse_height_factor": 1,
+              "execution_verified": false
+            },
+            "steps": [],
+            "before_invariants": {
+              "I": "0",
+              "J": "364989888",
+              "discriminant": "-4933985864527872"
+            },
+            "after_invariants": {
+              "I": "0",
+              "J": "364989888",
+              "discriminant": "-4933985864527872"
+            },
+            "score_before": [
+              "4933985864527872",
+              "336",
+              "558"
+            ],
+            "score_after": [
+              "4933985864527872",
+              "336",
+              "558"
+            ],
+            "max_steps": 8,
+            "local_primes": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "global_minimality": false
+          },
+          "status": "timeout"
+        }
+      ],
+      "lifts": [],
+      "global_empty_proof": false
+    }
+  ]
+}

@@ -334,6 +334,16 @@ mordell-two-descent-receipts:
 
 .PHONY: check-mordell-cover-points mordell-cover-points
 .PHONY: check-quartic-invariants quartic-invariant-frontier
+.PHONY: check-mordell-three-isogeny mordell-isogeny-frontier
+check-mordell-three-isogeny:
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_mordell_three_isogeny.py' -q
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_mordell_isogeny_receipts.py' -q
+mordell-isogeny-frontier:
+	PYTHONPATH=python $(PY) python/develop_mordell_isogeny_search.py
+	PYTHONPATH=python $(PY) python/develop_mordell_isogeny_search.py --apply-only
+	PYTHONPATH=python $(PY) python/reconcile_mordell_frontier.py
+	PYTHONPATH=python $(PY) python/develop_mordell_two_descent.py --effort 3
+
 check-quartic-invariants:
 	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_binary_invariants.py' -q
 	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_quartic_invariant_receipts.py' -q

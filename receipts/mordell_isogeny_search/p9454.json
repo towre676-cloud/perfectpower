@@ -1,0 +1,326 @@
+{
+  "schema": "pp-mordell-isogeny-search/1",
+  "k": 9454,
+  "partner": {
+    "schema": "pp-mordell-isogeny-covers/1",
+    "k": 9454,
+    "partner_k": -255258,
+    "covers": [
+      {
+        "quartic": [
+          "6",
+          "-168",
+          "-72",
+          "-9",
+          "-9"
+        ],
+        "x_numerator": [
+          "7344",
+          "4140",
+          "1188",
+          "-2808",
+          "-1647/4"
+        ],
+        "y_numerator": [
+          "629316",
+          "535896",
+          "123120",
+          "636255",
+          "266085",
+          "40338",
+          "-86265/8"
+        ]
+      }
+    ],
+    "completeness_claimed": false,
+    "rank_assertion": false
+  },
+  "runs": [
+    {
+      "height": 10000000,
+      "denominator_max": 1000000,
+      "timeout": 8.0,
+      "attempts": [
+        {
+          "cover_index": 0,
+          "reduction": {
+            "schema": "pp-quartic-cover-reduction/1",
+            "k": -255258,
+            "chart": {
+              "schema": "pp-mordell-cover-chart/1",
+              "k": -255258,
+              "source_cover": {
+                "quartic": [
+                  "6",
+                  "-168",
+                  "-72",
+                  "-9",
+                  "-9"
+                ],
+                "x_numerator": [
+                  "7344",
+                  "4140",
+                  "1188",
+                  "-2808",
+                  "-1647/4"
+                ],
+                "y_numerator": [
+                  "629316",
+                  "535896",
+                  "123120",
+                  "636255",
+                  "266085",
+                  "40338",
+                  "-86265/8"
+                ]
+              },
+              "matrix": [
+                [
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "ordinate_scale": 1,
+              "cover": {
+                "quartic": [
+                  "102",
+                  "15",
+                  "-99",
+                  "-27",
+                  "-9"
+                ],
+                "x_numerator": [
+                  "27153/4",
+                  "5013",
+                  "14283/2",
+                  "1161",
+                  "-1647/4"
+                ],
+                "y_numerator": [
+                  "-1638009/8",
+                  "-5601879/4",
+                  "-6034095/8",
+                  "-381915/2",
+                  "-778815/8",
+                  "-420147/4",
+                  "-86265/8"
+                ]
+              },
+              "determinant": -1,
+              "source_height_factor": 2,
+              "inverse_height_factor": 2,
+              "execution_verified": false
+            },
+            "steps": [
+              {
+                "matrix": [
+                  [
+                    -1,
+                    -1
+                  ],
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "ordinate_scale": 1,
+                "before": [
+                  "6",
+                  "-168",
+                  "-72",
+                  "-9",
+                  "-9"
+                ],
+                "after": [
+                  "102",
+                  "15",
+                  "-99",
+                  "-27",
+                  "-9"
+                ]
+              }
+            ],
+            "before_invariants": {
+              "I": "0",
+              "J": "6891966",
+              "discriminant": "-1759229457228"
+            },
+            "after_invariants": {
+              "I": "0",
+              "J": "6891966",
+              "discriminant": "-1759229457228"
+            },
+            "score_before": [
+              "1759229457228",
+              "168",
+              "264"
+            ],
+            "score_after": [
+              "1759229457228",
+              "102",
+              "252"
+            ],
+            "max_steps": 8,
+            "local_primes": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "global_minimality": false
+          },
+          "status": "no_point_returned"
+        }
+      ],
+      "lifts": [],
+      "global_empty_proof": false
+    },
+    {
+      "height": 100000000,
+      "denominator_max": 100000000,
+      "timeout": 30.0,
+      "attempts": [
+        {
+          "cover_index": 0,
+          "reduction": {
+            "schema": "pp-quartic-cover-reduction/1",
+            "k": -255258,
+            "chart": {
+              "schema": "pp-mordell-cover-chart/1",
+              "k": -255258,
+              "source_cover": {
+                "quartic": [
+                  "6",
+                  "-168",
+                  "-72",
+                  "-9",
+                  "-9"
+                ],
+                "x_numerator": [
+                  "7344",
+                  "4140",
+                  "1188",
+                  "-2808",
+                  "-1647/4"
+                ],
+                "y_numerator": [
+                  "629316",
+                  "535896",
+                  "123120",
+                  "636255",
+                  "266085",
+                  "40338",
+                  "-86265/8"
+                ]
+              },
+              "matrix": [
+                [
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  1
+                ]
+              ],
+              "ordinate_scale": 1,
+              "cover": {
+                "quartic": [
+                  "102",
+                  "15",
+                  "-99",
+                  "-27",
+                  "-9"
+                ],
+                "x_numerator": [
+                  "27153/4",
+                  "5013",
+                  "14283/2",
+                  "1161",
+                  "-1647/4"
+                ],
+                "y_numerator": [
+                  "-1638009/8",
+                  "-5601879/4",
+                  "-6034095/8",
+                  "-381915/2",
+                  "-778815/8",
+                  "-420147/4",
+                  "-86265/8"
+                ]
+              },
+              "determinant": -1,
+              "source_height_factor": 2,
+              "inverse_height_factor": 2,
+              "execution_verified": false
+            },
+            "steps": [
+              {
+                "matrix": [
+                  [
+                    -1,
+                    -1
+                  ],
+                  [
+                    0,
+                    1
+                  ]
+                ],
+                "ordinate_scale": 1,
+                "before": [
+                  "6",
+                  "-168",
+                  "-72",
+                  "-9",
+                  "-9"
+                ],
+                "after": [
+                  "102",
+                  "15",
+                  "-99",
+                  "-27",
+                  "-9"
+                ]
+              }
+            ],
+            "before_invariants": {
+              "I": "0",
+              "J": "6891966",
+              "discriminant": "-1759229457228"
+            },
+            "after_invariants": {
+              "I": "0",
+              "J": "6891966",
+              "discriminant": "-1759229457228"
+            },
+            "score_before": [
+              "1759229457228",
+              "168",
+              "264"
+            ],
+            "score_after": [
+              "1759229457228",
+              "102",
+              "252"
+            ],
+            "max_steps": 8,
+            "local_primes": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "global_minimality": false
+          },
+          "status": "timeout"
+        }
+      ],
+      "lifts": [],
+      "global_empty_proof": false
+    }
+  ]
+}

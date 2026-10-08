@@ -67,7 +67,9 @@ class DescentArithmetic(unittest.TestCase):
         packets=[json.loads(path.read_text()) for path in (ROOT/'receipts/mordell_two_descent').glob('[mp]*.json')]
         self.assertEqual(c['ranks_determined_by_two_descent'],sum(row['witness_rank_lower_bound']==row['rank_upper_bound'] for row in packets))
         self.assertTrue(all(row['rank_determined']==(row['witness_rank_lower_bound']==row['rank_upper_bound']) for row in packets))
-        self.assertEqual(len(c['census_rank_corrections']),11)
+        expected=sorted((dict(k=row['k'],census_rank=row['census_rank'],proved_rank=row['rank_lower_bound'])
+            for row in c['remaining'] if row['witness_rank_determined'] and row['census_rank']!=row['rank_lower_bound']),key=lambda row:row['k'])
+        self.assertEqual(c['census_rank_corrections'],expected)
         self.assertTrue(all(row['census_rank']==1 and row['proved_rank']==2 for row in c['census_rank_corrections']))
 
 
