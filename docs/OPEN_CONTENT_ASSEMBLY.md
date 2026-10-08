@@ -249,3 +249,25 @@ Newly opened:
 ## Continuation after the stopped Claude jobs
 
 See [REMAINING_FRONTS_CONTINUATION.md](REMAINING_FRONTS_CONTINUATION.md). N39 now has a whole-line Arb gap above 124.40 GeV for the declared lambda=0.1 wall, positive angular-Higgs form and transverse-vector vacuum mass floor; a longitudinal constrained-spectrum gap and gauged lifetime remain separate. N41 now computes geometric component groups and Frobenius-fixed Tamagawa numbers for integral semistable metric graphs, with an odd-prime semistable rational-root curve adapter; dyadic/wild and general extension-field models remain open. N42 now has rational-Jordan-frame higher-rank regular-singular charts, log²/log³ chains and exact gauge tails; irregular/Stokes work remains open. I4 has exact HTTP concurrency replay and a corrected accept queue, plus an independent complete industrial replication: 571 original versus 540 portfolio solved, no SAT/UNSAT conflicts and approximately 49% more summed portfolio time. The portfolio stays opt-in. I1 has Chromium fixture parity and software WebGL 2 scene validation; software WebGPU attempts reported a lost-device error and remain open. Numerical kernels are CPU exact arithmetic, with GPU presentation only. N37, N38 and N40 remain open.
+
+## Remaining after the default-branch merge (main at `63a5986`)
+
+The side branch is fully merged. Main has since closed: all 457 Mordell bases and integral lists (computationally), all witness gaps, the declared λ=0.1 wall gap (>124.40 GeV), semistable Tamagawa numbers, higher-rank resonant Frobenius charts, the HTTP burst-queue fix, the industrial replication and Chromium execution of Dresden.
+
+Executable here (in progress):
+
+| # | Item | Tier |
+|---|---|---|
+| N37 | Asymptotic test of the annihilation law; resolved GW peak and IR slope | P (compute) |
+| N38 | Gauged wall-mode lifetime: TM/longitudinal widths, Goldstone equivalence, off-shell channels at g=0.65, constrained longitudinal spectrum | P/M |
+| N40 | Renormalized two-loop thermal diagrams; interval bounces | P/A |
+| N41 | Extension-field Frobenius for Tamagawa numbers; dyadic and wild reduction | P (research) |
+| N42 | Irregular singular charts: formal normal forms and certified Stokes matrices | A |
+
+Blocked or external:
+
+| Item | Reason |
+|---|---|
+| Lean global proofs for the 457 Mordell inputs (saturation index bound, rank upper bounds, elliptic-log/LLL completeness); Matveev premises; efficient Sturm; parser/compiler semantics; all-level Weil orbit bounds and Fourier/chirp intertwining; Brainpool and good-reduction field instantiations | Lean/Mathlib hosts blocked in this container |
+| GPU numerical kernels for Dresden | none exist; presentation only |
+| Physical flavor predictions (quark-source frame, CKM, CP selection) | model choice; flavor lane |
