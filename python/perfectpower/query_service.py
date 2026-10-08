@@ -236,6 +236,21 @@ def dispatch(catalogue, request):
     if op == 'native_braid_certificate':
         from .native_braid_certificate import braid_certificate
         return braid_certificate(**args)
+    if op=='elliptic_torsion_subgroup_index':
+        from .elliptic_torsion_index import torsion_subgroup_index
+        return torsion_subgroup_index(**args)
+    if op=='verify_elliptic_torsion_subgroup_index':
+        from .elliptic_torsion_index import verify_torsion_subgroup_index
+        return dict(valid=verify_torsion_subgroup_index(**args),execution_verified=False)
+    if op=='pell7_complete':
+        from .pell7_complete import certificate
+        return certificate()
+    if op=='pell7_address':
+        from .pell7_complete import address
+        return dict(address=address(**args),execution_verified=False)
+    if op=='verify_pell7_complete':
+        from .pell7_complete import verify_certificate
+        return dict(valid=verify_certificate(**args),execution_verified=False)
     if op=='elliptic_subgroup_index':
         from .elliptic_lattice_presentation import subgroup_index
         return subgroup_index(**args)

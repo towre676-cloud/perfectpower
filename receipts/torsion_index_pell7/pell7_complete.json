@@ -1,0 +1,60 @@
+{
+  "schema": "pp-pell7-complete/1",
+  "D": 2,
+  "norm": -7,
+  "unit": [
+    3,
+    2
+  ],
+  "seeds": [
+    [
+      1,
+      2
+    ],
+    [
+      5,
+      4
+    ]
+  ],
+  "terminal_y_max": 5,
+  "terminal_table": [
+    {
+      "y": 0,
+      "rhs": -7,
+      "floor_root": null,
+      "seed": false
+    },
+    {
+      "y": 1,
+      "rhs": -5,
+      "floor_root": null,
+      "seed": false
+    },
+    {
+      "y": 2,
+      "rhs": 1,
+      "floor_root": 1,
+      "seed": true
+    },
+    {
+      "y": 3,
+      "rhs": 11,
+      "floor_root": 3,
+      "seed": false
+    },
+    {
+      "y": 4,
+      "rhs": 25,
+      "floor_root": 5,
+      "seed": true
+    },
+    {
+      "y": 5,
+      "rhs": 43,
+      "floor_root": 6,
+      "seed": false
+    }
+  ],
+  "completeness": "strict positive-x inverse-unit descent",
+  "execution_verified": false
+}

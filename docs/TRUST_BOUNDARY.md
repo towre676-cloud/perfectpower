@@ -114,3 +114,7 @@ Every data row carries one label: `receipts/atlas_benchmarks.json`, `data/famili
 It writes `receipts/binomial_gate.json`. `make crosscheck` reruns the Sage computation (`crosscheck/binomial_curves.py`). Completeness beyond $|X|\le10^6$ remains Sage's claim and Lean's hypothesis.
 
 The cubic cross-validation shows why the last label matters. Among the 622 curves $m^2=n^3+an+b$ with $|a|,|b|\le12$, a scan to $10^3$ would have missed hits on 18 curves, and a scan to $10^4$ on 4. The largest hit is $n=80327$, at $(a,b)=(-12,-10)$.
+
+## Torsion-aware actual indices and the complete Pell-7 family
+
+`elliptic_torsion_index.py` certifies actual nested subgroup indices and complete integer relation lattices when every source/preimage generator has coordinates in a witnessed free basis plus an injectively enumerated finite torsion product. It verifies exact elliptic equations and unimodular Smith transcripts. It requires full span of the free witness space, and does not classify the whole rational torsion subgroup or Mordell-Weil group. `pell7_complete.py` replays the complete terminal seed table for the inverse-unit descent; the all-solutions and uniqueness arguments are paper proofs in [the monograph](TORSION_INDEX_PELL7_MONOGRAPH.md). These new operations retain `execution_verified=false`; they add no kernel-certified declaration.

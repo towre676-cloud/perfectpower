@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'torsionpell':{
+            'title':'Complete relations with torsion',
+            'subtitle':'Actual elliptic subgroup indices<br/>and the full Pell-7 family',
+            'description':'Injective finite torsion coordinates and complete integer kernels remove the free-only index restriction. Strict inverse-unit descent gives every Pell-7 solution and its unique address.',
+            'metrics':[('56','independent coordinate models'),('7,000','exact relation checks'),('2','complete Pell seed orbits')],
+            'scope':'Witnessed subgroup coordinates, exact finite torsion injection and Smith replay; all-solutions Pell paper proof. No new Lean theorem or global Mordell rank claim.',
+            'running':'Torsion-aware relation lattices and complete Pell descent',
+        },
         'primesubgroups':{
             'title':'Prime-preimage lattices and bounded saturation',
             'subtitle':'Complete five/seven residue combinations<br/>and exact enlargement indices',
@@ -344,7 +352,7 @@ def render(source,output,*,edition='polynomial'):
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
     if edition in ('atlasintersectionfactored','fixeddivisor','integervalued','weilmonomial'):body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
     if edition=='rationalpowerbridge':body.fontSize=9.5;body.leading=13.8;body.spaceAfter=7
-    if edition=='primesubgroups':body.fontSize=9.3;body.leading=12.8;body.spaceAfter=5;body.allowWidows=0;body.allowOrphans=0
+    if edition in ('primesubgroups','torsionpell'):body.fontSize=9.3;body.leading=12.8;body.spaceAfter=5;body.allowWidows=0;body.allowOrphans=0
     if edition=='integervalued':body.leading=14.1
     if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
     if edition=='research':body.leading=14.8;body.spaceAfter=8
@@ -363,6 +371,17 @@ def render(source,output,*,edition='polynomial'):
     story+=[table,Spacer(1,27),Paragraph(profile['scope'],small),Spacer(1,18),Paragraph('Source, corpus receipts and reproduction commands accompany the repository snapshot.',small),PageBreak()]
     def inline(s):
         s=escape(s).replace('\u2013','-').replace('\u2014','-')
+        if edition=='torsionpell':
+            def inline_math(match):
+                text=match.group(1)
+                for old,new in [(r'\mathbb{Q}','ℚ'),(r'\Gamma','Γ'),(r'\ldots','…'),(r'\leq','≤'),(r'\sqrt{2}','√2'),('{,}',',')]:
+                    text=text.replace(old,new)
+                text=re.sub(r'\^\{([^}]+)\}',r'<super>\1</super>',text)
+                text=re.sub(r'_\{([^}]+)\}',r'<sub>\1</sub>',text)
+                text=re.sub(r'\^([0-9])',r'<super>\1</super>',text)
+                text=re.sub(r'_([A-Za-z0-9])',r'<sub>\1</sub>',text)
+                return text
+            s=re.sub(r'\$([^$]+)\$',inline_math,s)
         s=re.sub(r'`([^`]+)`',r'<font name="Code" size="8.6">\1</font>',s)
         s=re.sub(r'\[([^\]]+)\]\(([^)]+)\)',r'\1 (\2)',s)
         return s
@@ -416,7 +435,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('primesubgroups','ellipticfiveseven','rationalpowerbridge','arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('torsionpell','primesubgroups','ellipticfiveseven','rationalpowerbridge','arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'primesubgroups':'ELLIPTIC_PRIME_SUBGROUPS_MONOGRAPH.md','ellipticfiveseven':'ELLIPTIC_FIVE_SEVEN_MONOGRAPH.md','rationalpowerbridge':'ARITHMETIC_CHART_BRIDGE_MONOGRAPH.md','arithmeticcharts':'ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md','atlasintersectionfactored':'RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md','residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'torsionpell':'TORSION_INDEX_PELL7_MONOGRAPH.md','primesubgroups':'ELLIPTIC_PRIME_SUBGROUPS_MONOGRAPH.md','ellipticfiveseven':'ELLIPTIC_FIVE_SEVEN_MONOGRAPH.md','rationalpowerbridge':'ARITHMETIC_CHART_BRIDGE_MONOGRAPH.md','arithmeticcharts':'ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md','atlasintersectionfactored':'RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md','residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

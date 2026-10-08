@@ -27,3 +27,7 @@ The denominator-aware bridge now proves whole-domain integrality, quotient unive
 ## Reconciled rank frontier
 
 The [generated reconciliation](../receipts/mordell_frontier.json), rebuilt by `python python/reconcile_mordell_frontier.py`, subtracts the 28 unconditional elementary-descent closures from the 485 rank-conditional census rows. No additional unconditional curve-list entry closes one of those rows. The remaining 457 cases split into 323 empty computed lists and 134 nonempty computed lists. This reconciliation introduces no new completeness or rank theorem.
+
+## Torsion-aware subgroup indices and Pell-7
+
+The witnessed prime-preimage index operation now admits rational prime torsion, pure finite groups and redundant source generators. Complete integer relation bases and actual group invariant factors are replayed from Smith transcripts. The Pell example `(x²+7)/2=y²` is completely parametrized by the two positive seeds `(1,2)` and `(5,4)` under the unit `3+2√2`, with independent coordinate signs. See [the monograph](TORSION_INDEX_PELL7_MONOGRAPH.md) and `make check-torsion-index-pell7`. This is an exact-computation/paper-proof closure within the stated coordinate hypotheses, not a new Lean or global Mordell rank result.

@@ -1,3 +1,5 @@
+Torsion-aware actual prime-preimage indices and complete relation lattices, together with the full Pell-7 solution family, are in [the arithmetic monograph](docs/TORSION_INDEX_PELL7_MONOGRAPH.md); reproduce with `make check-torsion-index-pell7`. These are exact certificate replay and paper proofs, with no new Lean count or Mordell rank claim.
+
 # PerfectPower
 
 **Certified static wall:** a compact C2 trial profile and Arb residual/coercivity bounds now establish an exact whole-line wall, prove all five profile signs and the strictly positive Higgs barrier, and supply the hypotheses behind the vector threshold and TE thermal-sign results. The certificate covers a small source-quartic interval around the 154.225 GeV calibration. See [the continuous proof and reproduction](docs/WALL_PROFILE_INTERVAL_MONOGRAPH.md) and [the interval receipt](receipts/flavor_cosmology/wall_profile_intervals.json). Decay widths and mode eigenvalues still lack interval error enclosures.

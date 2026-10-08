@@ -318,3 +318,7 @@ check-elliptic-five-seven:
 .PHONY: check-elliptic-prime-subgroups
 check-elliptic-prime-subgroups:
 	bash scripts/check_elliptic_prime_subgroups.sh
+
+.PHONY: check-torsion-index-pell7
+check-torsion-index-pell7:
+	bash scripts/check_torsion_index_pell7.sh
