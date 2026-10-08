@@ -285,6 +285,8 @@ The [positive kinetic construction](docs/FLAVOR_KINETIC_FREEDOM.md) supplies nin
 
 The [polynomial Fredholm hierarchy](docs/WALL_FREDHOLM_HIERARCHY_MONOGRAPH.md) derives the quadratic wall radiation-node correction and shape-energy shift from five universal forced responses. Exact coefficient identities and independent coupled solves support the formal order-by-order construction; the second correction gives eighth-power small-portal leakage in the outgoing tests. [Scientific receipt](receipts/flavor_cosmology/wall_fredholm_hierarchy.json) and [illustrated monograph](output/pdf/Polynomial_Wall_Fredholm_Hierarchy.pdf) retain the convergence and infinite-domain scope.
 
+The [finite Gaussian response calculation](docs/WALL_GAUSSIAN_FREDHOLM_MONOGRAPH.md) retains mediator gradients and derives the shifted radiation node and first portal correction. Independent Green-kernel and Fourier identities support the retuning, while outgoing tests distinguish second-, fourth- and sixth-power leakage. It predicts the fixed-Higgs source quartic within a few parts per million of the localized candidate. [Scientific receipt](receipts/flavor_cosmology/wall_gaussian_fredholm.json) and [illustrated monograph](output/pdf/Gaussian_Coupled_Radiation_Nodes.pdf) retain the finite-domain scope.
+
 ## Build and develop
 
 Run the core Python tests directly from the checkout:
