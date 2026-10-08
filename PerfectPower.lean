@@ -435,3 +435,5 @@ import PerfectPower.FactorAddresses
 import PerfectPower.FlavorRG
 import PerfectPower.SpectralMoments
 import PerfectPower.WeilOldLevel
+
+import PerfectPower.MordellCompletionBridge

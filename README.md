@@ -105,3 +105,5 @@ make lean
 `make test` runs Python suites across the repository. `make verify` builds Lean, checks axioms, runs tests, regenerates receipts and status summaries, and checks for drift. The [documentation index](docs/README.md) organizes the mathematical accounts, implementation guides and benchmark reports. Start with the [overview monograph](docs/MONOGRAPH.md) for the original mathematics, the [showcase](docs/SHOWCASE_MONOGRAPH.md) for examples, or the [open-content assembly](docs/OPEN_CONTENT_ASSEMBLY.md) for the research frontier.
 
 Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). Included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
+
+The [Mordell formal bridge](docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md) proves saturation composition and finite-box enumeration in Lean. Its ten audited theorems leave curve-specific rank upper bounds, global saturation prime support and global integral-coordinate bounds explicit; no external receipt is promoted to an unconditional formal closure.

@@ -394,3 +394,7 @@ check-mordell-published-witnesses:
 .PHONY: check-mordell-completion
 check-mordell-completion:
 	PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_mordell_completion.py' -q
+
+.PHONY: check-mordell-completion-bridge
+check-mordell-completion-bridge:
+	bash scripts/check_mordell_completion_bridge.sh

@@ -121,3 +121,5 @@ The version-two native halving interface closes original-model actual group tran
 [Crossing the 3-isogeny to find missing Mordell witnesses](MORDELL_ISOGENY_WITNESSES_MONOGRAPH.md) closes 85 further constructive gaps and retains an explicit rank-two pair for k=-9257. The final five are now closed by [published-coordinate intake and exact independent certificates](MORDELL_WITNESS_CLOSURE_MONOGRAPH.md); complete bases and integral-point lists remain separate.
 
 The [Mordell completion monograph](MORDELL_COMPLETION_MONOGRAPH.md) describes all 457 full bases and complete integral lists, their independent census cross-check and the remaining Lean trust boundary.
+
+[Mordell formal bridge](MORDELL_FORMAL_BRIDGE_MONOGRAPH.md): ten audited generic theorems, explicit global premises, counterexamples guarding finite cutoffs and the per-curve formal obstruction ledger.
