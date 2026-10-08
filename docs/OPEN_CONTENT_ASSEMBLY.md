@@ -209,7 +209,7 @@ Newly opened:
 
 | # | Item | Opened by | Tier |
 |---|---|---|---|
-| N26 | Explicit points on the remaining five witness-deficient curves k=5935,7482,7823,8210,9454; 85 further gaps closed by original-cover search and exact 3-isogeny images | `0e34a9a` | P |
+| N26 | CLOSED: exact points and independent rank-one certificates for k=5935,7482,7823,8210,9454; all 457 frontier ranks now have matching witnesses | `0e34a9a`; see Mordell witness closure monograph | closed |
 | N27 | CLOSED: k=−9257 has an explicit independent pair; all 12 historical census rank corrections now have matching point witnesses | `0e34a9a`; see Mordell isogeny continuation | closed |
 | N28 | Saturate the witness subgroups into complete bases, then rerun the affected integral-point lists | `2fdc37d` | P |
 | N29 | Attach torsion-aware index packets to every saturation stage; automatic coordinate extraction | `ce43361` | P |

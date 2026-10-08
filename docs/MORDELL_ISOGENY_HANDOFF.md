@@ -1,3 +1,7 @@
+# Mordell witness handoff: all five residual curves closed
+
+The five constructive gaps described below have now been closed by checksum-pinned published-coordinate discovery and exact independent certificates. Read MORDELL_WITNESS_CLOSURE_MONOGRAPH.md and receipts/mordell_published_witnesses.json for the current state: all 457 matching witness ranks, zero witness gaps. Next work concerns complete bases, saturation and integral-point completeness. The following is the historical isogeny-release handoff.
+
 # Continue from five missing Mordell witnesses
 
 Read MORDELL_ISOGENY_WITNESSES_MONOGRAPH.md and receipts/mordell_isogeny_search/continuation_summary.json. The constructive frontier is now five rank-one curves: k=5935,7482,7823,8210,9454. The preceding 90-gap release is commit 658ac46; this continuation closes another 85 gaps. All 457 external backend ranks were already determined; 452 now have matching retained point witnesses.

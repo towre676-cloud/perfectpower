@@ -386,3 +386,7 @@ remaining-fronts-tests:
 	$(PY) python/tests/test_wall_stability_certified.py
 	$(PY) python/tests/test_wall_profile_intervals.py
 	$(PY) python/tests/test_applications.py
+
+.PHONY: check-mordell-published-witnesses
+check-mordell-published-witnesses:
+	PYTHONPATH=python $(PY) python/tests/test_mordell_published_witnesses.py

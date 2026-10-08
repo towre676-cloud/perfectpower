@@ -118,4 +118,4 @@ The version-two native halving interface closes original-model actual group tran
 
 [Universal divisibility and complete repeated-factor arithmetic](FIXED_DIVISOR_MONOGRAPH.md) proves finite-window fixed-divisor semantics and complete finite k-free values from repeated factors; the [PDF edition](FIXED_DIVISOR_MONOGRAPH.pdf) accompanies the replayable release.
 
-[Crossing the 3-isogeny to find missing Mordell witnesses](MORDELL_ISOGENY_WITNESSES_MONOGRAPH.md) closes 85 further constructive gaps and retains an explicit rank-two pair for k=-9257. Five rank-one witnesses remain missing; complete bases and integral-point lists remain separate.
+[Crossing the 3-isogeny to find missing Mordell witnesses](MORDELL_ISOGENY_WITNESSES_MONOGRAPH.md) closes 85 further constructive gaps and retains an explicit rank-two pair for k=-9257. The final five are now closed by [published-coordinate intake and exact independent certificates](MORDELL_WITNESS_CLOSURE_MONOGRAPH.md); complete bases and integral-point lists remain separate.
