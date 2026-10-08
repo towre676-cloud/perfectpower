@@ -6,7 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
-    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','subgroup_preimage','bounded_saturation','model_transport','two_isogeny','independence','native_two_torsion','native_halves'},
+    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','subgroup_preimage','bounded_saturation','subgroup_presentation','saturation_presentation','model_transport','two_isogeny','independence','native_two_torsion','native_halves'},
     differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
     superelliptic_family={'summary','evidence','observable'},
     binomial_sum={'summary','evidence','term','terms','telescoper','elliptic_bridge'},
@@ -236,6 +236,16 @@ def dispatch(catalogue, request):
     if op == 'native_braid_certificate':
         from .native_braid_certificate import braid_certificate
         return braid_certificate(**args)
+    if op=='elliptic_subgroup_index':
+        from .elliptic_lattice_presentation import subgroup_index
+        return subgroup_index(**args)
+    if op=='verify_elliptic_subgroup_index':
+        from .elliptic_lattice_verifier import verify_subgroup_index
+        return dict(valid=verify_subgroup_index(**args),execution_verified=False)
+    if op in {'verify_elliptic_subgroup_presentation','verify_elliptic_saturation_presentation'}:
+        from .elliptic_lattice_verifier import verify_subgroup_presentation,verify_saturation_presentation
+        check=verify_subgroup_presentation if op=='verify_elliptic_subgroup_presentation' else verify_saturation_presentation
+        return dict(valid=check(**args),execution_verified=False)
     if op == 'verify_elliptic_subgroup_preimage':
         from .elliptic_subgroup_verifier import verify_subgroup_preimage
         return dict(valid=verify_subgroup_preimage(**args),execution_verified=False)

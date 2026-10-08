@@ -54,7 +54,8 @@ def _bits(f):
 
 def _verify_prime(cert, budget, node_limit):
     version=cert.get('schema') if type(cert) is dict else None
-    fields(cert, 'schema curve prime target points complete execution_verified method anchor torsion_certificate division_certificate node_limit bit_limit root_nodes'+(' obstruction_certificate' if version=='pp-rational-prime-division/2' else ''))
+    local=type(cert) is dict and cert.get('method')=='local_root_obstruction'
+    fields(cert, 'schema curve prime target points complete execution_verified method anchor torsion_certificate division_certificate node_limit bit_limit root_nodes'+(' obstruction_certificate' if version=='pp-rational-prime-division/2' else ' local_obstruction' if local else ''))
     if version not in ('pp-rational-prime-division/1','pp-rational-prime-division/2') or cert['complete'] is not True or cert['execution_verified'] is not False:
         return False
     ell = exact_int(cert['prime'], 5, 7)
@@ -91,7 +92,21 @@ def _verify_prime(cert, budget, node_limit):
         if division is not None:
             candidates, count = check_rational_roots(division, f, limit - used, budget)
             used += count
-        if anchor is None:
+        if local:
+            if anchor is not None or division is not None or f[-1]!=1:return False
+            evidence=cert['local_obstruction'];fields(evidence,'prime root_residues')
+            ell=exact_int(evidence['prime'],5,199)
+            if any(ell%d==0 for d in range(2,__import__('math').isqrt(ell)+1)):return False
+            if any(c.denominator%ell==0 for c in (*f,*E.cubic)):return False
+            coefficients=[c.numerator*pow(c.denominator,-1,ell)%ell for c in f]
+            cubic=[c.numerator*pow(c.denominator,-1,ell)%ell for c in E.cubic]
+            roots=[x for x in range(ell) if P.evaluate(coefficients,x)%ell==0]
+            budget.charge(ell*len(f))
+            supplied=evidence['root_residues']
+            if type(supplied) is not list or any(type(x) is not int for x in supplied) or supplied!=roots:return False
+            if any(pow(int(P.evaluate(cubic,x))%ell,(ell-1)//2,ell)!=ell-1 for x in roots):return False
+            expected=[]
+        elif anchor is None:
             if cert['method'] != 'empty_division_fibre' or candidates is None:
                 return False
             if _lifted(E, candidates, ell, target, budget):

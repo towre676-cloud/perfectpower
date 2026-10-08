@@ -314,3 +314,7 @@ check-arithmetic-chart-bridge:
 check-elliptic-five-seven:
 	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_elliptic_*.py' -q
 	PYTHONPATH=python $(PY) python/develop_elliptic_five_seven.py
+
+.PHONY: check-elliptic-prime-subgroups
+check-elliptic-prime-subgroups:
+	bash scripts/check_elliptic_prime_subgroups.sh

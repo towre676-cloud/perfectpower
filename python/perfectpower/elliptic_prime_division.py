@@ -85,6 +85,25 @@ def lifts(E, roots, scalar, target):
     return ordered(out)
 
 
+def local_root_obstruction(E, f):
+    """A monic equation forces rational roots to be integral at a usable prime.
+
+    Every such root must reduce to a root whose completed cubic is a square.
+    Exhausting those residues can prove emptiness without a huge Sturm tree.
+    Failure to find an obstruction is inconclusive.
+    """
+    from .elliptic_arithmetic import primes
+    if f[-1] != 1:return None
+    for ell in primes(199):
+        if ell<5 or any(c.denominator%ell==0 for c in (*f,*E.cubic)):continue
+        reduced=[c.numerator*pow(c.denominator,-1,ell)%ell for c in f]
+        cubic=[c.numerator*pow(c.denominator,-1,ell)%ell for c in E.cubic]
+        roots=[x for x in range(ell) if P.evaluate(reduced,x)%ell==0]
+        if all(pow(int(P.evaluate(cubic,x))%ell,(ell-1)//2,ell)==ell-1 for x in roots):
+            return {'prime':ell,'root_residues':roots}
+    return None
+
+
 def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, local_obstructions=False):
     """All rational P with ell P=p (p=None for the ell-torsion kernel), ell in {5,7}."""
     if type(ell) is not int or ell not in PRIMES:
@@ -112,6 +131,7 @@ def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, loc
     kernel = ordered([None, *lifts(E, (q(x) for x in torsion['roots']), ell, None)])
     anchor = None
     division = None
+    obstruction = None
     if p is None:
         out = kernel
         method = 'torsion_kernel'
@@ -119,12 +139,13 @@ def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, loc
         f = division_equation(E, ell, p)
         if coefficient_bits(f) > bit_limit:
             raise WorkLimit('division equation coefficient bit budget exhausted')
-        for x in discovered_roots(f):
+        obstruction=local_root_obstruction(E,f)
+        for x in (() if obstruction is not None else discovered_roots(f)):
             c = lifts(E, [x], ell, p)
             if c:
                 anchor = c[0]
                 break
-        if anchor is None:
+        if anchor is None and obstruction is None:
             if used >= node_limit:
                 raise WorkLimit('shared division root budget exhausted')
             division = rational_root_certificate(f, node_limit - used)
@@ -133,14 +154,16 @@ def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, loc
             if c:
                 anchor = c[0]
         out = [] if anchor is None else ordered(E.add(anchor, t) for t in kernel)
-        method = 'empty_division_fibre' if anchor is None else 'torsion_coset'
+        method = 'local_root_obstruction' if obstruction is not None else 'empty_division_fibre' if anchor is None else 'torsion_coset'
     if not all(E.mul(h, ell) == p for h in out):
         raise ArithmeticError('division polynomial/group mismatch')
-    return dict(schema='pp-rational-prime-division/1', curve=E.specification, prime=ell,
+    result = dict(schema='pp-rational-prime-division/1', curve=E.specification, prime=ell,
                 target=encode_point(p), points=[encode_point(h) for h in out], complete=True,
                 execution_verified=False, method=method, anchor=encode_point(anchor),
                 torsion_certificate=torsion, division_certificate=division,
                 node_limit=node_limit, bit_limit=bit_limit, root_nodes=used)
+    if obstruction is not None:result['local_obstruction']=obstruction
+    return result
 
 
 def general_factors(scalar):
