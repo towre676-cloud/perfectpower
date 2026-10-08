@@ -1,0 +1,749 @@
+{
+ "classical_Goldstone_subspace": {
+  "Goldstone_energy_after_t100_A01": 0.0,
+  "statement": "pi=0 is invariant under the nonlinear equations (force proportional to pi); a classical field without seeded fluctuations emits no Goldstone pairs."
+ },
+ "classical_statistical_check": {
+  "A": 0.05,
+  "Monte_Carlo_power_over_A2": 9.797834180467409e-05,
+  "difference_in_standard_errors": -0.7006823593561051,
+  "estimator": "[E(A)+E(-A)-2E(0)]/2 with common noise (antithetic), divided by noise_fraction*A^2",
+  "exact_Gaussian_power_over_A2": 0.00011362802657666859,
+  "noise_fraction_of_half_quantum": 0.0001,
+  "samples": 4096,
+  "scope": "Nonlinear equations with Goldstone self-interaction and backreaction; noise reduced to 1e-4 of a half quantum and rescaled linearly, valid while the emission is linear in the noise.",
+  "sector": "p=0, odd Goldstone parity, one component",
+  "seeds": "1000..1063 (numpy default_rng), 64 samples each",
+  "standard_error": 2.2334920471489885e-05
+ },
+ "declared_inputs": {
+  "heavy_mass_GeV": 300000.0,
+  "kappa": 1e-07,
+  "lambda_H": 0.13,
+  "main_Gamma_GG_GeV": 3.83233455848e-08,
+  "main_Gamma_GG_even_GeV": 3.10403359118e-08,
+  "main_Gamma_GG_odd_GeV": 7.28300967296e-09,
+  "main_mode_mass_GeV": 154.22502415713,
+  "source_current_GeV": 3000.0,
+  "source_lambda": 1.7618816494787725e-05,
+  "v_GeV": 30000.0,
+  "v_H_GeV": 246.0
+ },
+ "heavy_singlet_elimination": {
+  "dynamical_Hessian_shift_over_k2": 1.2000000000000004e-05,
+  "static": "exact (S=-g phi^2/M^2 solves its equation; zero-frequency Hessian unchanged)"
+ },
+ "lattice_mode": [
+  {
+   "canonical_norm": 1.0000000258073667,
+   "discrete_Ward_zero_mode_residual": 1.2262118030505996e-14,
+   "dx": 0.25,
+   "linear_Higgs_leak_energy_rate_GeV": 8.218666720926984e-13,
+   "mass_GeV": 154.2075342190928,
+   "max_Higgs_component_over_source": 0.02294007430461534,
+   "omega2": 2.99931403413285,
+   "radiating_Higgs_amplitude_A1": 1.0862629575430013e-05,
+   "relative_mass_difference_from_main": -0.00011340531883718974,
+   "static_residual": 1.2262118030505996e-14
+  },
+  {
+   "canonical_norm": 1.000000025766944,
+   "discrete_Ward_zero_mode_residual": 4.323826714418488e-14,
+   "dx": 0.125,
+   "linear_Higgs_leak_energy_rate_GeV": 2.4934486872949937e-15,
+   "mass_GeV": 154.22402085731824,
+   "max_Higgs_component_over_source": 0.022624647015432157,
+   "omega2": 2.9999553938301005,
+   "radiating_Higgs_amplitude_A1": 5.982588333389968e-07,
+   "relative_mass_difference_from_main": -6.505428138181557e-06,
+   "static_residual": 4.323826714418488e-14
+  }
+ ],
+ "lifetime": {
+  "amplitude_solution": "A(t)^2=Gamma A0^2 e^{-Gamma t}/(Gamma+C A0^2(1-e^{-Gamma t}))",
+  "crossover_A": 0.00011986898859082827,
+  "crossover_occupation_per_area_GeV2": 11.1979149711771,
+  "crossover_occupation_per_kv_area": 0.001412368163256954,
+  "energy_law": "dE/dt=-(Gamma_GG+C A^2)E with E proportional to A^2 (Goldstone channel only; ungauged O(4)); Gamma_lin from residual node detuning is listed separately and is negligible.",
+  "lifetime_single_quantum_s": 1.6787973113451923e-17,
+  "main_lifetime_s": 1.7175221705097252e-17,
+  "pair_width_used_GeV": 3.920735114667212e-08,
+  "quantum_note": "Second-harmonic radiation is the classical limit of two mode quanta -> one source quantum (rate proportional to n(n-1)); a single quantum decays only through 1->2 channels such as the Goldstone pair.",
+  "second_harmonic_energy_rate_over_A2_GeV": 2.728687619580715
+ },
+ "not_claimed": [
+  "full 3+1 nonlinear classical-statistical lattice simulation (transverse momenta enter through the exact quadratic-order decomposition, not a 3+1 lattice)",
+  "gauged electroweak lifetime; W/Z channels are not simulated",
+  "Monte Carlo resolution better than its quoted standard error",
+  "loop/self-energy corrections, renormalised Goldstone mass shifts, thermal bath",
+  "interval or rigorous error bounds",
+  "singlet dynamics beyond its static constraint (O(omega^2/M^2))"
+ ],
+ "pair_comparison": {
+  "amplitude_dependence_ratio_to_A005": {
+   "A_0.02": 0.9843969928096133,
+   "A_0.1": 1.0339913839658188,
+   "A_0.2": 1.1336927826196583
+  },
+  "main_Gamma_GG_GeV": 3.83233455848e-08,
+  "main_even_GeV": 3.10403359118e-08,
+  "main_odd_GeV": 7.28300967296e-09,
+  "real_time_even_over_main_even_long_box": 1.0223904624014801,
+  "real_time_odd_over_main_odd_long_box": 1.025950547402312,
+  "real_time_values_GeV": {
+   "A_0.02": 3.9399665870895504e-08,
+   "A_0.05_nodes6": 4.002416317673125e-08,
+   "A_0.1": 4.138463987518211e-08,
+   "A_0.2": 4.5375104923851716e-08,
+   "base": 3.859850604266216e-08,
+   "base_early_window": 3.7968341638004114e-08,
+   "fine_dx0125": 3.85005539936706e-08,
+   "long_box_L120_t220": 3.920735114667212e-08,
+   "nodes_14": 3.857605522553105e-08
+  }
+ },
+ "pair_emission": {
+  "A_0.02": {
+   "A": 0.02,
+   "Gamma_GG_GeV": 3.9399665870895504e-08,
+   "L": 60.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.2016938394697595e-08,
+   "max_drive_frequency_pairs_p_limit": 0.865926387479451,
+   "mode_mass_GeV": 154.2075342190928,
+   "mode_omega": 1.731852774958902,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.00011219125133412415,
+     "odd_power_over_A2": 0.00011219080646799637,
+     "p": 0.02923821480539851
+    },
+    {
+     "even_power_over_A2": 0.00011568767945044177,
+     "odd_power_over_A2": 0.000112213215301876,
+     "p": 0.1466838660446072
+    },
+    {
+     "even_power_over_A2": 0.00013331162297192516,
+     "odd_power_over_A2": 0.00011152495005689211,
+     "p": 0.32964986884557074
+    },
+    {
+     "even_power_over_A2": 0.00019262273376898488,
+     "odd_power_over_A2": 0.00010360421419566678,
+     "p": 0.5362765186338804
+    },
+    {
+     "even_power_over_A2": 0.00037790693906608364,
+     "odd_power_over_A2": 6.641761634081564e-05,
+     "p": 0.7192425214348438
+    },
+    {
+     "even_power_over_A2": 0.0008543035387543041,
+     "odd_power_over_A2": 9.37107390457611e-06,
+     "p": 0.8366881726740525
+    }
+   ],
+   "odd_GeV": 7.382727476197907e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 1.0280852381145553,
+   "window": [
+    30.0,
+    100.0
+   ]
+  },
+  "A_0.05_nodes6": {
+   "A": 0.05,
+   "Gamma_GG_GeV": 4.002416317673125e-08,
+   "L": 60.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.25747201455808e-08,
+   "max_drive_frequency_pairs_p_limit": 0.865926387479451,
+   "mode_mass_GeV": 154.2075342190928,
+   "mode_omega": 1.731852774958902,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.00011369373338465568,
+     "odd_power_over_A2": 0.00011367922432480563,
+     "p": 0.02923821480539851
+    },
+    {
+     "even_power_over_A2": 0.00011720470193775262,
+     "odd_power_over_A2": 0.00011375594173773818,
+     "p": 0.1466838660446072
+    },
+    {
+     "even_power_over_A2": 0.00013507044293878257,
+     "odd_power_over_A2": 0.0001131125839546335,
+     "p": 0.32964986884557074
+    },
+    {
+     "even_power_over_A2": 0.00019515933189284533,
+     "odd_power_over_A2": 0.00010528295523863582,
+     "p": 0.5362765186338804
+    },
+    {
+     "even_power_over_A2": 0.00038640025776140116,
+     "odd_power_over_A2": 6.59620664413494e-05,
+     "p": 0.7192425214348438
+    },
+    {
+     "even_power_over_A2": 0.0008679703756565877,
+     "odd_power_over_A2": 9.231361043904699e-06,
+     "p": 0.8366881726740525
+    }
+   ],
+   "odd_GeV": 7.449443031150454e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 1.0443807179664877,
+   "window": [
+    30.0,
+    100.0
+   ]
+  },
+  "A_0.1": {
+   "A": 0.1,
+   "Gamma_GG_GeV": 4.138463987518211e-08,
+   "L": 60.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.3807449547957545e-08,
+   "max_drive_frequency_pairs_p_limit": 0.865926387479451,
+   "mode_mass_GeV": 154.2075342190928,
+   "mode_omega": 1.731852774958902,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.00011706492125713155,
+     "odd_power_over_A2": 0.0001169226977542736,
+     "p": 0.02923821480539851
+    },
+    {
+     "even_power_over_A2": 0.00012052761575019349,
+     "odd_power_over_A2": 0.00011718599391862801,
+     "p": 0.1466838660446072
+    },
+    {
+     "even_power_over_A2": 0.00013881117140882696,
+     "odd_power_over_A2": 0.00011671918624056804,
+     "p": 0.32964986884557074
+    },
+    {
+     "even_power_over_A2": 0.00020023417879971026,
+     "odd_power_over_A2": 0.00010943411795337566,
+     "p": 0.5362765186338804
+    },
+    {
+     "even_power_over_A2": 0.0004079113783101216,
+     "odd_power_over_A2": 6.34655436243733e-05,
+     "p": 0.7192425214348438
+    },
+    {
+     "even_power_over_A2": 0.0008943109203096657,
+     "odd_power_over_A2": 9.465030988753174e-06,
+     "p": 0.8366881726740525
+    }
+   ],
+   "odd_GeV": 7.577190327224564e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 1.0798806639573841,
+   "window": [
+    30.0,
+    100.0
+   ]
+  },
+  "A_0.2": {
+   "A": 0.2,
+   "Gamma_GG_GeV": 4.5375104923851716e-08,
+   "L": 60.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.739777994563096e-08,
+   "max_drive_frequency_pairs_p_limit": 0.865926387479451,
+   "mode_mass_GeV": 154.2075342190928,
+   "mode_omega": 1.731852774958902,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.0001276079468186978,
+     "odd_power_over_A2": 0.00012688088436715587,
+     "p": 0.02923821480539851
+    },
+    {
+     "even_power_over_A2": 0.00013070628769375287,
+     "odd_power_over_A2": 0.00012791737738184188,
+     "p": 0.1466838660446072
+    },
+    {
+     "even_power_over_A2": 0.00015001312117048023,
+     "odd_power_over_A2": 0.00012843840353348127,
+     "p": 0.32964986884557074
+    },
+    {
+     "even_power_over_A2": 0.00021482858970515027,
+     "odd_power_over_A2": 0.0001244569214900815,
+     "p": 0.5362765186338804
+    },
+    {
+     "even_power_over_A2": 0.0004824942018183202,
+     "odd_power_over_A2": 5.306205588768434e-05,
+     "p": 0.7192425214348438
+    },
+    {
+     "even_power_over_A2": 0.000949215262338782,
+     "odd_power_over_A2": 1.089417192689336e-05,
+     "p": 0.8366881726740525
+    }
+   ],
+   "odd_GeV": 7.977324978220757e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 1.184006882265744,
+   "window": [
+    30.0,
+    100.0
+   ]
+  },
+  "base": {
+   "A": 0.05,
+   "Gamma_GG_GeV": 3.859850604266216e-08,
+   "L": 60.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.1103829532154504e-08,
+   "max_drive_frequency_pairs_p_limit": 0.865926387479451,
+   "mode_mass_GeV": 154.2075342190928,
+   "mode_omega": 1.731852774958902,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.00011355021747738645,
+     "odd_power_over_A2": 0.00011368842825845432,
+     "p": 0.011297512748961774
+    },
+    {
+     "even_power_over_A2": 0.0001141578149803128,
+     "odd_power_over_A2": 0.00011365974832848245,
+     "p": 0.05842259571082349
+    },
+    {
+     "even_power_over_A2": 0.00011683469665062935,
+     "odd_power_over_A2": 0.00011373011655012068,
+     "p": 0.13880385719165172
+    },
+    {
+     "even_power_over_A2": 0.00012448361950949795,
+     "odd_power_over_A2": 0.00011366552552994269,
+     "p": 0.24531893974543956
+    },
+    {
+     "even_power_over_A2": 0.00014179999564246804,
+     "odd_power_over_A2": 0.00011257659959957019,
+     "p": 0.368506084468348
+    },
+    {
+     "even_power_over_A2": 0.00017799862993874655,
+     "odd_power_over_A2": 0.00010797115187339522,
+     "p": 0.49742030301110307
+    },
+    {
+     "even_power_over_A2": 0.00025105227329783936,
+     "odd_power_over_A2": 9.509851364994909e-05,
+     "p": 0.6206074477340114
+    },
+    {
+     "even_power_over_A2": 0.0004014525869680173,
+     "odd_power_over_A2": 6.32464851541598e-05,
+     "p": 0.7271225302877993
+    },
+    {
+     "even_power_over_A2": 0.0006695822500322701,
+     "odd_power_over_A2": 2.5051677055917327e-05,
+     "p": 0.8075037917686276
+    },
+    {
+     "even_power_over_A2": 0.0008156728366906249,
+     "odd_power_over_A2": 2.5535409737636227e-06,
+     "p": 0.8546288747304893
+    }
+   ],
+   "odd_GeV": 7.494676510507652e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 1.0071799696415673,
+   "window": [
+    30.0,
+    100.0
+   ]
+  },
+  "base_early_window": {
+   "A": 0.05,
+   "Gamma_GG_GeV": 3.7968341638004114e-08,
+   "L": 60.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.053172752721178e-08,
+   "max_drive_frequency_pairs_p_limit": 0.865926387479451,
+   "mode_mass_GeV": 154.2075342190928,
+   "mode_omega": 1.731852774958902,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.00011264303360203504,
+     "odd_power_over_A2": 0.00011320982697443379,
+     "p": 0.011297512748961774
+    },
+    {
+     "even_power_over_A2": 0.00011327593823635817,
+     "odd_power_over_A2": 0.00011317679575524263,
+     "p": 0.05842259571082349
+    },
+    {
+     "even_power_over_A2": 0.00011607885425804612,
+     "odd_power_over_A2": 0.00011313045931737124,
+     "p": 0.13880385719165172
+    },
+    {
+     "even_power_over_A2": 0.00012376247573148646,
+     "odd_power_over_A2": 0.00011302753851704372,
+     "p": 0.24531893974543956
+    },
+    {
+     "even_power_over_A2": 0.0001411697396962953,
+     "odd_power_over_A2": 0.00011189353394509514,
+     "p": 0.368506084468348
+    },
+    {
+     "even_power_over_A2": 0.00017722017883343153,
+     "odd_power_over_A2": 0.00010738402037314314,
+     "p": 0.49742030301110307
+    },
+    {
+     "even_power_over_A2": 0.0002503076006557958,
+     "odd_power_over_A2": 9.447818729349148e-05,
+     "p": 0.6206074477340114
+    },
+    {
+     "even_power_over_A2": 0.00039908805901250476,
+     "odd_power_over_A2": 6.28004986745659e-05,
+     "p": 0.7271225302877993
+    },
+    {
+     "even_power_over_A2": 0.0006834328374531027,
+     "odd_power_over_A2": 2.413506465451267e-05,
+     "p": 0.8075037917686276
+    },
+    {
+     "even_power_over_A2": 0.0007068742927292462,
+     "odd_power_over_A2": 2.097334638645929e-06,
+     "p": 0.8546288747304893
+    }
+   ],
+   "odd_GeV": 7.4366141107923314e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 0.9907366138999959,
+   "window": [
+    30.0,
+    65.0
+   ]
+  },
+  "fine_dx0125": {
+   "A": 0.05,
+   "Gamma_GG_GeV": 3.85005539936706e-08,
+   "L": 60.0,
+   "dt": 0.025,
+   "dx": 0.125,
+   "even_GeV": 3.1031794656536247e-08,
+   "max_drive_frequency_pairs_p_limit": 0.8660189654144562,
+   "mode_mass_GeV": 154.22402085731824,
+   "mode_omega": 1.7320379308289124,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.00011308732917478033,
+     "odd_power_over_A2": 0.00011345474958006587,
+     "p": 0.011298720588815273
+    },
+    {
+     "even_power_over_A2": 0.00011368139356265771,
+     "odd_power_over_A2": 0.00011342975517691619,
+     "p": 0.05842884178825773
+    },
+    {
+     "even_power_over_A2": 0.0001164367233859438,
+     "odd_power_over_A2": 0.00011341297881599441,
+     "p": 0.1388186969917264
+    },
+    {
+     "even_power_over_A2": 0.00012414401965017623,
+     "odd_power_over_A2": 0.0001132754682425452,
+     "p": 0.24534516728762754
+    },
+    {
+     "even_power_over_A2": 0.00014150019500668156,
+     "odd_power_over_A2": 0.00011213387419584953,
+     "p": 0.3685454821964115
+    },
+    {
+     "even_power_over_A2": 0.00017768092089155907,
+     "odd_power_over_A2": 0.0001075295732891359,
+     "p": 0.49747348321804474
+    },
+    {
+     "even_power_over_A2": 0.00025098224794349084,
+     "odd_power_over_A2": 9.442513525861376e-05,
+     "p": 0.6206737981268287
+    },
+    {
+     "even_power_over_A2": 0.0003995145386228123,
+     "odd_power_over_A2": 6.366981025885806e-05,
+     "p": 0.7272002684227299
+    },
+    {
+     "even_power_over_A2": 0.0006694040027760196,
+     "odd_power_over_A2": 2.4805221790409613e-05,
+     "p": 0.8075901236261985
+    },
+    {
+     "even_power_over_A2": 0.0008120601285945283,
+     "odd_power_over_A2": 2.3054803866485032e-06,
+     "p": 0.8547202448256409
+    }
+   ],
+   "odd_GeV": 7.468759337134351e-09,
+   "period_steps": 145,
+   "ramp": 20.0,
+   "ratio_to_main": 1.0046240328490756,
+   "window": [
+    30.0,
+    100.0
+   ]
+  },
+  "long_box_L120_t220": {
+   "A": 0.05,
+   "Gamma_GG_GeV": 3.920735114667212e-08,
+   "L": 120.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.173534338596247e-08,
+   "max_drive_frequency_pairs_p_limit": 0.86592638747945,
+   "mode_mass_GeV": 154.20753421909262,
+   "mode_omega": 1.7318527749589,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.0001130032860284119,
+     "odd_power_over_A2": 0.00011320336827913828,
+     "p": 0.01129751274896176
+    },
+    {
+     "even_power_over_A2": 0.00011359767211682955,
+     "odd_power_over_A2": 0.0001131709427196673,
+     "p": 0.05842259571082342
+    },
+    {
+     "even_power_over_A2": 0.00011606035458421221,
+     "odd_power_over_A2": 0.00011343119777136,
+     "p": 0.13880385719165156
+    },
+    {
+     "even_power_over_A2": 0.00012388356607930816,
+     "odd_power_over_A2": 0.00011314198120328834,
+     "p": 0.24531893974543928
+    },
+    {
+     "even_power_over_A2": 0.00014119514837111758,
+     "odd_power_over_A2": 0.00011201604440136493,
+     "p": 0.36850608446834754
+    },
+    {
+     "even_power_over_A2": 0.0001771395133805096,
+     "odd_power_over_A2": 0.00010752025445687323,
+     "p": 0.4974203030111025
+    },
+    {
+     "even_power_over_A2": 0.0002499064310759734,
+     "odd_power_over_A2": 9.470518518297496e-05,
+     "p": 0.6206074477340108
+    },
+    {
+     "even_power_over_A2": 0.0003987377778453226,
+     "odd_power_over_A2": 6.352349213187508e-05,
+     "p": 0.7271225302877985
+    },
+    {
+     "even_power_over_A2": 0.0006574850674274394,
+     "odd_power_over_A2": 2.5052306048980416e-05,
+     "p": 0.8075037917686266
+    },
+    {
+     "even_power_over_A2": 0.000959319894837032,
+     "odd_power_over_A2": 2.3344025949414758e-06,
+     "p": 0.8546288747304883
+    }
+   ],
+   "odd_GeV": 7.472007760709645e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 1.0230670247699547,
+   "window": [
+    30.0,
+    220.0
+   ]
+  },
+  "nodes_14": {
+   "A": 0.05,
+   "Gamma_GG_GeV": 3.857605522553105e-08,
+   "L": 60.0,
+   "dt": 0.05,
+   "dx": 0.25,
+   "even_GeV": 3.10643421319124e-08,
+   "max_drive_frequency_pairs_p_limit": 0.865926387479451,
+   "mode_mass_GeV": 154.2075342190928,
+   "mode_omega": 1.731852774958902,
+   "nodes": [
+    {
+     "even_power_over_A2": 0.00011353063453025042,
+     "odd_power_over_A2": 0.00011368978101736707,
+     "p": 0.0059386059925731404
+    },
+    {
+     "even_power_over_A2": 0.00011371363636802665,
+     "odd_power_over_A2": 0.00011367807234258989,
+     "p": 0.030985061329374217
+    },
+    {
+     "even_power_over_A2": 0.00011453991707046569,
+     "odd_power_over_A2": 0.00011365296244013235,
+     "p": 0.07481547050141912
+    },
+    {
+     "even_power_over_A2": 0.00011668067245073232,
+     "odd_power_over_A2": 0.00011372001495203119,
+     "p": 0.13539066263780503
+    },
+    {
+     "even_power_over_A2": 0.00012115569510541988,
+     "odd_power_over_A2": 0.00011389738855957152,
+     "p": 0.20987949857206067
+    },
+    {
+     "even_power_over_A2": 0.00013023181416431696,
+     "odd_power_over_A2": 0.00011329550234263077,
+     "p": 0.29479928332685684
+    },
+    {
+     "even_power_over_A2": 0.0001454164601771401,
+     "odd_power_over_A2": 0.00011217996033276143,
+     "p": 0.3861793780480118
+    },
+    {
+     "even_power_over_A2": 0.00017134112677976712,
+     "odd_power_over_A2": 0.00010897979785925942,
+     "p": 0.4797470094314393
+    },
+    {
+     "even_power_over_A2": 0.00021462664447613082,
+     "odd_power_over_A2": 0.00010186451642902911,
+     "p": 0.5711271041525942
+    },
+    {
+     "even_power_over_A2": 0.0002863138722230712,
+     "odd_power_over_A2": 8.836219635425961e-05,
+     "p": 0.6560468889073904
+    },
+    {
+     "even_power_over_A2": 0.0004081961036764367,
+     "odd_power_over_A2": 6.20997710446014e-05,
+     "p": 0.730535724841646
+    },
+    {
+     "even_power_over_A2": 0.0005853714086860901,
+     "odd_power_over_A2": 3.4318985609594406e-05,
+     "p": 0.7911109169780319
+    },
+    {
+     "even_power_over_A2": 0.0008534776292016757,
+     "odd_power_over_A2": 1.0068691454007414e-05,
+     "p": 0.8349413261500769
+    },
+    {
+     "even_power_over_A2": 0.0006887691166256756,
+     "odd_power_over_A2": 1.4229875917266054e-06,
+     "p": 0.8599877814868779
+    }
+   ],
+   "odd_GeV": 7.511713093618648e-09,
+   "period_steps": 73,
+   "ramp": 20.0,
+   "ratio_to_main": 1.0065941435142154,
+   "window": [
+    30.0,
+    100.0
+   ]
+  }
+ },
+ "reduced_couplings": {
+  "Higgs_mass2": 1.9845146812411514,
+  "b": 7.692307692307691e-07,
+  "cH": 14756.950336415459,
+  "ck": 0.011351500258781122,
+  "h0": 0.0082,
+  "h02": 6.724000000000001e-05,
+  "hbar_Higgs": 0.13101439987200866,
+  "hbar_source": 8.809408247393864e-06,
+  "k": 0.0029680647309979383,
+  "kv_GeV": 89.04194192993815
+ },
+ "scope": "Reduced (singlet-constrained) ungauged O(4) theory; 1+1 real-time lattice evolution; pair channel via exact Gaussian mode functions (equal to the infinite classical-statistical ensemble with half-quantum seeding) per transverse momentum, integrated over the planar phase space. Floating-point lattice numerics.",
+ "second_harmonic": {
+  "A_to_zero_extrapolated_rate_over_A2": 0.0306449697798343,
+  "closed_form_energy_rate_over_A2_GeV": 2.6809800854888035,
+  "closed_form_energy_rate_over_A2_x_units": 0.030109182564754804,
+  "definition": "Gamma_E(A)=-dlnE/dt=C A^2, equivalently d(1/A^2)/dt=C; envelope = half peak-to-peak of the source projection per period.",
+  "extrapolated_ratio_to_closed_form": 1.0177948110656008,
+  "runs": [
+   {
+    "A0": 0.05,
+    "dx": 0.25,
+    "final_envelope": 0.04788354402896404,
+    "fitted_d_inv_A2_dt": 0.03064439704647992,
+    "max_relative_fit_residual": 0.0005666998944687176,
+    "ratio_to_closed_form": 1.0177757891823882
+   },
+   {
+    "A0": 0.1,
+    "dx": 0.25,
+    "final_envelope": 0.0841762754660974,
+    "fitted_d_inv_A2_dt": 0.030722462173584108,
+    "max_relative_fit_residual": 0.00091740730201018,
+    "ratio_to_closed_form": 1.0203685240378195
+   },
+   {
+    "A0": 0.15,
+    "dx": 0.25,
+    "final_envelope": 0.10706988265232278,
+    "fitted_d_inv_A2_dt": 0.030809078495638898,
+    "max_relative_fit_residual": 0.0014747540599188665,
+    "ratio_to_closed_form": 1.0232452651073756
+   },
+   {
+    "A0": 0.2,
+    "dx": 0.25,
+    "final_envelope": 0.12061257154016229,
+    "fitted_d_inv_A2_dt": 0.030896817292994767,
+    "max_relative_fit_residual": 0.0028178683055264707,
+    "ratio_to_closed_form": 1.0261592863421658
+   },
+   {
+    "A0": 0.1,
+    "dx": 0.125,
+    "final_envelope": 0.08440623187384355,
+    "fitted_d_inv_A2_dt": 0.03026804349277949,
+    "max_relative_fit_residual": 0.0004149128864003641,
+    "ratio_to_closed_form": 1.0052761621038042
+   }
+  ]
+ },
+ "units": "x=k v z, t=k v t (k v=89.041942 GeV); u=phi/v, h,pi in units of v_H. A is the source amplitude of the full-line normalised mode in x units; mode energy per wall area omega^2 A^2 N/(2k^2) in kv units."
+}
