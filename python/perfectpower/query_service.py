@@ -79,6 +79,23 @@ def dispatch(catalogue, request):
         if op.startswith('verify_'): return dict(valid=result, execution_verified=False)
         if op.startswith('native_'): return dict(lean_source=result, execution_verified=False)
         return result
+    if op in {'rational_power_atlas','verify_rational_power_atlas','rational_power_population',
+              'rational_power_select','rational_power_rank','rational_power_scan',
+              'rational_power_patch','verify_rational_power_patch','native_rational_power_atlas'}:
+        from . import rational_power_atlas as pa
+        result={'rational_power_atlas':pa.power_atlas,'verify_rational_power_atlas':pa.verify_power_atlas,
+                'rational_power_population':pa.power_population,'rational_power_select':pa.power_select,
+                'rational_power_rank':pa.power_rank,'rational_power_scan':pa.power_scan,
+                'rational_power_patch':pa.power_patch,'verify_rational_power_patch':pa.verify_power_patch,
+                'native_rational_power_atlas':pa.native_power_atlas}[op](**args)
+        if op.startswith('verify_'):return dict(valid=result,execution_verified=False)
+        if op.startswith('native_'):return dict(lean_source=result,execution_verified=False)
+        return result
+    if op in {'weighted_gram_determinant','verify_weighted_gram_determinant'}:
+        from . import weighted_gram_determinant as uw
+        result={'weighted_gram_determinant':uw.weighted_determinant,
+                'verify_weighted_gram_determinant':uw.verify_weighted_determinant}[op](**args)
+        return dict(valid=result,execution_verified=False) if op.startswith('verify_') else result
     if op in {'weil_spectral', 'weil_operator_spectrum', 'weil_projector_plan'}:
         from . import weil_spectral as ws
         return {'weil_spectral': ws.spectral_packet,

@@ -305,3 +305,7 @@ check-residue-atlas-intersection-factored:
 .PHONY: arithmetic-chart-check
 arithmetic-chart-check:
 	bash scripts/check_arithmetic_chart_pipeline.sh
+
+.PHONY: check-arithmetic-chart-bridge
+check-arithmetic-chart-bridge:
+	bash scripts/check_arithmetic_chart_bridge.sh

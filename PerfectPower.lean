@@ -427,3 +427,6 @@ import PerfectPower.ResidueAtlasIntersectionFactored
 import PerfectPower.IntegerValuedPowerCharts
 import PerfectPower.BranchingResidueCharts
 import PerfectPower.UnorderedWeightedDeterminant
+
+import PerfectPower.RationalPowerAtlas
+import PerfectPower.UnorderedWeightedGram

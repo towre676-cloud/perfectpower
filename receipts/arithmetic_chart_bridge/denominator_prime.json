@@ -1,0 +1,696 @@
+{
+  "name": "denominator_prime",
+  "atlas": {
+    "schema": "pp-rational-power-atlas/1",
+    "rational_coefficients": [
+      "0",
+      "1/2"
+    ],
+    "numerator": [
+      0,
+      1
+    ],
+    "denominator": 2,
+    "exponent": 2,
+    "factors": [
+      [
+        2,
+        2
+      ]
+    ],
+    "restrictions": [],
+    "charts": [
+      {
+        "residue": 0,
+        "step": 2,
+        "quotient_coefficients": [
+          0,
+          1
+        ],
+        "equation_terms": [
+          [
+            -1,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "cover": {
+          "schema": "pp-residue-atlas-intersection-factored/1",
+          "constraints": [
+            {
+              "schema": "pp-residue-atlas/1",
+              "terms": [
+                [
+                  -1,
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ],
+              "prime": 2,
+              "exponent": 2,
+              "modulus": 4,
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  3
+                ]
+              ],
+              "levels": [
+                {
+                  "power": 1,
+                  "modulus": 2,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      1,
+                      1
+                    ]
+                  ],
+                  "nodes": []
+                },
+                {
+                  "power": 2,
+                  "modulus": 4,
+                  "roots": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      2
+                    ],
+                    [
+                      1,
+                      1
+                    ],
+                    [
+                      1,
+                      3
+                    ]
+                  ],
+                  "nodes": [
+                    {
+                      "parent": [
+                        0,
+                        0
+                      ],
+                      "constant": 0,
+                      "dx": 1,
+                      "dy": 0,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          0,
+                          2
+                        ]
+                      ]
+                    },
+                    {
+                      "parent": [
+                        1,
+                        1
+                      ],
+                      "constant": 0,
+                      "dx": 1,
+                      "dy": -2,
+                      "chart": "horizontal",
+                      "obstructed": false,
+                      "children": [
+                        [
+                          1,
+                          1
+                        ],
+                        [
+                          1,
+                          3
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "work": 8,
+              "complete_modular_cover": true,
+              "global_obstruction": false,
+              "execution_verified": false,
+              "global_height_bound": false
+            }
+          ],
+          "locals": [
+            {
+              "prime": 2,
+              "modulus": 4,
+              "constraint_ids": [
+                0
+              ],
+              "roots": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  2
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  3
+                ]
+              ]
+            }
+          ],
+          "modulus": 4,
+          "combination_count": 4,
+          "roots": null,
+          "representation": "factored",
+          "explicit_limit": 1,
+          "complete_modular_cover": true,
+          "global_obstruction": false,
+          "execution_verified": false,
+          "global_height_bound": false
+        }
+      }
+    ],
+    "equation_period": 4,
+    "parameter_period": 4,
+    "x_period": 8,
+    "y_period": 4,
+    "explicit_limit": 1,
+    "complete_integer_domain": true,
+    "complete_modular_cover": true,
+    "global_obstruction": false,
+    "execution_verified": false,
+    "global_height_bound": false
+  },
+  "population": {
+    "bounds": [
+      [
+        -8,
+        8
+      ],
+      [
+        -4,
+        4
+      ]
+    ],
+    "count": 23,
+    "charts": [
+      {
+        "residue": 0,
+        "parameter_bounds": [
+          [
+            -4,
+            4
+          ],
+          [
+            -4,
+            4
+          ]
+        ],
+        "count": 23
+      }
+    ],
+    "order": "integral residue chart; prime-group tuple; parameter n then y ascending",
+    "execution_verified": false,
+    "global_height_bound": false
+  },
+  "patch": {
+    "schema": "pp-rational-power-patch/1",
+    "atlas": {
+      "schema": "pp-rational-power-atlas/1",
+      "rational_coefficients": [
+        "0",
+        "1/2"
+      ],
+      "numerator": [
+        0,
+        1
+      ],
+      "denominator": 2,
+      "exponent": 2,
+      "factors": [
+        [
+          2,
+          2
+        ]
+      ],
+      "restrictions": [],
+      "charts": [
+        {
+          "residue": 0,
+          "step": 2,
+          "quotient_coefficients": [
+            0,
+            1
+          ],
+          "equation_terms": [
+            [
+              -1,
+              0,
+              2
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "cover": {
+            "schema": "pp-residue-atlas-intersection-factored/1",
+            "constraints": [
+              {
+                "schema": "pp-residue-atlas/1",
+                "terms": [
+                  [
+                    -1,
+                    0,
+                    2
+                  ],
+                  [
+                    1,
+                    1,
+                    0
+                  ]
+                ],
+                "prime": 2,
+                "exponent": 2,
+                "modulus": 4,
+                "roots": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    2
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ],
+                "levels": [
+                  {
+                    "power": 1,
+                    "modulus": 2,
+                    "roots": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        1
+                      ]
+                    ],
+                    "nodes": []
+                  },
+                  {
+                    "power": 2,
+                    "modulus": 4,
+                    "roots": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        0,
+                        2
+                      ],
+                      [
+                        1,
+                        1
+                      ],
+                      [
+                        1,
+                        3
+                      ]
+                    ],
+                    "nodes": [
+                      {
+                        "parent": [
+                          0,
+                          0
+                        ],
+                        "constant": 0,
+                        "dx": 1,
+                        "dy": 0,
+                        "chart": "horizontal",
+                        "obstructed": false,
+                        "children": [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            2
+                          ]
+                        ]
+                      },
+                      {
+                        "parent": [
+                          1,
+                          1
+                        ],
+                        "constant": 0,
+                        "dx": 1,
+                        "dy": -2,
+                        "chart": "horizontal",
+                        "obstructed": false,
+                        "children": [
+                          [
+                            1,
+                            1
+                          ],
+                          [
+                            1,
+                            3
+                          ]
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "work": 8,
+                "complete_modular_cover": true,
+                "global_obstruction": false,
+                "execution_verified": false,
+                "global_height_bound": false
+              }
+            ],
+            "locals": [
+              {
+                "prime": 2,
+                "modulus": 4,
+                "constraint_ids": [
+                  0
+                ],
+                "roots": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    2
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    1,
+                    3
+                  ]
+                ]
+              }
+            ],
+            "modulus": 4,
+            "combination_count": 4,
+            "roots": null,
+            "representation": "factored",
+            "explicit_limit": 1,
+            "complete_modular_cover": true,
+            "global_obstruction": false,
+            "execution_verified": false,
+            "global_height_bound": false
+          }
+        }
+      ],
+      "equation_period": 4,
+      "parameter_period": 4,
+      "x_period": 8,
+      "y_period": 4,
+      "explicit_limit": 1,
+      "complete_integer_domain": true,
+      "complete_modular_cover": true,
+      "global_obstruction": false,
+      "execution_verified": false,
+      "global_height_bound": false
+    },
+    "scan": {
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          8,
+          -2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "charts": [
+        {
+          "residue": 0,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              -1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              8,
+              -2
+            ],
+            [
+              8,
+              2
+            ]
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          -8,
+          8
+        ],
+        [
+          -4,
+          4
+        ]
+      ],
+      "candidates_checked": 23,
+      "complete_in_box": true,
+      "restrictions": "original modular conditions, not extra exact equations",
+      "execution_verified": false,
+      "global_height_bound": false
+    },
+    "lift_orientations": {
+      "vertical": 0,
+      "horizontal": 2,
+      "singular": 0,
+      "obstructed": 0
+    },
+    "auxiliary": {
+      "schema": "pp-bounded-auxiliary/1",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          -1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          8,
+          -2
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "exponents": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "center": [
+        0,
+        0
+      ],
+      "kernel": {
+        "schema": "pp-integral-kernel/1",
+        "matrix": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            2,
+            -1,
+            4
+          ],
+          [
+            1,
+            2,
+            1,
+            4
+          ],
+          [
+            1,
+            8,
+            -2,
+            64
+          ],
+          [
+            1,
+            8,
+            2,
+            64
+          ]
+        ],
+        "independent_row_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "basis_rows": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            2,
+            -1,
+            4
+          ],
+          [
+            1,
+            2,
+            1,
+            4
+          ],
+          [
+            1,
+            8,
+            -2,
+            64
+          ]
+        ],
+        "gram_determinant": 36864,
+        "kernel_matrix": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "relations": [],
+        "rank": 4,
+        "nullity": 0,
+        "rational_kernel_spanning": true,
+        "integral_saturation_certified": false,
+        "execution_verified": false
+      },
+      "scope": "supplied integer points only",
+      "global_completeness": false
+    },
+    "complete_in_box": true,
+    "execution_verified": false,
+    "global_height_bound": false
+  }
+}

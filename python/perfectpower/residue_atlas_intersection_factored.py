@@ -243,7 +243,7 @@ def native_intersection(packet, bounds):
               f'theorem count_checked : (candidates {previous} bounds).card = {count} := by rw [card_candidates]; decide +kernel',
               f'theorem source_implies (x y : ℤ) (h : S x y) : {predicate} := by',
               '  simp only [S] at h',
-              '  rcases h with '+('⟨'+','.join(f'h{i}' for i in range(len(names)))+'⟩' if len(names)>1 else 'h0'),
+              ('  rcases h with ⟨'+','.join(f'h{i}' for i in range(len(names)))+'⟩' if len(names)>1 else '  have h0 := h'),
               '  simp only ['+', '.join(f'h{i}' for i in range(len(names)))+', Int.zero_emod, and_self]',
               f'theorem source_survives (x y : ℤ) (h : S x y) : (x % {m},y % {m}) ∈ {previous}.roots := ({previous}.complete x y).mpr (source_implies x y h)',
               '#print axioms complete', '#print axioms roots_count', '#print axioms count_checked',

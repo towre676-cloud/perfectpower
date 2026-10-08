@@ -1,0 +1,21 @@
+import PerfectPower.RationalPowerAtlas
+import PerfectPower.UnorderedWeightedGram
+#print axioms PerfectPower.RationalPowerAtlas.rational_power_iff
+#print axioms PerfectPower.RationalPowerAtlas.ChartPacket.source_iff
+#print axioms PerfectPower.RationalPowerAtlas.ChartPacket.congruence_iff
+#print axioms PerfectPower.RationalPowerAtlas.parameter_bounds
+#print axioms PerfectPower.RationalPowerAtlas.original_injective
+#print axioms PerfectPower.RationalPowerAtlas.chart_count
+#print axioms PerfectPower.RationalPowerAtlas.chart_complete
+#print axioms PerfectPower.RationalPowerAtlas.chart_disjoint
+#print axioms PerfectPower.RationalPowerAtlas.quotient_power_iff
+#print axioms PerfectPower.RationalPowerAtlas.family_complete
+#print axioms PerfectPower.RationalPowerAtlas.family_count
+#print axioms PerfectPower.UnorderedWeightedGram.canonical_ordering
+#print axioms PerfectPower.UnorderedWeightedGram.support_composed
+#print axioms PerfectPower.UnorderedWeightedGram.selectionEquiv
+#print axioms PerfectPower.UnorderedWeightedGram.term_permutation
+#print axioms PerfectPower.UnorderedWeightedGram.ordered_sum_grouped
+#print axioms PerfectPower.UnorderedWeightedGram.weighted_gram
+#print axioms PerfectPower.UnorderedWeightedGram.real_nonnegative
+#print axioms PerfectPower.UnorderedWeightedGram.real_zero_iff

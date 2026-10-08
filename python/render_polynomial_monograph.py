@@ -22,6 +22,15 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'rationalpowerbridge':{
+            'title':'Rational power charts and weighted determinants',
+            'subtitle':'Original-coordinate branching covers<br/>and a genuinely unordered Gram identity',
+            'description':'Denominator-aware integrality charts retain every local branch and certify exact populations and bounded solutions. Canonical row subsets remove the factorial overcount in weighted Cauchy–Binet.',
+            'metrics':[('19','generic declarations audited'),('10','native worked packets'),('240','independent exact census cases')],
+            'scope':'Typed chart transport and counts, complete literal bounded source tables, a general unordered identity and real positivity corollaries. Generic traversal and compiler refinement remain open.',
+            'running':'Rational powers, complete branching covers and unordered minors',
+        },
+
         'arithmeticcharts':{
             'title':'Arithmetic charts and singular blowups',
             'subtitle':'Rational power transport<br/>and unordered weighted determinants',
@@ -316,6 +325,7 @@ def render(source,output,*,edition='polynomial'):
     navy=colors.HexColor('#173348');teal=colors.HexColor('#157A86')
     body=ParagraphStyle('body',fontName='Body',fontSize=10.2,leading=15.4,spaceAfter=9,textColor=navy)
     if edition in ('atlasintersectionfactored','fixeddivisor','integervalued','weilmonomial'):body.fontSize=9.9;body.leading=14.5;body.spaceAfter=8
+    if edition=='rationalpowerbridge':body.fontSize=9.5;body.leading=13.8;body.spaceAfter=7
     if edition=='integervalued':body.leading=14.1
     if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
     if edition=='research':body.leading=14.8;body.spaceAfter=8
@@ -387,7 +397,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('rationalpowerbridge','arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'arithmeticcharts':'ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md','atlasintersectionfactored':'RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md','residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'rationalpowerbridge':'ARITHMETIC_CHART_BRIDGE_MONOGRAPH.md','arithmeticcharts':'ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md','atlasintersectionfactored':'RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md','residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)
