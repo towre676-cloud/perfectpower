@@ -211,7 +211,7 @@ Newly opened:
 |---|---|---|---|
 | N26 | CLOSED: exact points and independent rank-one certificates for k=5935,7482,7823,8210,9454; all 457 frontier ranks now have matching witnesses | `0e34a9a`; see Mordell witness closure monograph | closed |
 | N27 | CLOSED: k=−9257 has an explicit independent pair; all 12 historical census rank corrections now have matching point witnesses | `0e34a9a`; see Mordell isogeny continuation | closed |
-| N28 | Saturate the witness subgroups into complete bases, then rerun the affected integral-point lists | `2fdc37d` | P |
+| N28 | CLOSED computationally: all 457 complete bases and integral lists; native exact arithmetic and 788 prime checks, external global completeness | Mordell completion monograph | X; Lean global proof remains |
 | N29 | Attach torsion-aware index packets to every saturation stage; automatic coordinate extraction | `ce43361` | P |
 | N30 | General norm representatives and an effective exponent-orbit bound (current runtime searches up to |e|≤64), plus arbitrary power orders | `d0fdfb3` | P |
 | N31 | Division beyond 13 | `0e34a9a` | P |

@@ -390,3 +390,7 @@ remaining-fronts-tests:
 .PHONY: check-mordell-published-witnesses
 check-mordell-published-witnesses:
 	PYTHONPATH=python $(PY) python/tests/test_mordell_published_witnesses.py
+
+.PHONY: check-mordell-completion
+check-mordell-completion:
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_mordell_completion.py' -q

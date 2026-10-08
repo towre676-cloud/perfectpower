@@ -1,0 +1,19 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "packages": {
+    "passagemath-schemes": "10.8.12",
+    "passagemath-eclib": "10.8.12",
+    "passagemath-symbolics": "10.8.12",
+    "passagemath-pari": "10.8.12"
+  },
+  "source_hashes": {
+    "mwrank_MordellWeil.saturate": "74dd5d10d0cec3e736c6a76ea73a21cf09500be4fbcefa0a7de3c5c1d4ccbcb4",
+    "EllipticCurve_rational_field.integral_points": "ab4f7beedc503e007847702c52ec8fc476226f2ca9793b697e4619d2d4c93605"
+  },
+  "installation": "python -m pip install --only-binary=:all: passagemath-schemes==10.8.12 passagemath-eclib==10.8.12 passagemath-symbolics==10.8.12",
+  "saturation_contract": "ok=True with max_prime=-1 means saturated at all primes; unsat must be empty",
+  "source_docs": [
+    "https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_rational_field.html",
+    "https://doc.sagemath.org/html/en/reference/libs/sage/libs/eclib/interface.html"
+  ]
+}

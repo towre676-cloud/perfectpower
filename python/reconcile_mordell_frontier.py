@@ -50,17 +50,51 @@ def reconcile(root=ROOT):
             if lower==upper:
                 remaining[-1].update(rank=lower,rank_proved=True);rank_determined+=1
                 if lower!=r['rank']:rank_corrections.append(dict(k=k,census_rank=r['rank'],proved_rank=lower))
+    witness_frontier=remaining
+    computation_closed=[];remaining=[]
+    completion_dir=root/'receipts/mordell_completion'
+    for row in witness_frontier:
+        k=row['k'];path=completion_dir/f'{"m" if k<0 else "p"}{abs(k)}.json'
+        if path.exists():
+            import hashlib
+            packet=json.loads(path.read_text())
+            source_path=root/row['rank_evidence']
+            valid=(packet.get('schema')=='pp-mordell-completion/1'
+                and packet.get('status')=='complete' and packet.get('k')==k
+                and packet.get('source_sha256')==hashlib.sha256(source_path.read_bytes()).hexdigest()
+                and packet.get('saturation_max_prime')==-1 and packet.get('saturation_min_prime')==2
+                and packet.get('backend_saturation_ok') is True and packet.get('unsaturated_primes')==[]
+                and packet.get('complete_basis_by_backend') is True
+                and packet.get('integral_list_complete_by_backend') is True
+                and packet.get('exact_relations_checked') is True
+                and packet.get('exact_integral_points_checked') is True
+                and packet.get('rank_upper_bound')==row['rank_upper_bound'])
+            if valid:
+                from perfectpower.mordell_completion import accept_completion,verify_completion_log
+                log_path=path.with_suffix('.log')
+                valid=(log_path.exists() and verify_completion_log(packet,log_path.read_text())
+                       and accept_completion(packet,json.loads(source_path.read_text())))
+            if valid:
+                computation_closed.append(dict(k=k,receipt=str(path.relative_to(root)),
+                    x_coordinates=packet['x_coordinates'],complete_basis_by_backend=True,
+                    integral_list_complete_by_backend=True,lean_integral_list_proved=False))
+                continue
+        remaining.append(row)
     return {'schema':'pp-mordell-frontier/1','census_curves':len(rows),
       'conditional_census_rows':len(conditional),'unconditional_descent_curves':len(names),
       'descent_closures':[{'k':k,'lean':names[k]} for k in closed],
       'additional_unconditional_list_closures':[{'k':k,'lean':known[k]} for k in additional],
+      'external_computation_list_closures':computation_closed,
+      'external_computation_list_closure_count':len(computation_closed),
+      'rank_witness_frontier':witness_frontier,
+      'rank_witness_frontier_count':len(witness_frontier),
       'remaining_count':len(remaining),'empty_computed_lists':sum(not r['x_coordinates'] for r in remaining),
       'nonempty_computed_lists':sum(bool(r['x_coordinates']) for r in remaining),
       'ranks_determined_by_two_descent':rank_determined,
       'ranks_determined_by_backend_bounds':backend_determined,
       'ranks_with_matching_point_witnesses':rank_determined,
       'backend_census_rank_corrections':backend_corrections,'census_rank_corrections':rank_corrections,
-      'scope':'reconciled census and external PARI two-descent rank intervals, with point-witness ranks tracked separately; integral-list completeness remains separate',
+      'scope':'retained historical census; exact rank witnesses; external full saturation and integral-list completions tracked separately from Lean list proofs',
       'remaining':remaining}
 
 if __name__=='__main__':

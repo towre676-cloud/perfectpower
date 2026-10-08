@@ -63,12 +63,12 @@ class DescentArithmetic(unittest.TestCase):
 
     def test_frontier_corrections_do_not_promote_integral_lists(self):
         c=json.loads((ROOT/'receipts/mordell_frontier.json').read_text())
-        self.assertEqual(c['remaining_count'],457)
+        self.assertEqual(c['remaining_count']+c.get('external_computation_list_closure_count',0),457)
         packets=[json.loads(path.read_text()) for path in (ROOT/'receipts/mordell_two_descent').glob('[mp]*.json')]
         self.assertEqual(c['ranks_determined_by_two_descent'],sum(row['witness_rank_lower_bound']==row['rank_upper_bound'] for row in packets))
         self.assertTrue(all(row['rank_determined']==(row['witness_rank_lower_bound']==row['rank_upper_bound']) for row in packets))
         expected=sorted((dict(k=row['k'],census_rank=row['census_rank'],proved_rank=row['rank_lower_bound'])
-            for row in c['remaining'] if row['witness_rank_determined'] and row['census_rank']!=row['rank_lower_bound']),key=lambda row:row['k'])
+            for row in c.get('rank_witness_frontier',c['remaining']) if row['witness_rank_determined'] and row['census_rank']!=row['rank_lower_bound']),key=lambda row:row['k'])
         self.assertEqual(c['census_rank_corrections'],expected)
         self.assertTrue(all(row['census_rank']==1 and row['proved_rank']==2 for row in c['census_rank_corrections']))
 

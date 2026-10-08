@@ -13,7 +13,8 @@ def main():
     parser.add_argument('--effort',type=int,default=0);parser.add_argument('--timeout',type=float,default=30)
     parser.add_argument('--limit',type=int);parser.add_argument('--refresh',action='store_true');args=parser.parse_args()
     if not 1<=args.workers<=8:parser.error('workers one through eight')
-    rows=json.loads((ROOT/'receipts/mordell_frontier.json').read_text())['remaining']
+    frontier=json.loads((ROOT/'receipts/mordell_frontier.json').read_text())
+    rows=frontier.get('rank_witness_frontier',frontier['remaining'])
     if args.limit is not None:rows=rows[:args.limit]
     out=ROOT/'receipts/mordell_two_descent';out.mkdir(exist_ok=True)
     completed={};failed={}

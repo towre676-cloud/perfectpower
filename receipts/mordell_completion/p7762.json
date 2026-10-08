@@ -1,0 +1,533 @@
+{
+  "schema": "pp-mordell-completion/1",
+  "k": 7762,
+  "curve": {
+    "ainvs": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "7762"
+    ]
+  },
+  "engine": "passagemath 10.8.12: eclib automatic-index-bound saturation; Sage integral_points",
+  "source_descent": "receipts/mordell_two_descent/p7762.json",
+  "source_sha256": "86d5053f874010ed2ef56494fe7d759b3c6036dcc940ab3ea73f55fd57f949a8",
+  "source_points": [
+    [
+      "39",
+      "259"
+    ]
+  ],
+  "rank_upper_bound": 1,
+  "basis_points": [
+    [
+      "39",
+      "259"
+    ]
+  ],
+  "original_to_basis": [
+    [
+      1
+    ]
+  ],
+  "saturation_max_prime": -1,
+  "saturation_min_prime": 2,
+  "backend_saturation_ok": true,
+  "unsaturated_primes": [],
+  "source_subgroup_index": 1,
+  "regulator_approximation": "3.9869442248182274",
+  "complete_basis_by_backend": true,
+  "integral_points": [
+    [
+      "39",
+      "-259"
+    ],
+    [
+      "39",
+      "259"
+    ]
+  ],
+  "x_coordinates": [
+    39
+  ],
+  "exact_interval_scans": [
+    {
+      "min": -19,
+      "max": 40,
+      "x_coordinates": [
+        39
+      ]
+    }
+  ],
+  "integral_enumeration_method": "integral_points(mw_base=globally_saturated_basis, both_signs=True)",
+  "integral_list_complete_by_backend": true,
+  "lean_complete_basis_proved": false,
+  "lean_integral_list_proved": false,
+  "exact_relations_checked": true,
+  "exact_source_subgroup_index": 1,
+  "basis_independence": {
+    "schema": "pp-elliptic-independence/2",
+    "curve": {
+      "ainvs": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "7762"
+      ]
+    },
+    "original_points": [
+      [
+        "39",
+        "259"
+      ]
+    ],
+    "working_points": [
+      [
+        "39",
+        "259"
+      ]
+    ],
+    "auxiliary_torsion": [],
+    "two_torsion_dimension": 0,
+    "two_torsion_proof": {
+      "kind": "irreducible_cubic_mod_prime",
+      "prime": 19
+    },
+    "primes": [
+      {
+        "prime": 5,
+        "roots": [
+          3
+        ]
+      },
+      {
+        "prime": 7,
+        "roots": [
+          1,
+          2,
+          4
+        ]
+      },
+      {
+        "prime": 11,
+        "roots": [
+          9
+        ]
+      },
+      {
+        "prime": 13,
+        "roots": [
+          1,
+          3,
+          9
+        ]
+      },
+      {
+        "prime": 17,
+        "roots": [
+          5
+        ]
+      },
+      {
+        "prime": 23,
+        "roots": [
+          6
+        ]
+      },
+      {
+        "prime": 29,
+        "roots": [
+          26
+        ]
+      },
+      {
+        "prime": 37,
+        "roots": [
+          6,
+          8,
+          23
+        ]
+      },
+      {
+        "prime": 41,
+        "roots": [
+          22
+        ]
+      },
+      {
+        "prime": 43,
+        "roots": [
+          10,
+          16,
+          17
+        ]
+      },
+      {
+        "prime": 47,
+        "roots": [
+          30
+        ]
+      },
+      {
+        "prime": 53,
+        "roots": [
+          1
+        ]
+      },
+      {
+        "prime": 59,
+        "roots": [
+          15
+        ]
+      },
+      {
+        "prime": 71,
+        "roots": [
+          9
+        ]
+      },
+      {
+        "prime": 73,
+        "roots": [
+          6,
+          19,
+          48
+        ]
+      },
+      {
+        "prime": 83,
+        "roots": [
+          29
+        ]
+      },
+      {
+        "prime": 89,
+        "roots": [
+          43
+        ]
+      },
+      {
+        "prime": 101,
+        "roots": [
+          35
+        ]
+      },
+      {
+        "prime": 103,
+        "roots": [
+          1,
+          46,
+          56
+        ]
+      },
+      {
+        "prime": 107,
+        "roots": [
+          47
+        ]
+      },
+      {
+        "prime": 109,
+        "roots": [
+          62,
+          65,
+          91
+        ]
+      },
+      {
+        "prime": 113,
+        "roots": [
+          34
+        ]
+      },
+      {
+        "prime": 131,
+        "roots": [
+          23
+        ]
+      },
+      {
+        "prime": 137,
+        "roots": [
+          35
+        ]
+      },
+      {
+        "prime": 149,
+        "roots": [
+          79
+        ]
+      },
+      {
+        "prime": 167,
+        "roots": [
+          122
+        ]
+      },
+      {
+        "prime": 173,
+        "roots": [
+          15
+        ]
+      },
+      {
+        "prime": 179,
+        "roots": [
+          112
+        ]
+      },
+      {
+        "prime": 191,
+        "roots": [
+          120
+        ]
+      },
+      {
+        "prime": 193,
+        "roots": [
+          121,
+          128,
+          137
+        ]
+      },
+      {
+        "prime": 197,
+        "roots": [
+          32
+        ]
+      },
+      {
+        "prime": 199,
+        "roots": [
+          30,
+          173,
+          195
+        ]
+      },
+      {
+        "prime": 227,
+        "roots": [
+          217
+        ]
+      },
+      {
+        "prime": 233,
+        "roots": [
+          136
+        ]
+      },
+      {
+        "prime": 239,
+        "roots": [
+          20
+        ]
+      },
+      {
+        "prime": 251,
+        "roots": [
+          96
+        ]
+      },
+      {
+        "prime": 257,
+        "roots": [
+          100
+        ]
+      },
+      {
+        "prime": 263,
+        "roots": [
+          88
+        ]
+      },
+      {
+        "prime": 269,
+        "roots": [
+          146
+        ]
+      },
+      {
+        "prime": 281,
+        "roots": [
+          62
+        ]
+      },
+      {
+        "prime": 293,
+        "roots": [
+          254
+        ]
+      },
+      {
+        "prime": 311,
+        "roots": [
+          158
+        ]
+      },
+      {
+        "prime": 317,
+        "roots": [
+          290
+        ]
+      },
+      {
+        "prime": 337,
+        "roots": [
+          40,
+          65,
+          232
+        ]
+      },
+      {
+        "prime": 347,
+        "roots": [
+          302
+        ]
+      },
+      {
+        "prime": 353,
+        "roots": [
+          58
+        ]
+      },
+      {
+        "prime": 359,
+        "roots": [
+          18
+        ]
+      },
+      {
+        "prime": 383,
+        "roots": [
+          135
+        ]
+      },
+      {
+        "prime": 389,
+        "roots": [
+          355
+        ]
+      },
+      {
+        "prime": 401,
+        "roots": [
+          208
+        ]
+      },
+      {
+        "prime": 419,
+        "roots": [
+          125
+        ]
+      },
+      {
+        "prime": 431,
+        "roots": [
+          383
+        ]
+      },
+      {
+        "prime": 433,
+        "roots": [
+          44,
+          52,
+          337
+        ]
+      },
+      {
+        "prime": 443,
+        "roots": [
+          382
+        ]
+      },
+      {
+        "prime": 449,
+        "roots": [
+          161
+        ]
+      },
+      {
+        "prime": 461,
+        "roots": [
+          338
+        ]
+      },
+      {
+        "prime": 467,
+        "roots": [
+          134
+        ]
+      },
+      {
+        "prime": 479,
+        "roots": [
+          195
+        ]
+      },
+      {
+        "prime": 491,
+        "roots": [
+          132
+        ]
+      },
+      {
+        "prime": 499,
+        "roots": [
+          42,
+          108,
+          349
+        ]
+      }
+    ],
+    "matrix_rows": [
+      "8641649299131500038482957"
+    ],
+    "columns": 84,
+    "matrix_rank": 1,
+    "rank_lower_bound": 1,
+    "halving_steps": [],
+    "prime_bound": 500,
+    "independent": true,
+    "scope": "certified lower bound for the rational witness span modulo torsion; not a complete basis",
+    "complete_basis": false,
+    "execution_verified": false
+  },
+  "torsion_certificate": {
+    "good_reductions": [
+      {
+        "prime": 5,
+        "group_order": 6
+      },
+      {
+        "prime": 7,
+        "group_order": 4
+      },
+      {
+        "prime": 11,
+        "group_order": 12
+      },
+      {
+        "prime": 13,
+        "group_order": 12
+      },
+      {
+        "prime": 17,
+        "group_order": 18
+      },
+      {
+        "prime": 19,
+        "group_order": 19
+      }
+    ],
+    "torsion_order_bound": 1
+  },
+  "exact_integral_points_checked": true,
+  "status": "complete",
+  "elapsed_seconds": 1.482,
+  "backend_index_bound": 1,
+  "backend_required_saturation_primes": [],
+  "exact_prime_saturation": [],
+  "backend_log_sha256": "1c322e85aecb41b74cefe34a91d56522da0a5ca5879b9fcf305de5507bffca1a"
+}
