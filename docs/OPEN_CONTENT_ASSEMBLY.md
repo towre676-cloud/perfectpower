@@ -185,3 +185,37 @@ Newly opened:
 | N23 | Computational reproof of the 1,080-element automorphism group of the sextic, independent of Harui's classification | `f57b2b8` | P |
 | N24 | All-orders resolution of the massless orbit from the determinant criterion: a moduli space or an obstruction at degree ≥24 | `bb015b4` | P/O |
 | N25 | Global vacuum ordering beyond the local one-loop continuation; two-loop accuracy; gauge, quark and Higgs determinants in the supertrace | `f57b2b8` | M/O |
+
+## Fourth update (main through `0e34a9a`)
+
+Closed by main:
+
+| Item | Closed by |
+|---|---|
+| A4 Brainpool-384 primality: 15-stage ECPP, 384 → 45 bits, independent check | `2fdc37d` |
+| A5 two-descent upper bounds for the whole Mordell frontier; 76 rank gaps closed by quartic point lifts | `2fdc37d`, `54f81af` |
+| A3, partly: cubic power-order unit bases, nonmonic source lattices, signed exponent extraction | `d0fdfb3` |
+| W2 Weil dimensions checked through level 128 | `d0fdfb3` |
+| R13 Pell-7: every solution of x²+7=2y² on two unit orbits | `ce43361` |
+| N18 torsion-aware subgroup indices and complete relation lattices | `ce43361` |
+| N19, partly: bounded division, preimages and saturation at 11 and 13 | `0e34a9a` |
+| N23 direct 1,080-element stabilizer recompute (360 projectivities, no classification premise) | `4ec6504` |
+| N14/N15 an exact all-orders F-flat curve in each null direction; the unperturbed census is infinite | `8d2707b`, `4ec6504` |
+| F6 Kibble–Zurek formation: 2D Model-A quench ensembles | `0087ca7` |
+| N9, partly: thermal wall continuation, bulk phase classification, localized Higgs ordering window (8.63 MeV) | `e3140a2` |
+| V1 52-operator loop table (audited as already closed) | `8d2707b` |
+
+Newly opened:
+
+| # | Item | Opened by | Tier |
+|---|---|---|---|
+| N26 | Explicit points on the 92 witness-deficient frontier curves, certified independent against the retained upper bounds | `0e34a9a` | P |
+| N27 | k=−9257: a second independent point or a sharper upper bound; reconcile 12 historical census ranks with the backend bounds | `0e34a9a` | P |
+| N28 | Saturate the witness subgroups into complete bases, then rerun the affected integral-point lists | `2fdc37d` | P |
+| N29 | Attach torsion-aware index packets to every saturation stage; automatic coordinate extraction | `ce43361` | P |
+| N30 | General norm representatives and an effective exponent-orbit bound (current runtime searches up to |e|≤64), plus arbitrary power orders | `d0fdfb3` | P |
+| N31 | Division beyond 13 | `0e34a9a` | P |
+| N32 | Mixed-direction Valentiner germ: one 3D smooth component, or three separate curves? | `4ec6504` | P/O |
+| N33 | KZ follow-ups: 3D networks with expansion, three-field evolution through the Higgs transition, bath matching, continuum critical calibration | `0087ca7` | P/M |
+| N34 | Thermal wall follow-ups: gauge-resummed thermal masses, damping kernels, real-time thermal wall evolution, loop matching | `e3140a2` | P/M |
+| N35 | Apply the field theorems in ZMod p for Brainpool-384 now that p is proved prime; Lean good-reduction kernel proof for 11/13 | `2fdc37d`, `0e34a9a` | L |
