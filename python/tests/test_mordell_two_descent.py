@@ -64,7 +64,8 @@ class DescentArithmetic(unittest.TestCase):
     def test_frontier_corrections_do_not_promote_integral_lists(self):
         c=json.loads((ROOT/'receipts/mordell_frontier.json').read_text())
         self.assertEqual(c['remaining_count'],457)
-        self.assertEqual(c['ranks_determined_by_two_descent'],289)
+        search=json.loads((ROOT/'receipts/mordell_cover_search.json').read_text())
+        self.assertEqual(c['ranks_determined_by_two_descent'],289+len(search['newly_determined']))
         self.assertEqual(len(c['census_rank_corrections']),11)
         self.assertTrue(all(row['census_rank']==1 and row['proved_rank']==2 for row in c['census_rank_corrections']))
 

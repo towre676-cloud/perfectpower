@@ -1,5 +1,7 @@
 # Open-front checkpoint
 
+The Mordell cover-point continuation closes 76 further frontier rank gaps, raising the exact-rank count to 365 of 457. The remaining rank intervals are 91 upper-rank-one cases and k=-9257 with rank between one and two. Stored quartic witnesses now also have primitive weighted integer coordinates, exact homogeneous Mordell identities and original-coordinate integrality conditions. All 76 new witnesses are nonintegral, so the 457 integral-list obligations remain. See `docs/MORDELL_COVER_POINTS_MONOGRAPH.md` and `receipts/mordell_cover_search.json`.
+
 Current non-flavor update: see [NONFLAVOR_FRONTIER_MONOGRAPH.md](NONFLAVOR_FRONTIER_MONOGRAPH.md) for the 6 October 2026 proofs, executable extensions, validation scope and still-open premises. This historical ledger is not a claim that those premises have been discharged.
 
 For the current cross-repository frontier after the elliptic witness and soft-mediator releases, read [Elliptic division in Lean and the repository frontier](ELLIPTIC_DIVISION_LEAN_MONOGRAPH.md). Its formal follow-up proves kernel-coset division fibres, generalized normalization, the nonexceptional halving quartic and complete rational-root transport from a supplied integer list. The focused audit passes on Mathlib's elliptic point type; Python transcript interpretation and independence certification remain separate. Older sections below retain their historical checkpoint scopes and must be checked against the newer chapters before treating an item as still open.

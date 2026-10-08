@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'mordellcoverpoints':{
+            'title':'Smaller-height covers and Mordell witnesses',
+            'subtitle':'76 new exact ranks<br/>and homogeneous integer source charts',
+            'description':'Rational points on stored quartic covers reach large original coordinates. Exact lifts and local independence close rank gaps while retaining the integral target domain.',
+            'metrics':[('76','new rank closures'),('365','exact frontier ranks'),('92','rank intervals remaining')],
+            'scope':'Positive rational witnesses, exact arithmetic and retained descent upper bounds. Complete Mordell-Weil bases, integral-point completeness and Lean descent refinement remain open.',
+            'running':'Quartic witnesses, homogeneous lifts and exact Mordell ranks',
+        },
         'torsionpell':{
             'title':'Complete relations with torsion',
             'subtitle':'Actual elliptic subgroup indices<br/>and the full Pell-7 family',
@@ -363,6 +371,7 @@ def render(source,output,*,edition='polynomial'):
     if edition in ('primesubgroups','torsionpell'):body.fontSize=9.3;body.leading=12.8;body.spaceAfter=5;body.allowWidows=0;body.allowOrphans=0
     if edition=='integervalued':body.leading=14.1
     if edition=='bridges':body.allowWidows=0;body.allowOrphans=0
+    if edition=='mordellcoverpoints':body.allowWidows=0;body.allowOrphans=0
     if edition=='research':body.leading=14.8;body.spaceAfter=8
     heading=ParagraphStyle('heading',fontName='LabelBold',fontSize=14,leading=19,spaceBefore=18,spaceAfter=9,textColor=teal,keepWithNext=True)
     small=ParagraphStyle('small',fontName='Label',fontSize=9,leading=14,spaceAfter=10,textColor=navy)
@@ -443,7 +452,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('mordelltwodescent','torsionpell','primesubgroups','ellipticfiveseven','rationalpowerbridge','arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('mordellcoverpoints','mordelltwodescent','torsionpell','primesubgroups','ellipticfiveseven','rationalpowerbridge','arithmeticcharts','atlasintersectionfactored','residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'mordelltwodescent':'MORDELL_TWO_DESCENT_MONOGRAPH.md','torsionpell':'TORSION_INDEX_PELL7_MONOGRAPH.md','primesubgroups':'ELLIPTIC_PRIME_SUBGROUPS_MONOGRAPH.md','ellipticfiveseven':'ELLIPTIC_FIVE_SEVEN_MONOGRAPH.md','rationalpowerbridge':'ARITHMETIC_CHART_BRIDGE_MONOGRAPH.md','arithmeticcharts':'ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md','atlasintersectionfactored':'RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md','residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'mordellcoverpoints':'MORDELL_COVER_POINTS_MONOGRAPH.md','mordelltwodescent':'MORDELL_TWO_DESCENT_MONOGRAPH.md','torsionpell':'TORSION_INDEX_PELL7_MONOGRAPH.md','primesubgroups':'ELLIPTIC_PRIME_SUBGROUPS_MONOGRAPH.md','ellipticfiveseven':'ELLIPTIC_FIVE_SEVEN_MONOGRAPH.md','rationalpowerbridge':'ARITHMETIC_CHART_BRIDGE_MONOGRAPH.md','arithmeticcharts':'ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md','atlasintersectionfactored':'RESIDUE_ATLAS_INTERSECTION_FACTORED_MONOGRAPH.md','residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

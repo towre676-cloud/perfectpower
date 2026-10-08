@@ -331,3 +331,11 @@ check-mordell-two-descent:
 mordell-two-descent-receipts:
 	PYTHONPATH=python $(PY) python/develop_mordell_two_descent.py --effort 3
 	PYTHONPATH=python $(PY) python/reconcile_mordell_frontier.py
+
+.PHONY: check-mordell-cover-points mordell-cover-points
+check-mordell-cover-points:
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_mordell_cover_search.py' -q
+mordell-cover-points:
+	PYTHONPATH=python $(PY) python/develop_mordell_cover_search.py --height 1000000
+	PYTHONPATH=python $(PY) python/develop_mordell_two_descent.py --effort 3
+	PYTHONPATH=python $(PY) python/reconcile_mordell_frontier.py
