@@ -9,19 +9,24 @@ from .elliptic_arithmetic import encode_point
 from .elliptic_certificate_verifier import (CheckBudget,fields,exact_int,model,
     checked_point,_verify_halves)
 from .elliptic_division_verifier import _verify_thirds
+from .elliptic_prime_division_verifier import _verify_prime
+from .elliptic_presentation import verify_coefficient_presentation
 from .divisor_square import WorkLimit
 
 
 def _check(cert,budget,node_limit):
-    fields(cert,'schema curve source_points prime kernel_fibre projective_fibres relation_basis relation_dimension replacement_equations replacement_points generators complete scope complete_mordell_weil_group execution_verified node_limit root_nodes')
-    if (cert['schema']!='pp-elliptic-subgroup-preimage/1' or cert['complete'] is not True
+    version=cert.get('schema') if type(cert) is dict else None
+    fields(cert,'schema curve source_points prime kernel_fibre projective_fibres relation_basis relation_dimension replacement_equations replacement_points generators complete scope complete_mordell_weil_group execution_verified node_limit root_nodes'+(' coefficient_presentation' if version=='pp-elliptic-subgroup-preimage/2' else ''))
+    if (version not in ('pp-elliptic-subgroup-preimage/1','pp-elliptic-subgroup-preimage/2') or cert['complete'] is not True
         or cert['execution_verified'] is not False or cert['complete_mordell_weil_group'] is not False
         or cert['scope']!='complete generators for the rational prime-preimage of the supplied subgroup'):return False
-    p=exact_int(cert['prime'],2,3);E=model(cert['curve'])
+    p=exact_int(cert['prime'],2,7 if version.endswith('/2') else 3);E=model(cert['curve'])
+    if p not in (2,3,5,7):return False
     if type(cert['source_points']) is not list or len(cert['source_points'])>4:return False
     source=[checked_point(E,h) for h in cert['source_points']];r=len(source)
     limit=min(node_limit,exact_int(cert['node_limit'],1,100000))
-    replay=_verify_halves if p==2 else _verify_thirds
+    replay=(_verify_halves if p==2 else _verify_thirds if p==3
+            else lambda packet,budget,limit:packet.get('prime')==p and _verify_prime(packet,budget,limit))
     kernel=cert['kernel_fibre']
     if type(kernel) is not dict or kernel.get('curve')!=cert['curve'] or kernel.get('target') is not None or kernel.get('node_limit')!=cert['node_limit']:return False
     if not replay(kernel,budget,limit):return False
@@ -60,6 +65,7 @@ def _check(cert,budget,node_limit):
         for c in range(1,p):actual.add(tuple(c*x%p for x in v))
     budget.charge(len(span)+len(actual))
     if span!=actual:return False
+    if version.endswith('/2') and not verify_coefficient_presentation(cert['coefficient_presentation'],p,basis,r):return False
     replacements=list(source);equations=[]
     for row,pivot in zip(basis,pivots):
         fibre=lookup[tuple(row)];anchor=checked_point(E,fibre['points'][0])

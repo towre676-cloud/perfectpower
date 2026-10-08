@@ -85,14 +85,25 @@ def lifts(E, roots, scalar, target):
     return ordered(out)
 
 
-def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096):
+def rational_prime_division(E, p, ell, node_limit=100000, bit_limit=4096, *, local_obstructions=False):
     """All rational P with ell P=p (p=None for the ell-torsion kernel), ell in {5,7}."""
-    if ell not in PRIMES:
+    if type(ell) is not int or ell not in PRIMES:
         raise ValueError('ell must be 5 or 7')
     if type(bit_limit) is not int or not 64 <= bit_limit <= 65536:
         raise ValueError('bit limit 64 through 65536 required')
     root_budget(node_limit)
     p = E.checked(p)
+    if type(local_obstructions) is not bool:
+        raise ValueError('literal local obstruction flag required')
+    if local_obstructions:
+        from .elliptic_reduction import reduction_obstruction
+        obstruction = reduction_obstruction(E, p, ell)
+        if obstruction is not None:
+            return dict(schema='pp-rational-prime-division/2', curve=E.specification, prime=ell,
+                        target=encode_point(p), points=[], complete=True, execution_verified=False,
+                        method='good_reduction_obstruction', anchor=None, torsion_certificate=None,
+                        division_certificate=None, obstruction_certificate=obstruction,
+                        node_limit=node_limit, bit_limit=bit_limit, root_nodes=0)
     psi, _ = odd_division_polynomials(E, ell)
     if coefficient_bits(psi) > bit_limit:
         raise WorkLimit('division polynomial coefficient bit budget exhausted')

@@ -1,6 +1,6 @@
 """Complete prime-preimage generators for finitely generated rational subgroups.
 
-For p=2 or 3 enumerate coefficient lines in F_p^r. Complete rational division
+For p=2,3,5 or 7 enumerate coefficient lines in F_p^r. Complete rational division
 fibres identify the linear relation space in E(Q)/pE(Q). Its RREF pivots give
 exact replacement generators; the complete rational p-kernel is retained.
 No assumption of independence, rank completeness or torsion classification.
@@ -8,12 +8,14 @@ No assumption of independence, rank completeness or torsion classification.
 from itertools import product
 from .elliptic_arithmetic import encode_point,root_budget
 from .elliptic_division import ordered
+from .elliptic_prime_division import rational_prime_division
+from .elliptic_presentation import coefficient_presentation
 from .elliptic_certificate_verifier import CheckBudget
 from .divisor_square import WorkLimit
 
 
 def parameters(prime,points):
-    if type(prime) is not int or prime not in (2,3):raise ValueError('prime 2 or 3 required')
+    if type(prime) is not int or prime not in (2,3,5,7):raise ValueError('prime 2, 3, 5 or 7 required')
     if not isinstance(points,(list,tuple)) or len(points)>4:raise ValueError('at most four subgroup generators')
 
 
@@ -44,7 +46,8 @@ def row_basis(rows,prime,width):
 def subgroup_preimage(E,points,prime=2,node_limit=100000):
     parameters(prime,points);root_budget(node_limit)
     source=[E.checked(p) for p in points];r=len(source)
-    divide=E.rational_halves if prime==2 else E.rational_thirds
+    divide=(E.rational_halves if prime==2 else E.rational_thirds if prime==3
+            else lambda target,limit:rational_prime_division(E,target,prime,limit,local_obstructions=True))
     kernel=divide(None,node_limit);used=kernel['root_nodes'];packets=[];relations=[]
     for vector in lines(prime,r):
         if used>=node_limit:raise WorkLimit('shared subgroup division budget exhausted')
@@ -62,12 +65,13 @@ def subgroup_preimage(E,points,prime=2,node_limit=100000):
         equations.append(dict(pivot=pivot,coefficients=vector,preimage=encode_point(anchor)))
     kernel_points=[E.checked(h) for h in kernel['points']]
     generators=ordered([*replacements,*kernel_points]);generators=[p for p in generators if p is not None]
-    result=dict(schema='pp-elliptic-subgroup-preimage/1',curve=E.specification,
+    result=dict(schema='pp-elliptic-subgroup-preimage/2',curve=E.specification,
         source_points=[encode_point(h) for h in source],prime=prime,
         kernel_fibre=kernel,projective_fibres=packets,relation_basis=basis,
         relation_dimension=len(basis),replacement_equations=equations,
         replacement_points=[encode_point(h) for h in replacements],
         generators=[encode_point(h) for h in generators],complete=True,
+        coefficient_presentation=coefficient_presentation(prime,basis,r),
         scope='complete generators for the rational prime-preimage of the supplied subgroup',
         complete_mordell_weil_group=False,execution_verified=False,
         node_limit=node_limit,root_nodes=used)

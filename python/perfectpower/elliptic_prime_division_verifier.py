@@ -53,8 +53,9 @@ def _bits(f):
 
 
 def _verify_prime(cert, budget, node_limit):
-    fields(cert, 'schema curve prime target points complete execution_verified method anchor torsion_certificate division_certificate node_limit bit_limit root_nodes')
-    if cert['schema'] != 'pp-rational-prime-division/1' or cert['complete'] is not True or cert['execution_verified'] is not False:
+    version=cert.get('schema') if type(cert) is dict else None
+    fields(cert, 'schema curve prime target points complete execution_verified method anchor torsion_certificate division_certificate node_limit bit_limit root_nodes'+(' obstruction_certificate' if version=='pp-rational-prime-division/2' else ''))
+    if version not in ('pp-rational-prime-division/1','pp-rational-prime-division/2') or cert['complete'] is not True or cert['execution_verified'] is not False:
         return False
     ell = exact_int(cert['prime'], 5, 7)
     if ell not in (5, 7):
@@ -63,6 +64,13 @@ def _verify_prime(cert, budget, node_limit):
     target = checked_point(E, cert['target'])
     limit = min(node_limit, exact_int(cert['node_limit'], 1, 100000))
     bit_limit = exact_int(cert['bit_limit'], 64, 65536)
+    if version=='pp-rational-prime-division/2':
+        from .elliptic_reduction import verify_reduction_obstruction
+        return (cert['method']=='good_reduction_obstruction' and cert['points']==[]
+                and type(cert['points']) is list and cert['anchor'] is None
+                and cert['torsion_certificate'] is None and cert['division_certificate'] is None
+                and type(cert['root_nodes']) is int and cert['root_nodes']==0
+                and verify_reduction_obstruction(E,target,ell,cert['obstruction_certificate'],budget))
     budget.charge(ell*ell*64)
     psi, phi = silverman_division(E, ell)
     if _bits(psi) > bit_limit:

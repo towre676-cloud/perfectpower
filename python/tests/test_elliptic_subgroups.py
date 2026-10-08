@@ -128,7 +128,7 @@ class SubgroupPreimageTests(unittest.TestCase):
 
     def test_budget_failure_and_invalid_contracts(self):
         E=self.E
-        for prime in (0,1,4,5,True,'2'):
+        for prime in (0,1,4,6,11,True,'2'):
             with self.assertRaises(ValueError):E.subgroup_preimage([],prime)
         with self.assertRaises(ValueError):E.subgroup_preimage([None]*5)
         with self.assertRaises(WorkLimit):E.subgroup_preimage(self.three_source,3,node_limit=self.three['root_nodes']-1)

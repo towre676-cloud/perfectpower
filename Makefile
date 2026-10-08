@@ -309,3 +309,8 @@ arithmetic-chart-check:
 .PHONY: check-arithmetic-chart-bridge
 check-arithmetic-chart-bridge:
 	bash scripts/check_arithmetic_chart_bridge.sh
+
+.PHONY: check-elliptic-five-seven
+check-elliptic-five-seven:
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_elliptic_*.py' -q
+	PYTHONPATH=python $(PY) python/develop_elliptic_five_seven.py
