@@ -129,3 +129,33 @@ Batches are ordered by value per effort among the items that run here.
 6. **Large items.** These are A4 (ECPP for Brainpool-384) and A5 (2-Selmer bounds on the frontier), and they are scheduled after batches 1–5.
 
 The Lean-blocked items (A7–A9, W1, I2, N6) need the environment's network access to allow `release.lean-lang.org`, `github.com` release downloads for elan, `lakecache.blob.core.windows.net` and `mathlib4.lean-cache.cloud`. ATLAS (`brauer.maths.qmul.ac.uk`) unblocks V5.
+
+## Second update (main through `89bde64`)
+
+Closed by main:
+
+| Item | Closed by |
+|---|---|
+| R1 integer-valued chart transport and Hensel/CRT partial domains | `d7b9968`, `89bde64` |
+| R2 bounded-residue chart switching across horizontal, vertical and singular branches | `d7b9968`, `89bde64` |
+| R4 unordered weighted determinant and Gram identity, with positivity | `d7b9968`, `89bde64` |
+| N1 on-shell distorted-wave pair widths (Goldstone 3.83e-8 GeV; WW/ZZ TE at g=0.4); (M−2m)^3 threshold law | `0546f58` |
+| N2, partly: UV-finite thermal relative determinant of the TE vector polarizations | `0546f58` |
+| N4 frame selection: determinant A-term window 6.558<t<9.524, and a Gram-quartic completion with a global unitary frame class | `065c0d5` |
+| N5, partly: 130,681 certified vacua (130,572 off-diagonal); the massless orbit is flat to degree 12 | `065c0d5` |
+
+Newly opened:
+
+| # | Item | Opened by | Tier |
+|---|---|---|---|
+| N7 | Interval certificate of the positive Higgs barrier, which the threshold law and the thermal monotonicity now both rely on (merges with F1) | `0546f58` | A |
+| N8 | Remaining physical vector polarizations (TM/longitudinal), plus off-shell, fermion and loop channels: the full electroweak lifetime | `0546f58` | P/M |
+| N9 | Temperature-dependent wall, vertices and screening masses; Landau and scattering damping | `0546f58` | P/M |
+| N10 | Feed the vector thermal free energy per area into the tension and the nucleation bounce (joins F3) | `0546f58` | P |
+| N11 | Typed factor-traversal and chart-family address interpreter: one leaf per CRT tuple, safe pruning, rank/select inverses (extends N6) | `d7b9968`, `89bde64` | L |
+| N12 | General Lean identification of K_S with canonical minor products | `d7b9968` | L |
+| N13 | Global solution set of the Pell-type example (x^2+7)/2=y^2 via the fundamental unit, not only the box | `d7b9968` | P |
+| N14 | The massless orbit at degree ≥12: all-order flatness, a continuous component, or an isolated minimum | `065c0d5` | P/O |
+| N15 | Completeness of the unperturbed vacuum set beyond the 130,681 lower bound | `065c0d5` | P/O |
+| N16 | Radiative stability of the radial calibration; a consistent gauge or dynamical-tensor UV completion | `065c0d5` | M/O |
+| N17 | Quark-source frame, golden CKM relation and physical CP selection from the selected frame | `065c0d5` | M/O |
