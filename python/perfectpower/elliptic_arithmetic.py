@@ -318,6 +318,12 @@ class EllipticCurve:
         from .elliptic_certificates import certify_independence
         return certify_independence(self,points,prime_bound,halving_limit,node_limit)
 
+    def mordell_two_descent(self,points=(),effort=0,timeout=30):
+        from .elliptic_two_descent import mordell_two_descent
+        if any(self.a[:4]) or self.a[4].denominator!=1:
+            raise ValueError('integral original model y^2=x^3+k required')
+        return mordell_two_descent(int(self.a[4]),points,effort=effort,timeout=timeout)
+
     def isogeny(self,kernel):
         t=self.checked(kernel)
         if t is None or self.mul(t,2) is not None:raise ValueError('nonidentity rational two-torsion kernel required')

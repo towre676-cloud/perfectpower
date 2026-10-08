@@ -21,6 +21,8 @@ The common approach is to expose structure that can be reused: a solution genera
 
 ## What you can build with it
 
+The [Mordell two-descent and Brainpool primality extension](docs/MORDELL_TWO_DESCENT_MONOGRAPH.md) supplies all 457 frontier rank upper bounds, determines 289 ranks from exact point witnesses and corrects eleven stale rank-one entries to rank two. It retains 1,027 quartic maps and 457 cubic integral bases, adds reversible nonmonic norm transport, and proves the Brainpool-384 modulus through a fifteen-stage ECPP chain. Integral-list completeness stays separate. Run `make check-mordell-two-descent`.
+
 The [five/seven subgroup extension](docs/ELLIPTIC_PRIME_SUBGROUPS_MONOGRAPH.md) retains every coefficient residue combination, produces exact Hermite/Smith lattice presentations and certifies bounded joint saturation at primes 5 and 7. A finite-prime monic-root obstruction closes empty fibres efficiently; independent free-coordinate certificates establish actual enlargement indices separately from formal relation dimensions. Twenty worked packets include hidden index-five/seven enlargements and joint recovery from 35P. Run `make check-elliptic-prime-subgroups`; see the [handoff](CLAUDE_CODE_ELLIPTIC_PRIME_SUBGROUPS_START_HERE.md).
 
 The [five/seven elliptic subgroup extension](docs/ELLIPTIC_FIVE_SEVEN_MONOGRAPH.md) connects complete rational division to mixed-generator preimages, Hermite/Smith coefficient presentations and bounded saturation at 2, 3, 5 and 7. Exact good-reduction obstructions close empty fibers. Fifteen examples include rational five/seven torsion and recovery of P from 35P; coefficient indices remain distinct from point-group indices. Run `make check-elliptic-five-seven`.

@@ -6,7 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
-    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','subgroup_preimage','bounded_saturation','subgroup_presentation','saturation_presentation','model_transport','two_isogeny','independence','native_two_torsion','native_halves'},
+    elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','subgroup_preimage','bounded_saturation','subgroup_presentation','saturation_presentation','model_transport','two_isogeny','independence','mordell_two_descent','native_two_torsion','native_halves'},
     differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
     superelliptic_family={'summary','evidence','observable'},
     binomial_sum={'summary','evidence','term','terms','telescoper','elliptic_bridge'},

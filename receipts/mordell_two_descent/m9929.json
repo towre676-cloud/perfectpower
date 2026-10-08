@@ -1,0 +1,273 @@
+{
+  "schema": "pp-mordell-two-descent/1",
+  "k": -9929,
+  "curve": {
+    "ainvs": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "-9929"
+    ]
+  },
+  "backend": "PARI/GP",
+  "backend_version": [
+    2,
+    15,
+    4
+  ],
+  "effort": 3,
+  "backend_reported_lower": 1,
+  "rank_upper_bound": 1,
+  "witness_rank_lower_bound": 0,
+  "rank_determined": false,
+  "selmer_dimension": 1,
+  "two_torsion_dimension": 0,
+  "cassels_removed_dimension": 0,
+  "points": [],
+  "independence": {
+    "schema": "pp-elliptic-independence/2",
+    "curve": {
+      "ainvs": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-9929"
+      ]
+    },
+    "original_points": [],
+    "working_points": [],
+    "auxiliary_torsion": [],
+    "two_torsion_dimension": 0,
+    "two_torsion_proof": {
+      "kind": "irreducible_cubic_mod_prime",
+      "prime": 7
+    },
+    "primes": [
+      {
+        "prime": 5,
+        "roots": [
+          1
+        ]
+      },
+      {
+        "prime": 11,
+        "roots": [
+          2
+        ]
+      },
+      {
+        "prime": 17,
+        "roots": [
+          4
+        ]
+      },
+      {
+        "prime": 19,
+        "roots": [
+          1,
+          7,
+          11
+        ]
+      },
+      {
+        "prime": 23,
+        "roots": [
+          13
+        ]
+      },
+      {
+        "prime": 29,
+        "roots": [
+          2
+        ]
+      },
+      {
+        "prime": 41,
+        "roots": [
+          14
+        ]
+      },
+      {
+        "prime": 43,
+        "roots": [
+          20,
+          32,
+          34
+        ]
+      },
+      {
+        "prime": 47,
+        "roots": [
+          42
+        ]
+      },
+      {
+        "prime": 53,
+        "roots": [
+          21
+        ]
+      },
+      {
+        "prime": 59,
+        "roots": [
+          48
+        ]
+      },
+      {
+        "prime": 71,
+        "roots": [
+          10
+        ]
+      },
+      {
+        "prime": 73,
+        "roots": [
+          4,
+          32,
+          37
+        ]
+      },
+      {
+        "prime": 83,
+        "roots": [
+          2
+        ]
+      },
+      {
+        "prime": 89,
+        "roots": [
+          11
+        ]
+      }
+    ],
+    "matrix_rows": [],
+    "columns": 21,
+    "matrix_rank": 0,
+    "rank_lower_bound": 0,
+    "halving_steps": [],
+    "prime_bound": 97,
+    "independent": true,
+    "scope": "certified lower bound for the rational witness span modulo torsion; not a complete basis",
+    "complete_basis": false,
+    "execution_verified": false
+  },
+  "field": {
+    "polynomial": [
+      "-9929",
+      "0",
+      "0",
+      "1"
+    ],
+    "discriminant": -2661796107,
+    "integral_basis": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "class_group_invariants": [],
+    "bnfcertify": 1,
+    "nfcertify": [],
+    "power_order_index": 1,
+    "polynomial_discriminant": -2661796107,
+    "multiplication_table": [
+      [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          9929,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          9929,
+          0,
+          0
+        ],
+        [
+          0,
+          9929,
+          0
+        ]
+      ]
+    ]
+  },
+  "covers": [
+    {
+      "quartic": [
+        "-67",
+        "-68",
+        "-120",
+        "24",
+        "24"
+      ],
+      "x_numerator": [
+        "-1051",
+        "1484",
+        "3012",
+        "576",
+        "516"
+      ],
+      "y_numerator": [
+        "-42724",
+        "-163962",
+        "-16710",
+        "-46740",
+        "-88380",
+        "-67104",
+        "-360"
+      ]
+    }
+  ],
+  "integral_point_completeness": false,
+  "lean_rank_proof": false,
+  "sources": [
+    "https://pari.math.u-bordeaux.fr/dochtml/html-stable/Elliptic_curves.html",
+    "https://pari.math.u-bordeaux.fr/dochtml/html-stable/General_number_fields.html"
+  ]
+}

@@ -322,3 +322,12 @@ check-elliptic-prime-subgroups:
 .PHONY: check-torsion-index-pell7
 check-torsion-index-pell7:
 	bash scripts/check_torsion_index_pell7.sh
+
+.PHONY: check-mordell-two-descent mordell-two-descent-receipts
+check-mordell-two-descent:
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_mordell_two_descent.py' -q
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_ecpp_certificate.py' -q
+	PYTHONPATH=python $(PY) python/develop_brainpool384_ecpp.py
+mordell-two-descent-receipts:
+	PYTHONPATH=python $(PY) python/develop_mordell_two_descent.py --effort 3
+	PYTHONPATH=python $(PY) python/reconcile_mordell_frontier.py

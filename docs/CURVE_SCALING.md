@@ -30,8 +30,10 @@ was not reachable from this environment. The checks are integer congruences modu
 
 ## Not claimed
 
-- **Primality of p.** It is not proved, so the field theorems are not yet applied to these
-  constants inside ZMod p. They become applicable from a primality certificate. The ring-level
+- **Lean primality of p.** A complete fifteen-stage ECPP certificate now proves the modulus
+  prime mathematically; see [the descent and primality monograph](MORDELL_TWO_DESCENT_MONOGRAPH.md).
+  Its exact arithmetic is checked independently of PARI. A compiled Lean primality theorem
+  is still needed to instantiate the field theorems inside ZMod p. The ring-level
   `residual_zero_iff_of_isUnit` needs only invertibility of Z to preserve the equation; it does
   not establish the point-group isomorphism over these concrete constants.
 - **No implementation is verified.** There is no TLS code, no P-384 or Brainpool scalar-multiplication
