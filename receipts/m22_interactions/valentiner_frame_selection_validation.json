@@ -1,0 +1,30 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "python/tests/test_valentiner_frame_selection.py",
+        "python/tests/test_valentiner_diagonal_vacua.py",
+        "python/tests/test_valentiner_susy_vacua.py"
+      ],
+      "exit_code": 0,
+      "stdout": ".................                                                        [100%]\n17 passed in 76.19s (0:01:16)"
+    },
+    {
+      "command": [
+        "python",
+        "python/develop_valentiner_frame_selection.py"
+      ],
+      "exit_code": 0,
+      "stdout": "/workspace/scratch/b3a5665a8b3d/frame-selection-fresh-extraction/receipts/m22_interactions/valentiner_frame_selection.json"
+    }
+  ],
+  "fresh_extraction_tests_passed": 17,
+  "receipt_sha256": "6b42fcbf782b56015cc80384dd7b5d1d9a6fb5ba0e7032ba7d0d56fbb82e842f",
+  "scientific_receipt_reproduced_byte_for_byte": true,
+  "scope": "focused isolated-link suites, not a complete repository test run",
+  "tests_passed": 17
+}

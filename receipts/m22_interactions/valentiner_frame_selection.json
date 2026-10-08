@@ -1,0 +1,355 @@
+{
+  "nonlinear_massless_branch": {
+    "benchmark": "normalized a=-5,b=1,c=0; K0=diag(1,omega,omega^2)",
+    "cubic_massive_residuals": [
+      "u0*u1*u2*(-1229*sqrt(5)/4 + 3847/4 - 9833*sqrt(3)*I/4 + 3331*sqrt(15)*I/4)",
+      "u0*u1*u2*(-4307*sqrt(5)/4 + 13081/4 - 13081*sqrt(3)*I/4 + 4307*sqrt(15)*I/4)",
+      "u0*u1*u2*(-2191*sqrt(5)/2 + 6413/2 - 1710*sqrt(3)*I + 570*sqrt(15)*I)",
+      "u0**3*(-819*sqrt(5)/2 + 1755/2 - 819*sqrt(15)*I/2 + 1755*sqrt(3)*I/2) + u0*u1**2*(6417/8 + 3861*sqrt(5)/8 - 423*sqrt(3)*I/8 + 669*sqrt(15)*I/8) + u0*u2**2*(-1467*sqrt(5)/4 + 1287/4 - 399*sqrt(15)*I/2 + 855*sqrt(3)*I/2)",
+      "u0**2*u1*(-23355*sqrt(5)/8 + 51903/8 - 45063*sqrt(3)*I/8 + 20163*sqrt(15)*I/8) + u1**3*(1755/2 + 819*sqrt(5)/2 - 819*sqrt(15)*I/2 - 1755*sqrt(3)*I/2) + u1*u2**2*(-23355*sqrt(5)/8 + 51903/8 - 20163*sqrt(15)*I/8 + 45063*sqrt(3)*I/8)",
+      "u0**2*u2*(-1467*sqrt(5)/4 + 1287/4 - 855*sqrt(3)*I/2 + 399*sqrt(15)*I/2) + u1**2*u2*(-1467*sqrt(5)/4 - 1287/4 - 399*sqrt(15)*I/2 - 855*sqrt(3)*I/2) + u2**3*(-819*sqrt(5)/2 + 1755/2 - 1755*sqrt(3)*I/2 + 819*sqrt(15)*I/2)"
+    ],
+    "effective_superpotential_degree_6": "0",
+    "effective_superpotential_degrees_3_4_5": [
+      "0",
+      "0",
+      "0"
+    ],
+    "first_possible_effective_F_energy_degree": 12,
+    "full_sextic_monomials": 252,
+    "massive_Hessian_inverse": [
+      [
+        "8/135",
+        "-1/540 + sqrt(3)*I/540",
+        "-1/540 - sqrt(3)*I/540",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-1/540 + sqrt(3)*I/540",
+        "-4/135 - 4*sqrt(3)*I/135",
+        "1/270",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "-1/540 - sqrt(3)*I/540",
+        "1/270",
+        "-4/135 + 4*sqrt(3)*I/135",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-7/36 + sqrt(5)/12 - 7*sqrt(3)*I/36 + sqrt(15)*I/12",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "-7/36 - sqrt(5)/12 + sqrt(15)*I/12 + 7*sqrt(3)*I/36",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-7/36 + sqrt(5)/12 - sqrt(15)*I/12 + 7*sqrt(3)*I/36"
+      ]
+    ],
+    "massive_coordinate_indices": [
+      0,
+      4,
+      8,
+      1,
+      2,
+      5
+    ],
+    "null_vectors": [
+      [
+        "0",
+        "-3*sqrt(5)/4 + 7/4 - 7*sqrt(3)*I/4 + 3*sqrt(15)*I/4",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "3*sqrt(5)/4 + 7/4 + 3*sqrt(15)*I/4 + 7*sqrt(3)*I/4",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-3*sqrt(5)/4 + 7/4 - 7*sqrt(3)*I/4 + 3*sqrt(15)*I/4",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "quadratic_massive_displacements": [
+      "u0**2*(-49/4 + 21*sqrt(5)/4 - 5*sqrt(15)*I/2 + 35*sqrt(3)*I/6) + u1**2*(-49/4 - 21*sqrt(5)/4 - 35*sqrt(3)*I/6 - 5*sqrt(15)*I/2) + u2**2*(-21/2 + 9*sqrt(5)/2 - 9*sqrt(15)*I/2 + 21*sqrt(3)*I/2)",
+      "u0**2*(-51*sqrt(5)/8 + 119/8 - 77*sqrt(3)*I/24 + 11*sqrt(15)*I/8) + u1**2*(-21/2 - 9*sqrt(5)/2 + 9*sqrt(15)*I/2 + 21*sqrt(3)*I/2) + u2**2*(-51*sqrt(5)/8 + 119/8 - 11*sqrt(15)*I/8 + 77*sqrt(3)*I/24)",
+      "u0**2*(-21/2 + 9*sqrt(5)/2 - 21*sqrt(3)*I/2 + 9*sqrt(15)*I/2) + u1**2*(51*sqrt(5)/8 + 119/8 + 11*sqrt(15)*I/8 + 77*sqrt(3)*I/24) + u2**2*(-49/4 + 21*sqrt(5)/4 - 35*sqrt(3)*I/6 + 5*sqrt(15)*I/2)",
+      "u1*u2*(57/2 - 19*sqrt(5)/2)",
+      "u0*u2*(-19*sqrt(5)/4 + 57/4 - 57*sqrt(3)*I/4 + 19*sqrt(15)*I/4)",
+      "u0*u1*(-57/4 + 19*sqrt(5)/4 - 57*sqrt(3)*I/4 + 19*sqrt(15)*I/4)"
+    ],
+    "raw_null_superpotential_quartic": "u0**4*(9259 - 4137*sqrt(5)) + 1238*u0**2*u1**2 + u0**2*u2**2*(-29093/2 + 12999*sqrt(5)/2 - 12999*sqrt(15)*I/2 + 29093*sqrt(3)*I/2) + u1**4*(4137*sqrt(5) + 9259) + u1**2*u2**2*(-619 + 619*sqrt(3)*I) + u2**4*(-9259/2 + 4137*sqrt(5)/2 - 9259*sqrt(3)*I/2 + 4137*sqrt(15)*I/2)",
+    "scope": "Holomorphic implicit elimination of six massive coordinates. Canonical light metric must be retained when interpreting the first nonzero effective superpotential as energy."
+  },
+  "orbits": {
+    "action": "K -> hL K hRdagger, hL,hR in conjugate(3.A6)",
+    "certified_nonzero_vacua": 130680,
+    "certified_off_diagonal_vacua": 130572,
+    "certified_vacua_including_origin": 130681,
+    "diagonal_intersections": {
+      "distinct": 24,
+      "group": 12,
+      "nonunitary": 36
+    },
+    "disjointness_invariant": "det K = -1/32, -(11+i sqrt(135))/64, -(11-i sqrt(135))/64, -1/5",
+    "group_order": 1080,
+    "massless_stabilizer_indices": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      9,
+      17,
+      19,
+      26,
+      27,
+      44,
+      47,
+      52,
+      67,
+      85,
+      106,
+      109,
+      124,
+      140,
+      153,
+      156,
+      187,
+      189,
+      224,
+      227,
+      231,
+      249,
+      253,
+      256,
+      281,
+      305,
+      306,
+      309,
+      448,
+      454,
+      455
+    ],
+    "monomial_subgroup_order": 72,
+    "nonunitary_stabilizer_indices": [
+      0,
+      2,
+      8,
+      21,
+      29,
+      41,
+      47,
+      50,
+      52,
+      67,
+      72,
+      82,
+      105,
+      107,
+      119,
+      122,
+      140,
+      156,
+      162,
+      231,
+      253,
+      448,
+      454,
+      455
+    ],
+    "orbit_sizes": {
+      "group": 1080,
+      "massless_unitary": 32400,
+      "nonunitary_q_minus": 48600,
+      "nonunitary_q_plus": 48600
+    },
+    "scope": "Exact orbit census and lower bound for the full vacuum set, not a complete classification of all F-flat matrices.",
+    "stabilizer_orders": {
+      "group": 1080,
+      "massless": 36,
+      "nonunitary": 24
+    },
+    "strictly_stable_nonzero_vacua_at_benchmark": 98280
+  },
+  "selection": {
+    "CP_or_CKM_prediction": false,
+    "Euler_phase_identity": "|I6bar(K)|^2/v^12 =256+2*t*(16+t)*(1-cos(delta)); t=c/b, det K=D0*exp(i delta)",
+    "N_definition": "Tr Kdagger K = squared Frobenius norm",
+    "benchmark": "a=b=1,c=0",
+    "complete_CP_even_nonconstant_scalar_basis_through_degree_4": [
+      "N",
+      "Re det K",
+      "N^2",
+      "Tr((Kdagger K)^2)"
+    ],
+    "determinant_real_parts": {
+      "distinct_squares": "-1/5",
+      "equal_squares": "-1/32",
+      "two_equal_squares": "-11/64"
+    },
+    "exact_norm_intervals": {
+      "distinct_squares": [
+        "32062049/31250000",
+        "1025985569/1000000000"
+      ],
+      "equal_squares": [
+        "297637697/1000000000",
+        "148818849/500000000"
+      ],
+      "two_equal_squares": [
+        "1219900741/1000000000",
+        "609950371/500000000"
+      ]
+    },
+    "global_quartic_selector": "VF+lambda*(N-3*v^2)^2+eta*G; G=Tr(A-N I/3)^2; A=Kdagger K",
+    "global_scope": "All global minima of this calibrated isolated scalar EFT are characterized by the finite unitary tensor stabilizer. Its full order is not equated with 1080 without a separate stabilizer classification.",
+    "global_theorem_assumptions": "a real nonzero; b*c>0 real; lambda,eta>0; v^3=|a/(32*b+2*c)|",
+    "global_zero_set": "K=r U; r^3=-a/(32b+2c); U in SU(3), Tbar(U)=Tbar",
+    "global_zero_set_is_finite": true,
+    "known_group_minima": 1080,
+    "origin_first_order_energy": 0,
+    "quartic_gauge_warning": "G is a symmetry-allowed balanced quartic. Formal moment-map equality does not gauge the fixed finite-group sextic consistently. N^2 and G are not asserted to be soft SUSY-breaking operators.",
+    "soft_example": "delta V=epsilon*(-N-8 Re det K), epsilon positive and sufficiently small",
+    "soft_example_first_order_energies": {
+      "distinct_squares": 0.5740144319939819,
+      "equal_squares": -0.04763769724403738,
+      "two_equal_squares": 0.1550992584340678
+    },
+    "soft_open_interval_t_exact": "max((Nd-Ng)/(1/5-1/32),(Nn-Ng)/(11/64-1/32)) < t < 32 Ng",
+    "soft_open_interval_t_numeric": [
+      6.558314981844585,
+      9.524406311809196
+    ],
+    "soft_scope": "Group orbit strictly favored at first order among all four certified orbits and the origin; not a global theorem for the soft-only perturbed full action.",
+    "stabilizer_Lie_norm_identity": "||d Tbar(A)||^2=72 ||A||F^2 for traceless anti-Hermitian A",
+    "unitary_Cauchy_Schwarz_bound": "|I6bar(K)|<=16*v^6"
+  },
+  "stabilizer_Lie": {
+    "Gram": [
+      [
+        "144",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "432",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "144",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "432",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "144",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "432",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "432",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1296"
+      ]
+    ],
+    "compact_SU3_stabilizer_is_finite": true,
+    "exact_Gram_comparisons": 64,
+    "rank": 8
+  }
+}
