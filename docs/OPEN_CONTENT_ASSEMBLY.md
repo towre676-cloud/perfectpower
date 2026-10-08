@@ -30,6 +30,9 @@ Sizes: S is under a day, M is a few sessions, L is research-scale.
 | Mordell frontier ledger (457 = 323 empty + 134 with points) | NONFLAVOR_FRONTIER | main |
 | Wall thermal nucleation, continuum stability, scattering, shape radiation, network A and C_ann, lattice GW ε_gw | Flavor_Cosmology_and_Tree_Decay | this branch |
 | Genus-2 certified periods (real branch points) | CURVE_STRUCTURE | this branch |
+| Shared-factor (noncoprime) atlas intersections, factored source covers, kernel-proved intersections (was R3) | RESIDUE_ATLAS_CRT | main `016aa30`, `f40fd39` |
+| Wall Goldstone/gauge channel operators: exact quadratic radial decoupling, Goldstone–vector derivative mixing retained, nonzero cubic Ward overlaps (was F2) | Flavor_Fixed_Gauge_and_Goldstone_Ward | main `4bcfe69` |
+| Diagonal Valentiner F-flat vacuum census: 108 roots, stable nonunitary competitor (part of V3) | Valentiner_SUSY_Vacua | main `6c57c0b` |
 
 ## Open items by lane
 
@@ -53,7 +56,6 @@ Sizes: S is under a day, M is a few sessions, L is research-scale.
 |---|---|---|---|---|---|
 | R1 | Transport power equations through integer-valued charts; Hensel/CRT partial domains | INTEGER_VALUED_POLYNOMIAL | P | M | A chart-transport module with exact replay |
 | R2 | Bounded-residue chart switching with a branching lift | BOUNDED_RESIDUE_PATCH | P | M | A switching certificate with a lift tree |
-| R3 | Noncoprime atlas intersections | RESIDUE_ATLAS_CRT | P | S–M | Generalized CRT via lcm and gcd compatibility checks |
 | R4 | Unordered weighted determinant identity | RESIDUE_DETERMINANT | P | S | A symbolic proof (SymPy) plus a randomized exact test |
 
 ### 3. Weil lane
@@ -88,7 +90,6 @@ Sizes: S is under a day, M is a few sessions, L is research-scale.
 | # | Open item | Source | Tier | Size | Deliverable |
 |---|---|---|---|---|---|
 | F1 | Interval validation of the five profile signs | Flavor_Analytic_Radial_Profile / Polynomial_Wall_Fredholm_Hierarchy | A | M | Arb validated ODE enclosure of the kink profiles, giving certified signs |
-| F2 | Goldstone/gauge leakage of the wall | Flavor_Fixed_Gauge_and_Goldstone_Ward | P | S | The linear coupling vanishes because there is no quadratic mixing; record a theorem and a numerical check |
 | F3 | Zero-temperature Coleman–Weinberg and two-loop thermal corrections to nucleation | Flavor_Cosmology_and_Tree_Decay | P/M | M | A CW-corrected bounce and ΔS_3/T bracket on `wall_nucleation` |
 | F4 | Annihilation-phase GW (bias-driven collapse) | Flavor_Cosmology_and_Tree_Decay | P | M | Biased-potential lattice runs and an ε_gw during collapse |
 | F5 | Larger GW boxes (N≥384) to resolve the peak and IR slope | same | P | L (compute) | Larger runs, which need more cores or memory than this container has |
@@ -105,15 +106,26 @@ Sizes: S is under a day, M is a few sessions, L is research-scale.
 | V4 | Finite EFT matching, two-loop phase | Flavor_Finite_Spectral_Matching | O | L |
 | V5 | Explicit 3.M22 matrix representation | M22_Triplet_Transport | X (ATLAS blocked) | M |
 
+## Opened by the 2026-10-07 releases
+
+| # | New open item | Opened by | Tier | Size | Deliverable |
+|---|---|---|---|---|---|
+| N1 | On-shell wall-mode decay widths into Goldstone pairs and (at reduced g) WW/ZZ, with distorted-wave external states and energy conservation | `4bcfe69` (overlaps are vertices, not widths) | P | M | Combine the cubic Ward vertices with the Jost continuum states of `wall_jost_scattering`: a Fermi golden-rule width and a lifetime |
+| N2 | Gauge thermal bath and vector functional determinant on the wall | `4bcfe69` | P/M | M | A thermal vector-mass correction to the bounce and wall tension, feeding F3 |
+| N3 | Nonlinear lifetime of the 154.225 GeV localized candidate | `4bcfe69` | P | M | Real-time 1+1D evolution of the excited wall, extracting a decay rate to compare with N1 |
+| N4 | A frame-selecting interaction that beats the stable nonunitary F-flat competitor (a common soft mass picks the wrong branch) | `6c57c0b` | P/O | M | A scan of symmetry-allowed soft and D-term invariants, giving exact branch energies |
+| N5 | Perturbative analysis of the massless diagonal branch; global classification of perturbed vacua beyond the diagonal | `6c57c0b` | P/O | M | Exact second-order shifts, then a nondiagonal numerical census |
+| N6 | Interpreter refinement for normalized factor traversal and offsets (atlas compiler to kernel) | `f40fd39` | L | M | Lean |
+
 ## What we can do: execution plan
 
 Batches are ordered by value per effort among the items that run here.
 
 1. **Elliptic subgroup closure (A1, A2).** This builds directly on the 5/7 division certificates already on this branch. It gives complete preimage and saturation at every prime ≤7.
 2. **Certified curves (C1, C3, C2).** This extends the Arb period engine to complex branch points and closes the 36 metric boxes.
-3. **Wall certification and physics (F1, F2, F3, F4).** This covers the Arb profile signs, a short Goldstone-leakage theorem, CW/two-loop nucleation corrections and annihilation-phase GW.
-4. **Residue and chart machinery (R1, R2, R3, R4).** These are exact certificates with replay verifiers, in the style of the existing residue atlases.
+3. **Wall certification and physics (F1, N1, N3, F3, N2, F4).** This covers the Arb profile signs; wall-mode decay widths and nonlinear lifetime, built on the new gauge-channel vertices and this branch's Jost states; CW/two-loop and vector-bath nucleation corrections; and annihilation-phase GW.
+4. **Residue and chart machinery (R1, R2, R4).** These are exact certificates with replay verifiers, in the style of the existing residue atlases.
 5. **Cross-checks and validation (W2, I1, V1).** These are a large-level c(N) replay, headless-Chromium Dresden validation, and the SymPy proof of the 52-operator table (coordinate with the flavor lane).
 6. **Large items.** These are A4 (ECPP for Brainpool-384) and A5 (2-Selmer bounds on the frontier), and they are scheduled after batches 1–5.
 
-The Lean-blocked items (A7–A9, W1, I2) need the environment's network access to allow `release.lean-lang.org`, `github.com` release downloads for elan, `lakecache.blob.core.windows.net` and `mathlib4.lean-cache.cloud`. ATLAS (`brauer.maths.qmul.ac.uk`) unblocks V5.
+The Lean-blocked items (A7–A9, W1, I2, N6) need the environment's network access to allow `release.lean-lang.org`, `github.com` release downloads for elan, `lakecache.blob.core.windows.net` and `mathlib4.lean-cache.cloud`. ATLAS (`brauer.maths.qmul.ac.uk`) unblocks V5.
