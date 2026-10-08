@@ -1,5 +1,8 @@
 # PerfectPower
 
+The wall continuum advance now computes on-shell global Goldstone-pair widths, separate physical WW/ZZ polarization partial widths, Bose-enhanced retarded damping, and a finite-box thermal vector relative determinant. The 154.225 GeV candidate has an ungauged Goldstone width of 3.8323e-8 GeV; full gauged widths and nonlinear lifetimes remain open. See [the derivation and numerical controls](docs/WALL_PAIR_DECAY_AND_THERMAL_VECTORS.md) and [the reproducible receipt](receipts/flavor_cosmology/wall_pair_decay.json).
+
+
 
 **Exact polynomial arithmetic, reusable decision policies, and algebraic-curve research from the defining polynomial.**
 
@@ -342,3 +345,4 @@ The release checks 189 Lean declarations across the generic module and 13 source
 The Weil spectral expansion constructs rational primitive projectors recursively at every level on paper, with compressed plans through level 1,000,000 and exact dense multiplication/character tables through level 64. The 260 dense projectors are checked against the original Fourier/chirp convention; levels 3, 4, 8 and 9 have native Lean source certificates. See [the spectral monograph](docs/WEIL_SPECTRAL_MONOGRAPH.md), [PDF](docs/WEIL_SPECTRAL_MONOGRAPH.pdf), and run `make check-weil-spectral`. The all-level orbit upper bound and recursive source intertwining remain formalization obligations.
 
 Shared-factor residue intersections now join distinct polynomial constraints and existing atlas products by their gcd fibers, reconstructing roots modulo the lcm. The extension includes exact populations and rank/select in large signed rectangles, three generic Lean theorems and 54 passing focused/neighbor tests. See [the derivation and formal boundary](docs/RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md), [PDF](docs/RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.pdf), and `python/develop_residue_atlas_intersection.py` for retained examples. Canonical-lcm compiler refinement remains a Lean obligation.
+
