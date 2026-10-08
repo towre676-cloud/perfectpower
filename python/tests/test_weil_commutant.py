@@ -46,7 +46,7 @@ class WeilTests(unittest.TestCase):
     def test_malformed(self):
         for p in [None,{},[],{'schema':'pp-weil-commutant/1'}]:self.assertFalse(verify_commutant(p))
     def test_input_scope(self):
-        for n in [True,1,65,-1]:
+        for n in [True,1,129,-1]:
             with self.assertRaises(ValueError):certify_commutant(n)
         with self.assertRaises(ValueError):certify_product(4,8)
     def test_work_budget(self):

@@ -339,3 +339,12 @@ mordell-cover-points:
 	PYTHONPATH=python $(PY) python/develop_mordell_cover_search.py --height 1000000
 	PYTHONPATH=python $(PY) python/develop_mordell_two_descent.py --effort 3
 	PYTHONPATH=python $(PY) python/reconcile_mordell_frontier.py
+
+.PHONY: check-units-weil power-order-unit-receipts weil-beyond64-receipts
+check-units-weil:
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_power_order_units.py' -q
+	PYTHONPATH=python $(PY) -m unittest discover -s python/tests -p 'test_weil_*.py' -q
+power-order-unit-receipts:
+	PYTHONPATH=python $(PY) python/develop_power_order_units.py
+weil-beyond64-receipts:
+	PYTHONPATH=python $(PY) python/develop_weil_beyond64.py

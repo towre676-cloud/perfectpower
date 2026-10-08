@@ -1,5 +1,7 @@
 # Open-front checkpoint
 
+The unit/Weil continuation supplies complete computational unit bases for the power orders theta³=39theta+2, theta³=48theta+30 and theta³=195theta+830. Their indices inside the maximal-order unit groups are 6, 8 and 64. Six linked nonmonic sources now have exact maximal-order coordinate lattices and signed unit-orbit extraction. Complete norm representatives, effective Skolem bounds and new Lean unit-generation proofs remain separate. The requested original-equation Weil dimension cross-check beyond 64 is delivered at ten selected levels through 128. See `docs/UNIT_LATTICES_WEIL_MONOGRAPH.md`, `receipts/power_order_units.json` and `receipts/weil_beyond64`.
+
 The Mordell cover-point continuation closes 76 further frontier rank gaps, raising the exact-rank count to 365 of 457. The remaining rank intervals are 91 upper-rank-one cases and k=-9257 with rank between one and two. Stored quartic witnesses now also have primitive weighted integer coordinates, exact homogeneous Mordell identities and original-coordinate integrality conditions. All 76 new witnesses are nonintegral, so the 457 integral-list obligations remain. See `docs/MORDELL_COVER_POINTS_MONOGRAPH.md` and `receipts/mordell_cover_search.json`.
 
 Current non-flavor update: see [NONFLAVOR_FRONTIER_MONOGRAPH.md](NONFLAVOR_FRONTIER_MONOGRAPH.md) for the 6 October 2026 proofs, executable extensions, validation scope and still-open premises. This historical ledger is not a claim that those premises have been discharged.

@@ -10,9 +10,9 @@ from .finite_weil import crt_replay
 from .divisor_square import WorkLimit
 
 
-def _level(n):
-    if type(n) is not int or not 2 <= n <= 64:
-        raise ValueError('level must be an integer between 2 and 64')
+def _level(n,maximum=64):
+    if type(n) is not int or not 2 <= n <= maximum:
+        raise ValueError(f'level must be an integer between 2 and {maximum}')
 
 
 def _prime(p):
@@ -142,6 +142,26 @@ def _check_basis(n,basis):
 
 def _det_mod(a,q):
     """Independent dense determinant replay of the selected original-equation minor."""
+    # Optional integer-array acceleration; every product is below 10^10.
+    # This is exact modular elimination, with no floating-point linear algebra.
+    if len(a)>=96 and 2<=q<=100000:
+        try:
+            import numpy as np
+        except ImportError:
+            pass
+        else:
+            a=np.array([[int(x)%q for x in row] for row in a],dtype=np.int64)
+            det=1;n=len(a)
+            for k in range(n):
+                candidates=np.flatnonzero(a[k:,k])
+                if not len(candidates):return 0
+                pivot=k+int(candidates[0])
+                if pivot!=k:a[[k,pivot]]=a[[pivot,k]];det=-det
+                value=int(a[k,k]);det=det*value%q;inv=pow(value,-1,q)
+                factors=(a[k+1:,k]*inv)%q
+                a[k+1:,k+1:]=(a[k+1:,k+1:]-factors[:,None]*a[k,k+1:][None,:])%q
+                a[k+1:,k]=0
+            return det%q
     a=[list(row) for row in a];det=1;n=len(a)
     for k in range(n):
         pivot=next((i for i in range(k,n) if a[i][k]%q),None)
@@ -156,7 +176,7 @@ def _det_mod(a,q):
 
 
 def certify_commutant(level,*,work_limit=20_000_000):
-    _level(level)
+    _level(level,128)
     if type(work_limit) is not int or not 1<=work_limit<=100_000_000:raise ValueError('invalid work limit')
     n=level;q,z=_specialization(n);basis=_basis(n)
     if not _check_basis(n,basis):raise AssertionError('explicit operator failed exact cyclotomic replay')
@@ -173,7 +193,7 @@ def certify_commutant(level,*,work_limit=20_000_000):
 def verify_commutant(packet):
     try:
         if not isinstance(packet,dict) or packet.get('schema')!='pp-weil-commutant/1':return False
-        n=packet['level'];_level(n);q=packet['prime'];z=packet['root'];d=packet['dimension']
+        n=packet['level'];_level(n,128);q=packet['prime'];z=packet['root'];d=packet['dimension']
         if type(q) is not int or not 2<=q<=100_000 or not _prime(q) or type(z) is not int or not 1<z<q:return False
         if pow(z,n,q)!=1 or any(pow(z,n//p,q)==1 for p in _factors(n)):return False
         if sum(c*pow(z,i,q) for i,c in enumerate(cyclotomic(n)))%q:return False
@@ -186,7 +206,10 @@ def verify_commutant(packet):
         if any(type(c) is not int or not 0<=c<len(pairs) for c in cols):return False
         if any(len(row)!=2 or any(type(i) is not int or not 0<=i<n for i in row) for row in rows):return False
         phases=[pow(z,k,q) for k in range(n)]
-        minor=[[ _row(n,phases,pairs,i,j,q)[c] for c in cols] for i,j in rows]
+        minor=[]
+        for i,j in rows:
+            full_row=_row(n,phases,pairs,i,j,q)
+            minor.append([full_row[c] for c in cols])
         if not _det_mod(minor,q):return False
         return packet['complete_over_cyclotomic_field'] is True and packet['execution_verified'] is False
     except (KeyError,TypeError,ValueError,IndexError,ZeroDivisionError):return False
