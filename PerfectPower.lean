@@ -437,3 +437,6 @@ import PerfectPower.SpectralMoments
 import PerfectPower.WeilOldLevel
 
 import PerfectPower.MordellCompletionBridge
+import PerfectPower.FlavorRGCensus
+import PerfectPower.WeightedBlockAddresses
+import PerfectPower.SpectralTrace

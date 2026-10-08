@@ -1,3 +1,6 @@
+import PerfectPower.SpectralTrace
+import PerfectPower.FlavorRGCensus
+import PerfectPower.WeightedBlockAddresses
 import PerfectPower.FactorAddresses
 import PerfectPower.FlavorRG
 import PerfectPower.SpectralMoments
@@ -38,3 +41,23 @@ import PerfectPower.WeilOldLevel
 #print axioms PerfectPower.WeilOldLevel.normalized_isometry
 #print axioms PerfectPower.WeilOldLevel.old_projector_idempotent
 #print axioms PerfectPower.WeilOldLevel.old_projector_symmetric
+#print axioms PerfectPower.FlavorRG.scalar_ray_alignment
+#print axioms PerfectPower.FlavorRG.scalar_ray_classification
+#print axioms PerfectPower.FlavorRG.scalar_ray_iff
+#print axioms PerfectPower.FlavorRG.scalar_ray_nonzero_iff
+#print axioms PerfectPower.FactorAddresses.block_rank_select
+#print axioms PerfectPower.FactorAddresses.block_select_rank
+#print axioms PerfectPower.FactorAddresses.block_rank_injective
+#print axioms PerfectPower.FactorAddresses.block_select_surjective
+#print axioms PerfectPower.FactorAddresses.block_rank_left
+#print axioms PerfectPower.FactorAddresses.block_rank_right
+#print axioms PerfectPower.FactorAddresses.block_rank_offset
+#print axioms PerfectPower.FactorAddresses.block_index_lt
+#print axioms PerfectPower.FactorAddresses.block_local_lt
+#print axioms PerfectPower.FactorAddresses.block_rank_interval
+#print axioms PerfectPower.FactorAddresses.block_address_card
+#print axioms PerfectPower.FactorAddresses.block_source_rank_iff
+#print axioms PerfectPower.SpectralMoments.diagonal_trace_moments
+#print axioms PerfectPower.SpectralMoments.spectral_frame_trace
+#print axioms PerfectPower.SpectralMoments.spectral_frame_power
+#print axioms PerfectPower.SpectralMoments.diagonalized_power_trace

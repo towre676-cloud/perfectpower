@@ -290,23 +290,177 @@
         "Classical.choice",
         "Quot.sound"
       ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.scalar_ray_alignment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.scalar_ray_classification",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.scalar_ray_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FlavorRG.scalar_ray_nonzero_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_rank_select",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_select_rank",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_rank_injective",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_select_surjective",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_rank_left",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_rank_right",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_rank_offset",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_index_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_local_lt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_rank_interval",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_address_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.FactorAddresses.block_source_rank_iff",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.diagonal_trace_moments",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.spectral_frame_trace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.spectral_frame_power",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.SpectralMoments.diagonalized_power_trace",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
     }
   ],
-  "theorem_count": 36,
+  "theorem_count": 56,
   "source_sha256": {
     "PerfectPower/FactorAddresses.lean": "33622bc2e90ca85a107cb775603f310eac161aae2b559638df1fb86790bb69d9",
     "PerfectPower/FlavorRG.lean": "80bf2d2811f1c8c484faa266fe19c12890de49d58dcbc63bde94b9248f0fa3ec",
     "PerfectPower/SpectralMoments.lean": "4a660b5958e7f43bf19a4142131cba39723d070291e87c1b6457891006d7ddea",
     "PerfectPower/WeilOldLevel.lean": "6744e5936786869932bf9fe80002ac352d9dbf71b53047df71f337762b0041c2",
-    "audit/PredictionMechanisms.lean": "40257b5bcfb2c1543d0335532e661d4e75e58b6be6a28c8c450ccc8fb9d36c0d"
+    "PerfectPower/FlavorRGCensus.lean": "ca5a21f0895a8b89dd8b273687f2a9054360955ceec888d10e1450f6ee25c02a",
+    "PerfectPower/WeightedBlockAddresses.lean": "05f25c0a984df415042fa7a47102113e0e2216c6642297cb173eae4f77a58e3f",
+    "PerfectPower/SpectralTrace.lean": "ca95b9096e443e1952df3df2c269c9193f8a4a776ab0d1ab9d68085baf0d27ed",
+    "audit/PredictionMechanisms.lean": "e84d2c07a1faf446d58c90897859d28b8b4528801d9246163a9c6022a19a4799"
   },
-  "scope": "Four focused modules, not a whole-repository build",
+  "scope": "Seven focused modules, not a whole-repository build",
   "not_formalized": [
-    "SU3 census completeness",
     "Feynman-diagram derivation",
-    "physical trace diagonalization",
+    "existence and physical identification of spectral frames",
     "JSON execution",
-    "weighted block offsets and CRT chart traversal",
+    "CRT chart traversal",
     "Fourier/chirp intertwining",
     "observed CKM and alpha(0) prediction"
   ]

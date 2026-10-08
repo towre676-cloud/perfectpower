@@ -13,7 +13,7 @@
 
 Start with the [constraint compiler](CONSTRAINT_COMPILER.md) to use PerfectPower, the [worked examples](SHOWCASE_MONOGRAPH.md) to see complete workflows, or the [Python API](../python/README.md) to integrate it into a program. The [mathematical overview](MONOGRAPH.md) explains the arithmetic classification. The [trust boundary](TRUST_BOUNDARY.md) distinguishes compiled theorems, named premises, exact Python computations, bounded evidence, and numerical geometry.
 
-[From fitted flavor to prediction mechanisms](FLAVOR_PREDICTION_MECHANISMS.md) develops exact coupling rays, mixing moments, conditional gauge normalization and four compiled Lean modules, with explicit remaining physical and formal obligations.
+[From fitted flavor to prediction mechanisms](FLAVOR_PREDICTION_MECHANISMS.md) develops exact coupling rays, mixing moments, conditional gauge normalization and seven compiled Lean modules, with explicit remaining physical and formal obligations.
 
 [Stopped-front continuation](REMAINING_FRONTS_CONTINUATION.md) adds the declared-wall interval gap, semistable Tamagawa groups, higher-rank resonant charts, HTTP burst replay, industrial replication and Chromium validation.
 
@@ -123,3 +123,5 @@ The version-two native halving interface closes original-model actual group tran
 The [Mordell completion monograph](MORDELL_COMPLETION_MONOGRAPH.md) describes all 457 full bases and complete integral lists, their independent census cross-check and the remaining Lean trust boundary.
 
 [Mordell formal bridge](MORDELL_FORMAL_BRIDGE_MONOGRAPH.md): ten audited generic theorems, explicit global premises, counterexamples guarding finite cutoffs and the per-curve formal obstruction ledger.
+
+[Scalar-ray completeness and weighted offsets in Lean](LEAN_CENSUS_OFFSETS_MONOGRAPH.md) closes the real five-ray classification and typed unequal-block rank/select, and the trace-to-moment transport with a focused kernel and axiom audit.
