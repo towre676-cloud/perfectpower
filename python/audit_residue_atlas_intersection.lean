@@ -1,0 +1,4 @@
+import PerfectPower.ResidueAtlasIntersection
+#print axioms PerfectPower.ResidueAtlasIntersection.joined_card
+#print axioms PerfectPower.ResidueAtlasIntersection.joined_complete
+#print axioms PerfectPower.ResidueAtlasIntersection.shared_factor_reconstruction

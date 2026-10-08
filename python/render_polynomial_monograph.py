@@ -22,6 +22,14 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 def render(source,output,*,edition='polynomial'):
     editions={
+        'residueintersection':{
+            'title':'Shared-factor residue intersections',
+            'subtitle':'Gcd fibers, generalized CRT<br/>and exact populations for polynomial systems',
+            'description':'Compatible local roots reconstruct uniquely modulo the least common multiple. Distinct polynomial constraints and existing coprime products now compose without losing overlapping prime factors.',
+            'metrics':[('54','focused and neighbour tests'),('3','generic Lean theorems'),('120','composite example period')],
+            'scope':'Exact bounded Python fiber joins and populations, paper CRT completeness, and Lean projection, cardinality and Bezout reconstruction theorems. Canonical-lcm source refinement remains explicit.',
+            'running':'Shared-factor atlases and simultaneous polynomial constraints',
+        },
         'weilspectral':{
             'title':'Rational blocks of the Weil representation',
             'subtitle':'Primitive projectors at every level<br/>and exact spectral operator calculus',
@@ -363,7 +371,7 @@ def render(source,output,*,edition='polynomial'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--source',type=Path)
-    parser.add_argument('--edition',choices=('weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
+    parser.add_argument('--edition',choices=('residueintersection','weilspectral','polynomial','semilinear','population','applications','opencontent','policies','families','structure','research','extensions','literature','elliptic','division','frontier','closures','tripling','nativebridges','nativehalves','subgroups','halvesrefinement','bridges','residuedeterminant','powerfree','boundedpatch','residueatlas','residueatlascrt','weilcrt','weildimension','weilorbit','weilmonomial','fixeddivisor','integervalued'),default='polynomial')
     parser.add_argument('--output',type=Path,required=True);args=parser.parse_args()
-    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
+    source=args.source or Path(__file__).resolve().parents[1]/'docs'/({'residueintersection':'RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md','weilspectral':'WEIL_SPECTRAL_MONOGRAPH.md','weilmonomial':'WEIL_MONOMIAL_MONOGRAPH.md','weilorbit':'WEIL_LOCAL_DIMENSION_MONOGRAPH.md','weildimension':'WEIL_DIMENSION_MONOGRAPH.md','weilcrt':'WEIL_CRT_MONOGRAPH.md','integervalued':'INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md','residueatlascrt':'RESIDUE_ATLAS_CRT_MONOGRAPH.md','residueatlas':'RESIDUE_ATLAS_MONOGRAPH.md','boundedpatch':'BOUNDED_RESIDUE_PATCH_MONOGRAPH.md','residuedeterminant':'RESIDUE_DETERMINANT_MONOGRAPH.md','elliptic':'ELLIPTIC_WITNESSES_MONOGRAPH.md','literature':'LITERATURE_CURVE_EXECUTION_MONOGRAPH.md','population':'POPULATION_MONOGRAPH.md','applications':'APPLICATIONS_MONOGRAPH.md','opencontent':'OPEN_CONTENT_MONOGRAPH.md','policies':'DECISION_POLICIES_MONOGRAPH.md','families':'CURVE_FAMILIES_MONOGRAPH.md','structure':'CURVE_STRUCTURE_MONOGRAPH.md','research':'CURVE_RESEARCH_MONOGRAPH.md'}.get(args.edition,args.edition.upper()+'_CAPACITY_MONOGRAPH.md'))
     render(source,args.output,edition=args.edition)

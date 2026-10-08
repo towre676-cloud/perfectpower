@@ -419,3 +419,5 @@ import PerfectPower.WeilMonomial
 
 
 import PerfectPower.WeilSpectral
+
+import PerfectPower.ResidueAtlasIntersection

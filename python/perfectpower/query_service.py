@@ -52,6 +52,18 @@ def dispatch(catalogue, request):
         if op == 'verify_weil_commutant':
             return dict(valid=result, execution_verified=False)
         return result
+    if op in {'intersect_residue_atlases', 'verify_residue_atlas_intersection',
+              'residue_intersection_population', 'residue_intersection_select',
+              'residue_intersection_rank'}:
+        from . import residue_atlas_intersection as ri
+        result = {'intersect_residue_atlases': ri.intersect_atlases,
+                  'verify_residue_atlas_intersection': ri.verify_intersection,
+                  'residue_intersection_population': ri.intersection_population,
+                  'residue_intersection_select': ri.intersection_select,
+                  'residue_intersection_rank': ri.intersection_rank}[op](**args)
+        if op.startswith('verify_'):
+            return dict(valid=result, execution_verified=False)
+        return result
     if op in {'residue_atlas_product', 'compose_residue_atlases', 'verify_residue_atlas_product',
               'residue_product_contains', 'residue_product_population', 'residue_product_select',
               'residue_product_rank', 'residue_product_scan', 'native_residue_atlas_product'}:
