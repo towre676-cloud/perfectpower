@@ -1,6 +1,6 @@
 """Complete selected stabilizer and MS-bar one-loop radial audit.
 
-External mathematical premise: Harui (2019), Theorem 2.5. Quantum model:
+The complete stabilizer is now computed from its exact line covariant. Quantum model:
 nine canonical chiral fields, W=a det K+b I6bar+c(det K)^2, plus the
 explicit hard scalar selector. No gauge or quark loops are included.
 """
@@ -25,14 +25,20 @@ def selected_stabilizer():
     assert len(elements) == 1080 and len(scalars) == 3
     cosets = {frozenset(mul(z, g) for z in scalars) for g in elements}
     assert len(cosets) == 360 and all(len(c) == 3 for c in cosets)
-    # Smoothness + Harui bound closes the upper bound, not group enumeration alone.
+    direct=json.loads((ROOT/'receipts/m22_interactions/valentiner_direct_stabilizer.json').read_text())
+    assert direct['full_45_line_factorization_verified']
+    assert direct['full_projective_sextic_stabilizer_order']==360
+    assert direct['full_SU3_tensor_stabilizer_order']==1080
+    assert direct['classification_theorem_used'] is False
+    # The exact covariant plus exhaustive projectivity filtering closes the upper bound.
     return {'smoothness': smooth, 'known_exact_group_order': len(elements),
             'projective_scalar_kernel_order': len(scalars), 'projective_image_order': len(cosets),
-            'published_smooth_sextic_automorphism_upper_bound': 360,
+            'direct_projective_automorphism_upper_bound': 360,
+            'direct_incidence_group_order':direct['complete_incidence_group_order'],
             'full_SU3_tensor_stabilizer_order': 1080,
             'selected_global_minima': 1080,
-            'external_premise': 'Takeshi Harui, Automorphism groups of smooth plane curves, Kodai Math. J. 42 (2019), 308-331, Theorem 2.5',
-            'source': 'https://www.jstage.jst.go.jp/article/kodaimath/42/2/42_308/_pdf/-char/en',
+            'classification_theorem_used': False,
+            'direct_certificate': 'receipts/m22_interactions/valentiner_direct_stabilizer.json',
             'scope': 'Complete selected global minimum set for the positive norm/Gram selector with bc>0; not a complete census of unperturbed F-flat vacua.'}
 
 

@@ -1,0 +1,53 @@
+{
+  "transformation": "T(K)=omega^2 A K A^-1, A cycles the three coordinates",
+  "W_invariance_verified_on_original_tensor": true,
+  "base_fixed": true,
+  "transformation_order": 3,
+  "exact_curve_count": 3,
+  "tangent_rank": 3,
+  "null_coordinate_indices": [
+    3,
+    6,
+    7
+  ],
+  "tangent_vectors": [
+    [
+      "0",
+      "-3*sqrt(5)/4 + 7/4 - 7*sqrt(3)*I/4 + 3*sqrt(15)*I/4",
+      "0",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "-1/2 - sqrt(3)*I/2",
+      "0",
+      "0",
+      "0",
+      "-7/2 + 3*sqrt(5)/2",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "-3*sqrt(5)/4 + 7/4 - 3*sqrt(15)*I/4 + 7*sqrt(3)*I/4",
+      "0",
+      "-1/2 + sqrt(3)*I/2",
+      "0"
+    ]
+  ],
+  "all_nine_F_terms_vanish_on_each_curve": true,
+  "determinant_on_each_curve": 1,
+  "W_on_each_curve": "-5/2",
+  "local_intersections": "Distinct tangents imply pairwise isolated intersections at the base.",
+  "scope": "Three individually exact curves span the Hessian kernel. Their union has dimension one; a shared three-dimensional flat germ is not established."
+}

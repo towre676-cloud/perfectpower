@@ -91,12 +91,14 @@
     "tree_radial_curvature": "72*r**2*(768*b**2*r**6 + 96*b*c*r**6 + 3*c**2*r**6 + lambda)"
   },
   "selected_stabilizer": {
-    "external_premise": "Takeshi Harui, Automorphism groups of smooth plane curves, Kodai Math. J. 42 (2019), 308-331, Theorem 2.5",
+    "classification_theorem_used": false,
+    "direct_certificate": "receipts/m22_interactions/valentiner_direct_stabilizer.json",
+    "direct_incidence_group_order": 1440,
+    "direct_projective_automorphism_upper_bound": 360,
     "full_SU3_tensor_stabilizer_order": 1080,
     "known_exact_group_order": 1080,
     "projective_image_order": 360,
     "projective_scalar_kernel_order": 3,
-    "published_smooth_sextic_automorphism_upper_bound": 360,
     "scope": "Complete selected global minimum set for the positive norm/Gram selector with bc>0; not a complete census of unperturbed F-flat vacua.",
     "selected_global_minima": 1080,
     "smoothness": {
@@ -111,7 +113,6 @@
       "scalar_source_complex_modes_with_no_quadratic_mass_at_origin": 18,
       "source_F_energy_first_nonzero_degree": 10,
       "two_support_resultant": "67797/32 - 35235*sqrt(15)*I/32"
-    },
-    "source": "https://www.jstage.jst.go.jp/article/kodaimath/42/2/42_308/_pdf/-char/en"
+    }
   }
 }
