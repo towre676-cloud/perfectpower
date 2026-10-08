@@ -1,0 +1,29 @@
+{
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "python/tests/test_valentiner_diagonal_vacua.py",
+        "python/tests/test_valentiner_susy_vacua.py"
+      ],
+      "exit_code": 0,
+      "stdout": "..........                                                               [100%]\n10 passed in 11.30s"
+    },
+    {
+      "command": [
+        "python",
+        "python/develop_valentiner_diagonal_vacua.py"
+      ],
+      "exit_code": 0,
+      "stdout": "/workspace/scratch/b3a5665a8b3d/diagonal-fresh-extraction/receipts/m22_interactions/valentiner_diagonal_vacua.json: 109 diagonal vacua; exact 9-field stability and soft-mass certificates"
+    }
+  ],
+  "fresh_extraction_tests_passed": 10,
+  "receipt_sha256": "a21d118c8c395b7352e742ef81f181bee8f15405751dbe83c7c48421cb132c12",
+  "scientific_receipt_reproduced_byte_for_byte": true,
+  "scope": "focused link-sector tests, not a complete repository test run",
+  "tests_passed": 10
+}
