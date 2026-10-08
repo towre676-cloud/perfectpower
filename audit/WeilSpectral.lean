@@ -1,0 +1,12 @@
+import PerfectPower.WeilSpectral
+#print axioms PerfectPower.WeilSpectral.centralizes_mul
+#print axioms PerfectPower.WeilSpectral.centralizes_add
+#print axioms PerfectPower.WeilSpectral.centralizes_smul
+#print axioms PerfectPower.WeilSpectral.symmetric_product_iff
+#print axioms PerfectPower.WeilSpectral.commutative_of_symmetric
+#print axioms PerfectPower.WeilSpectral.reflecting_kernel_symmetric
+#print axioms PerfectPower.WeilSpectral.polynomial_commute_of_factor
+#print axioms PerfectPower.WeilSpectral.centralizes_finset_sum
+#print axioms PerfectPower.WeilSpectral.spectral_resolution
+#print axioms PerfectPower.WeilSpectral.projector_partition
+#print axioms PerfectPower.WeilSpectral.complementary_projectors

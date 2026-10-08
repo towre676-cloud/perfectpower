@@ -416,3 +416,6 @@ import PerfectPower.WeilCRT
 import PerfectPower.WeilTensorDimension
 import PerfectPower.WeilOrbitSymmetry
 import PerfectPower.WeilMonomial
+
+
+import PerfectPower.WeilSpectral

@@ -36,6 +36,11 @@ def dispatch(catalogue, request):
         return catalogue.list(**args)
     if op == 'definition':
         return catalogue.definition(request['object'])
+    if op in {'weil_spectral', 'weil_operator_spectrum', 'weil_projector_plan'}:
+        from . import weil_spectral as ws
+        return {'weil_spectral': ws.spectral_packet,
+                'weil_operator_spectrum': ws.operator_packet,
+                'weil_projector_plan': ws.decomposition_plan}[op](**args)
     if op == 'weil_orbit_certificate':
         from .weil_orbit import exact_orbit_certificate
         return exact_orbit_certificate(**args)

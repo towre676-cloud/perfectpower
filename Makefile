@@ -291,3 +291,9 @@ check-weil-orbit:
 .PHONY: check-weil-monomial
 check-weil-monomial:
 	bash scripts/check_weil_monomial.sh
+
+.PHONY: check-weil-spectral weil-spectral-receipts
+check-weil-spectral:
+	bash scripts/check_weil_spectral.sh
+weil-spectral-receipts:
+	PYTHONPATH=python $(PY) python/develop_weil_spectral.py
