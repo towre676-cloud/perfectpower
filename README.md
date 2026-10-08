@@ -2,6 +2,8 @@ Torsion-aware actual prime-preimage indices and complete relation lattices, toge
 
 # PerfectPower
 
+**Real-time source-wall formation:** a stochastic 2D mass-quench benchmark now forms domains from a restored phase, with four quench ensembles, exact polynomial/OU identities, paired timestep controls, and grid/box/noise sensitivity tests. The declared reduced-source Model-A bath is not a matched cosmological plasma. See [the formation monograph](docs/WALL_KIBBLE_ZUREK_FORMATION.md) and [the ensemble receipt](receipts/flavor_cosmology/wall_kibble_zurek.json).
+
 **Certified static wall:** a compact C2 trial profile and Arb residual/coercivity bounds now establish an exact whole-line wall, prove all five profile signs and the strictly positive Higgs barrier, and supply the hypotheses behind the vector threshold and TE thermal-sign results. The certificate covers a small source-quartic interval around the 154.225 GeV calibration. See [the continuous proof and reproduction](docs/WALL_PROFILE_INTERVAL_MONOGRAPH.md) and [the interval receipt](receipts/flavor_cosmology/wall_profile_intervals.json). Decay widths and mode eigenvalues still lack interval error enclosures.
 
 
@@ -362,4 +364,5 @@ The Weil spectral expansion constructs rational primitive projectors recursively
 Shared-factor residue intersections now join distinct polynomial constraints and existing atlas products by their gcd fibers, reconstructing roots modulo the lcm. The extension includes exact populations and rank/select in large signed rectangles, three generic Lean theorems and 54 passing focused/neighbor tests. See [the derivation and formal boundary](docs/RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.md), [PDF](docs/RESIDUE_ATLAS_INTERSECTION_MONOGRAPH.pdf), and `python/develop_residue_atlas_intersection.py` for retained examples. Canonical-lcm compiler refinement remains a Lean obligation.
 
 The arithmetic chart pipeline transports rational polynomial power equations through their exact integer domains, intersects complete Hensel/CRT covers with content-normalized singular blowups, and derives unordered determinant weights from actual source charts. It preserves signed source coordinates and bounded completeness; the worked Pell-type chart halves its candidate population while retaining all twelve solutions. Three generic Lean modules and ten native programs cover the equation, chart and determinant identities. Run `make arithmetic-chart-check`; see [the monograph](docs/ARITHMETIC_CHART_PIPELINE_MONOGRAPH.md), [PDF](docs/ARITHMETIC_CHART_PIPELINE_MONOGRAPH.pdf), and [implementation handoff](CLAUDE_CODE_ARITHMETIC_CHART_PIPELINE_START_HERE.md). Universal traversal refinement remains an explicit obligation.
+
 
