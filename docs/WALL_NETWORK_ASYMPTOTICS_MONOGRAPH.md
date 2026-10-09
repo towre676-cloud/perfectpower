@@ -38,3 +38,16 @@ The remaining runs of the develop script have finished: s=0 seeds 1 and 2, the s
 The receipt combines statistical and systematic errors for the s=0 asymptotic exponent. The systematics come from the box-size (256³, 384³) and wall-width (w=3) controls. The result is p = 0.492 ± 0.024 (statistical) ± 0.098 (systematic), or ± 0.10 in total. That is 0.08σ from 1/2. Measured against the lattice network value, K is 1.28 times K_PRS.
 
 **Conclusion.** For the fixed-width equations the annihilation exponent is consistent with the pressure-balance value 1/2. The s=1/2 family is somewhat lower, at 0.45, which suggests that width growth delays the asymptotic regime. The physical s=1 family with one seed and five X values now gives exponents straddling 1/2 in the asymptotic subset. That is a large change from the early-window value of 0.25, but its errors (0.1 to 0.2) are too large to confirm 1/2 for the physical equation. More seeds and a wider X range at s=1 are the next step.
+
+## Physical equation with three seeds
+
+Seeds 1 and 2 of the physical s=1 family have now finished, giving 15 runs.
+
+| Criterion | p (all X) | p (X≥2600) | Seeds (X≥2600) |
+|---|---|---|---|
+| false fraction < 10% | 0.262 ± 0.005 | **0.497 ± 0.007** | 0.510, 0.493, 0.487 |
+| false fraction < 1% | 0.510 ± 0.017 | 0.781 ± 0.006 | 0.777, 0.773, 0.793 |
+
+Errors are standard errors over seeds. With the 10% criterion, the physical equation reproduces the pressure-balance exponent 1/2 at large X, and the seeds agree closely. Fits over all X include the formation transient and give about 0.26, as the earlier 192³ study found.
+
+The 1% criterion does not converge to 1/2. Its asymptotic slope of 0.78 measures the final clean-up of isolated false-vacuum remnants. In the physical equation those remnants persist while the walls thin towards the lattice spacing, so the late-time tail depends on the criterion and on resolution. It is not taken as a test of pressure balance.
