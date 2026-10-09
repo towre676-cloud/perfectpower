@@ -1,0 +1,136 @@
+{
+  "certificate": {
+    "schema": "pp-psg-quadratic/1",
+    "source": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": [
+        [
+          [
+            0,
+            1
+          ],
+          "1"
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          "1"
+        ]
+      ]
+    },
+    "variable": "t",
+    "radicand": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": [
+        [
+          [
+            2,
+            0
+          ],
+          "1"
+        ]
+      ]
+    },
+    "A": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": [
+        [
+          [
+            1,
+            0
+          ],
+          "1"
+        ]
+      ]
+    },
+    "B": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": [
+        [
+          [
+            0,
+            0
+          ],
+          "1"
+        ]
+      ]
+    },
+    "quotient": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": []
+    },
+    "norm": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": []
+    },
+    "source_multiplier": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": [
+        [
+          [
+            0,
+            1
+          ],
+          "-1"
+        ],
+        [
+          [
+            1,
+            0
+          ],
+          "1"
+        ]
+      ]
+    },
+    "chamber_multiplier": {
+      "variables": [
+        "x",
+        "t"
+      ],
+      "terms": [
+        [
+          [
+            0,
+            0
+          ],
+          "1"
+        ]
+      ]
+    }
+  },
+  "fibre": {
+    "branch": "regular",
+    "domain": "integer",
+    "norm": "0",
+    "A": "3",
+    "B": "1",
+    "radicand": "9",
+    "roots": [
+      "-3"
+    ],
+    "scope": "complete auxiliary fibre over the supplied exact base point"
+  }
+}

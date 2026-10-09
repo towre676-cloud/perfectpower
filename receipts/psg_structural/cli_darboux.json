@@ -1,0 +1,73 @@
+{
+  "schema": "pp-psg-darboux/1",
+  "candidate": {
+    "variables": [
+      "x",
+      "y"
+    ],
+    "terms": [
+      [
+        [
+          2,
+          1
+        ],
+        "1"
+      ]
+    ]
+  },
+  "field": [
+    {
+      "variables": [
+        "x",
+        "y"
+      ],
+      "terms": [
+        [
+          [
+            1,
+            0
+          ],
+          "1"
+        ]
+      ]
+    },
+    {
+      "variables": [
+        "x",
+        "y"
+      ],
+      "terms": [
+        [
+          [
+            0,
+            1
+          ],
+          "2"
+        ]
+      ]
+    }
+  ],
+  "cofactor": {
+    "variables": [
+      "x",
+      "y"
+    ],
+    "terms": [
+      [
+        [
+          0,
+          0
+        ],
+        "4"
+      ]
+    ]
+  },
+  "remainder": {
+    "variables": [
+      "x",
+      "y"
+    ],
+    "terms": []
+  },
+  "invariant": true
+}

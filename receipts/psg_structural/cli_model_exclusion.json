@@ -1,0 +1,82 @@
+{
+  "jet_order": 6,
+  "required_source_order": 7,
+  "model_degree": 1,
+  "derivative_order": 1,
+  "variables": [
+    "h",
+    "F",
+    "F_derivative_1"
+  ],
+  "monomials": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "matrix": [
+    [
+      "1",
+      "2",
+      "1",
+      "0"
+    ],
+    [
+      "0",
+      "6",
+      "2",
+      "1"
+    ],
+    [
+      "0",
+      "21",
+      "3",
+      "0"
+    ],
+    [
+      "0",
+      "44",
+      "7",
+      "0"
+    ],
+    [
+      "0",
+      "95",
+      "11",
+      "0"
+    ],
+    [
+      "0",
+      "186",
+      "19",
+      "0"
+    ],
+    [
+      "0",
+      "371",
+      "31",
+      "0"
+    ]
+  ],
+  "rank": 4,
+  "nullity": 0,
+  "basis": [],
+  "status": "bounded_model_excluded",
+  "scope": "complete rational coefficient space for the declared finite differential ansatz and supplied exact jet"
+}

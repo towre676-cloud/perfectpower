@@ -18,3 +18,7 @@ jobs:
         run: |
           make receipts
           git diff --exit-code -- receipts/ data/ PerfectPower/Generated/
+      - name: Reproduce exact PSG source, fibres and finite model spaces
+        run: |
+          make psg-structural
+          git diff --exit-code -- receipts/psg_structural/ PerfectPower/Generated/PSGStructuralPackets.lean

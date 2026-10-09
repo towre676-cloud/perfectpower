@@ -158,6 +158,20 @@
         "test_mordell_parity.py"
       ],
       "kernel_required": true
+    },
+    {
+      "name": "psg_structural_algebra",
+      "files": [
+        "python/perfectpower/psg_polynomial.py",
+        "python/perfectpower/psg_algebra.py",
+        "python/perfectpower/psg_jets.py",
+        "python/perfectpower/psg_console.py",
+        "docs/PSG_STRUCTURAL_MONOGRAPH.md"
+      ],
+      "tests": [
+        "test_psg_structural.py"
+      ],
+      "kernel_required": false
     }
   ]
 }

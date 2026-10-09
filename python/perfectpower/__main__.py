@@ -16,6 +16,8 @@ def coefficients(raw):
 def main():
     parser = argparse.ArgumentParser(description='Exact polynomial perfect-power research console')
     sub = parser.add_subparsers(dest='command', required=True)
+    from .psg_console import add_commands as add_psg_commands
+    add_psg_commands(sub)
     from .checked_box import add_commands as add_checked_commands
     add_checked_commands(sub)
     from .checked_population import add_commands as add_population_commands
@@ -193,6 +195,9 @@ def main():
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .psg_console import cli as psg_cli
+    if psg_cli(args):
+        return
     from .checked_box import cli as checked_cli
     from .checked_population import cli as population_cli
     from .checked_global_population import cli as global_cli

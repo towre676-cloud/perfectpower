@@ -3,6 +3,15 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
+.PHONY: psg-structural psg-structural-kernel
+psg-structural:
+	$(PY) -m unittest discover -s python/tests -p 'test_psg_structural.py'
+	$(PY) python/develop_psg_structural.py
+
+psg-structural-kernel:
+	lake build PerfectPower.Generated.PSGStructuralPackets
+	$(PY) scripts/check_psg_structural_axioms.py
+
 .PHONY: population-algebra population-algebra-lean room-of-possibilities
 population-algebra:
 	$(PY) -m unittest discover -s python/tests -p 'test_population*.py'

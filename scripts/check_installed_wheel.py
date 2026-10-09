@@ -6,6 +6,8 @@ import hashlib
 from http.client import HTTPConnection
 import json
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import threading
 from perfectpower.resources import runtime_root
@@ -28,6 +30,26 @@ def main():
     root=runtime_root()
     if root.name!='_assets':raise AssertionError('test must run against an installed wheel')
     manifest=json.loads((root/'runtime_manifest.json').read_text())
+    def console(command,*arguments):
+        run=subprocess.run([sys.executable,'-m','perfectpower',command,*arguments],
+            check=True,capture_output=True,text=True)
+        return json.loads(run.stdout)
+    reduction=console('psg-reduce','--variables','x,t','--source','t-x',
+        '--variable','t','--radicand','x^2','--base-values','{"x":3}')
+    if reduction['fibre']['roots']!=['3']:raise AssertionError('installed quadratic reconstruction changed')
+    invariant=console('psg-darboux','--variables','x','--candidate','x','--field','["x"]')
+    if not invariant['invariant']:raise AssertionError('installed cofactor identity failed')
+    dependencies=console('psg-dependencies','--variables','x,y','--outputs','["x"]')
+    if not dependencies[0]['y']['independent']:raise AssertionError('installed exact dependency changed')
+    redundant=console('psg-ideal','--variables','x','--target','x^2','--generators','["x"]')
+    if not redundant['redundant']:raise AssertionError('installed ideal witness failed')
+    fibre=console('psg-fibre','--observation','[[1,1]]','--values','[2]','--target','[[1,0]]')
+    if fibre['minimum_additional_scalar_observations']!=1:raise AssertionError('installed observation ambiguity changed')
+    model=console('psg-model-space','--coefficients','[0,1,0,1]','--order','2','--degree','1','--derivatives','0')
+    if model['nullity']!=1:raise AssertionError('installed differential coefficient kernel changed')
+    norm=console('psg-norm','--variables','x,y','--A','x','--B','y','--D','2','--norm','1','--cutoff','10')
+    if norm['points']!=[[-3,-2],[-3,2],[-1,0],[1,0],[3,-2],[3,2]]:
+        raise AssertionError('installed original norm points changed')
     for name,digest in manifest.items():
         if hashlib.sha256((root/name).read_bytes()).hexdigest()!=digest:
             raise AssertionError('runtime asset mismatch: '+name)
@@ -96,7 +118,7 @@ def main():
                 if response.status!=200 or body['result']['source_count']!=count or body['result']['proof_status']!='emitted':
                     raise AssertionError('installed proved-family HTTP proposal failed: '+op)
         finally:server.shutdown();thread.join();server.server_close()
-    print(json.dumps(dict(complete=True,assets=len(manifest),installed_root=str(root))))
+    print(json.dumps(dict(complete=True,assets=len(manifest),psg_console_routes=7,installed_root=str(root))))
 
 
 if __name__=='__main__':main()

@@ -1,0 +1,225 @@
+{
+  "schema": "pp-psg-affine-norm/1",
+  "A": {
+    "variables": [
+      "x",
+      "y"
+    ],
+    "terms": [
+      [
+        [
+          0,
+          0
+        ],
+        "1"
+      ],
+      [
+        [
+          1,
+          0
+        ],
+        "3"
+      ]
+    ]
+  },
+  "B": {
+    "variables": [
+      "x",
+      "y"
+    ],
+    "terms": [
+      [
+        [
+          0,
+          1
+        ],
+        "1"
+      ]
+    ]
+  },
+  "D": 2,
+  "norm": -1,
+  "cutoff": 30,
+  "cutoff_coordinate": "abs(B)",
+  "points": [
+    [
+      -14,
+      -29
+    ],
+    [
+      -14,
+      29
+    ],
+    [
+      0,
+      -1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      2,
+      -5
+    ],
+    [
+      2,
+      5
+    ]
+  ],
+  "excluded_nonintegral_preimages": 6,
+  "canonical_pell_packet": {
+    "schema": "pp-checked-pell-orbits/1",
+    "specification": {
+      "D": 2,
+      "norm": -1,
+      "cutoff": 30,
+      "queries": [
+        {
+          "condition": true,
+          "ranks": [],
+          "objective": null
+        }
+      ],
+      "domain": "integer",
+      "global_ranks": [],
+      "seed_budget": 4096,
+      "work_limit": 4096
+    },
+    "seeds": [
+      [
+        1,
+        1
+      ]
+    ],
+    "orbit_lengths": [
+      3
+    ],
+    "source_points": [
+      [
+        -29,
+        -41
+      ],
+      [
+        -29,
+        41
+      ],
+      [
+        -5,
+        -7
+      ],
+      [
+        -5,
+        7
+      ],
+      [
+        -1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        5,
+        -7
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        29,
+        -41
+      ],
+      [
+        29,
+        41
+      ]
+    ],
+    "source_count": 12,
+    "global_selections": [],
+    "results": [
+      {
+        "points": [
+          [
+            -29,
+            -41
+          ],
+          [
+            -29,
+            41
+          ],
+          [
+            -5,
+            -7
+          ],
+          [
+            -5,
+            7
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            5,
+            -7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            29,
+            -41
+          ],
+          [
+            29,
+            41
+          ]
+        ],
+        "count": 12,
+        "selections": [],
+        "minimum": null
+      }
+    ],
+    "seed_box": [
+      3,
+      2
+    ],
+    "seed_work": 11,
+    "unit": [
+      2,
+      3
+    ],
+    "lean": "import PerfectPower.PellOrbitPopulation\nnamespace PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab\nopen PerfectPower.QueryNative PerfectPower.PellOrbitCore PerfectPower.PellOrbitPopulation\ndef unit := PerfectPower.PellFamily.seed (2) (3) (2) (by decide +kernel)\ndef seedList : List (Int \u00d7 Int) := [((1),(1))]\ndef seedSet := seedList.toFinset\ndef lengths (s : Int \u00d7 Int) : Nat := ([(((1),(1)),3)] : List ((Int \u00d7 Int) \u00d7 Nat)).lookup s |>.getD 0\ntheorem seeds_checked : seeds (2) (3) (2) (-1) 3 2=seedSet := by decide +kernel\ntheorem seeds_complete (p : Int \u00d7 Int) : p \u2208 seedSet \u2194 0<p.1 \u2227 0\u2264p.2 \u2227 p.1^2-(2)*p.2^2=(-1) \u2227 terminal (2) (3) (2) p := by\n  rw [\u2190 seeds_checked]\n  exact seed_complete (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel)\n    (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel) p\ntheorem boundary_0 : (30) < (unitOrbit (2) (3) (2) ((1),(1)) 3).2 := by\n  have he := fastOrbit_eq unit ((1),(1)) 2 3 (by decide +kernel)\n  change fastOrbit unit ((1),(1)) 2 3 = unitOrbit (2) (3) (2) ((1),(1)) 3 at he\n  rw [\u2190 he]\n  decide +kernel\ntheorem boundaries (s : Int \u00d7 Int) (hs : s \u2208 seedSet) : (30) < (unitOrbit (2) (3) (2) s (lengths s)).2 := by\n  simp only [seedSet,seedList,List.mem_toFinset,List.mem_cons,List.not_mem_nil,or_false] at hs\n  rcases hs with h\n  \u00b7 subst s\n    simpa only [lengths,List.lookup] using boundary_0\ndef positivePoints := positivePopulation (2) (3) (2) (30) seedSet lengths\ntheorem positive_points_complete (p : Int \u00d7 Int) : p \u2208 positivePoints \u2194 0\u2264p.1 \u2227 0<p.2 \u2227 p.1\u2264(30) \u2227 p.2^2-(2)*p.1^2=(-1) :=\n  positive_complete (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel) seedSet lengths seeds_complete boundaries p\ndef nonnegativePoints := positivePoints \u222a zeroPopulation (2) (-1) (30)\ntheorem nonnegative_points_complete (p : Int \u00d7 Int) : p \u2208 nonnegativePoints \u2194 0\u2264p.1 \u2227 0\u2264p.2 \u2227 p.1\u2264(30) \u2227 p.2^2-(2)*p.1^2=(-1) :=\n  nonnegative_complete positivePoints positive_points_complete (by decide +kernel) p\ndef computed := signedPopulation nonnegativePoints\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 |p.1|\u2264(30) \u2227 p.2^2-(2)*p.1^2=(-1) := signed_complete nonnegativePoints nonnegative_points_complete p\ndef domainCondition := Condition.truth\ndef allPoints : List (Int \u00d7 Int) := [((-29),(-41)),((-29),(41)),((-5),(-7)),((-5),(7)),((-1),(-1)),((-1),(1)),((1),(-1)),((1),(1)),((5),(-7)),((5),(7)),((29),(-41)),((29),(41))]\ntheorem points_checked : computed.filter (fun p => domainCondition.test p = true) = allPoints.toFinset := by decide +kernel\ndef sourcePoints := allPoints\ndef original (p : Int \u00d7 Int) : Prop := (|p.1|\u2264(30) \u2227 p.2^2-(2)*p.1^2=(-1)) \u2227 domainCondition.holds p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p := by\n  change p \u2208 allPoints \u2194 original p\n  rw [\u2190 List.mem_toFinset,\u2190 points_checked,Finset.mem_filter,computed_complete,test_correct]\n  rfl\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 12 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\nend PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab\n#print axioms PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab.source_complete\n#print axioms PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab.complete_0\n#print axioms PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab.count_0\n#print axioms PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab.nodup_0\n#print axioms PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab.rank_domain_0\n#print axioms PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab.seeds_complete\n",
+    "namespace": "PerfectPower.CheckedPellOrbits_4eb9a4b7bad9c0ab",
+    "specification_sha256": "4eb9a4b7bad9c0abd5a51efde947b2e175baf9f3dbca581d2480e6e4b4229649",
+    "source_sha256": "33ea887756288b7ad09f858b135401fe90d00afa272c5bbb800acff76a0f7006",
+    "proof_status": "emitted",
+    "execution_verified": false,
+    "scope": "complete declared-domain solutions of y\u00b2-D*x\u00b2=norm within the absolute input cutoff; global ranks are within the named seed orbit"
+  },
+  "scope": "complete integer population within abs(B)<=cutoff, using the existing generalized Pell producer"
+}

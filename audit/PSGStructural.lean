@@ -1,0 +1,21 @@
+import PerfectPower.Generated.PSGStructuralPackets
+#print axioms PerfectPower.PSGStructural.quadratic_norm_identity
+#print axioms PerfectPower.PSGStructural.quadratic_elimination_identity
+#print axioms PerfectPower.PSGStructural.quadratic_elimination_sound
+#print axioms PerfectPower.PSGStructural.exceptional_source
+#print axioms PerfectPower.PSGStructural.source_at_reconstruction
+#print axioms PerfectPower.PSGStructural.cofactor_product
+#print axioms PerfectPower.PSGStructural.redundant_pair
+#print axioms PerfectPower.PSGStructural.affine_norm_transport
+#print axioms PerfectPower.PSGStructural.regular_linear_unique
+#print axioms PerfectPower.PSGStructural.norm_regular_square
+#print axioms PerfectPower.PSGStructural.regular_reconstruction
+#print axioms PerfectPower.PSGStructuralPackets.source_reduction
+#print axioms PerfectPower.PSGStructuralPackets.recovered_norm
+#print axioms PerfectPower.PSGStructuralPackets.original_source_sound
+#print axioms PerfectPower.PSGStructuralPackets.darboux_0
+#print axioms PerfectPower.PSGStructuralPackets.darboux_1
+#print axioms PerfectPower.PSGStructuralPackets.darboux_2
+#print axioms PerfectPower.PSGStructuralPackets.darboux_3
+#print axioms PerfectPower.PSGStructuralPackets.darboux_4
+#print axioms PerfectPower.PSGStructuralPackets.darboux_5
