@@ -14,6 +14,8 @@ RECEIPTS=(
     'polynomial_population_queries.json',
     'global_population_queries.json',
     'extended_population_queries.json',
+    'family_population_queries.json',
+    'mordell_descent_atlas.json',
 )
 
 

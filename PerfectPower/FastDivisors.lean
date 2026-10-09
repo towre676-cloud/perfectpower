@@ -1,6 +1,7 @@
 import Mathlib.NumberTheory.Divisors
 import Mathlib.Data.Nat.Sqrt
-import Mathlib.Tactic
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.Linarith
 
 /-! Square-root trial division, with exact equality to Mathlib's divisor sets.
 The generator and kernel checker use the same proved algorithm; no factorization oracle. -/

@@ -8,15 +8,15 @@
       "id": 1,
       "title": "Compiler proof boundary",
       "status": "bounded_route_delivered",
-      "contract": "Polynomial interpretation, substitution and exact affine input pullback proved; bounded sources and globally proved Mordell-minus-two affine sources feed checked queries. Whole-compiler semantics remain open.",
-      "evidence": "PerfectPower/AffinePopulation.lean"
+      "contract": "Original-equation queries now cover general square-plus-nonzero-constant polynomials, divisor-based pullbacks of five classical Mordell sources and the descent atlas, plus general-D Pell families. Whole Python compiler refinement remains open.",
+      "evidence": "docs/FAMILY_ENGINE_MONOGRAPH.md"
     },
     {
       "id": 2,
       "title": "Mordell global completeness",
       "status": "open",
-      "contract": "All 457 curve-specific global rank, saturation and coordinate bounds remain formal obligations.",
-      "evidence": "docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md"
+      "contract": "Global integral emptiness is checked for 1,026 descent source curves outside the hard 457 completion set. The 457 curve-specific rank, saturation and coordinate-bound obligations remain open.",
+      "evidence": "docs/FAMILY_ENGINE_MONOGRAPH.md"
     },
     {
       "id": 3,
@@ -50,15 +50,15 @@
       "id": 7,
       "title": "Population rank/select execution",
       "status": "bounded_route_delivered",
-      "contract": "Checked rank/select connects to bounded sources, globally complete nonlinear pullbacks of Mordell minus two and minus four, and the nonnegative D=2 Pell recurrence with exact cutoff counts and global selections. General Python refinement remains open.",
-      "evidence": "docs/EXTENDED_POPULATION_MONOGRAPH.md"
+      "contract": "Divisor-based complete fibres and binary Pell powering feed checked global selections, signed populations and exact count-only queries. General Python execution refinement remains open.",
+      "evidence": "docs/FAMILY_ENGINE_MONOGRAPH.md"
     },
     {
       "id": 8,
       "title": "Optimization proof pipeline",
       "status": "bounded_route_delivered",
-      "contract": "Bivariate objective lower bounds and complete ties apply globally to the two proved finite Mordell families and to exact Pell cutoff populations. Unbounded optimization over general infinite families remains open.",
-      "evidence": "docs/EXTENDED_POPULATION_MONOGRAPH.md"
+      "contract": "Global finite-family lower bounds and exact ties are checked. Nonnegative polynomial objectives on the nonnegative Pell orbit have an attained unbounded-domain minimum; -x is proved unbounded below. Arbitrary infinite-family optimization remains open.",
+      "evidence": "docs/FAMILY_ENGINE_MONOGRAPH.md"
     },
     {
       "id": 9,

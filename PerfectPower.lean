@@ -6,6 +6,11 @@ import PerfectPower.GlobalMordellPopulation
 import PerfectPower.PolynomialFibre
 import PerfectPower.GlobalMordellMinus4Population
 import PerfectPower.PellPopulation
+import PerfectPower.IntegerPolynomialFibres
+import PerfectPower.DivisorPopulation
+import PerfectPower.PellFamily
+import PerfectPower.AdditionalMordellPopulations
+import PerfectPower.MordellDescentAtlas
 import PerfectPower.PopulationPartitions
 import PerfectPower.PowerFreeLocal
 import PerfectPower.EllipticSquareTransport

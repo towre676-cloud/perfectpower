@@ -15,6 +15,8 @@ from perfectpower.checked_population import population_certificate
 from perfectpower.checked_global_population import global_population_certificate
 from perfectpower.checked_nonlinear_population import nonlinear_population_certificate
 from perfectpower.checked_pell_population import pell_population_certificate
+from perfectpower.checked_family_population import family_population_certificate
+from perfectpower.checked_pell_family import pell_family_certificate
 from perfectpower.checked_factorial_unit import unit_certificate
 from perfectpower.checked_landau import landau_certificate
 from perfectpower.http_service import QueryHTTPServer
@@ -52,6 +54,13 @@ def main():
         raise AssertionError('installed Pell population changed')
     for name in ('PolynomialFibre','MordellMinus4Core','PellPopulation'):
         if not (root/f'PerfectPower/{name}.lean').is_file():raise AssertionError('installed proved source missing: '+name)
+    broad=family_population_certificate([0,1],[{}],offset=15)
+    if broad['source_count']!=8:raise AssertionError('installed square-difference population changed')
+    empty=family_population_certificate([0,1],[{}],family='mordell_descent',offset=-9985)
+    if empty['source_count']!=0:raise AssertionError('installed descent source changed')
+    general=pell_family_certificate(3,100,global_ranks=[4])
+    if general['source_count']!=5 or general['global_selections'][0]['point']!=[56,97]:
+        raise AssertionError('installed general Pell access changed')
     if 'original_integral_for_all_indices' not in landau_certificate([2],[1,1])['lean']:
         raise AssertionError('installed universal integrality proposal missing')
     with tempfile.TemporaryDirectory() as directory:
@@ -68,7 +77,9 @@ def main():
             response=client.getresponse();body=json.loads(response.read());client.close()
             if response.status!=200 or body['result']!=[]:raise AssertionError('installed process dispatch failed')
             for op,args,count in [('checked_nonlinear_population',dict(coefficients=[1,0,1],queries=[{}],family='mordell_minus4'),8),
-                                  ('checked_pell_population',dict(cutoff=1000,queries=[{}],global_ranks=[4]),5)]:
+                                  ('checked_pell_population',dict(cutoff=1000,queries=[{}],global_ranks=[4]),5),
+                                  ('checked_family_population',dict(coefficients=[0,1],queries=[{}],offset=15),8),
+                                  ('checked_pell_family',dict(D=3,cutoff=100),5)]:
                 client=HTTPConnection(*server.server_address,timeout=10)
                 client.request('POST','/query',body=json.dumps(dict(op=op,args=args)),headers={'Content-Type':'application/json'})
                 response=client.getresponse();body=json.loads(response.read());client.close()

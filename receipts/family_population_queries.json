@@ -1,0 +1,1378 @@
+{
+  "schema": "pp-family-population-replay/1",
+  "complete": true,
+  "records": [
+    {
+      "name": "square_positive",
+      "packet": {
+        "schema": "pp-checked-family-population/1",
+        "specification": {
+          "coefficients": [
+            0,
+            0,
+            1
+          ],
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "family": "square_plus_constant",
+          "offset": 15,
+          "domain": "integer",
+          "work_limit": 4096
+        },
+        "source_count": 4,
+        "source_points": [
+          [
+            -1,
+            -4
+          ],
+          [
+            -1,
+            4
+          ],
+          [
+            1,
+            -4
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "original_coefficients": [
+          15,
+          0,
+          0,
+          0,
+          1
+        ],
+        "divisor_work": 45,
+        "results": [
+          {
+            "points": [
+              [
+                -1,
+                -4
+              ],
+              [
+                -1,
+                4
+              ],
+              [
+                1,
+                -4
+              ],
+              [
+                1,
+                4
+              ]
+            ],
+            "count": 4,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  -1,
+                  -4
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  -1,
+                  4
+                ]
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 16,
+              "points": [
+                [
+                  -1,
+                  -4
+                ],
+                [
+                  -1,
+                  4
+                ],
+                [
+                  1,
+                  -4
+                ],
+                [
+                  1,
+                  4
+                ]
+              ]
+            }
+          }
+        ],
+        "lean": "import PerfectPower.DivisorPopulation\nnamespace PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20\nopen PerfectPower.QueryNative\ndef coefficients : List Int := [0, 0, 1]\ndef computed := PerfectPower.DivisorPopulation.points coefficients (15)\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^2+(15) :=\n  (PerfectPower.DivisorPopulation.complete coefficients (15) (by decide +kernel) (by decide +kernel) (by decide +kernel) p.1 p.2).symm\ndef allPoints : List (Int \u00d7 Int) := [((-1),(-4)),((-1),(4)),((1),(-4)),((1),(4))]\ntheorem checked_points : computed = allPoints.toFinset := by decide +kernel\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^2+(15) \u2227 domainCondition.holds p\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^2+(15) :=\n  PerfectPower.IntegerPolynomialFibres.literal_complete computed allPoints _ computed_complete checked_points p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem expanded_original (p : Int \u00d7 Int) : original p \u2194 p.2^2 = PerfectPower.BoundedNative.horner [15, 0, 0, 0, 1] p.1 \u2227 domainCondition.holds p := by\n  have h : (PerfectPower.BoundedNative.horner coefficients p.1)^2+(15) = PerfectPower.BoundedNative.horner [15, 0, 0, 0, 1] p.1 := by\n    simp only [coefficients, PerfectPower.BoundedNative.horner]\n    ring\n  simp only [original,h]\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 4 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((-1),(-4)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((-1),(4)) := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\ndef objective_0 := (Expr.power Expr.y 2)\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((16) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (16) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (16) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (16))) = [((-1),(-4)),((-1),(4)),((1),(-4)),((1),(4))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((-1),(-4)),((-1),(4)),((1),(-4)),((1),(4))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (16) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (16) p\nend PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.source_complete\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.minimum_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.ties_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.complete_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.count_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.nodup_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.rank_domain_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.rank_roundtrip_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.selection_0_0\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.selection_0_1\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.selection_0_2\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.expanded_original\n#print axioms PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.computed_complete\n",
+        "namespace": "PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20",
+        "specification_sha256": "c9eadb71db06aa20fbab76ae613f0bfbac3670080d63294791fa0f10b7cdf951",
+        "source_sha256": "7905661fb4d187a2e737d4cac43842892e472205f70694c87c80a2077356a3e5",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "c9eadb71db06aa20fbab76ae613f0bfbac3670080d63294791fa0f10b7cdf951",
+        "source_sha256": "7905661fb4d187a2e737d4cac43842892e472205f70694c87c80a2077356a3e5",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+          "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+          "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+          "DivisorPopulation": "f65ca5ee0e4cb740c9211c26ec2c2879c9ef98ed22c63c01b79dd78676761f8f"
+        },
+        "log": "'PerfectPower.IntegerPolynomialFibres.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.IntegerPolynomialFibres.pullback_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.DivisorPopulation.values_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.DivisorPopulation.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.minimum_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.ties_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.complete_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.count_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.expanded_original' depends on axioms: [propext]\n'PerfectPower.CheckedFamilyPopulation_c9eadb71db06aa20.computed_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "square_negative",
+      "packet": {
+        "schema": "pp-checked-family-population/1",
+        "specification": {
+          "coefficients": [
+            0,
+            1
+          ],
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "family": "square_plus_constant",
+          "offset": -15,
+          "domain": "integer",
+          "work_limit": 4096
+        },
+        "source_count": 8,
+        "source_points": [
+          [
+            -8,
+            -7
+          ],
+          [
+            -8,
+            7
+          ],
+          [
+            -4,
+            -1
+          ],
+          [
+            -4,
+            1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            8,
+            -7
+          ],
+          [
+            8,
+            7
+          ]
+        ],
+        "original_coefficients": [
+          -15,
+          0,
+          1
+        ],
+        "divisor_work": 7,
+        "results": [
+          {
+            "points": [
+              [
+                -8,
+                -7
+              ],
+              [
+                -8,
+                7
+              ],
+              [
+                -4,
+                -1
+              ],
+              [
+                -4,
+                1
+              ],
+              [
+                4,
+                -1
+              ],
+              [
+                4,
+                1
+              ],
+              [
+                8,
+                -7
+              ],
+              [
+                8,
+                7
+              ]
+            ],
+            "count": 8,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  -8,
+                  -7
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  -8,
+                  7
+                ]
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 1,
+              "points": [
+                [
+                  -4,
+                  -1
+                ],
+                [
+                  -4,
+                  1
+                ],
+                [
+                  4,
+                  -1
+                ],
+                [
+                  4,
+                  1
+                ]
+              ]
+            }
+          }
+        ],
+        "lean": "import PerfectPower.DivisorPopulation\nnamespace PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c\nopen PerfectPower.QueryNative\ndef coefficients : List Int := [0, 1]\ndef computed := PerfectPower.DivisorPopulation.points coefficients (-15)\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^2+(-15) :=\n  (PerfectPower.DivisorPopulation.complete coefficients (-15) (by decide +kernel) (by decide +kernel) (by decide +kernel) p.1 p.2).symm\ndef allPoints : List (Int \u00d7 Int) := [((-8),(-7)),((-8),(7)),((-4),(-1)),((-4),(1)),((4),(-1)),((4),(1)),((8),(-7)),((8),(7))]\ntheorem checked_points : computed = allPoints.toFinset := by decide +kernel\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^2+(-15) \u2227 domainCondition.holds p\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^2+(-15) :=\n  PerfectPower.IntegerPolynomialFibres.literal_complete computed allPoints _ computed_complete checked_points p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem expanded_original (p : Int \u00d7 Int) : original p \u2194 p.2^2 = PerfectPower.BoundedNative.horner [-15, 0, 1] p.1 \u2227 domainCondition.holds p := by\n  have h : (PerfectPower.BoundedNative.horner coefficients p.1)^2+(-15) = PerfectPower.BoundedNative.horner [-15, 0, 1] p.1 := by\n    simp only [coefficients, PerfectPower.BoundedNative.horner]\n    ring\n  simp only [original,h]\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 8 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((-8),(-7)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((-8),(7)) := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\ndef objective_0 := (Expr.power Expr.y 2)\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((1) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (1) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (1) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (1))) = [((-4),(-1)),((-4),(1)),((4),(-1)),((4),(1))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((-4),(-1)),((-4),(1)),((4),(-1)),((4),(1))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (1) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (1) p\nend PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.source_complete\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.minimum_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.ties_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.complete_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.count_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.nodup_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.rank_domain_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.rank_roundtrip_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.selection_0_0\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.selection_0_1\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.selection_0_2\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.expanded_original\n#print axioms PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.computed_complete\n",
+        "namespace": "PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c",
+        "specification_sha256": "99a8120afda38d3cf84bb1b9108aee235212ef46bcfde4ff11cbf0e5d8b7a3fa",
+        "source_sha256": "1d1d20cb44c4fb4109d580b6e566066a4bd9bb95291c13a3d632512446eec9fc",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "99a8120afda38d3cf84bb1b9108aee235212ef46bcfde4ff11cbf0e5d8b7a3fa",
+        "source_sha256": "1d1d20cb44c4fb4109d580b6e566066a4bd9bb95291c13a3d632512446eec9fc",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+          "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+          "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+          "DivisorPopulation": "f65ca5ee0e4cb740c9211c26ec2c2879c9ef98ed22c63c01b79dd78676761f8f"
+        },
+        "log": "'PerfectPower.IntegerPolynomialFibres.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.IntegerPolynomialFibres.pullback_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.DivisorPopulation.values_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.DivisorPopulation.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.minimum_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.ties_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.complete_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.count_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.expanded_original' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_99a8120afda38d3c.computed_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "large_linear",
+      "packet": {
+        "schema": "pp-checked-family-population/1",
+        "specification": {
+          "coefficients": [
+            3,
+            1000000000000000000000000000000
+          ],
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "family": "mordell_minus2",
+          "offset": -2,
+          "domain": "integer",
+          "work_limit": 4096
+        },
+        "source_count": 2,
+        "source_points": [
+          [
+            0,
+            -5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "original_coefficients": [
+          25,
+          27000000000000000000000000000000,
+          9000000000000000000000000000000000000000000000000000000000000,
+          1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        ],
+        "divisor_work": 1,
+        "results": [
+          {
+            "points": [
+              [
+                0,
+                -5
+              ],
+              [
+                0,
+                5
+              ]
+            ],
+            "count": 2,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  0,
+                  -5
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  0,
+                  5
+                ]
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 25,
+              "points": [
+                [
+                  0,
+                  -5
+                ],
+                [
+                  0,
+                  5
+                ]
+              ]
+            }
+          }
+        ],
+        "lean": "import PerfectPower.IntegerPolynomialFibres\nimport PerfectPower.GlobalMordellPopulation\nnamespace PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc\nopen PerfectPower.QueryNative\ndef coefficients : List Int := [3, 1000000000000000000000000000000]\ndef baseSource := PerfectPower.GlobalMordellPopulation.points.toFinset\ntheorem base_complete (p : Int \u00d7 Int) : p \u2208 baseSource \u2194 p.2^2 = p.1^3+(-2) := by\n  simpa [baseSource] using PerfectPower.GlobalMordellPopulation.complete p\ndef computed := PerfectPower.IntegerPolynomialFibres.pullback baseSource coefficients\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) :=\n  PerfectPower.IntegerPolynomialFibres.pullback_complete baseSource _ base_complete coefficients (by decide +kernel) (by decide +kernel) p\ndef allPoints : List (Int \u00d7 Int) := [((0),(-5)),((0),(5))]\ntheorem checked_points : computed = allPoints.toFinset := by decide +kernel\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) \u2227 domainCondition.holds p\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) :=\n  PerfectPower.IntegerPolynomialFibres.literal_complete computed allPoints _ computed_complete checked_points p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem expanded_original (p : Int \u00d7 Int) : original p \u2194 p.2^2 = PerfectPower.BoundedNative.horner [25, 27000000000000000000000000000000, 9000000000000000000000000000000000000000000000000000000000000, 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000] p.1 \u2227 domainCondition.holds p := by\n  have h : (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) = PerfectPower.BoundedNative.horner [25, 27000000000000000000000000000000, 9000000000000000000000000000000000000000000000000000000000000, 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000] p.1 := by\n    simp only [coefficients, PerfectPower.BoundedNative.horner]\n    ring\n  simp only [original,h]\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 2 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((0),(-5)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((0),(5)) := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\ndef objective_0 := (Expr.power Expr.y 2)\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((25) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (25) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (25) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (25))) = [((0),(-5)),((0),(5))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((0),(-5)),((0),(5))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (25) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (25) p\nend PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.source_complete\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.minimum_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.ties_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.complete_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.count_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.nodup_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.rank_domain_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.rank_roundtrip_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.selection_0_0\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.selection_0_1\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.selection_0_2\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.expanded_original\n#print axioms PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.computed_complete\n",
+        "namespace": "PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc",
+        "specification_sha256": "ddb86110e84fb2bc9c1d38b00b44f9ee2fb64057ecb2f1427457cffc0fa0b5d7",
+        "source_sha256": "bc811f8124131df8f6453c93be6062b80fe5c1c258a5222994cd72c8d1350b51",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "ddb86110e84fb2bc9c1d38b00b44f9ee2fb64057ecb2f1427457cffc0fa0b5d7",
+        "source_sha256": "bc811f8124131df8f6453c93be6062b80fe5c1c258a5222994cd72c8d1350b51",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+          "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+          "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+          "AffinePopulation": "c1b84a807418fe466b38288834e19d37663948e04350e251733027557515ba4c",
+          "MordellMinus2Core": "32b29c6964c4fcc596aa8accfc29b6498a3ab998a891614612208fc5fce3ba29",
+          "GlobalMordellPopulation": "ffef2fc3d68a723bdf3c3aab5dd455f9e3fd5167fedb543d53b9c0a9d821bbb5"
+        },
+        "log": "'PerfectPower.IntegerPolynomialFibres.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.IntegerPolynomialFibres.pullback_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.MordellMinus2.points' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.GlobalMordellPopulation.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.minimum_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.ties_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.complete_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.count_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.expanded_original' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_ddb86110e84fb2bc.computed_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "large_zero_fibre",
+      "packet": {
+        "schema": "pp-checked-family-population/1",
+        "specification": {
+          "coefficients": [
+            3,
+            0,
+            0,
+            1000000000000000000000000000000
+          ],
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "family": "mordell_minus2",
+          "offset": -2,
+          "domain": "integer",
+          "work_limit": 4096
+        },
+        "source_count": 2,
+        "source_points": [
+          [
+            0,
+            -5
+          ],
+          [
+            0,
+            5
+          ]
+        ],
+        "original_coefficients": [
+          25,
+          0,
+          0,
+          27000000000000000000000000000000,
+          0,
+          0,
+          9000000000000000000000000000000000000000000000000000000000000,
+          0,
+          0,
+          1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+        ],
+        "divisor_work": 1,
+        "results": [
+          {
+            "points": [
+              [
+                0,
+                -5
+              ],
+              [
+                0,
+                5
+              ]
+            ],
+            "count": 2,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  0,
+                  -5
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  0,
+                  5
+                ]
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 25,
+              "points": [
+                [
+                  0,
+                  -5
+                ],
+                [
+                  0,
+                  5
+                ]
+              ]
+            }
+          }
+        ],
+        "lean": "import PerfectPower.IntegerPolynomialFibres\nimport PerfectPower.GlobalMordellPopulation\nnamespace PerfectPower.CheckedFamilyPopulation_8c323c2308b93782\nopen PerfectPower.QueryNative\ndef coefficients : List Int := [3, 0, 0, 1000000000000000000000000000000]\ndef baseSource := PerfectPower.GlobalMordellPopulation.points.toFinset\ntheorem base_complete (p : Int \u00d7 Int) : p \u2208 baseSource \u2194 p.2^2 = p.1^3+(-2) := by\n  simpa [baseSource] using PerfectPower.GlobalMordellPopulation.complete p\ndef computed := PerfectPower.IntegerPolynomialFibres.pullback baseSource coefficients\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) :=\n  PerfectPower.IntegerPolynomialFibres.pullback_complete baseSource _ base_complete coefficients (by decide +kernel) (by decide +kernel) p\ndef allPoints : List (Int \u00d7 Int) := [((0),(-5)),((0),(5))]\ntheorem checked_points : computed = allPoints.toFinset := by decide +kernel\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) \u2227 domainCondition.holds p\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) :=\n  PerfectPower.IntegerPolynomialFibres.literal_complete computed allPoints _ computed_complete checked_points p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem expanded_original (p : Int \u00d7 Int) : original p \u2194 p.2^2 = PerfectPower.BoundedNative.horner [25, 0, 0, 27000000000000000000000000000000, 0, 0, 9000000000000000000000000000000000000000000000000000000000000, 0, 0, 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000] p.1 \u2227 domainCondition.holds p := by\n  have h : (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-2) = PerfectPower.BoundedNative.horner [25, 0, 0, 27000000000000000000000000000000, 0, 0, 9000000000000000000000000000000000000000000000000000000000000, 0, 0, 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000] p.1 := by\n    simp only [coefficients, PerfectPower.BoundedNative.horner]\n    ring\n  simp only [original,h]\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 2 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((0),(-5)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((0),(5)) := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\ndef objective_0 := (Expr.power Expr.y 2)\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((25) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (25) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (25) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (25))) = [((0),(-5)),((0),(5))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((0),(-5)),((0),(5))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (25) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (25) p\nend PerfectPower.CheckedFamilyPopulation_8c323c2308b93782\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.source_complete\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.minimum_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.ties_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.complete_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.count_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.nodup_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.rank_domain_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.rank_roundtrip_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.selection_0_0\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.selection_0_1\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.selection_0_2\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.expanded_original\n#print axioms PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.computed_complete\n",
+        "namespace": "PerfectPower.CheckedFamilyPopulation_8c323c2308b93782",
+        "specification_sha256": "8c323c2308b93782ac4040b81d9d1e6fe906b7ec6fa103d994fa8b56a98f056e",
+        "source_sha256": "bab028e98f6dee962ae3c8523397e0f9c2a0a728c0511f00b6bbadda2c3ea56d",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "8c323c2308b93782ac4040b81d9d1e6fe906b7ec6fa103d994fa8b56a98f056e",
+        "source_sha256": "bab028e98f6dee962ae3c8523397e0f9c2a0a728c0511f00b6bbadda2c3ea56d",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+          "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+          "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+          "AffinePopulation": "c1b84a807418fe466b38288834e19d37663948e04350e251733027557515ba4c",
+          "MordellMinus2Core": "32b29c6964c4fcc596aa8accfc29b6498a3ab998a891614612208fc5fce3ba29",
+          "GlobalMordellPopulation": "ffef2fc3d68a723bdf3c3aab5dd455f9e3fd5167fedb543d53b9c0a9d821bbb5"
+        },
+        "log": "'PerfectPower.IntegerPolynomialFibres.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.IntegerPolynomialFibres.pullback_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.MordellMinus2.points' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.GlobalMordellPopulation.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.minimum_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.ties_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.complete_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.count_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.expanded_original' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_8c323c2308b93782.computed_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "minus13",
+      "packet": {
+        "schema": "pp-checked-family-population/1",
+        "specification": {
+          "coefficients": [
+            16,
+            0,
+            1
+          ],
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "family": "mordell_minus13",
+          "offset": -13,
+          "domain": "integer",
+          "work_limit": 4096
+        },
+        "source_count": 4,
+        "source_points": [
+          [
+            -1,
+            -70
+          ],
+          [
+            -1,
+            70
+          ],
+          [
+            1,
+            -70
+          ],
+          [
+            1,
+            70
+          ]
+        ],
+        "original_coefficients": [
+          4083,
+          0,
+          768,
+          0,
+          48,
+          0,
+          1
+        ],
+        "divisor_work": 7,
+        "results": [
+          {
+            "points": [
+              [
+                -1,
+                -70
+              ],
+              [
+                -1,
+                70
+              ],
+              [
+                1,
+                -70
+              ],
+              [
+                1,
+                70
+              ]
+            ],
+            "count": 4,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  -1,
+                  -70
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  -1,
+                  70
+                ]
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 4900,
+              "points": [
+                [
+                  -1,
+                  -70
+                ],
+                [
+                  -1,
+                  70
+                ],
+                [
+                  1,
+                  -70
+                ],
+                [
+                  1,
+                  70
+                ]
+              ]
+            }
+          }
+        ],
+        "lean": "import PerfectPower.IntegerPolynomialFibres\nimport PerfectPower.AdditionalMordellPopulations\nnamespace PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2\nopen PerfectPower.QueryNative\ndef coefficients : List Int := [16, 0, 1]\ndef baseSource := PerfectPower.AdditionalMordellMinus13.points.toFinset\ntheorem base_complete (p : Int \u00d7 Int) : p \u2208 baseSource \u2194 p.2^2 = p.1^3+(-13) := by\n  simpa [baseSource] using PerfectPower.AdditionalMordellMinus13.complete p\ndef computed := PerfectPower.IntegerPolynomialFibres.pullback baseSource coefficients\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-13) :=\n  PerfectPower.IntegerPolynomialFibres.pullback_complete baseSource _ base_complete coefficients (by decide +kernel) (by decide +kernel) p\ndef allPoints : List (Int \u00d7 Int) := [((-1),(-70)),((-1),(70)),((1),(-70)),((1),(70))]\ntheorem checked_points : computed = allPoints.toFinset := by decide +kernel\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-13) \u2227 domainCondition.holds p\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-13) :=\n  PerfectPower.IntegerPolynomialFibres.literal_complete computed allPoints _ computed_complete checked_points p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem expanded_original (p : Int \u00d7 Int) : original p \u2194 p.2^2 = PerfectPower.BoundedNative.horner [4083, 0, 768, 0, 48, 0, 1] p.1 \u2227 domainCondition.holds p := by\n  have h : (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-13) = PerfectPower.BoundedNative.horner [4083, 0, 768, 0, 48, 0, 1] p.1 := by\n    simp only [coefficients, PerfectPower.BoundedNative.horner]\n    ring\n  simp only [original,h]\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 4 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((-1),(-70)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((-1),(70)) := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\ndef objective_0 := (Expr.power Expr.y 2)\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((4900) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (4900) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (4900) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (4900))) = [((-1),(-70)),((-1),(70)),((1),(-70)),((1),(70))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((-1),(-70)),((-1),(70)),((1),(-70)),((1),(70))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (4900) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (4900) p\nend PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.source_complete\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.minimum_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.ties_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.complete_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.count_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.nodup_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.rank_domain_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.rank_roundtrip_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.selection_0_0\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.selection_0_1\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.selection_0_2\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.expanded_original\n#print axioms PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.computed_complete\n",
+        "namespace": "PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2",
+        "specification_sha256": "5c33b3803b2eaee2a7ad96ea6a264656f6aea38420669a9832d71cc0eceac163",
+        "source_sha256": "c02e493b094baef663d3a0def7d893c0725dae32296817f898a94e549a0178b1",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "5c33b3803b2eaee2a7ad96ea6a264656f6aea38420669a9832d71cc0eceac163",
+        "source_sha256": "c02e493b094baef663d3a0def7d893c0725dae32296817f898a94e549a0178b1",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+          "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+          "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+          "ClassTwoCore": "4b2ef14132f3f8436d3780c0f4fb3cdda4f25eaed007469ace238e07bf78d5e2",
+          "MordellMinus5Core": "9b7f6e08a7db5cdab0c0a146c53f605b41ac9bf80ef31b7adacb5cc11090fbaa",
+          "MordellMinus6Core": "f797e0f6b520bcdf67425bfd41fcbc7b4dd9bc9f5f681f08d01a23cfd6841f70",
+          "MordellMinus13Core": "d6ef93167c7e1c825167e6939abc628f087e5cbd51ee5c100c677a5c7b7cdaff",
+          "AdditionalMordellPopulations": "fe8f21683e4024cd2c483c1b78001f034756604ad247a9bbc711e54c2c78eedd"
+        },
+        "log": "'PerfectPower.IntegerPolynomialFibres.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.IntegerPolynomialFibres.pullback_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.AdditionalMordellMinus13.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.AdditionalMordellMinus5.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.AdditionalMordellMinus6.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.minimum_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.ties_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.complete_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.count_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.expanded_original' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_5c33b3803b2eaee2.computed_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "minus5_empty",
+      "packet": {
+        "schema": "pp-checked-family-population/1",
+        "specification": {
+          "coefficients": [
+            0,
+            0,
+            1
+          ],
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "family": "mordell_minus5",
+          "offset": -5,
+          "domain": "integer",
+          "work_limit": 4096
+        },
+        "source_count": 0,
+        "source_points": [],
+        "original_coefficients": [
+          -5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "divisor_work": 0,
+        "results": [
+          {
+            "points": [],
+            "count": 0,
+            "selections": [
+              {
+                "rank": 0,
+                "point": null
+              },
+              {
+                "rank": 1,
+                "point": null
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.IntegerPolynomialFibres\nimport PerfectPower.AdditionalMordellPopulations\nnamespace PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc\nopen PerfectPower.QueryNative\ndef coefficients : List Int := [0, 0, 1]\ndef baseSource := PerfectPower.AdditionalMordellMinus5.points.toFinset\ntheorem base_complete (p : Int \u00d7 Int) : p \u2208 baseSource \u2194 p.2^2 = p.1^3+(-5) := by\n  simpa [baseSource] using PerfectPower.AdditionalMordellMinus5.complete p\ndef computed := PerfectPower.IntegerPolynomialFibres.pullback baseSource coefficients\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-5) :=\n  PerfectPower.IntegerPolynomialFibres.pullback_complete baseSource _ base_complete coefficients (by decide +kernel) (by decide +kernel) p\ndef allPoints : List (Int \u00d7 Int) := []\ntheorem checked_points : computed = allPoints.toFinset := by decide +kernel\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-5) \u2227 domainCondition.holds p\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-5) :=\n  PerfectPower.IntegerPolynomialFibres.literal_complete computed allPoints _ computed_complete checked_points p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem expanded_original (p : Int \u00d7 Int) : original p \u2194 p.2^2 = PerfectPower.BoundedNative.horner [-5, 0, 0, 0, 0, 0, 1] p.1 \u2227 domainCondition.holds p := by\n  have h : (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-5) = PerfectPower.BoundedNative.horner [-5, 0, 0, 0, 0, 0, 1] p.1 := by\n    simp only [coefficients, PerfectPower.BoundedNative.horner]\n    ring\n  simp only [original,h]\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 0 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = none := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = none := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\nend PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.source_complete\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.complete_0\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.count_0\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.nodup_0\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.rank_domain_0\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.rank_roundtrip_0\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.selection_0_0\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.selection_0_1\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.selection_0_2\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.expanded_original\n#print axioms PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.computed_complete\n",
+        "namespace": "PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc",
+        "specification_sha256": "aefb69a19c649acc2c966a734ddf1f06fac9fff0bd516fd177e4c60473f06000",
+        "source_sha256": "bc5737401097fe3a8d3cc0f2134dfc942d8d529a508b4263a650437e656c2714",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "aefb69a19c649acc2c966a734ddf1f06fac9fff0bd516fd177e4c60473f06000",
+        "source_sha256": "bc5737401097fe3a8d3cc0f2134dfc942d8d529a508b4263a650437e656c2714",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+          "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+          "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+          "ClassTwoCore": "4b2ef14132f3f8436d3780c0f4fb3cdda4f25eaed007469ace238e07bf78d5e2",
+          "MordellMinus5Core": "9b7f6e08a7db5cdab0c0a146c53f605b41ac9bf80ef31b7adacb5cc11090fbaa",
+          "MordellMinus6Core": "f797e0f6b520bcdf67425bfd41fcbc7b4dd9bc9f5f681f08d01a23cfd6841f70",
+          "MordellMinus13Core": "d6ef93167c7e1c825167e6939abc628f087e5cbd51ee5c100c677a5c7b7cdaff",
+          "AdditionalMordellPopulations": "fe8f21683e4024cd2c483c1b78001f034756604ad247a9bbc711e54c2c78eedd"
+        },
+        "log": "'PerfectPower.IntegerPolynomialFibres.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.IntegerPolynomialFibres.pullback_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.AdditionalMordellMinus13.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.AdditionalMordellMinus5.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.AdditionalMordellMinus6.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.complete_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.count_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.expanded_original' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_aefb69a19c649acc.computed_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "descent_empty",
+      "packet": {
+        "schema": "pp-checked-family-population/1",
+        "specification": {
+          "coefficients": [
+            5,
+            0,
+            1
+          ],
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "family": "mordell_descent",
+          "offset": -9985,
+          "domain": "integer",
+          "work_limit": 4096
+        },
+        "source_count": 0,
+        "source_points": [],
+        "original_coefficients": [
+          -9860,
+          0,
+          75,
+          0,
+          15,
+          0,
+          1
+        ],
+        "divisor_work": 0,
+        "results": [
+          {
+            "points": [],
+            "count": 0,
+            "selections": [
+              {
+                "rank": 0,
+                "point": null
+              },
+              {
+                "rank": 1,
+                "point": null
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.IntegerPolynomialFibres\nimport PerfectPower.MordellDescentMask\nnamespace PerfectPower.CheckedFamilyPopulation_60c4a499d813338c\nopen PerfectPower.QueryNative\ndef coefficients : List Int := [5, 0, 1]\ndef baseSource : Finset (Int \u00d7 Int) := \u2205\ntheorem base_complete (p : Int \u00d7 Int) : p \u2208 baseSource \u2194 p.2^2 = p.1^3+(-9985) := by\n  simp only [baseSource,Finset.not_mem_empty,false_iff]\n  have h := PerfectPower.MordellDescent.no_points (D := 1) (c := 6) (b := 101) (by norm_num)\n    (PerfectPower.MordellDescent.goodDivisors_of_cert (by norm_num) 0 (b\u2081 := 101) (u := 10) (by norm_num) (by norm_num))\n    (M := 8) (by norm_num) (by norm_num)\n    (PerfectPower.MordellDescentMask.congr_ok _ _ _ 8 PerfectPower.MordellDescentMask.mask8 PerfectPower.MordellDescentMask.square8 (by decide +kernel)) p.1 p.2\n  norm_num at h\n  exact h\ndef computed := PerfectPower.IntegerPolynomialFibres.pullback baseSource coefficients\ntheorem computed_complete (p : Int \u00d7 Int) : p \u2208 computed \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-9985) :=\n  PerfectPower.IntegerPolynomialFibres.pullback_complete baseSource _ base_complete coefficients (by decide +kernel) (by decide +kernel) p\ndef allPoints : List (Int \u00d7 Int) := []\ntheorem checked_points : computed = allPoints.toFinset := by decide +kernel\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-9985) \u2227 domainCondition.holds p\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 p.2^2 = (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-9985) :=\n  PerfectPower.IntegerPolynomialFibres.literal_complete computed allPoints _ computed_complete checked_points p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem expanded_original (p : Int \u00d7 Int) : original p \u2194 p.2^2 = PerfectPower.BoundedNative.horner [-9860, 0, 75, 0, 15, 0, 1] p.1 \u2227 domainCondition.holds p := by\n  have h : (PerfectPower.BoundedNative.horner coefficients p.1)^3+(-9985) = PerfectPower.BoundedNative.horner [-9860, 0, 75, 0, 15, 0, 1] p.1 := by\n    simp only [coefficients, PerfectPower.BoundedNative.horner]\n    ring\n  simp only [original,h]\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 0 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = none := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = none := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\nend PerfectPower.CheckedFamilyPopulation_60c4a499d813338c\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.source_complete\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.complete_0\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.count_0\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.nodup_0\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.rank_domain_0\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.rank_roundtrip_0\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.selection_0_0\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.selection_0_1\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.selection_0_2\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.expanded_original\n#print axioms PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.computed_complete\n",
+        "namespace": "PerfectPower.CheckedFamilyPopulation_60c4a499d813338c",
+        "specification_sha256": "60c4a499d813338c179ef8ba25b329e6d9d2ebaa09da9b3aa38f6a619341dc7c",
+        "source_sha256": "138bf3543aba94b04a48df52b751b6055cb2ae1c318106a4b9791da3f489602f",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete globally over all integer coordinates in the declared input domain",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "60c4a499d813338c179ef8ba25b329e6d9d2ebaa09da9b3aa38f6a619341dc7c",
+        "source_sha256": "138bf3543aba94b04a48df52b751b6055cb2ae1c318106a4b9791da3f489602f",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+          "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+          "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+          "MordellDescentCore": "5cb1f2d160f461214c8c382d6b3cb2e729cfc464c94d481830b10a2f8bbf9b33",
+          "MordellDescentMask": "5ed8900c1a70943cbf2878338e23ff7c5b9c34b6d9bf15904be807bb511c5211"
+        },
+        "log": "Try this: ring_nf\n'PerfectPower.IntegerPolynomialFibres.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.IntegerPolynomialFibres.pullback_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.MordellDescent.no_points' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.MordellDescentMask.congr_ok' depends on axioms: [propext, Quot.sound]\n/tmp/pp-proved-family-t16q7rjs/Query.lean:8:24: warning: `Finset.not_mem_empty` has been deprecated: use `Finset.notMem_empty` instead\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.complete_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.count_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.expanded_original' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedFamilyPopulation_60c4a499d813338c.computed_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "signed_D3",
+      "packet": {
+        "schema": "pp-checked-pell-family/1",
+        "specification": {
+          "D": 3,
+          "cutoff": 100,
+          "queries": [
+            {
+              "condition": true,
+              "ranks": [
+                0,
+                1,
+                100
+              ],
+              "objective": [
+                "pow",
+                "y",
+                2
+              ]
+            }
+          ],
+          "domain": "integer",
+          "global_ranks": [
+            4
+          ],
+          "global_objective": null,
+          "seed_budget": 4096
+        },
+        "fundamental_seed": [
+          1,
+          2
+        ],
+        "source_count": 18,
+        "source_points": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            2
+          ],
+          [
+            1,
+            -2
+          ],
+          [
+            -1,
+            -2
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            -4,
+            7
+          ],
+          [
+            4,
+            -7
+          ],
+          [
+            -4,
+            -7
+          ],
+          [
+            15,
+            26
+          ],
+          [
+            -15,
+            26
+          ],
+          [
+            15,
+            -26
+          ],
+          [
+            -15,
+            -26
+          ],
+          [
+            56,
+            97
+          ],
+          [
+            -56,
+            97
+          ],
+          [
+            56,
+            -97
+          ],
+          [
+            -56,
+            -97
+          ]
+        ],
+        "cutoff_orbit_count": 5,
+        "next_point": [
+          209,
+          362
+        ],
+        "global_selections": [
+          {
+            "rank": 4,
+            "point": [
+              56,
+              97
+            ]
+          }
+        ],
+        "global_optimum": null,
+        "results": [
+          {
+            "points": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                -1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                -1,
+                2
+              ],
+              [
+                1,
+                -2
+              ],
+              [
+                -1,
+                -2
+              ],
+              [
+                4,
+                7
+              ],
+              [
+                -4,
+                7
+              ],
+              [
+                4,
+                -7
+              ],
+              [
+                -4,
+                -7
+              ],
+              [
+                15,
+                26
+              ],
+              [
+                -15,
+                26
+              ],
+              [
+                15,
+                -26
+              ],
+              [
+                -15,
+                -26
+              ],
+              [
+                56,
+                97
+              ],
+              [
+                -56,
+                97
+              ],
+              [
+                56,
+                -97
+              ],
+              [
+                -56,
+                -97
+              ]
+            ],
+            "count": 18,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  0,
+                  1
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  0,
+                  -1
+                ]
+              },
+              {
+                "rank": 100,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 1,
+              "points": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  -1
+                ]
+              ]
+            }
+          }
+        ],
+        "lean": "import PerfectPower.PellFamily\nnamespace PerfectPower.CheckedPellFamily_890e045541e840d1\nopen PerfectPower.QueryNative PerfectPower.PellFamily\ndef unit := seed (3) (2) (1) (by decide +kernel)\ntheorem unit_fundamental : Pell.IsFundamental unit :=\n  fundamental (3) (2) (1) (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel) [1] (by decide +kernel)\ntheorem last_inside : (point unit 4).1 \u2264 (100) := by\n  rw [\u2190 fastPoint_eq unit 3 4 (by decide +kernel)]\n  decide +kernel\ntheorem next_outside : (100) < (point unit 5).1 := by\n  rw [\u2190 fastPoint_eq unit 3 5 (by decide +kernel)]\n  decide +kernel\ntheorem cutoff_rank_iff (k : Nat) : (point unit k).1 \u2264 (100) \u2194 k < 5 :=\n  cutoff_rank unit unit_fundamental 5 (100) (by decide +kernel) last_inside next_outside k\ndef allPoints : List (Int \u00d7 Int) := [((0),(1)),((0),(-1)),((1),(2)),((-1),(2)),((1),(-2)),((-1),(-2)),((4),(7)),((-4),(7)),((4),(-7)),((-4),(-7)),((15),(26)),((-15),(26)),((15),(-26)),((-15),(-26)),((56),(97)),((-56),(97)),((56),(-97)),((-56),(-97))]\ntheorem prefix_checked : signedPrefix unit 5 = allPoints := by decide +kernel\ntheorem all_complete (p : Int \u00d7 Int) : p \u2208 allPoints \u2194 |p.1| \u2264 (100) \u2227 p.2^2 = (3)*p.1^2+1 := by\n  rw [\u2190 prefix_checked]\n  exact signed_prefix_complete unit unit_fundamental 5 (100) (by decide +kernel) last_inside next_outside p\ndef domainCondition := Condition.truth\ndef sourcePoints := restrict allPoints domainCondition\ndef original (p : Int \u00d7 Int) : Prop := (|p.1| \u2264 (100) \u2227 p.2^2 = (3)*p.1^2+1) \u2227 domainCondition.holds p\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  restrict_complete allPoints _ all_complete domainCondition p\ntheorem fast_selection_0 : fastPoint unit 3 4 = ((56),(97)) := by decide +kernel\ntheorem global_selection_0 : point unit 4 = ((56),(97)) := by\n  rw [\u2190 fastPoint_eq unit 3 4 (by decide +kernel)]\n  exact fast_selection_0\ntheorem global_rank_0 (k : Nat) : point unit k = ((56),(97)) \u2194 k = 4 := by\n  rw [\u2190 global_selection_0]\n  exact (point_injective unit unit_fundamental).eq_iff\ndef condition_0 := Condition.truth\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 18 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((0),(1)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((0),(-1)) := by decide +kernel\ntheorem selection_0_2 : answer_0[100]? = none := by decide +kernel\ndef objective_0 := (Expr.power Expr.y 2)\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((1) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (1) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (1) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (1))) = [((0),(1)),((0),(-1))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((0),(1)),((0),(-1))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (1) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (1) p\nend PerfectPower.CheckedPellFamily_890e045541e840d1\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.source_complete\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.minimum_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.ties_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.complete_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.count_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.nodup_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.rank_domain_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.selection_0_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.selection_0_1\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.selection_0_2\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.unit_fundamental\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.last_inside\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.next_outside\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.cutoff_rank_iff\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.fast_selection_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.global_selection_0\n#print axioms PerfectPower.CheckedPellFamily_890e045541e840d1.global_rank_0\n",
+        "namespace": "PerfectPower.CheckedPellFamily_890e045541e840d1",
+        "specification_sha256": "890e045541e840d1f0801444953a124b070c67774a78224c0fecf76073ea7d0a",
+        "source_sha256": "2c213dae2d5526dc9f447ec7acfaeaf1bd88aaa75d7ede198873fd3a420e3496",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "890e045541e840d1f0801444953a124b070c67774a78224c0fecf76073ea7d0a",
+        "source_sha256": "2c213dae2d5526dc9f447ec7acfaeaf1bd88aaa75d7ede198873fd3a420e3496",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33"
+        },
+        "log": "'PerfectPower.PellFamily.fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.fastPower_eq' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PellFamily.signed_prefix_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.global_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.negative_input_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.minimum_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.ties_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.complete_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.count_0' does not depend on any axioms\n'PerfectPower.CheckedPellFamily_890e045541e840d1.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedPellFamily_890e045541e840d1.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedPellFamily_890e045541e840d1.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedPellFamily_890e045541e840d1.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedPellFamily_890e045541e840d1.unit_fundamental' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.last_inside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.next_outside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.cutoff_rank_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.fast_selection_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.global_selection_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_890e045541e840d1.global_rank_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    },
+    {
+      "name": "D13_minimum",
+      "packet": {
+        "schema": "pp-checked-pell-family/1",
+        "specification": {
+          "D": 13,
+          "cutoff": 1000,
+          "queries": [],
+          "domain": "nonnegative",
+          "global_ranks": [],
+          "global_objective": [
+            "pow",
+            "y",
+            2
+          ],
+          "seed_budget": 4096
+        },
+        "fundamental_seed": [
+          180,
+          649
+        ],
+        "source_count": 2,
+        "source_points": null,
+        "cutoff_orbit_count": 2,
+        "next_point": [
+          233640,
+          842401
+        ],
+        "global_selections": [],
+        "global_optimum": {
+          "status": "minimum",
+          "value": 1,
+          "witness": [
+            0,
+            1
+          ],
+          "ties": "all original solutions with objective equal to this value; may be infinite"
+        },
+        "results": [],
+        "lean": "import PerfectPower.PellFamily\nnamespace PerfectPower.CheckedPellFamily_b4f5c832e297f23c\nopen PerfectPower.QueryNative PerfectPower.PellFamily\ndef unit := seed (13) (649) (180) (by decide +kernel)\ntheorem unit_fundamental : Pell.IsFundamental unit :=\n  fundamental (13) (649) (180) (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel) [1, 3, 7, 10, 14, 18, 21, 25, 28, 32, 36, 39, 43, 46, 50, 54, 57, 61, 64, 68, 72, 75, 79, 82, 86, 90, 93, 97, 100, 104, 108, 111, 115, 118, 122, 126, 129, 133, 137, 140, 144, 147, 151, 155, 158, 162, 165, 169, 173, 176, 180, 183, 187, 191, 194, 198, 201, 205, 209, 212, 216, 219, 223, 227, 230, 234, 237, 241, 245, 248, 252, 255, 259, 263, 266, 270, 274, 277, 281, 284, 288, 292, 295, 299, 302, 306, 310, 313, 317, 320, 324, 328, 331, 335, 338, 342, 346, 349, 353, 356, 360, 364, 367, 371, 374, 378, 382, 385, 389, 393, 396, 400, 403, 407, 411, 414, 418, 421, 425, 429, 432, 436, 439, 443, 447, 450, 454, 457, 461, 465, 468, 472, 475, 479, 483, 486, 490, 493, 497, 501, 504, 508, 511, 515, 519, 522, 526, 530, 533, 537, 540, 544, 548, 551, 555, 558, 562, 566, 569, 573, 576, 580, 584, 587, 591, 594, 598, 602, 605, 609, 612, 616, 620, 623, 627, 630, 634, 638, 641, 645] (by decide +kernel)\ntheorem last_inside : (point unit 1).1 \u2264 (1000) := by\n  rw [\u2190 fastPoint_eq unit 1 1 (by decide +kernel)]\n  decide +kernel\ntheorem next_outside : (1000) < (point unit 2).1 := by\n  rw [\u2190 fastPoint_eq unit 2 2 (by decide +kernel)]\n  decide +kernel\ntheorem cutoff_rank_iff (k : Nat) : (point unit k).1 \u2264 (1000) \u2194 k < 2 :=\n  cutoff_rank unit unit_fundamental 2 (1000) (by decide +kernel) last_inside next_outside k\ndef original (p : Int \u00d7 Int) : Prop := 0 \u2264 p.1 \u2227 0 \u2264 p.2 \u2227 p.1 \u2264 (1000) \u2227 p.2^2 = (13)*p.1^2+1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 cutoffFinset unit 2 \u2194 original p :=\n  cutoffFinset_complete unit unit_fundamental 2 (1000) (by decide +kernel) last_inside next_outside p\ntheorem exact_count : (cutoffFinset unit 2).card = 2 := cutoffFinset_card unit unit_fundamental 2\ndef globalObjective := (Expr.power Expr.y 2)\ntheorem global_minimum_value (p : Int \u00d7 Int)\n    (hp : 0 \u2264 p.1 \u2227 0 \u2264 p.2 \u2227 p.2^2 = (13)*p.1^2+1) : (1) \u2264 globalObjective.eval p := by\n  have h := global_minimum unit unit_fundamental globalObjective (by decide +kernel) p hp\n  have he : globalObjective.eval (0,1) = (1) := by decide +kernel\n  simpa only [he] using h\ntheorem global_minimum_attained : globalObjective.eval (0,1) = (1) := by decide +kernel\ntheorem global_witness_is_solution : (0: Int) \u2264 0 \u2227 (0: Int) \u2264 1 \u2227 (1: Int)^2 = (13)*0^2+1 := by decide +kernel\nend PerfectPower.CheckedPellFamily_b4f5c832e297f23c\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.unit_fundamental\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.last_inside\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.next_outside\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.cutoff_rank_iff\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.source_complete\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.exact_count\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.global_minimum_value\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.global_minimum_attained\n#print axioms PerfectPower.CheckedPellFamily_b4f5c832e297f23c.global_witness_is_solution\n",
+        "namespace": "PerfectPower.CheckedPellFamily_b4f5c832e297f23c",
+        "specification_sha256": "b4f5c832e297f23c41e6cea711cd63e34489253550660fb8af9ed7cfb5596ecd",
+        "source_sha256": "d23e8a2cf454fb26f97e0c83be8ea082a537756f0679fff64ddbf5c0607ae524",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "b4f5c832e297f23c41e6cea711cd63e34489253550660fb8af9ed7cfb5596ecd",
+        "source_sha256": "d23e8a2cf454fb26f97e0c83be8ea082a537756f0679fff64ddbf5c0607ae524",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33"
+        },
+        "log": "'PerfectPower.PellFamily.fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.fastPower_eq' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PellFamily.signed_prefix_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.global_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.negative_input_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.unit_fundamental' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.last_inside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.next_outside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.cutoff_rank_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.exact_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.global_minimum_value' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.global_minimum_attained' does not depend on any axioms\n'PerfectPower.CheckedPellFamily_b4f5c832e297f23c.global_witness_is_solution' depends on axioms: [propext]\n"
+      }
+    },
+    {
+      "name": "large_count_rank1000",
+      "packet": {
+        "schema": "pp-checked-pell-family/1",
+        "specification": {
+          "D": 2,
+          "cutoff": 1000000000000000000000000000000,
+          "queries": [],
+          "domain": "nonnegative",
+          "global_ranks": [
+            1000
+          ],
+          "global_objective": [
+            "add",
+            "x",
+            "y"
+          ],
+          "seed_budget": 4096
+        },
+        "fundamental_seed": [
+          2,
+          3
+        ],
+        "source_count": 40,
+        "source_points": null,
+        "cutoff_orbit_count": 40,
+        "next_point": [
+          1480845785007705294702019308528,
+          2094232192940929332692027310337
+        ],
+        "global_selections": [
+          {
+            "rank": 1000,
+            "point": [
+              1258420203823582397042280327110427880395820684485543443353993935833848802498623891595888493025802718595551880846150528079463501214800466938843793960927278106814006977771204001829061149188560461761254240191736996916235228666196027548529146378409584004700433463279626072824281332975784333805887341328017450378020355018307717904141886473072786602679813761062340242622539524653204495190840918606613125708309735752772495833960994921245275336331950084586711838768529402008816062054834070388726214163388308839849890557163221001733426673028964650224231459158580339008840518652812271893367898974518374750482828830164485868615489557912403501834513878459867562066128890028872727063109648630323723429547301983584698029858117032300279510898957114393635256908377480563899269679728,
+              1779674919411624828680252071684844008520151498206677536087716053617083751246580412771081900975941617768009450098878107780518667208696598565463711884196037434398040151960887241890845237957164680985426605061924484634348330016278508707810550636433276393575145554252580523073130303897569353799173376572623974333322303842157323357314555770995789886059830224197432745949422888090766133219504934777440176200061913383798477748251625887950665311848477156179328738097586342444698990076555708574843250638550419899431293862888416607735397102032181065123800934774806803352483331335843824658482402177527846085648270120650615129501700358973027364024947393260852209495252508752769568051995936320190891384823621460445767203959320037243147088530231966039846434760579432743053690695937
+            ]
+          }
+        ],
+        "global_optimum": {
+          "status": "minimum",
+          "value": 1,
+          "witness": [
+            0,
+            1
+          ],
+          "ties": "all original solutions with objective equal to this value; may be infinite"
+        },
+        "results": [],
+        "lean": "import PerfectPower.PellFamily\nnamespace PerfectPower.CheckedPellFamily_da91bbd1de569db7\nopen PerfectPower.QueryNative PerfectPower.PellFamily\ndef unit := seed (2) (3) (2) (by decide +kernel)\ntheorem unit_fundamental : Pell.IsFundamental unit :=\n  fundamental (2) (3) (2) (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel) [1, 1] (by decide +kernel)\ntheorem last_inside : (point unit 39).1 \u2264 (1000000000000000000000000000000) := by\n  rw [\u2190 fastPoint_eq unit 6 39 (by decide +kernel)]\n  decide +kernel\ntheorem next_outside : (1000000000000000000000000000000) < (point unit 40).1 := by\n  rw [\u2190 fastPoint_eq unit 6 40 (by decide +kernel)]\n  decide +kernel\ntheorem cutoff_rank_iff (k : Nat) : (point unit k).1 \u2264 (1000000000000000000000000000000) \u2194 k < 40 :=\n  cutoff_rank unit unit_fundamental 40 (1000000000000000000000000000000) (by decide +kernel) last_inside next_outside k\ndef original (p : Int \u00d7 Int) : Prop := 0 \u2264 p.1 \u2227 0 \u2264 p.2 \u2227 p.1 \u2264 (1000000000000000000000000000000) \u2227 p.2^2 = (2)*p.1^2+1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 cutoffFinset unit 40 \u2194 original p :=\n  cutoffFinset_complete unit unit_fundamental 40 (1000000000000000000000000000000) (by decide +kernel) last_inside next_outside p\ntheorem exact_count : (cutoffFinset unit 40).card = 40 := cutoffFinset_card unit unit_fundamental 40\ntheorem fast_selection_0 : fastPoint unit 10 1000 = ((1258420203823582397042280327110427880395820684485543443353993935833848802498623891595888493025802718595551880846150528079463501214800466938843793960927278106814006977771204001829061149188560461761254240191736996916235228666196027548529146378409584004700433463279626072824281332975784333805887341328017450378020355018307717904141886473072786602679813761062340242622539524653204495190840918606613125708309735752772495833960994921245275336331950084586711838768529402008816062054834070388726214163388308839849890557163221001733426673028964650224231459158580339008840518652812271893367898974518374750482828830164485868615489557912403501834513878459867562066128890028872727063109648630323723429547301983584698029858117032300279510898957114393635256908377480563899269679728),(1779674919411624828680252071684844008520151498206677536087716053617083751246580412771081900975941617768009450098878107780518667208696598565463711884196037434398040151960887241890845237957164680985426605061924484634348330016278508707810550636433276393575145554252580523073130303897569353799173376572623974333322303842157323357314555770995789886059830224197432745949422888090766133219504934777440176200061913383798477748251625887950665311848477156179328738097586342444698990076555708574843250638550419899431293862888416607735397102032181065123800934774806803352483331335843824658482402177527846085648270120650615129501700358973027364024947393260852209495252508752769568051995936320190891384823621460445767203959320037243147088530231966039846434760579432743053690695937)) := by decide +kernel\ntheorem global_selection_0 : point unit 1000 = ((1258420203823582397042280327110427880395820684485543443353993935833848802498623891595888493025802718595551880846150528079463501214800466938843793960927278106814006977771204001829061149188560461761254240191736996916235228666196027548529146378409584004700433463279626072824281332975784333805887341328017450378020355018307717904141886473072786602679813761062340242622539524653204495190840918606613125708309735752772495833960994921245275336331950084586711838768529402008816062054834070388726214163388308839849890557163221001733426673028964650224231459158580339008840518652812271893367898974518374750482828830164485868615489557912403501834513878459867562066128890028872727063109648630323723429547301983584698029858117032300279510898957114393635256908377480563899269679728),(1779674919411624828680252071684844008520151498206677536087716053617083751246580412771081900975941617768009450098878107780518667208696598565463711884196037434398040151960887241890845237957164680985426605061924484634348330016278508707810550636433276393575145554252580523073130303897569353799173376572623974333322303842157323357314555770995789886059830224197432745949422888090766133219504934777440176200061913383798477748251625887950665311848477156179328738097586342444698990076555708574843250638550419899431293862888416607735397102032181065123800934774806803352483331335843824658482402177527846085648270120650615129501700358973027364024947393260852209495252508752769568051995936320190891384823621460445767203959320037243147088530231966039846434760579432743053690695937)) := by\n  rw [\u2190 fastPoint_eq unit 10 1000 (by decide +kernel)]\n  exact fast_selection_0\ntheorem global_rank_0 (k : Nat) : point unit k = ((1258420203823582397042280327110427880395820684485543443353993935833848802498623891595888493025802718595551880846150528079463501214800466938843793960927278106814006977771204001829061149188560461761254240191736996916235228666196027548529146378409584004700433463279626072824281332975784333805887341328017450378020355018307717904141886473072786602679813761062340242622539524653204495190840918606613125708309735752772495833960994921245275336331950084586711838768529402008816062054834070388726214163388308839849890557163221001733426673028964650224231459158580339008840518652812271893367898974518374750482828830164485868615489557912403501834513878459867562066128890028872727063109648630323723429547301983584698029858117032300279510898957114393635256908377480563899269679728),(1779674919411624828680252071684844008520151498206677536087716053617083751246580412771081900975941617768009450098878107780518667208696598565463711884196037434398040151960887241890845237957164680985426605061924484634348330016278508707810550636433276393575145554252580523073130303897569353799173376572623974333322303842157323357314555770995789886059830224197432745949422888090766133219504934777440176200061913383798477748251625887950665311848477156179328738097586342444698990076555708574843250638550419899431293862888416607735397102032181065123800934774806803352483331335843824658482402177527846085648270120650615129501700358973027364024947393260852209495252508752769568051995936320190891384823621460445767203959320037243147088530231966039846434760579432743053690695937)) \u2194 k = 1000 := by\n  rw [\u2190 global_selection_0]\n  exact (point_injective unit unit_fundamental).eq_iff\ndef globalObjective := (Expr.add Expr.x Expr.y)\ntheorem global_minimum_value (p : Int \u00d7 Int)\n    (hp : 0 \u2264 p.1 \u2227 0 \u2264 p.2 \u2227 p.2^2 = (2)*p.1^2+1) : (1) \u2264 globalObjective.eval p := by\n  have h := global_minimum unit unit_fundamental globalObjective (by decide +kernel) p hp\n  have he : globalObjective.eval (0,1) = (1) := by decide +kernel\n  simpa only [he] using h\ntheorem global_minimum_attained : globalObjective.eval (0,1) = (1) := by decide +kernel\ntheorem global_witness_is_solution : (0: Int) \u2264 0 \u2227 (0: Int) \u2264 1 \u2227 (1: Int)^2 = (2)*0^2+1 := by decide +kernel\nend PerfectPower.CheckedPellFamily_da91bbd1de569db7\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.unit_fundamental\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.last_inside\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.next_outside\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.cutoff_rank_iff\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.source_complete\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.exact_count\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.fast_selection_0\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_selection_0\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_rank_0\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_minimum_value\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_minimum_attained\n#print axioms PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_witness_is_solution\n",
+        "namespace": "PerfectPower.CheckedPellFamily_da91bbd1de569db7",
+        "specification_sha256": "da91bbd1de569db72eed9e5f6130421b1ee0804806099b36a83922c1f98b5104",
+        "source_sha256": "3b8419b0af25b4a22d4ad860c3c99ed60fe31508954410139a690c4293832c44",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "da91bbd1de569db72eed9e5f6130421b1ee0804806099b36a83922c1f98b5104",
+        "source_sha256": "3b8419b0af25b4a22d4ad860c3c99ed60fe31508954410139a690c4293832c44",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33"
+        },
+        "log": "'PerfectPower.PellFamily.fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.fastPower_eq' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PellFamily.signed_prefix_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.global_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.negative_input_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.unit_fundamental' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.last_inside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.next_outside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.cutoff_rank_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.exact_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.fast_selection_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_selection_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_rank_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_minimum_value' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_minimum_attained' does not depend on any axioms\n'PerfectPower.CheckedPellFamily_da91bbd1de569db7.global_witness_is_solution' depends on axioms: [propext]\n"
+      }
+    },
+    {
+      "name": "unbounded_D7",
+      "packet": {
+        "schema": "pp-checked-pell-family/1",
+        "specification": {
+          "D": 7,
+          "cutoff": 100,
+          "queries": [],
+          "domain": "nonnegative",
+          "global_ranks": [],
+          "global_objective": [
+            "mul",
+            -1,
+            "x"
+          ],
+          "seed_budget": 4096
+        },
+        "fundamental_seed": [
+          3,
+          8
+        ],
+        "source_count": 3,
+        "source_points": null,
+        "cutoff_orbit_count": 3,
+        "next_point": [
+          765,
+          2024
+        ],
+        "global_selections": [],
+        "global_optimum": {
+          "status": "unbounded_below"
+        },
+        "results": [],
+        "lean": "import PerfectPower.PellFamily\nnamespace PerfectPower.CheckedPellFamily_784c30a41e442aa9\nopen PerfectPower.QueryNative PerfectPower.PellFamily\ndef unit := seed (7) (8) (3) (by decide +kernel)\ntheorem unit_fundamental : Pell.IsFundamental unit :=\n  fundamental (7) (8) (3) (by decide +kernel) (by decide +kernel) (by decide +kernel) (by decide +kernel) [1, 2, 5] (by decide +kernel)\ntheorem last_inside : (point unit 2).1 \u2264 (100) := by\n  rw [\u2190 fastPoint_eq unit 2 2 (by decide +kernel)]\n  decide +kernel\ntheorem next_outside : (100) < (point unit 3).1 := by\n  rw [\u2190 fastPoint_eq unit 2 3 (by decide +kernel)]\n  decide +kernel\ntheorem cutoff_rank_iff (k : Nat) : (point unit k).1 \u2264 (100) \u2194 k < 3 :=\n  cutoff_rank unit unit_fundamental 3 (100) (by decide +kernel) last_inside next_outside k\ndef original (p : Int \u00d7 Int) : Prop := 0 \u2264 p.1 \u2227 0 \u2264 p.2 \u2227 p.1 \u2264 (100) \u2227 p.2^2 = (7)*p.1^2+1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 cutoffFinset unit 3 \u2194 original p :=\n  cutoffFinset_complete unit unit_fundamental 3 (100) (by decide +kernel) last_inside next_outside p\ntheorem exact_count : (cutoffFinset unit 3).card = 3 := cutoffFinset_card unit unit_fundamental 3\ntheorem global_unbounded_below (bound : Int) : \u2203 p : Int \u00d7 Int,\n    (0 \u2264 p.1 \u2227 0 \u2264 p.2 \u2227 p.2^2 = (7)*p.1^2+1) \u2227 -p.1 < bound :=\n  negative_input_unbounded unit unit_fundamental bound\nend PerfectPower.CheckedPellFamily_784c30a41e442aa9\n#print axioms PerfectPower.CheckedPellFamily_784c30a41e442aa9.unit_fundamental\n#print axioms PerfectPower.CheckedPellFamily_784c30a41e442aa9.last_inside\n#print axioms PerfectPower.CheckedPellFamily_784c30a41e442aa9.next_outside\n#print axioms PerfectPower.CheckedPellFamily_784c30a41e442aa9.cutoff_rank_iff\n#print axioms PerfectPower.CheckedPellFamily_784c30a41e442aa9.source_complete\n#print axioms PerfectPower.CheckedPellFamily_784c30a41e442aa9.exact_count\n#print axioms PerfectPower.CheckedPellFamily_784c30a41e442aa9.global_unbounded_below\n",
+        "namespace": "PerfectPower.CheckedPellFamily_784c30a41e442aa9",
+        "specification_sha256": "784c30a41e442aa9745c12a4dcceaf50d80fc4216e8c3411f47c95011e0ac690",
+        "source_sha256": "06d2339f0fc3d19bc7b35cf298709295a8a745452a906c24649dc317a726f772",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete declared-domain solutions of y\u00b2=D*x\u00b2+1 within the absolute input cutoff; global ranks refer to the nonnegative orbit",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "784c30a41e442aa9745c12a4dcceaf50d80fc4216e8c3411f47c95011e0ac690",
+        "source_sha256": "06d2339f0fc3d19bc7b35cf298709295a8a745452a906c24649dc317a726f772",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+          "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33"
+        },
+        "log": "'PerfectPower.PellFamily.fundamental' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.fastPower_eq' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PellFamily.signed_prefix_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.global_minimum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PellFamily.negative_input_unbounded' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_784c30a41e442aa9.unit_fundamental' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_784c30a41e442aa9.last_inside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_784c30a41e442aa9.next_outside' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPellFamily_784c30a41e442aa9.cutoff_rank_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_784c30a41e442aa9.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPellFamily_784c30a41e442aa9.exact_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPellFamily_784c30a41e442aa9.global_unbounded_below' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      }
+    }
+  ]
+}

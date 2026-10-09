@@ -156,3 +156,16 @@ python -m perfectpower checked-pell-population --cutoff 1000 --global-ranks '[0,
 ```
 
 The Pell command covers all nonnegative solutions of `y²=2x²+1` up to the declared input cutoff, including `(0,1)`. Global selections follow the proved increasing recurrence; cutoff minima and local ranks refer to the cutoff population. The Python functions are `nonlinear_population_certificate`/`check_nonlinear_population` and `pell_population_certificate`/`check_pell_population` in their corresponding `checked_*_population` modules. Isolated HTTP operations use `checked_nonlinear_population` and `checked_pell_population`, with keyword arguments under `args`. Kernel checks require Lean 4.20.0 and pinned Mathlib on `LEAN_PATH`. Emission alone does not accept a proposal. See [the mathematical and API monograph](../docs/EXTENDED_POPULATION_MONOGRAPH.md) for scopes and resource limits.
+
+## Broad global families and general Pell access
+
+```sh
+python -m perfectpower checked-family-population --coeff '[0,0,1]' --offset 15 --queries '[{"ranks":[0,1,10],"objective":["pow","y",2]}]' --check
+python -m perfectpower checked-family-population --family mordell_minus13 --coeff '[16,0,1]' --queries '[{}]' --check
+python -m perfectpower checked-family-population --family mordell_descent --offset -9985 --coeff '[5,0,1]' --queries '[{}]' --check
+python -m perfectpower checked-pell-family --D 3 --cutoff 100 --domain integer --queries '[{"objective":"y","ranks":[0,1,100]}]' --check
+python -m perfectpower checked-pell-family --D 2 --cutoff 1000000000000000000000000000000 --global-ranks '[1000]' --global-objective '["add","x","y"]' --check
+python -m perfectpower checked-pell-family --D 7 --cutoff 100 --global-objective '["mul",-1,"x"]' --check
+```
+
+The finite family interface covers `y²=U(x)²+k` for nonzero k, five classical Mordell sources and the offsets in `data/mordell_descent_sources.json`. Integer fibres use exact divisibility, zero stripping and direct linear recovery. The Pell interface proves its seed fundamental, supports all signs, uses binary powering for global ranks and can return an exact cutoff count without constructing a point list. Its global objectives cover nonnegative polynomial expressions and the unbounded-below expression `-x`. Fundamental-seed certificates and point sizes remain budgeted. See [the family engine monograph](../docs/FAMILY_ENGINE_MONOGRAPH.md) for the exact domains, refusal cases and remaining research.

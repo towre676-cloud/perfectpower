@@ -114,6 +114,22 @@
         "test_checked_extended_population.py"
       ],
       "kernel_required": true
+    },
+    {
+      "name": "broad_square_pell_and_descent_families",
+      "files": [
+        "PerfectPower/IntegerPolynomialFibres.lean",
+        "PerfectPower/DivisorPopulation.lean",
+        "PerfectPower/PellFamily.lean",
+        "PerfectPower/MordellDescentCore.lean",
+        "PerfectPower/MordellDescentAtlas.lean",
+        "python/perfectpower/checked_family_population.py",
+        "python/perfectpower/checked_pell_family.py"
+      ],
+      "tests": [
+        "test_checked_family_push.py"
+      ],
+      "kernel_required": true
     }
   ]
 }

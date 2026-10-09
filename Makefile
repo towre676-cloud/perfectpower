@@ -40,6 +40,8 @@ release-verify:
 	$(MAKE) check-population-queries
 	$(MAKE) check-global-population
 	$(MAKE) check-extended-population
+	$(MAKE) check-family-population
+	$(MAKE) check-mordell-descent-atlas
 
 .PHONY: hardening-verify hardening-kernel
 hardening-verify:
@@ -452,3 +454,9 @@ check-global-population:
 .PHONY: check-extended-population
 check-extended-population:
 	bash scripts/check_extended_population.sh
+
+.PHONY: check-family-population check-mordell-descent-atlas
+check-family-population:
+	bash scripts/check_family_population.sh
+check-mordell-descent-atlas:
+	bash scripts/check_mordell_descent_atlas.sh

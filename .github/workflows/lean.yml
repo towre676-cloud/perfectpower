@@ -30,6 +30,13 @@ jobs:
         env:
           PYTHONPATH: python
           PERFECTPOWER_LEAN: lean
+      - name: General square differences, signed Pell families and global objectives
+        run: bash scripts/check_family_population.sh
+        env:
+          PYTHONPATH: python
+          PERFECTPOWER_LEAN: lean
+      - name: Global emptiness proofs for the Mordell descent atlas
+        run: bash scripts/check_mordell_descent_atlas.sh
       - name: Native higher-power Runge and binary-root audit
         run: scripts/check_native_runge_power.sh
       - name: Parallel-session algebra and exact certificate audit
