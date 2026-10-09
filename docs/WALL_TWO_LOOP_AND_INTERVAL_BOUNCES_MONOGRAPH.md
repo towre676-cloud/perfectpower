@@ -1,6 +1,6 @@
 # Computed two-loop thermal potential for the biased-vacuum bounces (N40, part 1)
 
-This monograph covers item N40. It replaces the two-loop *estimates* in `wall_nucleation_corrections` (see WALL_NUCLEATION_CORRECTIONS_AND_CERTIFIED_STABILITY, Part A) with computed scalar-sector two-loop diagrams. The second half of N40, interval bounces, is **not** delivered in this commit; see "Not done" below.
+This monograph covers item N40. It replaces the two-loop *estimates* in `wall_nucleation_corrections` (see WALL_NUCLEATION_CORRECTIONS_AND_CERTIFIED_STABILITY, Part A) with computed scalar-sector two-loop diagrams. The second half of N40, interval-certified bounce actions for the tree potential, is in "Interval bounces" at the end.
 
 Code: `python/perfectpower/wall_two_loop_thermal.py`, `python/develop_wall_two_loop_thermal.py`, `python/tests/test_wall_two_loop_thermal.py`.
 Receipts: `receipts/flavor_cosmology/wall_two_loop_thermal.json` and `wall_two_loop_thermal_validation.json`.
@@ -75,7 +75,73 @@ Two loops lower T_n by 0.1 to 0.35 GeV, against one-loop brackets of 1.4 to 3.2 
 - The fluctuation determinant is still the declared exp(+-20) band.
 - T_n uses linear interpolation on the coarse temperature grid.
 
-## Not done (N40 remains partly open)
+## Not done (part 1)
 
-- **Interval bounces (Arb).** A draft module was not finished, so it is not committed. It used validated Taylor shooting, an analytic tail, a Coleman-Glaser-Martin upper bound and a uniqueness covering. No certified interval for S3/T or S4 is claimed.
+- **Interval bounces (Arb).** Done for the tree potential; see "Interval bounces" below. The corrected potentials are still floating.
 - Gauge-sector two-loop diagrams, and the pole-mass on-shell scheme.
+
+## Interval bounces
+
+Code: `python/perfectpower/wall_bounce_intervals.py`, `python/develop_wall_bounce_intervals.py`, `python/tests/test_wall_bounce_intervals.py`.
+Receipt: `receipts/flavor_cosmology/wall_bounce_intervals.json` (deterministic; about 20 minutes on one core).
+
+### Method
+
+Every number below is an Arb enclosure. Floating values are only compared against it.
+
+- **Validated integrator.** The state is (phi, P=r^{d-1}phi', q=1/r), so the field is polynomial and the friction term drops out of the Jacobian.
+  - Each step is a degree-36 Taylor model at 160 bits. A strict inclusion res + h J eps < eps on the tube shows that the solution stays in the tube. The endpoint error comes from the vector Gronwall bound exp(hJ) res, computed by scaling and squaring.
+  - The first step, from r=0, uses the exact regular-singular Picard operator.
+  - Ranges are taken from Bernstein coefficients.
+- **Existence.** This is Coleman's argument with finitely many checks. phi0 = seed - 1e-20 is a certified undershoot (phi' > 0 while phi > f), and seed + 1e-20 is a certified overshoot (phi < f while phi' < 0). The two sets are open, so some phi0* between them is in neither. Its solution is monotone and tends to f; the limit cannot be the barrier top, because the solution would oscillate there.
+- **Action.** The 2e-20 family is integrated to the radius R where phi - f < 1e-9.
+  - The tail has an exact bound: int_R^inf r^{d-1} phi'^2 lies in [0, u(R)|P(R)|], from integration by parts with u V'(f+u) >= 0. The same interval bounds the tail of the potential term.
+  - Then s = (Omega_d/d) int r^{d-1} phi'^2, by Derrick's identity.
+  - The direct T+U enclosure overlaps in every case.
+- **Least action, quartic.** By Coleman-Glaser-Martin, the least-action bounce is radially non-increasing with values in [f, t], so its phi0 lies in [e, t). Every other phi0 in that range is excluded:
+  - **Near the seed.** The box [seed-1e-8, seed+1e-8] is handled by the variational equation. psi and Psi share a strict sign at an R where phi < -1/sqrt3, so the difference of two bounces could not decay.
+  - **Away from the seed.** [e_lo, seed-1e-8] and [seed+1e-8, t-eta] are covered by adaptive classification. Each box is run as a mean-value family: the centre trajectory, plus the variational pair over the whole box, with phi in phi_c + [-w, w]|psi|. The boxes are bisected in log-distance to the seed and to t. This takes 312 to 532 runs per benchmark, and 2460 at the most spinodal point.
+  - **Near t.** [t-eta, t) is excluded by an energy bound, with eta between 6.5e-8 and 1.0e-5:
+    - E = phi'^2/2 - (V - V_f) decreases by D = int (d-1) phi'^2/r.
+    - A comparison with sinh(z)/z, or 2I_1(z)/z, gives r1 > (d-1)A/(E_0 - D_1) before t - phi reaches 0.05.
+    - The remaining dissipation is at most (d-1)A/r1, so E stays positive and the solution overshoots.
+- **Least action, cubic.** Uniqueness is Kwong's theorem: Delta w = w - w^2, p=2, which is subcritical in d=3,4.
+
+### Results
+
+Universal cubic, near-spinodal constants C_d = (2*3^{1/4})^{(6-d)/2} s_cubic(d)/3:
+
+| | certified | floating (wall_nucleation) |
+|---|---|---|
+| s_cubic(3) | [43.66023671624716, 43.66023671624719] | 43.66023671624231 |
+| s_cubic(4) | [204.4284433419092, 204.4284433419093] | 204.4284433419212 |
+| C3 | [62.14844908992001, 62.14844908992003] | 62.14844908991308 (quoted 62.148 is a certified rounding) |
+| C4 | [179.3619745270784, 179.3619745270785] | 179.36197452708896 (quoted 179.36 is a certified rounding) |
+
+Tree-potential actions at the critical biases eps* of `wall_nucleation`. eps* is taken as the exact dyadic value of the floating root.
+
+- S3/T = (v_T/(sqrt(lam) T)) s3, with v_T computed in Arb from the declared (v, lam, c).
+- S4 = s4/lam.
+- "Least action" means the full exclusion above was certified.
+
+| T (GeV) | S3/T certified | floating | S4 certified | floating | least action |
+|---|---|---|---|---|---|
+| 0.03 | [188.16730795, 188.16730808] | 188.14201 (asymptotic law) | [245.63703164051, 245.63703164052] | 245.63703163 | yes |
+| 1 | [169.56829631, 169.56829632] | 169.34811 (asymptotic law) | [212.68668279741, 212.68668279742] | 212.68668279 | yes |
+| 100 | [150.75295333059, 150.75295333060] | 150.75295336 | [175.46050348403, 175.46050348404] | 175.46050346 | yes |
+| 1000 | [141.44703737808, 141.44703737809] | 141.44703737 | [156.81457280180, 156.81457280181] | 156.81457279 | yes |
+| 2999 | [137.00607161228, 137.00607161229] | 137.00607161 | [147.90693271252, 147.90693271253] | 147.90693270 | yes |
+
+What the comparison shows:
+
+- **Floating bounce rows.** The floating values agree with the certified intervals to a relative 3.3e-10 or better, which is the trapezoid and brentq error of the floating code. They are not inside the 1e-15-wide intervals, and are not claimed to be.
+- **Near-spinodal rows.** Two floating S3/T values, at T = 0.03 and 1 GeV, came from the asymptotic law C3 (eps_sp - eps)^{3/4}. The exact certified actions are higher by factors 1.0001344 and 1.0013002, so S3/T is 188.167 instead of 188.142, and 169.568 instead of 169.348.
+- **Effect on conclusions.** All these shifts are far inside the declared exp(+-20) prefactor band. No conclusion of the nucleation analysis changes.
+
+### Not claimed
+
+- The corrected potentials (one-loop CW, thermal and two-loop) are not enclosed. They contain log|m^2(phi)|, which is non-analytic inside the bounce, and spline-interpolated thermal functions. Their bounces remain floating.
+- The near-spinodal law is asymptotic. Only C_d and the exact actions at the benchmark biases are certified.
+- eps* is a floating root. The certified actions are at those exact dyadic biases; the location of eps* is not certified.
+- The fluctuation determinant, which is still the declared band, and the three-field sandwich factor are not certified.
+- The least-action identification uses two cited theorems that are not re-proved: Coleman-Glaser-Martin (the minimiser is radial and monotone) and Kwong (uniqueness for the cubic).

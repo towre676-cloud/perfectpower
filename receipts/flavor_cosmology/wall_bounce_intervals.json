@@ -1,0 +1,1075 @@
+{
+ "benchmarks": [
+  {
+   "S_certified": [
+    "188.1673079580329",
+    "188.1673080758468"
+   ],
+   "S_definition": "S3/T=(v_T/(sqrt(lam) T)) s3, v_T=v sqrt(1-cT^2/(lam v^2)) in Arb",
+   "T_GeV": 0.03,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    1373.4229736328125,
+    1373.4383544921875
+   ],
+   "d": 3,
+   "eps": 0.3849001700247776,
+   "eps_exact_dyadic": true,
+   "exact_over_asymptotic_law": [
+    "1.0001344",
+    "1.0001345"
+   ],
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 188.1420136032488,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -0.0001344251238836427,
+   "floating_method": "near_spinodal_asymptotic",
+   "floating_s_star_target": 5.949572865567234e-05,
+   "integration_steps": 72,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-30.7909",
+      "-30.6553"
+     ],
+     "R": 161.29150390625,
+     "psi_R": [
+      "-0.298347",
+      "-0.297747"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      -0.5768053376696148,
+      1.154690232648845
+     ],
+     "leaves": 1194,
+     "note": "max classification radius 503",
+     "ok": true,
+     "runs": 2387
+    },
+    "cover_under": {
+     "interval": [
+      -0.5772026542889572,
+      -0.5768053576696148
+     ],
+     "leaves": 37,
+     "note": "max classification radius 512",
+     "ok": true,
+     "runs": 73
+    },
+    "exit_point": {
+     "e_float": -0.5772026532889573,
+     "e_lo": -0.5772026542889572
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.492280111427135,
+     "D1_upper": 0.0036072249058592964,
+     "E0_lower": 0.7463927587518241,
+     "eta": 1.0302585415415018e-05,
+     "eta2": 0.05,
+     "kappa_max": 1.7320508012788953,
+     "r1_required": 6.717185149814164
+    }
+   },
+   "near_spinodal_law_with_certified_C": [
+    "0.00005949572877085660",
+    "0.00005949572877085662"
+   ],
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "-0.576805347669614877922209230451",
+   "s_direct_T_plus_U": [
+    "0.00005950372738552097",
+    "0.00005950372757637338"
+   ],
+   "s_virial": [
+    "0.00005950372743297857",
+    "0.00005950372747023456"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "8.891E-15",
+    "8.892E-15"
+   ],
+   "tail_radius_R": 765.4998779296875,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "245.6370316405136",
+    "245.6370316405142"
+   ],
+   "S_definition": "S4=s4/lam",
+   "T_GeV": 0.03,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    50.5068359375,
+    51.456298828125
+   ],
+   "d": 4,
+   "eps": 0.3758661029381119,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 245.63703162844823,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -4.9120027601908154e-11,
+   "floating_bounce_relative_deviation": -3.969284202730609e-11,
+   "floating_bounce_s_recomputed": 24.56370316307639,
+   "floating_method": "bounce",
+   "floating_s_star_target": 24.563703162844824,
+   "integration_steps": 55,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-9.27397",
+      "-9.27393"
+     ],
+     "R": 6.07568359375,
+     "psi_R": [
+      "-0.197204",
+      "-0.197203"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      0.32078829716651547,
+      1.1516785787265968
+     ],
+     "leaves": 166,
+     "note": "max classification radius 24.2",
+     "ok": true,
+     "runs": 331
+    },
+    "cover_under": {
+     "interval": [
+      -0.4288160908354735,
+      0.3207882771665155
+     ],
+     "leaves": 68,
+     "note": "max classification radius 24",
+     "ok": true,
+     "runs": 135
+    },
+    "exit_point": {
+     "e_float": -0.4288160898354735,
+     "e_lo": -0.4288160908354735
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.5436474982112065,
+     "D1_upper": 0.0035814665425510693,
+     "E0_lower": 0.7303562557010626,
+     "eta": 6.546485764711457e-08,
+     "eta2": 0.05,
+     "kappa_max": 1.7260043738241224,
+     "r1_required": 10.509988377221465
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "0.320788287166515487821570679207",
+   "s_direct_T_plus_U": [
+    "24.56370316405129",
+    "24.56370316405158"
+   ],
+   "s_virial": [
+    "24.56370316405136",
+    "24.56370316405142"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "7.916E-15",
+    "7.917E-15"
+   ],
+   "tail_radius_R": 37.021484375,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "169.5682963117800",
+    "169.5682963124708"
+   ],
+   "S_definition": "S3/T=(v_T/(sqrt(lam) T)) s3, v_T=v sqrt(1-cT^2/(lam v^2)) in Arb",
+   "T_GeV": 1.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    472.6839599609375,
+    473.9365234375
+   ],
+   "d": 3,
+   "eps": 0.3848992998195777,
+   "eps_exact_dyadic": true,
+   "exact_over_asymptotic_law": [
+    "1.0013002",
+    "1.0013003"
+   ],
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 169.34810504583277,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -0.0012985402995812556,
+   "floating_method": "near_spinodal_asymptotic",
+   "floating_s_star_target": 0.0017850857648422124,
+   "integration_steps": 66,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-9.56619",
+      "-9.56187"
+     ],
+     "R": 49.714111328125,
+     "psi_R": [
+      "-0.289702",
+      "-0.289644"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      -0.5720897773040781,
+      1.1546899770105223
+     ],
+     "leaves": 230,
+     "note": "max classification radius 192",
+     "ok": true,
+     "runs": 459
+    },
+    "cover_under": {
+     "interval": [
+      -0.5759246167695323,
+      -0.572089797304078
+     ],
+     "leaves": 37,
+     "note": "max classification radius 192",
+     "ok": true,
+     "runs": 73
+    },
+    "exit_point": {
+     "e_float": -0.5759246157695324,
+     "e_lo": -0.5759246167695323
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.49306040260592,
+     "D1_upper": 0.00360722243005129,
+     "E0_lower": 0.7463912535707573,
+     "eta": 1.026815523896456e-05,
+     "eta2": 0.05,
+     "kappa_max": 1.732050221141872,
+     "r1_required": 6.719301781630835
+    }
+   },
+   "near_spinodal_law_with_certified_C": [
+    "0.001785085764833645",
+    "0.001785085764833646"
+   ],
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "-0.572089787304078102812225962730",
+   "s_direct_T_plus_U": [
+    "0.001787406784567615",
+    "0.001787406784611173"
+   ],
+   "s_virial": [
+    "0.001787406784580098",
+    "0.001787406784587380"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "1.726E-15",
+    "1.727E-15"
+   ],
+   "tail_radius_R": 296.9522705078125,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "212.6866827974130",
+    "212.6866827974138"
+   ],
+   "S_definition": "S4=s4/lam",
+   "T_GeV": 1.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    53.1446533203125,
+    54.18829345703125
+   ],
+   "d": 4,
+   "eps": 0.37757042628287424,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 212.68668279010845,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -3.434591785443864e-11,
+   "floating_bounce_relative_deviation": -4.847795098747307e-11,
+   "floating_bounce_s_recomputed": 21.268668278710276,
+   "floating_method": "bounce",
+   "floating_s_star_target": 21.268668279010846,
+   "integration_steps": 54,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-7.82942",
+      "-7.82938"
+     ],
+     "R": 6.146484375,
+     "psi_R": [
+      "-0.186449",
+      "-0.186448"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      0.2533944072279908,
+      1.1522502899685807
+     ],
+     "leaves": 167,
+     "note": "max classification radius 25.2",
+     "ok": true,
+     "runs": 333
+    },
+    "cover_under": {
+     "interval": [
+      -0.44395338130079975,
+      0.2533943872279908
+     ],
+     "leaves": 68,
+     "note": "max classification radius 24.9",
+     "ok": true,
+     "runs": 135
+    },
+    "exit_point": {
+     "e_float": -0.4439533803007997,
+     "e_lo": -0.44395338130079975
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.542033339502598,
+     "D1_upper": 0.003586334551513535,
+     "E0_lower": 0.7334135691224669,
+     "eta": 7.01562359620402e-08,
+     "eta2": 0.05,
+     "kappa_max": 1.7271487131174634,
+     "r1_required": 10.459389592791347
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "0.253394397227990788160483862414",
+   "s_direct_T_plus_U": [
+    "21.26866827974118",
+    "21.26866827974161"
+   ],
+   "s_virial": [
+    "21.26866827974130",
+    "21.26866827974138"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "1.076E-14",
+    "1.077E-14"
+   ],
+   "tail_radius_R": 38.439453125,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "150.7529533305962",
+    "150.7529533305979"
+   ],
+   "S_definition": "S3/T=(v_T/(sqrt(lam) T)) s3, v_T=v sqrt(1-cT^2/(lam v^2)) in Arb",
+   "T_GeV": 100.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    113.4013671875,
+    113.78662109375
+   ],
+   "d": 3,
+   "eps": 0.384562461828028,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 150.75295335719963,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": 1.7646453292535442e-10,
+   "floating_bounce_relative_deviation": -3.308513848455959e-10,
+   "floating_bounce_s_recomputed": 0.15890778616038248,
+   "floating_method": "bounce",
+   "floating_s_star_target": 0.1589077862409989,
+   "integration_steps": 58,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-2.43198",
+      "-2.43192"
+     ],
+     "R": 11.417724609375,
+     "psi_R": [
+      "-0.289047",
+      "-0.289043"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      -0.47474108346518157,
+      1.1545783846948792
+     ],
+     "leaves": 134,
+     "note": "max classification radius 49.2",
+     "ok": true,
+     "runs": 267
+    },
+    "cover_under": {
+     "interval": [
+      -0.5492802148160808,
+      -0.47474110346518156
+     ],
+     "leaves": 40,
+     "note": "max classification radius 49",
+     "ok": true,
+     "runs": 79
+    },
+    "exit_point": {
+     "e_float": -0.5492802138160808,
+     "e_lo": -0.5492802148160808
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.507992421840561,
+     "D1_upper": 0.0036062640200521146,
+     "E0_lower": 0.7458056764925036,
+     "eta": 9.566504103010883e-06,
+     "eta2": 0.05,
+     "kappa_max": 1.7318256295486534,
+     "r1_required": 6.764870979423459
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "-0.474741093465181543899064485636",
+   "s_direct_T_plus_U": [
+    "0.1589077862129527",
+    "0.1589077862129641"
+   ],
+   "s_virial": [
+    "0.1589077862129564",
+    "0.1589077862129583"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "3.170E-16",
+    "3.171E-16"
+   ],
+   "tail_radius_R": 81.0728759765625,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "175.4605034840344",
+    "175.4605034840357"
+   ],
+   "S_definition": "S4=s4/lam",
+   "T_GeV": 100.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    57.44775390625,
+    57.5738525390625
+   ],
+   "d": 4,
+   "eps": 0.37941632356566296,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 175.46050345941723,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -1.4030429092731062e-10,
+   "floating_bounce_relative_deviation": -6.304378229589966e-11,
+   "floating_bounce_s_recomputed": 17.54605034729734,
+   "floating_method": "bounce",
+   "floating_s_star_target": 17.546050345941723,
+   "integration_steps": 54,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-8.55796",
+      "-8.55792"
+     ],
+     "R": 7.07080078125,
+     "psi_R": [
+      "-0.194109",
+      "-0.194107"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      0.16507215179970502,
+      1.1528686375710815
+     ],
+     "leaves": 160,
+     "note": "max classification radius 26.1",
+     "ok": true,
+     "runs": 319
+    },
+    "cover_under": {
+     "interval": [
+      -0.46237706962497477,
+      0.16507213179970504
+     ],
+     "leaves": 69,
+     "note": "max classification radius 27.7",
+     "ok": true,
+     "runs": 137
+    },
+    "exit_point": {
+     "e_float": -0.46237706862497474,
+     "e_lo": -0.46237706962497477
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.5389578403810904,
+     "D1_upper": 0.003591602427755962,
+     "E0_lower": 0.736711816746937,
+     "eta": 7.62007794835234e-08,
+     "eta2": 0.05,
+     "kappa_max": 1.728386187627625,
+     "r1_required": 10.399811279616197
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "0.165072141799705022829207456663",
+   "s_direct_T_plus_U": [
+    "17.54605034840326",
+    "17.54605034840398"
+   ],
+   "s_virial": [
+    "17.54605034840344",
+    "17.54605034840357"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "2.169E-14",
+    "2.170E-14"
+   ],
+   "tail_radius_R": 40.2064208984375,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "141.4470373780871",
+    "141.4470373780874"
+   ],
+   "S_definition": "S3/T=(v_T/(sqrt(lam) T)) s3, v_T=v sqrt(1-cT^2/(lam v^2)) in Arb",
+   "T_GeV": 1000.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    55.9794921875,
+    56.1070556640625
+   ],
+   "d": 3,
+   "eps": 0.37898417201042917,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 141.44703737473077,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -2.3729660649739233e-11,
+   "floating_bounce_relative_deviation": -2.4601227220625472e-11,
+   "floating_bounce_s_recomputed": 1.4911898123126985,
+   "floating_method": "bounce",
+   "floating_s_star_target": 1.4911898123139984,
+   "integration_steps": 54,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-1.83320",
+      "-1.83319"
+     ],
+     "R": 5.9410400390625,
+     "psi_R": [
+      "-0.285627",
+      "-0.285626"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      -0.15569633026825694,
+      1.152716640712578
+     ],
+     "leaves": 122,
+     "note": "max classification radius 25.7",
+     "ok": true,
+     "runs": 243
+    },
+    "cover_under": {
+     "interval": [
+      -0.45782808038510114,
+      -0.15569635026825696
+     ],
+     "leaves": 37,
+     "note": "max classification radius 25.5",
+     "ok": true,
+     "runs": 73
+    },
+    "exit_point": {
+     "e_float": -0.4578280793851011,
+     "e_lo": -0.45782808038510114
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.539830649364176,
+     "D1_upper": 0.003590369560162778,
+     "E0_lower": 0.7359409691235868,
+     "eta": 7.386809832925998e-06,
+     "eta2": 0.05,
+     "kappa_max": 1.7280966555382438,
+     "r1_required": 6.942879419360737
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "-0.155696340268256944771974818407",
+   "s_direct_T_plus_U": [
+    "1.491189812349377",
+    "1.491189812349392"
+   ],
+   "s_virial": [
+    "1.491189812349382",
+    "1.491189812349385"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "2.817E-16",
+    "2.818E-16"
+   ],
+   "tail_radius_R": 42.2044677734375,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "156.8145728018075",
+    "156.8145728018080"
+   ],
+   "S_definition": "S4=s4/lam",
+   "T_GeV": 1000.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    60.5478515625,
+    59.676513671875
+   ],
+   "d": 4,
+   "eps": 0.3802960977046331,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 156.81457279005448,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -7.495021753512909e-11,
+   "floating_bounce_relative_deviation": -7.492017633261889e-11,
+   "floating_bounce_s_recomputed": 15.68145727900592,
+   "floating_method": "bounce",
+   "floating_s_star_target": 15.681457279005448,
+   "integration_steps": 55,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-7.18558",
+      "-7.18555"
+     ],
+     "R": 7.131103515625,
+     "psi_R": [
+      "-0.185021",
+      "-0.185019"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      0.11498774876448493,
+      1.1531630367663932
+     ],
+     "leaves": 168,
+     "note": "max classification radius 28.5",
+     "ok": true,
+     "runs": 335
+    },
+    "cover_under": {
+     "interval": [
+      -0.4722009322449615,
+      0.11498772876448493
+     ],
+     "leaves": 72,
+     "note": "max classification radius 28.3",
+     "ok": true,
+     "runs": 143
+    },
+    "exit_point": {
+     "e_float": -0.4722009312449615,
+     "e_lo": -0.4722009322449615
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.536819109759367,
+     "D1_upper": 0.0035941115088280354,
+     "E0_lower": 0.7382783882322286,
+     "eta": 7.957881098090841e-08,
+     "eta2": 0.05,
+     "kappa_max": 1.7289752799554274,
+     "r1_required": 10.368929427057502
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "0.114987738764484936551569948080",
+   "s_direct_T_plus_U": [
+    "15.68145728018066",
+    "15.68145728018097"
+   ],
+   "s_virial": [
+    "15.68145728018075",
+    "15.68145728018081"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "7.244E-15",
+    "7.245E-15"
+   ],
+   "tail_radius_R": 43.0772705078125,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "137.0060716122874",
+    "137.0060716122876"
+   ],
+   "S_definition": "S3/T=(v_T/(sqrt(lam) T)) s3, v_T=v sqrt(1-cT^2/(lam v^2)) in Arb",
+   "T_GeV": 2999.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    41.9359130859375,
+    42.0537109375
+   ],
+   "d": 3,
+   "eps": 0.3641275879359179,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 137.0060716111574,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -8.248568819415517e-12,
+   "floating_bounce_relative_deviation": -8.216772828385412e-12,
+   "floating_bounce_s_recomputed": 4.336488617300436,
+   "floating_method": "bounce",
+   "floating_s_star_target": 4.336488617300297,
+   "integration_steps": 53,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-2.51465",
+      "-2.51464"
+     ],
+     "R": 5.0645751953125,
+     "psi_R": [
+      "-0.309554",
+      "-0.309553"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      0.19003265465198033,
+      1.1477149677777854
+     ],
+     "leaves": 122,
+     "note": "max classification radius 19.5",
+     "ok": true,
+     "runs": 243
+    },
+    "cover_under": {
+     "interval": [
+      -0.3484577871685467,
+      0.1900326346519803
+     ],
+     "leaves": 35,
+     "note": "max classification radius 19.5",
+     "ok": true,
+     "runs": 69
+    },
+    "exit_point": {
+     "e_float": -0.34845778616854667,
+     "e_lo": -0.3484577871685467
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.5384579090218553,
+     "D1_upper": 0.003547828618594996,
+     "E0_lower": 0.7090625742439162,
+     "eta": 5.223736302775023e-06,
+     "eta2": 0.05,
+     "kappa_max": 1.7180759337198706,
+     "r1_required": 7.203072331455007
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "0.190032644651980312531998765855",
+   "s_direct_T_plus_U": [
+    "4.336488617336062",
+    "4.336488617336075"
+   ],
+   "s_virial": [
+    "4.336488617336065",
+    "4.336488617336069"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "4.630E-16",
+    "4.631E-16"
+   ],
+   "tail_radius_R": 31.3734130859375,
+   "virial_and_direct_overlap": true
+  },
+  {
+   "S_certified": [
+    "147.9069327125237",
+    "147.9069327125243"
+   ],
+   "S_definition": "S4=s4/lam",
+   "T_GeV": 2999.0,
+   "bracket_hi_class": "over",
+   "bracket_lo_class": "under",
+   "certified": true,
+   "classification_radius": [
+    61.7435302734375,
+    61.8841552734375
+   ],
+   "d": 4,
+   "eps": 0.38070302497916697,
+   "eps_exact_dyadic": true,
+   "exists_overshoot_undershoot": true,
+   "floating_S_star": 147.90693270050565,
+   "floating_S_star_inside": false,
+   "floating_S_star_relative_deviation": -8.125595307943737e-11,
+   "floating_bounce_relative_deviation": -8.11962395417179e-11,
+   "floating_bounce_s_recomputed": 14.790693270051449,
+   "floating_method": "bounce",
+   "floating_s_star_target": 14.790693270050564,
+   "integration_steps": 55,
+   "least_action": {
+    "box": {
+     "Delta": "1/100000000",
+     "Psi_R": [
+      "-6.54163",
+      "-6.54160"
+     ],
+     "R": 7.157470703125,
+     "psi_R": [
+      "-0.180716",
+      "-0.180715"
+     ],
+     "status": "unique"
+    },
+    "cover_over": {
+     "interval": [
+      0.0894759499207017,
+      1.1532991390402156
+     ],
+     "leaves": 167,
+     "note": "max classification radius 29",
+     "ok": true,
+     "runs": 333
+    },
+    "cover_under": {
+     "interval": [
+      -0.47704811225424515,
+      0.0894759299207017
+     ],
+     "leaves": 75,
+     "note": "max classification radius 28.8",
+     "ok": true,
+     "runs": 149
+    },
+    "exit_point": {
+     "e_float": -0.4770481112542451,
+     "e_lo": -0.47704811225424515
+    },
+    "least_action": true,
+    "near_true_vacuum": {
+     "A_upper": 2.535635974039284,
+     "D1_upper": 0.003595271690980076,
+     "E0_lower": 0.7390016702420203,
+     "eta": 8.128622167989278e-08,
+     "eta2": 0.05,
+     "kappa_max": 1.7292476036752817,
+     "r1_required": 10.35391663458185
+    }
+   },
+   "phi0_bracket_half_width": "1e-20",
+   "phi0_seed": "0.0894759399207017009866767773217",
+   "s_direct_T_plus_U": [
+    "14.79069327125227",
+    "14.79069327125261"
+   ],
+   "s_virial": [
+    "14.79069327125237",
+    "14.79069327125243"
+   ],
+   "tail_bound_on_int_r^{d-1}phi_prime^2": [
+    "8.506E-15",
+    "8.507E-15"
+   ],
+   "tail_radius_R": 43.7891845703125,
+   "virial_and_direct_overlap": true
+  }
+ ],
+ "cubic": {
+  "potential": "w^2/2-w^3/3, false vacuum w=0",
+  "rows": {
+   "3": {
+    "bracket_hi_class": "over",
+    "bracket_lo_class": "under",
+    "certified": true,
+    "classification_radius": [
+     26.951187133789062,
+     26.863052368164062
+    ],
+    "exists_overshoot_undershoot": true,
+    "floating_relative_deviation": -1.1147941710873639e-13,
+    "floating_wall_nucleation": 43.66023671624231,
+    "integration_steps": 50,
+    "phi0_bracket_half_width": "1e-20",
+    "phi0_seed": "4.19168295444251912677663603733",
+    "s_direct_T_plus_U": [
+     "43.66023671624716",
+     "43.66023671624719"
+    ],
+    "s_virial": [
+     "43.66023671624716",
+     "43.66023671624719"
+    ],
+    "tail_bound_on_int_r^{d-1}phi_prime^2": [
+     "3.308E-16",
+     "3.309E-16"
+    ],
+    "tail_radius_R": 20.628433227539062,
+    "virial_and_direct_overlap": true
+   },
+   "4": {
+    "bracket_hi_class": "over",
+    "bracket_lo_class": "under",
+    "certified": true,
+    "classification_radius": [
+     26.574447631835938,
+     26.551376342773438
+    ],
+    "exists_overshoot_undershoot": true,
+    "floating_relative_deviation": 5.853167726854704e-14,
+    "floating_wall_nucleation": 204.4284433419212,
+    "integration_steps": 53,
+    "phi0_bracket_half_width": "1e-20",
+    "phi0_seed": "8.67193429998679269811000860073",
+    "s_direct_T_plus_U": [
+     "204.4284433419091",
+     "204.4284433419094"
+    ],
+    "s_virial": [
+     "204.4284433419092",
+     "204.4284433419093"
+    ],
+    "tail_bound_on_int_r^{d-1}phi_prime^2": [
+     "2.020E-15",
+     "2.021E-15"
+    ],
+    "tail_radius_R": 19.847763061523438,
+    "virial_and_direct_overlap": true
+   }
+  },
+  "uniqueness": "Positive radial solution of Delta w=w-w^2 vanishing at infinity is unique (Kwong 1989; p=2 is subcritical for d=3,4), so the certified bounce is the least-action one."
+ },
+ "input_wall_nucleation_receipt_sha256": "27d3fdc2ce1630d637c45d0e13eeca5f5bbc8c28515758b8b32e72f237a2a6a1",
+ "integrator": {
+  "covering": {
+   "precision_bits": 96,
+   "taylor_order": 24
+  },
+  "per_step_tolerance": 1e-32,
+  "phi0_bracket_half_width": "1e-20",
+  "precision_bits": 160,
+  "tail_start_u_below": 1e-09,
+  "taylor_order": 36
+ },
+ "method": "Interval-certified O(3) and O(4) bounce actions (Arb), item N40 part 2.",
+ "not_claimed": [
+  "Corrected (one-loop CW / thermal / two-loop) potentials: they contain log|m^2(phi)| (non-analytic inside the bounce) and spline-interpolated thermal functions; no enclosure of those bounces is given.",
+  "The near-spinodal law s=C_d (eps_sp-eps)^{(6-d)/4} is asymptotic; only C_d and the exact actions at the benchmark biases are certified.",
+  "The critical biases eps* themselves are floating roots; the actions are certified at those (exact dyadic) eps.",
+  "Fluctuation determinant (still the declared exp(+-20) band) and the three-field sandwich factor.",
+  "Least-action identification relies on the Coleman-Glaser-Martin theorem (minimiser radial, monotone, values in [f,t]) and, for the cubic, on Kwong's uniqueness theorem; these are cited, not re-proved."
+ ],
+ "spinodal_constants": {
+  "C3": {
+   "certified": [
+    "62.14844908992001",
+    "62.14844908992003"
+   ],
+   "floating_relative_deviation": -1.1170033411987615e-13,
+   "floating_wall_nucleation": 62.14844908991308,
+   "formula": "C_d=(2*3^(1/4))^((6-d)/2) s_cubic(d)/3",
+   "quoted_value": "62.148",
+   "quoted_value_is_certified_rounding": true
+  },
+  "C4": {
+   "certified": [
+    "179.3619745270784",
+    "179.3619745270785"
+   ],
+   "floating_relative_deviation": 5.847176252085557e-14,
+   "floating_wall_nucleation": 179.36197452708896,
+   "formula": "C_d=(2*3^(1/4))^((6-d)/2) s_cubic(d)/3",
+   "quoted_value": "179.36",
+   "quoted_value_is_certified_rounding": true
+  }
+ },
+ "summary": {
+  "all_existence_certified": true,
+  "all_least_action_certified": true,
+  "floating_bounce_values_max_relative_deviation": 3.308513848455959e-10,
+  "near_spinodal_rows": [
+   {
+    "S_certified": [
+     "188.1673079580329",
+     "188.1673080758468"
+    ],
+    "T_GeV": 0.03,
+    "exact_over_asymptotic_law": [
+     "1.0001344",
+     "1.0001345"
+    ],
+    "floating_S_star_from_asymptotic_law": 188.1420136032488
+   },
+   {
+    "S_certified": [
+     "169.5682963117800",
+     "169.5682963124708"
+    ],
+    "T_GeV": 1.0,
+    "exact_over_asymptotic_law": [
+     "1.0013002",
+     "1.0013003"
+    ],
+    "floating_S_star_from_asymptotic_law": 169.34810504583277
+   }
+  ]
+ }
+}
