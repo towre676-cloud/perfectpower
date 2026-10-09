@@ -1,22 +1,22 @@
 {
   "schema": "pp-current-frontier/1",
   "date": "2026-10-09",
-  "base_commit": "ca0b7e72650921638084ac3e7a971cec7ee0eb50",
+  "base_commit": "e2977b5d7fd1b41e45d95f7d7296955c874ca69a",
   "scope": "Current response to the 25-flaw review; implemented does not assert formal program verification.",
   "findings": [
     {
       "id": 1,
       "title": "Compiler proof boundary",
       "status": "bounded_route_delivered",
-      "contract": "Original-equation queries now cover general square-plus-nonzero-constant polynomials, divisor-based pullbacks of five classical Mordell sources and the descent atlas, plus general-D Pell families. Whole Python compiler refinement remains open.",
-      "evidence": "docs/FAMILY_ENGINE_MONOGRAPH.md"
+      "contract": "Automatic coefficient recognition now emits complete original-coordinate proofs for supported square/cubic pullbacks and positive-leading quadratics, including scaled and generalized Pell routes. Whole Python compiler refinement remains open.",
+      "evidence": "docs/ORBIT_REDUCTION_MONOGRAPH.md"
     },
     {
       "id": 2,
       "title": "Mordell global completeness",
       "status": "open",
-      "contract": "Global integral emptiness is checked for 1,026 descent source curves outside the hard 457 completion set. The 457 curve-specific rank, saturation and coordinate-bound obligations remain open.",
-      "evidence": "docs/FAMILY_ENGINE_MONOGRAPH.md"
+      "contract": "All 457 retained census bases now have unconditional actual rational-group saturation-at-2 proofs. Curve-specific rank upper bounds, saturation at other primes and global integral coordinate bounds remain open. The separate 1,026 descent curves retain global emptiness proofs.",
+      "evidence": "docs/ORBIT_REDUCTION_MONOGRAPH.md"
     },
     {
       "id": 3,
@@ -50,8 +50,8 @@
       "id": 7,
       "title": "Population rank/select execution",
       "status": "bounded_route_delivered",
-      "contract": "Divisor-based complete fibres and binary Pell powering feed checked global selections, signed populations and exact count-only queries. General Python execution refinement remains open.",
-      "evidence": "docs/FAMILY_ENGINE_MONOGRAPH.md"
+      "contract": "Generalized Pell norm equations now have complete finite seed covers, signed cutoff populations and binary-powered selections with unique per-orbit ranks. Merged infinite ordering and general Python execution refinement remain open.",
+      "evidence": "docs/ORBIT_REDUCTION_MONOGRAPH.md"
     },
     {
       "id": 8,
@@ -64,15 +64,15 @@
       "id": 9,
       "title": "Number-ring orbit completion",
       "status": "open",
-      "contract": "General norm representatives and effective exponent bounds remain open.",
-      "evidence": "docs/UNIT_LATTICES_WEIL_MONOGRAPH.md"
+      "contract": "Quadratic norm equations now have proved executable terminal representatives within explicit work budgets. Higher number-ring orbit representatives and effective exponent bounds remain open.",
+      "evidence": "docs/ORBIT_REDUCTION_MONOGRAPH.md"
     },
     {
       "id": 10,
       "title": "Runge recognition and cost",
       "status": "bounded_route_delivered",
-      "contract": "Bounded original-polynomial route does not require Runge leading-coefficient recognition; global recognition and sharper bounds remain open.",
-      "evidence": "PerfectPower/BoundedNative.lean"
+      "contract": "Automatic exact square/cubic coefficient recognition, scaled-square quadratics and positive-leading quadratic norm recognition now reach proved engines. Arbitrary Runge recognition and sharper general bounds remain open.",
+      "evidence": "docs/ORBIT_REDUCTION_MONOGRAPH.md"
     },
     {
       "id": 11,
@@ -141,8 +141,8 @@
       "id": 20,
       "title": "Resource-heavy proof reproduction",
       "status": "bounded_route_delivered",
-      "contract": "New checker uses Std-only library and compiles without Mathlib; historical heavy modules retain their cost.",
-      "evidence": "PerfectPower/BoundedNative.lean"
+      "contract": "Standalone bounded queries retain the Std-only option. Generalized Pell and actual elliptic-group engines require pinned Mathlib; the census audit uses separate proof blocks to control memory. Historical heavy modules retain their cost.",
+      "evidence": "docs/ORBIT_REDUCTION_MONOGRAPH.md"
     },
     {
       "id": 21,

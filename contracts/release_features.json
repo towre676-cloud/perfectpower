@@ -130,6 +130,34 @@
         "test_checked_family_push.py"
       ],
       "kernel_required": true
+    },
+    {
+      "name": "automatic_reductions_and_pell_orbits",
+      "files": [
+        "PerfectPower/AutomaticReduction.lean",
+        "PerfectPower/PellOrbitCore.lean",
+        "PerfectPower/PellOrbitPopulation.lean",
+        "python/perfectpower/automatic_population.py",
+        "python/perfectpower/checked_pell_orbits.py",
+        "scripts/check_orbit_reduction.sh"
+      ],
+      "tests": [
+        "test_orbit_reduction_push.py"
+      ],
+      "kernel_required": true
+    },
+    {
+      "name": "mordell_census_actual_two_saturation",
+      "files": [
+        "PerfectPower/MordellParity.lean",
+        "python/develop_mordell_parity.py",
+        "python/record_mordell_parity.py",
+        "scripts/check_mordell_parity.sh"
+      ],
+      "tests": [
+        "test_mordell_parity.py"
+      ],
+      "kernel_required": true
     }
   ]
 }

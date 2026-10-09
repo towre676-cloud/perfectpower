@@ -455,3 +455,7 @@ import PerfectPower.MordellCompletionBridge
 import PerfectPower.FlavorRGCensus
 import PerfectPower.WeightedBlockAddresses
 import PerfectPower.SpectralTrace
+
+import PerfectPower.PellOrbitPopulation
+import PerfectPower.AutomaticReduction
+import PerfectPower.MordellParity

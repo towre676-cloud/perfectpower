@@ -30,6 +30,10 @@ def main():
     add_family_commands(sub)
     from .checked_pell_family import add_commands as add_pell_family_commands
     add_pell_family_commands(sub)
+    from .checked_pell_orbits import add_commands as add_orbit_commands
+    add_orbit_commands(sub)
+    from .automatic_population import add_commands as add_auto_commands
+    add_auto_commands(sub)
     from .checked_factorial_unit import add_commands as add_unit_commands
     add_unit_commands(sub)
     from .checked_landau import add_commands as add_landau_commands
@@ -196,6 +200,10 @@ def main():
     from .checked_pell_population import cli as pell_cli
     from .checked_family_population import cli as family_cli
     from .checked_pell_family import cli as pell_family_cli
+    from .checked_pell_orbits import cli as orbit_cli
+    from .automatic_population import cli as auto_cli
+    if orbit_cli(args) or auto_cli(args):
+        return
     if family_cli(args) or pell_family_cli(args):
         return
     if nonlinear_cli(args) or pell_cli(args):

@@ -44,9 +44,26 @@ def main():
                rational_to_finite_group_reduction='native evidence; Lean connection unproved',
                lean_complete_basis_proved=False,lean_integral_list_proved=False)
           for row in completion['rows']]
+    parity_path=ROOT/'receipts/mordell_parity_atlas.json'
+    parity_count=0
+    if parity_path.exists():
+        parity=json.loads(parity_path.read_text())
+        if parity['proof_status']!='kernel_checked' or parity['formally_completed_curves']!=0:
+            raise ValueError('invalid parity-only closure receipt')
+        for name,digest in parity['source_sha256'].items():
+            if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:
+                raise ValueError('parity closure source changed')
+        covered={row['k'] for row in parity['rows']}
+        if covered!={row['k'] for row in rows}:raise ValueError('parity census coverage mismatch')
+        parity_count=len(covered)
+        for row in rows:
+            row.update(saturation_at_2='proved in Lean for retained basis',
+                saturation_at_other_primes='curve-specific proofs still open',
+                parity_proof_receipt='receipts/mordell_parity_atlas.json')
     packet=dict(schema='pp-mordell-formal-completion/1',status='partial; global curve proofs open',
                 bridge_kernel_checks='passed',audited_declarations=declarations,
                 computationally_complete_curves=len(rows),formally_completed_curves=0,
+                curves_with_proved_two_saturation=parity_count,
                 source_sha256={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in SOURCES},
                 log_sha256={p:hashlib.sha256(log.encode()).hexdigest() for p,log in logs.items()},
                 rows=rows,scope='generic composition and bounded enumeration only; no external Boolean is imported as a mathematical proof')

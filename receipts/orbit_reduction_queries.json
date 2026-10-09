@@ -1,0 +1,1525 @@
+{
+  "schema": "pp-orbit-reduction-replay/1",
+  "complete": true,
+  "records": [
+    {
+      "name": "two_orbits_rank1000",
+      "specification": {
+        "D": 2,
+        "norm": 7,
+        "cutoff": 100,
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "domain": "integer",
+        "global_ranks": [
+          {
+            "orbit": 0,
+            "rank": 1000
+          },
+          {
+            "orbit": 1,
+            "rank": 1000
+          }
+        ],
+        "seed_budget": 4096,
+        "work_limit": 4096
+      },
+      "source_count": 20,
+      "source_points": [
+        [
+          -53,
+          -75
+        ],
+        [
+          -53,
+          75
+        ],
+        [
+          -19,
+          -27
+        ],
+        [
+          -19,
+          27
+        ],
+        [
+          -9,
+          -13
+        ],
+        [
+          -9,
+          13
+        ],
+        [
+          -3,
+          -5
+        ],
+        [
+          -3,
+          5
+        ],
+        [
+          -1,
+          -3
+        ],
+        [
+          -1,
+          3
+        ],
+        [
+          1,
+          -3
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          3,
+          -5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          9,
+          -13
+        ],
+        [
+          9,
+          13
+        ],
+        [
+          19,
+          -27
+        ],
+        [
+          19,
+          27
+        ],
+        [
+          53,
+          -75
+        ],
+        [
+          53,
+          75
+        ]
+      ],
+      "results": [
+        {
+          "points": [
+            [
+              -53,
+              -75
+            ],
+            [
+              -53,
+              75
+            ],
+            [
+              1,
+              -3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              19,
+              -27
+            ],
+            [
+              19,
+              27
+            ]
+          ],
+          "count": 6,
+          "selections": [
+            {
+              "rank": 0,
+              "point": [
+                -53,
+                -75
+              ]
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": {
+            "value": 9,
+            "points": [
+              [
+                1,
+                -3
+              ],
+              [
+                1,
+                3
+              ]
+            ]
+          }
+        }
+      ],
+      "specification_sha256": "d733e2ad58fbb1fbacf7e9b6848076c5f7505d548e172bf815c52ee057e22de8",
+      "source_sha256": "dc4668257fc70b7ee7a0444d2dcf85dd53e3fd56d7931f7a39410e064ac7f4a3",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723"
+      },
+      "log_sha256": "e23358af90dd77bcbb5b2ca3443374f27c9bed48d8d9bd994b22e869be7de62c",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete declared-domain solutions of y\u00b2-D*x\u00b2=norm within the absolute input cutoff; global ranks are within the named seed orbit"
+    },
+    {
+      "name": "negative_norm_zero_root",
+      "specification": {
+        "D": 3,
+        "norm": -3,
+        "cutoff": 100,
+        "queries": [
+          {
+            "condition": true,
+            "ranks": [],
+            "objective": null
+          }
+        ],
+        "domain": "integer",
+        "global_ranks": [],
+        "seed_budget": 4096,
+        "work_limit": 4096
+      },
+      "source_count": 18,
+      "source_points": [
+        [
+          -97,
+          -168
+        ],
+        [
+          -97,
+          168
+        ],
+        [
+          -26,
+          -45
+        ],
+        [
+          -26,
+          45
+        ],
+        [
+          -7,
+          -12
+        ],
+        [
+          -7,
+          12
+        ],
+        [
+          -2,
+          -3
+        ],
+        [
+          -2,
+          3
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          -3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          -12
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          26,
+          -45
+        ],
+        [
+          26,
+          45
+        ],
+        [
+          97,
+          -168
+        ],
+        [
+          97,
+          168
+        ]
+      ],
+      "results": [
+        {
+          "points": [
+            [
+              -97,
+              -168
+            ],
+            [
+              -97,
+              168
+            ],
+            [
+              -26,
+              -45
+            ],
+            [
+              -26,
+              45
+            ],
+            [
+              -7,
+              -12
+            ],
+            [
+              -7,
+              12
+            ],
+            [
+              -2,
+              -3
+            ],
+            [
+              -2,
+              3
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              -3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              7,
+              -12
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              26,
+              -45
+            ],
+            [
+              26,
+              45
+            ],
+            [
+              97,
+              -168
+            ],
+            [
+              97,
+              168
+            ]
+          ],
+          "count": 18,
+          "selections": [],
+          "minimum": null
+        }
+      ],
+      "specification_sha256": "607be290524ba26ec8c829115b73d800ec42d3ad19e0bc9dee15afadf34f4157",
+      "source_sha256": "b4b8897879552b59d66af599708af607b14cde0f608962c4720ec6122ae75096",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723"
+      },
+      "log_sha256": "0183f115b830142445e2621477a6890c07000205f9a8a8b3c08be31ca9e13c2f",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete declared-domain solutions of y\u00b2-D*x\u00b2=norm within the absolute input cutoff; global ranks are within the named seed orbit"
+    },
+    {
+      "name": "zero_norm",
+      "specification": {
+        "D": 2,
+        "norm": 0,
+        "cutoff": 100,
+        "queries": [
+          {
+            "condition": true,
+            "ranks": [],
+            "objective": null
+          }
+        ],
+        "domain": "integer",
+        "global_ranks": [],
+        "seed_budget": 4096,
+        "work_limit": 4096
+      },
+      "source_count": 1,
+      "source_points": [
+        [
+          0,
+          0
+        ]
+      ],
+      "results": [
+        {
+          "points": [
+            [
+              0,
+              0
+            ]
+          ],
+          "count": 1,
+          "selections": [],
+          "minimum": null
+        }
+      ],
+      "specification_sha256": "4e58f1dcb7a810233253d0e233e9b0755acc6069382687befff56c725f065b58",
+      "source_sha256": "cf50d2c8f77c450c3de77c2950642355026617387b28064985fcd0eb32ff6cd9",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723"
+      },
+      "log_sha256": "47d113e4f440fad6567365308620a3da1026d2148b7e13bf1cb80219e9e0b7b3",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete declared-domain solutions of y\u00b2-D*x\u00b2=norm within the absolute input cutoff; global ranks are within the named seed orbit"
+    },
+    {
+      "name": "empty_norm",
+      "specification": {
+        "D": 2,
+        "norm": 3,
+        "cutoff": 100,
+        "queries": [
+          {
+            "condition": true,
+            "ranks": [],
+            "objective": null
+          }
+        ],
+        "domain": "integer",
+        "global_ranks": [],
+        "seed_budget": 4096,
+        "work_limit": 4096
+      },
+      "source_count": 0,
+      "source_points": [],
+      "results": [
+        {
+          "points": [],
+          "count": 0,
+          "selections": [],
+          "minimum": null
+        }
+      ],
+      "specification_sha256": "58cb826bd53cd115c5a6ab459ea56985f941a13e24c7b4a7b50572d109382077",
+      "source_sha256": "d86aaffb3c669a06b830fad963708db076afba37da6ab72282f9af018a7170ee",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723"
+      },
+      "log_sha256": "38ee27444f159b99a782af78fe6b49b499ecd2d7264fdc5b3ae358b90673ee4b",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete declared-domain solutions of y\u00b2-D*x\u00b2=norm within the absolute input cutoff; global ranks are within the named seed orbit"
+    },
+    {
+      "name": "square",
+      "specification": {
+        "coefficients": [
+          15,
+          0,
+          1
+        ],
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "cutoff": null,
+        "domain": "integer",
+        "work_limit": 4096,
+        "seed_budget": 4096
+      },
+      "source_count": 8,
+      "source_points": [
+        [
+          -7,
+          -8
+        ],
+        [
+          -7,
+          8
+        ],
+        [
+          -1,
+          -4
+        ],
+        [
+          -1,
+          4
+        ],
+        [
+          1,
+          -4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          7,
+          -8
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "results": [
+        {
+          "points": [
+            [
+              1,
+              -4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              7,
+              -8
+            ],
+            [
+              7,
+              8
+            ]
+          ],
+          "count": 4,
+          "selections": [
+            {
+              "rank": 0,
+              "point": [
+                1,
+                -4
+              ]
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": {
+            "value": 16,
+            "points": [
+              [
+                1,
+                -4
+              ],
+              [
+                1,
+                4
+              ]
+            ]
+          }
+        }
+      ],
+      "specification_sha256": "f6b4eb492b267abf21c4de9cd8bbe46af1ca481fbce2f0b47bef2f69e6949e40",
+      "source_sha256": "cf1336bbeee06c2c7102246c11594e07263bf2006eca5ddf7342db1940163ffb",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+        "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+        "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+        "DivisorPopulation": "f65ca5ee0e4cb740c9211c26ec2c2879c9ef98ed22c63c01b79dd78676761f8f",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723",
+        "AutomaticReduction": "c319c8124518c0bc94db7773129a3a98b00a61a7d7b010e23dbe1144332624a0"
+      },
+      "log_sha256": "b6b47f48329f2d2c0624257107bb23f9de222d2ac1f1ec838ee6596057fbbdef",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete original square equation in the declared input domain, globally over all input coordinates"
+    },
+    {
+      "name": "scaled_square",
+      "specification": {
+        "coefficients": [
+          1,
+          1,
+          1
+        ],
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "cutoff": null,
+        "domain": "integer",
+        "work_limit": 4096,
+        "seed_budget": 4096
+      },
+      "source_count": 4,
+      "source_points": [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "results": [
+        {
+          "points": [],
+          "count": 0,
+          "selections": [
+            {
+              "rank": 0,
+              "point": null
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": null
+        }
+      ],
+      "specification_sha256": "1be525a4668e3fd3687551a9b87523580daa88c6a89a780c963ab966125ce4fa",
+      "source_sha256": "4ccff1ffaeb9a030808bdaae8e5ce8911c02e284d235d08e228bc936021ebb76",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+        "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+        "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+        "DivisorPopulation": "f65ca5ee0e4cb740c9211c26ec2c2879c9ef98ed22c63c01b79dd78676761f8f",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723",
+        "AutomaticReduction": "c319c8124518c0bc94db7773129a3a98b00a61a7d7b010e23dbe1144332624a0"
+      },
+      "log_sha256": "74dd6266d0d53176071934edde4077a67071badb63398026f1cf2a3892ee4c5b",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete original square equation in the declared input domain, globally over all input coordinates"
+    },
+    {
+      "name": "quadratic_large",
+      "specification": {
+        "coefficients": [
+          1,
+          1,
+          2
+        ],
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "cutoff": 1000000000000,
+        "domain": "integer",
+        "work_limit": 4096,
+        "seed_budget": 4096
+      },
+      "source_count": 66,
+      "source_points": [
+        [
+          -405330793824,
+          -573224305873
+        ],
+        [
+          -405330793824,
+          573224305873
+        ],
+        [
+          -145613270975,
+          -205928262674
+        ],
+        [
+          -145613270975,
+          205928262674
+        ],
+        [
+          -11931824528,
+          -16874148071
+        ],
+        [
+          -11931824528,
+          16874148071
+        ],
+        [
+          -4286454483,
+          -6061962064
+        ],
+        [
+          -4286454483,
+          6061962064
+        ],
+        [
+          -351240120,
+          -496728541
+        ],
+        [
+          -351240120,
+          496728541
+        ],
+        [
+          -126181439,
+          -178447502
+        ],
+        [
+          -126181439,
+          178447502
+        ],
+        [
+          -10339544,
+          -14622323
+        ],
+        [
+          -10339544,
+          14622323
+        ],
+        [
+          -3714435,
+          -5253004
+        ],
+        [
+          -3714435,
+          5253004
+        ],
+        [
+          -304368,
+          -430441
+        ],
+        [
+          -304368,
+          430441
+        ],
+        [
+          -109343,
+          -154634
+        ],
+        [
+          -109343,
+          154634
+        ],
+        [
+          -8960,
+          -12671
+        ],
+        [
+          -8960,
+          12671
+        ],
+        [
+          -3219,
+          -4552
+        ],
+        [
+          -3219,
+          4552
+        ],
+        [
+          -264,
+          -373
+        ],
+        [
+          -264,
+          373
+        ],
+        [
+          -95,
+          -134
+        ],
+        [
+          -95,
+          134
+        ],
+        [
+          -8,
+          -11
+        ],
+        [
+          -8,
+          11
+        ],
+        [
+          -3,
+          -4
+        ],
+        [
+          -3,
+          4
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          -2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          16,
+          -23
+        ],
+        [
+          16,
+          23
+        ],
+        [
+          45,
+          -64
+        ],
+        [
+          45,
+          64
+        ],
+        [
+          552,
+          -781
+        ],
+        [
+          552,
+          781
+        ],
+        [
+          1537,
+          -2174
+        ],
+        [
+          1537,
+          2174
+        ],
+        [
+          18760,
+          -26531
+        ],
+        [
+          18760,
+          26531
+        ],
+        [
+          52221,
+          -73852
+        ],
+        [
+          52221,
+          73852
+        ],
+        [
+          637296,
+          -901273
+        ],
+        [
+          637296,
+          901273
+        ],
+        [
+          1773985,
+          -2508794
+        ],
+        [
+          1773985,
+          2508794
+        ],
+        [
+          21649312,
+          -30616751
+        ],
+        [
+          21649312,
+          30616751
+        ],
+        [
+          60263277,
+          -85225144
+        ],
+        [
+          60263277,
+          85225144
+        ],
+        [
+          735439320,
+          -1040068261
+        ],
+        [
+          735439320,
+          1040068261
+        ],
+        [
+          2047177441,
+          -2895146102
+        ],
+        [
+          2047177441,
+          2895146102
+        ],
+        [
+          24983287576,
+          -35331704123
+        ],
+        [
+          24983287576,
+          35331704123
+        ],
+        [
+          69543769725,
+          -98349742324
+        ],
+        [
+          69543769725,
+          98349742324
+        ],
+        [
+          848696338272,
+          -1200237871921
+        ],
+        [
+          848696338272,
+          1200237871921
+        ]
+      ],
+      "results": [
+        {
+          "points": [
+            [
+              -145613270975,
+              -205928262674
+            ],
+            [
+              -145613270975,
+              205928262674
+            ],
+            [
+              -11931824528,
+              -16874148071
+            ],
+            [
+              -11931824528,
+              16874148071
+            ],
+            [
+              -126181439,
+              -178447502
+            ],
+            [
+              -126181439,
+              178447502
+            ],
+            [
+              -10339544,
+              -14622323
+            ],
+            [
+              -10339544,
+              14622323
+            ],
+            [
+              -109343,
+              -154634
+            ],
+            [
+              -109343,
+              154634
+            ],
+            [
+              -8960,
+              -12671
+            ],
+            [
+              -8960,
+              12671
+            ],
+            [
+              -95,
+              -134
+            ],
+            [
+              -95,
+              134
+            ],
+            [
+              -8,
+              -11
+            ],
+            [
+              -8,
+              11
+            ],
+            [
+              1,
+              -2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              16,
+              -23
+            ],
+            [
+              16,
+              23
+            ],
+            [
+              1537,
+              -2174
+            ],
+            [
+              1537,
+              2174
+            ],
+            [
+              18760,
+              -26531
+            ],
+            [
+              18760,
+              26531
+            ],
+            [
+              1773985,
+              -2508794
+            ],
+            [
+              1773985,
+              2508794
+            ],
+            [
+              21649312,
+              -30616751
+            ],
+            [
+              21649312,
+              30616751
+            ],
+            [
+              2047177441,
+              -2895146102
+            ],
+            [
+              2047177441,
+              2895146102
+            ],
+            [
+              24983287576,
+              -35331704123
+            ],
+            [
+              24983287576,
+              35331704123
+            ]
+          ],
+          "count": 32,
+          "selections": [
+            {
+              "rank": 0,
+              "point": [
+                -145613270975,
+                -205928262674
+              ]
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": {
+            "value": 4,
+            "points": [
+              [
+                1,
+                -2
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "specification_sha256": "4233ab48e3e4885b2366aa0a3ea3b60f20904d3c69f5e4905a5f715fe05e04c9",
+      "source_sha256": "5e4ce486d1e756ac4d124bb69a906eecb2cfcb89869734759b4f4ef9164ede25",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723",
+        "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+        "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+        "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+        "AutomaticReduction": "c319c8124518c0bc94db7773129a3a98b00a61a7d7b010e23dbe1144332624a0"
+      },
+      "log_sha256": "a1c08ce0adf9a3cb83ed331c1cedbf3dee15c135809dd93d13f70796fac8443f",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete original square equation in the declared input domain and absolute input cutoff"
+    },
+    {
+      "name": "quadratic_positive",
+      "specification": {
+        "coefficients": [
+          -2,
+          -3,
+          2
+        ],
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "cutoff": 100,
+        "domain": "positive",
+        "work_limit": 4096,
+        "seed_budget": 4096
+      },
+      "source_count": 3,
+      "source_points": [
+        [
+          2,
+          0
+        ],
+        [
+          22,
+          -30
+        ],
+        [
+          22,
+          30
+        ]
+      ],
+      "results": [
+        {
+          "points": [
+            [
+              22,
+              -30
+            ],
+            [
+              22,
+              30
+            ]
+          ],
+          "count": 2,
+          "selections": [
+            {
+              "rank": 0,
+              "point": [
+                22,
+                -30
+              ]
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": {
+            "value": 900,
+            "points": [
+              [
+                22,
+                -30
+              ],
+              [
+                22,
+                30
+              ]
+            ]
+          }
+        }
+      ],
+      "specification_sha256": "a142baf77121b6db0b017ad8dda1603c7ef21a8ff80112cf0fd92f141603c8a7",
+      "source_sha256": "8e184e333728c29e5d8e73eccb2dbc503b960a8b098dbe6c67b29b432973445e",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723",
+        "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+        "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+        "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+        "AutomaticReduction": "c319c8124518c0bc94db7773129a3a98b00a61a7d7b010e23dbe1144332624a0"
+      },
+      "log_sha256": "162c92ea5976bbbd00f9e0262ac0bf4fc4c8830a2e9cd4d2592e3ddc9af07690",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete original square equation in the declared input domain and absolute input cutoff"
+    },
+    {
+      "name": "cubic",
+      "specification": {
+        "coefficients": [
+          -2,
+          0,
+          0,
+          1
+        ],
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "cutoff": null,
+        "domain": "integer",
+        "work_limit": 4096,
+        "seed_budget": 4096
+      },
+      "source_count": 2,
+      "source_points": [
+        [
+          3,
+          -5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "results": [
+        {
+          "points": [],
+          "count": 0,
+          "selections": [
+            {
+              "rank": 0,
+              "point": null
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": null
+        }
+      ],
+      "specification_sha256": "247bb2f6d5fe23a3152cc25565568f1791b3597892f73c5e217368f481927539",
+      "source_sha256": "bb2c33f0fcfd0a7da8b6fed704f91ad30d38d08561aa770c4aa751fa871e60d2",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+        "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+        "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+        "AffinePopulation": "c1b84a807418fe466b38288834e19d37663948e04350e251733027557515ba4c",
+        "MordellMinus2Core": "32b29c6964c4fcc596aa8accfc29b6498a3ab998a891614612208fc5fce3ba29",
+        "GlobalMordellPopulation": "ffef2fc3d68a723bdf3c3aab5dd455f9e3fd5167fedb543d53b9c0a9d821bbb5",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723",
+        "AutomaticReduction": "c319c8124518c0bc94db7773129a3a98b00a61a7d7b010e23dbe1144332624a0"
+      },
+      "log_sha256": "a64356c859170edd4432e0679c65165f22d3b072644782421b53294afc3187af",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete original square equation in the declared input domain, globally over all input coordinates"
+    },
+    {
+      "name": "minus13",
+      "specification": {
+        "coefficients": [
+          -13,
+          0,
+          0,
+          1
+        ],
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "cutoff": null,
+        "domain": "integer",
+        "work_limit": 4096,
+        "seed_budget": 4096
+      },
+      "source_count": 2,
+      "source_points": [
+        [
+          17,
+          -70
+        ],
+        [
+          17,
+          70
+        ]
+      ],
+      "results": [
+        {
+          "points": [],
+          "count": 0,
+          "selections": [
+            {
+              "rank": 0,
+              "point": null
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": null
+        }
+      ],
+      "specification_sha256": "9b0c0c41bb35697898ac1bfb8831d03d11f08e84ed96ec251734f331c602436a",
+      "source_sha256": "9a10a66b711073dff276ce59e93e21351492495f1a66e66e945b00d57df8df06",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+        "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+        "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+        "ClassTwoCore": "4b2ef14132f3f8436d3780c0f4fb3cdda4f25eaed007469ace238e07bf78d5e2",
+        "MordellMinus5Core": "9b7f6e08a7db5cdab0c0a146c53f605b41ac9bf80ef31b7adacb5cc11090fbaa",
+        "MordellMinus6Core": "f797e0f6b520bcdf67425bfd41fcbc7b4dd9bc9f5f681f08d01a23cfd6841f70",
+        "MordellMinus13Core": "d6ef93167c7e1c825167e6939abc628f087e5cbd51ee5c100c677a5c7b7cdaff",
+        "AdditionalMordellPopulations": "fe8f21683e4024cd2c483c1b78001f034756604ad247a9bbc711e54c2c78eedd",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723",
+        "AutomaticReduction": "c319c8124518c0bc94db7773129a3a98b00a61a7d7b010e23dbe1144332624a0"
+      },
+      "log_sha256": "7e4903c269e328ba460a563d96d4de967a0b22defc9318df1d6adc9e7f47f713",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete original square equation in the declared input domain, globally over all input coordinates"
+    },
+    {
+      "name": "descent",
+      "specification": {
+        "coefficients": [
+          -9985,
+          0,
+          0,
+          1
+        ],
+        "queries": [
+          {
+            "condition": [
+              "mod",
+              "x",
+              1,
+              3
+            ],
+            "ranks": [
+              0,
+              999
+            ],
+            "objective": [
+              "pow",
+              "y",
+              2
+            ]
+          }
+        ],
+        "cutoff": null,
+        "domain": "integer",
+        "work_limit": 4096,
+        "seed_budget": 4096
+      },
+      "source_count": 0,
+      "source_points": [],
+      "results": [
+        {
+          "points": [],
+          "count": 0,
+          "selections": [
+            {
+              "rank": 0,
+              "point": null
+            },
+            {
+              "rank": 999,
+              "point": null
+            }
+          ],
+          "minimum": null
+        }
+      ],
+      "specification_sha256": "2466764ce006d8f3cf67c9a3bd72d71d5187e1894648542e1284c015a8a89c35",
+      "source_sha256": "b6f582c5212c3f48d183ff36c2b4a0a020ea6a4ab4e1c01af94c6d50fdf0bfa9",
+      "library_sha256": {
+        "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22",
+        "PolynomialFibre": "2b52085b5a1b46bbca05f704616cf9f52e0c4f5ae906c6816eb0dca92117892b",
+        "FastDivisors": "b204a49f2137c3393f632a8e69ff45398ee52b416aecb707c4c39700e3357906",
+        "IntegerPolynomialFibres": "7e346f423d6fbdfd6d1e7a564bfdce7f2e18d21cc0f20e7e30bab2fe9210dd85",
+        "MordellDescentCore": "5cb1f2d160f461214c8c382d6b3cb2e729cfc464c94d481830b10a2f8bbf9b33",
+        "MordellDescentMask": "5ed8900c1a70943cbf2878338e23ff7c5b9c34b6d9bf15904be807bb511c5211",
+        "PellFamily": "674923a31ce54c0c51269d2f648f54fa5dc014c47b89e762b5aa85746c3a5f33",
+        "PellOrbitCore": "d4e206d82839eaf75b13dd091e83e22428010c2ebc7e8946f5fcfd5f54ef5660",
+        "PellOrbitPopulation": "f216cbc5a20d4ad4fe2b6f25741af512f97650bb743d61a96eb02636d25a0723",
+        "AutomaticReduction": "c319c8124518c0bc94db7773129a3a98b00a61a7d7b010e23dbe1144332624a0"
+      },
+      "log_sha256": "6f60dbe20262d7a44e6a62fb22a9e6bcb20690647c358c51614b334b33f3eeff",
+      "proof_status": "kernel_checked",
+      "execution_verified": false,
+      "scope": "complete original square equation in the declared input domain, globally over all input coordinates"
+    }
+  ]
+}

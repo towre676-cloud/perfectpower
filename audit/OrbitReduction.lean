@@ -1,0 +1,25 @@
+import PerfectPower.AutomaticReduction
+import PerfectPower.MordellParity
+#print axioms PerfectPower.PellOrbitCore.pell_descent_box
+#print axioms PerfectPower.PellOrbitCore.terminal_bound
+#print axioms PerfectPower.PellOrbitCore.terminal_exhaust
+#print axioms PerfectPower.PellOrbitCore.orbit_input_strictMono
+#print axioms PerfectPower.PellOrbitPopulation.seed_complete
+#print axioms PerfectPower.PellOrbitPopulation.positive_complete
+#print axioms PerfectPower.PellOrbitPopulation.zero_complete
+#print axioms PerfectPower.PellOrbitPopulation.nonnegative_complete
+#print axioms PerfectPower.PellOrbitPopulation.signed_complete
+#print axioms PerfectPower.PellOrbitPopulation.orbit_power
+#print axioms PerfectPower.PellOrbitPopulation.fastOrbit_eq
+#print axioms PerfectPower.AutomaticReduction.affinePullback_complete
+#print axioms PerfectPower.AutomaticReduction.outputPullback_complete
+#print axioms PerfectPower.AutomaticReduction.quadratic_norm
+#print axioms PerfectPower.AutomaticReduction.quadratic_root_bound
+#print axioms PerfectPower.MordellParity.half_supplies_quartic_root
+#print axioms PerfectPower.MordellParity.no_half_of_quartic_root_free
+#print axioms PerfectPower.MordellParity.horner_emod
+#print axioms PerfectPower.MordellParity.integer_root_free
+#print axioms PerfectPower.MordellParity.rational_root_free
+#print axioms PerfectPower.MordellParity.doubling_injective
+#print axioms PerfectPower.MordellParity.pair_two_saturated
+#print axioms PerfectPower.MordellParity.cyclic_two_saturated

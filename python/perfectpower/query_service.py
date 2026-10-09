@@ -49,6 +49,12 @@ def dispatch(catalogue, request):
     if op == 'checked_pell_family':
         from .checked_pell_family import pell_family_certificate
         return pell_family_certificate(**args)
+    if op == 'checked_pell_orbits':
+        from .checked_pell_orbits import pell_orbits_certificate
+        return pell_orbits_certificate(**args)
+    if op == 'checked_auto_population':
+        from .automatic_population import automatic_population_certificate
+        return automatic_population_certificate(**args)
     if op == 'checked_box':
         from .checked_box import box_certificate
         return box_certificate(**args)

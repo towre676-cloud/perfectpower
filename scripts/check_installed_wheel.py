@@ -17,6 +17,8 @@ from perfectpower.checked_nonlinear_population import nonlinear_population_certi
 from perfectpower.checked_pell_population import pell_population_certificate
 from perfectpower.checked_family_population import family_population_certificate
 from perfectpower.checked_pell_family import pell_family_certificate
+from perfectpower.checked_pell_orbits import pell_orbits_certificate
+from perfectpower.automatic_population import automatic_population_certificate
 from perfectpower.checked_factorial_unit import unit_certificate
 from perfectpower.checked_landau import landau_certificate
 from perfectpower.http_service import QueryHTTPServer
@@ -61,6 +63,12 @@ def main():
     general=pell_family_certificate(3,100,global_ranks=[4])
     if general['source_count']!=5 or general['global_selections'][0]['point']!=[56,97]:
         raise AssertionError('installed general Pell access changed')
+    orbits=pell_orbits_certificate(2,7,100)
+    if orbits['source_count']!=20 or len(orbits['seeds'])!=2:
+        raise AssertionError('installed multiple Pell orbits changed')
+    automatic=automatic_population_certificate([1,1,1])
+    if automatic['source_count']!=4 or automatic['route']!='scaled_square':
+        raise AssertionError('installed automatic coordinate reduction changed')
     if 'original_integral_for_all_indices' not in landau_certificate([2],[1,1])['lean']:
         raise AssertionError('installed universal integrality proposal missing')
     with tempfile.TemporaryDirectory() as directory:
@@ -79,7 +87,9 @@ def main():
             for op,args,count in [('checked_nonlinear_population',dict(coefficients=[1,0,1],queries=[{}],family='mordell_minus4'),8),
                                   ('checked_pell_population',dict(cutoff=1000,queries=[{}],global_ranks=[4]),5),
                                   ('checked_family_population',dict(coefficients=[0,1],queries=[{}],offset=15),8),
-                                  ('checked_pell_family',dict(D=3,cutoff=100),5)]:
+                                  ('checked_pell_family',dict(D=3,cutoff=100),5),
+                                  ('checked_pell_orbits',dict(D=2,norm=7,cutoff=100),20),
+                                  ('checked_auto_population',dict(coefficients=[1,1,1]),4)]:
                 client=HTTPConnection(*server.server_address,timeout=10)
                 client.request('POST','/query',body=json.dumps(dict(op=op,args=args)),headers={'Content-Type':'application/json'})
                 response=client.getresponse();body=json.loads(response.read());client.close()

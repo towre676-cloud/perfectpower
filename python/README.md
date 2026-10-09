@@ -169,3 +169,14 @@ python -m perfectpower checked-pell-family --D 7 --cutoff 100 --global-objective
 ```
 
 The finite family interface covers `y²=U(x)²+k` for nonzero k, five classical Mordell sources and the offsets in `data/mordell_descent_sources.json`. Integer fibres use exact divisibility, zero stripping and direct linear recovery. The Pell interface proves its seed fundamental, supports all signs, uses binary powering for global ranks and can return an exact cutoff count without constructing a point list. Its global objectives cover nonnegative polynomial expressions and the unbounded-below expression `-x`. Fundamental-seed certificates and point sizes remain budgeted. See [the family engine monograph](../docs/FAMILY_ENGINE_MONOGRAPH.md) for the exact domains, refusal cases and remaining research.
+
+## Automatic reductions and generalized Pell orbits
+
+`checked-auto-population` recognizes supported original square equations from ascending integer polynomial coefficients. Finite square/cubic pullbacks are globally complete; Pell-type quadratics require an absolute input cutoff. `checked-pell-orbits` handles `y²-D*x²=norm` with all checked terminal seeds, signed finite queries and per-orbit global selections. `--check` privately rebuilds the proof sources. Unsupported reductions and work-budget exhaustion are explicit errors.
+
+```sh
+python -m perfectpower checked-auto-population --coefficients '[1,1,2]' --cutoff 1000000000000 --check
+python -m perfectpower checked-pell-orbits --D 2 --norm 7 --cutoff 100 --global-ranks '[{"orbit":1,"rank":1000}]' --check
+```
+
+See [the orbit reduction monograph](../docs/ORBIT_REDUCTION_MONOGRAPH.md) for the finite seed bounds, coordinate inversion and the distinct saturation-at-2 census result.

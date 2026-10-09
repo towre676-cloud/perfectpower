@@ -42,6 +42,8 @@ release-verify:
 	$(MAKE) check-extended-population
 	$(MAKE) check-family-population
 	$(MAKE) check-mordell-descent-atlas
+	$(MAKE) check-orbit-reduction
+	$(MAKE) check-mordell-parity
 
 .PHONY: hardening-verify hardening-kernel
 hardening-verify:
@@ -460,3 +462,9 @@ check-family-population:
 	bash scripts/check_family_population.sh
 check-mordell-descent-atlas:
 	bash scripts/check_mordell_descent_atlas.sh
+
+.PHONY: check-orbit-reduction check-mordell-parity
+check-orbit-reduction:
+	bash scripts/check_orbit_reduction.sh
+check-mordell-parity:
+	bash scripts/check_mordell_parity.sh

@@ -16,6 +16,8 @@ RECEIPTS=(
     'extended_population_queries.json',
     'family_population_queries.json',
     'mordell_descent_atlas.json',
+    'mordell_parity_atlas.json',
+    'orbit_reduction_queries.json',
 )
 
 
