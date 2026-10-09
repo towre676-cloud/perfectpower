@@ -44,7 +44,8 @@ ANN = ([dict(S0, N=384, X=X, seed=0) for X in X_S0[4:]]
        + [dict(S05, X=X, seed=sd) for sd in (0, 1) for X in X_S05]
        + [dict(S05, X=None, seed=0, tau_f=160.)]
        + [dict(S1, X=X, seed=0) for X in X_S1]
-       + [dict(S1, X=None, seed=0, tau_f=160.)])
+       + [dict(S1, X=None, seed=0, tau_f=160.)]
+       + [dict(S1, X=X, seed=sd) for sd in (1, 2) for X in X_S1])
 GW = [dict(N=192, s=0., w_ref=2., tau_ref=1., seed=0, tau_f=96.),
       dict(N=256, s=0., w_ref=2., tau_ref=1., seed=1, tau_f=128.),
       dict(N=320, s=0., w_ref=2., tau_ref=1., seed=0, tau_f=160.),
