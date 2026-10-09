@@ -22,3 +22,19 @@ GW (tensor runs at 192³ to 320³): the peak is resolved at f/H between 0.58 and
 - The fat-wall (s=0) equations change the wall profile and its scalar radiation. Only the network dynamics is physical. The s=1 and s=1/2 asymptotic runs were not completed, so the exponent for the physical equation in the asymptotic regime is not measured here.
 - One seed for the main scan, so the stated errors are fit errors, not seed-to-seed variance.
 - Float32, no backreaction, and no certified integration. The infrared-slope estimate uses few bins.
+
+## Completed scan (three s=0 seeds, s=1/2 and the physical s=1 equation)
+
+The remaining runs of the develop script have finished: s=0 seeds 1 and 2, the s=1/2 family (two seeds), and the physical s=1 family (one seed, X from 1000 to 6700). The receipt now holds all 36 runs.
+
+| Family | Criterion | p (all X) | p (asymptotic X subset) | Seed spread (asymptotic) |
+|---|---|---|---|---|
+| s=0, 3 seeds | 10% | 0.478 ± 0.003 | 0.497 ± 0.006 | 0.487, 0.489, 0.516 |
+| s=0, 3 seeds | 1% | 0.475 ± 0.005 | 0.492 ± 0.014 | 0.447, 0.501, 0.528 |
+| s=1/2, 2 seeds | 10% | 0.470 ± 0.003 | 0.449 ± 0.006 (X≥3000) | 0.446, 0.453 |
+| s=1 (physical), 1 seed | 10% | 0.27 ± 0.08 | 0.51 ± 0.18 (X≥2600) | — |
+| s=1 (physical), 1 seed | 1% | 0.53 ± 0.09 | 0.78 ± 0.11 (X≥2600) | — |
+
+The receipt combines statistical and systematic errors for the s=0 asymptotic exponent. The systematics come from the box-size (256³, 384³) and wall-width (w=3) controls. The result is p = 0.492 ± 0.024 (statistical) ± 0.098 (systematic), or ± 0.10 in total. That is 0.08σ from 1/2. Measured against the lattice network value, K is 1.28 times K_PRS.
+
+**Conclusion.** For the fixed-width equations the annihilation exponent is consistent with the pressure-balance value 1/2. The s=1/2 family is somewhat lower, at 0.45, which suggests that width growth delays the asymptotic regime. The physical s=1 family with one seed and five X values now gives exponents straddling 1/2 in the asymptotic subset. That is a large change from the early-window value of 0.25, but its errors (0.1 to 0.2) are too large to confirm 1/2 for the physical equation. More seeds and a wider X range at s=1 are the next step.
