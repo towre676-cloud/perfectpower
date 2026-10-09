@@ -285,3 +285,20 @@ Blocked or external:
 | N42 partial | Certified Stokes matrices for 8 Kummer equations, matching closed forms; formal Hukuhara–Turrittin normal forms | same |
 
 Still open: interval bounces (not finished); the physical s=1 asymptotic exponent; wild genus-2 conductors at 2; Stokes data without closed forms, and repeated or ramified irregular exponents; and the Lean items listed above.
+
+### Final closures in this pass
+
+| Item | Result | Monograph |
+|---|---|---|
+| N37 physical equation | Three s=1 seeds: p = 0.497 ± 0.007 at large X (10% criterion) | WALL_NETWORK_ASYMPTOTICS_MONOGRAPH |
+| N40 interval bounces | Arb-certified least-action S3, S4 at ten benchmarks for the tree potential; C3 = 62.1484490899200, C4 = 179.361974527078 | WALL_TWO_LOOP_AND_INTERVAL_BOUNCES_MONOGRAPH |
+| N41 wild conductors | Galois-route Swan conductors: elliptic at 2 and 3 (1,591 local reductions, 0 disagreements); genus 2 at 3 and 5 (622 curves, 0 disagreements); genus 2 at 2 for y²=g(x²) (300 curves) | WILD_CONDUCTORS_MONOGRAPH |
+| N42 Stokes data | 37 certified cases without closed forms, with repeated or ramified exponents (Airy, Weber, Jordan blocks) | IRREGULAR_STOKES_GENERAL_MONOGRAPH |
+
+Remaining:
+
+- **General genus-2 conductors at 2.** These need the 3-torsion of the Jacobian, as in Doris's algorithm.
+- **Stokes data for non-real leading eigenvalues.**
+- **Interval bounces for the loop-corrected potentials.** These contain non-analytic logarithms.
+- **The Lean items.** The Lean and Mathlib hosts are blocked in this container.
+- **Physical flavor predictions.** These depend on a model choice.
