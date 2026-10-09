@@ -50,6 +50,21 @@ def main():
     norm=console('psg-norm','--variables','x,y','--A','x','--B','y','--D','2','--norm','1','--cutoff','10')
     if norm['points']!=[[-3,-2],[-3,2],[-1,0],[1,0],[3,-2],[3,2]]:
         raise AssertionError('installed original norm points changed')
+    examples={
+        'soe-family':{'family':{'variables':['x'],'semantics':['x^2'],'rows':[{'id':'negative','values':[-1]},{'id':'positive','values':[1]}]},'query':{'objectives':['x']}},
+        'soe-transport':{'left':{'source':['s'],'target':['a'],'mode':'count','entries':[['s','a',2]]},'right':{'source':['a'],'target':['t'],'mode':'count','entries':[['a','t',3]]},'values':{'s':1}},
+        'soe-states':{'observations':[0,0],'actions':{'tick':[1,0]}},
+        'soe-plan':{'model':{'observations':[0,0,1],'actions':{'a':[0,2,2]}},'probes':[{'name':'a','word':['a'],'cost':1}]},
+        'soe-chart':{'variables':['x'],'forward':['x+1'],'inverse':['x-1'],'source_outputs':['x+1'],'target_outputs':['x']},
+        'soe-equivalence':{'left':{'observations':[0,1,0,1],'actions':{'a':[1,0,3,2]}},'right':{'observations':[0,1],'actions':{'a':[1,0]}}}
+    }
+    with tempfile.TemporaryDirectory() as directory:
+        results={}
+        for command,spec in examples.items():
+            file=Path(directory)/(command+'.json');file.write_text(json.dumps(spec))
+            results[command]=console(command,str(file))
+    if results['soe-family']['pareto_ids']!=['negative'] or results['soe-transport']['transported_values']!={'t':'6'} or len(results['soe-states']['blocks'])!=1 or results['soe-plan']['worst_case_cost']!='1' or not results['soe-chart']['integer_lattice_equivalence'] or not results['soe-equivalence']['equivalent']:
+        raise AssertionError('installed enhanced SOE console result changed')
     for name,digest in manifest.items():
         if hashlib.sha256((root/name).read_bytes()).hexdigest()!=digest:
             raise AssertionError('runtime asset mismatch: '+name)
@@ -118,7 +133,7 @@ def main():
                 if response.status!=200 or body['result']['source_count']!=count or body['result']['proof_status']!='emitted':
                     raise AssertionError('installed proved-family HTTP proposal failed: '+op)
         finally:server.shutdown();thread.join();server.server_close()
-    print(json.dumps(dict(complete=True,assets=len(manifest),psg_console_routes=7,installed_root=str(root))))
+    print(json.dumps(dict(complete=True,assets=len(manifest),psg_console_routes=7,soe_console_routes=6,installed_root=str(root))))
 
 
 if __name__=='__main__':main()

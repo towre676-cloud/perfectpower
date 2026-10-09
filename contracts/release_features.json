@@ -172,6 +172,19 @@
         "test_psg_structural.py"
       ],
       "kernel_required": false
+    },
+    {
+      "name": "soe_semantic_transport_diagnosis",
+      "files": [
+        "python/perfectpower/semantic_fibres.py",
+        "python/perfectpower/future_states.py",
+        "python/perfectpower/soe_console.py",
+        "docs/SOE_BRIDGE_MONOGRAPH.md"
+      ],
+      "tests": [
+        "test_soe_bridge.py"
+      ],
+      "kernel_required": false
     }
   ]
 }

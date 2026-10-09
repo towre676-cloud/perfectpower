@@ -1,5 +1,7 @@
 # PerfectPower
 
+The [enhanced SOE bridge](docs/SOE_BRIDGE_MONOGRAPH.md) preserves finite implementation fibres, composes count/mass/min-plus transports, minimizes future-equivalent state models, compares different models with shortest counterexamples, and computes optimal adaptive diagnosis policies over declared probes. Six `soe-*` console routes also expose reversible polynomial charts with exact derivative transport. These interfaces use exact standard-library arithmetic; finite carrier and probe-menu scopes remain explicit.
+
 **Exact polynomial arithmetic, queryable solution spaces, and algebraic-curve computation with Lean 4 proofs.**
 
 PerfectPower began with a question: when is a polynomial value a perfect power? It now provides reusable machinery for solving supported integer equations, counting and querying structured solution families, and studying the algebraic curves defined by those equations. A reduction retains the original coordinates, divisibility conditions and domain, so its answer can be used by another program.

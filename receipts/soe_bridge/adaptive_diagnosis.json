@@ -1,0 +1,180 @@
+{
+  "distinguishing_fixed_menus": {
+    "1": [],
+    "2": [],
+    "3": [
+      [
+        "a",
+        "b",
+        "c"
+      ]
+    ]
+  },
+  "model": {
+    "actions": {
+      "a": [
+        4,
+        4,
+        5,
+        5,
+        4,
+        5
+      ],
+      "b": [
+        4,
+        5,
+        4,
+        4,
+        4,
+        5
+      ],
+      "c": [
+        4,
+        4,
+        4,
+        5,
+        4,
+        5
+      ]
+    },
+    "observations": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      2
+    ]
+  },
+  "optimal_adaptive_cost": 2,
+  "optimal_fixed_cost": 3,
+  "plan": {
+    "beliefs_solved": 12,
+    "menu": [
+      {
+        "cost": 1,
+        "name": "a",
+        "word": [
+          "a"
+        ]
+      },
+      {
+        "cost": 1,
+        "name": "b",
+        "word": [
+          "b"
+        ]
+      },
+      {
+        "cost": 1,
+        "name": "c",
+        "word": [
+          "c"
+        ]
+      }
+    ],
+    "model_id": "a0c36ec04f77affbb52aeee510ebdf22aa7cad6bf4c4be58e9ed3e1811d0cbf5",
+    "obstructions": [],
+    "policy": {
+      "0": {
+        "cost": "1",
+        "outcomes": {
+          "[{\"observation\":0},{\"observation\":1}]": {
+            "cost": "1",
+            "outcomes": {
+              "[{\"observation\":0},{\"observation\":1}]": {
+                "future_class": 0,
+                "remaining_cost": "0",
+                "states": [
+                  0
+                ]
+              },
+              "[{\"observation\":0},{\"observation\":2}]": {
+                "future_class": 1,
+                "remaining_cost": "0",
+                "states": [
+                  1
+                ]
+              }
+            },
+            "probe": "b",
+            "remaining_cost": "1",
+            "word": [
+              "b"
+            ]
+          },
+          "[{\"observation\":0},{\"observation\":2}]": {
+            "cost": "1",
+            "outcomes": {
+              "[{\"observation\":0},{\"observation\":1}]": {
+                "future_class": 2,
+                "remaining_cost": "0",
+                "states": [
+                  2
+                ]
+              },
+              "[{\"observation\":0},{\"observation\":2}]": {
+                "future_class": 3,
+                "remaining_cost": "0",
+                "states": [
+                  3
+                ]
+              }
+            },
+            "probe": "c",
+            "remaining_cost": "1",
+            "word": [
+              "c"
+            ]
+          }
+        },
+        "probe": "a",
+        "remaining_cost": "2",
+        "word": [
+          "a"
+        ]
+      },
+      "1": {
+        "future_class": 4,
+        "remaining_cost": "0",
+        "states": [
+          4
+        ]
+      },
+      "2": {
+        "future_class": 5,
+        "remaining_cost": "0",
+        "states": [
+          5
+        ]
+      }
+    },
+    "schema": "pp-optimal-diagnosis/1",
+    "scope": "exact minimum worst-case additive probe cost; resettable probes; supplied finite menu/model; current observation free",
+    "status": "optimal",
+    "worst_case_cost": "2"
+  },
+  "probes": [
+    {
+      "cost": 1,
+      "name": "a",
+      "word": [
+        "a"
+      ]
+    },
+    {
+      "cost": 1,
+      "name": "b",
+      "word": [
+        "b"
+      ]
+    },
+    {
+      "cost": 1,
+      "name": "c",
+      "word": [
+        "c"
+      ]
+    }
+  ]
+}

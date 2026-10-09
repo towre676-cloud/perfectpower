@@ -3,6 +3,11 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
+.PHONY: soe-bridge
+soe-bridge:
+	$(PY) -m unittest discover -s python/tests -p 'test_soe_bridge.py'
+	$(PY) python/develop_soe_bridge.py
+
 .PHONY: psg-structural psg-structural-kernel
 psg-structural:
 	$(PY) -m unittest discover -s python/tests -p 'test_psg_structural.py'

@@ -22,3 +22,7 @@ jobs:
         run: |
           make psg-structural
           git diff --exit-code -- receipts/psg_structural/ PerfectPower/Generated/PSGStructuralPackets.lean
+      - name: Reproduce enhanced SOE bridge and finite optimal diagnosis
+        run: |
+          make soe-bridge
+          git diff --exit-code -- receipts/soe_bridge/

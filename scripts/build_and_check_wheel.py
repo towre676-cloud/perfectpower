@@ -30,7 +30,10 @@ def main():
             '--target',str(installed),str(wheel)],check=True,cwd=base)
         environment=dict(os.environ,PYTHONPATH=str(installed))
         run=subprocess.run([sys.executable,str(ROOT/'scripts/check_installed_wheel.py')],
-            cwd=base,env=environment,check=True,capture_output=True,text=True)
+            cwd=base,env=environment,capture_output=True,text=True)
+        if run.returncode:
+            sys.stdout.write(run.stdout);sys.stderr.write(run.stderr)
+            run.check_returncode()
         if args.wheel_dir is not None:
             args.wheel_dir.mkdir(parents=True,exist_ok=True)
             shutil.copy2(wheel,args.wheel_dir/wheel.name)

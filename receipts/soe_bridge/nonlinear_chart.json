@@ -1,0 +1,334 @@
+{
+  "certificate": {
+    "forward": [
+      {
+        "terms": [
+          [
+            [
+              0,
+              2
+            ],
+            "1"
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "terms": [
+          [
+            [
+              0,
+              1
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      }
+    ],
+    "integer_lattice_equivalence": true,
+    "inverse": [
+      {
+        "terms": [
+          [
+            [
+              0,
+              2
+            ],
+            "-1"
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "terms": [
+          [
+            [
+              0,
+              1
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      }
+    ],
+    "jacobian": [
+      [
+        {
+          "terms": [
+            [
+              [
+                0,
+                0
+              ],
+              "1"
+            ]
+          ],
+          "variables": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "terms": [
+            [
+              [
+                0,
+                1
+              ],
+              "2"
+            ]
+          ],
+          "variables": [
+            "x",
+            "y"
+          ]
+        }
+      ],
+      [
+        {
+          "terms": [],
+          "variables": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "terms": [
+            [
+              [
+                0,
+                0
+              ],
+              "1"
+            ]
+          ],
+          "variables": [
+            "x",
+            "y"
+          ]
+        }
+      ]
+    ],
+    "schema": "pp-polynomial-chart/1",
+    "scope": "global rational polynomial automorphism and output/derivative identities; integer equivalence requires both maps integral",
+    "source_outputs": [
+      {
+        "terms": [
+          [
+            [
+              0,
+              2
+            ],
+            "1"
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "terms": [
+          [
+            [
+              0,
+              1
+            ],
+            "1"
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            "1"
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      }
+    ],
+    "target_outputs": [
+      {
+        "terms": [
+          [
+            [
+              1,
+              0
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "terms": [
+          [
+            [
+              0,
+              1
+            ],
+            "1"
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            "1"
+          ]
+        ],
+        "variables": [
+          "x",
+          "y"
+        ]
+      }
+    ],
+    "transported_output_jacobian": [
+      [
+        {
+          "terms": [
+            [
+              [
+                0,
+                0
+              ],
+              "1"
+            ]
+          ],
+          "variables": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "terms": [
+            [
+              [
+                0,
+                1
+              ],
+              "2"
+            ]
+          ],
+          "variables": [
+            "x",
+            "y"
+          ]
+        }
+      ],
+      [
+        {
+          "terms": [
+            [
+              [
+                0,
+                0
+              ],
+              "1"
+            ]
+          ],
+          "variables": [
+            "x",
+            "y"
+          ]
+        },
+        {
+          "terms": [
+            [
+              [
+                0,
+                0
+              ],
+              "1"
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              "2"
+            ]
+          ],
+          "variables": [
+            "x",
+            "y"
+          ]
+        }
+      ]
+    ],
+    "variables": [
+      "x",
+      "y"
+    ]
+  },
+  "specification": {
+    "forward": [
+      "x+y^2",
+      "y"
+    ],
+    "inverse": [
+      "x-y^2",
+      "y"
+    ],
+    "source_outputs": [
+      "x+y^2",
+      "x+y^2+y"
+    ],
+    "target_outputs": [
+      "x",
+      "x+y"
+    ],
+    "variables": [
+      "x",
+      "y"
+    ]
+  }
+}

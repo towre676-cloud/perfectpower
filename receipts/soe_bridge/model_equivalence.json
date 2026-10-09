@@ -1,0 +1,58 @@
+{
+  "common_quotient": {
+    "blocks": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        5
+      ]
+    ],
+    "distinguishing_witnesses": [
+      {
+        "first": 0,
+        "reason": "observation",
+        "second": 1,
+        "word": []
+      }
+    ],
+    "model_id": "4a225d4a54310f4ee1443ebd625166bc6f67565b87a4ce46951e832f5f899be2",
+    "projection": [
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "quotient": {
+      "actions": {
+        "tick": [
+          1,
+          0
+        ]
+      },
+      "observations": [
+        0,
+        1
+      ]
+    },
+    "refinement_rounds": 1,
+    "schema": "pp-future-quotient/1",
+    "scope": "coarsest exact observation-and-legality quotient of supplied finite deterministic model"
+  },
+  "equivalent": true,
+  "initial_states": [
+    0,
+    0
+  ],
+  "left_model_id": "e467f4e4da4c1c350c595a5245ef435b78c630a222fd92f062ab0cff20e2c156",
+  "right_model_id": "3c37321f972b802af1ee06af9ae28489a0e5f97d2c5ce90a84585ec4abab9f82",
+  "schema": "pp-model-equivalence/1",
+  "scope": "all finite action words in supplied deterministic partial models; observations and action legality preserved",
+  "shortest_counterexample": null
+}
