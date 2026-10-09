@@ -55,6 +55,22 @@
       "tests": [
         "test_runtime_resources.py"
       ]
+    },
+    {
+      "name": "universal_gamma_bridges",
+      "files": [
+        "PerfectPower/FactorialUnit.lean",
+        "PerfectPower/LandauIntegral.lean",
+        "python/perfectpower/checked_factorial_unit.py",
+        "python/perfectpower/checked_landau.py",
+        "audit/FactorialGamma.lean",
+        "scripts/check_gamma_bridges.sh"
+      ],
+      "tests": [
+        "test_checked_factorial_unit.py",
+        "test_checked_landau.py"
+      ],
+      "kernel_required": true
     }
   ]
 }

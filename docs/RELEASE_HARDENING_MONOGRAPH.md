@@ -69,3 +69,7 @@ The original 457-curve Mordell frontier remains computationally closed. Its curv
 Two historical regression assumptions also receive corrections. The elliptic frontier test now checks the current 457 matching witnesses and zero remaining external-list rows while retaining the distinction from formal closure. The wall receipt test compares numerical stability of precision-dependent certified bounds at controlled precision; independently rounded upper and lower bounds are not necessarily overlapping enclosures of one exact scalar. It retains the independently computed positive-gap requirement.
 
 The release's principal advance is a small, executable bridge from an original bounded equation to a checked complete answer with usable counts, addresses and minima. The packaging and service work make that bridge accessible beyond a research checkout. The current contracts keep unresolved global mathematics visible rather than turning implementation breadth into a claim of universal completion.
+
+## Gamma proof follow-up
+
+Version 0.6.2 adds universal factorial-unit algorithm correctness and the sufficient Landau integrality direction, with reconstructed original-factorial kernel queries. See [GAMMA_KERNEL_BRIDGES_MONOGRAPH.md](GAMMA_KERNEL_BRIDGES_MONOGRAPH.md) for the proof chain, validation and remaining converse/interpreter obligations.

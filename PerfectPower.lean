@@ -435,6 +435,8 @@ import PerfectPower.UnorderedWeightedGram
 
 import PerfectPower.FactorAddresses
 import PerfectPower.FlavorRG
+import PerfectPower.FactorialUnit
+import PerfectPower.LandauIntegral
 import PerfectPower.SpectralMoments
 import PerfectPower.WeilOldLevel
 

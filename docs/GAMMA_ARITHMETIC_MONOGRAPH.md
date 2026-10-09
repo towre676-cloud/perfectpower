@@ -65,9 +65,7 @@ Balanced factorial ratios have a periodic floor-step function. `landau` computes
 all rational breakpoints in [0,1], evaluates the right-continuous step on each
 half-open cell, and records whether every value is nonnegative. This is an exact
 finite implementation of Landau's criterion. Unbalanced inputs are rejected by
-this periodic test rather than assigned a false universal verdict. The full
-Landau equivalence and general factorial-unit algorithm are not newly proved in
-Lean; the balanced periodicity law and Legendre sum are formalized.
+this periodic test rather than assigned a false universal verdict. The sufficient Landau direction and general factorial-unit residue-block algorithm now have Lean proofs and reconstructed original-factorial checkers; see [Gamma kernel bridges](GAMMA_KERNEL_BRIDGES_MONOGRAPH.md). The Landau converse and Python refinement remain open.
 
 `hypergeometric` derives `Q(n)*A(n+1)=P(n)*A(n)` directly from the factorial
 increments. On n>=0 every denominator factor is positive. `hypergeometric_terms`

@@ -1,0 +1,1609 @@
+{
+  "schema": "pp-gamma-kernel-bridges/1",
+  "queries": [
+    {
+      "kind": "factorial_unit",
+      "packet": {
+        "schema": "pp-checked-factorial-unit/1",
+        "specification": {
+          "n": 0,
+          "p": 2,
+          "depth": 1,
+          "work_limit": 8192
+        },
+        "arithmetic": {
+          "n": 0,
+          "prime": 2,
+          "depth": 1,
+          "modulus": 2,
+          "valuation": 0,
+          "unit": 1,
+          "levels": [],
+          "work_limit": 8192,
+          "execution_verified": false
+        },
+        "lean": "import PerfectPower.FactorialUnit\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedUnit_d0d010e81a3eb898\nopen PerfectPower.FactorialUnit\nprivate theorem prime_checked : Nat.Prime 2 := by decide +kernel\ntheorem computed : algorithm 2 2 0 =\n    (1 : ZMod 2) := by decide +kernel\ntheorem original_factorial_unit :\n    (((0 : Nat).factorial / 2^((0 : Nat).factorial.factorization 2) : Nat) : ZMod 2) =\n      (1 : ZMod 2) := by\n  exact (prime_power_correct 2 1 0 prime_checked (by decide +kernel)).symm.trans computed\nend PerfectPower.CheckedUnit_d0d010e81a3eb898\n#print axioms PerfectPower.CheckedUnit_d0d010e81a3eb898.computed\n#print axioms PerfectPower.CheckedUnit_d0d010e81a3eb898.original_factorial_unit\n",
+        "namespace": "PerfectPower.CheckedUnit_d0d010e81a3eb898",
+        "specification_sha256": "d0d010e81a3eb8981e14aecd77e5a51981f78b124b8c8ce509482190fd9ed7d3",
+        "source_sha256": "51c1e048aa9a04981595e5ed92276d027a991ac3bfdeb1a223e216f1dbe0fe93",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "d0d010e81a3eb8981e14aecd77e5a51981f78b124b8c8ce509482190fd9ed7d3",
+        "source_sha256": "51c1e048aa9a04981595e5ed92276d027a991ac3bfdeb1a223e216f1dbe0fe93",
+        "library_sha256": "9f1b0aebd70f19713c57ead12e8bb8192370906813e85d5f6ca97d893cdb89c1",
+        "log": "'PerfectPower.CheckedUnit_d0d010e81a3eb898.computed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedUnit_d0d010e81a3eb898.original_factorial_unit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 4.971443731999898
+    },
+    {
+      "kind": "factorial_unit",
+      "packet": {
+        "schema": "pp-checked-factorial-unit/1",
+        "specification": {
+          "n": 37,
+          "p": 2,
+          "depth": 3,
+          "work_limit": 8192
+        },
+        "arithmetic": {
+          "n": 37,
+          "prime": 2,
+          "depth": 3,
+          "modulus": 8,
+          "valuation": 34,
+          "unit": 5,
+          "levels": [
+            {
+              "index": 37,
+              "blocks": 4,
+              "remainder": 5,
+              "unit": 7
+            },
+            {
+              "index": 18,
+              "blocks": 2,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 9,
+              "blocks": 1,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 4,
+              "blocks": 0,
+              "remainder": 4,
+              "unit": 3
+            },
+            {
+              "index": 2,
+              "blocks": 0,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 1,
+              "blocks": 0,
+              "remainder": 1,
+              "unit": 1
+            }
+          ],
+          "work_limit": 8192,
+          "execution_verified": false
+        },
+        "lean": "import PerfectPower.FactorialUnit\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedUnit_acee31b507fda1db\nopen PerfectPower.FactorialUnit\nprivate theorem prime_checked : Nat.Prime 2 := by decide +kernel\ntheorem computed : algorithm 2 8 37 =\n    (5 : ZMod 8) := by decide +kernel\ntheorem original_factorial_unit :\n    (((37 : Nat).factorial / 2^((37 : Nat).factorial.factorization 2) : Nat) : ZMod 8) =\n      (5 : ZMod 8) := by\n  exact (prime_power_correct 2 3 37 prime_checked (by decide +kernel)).symm.trans computed\nend PerfectPower.CheckedUnit_acee31b507fda1db\n#print axioms PerfectPower.CheckedUnit_acee31b507fda1db.computed\n#print axioms PerfectPower.CheckedUnit_acee31b507fda1db.original_factorial_unit\n",
+        "namespace": "PerfectPower.CheckedUnit_acee31b507fda1db",
+        "specification_sha256": "acee31b507fda1db09c77af002c119f46aabc231e6670236d0ea2041fb633d25",
+        "source_sha256": "7daae00916264081e910cb35a9547380000749834b5778ccd9f4ab7f33947b53",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "acee31b507fda1db09c77af002c119f46aabc231e6670236d0ea2041fb633d25",
+        "source_sha256": "7daae00916264081e910cb35a9547380000749834b5778ccd9f4ab7f33947b53",
+        "library_sha256": "9f1b0aebd70f19713c57ead12e8bb8192370906813e85d5f6ca97d893cdb89c1",
+        "log": "'PerfectPower.CheckedUnit_acee31b507fda1db.computed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedUnit_acee31b507fda1db.original_factorial_unit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 5.933944139000232
+    },
+    {
+      "kind": "factorial_unit",
+      "packet": {
+        "schema": "pp-checked-factorial-unit/1",
+        "specification": {
+          "n": 123,
+          "p": 3,
+          "depth": 2,
+          "work_limit": 8192
+        },
+        "arithmetic": {
+          "n": 123,
+          "prime": 3,
+          "depth": 2,
+          "modulus": 9,
+          "valuation": 59,
+          "unit": 7,
+          "levels": [
+            {
+              "index": 123,
+              "blocks": 13,
+              "remainder": 6,
+              "unit": 5
+            },
+            {
+              "index": 41,
+              "blocks": 4,
+              "remainder": 5,
+              "unit": 4
+            },
+            {
+              "index": 13,
+              "blocks": 1,
+              "remainder": 4,
+              "unit": 1
+            },
+            {
+              "index": 4,
+              "blocks": 0,
+              "remainder": 4,
+              "unit": 8
+            },
+            {
+              "index": 1,
+              "blocks": 0,
+              "remainder": 1,
+              "unit": 1
+            }
+          ],
+          "work_limit": 8192,
+          "execution_verified": false
+        },
+        "lean": "import PerfectPower.FactorialUnit\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedUnit_91af2741a8bc3a25\nopen PerfectPower.FactorialUnit\nprivate theorem prime_checked : Nat.Prime 3 := by decide +kernel\ntheorem computed : algorithm 3 9 123 =\n    (7 : ZMod 9) := by decide +kernel\ntheorem original_factorial_unit :\n    (((123 : Nat).factorial / 3^((123 : Nat).factorial.factorization 3) : Nat) : ZMod 9) =\n      (7 : ZMod 9) := by\n  exact (prime_power_correct 3 2 123 prime_checked (by decide +kernel)).symm.trans computed\nend PerfectPower.CheckedUnit_91af2741a8bc3a25\n#print axioms PerfectPower.CheckedUnit_91af2741a8bc3a25.computed\n#print axioms PerfectPower.CheckedUnit_91af2741a8bc3a25.original_factorial_unit\n",
+        "namespace": "PerfectPower.CheckedUnit_91af2741a8bc3a25",
+        "specification_sha256": "91af2741a8bc3a25d42ec67d96bf033191c4fde5d2a4c5720c4bce4289bd95ab",
+        "source_sha256": "286928ea0ef50aadf2d612d100e3a0190dabf7f6b2405049ef273210e8d7d1ab",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "91af2741a8bc3a25d42ec67d96bf033191c4fde5d2a4c5720c4bce4289bd95ab",
+        "source_sha256": "286928ea0ef50aadf2d612d100e3a0190dabf7f6b2405049ef273210e8d7d1ab",
+        "library_sha256": "9f1b0aebd70f19713c57ead12e8bb8192370906813e85d5f6ca97d893cdb89c1",
+        "log": "'PerfectPower.CheckedUnit_91af2741a8bc3a25.computed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedUnit_91af2741a8bc3a25.original_factorial_unit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 3.9964214800002082
+    },
+    {
+      "kind": "factorial_unit",
+      "packet": {
+        "schema": "pp-checked-factorial-unit/1",
+        "specification": {
+          "n": 256,
+          "p": 5,
+          "depth": 2,
+          "work_limit": 8192
+        },
+        "arithmetic": {
+          "n": 256,
+          "prime": 5,
+          "depth": 2,
+          "modulus": 25,
+          "valuation": 63,
+          "unit": 13,
+          "levels": [
+            {
+              "index": 256,
+              "blocks": 10,
+              "remainder": 6,
+              "unit": 19
+            },
+            {
+              "index": 51,
+              "blocks": 2,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 10,
+              "blocks": 0,
+              "remainder": 10,
+              "unit": 1
+            },
+            {
+              "index": 2,
+              "blocks": 0,
+              "remainder": 2,
+              "unit": 2
+            }
+          ],
+          "work_limit": 8192,
+          "execution_verified": false
+        },
+        "lean": "import PerfectPower.FactorialUnit\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedUnit_2ed798a3104ae067\nopen PerfectPower.FactorialUnit\nprivate theorem prime_checked : Nat.Prime 5 := by decide +kernel\ntheorem computed : algorithm 5 25 256 =\n    (13 : ZMod 25) := by decide +kernel\ntheorem original_factorial_unit :\n    (((256 : Nat).factorial / 5^((256 : Nat).factorial.factorization 5) : Nat) : ZMod 25) =\n      (13 : ZMod 25) := by\n  exact (prime_power_correct 5 2 256 prime_checked (by decide +kernel)).symm.trans computed\nend PerfectPower.CheckedUnit_2ed798a3104ae067\n#print axioms PerfectPower.CheckedUnit_2ed798a3104ae067.computed\n#print axioms PerfectPower.CheckedUnit_2ed798a3104ae067.original_factorial_unit\n",
+        "namespace": "PerfectPower.CheckedUnit_2ed798a3104ae067",
+        "specification_sha256": "2ed798a3104ae06741a02253114fc6a1fa36a2d0034f4644dddab2066fd5a8cc",
+        "source_sha256": "81180e42015cc5f5e40ba5cea88a0a2e8aec351ebe0a3d7b9531d875d1fbb746",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "2ed798a3104ae06741a02253114fc6a1fa36a2d0034f4644dddab2066fd5a8cc",
+        "source_sha256": "81180e42015cc5f5e40ba5cea88a0a2e8aec351ebe0a3d7b9531d875d1fbb746",
+        "library_sha256": "9f1b0aebd70f19713c57ead12e8bb8192370906813e85d5f6ca97d893cdb89c1",
+        "log": "'PerfectPower.CheckedUnit_2ed798a3104ae067.computed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedUnit_2ed798a3104ae067.original_factorial_unit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 4.051362922999942
+    },
+    {
+      "kind": "factorial_unit",
+      "packet": {
+        "schema": "pp-checked-factorial-unit/1",
+        "specification": {
+          "n": 1000000000000000000000000000000,
+          "p": 2,
+          "depth": 2,
+          "work_limit": 8192
+        },
+        "arithmetic": {
+          "n": 1000000000000000000000000000000,
+          "prime": 2,
+          "depth": 2,
+          "modulus": 4,
+          "valuation": 999999999999999999999999999963,
+          "unit": 3,
+          "levels": [
+            {
+              "index": 1000000000000000000000000000000,
+              "blocks": 250000000000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 500000000000000000000000000000,
+              "blocks": 125000000000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 250000000000000000000000000000,
+              "blocks": 62500000000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 125000000000000000000000000000,
+              "blocks": 31250000000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 62500000000000000000000000000,
+              "blocks": 15625000000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 31250000000000000000000000000,
+              "blocks": 7812500000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 15625000000000000000000000000,
+              "blocks": 3906250000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 7812500000000000000000000000,
+              "blocks": 1953125000000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 3906250000000000000000000000,
+              "blocks": 976562500000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 1953125000000000000000000000,
+              "blocks": 488281250000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 976562500000000000000000000,
+              "blocks": 244140625000000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 488281250000000000000000000,
+              "blocks": 122070312500000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 244140625000000000000000000,
+              "blocks": 61035156250000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 122070312500000000000000000,
+              "blocks": 30517578125000000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 61035156250000000000000000,
+              "blocks": 15258789062500000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 30517578125000000000000000,
+              "blocks": 7629394531250000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 15258789062500000000000000,
+              "blocks": 3814697265625000000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 7629394531250000000000000,
+              "blocks": 1907348632812500000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 3814697265625000000000000,
+              "blocks": 953674316406250000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 1907348632812500000000000,
+              "blocks": 476837158203125000000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 953674316406250000000000,
+              "blocks": 238418579101562500000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 476837158203125000000000,
+              "blocks": 119209289550781250000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 238418579101562500000000,
+              "blocks": 59604644775390625000000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 119209289550781250000000,
+              "blocks": 29802322387695312500000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 59604644775390625000000,
+              "blocks": 14901161193847656250000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 29802322387695312500000,
+              "blocks": 7450580596923828125000,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 14901161193847656250000,
+              "blocks": 3725290298461914062500,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 7450580596923828125000,
+              "blocks": 1862645149230957031250,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 3725290298461914062500,
+              "blocks": 931322574615478515625,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 1862645149230957031250,
+              "blocks": 465661287307739257812,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 931322574615478515625,
+              "blocks": 232830643653869628906,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 465661287307739257812,
+              "blocks": 116415321826934814453,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 232830643653869628906,
+              "blocks": 58207660913467407226,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 116415321826934814453,
+              "blocks": 29103830456733703613,
+              "remainder": 1,
+              "unit": 3
+            },
+            {
+              "index": 58207660913467407226,
+              "blocks": 14551915228366851806,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 29103830456733703613,
+              "blocks": 7275957614183425903,
+              "remainder": 1,
+              "unit": 3
+            },
+            {
+              "index": 14551915228366851806,
+              "blocks": 3637978807091712951,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 7275957614183425903,
+              "blocks": 1818989403545856475,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 3637978807091712951,
+              "blocks": 909494701772928237,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 1818989403545856475,
+              "blocks": 454747350886464118,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 909494701772928237,
+              "blocks": 227373675443232059,
+              "remainder": 1,
+              "unit": 3
+            },
+            {
+              "index": 454747350886464118,
+              "blocks": 113686837721616029,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 227373675443232059,
+              "blocks": 56843418860808014,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 113686837721616029,
+              "blocks": 28421709430404007,
+              "remainder": 1,
+              "unit": 3
+            },
+            {
+              "index": 56843418860808014,
+              "blocks": 14210854715202003,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 28421709430404007,
+              "blocks": 7105427357601001,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 14210854715202003,
+              "blocks": 3552713678800500,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 7105427357601001,
+              "blocks": 1776356839400250,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 3552713678800500,
+              "blocks": 888178419700125,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 1776356839400250,
+              "blocks": 444089209850062,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 888178419700125,
+              "blocks": 222044604925031,
+              "remainder": 1,
+              "unit": 3
+            },
+            {
+              "index": 444089209850062,
+              "blocks": 111022302462515,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 222044604925031,
+              "blocks": 55511151231257,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 111022302462515,
+              "blocks": 27755575615628,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 55511151231257,
+              "blocks": 13877787807814,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 27755575615628,
+              "blocks": 6938893903907,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 13877787807814,
+              "blocks": 3469446951953,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 6938893903907,
+              "blocks": 1734723475976,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 3469446951953,
+              "blocks": 867361737988,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 1734723475976,
+              "blocks": 433680868994,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 867361737988,
+              "blocks": 216840434497,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 433680868994,
+              "blocks": 108420217248,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 216840434497,
+              "blocks": 54210108624,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 108420217248,
+              "blocks": 27105054312,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 54210108624,
+              "blocks": 13552527156,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 27105054312,
+              "blocks": 6776263578,
+              "remainder": 0,
+              "unit": 1
+            },
+            {
+              "index": 13552527156,
+              "blocks": 3388131789,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 6776263578,
+              "blocks": 1694065894,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 3388131789,
+              "blocks": 847032947,
+              "remainder": 1,
+              "unit": 3
+            },
+            {
+              "index": 1694065894,
+              "blocks": 423516473,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 847032947,
+              "blocks": 211758236,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 423516473,
+              "blocks": 105879118,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 211758236,
+              "blocks": 52939559,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 105879118,
+              "blocks": 26469779,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 52939559,
+              "blocks": 13234889,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 26469779,
+              "blocks": 6617444,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 13234889,
+              "blocks": 3308722,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 6617444,
+              "blocks": 1654361,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 3308722,
+              "blocks": 827180,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 1654361,
+              "blocks": 413590,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 827180,
+              "blocks": 206795,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 413590,
+              "blocks": 103397,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 206795,
+              "blocks": 51698,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 103397,
+              "blocks": 25849,
+              "remainder": 1,
+              "unit": 3
+            },
+            {
+              "index": 51698,
+              "blocks": 12924,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 25849,
+              "blocks": 6462,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 12924,
+              "blocks": 3231,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 6462,
+              "blocks": 1615,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 3231,
+              "blocks": 807,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 1615,
+              "blocks": 403,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 807,
+              "blocks": 201,
+              "remainder": 3,
+              "unit": 1
+            },
+            {
+              "index": 403,
+              "blocks": 100,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 201,
+              "blocks": 50,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 100,
+              "blocks": 25,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 50,
+              "blocks": 12,
+              "remainder": 2,
+              "unit": 1
+            },
+            {
+              "index": 25,
+              "blocks": 6,
+              "remainder": 1,
+              "unit": 1
+            },
+            {
+              "index": 12,
+              "blocks": 3,
+              "remainder": 0,
+              "unit": 3
+            },
+            {
+              "index": 6,
+              "blocks": 1,
+              "remainder": 2,
+              "unit": 3
+            },
+            {
+              "index": 3,
+              "blocks": 0,
+              "remainder": 3,
+              "unit": 3
+            },
+            {
+              "index": 1,
+              "blocks": 0,
+              "remainder": 1,
+              "unit": 1
+            }
+          ],
+          "work_limit": 8192,
+          "execution_verified": false
+        },
+        "lean": "import PerfectPower.FactorialUnit\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedUnit_e81e35f4e2861267\nopen PerfectPower.FactorialUnit\nprivate theorem prime_checked : Nat.Prime 2 := by decide +kernel\ntheorem computed : algorithm 2 4 1000000000000000000000000000000 =\n    (3 : ZMod 4) := by decide +kernel\ntheorem original_factorial_unit :\n    (((1000000000000000000000000000000 : Nat).factorial / 2^((1000000000000000000000000000000 : Nat).factorial.factorization 2) : Nat) : ZMod 4) =\n      (3 : ZMod 4) := by\n  exact (prime_power_correct 2 2 1000000000000000000000000000000 prime_checked (by decide +kernel)).symm.trans computed\nend PerfectPower.CheckedUnit_e81e35f4e2861267\n#print axioms PerfectPower.CheckedUnit_e81e35f4e2861267.computed\n#print axioms PerfectPower.CheckedUnit_e81e35f4e2861267.original_factorial_unit\n",
+        "namespace": "PerfectPower.CheckedUnit_e81e35f4e2861267",
+        "specification_sha256": "e81e35f4e2861267b2c3cedc92634011afde5c87c26e7b4b9b3bb59e845a7004",
+        "source_sha256": "bc05e98d1b2d2ed16d20ae6e1fa8b01785f53378f084725a43609bd396361b10",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original factorial with every prime power removed, modulo prime^depth",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "e81e35f4e2861267b2c3cedc92634011afde5c87c26e7b4b9b3bb59e845a7004",
+        "source_sha256": "bc05e98d1b2d2ed16d20ae6e1fa8b01785f53378f084725a43609bd396361b10",
+        "library_sha256": "9f1b0aebd70f19713c57ead12e8bb8192370906813e85d5f6ca97d893cdb89c1",
+        "log": "'PerfectPower.CheckedUnit_e81e35f4e2861267.computed' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedUnit_e81e35f4e2861267.original_factorial_unit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 6.792523477999566
+    },
+    {
+      "kind": "landau_integrality",
+      "packet": {
+        "schema": "pp-checked-landau/1",
+        "specification": {
+          "numerator": [],
+          "denominator": [],
+          "work_limit": 4096
+        },
+        "arithmetic": {
+          "schema": "pp-landau/1",
+          "numerator": [],
+          "denominator": [],
+          "balanced": true,
+          "integral_for_all_n": true,
+          "intervals": [
+            {
+              "left": "0",
+              "right": "1",
+              "delta": 0
+            }
+          ],
+          "work_limit": 4096,
+          "execution_verified": false,
+          "theorem": "Landau balanced factorial-ratio criterion; finite rational step certificate"
+        },
+        "lean": "import PerfectPower.LandauIntegral\nimport Mathlib.Tactic.NormNum\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedLandau_cdbdaa51cd2edafd\nopen PerfectPower.LandauIntegral\nprivate theorem cell_0 (x : \u211a)\n    (hl : ((0 : \u211a)/1) \u2264 x) (hr : x < ((1 : \u211a)/1)) :\n    0 \u2264 delta [] [] x := by\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul]\n  norm_num\ntheorem cells_complete (x : \u211a) (hl : 0 \u2264 x) (hr : x < 1) :\n    0 \u2264 delta [] [] x := by\n  exact cell_0 x (by simpa using hl) (by simpa using hr)\ntheorem all_rational_steps (x : \u211a) : 0 \u2264 delta [] [] x :=\n  nonnegative_of_cells [] [] (by decide +kernel) cells_complete x\ntheorem original_integral_for_all_indices (n : \u2115) :\n    factorialProduct [] n \u2223 factorialProduct [] n :=\n  integral_of_nonnegative [] [] all_rational_steps n\nend PerfectPower.CheckedLandau_cdbdaa51cd2edafd\n#print axioms PerfectPower.CheckedLandau_cdbdaa51cd2edafd.cells_complete\n#print axioms PerfectPower.CheckedLandau_cdbdaa51cd2edafd.all_rational_steps\n#print axioms PerfectPower.CheckedLandau_cdbdaa51cd2edafd.original_integral_for_all_indices\n",
+        "namespace": "PerfectPower.CheckedLandau_cdbdaa51cd2edafd",
+        "specification_sha256": "cdbdaa51cd2edafd644a95b04cfa34b17bf90ac028af96700891d171f2b40430",
+        "source_sha256": "cd19886946bce8c4e5ab86793e70bb51a87704c0247fdab3d60700988e0e10cf",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "cdbdaa51cd2edafd644a95b04cfa34b17bf90ac028af96700891d171f2b40430",
+        "source_sha256": "cd19886946bce8c4e5ab86793e70bb51a87704c0247fdab3d60700988e0e10cf",
+        "library_sha256": "2cc13652f03579b1941eeef887b7d133cdcc17c328604280fad1e238bf849514",
+        "log": "/tmp/pp-checked-unit-21l73n_a/Query.lean:8:5: warning: unused variable `hl`\nnote: this linter can be disabled with `set_option linter.unusedVariables false`\n/tmp/pp-checked-unit-21l73n_a/Query.lean:8:28: warning: unused variable `hr`\nnote: this linter can be disabled with `set_option linter.unusedVariables false`\n'PerfectPower.CheckedLandau_cdbdaa51cd2edafd.cells_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedLandau_cdbdaa51cd2edafd.all_rational_steps' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedLandau_cdbdaa51cd2edafd.original_integral_for_all_indices' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 3.5130385350003053
+    },
+    {
+      "kind": "landau_integrality",
+      "packet": {
+        "schema": "pp-checked-landau/1",
+        "specification": {
+          "numerator": [
+            2
+          ],
+          "denominator": [
+            1,
+            1
+          ],
+          "work_limit": 4096
+        },
+        "arithmetic": {
+          "schema": "pp-landau/1",
+          "numerator": [
+            2
+          ],
+          "denominator": [
+            1,
+            1
+          ],
+          "balanced": true,
+          "integral_for_all_n": true,
+          "intervals": [
+            {
+              "left": "0",
+              "right": "1/2",
+              "delta": 0
+            },
+            {
+              "left": "1/2",
+              "right": "1",
+              "delta": 1
+            }
+          ],
+          "work_limit": 4096,
+          "execution_verified": false,
+          "theorem": "Landau balanced factorial-ratio criterion; finite rational step certificate"
+        },
+        "lean": "import PerfectPower.LandauIntegral\nimport Mathlib.Tactic.NormNum\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedLandau_9e4b9778782efe98\nopen PerfectPower.LandauIntegral\nprivate theorem cell_0 (x : \u211a)\n    (hl : ((0 : \u211a)/1) \u2264 x) (hr : x < ((1 : \u211a)/2)) :\n    0 \u2264 delta [2] [1, 1] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2]\n  norm_num\nprivate theorem cell_1 (x : \u211a)\n    (hl : ((1 : \u211a)/2) \u2264 x) (hr : x < ((1 : \u211a)/1)) :\n    0 \u2264 delta [2] [1, 1] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2]\n  norm_num\ntheorem cells_complete (x : \u211a) (hl : 0 \u2264 x) (hr : x < 1) :\n    0 \u2264 delta [2] [1, 1] x := by\n  by_cases h_0 : x < ((1 : \u211a)/2)\n  \u00b7 exact cell_0 x (by simpa using hl) h_0\n  have l_0 : ((1 : \u211a)/2) \u2264 x := le_of_not_gt h_0\n  exact cell_1 x l_0 (by simpa using hr)\ntheorem all_rational_steps (x : \u211a) : 0 \u2264 delta [2] [1, 1] x :=\n  nonnegative_of_cells [2] [1, 1] (by decide +kernel) cells_complete x\ntheorem original_integral_for_all_indices (n : \u2115) :\n    factorialProduct [1, 1] n \u2223 factorialProduct [2] n :=\n  integral_of_nonnegative [2] [1, 1] all_rational_steps n\nend PerfectPower.CheckedLandau_9e4b9778782efe98\n#print axioms PerfectPower.CheckedLandau_9e4b9778782efe98.cells_complete\n#print axioms PerfectPower.CheckedLandau_9e4b9778782efe98.all_rational_steps\n#print axioms PerfectPower.CheckedLandau_9e4b9778782efe98.original_integral_for_all_indices\n",
+        "namespace": "PerfectPower.CheckedLandau_9e4b9778782efe98",
+        "specification_sha256": "9e4b9778782efe989514a723bfb5ac4be64cf3263099fb6651f8e68236e11993",
+        "source_sha256": "45abe43187aebc7723ae20bcbc9115bc3fd126f41dfab725caff8ca167b841d7",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "9e4b9778782efe989514a723bfb5ac4be64cf3263099fb6651f8e68236e11993",
+        "source_sha256": "45abe43187aebc7723ae20bcbc9115bc3fd126f41dfab725caff8ca167b841d7",
+        "library_sha256": "2cc13652f03579b1941eeef887b7d133cdcc17c328604280fad1e238bf849514",
+        "log": "'PerfectPower.CheckedLandau_9e4b9778782efe98.cells_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedLandau_9e4b9778782efe98.all_rational_steps' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedLandau_9e4b9778782efe98.original_integral_for_all_indices' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 4.546482757999911
+    },
+    {
+      "kind": "landau_integrality",
+      "packet": {
+        "schema": "pp-checked-landau/1",
+        "specification": {
+          "numerator": [
+            3
+          ],
+          "denominator": [
+            1,
+            2
+          ],
+          "work_limit": 4096
+        },
+        "arithmetic": {
+          "schema": "pp-landau/1",
+          "numerator": [
+            3
+          ],
+          "denominator": [
+            1,
+            2
+          ],
+          "balanced": true,
+          "integral_for_all_n": true,
+          "intervals": [
+            {
+              "left": "0",
+              "right": "1/3",
+              "delta": 0
+            },
+            {
+              "left": "1/3",
+              "right": "1/2",
+              "delta": 1
+            },
+            {
+              "left": "1/2",
+              "right": "2/3",
+              "delta": 0
+            },
+            {
+              "left": "2/3",
+              "right": "1",
+              "delta": 1
+            }
+          ],
+          "work_limit": 4096,
+          "execution_verified": false,
+          "theorem": "Landau balanced factorial-ratio criterion; finite rational step certificate"
+        },
+        "lean": "import PerfectPower.LandauIntegral\nimport Mathlib.Tactic.NormNum\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedLandau_0db9d5563432eae2\nopen PerfectPower.LandauIntegral\nprivate theorem cell_0 (x : \u211a)\n    (hl : ((0 : \u211a)/1) \u2264 x) (hr : x < ((1 : \u211a)/3)) :\n    0 \u2264 delta [3] [1, 2] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3]\n  norm_num\nprivate theorem cell_1 (x : \u211a)\n    (hl : ((1 : \u211a)/3) \u2264 x) (hr : x < ((1 : \u211a)/2)) :\n    0 \u2264 delta [3] [1, 2] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3]\n  norm_num\nprivate theorem cell_2 (x : \u211a)\n    (hl : ((1 : \u211a)/2) \u2264 x) (hr : x < ((2 : \u211a)/3)) :\n    0 \u2264 delta [3] [1, 2] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3]\n  norm_num\nprivate theorem cell_3 (x : \u211a)\n    (hl : ((2 : \u211a)/3) \u2264 x) (hr : x < ((1 : \u211a)/1)) :\n    0 \u2264 delta [3] [1, 2] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3]\n  norm_num\ntheorem cells_complete (x : \u211a) (hl : 0 \u2264 x) (hr : x < 1) :\n    0 \u2264 delta [3] [1, 2] x := by\n  by_cases h_0 : x < ((1 : \u211a)/3)\n  \u00b7 exact cell_0 x (by simpa using hl) h_0\n  have l_0 : ((1 : \u211a)/3) \u2264 x := le_of_not_gt h_0\n  by_cases h_1 : x < ((1 : \u211a)/2)\n  \u00b7 exact cell_1 x l_0 h_1\n  have l_1 : ((1 : \u211a)/2) \u2264 x := le_of_not_gt h_1\n  by_cases h_2 : x < ((2 : \u211a)/3)\n  \u00b7 exact cell_2 x l_1 h_2\n  have l_2 : ((2 : \u211a)/3) \u2264 x := le_of_not_gt h_2\n  exact cell_3 x l_2 (by simpa using hr)\ntheorem all_rational_steps (x : \u211a) : 0 \u2264 delta [3] [1, 2] x :=\n  nonnegative_of_cells [3] [1, 2] (by decide +kernel) cells_complete x\ntheorem original_integral_for_all_indices (n : \u2115) :\n    factorialProduct [1, 2] n \u2223 factorialProduct [3] n :=\n  integral_of_nonnegative [3] [1, 2] all_rational_steps n\nend PerfectPower.CheckedLandau_0db9d5563432eae2\n#print axioms PerfectPower.CheckedLandau_0db9d5563432eae2.cells_complete\n#print axioms PerfectPower.CheckedLandau_0db9d5563432eae2.all_rational_steps\n#print axioms PerfectPower.CheckedLandau_0db9d5563432eae2.original_integral_for_all_indices\n",
+        "namespace": "PerfectPower.CheckedLandau_0db9d5563432eae2",
+        "specification_sha256": "0db9d5563432eae24942351535633cf2afff9fb82f1355b44c50471e0f766df1",
+        "source_sha256": "e04ffd25e33393e8b2b0c715b1616435c4001375133327bf0a51ac9b5f784eb9",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "0db9d5563432eae24942351535633cf2afff9fb82f1355b44c50471e0f766df1",
+        "source_sha256": "e04ffd25e33393e8b2b0c715b1616435c4001375133327bf0a51ac9b5f784eb9",
+        "library_sha256": "2cc13652f03579b1941eeef887b7d133cdcc17c328604280fad1e238bf849514",
+        "log": "'PerfectPower.CheckedLandau_0db9d5563432eae2.cells_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedLandau_0db9d5563432eae2.all_rational_steps' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedLandau_0db9d5563432eae2.original_integral_for_all_indices' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 5.856099888000244
+    },
+    {
+      "kind": "landau_integrality",
+      "packet": {
+        "schema": "pp-checked-landau/1",
+        "specification": {
+          "numerator": [
+            6
+          ],
+          "denominator": [
+            1,
+            2,
+            3
+          ],
+          "work_limit": 4096
+        },
+        "arithmetic": {
+          "schema": "pp-landau/1",
+          "numerator": [
+            6
+          ],
+          "denominator": [
+            1,
+            2,
+            3
+          ],
+          "balanced": true,
+          "integral_for_all_n": true,
+          "intervals": [
+            {
+              "left": "0",
+              "right": "1/6",
+              "delta": 0
+            },
+            {
+              "left": "1/6",
+              "right": "1/3",
+              "delta": 1
+            },
+            {
+              "left": "1/3",
+              "right": "1/2",
+              "delta": 1
+            },
+            {
+              "left": "1/2",
+              "right": "2/3",
+              "delta": 1
+            },
+            {
+              "left": "2/3",
+              "right": "5/6",
+              "delta": 1
+            },
+            {
+              "left": "5/6",
+              "right": "1",
+              "delta": 2
+            }
+          ],
+          "work_limit": 4096,
+          "execution_verified": false,
+          "theorem": "Landau balanced factorial-ratio criterion; finite rational step certificate"
+        },
+        "lean": "import PerfectPower.LandauIntegral\nimport Mathlib.Tactic.NormNum\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedLandau_a528c8f23d2ccf77\nopen PerfectPower.LandauIntegral\nprivate theorem cell_0 (x : \u211a)\n    (hl : ((0 : \u211a)/1) \u2264 x) (hr : x < ((1 : \u211a)/6)) :\n    0 \u2264 delta [6] [1, 2, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3, f_6]\n  norm_num\nprivate theorem cell_1 (x : \u211a)\n    (hl : ((1 : \u211a)/6) \u2264 x) (hr : x < ((1 : \u211a)/3)) :\n    0 \u2264 delta [6] [1, 2, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3, f_6]\n  norm_num\nprivate theorem cell_2 (x : \u211a)\n    (hl : ((1 : \u211a)/3) \u2264 x) (hr : x < ((1 : \u211a)/2)) :\n    0 \u2264 delta [6] [1, 2, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3, f_6]\n  norm_num\nprivate theorem cell_3 (x : \u211a)\n    (hl : ((1 : \u211a)/2) \u2264 x) (hr : x < ((2 : \u211a)/3)) :\n    0 \u2264 delta [6] [1, 2, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (3 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3, f_6]\n  norm_num\nprivate theorem cell_4 (x : \u211a)\n    (hl : ((2 : \u211a)/3) \u2264 x) (hr : x < ((5 : \u211a)/6)) :\n    0 \u2264 delta [6] [1, 2, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (4 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3, f_6]\n  norm_num\nprivate theorem cell_5 (x : \u211a)\n    (hl : ((5 : \u211a)/6) \u2264 x) (hr : x < ((1 : \u211a)/1)) :\n    0 \u2264 delta [6] [1, 2, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_2 : \u230a(2 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (5 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_2, f_3, f_6]\n  norm_num\ntheorem cells_complete (x : \u211a) (hl : 0 \u2264 x) (hr : x < 1) :\n    0 \u2264 delta [6] [1, 2, 3] x := by\n  by_cases h_0 : x < ((1 : \u211a)/6)\n  \u00b7 exact cell_0 x (by simpa using hl) h_0\n  have l_0 : ((1 : \u211a)/6) \u2264 x := le_of_not_gt h_0\n  by_cases h_1 : x < ((1 : \u211a)/3)\n  \u00b7 exact cell_1 x l_0 h_1\n  have l_1 : ((1 : \u211a)/3) \u2264 x := le_of_not_gt h_1\n  by_cases h_2 : x < ((1 : \u211a)/2)\n  \u00b7 exact cell_2 x l_1 h_2\n  have l_2 : ((1 : \u211a)/2) \u2264 x := le_of_not_gt h_2\n  by_cases h_3 : x < ((2 : \u211a)/3)\n  \u00b7 exact cell_3 x l_2 h_3\n  have l_3 : ((2 : \u211a)/3) \u2264 x := le_of_not_gt h_3\n  by_cases h_4 : x < ((5 : \u211a)/6)\n  \u00b7 exact cell_4 x l_3 h_4\n  have l_4 : ((5 : \u211a)/6) \u2264 x := le_of_not_gt h_4\n  exact cell_5 x l_4 (by simpa using hr)\ntheorem all_rational_steps (x : \u211a) : 0 \u2264 delta [6] [1, 2, 3] x :=\n  nonnegative_of_cells [6] [1, 2, 3] (by decide +kernel) cells_complete x\ntheorem original_integral_for_all_indices (n : \u2115) :\n    factorialProduct [1, 2, 3] n \u2223 factorialProduct [6] n :=\n  integral_of_nonnegative [6] [1, 2, 3] all_rational_steps n\nend PerfectPower.CheckedLandau_a528c8f23d2ccf77\n#print axioms PerfectPower.CheckedLandau_a528c8f23d2ccf77.cells_complete\n#print axioms PerfectPower.CheckedLandau_a528c8f23d2ccf77.all_rational_steps\n#print axioms PerfectPower.CheckedLandau_a528c8f23d2ccf77.original_integral_for_all_indices\n",
+        "namespace": "PerfectPower.CheckedLandau_a528c8f23d2ccf77",
+        "specification_sha256": "a528c8f23d2ccf7747d2514741f11b683acea2707a2dad629a531e038a445c47",
+        "source_sha256": "a41a7ceb1261ef5205e699d129ed31331e0bbed666f78969c5b669aa1049b327",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "a528c8f23d2ccf7747d2514741f11b683acea2707a2dad629a531e038a445c47",
+        "source_sha256": "a41a7ceb1261ef5205e699d129ed31331e0bbed666f78969c5b669aa1049b327",
+        "library_sha256": "2cc13652f03579b1941eeef887b7d133cdcc17c328604280fad1e238bf849514",
+        "log": "'PerfectPower.CheckedLandau_a528c8f23d2ccf77.cells_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedLandau_a528c8f23d2ccf77.all_rational_steps' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedLandau_a528c8f23d2ccf77.original_integral_for_all_indices' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 8.765079662000062
+    },
+    {
+      "kind": "landau_integrality",
+      "packet": {
+        "schema": "pp-checked-landau/1",
+        "specification": {
+          "numerator": [
+            12,
+            1
+          ],
+          "denominator": [
+            6,
+            4,
+            3
+          ],
+          "work_limit": 4096
+        },
+        "arithmetic": {
+          "schema": "pp-landau/1",
+          "numerator": [
+            12,
+            1
+          ],
+          "denominator": [
+            6,
+            4,
+            3
+          ],
+          "balanced": true,
+          "integral_for_all_n": true,
+          "intervals": [
+            {
+              "left": "0",
+              "right": "1/12",
+              "delta": 0
+            },
+            {
+              "left": "1/12",
+              "right": "1/6",
+              "delta": 1
+            },
+            {
+              "left": "1/6",
+              "right": "1/4",
+              "delta": 1
+            },
+            {
+              "left": "1/4",
+              "right": "1/3",
+              "delta": 1
+            },
+            {
+              "left": "1/3",
+              "right": "5/12",
+              "delta": 0
+            },
+            {
+              "left": "5/12",
+              "right": "1/2",
+              "delta": 1
+            },
+            {
+              "left": "1/2",
+              "right": "7/12",
+              "delta": 0
+            },
+            {
+              "left": "7/12",
+              "right": "2/3",
+              "delta": 1
+            },
+            {
+              "left": "2/3",
+              "right": "3/4",
+              "delta": 0
+            },
+            {
+              "left": "3/4",
+              "right": "5/6",
+              "delta": 0
+            },
+            {
+              "left": "5/6",
+              "right": "11/12",
+              "delta": 0
+            },
+            {
+              "left": "11/12",
+              "right": "1",
+              "delta": 1
+            }
+          ],
+          "work_limit": 4096,
+          "execution_verified": false,
+          "theorem": "Landau balanced factorial-ratio criterion; finite rational step certificate"
+        },
+        "lean": "import PerfectPower.LandauIntegral\nimport Mathlib.Tactic.NormNum\nset_option maxRecDepth 16384\nset_option maxHeartbeats 4000000\nnamespace PerfectPower.CheckedLandau_afa6846c0278773f\nopen PerfectPower.LandauIntegral\nprivate theorem cell_0 (x : \u211a)\n    (hl : ((0 : \u211a)/1) \u2264 x) (hr : x < ((1 : \u211a)/12)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_1 (x : \u211a)\n    (hl : ((1 : \u211a)/12) \u2264 x) (hr : x < ((1 : \u211a)/6)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_2 (x : \u211a)\n    (hl : ((1 : \u211a)/6) \u2264 x) (hr : x < ((1 : \u211a)/4)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_3 (x : \u211a)\n    (hl : ((1 : \u211a)/4) \u2264 x) (hr : x < ((1 : \u211a)/3)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (3 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_4 (x : \u211a)\n    (hl : ((1 : \u211a)/3) \u2264 x) (hr : x < ((5 : \u211a)/12)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (4 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_5 (x : \u211a)\n    (hl : ((5 : \u211a)/12) \u2264 x) (hr : x < ((1 : \u211a)/2)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (5 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_6 (x : \u211a)\n    (hl : ((1 : \u211a)/2) \u2264 x) (hr : x < ((7 : \u211a)/12)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (3 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (6 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_7 (x : \u211a)\n    (hl : ((7 : \u211a)/12) \u2264 x) (hr : x < ((2 : \u211a)/3)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (1 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (3 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (7 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_8 (x : \u211a)\n    (hl : ((2 : \u211a)/3) \u2264 x) (hr : x < ((3 : \u211a)/4)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (4 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (8 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_9 (x : \u211a)\n    (hl : ((3 : \u211a)/4) \u2264 x) (hr : x < ((5 : \u211a)/6)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (3 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (4 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (9 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_10 (x : \u211a)\n    (hl : ((5 : \u211a)/6) \u2264 x) (hr : x < ((11 : \u211a)/12)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (3 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (5 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (10 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\nprivate theorem cell_11 (x : \u211a)\n    (hl : ((11 : \u211a)/12) \u2264 x) (hr : x < ((1 : \u211a)/1)) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  have f_1 : \u230a(1 : \u211a)*x\u230b = (0 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_3 : \u230a(3 : \u211a)*x\u230b = (2 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_4 : \u230a(4 : \u211a)*x\u230b = (3 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_6 : \u230a(6 : \u211a)*x\u230b = (5 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  have f_12 : \u230a(12 : \u211a)*x\u230b = (11 : \u2124) := by\n    apply Int.floor_eq_iff.mpr\n    constructor <;> norm_num at * <;> linarith\n  simp only [one_mul] at f_1\n  simp only [delta, floorSum, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, Nat.cast_ofNat, Nat.cast_one, one_mul, f_1, f_3, f_4, f_6, f_12]\n  norm_num\ntheorem cells_complete (x : \u211a) (hl : 0 \u2264 x) (hr : x < 1) :\n    0 \u2264 delta [12, 1] [6, 4, 3] x := by\n  by_cases h_0 : x < ((1 : \u211a)/12)\n  \u00b7 exact cell_0 x (by simpa using hl) h_0\n  have l_0 : ((1 : \u211a)/12) \u2264 x := le_of_not_gt h_0\n  by_cases h_1 : x < ((1 : \u211a)/6)\n  \u00b7 exact cell_1 x l_0 h_1\n  have l_1 : ((1 : \u211a)/6) \u2264 x := le_of_not_gt h_1\n  by_cases h_2 : x < ((1 : \u211a)/4)\n  \u00b7 exact cell_2 x l_1 h_2\n  have l_2 : ((1 : \u211a)/4) \u2264 x := le_of_not_gt h_2\n  by_cases h_3 : x < ((1 : \u211a)/3)\n  \u00b7 exact cell_3 x l_2 h_3\n  have l_3 : ((1 : \u211a)/3) \u2264 x := le_of_not_gt h_3\n  by_cases h_4 : x < ((5 : \u211a)/12)\n  \u00b7 exact cell_4 x l_3 h_4\n  have l_4 : ((5 : \u211a)/12) \u2264 x := le_of_not_gt h_4\n  by_cases h_5 : x < ((1 : \u211a)/2)\n  \u00b7 exact cell_5 x l_4 h_5\n  have l_5 : ((1 : \u211a)/2) \u2264 x := le_of_not_gt h_5\n  by_cases h_6 : x < ((7 : \u211a)/12)\n  \u00b7 exact cell_6 x l_5 h_6\n  have l_6 : ((7 : \u211a)/12) \u2264 x := le_of_not_gt h_6\n  by_cases h_7 : x < ((2 : \u211a)/3)\n  \u00b7 exact cell_7 x l_6 h_7\n  have l_7 : ((2 : \u211a)/3) \u2264 x := le_of_not_gt h_7\n  by_cases h_8 : x < ((3 : \u211a)/4)\n  \u00b7 exact cell_8 x l_7 h_8\n  have l_8 : ((3 : \u211a)/4) \u2264 x := le_of_not_gt h_8\n  by_cases h_9 : x < ((5 : \u211a)/6)\n  \u00b7 exact cell_9 x l_8 h_9\n  have l_9 : ((5 : \u211a)/6) \u2264 x := le_of_not_gt h_9\n  by_cases h_10 : x < ((11 : \u211a)/12)\n  \u00b7 exact cell_10 x l_9 h_10\n  have l_10 : ((11 : \u211a)/12) \u2264 x := le_of_not_gt h_10\n  exact cell_11 x l_10 (by simpa using hr)\ntheorem all_rational_steps (x : \u211a) : 0 \u2264 delta [12, 1] [6, 4, 3] x :=\n  nonnegative_of_cells [12, 1] [6, 4, 3] (by decide +kernel) cells_complete x\ntheorem original_integral_for_all_indices (n : \u2115) :\n    factorialProduct [6, 4, 3] n \u2223 factorialProduct [12, 1] n :=\n  integral_of_nonnegative [12, 1] [6, 4, 3] all_rational_steps n\nend PerfectPower.CheckedLandau_afa6846c0278773f\n#print axioms PerfectPower.CheckedLandau_afa6846c0278773f.cells_complete\n#print axioms PerfectPower.CheckedLandau_afa6846c0278773f.all_rational_steps\n#print axioms PerfectPower.CheckedLandau_afa6846c0278773f.original_integral_for_all_indices\n",
+        "namespace": "PerfectPower.CheckedLandau_afa6846c0278773f",
+        "specification_sha256": "afa6846c0278773f8bfb7a4b327d64a61571e09cd03f7cdbd2f6deb19a5102fb",
+        "source_sha256": "f40570f30208f9c36c880aa2ff5a561cee5951ac1184c6591f3f308b54ee6b77",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "original balanced factorial ratio is integral for every natural index",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "afa6846c0278773f8bfb7a4b327d64a61571e09cd03f7cdbd2f6deb19a5102fb",
+        "source_sha256": "f40570f30208f9c36c880aa2ff5a561cee5951ac1184c6591f3f308b54ee6b77",
+        "library_sha256": "2cc13652f03579b1941eeef887b7d133cdcc17c328604280fad1e238bf849514",
+        "log": "'PerfectPower.CheckedLandau_afa6846c0278773f.cells_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedLandau_afa6846c0278773f.all_rational_steps' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedLandau_afa6846c0278773f.original_integral_for_all_indices' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "seconds": 12.728073979998953
+    }
+  ],
+  "independent_corpus_sha256": "9c2968e4d465a0bf9ff8b72185e3f8080255af745ff3e86ded44411df94eedcb",
+  "independent_corpus_proposals": [
+    {
+      "table_line": 1,
+      "cells": 12,
+      "source_sha256": "ff73fa2c30b92b8676ee72f44b932976f8236e85433c3e7080b9c2223c4e39f5",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 2,
+      "cells": 12,
+      "source_sha256": "eea77ec2e2a60494ee7cf09cd1bcb152407be90f2f7a92b1bda58db87e126a1a",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 3,
+      "cells": 16,
+      "source_sha256": "cbf8141b318f28bcd46c5887df3e8b580be054ff940436dc0d76a815c814acbc",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 4,
+      "cells": 16,
+      "source_sha256": "b3ce7ca26a58f23468f07ba0ec37895c666549ac56bf36079fcd429e73f23cea",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 5,
+      "cells": 16,
+      "source_sha256": "499566e264089db7c275289c53c100a0988a46fe5a7462717274227101cdb6c7",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 6,
+      "cells": 20,
+      "source_sha256": "951dd2b5e83a081bd9a5e6cba4a50a43d37f086c2212da00021034d0f815f117",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 7,
+      "cells": 20,
+      "source_sha256": "72d2beaf3381c96aa29f0b670be474a22a899f5dc60abd87c52bfa0f5bd34cb8",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 8,
+      "cells": 14,
+      "source_sha256": "ecbcde418de556bb2168743c27c2c3203255a1269f9781b1d54e3d337dfe3ae1",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 9,
+      "cells": 16,
+      "source_sha256": "45f16b0709b0e370c0a387c91ec0f8fa3c07c0a9451d1deb0984d75c29bf9765",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 10,
+      "cells": 24,
+      "source_sha256": "853744964a5b0d53ef58bf090b48785d54b66d88976b2abdfdb7ee751bd451e2",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 11,
+      "cells": 14,
+      "source_sha256": "83668bab010fada850612efbacde9ffce44486675742b6cb052c23b3271b8e5b",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 12,
+      "cells": 26,
+      "source_sha256": "10966cd11136f47bcda35608a1998da2494d7985fc5badb9d1c99317f889d5ee",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 13,
+      "cells": 24,
+      "source_sha256": "1979b9116ad52cd0d1c35a75475f508a399d35b00856c4f0fab405b406bb7e40",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 14,
+      "cells": 18,
+      "source_sha256": "bef0ea3feaba70902bf6df4e480f2008d1ea48de22df83f698d8856a8abb5edd",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 15,
+      "cells": 22,
+      "source_sha256": "f0ef5050b36eb4a9943f18d02913585a0f79e87bc32daedbcf80dfa3090567c5",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 16,
+      "cells": 20,
+      "source_sha256": "b2e3a967bdc00ce3970cc4bbdcecbe94e98129683347a575465f02c4027dc9ee",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 17,
+      "cells": 22,
+      "source_sha256": "e62e13d21f501b378d762338656f2fef10f574c5aa894075cb016090a36969a6",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 18,
+      "cells": 24,
+      "source_sha256": "bde17cce9de393d877e183bf2c0b4c312fb4086857e6231547c5067db953f60a",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 19,
+      "cells": 18,
+      "source_sha256": "d404c3390580d2fca8faf0eac73116b6674481cd17c1636386dc4881c4434aca",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 20,
+      "cells": 24,
+      "source_sha256": "9e4f3a2dc906f167d1518a84e3a5918ce2d30620baf33b49c7acc9a531892747",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 21,
+      "cells": 20,
+      "source_sha256": "3213d67e1a8da4076a174a02dfebad0db64ac64e32744017fba6a8ba2e87a76b",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 22,
+      "cells": 20,
+      "source_sha256": "7b63eef4fff5fd55f8178aff0db8c7d7b4c327f286ff7bd8d5d93c8b2c8ff1f1",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 23,
+      "cells": 22,
+      "source_sha256": "332d0f10349bafaece5fecc98a8b87a8fbc04cb5a8df2a349ea2160b5b420cb9",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 24,
+      "cells": 42,
+      "source_sha256": "7a7780541d657da8a53891505f87c1f3d4f6098b5e0fd4d17a19b83f4ad2c0a6",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 25,
+      "cells": 24,
+      "source_sha256": "31bba6a05a70c711ff98f36a2fe6d629466a0bf5bab545566d150f40fc1f61c1",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 26,
+      "cells": 36,
+      "source_sha256": "2562bbe756904877ce13edf162dd786c75e831150c908581c2050468e42fd3d8",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 27,
+      "cells": 24,
+      "source_sha256": "e37786536f3f2a587d244d3b9d13806d1f99266c74a641a02fcf453425e25689",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 28,
+      "cells": 36,
+      "source_sha256": "3c2e9abbac151d6282100d20049418ec3a28c4743801825de04fdc59a83eb6ba",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 29,
+      "cells": 22,
+      "source_sha256": "73f8d043f6e99a95cb33d7231cd44a52846f35c60c43a3a45b53d6c27e6eb23f",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 30,
+      "cells": 32,
+      "source_sha256": "df3cbf9c6d526c874f012caf0290fd0b59e0f6cdda11acabbdb702f00a2f2825",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 31,
+      "cells": 30,
+      "source_sha256": "85aab0f01b8015a581f2f57194fd815a838608c60d88cb4ba81c43cf428a4fc5",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 32,
+      "cells": 22,
+      "source_sha256": "50170704b9ca4a63fef558f292c3a733227d02d3b87432b0b39f0fb0718927e7",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 33,
+      "cells": 28,
+      "source_sha256": "57926d96e8747679e9cefd1957a14edf98657e3d299b26681a5a6674d06a0ab9",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 34,
+      "cells": 36,
+      "source_sha256": "6eb568fa52dae6ffa1cf1443fd71a8deee193bffb9dbe8d18932e48e243f5f12",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 35,
+      "cells": 36,
+      "source_sha256": "d01db81d0c95504d71bc51a52611519dfc88901f5246f13bad195ec0a0d07f38",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 36,
+      "cells": 24,
+      "source_sha256": "b18e79f59f892940f54cd6bfad67d03499efc0f5dad89a74159d55f3f109c12b",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 37,
+      "cells": 22,
+      "source_sha256": "dd32393e90efa05efdd6a8af4016ac2ae5aa21222eed9a5c33f5b4abb2d15118",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 38,
+      "cells": 36,
+      "source_sha256": "0a2af802a102e430a7e0a2c3b510dd29fab841c92acaae0b0846a00ee99b3bbe",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 39,
+      "cells": 28,
+      "source_sha256": "f199294584d7590d76900f675eca7ec296f77ad4699b4e2ec9f267433b513600",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 40,
+      "cells": 28,
+      "source_sha256": "f19c43e8cbb450ec159ce454ec835e91c37781b9e3babedf69b87cd1a13b68cf",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 41,
+      "cells": 26,
+      "source_sha256": "367575ddf4895bbdd8476837d30c055e4e298ec468a48fb56007cbeeac4384a9",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 42,
+      "cells": 28,
+      "source_sha256": "5908d6c9e293cb3f7a67a7ab7ce29ce6162fb805da3eaf3645516ed93c47a9bc",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 43,
+      "cells": 26,
+      "source_sha256": "0a70be3814a9f518e950dc80dae3a86da5f0ef95bc32256e6dabc1282c10fe5c",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 44,
+      "cells": 32,
+      "source_sha256": "3c09c51e6467983bc76a64feb3433cf05956ee61203c8e82a5c2b38b77cf54da",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 45,
+      "cells": 28,
+      "source_sha256": "0e00f3ca553fb6619fc4a2661f6e86ff8e939906076cd703a219a10bfca47504",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 46,
+      "cells": 36,
+      "source_sha256": "27f409d418318ba3f784864515044902f5e49d5a91dceb1b2dc3193186e80e5e",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 47,
+      "cells": 28,
+      "source_sha256": "1fae0a7ab682e6a9c41e9bd10050f426326674e040b36e8ead6328adba2e1d42",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 48,
+      "cells": 32,
+      "source_sha256": "fa92d990165369a983a5e6d952e926bf96c17cc377eccf0f4ac18b4172cfc872",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 49,
+      "cells": 30,
+      "source_sha256": "a76ba075e930af92eb072960ace386b823b3a62e87084e5ffe58244ae46d6bbf",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 50,
+      "cells": 36,
+      "source_sha256": "3282cca88a3627d4527ff57518446908509a7732621f1d4fc50f93b2931d92ce",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 51,
+      "cells": 30,
+      "source_sha256": "03791e677e3cf457d31b3c8eef853978d934507faa4c45ed9ea315f90ab724dc",
+      "proof_status": "emitted"
+    },
+    {
+      "table_line": 52,
+      "cells": 36,
+      "source_sha256": "6c5d08a450e700837a68f2baf713bde65e3335594a9d1826b5ab71f51a444447",
+      "proof_status": "emitted"
+    }
+  ],
+  "accepted_queries": 10,
+  "all_52_kernel_checked": false,
+  "full_repository_verified": false,
+  "scope": "21 generic theorems separately audited; ten actual original-equation queries accepted; corpus proposals are unaccepted"
+}

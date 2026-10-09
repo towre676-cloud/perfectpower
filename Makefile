@@ -36,6 +36,7 @@ release-verify:
 	$(MAKE) verify
 	$(MAKE) hardening-verify
 	$(MAKE) wheel-verify hardening-kernel
+	$(MAKE) gamma-bridges-kernel
 
 .PHONY: hardening-verify hardening-kernel
 hardening-verify:
@@ -43,6 +44,15 @@ hardening-verify:
 	$(PY) -m unittest discover -s python/tests -p 'test_checked_box.py'
 	$(PY) -m unittest discover -s python/tests -p 'test_release_hardening.py'
 	$(PY) -m unittest discover -s python/tests -p 'test_runtime_resources.py'
+	$(PY) -m unittest discover -s python/tests -p 'test_checked_factorial_unit.py'
+	$(PY) -m unittest discover -s python/tests -p 'test_checked_landau.py'
+
+.PHONY: gamma-bridges-kernel gamma-bridge-receipts
+gamma-bridges-kernel:
+	bash scripts/check_gamma_bridges.sh
+
+gamma-bridge-receipts:
+	lake env $(PY) python/develop_gamma_kernel_bridges.py
 
 hardening-kernel:
 	PERFECTPOWER_LEAN=$${PERFECTPOWER_LEAN:-lean} $(PY) -m unittest discover -s python/tests -p 'test_checked_box.py'

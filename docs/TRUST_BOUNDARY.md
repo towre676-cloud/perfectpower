@@ -6,6 +6,8 @@ The current 25-finding ledger is [contracts/current_frontier.json](../contracts/
 
 The new `checked-box` route reconstructs a bounded original-equation packet, rejects any changed output or supplied Lean source, then compiles the small Std-only foundation and instance in Lean 4.20.0. Its checked answer may cover all integer y for a bounded x interval, using a kernel-checked value bound and signed-root cap. Count, selection, first-occurrence rank and finite polynomial minima have explicit instance proofs. Source and library hashes bind the acceptance receipt. Emitting source alone is unaccepted; compiler and JSON-parser execution still have `execution_verified=false`. It does not discharge global Mordell bounds, Matveev, general Sturm or whole-compiler refinement.
 
+The [Gamma kernel bridges](GAMMA_KERNEL_BRIDGES_MONOGRAPH.md) now prove the general factorial-unit residue-block algorithm and the sufficient Landau direction. Checked calls reconstruct exact packets, audit their original-factorial conclusions and keep Python execution unverified. Balanced positive Landau certificates prove integrality for all natural indices; negative certificates do not discharge the converse.
+
 This page states what each artifact in the repository establishes, what it takes on trust, and which statements depend on ineffective theorems. If a statement is not covered here, treat it as unverified.
 
 ## 1. What the Lean kernel proves

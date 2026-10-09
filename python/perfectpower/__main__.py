@@ -18,6 +18,10 @@ def main():
     sub = parser.add_subparsers(dest='command', required=True)
     from .checked_box import add_commands as add_checked_commands
     add_checked_commands(sub)
+    from .checked_factorial_unit import add_commands as add_unit_commands
+    add_unit_commands(sub)
+    from .checked_landau import add_commands as add_landau_commands
+    add_landau_commands(sub)
     for name in ('scan', 'certificate', 'surgery', 'classify', 'enumerate', 'count'):
         p = sub.add_parser(name)
         p.add_argument('--coeff', required=True, type=coefficients,
@@ -175,6 +179,12 @@ def main():
     args = parser.parse_args()
     from .checked_box import cli as checked_cli
     if checked_cli(args):
+        return
+    from .checked_factorial_unit import cli as unit_cli
+    if unit_cli(args):
+        return
+    from .checked_landau import cli as landau_cli
+    if landau_cli(args):
         return
     from .query_service import cli as service_cli
     if service_cli(args):

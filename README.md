@@ -6,11 +6,13 @@ PerfectPower began with a question: when is a polynomial value a perfect power? 
 
 The project combines a Python package, exact algebra engines, a Lean 4 theorem library and reproducible research corpora. Its outputs include complete solution lists and generators, direct access to large finite populations, exact optimization policies, elliptic division fibres, and differential equations derived from polynomial curve families. Each operation states its supported inputs and the guarantee attached to its result.
 
+The [Gamma kernel bridges](docs/GAMMA_KERNEL_BRIDGES_MONOGRAPH.md) prove the general residue-block factorial-unit algorithm and the sufficient Landau integrality direction. Reconstructed checks certify original factorial units and integrality at every natural index; the converse and Python refinement remain open.
+
 ## Quick start
 
 Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. The default branch is currently named `claude/laughing-lamport-qqzdo9`.
 
-Version 0.6.1 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.
+Version 0.6.2 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.
 
 ```sh
 git clone https://github.com/towre676-cloud/perfectpower.git

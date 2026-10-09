@@ -11,6 +11,8 @@ import threading
 from perfectpower.resources import runtime_root
 from perfectpower.compiler import PowerConstraint,compile_constraint
 from perfectpower.checked_box import box_certificate
+from perfectpower.checked_factorial_unit import unit_certificate
+from perfectpower.checked_landau import landau_certificate
 from perfectpower.http_service import QueryHTTPServer
 
 
@@ -26,6 +28,10 @@ def main():
     if list(plan.iter_hits(10))!=[(2,[-5,5])]:raise AssertionError('installed complete compiler result changed')
     if box_certificate([-2,0,0,1],2,[-2,5])['points']!=[[3,-5],[3,5]]:
         raise AssertionError('installed native query changed')
+    if unit_certificate(37,2,3)['arithmetic']['unit']!=5:
+        raise AssertionError('installed original factorial-unit proposal changed')
+    if 'original_integral_for_all_indices' not in landau_certificate([2],[1,1])['lean']:
+        raise AssertionError('installed universal integrality proposal missing')
     with tempfile.TemporaryDirectory() as directory:
         server=QueryHTTPServer(Path(directory)/'installed.sqlite')
         thread=threading.Thread(target=server.serve_forever,kwargs={'poll_interval':.01},daemon=True)

@@ -28,6 +28,8 @@ jobs:
         run: scripts/check_arithmetic_simplifier.sh
       - name: Gamma arithmetic and integral output transport audit
         run: scripts/check_gamma_arithmetic.sh
+      - name: Universal factorial units and original Landau integrality
+        run: bash scripts/check_gamma_bridges.sh
       - name: Signed charts and semilinear certificate audit
         run: scripts/check_semilinear_capacity.sh
       - name: Dresden polynomial calendar and numerical-model axiom audit

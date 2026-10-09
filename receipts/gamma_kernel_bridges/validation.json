@@ -1,0 +1,45 @@
+{
+  "schema": "pp-gamma-bridge-validation/1",
+  "integration_head": "709d2f303addd670c5edeb38f09bfb34df29e12e",
+  "mathlib_commit": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "source_sha256": {
+    "PerfectPower/FactorialUnit.lean": "9f1b0aebd70f19713c57ead12e8bb8192370906813e85d5f6ca97d893cdb89c1",
+    "PerfectPower/LandauIntegral.lean": "2cc13652f03579b1941eeef887b7d133cdcc17c328604280fad1e238bf849514",
+    "python/perfectpower/checked_factorial_unit.py": "bc9c78756bfc4d5f5b01aeecbc14437b3059cf3279abd4fa66dad5027ea80ef8",
+    "python/perfectpower/checked_landau.py": "37ebd7f48fabe40195c3a457d0b5ae0f9507e24a3506073e9ecd6a718570ef22"
+  },
+  "generic_theorems_audited": 21,
+  "standard_axioms_only": true,
+  "new_unit_tests": 7,
+  "new_landau_tests": 6,
+  "new_kernel_queries": 10,
+  "existing_gamma_tests": 21,
+  "hardening_tests": 24,
+  "new_modules_lint_errors": 0,
+  "installed_wheel": {
+    "complete": true,
+    "wheel_sha256": "d36331ab55ea096bc7a241778f6f5c90e86137c8e0981d836ee5f1d6b9589e51",
+    "wheel_bytes": 6220947,
+    "installed_checks": {
+      "complete": true,
+      "assets": 1002,
+      "installed_root": "/tmp/pp-wheel-check-inzw8di6/installed/perfectpower/_assets"
+    }
+  },
+  "second_installed_wheel_check": {
+    "complete": true,
+    "wheel_sha256": "794dcabde6868a621ef022604d481cc1e4296f7432258cc9de2c15f1b579752a",
+    "wheel_bytes": 6220947,
+    "installed_checks": {
+      "complete": true,
+      "assets": 1002,
+      "installed_root": "/tmp/pp-wheel-check-2x2p_xrq/installed/perfectpower/_assets"
+    }
+  },
+  "incoming_bounce_receipt_checks": 2,
+  "incoming_wild_conductor_tests_skipped": 13,
+  "incoming_pari_recomputed": false,
+  "all_52_landau_kernel_checked": false,
+  "full_repository_verified": false,
+  "global_axiom_report": "historical report plus 21 newly checked declarations; full historical reaudit not rerun"
+}

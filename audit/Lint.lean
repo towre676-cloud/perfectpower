@@ -1,4 +1,6 @@
 import PerfectPower.EllipticSquareTransport
+import PerfectPower.FactorialUnit
+import PerfectPower.LandauIntegral
 import PerfectPower.EllipticQuarticLifts
 import PerfectPower.PicardLefschetz
 import PerfectPower.ResiduePopulation
