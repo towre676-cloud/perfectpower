@@ -31,6 +31,9 @@ def dispatch(catalogue, request):
     op = request.get('op'); args = request.get('args', {})
     if not isinstance(args, dict):
         raise ValueError('args must be a JSON object')
+    if op == 'checked_box':
+        from .checked_box import box_certificate
+        return box_certificate(**args)
     if op in {'semistable_tamagawa','metric_component_group','resonant_frobenius','frobenius_gauge_tail'}:
         from .semistable_tamagawa import rational_root_tamagawa,component_group
         from .resonant_frobenius import normal_form,gauge_tail

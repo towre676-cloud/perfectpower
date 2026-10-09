@@ -11,6 +11,11 @@ jobs:
         uses: leanprover/lean-action@v1
       - name: Native Runge complete-point and rejection audit
         run: scripts/check_native_runge.sh
+      - name: Original bounded equations, signed roots, ranks and tied minima
+        run: python3 -m unittest discover -s python/tests -p 'test_checked_box.py'
+        env:
+          PYTHONPATH: python
+          PERFECTPOWER_LEAN: lean
       - name: Native higher-power Runge and binary-root audit
         run: scripts/check_native_runge_power.sh
       - name: Parallel-session algebra and exact certificate audit

@@ -1,0 +1,60 @@
+{
+  "schema": "pp-release-features/1",
+  "features": [
+    {
+      "name": "bounded_original_equation",
+      "files": [
+        "PerfectPower/BoundedNative.lean",
+        "python/perfectpower/checked_box.py"
+      ],
+      "tests": [
+        "test_checked_box.py"
+      ],
+      "kernel_required": true
+    },
+    {
+      "name": "isolated_http",
+      "files": [
+        "python/perfectpower/http_service.py",
+        "python/perfectpower/bounded_dispatch.py"
+      ],
+      "tests": [
+        "test_release_hardening.py",
+        "test_population_algebra.py",
+        "test_remaining_fronts.py"
+      ]
+    },
+    {
+      "name": "installed_runtime",
+      "files": [
+        "setup.py",
+        "MANIFEST.in",
+        "python/perfectpower/resources.py",
+        "scripts/check_installed_wheel.py"
+      ],
+      "tests": [
+        "test_runtime_resources.py"
+      ]
+    },
+    {
+      "name": "industrial_policy",
+      "files": [
+        "python/perfectpower/industrial_execution.py"
+      ],
+      "tests": [
+        "test_release_hardening.py",
+        "test_industrial_replay.py"
+      ]
+    },
+    {
+      "name": "current_contracts",
+      "files": [
+        "contracts/current_frontier.json",
+        "scripts/check_release_contract.py"
+      ],
+      "tests": [
+        "test_runtime_resources.py"
+      ]
+    }
+  ]
+}

@@ -52,7 +52,8 @@ from .atlas import (_positive_orbits, _radical_param_hits, _positive_zeros,
 from .arith import is_square, pell_fundamental
 from .core import integer_power_root
 
-ROOT = Path(__file__).resolve().parents[2]
+from .resources import runtime_root
+ROOT = runtime_root()
 
 COMPLETE_FINITE = 'COMPLETE_FINITE'
 STRUCTURED_INFINITE = 'STRUCTURED_INFINITE'

@@ -34,6 +34,22 @@ verify: lean audit lint test cert-audit receipts counts descent-gate dresden-lea
 release-verify:
 	@$(PY) -c "import z3" || (echo 'release-verify: z3-solver is required (pip install z3-solver)'; exit 1)
 	$(MAKE) verify
+	$(MAKE) hardening-verify
+	$(MAKE) wheel-verify hardening-kernel
+
+.PHONY: hardening-verify hardening-kernel
+hardening-verify:
+	$(PY) scripts/check_release_contract.py
+	$(PY) -m unittest discover -s python/tests -p 'test_checked_box.py'
+	$(PY) -m unittest discover -s python/tests -p 'test_release_hardening.py'
+	$(PY) -m unittest discover -s python/tests -p 'test_runtime_resources.py'
+
+hardening-kernel:
+	PERFECTPOWER_LEAN=$${PERFECTPOWER_LEAN:-lean} $(PY) -m unittest discover -s python/tests -p 'test_checked_box.py'
+
+.PHONY: wheel-verify
+wheel-verify:
+	$(PY) scripts/build_and_check_wheel.py
 
 lean:
 	./scripts/build_heavy.sh

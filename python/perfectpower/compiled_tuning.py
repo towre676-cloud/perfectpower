@@ -1,5 +1,6 @@
 """Real compiled integer matrix workload, interleaved with conventional C."""
 from pathlib import Path
+from .resources import runtime_root
 from tempfile import TemporaryDirectory
 from hashlib import sha256
 import ctypes
@@ -29,7 +30,7 @@ class CompiledMatmul:
         executable=compiler or shutil.which('cc')
         if executable is None:raise ValueError('C compiler required for this workload')
         self.temporary=TemporaryDirectory(prefix='perfectpower-kernel-');self.n=n
-        source=Path(__file__).resolve().parents[2]/'native'/'compatible_matmul.c'
+        source=runtime_root()/'native'/'compatible_matmul.c'
         output=Path(self.temporary.name)/'matmul.so';flags=['-std=c99','-O3','-fPIC','-shared']
         try:subprocess.run([executable,*flags,str(source),'-o',str(output)],check=True,capture_output=True,text=True)
         except BaseException:self.temporary.cleanup();raise

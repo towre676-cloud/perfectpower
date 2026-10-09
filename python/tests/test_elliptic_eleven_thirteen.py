@@ -88,12 +88,17 @@ class ElevenThirteen(unittest.TestCase):
     def test_rank_intervals_and_point_witnesses_are_distinct(self):
         c=json.loads((ROOT/'receipts/mordell_frontier.json').read_text())
         self.assertEqual(c['ranks_determined_by_backend_bounds'],457)
-        self.assertEqual(c['ranks_with_matching_point_witnesses'],365)
+        self.assertEqual(c['ranks_with_matching_point_witnesses'],457)
         self.assertEqual(len(c['backend_census_rank_corrections']),12)
-        row=next(r for r in c['remaining'] if r['k']==-9257)
-        self.assertEqual((row['rank_lower_bound'],row['backend_rank_lower_bound'],row['rank_upper_bound']),(1,2,2))
-        self.assertTrue(row['rank_proved']);self.assertTrue(row['backend_rank_determined']);self.assertFalse(row['witness_rank_determined'])
-        self.assertEqual(c['remaining_count'],457)
+        row=next(r for r in c['rank_witness_frontier'] if r['k']==-9257)
+        self.assertEqual((row['rank_lower_bound'],row['backend_rank_lower_bound'],row['rank_upper_bound']),(2,2,2))
+        self.assertTrue(row['rank_proved']);self.assertTrue(row['backend_rank_determined']);self.assertTrue(row['witness_rank_determined'])
+        self.assertFalse(row['lean_rank_proved'])
+        self.assertEqual(c['remaining_count'],0)
+        closure=next(r for r in c['external_computation_list_closures'] if r['k']==-9257)
+        self.assertTrue(closure['complete_basis_by_backend'])
+        self.assertTrue(closure['integral_list_complete_by_backend'])
+        self.assertFalse(closure['lean_integral_list_proved'])
 
 
 class SturmDegreeAndCache(unittest.TestCase):

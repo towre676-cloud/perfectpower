@@ -10,6 +10,8 @@ The project combines a Python package, exact algebra engines, a Lean 4 theorem l
 
 Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. The default branch is currently named `claude/laughing-lamport-qqzdo9`.
 
+Version 0.6.1 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.
+
 ```sh
 git clone https://github.com/towre676-cloud/perfectpower.git
 cd perfectpower
@@ -72,6 +74,14 @@ print(family.observable()["order"])                     # 4
 [Branched topology](docs/BRANCHED_GEOMETRY_MONOGRAPH.md), [analytic geometry](docs/ANALYTIC_GEOMETRY_MONOGRAPH.md) and [Voronoi enclosures](docs/VORONOI_ENCLOSURE_MONOGRAPH.md) provide additional views of the same equations. Exact algebraic identities, certified continuation in supported charts, polyhedral bounds and numerical smooth-surface calculations carry different guarantees. General certified smooth-curve Voronoi boundaries and arbitrary marked period matrices remain open.
 
 ## Proofs and result guarantees
+
+`checked-box` emits a complete original-equation certificate for arbitrary integer polynomials through degree 32 and exponents 2 through 16, within an explicit work budget. Supplying only an x interval means **all integer y**: Lean checks a finite polynomial-value bound and derives the complete signed-root range. Supplying `--y` instead retains that rectangle as part of the theorem. Counts, selected ranks, reverse ranks and polynomial minima with every tied point have checked instances. The small foundation imports only Lean's standard library; Mathlib is unnecessary for this route.
+
+```sh
+python -m perfectpower checked-box --coeff '[-2,0,0,1]' --d 2 --x '[-2,5]' --ranks '[0,1]' --objective '[0,1]' --check
+```
+
+This checks exactly `(3,-5)` and `(3,5)` for the stated x interval. `--check` requires Lean 4.20.0 and exits unsuccessfully when acceptance fails. Emission alone is a proposal. Successful acceptance proves the reconstructed theorem; it does not verify the Python compiler or JSON parser. See [the release monograph](docs/RELEASE_HARDENING_MONOGRAPH.md) and the [current 25-finding contract](contracts/current_frontier.json). This contract separates implemented repairs, bounded proof extensions and open mathematical obligations.
 
 <a id="the-four-answers"></a>
 Constraint plans report `complete_list` when every solution in the stated domain is listed, `generator` for an exact structured family, `conditional` when completeness depends on named premises, and `unresolved` when the available method does not establish a complete answer. Bounded operations state their bounds; exhausting a work budget does not turn an incomplete search into a complete result.

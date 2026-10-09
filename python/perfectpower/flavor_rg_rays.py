@@ -7,6 +7,7 @@ from fractions import Fraction as Q
 import hashlib
 import json
 from pathlib import Path
+from .resources import runtime_root
 
 INDICES = (10, 11, 22, 23, 39, 48, 49, 50, 51)
 NAMES = ('radial', 'finite_self', 'norm_cross', 'ordinary_cross',
@@ -15,7 +16,7 @@ SLOTS = {10: 0, 22: 0, 11: 1, 23: 1, 39: 2, 48: 3, 49: 4, 50: 5, 51: 6}
 
 
 def source_table(root=None):
-    root = Path(root) if root else Path(__file__).resolve().parents[2]
+    root = Path(root) if root else runtime_root()
     path = root / 'receipts/m22_interactions/nonet_higgs_exact_loop_algebra.json'
     raw = path.read_bytes()
     data = json.loads(raw)

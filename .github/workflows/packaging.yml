@@ -1,0 +1,41 @@
+name: Installed package and current release contracts
+on:
+  push:
+  pull_request:
+jobs:
+  installed:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.10', '3.12']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install --upgrade pip setuptools wheel
+      - run: python scripts/check_release_contract.py
+      - run: python -m pip wheel . --no-deps --no-build-isolation --wheel-dir dist
+      - name: Install wheel without checkout imports
+        run: python -c "import glob,subprocess,sys; subprocess.run([sys.executable,'-m','pip','install','--no-deps',glob.glob('dist/*.whl')[0]],check=True)"
+      - name: Run outside the checkout
+        run: python scripts/check_installed_wheel.py
+        env:
+          PYTHONPATH: ''
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install '.[research]'
+      - run: python scripts/check_release_contract.py
+      - run: python -m unittest discover -s python/tests -p 'test_release_hardening.py'
+        env:
+          PYTHONPATH: python
+      - run: python -m unittest discover -s python/tests -p 'test_checked_box.py'
+        env:
+          PYTHONPATH: python

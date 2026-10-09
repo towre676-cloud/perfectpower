@@ -78,4 +78,4 @@ def run_load(*,clients=16,requests=384,timeout=20,queue_size=None):
             replay_mismatches=mismatches,transport_failures=failures,persistence_replayed=persistence,
             workload_sha256=hashlib.sha256(encoded(jobs).encode()).hexdigest(),
             all_replayed=(not mismatches and not failures and persistence),
-            scope='Concurrent loopback clients; one serialized query worker, no independent-reader or multi-process test')
+            scope='Concurrent loopback HTTP clients; one serialized catalogue process, no multi-writer SQLite test')

@@ -8,6 +8,7 @@ from fractions import Fraction
 from itertools import product
 from math import gcd
 from .semilinear_domains import count_domain
+from .resources import runtime_root
 
 
 def _integer(n):
@@ -315,7 +316,7 @@ def execute_request(request):
         import json
         from pathlib import Path
         from . import dresden_eclipse as E
-        root=Path(__file__).resolve().parents[2]/'research/dresden'
+        root=runtime_root()/'research/dresden'
         if operation=='restart_policy':
             return E.optimal_restart_order(request.get('long_count',4),request.get('short_count',1))
         if operation=='overlap':

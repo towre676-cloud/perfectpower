@@ -1,5 +1,11 @@
 # Trust boundary
 
+# Current release boundary (9 October 2026)
+
+The current 25-finding ledger is [contracts/current_frontier.json](../contracts/current_frontier.json). Historical numerical frontiers below retain their dates and are superseded by subsequent overlays. In particular, all 457 historical Mordell constructive witness gaps and external integral lists are closed computationally; all 457 curve-specific global formal obligations remain open.
+
+The new `checked-box` route reconstructs a bounded original-equation packet, rejects any changed output or supplied Lean source, then compiles the small Std-only foundation and instance in Lean 4.20.0. Its checked answer may cover all integer y for a bounded x interval, using a kernel-checked value bound and signed-root cap. Count, selection, first-occurrence rank and finite polynomial minima have explicit instance proofs. Source and library hashes bind the acceptance receipt. Emitting source alone is unaccepted; compiler and JSON-parser execution still have `execution_verified=false`. It does not discharge global Mordell bounds, Matveev, general Sturm or whole-compiler refinement.
+
 This page states what each artifact in the repository establishes, what it takes on trust, and which statements depend on ineffective theorems. If a statement is not covered here, treat it as unverified.
 
 ## 1. What the Lean kernel proves

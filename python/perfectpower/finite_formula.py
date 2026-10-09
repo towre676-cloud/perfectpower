@@ -4,6 +4,7 @@ Registry entries are compiled source theorems, not point scans. Emission is
 not proof acceptance: compile the returned Lean file before using its result.
 """
 from __future__ import annotations
+from .resources import runtime_root
 from dataclasses import dataclass
 import hashlib
 import ast
@@ -30,7 +31,7 @@ class Emission:
 
 def _positive_source(k):
     """Read only an explicit all-integer complete-list statement; Lean checks its use."""
-    path=Path(__file__).resolve().parents[2]/'PerfectPower'/'Generated'/'ClassLists'/f'K{k}.lean'
+    path=runtime_root()/'PerfectPower'/'Generated'/'ClassLists'/f'K{k}.lean'
     if not path.is_file(): return None
     pattern=rf'^theorem plus{k} \(x y : ℤ\) : y \^ 2 = x \^ 3 \+ {k} ↔ \(x, y\) ∈ \((\[[0-9(), \-]*\]) : List \(ℤ × ℤ\)\) :=$'
     match=re.search(pattern,path.read_text(),re.M)

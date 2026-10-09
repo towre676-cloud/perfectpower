@@ -25,7 +25,8 @@ from pathlib import Path
 
 from .oeis_source import Entry, parse_seq
 
-ROOT = Path(__file__).resolve().parents[2]
+from .resources import runtime_root
+ROOT = runtime_root()
 
 
 def orbit(n: int = 90) -> tuple[list[int], list[int]]:

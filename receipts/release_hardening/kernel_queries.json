@@ -1,0 +1,494 @@
+{
+  "schema": "pp-hardening-kernel/1",
+  "queries": [
+    {
+      "packet": {
+        "schema": "pp-checked-box/1",
+        "specification": {
+          "coefficients": [
+            -2,
+            0,
+            0,
+            1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            5
+          ],
+          "y_bounds": null,
+          "ranks": [
+            0,
+            1
+          ],
+          "objective": [
+            0,
+            1
+          ],
+          "work_limit": 4096
+        },
+        "resolved_y_bounds": [
+          -11,
+          11
+        ],
+        "points": [
+          [
+            3,
+            -5
+          ],
+          [
+            3,
+            5
+          ]
+        ],
+        "count": 2,
+        "selections": [
+          {
+            "rank": 0,
+            "point": [
+              3,
+              -5
+            ]
+          },
+          {
+            "rank": 1,
+            "point": [
+              3,
+              5
+            ]
+          }
+        ],
+        "minimum": {
+          "value": 3,
+          "points": [
+            [
+              3,
+              -5
+            ],
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        "lean": "import PerfectPower.BoundedNative\nnamespace PerfectPower.CheckedBox_640a21a132b798fc\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((3),(-5)),((3),(5))]\ntheorem literal_checked : solutions [-2, 0, 0, 1] 2 (-2) (5) (-11) (11) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (5) \u2227 (-11) \u2264 y \u2227 y \u2264 (11) \u2227\n      y ^ 2 = horner [-2, 0, 0, 1] x :=\n  literal_complete [-2, 0, 0, 1] 2 (-2) (5) (-11) (11) answer literal_checked x y\ntheorem count_checked : (solutions [-2, 0, 0, 1] 2 (-2) (5) (-11) (11)).length = 2 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-2) (5)).all fun x => decide ((horner [-2, 0, 0, 1] x).natAbs \u2264 123)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (5) \u2227 y ^ 2 = horner [-2, 0, 0, 1] x :=\n  bounded_source_complete [-2, 0, 0, 1] 2 (-2) (5) 123 11\n    value_bound_checked (by decide +kernel) answer literal_checked x y\ntheorem selection_0 : (solutions [-2, 0, 0, 1] 2 (-2) (5) (-11) (11))[0]? =\n    some ((3),(-5)) := by decide +kernel\ntheorem reverse_rank_0 : ((solutions [-2, 0, 0, 1] 2 (-2) (5) (-11) (11)).take 0).contains ((3),(-5)) =\n    false := by decide +kernel\ntheorem selection_1 : (solutions [-2, 0, 0, 1] 2 (-2) (5) (-11) (11))[1]? =\n    some ((3),(5)) := by decide +kernel\ntheorem reverse_rank_1 : ((solutions [-2, 0, 0, 1] 2 (-2) (5) (-11) (11)).take 1).contains ((3),(5)) =\n    false := by decide +kernel\ntheorem lower_bound_checked :\n    (answer.all fun p => decide ((3) \u2264 horner [0, 1] p.1)) = true :=\n  by decide +kernel\ntheorem minimizers_checked :\n    answer.filter (fun p => decide (horner [0, 1] p.1 = (3))) =\n      [(3, -5), (3, 5)] := by decide +kernel\ntheorem minimum_original (x y : Int) (h : (-2) \u2264 x \u2227 x \u2264 (5) \u2227 y ^ 2 = horner [-2, 0, 0, 1] x) :\n    (3) \u2264 horner [0, 1] x := by\n  have hp := (complete_all_integer_y x y).mpr h\n  exact of_decide_eq_true (List.all_eq_true.mp lower_bound_checked (x,y) hp)\ntheorem minimizers_original (x y : Int) :\n    (x,y) \u2208 ([(3, -5), (3, 5)] : List (Int \u00d7 Int)) \u2194\n      ((-2) \u2264 x \u2227 x \u2264 (5) \u2227 y ^ 2 = horner [-2, 0, 0, 1] x) \u2227 horner [0, 1] x = (3) := by\n  rw [\u2190 minimizers_checked]\n  simp only [List.mem_filter, decide_eq_true_eq, complete_all_integer_y]\nend PerfectPower.CheckedBox_640a21a132b798fc\n#print axioms PerfectPower.CheckedBox_640a21a132b798fc.original_complete\n#print axioms PerfectPower.CheckedBox_640a21a132b798fc.literal_checked\n#print axioms PerfectPower.CheckedBox_640a21a132b798fc.count_checked\n#print axioms PerfectPower.CheckedBox_640a21a132b798fc.complete_all_integer_y\n#print axioms PerfectPower.CheckedBox_640a21a132b798fc.minimum_original\n#print axioms PerfectPower.CheckedBox_640a21a132b798fc.minimizers_original\n",
+        "namespace": "PerfectPower.CheckedBox_640a21a132b798fc",
+        "specification_sha256": "640a21a132b798fcf77ce4799dda2cff580294b39b50b7f4cbef8701e0bdea30",
+        "source_sha256": "ca49bfeafeb219cb87d7591d01ec07a40a172a41dd5b438760147f9de724ca49",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "640a21a132b798fcf77ce4799dda2cff580294b39b50b7f4cbef8701e0bdea30",
+        "source_sha256": "ca49bfeafeb219cb87d7591d01ec07a40a172a41dd5b438760147f9de724ca49",
+        "library_sha256": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "log": "'PerfectPower.CheckedBox_640a21a132b798fc.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_640a21a132b798fc.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_640a21a132b798fc.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_640a21a132b798fc.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedBox_640a21a132b798fc.minimum_original' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_640a21a132b798fc.minimizers_original' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "wall_seconds": 1.776900773998932
+    },
+    {
+      "packet": {
+        "schema": "pp-checked-box/1",
+        "specification": {
+          "coefficients": [
+            0,
+            1
+          ],
+          "exponent": 3,
+          "x_bounds": [
+            -3,
+            3
+          ],
+          "y_bounds": null,
+          "ranks": [],
+          "objective": [
+            0,
+            1
+          ],
+          "work_limit": 4096
+        },
+        "resolved_y_bounds": [
+          -1,
+          1
+        ],
+        "points": [
+          [
+            -1,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "count": 3,
+        "selections": [],
+        "minimum": {
+          "value": -1,
+          "points": [
+            [
+              -1,
+              -1
+            ]
+          ]
+        },
+        "lean": "import PerfectPower.BoundedNative\nnamespace PerfectPower.CheckedBox_e706f74572c9a65c\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((-1),(-1)),((0),(0)),((1),(1))]\ntheorem literal_checked : solutions [0, 1] 3 (-3) (3) (-1) (1) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-3) \u2264 x \u2227 x \u2264 (3) \u2227 (-1) \u2264 y \u2227 y \u2264 (1) \u2227\n      y ^ 3 = horner [0, 1] x :=\n  literal_complete [0, 1] 3 (-3) (3) (-1) (1) answer literal_checked x y\ntheorem count_checked : (solutions [0, 1] 3 (-3) (3) (-1) (1)).length = 3 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-3) (3)).all fun x => decide ((horner [0, 1] x).natAbs \u2264 3)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-3) \u2264 x \u2227 x \u2264 (3) \u2227 y ^ 3 = horner [0, 1] x :=\n  bounded_source_complete [0, 1] 3 (-3) (3) 3 1\n    value_bound_checked (by decide +kernel) answer literal_checked x y\ntheorem lower_bound_checked :\n    (answer.all fun p => decide ((-1) \u2264 horner [0, 1] p.1)) = true :=\n  by decide +kernel\ntheorem minimizers_checked :\n    answer.filter (fun p => decide (horner [0, 1] p.1 = (-1))) =\n      [(-1, -1)] := by decide +kernel\ntheorem minimum_original (x y : Int) (h : (-3) \u2264 x \u2227 x \u2264 (3) \u2227 y ^ 3 = horner [0, 1] x) :\n    (-1) \u2264 horner [0, 1] x := by\n  have hp := (complete_all_integer_y x y).mpr h\n  exact of_decide_eq_true (List.all_eq_true.mp lower_bound_checked (x,y) hp)\ntheorem minimizers_original (x y : Int) :\n    (x,y) \u2208 ([(-1, -1)] : List (Int \u00d7 Int)) \u2194\n      ((-3) \u2264 x \u2227 x \u2264 (3) \u2227 y ^ 3 = horner [0, 1] x) \u2227 horner [0, 1] x = (-1) := by\n  rw [\u2190 minimizers_checked]\n  simp only [List.mem_filter, decide_eq_true_eq, complete_all_integer_y]\nend PerfectPower.CheckedBox_e706f74572c9a65c\n#print axioms PerfectPower.CheckedBox_e706f74572c9a65c.original_complete\n#print axioms PerfectPower.CheckedBox_e706f74572c9a65c.literal_checked\n#print axioms PerfectPower.CheckedBox_e706f74572c9a65c.count_checked\n#print axioms PerfectPower.CheckedBox_e706f74572c9a65c.complete_all_integer_y\n#print axioms PerfectPower.CheckedBox_e706f74572c9a65c.minimum_original\n#print axioms PerfectPower.CheckedBox_e706f74572c9a65c.minimizers_original\n",
+        "namespace": "PerfectPower.CheckedBox_e706f74572c9a65c",
+        "specification_sha256": "e706f74572c9a65c8c41ef10466b3f25cd6f6b42b83a9d29d3d86f7b866baedc",
+        "source_sha256": "8034ab5a2fb8332f90aee4faef3cc12fc13114ee0767fc71d35947a8a5bfaaa6",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "e706f74572c9a65c8c41ef10466b3f25cd6f6b42b83a9d29d3d86f7b866baedc",
+        "source_sha256": "8034ab5a2fb8332f90aee4faef3cc12fc13114ee0767fc71d35947a8a5bfaaa6",
+        "library_sha256": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "log": "'PerfectPower.CheckedBox_e706f74572c9a65c.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_e706f74572c9a65c.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_e706f74572c9a65c.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_e706f74572c9a65c.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedBox_e706f74572c9a65c.minimum_original' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_e706f74572c9a65c.minimizers_original' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "wall_seconds": 0.97169280199887
+    },
+    {
+      "packet": {
+        "schema": "pp-checked-box/1",
+        "specification": {
+          "coefficients": [
+            -1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            2
+          ],
+          "y_bounds": null,
+          "ranks": [],
+          "objective": null,
+          "work_limit": 4096
+        },
+        "resolved_y_bounds": [
+          -1,
+          1
+        ],
+        "points": [],
+        "count": 0,
+        "selections": [],
+        "minimum": null,
+        "lean": "import PerfectPower.BoundedNative\nnamespace PerfectPower.CheckedBox_32cc4e0e8f045b0a\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := []\ntheorem literal_checked : solutions [-1] 2 (-2) (2) (-1) (1) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 (-1) \u2264 y \u2227 y \u2264 (1) \u2227\n      y ^ 2 = horner [-1] x :=\n  literal_complete [-1] 2 (-2) (2) (-1) (1) answer literal_checked x y\ntheorem count_checked : (solutions [-1] 2 (-2) (2) (-1) (1)).length = 0 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-2) (2)).all fun x => decide ((horner [-1] x).natAbs \u2264 1)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [-1] x :=\n  bounded_source_complete [-1] 2 (-2) (2) 1 1\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_32cc4e0e8f045b0a\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.original_complete\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.literal_checked\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.count_checked\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.complete_all_integer_y\n",
+        "namespace": "PerfectPower.CheckedBox_32cc4e0e8f045b0a",
+        "specification_sha256": "32cc4e0e8f045b0a141dc160ebba7fdcfd099d3f2c07d4a1ee82117a3ad9064f",
+        "source_sha256": "1318979b8f56c550216a7caf0172fb631f255950d9d6bc17fe704097cce9ee08",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "32cc4e0e8f045b0a141dc160ebba7fdcfd099d3f2c07d4a1ee82117a3ad9064f",
+        "source_sha256": "1318979b8f56c550216a7caf0172fb631f255950d9d6bc17fe704097cce9ee08",
+        "library_sha256": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "log": "'PerfectPower.CheckedBox_32cc4e0e8f045b0a.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_32cc4e0e8f045b0a.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_32cc4e0e8f045b0a.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_32cc4e0e8f045b0a.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "wall_seconds": 0.9518474560027244
+    },
+    {
+      "packet": {
+        "schema": "pp-checked-box/1",
+        "specification": {
+          "coefficients": [
+            0
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            2
+          ],
+          "y_bounds": null,
+          "ranks": [],
+          "objective": null,
+          "work_limit": 4096
+        },
+        "resolved_y_bounds": [
+          0,
+          0
+        ],
+        "points": [
+          [
+            -2,
+            0
+          ],
+          [
+            -1,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "count": 5,
+        "selections": [],
+        "minimum": null,
+        "lean": "import PerfectPower.BoundedNative\nnamespace PerfectPower.CheckedBox_d34672265718c6ad\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((-2),(0)),((-1),(0)),((0),(0)),((1),(0)),((2),(0))]\ntheorem literal_checked : solutions [0] 2 (-2) (2) (0) (0) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 (0) \u2264 y \u2227 y \u2264 (0) \u2227\n      y ^ 2 = horner [0] x :=\n  literal_complete [0] 2 (-2) (2) (0) (0) answer literal_checked x y\ntheorem count_checked : (solutions [0] 2 (-2) (2) (0) (0)).length = 5 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-2) (2)).all fun x => decide ((horner [0] x).natAbs \u2264 0)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [0] x :=\n  bounded_source_complete [0] 2 (-2) (2) 0 0\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_d34672265718c6ad\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.original_complete\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.literal_checked\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.count_checked\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.complete_all_integer_y\n",
+        "namespace": "PerfectPower.CheckedBox_d34672265718c6ad",
+        "specification_sha256": "d34672265718c6ad60acccf21f738f2dbbcaed67d49a3abc2ee03d26ff0bba7e",
+        "source_sha256": "50bee5c335450add4f876004d536537fe3d1ebbd318c1b29b6dc9e806ddb9ae6",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "d34672265718c6ad60acccf21f738f2dbbcaed67d49a3abc2ee03d26ff0bba7e",
+        "source_sha256": "50bee5c335450add4f876004d536537fe3d1ebbd318c1b29b6dc9e806ddb9ae6",
+        "library_sha256": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "log": "'PerfectPower.CheckedBox_d34672265718c6ad.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_d34672265718c6ad.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_d34672265718c6ad.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_d34672265718c6ad.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "wall_seconds": 0.8464550879944
+    },
+    {
+      "packet": {
+        "schema": "pp-checked-box/1",
+        "specification": {
+          "coefficients": [
+            1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            2,
+            1
+          ],
+          "y_bounds": null,
+          "ranks": [],
+          "objective": null,
+          "work_limit": 4096
+        },
+        "resolved_y_bounds": [
+          0,
+          0
+        ],
+        "points": [],
+        "count": 0,
+        "selections": [],
+        "minimum": null,
+        "lean": "import PerfectPower.BoundedNative\nnamespace PerfectPower.CheckedBox_7aa857b575056e63\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := []\ntheorem literal_checked : solutions [1] 2 (2) (1) (0) (0) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (2) \u2264 x \u2227 x \u2264 (1) \u2227 (0) \u2264 y \u2227 y \u2264 (0) \u2227\n      y ^ 2 = horner [1] x :=\n  literal_complete [1] 2 (2) (1) (0) (0) answer literal_checked x y\ntheorem count_checked : (solutions [1] 2 (2) (1) (0) (0)).length = 0 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (2) (1)).all fun x => decide ((horner [1] x).natAbs \u2264 0)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (2) \u2264 x \u2227 x \u2264 (1) \u2227 y ^ 2 = horner [1] x :=\n  bounded_source_complete [1] 2 (2) (1) 0 0\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_7aa857b575056e63\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.original_complete\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.literal_checked\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.count_checked\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.complete_all_integer_y\n",
+        "namespace": "PerfectPower.CheckedBox_7aa857b575056e63",
+        "specification_sha256": "7aa857b575056e6371692b218bb1d563e1c2bf2f9186720ffe3874e6cf8fdf5a",
+        "source_sha256": "1d45fe8fd421657cbf7f9df5f17a6bf120ca7cc80a01bf2f2c23fa7160b35587",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "7aa857b575056e6371692b218bb1d563e1c2bf2f9186720ffe3874e6cf8fdf5a",
+        "source_sha256": "1d45fe8fd421657cbf7f9df5f17a6bf120ca7cc80a01bf2f2c23fa7160b35587",
+        "library_sha256": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "log": "'PerfectPower.CheckedBox_7aa857b575056e63.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_7aa857b575056e63.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_7aa857b575056e63.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_7aa857b575056e63.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "wall_seconds": 0.8277497300005052
+    },
+    {
+      "packet": {
+        "schema": "pp-checked-box/1",
+        "specification": {
+          "coefficients": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            2
+          ],
+          "y_bounds": null,
+          "ranks": [],
+          "objective": [
+            0,
+            0,
+            1
+          ],
+          "work_limit": 4096
+        },
+        "resolved_y_bounds": [
+          -4,
+          4
+        ],
+        "points": [
+          [
+            -2,
+            -4
+          ],
+          [
+            -2,
+            4
+          ],
+          [
+            -1,
+            -1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            -4
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "count": 9,
+        "selections": [],
+        "minimum": {
+          "value": 0,
+          "points": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "lean": "import PerfectPower.BoundedNative\nnamespace PerfectPower.CheckedBox_42197d088e00ed80\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((-2),(-4)),((-2),(4)),((-1),(-1)),((-1),(1)),((0),(0)),((1),(-1)),((1),(1)),((2),(-4)),((2),(4))]\ntheorem literal_checked : solutions [0, 0, 0, 0, 1] 2 (-2) (2) (-4) (4) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 (-4) \u2264 y \u2227 y \u2264 (4) \u2227\n      y ^ 2 = horner [0, 0, 0, 0, 1] x :=\n  literal_complete [0, 0, 0, 0, 1] 2 (-2) (2) (-4) (4) answer literal_checked x y\ntheorem count_checked : (solutions [0, 0, 0, 0, 1] 2 (-2) (2) (-4) (4)).length = 9 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-2) (2)).all fun x => decide ((horner [0, 0, 0, 0, 1] x).natAbs \u2264 16)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [0, 0, 0, 0, 1] x :=\n  bounded_source_complete [0, 0, 0, 0, 1] 2 (-2) (2) 16 4\n    value_bound_checked (by decide +kernel) answer literal_checked x y\ntheorem lower_bound_checked :\n    (answer.all fun p => decide ((0) \u2264 horner [0, 0, 1] p.1)) = true :=\n  by decide +kernel\ntheorem minimizers_checked :\n    answer.filter (fun p => decide (horner [0, 0, 1] p.1 = (0))) =\n      [(0, 0)] := by decide +kernel\ntheorem minimum_original (x y : Int) (h : (-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [0, 0, 0, 0, 1] x) :\n    (0) \u2264 horner [0, 0, 1] x := by\n  have hp := (complete_all_integer_y x y).mpr h\n  exact of_decide_eq_true (List.all_eq_true.mp lower_bound_checked (x,y) hp)\ntheorem minimizers_original (x y : Int) :\n    (x,y) \u2208 ([(0, 0)] : List (Int \u00d7 Int)) \u2194\n      ((-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [0, 0, 0, 0, 1] x) \u2227 horner [0, 0, 1] x = (0) := by\n  rw [\u2190 minimizers_checked]\n  simp only [List.mem_filter, decide_eq_true_eq, complete_all_integer_y]\nend PerfectPower.CheckedBox_42197d088e00ed80\n#print axioms PerfectPower.CheckedBox_42197d088e00ed80.original_complete\n#print axioms PerfectPower.CheckedBox_42197d088e00ed80.literal_checked\n#print axioms PerfectPower.CheckedBox_42197d088e00ed80.count_checked\n#print axioms PerfectPower.CheckedBox_42197d088e00ed80.complete_all_integer_y\n#print axioms PerfectPower.CheckedBox_42197d088e00ed80.minimum_original\n#print axioms PerfectPower.CheckedBox_42197d088e00ed80.minimizers_original\n",
+        "namespace": "PerfectPower.CheckedBox_42197d088e00ed80",
+        "specification_sha256": "42197d088e00ed809b4dc1d5be6e8038856eb9498600d211f6d5e97fae19e11e",
+        "source_sha256": "7dd09eed3dbf094962cf8e80901da189e657130f328af601a2213443879f0f85",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "42197d088e00ed809b4dc1d5be6e8038856eb9498600d211f6d5e97fae19e11e",
+        "source_sha256": "7dd09eed3dbf094962cf8e80901da189e657130f328af601a2213443879f0f85",
+        "library_sha256": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "log": "'PerfectPower.CheckedBox_42197d088e00ed80.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_42197d088e00ed80.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_42197d088e00ed80.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_42197d088e00ed80.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedBox_42197d088e00ed80.minimum_original' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_42197d088e00ed80.minimizers_original' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "wall_seconds": 1.062747872005275
+    },
+    {
+      "packet": {
+        "schema": "pp-checked-box/1",
+        "specification": {
+          "coefficients": [
+            -2,
+            0,
+            0,
+            1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            5
+          ],
+          "y_bounds": [
+            0,
+            6
+          ],
+          "ranks": [],
+          "objective": [
+            0,
+            1
+          ],
+          "work_limit": 4096
+        },
+        "resolved_y_bounds": [
+          0,
+          6
+        ],
+        "points": [
+          [
+            3,
+            5
+          ]
+        ],
+        "count": 1,
+        "selections": [],
+        "minimum": {
+          "value": 3,
+          "points": [
+            [
+              3,
+              5
+            ]
+          ]
+        },
+        "lean": "import PerfectPower.BoundedNative\nnamespace PerfectPower.CheckedBox_df9bfdaf1f6f963a\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((3),(5))]\ntheorem literal_checked : solutions [-2, 0, 0, 1] 2 (-2) (5) (0) (6) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (5) \u2227 (0) \u2264 y \u2227 y \u2264 (6) \u2227\n      y ^ 2 = horner [-2, 0, 0, 1] x :=\n  literal_complete [-2, 0, 0, 1] 2 (-2) (5) (0) (6) answer literal_checked x y\ntheorem count_checked : (solutions [-2, 0, 0, 1] 2 (-2) (5) (0) (6)).length = 1 := by decide +kernel\ntheorem lower_bound_checked :\n    (answer.all fun p => decide ((3) \u2264 horner [0, 1] p.1)) = true :=\n  by decide +kernel\ntheorem minimizers_checked :\n    answer.filter (fun p => decide (horner [0, 1] p.1 = (3))) =\n      [(3, 5)] := by decide +kernel\ntheorem minimum_original (x y : Int) (h : (-2) \u2264 x \u2227 x \u2264 (5) \u2227 (0) \u2264 y \u2227 y \u2264 (6) \u2227 y ^ 2 = horner [-2, 0, 0, 1] x) :\n    (3) \u2264 horner [0, 1] x := by\n  have hp := (original_complete x y).mpr h\n  exact of_decide_eq_true (List.all_eq_true.mp lower_bound_checked (x,y) hp)\ntheorem minimizers_original (x y : Int) :\n    (x,y) \u2208 ([(3, 5)] : List (Int \u00d7 Int)) \u2194\n      ((-2) \u2264 x \u2227 x \u2264 (5) \u2227 (0) \u2264 y \u2227 y \u2264 (6) \u2227 y ^ 2 = horner [-2, 0, 0, 1] x) \u2227 horner [0, 1] x = (3) := by\n  rw [\u2190 minimizers_checked]\n  simp only [List.mem_filter, decide_eq_true_eq, original_complete]\nend PerfectPower.CheckedBox_df9bfdaf1f6f963a\n#print axioms PerfectPower.CheckedBox_df9bfdaf1f6f963a.original_complete\n#print axioms PerfectPower.CheckedBox_df9bfdaf1f6f963a.literal_checked\n#print axioms PerfectPower.CheckedBox_df9bfdaf1f6f963a.count_checked\n#print axioms PerfectPower.CheckedBox_df9bfdaf1f6f963a.minimum_original\n#print axioms PerfectPower.CheckedBox_df9bfdaf1f6f963a.minimizers_original\n",
+        "namespace": "PerfectPower.CheckedBox_df9bfdaf1f6f963a",
+        "specification_sha256": "df9bfdaf1f6f963a88e0a4b8aa9c4dcd77b072e5be11d3d19aa18677071287b4",
+        "source_sha256": "ff0fd0b768480bef067e35e64ade35739eef6002cc5b9813a24673d232bd87b0",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete only within the explicit integer rectangle"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete only within the explicit integer rectangle",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "df9bfdaf1f6f963a88e0a4b8aa9c4dcd77b072e5be11d3d19aa18677071287b4",
+        "source_sha256": "ff0fd0b768480bef067e35e64ade35739eef6002cc5b9813a24673d232bd87b0",
+        "library_sha256": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+        "log": "'PerfectPower.CheckedBox_df9bfdaf1f6f963a.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_df9bfdaf1f6f963a.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_df9bfdaf1f6f963a.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_df9bfdaf1f6f963a.minimum_original' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_df9bfdaf1f6f963a.minimizers_original' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n"
+      },
+      "wall_seconds": 0.9293699189947802
+    }
+  ],
+  "all_accepted": true
+}

@@ -1,0 +1,120 @@
+{
+  "schema": "pp-hardening-validation/1",
+  "base_commit": "6bbaa3b1548181baab0f8866f34059abf9bfcb08",
+  "integration_head": "5778ed86280d519297f70e6ad111921f144371b8",
+  "checks": {
+    "release": {
+      "log_sha256": "167384809af779a58223297c8b8d5c604c43bac8479f6c145072db666f11961b",
+      "completed": true,
+      "test_counts": [
+        7,
+        3,
+        1,
+        7
+      ]
+    },
+    "compiler": {
+      "log_sha256": "554deed0c09f00baade68ff1fc4adeabdf3d6eef267e243df4d3dbc53e203c98",
+      "completed": true,
+      "test_counts": [
+        34
+      ]
+    },
+    "population": {
+      "log_sha256": "66b5a30fe5e48aeccec03d2a8ee30468337afb8eac209324fa087709619a4d62",
+      "completed": true,
+      "test_counts": [
+        11
+      ]
+    },
+    "http_replay": {
+      "log_sha256": "739b736a7f0cc2d9317a4295aeb1275cd371b6736da7efef6ebac8f7218b3e25",
+      "completed": true,
+      "test_counts": [
+        9
+      ]
+    },
+    "service_hardening": {
+      "log_sha256": "35d3c39fc8b1ccf7d188a7420753644986d61586b673feef18a2bde8d15edc15",
+      "completed": true,
+      "test_counts": [
+        3
+      ]
+    },
+    "declared_wall": {
+      "log_sha256": "e9e93eea93c1855eb54918c3b5019da01441cb11f43d5fe6b0e71b71a6aa5383",
+      "completed": true,
+      "test_counts": [
+        3
+      ]
+    },
+    "stokes_incoming": {
+      "log_sha256": "2edd8ae031ff6abeb4ec5b0d378ecc843b9c2160d2b3e690d8736182a0badd96",
+      "completed": true,
+      "test_counts": [
+        15
+      ]
+    },
+    "final_release": {
+      "log_sha256": "2e63dbe9cdd1459d7498d16769a404812a5e791eabb684011950dc8ff9947931",
+      "completed": true,
+      "test_counts": [
+        7,
+        3,
+        1
+      ]
+    },
+    "final_http": {
+      "log_sha256": "34976949ad5041b09162cdbbc7b236decf825e47d16fa67eddc612ff48b7ffda",
+      "completed": true,
+      "test_counts": [
+        9
+      ]
+    }
+  },
+  "full_repository_test": "Stopped before completion, including two historical-test failures repaired and rerun separately; not a full-suite pass.",
+  "full_mathlib_build": "Not rerun: local Std-only Lean checks completed, full Mathlib dependencies unavailable in this workspace.",
+  "claims": {
+    "all_25_research_problems_closed": false,
+    "python_execution_verified": false,
+    "global_mordell_lean_closure": false,
+    "industrial_arithmetic_speedup": false
+  },
+  "source_sha256": {
+    ".github/workflows/lean.yml": "d0ad81c94ba73b23e88eafb52704eccf84c6d6a5a2ba171e0cee6637309feaee",
+    ".github/workflows/packaging.yml": "609ecbef7ddef273f69a9b022e604ec9598d92bc18510b5bad6073e5952f5aa6",
+    ".github/workflows/python.yml": "8471e7281d2c9bc8d63405fb3958182c86707001661ec97affa1b192e53c948d",
+    "PerfectPower.lean": "0ed43c80fe61ad9db49bcf4f91c620017786f20a80eb3768bb4fdc1aa02e706a",
+    "PerfectPower/BoundedNative.lean": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+    "audit/BoundedNative.lean": "362a7826494e52349bc0417131d923441382f21c1a9088e6e7c665a13f0096c2",
+    "pyproject.toml": "2a95851e57f03ae71edb00709ac6cb3dd9a826e22f81b40525d2d53d737c7dbc",
+    "python/develop_irregular_stokes_general.py": "cb72a5fc23352003a5d17ccc58bf91d365c133eef83ad8448ef33ee3b358e368",
+    "python/develop_wall_network_asymptotic.py": "cda9b3e17af052e680fc29ad4e514987883a842a150ab4705313115071a77f83",
+    "python/perfectpower/__main__.py": "15188b7bda75ad4e885da10bcfc78f92f2b0912ec3dc28ce7bc8209ae64e85fb",
+    "python/perfectpower/bounded_dispatch.py": "9d016b92ce80b80fd79b479260643b985cd0b188fbca2f4de3ccf95a6916543c",
+    "python/perfectpower/checked_box.py": "56882124b99599bc3e19cdf82d58bb95d48f28853a1984340232b7db25cddf30",
+    "python/perfectpower/compiled_tuning.py": "0a94b96beab14da9b0876b0720cc743f880b1254011a4f28eae94a1aa6bd361c",
+    "python/perfectpower/compiler.py": "8ecc7dacf341efca5bb3d1ed9c92b8f182739e3279ebacee9c34d7bd3537fe20",
+    "python/perfectpower/dresden.py": "d44d23031551aded37f6af69a01a6a77bd695e69397eee62cad91ddb1a24004f",
+    "python/perfectpower/finite_formula.py": "0f3af90002a63ad27213d6142e5a5986ce26a146f1643e36b111a54e55575d5f",
+    "python/perfectpower/flavor_rg_rays.py": "8669ee55c852e3849027fbccf604776b6d22ee926fe8b25355f4dc1ad442d3bb",
+    "python/perfectpower/http_load.py": "3ac73d62468a211b6493ffb71763626082510f012b7914a1028dec0b6aa5afe0",
+    "python/perfectpower/http_service.py": "844e5d78e0196a410dff273e096926bf25b9adf8e815e9354ce1ba145986fe1f",
+    "python/perfectpower/industrial_execution.py": "c094245000382390f790b9b3b71ebfbd47a2cceeb8822da9a2e70655b872998b",
+    "python/perfectpower/irregular_stokes_general.py": "6b71ef8f54ef1e0d44043b06cdc0c425fa1af4a26a11e976d6bea6e7897d02e8",
+    "python/perfectpower/oeis_orbit.py": "f0bcb416fc420766e90cc11b02699b96b85239a3bfe4be60fefc7314b0750886",
+    "python/perfectpower/query_service.py": "2df6be050820dcc53dd439de61d041927b132b5f190b0294d765173796deeea6",
+    "python/perfectpower/resources.py": "5aee20d9040fbcdd9d7ed3c6760f009e08c5787c410c52b69f13793ed5d29551",
+    "python/perfectpower/smt_cert.py": "95b3b88792ffbb232b0a7336983bf529bf185b341cc2479d15b846af898171c6",
+    "python/tests/test_checked_box.py": "93e60e6393afa6be0eb2dbbd1af26f27553fe5c1e29f2989cd17cd8ad30fef40",
+    "python/tests/test_declared_wall_certificate.py": "b20f30c79444d9b5082a61166a2e52f345e76ae75f70cc066485172abf24ffa5",
+    "python/tests/test_elliptic_eleven_thirteen.py": "a3e05fb9c4c873c0361f684b0348de3b1c0e079bc3a81607cefb586b0531335e",
+    "python/tests/test_irregular_stokes_general.py": "b913ed06a3bb8f0f2a54c7d42ca2f7ac7d2948765d9d34f4bcbaa6849acb8157",
+    "python/tests/test_release_hardening.py": "bf3f53ddacc36ac7eda87bb862536b0b1abc9bf10e4245ff70a9009ccd9d214a",
+    "python/tests/test_runtime_resources.py": "bac972be9a3de43023b154b59478f1b55d48f94f919288f363fccd3c5d920b87",
+    "scripts/build_and_check_wheel.py": "fc716caf7afda22b2732f1973e89bb8ba1969835f3c1ad16ae6c1fc870071752",
+    "scripts/check_installed_wheel.py": "4773f9cbaecf411b4b4a90fd6c333d6b062a27223c8227fbe5d399812884a227",
+    "scripts/check_release_contract.py": "1fe7d6c33bcb25b892e31c26a18b03e68016b774692b371a63b40ba5ee908be2",
+    "setup.py": "ac8b254e19934cf5eab7730c2da94680cbf256830860d52249a0c907f7e401aa"
+  }
+}

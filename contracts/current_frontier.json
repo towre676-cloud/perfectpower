@@ -1,0 +1,184 @@
+{
+  "schema": "pp-current-frontier/1",
+  "date": "2026-10-09",
+  "base_commit": "6bbaa3b1548181baab0f8866f34059abf9bfcb08",
+  "scope": "Current response to the 25-flaw review; implemented does not assert formal program verification.",
+  "findings": [
+    {
+      "id": 1,
+      "title": "Compiler proof boundary",
+      "status": "bounded_route_delivered",
+      "contract": "Whole-compiler semantics remain open; checked-box proves reconstructed bounded original equations.",
+      "evidence": "python/perfectpower/checked_box.py"
+    },
+    {
+      "id": 2,
+      "title": "Mordell global completeness",
+      "status": "open",
+      "contract": "All 457 curve-specific global rank, saturation and coordinate bounds remain formal obligations.",
+      "evidence": "docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md"
+    },
+    {
+      "id": 3,
+      "title": "Industrial portfolio regression",
+      "status": "mitigated",
+      "contract": "Default transport mode keeps original assertions; portfolio requires explicit experimental opt-in. No arithmetic speedup claimed.",
+      "evidence": "python/perfectpower/industrial_execution.py"
+    },
+    {
+      "id": 4,
+      "title": "General effective solving",
+      "status": "bounded_route_delivered",
+      "contract": "Arbitrary degree <=32 and exponents 2..16 now have checked finite-x answers within budget; global Baker remains open.",
+      "evidence": "PerfectPower/BoundedNative.lean"
+    },
+    {
+      "id": 5,
+      "title": "Matveev premises",
+      "status": "open",
+      "contract": "Named analytic premises remain undischargeable by finite packet checks.",
+      "evidence": "docs/TRUST_BOUNDARY.md"
+    },
+    {
+      "id": 6,
+      "title": "General Sturm correctness",
+      "status": "bounded_route_delivered",
+      "contract": "Finite exact queries avoid real-root assumptions; general Sturm variation remains open.",
+      "evidence": "PerfectPower/BoundedNative.lean"
+    },
+    {
+      "id": 7,
+      "title": "Population rank/select execution",
+      "status": "bounded_route_delivered",
+      "contract": "Original-equation bounded list count, selection and first-occurrence rank now kernel-check; generic population interpreter remains open.",
+      "evidence": "python/perfectpower/checked_box.py"
+    },
+    {
+      "id": 8,
+      "title": "Optimization proof pipeline",
+      "status": "bounded_route_delivered",
+      "contract": "Finite-x polynomial minimum and all tied original points kernel-check; unbounded optimization remains open.",
+      "evidence": "python/perfectpower/checked_box.py"
+    },
+    {
+      "id": 9,
+      "title": "Number-ring orbit completion",
+      "status": "open",
+      "contract": "General norm representatives and effective exponent bounds remain open.",
+      "evidence": "docs/UNIT_LATTICES_WEIL_MONOGRAPH.md"
+    },
+    {
+      "id": 10,
+      "title": "Runge recognition and cost",
+      "status": "bounded_route_delivered",
+      "contract": "Bounded original-polynomial route does not require Runge leading-coefficient recognition; global recognition and sharper bounds remain open.",
+      "evidence": "PerfectPower/BoundedNative.lean"
+    },
+    {
+      "id": 11,
+      "title": "Smooth/mesh metric identification",
+      "status": "open",
+      "contract": "Polyhedral guarantees remain separate from general smooth metric transport.",
+      "evidence": "docs/VORONOI_ENCLOSURE_MONOGRAPH.md"
+    },
+    {
+      "id": 12,
+      "title": "General certified periods",
+      "status": "open",
+      "contract": "Existing supported genus-two closures retained; arbitrary marked normalized periods remain open.",
+      "evidence": "docs/GENUS2_COMPLEX_PERIODS_MONOGRAPH.md"
+    },
+    {
+      "id": 13,
+      "title": "Irregular singular execution",
+      "status": "open",
+      "contract": "Incoming supported rank-one certified Stokes computation now covers no closed forms, repeated eigenvalues and ramified scalar reductions; arbitrary irregular systems outside that framework and Lean execution remain open.",
+      "evidence": "docs/IRREGULAR_STOKES_GENERAL_MONOGRAPH.md"
+    },
+    {
+      "id": 14,
+      "title": "Wild dyadic reduction",
+      "status": "open",
+      "contract": "Existing elliptic dyadic and genus-two good-reduction results retained; wild genus-two conductors at 2 remain open.",
+      "evidence": "docs/DYADIC_REDUCTION_AND_STOKES_MONOGRAPH.md"
+    },
+    {
+      "id": 15,
+      "title": "All-level Weil formalization",
+      "status": "open",
+      "contract": "General intertwining and orbit-bound formalization remain open.",
+      "evidence": "docs/WEIL_SPECTRAL_MONOGRAPH.md"
+    },
+    {
+      "id": 16,
+      "title": "Gamma correctness bridges",
+      "status": "open",
+      "contract": "General Landau equivalence and factorial-unit implementation correctness remain open.",
+      "evidence": "docs/GAMMA_ARITHMETIC_MONOGRAPH.md"
+    },
+    {
+      "id": 17,
+      "title": "Runtime assets absent from installation",
+      "status": "implemented",
+      "contract": "Wheel and sdist include curated mathematical sources, certificates, core receipts, data and atlas.",
+      "evidence": "setup.py"
+    },
+    {
+      "id": 18,
+      "title": "Fragmented dependencies",
+      "status": "implemented",
+      "contract": "Named analytic, intervals, industrial and research extras expose feature installation contracts.",
+      "evidence": "pyproject.toml"
+    },
+    {
+      "id": 19,
+      "title": "Portable installation coverage",
+      "status": "implemented",
+      "contract": "CI adds independent installed-wheel checks across Windows, Linux and macOS and supported Python versions.",
+      "evidence": "scripts/check_installed_wheel.py"
+    },
+    {
+      "id": 20,
+      "title": "Resource-heavy proof reproduction",
+      "status": "bounded_route_delivered",
+      "contract": "New checker uses Std-only library and compiles without Mathlib; historical heavy modules retain their cost.",
+      "evidence": "PerfectPower/BoundedNative.lean"
+    },
+    {
+      "id": 21,
+      "title": "Incomplete release feature contract",
+      "status": "implemented",
+      "contract": "Release manifest validates required paths, test coverage and focused checks; extended gate is required by release-verify.",
+      "evidence": "scripts/check_release_contract.py"
+    },
+    {
+      "id": 22,
+      "title": "HTTP availability",
+      "status": "implemented",
+      "contract": "Bounded clients, absolute header/body deadline, serial terminable query process and independent health handlers. Mutation timeout may leave committed state.",
+      "evidence": "python/perfectpower/bounded_dispatch.py"
+    },
+    {
+      "id": 23,
+      "title": "Historical/current status ambiguity",
+      "status": "implemented",
+      "contract": "This single current ledger separates implemented changes, bounded extensions and open research; historical sections are explicitly subordinate.",
+      "evidence": "contracts/current_frontier.json"
+    },
+    {
+      "id": 24,
+      "title": "External adoption evidence",
+      "status": "open",
+      "contract": "Independent solver regressions retained and transport gains remain scoped; no production adoption or commercial speedup inferred.",
+      "evidence": "industrial_performance/REPLAY_MONOGRAPH.md"
+    },
+    {
+      "id": 25,
+      "title": "Observed physics predictions",
+      "status": "open",
+      "contract": "CKM, physical CP selection and alpha(0) remain unpredicted; model computations do not discharge these mechanisms.",
+      "evidence": "docs/FLAVOR_PREDICTION_MECHANISMS.md"
+    }
+  ],
+  "integration_head": "5778ed86280d519297f70e6ad111921f144371b8"
+}
