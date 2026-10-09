@@ -1,0 +1,840 @@
+{
+  "title": "PerfectPower / The room of possibilities",
+  "source_repository": "https://github.com/towre676-cloud/perfectpower",
+  "source_commit": "fa5186cf4a51d3a9660b610a61e46f06dea4fb8d",
+  "source_revision_scope": "source_commit records the checkout base; source_files pin the executed bytes, including any uncommitted changes",
+  "source_worktree_dirty": true,
+  "source_files": {
+    "README.md": "499b0ac0aff868b249df1db54fc934e905a820065ba42fe5e1a3157a298d3881",
+    "docs/POPULATION_MONOGRAPH.md": "852a49c9563e2866536f9c782a4389813d84f70f278166d863e2158753554232",
+    "python/perfectpower/populations.py": "d61a5ea0d088a9df319995702670b5ddae295e0f64f1b89c37c24a664116ab93",
+    "python/perfectpower/query_space.py": "0d6ae86401356047139924d056a75956624b30f6cb7872f3302de4d46c98d8a3",
+    "python/perfectpower/coefficient_charts.py": "d4727f7e984ba4e8095edc8a65ea8eddbec0d04b8ef8de00ba2540ed1a25c09d",
+    "python/perfectpower/population_algebra.py": "23d919f1c6fafc3cb55d90ce270487ca2acdf1089b524dacb327ab8a6f6c2c60",
+    "PerfectPower/PopulationPartitions.lean": "83978d58a3dfaf8c35572f63d27f60d21304e3ace0e92ce471a517ae60cc44fc"
+  },
+  "specification": {
+    "kind": "curve",
+    "left": [
+      "0",
+      "0",
+      "2"
+    ],
+    "right": [
+      "0",
+      "0",
+      "0",
+      "3"
+    ],
+    "predicate": {
+      "expr": "y-600000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "relation": "<="
+    }
+  },
+  "cardinality": "20000000000000000000000000000000000000001",
+  "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+  "rank_examples": [
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "0",
+      "chart": "0",
+      "parameter": "0",
+      "values": {
+        "x": "0",
+        "y": "0"
+      }
+    },
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "1",
+      "chart": "1",
+      "parameter": "1",
+      "values": {
+        "x": "18",
+        "y": "6"
+      }
+    },
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "8",
+      "chart": "1",
+      "parameter": "8",
+      "values": {
+        "x": "9216",
+        "y": "384"
+      }
+    },
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "9999999999999999999999999999999999999999",
+      "chart": "1",
+      "parameter": "9999999999999999999999999999999999999999",
+      "values": {
+        "x": "17999999999999999999999999999999999999994600000000000000000000000000000000000000539999999999999999999999999999999999999982",
+        "y": "599999999999999999999999999999999999999880000000000000000000000000000000000000006"
+      }
+    },
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "10000000000000000000000000000000000000000",
+      "chart": "1",
+      "parameter": "10000000000000000000000000000000000000000",
+      "values": {
+        "x": "18000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "y": "600000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "10000000000000000000000000000000000000001",
+      "chart": "2",
+      "parameter": "1",
+      "values": {
+        "x": "-18",
+        "y": "6"
+      }
+    },
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "10000000000000000000000000000000000000008",
+      "chart": "2",
+      "parameter": "8",
+      "values": {
+        "x": "-9216",
+        "y": "384"
+      }
+    },
+    {
+      "population_id": "68911b08a0badf32a5b145f35dba72de6e9ac5a76e0cb1facd7286ecd8dd2b65",
+      "rank": "20000000000000000000000000000000000000000",
+      "chart": "2",
+      "parameter": "10000000000000000000000000000000000000000",
+      "values": {
+        "x": "-18000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "y": "600000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "small_population": [
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "0",
+      "chart": "0",
+      "parameter": "0",
+      "values": {
+        "x": "0",
+        "y": "0"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "1",
+      "chart": "1",
+      "parameter": "1",
+      "values": {
+        "x": "18",
+        "y": "6"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "2",
+      "chart": "1",
+      "parameter": "2",
+      "values": {
+        "x": "144",
+        "y": "24"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "3",
+      "chart": "1",
+      "parameter": "3",
+      "values": {
+        "x": "486",
+        "y": "54"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "4",
+      "chart": "1",
+      "parameter": "4",
+      "values": {
+        "x": "1152",
+        "y": "96"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "5",
+      "chart": "1",
+      "parameter": "5",
+      "values": {
+        "x": "2250",
+        "y": "150"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "6",
+      "chart": "1",
+      "parameter": "6",
+      "values": {
+        "x": "3888",
+        "y": "216"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "7",
+      "chart": "1",
+      "parameter": "7",
+      "values": {
+        "x": "6174",
+        "y": "294"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "8",
+      "chart": "1",
+      "parameter": "8",
+      "values": {
+        "x": "9216",
+        "y": "384"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "9",
+      "chart": "2",
+      "parameter": "1",
+      "values": {
+        "x": "-18",
+        "y": "6"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "10",
+      "chart": "2",
+      "parameter": "2",
+      "values": {
+        "x": "-144",
+        "y": "24"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "11",
+      "chart": "2",
+      "parameter": "3",
+      "values": {
+        "x": "-486",
+        "y": "54"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "12",
+      "chart": "2",
+      "parameter": "4",
+      "values": {
+        "x": "-1152",
+        "y": "96"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "13",
+      "chart": "2",
+      "parameter": "5",
+      "values": {
+        "x": "-2250",
+        "y": "150"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "14",
+      "chart": "2",
+      "parameter": "6",
+      "values": {
+        "x": "-3888",
+        "y": "216"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "15",
+      "chart": "2",
+      "parameter": "7",
+      "values": {
+        "x": "-6174",
+        "y": "294"
+      }
+    },
+    {
+      "population_id": "ba53d685204bfaafb033913bb23f0e60d905356eb5cadef31d0691572dabd28d",
+      "rank": "16",
+      "chart": "2",
+      "parameter": "8",
+      "values": {
+        "x": "-9216",
+        "y": "384"
+      }
+    }
+  ],
+  "scope": "Exact Python population export from repository; not a new Lean proof. Machine workshop is a fictional bounded integer model.",
+  "comparisons": [
+    {
+      "name": "Enormous family",
+      "ceiling": "10000000000000000000000000000000000000000",
+      "cutoff": "10",
+      "summary": {
+        "schema": "pp-population-comparison/1",
+        "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+        "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+        "counts": {
+          "universe": "20000000000000000000000000000000000000001",
+          "left": "10000000000000000000000000000000000000001",
+          "right": "21",
+          "both": "11",
+          "left_only": "9999999999999999999999999999999999999990",
+          "right_only": "10",
+          "neither": "9999999999999999999999999999999999999990",
+          "union": "10000000000000000000000000000000000000011",
+          "symmetric_difference": "10000000000000000000000000000000000000000"
+        },
+        "specification": {
+          "left": {
+            "expr": "x",
+            "relation": ">="
+          },
+          "right": {
+            "expr": "y-600",
+            "relation": "<="
+          },
+          "universe": {
+            "kind": "curve",
+            "left": [
+              "0",
+              "0",
+              "2"
+            ],
+            "predicate": {
+              "expr": "y-600000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "relation": "<="
+            },
+            "right": [
+              "0",
+              "0",
+              "0",
+              "3"
+            ]
+          }
+        },
+        "ordering": "chart-major, increasing parameter",
+        "identity": "original integer point (x,y) and defining equation",
+        "execution_verified": false,
+        "completeness": "inherited from each supported exact population backend"
+      },
+      "examples": [
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "d30f5ff6c151e3b2c4921e67dce5cc903083e5a181427e1f518b6a49d57d2c79",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "both",
+          "addresses": {
+            "universe": "0",
+            "left": "0",
+            "right": "0",
+            "both": "0",
+            "left_only": null,
+            "right_only": null,
+            "neither": null,
+            "union": "0",
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "c9fa59ed99e189e595b5f6a553af6df0ae26e266bcb4917408cc58330badee13",
+            "rank": "0",
+            "chart": "0",
+            "parameter": "0",
+            "values": {
+              "x": "0",
+              "y": "0"
+            }
+          }
+        },
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "a7c217d0e51c459f2825e822a00d31e75f9f66821a16aa335788ac4fd292914b",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "both",
+          "addresses": {
+            "universe": "10",
+            "left": "10",
+            "right": "10",
+            "both": "10",
+            "left_only": null,
+            "right_only": null,
+            "neither": null,
+            "union": "10",
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "c9fa59ed99e189e595b5f6a553af6df0ae26e266bcb4917408cc58330badee13",
+            "rank": "10",
+            "chart": "1",
+            "parameter": "10",
+            "values": {
+              "x": "18000",
+              "y": "600"
+            }
+          }
+        },
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "785208e2316111c08d0f9a7415a666d0bbcaedcbf9221208bd3da5fa3746897b",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "left_only",
+          "addresses": {
+            "universe": "11",
+            "left": "11",
+            "right": null,
+            "both": null,
+            "left_only": "0",
+            "right_only": null,
+            "neither": null,
+            "union": "11",
+            "symmetric_difference": "0"
+          },
+          "record": {
+            "population_id": "17e73846dae8aa0924714e6819b589d4ec0b53c39f774e2fb88c03a5483e407e",
+            "rank": "0",
+            "chart": "1",
+            "parameter": "11",
+            "values": {
+              "x": "23958",
+              "y": "726"
+            }
+          }
+        },
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "e0c3df4229f70c60f196f1974ad0d0ca550576a54c23e935aba1f6f22c334757",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "left_only",
+          "addresses": {
+            "universe": "10000000000000000000000000000000000000000",
+            "left": "10000000000000000000000000000000000000000",
+            "right": null,
+            "both": null,
+            "left_only": "9999999999999999999999999999999999999989",
+            "right_only": null,
+            "neither": null,
+            "union": "10000000000000000000000000000000000000000",
+            "symmetric_difference": "9999999999999999999999999999999999999989"
+          },
+          "record": {
+            "population_id": "17e73846dae8aa0924714e6819b589d4ec0b53c39f774e2fb88c03a5483e407e",
+            "rank": "9999999999999999999999999999999999999989",
+            "chart": "1",
+            "parameter": "10000000000000000000000000000000000000000",
+            "values": {
+              "x": "18000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "y": "600000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+          }
+        },
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "f0d271bd2b469bee342dd2be2344019d16e33cdc87546ea189c9d751e2aba743",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "right_only",
+          "addresses": {
+            "universe": "10000000000000000000000000000000000000001",
+            "left": null,
+            "right": "11",
+            "both": null,
+            "left_only": null,
+            "right_only": "0",
+            "neither": null,
+            "union": "10000000000000000000000000000000000000001",
+            "symmetric_difference": "9999999999999999999999999999999999999990"
+          },
+          "record": {
+            "population_id": "66635a3f380848440bd8ccac482319408f245952fd09e3e5a0e3713b2a041404",
+            "rank": "0",
+            "chart": "2",
+            "parameter": "1",
+            "values": {
+              "x": "-18",
+              "y": "6"
+            }
+          }
+        },
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "6d8818d66cabe877162c3d7b51251c368c80404ed435e3c86d179c64af02e7e3",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "right_only",
+          "addresses": {
+            "universe": "10000000000000000000000000000000000000010",
+            "left": null,
+            "right": "20",
+            "both": null,
+            "left_only": null,
+            "right_only": "9",
+            "neither": null,
+            "union": "10000000000000000000000000000000000000010",
+            "symmetric_difference": "9999999999999999999999999999999999999999"
+          },
+          "record": {
+            "population_id": "66635a3f380848440bd8ccac482319408f245952fd09e3e5a0e3713b2a041404",
+            "rank": "9",
+            "chart": "2",
+            "parameter": "10",
+            "values": {
+              "x": "-18000",
+              "y": "600"
+            }
+          }
+        },
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "67f323312d15f024d5e850b4bb530ef8875f325fb418d2d403bae161587eaebe",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "neither",
+          "addresses": {
+            "universe": "10000000000000000000000000000000000000011",
+            "left": null,
+            "right": null,
+            "both": null,
+            "left_only": null,
+            "right_only": null,
+            "neither": "0",
+            "union": null,
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "aec15d7514e2e9d566aa095e151ee17a075ac7280b8d816ed91aa4c730d1c5d6",
+            "rank": "0",
+            "chart": "2",
+            "parameter": "11",
+            "values": {
+              "x": "-23958",
+              "y": "726"
+            }
+          }
+        },
+        {
+          "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+          "object_id": "8ed91c3b42e825145a37f64437b7945fb883a86ec7730962b737872228560c5a",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "neither",
+          "addresses": {
+            "universe": "20000000000000000000000000000000000000000",
+            "left": null,
+            "right": null,
+            "both": null,
+            "left_only": null,
+            "right_only": null,
+            "neither": "9999999999999999999999999999999999999989",
+            "union": null,
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "aec15d7514e2e9d566aa095e151ee17a075ac7280b8d816ed91aa4c730d1c5d6",
+            "rank": "9999999999999999999999999999999999999989",
+            "chart": "2",
+            "parameter": "10000000000000000000000000000000000000000",
+            "values": {
+              "x": "-18000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "y": "600000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            }
+          }
+        }
+      ],
+      "registration_request": "{\"op\":\"register\",\"kind\":\"population_comparison\",\"name\":\"room-comparison-10000000000000000000000000000000000000000\",\"specification\":{\"universe\":{\"kind\":\"curve\",\"left\":[0,0,2],\"right\":[0,0,0,3],\"predicate\":{\"expr\":\"y-600000000000000000000000000000000000000000000000000000000000000000000000000000000\",\"relation\":\"<=\"}},\"left\":{\"expr\":\"x\",\"relation\":\">=\"},\"right\":{\"expr\":\"y-600\",\"relation\":\"<=\"}}}",
+      "object_name": "room-comparison-10000000000000000000000000000000000000000"
+    },
+    {
+      "name": "Seventeen pictured points",
+      "ceiling": "8",
+      "cutoff": "3",
+      "summary": {
+        "schema": "pp-population-comparison/1",
+        "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+        "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+        "counts": {
+          "universe": "17",
+          "left": "9",
+          "right": "7",
+          "both": "4",
+          "left_only": "5",
+          "right_only": "3",
+          "neither": "5",
+          "union": "12",
+          "symmetric_difference": "8"
+        },
+        "specification": {
+          "left": {
+            "expr": "x",
+            "relation": ">="
+          },
+          "right": {
+            "expr": "y-54",
+            "relation": "<="
+          },
+          "universe": {
+            "kind": "curve",
+            "left": [
+              "0",
+              "0",
+              "2"
+            ],
+            "predicate": {
+              "expr": "y-384",
+              "relation": "<="
+            },
+            "right": [
+              "0",
+              "0",
+              "0",
+              "3"
+            ]
+          }
+        },
+        "ordering": "chart-major, increasing parameter",
+        "identity": "original integer point (x,y) and defining equation",
+        "execution_verified": false,
+        "completeness": "inherited from each supported exact population backend"
+      },
+      "examples": [
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "d30f5ff6c151e3b2c4921e67dce5cc903083e5a181427e1f518b6a49d57d2c79",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "both",
+          "addresses": {
+            "universe": "0",
+            "left": "0",
+            "right": "0",
+            "both": "0",
+            "left_only": null,
+            "right_only": null,
+            "neither": null,
+            "union": "0",
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "054417fad7c18d4de33549518068f55b4786f1ffd4f32dd2028bd202577d04cb",
+            "rank": "0",
+            "chart": "0",
+            "parameter": "0",
+            "values": {
+              "x": "0",
+              "y": "0"
+            }
+          }
+        },
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "e8870a0cfe4ff57c27ec5dae6347e9fcbb777b127530b64c1543af41c780d663",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "both",
+          "addresses": {
+            "universe": "3",
+            "left": "3",
+            "right": "3",
+            "both": "3",
+            "left_only": null,
+            "right_only": null,
+            "neither": null,
+            "union": "3",
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "054417fad7c18d4de33549518068f55b4786f1ffd4f32dd2028bd202577d04cb",
+            "rank": "3",
+            "chart": "1",
+            "parameter": "3",
+            "values": {
+              "x": "486",
+              "y": "54"
+            }
+          }
+        },
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "79583132eba34bc4ed73bbb4c2aeddcdcaa488100a8c5af4d83f9b90a129baff",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "left_only",
+          "addresses": {
+            "universe": "4",
+            "left": "4",
+            "right": null,
+            "both": null,
+            "left_only": "0",
+            "right_only": null,
+            "neither": null,
+            "union": "4",
+            "symmetric_difference": "0"
+          },
+          "record": {
+            "population_id": "e2a87f71f9dd90a5c503635e6e58c10c049b6c58159a60c1b25a5f4007ef9595",
+            "rank": "0",
+            "chart": "1",
+            "parameter": "4",
+            "values": {
+              "x": "1152",
+              "y": "96"
+            }
+          }
+        },
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "a11c93a74163d37814a5ca5ab4a7f6aa8ae46eaddf2672c3f2e0b2171dac7ac4",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "left_only",
+          "addresses": {
+            "universe": "8",
+            "left": "8",
+            "right": null,
+            "both": null,
+            "left_only": "4",
+            "right_only": null,
+            "neither": null,
+            "union": "8",
+            "symmetric_difference": "4"
+          },
+          "record": {
+            "population_id": "e2a87f71f9dd90a5c503635e6e58c10c049b6c58159a60c1b25a5f4007ef9595",
+            "rank": "4",
+            "chart": "1",
+            "parameter": "8",
+            "values": {
+              "x": "9216",
+              "y": "384"
+            }
+          }
+        },
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "f0d271bd2b469bee342dd2be2344019d16e33cdc87546ea189c9d751e2aba743",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "right_only",
+          "addresses": {
+            "universe": "9",
+            "left": null,
+            "right": "4",
+            "both": null,
+            "left_only": null,
+            "right_only": "0",
+            "neither": null,
+            "union": "9",
+            "symmetric_difference": "5"
+          },
+          "record": {
+            "population_id": "fe611be3c5c589b2c3b7246c949c5a41b1b8b2a3cf87943ecf7bd5405935e92f",
+            "rank": "0",
+            "chart": "2",
+            "parameter": "1",
+            "values": {
+              "x": "-18",
+              "y": "6"
+            }
+          }
+        },
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "157e3e308b7d2f8df6cc790177be8075e9780505054a792773de1e6b30fcc072",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "right_only",
+          "addresses": {
+            "universe": "11",
+            "left": null,
+            "right": "6",
+            "both": null,
+            "left_only": null,
+            "right_only": "2",
+            "neither": null,
+            "union": "11",
+            "symmetric_difference": "7"
+          },
+          "record": {
+            "population_id": "fe611be3c5c589b2c3b7246c949c5a41b1b8b2a3cf87943ecf7bd5405935e92f",
+            "rank": "2",
+            "chart": "2",
+            "parameter": "3",
+            "values": {
+              "x": "-486",
+              "y": "54"
+            }
+          }
+        },
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "57ff50d106712f8e6a8a108aed7035fccc4cf3b4d089212e982e12ca347eff98",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "neither",
+          "addresses": {
+            "universe": "12",
+            "left": null,
+            "right": null,
+            "both": null,
+            "left_only": null,
+            "right_only": null,
+            "neither": "0",
+            "union": null,
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "ce2479ee50703d48bca3d55a95a5461ea2617a036f1134ae48ad90281e90979b",
+            "rank": "0",
+            "chart": "2",
+            "parameter": "4",
+            "values": {
+              "x": "-1152",
+              "y": "96"
+            }
+          }
+        },
+        {
+          "comparison_id": "ca69f42cf4c980ced3c88245206e52c72e052329d57973ff183398a16198911b",
+          "object_id": "5536b0819ff6eaa16a1e39357a8bf9d3c96093624d0d38c7e40609a06d9d80c6",
+          "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+          "category": "neither",
+          "addresses": {
+            "universe": "16",
+            "left": null,
+            "right": null,
+            "both": null,
+            "left_only": null,
+            "right_only": null,
+            "neither": "4",
+            "union": null,
+            "symmetric_difference": null
+          },
+          "record": {
+            "population_id": "ce2479ee50703d48bca3d55a95a5461ea2617a036f1134ae48ad90281e90979b",
+            "rank": "4",
+            "chart": "2",
+            "parameter": "8",
+            "values": {
+              "x": "-9216",
+              "y": "384"
+            }
+          }
+        }
+      ],
+      "registration_request": "{\"op\":\"register\",\"kind\":\"population_comparison\",\"name\":\"room-comparison-8\",\"specification\":{\"universe\":{\"kind\":\"curve\",\"left\":[0,0,2],\"right\":[0,0,0,3],\"predicate\":{\"expr\":\"y-384\",\"relation\":\"<=\"}},\"left\":{\"expr\":\"x\",\"relation\":\">=\"},\"right\":{\"expr\":\"y-54\",\"relation\":\"<=\"}}}",
+      "object_name": "room-comparison-8"
+    }
+  ],
+  "comparison_scope": "Exported exact backend results. Four-way partition, original point identity and rank transport replayed in Python. Browser displays decimal strings."
+}

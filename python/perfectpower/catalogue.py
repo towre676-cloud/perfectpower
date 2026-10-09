@@ -17,6 +17,7 @@ def _bad(value):
 
 def compile_object(kind, specification):
     from .populations import ExactPopulation
+    from .population_algebra import PopulationComparison
     from .application_objects import SequenceLibrary, InverseDesign, GraphEnsemble, GeometryWorkbench, CombinatorialDesign
     from .projected_populations import ProjectedPopulation
     from .factorial_library import FactorialLibrary
@@ -31,7 +32,7 @@ def compile_object(kind, specification):
     from .superelliptic_families import SuperellipticFamily
     from .binomial_periods import BinomialSum
     from .elliptic_arithmetic import EllipticCurve
-    constructors = dict(differential_module=DifferentialModule,superelliptic_family=SuperellipticFamily,binomial_sum=BinomialSum,differential_extension=DifferentialExtension,symmetry_curve=SymmetryCurve,multi_curve_family=MultiCurveFamily,elliptic_quotient=EllipticQuotientFamily,curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation, sequence=SequenceLibrary, inverse=InverseDesign,
+    constructors = dict(differential_module=DifferentialModule,superelliptic_family=SuperellipticFamily,binomial_sum=BinomialSum,differential_extension=DifferentialExtension,symmetry_curve=SymmetryCurve,multi_curve_family=MultiCurveFamily,elliptic_quotient=EllipticQuotientFamily,curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation,population_comparison=PopulationComparison, sequence=SequenceLibrary, inverse=InverseDesign,
                         graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign,projected=ProjectedPopulation,factorial=FactorialLibrary)
     constructors['elliptic_curve']=EllipticCurve
     if kind not in constructors:

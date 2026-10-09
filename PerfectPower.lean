@@ -1,4 +1,5 @@
 import PerfectPower.FixedDivisor
+import PerfectPower.PopulationPartitions
 import PerfectPower.PowerFreeLocal
 import PerfectPower.EllipticSquareTransport
 import PerfectPower.EllipticQuarticLifts

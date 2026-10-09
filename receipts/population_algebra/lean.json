@@ -1,0 +1,56 @@
+{
+  "schema": "pp-population-partitions-lean/1",
+  "result": "passed",
+  "lean_version": "4.20.0",
+  "mathlib_revision": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "theorems": 14,
+  "axioms_allowed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "sources": {
+    "PerfectPower/PopulationPartitions.lean": "83978d58a3dfaf8c35572f63d27f60d21304e3ace0e92ce471a517ae60cc44fc",
+    "audit/PopulationPartitions.lean": "e68842f60090b038017d0eb8e216b383963461ff3564c781f8969543d0a00f34",
+    "scripts/lean_runtime.py": "81b3826818935711cfa9380d250da2e4b6fd895670d069fde0aff95afbd743e3",
+    "scripts/lean_proc_self.c": "d6b600b59f315d3da2a980beb9ba03193cd061719b663baa156850cac396d246"
+  },
+  "commands": [
+    [
+      "python",
+      "scripts/lean_runtime.py",
+      "--proc-self",
+      "--",
+      "build",
+      "PerfectPower.PopulationPartitions"
+    ],
+    [
+      "python",
+      "scripts/lean_runtime.py",
+      "--proc-self",
+      "--",
+      "env",
+      "lean",
+      "audit/PopulationPartitions.lean"
+    ]
+  ],
+  "runtime_note": "Installed toolchain/cache; optional own-process executable-path adaptation. No kernel or imported theory changes.",
+  "build_output": "Build completed successfully.\n",
+  "axiom_audit": [
+    "'PerfectPower.PopulationPartitions.four_cover' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.four_exclusive' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.left_card' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.right_card' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.complement_left_card' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.four_card' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.union_card' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.symmetric_difference_card' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.transport_identity' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.transport_roundtrip' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.transport_composition' depends on axioms: [propext, Quot.sound]",
+    "'PerfectPower.PopulationPartitions.transport_injective' depends on axioms: [Quot.sound]",
+    "'PerfectPower.PopulationPartitions.restriction_identity' does not depend on any axioms",
+    "'PerfectPower.PopulationPartitions.restriction_injective' does not depend on any axioms"
+  ],
+  "scope": "Generic finite partition, bijection transport and subtype inclusion. Does not verify the Python compiler or global Mordell closure."
+}

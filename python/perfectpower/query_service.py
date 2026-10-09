@@ -18,6 +18,7 @@ METHODS = dict(
     calibration_policy={'summary','evidence','decide'},diagnostic_policy={'summary','evidence','step','run'},
     projected={'summary','count','select','rank','page','sample','partition','locate','multiplicity','evidence'},
     factorial={'summary','terms','residues'},
+    population_comparison={'summary','count','select','locate','classify','transport','page','sample','optimize','evidence'},
     population={'summary', 'count', 'select', 'rank', 'locate', 'page', 'next', 'sample', 'partition', 'optimize', 'evidence'},
     sequence={'summary', 'terms', 'subsequence', 'experiment', 'witness_experiment','diagnostic'}, inverse={'solve', 'solve_box','policy'},
     graph={'event', 'sample'}, geometry={'point', 'segment', 'grid', 'transition', 'transport'},

@@ -1,0 +1,13 @@
+/** Exact explanations for the finite teaching model. */
+export function explainDesign(d,c,models){
+ const lift=Math.floor(d.drive/d.a),square=Number.isInteger(Math.sqrt(d.drive));
+ const checks=[{name:'Lifting',expression:`${d.m} × ${d.g} = ${d.drive}; ${c.load} × ${d.a} = ${c.load*d.a}`,pass:d.drive>=c.load*d.a,margin:d.drive-c.load*d.a,meaning:'Drive minus required score times arm; zero passes.'},
+ {name:'Size',expression:`${d.m} + ${d.g} + ${d.a} = ${d.size} ≤ ${c.size}`,pass:d.size<=c.size,margin:c.size-d.size,meaning:'Room left in the size limit; zero passes.'},
+ {name:'Square drive',expression:square?`${d.drive} = ${Math.sqrt(d.drive)}²`:`${Math.floor(Math.sqrt(d.drive))}² < ${d.drive} < ${Math.floor(Math.sqrt(d.drive))+1}²`,pass:!c.square||square,margin:null,meaning:c.square?'Square-drive rule is active.':'Square-drive rule is off; this test does not exclude a design.'}];
+ const eligible=models.filter(x=>x.id!==d.id&&x.drive>=c.load*x.a&&x.size<=c.size&&(!c.square||Number.isInteger(Math.sqrt(x.drive))));
+ const distance=x=>Math.abs(x.m-d.m)+Math.abs(x.g-d.g)+Math.abs(x.a-d.a);
+ const minimum=eligible.length?Math.min(...eligible.map(distance)):null,nearest=eligible.filter(x=>distance(x)===minimum);
+ const passes=checks.every(x=>x.pass),repair=d.size<=15&&lift>=1?{load:Math.min(c.load,lift),size:Math.max(c.size,d.size),square:c.square&&square}:null;
+ return {design:{...d},rules:{...c},lifting_score:lift,checks,passes,cost_expression:`8 × ${d.m} + 3 × ${d.g} + 4 × ${d.a} = ${d.cost}`,repair:passes?null:repair,repair_reason:passes?'This design already meets all current rules.':repair?'Keep this design; lower the lifting requirement only as needed, increase the size limit only as needed, and switch off square drive only if it fails.':d.size>15?`Size ${d.size} exceeds this exhibit's largest size slider, 15. Change the design to find a working alternative.`:`Lifting score ${lift} is below this exhibit's smallest requirement, 1. Change the design to find a working alternative.`,nearest:nearest.length?{id:nearest[0].id,distance:minimum,ties:nearest.length}:null,distance_metric:'Sum of absolute differences in motor, gear and arm choices; original ID breaks ties.'};
+}
+export function explainFamily(T,p){const lhs=2n*p.x*p.x,rhs=3n*p.y*p.y*p.y;return {bound:T.toString(),positive_count:T.toString(),negative_count:T.toString(),count:(2n*T+1n).toString(),rank:p.rank.toString(),parameter:p.t.toString(),branch:p.chart,coordinates:{x:p.x.toString(),y:p.y.toString()},equation:{left:lhs.toString(),right:rhs.toString(),equal:lhs===rhs},identity:'2(±18t³)² = 648t⁶ = 3(6t²)³',ordering:'origin, positive x with t increasing, negative x with t increasing'};}

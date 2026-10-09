@@ -1,0 +1,16 @@
+import PerfectPower.PopulationPartitions
+
+#print axioms PerfectPower.PopulationPartitions.four_cover
+#print axioms PerfectPower.PopulationPartitions.four_exclusive
+#print axioms PerfectPower.PopulationPartitions.left_card
+#print axioms PerfectPower.PopulationPartitions.right_card
+#print axioms PerfectPower.PopulationPartitions.complement_left_card
+#print axioms PerfectPower.PopulationPartitions.four_card
+#print axioms PerfectPower.PopulationPartitions.union_card
+#print axioms PerfectPower.PopulationPartitions.symmetric_difference_card
+#print axioms PerfectPower.PopulationPartitions.transport_identity
+#print axioms PerfectPower.PopulationPartitions.transport_roundtrip
+#print axioms PerfectPower.PopulationPartitions.transport_composition
+#print axioms PerfectPower.PopulationPartitions.transport_injective
+#print axioms PerfectPower.PopulationPartitions.restriction_identity
+#print axioms PerfectPower.PopulationPartitions.restriction_injective

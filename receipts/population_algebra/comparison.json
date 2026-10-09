@@ -1,0 +1,278 @@
+{
+  "schema": "pp-population-algebra-receipt/1",
+  "base_commit": "fa5186cf4a51d3a9660b610a61e46f06dea4fb8d",
+  "source_files": {
+    "python/perfectpower/population_algebra.py": "23d919f1c6fafc3cb55d90ce270487ca2acdf1089b524dacb327ab8a6f6c2c60",
+    "python/perfectpower/populations.py": "d61a5ea0d088a9df319995702670b5ddae295e0f64f1b89c37c24a664116ab93",
+    "PerfectPower/PopulationPartitions.lean": "83978d58a3dfaf8c35572f63d27f60d21304e3ace0e92ce471a517ae60cc44fc",
+    "audit/PopulationPartitions.lean": "e68842f60090b038017d0eb8e216b383963461ff3564c781f8969543d0a00f34"
+  },
+  "summary": {
+    "schema": "pp-population-comparison/1",
+    "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+    "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+    "counts": {
+      "universe": 20000000000000000000000000000000000000001,
+      "left": 10000000000000000000000000000000000000001,
+      "right": 21,
+      "both": 11,
+      "left_only": 9999999999999999999999999999999999999990,
+      "right_only": 10,
+      "neither": 9999999999999999999999999999999999999990,
+      "union": 10000000000000000000000000000000000000011,
+      "symmetric_difference": 10000000000000000000000000000000000000000
+    },
+    "specification": {
+      "left": {
+        "expr": "x",
+        "relation": ">="
+      },
+      "right": {
+        "expr": "y-600",
+        "relation": "<="
+      },
+      "universe": {
+        "kind": "curve",
+        "left": [
+          0,
+          0,
+          2
+        ],
+        "predicate": {
+          "expr": "y-600000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "relation": "<="
+        },
+        "right": [
+          0,
+          0,
+          0,
+          3
+        ]
+      }
+    },
+    "ordering": "chart-major, increasing parameter",
+    "identity": "original integer point (x,y) and defining equation",
+    "execution_verified": false,
+    "completeness": "inherited from each supported exact population backend"
+  },
+  "examples": [
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "d30f5ff6c151e3b2c4921e67dce5cc903083e5a181427e1f518b6a49d57d2c79",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "both",
+      "addresses": {
+        "universe": 0,
+        "left": 0,
+        "right": 0,
+        "both": 0,
+        "left_only": null,
+        "right_only": null,
+        "neither": null,
+        "union": 0,
+        "symmetric_difference": null
+      },
+      "record": {
+        "population_id": "c9fa59ed99e189e595b5f6a553af6df0ae26e266bcb4917408cc58330badee13",
+        "rank": 0,
+        "chart": 0,
+        "parameter": 0,
+        "values": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "a7c217d0e51c459f2825e822a00d31e75f9f66821a16aa335788ac4fd292914b",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "both",
+      "addresses": {
+        "universe": 10,
+        "left": 10,
+        "right": 10,
+        "both": 10,
+        "left_only": null,
+        "right_only": null,
+        "neither": null,
+        "union": 10,
+        "symmetric_difference": null
+      },
+      "record": {
+        "population_id": "c9fa59ed99e189e595b5f6a553af6df0ae26e266bcb4917408cc58330badee13",
+        "rank": 10,
+        "chart": 1,
+        "parameter": 10,
+        "values": {
+          "x": 18000,
+          "y": 600
+        }
+      }
+    },
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "785208e2316111c08d0f9a7415a666d0bbcaedcbf9221208bd3da5fa3746897b",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "left_only",
+      "addresses": {
+        "universe": 11,
+        "left": 11,
+        "right": null,
+        "both": null,
+        "left_only": 0,
+        "right_only": null,
+        "neither": null,
+        "union": 11,
+        "symmetric_difference": 0
+      },
+      "record": {
+        "population_id": "17e73846dae8aa0924714e6819b589d4ec0b53c39f774e2fb88c03a5483e407e",
+        "rank": 0,
+        "chart": 1,
+        "parameter": 11,
+        "values": {
+          "x": 23958,
+          "y": 726
+        }
+      }
+    },
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "e0c3df4229f70c60f196f1974ad0d0ca550576a54c23e935aba1f6f22c334757",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "left_only",
+      "addresses": {
+        "universe": 10000000000000000000000000000000000000000,
+        "left": 10000000000000000000000000000000000000000,
+        "right": null,
+        "both": null,
+        "left_only": 9999999999999999999999999999999999999989,
+        "right_only": null,
+        "neither": null,
+        "union": 10000000000000000000000000000000000000000,
+        "symmetric_difference": 9999999999999999999999999999999999999989
+      },
+      "record": {
+        "population_id": "17e73846dae8aa0924714e6819b589d4ec0b53c39f774e2fb88c03a5483e407e",
+        "rank": 9999999999999999999999999999999999999989,
+        "chart": 1,
+        "parameter": 10000000000000000000000000000000000000000,
+        "values": {
+          "x": 18000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+          "y": 600000000000000000000000000000000000000000000000000000000000000000000000000000000
+        }
+      }
+    },
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "f0d271bd2b469bee342dd2be2344019d16e33cdc87546ea189c9d751e2aba743",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "right_only",
+      "addresses": {
+        "universe": 10000000000000000000000000000000000000001,
+        "left": null,
+        "right": 11,
+        "both": null,
+        "left_only": null,
+        "right_only": 0,
+        "neither": null,
+        "union": 10000000000000000000000000000000000000001,
+        "symmetric_difference": 9999999999999999999999999999999999999990
+      },
+      "record": {
+        "population_id": "66635a3f380848440bd8ccac482319408f245952fd09e3e5a0e3713b2a041404",
+        "rank": 0,
+        "chart": 2,
+        "parameter": 1,
+        "values": {
+          "x": -18,
+          "y": 6
+        }
+      }
+    },
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "6d8818d66cabe877162c3d7b51251c368c80404ed435e3c86d179c64af02e7e3",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "right_only",
+      "addresses": {
+        "universe": 10000000000000000000000000000000000000010,
+        "left": null,
+        "right": 20,
+        "both": null,
+        "left_only": null,
+        "right_only": 9,
+        "neither": null,
+        "union": 10000000000000000000000000000000000000010,
+        "symmetric_difference": 9999999999999999999999999999999999999999
+      },
+      "record": {
+        "population_id": "66635a3f380848440bd8ccac482319408f245952fd09e3e5a0e3713b2a041404",
+        "rank": 9,
+        "chart": 2,
+        "parameter": 10,
+        "values": {
+          "x": -18000,
+          "y": 600
+        }
+      }
+    },
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "67f323312d15f024d5e850b4bb530ef8875f325fb418d2d403bae161587eaebe",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "neither",
+      "addresses": {
+        "universe": 10000000000000000000000000000000000000011,
+        "left": null,
+        "right": null,
+        "both": null,
+        "left_only": null,
+        "right_only": null,
+        "neither": 0,
+        "union": null,
+        "symmetric_difference": null
+      },
+      "record": {
+        "population_id": "aec15d7514e2e9d566aa095e151ee17a075ac7280b8d816ed91aa4c730d1c5d6",
+        "rank": 0,
+        "chart": 2,
+        "parameter": 11,
+        "values": {
+          "x": -23958,
+          "y": 726
+        }
+      }
+    },
+    {
+      "comparison_id": "06fc8849c0cf555d7622a76779c27c2227f22803e74a0cda5bcf6ec7774a4a10",
+      "object_id": "8ed91c3b42e825145a37f64437b7945fb883a86ec7730962b737872228560c5a",
+      "family_id": "21ed44c6b8cfb4cde9f66dada8495d5b37e284e229c3887123ee8b9ed4872d59",
+      "category": "neither",
+      "addresses": {
+        "universe": 20000000000000000000000000000000000000000,
+        "left": null,
+        "right": null,
+        "both": null,
+        "left_only": null,
+        "right_only": null,
+        "neither": 9999999999999999999999999999999999999989,
+        "union": null,
+        "symmetric_difference": null
+      },
+      "record": {
+        "population_id": "aec15d7514e2e9d566aa095e151ee17a075ac7280b8d816ed91aa4c730d1c5d6",
+        "rank": 9999999999999999999999999999999999999989,
+        "chart": 2,
+        "parameter": 10000000000000000000000000000000000000000,
+        "values": {
+          "x": -18000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+          "y": 600000000000000000000000000000000000000000000000000000000000000000000000000000000
+        }
+      }
+    }
+  ],
+  "checks": "Closed-form counts, equation evaluation and two-way original-object transport.",
+  "trust": "Exact Python replay. Lean generic laws are audited separately; compiler execution and global curve solving are not newly verified."
+}

@@ -15,6 +15,8 @@ This is a catalogue of the "open" and "not proved" sections found at the end of 
 
 Sizes: S is under a day, M is a few sessions, L is research-scale.
 
+Runtime update, 2026-10-09: the original L-tier network limitation is not a statement that every later workspace lacks Lean. This workspace has Lean 4.20.0 and Mathlib caches; `PerfectPower.PopulationPartitions` and its fourteen-theorem axiom audit compiled successfully. Its hosted process-path issue was handled by `scripts/lean_runtime.py --proc-self`, which redirects only the current process's executable lookup. This establishes generic finite partition and address-transport laws. It does not close the global Mordell rank, saturation or integral-enumeration proof obligations, or the other research fronts below. See [population algebra](POPULATION_ALGEBRA_MONOGRAPH.md).
+
 ## Already closed (do not re-open)
 
 | Item | Source | Closed by |

@@ -3,6 +3,19 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
+.PHONY: population-algebra population-algebra-lean room-of-possibilities
+population-algebra:
+	$(PY) -m unittest discover -s python/tests -p 'test_population*.py'
+	$(PY) python/develop_population_algebra.py
+
+population-algebra-lean:
+	lake build PerfectPower.PopulationPartitions
+	lake env lean audit/PopulationPartitions.lean
+
+room-of-possibilities:
+	$(PY) web/room-of-possibilities/ingest.py --repo .
+	$(PY) web/room-of-possibilities/build.py
+
 .PHONY: residue-determinant
 residue-determinant:
 	bash scripts/check_residue_determinant.sh
