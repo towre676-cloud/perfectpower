@@ -1,0 +1,5200 @@
+{
+ "schema": "pp-irregular-stokes-general/1-receipt",
+ "scope": "Certified (Arb) Stokes matrices at an irregular singular point of Poincare rank one in z or in a ramified variable s=z^(p/q) reached by an exact Turrittin reduction; real rational leading eigenvalues, repeated ones allowed with diagonalisable non-resonant residue blocks. Sectorial solutions enclosed by an explicit Volterra contraction bound; closed forms used only for validation.",
+ "kummer_validation": [
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "1/3",
+      "-3/4"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "-1/3",
+    "-5/12"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 48,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "2.5189e-22",
+   "contraction_constant": "2.5189e-22",
+   "delta": "1.1777e-02",
+   "taylor_steps": 763,
+   "taylor_order_max": 122,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 1.47e-21] + [2.18093217933078522601 +/- 3.62e-21]j",
+    "S_pi[1,0]": "[0.39708956197353044157 +/- 5.12e-21] + [-1.48195842044048603241 +/- 5.33e-21]j"
+   },
+   "max_ball_radius": 2.7910921789986852e-21,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 60,
+   "axis_check_max_radius": 3.4778323492342893e-22,
+   "cyclic_product_minus_loop_max_radius": 8.113084736557815e-20,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "-0.750000000000000000000000000000000000000000000000000000000000000000",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[+/- 4.43e-19] + [1.00000000000000000 +/- 4.43e-19]j",
+     "[-1.000000000000000000 +/- 1.05e-19] + [-1.000000000000000000 +/- 1.05e-19]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[+/- 1.84e-66] + [1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.11e-67]j",
+     "[-1.0000000000000000000000000000000000000000000000000000000000000000 +/- 2.08e-66] + [-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.11e-67]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=1/3 b=3/4",
+   "s0_closed_form": "[2.18093217933079 +/- 4.78e-15]j",
+   "s_pi_closed_form": "[0.397089561973530 +/- 4.42e-16] + [-1.48195842044049 +/- 3.97e-15]j",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  },
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "2/5",
+      "-7/3"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "-2/5",
+    "-29/15"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 47,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "1.5483e-19",
+   "contraction_constant": "1.5483e-19",
+   "delta": "5.8192e-02",
+   "taylor_steps": 781,
+   "taylor_order_max": 123,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 1.35e-18] + [4.33349887985069317 +/- 2.37e-18]j",
+    "S_pi[1,0]": "[0.181518497260490 +/- 3.46e-16] + [0.019078362841139 +/- 6.46e-16]j"
+   },
+   "max_ball_radius": 2.541788946140245e-16,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 59,
+   "axis_check_max_radius": 5.858358623077172e-17,
+   "cyclic_product_minus_loop_max_radius": 1.9659510860291e-15,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "[-2.33333333333333333333333333333333333333333333333333333333333333333 +/- 3.34e-66]",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[-0.50000000000000 +/- 5.73e-15] + [-0.86602540378444 +/- 7.08e-15]j",
+     "[-0.50000000000000 +/- 1.97e-15] + [0.86602540378444 +/- 3.32e-15]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[-0.50000000000000000000000000000000000000000000000000000000000000000 +/- 3.73e-66] + [-0.86602540378443864676372317075293618347140262690519031402790348973 +/- 5.94e-66]j",
+     "[-0.50000000000000000000000000000000000000000000000000000000000000000 +/- 3.80e-66] + [0.86602540378443864676372317075293618347140262690519031402790348973 +/- 5.94e-66]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=2/5 b=7/3",
+   "s0_closed_form": "[4.33349887985069 +/- 3.18e-15]j",
+   "s_pi_closed_form": "[0.181518497260490 +/- 1.23e-16] + [0.0190783628411386 +/- 2.36e-17]j",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  },
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "-1/4",
+      "-1/2"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "1/4",
+    "-3/4"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 48,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "2.3663e-20",
+   "contraction_constant": "2.3663e-20",
+   "delta": "2.0301e-02",
+   "taylor_steps": 766,
+   "taylor_order_max": 121,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 2.70e-19] + [5.656854249492380195 +/- 4.76e-19]j",
+    "S_pi[1,0]": "[+/- 2.29e-18] + [-0.35355339059327376 +/- 4.49e-18]j"
+   },
+   "max_ball_radius": 6.472496057745554e-18,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 60,
+   "axis_check_max_radius": 1.1358299637934698e-18,
+   "cyclic_product_minus_loop_max_radius": 2.6223708387960357e-17,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "-0.500000000000000000000000000000000000000000000000000000000000000000",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[-1.000000000000000 +/- 6.54e-17] + [+/- 6.54e-17]j",
+     "[+/- 2.63e-17] + [+/- 2.63e-17]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.00e-67] + [+/- 5.60e-67]j",
+     "[+/- 3.00e-67] + [+/- 5.60e-67]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=-1/4 b=1/2",
+   "s0_closed_form": "[5.65685424949238 +/- 1.96e-16]j",
+   "s_pi_closed_form": "[+/- 1.00e-77] + [-0.353553390593274 +/- 2.38e-16]j",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  },
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "1/2",
+      "-1"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "-1/2",
+    "-1/2"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 49,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "1.6791e-22",
+   "contraction_constant": "1.6791e-22",
+   "delta": "1.5836e-02",
+   "taylor_steps": 766,
+   "taylor_order_max": 121,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 1.01e-21] + [2.00000000000000000000 +/- 1.03e-21]j",
+    "S_pi[1,0]": "[+/- 1.01e-21] + [-2.00000000000000000000 +/- 1.03e-21]j"
+   },
+   "max_ball_radius": 1.0074486011918983e-21,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 61,
+   "axis_check_max_radius": 1.6790619076082863e-22,
+   "cyclic_product_minus_loop_max_radius": 1.813418757176563e-20,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "-1.00000000000000000000000000000000000000000000000000000000000000000",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[1.0000000000000000000 +/- 6.42e-20] + [+/- 6.42e-20]j",
+     "[-2.0000000000000000000 +/- 2.09e-20] + [+/- 2.09e-20]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.03e-67] + [+/- 1.12e-66]j",
+     "[-2.00000000000000000000000000000000000000000000000000000000000000000 +/- 7.48e-67] + [+/- 1.12e-66]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=1/2 b=1",
+   "s0_closed_form": "[2.00000000000000 +/- 3e-19]j",
+   "s_pi_closed_form": "[-2.00000000000000 +/- 3e-19]j",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  },
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "5/6",
+      "-5/3"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "-5/6",
+    "-5/6"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 49,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "8.6123e-23",
+   "contraction_constant": "8.6123e-23",
+   "delta": "3.1990e-02",
+   "taylor_steps": 773,
+   "taylor_order_max": 122,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 3.45e-22] + [1.000000000000000000000 +/- 3.56e-22]j",
+    "S_pi[1,0]": "[+/- 6.43e-22] + [-1.000000000000000000000 +/- 6.55e-22]j"
+   },
+   "max_ball_radius": 6.42962268036048e-22,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 61,
+   "axis_check_max_radius": 8.612393725080396e-23,
+   "cyclic_product_minus_loop_max_radius": 9.828733423671155e-21,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "[-1.66666666666666666666666666666666666666666666666666666666666666667 +/- 3.34e-66]",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[-0.5000000000000000000 +/- 2.78e-20] + [0.8660254037844386468 +/- 6.41e-20]j",
+     "[-0.5000000000000000000 +/- 1.22e-20] + [-0.8660254037844386468 +/- 4.85e-20]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[-0.50000000000000000000000000000000000000000000000000000000000000000 +/- 3.09e-66] + [0.86602540378443864676372317075293618347140262690519031402790348973 +/- 5.90e-66]j",
+     "[-0.50000000000000000000000000000000000000000000000000000000000000000 +/- 3.17e-66] + [-0.86602540378443864676372317075293618347140262690519031402790348973 +/- 5.90e-66]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=5/6 b=5/3",
+   "s0_closed_form": "[1.00000000000000 +/- 3e-20]j",
+   "s_pi_closed_form": "[+/- 1.09e-76] + [-1.00000000000000 +/- 3e-20]j",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  },
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "3/4",
+      "-3/2"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "-3/4",
+    "-3/4"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 49,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "1.2092e-22",
+   "contraction_constant": "1.2092e-22",
+   "delta": "2.7546e-02",
+   "taylor_steps": 771,
+   "taylor_order_max": 123,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 5.84e-22] + [1.414213562373095048802 +/- 8.80e-22]j",
+    "S_pi[1,0]": "[+/- 5.84e-22] + [-1.414213562373095048802 +/- 8.80e-22]j"
+   },
+   "max_ball_radius": 5.838871885255604e-22,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 61,
+   "axis_check_max_radius": 1.209182699652435e-22,
+   "cyclic_product_minus_loop_max_radius": 7.390493170841612e-21,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "-1.50000000000000000000000000000000000000000000000000000000000000000",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[-1.000000000000000000 +/- 2.25e-20] + [+/- 2.25e-20]j",
+     "[+/- 9.63e-21] + [+/- 9.63e-21]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.23e-67] + [+/- 3.67e-66]j",
+     "[+/- 3.23e-67] + [+/- 3.67e-66]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=3/4 b=3/2",
+   "s0_closed_form": "[1.41421356237310 +/- 4.96e-15]j",
+   "s_pi_closed_form": "[-1.41421356237310 +/- 4.96e-15]j",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  },
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "9/10",
+      "-9/5"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "-9/10",
+    "-9/10"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 49,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "5.3559e-23",
+   "contraction_constant": "5.3559e-23",
+   "delta": "3.5736e-02",
+   "taylor_steps": 774,
+   "taylor_order_max": 123,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 1.74e-22] + [0.618033988749894848205 +/- 5.80e-22]j",
+    "S_pi[1,0]": "[+/- 3.39e-22] + [-0.618033988749894848205 +/- 7.45e-22]j"
+   },
+   "max_ball_radius": 3.3821262927088106e-22,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 61,
+   "axis_check_max_radius": 5.355917187494426e-23,
+   "cyclic_product_minus_loop_max_radius": 1.7457857864001014e-21,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "[-1.80000000000000000000000000000000000000000000000000000000000000000 +/- 3e-70]",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[0.30901699437494742410 +/- 7.04e-21] + [0.95105651629515357212 +/- 8.31e-21]j",
+     "[-1.30901699437494742410 +/- 4.62e-21] + [-0.95105651629515357212 +/- 5.88e-21]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[0.30901699437494742410229341718281905886015458990288143106772431135 +/- 5.53e-66] + [0.95105651629515357211643933337938214340569863412575022244730564443 +/- 1.49e-66]j",
+     "[-1.30901699437494742410229341718281905886015458990288143106772431135 +/- 5.68e-66] + [-0.95105651629515357211643933337938214340569863412575022244730564443 +/- 1.49e-66]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=9/10 b=9/5",
+   "s0_closed_form": "[0.618033988749895 +/- 1.52e-16]j",
+   "s_pi_closed_form": "[+/- 6.71e-77] + [-0.618033988749895 +/- 1.52e-16]j",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  },
+  {
+   "schema": "pp-irregular-stokes-general/1",
+   "system": [
+    [
+     [
+      "0",
+      "1"
+     ],
+     [
+      "0",
+      "1"
+     ]
+    ],
+    [
+     [
+      "0",
+      "0"
+     ],
+     [
+      "-1",
+      "-1/2"
+     ]
+    ]
+   ],
+   "rank": 2,
+   "J": 1,
+   "eigenvalues": [
+    "0",
+    "1"
+   ],
+   "formal_exponents": [
+    "1",
+    "-3/2"
+   ],
+   "eigenframe": [
+    [
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "1"
+    ]
+   ],
+   "radius": "48",
+   "truncation": 46,
+   "precision_bits": 222,
+   "asymptotic_error_bound": "1.0736e-17",
+   "contraction_constant": "1.0736e-17",
+   "delta": "6.6163e-02",
+   "taylor_steps": 781,
+   "taylor_order_max": 124,
+   "loop_radius": "3",
+   "stokes_entries": {
+    "S0[0,1]": "[+/- 1.54e-16] + [7.089815403622064 +/- 2.62e-16]j",
+    "S_pi[1,0]": "[+/- 3.43e-13] + [+/- 3.43e-13]j"
+   },
+   "max_ball_radius": 1.2150629369436826e-12,
+   "axis_check_radius": "60",
+   "axis_check_truncation": 58,
+   "axis_check_max_radius": 1.7138121785672947e-13,
+   "cyclic_product_minus_loop_max_radius": 4.860230348334351e-12,
+   "local_exponent_check": {
+    "residue_eigenvalues": [
+     "-0.500000000000000000000000000000000000000000000000000000000000000000",
+     "0"
+    ],
+    "charpoly_cyclic_product": [
+     "[-1.0000000000 +/- 9.73e-12] + [+/- 9.73e-12]j",
+     "[+/- 4.87e-12] + [+/- 4.87e-12]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "charpoly_expected": [
+     "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.00e-67] + [+/- 5.60e-67]j",
+     "[+/- 3.00e-67] + [+/- 5.60e-67]j",
+     "1.00000000000000000000000000000000000000000000000000000000000000000"
+    ]
+   },
+   "checks": {
+    "S0_block_unipotent_upper": true,
+    "S_pi_block_unipotent_lower": true,
+    "cyclic_product_overlaps_independent_loop": true,
+    "sectorial_enclosures_consistent_along_axis": true,
+    "loop_det_matches_trace_of_residue": true,
+    "charpoly_matches_local_exponents_at_0": true
+   },
+   "certified": true,
+   "label": "Kummer a=-1 b=1/2",
+   "s0_closed_form": "[7.08981540362206 +/- 4.11e-15]j",
+   "s_pi_closed_form": "0",
+   "contains_closed_forms": true,
+   "kummer_map_roots_agree": true
+  }
+ ],
+ "unramified_without_closed_form": [
+  {
+   "label": "2x2, A_2 term (z=0 irregular): the numerical-only system of irregular_stokes.json",
+   "closed_form": null,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1"
+       ],
+       [
+        "1",
+        "-1/2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1/5"
+       ],
+       [
+        "2/7",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 2,
+     "eigenvalues": [
+      "0",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/3",
+      "-1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "1"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 40,
+     "precision_bits": 204,
+     "asymptotic_error_bound": "1.1606e-17",
+     "contraction_constant": "1.1606e-17",
+     "delta": "5.1148e-02",
+     "taylor_steps": 654,
+     "taylor_order_max": 113,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 4.28e-17] + [1.7771158137734649 +/- 7.01e-17]j",
+      "S_pi[1,0]": "[-0.92024357682338 +/- 2.78e-15] + [-1.59390863039700 +/- 5.14e-15]j"
+     },
+     "max_ball_radius": 8.910569337855546e-16,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 50,
+     "axis_check_max_radius": 2.5104366419830863e-16,
+     "cyclic_product_minus_loop_max_radius": 1.009419909973468e-14,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1"
+       ],
+       [
+        "1",
+        "-1/2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1/5"
+       ],
+       [
+        "2/7",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 2,
+     "eigenvalues": [
+      "0",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/3",
+      "-1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "1"
+      ]
+     ],
+     "radius": "56",
+     "truncation": 56,
+     "precision_bits": 241,
+     "asymptotic_error_bound": "1.4114e-24",
+     "contraction_constant": "1.4114e-24",
+     "delta": "3.6294e-02",
+     "taylor_steps": 888,
+     "taylor_order_max": 132,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 5.17e-24] + [1.77711581377346487294869 +/- 8.93e-24]j",
+      "S_pi[1,0]": "[-0.920243576823378118514 +/- 5.65e-22] + [-1.593908630397004242008 +/- 4.88e-22]j"
+     },
+     "max_ball_radius": 1.4346904499335712e-22,
+     "axis_check_radius": "70",
+     "axis_check_truncation": 70,
+     "axis_check_max_radius": 4.040930496011867e-23,
+     "cyclic_product_minus_loop_max_radius": 1.5808107704435374e-21,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true,
+   "previous_numerical_late_term": [
+    "(0.0 + 1.77711581377348171j)",
+    "(-0.920243576823366057 - 1.59390863039698335j)"
+   ],
+   "distance_to_previous_numerical": "2.41e-14"
+  },
+  {
+   "label": "2x2, A_2 and A_3 terms, non-diagonal A_0 (eigenvalues -1, 1)",
+   "closed_form": null,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "1",
+        "2"
+       ],
+       [
+        "0",
+        "-1"
+       ]
+      ],
+      [
+       [
+        "1/4",
+        "1/3"
+       ],
+       [
+        "-1/2",
+        "1/5"
+       ]
+      ],
+      [
+       [
+        "1/7",
+        "0"
+       ],
+       [
+        "1",
+        "-1/3"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1/6"
+       ],
+       [
+        "0",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 3,
+     "eigenvalues": [
+      "-1",
+      "1"
+     ],
+     "formal_exponents": [
+      "7/10",
+      "-1/4"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-1",
+       "0"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 80,
+     "precision_bits": 296,
+     "asymptotic_error_bound": "5.8062e-35",
+     "contraction_constant": "5.8062e-35",
+     "delta": "3.5652e-02",
+     "taylor_steps": 652,
+     "taylor_order_max": 164,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 3.68e-31] + [-1.982526531744386120846360124932 +/- 5.53e-31]j",
+      "S_pi[1,0]": "[0.214994680487219983973878523 +/- 2.90e-28] + [1.357422989573262106846323991 +/- 5.17e-28]j"
+     },
+     "max_ball_radius": 2.877156147874898e-28,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 100,
+     "axis_check_max_radius": 1.9313122994131078e-33,
+     "cyclic_product_minus_loop_max_radius": 2.1337125918155336e-27,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "1",
+        "2"
+       ],
+       [
+        "0",
+        "-1"
+       ]
+      ],
+      [
+       [
+        "1/4",
+        "1/3"
+       ],
+       [
+        "-1/2",
+        "1/5"
+       ]
+      ],
+      [
+       [
+        "1/7",
+        "0"
+       ],
+       [
+        "1",
+        "-1/3"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1/6"
+       ],
+       [
+        "0",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 3,
+     "eigenvalues": [
+      "-1",
+      "1"
+     ],
+     "formal_exponents": [
+      "7/10",
+      "-1/4"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-1",
+       "0"
+      ]
+     ],
+     "radius": "56",
+     "truncation": 112,
+     "precision_bits": 370,
+     "asymptotic_error_bound": "8.3355e-49",
+     "contraction_constant": "8.3355e-49",
+     "delta": "2.5267e-02",
+     "taylor_steps": 885,
+     "taylor_order_max": 203,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 4.52e-31] + [-1.982526531744386120846360124932 +/- 6.38e-31]j",
+      "S_pi[1,0]": "[0.214994680487219983973878523 +/- 9.03e-28] + [1.35742298957326210684632399 +/- 1.68e-27]j"
+     },
+     "max_ball_radius": 8.997873877112727e-28,
+     "axis_check_radius": "70",
+     "axis_check_truncation": 140,
+     "axis_check_max_radius": 3.816898463335815e-47,
+     "cyclic_product_minus_loop_max_radius": 6.668320279220368e-27,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true,
+   "borel_pade_numerical": [
+    "(2.58347646802687e-26 - 1.98252653174439j)",
+    "(0.21499468048722 + 1.35742298957326j)"
+   ],
+   "distance_to_borel_pade": "3.11e-17"
+  },
+  {
+   "label": "3x3 Birkhoff system A_0+A_1/z, generic A_1 (not hypergeometric)",
+   "closed_form": null,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "-1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1",
+        "-1/2"
+       ],
+       [
+        "2/5",
+        "-1/4",
+        "1"
+       ],
+       [
+        "1",
+        "1/7",
+        "1/2"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 1,
+     "eigenvalues": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/3",
+      "-1/4",
+      "1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "1"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 40,
+     "precision_bits": 304,
+     "asymptotic_error_bound": "1.6329e-17",
+     "contraction_constant": "1.6329e-17",
+     "delta": "4.2767e-02",
+     "taylor_steps": 659,
+     "taylor_order_max": 164,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.41e-16] + [6.520717020581784 +/- 6.61e-16]j",
+      "S0[0,2]": "[-6.00874163118376 +/- 6.36e-15] + [11.48118727146767 +/- 3.18e-15]j",
+      "S_pi[1,0]": "[4.65348942335287 +/- 4.17e-15] + [1.24689873297417 +/- 5.33e-15]j",
+      "S0[1,2]": "[+/- 3.05e-15] + [1.84296960356291 +/- 3.48e-15]j",
+      "S_pi[2,0]": "[2.57136774680804 +/- 1.96e-15] + [-3.91212136533778 +/- 3.30e-15]j",
+      "S_pi[2,1]": "[1.227893472993552 +/- 1.53e-16] + [-1.227893472993552 +/- 1.50e-16]j"
+     },
+     "max_ball_radius": 3.0358810610645573e-15,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 50,
+     "axis_check_max_radius": 2.5972897667128325e-16,
+     "cyclic_product_minus_loop_max_radius": 1.5613402870671544e-12,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[1.110887492555749268188238549641149773261706124249855451481504787458457362891096689292986623 +/- 8.24e-92]",
+       "[-0.2637770796112079674274526081539082199641863954582610590740857270625620147788816779798266448 +/- 7.81e-93] + [0.6572299140132919088090711311021561308486706527695150285696276109669796970133365782641970128 +/- 3.91e-92]j",
+       "[-0.2637770796112079674274526081539082199641863954582610590740857270625620147788816779798266448 +/- 7.81e-93] + [-0.6572299140132919088090711311021561308486706527695150285696276109669796970133365782641970128 +/- 3.91e-92]j"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.86602540 +/- 4.62e-9] + [0.500000000 +/- 8.32e-10]j",
+       "[34.6342662403 +/- 3.67e-11] + [-50.7735294312 +/- 8.11e-11]j",
+       "[4.60738968996 +/- 5.25e-12] + [61.28829944733 +/- 4.30e-12]j",
+       "1.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.86602540378443864676372317075293618347140262690519031402790348972596650845440001854057309 +/- 4.62e-90] + [0.50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 1.45e-90]j",
+       "[34.6342662403005197923669187931886076459173329563753378200482153504971885567105603218805346 +/- 5.08e-89] + [-50.7735294311550788134108052397682874832061519758001890886576564445426923283534714173893221 +/- 5.03e-89]j",
+       "[4.6073896899564700287844765606194877320607122505773715070808198788713392589970774198107016 +/- 4.39e-89] + [61.2882994473274164994576749368136863455204509260709004140761241918723113388703119174970274 +/- 4.44e-89]j",
+       "1.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "-1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1",
+        "-1/2"
+       ],
+       [
+        "2/5",
+        "-1/4",
+        "1"
+       ],
+       [
+        "1",
+        "1/7",
+        "1/2"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 1,
+     "eigenvalues": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/3",
+      "-1/4",
+      "1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "1"
+      ]
+     ],
+     "radius": "56",
+     "truncation": 56,
+     "precision_bits": 378,
+     "asymptotic_error_bound": "1.8449e-24",
+     "contraction_constant": "1.8449e-24",
+     "delta": "3.0262e-02",
+     "taylor_steps": 891,
+     "taylor_order_max": 202,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.62e-23] + [6.5207170205817844275809 +/- 3.58e-23]j",
+      "S0[0,2]": "[-6.008741631183764021347 +/- 3.29e-22] + [11.481187271467670846184 +/- 3.56e-22]j",
+      "S_pi[1,0]": "[4.653489423352871688836 +/- 5.69e-22] + [1.246898732974172854641 +/- 7.14e-22]j",
+      "S0[1,2]": "[+/- 4.22e-22] + [1.842969603562909562795 +/- 7.21e-22]j",
+      "S_pi[2,0]": "[2.571367746808038771236 +/- 5.30e-22] + [-3.912121365337777429429 +/- 2.29e-22]j",
+      "S_pi[2,1]": "[1.2278934729935520560332 +/- 1.42e-23] + [-1.2278934729935520560332 +/- 1.44e-23]j"
+     },
+     "max_ball_radius": 4.200296319065655e-22,
+     "axis_check_radius": "70",
+     "axis_check_truncation": 70,
+     "axis_check_max_radius": 3.7766293402441194e-23,
+     "cyclic_product_minus_loop_max_radius": 2.1411648471521437e-19,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[1.1108874925557492681882385496411497732617061242498554514815047874584573628910966892929866229177189514958843915288 +/- 4.50e-113]",
+       "[-0.26377707961120796742745260815390821996418639545826105907408572706256201477888167797982664479219280908127552909771 +/- 8.72e-115] + [0.65722991401329190880907113110215613084867065276951502856962761096697969701333657826419701283907711221740402018606 +/- 1.57e-115]j",
+       "[-0.26377707961120796742745260815390821996418639545826105907408572706256201477888167797982664479219280908127552909771 +/- 8.72e-115] + [-0.65722991401329190880907113110215613084867065276951502856962761096697969701333657826419701283907711221740402018606 +/- 1.57e-115]j"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.866025403784439 +/- 4.68e-16] + [0.500000000000000 +/- 1.14e-16]j",
+       "[34.63426624030051979 +/- 7.32e-18] + [-50.77352943115507881 +/- 8.37e-18]j",
+       "[4.607389689956470029 +/- 4.51e-19] + [61.288299447327416499 +/- 6.93e-19]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.8660254037844386467637231707529361834714026269051903140279034897259665084544000185405730933786242878378130707077 +/- 6.97e-113] + [0.5000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 7.72e-113]j",
+       "[34.63426624030051979236691879318860764591733295637533782004821535049718855671056032188053462045438170981190550134 +/- 7.58e-111] + [-50.77352943115507881341080523976828748320615197580018908865765644454269232835347141738932210365397858839612721232 +/- 7.58e-111]j",
+       "[4.607389689956470028784476560619487732060712250577371507080819878871339258997077419810701639783487791292339207698 +/- 6.79e-112] + [61.28829944732741649945767493681368634552045092607090041407612419187231133887031191749702742649227418011987117119 +/- 4.14e-111]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true
+  },
+  {
+   "label": "3x3 Birkhoff system, upper-triangular A_0 with eigenvalues 0,1,3",
+   "closed_form": null,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "1"
+       ],
+       [
+        "0",
+        "0",
+        "3"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "0",
+        "1"
+       ],
+       [
+        "1",
+        "-1/3",
+        "0"
+       ],
+       [
+        "0",
+        "2",
+        "1/5"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 1,
+     "eigenvalues": [
+      "0",
+      "1",
+      "3"
+     ],
+     "formal_exponents": [
+      "-1/2",
+      "-1/3",
+      "6/5"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "0",
+       "1",
+       "3"
+      ],
+      [
+       "0",
+       "0",
+       "6"
+      ]
+     ],
+     "radius": "36",
+     "truncation": 36,
+     "precision_bits": 369,
+     "asymptotic_error_bound": "2.3083e-17",
+     "contraction_constant": "2.3083e-17",
+     "delta": "1.1262e-01",
+     "taylor_steps": 1551,
+     "taylor_order_max": 151,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 1.86e-16] + [-2.100950048101859 +/- 3.65e-16]j",
+      "S0[0,2]": "[24.5909032428472 +/- 5.63e-14] + [-21.7992229960836 +/- 4.57e-14]j",
+      "S_pi[1,0]": "[0.335830840744 +/- 5.76e-13] + [0.581676078918 +/- 5.35e-13]j",
+      "S0[1,2]": "[+/- 1.32e-14] + [23.4093173848319 +/- 5.96e-14]j",
+      "S_pi[2,0]": "[31.14056319838758 +/- 3.66e-15] + [-15.15152346259984 +/- 3.60e-15]j",
+      "S_pi[2,1]": "[17.90485505121520 +/- 7.93e-15] + [-1.88187609770076 +/- 5.80e-15]j"
+     },
+     "max_ball_radius": 7.638930762967591e-13,
+     "axis_check_radius": "45",
+     "axis_check_truncation": 45,
+     "axis_check_max_radius": 1.0211167202910006e-14,
+     "cyclic_product_minus_loop_max_radius": 1.1884121325911323e-08,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[1.4265425204754144879591187531417895617110829285832336924864059165391341156999226462492582779263899081253521015 +/- 2.78e-110]",
+       "[-0.52993792690437391064622604323756144752220813095828351290986962493623372451662798979129580562986162072934271740 +/- 2.79e-111] + [1.0477549485344004673983242520913899235488705317577633011828166102447788755303007062850047915852960046906556722 +/- 3.56e-110]j",
+       "[-0.52993792690437391064622604323756144752220813095828351290986962493623372451662798979129580562986162072934271740 +/- 2.79e-111] + [-1.0477549485344004673983242520913899235488705317577633011828166102447788755303007062850047915852960046906556722 +/- 3.56e-110]j"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.669 +/- 4.04e-4] + [-0.743 +/- 4.18e-4]j",
+       "[576.5535 +/- 5.95e-5] + [-437.6433 +/- 5.46e-5]j",
+       "[711.0219443 +/- 3.10e-8] + [-135.6222053 +/- 5.88e-8]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.6691306063588582138262733306867804735995832189597956768174533522879666017106438971461549233600900679798403261 +/- 8.73e-110] + [-0.743144825477394235014697048974256977189113873498026386040123670547770344421119125414164054248083808618034367 +/- 9.54e-110]j",
+       "[576.5534847755628062773740712544754677589384144383302644505886459659365219514448854414732764753466382848699696 +/- 2.46e-107] + [-437.6433102570750946957670943852124409677300044823281582014855506256212602323029733062188504126033867384717615 +/- 5.33e-107]j",
+       "[711.0219442885282378463322082333318947306211165468472816496859434762503098318213573452299737262359730491975420 +/- 2.62e-107] + [-135.62220526070452524383808683214323490690185201328089607781183137866749580095292880020607086360288228189516545 +/- 6.67e-108]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "1"
+       ],
+       [
+        "0",
+        "0",
+        "3"
+       ]
+      ],
+      [
+       [
+        "1/2",
+        "0",
+        "1"
+       ],
+       [
+        "1",
+        "-1/3",
+        "0"
+       ],
+       [
+        "0",
+        "2",
+        "1/5"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 1,
+     "eigenvalues": [
+      "0",
+      "1",
+      "3"
+     ],
+     "formal_exponents": [
+      "-1/2",
+      "-1/3",
+      "6/5"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "0",
+       "1",
+       "3"
+      ],
+      [
+       "0",
+       "0",
+       "6"
+      ]
+     ],
+     "radius": "48",
+     "truncation": 48,
+     "precision_bits": 452,
+     "asymptotic_error_bound": "1.2218e-22",
+     "contraction_constant": "1.2218e-22",
+     "delta": "8.3997e-02",
+     "taylor_steps": 2005,
+     "taylor_order_max": 183,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 9.97e-22] + [-2.10095004810185879335 +/- 3.66e-21]j",
+      "S0[0,2]": "[24.590903242847178786 +/- 8.12e-19] + [-21.799222996083610703 +/- 3.78e-19]j",
+      "S_pi[1,0]": "[0.33583084074431506 +/- 6.54e-18] + [0.58167607891772591 +/- 4.64e-18]j",
+      "S0[1,2]": "[+/- 1.03e-19] + [23.409317384831946633 +/- 3.69e-19]j",
+      "S_pi[2,0]": "[31.1405631983875811808 +/- 6.95e-20] + [-15.1515234625998412985 +/- 5.33e-20]j",
+      "S_pi[2,1]": "[17.9048550512151964964 +/- 7.28e-20] + [-1.8818760977007575999 +/- 6.35e-20]j"
+     },
+     "max_ball_radius": 6.5265400904748135e-18,
+     "axis_check_radius": "60",
+     "axis_check_truncation": 60,
+     "axis_check_max_radius": 8.812831622521736e-20,
+     "cyclic_product_minus_loop_max_radius": 1.0135255019622156e-13,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[1.42654252047541448795911875314178956171108292858323369248640591653913411569992264624925827792638990812535210147223121551317400219827638 +/- 3.76e-135]",
+       "[-0.529937926904373910646226043237561447522208130958283512909869624936233724516627989791295805629861620729342717402782274423253667765804859 +/- 4.56e-136] + [1.04775494853440046739832425209138992354887053175776330118281661024477887553030070628500479158529600469065567223551779871974090228374567 +/- 4.38e-135]j",
+       "[-0.529937926904373910646226043237561447522208130958283512909869624936233724516627989791295805629861620729342717402782274423253667765804859 +/- 4.56e-136] + [-1.04775494853440046739832425209138992354887053175776330118281661024477887553030070628500479158529600469065567223551779871974090228374567 +/- 4.38e-135]j"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.66913061 +/- 5.97e-9] + [-0.74314483 +/- 6.85e-9]j",
+       "[576.553484776 +/- 8.15e-10] + [-437.643310257 +/- 4.53e-10]j",
+       "[711.021944288528 +/- 4.04e-13] + [-135.622205260705 +/- 6.41e-13]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.66913060635885821382627333068678047359958321895979567681745335228796660171064389714615492336009006797984032607043213049346268267522679 +/- 6.68e-135] + [-0.74314482547739423501469704897425697718911387349802638604012367054777034442111912541416405424808380861803436695639437010239598251490544 +/- 8.72e-135]j",
+       "[576.55348477556280627737407125447546775893841443833026445058864596593652195144488544147327647534663828486996960142726068942501936457151 +/- 3.40e-132] + [-437.64331025707509469576709438521244096773000448232815820148555062562126023230297330621885041260338673847176146913597568117731681019171 +/- 6.10e-132]j",
+       "[711.02194428852823784633220823333189473062111654684728164968594347625030983182135734522997372623597304919754201734210550149283972258663 +/- 4.75e-132] + [-135.622205260704525243838086832143234906901852013280896077811831378667495800952928800206070863602882281895165450885126807373547249692053 +/- 7.94e-133]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true
+  },
+  {
+   "label": "3x3 with A_2 term (z=0 irregular)",
+   "closed_form": null,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "-1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1",
+        "-1/2"
+       ],
+       [
+        "2/5",
+        "-1/4",
+        "1"
+       ],
+       [
+        "1",
+        "1/7",
+        "1/2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1/5",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1/3"
+       ],
+       [
+        "1/7",
+        "0",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 2,
+     "eigenvalues": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/3",
+      "-1/4",
+      "1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "1"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 40,
+     "precision_bits": 304,
+     "asymptotic_error_bound": "1.8478e-17",
+     "contraction_constant": "1.8478e-17",
+     "delta": "4.2888e-02",
+     "taylor_steps": 659,
+     "taylor_order_max": 164,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 3.26e-16] + [7.383351773570673 +/- 4.20e-16]j",
+      "S0[0,2]": "[-15.58440512014569 +/- 7.57e-15] + [18.53654701244563 +/- 3.56e-15]j",
+      "S_pi[1,0]": "[3.51070700621614 +/- 5.84e-15] + [0.94069110717790 +/- 4.13e-15]j",
+      "S0[1,2]": "[+/- 6.19e-15] + [4.22149874422383 +/- 6.77e-15]j",
+      "S_pi[2,0]": "[1.006739929507383 +/- 7.14e-16] + [-3.29300419053501 +/- 1.01e-15]j",
+      "S_pi[2,1]": "[0.979902283938199 +/- 2.12e-16] + [-0.979902283938199 +/- 2.11e-16]j"
+     },
+     "max_ball_radius": 6.166465501064719e-15,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 50,
+     "axis_check_max_radius": 2.9391658051712956e-16,
+     "cyclic_product_minus_loop_max_radius": 1.818666646723503e-12,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "-1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1",
+        "-1/2"
+       ],
+       [
+        "2/5",
+        "-1/4",
+        "1"
+       ],
+       [
+        "1",
+        "1/7",
+        "1/2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "1/5",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1/3"
+       ],
+       [
+        "1/7",
+        "0",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 2,
+     "eigenvalues": [
+      "-1",
+      "0",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/3",
+      "-1/4",
+      "1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "1"
+      ]
+     ],
+     "radius": "56",
+     "truncation": 56,
+     "precision_bits": 378,
+     "asymptotic_error_bound": "2.0878e-24",
+     "contraction_constant": "2.0878e-24",
+     "delta": "3.0322e-02",
+     "taylor_steps": 891,
+     "taylor_order_max": 202,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 3.51e-23] + [7.3833517735706729008248 +/- 4.85e-23]j",
+      "S0[0,2]": "[-15.584405120145694052859 +/- 4.96e-22] + [18.536547012445629952047 +/- 6.06e-22]j",
+      "S_pi[1,0]": "[3.510707006216136557320 +/- 3.67e-22] + [0.940691107177898274048 +/- 7.33e-22]j",
+      "S0[1,2]": "[+/- 8.51e-22] + [4.22149874422383060029 +/- 3.67e-21]j",
+      "S_pi[2,0]": "[1.006739929507383040214 +/- 1.45e-22] + [-3.293004190535010333803 +/- 1.03e-22]j",
+      "S_pi[2,1]": "[0.9799022839381991241960 +/- 2.84e-23] + [-0.9799022839381991241960 +/- 2.86e-23]j"
+     },
+     "max_ball_radius": 8.486759851699729e-22,
+     "axis_check_radius": "70",
+     "axis_check_truncation": 70,
+     "axis_check_max_radius": 4.273974468220623e-23,
+     "cyclic_product_minus_loop_max_radius": 2.497444998858526e-19,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true
+  },
+  {
+   "label": "repeated eigenvalue 1 (validation): G(Kummer(1/3,3/4) + [1+(2/5)/z])G^-1",
+   "closed_form": "Kummer product s0*s_pi",
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "1",
+        "1",
+        "-1"
+       ],
+       [
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "0"
+       ]
+      ],
+      [
+       [
+        "-5/24",
+        "-13/24",
+        "13/24"
+       ],
+       [
+        "-49/120",
+        "-41/120",
+        "89/120"
+       ],
+       [
+        "-1/5",
+        "1/5",
+        "1/5"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 1,
+     "eigenvalues": [
+      "0",
+      "1",
+      "1"
+     ],
+     "formal_exponents": [
+      "-1/3",
+      "-5/12",
+      "2/5"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1",
+       "0"
+      ],
+      [
+       "0",
+       "1/2",
+       "1"
+      ],
+      [
+       "1",
+       "1/2",
+       "1"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 41,
+     "precision_bits": 212,
+     "asymptotic_error_bound": "6.3143e-19",
+     "contraction_constant": "6.3143e-19",
+     "delta": "2.0522e-02",
+     "taylor_steps": 649,
+     "taylor_order_max": 116,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.31e-18] + [1.09046608966539261 +/- 4.90e-18]j",
+      "S0[0,2]": "[+/- 3.29e-17] + [+/- 3.29e-17]j",
+      "S_pi[1,0]": "[0.7941791239470609 +/- 2.79e-17] + [-2.9639168408809721 +/- 4.70e-17]j",
+      "S_pi[2,0]": "[+/- 3.44e-19] + [+/- 3.44e-19]j"
+     },
+     "max_ball_radius": 1.0680877232497275e-16,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 51,
+     "axis_check_max_radius": 1.2843796545411384e-17,
+     "cyclic_product_minus_loop_max_radius": 7.73012898589507e-16,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-0.750000000000000000000000000000000000000000000000000000000000000 +/- 1e-68]",
+       "0",
+       "[0.400000000000000000000000000000000000000000000000000000000000000 +/- 1e-68]"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.58778525229247 +/- 6.38e-15] + [0.80901699437495 +/- 5.82e-15]j",
+       "[-1.39680224666742 +/- 2.55e-15] + [0.77876825791753 +/- 6.29e-15]j",
+       "[-0.190983005625053 +/- 7.44e-16] + [-1.587785252292473 +/- 4.49e-16]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.58778525229247312916870595463907276859765243764314599107227248 +/- 2.94e-63] + [0.80901699437494742410229341718281905886015458990288143106772431 +/- 2.93e-63]j",
+       "[-1.39680224666742055327099937182189182745780702754602742213999679 +/- 6.67e-63] + [0.77876825791752570506641253745625370973749784774026456000454817 +/- 3.95e-63]j",
+       "[-0.19098300562505257589770658281718094113984541009711856893227569 +/- 3.94e-63] + [-1.58778525229247312916870595463907276859765243764314599107227248 +/- 1.66e-63]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "invariant_product": "[3.23205080756888 +/- 3.28e-15] + [0.866025403784439 +/- 5.35e-16]j",
+   "closed_form_product": "[3.23205080756888 +/- 3.26e-15] + [0.866025403784439 +/- 5.15e-16]j",
+   "product_contains_closed_form": true,
+   "decoupled_column_vanishes": true
+  },
+  {
+   "label": "repeated eigenvalues 0,0,1,1 (validation): G(Kummer(1/3,3/4)+Kummer(2/5,7/3))G^-1",
+   "closed_form": "Kummer products",
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "-2",
+        "-2",
+        "2",
+        "2"
+       ],
+       [
+        "1",
+        "3",
+        "-1",
+        "-1"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "-5/4",
+        "-239/60",
+        "19/12",
+        "33/20"
+       ],
+       [
+        "13/12",
+        "13/12",
+        "-3/4",
+        "-13/12"
+       ],
+       [
+        "-5/4",
+        "-239/60",
+        "19/12",
+        "33/20"
+       ]
+      ]
+     ],
+     "rank": 4,
+     "J": 1,
+     "eigenvalues": [
+      "0",
+      "0",
+      "1",
+      "1"
+     ],
+     "formal_exponents": [
+      "-2/5",
+      "-1/3",
+      "-29/15",
+      "-5/12"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "0",
+       "0",
+       "1",
+       "1"
+      ],
+      [
+       "0",
+       "1",
+       "0",
+       "2"
+      ],
+      [
+       "1",
+       "0",
+       "2",
+       "1"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 39,
+     "precision_bits": 220,
+     "asymptotic_error_bound": "3.9439e-16",
+     "contraction_constant": "3.9439e-16",
+     "delta": "7.0298e-02",
+     "taylor_steps": 664,
+     "taylor_order_max": 123,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,2]": "[+/- 3.43e-15] + [4.33349887985069 +/- 6.61e-15]j",
+      "S0[0,3]": "[+/- 4.62e-13] + [+/- 4.62e-13]j",
+      "S0[1,2]": "[+/- 1.35e-15] + [+/- 1.35e-15]j",
+      "S0[1,3]": "[+/- 2.31e-15] + [2.18093217933079 +/- 7.08e-15]j",
+      "S_pi[2,0]": "[0.181518497260 +/- 9.19e-13] + [0.019078362841 +/- 5.68e-13]j",
+      "S_pi[2,1]": "[+/- 8.45e-13] + [+/- 8.45e-13]j",
+      "S_pi[3,0]": "[+/- 2.56e-15] + [+/- 2.56e-15]j",
+      "S_pi[3,1]": "[0.39708956197353 +/- 4.79e-15] + [-1.48195842044049 +/- 8.31e-15]j"
+     },
+     "max_ball_radius": 8.441052159885985e-13,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 49,
+     "axis_check_max_radius": 1.4429607030116e-13,
+     "cyclic_product_minus_loop_max_radius": 1.4316687646596243e-11,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-2.3333333333333333333333333333333333333333333333333333333333333333 +/- 3.34e-65]",
+       "-0.75000000000000000000000000000000000000000000000000000000000000000",
+       "0",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.866025404 +/- 5.44e-10] + [-0.500000000 +/- 3.29e-10]j",
+       "[-1.232050808 +/- 5.80e-10] + [0.866025404 +/- 3.64e-10]j",
+       "[0.8660254038 +/- 4.82e-11] + [-0.2320508076 +/- 6.38e-11]j",
+       "[-1.50000000000 +/- 3.96e-12] + [-0.13397459622 +/- 8.40e-12]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.8660254037844386467637231707529361834714026269051903140279034897 +/- 4.32e-65] + [-0.5000000000000000000000000000000000000000000000000000000000000000 +/- 2.98e-65]j",
+       "[-1.2320508075688772935274463415058723669428052538103806280558069795 +/- 8.32e-65] + [0.8660254037844386467637231707529361834714026269051903140279034897 +/- 5.81e-65]j",
+       "[0.8660254037844386467637231707529361834714026269051903140279034897 +/- 8.96e-65] + [-0.2320508075688772935274463415058723669428052538103806280558069794 +/- 8.73e-65]j",
+       "[-1.5000000000000000000000000000000000000000000000000000000000000000 +/- 2.39e-65] + [-0.13397459621556135323627682924706381652859737309480968597209651027 +/- 8.87e-66]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "matched_pairs": [
+    [
+     1,
+     3
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "products": [
+    "[3.2320508075689 +/- 3.71e-14] + [0.8660254037844 +/- 5.25e-14]j",
+    "[-0.08267606400 +/- 3.32e-12] + [0.78661020455 +/- 2.38e-12]j"
+   ],
+   "closed_form_products": [
+    "[3.23205080756888 +/- 3.26e-15] + [0.866025403784439 +/- 5.15e-16]j",
+    "[-0.0826760640014591 +/- 1.81e-17] + [0.786610204550514 +/- 2.20e-16]j"
+   ]
+  },
+  {
+   "label": "repeated eigenvalue 1 (multiplicity 2), generic residue: no closed form",
+   "closed_form": null,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1/2",
+        "1"
+       ],
+       [
+        "1/6",
+        "0",
+        "2/3"
+       ],
+       [
+        "1/2",
+        "1",
+        "1/7"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 1,
+     "eigenvalues": [
+      "0",
+      "1",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/7",
+      "-1/6",
+      "1/2"
+     ],
+     "eigenframe": [
+      [
+       "0",
+       "1",
+       "1"
+      ],
+      [
+       "0",
+       "-1",
+       "1/3"
+      ],
+      [
+       "1",
+       "0",
+       "0"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 40,
+     "precision_bits": 212,
+     "asymptotic_error_bound": "8.9891e-19",
+     "contraction_constant": "8.9891e-19",
+     "delta": "6.7309e-02",
+     "taylor_steps": 657,
+     "taylor_order_max": 118,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.17e-18] + [-0.80604739985100609 +/- 6.71e-18]j",
+      "S0[0,2]": "[+/- 1.83e-17] + [-1.6702706560327040 +/- 5.20e-17]j",
+      "S_pi[1,0]": "[1.0185406979777414 +/- 3.26e-17] + [-0.6944292896444815 +/- 3.68e-17]j",
+      "S_pi[2,0]": "[-0.69003522635249526 +/- 7.33e-18] + [-0.33230345109446965 +/- 4.41e-18]j"
+     },
+     "max_ball_radius": 2.941010739503752e-17,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 50,
+     "axis_check_max_radius": 1.0514243070701296e-17,
+     "cyclic_product_minus_loop_max_radius": 1.0761262311484981e-15,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-0.829355806439685831862572339246211755606273220997602752627785773 +/- 2.68e-64]",
+       "[-0.0859631691017273742734755499917239552324731382535722740345782189 +/- 2.34e-65]",
+       "[1.39150945173188939661223836542841190131493683544165121713855447 +/- 1.67e-63]"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.9888308262251 +/- 4.75e-14] + [-0.1490422661762 +/- 4.45e-14]j",
+       "[-0.40491502744195 +/- 9.34e-15] + [1.0663558858414 +/- 1.54e-14]j",
+       "[-0.55932455891250 +/- 6.26e-15] + [-0.99409611834784 +/- 4.66e-15]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.9888308262251285450697428829340086130652510135741877063994969 +/- 3.34e-62] + [-0.14904226617617444692935471527721755690966943899822249575955040 +/- 9.15e-63]j",
+       "[-0.4049150274419480769506319392134690476341146885421079908381415 +/- 4.71e-62] + [1.0663558858413920666241641196509793906586669200176593104052794 +/- 1.27e-62]j",
+       "[-0.55932455891249516360714347818628119801997261296088404013895132 +/- 8.82e-63] + [-0.99409611834783676547981442443023814767539795783501363317510418 +/- 6.03e-63]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "1",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "1",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "1/3",
+        "1/2",
+        "1"
+       ],
+       [
+        "1/6",
+        "0",
+        "2/3"
+       ],
+       [
+        "1/2",
+        "1",
+        "1/7"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 1,
+     "eigenvalues": [
+      "0",
+      "1",
+      "1"
+     ],
+     "formal_exponents": [
+      "1/7",
+      "-1/6",
+      "1/2"
+     ],
+     "eigenframe": [
+      [
+       "0",
+       "1",
+       "1"
+      ],
+      [
+       "0",
+       "-1",
+       "1/3"
+      ],
+      [
+       "1",
+       "0",
+       "0"
+      ]
+     ],
+     "radius": "56",
+     "truncation": 56,
+     "precision_bits": 249,
+     "asymptotic_error_bound": "8.9452e-26",
+     "contraction_constant": "8.9452e-26",
+     "delta": "4.7944e-02",
+     "taylor_steps": 891,
+     "taylor_order_max": 136,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.07e-25] + [-0.806047399851006085601682 +/- 5.42e-25]j",
+      "S0[0,2]": "[+/- 2.11e-24] + [-1.67027065603270403339163 +/- 5.72e-24]j",
+      "S_pi[1,0]": "[1.01854069797774139678843 +/- 7.35e-24] + [-0.69442928964448150728179 +/- 6.70e-24]j",
+      "S_pi[2,0]": "[-0.690035226352495263928225 +/- 5.47e-25] + [-0.332303451094469650950911 +/- 6.65e-25]j"
+     },
+     "max_ball_radius": 3.5967490204845216e-24,
+     "axis_check_radius": "70",
+     "axis_check_truncation": 70,
+     "axis_check_max_radius": 1.3093316197484126e-24,
+     "cyclic_product_minus_loop_max_radius": 1.2376204016450106e-22,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-0.82935580643968583186257233924621175560627322099760275262778577326781796385 +/- 8.25e-76]",
+       "[-0.085963169101727374273475549991723955232473138253572274034578218876636440800 +/- 1.23e-76]",
+       "[1.3915094517318893966122383654284119013149368354416512171385544683349305951 +/- 2.57e-74]"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.98883082622512854507 +/- 2.45e-21] + [-0.14904226617617444693 +/- 2.83e-21]j",
+       "[-0.40491502744194807695 +/- 1.48e-21] + [1.06635588584139206662 +/- 5.02e-21]j",
+       "[-0.559324558912495163607 +/- 3.07e-22] + [-0.994096118347836765480 +/- 3.49e-22]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.9888308262251285450697428829340086130652510135741877063994969271602135331 +/- 5.40e-74] + [-0.1490422661761744469293547152772175569096694389982224957595504011185284844 +/- 8.73e-74]j",
+       "[-0.4049150274419480769506319392134690476341146885421079908381414633170731223 +/- 7.30e-74] + [1.0663558858413920666241641196509793906586669200176593104052793944306857047 +/- 7.21e-74]j",
+       "[-0.5593245589124951636071434781862811980199726129608840401389513151483808910 +/- 7.55e-74] + [-0.9940961183478367654798144244302381476753979578350136331751041799442650254 +/- 6.90e-74]j",
+       "1.0000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true
+  }
+ ],
+ "ramified_and_repeated": [
+  {
+   "label": "Airy w''=z w (leading matrix nilpotent, exponent 3/2)",
+   "operator_theta_form": {
+    "1,0": "-1",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "-2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    }
+   ],
+   "reduction": {
+    "q": 2,
+    "p": 3,
+    "common_factor": {},
+    "s_variable": "s = z^(3/2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/3"
+      ],
+      [
+       "4/3",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-1/3"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/3"
+       ],
+       [
+        "4/3",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1/3"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-2/3",
+      "2/3"
+     ],
+     "formal_exponents": [
+      "-1/6",
+      "-1/6"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 54,
+     "precision_bits": 235,
+     "asymptotic_error_bound": "3.7727e-25",
+     "contraction_constant": "3.7727e-25",
+     "delta": "3.7099e-03",
+     "taylor_steps": 489,
+     "taylor_order_max": 127,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 1.51e-24] + [1.0000000000000000000000 +/- 1.86e-24]j",
+      "S_pi[1,0]": "[+/- 2.82e-24] + [-1.0000000000000000000000 +/- 3.16e-24]j"
+     },
+     "max_ball_radius": 2.8159596999863884e-24,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 67,
+     "axis_check_max_radius": 3.7726738154042328e-25,
+     "cyclic_product_minus_loop_max_radius": 2.0986584154348402e-23,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-0.3333333333333333333333333333333333333333333333333333333333333333333333 +/- 3.34e-71]",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-0.5000000000000000000000 +/- 5.86e-23] + [-0.8660254037844386467637 +/- 8.18e-23]j",
+       "[-0.5000000000000000000000 +/- 2.64e-23] + [0.8660254037844386467637 +/- 4.95e-23]j",
+       "1.000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-0.500000000000000000000000000000000000000000000000000000000000000000000 +/- 1.48e-70] + [-0.8660254037844386467637231707529361834714026269051903140279034897259665 +/- 9.20e-71]j",
+       "[-0.500000000000000000000000000000000000000000000000000000000000000000000 +/- 1.48e-70] + [0.8660254037844386467637231707529361834714026269051903140279034897259665 +/- 9.20e-71]j",
+       "1.000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/3"
+       ],
+       [
+        "4/3",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1/3"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-2/3",
+      "2/3"
+     ],
+     "formal_exponents": [
+      "-1/6",
+      "-1/6"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "56",
+     "truncation": 75,
+     "precision_bits": 284,
+     "asymptotic_error_bound": "1.7305e-34",
+     "contraction_constant": "1.7305e-34",
+     "delta": "2.6365e-03",
+     "taylor_steps": 662,
+     "taylor_order_max": 152,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 1.88e-30] + [1.0000000000000000000000000000 +/- 1.88e-30]j",
+      "S_pi[1,0]": "[+/- 2.57e-30] + [-1.0000000000000000000000000000 +/- 2.57e-30]j"
+     },
+     "max_ball_radius": 2.562936701338479e-30,
+     "axis_check_radius": "70",
+     "axis_check_truncation": 94,
+     "axis_check_max_radius": 1.7304921793619141e-34,
+     "cyclic_product_minus_loop_max_radius": 6.147943112450684e-30,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-0.333333333333333333333333333333333333333333333333333333333333333333333333333333333333 +/- 3.34e-85]",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-0.5000000000000000000000000000 +/- 1.69e-29] + [-0.8660254037844386467637231708 +/- 6.40e-29]j",
+       "[-0.50000000000000000000000000000 +/- 6.21e-30] + [0.86602540378443864676372317075 +/- 9.15e-30]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-0.500000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 1.83e-85] + [-0.866025403784438646763723170752936183471402626905190314027903489725966508454400018541 +/- 5.72e-85]j",
+       "[-0.500000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 1.99e-85] + [0.866025403784438646763723170752936183471402626905190314027903489725966508454400018541 +/- 5.72e-85]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true,
+   "kummer_map_closed_form": [
+    {
+     "a": "[0.166666666666667 +/- 3.34e-16]",
+     "b": "[0.333333333333333 +/- 3.34e-16]",
+     "s0": "[1.00000000000000 +/- 3e-20]j",
+     "s_pi": "[+/- 2.05e-76] + [-1.00000000000000 +/- 3e-20]j"
+    },
+    {
+     "a": "[-0.166666666666667 +/- 3.34e-16]",
+     "b": "[-0.333333333333333 +/- 3.34e-16]",
+     "s0": "[1.00000000000000 +/- 3e-20]j",
+     "s_pi": "[+/- 2.05e-76] + [-1.00000000000000 +/- 3e-20]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "Ai(z)+w Ai(wz)+w^2 Ai(w^2 z)=0 gives s_0=i in the normalisation z^(-1/4)e^(-+2/3 z^(3/2)); s_pi=-i from the cyclic relation",
+   "classical_s0": "1.00000000000000j",
+   "classical_s_pi": "-1.00000000000000j",
+   "contains_classical": true
+  },
+  {
+   "label": "Weber w''=(z^2/4+a)w, a=0",
+   "operator_theta_form": {
+    "2,0": "-1/4",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 1,
+     "exponential": {
+      "2": "-1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/2"
+    },
+    {
+     "q": 1,
+     "exponential": {
+      "2": "1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/2"
+    }
+   ],
+   "reduction": {
+    "q": 1,
+    "p": 2,
+    "common_factor": {},
+    "s_variable": "s = z^(2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/2"
+      ],
+      [
+       "1/8",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/2"
+       ],
+       [
+        "1/8",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1/2"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-1/4",
+      "1/4"
+     ],
+     "formal_exponents": [
+      "-1/4",
+      "-1/4"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-1/2",
+       "1/2"
+      ]
+     ],
+     "radius": "96",
+     "truncation": 49,
+     "precision_bits": 222,
+     "asymptotic_error_bound": "1.1718e-22",
+     "contraction_constant": "1.1718e-22",
+     "delta": "6.6297e-03",
+     "taylor_steps": 635,
+     "taylor_order_max": 118,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 5.66e-22] + [1.414213562373095048802 +/- 8.64e-22]j",
+      "S_pi[1,0]": "[+/- 5.66e-22] + [-1.414213562373095048802 +/- 8.64e-22]j"
+     },
+     "max_ball_radius": 5.658043035445783e-22,
+     "axis_check_radius": "120",
+     "axis_check_truncation": 61,
+     "axis_check_max_radius": 1.1718251856880398e-22,
+     "cyclic_product_minus_loop_max_radius": 7.161304238222725e-21,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "-0.500000000000000000000000000000000000000000000000000000000000000000",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-1.0000000000000000000 +/- 2.18e-20] + [+/- 2.18e-20]j",
+       "[+/- 9.33e-21] + [+/- 9.33e-21]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.00e-67] + [+/- 5.60e-67]j",
+       "[+/- 3.00e-67] + [+/- 5.60e-67]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "0.250000000000000",
+     "b": "0.500000000000000",
+     "s0": "[1.41421356237310 +/- 4.96e-15]j",
+     "s_pi": "[-1.41421356237310 +/- 4.96e-15]j"
+    },
+    {
+     "a": "-0.250000000000000",
+     "b": "-0.500000000000000",
+     "s0": "[1.41421356237310 +/- 4.96e-15]j",
+     "s_pi": "[-1.41421356237310 +/- 4.96e-15]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=i sqrt(2 pi)/Gamma(1/2-a) (DLMF 12.2.18 in the normalisation z^(-a-1/2)e^(-z^2/4), z^(a-1/2)e^(z^2/4)); s_pi=-i e^(-i pi a) sqrt(2 pi)/Gamma(1/2+a)",
+   "classical_s0": "[1.41421356237310 +/- 4.96e-15]j",
+   "classical_s_pi": "[-1.41421356237310 +/- 4.96e-15]j",
+   "contains_classical": true
+  },
+  {
+   "label": "Weber w''=(z^2/4+a)w, a=1/3",
+   "operator_theta_form": {
+    "0,0": "-1/3",
+    "2,0": "-1/4",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 1,
+     "exponential": {
+      "2": "-1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-5/6"
+    },
+    {
+     "q": 1,
+     "exponential": {
+      "2": "1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/6"
+    }
+   ],
+   "reduction": {
+    "q": 1,
+    "p": 2,
+    "common_factor": {},
+    "s_variable": "s = z^(2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/2"
+      ],
+      [
+       "1/8",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "1/6",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/2"
+       ],
+       [
+        "1/8",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "1/6",
+        "-1/2"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-1/4",
+      "1/4"
+     ],
+     "formal_exponents": [
+      "-5/12",
+      "-1/12"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-1/2",
+       "1/2"
+      ]
+     ],
+     "radius": "96",
+     "truncation": 48,
+     "precision_bits": 222,
+     "asymptotic_error_bound": "8.5446e-22",
+     "contraction_constant": "8.5446e-22",
+     "delta": "9.6559e-03",
+     "taylor_steps": 635,
+     "taylor_order_max": 118,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 8.60e-21] + [0.4503208717991079618 +/- 5.61e-20]j",
+      "S_pi[1,0]": "[-1.92312961272374706735 +/- 9.20e-21] + [-1.11031939959259611509 +/- 8.57e-21]j"
+     },
+     "max_ball_radius": 1.505713334933421e-20,
+     "axis_check_radius": "120",
+     "axis_check_truncation": 60,
+     "axis_check_max_radius": 3.912481915053767e-21,
+     "cyclic_product_minus_loop_max_radius": 5.021351489356752e-19,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "-0.500000000000000000000000000000000000000000000000000000000000000000",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-1.00000000000000000 +/- 2.02e-18] + [+/- 2.02e-18]j",
+       "[+/- 7.75e-19] + [+/- 7.75e-19]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.00e-67] + [+/- 5.60e-67]j",
+       "[+/- 3.00e-67] + [+/- 5.60e-67]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "[0.416666666666667 +/- 3.34e-16]",
+     "b": "[0.500000000000000 +/- 3e-20]",
+     "s0": "[0.450320871799108 +/- 3.83e-17]j",
+     "s_pi": "[-1.92312961272375 +/- 2.94e-15] + [-1.11031939959260 +/- 3.89e-15]j"
+    },
+    {
+     "a": "[-0.0833333333333333 +/- 3.34e-17]",
+     "b": "[-0.500000000000000 +/- 3e-20]",
+     "s0": "[0.450320871799108 +/- 3.83e-17]j",
+     "s_pi": "[-1.92312961272375 +/- 2.94e-15] + [-1.11031939959260 +/- 3.89e-15]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=i sqrt(2 pi)/Gamma(1/2-a) (DLMF 12.2.18 in the normalisation z^(-a-1/2)e^(-z^2/4), z^(a-1/2)e^(z^2/4)); s_pi=-i e^(-i pi a) sqrt(2 pi)/Gamma(1/2+a)",
+   "classical_s0": "[0.450320871799108 +/- 3.83e-17]j",
+   "classical_s_pi": "[-1.92312961272375 +/- 2.94e-15] + [-1.11031939959260 +/- 3.89e-15]j",
+   "contains_classical": true
+  },
+  {
+   "label": "Weber w''=(z^2/4+a)w, a=-1/4",
+   "operator_theta_form": {
+    "0,0": "1/4",
+    "2,0": "-1/4",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 1,
+     "exponential": {
+      "2": "-1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 1,
+     "exponential": {
+      "2": "1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-3/4"
+    }
+   ],
+   "reduction": {
+    "q": 1,
+    "p": 2,
+    "common_factor": {},
+    "s_variable": "s = z^(2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/2"
+      ],
+      [
+       "1/8",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "-1/8",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/2"
+       ],
+       [
+        "1/8",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "-1/8",
+        "-1/2"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-1/4",
+      "1/4"
+     ],
+     "formal_exponents": [
+      "-1/8",
+      "-3/8"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-1/2",
+       "1/2"
+      ]
+     ],
+     "radius": "96",
+     "truncation": 48,
+     "precision_bits": 222,
+     "asymptotic_error_bound": "5.3617e-22",
+     "contraction_constant": "5.3617e-22",
+     "delta": "9.0020e-03",
+     "taylor_steps": 635,
+     "taylor_order_max": 118,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.54e-21] + [2.04553134422633734322 +/- 4.97e-21]j",
+      "S_pi[1,0]": "[0.4888705337234618988 +/- 2.36e-20] + [-0.4888705337234618988 +/- 2.36e-20]j"
+     },
+     "max_ball_radius": 7.76167956551163e-21,
+     "axis_check_radius": "120",
+     "axis_check_truncation": 60,
+     "axis_check_max_radius": 1.6783124447832548e-21,
+     "cyclic_product_minus_loop_max_radius": 5.801299182184723e-20,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "-0.500000000000000000000000000000000000000000000000000000000000000000",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-1.000000000000000000 +/- 1.82e-19] + [+/- 1.82e-19]j",
+       "[+/- 6.22e-20] + [+/- 6.22e-20]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.00e-67] + [+/- 5.60e-67]j",
+       "[+/- 3.00e-67] + [+/- 5.60e-67]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "0.125000000000000",
+     "b": "0.500000000000000",
+     "s0": "[2.04553134422634 +/- 2.66e-15]j",
+     "s_pi": "[0.488870533723462 +/- 1.02e-16] + [-0.488870533723462 +/- 1.02e-16]j"
+    },
+    {
+     "a": "-0.375000000000000",
+     "b": "-0.500000000000000",
+     "s0": "[2.04553134422634 +/- 2.66e-15]j",
+     "s_pi": "[0.488870533723462 +/- 1.02e-16] + [-0.488870533723462 +/- 1.02e-16]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=i sqrt(2 pi)/Gamma(1/2-a) (DLMF 12.2.18 in the normalisation z^(-a-1/2)e^(-z^2/4), z^(a-1/2)e^(z^2/4)); s_pi=-i e^(-i pi a) sqrt(2 pi)/Gamma(1/2+a)",
+   "classical_s0": "[2.04553134422634 +/- 2.66e-15]j",
+   "classical_s_pi": "[0.488870533723462 +/- 1.02e-16] + [-0.488870533723462 +/- 1.02e-16]j",
+   "contains_classical": true
+  },
+  {
+   "label": "Weber w''=(z^2/4+a)w, a=3/2",
+   "operator_theta_form": {
+    "0,0": "-3/2",
+    "2,0": "-1/4",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 1,
+     "exponential": {
+      "2": "-1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-2"
+    },
+    {
+     "q": 1,
+     "exponential": {
+      "2": "1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "1"
+    }
+   ],
+   "reduction": {
+    "q": 1,
+    "p": 2,
+    "common_factor": {},
+    "s_variable": "s = z^(2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/2"
+      ],
+      [
+       "1/8",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "3/4",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/2"
+       ],
+       [
+        "1/8",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "3/4",
+        "-1/2"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-1/4",
+      "1/4"
+     ],
+     "formal_exponents": [
+      "-1",
+      "1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-1/2",
+       "1/2"
+      ]
+     ],
+     "radius": "96",
+     "truncation": 47,
+     "precision_bits": 222,
+     "asymptotic_error_bound": "2.1083e-19",
+     "contraction_constant": "2.1083e-19",
+     "delta": "3.2665e-02",
+     "taylor_steps": 646,
+     "taylor_order_max": 120,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 3.97e-16] + [+/- 3.97e-16]j",
+      "S_pi[1,0]": "[2.50662827463100050 +/- 3.47e-18] + [+/- 1.06e-18]j"
+     },
+     "max_ball_radius": 4.974988955002397e-16,
+     "axis_check_radius": "120",
+     "axis_check_truncation": 59,
+     "axis_check_max_radius": 1.983072123700872e-16,
+     "cyclic_product_minus_loop_max_radius": 4.989237584422431e-15,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "-0.500000000000000000000000000000000000000000000000000000000000000000",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-1.0000000000000 +/- 9.95e-15] + [+/- 9.95e-15]j",
+       "[+/- 5.97e-15] + [+/- 5.97e-15]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.00e-67] + [+/- 5.60e-67]j",
+       "[+/- 3.00e-67] + [+/- 5.60e-67]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "1.00000000000000",
+     "b": "0.500000000000000",
+     "s0": "0",
+     "s_pi": "[2.50662827463100 +/- 5.03e-16] + [+/- 3.67e-76]j"
+    },
+    {
+     "a": "0.500000000000000",
+     "b": "-0.500000000000000",
+     "s0": "0",
+     "s_pi": "[2.50662827463100 +/- 5.03e-16] + [+/- 3.67e-76]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=i sqrt(2 pi)/Gamma(1/2-a) (DLMF 12.2.18 in the normalisation z^(-a-1/2)e^(-z^2/4), z^(a-1/2)e^(z^2/4)); s_pi=-i e^(-i pi a) sqrt(2 pi)/Gamma(1/2+a)",
+   "classical_s0": "0",
+   "classical_s_pi": "[2.50662827463100 +/- 5.03e-16] + [+/- 3.67e-76]j",
+   "contains_classical": true
+  },
+  {
+   "label": "Weber w''=(z^2/4+a)w, a=1/2",
+   "operator_theta_form": {
+    "0,0": "-1/2",
+    "2,0": "-1/4",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 1,
+     "exponential": {
+      "2": "-1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-1"
+    },
+    {
+     "q": 1,
+     "exponential": {
+      "2": "1/4"
+     },
+     "multiplicity": 1,
+     "z_power": "0"
+    }
+   ],
+   "reduction": {
+    "q": 1,
+    "p": 2,
+    "common_factor": {},
+    "s_variable": "s = z^(2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/2"
+      ],
+      [
+       "1/8",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "1/4",
+       "-1/2"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/2"
+       ],
+       [
+        "1/8",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "1/4",
+        "-1/2"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-1/4",
+      "1/4"
+     ],
+     "formal_exponents": [
+      "-1/2",
+      "0"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-1/2",
+       "1/2"
+      ]
+     ],
+     "radius": "96",
+     "truncation": 48,
+     "precision_bits": 222,
+     "asymptotic_error_bound": "2.0785e-21",
+     "contraction_constant": "2.0785e-21",
+     "delta": "1.0761e-02",
+     "taylor_steps": 635,
+     "taylor_order_max": 118,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 4.08e-20] + [+/- 4.08e-20]j",
+      "S_pi[1,0]": "[-2.5066282746310005024 +/- 2.69e-20] + [+/- 1.09e-20]j"
+     },
+     "max_ball_radius": 5.520457318712324e-20,
+     "axis_check_radius": "120",
+     "axis_check_truncation": 60,
+     "axis_check_max_radius": 2.0365175296214957e-20,
+     "cyclic_product_minus_loop_max_radius": 5.652022471168351e-19,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "-0.500000000000000000000000000000000000000000000000000000000000000000",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-1.0000000000000000 +/- 1.10e-18] + [+/- 1.10e-18]j",
+       "[+/- 6.64e-19] + [+/- 6.64e-19]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-1.00000000000000000000000000000000000000000000000000000000000000000 +/- 3.00e-67] + [+/- 5.60e-67]j",
+       "[+/- 3.00e-67] + [+/- 5.60e-67]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "0.500000000000000",
+     "b": "0.500000000000000",
+     "s0": "0",
+     "s_pi": "[-2.50662827463100 +/- 5.03e-16] + [+/- 3.55e-77]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=i sqrt(2 pi)/Gamma(1/2-a) (DLMF 12.2.18 in the normalisation z^(-a-1/2)e^(-z^2/4), z^(a-1/2)e^(z^2/4)); s_pi=-i e^(-i pi a) sqrt(2 pi)/Gamma(1/2+a)",
+   "classical_s0": "0",
+   "classical_s_pi": "[-2.50662827463100 +/- 5.03e-16] + [+/- 3.55e-77]j",
+   "contains_classical": true
+  },
+  {
+   "label": "z w''+(nu+1-2z)w'+(z-nu-2)w=0, nu=0: A_0=[[0,1],[-1,2]] (double eigenvalue 1, Jordan), exponents z+-2z^(1/2)",
+   "operator_theta_form": {
+    "0,0": "-2",
+    "1,0": "1",
+    "0,1": "-2",
+    "-1,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "-2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    }
+   ],
+   "reduction": {
+    "q": 2,
+    "p": 1,
+    "common_factor": {
+     "1": "1"
+    },
+    "s_variable": "s = z^(1/2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "4",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-1"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1"
+       ],
+       [
+        "4",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-2",
+      "2"
+     ],
+     "formal_exponents": [
+      "-1/2",
+      "-1/2"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "24",
+     "truncation": 84,
+     "precision_bits": 333,
+     "asymptotic_error_bound": "3.9164e-43",
+     "contraction_constant": "3.9164e-43",
+     "delta": "7.8643e-03",
+     "taylor_steps": 688,
+     "taylor_order_max": 164,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 6.89e-32] + [2.0000000000000000000000000000000 +/- 6.89e-32]j",
+      "S_pi[1,0]": "[+/- 7.01e-32] + [-2.0000000000000000000000000000000 +/- 7.01e-32]j"
+     },
+     "max_ball_radius": 7.00878632525242e-32,
+     "axis_check_radius": "30",
+     "axis_check_truncation": 84,
+     "axis_check_max_radius": 3.916382184191445e-43,
+     "cyclic_product_minus_loop_max_radius": 1.5301387747810486e-30,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "-1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[1.00000000000000000000000000000 +/- 5.68e-30] + [+/- 5.68e-30]j",
+       "[-2.00000000000000000000000000000 +/- 1.90e-30] + [+/- 1.90e-30]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 1.17e-100] + [+/- 3.95e-100]j",
+       "[-2.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 2.88e-100] + [+/- 3.95e-100]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "0.500000000000000",
+     "b": "1.00000000000000",
+     "s0": "[2.00000000000000 +/- 3e-19]j",
+     "s_pi": "[-2.00000000000000 +/- 3e-19]j"
+    },
+    {
+     "a": "-0.500000000000000",
+     "b": "-1.00000000000000",
+     "s0": "[2.00000000000000 +/- 3e-19]j",
+     "s_pi": "[-2.00000000000000 +/- 3e-19]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=2i cos(pi nu), s_pi=-2i cos(pi nu) (DLMF 10.34.2 for K_nu in the normalisation x^(-1/2)e^(-+x), x=2t)",
+   "classical_s0": "2.00000000000000j",
+   "classical_s_pi": "-2.00000000000000j",
+   "contains_classical": true
+  },
+  {
+   "label": "z w''+(nu+1-2z)w'+(z-nu-2)w=0, nu=1/3: A_0=[[0,1],[-1,2]] (double eigenvalue 1, Jordan), exponents z+-2z^(1/2)",
+   "operator_theta_form": {
+    "0,0": "-7/3",
+    "1,0": "1",
+    "-1,1": "1/3",
+    "0,1": "-2",
+    "-1,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "-2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-5/12"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-5/12"
+    }
+   ],
+   "reduction": {
+    "q": 2,
+    "p": 1,
+    "common_factor": {
+     "1": "1"
+    },
+    "s_variable": "s = z^(1/2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "4",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-5/3"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1"
+       ],
+       [
+        "4",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-5/3"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-2",
+      "2"
+     ],
+     "formal_exponents": [
+      "-5/6",
+      "-5/6"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "24",
+     "truncation": 84,
+     "precision_bits": 333,
+     "asymptotic_error_bound": "1.9847e-43",
+     "contraction_constant": "1.9847e-43",
+     "delta": "1.5954e-02",
+     "taylor_steps": 695,
+     "taylor_order_max": 163,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 3.75e-31] + [1.00000000000000000000000000000 +/- 3.75e-31]j",
+      "S_pi[1,0]": "[+/- 1.33e-30] + [-1.0000000000000000000000000000 +/- 1.33e-30]j"
+     },
+     "max_ball_radius": 4.13819861646599e-30,
+     "axis_check_radius": "30",
+     "axis_check_truncation": 84,
+     "axis_check_max_radius": 1.9847009289185074e-43,
+     "cyclic_product_minus_loop_max_radius": 2.4820108301298833e-29,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-1.66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666667 +/- 3.34e-99]",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-0.5000000000000000000000000000 +/- 7.43e-29] + [0.866025403784438646763723171 +/- 3.22e-28]j",
+       "[-0.5000000000000000000000000000 +/- 3.36e-29] + [-0.8660254037844386467637231708 +/- 8.07e-29]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-0.50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 1.28e-99] + [0.866025403784438646763723170752936183471402626905190314027903489725966508454400018540573093378624288 +/- 8.29e-100]j",
+       "[-0.50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 1.28e-99] + [-0.866025403784438646763723170752936183471402626905190314027903489725966508454400018540573093378624288 +/- 8.29e-100]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "[0.833333333333333 +/- 3.34e-16]",
+     "b": "[1.66666666666667 +/- 3.34e-15]",
+     "s0": "[1.00000000000000 +/- 1e-19]j",
+     "s_pi": "[+/- 8.61e-76] + [-1.00000000000000 +/- 1e-19]j"
+    },
+    {
+     "a": "[-0.833333333333333 +/- 3.34e-16]",
+     "b": "[-1.66666666666667 +/- 3.34e-15]",
+     "s0": "[1.00000000000000 +/- 1e-19]j",
+     "s_pi": "[+/- 1.14e-75] + [-1.00000000000000 +/- 1e-19]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=2i cos(pi nu), s_pi=-2i cos(pi nu) (DLMF 10.34.2 for K_nu in the normalisation x^(-1/2)e^(-+x), x=2t)",
+   "classical_s0": "[1.00000000000000 +/- 1e-19]j",
+   "classical_s_pi": "[-1.00000000000000 +/- 1e-19]j",
+   "contains_classical": true
+  },
+  {
+   "label": "z w''+(nu+1-2z)w'+(z-nu-2)w=0, nu=1/4: A_0=[[0,1],[-1,2]] (double eigenvalue 1, Jordan), exponents z+-2z^(1/2)",
+   "operator_theta_form": {
+    "0,0": "-9/4",
+    "1,0": "1",
+    "-1,1": "1/4",
+    "0,1": "-2",
+    "-1,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "-2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-3/8"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-3/8"
+    }
+   ],
+   "reduction": {
+    "q": 2,
+    "p": 1,
+    "common_factor": {
+     "1": "1"
+    },
+    "s_variable": "s = z^(1/2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "4",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-3/2"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1"
+       ],
+       [
+        "4",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-3/2"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-2",
+      "2"
+     ],
+     "formal_exponents": [
+      "-3/4",
+      "-3/4"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "24",
+     "truncation": 84,
+     "precision_bits": 333,
+     "asymptotic_error_bound": "2.7961e-43",
+     "contraction_constant": "2.7961e-43",
+     "delta": "1.3722e-02",
+     "taylor_steps": 693,
+     "taylor_order_max": 163,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.87e-31] + [1.414213562373095048801688724210 +/- 5.89e-31]j",
+      "S_pi[1,0]": "[+/- 6.36e-31] + [-1.41421356237309504880168872421 +/- 9.38e-31]j"
+     },
+     "max_ball_radius": 1.1444887492230388e-30,
+     "axis_check_radius": "30",
+     "axis_check_truncation": 84,
+     "axis_check_max_radius": 2.7960682364523656e-43,
+     "cyclic_product_minus_loop_max_radius": 1.3489147479294667e-29,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "-1.50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[-1.000000000000000000000000000 +/- 4.48e-29] + [+/- 4.48e-29]j",
+       "[+/- 1.91e-29] + [+/- 1.91e-29]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[-1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 1.25e-100] + [+/- 1.28e-99]j",
+       "[+/- 1.25e-100] + [+/- 1.28e-99]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "0.750000000000000",
+     "b": "1.50000000000000",
+     "s0": "[1.41421356237310 +/- 4.96e-15]j",
+     "s_pi": "[-1.41421356237310 +/- 4.96e-15]j"
+    },
+    {
+     "a": "-0.750000000000000",
+     "b": "-1.50000000000000",
+     "s0": "[1.41421356237310 +/- 4.96e-15]j",
+     "s_pi": "[-1.41421356237310 +/- 4.96e-15]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=2i cos(pi nu), s_pi=-2i cos(pi nu) (DLMF 10.34.2 for K_nu in the normalisation x^(-1/2)e^(-+x), x=2t)",
+   "classical_s0": "[1.41421356237310 +/- 4.96e-15]j",
+   "classical_s_pi": "[-1.41421356237310 +/- 4.96e-15]j",
+   "contains_classical": true
+  },
+  {
+   "label": "z w''+(nu+1-2z)w'+(z-nu-2)w=0, nu=2/5: A_0=[[0,1],[-1,2]] (double eigenvalue 1, Jordan), exponents z+-2z^(1/2)",
+   "operator_theta_form": {
+    "0,0": "-12/5",
+    "1,0": "1",
+    "-1,1": "2/5",
+    "0,1": "-2",
+    "-1,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "-2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-9/20"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-9/20"
+    }
+   ],
+   "reduction": {
+    "q": 2,
+    "p": 1,
+    "common_factor": {
+     "1": "1"
+    },
+    "s_variable": "s = z^(1/2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1"
+      ],
+      [
+       "4",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-9/5"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1"
+       ],
+       [
+        "4",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-9/5"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 1,
+     "eigenvalues": [
+      "-2",
+      "2"
+     ],
+     "formal_exponents": [
+      "-9/10",
+      "-9/10"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "24",
+     "truncation": 84,
+     "precision_bits": 333,
+     "asymptotic_error_bound": "1.2306e-43",
+     "contraction_constant": "1.2306e-43",
+     "delta": "1.7840e-02",
+     "taylor_steps": 697,
+     "taylor_order_max": 163,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 3.55e-31] + [0.618033988749894848204586834366 +/- 7.17e-31]j",
+      "S_pi[1,0]": "[+/- 4.99e-31] + [-0.618033988749894848204586834366 +/- 8.61e-31]j"
+     },
+     "max_ball_radius": 4.986440739946527e-31,
+     "axis_check_radius": "30",
+     "axis_check_truncation": 84,
+     "axis_check_max_radius": 1.2306494903433091e-43,
+     "cyclic_product_minus_loop_max_radius": 7.7780559464456325e-31,
+     "local_exponent_check": {
+      "residue_eigenvalues": [
+       "[-1.80000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 +/- 3e-103]",
+       "0"
+      ],
+      "charpoly_cyclic_product": [
+       "[0.30901699437494742410229341718 +/- 5.01e-30] + [0.95105651629515357211643933338 +/- 2.81e-30]j",
+       "[-1.30901699437494742410229341718 +/- 3.64e-30] + [-0.95105651629515357211643933338 +/- 1.43e-30]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "charpoly_expected": [
+       "[0.30901699437494742410229341718281905886015458990288143106772431135263023140945122485360360209469557 +/- 2.73e-99] + [0.951056516295153572116439333379382143405698634125750222447305644430153170085193501718792810970811382 +/- 7.64e-100]j",
+       "[-1.30901699437494742410229341718281905886015458990288143106772431135263023140945122485360360209469557 +/- 2.93e-99] + [-0.951056516295153572116439333379382143405698634125750222447305644430153170085193501718792810970811382 +/- 7.64e-100]j",
+       "1.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      ]
+     },
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true,
+      "charpoly_matches_local_exponents_at_0": true
+     },
+     "certified": true
+    }
+   ],
+   "kummer_map_closed_form": [
+    {
+     "a": "[0.900000000000000 +/- 3e-20]",
+     "b": "[1.80000000000000 +/- 3e-19]",
+     "s0": "[0.618033988749895 +/- 1.52e-16]j",
+     "s_pi": "[+/- 5.34e-76] + [-0.618033988749895 +/- 1.52e-16]j"
+    },
+    {
+     "a": "[-0.900000000000000 +/- 3e-20]",
+     "b": "[-1.80000000000000 +/- 3e-19]",
+     "s0": "[0.618033988749895 +/- 1.52e-16]j",
+     "s_pi": "[+/- 6.35e-76] + [-0.618033988749895 +/- 1.52e-16]j"
+    }
+   ],
+   "contains_kummer_map_closed_form": true,
+   "classical": "s_0=2i cos(pi nu), s_pi=-2i cos(pi nu) (DLMF 10.34.2 for K_nu in the normalisation x^(-1/2)e^(-+x), x=2t)",
+   "classical_s0": "[0.618033988749895 +/- 1.52e-16]j",
+   "classical_s_pi": "[-0.618033988749895 +/- 1.52e-16]j",
+   "contains_classical": true
+  },
+  {
+   "label": "w''=(z+1/(5z^2)+1/(7z^5))w: exponent 3/2, z=0 irregular, no closed form",
+   "operator_theta_form": {
+    "-5,0": "-1/7",
+    "-2,0": "-1/5",
+    "1,0": "-1",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "-2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    }
+   ],
+   "reduction": {
+    "q": 2,
+    "p": 3,
+    "common_factor": {},
+    "s_variable": "s = z^(3/2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/3"
+      ],
+      [
+       "4/3",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-1/3"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "4/15",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0"
+      ],
+      [
+       "4/21",
+       "0"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/3"
+       ],
+       [
+        "4/3",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1/3"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "4/15",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "4/21",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 4,
+     "eigenvalues": [
+      "-2/3",
+      "2/3"
+     ],
+     "formal_exponents": [
+      "-1/6",
+      "-1/6"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "40",
+     "truncation": 54,
+     "precision_bits": 235,
+     "asymptotic_error_bound": "7.8745e-26",
+     "contraction_constant": "7.8745e-26",
+     "delta": "5.3366e-03",
+     "taylor_steps": 489,
+     "taylor_order_max": 136,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 1.91e-25] + [0.208029369608713161588769 +/- 5.04e-25]j",
+      "S_pi[1,0]": "[+/- 3.56e-25] + [-0.208029369608713161588769 +/- 6.69e-25]j"
+     },
+     "max_ball_radius": 3.550182499619567e-25,
+     "axis_check_radius": "50",
+     "axis_check_truncation": 67,
+     "axis_check_max_radius": 7.874542146563161e-26,
+     "cyclic_product_minus_loop_max_radius": 1.2117401934864349e-24,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/3"
+       ],
+       [
+        "4/3",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1/3"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "4/15",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0"
+       ],
+       [
+        "4/21",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 2,
+     "J": 4,
+     "eigenvalues": [
+      "-2/3",
+      "2/3"
+     ],
+     "formal_exponents": [
+      "-1/6",
+      "-1/6"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "2"
+      ]
+     ],
+     "radius": "56",
+     "truncation": 75,
+     "precision_bits": 284,
+     "asymptotic_error_bound": "3.6085e-35",
+     "contraction_constant": "3.6085e-35",
+     "delta": "3.8068e-03",
+     "taylor_steps": 662,
+     "taylor_order_max": 161,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 2.23e-30] + [0.20802936960871316158876938530 +/- 6.46e-30]j",
+      "S_pi[1,0]": "[+/- 3.06e-30] + [-0.20802936960871316158876938530 +/- 7.29e-30]j"
+     },
+     "max_ball_radius": 3.05072943506707e-30,
+     "axis_check_radius": "70",
+     "axis_check_truncation": 94,
+     "axis_check_max_radius": 3.608549745023871e-35,
+     "cyclic_product_minus_loop_max_radius": 4.185566442621217e-30,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true,
+   "distance_to_borel_pade": "6.42e-18"
+  },
+  {
+   "label": "theta^3 - z^3 theta + z^3/3 + z^-3/5 (third order, exponents 0, +-2/3 z^(3/2)): no closed form",
+   "operator_theta_form": {
+    "-3,0": "1/5",
+    "3,0": "1/3",
+    "3,1": "-1",
+    "0,3": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {},
+     "multiplicity": 1,
+     "z_power": "1/3"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "-2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-29/12"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-29/12"
+    }
+   ],
+   "reduction": {
+    "q": 2,
+    "p": 3,
+    "common_factor": {},
+    "s_variable": "s = z^(3/2)",
+    "system_in_s": [
+     [
+      [
+       "0",
+       "1/3",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "1/3"
+      ],
+      [
+       "0",
+       "4/3",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "-1",
+       "0"
+      ],
+      [
+       "-8/9",
+       "0",
+       "-2"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ]
+     ],
+     [
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "0",
+       "0",
+       "0"
+      ],
+      [
+       "-8/15",
+       "0",
+       "0"
+      ]
+     ]
+    ]
+   },
+   "turrittin_matches_matrix_normal_form": true,
+   "radius_runs": [
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/3",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1/3"
+       ],
+       [
+        "0",
+        "4/3",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1",
+        "0"
+       ],
+       [
+        "-8/9",
+        "0",
+        "-2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "-8/15",
+        "0",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 5,
+     "eigenvalues": [
+      "-2/3",
+      "0",
+      "2/3"
+     ],
+     "formal_exponents": [
+      "-29/18",
+      "2/9",
+      "-29/18"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "0",
+       "2"
+      ],
+      [
+       "4",
+       "0",
+       "4"
+      ]
+     ],
+     "radius": "64",
+     "truncation": 41,
+     "precision_bits": 316,
+     "asymptotic_error_bound": "3.1811e-16",
+     "contraction_constant": "3.1811e-16",
+     "delta": "1.1115e-01",
+     "taylor_steps": 798,
+     "taylor_order_max": 206,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 3.06e-12] + [-0.16954093452 +/- 6.97e-12]j",
+      "S0[0,2]": "[0.29671248107 +/- 4.69e-12] + [-2.39610325896 +/- 4.99e-12]j",
+      "S_pi[1,0]": "[1.75009346212233 +/- 5.87e-15] + [-3.03125079438999 +/- 4.88e-15]j",
+      "S0[1,2]": "[+/- 2.23e-15] + [3.50018692424466 +/- 5.91e-15]j",
+      "S_pi[2,0]": "[0.29671248107 +/- 6.53e-12] + [2.39610325896 +/- 6.83e-12]j",
+      "S_pi[2,1]": "[0.08477046726 +/- 6.42e-12] + [0.14682675628 +/- 5.40e-12]j"
+     },
+     "max_ball_radius": 4.457930464390244e-12,
+     "axis_check_radius": "80",
+     "axis_check_truncation": 52,
+     "axis_check_max_radius": 6.515281817200992e-13,
+     "cyclic_product_minus_loop_max_radius": 1.19431315011298e-09,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    },
+    {
+     "schema": "pp-irregular-stokes-general/1",
+     "system": [
+      [
+       [
+        "0",
+        "1/3",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "1/3"
+       ],
+       [
+        "0",
+        "4/3",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "-1",
+        "0"
+       ],
+       [
+        "-8/9",
+        "0",
+        "-2"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ]
+      ],
+      [
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "0",
+        "0",
+        "0"
+       ],
+       [
+        "-8/15",
+        "0",
+        "0"
+       ]
+      ]
+     ],
+     "rank": 3,
+     "J": 5,
+     "eigenvalues": [
+      "-2/3",
+      "0",
+      "2/3"
+     ],
+     "formal_exponents": [
+      "-29/18",
+      "2/9",
+      "-29/18"
+     ],
+     "eigenframe": [
+      [
+       "1",
+       "1",
+       "1"
+      ],
+      [
+       "-2",
+       "0",
+       "2"
+      ],
+      [
+       "4",
+       "0",
+       "4"
+      ]
+     ],
+     "radius": "80",
+     "truncation": 52,
+     "precision_bits": 366,
+     "asymptotic_error_bound": "9.5349e-21",
+     "contraction_constant": "9.5349e-21",
+     "delta": "8.7715e-02",
+     "taylor_steps": 968,
+     "taylor_order_max": 233,
+     "loop_radius": "3",
+     "stokes_entries": {
+      "S0[0,1]": "[+/- 1.38e-16] + [-0.169540934523908 +/- 4.24e-16]j",
+      "S0[0,2]": "[0.296712481072402 +/- 4.99e-16] + [-2.396103258957295 +/- 3.00e-16]j",
+      "S_pi[1,0]": "[1.750093462122328159 +/- 4.52e-19] + [-3.031250794389990853 +/- 3.61e-19]j",
+      "S0[1,2]": "[+/- 6.68e-20] + [3.500186924244656319 +/- 4.05e-19]j",
+      "S_pi[2,0]": "[0.296712481072402 +/- 5.82e-16] + [2.396103258957295 +/- 3.83e-16]j",
+      "S_pi[2,1]": "[0.084770467261954 +/- 3.45e-16] + [0.146826756279059 +/- 4.54e-16]j"
+     },
+     "max_ball_radius": 2.0115379749066721e-16,
+     "axis_check_radius": "100",
+     "axis_check_truncation": 65,
+     "axis_check_max_radius": 2.939782360784474e-17,
+     "cyclic_product_minus_loop_max_radius": 5.387955920468603e-14,
+     "local_exponent_check": null,
+     "checks": {
+      "S0_block_unipotent_upper": true,
+      "S_pi_block_unipotent_lower": true,
+      "cyclic_product_overlaps_independent_loop": true,
+      "sectorial_enclosures_consistent_along_axis": true,
+      "loop_det_matches_trace_of_residue": true
+     },
+     "certified": true
+    }
+   ],
+   "radii_overlap": true
+  }
+ ],
+ "turrittin_formal": [
+  {
+   "label": "hyper-Airy w'''=z w (complex leading coefficients: formal only)",
+   "operator_theta_form": {
+    "1,0": "-1",
+    "-3,1": "2",
+    "-3,2": "-3",
+    "-3,3": "1"
+   },
+   "turrittin": [
+    {
+     "q": 3,
+     "exponential": {
+      "4/3": "3/4"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/3"
+    },
+    {
+     "q": 3,
+     "exponential": {
+      "4/3": "-3/8 - 3*sqrt(3)*I/8"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/3"
+    },
+    {
+     "q": 3,
+     "exponential": {
+      "4/3": "-3/8 + 3*sqrt(3)*I/8"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/3"
+    }
+   ]
+  },
+  {
+   "label": "mixed slopes (theta-z)(theta^2-z)",
+   "operator_theta_form": {
+    "1,0": "-1",
+    "2,0": "1",
+    "1,1": "-1",
+    "1,2": "-1",
+    "0,3": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "-2"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "2"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-2"
+    }
+   ]
+  },
+  {
+   "label": "Airy",
+   "operator_theta_form": {
+    "1,0": "-1",
+    "-2,1": "-1",
+    "-2,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "-2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "3/2": "2/3"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    }
+   ]
+  },
+  {
+   "label": "repeated root then ramification: z w''+(1-2z)w'+(z-2)w=0",
+   "operator_theta_form": {
+    "0,0": "-2",
+    "1,0": "1",
+    "0,1": "-2",
+    "-1,2": "1"
+   },
+   "turrittin": [
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "-2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    },
+    {
+     "q": 2,
+     "exponential": {
+      "1/2": "2",
+      "1": "1"
+     },
+     "multiplicity": 1,
+     "z_power": "-1/4"
+    }
+   ]
+  },
+  {
+   "label": "w'''=z^2 w'+w (slopes 0 and 2)",
+   "operator_theta_form": {
+    "0,0": "-1",
+    "-3,1": "2",
+    "1,1": "-1",
+    "-3,2": "-3",
+    "-3,3": "1"
+   },
+   "turrittin": [
+    {
+     "q": 1,
+     "exponential": {},
+     "multiplicity": 1,
+     "z_power": "0"
+    },
+    {
+     "q": 1,
+     "exponential": {
+      "2": "-1/2"
+     },
+     "multiplicity": 1,
+     "z_power": "-3/2"
+    },
+    {
+     "q": 1,
+     "exponential": {
+      "2": "1/2"
+     },
+     "multiplicity": 1,
+     "z_power": "-3/2"
+    }
+   ]
+  },
+  {
+   "label": "cluster formal normal form, A_0=diag(1,1,0)",
+   "eigenvalues": [
+    "0",
+    "1",
+    "1"
+   ],
+   "formal_exponents": [
+    "1/7",
+    "-1/6",
+    "1/2"
+   ],
+   "eigenframe": [
+    [
+     "0",
+     "1",
+     "1"
+    ],
+    [
+     "0",
+     "-1",
+     "1/3"
+    ],
+    [
+     "1",
+     "0",
+     "0"
+    ]
+   ],
+   "identity_checked": true,
+   "first_coefficients": [
+    [
+     [
+      "7/6",
+      "-1/2",
+      "5/6"
+     ],
+     [
+      "1/4",
+      "-1/8",
+      "5/8"
+     ],
+     [
+      "-5/4",
+      "3/8",
+      "-25/24"
+     ]
+    ],
+    [
+     [
+      "-5/72",
+      "-47/168",
+      "-325/504"
+     ],
+     [
+      "5/42",
+      "-47/1344",
+      "-325/2688"
+     ],
+     [
+      "5/21",
+      "235/1792",
+      "1625/4032"
+     ]
+    ]
+   ]
+  }
+ ],
+ "negative_controls": [
+  {
+   "label": "Kummer a=1/3 b=3/4",
+   "radius": "24",
+   "proven_eta": "9.0830e-12",
+   "understated_eta": "9.0830e-15",
+   "failed_checks": [
+    "S0_block_unipotent_upper",
+    "S_pi_block_unipotent_lower",
+    "sectorial_enclosures_consistent_along_axis"
+   ]
+  },
+  {
+   "label": "2x2 with A_2 term",
+   "radius": "24",
+   "proven_eta": "9.4453e-11",
+   "understated_eta": "9.4453e-14",
+   "failed_checks": [
+    "S0_block_unipotent_upper",
+    "S_pi_block_unipotent_lower",
+    "sectorial_enclosures_consistent_along_axis"
+   ]
+  },
+  {
+   "label": "3x3 Birkhoff generic",
+   "radius": "24",
+   "proven_eta": "1.4734e-10",
+   "understated_eta": "1.4734e-13",
+   "failed_checks": [
+    "S0_block_unipotent_upper",
+    "S_pi_block_unipotent_lower",
+    "sectorial_enclosures_consistent_along_axis"
+   ]
+  },
+  {
+   "label": "Airy in s=z^(3/2)",
+   "radius": "24",
+   "proven_eta": "9.0184e-16",
+   "understated_eta": "9.0184e-19",
+   "failed_checks": [
+    "S0_block_unipotent_upper",
+    "S_pi_block_unipotent_lower",
+    "sectorial_enclosures_consistent_along_axis"
+   ]
+  }
+ ],
+ "summary": {
+  "certified_runs": 37,
+  "all_certified": true,
+  "max_ball_radius": 4.457930464390244e-12,
+  "largest_system": 4,
+  "largest_J": 5
+ }
+}
