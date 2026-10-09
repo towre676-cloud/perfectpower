@@ -1,5 +1,7 @@
 import PerfectPower.EllipticSquareTransport
 import PerfectPower.QueryNative
+import PerfectPower.AffinePopulation
+import PerfectPower.GlobalMordellPopulation
 import PerfectPower.FactorialUnit
 import PerfectPower.LandauIntegral
 import PerfectPower.EllipticQuarticLifts

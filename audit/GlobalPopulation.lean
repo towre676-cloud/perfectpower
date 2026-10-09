@@ -1,0 +1,9 @@
+import PerfectPower.GlobalMordellPopulation
+
+#print axioms PerfectPower.AffinePopulation.decode_encode
+#print axioms PerfectPower.AffinePopulation.encode_decode
+#print axioms PerfectPower.AffinePopulation.encode_injective
+#print axioms PerfectPower.AffinePopulation.pullback_complete
+#print axioms PerfectPower.GlobalMordellPopulation.complete
+#print axioms PerfectPower.GlobalMordellPopulation.affine_complete
+#print axioms PerfectPower.MordellMinus2.points

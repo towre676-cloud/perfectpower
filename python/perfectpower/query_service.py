@@ -34,6 +34,9 @@ def dispatch(catalogue, request):
     if op == 'checked_population':
         from .checked_population import population_certificate
         return population_certificate(**args)
+    if op == 'checked_global_population':
+        from .checked_global_population import global_population_certificate
+        return global_population_certificate(**args)
     if op == 'checked_box':
         from .checked_box import box_certificate
         return box_certificate(**args)

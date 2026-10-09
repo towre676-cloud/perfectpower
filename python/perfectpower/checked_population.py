@@ -77,16 +77,7 @@ def _tree(value, *, condition=False, depth=0, counter=None):
     raise ValueError('unsupported '+prefix+' operation or arity')
 
 
-def population_certificate(coefficients, exponent, x_bounds, queries, y_bounds=None, *,
-                           work_limit=4096):
-    """One source population, up to 64 restrictions with rank and bivariate minima.
-
-    Expr := integer | "x" | "y" | ["add"|"mul", Expr, Expr] | ["pow", Expr, 0..16].
-    Condition := bool | ["eq"|"le", Expr, Expr] | ["mod", Expr, residue, modulus]
-                 | ["and"|"or", Condition, Condition] | ["not", Condition].
-    Queries contain condition, ranks, and optional objective; defaults are true/[]/None.
-    """
-    base = box_certificate(coefficients, exponent, x_bounds, y_bounds, work_limit=work_limit)
+def _compile_queries(source_points, queries):
     if not isinstance(queries, list) or not 1 <= len(queries) <= 64:
         raise ValueError('one through 64 queries required')
     normalized=[]; plans=[]; cost=0
@@ -100,27 +91,18 @@ def population_certificate(coefficients, exponent, x_bounds, queries, y_bounds=N
         if not isinstance(ranks,list) or len(ranks)>64 or any(
                 type(i) is not int or i < 0 or i.bit_length() > 128 for i in ranks):
             raise ValueError('at most 64 nonnegative selection ranks of at most 128 bits required')
-        cost += max(1,len(base['points']))*counter[0]
+        cost += max(1,len(source_points))*counter[0]
         if cost > 262144:
             raise WorkLimit('batch exceeds 262144 point/AST-node operations')
         normalized.append(dict(condition=condition,ranks=ranks,objective=objective))
         plans.append((c,ec,o,eo))
-    spec=dict(coefficients=base['specification']['coefficients'],exponent=exponent,
-              x_bounds=base['specification']['x_bounds'],y_bounds=base['specification']['y_bounds'],
-              queries=normalized,work_limit=work_limit)
-    namespace='PerfectPower.CheckedPopulation_'+_hash(spec)[:16]
-    source=base['lean'].replace('import PerfectPower.BoundedNative','import PerfectPower.QueryNative',1)
-    source+=f'\nnamespace {namespace}\nopen PerfectPower.QueryNative\n'
-    source+=f'def sourcePoints := {base["namespace"]}.answer\n'
-    theorem='complete_all_integer_y' if y_bounds is None else 'original_complete'
-    xl,xu=base['specification']['x_bounds']; yl,yu=base['resolved_y_bounds']
-    bounds=f'({xl}) ≤ p.1 ∧ p.1 ≤ ({xu}) ∧ '
-    if y_bounds is not None: bounds+=f'({yl}) ≤ p.2 ∧ p.2 ≤ ({yu}) ∧ '
-    source+=f'def original (p : Int × Int) : Prop := {bounds}p.2 ^ {exponent} = PerfectPower.BoundedNative.horner {spec["coefficients"]} p.1\n'
-    source+=f'theorem source_complete (p : Int × Int) : p ∈ sourcePoints ↔ original p :=\n  {base["namespace"]}.{theorem} p.1 p.2\n'
+    return normalized, plans
+
+
+def _emit_queries(source, namespace, source_points, normalized, plans):
     results=[]; audits=['source_complete']
     for j,(query,plan) in enumerate(zip(normalized,plans)):
-        c,ec,o,eo=plan; points=[p for p in base['points'] if ec(p)]
+        c,ec,o,eo=plan; points=[p for p in source_points if ec(p)]
         selections=[dict(rank=i,point=points[i] if i<len(points) else None) for i in query['ranks']]
         source+=f'def condition_{j} := {c}\ndef answer_{j} := restrict sourcePoints condition_{j}\n'
         source+=f'theorem complete_{j} (p : Int × Int) : p ∈ answer_{j} ↔ original p ∧ condition_{j}.holds p :=\n  restrict_complete sourcePoints original source_complete condition_{j} p\n'
@@ -147,6 +129,34 @@ def population_certificate(coefficients, exponent, x_bounds, queries, y_bounds=N
         audits += [f'selection_{j}_{k}' for k in range(len(selections))]
     source+=f'end {namespace}\n'
     source+=''.join(f'#print axioms {namespace}.{name}\n' for name in audits)
+    return source, results
+
+
+def population_certificate(coefficients, exponent, x_bounds, queries, y_bounds=None, *,
+                           work_limit=4096):
+    """One source population, up to 64 restrictions with rank and bivariate minima.
+
+    Expr := integer | "x" | "y" | ["add"|"mul", Expr, Expr] | ["pow", Expr, 0..16].
+    Condition := bool | ["eq"|"le", Expr, Expr] | ["mod", Expr, residue, modulus]
+                 | ["and"|"or", Condition, Condition] | ["not", Condition].
+    Queries contain condition, ranks, and optional objective; defaults are true/[]/None.
+    """
+    base = box_certificate(coefficients, exponent, x_bounds, y_bounds, work_limit=work_limit)
+    normalized, plans = _compile_queries(base['points'], queries)
+    spec=dict(coefficients=base['specification']['coefficients'],exponent=exponent,
+              x_bounds=base['specification']['x_bounds'],y_bounds=base['specification']['y_bounds'],
+              queries=normalized,work_limit=work_limit)
+    namespace='PerfectPower.CheckedPopulation_'+_hash(spec)[:16]
+    source=base['lean'].replace('import PerfectPower.BoundedNative','import PerfectPower.QueryNative',1)
+    source+=f'\nnamespace {namespace}\nopen PerfectPower.QueryNative\n'
+    source+=f'def sourcePoints := {base["namespace"]}.answer\n'
+    theorem='complete_all_integer_y' if y_bounds is None else 'original_complete'
+    xl,xu=base['specification']['x_bounds']; yl,yu=base['resolved_y_bounds']
+    bounds=f'({xl}) ≤ p.1 ∧ p.1 ≤ ({xu}) ∧ '
+    if y_bounds is not None: bounds+=f'({yl}) ≤ p.2 ∧ p.2 ≤ ({yu}) ∧ '
+    source+=f'def original (p : Int × Int) : Prop := {bounds}p.2 ^ {exponent} = PerfectPower.BoundedNative.horner {spec["coefficients"]} p.1\n'
+    source+=f'theorem source_complete (p : Int × Int) : p ∈ sourcePoints ↔ original p :=\n  {base["namespace"]}.{theorem} p.1 p.2\n'
+    source, results = _emit_queries(source, namespace, base['points'], normalized, plans)
     return dict(schema='pp-checked-population/1',specification=spec,source_count=base['count'],
                 results=results,lean=source,namespace=namespace,specification_sha256=_hash(spec),
                 source_sha256=hashlib.sha256(source.encode()).hexdigest(),proof_status='emitted',

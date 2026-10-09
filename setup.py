@@ -12,6 +12,7 @@ RECEIPTS=(
     'm22_interactions/nonet_higgs_exact_loop_algebra.json',
     'industrial_replication_summary_20261008.json',
     'polynomial_population_queries.json',
+    'global_population_queries.json',
 )
 
 

@@ -2831,3 +2831,9 @@
 'PerfectPower.QueryNative.objective_lower_bound' depends on axioms: [propext, Quot.sound]
 'PerfectPower.QueryNative.objective_ties_complete' depends on axioms: [propext]
 'PerfectPower.QueryNative.objective_attained' does not depend on any axioms
+'PerfectPower.AffinePopulation.decode_encode' depends on axioms: [propext]
+'PerfectPower.AffinePopulation.encode_decode' depends on axioms: [propext]
+'PerfectPower.AffinePopulation.encode_injective' depends on axioms: [propext]
+'PerfectPower.AffinePopulation.pullback_complete' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GlobalMordellPopulation.complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GlobalMordellPopulation.affine_complete' depends on axioms: [propext, Classical.choice, Quot.sound]

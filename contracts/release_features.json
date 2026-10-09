@@ -84,6 +84,20 @@
         "test_checked_population.py"
       ],
       "kernel_required": true
+    },
+    {
+      "name": "globally_complete_affine_population",
+      "files": [
+        "PerfectPower/MordellMinus2Core.lean",
+        "PerfectPower/AffinePopulation.lean",
+        "PerfectPower/GlobalMordellPopulation.lean",
+        "python/perfectpower/checked_global_population.py",
+        "scripts/check_global_population.sh"
+      ],
+      "tests": [
+        "test_checked_global_population.py"
+      ],
+      "kernel_required": true
     }
   ]
 }

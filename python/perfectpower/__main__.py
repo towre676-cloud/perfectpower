@@ -20,6 +20,8 @@ def main():
     add_checked_commands(sub)
     from .checked_population import add_commands as add_population_commands
     add_population_commands(sub)
+    from .checked_global_population import add_commands as add_global_commands
+    add_global_commands(sub)
     from .checked_factorial_unit import add_commands as add_unit_commands
     add_unit_commands(sub)
     from .checked_landau import add_commands as add_landau_commands
@@ -181,6 +183,9 @@ def main():
     args = parser.parse_args()
     from .checked_box import cli as checked_cli
     from .checked_population import cli as population_cli
+    from .checked_global_population import cli as global_cli
+    if global_cli(args):
+        return
     if population_cli(args):
         return
     if checked_cli(args):

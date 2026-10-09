@@ -1,5 +1,6 @@
 import PerfectPower.EllipticSquareTransport
 import PerfectPower.QueryNative
+import PerfectPower.GlobalMordellPopulation
 import PerfectPower.FactorialUnit
 import PerfectPower.LandauIntegral
 import PerfectPower.EllipticQuarticLifts
@@ -3194,3 +3195,10 @@ open PerfectPower
 #print axioms PerfectPower.QueryNative.objective_lower_bound
 #print axioms PerfectPower.QueryNative.objective_ties_complete
 #print axioms PerfectPower.QueryNative.objective_attained
+
+#print axioms PerfectPower.AffinePopulation.decode_encode
+#print axioms PerfectPower.AffinePopulation.encode_decode
+#print axioms PerfectPower.AffinePopulation.encode_injective
+#print axioms PerfectPower.AffinePopulation.pullback_complete
+#print axioms PerfectPower.GlobalMordellPopulation.complete
+#print axioms PerfectPower.GlobalMordellPopulation.affine_complete

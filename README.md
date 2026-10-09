@@ -10,11 +10,13 @@ The [Gamma kernel bridges](docs/GAMMA_KERNEL_BRIDGES_MONOGRAPH.md) prove the gen
 
 The [polynomial population interface](docs/POLYNOMIAL_POPULATION_MONOGRAPH.md) proves reusable polynomial interpretation, coordinate substitution, restriction composition, rank/selection inverses, and complete bivariate minimum tie sets. `checked-population` certifies batches of queries against one bounded original-equation source; its stated interval remains part of the guarantee.
 
+The [global population bridge](docs/GLOBAL_POPULATION_MONOGRAPH.md) connects the proved curve `y²=x³−2` and its nonzero affine input pullbacks to globally complete queries. `checked-global-population` preserves divisibility and integer, nonnegative, or positive domains without a search interval.
+
 ## Quick start
 
 Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. The default branch is currently named `claude/laughing-lamport-qqzdo9`.
 
-Version 0.6.3 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.
+Version 0.6.4 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.
 
 ```sh
 git clone https://github.com/towre676-cloud/perfectpower.git

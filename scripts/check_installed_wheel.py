@@ -12,6 +12,7 @@ from perfectpower.resources import runtime_root
 from perfectpower.compiler import PowerConstraint,compile_constraint
 from perfectpower.checked_box import box_certificate
 from perfectpower.checked_population import population_certificate
+from perfectpower.checked_global_population import global_population_certificate
 from perfectpower.checked_factorial_unit import unit_certificate
 from perfectpower.checked_landau import landau_certificate
 from perfectpower.http_service import QueryHTTPServer
@@ -37,6 +38,11 @@ def main():
         raise AssertionError('installed bivariate population objective changed')
     if not (root/'PerfectPower/QueryNative.lean').is_file():
         raise AssertionError('installed generic population proofs missing')
+    global_query=global_population_certificate([{'condition':['le',0,'y']}],scale=5,shift=-7)
+    if global_query['results'][0]['points']!=[[2,5]]:
+        raise AssertionError('installed global affine query changed')
+    if not (root/'PerfectPower/MordellMinus2Core.lean').is_file():
+        raise AssertionError('installed global source proof missing')
     if 'original_integral_for_all_indices' not in landau_certificate([2],[1,1])['lean']:
         raise AssertionError('installed universal integrality proposal missing')
     with tempfile.TemporaryDirectory() as directory:
