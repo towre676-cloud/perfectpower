@@ -144,3 +144,15 @@ The runner replays all 8,358 stored power-hit records and the million-coordinate
 `perfectpower.mordell_published_witnesses` reads a checksum-pinned Sage numeric dataset through a restricted two-constructor decoder, checks its candidate coordinates exactly and attaches independently verified original-curve rank lower certificates. Run `make check-mordell-published-witnesses`. Reproduce the final five closures with `PYTHONPATH=python python python/develop_mordell_published_witnesses.py --source /path/to/mwMordell10000.sobj`. The retained JSON receipt allows checks without Sage, PARI, network access or the full source dataset. See [the zero-gap monograph](../docs/MORDELL_WITNESS_CLOSURE_MONOGRAPH.md).
 
 The [Mordell completion monograph](../docs/MORDELL_COMPLETION_MONOGRAPH.md) describes all 457 full bases and complete integral lists, their independent census cross-check and the remaining Lean trust boundary.
+
+## Checked nonlinear global and Pell populations
+
+`checked-nonlinear-population` certifies all integer solutions of `y²=U(x)³−2` or `y²=U(x)³−4`, for nonconstant U with ascending integer coefficients. Its finite input intervals come from a proved polynomial fibre bound. For example:
+
+```sh
+python -m perfectpower checked-nonlinear-population --coeff '[2,0,1]' --queries '[{"objective":["pow","y",2],"ranks":[0,1,4]}]' --check
+python -m perfectpower checked-nonlinear-population --family mordell_minus4 --coeff '[1,0,1]' --domain positive --queries '[{"condition":["le",0,"y"],"objective":"x"}]' --check
+python -m perfectpower checked-pell-population --cutoff 1000 --global-ranks '[0,4,8]' --queries '[{"condition":["mod","x",0,2],"objective":"y","ranks":[0,4,5]}]' --check
+```
+
+The Pell command covers all nonnegative solutions of `y²=2x²+1` up to the declared input cutoff, including `(0,1)`. Global selections follow the proved increasing recurrence; cutoff minima and local ranks refer to the cutoff population. The Python functions are `nonlinear_population_certificate`/`check_nonlinear_population` and `pell_population_certificate`/`check_pell_population` in their corresponding `checked_*_population` modules. Isolated HTTP operations use `checked_nonlinear_population` and `checked_pell_population`, with keyword arguments under `args`. Kernel checks require Lean 4.20.0 and pinned Mathlib on `LEAN_PATH`. Emission alone does not accept a proposal. See [the mathematical and API monograph](../docs/EXTENDED_POPULATION_MONOGRAPH.md) for scopes and resource limits.

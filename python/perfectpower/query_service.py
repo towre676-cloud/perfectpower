@@ -37,6 +37,12 @@ def dispatch(catalogue, request):
     if op == 'checked_global_population':
         from .checked_global_population import global_population_certificate
         return global_population_certificate(**args)
+    if op == 'checked_nonlinear_population':
+        from .checked_nonlinear_population import nonlinear_population_certificate
+        return nonlinear_population_certificate(**args)
+    if op == 'checked_pell_population':
+        from .checked_pell_population import pell_population_certificate
+        return pell_population_certificate(**args)
     if op == 'checked_box':
         from .checked_box import box_certificate
         return box_certificate(**args)

@@ -1,5 +1,7 @@
 # Globally complete populations and original input recovery
 
+This records the original 0.6.4 affine release. The subsequent [nonlinear and Pell extension](EXTENDED_POPULATION_MONOGRAPH.md) broadens the supported sources and input maps.
+
 Version 0.6.4 connects an existing unconditional integral-point theorem to the reusable query machinery. The source family is y²=x³−2. Its global integral-point proof is rebuilt before a query is accepted. Every nonzero integer affine input x=an+b supplies a derived family y²=(an+b)³−2. Restriction, count, rank, selection, and bivariate objective answers retain global completeness over the declared input domain. The API has no search interval.
 
 ## The source theorem

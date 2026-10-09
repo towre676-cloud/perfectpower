@@ -3,6 +3,9 @@ import PerfectPower.BoundedNative
 import PerfectPower.QueryNative
 import PerfectPower.AffinePopulation
 import PerfectPower.GlobalMordellPopulation
+import PerfectPower.PolynomialFibre
+import PerfectPower.GlobalMordellMinus4Population
+import PerfectPower.PellPopulation
 import PerfectPower.PopulationPartitions
 import PerfectPower.PowerFreeLocal
 import PerfectPower.EllipticSquareTransport

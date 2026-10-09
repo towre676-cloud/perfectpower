@@ -22,6 +22,10 @@ def main():
     add_population_commands(sub)
     from .checked_global_population import add_commands as add_global_commands
     add_global_commands(sub)
+    from .checked_nonlinear_population import add_commands as add_nonlinear_commands
+    add_nonlinear_commands(sub)
+    from .checked_pell_population import add_commands as add_pell_commands
+    add_pell_commands(sub)
     from .checked_factorial_unit import add_commands as add_unit_commands
     add_unit_commands(sub)
     from .checked_landau import add_commands as add_landau_commands
@@ -184,6 +188,10 @@ def main():
     from .checked_box import cli as checked_cli
     from .checked_population import cli as population_cli
     from .checked_global_population import cli as global_cli
+    from .checked_nonlinear_population import cli as nonlinear_cli
+    from .checked_pell_population import cli as pell_cli
+    if nonlinear_cli(args) or pell_cli(args):
+        return
     if global_cli(args):
         return
     if population_cli(args):

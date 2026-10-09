@@ -98,6 +98,22 @@
         "test_checked_global_population.py"
       ],
       "kernel_required": true
+    },
+    {
+      "name": "nonlinear_global_and_pell_populations",
+      "files": [
+        "PerfectPower/PolynomialFibre.lean",
+        "PerfectPower/MordellMinus4Core.lean",
+        "PerfectPower/GlobalMordellMinus4Population.lean",
+        "PerfectPower/PellPopulation.lean",
+        "python/perfectpower/checked_family.py",
+        "python/perfectpower/checked_nonlinear_population.py",
+        "python/perfectpower/checked_pell_population.py"
+      ],
+      "tests": [
+        "test_checked_extended_population.py"
+      ],
+      "kernel_required": true
     }
   ]
 }

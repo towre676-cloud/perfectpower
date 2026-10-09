@@ -43,5 +43,6 @@ jobs:
         env:
           PYTHONPATH: python
       - run: python -m unittest discover -s python/tests -p 'test_checked_global_population.py'
+      - run: python -m unittest discover -s python/tests -p 'test_checked_extended_population.py'
         env:
           PYTHONPATH: python

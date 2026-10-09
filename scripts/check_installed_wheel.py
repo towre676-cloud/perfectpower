@@ -13,6 +13,8 @@ from perfectpower.compiler import PowerConstraint,compile_constraint
 from perfectpower.checked_box import box_certificate
 from perfectpower.checked_population import population_certificate
 from perfectpower.checked_global_population import global_population_certificate
+from perfectpower.checked_nonlinear_population import nonlinear_population_certificate
+from perfectpower.checked_pell_population import pell_population_certificate
 from perfectpower.checked_factorial_unit import unit_certificate
 from perfectpower.checked_landau import landau_certificate
 from perfectpower.http_service import QueryHTTPServer
@@ -43,6 +45,13 @@ def main():
         raise AssertionError('installed global affine query changed')
     if not (root/'PerfectPower/MordellMinus2Core.lean').is_file():
         raise AssertionError('installed global source proof missing')
+    nonlinear=nonlinear_population_certificate([1,0,1],[{}],family='mordell_minus4')
+    if nonlinear['source_count']!=8:raise AssertionError('installed nonlinear population changed')
+    pell=pell_population_certificate(1000,[{}],global_ranks=[4])
+    if pell['source_count']!=5 or pell['global_selections'][0]['point']!=[408,577]:
+        raise AssertionError('installed Pell population changed')
+    for name in ('PolynomialFibre','MordellMinus4Core','PellPopulation'):
+        if not (root/f'PerfectPower/{name}.lean').is_file():raise AssertionError('installed proved source missing: '+name)
     if 'original_integral_for_all_indices' not in landau_certificate([2],[1,1])['lean']:
         raise AssertionError('installed universal integrality proposal missing')
     with tempfile.TemporaryDirectory() as directory:
@@ -58,6 +67,13 @@ def main():
             client.request('POST','/query',body='{"op":"list"}',headers={'Content-Type':'application/json'})
             response=client.getresponse();body=json.loads(response.read());client.close()
             if response.status!=200 or body['result']!=[]:raise AssertionError('installed process dispatch failed')
+            for op,args,count in [('checked_nonlinear_population',dict(coefficients=[1,0,1],queries=[{}],family='mordell_minus4'),8),
+                                  ('checked_pell_population',dict(cutoff=1000,queries=[{}],global_ranks=[4]),5)]:
+                client=HTTPConnection(*server.server_address,timeout=10)
+                client.request('POST','/query',body=json.dumps(dict(op=op,args=args)),headers={'Content-Type':'application/json'})
+                response=client.getresponse();body=json.loads(response.read());client.close()
+                if response.status!=200 or body['result']['source_count']!=count or body['result']['proof_status']!='emitted':
+                    raise AssertionError('installed proved-family HTTP proposal failed: '+op)
         finally:server.shutdown();thread.join();server.server_close()
     print(json.dumps(dict(complete=True,assets=len(manifest),installed_root=str(root))))
 

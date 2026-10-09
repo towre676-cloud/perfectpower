@@ -25,6 +25,11 @@ jobs:
         env:
           PYTHONPATH: python
           PERFECTPOWER_LEAN: lean
+      - name: Global nonlinear families and exact Pell cutoff queries
+        run: bash scripts/check_extended_population.sh
+        env:
+          PYTHONPATH: python
+          PERFECTPOWER_LEAN: lean
       - name: Native higher-power Runge and binary-root audit
         run: scripts/check_native_runge_power.sh
       - name: Parallel-session algebra and exact certificate audit

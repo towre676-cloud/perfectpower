@@ -1,0 +1,18 @@
+import PerfectPower.PolynomialFibre
+import PerfectPower.GlobalMordellMinus4Population
+import PerfectPower.PellPopulation
+
+#print axioms PerfectPower.PolynomialFibre.eval_abs_ge_one
+#print axioms PerfectPower.PolynomialFibre.eval_bound
+#print axioms PerfectPower.PolynomialFibre.fibre_complete
+#print axioms PerfectPower.PolynomialFibre.pullback_complete
+#print axioms PerfectPower.MordellMinus4.points
+#print axioms PerfectPower.GlobalMordellMinus4Population.complete
+#print axioms PerfectPower.GlobalMordellMinus4Population.affine_complete
+#print axioms PerfectPower.PellPopulation.pellSeq_spec
+#print axioms PerfectPower.PellPopulation.pell_descent
+#print axioms PerfectPower.PellPopulation.global_complete
+#print axioms PerfectPower.PellPopulation.input_strictMono
+#print axioms PerfectPower.PellPopulation.point_injective
+#print axioms PerfectPower.PellPopulation.prefix_complete
+#print axioms PerfectPower.PellPopulation.prefix_nodup
