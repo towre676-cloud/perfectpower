@@ -71,6 +71,19 @@
         "test_checked_landau.py"
       ],
       "kernel_required": true
+    },
+    {
+      "name": "reusable_polynomial_population",
+      "files": [
+        "PerfectPower/QueryNative.lean",
+        "python/perfectpower/checked_population.py",
+        "audit/QueryNative.lean",
+        "scripts/check_population_queries.sh"
+      ],
+      "tests": [
+        "test_checked_population.py"
+      ],
+      "kernel_required": true
     }
   ]
 }

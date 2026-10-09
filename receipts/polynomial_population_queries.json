@@ -1,0 +1,984 @@
+{
+  "schema": "pp-population-query-replay/1",
+  "complete": true,
+  "source_batches": 6,
+  "restricted_queries": 18,
+  "global_completeness": false,
+  "execution_verified": false,
+  "rows": [
+    {
+      "name": "signed_square",
+      "packet": {
+        "schema": "pp-checked-population/1",
+        "specification": {
+          "coefficients": [
+            0,
+            0,
+            1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            2
+          ],
+          "y_bounds": null,
+          "queries": [
+            {
+              "condition": [
+                "or",
+                [
+                  "eq",
+                  "x",
+                  0
+                ],
+                [
+                  "not",
+                  [
+                    "mod",
+                    "y",
+                    0,
+                    2
+                  ]
+                ]
+              ],
+              "ranks": [
+                0,
+                1,
+                999
+              ],
+              "objective": [
+                "add",
+                [
+                  "pow",
+                  "x",
+                  2
+                ],
+                [
+                  "pow",
+                  "y",
+                  2
+                ]
+              ]
+            },
+            {
+              "condition": [
+                "le",
+                "y",
+                0
+              ],
+              "ranks": [],
+              "objective": [
+                "mul",
+                "x",
+                "y"
+              ]
+            },
+            {
+              "condition": false,
+              "ranks": [],
+              "objective": null
+            }
+          ],
+          "work_limit": 4096
+        },
+        "source_count": 9,
+        "results": [
+          {
+            "points": [
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                1
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "count": 5,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  -1,
+                  1
+                ]
+              },
+              {
+                "rank": 999,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 0,
+              "points": [
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          {
+            "points": [
+              [
+                -2,
+                -2
+              ],
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                -1
+              ],
+              [
+                2,
+                -2
+              ]
+            ],
+            "count": 5,
+            "selections": [],
+            "minimum": {
+              "value": -4,
+              "points": [
+                [
+                  2,
+                  -2
+                ]
+              ]
+            }
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.QueryNative\nnamespace PerfectPower.CheckedBox_f0c0fbbc2d12043e\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((-2),(-2)),((-2),(2)),((-1),(-1)),((-1),(1)),((0),(0)),((1),(-1)),((1),(1)),((2),(-2)),((2),(2))]\ntheorem literal_checked : solutions [0, 0, 1] 2 (-2) (2) (-2) (2) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 (-2) \u2264 y \u2227 y \u2264 (2) \u2227\n      y ^ 2 = horner [0, 0, 1] x :=\n  literal_complete [0, 0, 1] 2 (-2) (2) (-2) (2) answer literal_checked x y\ntheorem count_checked : (solutions [0, 0, 1] 2 (-2) (2) (-2) (2)).length = 9 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-2) (2)).all fun x => decide ((horner [0, 0, 1] x).natAbs \u2264 4)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [0, 0, 1] x :=\n  bounded_source_complete [0, 0, 1] 2 (-2) (2) 4 2\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_f0c0fbbc2d12043e\n#print axioms PerfectPower.CheckedBox_f0c0fbbc2d12043e.original_complete\n#print axioms PerfectPower.CheckedBox_f0c0fbbc2d12043e.literal_checked\n#print axioms PerfectPower.CheckedBox_f0c0fbbc2d12043e.count_checked\n#print axioms PerfectPower.CheckedBox_f0c0fbbc2d12043e.complete_all_integer_y\n\nnamespace PerfectPower.CheckedPopulation_e31b26bbba344a21\nopen PerfectPower.QueryNative\ndef sourcePoints := PerfectPower.CheckedBox_f0c0fbbc2d12043e.answer\ndef original (p : Int \u00d7 Int) : Prop := (-2) \u2264 p.1 \u2227 p.1 \u2264 (2) \u2227 p.2 ^ 2 = PerfectPower.BoundedNative.horner [0, 0, 1] p.1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  PerfectPower.CheckedBox_f0c0fbbc2d12043e.complete_all_integer_y p.1 p.2\ndef condition_0 := (Condition.either (Condition.equal Expr.x (Expr.constant (0))) (Condition.negate (Condition.congruent Expr.y (0) (2))))\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 5 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((-1),(-1)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((-1),(1)) := by decide +kernel\ntheorem selection_0_2 : answer_0[999]? = none := by decide +kernel\ndef objective_0 := (Expr.add (Expr.power Expr.x 2) (Expr.power Expr.y 2))\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((0) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (0) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (0) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (0))) = [((0),(0))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((0),(0))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (0) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (0) p\ndef condition_1 := (Condition.le Expr.y (Expr.constant (0)))\ndef answer_1 := restrict sourcePoints condition_1\ntheorem complete_1 (p : Int \u00d7 Int) : p \u2208 answer_1 \u2194 original p \u2227 condition_1.holds p :=\n  restrict_complete sourcePoints original source_complete condition_1 p\ntheorem count_1 : answer_1.length = 5 := by decide +kernel\ntheorem nodup_1 : answer_1.Nodup := by decide +kernel\ntheorem rank_domain_1 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_1 = some i) \u2194 original p \u2227 condition_1.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_1 p\ntheorem rank_roundtrip_1 (p : Int \u00d7 Int) (i : Nat) (h : answer_1[i]? = some p) : rank p answer_1 = some i :=\n  select_rank p answer_1 nodup_1 i h\ndef objective_1 := (Expr.mul Expr.x Expr.y)\ntheorem lower_checked_1 : (answer_1.all fun p => decide ((-4) \u2264 objective_1.eval p)) = true := by decide +kernel\ntheorem minimum_1 (p : Int \u00d7 Int) (h : original p \u2227 condition_1.holds p) : (-4) \u2264 objective_1.eval p :=\n  objective_lower_bound answer_1 _ complete_1 objective_1 (-4) lower_checked_1 p h\ntheorem ties_checked_1 : answer_1.filter (fun p => decide (objective_1.eval p = (-4))) = [((2),(-2))] := by decide +kernel\ntheorem ties_1 (p : Int \u00d7 Int) : p \u2208 ([((2),(-2))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_1.holds p) \u2227 objective_1.eval p = (-4) := by\n  rw [\u2190 ties_checked_1]\n  exact objective_ties_complete answer_1 _ complete_1 objective_1 (-4) p\ndef condition_2 := Condition.falsity\ndef answer_2 := restrict sourcePoints condition_2\ntheorem complete_2 (p : Int \u00d7 Int) : p \u2208 answer_2 \u2194 original p \u2227 condition_2.holds p :=\n  restrict_complete sourcePoints original source_complete condition_2 p\ntheorem count_2 : answer_2.length = 0 := by decide +kernel\ntheorem nodup_2 : answer_2.Nodup := by decide +kernel\ntheorem rank_domain_2 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_2 = some i) \u2194 original p \u2227 condition_2.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_2 p\ntheorem rank_roundtrip_2 (p : Int \u00d7 Int) (i : Nat) (h : answer_2[i]? = some p) : rank p answer_2 = some i :=\n  select_rank p answer_2 nodup_2 i h\nend PerfectPower.CheckedPopulation_e31b26bbba344a21\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.source_complete\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.minimum_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.ties_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.complete_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.count_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.nodup_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_domain_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.selection_0_0\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.selection_0_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.selection_0_2\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.minimum_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.ties_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.complete_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.count_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.nodup_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_domain_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_roundtrip_1\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.complete_2\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.count_2\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.nodup_2\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_domain_2\n#print axioms PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_roundtrip_2\n",
+        "namespace": "PerfectPower.CheckedPopulation_e31b26bbba344a21",
+        "specification_sha256": "e31b26bbba344a21e1aa63cb08b2089a92a61c1b478aa5bc55745bc96d93ae6e",
+        "source_sha256": "e0297b886d9d8c541252ecf1316a20b3a1bdf738d4b264c127a867f2f61b9c91",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "e31b26bbba344a21e1aa63cb08b2089a92a61c1b478aa5bc55745bc96d93ae6e",
+        "source_sha256": "e0297b886d9d8c541252ecf1316a20b3a1bdf738d4b264c127a867f2f61b9c91",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22"
+        },
+        "log": "'PerfectPower.CheckedBox_f0c0fbbc2d12043e.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_f0c0fbbc2d12043e.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_f0c0fbbc2d12043e.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_f0c0fbbc2d12043e.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.minimum_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.ties_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.complete_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.count_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.minimum_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.ties_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.complete_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.count_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.nodup_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_domain_1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_roundtrip_1' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.complete_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.count_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.nodup_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_domain_2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_e31b26bbba344a21.rank_roundtrip_2' depends on axioms: [propext, Quot.sound]\n"
+      }
+    },
+    {
+      "name": "odd_root",
+      "packet": {
+        "schema": "pp-checked-population/1",
+        "specification": {
+          "coefficients": [
+            0,
+            1
+          ],
+          "exponent": 3,
+          "x_bounds": [
+            -3,
+            3
+          ],
+          "y_bounds": null,
+          "queries": [
+            {
+              "condition": [
+                "or",
+                [
+                  "eq",
+                  "x",
+                  0
+                ],
+                [
+                  "not",
+                  [
+                    "mod",
+                    "y",
+                    0,
+                    2
+                  ]
+                ]
+              ],
+              "ranks": [
+                0,
+                1,
+                999
+              ],
+              "objective": [
+                "add",
+                [
+                  "pow",
+                  "x",
+                  2
+                ],
+                [
+                  "pow",
+                  "y",
+                  2
+                ]
+              ]
+            },
+            {
+              "condition": [
+                "le",
+                "y",
+                0
+              ],
+              "ranks": [],
+              "objective": [
+                "mul",
+                "x",
+                "y"
+              ]
+            },
+            {
+              "condition": false,
+              "ranks": [],
+              "objective": null
+            }
+          ],
+          "work_limit": 4096
+        },
+        "source_count": 3,
+        "results": [
+          {
+            "points": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "count": 3,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  -1,
+                  -1
+                ]
+              },
+              {
+                "rank": 1,
+                "point": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "rank": 999,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 0,
+              "points": [
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          {
+            "points": [
+              [
+                -1,
+                -1
+              ],
+              [
+                0,
+                0
+              ]
+            ],
+            "count": 2,
+            "selections": [],
+            "minimum": {
+              "value": 0,
+              "points": [
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.QueryNative\nnamespace PerfectPower.CheckedBox_0cf8d7ec27971d73\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((-1),(-1)),((0),(0)),((1),(1))]\ntheorem literal_checked : solutions [0, 1] 3 (-3) (3) (-1) (1) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-3) \u2264 x \u2227 x \u2264 (3) \u2227 (-1) \u2264 y \u2227 y \u2264 (1) \u2227\n      y ^ 3 = horner [0, 1] x :=\n  literal_complete [0, 1] 3 (-3) (3) (-1) (1) answer literal_checked x y\ntheorem count_checked : (solutions [0, 1] 3 (-3) (3) (-1) (1)).length = 3 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-3) (3)).all fun x => decide ((horner [0, 1] x).natAbs \u2264 3)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-3) \u2264 x \u2227 x \u2264 (3) \u2227 y ^ 3 = horner [0, 1] x :=\n  bounded_source_complete [0, 1] 3 (-3) (3) 3 1\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_0cf8d7ec27971d73\n#print axioms PerfectPower.CheckedBox_0cf8d7ec27971d73.original_complete\n#print axioms PerfectPower.CheckedBox_0cf8d7ec27971d73.literal_checked\n#print axioms PerfectPower.CheckedBox_0cf8d7ec27971d73.count_checked\n#print axioms PerfectPower.CheckedBox_0cf8d7ec27971d73.complete_all_integer_y\n\nnamespace PerfectPower.CheckedPopulation_7a7825f93af986d0\nopen PerfectPower.QueryNative\ndef sourcePoints := PerfectPower.CheckedBox_0cf8d7ec27971d73.answer\ndef original (p : Int \u00d7 Int) : Prop := (-3) \u2264 p.1 \u2227 p.1 \u2264 (3) \u2227 p.2 ^ 3 = PerfectPower.BoundedNative.horner [0, 1] p.1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  PerfectPower.CheckedBox_0cf8d7ec27971d73.complete_all_integer_y p.1 p.2\ndef condition_0 := (Condition.either (Condition.equal Expr.x (Expr.constant (0))) (Condition.negate (Condition.congruent Expr.y (0) (2))))\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 3 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((-1),(-1)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = some ((0),(0)) := by decide +kernel\ntheorem selection_0_2 : answer_0[999]? = none := by decide +kernel\ndef objective_0 := (Expr.add (Expr.power Expr.x 2) (Expr.power Expr.y 2))\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((0) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (0) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (0) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (0))) = [((0),(0))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((0),(0))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (0) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (0) p\ndef condition_1 := (Condition.le Expr.y (Expr.constant (0)))\ndef answer_1 := restrict sourcePoints condition_1\ntheorem complete_1 (p : Int \u00d7 Int) : p \u2208 answer_1 \u2194 original p \u2227 condition_1.holds p :=\n  restrict_complete sourcePoints original source_complete condition_1 p\ntheorem count_1 : answer_1.length = 2 := by decide +kernel\ntheorem nodup_1 : answer_1.Nodup := by decide +kernel\ntheorem rank_domain_1 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_1 = some i) \u2194 original p \u2227 condition_1.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_1 p\ntheorem rank_roundtrip_1 (p : Int \u00d7 Int) (i : Nat) (h : answer_1[i]? = some p) : rank p answer_1 = some i :=\n  select_rank p answer_1 nodup_1 i h\ndef objective_1 := (Expr.mul Expr.x Expr.y)\ntheorem lower_checked_1 : (answer_1.all fun p => decide ((0) \u2264 objective_1.eval p)) = true := by decide +kernel\ntheorem minimum_1 (p : Int \u00d7 Int) (h : original p \u2227 condition_1.holds p) : (0) \u2264 objective_1.eval p :=\n  objective_lower_bound answer_1 _ complete_1 objective_1 (0) lower_checked_1 p h\ntheorem ties_checked_1 : answer_1.filter (fun p => decide (objective_1.eval p = (0))) = [((0),(0))] := by decide +kernel\ntheorem ties_1 (p : Int \u00d7 Int) : p \u2208 ([((0),(0))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_1.holds p) \u2227 objective_1.eval p = (0) := by\n  rw [\u2190 ties_checked_1]\n  exact objective_ties_complete answer_1 _ complete_1 objective_1 (0) p\ndef condition_2 := Condition.falsity\ndef answer_2 := restrict sourcePoints condition_2\ntheorem complete_2 (p : Int \u00d7 Int) : p \u2208 answer_2 \u2194 original p \u2227 condition_2.holds p :=\n  restrict_complete sourcePoints original source_complete condition_2 p\ntheorem count_2 : answer_2.length = 0 := by decide +kernel\ntheorem nodup_2 : answer_2.Nodup := by decide +kernel\ntheorem rank_domain_2 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_2 = some i) \u2194 original p \u2227 condition_2.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_2 p\ntheorem rank_roundtrip_2 (p : Int \u00d7 Int) (i : Nat) (h : answer_2[i]? = some p) : rank p answer_2 = some i :=\n  select_rank p answer_2 nodup_2 i h\nend PerfectPower.CheckedPopulation_7a7825f93af986d0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.source_complete\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.minimum_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.ties_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.complete_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.count_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.nodup_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_domain_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.selection_0_0\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.selection_0_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.selection_0_2\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.minimum_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.ties_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.complete_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.count_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.nodup_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_domain_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_roundtrip_1\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.complete_2\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.count_2\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.nodup_2\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_domain_2\n#print axioms PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_roundtrip_2\n",
+        "namespace": "PerfectPower.CheckedPopulation_7a7825f93af986d0",
+        "specification_sha256": "7a7825f93af986d0f6ff49effe4d37f2826d8d4ad7340b65fd4eec6dd2d48292",
+        "source_sha256": "2569a8121871ac63363b80ee483f1f22443a8f2f218aa6bb969203c92429f99b",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "7a7825f93af986d0f6ff49effe4d37f2826d8d4ad7340b65fd4eec6dd2d48292",
+        "source_sha256": "2569a8121871ac63363b80ee483f1f22443a8f2f218aa6bb969203c92429f99b",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22"
+        },
+        "log": "'PerfectPower.CheckedBox_0cf8d7ec27971d73.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_0cf8d7ec27971d73.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_0cf8d7ec27971d73.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_0cf8d7ec27971d73.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.minimum_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.ties_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.complete_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.count_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.minimum_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.ties_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.complete_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.count_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.nodup_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_domain_1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_roundtrip_1' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.complete_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.count_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.nodup_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_domain_2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7a7825f93af986d0.rank_roundtrip_2' depends on axioms: [propext, Quot.sound]\n"
+      }
+    },
+    {
+      "name": "no_real_square",
+      "packet": {
+        "schema": "pp-checked-population/1",
+        "specification": {
+          "coefficients": [
+            -1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            2
+          ],
+          "y_bounds": null,
+          "queries": [
+            {
+              "condition": [
+                "or",
+                [
+                  "eq",
+                  "x",
+                  0
+                ],
+                [
+                  "not",
+                  [
+                    "mod",
+                    "y",
+                    0,
+                    2
+                  ]
+                ]
+              ],
+              "ranks": [
+                0,
+                1,
+                999
+              ],
+              "objective": [
+                "add",
+                [
+                  "pow",
+                  "x",
+                  2
+                ],
+                [
+                  "pow",
+                  "y",
+                  2
+                ]
+              ]
+            },
+            {
+              "condition": [
+                "le",
+                "y",
+                0
+              ],
+              "ranks": [],
+              "objective": [
+                "mul",
+                "x",
+                "y"
+              ]
+            },
+            {
+              "condition": false,
+              "ranks": [],
+              "objective": null
+            }
+          ],
+          "work_limit": 4096
+        },
+        "source_count": 0,
+        "results": [
+          {
+            "points": [],
+            "count": 0,
+            "selections": [
+              {
+                "rank": 0,
+                "point": null
+              },
+              {
+                "rank": 1,
+                "point": null
+              },
+              {
+                "rank": 999,
+                "point": null
+              }
+            ],
+            "minimum": null
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.QueryNative\nnamespace PerfectPower.CheckedBox_32cc4e0e8f045b0a\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := []\ntheorem literal_checked : solutions [-1] 2 (-2) (2) (-1) (1) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 (-1) \u2264 y \u2227 y \u2264 (1) \u2227\n      y ^ 2 = horner [-1] x :=\n  literal_complete [-1] 2 (-2) (2) (-1) (1) answer literal_checked x y\ntheorem count_checked : (solutions [-1] 2 (-2) (2) (-1) (1)).length = 0 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-2) (2)).all fun x => decide ((horner [-1] x).natAbs \u2264 1)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [-1] x :=\n  bounded_source_complete [-1] 2 (-2) (2) 1 1\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_32cc4e0e8f045b0a\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.original_complete\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.literal_checked\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.count_checked\n#print axioms PerfectPower.CheckedBox_32cc4e0e8f045b0a.complete_all_integer_y\n\nnamespace PerfectPower.CheckedPopulation_7189848af9229a42\nopen PerfectPower.QueryNative\ndef sourcePoints := PerfectPower.CheckedBox_32cc4e0e8f045b0a.answer\ndef original (p : Int \u00d7 Int) : Prop := (-2) \u2264 p.1 \u2227 p.1 \u2264 (2) \u2227 p.2 ^ 2 = PerfectPower.BoundedNative.horner [-1] p.1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  PerfectPower.CheckedBox_32cc4e0e8f045b0a.complete_all_integer_y p.1 p.2\ndef condition_0 := (Condition.either (Condition.equal Expr.x (Expr.constant (0))) (Condition.negate (Condition.congruent Expr.y (0) (2))))\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 0 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = none := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = none := by decide +kernel\ntheorem selection_0_2 : answer_0[999]? = none := by decide +kernel\ndef condition_1 := (Condition.le Expr.y (Expr.constant (0)))\ndef answer_1 := restrict sourcePoints condition_1\ntheorem complete_1 (p : Int \u00d7 Int) : p \u2208 answer_1 \u2194 original p \u2227 condition_1.holds p :=\n  restrict_complete sourcePoints original source_complete condition_1 p\ntheorem count_1 : answer_1.length = 0 := by decide +kernel\ntheorem nodup_1 : answer_1.Nodup := by decide +kernel\ntheorem rank_domain_1 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_1 = some i) \u2194 original p \u2227 condition_1.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_1 p\ntheorem rank_roundtrip_1 (p : Int \u00d7 Int) (i : Nat) (h : answer_1[i]? = some p) : rank p answer_1 = some i :=\n  select_rank p answer_1 nodup_1 i h\ndef condition_2 := Condition.falsity\ndef answer_2 := restrict sourcePoints condition_2\ntheorem complete_2 (p : Int \u00d7 Int) : p \u2208 answer_2 \u2194 original p \u2227 condition_2.holds p :=\n  restrict_complete sourcePoints original source_complete condition_2 p\ntheorem count_2 : answer_2.length = 0 := by decide +kernel\ntheorem nodup_2 : answer_2.Nodup := by decide +kernel\ntheorem rank_domain_2 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_2 = some i) \u2194 original p \u2227 condition_2.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_2 p\ntheorem rank_roundtrip_2 (p : Int \u00d7 Int) (i : Nat) (h : answer_2[i]? = some p) : rank p answer_2 = some i :=\n  select_rank p answer_2 nodup_2 i h\nend PerfectPower.CheckedPopulation_7189848af9229a42\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.source_complete\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.complete_0\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.count_0\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.nodup_0\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.rank_domain_0\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.selection_0_0\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.selection_0_1\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.selection_0_2\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.complete_1\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.count_1\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.nodup_1\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.rank_domain_1\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.rank_roundtrip_1\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.complete_2\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.count_2\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.nodup_2\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.rank_domain_2\n#print axioms PerfectPower.CheckedPopulation_7189848af9229a42.rank_roundtrip_2\n",
+        "namespace": "PerfectPower.CheckedPopulation_7189848af9229a42",
+        "specification_sha256": "7189848af9229a423774212f38a92d72d09973f8efa60966570cd90c59aa5893",
+        "source_sha256": "c8b15c95c25e3e30495ee2d505bcb5a68d847af82fb70f868ab7180a1778f980",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "7189848af9229a423774212f38a92d72d09973f8efa60966570cd90c59aa5893",
+        "source_sha256": "c8b15c95c25e3e30495ee2d505bcb5a68d847af82fb70f868ab7180a1778f980",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22"
+        },
+        "log": "'PerfectPower.CheckedBox_32cc4e0e8f045b0a.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_32cc4e0e8f045b0a.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_32cc4e0e8f045b0a.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_32cc4e0e8f045b0a.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.complete_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.count_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.complete_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.count_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.nodup_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.rank_domain_1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.rank_roundtrip_1' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.complete_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.count_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.nodup_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_7189848af9229a42.rank_domain_2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_7189848af9229a42.rank_roundtrip_2' depends on axioms: [propext, Quot.sound]\n"
+      }
+    },
+    {
+      "name": "zero",
+      "packet": {
+        "schema": "pp-checked-population/1",
+        "specification": {
+          "coefficients": [
+            0
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            2
+          ],
+          "y_bounds": null,
+          "queries": [
+            {
+              "condition": [
+                "or",
+                [
+                  "eq",
+                  "x",
+                  0
+                ],
+                [
+                  "not",
+                  [
+                    "mod",
+                    "y",
+                    0,
+                    2
+                  ]
+                ]
+              ],
+              "ranks": [
+                0,
+                1,
+                999
+              ],
+              "objective": [
+                "add",
+                [
+                  "pow",
+                  "x",
+                  2
+                ],
+                [
+                  "pow",
+                  "y",
+                  2
+                ]
+              ]
+            },
+            {
+              "condition": [
+                "le",
+                "y",
+                0
+              ],
+              "ranks": [],
+              "objective": [
+                "mul",
+                "x",
+                "y"
+              ]
+            },
+            {
+              "condition": false,
+              "ranks": [],
+              "objective": null
+            }
+          ],
+          "work_limit": 4096
+        },
+        "source_count": 5,
+        "results": [
+          {
+            "points": [
+              [
+                0,
+                0
+              ]
+            ],
+            "count": 1,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "rank": 1,
+                "point": null
+              },
+              {
+                "rank": 999,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 0,
+              "points": [
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          {
+            "points": [
+              [
+                -2,
+                0
+              ],
+              [
+                -1,
+                0
+              ],
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "count": 5,
+            "selections": [],
+            "minimum": {
+              "value": 0,
+              "points": [
+                [
+                  -2,
+                  0
+                ],
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  0
+                ]
+              ]
+            }
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.QueryNative\nnamespace PerfectPower.CheckedBox_d34672265718c6ad\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((-2),(0)),((-1),(0)),((0),(0)),((1),(0)),((2),(0))]\ntheorem literal_checked : solutions [0] 2 (-2) (2) (0) (0) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 (0) \u2264 y \u2227 y \u2264 (0) \u2227\n      y ^ 2 = horner [0] x :=\n  literal_complete [0] 2 (-2) (2) (0) (0) answer literal_checked x y\ntheorem count_checked : (solutions [0] 2 (-2) (2) (0) (0)).length = 5 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (-2) (2)).all fun x => decide ((horner [0] x).natAbs \u2264 0)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (2) \u2227 y ^ 2 = horner [0] x :=\n  bounded_source_complete [0] 2 (-2) (2) 0 0\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_d34672265718c6ad\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.original_complete\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.literal_checked\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.count_checked\n#print axioms PerfectPower.CheckedBox_d34672265718c6ad.complete_all_integer_y\n\nnamespace PerfectPower.CheckedPopulation_6466debb44bceaac\nopen PerfectPower.QueryNative\ndef sourcePoints := PerfectPower.CheckedBox_d34672265718c6ad.answer\ndef original (p : Int \u00d7 Int) : Prop := (-2) \u2264 p.1 \u2227 p.1 \u2264 (2) \u2227 p.2 ^ 2 = PerfectPower.BoundedNative.horner [0] p.1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  PerfectPower.CheckedBox_d34672265718c6ad.complete_all_integer_y p.1 p.2\ndef condition_0 := (Condition.either (Condition.equal Expr.x (Expr.constant (0))) (Condition.negate (Condition.congruent Expr.y (0) (2))))\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 1 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((0),(0)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = none := by decide +kernel\ntheorem selection_0_2 : answer_0[999]? = none := by decide +kernel\ndef objective_0 := (Expr.add (Expr.power Expr.x 2) (Expr.power Expr.y 2))\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((0) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (0) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (0) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (0))) = [((0),(0))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((0),(0))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (0) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (0) p\ndef condition_1 := (Condition.le Expr.y (Expr.constant (0)))\ndef answer_1 := restrict sourcePoints condition_1\ntheorem complete_1 (p : Int \u00d7 Int) : p \u2208 answer_1 \u2194 original p \u2227 condition_1.holds p :=\n  restrict_complete sourcePoints original source_complete condition_1 p\ntheorem count_1 : answer_1.length = 5 := by decide +kernel\ntheorem nodup_1 : answer_1.Nodup := by decide +kernel\ntheorem rank_domain_1 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_1 = some i) \u2194 original p \u2227 condition_1.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_1 p\ntheorem rank_roundtrip_1 (p : Int \u00d7 Int) (i : Nat) (h : answer_1[i]? = some p) : rank p answer_1 = some i :=\n  select_rank p answer_1 nodup_1 i h\ndef objective_1 := (Expr.mul Expr.x Expr.y)\ntheorem lower_checked_1 : (answer_1.all fun p => decide ((0) \u2264 objective_1.eval p)) = true := by decide +kernel\ntheorem minimum_1 (p : Int \u00d7 Int) (h : original p \u2227 condition_1.holds p) : (0) \u2264 objective_1.eval p :=\n  objective_lower_bound answer_1 _ complete_1 objective_1 (0) lower_checked_1 p h\ntheorem ties_checked_1 : answer_1.filter (fun p => decide (objective_1.eval p = (0))) = [((-2),(0)),((-1),(0)),((0),(0)),((1),(0)),((2),(0))] := by decide +kernel\ntheorem ties_1 (p : Int \u00d7 Int) : p \u2208 ([((-2),(0)),((-1),(0)),((0),(0)),((1),(0)),((2),(0))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_1.holds p) \u2227 objective_1.eval p = (0) := by\n  rw [\u2190 ties_checked_1]\n  exact objective_ties_complete answer_1 _ complete_1 objective_1 (0) p\ndef condition_2 := Condition.falsity\ndef answer_2 := restrict sourcePoints condition_2\ntheorem complete_2 (p : Int \u00d7 Int) : p \u2208 answer_2 \u2194 original p \u2227 condition_2.holds p :=\n  restrict_complete sourcePoints original source_complete condition_2 p\ntheorem count_2 : answer_2.length = 0 := by decide +kernel\ntheorem nodup_2 : answer_2.Nodup := by decide +kernel\ntheorem rank_domain_2 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_2 = some i) \u2194 original p \u2227 condition_2.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_2 p\ntheorem rank_roundtrip_2 (p : Int \u00d7 Int) (i : Nat) (h : answer_2[i]? = some p) : rank p answer_2 = some i :=\n  select_rank p answer_2 nodup_2 i h\nend PerfectPower.CheckedPopulation_6466debb44bceaac\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.source_complete\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.minimum_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.ties_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.complete_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.count_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.nodup_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.rank_domain_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.selection_0_0\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.selection_0_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.selection_0_2\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.minimum_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.ties_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.complete_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.count_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.nodup_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.rank_domain_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.rank_roundtrip_1\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.complete_2\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.count_2\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.nodup_2\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.rank_domain_2\n#print axioms PerfectPower.CheckedPopulation_6466debb44bceaac.rank_roundtrip_2\n",
+        "namespace": "PerfectPower.CheckedPopulation_6466debb44bceaac",
+        "specification_sha256": "6466debb44bceaaceebbabb356f3308877e9ca7b9c37a45cda40b30f4cf77d82",
+        "source_sha256": "076f7d9bd86dd273d752e093478093718b698aa8c0a6d690320395d51f7f598c",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "6466debb44bceaaceebbabb356f3308877e9ca7b9c37a45cda40b30f4cf77d82",
+        "source_sha256": "076f7d9bd86dd273d752e093478093718b698aa8c0a6d690320395d51f7f598c",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22"
+        },
+        "log": "'PerfectPower.CheckedBox_d34672265718c6ad.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_d34672265718c6ad.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_d34672265718c6ad.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_d34672265718c6ad.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.minimum_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.ties_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.complete_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.count_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.minimum_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.ties_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.complete_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.count_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.nodup_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.rank_domain_1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.rank_roundtrip_1' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.complete_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.count_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.nodup_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_6466debb44bceaac.rank_domain_2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_6466debb44bceaac.rank_roundtrip_2' depends on axioms: [propext, Quot.sound]\n"
+      }
+    },
+    {
+      "name": "empty_interval",
+      "packet": {
+        "schema": "pp-checked-population/1",
+        "specification": {
+          "coefficients": [
+            1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            2,
+            1
+          ],
+          "y_bounds": null,
+          "queries": [
+            {
+              "condition": [
+                "or",
+                [
+                  "eq",
+                  "x",
+                  0
+                ],
+                [
+                  "not",
+                  [
+                    "mod",
+                    "y",
+                    0,
+                    2
+                  ]
+                ]
+              ],
+              "ranks": [
+                0,
+                1,
+                999
+              ],
+              "objective": [
+                "add",
+                [
+                  "pow",
+                  "x",
+                  2
+                ],
+                [
+                  "pow",
+                  "y",
+                  2
+                ]
+              ]
+            },
+            {
+              "condition": [
+                "le",
+                "y",
+                0
+              ],
+              "ranks": [],
+              "objective": [
+                "mul",
+                "x",
+                "y"
+              ]
+            },
+            {
+              "condition": false,
+              "ranks": [],
+              "objective": null
+            }
+          ],
+          "work_limit": 4096
+        },
+        "source_count": 0,
+        "results": [
+          {
+            "points": [],
+            "count": 0,
+            "selections": [
+              {
+                "rank": 0,
+                "point": null
+              },
+              {
+                "rank": 1,
+                "point": null
+              },
+              {
+                "rank": 999,
+                "point": null
+              }
+            ],
+            "minimum": null
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.QueryNative\nnamespace PerfectPower.CheckedBox_7aa857b575056e63\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := []\ntheorem literal_checked : solutions [1] 2 (2) (1) (0) (0) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (2) \u2264 x \u2227 x \u2264 (1) \u2227 (0) \u2264 y \u2227 y \u2264 (0) \u2227\n      y ^ 2 = horner [1] x :=\n  literal_complete [1] 2 (2) (1) (0) (0) answer literal_checked x y\ntheorem count_checked : (solutions [1] 2 (2) (1) (0) (0)).length = 0 := by decide +kernel\ntheorem value_bound_checked :\n    ((interval (2) (1)).all fun x => decide ((horner [1] x).natAbs \u2264 0)) = true :=\n  by decide +kernel\ntheorem complete_all_integer_y (x y : Int) :\n    (x,y) \u2208 answer \u2194 (2) \u2264 x \u2227 x \u2264 (1) \u2227 y ^ 2 = horner [1] x :=\n  bounded_source_complete [1] 2 (2) (1) 0 0\n    value_bound_checked (by decide +kernel) answer literal_checked x y\nend PerfectPower.CheckedBox_7aa857b575056e63\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.original_complete\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.literal_checked\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.count_checked\n#print axioms PerfectPower.CheckedBox_7aa857b575056e63.complete_all_integer_y\n\nnamespace PerfectPower.CheckedPopulation_671008478b13e9d2\nopen PerfectPower.QueryNative\ndef sourcePoints := PerfectPower.CheckedBox_7aa857b575056e63.answer\ndef original (p : Int \u00d7 Int) : Prop := (2) \u2264 p.1 \u2227 p.1 \u2264 (1) \u2227 p.2 ^ 2 = PerfectPower.BoundedNative.horner [1] p.1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  PerfectPower.CheckedBox_7aa857b575056e63.complete_all_integer_y p.1 p.2\ndef condition_0 := (Condition.either (Condition.equal Expr.x (Expr.constant (0))) (Condition.negate (Condition.congruent Expr.y (0) (2))))\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 0 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = none := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = none := by decide +kernel\ntheorem selection_0_2 : answer_0[999]? = none := by decide +kernel\ndef condition_1 := (Condition.le Expr.y (Expr.constant (0)))\ndef answer_1 := restrict sourcePoints condition_1\ntheorem complete_1 (p : Int \u00d7 Int) : p \u2208 answer_1 \u2194 original p \u2227 condition_1.holds p :=\n  restrict_complete sourcePoints original source_complete condition_1 p\ntheorem count_1 : answer_1.length = 0 := by decide +kernel\ntheorem nodup_1 : answer_1.Nodup := by decide +kernel\ntheorem rank_domain_1 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_1 = some i) \u2194 original p \u2227 condition_1.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_1 p\ntheorem rank_roundtrip_1 (p : Int \u00d7 Int) (i : Nat) (h : answer_1[i]? = some p) : rank p answer_1 = some i :=\n  select_rank p answer_1 nodup_1 i h\ndef condition_2 := Condition.falsity\ndef answer_2 := restrict sourcePoints condition_2\ntheorem complete_2 (p : Int \u00d7 Int) : p \u2208 answer_2 \u2194 original p \u2227 condition_2.holds p :=\n  restrict_complete sourcePoints original source_complete condition_2 p\ntheorem count_2 : answer_2.length = 0 := by decide +kernel\ntheorem nodup_2 : answer_2.Nodup := by decide +kernel\ntheorem rank_domain_2 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_2 = some i) \u2194 original p \u2227 condition_2.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_2 p\ntheorem rank_roundtrip_2 (p : Int \u00d7 Int) (i : Nat) (h : answer_2[i]? = some p) : rank p answer_2 = some i :=\n  select_rank p answer_2 nodup_2 i h\nend PerfectPower.CheckedPopulation_671008478b13e9d2\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.source_complete\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.complete_0\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.count_0\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.nodup_0\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.rank_domain_0\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.selection_0_0\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.selection_0_1\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.selection_0_2\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.complete_1\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.count_1\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.nodup_1\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.rank_domain_1\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.rank_roundtrip_1\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.complete_2\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.count_2\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.nodup_2\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.rank_domain_2\n#print axioms PerfectPower.CheckedPopulation_671008478b13e9d2.rank_roundtrip_2\n",
+        "namespace": "PerfectPower.CheckedPopulation_671008478b13e9d2",
+        "specification_sha256": "671008478b13e9d27671e6d7b301195acb7f2b707fa85ac980dc7f3222cb5a72",
+        "source_sha256": "fbcdb029ecb57caba8f98bc13c1b8960958bb9504476c70ea4d79082f1b37375",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete for bounded x and all integer y",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "671008478b13e9d27671e6d7b301195acb7f2b707fa85ac980dc7f3222cb5a72",
+        "source_sha256": "fbcdb029ecb57caba8f98bc13c1b8960958bb9504476c70ea4d79082f1b37375",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22"
+        },
+        "log": "'PerfectPower.CheckedBox_7aa857b575056e63.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_7aa857b575056e63.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_7aa857b575056e63.count_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_7aa857b575056e63.complete_all_integer_y' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.complete_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.count_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.complete_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.count_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.nodup_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.rank_domain_1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.rank_roundtrip_1' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.complete_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.count_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.nodup_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_671008478b13e9d2.rank_domain_2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_671008478b13e9d2.rank_roundtrip_2' depends on axioms: [propext, Quot.sound]\n"
+      }
+    },
+    {
+      "name": "explicit_mordell",
+      "packet": {
+        "schema": "pp-checked-population/1",
+        "specification": {
+          "coefficients": [
+            -2,
+            0,
+            0,
+            1
+          ],
+          "exponent": 2,
+          "x_bounds": [
+            -2,
+            5
+          ],
+          "y_bounds": [
+            0,
+            6
+          ],
+          "queries": [
+            {
+              "condition": [
+                "or",
+                [
+                  "eq",
+                  "x",
+                  0
+                ],
+                [
+                  "not",
+                  [
+                    "mod",
+                    "y",
+                    0,
+                    2
+                  ]
+                ]
+              ],
+              "ranks": [
+                0,
+                1,
+                999
+              ],
+              "objective": [
+                "add",
+                [
+                  "pow",
+                  "x",
+                  2
+                ],
+                [
+                  "pow",
+                  "y",
+                  2
+                ]
+              ]
+            },
+            {
+              "condition": [
+                "le",
+                "y",
+                0
+              ],
+              "ranks": [],
+              "objective": [
+                "mul",
+                "x",
+                "y"
+              ]
+            },
+            {
+              "condition": false,
+              "ranks": [],
+              "objective": null
+            }
+          ],
+          "work_limit": 4096
+        },
+        "source_count": 1,
+        "results": [
+          {
+            "points": [
+              [
+                3,
+                5
+              ]
+            ],
+            "count": 1,
+            "selections": [
+              {
+                "rank": 0,
+                "point": [
+                  3,
+                  5
+                ]
+              },
+              {
+                "rank": 1,
+                "point": null
+              },
+              {
+                "rank": 999,
+                "point": null
+              }
+            ],
+            "minimum": {
+              "value": 34,
+              "points": [
+                [
+                  3,
+                  5
+                ]
+              ]
+            }
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          },
+          {
+            "points": [],
+            "count": 0,
+            "selections": [],
+            "minimum": null
+          }
+        ],
+        "lean": "import PerfectPower.QueryNative\nnamespace PerfectPower.CheckedBox_8cec8aa9d6e1f7e6\nopen PerfectPower.BoundedNative\ndef answer : List (Int \u00d7 Int) := [((3),(5))]\ntheorem literal_checked : solutions [-2, 0, 0, 1] 2 (-2) (5) (0) (6) = answer := by decide +kernel\ntheorem original_complete (x y : Int) :\n    (x,y) \u2208 answer \u2194 (-2) \u2264 x \u2227 x \u2264 (5) \u2227 (0) \u2264 y \u2227 y \u2264 (6) \u2227\n      y ^ 2 = horner [-2, 0, 0, 1] x :=\n  literal_complete [-2, 0, 0, 1] 2 (-2) (5) (0) (6) answer literal_checked x y\ntheorem count_checked : (solutions [-2, 0, 0, 1] 2 (-2) (5) (0) (6)).length = 1 := by decide +kernel\nend PerfectPower.CheckedBox_8cec8aa9d6e1f7e6\n#print axioms PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.original_complete\n#print axioms PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.literal_checked\n#print axioms PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.count_checked\n\nnamespace PerfectPower.CheckedPopulation_63aeb3c95bda68c6\nopen PerfectPower.QueryNative\ndef sourcePoints := PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.answer\ndef original (p : Int \u00d7 Int) : Prop := (-2) \u2264 p.1 \u2227 p.1 \u2264 (5) \u2227 (0) \u2264 p.2 \u2227 p.2 \u2264 (6) \u2227 p.2 ^ 2 = PerfectPower.BoundedNative.horner [-2, 0, 0, 1] p.1\ntheorem source_complete (p : Int \u00d7 Int) : p \u2208 sourcePoints \u2194 original p :=\n  PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.original_complete p.1 p.2\ndef condition_0 := (Condition.either (Condition.equal Expr.x (Expr.constant (0))) (Condition.negate (Condition.congruent Expr.y (0) (2))))\ndef answer_0 := restrict sourcePoints condition_0\ntheorem complete_0 (p : Int \u00d7 Int) : p \u2208 answer_0 \u2194 original p \u2227 condition_0.holds p :=\n  restrict_complete sourcePoints original source_complete condition_0 p\ntheorem count_0 : answer_0.length = 1 := by decide +kernel\ntheorem nodup_0 : answer_0.Nodup := by decide +kernel\ntheorem rank_domain_0 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_0 = some i) \u2194 original p \u2227 condition_0.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_0 p\ntheorem rank_roundtrip_0 (p : Int \u00d7 Int) (i : Nat) (h : answer_0[i]? = some p) : rank p answer_0 = some i :=\n  select_rank p answer_0 nodup_0 i h\ntheorem selection_0_0 : answer_0[0]? = some ((3),(5)) := by decide +kernel\ntheorem selection_0_1 : answer_0[1]? = none := by decide +kernel\ntheorem selection_0_2 : answer_0[999]? = none := by decide +kernel\ndef objective_0 := (Expr.add (Expr.power Expr.x 2) (Expr.power Expr.y 2))\ntheorem lower_checked_0 : (answer_0.all fun p => decide ((34) \u2264 objective_0.eval p)) = true := by decide +kernel\ntheorem minimum_0 (p : Int \u00d7 Int) (h : original p \u2227 condition_0.holds p) : (34) \u2264 objective_0.eval p :=\n  objective_lower_bound answer_0 _ complete_0 objective_0 (34) lower_checked_0 p h\ntheorem ties_checked_0 : answer_0.filter (fun p => decide (objective_0.eval p = (34))) = [((3),(5))] := by decide +kernel\ntheorem ties_0 (p : Int \u00d7 Int) : p \u2208 ([((3),(5))] : List (Int \u00d7 Int)) \u2194 (original p \u2227 condition_0.holds p) \u2227 objective_0.eval p = (34) := by\n  rw [\u2190 ties_checked_0]\n  exact objective_ties_complete answer_0 _ complete_0 objective_0 (34) p\ndef condition_1 := (Condition.le Expr.y (Expr.constant (0)))\ndef answer_1 := restrict sourcePoints condition_1\ntheorem complete_1 (p : Int \u00d7 Int) : p \u2208 answer_1 \u2194 original p \u2227 condition_1.holds p :=\n  restrict_complete sourcePoints original source_complete condition_1 p\ntheorem count_1 : answer_1.length = 0 := by decide +kernel\ntheorem nodup_1 : answer_1.Nodup := by decide +kernel\ntheorem rank_domain_1 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_1 = some i) \u2194 original p \u2227 condition_1.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_1 p\ntheorem rank_roundtrip_1 (p : Int \u00d7 Int) (i : Nat) (h : answer_1[i]? = some p) : rank p answer_1 = some i :=\n  select_rank p answer_1 nodup_1 i h\ndef condition_2 := Condition.falsity\ndef answer_2 := restrict sourcePoints condition_2\ntheorem complete_2 (p : Int \u00d7 Int) : p \u2208 answer_2 \u2194 original p \u2227 condition_2.holds p :=\n  restrict_complete sourcePoints original source_complete condition_2 p\ntheorem count_2 : answer_2.length = 0 := by decide +kernel\ntheorem nodup_2 : answer_2.Nodup := by decide +kernel\ntheorem rank_domain_2 (p : Int \u00d7 Int) : (\u2203 i, rank p answer_2 = some i) \u2194 original p \u2227 condition_2.holds p :=\n  query_rank_exists sourcePoints original source_complete condition_2 p\ntheorem rank_roundtrip_2 (p : Int \u00d7 Int) (i : Nat) (h : answer_2[i]? = some p) : rank p answer_2 = some i :=\n  select_rank p answer_2 nodup_2 i h\nend PerfectPower.CheckedPopulation_63aeb3c95bda68c6\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.source_complete\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.minimum_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.ties_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.complete_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.count_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.nodup_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_domain_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_roundtrip_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.selection_0_0\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.selection_0_1\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.selection_0_2\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.complete_1\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.count_1\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.nodup_1\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_domain_1\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_roundtrip_1\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.complete_2\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.count_2\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.nodup_2\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_domain_2\n#print axioms PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_roundtrip_2\n",
+        "namespace": "PerfectPower.CheckedPopulation_63aeb3c95bda68c6",
+        "specification_sha256": "63aeb3c95bda68c6e7e87608ad345c71f303e85bd769f407deb595c15c08f099",
+        "source_sha256": "ecc8256e360b7cf678c806ad33ede90c24513874d70fac6e741abaa0370ecca3",
+        "proof_status": "emitted",
+        "execution_verified": false,
+        "scope": "complete only within the explicit integer rectangle"
+      },
+      "acceptance": {
+        "accepted": true,
+        "proof_status": "kernel_checked",
+        "execution_verified": false,
+        "scope": "complete only within the explicit integer rectangle",
+        "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+        "specification_sha256": "63aeb3c95bda68c6e7e87608ad345c71f303e85bd769f407deb595c15c08f099",
+        "source_sha256": "ecc8256e360b7cf678c806ad33ede90c24513874d70fac6e741abaa0370ecca3",
+        "library_sha256": {
+          "BoundedNative": "a76dead59c36e3abe09646aad7f906c2e9a449296f63485654bcf08c9df2ab68",
+          "QueryNative": "1814e11314eed7955cd5686c9a754cdc6a0673d7b30b9a3876b42719356fae22"
+        },
+        "log": "'PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.original_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.literal_checked' does not depend on any axioms\n'PerfectPower.CheckedBox_8cec8aa9d6e1f7e6.count_checked' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.source_complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.minimum_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.ties_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.complete_0' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.count_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.nodup_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_domain_0' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_roundtrip_0' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.selection_0_0' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.selection_0_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.selection_0_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.complete_1' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.count_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.nodup_1' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_domain_1' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_roundtrip_1' depends on axioms: [propext, Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.complete_2' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.count_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.nodup_2' does not depend on any axioms\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_domain_2' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.CheckedPopulation_63aeb3c95bda68c6.rank_roundtrip_2' depends on axioms: [propext, Quot.sound]\n"
+      }
+    }
+  ]
+}

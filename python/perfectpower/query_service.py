@@ -31,6 +31,9 @@ def dispatch(catalogue, request):
     op = request.get('op'); args = request.get('args', {})
     if not isinstance(args, dict):
         raise ValueError('args must be a JSON object')
+    if op == 'checked_population':
+        from .checked_population import population_certificate
+        return population_certificate(**args)
     if op == 'checked_box':
         from .checked_box import box_certificate
         return box_certificate(**args)

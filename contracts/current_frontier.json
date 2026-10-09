@@ -1,15 +1,15 @@
 {
   "schema": "pp-current-frontier/1",
   "date": "2026-10-09",
-  "base_commit": "6bbaa3b1548181baab0f8866f34059abf9bfcb08",
+  "base_commit": "602ce9f8d0d94e6f25410c66479cae2ebd19d39a",
   "scope": "Current response to the 25-flaw review; implemented does not assert formal program verification.",
   "findings": [
     {
       "id": 1,
       "title": "Compiler proof boundary",
       "status": "bounded_route_delivered",
-      "contract": "Whole-compiler semantics remain open; checked-box proves reconstructed bounded original equations.",
-      "evidence": "python/perfectpower/checked_box.py"
+      "contract": "General coefficient/monomial semantics and polynomial coordinate substitution proved; reconstructed finite-source query semantics kernel-check. Whole-compiler semantics remain open.",
+      "evidence": "PerfectPower/QueryNative.lean"
     },
     {
       "id": 2,
@@ -50,15 +50,15 @@
       "id": 7,
       "title": "Population rank/select execution",
       "status": "bounded_route_delivered",
-      "contract": "Original-equation bounded list count, selection and first-occurrence rank now kernel-check; generic population interpreter remains open.",
-      "evidence": "python/perfectpower/checked_box.py"
+      "contract": "Generic restricted-population rank domain and rank/select inverse proved; bounded-source counts, no-duplicates and selections kernel-check. General Python population interpreter refinement remains open.",
+      "evidence": "PerfectPower/QueryNative.lean"
     },
     {
       "id": 8,
       "title": "Optimization proof pipeline",
       "status": "bounded_route_delivered",
-      "contract": "Finite-x polynomial minimum and all tied original points kernel-check; unbounded optimization remains open.",
-      "evidence": "python/perfectpower/checked_box.py"
+      "contract": "Generic bivariate polynomial objective lower bounds and complete tie sets proved; bounded-source instantiations kernel-check. Unbounded optimization remains open.",
+      "evidence": "PerfectPower/QueryNative.lean"
     },
     {
       "id": 9,

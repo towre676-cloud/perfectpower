@@ -1,5 +1,6 @@
 import PerfectPower.FixedDivisor
 import PerfectPower.BoundedNative
+import PerfectPower.QueryNative
 import PerfectPower.PopulationPartitions
 import PerfectPower.PowerFreeLocal
 import PerfectPower.EllipticSquareTransport

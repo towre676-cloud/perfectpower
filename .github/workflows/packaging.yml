@@ -39,3 +39,6 @@ jobs:
       - run: python -m unittest discover -s python/tests -p 'test_checked_box.py'
         env:
           PYTHONPATH: python
+      - run: python -m unittest discover -s python/tests -p 'test_checked_population.py'
+        env:
+          PYTHONPATH: python

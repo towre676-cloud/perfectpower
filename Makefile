@@ -37,6 +37,7 @@ release-verify:
 	$(MAKE) hardening-verify
 	$(MAKE) wheel-verify hardening-kernel
 	$(MAKE) gamma-bridges-kernel
+	$(MAKE) check-population-queries
 
 .PHONY: hardening-verify hardening-kernel
 hardening-verify:
@@ -437,3 +438,7 @@ check-mordell-completion:
 .PHONY: check-mordell-completion-bridge
 check-mordell-completion-bridge:
 	bash scripts/check_mordell_completion_bridge.sh
+
+.PHONY: check-population-queries
+check-population-queries:
+	bash scripts/check_population_queries.sh

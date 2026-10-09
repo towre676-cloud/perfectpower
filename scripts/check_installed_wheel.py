@@ -11,6 +11,7 @@ import threading
 from perfectpower.resources import runtime_root
 from perfectpower.compiler import PowerConstraint,compile_constraint
 from perfectpower.checked_box import box_certificate
+from perfectpower.checked_population import population_certificate
 from perfectpower.checked_factorial_unit import unit_certificate
 from perfectpower.checked_landau import landau_certificate
 from perfectpower.http_service import QueryHTTPServer
@@ -30,6 +31,12 @@ def main():
         raise AssertionError('installed native query changed')
     if unit_certificate(37,2,3)['arithmetic']['unit']!=5:
         raise AssertionError('installed original factorial-unit proposal changed')
+    population=population_certificate([0,0,1],2,[-2,2],[{'condition':['le',0,'y'],
+        'objective':['add',['pow','x',2],['pow','y',2]]}])
+    if population['results'][0]['minimum']!={'value':0,'points':[[0,0]]}:
+        raise AssertionError('installed bivariate population objective changed')
+    if not (root/'PerfectPower/QueryNative.lean').is_file():
+        raise AssertionError('installed generic population proofs missing')
     if 'original_integral_for_all_indices' not in landau_certificate([2],[1,1])['lean']:
         raise AssertionError('installed universal integrality proposal missing')
     with tempfile.TemporaryDirectory() as directory:

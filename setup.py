@@ -11,6 +11,7 @@ RECEIPTS=(
     'mordell_branch.json','thue_graph.json',
     'm22_interactions/nonet_higgs_exact_loop_algebra.json',
     'industrial_replication_summary_20261008.json',
+    'polynomial_population_queries.json',
 )
 
 
