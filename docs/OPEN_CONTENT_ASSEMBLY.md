@@ -273,3 +273,15 @@ Blocked or external:
 | Lean global proofs for the 457 Mordell inputs (saturation index bound, rank upper bounds, elliptic-log/LLL completeness); Matveev premises; efficient Sturm; parser/compiler semantics; all-level Weil orbit bounds and Fourier/chirp intertwining; Brainpool and good-reduction field instantiations | Lean/Mathlib hosts blocked in this container |
 | GPU numerical kernels for Dresden | none exist; presentation only |
 | Physical flavor predictions (quark-source frame, CKM, CP selection) | model choice; flavor lane |
+
+### Closed after the merge (this session, on main)
+
+| Item | Result | Monograph |
+|---|---|---|
+| N38 gauged lifetime | All three vector polarizations: TE-only widths underestimated the pair width by 10–22×. Goldstone equivalence checked. At physical g=0.65 the off-shell VV*, fermion and gluon channels give τ ≈ 1.6e-15 s (bracket 1.3–1.6e-15 s) | WALL_MODE_VECTOR_WIDTHS_MONOGRAPH |
+| N37 annihilation law | With early formation and fixed-width (s=0) walls at 320³/384³, p = 0.477 ± 0.003 overall and 0.487 ± 0.004 asymptotically (10% criterion), approaching 1/2; GW peak resolved at f/H 0.58–1.07, IR slope 2.3–2.7 | WALL_NETWORK_ASYMPTOTICS_MONOGRAPH |
+| N40 two-loop | Figure-eight, exact thermal sunset, on-shell conversion and Parwani resummation: S3/T rises only 0.03–0.15%, inside the earlier estimate brackets | WALL_TWO_LOOP_AND_INTERVAL_BOUNCES_MONOGRAPH |
+| N41 partial | Tame extension-field clusters (190 genus-2 conductors agree with PARI); p=2 via Tate (11,859 reductions) and genus-2 good-reduction certificates (1,452 curves) | DYADIC_REDUCTION_AND_STOKES_MONOGRAPH |
+| N42 partial | Certified Stokes matrices for 8 Kummer equations, matching closed forms; formal Hukuhara–Turrittin normal forms | same |
+
+Still open: interval bounces (not finished); the physical s=1 asymptotic exponent; wild genus-2 conductors at 2; Stokes data without closed forms, and repeated or ramified irregular exponents; and the Lean items listed above.
