@@ -1,0 +1,67 @@
+{
+  "schema": "pp-structural-release-verification/1",
+  "date": "2026-10-10",
+  "checks": [
+    {
+      "command": "make structural-math",
+      "tests": 21,
+      "passed": 21,
+      "corpus_models_replayed": 306
+    },
+    {
+      "command": "PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_population*.py' -v",
+      "tests": 24,
+      "passed": 24
+    },
+    {
+      "command": "PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_psg*.py' -v",
+      "tests": 12,
+      "passed": 12
+    },
+    {
+      "command": "PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_mordell*descent*.py' -v",
+      "tests": 10,
+      "passed": 9,
+      "skipped": 1,
+      "skip_reason": "optional PARI/GP not installed"
+    },
+    {
+      "command": "python3 -m pip wheel . --no-deps --no-build-isolation",
+      "result": "success"
+    },
+    {
+      "command": "install wheel into isolated target; run test_structural_math.py outside checkout with only installed package on PYTHONPATH",
+      "tests": 21,
+      "passed": 21,
+      "package_path": "installed/perfectpower/species.py"
+    },
+    {
+      "command": "git diff --check",
+      "result": "success"
+    },
+    {
+      "command": "PYTHONPATH=python:python/tests python3 -m unittest test_structural_math test_population_algebra test_populations test_psg_structural test_mordell_descent test_mordell_two_descent test_soe_bridge",
+      "tests": 80,
+      "passed": 79,
+      "skipped": 1,
+      "context": "after integration with newer main SOE commit"
+    },
+    {
+      "command": "PYTHONPATH=<isolated installed package> python3 scripts/check_installed_wheel.py",
+      "result": "success",
+      "runtime_assets_checked": 1098,
+      "structural_console_routes": 5,
+      "psg_console_routes": 7,
+      "soe_console_routes": 6
+    }
+  ],
+  "unique_focused_tests": 80,
+  "unique_passed_tests": 79,
+  "unique_skipped_tests": 1,
+  "installed_repeated_tests": 21,
+  "repository_wide_suite_run": false,
+  "new_lean_compilation": false,
+  "formal_verification": false,
+  "integrated_parent": "5b16a0a",
+  "test_invocation_note": "A combined runner launched from standard input failed because the existing HTTP test spawns a subprocess requiring a file-backed main module. Rerunning through python -m unittest passed all 79 available cases."
+}

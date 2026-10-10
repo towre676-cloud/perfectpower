@@ -34,6 +34,26 @@ def main():
         run=subprocess.run([sys.executable,'-m','perfectpower',command,*arguments],
             check=True,capture_output=True,text=True)
         return json.loads(run.stdout)
+    species=console('species-population','--bound','1000000000000','--ranks','[0,2178,4356]')
+    if species['cardinality']!=4357 or len(species['selected'])!=3:
+        raise AssertionError('installed species population changed')
+    from perfectpower.populations import ExactPopulation
+    structural=ExactPopulation({'kind':'species','bound':1000,'power':2})
+    for row in structural.page(0,100):
+        if structural.rank(row)!=row['rank']:
+            raise AssertionError('installed species inverse changed')
+    from perfectpower.inequality_certificates import check_lower_bound, check_lyapunov, check_toeplitz
+    minimum=console('quadratic-minimum','--variables','x,y','--objective','(x-y)^2+2')
+    check_lower_bound(minimum['bound'])
+    if minimum['bound']['lower']!='2' or len(minimum['tie_directions'])!=1:
+        raise AssertionError('installed quadratic minimum changed')
+    check_lyapunov(console('linear-stability','--matrix','[[-1,10],[0,-2]]','--alpha','1/4'))
+    check_toeplitz(console('toeplitz-schur','--moments','[1,1,1]'))
+    from perfectpower.descent_squareclasses import check_rank_bound
+    descent=console('two-torsion-descent','--a','0','--b','-1','--rank-bound')
+    check_rank_bound(descent,0,-1)
+    if descent['rank_exact']!=0:
+        raise AssertionError('installed native rational rank bound changed')
     reduction=console('psg-reduce','--variables','x,t','--source','t-x',
         '--variable','t','--radicand','x^2','--base-values','{"x":3}')
     if reduction['fibre']['roots']!=['3']:raise AssertionError('installed quadratic reconstruction changed')
@@ -133,7 +153,8 @@ def main():
                 if response.status!=200 or body['result']['source_count']!=count or body['result']['proof_status']!='emitted':
                     raise AssertionError('installed proved-family HTTP proposal failed: '+op)
         finally:server.shutdown();thread.join();server.server_close()
-    print(json.dumps(dict(complete=True,assets=len(manifest),psg_console_routes=7,soe_console_routes=6,installed_root=str(root))))
+    print(json.dumps(dict(complete=True,assets=len(manifest),psg_console_routes=7,soe_console_routes=6,
+                         structural_console_routes=5,installed_root=str(root))))
 
 
 if __name__=='__main__':main()

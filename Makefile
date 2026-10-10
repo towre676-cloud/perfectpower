@@ -8,6 +8,11 @@ soe-bridge:
 	$(PY) -m unittest discover -s python/tests -p 'test_soe_bridge.py'
 	$(PY) python/develop_soe_bridge.py
 
+.PHONY: structural-math
+structural-math:
+	$(PY) -m unittest discover -s python/tests -p 'test_structural_math.py'
+	$(PY) python/develop_structural_math.py
+
 .PHONY: psg-structural psg-structural-kernel
 psg-structural:
 	$(PY) -m unittest discover -s python/tests -p 'test_psg_structural.py'

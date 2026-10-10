@@ -52,6 +52,8 @@ class ExactPopulation:
 
 Domain spec: {kind:'domain', predicate:..., fields:{name:[coefficients]}}.
 Curve spec: {kind:'curve', left:[...], right:[...], predicate:...}.
+Species spec: {kind:'species', bound:N, power:d, power_free:k,
+divisor_count:tau, omega:total}; optional filters may be omitted.
 Use ``restrict`` for an intersection in the same predicate language. The
 source specification and records are copied at every public boundary.
 """
@@ -68,6 +70,7 @@ source specification and records are copied at every public boundary.
         kind = spec.get('kind')
         self._parts = []
         self._points = None
+        self._species = None
         if kind == 'domain':
             if set(spec)-{'kind', 'predicate', 'fields'}:
                 raise ValueError('unknown domain specification field')
@@ -109,8 +112,18 @@ source specification and records are copied at every public boundary.
                                             fields={k: chart[k] for k in ('x', 'y')}))
             self._source = result
             self._identity = 'original integer point (x,y); disjoint chart ownership'
+        elif kind == 'species':
+            from .species import SpeciesPopulation
+            allowed = {'kind', 'bound', 'power', 'power_free', 'divisor_count', 'omega'}
+            if set(spec)-allowed or 'bound' not in spec:
+                raise ValueError('species bound and supported exponent filters required')
+            self._species = SpeciesPopulation(**{k:v for k,v in spec.items() if k != 'kind'},
+                                               state_limit=node_limit)
+            self._source = self._species.packet()
+            spec = dict(kind='species', **self._source['specification'])
+            self._identity = 'ordered prime-exponent species; not every realizing integer'
         else:
-            raise ValueError('population kind must be domain or curve')
+            raise ValueError('population kind must be domain, curve or species')
         self._spec = _json(spec)
         from .integer_image_index import IntegerImageIndex
         self._images = IntegerImageIndex()
@@ -120,7 +133,8 @@ source specification and records are copied at every public boundary.
         for part in self._parts:
             total += part['domain']['cardinality']
             self._ends.append(total)
-        self._cardinality = len(self._points) if self._points is not None else total
+        self._cardinality = (self._species.count() if self._species is not None else
+                             len(self._points) if self._points is not None else total)
         _integer(self.cardinality, 'population cardinality', minimum=0)
 
     @property
@@ -138,7 +152,8 @@ source specification and records are copied at every public boundary.
     def summary(self):
         return dict(schema='pp-exact-population/1', population_id=self.population_id,
                     cardinality=self.cardinality, specification=self.specification,
-                    ordering='lexicographic point list' if self._points is not None else 'chart-major, increasing parameter',
+                    ordering=('prefix first, then increasing next exponent' if self._species is not None else
+                              'lexicographic point list' if self._points is not None else 'chart-major, increasing parameter'),
                     identity=self._identity, execution_verified=False,
                     compilation=dict(parts=len(self._parts), finite_points=self._points is not None))
 
@@ -170,6 +185,13 @@ source specification and records are copied at every public boundary.
         _integer(rank, 'rank', minimum=0)
         if rank >= self.cardinality:
             raise IndexError('rank is outside the finite population')
+        if self._species is not None:
+            from .species import minimum
+            from math import prod
+            a = self._species.select(rank)
+            return dict(population_id=self.population_id, rank=rank, chart=None, parameter=None,
+                        species=list(a), values=dict(least_representative=minimum(a), omega=sum(a),
+                        divisor_count=prod(e+1 for e in a), distinct_prime_count=len(a)))
         if self._points is not None:
             x, y = self._points[rank]
             _integer(x, 'x', bits=self._budgets['bit_limit'])
@@ -192,7 +214,9 @@ source specification and records are copied at every public boundary.
         """Recover rank from identity and values; do not trust a supplied rank."""
         if not isinstance(record, dict) or record.get('population_id') != self.population_id:
             raise ValueError('record belongs to another population')
-        if self._points is not None:
+        if self._species is not None:
+            rank = self._species.rank(record.get('species', ()))
+        elif self._points is not None:
             from bisect import bisect_left
             values = record.get('values', {})
             if set(values) != {'x', 'y'}:
@@ -210,13 +234,24 @@ source specification and records are copied at every public boundary.
             part = self._parts[index]
             rank = (self._ends[index-1] if index else 0)+count_domain(part['domain'], part['start'], n-1)
         expected = self.select(rank)
+        if self._species is not None and record.get('species') != expected['species']:
+            raise ValueError('species identity mismatch')
         if any(type(v) is not int for v in record.get('values', {}).values()) or any(
                 record.get(k) != expected[k] for k in ('chart', 'parameter', 'values')):
             raise ValueError('record values do not match its population identity')
         return rank
 
-    def locate(self, *, parameter=None, x=None, y=None):
+    def locate(self, *, parameter=None, x=None, y=None, exponents=None):
         """Recover rank from a parameter or original curve point, caching inverse fibres."""
+        if self._species is not None:
+            if parameter is not None or x is not None or y is not None or exponents is None:
+                raise ValueError('species identity requires exponents only')
+            try:
+                return self._species.rank(exponents)
+            except ValueError:
+                return None
+        if exponents is not None:
+            raise ValueError('exponents require a species population')
         if self.specification['kind'] == 'domain':
             if x is not None or y is not None:
                 raise ValueError('domain identity is its parameter')
@@ -256,11 +291,30 @@ source specification and records are copied at every public boundary.
 
     def restrict(self, predicate):
         spec = self.specification
+        if self._species is not None:
+            raise ValueError('species restrictions must be declared as exponent filters in a new specification')
         spec['predicate'] = {'op': 'and', 'args': [spec['predicate'], deepcopy(predicate)]}
         return ExactPopulation(spec, **self._budgets)
 
     def optimize(self, objective, *, sense='min'):
         """Exact optimum/all ties using the existing domain or original curve backend."""
+        if self._species is not None:
+            if objective not in ('least_representative', 'omega', 'divisor_count', 'distinct_prime_count') or sense not in ('min', 'max'):
+                raise ValueError('species optimization requires a supported invariant and min/max sense')
+            if self.cardinality > self._budgets['work_limit']:
+                raise WorkLimit('species invariant optimization exceeds exhaustive rank budget')
+            best, ties = None, []
+            for rank in range(self.cardinality):
+                record = self.select(rank)
+                value = record['values'][objective]
+                if best is None or (value < best if sense == 'min' else value > best):
+                    best, ties = value, [record]
+                elif value == best:
+                    ties.append(record)
+            if len(ties) > self._budgets['row_limit']:
+                raise WorkLimit('complete species optimum tie set exceeds row budget')
+            return dict(value=best, records=ties, objective=objective, sense=sense,
+                        method='complete bounded species rank traversal', complete=True)
         budgets = {k: self._budgets[k] for k in ('node_limit', 'period_limit', 'work_limit')}
         if self.specification['kind'] == 'curve':
             return self._space.query(self.specification['predicate'], objective=objective,

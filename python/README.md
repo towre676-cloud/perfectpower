@@ -184,3 +184,7 @@ python -m perfectpower checked-pell-orbits --D 2 --norm 7 --cutoff 100 --global-
 ```
 
 See [the orbit reduction monograph](../docs/ORBIT_REDUCTION_MONOGRAPH.md) for the finite seed bounds, coordinate inversion and the distinct saturation-at-2 census result.
+
+## Structural mathematics APIs
+
+`perfectpower.species` supplies exact exponent invariants and bounded species count/select/rank. `ExactPopulation({'kind':'species','bound':1000})` integrates them with population sampling and catalogue persistence. `perfectpower.inequality_certificates` supplies rational PSD, Gram, constrained polynomial bounds, quadratic minima, real Toeplitz positivity and linear stability certificates. `perfectpower.descent_squareclasses` supplies supported squareclass covers, finite local exclusions, rational point transport and two-isogeny rank bounds. See [the structural mathematics monograph](../docs/STRUCTURAL_MATH_MONOGRAPH.md) for runnable examples, evidence and precise limits; reproduce with `make structural-math`.

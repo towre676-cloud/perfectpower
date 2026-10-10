@@ -7,10 +7,10 @@ from .population_algebra import PopulationComparison
 
 def add_commands(sub):
     p = sub.add_parser('population', help='compile, count, rank/select and sample finite exact configuration populations')
-    p.add_argument('--spec', type=Path, required=True, help='JSON domain or curve population specification')
+    p.add_argument('--spec', type=Path, required=True, help='JSON domain, curve or species population specification')
     action = p.add_mutually_exclusive_group()
     action.add_argument('--rank', type=int, help='select zero-based global object rank')
-    action.add_argument('--locate', type=json.loads, help='recover rank from {parameter:n} or {x:x,y:y}')
+    action.add_argument('--locate', type=json.loads, help='recover rank from {parameter:n}, {x:x,y:y}, or {exponents:[...]}')
     action.add_argument('--page', type=json.loads, help='materialize [start,size] rank window')
     action.add_argument('--sample', type=int, help='uniform sample size')
     action.add_argument('--objective', help='domain JSON coefficients, or polynomial curve expression')

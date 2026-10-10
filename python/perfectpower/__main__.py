@@ -18,6 +18,8 @@ def main():
     sub = parser.add_subparsers(dest='command', required=True)
     from .soe_console import add_commands as add_soe_commands
     add_soe_commands(sub)
+    from .structural_math_cli import add_commands as add_structural_commands
+    add_structural_commands(sub)
     from .psg_console import add_commands as add_psg_commands
     add_psg_commands(sub)
     from .checked_box import add_commands as add_checked_commands
@@ -199,6 +201,9 @@ def main():
     args = parser.parse_args()
     from .soe_console import cli as soe_cli
     if soe_cli(args):
+        return
+    from .structural_math_cli import cli as structural_cli
+    if structural_cli(args):
         return
     from .psg_console import cli as psg_cli
     if psg_cli(args):

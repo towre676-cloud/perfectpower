@@ -1,5 +1,7 @@
 # Mathematical documentation
 
+[Structural arithmetic, exact inequalities and native two-isogeny bounds](STRUCTURAL_MATH_MONOGRAPH.md) recovers exponent species, rational Gram and constrained bounds, singular Toeplitz frontiers, linear stability and supported rational rank bounds. See the [handoff](../CLAUDE_CODE_STRUCTURAL_MATH_START_HERE.md) and [reproducible receipts](../receipts/structural_math/summary.json).
+
 [Complete rational subgroup preimages](ELLIPTIC_SUBGROUPS_MONOGRAPH.md), with its [PDF](ELLIPTIC_SUBGROUPS_MONOGRAPH.pdf), covers hidden coefficient relations, exact replacement generators and saturation of a specified witness subgroup at 2 and 3. See the [handoff](../CLAUDE_CODE_ELLIPTIC_SUBGROUPS_START_HERE.md) and [corpus](../receipts/elliptic_subgroups/summary.json).
 
 [Complete rational tripling and composite division](ELLIPTIC_COMPOSED_DIVISION_MONOGRAPH.md), with its [PDF](ELLIPTIC_COMPOSED_DIVISION_MONOGRAPH.pdf), adds complete rational multiplication fibres through 36, generalized rational nine-torsion examples, discovery-free replay and persisted service calls. The [handoff](../CLAUDE_CODE_ELLIPTIC_DIVISION_START_HERE.md) and [corpus](../receipts/elliptic_composed_division/summary.json) retain the precise scope.

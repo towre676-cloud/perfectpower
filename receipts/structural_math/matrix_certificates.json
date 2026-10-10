@@ -1,0 +1,312 @@
+{
+  "lyapunov": [
+    {
+      "alpha": "1/4",
+      "formal_verification": false,
+      "metric": {
+        "D": [
+          "2/3",
+          "34/7"
+        ],
+        "L": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "4",
+            "1"
+          ]
+        ],
+        "formal_verification": false,
+        "matrix": [
+          [
+            "2/3",
+            "8/3"
+          ],
+          [
+            "8/3",
+            "326/21"
+          ]
+        ],
+        "positive_definite": true,
+        "rank": 2,
+        "schema": "pp-rational-psd/1"
+      },
+      "operator": [
+        [
+          "-1",
+          "10"
+        ],
+        [
+          "0",
+          "-2"
+        ]
+      ],
+      "residual": {
+        "D": [
+          "1",
+          "1"
+        ],
+        "L": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "formal_verification": false,
+        "matrix": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "positive_definite": true,
+        "rank": 2,
+        "schema": "pp-rational-psd/1"
+      },
+      "schema": "pp-linear-lyapunov/1",
+      "scope": "xdot=A*x; squared metric norm <= exp(-2*alpha*t) times initial norm for t>=0"
+    },
+    {
+      "alpha": "1/2",
+      "formal_verification": false,
+      "metric": {
+        "D": [
+          "127/385",
+          "2231/6985",
+          "5109/24541"
+        ],
+        "L": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "2/127",
+            "1",
+            "0"
+          ],
+          [
+            "-2/127",
+            "182/2231",
+            "1"
+          ]
+        ],
+        "formal_verification": false,
+        "matrix": [
+          [
+            "127/385",
+            "2/385",
+            "-2/385"
+          ],
+          [
+            "2/385",
+            "123/385",
+            "2/77"
+          ],
+          [
+            "-2/385",
+            "2/77",
+            "81/385"
+          ]
+        ],
+        "positive_definite": true,
+        "rank": 3,
+        "schema": "pp-rational-psd/1"
+      },
+      "operator": [
+        [
+          "-2",
+          "1",
+          "0"
+        ],
+        [
+          "-1",
+          "-2",
+          "1"
+        ],
+        [
+          "0",
+          "-1",
+          "-3"
+        ]
+      ],
+      "residual": {
+        "D": [
+          "1",
+          "1",
+          "1"
+        ],
+        "L": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "formal_verification": false,
+        "matrix": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ]
+        ],
+        "positive_definite": true,
+        "rank": 3,
+        "schema": "pp-rational-psd/1"
+      },
+      "schema": "pp-linear-lyapunov/1",
+      "scope": "xdot=A*x; squared metric norm <= exp(-2*alpha*t) times initial norm for t>=0"
+    }
+  ],
+  "toeplitz": [
+    {
+      "formal_verification": false,
+      "increment_ratios": [
+        "0",
+        null
+      ],
+      "leading_determinants": [
+        "1",
+        "0",
+        "0"
+      ],
+      "moments": [
+        "1",
+        "1",
+        "1"
+      ],
+      "psd": {
+        "D": [
+          "1",
+          "0",
+          "0"
+        ],
+        "L": [
+          [
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "1"
+          ]
+        ],
+        "formal_verification": false,
+        "matrix": [
+          [
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1"
+          ]
+        ],
+        "positive_definite": false,
+        "rank": 1,
+        "schema": "pp-rational-psd/1"
+      },
+      "schema": "pp-real-toeplitz-schur/1",
+      "schur_increments": [
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "formal_verification": false,
+      "increment_ratios": [
+        "1999999999999999999999999999999/1000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "leading_determinants": [
+        "1",
+        "1999999999999999999999999999999/1000000000000000000000000000000000000000000000000000000000000"
+      ],
+      "moments": [
+        "1",
+        "999999999999999999999999999999/1000000000000000000000000000000"
+      ],
+      "psd": {
+        "D": [
+          "1",
+          "1999999999999999999999999999999/1000000000000000000000000000000000000000000000000000000000000"
+        ],
+        "L": [
+          [
+            "1",
+            "0"
+          ],
+          [
+            "999999999999999999999999999999/1000000000000000000000000000000",
+            "1"
+          ]
+        ],
+        "formal_verification": false,
+        "matrix": [
+          [
+            "1",
+            "999999999999999999999999999999/1000000000000000000000000000000"
+          ],
+          [
+            "999999999999999999999999999999/1000000000000000000000000000000",
+            "1"
+          ]
+        ],
+        "positive_definite": true,
+        "rank": 2,
+        "schema": "pp-rational-psd/1"
+      },
+      "schema": "pp-real-toeplitz-schur/1",
+      "schur_increments": [
+        "1",
+        "1999999999999999999999999999999/1000000000000000000000000000000000000000000000000000000000000"
+      ]
+    }
+  ]
+}

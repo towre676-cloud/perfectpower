@@ -117,6 +117,8 @@ The [Weil representation work](docs/WEIL_SPECTRAL_MONOGRAPH.md) supplies exact F
 
 ## Build and documentation
 
+The [structural mathematics extension](docs/STRUCTURAL_MATH_MONOGRAPH.md) adds prime-exponent species populations, exact rational polynomial bounds, singular-aware PSD and Toeplitz certificates, linear Lyapunov metrics and native two-isogeny rank bounds for supported rational-two-torsion curves. Run `make structural-math` to regenerate its corpus, including exact PSG bounds and 306 curve models. These results use exact Python arithmetic and classical descent; the new certificates do not claim Lean verification.
+
 Run the core package's tests from the checkout:
 
 ```sh

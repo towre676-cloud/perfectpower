@@ -26,3 +26,7 @@ jobs:
         run: |
           make soe-bridge
           git diff --exit-code -- receipts/soe_bridge/
+      - name: Reproduce structural species, inequalities and two-isogeny bounds
+        run: |
+          make structural-math
+          git diff --exit-code -- receipts/structural_math/
