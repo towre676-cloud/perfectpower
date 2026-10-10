@@ -468,6 +468,10 @@ import PerfectPower.LocalQuarticBridges
 import PerfectPower.IsogenyCoordinates
 import PerfectPower.IsogenyIndexBridges
 
+import PerfectPower.TwoIsogenyPointMap
+import PerfectPower.TwoIsogenyDual
+import PerfectPower.DescentRankBridge
+
 import PerfectPower.BlastAlignment
 import PerfectPower.Generated.BlastAlignmentSOE
 import PerfectPower.Generated.BlastMotifSOE

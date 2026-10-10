@@ -16,7 +16,10 @@ structural-math:
 	$(PY) -m unittest discover -s python/tests -p 'test_structural_math.py'
 	$(PY) python/develop_structural_math.py
 
-.PHONY: descent-bridges-kernel new-work-kernel psg-structural psg-structural-kernel
+.PHONY: isogeny-point-groups-kernel descent-bridges-kernel new-work-kernel psg-structural psg-structural-kernel
+isogeny-point-groups-kernel:
+	$(PY) scripts/check_isogeny_point_groups.py
+
 descent-bridges-kernel:
 	$(PY) scripts/check_descent_bridges_lean.py
 	$(PY) scripts/check_descent_bridge_rejections.py
@@ -75,6 +78,7 @@ release-verify:
 	$(MAKE) check-mordell-parity
 	$(MAKE) new-work-kernel
 	$(MAKE) descent-bridges-kernel
+	$(MAKE) isogeny-point-groups-kernel
 	$(MAKE) soe-generic-kernel
 
 .PHONY: hardening-verify hardening-kernel

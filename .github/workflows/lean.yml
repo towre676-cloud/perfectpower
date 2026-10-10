@@ -17,6 +17,8 @@ jobs:
         run: make new-work-kernel
       - name: Rational descent arithmetic and primitive local chart audit
         run: make descent-bridges-kernel
+      - name: Actual rational elliptic isogenies and corrected rank bridge
+        run: make isogeny-point-groups-kernel
       - name: General finite SOE source-bound acceptance and adversarial rejection
         run: make soe-generic-kernel
       - name: Original bounded equations, signed roots, ranks and tied minima

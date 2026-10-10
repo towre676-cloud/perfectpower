@@ -21,6 +21,7 @@ RECEIPTS=(
     'new_work_lean/verification.json',
     'descent_bridges/verification.json',
     'descent_bridges/instances.json',
+    'isogeny_point_groups/verification.json',
 )
 
 

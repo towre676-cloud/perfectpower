@@ -1,0 +1,382 @@
+{
+  "compiled": true,
+  "controls": [
+    {
+      "accepted": true,
+      "case": "actual_addition",
+      "expected_acceptance": true
+    },
+    {
+      "accepted": true,
+      "case": "dual_sign",
+      "expected_acceptance": true
+    },
+    {
+      "accepted": false,
+      "case": "reversed_map_sign",
+      "expected_acceptance": false
+    },
+    {
+      "accepted": false,
+      "case": "reversed_dual_sign",
+      "expected_acceptance": false
+    },
+    {
+      "accepted": false,
+      "case": "dropped_torsion_factor",
+      "expected_acceptance": false
+    }
+  ],
+  "declaration_count": 42,
+  "declarations": [
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.smooth"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.dual_smooth"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.image_smooth"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.phi_some"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.phi_some_zero"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.some_congr"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.phi_neg"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.T_ne_zero"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.phi_eq_zero_iff"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.translate_coordinates"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.translation_image"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.phi_add_T"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.phi_add_of_kernel"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.chord_roots"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.image_line"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.image_root_sums"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.line_second"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.line_slope"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.image_vertical"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyPointMap.phi_add"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.scaled_smooth"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.scaleBack_slope"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.scaleBack_add"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.dual_a"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.dual_b"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.pointCast_some"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.rawDual_some"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.rawDual_some_zero"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.rawDual_of_x_zero"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.dual_some"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.doubling_x"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.dual_composition_y"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.dual_phi"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.dual_comp_phiHom"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.TwoIsogenyDual.actual_doubling_index"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.DescentRankBridge.free_doubling_index"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.DescentRankBridge.finite_doubling_index"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.DescentRankBridge.product_doubling_range"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.DescentRankBridge.equiv_doubling_range"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.DescentRankBridge.doubling_index_from_decomposition"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.DescentRankBridge.descent_rank_equation"
+    },
+    {
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "declaration": "PerfectPower.DescentRankBridge.elliptic_descent_rank"
+    }
+  ],
+  "lean_version": "4.20.0",
+  "schema": "pp-isogeny-point-groups/1",
+  "scope": "actual elliptic group homomorphisms and dual composition; rank identity from an explicit free-plus-finite decomposition; squareclass quotient identification and unconditional Mordell-Weil rank remain open",
+  "source_sha256": {
+    "PerfectPower/DescentRankBridge.lean": "d5fa69c0b99959b131e96f5dbb67646fce1033d5e4024a55ef75fcc24b6797ab",
+    "PerfectPower/TwoIsogenyDual.lean": "248f7f2564b94d24e938e821a134cd07def7f54b796da39f0530de522099fa90",
+    "PerfectPower/TwoIsogenyPointMap.lean": "14919defccf0d8899d0401c9e1801436eb7723c99711302b7786e626ba1dc701",
+    "audit/IsogenyPointGroups.lean": "63575fbe060976ab36f7ece897348c8df91be62a84078eb9e50dd50725589a91",
+    "receipts/isogeny_point_groups/actual_addition.lean": "c7422dd6e29c30a3dcf2a1750f97910b30ce4759b84eecca617a8cf4c048d04c",
+    "receipts/isogeny_point_groups/dropped_torsion_factor.lean": "7b0e6adce0cb586223648bd29389278ba5cd68c37e28be31b0a0749056d0ae41",
+    "receipts/isogeny_point_groups/dual_sign.lean": "c667899a553a939a8b0dd11221a69422a30fe611717c6e4c9b1625b6403a18a2",
+    "receipts/isogeny_point_groups/reversed_dual_sign.lean": "49bd109a1e0bcbcd4f843785efd5f5c0e0430cc9ad730d0ba650a6087931948b",
+    "receipts/isogeny_point_groups/reversed_map_sign.lean": "d536306ca79c04fea4cf5162e8a0639f216d0b99f2914d802c18b350be95d788",
+    "scripts/check_isogeny_point_groups.py": "36cf6913f7be2759bebb8973ada74aceb1abd006d526f7dffdc4f82bc868e69a"
+  }
+}

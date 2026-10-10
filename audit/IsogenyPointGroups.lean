@@ -1,0 +1,45 @@
+import PerfectPower.TwoIsogenyPointMap
+import PerfectPower.TwoIsogenyDual
+import PerfectPower.DescentRankBridge
+#print axioms PerfectPower.TwoIsogenyPointMap.smooth
+#print axioms PerfectPower.TwoIsogenyPointMap.dual_smooth
+#print axioms PerfectPower.TwoIsogenyPointMap.image_smooth
+#print axioms PerfectPower.TwoIsogenyPointMap.phi_some
+#print axioms PerfectPower.TwoIsogenyPointMap.phi_some_zero
+#print axioms PerfectPower.TwoIsogenyPointMap.some_congr
+#print axioms PerfectPower.TwoIsogenyPointMap.phi_neg
+#print axioms PerfectPower.TwoIsogenyPointMap.T_ne_zero
+#print axioms PerfectPower.TwoIsogenyPointMap.phi_eq_zero_iff
+#print axioms PerfectPower.TwoIsogenyPointMap.translate_coordinates
+#print axioms PerfectPower.TwoIsogenyPointMap.translation_image
+#print axioms PerfectPower.TwoIsogenyPointMap.phi_add_T
+#print axioms PerfectPower.TwoIsogenyPointMap.phi_add_of_kernel
+#print axioms PerfectPower.TwoIsogenyPointMap.chord_roots
+#print axioms PerfectPower.TwoIsogenyPointMap.image_line
+#print axioms PerfectPower.TwoIsogenyPointMap.image_root_sums
+#print axioms PerfectPower.TwoIsogenyPointMap.line_second
+#print axioms PerfectPower.TwoIsogenyPointMap.line_slope
+#print axioms PerfectPower.TwoIsogenyPointMap.image_vertical
+#print axioms PerfectPower.TwoIsogenyPointMap.phi_add
+#print axioms PerfectPower.TwoIsogenyDual.scaled_smooth
+#print axioms PerfectPower.TwoIsogenyDual.scaleBack_slope
+#print axioms PerfectPower.TwoIsogenyDual.scaleBack_add
+#print axioms PerfectPower.TwoIsogenyDual.dual_a
+#print axioms PerfectPower.TwoIsogenyDual.dual_b
+#print axioms PerfectPower.TwoIsogenyDual.pointCast_some
+#print axioms PerfectPower.TwoIsogenyDual.rawDual_some
+#print axioms PerfectPower.TwoIsogenyDual.rawDual_some_zero
+#print axioms PerfectPower.TwoIsogenyDual.rawDual_of_x_zero
+#print axioms PerfectPower.TwoIsogenyDual.dual_some
+#print axioms PerfectPower.TwoIsogenyDual.doubling_x
+#print axioms PerfectPower.TwoIsogenyDual.dual_composition_y
+#print axioms PerfectPower.TwoIsogenyDual.dual_phi
+#print axioms PerfectPower.TwoIsogenyDual.dual_comp_phiHom
+#print axioms PerfectPower.TwoIsogenyDual.actual_doubling_index
+#print axioms PerfectPower.DescentRankBridge.free_doubling_index
+#print axioms PerfectPower.DescentRankBridge.finite_doubling_index
+#print axioms PerfectPower.DescentRankBridge.product_doubling_range
+#print axioms PerfectPower.DescentRankBridge.equiv_doubling_range
+#print axioms PerfectPower.DescentRankBridge.doubling_index_from_decomposition
+#print axioms PerfectPower.DescentRankBridge.descent_rank_equation
+#print axioms PerfectPower.DescentRankBridge.elliptic_descent_rank
