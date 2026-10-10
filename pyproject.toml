@@ -19,7 +19,11 @@ research = ["z3-solver==5.1.0.0", "python-flint>=0.9,<0.10", "numpy>=1.23", "sci
 
 [project.scripts]
 perfectpower = "perfectpower.__main__:main"
+perfectpower-blast = "perfectpower.blast_cli:main"
 
 [tool.setuptools]
 package-dir = { "" = "python" }
 packages = ["perfectpower"]
+
+[tool.setuptools.package-data]
+perfectpower = ["blast_data/*.html"]

@@ -1,0 +1,248 @@
+{
+  "class_count": 6,
+  "kernel_checked": true,
+  "model": {
+    "actions": {
+      "A": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "C": [
+        2,
+        3,
+        2,
+        2,
+        2,
+        2
+      ],
+      "G": [
+        0,
+        0,
+        4,
+        5,
+        0,
+        0
+      ],
+      "T": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "observations": [
+      [],
+      [],
+      [],
+      [
+        "AC"
+      ],
+      [
+        "CG"
+      ],
+      [
+        "ACG",
+        "CG"
+      ]
+    ]
+  },
+  "prefixes": [
+    "",
+    "A",
+    "C",
+    "AC",
+    "CG",
+    "ACG"
+  ],
+  "quotient": {
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ]
+    ],
+    "distinguishing_witnesses": [
+      {
+        "first": 0,
+        "reason": "observation",
+        "second": 1,
+        "word": [
+          "C"
+        ]
+      },
+      {
+        "first": 0,
+        "reason": "observation",
+        "second": 2,
+        "word": [
+          "G"
+        ]
+      },
+      {
+        "first": 0,
+        "reason": "observation",
+        "second": 3,
+        "word": []
+      },
+      {
+        "first": 0,
+        "reason": "observation",
+        "second": 4,
+        "word": []
+      },
+      {
+        "first": 0,
+        "reason": "observation",
+        "second": 5,
+        "word": []
+      },
+      {
+        "first": 1,
+        "reason": "observation",
+        "second": 2,
+        "word": [
+          "C"
+        ]
+      },
+      {
+        "first": 1,
+        "reason": "observation",
+        "second": 3,
+        "word": []
+      },
+      {
+        "first": 1,
+        "reason": "observation",
+        "second": 4,
+        "word": []
+      },
+      {
+        "first": 1,
+        "reason": "observation",
+        "second": 5,
+        "word": []
+      },
+      {
+        "first": 2,
+        "reason": "observation",
+        "second": 3,
+        "word": []
+      },
+      {
+        "first": 2,
+        "reason": "observation",
+        "second": 4,
+        "word": []
+      },
+      {
+        "first": 2,
+        "reason": "observation",
+        "second": 5,
+        "word": []
+      },
+      {
+        "first": 3,
+        "reason": "observation",
+        "second": 4,
+        "word": []
+      },
+      {
+        "first": 3,
+        "reason": "observation",
+        "second": 5,
+        "word": []
+      },
+      {
+        "first": 4,
+        "reason": "observation",
+        "second": 5,
+        "word": []
+      }
+    ],
+    "model_id": "a7b892e0b2870a081378743d947f5a87aee824bebbcd4d2f922cedade1edab18",
+    "projection": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "quotient": {
+      "actions": {
+        "A": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "C": [
+          2,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "G": [
+          0,
+          0,
+          4,
+          5,
+          0,
+          0
+        ],
+        "T": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "observations": [
+        [],
+        [],
+        [],
+        [
+          "AC"
+        ],
+        [
+          "CG"
+        ],
+        [
+          "ACG",
+          "CG"
+        ]
+      ]
+    },
+    "refinement_rounds": 2,
+    "schema": "pp-future-quotient/1",
+    "scope": "coarsest exact observation-and-legality quotient of supplied finite deterministic model"
+  },
+  "scope": "all finite words of supplied feature-labelled or motif partial machine",
+  "state_count": 6
+}

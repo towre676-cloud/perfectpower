@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/workspace/scratch/4eb38c514c38/perfectpower/../blast-runtime/usr/bin/blastn",
+    "-query",
+    "/workspace/scratch/4eb38c514c38/perfectpower/examples/blast/NM_000207.3.fasta",
+    "-subject",
+    "/workspace/scratch/4eb38c514c38/perfectpower/examples/blast/XM_043971863.1.fasta",
+    "-out",
+    "/workspace/scratch/4eb38c514c38/perfectpower/examples/blast/insulin_blast.tsv",
+    "-outfmt",
+    "7 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore btop qlen slen staxids",
+    "-task",
+    "blastn",
+    "-word_size",
+    "7",
+    "-dust",
+    "no"
+  ],
+  "version": "blastn: 2.12.0+\n Package: blast 2.12.0, build Feb 17 2022 10:04:48\n",
+  "query_sha256": "419b1b83e1808a71aa339b7bc0a42d1c11306680914f708b8598cb62ebc1f0d6",
+  "subject_sha256": "24bb005cd419f63414b08169b905e7b31e119ed77cd1b970278de7cf29327d73",
+  "output_sha256": "5ef2888c4a9ca9f6b21aa847f72c8c17b25c541e27b35508dc4e96f2d919197d",
+  "result_path": "/workspace/scratch/4eb38c514c38/perfectpower/examples/blast/insulin_blast.tsv",
+  "scope": "NCBI BLAST+ heuristic candidate search, not exhaustive alignment discovery"
+}

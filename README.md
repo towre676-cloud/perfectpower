@@ -145,3 +145,7 @@ The [recovered-work Lean closure](docs/NEW_WORK_LEAN_MONOGRAPH.md) audits 384 de
 The [rational descent arithmetic bridges](docs/DESCENT_BRIDGES_MONOGRAPH.md) derive primitive quartic covers from actual rational points, prove prime-power chart exhaustiveness, and audit 2,651 declarations, including 1,478 excluded covers across 576 retained curve models. Isogeny coordinate identities and a corrected group-index equation are proved separately; actual elliptic-group homomorphisms and the Mordell–Weil rank identity remain open. Reproduce with `make descent-bridges-kernel`.
 
 SOE finite partial machines can request source-bound Lean acceptance with `soe-states model.json --kernel-check`. Pair-specific experiments prove the coarsest all-future quotient for supported supplied models; see [the compiler contract and resource limits](docs/SOE_GENERIC_LEAN_MONOGRAPH.md).
+
+## Biological sequence exploration
+
+The BLAST polynomial atlas imports NCBI tracebacks, reconstructs exact finite alignment families, maps scoring sensitivity, enforces conserved motifs and coherent-fragment constraints, and connects to the existing SOE, polynomial and graph machinery. The branch includes a real public insulin-transcript example and an offline interactive atlas. See [the monograph](docs/BLAST_POLYNOMIAL_ATLAS_MONOGRAPH.md) and [the runnable workflow](CLAUDE_CODE_BLAST_START_HERE.md). Run `make blast-test` and `make blast-atlas`; kernel scope and build evidence are recorded separately.

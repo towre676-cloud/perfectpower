@@ -467,3 +467,9 @@ import PerfectPower.TwoDescentBridges
 import PerfectPower.LocalQuarticBridges
 import PerfectPower.IsogenyCoordinates
 import PerfectPower.IsogenyIndexBridges
+
+import PerfectPower.BlastAlignment
+import PerfectPower.Generated.BlastAlignmentSOE
+import PerfectPower.Generated.BlastMotifSOE
+import PerfectPower.Generated.BlastPathCounts
+import PerfectPower.Generated.BlastScores

@@ -500,3 +500,11 @@ check-orbit-reduction:
 	bash scripts/check_orbit_reduction.sh
 check-mordell-parity:
 	bash scripts/check_mordell_parity.sh
+
+.PHONY: blast-atlas blast-test blast-lean
+blast-atlas:
+	PYTHONPATH=python python3 python/develop_blast_atlas.py
+blast-test:
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_blast_atlas.py -v
+blast-lean:
+	python3 scripts/check_blast_atlas.py

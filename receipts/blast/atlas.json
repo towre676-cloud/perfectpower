@@ -1,0 +1,2856 @@
+{
+  "diagnostic": {
+    "complete": true,
+    "completeness": "all experiment partitions of cost at most the finite witness incumbent, followed by exact minimax recursion over proper subsets",
+    "dp_subsets": 3,
+    "dp_work": 1,
+    "execution_verified": false,
+    "experiment_partitions": 1,
+    "incumbent_cost": "1",
+    "nodes": [
+      {
+        "branches": [
+          {
+            "node": 1,
+            "value": "2"
+          },
+          {
+            "node": 2,
+            "value": "0"
+          }
+        ],
+        "cost": "1",
+        "hypotheses": [
+          "shifted",
+          "ungapped"
+        ],
+        "id": 0,
+        "kind": "experiment",
+        "name": "gap_openings",
+        "readout": 0,
+        "remaining_cost": "1",
+        "word": []
+      },
+      {
+        "hypotheses": [
+          "shifted"
+        ],
+        "id": 1,
+        "identified": "shifted",
+        "kind": "leaf",
+        "remaining_cost": "0"
+      },
+      {
+        "hypotheses": [
+          "ungapped"
+        ],
+        "id": 2,
+        "identified": "ungapped",
+        "kind": "leaf",
+        "remaining_cost": "0"
+      }
+    ],
+    "observable_rows": [
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ]
+    ],
+    "observable_witnesses": [
+      [
+        0,
+        []
+      ],
+      [
+        1,
+        []
+      ],
+      [
+        2,
+        []
+      ],
+      [
+        3,
+        []
+      ]
+    ],
+    "operator_costs": [
+      "1"
+    ],
+    "readout_costs": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "relative_states": 1,
+    "root": 0,
+    "schema": "pp-diagnostic-policy/1",
+    "semantics": "each experiment resets to the original unknown hypothesis; noiseless exact readout; reset cost zero; positive operator costs",
+    "status": "OPTIMAL_RESETTABLE_DIAGNOSTIC",
+    "worst_case_cost": "1"
+  },
+  "example_label": "illustrative shifted DNA words",
+  "family": {
+    "alignment_count": 2599,
+    "complete": true,
+    "features": [
+      "matches",
+      "mismatches",
+      "gap_openings",
+      "gap_residues"
+    ],
+    "kernel_checked": false,
+    "model": "global; literal equality; no opposing adjacent gaps; open + length*extend",
+    "query": "ACGTACGT",
+    "query_sha256": "b28b7e7e6b70661dfee15d5290c4bca097ca145f721c4fbc4de73ad1d1660b8b",
+    "retained_terms": 1835,
+    "schema": "pp-blast-alignment-family/1",
+    "subject": "CGTACGTA",
+    "subject_sha256": "4c3cdee14e7874fcfbf47e50dd67b57a05b2f35439d9db5db39d18c4ff820de3",
+    "terms": [
+      [
+        [
+          0,
+          1,
+          2,
+          14
+        ],
+        1
+      ],
+      [
+        [
+          0,
+          2,
+          2,
+          12
+        ],
+        6
+      ],
+      [
+        [
+          0,
+          2,
+          3,
+          12
+        ],
+        18
+      ],
+      [
+        [
+          0,
+          3,
+          2,
+          10
+        ],
+        6
+      ],
+      [
+        [
+          0,
+          3,
+          3,
+          10
+        ],
+        40
+      ],
+      [
+        [
+          0,
+          3,
+          4,
+          10
+        ],
+        48
+      ],
+      [
+        [
+          0,
+          4,
+          2,
+          8
+        ],
+        20
+      ],
+      [
+        [
+          0,
+          4,
+          3,
+          8
+        ],
+        120
+      ],
+      [
+        [
+          0,
+          4,
+          4,
+          8
+        ],
+        140
+      ],
+      [
+        [
+          0,
+          4,
+          5,
+          8
+        ],
+        30
+      ],
+      [
+        [
+          0,
+          5,
+          2,
+          6
+        ],
+        15
+      ],
+      [
+        [
+          0,
+          5,
+          3,
+          6
+        ],
+        80
+      ],
+      [
+        [
+          0,
+          5,
+          4,
+          6
+        ],
+        90
+      ],
+      [
+        [
+          0,
+          5,
+          5,
+          6
+        ],
+        36
+      ],
+      [
+        [
+          0,
+          5,
+          6,
+          6
+        ],
+        4
+      ],
+      [
+        [
+          0,
+          6,
+          2,
+          4
+        ],
+        42
+      ],
+      [
+        [
+          0,
+          6,
+          3,
+          4
+        ],
+        70
+      ],
+      [
+        [
+          0,
+          6,
+          4,
+          4
+        ],
+        70
+      ],
+      [
+        [
+          0,
+          7,
+          2,
+          2
+        ],
+        28
+      ],
+      [
+        [
+          0,
+          8,
+          0,
+          0
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          0,
+          2,
+          14
+        ],
+        1
+      ],
+      [
+        [
+          1,
+          1,
+          3,
+          12
+        ],
+        12
+      ],
+      [
+        [
+          1,
+          2,
+          2,
+          10
+        ],
+        3
+      ],
+      [
+        [
+          1,
+          2,
+          3,
+          10
+        ],
+        36
+      ],
+      [
+        [
+          1,
+          2,
+          4,
+          10
+        ],
+        70
+      ],
+      [
+        [
+          1,
+          3,
+          3,
+          8
+        ],
+        24
+      ],
+      [
+        [
+          1,
+          3,
+          4,
+          8
+        ],
+        144
+      ],
+      [
+        [
+          1,
+          3,
+          5,
+          8
+        ],
+        104
+      ],
+      [
+        [
+          1,
+          4,
+          2,
+          6
+        ],
+        5
+      ],
+      [
+        [
+          1,
+          4,
+          3,
+          6
+        ],
+        80
+      ],
+      [
+        [
+          1,
+          4,
+          4,
+          6
+        ],
+        240
+      ],
+      [
+        [
+          1,
+          4,
+          5,
+          6
+        ],
+        100
+      ],
+      [
+        [
+          1,
+          4,
+          6,
+          6
+        ],
+        6
+      ],
+      [
+        [
+          1,
+          5,
+          3,
+          4
+        ],
+        60
+      ],
+      [
+        [
+          1,
+          5,
+          4,
+          4
+        ],
+        40
+      ],
+      [
+        [
+          1,
+          6,
+          2,
+          2
+        ],
+        7
+      ],
+      [
+        [
+          2,
+          1,
+          2,
+          10
+        ],
+        2
+      ],
+      [
+        [
+          2,
+          1,
+          3,
+          10
+        ],
+        16
+      ],
+      [
+        [
+          2,
+          1,
+          4,
+          10
+        ],
+        24
+      ],
+      [
+        [
+          2,
+          2,
+          3,
+          8
+        ],
+        18
+      ],
+      [
+        [
+          2,
+          2,
+          4,
+          8
+        ],
+        78
+      ],
+      [
+        [
+          2,
+          2,
+          5,
+          8
+        ],
+        56
+      ],
+      [
+        [
+          2,
+          3,
+          2,
+          6
+        ],
+        4
+      ],
+      [
+        [
+          2,
+          3,
+          3,
+          6
+        ],
+        48
+      ],
+      [
+        [
+          2,
+          3,
+          4,
+          6
+        ],
+        108
+      ],
+      [
+        [
+          2,
+          3,
+          5,
+          6
+        ],
+        76
+      ],
+      [
+        [
+          2,
+          3,
+          6,
+          6
+        ],
+        6
+      ],
+      [
+        [
+          2,
+          4,
+          3,
+          4
+        ],
+        40
+      ],
+      [
+        [
+          2,
+          4,
+          4,
+          4
+        ],
+        40
+      ],
+      [
+        [
+          2,
+          5,
+          2,
+          2
+        ],
+        6
+      ],
+      [
+        [
+          3,
+          0,
+          2,
+          10
+        ],
+        1
+      ],
+      [
+        [
+          3,
+          0,
+          3,
+          10
+        ],
+        4
+      ],
+      [
+        [
+          3,
+          0,
+          4,
+          10
+        ],
+        2
+      ],
+      [
+        [
+          3,
+          1,
+          3,
+          8
+        ],
+        12
+      ],
+      [
+        [
+          3,
+          1,
+          4,
+          8
+        ],
+        28
+      ],
+      [
+        [
+          3,
+          2,
+          2,
+          6
+        ],
+        3
+      ],
+      [
+        [
+          3,
+          2,
+          3,
+          6
+        ],
+        24
+      ],
+      [
+        [
+          3,
+          2,
+          4,
+          6
+        ],
+        36
+      ],
+      [
+        [
+          3,
+          2,
+          5,
+          6
+        ],
+        28
+      ],
+      [
+        [
+          3,
+          2,
+          6,
+          6
+        ],
+        4
+      ],
+      [
+        [
+          3,
+          3,
+          3,
+          4
+        ],
+        24
+      ],
+      [
+        [
+          3,
+          3,
+          4,
+          4
+        ],
+        32
+      ],
+      [
+        [
+          3,
+          4,
+          2,
+          2
+        ],
+        5
+      ],
+      [
+        [
+          4,
+          0,
+          3,
+          8
+        ],
+        6
+      ],
+      [
+        [
+          4,
+          1,
+          2,
+          6
+        ],
+        2
+      ],
+      [
+        [
+          4,
+          1,
+          3,
+          6
+        ],
+        8
+      ],
+      [
+        [
+          4,
+          1,
+          4,
+          6
+        ],
+        6
+      ],
+      [
+        [
+          4,
+          2,
+          3,
+          4
+        ],
+        12
+      ],
+      [
+        [
+          4,
+          2,
+          4,
+          4
+        ],
+        20
+      ],
+      [
+        [
+          4,
+          3,
+          2,
+          2
+        ],
+        4
+      ],
+      [
+        [
+          5,
+          0,
+          2,
+          6
+        ],
+        1
+      ],
+      [
+        [
+          5,
+          1,
+          3,
+          4
+        ],
+        4
+      ],
+      [
+        [
+          5,
+          1,
+          4,
+          4
+        ],
+        8
+      ],
+      [
+        [
+          5,
+          2,
+          2,
+          2
+        ],
+        3
+      ],
+      [
+        [
+          6,
+          1,
+          2,
+          2
+        ],
+        2
+      ],
+      [
+        [
+          7,
+          0,
+          2,
+          2
+        ],
+        1
+      ]
+    ],
+    "work": 2723
+  },
+  "feature_query": {
+    "alignment_count": 1,
+    "complete": true,
+    "feature_count": 1,
+    "fibres": [
+      {
+        "count": 1,
+        "feature": [
+          7,
+          0,
+          2,
+          2
+        ],
+        "representative": {
+          "features": [
+            7,
+            0,
+            2,
+            2
+          ],
+          "operations": "DMMMMMMMI",
+          "query": "ACGTACGT-",
+          "subject": "-CGTACGTA"
+        }
+      }
+    ],
+    "scope": "complete feature filtering of supplied finite global alignment family"
+  },
+  "fixed_comparison_null": {
+    "fixed_width_binomial_bridge": {
+      "denominator": 5040,
+      "domain": {
+        "index": "n",
+        "lower": 0
+      },
+      "execution_verified": false,
+      "meaning": "exact finite product on the stated natural-index domain",
+      "numerator": [
+        0,
+        720,
+        -1764,
+        1624,
+        -735,
+        175,
+        -21,
+        1
+      ],
+      "schema": "pp-gamma-normalization/1",
+      "source": {
+        "kind": "binomial",
+        "width": 7
+      }
+    },
+    "is_blast_evalue": false,
+    "length": 8,
+    "match_probability": "1/4",
+    "matches": 7,
+    "scope": "fixed ungapped position pairs with IID Bernoulli identity null",
+    "tail_probability": "25/65536"
+  },
+  "geometry": {
+    "boundary1": [
+      [
+        -1,
+        0,
+        -1,
+        0
+      ],
+      [
+        1,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "boundary2": [
+      [
+        1
+      ],
+      [
+        1
+      ],
+      [
+        -1
+      ],
+      [
+        0
+      ]
+    ],
+    "edges": [
+      [
+        0,
+        1,
+        "9/10",
+        1
+      ],
+      [
+        1,
+        2,
+        "4/5",
+        1
+      ],
+      [
+        0,
+        2,
+        "3/4",
+        -1
+      ],
+      [
+        2,
+        3,
+        "2/3",
+        1
+      ]
+    ],
+    "hodge": {
+      "boundary_projector": [
+        [
+          "18/49",
+          "16/49",
+          "-15/49",
+          "0"
+        ],
+        [
+          "18/49",
+          "16/49",
+          "-15/49",
+          "0"
+        ],
+        [
+          "-18/49",
+          "-16/49",
+          "15/49",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "dimensions": [
+        3,
+        1,
+        0
+      ],
+      "exact_replay": true,
+      "execution_verified": false,
+      "field": "Q",
+      "gradient_projector": [
+        [
+          "31/49",
+          "-16/49",
+          "15/49",
+          "0"
+        ],
+        [
+          "-18/49",
+          "33/49",
+          "15/49",
+          "0"
+        ],
+        [
+          "18/49",
+          "16/49",
+          "34/49",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "harmonic_projector": [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "laplacian": [
+        [
+          "281/90",
+          "-14/45",
+          "13/36",
+          "0"
+        ],
+        [
+          "-7/20",
+          "33/10",
+          "1/2",
+          "-5/4"
+        ],
+        [
+          "13/30",
+          "8/15",
+          "41/12",
+          "-4/3"
+        ],
+        [
+          "0",
+          "-3/2",
+          "-3/2",
+          "3"
+        ]
+      ],
+      "scope": "finite chain with supplied positive rational mass matrices"
+    },
+    "kernel_checked": false,
+    "laplacian": [
+      [
+        "33/20",
+        "-9/10",
+        "-3/4",
+        "0"
+      ],
+      [
+        "-9/10",
+        "17/10",
+        "-4/5",
+        "0"
+      ],
+      [
+        "-3/4",
+        "-4/5",
+        "133/60",
+        "-2/3"
+      ],
+      [
+        "0",
+        "0",
+        "-2/3",
+        "2/3"
+      ]
+    ],
+    "schema": "pp-blast-similarity-geometry/1",
+    "scope": "supplied weighted similarity complex and Z/2 strand transport; no evolutionary direction or intrinsic surface asserted",
+    "spectral_moments": [
+      "187/30",
+      "3574/225",
+      "2342693/54000",
+      "196263743/1620000"
+    ],
+    "strand_transport": {
+      "components": [
+        {
+          "balanced": false,
+          "cycle_residuals": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "edges": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "lift_components": 1,
+          "tree_edges": [
+            0,
+            2,
+            3
+          ],
+          "vertices": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "kernel_dimension": 0,
+      "lift_components": 1,
+      "potentials": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "rank": 4
+    },
+    "triangles": [
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "vertices": 4
+  },
+  "graph_filtration": {
+    "complete": true,
+    "levels": [
+      {
+        "component_count": 3,
+        "components": [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "edge_count": 1,
+        "graph_cycle_rank": 0,
+        "threshold": "9/10"
+      },
+      {
+        "component_count": 2,
+        "components": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "edge_count": 2,
+        "graph_cycle_rank": 0,
+        "threshold": "4/5"
+      },
+      {
+        "component_count": 2,
+        "components": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "edge_count": 3,
+        "graph_cycle_rank": 1,
+        "threshold": "3/4"
+      },
+      {
+        "component_count": 1,
+        "components": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "edge_count": 4,
+        "graph_cycle_rank": 1,
+        "threshold": "2/3"
+      }
+    ],
+    "scope": "graph filtration of supplied weighted edges; graph cycles are not clique-complex holes"
+  },
+  "line": {
+    "complete": true,
+    "direction": [
+      "0",
+      "0",
+      "-1",
+      "0"
+    ],
+    "interval": [
+      "0",
+      "30"
+    ],
+    "origin": [
+      "2",
+      "-3",
+      "0",
+      "-1"
+    ],
+    "regions": [
+      {
+        "boundary_only": false,
+        "feature": [
+          0,
+          8,
+          0,
+          0
+        ],
+        "intercept": "-24",
+        "interval": [
+          "18",
+          "30"
+        ],
+        "slope": "0"
+      },
+      {
+        "boundary_only": false,
+        "feature": [
+          7,
+          0,
+          2,
+          2
+        ],
+        "intercept": "12",
+        "interval": [
+          "0",
+          "18"
+        ],
+        "slope": "-2"
+      }
+    ],
+    "schema": "pp-blast-line-atlas/1",
+    "scope": "closed optimality regions of supplied feature support; ties retained"
+  },
+  "optimal": {
+    "alignment_count": 1,
+    "complete": true,
+    "features": [
+      [
+        7,
+        0,
+        2,
+        2
+      ]
+    ],
+    "representative": {
+      "features": [
+        7,
+        0,
+        2,
+        2
+      ],
+      "operations": "DMMMMMMMI",
+      "query": "ACGTACGT-",
+      "subject": "-CGTACGTA"
+    },
+    "scope": "declared global alignment paths",
+    "score": "2"
+  },
+  "partition_statistics": {
+    "covariance": [
+      [
+        "7860248/6754801",
+        "-6510376/6754801",
+        "733836/6754801",
+        "-2699744/6754801"
+      ],
+      [
+        "-6510376/6754801",
+        "11861736/6754801",
+        "-1555716/6754801",
+        "-10702720/6754801"
+      ],
+      [
+        "733836/6754801",
+        "-1555716/6754801",
+        "4686570/6754801",
+        "1643760/6754801"
+      ],
+      [
+        "-2699744/6754801",
+        "-10702720/6754801",
+        "1643760/6754801",
+        "26804928/6754801"
+      ]
+    ],
+    "means": [
+      "2916/2599",
+      "9256/2599",
+      "9770/2599",
+      "17240/2599"
+    ],
+    "normalizer": "2599",
+    "scope": "finite supplied alignment population with rational monomial activities; no biological calibration"
+  },
+  "plane": {
+    "box": [
+      [
+        "0",
+        "8"
+      ],
+      [
+        "0",
+        "12"
+      ]
+    ],
+    "complete": true,
+    "directions": [
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-1",
+        "0"
+      ]
+    ],
+    "origin": [
+      "2",
+      "0",
+      "0",
+      "-1"
+    ],
+    "regions": [
+      {
+        "area": "9/2",
+        "boundary_only": false,
+        "feature": [
+          0,
+          8,
+          0,
+          0
+        ],
+        "vertices": [
+          [
+            "3/2",
+            "12"
+          ],
+          [
+            "0",
+            "12"
+          ],
+          [
+            "0",
+            "6"
+          ]
+        ]
+      },
+      {
+        "area": "183/2",
+        "boundary_only": false,
+        "feature": [
+          7,
+          0,
+          2,
+          2
+        ],
+        "vertices": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "8",
+            "0"
+          ],
+          [
+            "8",
+            "12"
+          ],
+          [
+            "3/2",
+            "12"
+          ],
+          [
+            "0",
+            "6"
+          ]
+        ]
+      }
+    ],
+    "schema": "pp-blast-plane-atlas/1",
+    "scope": "exact closed optimality polygons of supplied feature support, including lower-dimensional ties"
+  },
+  "real": {
+    "alignment": {
+      "all_optima_enumerated": false,
+      "character_policy": "literal equality; ambiguity symbols are not expanded",
+      "complete_score_search": true,
+      "coordinate_convention": "zero-based half-open",
+      "kernel_checked": false,
+      "mode": "local",
+      "operations": "MMMMMMMMMMMMMMMMMIMMMMMDMMMMMMMMMMMMMMMMMMMMMMMMMMIIMMMDDDDMMMMMMDMMMMMMIMMMIIMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMIMMMDMMMMMMDDDDDMMMMMMMMDDDDMMMMMMDDDDDDDDDDMMMMMDDMMMMMMMMMMIIMMMMMDDDDDMMMMIMMIIMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+      "query": "GCCATGGCCCTGTGGAT-GCGCCTCCTGCCCCTGCTGGCGCTGCTGGCCC--TCTGGGGACCTGACCCAGCC-GCA--GCCTTTGTGAACCAACACCTGTGCGGCTCACACCTGGTGGAAGCTCTCTACCTAGTGTGCGGGGAACGAGGCTTCTTCTACACACCCAAGACCCGCCGGGAGGCAGAGGA-CCTGCAGGTGGGGCAGGTGGAGCTGGGCGGGGGCCCTGGTGCAGGCAGCCTGCAGCCCTT--GGCCCTGGAGGGGT-CC--CTGCAGAAGCGTGGCATTGTGGAACAATGCTGTACCAGCATCTGCTCCCTCTACCAGCTGGAGAACTACTGCAACTAG",
+      "query_interval": [
+        56,
+        392
+      ],
+      "query_sha256": "2132509911c26572e7dfcaea140a3c893ab2cb6ec1d71cfe23b91fcf09ae4ff1",
+      "schema": "pp-blast-exact-alignment/1",
+      "scope": "supplied sequence pair, explicit affine model",
+      "score": "211",
+      "scoring": [
+        "2",
+        "-3",
+        "-5",
+        "-1"
+      ],
+      "subject": "GCCATGGCTCCCTGGATAGCTTC-CCTGTCTCTGACGGCCCTGCTGGTCCTGTCT----ACCCCA-CCAGCCGGCAAGGCCCTTGTCAACCAGCACCTGTGTGGCTCCCACCTGGTGGAGGCCTTGTACCTGGTGTGTGGGGAGAGGGGCTTCTTCTACACCCCCAAAGCACGCCGGGATGTGGAGCAGCCT-CTGGTG-----GGTGAAGC----CGGAGG----------GGAAG--AGCTGCCCTTCCCGCCC-----GAGTACCAACTACAGAAACGAGGCATCGTTGAGCAATGCTGCAACAGCATCTGCTCCCTCTACCAGCTGGAGACCTACTGCAATTAG",
+      "subject_interval": [
+        89,
+        404
+      ],
+      "subject_sha256": "416535a4f8d70921a07be7b149b1e71d85e7667213af51328dc3d9fda452a024",
+      "substitution": null
+    },
+    "blast_hsp_count": 17,
+    "compatible_chain_count": 3,
+    "query_accession": "NM_000207.3",
+    "query_file_sha256": "419b1b83e1808a71aa339b7bc0a42d1c11306680914f708b8598cb62ebc1f0d6",
+    "query_source": "https://www.ncbi.nlm.nih.gov/nuccore/NM_000207.3",
+    "subject_accession": "XM_043971863.1",
+    "subject_file_sha256": "24bb005cd419f63414b08169b905e7b31e119ed77cd1b970278de7cf29327d73",
+    "subject_source": "https://www.ncbi.nlm.nih.gov/nuccore/XM_043971863.1"
+  },
+  "representatives": {
+    "0,1,2,14": {
+      "features": [
+        0,
+        1,
+        2,
+        14
+      ],
+      "operations": "DDDDDDDMIIIIIII",
+      "query": "ACGTACGT-------",
+      "subject": "-------CGTACGTA"
+    },
+    "0,2,2,12": {
+      "features": [
+        0,
+        2,
+        2,
+        12
+      ],
+      "operations": "MDDDDDDMIIIIII",
+      "query": "ACGTACGT------",
+      "subject": "C------GTACGTA"
+    },
+    "0,2,3,12": {
+      "features": [
+        0,
+        2,
+        3,
+        12
+      ],
+      "operations": "DDMDDDDMIIIIII",
+      "query": "ACGTACGT------",
+      "subject": "--C----GTACGTA"
+    },
+    "0,3,2,10": {
+      "features": [
+        0,
+        3,
+        2,
+        10
+      ],
+      "operations": "MMIIIIIMDDDDD",
+      "query": "AC-----GTACGT",
+      "subject": "CGTACGTA-----"
+    },
+    "0,3,3,10": {
+      "features": [
+        0,
+        3,
+        3,
+        10
+      ],
+      "operations": "MDDDMIIIIIMDD",
+      "query": "ACGTA-----CGT",
+      "subject": "C---GTACGTA--"
+    },
+    "0,3,4,10": {
+      "features": [
+        0,
+        3,
+        4,
+        10
+      ],
+      "operations": "DDMDMIIIIIMDD",
+      "query": "ACGTA-----CGT",
+      "subject": "--C-GTACGTA--"
+    },
+    "0,4,2,8": {
+      "features": [
+        0,
+        4,
+        2,
+        8
+      ],
+      "operations": "MMMDDDDMIIII",
+      "query": "ACGTACGT----",
+      "subject": "CGT----ACGTA"
+    },
+    "0,4,3,8": {
+      "features": [
+        0,
+        4,
+        3,
+        8
+      ],
+      "operations": "MMDDMDDMIIII",
+      "query": "ACGTACGT----",
+      "subject": "CG--T--ACGTA"
+    },
+    "0,4,4,8": {
+      "features": [
+        0,
+        4,
+        4,
+        8
+      ],
+      "operations": "MDDMDMDMIIII",
+      "query": "ACGTACGT----",
+      "subject": "C--G-T-ACGTA"
+    },
+    "0,4,5,8": {
+      "features": [
+        0,
+        4,
+        5,
+        8
+      ],
+      "operations": "DDMDMDMIMIII",
+      "query": "ACGTACG-T---",
+      "subject": "--C-G-TACGTA"
+    },
+    "0,5,2,6": {
+      "features": [
+        0,
+        5,
+        2,
+        6
+      ],
+      "operations": "MMMMDDDMIII",
+      "query": "ACGTACGT---",
+      "subject": "CGTA---CGTA"
+    },
+    "0,5,3,6": {
+      "features": [
+        0,
+        5,
+        3,
+        6
+      ],
+      "operations": "MMMDDMDMIII",
+      "query": "ACGTACGT---",
+      "subject": "CGT--A-CGTA"
+    },
+    "0,5,4,6": {
+      "features": [
+        0,
+        5,
+        4,
+        6
+      ],
+      "operations": "MMDDMDMIMII",
+      "query": "ACGTACG-T--",
+      "subject": "CG--T-ACGTA"
+    },
+    "0,5,5,6": {
+      "features": [
+        0,
+        5,
+        5,
+        6
+      ],
+      "operations": "MIMDMIMIMDD",
+      "query": "A-CGT-A-CGT",
+      "subject": "CGT-ACGTA--"
+    },
+    "0,5,6,6": {
+      "features": [
+        0,
+        5,
+        6,
+        6
+      ],
+      "operations": "IMDMIMDMIMD",
+      "query": "-ACG-TAC-GT",
+      "subject": "CG-TAC-GTA-"
+    },
+    "0,6,2,4": {
+      "features": [
+        0,
+        6,
+        2,
+        4
+      ],
+      "operations": "MMMMMDDMII",
+      "query": "ACGTACGT--",
+      "subject": "CGTAC--GTA"
+    },
+    "0,6,3,4": {
+      "features": [
+        0,
+        6,
+        3,
+        4
+      ],
+      "operations": "MMMMIMIMDD",
+      "query": "ACGT-A-CGT",
+      "subject": "CGTACGTA--"
+    },
+    "0,6,4,4": {
+      "features": [
+        0,
+        6,
+        4,
+        4
+      ],
+      "operations": "MMMIMDMIMD",
+      "query": "ACG-TAC-GT",
+      "subject": "CGTAC-GTA-"
+    },
+    "0,7,2,2": {
+      "features": [
+        0,
+        7,
+        2,
+        2
+      ],
+      "operations": "MMMMMMIMD",
+      "query": "ACGTAC-GT",
+      "subject": "CGTACGTA-"
+    },
+    "0,8,0,0": {
+      "features": [
+        0,
+        8,
+        0,
+        0
+      ],
+      "operations": "MMMMMMMM",
+      "query": "ACGTACGT",
+      "subject": "CGTACGTA"
+    },
+    "1,0,2,14": {
+      "features": [
+        1,
+        0,
+        2,
+        14
+      ],
+      "operations": "IIIIIIIMDDDDDDD",
+      "query": "-------ACGTACGT",
+      "subject": "CGTACGTA-------"
+    },
+    "1,1,3,12": {
+      "features": [
+        1,
+        1,
+        3,
+        12
+      ],
+      "operations": "DMDDDDDMIIIIII",
+      "query": "ACGTACGT------",
+      "subject": "-C-----GTACGTA"
+    },
+    "1,2,2,10": {
+      "features": [
+        1,
+        2,
+        2,
+        10
+      ],
+      "operations": "MMDDDDDMIIIII",
+      "query": "ACGTACGT-----",
+      "subject": "CG-----TACGTA"
+    },
+    "1,2,3,10": {
+      "features": [
+        1,
+        2,
+        3,
+        10
+      ],
+      "operations": "MDMIIIIIMDDDD",
+      "query": "ACG-----TACGT",
+      "subject": "C-GTACGTA----"
+    },
+    "1,2,4,10": {
+      "features": [
+        1,
+        2,
+        4,
+        10
+      ],
+      "operations": "DMDDMIIIIIMDD",
+      "query": "ACGTA-----CGT",
+      "subject": "-C--GTACGTA--"
+    },
+    "1,3,3,8": {
+      "features": [
+        1,
+        3,
+        3,
+        8
+      ],
+      "operations": "MMDMDDDMIIII",
+      "query": "ACGTACGT----",
+      "subject": "CG-T---ACGTA"
+    },
+    "1,3,4,8": {
+      "features": [
+        1,
+        3,
+        4,
+        8
+      ],
+      "operations": "MDMDMDDMIIII",
+      "query": "ACGTACGT----",
+      "subject": "C-G-T--ACGTA"
+    },
+    "1,3,5,8": {
+      "features": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "operations": "DMDMDMDMIIII",
+      "query": "ACGTACGT----",
+      "subject": "-C-G-T-ACGTA"
+    },
+    "1,4,2,6": {
+      "features": [
+        1,
+        4,
+        2,
+        6
+      ],
+      "operations": "MMMMIIIMDDD",
+      "query": "ACGT---ACGT",
+      "subject": "CGTACGTA---"
+    },
+    "1,4,3,6": {
+      "features": [
+        1,
+        4,
+        3,
+        6
+      ],
+      "operations": "MMMDMDDMIII",
+      "query": "ACGTACGT---",
+      "subject": "CGT-A--CGTA"
+    },
+    "1,4,4,6": {
+      "features": [
+        1,
+        4,
+        4,
+        6
+      ],
+      "operations": "MMDMDMDMIII",
+      "query": "ACGTACGT---",
+      "subject": "CG-T-A-CGTA"
+    },
+    "1,4,5,6": {
+      "features": [
+        1,
+        4,
+        5,
+        6
+      ],
+      "operations": "MDMDMDMIMII",
+      "query": "ACGTACG-T--",
+      "subject": "C-G-T-ACGTA"
+    },
+    "1,4,6,6": {
+      "features": [
+        1,
+        4,
+        6,
+        6
+      ],
+      "operations": "DMIMIMDMIMD",
+      "query": "AC-G-TAC-GT",
+      "subject": "-CGTAC-GTA-"
+    },
+    "1,5,3,4": {
+      "features": [
+        1,
+        5,
+        3,
+        4
+      ],
+      "operations": "MMMMDMDMII",
+      "query": "ACGTACGT--",
+      "subject": "CGTA-C-GTA"
+    },
+    "1,5,4,4": {
+      "features": [
+        1,
+        5,
+        4,
+        4
+      ],
+      "operations": "MMMDMIMIMD",
+      "query": "ACGTA-C-GT",
+      "subject": "CGT-ACGTA-"
+    },
+    "1,6,2,2": {
+      "features": [
+        1,
+        6,
+        2,
+        2
+      ],
+      "operations": "MMMMMMDMI",
+      "query": "ACGTACGT-",
+      "subject": "CGTACG-TA"
+    },
+    "2,1,2,10": {
+      "features": [
+        2,
+        1,
+        2,
+        10
+      ],
+      "operations": "MDDDDDMMIIIII",
+      "query": "ACGTACGT-----",
+      "subject": "C-----GTACGTA"
+    },
+    "2,1,3,10": {
+      "features": [
+        2,
+        1,
+        3,
+        10
+      ],
+      "operations": "MDMDDDDMIIIII",
+      "query": "ACGTACGT-----",
+      "subject": "C-G----TACGTA"
+    },
+    "2,1,4,10": {
+      "features": [
+        2,
+        1,
+        4,
+        10
+      ],
+      "operations": "DMDMDDDMIIIII",
+      "query": "ACGTACGT-----",
+      "subject": "-C-G---TACGTA"
+    },
+    "2,2,3,8": {
+      "features": [
+        2,
+        2,
+        3,
+        8
+      ],
+      "operations": "MMDMIIIIMDDD",
+      "query": "ACGT----ACGT",
+      "subject": "CG-TACGTA---"
+    },
+    "2,2,4,8": {
+      "features": [
+        2,
+        2,
+        4,
+        8
+      ],
+      "operations": "MDMDDDMIIIMI",
+      "query": "ACGTACG---T-",
+      "subject": "C-G---TACGTA"
+    },
+    "2,2,5,8": {
+      "features": [
+        2,
+        2,
+        5,
+        8
+      ],
+      "operations": "DMDMDDMIIIMI",
+      "query": "ACGTACG---T-",
+      "subject": "-C-G--TACGTA"
+    },
+    "2,3,2,6": {
+      "features": [
+        2,
+        3,
+        2,
+        6
+      ],
+      "operations": "MMMIIIMMDDD",
+      "query": "ACG---TACGT",
+      "subject": "CGTACGTA---"
+    },
+    "2,3,3,6": {
+      "features": [
+        2,
+        3,
+        3,
+        6
+      ],
+      "operations": "MMDMMDDMIII",
+      "query": "ACGTACGT---",
+      "subject": "CG-TA--CGTA"
+    },
+    "2,3,4,6": {
+      "features": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "operations": "MMDMDDMIIMI",
+      "query": "ACGTACG--T-",
+      "subject": "CG-T--ACGTA"
+    },
+    "2,3,5,6": {
+      "features": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "operations": "MDMDMDMIIMI",
+      "query": "ACGTACG--T-",
+      "subject": "C-G-T-ACGTA"
+    },
+    "2,3,6,6": {
+      "features": [
+        2,
+        3,
+        6,
+        6
+      ],
+      "operations": "DMDMDMIMIMI",
+      "query": "ACGTAC-G-T-",
+      "subject": "-C-G-TACGTA"
+    },
+    "2,4,3,4": {
+      "features": [
+        2,
+        4,
+        3,
+        4
+      ],
+      "operations": "MMMDMMDMII",
+      "query": "ACGTACGT--",
+      "subject": "CGT-AC-GTA"
+    },
+    "2,4,4,4": {
+      "features": [
+        2,
+        4,
+        4,
+        4
+      ],
+      "operations": "MMMDMDMIMI",
+      "query": "ACGTACG-T-",
+      "subject": "CGT-A-CGTA"
+    },
+    "2,5,2,2": {
+      "features": [
+        2,
+        5,
+        2,
+        2
+      ],
+      "operations": "MMMMMDMMI",
+      "query": "ACGTACGT-",
+      "subject": "CGTAC-GTA"
+    },
+    "3,0,2,10": {
+      "features": [
+        3,
+        0,
+        2,
+        10
+      ],
+      "operations": "DDDDDMMMIIIII",
+      "query": "ACGTACGT-----",
+      "subject": "-----CGTACGTA"
+    },
+    "3,0,3,10": {
+      "features": [
+        3,
+        0,
+        3,
+        10
+      ],
+      "operations": "DMMDDDDMIIIII",
+      "query": "ACGTACGT-----",
+      "subject": "-CG----TACGTA"
+    },
+    "3,0,4,10": {
+      "features": [
+        3,
+        0,
+        4,
+        10
+      ],
+      "operations": "DMDDDDMIIIIMI",
+      "query": "ACGTACG----T-",
+      "subject": "-C----GTACGTA"
+    },
+    "3,1,3,8": {
+      "features": [
+        3,
+        1,
+        3,
+        8
+      ],
+      "operations": "MDMMIIIIMDDD",
+      "query": "ACGT----ACGT",
+      "subject": "C-GTACGTA---"
+    },
+    "3,1,4,8": {
+      "features": [
+        3,
+        1,
+        4,
+        8
+      ],
+      "operations": "DMMDDDMIIIMI",
+      "query": "ACGTACG---T-",
+      "subject": "-CG---TACGTA"
+    },
+    "3,2,2,6": {
+      "features": [
+        3,
+        2,
+        2,
+        6
+      ],
+      "operations": "MMIIIMMMDDD",
+      "query": "AC---GTACGT",
+      "subject": "CGTACGTA---"
+    },
+    "3,2,3,6": {
+      "features": [
+        3,
+        2,
+        3,
+        6
+      ],
+      "operations": "MDMMMDDMIII",
+      "query": "ACGTACGT---",
+      "subject": "C-GTA--CGTA"
+    },
+    "3,2,4,6": {
+      "features": [
+        3,
+        2,
+        4,
+        6
+      ],
+      "operations": "MDMMDDMIIMI",
+      "query": "ACGTACG--T-",
+      "subject": "C-GT--ACGTA"
+    },
+    "3,2,5,6": {
+      "features": [
+        3,
+        2,
+        5,
+        6
+      ],
+      "operations": "DMMDMDMIIMI",
+      "query": "ACGTACG--T-",
+      "subject": "-CG-T-ACGTA"
+    },
+    "3,2,6,6": {
+      "features": [
+        3,
+        2,
+        6,
+        6
+      ],
+      "operations": "DMDMIMDMIMI",
+      "query": "ACGT-ACG-T-",
+      "subject": "-C-GTA-CGTA"
+    },
+    "3,3,3,4": {
+      "features": [
+        3,
+        3,
+        3,
+        4
+      ],
+      "operations": "MMDMMMDMII",
+      "query": "ACGTACGT--",
+      "subject": "CG-TAC-GTA"
+    },
+    "3,3,4,4": {
+      "features": [
+        3,
+        3,
+        4,
+        4
+      ],
+      "operations": "MMDMMDMIMI",
+      "query": "ACGTACG-T-",
+      "subject": "CG-TA-CGTA"
+    },
+    "3,4,2,2": {
+      "features": [
+        3,
+        4,
+        2,
+        2
+      ],
+      "operations": "MMMMDMMMI",
+      "query": "ACGTACGT-",
+      "subject": "CGTA-CGTA"
+    },
+    "4,0,3,8": {
+      "features": [
+        4,
+        0,
+        3,
+        8
+      ],
+      "operations": "DMMMIIIIMDDD",
+      "query": "ACGT----ACGT",
+      "subject": "-CGTACGTA---"
+    },
+    "4,1,2,6": {
+      "features": [
+        4,
+        1,
+        2,
+        6
+      ],
+      "operations": "MIIIMMMMDDD",
+      "query": "A---CGTACGT",
+      "subject": "CGTACGTA---"
+    },
+    "4,1,3,6": {
+      "features": [
+        4,
+        1,
+        3,
+        6
+      ],
+      "operations": "DMMMMDDMIII",
+      "query": "ACGTACGT---",
+      "subject": "-CGTA--CGTA"
+    },
+    "4,1,4,6": {
+      "features": [
+        4,
+        1,
+        4,
+        6
+      ],
+      "operations": "DMMMDDMIIMI",
+      "query": "ACGTACG--T-",
+      "subject": "-CGT--ACGTA"
+    },
+    "4,2,3,4": {
+      "features": [
+        4,
+        2,
+        3,
+        4
+      ],
+      "operations": "MDMMMMDMII",
+      "query": "ACGTACGT--",
+      "subject": "C-GTAC-GTA"
+    },
+    "4,2,4,4": {
+      "features": [
+        4,
+        2,
+        4,
+        4
+      ],
+      "operations": "MDMMMDMIMI",
+      "query": "ACGTACG-T-",
+      "subject": "C-GTA-CGTA"
+    },
+    "4,3,2,2": {
+      "features": [
+        4,
+        3,
+        2,
+        2
+      ],
+      "operations": "MMMDMMMMI",
+      "query": "ACGTACGT-",
+      "subject": "CGT-ACGTA"
+    },
+    "5,0,2,6": {
+      "features": [
+        5,
+        0,
+        2,
+        6
+      ],
+      "operations": "IIIMMMMMDDD",
+      "query": "---ACGTACGT",
+      "subject": "CGTACGTA---"
+    },
+    "5,1,3,4": {
+      "features": [
+        5,
+        1,
+        3,
+        4
+      ],
+      "operations": "DMMMMMDMII",
+      "query": "ACGTACGT--",
+      "subject": "-CGTAC-GTA"
+    },
+    "5,1,4,4": {
+      "features": [
+        5,
+        1,
+        4,
+        4
+      ],
+      "operations": "DMMMMDMIMI",
+      "query": "ACGTACG-T-",
+      "subject": "-CGTA-CGTA"
+    },
+    "5,2,2,2": {
+      "features": [
+        5,
+        2,
+        2,
+        2
+      ],
+      "operations": "MMDMMMMMI",
+      "query": "ACGTACGT-",
+      "subject": "CG-TACGTA"
+    },
+    "6,1,2,2": {
+      "features": [
+        6,
+        1,
+        2,
+        2
+      ],
+      "operations": "MDMMMMMMI",
+      "query": "ACGTACGT-",
+      "subject": "C-GTACGTA"
+    },
+    "7,0,2,2": {
+      "features": [
+        7,
+        0,
+        2,
+        2
+      ],
+      "operations": "DMMMMMMMI",
+      "query": "ACGTACGT-",
+      "subject": "-CGTACGTA"
+    }
+  },
+  "robustness": {
+    "scope": "independent perturbations of all four signed weights; winner remains weakly optimal inside closed radius",
+    "score": "2",
+    "winners": [
+      {
+        "feature": [
+          7,
+          0,
+          2,
+          2
+        ],
+        "linfinity_radius": "4/3"
+      }
+    ]
+  },
+  "schema": "pp-blast-atlas-demo/1",
+  "scopes": [
+    "The complete polynomial covers the two displayed illustrative words under global alignment, literal character equality, affine gaps, and no immediately opposing gaps.",
+    "The real transcript example searches every cell of the supplied sequence pair under an explicit local affine model. It returns one optimum and does not supply a calibrated BLAST E-value.",
+    "The Hodge and strand-transport example is a supplied illustrative graph. Its topology is not a biological conclusion.",
+    "SOE source generation invokes the existing generic compiler. Actual Lean acceptance is recorded in kernel_build.json; polynomial population generation remains tested Python."
+  ],
+  "sensitivity_jet": {
+    "coefficients": [
+      "2599",
+      "2916",
+      "1690",
+      "670",
+      "203"
+    ],
+    "order": 4,
+    "scope": "exact Taylor coefficients of finite alignment partition polynomial; no unknown higher coefficients asserted"
+  },
+  "soe": {
+    "class_count": 8,
+    "generated_lean_path": "PerfectPower/Generated/BlastAlignmentSOE.lean",
+    "kernel_checked": true,
+    "model": {
+      "actions": {
+        "D_extend": [
+          null,
+          null,
+          8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "D_open": [
+          2,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          12,
+          null,
+          null,
+          null
+        ],
+        "I_extend": [
+          null,
+          null,
+          null,
+          10,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "I_open": [
+          3,
+          6,
+          null,
+          null,
+          null,
+          null,
+          null,
+          11,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "match": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "mismatch": [
+          null,
+          4,
+          7,
+          9,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "observations": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    "quotient": {
+      "blocks": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4,
+          11,
+          12
+        ],
+        [
+          5,
+          6,
+          8,
+          10
+        ],
+        [
+          7
+        ],
+        [
+          9
+        ]
+      ],
+      "distinguishing_witnesses": [
+        {
+          "first": 0,
+          "reason": "legality",
+          "second": 1,
+          "word": [
+            "match"
+          ]
+        },
+        {
+          "first": 0,
+          "reason": "legality",
+          "second": 2,
+          "word": [
+            "D_extend"
+          ]
+        },
+        {
+          "first": 0,
+          "reason": "legality",
+          "second": 3,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 0,
+          "reason": "observation",
+          "second": 4,
+          "word": []
+        },
+        {
+          "first": 0,
+          "reason": "legality",
+          "second": 5,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 0,
+          "reason": "legality",
+          "second": 7,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 0,
+          "reason": "observation",
+          "second": 9,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 1,
+          "reason": "legality",
+          "second": 2,
+          "word": [
+            "D_extend"
+          ]
+        },
+        {
+          "first": 1,
+          "reason": "legality",
+          "second": 3,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 1,
+          "reason": "observation",
+          "second": 4,
+          "word": []
+        },
+        {
+          "first": 1,
+          "reason": "legality",
+          "second": 5,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 1,
+          "reason": "legality",
+          "second": 7,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 1,
+          "reason": "observation",
+          "second": 9,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 2,
+          "reason": "legality",
+          "second": 3,
+          "word": [
+            "D_extend"
+          ]
+        },
+        {
+          "first": 2,
+          "reason": "observation",
+          "second": 4,
+          "word": []
+        },
+        {
+          "first": 2,
+          "reason": "legality",
+          "second": 5,
+          "word": [
+            "D_extend"
+          ]
+        },
+        {
+          "first": 2,
+          "reason": "legality",
+          "second": 7,
+          "word": [
+            "D_extend"
+          ]
+        },
+        {
+          "first": 2,
+          "reason": "legality",
+          "second": 9,
+          "word": [
+            "D_extend"
+          ]
+        },
+        {
+          "first": 3,
+          "reason": "observation",
+          "second": 4,
+          "word": []
+        },
+        {
+          "first": 3,
+          "reason": "legality",
+          "second": 5,
+          "word": [
+            "I_extend"
+          ]
+        },
+        {
+          "first": 3,
+          "reason": "legality",
+          "second": 7,
+          "word": [
+            "I_extend"
+          ]
+        },
+        {
+          "first": 3,
+          "reason": "legality",
+          "second": 9,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 4,
+          "reason": "observation",
+          "second": 5,
+          "word": []
+        },
+        {
+          "first": 4,
+          "reason": "observation",
+          "second": 7,
+          "word": []
+        },
+        {
+          "first": 4,
+          "reason": "observation",
+          "second": 9,
+          "word": []
+        },
+        {
+          "first": 5,
+          "reason": "legality",
+          "second": 7,
+          "word": [
+            "I_open"
+          ]
+        },
+        {
+          "first": 5,
+          "reason": "legality",
+          "second": 9,
+          "word": [
+            "D_open"
+          ]
+        },
+        {
+          "first": 7,
+          "reason": "legality",
+          "second": 9,
+          "word": [
+            "D_open"
+          ]
+        }
+      ],
+      "model_id": "61aa7c3f3f6c24334b9ffbb2e5038a02a0ecfab98ffce448a1d3c61b7f11fdf0",
+      "projection": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        5,
+        6,
+        5,
+        7,
+        5,
+        4,
+        4
+      ],
+      "quotient": {
+        "actions": {
+          "D_extend": [
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "D_open": [
+            2,
+            5,
+            null,
+            null,
+            null,
+            null,
+            null,
+            4
+          ],
+          "I_extend": [
+            null,
+            null,
+            null,
+            5,
+            null,
+            null,
+            null,
+            null
+          ],
+          "I_open": [
+            3,
+            5,
+            null,
+            null,
+            null,
+            null,
+            4,
+            null
+          ],
+          "match": [
+            1,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "mismatch": [
+            null,
+            4,
+            6,
+            7,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        "observations": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "refinement_rounds": 2,
+      "schema": "pp-future-quotient/1",
+      "scope": "coarsest exact observation-and-legality quotient of supplied finite deterministic model"
+    },
+    "scope": "all finite words of supplied feature-labelled or motif partial machine",
+    "source_sha256": "885b18e5c8cb63b5e339d19058d04411dcb347795d8d28f14f4c2f1494fb46a7",
+    "state_count": 13,
+    "state_labels": [
+      [
+        0,
+        0,
+        "M"
+      ],
+      [
+        1,
+        1,
+        "M"
+      ],
+      [
+        1,
+        0,
+        "D"
+      ],
+      [
+        0,
+        1,
+        "I"
+      ],
+      [
+        2,
+        2,
+        "M"
+      ],
+      [
+        2,
+        1,
+        "D"
+      ],
+      [
+        1,
+        2,
+        "I"
+      ],
+      [
+        2,
+        1,
+        "M"
+      ],
+      [
+        2,
+        0,
+        "D"
+      ],
+      [
+        1,
+        2,
+        "M"
+      ],
+      [
+        0,
+        2,
+        "I"
+      ],
+      [
+        2,
+        2,
+        "I"
+      ],
+      [
+        2,
+        2,
+        "D"
+      ]
+    ]
+  }
+}

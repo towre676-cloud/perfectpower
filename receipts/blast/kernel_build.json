@@ -1,0 +1,75 @@
+{
+  "accepted": true,
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "modules": [
+    {
+      "accepted": true,
+      "axioms": [],
+      "log": "lean_soe_semantics.log",
+      "module": "PerfectPower/SOESemantics.lean",
+      "returncode": 0,
+      "source_sha256": "34a8c866b659166a55e4f73f4f693fa800a9a5ba0d822c41a43339e2ac663b25"
+    },
+    {
+      "accepted": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "log": "lean_scoring.log",
+      "module": "PerfectPower/BlastAlignment.lean",
+      "returncode": 0,
+      "source_sha256": "e6215ab5d84e4d6744de3d89e84197a97e598c0d35f21089d27d445b7d99fb55"
+    },
+    {
+      "accepted": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "log": "lean_alignment_soe.log",
+      "module": "PerfectPower/Generated/BlastAlignmentSOE.lean",
+      "returncode": 0,
+      "source_sha256": "885b18e5c8cb63b5e339d19058d04411dcb347795d8d28f14f4c2f1494fb46a7"
+    },
+    {
+      "accepted": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "log": "lean_motif_soe.log",
+      "module": "PerfectPower/Generated/BlastMotifSOE.lean",
+      "returncode": 0,
+      "source_sha256": "26344bee68a794ec7422e838b6c833e3cda468159e97c30809afc06c75f33e00"
+    },
+    {
+      "accepted": true,
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "log": "lean_path_counts.log",
+      "module": "PerfectPower/Generated/BlastPathCounts.lean",
+      "returncode": 0,
+      "source_sha256": "26af543933569cd4e869c08afb0a57407f264119e2af69ff8d2f817b57832629"
+    },
+    {
+      "accepted": true,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "log": "lean_retained_scores.log",
+      "module": "PerfectPower/Generated/BlastScores.lean",
+      "returncode": 0,
+      "source_sha256": "878502d2f4e0cfd4acc07c3ef592bf51e6c8a75c73d6312e9dae0d96a7c0f4de"
+    }
+  ],
+  "schema": "pp-blast-kernel-build/1",
+  "scope": "listed generic scoring/path-length theorems and literal finite SOE/count/score packets; not Python DP correctness"
+}

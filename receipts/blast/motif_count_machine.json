@@ -1,0 +1,272 @@
+{
+  "machine": {
+    "closure_products": 7,
+    "execution_verified": false,
+    "field": "Q",
+    "hankel_columns": [
+      0,
+      1,
+      2
+    ],
+    "hankel_determinant": "-8",
+    "hankel_minor": [
+      [
+        "0",
+        "0",
+        "2"
+      ],
+      [
+        "0",
+        "2",
+        "8"
+      ],
+      [
+        "2",
+        "8",
+        "32"
+      ]
+    ],
+    "minimal_dimension": 3,
+    "observable_rows": [
+      [
+        "0",
+        "0",
+        "2",
+        "8"
+      ],
+      [
+        "0",
+        "2",
+        "8",
+        "32"
+      ],
+      [
+        "2",
+        "8",
+        "32",
+        "128"
+      ]
+    ],
+    "operators": [
+      [
+        [
+          "2",
+          "2",
+          "1",
+          "1",
+          "2",
+          "2"
+        ],
+        [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "0"
+        ]
+      ]
+    ],
+    "operators_minimal": [
+      [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "4"
+        ]
+      ]
+    ],
+    "reachable_basis": [
+      [
+        "1",
+        "2",
+        "7",
+        "28"
+      ],
+      [
+        "0",
+        "1",
+        "4",
+        "16"
+      ],
+      [
+        "0",
+        "1",
+        "3",
+        "12"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "4"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "3"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "reachable_dimension": 4,
+    "reachable_seed": [
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    "readout_words": [
+      [
+        0,
+        []
+      ],
+      [
+        0,
+        [
+          0
+        ]
+      ],
+      [
+        0,
+        [
+          0,
+          0
+        ]
+      ]
+    ],
+    "readouts": [
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "1",
+        "1"
+      ]
+    ],
+    "readouts_minimal": [
+      [
+        "1",
+        "0",
+        "0"
+      ]
+    ],
+    "restricted_operators": [
+      [
+        [
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "4"
+        ]
+      ]
+    ],
+    "schema": "pp-observable-machine/1",
+    "scope": "all finite operator words and supplied readouts; minimal linear state dimension, not integral coordinates or primitive-call optimality",
+    "seed": [
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    "seed_minimal": [
+      "0",
+      "0",
+      "2"
+    ],
+    "state_dimension": 6,
+    "state_words": [
+      [],
+      [
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "word_order": "chronological column-vector execution"
+  },
+  "prefixes": [
+    "",
+    "A",
+    "C",
+    "AC",
+    "CG",
+    "ACG"
+  ],
+  "scope": "counts of alphabet words ending in at least one supplied motif; not occurrence counts or sequence probabilities"
+}
