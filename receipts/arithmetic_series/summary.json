@@ -1,0 +1,37 @@
+{
+  "pell_unit": [
+    3,
+    2
+  ],
+  "pell_index": 100,
+  "pell_x100": "17951761589238335699019986481093877447231503480108456366071358164733843471937",
+  "pell_y100": "12693812353994620481037986488739368440399451028645237163046012909971924256728",
+  "fibonacci_square_residue_filter": {
+    "modulus": 8,
+    "exclusive_stop": 1000000000000,
+    "passing_indices": 416666666668,
+    "scope": "necessary congruence condition; not a count of actual Fibonacci squares"
+  },
+  "stored_point_one_squared": {
+    "schema": "perfectpower.binary64-polynomial/1",
+    "word": 4591870180066957722,
+    "hex": "3fb999999999999a",
+    "classification": "normal",
+    "argument": "3602879701896397/36028797018963968",
+    "coefficients": [
+      "0",
+      "0",
+      "1"
+    ],
+    "degree": 2,
+    "value": "12980742146337070512478121581609/1298074214633706907132624082305024",
+    "is_power": true,
+    "root": "3602879701896397/36028797018963968",
+    "scope": "exact rational polynomial evaluated at the exact stored finite binary64 argument; rounded polynomial arithmetic excluded",
+    "verification": "exact arithmetic reconstruction; no new Lean theorem"
+  },
+  "cancellation": {
+    "sequential": 0.0,
+    "exact_dot_round_once": 1.0
+  }
+}

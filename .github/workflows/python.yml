@@ -30,3 +30,7 @@ jobs:
         run: |
           make structural-math
           git diff --exit-code -- receipts/structural_math/
+      - name: Reproduce exact arithmetic-series and binary64 receipts
+        run: |
+          PYTHONPATH=python python python/run_arithmetic_series.py
+          git diff --exit-code -- receipts/arithmetic_series/

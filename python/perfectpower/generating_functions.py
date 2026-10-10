@@ -49,6 +49,16 @@ class RationalSeries:
                 'scope': 'all nonnegative formal coefficients of this supplied rational function',
                 'execution_verified': False}
 
+    def realization_certificate(self):
+        """Exact sequence realization with a nonzero Hankel minimality witness."""
+        from .generating import RationalGF
+        return RationalGF(self.numerator,self.denominator).packet()
+
+    def analytic_tail(self, argument, radius, count):
+        """Certified Cauchy remainder where the explicit disk test succeeds."""
+        from .generating import RationalGF
+        return RationalGF(self.numerator,self.denominator).tail(argument,radius,count)
+
     def evidence(self):
         from .recurrence import from_generating_function
         model = from_generating_function(self.numerator, self.denominator)

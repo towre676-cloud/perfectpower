@@ -61,6 +61,11 @@ class Recurrence:
                         for i in range(self.order))
         return P.poly(numerator),P.poly(denominator)
 
+    def minimal_generating_function(self):
+        """Cancellation-aware OGF, incl. exact sequence realization/minimality."""
+        from .generating import from_recurrence
+        return from_recurrence(self.coefficients,self.initial)
+
     def cycle(self,modulus,*,state_limit=100_000):
         if type(modulus) is not int or modulus<2 or type(state_limit) is not int or state_limit<1:
             raise ValueError('modulus>=2 and positive state budget required')

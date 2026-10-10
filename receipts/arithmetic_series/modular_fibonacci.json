@@ -1,0 +1,117 @@
+{
+  "schema": "perfectpower.modular-power-gf/1",
+  "coefficients": [
+    "1",
+    "1"
+  ],
+  "initial": [
+    "0",
+    "1"
+  ],
+  "degree": 2,
+  "modulus": 8,
+  "state_limit": 10000,
+  "cycle_table": {
+    "modulus": 8,
+    "states": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        5,
+        0
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        7,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "preperiod": 0,
+    "period": 12,
+    "execution_verified": false,
+    "prefix_hits": [],
+    "cycle_hits": [
+      0,
+      1,
+      2,
+      6,
+      11
+    ],
+    "scope": "nonnegative indices of this supplied recurrence modulo the stated modulus"
+  },
+  "accepted_index_gf": {
+    "numerator": [
+      "1",
+      "1",
+      "1",
+      "0",
+      "0",
+      "0",
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "1"
+    ],
+    "denominator": [
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "-1"
+    ]
+  },
+  "power_residues": [
+    0,
+    1,
+    4
+  ],
+  "scope": "exact nonnegative recurrence indices passing this modular power condition; necessary filter, not a complete integer-power solution set",
+  "verification": "reconstruct completed finite-state cycle; no new Lean theorem"
+}
