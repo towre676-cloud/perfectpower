@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "perfectpower"
-version = "0.9.6"
+version = "0.9.7"
 description = "Exact classification, complete enumeration and Lean certificates for perfect-power values of polynomials"
 readme = "python/README.md"
 requires-python = ">=3.10"
@@ -14,6 +14,7 @@ dependencies = []          # standard library only
 [project.optional-dependencies]
 test = ["pytest>=8"]
 industrial = ["z3-solver==5.1.0.0"]
+planning-benchmark = ["ortools==9.15.6755"]
 analytic = ["numpy>=1.23", "scipy>=1.9"]
 intervals = ["python-flint>=0.9,<0.10", "numpy>=1.23", "scipy>=1.9", "sympy>=1.12"]
 research = ["z3-solver==5.1.0.0", "python-flint>=0.9,<0.10", "numpy>=1.23", "scipy>=1.9", "sympy>=1.12"]

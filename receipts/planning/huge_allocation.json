@@ -1,0 +1,198 @@
+{
+  "schema": "pp-planning-request/1",
+  "summary": {
+    "schema": "pp-completion-planner/1",
+    "kind": "allocation",
+    "strategy": "gf",
+    "count": 41666666667041666666667750000000001,
+    "optimization": {
+      "maximum": "1000000000000",
+      "maximizer_count": 41666666667041666666667750000000001,
+      "point": [
+        0,
+        0,
+        0,
+        500000000000
+      ]
+    },
+    "compiled_states": 0,
+    "compiled_edges": 0,
+    "memo_entries": 0,
+    "source_states": null,
+    "compiled_candidates": 0,
+    "reused_entries": 0,
+    "reduced_states": null,
+    "ordering": "lexicographic original variable values",
+    "execution_verified": false
+  },
+  "answers": [
+    {
+      "schema": "pp-completion-planner/1",
+      "kind": "allocation",
+      "strategy": "gf",
+      "count": 41666666667041666666667750000000001,
+      "optimization": {
+        "maximum": "1000000000000",
+        "maximizer_count": 41666666667041666666667750000000001,
+        "point": [
+          0,
+          0,
+          0,
+          500000000000
+        ]
+      },
+      "compiled_states": 0,
+      "compiled_edges": 0,
+      "memo_entries": 0,
+      "source_states": null,
+      "compiled_candidates": 0,
+      "reused_entries": 0,
+      "reduced_states": null,
+      "ordering": "lexicographic original variable values",
+      "execution_verified": false
+    },
+    [
+      24132887343,
+      16866718385,
+      667382909127,
+      137375383380
+    ],
+    [
+      0,
+      0,
+      0,
+      500000000000
+    ],
+    {
+      "schema": "pp-completion-planner/1",
+      "kind": "allocation",
+      "strategy": "gf",
+      "count": 41666666667041666666667750000000001,
+      "optimization": {
+        "maximum": "1000000000000",
+        "maximizer_count": 41666666667041666666667750000000001,
+        "point": [
+          0,
+          0,
+          0,
+          500000000000
+        ]
+      },
+      "compiled_states": 0,
+      "compiled_edges": 0,
+      "memo_entries": 0,
+      "source_states": null,
+      "compiled_candidates": 0,
+      "reused_entries": 0,
+      "reduced_states": null,
+      "ordering": "lexicographic original variable values",
+      "execution_verified": false,
+      "specification": {
+        "kind": "allocation",
+        "resources": [
+          {
+            "name": "budget",
+            "min": 1000000000000,
+            "max": 1000000000000
+          }
+        ],
+        "variables": [
+          {
+            "name": "resource_0",
+            "costs": [
+              1
+            ],
+            "upper": null,
+            "profit": 1
+          },
+          {
+            "name": "resource_1",
+            "costs": [
+              2
+            ],
+            "upper": null,
+            "profit": 2
+          },
+          {
+            "name": "resource_2",
+            "costs": [
+              1
+            ],
+            "upper": null,
+            "profit": 1
+          },
+          {
+            "name": "resource_3",
+            "costs": [
+              2
+            ],
+            "upper": null,
+            "profit": 2
+          }
+        ]
+      },
+      "quotient": null,
+      "generating_function": {
+        "schema": "pp-budget-population/1",
+        "specification": {
+          "coordinates": [
+            {
+              "weight": 1,
+              "lower": 0,
+              "modulus": 1,
+              "residue": 0,
+              "upper": null
+            },
+            {
+              "weight": 2,
+              "lower": 0,
+              "modulus": 1,
+              "residue": 0,
+              "upper": null
+            },
+            {
+              "weight": 1,
+              "lower": 0,
+              "modulus": 1,
+              "residue": 0,
+              "upper": null
+            },
+            {
+              "weight": 2,
+              "lower": 0,
+              "modulus": 1,
+              "residue": 0,
+              "upper": null
+            }
+          ]
+        },
+        "offset": 0,
+        "empty": false,
+        "ordering": "lexicographic original coordinate tuple",
+        "scope": "nonnegative integer tuples satisfying the supplied coordinate restrictions and exact weighted budget",
+        "execution_verified": false,
+        "series": {
+          "shift": 0,
+          "rational_part": {
+            "schema": "pp-rational-series/1",
+            "numerator": [
+              "1"
+            ],
+            "denominator": [
+              "1",
+              "-2",
+              "-1",
+              "4",
+              "-1",
+              "-2",
+              "1"
+            ],
+            "scope": "all nonnegative formal coefficients of this supplied rational function",
+            "execution_verified": false
+          }
+        },
+        "rank_method": "coefficient differences and binary search over each original coordinate"
+      }
+    }
+  ]
+}

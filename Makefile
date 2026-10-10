@@ -530,6 +530,16 @@ check-integrity:
 .PHONY: series-kernel
 
 .PHONY: exact-space-showcase exact-space-test
+.PHONY: planning planning-test planning-kernel planning-benchmark
+planning:
+	PYTHONPATH=python python python/run_planning.py
+planning-test:
+	PYTHONPATH=python python -m unittest python/tests/test_planning.py
+planning-kernel:
+	python scripts/check_planning_kernel.py
+planning-benchmark:
+	PYTHONPATH=python python python/run_planning.py --benchmark
+	PYTHONPATH=python python python/run_planning_memory.py
 exact-space-showcase:
 	PYTHONPATH=python python python/run_exact_space_showcase.py --benchmark
 

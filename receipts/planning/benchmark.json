@@ -1,0 +1,1101 @@
+{
+  "schema": "pp-planning-benchmark/1",
+  "public_cases": [
+    {
+      "name": "petersen_6",
+      "variables": 6,
+      "constraints": 10,
+      "published_optimum": "3800",
+      "state_limit": 200000,
+      "planner": {
+        "status": "complete",
+        "summary": {
+          "schema": "pp-completion-planner/1",
+          "kind": "allocation",
+          "strategy": "gray",
+          "count": 28,
+          "optimization": {
+            "maximum": "3800",
+            "maximizer_count": 1,
+            "point": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ]
+          },
+          "compiled_states": 0,
+          "compiled_edges": 0,
+          "memo_entries": 0,
+          "source_states": null,
+          "compiled_candidates": 64,
+          "reused_entries": 0,
+          "reduced_states": null,
+          "ordering": "lexicographic original variable values",
+          "execution_verified": false
+        }
+      },
+      "exact_answers": {
+        "count": 28,
+        "optimization": {
+          "maximum": "3800",
+          "maximizer_count": 1,
+          "point": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "bank": [
+          {
+            "rank": 0,
+            "point": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "reverse_rank": 0,
+            "prefix_count": 5
+          },
+          {
+            "rank": 7,
+            "point": [
+              0,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "reverse_rank": 7,
+            "prefix_count": 4
+          },
+          {
+            "rank": 14,
+            "point": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "reverse_rank": 14,
+            "prefix_count": 3
+          },
+          {
+            "rank": 21,
+            "point": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              1
+            ],
+            "reverse_rank": 21,
+            "prefix_count": 3
+          },
+          {
+            "rank": 27,
+            "point": [
+              1,
+              1,
+              1,
+              0,
+              1,
+              0
+            ],
+            "reverse_rank": 27,
+            "prefix_count": 2
+          }
+        ]
+      },
+      "ortools": {
+        "maximum": "3800",
+        "point": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "optimal": true
+      },
+      "seconds": {
+        "planner_cold": [
+          0.0005796519999421434,
+          0.00036035200173500925,
+          0.00033055799940484576
+        ],
+        "planner_bank_warm": [
+          3.104920006080647e-05,
+          3.327905005789944e-05,
+          3.2461849968967726e-05
+        ],
+        "gray_cold": [
+          0.00020585899983416311,
+          0.00016901400158531033,
+          0.00015232899932016153
+        ],
+        "gray_bank_warm": [
+          9.053100075107069e-06,
+          9.280999984184746e-06,
+          8.941950000007637e-06
+        ],
+        "ortools_optimization_only": [
+          0.03454278099889052,
+          5.501200030266773e-05,
+          4.258399894752074e-05
+        ]
+      },
+      "median_seconds": {
+        "planner_cold": 0.00036035200173500925,
+        "planner_bank_warm": 3.2461849968967726e-05,
+        "gray_cold": 0.00016901400158531033,
+        "gray_bank_warm": 9.053100075107069e-06,
+        "ortools_optimization_only": 5.501200030266773e-05
+      }
+    },
+    {
+      "name": "petersen_10",
+      "variables": 10,
+      "constraints": 10,
+      "published_optimum": "8706.1",
+      "state_limit": 200000,
+      "planner": {
+        "status": "complete",
+        "summary": {
+          "schema": "pp-completion-planner/1",
+          "kind": "allocation",
+          "strategy": "gray",
+          "count": 644,
+          "optimization": {
+            "maximum": "87061/10",
+            "maximizer_count": 1,
+            "point": [
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "compiled_states": 0,
+          "compiled_edges": 0,
+          "memo_entries": 0,
+          "source_states": null,
+          "compiled_candidates": 1024,
+          "reused_entries": 0,
+          "reduced_states": null,
+          "ordering": "lexicographic original variable values",
+          "execution_verified": false
+        }
+      },
+      "exact_answers": {
+        "count": 644,
+        "optimization": {
+          "maximum": "87061/10",
+          "maximizer_count": 1,
+          "point": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "bank": [
+          {
+            "rank": 0,
+            "point": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "reverse_rank": 0,
+            "prefix_count": 104
+          },
+          {
+            "rank": 161,
+            "point": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "reverse_rank": 161,
+            "prefix_count": 72
+          },
+          {
+            "rank": 322,
+            "point": [
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              0
+            ],
+            "reverse_rank": 322,
+            "prefix_count": 72
+          },
+          {
+            "rank": 483,
+            "point": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "reverse_rank": 483,
+            "prefix_count": 56
+          },
+          {
+            "rank": 643,
+            "point": [
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              1
+            ],
+            "reverse_rank": 643,
+            "prefix_count": 56
+          }
+        ]
+      },
+      "ortools": {
+        "maximum": "87061/10",
+        "point": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "optimal": true
+      },
+      "seconds": {
+        "planner_cold": [
+          0.002567382000052021,
+          0.0023145920004026266,
+          0.0022390190006262856
+        ],
+        "planner_bank_warm": [
+          4.264570006853319e-05,
+          4.262510001353803e-05,
+          5.345139998098602e-05
+        ],
+        "gray_cold": [
+          0.0015322449999075616,
+          0.0016472179995616898,
+          0.0015434210017701844
+        ],
+        "gray_bank_warm": [
+          1.1412149979150854e-05,
+          1.811874999475549e-05,
+          1.1978499969700351e-05
+        ],
+        "ortools_optimization_only": [
+          0.00016530900029465556,
+          0.00011647499923128635,
+          8.25139995868085e-05
+        ]
+      },
+      "median_seconds": {
+        "planner_cold": 0.0023145920004026266,
+        "planner_bank_warm": 4.264570006853319e-05,
+        "gray_cold": 0.0015434210017701844,
+        "gray_bank_warm": 1.1978499969700351e-05,
+        "ortools_optimization_only": 0.00011647499923128635
+      }
+    },
+    {
+      "name": "petersen_15",
+      "variables": 15,
+      "constraints": 10,
+      "published_optimum": "4015",
+      "state_limit": 200000,
+      "planner": {
+        "status": "complete",
+        "summary": {
+          "schema": "pp-completion-planner/1",
+          "kind": "allocation",
+          "strategy": "gray",
+          "count": 22158,
+          "optimization": {
+            "maximum": "4015",
+            "maximizer_count": 1,
+            "point": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          "compiled_states": 0,
+          "compiled_edges": 0,
+          "memo_entries": 0,
+          "source_states": null,
+          "compiled_candidates": 32768,
+          "reused_entries": 0,
+          "reduced_states": null,
+          "ordering": "lexicographic original variable values",
+          "execution_verified": false
+        }
+      },
+      "exact_answers": {
+        "count": 22158,
+        "optimization": {
+          "maximum": "4015",
+          "maximizer_count": 1,
+          "point": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        "bank": [
+          {
+            "rank": 0,
+            "point": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "reverse_rank": 0,
+            "prefix_count": 2903
+          },
+          {
+            "rank": 5539,
+            "point": [
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "reverse_rank": 5539,
+            "prefix_count": 2805
+          },
+          {
+            "rank": 11079,
+            "point": [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            "reverse_rank": 11079,
+            "prefix_count": 2685
+          },
+          {
+            "rank": 16618,
+            "point": [
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "reverse_rank": 16618,
+            "prefix_count": 2751
+          },
+          {
+            "rank": 22157,
+            "point": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "reverse_rank": 22157,
+            "prefix_count": 2617
+          }
+        ]
+      },
+      "ortools": {
+        "maximum": "4015",
+        "point": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "seconds": {
+        "planner_cold": [
+          0.06286724800156662,
+          0.0616765070008114,
+          0.06269864000023517
+        ],
+        "planner_bank_warm": [
+          5.507984997166204e-05,
+          5.5789449925214284e-05,
+          5.509689999598777e-05
+        ],
+        "gray_cold": [
+          0.045767546000206494,
+          0.04619742199975008,
+          0.046779057000094326
+        ],
+        "gray_bank_warm": [
+          1.3621499965665862e-05,
+          1.3084150032227626e-05,
+          1.4281950006989063e-05
+        ],
+        "ortools_optimization_only": [
+          0.0003066610006499104,
+          0.0001963359991350444,
+          0.00017460299932281487
+        ]
+      },
+      "median_seconds": {
+        "planner_cold": 0.06269864000023517,
+        "planner_bank_warm": 5.509689999598777e-05,
+        "gray_cold": 0.04619742199975008,
+        "gray_bank_warm": 1.3621499965665862e-05,
+        "ortools_optimization_only": 0.0001963359991350444
+      }
+    },
+    {
+      "name": "petersen_20",
+      "variables": 20,
+      "constraints": 10,
+      "published_optimum": "6120",
+      "state_limit": 1000000,
+      "planner": {
+        "status": "complete",
+        "summary": {
+          "schema": "pp-completion-planner/1",
+          "kind": "allocation",
+          "strategy": "gray",
+          "count": 422601,
+          "optimization": {
+            "maximum": "6120",
+            "maximizer_count": 1,
+            "point": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "compiled_states": 0,
+          "compiled_edges": 0,
+          "memo_entries": 0,
+          "source_states": null,
+          "compiled_candidates": 1048576,
+          "reused_entries": 0,
+          "reduced_states": null,
+          "ordering": "lexicographic original variable values",
+          "execution_verified": false
+        }
+      },
+      "exact_answers": {
+        "count": 422601,
+        "optimization": {
+          "maximum": "6120",
+          "maximizer_count": 1,
+          "point": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "bank": [
+          {
+            "rank": 0,
+            "point": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "reverse_rank": 0,
+            "prefix_count": 59493
+          },
+          {
+            "rank": 105650,
+            "point": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "reverse_rank": 105650,
+            "prefix_count": 55060
+          },
+          {
+            "rank": 211300,
+            "point": [
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0
+            ],
+            "reverse_rank": 211300,
+            "prefix_count": 48573
+          },
+          {
+            "rank": 316950,
+            "point": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0
+            ],
+            "reverse_rank": 316950,
+            "prefix_count": 52715
+          },
+          {
+            "rank": 422600,
+            "point": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "reverse_rank": 422600,
+            "prefix_count": 46269
+          }
+        ]
+      },
+      "ortools": {
+        "maximum": "6120",
+        "point": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "seconds": {
+        "planner_cold": [
+          1.8977635520004696,
+          1.7840521269990859,
+          1.7554103279999254
+        ],
+        "planner_bank_warm": [
+          9.703494997665984e-05,
+          7.294315000763162e-05,
+          6.661064999207156e-05
+        ],
+        "gray_cold": [
+          1.3888079970001854,
+          1.3564233529996272,
+          1.344736944000033
+        ],
+        "gray_bank_warm": [
+          1.5690599957451924e-05,
+          1.6118250005092705e-05,
+          1.6140749994519866e-05
+        ],
+        "ortools_optimization_only": [
+          0.0003476030015008291,
+          0.00020054100059496704,
+          0.00018479800019122194
+        ]
+      },
+      "median_seconds": {
+        "planner_cold": 1.7840521269990859,
+        "planner_bank_warm": 7.294315000763162e-05,
+        "gray_cold": 1.3564233529996272,
+        "gray_bank_warm": 1.6118250005092705e-05,
+        "ortools_optimization_only": 0.00020054100059496704
+      }
+    },
+    {
+      "name": "petersen_28",
+      "variables": 28,
+      "constraints": 10,
+      "published_optimum": "12400",
+      "state_limit": 200000,
+      "planner": {
+        "status": "WORK_LIMIT",
+        "reason": "completion state budget exceeded"
+      },
+      "planner_attempt_seconds": 3.333890531999714,
+      "ortools": {
+        "maximum": "12400",
+        "point": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "seconds": {
+        "planner_cold": [],
+        "planner_bank_warm": [],
+        "gray_cold": [],
+        "gray_bank_warm": [],
+        "ortools_optimization_only": [
+          0.0004964760009897873,
+          0.0003045780013053445,
+          0.0002915880013460992
+        ]
+      },
+      "median_seconds": {
+        "ortools_optimization_only": 0.0003045780013053445
+      }
+    },
+    {
+      "name": "petersen_39",
+      "variables": 39,
+      "constraints": 5,
+      "published_optimum": "10618",
+      "state_limit": 200000,
+      "planner": {
+        "status": "WORK_LIMIT",
+        "reason": "completion state budget exceeded"
+      },
+      "planner_attempt_seconds": 2.906307994000599,
+      "ortools": {
+        "maximum": "10618",
+        "point": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "seconds": {
+        "planner_cold": [],
+        "planner_bank_warm": [],
+        "gray_cold": [],
+        "gray_bank_warm": [],
+        "ortools_optimization_only": [
+          0.03624693299934734,
+          0.03355612899940752,
+          0.0329382979998627
+        ]
+      },
+      "median_seconds": {
+        "ortools_optimization_only": 0.03355612899940752
+      }
+    },
+    {
+      "name": "petersen_50",
+      "variables": 50,
+      "constraints": 5,
+      "published_optimum": "16537",
+      "state_limit": 200000,
+      "planner": {
+        "status": "WORK_LIMIT",
+        "reason": "completion state budget exceeded"
+      },
+      "planner_attempt_seconds": 3.262401297000906,
+      "ortools": {
+        "maximum": "16537",
+        "point": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "seconds": {
+        "planner_cold": [],
+        "planner_bank_warm": [],
+        "gray_cold": [],
+        "gray_bank_warm": [],
+        "ortools_optimization_only": [
+          5.446939702000236,
+          5.886154028999954,
+          5.66071670600104
+        ]
+      },
+      "median_seconds": {
+        "ortools_optimization_only": 5.66071670600104
+      }
+    }
+  ],
+  "repeats": 3,
+  "python": "3.12.14",
+  "ortools_version": "9.15.6755",
+  "cold_scope": "model construction and five select/rank/prefix queries plus count and optimum",
+  "warm_scope": "same five-query bank on a retained compiled model, mean of 20 repetitions per trial",
+  "baseline_scope": "Gray enumeration answers the full query bank; OR-Tools solves optimization only and is not a counting comparison",
+  "limitations": "public historical R&D benchmarks, not a customer deployment; larger exact counts explicitly unresolved; no universal or industrial solver speedup claim"
+}

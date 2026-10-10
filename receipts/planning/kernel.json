@@ -1,0 +1,36 @@
+{
+  "schema": "pp-planning-kernel/1",
+  "status": "passed",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "declarations": 6,
+  "axioms": {
+    "PerfectPower.PlannerTransport.run_transport": [
+      "propext"
+    ],
+    "PerfectPower.PlannerTransport.transition_preserved": [
+      "propext"
+    ],
+    "PerfectPower.PlannerTransport.all_words": [
+      "propext"
+    ],
+    "PerfectPower.PlannerTransport.same_plans": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlannerTransport.same_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlannerTransport.same_scores": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "source_sha256": {
+    "PerfectPower/PlannerTransport.lean": "e82cffc963f16d3af99c3c3a00ca6cff3b80259a5708b4cc41c5fa3032f8908c",
+    "scripts/check_planning_kernel.py": "21e46255cacac67418d4f0484f3628eb446741945156ab9c4f99918701817bfc",
+    "examples/planning/compatible_slots.json": "08519bf8e8bd9bf26d4f5a07390c46bfd29953f7cfa8ad425335405686989499"
+  },
+  "scope": "all finite Boolean action words and candidate menus for the literal four-to-two-state protected machine; same ordered plans, counts and arbitrary score lists",
+  "open": "Python planner/parser/fold/routing refinement and arbitrary generated SOE acceptance are not established by this audit"
+}

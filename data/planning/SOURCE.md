@@ -1,0 +1,5 @@
+# Public project-selection workload
+
+`mknap1.txt` is the original numeric dataset downloaded from [J. E. Beasley's OR-Library](https://people.brunel.ac.uk/~mastjjb/jeb/orlib/files/mknap1.txt) on 2026-10-10. The [source description](https://people.brunel.ac.uk/~mastjjb/jeb/orlib/mknapinfo.html) attributes its seven problems to C. C. Petersen, “Computational experience with variants of the Balas algorithm applied to the selection of R&D projects,” Management Science 13(9), 1967, pages 736–750.
+
+The rows contain binary project decisions, profits, nonnegative resource coefficients, upper capacities and published optimal objectives. `petersen.json` is a lossless planner transcription; decimal profits are exact rational strings. It preserves the supplied variable order and every original resource constraint. These are historical public benchmark instances, not a newly acquired customer deployment or a claim about current project economics. Cite the original library and Petersen when using them. The source data are attributed independently of the repository code license.

@@ -39,6 +39,8 @@ def compile_object(kind, specification):
     from .budget_populations import BudgetPopulation
     from .holonomic_series import ThetaSeries
     constructors.update(rational_series=RationalSeries, budget_population=BudgetPopulation, theta_series=ThetaSeries)
+    from .planning import CompletionPlanner
+    constructors['completion_planner'] = CompletionPlanner
     if kind not in constructors:
         raise ValueError('unsupported catalogue kind')
     return constructors[kind](specification)

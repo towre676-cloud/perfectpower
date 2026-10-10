@@ -478,6 +478,7 @@ import PerfectPower.Generated.BlastMotifSOE
 import PerfectPower.Generated.BlastPathCounts
 import PerfectPower.Generated.BlastScores
 import PerfectPower.GeneratingFunctions
+import PerfectPower.PlannerTransport
 
 import PerfectPower.CertifiedTelescoping
 import PerfectPower.CertifiedBinary64

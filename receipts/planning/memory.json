@@ -1,0 +1,100 @@
+{
+  "schema": "pp-planning-memory/1",
+  "cases": [
+    {
+      "case": "petersen_6",
+      "planner": {
+        "status": "complete",
+        "peak_resident_bytes": 15728640
+      },
+      "gray": {
+        "status": "complete",
+        "peak_resident_bytes": 15728640
+      },
+      "ortools": {
+        "status": "complete",
+        "peak_resident_bytes": 37978112
+      }
+    },
+    {
+      "case": "petersen_10",
+      "planner": {
+        "status": "complete",
+        "peak_resident_bytes": 15728640
+      },
+      "gray": {
+        "status": "complete",
+        "peak_resident_bytes": 15728640
+      },
+      "ortools": {
+        "status": "complete",
+        "peak_resident_bytes": 38641664
+      }
+    },
+    {
+      "case": "petersen_15",
+      "planner": {
+        "status": "complete",
+        "peak_resident_bytes": 19791872
+      },
+      "gray": {
+        "status": "complete",
+        "peak_resident_bytes": 19230720
+      },
+      "ortools": {
+        "status": "complete",
+        "peak_resident_bytes": 39231488
+      }
+    },
+    {
+      "case": "petersen_20",
+      "planner": {
+        "status": "complete",
+        "peak_resident_bytes": 94916608
+      },
+      "gray": {
+        "status": "complete",
+        "peak_resident_bytes": 79597568
+      },
+      "ortools": {
+        "status": "complete",
+        "peak_resident_bytes": 39825408
+      }
+    },
+    {
+      "case": "petersen_28",
+      "planner": {
+        "status": "WORK_LIMIT",
+        "peak_resident_bytes": 132669440
+      },
+      "ortools": {
+        "status": "complete",
+        "peak_resident_bytes": 40316928
+      }
+    },
+    {
+      "case": "petersen_39",
+      "planner": {
+        "status": "WORK_LIMIT",
+        "peak_resident_bytes": 106127360
+      },
+      "ortools": {
+        "status": "complete",
+        "peak_resident_bytes": 41533440
+      }
+    },
+    {
+      "case": "petersen_50",
+      "planner": {
+        "status": "WORK_LIMIT",
+        "peak_resident_bytes": 116953088
+      },
+      "ortools": {
+        "status": "complete",
+        "peak_resident_bytes": 212955136
+      }
+    }
+  ],
+  "measurement": "Linux ru_maxrss, fresh process per method and case, bytes",
+  "scope": "peak process RSS including interpreter, imports, model compilation and five-query bank; OR-Tools optimization only; failures retain attempted compilation memory"
+}

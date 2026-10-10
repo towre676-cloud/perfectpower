@@ -133,3 +133,5 @@ The [Mordell completion monograph](MORDELL_COMPLETION_MONOGRAPH.md) describes al
 [Recovered-work Lean closure](NEW_WORK_LEAN_MONOGRAPH.md): PSG algebra, all-future SOE quotients, optimal diagnosis and rational structural certificates.
 
 [The exact-space showcase](EXACT_SPACE_SHOWCASE_MONOGRAPH.md) connects weighted populations, original-coordinate rank/selection and optimization, a minimal response quotient, infinite-tail bounds, finite telescoping and stored binary arithmetic. Its offline exhibit embeds exact results and scoped local benchmarks.
+
+[Completion-count planning](COMPLETION_PLANNING_MONOGRAPH.md) documents the integrated resource/compatibility engine, original-plan sampling and optimal ties, cache reuse, public Petersen benchmarks, peak-memory measurements and a six-theorem protected-machine audit.

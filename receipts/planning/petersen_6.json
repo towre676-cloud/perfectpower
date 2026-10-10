@@ -1,0 +1,88 @@
+{
+  "schema": "pp-planning-request/1",
+  "summary": {
+    "schema": "pp-completion-planner/1",
+    "kind": "allocation",
+    "strategy": "gray",
+    "count": 28,
+    "optimization": {
+      "maximum": "3800",
+      "maximizer_count": 1,
+      "point": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    "compiled_states": 0,
+    "compiled_edges": 0,
+    "memo_entries": 0,
+    "source_states": null,
+    "compiled_candidates": 64,
+    "reused_entries": 0,
+    "reduced_states": null,
+    "ordering": "lexicographic original variable values",
+    "execution_verified": false
+  },
+  "answers": [
+    {
+      "schema": "pp-completion-planner/1",
+      "kind": "allocation",
+      "strategy": "gray",
+      "count": 28,
+      "optimization": {
+        "maximum": "3800",
+        "maximizer_count": 1,
+        "point": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      "compiled_states": 0,
+      "compiled_edges": 0,
+      "memo_entries": 0,
+      "source_states": null,
+      "compiled_candidates": 64,
+      "reused_entries": 0,
+      "reduced_states": null,
+      "ordering": "lexicographic original variable values",
+      "execution_verified": false
+    },
+    {
+      "count": 12,
+      "maximum": "3300",
+      "maximizer_count": 1,
+      "prefix": [
+        1
+      ],
+      "scope": "all feasible completions and conditional optimum under this prefix"
+    },
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    {
+      "maximum": "3800",
+      "maximizer_count": 1,
+      "point": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1
+      ]
+    }
+  ]
+}

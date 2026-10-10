@@ -6,6 +6,7 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    completion_planner={'summary','evidence','count','completions','select','rank','optimize','page','sample'},
     rational_series={'summary','evidence','coefficient','terms'},
     theta_series={'summary','evidence','coefficient','terms'},
     budget_population={'summary','evidence','count','cumulative_count','select','rank','page'},

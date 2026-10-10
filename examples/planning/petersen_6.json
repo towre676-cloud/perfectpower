@@ -1,0 +1,173 @@
+{
+  "specification": {
+    "kind": "allocation",
+    "resources": [
+      {
+        "name": "resource_1",
+        "max": 80
+      },
+      {
+        "name": "resource_2",
+        "max": 96
+      },
+      {
+        "name": "resource_3",
+        "max": 20
+      },
+      {
+        "name": "resource_4",
+        "max": 36
+      },
+      {
+        "name": "resource_5",
+        "max": 44
+      },
+      {
+        "name": "resource_6",
+        "max": 48
+      },
+      {
+        "name": "resource_7",
+        "max": 10
+      },
+      {
+        "name": "resource_8",
+        "max": 18
+      },
+      {
+        "name": "resource_9",
+        "max": 22
+      },
+      {
+        "name": "resource_10",
+        "max": 24
+      }
+    ],
+    "variables": [
+      {
+        "name": "project_1",
+        "costs": [
+          8,
+          8,
+          3,
+          5,
+          5,
+          5,
+          0,
+          3,
+          3,
+          3
+        ],
+        "profit": "100",
+        "upper": 1
+      },
+      {
+        "name": "project_2",
+        "costs": [
+          12,
+          12,
+          6,
+          10,
+          13,
+          13,
+          0,
+          0,
+          2,
+          2
+        ],
+        "profit": "600",
+        "upper": 1
+      },
+      {
+        "name": "project_3",
+        "costs": [
+          13,
+          13,
+          4,
+          8,
+          8,
+          8,
+          0,
+          4,
+          4,
+          4
+        ],
+        "profit": "1200",
+        "upper": 1
+      },
+      {
+        "name": "project_4",
+        "costs": [
+          64,
+          75,
+          18,
+          32,
+          42,
+          48,
+          0,
+          0,
+          0,
+          8
+        ],
+        "profit": "2400",
+        "upper": 1
+      },
+      {
+        "name": "project_5",
+        "costs": [
+          22,
+          22,
+          6,
+          6,
+          6,
+          6,
+          8,
+          8,
+          8,
+          8
+        ],
+        "profit": "500",
+        "upper": 1
+      },
+      {
+        "name": "project_6",
+        "costs": [
+          41,
+          41,
+          4,
+          12,
+          20,
+          20,
+          0,
+          0,
+          4,
+          4
+        ],
+        "profit": "2000",
+        "upper": 1
+      }
+    ]
+  },
+  "queries": [
+    {
+      "method": "summary"
+    },
+    {
+      "method": "completions",
+      "args": {
+        "prefix": [
+          1
+        ]
+      }
+    },
+    {
+      "method": "select",
+      "args": {
+        "rank": 0
+      }
+    },
+    {
+      "method": "optimize"
+    }
+  ]
+}

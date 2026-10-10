@@ -1,0 +1,51 @@
+{
+  "schema": "pp-planning-validation/1",
+  "version": "0.9.7",
+  "status": "passed",
+  "base_commit": "85fb57beca87771c194da77d2c0404200978318d",
+  "python_tests": {
+    "run": 117,
+    "passed": 115,
+    "skipped": 2,
+    "scope": "planner, prior exact showcase, catalogue/service applications, SOE, generating functions, binary arithmetic and telescoping; optional Mathlib kernel tests skipped"
+  },
+  "planner_tests_after_final_test_extension": 8,
+  "lean": {
+    "accepted_theorems": 6,
+    "scope": "literal protected-machine transport for all finite action words and candidate menus; no Python refinement or arbitrary SOE packet acceptance"
+  },
+  "public_workload": {
+    "source": "OR-Library mknap1/Petersen",
+    "complete_counts": [
+      28,
+      644,
+      22158,
+      422601
+    ],
+    "larger_count_status": "WORK_LIMIT for 28,39,50-variable cases",
+    "optimization_baseline": "OR-Tools matches every published optimum with exact original-coordinate witness replay"
+  },
+  "installed_package": {
+    "version": "0.9.7",
+    "module_bytes_match_checkout": true,
+    "public_20_count": 422601,
+    "request_interface_passed": true,
+    "bundled_public_data_available": true
+  },
+  "full_historical_build_run": false,
+  "source_sha256": {
+    "python/perfectpower/planning.py": "c7937ae482efed32d10f9a8b684ec7eb8e879e0e530729c4afffd956813dbdc9",
+    "python/perfectpower/planning_cli.py": "d8924a284751f0a07f0b8405552d5ed9fae13ebd6f90438d2d58a36ce708bcb7",
+    "python/run_planning.py": "7be48f0877ddde14da778e075bda93395e99915faae0bb851f176da155416e5b",
+    "python/run_planning_memory.py": "9497be7ff4b31d4a297ca89984117b860fa2be9f0057090454a81557b301a5ee",
+    "python/tests/test_planning.py": "387df26dc7c89ad0d14765cd9e3f8c84092b69cc9f2f471feb418bee0470745b",
+    "PerfectPower/PlannerTransport.lean": "e82cffc963f16d3af99c3c3a00ca6cff3b80259a5708b4cc41c5fa3032f8908c",
+    "scripts/check_planning_kernel.py": "21e46255cacac67418d4f0484f3628eb446741945156ab9c4f99918701817bfc",
+    "data/planning/mknap1.txt": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283",
+    "data/planning/petersen.json": "e8f339832d0d4af3caf46882cbf57dba3819cbcbeaaa59fbcd85f701c76bd27b",
+    "receipts/planning/benchmark.json": "640a28959f1c4bf8c5aea25f0ba66e937a5eb8dea06f068eca0cb9525a4b35fc",
+    "receipts/planning/memory.json": "4c16a2ea20c2327f7605ed64d59512fc55701e4982c9e804a12d51b6e8c3c90a",
+    "receipts/planning/kernel.json": "9866484f77382374bfc0afa1bdd73cdefe180de7d8612886231d713473ebf9f8",
+    "docs/COMPLETION_PLANNING_MONOGRAPH.md": "aa1b6337af931b97dc84ffb97062c3caddee608cbe2e6c8d70c595a982d40690"
+  }
+}

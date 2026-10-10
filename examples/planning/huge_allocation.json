@@ -1,0 +1,65 @@
+{
+  "specification": {
+    "kind": "allocation",
+    "resources": [
+      {
+        "name": "budget",
+        "min": 1000000000000,
+        "max": 1000000000000
+      }
+    ],
+    "variables": [
+      {
+        "name": "resource_0",
+        "costs": [
+          1
+        ],
+        "upper": null,
+        "profit": 1
+      },
+      {
+        "name": "resource_1",
+        "costs": [
+          2
+        ],
+        "upper": null,
+        "profit": 2
+      },
+      {
+        "name": "resource_2",
+        "costs": [
+          1
+        ],
+        "upper": null,
+        "profit": 1
+      },
+      {
+        "name": "resource_3",
+        "costs": [
+          2
+        ],
+        "upper": null,
+        "profit": 2
+      }
+    ]
+  },
+  "seed": 37,
+  "queries": [
+    {
+      "method": "summary"
+    },
+    {
+      "method": "sample"
+    },
+    {
+      "method": "select",
+      "args": {
+        "rank": 0,
+        "optimal": true
+      }
+    },
+    {
+      "method": "evidence"
+    }
+  ]
+}
