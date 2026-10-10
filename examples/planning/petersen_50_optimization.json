@@ -1,0 +1,631 @@
+{
+  "specification": {
+    "kind": "allocation",
+    "resources": [
+      {
+        "name": "resource_1",
+        "max": 800
+      },
+      {
+        "name": "resource_2",
+        "max": 650
+      },
+      {
+        "name": "resource_3",
+        "max": 550
+      },
+      {
+        "name": "resource_4",
+        "max": 550
+      },
+      {
+        "name": "resource_5",
+        "max": 650
+      }
+    ],
+    "variables": [
+      {
+        "name": "project_1",
+        "costs": [
+          40,
+          16,
+          38,
+          8,
+          38
+        ],
+        "profit": "560",
+        "upper": 1
+      },
+      {
+        "name": "project_2",
+        "costs": [
+          91,
+          92,
+          39,
+          71,
+          52
+        ],
+        "profit": "1125",
+        "upper": 1
+      },
+      {
+        "name": "project_3",
+        "costs": [
+          10,
+          41,
+          32,
+          30,
+          30
+        ],
+        "profit": "300",
+        "upper": 1
+      },
+      {
+        "name": "project_4",
+        "costs": [
+          30,
+          16,
+          71,
+          60,
+          42
+        ],
+        "profit": "620",
+        "upper": 1
+      },
+      {
+        "name": "project_5",
+        "costs": [
+          160,
+          150,
+          80,
+          200,
+          170
+        ],
+        "profit": "2100",
+        "upper": 1
+      },
+      {
+        "name": "project_6",
+        "costs": [
+          20,
+          23,
+          26,
+          18,
+          9
+        ],
+        "profit": "431",
+        "upper": 1
+      },
+      {
+        "name": "project_7",
+        "costs": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "profit": "68",
+        "upper": 1
+      },
+      {
+        "name": "project_8",
+        "costs": [
+          12,
+          18,
+          40,
+          30,
+          20
+        ],
+        "profit": "328",
+        "upper": 1
+      },
+      {
+        "name": "project_9",
+        "costs": [
+          3,
+          6,
+          8,
+          4,
+          0
+        ],
+        "profit": "47",
+        "upper": 1
+      },
+      {
+        "name": "project_10",
+        "costs": [
+          18,
+          0,
+          12,
+          8,
+          3
+        ],
+        "profit": "122",
+        "upper": 1
+      },
+      {
+        "name": "project_11",
+        "costs": [
+          9,
+          12,
+          30,
+          31,
+          21
+        ],
+        "profit": "322",
+        "upper": 1
+      },
+      {
+        "name": "project_12",
+        "costs": [
+          25,
+          8,
+          15,
+          6,
+          4
+        ],
+        "profit": "196",
+        "upper": 1
+      },
+      {
+        "name": "project_13",
+        "costs": [
+          1,
+          2,
+          0,
+          3,
+          1
+        ],
+        "profit": "41",
+        "upper": 1
+      },
+      {
+        "name": "project_14",
+        "costs": [
+          1,
+          1,
+          1,
+          0,
+          2
+        ],
+        "profit": "25",
+        "upper": 1
+      },
+      {
+        "name": "project_15",
+        "costs": [
+          10,
+          0,
+          23,
+          18,
+          14
+        ],
+        "profit": "425",
+        "upper": 1
+      },
+      {
+        "name": "project_16",
+        "costs": [
+          280,
+          200,
+          100,
+          60,
+          310
+        ],
+        "profit": "4260",
+        "upper": 1
+      },
+      {
+        "name": "project_17",
+        "costs": [
+          10,
+          20,
+          0,
+          21,
+          8
+        ],
+        "profit": "416",
+        "upper": 1
+      },
+      {
+        "name": "project_18",
+        "costs": [
+          8,
+          6,
+          20,
+          4,
+          4
+        ],
+        "profit": "115",
+        "upper": 1
+      },
+      {
+        "name": "project_19",
+        "costs": [
+          1,
+          2,
+          3,
+          0,
+          6
+        ],
+        "profit": "82",
+        "upper": 1
+      },
+      {
+        "name": "project_20",
+        "costs": [
+          1,
+          1,
+          0,
+          2,
+          1
+        ],
+        "profit": "22",
+        "upper": 1
+      },
+      {
+        "name": "project_21",
+        "costs": [
+          49,
+          70,
+          40,
+          32,
+          18
+        ],
+        "profit": "631",
+        "upper": 1
+      },
+      {
+        "name": "project_22",
+        "costs": [
+          8,
+          9,
+          6,
+          15,
+          15
+        ],
+        "profit": "132",
+        "upper": 1
+      },
+      {
+        "name": "project_23",
+        "costs": [
+          21,
+          22,
+          8,
+          31,
+          38
+        ],
+        "profit": "420",
+        "upper": 1
+      },
+      {
+        "name": "project_24",
+        "costs": [
+          6,
+          4,
+          0,
+          2,
+          10
+        ],
+        "profit": "86",
+        "upper": 1
+      },
+      {
+        "name": "project_25",
+        "costs": [
+          1,
+          1,
+          6,
+          2,
+          4
+        ],
+        "profit": "42",
+        "upper": 1
+      },
+      {
+        "name": "project_26",
+        "costs": [
+          5,
+          5,
+          4,
+          7,
+          8
+        ],
+        "profit": "103",
+        "upper": 1
+      },
+      {
+        "name": "project_27",
+        "costs": [
+          10,
+          10,
+          22,
+          8,
+          6
+        ],
+        "profit": "215",
+        "upper": 1
+      },
+      {
+        "name": "project_28",
+        "costs": [
+          8,
+          6,
+          4,
+          2,
+          0
+        ],
+        "profit": "81",
+        "upper": 1
+      },
+      {
+        "name": "project_29",
+        "costs": [
+          2,
+          4,
+          6,
+          8,
+          0
+        ],
+        "profit": "91",
+        "upper": 1
+      },
+      {
+        "name": "project_30",
+        "costs": [
+          1,
+          0,
+          1,
+          0,
+          3
+        ],
+        "profit": "26",
+        "upper": 1
+      },
+      {
+        "name": "project_31",
+        "costs": [
+          0,
+          4,
+          5,
+          2,
+          0
+        ],
+        "profit": "49",
+        "upper": 1
+      },
+      {
+        "name": "project_32",
+        "costs": [
+          10,
+          12,
+          14,
+          8,
+          10
+        ],
+        "profit": "420",
+        "upper": 1
+      },
+      {
+        "name": "project_33",
+        "costs": [
+          42,
+          8,
+          8,
+          6,
+          6
+        ],
+        "profit": "316",
+        "upper": 1
+      },
+      {
+        "name": "project_34",
+        "costs": [
+          6,
+          4,
+          2,
+          7,
+          1
+        ],
+        "profit": "72",
+        "upper": 1
+      },
+      {
+        "name": "project_35",
+        "costs": [
+          4,
+          3,
+          8,
+          1,
+          3
+        ],
+        "profit": "71",
+        "upper": 1
+      },
+      {
+        "name": "project_36",
+        "costs": [
+          8,
+          0,
+          0,
+          0,
+          0
+        ],
+        "profit": "49",
+        "upper": 1
+      },
+      {
+        "name": "project_37",
+        "costs": [
+          0,
+          10,
+          20,
+          0,
+          3
+        ],
+        "profit": "108",
+        "upper": 1
+      },
+      {
+        "name": "project_38",
+        "costs": [
+          10,
+          0,
+          0,
+          20,
+          5
+        ],
+        "profit": "116",
+        "upper": 1
+      },
+      {
+        "name": "project_39",
+        "costs": [
+          1,
+          6,
+          0,
+          8,
+          4
+        ],
+        "profit": "90",
+        "upper": 1
+      },
+      {
+        "name": "project_40",
+        "costs": [
+          40,
+          28,
+          6,
+          14,
+          0
+        ],
+        "profit": "738",
+        "upper": 1
+      },
+      {
+        "name": "project_41",
+        "costs": [
+          86,
+          93,
+          12,
+          20,
+          30
+        ],
+        "profit": "1811",
+        "upper": 1
+      },
+      {
+        "name": "project_42",
+        "costs": [
+          11,
+          9,
+          6,
+          2,
+          12
+        ],
+        "profit": "430",
+        "upper": 1
+      },
+      {
+        "name": "project_43",
+        "costs": [
+          120,
+          30,
+          80,
+          40,
+          16
+        ],
+        "profit": "3060",
+        "upper": 1
+      },
+      {
+        "name": "project_44",
+        "costs": [
+          8,
+          22,
+          13,
+          6,
+          18
+        ],
+        "profit": "215",
+        "upper": 1
+      },
+      {
+        "name": "project_45",
+        "costs": [
+          3,
+          0,
+          6,
+          1,
+          3
+        ],
+        "profit": "58",
+        "upper": 1
+      },
+      {
+        "name": "project_46",
+        "costs": [
+          32,
+          36,
+          22,
+          14,
+          16
+        ],
+        "profit": "296",
+        "upper": 1
+      },
+      {
+        "name": "project_47",
+        "costs": [
+          28,
+          45,
+          14,
+          20,
+          22
+        ],
+        "profit": "620",
+        "upper": 1
+      },
+      {
+        "name": "project_48",
+        "costs": [
+          13,
+          13,
+          0,
+          12,
+          30
+        ],
+        "profit": "418",
+        "upper": 1
+      },
+      {
+        "name": "project_49",
+        "costs": [
+          2,
+          2,
+          1,
+          0,
+          4
+        ],
+        "profit": "47",
+        "upper": 1
+      },
+      {
+        "name": "project_50",
+        "costs": [
+          4,
+          2,
+          2,
+          1,
+          0
+        ],
+        "profit": "81",
+        "upper": 1
+      }
+    ]
+  },
+  "optimization_only": true,
+  "queries": []
+}

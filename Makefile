@@ -534,7 +534,7 @@ check-integrity:
 planning:
 	PYTHONPATH=python python python/run_planning.py
 planning-test:
-	PYTHONPATH=python python -m unittest python/tests/test_planning.py
+	PYTHONPATH=python python -m unittest python/tests/test_planning.py python/tests/test_planning_hybrid.py
 planning-kernel:
 	python scripts/check_planning_kernel.py
 planning-benchmark:
@@ -548,3 +548,8 @@ exact-space-test:
 
 series-kernel:
 	$(PY) scripts/check_series_kernel.py
+
+.PHONY: planning-hybrid-benchmark
+planning-hybrid-benchmark:
+	PYTHONPATH=python python python/run_planning_hybrid.py --repeats 3 --large
+	PYTHONPATH=python python python/run_planning_hybrid_memory.py

@@ -35,6 +35,9 @@ def dispatch(catalogue, request):
     op = request.get('op'); args = request.get('args', {})
     if not isinstance(args, dict):
         raise ValueError('args must be a JSON object')
+    if op == 'planning_optimization':
+        from .planning import optimize_allocation
+        return optimize_allocation(**args)
     if op == 'generating_function':
         from .generating_cli import execute
         return execute(args)

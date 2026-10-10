@@ -1,0 +1,28 @@
+{
+  "schema": "pp-planning-hybrid-memory/1",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "scope": "fresh process per variant; includes interpreter, imports, index construction and full five-query bank or optimization-only search; compiler children excluded",
+  "variants": [
+    {
+      "variant": "mitm_20",
+      "peak_rss_bytes": 17440768
+    },
+    {
+      "variant": "native_exhaustive_20",
+      "peak_rss_bytes": 100315136
+    },
+    {
+      "variant": "python_gray_20",
+      "peak_rss_bytes": 79929344
+    },
+    {
+      "variant": "native_optimization_50",
+      "peak_rss_bytes": 17432576
+    },
+    {
+      "variant": "ortools_optimization_50",
+      "peak_rss_bytes": 214024192
+    }
+  ],
+  "status": "complete"
+}

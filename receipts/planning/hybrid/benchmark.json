@@ -1,0 +1,2042 @@
+{
+  "schema": "pp-planning-hybrid-benchmark/1",
+  "python": "3.12.14",
+  "repeats": 3,
+  "native": {
+    "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+    "flags": [
+      "-std=c++17",
+      "-O3",
+      "-fPIC",
+      "-shared"
+    ],
+    "scope": "tested native execution; no kernel proof of native algorithm"
+  },
+  "native_compile_and_load_seconds": 2.40873017499689,
+  "timing_scope": "compiler initialized once; each cold workflow constructs a fresh index and runs the same five-query bank; warm bank mean of 20 repetitions",
+  "memory_scope": "Linux cumulative process peak RSS after each case, includes interpreter, optional solver and native compiler child excluded; not per-variant isolated peak",
+  "cases": [
+    {
+      "name": "petersen_6",
+      "published_optimum": "3800",
+      "counting": {
+        "status": "complete",
+        "answers": {
+          "count": 28,
+          "optimization": {
+            "maximum": "3800",
+            "maximizer_count": 1,
+            "point": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ]
+          },
+          "bank": [
+            {
+              "rank": 0,
+              "point": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 0,
+              "prefix_count": 5
+            },
+            {
+              "rank": 7,
+              "point": [
+                0,
+                0,
+                1,
+                0,
+                1,
+                0
+              ],
+              "reverse_rank": 7,
+              "prefix_count": 4
+            },
+            {
+              "rank": 14,
+              "point": [
+                0,
+                1,
+                1,
+                0,
+                0,
+                1
+              ],
+              "reverse_rank": 14,
+              "prefix_count": 3
+            },
+            {
+              "rank": 21,
+              "point": [
+                1,
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              "reverse_rank": 21,
+              "prefix_count": 3
+            },
+            {
+              "rank": 27,
+              "point": [
+                1,
+                1,
+                1,
+                0,
+                1,
+                0
+              ],
+              "reverse_rank": 27,
+              "prefix_count": 2
+            }
+          ]
+        }
+      },
+      "seconds": {
+        "mitm_cold": [
+          0.0008211849999497645,
+          0.0006272930004342925,
+          0.0008527520003553946
+        ],
+        "mitm_warm": [
+          1.6245450024143792e-05,
+          1.467809997848235e-05,
+          1.4603949966840447e-05
+        ],
+        "native_exhaustive_cold": [
+          0.0008951460004027467,
+          0.0007404239986499306,
+          0.0005466519978654105
+        ],
+        "native_exhaustive_warm": [
+          1.8906449986388908e-05,
+          1.4833299974270631e-05,
+          1.4552399989042897e-05
+        ],
+        "python_gray_cold": [
+          0.00019712699941010214,
+          0.00015547400107607245,
+          0.00012713099931715988
+        ],
+        "python_gray_warm": [
+          9.940950076270382e-06,
+          8.69310006237356e-06,
+          9.866850086837076e-06
+        ]
+      },
+      "median_seconds": {
+        "mitm_cold": 0.0008211849999497645,
+        "mitm_warm": 1.467809997848235e-05,
+        "native_exhaustive_cold": 0.0007404239986499306,
+        "native_exhaustive_warm": 1.4833299974270631e-05,
+        "python_gray_cold": 0.00015547400107607245,
+        "python_gray_warm": 9.866850086837076e-06
+      },
+      "native_optimization": {
+        "schema": "pp-optimization-only/1",
+        "maximum": "3800",
+        "point": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "optimal": true,
+        "nodes": 10,
+        "native_provenance": {
+          "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+          "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+          "flags": [
+            "-std=c++17",
+            "-O3",
+            "-fPIC",
+            "-shared"
+          ],
+          "scope": "tested native execution; no kernel proof of native algorithm"
+        },
+        "scope": "one maximizer; feasible count and maximizer count are not computed",
+        "execution_verified": false
+      },
+      "ortools_optimization": {
+        "maximum": "3800",
+        "point": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "optimal": true
+      },
+      "optimization_seconds": {
+        "native": [
+          0.00037535500086960383,
+          0.0006211239997355733,
+          0.0003082940020249225
+        ],
+        "ortools": [
+          0.03732498499812209,
+          5.3640000260202214e-05,
+          5.790700015495531e-05
+        ]
+      },
+      "optimization_median_seconds": {
+        "native": 0.00037535500086960383,
+        "ortools": 5.790700015495531e-05
+      },
+      "process_peak_rss_bytes": 40972288
+    },
+    {
+      "name": "petersen_10",
+      "published_optimum": "8706.1",
+      "counting": {
+        "status": "complete",
+        "answers": {
+          "count": 644,
+          "optimization": {
+            "maximum": "87061/10",
+            "maximizer_count": 1,
+            "point": [
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1
+            ]
+          },
+          "bank": [
+            {
+              "rank": 0,
+              "point": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 0,
+              "prefix_count": 104
+            },
+            {
+              "rank": 161,
+              "point": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              "reverse_rank": 161,
+              "prefix_count": 72
+            },
+            {
+              "rank": 322,
+              "point": [
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0
+              ],
+              "reverse_rank": 322,
+              "prefix_count": 72
+            },
+            {
+              "rank": 483,
+              "point": [
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 483,
+              "prefix_count": 56
+            },
+            {
+              "rank": 643,
+              "point": [
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1
+              ],
+              "reverse_rank": 643,
+              "prefix_count": 56
+            }
+          ]
+        }
+      },
+      "seconds": {
+        "mitm_cold": [
+          0.0011082960008934606,
+          0.0008418260003963951,
+          0.0008350259995495435
+        ],
+        "mitm_warm": [
+          1.8024099881586152e-05,
+          1.8498349891160615e-05,
+          1.8951499987451827e-05
+        ],
+        "native_exhaustive_cold": [
+          0.0010074349993374199,
+          0.0010078059967781883,
+          0.0009420459973625839
+        ],
+        "native_exhaustive_warm": [
+          2.057344991044374e-05,
+          2.0211400078551377e-05,
+          1.7218399989360478e-05
+        ],
+        "python_gray_cold": [
+          0.001527446998807136,
+          0.0014652429999841843,
+          0.001428657997166738
+        ],
+        "python_gray_warm": [
+          1.3261449930723757e-05,
+          1.1461249960120767e-05,
+          1.2179300028947182e-05
+        ]
+      },
+      "median_seconds": {
+        "mitm_cold": 0.0008418260003963951,
+        "mitm_warm": 1.8498349891160615e-05,
+        "native_exhaustive_cold": 0.0010074349993374199,
+        "native_exhaustive_warm": 2.0211400078551377e-05,
+        "python_gray_cold": 0.0014652429999841843,
+        "python_gray_warm": 1.2179300028947182e-05
+      },
+      "native_optimization": {
+        "schema": "pp-optimization-only/1",
+        "maximum": "87061/10",
+        "point": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "optimal": true,
+        "nodes": 61,
+        "native_provenance": {
+          "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+          "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+          "flags": [
+            "-std=c++17",
+            "-O3",
+            "-fPIC",
+            "-shared"
+          ],
+          "scope": "tested native execution; no kernel proof of native algorithm"
+        },
+        "scope": "one maximizer; feasible count and maximizer count are not computed",
+        "execution_verified": false
+      },
+      "ortools_optimization": {
+        "maximum": "87061/10",
+        "point": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "optimal": true
+      },
+      "optimization_seconds": {
+        "native": [
+          0.0005073230022389907,
+          0.0004839979992539156,
+          0.00045919100011815317
+        ],
+        "ortools": [
+          0.000141993001307128,
+          8.763100049691275e-05,
+          0.00010294400271959603
+        ]
+      },
+      "optimization_median_seconds": {
+        "native": 0.0004839979992539156,
+        "ortools": 0.00010294400271959603
+      },
+      "process_peak_rss_bytes": 41234432
+    },
+    {
+      "name": "petersen_15",
+      "published_optimum": "4015",
+      "counting": {
+        "status": "complete",
+        "answers": {
+          "count": 22158,
+          "optimization": {
+            "maximum": "4015",
+            "maximizer_count": 1,
+            "point": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1
+            ]
+          },
+          "bank": [
+            {
+              "rank": 0,
+              "point": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 0,
+              "prefix_count": 2903
+            },
+            {
+              "rank": 5539,
+              "point": [
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 5539,
+              "prefix_count": 2805
+            },
+            {
+              "rank": 11079,
+              "point": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                1
+              ],
+              "reverse_rank": 11079,
+              "prefix_count": 2685
+            },
+            {
+              "rank": 16618,
+              "point": [
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                1,
+                1
+              ],
+              "reverse_rank": 16618,
+              "prefix_count": 2751
+            },
+            {
+              "rank": 22157,
+              "point": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "reverse_rank": 22157,
+              "prefix_count": 2617
+            }
+          ]
+        }
+      },
+      "seconds": {
+        "mitm_cold": [
+          0.0012912120000692084,
+          0.0014346470015880186,
+          0.001424873000360094
+        ],
+        "mitm_warm": [
+          2.0606999896699563e-05,
+          1.9344099928275683e-05,
+          2.011124997807201e-05
+        ],
+        "native_exhaustive_cold": [
+          0.006875308998132823,
+          0.006552373997692484,
+          0.005388964000303531
+        ],
+        "native_exhaustive_warm": [
+          1.8984049893333578e-05,
+          2.7095249970443545e-05,
+          1.985535000130767e-05
+        ],
+        "python_gray_cold": [
+          0.04540418100077659,
+          0.043649791998177534,
+          0.04434061099891551
+        ],
+        "python_gray_warm": [
+          1.4004100012243726e-05,
+          1.3940949975221883e-05,
+          1.4525850019708741e-05
+        ]
+      },
+      "median_seconds": {
+        "mitm_cold": 0.001424873000360094,
+        "mitm_warm": 2.011124997807201e-05,
+        "native_exhaustive_cold": 0.006552373997692484,
+        "native_exhaustive_warm": 1.985535000130767e-05,
+        "python_gray_cold": 0.04434061099891551,
+        "python_gray_warm": 1.4004100012243726e-05
+      },
+      "native_optimization": {
+        "schema": "pp-optimization-only/1",
+        "maximum": "4015",
+        "point": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "optimal": true,
+        "nodes": 168,
+        "native_provenance": {
+          "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+          "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+          "flags": [
+            "-std=c++17",
+            "-O3",
+            "-fPIC",
+            "-shared"
+          ],
+          "scope": "tested native execution; no kernel proof of native algorithm"
+        },
+        "scope": "one maximizer; feasible count and maximizer count are not computed",
+        "execution_verified": false
+      },
+      "ortools_optimization": {
+        "maximum": "4015",
+        "point": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "optimization_seconds": {
+        "native": [
+          0.0007207439994090237,
+          0.0006403930019587278,
+          0.0005867319996468723
+        ],
+        "ortools": [
+          0.0002858199986803811,
+          0.0001955439984158147,
+          0.00021289000142132863
+        ]
+      },
+      "optimization_median_seconds": {
+        "native": 0.0006403930019587278,
+        "ortools": 0.00021289000142132863
+      },
+      "process_peak_rss_bytes": 48439296
+    },
+    {
+      "name": "petersen_20",
+      "published_optimum": "6120",
+      "counting": {
+        "status": "complete",
+        "answers": {
+          "count": 422601,
+          "optimization": {
+            "maximum": "6120",
+            "maximizer_count": 1,
+            "point": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bank": [
+            {
+              "rank": 0,
+              "point": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 0,
+              "prefix_count": 59493
+            },
+            {
+              "rank": 105650,
+              "point": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1
+              ],
+              "reverse_rank": 105650,
+              "prefix_count": 55060
+            },
+            {
+              "rank": 211300,
+              "point": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0
+              ],
+              "reverse_rank": 211300,
+              "prefix_count": 48573
+            },
+            {
+              "rank": 316950,
+              "point": [
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1,
+                1,
+                0
+              ],
+              "reverse_rank": 316950,
+              "prefix_count": 52715
+            },
+            {
+              "rank": 422600,
+              "point": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "reverse_rank": 422600,
+              "prefix_count": 46269
+            }
+          ]
+        }
+      },
+      "seconds": {
+        "mitm_cold": [
+          0.003766042998904595,
+          0.004259344997990411,
+          0.004321858999901451
+        ],
+        "mitm_warm": [
+          2.1469799867190888e-05,
+          2.4250450042018202e-05,
+          2.8644100166275165e-05
+        ],
+        "native_exhaustive_cold": [
+          0.12425209499997436,
+          0.12620240700198337,
+          0.12727290600014385
+        ],
+        "native_exhaustive_warm": [
+          3.5046200173383114e-05,
+          2.1702599951822776e-05,
+          2.1509349971893242e-05
+        ],
+        "python_gray_cold": [
+          1.3123744090007676,
+          1.345550447000278,
+          1.341235242998664
+        ],
+        "python_gray_warm": [
+          1.639815000089584e-05,
+          1.6029650032578503e-05,
+          1.9262499881733676e-05
+        ]
+      },
+      "median_seconds": {
+        "mitm_cold": 0.004259344997990411,
+        "mitm_warm": 2.4250450042018202e-05,
+        "native_exhaustive_cold": 0.12620240700198337,
+        "native_exhaustive_warm": 2.1702599951822776e-05,
+        "python_gray_cold": 1.341235242998664,
+        "python_gray_warm": 1.639815000089584e-05
+      },
+      "native_optimization": {
+        "schema": "pp-optimization-only/1",
+        "maximum": "6120",
+        "point": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true,
+        "nodes": 269,
+        "native_provenance": {
+          "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+          "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+          "flags": [
+            "-std=c++17",
+            "-O3",
+            "-fPIC",
+            "-shared"
+          ],
+          "scope": "tested native execution; no kernel proof of native algorithm"
+        },
+        "scope": "one maximizer; feasible count and maximizer count are not computed",
+        "execution_verified": false
+      },
+      "ortools_optimization": {
+        "maximum": "6120",
+        "point": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "optimization_seconds": {
+        "native": [
+          0.0012019179994240403,
+          0.0010676060010155197,
+          0.000817119002022082
+        ],
+        "ortools": [
+          0.0002616540004964918,
+          0.0001869510015239939,
+          0.0002763960001175292
+        ]
+      },
+      "optimization_median_seconds": {
+        "native": 0.0010676060010155197,
+        "ortools": 0.0002616540004964918
+      },
+      "process_peak_rss_bytes": 154062848
+    },
+    {
+      "name": "petersen_28",
+      "published_optimum": "12400",
+      "counting": {
+        "status": "complete",
+        "answers": {
+          "count": 208817578,
+          "optimization": {
+            "maximum": "12400",
+            "maximizer_count": 1,
+            "point": [
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bank": [
+            {
+              "rank": 0,
+              "point": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 0,
+              "prefix_count": 27330702
+            },
+            {
+              "rank": 52204394,
+              "point": [
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0
+              ],
+              "reverse_rank": 52204394,
+              "prefix_count": 26728012
+            },
+            {
+              "rank": 104408789,
+              "point": [
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              "reverse_rank": 104408789,
+              "prefix_count": 25190122
+            },
+            {
+              "rank": 156613183,
+              "point": [
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                0
+              ],
+              "reverse_rank": 156613183,
+              "prefix_count": 26400644
+            },
+            {
+              "rank": 208817577,
+              "point": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 208817577,
+              "prefix_count": 24831919
+            }
+          ]
+        },
+        "cold_seconds": 0.2521457949987962,
+        "index_seconds": 0.248089565000555,
+        "query_node_visits": 3986387,
+        "right_records": 16384
+      },
+      "independent_recursive_reference": {
+        "answer": {
+          "count": 208817578,
+          "ties": 1,
+          "best": 12400,
+          "mask": 235438063,
+          "visits": 32909677,
+          "records": 0
+        },
+        "seconds": 0.8923761309997644
+      },
+      "seconds": {
+        "mitm_cold": [],
+        "mitm_warm": [],
+        "native_exhaustive_cold": [],
+        "native_exhaustive_warm": [],
+        "python_gray_cold": [],
+        "python_gray_warm": []
+      },
+      "median_seconds": {},
+      "native_optimization": {
+        "schema": "pp-optimization-only/1",
+        "maximum": "12400",
+        "point": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true,
+        "nodes": 336,
+        "native_provenance": {
+          "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+          "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+          "flags": [
+            "-std=c++17",
+            "-O3",
+            "-fPIC",
+            "-shared"
+          ],
+          "scope": "tested native execution; no kernel proof of native algorithm"
+        },
+        "scope": "one maximizer; feasible count and maximizer count are not computed",
+        "execution_verified": false
+      },
+      "ortools_optimization": {
+        "maximum": "12400",
+        "point": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "optimization_seconds": {
+        "native": [
+          0.0014832209999440238,
+          0.0010818470000231173,
+          0.0010701690007408615
+        ],
+        "ortools": [
+          0.0003913989967259113,
+          0.00029119800092303194,
+          0.0003158449981128797
+        ]
+      },
+      "optimization_median_seconds": {
+        "native": 0.0010818470000231173,
+        "ortools": 0.0003158449981128797
+      },
+      "process_peak_rss_bytes": 154062848
+    },
+    {
+      "name": "petersen_39",
+      "published_optimum": "10618",
+      "counting": {
+        "status": "complete",
+        "answers": {
+          "count": 368072359571,
+          "optimization": {
+            "maximum": "10618",
+            "maximizer_count": 1,
+            "point": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "bank": [
+            {
+              "rank": 0,
+              "point": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "reverse_rank": 0,
+              "prefix_count": 55143003085
+            },
+            {
+              "rank": 92018089892,
+              "point": [
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                1
+              ],
+              "reverse_rank": 92018089892,
+              "prefix_count": 52011714436
+            },
+            {
+              "rank": 184036179785,
+              "point": [
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              "reverse_rank": 184036179785,
+              "prefix_count": 38239924305
+            },
+            {
+              "rank": 276054269678,
+              "point": [
+                1,
+                0,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                1,
+                0
+              ],
+              "reverse_rank": 276054269678,
+              "prefix_count": 50244120231
+            },
+            {
+              "rank": 368072359570,
+              "point": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                1,
+                1,
+                0,
+                0
+              ],
+              "reverse_rank": 368072359570,
+              "prefix_count": 33733559217
+            }
+          ]
+        },
+        "cold_seconds": 176.05282583400185,
+        "index_seconds": 175.57364564100135,
+        "query_node_visits": 1573299452,
+        "right_records": 1048576
+      },
+      "independent_prefix_checks": [
+        {
+          "prefix": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "count": 524288,
+          "maximum": "3118",
+          "reference_nodes": 1
+        },
+        {
+          "prefix": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "count": 524288,
+          "maximum": "9548",
+          "reference_nodes": 1
+        },
+        {
+          "prefix": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "count": 524288,
+          "maximum": "6745",
+          "reference_nodes": 1
+        },
+        {
+          "prefix": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "count": 524288,
+          "maximum": "5710",
+          "reference_nodes": 1
+        },
+        {
+          "prefix": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "count": 16,
+          "maximum": "7183",
+          "reference_nodes": 80
+        }
+      ],
+      "seconds": {
+        "mitm_cold": [],
+        "mitm_warm": [],
+        "native_exhaustive_cold": [],
+        "native_exhaustive_warm": [],
+        "python_gray_cold": [],
+        "python_gray_warm": []
+      },
+      "median_seconds": {},
+      "native_optimization": {
+        "schema": "pp-optimization-only/1",
+        "maximum": "10618",
+        "point": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true,
+        "nodes": 240246,
+        "native_provenance": {
+          "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+          "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+          "flags": [
+            "-std=c++17",
+            "-O3",
+            "-fPIC",
+            "-shared"
+          ],
+          "scope": "tested native execution; no kernel proof of native algorithm"
+        },
+        "scope": "one maximizer; feasible count and maximizer count are not computed",
+        "execution_verified": false
+      },
+      "ortools_optimization": {
+        "maximum": "10618",
+        "point": [
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "optimization_seconds": {
+        "native": [
+          0.027180584002053365,
+          0.027707395998731954,
+          0.026840421996894293
+        ],
+        "ortools": [
+          0.03517620699858526,
+          0.0337277799990261,
+          0.034311966999666765
+        ]
+      },
+      "optimization_median_seconds": {
+        "native": 0.027180584002053365,
+        "ortools": 0.034311966999666765
+      },
+      "process_peak_rss_bytes": 340889600
+    },
+    {
+      "name": "petersen_50",
+      "published_optimum": "16537",
+      "counting": {
+        "status": "not_run",
+        "reason": "39-case requires --large; 50-case exceeds bounded MITM record support; full count remains unresolved"
+      },
+      "seconds": {
+        "mitm_cold": [],
+        "mitm_warm": [],
+        "native_exhaustive_cold": [],
+        "native_exhaustive_warm": [],
+        "python_gray_cold": [],
+        "python_gray_warm": []
+      },
+      "median_seconds": {},
+      "native_optimization": {
+        "schema": "pp-optimization-only/1",
+        "maximum": "16537",
+        "point": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true,
+        "nodes": 685350,
+        "native_provenance": {
+          "source_sha256": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+          "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+          "flags": [
+            "-std=c++17",
+            "-O3",
+            "-fPIC",
+            "-shared"
+          ],
+          "scope": "tested native execution; no kernel proof of native algorithm"
+        },
+        "scope": "one maximizer; feasible count and maximizer count are not computed",
+        "execution_verified": false
+      },
+      "ortools_optimization": {
+        "maximum": "16537",
+        "point": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "optimal": true
+      },
+      "optimization_seconds": {
+        "native": [
+          0.09499330899780034,
+          0.09832105199893704,
+          0.09369240399973933
+        ],
+        "ortools": [
+          5.804722844000935,
+          5.5702950470004,
+          5.870208682001248
+        ]
+      },
+      "optimization_median_seconds": {
+        "native": 0.09499330899780034,
+        "ortools": 5.804722844000935
+      },
+      "process_peak_rss_bytes": 340889600
+    }
+  ]
+}

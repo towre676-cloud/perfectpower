@@ -1,0 +1,56 @@
+{
+  "schema": "pp-planning-hybrid-validation/1",
+  "version": "0.9.8",
+  "base_commit": "3c3d352e6d4b68cd40084de78acbee93cf5c7233",
+  "status": "passed",
+  "tests": {
+    "run": 124,
+    "passed": 122,
+    "skipped": 2,
+    "scope": "hybrid/planner, exact showcase, applications, SOE, generating functions, binary arithmetic, telescoping and checked SOE; optional Mathlib tests skipped"
+  },
+  "undefined_behavior_sanitizer": {
+    "passed": true,
+    "suite_tests": 7,
+    "extra_scope": "signed profit limit, maximum unsigned resource bound, maximum cost, and 64-variable optimization"
+  },
+  "installed_package": {
+    "version": "0.9.8",
+    "bundled_native_source": true,
+    "public_20_count": 422601,
+    "public_50_optimum": "16537",
+    "jsonl_optimization": true,
+    "module_bytes_match": true,
+    "wheel_sha256": "58cfb6811c9ce2d3b68de192dadc5fc080ee4850050e694fa532b1b47450c8c3"
+  },
+  "counts": [
+    28,
+    644,
+    22158,
+    422601,
+    208817578,
+    368072359571,
+    null
+  ],
+  "public_50_count": "unresolved; native MITM supports at most 42 variables",
+  "public_28_independent_global_count": true,
+  "public_39_independent_global_count": false,
+  "public_39_independent_prefix_checks": 5,
+  "all_published_optima_match": true,
+  "new_kernel_proofs": 0,
+  "historical_lean_build_run": false,
+  "source_sha256": {
+    "native/completion_planner.cpp": "8303884205adfa6d70a3ee2c76c1034f6701aa32527b799c19f2feaf30efb3b1",
+    "python/perfectpower/planning.py": "2c012f47fb90d845c46cb860e74e7159fbfcd899c8c1c0df28b4a31bf79c5db4",
+    "python/perfectpower/planning_native.py": "d86fde57dde0c9bf2abaacfa87b32f64b86ce03023942151024b0904f699c944",
+    "python/perfectpower/planning_symmetry.py": "780fd507ed478dfdd851217e836ec95db38f4efd38e461c698d4d8906b072014",
+    "python/perfectpower/planning_cli.py": "8fe87c1431d711db445d40001e4195b5f3a5955707b2f5d5ba7bb372a85b0d59",
+    "python/perfectpower/query_service.py": "b5078456643a8481ba18ad30c37df5683ad038921cc087abae46ddd42990f68a",
+    "python/run_planning_hybrid.py": "51d0f8bdafd3c687e07ccfda01b7ca2b212ab2efa2a37d93bb01ef7a12ce521d",
+    "python/run_planning_hybrid_memory.py": "92557adcd6ae9d3cca1a06038636857299f222a1348ae3bab6d081f122d3a227",
+    "python/tests/test_planning_hybrid.py": "1891fd3439d49bf913dc0c8d65b257a7ddebb84930acb0a34e39700ef288de91",
+    "receipts/planning/hybrid/benchmark.json": "23eba793ad69ae0aaf2916374c58b1e4e600d3dc6bd62274fa613502f653d550",
+    "receipts/planning/hybrid/memory.json": "642a2930e54bbca52cbb509f70f6d93a657c99be379f710521240596bea41fd5",
+    "docs/HYBRID_PLANNING_MONOGRAPH.md": "2505d8c5d3acd2f3ad484b083038c226b07d7a3552d80e8a1b77b403ae1d5a73"
+  }
+}

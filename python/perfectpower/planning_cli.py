@@ -2,14 +2,19 @@
 import json
 from pathlib import Path
 from random import Random
-from .planning import CompletionPlanner
+from .planning import CompletionPlanner, optimize_allocation
 
 METHODS = ('summary', 'evidence', 'count', 'completions', 'select', 'rank', 'optimize', 'page', 'sample')
 
 
 def execute(request):
-    if not isinstance(request, dict) or set(request)-{'specification', 'queries', 'seed'} or not {'specification', 'queries'} <= set(request):
+    if not isinstance(request, dict) or set(request)-{'specification', 'queries', 'seed', 'optimization_only'} or not {'specification', 'queries'} <= set(request):
         raise ValueError('specification and queries required')
+    mode = request.get('optimization_only', False)
+    if type(mode) is not bool: raise ValueError('optimization_only must be Boolean')
+    if mode:
+        if request['queries'] != [] or 'seed' in request: raise ValueError('optimization-only requests require empty queries and no seed')
+        return optimize_allocation(request['specification'])
     planner = CompletionPlanner(request['specification'])
     queries = request['queries']
     if not isinstance(queries, list) or len(queries) > 256:
