@@ -1,30 +1,14 @@
 # PerfectPower
 
-The [enhanced SOE bridge](docs/SOE_BRIDGE_MONOGRAPH.md) preserves finite implementation fibres, composes count/mass/min-plus transports, minimizes future-equivalent state models, compares different models with shortest counterexamples, and computes optimal adaptive diagnosis policies over declared probes. Six `soe-*` console routes also expose reversible polynomial charts with exact derivative transport. These interfaces use exact standard-library arithmetic; finite carrier and probe-menu scopes remain explicit.
-
 **Exact polynomial arithmetic, queryable solution spaces, and algebraic-curve computation with Lean 4 proofs.**
 
 PerfectPower began with a question: when is a polynomial value a perfect power? It now provides reusable machinery for solving supported integer equations, counting and querying structured solution families, and studying the algebraic curves defined by those equations. A reduction retains the original coordinates, divisibility conditions and domain, so its answer can be used by another program.
 
 The project combines a Python package, exact algebra engines, a Lean 4 theorem library and reproducible research corpora. Its outputs include complete solution lists and generators, direct access to large finite populations, exact optimization policies, elliptic division fibres, and differential equations derived from polynomial curve families. Each operation states its supported inputs and the guarantee attached to its result.
 
-The [PSG structural algebra](docs/PSG_STRUCTURAL_MONOGRAPH.md) adds quadratic elimination with complete auxiliary reconstruction, original-coordinate affine norm populations, exact Darboux cofactor identities, parameter-dependency witnesses, rational observation fibres and finite differential-model spaces. Seven `psg-*` console commands expose the standard-library implementation. The recovered PSG source matches the existing 100-term polynomial exactly; all six supplied invariant factors replay. New Lean sources are emitted, with compilation status recorded separately.
-
-The [Gamma kernel bridges](docs/GAMMA_KERNEL_BRIDGES_MONOGRAPH.md) prove the general residue-block factorial-unit algorithm and the sufficient Landau integrality direction. Reconstructed checks certify original factorial units and integrality at every natural index; the converse and Python refinement remain open.
-
-The [polynomial population interface](docs/POLYNOMIAL_POPULATION_MONOGRAPH.md) proves reusable polynomial interpretation, coordinate substitution, restriction composition, rank/selection inverses, and complete bivariate minimum tie sets. `checked-population` certifies batches of queries against one bounded original-equation source; its stated interval remains part of the guarantee.
-
-The [global population bridge](docs/GLOBAL_POPULATION_MONOGRAPH.md) connects the proved curve `y²=x³−2` and its nonzero affine input pullbacks to globally complete queries. `checked-global-population` preserves divisibility and integer, nonnegative, or positive domains without a search interval.
-
-The [nonlinear and Pell population extension](docs/EXTENDED_POPULATION_MONOGRAPH.md) proves complete polynomial input fibres for the −2 and −4 Mordell sources and exact cutoff queries for the nonnegative D=2 Pell orbit. `checked-nonlinear-population` gives global original-coordinate answers; `checked-pell-population` gives complete cutoff counts and global recurrence selections.
-
-The [broad family engine](docs/FAMILY_ENGINE_MONOGRAPH.md) adds globally complete square-plus-constant equations, divisor-based fibres, five classical Mordell sources and a 1,026-offset emptiness atlas. General-D Pell queries include all signs, exact count-only access, binary-powered global selections and supported optimization without a cutoff.
-
-The [automatic reductions and multiple-orbit engine](docs/ORBIT_REDUCTION_MONOGRAPH.md) recognizes supported original polynomials, queries generalized Pell equations with every checked seed, and gives binary-powered selections within each orbit. The same push proves saturation at 2 of the retained rational bases for all 457 hard census curves; complete curve-specific rank and integral-point proofs remain open.
-
 ## Quick start
 
-Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. The default branch is currently named `claude/laughing-lamport-qqzdo9`.
+Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. Work is published on `main`; the GitHub default branch `claude/laughing-lamport-qqzdo9` is kept at the same commit.
 
 Version 0.9.0 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.
 
@@ -54,6 +38,18 @@ The arithmetic compiler recognizes supported polynomial power relations, Pell fa
 [Fixed divisors](docs/FIXED_DIVISOR_MONOGRAPH.md), [integer-valued rational polynomials](docs/INTEGER_VALUED_POLYNOMIAL_MONOGRAPH.md) and [Gamma arithmetic](docs/GAMMA_ARITHMETIC_MONOGRAPH.md) connect universal divisibility, binomial polynomials, fixed-width products, factorial valuations and modular execution. These routes retain the domain on which a rational expression is an integer.
 
 The [elliptic interface](docs/ELLIPTIC_WITNESSES_MONOGRAPH.md) supplies exact generalized Weierstrass arithmetic, rational model transport, isogenies and rational division. [Subgroup preimages and bounded saturation](docs/ELEVENTHIRTEEN_CAPACITY_MONOGRAPH.md) support primes 2, 3, 5, 7, 11 and 13. [Torsion-aware indices](docs/TORSION_INDEX_PELL7_MONOGRAPH.md) distinguish actual point-group enlargement from a coefficient-lattice index. The Mordell frontier records 457 ranks determined by equal external PARI bounds, with matching explicit point witnesses for all 457 and zero constructive witness gaps; [Full saturation and integral enumeration](docs/MORDELL_COMPLETION_MONOGRAPH.md) now establish complete bases and integral lists for all 457 by external computation, with 788 native exact prime-saturation checks. The lists contain 270 signed points on 134 curves; 323 curves are empty. Global completeness remains outside Lean. [Binary invariant contractions and cover reduction](docs/BINARY_INVARIANTS_MONOGRAPH.md) construct exact covariants, retain transformed covering maps, and have supplied two further frontier witnesses. [Exact Mordell 3-isogenies](docs/MORDELL_ISOGENY_WITNESSES_MONOGRAPH.md) and a longer cover search close another 85 gaps, including the missing rank-two direction at k=-9257. [Pinned published coordinates and exact independent checks](docs/MORDELL_WITNESS_CLOSURE_MONOGRAPH.md) close the final five gaps.
+
+### Solution families and populations
+
+The [polynomial population interface](docs/POLYNOMIAL_POPULATION_MONOGRAPH.md) proves reusable polynomial interpretation, coordinate substitution, restriction composition, rank/selection inverses, and complete bivariate minimum tie sets. `checked-population` certifies batches of queries against one bounded original-equation source; its stated interval remains part of the guarantee.
+
+The [global population bridge](docs/GLOBAL_POPULATION_MONOGRAPH.md) connects the proved curve `y²=x³−2` and its nonzero affine input pullbacks to globally complete queries. `checked-global-population` preserves divisibility and integer, nonnegative, or positive domains without a search interval.
+
+The [nonlinear and Pell population extension](docs/EXTENDED_POPULATION_MONOGRAPH.md) proves complete polynomial input fibres for the −2 and −4 Mordell sources and exact cutoff queries for the nonnegative D=2 Pell orbit. `checked-nonlinear-population` gives global original-coordinate answers; `checked-pell-population` gives complete cutoff counts and global recurrence selections.
+
+The [broad family engine](docs/FAMILY_ENGINE_MONOGRAPH.md) adds globally complete square-plus-constant equations, divisor-based fibres, five classical Mordell sources and a 1,026-offset emptiness atlas. General-D Pell queries include all signs, exact count-only access, binary-powered global selections and supported optimization without a cutoff.
+
+The [automatic reductions and multiple-orbit engine](docs/ORBIT_REDUCTION_MONOGRAPH.md) recognizes supported original polynomials, queries generalized Pell equations with every checked seed, and gives binary-powered selections within each orbit. The same push proves saturation at 2 of the retained rational bases for all 457 hard census curves; complete curve-specific rank and integral-point proofs remain open.
 
 ## Queryable populations and decision policies
 
@@ -85,9 +81,19 @@ print(family.collisions()["covered_simple_roots"])      # 4
 print(family.observable()["order"])                     # 4
 ```
 
-[Algebraic curve execution](docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.md) adds finite étale differential algebras, local degeneration charts, logarithmic Frobenius jets and verified finite-symmetry quotients. The [literature execution guide](docs/LITERATURE_CURVE_EXECUTION_MONOGRAPH.md) connects these operations to quotient towers, explicit isogeny kernels, superelliptic periods and arithmetic Frobenius. The merged extensions include [certified continuation](docs/CURVE_CERTIFIED_CONTINUATION_MONOGRAPH.md), [complex genus-two periods](docs/GENUS2_COMPLEX_PERIODS_MONOGRAPH.md), and [singular Richelot correspondences and cluster reduction](docs/SINGULAR_RICHELOT_AND_CLUSTERS_MONOGRAPH.md).
+[Algebraic curve execution](docs/ALGEBRAIC_CURVE_EXTENSIONS_MONOGRAPH.md) adds finite étale differential algebras, local degeneration charts, logarithmic Frobenius jets and verified finite-symmetry quotients. The [literature execution guide](docs/LITERATURE_CURVE_EXECUTION_MONOGRAPH.md) connects these operations to quotient towers, explicit isogeny kernels, superelliptic periods and arithmetic Frobenius. The merged extensions include [certified continuation](docs/CURVE_CERTIFIED_CONTINUATION_MONOGRAPH.md), [complex genus-two periods](docs/GENUS2_COMPLEX_PERIODS_MONOGRAPH.md), and [singular Richelot correspondences and cluster reduction](docs/SINGULAR_RICHELOT_AND_CLUSTERS_MONOGRAPH.md). Local arithmetic extends to [dyadic reduction and tame extension clusters](docs/DYADIC_REDUCTION_AND_STOKES_MONOGRAPH.md) and [wild conductors](docs/WILD_CONDUCTORS_MONOGRAPH.md). Irregular singular points have [certified Stokes matrices](docs/IRREGULAR_STOKES_GENERAL_MONOGRAPH.md).
 
 [Branched topology](docs/BRANCHED_GEOMETRY_MONOGRAPH.md), [analytic geometry](docs/ANALYTIC_GEOMETRY_MONOGRAPH.md) and [Voronoi enclosures](docs/VORONOI_ENCLOSURE_MONOGRAPH.md) provide additional views of the same equations. Exact algebraic identities, certified continuation in supported charts, polyhedral bounds and numerical smooth-surface calculations carry different guarantees. General certified smooth-curve Voronoi boundaries and arbitrary marked period matrices remain open.
+
+## Structural algebra and observable machines
+
+The [PSG structural algebra](docs/PSG_STRUCTURAL_MONOGRAPH.md) adds quadratic elimination with complete auxiliary reconstruction, original-coordinate affine norm populations, exact Darboux cofactor identities, parameter-dependency witnesses, rational observation fibres and finite differential-model spaces. Seven `psg-*` console commands expose the standard-library implementation. The recovered PSG source matches the existing 100-term polynomial exactly; all six supplied invariant factors replay. New Lean sources are emitted, with compilation status recorded separately.
+
+The [enhanced SOE bridge](docs/SOE_BRIDGE_MONOGRAPH.md) preserves finite implementation fibres, composes count/mass/min-plus transports, minimizes future-equivalent state models, compares different models with shortest counterexamples, and computes optimal adaptive diagnosis policies over declared probes. Six `soe-*` console routes also expose reversible polynomial charts with exact derivative transport. These interfaces use exact standard-library arithmetic; finite carrier and probe-menu scopes remain explicit.
+
+The [Gamma kernel bridges](docs/GAMMA_KERNEL_BRIDGES_MONOGRAPH.md) prove the general residue-block factorial-unit algorithm and the sufficient Landau integrality direction. Reconstructed checks certify original factorial units and integrality at every natural index; the converse and Python refinement remain open.
+
+The [structural mathematics extension](docs/STRUCTURAL_MATH_MONOGRAPH.md) adds prime-exponent species populations, exact rational polynomial bounds, singular-aware PSD and Toeplitz certificates, linear Lyapunov metrics and native two-isogeny rank bounds for supported rational-two-torsion curves. Run `make structural-math` to regenerate its corpus, including exact PSG bounds and 306 curve models. These results use exact Python arithmetic and classical descent; the new certificates do not claim Lean verification.
 
 ## Proofs and result guarantees
 
@@ -107,17 +113,25 @@ Constraint plans report `complete_list` when every solution in the stated domain
 
 The [trust boundary](docs/TRUST_BOUNDARY.md), [certificate format](docs/CERTIFICATE_FORMAT.md) and [audit summaries](docs/STATUS.md) explain the evidence. Module guides name remaining premises and implementation obligations. General polynomial integer solving, native global elliptic saturation proofs and arbitrary algebraic-curve compilation remain outside the delivered scope.
 
+### Formal bridges
+
+The [Mordell formal bridge](docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md) proves saturation composition and finite-box enumeration in Lean. Its ten audited theorems leave curve-specific rank upper bounds, global saturation prime support and global integral-coordinate bounds explicit; no external receipt is promoted to an unconditional formal closure.
+
+The [rational descent arithmetic bridges](docs/DESCENT_BRIDGES_MONOGRAPH.md) derive primitive quartic covers from actual rational points, prove prime-power chart exhaustiveness, and audit 2,651 declarations, including 1,478 excluded covers across 576 retained curve models. Isogeny coordinate identities and a corrected group-index equation are proved separately; actual elliptic-group homomorphisms and the Mordell–Weil rank identity remain open. Reproduce with `make descent-bridges-kernel`.
+
+The [recovered-work Lean closure](docs/NEW_WORK_LEAN_MONOGRAPH.md) audits 384 declarations, including all-future quotient completeness for 324 partial machines and the exact two-versus-three adaptive diagnosis advantage. PSG algebra and retained rational matrix/energy identities compile; the classical two-isogeny rank identity remains a separate formalization task. Reproduce with `make new-work-kernel`.
+
+SOE finite partial machines can request source-bound Lean acceptance with `soe-states model.json --kernel-check`. Pair-specific experiments prove the coarsest all-future quotient for supported supplied models; see [the compiler contract and resource limits](docs/SOE_GENERIC_LEAN_MONOGRAPH.md).
+
 ## Research applications
 
 The [Dresden numerical module](docs/DRESDEN_NUMERICAL_MONOGRAPH.md) applies the arithmetic machinery to exact calendar conversion, phase intersections, bounded date populations, Venus corrections and lunar interval reconstruction. The React/Three.js [Dresden Codex Observatory](https://dresden-codex-observatory.towre676.chatgpt.site) provides interactive source and numerical views, with WebGPU preferred and WebGL 2 fallback. Source readings, exact calendar models and physical or historical interpretation remain explicitly distinguished.
 
-The [representation and flavor program](docs/VALENTINER_CANONICAL_RESULTS.md) uses finite-group arithmetic, polynomial invariants and scalar-potential calculations to study declared particle-physics models. Its [frame calculation](docs/VALENTINER_DIRECT_STABILIZER_AND_THREE_CURVES.md), [whole-line wall certificate](docs/WALL_PROFILE_INTERVAL_MONOGRAPH.md), [thermal cooling](docs/WALL_COOLING_AND_LOCALIZED_HIGGS.md), [source formation](docs/WALL_KIBBLE_ZUREK_FORMATION.md) and [wall dynamics](docs/WALL_MODE_LIFETIME_MONOGRAPH.md) have separate proofs and numerical receipts. The [prediction-mechanism study](docs/FLAVOR_PREDICTION_MECHANISMS.md) proves in Lean that the five declared rays exhaust the real scalar restriction, explains their mixing degeneracy, and supplies exact spectral-moment recovery and conditional gauge-unification calculations. These models do not yet predict the observed CKM parameters or fine-structure constant; fitted inputs and approximation limits are documented in the research chapters.
+The [representation and flavor program](docs/VALENTINER_CANONICAL_RESULTS.md) uses finite-group arithmetic, polynomial invariants and scalar-potential calculations to study declared particle-physics models. Its [frame calculation](docs/VALENTINER_DIRECT_STABILIZER_AND_THREE_CURVES.md), [whole-line wall certificate](docs/WALL_PROFILE_INTERVAL_MONOGRAPH.md), [thermal cooling](docs/WALL_COOLING_AND_LOCALIZED_HIGGS.md), [source formation](docs/WALL_KIBBLE_ZUREK_FORMATION.md), [wall dynamics](docs/WALL_MODE_LIFETIME_MONOGRAPH.md), [gauged decay widths](docs/WALL_MODE_VECTOR_WIDTHS_MONOGRAPH.md), [network asymptotics](docs/WALL_NETWORK_ASYMPTOTICS_MONOGRAPH.md) and [two-loop and interval-certified nucleation](docs/WALL_TWO_LOOP_AND_INTERVAL_BOUNCES_MONOGRAPH.md) have separate proofs and numerical receipts. The [prediction-mechanism study](docs/FLAVOR_PREDICTION_MECHANISMS.md) proves in Lean that the five declared rays exhaust the real scalar restriction, explains their mixing degeneracy, and supplies exact spectral-moment recovery and conditional gauge-unification calculations. These models do not yet predict the observed CKM parameters or fine-structure constant; fitted inputs and approximation limits are documented in the research chapters.
 
 The [Weil representation work](docs/WEIL_SPECTRAL_MONOGRAPH.md) supplies exact Fourier/chirp commutants, orbit dimensions and spectral projectors, with [Lean matrix foundations](docs/WEIL_MONOMIAL_MONOGRAPH.md) and explicitly identified all-level formalization obligations. These applications share the project's arithmetic and algebra infrastructure.
 
 ## Build and documentation
-
-The [structural mathematics extension](docs/STRUCTURAL_MATH_MONOGRAPH.md) adds prime-exponent species populations, exact rational polynomial bounds, singular-aware PSD and Toeplitz certificates, linear Lyapunov metrics and native two-isogeny rank bounds for supported rational-two-torsion curves. Run `make structural-math` to regenerate its corpus, including exact PSG bounds and 306 curve models. These results use exact Python arithmetic and classical descent; the new certificates do not claim Lean verification.
 
 Run the core package's tests from the checkout:
 
@@ -137,14 +151,6 @@ make lean
 `make test` runs Python suites across the repository. `make verify` builds Lean, checks axioms, runs tests, regenerates receipts and status summaries, and checks for drift. The [documentation index](docs/README.md) organizes the mathematical accounts, implementation guides and benchmark reports. Start with the [overview monograph](docs/MONOGRAPH.md) for the original mathematics, the [showcase](docs/SHOWCASE_MONOGRAPH.md) for examples, or the [open-content assembly](docs/OPEN_CONTENT_ASSEMBLY.md) for the research frontier.
 
 Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). Included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
-
-The [Mordell formal bridge](docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md) proves saturation composition and finite-box enumeration in Lean. Its ten audited theorems leave curve-specific rank upper bounds, global saturation prime support and global integral-coordinate bounds explicit; no external receipt is promoted to an unconditional formal closure.
-
-The [recovered-work Lean closure](docs/NEW_WORK_LEAN_MONOGRAPH.md) audits 384 declarations, including all-future quotient completeness for 324 partial machines and the exact two-versus-three adaptive diagnosis advantage. PSG algebra and retained rational matrix/energy identities compile; the classical two-isogeny rank identity remains a separate formalization task. Reproduce with `make new-work-kernel`.
-
-The [rational descent arithmetic bridges](docs/DESCENT_BRIDGES_MONOGRAPH.md) derive primitive quartic covers from actual rational points, prove prime-power chart exhaustiveness, and audit 2,651 declarations, including 1,478 excluded covers across 576 retained curve models. Isogeny coordinate identities and a corrected group-index equation are proved separately; actual elliptic-group homomorphisms and the Mordell–Weil rank identity remain open. Reproduce with `make descent-bridges-kernel`.
-
-SOE finite partial machines can request source-bound Lean acceptance with `soe-states model.json --kernel-check`. Pair-specific experiments prove the coarsest all-future quotient for supported supplied models; see [the compiler contract and resource limits](docs/SOE_GENERIC_LEAN_MONOGRAPH.md).
 
 ## Biological sequence exploration
 
