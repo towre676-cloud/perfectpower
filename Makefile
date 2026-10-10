@@ -559,3 +559,16 @@ budget-lab-test:
 	PYTHONPATH=python python -m unittest python/tests/test_budget_lab.py
 budget-lab-benchmark:
 	PYTHONPATH=python python python/run_budget_lab.py --repeats 3
+
+.PHONY: model-count-test model-count-corpus model-count-benchmark
+model-count-test:
+	PYTHONPATH=python python3 -m unittest python/tests/test_model_counting.py python/tests/test_model_counting_benchmark.py
+model-count-corpus:
+	python3 scripts/fetch_model_counting.py $(CNF_CORPUS)
+model-count-benchmark:
+	PYTHONPATH=python python3 python/run_model_counting.py --corpus $(CNF_CORPUS) --ganak $(GANAK) --d4 $(D4) --timeout 10 --memory-gib 6
+
+.PHONY: model-count-sanitizer
+model-count-sanitizer:
+	$(CXX) -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) native/model_counting/sanitizer_fuzz.cpp -o /tmp/perfectpower-cnf-sanitizer
+	/tmp/perfectpower-cnf-sanitizer

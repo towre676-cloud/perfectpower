@@ -206,6 +206,23 @@
         "test_new_work_lean.py"
       ],
       "kernel_required": true
+    },
+    {
+      "name": "exact_cnf_model_counting",
+      "files": [
+        "python/perfectpower/model_counting.py",
+        "native/model_counting/counter.cpp",
+        "python/run_model_counting.py",
+        "python/repeat_model_counting.py",
+        "data/model_counting/manifest.json",
+        "docs/MODEL_COUNTING_MONOGRAPH.md",
+        "scripts/check_model_counting_receipts.py"
+      ],
+      "tests": [
+        "test_model_counting.py",
+        "test_model_counting_benchmark.py"
+      ],
+      "kernel_required": false
     }
   ]
 }

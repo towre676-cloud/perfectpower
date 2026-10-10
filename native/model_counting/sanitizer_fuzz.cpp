@@ -1,0 +1,4 @@
+#include "counter.cpp"
+#include <random>
+#include <iostream>
+int main(){std::mt19937 rng(4269);for(unsigned trial=0;trial<1000;trial++){unsigned n=1+rng()%10,m=1+rng()%25;Formula f;std::ostringstream text;text<<n<<" "<<m<<"\n";for(unsigned i=0;i<m;i++){std::vector<int> c;while(c.size()<3){int x=1+rng()%n;if(rng()%2)x=-x;if(std::find(c.begin(),c.end(),x)==c.end()&&std::find(c.begin(),c.end(),-x)==c.end())c.push_back(x);if(n<3&&c.size()==n)break;}for(int x:c)text<<x<<" ";text<<"0\n";f.push_back(c);}unsigned expected=0;for(unsigned x=0;x<(1u<<n);x++){bool ok=true;for(auto& c:f){bool sat=false;for(int l:c)if(((x>>(std::abs(l)-1))&1)==unsigned(l>0))sat=true;if(!sat){ok=false;break;}}expected+=ok;}Counter counter(text.str().c_str(),1024*1024);counter.deadline=Clock::now()+std::chrono::seconds(10);auto actual=counter.solve(f,n);if(actual!=expected){std::cerr<<trial<<" mismatch\n";return 1;}}std::cout<<"1000 native formulas matched exhaustive counts under ASan/UBSan\n";}

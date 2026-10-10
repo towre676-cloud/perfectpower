@@ -139,3 +139,5 @@ The [Mordell completion monograph](MORDELL_COMPLETION_MONOGRAPH.md) describes al
 [Hybrid completion planning](HYBRID_PLANNING_MONOGRAPH.md) describes weighted symmetry, native meet-in-the-middle indexing, exact dual-bound optimization and independent comparisons in v0.9.8.
 
 [Budget Lab](BUDGET_LAB_MONOGRAPH.md) provides the public-election application, source interpretation, exact query contracts and independent repeated-workflow benchmarks in v0.9.9.
+
+Exact CNF counting, conditional ranks and uniform samples: see [the model-counting monograph](MODEL_COUNTING_MONOGRAPH.md). The native CNF backend needs a C++17 compiler and Boost headers.

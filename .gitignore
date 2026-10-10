@@ -12,3 +12,9 @@ paper/*.out
 receipts/*.partial.jsonl
 why3_isqrt/certificates/
 why3_isqrt/sessions/_*/
+
+# Exclusive lock files for serial model-counting runs.
+receipts/model_counting/*.lock
+
+# Detailed experiment output is delivered separately from the public source.
+receipts/model_counting/*_logs/

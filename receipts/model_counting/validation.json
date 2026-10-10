@@ -1,0 +1,84 @@
+{
+  "schema": "pp-cnf-validation/1",
+  "release": "0.10.0",
+  "scope": "Executable evidence for the new unweighted native CNF backend and focused existing-feature regression suite; no new kernel verification",
+  "checks": {
+    "focused_unittest": {
+      "tests_run": 138,
+      "passed": 136,
+      "skipped": 2,
+      "skip_reason": "optional Mathlib-dependent checks",
+      "note": "129 existing focused checks, 7 new counter test methods, 2 benchmark harness test methods"
+    },
+    "native_sanitizer": {
+      "formulas": 1000,
+      "oracle": "exhaustive enumeration",
+      "asan": true,
+      "ubsan": true,
+      "leak_sanitizer": false,
+      "leak_sanitizer_reason": "environment process inspection unavailable; ASAN_OPTIONS=detect_leaks=0"
+    },
+    "installed_wheel": {
+      "version": "0.10.0",
+      "outside_checkout": true,
+      "fixture": "mc2024_track1_118.cnf",
+      "exact_count": "17528422464",
+      "seeded_sample_satisfies_formula": true,
+      "fresh_rank_select_inverse": true,
+      "wheel_sha256": "fe003f9e90cc228ead40af08e28394574831c07ecff7c3ff19c0c69a2532338c"
+    },
+    "final_backend_unittest": {
+      "tests_run": 9,
+      "passed": 9,
+      "skipped": 0
+    },
+    "receipt_audit": {
+      "original_instances": 200,
+      "confirmed_native_cases_repeated": 11,
+      "result_logs": 732,
+      "memory_records": 132,
+      "published_logs_hashed": 864,
+      "exact_count_disagreements": 0
+    },
+    "repository_integrity": {
+      "broken_links": 0,
+      "data_hashes_checked": 298,
+      "failures": 0,
+      "historical_source_snapshot_drift_is_informational": true
+    }
+  },
+  "compiler": {
+    "version": "g++ 13.3.0",
+    "flags": [
+      "-std=c++17",
+      "-O3",
+      "-fPIC",
+      "-shared"
+    ],
+    "boost": "1.83"
+  },
+  "resource_contract": {
+    "cpu_quota_cores": 8,
+    "container_memory_bytes": 8589934592,
+    "subprocess_memory_gib": 6,
+    "subprocess_wall_seconds": 10,
+    "memory_limit_kind": "virtual address space, distinct from measured peak RSS"
+  },
+  "source_sha256": {
+    "native/model_counting/counter.cpp": "a6388e43ad73736979053e698afaff7f5d1fc9fcd5122ee87ef55eecf1c656ff",
+    "python/perfectpower/model_counting.py": "403d73af86b4011c78556de9e6e063d8ae951e4d7ea3113fd93ff41298980efa",
+    "python/run_model_counting.py": "2fea5c60723088b90c01979e96a5d1cbdc2fa157fe1fe39fb1f59a9524e2d643",
+    "python/repeat_model_counting.py": "ff9267811208536ebd0d39a24a0280ffd446ede869be31680732af11cb79cacc",
+    "scripts/check_model_counting_receipts.py": "1332f83c8b7e399f838fe2a8bf891c42c8ad97283f4ec7add398183e59a92efb",
+    "data/model_counting/manifest.json": "944a5a6c80f138988425f5f7efd09822ac4c6f3093bbd17b99418049f27420ce",
+    "data/model_counting/references.json": "c22dc66073ac8f9854de22e997156b976a8c23e2f2446a0917cb070731337867",
+    "docs/MODEL_COUNTING_MONOGRAPH.md": "6dc1d491ab6c25663f294765e95bd899edc90125869130086961095be6d48134"
+  },
+  "native_shared_library_sha256": "c7498aea7fe8b192355cb03affbf947c707e59bcac8a486254aaf6d5c77eec10",
+  "receipt_sha256": {
+    "receipts/model_counting/benchmark.json": "2cf6b846d8680995aed92ebfb7552ecf23f3870d2c7a9c8c17adea57cb16a0be",
+    "receipts/model_counting/repeated.json": "58cdc2e575de21aacb31e9b2693517cecb5407c575e66150bbf7997b87ae71df",
+    "receipts/model_counting/log_publication.json": "8a1b7769882b9e7cbd927850fc84a7e56811a98e3ab326f3108c64eaf47b223c"
+  },
+  "publication": "Public source includes per-case measurement summaries and log hashes; detailed sanitized output is supplied separately."
+}
