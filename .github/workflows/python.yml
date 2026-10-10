@@ -37,3 +37,7 @@ jobs:
         run: |
           PYTHONPATH=python python python/run_arithmetic_series.py
           git diff --exit-code -- receipts/arithmetic_series/
+      - name: Reproduce boundary-complete telescoping receipts
+        run: |
+          PYTHONPATH=python python python/run_telescoping.py
+          git diff --exit-code -- receipts/telescoping/

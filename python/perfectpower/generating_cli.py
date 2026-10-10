@@ -10,6 +10,28 @@ def execute(request):
     kind, spec, query = request['kind'], request['specification'], request.get('query', {})
     if not isinstance(query, dict):
         raise ValueError('query must be an object')
+    if kind == 'binomial_sum':
+        from .telescoping import discover_binomial_sum, replay_binomial_sum, BinomialSumSequence
+        packet = discover_binomial_sum(**spec)
+        if packet.get('schema') != 'pp-binomial-telescoping/1':
+            return {'definition': packet}
+        sequence = BinomialSumSequence(packet)
+        result = {'definition': packet, 'replay': replay_binomial_sum(packet)}
+        if 'exponent' in query:
+            result['power_window'] = sequence.power_hits(**query)
+        else:
+            result['terms'] = sequence.terms(**query)
+        return result
+    if kind == 'antidifference':
+        from .telescoping import discover_antidifference, replay_antidifference, sum_from_antidifference
+        packet = discover_antidifference(**spec)
+        result = {'definition': packet}
+        if packet.get('schema') == 'pp-antidifference/1':
+            result['replay'] = replay_antidifference(packet)
+            if query: result['finite_sum'] = sum_from_antidifference(packet, **query)
+        elif query:
+            raise ValueError('cannot sum an unresolved ansatz')
+        return result
     if kind in ('rational', 'theta'):
         from .generating_functions import RationalSeries
         from .holonomic_series import ThetaSeries

@@ -1,5 +1,7 @@
 # PerfectPower
 
+Version 0.9.5 adds boundary-complete creative telescoping for binomial power sums, exact rational antidifference certificates, checked hypergeometric solutions, and bounded perfect-power queries on the resulting sequences. The compiler discovers order-one and order-two recurrences and connects their verified sum definitions to the existing theta-series engine. Run `PYTHONPATH=python python python/run_telescoping.py`; see [the derivation and limits](docs/TELESCOPING_MONOGRAPH.md). New certificates are exact Python replay, not new Lean proofs.
+
 Version 0.9.4 connects the merged Wilf generating-function work to exact minimal sequence realizations and certified analytic tails. It adds IEEE-754 integer bit decoding, exact accumulation/rounding, rational power decisions on stored values, and exact polynomial evaluation at binary64 arguments. Pell coordinate OGFs and modular recurrence filters retain their explicit scopes. See [the new monograph chapter](docs/BINARY_GENERATING_MONOGRAPH.md) and [the complete monograph](docs/MONOGRAPH.md). Run `PYTHONPATH=python python python/run_arithmetic_series.py`, or `python -m perfectpower arithmetic-series compile examples/arithmetic_series/pell.json`. New bit and tail certificates are Python replay, not new Lean proofs.
 
 **Exact polynomial arithmetic, queryable solution spaces, and algebraic-curve computation with Lean 4 proofs.**
