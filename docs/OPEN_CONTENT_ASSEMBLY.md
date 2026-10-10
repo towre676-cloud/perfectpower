@@ -1,5 +1,7 @@
 # Open Content Assembly
 
+> **Historical log.** This page records how open items were found and closed, in order. For the current status see [FRONTIER.md](FRONTIER.md), generated from `contracts/current_frontier.json`.
+
 This is a catalogue of the "open" and "not proved" sections found at the end of the first-party PDFs. Every item has been checked against the repository history through `eb1fb27` on main and against this branch. Fifty-seven PDFs were scanned with `pdftotext`. Items already closed are listed only so they are not picked up again.
 
 ## Feasibility tiers

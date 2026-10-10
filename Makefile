@@ -512,3 +512,7 @@ blast-test:
 	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_blast_atlas.py -v
 blast-lean:
 	python3 scripts/check_blast_atlas.py
+
+.PHONY: check-integrity
+check-integrity:
+	python3 scripts/check_repo_integrity.py

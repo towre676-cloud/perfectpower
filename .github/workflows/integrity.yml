@@ -1,0 +1,16 @@
+name: Repository integrity
+on:
+  push:
+  pull_request:
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Markdown links resolve and receipt data hashes match
+        run: python scripts/check_repo_integrity.py
+      - name: Frontier page matches the status contract
+        run: python scripts/render_frontier.py --check
