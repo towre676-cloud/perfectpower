@@ -12,8 +12,11 @@ jobs:
           python-version: '3.11'
       - name: Tests
         run: |
-          python -m pip install '.[research]'
+          python -m pip install '.[research,test]'
           make test
+      - name: Function-based pytest regressions
+        run: |
+          python -m pytest -q python/tests/test_flavor_frontier.py python/tests/test_flavor_functional_mass.py python/tests/test_flavor_gauge_feedback.py python/tests/test_flavor_scalar_feedback.py python/tests/test_flavor_singlet_mediation.py python/tests/test_flavor_singlet_quantum.py python/tests/test_flavor_spectral_matching.py python/tests/test_logarithmic_quartic.py python/tests/test_valentiner_exact_vacuum_curve.py python/tests/test_valentiner_mediator_closure.py python/tests/test_valentiner_direct_stabilizer.py python/tests/test_valentiner_nonet_joint.py
       - name: Regenerate receipts, data and generated Lean; must match the commit
         run: |
           make receipts

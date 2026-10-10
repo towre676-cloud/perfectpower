@@ -55,8 +55,19 @@ class WeilTests(unittest.TestCase):
         import sys
         sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
         from reconcile_mordell_frontier import reconcile
-        p=reconcile();self.assertEqual((p['remaining_count'],p['empty_computed_lists'],p['nonempty_computed_lists']),(457,323,134))
-        self.assertEqual(len(p['descent_closures']),28);self.assertEqual(len({r['k'] for r in p['remaining']}),457)
+        p=reconcile()
+        # The rank-witness frontier remains historical evidence; subsequent
+        # retained backend completions close its lists without creating Lean
+        # integral-list proofs. Protect both distinctions in this regression.
+        historical=p['rank_witness_frontier']
+        self.assertEqual((len(historical),sum(not r['x_coordinates'] for r in historical),
+                          sum(bool(r['x_coordinates']) for r in historical)),(457,323,134))
+        self.assertEqual(len(p['descent_closures']),28)
+        self.assertEqual(len({r['k'] for r in historical}),457)
+        self.assertEqual((p['remaining_count'],p['empty_computed_lists'],p['nonempty_computed_lists']),(0,0,0))
+        self.assertEqual(p['external_computation_list_closure_count'],457)
+        self.assertEqual({r['k'] for r in p['external_computation_list_closures']},{r['k'] for r in historical})
+        self.assertTrue(all(r['lean_integral_list_proved'] is False for r in p['external_computation_list_closures']))
 
     def test_query_operations(self):
         from perfectpower.query_service import dispatch

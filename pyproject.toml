@@ -12,6 +12,7 @@ license = { text = "Apache-2.0" }
 dependencies = []          # standard library only
 
 [project.optional-dependencies]
+test = ["pytest>=8"]
 industrial = ["z3-solver==5.1.0.0"]
 analytic = ["numpy>=1.23", "scipy>=1.9"]
 intervals = ["python-flint>=0.9,<0.10", "numpy>=1.23", "scipy>=1.9", "sympy>=1.12"]
