@@ -478,3 +478,12 @@ import PerfectPower.Generated.BlastMotifSOE
 import PerfectPower.Generated.BlastPathCounts
 import PerfectPower.Generated.BlastScores
 import PerfectPower.GeneratingFunctions
+
+import PerfectPower.CertifiedTelescoping
+import PerfectPower.CertifiedBinary64
+import PerfectPower.CertifiedSeriesBounds
+import PerfectPower.CertifiedRealization
+import PerfectPower.Generated.BinomialPower1
+import PerfectPower.Generated.BinomialPower2
+import PerfectPower.Generated.BinomialPower3
+import PerfectPower.Generated.BinomialPower4

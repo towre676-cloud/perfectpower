@@ -251,18 +251,57 @@ def replay_hypergeometric_solution(packet):
     return {'valid':True,'domain':'every integer n>=0','lean_verified':False}
 
 
+def export_lean_binomial(packet, namespace="PerfectPower.Generated.BinomialCertificate"):
+    """Emit a source-bound all-index Lean theorem for the four compiled families.
+
+    Lean checks the serialized rational recurrence against the actual binomial
+    sum theorem. No Python acceptance Boolean enters the proof.
+    """
+    import hashlib, json, re
+    p, order, coeff, _ = _checked(packet)
+    if not isinstance(namespace,str) or not re.fullmatch(r"[A-Za-z][A-Za-z0-9_]*(?:\.[A-Za-z][A-Za-z0-9_]*)*",namespace):
+        raise ValueError("Lean namespace must contain plain identifiers")
+    canonical=discover_binomial_sum(p,max_order=2)
+    if packet['order']!=canonical['order'] or packet['coefficients']!=canonical['coefficients']:
+        raise ValueError("Lean emitter supports the retained canonical recurrence only")
+    def rational(x):
+        return str(x.numerator) if x.denominator==1 else "("+str(x.numerator)+"/"+str(x.denominator)+")"
+    def poly(values):
+        return "("+" + ".join("("+rational(x)+")*(n:ℚ)^"+str(i) for i,x in enumerate(values) if x)+")" if any(values) else "0"
+    expressions=["("+poly(v.n)+"/"+poly(v.d)+")" for v in coeff]
+    terms=[expression+"*S "+str(p)+" (n+"+str(j)+")" for j,expression in enumerate(expressions)]
+    digest=hashlib.sha256(json.dumps(packet,sort_keys=True,separators=(",",":")).encode()).hexdigest()
+    text="import PerfectPower.CertifiedTelescoping\n\nnamespace "+namespace+"\nopen PerfectPower.CertifiedTelescoping\n"
+    text+="-- Source packet SHA-256: "+digest+"\n"
+    text+="theorem compiled_recurrence (n : ℕ) :\n  "+" + ".join(terms)+" = 0 := by\n"
+    if p==1:
+        text+="  rw [first_power,first_power]\n  norm_num\n  ring\n"
+    else:
+        text+="  have h := recurrence"+str(p)+" n\n"
+        for i,v in enumerate(coeff):
+            text+="  have hd"+str(i)+" : "+poly(v.d)+" ≠ 0 := by positivity\n"
+        text+="  field_simp\n  nlinarith [h]\n"
+    text+="\n#print axioms compiled_recurrence\nend "+namespace+"\n"
+    return text
+
+
 def main():
     import argparse,json
     from pathlib import Path
     from .catalogue import encoded
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',choices=('compile','replay'))
+    parser.add_argument('command',choices=('compile','replay','emit-lean'))
     parser.add_argument('path',type=Path)
     parser.add_argument('--out',type=Path)
     args=parser.parse_args(); data=json.loads(args.path.read_text())
     if args.command=='compile':
         from .generating_cli import execute
         result=execute(data)
+    elif args.command=='emit-lean':
+        text=export_lean_binomial(data.get('definition',data))
+        if args.out: args.out.write_text(text)
+        else: print(text,end='')
+        return
     else:
         data=data.get('definition',data)
         schema=data.get('schema')

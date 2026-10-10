@@ -1,0 +1,79 @@
+import PerfectPower.GeneratingFunctions
+import PerfectPower.CertifiedTelescoping
+import PerfectPower.CertifiedBinary64
+import PerfectPower.CertifiedSeriesBounds
+import PerfectPower.CertifiedRealization
+import PerfectPower.Generated.BinomialPower1
+import PerfectPower.Generated.BinomialPower2
+import PerfectPower.Generated.BinomialPower3
+import PerfectPower.Generated.BinomialPower4
+
+#print axioms PerfectPower.GeneratingFunctions.rational_coefficients_unique
+#print axioms PerfectPower.GeneratingFunctions.hom_sum
+#print axioms PerfectPower.GeneratingFunctions.delay_transport
+#print axioms PerfectPower.GeneratingFunctions.output_transport
+#print axioms PerfectPower.GeneratingFunctions.telescope
+#print axioms PerfectPower.GeneratingFunctions.theta_coefficients_unique
+#print axioms PerfectPower.GeneratingFunctions.WorkedCostQuotient.step_preserved
+#print axioms PerfectPower.GeneratingFunctions.WorkedCostQuotient.all_costs
+#print axioms PerfectPower.CertifiedTelescoping.choose_step
+#print axioms PerfectPower.CertifiedTelescoping.choose_up
+#print axioms PerfectPower.CertifiedTelescoping.telescope
+#print axioms PerfectPower.CertifiedTelescoping.sum_extend
+#print axioms PerfectPower.CertifiedTelescoping.G_difference
+#print axioms PerfectPower.CertifiedTelescoping.G_boundaries
+#print axioms PerfectPower.CertifiedTelescoping.interior2
+#print axioms PerfectPower.CertifiedTelescoping.interior3
+#print axioms PerfectPower.CertifiedTelescoping.interior4
+#print axioms PerfectPower.CertifiedTelescoping.recurrence2
+#print axioms PerfectPower.CertifiedTelescoping.recurrence3
+#print axioms PerfectPower.CertifiedTelescoping.recurrence4
+#print axioms PerfectPower.CertifiedTelescoping.first_power
+#print axioms PerfectPower.CertifiedTelescoping.second_order_unique
+#print axioms PerfectPower.CertifiedTelescoping.pair3_correct
+#print axioms PerfectPower.CertifiedTelescoping.pair4_correct
+#print axioms PerfectPower.CertifiedTelescoping.antidifference_sum
+#print axioms PerfectPower.CertifiedTelescoping.geometric_sum
+#print axioms PerfectPower.CertifiedTelescoping.inverse_product_sum
+#print axioms PerfectPower.CertifiedBinary64.decode_finite
+#print axioms PerfectPower.CertifiedBinary64.decode_nonfinite
+#print axioms PerfectPower.CertifiedBinary64.fields_reconstruct
+#print axioms PerfectPower.CertifiedBinary64.sign_bound
+#print axioms PerfectPower.CertifiedBinary64.fraction_bound
+#print axioms PerfectPower.CertifiedBinary64.exponent_bound
+#print axioms PerfectPower.CertifiedBinary64.normalize
+#print axioms PerfectPower.CertifiedBinary64.power_sound
+#print axioms PerfectPower.CertifiedBinary64.product
+#print axioms PerfectPower.CertifiedBinary64.aligned_sum
+#print axioms PerfectPower.CertifiedBinary64.round_floor_or_ceil
+#print axioms PerfectPower.CertifiedBinary64.round_below_half
+#print axioms PerfectPower.CertifiedBinary64.round_above_half
+#print axioms PerfectPower.CertifiedBinary64.round_tie_even
+#print axioms PerfectPower.CertifiedBinary64.round_error
+#print axioms PerfectPower.CertifiedBinary64.quarter_square
+#print axioms PerfectPower.CertifiedBinary64.point_one_exact
+#print axioms PerfectPower.CertifiedBinary64.point_one_not_square
+#print axioms PerfectPower.CertifiedBinary64.negative_not_even_power
+#print axioms PerfectPower.CertifiedBinary64.infinity_refused
+#print axioms PerfectPower.CertifiedBinary64.negative_zero_exact
+#print axioms PerfectPower.CertifiedSeriesBounds.recurrence_majorant
+#print axioms PerfectPower.CertifiedSeriesBounds.source_coefficient_majorant
+#print axioms PerfectPower.CertifiedSeriesBounds.absolute_tail
+#print axioms PerfectPower.CertifiedSeriesBounds.coefficient_disk_tail
+#print axioms PerfectPower.CertifiedSeriesBounds.binomial_ratio_bound
+#print axioms PerfectPower.CertifiedSeriesBounds.positive_ratio_tail
+#print axioms PerfectPower.CertifiedSeriesBounds.binomialTerm_nonnegative
+#print axioms PerfectPower.CertifiedSeriesBounds.binomial_series_interval
+#print axioms PerfectPower.CertifiedSeriesBounds.square_root_interval
+#print axioms PerfectPower.CertifiedRealization.hankel_dimension_lower_bound
+#print axioms PerfectPower.CertifiedRealization.hankel_factorization
+#print axioms PerfectPower.CertifiedRealization.response_hankel_lower_bound
+#print axioms PerfectPower.CertifiedRealization.realization_minimal
+#print axioms PerfectPower.CertifiedRealization.all_future_transport
+#print axioms PerfectPower.CertifiedRealization.all_future_readout
+#print axioms PerfectPower.CertifiedRealization.fibonacci_hankel_nonsingular
+#print axioms PerfectPower.CertifiedRealization.fibonacci_minimal
+#print axioms PerfectPower.Generated.BinomialPower1.compiled_recurrence
+#print axioms PerfectPower.Generated.BinomialPower2.compiled_recurrence
+#print axioms PerfectPower.Generated.BinomialPower3.compiled_recurrence
+#print axioms PerfectPower.Generated.BinomialPower4.compiled_recurrence

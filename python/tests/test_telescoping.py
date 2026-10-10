@@ -102,3 +102,25 @@ class TelescopingTests(unittest.TestCase):
             subprocess.run([sys.executable,'-m','perfectpower.telescoping','compile',str(src),'--out',str(out)],check=True,capture_output=True)
             r=subprocess.run([sys.executable,'-m','perfectpower.telescoping','replay',str(out)],check=True,capture_output=True,text=True)
             self.assertTrue(json.loads(r.stdout)['boundary_conditions_proved'])
+
+    def test_source_bound_lean_export_and_identifier_guard(self):
+        from perfectpower.telescoping import export_lean_binomial
+        for p,packet in self.packets.items():
+            source=export_lean_binomial(packet,'PerfectPower.Generated.Test'+str(p))
+            self.assertIn('theorem compiled_recurrence',source)
+            self.assertIn('S '+str(p),source)
+            self.assertNotIn('native_decide',source)
+            self.assertNotIn('sorry',source)
+        for name in ('A; sorry','A\naxiom false : False','../A','A.'):
+            with self.assertRaises(ValueError):export_lean_binomial(self.packets[1],name)
+        bad=copy.deepcopy(self.packets[3]);bad['coefficients'][0]['numerator'][0]='-9'
+        with self.assertRaises(ValueError):export_lean_binomial(bad)
+
+    def test_lean_export_cli(self):
+        import subprocess,sys,tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as folder:
+            src=Path(folder)/'packet.json';out=Path(folder)/'proof.lean'
+            src.write_text(json.dumps(self.packets[3]))
+            subprocess.run([sys.executable,'-m','perfectpower.telescoping','emit-lean',str(src),'--out',str(out)],check=True,capture_output=True)
+            self.assertIn('compiled_recurrence',out.read_text())

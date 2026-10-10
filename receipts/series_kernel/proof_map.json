@@ -1,0 +1,102 @@
+{
+  "schema": "pp-series-proof-map/1",
+  "version": "0.9.6",
+  "scope": "Recent generating-function, binary, analytic and telescoping Lean obligations; historical research targets explicitly retained.",
+  "obligations": [
+    {
+      "target": "binomial_sum_definitions",
+      "status": "closed",
+      "scope": "All-index p=1,2,3,4 sums, shifts, finite support, certificate interiors and both endpoints."
+    },
+    {
+      "target": "binomial_packet_recursion",
+      "status": "closed",
+      "scope": "Each retained serialized recurrence emitted as a theorem on the actual sum; exact source regeneration checked."
+    },
+    {
+      "target": "second_order_sequence_identity",
+      "status": "closed",
+      "scope": "General uniqueness and actual two-state recursions equal cube/fourth-power sums."
+    },
+    {
+      "target": "finite_antidifference_bridge",
+      "status": "closed",
+      "scope": "General finite interval and endpoint identity; geometric and inverse-product instances."
+    },
+    {
+      "target": "binary64_stored_semantics",
+      "status": "closed_mathematics",
+      "scope": "Guarded decoder, integer fields, dyadic normalization, product and aligned accumulation."
+    },
+    {
+      "target": "binary_rounding_decision",
+      "status": "closed_mathematics",
+      "scope": "Integer nearest-even decision and half-unit error bound."
+    },
+    {
+      "target": "binary64_full_encoder",
+      "status": "open_refinement",
+      "scope": "Full Python round_bits exponent choice, renormalization, subnormal and overflow paths; byte transport."
+    },
+    {
+      "target": "binary64_complete_power_classifier",
+      "status": "open_refinement",
+      "scope": "General equivalence between executable classification and existence of rational perfect-power roots."
+    },
+    {
+      "target": "source_coefficient_majorant",
+      "status": "closed",
+      "scope": "Weighted bound derived from the normalized source coefficient recurrence."
+    },
+    {
+      "target": "analytic_series_remainders",
+      "status": "closed",
+      "scope": "Signed infinite-tail bound and actual recursive positive-binomial-series interval."
+    },
+    {
+      "target": "analytic_binomial_identification",
+      "status": "open_mathematics",
+      "scope": "Identify the recursive sum with the chosen analytic (1-x)^(-alpha) branch."
+    },
+    {
+      "target": "hankel_realization_minimality",
+      "status": "closed",
+      "scope": "Actual response factorization and dimension lower bound against every all-time equivalent rational realization."
+    },
+    {
+      "target": "all_future_quotient_transport",
+      "status": "closed",
+      "scope": "General intertwining and protected-readout equality at every iterate."
+    },
+    {
+      "target": "rational_series_compiler_refinement",
+      "status": "open_refinement",
+      "scope": "Full gcd cancellation, companion construction, Bostan-Mori implementation and parser execution proofs."
+    },
+    {
+      "target": "general_WZ_discovery",
+      "status": "open",
+      "scope": "Complete general discovery and source/domain boundary verification beyond the supported four-family exporter."
+    },
+    {
+      "target": "historical_root_build",
+      "status": "not_rerun",
+      "scope": "This sweep compiles nine modules and audits every named theorem in them, not all historical heavy computations."
+    },
+    {
+      "target": "historical_research_frontier",
+      "status": "open_reconciliation",
+      "scope": "General Baker bounds, curve normalization/local parameters and basis completeness, Euler-period identification, general monomial solver and number-ring completeness. Historical status documents need reconciliation with subsequent independent receipts."
+    }
+  ],
+  "python_regression": {
+    "status": "passed",
+    "total": 64,
+    "test_files": {
+      "test_telescoping.py": 13,
+      "test_generating_functions.py": 29,
+      "test_generating_arithmetic.py": 8,
+      "test_binary_generating.py": 14
+    }
+  }
+}

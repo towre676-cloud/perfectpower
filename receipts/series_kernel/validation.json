@@ -1,0 +1,571 @@
+{
+  "schema": "pp-series-kernel/1",
+  "status": "passed",
+  "lean_version": "4.20.0",
+  "runtime_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "declaration_count": 69,
+  "declarations": [
+    {
+      "name": "PerfectPower.GeneratingFunctions.rational_coefficients_unique",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.GeneratingFunctions.hom_sum",
+      "axioms": []
+    },
+    {
+      "name": "PerfectPower.GeneratingFunctions.delay_transport",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.GeneratingFunctions.output_transport",
+      "axioms": []
+    },
+    {
+      "name": "PerfectPower.GeneratingFunctions.telescope",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.GeneratingFunctions.theta_coefficients_unique",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.GeneratingFunctions.WorkedCostQuotient.step_preserved",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.GeneratingFunctions.WorkedCostQuotient.all_costs",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.choose_step",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.choose_up",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.telescope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.sum_extend",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.G_difference",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.G_boundaries",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.interior2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.interior3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.interior4",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.recurrence2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.recurrence3",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.recurrence4",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.first_power",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.second_order_unique",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.pair3_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.pair4_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.antidifference_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.geometric_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedTelescoping.inverse_product_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.decode_finite",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.decode_nonfinite",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.fields_reconstruct",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.sign_bound",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.fraction_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.exponent_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.normalize",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.power_sound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.product",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.aligned_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.round_floor_or_ceil",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.round_below_half",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.round_above_half",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.round_tie_even",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.round_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.quarter_square",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.point_one_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.point_one_not_square",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.negative_not_even_power",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.infinity_refused",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedBinary64.negative_zero_exact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.recurrence_majorant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.source_coefficient_majorant",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.absolute_tail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.coefficient_disk_tail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.binomial_ratio_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.positive_ratio_tail",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.binomialTerm_nonnegative",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.binomial_series_interval",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedSeriesBounds.square_root_interval",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.hankel_dimension_lower_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.hankel_factorization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.response_hankel_lower_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.realization_minimal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.all_future_transport",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.all_future_readout",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.fibonacci_hankel_nonsingular",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.CertifiedRealization.fibonacci_minimal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.Generated.BinomialPower1.compiled_recurrence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.Generated.BinomialPower2.compiled_recurrence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.Generated.BinomialPower3.compiled_recurrence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PerfectPower.Generated.BinomialPower4.compiled_recurrence",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "PerfectPower/GeneratingFunctions.lean": "a7ef00257423da686071e14492cc5bba5377de18a6dd970f7b7c5701acba1567",
+    "PerfectPower/CertifiedTelescoping.lean": "fea92ca90e25177eb576f02e000459f5b7f81102b66c32d8a0dc3f88a42a9fbd",
+    "PerfectPower/CertifiedBinary64.lean": "baa2097f1cb95bb404def84b19e7e1a91e1478d250942a860eb03f2e1d7a1f0b",
+    "PerfectPower/CertifiedSeriesBounds.lean": "83f17271a7904607389b7e2242efaf06b267389b998b40877a6a9159f609bfad",
+    "PerfectPower/CertifiedRealization.lean": "bca3f557ed2d648eb6def3a2ceb72c855bcefda3a4dafdcde170b684d6e4ce26",
+    "PerfectPower/Generated/BinomialPower1.lean": "017b402525ec40e3d65ad458e9b6510c731739779646296f4189f4c516650ed5",
+    "PerfectPower/Generated/BinomialPower2.lean": "3487a7e5edc50f51002206b1b87a50e4c9c4ad0f7e006f9b95c8f3a85da6fc5c",
+    "PerfectPower/Generated/BinomialPower3.lean": "f2d2029927efc88ba97caa23761cb349d7eb1f958b616e54a454f89585f2a9b6",
+    "PerfectPower/Generated/BinomialPower4.lean": "ac6d66d7b7e9e5b0b77c789e00a7214a05ed5e4ed9adba8565c944d175ff3d5d",
+    "audit/SeriesKernel.lean": "d1bb1c4e92799032ebcf797017ad0410a28401299e672e606d945cf01ef04c95",
+    "scripts/check_series_kernel.py": "766205384bc6a45c20f0f6bde6a78166d84dd0dcb733ab8f329afd6340d05ed8",
+    "python/perfectpower/telescoping.py": "6fdd55dce8f2babf9a196fb83288edccf2de9bb3364c9129d6f9f03505ef2f32",
+    "receipts/telescoping/binomial_power_1.json": "a3969351d05bef6c7498ff933c54845b8c07919ca94f12416dd959800d62c1b4",
+    "receipts/telescoping/binomial_power_2.json": "ebda64a41b311a6f7db4e48019502325b920acca4bfc3916b5d43cae25c01a3f",
+    "receipts/telescoping/binomial_power_3.json": "1b25a4e1bcb147002db21dc0056d473eb68b6ba7cf8e545ea355348bf66f98a2",
+    "receipts/telescoping/binomial_power_4.json": "ec4584805759e8698dd3b69839b4a2457518b3da84e32c0c54fa3cf3675193bd"
+  },
+  "log_sha256": {
+    "receipts/series_kernel/BinomialPower1.log": "969ffee89ebc272a47f3ed4f233f0053eaa1212577f5924624a2180f2f60e8af",
+    "receipts/series_kernel/BinomialPower2.log": "c1bd0c347d281a196ca25c016fcd84e0b565865fd9f673cc79483b9d89d8a324",
+    "receipts/series_kernel/BinomialPower3.log": "c1f21dccd8dab7d80e9314d47d8584dcf55eca309e1980705a8a8ad679cbf3a5",
+    "receipts/series_kernel/BinomialPower4.log": "e9595c3109ad2a71baa79b586075a2f841b4472589bc8c3591dbf0be6dee78e1",
+    "receipts/series_kernel/CertifiedBinary64.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipts/series_kernel/CertifiedRealization.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipts/series_kernel/CertifiedSeriesBounds.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipts/series_kernel/CertifiedTelescoping.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "receipts/series_kernel/GeneratingFunctions.log": "81f9513096496856a780e9c62b61e3a67e06efd473d57c94d0910b11a5d7120a",
+    "receipts/series_kernel/SeriesKernel.log": "5477acb59be67fc8f59fc5e80a8ff36a1a863c5d98824ef64e2fe8e4679e9685"
+  },
+  "scope": "the listed mathematical foundations and source-bound binomial recurrence packets; not a complete historical root build or full Python implementation refinement"
+}

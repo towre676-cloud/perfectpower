@@ -89,6 +89,7 @@ release-verify:
 	$(MAKE) descent-bridges-kernel
 	$(MAKE) isogeny-point-groups-kernel
 	$(MAKE) soe-generic-kernel
+	$(MAKE) series-kernel
 
 .PHONY: hardening-verify hardening-kernel
 hardening-verify:
@@ -525,3 +526,7 @@ blast-lean:
 .PHONY: check-integrity
 check-integrity:
 	python3 scripts/check_repo_integrity.py
+
+.PHONY: series-kernel
+series-kernel:
+	$(PY) scripts/check_series_kernel.py
