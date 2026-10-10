@@ -3,6 +3,8 @@ import PerfectPower.PSGStructural
 namespace PerfectPower.PSGStructuralPackets
 
 set_option maxHeartbeats 8000000
+set_option maxRecDepth 100000
+set_option linter.unusedVariables false
 
 def source (x L T Y : ℚ) : ℚ := (2:ℚ)*L^6*T^1+(-1:ℚ)*L^6*T^3+(1:ℚ)*L^7*T^1+(1:ℚ)*L^7*T^3+(-12:ℚ)*x^1*L^5*T^2+(-2:ℚ)*x^1*L^6+(-3:ℚ)*x^1*L^6*T^2+(-1:ℚ)*x^1*L^6*T^4+(-1:ℚ)*x^1*L^7+(1:ℚ)*x^1*L^7*T^4+(-6:ℚ)*x^2*L^4*T^1+(15:ℚ)*x^2*L^4*T^3+(12:ℚ)*x^3*L^3*T^2+(-8:ℚ)*x^3*L^3*T^4+(-2:ℚ)*x^3*L^4+(2:ℚ)*x^3*L^4*T^4+(-2:ℚ)*x^3*L^5+(2:ℚ)*x^3*L^5*T^4+(-9:ℚ)*x^4*L^2*T^3+(-1:ℚ)*x^4*L^3*T^1+(-1:ℚ)*x^4*L^3*T^3+(3:ℚ)*x^5*L^2*T^2+(3:ℚ)*x^5*L^2*T^4+(-1:ℚ)*x^5*L^3+(1:ℚ)*x^5*L^3*T^4+(-1:ℚ)*x^6*T^3
 

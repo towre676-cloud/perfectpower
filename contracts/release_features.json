@@ -185,6 +185,27 @@
         "test_soe_bridge.py"
       ],
       "kernel_required": false
+    },
+    {
+      "name": "recovered_work_lean_closure",
+      "files": [
+        "PerfectPower/PSGStructural.lean",
+        "PerfectPower/SOESemantics.lean",
+        "PerfectPower/StructuralCertificates.lean",
+        "PerfectPower/StructuralSpecies.lean",
+        "PerfectPower/AdaptiveDiagnosis.lean",
+        "PerfectPower/NewWorkClosure.lean",
+        "audit/NewWorkClosure.lean",
+        "scripts/check_new_work_lean.py",
+        "docs/NEW_WORK_LEAN_MONOGRAPH.md"
+      ],
+      "tests": [
+        "test_psg_structural.py",
+        "test_soe_bridge.py",
+        "test_structural_math.py",
+        "test_new_work_lean.py"
+      ],
+      "kernel_required": true
     }
   ]
 }

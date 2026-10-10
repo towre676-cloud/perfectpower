@@ -1,4 +1,7 @@
-import Mathlib
+import Mathlib.Data.Rat.Defs
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 
 /- Exact structural algebra recovered from PSG. Python execution, packet
    decoding and infinite analytic conclusions are not asserted here. -/
@@ -52,6 +55,5 @@ theorem norm_regular_square (A B D : F) (hB : B≠0)
 
 theorem regular_reconstruction (A B : F) (hB : B≠0) : A+(-A/B)*B=0 := by
   field_simp [hB]
-  ring
 end Field
 end PerfectPower.PSGStructural

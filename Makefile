@@ -13,7 +13,10 @@ structural-math:
 	$(PY) -m unittest discover -s python/tests -p 'test_structural_math.py'
 	$(PY) python/develop_structural_math.py
 
-.PHONY: psg-structural psg-structural-kernel
+.PHONY: new-work-kernel psg-structural psg-structural-kernel
+new-work-kernel:
+	$(PY) scripts/check_new_work_lean.py
+
 psg-structural:
 	$(PY) -m unittest discover -s python/tests -p 'test_psg_structural.py'
 	$(PY) python/develop_psg_structural.py
@@ -63,6 +66,7 @@ release-verify:
 	$(MAKE) check-mordell-descent-atlas
 	$(MAKE) check-orbit-reduction
 	$(MAKE) check-mordell-parity
+	$(MAKE) new-work-kernel
 
 .PHONY: hardening-verify hardening-kernel
 hardening-verify:

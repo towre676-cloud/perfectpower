@@ -220,3 +220,7 @@ Exact quadratic source elimination and complete rational/integer auxiliary fibre
 ## Enhanced SOE bridge
 
 Finite semantic fibres, natural-count/rational-mass/min-plus transport, coarsest deterministic partial-state quotients, shortest distinguishing words, cross-model behavioral equivalence, reversible polynomial semantic/Jacobian transport, and exact finite-menu adaptive diagnosis are executable. Completeness remains relative to supplied carriers and models. Canonical historical SOE sources were not available. Infinite-state synthesis, stochastic controlled-state equivalence, non-resettable diagnosis, arbitrary hardware cost discovery and Lean refinement of the new Python interfaces remain open.
+
+## Recovered structural formalization
+
+The twenty pending PSG declarations now compile. All 324 retained two-state quotients have all-future completeness proofs; the retained adaptive diagnosis optimum and rational LDL/energy identities are proved. Whole-Python refinement, real-coordinate inequality lifting, general species dynamic-programming correctness and the unconditional two-isogeny rank identity remain open. See `NEW_WORK_LEAN_MONOGRAPH.md`.

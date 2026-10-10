@@ -90,7 +90,7 @@ def main():
 
     # Keep the original expression structure in literal Lean identities.
     lean=['import PerfectPower.PSGStructural','namespace PerfectPower.PSGStructuralPackets',
-          'set_option maxHeartbeats 8000000']
+          'set_option maxHeartbeats 8000000\nset_option maxRecDepth 100000\nset_option linter.unusedVariables false']
     names=('source','A','B','C','D','norm')
     polynomials=(P,*(Polynomial.from_packet(packet[k]) for k in ('A','B','quotient','radicand','norm')))
     for name,p in zip(names,polynomials):

@@ -459,3 +459,6 @@ import PerfectPower.SpectralTrace
 import PerfectPower.PellOrbitPopulation
 import PerfectPower.AutomaticReduction
 import PerfectPower.MordellParity
+
+import PerfectPower.NewWorkClosure
+import PerfectPower.AdaptiveDiagnosis

@@ -139,3 +139,5 @@ make lean
 Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [CC BY 4.0](LICENSE-docs). Included OEIS records retain their [source attribution and CC BY-SA 4.0 license](data/oeis/SOURCE.md). Citation metadata is in [CITATION.cff](CITATION.cff).
 
 The [Mordell formal bridge](docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md) proves saturation composition and finite-box enumeration in Lean. Its ten audited theorems leave curve-specific rank upper bounds, global saturation prime support and global integral-coordinate bounds explicit; no external receipt is promoted to an unconditional formal closure.
+
+The [recovered-work Lean closure](docs/NEW_WORK_LEAN_MONOGRAPH.md) audits 384 declarations, including all-future quotient completeness for 324 partial machines and the exact two-versus-three adaptive diagnosis advantage. PSG algebra and retained rational matrix/energy identities compile; the classical two-isogeny rank identity remains a separate formalization task. Reproduce with `make new-work-kernel`.
