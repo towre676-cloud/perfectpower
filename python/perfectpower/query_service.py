@@ -6,6 +6,9 @@ from .catalogue import Catalogue, encoded
 from .divisor_square import WorkLimit
 
 METHODS = dict(
+    rational_series={'summary','evidence','coefficient','terms'},
+    theta_series={'summary','evidence','coefficient','terms'},
+    budget_population={'summary','evidence','count','cumulative_count','select','rank','page'},
     elliptic_curve={'summary','evidence','point_add','point_multiply','rational_halves','rational_thirds','rational_division','subgroup_preimage','bounded_saturation','subgroup_presentation','saturation_presentation','model_transport','two_isogeny','independence','mordell_two_descent','native_two_torsion','native_halves'},
     differential_module={'summary','evidence','dual','tensor','hom','power','pullback','gauge','horizontal_sections','horizontal_endomorphisms','involution_descent','observable'},
     superelliptic_family={'summary','evidence','observable'},
@@ -31,6 +34,9 @@ def dispatch(catalogue, request):
     op = request.get('op'); args = request.get('args', {})
     if not isinstance(args, dict):
         raise ValueError('args must be a JSON object')
+    if op == 'generating_function':
+        from .generating_cli import execute
+        return execute(args)
     if op == 'checked_population':
         from .checked_population import population_certificate
         return population_certificate(**args)

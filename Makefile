@@ -3,6 +3,15 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
+.PHONY: generating-functions generating-functions-kernel
+generating-functions:
+	$(PY) -m unittest discover -s python/tests -p 'test_generating_functions.py'
+	$(PY) python/develop_generating_functions.py
+
+# This foundation needs only the Lean 4.20 standard library, not Mathlib.
+generating-functions-kernel:
+	$${PERFECTPOWER_LEAN:-lean} PerfectPower/GeneratingFunctions.lean
+
 .PHONY: soe-bridge soe-generic-kernel
 soe-generic-kernel:
 	scripts/check_soe_generic.sh

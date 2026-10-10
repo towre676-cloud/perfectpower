@@ -16,6 +16,8 @@ def coefficients(raw):
 def main():
     parser = argparse.ArgumentParser(description='Exact polynomial perfect-power research console')
     sub = parser.add_subparsers(dest='command', required=True)
+    from .generating_cli import add_commands as add_generating_commands
+    add_generating_commands(sub)
     from .soe_console import add_commands as add_soe_commands
     add_soe_commands(sub)
     from .structural_math_cli import add_commands as add_structural_commands
@@ -199,6 +201,9 @@ def main():
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .generating_cli import cli as generating_cli
+    if generating_cli(args):
+        return
     from .soe_console import cli as soe_cli
     if soe_cli(args):
         return

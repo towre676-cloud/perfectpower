@@ -477,3 +477,4 @@ import PerfectPower.Generated.BlastAlignmentSOE
 import PerfectPower.Generated.BlastMotifSOE
 import PerfectPower.Generated.BlastPathCounts
 import PerfectPower.Generated.BlastScores
+import PerfectPower.GeneratingFunctions

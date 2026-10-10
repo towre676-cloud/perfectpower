@@ -35,6 +35,10 @@ def compile_object(kind, specification):
     constructors = dict(differential_module=DifferentialModule,superelliptic_family=SuperellipticFamily,binomial_sum=BinomialSum,differential_extension=DifferentialExtension,symmetry_curve=SymmetryCurve,multi_curve_family=MultiCurveFamily,elliptic_quotient=EllipticQuotientFamily,curve_family=CurveFamily,calibration_policy=CalibrationPolicy,diagnostic_policy=DiagnosticPolicy,population=ExactPopulation,population_comparison=PopulationComparison, sequence=SequenceLibrary, inverse=InverseDesign,
                         graph=GraphEnsemble, geometry=GeometryWorkbench, combinatorial=CombinatorialDesign,projected=ProjectedPopulation,factorial=FactorialLibrary)
     constructors['elliptic_curve']=EllipticCurve
+    from .generating_functions import RationalSeries
+    from .budget_populations import BudgetPopulation
+    from .holonomic_series import ThetaSeries
+    constructors.update(rational_series=RationalSeries, budget_population=BudgetPopulation, theta_series=ThetaSeries)
     if kind not in constructors:
         raise ValueError('unsupported catalogue kind')
     return constructors[kind](specification)
