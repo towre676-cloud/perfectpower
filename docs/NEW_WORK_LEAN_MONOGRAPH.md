@@ -100,6 +100,10 @@ Run make new-work-kernel in an environment with Lean and Mathlib 4.20.0. The gat
 
 The verification receipt binds the compiled source files, generators, input receipts and audit script by SHA-256. Each successful compile has a retained log. The Python PSG, SOE and structural suites supply separate execution evidence. An installed wheel is checked outside the source checkout. This focused release does not claim a rerun of the entire historical release-verification suite. The complete archive contains the incoming work, formal closure, receipts, documentation and installed package, with independent ZIP parts that should all be extracted into the same directory.
 
+## Subsequent arithmetic bridge release
+
+Version 0.9.2 now proves squareclass completeness for actual nonzero rational points and prime-power chart exhaustiveness, and applies both to all retained squareclass packets. See [the descent bridges monograph](DESCENT_BRIDGES_MONOGRAPH.md) for the updated arithmetic boundary. The actual elliptic-group isogeny and Mordell–Weil rank bridges remain unfinished. The preceding sections describe the 0.9.1 release scope.
+
 ## General finite-machine proof packets
 
 The source-bound compiler now supports supplied finite deterministic partial machines with pair-specific quotient experiments. The public `soe-states --kernel-check` option requires rebuilt Lean acceptance. See [the general compiler monograph](SOE_GENERIC_LEAN_MONOGRAPH.md) for its contract, reproducibility commands and explicit limits. This verifies individual results; the Python partition-refinement implementation remains tested rather than formally verified.

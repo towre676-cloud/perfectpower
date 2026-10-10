@@ -16,7 +16,11 @@ structural-math:
 	$(PY) -m unittest discover -s python/tests -p 'test_structural_math.py'
 	$(PY) python/develop_structural_math.py
 
-.PHONY: new-work-kernel psg-structural psg-structural-kernel
+.PHONY: descent-bridges-kernel new-work-kernel psg-structural psg-structural-kernel
+descent-bridges-kernel:
+	$(PY) scripts/check_descent_bridges_lean.py
+	$(PY) scripts/check_descent_bridge_rejections.py
+
 new-work-kernel:
 	$(PY) scripts/check_new_work_lean.py
 
@@ -70,6 +74,8 @@ release-verify:
 	$(MAKE) check-orbit-reduction
 	$(MAKE) check-mordell-parity
 	$(MAKE) new-work-kernel
+	$(MAKE) descent-bridges-kernel
+	$(MAKE) soe-generic-kernel
 
 .PHONY: hardening-verify hardening-kernel
 hardening-verify:

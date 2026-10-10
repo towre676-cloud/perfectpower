@@ -462,3 +462,8 @@ import PerfectPower.MordellParity
 
 import PerfectPower.NewWorkClosure
 import PerfectPower.AdaptiveDiagnosis
+
+import PerfectPower.TwoDescentBridges
+import PerfectPower.LocalQuarticBridges
+import PerfectPower.IsogenyCoordinates
+import PerfectPower.IsogenyIndexBridges

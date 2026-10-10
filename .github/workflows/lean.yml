@@ -15,6 +15,8 @@ jobs:
         run: make psg-structural-kernel
       - name: Recovered SOE and structural mathematics kernel closure
         run: make new-work-kernel
+      - name: Rational descent arithmetic and primitive local chart audit
+        run: make descent-bridges-kernel
       - name: General finite SOE source-bound acceptance and adversarial rejection
         run: make soe-generic-kernel
       - name: Original bounded equations, signed roots, ranks and tied minima

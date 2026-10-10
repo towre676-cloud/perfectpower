@@ -1,0 +1,44 @@
+{
+  "schema": "pp-descent-rejections/1",
+  "cases": [
+    {
+      "case": "complete_signed_support",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "case": "omitted_negative_support",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "case": "unit_denominator_chart_alone",
+      "expected_acceptance": true,
+      "accepted": true
+    },
+    {
+      "case": "omitted_nonunit_chart",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "case": "altered_isogenous_coefficient",
+      "expected_acceptance": false,
+      "accepted": false
+    },
+    {
+      "case": "altered_reconstructed_y_sign",
+      "expected_acceptance": false,
+      "accepted": false
+    }
+  ],
+  "source_sha256": {
+    "scripts/check_descent_bridge_rejections.py": "779898f17164cf87632635b59def678598acf52fe5b8c3e7cd92835c210a092d",
+    "receipts/descent_bridges/rejections/altered_isogenous_coefficient.lean": "2834ee844fddca2006a739501a62cb1097fbe2f38e928c8c070dca95b95fa45c",
+    "receipts/descent_bridges/rejections/altered_reconstructed_y_sign.lean": "e783db3b2ef260a2d581f89db57edd5f8f0e643eeb8e9824760523577a12bbd2",
+    "receipts/descent_bridges/rejections/complete_signed_support.lean": "ac7db6d5f1e15c2756da1cf2286f96dcabfe9fb9d9998a8784d5a2ef380c1e1e",
+    "receipts/descent_bridges/rejections/omitted_negative_support.lean": "f10df246e15abe12ddf50b55e0cacd6bb0a12a7c6720d47523e1f053cfdf087e",
+    "receipts/descent_bridges/rejections/omitted_nonunit_chart.lean": "be9f903c1ee5c7660d605f0a0dec8c67df4f1953b0c8e707ddd7e905103de6a0",
+    "receipts/descent_bridges/rejections/unit_denominator_chart_alone.lean": "6ef2c2add7e1ca2c9fddb628f3419581630f76976acd144d2bd7c8c25240d1d6"
+  }
+}

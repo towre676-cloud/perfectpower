@@ -142,4 +142,6 @@ The [Mordell formal bridge](docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md) proves satu
 
 The [recovered-work Lean closure](docs/NEW_WORK_LEAN_MONOGRAPH.md) audits 384 declarations, including all-future quotient completeness for 324 partial machines and the exact two-versus-three adaptive diagnosis advantage. PSG algebra and retained rational matrix/energy identities compile; the classical two-isogeny rank identity remains a separate formalization task. Reproduce with `make new-work-kernel`.
 
+The [rational descent arithmetic bridges](docs/DESCENT_BRIDGES_MONOGRAPH.md) derive primitive quartic covers from actual rational points, prove prime-power chart exhaustiveness, and audit 2,651 declarations, including 1,478 excluded covers across 576 retained curve models. Isogeny coordinate identities and a corrected group-index equation are proved separately; actual elliptic-group homomorphisms and the Mordell–Weil rank identity remain open. Reproduce with `make descent-bridges-kernel`.
+
 SOE finite partial machines can request source-bound Lean acceptance with `soe-states model.json --kernel-check`. Pair-specific experiments prove the coarsest all-future quotient for supported supplied models; see [the compiler contract and resource limits](docs/SOE_GENERIC_LEAN_MONOGRAPH.md).

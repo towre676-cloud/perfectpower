@@ -19,6 +19,8 @@ RECEIPTS=(
     'mordell_parity_atlas.json',
     'orbit_reduction_queries.json',
     'new_work_lean/verification.json',
+    'descent_bridges/verification.json',
+    'descent_bridges/instances.json',
 )
 
 
