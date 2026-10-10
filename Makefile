@@ -553,3 +553,9 @@ series-kernel:
 planning-hybrid-benchmark:
 	PYTHONPATH=python python python/run_planning_hybrid.py --repeats 3 --large
 	PYTHONPATH=python python python/run_planning_hybrid_memory.py
+
+.PHONY: budget-lab-test budget-lab-benchmark
+budget-lab-test:
+	PYTHONPATH=python python -m unittest python/tests/test_budget_lab.py
+budget-lab-benchmark:
+	PYTHONPATH=python python python/run_budget_lab.py --repeats 3

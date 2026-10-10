@@ -199,7 +199,7 @@ class CompletionPlanner:
         native_ok = independent_binary and len(variables) <= 40 and available() and sum(abs(int(v[1]*native_scale)) for v in self.variables) <= 2**60
         grid = (len(variables)+1)*prod(min(high, sum(v[0][j]*(v[2]+v[3]*max(0,(v[4] or 1)-1)) for v in self.variables))+1 for j,high in enumerate(highs))
         if self.strategy == 'auto':
-            self.strategy = ('symmetry' if repeated else 'dp' if independent_binary and grid < candidates//2 else 'mitm' if native_ok and len(variables)>=15 else 'gray' if binary else
+            self.strategy = ('symmetry' if repeated else 'dp' if independent_binary and grid < min(candidates//2,self.state_limit) else 'mitm' if native_ok and len(variables)>=15 else 'gray' if binary else
                              'enumeration' if finite and candidates <= self.enum_limit else 'gf' if gf_ok else 'dp')
         if self.strategy in ('symmetry', 'mitm') and not independent_binary:
             raise ValueError('symmetry and MITM require independent binary allocations')

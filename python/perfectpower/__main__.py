@@ -19,6 +19,8 @@ def main():
     from .generating_cli import add_commands as add_generating_commands
     from .planning_cli import add_commands as add_planning_commands
     add_planning_commands(sub)
+    from .budget_lab import add_commands as add_budget_commands
+    add_budget_commands(sub)
     add_generating_commands(sub)
     from .generating_arithmetic import add_commands as add_series_commands
     add_series_commands(sub)
@@ -205,6 +207,9 @@ def main():
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
     args = parser.parse_args()
+    from .budget_lab import cli as budget_cli
+    if budget_cli(args):
+        return
     from .planning_cli import cli as planning_cli
     if planning_cli(args):
         return

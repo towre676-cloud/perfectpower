@@ -1,0 +1,178 @@
+{
+  "schema": "pp-budget-election/1",
+  "source": {
+    "id": "Netherlands_Amsterdam_2022_Rijnbuurt_West",
+    "filename": "Netherlands_Amsterdam_2022_Rijnbuurt_West.pb",
+    "git_blob_sha": "b57921d29181171b2d0e5563eed4e149744662dc",
+    "source_url": "https://raw.githubusercontent.com/pabulib/pabulib_files/4f8497afb2168e732d42f4960307e4a85f9dcc7b/pb_files/Netherlands_Amsterdam_2022_Rijnbuurt_West.pb",
+    "sha256": "2335bd8e112f1f879d59f43afb61d86e27a5baccd2e859aba6fd49c8e5444d9c"
+  },
+  "summary": {
+    "metadata": {
+      "description": "Buurtbudget Rijnbuurt West",
+      "country": "Netherlands",
+      "unit": "Amsterdam",
+      "district": "Zuid",
+      "subunit": "Rijnbuurt West",
+      "instance": "2022",
+      "num_projects": "15",
+      "num_votes": "212",
+      "budget": "100000",
+      "vote_type": "approval",
+      "rule": "greedy-custom",
+      "date_begin": "2022",
+      "date_end": "2022",
+      "max_sum_cost": "100000",
+      "language": "nl",
+      "currency": "EUR",
+      "comment": "#1: The leftover_budget entry indicates how leftover budget is spent. #2: Projects 42195 and 42190 had no cost specified in the original data: they were free (cost 0). To keep data consistent and not to have 0-cost projects (may cause problems when processing data) we set their costs to an artificial value of 1. #3: The selected column follows the official Amsterdam outcome, selected=2 marks plans funded partially or with additional municipal funds outside the regular budget. #4: The rule is marked greedy-custom because Amsterdam follows the official outcome, while the standard greedy check would keep filling leftover budget with lower-ranked affordable projects after a higher-ranked project does not fit.",
+      "leftover_budget": "Fund additional projects that fit within leftover budget ordered by score"
+    },
+    "project_count": 15,
+    "ballot_count": 212,
+    "budget": "100000",
+    "money_scale": 1,
+    "score_field": "votes",
+    "support_discrepancies": [],
+    "source": {
+      "id": "Netherlands_Amsterdam_2022_Rijnbuurt_West",
+      "filename": "Netherlands_Amsterdam_2022_Rijnbuurt_West.pb",
+      "git_blob_sha": "b57921d29181171b2d0e5563eed4e149744662dc",
+      "source_url": "https://raw.githubusercontent.com/pabulib/pabulib_files/4f8497afb2168e732d42f4960307e4a85f9dcc7b/pb_files/Netherlands_Amsterdam_2022_Rijnbuurt_West.pb",
+      "sha256": "2335bd8e112f1f879d59f43afb61d86e27a5baccd2e859aba6fd49c8e5444d9c"
+    },
+    "source_sha256": "2335bd8e112f1f879d59f43afb61d86e27a5baccd2e859aba6fd49c8e5444d9c",
+    "scope": "analytical maximum total published support; does not reproduce the municipal voting rule"
+  },
+  "specification": {
+    "kind": "allocation",
+    "resources": [
+      {
+        "name": "budget",
+        "max": 100000
+      }
+    ],
+    "variables": [
+      {
+        "name": "42192",
+        "costs": [
+          14000
+        ],
+        "profit": "123",
+        "upper": 1
+      },
+      {
+        "name": "42190",
+        "costs": [
+          1
+        ],
+        "profit": "121",
+        "upper": 1
+      },
+      {
+        "name": "42196",
+        "costs": [
+          7600
+        ],
+        "profit": "110",
+        "upper": 1
+      },
+      {
+        "name": "42185",
+        "costs": [
+          25000
+        ],
+        "profit": "104",
+        "upper": 1
+      },
+      {
+        "name": "42194",
+        "costs": [
+          7200
+        ],
+        "profit": "100",
+        "upper": 1
+      },
+      {
+        "name": "42182",
+        "costs": [
+          20000
+        ],
+        "profit": "86",
+        "upper": 1
+      },
+      {
+        "name": "42187",
+        "costs": [
+          14000
+        ],
+        "profit": "75",
+        "upper": 1
+      },
+      {
+        "name": "42188",
+        "costs": [
+          38800
+        ],
+        "profit": "72",
+        "upper": 1
+      },
+      {
+        "name": "42183",
+        "costs": [
+          17934
+        ],
+        "profit": "67",
+        "upper": 1
+      },
+      {
+        "name": "42191",
+        "costs": [
+          12000
+        ],
+        "profit": "60",
+        "upper": 1
+      },
+      {
+        "name": "42186",
+        "costs": [
+          9700
+        ],
+        "profit": "59",
+        "upper": 1
+      },
+      {
+        "name": "42193",
+        "costs": [
+          14000
+        ],
+        "profit": "57",
+        "upper": 1
+      },
+      {
+        "name": "42195",
+        "costs": [
+          1
+        ],
+        "profit": "55",
+        "upper": 1
+      },
+      {
+        "name": "42189",
+        "costs": [
+          39000
+        ],
+        "profit": "51",
+        "upper": 1
+      },
+      {
+        "name": "42184",
+        "costs": [
+          6300
+        ],
+        "profit": "51",
+        "upper": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "pp-budget-lab-validation/1",
+  "version": "0.9.9",
+  "tests": {
+    "run": 129,
+    "passed": 127,
+    "skipped": 2,
+    "skip_reason": "optional Mathlib-dependent checks",
+    "modules": [
+      "test_budget_lab",
+      "test_planning_hybrid",
+      "test_planning",
+      "test_exact_showcase",
+      "test_applications",
+      "test_soe_bridge",
+      "test_generating_functions",
+      "test_binary_generating",
+      "test_generating_arithmetic",
+      "test_telescoping",
+      "test_checked_soe"
+    ]
+  },
+  "installed_package": "wheel installed outside checkout; all four datasets and UI found, Toulouse exact count verified",
+  "frontend": "node --check passed; graphical browser interaction and screenshots not verified",
+  "benchmark": "three alternating cold trials per election; 42 requests per trial; exact outputs matched independent recursive counting; compilation and parsing excluded from workflow",
+  "scope": "executable tests, not new kernel proof of native algorithm",
+  "sha256": {
+    "python/perfectpower/participatory_budgeting.py": "96ef270f318eb968ecf4e122dc250a7bde012a3f82782b1b20db095829e45eac",
+    "python/perfectpower/budget_lab.py": "1fde0eebe4d22c04b8d9e7e068db117984dff294295640c5dc54247942989b26",
+    "python/perfectpower/planning.py": "b9764970b3ef97e3c43d53124f074500b747d42f6ec8c59a3e3a06c957df0e61",
+    "python/run_budget_lab.py": "4be5d79d65ee280f41d7f7fabdd8a09f9c3d9a7e9143bc6b0d1da13d67306b4e",
+    "python/tests/test_budget_lab.py": "f4a80f9123672e4c2a092a36a54fda60ba0ed3dfe26be7e92963b1af998a598a",
+    "web/budget-lab/index.html": "f0d4542538d96541efdbbfcf5023d2da4390f244a6df43087d1ca3de5020034a",
+    "docs/BUDGET_LAB_MONOGRAPH.md": "4a296fa7bafc90b264a690982e23c5ca53e2754b9740105d6dc7aac940dd8505",
+    "data/participatory_budgeting/manifest.json": "3782035f94de92d0119a3ceb1dec58756296759086b88dc9e9684e5387210596",
+    "receipts/budget_lab/benchmark.json": "6a1c71777161a00c7cf6580a597aa2c4c38b9f973e6145710717fe0d962deecd",
+    "data/participatory_budgeting/raw/Poland_Warszawa_2023_Wesola.pb": "4fae3b2e1e90f4bc458f40be5dcf652b7e31d842fde1bad0cb030c4e59aa7cdc",
+    "data/participatory_budgeting/raw/Netherlands_Amsterdam_2022_Rijnbuurt_West.pb": "2335bd8e112f1f879d59f43afb61d86e27a5baccd2e859aba6fd49c8e5444d9c",
+    "data/participatory_budgeting/raw/France_Toulouse_2019.pb": "da4b9aeb770c941712cf25051aa619960d7534be205d2c8b83b7f47dd0a8c9cc",
+    "data/participatory_budgeting/raw/Netherlands_Amsterdam_2020_Bloemenbuurt.pb": "ed22796aab0e6586ae3c5446b5cdb1658217e91fd42c04c91f2a6fff72950f34"
+  }
+}

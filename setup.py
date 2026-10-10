@@ -34,6 +34,7 @@ def assets():
     for name in RECEIPTS:yield ROOT/'receipts'/name
     for name in ('python/make_mordell_registry.py',
                  'web/room-of-possibilities/PerfectPower-Room-of-Possibilities.html',
+                 'web/budget-lab/index.html',
                  'contracts/current_frontier.json','contracts/release_features.json'):
         yield ROOT/name
 

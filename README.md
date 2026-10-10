@@ -1,5 +1,7 @@
 # PerfectPower
 
+**Budget Lab (v0.9.9)** applies the exact planner to four complete public participatory-budgeting elections. Launch the local browser application with `python START_BUDGET_LAB.py`, then open `http://127.0.0.1:8765/`. Change budgets, lock arbitrary projects, rank alternatives, sample uniformly and inspect maximum-support portfolios. The [application monograph](docs/BUDGET_LAB_MONOGRAPH.md) records independent full-workflow comparisons and the distinction between analytical portfolios and official voting rules.
+
 Version **0.9.8** adds weighted symmetry compression, a native meet-in-the-middle allocation index, and optimization-only search with exact dual and fractional bounds. See [the hybrid planning monograph](docs/HYBRID_PLANNING_MONOGRAPH.md) for measured comparisons and limits.
 
 The reusable [completion-count planner](docs/COMPLETION_PLANNING_MONOGRAPH.md) supports resource allocations and ordered action words, exact rank/selection, uniform sampling, conditional optima, all maximizing ties, compatibility quotients and cached resource changes. Six public R&D-selection cases now have complete counts; the full 50-project count remains unresolved. Run `make planning-test` and `make planning-hybrid-benchmark`. The new [hybrid measurements](receipts/planning/hybrid/benchmark.json) include independent native and Python counting comparisons and separate optimization-only comparisons with OR-Tools; the measured wins have explicit workload and startup limits.

@@ -137,3 +137,5 @@ The [Mordell completion monograph](MORDELL_COMPLETION_MONOGRAPH.md) describes al
 [Completion-count planning](COMPLETION_PLANNING_MONOGRAPH.md) documents the integrated resource/compatibility engine, original-plan sampling and optimal ties, cache reuse, public Petersen benchmarks, peak-memory measurements and a six-theorem protected-machine audit.
 
 [Hybrid completion planning](HYBRID_PLANNING_MONOGRAPH.md) describes weighted symmetry, native meet-in-the-middle indexing, exact dual-bound optimization and independent comparisons in v0.9.8.
+
+[Budget Lab](BUDGET_LAB_MONOGRAPH.md) provides the public-election application, source interpretation, exact query contracts and independent repeated-workflow benchmarks in v0.9.9.

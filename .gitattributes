@@ -2,3 +2,6 @@
 
 # Bundled renderer preserves upstream GLSL string formatting.
 web/room-of-possibilities/PerfectPower-Room-of-Possibilities.html whitespace=-blank-at-eol,-space-before-tab
+
+# Pinned public election files retain upstream bytes, CRLF and whitespace.
+data/participatory_budgeting/raw/*.pb -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
