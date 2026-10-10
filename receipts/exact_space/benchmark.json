@@ -1,0 +1,183 @@
+{
+  "schema": "pp-exact-space-benchmark/1",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "repeats": 5,
+  "timer": "perf_counter wall seconds",
+  "population_cases": [
+    {
+      "budget": 1000,
+      "rank": 167,
+      "answer": {
+        "count": "501",
+        "point": [
+          "334",
+          "333"
+        ],
+        "maximum": "3000"
+      },
+      "seconds": {
+        "enumeration": [
+          0.00013625400060846005,
+          0.00012960499952896498,
+          0.00012354600039543584,
+          0.00016112299999804236,
+          0.0001358739991701441
+        ],
+        "population_query": [
+          0.013485579998814501,
+          0.012959498999407515,
+          0.013159358999473625,
+          0.01227031199960038,
+          0.012545145998956286
+        ]
+      },
+      "median_seconds": {
+        "enumeration": 0.0001358739991701441,
+        "population_query": 0.012959498999407515
+      },
+      "enumerated_allocations": 501,
+      "population_query_includes": "construction, count, select, reverse rank, endpoint optimization and independent elimination check"
+    },
+    {
+      "budget": 100000,
+      "rank": 16667,
+      "answer": {
+        "count": "50001",
+        "point": [
+          "33334",
+          "33333"
+        ],
+        "maximum": "300000"
+      },
+      "seconds": {
+        "enumeration": [
+          0.014293054999143351,
+          0.013927956000770791,
+          0.014170428999932483,
+          0.013084105999951134,
+          0.014323731000331463
+        ],
+        "population_query": [
+          0.026922912998998072,
+          0.0312035900005867,
+          0.03346142000009422,
+          0.029025319001448224,
+          0.033916329000931
+        ]
+      },
+      "median_seconds": {
+        "enumeration": 0.014170428999932483,
+        "population_query": 0.0312035900005867
+      },
+      "enumerated_allocations": 50001,
+      "population_query_includes": "construction, count, select, reverse rank, endpoint optimization and independent elimination check"
+    },
+    {
+      "budget": 1000000,
+      "rank": 166667,
+      "answer": {
+        "count": "500001",
+        "point": [
+          "333334",
+          "333333"
+        ],
+        "maximum": "3000000"
+      },
+      "seconds": {
+        "enumeration": [
+          0.11172910100140143,
+          0.13490087799982575,
+          0.129030629999761,
+          0.11680410400003893,
+          0.12822151300133555
+        ],
+        "population_query": [
+          0.03398986499996681,
+          0.0471062599990546,
+          0.04185889800100995,
+          0.04017192200080899,
+          0.043968000001768814
+        ]
+      },
+      "median_seconds": {
+        "enumeration": 0.12822151300133555,
+        "population_query": 0.04185889800100995
+      },
+      "enumerated_allocations": 500001,
+      "population_query_includes": "construction, count, select, reverse rank, endpoint optimization and independent elimination check"
+    },
+    {
+      "budget": 10000000,
+      "rank": 1666667,
+      "answer": {
+        "count": "5000001",
+        "point": [
+          "3333334",
+          "3333333"
+        ],
+        "maximum": "30000000"
+      },
+      "seconds": {
+        "enumeration": [
+          1.0068294760003482,
+          0.9626640999995288,
+          1.058866768000371,
+          1.0247943779995694,
+          1.0766462810006487
+        ],
+        "population_query": [
+          0.03644720000011148,
+          0.03639145600027405,
+          0.07509326800027338,
+          0.07389216100091289,
+          0.05322459099988919
+        ]
+      },
+      "median_seconds": {
+        "enumeration": 1.0247943779995694,
+        "population_query": 0.05322459099988919
+      },
+      "enumerated_allocations": 5000001,
+      "population_query_includes": "construction, count, select, reverse rank, endpoint optimization and independent elimination check"
+    }
+  ],
+  "trillion_budget_seconds": [
+    0.12749551400156633,
+    0.11689015500087407,
+    0.1222683429987228,
+    0.11574604400084354,
+    0.10799067200059653
+  ],
+  "trillion_budget_median_seconds": 0.11689015500087407,
+  "machine": {
+    "steps": 4096,
+    "seconds": {
+      "six_states": [
+        0.013121312000293983,
+        0.012276522000320256,
+        0.01227290699898731,
+        0.014495789999273256,
+        0.01328461800039804
+      ],
+      "three_states": [
+        0.004927220001263777,
+        0.005133769998792559,
+        0.004943655001625302,
+        0.005085036998934811,
+        0.005319189000147162
+      ]
+    },
+    "median_seconds": {
+      "six_states": 0.013121312000293983,
+      "three_states": 0.005085036998934811
+    },
+    "dense_matrix_entries_per_step": {
+      "six_states": 36,
+      "three_states": 9
+    },
+    "all_outputs_equal": true,
+    "compilation_included": false
+  },
+  "scope": "constructed local workloads; population timings include construction; machine timings cover iteration only; no industrial or universal solver claim"
+}

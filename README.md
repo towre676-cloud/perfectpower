@@ -12,6 +12,8 @@ The project combines a Python package, exact algebra engines, a Lean 4 theorem l
 
 ## Quick start
 
+For a connected, offline demonstration, run `make exact-space-showcase` and open `receipts/exact_space/index.html`. The [exact-space account](docs/EXACT_SPACE_SHOWCASE_MONOGRAPH.md) follows one allocation population through exact count, rank/selection, linear optimization, a six-to-three-state response quotient and a convergent series evaluation. Local measurements retain the small-instance overhead and larger-instance crossover; they are constructed examples, not industrial benchmarks.
+
 Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. Work is published on `main`; the GitHub default branch `claude/laughing-lamport-qqzdo9` is kept at the same commit.
 
 Version 0.9.0 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.

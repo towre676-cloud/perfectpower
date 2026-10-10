@@ -528,5 +528,13 @@ check-integrity:
 	python3 scripts/check_repo_integrity.py
 
 .PHONY: series-kernel
+
+.PHONY: exact-space-showcase exact-space-test
+exact-space-showcase:
+	PYTHONPATH=python python python/run_exact_space_showcase.py --benchmark
+
+exact-space-test:
+	PYTHONPATH=python python -m unittest python/tests/test_exact_showcase.py
+
 series-kernel:
 	$(PY) scripts/check_series_kernel.py

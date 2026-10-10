@@ -131,3 +131,5 @@ The [Mordell completion monograph](MORDELL_COMPLETION_MONOGRAPH.md) describes al
 [Scalar-ray completeness and weighted offsets in Lean](LEAN_CENSUS_OFFSETS_MONOGRAPH.md) closes the real five-ray classification and typed unequal-block rank/select, and the trace-to-moment transport with a focused kernel and axiom audit.
 
 [Recovered-work Lean closure](NEW_WORK_LEAN_MONOGRAPH.md): PSG algebra, all-future SOE quotients, optimal diagnosis and rational structural certificates.
+
+[The exact-space showcase](EXACT_SPACE_SHOWCASE_MONOGRAPH.md) connects weighted populations, original-coordinate rank/selection and optimization, a minimal response quotient, infinite-tail bounds, finite telescoping and stored binary arithmetic. Its offline exhibit embeds exact results and scoped local benchmarks.

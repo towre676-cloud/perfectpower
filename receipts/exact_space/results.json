@@ -1,0 +1,663 @@
+{
+  "schema": "pp-exact-space-showcase/1",
+  "population": {
+    "budget": "1000000000000",
+    "rank": "100000000007",
+    "count": "500000000001",
+    "point": [
+      "200000000014",
+      "399999999993"
+    ],
+    "reverse_rank": "100000000007",
+    "filtered": false,
+    "specification": {
+      "coordinates": [
+        {
+          "weight": 1
+        },
+        {
+          "weight": 2
+        }
+      ]
+    },
+    "objective": [
+      3,
+      5
+    ],
+    "maximum": "3000000000000",
+    "maximizer": [
+      "1000000000000",
+      "0"
+    ],
+    "maximizer_rank": "500000000000",
+    "maximizer_count": "1",
+    "optimization_scope": "this two-coordinate linear budget family; sign of exact objective slope",
+    "independent_check": "integer elimination and arithmetic progression; no GF coefficient algorithm"
+  },
+  "four_coordinate_population": {
+    "budget": "1000000000000",
+    "rank": "1000000000000000000000000000000",
+    "count": "41666666667041666666667750000000001",
+    "point": [
+      "8000064",
+      "201375448",
+      "412817084120",
+      "293386082460"
+    ],
+    "weights": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "reverse_rank": "1000000000000000000000000000000",
+    "series": {
+      "schema": "pp-rational-series/1",
+      "numerator": [
+        "1"
+      ],
+      "denominator": [
+        "1",
+        "-2",
+        "-1",
+        "4",
+        "-1",
+        "-2",
+        "1"
+      ],
+      "scope": "all nonnegative formal coefficients of this supplied rational function",
+      "execution_verified": false
+    },
+    "independent_check": "closed finite-power-sum count and summed suffix-count rank"
+  },
+  "restricted_population": {
+    "budget": "1000000000000",
+    "rank": "10000000007",
+    "count": "33333333333",
+    "point": [
+      "300000000226",
+      "349999999887"
+    ],
+    "reverse_rank": "10000000007",
+    "filtered": true,
+    "specification": {
+      "coordinates": [
+        {
+          "weight": 1,
+          "modulus": 3,
+          "residue": 1
+        },
+        {
+          "weight": 2,
+          "modulus": 5,
+          "residue": 2
+        }
+      ]
+    },
+    "objective": [
+      3,
+      5
+    ],
+    "maximum": "2999999999988",
+    "maximizer": [
+      "999999999976",
+      "12"
+    ],
+    "maximizer_rank": "33333333332",
+    "maximizer_count": "1",
+    "optimization_scope": "this two-coordinate linear budget family; sign of exact objective slope",
+    "independent_check": "integer elimination and arithmetic progression; no GF coefficient algorithm"
+  },
+  "machine": {
+    "source": {
+      "operators": [
+        {
+          "cost": 1,
+          "matrix": [
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              -1,
+              1,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "seed": [
+        1,
+        1,
+        2,
+        0,
+        0,
+        0
+      ],
+      "readouts": [
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    "transport": {
+      "schema": "pp-cost-quotient/1",
+      "original": {
+        "operators": [
+          {
+            "cost": 1,
+            "matrix": [
+              [
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "-1",
+                "1",
+                "1",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "1",
+                "0",
+                "0",
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "1",
+                "0",
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "0",
+                "0",
+                "1",
+                "1",
+                "0",
+                "0"
+              ]
+            ]
+          }
+        ],
+        "seed": [
+          "1",
+          "1",
+          "2",
+          "0",
+          "0",
+          "0"
+        ],
+        "readouts": [
+          [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "encoder": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "reduced": {
+        "operators": [
+          {
+            "cost": 1,
+            "matrix": [
+              [
+                "0",
+                "1",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "1"
+              ],
+              [
+                "-1",
+                "1",
+                "1"
+              ]
+            ]
+          }
+        ],
+        "seed": [
+          "1",
+          "1",
+          "2"
+        ],
+        "readouts": [
+          [
+            "1",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "resolvent": {
+        "schema": "pp-cost-resolvent/1",
+        "source": {
+          "operators": [
+            {
+              "cost": 1,
+              "matrix": [
+                [
+                  "0",
+                  "1",
+                  "0"
+                ],
+                [
+                  "0",
+                  "0",
+                  "1"
+                ],
+                [
+                  "-1",
+                  "1",
+                  "1"
+                ]
+              ]
+            }
+          ],
+          "seed": [
+            "1",
+            "1",
+            "2"
+          ],
+          "readouts": [
+            [
+              "1",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        "source_sha256": "3705d9bb0af0c69449796357d20ade9d3d4e9361383b0078e8f590095088d809",
+        "vector": [
+          {
+            "numerator": [
+              "1"
+            ],
+            "denominator": [
+              "1",
+              "-1",
+              "-1",
+              "1"
+            ]
+          },
+          {
+            "numerator": [
+              "1",
+              "1",
+              "-1"
+            ],
+            "denominator": [
+              "1",
+              "-1",
+              "-1",
+              "1"
+            ]
+          },
+          {
+            "numerator": [
+              "2",
+              "0",
+              "-1"
+            ],
+            "denominator": [
+              "1",
+              "-1",
+              "-1",
+              "1"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "schema": "pp-rational-series/1",
+            "numerator": [
+              "1"
+            ],
+            "denominator": [
+              "1",
+              "-1",
+              "-1",
+              "1"
+            ],
+            "scope": "all nonnegative formal coefficients of this supplied rational function",
+            "execution_verified": false
+          }
+        ],
+        "scope": "all nonnegative total costs; matrix products retain order and path multiplicity",
+        "execution_verified": false
+      },
+      "original_dimension": 6,
+      "reduced_dimension": 3,
+      "scope": "same output generating functions at every cost, from exact cost-specific operator transport",
+      "execution_verified": false
+    },
+    "minimal_realization": {
+      "schema": "exact.rational-gf/1",
+      "numerator": [
+        "1"
+      ],
+      "denominator": [
+        "1",
+        "-1",
+        "-1",
+        "1"
+      ],
+      "dimension": 3,
+      "A": [
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "1",
+          "1"
+        ]
+      ],
+      "initial": [
+        "1",
+        "1",
+        "2"
+      ],
+      "C": [
+        "1",
+        "0",
+        "0"
+      ],
+      "hankel_determinant": "-1",
+      "indexing": "a_n = C A^n initial, n >= 0; no input feedthrough"
+    },
+    "checked_prefix_length": 257,
+    "meaning": "output at time n is the number of allocations x+2y=n; not the number of ordered resource histories",
+    "minimality_scope": "exact nonsingular 3 by 3 response Hankel witness, replayed in Python; no new source-bound Lean packet"
+  },
+  "analytic": {
+    "tail": {
+      "schema": "exact.rational-gf-tail/1",
+      "source": {
+        "schema": "exact.rational-gf/1",
+        "numerator": [
+          "1"
+        ],
+        "denominator": [
+          "1",
+          "-1",
+          "-1",
+          "1"
+        ],
+        "dimension": 3,
+        "A": [
+          [
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "1",
+            "1"
+          ]
+        ],
+        "initial": [
+          "1",
+          "1",
+          "2"
+        ],
+        "C": [
+          "1",
+          "0",
+          "0"
+        ],
+        "hankel_determinant": "-1",
+        "indexing": "a_n = C A^n initial, n >= 0; no input feedthrough"
+      },
+      "argument": "1/8",
+      "radius": "1/4",
+      "count": 24,
+      "majorant": "64/43",
+      "absolute_tail_upper": "1/5636096"
+    },
+    "partial_sum": "171333024321801186891/147573952589676412928",
+    "exact_sum": "512/441",
+    "interval": [
+      "171333024321801186891/147573952589676412928",
+      "7367321171737357878937/6345679961356085755904"
+    ]
+  },
+  "telescoping": {
+    "definition": {
+      "schema": "pp-binomial-telescoping/1",
+      "power": 2,
+      "order": 1,
+      "coefficients": [
+        {
+          "numerator": [
+            "-2",
+            "-4"
+          ],
+          "denominator": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "numerator": [
+            "1"
+          ],
+          "denominator": [
+            "1"
+          ]
+        }
+      ],
+      "certificate_polynomial": [
+        {
+          "numerator": [
+            "-3"
+          ],
+          "denominator": [
+            "1",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "numerator": [
+            "2"
+          ],
+          "denominator": [
+            "1",
+            "3",
+            "3",
+            "1"
+          ]
+        }
+      ],
+      "initial": [
+        "1"
+      ],
+      "attempts": [
+        {
+          "order": 1,
+          "degree": 2,
+          "solved": true
+        }
+      ]
+    },
+    "prefix": [
+      "1",
+      "2",
+      "6",
+      "20",
+      "70",
+      "252",
+      "924",
+      "3432",
+      "12870",
+      "48620",
+      "184756",
+      "705432"
+    ],
+    "independent_checked_terms": 64,
+    "power_window": {
+      "schema": "pp-binomial-power-window/1",
+      "start": 0,
+      "size": 64,
+      "exponent": 2,
+      "hits": [
+        {
+          "index": 0,
+          "value": "1",
+          "root": "1"
+        }
+      ],
+      "complete_in_window": true,
+      "unbounded_classification_proved": false
+    }
+  },
+  "binary": {
+    "stored_point_one": {
+      "schema": "exact.binary64-power/1",
+      "word": 4591870180066957722,
+      "hex": "3fb999999999999a",
+      "degree": 2,
+      "classification": "normal",
+      "odd_significand": 3602879701896397,
+      "exponent": -55,
+      "is_power": false,
+      "root": null,
+      "scope": "exact rational value stored in the finite binary64 word"
+    },
+    "stored_quarter": {
+      "schema": "exact.binary64-power/1",
+      "word": 4598175219545276416,
+      "hex": "3fd0000000000000",
+      "degree": 2,
+      "classification": "normal",
+      "odd_significand": 1,
+      "exponent": -2,
+      "is_power": true,
+      "root": "1/2",
+      "scope": "exact rational value stored in the finite binary64 word"
+    },
+    "sequential_cancellation": "0.0",
+    "round_once_cancellation": "1"
+  },
+  "evidence": {
+    "new_execution": "exact Python calculations with independent algebraic checks",
+    "lean_foundations": "receipts/series_kernel/validation.json",
+    "new_source_bound_lean_acceptance": false,
+    "benchmark_scope": "constructed workloads on this machine; no industrial performance claim",
+    "retained_lean": {
+      "retained_status": "passed",
+      "declaration_count": 69,
+      "all_recorded_source_hashes_match": true,
+      "recompiled_in_this_run": false,
+      "receipt_sha256": "8dfa9338b975520d261073bef5b466ea3342d070dbdf36ae74c08e6789b31570"
+    }
+  }
+}

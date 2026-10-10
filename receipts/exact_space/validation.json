@@ -1,0 +1,49 @@
+{
+  "schema": "pp-exact-space-validation/1",
+  "status": "passed",
+  "base_commit": "7b7ffdcdccc857e1a1c0ba014508a1c20ca0b1bd",
+  "focused_python_tests": {
+    "passed": 69,
+    "suites": [
+      "test_exact_showcase",
+      "test_generating_functions",
+      "test_binary_generating",
+      "test_generating_arithmetic",
+      "test_telescoping"
+    ]
+  },
+  "ui": {
+    "dom_queries_passed": 723,
+    "rendered_browser_checked": false,
+    "limitation": "Chromium download returned invalid archives; DOM harness checked actual embedded script, interactions and independent small-population answers."
+  },
+  "installed_wheel": {
+    "version": "0.9.6",
+    "connected_results_passed_outside_checkout": true
+  },
+  "retained_lean": {
+    "retained_status": "passed",
+    "declaration_count": 69,
+    "all_recorded_source_hashes_match": true,
+    "recompiled_in_this_run": false,
+    "receipt_sha256": "8dfa9338b975520d261073bef5b466ea3342d070dbdf36ae74c08e6789b31570"
+  },
+  "new_lean_theorems": 0,
+  "integrity": {
+    "broken_links": 0,
+    "data_hashes_checked": 277,
+    "failures": 0
+  },
+  "source_sha256": {
+    "python/perfectpower/exact_showcase.py": "c8156d6ab3fadca8b2be4d2c68597f6710a8e9f5ae62decd55fc70ea9918f7a9",
+    "python/run_exact_space_showcase.py": "b1023b254ae53bb2cf51b852056b70cf3ac42a546f7aad56dc754c193ccf8b4c",
+    "python/tests/test_exact_showcase.py": "cd0cefd40c5664e3fb1f27e3cf82549ae1c739eb4d5e597ea505ea734982380d",
+    "scripts/check_exact_space_ui.cjs": "8c0db27d6e1f5464bbaf0553c1b3bde22c92c08166cd20f3f2f60109cedf428e",
+    "web/exact-space/template.html": "c3084e9a166da448f6460b21aac7d192a45765b9532b8b6cc9c072d383ce6d67",
+    "receipts/exact_space/results.json": "9dfb7c02076128d28609b98fc3a1fe33c7d5a2d8554505d1350e9a874b16d349",
+    "receipts/exact_space/benchmark.json": "10c0ed50125acfca2740afa32512bc4e4d415b9e8e0f12487cab731ce0589eb0",
+    "receipts/exact_space/index.html": "e1c8ab56ce5f9ddd43084f8db9b31ef86eabce8ca347da86a1b6ad1f80a269ac",
+    "docs/EXACT_SPACE_SHOWCASE_MONOGRAPH.md": "18e00756f70fe29cd8b6140d4f407defaef9db30738e9bcd854f6fa86a855d31"
+  },
+  "scope": "connected constructed examples and targeted tests; not the complete historical test suite or a full Lean rebuild"
+}
