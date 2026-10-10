@@ -1,0 +1,122 @@
+{
+  "accepted": true,
+  "proof_status": "kernel_checked",
+  "execution_verified": false,
+  "scope": "all finite action words of the supplied finite deterministic partial machine",
+  "version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "specification_sha256": "3d1786bcba8f55c26ff92609fc8ce999f1415547a881b81caf7fe22f11c91ef4",
+  "source_sha256": "159a3bda25470516b2f267ac2a620ed8360097b0e4e33ae51a0237cd83b0d1a1",
+  "library_sha256": {
+    "SOESemantics": "34a8c866b659166a55e4f73f4f693fa800a9a5ba0d822c41a43339e2ac663b25"
+  },
+  "log": "'PerfectPower.SOESemantics.quotient_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.CheckedSOE.P3d1786bcba8f55c26ff92609fc8ce999f1415547a881b81caf7fe22f11c91ef4.complete' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+  "packet": {
+    "schema": "pp-future-quotient/1",
+    "model_id": "127d1d8de5213b8a5f4a76652cd921b7d5f13bc033ade43f2e008ea5f8ccdc65",
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "projection": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "quotient": {
+      "observations": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "actions": {
+        "a": [
+          0,
+          1,
+          3,
+          3
+        ],
+        "b": [
+          0,
+          3,
+          2,
+          3
+        ]
+      }
+    },
+    "distinguishing_witnesses": [
+      {
+        "first": 0,
+        "second": 1,
+        "word": [
+          "b"
+        ],
+        "reason": "observation"
+      },
+      {
+        "first": 0,
+        "second": 2,
+        "word": [
+          "a"
+        ],
+        "reason": "observation"
+      },
+      {
+        "first": 0,
+        "second": 3,
+        "word": [],
+        "reason": "observation"
+      },
+      {
+        "first": 1,
+        "second": 2,
+        "word": [
+          "a"
+        ],
+        "reason": "observation"
+      },
+      {
+        "first": 1,
+        "second": 3,
+        "word": [],
+        "reason": "observation"
+      },
+      {
+        "first": 2,
+        "second": 3,
+        "word": [],
+        "reason": "observation"
+      }
+    ],
+    "refinement_rounds": 2,
+    "scope": "coarsest exact observation-and-legality quotient of supplied finite deterministic model"
+  },
+  "action_encoding": [
+    "a",
+    "b"
+  ],
+  "observation_encoding": [
+    "0",
+    "1"
+  ],
+  "limits": {
+    "states": 128,
+    "actions": 16,
+    "bytes": 2097152,
+    "total_witness_symbols": 100000,
+    "word_symbols": 16,
+    "heartbeats": 2000000,
+    "recursion": 8192
+  }
+}

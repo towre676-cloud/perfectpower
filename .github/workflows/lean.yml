@@ -15,6 +15,8 @@ jobs:
         run: make psg-structural-kernel
       - name: Recovered SOE and structural mathematics kernel closure
         run: make new-work-kernel
+      - name: General finite SOE source-bound acceptance and adversarial rejection
+        run: make soe-generic-kernel
       - name: Original bounded equations, signed roots, ranks and tied minima
         run: python3 -m unittest discover -s python/tests -p 'test_checked_box.py'
         env:

@@ -3,7 +3,10 @@ PY      ?= python3
 SAGEPY  ?= sage -python
 export PYTHONPATH := python
 
-.PHONY: soe-bridge
+.PHONY: soe-bridge soe-generic-kernel
+soe-generic-kernel:
+	scripts/check_soe_generic.sh
+
 soe-bridge:
 	$(PY) -m unittest discover -s python/tests -p 'test_soe_bridge.py'
 	$(PY) python/develop_soe_bridge.py

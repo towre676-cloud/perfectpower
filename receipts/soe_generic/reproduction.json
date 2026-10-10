@@ -1,0 +1,50 @@
+{
+  "lean_version": "4.20.0",
+  "lean_release_commit": "77cfc4d1a4f6",
+  "lean_binary_sha256": "cbf5fd536e142ef1beaccf33f788fd8a7f3f29fb214e75c11319a8d8677b4b2b",
+  "mathlib_revision": "c211948581bde9846a99e32d97a03f0d5307c31e",
+  "executable_discovery_shim": "runtime_location.c maps /proc/<pid>/exe to /proc/self/exe; no proof evaluation changes",
+  "compiler_tests": {
+    "tests": 6,
+    "skipped": 0,
+    "result": "passed"
+  },
+  "existing_soe_tests": {
+    "tests": 13,
+    "result": "passed"
+  },
+  "kernel_models_tested": {
+    "saved_larger": 3,
+    "unit_test_models": 10,
+    "public_cli": 1,
+    "retained_two_state": 324
+  },
+  "kernel_corruption_rejections": [
+    "successor",
+    "disabled_action",
+    "projection",
+    "experiment"
+  ],
+  "commands": [
+    "scripts/check_soe_generic.sh",
+    "PYTHONPATH=python python scripts/check_new_work_lean.py"
+  ],
+  "source_sha256": {
+    "python/perfectpower/checked_soe.py": "1da60b001fb4fe978af85d0d9a4a313441c7820c65e879b02c2682adf1ee0eb9",
+    "python/perfectpower/soe_console.py": "9a451f093b1738c8a92a369b67be37714315f7bbf5d64137e11bd09eab40192f",
+    "python/develop_soe_generic.py": "224fe2f49a2cba02f6e14e8f71b74f45f2362537a6dfd0f0e1941ca82a8f4ffc",
+    "python/develop_new_work_lean.py": "90aca672fb4425a9ad4af5ae4c5899930f2d208a760b72110b3c418f5f6efbd6",
+    "python/tests/test_checked_soe.py": "bb052e2ed1d9d3af75f5c69b2efa8fd1c01a5b67d8b0106df2f88279febe5de2",
+    "scripts/check_soe_generic.sh": "8affd0aed8c3f0e4e96dbd619b976095d53b62fc0fad3e855fb0004a00da758d",
+    "scripts/check_new_work_lean.py": "1fdc1734dbc835912756a31c1aa48e337e1cf6cdec49fcfb1adef95b74e8dd1c",
+    "PerfectPower/SOESemantics.lean": "34a8c866b659166a55e4f73f4f693fa800a9a5ba0d822c41a43339e2ac663b25",
+    "PerfectPower/Generated/SOEGenericPackets.lean": "d24a2ac365d92e832924ea833c0bb39b3921a30715c1ce3275f5ea9602395d26",
+    "PerfectPower/Generated/SOEModelPackets.lean": "ae177533ff4e9ae35faa069a034556aca962b185008c316cfafbc7ab57211376"
+  },
+  "legacy_closure": {
+    "compiled": true,
+    "declarations": 384,
+    "retained_models": 324,
+    "standard_axioms_only": true
+  }
+}

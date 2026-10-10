@@ -9,13 +9,18 @@ MODULES=['PerfectPower/PSGStructural.lean','PerfectPower/Generated/PSGStructural
  'PerfectPower/Generated/SOEModelPackets.lean']
 INPUTS=['receipts/soe_bridge/all_two_state_automata.json','receipts/soe_bridge/adaptive_diagnosis.json',
  'receipts/structural_math/matrix_certificates.json','receipts/structural_math/psg_invariant_energy.json',
- 'python/develop_new_work_lean.py','python/develop_psg_structural.py']
+ 'python/develop_new_work_lean.py','python/perfectpower/checked_soe.py','python/develop_psg_structural.py']
 
 def digest(path):return hashlib.sha256((ROOT/path).read_bytes()).hexdigest()
 def main():
  names=[]
  for path in MODULES:
-  text=(ROOT/path).read_text();ns=re.search(r'^namespace (\S+)',text,re.M).group(1)
+  text=(ROOT/path).read_text()
+  if path.endswith('SOEModelPackets.lean'):
+   # Public compatibility theorems depend on all internal generic obligations.
+   names.extend('PerfectPower.SOEModelPackets.'+m for m in re.findall(r'^theorem (complete\d+)',text,re.M))
+   continue
+  ns=re.search(r'^namespace (\S+)',text,re.M).group(1)
   names.extend(ns+'.'+m for m in re.findall(r'^theorem (\w+)',text,re.M))
  assert len(names)==len(set(names))
  generated=MODULES[-2:]
@@ -28,7 +33,7 @@ def main():
  out=ROOT/'receipts/new_work_lean';out.mkdir(exist_ok=True)
  for path in MODULES:
   dest=ROOT/'.lake/build/lib/lean'/Path(path).with_suffix('.olean');dest.parent.mkdir(parents=True,exist_ok=True)
-  run=subprocess.run(['lake','env','lean','-o',str(dest),path],cwd=ROOT,text=True,capture_output=True)
+  run=subprocess.run(['lake','env','lean','-s','65536','-o',str(dest),path],cwd=ROOT,text=True,capture_output=True)
   (out/(Path(path).stem+'.log')).write_text(run.stdout+run.stderr)
   if run.returncode or run.stdout.strip() or run.stderr.strip():raise RuntimeError('compile failed or unexpected compiler output: '+path+'\n'+run.stdout+run.stderr)
  run=subprocess.run(['lake','env','lean','audit/NewWorkClosure.lean'],cwd=ROOT,text=True,capture_output=True,check=True)

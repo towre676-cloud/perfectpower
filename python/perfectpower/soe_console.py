@@ -10,6 +10,7 @@ def add_commands(sub):
         p=sub.add_parser(name,help='exact finite SOE/PerfectPower bridge')
         p.add_argument('specification',type=Path,help='JSON specification file')
         p.add_argument('--out',type=Path)
+        if name=='soe-states':p.add_argument('--kernel-check',action='store_true',help='require source-bound Lean acceptance')
 
 
 def cli(args):
@@ -31,7 +32,12 @@ def cli(args):
         if composed.mode=='mass':result['mass_preservation']=composed.mass_preserving()
     elif args.command=='soe-equivalence':result=compare_models(**spec)
     elif args.command=='soe-chart':result=polynomial_chart(**spec)
-    elif args.command=='soe-states':result=future_quotient(spec);check_quotient(result,spec)
+    elif args.command=='soe-states':
+        if getattr(args,'kernel_check',False):
+            from .checked_soe import accept_soe
+            result=accept_soe(spec)
+            if not result['accepted']:raise ValueError('SOE kernel acceptance failed: '+result['reason'])
+        else:result=future_quotient(spec);check_quotient(result,spec)
     else:result=diagnosis_plan(spec['model'],spec['probes'],work_limit=spec.get('work_limit',100000))
     encoded=json.dumps(result,indent=2)+'\n'
     if args.out:args.out.write_text(encoded)

@@ -91,3 +91,7 @@ The main remaining extensions are symbolic or infinite implementation families w
 The resulting machinery connects arithmetic and implementation design through preserved families. Original objects can be constrained, valued, aggregated, transported, compared by future behavior, and diagnosed with an optimal finite policy. The value lies in composing these operations while retaining the exact question each one answers.
 
 The subsequent [Lean closure](NEW_WORK_LEAN_MONOGRAPH.md) proves the retained all-future state quotients, the adaptive diagnosis example and literal rational matrix and energy statements. The Python program and the classical elliptic rank identity keep their separate evidence status.
+
+## General finite-machine proof packets
+
+The source-bound compiler now supports supplied finite deterministic partial machines with pair-specific quotient experiments. The public `soe-states --kernel-check` option requires rebuilt Lean acceptance. See [the general compiler monograph](SOE_GENERIC_LEAN_MONOGRAPH.md) for its contract, reproducibility commands and explicit limits. This verifies individual results; the Python partition-refinement implementation remains tested rather than formally verified.

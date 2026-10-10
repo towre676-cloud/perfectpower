@@ -141,3 +141,5 @@ Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [C
 The [Mordell formal bridge](docs/MORDELL_FORMAL_BRIDGE_MONOGRAPH.md) proves saturation composition and finite-box enumeration in Lean. Its ten audited theorems leave curve-specific rank upper bounds, global saturation prime support and global integral-coordinate bounds explicit; no external receipt is promoted to an unconditional formal closure.
 
 The [recovered-work Lean closure](docs/NEW_WORK_LEAN_MONOGRAPH.md) audits 384 declarations, including all-future quotient completeness for 324 partial machines and the exact two-versus-three adaptive diagnosis advantage. PSG algebra and retained rational matrix/energy identities compile; the classical two-isogeny rank identity remains a separate formalization task. Reproduce with `make new-work-kernel`.
+
+SOE finite partial machines can request source-bound Lean acceptance with `soe-states model.json --kernel-check`. Pair-specific experiments prove the coarsest all-future quotient for supported supplied models; see [the compiler contract and resource limits](docs/SOE_GENERIC_LEAN_MONOGRAPH.md).

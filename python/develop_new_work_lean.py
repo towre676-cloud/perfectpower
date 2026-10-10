@@ -12,29 +12,16 @@ def choices(values,var,encode):
  return out
 def opt(x):return 'none' if x is None else f'some {x}'
 def main():
+ from perfectpower.checked_soe import compile_soe
  rows=json.loads((ROOT/'receipts/soe_bridge/all_two_state_automata.json').read_text())
- lines=['import PerfectPower.SOESemantics','namespace PerfectPower.SOEModelPackets','set_option linter.unusedVariables false']
+ lines=['import PerfectPower.SOESemantics']
  for i,r in enumerate(rows):
-  model,p=r['model'],r['packet'];q=p['projection'];n=len(p['blocks']);tag=f'{i:03}'
-  obs=choices(model['observations'],'s',str)
-  aa=choices(model['actions']['a'],'s',opt);bb=choices(model['actions']['b'],'s',opt)
-  qt=[]
-  for key in ['a','b']:
-   qt.append(choices(p['quotient']['actions'][key],'s',opt))
-  word=p['distinguishing_witnesses'][0]['word'] if p['distinguishing_witnesses'] else []
-  w='['+','.join(str(0 if a=='a' else 1) for a in word)+']'
-  lines.extend([f'def obs{tag} (s : Fin 2) : ℕ := {obs}',
-   f'def step{tag} (s : Fin 2) (a : Fin 2) : Option (Fin 2) := if a=0 then ({aa}) else ({bb})',
-   f'def q{tag} (s : Fin 2) : Fin {n} := '+choices(q,'s',str),
-   f'def out{tag} (s : Fin {n}) : ℕ := '+choices(p['quotient']['observations'],'s',str),
-   f'def target{tag} (s : Fin {n}) (a : Fin 2) : Option (Fin {n}) := if a=0 then ({qt[0]}) else ({qt[1]})',
-   f'theorem complete{tag} (s t : Fin 2) : SOESemantics.Equivalent step{tag} obs{tag} s t ↔ q{tag} s=q{tag} t := by',
-   f'  apply SOESemantics.quotient_complete step{tag} target{tag} obs{tag} out{tag} q{tag}',
-   '  · decide','  · decide',
-   f'  · have hw : ∀ s t : Fin 2, q{tag} s ≠ q{tag} t → SOESemantics.behavior step{tag} obs{tag} s ({w} : List (Fin 2)) ≠ SOESemantics.behavior step{tag} obs{tag} t {w} := by decide',
-   f'    intro s t h; exact ⟨{w}, hw s t h⟩'])
- lines.append('end PerfectPower.SOEModelPackets')
- (ROOT/'PerfectPower/Generated/SOEModelPackets.lean').write_text('\n\n'.join(lines)+'\n')
+  compiled=compile_soe(r['model'],r['packet']);ns='PerfectPower.CheckedSOE.P'+compiled['specification_sha256'];tag=f'{i:03}'
+  lines.append(compiled['lean'].removeprefix('import PerfectPower.SOESemantics\n').replace('#print axioms complete\n',''))
+  lines.append('namespace PerfectPower.SOEModelPackets\n'+
+   '\n'.join(f'def {name}{tag} := {ns}.{name}' for name in ('obs','step','q','out','target'))+
+   f'\ntheorem complete{tag} (s t : Fin {len(r["model"]["observations"])}) : SOESemantics.Equivalent step{tag} obs{tag} s t ↔ q{tag} s = q{tag} t := {ns}.complete s t\nend PerfectPower.SOEModelPackets\n')
+ (ROOT/'PerfectPower/Generated/SOEModelPackets.lean').write_text('\n'.join(lines))
  matrices=json.loads((ROOT/'receipts/structural_math/matrix_certificates.json').read_text())
  lines=['import PerfectPower.StructuralCertificates','namespace PerfectPower.StructuralPackets']
  for i,packet in enumerate([p['metric'] for p in matrices['lyapunov']]+[p['psd'] for p in matrices['toeplitz']]):
