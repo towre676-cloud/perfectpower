@@ -1,0 +1,165 @@
+{
+  "mesh": {
+    "area": "4",
+    "boundary_atoms": [
+      {
+        "edge": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "2"
+          ]
+        ],
+        "mesh_coefficient": -1,
+        "source_coefficient": -1
+      },
+      {
+        "edge": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "0"
+          ]
+        ],
+        "mesh_coefficient": 1,
+        "source_coefficient": 1
+      },
+      {
+        "edge": [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "2"
+          ]
+        ],
+        "mesh_coefficient": 0,
+        "source_coefficient": 0
+      },
+      {
+        "edge": [
+          [
+            "0",
+            "2"
+          ],
+          [
+            "2",
+            "2"
+          ]
+        ],
+        "mesh_coefficient": -1,
+        "source_coefficient": -1
+      },
+      {
+        "edge": [
+          [
+            "2",
+            "0"
+          ],
+          [
+            "2",
+            "2"
+          ]
+        ],
+        "mesh_coefficient": 1,
+        "source_coefficient": 1
+      }
+    ],
+    "kernel_checked": false,
+    "schema": "pp-independent-rational-mesh/1",
+    "scope": "exact pairwise separating halfplanes, atomized oriented boundary equality and positive area; geometric coverage uses the simple-polygon topology, not a Lean coverage theorem",
+    "separators": [
+      {
+        "first_side": 1,
+        "line": [
+          [
+            "2",
+            "2"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        "triangles": [
+          0,
+          1
+        ]
+      }
+    ],
+    "triangle_areas": [
+      "2",
+      "2"
+    ],
+    "triangles": [
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "0"
+        ],
+        [
+          "2",
+          "2"
+        ]
+      ],
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ]
+    ],
+    "vertices": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "2",
+        "0"
+      ],
+      [
+        "2",
+        "2"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "work_used": 66
+  },
+  "proof": {
+    "kernel_checked": false,
+    "source_sha256": "649f85a4afe7bdf437d3851f0928e14553ce4785a88b830e0a04352fc052c931"
+  },
+  "schema": "pp-real-mesh-coverage/1",
+  "scope": "all real points: closed nonzero-winding source region equals union of supplied closed oriented triangles; no Jordan interior identification, clearance or physics claim",
+  "tree_statistics": {
+    "atoms": 16,
+    "contradictions": 558,
+    "leaves": 31,
+    "nodes": 883,
+    "work": 2424
+  }
+}

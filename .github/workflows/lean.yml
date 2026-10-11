@@ -84,6 +84,8 @@ jobs:
         run: make geometry-admission-kernel
       - name: Exact Riemannian metric energy and coordinate first jets
         run: make riemannian-energy-kernel
+      - name: All-real source geometry, coverage and local metric analysis
+        run: make planar-closure-kernel
       - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
       - name: Batteries linters on the hand-written library

@@ -3,11 +3,27 @@ import json
 from .belyaev_geometry import between,line_through,meet_lines,polygon_structure,locate_point,triangulate,polygon_centroid,circumcircle,incircle,fit_isometries,voronoi_mesh,transport_voronoi
 from .polygon_routing import route,segment_visibility
 
-OPERATIONS=('metric-energy-proof','incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi','mesh-certificate','route-certificate','mesh-proof','route-proof','geometric-route-proof','boundary-contact-proof','refinement-mesh-proof','voronoi-mesh-certificate')
+OPERATIONS=('real-contact-proof','real-mesh-proof','real-segment-proof','real-route-proof','metric-energy-proof','incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi','mesh-certificate','route-certificate','mesh-proof','route-proof','geometric-route-proof','boundary-contact-proof','refinement-mesh-proof','voronoi-mesh-certificate')
 
 
 def dispatch(operation,spec):
     limit=spec.get('work_limit',1000000)
+    if operation=='real-contact-proof':
+        from .planar_certificates import compile_real_contact
+        certificate,source=compile_real_contact(spec['a'],spec['b'],spec['c'],spec['d'],work_limit=limit,atom_limit=spec.get('atom_limit',64))
+        return {'certificate':certificate,'lean_source':source}
+    if operation in ('real-mesh-proof','real-segment-proof','real-route-proof'):
+        from .planar_certificates import compile_mesh_coverage,compile_real_segment,compile_real_route
+        options={'work_limit':limit,'atom_limit':spec.get('atom_limit',64)}
+        if operation=='real-mesh-proof':
+            certificate,source=compile_mesh_coverage(spec['vertices'],spec['triangles'],**options)
+        elif operation=='real-segment-proof':
+            certificate,source=compile_real_segment(spec['obstacles'],spec['start'],spec['end'],**options)
+        else:
+            from .geometry_certificates import certify_route
+            packet=route(spec['obstacles'],spec['start'],spec['end'],work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
+            certificate,source=compile_real_route(packet,certify_route(packet,work_limit=limit),**options)
+        return {'certificate':certificate,'lean_source':source}
     if operation=='metric-energy-proof':
         from .riemannian_energy import compile_energy_certificate
         certificate,source=compile_energy_certificate(spec,step_limit=spec.get('step_limit',256))

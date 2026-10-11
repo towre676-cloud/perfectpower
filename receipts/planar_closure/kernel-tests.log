@@ -1,0 +1,337 @@
+GeometryCertificates
+'PerfectPower.GeometryCertificates.optimal_walk' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GeometryCertificates.no_walk_outside' does not depend on any axioms
+'PerfectPower.GeometryCertificates.opposite_strict_sides' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GeometryCertificates.weighted_side' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GeometryCertificates.nonnegative_weighted_side' depends on axioms: [propext, Quot.sound]
+
+GeometryAdmission
+'PerfectPower.GeometryAdmission.free_segment_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.segment_contact_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.triangle_edge_split_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.mesh_refinement_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.refinement_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.accepted_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.segment_admission' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.geometric_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+GeometrySourceTransport
+'PerfectPower.GeometryAdmission.rational_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.free_segment_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RiemannianEnergy
+'PerfectPower.RiemannianEnergy.gap_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.pullback_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.energy_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.linear_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.pullback_bilinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.action_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.q_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.koszul_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+PlanarCertificates
+'PerfectPower.PlanarCertificates.universal_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanarCertificates.contradiction_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+PlanarGeometry
+/workspace/scratch/f8ec8f9dd96b/perfectpower/PerfectPower/PlanarGeometry.lean:56:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.PlanarGeometry.coverage_from_tree' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealVisibility
+'PerfectPower.RealVisibility.source_no_walk_outside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.segment_from_tree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.blocked_segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.real_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.source_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealContact
+'PerfectPower.RealContact.disjoint_from_tree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealContact.contact_from_hit' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+FlatRiemannian
+'PerfectPower.FlatRiemannian.analytic_energy_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FlatRiemannian.flat_geodesic_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FlatRiemannian.line_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+MetricJetRealization
+'PerfectPower.MetricJetRealization.local_jet_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetRealization.x_derivatives' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetRealization.y_derivatives' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+MetricJetConnection
+'PerfectPower.MetricJetConnection.derivative_interpretation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetConnection.gamma_compatible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetConnection.gamma_field_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Boundary
+'Boundary.real_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Concave
+'Concave.source_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Crossing
+'Crossing.real_blocked' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Notch
+'Notch.real_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+ObstacleRoute
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.original_geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_geometric_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_original_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.source_path_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.retained_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.real_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Overlap
+'Overlap.real_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Rational
+'Rational.real_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealContactCrossing
+'RealContactCrossing.source_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealContactDisjoint
+'RealContactDisjoint.source_disjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealContactOverlap
+'RealContactOverlap.source_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealContactTangent
+'RealContactTangent.source_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealRoute
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.original_geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_geometric_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_original_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.source_path_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.retained_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.real_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Square
+'Square.source_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Steiner
+'Steiner.source_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Tangent
+'Tangent.real_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+GeometryCertificates
+'PerfectPower.GeometryCertificates.optimal_walk' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GeometryCertificates.no_walk_outside' does not depend on any axioms
+'PerfectPower.GeometryCertificates.opposite_strict_sides' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GeometryCertificates.weighted_side' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GeometryCertificates.nonnegative_weighted_side' depends on axioms: [propext, Quot.sound]
+
+GeometryAdmission
+'PerfectPower.GeometryAdmission.free_segment_spec' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.segment_contact_parameters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.triangle_edge_split_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.mesh_refinement_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.refinement_coverage' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.accepted_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.segment_admission' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.geometric_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+GeometrySourceTransport
+'PerfectPower.GeometryAdmission.rational_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.GeometryAdmission.free_segment_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RiemannianEnergy
+'PerfectPower.RiemannianEnergy.gap_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.pullback_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.energy_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.linear_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.pullback_bilinear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.action_transport' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.q_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RiemannianEnergy.koszul_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+PlanarCertificates
+'PerfectPower.PlanarCertificates.universal_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanarCertificates.contradiction_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+PlanarGeometry
+/workspace/scratch/f8ec8f9dd96b/perfectpower/PerfectPower/PlanarGeometry.lean:56:25: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.PlanarGeometry.coverage_from_tree' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealVisibility
+'PerfectPower.RealVisibility.source_no_walk_outside' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.segment_from_tree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.blocked_segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.real_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealVisibility.source_optimal_walk' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+RealContact
+'PerfectPower.RealContact.disjoint_from_tree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.RealContact.contact_from_hit' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+FlatRiemannian
+'PerfectPower.FlatRiemannian.analytic_energy_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FlatRiemannian.flat_geodesic_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.FlatRiemannian.line_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+MetricJetRealization
+'PerfectPower.MetricJetRealization.local_jet_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetRealization.x_derivatives' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetRealization.y_derivatives' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+MetricJetConnection
+'PerfectPower.MetricJetConnection.derivative_interpretation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetConnection.gamma_compatible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.MetricJetConnection.gamma_field_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+Boundary retained from preceding exact-source replay
+Concave retained from preceding exact-source replay
+Crossing retained from preceding exact-source replay
+Notch retained from preceding exact-source replay
+ObstacleRoute
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.original_geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_geometric_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_original_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.source_path_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.retained_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.no_cheaper_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pe17d1feea851194ecdf2277249f54ada5d8e77a87fb4d9a9f9fa5f670807eba7.real_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Overlap retained from preceding exact-source replay
+Rational retained from preceding exact-source replay
+RealContactCrossing retained from preceding exact-source replay
+RealContactDisjoint retained from preceding exact-source replay
+RealContactOverlap retained from preceding exact-source replay
+RealContactTangent retained from preceding exact-source replay
+RealRoute
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.original_geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_geometric_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_original_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.source_path_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.retained_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.no_cheaper_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P171569e4d0a7860c35edf7381c0e5227328a6f0df1c90831512464b4e5d98962.real_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+Square retained from preceding exact-source replay
+Steiner retained from preceding exact-source replay
+Tangent retained from preceding exact-source replay
+ZeroRoute
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+/workspace/scratch/f8ec8f9dd96b/perfectpower/receipts/planar_closure/ZeroRoute.lean:41:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.original_geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.no_cheaper_geometric_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.no_cheaper_original_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.source_path_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+/workspace/scratch/f8ec8f9dd96b/perfectpower/receipts/planar_closure/ZeroRoute.lean:135:19: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+note: this linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.retained_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.no_cheaper_real_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.P34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e.real_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

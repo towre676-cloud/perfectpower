@@ -1,0 +1,116 @@
+empty-farkas-witness
+/tmp/tmprnf85qfv/Rejected.lean:3:52: error: tactic 'decide' proved that the proposition
+  contradiction [((0, 0, -1), false)] []
+is false
+
+negative-weight
+/tmp/tmprnf85qfv/Rejected.lean:3:71: error: tactic 'decide' proved that the proposition
+  contradiction [((0, 0, 1), false)] [(((0, 0, 1), false), -1)]
+is false
+
+foreign-constraint
+/tmp/tmprnf85qfv/Rejected.lean:3:56: error: tactic 'decide' proved that the proposition
+  contradiction [] [(((0, 0, -1), false), 1)]
+is false
+
+nonzero-slope
+/tmp/tmprnf85qfv/Rejected.lean:3:72: error: tactic 'decide' failed for proposition
+  contradiction [((1, 0, -1), false)] [(((1, 0, -1), false), 1)]
+since its 'Decidable' instance
+  instDecidableContradiction [((1, 0, -1), false)] [(((1, 0, -1), false), 1)]
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.2 * e.1.1.1) (((1, 0, -1), false), 1)).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0 (List.map (fun e => e.2 * e.1.1.1) []))).num,
+    ↑0 with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+
+nonstrict-zero
+/tmp/tmprnf85qfv/Rejected.lean:3:70: error: tactic 'decide' failed for proposition
+  contradiction [((0, 0, 0), false)] [(((0, 0, 0), false), 1)]
+since its 'Decidable' instance
+  instDecidableContradiction [((0, 0, 0), false)] [(((0, 0, 0), false), 1)]
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.2 * e.1.1.1) (((0, 0, 0), false), 1)).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0 (List.map (fun e => e.2 * e.1.1.1) []))).num,
+    ↑0 with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+
+zero-weight-strict
+/tmp/tmprnf85qfv/Rejected.lean:3:68: error: tactic 'decide' failed for proposition
+  contradiction [((0, 0, 0), true)] [(((0, 0, 0), true), 0)]
+since its 'Decidable' instance
+  instDecidableContradiction [((0, 0, 0), true)] [(((0, 0, 0), true), 0)]
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.2 * e.1.1.1) (((0, 0, 0), true), 0)).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0 (List.map (fun e => e.2 * e.1.1.1) []))).num,
+    ↑0 with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+
+unbound-leaf
+/tmp/tmprnf85qfv/Rejected.lean:3:47: error: tactic 'decide' proved that the proposition
+  checked (Formula.eq (1, 0, 0)) [] Tree.leaf
+is false
+
+false-boundary-sign
+/tmp/tmprnf85qfv/Rejected.lean:3:58: error: tactic 'decide' proved that the proposition
+  checked (Formula.eq (1, 0, 0)) [((1, 0, 0), 1)] Tree.leaf
+is false
+
+false-real-blocked-parameter
+/tmp/tmprnf85qfv/Rejected.lean:9:115: error: tactic 'decide' failed for proposition
+  PerfectPower.RealVisibility.blockedFormula polygons start finish (0 / 1) = true
+since its 'Decidable' instance
+  instDecidableEqBool (PerfectPower.RealVisibility.blockedFormula polygons start finish (0 / 1)) true
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match PerfectPower.RealVisibility.blockedFormula polygons start finish (0 / 1), true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+/tmp/tmprnf85qfv/Rejected.lean:11:98: error: application type mismatch
+  PerfectPower.RealVisibility.blocked_segment polygons start finish (1 / 2) ?m.699 ?m.700 real_hit
+argument
+  real_hit
+has type
+  PerfectPower.RealVisibility.blockedFormula polygons start finish (0 / 1) = true : Prop
+but is expected to have type
+  PerfectPower.RealVisibility.blockedFormula polygons start finish (1 / 2) = true : Prop
+'Crossing.real_blocked' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

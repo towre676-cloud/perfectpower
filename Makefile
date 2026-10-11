@@ -622,3 +622,11 @@ riemannian-energy:
 
 riemannian-energy-kernel:
 	lake env python3 scripts/check_riemannian_energy_kernel.py
+
+.PHONY: planar-closure planar-closure-kernel
+planar-closure:
+	PYTHONPATH=python python3 python/develop_planar_closure.py
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_planar_certificates.py -v
+
+planar-closure-kernel:
+	lake env python3 scripts/check_planar_closure_kernel.py
