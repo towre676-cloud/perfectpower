@@ -63,6 +63,10 @@ The [broad family engine](docs/FAMILY_ENGINE_MONOGRAPH.md) adds globally complet
 
 The [automatic reductions and multiple-orbit engine](docs/ORBIT_REDUCTION_MONOGRAPH.md) recognizes supported original polynomials, queries generalized Pell equations with every checked seed, and gives binary-powered selections within each orbit. The same push proves saturation at 2 of the retained rational bases for all 457 hard census curves; complete curve-specific rank and integral-point proofs remain open.
 
+## Euclidean arithmetic and geometry
+
+[Euclidean methods](docs/EUCLID_METHODS_MONOGRAPH.md) reduce polynomial product-power equations using integer resultant identities and exceptional-prime branches. They also provide rational segment and disk contact, bounded Voronoi cells with ties, exact quadratic surds, continued-fraction Pell units, and square-root or Sturm interval refinement. Run `python -m perfectpower euclid descent examples/euclid_methods/descent.json` or `make euclid-methods`. `make euclid-methods-kernel` proves the emitted Bézout identities and gcd consequences for every integer input, plus retained rational square-root bounds. General branch solving and Python execution retain their separate scope.
+
 ## Exact graph methods
 
 [Graph methods](docs/GRAPH_METHODS_MONOGRAPH.md) add finite separator-table counting and queryable factor populations, maximum matching with Hall obstructions, integral flow/cut certificates, cellular homology with Smith torsion, finite-machine reachability, and rational string winding. Run `python -m perfectpower graph flow examples/graph_methods/flow.json` or `make graph-methods`. Lean checks the foundation and small source-bound examples with `make graph-methods-kernel`; general Python execution remains separately tested and replayed. The [synthetic benchmark](receipts/graph_methods/benchmark.json) records both favorable disconnected cases and adverse dense cases against an internal cached DPLL.

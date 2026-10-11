@@ -1,0 +1,26 @@
+python3 -m unittest discover -s python/tests -p 'test_euclid_methods.py'
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.416s
+
+OK
+python3 python/develop_euclid_methods.py
+bash scripts/check_euclid_methods.sh
+'PerfectPower.EuclidMethods.horner_mul' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EuclidMethods.evaluated_obstruction' depends on axioms: [propext]
+'PerfectPower.EuclidMethods.squared_difference' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EuclidMethods.complementary_exponents' depends on axioms: [propext]
+'PerfectPower.EuclidMethods.adjacent_two_common_divisor' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EuclidMethods.pell_61_norm' does not depend on any axioms
+'PerfectPower.EuclidMethods.sqrt_two_bounds' does not depend on any axioms
+'PerfectPower.CheckedEuclid.P58accbee9dedac583477c52159f450b659e55ad33b4231a2bd05fa946149a3ff.identity_all_inputs' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedEuclid.P58accbee9dedac583477c52159f450b659e55ad33b4231a2bd05fa946149a3ff.common_divisor_bound' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedEuclid.P3a2b8a07515f85b96770f313864ad1b17fab77de35265367a021a55e4c69883e.identity_all_inputs' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedEuclid.P3a2b8a07515f85b96770f313864ad1b17fab77de35265367a021a55e4c69883e.common_divisor_bound' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedEuclid.Bounds5d7eb8f39882ce94b7475e4fb3b6daa39a5acc683b7a45bc91a146dea297c597.lower_square' does not depend on any axioms
+'PerfectPower.CheckedEuclid.Bounds5d7eb8f39882ce94b7475e4fb3b6daa39a5acc683b7a45bc91a146dea297c597.upper_square' does not depend on any axioms
+'PerfectPower.CheckedEuclid.Bounds5d7eb8f39882ce94b7475e4fb3b6daa39a5acc683b7a45bc91a146dea297c597.tolerance' does not depend on any axioms

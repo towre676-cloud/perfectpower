@@ -571,3 +571,11 @@ graph-methods-kernel:
 
 graph-methods-benchmark:
 	$(PY) python/benchmark_graph_methods.py
+
+.PHONY: euclid-methods euclid-methods-kernel
+euclid-methods:
+	$(PY) -m unittest discover -s python/tests -p 'test_euclid_methods.py'
+	$(PY) python/develop_euclid_methods.py
+
+euclid-methods-kernel:
+	bash scripts/check_euclid_methods.sh

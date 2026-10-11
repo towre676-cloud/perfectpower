@@ -1,0 +1,30 @@
+{
+  "schema": "pp-exact-string-geometry/1",
+  "closed": true,
+  "objects": {
+    "free": {
+      "winding": 1,
+      "contacts_disk": false,
+      "whole_disk_topologically_enclosed": true
+    },
+    "tangent": {
+      "winding": 1,
+      "contacts_disk": true,
+      "whole_disk_topologically_enclosed": false
+    }
+  },
+  "segment_contacts": [
+    {
+      "object": "tangent",
+      "segment": 0,
+      "tangent": true,
+      "squared_distance": "1",
+      "nearest": [
+        "2",
+        "0"
+      ],
+      "parameter": "1/2"
+    }
+  ],
+  "scope": "exact supplied polygon and closed disks; physical grasp and dynamics not inferred"
+}

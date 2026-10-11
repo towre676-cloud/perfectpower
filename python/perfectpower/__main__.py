@@ -208,7 +208,12 @@ def main():
     p.add_argument('certificate', type=Path)
     from .graph_cli import add_commands as add_graph_commands
     add_graph_commands(sub)
+    from .euclid_cli import add_commands as add_euclid_commands
+    add_euclid_commands(sub)
     args = parser.parse_args()
+    from .euclid_cli import cli as euclid_cli
+    if euclid_cli(args):
+        return
     if args.command == 'graph':
         from .graph_cli import dispatch
         with open(args.input) as f:

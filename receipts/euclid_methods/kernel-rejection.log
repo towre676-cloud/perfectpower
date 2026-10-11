@@ -1,0 +1,12 @@
+/tmp/euclid-negative/RejectedBezout.lean:8:81: error: tactic 'decide' proved that the proposition
+  addPoly (mulPoly U A) (mulPoly V B) = [2, 0]
+is false
+/tmp/euclid-negative/RejectedBezout.lean:13:2: error: type mismatch, term
+  h
+after simplification has type
+  horner U n * horner A n + horner V n * horner B n = 2 : Prop
+but is expected to have type
+  horner U n * horner A n + horner V n * horner B n = 1 : Prop
+'PerfectPower.CheckedEuclid.P58accbee9dedac583477c52159f450b659e55ad33b4231a2bd05fa946149a3ff.identity_all_inputs' depends on axioms: [sorryAx]
+'PerfectPower.CheckedEuclid.P58accbee9dedac583477c52159f450b659e55ad33b4231a2bd05fa946149a3ff.common_divisor_bound' depends on axioms: [propext,
+ sorryAx]
