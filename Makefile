@@ -562,7 +562,7 @@ budget-lab-benchmark:
 
 .PHONY: model-count-test model-count-corpus model-count-benchmark
 model-count-test:
-	PYTHONPATH=python python3 -m unittest python/tests/test_model_counting.py python/tests/test_model_counting_benchmark.py
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_model_counting*.py'
 model-count-corpus:
 	python3 scripts/fetch_model_counting.py $(CNF_CORPUS)
 model-count-benchmark:

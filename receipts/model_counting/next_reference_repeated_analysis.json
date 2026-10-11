@@ -1,0 +1,100 @@
+{
+  "schema": "pp-cnf-paired-analysis/1",
+  "receipt_sha256": "a6e13158537ddaca5733c4ab8de7505af69088b282febf874475e209d80f41a5",
+  "analysis_source_sha256": "98aa5d2bc07e9b0538b54df2fdfd2d26fbaf48ea98d3611e3002bd5ef0b91fb1",
+  "comparisons": [
+    {
+      "baseline": "previous",
+      "instances": 1,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 1,
+      "coverage_delta_95_percent_interval": [
+        1,
+        1
+      ],
+      "par2_seconds_saved": 55.55440151866545,
+      "par2_saved_95_percent_interval": [
+        55.55440151866545,
+        55.55440151866545
+      ],
+      "jointly_solved_instances": 0,
+      "jointly_solved_geometric_speedup": null,
+      "jointly_solved_speedup_95_percent_interval": null,
+      "speedup_bootstrap_defined_resamples": 0,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2025_track1_076.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        }
+      ]
+    },
+    {
+      "baseline": "ganak",
+      "instances": 1,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 0,
+      "coverage_delta_95_percent_interval": [
+        0,
+        0
+      ],
+      "par2_seconds_saved": 15.647558739998203,
+      "par2_saved_95_percent_interval": [
+        15.647558739998203,
+        15.647558739998203
+      ],
+      "jointly_solved_instances": 1,
+      "jointly_solved_geometric_speedup": 4.427444389341987,
+      "jointly_solved_speedup_95_percent_interval": [
+        4.427444389341987,
+        4.427444389341987
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2025_track1_076.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 4.427444389341987
+        }
+      ]
+    },
+    {
+      "baseline": "d4_2024",
+      "instances": 1,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 1,
+      "coverage_delta_95_percent_interval": [
+        1,
+        1
+      ],
+      "par2_seconds_saved": 55.55440151866545,
+      "par2_saved_95_percent_interval": [
+        55.55440151866545,
+        55.55440151866545
+      ],
+      "jointly_solved_instances": 0,
+      "jointly_solved_geometric_speedup": null,
+      "jointly_solved_speedup_95_percent_interval": null,
+      "speedup_bootstrap_defined_resamples": 0,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2025_track1_076.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        }
+      ]
+    }
+  ]
+}

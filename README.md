@@ -1,5 +1,7 @@
 Exact unweighted DIMACS counting is available through `PYTHONPATH=python python -m perfectpower model-count input.cnf`. It supports original-variable conditioning, ranks and seeded uniform sampling through the Python API. The complete 200-instance competition comparison and its limits are described in [the model-counting monograph](docs/MODEL_COUNTING_MONOGRAPH.md).
 
+Version 0.10.1 adds count-preserving equivalence substitution, occurrence-queue propagation and faster elimination planning. The [publication-driven comparison](docs/MODEL_COUNTING_RESEARCH_RESULTS.md) reports complete MC2024/MC2025 comparisons against the prior counter and pinned references, normalized dataset overlap, repeat trials and feature ablations. It improves our counter while retaining the measured coverage gap to the references.
+
 # PerfectPower
 
 **Budget Lab (v0.9.9)** applies the exact planner to four complete public participatory-budgeting elections. Launch the local browser application with `python START_BUDGET_LAB.py`, then open `http://127.0.0.1:8765/`. Change budgets, lock arbitrary projects, rank alternatives, sample uniformly and inspect maximum-support portfolios. The [application monograph](docs/BUDGET_LAB_MONOGRAPH.md) records independent full-workflow comparisons and the distinction between analytical portfolios and official voting rules.

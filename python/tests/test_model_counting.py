@@ -11,6 +11,67 @@ def xor_clauses(variables,parity):
     return [tuple(-v if bit else v for v,bit in zip(variables,bits)) for bits in itertools.product((0,1),repeat=len(variables)) if sum(bits)%2!=parity]
 
 class ModelCountingTests(unittest.TestCase):
+    def test_large_branching_count_with_free_declared_variables(self):
+        # Above the factor-elimination dimension budget, a star has an
+        # independently derived count: x1=true frees 269 variables, while
+        # x1=false forces them all. Three declared variables stay free.
+        f=CNF(273,tuple((1,v) for v in range(2,271)))
+        with CNFCounter(f) as c:
+            expected=8*((1<<269)+1)
+            self.assertEqual(c.count(),expected)
+            self.assertGreater(c.last['nodes'],1)
+            self.assertEqual(c.count([-2]),1<<271)
+            first=[0]+[1]*269+[0]*3
+            self.assertEqual(c.select(0),first)
+            self.assertEqual(c.rank(first),0)
+            self.assertEqual(c.select(expected-1),[1]*273)
+
+    def test_equivalences_emerging_after_a_decision(self):
+        # x1=false permits 260 independent bits. With x1=true the 130
+        # pairs must agree. The original lexicographic boundary is 2^263
+        # after including three free declared variables.
+        clauses=tuple(clause for i in range(130) for clause in
+                      ((-1,-(2+2*i),3+2*i),(-1,2+2*i,-(3+2*i))))
+        f=CNF(264,clauses)
+        with CNFCounter(f) as c:
+            self.assertEqual(c.count(),8*((1<<260)+(1<<130)))
+            self.assertGreater(c.last['nodes'],1)
+            self.assertGreater(c.last['equivalence_variables'],0)
+            self.assertEqual(c.count([1,2,-3]),0)
+            self.assertEqual(c.count([-1,2,-3]),1<<261)
+            self.assertEqual(c.count([1,2]),1<<132)
+            boundary=[1]+[0]*263
+            self.assertEqual(c.select(1<<263),boundary)
+            with CNFCounter(f) as fresh:self.assertEqual(fresh.rank(boundary),1<<263)
+
+    def test_signed_equivalence_quotient_and_original_queries(self):
+        # Both signs, a transitive SCC, a disappearing tautology, and a
+        # declared free variable: the quotient must not multiply by 2^3.
+        f=CNF(5,((-1,2),(1,-2),(-2,-3),(2,3),(-3,4),(3,-4),(1,-2,5)))
+        expected=models(f)
+        with CNFCounter(f) as c:
+            self.assertEqual(c.count(),len(expected))
+            self.assertEqual(c.last['equivalence_variables'],3)
+            for locks in ((),(1,),(-3,),(2,3),(5,)):
+                points=models(f,locks);self.assertEqual(c.count(locks),len(points))
+                for i,p in enumerate(points):
+                    self.assertEqual(c.select(i,locks),p);self.assertEqual(c.rank(p,locks),i)
+        # A literal and its complement in the same SCC refute the formula
+        # even though there are no unit clauses.
+        with CNFCounter(CNF(2,((1,2),(-1,2),(1,-2),(-1,-2)))) as c:
+            self.assertEqual(c.count(),0)
+
+    def test_long_unit_chain_and_equivalence_chain(self):
+        n=20000
+        with CNFCounter(CNF(n,((1,),)+tuple((-v,v+1) for v in range(1,n))),timeout=5) as c:
+            self.assertEqual(c.count(),1)
+        # Iterative SCC traversal must handle a chain deeper than the
+        # counting search depth without overflowing the C++ call stack.
+        clauses=tuple(clause for v in range(1,n) for clause in ((-v,v+1),(v,-v-1)))
+        with CNFCounter(CNF(n+1,clauses),timeout=5) as c:
+            self.assertEqual(c.count(),4)
+            self.assertEqual(c.last['equivalence_variables'],n-1)
+
     def test_parser(self):
         f=CNF.parse('c example\np cnf 4 3\n1 1\n-2 0 2 -2 0\n0\n')
         self.assertEqual(f.variables,4);self.assertEqual(f.clauses,((),(-2,1)))

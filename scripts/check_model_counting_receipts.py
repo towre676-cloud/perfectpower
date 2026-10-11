@@ -29,7 +29,7 @@ def exact_from_log(path):
     require(isinstance(value, str) and value.isascii() and value.isdigit(), 'invalid decimal log count')
     return value
 
-def check(log_root=ROOT):
+def check(log_root=ROOT,source_root=ROOT):
     log_root = Path(log_root)
     folder = ROOT / 'receipts/model_counting'
     screen_path = folder / 'benchmark.json'
@@ -46,7 +46,7 @@ def check(log_root=ROOT):
     require(screen['timeout_seconds'] == 10 and screen['memory_gib'] == 6, 'declared latency contract differs')
     for field, name in [('native_source_sha256', 'native/model_counting/counter.cpp'),
                         ('python_source_sha256', 'python/perfectpower/model_counting.py')]:
-        require(screen[field] == sha(ROOT / name), 'frozen source differs: ' + name)
+        require(screen[field] == sha(Path(source_root) / name), 'frozen source differs: ' + name)
     for solver in ('ganak', 'd4'):
         require(screen['solvers'][solver]['binary_sha256'] == references[solver]['binary_sha256'], 'reference differs: ' + solver)
     audited_logs = 0
@@ -124,5 +124,6 @@ def check(log_root=ROOT):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--log-root', type=Path, default=ROOT, help='root of the separately extracted detailed evidence archive')
+    parser.add_argument('--source-root', type=Path, default=ROOT, help='checkout containing the source version measured by these historical receipts')
     args = parser.parse_args()
-    print(json.dumps(check(args.log_root), sort_keys=True))
+    print(json.dumps(check(args.log_root,args.source_root), sort_keys=True))

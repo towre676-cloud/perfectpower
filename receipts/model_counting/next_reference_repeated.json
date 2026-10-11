@@ -1,0 +1,206 @@
+{
+  "schema": "pp-cnf-paired/1",
+  "started_utc": "2026-10-11T01:29:45.618254+00:00",
+  "dataset": "MC2025 Track1 public draft, complete 200 instances",
+  "instances": [
+    "mc2025_track1_076.cnf"
+  ],
+  "source_identities": {
+    "counter": "d0eac70c0cc56d549d90f68c60bfee96927b99680f8a3529f3ddd6def96d9925",
+    "python": "403d73af86b4011c78556de9e6e063d8ae951e4d7ea3113fd93ff41298980efa",
+    "runner": "1c27e07099e4361b580f1a2219b4d503d9801797393dbfd3a909fef6a24f1249",
+    "execution": "2fea5c60723088b90c01979e96a5d1cbdc2fa157fe1fe39fb1f59a9524e2d643",
+    "previous_counter": "a6388e43ad73736979053e698afaff7f5d1fc9fcd5122ee87ef55eecf1c656ff",
+    "previous_python": "403d73af86b4011c78556de9e6e063d8ae951e4d7ea3113fd93ff41298980efa",
+    "previous_worker": "2fea5c60723088b90c01979e96a5d1cbdc2fa157fe1fe39fb1f59a9524e2d643",
+    "manifest": "79e7832608caea7d37d2ff5c4fa91ecadc2d599716933cae06cf577e26e695df",
+    "native_binary": "a58ba1cd44e8cffc31b9d73984a06c3f2adc9ad708e98f7361cb4c082c915f19",
+    "previous_native_binary": "c7498aea7fe8b192355cb03affbf947c707e59bcac8a486254aaf6d5c77eec10",
+    "ganak_binary": "934a79a3db2f5b3928ce89edde20837f652e4679b099320ac71c198699c709dd",
+    "d4_binary": "ef0b4d2196c5cc7b5c278943bc410744d9a0bd75bb0e5d11d4bdd6756149ce74"
+  },
+  "timeout_seconds": 30.0,
+  "memory_gib": 6,
+  "repetitions": 3,
+  "timing_scope": "Serial cold subprocess wall time, including parsing and construction; native compilation warmed separately",
+  "solver_scope": [
+    "perfectpower",
+    "previous",
+    "ganak",
+    "d4_2024"
+  ],
+  "reference_scope": "Ganak 2.8.0 deterministic; D4 archived 2024 entry, not a current-champion comparison",
+  "results": [
+    {
+      "name": "mc2025_track1_076.cnf",
+      "sha256": "d5f4d4af3d31c9e32f22e8cffb9abb0fad3e297152ccb0410d11909cb1681b78",
+      "trial": 0,
+      "overlap_mc2024": false,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "3",
+          "reason": null,
+          "seconds": 4.593476052003098,
+          "exit_code": 0,
+          "log": "mc2025_track1_076.cnf.0.perfectpower.log",
+          "log_sha256": "402829611a7713a892a491d9c322ae23952ff57c620537ca177a33284f7b71e8"
+        },
+        "previous": {
+          "status": "TIMEOUT",
+          "count": null,
+          "reason": null,
+          "seconds": 30.101276234003308,
+          "exit_code": -9,
+          "log": "mc2025_track1_076.cnf.0.previous.log",
+          "log_sha256": "169f24774e13a79b6341d6c41c58f159e180701e87e9028aa70afdf8712b6fbb"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "3",
+          "reason": null,
+          "seconds": 19.91857296699891,
+          "exit_code": 0,
+          "log": "mc2025_track1_076.cnf.0.ganak.log",
+          "log_sha256": "ce47d21b2a67755d6f4b18eac909b5cf562dfbf518861fdfdd19a5e6a2d7e4db"
+        },
+        "d4_2024": {
+          "status": "ERROR",
+          "count": null,
+          "reason": null,
+          "seconds": 15.862672465998912,
+          "exit_code": -6,
+          "log": "mc2025_track1_076.cnf.0.d4_2024.log",
+          "log_sha256": "c51c62c942cf6a5581434e7ae9e277e4962945b34ea61c6c3e3699bdd65bda4e"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2025_track1_076.cnf",
+      "sha256": "d5f4d4af3d31c9e32f22e8cffb9abb0fad3e297152ccb0410d11909cb1681b78",
+      "trial": 1,
+      "overlap_mc2024": false,
+      "solvers": {
+        "previous": {
+          "status": "TIMEOUT",
+          "count": null,
+          "reason": null,
+          "seconds": 30.105263579003804,
+          "exit_code": -9,
+          "log": "mc2025_track1_076.cnf.1.previous.log",
+          "log_sha256": "169f24774e13a79b6341d6c41c58f159e180701e87e9028aa70afdf8712b6fbb"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "3",
+          "reason": null,
+          "seconds": 20.21220471199922,
+          "exit_code": 0,
+          "log": "mc2025_track1_076.cnf.1.ganak.log",
+          "log_sha256": "69f4fd4ff6c338e3c56df0ca04b4835164a2bd3de80be2401c4101aa9b5a0ddd"
+        },
+        "d4_2024": {
+          "status": "ERROR",
+          "count": null,
+          "reason": null,
+          "seconds": 16.134527816997434,
+          "exit_code": -6,
+          "log": "mc2025_track1_076.cnf.1.d4_2024.log",
+          "log_sha256": "c51c62c942cf6a5581434e7ae9e277e4962945b34ea61c6c3e3699bdd65bda4e"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "3",
+          "reason": null,
+          "seconds": 4.550863254997239,
+          "exit_code": 0,
+          "log": "mc2025_track1_076.cnf.1.perfectpower.log",
+          "log_sha256": "402829611a7713a892a491d9c322ae23952ff57c620537ca177a33284f7b71e8"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2025_track1_076.cnf",
+      "sha256": "d5f4d4af3d31c9e32f22e8cffb9abb0fad3e297152ccb0410d11909cb1681b78",
+      "trial": 2,
+      "overlap_mc2024": false,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "3",
+          "reason": null,
+          "seconds": 20.148693985000136,
+          "exit_code": 0,
+          "log": "mc2025_track1_076.cnf.2.ganak.log",
+          "log_sha256": "45fa7e141f2196511119b27df8fd86ab76c9e1b51f1b376826fba2561905f0a9"
+        },
+        "d4_2024": {
+          "status": "ERROR",
+          "count": null,
+          "reason": null,
+          "seconds": 16.497244457001216,
+          "exit_code": -6,
+          "log": "mc2025_track1_076.cnf.2.d4_2024.log",
+          "log_sha256": "c51c62c942cf6a5581434e7ae9e277e4962945b34ea61c6c3e3699bdd65bda4e"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "3",
+          "reason": null,
+          "seconds": 4.192456137003319,
+          "exit_code": 0,
+          "log": "mc2025_track1_076.cnf.2.perfectpower.log",
+          "log_sha256": "402829611a7713a892a491d9c322ae23952ff57c620537ca177a33284f7b71e8"
+        },
+        "previous": {
+          "status": "TIMEOUT",
+          "count": null,
+          "reason": null,
+          "seconds": 30.115876310999738,
+          "exit_code": -9,
+          "log": "mc2025_track1_076.cnf.2.previous.log",
+          "log_sha256": "169f24774e13a79b6341d6c41c58f159e180701e87e9028aa70afdf8712b6fbb"
+        }
+      },
+      "agreement": "MATCH"
+    }
+  ],
+  "completed": true,
+  "summary": {
+    "perfectpower": {
+      "outcomes": {
+        "EXACT": 3
+      },
+      "par2_seconds": 13.336795444003656
+    },
+    "previous": {
+      "outcomes": {
+        "TIMEOUT": 3
+      },
+      "par2_seconds": 180.0
+    },
+    "ganak": {
+      "outcomes": {
+        "EXACT": 3
+      },
+      "par2_seconds": 60.279471663998265
+    },
+    "d4_2024": {
+      "outcomes": {
+        "ERROR": 3
+      },
+      "par2_seconds": 180.0
+    },
+    "paired_change": {
+      "gained": [
+        "mc2025_track1_076.cnf",
+        "mc2025_track1_076.cnf",
+        "mc2025_track1_076.cnf"
+      ],
+      "lost": []
+    }
+  },
+  "finished_utc": "2026-10-11T01:33:18.332061+00:00"
+}
