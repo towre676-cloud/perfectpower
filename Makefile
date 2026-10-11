@@ -559,3 +559,15 @@ budget-lab-test:
 	PYTHONPATH=python python -m unittest python/tests/test_budget_lab.py
 budget-lab-benchmark:
 	PYTHONPATH=python python python/run_budget_lab.py --repeats 3
+
+.PHONY: graph-methods graph-methods-kernel graph-methods-benchmark
+graph-methods:
+	$(PY) -m unittest discover -s python/tests -p 'test_graph_methods.py'
+	$(PY) python/develop_graph_methods.py
+
+graph-methods-kernel:
+	$${PERFECTPOWER_LEAN:-lean} PerfectPower/GraphCertificates.lean
+	$${PERFECTPOWER_LEAN:-lean} receipts/graph_methods/SourceBoundCNF.lean
+
+graph-methods-benchmark:
+	$(PY) python/benchmark_graph_methods.py

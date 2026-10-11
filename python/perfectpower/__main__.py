@@ -206,7 +206,15 @@ def main():
     add_service_commands(sub)
     p = sub.add_parser('verify')
     p.add_argument('certificate', type=Path)
+    from .graph_cli import add_commands as add_graph_commands
+    add_graph_commands(sub)
     args = parser.parse_args()
+    if args.command == 'graph':
+        from .graph_cli import dispatch
+        with open(args.input) as f:
+            result = dispatch(args.operation,json.load(f),args.cell_limit)
+        print(json.dumps(result,sort_keys=True,indent=2))
+        return
     from .budget_lab import cli as budget_cli
     if budget_cli(args):
         return

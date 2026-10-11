@@ -1,0 +1,153 @@
+{
+  "schema": "pp-machine-graph/1",
+  "transitions": [
+    [
+      0,
+      "go",
+      1
+    ],
+    [
+      1,
+      "go",
+      2
+    ],
+    [
+      3,
+      "go",
+      3
+    ]
+  ],
+  "reachable": [
+    0,
+    1,
+    2
+  ],
+  "unreachable": [
+    3
+  ],
+  "shortest_access_words": {
+    "0": [],
+    "1": [
+      "go"
+    ],
+    "2": [
+      "go",
+      "go"
+    ]
+  },
+  "decomposition": {
+    "schema": "pp-elimination-forest/1",
+    "order": [
+      3,
+      0,
+      1,
+      2
+    ],
+    "bags": [
+      [
+        3
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2
+      ]
+    ],
+    "parents": [
+      null,
+      2,
+      3,
+      null
+    ],
+    "width": 1,
+    "optimal_width_proved": false
+  },
+  "future_quotient": {
+    "schema": "pp-future-quotient/1",
+    "model_id": "79b162822150e61a70e1c29fdf16d8874b7b325f64be9e290ffaee66361274d6",
+    "blocks": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "projection": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "quotient": {
+      "observations": [
+        0,
+        0,
+        1,
+        9
+      ],
+      "actions": {
+        "go": [
+          1,
+          2,
+          null,
+          3
+        ]
+      }
+    },
+    "distinguishing_witnesses": [
+      {
+        "first": 0,
+        "second": 1,
+        "word": [
+          "go"
+        ],
+        "reason": "observation"
+      },
+      {
+        "first": 0,
+        "second": 2,
+        "word": [],
+        "reason": "observation"
+      },
+      {
+        "first": 0,
+        "second": 3,
+        "word": [],
+        "reason": "observation"
+      },
+      {
+        "first": 1,
+        "second": 2,
+        "word": [],
+        "reason": "observation"
+      },
+      {
+        "first": 1,
+        "second": 3,
+        "word": [],
+        "reason": "observation"
+      },
+      {
+        "first": 2,
+        "second": 3,
+        "word": [],
+        "reason": "observation"
+      }
+    ],
+    "refinement_rounds": 2,
+    "scope": "coarsest exact observation-and-legality quotient of supplied finite deterministic model"
+  }
+}

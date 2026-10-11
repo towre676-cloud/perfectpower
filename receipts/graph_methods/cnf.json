@@ -1,0 +1,140 @@
+{
+  "schema": "pp-separator-count/1",
+  "source": {
+    "domains": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "factors": [
+      {
+        "scope": [
+          0,
+          1
+        ],
+        "values": [
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "scope": [
+          1,
+          2
+        ],
+        "values": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "scope": [
+          2,
+          3
+        ],
+        "values": [
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "decomposition": {
+    "schema": "pp-elimination-forest/1",
+    "order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "bags": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3
+      ]
+    ],
+    "parents": [
+      1,
+      2,
+      3,
+      null
+    ],
+    "width": 1,
+    "optimal_width_proved": false
+  },
+  "steps": [
+    {
+      "variable": 0,
+      "scope": [
+        1
+      ],
+      "values": [
+        1,
+        2
+      ]
+    },
+    {
+      "variable": 1,
+      "scope": [
+        2
+      ],
+      "values": [
+        1,
+        3
+      ]
+    },
+    {
+      "variable": 2,
+      "scope": [
+        3
+      ],
+      "values": [
+        3,
+        4
+      ]
+    },
+    {
+      "variable": 3,
+      "scope": [],
+      "values": [
+        7
+      ]
+    }
+  ],
+  "count": 7,
+  "cells_visited": 14,
+  "peak_bag_assignments": 4,
+  "kernel_checked": false,
+  "message_cache_hits": 0,
+  "separator_cells_stored": 7
+}

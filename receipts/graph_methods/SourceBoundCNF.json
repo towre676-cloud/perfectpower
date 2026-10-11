@@ -1,0 +1,66 @@
+{
+  "schema": "pp-checked-cnf-source/1",
+  "model": {
+    "domains": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "factors": [
+      {
+        "scope": [
+          0,
+          1
+        ],
+        "values": [
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "scope": [
+          1,
+          2
+        ],
+        "values": [
+          1,
+          1,
+          0,
+          1
+        ]
+      },
+      {
+        "scope": [
+          2,
+          3
+        ],
+        "values": [
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
+  },
+  "specification_sha256": "c627e892f2076f664ad60be0c41bc93556a188fb4931ae918b5d0d23251233e3",
+  "count": 7,
+  "source_sha256": "f18f68b7ad6ecca73b37a96406095452ab0931a44cfa01b5c5fd025e18cca077",
+  "kernel_checked": false,
+  "scope": "exhaustive Boolean assignments of the supplied DIMACS clauses"
+}

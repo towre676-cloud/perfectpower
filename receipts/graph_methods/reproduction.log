@@ -1,0 +1,16 @@
+python3 -m unittest discover -s python/tests -p 'test_graph_methods.py'
+.................
+----------------------------------------------------------------------
+Ran 17 tests in 0.228s
+
+OK
+python3 python/develop_graph_methods.py
+${PERFECTPOWER_LEAN:-lean} PerfectPower/GraphCertificates.lean
+'PerfectPower.GraphCertificates.flow_example_optimal' does not depend on any axioms
+'PerfectPower.GraphCertificates.independent_product' depends on axioms: [propext, Quot.sound]
+'PerfectPower.GraphCertificates.maximum_of_bound' does not depend on any axioms
+'PerfectPower.GraphCertificates.cut_upper_bound' depends on axioms: [propext]
+'PerfectPower.GraphCertificates.cnf_example_count' depends on axioms: [propext]
+'PerfectPower.GraphCertificates.matching_example_optimal' does not depend on any axioms
+${PERFECTPOWER_LEAN:-lean} receipts/graph_methods/SourceBoundCNF.lean
+'PerfectPower.CheckedGraph.Pc627e892f2076f664ad60be0c41bc93556a188fb4931ae918b5d0d23251233e3.exact_count' does not depend on any axioms
