@@ -183,3 +183,14 @@ Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [C
 ## Biological sequence exploration
 
 The BLAST polynomial atlas imports NCBI tracebacks, reconstructs exact finite alignment families, maps scoring sensitivity, enforces conserved motifs and coherent-fragment constraints, and connects to the existing SOE, polynomial and graph machinery. The branch includes a real public insulin-transcript example and an offline interactive atlas. See [the monograph](docs/BLAST_POLYNOMIAL_ATLAS_MONOGRAPH.md) and [the runnable workflow](CLAUDE_CODE_BLAST_START_HERE.md). Run `make blast-test` and `make blast-atlas`; kernel scope and build evidence are recorded separately.
+
+### Differential geometry: smooth domains and exact dynamics
+
+The [Michor differential-geometry release](docs/MICHOR_DIFFERENTIAL_GEOMETRY_MONOGRAPH.md)
+adds exact conformal connections, curvature, geodesic/Hamiltonian dynamics, parallel transport,
+coordinate variations, domain-preserving chart maps, rational interval flow tubes, and Lean-checked
+continuous rectangle inequalities with common-path distance transfer. A smooth whole-plane example
+instantiates a global continuous comparison. [Explore the trajectories](web/michor_geometry/index.html).
+Install `.[differential]`, regenerate with `PYTHONPATH=python python3 python/develop_michor_geometry.py`,
+and replay proofs with `lake env python3 scripts/check_michor_geometry_kernel.py`.
+Unrestricted global distances on compact higher-genus curves remain open.

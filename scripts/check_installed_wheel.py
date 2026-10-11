@@ -34,6 +34,21 @@ def main():
         run=subprocess.run([sys.executable,'-m','perfectpower',command,*arguments],
             check=True,capture_output=True,text=True)
         return json.loads(run.stdout)
+    differential_routes=0
+    try:
+        import sympy
+    except ImportError:
+        pass  # The base wheel remains usable without the optional compiler.
+    else:
+        with tempfile.TemporaryDirectory() as directory:
+            file=Path(directory)/'differential.json'
+            file.write_text(json.dumps({'numerator':[[0,0,1]],'denominator_squared':[[0,4,1]],'point':[0,1]}))
+            result=console('differential-geometry','point',str(file))
+            if result['curvature_interval']!=['-1','-1']:raise AssertionError('installed differential curvature changed')
+            file.write_text(json.dumps({'start':[0,0],'end':[3,4]}))
+            result=console('differential-geometry','plane',str(file))
+            if result['distance']['distance_interval']!=['5','15/2']:raise AssertionError('installed smooth plane bridge changed')
+            differential_routes=2
     species=console('species-population','--bound','1000000000000','--ranks','[0,2178,4356]')
     if species['cardinality']!=4357 or len(species['selected'])!=3:
         raise AssertionError('installed species population changed')
@@ -154,7 +169,7 @@ def main():
                     raise AssertionError('installed proved-family HTTP proposal failed: '+op)
         finally:server.shutdown();thread.join();server.server_close()
     print(json.dumps(dict(complete=True,assets=len(manifest),psg_console_routes=7,soe_console_routes=6,
-                         structural_console_routes=5,installed_root=str(root))))
+                         structural_console_routes=5,differential_console_routes=differential_routes,installed_root=str(root))))
 
 
 if __name__=='__main__':main()

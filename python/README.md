@@ -194,3 +194,16 @@ See [the orbit reduction monograph](../docs/ORBIT_REDUCTION_MONOGRAPH.md) for th
 Hybrid binary allocation routes are `strategy: "symmetry"` and `strategy: "mitm"`; the optional native route requires `g++` with C++17 support and compiles once per Python process. `python -m perfectpower plan examples/planning/petersen_50_optimization.json` finds one maximum without computing counts or ties. The stateless Python API is `perfectpower.planning.optimize_allocation(specification)`, also available through JSONL operation `planning_optimization` with `args.specification`. See the hybrid monograph for exact semantics, routing and benchmark scopes.
 
 Budget Lab: `python -m perfectpower budget-lab --port 8765` serves the browser workbench with bundled public election snapshots. `BudgetElection` parses supported Pabulib approval/cumulative files and preserves published support totals and category caps. `BudgetSession` accepts budget changes and arbitrary include/exclude project locks with a bounded scenario cache. See `docs/BUDGET_LAB_MONOGRAPH.md`.
+
+### Exact differential geometry
+
+Install `.[differential]` for the optional SymPy compiler. Use
+`python -m perfectpower differential-geometry dynamics examples/michor_geometry/sphere.json`
+or `python -m perfectpower differential-geometry distance examples/michor_geometry/curve.json`.
+The `plane` operation accepts `examples/michor_geometry/plane.json` and provides a global
+continuous comparison. Other operations compile metrics, evaluate curvature, transport charts,
+certify continuous rectangle comparisons, enclose short-time flows, and explore numerical trajectories.
+See [the Michor monograph](../docs/MICHOR_DIFFERENTIAL_GEOMETRY_MONOGRAPH.md),
+[the interactive viewer](../web/michor_geometry/index.html), and `receipts/michor_geometry`.
+Chart comparisons restrict paths to the certified domain; interval ODE existence uses classical
+Picard theory and is not Lean formalized. Numerical RK4 trajectories remain uncertified.

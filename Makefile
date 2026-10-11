@@ -630,3 +630,10 @@ planar-closure:
 
 planar-closure-kernel:
 	lake env python3 scripts/check_planar_closure_kernel.py
+.PHONY: differential-geometry differential-geometry-kernel
+differential-geometry:
+	PYTHONPATH=python python3 python/develop_michor_geometry.py
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_michor_geometry.py -v
+
+differential-geometry-kernel:
+	lake env python3 scripts/check_michor_geometry_kernel.py

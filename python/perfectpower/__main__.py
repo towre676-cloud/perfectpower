@@ -212,7 +212,12 @@ def main():
     add_euclid_commands(sub)
     from .belyaev_cli import add_commands as add_geometry_foundation_commands
     add_geometry_foundation_commands(sub)
+    from .michor_cli import add_commands as add_differential_geometry_commands
+    add_differential_geometry_commands(sub)
     args = parser.parse_args()
+    from .michor_cli import cli as differential_geometry_cli
+    if differential_geometry_cli(args):
+        return
     from .belyaev_cli import cli as geometry_foundation_cli
     if geometry_foundation_cli(args):
         return
