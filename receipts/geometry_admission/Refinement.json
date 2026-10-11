@@ -1,0 +1,165 @@
+{
+  "proof": {
+    "kernel_checked": false,
+    "refinement_steps": 1,
+    "schema": "pp-lean-refinement-mesh/1",
+    "scope": "pointwise equality of closed rational triangle-source region and supplied mesh, including all edges and vertices; finite edge refinement trace independently checked; arbitrary polygon meshes require a further coverage bridge",
+    "source_sha256": "13b8ffa7b7fdc370d9cdab0eb8d3c357f791685b0c07fcf213ec2cec06da32a6",
+    "specification_sha256": "d34908484848badb2aaad3a7bcc5283a956567ef5ce5aa36b1d56ee74c6ea82d",
+    "work_used": 1
+  },
+  "specification": {
+    "mesh": {
+      "area": "18",
+      "boundary_atoms": [
+        {
+          "edge": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "6"
+            ]
+          ],
+          "mesh_coefficient": -1,
+          "source_coefficient": -1
+        },
+        {
+          "edge": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "3",
+              "3"
+            ]
+          ],
+          "mesh_coefficient": 0,
+          "source_coefficient": 0
+        },
+        {
+          "edge": [
+            [
+              "0",
+              "0"
+            ],
+            [
+              "6",
+              "0"
+            ]
+          ],
+          "mesh_coefficient": 1,
+          "source_coefficient": 1
+        },
+        {
+          "edge": [
+            [
+              "0",
+              "6"
+            ],
+            [
+              "3",
+              "3"
+            ]
+          ],
+          "mesh_coefficient": -1,
+          "source_coefficient": -1
+        },
+        {
+          "edge": [
+            [
+              "3",
+              "3"
+            ],
+            [
+              "6",
+              "0"
+            ]
+          ],
+          "mesh_coefficient": -1,
+          "source_coefficient": -1
+        }
+      ],
+      "kernel_checked": false,
+      "schema": "pp-independent-rational-mesh/1",
+      "scope": "exact pairwise separating halfplanes, atomized oriented boundary equality and positive area; geometric coverage uses the simple-polygon topology, not a Lean coverage theorem",
+      "separators": [
+        {
+          "first_side": 1,
+          "line": [
+            [
+              "3",
+              "3"
+            ],
+            [
+              "0",
+              "0"
+            ]
+          ],
+          "triangles": [
+            0,
+            1
+          ]
+        }
+      ],
+      "triangle_areas": [
+        "9",
+        "9"
+      ],
+      "triangles": [
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "6",
+            "0"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "0",
+            "6"
+          ]
+        ]
+      ],
+      "vertices": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "6",
+          "0"
+        ],
+        [
+          "0",
+          "6"
+        ]
+      ],
+      "work_used": 59
+    },
+    "trace": [
+      {
+        "parameter": "1/2",
+        "triangle": 0
+      }
+    ]
+  }
+}

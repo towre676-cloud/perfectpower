@@ -1,0 +1,262 @@
+dropped-valid-edge
+/tmp/tmp3cnv_o9b/Rejected.lean:23:313: error: tactic 'decide' proved that the proposition
+  edges.Perm
+    [(0, 2, 2), (0, 5, 2), (1, 3, 2), (1, 4, 2), (2, 3, 2), (2, 5, 2), (3, 4, 2), (4, 5, 2), (2, 0, 2), (5, 0, 2),
+      (3, 1, 2), (4, 1, 2), (3, 2, 2), (5, 2, 2), (4, 3, 2), (5, 4, 2)]
+is false
+/tmp/tmp3cnv_o9b/Rejected.lean:29:88: error: tactic 'decide' proved that the proposition
+  (0, 2, 2) ∈ edges
+is false
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.retained_path' depends on axioms: [propext,
+ sorryAx,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+/tmp/tmp3cnv_o9b/Rejected.lean:42:18: error: tactic 'decide' proved that the proposition
+  (0, 2) ∈ admitted
+is false
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.original_geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+/tmp/tmp3cnv_o9b/Rejected.lean:216:77: error: tactic 'decide' proved that the proposition
+  ∀ e ∈ sourcePath.zip sourcePath.tail, e.1 < nodes.length ∧ e.2 < nodes.length ∧ e.1 ≠ e.2 ∧ e ∈ admitted
+is false
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_geometric_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_original_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.source_path_visible' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+wrong-manhattan-weight
+/tmp/tmp3cnv_o9b/Rejected.lean:23:313: error: tactic 'decide' proved that the proposition
+  edges.Perm
+    [(0, 2, 3), (0, 5, 2), (1, 3, 2), (1, 4, 2), (2, 3, 2), (2, 5, 2), (3, 4, 2), (4, 5, 2), (2, 0, 2), (5, 0, 2),
+      (3, 1, 2), (4, 1, 2), (3, 2, 2), (5, 2, 2), (4, 3, 2), (5, 4, 2)]
+is false
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.original_geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_geometric_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_original_walk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.source_path_visible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.geometric_complete' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+invented-blocked-edge
+/tmp/tmp3cnv_o9b/Rejected.lean:23:313: error: tactic 'decide' proved that the proposition
+  edges.Perm
+    [(0, 2, 2), (0, 5, 2), (1, 3, 2), (1, 4, 2), (2, 3, 2), (2, 5, 2), (3, 4, 2), (4, 5, 2), (2, 0, 2), (5, 0, 2),
+      (3, 1, 2), (4, 1, 2), (3, 2, 2), (5, 2, 2), (4, 3, 2), (5, 4, 2)]
+is false
+/tmp/tmp3cnv_o9b/Rejected.lean:26:81: error: tactic 'decide' proved that the proposition
+  ∀ e ∈ edges, potential e.2.1 ≤ potential e.1 + e.2.2
+is false
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_walk' depends on axioms: [propext,
+ sorryAx,
+ Quot.sound]
+/tmp/tmp3cnv_o9b/Rejected.lean:38:19: error: tactic 'decide' proved that the proposition
+  (0, 1) ∉ admitted
+is false
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.original_geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_geometric_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_original_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.source_path_visible' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+changed-source-coordinate
+/tmp/tmp3cnv_o9b/Rejected.lean:14:177: error: tactic 'decide' proved that the proposition
+  nodes = [(-1, 1), (3, 1), (0, 0), (2, 0), (2, 2), (0, 2)]
+is false
+/tmp/tmp3cnv_o9b/Rejected.lean:20:96: error: tactic 'decide' failed for proposition
+  ∀ u ∈ List.range 6, qpoint (vertex nodes u) = scalePoint (1 / 1) (originalNodes[u]?.getD (0, 0))
+since its 'Decidable' instance
+  List.decidableBAll (fun u => qpoint (vertex nodes u) = scalePoint (1 / 1) (originalNodes[u]?.getD (0, 0)))
+    (List.range 6)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match (vertex nodes 0).1, ((1 / 1).mul (originalNodes[0]?.getD (0, 0)).1).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp3cnv_o9b/Rejected.lean:23:313: error: tactic 'decide' proved that the proposition
+  edges.Perm
+    [(0, 2, 2), (0, 5, 2), (1, 3, 2), (1, 4, 2), (2, 3, 2), (2, 5, 2), (3, 4, 2), (4, 5, 2), (2, 0, 2), (5, 0, 2),
+      (3, 1, 2), (4, 1, 2), (3, 2, 2), (5, 2, 2), (4, 3, 2), (5, 4, 2)]
+is false
+/tmp/tmp3cnv_o9b/Rejected.lean:29:88: error: tactic 'decide' proved that the proposition
+  (0, 2, 2) ∈ edges
+is false
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.retained_path' depends on axioms: [propext,
+ sorryAx,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.original_geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_geometric_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_original_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.source_path_visible' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+false-blocked-parameter
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+/tmp/tmp3cnv_o9b/Rejected.lean:36:140: error: tactic 'decide' failed for proposition
+  (obstaclesFormula obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 1))).eval (0 / 1) = true
+since its 'Decidable' instance
+  instDecidableEqBool ((obstaclesFormula obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 1))).eval (0 / 1))
+    true
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match (obstaclesFormula obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 1))).eval (0 / 1), true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+/tmp/tmp3cnv_o9b/Rejected.lean:38:96: error: application type mismatch
+  blocked_segment obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 1)) (1 / 2) ?m.3200 ?m.3201 blockage_0_1
+argument
+  blockage_0_1
+has type
+  (obstaclesFormula obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 1))).eval (0 / 1) = true : Prop
+but is expected to have type
+  (obstaclesFormula obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 1))).eval (1 / 2) = true : Prop
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.original_geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_geometric_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_original_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.source_path_visible' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+partition-gap
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.retained_path' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_walk' depends on axioms: [propext,
+ Quot.sound]
+/tmp/tmp3cnv_o9b/Rejected.lean:40:130: error: tactic 'decide' failed for proposition
+  accepted (obstaclesFormula obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 2))) cells_0_2
+since its 'Decidable' instance
+  instDecidableAccepted (obstaclesFormula obstacles (qpoint (vertex nodes 0)) (qpoint (vertex nodes 2))) cells_0_2
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match Rat.blt 0 (0, 1 / 4).2, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.original_geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_geometric_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.no_cheaper_original_walk' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.source_path_visible' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedGraph.Pc6009fcd7407ba1ed35c388c56148422cc5a41fd0da158dc99d10cce746582ad.geometric_complete' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+false-refinement-ratio
+/tmp/tmp3cnv_o9b/Rejected.lean:9:42: error: unsolved goals
+case h.e'_2
+h :
+  Refines ([] ++ [((0 / 1, 0 / 1), (6 / 1, 0 / 1), 0 / 1, 6 / 1)])
+    ([] ++
+      [((0 / 1, 0 / 1), (6 / 1, 0 / 1), interpolate (6 / 1, 0 / 1) (0 / 1, 6 / 1) (1 / 3)),
+        ((0 / 1, 0 / 1), interpolate (6 / 1, 0 / 1) (0 / 1, 6 / 1) (1 / 3), 0 / 1, 6 / 1)])
+left : mesh_0 = [] ++ [((0 / 1, 0 / 1), (6 / 1, 0 / 1), 0 / 1, 6 / 1)]
+right : mesh_1 = [] ++ [((0 / 1, 0 / 1), (6 / 1, 0 / 1), 3 / 1, 3 / 1), ((0 / 1, 0 / 1), (3 / 1, 3 / 1), 0 / 1, 6 / 1)]
+⊢ False
+'PerfectPower.CheckedMesh.Rd34908484848badb2aaad3a7bcc5283a956567ef5ce5aa36b1d56ee74c6ea82d.source_coverage' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

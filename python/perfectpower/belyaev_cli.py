@@ -3,21 +3,33 @@ import json
 from .belyaev_geometry import between,line_through,meet_lines,polygon_structure,locate_point,triangulate,polygon_centroid,circumcircle,incircle,fit_isometries,voronoi_mesh,transport_voronoi
 from .polygon_routing import route,segment_visibility
 
-OPERATIONS=('incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi','mesh-certificate','route-certificate','mesh-proof','route-proof','voronoi-mesh-certificate')
+OPERATIONS=('incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi','mesh-certificate','route-certificate','mesh-proof','route-proof','geometric-route-proof','boundary-contact-proof','refinement-mesh-proof','voronoi-mesh-certificate')
 
 
 def dispatch(operation,spec):
     limit=spec.get('work_limit',1000000)
+    if operation=='boundary-contact-proof':
+        from .geometry_admission import compile_boundary_contact_certificate
+        return compile_boundary_contact_certificate(spec['vertices'],spec['start'],spec['end'],work_limit=limit)
+    if operation=='refinement-mesh-proof':
+        from .geometry_admission import compile_refinement_mesh_certificate
+        from .geometry_certificates import certify_mesh
+        limits={'work_limit':limit,'triangle_limit':spec.get('triangle_limit',200),'vertex_limit':spec.get('vertex_limit',500)}
+        packet=certify_mesh(spec['vertices'],spec['triangles'],**limits)
+        return compile_refinement_mesh_certificate(packet,spec['trace'],**limits)
     if operation in ('mesh-certificate','mesh-proof'):
         from .geometry_certificates import certify_mesh,compile_mesh_certificate
         packet=certify_mesh(spec['vertices'],spec['triangles'],work_limit=limit,triangle_limit=spec.get('triangle_limit',200),vertex_limit=spec.get('vertex_limit',500))
         return compile_mesh_certificate(packet,work_limit=limit,triangle_limit=spec.get('triangle_limit',200),vertex_limit=spec.get('vertex_limit',500)) if operation=='mesh-proof' else packet
-    if operation in ('route-certificate','route-proof'):
+    if operation in ('route-certificate','route-proof','geometric-route-proof'):
         from .geometry_certificates import certify_route,compile_route_certificate
         packet=route(spec['obstacles'],spec['start'],spec['end'],work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
         certificate=certify_route(packet,work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
         result={'route':packet,'certificate':certificate}
         if operation=='route-proof':result['proof']=compile_route_certificate(packet,certificate,work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
+        if operation=='geometric-route-proof':
+            from .geometry_admission import compile_geometric_route_certificate
+            result['proof']=compile_geometric_route_certificate(packet,certificate,work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
         return result
     if operation=='incidence':
         result={'line':line_through(spec['a'],spec['c'])}

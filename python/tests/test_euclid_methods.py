@@ -23,9 +23,21 @@ class DescentTests(unittest.TestCase):
             except ValueError:continue
             self.assertTrue(check_resultant(p,a,b))
             if S:
-                x=S.Symbol('x');self.assertEqual(p['resultant'],int(S.resultant(sum(c*x**i for i,c in enumerate(a)),sum(c*x**i for i,c in enumerate(b)),x)))
+                x=S.Symbol('x');f=sum(c*x**i for i,c in enumerate(a));g=sum(c*x**i for i,c in enumerate(b))
+                # SymPy 1.14's optional backend can swap a lower-degree first
+                # input without the (-1)^(mn) sign. Normalize the argument order
+                # explicitly, preserving the mathematical resultant convention.
+                m,n=len(a)-1,len(b)-1
+                oracle=S.resultant(f,g,x) if m>=n else (-1)**(m*n)*S.resultant(g,f,x)
+                self.assertEqual(p['resultant'],int(oracle))
             for n in range(-10,11):
                 q=gcd_receipt(p,n);self.assertEqual(q['evaluated_bezout'],p['resultant']);self.assertEqual(p['resultant']%q['gcd'],0)
+    def test_linear_odd_degree_resultant_sign(self):
+        # Res(2-3x,3-x²-x³)=(-3)³*(3-(2/3)²-(2/3)³)=-61.
+        packet=resultant_certificate([2,-3],[3,0,-1,-1])
+        self.assertEqual(packet['resultant'],-61)
+        self.assertTrue(check_resultant(packet,[2,-3],[3,0,-1,-1]))
+
     def test_signed_complete_branches(self):
         for a,b in [([0,1],[2,1]),([0,1],[1,1]),([-2,0,1],[3,1]),([1,1],[-1,1]),([0,-1],[2,-1])]:
             for d in range(2,6):

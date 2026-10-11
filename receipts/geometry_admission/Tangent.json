@@ -1,0 +1,411 @@
+{
+  "proof": {
+    "denominator": 1,
+    "kernel_checked": false,
+    "pair_evidence": {
+      "0,1": {
+        "cells": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 101
+      },
+      "0,2": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "0,3": {
+        "parameter": "2/3",
+        "status": "BLOCKED",
+        "work_used": 36
+      },
+      "0,4": {
+        "parameter": "2/3",
+        "status": "BLOCKED",
+        "work_used": 36
+      },
+      "0,5": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "1,0": {
+        "cells": [
+          [
+            "0",
+            "1/2"
+          ],
+          [
+            "1/2",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 101
+      },
+      "1,2": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "1,3": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "1,4": {
+        "parameter": "2/3",
+        "status": "BLOCKED",
+        "work_used": 36
+      },
+      "1,5": {
+        "parameter": "2/3",
+        "status": "BLOCKED",
+        "work_used": 36
+      },
+      "2,0": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "2,1": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "2,3": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "2,4": {
+        "parameter": "1/2",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "2,5": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "3,0": {
+        "parameter": "1/3",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "3,1": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "3,2": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "3,4": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "3,5": {
+        "parameter": "1/2",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "4,0": {
+        "parameter": "1/3",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "4,1": {
+        "parameter": "1/3",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "4,2": {
+        "parameter": "1/2",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "4,3": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "4,5": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "5,0": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "5,1": {
+        "parameter": "1/3",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "5,2": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      },
+      "5,3": {
+        "parameter": "1/2",
+        "status": "BLOCKED",
+        "work_used": 34
+      },
+      "5,4": {
+        "cells": [
+          [
+            "0",
+            "1"
+          ]
+        ],
+        "status": "FREE",
+        "work_used": 67
+      }
+    },
+    "schema": "pp-lean-geometric-route/1",
+    "scope": "complete source-derived finite graph for universal rational segment avoidance under exact nonzero-winding interior semantics; scaled Manhattan all-walk optimality or unreachability; no arbitrary-bend/global path, topology, clearance or rope dynamics claim",
+    "source_sha256": "3ef1e7fae0a33dddb23208eab42f0bc82aa391c08c54bb8b91852bf5c7a4c23c",
+    "specification_sha256": "ba16cde7bdb1f7ae46caa993c713e73e8fe949eeb2c8c95fc5366e3b770982a7",
+    "work_used": 1690
+  },
+  "specification": {
+    "certificate": {
+      "kernel_checked": false,
+      "potentials": [
+        "0",
+        "4",
+        "2",
+        "4",
+        "4",
+        "2"
+      ],
+      "reachable": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "schema": "pp-visibility-dual-certificate/1",
+      "scope": "cost optimality for every finite walk in the complete source-bound visibility graph; route tie-breaking is not certified",
+      "source_sha256": "442706bbd1256be33c160d6a7632c9c7d2a3a94b4211971aa9bd6c6ce8ae5685",
+      "status": "ROUTE"
+    },
+    "route": {
+      "complete": true,
+      "cost": "4",
+      "edges": [
+        [
+          0,
+          1,
+          "4"
+        ],
+        [
+          0,
+          2,
+          "2"
+        ],
+        [
+          0,
+          5,
+          "2"
+        ],
+        [
+          1,
+          2,
+          "2"
+        ],
+        [
+          1,
+          3,
+          "2"
+        ],
+        [
+          2,
+          3,
+          "2"
+        ],
+        [
+          2,
+          5,
+          "2"
+        ],
+        [
+          3,
+          4,
+          "2"
+        ],
+        [
+          4,
+          5,
+          "2"
+        ]
+      ],
+      "end": [
+        "1",
+        "-1"
+      ],
+      "kernel_checked": false,
+      "objective": "minimum Manhattan edge-length sum on the full supplied vertex visibility graph; ties prefer fewer edges then lexicographic vertex indices",
+      "obstacles": [
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "0"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "0",
+            "2"
+          ]
+        ]
+      ],
+      "path": [
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "-1"
+        ]
+      ],
+      "path_indices": [
+        0,
+        1
+      ],
+      "schema": "pp-polygon-visibility-route/1",
+      "scope": "rational Euclidean obstacle interiors forbidden, boundary contact allowed; graph optimum only, no clearance or physical grasp guarantee",
+      "start": [
+        "-1",
+        "1"
+      ],
+      "status": "ROUTE",
+      "vertices": [
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "0"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ],
+      "work_used": 507
+    }
+  }
+}

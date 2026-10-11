@@ -606,3 +606,11 @@ geometry-certificates:
 
 geometry-certificates-kernel:
 	python3 scripts/check_geometry_certificate_kernel.py
+
+.PHONY: geometry-admission geometry-admission-kernel
+geometry-admission:
+	PYTHONPATH=python python3 python/develop_geometry_admission.py
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_geometry_admission.py -v
+
+geometry-admission-kernel:
+	lake env python3 scripts/check_geometry_admission_kernel.py

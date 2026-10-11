@@ -1,0 +1,31 @@
+{
+  "base_main": "90e259f413e8cda6f970c8bda8594abced68b6b7",
+  "failures": 0,
+  "log_sha256": "b939a081a706de924446c9ac89bafdc15a61a59c2e15fc02e8bc188e268f5718",
+  "oracle_correction": {
+    "a": [
+      2,
+      -3
+    ],
+    "b": [
+      3,
+      0,
+      -1,
+      -1
+    ],
+    "expected_resultant": -61,
+    "implementation_changed": false,
+    "observed_sympy_1_14_resultant": 61
+  },
+  "passing": 86,
+  "schema": "pp-geometric-admission-python-validation/1",
+  "scope": "Python regression evidence only; kernel source hashes recorded separately",
+  "seeded_segment_comparisons": 180,
+  "source_sha256": {
+    "python/perfectpower/belyaev_cli.py": "4b5bf4b9453c66e070949d69764bc3877b155a92a561b73ad6ea1944b33a3a47",
+    "python/perfectpower/geometry_admission.py": "6c53b30a655b321142a6f8d3090df4961f526b394357e12572fa3bf219685ecd",
+    "python/tests/test_euclid_methods.py": "effc8afbc334c5ad611078cdccc0278e432dad9fe3d059311598a626302239c4",
+    "python/tests/test_geometry_admission.py": "5d8d036c100b317d07546893a32adcd67b0496e0fb84f7be56ed654716ce490f"
+  },
+  "tests": 86
+}

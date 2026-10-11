@@ -1,0 +1,62 @@
+{
+  "proof": {
+    "denominator": 1,
+    "kernel_checked": false,
+    "pair_evidence": {},
+    "schema": "pp-lean-geometric-route/1",
+    "scope": "complete source-derived finite graph for universal rational segment avoidance under exact nonzero-winding interior semantics; scaled Manhattan all-walk optimality or unreachability; no arbitrary-bend/global path, topology, clearance or rope dynamics claim",
+    "source_sha256": "9e76a1ecb1862e0d00b5bcb9326ebce357a9f6763808be5e2256cddffabb0a7a",
+    "specification_sha256": "34271842c53b8da39e1ed20ebf6abdd165770f5943e73d175e262107eaedda1e",
+    "work_used": 0
+  },
+  "specification": {
+    "certificate": {
+      "kernel_checked": false,
+      "potentials": [
+        "0"
+      ],
+      "reachable": [
+        0
+      ],
+      "schema": "pp-visibility-dual-certificate/1",
+      "scope": "cost optimality for every finite walk in the complete source-bound visibility graph; route tie-breaking is not certified",
+      "source_sha256": "02e8a768e487a805904a2f512d88025ea0cdc5aec3ac6819110630ef5f8b946a",
+      "status": "ROUTE"
+    },
+    "route": {
+      "complete": true,
+      "cost": "0",
+      "edges": [],
+      "end": [
+        "0",
+        "0"
+      ],
+      "kernel_checked": false,
+      "objective": "minimum Manhattan edge-length sum on the full supplied vertex visibility graph; ties prefer fewer edges then lexicographic vertex indices",
+      "obstacles": [],
+      "path": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "path_indices": [
+        0
+      ],
+      "schema": "pp-polygon-visibility-route/1",
+      "scope": "rational Euclidean obstacle interiors forbidden, boundary contact allowed; graph optimum only, no clearance or physical grasp guarantee",
+      "start": [
+        "0",
+        "0"
+      ],
+      "status": "ROUTE",
+      "vertices": [
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "work_used": 0
+    }
+  }
+}
