@@ -1,0 +1,620 @@
+singular-metric
+/tmp/tmp4gwhn2o3/Rejected.lean:13:43: error: tactic 'decide' failed for proposition
+  g.Positive
+since its 'Decidable' instance
+  instDecidablePositive g
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match Rat.blt 0 g.det, true with
+  | false, false => isTrue ⋯
+  | false, true => isFalse ⋯
+  | true, false => isFalse ⋯
+  | true, true => isTrue ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:21:68: error: tactic 'decide' failed for proposition
+  action g steps / 2 = 59 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (action g steps / 2) (59 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((action g steps).mul (Rat.inv 2)).num, (Rat.mul 59 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:22:71: error: tactic 'decide' failed for proposition
+  gap g velocity steps / 2 = 49 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (gap g velocity steps / 2) (49 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gap g velocity steps).mul (Rat.inv 2)).num, (Rat.mul 49 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Detour.all_timed_paths' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Detour.source_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+negative-duration
+/tmp/tmp4gwhn2o3/Rejected.lean:14:50: error: tactic 'decide' proved that the proposition
+  ∀ e ∈ steps, 0 < e.2
+is false
+/tmp/tmp4gwhn2o3/Rejected.lean:15:68: error: tactic 'decide' failed for proposition
+  totalTime steps = 3 / 1
+since its 'Decidable' instance
+  instDecidableEqRat (totalTime steps) (3 / 1)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), -1)).2.add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map Prod.snd
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                [2]))))).num,
+    (Rat.mul 3 (Rat.inv 1)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:19:68: error: tactic 'decide' failed for proposition
+  totalX steps = totalTime steps * velocity.1
+since its 'Decidable' instance
+  instDecidableEqRat (totalX steps) (totalTime steps * velocity.1)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.1)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), -1))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.1)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                [2]))))).num,
+    ((totalTime steps).mul velocity.1).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:20:68: error: tactic 'decide' failed for proposition
+  totalY steps = totalTime steps * velocity.2
+since its 'Decidable' instance
+  instDecidableEqRat (totalY steps) (totalTime steps * velocity.2)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.2)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), -1))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.2)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                [2]))))).num,
+    ((totalTime steps).mul velocity.2).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:21:68: error: tactic 'decide' failed for proposition
+  action g steps / 2 = 59 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (action g steps / 2) (59 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((action g steps).mul (Rat.inv 2)).num, (Rat.mul 59 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:22:71: error: tactic 'decide' failed for proposition
+  gap g velocity steps / 2 = 49 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (gap g velocity steps / 2) (49 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gap g velocity steps).mul (Rat.inv 2)).num, (Rat.mul 49 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Detour.all_timed_paths' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Detour.source_excess' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+zero-duration
+/tmp/tmp4gwhn2o3/Rejected.lean:14:50: error: tactic 'decide' proved that the proposition
+  ∀ e ∈ steps, 0 < e.2
+is false
+/tmp/tmp4gwhn2o3/Rejected.lean:15:68: error: tactic 'decide' failed for proposition
+  totalTime steps = 3 / 1
+since its 'Decidable' instance
+  instDecidableEqRat (totalTime steps) (3 / 1)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 0)).2.add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map Prod.snd
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                [2]))))).num,
+    (Rat.mul 3 (Rat.inv 1)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:19:68: error: tactic 'decide' failed for proposition
+  totalX steps = totalTime steps * velocity.1
+since its 'Decidable' instance
+  instDecidableEqRat (totalX steps) (totalTime steps * velocity.1)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.1)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 0))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.1)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                [2]))))).num,
+    ((totalTime steps).mul velocity.1).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:20:68: error: tactic 'decide' failed for proposition
+  totalY steps = totalTime steps * velocity.2
+since its 'Decidable' instance
+  instDecidableEqRat (totalY steps) (totalTime steps * velocity.2)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.2)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 0))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.2)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                [2]))))).num,
+    ((totalTime steps).mul velocity.2).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:21:68: error: tactic 'decide' failed for proposition
+  action g steps / 2 = 59 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (action g steps / 2) (59 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((action g steps).mul (Rat.inv 2)).num, (Rat.mul 59 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:22:71: error: tactic 'decide' failed for proposition
+  gap g velocity steps / 2 = 49 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (gap g velocity steps / 2) (49 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gap g velocity steps).mul (Rat.inv 2)).num, (Rat.mul 49 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Detour.all_timed_paths' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Detour.source_excess' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+changed-source
+/tmp/tmp4gwhn2o3/Rejected.lean:21:68: error: tactic 'decide' failed for proposition
+  action g steps / 2 = 59 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (action g steps / 2) (59 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((action g steps).mul (Rat.inv 2)).num, (Rat.mul 59 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:22:71: error: tactic 'decide' failed for proposition
+  gap g velocity steps / 2 = 49 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (gap g velocity steps / 2) (49 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gap g velocity steps).mul (Rat.inv 2)).num, (Rat.mul 49 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Detour.all_timed_paths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Detour.source_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+dropped-duration
+/tmp/tmp4gwhn2o3/Rejected.lean:12:66: error: tactic 'decide' proved that the proposition
+  vertices.length = durations.length + 1
+is false
+/tmp/tmp4gwhn2o3/Rejected.lean:15:68: error: tactic 'decide' failed for proposition
+  totalTime steps = 3 / 1
+since its 'Decidable' instance
+  instDecidableEqRat (totalTime steps) (3 / 1)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 1)).2.add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map Prod.snd
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                []))))).num,
+    (Rat.mul 3 (Rat.inv 1)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:17:86: error: tactic 'decide' failed for proposition
+  totalX steps = vertices.getLast!.1 - vertices.head!.1
+since its 'Decidable' instance
+  instDecidableEqRat (totalX steps) (vertices.getLast!.1 - vertices.head!.1)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.1)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 1))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.1)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                []))))).num,
+    (vertices.getLast!.1.sub vertices.head!.1).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:18:86: error: tactic 'decide' failed for proposition
+  totalY steps = vertices.getLast!.2 - vertices.head!.2
+since its 'Decidable' instance
+  instDecidableEqRat (totalY steps) (vertices.getLast!.2 - vertices.head!.2)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.2)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 1))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.2)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                []))))).num,
+    (vertices.getLast!.2.sub vertices.head!.2).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:20:68: error: tactic 'decide' failed for proposition
+  totalY steps = totalTime steps * velocity.2
+since its 'Decidable' instance
+  instDecidableEqRat (totalY steps) (totalTime steps * velocity.2)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.2)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 1))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.2)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, -1 / 1)] [(3 / 1, -1 / 1)])
+                []))))).num,
+    ((totalTime steps).mul velocity.2).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:21:68: error: tactic 'decide' failed for proposition
+  action g steps / 2 = 59 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (action g steps / 2) (59 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((action g steps).mul (Rat.inv 2)).num, (Rat.mul 59 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:22:71: error: tactic 'decide' failed for proposition
+  gap g velocity steps / 2 = 49 / 4
+since its 'Decidable' instance
+  instDecidableEqRat (gap g velocity steps / 2) (49 / 4)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gap g velocity steps).mul (Rat.inv 2)).num, (Rat.mul 49 (Rat.inv 4)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Detour.all_timed_paths' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Detour.source_excess' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+
+false-affine-pullback
+/tmp/tmp4gwhn2o3/Rejected.lean:41:59: error: tactic 'decide' failed for proposition
+  g = pullback target linear
+since its 'Decidable' instance
+  instDecidableEqMetric g (pullback target linear)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match (Rat.mul 3 (Rat.inv 1)).num,
+    ((target.a * linear.p ^ 2 + 2 * target.b * linear.p * linear.r).add (target.c * linear.r ^ 2)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Shear.source_transport' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Shear.source_bilinear' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Shear.source_bijective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Shear.all_timed_paths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Shear.source_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+false-connection
+/tmp/tmp4gwhn2o3/Rejected.lean:40:74: error: tactic 'decide' failed for proposition
+  ∀ (i j k : Fin 2), lowered i j k = koszul D i j k
+since its 'Decidable' instance
+  Nat.decidableForallFin fun i => ∀ (j k : Fin 2), lowered i j k = koszul D i j k
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gram ⟨0, ⋯⟩ 0 * gamma ⟨0, ⋯⟩ ⟨0, ⋯⟩ 0).add (gram ⟨0, ⋯⟩ 1 * gamma ⟨0, ⋯⟩ ⟨0, ⋯⟩ 1)).num,
+    ((D ⟨0, ⋯⟩ ⟨0, ⋯⟩ ⟨0, ⋯⟩ + D ⟨0, ⋯⟩ ⟨0, ⋯⟩ ⟨0, ⋯⟩ - D ⟨0, ⋯⟩ ⟨0, ⋯⟩ ⟨0, ⋯⟩).mul (Rat.inv 2)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'FirstJet.source_compatible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'FirstJet.unique_lowered' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'FirstJet.all_timed_paths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FirstJet.source_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+false-derivative
+/tmp/tmp4gwhn2o3/Rejected.lean:40:74: error: tactic 'decide' failed for proposition
+  ∀ (i j k : Fin 2), lowered i j k = koszul D i j k
+since its 'Decidable' instance
+  Nat.decidableForallFin fun i => ∀ (j k : Fin 2), lowered i j k = koszul D i j k
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gram ⟨0, ⋯⟩ 0 * gamma ⟨0, ⋯⟩ ⟨0, ⋯⟩ 0).add (gram ⟨0, ⋯⟩ 1 * gamma ⟨0, ⋯⟩ ⟨0, ⋯⟩ 1)).num,
+    ((D ⟨0, ⋯⟩ ⟨0, ⋯⟩ ⟨0, ⋯⟩ + D ⟨0, ⋯⟩ ⟨0, ⋯⟩ ⟨0, ⋯⟩ - D ⟨0, ⋯⟩ ⟨0, ⋯⟩ ⟨0, ⋯⟩).mul (Rat.inv 2)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'FirstJet.source_compatible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'FirstJet.unique_lowered' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'FirstJet.all_timed_paths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FirstJet.source_excess' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+false-straight-velocity
+/tmp/tmp4gwhn2o3/Rejected.lean:20:68: error: tactic 'decide' failed for proposition
+  totalY steps = totalTime steps * velocity.2
+since its 'Decidable' instance
+  instDecidableEqRat (totalY steps) (totalTime steps * velocity.2)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match
+    (((fun e => e.1.2)
+            ((fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2)) (((0 / 1, 0 / 1), 1 / 1, 2 / 1), 1 / 1))).add
+        (List.foldr (fun x1 x2 => x1 + x2) 0
+          (List.map (fun e => e.1.2)
+            (List.map (fun e => ((e.1.2.1 - e.1.1.1, e.1.2.2 - e.1.1.2), e.2))
+              (List.zipWith Prod.mk (List.zipWith Prod.mk [(1 / 1, 2 / 1), (3 / 1, 6 / 1)] [(3 / 1, 6 / 1)])
+                [2 / 1]))))).num,
+    ((totalTime steps).mul velocity.2).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:22:70: error: tactic 'decide' failed for proposition
+  gap g velocity steps / 2 = 0 / 1
+since its 'Decidable' instance
+  instDecidableEqRat (gap g velocity steps / 2) (0 / 1)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((gap g velocity steps).mul (Rat.inv 2)).num, (Rat.mul 0 (Rat.inv 1)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+/tmp/tmp4gwhn2o3/Rejected.lean:33:82: error: tactic 'decide' failed for proposition
+  action g steps / 2 = totalTime steps * g.q velocity / 2
+since its 'Decidable' instance
+  instDecidableEqRat (action g steps / 2) (totalTime steps * g.q velocity / 2)
+did not reduce to 'isTrue' or 'isFalse'.
+
+Reduction got stuck at the 'Decidable' instance
+  match ((action g steps).mul (Rat.inv 2)).num, ((totalTime steps * g.q velocity).mul (Rat.inv 2)).num with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+'Straight.source_minimal' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Straight.all_timed_paths' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'Straight.source_excess' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

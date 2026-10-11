@@ -614,3 +614,11 @@ geometry-admission:
 
 geometry-admission-kernel:
 	lake env python3 scripts/check_geometry_admission_kernel.py
+
+.PHONY: riemannian-energy riemannian-energy-kernel
+riemannian-energy:
+	PYTHONPATH=python python3 python/develop_riemannian_energy.py
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_riemannian_energy.py -v
+
+riemannian-energy-kernel:
+	lake env python3 scripts/check_riemannian_energy_kernel.py

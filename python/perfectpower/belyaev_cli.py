@@ -3,11 +3,15 @@ import json
 from .belyaev_geometry import between,line_through,meet_lines,polygon_structure,locate_point,triangulate,polygon_centroid,circumcircle,incircle,fit_isometries,voronoi_mesh,transport_voronoi
 from .polygon_routing import route,segment_visibility
 
-OPERATIONS=('incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi','mesh-certificate','route-certificate','mesh-proof','route-proof','geometric-route-proof','boundary-contact-proof','refinement-mesh-proof','voronoi-mesh-certificate')
+OPERATIONS=('metric-energy-proof','incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi','mesh-certificate','route-certificate','mesh-proof','route-proof','geometric-route-proof','boundary-contact-proof','refinement-mesh-proof','voronoi-mesh-certificate')
 
 
 def dispatch(operation,spec):
     limit=spec.get('work_limit',1000000)
+    if operation=='metric-energy-proof':
+        from .riemannian_energy import compile_energy_certificate
+        certificate,source=compile_energy_certificate(spec,step_limit=spec.get('step_limit',256))
+        return {'certificate':certificate,'lean_source':source}
     if operation=='boundary-contact-proof':
         from .geometry_admission import compile_boundary_contact_certificate
         return compile_boundary_contact_certificate(spec['vertices'],spec['start'],spec['end'],work_limit=limit)

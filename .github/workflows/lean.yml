@@ -82,6 +82,8 @@ jobs:
         run: scripts/check_metric_boxes.sh
       - name: Source-derived geometric route completeness and pointwise mesh refinement
         run: make geometry-admission-kernel
+      - name: Exact Riemannian metric energy and coordinate first jets
+        run: make riemannian-energy-kernel
       - name: Axiom audit (no sorry, no custom axioms, no ofReduceBool)
         run: ./audit/check_axioms.sh
       - name: Batteries linters on the hand-written library

@@ -1,0 +1,27 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "modules": [
+    "test_riemannian_energy",
+    "test_geometry_admission",
+    "test_geometry_certificates",
+    "test_belyaev_geometry",
+    "test_euclid_methods",
+    "test_linear_product",
+    "test_graph_methods"
+  ],
+  "schema": "pp-riemannian-python-validation/1",
+  "scope": "new exact metric arithmetic and adjacent geometry, Euclid, linear-product and graph regression; Python checks are not Lean proofs",
+  "seeded_instances": {
+    "coordinate_first_jets": 80,
+    "variance_and_rigidity": 100
+  },
+  "source_sha256": {
+    "PerfectPower/RiemannianEnergy.lean": "da66b793acacf73ff1b9be05a6b5d418a06c793dc9512e454b014b50055e773b",
+    "python/perfectpower/belyaev_cli.py": "4579b8d6560caca646cbac58a3d9ab1da2a3cbce681c513d00ec13affd243b49",
+    "python/perfectpower/riemannian_energy.py": "a6d918be6c324ae10bae6b20745d97f71d78e56e6cd7cca6a936632c5a36c3f3",
+    "python/tests/test_riemannian_energy.py": "c9029cf996f31fc62b159d248861443215a45e1a4d621610e863cbde19d92255"
+  },
+  "success": true,
+  "tests_run": 97
+}
