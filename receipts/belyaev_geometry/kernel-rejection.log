@@ -1,0 +1,24 @@
+wrong-matrix: rejected (exit 1)
+/tmp/tmp4x6fe9ww/Rejected.lean:7:44: error: tactic 'decide' proved that the proposition
+  64 * 63 + 84 * 84 = 105 * 105 ∧ 63 * -84 + 84 * 63 = 0 ∧ -84 * -84 + 63 * 63 = 105 * 105
+is false
+/tmp/tmp4x6fe9ww/Rejected.lean:19:58: error: application type mismatch
+  orthogonal_scaled_norm 63 (-84) 84 63 105 matrix_conditions.left
+argument
+  matrix_conditions.left
+has type
+  64 * 63 + 84 * 84 = 105 * 105 : Prop
+but is expected to have type
+  63 * 63 + 84 * 84 = 105 * 105 : Prop
+'PerfectPower.CheckedGeometry.P51812e9e81635349d88ea2e4a14ec836494dd58d821a046e8cd216ecaa89f275.distance_all_inputs' depends on axioms: [propext,
+ sorryAx,
+ Quot.sound]
+'PerfectPower.CheckedGeometry.P51812e9e81635349d88ea2e4a14ec836494dd58d821a046e8cd216ecaa89f275.orientation_all_vectors' depends on axioms: [propext,
+ Quot.sound]
+
+wrong-area: rejected (exit 1)
+/tmp/tmptm_4amjl/Rejected.lean:10:69: error: tactic 'decide' proved that the proposition
+  8 + 8 + 8 = 25
+is false
+'PerfectPower.CheckedGeometry.Area74a58f468b1cf56d9e8c554fc3eab4967e520cb9e330af48078ffa0e674951b5.area_conservation' depends on axioms: [sorryAx]
+

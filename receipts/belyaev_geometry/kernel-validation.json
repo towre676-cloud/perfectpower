@@ -1,0 +1,31 @@
+{
+  "schema": "pp-geometry-foundation-kernel-run/1",
+  "generic_foundations_checked": true,
+  "sources": [
+    {
+      "name": "Rotation",
+      "source_sha256": "e4f371c406f6da77b56ff21b5c56ce9f7b6d0efec27c56c3806f2cbf59e7a810",
+      "kernel_checked": true,
+      "scope": "squared-distance and determinant scaling for every integer coordinate pair/vector, with source rational denominators cleared"
+    },
+    {
+      "name": "Reflection",
+      "source_sha256": "1df2d18235045cc4174597cddf8d5b5b13dd6319fa8b3ed23bd6dc31607046c0",
+      "kernel_checked": true,
+      "scope": "squared-distance and determinant scaling for every integer coordinate pair/vector, with source rational denominators cleared"
+    },
+    {
+      "name": "TriangleAreas",
+      "source_sha256": "c6f2583e61c65d0911d3beb4f71a8d2250f9d17f17036c342b2fd71c704eb1cc",
+      "kernel_checked": true,
+      "scope": "retained positive triangle areas and exact total area; polygon coverage and nonoverlap remain tested Python"
+    }
+  ],
+  "corrupted_sources_rejected": 2,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "scope": "matrix norm/determinant identities and retained numeric area claims; no triangulation or routing algorithm verification"
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "pp-literature-mining/1",
+  "title": "Fundamentals of Geometry",
+  "author": "Oleg A. Belyaev",
+  "edition_date": "2007-02-28",
+  "source_url": "https://polly.phys.msu.ru/~belyaev/geometry.pdf",
+  "accessed": "2026-10-11",
+  "pdf_pages": 256,
+  "source_sections": [
+    {
+      "topic": "Incidence",
+      "printed_page": 3,
+      "implementation": "normalized rational lines and exact meeting classification"
+    },
+    {
+      "topic": "Betweenness and Order",
+      "printed_page": 7,
+      "implementation": "strict and closed rational segment membership"
+    },
+    {
+      "topic": "Paths and Polygons: Basic Concepts",
+      "printed_page": 69,
+      "implementation": "explicit closed polygon structure"
+    },
+    {
+      "topic": "Simplicity and Related Properties",
+      "printed_page": 72,
+      "implementation": "intersection rejection before triangulation and routing"
+    },
+    {
+      "topic": "Congruence of Triangles: SSS",
+      "printed_page": 121,
+      "implementation": "labelled rational rigid-map recovery"
+    },
+    {
+      "topic": "Right Bisectors of Intervals",
+      "printed_page": 157,
+      "implementation": "circumcircle construction and nearest-cell integration"
+    },
+    {
+      "topic": "Isometries on the Line; Isometries of Collinear Figures; General Notion of Symmetry",
+      "printed_pages": [
+        162,
+        166,
+        167
+      ],
+      "implementation": "distance-preserving matrix certificates and Voronoi transport"
+    }
+  ],
+  "engineering_extensions": [
+    "ear triangulation",
+    "exact polygon centroid",
+    "incircle determinant",
+    "full vertex visibility graph with Manhattan edge cost",
+    "Voronoi triangle meshes"
+  ],
+  "attribution_scope": "The text motivates the foundational distinctions. Engineering extensions are our implementations of established coordinate methods, not algorithms claimed to appear in this text.",
+  "deferred": [
+    "full Hilbert axiom formalization",
+    "continuity over the real numbers",
+    "hyperbolic model",
+    "projective model",
+    "global Euclidean shortest-path proof",
+    "positive-clearance dynamics"
+  ]
+}

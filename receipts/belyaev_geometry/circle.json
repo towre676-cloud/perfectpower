@@ -1,0 +1,52 @@
+{
+  "triangle": [
+    [
+      0,
+      0
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      0,
+      4
+    ]
+  ],
+  "circle": {
+    "center": [
+      "2",
+      "2"
+    ],
+    "radius_squared": "8"
+  },
+  "queries": [
+    {
+      "point": [
+        2,
+        2
+      ],
+      "kind": "INSIDE",
+      "oriented_determinant": "128",
+      "orientation": "16"
+    },
+    {
+      "point": [
+        4,
+        4
+      ],
+      "kind": "ON",
+      "oriented_determinant": "0",
+      "orientation": "16"
+    },
+    {
+      "point": [
+        5,
+        5
+      ],
+      "kind": "OUTSIDE",
+      "oriented_determinant": "-160",
+      "orientation": "16"
+    }
+  ]
+}

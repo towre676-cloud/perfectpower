@@ -590,3 +590,11 @@ linear-product-kernel:
 
 linear-product-benchmark:
 	$(PY) python/benchmark_linear_product.py
+
+.PHONY: geometry-foundations geometry-foundations-kernel
+geometry-foundations:
+	$(PY) -m unittest discover -s python/tests -p 'test_belyaev_geometry.py'
+	$(PY) python/develop_belyaev_geometry.py
+
+geometry-foundations-kernel:
+	bash scripts/check_geometry_foundations.sh

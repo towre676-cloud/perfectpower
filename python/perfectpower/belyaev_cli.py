@@ -1,0 +1,40 @@
+"""JSON command interface for exact polygon structure, rigid maps and routing."""
+import json
+from .belyaev_geometry import between,line_through,meet_lines,polygon_structure,locate_point,triangulate,polygon_centroid,circumcircle,incircle,fit_isometries,voronoi_mesh,transport_voronoi
+from .polygon_routing import route,segment_visibility
+
+OPERATIONS=('incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi')
+
+
+def dispatch(operation,spec):
+    limit=spec.get('work_limit',1000000)
+    if operation=='incidence':
+        result={'line':line_through(spec['a'],spec['c'])}
+        if 'b' in spec:result['between']=between(spec['a'],spec['b'],spec['c'],strict=spec.get('strict',True))
+        if 'other_line' in spec:result['intersection']=meet_lines(result['line'],spec['other_line'])
+        return result
+    if operation=='polygon':return polygon_structure(spec['vertices'],work_limit=limit)
+    if operation=='locate':return {'location':locate_point(spec['vertices'],spec['point'],work_limit=limit)}
+    if operation=='triangulate':return triangulate(spec['vertices'],work_limit=limit)
+    if operation=='centroid':return polygon_centroid(spec['vertices'],work_limit=limit)
+    if operation=='circumcircle':return circumcircle(*spec['triangle'])
+    if operation=='incircle':return incircle(*spec['triangle'],spec['point'])
+    if operation=='congruence':return fit_isometries(spec['source'],spec['target'])
+    if operation=='visibility':return segment_visibility(spec['obstacles'],spec['start'],spec['end'],work_limit=limit)
+    if operation=='route':return route(spec['obstacles'],spec['start'],spec['end'],work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
+    if operation=='voronoi-mesh':return voronoi_mesh(spec['sites'],spec['box'],work_limit=limit,site_pair_limit=spec.get('site_pair_limit',10000))
+    if operation=='transport-voronoi':
+        from .euclid_geometry import voronoi_cells
+        return transport_voronoi(voronoi_cells(spec['sites'],spec['box']),spec['transform'])
+    raise ValueError('unknown geometry foundation operation')
+
+
+def add_commands(sub):
+    p=sub.add_parser('geometry-foundations',help='exact incidence, polygon, congruence and obstacle routing')
+    p.add_argument('operation',choices=OPERATIONS);p.add_argument('input',help='JSON specification file')
+
+
+def cli(args):
+    if args.command!='geometry-foundations':return False
+    with open(args.input) as f:result=dispatch(args.operation,json.load(f))
+    print(json.dumps(result,indent=2,sort_keys=True));return True

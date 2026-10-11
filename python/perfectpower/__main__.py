@@ -210,7 +210,12 @@ def main():
     add_graph_commands(sub)
     from .euclid_cli import add_commands as add_euclid_commands
     add_euclid_commands(sub)
+    from .belyaev_cli import add_commands as add_geometry_foundation_commands
+    add_geometry_foundation_commands(sub)
     args = parser.parse_args()
+    from .belyaev_cli import cli as geometry_foundation_cli
+    if geometry_foundation_cli(args):
+        return
     from .euclid_cli import cli as euclid_cli
     if euclid_cli(args):
         return

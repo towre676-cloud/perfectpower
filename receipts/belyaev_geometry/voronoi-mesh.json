@@ -1,0 +1,418 @@
+{
+  "schema": "pp-rational-voronoi-mesh/1",
+  "voronoi": {
+    "schema": "pp-rational-voronoi/1",
+    "sites": {
+      "a": [
+        "0",
+        "0"
+      ],
+      "b": [
+        "2",
+        "0"
+      ],
+      "c": [
+        "1",
+        "2"
+      ],
+      "duplicate": [
+        "0",
+        "0"
+      ]
+    },
+    "box": [
+      [
+        "-1",
+        "-1"
+      ],
+      [
+        "3",
+        "3"
+      ]
+    ],
+    "cells": {
+      "a": {
+        "vertices": [
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "-1",
+            "7/4"
+          ]
+        ],
+        "inequalities": [
+          {
+            "other": "b",
+            "normal": [
+              "4",
+              "0"
+            ],
+            "bound": "4",
+            "coincident_sites": false
+          },
+          {
+            "other": "c",
+            "normal": [
+              "2",
+              "4"
+            ],
+            "bound": "5",
+            "coincident_sites": false
+          },
+          {
+            "other": "duplicate",
+            "normal": [
+              "0",
+              "0"
+            ],
+            "bound": "0",
+            "coincident_sites": true
+          }
+        ],
+        "coincident_ties": [
+          "duplicate"
+        ]
+      },
+      "b": {
+        "vertices": [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "3",
+            "-1"
+          ],
+          [
+            "3",
+            "7/4"
+          ],
+          [
+            "1",
+            "3/4"
+          ]
+        ],
+        "inequalities": [
+          {
+            "other": "a",
+            "normal": [
+              "-4",
+              "0"
+            ],
+            "bound": "-4",
+            "coincident_sites": false
+          },
+          {
+            "other": "c",
+            "normal": [
+              "-2",
+              "4"
+            ],
+            "bound": "1",
+            "coincident_sites": false
+          },
+          {
+            "other": "duplicate",
+            "normal": [
+              "-4",
+              "0"
+            ],
+            "bound": "-4",
+            "coincident_sites": false
+          }
+        ],
+        "coincident_ties": []
+      },
+      "c": {
+        "vertices": [
+          [
+            "3",
+            "7/4"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "-1",
+            "3"
+          ],
+          [
+            "-1",
+            "7/4"
+          ],
+          [
+            "1",
+            "3/4"
+          ]
+        ],
+        "inequalities": [
+          {
+            "other": "a",
+            "normal": [
+              "-2",
+              "-4"
+            ],
+            "bound": "-5",
+            "coincident_sites": false
+          },
+          {
+            "other": "b",
+            "normal": [
+              "2",
+              "-4"
+            ],
+            "bound": "-1",
+            "coincident_sites": false
+          },
+          {
+            "other": "duplicate",
+            "normal": [
+              "-2",
+              "-4"
+            ],
+            "bound": "-5",
+            "coincident_sites": false
+          }
+        ],
+        "coincident_ties": []
+      },
+      "duplicate": {
+        "vertices": [
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "-1",
+            "7/4"
+          ]
+        ],
+        "inequalities": [
+          {
+            "other": "a",
+            "normal": [
+              "0",
+              "0"
+            ],
+            "bound": "0",
+            "coincident_sites": true
+          },
+          {
+            "other": "b",
+            "normal": [
+              "4",
+              "0"
+            ],
+            "bound": "4",
+            "coincident_sites": false
+          },
+          {
+            "other": "c",
+            "normal": [
+              "2",
+              "4"
+            ],
+            "bound": "5",
+            "coincident_sites": false
+          }
+        ],
+        "coincident_ties": [
+          "a"
+        ]
+      }
+    },
+    "scope": "closed Euclidean nearest-site cells clipped to the declared rectangle; all ties retained"
+  },
+  "mesh": {
+    "a": {
+      "dimension": 2,
+      "area": "9/2",
+      "centroid": [
+        "-2/27",
+        "31/216"
+      ],
+      "triangles": [
+        [
+          [
+            "-1",
+            "7/4"
+          ],
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "-1",
+            "7/4"
+          ]
+        ]
+      ]
+    },
+    "b": {
+      "dimension": 2,
+      "area": "9/2",
+      "centroid": [
+        "56/27",
+        "31/216"
+      ],
+      "triangles": [
+        [
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "3",
+            "-1"
+          ]
+        ],
+        [
+          [
+            "3",
+            "-1"
+          ],
+          [
+            "3",
+            "7/4"
+          ],
+          [
+            "1",
+            "3/4"
+          ]
+        ]
+      ]
+    },
+    "c": {
+      "dimension": 2,
+      "area": "7",
+      "centroid": [
+        "1",
+        "353/168"
+      ],
+      "triangles": [
+        [
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "3",
+            "7/4"
+          ],
+          [
+            "3",
+            "3"
+          ]
+        ],
+        [
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "-1",
+            "3"
+          ]
+        ],
+        [
+          [
+            "-1",
+            "3"
+          ],
+          [
+            "-1",
+            "7/4"
+          ],
+          [
+            "1",
+            "3/4"
+          ]
+        ]
+      ]
+    },
+    "duplicate": {
+      "dimension": 2,
+      "area": "9/2",
+      "centroid": [
+        "-2/27",
+        "31/216"
+      ],
+      "triangles": [
+        [
+          [
+            "-1",
+            "7/4"
+          ],
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "-1",
+            "7/4"
+          ]
+        ]
+      ]
+    }
+  },
+  "unique_cell_area": "16",
+  "box_area": "16",
+  "work_used": 60,
+  "kernel_checked": false,
+  "scope": "bounded planar Euclidean cells, including coincident ties and lower-dimensional cells; triangulation execution tested"
+}
