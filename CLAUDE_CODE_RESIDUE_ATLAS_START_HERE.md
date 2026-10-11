@@ -8,4 +8,4 @@ Selection order is by sorted residue class, then x, then y within that cell. It 
 
 The next bounded extension is a coprime multi-prime atlas product with a proved coordinate CRT equivalence. Compose complete local tables, derive disjoint rectangle cells and retain factored representations when explicit CRT products exceed their budget. Prove and test count and addressing semantics before calling the product a complete arithmetic population. Global height bounds, generic JSON compiler refinement and integral lattice saturation remain separate research obligations.
 
-Preserve all concurrent flavor, thermal and Dresden code and documentation. Publish directly to claude/laughing-lamport-qqzdo9 with an expected-head guard. Every push must include the complete tracked source split below 30 MB and the monograph, not a patch-only archive.
+Preserve all concurrent flavor, thermal and Dresden code and documentation. Publish directly to `main` with an expected-head guard; preserve `claude/laughing-lamport-qqzdo9` as a historical branch. Every push must include the complete tracked source split below 30 MB and the monograph, not a patch-only archive.

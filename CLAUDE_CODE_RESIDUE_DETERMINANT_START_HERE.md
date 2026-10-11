@@ -1,6 +1,6 @@
 # Bounded determinant extraction handoff
 
-This push independently ports selected algebraic proofs from openai/math family 020 at adc7f1241b42e322a6451854ab7e4b4c146bf78a. Work remains on claude/laughing-lamport-qqzdo9. Preserve concurrent flavor, original elliptic transport, staged-fibre, period and other mining changes. No toolchain upgrade or full upstream library import is required.
+This push independently ports selected algebraic proofs from openai/math family 020 at adc7f1241b42e322a6451854ab7e4b4c146bf78a. The original work used `claude/laughing-lamport-qqzdo9`; publish new continuations to `main` while preserving that historical branch. Preserve concurrent flavor, original elliptic transport, staged-fibre, period and other mining changes. No toolchain upgrade or full upstream library import is required.
 
 Read docs/RESIDUE_DETERMINANT_MONOGRAPH.md, then PerfectPower/IntegralKernelWitness.lean and PerfectPower/ResidueDeterminantCertificate.lean. Run make residue-determinant. This reproduces twelve packets, fourteen Python tests, fourteen general theorem audits, two concrete integral-index theorems and eleven native worked programs. Compilation records and independent SymPy cross-check results live in receipts/residue_determinant. Use the JSONL query operations documented in the monograph for new bounded experiments; native source is unexecuted until compiled for that input.
 
