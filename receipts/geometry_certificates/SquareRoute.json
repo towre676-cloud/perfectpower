@@ -1,0 +1,155 @@
+{
+  "certificate": {
+    "kernel_checked": false,
+    "potentials": [
+      "0",
+      "6",
+      "2",
+      "4",
+      "4",
+      "2"
+    ],
+    "reachable": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "schema": "pp-visibility-dual-certificate/1",
+    "scope": "cost optimality for every finite walk in the complete source-bound visibility graph; route tie-breaking is not certified",
+    "source_sha256": "6cdaf646f593965c63916dff3dfefacc2540acbed81297d3fb52fb6436dbd451",
+    "status": "ROUTE"
+  },
+  "route": {
+    "complete": true,
+    "cost": "6",
+    "edges": [
+      [
+        0,
+        2,
+        "2"
+      ],
+      [
+        0,
+        5,
+        "2"
+      ],
+      [
+        1,
+        3,
+        "2"
+      ],
+      [
+        1,
+        4,
+        "2"
+      ],
+      [
+        2,
+        3,
+        "2"
+      ],
+      [
+        2,
+        5,
+        "2"
+      ],
+      [
+        3,
+        4,
+        "2"
+      ],
+      [
+        4,
+        5,
+        "2"
+      ]
+    ],
+    "end": [
+      "3",
+      "1"
+    ],
+    "kernel_checked": false,
+    "objective": "minimum Manhattan edge-length sum on the full supplied vertex visibility graph; ties prefer fewer edges then lexicographic vertex indices",
+    "obstacles": [
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "2",
+          "0"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "0",
+          "2"
+        ]
+      ]
+    ],
+    "path": [
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "2",
+        "0"
+      ],
+      [
+        "3",
+        "1"
+      ]
+    ],
+    "path_indices": [
+      0,
+      2,
+      3,
+      1
+    ],
+    "schema": "pp-polygon-visibility-route/1",
+    "scope": "rational Euclidean obstacle interiors forbidden, boundary contact allowed; graph optimum only, no clearance or physical grasp guarantee",
+    "start": [
+      "-1",
+      "1"
+    ],
+    "status": "ROUTE",
+    "vertices": [
+      [
+        "-1",
+        "1"
+      ],
+      [
+        "3",
+        "1"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "2",
+        "0"
+      ],
+      [
+        "2",
+        "2"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "work_used": 511
+  }
+}

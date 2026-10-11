@@ -1,0 +1,1206 @@
+{
+  "certificate": {
+    "cells": {
+      "a": {
+        "area": "9/2",
+        "boundary_atoms": [
+          {
+            "edge": [
+              [
+                "-1",
+                "-1"
+              ],
+              [
+                "-1",
+                "7/4"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "-1"
+              ],
+              [
+                "1",
+                "-1"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "7/4"
+              ],
+              [
+                "1",
+                "-1"
+              ]
+            ],
+            "mesh_coefficient": 0,
+            "source_coefficient": 0
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "7/4"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "1",
+                "-1"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          }
+        ],
+        "kernel_checked": false,
+        "schema": "pp-independent-rational-mesh/1",
+        "scope": "exact pairwise separating halfplanes, atomized oriented boundary equality and positive area; geometric coverage uses the simple-polygon topology, not a Lean coverage theorem",
+        "separators": [
+          {
+            "first_side": 1,
+            "line": [
+              [
+                "1",
+                "-1"
+              ],
+              [
+                "-1",
+                "7/4"
+              ]
+            ],
+            "triangles": [
+              0,
+              1
+            ]
+          }
+        ],
+        "triangle_areas": [
+          "11/4",
+          "7/4"
+        ],
+        "triangles": [
+          [
+            [
+              "-1",
+              "7/4"
+            ],
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "1",
+              "-1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "-1",
+              "7/4"
+            ]
+          ]
+        ],
+        "vertices": [
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "-1",
+            "7/4"
+          ]
+        ],
+        "work_used": 66
+      },
+      "b": {
+        "area": "9/2",
+        "boundary_atoms": [
+          {
+            "edge": [
+              [
+                "1",
+                "-1"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "1",
+                "-1"
+              ],
+              [
+                "3",
+                "-1"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          },
+          {
+            "edge": [
+              [
+                "1",
+                "3/4"
+              ],
+              [
+                "3",
+                "-1"
+              ]
+            ],
+            "mesh_coefficient": 0,
+            "source_coefficient": 0
+          },
+          {
+            "edge": [
+              [
+                "1",
+                "3/4"
+              ],
+              [
+                "3",
+                "7/4"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "3",
+                "-1"
+              ],
+              [
+                "3",
+                "7/4"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          }
+        ],
+        "kernel_checked": false,
+        "schema": "pp-independent-rational-mesh/1",
+        "scope": "exact pairwise separating halfplanes, atomized oriented boundary equality and positive area; geometric coverage uses the simple-polygon topology, not a Lean coverage theorem",
+        "separators": [
+          {
+            "first_side": 1,
+            "line": [
+              [
+                "3",
+                "-1"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "triangles": [
+              0,
+              1
+            ]
+          }
+        ],
+        "triangle_areas": [
+          "7/4",
+          "11/4"
+        ],
+        "triangles": [
+          [
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "3",
+              "-1"
+            ]
+          ],
+          [
+            [
+              "3",
+              "-1"
+            ],
+            [
+              "3",
+              "7/4"
+            ],
+            [
+              "1",
+              "3/4"
+            ]
+          ]
+        ],
+        "vertices": [
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "3",
+            "-1"
+          ],
+          [
+            "3",
+            "7/4"
+          ],
+          [
+            "1",
+            "3/4"
+          ]
+        ],
+        "work_used": 66
+      },
+      "c": {
+        "area": "7",
+        "boundary_atoms": [
+          {
+            "edge": [
+              [
+                "-1",
+                "7/4"
+              ],
+              [
+                "-1",
+                "3"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "7/4"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "3"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "mesh_coefficient": 0,
+            "source_coefficient": 0
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "3"
+              ],
+              [
+                "3",
+                "3"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "1",
+                "3/4"
+              ],
+              [
+                "3",
+                "7/4"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          },
+          {
+            "edge": [
+              [
+                "1",
+                "3/4"
+              ],
+              [
+                "3",
+                "3"
+              ]
+            ],
+            "mesh_coefficient": 0,
+            "source_coefficient": 0
+          },
+          {
+            "edge": [
+              [
+                "3",
+                "7/4"
+              ],
+              [
+                "3",
+                "3"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          }
+        ],
+        "kernel_checked": false,
+        "schema": "pp-independent-rational-mesh/1",
+        "scope": "exact pairwise separating halfplanes, atomized oriented boundary equality and positive area; geometric coverage uses the simple-polygon topology, not a Lean coverage theorem",
+        "separators": [
+          {
+            "first_side": 1,
+            "line": [
+              [
+                "3",
+                "3"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "triangles": [
+              0,
+              1
+            ]
+          },
+          {
+            "first_side": 1,
+            "line": [
+              [
+                "3",
+                "3"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "triangles": [
+              0,
+              2
+            ]
+          },
+          {
+            "first_side": 1,
+            "line": [
+              [
+                "-1",
+                "3"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "triangles": [
+              1,
+              2
+            ]
+          }
+        ],
+        "triangle_areas": [
+          "5/4",
+          "9/2",
+          "5/4"
+        ],
+        "triangles": [
+          [
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "3",
+              "7/4"
+            ],
+            [
+              "3",
+              "3"
+            ]
+          ],
+          [
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "3",
+              "3"
+            ],
+            [
+              "-1",
+              "3"
+            ]
+          ],
+          [
+            [
+              "-1",
+              "3"
+            ],
+            [
+              "-1",
+              "7/4"
+            ],
+            [
+              "1",
+              "3/4"
+            ]
+          ]
+        ],
+        "vertices": [
+          [
+            "3",
+            "7/4"
+          ],
+          [
+            "3",
+            "3"
+          ],
+          [
+            "-1",
+            "3"
+          ],
+          [
+            "-1",
+            "7/4"
+          ],
+          [
+            "1",
+            "3/4"
+          ]
+        ],
+        "work_used": 137
+      },
+      "duplicate": {
+        "area": "9/2",
+        "boundary_atoms": [
+          {
+            "edge": [
+              [
+                "-1",
+                "-1"
+              ],
+              [
+                "-1",
+                "7/4"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "-1"
+              ],
+              [
+                "1",
+                "-1"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "7/4"
+              ],
+              [
+                "1",
+                "-1"
+              ]
+            ],
+            "mesh_coefficient": 0,
+            "source_coefficient": 0
+          },
+          {
+            "edge": [
+              [
+                "-1",
+                "7/4"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "mesh_coefficient": -1,
+            "source_coefficient": -1
+          },
+          {
+            "edge": [
+              [
+                "1",
+                "-1"
+              ],
+              [
+                "1",
+                "3/4"
+              ]
+            ],
+            "mesh_coefficient": 1,
+            "source_coefficient": 1
+          }
+        ],
+        "kernel_checked": false,
+        "schema": "pp-independent-rational-mesh/1",
+        "scope": "exact pairwise separating halfplanes, atomized oriented boundary equality and positive area; geometric coverage uses the simple-polygon topology, not a Lean coverage theorem",
+        "separators": [
+          {
+            "first_side": 1,
+            "line": [
+              [
+                "1",
+                "-1"
+              ],
+              [
+                "-1",
+                "7/4"
+              ]
+            ],
+            "triangles": [
+              0,
+              1
+            ]
+          }
+        ],
+        "triangle_areas": [
+          "11/4",
+          "7/4"
+        ],
+        "triangles": [
+          [
+            [
+              "-1",
+              "7/4"
+            ],
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "1",
+              "-1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "-1",
+              "7/4"
+            ]
+          ]
+        ],
+        "vertices": [
+          [
+            "-1",
+            "-1"
+          ],
+          [
+            "1",
+            "-1"
+          ],
+          [
+            "1",
+            "3/4"
+          ],
+          [
+            "-1",
+            "7/4"
+          ]
+        ],
+        "work_used": 66
+      }
+    },
+    "kernel_checked": false,
+    "schema": "pp-independent-voronoi-mesh/1",
+    "scope": "source-bound planar cell mesh separation, oriented boundary and moments; coincident-site areas counted once, Voronoi clipping remains Python",
+    "source_sha256": "08b8c116ccbb76255bb754442d43bd3325fbbc7ee59fcba105052d63ec962e73",
+    "unique_cell_area": "16",
+    "unique_cell_references": {
+      "a": "a",
+      "b": "b",
+      "c": "c",
+      "duplicate": "a",
+      "far": null
+    },
+    "work_used": 340
+  },
+  "mesh": {
+    "box_area": "16",
+    "kernel_checked": false,
+    "mesh": {
+      "a": {
+        "area": "9/2",
+        "centroid": [
+          "-2/27",
+          "31/216"
+        ],
+        "dimension": 2,
+        "triangles": [
+          [
+            [
+              "-1",
+              "7/4"
+            ],
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "1",
+              "-1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "-1",
+              "7/4"
+            ]
+          ]
+        ]
+      },
+      "b": {
+        "area": "9/2",
+        "centroid": [
+          "56/27",
+          "31/216"
+        ],
+        "dimension": 2,
+        "triangles": [
+          [
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "3",
+              "-1"
+            ]
+          ],
+          [
+            [
+              "3",
+              "-1"
+            ],
+            [
+              "3",
+              "7/4"
+            ],
+            [
+              "1",
+              "3/4"
+            ]
+          ]
+        ]
+      },
+      "c": {
+        "area": "7",
+        "centroid": [
+          "1",
+          "353/168"
+        ],
+        "dimension": 2,
+        "triangles": [
+          [
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "3",
+              "7/4"
+            ],
+            [
+              "3",
+              "3"
+            ]
+          ],
+          [
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "3",
+              "3"
+            ],
+            [
+              "-1",
+              "3"
+            ]
+          ],
+          [
+            [
+              "-1",
+              "3"
+            ],
+            [
+              "-1",
+              "7/4"
+            ],
+            [
+              "1",
+              "3/4"
+            ]
+          ]
+        ]
+      },
+      "duplicate": {
+        "area": "9/2",
+        "centroid": [
+          "-2/27",
+          "31/216"
+        ],
+        "dimension": 2,
+        "triangles": [
+          [
+            [
+              "-1",
+              "7/4"
+            ],
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "1",
+              "-1"
+            ]
+          ],
+          [
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "-1",
+              "7/4"
+            ]
+          ]
+        ]
+      },
+      "far": {
+        "area": "0",
+        "centroid": null,
+        "dimension": -1,
+        "triangles": []
+      }
+    },
+    "schema": "pp-rational-voronoi-mesh/1",
+    "scope": "bounded planar Euclidean cells, including coincident ties and lower-dimensional cells; triangulation execution tested",
+    "unique_cell_area": "16",
+    "voronoi": {
+      "box": [
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "3",
+          "3"
+        ]
+      ],
+      "cells": {
+        "a": {
+          "coincident_ties": [
+            "duplicate"
+          ],
+          "inequalities": [
+            {
+              "bound": "4",
+              "coincident_sites": false,
+              "normal": [
+                "4",
+                "0"
+              ],
+              "other": "b"
+            },
+            {
+              "bound": "5",
+              "coincident_sites": false,
+              "normal": [
+                "2",
+                "4"
+              ],
+              "other": "c"
+            },
+            {
+              "bound": "0",
+              "coincident_sites": true,
+              "normal": [
+                "0",
+                "0"
+              ],
+              "other": "duplicate"
+            },
+            {
+              "bound": "20000",
+              "coincident_sites": false,
+              "normal": [
+                "200",
+                "200"
+              ],
+              "other": "far"
+            }
+          ],
+          "vertices": [
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "-1",
+              "7/4"
+            ]
+          ]
+        },
+        "b": {
+          "coincident_ties": [],
+          "inequalities": [
+            {
+              "bound": "-4",
+              "coincident_sites": false,
+              "normal": [
+                "-4",
+                "0"
+              ],
+              "other": "a"
+            },
+            {
+              "bound": "1",
+              "coincident_sites": false,
+              "normal": [
+                "-2",
+                "4"
+              ],
+              "other": "c"
+            },
+            {
+              "bound": "-4",
+              "coincident_sites": false,
+              "normal": [
+                "-4",
+                "0"
+              ],
+              "other": "duplicate"
+            },
+            {
+              "bound": "19996",
+              "coincident_sites": false,
+              "normal": [
+                "196",
+                "200"
+              ],
+              "other": "far"
+            }
+          ],
+          "vertices": [
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "3",
+              "-1"
+            ],
+            [
+              "3",
+              "7/4"
+            ],
+            [
+              "1",
+              "3/4"
+            ]
+          ]
+        },
+        "c": {
+          "coincident_ties": [],
+          "inequalities": [
+            {
+              "bound": "-5",
+              "coincident_sites": false,
+              "normal": [
+                "-2",
+                "-4"
+              ],
+              "other": "a"
+            },
+            {
+              "bound": "-1",
+              "coincident_sites": false,
+              "normal": [
+                "2",
+                "-4"
+              ],
+              "other": "b"
+            },
+            {
+              "bound": "-5",
+              "coincident_sites": false,
+              "normal": [
+                "-2",
+                "-4"
+              ],
+              "other": "duplicate"
+            },
+            {
+              "bound": "19995",
+              "coincident_sites": false,
+              "normal": [
+                "198",
+                "196"
+              ],
+              "other": "far"
+            }
+          ],
+          "vertices": [
+            [
+              "3",
+              "7/4"
+            ],
+            [
+              "3",
+              "3"
+            ],
+            [
+              "-1",
+              "3"
+            ],
+            [
+              "-1",
+              "7/4"
+            ],
+            [
+              "1",
+              "3/4"
+            ]
+          ]
+        },
+        "duplicate": {
+          "coincident_ties": [
+            "a"
+          ],
+          "inequalities": [
+            {
+              "bound": "0",
+              "coincident_sites": true,
+              "normal": [
+                "0",
+                "0"
+              ],
+              "other": "a"
+            },
+            {
+              "bound": "4",
+              "coincident_sites": false,
+              "normal": [
+                "4",
+                "0"
+              ],
+              "other": "b"
+            },
+            {
+              "bound": "5",
+              "coincident_sites": false,
+              "normal": [
+                "2",
+                "4"
+              ],
+              "other": "c"
+            },
+            {
+              "bound": "20000",
+              "coincident_sites": false,
+              "normal": [
+                "200",
+                "200"
+              ],
+              "other": "far"
+            }
+          ],
+          "vertices": [
+            [
+              "-1",
+              "-1"
+            ],
+            [
+              "1",
+              "-1"
+            ],
+            [
+              "1",
+              "3/4"
+            ],
+            [
+              "-1",
+              "7/4"
+            ]
+          ]
+        },
+        "far": {
+          "coincident_ties": [],
+          "inequalities": [
+            {
+              "bound": "-20000",
+              "coincident_sites": false,
+              "normal": [
+                "-200",
+                "-200"
+              ],
+              "other": "a"
+            },
+            {
+              "bound": "-19996",
+              "coincident_sites": false,
+              "normal": [
+                "-196",
+                "-200"
+              ],
+              "other": "b"
+            },
+            {
+              "bound": "-19995",
+              "coincident_sites": false,
+              "normal": [
+                "-198",
+                "-196"
+              ],
+              "other": "c"
+            },
+            {
+              "bound": "-20000",
+              "coincident_sites": false,
+              "normal": [
+                "-200",
+                "-200"
+              ],
+              "other": "duplicate"
+            }
+          ],
+          "vertices": []
+        }
+      },
+      "schema": "pp-rational-voronoi/1",
+      "scope": "closed Euclidean nearest-site cells clipped to the declared rectangle; all ties retained",
+      "sites": {
+        "a": [
+          "0",
+          "0"
+        ],
+        "b": [
+          "2",
+          "0"
+        ],
+        "c": [
+          "1",
+          "2"
+        ],
+        "duplicate": [
+          "0",
+          "0"
+        ],
+        "far": [
+          "100",
+          "100"
+        ]
+      }
+    },
+    "work_used": 61
+  }
+}

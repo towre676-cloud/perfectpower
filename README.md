@@ -20,12 +20,12 @@ The project combines a Python package, exact algebra engines, a Lean 4 theorem l
 
 For a connected, offline demonstration, run `make exact-space-showcase` and open `receipts/exact_space/index.html`. The [exact-space account](docs/EXACT_SPACE_SHOWCASE_MONOGRAPH.md) follows one allocation population through exact count, rank/selection, linear optimization, a six-to-three-state response quotient and a convergent series evaluation. Local measurements retain the small-instance overhead and larger-instance crossover; they are constructed examples, not industrial benchmarks.
 
-Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. Work is published on `main`; the GitHub default branch `claude/laughing-lamport-qqzdo9` is kept at the same commit.
+Requires **Python 3.10 or later**. The core package uses the standard library; numerical geometry, interval arithmetic and solver integrations have optional dependencies. Install from a repository checkout to retain the accompanying data and proof records. Work is published on `main`; clone that branch explicitly because the GitHub default branch may contain a separate development history.
 
 Version 0.9.0 wheels also include the runtime certificates, mathematical source statements, core data and offline atlas. A source checkout is required for the full research corpus and historical build, but ordinary installed arithmetic and the atlas no longer require it. Install optional features with `.[analytic]`, `.[intervals]`, `.[industrial]` or `.[research]`.
 
 ```sh
-git clone https://github.com/towre676-cloud/perfectpower.git
+git clone --branch main https://github.com/towre676-cloud/perfectpower.git
 cd perfectpower
 python -m pip install .
 python -m perfectpower solve --expr '(5*n - 7)**3 - 2'
@@ -70,6 +70,8 @@ The [automatic reductions and multiple-orbit engine](docs/ORBIT_REDUCTION_MONOGR
 [Complete linear-product charts](docs/LINEAR_PRODUCT_MONOGRAPH.md) solve `y²=(an+b)(cn+d)` over all signed integers when `ac` is a positive square and `ad-bc` is nonzero. `euclid solve-descent` closes the existing exceptional-prime branches for this family; `euclid solve-linear-product examples/linear_product/solve.json` returns the full point set, and `euclid query-linear-product examples/linear_product/query.json` counts, ranks, selects and optimizes restricted populations. `make linear-product-kernel` checks an all-integer completeness theorem and seven emitted examples. The retained synthetic benchmark completes 67/67 evaluation cases against 65/67 for the existing trial-divisor baseline, with identical point sets on shared complete cases; this is a family-specific comparison. Large Python outputs have a separate kernel enumeration budget.
 
 [Geometry foundations](docs/BELYAEV_GEOMETRY_MONOGRAPH.md), developed from Belyaev's treatment of incidence, betweenness, polygon simplicity and symmetry, add exact rational line relations, polygon triangulation and centroids, circumcircle predicates, labelled rigid-map recovery, Voronoi meshes and rigid diagram transport. `geometry-foundations route examples/belyaev_geometry/route.json` computes an exact Manhattan-cost optimum on a supplied polygon vertex visibility graph; obstacle interiors are forbidden and boundary contact is allowed. `make geometry-foundations-kernel` checks universal distance/determinant identities for retained rational transformations and numeric triangle-area claims. Polygon coverage and routing execution remain tested Python; neither hyperbolic geometry nor physical string dynamics is inferred.
+
+[Independent geometry certificates](docs/GEOMETRY_CERTIFICATES_MONOGRAPH.md) accept alternate rational meshes, Steiner vertices and T-junctions using exact triangle separation and oriented boundary cancellation. Lean computes boundary atoms from actual coordinates and checks their counts. Route potentials prove the retained cost is minimal among every finite walk in the supplied complete visibility graph; closed-set witnesses prove graph unreachability. Voronoi cell meshes share the independent acceptance path. Run `make geometry-certificates` and `make geometry-certificates-kernel`, or `geometry-foundations route-proof examples/geometry_certificates/route.json`. Full Lean polygon topology and geometric visibility remain open.
 
 ## Exact graph methods
 

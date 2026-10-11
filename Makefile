@@ -598,3 +598,11 @@ geometry-foundations:
 
 geometry-foundations-kernel:
 	bash scripts/check_geometry_foundations.sh
+
+.PHONY: geometry-certificates geometry-certificates-kernel
+geometry-certificates:
+	PYTHONPATH=python python3 python/develop_geometry_certificates.py
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_geometry_certificates.py -v
+
+geometry-certificates-kernel:
+	python3 scripts/check_geometry_certificate_kernel.py

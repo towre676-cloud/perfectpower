@@ -3,11 +3,22 @@ import json
 from .belyaev_geometry import between,line_through,meet_lines,polygon_structure,locate_point,triangulate,polygon_centroid,circumcircle,incircle,fit_isometries,voronoi_mesh,transport_voronoi
 from .polygon_routing import route,segment_visibility
 
-OPERATIONS=('incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi')
+OPERATIONS=('incidence','polygon','locate','triangulate','centroid','circumcircle','incircle','congruence','visibility','route','voronoi-mesh','transport-voronoi','mesh-certificate','route-certificate','mesh-proof','route-proof','voronoi-mesh-certificate')
 
 
 def dispatch(operation,spec):
     limit=spec.get('work_limit',1000000)
+    if operation in ('mesh-certificate','mesh-proof'):
+        from .geometry_certificates import certify_mesh,compile_mesh_certificate
+        packet=certify_mesh(spec['vertices'],spec['triangles'],work_limit=limit,triangle_limit=spec.get('triangle_limit',200),vertex_limit=spec.get('vertex_limit',500))
+        return compile_mesh_certificate(packet,work_limit=limit,triangle_limit=spec.get('triangle_limit',200),vertex_limit=spec.get('vertex_limit',500)) if operation=='mesh-proof' else packet
+    if operation in ('route-certificate','route-proof'):
+        from .geometry_certificates import certify_route,compile_route_certificate
+        packet=route(spec['obstacles'],spec['start'],spec['end'],work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
+        certificate=certify_route(packet,work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
+        result={'route':packet,'certificate':certificate}
+        if operation=='route-proof':result['proof']=compile_route_certificate(packet,certificate,work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
+        return result
     if operation=='incidence':
         result={'line':line_through(spec['a'],spec['c'])}
         if 'b' in spec:result['between']=between(spec['a'],spec['b'],spec['c'],strict=spec.get('strict',True))
@@ -22,6 +33,10 @@ def dispatch(operation,spec):
     if operation=='congruence':return fit_isometries(spec['source'],spec['target'])
     if operation=='visibility':return segment_visibility(spec['obstacles'],spec['start'],spec['end'],work_limit=limit)
     if operation=='route':return route(spec['obstacles'],spec['start'],spec['end'],work_limit=limit,vertex_limit=spec.get('vertex_limit',200))
+    if operation=='voronoi-mesh-certificate':
+        from .geometry_certificates import certify_voronoi_mesh
+        packet=voronoi_mesh(spec['sites'],spec['box'],work_limit=limit,site_pair_limit=spec.get('site_pair_limit',10000))
+        return {'mesh':packet,'certificate':certify_voronoi_mesh(packet,work_limit=limit,site_pair_limit=spec.get('site_pair_limit',10000))}
     if operation=='voronoi-mesh':return voronoi_mesh(spec['sites'],spec['box'],work_limit=limit,site_pair_limit=spec.get('site_pair_limit',10000))
     if operation=='transport-voronoi':
         from .euclid_geometry import voronoi_cells
