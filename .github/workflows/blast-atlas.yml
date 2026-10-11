@@ -3,8 +3,16 @@ on:
   push:
     paths:
       - 'python/perfectpower/blast*'
+      - 'python/perfectpower/blast_data/**'
+      - 'python/perfectpower/generating_functions.py'
       - 'python/tests/test_blast_atlas.py'
+      - 'python/tests/test_blast_mining.py'
+      - 'python/tests/test_model_counting.py'
+      - 'python/perfectpower/model_counting.py'
+      - 'native/model_counting/**'
+      - 'data/model_counting/fixtures/**'
       - 'python/develop_blast_atlas.py'
+      - 'python/develop_blast_mining.py'
       - 'examples/blast/**'
       - '.github/workflows/blast-atlas.yml'
   pull_request:
@@ -17,8 +25,15 @@ jobs:
         with:
           python-version: '3.11'
       - run: python -m pip install .
+      - run: sudo apt-get update && sudo apt-get install -y libboost-dev
       - name: Independent enumeration, input replay and machinery adapters
-        run: PYTHONPATH=python python -m unittest discover -s python/tests -p test_blast_atlas.py -v
+        run: |
+          PYTHONPATH=python python -m unittest discover -s python/tests -p 'test_blast*.py' -v
+          PYTHONPATH=python python -m unittest discover -s python/tests -p test_model_counting.py -v
+      - name: Replay real batch and compare DAG, separator and native counts
+        run: |
+          PYTHONPATH=python python python/develop_blast_mining.py --native-check
+          git diff --exit-code -- receipts/blast/mining_v2.json receipts/blast/mining_exploratory.json receipts/blast/mining_crosscheck.json receipts/blast/motif_overlap_series.json web/blast-mining/index.html examples/blast/insulin_family.fasta
       - name: Reproduce offline atlas from retained public records
         run: |
           PYTHONPATH=python python python/develop_blast_atlas.py

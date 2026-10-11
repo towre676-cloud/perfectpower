@@ -181,3 +181,8 @@ Code and Lean sources use [Apache-2.0](LICENSE); documentation and papers use [C
 ## Biological sequence exploration
 
 The BLAST polynomial atlas imports NCBI tracebacks, reconstructs exact finite alignment families, maps scoring sensitivity, enforces conserved motifs and coherent-fragment constraints, and connects to the existing SOE, polynomial and graph machinery. The branch includes a real public insulin-transcript example and an offline interactive atlas. See [the monograph](docs/BLAST_POLYNOMIAL_ATLAS_MONOGRAPH.md) and [the runnable workflow](CLAUDE_CODE_BLAST_START_HERE.md). Run `make blast-test` and `make blast-atlas`; kernel scope and build evidence are recorded separately.
+
+## BLAST mining extension
+
+The next BLAST exploration release connects exact HSP DAG populations, separator/native CNF counting, overlapping motif generating functions, Hall/flow assignment certificates and triangle-filled similarity topology. See [the workflow and mathematical scope](docs/BLAST_MINING_MACHINERY.md), open `web/blast-mining/index.html`, or run `make blast-mining-test` and `make blast-mining`. The CLI adds `mine`, `verify-mining`, `mining-report` and `motif`; all imported tracebacks replay against supplied FASTA records.
+

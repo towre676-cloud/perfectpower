@@ -523,6 +523,13 @@ blast-test:
 blast-lean:
 	python3 scripts/check_blast_atlas.py
 
+.PHONY: blast-mining blast-mining-test
+blast-mining:
+	PYTHONPATH=python python3 python/develop_blast_mining.py --native-check
+blast-mining-test:
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_blast*.py' -v
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p test_model_counting.py -v
+
 .PHONY: check-integrity
 check-integrity:
 	python3 scripts/check_repo_integrity.py

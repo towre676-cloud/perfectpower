@@ -28,6 +28,21 @@ def main(argv=None):
     retrieve.add_argument('rid'); retrieve.add_argument('--email', required=True); retrieve.add_argument('--cache', required=True); retrieve.add_argument('--output', required=True)
     report = sub.add_parser('report', help='render an atlas receipt as offline HTML')
     report.add_argument('receipt'); report.add_argument('--output', required=True)
+    mining = sub.add_parser('mine', help='replay and mine HSPs with exact DAG, graph, motif and Hall machinery')
+    mining.add_argument('input'); mining.add_argument('--query-fasta', required=True); mining.add_argument('--subject-fasta', required=True)
+    mining.add_argument('--protein', action='store_true'); mining.add_argument('--maximum-evalue', default='0.001')
+    mining.add_argument('--minimum-identity', default='1/2'); mining.add_argument('--minimum-coverage', default='0')
+    mining.add_argument('--selection-backend', choices=['separator', 'native'], default='separator')
+    mining.add_argument('--cell-limit', type=int, default=1000000); mining.add_argument('--motif', action='append', default=[])
+    mining.add_argument('--output', required=True)
+    motif = sub.add_parser('motif', help='exact overlapping motif-anywhere probabilities and expected counts under IID letters')
+    motif.add_argument('motifs', nargs='+'); motif.add_argument('--length', type=int, required=True)
+    motif.add_argument('--alphabet', default='ACGT'); motif.add_argument('--probabilities', help='JSON map of exact rational letter probabilities')
+    motif.add_argument('--modulus', type=int); motif.add_argument('--output', required=True)
+    check = sub.add_parser('verify-mining', help='reexecute a mining receipt against all three original source files')
+    check.add_argument('receipt'); check.add_argument('input'); check.add_argument('--query-fasta', required=True); check.add_argument('--subject-fasta', required=True)
+    mine_report = sub.add_parser('mining-report', help='write a self-contained explorer for a source-replayed mining receipt')
+    mine_report.add_argument('receipt'); mine_report.add_argument('--output', required=True)
     args = parser.parse_args(argv)
     if args.command == 'align':
         family = AlignmentFamily(args.query, args.subject)
@@ -47,6 +62,31 @@ def main(argv=None):
         if args.query_fasta:
             q, s = fasta(Path(args.query_fasta).read_text()), fasta(Path(args.subject_fasta).read_text())
             receipt['replays'] = [replay(h, q[h.fields['qseqid']], s[h.fields['sseqid']], nucleotide=not args.protein) for h in hits]
+    elif args.command in ('mine', 'verify-mining'):
+        from hashlib import sha256
+        from .blast_mining import mine
+        paths = {'tabular': Path(args.input), 'query_fasta': Path(args.query_fasta), 'subject_fasta': Path(args.subject_fasta)}
+        if args.command == 'mine' and Path(args.output).resolve() in {p.resolve() for p in paths.values()}:
+            parser.error('output must differ from all inputs')
+        texts = {k: p.read_bytes() for k, p in paths.items()}
+        if args.command == 'verify-mining':
+            from .blast_mining import verify_mining
+            verify_mining(json.loads(Path(args.receipt).read_text()), tabular(texts['tabular'].decode()),
+                          fasta(texts['query_fasta'].decode()), fasta(texts['subject_fasta'].decode()),
+                          source_hashes={k: sha256(v).hexdigest() for k,v in texts.items()})
+            print('Mining receipt replays against all original source files'); return
+        receipt = mine(tabular(texts['tabular'].decode()), fasta(texts['query_fasta'].decode()), fasta(texts['subject_fasta'].decode()),
+                       nucleotide=not args.protein, maximum_evalue=args.maximum_evalue, minimum_identity=args.minimum_identity,
+                       minimum_coverage=args.minimum_coverage, selection_backend=args.selection_backend, cell_limit=args.cell_limit,
+                       motifs=args.motif, source_hashes={k: sha256(v).hexdigest() for k, v in texts.items()})
+    elif args.command == 'motif':
+        from .blast_mining import motif_series, motif_values
+        packet = motif_series(args.motifs, alphabet=args.alphabet, probabilities=json.loads(args.probabilities) if args.probabilities else None)
+        receipt = {'model': packet, 'values': motif_values(packet, args.length, modulus=args.modulus)}
+    elif args.command == 'mining-report':
+        from .blast_mining_report import write_mining_report
+        write_mining_report(json.loads(Path(args.receipt).read_text()), args.output)
+        print(str(Path(args.output).resolve())); return
     elif args.command in ('fetch', 'submit', 'retrieve'):
         from .blast_client import NCBIClient
         client = NCBIClient(args.cache, email=args.email)

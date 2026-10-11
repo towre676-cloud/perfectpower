@@ -1,5 +1,7 @@
 # BLAST polynomial atlas: start here
 
+The October 11 mining extension is documented in `docs/BLAST_MINING_MACHINERY.md`. Run `make blast-mining-test` and `make blast-mining` for source replay, compressed HSP DAG populations, separator/native selection counts, overlapping motif series, Hall/flow assignment certificates and triangle-filled similarity topology. Open `web/blast-mining/index.html` for the three-record batch explorer. New CLI commands are `mine`, `verify-mining`, `mining-report` and `motif`. The optional native backend requires C++17 and Boost; the default separator backend uses the Python standard library.
+
 This branch extends PerfectPower with exact biological-sequence exploration. The main monograph is `docs/BLAST_POLYNOMIAL_ATLAS_MONOGRAPH.md`; the runnable offline demonstration is `web/blast-atlas/index.html`. The retained public inputs and actual BLAST+ output are in `examples/blast/`. The default package still has no external Python dependencies.
 
 Run `make blast-test` for the independent checks and `make blast-atlas` to regenerate the atlas. Run `make blast-lean` in a configured Lean 4.20.0/mathlib environment for the source-bound formal build. `receipts/blast/kernel_build.json` records the actual build undertaken for this release. Two pre-existing kernel-dependent checked-SOE tests were skipped in the ordinary regression invocation; the new literal SOE packets were compiled separately.

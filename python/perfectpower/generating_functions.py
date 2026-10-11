@@ -126,6 +126,14 @@ class RationalSeries:
             pq, qq = product(p, conjugate), product(q, conjugate)
             p = pq[n % 2::2] or (Q(0),)
             q = qq[::2]
+            if modulus is None:
+                # Preserve the rational function while removing the common
+                # scalar introduced by repeated denominator squaring. Without
+                # this normalization intermediate bits can grow far beyond
+                # the size of the requested exact probability coefficient.
+                constant = q[0]
+                p = checked(tuple(x/constant for x in p))
+                q = checked(tuple(x/constant for x in q))
             n //= 2
         if modulus is not None:
             return int(p[0] * pow(int(q[0]), -1, modulus) % modulus)

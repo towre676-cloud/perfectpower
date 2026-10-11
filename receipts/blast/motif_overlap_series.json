@@ -1,0 +1,319 @@
+{
+  "large_modular": {
+    "expected_occurrences": "777774672",
+    "hit_probability": "308646647",
+    "length": 1000000000000,
+    "modulus": 1000000007
+  },
+  "model": {
+    "alphabet": "AC",
+    "expected_occurrences": {
+      "denominator": [
+        "1",
+        "-2",
+        "1"
+      ],
+      "execution_verified": false,
+      "field": "Q",
+      "operator": [
+        [
+          "2/3",
+          "2/3",
+          "2/3",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/3",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/3",
+          "1/3",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "2/3",
+          "2/3",
+          "2/3"
+        ],
+        [
+          "1/3",
+          "0",
+          "0",
+          "1/3",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "2/3",
+          "2/3",
+          "0",
+          "1/3",
+          "1/3"
+        ]
+      ],
+      "outputs": [
+        {
+          "denominator": [
+            "1",
+            "-2",
+            "1"
+          ],
+          "numerator": [
+            "0",
+            "1/3",
+            "1/9"
+          ],
+          "recurrence_order": 3
+        }
+      ],
+      "reachable_dimension": 5,
+      "readouts": [
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "schema": "pp-witness-resolvent/1",
+      "scope": "all nonnegative powers of the supplied exact matrix and readouts; formal series, not an external sequence definition",
+      "seed": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "vector_numerator": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-4/3",
+          "1/3",
+          "0",
+          "0",
+          "1/3",
+          "0"
+        ],
+        [
+          "1/3",
+          "-4/9",
+          "1/9",
+          "2/9",
+          "-4/9",
+          "1/3"
+        ],
+        [
+          "0",
+          "1/9",
+          "-1/9",
+          "2/27",
+          "5/27",
+          "-7/27"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "2/81",
+          "-2/81"
+        ]
+      ]
+    },
+    "hit_probability": {
+      "denominator": [
+        "1",
+        "-5/3",
+        "2/3"
+      ],
+      "execution_verified": false,
+      "field": "Q",
+      "operator": [
+        [
+          "2/3",
+          "2/3",
+          "2/3",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "2/3",
+          "2/3",
+          "2/3"
+        ],
+        [
+          "1/3",
+          "0",
+          "0",
+          "1/3",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/3",
+          "1/3",
+          "0",
+          "1/3",
+          "1/3"
+        ]
+      ],
+      "outputs": [
+        {
+          "denominator": [
+            "1",
+            "-5/3",
+            "2/3"
+          ],
+          "numerator": [
+            "0",
+            "1/3"
+          ],
+          "recurrence_order": 2
+        }
+      ],
+      "reachable_dimension": 4,
+      "readouts": [
+        [
+          "0",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      ],
+      "schema": "pp-witness-resolvent/1",
+      "scope": "all nonnegative powers of the supplied exact matrix and readouts; formal series, not an external sequence definition",
+      "seed": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "vector_numerator": [
+        [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-1",
+          "0",
+          "0",
+          "0",
+          "1/3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "2/9",
+          "-1/3",
+          "1/9"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "2/27",
+          "-2/27"
+        ]
+      ]
+    },
+    "is_blast_evalue": false,
+    "kernel_checked": false,
+    "motifs": [
+      "A",
+      "AA"
+    ],
+    "prefixes": [
+      "",
+      "A",
+      "AA"
+    ],
+    "probabilities": {
+      "A": "1/3",
+      "C": "2/3"
+    },
+    "schema": "pp-blast-motif-series/1",
+    "scope": "IID letters; exact overlapping literal motifs anywhere in words of length n; no fitted biological model"
+  },
+  "values": [
+    {
+      "expected_occurrences": "0",
+      "hit_probability": "0",
+      "length": 0,
+      "modulus": null
+    },
+    {
+      "expected_occurrences": "11/9",
+      "hit_probability": "19/27",
+      "length": 3,
+      "modulus": null
+    },
+    {
+      "expected_occurrences": "79/9",
+      "hit_probability": "3485735825/3486784401",
+      "length": 20,
+      "modulus": null
+    },
+    {
+      "expected_occurrences": "133/3",
+      "hit_probability": "515377520732011329768810529537391871205404316625/515377520732011331036461129765621272702107522001",
+      "length": 100,
+      "modulus": null
+    }
+  ]
+}
