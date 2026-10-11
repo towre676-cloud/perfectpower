@@ -1,0 +1,286 @@
+{
+  "schema": "pp-cnf-paired-analysis/1",
+  "receipt_sha256": "a18ea14aaa8957dec14cd66c0493c56b21aeaf795b1a97dd3f4d4fe6947f7034",
+  "analysis_source_sha256": "98aa5d2bc07e9b0538b54df2fdfd2d26fbaf48ea98d3611e3002bd5ef0b91fb1",
+  "comparisons": [
+    {
+      "baseline": "previous",
+      "instances": 11,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 0,
+      "coverage_delta_95_percent_interval": [
+        0,
+        0
+      ],
+      "par2_seconds_saved": 6.910722463337152,
+      "par2_saved_95_percent_interval": [
+        0.1470246690041677,
+        19.88932285400976
+      ],
+      "jointly_solved_instances": 11,
+      "jointly_solved_geometric_speedup": 1.4462034117725786,
+      "jointly_solved_speedup_95_percent_interval": [
+        0.9913244684768807,
+        2.761350805023159
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2024_track1_028.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0481567696934626
+        },
+        {
+          "name": "mc2024_track1_030.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0826687160673176
+        },
+        {
+          "name": "mc2024_track1_057.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 27.754432883871885
+        },
+        {
+          "name": "mc2024_track1_079.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.9765445984540027
+        },
+        {
+          "name": "mc2024_track1_080.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.9371553809247525
+        },
+        {
+          "name": "mc2024_track1_081.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0421246610737034
+        },
+        {
+          "name": "mc2024_track1_082.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.9956500322293658
+        },
+        {
+          "name": "mc2024_track1_083.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.8741547848298189
+        },
+        {
+          "name": "mc2024_track1_087.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.8006623217997426
+        },
+        {
+          "name": "mc2024_track1_118.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.912102797233818
+        },
+        {
+          "name": "mc2024_track1_183.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.3479523351738922
+        }
+      ]
+    },
+    {
+      "baseline": "ganak",
+      "instances": 11,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 0,
+      "coverage_delta_95_percent_interval": [
+        0,
+        0
+      ],
+      "par2_seconds_saved": 5.851506928337281,
+      "par2_saved_95_percent_interval": [
+        0.7211657800071406,
+        12.414825563669485
+      ],
+      "jointly_solved_instances": 11,
+      "jointly_solved_geometric_speedup": 1.0991839854368268,
+      "jointly_solved_speedup_95_percent_interval": [
+        0.6088860593264072,
+        2.0012133848298266
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2024_track1_028.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 2.794421697065095
+        },
+        {
+          "name": "mc2024_track1_030.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 2.147861865497583
+        },
+        {
+          "name": "mc2024_track1_057.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.7150967303085638
+        },
+        {
+          "name": "mc2024_track1_079.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.5082111459614634
+        },
+        {
+          "name": "mc2024_track1_080.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.2923124684919533
+        },
+        {
+          "name": "mc2024_track1_081.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.3551167373804921
+        },
+        {
+          "name": "mc2024_track1_082.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.424929821475004
+        },
+        {
+          "name": "mc2024_track1_083.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.37114082683269556
+        },
+        {
+          "name": "mc2024_track1_087.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 4.2637569605681165
+        },
+        {
+          "name": "mc2024_track1_118.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 3.783086349825095
+        },
+        {
+          "name": "mc2024_track1_183.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 2.0484723148813537
+        }
+      ]
+    },
+    {
+      "baseline": "d4_2024",
+      "instances": 11,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 1,
+      "coverage_delta_95_percent_interval": [
+        0,
+        3
+      ],
+      "par2_seconds_saved": 23.036552002664394,
+      "par2_saved_95_percent_interval": [
+        -0.5839893693288711,
+        58.94562159932684
+      ],
+      "jointly_solved_instances": 10,
+      "jointly_solved_geometric_speedup": 0.6026147601044066,
+      "jointly_solved_speedup_95_percent_interval": [
+        0.31609715346233813,
+        1.2953549184066138
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2024_track1_028.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 5.60216144278727
+        },
+        {
+          "name": "mc2024_track1_030.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2024_track1_057.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.235887653179974
+        },
+        {
+          "name": "mc2024_track1_079.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.32726345075401986
+        },
+        {
+          "name": "mc2024_track1_080.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.2662848675265382
+        },
+        {
+          "name": "mc2024_track1_081.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.2835205466977954
+        },
+        {
+          "name": "mc2024_track1_082.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.30581762739801877
+        },
+        {
+          "name": "mc2024_track1_083.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.26546000799138836
+        },
+        {
+          "name": "mc2024_track1_087.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.6252865274311206
+        },
+        {
+          "name": "mc2024_track1_118.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 4.684919139595882
+        },
+        {
+          "name": "mc2024_track1_183.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.813327580659152
+        }
+      ]
+    }
+  ]
+}

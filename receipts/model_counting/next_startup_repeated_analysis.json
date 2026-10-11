@@ -1,0 +1,70 @@
+{
+  "schema": "pp-cnf-paired-analysis/1",
+  "receipt_sha256": "ae64b2e9d7bcbbd43cc72305cdea5ef81c23c8f4c198a775340a2005be236452",
+  "analysis_source_sha256": "98aa5d2bc07e9b0538b54df2fdfd2d26fbaf48ea98d3611e3002bd5ef0b91fb1",
+  "comparisons": [
+    {
+      "baseline": "previous",
+      "instances": 6,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 0,
+      "coverage_delta_95_percent_interval": [
+        0,
+        0
+      ],
+      "par2_seconds_saved": 0.003374115452243115,
+      "par2_saved_95_percent_interval": [
+        -0.005257366998193916,
+        0.01228137489379149
+      ],
+      "jointly_solved_instances": 6,
+      "jointly_solved_geometric_speedup": 1.0123833645320095,
+      "jointly_solved_speedup_95_percent_interval": [
+        0.9855450211057338,
+        1.04310576488715
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2024_track1_079.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.9955624583791719
+        },
+        {
+          "name": "mc2024_track1_080.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0137469109638544
+        },
+        {
+          "name": "mc2024_track1_081.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.073909811455011
+        },
+        {
+          "name": "mc2024_track1_082.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.9682043658791715
+        },
+        {
+          "name": "mc2024_track1_083.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.984057782687301
+        },
+        {
+          "name": "mc2024_track1_118.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.042597066764727
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1563 @@
+{
+  "schema": "pp-cnf-paired/1",
+  "started_utc": "2026-10-10T23:37:43.092624+00:00",
+  "dataset": "Model Counting Competition 2024, Track 1",
+  "instances": [
+    "mc2024_track1_028.cnf",
+    "mc2024_track1_030.cnf",
+    "mc2024_track1_057.cnf",
+    "mc2024_track1_079.cnf",
+    "mc2024_track1_080.cnf",
+    "mc2024_track1_081.cnf",
+    "mc2024_track1_082.cnf",
+    "mc2024_track1_083.cnf",
+    "mc2024_track1_087.cnf",
+    "mc2024_track1_118.cnf",
+    "mc2024_track1_183.cnf"
+  ],
+  "source_identities": {
+    "counter": "d0eac70c0cc56d549d90f68c60bfee96927b99680f8a3529f3ddd6def96d9925",
+    "python": "403d73af86b4011c78556de9e6e063d8ae951e4d7ea3113fd93ff41298980efa",
+    "runner": "1c27e07099e4361b580f1a2219b4d503d9801797393dbfd3a909fef6a24f1249",
+    "execution": "2fea5c60723088b90c01979e96a5d1cbdc2fa157fe1fe39fb1f59a9524e2d643",
+    "previous_counter": "a6388e43ad73736979053e698afaff7f5d1fc9fcd5122ee87ef55eecf1c656ff",
+    "previous_python": "403d73af86b4011c78556de9e6e063d8ae951e4d7ea3113fd93ff41298980efa",
+    "previous_worker": "2fea5c60723088b90c01979e96a5d1cbdc2fa157fe1fe39fb1f59a9524e2d643",
+    "manifest": "944a5a6c80f138988425f5f7efd09822ac4c6f3093bbd17b99418049f27420ce",
+    "native_binary": "a58ba1cd44e8cffc31b9d73984a06c3f2adc9ad708e98f7361cb4c082c915f19",
+    "previous_native_binary": "c7498aea7fe8b192355cb03affbf947c707e59bcac8a486254aaf6d5c77eec10",
+    "ganak_binary": "934a79a3db2f5b3928ce89edde20837f652e4679b099320ac71c198699c709dd",
+    "d4_binary": "ef0b4d2196c5cc7b5c278943bc410744d9a0bd75bb0e5d11d4bdd6756149ce74"
+  },
+  "timeout_seconds": 10.0,
+  "memory_gib": 6,
+  "repetitions": 3,
+  "timing_scope": "Serial cold subprocess wall time, including parsing and construction; native compilation warmed separately",
+  "solver_scope": [
+    "perfectpower",
+    "previous",
+    "ganak",
+    "d4_2024"
+  ],
+  "reference_scope": "Ganak 2.8.0 deterministic; D4 archived 2024 entry, not a current-champion comparison",
+  "results": [
+    {
+      "name": "mc2024_track1_028.cnf",
+      "sha256": "2cf34de2647741a63e270e5152744cef01dd0728bd1b39b3f3cd7f54efe4bc97",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 1.1905486729992845,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.0.perfectpower.log",
+          "log_sha256": "3cf51eb5afe49343ba1b61c1cd634f3d4a445222b4e265bd84c5c5e267cf94c1"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 1.2890289150018361,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.0.previous.log",
+          "log_sha256": "a2fe56beae8abd054f323830778fecaf564911fc22629732e5ea72044ffa5d95"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 3.588418552000803,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.0.ganak.log",
+          "log_sha256": "5516751f9a2246e8ca02f3090b1ce994f07cfa52a6d693d2574f194dd91f9ef8"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 6.810325249000016,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.0.d4_2024.log",
+          "log_sha256": "b008f47471e13d6922a69f891d697d8fe79a3873753db9719e34d249cb4f95a3"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_030.cnf",
+      "sha256": "5c3eed3b0bd5a59063ab5287e1f4c758223eea00366361097d419b3df7d0a515",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 2.507236796001962,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.0.previous.log",
+          "log_sha256": "d5b6c0e9531125e0df53d220eec6b729b92e1ef5d1136985bf9709ca773ac388"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 4.959483550999721,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.0.ganak.log",
+          "log_sha256": "5c5bab71d19a09895b6cf722436486a6331512b9252629d04b2235e97a6fbd67"
+        },
+        "d4_2024": {
+          "status": "TIMEOUT",
+          "count": null,
+          "reason": null,
+          "seconds": 10.01296335599909,
+          "exit_code": -9,
+          "log": "mc2024_track1_030.cnf.0.d4_2024.log",
+          "log_sha256": "4162e220bc69b144b712f7e5385593fa8737c422be9bae742a6507dc97a6b426"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 2.281687888000306,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.0.perfectpower.log",
+          "log_sha256": "a9a5f928d81af7f12564092d8b7ed576f2d8293aeff78822310fda71df668e61"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_057.cnf",
+      "sha256": "6a1ccf53ceb33ac7946e924b4b1025e0bee9e9ddba5dba3c14424f56d71e58aa",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.43663948700123,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.0.ganak.log",
+          "log_sha256": "29c758d7de12c3c174116470298a7932edd5c42f302fa2cc8f325b4db39ba38f"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.05700660799993784,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.0.d4_2024.log",
+          "log_sha256": "daf9f14acfcba9dadf81418a18114537a1858f7dfc612928061506a1fa218d17"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.233639370999299,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.0.perfectpower.log",
+          "log_sha256": "c08e214118a11204de8f076d36d0f6afd062537ebc0e1b12e0146b2874737ff5"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 6.558699442000943,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.0.previous.log",
+          "log_sha256": "3c423a2448fa217e75817000334540e7affff2effca8b513e321989e9d31a5de"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_079.cnf",
+      "sha256": "7b2ee1b0c44544176da1977444ee94be375eb1797ac5380a652d929c6cfa5e04",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.01914668400058872,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.0.d4_2024.log",
+          "log_sha256": "08e5c9940139772a270b24a30fd4be0f3ca41580f517c32501ad0ea3801d0606"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.05850541499967221,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.0.perfectpower.log",
+          "log_sha256": "12f3202acd363cc1cfbcc6b574113ac396b1e804777aaee035c1684d2b1f3ab0"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.05713314699823968,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.0.previous.log",
+          "log_sha256": "b512950638cedf488e5ed043eb2358b4d6446528fb1520d68ff2cc8786963ea5"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.03000225900177611,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.0.ganak.log",
+          "log_sha256": "697e18ed19c7bea3d347828f5d74ae2dddb2be37e38ae3d05879a3e61f583456"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_080.cnf",
+      "sha256": "2815bad7fb0b2f665c5697b69e819d8637e7f2a505318686a2b09e761f3d1bc2",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.05275269599951571,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.0.perfectpower.log",
+          "log_sha256": "82380c369a4f65b399ba14efe26cd0dec934357bcdb61ad575fbd48d54e80874"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.05878415400002268,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.0.previous.log",
+          "log_sha256": "98af518e26ec3dc34035b93ddfc5948825c6824417baf6601c1ee119c0e6e50b"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.0164981230009289,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.0.ganak.log",
+          "log_sha256": "6c8d2b740f4576f6f0a3179095992f6f6b6d58de38c08bc3d347bc443e34349c"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.015623522998794215,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.0.d4_2024.log",
+          "log_sha256": "afcb7a911cd5ddffcaab089a43f3d84db6cc75bafb4c1b2785f04df53f757bb1"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_081.cnf",
+      "sha256": "6aab6ee6fb710e745f12651dec7dac0a73f9002a345eddd885e383b3e0032ee0",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.0528525260015158,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.0.previous.log",
+          "log_sha256": "db04486f76d2022acc88b78c10089da03148953b7ebf1b303b1c046f256c1db8"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.019768119000218576,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.0.ganak.log",
+          "log_sha256": "5c8930b3d4c11d2319380f034cd198147e93894ed36a83f48f4d09cf9048e27a"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.015782607002620352,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.0.d4_2024.log",
+          "log_sha256": "333731dca4b1abdb39bcafb508bc5d0e65befea6419331569fdcca3b98293d51"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.0556665369986149,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.0.perfectpower.log",
+          "log_sha256": "216932b4a694a15b6147af2a3dc2368105e4b30e6fa7f5d40f8756213195d25b"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_082.cnf",
+      "sha256": "b1b737af8866c4082156240069f61de910ca7397aaadf818ca342ad2a2f4709a",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.024593362002633512,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.0.ganak.log",
+          "log_sha256": "a9f33204093f3d9833b0c89f912b4561251684c455e0388063445a040b62c446"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.018118238000170095,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.0.d4_2024.log",
+          "log_sha256": "6a9af44a8418dd786cd3c739fedb2bc5aa5a7c5d563c9328fd2dbeb4ee820efe"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.0561897340012365,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.0.perfectpower.log",
+          "log_sha256": "59e4461d36f88aaa7aa5ddba19c067ad4ddbff29cac51429d35d0671e9d9b409"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.057624531000328716,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.0.previous.log",
+          "log_sha256": "547833f375e5fc2a27f4539e49eba3798d9218cd160053f11daf5a9e76fccbac"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_083.cnf",
+      "sha256": "a2eee44e748fb1666f3f8525dd572928eda7bd083a6cf5fb63653d2fd8189d12",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.016850691998115508,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.0.d4_2024.log",
+          "log_sha256": "40b9235e69346b8824db8188814468295aa87083ec7108cf69478f4452c78aa1"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.0532147209996765,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.0.perfectpower.log",
+          "log_sha256": "f1737918fe61fe16361e485a44572709f6f82e48857511527510c777738e67fb"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.05548900999929174,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.0.previous.log",
+          "log_sha256": "83b889c51afcebacb9724571811fee81d73f4489feddad464b2f53081456881f"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.023559027998999227,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.0.ganak.log",
+          "log_sha256": "69aae1e5c61c56eda837eae9a8224fc6aecd5e9685c5630249a87cab1329f82f"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_087.cnf",
+      "sha256": "f0d527d892f34b5e8c124a9b7e335e28585dd5108cfad38b298947ad424dc45e",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.05535066200172878,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.0.perfectpower.log",
+          "log_sha256": "9c2d13297ec044b81cf2e8a48a6e31b35134e701f1c5d580984ec545a8771587"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.1057827399999951,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.0.previous.log",
+          "log_sha256": "f9c4eeafbfd66c65b8036dc8147c478832c1ceabc1289615ad1d6213520c1952"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.23969633000160684,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.0.ganak.log",
+          "log_sha256": "bb57cb41eed7d423f46891679b7966c493b99d3e8ed0e8ae715aadd7346a975e"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.03664893700261018,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.0.d4_2024.log",
+          "log_sha256": "fc041da5dcfcb65d450dda46573392dd6e1fdc11febdeb5b7f83e4ec4dbe932a"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_118.cnf",
+      "sha256": "5813e77f1e7c46f9052208aea9bf502fa0554cc85d35a5d62018e6d5509416f9",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.06092439100029878,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.0.previous.log",
+          "log_sha256": "54cef6e5622e422938b7dda6e9159ec2bc242a6370b1f670a4d6def62a4ec71c"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.258075720998022,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.0.ganak.log",
+          "log_sha256": "abef95504a9f6c595cd04bb893d9e3eee7b9b240d1ca1b759fcb6052e8e9b042"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.31926588299756986,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.0.d4_2024.log",
+          "log_sha256": "867d9ca97762f275f2d3a5c13f11305554b142703a770f2ea0e6e0587213ed9b"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.06423981500120135,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.0.perfectpower.log",
+          "log_sha256": "2c6505e365ff1655431217c9697a7bcc9f167c601d2aa15fd0aab667b931759b"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_183.cnf",
+      "sha256": "6e0a085b637d36812d596ec5c485c77f7abb0e1024473b765d5ec7e6a6ff7f86",
+      "trial": 0,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 1.164092940001865,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.0.ganak.log",
+          "log_sha256": "8e945d722fd15cf37f49438e1494e3148bdfff58baa9c6703cf14d6f00b48934"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.4626505160013039,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.0.d4_2024.log",
+          "log_sha256": "4f4770151eb41c1a73a3b5e0938fe69f817020bcbad4caa9a441a928d36e18c4"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.5688366249996761,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.0.perfectpower.log",
+          "log_sha256": "7600eb95bc31c8003f6fe91dbedb7cc1705f55480f00d276513ba4d7ca8976e8"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.7667646570007491,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.0.previous.log",
+          "log_sha256": "ca02f240c995f08dd5e7204bb2177d12626a6ca8367d466dae275f04a02dc259"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_028.cnf",
+      "sha256": "2cf34de2647741a63e270e5152744cef01dd0728bd1b39b3f3cd7f54efe4bc97",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 1.2463341530019534,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.1.previous.log",
+          "log_sha256": "a2fe56beae8abd054f323830778fecaf564911fc22629732e5ea72044ffa5d95"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 3.360988169002667,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.1.ganak.log",
+          "log_sha256": "c2ed7e0c0d8e11c41232cb9c17daabf2baedaaebbdd17c0e65618aafd6b88ce4"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 6.767399467000359,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.1.d4_2024.log",
+          "log_sha256": "4834ba68714591638ffc08f106480710002c749e9a8ea04f8011563fad33422b"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 1.2156602980030584,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.1.perfectpower.log",
+          "log_sha256": "3cf51eb5afe49343ba1b61c1cd634f3d4a445222b4e265bd84c5c5e267cf94c1"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_030.cnf",
+      "sha256": "5c3eed3b0bd5a59063ab5287e1f4c758223eea00366361097d419b3df7d0a515",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 4.852623724997102,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.1.ganak.log",
+          "log_sha256": "25f803e54caa137f265fc61e17eee9870b3083f16ce97a9f65c7ac09d5f3472a"
+        },
+        "d4_2024": {
+          "status": "TIMEOUT",
+          "count": null,
+          "reason": null,
+          "seconds": 10.013237806000689,
+          "exit_code": -9,
+          "log": "mc2024_track1_030.cnf.1.d4_2024.log",
+          "log_sha256": "906eaea67ce3905eb6069a91584012459f52cbc1e9344572fbb35b51d63abcff"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 2.309032825000031,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.1.perfectpower.log",
+          "log_sha256": "a9a5f928d81af7f12564092d8b7ed576f2d8293aeff78822310fda71df668e61"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 2.49658538100266,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.1.previous.log",
+          "log_sha256": "d5b6c0e9531125e0df53d220eec6b729b92e1ef5d1136985bf9709ca773ac388"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_057.cnf",
+      "sha256": "6a1ccf53ceb33ac7946e924b4b1025e0bee9e9ddba5dba3c14424f56d71e58aa",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.05406930200115312,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.1.d4_2024.log",
+          "log_sha256": "0092bbde3bb414205f7455183021cd84cc4535e746faa70c2f16fb0bb10d52d6"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.2416684689997055,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.1.perfectpower.log",
+          "log_sha256": "c08e214118a11204de8f076d36d0f6afd062537ebc0e1b12e0146b2874737ff5"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 6.716116089999559,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.1.previous.log",
+          "log_sha256": "3c423a2448fa217e75817000334540e7affff2effca8b513e321989e9d31a5de"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.41448480100007146,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.1.ganak.log",
+          "log_sha256": "02f5bb4d7e424afa34bb9b722909c45f1cddbd99323302c87deae2962f777680"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_079.cnf",
+      "sha256": "7b2ee1b0c44544176da1977444ee94be375eb1797ac5380a652d929c6cfa5e04",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.060233451000385685,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.1.perfectpower.log",
+          "log_sha256": "12f3202acd363cc1cfbcc6b574113ac396b1e804777aaee035c1684d2b1f3ab0"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.056134174003091175,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.1.previous.log",
+          "log_sha256": "b512950638cedf488e5ed043eb2358b4d6446528fb1520d68ff2cc8786963ea5"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.029733104001934407,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.1.ganak.log",
+          "log_sha256": "9cbe27d76d79456126246ee5a9dfbcc405cfd341029c3f58c8ba26aab830f5d0"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.021531270998821128,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.1.d4_2024.log",
+          "log_sha256": "b30ee07a67988cec26630e0655ad082f7d923eff2d8feca3bfc3f50cf42eb266"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_080.cnf",
+      "sha256": "2815bad7fb0b2f665c5697b69e819d8637e7f2a505318686a2b09e761f3d1bc2",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.05498498199813184,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.1.previous.log",
+          "log_sha256": "98af518e26ec3dc34035b93ddfc5948825c6824417baf6601c1ee119c0e6e50b"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.017150619998574257,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.1.ganak.log",
+          "log_sha256": "7e10ca7e2391c341acd9971551df82424aa002b2b6a1c2794f23516093a9ccb8"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.016461789000459248,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.1.d4_2024.log",
+          "log_sha256": "c88466fc612c32032872605265ef93567adc545afaa7288c14240f67b5af138f"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.0586722150001151,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.1.perfectpower.log",
+          "log_sha256": "82380c369a4f65b399ba14efe26cd0dec934357bcdb61ad575fbd48d54e80874"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_081.cnf",
+      "sha256": "6aab6ee6fb710e745f12651dec7dac0a73f9002a345eddd885e383b3e0032ee0",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.01957484100057627,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.1.ganak.log",
+          "log_sha256": "6ab0d85e7beee1bf346f49fc18a4b3e41a9c0c6663bb4f00a4963d0791659f6c"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.01734421800210839,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.1.d4_2024.log",
+          "log_sha256": "f1dad78bcbef64edf9d60b87dbe3ffd04de3066cb83da6229cfcc9429a011682"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.05855388899726677,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.1.perfectpower.log",
+          "log_sha256": "216932b4a694a15b6147af2a3dc2368105e4b30e6fa7f5d40f8756213195d25b"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.05801147100282833,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.1.previous.log",
+          "log_sha256": "db04486f76d2022acc88b78c10089da03148953b7ebf1b303b1c046f256c1db8"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_082.cnf",
+      "sha256": "b1b737af8866c4082156240069f61de910ca7397aaadf818ca342ad2a2f4709a",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.017699589996482246,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.1.d4_2024.log",
+          "log_sha256": "dc3bbd0bd96d0802296cb903a92be70633844c433a09a5120e053961671c2b55"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.05787629100086633,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.1.perfectpower.log",
+          "log_sha256": "59e4461d36f88aaa7aa5ddba19c067ad4ddbff29cac51429d35d0671e9d9b409"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.06309053700169898,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.1.previous.log",
+          "log_sha256": "547833f375e5fc2a27f4539e49eba3798d9218cd160053f11daf5a9e76fccbac"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.02444287400066969,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.1.ganak.log",
+          "log_sha256": "5361872036f2406c8ba6dd13c16183f3177002a29073c63e8f12f8d1d4dc4882"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_083.cnf",
+      "sha256": "a2eee44e748fb1666f3f8525dd572928eda7bd083a6cf5fb63653d2fd8189d12",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.06347732799986261,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.1.perfectpower.log",
+          "log_sha256": "f1737918fe61fe16361e485a44572709f6f82e48857511527510c777738e67fb"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.055929174999619136,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.1.previous.log",
+          "log_sha256": "83b889c51afcebacb9724571811fee81d73f4489feddad464b2f53081456881f"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.023350993997155456,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.1.ganak.log",
+          "log_sha256": "93074a856314198fdcb3801cef42be57a368b54d84eae58b0f29b6a9b338f8fe"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.01649240599726909,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.1.d4_2024.log",
+          "log_sha256": "360b5da55cb422803df61ae6e7785a4ecd8614c286e9f0191382ade4eb350fa3"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_087.cnf",
+      "sha256": "f0d527d892f34b5e8c124a9b7e335e28585dd5108cfad38b298947ad424dc45e",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.1185341909986164,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.1.previous.log",
+          "log_sha256": "f9c4eeafbfd66c65b8036dc8147c478832c1ceabc1289615ad1d6213520c1952"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.2702034809990437,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.1.ganak.log",
+          "log_sha256": "5deea424979c8047d21d067ad0dfb87b480a7b0b6798f32fcb742bb0c43fa2e5"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.038779329999670153,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.1.d4_2024.log",
+          "log_sha256": "f69ce7a50eeec91618f1fa0224a0063d0a4bf5c33348c8996d0c53d47bb9245c"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.06201849599892739,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.1.perfectpower.log",
+          "log_sha256": "9c2d13297ec044b81cf2e8a48a6e31b35134e701f1c5d580984ec545a8771587"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_118.cnf",
+      "sha256": "5813e77f1e7c46f9052208aea9bf502fa0554cc85d35a5d62018e6d5509416f9",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.2681882120014052,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.1.ganak.log",
+          "log_sha256": "9f6c78cba3bdc4a9587f3fe1699bbb77ac0f1f02c4e0fee0bf67a3f48ce04e6b"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.3321203829982551,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.1.d4_2024.log",
+          "log_sha256": "abd7f7f575d9ac85edf68bb8dcfa3b1dae11349d18da54350a425c7031b5baa6"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.0708913800008304,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.1.perfectpower.log",
+          "log_sha256": "2c6505e365ff1655431217c9697a7bcc9f167c601d2aa15fd0aab667b931759b"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.06466022599852295,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.1.previous.log",
+          "log_sha256": "54cef6e5622e422938b7dda6e9159ec2bc242a6370b1f670a4d6def62a4ec71c"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_183.cnf",
+      "sha256": "6e0a085b637d36812d596ec5c485c77f7abb0e1024473b765d5ec7e6a6ff7f86",
+      "trial": 1,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.4622240829994553,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.1.d4_2024.log",
+          "log_sha256": "d13c6a33535b124dcd496b44f947616818b6663c0ce9b3e2fc44fe7bb966f3c4"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.5078589360018668,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.1.perfectpower.log",
+          "log_sha256": "7600eb95bc31c8003f6fe91dbedb7cc1705f55480f00d276513ba4d7ca8976e8"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.7639788099986617,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.1.previous.log",
+          "log_sha256": "ca02f240c995f08dd5e7204bb2177d12626a6ca8367d466dae275f04a02dc259"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 1.1778394100001606,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.1.ganak.log",
+          "log_sha256": "30f099387d44653e82fd588d5f7a8bfc6935227bcb50b86f5f9de25b334af25e"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_028.cnf",
+      "sha256": "2cf34de2647741a63e270e5152744cef01dd0728bd1b39b3f3cd7f54efe4bc97",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 3.3970675130003656,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.2.ganak.log",
+          "log_sha256": "41f09bfd0694bea848f306a17d08f2a4b9c1b6b3673e714415b3dc66348ee615"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 6.908901049002452,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.2.d4_2024.log",
+          "log_sha256": "d0cb13af51ad010e940421ea75cae8a893d78748843e3058a5329020dd1cf7b0"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 1.2391428619994258,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.2.perfectpower.log",
+          "log_sha256": "3cf51eb5afe49343ba1b61c1cd634f3d4a445222b4e265bd84c5c5e267cf94c1"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "134746112245856",
+          "reason": null,
+          "seconds": 1.2742025709994778,
+          "exit_code": 0,
+          "log": "mc2024_track1_028.cnf.2.previous.log",
+          "log_sha256": "a2fe56beae8abd054f323830778fecaf564911fc22629732e5ea72044ffa5d95"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_030.cnf",
+      "sha256": "5c3eed3b0bd5a59063ab5287e1f4c758223eea00366361097d419b3df7d0a515",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "TIMEOUT",
+          "count": null,
+          "reason": null,
+          "seconds": 10.014014563999808,
+          "exit_code": -9,
+          "log": "mc2024_track1_030.cnf.2.d4_2024.log",
+          "log_sha256": "e27da68d3f368e9346c86f6e580dca07d0b18dad2c34ae53273de5a775095514"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 2.4225347230021725,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.2.perfectpower.log",
+          "log_sha256": "a9a5f928d81af7f12564092d8b7ed576f2d8293aeff78822310fda71df668e61"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 2.499917604000075,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.2.previous.log",
+          "log_sha256": "d5b6c0e9531125e0df53d220eec6b729b92e1ef5d1136985bf9709ca773ac388"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "1115259056499565",
+          "reason": null,
+          "seconds": 5.00457717700192,
+          "exit_code": 0,
+          "log": "mc2024_track1_030.cnf.2.ganak.log",
+          "log_sha256": "c6f26f86e87cc8cce86f85b8e7305240ccf86454e06f4d8c1e6162779559a8ce"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_057.cnf",
+      "sha256": "6a1ccf53ceb33ac7946e924b4b1025e0bee9e9ddba5dba3c14424f56d71e58aa",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.24377541599824326,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.2.perfectpower.log",
+          "log_sha256": "c08e214118a11204de8f076d36d0f6afd062537ebc0e1b12e0146b2874737ff5"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 6.7073713030004,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.2.previous.log",
+          "log_sha256": "3c423a2448fa217e75817000334540e7affff2effca8b513e321989e9d31a5de"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.41403643200101214,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.2.ganak.log",
+          "log_sha256": "316082f979ec82e39dbaaf60f7766027f66e91d934230509356465773d2263ab"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+          "reason": null,
+          "seconds": 0.06037766200097394,
+          "exit_code": 0,
+          "log": "mc2024_track1_057.cnf.2.d4_2024.log",
+          "log_sha256": "1b666ab5385012eec3db8f7ce3a5b0792041132830aef02167c860d3e4958a3d"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_079.cnf",
+      "sha256": "7b2ee1b0c44544176da1977444ee94be375eb1797ac5380a652d929c6cfa5e04",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.05818953400012106,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.2.previous.log",
+          "log_sha256": "b512950638cedf488e5ed043eb2358b4d6446528fb1520d68ff2cc8786963ea5"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.02812513000026229,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.2.ganak.log",
+          "log_sha256": "b0328b7fd2270265910148115039fd1c0fb9156f8aa565702e8544cad302a7ff"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.018664715000340948,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.2.d4_2024.log",
+          "log_sha256": "bc0345a31e55af70e433ac3c1ed0fa6144c6ebe0370cce2af2cc1d3cb40126ba"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "316912650057057350374175801344",
+          "reason": null,
+          "seconds": 0.05505226899913396,
+          "exit_code": 0,
+          "log": "mc2024_track1_079.cnf.2.perfectpower.log",
+          "log_sha256": "12f3202acd363cc1cfbcc6b574113ac396b1e804777aaee035c1684d2b1f3ab0"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_080.cnf",
+      "sha256": "2815bad7fb0b2f665c5697b69e819d8637e7f2a505318686a2b09e761f3d1bc2",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.018409080999845173,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.2.ganak.log",
+          "log_sha256": "01f2726fb438183b363307899a22bad2ff8a4fe6715b912e1f6ff97ab3af8108"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.014514742000756087,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.2.d4_2024.log",
+          "log_sha256": "cb44cd2f7ef0395165c58fc598f8af3da11d49846586f455fd71fd368847bcba"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.06087519599896041,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.2.perfectpower.log",
+          "log_sha256": "82380c369a4f65b399ba14efe26cd0dec934357bcdb61ad575fbd48d54e80874"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "1125899906842624",
+          "reason": null,
+          "seconds": 0.05199949600137188,
+          "exit_code": 0,
+          "log": "mc2024_track1_080.cnf.2.previous.log",
+          "log_sha256": "98af518e26ec3dc34035b93ddfc5948825c6824417baf6601c1ee119c0e6e50b"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_081.cnf",
+      "sha256": "6aab6ee6fb710e745f12651dec7dac0a73f9002a345eddd885e383b3e0032ee0",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.014952354998968076,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.2.d4_2024.log",
+          "log_sha256": "9e1b4619271c8a2e47ccbde40131a3ba894790ba7fe645395c839aee1dd55966"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.055473668999184156,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.2.perfectpower.log",
+          "log_sha256": "216932b4a694a15b6147af2a3dc2368105e4b30e6fa7f5d40f8756213195d25b"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.06699542199930875,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.2.previous.log",
+          "log_sha256": "db04486f76d2022acc88b78c10089da03148953b7ebf1b303b1c046f256c1db8"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "72057594037927936",
+          "reason": null,
+          "seconds": 0.02027499500036356,
+          "exit_code": 0,
+          "log": "mc2024_track1_081.cnf.2.ganak.log",
+          "log_sha256": "9265e8eff0eacac21bbddf3f1909d1f0e57819c4174655cdcb06ff4b35c735a3"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_082.cnf",
+      "sha256": "b1b737af8866c4082156240069f61de910ca7397aaadf818ca342ad2a2f4709a",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.061604238999279914,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.2.perfectpower.log",
+          "log_sha256": "59e4461d36f88aaa7aa5ddba19c067ad4ddbff29cac51429d35d0671e9d9b409"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.055757750000339,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.2.previous.log",
+          "log_sha256": "547833f375e5fc2a27f4539e49eba3798d9218cd160053f11daf5a9e76fccbac"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.03255699700093828,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.2.ganak.log",
+          "log_sha256": "b8a230933a58a7f2d5964fc3fe87220bbfe15b39aaaf37342a1d5fbd56badb0d"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "9671406556917033397649408",
+          "reason": null,
+          "seconds": 0.017665313000179594,
+          "exit_code": 0,
+          "log": "mc2024_track1_082.cnf.2.d4_2024.log",
+          "log_sha256": "3d8367c1228ddb6172fa5b9bb9602d96f5f73ea39a5aa5fe63a4ab0646253099"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_083.cnf",
+      "sha256": "a2eee44e748fb1666f3f8525dd572928eda7bd083a6cf5fb63653d2fd8189d12",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "previous": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.0548222090001218,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.2.previous.log",
+          "log_sha256": "83b889c51afcebacb9724571811fee81d73f4489feddad464b2f53081456881f"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.023794079999788664,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.2.ganak.log",
+          "log_sha256": "b809df8f63072ed824a736e63431523aec8b78fd086ec94e1c01c9e0436ad51e"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.017316878998826724,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.2.d4_2024.log",
+          "log_sha256": "019ca3d80a503233d32a92679e9d76b8d290e1c8ddc1311881d4cbf5112a5f28"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "37778931862957161709568",
+          "reason": null,
+          "seconds": 0.06809695800257032,
+          "exit_code": 0,
+          "log": "mc2024_track1_083.cnf.2.perfectpower.log",
+          "log_sha256": "f1737918fe61fe16361e485a44572709f6f82e48857511527510c777738e67fb"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_087.cnf",
+      "sha256": "f0d527d892f34b5e8c124a9b7e335e28585dd5108cfad38b298947ad424dc45e",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "ganak": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.26443179399939254,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.2.ganak.log",
+          "log_sha256": "464c4bc0b0139f1d50aac5b380435a1316543e9f9fdd75911785539015073aa0"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.040747744002146646,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.2.d4_2024.log",
+          "log_sha256": "249cfd1df89f1a0813497eec86ee204471749848f721e533deb055bf458d64b9"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.06354347699743812,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.2.perfectpower.log",
+          "log_sha256": "9c2d13297ec044b81cf2e8a48a6e31b35134e701f1c5d580984ec545a8771587"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "793972888223416121842704332629248",
+          "reason": null,
+          "seconds": 0.11167436899995664,
+          "exit_code": 0,
+          "log": "mc2024_track1_087.cnf.2.previous.log",
+          "log_sha256": "f9c4eeafbfd66c65b8036dc8147c478832c1ceabc1289615ad1d6213520c1952"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_118.cnf",
+      "sha256": "5813e77f1e7c46f9052208aea9bf502fa0554cc85d35a5d62018e6d5509416f9",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.35159848099647206,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.2.d4_2024.log",
+          "log_sha256": "499cfae37878e3fa95731e725dff0036571ef0b2a7a1e1da88e48fb0f639b837"
+        },
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.08145716900253319,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.2.perfectpower.log",
+          "log_sha256": "2c6505e365ff1655431217c9697a7bcc9f167c601d2aa15fd0aab667b931759b"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.06910863200027961,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.2.previous.log",
+          "log_sha256": "54cef6e5622e422938b7dda6e9159ec2bc242a6370b1f670a4d6def62a4ec71c"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "17528422464",
+          "reason": null,
+          "seconds": 0.2836598120011331,
+          "exit_code": 0,
+          "log": "mc2024_track1_118.cnf.2.ganak.log",
+          "log_sha256": "91477d83ab6b2d892fff2592949ba567066d3dfb2019dd720e537b78330c0e7c"
+        }
+      },
+      "agreement": "MATCH"
+    },
+    {
+      "name": "mc2024_track1_183.cnf",
+      "sha256": "6e0a085b637d36812d596ec5c485c77f7abb0e1024473b765d5ec7e6a6ff7f86",
+      "trial": 2,
+      "overlap_mc2024": null,
+      "solvers": {
+        "perfectpower": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.5889343140006531,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.2.perfectpower.log",
+          "log_sha256": "7600eb95bc31c8003f6fe91dbedb7cc1705f55480f00d276513ba4d7ca8976e8"
+        },
+        "previous": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.8345150080021995,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.2.previous.log",
+          "log_sha256": "ca02f240c995f08dd5e7204bb2177d12626a6ca8367d466dae275f04a02dc259"
+        },
+        "ganak": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 1.165246078002383,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.2.ganak.log",
+          "log_sha256": "420eed6864612a719992a8bec4bef4e715d8fe63bdf7f517e52f2a3bbe7b940e"
+        },
+        "d4_2024": {
+          "status": "EXACT",
+          "count": "3383344922146277907",
+          "reason": null,
+          "seconds": 0.4664422989990271,
+          "exit_code": 0,
+          "log": "mc2024_track1_183.cnf.2.d4_2024.log",
+          "log_sha256": "403b0d7d13deaee1e6c71bae9e8d758a7f4fc762cc592326e904b01df741606a"
+        }
+      },
+      "agreement": "MATCH"
+    }
+  ],
+  "completed": true,
+  "summary": {
+    "perfectpower": {
+      "outcomes": {
+        "EXACT": 33
+      },
+      "par2_seconds": 14.317066007002722
+    },
+    "previous": {
+      "outcomes": {
+        "EXACT": 33
+      },
+      "par2_seconds": 35.04923339701418
+    },
+    "ganak": {
+      "outcomes": {
+        "EXACT": 33
+      },
+      "par2_seconds": 31.87158679201457
+    },
+    "d4_2024": {
+      "outcomes": {
+        "EXACT": 30,
+        "TIMEOUT": 3
+      },
+      "par2_seconds": 83.4267220149959
+    },
+    "paired_change": {
+      "gained": [],
+      "lost": []
+    }
+  },
+  "finished_utc": "2026-10-10T23:40:00.701516+00:00"
+}

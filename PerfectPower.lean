@@ -473,6 +473,8 @@ import PerfectPower.TwoIsogenyDual
 import PerfectPower.DescentRankBridge
 
 import PerfectPower.BlastAlignment
+import PerfectPower.BlastRecurrence
+import PerfectPower.BlastSourceReplay
 import PerfectPower.Generated.BlastAlignmentSOE
 import PerfectPower.Generated.BlastMotifSOE
 import PerfectPower.Generated.BlastPathCounts

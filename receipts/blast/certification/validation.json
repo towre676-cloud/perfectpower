@@ -1,0 +1,41 @@
+{
+  "accepted": true,
+  "annotation_features": 3120,
+  "annotation_records": 931,
+  "browser": {
+    "complete_receipt_download_matches": true,
+    "desktop": true,
+    "horizontal_overflow": false,
+    "javascript_errors": 0,
+    "missed_pair_filter": 1236,
+    "mobile_width": 390
+  },
+  "complete_pair_count": 2790,
+  "database_records": 930,
+  "executable_audited_hsps": {
+    "11": 4363,
+    "28": 624,
+    "7": 157266
+  },
+  "focused_python_tests": 121,
+  "fresh_lean_modules": 16,
+  "literal_kernel_hsps": 624,
+  "python": "3.12.14",
+  "reference_strand_checks": 246,
+  "schema": "pp-blast-certification-validation/1",
+  "scope": "focused BLAST/machinery regression suite and listed fresh Lean modules; not the entire historical PerfectPower release verification",
+  "source_sha256": {
+    "native/blast_reference.cpp": "85fd1847baed0d0678ee14699403a66b3b2d974a384fe6224a7c99d5a1545039",
+    "python/develop_blast_certification.py": "21fd8f6ecb29368f4412f760de016b307ab1a4029deccad6b5e71e0f6dfa3a7a",
+    "python/generate_blast_source_certificates.py": "d395abb7cb36b3b56abf12b0aec172650490e817b708d6043c13184a125cc009",
+    "python/perfectpower/blast_annotation.py": "1b3de7ca744a506997b4121b1711b85810d3f1e2facb8dd2b5f2578ee233f1f0",
+    "python/perfectpower/blast_certification.py": "c716a872b777271e733ab1441fc9604678b7602c6b095f755faac308717ddcd1",
+    "python/perfectpower/blast_certification_report.py": "e927a6258bf9c502c28337784a14180f03303d5b5245144209bff94a00a75d7f",
+    "python/perfectpower/blast_cli.py": "f6ecd6dc80303673fe3751c136c6b78a7b9d3026b2198be52edcf00c65d8ddba",
+    "python/perfectpower/blast_io.py": "b11ae63dffe9d0faf1695070cb63740da24c7d4f6f29a2257556297e17e53151",
+    "python/perfectpower/blast_recall.py": "e096cf04e9da6e7f096e406b396386f65ec918b9357b29e9cb216d06e9de57ff",
+    "python/tests/test_blast_certification.py": "54d5952031c5a48b31d93b0b14e651f31ff2a5378d4e605548511f590a50a669",
+    "scripts/check_blast_certification.py": "d80d5be989e5c92766011dd010fd1a7d6ce5d2d15fd4825e65299d52330e93b4"
+  },
+  "test_log": "121 focused tests passed, including prior alignment/mining/native/graph/series regressions"
+}

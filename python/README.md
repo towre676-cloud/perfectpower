@@ -207,3 +207,6 @@ See [the Michor monograph](../docs/MICHOR_DIFFERENTIAL_GEOMETRY_MONOGRAPH.md),
 [the interactive viewer](../web/michor_geometry/index.html), and `receipts/michor_geometry`.
 Chart comparisons restrict paths to the certified domain; interval ODE existence uses classical
 Picard theory and is not Lean formalized. Numerical RK4 trajectories remain uncertified.
+Exact CNF counting, conditional ranks and uniform samples: see [the model-counting monograph](../docs/MODEL_COUNTING_MONOGRAPH.md). The native CNF backend needs a C++17 compiler and Boost headers.
+
+Version 0.10.2 extends exact counting with functional gate projection and sparse elimination planning. The [structural study](../docs/MODEL_COUNTING_STRUCTURAL_MONOGRAPH.md) records the paired baseline, complete competition scopes, repeated regressions and implementation limits.

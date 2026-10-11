@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "binomial_coefficient_check": true,
+      "enumeration_checked": true,
+      "enumeration_median_seconds": 5.674100248143077e-05,
+      "enumeration_seconds": [
+        5.674100248143077e-05,
+        4.413499846123159e-05,
+        9.652600419940427e-05
+      ],
+      "index_median_seconds": 0.00038741699972888455,
+      "index_seconds": [
+        0.0012313609986449592,
+        0.00033933499798877165,
+        0.00038741699972888455
+      ],
+      "polynomial_terms": 36,
+      "population": "255",
+      "vertices": 8,
+      "work_cells": 120
+    },
+    {
+      "binomial_coefficient_check": true,
+      "enumeration_checked": true,
+      "enumeration_median_seconds": 0.0007822139959898777,
+      "enumeration_seconds": [
+        0.0007468960029655136,
+        0.0012025149990222417,
+        0.0007822139959898777
+      ],
+      "index_median_seconds": 0.0008303539943881333,
+      "index_seconds": [
+        0.0008303539943881333,
+        0.0008806620026007295,
+        0.0007130450030672364
+      ],
+      "polynomial_terms": 78,
+      "population": "4095",
+      "vertices": 12,
+      "work_cells": 364
+    },
+    {
+      "binomial_coefficient_check": true,
+      "enumeration_checked": true,
+      "enumeration_median_seconds": 0.01749075800034916,
+      "enumeration_seconds": [
+        0.013480793000780977,
+        0.01749075800034916,
+        0.018018032002146356
+      ],
+      "index_median_seconds": 0.0015321570026571862,
+      "index_seconds": [
+        0.0015321570026571862,
+        0.0014416190024348907,
+        0.001835492003010586
+      ],
+      "polynomial_terms": 136,
+      "population": "65535",
+      "vertices": 16,
+      "work_cells": 816
+    },
+    {
+      "binomial_coefficient_check": true,
+      "enumeration_checked": false,
+      "enumeration_status": "not attempted; exponential population",
+      "index_median_seconds": 0.030449274003331084,
+      "index_seconds": [
+        0.029665710993867833,
+        0.030449274003331084,
+        0.035835456001223065
+      ],
+      "polynomial_terms": 820,
+      "population": "1099511627775",
+      "vertices": 40,
+      "work_cells": 11480
+    },
+    {
+      "binomial_coefficient_check": true,
+      "enumeration_checked": false,
+      "enumeration_status": "not attempted; exponential population",
+      "index_median_seconds": 0.1895951149999746,
+      "index_seconds": [
+        0.1895951149999746,
+        0.21226495299924864,
+        0.16027447600208689
+      ],
+      "polynomial_terms": 3240,
+      "population": "1208925819614629174706175",
+      "vertices": 80,
+      "work_cells": 88560
+    }
+  ],
+  "cpu": "x86_64",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "schema": "pp-blast-benchmark/1",
+  "scope": "same synthetic all-chain population for enumeration/index; process-local timings, no BLAST speedup claim",
+  "seed": 20261012,
+  "trials": 3
+}

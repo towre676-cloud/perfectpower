@@ -1,0 +1,3853 @@
+{
+  "schema": "pp-cnf-overlap-analysis/1",
+  "receipt_sha256": "b568ee40b21927dd157b8a2fee83d6487c0d29f67927608fb418f01aa7e59590",
+  "overlap_sha256": "cd0fc54dd03bb98c6692330f6f01573f0df179f7642bb40f5ee5fa887af073ff",
+  "scope": "Secondary strata determined by normalized overlap; no-match does not establish semantic or family novelty; primary full-corpus ledger remains unchanged",
+  "strata": {
+    "normalized_match": {
+      "instances": 52,
+      "summary": {
+        "perfectpower": {
+          "outcomes": {
+            "EXACT": 3,
+            "TIMEOUT": 49
+          },
+          "par2_seconds": 493.49696432600103
+        },
+        "previous": {
+          "outcomes": {
+            "EXACT": 3,
+            "TIMEOUT": 49
+          },
+          "par2_seconds": 493.9032135339985
+        },
+        "ganak": {
+          "outcomes": {
+            "EXACT": 3,
+            "TIMEOUT": 49
+          },
+          "par2_seconds": 498.2252402690028
+        },
+        "d4_2024": {
+          "outcomes": {
+            "EXACT": 4,
+            "TIMEOUT": 48
+          },
+          "par2_seconds": 490.9802998450068
+        },
+        "paired_change": {
+          "gained": [],
+          "lost": []
+        }
+      },
+      "comparisons": [
+        {
+          "baseline": "previous",
+          "instances": 52,
+          "seed": 4269,
+          "bootstrap_resamples": 5000,
+          "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+          "coverage_delta": 0,
+          "coverage_delta_95_percent_interval": [
+            0,
+            0
+          ],
+          "par2_seconds_saved": 0.4062492079974618,
+          "par2_saved_95_percent_interval": [
+            0.0,
+            1.1838604749937076
+          ],
+          "jointly_solved_instances": 3,
+          "jointly_solved_geometric_speedup": 1.0642809893739802,
+          "jointly_solved_speedup_95_percent_interval": [
+            1.003587051337966,
+            1.1683883434415232
+          ],
+          "speedup_bootstrap_defined_resamples": 4773,
+          "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+          "cases": [
+            {
+              "name": "mc2025_track1_003.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_012.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_020.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_022.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_024.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_025.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.028079381340793
+            },
+            {
+              "name": "mc2025_track1_027.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.1683883434415232
+            },
+            {
+              "name": "mc2025_track1_030.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_038.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_039.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_054.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_055.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_056.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_059.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_060.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_065.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.003587051337966
+            },
+            {
+              "name": "mc2025_track1_081.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_082.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_085.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_089.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_090.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_091.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_092.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_094.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_095.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_096.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_097.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_099.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_100.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_101.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_102.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_103.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_104.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_105.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_107.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_114.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_123.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_125.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_126.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_127.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_148.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_149.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_150.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_152.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_153.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_154.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_155.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_156.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_172.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_179.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_180.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_183.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            }
+          ]
+        },
+        {
+          "baseline": "ganak",
+          "instances": 52,
+          "seed": 4269,
+          "bootstrap_resamples": 5000,
+          "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+          "coverage_delta": 0,
+          "coverage_delta_95_percent_interval": [
+            0,
+            0
+          ],
+          "par2_seconds_saved": 4.72827594300179,
+          "par2_saved_95_percent_interval": [
+            -0.06428135000169277,
+            12.12747995900645
+          ],
+          "jointly_solved_instances": 3,
+          "jointly_solved_geometric_speedup": 1.3684759318552961,
+          "jointly_solved_speedup_95_percent_interval": [
+            0.4293352758393622,
+            2.7175674817319533
+          ],
+          "speedup_bootstrap_defined_resamples": 4773,
+          "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+          "cases": [
+            {
+              "name": "mc2025_track1_003.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_012.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_020.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_022.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_024.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_025.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 2.7175674817319533
+            },
+            {
+              "name": "mc2025_track1_027.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 2.1965170589636975
+            },
+            {
+              "name": "mc2025_track1_030.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_038.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_039.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_054.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_055.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_056.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_059.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_060.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_065.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.4293352758393622
+            },
+            {
+              "name": "mc2025_track1_081.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_082.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_085.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_089.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_090.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_091.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_092.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_094.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_095.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_096.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_097.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_099.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_100.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_101.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_102.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_103.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_104.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_105.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_107.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_114.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_123.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_125.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_126.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_127.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_148.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_149.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_150.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_152.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_153.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_154.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_155.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_156.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_172.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_179.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_180.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_183.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            }
+          ]
+        },
+        {
+          "baseline": "d4_2024",
+          "instances": 52,
+          "seed": 4269,
+          "bootstrap_resamples": 5000,
+          "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+          "coverage_delta": -1,
+          "coverage_delta_95_percent_interval": [
+            -5,
+            3
+          ],
+          "par2_seconds_saved": -2.5166644809942227,
+          "par2_saved_95_percent_interval": [
+            -32.258183655983885,
+            28.55825325600381
+          ],
+          "jointly_solved_instances": 1,
+          "jointly_solved_geometric_speedup": 0.3149414891317919,
+          "jointly_solved_speedup_95_percent_interval": [
+            0.3149414891317919,
+            0.3149414891317919
+          ],
+          "speedup_bootstrap_defined_resamples": 3148,
+          "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+          "cases": [
+            {
+              "name": "mc2025_track1_003.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_012.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_020.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_022.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_024.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_025.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_027.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_030.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_038.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_039.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_054.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_055.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_056.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_059.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_060.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_065.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.3149414891317919
+            },
+            {
+              "name": "mc2025_track1_081.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_082.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_085.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_089.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_090.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_091.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_092.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_094.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_095.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_096.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_097.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_099.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_100.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_101.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_102.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_103.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_104.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_105.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_107.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_114.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_123.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_125.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_126.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_127.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_148.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_149.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_150.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_152.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_153.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_154.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_155.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_156.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_172.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_179.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_180.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_183.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            }
+          ]
+        }
+      ]
+    },
+    "no_normalized_match": {
+      "instances": 148,
+      "summary": {
+        "perfectpower": {
+          "outcomes": {
+            "EXACT": 10,
+            "TIMEOUT": 128,
+            "WORK_LIMIT": 10
+          },
+          "par2_seconds": 1388.407133820012
+        },
+        "previous": {
+          "outcomes": {
+            "EXACT": 8,
+            "TIMEOUT": 130,
+            "WORK_LIMIT": 10
+          },
+          "par2_seconds": 1406.0830096849932
+        },
+        "ganak": {
+          "outcomes": {
+            "EXACT": 18,
+            "TIMEOUT": 130
+          },
+          "par2_seconds": 1318.508603133003
+        },
+        "d4_2024": {
+          "outcomes": {
+            "EXACT": 17,
+            "TIMEOUT": 131
+          },
+          "par2_seconds": 1317.4197000690037
+        },
+        "paired_change": {
+          "gained": [
+            "mc2025_track1_042.cnf",
+            "mc2025_track1_076.cnf"
+          ],
+          "lost": []
+        }
+      },
+      "comparisons": [
+        {
+          "baseline": "previous",
+          "instances": 148,
+          "seed": 4269,
+          "bootstrap_resamples": 5000,
+          "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+          "coverage_delta": 2,
+          "coverage_delta_95_percent_interval": [
+            0,
+            5
+          ],
+          "par2_seconds_saved": 17.675875864981208,
+          "par2_saved_95_percent_interval": [
+            0.9551280299856444,
+            42.708428138983436
+          ],
+          "jointly_solved_instances": 8,
+          "jointly_solved_geometric_speedup": 1.3966213380102743,
+          "jointly_solved_speedup_95_percent_interval": [
+            1.075981519514398,
+            2.025579718164889
+          ],
+          "speedup_bootstrap_defined_resamples": 4998,
+          "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+          "cases": [
+            {
+              "name": "mc2025_track1_000.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_001.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_002.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_004.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_005.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_006.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_007.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_008.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_009.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_010.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_011.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_013.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_014.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_015.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_016.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_017.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_018.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_019.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_021.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_023.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_026.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_028.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_029.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_031.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_032.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_033.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_034.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_035.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_036.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_037.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_040.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_041.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_042.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_043.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_044.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 3.9127030404603755
+            },
+            {
+              "name": "mc2025_track1_045.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_046.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_047.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_048.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_049.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_050.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_051.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_052.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_053.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_057.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_058.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_061.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_062.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_063.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_064.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.0116019812939716
+            },
+            {
+              "name": "mc2025_track1_066.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.0817759192722665
+            },
+            {
+              "name": "mc2025_track1_067.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.0069574424033025
+            },
+            {
+              "name": "mc2025_track1_068.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.9890226477143019
+            },
+            {
+              "name": "mc2025_track1_069.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_070.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_071.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_072.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_073.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_074.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.6002661280900394
+            },
+            {
+              "name": "mc2025_track1_075.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_076.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_077.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_078.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_079.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_080.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_083.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_084.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_086.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_087.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_088.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_093.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_098.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_106.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_108.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_109.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_110.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_111.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_112.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_113.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_115.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_116.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_117.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_118.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_119.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_120.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_121.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_122.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_124.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_128.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_129.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_130.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_131.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_132.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_133.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_134.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_135.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_136.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_137.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_138.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_139.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_140.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_141.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_142.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_143.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_144.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_145.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_146.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_147.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_151.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_157.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_158.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_159.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.4655652189868493
+            },
+            {
+              "name": "mc2025_track1_160.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.4474074385059623
+            },
+            {
+              "name": "mc2025_track1_161.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_162.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_163.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_164.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_165.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_166.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_167.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_168.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_169.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_170.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_171.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_173.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_174.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_175.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_176.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_177.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_178.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_181.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_182.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_184.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_185.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_186.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_187.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_188.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_189.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_190.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_191.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_192.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_193.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_194.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_195.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_196.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_197.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_198.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_199.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            }
+          ]
+        },
+        {
+          "baseline": "ganak",
+          "instances": 148,
+          "seed": 4269,
+          "bootstrap_resamples": 5000,
+          "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+          "coverage_delta": -8,
+          "coverage_delta_95_percent_interval": [
+            -14,
+            -2
+          ],
+          "par2_seconds_saved": -69.89853068700904,
+          "par2_saved_95_percent_interval": [
+            -124.75446485999419,
+            -22.789268810003705
+          ],
+          "jointly_solved_instances": 9,
+          "jointly_solved_geometric_speedup": 0.917761015491338,
+          "jointly_solved_speedup_95_percent_interval": [
+            0.4960434805445006,
+            1.7859200320847015
+          ],
+          "speedup_bootstrap_defined_resamples": 4999,
+          "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+          "cases": [
+            {
+              "name": "mc2025_track1_000.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_001.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_002.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_004.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_005.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_006.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_007.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_008.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_009.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_010.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_011.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_013.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_014.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_015.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_016.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_017.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_018.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_019.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_021.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_023.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_026.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_028.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_029.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_031.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_032.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_033.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_034.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_035.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_036.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_037.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_040.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_041.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_042.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.9312985647691162
+            },
+            {
+              "name": "mc2025_track1_043.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_044.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 4.9665048612626865
+            },
+            {
+              "name": "mc2025_track1_045.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_046.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_047.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_048.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_049.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_050.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_051.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_052.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_053.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_057.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_058.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_061.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_062.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_063.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_064.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.6275687104828132
+            },
+            {
+              "name": "mc2025_track1_066.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.38042407693125085
+            },
+            {
+              "name": "mc2025_track1_067.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.590347177458148
+            },
+            {
+              "name": "mc2025_track1_068.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.27682334993227653
+            },
+            {
+              "name": "mc2025_track1_069.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_070.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_071.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_072.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_073.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_074.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.5273660083616606
+            },
+            {
+              "name": "mc2025_track1_075.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_076.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_077.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_078.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_079.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_080.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_083.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_084.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_086.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_087.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_088.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_093.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_098.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_106.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_108.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_109.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_110.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_111.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_112.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_113.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_115.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_116.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_117.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_118.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_119.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_120.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_121.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_122.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_124.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_128.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_129.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_130.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_131.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_132.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_133.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_134.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_135.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_136.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_137.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_138.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_139.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_140.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_141.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_142.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_143.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_144.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_145.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_146.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_147.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_151.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_157.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_158.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_159.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 1.6207246822267192
+            },
+            {
+              "name": "mc2025_track1_160.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 2.994785940224061
+            },
+            {
+              "name": "mc2025_track1_161.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_162.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_163.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_164.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_165.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_166.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_167.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_168.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_169.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_170.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_171.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_173.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_174.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_175.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_176.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_177.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_178.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_181.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_182.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_184.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_185.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_186.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_187.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_188.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_189.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_190.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_191.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_192.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_193.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_194.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_195.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_196.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_197.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_198.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_199.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            }
+          ]
+        },
+        {
+          "baseline": "d4_2024",
+          "instances": 148,
+          "seed": 4269,
+          "bootstrap_resamples": 5000,
+          "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+          "coverage_delta": -7,
+          "coverage_delta_95_percent_interval": [
+            -14,
+            -1
+          ],
+          "par2_seconds_saved": -70.98743375100821,
+          "par2_saved_95_percent_interval": [
+            -130.73503542300386,
+            -14.904599992012663
+          ],
+          "jointly_solved_instances": 8,
+          "jointly_solved_geometric_speedup": 0.2871042845878842,
+          "jointly_solved_speedup_95_percent_interval": [
+            0.1473979160700164,
+            0.51285225299477
+          ],
+          "speedup_bootstrap_defined_resamples": 4999,
+          "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+          "cases": [
+            {
+              "name": "mc2025_track1_000.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_001.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_002.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_004.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_005.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_006.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_007.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_008.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_009.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_010.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_011.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_013.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_014.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_015.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_016.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_017.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_018.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_019.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_021.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_023.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_026.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_028.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_029.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_031.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_032.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_033.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_034.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_035.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_036.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_037.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_040.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_041.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_042.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.1964939890146634
+            },
+            {
+              "name": "mc2025_track1_043.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_044.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.9866986010647434
+            },
+            {
+              "name": "mc2025_track1_045.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_046.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_047.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_048.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_049.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_050.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_051.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_052.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_053.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_057.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_058.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_061.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_062.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_063.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_064.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.3133491224503489
+            },
+            {
+              "name": "mc2025_track1_066.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.2927358042711121
+            },
+            {
+              "name": "mc2025_track1_067.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.32271189420046986
+            },
+            {
+              "name": "mc2025_track1_068.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.2734866527805187
+            },
+            {
+              "name": "mc2025_track1_069.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_070.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_071.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_072.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_073.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_074.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.046858932388702035
+            },
+            {
+              "name": "mc2025_track1_075.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_076.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_077.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_078.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_079.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_080.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_083.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_084.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_086.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_087.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_088.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_093.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_098.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_106.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_108.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_109.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_110.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_111.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_112.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_113.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_115.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_116.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_117.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_118.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_119.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_120.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_121.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_122.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_124.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_128.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_129.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_130.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_131.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_132.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_133.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_134.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_135.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_136.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_137.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_138.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_139.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_140.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_141.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_142.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_143.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_144.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_145.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_146.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_147.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_151.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_157.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_158.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_159.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": true,
+              "median_speedup": 0.62767637593837
+            },
+            {
+              "name": "mc2025_track1_160.cnf",
+              "current_exact_all_trials": true,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_161.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_162.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_163.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_164.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_165.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_166.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_167.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_168.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_169.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_170.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_171.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_173.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_174.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_175.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_176.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_177.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_178.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_181.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_182.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": true,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_184.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_185.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_186.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_187.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_188.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_189.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_190.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_191.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_192.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_193.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_194.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_195.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_196.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_197.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_198.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            },
+            {
+              "name": "mc2025_track1_199.cnf",
+              "current_exact_all_trials": false,
+              "baseline_exact_all_trials": false,
+              "median_speedup": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

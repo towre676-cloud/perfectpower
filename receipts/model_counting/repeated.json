@@ -1,0 +1,1517 @@
+{
+  "schema": "pp-cnf-repeated/1",
+  "started_utc": "2026-10-10T23:00:41.863444+00:00",
+  "screen_sha256": "2cf6b846d8680995aed92ebfb7552ecf23f3870d2c7a9c8c17adea57cb16a0be",
+  "additional_control": "Ganak --prob 1, its documented probabilistic default mode; same pinned binary",
+  "selection": "Every independently confirmed PerfectPower exact case from the full screen, including losses; no speed-based filtering",
+  "instances": [
+    "mc2024_track1_028.cnf",
+    "mc2024_track1_030.cnf",
+    "mc2024_track1_057.cnf",
+    "mc2024_track1_079.cnf",
+    "mc2024_track1_080.cnf",
+    "mc2024_track1_081.cnf",
+    "mc2024_track1_082.cnf",
+    "mc2024_track1_083.cnf",
+    "mc2024_track1_087.cnf",
+    "mc2024_track1_118.cnf",
+    "mc2024_track1_183.cnf"
+  ],
+  "repeats": 3,
+  "timeout_seconds": 10.0,
+  "memory_gib": 6,
+  "memory_profile": true,
+  "time_binary_sha256": "3b11dec50514a8473e9f6efa7a34d584d0657538c09988f61b72d38ad4991a10",
+  "timing_scope": "cold subprocess with compiler warmed; GNU time wrapper included equally when profiling memory",
+  "native_source_sha256": "a6388e43ad73736979053e698afaff7f5d1fc9fcd5122ee87ef55eecf1c656ff",
+  "python_source_sha256": "403d73af86b4011c78556de9e6e063d8ae951e4d7ea3113fd93ff41298980efa",
+  "results": [
+    {
+      "name": "mc2024_track1_028.cnf",
+      "sha256": "2cf34de2647741a63e270e5152744cef01dd0728bd1b39b3f3cd7f54efe4bc97",
+      "expected_count": "134746112245856",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 1.3481372259993805,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.perfectpower.0.log",
+            "peak_rss_kib": 25032
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 1.3498230440018233,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.perfectpower.1.log",
+            "peak_rss_kib": 25064
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 1.3892645039995841,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.perfectpower.2.log",
+            "peak_rss_kib": 25040
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 3.416824952000752,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.ganak.0.log",
+            "peak_rss_kib": 177880
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 3.4841552159996354,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.ganak.1.log",
+            "peak_rss_kib": 177880
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 3.7725870060021407,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.ganak.2.log",
+            "peak_rss_kib": 177880
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 6.86342670600061,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.d4.0.log",
+            "peak_rss_kib": 134560
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 6.979117261002102,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.d4.1.log",
+            "peak_rss_kib": 134688
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 6.7542799430011655,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.d4.2.log",
+            "peak_rss_kib": 134688
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 3.071956667001359,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 124504
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 3.0851256559981266,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 124504
+          },
+          {
+            "status": "EXACT",
+            "count": "134746112245856",
+            "reason": null,
+            "seconds": 3.257799839000654,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_028.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 124504
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 1.3498230440018233,
+        "ganak": 3.4841552159996354,
+        "d4": 6.86342670600061,
+        "ganak_probabilistic": 3.0851256559981266
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 25040,
+        "ganak": 177880,
+        "d4": 134688,
+        "ganak_probabilistic": 124504
+      }
+    },
+    {
+      "name": "mc2024_track1_030.cnf",
+      "sha256": "5c3eed3b0bd5a59063ab5287e1f4c758223eea00366361097d419b3df7d0a515",
+      "expected_count": "1115259056499565",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 2.592815995001729,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.perfectpower.0.log",
+            "peak_rss_kib": 27236
+          },
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 2.4827939569986484,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.perfectpower.1.log",
+            "peak_rss_kib": 27236
+          },
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 2.532730506001826,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.perfectpower.2.log",
+            "peak_rss_kib": 27228
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 5.088719790001051,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.ganak.0.log",
+            "peak_rss_kib": 296664
+          },
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 4.965013787998032,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.ganak.1.log",
+            "peak_rss_kib": 296664
+          },
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 4.950015665999672,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.ganak.2.log",
+            "peak_rss_kib": 296664
+          }
+        ],
+        "d4": [
+          {
+            "status": "TIMEOUT",
+            "count": null,
+            "reason": null,
+            "seconds": 10.013035428997682,
+            "exit_code": -9,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.d4.0.log",
+            "peak_rss_kib": null
+          },
+          {
+            "status": "TIMEOUT",
+            "count": null,
+            "reason": null,
+            "seconds": 10.011887677999766,
+            "exit_code": -9,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.d4.1.log",
+            "peak_rss_kib": null
+          },
+          {
+            "status": "TIMEOUT",
+            "count": null,
+            "reason": null,
+            "seconds": 10.01675506600077,
+            "exit_code": -9,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.d4.2.log",
+            "peak_rss_kib": null
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 4.304012486998545,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 208984
+          },
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 4.370577179997781,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 208984
+          },
+          {
+            "status": "EXACT",
+            "count": "1115259056499565",
+            "reason": null,
+            "seconds": 4.379908092996629,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_030.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 208856
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 2.532730506001826,
+        "ganak": 4.965013787998032,
+        "d4": null,
+        "ganak_probabilistic": 4.370577179997781
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 27236,
+        "ganak": 296664,
+        "d4": null,
+        "ganak_probabilistic": 208984
+      }
+    },
+    {
+      "name": "mc2024_track1_057.cnf",
+      "sha256": "6a1ccf53ceb33ac7946e924b4b1025e0bee9e9ddba5dba3c14424f56d71e58aa",
+      "expected_count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 6.888564345001214,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.perfectpower.0.log",
+            "peak_rss_kib": 29060
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 6.635968807997415,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.perfectpower.1.log",
+            "peak_rss_kib": 29068
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 6.644058406000113,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.perfectpower.2.log",
+            "peak_rss_kib": 28936
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.4183779089980817,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.ganak.0.log",
+            "peak_rss_kib": 45400
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.40848607199950493,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.ganak.1.log",
+            "peak_rss_kib": 45396
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.42331127100260346,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.ganak.2.log",
+            "peak_rss_kib": 45400
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.05443459099842585,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.d4.0.log",
+            "peak_rss_kib": 31136
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.05751702500128886,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.d4.1.log",
+            "peak_rss_kib": 31136
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.055369620997225866,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.d4.2.log",
+            "peak_rss_kib": 31136
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.4242408889986109,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 45400
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.4207435260032071,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 45396
+          },
+          {
+            "status": "EXACT",
+            "count": "74119008697494533530203423526472299159285774869408331204020578634222765332644740179364407550528865326842850758648792733931122323256268969337626169394661624233761714648619928934586366841214129535890640798301525617683501888903228524051776317294622222736935825323324412709610538181940011629361707573975500799508064651528396025882475805084918270151698722785549310076296035561417841475772723922460934309377953021424583425426640444956075156331901181615032606895865008818551452393964408336475747594179266192613959814693292877626774783027507019432040066699139861352105558495002411372008617283351059687286589481493850077440020406446834756044415934040796451437791354120892284343861064615805032924991316996819024335732323729847353344",
+            "reason": null,
+            "seconds": 0.4395092829981877,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_057.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 45396
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 6.644058406000113,
+        "ganak": 0.4183779089980817,
+        "d4": 0.055369620997225866,
+        "ganak_probabilistic": 0.4242408889986109
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 29060,
+        "ganak": 45400,
+        "d4": 31136,
+        "ganak_probabilistic": 45396
+      }
+    },
+    {
+      "name": "mc2024_track1_079.cnf",
+      "sha256": "7b2ee1b0c44544176da1977444ee94be375eb1797ac5380a652d929c6cfa5e04",
+      "expected_count": "316912650057057350374175801344",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.059125148000021,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.perfectpower.0.log",
+            "peak_rss_kib": 16256
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.0582722700019076,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.perfectpower.1.log",
+            "peak_rss_kib": 16256
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.06349678699916694,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.perfectpower.2.log",
+            "peak_rss_kib": 16256
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.030650389999209438,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.ganak.0.log",
+            "peak_rss_kib": 8280
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.0307195839995984,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.ganak.1.log",
+            "peak_rss_kib": 8280
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.03041890200256603,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.ganak.2.log",
+            "peak_rss_kib": 8280
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.01875137699971674,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.d4.0.log",
+            "peak_rss_kib": 27168
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.020571204000589205,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.d4.1.log",
+            "peak_rss_kib": 27168
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.01889690600000904,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.d4.2.log",
+            "peak_rss_kib": 27168
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.028554558000905672,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 8280
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.032731790000980254,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 8280
+          },
+          {
+            "status": "EXACT",
+            "count": "316912650057057350374175801344",
+            "reason": null,
+            "seconds": 0.04045005599982687,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_079.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 8280
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.059125148000021,
+        "ganak": 0.030650389999209438,
+        "d4": 0.01889690600000904,
+        "ganak_probabilistic": 0.032731790000980254
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 16256,
+        "ganak": 8280,
+        "d4": 27168,
+        "ganak_probabilistic": 8280
+      }
+    },
+    {
+      "name": "mc2024_track1_080.cnf",
+      "sha256": "2815bad7fb0b2f665c5697b69e819d8637e7f2a505318686a2b09e761f3d1bc2",
+      "expected_count": "1125899906842624",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.07464472499850672,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.perfectpower.0.log",
+            "peak_rss_kib": 16000
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.0615897239986225,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.perfectpower.1.log",
+            "peak_rss_kib": 16000
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.060312944999168394,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.perfectpower.2.log",
+            "peak_rss_kib": 16000
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.018037152996839723,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.ganak.0.log",
+            "peak_rss_kib": 8004
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.018252396999741904,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.ganak.1.log",
+            "peak_rss_kib": 8004
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.019845332000841154,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.ganak.2.log",
+            "peak_rss_kib": 8024
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.016239849999692524,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.d4.0.log",
+            "peak_rss_kib": 26784
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.01586035899890703,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.d4.1.log",
+            "peak_rss_kib": 26784
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.016671850000420818,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.d4.2.log",
+            "peak_rss_kib": 26784
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.017547556999488734,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 8004
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.019602131000283407,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 8024
+          },
+          {
+            "status": "EXACT",
+            "count": "1125899906842624",
+            "reason": null,
+            "seconds": 0.025690100999781862,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_080.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 8024
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.0615897239986225,
+        "ganak": 0.018252396999741904,
+        "d4": 0.016239849999692524,
+        "ganak_probabilistic": 0.019602131000283407
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 16000,
+        "ganak": 8004,
+        "d4": 26784,
+        "ganak_probabilistic": 8024
+      }
+    },
+    {
+      "name": "mc2024_track1_081.cnf",
+      "sha256": "6aab6ee6fb710e745f12651dec7dac0a73f9002a345eddd885e383b3e0032ee0",
+      "expected_count": "72057594037927936",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.0570922420010902,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.perfectpower.0.log",
+            "peak_rss_kib": 16000
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.06046383200009586,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.perfectpower.1.log",
+            "peak_rss_kib": 16000
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.05613754600199172,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.perfectpower.2.log",
+            "peak_rss_kib": 16000
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.021799820999149233,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.ganak.0.log",
+            "peak_rss_kib": 8004
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.02144205299919122,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.ganak.1.log",
+            "peak_rss_kib": 8008
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.02128025000274647,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.ganak.2.log",
+            "peak_rss_kib": 8004
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.01765037199947983,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.d4.0.log",
+            "peak_rss_kib": 26912
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.02011928399952012,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.d4.1.log",
+            "peak_rss_kib": 26912
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.01918090300023323,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.d4.2.log",
+            "peak_rss_kib": 26912
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.02121946799888974,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 8004
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.02155966999998782,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 8004
+          },
+          {
+            "status": "EXACT",
+            "count": "72057594037927936",
+            "reason": null,
+            "seconds": 0.022356899000442354,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_081.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 8004
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.0570922420010902,
+        "ganak": 0.02144205299919122,
+        "d4": 0.01918090300023323,
+        "ganak_probabilistic": 0.02155966999998782
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 16000,
+        "ganak": 8004,
+        "d4": 26912,
+        "ganak_probabilistic": 8004
+      }
+    },
+    {
+      "name": "mc2024_track1_082.cnf",
+      "sha256": "b1b737af8866c4082156240069f61de910ca7397aaadf818ca342ad2a2f4709a",
+      "expected_count": "9671406556917033397649408",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.062499491999915335,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.perfectpower.0.log",
+            "peak_rss_kib": 16256
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.09488489100112929,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.perfectpower.1.log",
+            "peak_rss_kib": 16256
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.056988540000020294,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.perfectpower.2.log",
+            "peak_rss_kib": 16256
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.02548507800020161,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.ganak.0.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.031406998001330066,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.ganak.1.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.04677287400045316,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.ganak.2.log",
+            "peak_rss_kib": 8152
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.020209949998388765,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.d4.0.log",
+            "peak_rss_kib": 27040
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.01871070600100211,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.d4.1.log",
+            "peak_rss_kib": 27040
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.018977646999701392,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.d4.2.log",
+            "peak_rss_kib": 27040
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.028397302001394564,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.03148656200210098,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "9671406556917033397649408",
+            "reason": null,
+            "seconds": 0.024999448000016855,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_082.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 8152
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.062499491999915335,
+        "ganak": 0.031406998001330066,
+        "d4": 0.018977646999701392,
+        "ganak_probabilistic": 0.028397302001394564
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 16256,
+        "ganak": 8152,
+        "d4": 27040,
+        "ganak_probabilistic": 8152
+      }
+    },
+    {
+      "name": "mc2024_track1_083.cnf",
+      "sha256": "a2eee44e748fb1666f3f8525dd572928eda7bd083a6cf5fb63653d2fd8189d12",
+      "expected_count": "37778931862957161709568",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.0588749620001181,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.perfectpower.0.log",
+            "peak_rss_kib": 16128
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.056786391000059666,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.perfectpower.1.log",
+            "peak_rss_kib": 16128
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.05725672900007339,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.perfectpower.2.log",
+            "peak_rss_kib": 16256
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.02881697300108499,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.ganak.0.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.028917865001858445,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.ganak.1.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.025793806998990476,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.ganak.2.log",
+            "peak_rss_kib": 8152
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.018844336998881772,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.d4.0.log",
+            "peak_rss_kib": 27040
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.020444203000806738,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.d4.1.log",
+            "peak_rss_kib": 26912
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.01747086199975456,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.d4.2.log",
+            "peak_rss_kib": 27040
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.02453882899862947,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.026048570001876215,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 8152
+          },
+          {
+            "status": "EXACT",
+            "count": "37778931862957161709568",
+            "reason": null,
+            "seconds": 0.02664503200139734,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_083.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 8152
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.05725672900007339,
+        "ganak": 0.02881697300108499,
+        "d4": 0.018844336998881772,
+        "ganak_probabilistic": 0.026048570001876215
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 16128,
+        "ganak": 8152,
+        "d4": 27040,
+        "ganak_probabilistic": 8152
+      }
+    },
+    {
+      "name": "mc2024_track1_087.cnf",
+      "sha256": "f0d527d892f34b5e8c124a9b7e335e28585dd5108cfad38b298947ad424dc45e",
+      "expected_count": "793972888223416121842704332629248",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.11257964999822434,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.perfectpower.0.log",
+            "peak_rss_kib": 16640
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.10852580400023726,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.perfectpower.1.log",
+            "peak_rss_kib": 16512
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.11378889799743774,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.perfectpower.2.log",
+            "peak_rss_kib": 16640
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.25937242500003777,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.ganak.0.log",
+            "peak_rss_kib": 13784
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.24377725500016822,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.ganak.1.log",
+            "peak_rss_kib": 13784
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.2471006319974549,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.ganak.2.log",
+            "peak_rss_kib": 13784
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.04347042700101156,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.d4.0.log",
+            "peak_rss_kib": 27168
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.039181618001748575,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.d4.1.log",
+            "peak_rss_kib": 27168
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.039276080002309754,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.d4.2.log",
+            "peak_rss_kib": 27168
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.24479416399844922,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 13784
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.24466996699993615,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 13784
+          },
+          {
+            "status": "EXACT",
+            "count": "793972888223416121842704332629248",
+            "reason": null,
+            "seconds": 0.24900180099939462,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_087.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 13784
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.11257964999822434,
+        "ganak": 0.2471006319974549,
+        "d4": 0.039276080002309754,
+        "ganak_probabilistic": 0.24479416399844922
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 16640,
+        "ganak": 13784,
+        "d4": 27168,
+        "ganak_probabilistic": 13784
+      }
+    },
+    {
+      "name": "mc2024_track1_118.cnf",
+      "sha256": "5813e77f1e7c46f9052208aea9bf502fa0554cc85d35a5d62018e6d5509416f9",
+      "expected_count": "17528422464",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.0655790929995419,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.perfectpower.0.log",
+            "peak_rss_kib": 17100
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.06472931600001175,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.perfectpower.1.log",
+            "peak_rss_kib": 17116
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.07552663100068457,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.perfectpower.2.log",
+            "peak_rss_kib": 17112
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.27918035100083216,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.ganak.0.log",
+            "peak_rss_kib": 22232
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.2806176480007707,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.ganak.1.log",
+            "peak_rss_kib": 22104
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.25989142099933815,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.ganak.2.log",
+            "peak_rss_kib": 22232
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.3250179790011316,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.d4.0.log",
+            "peak_rss_kib": 31904
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.32910873999935575,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.d4.1.log",
+            "peak_rss_kib": 31904
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.3220202199991036,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.d4.2.log",
+            "peak_rss_kib": 31904
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.2572831940015021,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 19032
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.23896025199792348,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 19032
+          },
+          {
+            "status": "EXACT",
+            "count": "17528422464",
+            "reason": null,
+            "seconds": 0.25508014200022444,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_118.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 19032
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.0655790929995419,
+        "ganak": 0.27918035100083216,
+        "d4": 0.3250179790011316,
+        "ganak_probabilistic": 0.25508014200022444
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 17112,
+        "ganak": 22232,
+        "d4": 31904,
+        "ganak_probabilistic": 19032
+      }
+    },
+    {
+      "name": "mc2024_track1_183.cnf",
+      "sha256": "6e0a085b637d36812d596ec5c485c77f7abb0e1024473b765d5ec7e6a6ff7f86",
+      "expected_count": "3383344922146277907",
+      "trials": {
+        "perfectpower": [
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 0.8247855219997291,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.perfectpower.0.log",
+            "peak_rss_kib": 25408
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 0.7753775499986659,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.perfectpower.1.log",
+            "peak_rss_kib": 25408
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 0.8038154780006153,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.perfectpower.2.log",
+            "peak_rss_kib": 25404
+          }
+        ],
+        "ganak": [
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 1.192681658998481,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.ganak.0.log",
+            "peak_rss_kib": 18136
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 1.1956631790017127,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.ganak.1.log",
+            "peak_rss_kib": 18136
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 1.2174876009994477,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.ganak.2.log",
+            "peak_rss_kib": 18136
+          }
+        ],
+        "d4": [
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 0.46966145300029893,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.d4.0.log",
+            "peak_rss_kib": 32928
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 0.4651179979991866,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.d4.1.log",
+            "peak_rss_kib": 32928
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 0.5070712540000386,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.d4.2.log",
+            "peak_rss_kib": 32928
+          }
+        ],
+        "ganak_probabilistic": [
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 1.1945203120012593,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.ganak_probabilistic.0.log",
+            "peak_rss_kib": 15960
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 1.1735069520000252,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.ganak_probabilistic.1.log",
+            "peak_rss_kib": 15960
+          },
+          {
+            "status": "EXACT",
+            "count": "3383344922146277907",
+            "reason": null,
+            "seconds": 1.1580793590001122,
+            "exit_code": 0,
+            "log": "receipts/model_counting/repeated_logs/mc2024_track1_183.cnf.ganak_probabilistic.2.log",
+            "peak_rss_kib": 15960
+          }
+        ]
+      },
+      "median_seconds": {
+        "perfectpower": 0.8038154780006153,
+        "ganak": 1.1956631790017127,
+        "d4": 0.46966145300029893,
+        "ganak_probabilistic": 1.1735069520000252
+      },
+      "median_peak_rss_kib": {
+        "perfectpower": 25408,
+        "ganak": 18136,
+        "d4": 32928,
+        "ganak_probabilistic": 15960
+      }
+    }
+  ],
+  "completed": true,
+  "publication_redactions": "Public summaries omit executed command lines, platform strings and CPU identification. Separate evidence logs replace local path prefixes with <WORKDIR>/<PYTHON> and omit the upstream Ganak build-environment line. Exact counts, outcomes, timing/memory values and algorithm/binary identities are unchanged."
+}

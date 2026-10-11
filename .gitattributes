@@ -5,3 +5,7 @@ web/room-of-possibilities/PerfectPower-Room-of-Possibilities.html whitespace=-bl
 
 # Pinned public election files retain upstream bytes, CRLF and whitespace.
 data/participatory_budgeting/raw/*.pb -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+
+# Preserve original public CNF fixtures and raw benchmark output formatting.
+data/model_counting/fixtures/*.cnf -text whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab
+receipts/model_counting/*_logs/*.log whitespace=-blank-at-eol,-blank-at-eof,-space-before-tab

@@ -1,0 +1,322 @@
+{
+  "schema": "pp-cnf-paired-analysis/1",
+  "receipt_sha256": "66e13eedcf6ff34406d2536df6e90a6b4f6f2bb5c06834ccd4377e34eed8728e",
+  "analysis_source_sha256": "98aa5d2bc07e9b0538b54df2fdfd2d26fbaf48ea98d3611e3002bd5ef0b91fb1",
+  "comparisons": [
+    {
+      "baseline": "previous",
+      "instances": 13,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 2,
+      "coverage_delta_95_percent_interval": [
+        0,
+        5
+      ],
+      "par2_seconds_saved": 17.942768477660138,
+      "par2_saved_95_percent_interval": [
+        1.7727992233267287,
+        41.2008874029998
+      ],
+      "jointly_solved_instances": 11,
+      "jointly_solved_geometric_speedup": 1.2989708913622888,
+      "jointly_solved_speedup_95_percent_interval": [
+        1.052307209581574,
+        1.7338443724787567
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2025_track1_025.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0707608491045364
+        },
+        {
+          "name": "mc2025_track1_027.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0301973846971035
+        },
+        {
+          "name": "mc2025_track1_042.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2025_track1_044.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 4.268304909613355
+        },
+        {
+          "name": "mc2025_track1_064.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.9377767951225019
+        },
+        {
+          "name": "mc2025_track1_065.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.112875943247401
+        },
+        {
+          "name": "mc2025_track1_066.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.981713002772867
+        },
+        {
+          "name": "mc2025_track1_067.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.9074894317252823
+        },
+        {
+          "name": "mc2025_track1_068.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0299462916874116
+        },
+        {
+          "name": "mc2025_track1_074.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.6599171354425217
+        },
+        {
+          "name": "mc2025_track1_076.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2025_track1_159.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.51797095350235
+        },
+        {
+          "name": "mc2025_track1_160.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.5638260510664084
+        }
+      ]
+    },
+    {
+      "baseline": "ganak",
+      "instances": 13,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 2,
+      "coverage_delta_95_percent_interval": [
+        0,
+        5
+      ],
+      "par2_seconds_saved": 15.250834195649077,
+      "par2_saved_95_percent_interval": [
+        2.047208559643574,
+        31.648114330317185
+      ],
+      "jointly_solved_instances": 11,
+      "jointly_solved_geometric_speedup": 0.9330926509385155,
+      "jointly_solved_speedup_95_percent_interval": [
+        0.5379636420904796,
+        1.6956213396112199
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2025_track1_025.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 2.881522561300169
+        },
+        {
+          "name": "mc2025_track1_027.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2025_track1_042.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.83760662813362
+        },
+        {
+          "name": "mc2025_track1_044.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 5.566231699660265
+        },
+        {
+          "name": "mc2025_track1_064.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.5316510895180719
+        },
+        {
+          "name": "mc2025_track1_065.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.4056849584026016
+        },
+        {
+          "name": "mc2025_track1_066.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.35853106527353473
+        },
+        {
+          "name": "mc2025_track1_067.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.4940777308381334
+        },
+        {
+          "name": "mc2025_track1_068.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.31361585448976775
+        },
+        {
+          "name": "mc2025_track1_074.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.5487330591181832
+        },
+        {
+          "name": "mc2025_track1_076.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2025_track1_159.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.7125073227009953
+        },
+        {
+          "name": "mc2025_track1_160.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 3.0861696109879455
+        }
+      ]
+    },
+    {
+      "baseline": "d4_2024",
+      "instances": 13,
+      "seed": 4269,
+      "bootstrap_resamples": 5000,
+      "method": "Paired empirical instance-cluster percentile bootstrap; all repeated trials of an instance stay together; descriptive uncertainty over this corpus, not proof of out-of-distribution performance",
+      "coverage_delta": 4,
+      "coverage_delta_95_percent_interval": [
+        1,
+        7
+      ],
+      "par2_seconds_saved": 28.62584931899134,
+      "par2_saved_95_percent_interval": [
+        3.3503375226719077,
+        56.440907804981784
+      ],
+      "jointly_solved_instances": 9,
+      "jointly_solved_geometric_speedup": 0.27735557730561616,
+      "jointly_solved_speedup_95_percent_interval": [
+        0.15316833658875248,
+        0.4638978175909668
+      ],
+      "speedup_bootstrap_defined_resamples": 5000,
+      "speedup_scope_warning": "Conditional on both solvers finishing every trial; timeout and unsupported cases are excluded only from this speed ratio, never from coverage or PAR-2",
+      "cases": [
+        {
+          "name": "mc2025_track1_025.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2025_track1_027.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2025_track1_042.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.1696853057606856
+        },
+        {
+          "name": "mc2025_track1_044.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 1.0438707503844835
+        },
+        {
+          "name": "mc2025_track1_064.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.31426688230439404
+        },
+        {
+          "name": "mc2025_track1_065.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.3137917484288277
+        },
+        {
+          "name": "mc2025_track1_066.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.2676592963890949
+        },
+        {
+          "name": "mc2025_track1_067.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.30564193174476884
+        },
+        {
+          "name": "mc2025_track1_068.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.2521179962320738
+        },
+        {
+          "name": "mc2025_track1_074.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.047029179706683175
+        },
+        {
+          "name": "mc2025_track1_076.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        },
+        {
+          "name": "mc2025_track1_159.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": true,
+          "median_speedup": 0.5732373935234796
+        },
+        {
+          "name": "mc2025_track1_160.cnf",
+          "current_exact_all_trials": true,
+          "baseline_exact_all_trials": false,
+          "median_speedup": null
+        }
+      ]
+    }
+  ]
+}

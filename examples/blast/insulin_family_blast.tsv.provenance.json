@@ -1,0 +1,25 @@
+{
+  "command": [
+    "blastn",
+    "-query",
+    "insulin_family.fasta",
+    "-subject",
+    "insulin_family.fasta",
+    "-out",
+    "insulin_family_blast.tsv",
+    "-outfmt",
+    "7 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore btop qlen slen staxids",
+    "-task",
+    "blastn",
+    "-word_size",
+    "7",
+    "-dust",
+    "no"
+  ],
+  "output_sha256": "3f8c274d0804a1ae029437f55372dc27c9adb7d21f414a684d14ad527de8c0f8",
+  "query_sha256": "130d8b4ef7f98cb6b1a906e00c63a5ebb2d2e6a67257310d6ca438588f433cf0",
+  "result_path": "examples/blast/insulin_family_blast.tsv",
+  "scope": "NCBI BLAST+ heuristic candidate search, not exhaustive alignment discovery",
+  "subject_sha256": "130d8b4ef7f98cb6b1a906e00c63a5ebb2d2e6a67257310d6ca438588f433cf0",
+  "version": "blastn: 2.12.0+\n Package: blast 2.12.0, build Apr  1 2024 07:01:27\n"
+}

@@ -1,0 +1,192 @@
+{
+  "schema": "pp-branch-integration/1",
+  "initial_main": "edc4c34c4beab98a0fd8af6b6cb255faa93fed45",
+  "remote_side_branches": [
+    {
+      "branch": "claude/laughing-lamport-qqzdo9",
+      "sha": "4769e49213de0358109374442743af82b72f9d48",
+      "already_in_initial_main": true,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "claude/nice-meitner-98foon",
+      "sha": "a296c3b48975ac3f3a844e9c1b93e61670bc3518",
+      "already_in_initial_main": true,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "codex/blast-mining-machinery-20261011",
+      "sha": "5b44f9f686a0455ed6741c4778f7204d1fbe6e8e",
+      "already_in_initial_main": false,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "codex/blast-polynomial-atlas-20261010",
+      "sha": "40b6c6fb781d46214e202e0f5b35a938efd095c0",
+      "already_in_initial_main": true,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "codex/flavor-cosmology-disjoint-20261006",
+      "sha": "aad7f121f308d59cf1c72ee42cbb3dd7104e8d6a",
+      "already_in_initial_main": true,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "codex/model-counting-0-10-0",
+      "sha": "478bca899da6b032eb486eaaa2704eef621ea303",
+      "already_in_initial_main": false,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "codex/model-counting-research-0-10-1",
+      "sha": "d4dc8dc6fa5ba5f6c6f11e81ccd766e1d3bdf3cc",
+      "already_in_initial_main": false,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "codex/resume-lean-ring-transport",
+      "sha": "419bbd55894370efcf4efd80a0fe2b7004b31e72",
+      "already_in_initial_main": true,
+      "contained_in_complete_local_integration": true
+    },
+    {
+      "branch": "codex/wilf-generating-functions-20261010",
+      "sha": "892987efff9d9b47da8c62dd4fcd6e4d3c62726b",
+      "already_in_initial_main": true,
+      "contained_in_complete_local_integration": true
+    }
+  ],
+  "recovered_local_commits": {
+    "structural_counting": "c9791e2cc404c23df45ff3f7f89444ec369320ff",
+    "blast_completion": "3cbeff8e4e2096766b4e4f3ffe13d8e3cfed2e07",
+    "oxbench": "bfad032377cbe8fcf738f3f995e72026cdcabd75"
+  },
+  "public_projection_withheld_paths": [
+    "data/blast_corpus/blast_word11.tsv.gz",
+    "data/blast_corpus/blast_word28.tsv.gz",
+    "data/blast_corpus/blast_word7.tsv.gz",
+    "data/blast_corpus/database.fasta",
+    "data/blast_corpus/esearch.json",
+    "data/blast_corpus/genbank_00000.xml",
+    "data/blast_corpus/genbank_00100.xml",
+    "data/blast_corpus/genbank_00200.xml",
+    "data/blast_corpus/genbank_00300.xml",
+    "data/blast_corpus/genbank_00400.xml",
+    "data/blast_corpus/genbank_00500.xml",
+    "data/blast_corpus/genbank_00600.xml",
+    "data/blast_corpus/genbank_00700.xml",
+    "data/blast_corpus/genbank_00800.xml",
+    "data/blast_corpus/genbank_00900.xml",
+    "data/blast_corpus/query_mouse.xml",
+    "data/model_counting/advantage_dynasp_manifest.json",
+    "data/model_counting/advantage_fresh_manifest.json",
+    "data/oxbench/blastp-fast.tsv.xz",
+    "data/oxbench/blastp.tsv.xz",
+    "data/oxbench/database.fasta",
+    "data/oxbench/records.json",
+    "data/oxbench/source.tar.gz",
+    "docs/MODEL_COUNTING_ADVANTAGE_MONOGRAPH.md",
+    "docs/MODEL_COUNTING_STRUCTURAL_MONOGRAPH.md",
+    "receipts/blast/certification/adapters_word11.json.gz",
+    "receipts/blast/certification/adapters_word28.json.gz",
+    "receipts/blast/certification/adapters_word7.json.gz",
+    "receipts/blast/certification/annotation_word11.json.gz",
+    "receipts/blast/certification/annotation_word28.json.gz",
+    "receipts/blast/certification/annotation_word7.json.gz",
+    "receipts/blast/certification/coding_annotation.json",
+    "receipts/blast/oxbench/blastp-evaluation.json.gz",
+    "receipts/blast/oxbench/blastp-fast-evaluation.json.gz",
+    "receipts/model_counting/advantage_correctness.json",
+    "receipts/model_counting/advantage_dynasp_repeated.json",
+    "receipts/model_counting/advantage_dynasp_repeated_analysis.json",
+    "receipts/model_counting/advantage_dynasp_screen.json",
+    "receipts/model_counting/advantage_dynasp_screen_analysis.json",
+    "receipts/model_counting/advantage_dynasp_selection.json",
+    "receipts/model_counting/advantage_fresh_repeated.json",
+    "receipts/model_counting/advantage_fresh_repeated_analysis.json",
+    "receipts/model_counting/advantage_fresh_screen.json",
+    "receipts/model_counting/advantage_fresh_screen_analysis.json",
+    "receipts/model_counting/advantage_fresh_selection.json",
+    "receipts/model_counting/advantage_known_diagnostics.json",
+    "receipts/model_counting/advantage_known_mc2024_analysis.json",
+    "receipts/model_counting/advantage_known_mc2025_analysis.json",
+    "receipts/model_counting/advantage_origins.json",
+    "receipts/model_counting/advantage_origins_2020.json",
+    "receipts/model_counting/advantage_origins_2021.json",
+    "receipts/model_counting/advantage_origins_2022.json",
+    "receipts/model_counting/advantage_origins_2023.json",
+    "receipts/model_counting/advantage_profile_mc2024.json",
+    "receipts/model_counting/advantage_profile_mc2025.json",
+    "receipts/model_counting/advantage_run_protocol.json",
+    "receipts/model_counting/advantage_seed_sources.json",
+    "receipts/model_counting/advantage_validation.json",
+    "receipts/model_counting/structural_ablation.json",
+    "receipts/model_counting/structural_ablation_2024.json",
+    "receipts/model_counting/structural_correctness.json",
+    "receipts/model_counting/structural_extended_selection.json",
+    "receipts/model_counting/structural_installation.json",
+    "receipts/model_counting/structural_legacy_repeated.json",
+    "receipts/model_counting/structural_legacy_repeated_analysis.json",
+    "receipts/model_counting/structural_mc2024.json",
+    "receipts/model_counting/structural_mc2024_analysis.json",
+    "receipts/model_counting/structural_mc2024_extended_validation.json",
+    "receipts/model_counting/structural_mc2024_extended_validation_analysis.json",
+    "receipts/model_counting/structural_mc2024_reference_repeated.json",
+    "receipts/model_counting/structural_mc2024_reference_repeated_analysis.json",
+    "receipts/model_counting/structural_mc2024_reference_validation.json",
+    "receipts/model_counting/structural_mc2024_reference_validation_analysis.json",
+    "receipts/model_counting/structural_mc2024_repeated.json",
+    "receipts/model_counting/structural_mc2024_repeated_analysis.json",
+    "receipts/model_counting/structural_mc2025.json",
+    "receipts/model_counting/structural_mc2025_analysis.json",
+    "receipts/model_counting/structural_mc2025_repeated.json",
+    "receipts/model_counting/structural_mc2025_repeated_analysis.json",
+    "receipts/model_counting/structural_overlap_analysis.json",
+    "receipts/model_counting/structural_protocol.json",
+    "receipts/model_counting/structural_reference_validation.json",
+    "receipts/model_counting/structural_reference_validation_analysis.json",
+    "receipts/model_counting/structural_supplement_protocol.json",
+    "receipts/model_counting/structural_validation.json",
+    "web/blast-certification/index.html"
+  ],
+  "publication_boundary": "All public side-branch histories and recovered source are integrated. New detailed counting results and raw biological carriers stay in the complete private package because automatic approval review blocked their public upload.",
+  "tests": {
+    "blast": 63,
+    "counting": 24,
+    "geometry": 95
+  },
+  "blast_kernel_modules": 17,
+  "native_exhaustive_formulas": 1000,
+  "native_gate_circuits": 80,
+  "native_analytic_paths": 2,
+  "installed_wheel": {
+    "complete": true,
+    "wheel_sha256": "feaec2487049765dc7b3a219f21fef339bdcdabc4385010f248a61186cbc683d",
+    "wheel_bytes": 20624320,
+    "installed_checks": {
+      "complete": true,
+      "assets": 1253,
+      "psg_console_routes": 7,
+      "soe_console_routes": 6,
+      "structural_console_routes": 5,
+      "differential_console_routes": 2,
+      "model_counting_routes": 3,
+      "installed_root": "/tmp/pp-wheel-check-8lv83z1u/installed/perfectpower/_assets"
+    }
+  },
+  "broader_historical_suite": "Interrupted during the unchanged 457-curve Mordell completion audit after an exploratory historical run; the initial optional-dependency failures were rerun successfully after installing the declared dependencies. No complete historical suite pass is claimed.",
+  "optional_dependency_rerun": {
+    "tests": 59,
+    "skipped": 11,
+    "failed": 0,
+    "log": "receipts/branch_integration/optional-regressions.log"
+  },
+  "public_checkout_checks": {
+    "blast_tests_run": 63,
+    "dataset_dependent_skips": 3,
+    "failed": 0,
+    "proof_only_modules": 17,
+    "raw_source_correspondence_rechecked_in_proof_only_mode": false
+  }
+}

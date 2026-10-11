@@ -1,0 +1,52 @@
+{
+  "base_main": "499f2dd87eeb636818c6b9c8b3d191ece932c199",
+  "dynacomp_reviewed": "ce8a0e57fc0d845870b30271d589a652f969c59f",
+  "graph_source": "e9deb64e2a6b470adc089e8af39d488b7682171d",
+  "native_files": [
+    {
+      "matches_published_source": true,
+      "path": "native/model_counting/counter.cpp",
+      "sha256": "d0eac70c0cc56d549d90f68c60bfee96927b99680f8a3529f3ddd6def96d9925"
+    },
+    {
+      "matches_published_source": true,
+      "path": "native/model_counting/test_exhaustive.cpp",
+      "sha256": "77f9a657e1d61287f1032f129b56917128469e68770dcfb697566db8b2ab47f7"
+    },
+    {
+      "matches_published_source": true,
+      "path": "python/perfectpower/model_counting.py",
+      "sha256": "403d73af86b4011c78556de9e6e063d8ae951e4d7ea3113fd93ff41298980efa"
+    },
+    {
+      "matches_published_source": true,
+      "path": "python/tests/test_model_counting.py",
+      "sha256": "23eaa5147af2fcddc0964e37eb5b61114473f438c68c382025dd458ecee9b9ee"
+    },
+    {
+      "matches_published_source": true,
+      "path": "data/model_counting/fixtures/mc2024_track1_118.cnf",
+      "sha256": "5813e77f1e7c46f9052208aea9bf502fa0554cc85d35a5d62018e6d5509416f9"
+    }
+  ],
+  "native_source": "d4dc8dc6fa5ba5f6c6f11e81ccd766e1d3bdf3cc",
+  "previous_blast": "40b6c6fb781d46214e202e0f5b35a938efd095c0",
+  "public_records": [
+    {
+      "efetch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_008386.4&rettype=fasta&retmode=text",
+      "path": "examples/blast/NM_008386.4.fasta",
+      "sha256": "53a2973f22e2ee32608bf242bc1d951049d02161cc39b18303a0eaf9b3485e86"
+    },
+    {
+      "efetch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NM_000207.3&rettype=fasta&retmode=text",
+      "path": "examples/blast/NM_000207.3.fasta",
+      "sha256": "419b1b83e1808a71aa339b7bc0a42d1c11306680914f708b8598cb62ebc1f0d6"
+    },
+    {
+      "efetch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=XM_043971863.1&rettype=fasta&retmode=text",
+      "path": "examples/blast/XM_043971863.1.fasta",
+      "sha256": "24bb005cd419f63414b08169b905e7b31e119ed77cd1b970278de7cf29327d73"
+    }
+  ],
+  "scope": "source inventory and repository inspection; no formal correctness claim"
+}

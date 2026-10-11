@@ -1,0 +1,242 @@
+{
+  "inspection": "Compressed bytes fully decompressed; JSON schemas or all BLAST columns inspected; public reference inputs, not patient or account data",
+  "files": [
+    {
+      "path": "data/blast_corpus/blast_word7.tsv.gz",
+      "sha256": "bbf351ddc160a9df482dc3efeb118a33ed638f17226042dbd8918b9a6ea47f1e",
+      "format": "decompressed 16-column BLAST reference tracebacks",
+      "rows": 157266
+    },
+    {
+      "path": "data/blast_corpus/blast_word28.tsv.gz",
+      "sha256": "57d6db25ae821dcafe1183e9d09cdb8704c626592b95dc44a21fecbc91e53781",
+      "format": "decompressed 16-column BLAST reference tracebacks",
+      "rows": 624
+    },
+    {
+      "path": "data/blast_corpus/blast_word11.tsv.gz",
+      "sha256": "0173c511fe956b1b3aecb91c598fdecc31cb3a42fd8ccf59c9a76552a303c816",
+      "format": "decompressed 16-column BLAST reference tracebacks",
+      "rows": 4363
+    },
+    {
+      "path": "data/oxbench/blastp.tsv.xz",
+      "sha256": "ab185383f9786f0c6e5c00a0b2b40966b94804f9032d92eef15f7bcd36b00044",
+      "format": "decompressed 16-column BLAST reference tracebacks",
+      "rows": 746322
+    },
+    {
+      "path": "data/oxbench/blastp-fast.tsv.xz",
+      "sha256": "3c16c0aa6117a0223bcf9ce8571ec9e9fc9264e9929be58d0735c22a43965c81",
+      "format": "decompressed 16-column BLAST reference tracebacks",
+      "rows": 561534
+    },
+    {
+      "path": "receipts/blast/certification/annotation_word7.json.gz",
+      "sha256": "9ff0ac272f0cc3716b6e95176bff1d094f7128f84b6d57658a24fc4359317c60",
+      "format": "decompressed JSON",
+      "schema": "pp-blast-annotation/1",
+      "fields": [
+        "hit_count",
+        "hsp_annotations",
+        "kernel_checked",
+        "manifest",
+        "query_annotation_sources",
+        "raw_source_retention",
+        "record_count",
+        "records",
+        "schema",
+        "scope",
+        "sources"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "receipts/blast/certification/adapters_word7.json.gz",
+      "sha256": "c41c9801fb9a79bc98fe307ce8ce2eebae1f3438989e8e203c90b09a15b3ab06",
+      "format": "decompressed JSON",
+      "schema": "pp-blast-adapter-audit/1",
+      "fields": [
+        "accepted",
+        "adapter_sources",
+        "hits",
+        "kernel_checked",
+        "query_records",
+        "row_limit",
+        "schema",
+        "scope",
+        "sources",
+        "subject_records",
+        "supported"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "receipts/blast/certification/adapters_word28.json.gz",
+      "sha256": "d4a08c9b277192f9703ee639da6784108c5829cadf0ca6daad361f9b8ddb9b43",
+      "format": "decompressed JSON",
+      "schema": "pp-blast-adapter-audit/1",
+      "fields": [
+        "accepted",
+        "adapter_sources",
+        "hits",
+        "kernel_checked",
+        "query_records",
+        "row_limit",
+        "schema",
+        "scope",
+        "sources",
+        "subject_records",
+        "supported"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "receipts/blast/certification/adapters_word11.json.gz",
+      "sha256": "8f5755c41dd96a68f9b1efb258e2f9aa9f692a3f3584d3ce47c73b93f8958672",
+      "format": "decompressed JSON",
+      "schema": "pp-blast-adapter-audit/1",
+      "fields": [
+        "accepted",
+        "adapter_sources",
+        "hits",
+        "kernel_checked",
+        "query_records",
+        "row_limit",
+        "schema",
+        "scope",
+        "sources",
+        "subject_records",
+        "supported"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "receipts/blast/certification/annotation_word28.json.gz",
+      "sha256": "3672536cd4e1b9f0d05fc90b0977843a458f91a1222e197d265fe2316734778b",
+      "format": "decompressed JSON",
+      "schema": "pp-blast-annotation/1",
+      "fields": [
+        "hit_count",
+        "hsp_annotations",
+        "kernel_checked",
+        "manifest",
+        "query_annotation_sources",
+        "raw_source_retention",
+        "record_count",
+        "records",
+        "schema",
+        "scope",
+        "sources"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "receipts/blast/certification/annotation_word11.json.gz",
+      "sha256": "40e971656fb57c7c926b5fc968e6cf462cdcc128ddc35b6b8c609df6d6256c74",
+      "format": "decompressed JSON",
+      "schema": "pp-blast-annotation/1",
+      "fields": [
+        "hit_count",
+        "hsp_annotations",
+        "kernel_checked",
+        "manifest",
+        "query_annotation_sources",
+        "raw_source_retention",
+        "record_count",
+        "records",
+        "schema",
+        "scope",
+        "sources"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "receipts/blast/oxbench/blastp-evaluation.json.gz",
+      "sha256": "a4ab034e94d03bc9f314f2d55b8344a2a7f6c13ca1da23222f87f2399d4415d9",
+      "format": "decompressed JSON",
+      "schema": "pp-oxbench-evaluation/1",
+      "fields": [
+        "all_ordered_search_pairs",
+        "all_queries",
+        "blast_output_sha256",
+        "blast_uncompressed_sha256",
+        "cell_limit_per_pair",
+        "chain_baseline_seconds",
+        "chain_work_limits",
+        "dataset_sha256",
+        "directed_positive_pairs",
+        "evaluation_seconds",
+        "exact_population_seconds",
+        "families",
+        "family_count",
+        "kernel_checked",
+        "nonidentical_positive_pairs",
+        "pairs",
+        "qualified_cross_set_pair_count",
+        "queries_appearing_in_output",
+        "raw_hsps_replayed",
+        "record_count",
+        "reference_residue_pairs",
+        "schema",
+        "scope",
+        "stream_limits",
+        "subjects_appearing_in_output",
+        "task",
+        "thresholds",
+        "totals",
+        "unique_nonidentical_positive_sequence_pairs",
+        "unique_sequence_count",
+        "within_set_nonself_hsps"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "receipts/blast/oxbench/blastp-fast-evaluation.json.gz",
+      "sha256": "acfde53f0224c40e5653b0326c56675f89762357a42a1fc63e2fbf82daa3509b",
+      "format": "decompressed JSON",
+      "schema": "pp-oxbench-evaluation/1",
+      "fields": [
+        "all_ordered_search_pairs",
+        "all_queries",
+        "blast_output_sha256",
+        "blast_uncompressed_sha256",
+        "cell_limit_per_pair",
+        "chain_baseline_seconds",
+        "chain_work_limits",
+        "dataset_sha256",
+        "directed_positive_pairs",
+        "evaluation_seconds",
+        "exact_population_seconds",
+        "families",
+        "family_count",
+        "kernel_checked",
+        "nonidentical_positive_pairs",
+        "pairs",
+        "qualified_cross_set_pair_count",
+        "queries_appearing_in_output",
+        "raw_hsps_replayed",
+        "record_count",
+        "reference_residue_pairs",
+        "schema",
+        "scope",
+        "stream_limits",
+        "subjects_appearing_in_output",
+        "task",
+        "thresholds",
+        "totals",
+        "unique_nonidentical_positive_sequence_pairs",
+        "unique_sequence_count",
+        "within_set_nonself_hsps"
+      ],
+      "scope": "traceback/annotation evaluation from retained public NCBI RefSeq or OXBench reference inputs"
+    },
+    {
+      "path": "data/oxbench/source.tar.gz",
+      "sha256": "1b2899b1d5657e94eb7adccfda4cdeb2b99572e91fc300a04ddc152cdfdf22ee",
+      "format": "public OXBench structural-domain reference archive",
+      "members": 794,
+      "unsafe_links": false
+    }
+  ]
+}

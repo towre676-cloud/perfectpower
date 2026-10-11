@@ -34,6 +34,17 @@ def main():
         run=subprocess.run([sys.executable,'-m','perfectpower',command,*arguments],
             check=True,capture_output=True,text=True)
         return json.loads(run.stdout)
+    model_counting_routes=0
+    import os
+    if os.environ.get('PP_CNF_BOOST_INCLUDE') or Path('/usr/include/boost/multiprecision/cpp_int.hpp').is_file():
+        from perfectpower.model_counting import CNF, CNFCounter
+        formula=CNF(4,((1,2),(-2,3)))
+        with CNFCounter(formula) as counter:
+            if counter.count()!=8:raise AssertionError('installed CNF count changed')
+            if counter.count((-1,))!=2:raise AssertionError('installed CNF conditioning changed')
+            for rank in (0,3,7):
+                if counter.rank(counter.select(rank))!=rank:raise AssertionError('installed CNF rank/select changed')
+        model_counting_routes=3
     differential_routes=0
     try:
         import sympy
@@ -169,7 +180,7 @@ def main():
                     raise AssertionError('installed proved-family HTTP proposal failed: '+op)
         finally:server.shutdown();thread.join();server.server_close()
     print(json.dumps(dict(complete=True,assets=len(manifest),psg_console_routes=7,soe_console_routes=6,
-                         structural_console_routes=5,differential_console_routes=differential_routes,installed_root=str(root))))
+                         structural_console_routes=5,differential_console_routes=differential_routes,model_counting_routes=model_counting_routes,installed_root=str(root))))
 
 
 if __name__=='__main__':main()

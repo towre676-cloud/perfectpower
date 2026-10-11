@@ -1,0 +1,3 @@
+# BLAST publication status
+
+The completed BLAST software, retained Lean proof sources, focused test evidence and already published benchmark summaries are integrated with main. The complete repository archive retains the raw biological datasets, annotation carriers and offline explorer. Those inputs are supplied separately because automatic approval review blocked their public upload. Public CI checks retained proof sources with an explicitly narrower proofs-only mode; raw-source matching remains a separate check requiring the original inputs. See [the integration account](BRANCH_INTEGRATION_MONOGRAPH.md). The historical publication receipt describes the earlier attempt and is retained as historical evidence.

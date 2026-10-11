@@ -1,0 +1,24 @@
+{
+  "schema": "pp-oxbench-independent-tests/1",
+  "checks": [
+    {
+      "task": "blastp",
+      "source_hsps_independently_decoded": 746322,
+      "all_positive_pairs_audited": 101750,
+      "exhaustive_pairs": 576,
+      "exhaustive_families": 385,
+      "subsets_tested": 666,
+      "accepted": true
+    },
+    {
+      "task": "blastp-fast",
+      "source_hsps_independently_decoded": 561534,
+      "all_positive_pairs_audited": 101750,
+      "exhaustive_pairs": 571,
+      "exhaustive_families": 380,
+      "subsets_tested": 657,
+      "accepted": true
+    }
+  ],
+  "scope": "independent subset enumeration, aligned-string residue coordinates, carrier and recall totals; not correctness of BLAST heuristic search or annotation truth"
+}

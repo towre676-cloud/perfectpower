@@ -1,3 +1,9 @@
+Exact unweighted DIMACS counting is available through `PYTHONPATH=python python -m perfectpower model-count input.cnf`. It supports original-variable conditioning, ranks and seeded uniform sampling through the Python API. The complete 200-instance competition comparison and its limits are described in [the model-counting monograph](docs/MODEL_COUNTING_MONOGRAPH.md).
+
+Version 0.10.2 adds projection of explicitly defined gate outputs and sparse planning for exact variable elimination beyond 256 variables. See [the structural source account](docs/MODEL_COUNTING_STRUCTURAL_MONOGRAPH.md) and [the branch integration account](docs/BRANCH_INTEGRATION_MONOGRAPH.md). The [previous publication-driven study](docs/MODEL_COUNTING_RESEARCH_RESULTS.md) retains the already published 0.10.1 evidence.
+
+The recovered structural profiling and provenance tools are also integrated. New detailed counting comparisons and raw biological carriers are available in the complete repository archive; their public upload was blocked by automatic approval review.
+
 # PerfectPower
 
 **Budget Lab (v0.9.9)** applies the exact planner to four complete public participatory-budgeting elections. Launch the local browser application with `python START_BUDGET_LAB.py`, then open `http://127.0.0.1:8765/`. Change budgets, lock arbitrary projects, rank alternatives, sample uniformly and inspect maximum-support portfolios. The [application monograph](docs/BUDGET_LAB_MONOGRAPH.md) records independent full-workflow comparisons and the distinction between analytical portfolios and official voting rules.
@@ -194,3 +200,19 @@ instantiates a global continuous comparison. [Explore the trajectories](web/mich
 Install `.[differential]`, regenerate with `PYTHONPATH=python python3 python/develop_michor_geometry.py`,
 and replay proofs with `lake env python3 scripts/check_michor_geometry_kernel.py`.
 Unrestricted global distances on compact higher-genus curves remain open.
+## BLAST mining extension
+
+The next BLAST exploration release connects exact HSP DAG populations, separator/native CNF counting, overlapping motif generating functions, Hall/flow assignment certificates and triangle-filled similarity topology. See [the workflow and mathematical scope](docs/BLAST_MINING_MACHINERY.md), open `web/blast-mining/index.html`, or run `make blast-mining-test` and `make blast-mining`. The CLI adds `mine`, `verify-mining`, `mining-report` and `motif`; all imported tracebacks replay against supplied FASTA records.
+
+The BLAST certification release pins a complete 930-record INS-query RefSeq corpus,
+scores all 2,790 query/database pairs on both strands, and audits all 162,253 HSPs.
+It retains every source annotation, checks all 931 annotated CDS, and provides a
+general Lean recurrence/completeness proof plus generic BTOP soundness and all
+624 literal word-28 traceback certificates. The whole-corpus recall claim applies
+to this pinned database, not NCBI nt/nr. See
+[the monograph](docs/BLAST_CERTIFICATION_MONOGRAPH.md) and run
+`make blast-certification`, `make blast-certification-test`, or
+`make blast-certification-kernel`. The offline explorer is
+`web/blast-certification/index.html`.
+
+The independent OXBench evaluation retains all 395 structural-domain reference sets and searches all 3,292 sequence occurrences against their pooled carrier. It assesses all 101,750 directed within-set nonself pairs, replays both complete BLASTP outputs, and checks conserved residue correspondences. Standard-run coherent chaining retrieves three more pairs than single-HSP coverage and agrees with ordinary chaining; exact population counting has measurable overhead. See [the annotated benchmark monograph](docs/BLAST_OXBENCH_MONOGRAPH.md) and run `make blast-oxbench-test` or `make blast-oxbench-replay`. Structural-domain retrieval is not an orthology, discovery, or nt/nr recall claim.

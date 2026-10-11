@@ -1,0 +1,91 @@
+{
+  "schema": "pp-cnf-release-validation/1",
+  "version": "0.10.1",
+  "native_source_sha256": "d0eac70c0cc56d549d90f68c60bfee96927b99680f8a3529f3ddd6def96d9925",
+  "focused_tests": {
+    "command": "PYTHONPATH=python make model-count-test",
+    "passed": 16,
+    "failed": 0
+  },
+  "sanitizer_exhaustive": {
+    "seed": 4269,
+    "formulas": 1000,
+    "address_sanitizer": true,
+    "undefined_behavior_sanitizer": true,
+    "leak_sanitizer": false,
+    "harness_sha256": "77f9a657e1d61287f1032f129b56917128469e68770dcfb697566db8b2ab47f7",
+    "status": "PASS"
+  },
+  "comparisons": [
+    {
+      "receipt": "next_regression.json",
+      "sha256": "a18ea14aaa8957dec14cd66c0493c56b21aeaf795b1a97dd3f4d4fe6947f7034",
+      "instances": 11,
+      "repetitions": 3,
+      "outcomes": 132,
+      "logs_audited": true,
+      "status": "PASS"
+    },
+    {
+      "receipt": "next_mc2024.json",
+      "sha256": "8b001bb0dbaac805f35b7326bd342c2308371b4d722e0ff18f1eaa9418621e73",
+      "instances": 200,
+      "repetitions": 1,
+      "outcomes": 400,
+      "logs_audited": true,
+      "status": "PASS"
+    },
+    {
+      "receipt": "next_mc2025.json",
+      "sha256": "b568ee40b21927dd157b8a2fee83d6487c0d29f67927608fb418f01aa7e59590",
+      "instances": 200,
+      "repetitions": 1,
+      "outcomes": 800,
+      "logs_audited": true,
+      "status": "PASS"
+    },
+    {
+      "receipt": "next_mc2025_repeated.json",
+      "sha256": "66e13eedcf6ff34406d2536df6e90a6b4f6f2bb5c06834ccd4377e34eed8728e",
+      "instances": 13,
+      "repetitions": 3,
+      "outcomes": 156,
+      "logs_audited": true,
+      "status": "PASS"
+    },
+    {
+      "receipt": "next_reference_validation.json",
+      "sha256": "2dccab2b10ce97639b10045400b2e4660b8d2d04ac8b5077f67730c36fe9fd05",
+      "instances": 1,
+      "repetitions": 1,
+      "outcomes": 4,
+      "logs_audited": true,
+      "status": "PASS"
+    },
+    {
+      "receipt": "next_reference_repeated.json",
+      "sha256": "a6e13158537ddaca5733c4ab8de7505af69088b282febf874475e209d80f41a5",
+      "instances": 1,
+      "repetitions": 3,
+      "outcomes": 12,
+      "logs_audited": true,
+      "status": "PASS"
+    },
+    {
+      "receipt": "next_startup_repeated.json",
+      "sha256": "ae64b2e9d7bcbbd43cc72305cdea5ef81c23c8f4c198a775340a2005be236452",
+      "instances": 6,
+      "repetitions": 20,
+      "outcomes": 240,
+      "logs_audited": true,
+      "status": "PASS"
+    }
+  ],
+  "ablation_outcomes_audited": 60,
+  "total_solver_outcome_logs_audited": 1804,
+  "exact_count_disagreements": 0,
+  "independent_reference_confirmed_mc2025_answers": 13,
+  "historical_reference_confirmed_mc2024_answers": 12,
+  "installed_wheel_status": "PASS",
+  "status": "PASS"
+}

@@ -28,8 +28,68 @@ def main(argv=None):
     retrieve.add_argument('rid'); retrieve.add_argument('--email', required=True); retrieve.add_argument('--cache', required=True); retrieve.add_argument('--output', required=True)
     report = sub.add_parser('report', help='render an atlas receipt as offline HTML')
     report.add_argument('receipt'); report.add_argument('--output', required=True)
+    mining = sub.add_parser('mine', help='replay and mine HSPs with exact DAG, graph, motif and Hall machinery')
+    mining.add_argument('input'); mining.add_argument('--query-fasta', required=True); mining.add_argument('--subject-fasta', required=True)
+    mining.add_argument('--protein', action='store_true'); mining.add_argument('--maximum-evalue', default='0.001')
+    mining.add_argument('--minimum-identity', default='1/2'); mining.add_argument('--minimum-coverage', default='0')
+    mining.add_argument('--selection-backend', choices=['separator', 'native'], default='separator')
+    mining.add_argument('--cell-limit', type=int, default=1000000); mining.add_argument('--motif', action='append', default=[])
+    mining.add_argument('--output', required=True)
+    motif = sub.add_parser('motif', help='exact overlapping motif-anywhere probabilities and expected counts under IID letters')
+    motif.add_argument('motifs', nargs='+'); motif.add_argument('--length', type=int, required=True)
+    motif.add_argument('--alphabet', default='ACGT'); motif.add_argument('--probabilities', help='JSON map of exact rational letter probabilities')
+    motif.add_argument('--modulus', type=int); motif.add_argument('--output', required=True)
+    check = sub.add_parser('verify-mining', help='reexecute a mining receipt against all three original source files')
+    check.add_argument('receipt'); check.add_argument('input'); check.add_argument('--query-fasta', required=True); check.add_argument('--subject-fasta', required=True)
+    mine_report = sub.add_parser('mining-report', help='write a self-contained explorer for a source-replayed mining receipt')
+    mine_report.add_argument('receipt'); mine_report.add_argument('--output', required=True)
+    audit = sub.add_parser('certify-source', help='audit every source traceback using two independent decoders')
+    audit.add_argument('input'); audit.add_argument('--query-fasta', required=True); audit.add_argument('--subject-fasta', required=True)
+    audit.add_argument('--row-limit',type=int,default=100000); audit.add_argument('--protein',action='store_true'); audit.add_argument('--output',required=True)
+    annotation = sub.add_parser('annotate', help='retain complete GBSeq annotations and project every supplied HSP')
+    annotation.add_argument('input'); annotation.add_argument('--corpus',required=True); annotation.add_argument('--query-fasta',required=True)
+    annotation.add_argument('--row-limit',type=int,default=100000); annotation.add_argument('--output',required=True)
+    recall = sub.add_parser('recall', help='audit every pinned query/subject pair against a complete reference receipt')
+    recall.add_argument('input'); recall.add_argument('--reference',required=True); recall.add_argument('--query-fasta',required=True)
+    recall.add_argument('--subject-fasta',required=True); recall.add_argument('--threshold',action='append',type=int)
+    recall.add_argument('--row-limit',type=int,default=100000); recall.add_argument('--output',required=True)
+    certification_report=sub.add_parser('certification-report',help='offline full-corpus recall and annotation explorer')
+    certification_report.add_argument('directory');certification_report.add_argument('--output',required=True)
     args = parser.parse_args(argv)
-    if args.command == 'align':
+    if args.command in ('certify-source','annotate','recall'):
+        from .blast_certification import source_bytes,certify
+        inputs=[args.input,args.query_fasta]
+        if args.command in ('certify-source','recall'): inputs.append(args.subject_fasta)
+        if args.command=='recall': inputs.append(args.reference)
+        if Path(args.output).resolve() in {Path(p).resolve() for p in inputs}:
+            parser.error('output must differ from source inputs')
+        raw=source_bytes(args.input);qraw=source_bytes(args.query_fasta)
+        if args.command=='certify-source':
+            receipt=certify(qraw,source_bytes(args.subject_fasta),raw,nucleotide=not args.protein,row_limit=args.row_limit)
+        elif args.command=='annotate':
+            from .blast_annotation import annotation_sources,annotate,coding_audit
+            manifest,records=annotation_sources(args.corpus)
+            protected={Path(args.corpus,'manifest.json').resolve(),Path(args.corpus,'query_sources.json').resolve()}
+            for name in ('manifest.json','query_sources.json'):
+                protected.update(Path(args.corpus,x['file']).resolve() for x in json.loads(Path(args.corpus,name).read_text())['sources'])
+            if Path(args.output).resolve() in protected: parser.error('output must differ from annotation sources')
+            receipt=annotate(tabular(raw.decode(),row_limit=args.row_limit),fasta(qraw.decode()),records,manifest=manifest)
+            receipt['coding_audit']={key:coding_audit(record) for key,record in records.items()}
+        else:
+            from .blast_recall import recall_audit
+            from hashlib import sha256
+            reference=json.loads(source_bytes(args.reference))
+            sraw=source_bytes(args.subject_fasta)
+            if reference.get('schema')!='pp-blast-affine-reference/1' or reference.get('scoring')!=[2,-3,-5,-2] or reference.get('query_sha256')!=sha256(qraw).hexdigest() or reference.get('database_sha256')!=sha256(sraw).hexdigest():
+                raise ValueError('reference model and source hashes must match the complete FASTA inputs')
+            pairs={}
+            for row in reference['pairs']:
+                key=row['query'],row['subject']
+                if key in pairs: raise ValueError('duplicate reference pair')
+                pairs[key]=row['scores']
+            receipt=recall_audit(fasta(qraw.decode()),fasta(sraw.decode()),
+                    tabular(raw.decode(),row_limit=args.row_limit),pairs,thresholds=args.threshold or (40,100,200))
+    elif args.command == 'align':
         family = AlignmentFamily(args.query, args.subject)
         receipt = {'family': family.packet(), 'optimal': family.optimal(weights()),
                    'robustness': robustness(family.terms, weights()), 'statistics': partition_statistics(family),
@@ -47,6 +107,35 @@ def main(argv=None):
         if args.query_fasta:
             q, s = fasta(Path(args.query_fasta).read_text()), fasta(Path(args.subject_fasta).read_text())
             receipt['replays'] = [replay(h, q[h.fields['qseqid']], s[h.fields['sseqid']], nucleotide=not args.protein) for h in hits]
+    elif args.command in ('mine', 'verify-mining'):
+        from hashlib import sha256
+        from .blast_mining import mine
+        paths = {'tabular': Path(args.input), 'query_fasta': Path(args.query_fasta), 'subject_fasta': Path(args.subject_fasta)}
+        if args.command == 'mine' and Path(args.output).resolve() in {p.resolve() for p in paths.values()}:
+            parser.error('output must differ from all inputs')
+        texts = {k: p.read_bytes() for k, p in paths.items()}
+        if args.command == 'verify-mining':
+            from .blast_mining import verify_mining
+            verify_mining(json.loads(Path(args.receipt).read_text()), tabular(texts['tabular'].decode()),
+                          fasta(texts['query_fasta'].decode()), fasta(texts['subject_fasta'].decode()),
+                          source_hashes={k: sha256(v).hexdigest() for k,v in texts.items()})
+            print('Mining receipt replays against all original source files'); return
+        receipt = mine(tabular(texts['tabular'].decode()), fasta(texts['query_fasta'].decode()), fasta(texts['subject_fasta'].decode()),
+                       nucleotide=not args.protein, maximum_evalue=args.maximum_evalue, minimum_identity=args.minimum_identity,
+                       minimum_coverage=args.minimum_coverage, selection_backend=args.selection_backend, cell_limit=args.cell_limit,
+                       motifs=args.motif, source_hashes={k: sha256(v).hexdigest() for k, v in texts.items()})
+    elif args.command == 'motif':
+        from .blast_mining import motif_series, motif_values
+        packet = motif_series(args.motifs, alphabet=args.alphabet, probabilities=json.loads(args.probabilities) if args.probabilities else None)
+        receipt = {'model': packet, 'values': motif_values(packet, args.length, modulus=args.modulus)}
+    elif args.command == 'mining-report':
+        from .blast_mining_report import write_mining_report
+        write_mining_report(json.loads(Path(args.receipt).read_text()), args.output)
+        print(str(Path(args.output).resolve())); return
+    elif args.command == 'certification-report':
+        from .blast_certification_report import write_report
+        write_report(args.directory,args.output)
+        print(str(Path(args.output).resolve()));return
     elif args.command in ('fetch', 'submit', 'retrieve'):
         from .blast_client import NCBIClient
         client = NCBIClient(args.cache, email=args.email)
@@ -64,7 +153,11 @@ def main(argv=None):
     else:
         write_report(json.loads(Path(args.receipt).read_text()), args.output)
         print(str(Path(args.output).resolve())); return
-    Path(args.output).write_text(json.dumps(json_ready(receipt), indent=2, sort_keys=True)+'\n')
+    encoded=(json.dumps(json_ready(receipt), indent=2, sort_keys=True)+'\n').encode()
+    if Path(args.output).suffix=='.gz':
+        import gzip
+        encoded=gzip.compress(encoded,mtime=0)
+    Path(args.output).write_bytes(encoded)
     print(str(Path(args.output).resolve()))
 
 

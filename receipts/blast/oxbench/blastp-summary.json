@@ -1,0 +1,103 @@
+{
+  "schema": "pp-oxbench-evaluation/1",
+  "record_count": 3292,
+  "family_count": 395,
+  "directed_positive_pairs": 101750,
+  "nonidentical_positive_pairs": 101750,
+  "unique_nonidentical_positive_sequence_pairs": 27012,
+  "reference_residue_pairs": 6285440,
+  "raw_hsps_replayed": 746322,
+  "all_ordered_search_pairs": 10837264,
+  "all_queries": 3292,
+  "qualified_cross_set_pair_count": 669585,
+  "chain_baseline_seconds": 0.922560984537995,
+  "exact_population_seconds": 13.083036234471365,
+  "unique_sequence_count": 978,
+  "totals": {
+    "best_hsp": {
+      "retrieved_pairs": 73003,
+      "correct_reference_residue_pairs": 4536812,
+      "predicted_eligible_residue_pairs": 4598031,
+      "unresolved_pairs": 0,
+      "nonidentical_pair_recall": 0.7174742014742015,
+      "unique_nonidentical_sequence_pair_recall": 0.6052124981489708,
+      "pair_recall": 0.7174742014742015,
+      "pair_recall_upper_bound": 0.7174742014742015,
+      "residue_recall": 0.7217970420527441,
+      "eligible_residue_precision": 0.9866858226923655,
+      "family_macro_pair_recall": 0.8065398609733189
+    },
+    "any_hsp": {
+      "retrieved_pairs": 73003,
+      "correct_reference_residue_pairs": 4537110,
+      "predicted_eligible_residue_pairs": 4598501,
+      "unresolved_pairs": 0,
+      "nonidentical_pair_recall": 0.7174742014742015,
+      "unique_nonidentical_sequence_pair_recall": 0.6052124981489708,
+      "pair_recall": 0.7174742014742015,
+      "pair_recall_upper_bound": 0.7174742014742015,
+      "residue_recall": 0.7218444532125038,
+      "eligible_residue_precision": 0.9866497800043971,
+      "family_macro_pair_recall": 0.8065398609733189
+    },
+    "hsp_union": {
+      "retrieved_pairs": 73021,
+      "correct_reference_residue_pairs": 4537110,
+      "predicted_eligible_residue_pairs": 4598501,
+      "unresolved_pairs": 0,
+      "nonidentical_pair_recall": 0.7176511056511057,
+      "unique_nonidentical_sequence_pair_recall": 0.60587886865097,
+      "pair_recall": 0.7176511056511057,
+      "pair_recall_upper_bound": 0.7176511056511057,
+      "residue_recall": 0.7218444532125038,
+      "eligible_residue_precision": 0.9866497800043971,
+      "family_macro_pair_recall": 0.8084385951505341
+    },
+    "blast_chain_dp": {
+      "retrieved_pairs": 73006,
+      "correct_reference_residue_pairs": 4537110,
+      "predicted_eligible_residue_pairs": 4598331,
+      "unresolved_pairs": 0,
+      "nonidentical_pair_recall": 0.7175036855036855,
+      "unique_nonidentical_sequence_pair_recall": 0.605323559899304,
+      "pair_recall": 0.7175036855036855,
+      "pair_recall_upper_bound": 0.7175036855036855,
+      "residue_recall": 0.7218444532125038,
+      "eligible_residue_precision": 0.9866862563830224,
+      "family_macro_pair_recall": 0.8071727723657239
+    },
+    "exact_chain": {
+      "retrieved_pairs": 73006,
+      "correct_reference_residue_pairs": 4537110,
+      "predicted_eligible_residue_pairs": 4598331,
+      "unresolved_pairs": 0,
+      "nonidentical_pair_recall": 0.7175036855036855,
+      "unique_nonidentical_sequence_pair_recall": 0.605323559899304,
+      "pair_recall": 0.7175036855036855,
+      "pair_recall_upper_bound": 0.7175036855036855,
+      "residue_recall": 0.7218444532125038,
+      "eligible_residue_precision": 0.9866862563830224,
+      "family_macro_pair_recall": 0.8071727723657239
+    }
+  },
+  "thresholds": {
+    "evalue": "0.001",
+    "query_coverage": "1/2"
+  },
+  "chain_work_limits": 0,
+  "cell_limit_per_pair": 1000000,
+  "scope": "all sequences searched against pooled local dataset; recall on all same-set directed nonself pairs. Cross-set pairs are unlabelled, not negatives. No nt/nr completeness, orthology or paralogy claim.",
+  "queries_appearing_in_output": 3292,
+  "subjects_appearing_in_output": 3292,
+  "within_set_nonself_hsps": 73376,
+  "stream_limits": {
+    "rows": 2000000,
+    "uncompressed_bytes": 250000000
+  },
+  "dataset_sha256": "1b2899b1d5657e94eb7adccfda4cdeb2b99572e91fc300a04ddc152cdfdf22ee",
+  "blast_output_sha256": "ab185383f9786f0c6e5c00a0b2b40966b94804f9032d92eef15f7bcd36b00044",
+  "blast_uncompressed_sha256": "14258bb029898319fe9f83db6be2d26e3106a4efa13eef8f3f8bd7e8fe333bd3",
+  "evaluation_seconds": 70.10813677099941,
+  "task": "blastp",
+  "kernel_checked": false
+}
