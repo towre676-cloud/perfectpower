@@ -1,0 +1,31 @@
+{
+  "schema": "pp-oxbench-protocol/1",
+  "dataset_hash": "1b2899b1d5657e94eb7adccfda4cdeb2b99572e91fc300a04ddc152cdfdf22ee",
+  "selection": "every ID in ox/info/ids.txt; no sampling",
+  "search": "all normalized occurrences against pooled database including all self hits",
+  "parameters": {
+    "evalue": "0.001",
+    "coverage": "1/2",
+    "tasks": [
+      "blastp",
+      "blastp-fast"
+    ],
+    "seg": "yes",
+    "max_target_seqs": 3292,
+    "max_hsps": "unlimited default (option omitted)",
+    "threads": 1,
+    "timeout_seconds_per_task": 600,
+    "row_limit": 2000000,
+    "cell_limit_per_pair": 1000000
+  },
+  "methods": [
+    "best bit-score single HSP",
+    "any single HSP",
+    "union HSP query intervals (incoherence allowed)",
+    "ordinary maximum-coverage BLAST-HSP DP",
+    "complete monotone nonoverlapping HSP chain existence with polynomial counts"
+  ],
+  "annotation_independence": "structure-derived uppercase reference columns; labels withheld from BLAST and chain selection",
+  "precision_scope": "residue precision restricted to uppercase eligible reference residues. Cross-family membership is unknown; no retrieval precision or orthology score.",
+  "replicate_dependence": "sets may overlap and repeated sequences are retained as occurrences; unique count reported; macro family mean descriptive, no IID confidence interval"
+}

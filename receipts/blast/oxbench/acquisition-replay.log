@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/27be6d78022b/perfectpower/python/fetch_oxbench.py", line 26, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/27be6d78022b/perfectpower/python/fetch_oxbench.py", line 24, in main
+    if hashlib.sha256(target.getvalue()).hexdigest()!=manifest['retained_sha256']:raise ValueError('subset reconstruction differs')
+                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: subset reconstruction differs

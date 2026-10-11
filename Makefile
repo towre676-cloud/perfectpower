@@ -605,3 +605,23 @@ geometry-foundations:
 
 geometry-foundations-kernel:
 	bash scripts/check_geometry_foundations.sh
+
+.PHONY: blast-certification blast-certification-test blast-certification-kernel
+blast-certification:
+	PYTHONPATH=python python python/develop_blast_certification.py
+	PYTHONPATH=python python -m perfectpower.blast_cli certification-report receipts/blast/certification --output web/blast-certification/index.html
+
+blast-certification-test:
+	PYTHONPATH=python python -m unittest discover -s python/tests -p test_blast_certification.py -v
+
+blast-certification-kernel:
+	PYTHONPATH=python python python/generate_blast_source_certificates.py
+	python scripts/check_blast_certification.py --lean "$$(elan which lean)"
+
+.PHONY: blast-oxbench-test blast-oxbench-replay blast-oxbench-live
+blast-oxbench-test:
+	PYTHONPATH=python python -m unittest discover -s python/tests -p 'test_blast*.py'
+blast-oxbench-replay:
+	PYTHONPATH=python python python/benchmark_blast_oxbench.py
+blast-oxbench-live:
+	PYTHONPATH=python python python/benchmark_blast_oxbench.py --run-blast

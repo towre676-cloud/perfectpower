@@ -1,0 +1,47 @@
+name: BLAST recurrence and whole-corpus certification
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'PerfectPower/BlastRecurrence.lean'
+      - 'PerfectPower/BlastSourceReplay.lean'
+      - 'PerfectPower/Generated/BlastCertification/**'
+      - 'python/perfectpower/blast*'
+      - 'python/*blast*certif*.py'
+      - 'python/tests/test_blast_certification.py'
+      - 'native/blast_reference.cpp'
+      - 'scripts/check_blast_certification.py'
+      - 'data/blast_corpus/**'
+      - '.github/workflows/blast-certification.yml'
+  pull_request:
+jobs:
+  whole-corpus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: PYTHONPATH=python python -m unittest discover -s python/tests -p test_blast_certification.py -v
+      - name: Recompute every database pair and replay every retained HSP
+        run: PYTHONPATH=python python python/develop_blast_certification.py
+      - name: Check reproducible source certificate encoding
+        run: |
+          PYTHONPATH=python python python/generate_blast_source_certificates.py
+          git diff --exit-code -- PerfectPower/Generated/BlastCertification receipts/blast/certification/source_kernel_inputs.json
+  kernel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'false'
+      - name: Kernel-check generic theorems and complete word-28 traceback run
+        run: python scripts/check_blast_certification.py --lean "$(elan which lean)" --jobs 2

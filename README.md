@@ -186,3 +186,15 @@ The BLAST polynomial atlas imports NCBI tracebacks, reconstructs exact finite al
 
 The next BLAST exploration release connects exact HSP DAG populations, separator/native CNF counting, overlapping motif generating functions, Hall/flow assignment certificates and triangle-filled similarity topology. See [the workflow and mathematical scope](docs/BLAST_MINING_MACHINERY.md), open `web/blast-mining/index.html`, or run `make blast-mining-test` and `make blast-mining`. The CLI adds `mine`, `verify-mining`, `mining-report` and `motif`; all imported tracebacks replay against supplied FASTA records.
 
+The BLAST certification release pins a complete 930-record INS-query RefSeq corpus,
+scores all 2,790 query/database pairs on both strands, and audits all 162,253 HSPs.
+It retains every source annotation, checks all 931 annotated CDS, and provides a
+general Lean recurrence/completeness proof plus generic BTOP soundness and all
+624 literal word-28 traceback certificates. The whole-corpus recall claim applies
+to this pinned database, not NCBI nt/nr. See
+[the monograph](docs/BLAST_CERTIFICATION_MONOGRAPH.md) and run
+`make blast-certification`, `make blast-certification-test`, or
+`make blast-certification-kernel`. The offline explorer is
+`web/blast-certification/index.html`.
+
+The independent OXBench evaluation retains all 395 structural-domain reference sets and searches all 3,292 sequence occurrences against their pooled carrier. It assesses all 101,750 directed within-set nonself pairs, replays both complete BLASTP outputs, and checks conserved residue correspondences. Standard-run coherent chaining retrieves three more pairs than single-HSP coverage and agrees with ordinary chaining; exact population counting has measurable overhead. See [the annotated benchmark monograph](docs/BLAST_OXBENCH_MONOGRAPH.md) and run `make blast-oxbench-test` or `make blast-oxbench-replay`. Structural-domain retrieval is not an orthology, discovery, or nt/nr recall claim.

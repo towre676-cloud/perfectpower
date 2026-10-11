@@ -1,0 +1,47 @@
+name: BLAST annotated OXBench replay
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/oxbench/**'
+      - 'python/perfectpower/blast*'
+      - 'python/benchmark_blast_oxbench.py'
+      - 'python/tests/test_blast*.py'
+      - 'PerfectPower/Blast*.lean'
+      - 'PerfectPower/Generated/OxbenchInputs.lean'
+      - 'scripts/check*oxbench*.py'
+      - '.github/workflows/blast-oxbench.yml'
+  pull_request:
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: make blast-oxbench-test
+      - run: make blast-oxbench-replay
+      - run: PYTHONPATH=python python scripts/check_blast_oxbench.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blast-oxbench-replay
+          path: receipts/blast/oxbench
+  kernel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'false'
+      - run: python scripts/check_oxbench_kernel.py --lean "$(elan which lean)"
+      - run: git diff --exit-code -- PerfectPower/Generated/OxbenchInputs.lean

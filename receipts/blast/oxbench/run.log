@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/27be6d78022b/perfectpower/python/benchmark_blast_oxbench.py", line 39, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/scratch/27be6d78022b/perfectpower/python/benchmark_blast_oxbench.py", line 32, in main
+    hits=tabular(text,row_limit=2_000_000)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/27be6d78022b/perfectpower/python/perfectpower/blast_io.py", line 149, in tabular
+    raise WorkLimit('BLAST text byte limit exceeded')
+perfectpower.divisor_square.WorkLimit: BLAST text byte limit exceeded

@@ -1,0 +1,61 @@
+{
+  "schema": "pp-blast-finish-validation/1",
+  "accepted": true,
+  "focused_regression_tests": 134,
+  "fresh_unique_lean_modules": 17,
+  "kernel_nucleotide_hsps": 624,
+  "kernel_protein_hsps": 24,
+  "kernel_protein_rejection_examples": 2,
+  "ins_query_database_pairs": 2790,
+  "ins_exhaustive_reference_strand_scores": 5580,
+  "ins_hsps_executable_replayed": 162253,
+  "ins_receipts_byte_identical": true,
+  "oxbench": [
+    {
+      "task": "blastp",
+      "raw_hsps_replayed": 746322,
+      "directed_positive_pairs": 101750,
+      "exact_retrieved": 73006,
+      "ordinary_chain_retrieved": 73006,
+      "single_hsp_retrieved": 73003,
+      "unchanged_pair_records": true
+    },
+    {
+      "task": "blastp-fast",
+      "raw_hsps_replayed": 561534,
+      "directed_positive_pairs": 101750,
+      "exact_retrieved": 60624,
+      "ordinary_chain_retrieved": 60624,
+      "single_hsp_retrieved": 60623,
+      "unchanged_pair_records": true
+    }
+  ],
+  "independent_oxbench_audit": {
+    "schema": "pp-oxbench-independent-tests/1",
+    "checks": [
+      {
+        "task": "blastp",
+        "source_hsps_independently_decoded": 746322,
+        "all_positive_pairs_audited": 101750,
+        "exhaustive_pairs": 576,
+        "exhaustive_families": 385,
+        "subsets_tested": 666,
+        "accepted": true
+      },
+      {
+        "task": "blastp-fast",
+        "source_hsps_independently_decoded": 561534,
+        "all_positive_pairs_audited": 101750,
+        "exhaustive_pairs": 571,
+        "exhaustive_families": 380,
+        "subsets_tested": 657,
+        "accepted": true
+      }
+    ],
+    "scope": "independent subset enumeration, aligned-string residue coordinates, carrier and recall totals; not correctness of BLAST heuristic search or annotation truth"
+  },
+  "source_generator_byte_reproduction": true,
+  "oxbench_recovery_commit": "bfad032",
+  "certification_recovered_commit": "6420957",
+  "scope": "combined BLAST release only; no entire historical repository build, biological discovery, arbitrary-Python refinement or NCBI nt/nr recall claim"
+}
