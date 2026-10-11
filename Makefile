@@ -579,3 +579,14 @@ euclid-methods:
 
 euclid-methods-kernel:
 	bash scripts/check_euclid_methods.sh
+
+.PHONY: linear-product linear-product-kernel linear-product-benchmark
+linear-product:
+	$(PY) -m unittest discover -s python/tests -p 'test_linear_product.py'
+	$(PY) python/develop_linear_product.py
+
+linear-product-kernel:
+	bash scripts/check_linear_product.sh
+
+linear-product-benchmark:
+	$(PY) python/benchmark_linear_product.py

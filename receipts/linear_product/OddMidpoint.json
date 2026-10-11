@@ -1,0 +1,143 @@
+{
+  "schema": "pp-linear-product-chart/1",
+  "left": [
+    0,
+    1
+  ],
+  "right": [
+    3,
+    1
+  ],
+  "bezout": {
+    "schema": "pp-resultant-bezout/1",
+    "left": [
+      0,
+      1
+    ],
+    "right": [
+      3,
+      1
+    ],
+    "resultant": 3,
+    "u": [
+      -1
+    ],
+    "v": [
+      1
+    ]
+  },
+  "transform": {
+    "q": 1,
+    "t": 3,
+    "s": 1,
+    "constant": 9
+  },
+  "resultant_factorization": [
+    [
+      3,
+      1
+    ]
+  ],
+  "signed_divisors": [
+    -9,
+    -3,
+    -1,
+    1,
+    3,
+    9
+  ],
+  "accepted_pairs": [
+    {
+      "pair": [
+        -9,
+        -1
+      ],
+      "point": [
+        -4,
+        2
+      ]
+    },
+    {
+      "pair": [
+        -3,
+        -3
+      ],
+      "point": [
+        -3,
+        0
+      ]
+    },
+    {
+      "pair": [
+        -1,
+        -9
+      ],
+      "point": [
+        -4,
+        -2
+      ]
+    },
+    {
+      "pair": [
+        1,
+        9
+      ],
+      "point": [
+        1,
+        2
+      ]
+    },
+    {
+      "pair": [
+        3,
+        3
+      ],
+      "point": [
+        0,
+        0
+      ]
+    },
+    {
+      "pair": [
+        9,
+        1
+      ],
+      "point": [
+        1,
+        -2
+      ]
+    }
+  ],
+  "points": [
+    [
+      -4,
+      -2
+    ],
+    [
+      -4,
+      2
+    ],
+    [
+      -3,
+      0
+    ],
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      -2
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "cardinality": 6,
+  "work_used": 9,
+  "status": "COMPLETE",
+  "complete": true,
+  "kernel_checked": false,
+  "scope": "all integer n and signed integer y; square degree 2, positive square leading product, distinct roots"
+}

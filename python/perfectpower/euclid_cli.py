@@ -3,11 +3,19 @@ import json
 from .euclid_descent import compile_descent
 from .euclid_geometry import voronoi_cells,segment_intersection,string_disk_contacts,string_geometry
 from .euclid_exact import euclidean_gcd,QuadraticSurd,sqrt_continued_fraction,pell_from_cf,sqrt_exhaustion,isolate_root
+from .linear_product import solve as solve_linear_product, query as query_linear_product, close_descent
 
-OPERATIONS=('descent','voronoi','segments','contacts','string','gcd','surd','continued-fraction','pell','sqrt-bounds','root-bounds')
+OPERATIONS=('descent','solve-descent','solve-linear-product','query-linear-product','voronoi','segments','contacts','string','gcd','surd','continued-fraction','pell','sqrt-bounds','root-bounds')
 
 
 def dispatch(operation,spec):
+    if operation=='solve-descent':
+        limit=spec.get('work_limit',1000000)
+        descent=compile_descent(spec['left'],spec['right'],spec.get('degree',2),work_limit=limit,branch_limit=spec.get('branch_limit',10000))
+        return close_descent(descent,work_limit=limit)
+    if operation in ('solve-linear-product','query-linear-product'):
+        packet=solve_linear_product(spec['left'],spec['right'],work_limit=spec.get('work_limit',1000000))
+        return packet if operation=='solve-linear-product' else query_linear_product(packet,spec)
     if operation=='descent':return compile_descent(spec['left'],spec['right'],spec.get('degree',2),work_limit=spec.get('work_limit',100000),branch_limit=spec.get('branch_limit',10000))
     if operation=='voronoi':return voronoi_cells(spec['sites'],spec['box'])
     if operation=='segments':return segment_intersection(*spec['segments'][0],*spec['segments'][1])

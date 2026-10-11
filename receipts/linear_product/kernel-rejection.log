@@ -1,0 +1,34 @@
+changed-polynomial: rejected by Lean (exit 1)
+/tmp/tmpf34_x4j9/Rejected.lean:8:111: error: tactic 'decide' proved that the proposition
+  addPoly (mulPoly X X) (scalePoly (-(2 * 1 * (2 * 1))) F) = [36, 0, 0]
+is false
+/tmp/tmpf34_x4j9/Rejected.lean:17:81: error: tactic 'decide' proved that the proposition
+  points (horner F) 1 6 1 36 = chart_points
+is false
+/tmp/tmpf34_x4j9/Rejected.lean:25:4: error: type mismatch, term
+  hh
+after simplification has type
+  True : Prop
+but is expected to have type
+  1 + n * (n + 6) = n * (n + 6) : Prop
+'PerfectPower.CheckedLinearProduct.Pe8f06d829dab74153aac6eb00536e655322462b3296b8daaa5a8ead7bfd7b93e.transform' depends on axioms: [propext,
+ sorryAx,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pe8f06d829dab74153aac6eb00536e655322462b3296b8daaa5a8ead7bfd7b93e.all_integer_solutions' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+omitted-solution: rejected by Lean (exit 1)
+/tmp/tmp62bfvefe/Rejected.lean:18:80: error: tactic 'decide' proved that the proposition
+  chart_points ⊆ solutions ∧ solutions ⊆ chart_points
+is false
+/tmp/tmp62bfvefe/Rejected.lean:25:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+'PerfectPower.CheckedLinearProduct.Pe8f06d829dab74153aac6eb00536e655322462b3296b8daaa5a8ead7bfd7b93e.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pe8f06d829dab74153aac6eb00536e655322462b3296b8daaa5a8ead7bfd7b93e.all_integer_solutions' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+

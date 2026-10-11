@@ -1,0 +1,55 @@
+{
+  "schema": "pp-linear-product-kernel-run/1",
+  "generic_completeness_checked": true,
+  "sources": [
+    {
+      "name": "Adjacent",
+      "source_sha256": "7e5603ab3a2b35f5a3427c355bbbbb583e333c898127ec0a1f73328094f77899",
+      "kernel_checked": true,
+      "theorem_scope": "all signed integer pairs for the original supplied linear factors"
+    },
+    {
+      "name": "Six",
+      "source_sha256": "c4f1826a5b19a4a5e7d946fc85d89627b78b67277d409fbb352e229b93ea6a1b",
+      "kernel_checked": true,
+      "theorem_scope": "all signed integer pairs for the original supplied linear factors"
+    },
+    {
+      "name": "NegativeSlopes",
+      "source_sha256": "5e51525da557f471830384de09929aea19d1ad197cac893c3c1791debda335e7",
+      "kernel_checked": true,
+      "theorem_scope": "all signed integer pairs for the original supplied linear factors"
+    },
+    {
+      "name": "UnequalSlopes",
+      "source_sha256": "81d73dbcec8c192e0acccc0bdc311d0638047904af9707b16171751a2ff573f6",
+      "kernel_checked": true,
+      "theorem_scope": "all signed integer pairs for the original supplied linear factors"
+    },
+    {
+      "name": "NoSolutions",
+      "source_sha256": "1ce04037ed5efeb6c037f7afbfdf19a37b5dbc45fdee1a7613373d01fddae007",
+      "kernel_checked": true,
+      "theorem_scope": "all signed integer pairs for the original supplied linear factors"
+    },
+    {
+      "name": "OddMidpoint",
+      "source_sha256": "975ec130f1a93698306444cccd19c5ff35a262a799bb4888fa289984741c8b25",
+      "kernel_checked": true,
+      "theorem_scope": "all signed integer pairs for the original supplied linear factors"
+    },
+    {
+      "name": "Translated80Digits",
+      "source_sha256": "be5af83e8b3964435316fa1e0f4900ca579da4a6b813e6230a2b0348aa50db21",
+      "kernel_checked": true,
+      "theorem_scope": "all signed integer pairs for the original supplied linear factors"
+    }
+  ],
+  "corrupted_sources_rejected": 2,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "scope": "retained emitted sources and generic chart; does not assert verification of Python execution"
+}

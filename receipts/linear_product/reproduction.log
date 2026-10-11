@@ -1,0 +1,61 @@
+python3 -m unittest discover -s python/tests -p 'test_linear_product.py'
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.149s
+
+OK
+python3 python/develop_linear_product.py
+bash scripts/check_linear_product.sh
+'PerfectPower.EuclidMethods.horner_mul' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EuclidMethods.evaluated_obstruction' depends on axioms: [propext]
+'PerfectPower.EuclidMethods.squared_difference' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EuclidMethods.complementary_exponents' depends on axioms: [propext]
+'PerfectPower.EuclidMethods.adjacent_two_common_divisor' depends on axioms: [propext, Quot.sound]
+'PerfectPower.EuclidMethods.pell_61_norm' does not depend on any axioms
+'PerfectPower.EuclidMethods.sqrt_two_bounds' does not depend on any axioms
+'PerfectPower.LinearProductChart.divisor_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.LinearProductChart.pair_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.LinearProductChart.recover_image' depends on axioms: [propext, Quot.sound]
+'PerfectPower.LinearProductChart.complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+receipts/linear_product/Adjacent.lean:25:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+'PerfectPower.CheckedLinearProduct.Pa7d4ddf768405945a6bfa56e81e421fb74e98e487005d0bf81f3c3bda02b621f.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pa7d4ddf768405945a6bfa56e81e421fb74e98e487005d0bf81f3c3bda02b621f.all_integer_solutions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+receipts/linear_product/Six.lean:25:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+'PerfectPower.CheckedLinearProduct.Pe8f06d829dab74153aac6eb00536e655322462b3296b8daaa5a8ead7bfd7b93e.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pe8f06d829dab74153aac6eb00536e655322462b3296b8daaa5a8ead7bfd7b93e.all_integer_solutions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pe3e60a590ab3e7b2e876d34aeac6994f0fa4a78b2fea7621953d133b48babb57.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pe3e60a590ab3e7b2e876d34aeac6994f0fa4a78b2fea7621953d133b48babb57.all_integer_solutions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.P3878f66f384945d25d35e36fdada68555b26f4ed89d4e7c8d9306619ac6e3ad9.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.P3878f66f384945d25d35e36fdada68555b26f4ed89d4e7c8d9306619ac6e3ad9.all_integer_solutions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pb92a0fa464bd6d1c6bc9196e9d0dcdb1a72527b659f31f8f2ea46cc9560442a5.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pb92a0fa464bd6d1c6bc9196e9d0dcdb1a72527b659f31f8f2ea46cc9560442a5.all_integer_solutions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+receipts/linear_product/OddMidpoint.lean:25:4: warning: try 'simp' instead of 'simpa'
+note: this linter can be disabled with `set_option linter.unnecessarySimpa false`
+'PerfectPower.CheckedLinearProduct.P318c2feaf8341533899cc70e964c3cd508609c8990db3383d05ebb4ae09c5a62.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.P318c2feaf8341533899cc70e964c3cd508609c8990db3383d05ebb4ae09c5a62.all_integer_solutions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pdbdff62f8aaa3485dac609cc25028a6890d95108b8d8bb363b4c1506c7a30775.transform' depends on axioms: [propext,
+ Quot.sound]
+'PerfectPower.CheckedLinearProduct.Pdbdff62f8aaa3485dac609cc25028a6890d95108b8d8bb363b4c1506c7a30775.all_integer_solutions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+Both altered certificates rejected; see kernel-rejection.log.

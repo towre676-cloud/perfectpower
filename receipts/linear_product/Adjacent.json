@@ -1,0 +1,87 @@
+{
+  "schema": "pp-linear-product-chart/1",
+  "left": [
+    0,
+    1
+  ],
+  "right": [
+    2,
+    1
+  ],
+  "bezout": {
+    "schema": "pp-resultant-bezout/1",
+    "left": [
+      0,
+      1
+    ],
+    "right": [
+      2,
+      1
+    ],
+    "resultant": 2,
+    "u": [
+      -1
+    ],
+    "v": [
+      1
+    ]
+  },
+  "transform": {
+    "q": 1,
+    "t": 2,
+    "s": 1,
+    "constant": 4
+  },
+  "resultant_factorization": [
+    [
+      2,
+      1
+    ]
+  ],
+  "signed_divisors": [
+    -4,
+    -2,
+    -1,
+    1,
+    2,
+    4
+  ],
+  "accepted_pairs": [
+    {
+      "pair": [
+        -2,
+        -2
+      ],
+      "point": [
+        -2,
+        0
+      ]
+    },
+    {
+      "pair": [
+        2,
+        2
+      ],
+      "point": [
+        0,
+        0
+      ]
+    }
+  ],
+  "points": [
+    [
+      -2,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "cardinality": 2,
+  "work_used": 9,
+  "status": "COMPLETE",
+  "complete": true,
+  "kernel_checked": false,
+  "scope": "all integer n and signed integer y; square degree 2, positive square leading product, distinct roots"
+}

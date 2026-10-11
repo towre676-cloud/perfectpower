@@ -1,0 +1,370 @@
+{
+  "schema": "pp-closed-linear-descent/1",
+  "descent": {
+    "schema": "pp-resultant-power-descent/1",
+    "bezout": {
+      "schema": "pp-resultant-bezout/1",
+      "left": [
+        0,
+        1
+      ],
+      "right": [
+        6,
+        1
+      ],
+      "resultant": 6,
+      "u": [
+        -1
+      ],
+      "v": [
+        1
+      ]
+    },
+    "degree": 2,
+    "exceptional_primes": [
+      2,
+      3
+    ],
+    "resultant_factorization": [
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "branches": [
+      {
+        "left_coefficient": 1,
+        "right_coefficient": 1,
+        "exceptional_left_exponents": [
+          0,
+          0
+        ]
+      },
+      {
+        "left_coefficient": -1,
+        "right_coefficient": -1,
+        "exceptional_left_exponents": [
+          0,
+          0
+        ]
+      },
+      {
+        "left_coefficient": 3,
+        "right_coefficient": 3,
+        "exceptional_left_exponents": [
+          0,
+          1
+        ]
+      },
+      {
+        "left_coefficient": -3,
+        "right_coefficient": -3,
+        "exceptional_left_exponents": [
+          0,
+          1
+        ]
+      },
+      {
+        "left_coefficient": 2,
+        "right_coefficient": 2,
+        "exceptional_left_exponents": [
+          1,
+          0
+        ]
+      },
+      {
+        "left_coefficient": -2,
+        "right_coefficient": -2,
+        "exceptional_left_exponents": [
+          1,
+          0
+        ]
+      },
+      {
+        "left_coefficient": 6,
+        "right_coefficient": 6,
+        "exceptional_left_exponents": [
+          1,
+          1
+        ]
+      },
+      {
+        "left_coefficient": -6,
+        "right_coefficient": -6,
+        "exceptional_left_exponents": [
+          1,
+          1
+        ]
+      }
+    ],
+    "zero_inputs": [
+      -6,
+      0
+    ],
+    "reduction_complete": true,
+    "branches_solved": false,
+    "kernel_checked": false,
+    "scope": "all integer inputs; nonzero branch roots are signed for odd degree and positive magnitudes for even degree"
+  },
+  "chart": {
+    "schema": "pp-linear-product-chart/1",
+    "left": [
+      0,
+      1
+    ],
+    "right": [
+      6,
+      1
+    ],
+    "bezout": {
+      "schema": "pp-resultant-bezout/1",
+      "left": [
+        0,
+        1
+      ],
+      "right": [
+        6,
+        1
+      ],
+      "resultant": 6,
+      "u": [
+        -1
+      ],
+      "v": [
+        1
+      ]
+    },
+    "transform": {
+      "q": 1,
+      "t": 6,
+      "s": 1,
+      "constant": 36
+    },
+    "resultant_factorization": [
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "signed_divisors": [
+      -36,
+      -18,
+      -12,
+      -9,
+      -6,
+      -4,
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3,
+      4,
+      6,
+      9,
+      12,
+      18,
+      36
+    ],
+    "accepted_pairs": [
+      {
+        "pair": [
+          -18,
+          -2
+        ],
+        "point": [
+          -8,
+          4
+        ]
+      },
+      {
+        "pair": [
+          -6,
+          -6
+        ],
+        "point": [
+          -6,
+          0
+        ]
+      },
+      {
+        "pair": [
+          -2,
+          -18
+        ],
+        "point": [
+          -8,
+          -4
+        ]
+      },
+      {
+        "pair": [
+          2,
+          18
+        ],
+        "point": [
+          2,
+          4
+        ]
+      },
+      {
+        "pair": [
+          6,
+          6
+        ],
+        "point": [
+          0,
+          0
+        ]
+      },
+      {
+        "pair": [
+          18,
+          2
+        ],
+        "point": [
+          2,
+          -4
+        ]
+      }
+    ],
+    "points": [
+      [
+        -8,
+        -4
+      ],
+      [
+        -8,
+        4
+      ],
+      [
+        -6,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        -4
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "cardinality": 6,
+    "work_used": 32,
+    "status": "COMPLETE",
+    "complete": true,
+    "kernel_checked": false,
+    "scope": "all integer n and signed integer y; square degree 2, positive square leading product, distinct roots"
+  },
+  "branches": [
+    {
+      "branch": 0,
+      "coefficients": [
+        1,
+        1
+      ],
+      "points": []
+    },
+    {
+      "branch": 1,
+      "coefficients": [
+        -1,
+        -1
+      ],
+      "points": []
+    },
+    {
+      "branch": 2,
+      "coefficients": [
+        3,
+        3
+      ],
+      "points": []
+    },
+    {
+      "branch": 3,
+      "coefficients": [
+        -3,
+        -3
+      ],
+      "points": []
+    },
+    {
+      "branch": 4,
+      "coefficients": [
+        2,
+        2
+      ],
+      "points": [
+        [
+          2,
+          -4
+        ],
+        [
+          2,
+          4
+        ]
+      ]
+    },
+    {
+      "branch": 5,
+      "coefficients": [
+        -2,
+        -2
+      ],
+      "points": [
+        [
+          -8,
+          -4
+        ],
+        [
+          -8,
+          4
+        ]
+      ]
+    },
+    {
+      "branch": 6,
+      "coefficients": [
+        6,
+        6
+      ],
+      "points": []
+    },
+    {
+      "branch": 7,
+      "coefficients": [
+        -6,
+        -6
+      ],
+      "points": []
+    }
+  ],
+  "zero_points": [
+    [
+      -6,
+      0
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "status": "COMPLETE",
+  "branches_solved": true,
+  "kernel_checked": false,
+  "scope": "complete original-equation point set; branch assignment is tested Python"
+}
