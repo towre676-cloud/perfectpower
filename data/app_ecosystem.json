@@ -1,0 +1,77 @@
+{
+  "schema": "our-apps/1",
+  "hub": "https://our-apps.towre676.chatgpt.site",
+  "refresh_seconds": 300,
+  "products": [
+    {
+      "id": "perfectpower",
+      "name": "PerfectPower",
+      "purpose": "Explore exact possibilities",
+      "value": "Count complete sets, understand constraints, and inspect mathematical results.",
+      "how": "Choose a question, set its rules, and examine the complete finite answer.",
+      "site": "https://perfectpower-explorer-download.towre676.chatgpt.site",
+      "open": "https://perfectpower-explorer-download.towre676.chatgpt.site/start",
+      "mobile": "https://perfectpower-explorer-download.towre676.chatgpt.site/PerfectPower-Explorer-Android-1.1.apk",
+      "sources": [
+        "perfectpower",
+        "dynacomp"
+      ]
+    },
+    {
+      "id": "dynacomp",
+      "name": "DynaComp",
+      "purpose": "Explore what happens next",
+      "value": "Compare a full model with a smaller one that keeps the output you care about.",
+      "how": "Choose a scenario, change a few settings, and compare the trajectories and error limits.",
+      "site": "https://dynacomp-explorer.towre676.chatgpt.site",
+      "open": "https://dynacomp-explorer.towre676.chatgpt.site",
+      "mobile": "https://dynacomp-explorer.towre676.chatgpt.site",
+      "sources": [
+        "perfectpower",
+        "dynacomp"
+      ]
+    },
+    {
+      "id": "nfl",
+      "name": "NFL PerfectPower",
+      "purpose": "Understand games and prices",
+      "value": "See games, current prices, historical results and transparent scenario comparisons.",
+      "how": "Pick a game, compare prices, and open the explanation when you want more detail.",
+      "site": "https://nfl-perfectpower.towre676.chatgpt.site",
+      "open": "https://nfl-perfectpower.towre676.chatgpt.site",
+      "mobile": "https://nfl-perfectpower.towre676.chatgpt.site",
+      "sources": [
+        "perfectpower",
+        "dynacomp"
+      ]
+    },
+    {
+      "id": "pokepolis",
+      "name": "Pokepolis",
+      "purpose": "Play and explore a game world",
+      "value": "Explore the board, build a team and follow campaigns in a visual game.",
+      "how": "Install the game, start a campaign, and learn through play.",
+      "site": "https://pokepolis-download-v015.towre676.chatgpt.site",
+      "open": "https://pokepolis-download-v015.towre676.chatgpt.site",
+      "mobile": "https://pokepolis-android.towre676.chatgpt.site",
+      "sources": [
+        "perfectpower",
+        "dynacomp"
+      ]
+    }
+  ],
+  "upstreams": {
+    "perfectpower": {
+      "repo": "towre676-cloud/perfectpower",
+      "branch": "main",
+      "feed": "https://raw.githubusercontent.com/towre676-cloud/perfectpower/main/data/explorer_live.json",
+      "counter_feed": "https://raw.githubusercontent.com/towre676-cloud/perfectpower/main/data/browser_counter.json"
+    },
+    "dynacomp": {
+      "repo": "towre676-cloud/DynaComp",
+      "branch": "main",
+      "feed": "https://raw.githubusercontent.com/towre676-cloud/DynaComp/main/data/explorer_live.json"
+    }
+  },
+  "update_contract": "Browser data and declared portable engines refresh automatically. Installed executable upgrades are explicit packages; available upstream changes are visible without replacing saved work."
+}

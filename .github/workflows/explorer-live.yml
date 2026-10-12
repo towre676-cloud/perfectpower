@@ -2,7 +2,6 @@ name: Publish current Explorer research data
 on:
   push:
     branches: [main]
-    paths: ['python/perfectpower/research_counting.py', 'examples/research_counting/**', 'scripts/export_explorer_live.py']
   workflow_dispatch:
 permissions:
   contents: write
@@ -23,11 +22,17 @@ jobs:
       - run: python -m pip install pytest
       - run: PYTHONPATH=python python -m pytest -q python/tests/test_research_counting.py python/tests/test_explorer_live.py
       - run: python scripts/export_explorer_live.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/check_browser_counter.cjs
+      - run: python scripts/export_app_ecosystem.py
+      - run: python scripts/export_app_web.py
       - name: Commit regenerated public data, preserving concurrent work
         run: |
           git config user.name 'PerfectPower data publisher'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/explorer_live.json receipts/research_counting
+          git add data/explorer_live.json data/browser_counter.json data/app_web_live.json receipts/research_counting
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Refresh live Explorer research counts'
           git pull --rebase origin main
