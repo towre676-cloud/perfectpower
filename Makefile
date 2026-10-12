@@ -675,3 +675,15 @@ model-count-benchmark:
 model-count-sanitizer:
 	$(CXX) -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer $(CPPFLAGS) native/model_counting/test_exhaustive.cpp -o /tmp/perfectpower-cnf-sanitizer
 	/tmp/perfectpower-cnf-sanitizer
+
+.PHONY: planning-population-test planning-population-benchmark
+planning-population-test:
+	PYTHONPATH=python python -m unittest python/tests/test_planning.py python/tests/test_planning_hybrid.py python/tests/test_planning_population.py python/tests/test_planning_cnf.py
+planning-population-benchmark:
+	PYTHONPATH=python python python/run_planning_population.py --case 39
+	PYTHONPATH=python python python/run_planning_population.py --case 50
+
+.PHONY: planning-population-sanitizer
+planning-population-sanitizer:
+	$(CXX) -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer native/test_completion_population.cpp -o /tmp/perfectpower-population-sanitizer
+	ASAN_OPTIONS=detect_leaks=0 /tmp/perfectpower-population-sanitizer

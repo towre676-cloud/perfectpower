@@ -47,7 +47,7 @@ class CompletionPlanner:
         self._specification = deepcopy(specification)
         spec = deepcopy(specification)
         self.kind = spec.get('kind')
-        allowed = {'kind', 'strategy', 'state_limit', 'edge_limit', 'enumeration_limit', 'binary_limit', 'reduce_machine', 'native_record_limit', 'native_visit_limit'}
+        allowed = {'kind', 'strategy', 'state_limit', 'edge_limit', 'enumeration_limit', 'binary_limit', 'reduce_machine', 'native_record_limit', 'native_visit_limit', 'population_memory_limit', 'population_cache_states', 'population_partition_limit', 'population_work_limit'}
         allowed |= {'variables', 'resources', 'machine'} if self.kind == 'allocation' else {'machine', 'actions', 'budget'}
         if self.kind not in ('allocation', 'words') or set(spec)-allowed:
             raise ValueError('allocation or words planner with declared fields required')
@@ -57,11 +57,15 @@ class CompletionPlanner:
         self.binary_limit = integer(spec.get('binary_limit', 20), 1, 20, 'binary_limit')
         self.native_records = integer(spec.get('native_record_limit', 1100000), 1, 2200000, 'native_record_limit')
         self.native_visits = integer(spec.get('native_visit_limit', 2000000000), 1, 2000000000, 'native_visit_limit')
+        self.population_memory = integer(spec.get('population_memory_limit', 128*1024*1024), 1024*1024, 1024*1024*1024, 'population_memory_limit')
+        self.population_cache_states = integer(spec.get('population_cache_states', 1000000), 0, 8000000, 'population_cache_states')
+        self.population_partition_limit = integer(spec.get('population_partition_limit', 8192), 1, 65536, 'population_partition_limit')
+        self.population_work_limit = integer(spec.get('population_work_limit', 2000000000), 1, 100000000000, 'population_work_limit')
         self.reduce = spec.get('reduce_machine', True)
         if type(self.reduce) is not bool:
             raise ValueError('reduce_machine must be Boolean')
         self.requested_strategy = spec.get('strategy', 'auto')
-        if self.requested_strategy not in ('auto', 'enumeration', 'gray', 'dp', 'gf', 'symmetry', 'mitm'):
+        if self.requested_strategy not in ('auto', 'enumeration', 'gray', 'dp', 'gf', 'symmetry', 'mitm', 'population'):
             raise ValueError('unknown planning strategy')
         self.memo, self.states, self.edges, self.failed = {}, 0, 0, False
         self.query_arcs = {}
@@ -87,10 +91,10 @@ class CompletionPlanner:
             from .planning_symmetry import SymmetryIndex
             self.index = SymmetryIndex(self)
             self.root_entry = Entry(*self.index.query(()))
-        elif self.strategy == 'mitm':
-            from .planning_native import NativeIndex
+        elif self.strategy in ('mitm', 'population'):
+            from .planning_native import NativeIndex, PopulationIndex
             try:
-                self.index = NativeIndex(self)
+                self.index = (PopulationIndex if self.strategy == 'population' else NativeIndex)(self)
                 self.root_entry = self._indexed_entry(())
             except WorkLimit as error:
                 if self.requested_strategy != 'auto' or not str(error).startswith('optional native planner'):
@@ -201,8 +205,8 @@ class CompletionPlanner:
         if self.strategy == 'auto':
             self.strategy = ('symmetry' if repeated else 'dp' if independent_binary and grid < min(candidates//2,self.state_limit) else 'mitm' if native_ok and len(variables)>=15 else 'gray' if binary else
                              'enumeration' if finite and candidates <= self.enum_limit else 'gf' if gf_ok else 'dp')
-        if self.strategy in ('symmetry', 'mitm') and not independent_binary:
-            raise ValueError('symmetry and MITM require independent binary allocations')
+        if self.strategy in ('symmetry', 'mitm', 'population') and not independent_binary:
+            raise ValueError('symmetry, MITM and population require independent binary allocations')
         if self.strategy == 'gray' and not binary:
             raise ValueError('Gray route requires an independent binary allocation within binary_limit')
         if self.strategy == 'gf':
@@ -470,7 +474,7 @@ class CompletionPlanner:
             return self.root_entry
         if self.strategy == 'gf':
             return self._gf_entry(prefix)
-        if self.strategy in ('mitm','symmetry'):
+        if self.strategy in ('mitm','symmetry','population'):
             return self._indexed_entry(prefix)
         if self.strategy == 'gray':
             return self._gray_prefix(prefix)
@@ -519,7 +523,7 @@ class CompletionPlanner:
         root = self._view(())
         total = root.optimal_count if optimal else root.count
         integer(rank, 0, total-1, 'rank')
-        if self.strategy in ('mitm','symmetry'):
+        if self.strategy in ('mitm','symmetry','population'):
             cache_key = (rank,optimal)
             if cache_key in self.selected_plans: return list(self.selected_plans[cache_key])
             original_rank = rank
@@ -558,7 +562,7 @@ class CompletionPlanner:
     def rank(self, point, optimal=False):
         if type(optimal) is not bool:
             raise ValueError('optimal must be Boolean')
-        if self.strategy in ('mitm','symmetry'):
+        if self.strategy in ('mitm','symmetry','population'):
             if not isinstance(point,(list,tuple)): raise ValueError('original plan required')
             self._mask(point)
             key = (tuple(point),optimal)
@@ -568,7 +572,7 @@ class CompletionPlanner:
             raise ValueError('complete feasible original plan required')
         if optimal and entry.best != root.best:
             raise ValueError('plan is not a global maximizer')
-        if self.strategy in ('mitm','symmetry'):
+        if self.strategy in ('mitm','symmetry','population'):
             rank = 0
             for i, value in enumerate(point):
                 if value: rank += self._indexed_size(list(point[:i])+[0],optimal)
@@ -600,7 +604,7 @@ class CompletionPlanner:
 
     def optimize(self):
         entry = self._view(())
-        if self.strategy == 'mitm':
+        if self.strategy in ('mitm', 'population'):
             return {'maximum':None if entry.best is None else str(entry.best), 'maximizer_count':entry.optimal_count,
                     'point':self._decode(self.index.query(())['mask']) if entry.count else None}
         return {'maximum': None if entry.best is None else str(entry.best),
@@ -625,6 +629,8 @@ class CompletionPlanner:
         optimization = self.optimize()
         if self.strategy == 'symmetry':
             self.states, self.edges = len(self.index.memo), self.index.edges
+        elif self.strategy == 'population':
+            self.states, self.edges = len(self.index.fixed_cache), 2*len(self.index.partitions)
         elif self.strategy == 'mitm':
             self.compiled_candidates = self.index.query(())['records']
         return {'schema': 'pp-completion-planner/1', 'kind': self.kind, 'strategy': self.strategy,
@@ -637,11 +643,14 @@ class CompletionPlanner:
                 'ordering': 'lexicographic original variable values' if self.kind == 'allocation' else 'lexicographic named action word',
                 'execution_verified': False,
                 'symmetry_groups': len(self.index.groups) if self.strategy == 'symmetry' else None,
-                'native_provenance': self.index.lib._provenance if self.strategy == 'mitm' else None}
+                'population_limits': {'memory_bytes':self.population_memory, 'cache_states':self.population_cache_states, 'search_visits':self.native_visits, 'setup_cells':self.native_visits, 'total_work_per_query':self.population_work_limit, 'partition_nodes':self.population_partition_limit} if self.strategy == 'population' else None,
+                'native_provenance': self.index.lib._provenance if self.strategy in ('mitm', 'population') else None}
 
     def evidence(self):
         result = dict(self.summary(), specification=deepcopy(self.specification), quotient=self.quotient)
-        if self.strategy == 'gf' and not self.gf_empty:
+        if self.strategy == 'population':
+            result['population_partition'] = self.index.partition_receipt()
+        elif self.strategy == 'gf' and not self.gf_empty:
             result['generating_function'] = self.gf_suffix[0].evidence()
         elif self.kind == 'words':
             from .cost_resolvents import finite_machine_series

@@ -1,0 +1,131 @@
+{
+  "schema": "pp-population-comparison/1",
+  "count50": 702508860122761,
+  "maximum50": 16537,
+  "maximizer_count50": 1,
+  "cases": [
+    {
+      "receipt": "20_population.json",
+      "case": 20,
+      "variant": "population",
+      "status": "complete_workflow",
+      "count": 422601,
+      "compile_load_seconds": 6.5499068060016725,
+      "cold_population_seconds": 0.012518022995209321,
+      "first_query_bank_seconds": 0.3837334810013999,
+      "cached_sustained_bank_seconds": 0.00025616870007070245,
+      "peak_rss_bytes": 27222016
+    },
+    {
+      "receipt": "20_mitm.json",
+      "case": 20,
+      "variant": "mitm",
+      "status": "complete_workflow",
+      "count": 422601,
+      "compile_load_seconds": 4.892011477997585,
+      "cold_population_seconds": 0.005633956003293861,
+      "first_query_bank_seconds": 0.0029425719985738397,
+      "cached_sustained_bank_seconds": 0.00022572175003006124,
+      "peak_rss_bytes": 19558400
+    },
+    {
+      "receipt": "20_native_exhaustive.json",
+      "case": 20,
+      "variant": "native_exhaustive",
+      "status": "complete_workflow",
+      "count": 422601,
+      "compile_load_seconds": 5.082577802000742,
+      "cold_population_seconds": 0.20265382600337034,
+      "first_query_bank_seconds": 0.002541538000514265,
+      "cached_sustained_bank_seconds": 0.00017288310009462294,
+      "peak_rss_bytes": 102408192
+    },
+    {
+      "receipt": "20_gray.json",
+      "case": 20,
+      "variant": "gray",
+      "status": "complete_workflow",
+      "count": 422601,
+      "compile_load_seconds": 5.212633786002698,
+      "cold_population_seconds": 3.039968384997337,
+      "first_query_bank_seconds": 0.0002172169988625683,
+      "cached_sustained_bank_seconds": 4.929099995933939e-05,
+      "peak_rss_bytes": 82833408
+    },
+    {
+      "receipt": "15_python_dp.json",
+      "case": 15,
+      "variant": "python_dp",
+      "status": "complete_workflow",
+      "count": 22158,
+      "compile_load_seconds": 7.141424033994554,
+      "cold_population_seconds": 0.17273112400289392,
+      "first_query_bank_seconds": 0.0030074320020503365,
+      "cached_sustained_bank_seconds": 0.0010083441498863976,
+      "peak_rss_bytes": 23752704
+    },
+    {
+      "receipt": "39_population.json",
+      "case": 39,
+      "variant": "population",
+      "status": "complete_workflow",
+      "count": 368072359571,
+      "compile_load_seconds": 6.46318321400031,
+      "cold_population_seconds": 0.31150692800292745,
+      "first_query_bank_seconds": 2.113515204000578,
+      "cached_sustained_bank_seconds": 0.0009669108501839218,
+      "peak_rss_bytes": 64651264
+    },
+    {
+      "receipt": "39_mitm.json",
+      "case": 39,
+      "variant": "mitm",
+      "status": "complete_workflow",
+      "count": 368072359571,
+      "compile_load_seconds": 5.329040021002584,
+      "cold_population_seconds": 206.0127849950004,
+      "first_query_bank_seconds": 0.7209001380033442,
+      "cached_sustained_bank_seconds": 0.000435818449841463,
+      "peak_rss_bytes": 310644736
+    },
+    {
+      "receipt": "50_population.json",
+      "case": 50,
+      "variant": "population",
+      "status": "complete_workflow",
+      "count": 702508860122761,
+      "compile_load_seconds": 7.622570450999774,
+      "cold_population_seconds": 361.9584062399954,
+      "first_query_bank_seconds": 113.45745812499808,
+      "cached_sustained_bank_seconds": 0.0006482082000729861,
+      "peak_rss_bytes": 153747456
+    },
+    {
+      "receipt": "50_optimization.json",
+      "case": 50,
+      "variant": "optimization",
+      "status": "complete_optimization_only",
+      "compile_load_seconds": 5.09400851400278,
+      "optimization_only_seconds": 0.23190337500273017,
+      "peak_rss_bytes": 19427328
+    },
+    {
+      "receipt": "50_ortools.json",
+      "case": 50,
+      "variant": "ortools",
+      "status": "complete_optimization_only",
+      "compile_load_seconds": 4.807978577999165,
+      "optimization_only_seconds": 7.225436802000331,
+      "peak_rss_bytes": 213626880
+    }
+  ],
+  "measured_39_first_workflow_ratio": 85.25022613389696,
+  "scope": "same shared eight-CPU environment, isolated worker address spaces; not CPU-exclusive trials; each variant one trial; historical hybrid ledger unchanged",
+  "external_global50": "Ganak deterministic integer mode TIME_LIMIT at 360 seconds; no independently reproduced external global total",
+  "baseline_encoding": "unprojected uniquely extendible binary-adder CNF",
+  "limitations": [
+    "native residual kernel not proved in Lean",
+    "cached-bank time does not imply fast arbitrary uncached queries",
+    "new route remains explicit; 20-project MITM query workflow is faster"
+  ]
+}

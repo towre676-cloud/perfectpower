@@ -1,0 +1,429 @@
+{
+  "schema": "pp-population-benchmark/1",
+  "case": 20,
+  "variant": "population",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+  "dataset_sha256": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283",
+  "native_source_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
+  "memory_scope": "fresh worker Linux peak RSS, interpreter and loaded library included; compiler child excluded",
+  "limits": {
+    "arena_bytes": 134217728,
+    "memo_states": 1000000,
+    "per_call_work": 10000000,
+    "per_query_work": 2000000000,
+    "partition_nodes": 8192
+  },
+  "compile_load_seconds": 6.5499068060016725,
+  "compiler": {
+    "source_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+    "flags": [
+      "-std=c++17",
+      "-O3",
+      "-fPIC",
+      "-shared"
+    ],
+    "scope": "tested native execution; no kernel proof of native algorithm"
+  },
+  "cold_population_seconds": 0.012518022995209321,
+  "status": "complete_workflow",
+  "count": 422601,
+  "root_answer": {
+    "count": 422601,
+    "ties": 1,
+    "best": 6120,
+    "mask": 525439,
+    "visits": 3702,
+    "records": 2074,
+    "setup_cells": 371515,
+    "cache_hits": 104,
+    "accepted_subcubes": 96,
+    "eliminated_constraints": 1653,
+    "bivariate_queries": 0,
+    "univariate_queries": 1428,
+    "memo_arena_bytes": 134217728
+  },
+  "partition_validation": {
+    "root_leaves": 1,
+    "disjoint_cover_size": 1048576,
+    "root": {
+      "count": 422601,
+      "best": 6120,
+      "ties": 1,
+      "mask": 525439
+    },
+    "scope": "cover and arithmetic replay; native leaf computations require their own validation"
+  },
+  "answers": {
+    "count": 422601,
+    "optimization": {
+      "maximum": "6120",
+      "maximizer_count": 1,
+      "point": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "bank": [
+      {
+        "rank": 0,
+        "point": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "inverse_rank": 0,
+        "prefix_count": 59493
+      },
+      {
+        "rank": 105650,
+        "point": [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        "inverse_rank": 105650,
+        "prefix_count": 55060
+      },
+      {
+        "rank": 211300,
+        "point": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        "inverse_rank": 211300,
+        "prefix_count": 48573
+      },
+      {
+        "rank": 316950,
+        "point": [
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "inverse_rank": 316950,
+        "prefix_count": 52715
+      },
+      {
+        "rank": 422600,
+        "point": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "inverse_rank": 422600,
+        "prefix_count": 46269
+      }
+    ]
+  },
+  "first_query_bank_seconds": 0.3837334810013999,
+  "cached_sustained_bank_seconds": 0.00025616870007070245,
+  "warm_scope": "20 repetitions of the retained five-rank bank; inverse ranks recomputed; conditional results reused",
+  "independent_prefix_checks": [
+    {
+      "prefix": [
+        0
+      ],
+      "count": 215912
+    },
+    {
+      "prefix": [
+        1
+      ],
+      "count": 206689
+    },
+    {
+      "prefix": [],
+      "count": 422601,
+      "reference": {
+        "count": 422601,
+        "ties": 1,
+        "best": 6120,
+        "mask": 525439,
+        "visits": 661720,
+        "records": 0
+      },
+      "reference_seconds": 0.05040848399949027,
+      "scope": "independent original-order subcube recursion, without polynomials, implication tables or memoization"
+    },
+    {
+      "prefix": [
+        0
+      ],
+      "count": 215912
+    },
+    {
+      "prefix": [
+        1
+      ],
+      "count": 206689
+    },
+    {
+      "prefix": [],
+      "count": 422601,
+      "reference": {
+        "count": 422601,
+        "ties": 1,
+        "best": 6120,
+        "mask": 525439,
+        "visits": 661720,
+        "records": 0
+      },
+      "reference_seconds": 0.036171105995890684,
+      "scope": "independent original-order subcube recursion, without polynomials, implication tables or memoization"
+    },
+    {
+      "prefix": [
+        0
+      ],
+      "count": 215912
+    },
+    {
+      "prefix": [
+        1
+      ],
+      "count": 206689
+    },
+    {
+      "prefix": [],
+      "count": 422601,
+      "reference": {
+        "count": 422601,
+        "ties": 1,
+        "best": 6120,
+        "mask": 525439,
+        "visits": 661720,
+        "records": 0
+      },
+      "reference_seconds": 0.040756722999503836,
+      "scope": "independent original-order subcube recursion, without polynomials, implication tables or memoization"
+    },
+    {
+      "prefix": [
+        0
+      ],
+      "count": 215912
+    },
+    {
+      "prefix": [
+        1
+      ],
+      "count": 206689
+    },
+    {
+      "prefix": [],
+      "count": 422601,
+      "reference": {
+        "count": 422601,
+        "ties": 1,
+        "best": 6120,
+        "mask": 525439,
+        "visits": 661720,
+        "records": 0
+      },
+      "reference_seconds": 0.04091334099939559,
+      "scope": "independent original-order subcube recursion, without polynomials, implication tables or memoization"
+    },
+    {
+      "prefix": [
+        0
+      ],
+      "count": 215912
+    },
+    {
+      "prefix": [
+        1
+      ],
+      "count": 206689
+    },
+    {
+      "prefix": [],
+      "count": 422601,
+      "reference": {
+        "count": 422601,
+        "ties": 1,
+        "best": 6120,
+        "mask": 525439,
+        "visits": 661720,
+        "records": 0
+      },
+      "reference_seconds": 0.03840325899363961,
+      "scope": "independent original-order subcube recursion, without polynomials, implication tables or memoization"
+    }
+  ],
+  "post_query_partition_nodes": 117,
+  "total_search_visits": 29250,
+  "total_setup_cells": 19176737,
+  "branch_identities": [
+    {
+      "prefix": [],
+      "parent": 422601,
+      "zero": 215912,
+      "one": 206689
+    },
+    {
+      "prefix": [
+        0
+      ],
+      "parent": 215912,
+      "zero": 114553,
+      "one": 101359
+    },
+    {
+      "prefix": [
+        1
+      ],
+      "parent": 206689,
+      "zero": 109888,
+      "one": 96801
+    },
+    {
+      "prefix": [
+        0,
+        1
+      ],
+      "parent": 101359,
+      "zero": 52786,
+      "one": 48573
+    },
+    {
+      "prefix": [
+        1,
+        0
+      ],
+      "parent": 109888,
+      "zero": 57173,
+      "one": 52715
+    }
+  ],
+  "sample": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0
+  ],
+  "worker_seconds": 7.216122769001231,
+  "peak_rss_bytes": 27222016
+}

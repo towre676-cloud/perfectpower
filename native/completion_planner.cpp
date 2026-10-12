@@ -7,6 +7,8 @@
 #include <functional>
 #include <limits>
 #include <memory>
+#include <memory_resource>
+#include <unordered_map>
 #include <numeric>
 #include <sstream>
 #include <stdexcept>
@@ -141,7 +143,131 @@ std::string recursive(int n,int m,const U*lo,const U*hi,const U*c,const I*p,U li
   if(take){for(int k=0;k<m;k++)used[k]+=c[j*m+k];add(a,walk(j+1,score+p[j],mask|(U(1)<<(n-1-j))));for(int k=0;k<m;k++)used[k]-=c[j*m+k];}return a;
  };auto a=walk(0,0,0);return json(a,visits);
 }
+// Exact suffix generating-function fold with whole-subcube contraction.
+// A bounded PMR arena caps ALL memo keys, nodes and bucket storage.
+struct Population {
+ int n,m; U visits=0,hits=0,blocks=0,state_limit,visit_limit;
+ std::vector<Record> items; std::vector<std::array<U,D>> totals,gcds;
+ std::vector<I> positive;std::vector<int> zeros;std::vector<U> bestmask;
+ std::unique_ptr<std::byte[]> arena;std::pmr::monotonic_buffer_resource pool;
+ std::pmr::unordered_map<std::pmr::string,Answer> memo;
+ std::vector<std::vector<std::pmr::vector<Answer>>> gf,gf_prefix;
+ std::vector<std::pmr::vector<Answer>> pair_gf;int pair_start=0;U pair_queries=0;
+ std::vector<std::vector<std::vector<std::pmr::vector<U>>>> implied; U eliminated=0; U gf_queries=0,setup_cells=0;
+ void setup_tick(){if(++setup_cells+visits>visit_limit)throw std::runtime_error("population setup cell budget exceeded");}
+ Population(int nn,int mm,U states,U visits_limit,U memory):n(nn),m(mm),state_limit(states),visit_limit(visits_limit),arena(new std::byte[memory]),pool(arena.get(),memory,std::pmr::null_memory_resource()),memo(&pool){}
+ Answer walk(int depth,std::array<U,D>lo,std::array<U,D>hi){
+  if(++visits+setup_cells>visit_limit)throw std::runtime_error("population visit budget exceeded");
+  bool inside=true;
+  for(int k=0;k<m;k++){
+   if(lo[k]>totals[depth][k])return {};
+   hi[k]=std::min(hi[k],totals[depth][k]);U g=gcds[depth][k];
+   if(g){hi[k]-=hi[k]%g;U r=lo[k]%g;if(r)lo[k]+=g-r;}
+   if(lo[k]>hi[k])return {};
+   inside=inside&&lo[k]==0&&hi[k]==totals[depth][k];
+  }
+  if(inside){++blocks;return {Wide(1)<<(items.size()-depth),Wide(1)<<zeros[depth],positive[depth],bestmask[depth]};}
+  if(!implied.empty())for(int k=0;k<m;k++)if(lo[k]==0&&hi[k]<totals[depth][k]){
+   for(int h=0;h<m;h++)if(h!=k&&hi[h]<totals[depth][h]&&implied[k][h][depth][hi[h]]<=hi[k]){
+    hi[k]=totals[depth][k];++eliminated;break;
+   }
+  }
+  inside=true;for(int k=0;k<m;k++)inside=inside&&lo[k]==0&&hi[k]==totals[depth][k];
+  if(inside){++blocks;return {Wide(1)<<(items.size()-depth),Wide(1)<<zeros[depth],positive[depth],bestmask[depth]};}
+  int active=-1;bool single=true;
+  for(int k=0;k<m;k++)if(lo[k]||hi[k]<totals[depth][k]){if(active!=-1){single=false;break;}active=k;}
+  if(single&&active>=0&&!gf.empty()){
+   ++gf_queries;Answer a;auto &hist=gf[active][depth];
+   if(lo[active]==0)return gf_prefix[active][depth][hi[active]];
+   for(U w=lo[active];w<=hi[active];w++)add(a,hist[w]);return a;
+  }
+  if(depth>=pair_start&&!pair_gf.empty()){
+   int a=-1,b=-1;bool okay=true;
+   for(int k=0;k<m;k++){if(lo[k]){okay=false;break;}if(hi[k]<totals[depth][k]){if(a<0)a=k;else if(b<0)b=k;else {okay=false;break;}}}
+   if(okay&&b>=0){auto &table=pair_gf[(a*m+b)*(items.size()+1)+depth];if(!table.empty()){
+    ++pair_queries;return table[hi[a]*(totals[depth][b]+1)+hi[b]];
+   }}
+  }
+  // Varint keys avoid paying for unused resource coordinates or zero slack.
+  std::array<char,1+20*D> bytes{};size_t used=0;bytes[used++]=char(depth);
+  auto encode=[&](U x){while(x>=128){bytes[used++]=char((x&127)|128);x>>=7;}bytes[used++]=char(x);};
+  for(int k=0;k<m;k++){encode(lo[k]);encode(hi[k]);}
+  std::pmr::string key;
+  if(state_limit>0)key.assign(bytes.data(),used);
+  auto found=memo.find(key);if(found!=memo.end()){++hits;return found->second;}
+  auto a=walk(depth+1,lo,hi);auto &v=items[depth];bool take=true;
+  for(int k=0;k<m;k++)if(v.cost[k]>hi[k]){take=false;break;}
+  if(take){for(int k=0;k<m;k++){lo[k]=lo[k]>v.cost[k]?lo[k]-v.cost[k]:0;hi[k]-=v.cost[k];}
+   auto b=walk(depth+1,lo,hi);b.best+=v.score;b.mask|=v.mask;add(a,b);}
+  if(state_limit==0)return a;
+  if(memo.size()>=state_limit)throw std::runtime_error("population memo state budget exceeded");
+  std::pmr::string retained(key,&pool);memo.emplace(std::move(retained),a);return a;
+ }
+};
+std::string population(int n,int m,const U*lo,const U*hi,const U*c,const I*p,int length,U prefix,U states,U limit,U memory,int sorted,U fixed=0,U values=0,bool arbitrary=false){
+ if(n<1||n>64||m<1||m>D||length<0||length>n||(length<64&&prefix>=(U(1)<<length)))throw std::runtime_error("invalid population dimensions or prefix");
+ if(!limit||memory<1024||memory>U(1024)*1024*1024)throw std::runtime_error("invalid population budgets");
+ if(arbitrary&&((values&~fixed)||(n<64&&(fixed>>n))))throw std::runtime_error("invalid fixed original coordinates");
+ Population model(n,m,states,limit,memory);
+ try {
+ std::array<U,D>lower{},upper{},used{};I score=0;U mask=0;
+ for(int k=0;k<m;k++){lower[k]=lo[k];upper[k]=hi[k];}
+ for(int j=0;j<n;j++){
+  Record v;v.mask=U(1)<<(n-1-j);v.score=p[j];for(int k=0;k<m;k++)v.cost[k]=c[j*m+k];
+  if(arbitrary?(fixed&v.mask):j<length){if(arbitrary?(values&v.mask):((prefix>>(length-1-j))&1)){for(int k=0;k<m;k++){if(v.cost[k]>upper[k]-used[k])return json({},0);used[k]+=v.cost[k];}score+=v.score;mask|=v.mask;}}
+  else model.items.push_back(v);
+ }
+ if(sorted)std::stable_sort(model.items.begin(),model.items.end(),[&](const Record&a,const Record&b){
+  Wide wa=0,wb=0;for(int k=0;k<m;k++){wa+=Wide(a.cost[k])*1000000/std::max<U>(1,hi[k]);wb+=Wide(b.cost[k])*1000000/std::max<U>(1,hi[k]);}return wa>wb;});
+ int size=model.items.size();model.totals.resize(size+1);model.gcds.resize(size+1);model.positive.resize(size+1);model.zeros.resize(size+1);model.bestmask.resize(size+1);
+ for(int j=size-1;j>=0;j--){auto &v=model.items[j];model.totals[j]=model.totals[j+1];model.gcds[j]=model.gcds[j+1];
+  for(int k=0;k<m;k++){model.totals[j][k]+=v.cost[k];model.gcds[j][k]=std::gcd(model.gcds[j][k],v.cost[k]);}
+  model.positive[j]=model.positive[j+1]+std::max<I>(0,v.score);model.zeros[j]=model.zeros[j+1]+(v.score==0);model.bestmask[j]=model.bestmask[j+1]|(v.score>0?v.mask:0);
+ }
+ // Univariate suffix polynomials preserve coefficients and best/tie aggregates.
+ bool small=true;for(int k=0;k<m;k++)small=small&&model.totals[0][k]<=10000;
+ Wide gf_bytes=0;for(auto &t:model.totals)for(int k=0;k<m;k++)gf_bytes+=Wide(t[k]+1)*(2*sizeof(Answer)+(m-1)*sizeof(U));
+ if(small&&gf_bytes<=memory/2){
+ model.implied.resize(m);for(int k=0;k<m;k++){model.implied[k].resize(m);for(int h=0;h<m;h++)if(h!=k){
+  auto &table=model.implied[k][h];table.reserve(size+1);for(int j=0;j<=size;j++)table.emplace_back(&model.pool);table[size]={0};
+  for(int j=size-1;j>=0;j--){auto &v=model.items[j];auto &old=table[j+1];auto &row=table[j];row.resize(model.totals[j][h]+1);
+   for(size_t b=0;b<row.size();b++){model.setup_tick();row[b]=old[std::min(b,old.size()-1)];if(b>=v.cost[h])row[b]=std::max(row[b],v.cost[k]+old[std::min(b-v.cost[h],old.size()-1)]);}
+  }
+ }}
+ model.gf.resize(m);model.gf_prefix.resize(m);for(int k=0;k<m;k++){
+  model.gf[k].reserve(size+1);for(int j=0;j<=size;j++)model.gf[k].emplace_back(&model.pool);model.gf[k][size]={{1,1,0,0}};
+  for(int j=size-1;j>=0;j--){auto &v=model.items[j];auto &old=model.gf[k][j+1];auto &hist=model.gf[k][j];hist.resize(model.totals[j][k]+1);
+   for(size_t w=0;w<old.size();w++){model.setup_tick();add(hist[w],old[w]);auto b=old[w];b.best+=v.score;b.mask|=v.mask;add(hist[w+v.cost[k]],b);}
+  }
+  model.gf_prefix[k].reserve(size+1);for(auto &hist:model.gf[k]){model.gf_prefix[k].emplace_back(hist,&model.pool);auto &row=model.gf_prefix[k].back();for(size_t w=1;w<row.size();w++){model.setup_tick();add(row[w],row[w-1]);}}
+ }}
+ // Two-resource truncated suffix products, bounded to the inexpensive tail.
+ model.pair_start=std::max(0,size-24);model.pair_gf.reserve(m*m*(size+1));
+ for(int z=0;z<m*m*(size+1);z++)model.pair_gf.emplace_back(&model.pool);
+ for(int a=0;a<m;a++)for(int b=a+1;b<m;b++){
+  Wide bytes=0;for(int j=model.pair_start;j<=size;j++)bytes+=Wide(model.totals[j][a]+1)*(model.totals[j][b]+1)*sizeof(Answer);
+  if(bytes>memory/(2*m*m))continue;
+  for(int j=size;j>=model.pair_start;j--){auto &hist=model.pair_gf[(a*m+b)*(size+1)+j];U width=model.totals[j][b]+1;hist.resize((model.totals[j][a]+1)*width);
+   if(j==size){hist[0]={1,1,0,0};continue;}
+   auto &v=model.items[j];auto &old=model.pair_gf[(a*m+b)*(size+1)+j+1];U oldwidth=model.totals[j+1][b]+1;
+   auto at=[&](U x,U y){return old[std::min(x,model.totals[j+1][a])*oldwidth+std::min(y,model.totals[j+1][b])];};
+   for(U x=0;x<=model.totals[j][a];x++)for(U y=0;y<width;y++){
+    model.setup_tick();Answer out=at(x,y);if(x>=v.cost[a]&&y>=v.cost[b]){auto take=at(x-v.cost[a],y-v.cost[b]);take.best+=v.score;take.mask|=v.mask;add(out,take);}hist[x*width+y]=out;
+   }
+  }
+ }
+ for(int k=0;k<m;k++){lower[k]=lower[k]>used[k]?lower[k]-used[k]:0;upper[k]-=used[k];}
+ auto a=model.walk(0,lower,upper);if(a.count){a.best+=score;a.mask|=mask;}
+ auto out=json(a,model.visits,model.memo.size());out.pop_back();return out+",\"setup_cells\":"+std::to_string(model.setup_cells)+",\"cache_hits\":"+std::to_string(model.hits)+",\"accepted_subcubes\":"+std::to_string(model.blocks)+",\"eliminated_constraints\":"+std::to_string(model.eliminated)+",\"bivariate_queries\":"+std::to_string(model.pair_queries)+",\"univariate_queries\":"+std::to_string(model.gf_queries)+",\"memo_arena_bytes\":"+std::to_string(memory)+"}";
+ }catch(const std::exception &error){
+  std::string reason=dynamic_cast<const std::bad_alloc*>(&error)?"population memo memory budget exceeded":error.what();
+  return "{\"error\":\""+reason+"\",\"visits\":"+std::to_string(model.visits)+",\"setup_cells\":"+std::to_string(model.setup_cells)+",\"records\":"+std::to_string(model.memo.size())+"}";
+ }
+}
+
 extern "C" {
+char* pp_population_fixed(int n,int m,const U*lo,const U*hi,const U*c,const I*p,U fixed,U values,U states,U limit,U memory){try{return copy(population(n,m,lo,hi,c,p,0,0,states,limit,memory,1,fixed,values,true));}catch(const std::exception &e){return copy(std::string("{\"error\":\"")+e.what()+"\"}");}}
+char* pp_population(int n,int m,const U*lo,const U*hi,const U*c,const I*p,int length,U prefix,U states,U limit,U memory,int sorted){try{return copy(population(n,m,lo,hi,c,p,length,prefix,states,limit,memory,sorted));}catch(const std::bad_alloc&){return copy("{\"error\":\"population memo memory budget exceeded\"}");}catch(const std::exception&e){return copy(std::string("{\"error\":\"")+e.what()+"\"}");}}
 void pp_free(char*p){std::free(p);}void pp_destroy(void*p){delete static_cast<Model*>(p);}
 void* pp_create(int n,int m,const U*lo,const U*hi,const U*c,const I*p,U records,U visits,char**error){try{return new Model(n,m,lo,hi,c,p,records,visits);}catch(const std::exception&e){*error=copy(e.what());return nullptr;}}
 void* pp_create_gray(int n,int m,const U*lo,const U*hi,const U*c,const I*p,U records,U visits,char**error){try{return new Model(n,m,lo,hi,c,p,records,visits,true);}catch(const std::exception&e){*error=copy(e.what());return nullptr;}}

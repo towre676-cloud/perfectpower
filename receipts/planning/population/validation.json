@@ -1,0 +1,36 @@
+{
+  "schema": "pp-population-validation/1",
+  "native_source_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
+  "files": {
+    "native/completion_planner.cpp": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
+    "python/perfectpower/planning.py": "ff8dc4649f81bbb37971e29ecb5ff6d43621c938cfd291e29376ad352f970460",
+    "python/perfectpower/planning_native.py": "bc87ca9610f34daadf11828c448b57276332e8f91d6d3dc90b41194a09b90e6e",
+    "python/perfectpower/planning_cnf.py": "6dc1dbb7212debcfa706a14c82649a074f1aeb09494c5cca68528b8758529532",
+    "data/planning/mknap1.txt": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283"
+  },
+  "tests": {
+    "command": "make planning-population-test",
+    "methods_passed": 20,
+    "status": "passed",
+    "scope": "original enumeration, independently recomputed ranks, limits, ties, resource intervals, independent CNF counts and unique extensions"
+  },
+  "sanitizers": {
+    "cases": 200,
+    "boundary": "64 original zero-cost zero-profit variables give 2^64 feasible and maximizing plans",
+    "address_sanitizer": "passed",
+    "undefined_behavior_sanitizer": "passed",
+    "leak_detection": "disabled because this execution environment blocks process-task inspection"
+  },
+  "wheel_smoke": {
+    "status": "passed",
+    "scope": "isolated install, general bundled assets and console routes; additional installed 39-project population and circuit imports tested"
+  },
+  "global39_independent_mitm": "complete population and query bank agree",
+  "global50_partition": "176 disjoint leaves, full 2^50 cover, arithmetic aggregation replay passed",
+  "external_ganak_conditional_counts": [
+    16777216,
+    512
+  ],
+  "external_ganak_global": "TIME_LIMIT at 360 seconds, no independent external global total",
+  "native_kernel_formally_verified": false
+}

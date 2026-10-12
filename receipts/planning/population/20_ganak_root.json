@@ -1,0 +1,29 @@
+{
+  "schema": "pp-planning-cnf-baseline/1",
+  "case": 20,
+  "prefix": [],
+  "solver": "ganak",
+  "encoding": "functional ripple adders and comparators; unprojected unique extensions",
+  "original_variables": 20,
+  "cnf_variables": 2599,
+  "clauses": 12318,
+  "cnf_sha256": "0c4da84f11d1970e3f91c1b053383ab61565330db74da4954efd96492b96292d",
+  "encoding_seconds": 0.0682218069996452,
+  "time_limit_seconds": 60,
+  "counting_scope": "complete feasible population under original prefix; no objective optimization",
+  "status": "TIME_LIMIT",
+  "binary_sha256": "934a79a3db2f5b3928ce89edde20837f652e4679b099320ac71c198699c709dd",
+  "command": [
+    "/tmp/planning-counting-baselines/ganak",
+    "--prob",
+    "0",
+    "--verb",
+    "0",
+    "--maxcache",
+    "128",
+    "20_adder_root.cnf"
+  ],
+  "peak_rss_bytes": 178147328,
+  "address_space_limit_bytes": 1073741824,
+  "counting_seconds": 60.18074589900061
+}
