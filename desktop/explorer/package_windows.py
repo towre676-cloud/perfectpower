@@ -103,10 +103,13 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE old,PWSTR unused,int show){
     subprocess.run([str(compiler),'-municode','-mwindows','-O2',str(launch_source),str(resource),'-o',str(stage/'PerfectPower-Explorer.exe'),'-static-libgcc'],check=True)
     manifest={p.relative_to(stage).as_posix():{'bytes':p.stat().st_size,'sha256':sha(p)} for p in stage.rglob('*') if p.is_file() and p!=stage/'PACKAGE_MANIFEST.json'}
     (stage/'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest,indent=2))
-    archive=Path(args.output)/'PerfectPower-Explorer-Complete.zip'
-    with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-        for p in sorted(stage.rglob('*')):
-            if p.is_file():z.write(p,p.relative_to(stage))
+    if args.existing_archive:
+        archive=Path(args.existing_archive)
+    else:
+        archive=Path(args.output)/'PerfectPower-Explorer-Complete.zip'
+        with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
+            for p in sorted(stage.rglob('*')):
+                if p.is_file():z.write(p,p.relative_to(stage))
     print(json.dumps({'directory':str(stage),'archive':str(archive),'files':len(manifest),'archive_bytes':archive.stat().st_size,'archive_sha256':sha(archive)}),flush=True)
     # The setup executable carries this same ZIP. A small native GUI runs ordinary
     # built-in PowerShell archive extraction, creates a Desktop shortcut, and opens the app.
@@ -133,6 +136,7 @@ $log=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'PerfectPo
 [IO.File]::WriteAllText($log,($_|Out-String));exit 1;
 }
 '''
+    script=script.replace('PerfectPower Explorer 1.2','PerfectPower Explorer '+args.version)
     offset=0
     for _ in range(8):
         text=script.replace('OFFSET',str(offset)).replace('DIGEST',sha(archive))
@@ -148,7 +152,7 @@ $log=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'PerfectPo
         out.write(stub.read_bytes())
         with archive.open('rb') as f:shutil.copyfileobj(f,out)
     assert setup.read_bytes()[offset:]==archive.read_bytes()
-    (Path(args.output)/'BUILD_RECEIPT.json').write_text(json.dumps({'archive_sha256':sha(archive),'setup_sha256':sha(setup),'setup_archive_offset':offset,'builder_sha256':sha(__file__),'source_copy':'git archive HEAD; generated dist appended','repository_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'all_tracked_files':len(tracked)-1,'runtime_sources':runtime_record,'native_windows_execution':'not exercised in this Linux environment'},indent=2))
+    (Path(args.output)/'BUILD_RECEIPT.json').write_text(json.dumps({'archive_sha256':sha(archive),'setup_sha256':sha(setup),'setup_archive_offset':offset,'builder_sha256':sha(__file__),'source_copy':'existing checked archive' if args.existing_archive else 'git archive HEAD; generated dist appended','repository_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'all_tracked_files':len(tracked)-1,'runtime_sources':runtime_record,'native_windows_execution':'not exercised in this Linux environment'},indent=2))
     print(json.dumps({'setup':str(setup),'bytes':setup.stat().st_size,'sha256':sha(setup)}),flush=True)
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--prepared-stage',action='store_true');p.add_argument('--previous-directory');p.add_argument('--electron');p.add_argument('--python');p.add_argument('--wheels');p.add_argument('--output',required=True);p.add_argument('--compiler',required=True);package(p.parse_args())
+    p=argparse.ArgumentParser();p.add_argument('--existing-archive');p.add_argument('--version',default='1.2');p.add_argument('--prepared-stage',action='store_true');p.add_argument('--previous-directory');p.add_argument('--electron');p.add_argument('--python');p.add_argument('--wheels');p.add_argument('--output',required=True);p.add_argument('--compiler',required=True);package(p.parse_args())
