@@ -1,0 +1,1475 @@
+{
+  "schema": "pp-independent-planning/1",
+  "case": 50,
+  "dataset_sha256": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283",
+  "partition_sha256": "b630e97e7758c4ab1e27f4a02af936748ffb995e816f037b4be4c328af5e0918",
+  "sources": {
+    "bdd": "87063e6010df07b2ea262d9152732d52f7ad2005b282b62ed5a16c9945b1095d",
+    "optimizer": "78cd2c43095c0be6d49669937779aba2e375c4dc0607cf004fb7b6858f980530"
+  },
+  "driver_sha256": "9dafbec51a8fde42c2ed2059d4ed440a7c7d0a3a2c9417951f84456441f4b819",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "flags": [
+    "-O3",
+    "-std=c++17"
+  ],
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "limits": {
+    "node_cap": 40000000,
+    "timeout_seconds_per_worker": 600,
+    "address_space_mib": 6144
+  },
+  "order_original_indices": [
+    15,
+    4,
+    1,
+    42,
+    40,
+    3,
+    20,
+    2,
+    0,
+    46,
+    7,
+    22,
+    45,
+    10,
+    5,
+    39,
+    32,
+    47,
+    43,
+    14,
+    16,
+    11,
+    26,
+    31,
+    21,
+    17,
+    9,
+    41,
+    37,
+    36,
+    25,
+    6,
+    23,
+    8,
+    27,
+    28,
+    33,
+    34,
+    38,
+    24,
+    44,
+    18,
+    30,
+    48,
+    49,
+    35,
+    12,
+    13,
+    19,
+    29
+  ],
+  "input_sha256": "6092f9b0ca780f4bcb4609def535179df4aca42d609519cc43b7e64eea14cf17",
+  "root_leaf_cubes": 176,
+  "cube_cover_size": 1125899906842624,
+  "independence": "Standalone original-data parser, threshold ROBDD construction and Boolean intersection; partition used only for post-construction queries. No planner/native kernel imports.",
+  "optimizer": {
+    "status": "complete",
+    "target": 16537,
+    "candidates_at_or_above_target": 1,
+    "maximum": 16537,
+    "maximizers": 1,
+    "mask": 95583623577551,
+    "visits": 4133,
+    "seconds": 0.000461147,
+    "exit_code": 0,
+    "wall_seconds": 0.0034322400024393573,
+    "diagnostics": ""
+  },
+  "bdd": {
+    "status": "complete",
+    "count": 702508860122761,
+    "nodes": 9190151,
+    "apply_calls": 58374793,
+    "build_seconds": 68.4149,
+    "seconds": 98.4184,
+    "peak_rss_kib": 2040124,
+    "conditional_counts": [
+      280976498397718,
+      128464859316314,
+      48524792343566,
+      22853039979883,
+      6979317052565,
+      67582597459589,
+      8785971748102,
+      4375574923149,
+      2192807953384,
+      2091453801069,
+      8360093364665,
+      3454813473577,
+      1629601896613,
+      647702283032,
+      199205198112,
+      140510011244,
+      151443249858,
+      8285540567139,
+      3868577725138,
+      1856784468121,
+      1156130028101,
+      3800271757679,
+      1034014990499,
+      502490348501,
+      237395216182,
+      109495574862,
+      71038756354,
+      445298848453,
+      319493786143,
+      316870137678,
+      133275558452,
+      56070943806,
+      864363833203,
+      432099015870,
+      177960275499,
+      85073443775,
+      37627187072,
+      517485292278,
+      226042505103,
+      76311800733,
+      28128922154,
+      6951191102,
+      433176256487,
+      253720907222,
+      181108600555,
+      89070630145,
+      28981305130,
+      13970815664,
+      97798898404,
+      39767634694,
+      7153694764,
+      148994370210,
+      62458494262,
+      24766524140,
+      57465301401,
+      17780860099,
+      23937478274,
+      4354635999,
+      72683833777,
+      27156482881,
+      7192501297,
+      24256504867,
+      4656643936,
+      7230008577,
+      761882062,
+      27310060803799,
+      7697471672088,
+      3804659186765,
+      2745251678050,
+      3413980513032,
+      2131771792428,
+      2073262565810,
+      4188194742768,
+      2139654709272,
+      959881203710,
+      467388091155,
+      221352797305,
+      130004193750,
+      1934606131174,
+      753824312985,
+      382075709259,
+      151696490292,
+      90718367355,
+      874775871590,
+      459567258016,
+      268107426890,
+      381130506306,
+      215009190670,
+      172895923261,
+      72842813103,
+      22020545366,
+      9960761533,
+      68073610805,
+      22108133698,
+      28936371899,
+      5390529150,
+      2180081655222,
+      1074383061514,
+      302875807616,
+      193672981091,
+      818121455832,
+      3428143030915,
+      956749487932,
+      411638461160,
+      188478480318,
+      111022198535,
+      563505843802,
+      260611311951,
+      462610391261,
+      201506558802,
+      147050475706,
+      356377200796,
+      141891732777,
+      63828020419,
+      17945646641,
+      7200473425,
+      270136744323,
+      142540316087,
+      133204848386,
+      57232391679,
+      211499395700,
+      100739836825,
+      37780098259,
+      20845829461,
+      95181890973,
+      45235684892,
+      36559049517,
+      20127534204,
+      17086664287,
+      118035293584,
+      53671437161,
+      21115786106,
+      48134977050,
+      14699062142,
+      16984197148,
+      4691562837,
+      3991632937,
+      100383603776,
+      44899313378,
+      36254876608,
+      10039315336,
+      10335335581,
+      1710251723,
+      37728014863,
+      11369255811,
+      508738166954,
+      257507337930,
+      125438936134,
+      286090516903,
+      253084857490,
+      102085684293,
+      79776931383,
+      35215154749,
+      39415814921,
+      11247747082,
+      39841874261,
+      9825735805,
+      78443812399,
+      20890370639,
+      28502740193,
+      5046616887,
+      6649489053,
+      190704846977,
+      29255770863,
+      56192388320,
+      8345192072,
+      6403119172149,
+      1567618350471,
+      489635320182,
+      136577190876,
+      249914858640,
+      263530501411,
+      61582071986,
+      6142383679,
+      18421162937,
+      649917854305,
+      16777216,
+      512,
+      16095745
+    ],
+    "exit_code": 0,
+    "wall_seconds": 101.15498348300025,
+    "diagnostics": "resource 0 nodes 4647 count 880154007273512 calls 1\nresource 1 nodes 147649 count 815144538147229 calls 455186\nresource 2 nodes 1738191 count 801110838149322 calls 7365031\nresource 3 nodes 6650260 count 748865262815026 calls 30372068\nresource 4 nodes 9190151 count 702508860122761 calls 58374793\n"
+  },
+  "conditional_results": [
+    {
+      "fixed": 35201551958016,
+      "values": 0,
+      "expected": 280976498397718,
+      "independent_count": 280976498397718
+    },
+    {
+      "fixed": 316676528668672,
+      "values": 35184372088832,
+      "expected": 128464859316314,
+      "independent_count": 128464859316314
+    },
+    {
+      "fixed": 316676528668800,
+      "values": 316659348799488,
+      "expected": 48524792343566,
+      "independent_count": 48524792343566
+    },
+    {
+      "fixed": 387045272846464,
+      "values": 316659348799616,
+      "expected": 22853039979883,
+      "independent_count": 22853039979883
+    },
+    {
+      "fixed": 387045272846464,
+      "values": 387028092977280,
+      "expected": 6979317052565,
+      "independent_count": 6979317052565
+    },
+    {
+      "fixed": 316676528668800,
+      "values": 17179869184,
+      "expected": 67582597459589,
+      "independent_count": 67582597459589
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 17179869312,
+      "expected": 8785971748102,
+      "independent_count": 8785971748102
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 17716740224,
+      "expected": 4375574923149,
+      "independent_count": 4375574923149
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 140755205095552,
+      "expected": 2192807953384,
+      "independent_count": 2192807953384
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 703705158516864,
+      "expected": 2091453801069,
+      "independent_count": 2091453801069
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 17179869824,
+      "expected": 8360093364665,
+      "independent_count": 8360093364665
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 17716740736,
+      "expected": 3454813473577,
+      "independent_count": 3454813473577
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 140755205096064,
+      "expected": 1629601896613,
+      "independent_count": 1629601896613
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 703705158517376,
+      "expected": 647702283032,
+      "independent_count": 647702283032
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 708103205028480,
+      "expected": 199205198112,
+      "independent_count": 199205198112
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 708103339246208,
+      "expected": 140510011244,
+      "independent_count": 140510011244
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 708103205028488,
+      "expected": 151443249858,
+      "independent_count": 151443249858
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 70385924046976,
+      "expected": 8285540567139,
+      "independent_count": 8285540567139
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 70386460917888,
+      "expected": 3868577725138,
+      "independent_count": 3868577725138
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 211123949273216,
+      "expected": 1856784468121,
+      "independent_count": 1856784468121
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 774073902694528,
+      "expected": 1156130028101,
+      "independent_count": 1156130028101
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 70385924047488,
+      "expected": 3800271757679,
+      "independent_count": 3800271757679
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 211123412402816,
+      "expected": 1034014990499,
+      "independent_count": 1034014990499
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 215521458913920,
+      "expected": 502490348501,
+      "independent_count": 502490348501
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 215521458913928,
+      "expected": 237395216182,
+      "independent_count": 237395216182
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 215521593131656,
+      "expected": 109495574862,
+      "independent_count": 109495574862
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 215521593131672,
+      "expected": 71038756354,
+      "independent_count": 71038756354
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 774073365824128,
+      "expected": 445298848453,
+      "independent_count": 445298848453
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 774073365824136,
+      "expected": 319493786143,
+      "independent_count": 319493786143
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 778471412335232,
+      "expected": 316870137678,
+      "independent_count": 316870137678
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 778471412335240,
+      "expected": 133275558452,
+      "independent_count": 133275558452
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 778471546552968,
+      "expected": 56070943806,
+      "independent_count": 56070943806
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 70386460918400,
+      "expected": 864363833203,
+      "independent_count": 864363833203
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 74784507429504,
+      "expected": 432099015870,
+      "independent_count": 432099015870
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 74784507429512,
+      "expected": 177960275499,
+      "independent_count": 177960275499
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 74784641647240,
+      "expected": 85073443775,
+      "independent_count": 85073443775
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 74784641647256,
+      "expected": 37627187072,
+      "independent_count": 37627187072
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 633336414339712,
+      "expected": 517485292278,
+      "independent_count": 517485292278
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 637734460850816,
+      "expected": 226042505103,
+      "independent_count": 226042505103
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 637734460850824,
+      "expected": 76311800733,
+      "independent_count": 76311800733
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 637734595068552,
+      "expected": 28128922154,
+      "independent_count": 28128922154
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 637734595068568,
+      "expected": 6951191102,
+      "independent_count": 6951191102
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 211123949273728,
+      "expected": 433176256487,
+      "independent_count": 433176256487
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 211123949273736,
+      "expected": 253720907222,
+      "independent_count": 253720907222
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 215521995784832,
+      "expected": 181108600555,
+      "independent_count": 181108600555
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 215522130002560,
+      "expected": 89070630145,
+      "independent_count": 89070630145
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 215522130002576,
+      "expected": 28981305130,
+      "independent_count": 28981305130
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 216071885816464,
+      "expected": 13970815664,
+      "independent_count": 13970815664
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 215521995784840,
+      "expected": 97798898404,
+      "independent_count": 97798898404
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 215522130002568,
+      "expected": 39767634694,
+      "independent_count": 39767634694
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 215522130002584,
+      "expected": 7153694764,
+      "independent_count": 7153694764
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 774073902695040,
+      "expected": 148994370210,
+      "independent_count": 148994370210
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 774074036912768,
+      "expected": 62458494262,
+      "independent_count": 62458494262
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 774074036912784,
+      "expected": 24766524140,
+      "independent_count": 24766524140
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 774073902695048,
+      "expected": 57465301401,
+      "independent_count": 57465301401
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 774073902695064,
+      "expected": 17780860099,
+      "independent_count": 17780860099
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 774074036912776,
+      "expected": 23937478274,
+      "independent_count": 23937478274
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 774074036912792,
+      "expected": 4354635999,
+      "independent_count": 4354635999
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 778471949206144,
+      "expected": 72683833777,
+      "independent_count": 72683833777
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 778472083423872,
+      "expected": 27156482881,
+      "independent_count": 27156482881
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 778472083423888,
+      "expected": 7192501297,
+      "independent_count": 7192501297
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 778471949206152,
+      "expected": 24256504867,
+      "independent_count": 24256504867
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 778471949206168,
+      "expected": 4656643936,
+      "independent_count": 4656643936
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 778472083423880,
+      "expected": 7230008577,
+      "independent_count": 7230008577
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 778472083423896,
+      "expected": 761882062,
+      "independent_count": 761882062
+    },
+    {
+      "fixed": 387045272846464,
+      "values": 281492156579840,
+      "expected": 27310060803799,
+      "independent_count": 27310060803799
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 351860900757504,
+      "expected": 7697471672088,
+      "independent_count": 7697471672088
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 351861437628416,
+      "expected": 3804659186765,
+      "independent_count": 3804659186765
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 492598925983744,
+      "expected": 2745251678050,
+      "independent_count": 2745251678050
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 351860900758016,
+      "expected": 3413980513032,
+      "independent_count": 3413980513032
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 492598389113344,
+      "expected": 2131771792428,
+      "independent_count": 2131771792428
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 351861437628928,
+      "expected": 2073262565810,
+      "independent_count": 2073262565810
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 281492156579968,
+      "expected": 4188194742768,
+      "independent_count": 4188194742768
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 422229644935296,
+      "expected": 2139654709272,
+      "independent_count": 2139654709272
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 985179598356608,
+      "expected": 959881203710,
+      "independent_count": 959881203710
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 989577644867712,
+      "expected": 467388091155,
+      "independent_count": 467388091155
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 989577644867720,
+      "expected": 221352797305,
+      "independent_count": 221352797305
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 989577779085448,
+      "expected": 130004193750,
+      "independent_count": 130004193750
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 281492693450880,
+      "expected": 1934606131174,
+      "independent_count": 1934606131174
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 844442646872192,
+      "expected": 753824312985,
+      "independent_count": 753824312985
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 848840693383296,
+      "expected": 382075709259,
+      "independent_count": 382075709259
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 848840693383304,
+      "expected": 151696490292,
+      "independent_count": 151696490292
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 848840827601032,
+      "expected": 90718367355,
+      "independent_count": 90718367355
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 422230181806208,
+      "expected": 874775871590,
+      "independent_count": 874775871590
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 426628228317312,
+      "expected": 459567258016,
+      "independent_count": 459567258016
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 426628228317320,
+      "expected": 268107426890,
+      "independent_count": 268107426890
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 985180135227520,
+      "expected": 381130506306,
+      "independent_count": 381130506306
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 985180135227528,
+      "expected": 215009190670,
+      "independent_count": 215009190670
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 989578181738624,
+      "expected": 172895923261,
+      "independent_count": 172895923261
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 989578315956352,
+      "expected": 72842813103,
+      "independent_count": 72842813103
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 989578315956368,
+      "expected": 22020545366,
+      "independent_count": 22020545366
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 990128071770256,
+      "expected": 9960761533,
+      "independent_count": 9960761533
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 989578181738632,
+      "expected": 68073610805,
+      "independent_count": 68073610805
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 989578181738648,
+      "expected": 22108133698,
+      "independent_count": 22108133698
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 989578315956360,
+      "expected": 28936371899,
+      "independent_count": 28936371899
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 989578315956376,
+      "expected": 5390529150,
+      "independent_count": 5390529150
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 281492156580480,
+      "expected": 2180081655222,
+      "independent_count": 2180081655222
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 422229644935808,
+      "expected": 1074383061514,
+      "independent_count": 1074383061514
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 985179598357120,
+      "expected": 302875807616,
+      "independent_count": 302875807616
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 989577644868224,
+      "expected": 193672981091,
+      "independent_count": 193672981091
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 281492693451392,
+      "expected": 818121455832,
+      "independent_count": 818121455832
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 351860900757632,
+      "expected": 3428143030915,
+      "independent_count": 3428143030915
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 492598389112960,
+      "expected": 956749487932,
+      "independent_count": 956749487932
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 496996435624064,
+      "expected": 411638461160,
+      "independent_count": 411638461160
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 496996435624072,
+      "expected": 188478480318,
+      "independent_count": 188478480318
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 496996569841800,
+      "expected": 111022198535,
+      "independent_count": 111022198535
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 1055548342534272,
+      "expected": 563505843802,
+      "independent_count": 563505843802
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 1059946389045376,
+      "expected": 260611311951,
+      "independent_count": 260611311951
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 351861437628544,
+      "expected": 462610391261,
+      "independent_count": 462610391261
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 351861437628552,
+      "expected": 201506558802,
+      "independent_count": 201506558802
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 351861571846280,
+      "expected": 147050475706,
+      "independent_count": 147050475706
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 356259484139648,
+      "expected": 356377200796,
+      "independent_count": 356377200796
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 356259484139656,
+      "expected": 141891732777,
+      "independent_count": 141891732777
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 356259618357384,
+      "expected": 63828020419,
+      "independent_count": 63828020419
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 356259618357400,
+      "expected": 17945646641,
+      "independent_count": 17945646641
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 356809374171288,
+      "expected": 7200473425,
+      "independent_count": 7200473425
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 914811391049856,
+      "expected": 270136744323,
+      "independent_count": 270136744323
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 914811391049864,
+      "expected": 142540316087,
+      "independent_count": 142540316087
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 919209437560960,
+      "expected": 133204848386,
+      "independent_count": 133204848386
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 919209437560968,
+      "expected": 57232391679,
+      "independent_count": 57232391679
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 492598925983872,
+      "expected": 211499395700,
+      "independent_count": 211499395700
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 492599060201600,
+      "expected": 100739836825,
+      "independent_count": 100739836825
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 492599060201616,
+      "expected": 37780098259,
+      "independent_count": 37780098259
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 493148816015504,
+      "expected": 20845829461,
+      "independent_count": 20845829461
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 492598925983880,
+      "expected": 95181890973,
+      "independent_count": 95181890973
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 492598925983896,
+      "expected": 45235684892,
+      "independent_count": 45235684892
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 492599060201608,
+      "expected": 36559049517,
+      "independent_count": 36559049517
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 493148816015496,
+      "expected": 20127534204,
+      "independent_count": 20127534204
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 492599060201624,
+      "expected": 17086664287,
+      "independent_count": 17086664287
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 496996972494976,
+      "expected": 118035293584,
+      "independent_count": 118035293584
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496997106712704,
+      "expected": 53671437161,
+      "independent_count": 53671437161
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496997106712720,
+      "expected": 21115786106,
+      "independent_count": 21115786106
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496996972494984,
+      "expected": 48134977050,
+      "independent_count": 48134977050
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496996972495000,
+      "expected": 14699062142,
+      "independent_count": 14699062142
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 496997106712712,
+      "expected": 16984197148,
+      "independent_count": 16984197148
+    },
+    {
+      "fixed": 1095681188037272,
+      "values": 497546862526600,
+      "expected": 4691562837,
+      "independent_count": 4691562837
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496997106712728,
+      "expected": 3991632937,
+      "independent_count": 3991632937
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 1055548879405184,
+      "expected": 100383603776,
+      "independent_count": 100383603776
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 1055549013622912,
+      "expected": 44899313378,
+      "independent_count": 44899313378
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 1055548879405192,
+      "expected": 36254876608,
+      "independent_count": 36254876608
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 1055548879405208,
+      "expected": 10039315336,
+      "independent_count": 10039315336
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 1055549013622920,
+      "expected": 10335335581,
+      "independent_count": 10335335581
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 1055549013622936,
+      "expected": 1710251723,
+      "independent_count": 1710251723
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 1059946925916288,
+      "expected": 37728014863,
+      "independent_count": 37728014863
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 1059946925916296,
+      "expected": 11369255811,
+      "independent_count": 11369255811
+    },
+    {
+      "fixed": 1095131298005632,
+      "values": 351860900758144,
+      "expected": 508738166954,
+      "independent_count": 508738166954
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 356258947269248,
+      "expected": 257507337930,
+      "independent_count": 257507337930
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 356258947269256,
+      "expected": 125438936134,
+      "independent_count": 125438936134
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 914810854179456,
+      "expected": 286090516903,
+      "independent_count": 286090516903
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 492598389113472,
+      "expected": 253084857490,
+      "independent_count": 253084857490
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 492598389113480,
+      "expected": 102085684293,
+      "independent_count": 102085684293
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496996435624576,
+      "expected": 79776931383,
+      "independent_count": 79776931383
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496996435624592,
+      "expected": 35215154749,
+      "independent_count": 35215154749
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496996569842304,
+      "expected": 39415814921,
+      "independent_count": 39415814921
+    },
+    {
+      "fixed": 1095131432223384,
+      "values": 496996569842320,
+      "expected": 11247747082,
+      "independent_count": 11247747082
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 496996435624584,
+      "expected": 39841874261,
+      "independent_count": 39841874261
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 496996569842312,
+      "expected": 9825735805,
+      "independent_count": 9825735805
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 1055548342534784,
+      "expected": 78443812399,
+      "independent_count": 78443812399
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 1055548342534792,
+      "expected": 20890370639,
+      "independent_count": 20890370639
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 1059946389045888,
+      "expected": 28502740193,
+      "independent_count": 28502740193
+    },
+    {
+      "fixed": 1095131432223368,
+      "values": 1059946523263616,
+      "expected": 5046616887,
+      "independent_count": 5046616887
+    },
+    {
+      "fixed": 1095131298005640,
+      "values": 1059946389045896,
+      "expected": 6649489053,
+      "independent_count": 6649489053
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 351861437629056,
+      "expected": 190704846977,
+      "independent_count": 190704846977
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 914811391050368,
+      "expected": 29255770863,
+      "independent_count": 29255770863
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 492598925984384,
+      "expected": 56192388320,
+      "independent_count": 56192388320
+    },
+    {
+      "fixed": 1090733251494528,
+      "values": 1055548879405696,
+      "expected": 8345192072,
+      "independent_count": 8345192072
+    },
+    {
+      "fixed": 316676528668800,
+      "values": 35201551958016,
+      "expected": 6403119172149,
+      "independent_count": 6403119172149
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 35201551958144,
+      "expected": 1567618350471,
+      "independent_count": 1567618350471
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 35202088829056,
+      "expected": 489635320182,
+      "independent_count": 489635320182
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 175939577184384,
+      "expected": 136577190876,
+      "independent_count": 136577190876
+    },
+    {
+      "fixed": 387045272846976,
+      "values": 35201551958656,
+      "expected": 249914858640,
+      "independent_count": 249914858640
+    },
+    {
+      "fixed": 387045809717888,
+      "values": 105570296135808,
+      "expected": 263530501411,
+      "independent_count": 263530501411
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 105570833006720,
+      "expected": 61582071986,
+      "independent_count": 61582071986
+    },
+    {
+      "fixed": 527783298073216,
+      "values": 246308321362048,
+      "expected": 6142383679,
+      "independent_count": 6142383679
+    },
+    {
+      "fixed": 387045272846976,
+      "values": 105570296136320,
+      "expected": 18421162937,
+      "independent_count": 18421162937
+    },
+    {
+      "fixed": 316676528668672,
+      "values": 316676528668672,
+      "expected": 649917854305,
+      "independent_count": 649917854305
+    },
+    {
+      "fixed": 1125899890065408,
+      "values": 0,
+      "prefix": "00000000000000000000000000",
+      "independent_count": 16777216
+    },
+    {
+      "fixed": 1125899890065408,
+      "values": 1125882039107584,
+      "prefix": "11111111111111101111010111",
+      "independent_count": 512
+    },
+    {
+      "fixed": 1125899890065408,
+      "values": 95583607980032,
+      "prefix": "00010101101110111011001011",
+      "independent_count": 16095745
+    }
+  ],
+  "all_root_leaf_counts_agree": true,
+  "independent_leaf_sum": 702508860122761,
+  "published_root_agrees": true,
+  "status": "complete_independent_confirmation",
+  "direct_conditional_rebuilds": [
+    {
+      "prefix": "00000000000000000000000000",
+      "answer": {
+        "status": "complete",
+        "count": 16777216,
+        "nodes": 2,
+        "apply_calls": 5,
+        "build_seconds": 0.000102716,
+        "seconds": 0.000105921,
+        "peak_rss_kib": 9428,
+        "conditional_counts": [],
+        "exit_code": 0,
+        "wall_seconds": 0.003356335000717081,
+        "diagnostics": "resource 0 nodes 2 count 16777216 calls 1\nresource 1 nodes 2 count 16777216 calls 2\nresource 2 nodes 2 count 16777216 calls 3\nresource 3 nodes 2 count 16777216 calls 4\nresource 4 nodes 2 count 16777216 calls 5\n"
+      }
+    },
+    {
+      "prefix": "11111111111111101111010111",
+      "answer": {
+        "status": "complete",
+        "count": 512,
+        "nodes": 39,
+        "apply_calls": 7457,
+        "build_seconds": 0.00129846,
+        "seconds": 0.00130044,
+        "peak_rss_kib": 9432,
+        "conditional_counts": [],
+        "exit_code": 0,
+        "wall_seconds": 0.003650859995104838,
+        "diagnostics": "resource 0 nodes 458 count 14638028 calls 1\nresource 1 nodes 1887 count 11843811 calls 3864\nresource 2 nodes 1405 count 4622476 calls 7435\nresource 3 nodes 39 count 512 calls 7454\nresource 4 nodes 39 count 512 calls 7457\n"
+      }
+    },
+    {
+      "prefix": "00010101101110111011001011",
+      "answer": {
+        "status": "complete",
+        "count": 16095745,
+        "nodes": 2430,
+        "apply_calls": 8019,
+        "build_seconds": 0.00149434,
+        "seconds": 0.0014969,
+        "peak_rss_kib": 9436,
+        "conditional_counts": [],
+        "exit_code": 0,
+        "wall_seconds": 0.003868319996399805,
+        "diagnostics": "resource 0 nodes 369 count 16205884 calls 1\nresource 1 nodes 708 count 16203514 calls 968\nresource 2 nodes 1766 count 16136086 calls 4779\nresource 3 nodes 1766 count 16136086 calls 4780\nresource 4 nodes 2430 count 16095745 calls 8019\n"
+      }
+    }
+  ],
+  "optimizer_witness": {
+    "original_bits": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "resource_use": [
+      800,
+      639,
+      549,
+      472,
+      650
+    ]
+  }
+}

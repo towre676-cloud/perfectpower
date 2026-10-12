@@ -47,6 +47,9 @@ def export(root=ROOT):
         'geometry':{'url':'https://perfectpower-explorer-download.towre676.chatgpt.site/geometry/','schema':'pp-portfolio-geometry/1',
                     'receipt':json.loads((root/'receipts/planning/explorer/geometry.json').read_text()),
                     'scope':'Browser companion displays retained exact computations; native workspace follows fresh queries.'}}
+    verification=root/'receipts/planning/independent/verification.json'
+    if verification.exists():
+        payload['native_portfolio']['independent_confirmation']=json.loads(verification.read_text())
     encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     source_parent = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     envelope = {'schema': 'pp-explorer-live/1', 'source_parent': source_parent,

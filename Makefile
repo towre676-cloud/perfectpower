@@ -687,3 +687,11 @@ planning-population-benchmark:
 planning-population-sanitizer:
 	$(CXX) -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer native/test_completion_population.cpp -o /tmp/perfectpower-population-sanitizer
 	ASAN_OPTIONS=detect_leaks=0 /tmp/perfectpower-population-sanitizer
+
+.PHONY: planning-independent-test planning-independent-benchmark
+planning-independent-test:
+	python python/verify_planning_independent.py --selftest
+planning-independent-benchmark:
+	python python/verify_planning_independent.py --case 20
+	python python/verify_planning_independent.py --case 39
+	python python/verify_planning_independent.py --case 50
