@@ -18,10 +18,10 @@ async function refresh(){if(busy)return;busy=true;try{
  const updates={};for(const source of current.sources){try{updates[source]=await envelope(registry.upstreams[source].feed);}catch(error){updates[source]={unavailable:true};}}
  const changed=Object.entries(updates).some(([key,value])=>known[key]&&value.digest&&known[key]!==value.digest);
  const ready=Object.values(updates).filter(x=>x.digest).length;
- status.textContent=ready===current.sources.length?(changed?'New research is ready · refreshed from the source':'Connected to current research'):'Some sources are offline · saved app content stays available';
+ status.textContent=ready===current.sources.length?(changed?'New research is ready · refreshed from the source':'Connected to published research'):'Some sources are offline · saved app content stays available';
  for(const [key,value] of Object.entries(updates))if(value.digest)known[key]=value.digest;
  if(product==='nfl'||product==='perfectpower'){
-  try{const r=await fetch(base+'browser_counter.json',{cache:'no-store'});const counter=await r.json();if(counter.schema!=='pp-browser-counter/1'||await sha(counter.source)!==counter.sha256)throw Error('Counter digest mismatch');
+  try{const r=await fetch('https://raw.githubusercontent.com/towre676-cloud/perfectpower/main/web/shared/finite-counter.js',{cache:'no-store'});if(!r.ok)throw Error('Counter unavailable');const source=await r.text();const counter={source,sha256:await sha(source)};
    if(globalThis.__ourCounterSHA!==counter.sha256){
     const script=document.createElement('script'),url=URL.createObjectURL(new Blob([counter.source],{type:'application/javascript'}));
     await new Promise((resolve,reject)=>{script.onload=resolve;script.onerror=reject;script.src=url;document.head.append(script);});URL.revokeObjectURL(url);script.remove();
