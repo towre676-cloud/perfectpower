@@ -9,7 +9,7 @@ const {chromium}=require('@playwright/test'),{spawn}=require('node:child_process
   for(const input of await page.locator('[data-bound=max]').all()){await input.fill('0');await input.dispatchEvent('change');}
   await page.click('#portfolio-build');await page.waitForFunction(()=>document.querySelector('#portfolio-status').textContent.includes('Complete'),null,{timeout:20000});assert.ok((await page.locator('#portfolio-answer').textContent()).includes('1'));assert.equal(await page.locator('.project-card.chosen').count(),0);checks++;
   await page.click('[data-decision="1"]');await page.click('#portfolio-condition');await page.waitForFunction(()=>document.querySelector('#portfolio-answer').textContent.includes('No feasible selection'));checks++;
-  await page.click('#prefix-clear');await page.click('#portfolio-select');await page.waitForFunction(()=>document.querySelector('#portfolio-answer').textContent.includes('Portfolio at rank 0'));checks++;
+  await page.click('#prefix-clear');await page.getByText('Advanced: explore a different feasible choice',{exact:true}).click();await page.click('#portfolio-select');await page.waitForFunction(()=>document.querySelector('#portfolio-answer').textContent.includes('Portfolio at rank 0'));checks++;
   await page.click('#portfolio-sample');await page.waitForFunction(()=>document.querySelector('#portfolio-answer').textContent.includes('Seeded feasible sample'));checks++;
   const ev=await page.locator('#portfolio-answer a').first().getAttribute('href');assert.equal((await (await page.request.get(new URL(ev,url).href)).json()).summary.count,'1');checks++;
   await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));checks++;
