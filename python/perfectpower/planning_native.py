@@ -15,21 +15,30 @@ from .divisor_square import WorkLimit
 _LIBRARY = None
 
 def available():
-    return shutil.which('g++') is not None or _LIBRARY is not None
+    from .shipped_native import shipped_library
+    return _LIBRARY is not None or shipped_library('completion_planner',runtime_root()/'native/completion_planner.cpp') is not None or shutil.which('g++') is not None
 
 def library():
     global _LIBRARY
     if _LIBRARY is None:
-        compiler=shutil.which('g++')
-        if compiler is None: raise WorkLimit('optional native planner requires a C++17 compiler')
         source=runtime_root()/'native/completion_planner.cpp'
-        temporary=tempfile.TemporaryDirectory(prefix='perfectpower-planner-')
-        output=Path(temporary.name)/'planner.so'
-        try:
-            subprocess.run([compiler,'-std=c++17','-O3','-fPIC','-shared',str(source),'-o',str(output)],check=True,capture_output=True,timeout=60)
+        from .shipped_native import shipped_library
+        shipped=shipped_library('completion_planner',source)
+        temporary=None
+        if shipped:
+            output,provenance=shipped
             lib=C.CDLL(str(output))
-        except (OSError,subprocess.SubprocessError) as e:
-            temporary.cleanup();raise WorkLimit('optional native planner compilation failed') from e
+        else:
+            compiler=shutil.which('g++')
+            if compiler is None: raise WorkLimit('optional native planner requires a C++17 compiler')
+            temporary=tempfile.TemporaryDirectory(prefix='perfectpower-planner-')
+            output=Path(temporary.name)/'planner.so'
+            try:
+                subprocess.run([compiler,'-std=c++17','-O3','-fPIC','-shared',str(source),'-o',str(output)],check=True,capture_output=True,timeout=60)
+                lib=C.CDLL(str(output))
+            except (OSError,subprocess.SubprocessError) as e:
+                temporary.cleanup();raise WorkLimit('optional native planner compilation failed') from e
+            provenance={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'compiler':subprocess.check_output([compiler,'--version'],text=True).splitlines()[0], 'flags':['-std=c++17','-O3','-fPIC','-shared'],'scope':'tested native execution; no kernel proof of native algorithm'}
         common=[C.c_int,C.c_int,C.POINTER(C.c_uint64),C.POINTER(C.c_uint64),C.POINTER(C.c_uint64),C.POINTER(C.c_int64)]
         lib.pp_create.argtypes=common+[C.c_uint64,C.c_uint64,C.POINTER(C.c_void_p)];lib.pp_create.restype=C.c_void_p
         lib.pp_create_gray.argtypes=lib.pp_create.argtypes;lib.pp_create_gray.restype=C.c_void_p
@@ -41,7 +50,7 @@ def library():
         lib.pp_destroy.argtypes=[C.c_void_p];lib.pp_destroy.restype=None
         lib.pp_free.argtypes=[C.c_void_p];lib.pp_free.restype=None
         lib._temporary=temporary
-        lib._provenance={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'compiler':subprocess.check_output([compiler,'--version'],text=True).splitlines()[0], 'flags':['-std=c++17','-O3','-fPIC','-shared'],'scope':'tested native execution; no kernel proof of native algorithm'}
+        lib._provenance=provenance
         _LIBRARY=lib
     return _LIBRARY
 

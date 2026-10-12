@@ -112,6 +112,9 @@ def native_library():
         digest=hashlib.sha256(source.read_bytes()).hexdigest()
         cache=Path(tempfile.gettempdir())/'perfectpower-model-counting';cache.mkdir(exist_ok=True)
         target=cache/(digest+'.so')
+        from .shipped_native import shipped_library
+        shipped=shipped_library('cnf_counter',source)
+        if shipped:target=shipped[0]
         if not target.exists():
             fd,path=tempfile.mkstemp(suffix='.so',dir=cache);os.close(fd)
             cmd=[os.environ.get('CXX','g++'),'-std=c++17','-O3','-fPIC','-shared',str(source),'-o',path]

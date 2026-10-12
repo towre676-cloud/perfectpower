@@ -1,0 +1,1273 @@
+[
+  {
+    "id": "4b9bca9ebf9943f3a808b377401adc55",
+    "status": "complete",
+    "started": 1791778599.7449548,
+    "request": {
+      "kind": "command",
+      "args": [
+        "solve",
+        "--expr",
+        "(5*n - 7)**3 - 2",
+        "--domain",
+        "pos"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.46793363700271584,
+    "exit_code": 0,
+    "result": {
+      "galois": {
+        "orbits": [
+          {
+            "size": 3,
+            "factor": [
+              -69,
+              147,
+              -105,
+              25
+            ],
+            "group": "S3",
+            "discriminant": "-108/15625",
+            "multiplicity": 1,
+            "t": 2
+          }
+        ],
+        "unit_fields": [],
+        "explanation": "finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)"
+      },
+      "answer": "complete_list",
+      "certificate": {
+        "answer": "complete_list",
+        "lean_theorems": [
+          "PerfectPower.MordellMinus2.points",
+          "PerfectPower.Transport.complete_cube_sub_two",
+          "PerfectPower.Transport.affine_count",
+          "PerfectPower.Reduction.affine",
+          "PerfectPower.Generated.Plans.plan_cube_transport (kernel-checked theorem for this plan)"
+        ],
+        "premises": [],
+        "missing_premise": null,
+        "python_steps": [
+          "affine transport to a solved Mordell curve"
+        ],
+        "python_only": [],
+        "execution_verified": false
+      },
+      "mechanism": "complete finite list, with a proof that no solution is missed",
+      "constraint": "125*n^3 - 525*n^2 + 735*n - 345 = m^2,  n >= 1, m in Z",
+      "reductions": [],
+      "reduced": "125*n^3 - 525*n^2 + 735*n - 345 = m^2,  n >= 1, m in Z",
+      "method": "affine transport to a solved Mordell curve",
+      "status": "COMPLETE_FINITE",
+      "justification": [
+        "PerfectPower.MordellMinus2.points",
+        "PerfectPower.Transport.complete_cube_sub_two",
+        "PerfectPower.Transport.affine_count",
+        "PerfectPower.Reduction.affine",
+        "PerfectPower.Generated.Plans.plan_cube_transport (kernel-checked theorem for this plan)"
+      ],
+      "supports": [
+        "contains",
+        "explain",
+        "bounded_evidence",
+        "iter_hits",
+        "count",
+        "all_hits"
+      ],
+      "execution_verified": false,
+      "data": {
+        "substitution": "t = 5*n + (-7)",
+        "curve": "m^2 = t^3 + (-2)",
+        "complete_arguments": [
+          3
+        ],
+        "specialized_test": "5*n + (-7) == 3"
+      },
+      "hits": [
+        [
+          2,
+          [
+            -5,
+            5
+          ]
+        ]
+      ],
+      "N": 1000000,
+      "all_hits": [
+        [
+          2,
+          [
+            -5,
+            5
+          ]
+        ]
+      ]
+    },
+    "stdout": "{\n  \"galois\": {\n    \"orbits\": [\n      {\n        \"size\": 3,\n        \"factor\": [\n          -69,\n          147,\n          -105,\n          25\n        ],\n        \"group\": \"S3\",\n        \"discriminant\": \"-108/15625\",\n        \"multiplicity\": 1,\n        \"t\": 2\n      }\n    ],\n    \"unit_fields\": [],\n    \"explanation\": \"finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)\"\n  },\n  \"answer\": \"complete_list\",\n  \"certificate\": {\n    \"answer\": \"complete_list\",\n    \"lean_theorems\": [\n      \"PerfectPower.MordellMinus2.points\",\n      \"PerfectPower.Transport.complete_cube_sub_two\",\n      \"PerfectPower.Transport.affine_count\",\n      \"PerfectPower.Reduction.affine\",\n      \"PerfectPower.Generated.Plans.plan_cube_transport (kernel-checked theorem for this plan)\"\n    ],\n    \"premises\": [],\n    \"missing_premise\": null,\n    \"python_steps\": [\n      \"affine transport to a solved Mordell curve\"\n    ],\n    \"python_only\": [],\n    \"execution_verified\": false\n  },\n  \"mechanism\": \"complete finite list, with a proof that no solution is missed\",\n  \"constraint\": \"125*n^3 - 525*n^2 + 735*n - 345 = m^2,  n >= 1, m in Z\",\n  \"reductions\": [],\n  \"reduced\": \"125*n^3 - 525*n^2 + 735*n - 345 = m^2,  n >= 1, m in Z\",\n  \"method\": \"affine transport to a solved Mordell curve\",\n  \"status\": \"COMPLETE_FINITE\",\n  \"justification\": [\n    \"PerfectPower.MordellMinus2.points\",\n    \"PerfectPower.Transport.complete_cube_sub_two\",\n    \"PerfectPower.Transport.affine_count\",\n    \"PerfectPower.Reduction.affine\",\n    \"PerfectPower.Generated.Plans.plan_cube_transport (kernel-checked theorem for this plan)\"\n  ],\n  \"supports\": [\n    \"contains\",\n    \"explain\",\n    \"bounded_evidence\",\n    \"iter_hits\",\n    \"count\",\n    \"all_hits\"\n  ],\n  \"execution_verified\": false,\n  \"data\": {\n    \"substitution\": \"t = 5*n + (-7)\",\n    \"curve\": \"m^2 = t^3 + (-2)\",\n    \"complete_arguments\": [\n      3\n    ],\n    \"specialized_test\": \"5*n + (-7) == 3\"\n  },\n  \"hits\": [\n    [\n      2,\n      [\n        -5,\n        5\n      ]\n    ]\n  ],\n  \"N\": 1000000,\n  \"all_hits\": [\n    [\n      2,\n      [\n        -5,\n        5\n      ]\n    ]\n  ]\n}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  },
+  {
+    "id": "a4e345d4d3414f1e85834fd195592fb5",
+    "status": "complete",
+    "started": 1791778600.2279527,
+    "request": {
+      "kind": "command",
+      "args": [
+        "exact-solve",
+        "--coeff",
+        "[-199,1,1,1,1]"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.47974418199737556,
+    "exit_code": 0,
+    "result": {
+      "coefficients": [
+        -199,
+        1,
+        1,
+        1,
+        1
+      ],
+      "degree": 2,
+      "domain": "all integer x and y",
+      "execution_verified": false,
+      "status": "COMPLETE",
+      "points": [
+        [
+          7,
+          -51
+        ],
+        [
+          7,
+          51
+        ]
+      ],
+      "proof": {
+        "kind": "affine_power",
+        "reduction": {
+          "a": 1,
+          "b": 0,
+          "power": 1,
+          "witness_scale": 1,
+          "outer_coefficients": [
+            -199,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        "leaf": {
+          "coefficients": [
+            -199,
+            1,
+            1,
+            1,
+            1
+          ],
+          "degree": 2,
+          "cover": {
+            "coefficients": [
+              -199,
+              1,
+              1,
+              1,
+              1
+            ],
+            "degree": 2,
+            "tables": [
+              {
+                "modulus": 16,
+                "allowed": [
+                  0,
+                  3,
+                  7,
+                  8,
+                  11,
+                  15
+                ]
+              },
+              {
+                "modulus": 9,
+                "allowed": [
+                  7
+                ]
+              },
+              {
+                "modulus": 5,
+                "allowed": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              },
+              {
+                "modulus": 7,
+                "allowed": [
+                  0,
+                  1,
+                  4,
+                  5,
+                  6
+                ]
+              }
+            ],
+            "modulus": 5040,
+            "allowed": [
+              7,
+              43,
+              88,
+              151,
+              160,
+              187,
+              223,
+              232,
+              259,
+              295,
+              376,
+              403,
+              439,
+              448,
+              475,
+              511,
+              547,
+              592,
+              655,
+              664,
+              691,
+              727,
+              736,
+              763,
+              799,
+              880,
+              907,
+              943,
+              952,
+              979,
+              1015,
+              1051,
+              1096,
+              1159,
+              1168,
+              1195,
+              1231,
+              1240,
+              1267,
+              1303,
+              1384,
+              1411,
+              1447,
+              1456,
+              1483,
+              1519,
+              1555,
+              1600,
+              1663,
+              1672,
+              1699,
+              1735,
+              1744,
+              1771,
+              1807,
+              1888,
+              1915,
+              1951,
+              1960,
+              1987,
+              2023,
+              2059,
+              2104,
+              2167,
+              2176,
+              2203,
+              2239,
+              2248,
+              2275,
+              2311,
+              2392,
+              2419,
+              2455,
+              2464,
+              2491,
+              2527,
+              2563,
+              2608,
+              2671,
+              2680,
+              2707,
+              2743,
+              2752,
+              2779,
+              2815,
+              2896,
+              2923,
+              2959,
+              2968,
+              2995,
+              3031,
+              3067,
+              3112,
+              3175,
+              3184,
+              3211,
+              3247,
+              3256,
+              3283,
+              3319,
+              3400,
+              3427,
+              3463,
+              3472,
+              3499,
+              3535,
+              3571,
+              3616,
+              3679,
+              3688,
+              3715,
+              3751,
+              3760,
+              3787,
+              3823,
+              3904,
+              3931,
+              3967,
+              3976,
+              4003,
+              4039,
+              4075,
+              4120,
+              4183,
+              4192,
+              4219,
+              4255,
+              4264,
+              4291,
+              4327,
+              4408,
+              4435,
+              4471,
+              4480,
+              4507,
+              4543,
+              4579,
+              4624,
+              4687,
+              4696,
+              4723,
+              4759,
+              4768,
+              4795,
+              4831,
+              4912,
+              4939,
+              4975,
+              4984,
+              5011
+            ],
+            "global_obstruction": false,
+            "table_work": 347,
+            "exact_replay": true,
+            "execution_verified": false,
+            "scope": "necessary local conditions; empty cover proves no integer points"
+          },
+          "bound_certificate": {
+            "kind": "sharp_horner",
+            "bound": 42,
+            "tail_start": 43,
+            "rigid_identity": {
+              "d": 2,
+              "coefficients": [
+                -199,
+                1,
+                1,
+                1,
+                1
+              ],
+              "root_numerators": [
+                3,
+                4,
+                8
+              ],
+              "denominator": 8,
+              "remainder_numerators": [
+                -12745,
+                40
+              ],
+              "cutoff": 6393,
+              "exact_identity": false
+            },
+            "residual_roots": {
+              "coefficients": [
+                -12745,
+                40
+              ],
+              "domain": [
+                null,
+                null
+              ],
+              "leading_coefficient": "40",
+              "squarefree_factors": [
+                [
+                  1,
+                  [
+                    "-2549/8",
+                    "1"
+                  ]
+                ]
+              ],
+              "squarefree": [
+                "-2549/8",
+                "1"
+              ],
+              "sturm_chain": [
+                [
+                  -2549,
+                  8
+                ],
+                [
+                  1
+                ]
+              ],
+              "root_bound": 320,
+              "clipped_interval": [
+                -320,
+                320
+              ],
+              "nodes": [
+                [
+                  -321,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  -321,
+                  -1,
+                  1,
+                  1
+                ],
+                [
+                  -1,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  -1,
+                  159,
+                  1,
+                  1
+                ],
+                [
+                  159,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  159,
+                  239,
+                  1,
+                  1
+                ],
+                [
+                  239,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  239,
+                  279,
+                  1,
+                  1
+                ],
+                [
+                  279,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  279,
+                  299,
+                  1,
+                  1
+                ],
+                [
+                  299,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  299,
+                  309,
+                  1,
+                  1
+                ],
+                [
+                  309,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  309,
+                  314,
+                  1,
+                  1
+                ],
+                [
+                  314,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  314,
+                  317,
+                  1,
+                  1
+                ],
+                [
+                  317,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  317,
+                  318,
+                  1,
+                  1
+                ],
+                [
+                  318,
+                  320,
+                  1,
+                  0
+                ],
+                [
+                  318,
+                  319,
+                  1,
+                  0
+                ],
+                [
+                  319,
+                  320,
+                  0,
+                  0
+                ]
+              ],
+              "roots": [],
+              "nodes_checked": 21,
+              "complete": true,
+              "execution_verified": false
+            },
+            "exceptional_coordinates": [],
+            "theorem": "Horner root-gap derivation with complete exceptional fibres; Python replay"
+          },
+          "points": [
+            [
+              7,
+              -51
+            ],
+            [
+              7,
+              51
+            ]
+          ],
+          "interval": [
+            -42,
+            42
+          ],
+          "interval_size": 85,
+          "candidates_checked": 2,
+          "exceptional_coordinates_checked": []
+        }
+      },
+      "statistics": {
+        "original_degree": 4,
+        "leaf_degree": 4,
+        "original_coefficient_bits": 8,
+        "leaf_coefficient_bits": 8,
+        "interval_size": 85,
+        "candidates_checked": 2,
+        "cache_hits": 0,
+        "cache_misses": 1,
+        "sieve_candidates_tested": 2,
+        "outer_points": 2,
+        "retained_points": 2
+      }
+    },
+    "stdout": "{\n  \"coefficients\": [\n    -199,\n    1,\n    1,\n    1,\n    1\n  ],\n  \"degree\": 2,\n  \"domain\": \"all integer x and y\",\n  \"execution_verified\": false,\n  \"status\": \"COMPLETE\",\n  \"points\": [\n    [\n      7,\n      -51\n    ],\n    [\n      7,\n      51\n    ]\n  ],\n  \"proof\": {\n    \"kind\": \"affine_power\",\n    \"reduction\": {\n      \"a\": 1,\n      \"b\": 0,\n      \"power\": 1,\n      \"witness_scale\": 1,\n      \"outer_coefficients\": [\n        -199,\n        1,\n        1,\n        1,\n        1\n      ]\n    },\n    \"leaf\": {\n      \"coefficients\": [\n        -199,\n        1,\n        1,\n        1,\n        1\n      ],\n      \"degree\": 2,\n      \"cover\": {\n        \"coefficients\": [\n          -199,\n          1,\n          1,\n          1,\n          1\n        ],\n        \"degree\": 2,\n        \"tables\": [\n          {\n            \"modulus\": 16,\n            \"allowed\": [\n              0,\n              3,\n              7,\n              8,\n              11,\n              15\n            ]\n          },\n          {\n            \"modulus\": 9,\n            \"allowed\": [\n              7\n            ]\n          },\n          {\n            \"modulus\": 5,\n            \"allowed\": [\n              0,\n              1,\n              2,\n              3,\n              4\n            ]\n          },\n          {\n            \"modulus\": 7,\n            \"allowed\": [\n              0,\n              1,\n              4,\n              5,\n              6\n            ]\n          }\n        ],\n        \"modulus\": 5040,\n        \"allowed\": [\n          7,\n          43,\n          88,\n          151,\n          160,\n          187,\n          223,\n          232,\n          259,\n          295,\n          376,\n          403,\n          439,\n          448,\n          475,\n          511,\n          547,\n          592,\n          655,\n          664,\n          691,\n          727,\n          736,\n          763,\n          799,\n          880,\n          907,\n          943,\n          952,\n          979,\n          1015,\n          1051,\n          1096,\n          1159,\n          1168,\n          1195,\n          1231,\n          1240,\n          1267,\n          1303,\n          1384,\n          1411,\n          1447,\n          1456,\n          1483,\n          1519,\n          1555,\n          1600,\n          1663,\n          1672,\n          1699,\n          1735,\n          1744,\n          1771,\n          1807,\n          1888,\n          1915,\n          1951,\n          1960,\n          1987,\n          2023,\n          2059,\n          2104,\n          2167,\n          2176,\n          2203,\n          2239,\n          2248,\n          2275,\n          2311,\n          2392,\n          2419,\n          2455,\n          2464,\n          2491,\n          2527,\n          2563,\n          2608,\n          2671,\n          2680,\n          2707,\n          2743,\n          2752,\n          2779,\n          2815,\n          2896,\n          2923,\n          2959,\n          2968,\n          2995,\n          3031,\n          3067,\n          3112,\n          3175,\n          3184,\n          3211,\n          3247,\n          3256,\n          3283,\n          3319,\n          3400,\n          3427,\n          3463,\n          3472,\n          3499,\n          3535,\n          3571,\n          3616,\n          3679,\n          3688,\n          3715,\n          3751,\n          3760,\n          3787,\n          3823,\n          3904,\n          3931,\n          3967,\n          3976,\n          4003,\n          4039,\n          4075,\n          4120,\n          4183,\n          4192,\n          4219,\n          4255,\n          4264,\n          4291,\n          4327,\n          4408,\n          4435,\n          4471,\n          4480,\n          4507,\n          4543,\n          4579,\n          4624,\n          4687,\n          4696,\n          4723,\n          4759,\n          4768,\n          4795,\n          4831,\n          4912,\n          4939,\n          4975,\n          4984,\n          5011\n        ],\n        \"global_obstruction\": false,\n        \"table_work\": 347,\n        \"exact_replay\": true,\n        \"execution_verified\": false,\n        \"scope\": \"necessary local conditions; empty cover proves no integer points\"\n      },\n      \"bound_certificate\": {\n        \"kind\": \"sharp_horner\",\n        \"bound\": 42,\n        \"tail_start\": 43,\n        \"rigid_identity\": {\n          \"d\": 2,\n          \"coefficients\": [\n            -199,\n            1,\n            1,\n            1,\n            1\n          ],\n          \"root_numerators\": [\n            3,\n            4,\n            8\n          ],\n          \"denominator\": 8,\n          \"remainder_numerators\": [\n            -12745,\n            40\n          ],\n          \"cutoff\": 6393,\n          \"exact_identity\": false\n        },\n        \"residual_roots\": {\n          \"coefficients\": [\n            -12745,\n            40\n          ],\n          \"domain\": [\n            null,\n            null\n          ],\n          \"leading_coefficient\": \"40\",\n          \"squarefree_factors\": [\n            [\n              1,\n              [\n                \"-2549/8\",\n                \"1\"\n              ]\n            ]\n          ],\n          \"squarefree\": [\n            \"-2549/8\",\n            \"1\"\n          ],\n          \"sturm_chain\": [\n            [\n              -2549,\n              8\n            ],\n            [\n              1\n            ]\n          ],\n          \"root_bound\": 320,\n          \"clipped_interval\": [\n            -320,\n            320\n          ],\n          \"nodes\": [\n            [\n              -321,\n              320,\n              1,\n              0\n            ],\n            [\n              -321,\n              -1,\n              1,\n              1\n            ],\n            [\n              -1,\n              320,\n              1,\n              0\n            ],\n            [\n              -1,\n              159,\n              1,\n              1\n            ],\n            [\n              159,\n              320,\n              1,\n              0\n            ],\n            [\n              159,\n              239,\n              1,\n              1\n            ],\n            [\n              239,\n              320,\n              1,\n              0\n            ],\n            [\n              239,\n              279,\n              1,\n              1\n            ],\n            [\n              279,\n              320,\n              1,\n              0\n            ],\n            [\n              279,\n              299,\n              1,\n              1\n            ],\n            [\n              299,\n              320,\n              1,\n              0\n            ],\n            [\n              299,\n              309,\n              1,\n              1\n            ],\n            [\n              309,\n              320,\n              1,\n              0\n            ],\n            [\n              309,\n              314,\n              1,\n              1\n            ],\n            [\n              314,\n              320,\n              1,\n              0\n            ],\n            [\n              314,\n              317,\n              1,\n              1\n            ],\n            [\n              317,\n              320,\n              1,\n              0\n            ],\n            [\n              317,\n              318,\n              1,\n              1\n            ],\n            [\n              318,\n              320,\n              1,\n              0\n            ],\n            [\n              318,\n              319,\n              1,\n              0\n            ],\n            [\n              319,\n              320,\n              0,\n              0\n            ]\n          ],\n          \"roots\": [],\n          \"nodes_checked\": 21,\n          \"complete\": true,\n          \"execution_verified\": false\n        },\n        \"exceptional_coordinates\": [],\n        \"theorem\": \"Horner root-gap derivation with complete exceptional fibres; Python replay\"\n      },\n      \"points\": [\n        [\n          7,\n          -51\n        ],\n        [\n          7,\n          51\n        ]\n      ],\n      \"interval\": [\n        -42,\n        42\n      ],\n      \"interval_size\": 85,\n      \"candidates_checked\": 2,\n      \"exceptional_coordinates_checked\": []\n    }\n  },\n  \"statistics\": {\n    \"original_degree\": 4,\n    \"leaf_degree\": 4,\n    \"original_coefficient_bits\": 8,\n    \"leaf_coefficient_bits\": 8,\n    \"interval_size\": 85,\n    \"candidates_checked\": 2,\n    \"cache_hits\": 0,\n    \"cache_misses\": 1,\n    \"sieve_candidates_tested\": 2,\n    \"outer_points\": 2,\n    \"retained_points\": 2\n  }\n}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  },
+  {
+    "id": "258c1e73b10c495d9bec55bde2e1a8e2",
+    "status": "complete",
+    "started": 1791778600.7278302,
+    "request": {
+      "kind": "command",
+      "args": [
+        "plan",
+        "examples/planning/petersen_6.json"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.2463721039966913,
+    "exit_code": 0,
+    "result": {
+      "schema": "pp-planning-request/1",
+      "summary": {
+        "schema": "pp-completion-planner/1",
+        "kind": "allocation",
+        "strategy": "gray",
+        "count": 28,
+        "optimization": {
+          "maximum": "3800",
+          "maximizer_count": 1,
+          "point": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        "compiled_states": 0,
+        "compiled_edges": 0,
+        "memo_entries": 0,
+        "source_states": null,
+        "compiled_candidates": 64,
+        "reused_entries": 0,
+        "reduced_states": null,
+        "ordering": "lexicographic original variable values",
+        "execution_verified": false,
+        "symmetry_groups": null,
+        "population_limits": null,
+        "native_provenance": null
+      },
+      "answers": [
+        {
+          "schema": "pp-completion-planner/1",
+          "kind": "allocation",
+          "strategy": "gray",
+          "count": 28,
+          "optimization": {
+            "maximum": "3800",
+            "maximizer_count": 1,
+            "point": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ]
+          },
+          "compiled_states": 0,
+          "compiled_edges": 0,
+          "memo_entries": 0,
+          "source_states": null,
+          "compiled_candidates": 64,
+          "reused_entries": 0,
+          "reduced_states": null,
+          "ordering": "lexicographic original variable values",
+          "execution_verified": false,
+          "symmetry_groups": null,
+          "population_limits": null,
+          "native_provenance": null
+        },
+        {
+          "count": 12,
+          "maximum": "3300",
+          "maximizer_count": 1,
+          "prefix": [
+            1
+          ],
+          "scope": "all feasible completions and conditional optimum under this prefix"
+        },
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        {
+          "maximum": "3800",
+          "maximizer_count": 1,
+          "point": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    "stdout": "{\n  \"schema\": \"pp-planning-request/1\",\n  \"summary\": {\n    \"schema\": \"pp-completion-planner/1\",\n    \"kind\": \"allocation\",\n    \"strategy\": \"gray\",\n    \"count\": 28,\n    \"optimization\": {\n      \"maximum\": \"3800\",\n      \"maximizer_count\": 1,\n      \"point\": [\n        0,\n        1,\n        1,\n        0,\n        0,\n        1\n      ]\n    },\n    \"compiled_states\": 0,\n    \"compiled_edges\": 0,\n    \"memo_entries\": 0,\n    \"source_states\": null,\n    \"compiled_candidates\": 64,\n    \"reused_entries\": 0,\n    \"reduced_states\": null,\n    \"ordering\": \"lexicographic original variable values\",\n    \"execution_verified\": false,\n    \"symmetry_groups\": null,\n    \"population_limits\": null,\n    \"native_provenance\": null\n  },\n  \"answers\": [\n    {\n      \"schema\": \"pp-completion-planner/1\",\n      \"kind\": \"allocation\",\n      \"strategy\": \"gray\",\n      \"count\": 28,\n      \"optimization\": {\n        \"maximum\": \"3800\",\n        \"maximizer_count\": 1,\n        \"point\": [\n          0,\n          1,\n          1,\n          0,\n          0,\n          1\n        ]\n      },\n      \"compiled_states\": 0,\n      \"compiled_edges\": 0,\n      \"memo_entries\": 0,\n      \"source_states\": null,\n      \"compiled_candidates\": 64,\n      \"reused_entries\": 0,\n      \"reduced_states\": null,\n      \"ordering\": \"lexicographic original variable values\",\n      \"execution_verified\": false,\n      \"symmetry_groups\": null,\n      \"population_limits\": null,\n      \"native_provenance\": null\n    },\n    {\n      \"count\": 12,\n      \"maximum\": \"3300\",\n      \"maximizer_count\": 1,\n      \"prefix\": [\n        1\n      ],\n      \"scope\": \"all feasible completions and conditional optimum under this prefix\"\n    },\n    [\n      0,\n      0,\n      0,\n      0,\n      0,\n      0\n    ],\n    {\n      \"maximum\": \"3800\",\n      \"maximizer_count\": 1,\n      \"point\": [\n        0,\n        1,\n        1,\n        0,\n        0,\n        1\n      ]\n    }\n  ]\n}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  },
+  {
+    "id": "3c3799e793d74b8796b1a99028181ca8",
+    "status": "complete",
+    "started": 1791778601.00367,
+    "request": {
+      "kind": "command",
+      "args": [
+        "graph",
+        "flow",
+        "examples/graph_methods/flow.json"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.24332751199835911,
+    "exit_code": 0,
+    "result": {
+      "cut_capacity": 5,
+      "flow": [
+        [
+          0,
+          3,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "schema": "pp-integral-flow-cut/1",
+      "source_side": [
+        0
+      ],
+      "value": 5
+    },
+    "stdout": "{\n  \"cut_capacity\": 5,\n  \"flow\": [\n    [\n      0,\n      3,\n      2,\n      0\n    ],\n    [\n      0,\n      0,\n      1,\n      2\n    ],\n    [\n      0,\n      0,\n      0,\n      3\n    ],\n    [\n      0,\n      0,\n      0,\n      0\n    ]\n  ],\n  \"schema\": \"pp-integral-flow-cut/1\",\n  \"source_side\": [\n    0\n  ],\n  \"value\": 5\n}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  },
+  {
+    "id": "8f7732585be34500b441a8e6997e4688",
+    "status": "complete",
+    "started": 1791778601.2515867,
+    "request": {
+      "kind": "command",
+      "args": [
+        "geometry-foundations",
+        "triangulate",
+        "examples/belyaev_geometry/triangulate.json"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.1997376809886191,
+    "exit_code": 0,
+    "result": {
+      "area": "12",
+      "complete": true,
+      "kernel_checked": false,
+      "normalized_vertices": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "4",
+          "0"
+        ],
+        [
+          "4",
+          "4"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "removed_collinear_vertices": [],
+      "schema": "pp-rational-triangulation/1",
+      "scope": "ear decomposition of a simple rational polygon without holes; Python execution tested",
+      "triangle_areas": [
+        "4",
+        "4",
+        "4"
+      ],
+      "triangles": [
+        [
+          [
+            "4",
+            "0"
+          ],
+          [
+            "4",
+            "4"
+          ],
+          [
+            "2",
+            "2"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "4",
+            "0"
+          ],
+          [
+            "2",
+            "2"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "2",
+            "2"
+          ],
+          [
+            "0",
+            "4"
+          ]
+        ]
+      ],
+      "vertices": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "4",
+          "0"
+        ],
+        [
+          "4",
+          "4"
+        ],
+        [
+          "2",
+          "2"
+        ],
+        [
+          "0",
+          "4"
+        ]
+      ],
+      "work_used": 27
+    },
+    "stdout": "{\n  \"area\": \"12\",\n  \"complete\": true,\n  \"kernel_checked\": false,\n  \"normalized_vertices\": [\n    [\n      \"0\",\n      \"0\"\n    ],\n    [\n      \"4\",\n      \"0\"\n    ],\n    [\n      \"4\",\n      \"4\"\n    ],\n    [\n      \"2\",\n      \"2\"\n    ],\n    [\n      \"0\",\n      \"4\"\n    ]\n  ],\n  \"removed_collinear_vertices\": [],\n  \"schema\": \"pp-rational-triangulation/1\",\n  \"scope\": \"ear decomposition of a simple rational polygon without holes; Python execution tested\",\n  \"triangle_areas\": [\n    \"4\",\n    \"4\",\n    \"4\"\n  ],\n  \"triangles\": [\n    [\n      [\n        \"4\",\n        \"0\"\n      ],\n      [\n        \"4\",\n        \"4\"\n      ],\n      [\n        \"2\",\n        \"2\"\n      ]\n    ],\n    [\n      [\n        \"0\",\n        \"0\"\n      ],\n      [\n        \"4\",\n        \"0\"\n      ],\n      [\n        \"2\",\n        \"2\"\n      ]\n    ],\n    [\n      [\n        \"0\",\n        \"0\"\n      ],\n      [\n        \"2\",\n        \"2\"\n      ],\n      [\n        \"0\",\n        \"4\"\n      ]\n    ]\n  ],\n  \"vertices\": [\n    [\n      \"0\",\n      \"0\"\n    ],\n    [\n      \"4\",\n      \"0\"\n    ],\n    [\n      \"4\",\n      \"4\"\n    ],\n    [\n      \"2\",\n      \"2\"\n    ],\n    [\n      \"0\",\n      \"4\"\n    ]\n  ],\n  \"work_used\": 27\n}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  },
+  {
+    "id": "56ca3d9a41ca4f8f8b70c4a0cde7a81b",
+    "status": "complete",
+    "started": 1791778601.467858,
+    "request": {
+      "kind": "command",
+      "args": [
+        "euclid",
+        "pell",
+        "examples/euclid_methods/pell.json"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.2046666990063386,
+    "exit_code": 0,
+    "result": {
+      "continued_fraction": {
+        "D": 61,
+        "a0": 7,
+        "period": [
+          1,
+          4,
+          3,
+          1,
+          2,
+          2,
+          1,
+          3,
+          4,
+          1,
+          14
+        ],
+        "periodic_replay_checked": true,
+        "repeat_state": [
+          7,
+          12,
+          1
+        ],
+        "schema": "pp-sqrt-cf/1",
+        "states": [
+          [
+            7,
+            12,
+            1
+          ],
+          [
+            5,
+            3,
+            4
+          ],
+          [
+            7,
+            4,
+            3
+          ],
+          [
+            5,
+            9,
+            1
+          ],
+          [
+            4,
+            5,
+            2
+          ],
+          [
+            6,
+            5,
+            2
+          ],
+          [
+            4,
+            9,
+            1
+          ],
+          [
+            5,
+            4,
+            3
+          ],
+          [
+            7,
+            3,
+            4
+          ],
+          [
+            5,
+            12,
+            1
+          ],
+          [
+            7,
+            1,
+            14
+          ]
+        ]
+      },
+      "convergents": [
+        {
+          "coefficient": 7,
+          "norm": -12,
+          "p": 7,
+          "q": 1
+        },
+        {
+          "coefficient": 1,
+          "norm": 3,
+          "p": 8,
+          "q": 1
+        },
+        {
+          "coefficient": 4,
+          "norm": -4,
+          "p": 39,
+          "q": 5
+        },
+        {
+          "coefficient": 3,
+          "norm": 9,
+          "p": 125,
+          "q": 16
+        },
+        {
+          "coefficient": 1,
+          "norm": -5,
+          "p": 164,
+          "q": 21
+        },
+        {
+          "coefficient": 2,
+          "norm": 5,
+          "p": 453,
+          "q": 58
+        },
+        {
+          "coefficient": 2,
+          "norm": -9,
+          "p": 1070,
+          "q": 137
+        },
+        {
+          "coefficient": 1,
+          "norm": 4,
+          "p": 1523,
+          "q": 195
+        },
+        {
+          "coefficient": 3,
+          "norm": -3,
+          "p": 5639,
+          "q": 722
+        },
+        {
+          "coefficient": 4,
+          "norm": 12,
+          "p": 24079,
+          "q": 3083
+        },
+        {
+          "coefficient": 1,
+          "norm": -1,
+          "p": 29718,
+          "q": 3805
+        },
+        {
+          "coefficient": 14,
+          "norm": 12,
+          "p": 440131,
+          "q": 56353
+        },
+        {
+          "coefficient": 1,
+          "norm": -3,
+          "p": 469849,
+          "q": 60158
+        },
+        {
+          "coefficient": 4,
+          "norm": 4,
+          "p": 2319527,
+          "q": 296985
+        },
+        {
+          "coefficient": 3,
+          "norm": -9,
+          "p": 7428430,
+          "q": 951113
+        },
+        {
+          "coefficient": 1,
+          "norm": 5,
+          "p": 9747957,
+          "q": 1248098
+        },
+        {
+          "coefficient": 2,
+          "norm": -5,
+          "p": 26924344,
+          "q": 3447309
+        },
+        {
+          "coefficient": 2,
+          "norm": 9,
+          "p": 63596645,
+          "q": 8142716
+        },
+        {
+          "coefficient": 1,
+          "norm": -4,
+          "p": 90520989,
+          "q": 11590025
+        },
+        {
+          "coefficient": 3,
+          "norm": 3,
+          "p": 335159612,
+          "q": 42912791
+        },
+        {
+          "coefficient": 4,
+          "norm": -12,
+          "p": 1431159437,
+          "q": 183241189
+        },
+        {
+          "coefficient": 1,
+          "norm": 1,
+          "p": 1766319049,
+          "q": 226153980
+        }
+      ],
+      "fundamentality_kernel_checked": false,
+      "norm_checked": true,
+      "schema": "pp-cf-pell-unit/1",
+      "scope": "first positive norm-one convergent; standard continued-fraction minimality is not kernel-certified by this receipt",
+      "unit": [
+        1766319049,
+        226153980
+      ]
+    },
+    "stdout": "{\n  \"continued_fraction\": {\n    \"D\": 61,\n    \"a0\": 7,\n    \"period\": [\n      1,\n      4,\n      3,\n      1,\n      2,\n      2,\n      1,\n      3,\n      4,\n      1,\n      14\n    ],\n    \"periodic_replay_checked\": true,\n    \"repeat_state\": [\n      7,\n      12,\n      1\n    ],\n    \"schema\": \"pp-sqrt-cf/1\",\n    \"states\": [\n      [\n        7,\n        12,\n        1\n      ],\n      [\n        5,\n        3,\n        4\n      ],\n      [\n        7,\n        4,\n        3\n      ],\n      [\n        5,\n        9,\n        1\n      ],\n      [\n        4,\n        5,\n        2\n      ],\n      [\n        6,\n        5,\n        2\n      ],\n      [\n        4,\n        9,\n        1\n      ],\n      [\n        5,\n        4,\n        3\n      ],\n      [\n        7,\n        3,\n        4\n      ],\n      [\n        5,\n        12,\n        1\n      ],\n      [\n        7,\n        1,\n        14\n      ]\n    ]\n  },\n  \"convergents\": [\n    {\n      \"coefficient\": 7,\n      \"norm\": -12,\n      \"p\": 7,\n      \"q\": 1\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": 3,\n      \"p\": 8,\n      \"q\": 1\n    },\n    {\n      \"coefficient\": 4,\n      \"norm\": -4,\n      \"p\": 39,\n      \"q\": 5\n    },\n    {\n      \"coefficient\": 3,\n      \"norm\": 9,\n      \"p\": 125,\n      \"q\": 16\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": -5,\n      \"p\": 164,\n      \"q\": 21\n    },\n    {\n      \"coefficient\": 2,\n      \"norm\": 5,\n      \"p\": 453,\n      \"q\": 58\n    },\n    {\n      \"coefficient\": 2,\n      \"norm\": -9,\n      \"p\": 1070,\n      \"q\": 137\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": 4,\n      \"p\": 1523,\n      \"q\": 195\n    },\n    {\n      \"coefficient\": 3,\n      \"norm\": -3,\n      \"p\": 5639,\n      \"q\": 722\n    },\n    {\n      \"coefficient\": 4,\n      \"norm\": 12,\n      \"p\": 24079,\n      \"q\": 3083\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": -1,\n      \"p\": 29718,\n      \"q\": 3805\n    },\n    {\n      \"coefficient\": 14,\n      \"norm\": 12,\n      \"p\": 440131,\n      \"q\": 56353\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": -3,\n      \"p\": 469849,\n      \"q\": 60158\n    },\n    {\n      \"coefficient\": 4,\n      \"norm\": 4,\n      \"p\": 2319527,\n      \"q\": 296985\n    },\n    {\n      \"coefficient\": 3,\n      \"norm\": -9,\n      \"p\": 7428430,\n      \"q\": 951113\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": 5,\n      \"p\": 9747957,\n      \"q\": 1248098\n    },\n    {\n      \"coefficient\": 2,\n      \"norm\": -5,\n      \"p\": 26924344,\n      \"q\": 3447309\n    },\n    {\n      \"coefficient\": 2,\n      \"norm\": 9,\n      \"p\": 63596645,\n      \"q\": 8142716\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": -4,\n      \"p\": 90520989,\n      \"q\": 11590025\n    },\n    {\n      \"coefficient\": 3,\n      \"norm\": 3,\n      \"p\": 335159612,\n      \"q\": 42912791\n    },\n    {\n      \"coefficient\": 4,\n      \"norm\": -12,\n      \"p\": 1431159437,\n      \"q\": 183241189\n    },\n    {\n      \"coefficient\": 1,\n      \"norm\": 1,\n      \"p\": 1766319049,\n      \"q\": 226153980\n    }\n  ],\n  \"fundamentality_kernel_checked\": false,\n  \"norm_checked\": true,\n  \"schema\": \"pp-cf-pell-unit/1\",\n  \"scope\": \"first positive norm-one convergent; standard continued-fraction minimality is not kernel-certified by this receipt\",\n  \"unit\": [\n    1766319049,\n    226153980\n  ]\n}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  },
+  {
+    "id": "8892fcca588747c6b65ee566fc1015f3",
+    "status": "complete",
+    "started": 1791778601.6799216,
+    "request": {
+      "kind": "command",
+      "args": [
+        "arithmetic-series",
+        "compile",
+        "examples/arithmetic_series/pell.json"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.1767216680018464,
+    "exit_code": 0,
+    "result": {
+      "schema": "perfectpower.pell-gf/1",
+      "D": 2,
+      "unit": [
+        3,
+        2
+      ],
+      "x": {
+        "schema": "exact.rational-gf/1",
+        "numerator": [
+          "1",
+          "-3"
+        ],
+        "denominator": [
+          "1",
+          "-6",
+          "1"
+        ],
+        "dimension": 2,
+        "A": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "6"
+          ]
+        ],
+        "initial": [
+          "1",
+          "3"
+        ],
+        "C": [
+          "1",
+          "0"
+        ],
+        "hankel_determinant": "8",
+        "indexing": "a_n = C A^n initial, n >= 0; no input feedthrough"
+      },
+      "y": {
+        "schema": "exact.rational-gf/1",
+        "numerator": [
+          "0",
+          "2"
+        ],
+        "denominator": [
+          "1",
+          "-6",
+          "1"
+        ],
+        "dimension": 2,
+        "A": [
+          [
+            "0",
+            "1"
+          ],
+          [
+            "-1",
+            "6"
+          ]
+        ],
+        "initial": [
+          "0",
+          "2"
+        ],
+        "C": [
+          "1",
+          "0"
+        ],
+        "hankel_determinant": "-4",
+        "indexing": "a_n = C A^n initial, n >= 0; no input feedthrough"
+      },
+      "scope": "coordinates x_n+y_n sqrt(D)=(x+y sqrt(D))^n, n>=0; one unit orbit; no coordinate-index hit OGF claim",
+      "verification": "exact rational identities; no new Lean theorem"
+    },
+    "stdout": "{\n  \"schema\": \"perfectpower.pell-gf/1\",\n  \"D\": 2,\n  \"unit\": [\n    3,\n    2\n  ],\n  \"x\": {\n    \"schema\": \"exact.rational-gf/1\",\n    \"numerator\": [\n      \"1\",\n      \"-3\"\n    ],\n    \"denominator\": [\n      \"1\",\n      \"-6\",\n      \"1\"\n    ],\n    \"dimension\": 2,\n    \"A\": [\n      [\n        \"0\",\n        \"1\"\n      ],\n      [\n        \"-1\",\n        \"6\"\n      ]\n    ],\n    \"initial\": [\n      \"1\",\n      \"3\"\n    ],\n    \"C\": [\n      \"1\",\n      \"0\"\n    ],\n    \"hankel_determinant\": \"8\",\n    \"indexing\": \"a_n = C A^n initial, n >= 0; no input feedthrough\"\n  },\n  \"y\": {\n    \"schema\": \"exact.rational-gf/1\",\n    \"numerator\": [\n      \"0\",\n      \"2\"\n    ],\n    \"denominator\": [\n      \"1\",\n      \"-6\",\n      \"1\"\n    ],\n    \"dimension\": 2,\n    \"A\": [\n      [\n        \"0\",\n        \"1\"\n      ],\n      [\n        \"-1\",\n        \"6\"\n      ]\n    ],\n    \"initial\": [\n      \"0\",\n      \"2\"\n    ],\n    \"C\": [\n      \"1\",\n      \"0\"\n    ],\n    \"hankel_determinant\": \"-4\",\n    \"indexing\": \"a_n = C A^n initial, n >= 0; no input feedthrough\"\n  },\n  \"scope\": \"coordinates x_n+y_n sqrt(D)=(x+y sqrt(D))^n, n>=0; one unit orbit; no coordinate-index hit OGF claim\",\n  \"verification\": \"exact rational identities; no new Lean theorem\"\n}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  },
+  {
+    "id": "01423c69d5fd4996ad7d8397959f6e58",
+    "status": "complete",
+    "started": 1791778601.8696568,
+    "request": {
+      "kind": "command",
+      "args": [
+        "model-count",
+        "examples/desktop_explorer/starter.cnf",
+        "--timeout",
+        "10"
+      ],
+      "timeout": 20
+    },
+    "elapsed": 0.2673590579943266,
+    "exit_code": 0,
+    "result": {
+      "status": "EXACT",
+      "count": "4",
+      "nodes": 1,
+      "cache_hits": 0,
+      "component_splits": 0,
+      "affine_solves": 0,
+      "elimination_solves": 1,
+      "equivalence_variables": 0,
+      "gate_variables": 0,
+      "extended_plans": 0,
+      "cache_bytes": 153
+    },
+    "stdout": "{\"status\": \"EXACT\", \"count\": \"4\", \"nodes\": 1, \"cache_hits\": 0, \"component_splits\": 0, \"affine_solves\": 0, \"elimination_solves\": 1, \"equivalence_variables\": 0, \"gate_variables\": 0, \"extended_plans\": 0, \"cache_bytes\": 153}\n",
+    "stderr": "",
+    "preview_limits": "Large arrays and strings are shortened in this preview. The exported files contain the complete saved output."
+  }
+]
