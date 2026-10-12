@@ -18,5 +18,18 @@
   "externally_authored_unrestricted_solver_confirmation": false,
   "receipt": "receipts/planning/independent/50_bdd_nodes40000000.json",
   "receipt_sha256": "e39e9fef4aacef1ae6556bee131f3f6f9d2880d1889722bd5e5c5653d8a82615",
-  "monograph": "docs/INDEPENDENT_PLANNING_MONOGRAPH.md"
+  "monograph": "docs/INDEPENDENT_PLANNING_MONOGRAPH.md",
+  "lean_foundation": {
+    "receipt": "receipts/planning/independent/lean.json",
+    "theorems": 59,
+    "kernel_checked_conditional_counts": [
+      16777216,
+      512
+    ],
+    "original_partition_cover_and_aggregation_proved": true,
+    "optimizer_witness_proved": true,
+    "global_native_count_kernel_proved": false,
+    "optimizer_uniqueness_kernel_proved": false,
+    "monograph": "docs/PLANNING_LEAN_MONOGRAPH.md"
+  }
 }

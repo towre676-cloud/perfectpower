@@ -695,3 +695,8 @@ planning-independent-benchmark:
 	python python/verify_planning_independent.py --case 20
 	python python/verify_planning_independent.py --case 39
 	python python/verify_planning_independent.py --case 50
+
+PLANNING_LEAN ?= lean
+.PHONY: planning-population-lean
+planning-population-lean:
+	python scripts/check_planning_lean.py --lean "$(PLANNING_LEAN)"

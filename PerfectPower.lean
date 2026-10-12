@@ -491,3 +491,6 @@ import PerfectPower.Generated.BinomialPower2
 import PerfectPower.Generated.BinomialPower3
 import PerfectPower.Generated.BinomialPower4
 import PerfectPower.MichorGeometry
+
+import PerfectPower.PlanningDiagram
+import PerfectPower.PetersenPlanning

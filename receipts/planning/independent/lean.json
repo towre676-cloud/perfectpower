@@ -1,0 +1,232 @@
+{
+  "schema": "pp-planning-lean/1",
+  "binding": {
+    "raw_data_sha256": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283",
+    "partition_sha256": "b630e97e7758c4ab1e27f4a02af936748ffb995e816f037b4be4c328af5e0918",
+    "literal_original_rows_capacities_profits_match": true,
+    "literal_original_partition_addresses_and_count_labels_match": true
+  },
+  "sources": {
+    "PerfectPower/PlanningDiagram.lean": "7dea7d3d69b60a07164e857becf5ae4e698f70f76608f90be7cde023adf70952",
+    "PerfectPower/PetersenPlanning.lean": "67f2c55d418d43e05b73cf77976fbb9be9f136cde2b9eae7551f724374086223"
+  },
+  "checker_sha256": "04e839c559d0edc8cf33700f6d183155253d90b4394a2bc4f78d90674750c600",
+  "namespace_path_compatibility": true,
+  "namespace_shim_source_sha256": "3b7df01b4ed6c5a1985d2f462fe5c4cce06a93e20176657bff6bc3a2ffc76e40",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "status": "kernel_checked",
+  "theorems": 59,
+  "axioms": {
+    "PerfectPower.PlanningDiagram.census_enumerates": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_cardinality": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.assignments_multiplicity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.census_congr": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_congr_length": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_false": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_true": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.census_skip": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.weight_correct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.weight_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.reduce_equal_branches": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.branch_population_split": [],
+    "PerfectPower.PlanningDiagram.threshold_fits": [],
+    "PerfectPower.PlanningDiagram.threshold_correct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.threshold_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.dot_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.dot_prefix": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.dot_zero_prefix": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.forced_zero_implication": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.feasible_member_bound": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.feasible_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.guard_implies_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.all_bounds_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.unconstrained_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.cofactor_correct": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.intersect_correct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.intersect_fits": [],
+    "PerfectPower.PlanningDiagram.intersect_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.natCensus_congr": [],
+    "PerfectPower.PlanningDiagram.natCensus_add": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.census_indicator": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.partition_pointwise": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.partition_aggregation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.partition_disjoint_cover": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.original_dimensions": [],
+    "PerfectPower.PetersenPlanning.suffix_totals": [],
+    "PerfectPower.PetersenPlanning.suffix_bounds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.zero_prefix_suffix_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.zero_prefix_original_semantics": [
+      "propext"
+    ],
+    "PerfectPower.PetersenPlanning.zero_prefix_original_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.optimizer_original_feasibility": [],
+    "PerfectPower.PetersenPlanning.optimizer_original_profit": [],
+    "PerfectPower.PetersenPlanning.residual_capacities": [],
+    "PerfectPower.PetersenPlanning.high_prefix_bounds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_prefix_original_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_guard_bounds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_guard_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_guard_diagram_population": [],
+    "PerfectPower.PetersenPlanning.high_prefix_original_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.retained_leaf_count": [],
+    "PerfectPower.PetersenPlanning.retained_count_aggregation": [],
+    "PerfectPower.PetersenPlanning.retained_cube_size_aggregation": [],
+    "PerfectPower.PetersenPlanning.retained_partition_fresh": [],
+    "PerfectPower.PetersenPlanning.retained_partition_in_range": [],
+    "PerfectPower.PetersenPlanning.retained_partition_addresses": [],
+    "PerfectPower.PetersenPlanning.retained_partition_leaf_count": [],
+    "PerfectPower.PetersenPlanning.original_disjoint_cover": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.original_partition_aggregation": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "commands": [
+    {
+      "module": "PlanningDiagram",
+      "seconds": 1.560184534995642,
+      "stdout": "'PerfectPower.PlanningDiagram.partition_aggregation' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PlanningDiagram.partition_disjoint_cover' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PlanningDiagram.weight_correct' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PlanningDiagram.threshold_correct' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PlanningDiagram.intersect_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "stderr": ""
+    },
+    {
+      "module": "PetersenPlanning",
+      "seconds": 4.951296535997244,
+      "stdout": "'PerfectPower.PetersenPlanning.original_partition_aggregation' depends on axioms: [propext, Quot.sound]\n'PerfectPower.PetersenPlanning.retained_partition_addresses' does not depend on any axioms\n'PerfectPower.PetersenPlanning.high_prefix_original_population' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.PetersenPlanning.zero_prefix_original_population' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PerfectPower.PetersenPlanning.optimizer_original_feasibility' does not depend on any axioms\n'PerfectPower.PetersenPlanning.optimizer_original_profit' does not depend on any axioms\n'PerfectPower.PetersenPlanning.zero_prefix_suffix_population' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PerfectPower.PetersenPlanning.retained_count_aggregation' does not depend on any axioms\n",
+      "stderr": ""
+    }
+  ],
+  "sorry_ax": false,
+  "native_reflection_axioms": false,
+  "full_unrestricted_population_kernel_proved": false,
+  "original_conditional_counts_kernel_proved": [
+    16777216,
+    512
+  ],
+  "original_optimizer_witness_kernel_proved": true,
+  "original_optimizer_uniqueness_kernel_proved": false,
+  "partition_disjoint_cover_and_aggregation_kernel_proved": true
+}
