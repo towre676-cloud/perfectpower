@@ -1,0 +1,176 @@
+{
+  "schema": "our-apps.site-receipts/1",
+  "date": "2026-10-12",
+  "sites": {
+    "hub": {
+      "url": "https://our-apps.towre676.chatgpt.site",
+      "site_source_commit": "e2b843350fa07e345908280f22960dba98388a54",
+      "status": "succeeded"
+    },
+    "dc": {
+      "url": "https://dynacomp-explorer.towre676.chatgpt.site",
+      "site_source_commit": "aba2c3d9bedf3a50c7552f56d491ff0741e6673f",
+      "status": "succeeded"
+    },
+    "pp": {
+      "url": "https://perfectpower-explorer-download.towre676.chatgpt.site",
+      "site_source_commit": "ebad0a863525a58c466fc54290d59fcbd7f978ef",
+      "status": "succeeded"
+    },
+    "nfl": {
+      "url": "https://nfl-perfectpower.towre676.chatgpt.site",
+      "site_source_commit": "1174f8f9a457f17db3cc430ad1cbae61e4bdfb7e",
+      "status": "succeeded"
+    },
+    "poke": {
+      "url": "https://pokepolis-download-v015.towre676.chatgpt.site",
+      "site_source_commit": "cb914af0de938a42971f6f379dc22ed11f2a2ac4",
+      "status": "succeeded"
+    },
+    "poke_mobile": {
+      "url": "https://pokepolis-android.towre676.chatgpt.site",
+      "site_source_commit": "7093494540bdfaf60d403d9612b4619e7d7006a4",
+      "status": "succeeded"
+    }
+  },
+  "http_checks": {
+    "routes": [
+      {
+        "site": "hub",
+        "path": "/",
+        "status": 200,
+        "bytes": 7393,
+        "sha256": "ce00ce7ed451b3b8475dc6fc091c33426ec3e5511731d21fba2df5df29318870"
+      },
+      {
+        "site": "hub",
+        "path": "/api/updates",
+        "status": 200,
+        "bytes": 2019,
+        "sha256": "b29c90c8b8f1f553143491b122e48a178af4f5520009dd32f62acee38dd30d3f",
+        "data_status": null,
+        "digest": null,
+        "products": [
+          {
+            "name": "PerfectPower",
+            "status": "live"
+          },
+          {
+            "name": "DynaComp",
+            "status": "live"
+          },
+          {
+            "name": "NFL PerfectPower",
+            "status": "live"
+          },
+          {
+            "name": "Pokepolis",
+            "status": "live"
+          }
+        ]
+      },
+      {
+        "site": "dc",
+        "path": "/api/engine",
+        "status": 200,
+        "bytes": 376553,
+        "sha256": "7122a3eb5388f6bcde645b93ebfb0280a50f24c0f8fe529a39e98dcccbfcf40c",
+        "data_status": "live",
+        "digest": "bbda333bf27add47aa31bd7809d9a80b65b63a65136fc8a37866ab0259fd1ced",
+        "products": null
+      },
+      {
+        "site": "dc",
+        "path": "/manifest.webmanifest",
+        "status": 200,
+        "bytes": 261,
+        "sha256": "4e093094b0245f7c1ae37c13af0c7dfdd9318b71dcfbc6c516d98793f1e2021c"
+      },
+      {
+        "site": "pp",
+        "path": "/start",
+        "status": 200,
+        "bytes": 1749,
+        "sha256": "05151cda14c66ce56c081e4c738c74424cb393a34db4aafae24dd8f93b6e1350"
+      },
+      {
+        "site": "pp",
+        "path": "/start/app.js",
+        "status": 200,
+        "bytes": 1767,
+        "sha256": "ad759b5d791f0aac1961bf0435c94d50145b127d2c85fae04f2b9fc1b9b2c9cb"
+      },
+      {
+        "site": "pp",
+        "path": "/start/counter.js",
+        "status": 200,
+        "bytes": 2057,
+        "sha256": "cb6cc54515da3669d63e15abc943246e69be3407dc9a89241983974bc92c50ee"
+      },
+      {
+        "site": "pp",
+        "path": "/api/research",
+        "status": 200,
+        "bytes": 6048,
+        "sha256": "2086390ed0ec60cf2dca4d5793e394e0c3d17a8d90d3c65f8286cba96bb13b87",
+        "data_status": "live",
+        "digest": "57985d5387b24ddfefc6f9de63141f83c125740a72aa23211c7853db8e417879",
+        "products": null
+      },
+      {
+        "site": "nfl",
+        "path": "/",
+        "status": 200,
+        "bytes": 14454,
+        "sha256": "d97408dfa8cb3e05f7a7b09018a9db7311f38945ff99db08ec0d8f0ec623cf88"
+      },
+      {
+        "site": "nfl",
+        "path": "/live-loader.js",
+        "status": 200,
+        "bytes": 594,
+        "sha256": "d6ea51963ca20022a0fdc6aeab8092b02118f38f333bd978155d63eb8f779da4"
+      },
+      {
+        "site": "nfl",
+        "path": "/counter.js",
+        "status": 200,
+        "bytes": 2057,
+        "sha256": "cb6cc54515da3669d63e15abc943246e69be3407dc9a89241983974bc92c50ee"
+      },
+      {
+        "site": "poke",
+        "path": "/",
+        "status": 200,
+        "bytes": 4385,
+        "sha256": "62b84ff4017f48266d3b667273add08b9495e0ab8aac498adf7930c0e45bfbb4"
+      },
+      {
+        "site": "poke",
+        "path": "/live-loader.js",
+        "status": 200,
+        "bytes": 594,
+        "sha256": "d6ea51963ca20022a0fdc6aeab8092b02118f38f333bd978155d63eb8f779da4"
+      },
+      {
+        "site": "poke_mobile",
+        "path": "/",
+        "status": 200,
+        "bytes": 3290,
+        "sha256": "7d556f45917ab8f690a595861008e3e37dbfc96ec6e14f47fefa81e885e72e7d"
+      },
+      {
+        "site": "poke_mobile",
+        "path": "/live-loader.js",
+        "status": 200,
+        "bytes": 594,
+        "sha256": "d6ea51963ca20022a0fdc6aeab8092b02118f38f333bd978155d63eb8f779da4"
+      }
+    ],
+    "browser_visual_qa": false,
+    "physical_device_qa": false
+  },
+  "native_packages": "preserved",
+  "perfectpower_actions": "startup_failure; zero jobs",
+  "installed_binary_updates": "explicit package upgrade"
+}
