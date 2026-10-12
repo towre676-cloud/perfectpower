@@ -1,6 +1,6 @@
 {
   "schema": "pp-portfolio-release/1",
-  "source_status": "verified guided workspace; distribution assembly in progress",
+  "source_status": "committed and verified",
   "published_package_audit": {
     "windows": {
       "planner_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
@@ -21,11 +21,12 @@
     "version_code": 3,
     "version_name": "1.2.0",
     "matching_update_key_available": false,
-    "signed_upgrade_published": false
+    "signed_upgrade_published": false,
+    "build": "complete unsigned APK compiled successfully; embedded source archive hash and CRC checked"
   },
   "windows": {
     "native_windows_execution_tested": false,
-    "distribution_update": "assembly pending"
+    "distribution_update": "rebuilt complete ZIP and native setup; source bytes and archive verified"
   },
   "saved_runs_policy": "existing directories preserved; draft written separately",
   "mathematical_validation": "validation.json",
@@ -33,5 +34,34 @@
     "root.json.gz",
     "conditional.json.gz",
     "rank.json.gz"
-  ]
+  ],
+  "engine_snapshot": "8c5efa3837e5413ca0d2b272c3d33e204c770f0e",
+  "artifacts": {
+    "PerfectPower-Explorer-Complete-1.2.zip": {
+      "bytes": 324783427,
+      "sha256": "4ff50b6957defbe3e7bb738d8fe54a64a824df5162cda1ca679b74ab1af027d0"
+    },
+    "PerfectPower-Explorer-Setup-1.2.exe": {
+      "bytes": 325095361,
+      "sha256": "a997bd704f8d436fc6d3b64b7eb421c1ea2feaa223a2440e8c87f5eef8abf2d4"
+    },
+    "PerfectPower-Portfolio-Source-1.2.zip": {
+      "bytes": 75805748,
+      "sha256": "55e3251c83491fd261dc18046bbe6adb1e3450b4e9906703ed5a044be7b95132"
+    },
+    "PerfectPower-Explorer-Android-1.2-unsigned.apk": {
+      "bytes": 156355615,
+      "sha256": "44bb4f18272893ca63167348eabcbc84336f94e48a54ead18e7a467b9c650489"
+    }
+  },
+  "distribution_checks": {
+    "snapshot": "8c5efa3837e5413ca0d2b272c3d33e204c770f0e",
+    "source_files_checked": 7594,
+    "windows_crc": "pass",
+    "windows_original_source_bytes": "all identical",
+    "android_embedded_archive": "hash and CRC pass",
+    "windows_native_run": "not tested on Windows",
+    "android_device_run": "not tested",
+    "android_signature": "unsigned; matching update key unavailable"
+  }
 }

@@ -1,45 +1,55 @@
 """Assemble the complete offline Windows application and self-extracting setup."""
-import argparse,base64,hashlib,json,os,shutil,struct,subprocess,zipfile
+import argparse,base64,hashlib,json,os,shutil,struct,subprocess,zipfile,tarfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def package(args):
-    stage=Path(args.output)/'PerfectPower-Explorer';stage.mkdir(parents=True,exist_ok=True)
-    with zipfile.ZipFile(args.electron) as z:z.extractall(stage)
-    (stage/'electron.exe').rename(stage/'PerfectPower-Runtime.exe')
-    app=stage/'resources/app';app.mkdir(parents=True,exist_ok=True)
-    (app/'package.json').write_text(json.dumps({'name':'perfectpower-explorer','version':'1.0.0','main':'main.cjs'}))
-    shutil.copy2(ROOT/'desktop/explorer/main.cjs',app/'main.cjs')
-    repo=app/'repository'
-    # Include every tracked source file plus this desktop implementation; omit build caches only.
-    tracked=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode().split('\0')
-    files={f for f in tracked if f}
-    for p in (ROOT/'desktop/explorer').rglob('*'):
-        if p.is_file() and not {'node_modules','__pycache__','test-state'}.intersection(p.relative_to(ROOT).parts):files.add(p.relative_to(ROOT).as_posix())
-    files.update(['python/perfectpower/shipped_native.py'])
-    for name in sorted(files):
-        src=ROOT/name
-        if not src.is_file():continue
-        target=repo/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,target)
-    runtime=app/'runtime/python';runtime.mkdir(parents=True,exist_ok=True)
-    with zipfile.ZipFile(args.python) as z:z.extractall(runtime)
-    (runtime/'python312._pth').write_text('python312.zip\n.\nLib/site-packages\n../../repository/python\nimport site\n')
-    packages=runtime/'Lib/site-packages';packages.mkdir(parents=True,exist_ok=True)
-    deps=[]
-    for wheel in sorted(Path(args.wheels).glob('*.whl')):
-        with zipfile.ZipFile(wheel) as z:
-            for entry in z.infolist():
-                name=entry.filename
-                if '.data/purelib/' in name:name=name.split('.data/purelib/',1)[1]
-                elif '.data/platlib/' in name:name=name.split('.data/platlib/',1)[1]
-                elif '.data/' in name:continue
-                if entry.is_dir():continue
-                dest=packages/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(entry))
-        deps.append({'file':wheel.name,'sha256':sha(wheel)})
-    runtime_record={'python':{'file':Path(args.python).name,'sha256':sha(args.python)},'electron':{'file':Path(args.electron).name,'sha256':sha(args.electron)},'wheels':deps}
-    (stage/'RUNTIME_SOURCES.json').write_text(json.dumps(runtime_record,indent=2))
-    (stage/'READ-ME.txt').write_text('PerfectPower Explorer 1.0\n\nDouble-click PerfectPower-Explorer.exe.\nThe complete repository, computation engines and numerical dependencies are included.\nNo Python installation or terminal is needed. Keep this folder together.\nWindows 10/11 x64.\n\nThe program is unsigned. Native Windows GPU launch has not been exercised in this Linux build environment.\nLean, PARI, Sage and external research tools are not bundled. Their sources and documented requirements are included.\n\nRead resources/app/repository/docs/PERFECTPOWER_EXPLORER_MONOGRAPH.md for features, checks and remaining limits.\n',encoding='utf8')
+    stage=Path(args.previous_directory) if args.previous_directory else Path(args.output)/'PerfectPower-Explorer'
+    stage.mkdir(parents=True,exist_ok=True)
+    if not args.previous_directory:
+        with zipfile.ZipFile(args.electron) as z:z.extractall(stage)
+        (stage/'electron.exe').rename(stage/'PerfectPower-Runtime.exe')
+    if getattr(args,'prepared_stage',False):
+        tracked=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode().split('\0')
+        runtime_record=json.loads((stage/'RUNTIME_SOURCES.json').read_text())
+    else:
+        app=stage/'resources/app';app.mkdir(parents=True,exist_ok=True)
+        (app/'package.json').write_text(json.dumps({'name':'perfectpower-explorer','version':'1.2.0','main':'main.cjs'}))
+        shutil.copy2(ROOT/'desktop/explorer/main.cjs',app/'main.cjs')
+        repo=app/'repository'
+        if args.previous_directory and repo.exists():shutil.rmtree(repo)
+        # Include every tracked source file plus this desktop implementation; omit build caches only.
+        tracked=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode().split('\0')
+        source=subprocess.Popen(['git','archive','--format=tar','HEAD'],cwd=ROOT,stdout=subprocess.PIPE)
+        with tarfile.open(fileobj=source.stdout,mode='r|') as archive:
+            archive.extractall(repo,filter='data')
+        if source.wait()!=0:raise ValueError('Git snapshot archive failed')
+        for p in (ROOT/'desktop/explorer/dist').iterdir():
+            if p.is_file():
+                target=repo/'desktop/explorer/dist'/p.name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,target)
+        runtime=app/'runtime/python';runtime.mkdir(parents=True,exist_ok=True)
+        if args.previous_directory:
+            runtime_record=json.loads((stage/'RUNTIME_SOURCES.json').read_text())
+            runtime_record['reused_published_runtime']=True
+        else:
+            with zipfile.ZipFile(args.python) as z:z.extractall(runtime)
+            (runtime/'python312._pth').write_text('python312.zip\n.\nLib/site-packages\n../../repository/python\nimport site\n')
+            packages=runtime/'Lib/site-packages';packages.mkdir(parents=True,exist_ok=True)
+            deps=[]
+            for wheel in sorted(Path(args.wheels).glob('*.whl')):
+                with zipfile.ZipFile(wheel) as z:
+                    for entry in z.infolist():
+                        name=entry.filename
+                        if '.data/purelib/' in name:name=name.split('.data/purelib/',1)[1]
+                        elif '.data/platlib/' in name:name=name.split('.data/platlib/',1)[1]
+                        elif '.data/' in name:continue
+                        if entry.is_dir():continue
+                        dest=packages/name;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(z.read(entry))
+                deps.append({'file':wheel.name,'sha256':sha(wheel)})
+            runtime_record={'python':{'file':Path(args.python).name,'sha256':sha(args.python)},'electron':{'file':Path(args.electron).name,'sha256':sha(args.electron)},'wheels':deps}
+        (stage/'RUNTIME_SOURCES.json').write_text(json.dumps(runtime_record,indent=2))
+        (stage/'READ-ME.txt').write_text('PerfectPower Explorer 1.2\n\nDouble-click PerfectPower-Explorer.exe.\nThe complete repository, computation engines and numerical dependencies are included.\nNo Python installation or terminal is needed. Keep this folder together.\nWindows 10/11 x64.\n\nThe program is unsigned. Native Windows GPU launch has not been exercised in this Linux build environment.\nLean, PARI, Sage and external research tools are not bundled. Their sources and documented requirements are included.\n\nRead resources/app/repository/docs/PERFECTPOWER_EXPLORER_MONOGRAPH.md for features, checks and remaining limits.\n',encoding='utf8')
     compiler=Path(args.compiler);offset=0
     c_template=r'''#define UNICODE
 #define _UNICODE
@@ -104,7 +114,7 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE old,PWSTR unused,int show){
 try {
 $self=$env:PP_EXPLORER_SETUP;
 $desktop=[Environment]::GetFolderPath('Desktop');
-$target=Join-Path $desktop 'PerfectPower Explorer 1.0';
+$target=Join-Path $desktop 'PerfectPower Explorer 1.2';
 if(Test-Path -LiteralPath $target){$target=$target+' '+[DateTime]::Now.ToString('yyyyMMdd-HHmmss')};
 $zip=Join-Path ([IO.Path]::GetTempPath()) ('PerfectPower-'+[Guid]::NewGuid().ToString('N')+'.zip');
 $stream=[IO.File]::OpenRead($self);
@@ -138,7 +148,7 @@ $log=Join-Path ([Environment]::GetFolderPath('LocalApplicationData')) 'PerfectPo
         out.write(stub.read_bytes())
         with archive.open('rb') as f:shutil.copyfileobj(f,out)
     assert setup.read_bytes()[offset:]==archive.read_bytes()
-    (Path(args.output)/'BUILD_RECEIPT.json').write_text(json.dumps({'archive_sha256':sha(archive),'setup_sha256':sha(setup),'setup_archive_offset':offset,'repository_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'all_tracked_files':len(tracked)-1,'runtime_sources':runtime_record,'native_windows_execution':'not exercised in this Linux environment'},indent=2))
+    (Path(args.output)/'BUILD_RECEIPT.json').write_text(json.dumps({'archive_sha256':sha(archive),'setup_sha256':sha(setup),'setup_archive_offset':offset,'builder_sha256':sha(__file__),'source_copy':'git archive HEAD; generated dist appended','repository_base':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),'all_tracked_files':len(tracked)-1,'runtime_sources':runtime_record,'native_windows_execution':'not exercised in this Linux environment'},indent=2))
     print(json.dumps({'setup':str(setup),'bytes':setup.stat().st_size,'sha256':sha(setup)}),flush=True)
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--electron',required=True);p.add_argument('--python',required=True);p.add_argument('--wheels',required=True);p.add_argument('--output',required=True);p.add_argument('--compiler',required=True);package(p.parse_args())
+    p=argparse.ArgumentParser();p.add_argument('--prepared-stage',action='store_true');p.add_argument('--previous-directory');p.add_argument('--electron');p.add_argument('--python');p.add_argument('--wheels');p.add_argument('--output',required=True);p.add_argument('--compiler',required=True);package(p.parse_args())

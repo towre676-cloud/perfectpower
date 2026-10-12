@@ -1,0 +1,47 @@
+{
+  "archive_sha256": "4ff50b6957defbe3e7bb738d8fe54a64a824df5162cda1ca679b74ab1af027d0",
+  "setup_sha256": "a997bd704f8d436fc6d3b64b7eb421c1ea2feaa223a2440e8c87f5eef8abf2d4",
+  "setup_archive_offset": 311934,
+  "builder_sha256": "cb1b5def5c112077b36301b91f84fee6ae42d5217e2617ccb8adcf41a1589daf",
+  "source_copy": "git archive HEAD; generated dist appended",
+  "repository_base": "8c5efa3837e5413ca0d2b272c3d33e204c770f0e",
+  "all_tracked_files": 7594,
+  "runtime_sources": {
+    "python": {
+      "file": "python-win.zip",
+      "sha256": "4acbed6dd1c744b0376e3b1cf57ce906f9dc9e95e68824584c8099a63025a3c3"
+    },
+    "electron": {
+      "file": "electron-win.zip",
+      "sha256": "eee30dc8fa1f5ea95490e59f44e46ea68dd24c6e93d22facf70fe5c2d4c2665c"
+    },
+    "wheels": [
+      {
+        "file": "mpmath-1.3.0-py3-none-any.whl",
+        "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c"
+      },
+      {
+        "file": "numpy-2.2.6-cp312-cp312-win_amd64.whl",
+        "sha256": "c1f9540be57940698ed329904db803cf7a402f3fc200bfe599334c9bd84a40b2"
+      },
+      {
+        "file": "python_flint-0.9.0-cp310-abi3-win_amd64.whl",
+        "sha256": "8f1059536b7393e48b1444894c3b54ce1b961e4aa4a356e19217b26690f20db0"
+      },
+      {
+        "file": "scipy-1.15.3-cp312-cp312-win_amd64.whl",
+        "sha256": "52092bc0472cfd17df49ff17e70624345efece4e1a12b23783a1ac59a1b728ed"
+      },
+      {
+        "file": "sympy-1.14.0-py3-none-any.whl",
+        "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5"
+      },
+      {
+        "file": "z3_solver-5.1.0.0-py3-none-win_amd64.whl",
+        "sha256": "1561efd36e06f4cb7cbf11b63a2fba8fc8fdeb9c5754df90c84f9bd7a4864552"
+      }
+    ],
+    "reused_published_runtime": true
+  },
+  "native_windows_execution": "not exercised in this Linux environment"
+}
