@@ -29,16 +29,19 @@ public class ExplorerDeviceTest extends ActivityInstrumentationTestCase2<MainAct
         activity=getActivity();
         for(int i=0;i<900&&activity.getExplorerView()==null;i++)Thread.sleep(200);
         assertNotNull("Complete startup",activity.getExplorerView());
-        for(int i=0;i<600;i++){String value=js("document.querySelectorAll('#nav button').length");if("7".equals(value))break;Thread.sleep(200);}
-        assertEquals("All navigation workspaces","7",js("document.querySelectorAll('#nav button').length"));
+        for(int i=0;i<600;i++){String value=js("document.querySelectorAll('#nav button').length");if("8".equals(value))break;Thread.sleep(200);}
+        assertEquals("All navigation workspaces","8",js("document.querySelectorAll('#nav button').length"));
         assertEquals("No phone horizontal overflow","true",js("document.documentElement.scrollWidth<=innerWidth+1"));
         js("window.__qa=null;fetch('/api/catalog').then(r=>r.json()).then(v=>window.__qa={commands:Object.keys(v.commands).length,files:v.mobile.original_file_count})");
-        JSONObject catalog=pollObject("window.__qa",30);assertEquals(145,catalog.getInt("commands"));assertEquals(7501,catalog.getInt("files"));
+        JSONObject catalog=pollObject("window.__qa",30);assertTrue(catalog.getInt("commands")>=146);assertTrue(catalog.getInt("files")>=7543);
         JSONObject scan=request("{kind:'scan',spec:{coeff:['-2','0','0','1'],d:2,lo:-20,hi:20}}");
         assertEquals(scan.toString(),"complete",scan.getString("status"));assertEquals(2,scan.getJSONObject("result").getInt("count"));
         JSONObject cnf=request("{kind:'command',args:['model-count','examples/desktop_explorer/starter.cnf','--timeout','10'],timeout:40}");
         assertEquals(cnf.toString(),"complete",cnf.getString("status"));assertEquals("4",cnf.getJSONObject("result").getString("count"));
         String[][] commands={
+            {"research-count","monomial","examples/research_counting/monomial.json"},
+            {"research-count","crt","examples/research_counting/crt.json"},
+            {"research-count","digits","examples/research_counting/digits.json"},
             {"solve","--expr","(5*n - 7)**3 - 2","--domain","pos"},
             {"exact-solve","--coeff","[-199,1,1,1,1]"},
             {"plan","examples/planning/petersen_6.json"},

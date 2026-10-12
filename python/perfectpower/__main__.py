@@ -23,6 +23,8 @@ def main():
     from .model_counting import add_commands as add_model_count_commands
     add_budget_commands(sub)
     add_model_count_commands(sub)
+    from .research_counting import add_commands as add_research_commands
+    add_research_commands(sub)
     add_generating_commands(sub)
     from .generating_arithmetic import add_commands as add_series_commands
     add_series_commands(sub)
@@ -217,6 +219,8 @@ def main():
     from .michor_cli import add_commands as add_differential_geometry_commands
     add_differential_geometry_commands(sub)
     args = parser.parse_args()
+    from .research_counting import cli as research_cli
+    if research_cli(args): return
     from .michor_cli import cli as differential_geometry_cli
     if differential_geometry_cli(args):
         return

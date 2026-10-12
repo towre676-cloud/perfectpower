@@ -38,6 +38,8 @@ class Explorer:
         self.state=Path(state or os.environ.get('PP_EXPLORER_STATE',Path.home()/'PerfectPower Explorer'))
         self.state.mkdir(parents=True,exist_ok=True);(self.state/'runs').mkdir(exist_ok=True)
         self.budget=None
+        from perfectpower.explorer_live import LiveResearch
+        self.live_research=LiveResearch(self.root,self.state)
         for p in sorted((self.state/'runs').glob('*/result.json'))[-100:]:
             try:self.jobs[p.parent.name]=json.loads(p.read_text())
             except (OSError,ValueError):pass
@@ -142,6 +144,7 @@ def handler(explorer,token):
             if not self.authorized():self.respond(403,{'error':'Open the application to start a local session.'});return
             try:
                 if path=='/api/catalog':self.respond(200,explorer.catalog)
+                elif path=='/api/research':self.respond(200,explorer.live_research.get(q.get('refresh',['0'])[0]=='1'))
                 elif path=='/api/search':
                     needle=q.get('q',[''])[0].lower()
                     if len(needle)<3:raise ValueError('Use at least three characters for content search.')

@@ -216,3 +216,7 @@ to this pinned database, not NCBI nt/nr. See
 `web/blast-certification/index.html`.
 
 The independent OXBench evaluation retains all 395 structural-domain reference sets and searches all 3,292 sequence occurrences against their pooled carrier. It assesses all 101,750 directed within-set nonself pairs, replays both complete BLASTP outputs, and checks conserved residue correspondences. Standard-run coherent chaining retrieves three more pairs than single-HSP coverage and agrees with ordinary chaining; exact population counting has measurable overhead. See [the annotated benchmark monograph](docs/BLAST_OXBENCH_MONOGRAPH.md) and run `make blast-oxbench-test` or `make blast-oxbench-replay`. Structural-domain retrieval is not an orthology, discovery, or nt/nr recall claim.
+
+## Live Explorer research populations
+
+`python -m perfectpower research-count monomial examples/research_counting/monomial.json` computes exact degree counts and rank/select; the `crt` and `digits` operations provide modular populations and distinct digit sumsets. [Mathematics and live synchronization](docs/RESEARCH_COUNTING_LIVE_MONOGRAPH.md) explains the scope. The [live laboratory](https://perfectpower-explorer-download.towre676.chatgpt.site/research) and Android 1.1 read the current public data feed, retain an offline fallback, and display installed-engine and data identities separately. Regenerate it with `python scripts/export_explorer_live.py`.
