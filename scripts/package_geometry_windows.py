@@ -18,8 +18,8 @@ def package(seed,engine,manifest,output):
    if item.filename in source['files']:original[item.filename]=digest(raw)
   for path in (ROOT/'desktop/explorer/dist').iterdir():
    if path.is_file():add(target,'resources/app/repository/desktop/explorer/dist/'+path.name,path.read_bytes())
-  add(target,'resources/app/package.json',json.dumps({'name':'perfectpower-explorer','version':'1.3.0','main':'main.cjs'}).encode())
-  add(target,'READ-ME.txt',b'PerfectPower Explorer 1.3 - Geometric Observatory\n\nExtract the entire ZIP and open PerfectPower-Explorer.exe.\nThe original Windows runtime is preserved. Saved runs use the same application identity and private state directory.\nFresh numerical queries run locally; geometric views follow their exact results.\nWindows machine execution has not been exercised in this build environment.\n')
+  add(target,'resources/app/package.json',json.dumps({'name':'perfectpower-explorer','version':'1.4.0','main':'main.cjs'}).encode())
+  add(target,'READ-ME.txt',b'PerfectPower Explorer 1.4 - Guided Project Explorer\n\nExtract the entire ZIP and open PerfectPower-Explorer.exe.\nThe original Windows runtime is preserved. Saved runs use the same application identity and private state directory.\nFresh numerical queries run locally; geometric views follow their exact results.\nWindows machine execution has not been exercised in this build environment.\n')
   add(target,'SOURCE_SNAPSHOT.json',json.dumps({'commit':source['snapshot'],'source_tree':source['source_tree'],'original_source_files':len(original),'original_source_bytes_verified':original==source['files']},indent=2).encode())
   assert original==source['files'],'Original source bytes changed or missing'
   target.writestr('PACKAGE_MANIFEST.json',json.dumps(records,sort_keys=True,indent=2))

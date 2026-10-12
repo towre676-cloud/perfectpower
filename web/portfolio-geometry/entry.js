@@ -4,7 +4,7 @@ const host=document.querySelector('#geometry-observatory'),status=document.query
  try{
   const response=await fetch('data.json',{cache:'no-cache'});if(!response.ok)throw Error('The retained geometry data could not be loaded');const data=await response.json();
   const view=mountPortfolioGeometry(host,data.model,{mode:'retained'});
-  function show(){const result=data.results[document.querySelector('#geometry-case').value];view.update(result.specification.resources,result);status.textContent=`Retained exact engine result · ${BigInt(result.summary.count).toLocaleString()} original feasible portfolios · global best ${result.summary.optimization.maximum} · ${result.conditional?result.conditional.prefix.length+' fixed original decisions':'original resource limits'}`;}
+  function show(){const result=data.results[document.querySelector('#geometry-case').value];view.update(result.specification.resources,result);status.textContent=`Previously calculated: ${BigInt(result.summary.count).toLocaleString()} groups of projects fit the original budgets. Best score: ${result.summary.optimization.maximum} · ${result.conditional?result.conditional.prefix.length+' fixed original decisions':'original budgets'}`;}
   document.querySelector('#geometry-case').onchange=show;show();
   document.querySelector('#geometry-source').textContent=data.model.source_sha256;
   window.addEventListener('pagehide',()=>view.dispose(),{once:true});

@@ -21,3 +21,8 @@ Open **Project portfolios** to edit resource bounds, compute exact populations, 
 ## Geometric Observatory
 
 Project portfolios now includes a rotatable three-resource prism, a five-resource footprint, an exact conditional Decision lens, and a complete project-resource matrix. Native views follow completed engine results; the browser/phone companion labels its retained computations explicitly. See [the geometry account](../../docs/PORTFOLIO_GEOMETRY_MONOGRAPH.md). Android must receive rebuilt executable/UI assets before this becomes part of an installed APK.
+
+
+### First visit guide
+
+The portfolio view now puts resource budgets and Calculate possibilities first. The shared geometric view introduces projects, whole portfolios, and include/exclude decisions through three numbered steps with contextual explanations. Camera settings, the five-resource radar, the complete cost matrix, rank sampling, and provenance remain available in expandable sections. Native calculations use the existing exact engine; the browser companion displays clearly marked previously calculated cases. Advanced research workbenches and saved-run storage are preserved. Browser checks cover the guide before and after calculation, project selection, conditional results, advanced camera controls, and a 390-pixel viewport. No physical Windows or Android device execution is claimed.
