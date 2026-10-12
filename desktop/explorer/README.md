@@ -11,3 +11,7 @@ Run `python desktop/explorer/check-engines.py` for the new engine routes. Run `n
 This release preserves the upstream command contracts. Commands requiring Lean, PARI, Sage, NCBI BLAST+ or other external tools still require those tools. Source inclusion is not a fresh proof compilation. The complete repository content is included; this release does not supply a bespoke interactive visualization for every historical Python API. Large output previews are shortened, and the saved export retains the complete engine output.
 
 See ../../docs/PERFECTPOWER_EXPLORER_MONOGRAPH.md for the mathematical display, execution architecture, retained checks and Windows testing limitations. See THIRD_PARTY_NOTICES.md for asset and dependency sources.
+
+## Guided 50-project portfolios
+
+Open **Project portfolios** to edit resource bounds, compute exact populations, inspect the best original-project selection, compare include/exclude decisions in original order, open a rank or sample a reproducible feasible choice. The real residual-polynomial engine runs locally. Initial construction and new queries may take minutes; elapsed time and work counters are shown, and every completed request/evidence packet is retained in Saved runs. All existing research workbenches remain available. See [the portfolio account](../../docs/PORTFOLIO_EXPLORER_MONOGRAPH.md) and `receipts/planning/explorer/release.json` for executable release status.

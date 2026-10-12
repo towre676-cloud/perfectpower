@@ -32,7 +32,7 @@ def execute(payload):
     for name,content in files.items():
         if Path(name).name!=name or name in ('.','..') or not isinstance(content,str) or len(content)>2000000:raise ValueError('Invalid input file.')
         p=folder/name;p.write_text(content,encoding='utf8');mapping['@'+name]=str(p)
-    if body.get('kind')!='scan':
+    if body.get('kind') not in ('scan','portfolio'):
         if not isinstance(args,list) or any(not isinstance(x,str) or len(x)>100000 for x in args):raise ValueError('Arguments must be strings.')
         args=[mapping.get(x,str(root/x) if x in paths else x) for x in args]
         for i,arg in enumerate(args[:-1]):
@@ -45,7 +45,10 @@ def execute(payload):
     import contextlib
     with (folder/'stdout.txt').open('w',encoding='utf8') as out,(folder/'stderr.txt').open('w',encoding='utf8') as err,contextlib.redirect_stdout(out),contextlib.redirect_stderr(err):
         try:
-            if body.get('kind')=='scan':print(json.dumps(desktop.safe_json(desktop.scan(body['spec']))))
+            if body.get('kind')=='portfolio':
+                from perfectpower.portfolio_explorer import execute as portfolio_execute
+                print(json.dumps(portfolio_execute(body,folder,root)))
+            elif body.get('kind')=='scan':print(json.dumps(desktop.safe_json(desktop.scan(body['spec']))))
             elif body.get('kind')=='budget':
                 from perfectpower.budget_lab import BudgetLab
                 print(json.dumps(desktop.safe_json(BudgetLab(root).query(body['query']))))
@@ -68,6 +71,9 @@ def execute(payload):
 def start(root,state,runner,abi):
     desktop=load_server(root)
     class MobileExplorer(desktop.Explorer):
+        def close(self):
+            super().close()
+            runner.close()
         def submit(self,body):
             if not isinstance(body,dict):raise ValueError('Request object required.')
             job=uuid.uuid4().hex;folder=self.state/'runs'/job;folder.mkdir()

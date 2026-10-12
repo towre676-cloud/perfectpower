@@ -18,6 +18,7 @@ public final class AndroidRunner {
         if (id.equals(activeId)) { stopWorker(); CountDownLatch latch=current;if(latch!=null)latch.countDown(); }
     }
     private void stopWorker() { Messenger worker=active;if(worker!=null)try{worker.send(Message.obtain(null,2));}catch(RemoteException ignored){} }
+    public void close() { stopWorker();context.stopService(new Intent(context,EngineService.class)); }
     public synchronized String execute(String payload,int timeout) throws Exception {
         JSONObject request=new JSONObject(payload);String id=request.getString("id");
         if(cancelled.remove(id))return "{\"status\":\"cancelled\",\"error\":\"Cancelled before execution.\"}";
@@ -30,6 +31,8 @@ public final class AndroidRunner {
             @Override public void onBindingDied(ComponentName name){done.countDown();connected.countDown();}
         };
         activeId=id;current=done;
+        boolean portfolio="portfolio".equals(request.getJSONObject("body").optString("kind"));
+        if(portfolio)context.startService(new Intent(context,EngineService.class));
         boolean bound=context.bindService(new Intent(context,EngineService.class),connection,Context.BIND_AUTO_CREATE);
         try {
             if(!bound||!connected.await(30,TimeUnit.SECONDS)||active==null)throw new IllegalStateException("Android could not start the computation process.");
@@ -40,7 +43,8 @@ public final class AndroidRunner {
             if(!completed)return "{\"status\":\"timeout\",\"error\":\"Time limit reached. Computation process stopped; no complete answer is inferred.\"}";
             return answer[0]!=null?answer[0]:"{\"status\":\"failed\",\"error\":\"Android stopped the computation process, possibly because of memory pressure.\"}";
         } finally {
-            stopWorker();dead.await(3,TimeUnit.SECONDS);if(bound)context.unbindService(connection);active=null;activeId=null;current=null;
+            if(!portfolio||answer[0]==null||cancelled.contains(id)){stopWorker();context.stopService(new Intent(context,EngineService.class));dead.await(3,TimeUnit.SECONDS);}
+            if(bound)context.unbindService(connection);active=null;activeId=null;current=null;
         }
     }
 }

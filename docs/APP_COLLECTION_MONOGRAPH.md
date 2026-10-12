@@ -33,3 +33,7 @@ DynaComp replay: `PYTHONPATH=src python -m unittest discover -s tests -q`, then 
 ## Publication service limitation
 
 On 2026-10-12 DynaComp's feed workflow and mathematical regressions completed successfully on GitHub. PerfectPower's Actions runs reported startup_failure with zero jobs, so their future automatic data regeneration is not operationally verified. Compatible shared navigation, browser counting source and PerfectPower/collection UI read the public upstream source directly, independently of that job. Existing research data remains the last published, digest-checked envelope until regenerated. Native engines, unsupported API changes and sports/game model adoption still require their explicit release paths.
+
+## Guided native portfolio workspace
+
+The native Explorer source now includes a dedicated original 50-project portfolio interface. The public six-item browser packing tool remains a separate browser engine; it is not relabeled as the residual-polynomial 50-project computation. Native package and signature status are recorded in `receipts/planning/explorer/release.json`. See [the guided mathematical account](PORTFOLIO_EXPLORER_MONOGRAPH.md).

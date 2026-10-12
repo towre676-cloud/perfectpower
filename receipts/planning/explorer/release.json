@@ -1,0 +1,37 @@
+{
+  "schema": "pp-portfolio-release/1",
+  "source_status": "verified guided workspace; distribution assembly in progress",
+  "published_package_audit": {
+    "windows": {
+      "planner_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
+      "population_symbol_in_source": true,
+      "guided_workspace": false
+    },
+    "android_1_1": {
+      "planner_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
+      "population_symbol_in_source": true,
+      "guided_workspace": false,
+      "snapshot": "91ffb4134e8816e57a560505c040558df326c88b"
+    }
+  },
+  "native_engine_rebuild_required": false,
+  "native_ui_upgrade_required": true,
+  "android": {
+    "application_id": "com.perfectpower.explorer",
+    "version_code": 3,
+    "version_name": "1.2.0",
+    "matching_update_key_available": false,
+    "signed_upgrade_published": false
+  },
+  "windows": {
+    "native_windows_execution_tested": false,
+    "distribution_update": "assembly pending"
+  },
+  "saved_runs_policy": "existing directories preserved; draft written separately",
+  "mathematical_validation": "validation.json",
+  "evidence": [
+    "root.json.gz",
+    "conditional.json.gz",
+    "rank.json.gz"
+  ]
+}

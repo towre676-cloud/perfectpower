@@ -41,9 +41,10 @@ def bounded_score(q):
 
 
 class CompletionPlanner:
-    def __init__(self, specification, *, _reuse=None, _compile=True):
+    def __init__(self, specification, *, _reuse=None, _compile=True, _progress=None):
         if not isinstance(specification, dict):
             raise ValueError('planner specification required')
+        self._progress = _progress
         self._specification = deepcopy(specification)
         spec = deepcopy(specification)
         self.kind = spec.get('kind')

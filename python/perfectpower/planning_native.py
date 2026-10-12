@@ -117,6 +117,7 @@ class PopulationIndex:
     setup/search work per query have separate explicit limits.
     """
     def __init__(self, planner):
+        self.planner = weakref.proxy(planner)
         self.lib = library()
         self.scale, self.args = parameters(planner)
         self.n = self.args[0]
@@ -145,6 +146,14 @@ class PopulationIndex:
                 'ties': sum(r['ties'] for r in winners),
                 'mask': min(r['mask'] for r in winners), 'visits': 0,
                 'records': 0, 'setup_cells': 0}
+
+    def _progress(self):
+        callback = self.planner._progress
+        if callback:
+            callback({"native_calls": self.native_calls, "failed_attempts": self.failed_calls,
+                      "completed_nodes": len(self.fixed_cache), "split_nodes": len(self.partitions),
+                      "search_visits": self.query_visits, "setup_cells": self.setup_cells,
+                      "arena_limit_bytes": self.memory})
 
     def _room(self):
         if len(self.fixed_cache)+len(self.partitions) >= self.partition_limit:
@@ -176,6 +185,7 @@ class PopulationIndex:
             self.query_visits += visits
             self.setup_cells += cells
             self.failed_calls += 1
+            self._progress()
             work[0] += visits+cells
             if work[0] >= self.work_limit:
                 raise WorkLimit('population cumulative query work budget exceeded') from error
@@ -193,6 +203,7 @@ class PopulationIndex:
         work[0] += answer['visits']+answer.get('setup_cells', 0)
         self._room()
         self.fixed_cache[key] = answer
+        self._progress()
         return dict(answer)
 
     def _condition_tree(self, fixed, values, query_fixed, query_values, work):

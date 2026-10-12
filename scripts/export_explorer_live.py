@@ -37,6 +37,13 @@ def export(root=ROOT):
                                        'instances': 200, 'budget_seconds': 5,
                                        'exact': {'perfectpower_0102': 18, 'paired_0101': 12, 'ganak': 18, 'd4': 19},
                                        'independently_replayable_from_this_feed': False}}
+    portfolio_input='examples/planning/petersen_50_population.json'
+    portfolio_receipt='receipts/planning/explorer/validation.json'
+    payload['native_portfolio']={'title':'Petersen 50-project portfolios', 'workspace':'portfolio',
+        'input_path':portfolio_input,'input_sha256':hashlib.sha256((root/portfolio_input).read_bytes()).hexdigest(),
+        'validation':json.loads((root/portfolio_receipt).read_text()),
+        'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/PORTFOLIO_EXPLORER_MONOGRAPH.md',
+        'requires_native_upgrade':True,'browser_six_item_demo_is_same_engine':False}
     encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     source_parent = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     envelope = {'schema': 'pp-explorer-live/1', 'source_parent': source_parent,

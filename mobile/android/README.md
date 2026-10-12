@@ -13,3 +13,7 @@ The UI build is `npm ci --ignore-scripts` then `npm run build` in `ui/`. `mobile
 Build the APK with `gradle assembleRelease`; align and sign using Android SDK `zipalign` and `apksigner`. The release signing key is stored separately from public source and downloads. Keep the private update key to sign later upgrades of this application ID. The application requests internet permission for its loopback API and optional original network adapters, and no broad storage permission. Its compute service is private and unexported.
 
 The Android instrumentation check is `gradle connectedDebugAndroidTest` with an Android device or emulator. It checks all navigation, file and command counts, exact arithmetic, C++ counting, multiple workbenches and cancellation recovery through the real WebView and Android compute service. UI preview limits do not truncate exported stdout or generated files.
+
+## Guided 50-project portfolios
+
+Open **Project portfolios** to edit resource bounds, compute exact populations, inspect the best original-project selection, compare include/exclude decisions in original order, open a rank or sample a reproducible feasible choice. The real residual-polynomial engine runs locally. Initial construction and new queries may take minutes; elapsed time and work counters are shown, and every completed request/evidence packet is retained in Saved runs. All existing research workbenches remain available. See [the portfolio account](../../docs/PORTFOLIO_EXPLORER_MONOGRAPH.md) and `receipts/planning/explorer/release.json` for executable release status.

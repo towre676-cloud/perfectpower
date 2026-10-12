@@ -38,6 +38,7 @@ class Explorer:
         self.state=Path(state or os.environ.get('PP_EXPLORER_STATE',Path.home()/'PerfectPower Explorer'))
         self.state.mkdir(parents=True,exist_ok=True);(self.state/'runs').mkdir(exist_ok=True)
         self.budget=None
+        self.portfolio=None
         from perfectpower.explorer_live import LiveResearch
         self.live_research=LiveResearch(self.root,self.state)
         for p in sorted((self.state/'runs').glob('*/result.json'))[-100:]:
@@ -50,6 +51,12 @@ class Explorer:
         return p
     def submit(self,body):
         if not isinstance(body,dict):raise ValueError('Request object required.')
+        if body.get('kind')=='portfolio':
+            if self.portfolio is None:
+                sys.path.insert(0,str(self.root/'desktop/explorer'))
+                from portfolio_jobs import PortfolioJobs
+                self.portfolio=PortfolioJobs(self)
+            return self.portfolio.submit(body)
         job=uuid.uuid4().hex;folder=self.state/'runs'/job;folder.mkdir()
         entry={'id':job,'status':'running','started':time.time(),'request':body}
         with self.lock:self.jobs[job]=entry
@@ -119,8 +126,13 @@ class Explorer:
             else:
                 result=preview(result)
                 result['preview_limits']='Large arrays and strings are shortened in this preview. The exported files contain the complete saved output.'
+            progress=self.state/'runs'/job/'progress.json'
+            if result.get('status')=='running' and progress.is_file():
+                try:result['progress']=json.loads(progress.read_text())
+                except (OSError,ValueError):pass
             return safe_json(result)
     def close(self):
+        if self.portfolio:self.portfolio.close()
         with self.lock:
             for job in self.jobs.values():
                 p=job.get('_process')
@@ -144,6 +156,12 @@ def handler(explorer,token):
             if not self.authorized():self.respond(403,{'error':'Open the application to start a local session.'});return
             try:
                 if path=='/api/catalog':self.respond(200,explorer.catalog)
+                elif path=='/api/portfolio/draft':
+                    draft=explorer.state/'portfolio-draft.json'
+                    self.respond(200,json.loads(draft.read_text()) if draft.is_file() else None)
+                elif path=='/api/portfolio/model':
+                    from perfectpower.portfolio_explorer import model
+                    self.respond(200,model(explorer.root))
                 elif path=='/api/research':self.respond(200,explorer.live_research.get(q.get('refresh',['0'])[0]=='1'))
                 elif path=='/api/search':
                     needle=q.get('q',[''])[0].lower()
@@ -198,7 +216,16 @@ def handler(explorer,token):
                 size=int(self.headers.get('Content-Length','0'))
                 if not 0<size<=4000000:raise ValueError('Request exceeds four million bytes.')
                 body=json.loads(self.rfile.read(size))
-                if self.path=='/api/run':self.respond(200,explorer.submit(body))
+                if self.path=='/api/portfolio/draft':
+                    if not isinstance(body,dict) or set(body)!={'source','resources','prefix'}:raise ValueError('Portfolio draft required')
+                    from perfectpower.portfolio_explorer import model
+                    if body['source']!=model(explorer.root)['source_sha256']:raise ValueError('Draft source changed')
+                    if not isinstance(body['prefix'],list) or len(body['prefix'])>50 or any(type(x) is not int or x not in (0,1) for x in body['prefix']):raise ValueError('Binary project decisions required')
+                    if not isinstance(body['resources'],list) or len(body['resources'])!=5:raise ValueError('Five resource bounds required')
+                    with explorer.lock:
+                        target=explorer.state/'portfolio-draft.json';temp=target.with_suffix('.tmp');temp.write_text(json.dumps(body));temp.replace(target)
+                    self.respond(200,{'saved':True})
+                elif self.path=='/api/run':self.respond(200,explorer.submit(body))
                 elif self.path=='/api/cancel':
                     with explorer.lock:
                         job=explorer.jobs[body['id']];p=job.get('_process');job['cancel_requested']=True
