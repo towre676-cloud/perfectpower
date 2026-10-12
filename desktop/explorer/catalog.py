@@ -1,5 +1,5 @@
 """Build the explorer catalogue from the actual checkout and argparse definitions."""
-import argparse, hashlib, json, re, sys
+import argparse, hashlib, json, re, sys, subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'python'))
@@ -38,7 +38,8 @@ def parser_schema(module="perfectpower.__main__"):
 def build():
     skip={'.git','node_modules','__pycache__','.pytest_cache','.lake','test-state'}
     files=[]
-    for p in sorted(ROOT.rglob('*')):
+    tracked=subprocess.check_output(['git','ls-files','-z'],cwd=ROOT).decode().split('\0')
+    for p in (ROOT/name for name in sorted(tracked) if name):
         rel=p.relative_to(ROOT)
         if not p.is_file() or skip.intersection(rel.parts) or str(rel).startswith('desktop/explorer/dist/') or p.suffix in ('.pyc','.so','.dll'):continue
         raw=p.read_bytes();suffix=p.suffix.lower();text=''
@@ -46,7 +47,6 @@ def build():
         title=next((s.strip('# ').strip() for s in text.splitlines() if s.startswith('# ')),p.stem.replace('_',' ').replace('-',' '))
         kind='document' if suffix=='.md' else 'proof' if suffix=='.lean' else 'data' if suffix in ('.json','.csv','.seq','.cnf','.pb') else 'visual' if suffix in ('.html','.png','.jpg','.webp','.svg') else 'code'
         files.append({'path':rel.as_posix(),'title':title[:160],'bytes':len(raw),'kind':kind,'folder':rel.parts[0],'sha256':hashlib.sha256(raw).hexdigest(),'summary':re.sub(r'\s+',' ',text[:1200])[:500] if kind=='document' else ''})
-    import subprocess
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     commands=parser_schema()['children']
     commands['blast-explorer']={'description':'Exact BLAST alignment, mining, annotation and source-adapter operations','fields':[],'children':parser_schema('perfectpower.blast_cli')['children'],'module':'perfectpower.blast_cli'}
