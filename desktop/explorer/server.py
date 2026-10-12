@@ -77,6 +77,13 @@ class Explorer:
                     if Path(name).name!=name or name in ('.','..'):raise ValueError('Input filename required.')
                     p=folder/name;p.write_text(content,encoding='utf8');mapping['@'+name]=str(p)
                 args=[mapping.get(x,str(self.resolve(x)) if x in self.paths else x) for x in args]
+                for index,argument in enumerate(args[:-1]):
+                    if argument in ('--output','--out','--certificate-output','--lean-output'):
+                        value=args[index+1]
+                        if not Path(value).is_absolute():
+                            target=(folder/value).resolve()
+                            if not target.is_relative_to(folder.resolve()):raise ValueError('Relative outputs must stay inside this run folder.')
+                            target.parent.mkdir(parents=True,exist_ok=True);args[index+1]=str(target)
                 env=os.environ.copy();env['PYTHONPATH']=str(self.root/'python');env['PYTHONUTF8']='1';env['PP_EXPLORER_RUN_DIR']=str(folder)
                 proc=subprocess.Popen([sys.executable,*args],cwd=self.root,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,creationflags=0x08000000 if os.name=='nt' else 0)
                 with self.lock:entry['_process']=proc
@@ -85,6 +92,7 @@ class Explorer:
                 try:result=json.loads(stdout)
                 except ValueError:result=None
                 with self.lock:
+                    entry['artifacts']=[{'name':p.relative_to(folder).as_posix(),'bytes':p.stat().st_size} for p in folder.rglob('*') if p.is_file()]
                     entry.update(status='cancelled' if entry.get('cancel_requested') else 'complete' if code==0 else 'failed',elapsed=time.monotonic()-start,exit_code=code,result=result,stdout=stdout[:8_000_000],stderr=stderr[:1_000_000])
                     entry.pop('_process',None)
                 (folder/'stdout.txt').write_text(stdout,encoding='utf8');(folder/'stderr.txt').write_text(stderr,encoding='utf8')
@@ -165,8 +173,14 @@ def handler(explorer,token):
                     p=explorer.resolve(path[6:]);self.respond(200,p.read_bytes(),(mimetypes.guess_type(p.name)[0] or 'application/octet-stream'))
                 elif path.startswith('/run/'):
                     bits=path[5:].split('/')
-                    if len(bits)!=2 or bits[0] not in explorer.jobs or bits[1] not in ('stdout.txt','stderr.txt','result.json'):raise ValueError('Unknown run file.')
-                    self.respond(200,(explorer.state/'runs'/bits[0]/bits[1]).read_bytes(),'application/octet-stream',[('Content-Disposition','attachment; filename='+bits[1])])
+                    if len(bits)<2 or bits[0] not in explorer.jobs:raise ValueError('Unknown run file.')
+                    filename='/'.join(bits[1:])
+                    allowed={'stdout.txt','stderr.txt','result.json'}|{a['name'] for a in explorer.jobs[bits[0]].get('artifacts',[])}
+                    if filename not in allowed:raise ValueError('Unknown run artifact.')
+                    p=(explorer.state/'runs'/bits[0]/filename).resolve()
+                    if not p.is_relative_to((explorer.state/'runs'/bits[0]).resolve()):raise ValueError('Invalid artifact path.')
+                    inline=q.get('view',['0'])[0]=='1'
+                    self.respond(200,p.read_bytes(),(mimetypes.guess_type(filename)[0] or 'application/octet-stream') if inline else 'application/octet-stream',[] if inline else [('Content-Disposition','attachment; filename='+Path(filename).name)])
                 else:
                     name='index.html' if path=='/' else path.lstrip('/')
                     p=(explorer.root/'desktop/explorer/dist'/name).resolve()

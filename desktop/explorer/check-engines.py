@@ -34,6 +34,14 @@ class Engines(unittest.TestCase):
    self.assertEqual(outputs[-1]['result']['count'],'4')
    output=server.ROOT/'desktop/explorer/ENGINE_CHECKS.json';output.write_text(json.dumps(outputs,indent=2))
    with self.assertRaises(ValueError):engine.resolve('../README.md')
+ def test_generated_artifact(self):
+  with tempfile.TemporaryDirectory() as state:
+   engine=server.Explorer(state=state)
+   job=engine.submit({'kind':'command','args':['blast-explorer','motif','AA','--length','4','--output','motif.json']})['id']
+   while engine.public_job(job)['status']=='running':time.sleep(.03)
+   output=engine.public_job(job);self.assertEqual(output['status'],'complete',output)
+   self.assertIn('motif.json',[a['name'] for a in output['artifacts']])
+   self.assertTrue((Path(state)/'runs'/job/'motif.json').is_file())
  def test_edited_input(self):
   with tempfile.TemporaryDirectory() as state:
    engine=server.Explorer(state=state);spec={'vertices':2,'source':0,'sink':1,'arcs':[[0,1,7]]}
