@@ -43,7 +43,10 @@ def export(root=ROOT):
         'input_path':portfolio_input,'input_sha256':hashlib.sha256((root/portfolio_input).read_bytes()).hexdigest(),
         'validation':json.loads((root/portfolio_receipt).read_text()),
         'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/PORTFOLIO_EXPLORER_MONOGRAPH.md',
-        'requires_native_upgrade':True,'browser_six_item_demo_is_same_engine':False}
+        'requires_native_upgrade':True,'browser_six_item_demo_is_same_engine':False,
+        'geometry':{'url':'https://perfectpower-explorer-download.towre676.chatgpt.site/geometry/','schema':'pp-portfolio-geometry/1',
+                    'receipt':json.loads((root/'receipts/planning/explorer/geometry.json').read_text()),
+                    'scope':'Browser companion displays retained exact computations; native workspace follows fresh queries.'}}
     encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     source_parent = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     envelope = {'schema': 'pp-explorer-live/1', 'source_parent': source_parent,

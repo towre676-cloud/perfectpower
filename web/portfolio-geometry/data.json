@@ -1,0 +1,2387 @@
+{
+  "model": {
+    "source_sha256": "5f8c41c039ce61dfde98571523c8fd606a6faea16076de4945a3bfa3fa873cea",
+    "specification": {
+      "kind": "allocation",
+      "native_visit_limit": 10000000,
+      "population_cache_states": 1000000,
+      "population_memory_limit": 134217728,
+      "population_partition_limit": 8192,
+      "population_work_limit": 2000000000,
+      "resources": [
+        {
+          "max": 800,
+          "name": "resource_1"
+        },
+        {
+          "max": 650,
+          "name": "resource_2"
+        },
+        {
+          "max": 550,
+          "name": "resource_3"
+        },
+        {
+          "max": 550,
+          "name": "resource_4"
+        },
+        {
+          "max": 650,
+          "name": "resource_5"
+        }
+      ],
+      "strategy": "population",
+      "variables": [
+        {
+          "costs": [
+            40,
+            16,
+            38,
+            8,
+            38
+          ],
+          "name": "project_1",
+          "profit": "560",
+          "upper": 1
+        },
+        {
+          "costs": [
+            91,
+            92,
+            39,
+            71,
+            52
+          ],
+          "name": "project_2",
+          "profit": "1125",
+          "upper": 1
+        },
+        {
+          "costs": [
+            10,
+            41,
+            32,
+            30,
+            30
+          ],
+          "name": "project_3",
+          "profit": "300",
+          "upper": 1
+        },
+        {
+          "costs": [
+            30,
+            16,
+            71,
+            60,
+            42
+          ],
+          "name": "project_4",
+          "profit": "620",
+          "upper": 1
+        },
+        {
+          "costs": [
+            160,
+            150,
+            80,
+            200,
+            170
+          ],
+          "name": "project_5",
+          "profit": "2100",
+          "upper": 1
+        },
+        {
+          "costs": [
+            20,
+            23,
+            26,
+            18,
+            9
+          ],
+          "name": "project_6",
+          "profit": "431",
+          "upper": 1
+        },
+        {
+          "costs": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "name": "project_7",
+          "profit": "68",
+          "upper": 1
+        },
+        {
+          "costs": [
+            12,
+            18,
+            40,
+            30,
+            20
+          ],
+          "name": "project_8",
+          "profit": "328",
+          "upper": 1
+        },
+        {
+          "costs": [
+            3,
+            6,
+            8,
+            4,
+            0
+          ],
+          "name": "project_9",
+          "profit": "47",
+          "upper": 1
+        },
+        {
+          "costs": [
+            18,
+            0,
+            12,
+            8,
+            3
+          ],
+          "name": "project_10",
+          "profit": "122",
+          "upper": 1
+        },
+        {
+          "costs": [
+            9,
+            12,
+            30,
+            31,
+            21
+          ],
+          "name": "project_11",
+          "profit": "322",
+          "upper": 1
+        },
+        {
+          "costs": [
+            25,
+            8,
+            15,
+            6,
+            4
+          ],
+          "name": "project_12",
+          "profit": "196",
+          "upper": 1
+        },
+        {
+          "costs": [
+            1,
+            2,
+            0,
+            3,
+            1
+          ],
+          "name": "project_13",
+          "profit": "41",
+          "upper": 1
+        },
+        {
+          "costs": [
+            1,
+            1,
+            1,
+            0,
+            2
+          ],
+          "name": "project_14",
+          "profit": "25",
+          "upper": 1
+        },
+        {
+          "costs": [
+            10,
+            0,
+            23,
+            18,
+            14
+          ],
+          "name": "project_15",
+          "profit": "425",
+          "upper": 1
+        },
+        {
+          "costs": [
+            280,
+            200,
+            100,
+            60,
+            310
+          ],
+          "name": "project_16",
+          "profit": "4260",
+          "upper": 1
+        },
+        {
+          "costs": [
+            10,
+            20,
+            0,
+            21,
+            8
+          ],
+          "name": "project_17",
+          "profit": "416",
+          "upper": 1
+        },
+        {
+          "costs": [
+            8,
+            6,
+            20,
+            4,
+            4
+          ],
+          "name": "project_18",
+          "profit": "115",
+          "upper": 1
+        },
+        {
+          "costs": [
+            1,
+            2,
+            3,
+            0,
+            6
+          ],
+          "name": "project_19",
+          "profit": "82",
+          "upper": 1
+        },
+        {
+          "costs": [
+            1,
+            1,
+            0,
+            2,
+            1
+          ],
+          "name": "project_20",
+          "profit": "22",
+          "upper": 1
+        },
+        {
+          "costs": [
+            49,
+            70,
+            40,
+            32,
+            18
+          ],
+          "name": "project_21",
+          "profit": "631",
+          "upper": 1
+        },
+        {
+          "costs": [
+            8,
+            9,
+            6,
+            15,
+            15
+          ],
+          "name": "project_22",
+          "profit": "132",
+          "upper": 1
+        },
+        {
+          "costs": [
+            21,
+            22,
+            8,
+            31,
+            38
+          ],
+          "name": "project_23",
+          "profit": "420",
+          "upper": 1
+        },
+        {
+          "costs": [
+            6,
+            4,
+            0,
+            2,
+            10
+          ],
+          "name": "project_24",
+          "profit": "86",
+          "upper": 1
+        },
+        {
+          "costs": [
+            1,
+            1,
+            6,
+            2,
+            4
+          ],
+          "name": "project_25",
+          "profit": "42",
+          "upper": 1
+        },
+        {
+          "costs": [
+            5,
+            5,
+            4,
+            7,
+            8
+          ],
+          "name": "project_26",
+          "profit": "103",
+          "upper": 1
+        },
+        {
+          "costs": [
+            10,
+            10,
+            22,
+            8,
+            6
+          ],
+          "name": "project_27",
+          "profit": "215",
+          "upper": 1
+        },
+        {
+          "costs": [
+            8,
+            6,
+            4,
+            2,
+            0
+          ],
+          "name": "project_28",
+          "profit": "81",
+          "upper": 1
+        },
+        {
+          "costs": [
+            2,
+            4,
+            6,
+            8,
+            0
+          ],
+          "name": "project_29",
+          "profit": "91",
+          "upper": 1
+        },
+        {
+          "costs": [
+            1,
+            0,
+            1,
+            0,
+            3
+          ],
+          "name": "project_30",
+          "profit": "26",
+          "upper": 1
+        },
+        {
+          "costs": [
+            0,
+            4,
+            5,
+            2,
+            0
+          ],
+          "name": "project_31",
+          "profit": "49",
+          "upper": 1
+        },
+        {
+          "costs": [
+            10,
+            12,
+            14,
+            8,
+            10
+          ],
+          "name": "project_32",
+          "profit": "420",
+          "upper": 1
+        },
+        {
+          "costs": [
+            42,
+            8,
+            8,
+            6,
+            6
+          ],
+          "name": "project_33",
+          "profit": "316",
+          "upper": 1
+        },
+        {
+          "costs": [
+            6,
+            4,
+            2,
+            7,
+            1
+          ],
+          "name": "project_34",
+          "profit": "72",
+          "upper": 1
+        },
+        {
+          "costs": [
+            4,
+            3,
+            8,
+            1,
+            3
+          ],
+          "name": "project_35",
+          "profit": "71",
+          "upper": 1
+        },
+        {
+          "costs": [
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          "name": "project_36",
+          "profit": "49",
+          "upper": 1
+        },
+        {
+          "costs": [
+            0,
+            10,
+            20,
+            0,
+            3
+          ],
+          "name": "project_37",
+          "profit": "108",
+          "upper": 1
+        },
+        {
+          "costs": [
+            10,
+            0,
+            0,
+            20,
+            5
+          ],
+          "name": "project_38",
+          "profit": "116",
+          "upper": 1
+        },
+        {
+          "costs": [
+            1,
+            6,
+            0,
+            8,
+            4
+          ],
+          "name": "project_39",
+          "profit": "90",
+          "upper": 1
+        },
+        {
+          "costs": [
+            40,
+            28,
+            6,
+            14,
+            0
+          ],
+          "name": "project_40",
+          "profit": "738",
+          "upper": 1
+        },
+        {
+          "costs": [
+            86,
+            93,
+            12,
+            20,
+            30
+          ],
+          "name": "project_41",
+          "profit": "1811",
+          "upper": 1
+        },
+        {
+          "costs": [
+            11,
+            9,
+            6,
+            2,
+            12
+          ],
+          "name": "project_42",
+          "profit": "430",
+          "upper": 1
+        },
+        {
+          "costs": [
+            120,
+            30,
+            80,
+            40,
+            16
+          ],
+          "name": "project_43",
+          "profit": "3060",
+          "upper": 1
+        },
+        {
+          "costs": [
+            8,
+            22,
+            13,
+            6,
+            18
+          ],
+          "name": "project_44",
+          "profit": "215",
+          "upper": 1
+        },
+        {
+          "costs": [
+            3,
+            0,
+            6,
+            1,
+            3
+          ],
+          "name": "project_45",
+          "profit": "58",
+          "upper": 1
+        },
+        {
+          "costs": [
+            32,
+            36,
+            22,
+            14,
+            16
+          ],
+          "name": "project_46",
+          "profit": "296",
+          "upper": 1
+        },
+        {
+          "costs": [
+            28,
+            45,
+            14,
+            20,
+            22
+          ],
+          "name": "project_47",
+          "profit": "620",
+          "upper": 1
+        },
+        {
+          "costs": [
+            13,
+            13,
+            0,
+            12,
+            30
+          ],
+          "name": "project_48",
+          "profit": "418",
+          "upper": 1
+        },
+        {
+          "costs": [
+            2,
+            2,
+            1,
+            0,
+            4
+          ],
+          "name": "project_49",
+          "profit": "47",
+          "upper": 1
+        },
+        {
+          "costs": [
+            4,
+            2,
+            2,
+            1,
+            0
+          ],
+          "name": "project_50",
+          "profit": "81",
+          "upper": 1
+        }
+      ]
+    }
+  },
+  "receipt_hashes": {
+    "receipts/planning/explorer/conditional.json.gz": "b0986c6321540553e484c956b3e9c7e87052ff17a0d35cde0027ed087c1ed36f",
+    "receipts/planning/explorer/root.json.gz": "0e482d61cb4d5fabf270e375faad588a9cad0ea509b075fc0dd36e405c6e4b48"
+  },
+  "results": {
+    "conditional": {
+      "action": "conditional",
+      "branches": [
+        {
+          "count": "8388608",
+          "maximizer_count": "1",
+          "maximum": "9263",
+          "prefix": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          "scope": "all feasible completions and conditional optimum under this prefix"
+        },
+        {
+          "count": "8388608",
+          "maximizer_count": "1",
+          "maximum": "9478",
+          "prefix": [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "scope": "all feasible completions and conditional optimum under this prefix"
+        }
+      ],
+      "conditional": {
+        "count": "16777216",
+        "maximizer_count": "1",
+        "maximum": "9478",
+        "prefix": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "scope": "all feasible completions and conditional optimum under this prefix"
+      },
+      "input_sha256": "4f139a54f8db83a93603f94f99c487eb58ef3b824ace1982159f4979de81a3b6",
+      "selection": {
+        "point": [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "profit": "9478",
+        "projects": [
+          "project_27",
+          "project_28",
+          "project_29",
+          "project_30",
+          "project_31",
+          "project_32",
+          "project_33",
+          "project_34",
+          "project_35",
+          "project_36",
+          "project_37",
+          "project_38",
+          "project_39",
+          "project_40",
+          "project_41",
+          "project_42",
+          "project_43",
+          "project_44",
+          "project_45",
+          "project_46",
+          "project_47",
+          "project_48",
+          "project_49",
+          "project_50"
+        ],
+        "resource_use": [
+          "449",
+          "347",
+          "252",
+          "200",
+          "192"
+        ]
+      },
+      "specification": {
+        "kind": "allocation",
+        "native_visit_limit": "10000000",
+        "population_cache_states": "1000000",
+        "population_memory_limit": "134217728",
+        "population_partition_limit": "8192",
+        "population_work_limit": "2000000000",
+        "resources": [
+          {
+            "max": "800",
+            "name": "resource_1"
+          },
+          {
+            "max": "650",
+            "name": "resource_2"
+          },
+          {
+            "max": "550",
+            "name": "resource_3"
+          },
+          {
+            "max": "550",
+            "name": "resource_4"
+          },
+          {
+            "max": "650",
+            "name": "resource_5"
+          }
+        ],
+        "strategy": "population",
+        "variables": [
+          {
+            "costs": [
+              "40",
+              "16",
+              "38",
+              "8",
+              "38"
+            ],
+            "name": "project_1",
+            "profit": "560",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "91",
+              "92",
+              "39",
+              "71",
+              "52"
+            ],
+            "name": "project_2",
+            "profit": "1125",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "41",
+              "32",
+              "30",
+              "30"
+            ],
+            "name": "project_3",
+            "profit": "300",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "30",
+              "16",
+              "71",
+              "60",
+              "42"
+            ],
+            "name": "project_4",
+            "profit": "620",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "160",
+              "150",
+              "80",
+              "200",
+              "170"
+            ],
+            "name": "project_5",
+            "profit": "2100",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "20",
+              "23",
+              "26",
+              "18",
+              "9"
+            ],
+            "name": "project_6",
+            "profit": "431",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "3",
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "name": "project_7",
+            "profit": "68",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "12",
+              "18",
+              "40",
+              "30",
+              "20"
+            ],
+            "name": "project_8",
+            "profit": "328",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "3",
+              "6",
+              "8",
+              "4",
+              "0"
+            ],
+            "name": "project_9",
+            "profit": "47",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "18",
+              "0",
+              "12",
+              "8",
+              "3"
+            ],
+            "name": "project_10",
+            "profit": "122",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "9",
+              "12",
+              "30",
+              "31",
+              "21"
+            ],
+            "name": "project_11",
+            "profit": "322",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "25",
+              "8",
+              "15",
+              "6",
+              "4"
+            ],
+            "name": "project_12",
+            "profit": "196",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "2",
+              "0",
+              "3",
+              "1"
+            ],
+            "name": "project_13",
+            "profit": "41",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "1",
+              "1",
+              "0",
+              "2"
+            ],
+            "name": "project_14",
+            "profit": "25",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "0",
+              "23",
+              "18",
+              "14"
+            ],
+            "name": "project_15",
+            "profit": "425",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "280",
+              "200",
+              "100",
+              "60",
+              "310"
+            ],
+            "name": "project_16",
+            "profit": "4260",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "20",
+              "0",
+              "21",
+              "8"
+            ],
+            "name": "project_17",
+            "profit": "416",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "6",
+              "20",
+              "4",
+              "4"
+            ],
+            "name": "project_18",
+            "profit": "115",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "2",
+              "3",
+              "0",
+              "6"
+            ],
+            "name": "project_19",
+            "profit": "82",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "1",
+              "0",
+              "2",
+              "1"
+            ],
+            "name": "project_20",
+            "profit": "22",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "49",
+              "70",
+              "40",
+              "32",
+              "18"
+            ],
+            "name": "project_21",
+            "profit": "631",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "9",
+              "6",
+              "15",
+              "15"
+            ],
+            "name": "project_22",
+            "profit": "132",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "21",
+              "22",
+              "8",
+              "31",
+              "38"
+            ],
+            "name": "project_23",
+            "profit": "420",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "6",
+              "4",
+              "0",
+              "2",
+              "10"
+            ],
+            "name": "project_24",
+            "profit": "86",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "1",
+              "6",
+              "2",
+              "4"
+            ],
+            "name": "project_25",
+            "profit": "42",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "5",
+              "5",
+              "4",
+              "7",
+              "8"
+            ],
+            "name": "project_26",
+            "profit": "103",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "10",
+              "22",
+              "8",
+              "6"
+            ],
+            "name": "project_27",
+            "profit": "215",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "6",
+              "4",
+              "2",
+              "0"
+            ],
+            "name": "project_28",
+            "profit": "81",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "2",
+              "4",
+              "6",
+              "8",
+              "0"
+            ],
+            "name": "project_29",
+            "profit": "91",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "0",
+              "1",
+              "0",
+              "3"
+            ],
+            "name": "project_30",
+            "profit": "26",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "0",
+              "4",
+              "5",
+              "2",
+              "0"
+            ],
+            "name": "project_31",
+            "profit": "49",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "12",
+              "14",
+              "8",
+              "10"
+            ],
+            "name": "project_32",
+            "profit": "420",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "42",
+              "8",
+              "8",
+              "6",
+              "6"
+            ],
+            "name": "project_33",
+            "profit": "316",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "6",
+              "4",
+              "2",
+              "7",
+              "1"
+            ],
+            "name": "project_34",
+            "profit": "72",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "4",
+              "3",
+              "8",
+              "1",
+              "3"
+            ],
+            "name": "project_35",
+            "profit": "71",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "name": "project_36",
+            "profit": "49",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "0",
+              "10",
+              "20",
+              "0",
+              "3"
+            ],
+            "name": "project_37",
+            "profit": "108",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "0",
+              "0",
+              "20",
+              "5"
+            ],
+            "name": "project_38",
+            "profit": "116",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "6",
+              "0",
+              "8",
+              "4"
+            ],
+            "name": "project_39",
+            "profit": "90",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "40",
+              "28",
+              "6",
+              "14",
+              "0"
+            ],
+            "name": "project_40",
+            "profit": "738",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "86",
+              "93",
+              "12",
+              "20",
+              "30"
+            ],
+            "name": "project_41",
+            "profit": "1811",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "11",
+              "9",
+              "6",
+              "2",
+              "12"
+            ],
+            "name": "project_42",
+            "profit": "430",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "120",
+              "30",
+              "80",
+              "40",
+              "16"
+            ],
+            "name": "project_43",
+            "profit": "3060",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "22",
+              "13",
+              "6",
+              "18"
+            ],
+            "name": "project_44",
+            "profit": "215",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "3",
+              "0",
+              "6",
+              "1",
+              "3"
+            ],
+            "name": "project_45",
+            "profit": "58",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "32",
+              "36",
+              "22",
+              "14",
+              "16"
+            ],
+            "name": "project_46",
+            "profit": "296",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "28",
+              "45",
+              "14",
+              "20",
+              "22"
+            ],
+            "name": "project_47",
+            "profit": "620",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "13",
+              "13",
+              "0",
+              "12",
+              "30"
+            ],
+            "name": "project_48",
+            "profit": "418",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "2",
+              "2",
+              "1",
+              "0",
+              "4"
+            ],
+            "name": "project_49",
+            "profit": "47",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "4",
+              "2",
+              "2",
+              "1",
+              "0"
+            ],
+            "name": "project_50",
+            "profit": "81",
+            "upper": "1"
+          }
+        ]
+      },
+      "summary": {
+        "compiled_candidates": "0",
+        "compiled_edges": "350",
+        "compiled_states": "351",
+        "count": "702508860122761",
+        "execution_verified": false,
+        "kind": "allocation",
+        "memo_entries": "0",
+        "native_provenance": {
+          "binary_sha256": "a54738d0dc158bc9bc0ac96247428b00fe9e212a4ad4db782272e13747b37ec7",
+          "compiler": "GCC 13",
+          "platform": "linux-x64",
+          "scope": "Shipped native execution; source-bound hashes, not a formal proof of the native algorithm",
+          "source_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f"
+        },
+        "optimization": {
+          "maximizer_count": "1",
+          "maximum": "16537",
+          "point": [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        "ordering": "lexicographic original variable values",
+        "population_limits": {
+          "cache_states": "1000000",
+          "memory_bytes": "134217728",
+          "partition_nodes": "8192",
+          "search_visits": "10000000",
+          "setup_cells": "10000000",
+          "total_work_per_query": "2000000000"
+        },
+        "reduced_states": null,
+        "reused_entries": "0",
+        "schema": "pp-completion-planner/1",
+        "source_states": null,
+        "strategy": "population",
+        "symmetry_groups": null
+      }
+    },
+    "root": {
+      "action": "build",
+      "input_sha256": "4f139a54f8db83a93603f94f99c487eb58ef3b824ace1982159f4979de81a3b6",
+      "selection": {
+        "point": [
+          "0",
+          "0",
+          "0",
+          "1",
+          "0",
+          "1",
+          "0",
+          "1",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1",
+          "0",
+          "1",
+          "1",
+          "0",
+          "0",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "0",
+          "1",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "0",
+          "0",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        "profit": "16537",
+        "projects": [
+          "project_4",
+          "project_6",
+          "project_8",
+          "project_9",
+          "project_11",
+          "project_12",
+          "project_13",
+          "project_15",
+          "project_16",
+          "project_17",
+          "project_19",
+          "project_20",
+          "project_23",
+          "project_25",
+          "project_26",
+          "project_27",
+          "project_28",
+          "project_29",
+          "project_31",
+          "project_32",
+          "project_34",
+          "project_35",
+          "project_36",
+          "project_37",
+          "project_38",
+          "project_39",
+          "project_40",
+          "project_41",
+          "project_42",
+          "project_43",
+          "project_44",
+          "project_47",
+          "project_48",
+          "project_49",
+          "project_50"
+        ],
+        "resource_use": [
+          "800",
+          "639",
+          "549",
+          "472",
+          "650"
+        ]
+      },
+      "specification": {
+        "kind": "allocation",
+        "native_visit_limit": "10000000",
+        "population_cache_states": "1000000",
+        "population_memory_limit": "134217728",
+        "population_partition_limit": "8192",
+        "population_work_limit": "2000000000",
+        "resources": [
+          {
+            "max": "800",
+            "name": "resource_1"
+          },
+          {
+            "max": "650",
+            "name": "resource_2"
+          },
+          {
+            "max": "550",
+            "name": "resource_3"
+          },
+          {
+            "max": "550",
+            "name": "resource_4"
+          },
+          {
+            "max": "650",
+            "name": "resource_5"
+          }
+        ],
+        "strategy": "population",
+        "variables": [
+          {
+            "costs": [
+              "40",
+              "16",
+              "38",
+              "8",
+              "38"
+            ],
+            "name": "project_1",
+            "profit": "560",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "91",
+              "92",
+              "39",
+              "71",
+              "52"
+            ],
+            "name": "project_2",
+            "profit": "1125",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "41",
+              "32",
+              "30",
+              "30"
+            ],
+            "name": "project_3",
+            "profit": "300",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "30",
+              "16",
+              "71",
+              "60",
+              "42"
+            ],
+            "name": "project_4",
+            "profit": "620",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "160",
+              "150",
+              "80",
+              "200",
+              "170"
+            ],
+            "name": "project_5",
+            "profit": "2100",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "20",
+              "23",
+              "26",
+              "18",
+              "9"
+            ],
+            "name": "project_6",
+            "profit": "431",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "3",
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "name": "project_7",
+            "profit": "68",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "12",
+              "18",
+              "40",
+              "30",
+              "20"
+            ],
+            "name": "project_8",
+            "profit": "328",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "3",
+              "6",
+              "8",
+              "4",
+              "0"
+            ],
+            "name": "project_9",
+            "profit": "47",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "18",
+              "0",
+              "12",
+              "8",
+              "3"
+            ],
+            "name": "project_10",
+            "profit": "122",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "9",
+              "12",
+              "30",
+              "31",
+              "21"
+            ],
+            "name": "project_11",
+            "profit": "322",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "25",
+              "8",
+              "15",
+              "6",
+              "4"
+            ],
+            "name": "project_12",
+            "profit": "196",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "2",
+              "0",
+              "3",
+              "1"
+            ],
+            "name": "project_13",
+            "profit": "41",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "1",
+              "1",
+              "0",
+              "2"
+            ],
+            "name": "project_14",
+            "profit": "25",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "0",
+              "23",
+              "18",
+              "14"
+            ],
+            "name": "project_15",
+            "profit": "425",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "280",
+              "200",
+              "100",
+              "60",
+              "310"
+            ],
+            "name": "project_16",
+            "profit": "4260",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "20",
+              "0",
+              "21",
+              "8"
+            ],
+            "name": "project_17",
+            "profit": "416",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "6",
+              "20",
+              "4",
+              "4"
+            ],
+            "name": "project_18",
+            "profit": "115",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "2",
+              "3",
+              "0",
+              "6"
+            ],
+            "name": "project_19",
+            "profit": "82",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "1",
+              "0",
+              "2",
+              "1"
+            ],
+            "name": "project_20",
+            "profit": "22",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "49",
+              "70",
+              "40",
+              "32",
+              "18"
+            ],
+            "name": "project_21",
+            "profit": "631",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "9",
+              "6",
+              "15",
+              "15"
+            ],
+            "name": "project_22",
+            "profit": "132",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "21",
+              "22",
+              "8",
+              "31",
+              "38"
+            ],
+            "name": "project_23",
+            "profit": "420",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "6",
+              "4",
+              "0",
+              "2",
+              "10"
+            ],
+            "name": "project_24",
+            "profit": "86",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "1",
+              "6",
+              "2",
+              "4"
+            ],
+            "name": "project_25",
+            "profit": "42",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "5",
+              "5",
+              "4",
+              "7",
+              "8"
+            ],
+            "name": "project_26",
+            "profit": "103",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "10",
+              "22",
+              "8",
+              "6"
+            ],
+            "name": "project_27",
+            "profit": "215",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "6",
+              "4",
+              "2",
+              "0"
+            ],
+            "name": "project_28",
+            "profit": "81",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "2",
+              "4",
+              "6",
+              "8",
+              "0"
+            ],
+            "name": "project_29",
+            "profit": "91",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "0",
+              "1",
+              "0",
+              "3"
+            ],
+            "name": "project_30",
+            "profit": "26",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "0",
+              "4",
+              "5",
+              "2",
+              "0"
+            ],
+            "name": "project_31",
+            "profit": "49",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "12",
+              "14",
+              "8",
+              "10"
+            ],
+            "name": "project_32",
+            "profit": "420",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "42",
+              "8",
+              "8",
+              "6",
+              "6"
+            ],
+            "name": "project_33",
+            "profit": "316",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "6",
+              "4",
+              "2",
+              "7",
+              "1"
+            ],
+            "name": "project_34",
+            "profit": "72",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "4",
+              "3",
+              "8",
+              "1",
+              "3"
+            ],
+            "name": "project_35",
+            "profit": "71",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "name": "project_36",
+            "profit": "49",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "0",
+              "10",
+              "20",
+              "0",
+              "3"
+            ],
+            "name": "project_37",
+            "profit": "108",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "10",
+              "0",
+              "0",
+              "20",
+              "5"
+            ],
+            "name": "project_38",
+            "profit": "116",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "1",
+              "6",
+              "0",
+              "8",
+              "4"
+            ],
+            "name": "project_39",
+            "profit": "90",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "40",
+              "28",
+              "6",
+              "14",
+              "0"
+            ],
+            "name": "project_40",
+            "profit": "738",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "86",
+              "93",
+              "12",
+              "20",
+              "30"
+            ],
+            "name": "project_41",
+            "profit": "1811",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "11",
+              "9",
+              "6",
+              "2",
+              "12"
+            ],
+            "name": "project_42",
+            "profit": "430",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "120",
+              "30",
+              "80",
+              "40",
+              "16"
+            ],
+            "name": "project_43",
+            "profit": "3060",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "8",
+              "22",
+              "13",
+              "6",
+              "18"
+            ],
+            "name": "project_44",
+            "profit": "215",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "3",
+              "0",
+              "6",
+              "1",
+              "3"
+            ],
+            "name": "project_45",
+            "profit": "58",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "32",
+              "36",
+              "22",
+              "14",
+              "16"
+            ],
+            "name": "project_46",
+            "profit": "296",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "28",
+              "45",
+              "14",
+              "20",
+              "22"
+            ],
+            "name": "project_47",
+            "profit": "620",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "13",
+              "13",
+              "0",
+              "12",
+              "30"
+            ],
+            "name": "project_48",
+            "profit": "418",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "2",
+              "2",
+              "1",
+              "0",
+              "4"
+            ],
+            "name": "project_49",
+            "profit": "47",
+            "upper": "1"
+          },
+          {
+            "costs": [
+              "4",
+              "2",
+              "2",
+              "1",
+              "0"
+            ],
+            "name": "project_50",
+            "profit": "81",
+            "upper": "1"
+          }
+        ]
+      },
+      "summary": {
+        "compiled_candidates": "0",
+        "compiled_edges": "350",
+        "compiled_states": "351",
+        "count": "702508860122761",
+        "execution_verified": false,
+        "kind": "allocation",
+        "memo_entries": "0",
+        "native_provenance": {
+          "binary_sha256": "a54738d0dc158bc9bc0ac96247428b00fe9e212a4ad4db782272e13747b37ec7",
+          "compiler": "GCC 13",
+          "platform": "linux-x64",
+          "scope": "Shipped native execution; source-bound hashes, not a formal proof of the native algorithm",
+          "source_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f"
+        },
+        "optimization": {
+          "maximizer_count": "1",
+          "maximum": "16537",
+          "point": [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "0",
+            "0",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        "ordering": "lexicographic original variable values",
+        "population_limits": {
+          "cache_states": "1000000",
+          "memory_bytes": "134217728",
+          "partition_nodes": "8192",
+          "search_visits": "10000000",
+          "setup_cells": "10000000",
+          "total_work_per_query": "2000000000"
+        },
+        "reduced_states": null,
+        "reused_entries": "0",
+        "schema": "pp-completion-planner/1",
+        "source_states": null,
+        "strategy": "population",
+        "symmetry_groups": null
+      }
+    }
+  },
+  "schema": "pp-portfolio-geometry/1",
+  "scope": "Retained exact engine results; geometric projections do not certify feasibility or enumerate the full population."
+}

@@ -17,3 +17,7 @@ The Android instrumentation check is `gradle connectedDebugAndroidTest` with an 
 ## Guided 50-project portfolios
 
 Open **Project portfolios** to edit resource bounds, compute exact populations, inspect the best original-project selection, compare include/exclude decisions in original order, open a rank or sample a reproducible feasible choice. The real residual-polynomial engine runs locally. Initial construction and new queries may take minutes; elapsed time and work counters are shown, and every completed request/evidence packet is retained in Saved runs. All existing research workbenches remain available. See [the portfolio account](../../docs/PORTFOLIO_EXPLORER_MONOGRAPH.md) and `receipts/planning/explorer/release.json` for executable release status.
+
+## Geometric Observatory
+
+Project portfolios now includes a rotatable three-resource prism, a five-resource footprint, an exact conditional Decision lens, and a complete project-resource matrix. Native views follow completed engine results; the browser/phone companion labels its retained computations explicitly. See [the geometry account](../../docs/PORTFOLIO_GEOMETRY_MONOGRAPH.md). Android must receive rebuilt executable/UI assets before this becomes part of an installed APK.

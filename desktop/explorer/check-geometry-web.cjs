@@ -1,0 +1,14 @@
+const {chromium}=require('@playwright/test'),{spawn}=require('node:child_process'),path=require('node:path'),assert=require('node:assert/strict'),fs=require('node:fs');
+(async()=>{
+ const root=path.resolve(__dirname,'../..'),server=spawn('python3',['-u','-c',"from http.server import ThreadingHTTPServer,SimpleHTTPRequestHandler; s=ThreadingHTTPServer(('127.0.0.1',0),SimpleHTTPRequestHandler); print(s.server_port,flush=True); s.serve_forever()"],{cwd:path.join(root,'web/portfolio-geometry'),stdio:['ignore','pipe','ignore']});
+ const port=await new Promise(resolve=>server.stdout.on('data',d=>resolve(Number(String(d).trim()))));const browser=await chromium.launch({headless:true,executablePath:process.env.PP_BROWSER,args:['--no-sandbox','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});let checks=0,errors=[];
+ try{
+  const page=await browser.newPage({viewport:{width:1400,height:1000}});page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:'+port+'/');await page.locator('#geometry-observatory canvas').waitFor();await page.waitForFunction(()=>document.querySelector('[data-geo-details]').textContent.includes('16537'));checks++;
+  await page.screenshot({path:'/workspace/scratch/8be0bf0d7243/geometry-prism.png',fullPage:false});
+  await page.selectOption('#geometry-case','conditional');await page.waitForFunction(()=>document.querySelector('[data-geo-branches]').textContent.includes('project_27'));assert.ok((await page.locator('[data-geo-branches]').textContent()).includes('8,388,608'));checks++;
+  await page.selectOption('[data-geo-project]','15');assert.ok((await page.locator('[data-geo-details]').textContent()).includes('280'));checks++;
+  await page.setViewportSize({width:390,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));checks++;await page.screenshot({path:'/workspace/scratch/8be0bf0d7243/geometry-web-phone.png',fullPage:false});
+  await page.selectOption('#geometry-case','root');await page.waitForFunction(()=>document.querySelector('[data-geo-details]').textContent.includes('16537'));checks++;
+  assert.deepEqual(errors,[]);checks++;fs.writeFileSync(path.join(__dirname,'GEOMETRY_WEB_CHECKS.json'),JSON.stringify({checks,errors,scope:'Retained exact engine data in browser companion; no new 50-project browser counting computation'},null,2));console.log(JSON.stringify({checks,errors}));
+ }finally{await browser.close();server.kill();}
+})().catch(e=>{console.error(e);process.exit(1)});
