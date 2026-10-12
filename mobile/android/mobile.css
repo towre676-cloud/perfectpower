@@ -1,0 +1,26 @@
+/* Phone layout preserves every desktop workspace. */
+:root{font-family:system-ui,-apple-system,sans-serif}button,input,select{min-height:44px}input,select,textarea{font-size:16px}html{scroll-padding-top:76px}body{overscroll-behavior-y:contain}#mobile-menu{display:none}canvas{touch-action:none}
+@media(max-width:650px){
+ #sidebar{inset:auto 0 0;width:100%;height:79px;padding:5px 8px 7px;background:var(--nav);border-top:1px solid #ffffff20;z-index:8;box-shadow:0 -5px 25px #14223518}
+ #sidebar>.brand,#sidebar>.navlabel,.sidebar-bottom{display:none}
+ #nav{display:flex;overflow-x:auto;gap:4px;scrollbar-width:none;height:67px}
+ #nav button{flex:0 0 76px;padding:7px 4px;display:flex;flex-direction:column;gap:5px;justify-content:center;border-radius:10px}
+ #nav button span{display:block;font-size:10px;white-space:nowrap}#nav svg{width:20px;height:20px}
+ #shell{margin:0;min-height:100dvh;padding-bottom:79px}
+ header{position:sticky;top:0;height:64px;padding:0 18px;z-index:6;gap:10px}
+ .crumb{gap:7px}.crumb>span{display:none}.crumb>svg{display:none}.crumb strong{font-size:15px;font-weight:600}
+ .header-right{gap:9px}.search-button{padding:9px;min-width:44px;font-size:0}.header-right kbd{display:none}
+ #mobile-menu{display:inline-flex;min-width:44px;padding:8px}#mobile-menu svg{width:20px}
+ main{padding:23px 16px 28px}h1{font-size:28px;letter-spacing:-.7px}.page-heading{align-items:flex-start;gap:14px;flex-direction:column;margin-bottom:20px}.page-heading p{font-size:13px;line-height:1.7}
+ .hero{height:auto;display:flex;flex-direction:column;border-radius:17px;margin-bottom:18px}.hero-copy{padding:24px;width:100%;height:auto}.hero h1{font-size:30px;max-width:330px;line-height:1.13}.hero p{max-width:330px;font-size:13px;line-height:1.6}.hero #hero-scene{position:relative;inset:auto;width:100%;height:270px;flex:none}.hero-caption{right:18px;bottom:15px;font-size:9px}.hero .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.hero button{font-size:11px;padding:9px 8px}
+ .stats{gap:10px}.stat{padding:17px 14px}.stat .number{font-size:26px}.stat .label{font-size:11px}.cards{grid-template-columns:1fr;gap:12px}.card{padding:22px}.card p{font-size:13px}.section-heading{align-items:flex-start;gap:8px;flex-wrap:wrap}h2{font-size:19px}
+ .split,.command-layout{grid-template-columns:minmax(0,1fr)}.scene{min-height:330px;height:350px}.panel{padding:19px}.panel h2{margin-bottom:15px}
+ .command-list{height:172px;min-height:0;border:1px solid var(--line);border-radius:12px;padding:6px;background:var(--paper)}.command-list button{min-height:44px}
+ .fields{grid-template-columns:1fr}.command-actions,.actions{flex-wrap:wrap;gap:10px}.command-actions .hint{width:100%}.toolbar input,.toolbar select{max-width:100%;width:100%}.toolbar{gap:9px}
+ .file-row{grid-template-columns:22px minmax(0,1fr) 52px;padding:14px 12px;gap:9px}.file-row .size{display:none}.file-row .file-title{font-size:13px}.file-row .file-path{font-size:10px}.file-header{flex-direction:column}.file-header h1{font-size:25px;overflow-wrap:anywhere}
+ .visual-frame{height:72dvh;min-height:420px}.app-grid{grid-template-columns:1fr}.article{font-size:15px;line-height:1.8}.article h1{font-size:26px}.article pre,.source{font-size:12px;padding:15px;white-space:pre;overflow-wrap:normal;max-width:100%}
+ .run-head{align-items:flex-start;flex-wrap:wrap}.run-title{overflow-wrap:anywhere}.run-card{padding:16px}.run-card pre{font-size:12px}.json-node{font-size:12px;padding-left:9px}
+ .settings-row{align-items:flex-start;gap:12px;flex-direction:column}.settings-row p{overflow-wrap:anywhere}.settings-row button{min-width:130px}
+ dialog{max-width:calc(100vw - 24px);max-height:82dvh;width:100%;border-radius:15px}#toast{bottom:94px;left:16px;right:16px;transform:none;font-size:13px;padding:14px 18px}footer{padding:15px 18px;font-size:10px}
+ #mobile-navigation .mobile-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:18px;gap:10px}#mobile-navigation button{justify-content:flex-start;font-size:13px;min-height:58px}#mobile-navigation .dialog-head{justify-content:space-between}
+}

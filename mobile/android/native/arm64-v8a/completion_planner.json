@@ -1,0 +1,15 @@
+{
+  "source_sha256": "438d5f88a644cbce32beddd472be74a773c056f2fa47216704d747a74c4b234f",
+  "binary_sha256": "4a19ba677bee3bcc028b6738c8da257b4ecdb909f896fe02104e3234c7f13ba2",
+  "compiler": "Android NDK r27d Clang 18",
+  "flags": [
+    "-std=c++17",
+    "-O3",
+    "-fPIC",
+    "-shared",
+    "-static-libstdc++",
+    "-Wl,-z,max-page-size=16384"
+  ],
+  "abi": "arm64-v8a",
+  "scope": "Native Android implementation; algorithm is not kernel-proved."
+}

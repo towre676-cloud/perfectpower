@@ -1,0 +1,140 @@
+[
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "solve",
+        "--expr",
+        "(5*n - 7)**3 - 2",
+        "--domain",
+        "pos"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\n  \"galois\": {\n    \"orbits\": [\n      {\n        \"size\": 3,\n        \"factor\": [\n          -69,\n          147,\n          -105,\n          25\n        ],\n        \"group\": \"S3\",\n        \"discriminant\": \"-108/15625\",\n        \"multiplicity\": 1,\n        \"t\": 2\n      }\n    ],\n    \"unit_fields\": [],\n    \"explanation\": \"finite type: over the obstructed roots S = sum (1 - 1/t) = 3/2 > 1, so chi = d'(1 - S) < 0 and Siegel gives finitely many hits (Theorem G)\"\n  },\n  \"answer\": \"complete_list\",\n  \"certificate\": {\n    \"answer\": \"complete_list\",\n    \"lean_theorems\": [\n      \"PerfectPower.MordellMinus2.points\",\n      \"PerfectPower.Transport.complete_cube_sub_two\",\n      \"PerfectPower.Transport.affine_count\",\n ",
+    "stderr": ""
+  },
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "exact-solve",
+        "--coeff",
+        "[-199,1,1,1,1]"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\n  \"coefficients\": [\n    -199,\n    1,\n    1,\n    1,\n    1\n  ],\n  \"degree\": 2,\n  \"domain\": \"all integer x and y\",\n  \"execution_verified\": false,\n  \"status\": \"COMPLETE\",\n  \"points\": [\n    [\n      7,\n      -51\n    ],\n    [\n      7,\n      51\n    ]\n  ],\n  \"proof\": {\n    \"kind\": \"affine_power\",\n    \"reduction\": {\n      \"a\": 1,\n      \"b\": 0,\n      \"power\": 1,\n      \"witness_scale\": 1,\n      \"outer_coefficients\": [\n        -199,\n        1,\n        1,\n        1,\n        1\n      ]\n    },\n    \"leaf\": {\n      \"coefficients\": [\n        -199,\n        1,\n        1,\n        1,\n        1\n      ],\n      \"degree\": 2,\n      \"cover\": {\n        \"coefficients\": [\n          -199,\n          1,\n          1,\n        ",
+    "stderr": "<frozen runpy>:128: RuntimeWarning: 'perfectpower.__main__' found in sys.modules after import of package 'perfectpower', but prior to execution of 'perfectpower.__main__'; this may result in unpredictable behaviour\n"
+  },
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "plan",
+        "examples/planning/petersen_6.json"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\n  \"schema\": \"pp-planning-request/1\",\n  \"summary\": {\n    \"schema\": \"pp-completion-planner/1\",\n    \"kind\": \"allocation\",\n    \"strategy\": \"gray\",\n    \"count\": 28,\n    \"optimization\": {\n      \"maximum\": \"3800\",\n      \"maximizer_count\": 1,\n      \"point\": [\n        0,\n        1,\n        1,\n        0,\n        0,\n        1\n      ]\n    },\n    \"compiled_states\": 0,\n    \"compiled_edges\": 0,\n    \"memo_entries\": 0,\n    \"source_states\": null,\n    \"compiled_candidates\": 64,\n    \"reused_entries\": 0,\n    \"reduced_states\": null,\n    \"ordering\": \"lexicographic original variable values\",\n    \"execution_verified\": false,\n    \"symmetry_groups\": null,\n    \"population_limits\": null,\n    \"native_provenance\": null\n",
+    "stderr": ""
+  },
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "graph",
+        "flow",
+        "examples/graph_methods/flow.json"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\n  \"cut_capacity\": 5,\n  \"flow\": [\n    [\n      0,\n      3,\n      2,\n      0\n    ],\n    [\n      0,\n      0,\n      1,\n      2\n    ],\n    [\n      0,\n      0,\n      0,\n      3\n    ],\n    [\n      0,\n      0,\n      0,\n      0\n    ]\n  ],\n  \"schema\": \"pp-integral-flow-cut/1\",\n  \"source_side\": [\n    0\n  ],\n  \"value\": 5\n}\n",
+    "stderr": ""
+  },
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "geometry-foundations",
+        "triangulate",
+        "examples/belyaev_geometry/triangulate.json"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\n  \"area\": \"12\",\n  \"complete\": true,\n  \"kernel_checked\": false,\n  \"normalized_vertices\": [\n    [\n      \"0\",\n      \"0\"\n    ],\n    [\n      \"4\",\n      \"0\"\n    ],\n    [\n      \"4\",\n      \"4\"\n    ],\n    [\n      \"2\",\n      \"2\"\n    ],\n    [\n      \"0\",\n      \"4\"\n    ]\n  ],\n  \"removed_collinear_vertices\": [],\n  \"schema\": \"pp-rational-triangulation/1\",\n  \"scope\": \"ear decomposition of a simple rational polygon without holes; Python execution tested\",\n  \"triangle_areas\": [\n    \"4\",\n    \"4\",\n    \"4\"\n  ],\n  \"triangles\": [\n    [\n      [\n        \"4\",\n        \"0\"\n      ],\n      [\n        \"4\",\n        \"4\"\n      ],\n      [\n        \"2\",\n        \"2\"\n      ]\n    ],\n    [\n      [\n        \"0\",\n        \"0\"\n      ],",
+    "stderr": ""
+  },
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "euclid",
+        "pell",
+        "examples/euclid_methods/pell.json"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\n  \"continued_fraction\": {\n    \"D\": 61,\n    \"a0\": 7,\n    \"period\": [\n      1,\n      4,\n      3,\n      1,\n      2,\n      2,\n      1,\n      3,\n      4,\n      1,\n      14\n    ],\n    \"periodic_replay_checked\": true,\n    \"repeat_state\": [\n      7,\n      12,\n      1\n    ],\n    \"schema\": \"pp-sqrt-cf/1\",\n    \"states\": [\n      [\n        7,\n        12,\n        1\n      ],\n      [\n        5,\n        3,\n        4\n      ],\n      [\n        7,\n        4,\n        3\n      ],\n      [\n        5,\n        9,\n        1\n      ],\n      [\n        4,\n        5,\n        2\n      ],\n      [\n        6,\n        5,\n        2\n      ],\n      [\n        4,\n        9,\n        1\n      ],\n      [\n        5,\n        4,\n        3\n ",
+    "stderr": ""
+  },
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "arithmetic-series",
+        "compile",
+        "examples/arithmetic_series/pell.json"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\n  \"schema\": \"perfectpower.pell-gf/1\",\n  \"D\": 2,\n  \"unit\": [\n    3,\n    2\n  ],\n  \"x\": {\n    \"schema\": \"exact.rational-gf/1\",\n    \"numerator\": [\n      \"1\",\n      \"-3\"\n    ],\n    \"denominator\": [\n      \"1\",\n      \"-6\",\n      \"1\"\n    ],\n    \"dimension\": 2,\n    \"A\": [\n      [\n        \"0\",\n        \"1\"\n      ],\n      [\n        \"-1\",\n        \"6\"\n      ]\n    ],\n    \"initial\": [\n      \"1\",\n      \"3\"\n    ],\n    \"C\": [\n      \"1\",\n      \"0\"\n    ],\n    \"hankel_determinant\": \"8\",\n    \"indexing\": \"a_n = C A^n initial, n >= 0; no input feedthrough\"\n  },\n  \"y\": {\n    \"schema\": \"exact.rational-gf/1\",\n    \"numerator\": [\n      \"0\",\n      \"2\"\n    ],\n    \"denominator\": [\n      \"1\",\n      \"-6\",\n      \"1\"\n    ],\n ",
+    "stderr": ""
+  },
+  {
+    "request": {
+      "kind": "command",
+      "args": [
+        "model-count",
+        "examples/desktop_explorer/starter.cnf",
+        "--timeout",
+        "10"
+      ],
+      "timeout": 20
+    },
+    "response": {
+      "exit_code": 0,
+      "error": null
+    },
+    "stdout": "{\"status\": \"EXACT\", \"count\": \"4\", \"nodes\": 1, \"cache_hits\": 0, \"component_splits\": 0, \"affine_solves\": 0, \"elimination_solves\": 1, \"equivalence_variables\": 0, \"gate_variables\": 0, \"extended_plans\": 0, \"cache_bytes\": 153}\n",
+    "stderr": ""
+  }
+]
