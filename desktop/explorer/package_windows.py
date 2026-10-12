@@ -91,7 +91,7 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE old,PWSTR unused,int show){
 }
 ''',encoding='utf8')
     subprocess.run([str(compiler),'-municode','-mwindows','-O2',str(launch_source),str(resource),'-o',str(stage/'PerfectPower-Explorer.exe'),'-static-libgcc'],check=True)
-    manifest={p.relative_to(stage).as_posix():{'bytes':p.stat().st_size,'sha256':sha(p)} for p in stage.rglob('*') if p.is_file()}
+    manifest={p.relative_to(stage).as_posix():{'bytes':p.stat().st_size,'sha256':sha(p)} for p in stage.rglob('*') if p.is_file() and p!=stage/'PACKAGE_MANIFEST.json'}
     (stage/'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest,indent=2))
     archive=Path(args.output)/'PerfectPower-Explorer-Complete.zip'
     with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
