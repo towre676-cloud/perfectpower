@@ -1,0 +1,10 @@
+/* Finite integer sum-product elimination, adapted from PerfectPower graph_counting.py.
+ * Exact arithmetic: every table entry is a nonnegative BigInt; probabilities are ratios.
+ * This browser implementation is tested against the retained Python source, not Lean-proved.
+ */
+(function(root){'use strict';
+function each(domains,scope,visit){const a=[];function step(i){if(i===scope.length){visit(a);return}for(const x of domains[scope[i]]){a[i]=x;step(i+1)}}step(0)}
+function countFactors(spec){const domains=spec.domains;if(!Array.isArray(domains)||domains.some(d=>!d.length||new Set(d).size!==d.length))throw Error('Nonempty distinct domains required');let fs=spec.factors.map(f=>{let n=f.scope.reduce((p,i)=>p*domains[i].length,1);if(n!==f.values.length||new Set(f.scope).size!==f.scope.length)throw Error('Invalid factor');const t=new Map;let k=0;each(domains,f.scope,a=>{const w=BigInt(f.values[k++]);if(w<0n)throw Error('Negative weight');t.set(a.join(','),w)});return {scope:f.scope,table:t}});for(let v=0;v<domains.length;v++){const selected=fs.filter(f=>f.scope.includes(v));fs=fs.filter(f=>!f.scope.includes(v));const scope=[...new Set([v,...selected.flatMap(f=>f.scope)])].sort((a,b)=>a-b);if(scope.reduce((p,i)=>p*domains[i].length,1)>1000000)throw Error('Work budget exceeded');const boundary=scope.filter(i=>i!==v),out=new Map,loc=selected.map(f=>f.scope.map(i=>scope.indexOf(i))),ix=boundary.map(i=>scope.indexOf(i));each(domains,scope,a=>{let w=1n;selected.forEach((f,i)=>w*=f.table.get(loc[i].map(j=>a[j]).join(',')));const k=ix.map(j=>a[j]).join(',');out.set(k,(out.get(k)||0n)+w)});fs.push({scope:boundary,table:out})}return fs.reduce((p,f)=>p*f.table.get(''),1n)}
+function countMasks(weights,masks){const d=weights.map((_,i)=>i);if(!d.length)return 0n;return countFactors({domains:[d],factors:[{scope:[0],values:weights},...masks.map(values=>({scope:[0],values}))]})}
+const api={countFactors,countMasks};root.PerfectPowerCounter=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);

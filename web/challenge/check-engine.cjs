@@ -1,0 +1,7 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');require('./counter.js');const E=require('./engine.js'),spec=JSON.parse(fs.readFileSync(__dirname+'/projects.json'));let checks=0;
+for(const seed of ['2026-10-12','2026-10-13','classroom','zero','999'])for(const mode of ['score','keep','lean']){
+ const p=E.problem(spec,seed,mode),s=E.solve(p);let n=0n,best=-1n,ties=0;
+ // Independent recursive subset walk; does not call evaluate or use mask factors.
+ function walk(j,score,use,included){if(j===12){if(use.every((x,k)=>x<=p.resources[k].max)&&(p.required===null||included[0])){n++;if(score>best){best=score;ties=1;}else if(score===best)ties++;}return;}walk(j+1,score,use,[...included,false]);walk(j+1,score+BigInt(p.projects[j].profit),use.map((v,k)=>v+p.projects[j].costs[k]),[...included,true]);}walk(0,0n,[0,0,0,0,0],[]);assert.equal(s.count,n.toString());assert.equal(BigInt(s.best),best);assert.equal(s.bestMasks.length,ties);assert.equal(E.evaluate(p,1).score,Number(p.projects[0].profit));assert.equal(E.evaluate(p,4095).score,p.projects.reduce((a,v)=>a+Number(v.profit),0));assert.deepEqual(p,E.problem(spec,seed,mode));for(const m of s.bestMasks){assert.equal(BigInt(E.evaluate(p,m).score),best);assert.ok(E.evaluate(p,m).valid);}checks++;
+}
+console.log(JSON.stringify({checks,independent:'recursive subset walk',scopes:'five seeds × three modes; exact populations, optima, ties and deterministic inputs'}));

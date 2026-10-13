@@ -26,3 +26,6 @@ Project portfolios now includes a rotatable three-resource prism, a five-resourc
 ### First visit guide
 
 The portfolio view now puts resource budgets and Calculate possibilities first. The shared geometric view introduces projects, whole portfolios, and include/exclude decisions through three numbered steps with contextual explanations. Camera settings, the five-resource radar, the complete cost matrix, rank sampling, and provenance remain available in expandable sections. Native calculations use the existing exact engine; the browser companion displays clearly marked previously calculated cases. Advanced research workbenches and saved-run storage are preserved. Browser checks cover the guide before and after calculation, project selection, conditional results, advanced camera controls, and a 390-pixel viewport. No physical Windows or Android device execution is claimed.
+
+
+The browser challenge at https://perfectpower-explorer-download.towre676.chatgpt.site/challenge/ provides a daily twelve-project puzzle with exact browser counting, hints, optimal reveals and reproducible replay links. This uses derived puzzle budgets; it is separate from the original fifty-project calculation and does not upgrade the installed native engine or APK.
