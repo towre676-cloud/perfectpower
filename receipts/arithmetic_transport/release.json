@@ -13,8 +13,8 @@
     "primary_compute_seconds": 620.0315378390078
   },
   "exact_population_32": {
-    "count": 493058134611291081,
-    "unrestricted_count": 1832624140942590534
+    "count": "493058134611291081",
+    "unrestricted_count": "1832624140942590534"
   },
   "constants": [
     {
@@ -73,21 +73,21 @@
   "query_benchmarks": [
     {
       "exponent": 32,
-      "count": 493058134611291081,
+      "count": "493058134611291081",
       "construction_seconds": 0.00013690699415747076,
       "rank_roundtrips": 1000,
       "roundtrip_seconds": 0.016025135992094874
     },
     {
       "exponent": 128,
-      "count": 1522263066956554173084176223775692856796140869353604017957166289250720056809,
+      "count": "1522263066956554173084176223775692856796140869353604017957166289250720056809",
       "construction_seconds": 0.0018636070017237216,
       "rank_roundtrips": 1000,
       "roundtrip_seconds": 0.06361096500768326
     },
     {
       "exponent": 256,
-      "count": 124290805104085369325404810478415217934872137464313252816086935901697383562899542158912767981469606097813558768278582179270670827326666235143102996850983,
+      "count": "124290805104085369325404810478415217934872137464313252816086935901697383562899542158912767981469606097813558768278582179270670827326666235143102996850983",
       "construction_seconds": 0.00977668999985326,
       "rank_roundtrips": 1000,
       "roundtrip_seconds": 0.13689332899230067
@@ -98,5 +98,6 @@
     "retained_fraction": 0.2622081078500959,
     "seconds": 2.485639873004402
   },
-  "scope": "Published exact finite arithmetic transport; analytic asymptotics remain outside Lean; installed executables require explicit upgrade."
+  "scope": "Published exact finite arithmetic transport; analytic asymptotics remain outside Lean; installed executables require explicit upgrade.",
+  "integer_encoding": "Complete population counts are decimal strings to preserve exact values in JavaScript consumers."
 }
