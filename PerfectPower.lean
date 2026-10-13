@@ -494,3 +494,4 @@ import PerfectPower.MichorGeometry
 
 import PerfectPower.PlanningDiagram
 import PerfectPower.PetersenPlanning
+import PerfectPower.ArithmeticHeightPauli

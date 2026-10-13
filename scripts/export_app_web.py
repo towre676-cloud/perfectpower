@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def export():
     assets={}
-    for folder in ('app-hub','simple-explorer','shared','portfolio-geometry','challenge'):
+    for folder in ('app-hub','simple-explorer','shared','portfolio-geometry','challenge','arithmetic-transport'):
         for p in sorted((ROOT/'web'/folder).glob('*')):
             if p.is_file() and p.suffix in ('.html','.css','.js','.mjs','.json','.txt'):
                 assets[folder+'/'+p.name]=p.read_text()

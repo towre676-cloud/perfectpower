@@ -1,0 +1,191 @@
+{
+  "receipt": {
+    "wall_seconds": 620.0315378390078,
+    "cpu_seconds": 619.862266287,
+    "grid_cases": 270,
+    "random_control_cases": 9188,
+    "tests": {
+      "checks": 90,
+      "max_relative_fourth_moment_error": 3.334091197562109e-16
+    },
+    "seed": 20261013,
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "constants": [
+    {
+      "p": 2,
+      "q": 3,
+      "terms": 2400,
+      "value": "0.2621539913315635206694911253040403969030852245307559562",
+      "first_correction": "0.221665661945152308395864120950501357585723475",
+      "truncation_lower": "0.2621539913315635206694911252990278056595218004968237549",
+      "truncation_upper": "0.2621539913315635206694911253040403969030852245307559562",
+      "log_series_tail_bound": "1.91207893426e-29",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "terms": 1200,
+      "value": "0.3924822340226121883564256268275541324891360060062047783",
+      "first_correction": "0.163936679303461042685822380305672800350584647",
+      "truncation_lower": "0.3924822340226121883564256268275541324891360045697625445",
+      "truncation_upper": "0.3924822340226121883564256268275541324891360060062047783",
+      "log_series_tail_bound": "3.6598910963e-45",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "terms": 4000,
+      "value": "0.221869256782813619216897901660568776344494201483282658",
+      "first_correction": "0.209988615888283449722777592841144341230675069",
+      "truncation_lower": "0.2218692567828136192168979016605685280080532339883912795",
+      "truncation_upper": "0.221869256782813619216897901660568776344494201483282658",
+      "log_series_tail_bound": "1.11929180531e-33",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "terms": 6000,
+      "value": "0.1328034565784673615021785764918300086614084642455381801",
+      "first_correction": "0.308501411472787302234874286362575004628188934",
+      "truncation_lower": "0.1328034565784572314836589330574131621033398395283651604",
+      "truncation_upper": "0.1328034565784673615021785764918300086614084642455381801",
+      "log_series_tail_bound": "7.62782745316e-14",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    }
+  ],
+  "spectral_rows": 10988,
+  "max_pair_error": 4.476419235288631e-13,
+  "max_count_recovery_error": 1.7053025658242404e-13,
+  "max_boundary_recovery_error": 4.547473508864641e-12,
+  "holdout_table": [
+    [
+      32,
+      "0.269044875922",
+      "0.269081043267",
+      "6.891e-03",
+      "3.617e-05"
+    ],
+    [
+      128,
+      "0.263885092453",
+      "0.263885754316",
+      "1.731e-03",
+      "6.619e-07"
+    ],
+    [
+      512,
+      "0.262586868891",
+      "0.262586932078",
+      "4.329e-04",
+      "6.319e-08"
+    ],
+    [
+      2048,
+      "0.262262222265",
+      "0.262262226518",
+      "1.082e-04",
+      "4.253e-09"
+    ],
+    [
+      4096,
+      "0.262208107850",
+      "0.262208108925",
+      "5.412e-05",
+      "1.075e-09"
+    ]
+  ],
+  "constant_table": [
+    [
+      "2\u21923",
+      "0.262153991332",
+      "0.221665661945",
+      "0.262262222265",
+      "4.253e-09"
+    ],
+    [
+      "2\u21925",
+      "0.392482234023",
+      "0.163936679303",
+      "0.392562288183",
+      "6.954e-09"
+    ],
+    [
+      "3\u21925",
+      "0.221869256783",
+      "0.209988615888",
+      "0.221971771906",
+      "1.838e-08"
+    ],
+    [
+      "5\u21927",
+      "0.132803456578",
+      "0.308501411473",
+      "0.132954090587",
+      "1.446e-09"
+    ]
+  ],
+  "return_table": [
+    [
+      2,
+      "128",
+      "2",
+      "2",
+      "1024\u21924096"
+    ],
+    [
+      3,
+      "25",
+      "3",
+      "2",
+      "1\u21928"
+    ],
+    [
+      4,
+      "11",
+      "4",
+      "2",
+      "16\u219281"
+    ],
+    [
+      5,
+      "6",
+      "5",
+      "4",
+      "32\u21921"
+    ],
+    [
+      6,
+      "5",
+      "6",
+      "4",
+      "64\u21921"
+    ],
+    [
+      7,
+      "4",
+      "7",
+      "5",
+      "128\u21921"
+    ],
+    [
+      8,
+      "3",
+      "8",
+      "6",
+      "256\u21921"
+    ]
+  ]
+}

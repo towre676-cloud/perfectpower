@@ -50,6 +50,14 @@ def export(root=ROOT):
     verification=root/'receipts/planning/independent/verification.json'
     if verification.exists():
         payload['native_portfolio']['independent_confirmation']=json.loads(verification.read_text())
+    transport=root/'receipts/arithmetic_transport/release.json'
+    if transport.exists():
+        payload['arithmetic_transport']={'title':'Paths under an arithmetic height ceiling',
+            'workspace':'arithmetic-transport',
+            'url':'https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/',
+            'result':json.loads(transport.read_text()),
+            'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/ARITHMETIC_HEIGHT_PAULI_MONOGRAPH.md',
+            'native_engine_requires_upgrade':True}
     encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     source_parent = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     envelope = {'schema': 'pp-explorer-live/1', 'source_parent': source_parent,

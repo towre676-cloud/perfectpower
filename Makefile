@@ -656,6 +656,14 @@ blast-certification-kernel:
 	PYTHONPATH=python python python/generate_blast_source_certificates.py
 	python scripts/check_blast_certification.py --lean "$$(elan which lean)"
 
+.PHONY: arithmetic-transport-test arithmetic-transport-kernel
+arithmetic-transport-test:
+	PYTHONPATH=python python -m pytest -q python/tests/test_arithmetic_transport.py
+	node scripts/check_arithmetic_transport.cjs
+
+arithmetic-transport-kernel:
+	python scripts/check_arithmetic_transport_kernel.py
+
 .PHONY: blast-oxbench-test blast-oxbench-replay blast-oxbench-live
 blast-oxbench-test:
 	PYTHONPATH=python python -m unittest discover -s python/tests -p 'test_blast*.py'

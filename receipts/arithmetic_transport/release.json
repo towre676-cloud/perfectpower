@@ -1,0 +1,102 @@
+{
+  "schema": "pp-arithmetic-transport-release/1",
+  "kernel": {
+    "status": "passed",
+    "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+    "generic_theorems": 32,
+    "literal_theorems": 24,
+    "scope": "Generic finite coordinate walks, d-step root-edge support, complete distinct height-barrier word enumeration, actual integer height equivalence, shifted power preservation, Gaussian-integer Pauli charge identities, and 24 literal counts.",
+    "open": "Prime factorization embedding, weighted matrix-power multiplicities, real/complex operator analysis, Python DP refinement, survival limit, and asymptotic correction are outside these Lean proofs."
+  },
+  "retained_research": {
+    "spectra": 10988,
+    "primary_compute_seconds": 620.0315378390078
+  },
+  "exact_population_32": {
+    "count": 493058134611291081,
+    "unrestricted_count": 1832624140942590534
+  },
+  "constants": [
+    {
+      "p": 2,
+      "q": 3,
+      "terms": 2400,
+      "value": "0.2621539913315635206694911253040403969030852245307559562",
+      "first_correction": "0.221665661945152308395864120950501357585723475",
+      "truncation_lower": "0.2621539913315635206694911252990278056595218004968237549",
+      "truncation_upper": "0.2621539913315635206694911253040403969030852245307559562",
+      "log_series_tail_bound": "1.91207893426e-29",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "terms": 1200,
+      "value": "0.3924822340226121883564256268275541324891360060062047783",
+      "first_correction": "0.163936679303461042685822380305672800350584647",
+      "truncation_lower": "0.3924822340226121883564256268275541324891360045697625445",
+      "truncation_upper": "0.3924822340226121883564256268275541324891360060062047783",
+      "log_series_tail_bound": "3.6598910963e-45",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "terms": 4000,
+      "value": "0.221869256782813619216897901660568776344494201483282658",
+      "first_correction": "0.209988615888283449722777592841144341230675069",
+      "truncation_lower": "0.2218692567828136192168979016605685280080532339883912795",
+      "truncation_upper": "0.221869256782813619216897901660568776344494201483282658",
+      "log_series_tail_bound": "1.11929180531e-33",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "terms": 6000,
+      "value": "0.1328034565784673615021785764918300086614084642455381801",
+      "first_correction": "0.308501411472787302234874286362575004628188934",
+      "truncation_lower": "0.1328034565784572314836589330574131621033398395283651604",
+      "truncation_upper": "0.1328034565784673615021785764918300086614084642455381801",
+      "log_series_tail_bound": "7.62782745316e-14",
+      "precision_digits": 65,
+      "arithmetic_thresholds": "exact integer power comparisons",
+      "caveat": "Chernoff bound controls truncation; mpmath rounding is not interval-certified"
+    }
+  ],
+  "query_benchmarks": [
+    {
+      "exponent": 32,
+      "count": 493058134611291081,
+      "construction_seconds": 0.00013690699415747076,
+      "rank_roundtrips": 1000,
+      "roundtrip_seconds": 0.016025135992094874
+    },
+    {
+      "exponent": 128,
+      "count": 1522263066956554173084176223775692856796140869353604017957166289250720056809,
+      "construction_seconds": 0.0018636070017237216,
+      "rank_roundtrips": 1000,
+      "roundtrip_seconds": 0.06361096500768326
+    },
+    {
+      "exponent": 256,
+      "count": 124290805104085369325404810478415217934872137464313252816086935901697383562899542158912767981469606097813558768278582179270670827326666235143102996850983,
+      "construction_seconds": 0.00977668999985326,
+      "rank_roundtrips": 1000,
+      "roundtrip_seconds": 0.13689332899230067
+    }
+  ],
+  "large_count": {
+    "exponent": 4096,
+    "retained_fraction": 0.2622081078500959,
+    "seconds": 2.485639873004402
+  },
+  "scope": "Published exact finite arithmetic transport; analytic asymptotics remain outside Lean; installed executables require explicit upgrade."
+}

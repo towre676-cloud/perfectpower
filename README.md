@@ -220,3 +220,7 @@ The independent OXBench evaluation retains all 395 structural-domain reference s
 ## Live Explorer research populations
 
 `python -m perfectpower research-count monomial examples/research_counting/monomial.json` computes exact degree counts and rank/select; the `crt` and `digits` operations provide modular populations and distinct digit sumsets. [Mathematics and live synchronization](docs/RESEARCH_COUNTING_LIVE_MONOGRAPH.md) explains the scope. The [live laboratory](https://perfectpower-explorer-download.towre676.chatgpt.site/research) and Android 1.1 read the current public data feed, retain an offline fallback, and display installed-engine and data identities separately. Regenerate it with `python scripts/export_explorer_live.py`.
+
+### Arithmetic height and transport
+
+The [height–Pauli extension](docs/ARITHMETIC_HEIGHT_PAULI_MONOGRAPH.md) adds exact height-barrier path populations, conditional counts, ranks, inverse ranks and uniform sampling, with 32 generic Lean theorems and 24 literal count proofs. Explore the [animated browser companion](https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/) or run `PYTHONPATH=python python -m perfectpower.arithmetic_transport --exponent 32`. Run `make arithmetic-transport-test` and `make arithmetic-transport-kernel`. The spectral experiment and derived asymptotic transport law retain their separate computational and analytic scopes.

@@ -1,0 +1,408 @@
+{
+  "schema": "pp-arithmetic-transport-kernel/1",
+  "status": "passed",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "generic_theorems": 32,
+  "literal_theorems": 24,
+  "seconds": 2.8204793900076766,
+  "axioms": {
+    "PerfectPower.ArithmeticHeightPauli.step_coordinate_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.walk_coordinate_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.short_graded_walk_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.distinct_graded_walk_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.scale_compose": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.saturated_walk_other_coordinates": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.d_step_graded_up": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.raise_step": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.raise_walk": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.scale_raise": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.root_edge_lifts": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.words_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.good_length": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.good_endpoint_height": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.good_true_count": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.good_false_count": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.good_mem_words": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.mem_words_good": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.enumeration_complete": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.cons_map_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.cons_maps_disjoint": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.words_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.complete_distinct_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.forbidden_endpoint_zero": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.height_barrier_equivalence": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.shifted_power_preserved": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.prime_chain_power_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.pauli_charge_symmetry": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.conjugate_involution": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.negate_involution": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.state_charge_square": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_3_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_3_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_3_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_3_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_3_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_3_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_5_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_5_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_5_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_5_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_5_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_2_5_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_3_5_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_3_5_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_3_5_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_3_5_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_3_5_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_3_5_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_5_7_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_5_7_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_5_7_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_5_7_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_5_7_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.Fixtures.ballot_5_7_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticHeightPauli.walk_append": []
+  },
+  "fixtures": [
+    {
+      "p": 2,
+      "q": 3,
+      "d": 1,
+      "count": 1,
+      "theorem": "ballot_2_3_1"
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "d": 2,
+      "count": 2,
+      "theorem": "ballot_2_3_2"
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "d": 3,
+      "count": 7,
+      "theorem": "ballot_2_3_3"
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "d": 4,
+      "count": 23,
+      "theorem": "ballot_2_3_4"
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "d": 5,
+      "count": 76,
+      "theorem": "ballot_2_3_5"
+    },
+    {
+      "p": 2,
+      "q": 3,
+      "d": 6,
+      "count": 278,
+      "theorem": "ballot_2_3_6"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "d": 1,
+      "count": 1,
+      "theorem": "ballot_2_5_1"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "d": 2,
+      "count": 3,
+      "theorem": "ballot_2_5_2"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "d": 3,
+      "count": 9,
+      "theorem": "ballot_2_5_3"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "d": 4,
+      "count": 31,
+      "theorem": "ballot_2_5_4"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "d": 5,
+      "count": 108,
+      "theorem": "ballot_2_5_5"
+    },
+    {
+      "p": 2,
+      "q": 5,
+      "d": 6,
+      "count": 391,
+      "theorem": "ballot_2_5_6"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "d": 1,
+      "count": 1,
+      "theorem": "ballot_3_5_1"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "d": 2,
+      "count": 2,
+      "theorem": "ballot_3_5_2"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "d": 3,
+      "count": 5,
+      "theorem": "ballot_3_5_3"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "d": 4,
+      "count": 19,
+      "theorem": "ballot_3_5_4"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "d": 5,
+      "count": 66,
+      "theorem": "ballot_3_5_5"
+    },
+    {
+      "p": 3,
+      "q": 5,
+      "d": 6,
+      "count": 227,
+      "theorem": "ballot_3_5_6"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "d": 1,
+      "count": 1,
+      "theorem": "ballot_5_7_1"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "d": 2,
+      "count": 2,
+      "theorem": "ballot_5_7_2"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "d": 3,
+      "count": 5,
+      "theorem": "ballot_5_7_3"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "d": 4,
+      "count": 14,
+      "theorem": "ballot_5_7_4"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "d": 5,
+      "count": 42,
+      "theorem": "ballot_5_7_5"
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "d": 6,
+      "count": 174,
+      "theorem": "ballot_5_7_6"
+    }
+  ],
+  "source_sha256": {
+    "PerfectPower/ArithmeticHeightPauli.lean": "6e3d485e2b56ef254370aebb5edd08185c03f127d61fa129a53b9d46b150021f",
+    "scripts/check_arithmetic_transport_kernel.py": "cea19f0995ddc318baca36cd633583764383efcedffae8814d04d0387c75caef",
+    "python/perfectpower/arithmetic_transport.py": "a752b478b8a43593e7bf6247651637978da18be8d0bb722ade2b5661edea6ea7"
+  },
+  "scope": "Generic finite coordinate walks, d-step root-edge support, complete distinct height-barrier word enumeration, actual integer height equivalence, shifted power preservation, Gaussian-integer Pauli charge identities, and 24 literal counts.",
+  "open": "Prime factorization embedding, weighted matrix-power multiplicities, real/complex operator analysis, Python DP refinement, survival limit, and asymptotic correction are outside these Lean proofs."
+}
