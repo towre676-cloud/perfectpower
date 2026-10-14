@@ -228,3 +228,7 @@ The [height–Pauli extension](docs/ARITHMETIC_HEIGHT_PAULI_MONOGRAPH.md) adds e
 ## Arithmetic height channels
 
 The [multimode monograph](docs/ARITHMETIC_MODES_MONOGRAPH.md) develops exact rational-height populations, Pauli interference, all-ceiling filtrations and reusable rational-wall compilation. The [live microscope](https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/modes) compares counts with signed channels. `make arithmetic-modes-test` checks the exact Python and browser engines; `make arithmetic-modes-kernel` audits Lean 4.20.0. The odd-depth sign pattern is a conjecture, distinct from the proved square-wall law.
+
+## Movement language engine
+
+The [movement account](docs/MOVEMENT_LANGUAGE_MONOGRAPH.md) connects exact finite path populations with uncertain phase boundaries and order-sensitive trajectory features. The [Movement Observatory](https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/movement) uses synthetic examples; private NFL transfer results are retained only as aggregate receipts. The engine is reusable, while a stable scouting advantage remains unestablished. Run `make movement-language-test` or follow the [concurrent-session handoff](docs/MOVEMENT_ENGINE_HANDOFF.md).

@@ -718,3 +718,9 @@ PLANNING_LEAN ?= lean
 .PHONY: planning-population-lean
 planning-population-lean:
 	python scripts/check_planning_lean.py --lean "$(PLANNING_LEAN)"
+
+.PHONY: movement-language-test movement-language-benchmark
+movement-language-test:
+	PYTHONPATH=python python -m unittest python/tests/test_movement_language.py python/tests/test_movement_features.py python/tests/test_movement_transfer.py
+movement-language-benchmark:
+	PYTHONPATH=python python python/benchmark_movement_language.py

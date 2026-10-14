@@ -66,6 +66,13 @@ def export(root=ROOT):
             'result':json.loads(modes.read_text()),
             'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/ARITHMETIC_MODES_MONOGRAPH.md',
             'native_engine_requires_upgrade':True}
+    movement=root/'receipts/movement_language/release.json'
+    if movement.exists():
+        payload['movement_language']={'title':'Movement Observatory','workspace':'movement-language',
+            'url':'https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/movement',
+            'result':json.loads(movement.read_text()),
+            'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/MOVEMENT_LANGUAGE_MONOGRAPH.md',
+            'native_engine_requires_upgrade':True,'public_demo_is_synthetic':True}
     encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     source_parent = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     envelope = {'schema': 'pp-explorer-live/1', 'source_parent': source_parent,

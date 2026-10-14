@@ -52,6 +52,7 @@ def build():
     commands['blast-explorer']={'description':'Exact BLAST alignment, mining, annotation and source-adapter operations','fields':[],'children':parser_schema('perfectpower.blast_cli')['children'],'module':'perfectpower.blast_cli'}
     commands['arithmetic-transport']=dict(parser_schema('perfectpower.arithmetic_transport'),module='perfectpower.arithmetic_transport')
     commands['arithmetic-modes']=dict(parser_schema('perfectpower.arithmetic_modes'),module='perfectpower.arithmetic_modes')
+    commands['movement-language']=dict(parser_schema('perfectpower.movement_language'),module='perfectpower.movement_language')
     result={'commit':commit,'files':files,'commands':commands,'total_bytes':sum(f['bytes'] for f in files)}
     target=ROOT/'desktop/explorer/dist/catalog.json';target.parent.mkdir(exist_ok=True);target.write_text(json.dumps(result,ensure_ascii=False))
     print(json.dumps({'files':len(files),'commands':len(result['commands']),'commit':commit,'bytes':result['total_bytes']}))
