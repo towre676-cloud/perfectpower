@@ -224,3 +224,7 @@ The independent OXBench evaluation retains all 395 structural-domain reference s
 ### Arithmetic height and transport
 
 The [height–Pauli extension](docs/ARITHMETIC_HEIGHT_PAULI_MONOGRAPH.md) adds exact height-barrier path populations, conditional counts, ranks, inverse ranks and uniform sampling, with 32 generic Lean theorems and 24 literal count proofs. Explore the [animated browser companion](https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/) or run `PYTHONPATH=python python -m perfectpower.arithmetic_transport --exponent 32`. Run `make arithmetic-transport-test` and `make arithmetic-transport-kernel`. The spectral experiment and derived asymptotic transport law retain their separate computational and analytic scopes.
+
+## Arithmetic height channels
+
+The [multimode monograph](docs/ARITHMETIC_MODES_MONOGRAPH.md) develops exact rational-height populations, Pauli interference, all-ceiling filtrations and reusable rational-wall compilation. The [live microscope](https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/modes) compares counts with signed channels. `make arithmetic-modes-test` checks the exact Python and browser engines; `make arithmetic-modes-kernel` audits Lean 4.20.0. The odd-depth sign pattern is a conjecture, distinct from the proved square-wall law.

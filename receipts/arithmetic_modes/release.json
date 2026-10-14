@@ -1,0 +1,167 @@
+{
+  "schema": "pp-arithmetic-modes-release/1",
+  "date": "2026-10-14",
+  "kernel": {
+    "new_checked_results": 57,
+    "generic_declarations": 25,
+    "literal_theorems": 32,
+    "status": "passed",
+    "source_sha256": {
+      "PerfectPower/ArithmeticHeightPauli.lean": "6e3d485e2b56ef254370aebb5edd08185c03f127d61fa129a53b9d46b150021f",
+      "PerfectPower/ArithmeticModes.lean": "614d881dca43e815abaab4a30f8424f74bf5dae5b094c4c3c22799e143616270",
+      "scripts/check_arithmetic_modes_kernel.py": "fa27f54a893f476eb8c0cb5b6cd252d609a3dff99da5231134418fa40ffd59cd",
+      "python/perfectpower/arithmetic_modes.py": "d33447ea05334dc3db2631c00317f59aa447faa39f4ae62c128615f35758d564"
+    }
+  },
+  "python_tests": 39,
+  "browser_cases": 61,
+  "group_associativity_cases": 4096,
+  "rank_roundtrips": 3000,
+  "slope_chambers": 27833,
+  "slope_benchmark": {
+    "schema": "pp-slope-chambers/1",
+    "horizons": 64,
+    "chambers": 27833,
+    "odd_sign_counterexamples": [],
+    "conjecture": "For every \u03bb\u22651, odd d has strictly negative signed ballot coefficient; checked through d=63, not proved generally.",
+    "compile_exponent": 64,
+    "compile_seconds": 0.9216572270015604,
+    "queries": 2000,
+    "lookup_seconds": 0.017094918999646325,
+    "direct_seconds": 1.009139096000581,
+    "warm_lookup_speedup": 59.03152252557962,
+    "including_setup_seconds": 0.9387521460012067,
+    "break_even_queries": 1859,
+    "seconds": 13.5636192689999,
+    "scope": "Comparison with the retained direct exact recurrences on this query bank; not arbitrary-workload superiority."
+  },
+  "finite_benchmarks": [
+    {
+      "modes": 4,
+      "quota": 4,
+      "horizon": 16,
+      "nodes": 499,
+      "count": "22683584",
+      "construction_seconds": 0.0032680200019967742,
+      "roundtrip_seconds": 0.002533779996156227
+    },
+    {
+      "modes": 4,
+      "quota": 8,
+      "horizon": 32,
+      "nodes": 5389,
+      "count": "34887682703496543",
+      "construction_seconds": 0.04441282000334468,
+      "roundtrip_seconds": 0.006743906000338029
+    },
+    {
+      "modes": 4,
+      "quota": 12,
+      "horizon": 48,
+      "nodes": 23706,
+      "count": "81818119823237912503695147",
+      "construction_seconds": 0.23584226999810198,
+      "roundtrip_seconds": 0.016961551002168562
+    },
+    {
+      "modes": 4,
+      "quota": 16,
+      "horizon": 64,
+      "nodes": 69708,
+      "count": "228572523000990365447886038458960471",
+      "construction_seconds": 0.8846135470012086,
+      "roundtrip_seconds": 0.030876526005158667
+    },
+    {
+      "modes": 4,
+      "quota": 24,
+      "horizon": 96,
+      "nodes": 327868,
+      "count": "2298271696502377238389627195577824586619042008577455719",
+      "construction_seconds": 5.486530030997528,
+      "roundtrip_seconds": 0.06590875500114635
+    },
+    {
+      "modes": 6,
+      "quota": 3,
+      "horizon": 18,
+      "nodes": 3459,
+      "count": "50410998900",
+      "construction_seconds": 0.033967098002904095,
+      "roundtrip_seconds": 0.004424728998856153
+    },
+    {
+      "modes": 6,
+      "quota": 4,
+      "horizon": 24,
+      "nodes": 13403,
+      "count": "1177052908611030",
+      "construction_seconds": 0.16929523600265384,
+      "roundtrip_seconds": 0.009052214001712855
+    },
+    {
+      "modes": 6,
+      "quota": 5,
+      "horizon": 30,
+      "nodes": 40424,
+      "count": "31940096099201562524",
+      "construction_seconds": 0.6114684479980497,
+      "roundtrip_seconds": 0.01520241200341843
+    },
+    {
+      "modes": 6,
+      "quota": 6,
+      "horizon": 36,
+      "nodes": 102656,
+      "count": "954814713786659798930046",
+      "construction_seconds": 2.1811953830037965,
+      "roundtrip_seconds": 0.028589728994120378
+    },
+    {
+      "modes": 6,
+      "quota": 7,
+      "horizon": 42,
+      "nodes": 229920,
+      "count": "30532377474725377248428311308",
+      "construction_seconds": 5.948510934002115,
+      "roundtrip_seconds": 0.05365442799666198
+    }
+  ],
+  "height_restoration": {
+    "pair": [
+      2,
+      3
+    ],
+    "depth": 3,
+    "thresholds": [
+      "27",
+      "36",
+      "54",
+      "72",
+      "108",
+      "216"
+    ],
+    "counts": [
+      "7",
+      "9",
+      "14",
+      "16",
+      "19",
+      "20"
+    ],
+    "net_magnitudes": [
+      "1",
+      "1",
+      "0",
+      "0",
+      "1",
+      "0"
+    ]
+  },
+  "scope": "Finite ordered channels. Odd-depth sign remains conjectural; generic Python-to-Lean refinement and infinite operator assertions are not proved. Native executables require a separate upgrade.",
+  "source_hashes": {
+    "python/benchmark_arithmetic_modes.py": "8f49ae159d04cb30a58369473e2d4611af07d500a915c25e045602d7054e3a96",
+    "python/benchmark_slope_atlas.py": "c6d9ab2dea4e9ec12576dab91173449fe1b1b242fe5d6e59bbac7b3b9dcd9050",
+    "web/arithmetic-transport/modes-engine.js": "5a589f2e8bbd7db7e102137c1bd07496d076c7a06c4e16a62f31800774ff613b"
+  }
+}

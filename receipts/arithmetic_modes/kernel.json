@@ -1,0 +1,243 @@
+{
+  "status": "passed",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "generic_theorems": 25,
+  "literal_theorems": 32,
+  "seconds": 66.38087374200404,
+  "models": [
+    {
+      "model": 0,
+      "nodes": 6,
+      "horizon": 4,
+      "count": "2",
+      "complete_action_checks": 12,
+      "scalar_checks": 48
+    },
+    {
+      "model": 1,
+      "nodes": 12,
+      "horizon": 4,
+      "count": "10",
+      "complete_action_checks": 48,
+      "scalar_checks": 210
+    },
+    {
+      "model": 2,
+      "nodes": 6,
+      "horizon": 3,
+      "count": "0",
+      "complete_action_checks": 18,
+      "scalar_checks": 71
+    },
+    {
+      "model": 3,
+      "nodes": 5,
+      "horizon": 4,
+      "count": "1",
+      "complete_action_checks": 10,
+      "scalar_checks": 36
+    }
+  ],
+  "axioms": {
+    "PerfectPower.ArithmeticModes.sign_add": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.sign_zero": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.sum_map_up": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.sum_map_down": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.sum_append_int": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.signed_enumeration": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.census_language": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.accepted_mem": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.mem_accepted": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.language_complete": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.accepted_length": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.tagged_map_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.tagged_flatMap_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.language_nodup": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.language_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.census_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.weighted_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.height_two_cancellation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.height_three_revival": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.square_wall_phase": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_3_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_3_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_3_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_3_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_3_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_3_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_5_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_5_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_5_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_5_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_5_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_2_5_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_3_5_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_3_5_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_3_5_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_3_5_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_3_5_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_3_5_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_5_7_1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_5_7_2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_5_7_3": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_5_7_4": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_5_7_5": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.signed_5_7_6": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.complete_edges_0": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.complete_edges_1": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.complete_edges_2": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.Fixtures.complete_edges_3": [
+      "propext"
+    ],
+    "PerfectPower.ArithmeticModes.accepted_monotone": [],
+    "PerfectPower.ArithmeticModes.group_associative": [],
+    "PerfectPower.ArithmeticModes.group_identity": [],
+    "PerfectPower.ArithmeticModes.matrix_representation": [],
+    "PerfectPower.ArithmeticModes.pauli_anticommutation": [],
+    "PerfectPower.ArithmeticModes.Fixtures.population_0": [],
+    "PerfectPower.ArithmeticModes.Fixtures.population_1": [],
+    "PerfectPower.ArithmeticModes.Fixtures.population_2": [],
+    "PerfectPower.ArithmeticModes.Fixtures.population_3": []
+  },
+  "source_sha256": {
+    "PerfectPower/ArithmeticHeightPauli.lean": "6e3d485e2b56ef254370aebb5edd08185c03f127d61fa129a53b9d46b150021f",
+    "PerfectPower/ArithmeticModes.lean": "614d881dca43e815abaab4a30f8424f74bf5dae5b094c4c3c22799e143616270",
+    "scripts/check_arithmetic_modes_kernel.py": "fa27f54a893f476eb8c0cb5b6cd252d609a3dff99da5231134418fa40ffd59cd",
+    "python/perfectpower/arithmetic_modes.py": "d33447ea05334dc3db2631c00317f59aa447faa39f4ae62c128615f35758d564"
+  },
+  "scope": "Signed weighted enumeration, general partial-state word semantics, distinct enumeration, language/weighted transport, 16-element Pauli group and Gaussian matrix representation, square-height wall theorem, 24 signed values, four literal graph counts and complete scalar edge checks.",
+  "open": "Generic Python compiler refinement, infinite-dimensional operators and asymptotic laws remain outside this kernel account."
+}

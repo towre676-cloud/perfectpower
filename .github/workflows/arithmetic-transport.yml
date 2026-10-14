@@ -2,7 +2,7 @@ name: Arithmetic transport kernel and exact populations
 on:
   push:
     branches: [main]
-    paths: ['PerfectPower/ArithmeticHeightPauli.lean','python/perfectpower/arithmetic_transport.py','python/tests/test_arithmetic_transport.py','scripts/check_arithmetic_transport_kernel.py','web/arithmetic-transport/**','.github/workflows/arithmetic-transport.yml']
+    paths: ['PerfectPower/ArithmeticHeightPauli.lean','PerfectPower/ArithmeticModes.lean','python/perfectpower/arithmetic_modes.py','python/tests/test_arithmetic_modes.py','scripts/check_arithmetic_modes_kernel.py','scripts/check_arithmetic_modes.cjs','python/perfectpower/arithmetic_transport.py','python/tests/test_arithmetic_transport.py','scripts/check_arithmetic_transport_kernel.py','web/arithmetic-transport/**','.github/workflows/arithmetic-transport.yml']
   workflow_dispatch:
 jobs:
   finite-kernel:
@@ -16,10 +16,12 @@ jobs:
         with:
           node-version: '22'
       - run: python -m pip install pytest
-      - run: PYTHONPATH=python python -m pytest -q python/tests/test_arithmetic_transport.py
+      - run: PYTHONPATH=python python -m pytest -q python/tests/test_arithmetic_transport.py python/tests/test_arithmetic_modes.py
       - run: node scripts/check_arithmetic_transport.cjs
+      - run: node scripts/check_arithmetic_modes.cjs
       - name: Install pinned Lean
         run: |
           curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.20.0
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
       - run: python scripts/check_arithmetic_transport_kernel.py
+      - run: python scripts/check_arithmetic_modes_kernel.py

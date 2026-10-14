@@ -1,0 +1,45 @@
+{
+  "modes": [
+    {
+      "prime": 2,
+      "direction": -1,
+      "quota": 2,
+      "axis": 1
+    },
+    {
+      "prime": 3,
+      "direction": -1,
+      "quota": 2,
+      "axis": 2
+    },
+    {
+      "prime": 5,
+      "direction": 1,
+      "quota": 2,
+      "axis": 3
+    },
+    {
+      "prime": 7,
+      "direction": 1,
+      "quota": 2,
+      "axis": 1
+    }
+  ],
+  "start": "36",
+  "integral": true,
+  "controller": {
+    "initial": 0,
+    "accepting": [
+      0
+    ],
+    "transitions": [
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "cap": "1225"
+}

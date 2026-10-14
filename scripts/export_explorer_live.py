@@ -58,6 +58,14 @@ def export(root=ROOT):
             'result':json.loads(transport.read_text()),
             'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/ARITHMETIC_HEIGHT_PAULI_MONOGRAPH.md',
             'native_engine_requires_upgrade':True}
+    modes=root/'receipts/arithmetic_modes/release.json'
+    if modes.exists():
+        payload['arithmetic_modes']={'title':'Arithmetic interference microscope',
+            'workspace':'arithmetic-modes',
+            'url':'https://perfectpower-explorer-download.towre676.chatgpt.site/arithmetic/modes',
+            'result':json.loads(modes.read_text()),
+            'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/ARITHMETIC_MODES_MONOGRAPH.md',
+            'native_engine_requires_upgrade':True}
     encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     source_parent = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     envelope = {'schema': 'pp-explorer-live/1', 'source_parent': source_parent,

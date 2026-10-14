@@ -1,0 +1,218 @@
+{
+  "schema": "pp-arithmetic-modes-benchmark/1",
+  "signed_cases": 256,
+  "revivals": 128,
+  "cancellations": 4,
+  "benchmarks": [
+    {
+      "modes": 4,
+      "quota": 4,
+      "horizon": 16,
+      "nodes": 499,
+      "count": "22683584",
+      "construction_seconds": 0.0032680200019967742,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.002533779996156227,
+      "spin": {
+        "phase_population": {
+          "0:0": "11346167",
+          "2:0": "11337417"
+        },
+        "amplitude_pauli_coefficients": {
+          "0": {
+            "real": "8750",
+            "imaginary": "0"
+          }
+        },
+        "coherence_squared": "390625/2625229505536",
+        "exact_cancellation": false,
+        "seconds": 0.001130858996475581
+      }
+    },
+    {
+      "modes": 4,
+      "quota": 8,
+      "horizon": 32,
+      "nodes": 5389,
+      "count": "34887682703496543",
+      "construction_seconds": 0.04441282000334468,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.006743906000338029,
+      "spin": {
+        "phase_population": {
+          "0:0": "17443843049989886",
+          "2:0": "17443839653506657"
+        },
+        "amplitude_pauli_coefficients": {
+          "0": {
+            "real": "3396483229",
+            "imaginary": "0"
+          }
+        },
+        "coherence_squared": "11536098324878266441/1217150404419851855474038012950849",
+        "exact_cancellation": false,
+        "seconds": 0.016242174002400134
+      }
+    },
+    {
+      "modes": 4,
+      "quota": 12,
+      "horizon": 48,
+      "nodes": 23706,
+      "count": "81818119823237912503695147",
+      "construction_seconds": 0.23584226999810198,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.016961551002168562,
+      "spin": {
+        "phase_population": {
+          "0:0": "40909059912601741028957068",
+          "2:0": "40909059910636171474738079"
+        },
+        "amplitude_pauli_coefficients": {
+          "0": {
+            "real": "1965569554218989",
+            "imaginary": "0"
+          }
+        },
+        "coherence_squared": "3863463672472635138169768182121/6694204731409716658798495537378612455334929111351609",
+        "exact_cancellation": false,
+        "seconds": 0.09677925399591913
+      }
+    },
+    {
+      "modes": 4,
+      "quota": 16,
+      "horizon": 64,
+      "nodes": 69708,
+      "count": "228572523000990365447886038458960471",
+      "construction_seconds": 0.8846135470012086,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.030876526005158667,
+      "spin": {
+        "phase_population": {
+          "0:0": "114286261500495856656643345648435294",
+          "2:0": "114286261500494508791242692810525177"
+        },
+        "amplitude_pauli_coefficients": {
+          "0": {
+            "real": "1347865400652837910117",
+            "imaginary": "0"
+          }
+        },
+        "coherence_squared": "1816741138277035262136225840485932170953689/52245398271038269658231654477799620141035386220185248120252509940541841",
+        "exact_cancellation": false,
+        "seconds": 0.37010878599539865
+      }
+    },
+    {
+      "modes": 4,
+      "quota": 24,
+      "horizon": 96,
+      "nodes": 327868,
+      "count": "2298271696502377238389627195577824586619042008577455719",
+      "construction_seconds": 5.486530030997528,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.06590875500114635,
+      "spin": null
+    },
+    {
+      "modes": 6,
+      "quota": 3,
+      "horizon": 18,
+      "nodes": 3459,
+      "count": "50410998900",
+      "construction_seconds": 0.033967098002904095,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.004424728998856153,
+      "spin": {
+        "phase_population": {
+          "0:0": "25208094950",
+          "2:0": "25202903950"
+        },
+        "amplitude_pauli_coefficients": {
+          "0": {
+            "real": "5191000",
+            "imaginary": "0"
+          }
+        },
+        "coherence_squared": "2694648100/254126881009580121",
+        "exact_cancellation": false,
+        "seconds": 0.010888390002946835
+      }
+    },
+    {
+      "modes": 6,
+      "quota": 4,
+      "horizon": 24,
+      "nodes": 13403,
+      "count": "1177052908611030",
+      "construction_seconds": 0.16929523600265384,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.009052214001712855,
+      "spin": {
+        "phase_population": {
+          "0:0": "588528680932694",
+          "2:0": "588524227678336"
+        },
+        "amplitude_pauli_coefficients": {
+          "0": {
+            "real": "4453254358",
+            "imaginary": "0"
+          }
+        },
+        "coherence_squared": "4957868594261498041/346363387417421435280959415225",
+        "exact_cancellation": false,
+        "seconds": 0.05865952600288438
+      }
+    },
+    {
+      "modes": 6,
+      "quota": 5,
+      "horizon": 30,
+      "nodes": 40424,
+      "count": "31940096099201562524",
+      "construction_seconds": 0.6114684479980497,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.01520241200341843,
+      "spin": {
+        "phase_population": {
+          "0:0": "15970050280555066916",
+          "2:0": "15970045818646495608"
+        },
+        "amplitude_pauli_coefficients": {
+          "0": {
+            "real": "4461908571308",
+            "imaginary": "0"
+          }
+        },
+        "coherence_squared": "1244289256169487357551929/63760608676639429410879663450192578161",
+        "exact_cancellation": false,
+        "seconds": 0.23456523200002266
+      }
+    },
+    {
+      "modes": 6,
+      "quota": 6,
+      "horizon": 36,
+      "nodes": 102656,
+      "count": "954814713786659798930046",
+      "construction_seconds": 2.1811953830037965,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.028589728994120378,
+      "spin": null
+    },
+    {
+      "modes": 6,
+      "quota": 7,
+      "horizon": 42,
+      "nodes": 229920,
+      "count": "30532377474725377248428311308",
+      "construction_seconds": 5.948510934002115,
+      "rank_roundtrips": 300,
+      "roundtrip_seconds": 0.05365442799666198,
+      "spin": null
+    }
+  ],
+  "seconds": 17.236626681995403,
+  "scope": "Exact finite populations and leading Pauli word coefficients; no infinite-time quantum claim or baseline speedup."
+}

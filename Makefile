@@ -664,6 +664,16 @@ arithmetic-transport-test:
 arithmetic-transport-kernel:
 	python scripts/check_arithmetic_transport_kernel.py
 
+.PHONY: arithmetic-modes-test arithmetic-modes-kernel arithmetic-modes-benchmark
+arithmetic-modes-test:
+	PYTHONPATH=python python -m pytest -q python/tests/test_arithmetic_modes.py
+	node scripts/check_arithmetic_modes.cjs
+arithmetic-modes-kernel:
+	python scripts/check_arithmetic_modes_kernel.py
+arithmetic-modes-benchmark:
+	PYTHONPATH=python python python/benchmark_arithmetic_modes.py
+	PYTHONPATH=python python python/benchmark_slope_atlas.py
+
 .PHONY: blast-oxbench-test blast-oxbench-replay blast-oxbench-live
 blast-oxbench-test:
 	PYTHONPATH=python python -m unittest discover -s python/tests -p 'test_blast*.py'
