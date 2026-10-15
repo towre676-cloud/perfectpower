@@ -1,0 +1,73 @@
+{
+  "schema": "pp-scouting-patterns-publication/1",
+  "engine_snapshot": "6666f2eff1acaa2a79c3ef1cc77e04f0c021aecf",
+  "complete_package": {
+    "schema": "pp-scouting-patterns-complete-package/1",
+    "engine_snapshot": "6666f2eff1acaa2a79c3ef1cc77e04f0c021aecf",
+    "source_tree": "c564f363d4898fee9767079b80906ce830753407",
+    "original_files_verified": 7871,
+    "public_archives_verified": 240,
+    "base_replay_files_verified": 257,
+    "pattern_outputs_verified": {
+      "patterns-derived/pressure_target_player_influence.jsonl": {
+        "sha256": "fcd1dafc38523e8332adb56b890a1fcfa7035946d972b044602742c66d60e708",
+        "bytes": 56732
+      },
+      "patterns-derived/pressure_target_strata.pkl": {
+        "sha256": "77fccd5b270126fa2969ea2983c4e6bd11c12f12b3f0a3dbc9b61446408c56f5",
+        "bytes": 20482
+      },
+      "patterns-derived/receiving_efficiency_player_influence.jsonl": {
+        "sha256": "77c4c682e873325f7205e83ee993190318f86bec7c3b99cb8aeee506d9cdeeb2",
+        "bytes": 115820
+      },
+      "patterns-derived/receiving_efficiency_strata.pkl": {
+        "sha256": "d8ae61e1c2f1f199ad6dd541a514806cf9a723856ab5479cd0a98d3fabd54231",
+        "bytes": 40134
+      },
+      "patterns-derived/target_player_influence.jsonl": {
+        "sha256": "2d147d984456368d742c6f616c83ff0ebcea4ac802e5d708fd5362d5cf34b2a7",
+        "bytes": 915066
+      },
+      "patterns-derived/target_strata.pkl": {
+        "sha256": "235edbde3e3af069d593db710101f348b5b59391157c742be55f7bb1cfedfecf",
+        "bytes": 300102
+      }
+    },
+    "archive_bytes": 202932518,
+    "archive_sha256": "008f25399bde6084907dc090506e4eca709939a4c719dc6e967373339626edd5",
+    "restricted_movement_rows_included": false,
+    "native_executable_upgrade": false
+  },
+  "artifacts": {
+    "PerfectPower_Scouting_Patterns_Complete.zip": "libfile_f4164433443c819188099e7de2a195ec",
+    "Scouting_Patterns_Monograph.md": "libfile_03b4dd9fd2f08191838de86e82c67cf9",
+    "Scouting_Patterns_Package_Receipt.json": "libfile_8492422cf73081919c4480b3986d2c70"
+  },
+  "checks": {
+    "schema": "pp-scouting-patterns-checks/1",
+    "scouting_tests": 37,
+    "movement_tests": 25,
+    "source_hashes_agree": true,
+    "all_90_pressure_counts_reconstructed": true,
+    "strata_reported": 258,
+    "role_control_observes_two_year_maturity": true,
+    "models_promoted": false,
+    "full_stratification_replay_identical": true,
+    "player_output_files_replayed": 6
+  },
+  "pull_request": "https://github.com/towre676-cloud/perfectpower/pull/4",
+  "branch": "scouting-patterns-20261015",
+  "main_update_status": "blocked_by_automatic_approval_review",
+  "main_updated": false,
+  "live_check": {
+    "url": "https://perfectpower-explorer-download.towre676.chatgpt.site/api/research",
+    "pattern_feed_in_main": false,
+    "consumption_verified": false,
+    "status": 403,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "models_promoted": false,
+  "independent_confirmation": false,
+  "native_executable_upgrade": false
+}
