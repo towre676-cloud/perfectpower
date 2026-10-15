@@ -24,7 +24,7 @@
   },
   "numerical_scope": "Exact integer populations and ranks; binary64 log-weight inference and source observations. Rational reference API checked on small graphs.",
   "formal_scope": "Uses the finite partial-state language framework developed in ArithmeticModes. New numerical compiler, feature extraction and NFL regression are not formally verified.",
-  "summary": "Historical identity audit: 2,790 name-and-birth verified college identities, 1,125 contextual recruiting candidates, zero authoritative/as-of recruitment features. A fixed convex blend reduces retrospective pressure-rate MSE 7.11% on 90 defenders, with player uncertainty crossing zero. No scouting model is promoted.",
+  "summary": "Retrospective stratification isolates pressure overprediction correction: 24 linebackers with lowered forecasts improve 55.19%, with 20 improving and positive gains in both observed classes. This exploratory subgroup is not independently confirmed. A simple matured-role mean outperforms richer models on receiving; no scouting model is promoted.",
   "benchmark": {
     "cases": [
       {
@@ -2834,5 +2834,78 @@
       "scouting": 28,
       "movement": 25
     }
+  },
+  "scouting_patterns": {
+    "schema": "pp-scouting-patterns-release/1",
+    "groups_reported": 258,
+    "pressure_players": 90,
+    "pressure_gain": 0.07111210665515924,
+    "pressure_exposure_weighted_gain": 0.05170503555262651,
+    "exploratory_LB_lower": {
+      "players": 24,
+      "classes": 2,
+      "baseline_mse": 0.5799727070953714,
+      "candidate_mse": 0.25989334448020873,
+      "absolute_gain": 0.32007936261516273,
+      "relative_gain": 0.5518869400220388,
+      "total_loss_reduction": 7.681904702763905,
+      "player_win_fraction": 0.8333333333333334,
+      "median_player_gain": 0.22231958643710453,
+      "baseline_mean_signed_error": 0.6360284942395209,
+      "candidate_mean_signed_error": 0.25743874789826915,
+      "class_absolute_gains": {
+        "2023": 0.27848041198734674,
+        "2024": 0.3408788379290707
+      },
+      "positive_classes": 2,
+      "all_observed_classes_positive": true,
+      "outcome_conditioned_not_a_routing_feature": false,
+      "uncertainty": {
+        "pointwise_player_95": [
+          0.14922909889442698,
+          0.5215518414071231
+        ],
+        "simultaneous_player_95": [
+          0.003694537078522131,
+          0.6364641881518034
+        ],
+        "bootstrap_se": 0.09643313568155627
+      },
+      "exposure_weighted": {
+        "players": 24,
+        "sum_exposure": 14675.0,
+        "exposure_weighted_baseline_mse": 0.4221711702375566,
+        "exposure_weighted_candidate_mse": 0.14079892512379955,
+        "exposure_weighted_relative_gain": 0.6664885358122117,
+        "scope": "Outcome-observed exposure changes the evaluation estimand; unavailable for pre-draft routing and not an intrinsic-ability adjustment."
+      },
+      "role_mean_control": {
+        "players": 24,
+        "classes": 2,
+        "baseline_mse": 0.5799727070953714,
+        "candidate_mse": 0.8840257426374466,
+        "absolute_gain": -0.3040530355420752,
+        "relative_gain": -0.5242540413062512,
+        "total_loss_reduction": -7.2972728530098045,
+        "player_win_fraction": 0.20833333333333334,
+        "median_player_gain": -0.2674814737782342,
+        "baseline_mean_signed_error": 0.6360284942395209,
+        "candidate_mean_signed_error": 0.8493109609280859,
+        "class_absolute_gains": {
+          "2023": -0.26431881030060883,
+          "2024": -0.32392014816280845
+        },
+        "positive_classes": 0,
+        "all_observed_classes_positive": false
+      }
+    },
+    "largest_five_removed_pressure_gain": -0.017345462017153188,
+    "receiving_role_mean_control_gain": 0.047753828466150984,
+    "retrospective_development": true,
+    "independent_confirmation": false,
+    "models_promoted": false,
+    "recruitment_features_used": false,
+    "monograph": "docs/SCOUTING_PATTERNS_MONOGRAPH.md",
+    "summary": "Retrospective stratification isolates pressure overprediction correction: 24 linebackers with lowered forecasts improve 55.19%, with 20 improving and positive gains in both observed classes. This exploratory subgroup is not independently confirmed. A simple matured-role mean outperforms richer models on receiving; no scouting model is promoted."
   }
 }
