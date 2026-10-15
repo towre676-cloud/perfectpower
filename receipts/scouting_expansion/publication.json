@@ -1,0 +1,332 @@
+{
+  "schema": "pp-scouting-expansion-publication/1",
+  "engine_snapshot": "1a75f49a52f7dcdc77e874c0f600e0cef8c32c6d",
+  "complete_archive": {
+    "schema": "pp-scouting-complete-package/1",
+    "snapshot": "1a75f49a52f7dcdc77e874c0f600e0cef8c32c6d",
+    "source_tree": "aaeb0362adf1d586a142a7820171190ef99b50ee",
+    "original_files": 7814,
+    "original_missing": [],
+    "original_changed": [],
+    "public_input_files": 68,
+    "public_input_bytes": 117371099,
+    "archive_files": 7901,
+    "archive_bytes": 153596321,
+    "archive_sha256": "2ba26f38bf39ecfc8a5e73d4a87d8dc8db4dae696bf727306d89ebcdfb833057",
+    "source_bundle": {
+      "snapshot": "1a75f49a52f7dcdc77e874c0f600e0cef8c32c6d",
+      "source_tree": "aaeb0362adf1d586a142a7820171190ef99b50ee",
+      "original_files": 7814,
+      "original_missing": [],
+      "original_changed": [],
+      "archive_files": 7832,
+      "archive_bytes": 77923560,
+      "archive_sha256": "8eae0eff8a46312bebb0e64f904ecccb30ca16c183ae3f204e22664b4f63b40d",
+      "commands": 149,
+      "lean_files": 1282
+    },
+    "public_inputs": {
+      "scouting-public-inputs/acquisition.json": {
+        "bytes": 25812,
+        "sha256": "ce361f8cda2156129c1c652f4898d6b3374b39848cffbd225b6d56825bd04a13"
+      },
+      "scouting-public-inputs/acquisition_evaluation.json": {
+        "bytes": 16320,
+        "sha256": "05da152da6fae3eee432cd50e05d1f73634ddc3ea57c8a74ce8f8f65c8ed19ae"
+      },
+      "scouting-public-inputs/advstats_season_def.csv": {
+        "bytes": 905623,
+        "sha256": "8935ac010182b566a44db166d5c216ab7be77970ebfedbedd0e170f89deed6af"
+      },
+      "scouting-public-inputs/cfb_recruits_2014.parquet": {
+        "bytes": 74367,
+        "sha256": "a608554ec6764ef9ab331e62c9d972f37bcc8c116dcab74628acbbd053dc644e"
+      },
+      "scouting-public-inputs/cfb_recruits_2015.parquet": {
+        "bytes": 73522,
+        "sha256": "8bcf2aa037aedff6fdc6f9e3567631f20f68f8e1fab57e9a31f33d2aee58947f"
+      },
+      "scouting-public-inputs/cfb_recruits_2016.parquet": {
+        "bytes": 82753,
+        "sha256": "fa24c0e520777ff92ece13646491e54a8448615b61e03f13dbffbd162f8abd3c"
+      },
+      "scouting-public-inputs/cfb_recruits_2017.parquet": {
+        "bytes": 82979,
+        "sha256": "d7d2b2104542df45d105694812348339f3dfa750bd9efa830fe7cfb0414f695e"
+      },
+      "scouting-public-inputs/cfb_recruits_2018.parquet": {
+        "bytes": 89582,
+        "sha256": "e62fd4291e16b8bc2cc6d58d5dac5cf14877c4902e1af31bc9b769a9672e5df5"
+      },
+      "scouting-public-inputs/cfb_recruits_2019.parquet": {
+        "bytes": 78160,
+        "sha256": "7d4bfe2b79418174bffe716032bf935a20634b0c4d9eb9111628b4904581fb6d"
+      },
+      "scouting-public-inputs/cfb_recruits_2020.parquet": {
+        "bytes": 75786,
+        "sha256": "5c34694a0642c787cead7d0854e006d907d52fe1ad243a8199375854ed15aa8a"
+      },
+      "scouting-public-inputs/cfb_recruits_2021.parquet": {
+        "bytes": 72879,
+        "sha256": "f9360162f0ddfca94d68bf65e4d9788afcce6c25ac7e86b577d904e3e9b55031"
+      },
+      "scouting-public-inputs/cfb_recruits_2022.parquet": {
+        "bytes": 67942,
+        "sha256": "626cb48999eaac4c14592dba72041404555bf94de97c5e28ec4cd091b9d9ad68"
+      },
+      "scouting-public-inputs/cfb_recruits_2023.parquet": {
+        "bytes": 75626,
+        "sha256": "2da8cc68c78d32ce3053f4852a133e6e70479989cacdcb1b7437de1a5a74d127"
+      },
+      "scouting-public-inputs/cfb_recruits_2024.parquet": {
+        "bytes": 75656,
+        "sha256": "91cc5275f402d2db8b85bb93333460e0508c0c0490080c2389da10ab9a4d2a84"
+      },
+      "scouting-public-inputs/cfb_recruits_2025.parquet": {
+        "bytes": 76006,
+        "sha256": "a1e1a5e6896d9b45d20f5683156e6a0084e6f88b9226989977c3e523ec254f92"
+      },
+      "scouting-public-inputs/cfb_rosters_2014.parquet": {
+        "bytes": 1994434,
+        "sha256": "ee717a9ca8f3351dbcb4afc890fa4f168425e40a61869dcc8aebd3c5c008f24a"
+      },
+      "scouting-public-inputs/cfb_rosters_2015.parquet": {
+        "bytes": 2065645,
+        "sha256": "efd281cb48e869028861e53768535c35bd126ab7084b12bce431cfbb7ef35c30"
+      },
+      "scouting-public-inputs/cfb_rosters_2016.parquet": {
+        "bytes": 2230683,
+        "sha256": "4a934b6e65f0c53dc1646ecdf7bc0ec2e30688fc1722ef7c425ccabab590b8a8"
+      },
+      "scouting-public-inputs/cfb_rosters_2017.parquet": {
+        "bytes": 2254162,
+        "sha256": "e6cff43ebe38abd0c00382154fc85025aad5a04946fd7f658128e6df0cae4360"
+      },
+      "scouting-public-inputs/cfb_rosters_2018.parquet": {
+        "bytes": 2499600,
+        "sha256": "233c6d7565265ac6075194be30f8ed9b333427ba710d48e73966bf8b5dbe3020"
+      },
+      "scouting-public-inputs/cfb_rosters_2019.parquet": {
+        "bytes": 2593774,
+        "sha256": "46e6ba49848957077944bb3d655d76e2887aed7e05b2ab8efe231a049d5246fc"
+      },
+      "scouting-public-inputs/cfb_rosters_2020.parquet": {
+        "bytes": 1896623,
+        "sha256": "f66641455e79e814bf421f2fc70ddcffe6d254d1c35030ab853ee9b972b56952"
+      },
+      "scouting-public-inputs/cfb_rosters_2021.parquet": {
+        "bytes": 2910956,
+        "sha256": "aae9c5720db215333456a967cc316a47f69537accae9394ed46efd2e1ddbab52"
+      },
+      "scouting-public-inputs/cfb_rosters_2022.parquet": {
+        "bytes": 2910316,
+        "sha256": "308e5486457cedeffa4bf603a92b636ac1b25e0fa00022de7e41a0d06bb71c61"
+      },
+      "scouting-public-inputs/cfb_rosters_2023.parquet": {
+        "bytes": 2891334,
+        "sha256": "4ab0283a75ee1889068b971e88cbd853d710a9a71a20de02afa890f8fdf7cab4"
+      },
+      "scouting-public-inputs/cfb_rosters_2024.parquet": {
+        "bytes": 3023950,
+        "sha256": "5d0f008bc4490ecd4ae0cd9c5224d5da4abc93914bd43321aa9cb854c168ba34"
+      },
+      "scouting-public-inputs/cfb_rosters_2025.parquet": {
+        "bytes": 2948193,
+        "sha256": "087aec645b7d5edac3cb52d61f631c780b61fa7ffcf0f459c1002c604b1b4b25"
+      },
+      "scouting-public-inputs/combine.csv": {
+        "bytes": 893875,
+        "sha256": "5648886b1bb9de8a0c42b05ee7b1d9cbe58897676caaa2f6a4a3d3c9228235bb"
+      },
+      "scouting-public-inputs/draft_picks.csv": {
+        "bytes": 1661658,
+        "sha256": "592abac6447d6df185acf079f64cbe6f48d6b6f00445d0a20a070ccdeb820672"
+      },
+      "scouting-public-inputs/player_box_2014.parquet": {
+        "bytes": 437904,
+        "sha256": "258f012b1d57ad4c033d2296d37f6188d494c638de59a0e315b93bc7bd7e807f"
+      },
+      "scouting-public-inputs/player_box_2015.parquet": {
+        "bytes": 442307,
+        "sha256": "19074d9ea473e1ca108e340551b275fe28df62e6b116873b9dffbca4ec22af93"
+      },
+      "scouting-public-inputs/player_box_2016.parquet": {
+        "bytes": 514935,
+        "sha256": "657ed3627881f8581199899198f2c97638178bd01253619d63a9e81f51da3184"
+      },
+      "scouting-public-inputs/player_box_2017.parquet": {
+        "bytes": 507970,
+        "sha256": "be57bc465c407ddd065f9aa33445a316fcfab22940fbed80ab58c880e295bd92"
+      },
+      "scouting-public-inputs/player_box_2018.parquet": {
+        "bytes": 508996,
+        "sha256": "42d9607f03e5b6e56974289825201ce9a92079a26bac9329af84b729445cda23"
+      },
+      "scouting-public-inputs/player_box_2019.parquet": {
+        "bytes": 504469,
+        "sha256": "fdd30bf40f4d3cb4a336cf80a8622401defd4cf11165f21927d8ced4997d35fe"
+      },
+      "scouting-public-inputs/player_box_2020.parquet": {
+        "bytes": 347041,
+        "sha256": "7cfa97bcce7a69bbbaf787e93c5a5feafe9ab28f929cf42a5607ce7c949d9df2"
+      },
+      "scouting-public-inputs/player_box_2021.parquet": {
+        "bytes": 567431,
+        "sha256": "0a6eed194330956e2c03561e1e7c7e0ade4645002479c022aacd957a137ed939"
+      },
+      "scouting-public-inputs/player_box_2022.parquet": {
+        "bytes": 523636,
+        "sha256": "f02b5809abeb03f5bbaf51c657863a0f65d3d0e9abc685234e6dacabfb2c53ba"
+      },
+      "scouting-public-inputs/player_box_2023.parquet": {
+        "bytes": 665598,
+        "sha256": "c468119d73d089e3d30d53a936c9fc0d7eb1992d7bb2b567889c3ef413fb7c3b"
+      },
+      "scouting-public-inputs/player_box_2024.parquet": {
+        "bytes": 831337,
+        "sha256": "644ffdfe5b2303265bff528db21591e1eec7c6c4356e297ee1037c6972d8ad45"
+      },
+      "scouting-public-inputs/player_box_2025.parquet": {
+        "bytes": 845197,
+        "sha256": "44a9185dd8f47a6cc5844ba629f4dd54b192d612066f696438d50a4af8f66d37"
+      },
+      "scouting-public-inputs/player_stats_2014.parquet": {
+        "bytes": 2621005,
+        "sha256": "48219d67e6942f1648adf42440a4df3856f36a92b2f918f01b93ab5e4f19176e"
+      },
+      "scouting-public-inputs/player_stats_2015.parquet": {
+        "bytes": 2654776,
+        "sha256": "288490a363dd5e1f8ad7662992c485d10e0d604b9af99fc317ef498d74062011"
+      },
+      "scouting-public-inputs/player_stats_2016.parquet": {
+        "bytes": 2856899,
+        "sha256": "0dbdd5559b220f99e3038d80c16f0dfdda9291a02f1110f525640478537f5cdc"
+      },
+      "scouting-public-inputs/player_stats_2017.parquet": {
+        "bytes": 2879795,
+        "sha256": "fd9a1df800f725fe41d31093eb94ddc552f1ac03ef3eb582baf6edd20808cc91"
+      },
+      "scouting-public-inputs/player_stats_2018.parquet": {
+        "bytes": 2894337,
+        "sha256": "e3e75f9c165f423bb7fa0c2484c84a8e624f22c579adfba18f97826a0a763c07"
+      },
+      "scouting-public-inputs/player_stats_2019.parquet": {
+        "bytes": 2893606,
+        "sha256": "1e91dc41eb0422ab3f1fc3a8eea4d7a30144aa259d976aaf4844eded68cc5f86"
+      },
+      "scouting-public-inputs/player_stats_2020.parquet": {
+        "bytes": 1735205,
+        "sha256": "93be70034fe625b11c6699505aff29594b286517932fd33553eb3567aa06e2c7"
+      },
+      "scouting-public-inputs/player_stats_2021.parquet": {
+        "bytes": 2543371,
+        "sha256": "25282f83daec1654dcabd773e6895df639143827b0a1eeb0b388be3b04d29b28"
+      },
+      "scouting-public-inputs/player_stats_2022.parquet": {
+        "bytes": 4101693,
+        "sha256": "1244b3bdbd51b0197a35c3421e1f95a2f0b83937f461d5841a5d7f002e54ab2d"
+      },
+      "scouting-public-inputs/player_stats_2023.parquet": {
+        "bytes": 4408003,
+        "sha256": "8bc3eff29a58c016a565d1732684d3fc4dd23c623988f1c1942062daba284126"
+      },
+      "scouting-public-inputs/player_stats_2024.parquet": {
+        "bytes": 4568354,
+        "sha256": "46d2b61c938f6167837c6e761b0c245cbfa3ef3a1e9f63bb19c83e437c2d90da"
+      },
+      "scouting-public-inputs/player_stats_2025.parquet": {
+        "bytes": 5251561,
+        "sha256": "e0a5cfc8ae0c0d03ab98fe3f1d5f9acb3b5c6cd895dbb433670f8774b25ff3b2"
+      },
+      "scouting-public-inputs/players.csv": {
+        "bytes": 7303216,
+        "sha256": "6270eb598bee3dff245d955c612de8366aeb697a0a9431d79e0cae95fab35adc"
+      },
+      "scouting-public-inputs/snap_counts_2012.csv": {
+        "bytes": 154,
+        "sha256": "802475aec59f0b125de85a6c35eb69e289a512bcf62d6be007d385ea8d613ebd"
+      },
+      "scouting-public-inputs/snap_counts_2013.csv": {
+        "bytes": 2148056,
+        "sha256": "9d1fdd557875b9a2c71d88e583da24a739dfca671edf8223d6171e39a421000e"
+      },
+      "scouting-public-inputs/snap_counts_2014.csv": {
+        "bytes": 2156558,
+        "sha256": "84540709d9483552185c8ca3ef30b2f66fb94b30c3e6c21e7a27205f337f21d3"
+      },
+      "scouting-public-inputs/snap_counts_2015.csv": {
+        "bytes": 2155797,
+        "sha256": "841496252ada825c3c50d3ba9b4b26d3f4fabd0fedc5fb44f286ddaaa5bdb7e0"
+      },
+      "scouting-public-inputs/snap_counts_2016.csv": {
+        "bytes": 2157110,
+        "sha256": "a778e24e9eb665ffe8f16093b03c5a263dca0250b3aa92bd6002f61f534bea59"
+      },
+      "scouting-public-inputs/snap_counts_2017.csv": {
+        "bytes": 2157818,
+        "sha256": "eab2fad2df99249d4061ed9c5c34d312cdba07cf3159d027d255bdc9b6526917"
+      },
+      "scouting-public-inputs/snap_counts_2018.csv": {
+        "bytes": 2157555,
+        "sha256": "9a408b78a55f799110aed70de3564e157faf089ce9bed780d0368bf49ae13e0b"
+      },
+      "scouting-public-inputs/snap_counts_2019.csv": {
+        "bytes": 2156311,
+        "sha256": "0cd52be8fa57f18503b670cb8263246c4f548375b768cbcad1c7a7462c98970d"
+      },
+      "scouting-public-inputs/snap_counts_2020.csv": {
+        "bytes": 2257664,
+        "sha256": "512e35f17d076eb5d99b933c4a144eb95dcddf40c0320dbb397cae3c35683716"
+      },
+      "scouting-public-inputs/snap_counts_2021.csv": {
+        "bytes": 2388493,
+        "sha256": "8e4dae054a4749cf2d4919508d9161a6068fd67509979aefa385bfb3803d0ee5"
+      },
+      "scouting-public-inputs/snap_counts_2022.csv": {
+        "bytes": 2379719,
+        "sha256": "0018a4833fbf0f825286c1c27450c6254391b548d6c55bcde728e93e4816815a"
+      },
+      "scouting-public-inputs/snap_counts_2023.csv": {
+        "bytes": 2394875,
+        "sha256": "303b61aa5c33ffda863f93a750fc14483f397f9187ad502b1ce71e9b516a64c0"
+      },
+      "scouting-public-inputs/snap_counts_2024.csv": {
+        "bytes": 2402841,
+        "sha256": "a2aa58efe093f8aa0ad5aadf09f81d8ec690a1183bd2dde68d20e7f109a9c335"
+      },
+      "scouting-public-inputs/snap_counts_2025.csv": {
+        "bytes": 2401290,
+        "sha256": "3fc2deb0e9ad86d34d4578cb80bb21c95253e088ee22ca028adf46f7485eff1f"
+      }
+    },
+    "restricted_rows_included": false,
+    "native_executable_upgrade": false
+  },
+  "artifacts": {
+    "complete_zip_library_id": "libfile_84f888ada5d88191a762515a69f50d59",
+    "monograph_library_id": "libfile_870074d4674481919faec9535787ef38",
+    "private_continuation_saved": true
+  },
+  "checks": {
+    "schema": "pp-scouting-expansion-checks/1",
+    "scouting_tests": 10,
+    "movement_regression_tests": 25,
+    "passed": true,
+    "pre_guard_replay_scalar_metrics": 105,
+    "pre_guard_replay_max_difference": 0.0,
+    "evaluation_source_hashes_match": true,
+    "official_bridge_infinite_metric_values": 0,
+    "live_check": {
+      "status": 403,
+      "verified": false,
+      "error": "HTTP Error 403: Forbidden"
+    },
+    "PerfectJet_files_modified": false,
+    "predictive_release_validated": false
+  },
+  "feed_payload_sha256": "df7aef9708756d74ad8435bc6fb36b48870249fb6b87fecfc41d4d3d13d5864b",
+  "feed_consumption_verified": false,
+  "model_deployed": false,
+  "native_executable_upgrade": false,
+  "predictive_scouting_improvement_validated": false
+}
