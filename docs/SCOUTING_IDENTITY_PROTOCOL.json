@@ -1,0 +1,10 @@
+{
+ "schema":"pp-scouting-identity-protocol/1",
+ "status":"Retrospective development; fixed before this push computed results",
+ "identity":"NFL/PFR, college ESPN, CFBD, 247 namespaces separate. Unique exact suffix-preserving normalized name and valid birth date from draft-minus-1/2/3 rosters verify prospect college ID. Unsupported and ambiguous IDs are cleared. Recruit links require exact name, shared ESPN school in class year or next year, no earlier enrollment and reciprocal uniqueness; these are corroborated context only, never an authoritative crosswalk.",
+ "availability":"Observation season, retrieval time and verified publication time separate. Missing historical publication timestamp fails closed for recruitment features. Current standing, age, status, draft fields excluded. No authoritative 247-CFBD mapping asserted.",
+ "experiment":"One fixed delayed convex aggregation of already frozen combine/historical/raw/custom predictions. Eta=1, equal initial weights, use only completed classes of same parity at most Y-2. Clip opportunity to [0,log(10001)], receiving yards/target to [0,30], pressure/100 snaps to [0,100]. Compare every target with each clipped expert and original conventional baseline. No draft controls, outcome-selected subgroups or eta search.",
+ "validation":"Unchanged 2018-2024 outer classes and two-year maturity gap; already inspected outcomes mean development only. Report all gains/failures, clipping sensitivity, player/class bootstrap, class/position identity coverage and missingness selection. No model promotion.",
+ "recruitment_adjustment":"Document production residualized against recruitment using earlier college data, never NFL labels. Block execution until authoritative identity and historical rating availability pass. No invented efficiency denominator.",
+ "source_scope":"Reuse original 24 2014-2025 archives with verified source hashes. Earlier acquired rosters serve only to reject earlier enrollment and validate prospect identity. Preserve all earlier negative results."
+}

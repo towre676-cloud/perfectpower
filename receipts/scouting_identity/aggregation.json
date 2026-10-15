@@ -1,0 +1,2223 @@
+{
+  "schema": "pp-scouting-delayed-aggregation/1",
+  "retrospective_development": true,
+  "untouched_confirmation": false,
+  "eta": 1.0,
+  "experts": [
+    "combine",
+    "historical",
+    "raw",
+    "custom"
+  ],
+  "protocol_sha256": "82ef6e504863879996e3493ca62a42ea85df5baacd89b7034d60adbecaa29346",
+  "targets": {
+    "target": {
+      "players": 1454,
+      "bound": 9.210440366976517,
+      "outcome_clipped": 0,
+      "expert_clipped": {
+        "target": 0,
+        "combine": 0,
+        "historical": 0,
+        "raw": 0,
+        "custom": 0
+      },
+      "input_sha256": "0c4fa2dfdc7c5103fe9f8e6279e0a1f665081dfeb26e1291175bc04577636af3",
+      "comparisons": {
+        "aggregate_vs_combine": {
+          "players": 1454,
+          "mse": 3.8230403362026677,
+          "baseline_mse": 3.848146466619734,
+          "relative_gain": 0.00652421383511403,
+          "absolute_gain": 0.025106130417065636,
+          "paired_player_bootstrap_95": [
+            -0.07702612405608085,
+            0.1257715373760811
+          ],
+          "mean_absolute_error": 1.4309513674727885,
+          "by_class": {
+            "2018": {
+              "players": 208,
+              "mse": 4.299464635880966,
+              "baseline_mse": 4.168872228220622,
+              "relative_gain": -0.03132559611117737
+            },
+            "2019": {
+              "players": 213,
+              "mse": 5.270171896295735,
+              "baseline_mse": 4.9143316493933025,
+              "relative_gain": -0.07240867574461785
+            },
+            "2020": {
+              "players": 226,
+              "mse": 2.9583121283010803,
+              "baseline_mse": 3.3404464514300045,
+              "relative_gain": 0.11439618287110617
+            },
+            "2021": {
+              "players": 193,
+              "mse": 3.298089771224912,
+              "baseline_mse": 3.1880558674358728,
+              "relative_gain": -0.034514421441911046
+            },
+            "2022": {
+              "players": 218,
+              "mse": 4.0223308182289355,
+              "baseline_mse": 4.276294846852708,
+              "relative_gain": 0.05938880215677539
+            },
+            "2023": {
+              "players": 189,
+              "mse": 2.7441163175153407,
+              "baseline_mse": 2.780763979627419,
+              "relative_gain": 0.013178990515041258
+            },
+            "2024": {
+              "players": 207,
+              "mse": 4.0640068668487315,
+              "baseline_mse": 4.122195886341316,
+              "relative_gain": 0.014116024831665928
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.019209782143649507,
+          "class_bootstrap_95_absolute_gain": [
+            -0.14800666183097064,
+            0.18529315858535625
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.013465834044174153,
+            "2019": 0.024689340084888288,
+            "2020": -0.010300686643730092,
+            "2021": 0.011594758734608057,
+            "2022": -0.004044596845011647,
+            "2023": 0.005834320022689468,
+            "2024": 0.005158087027387537
+          },
+          "by_position": {
+            "C": {
+              "players": 31,
+              "relative_gain": 0.05450085493402966
+            },
+            "CB": {
+              "players": 162,
+              "relative_gain": 0.08754816054703846
+            },
+            "DB": {
+              "players": 43,
+              "relative_gain": -0.093564105775272
+            },
+            "DE": {
+              "players": 44,
+              "relative_gain": -0.11786970258965898
+            },
+            "DL": {
+              "players": 85,
+              "relative_gain": 0.022670259849673382
+            },
+            "DT": {
+              "players": 68,
+              "relative_gain": 0.013756850711517278
+            },
+            "EDGE": {
+              "players": 80,
+              "relative_gain": -0.04965377695898412
+            },
+            "FB": {
+              "players": 1,
+              "relative_gain": -43.684377562503926
+            },
+            "G": {
+              "players": 12,
+              "relative_gain": 0.04969175871337024
+            },
+            "ILB": {
+              "players": 11,
+              "relative_gain": -0.09196846195679713
+            },
+            "LB": {
+              "players": 120,
+              "relative_gain": -0.054230935614417324
+            },
+            "OG": {
+              "players": 34,
+              "relative_gain": 0.0008819952004493375
+            },
+            "OL": {
+              "players": 82,
+              "relative_gain": 0.04744610989444684
+            },
+            "OLB": {
+              "players": 13,
+              "relative_gain": -0.14836394717917384
+            },
+            "OT": {
+              "players": 93,
+              "relative_gain": -0.009735735270692124
+            },
+            "QB": {
+              "players": 75,
+              "relative_gain": -0.008310379800450256
+            },
+            "RB": {
+              "players": 118,
+              "relative_gain": -0.03341507749087137
+            },
+            "S": {
+              "players": 78,
+              "relative_gain": 0.015265424327824016
+            },
+            "SAF": {
+              "players": 17,
+              "relative_gain": 0.03103304568899528
+            },
+            "TE": {
+              "players": 90,
+              "relative_gain": 0.04422862402199281
+            },
+            "WR": {
+              "players": 197,
+              "relative_gain": 0.050000380412049315
+            }
+          }
+        },
+        "aggregate_vs_historical": {
+          "players": 1454,
+          "mse": 3.8230403362026677,
+          "baseline_mse": 3.921998862125715,
+          "relative_gain": 0.025231655949388032,
+          "absolute_gain": 0.0989585259230474,
+          "paired_player_bootstrap_95": [
+            0.043094521523531326,
+            0.15639012925891846
+          ],
+          "mean_absolute_error": 1.4309513674727885,
+          "by_class": {
+            "2018": {
+              "players": 208,
+              "mse": 4.299464635880966,
+              "baseline_mse": 4.7136302781678205,
+              "relative_gain": 0.08786553417334213
+            },
+            "2019": {
+              "players": 213,
+              "mse": 5.270171896295735,
+              "baseline_mse": 5.456186576111026,
+              "relative_gain": 0.034092433830933314
+            },
+            "2020": {
+              "players": 226,
+              "mse": 2.9583121283010803,
+              "baseline_mse": 2.945802001141461,
+              "relative_gain": -0.004246764431136794
+            },
+            "2021": {
+              "players": 193,
+              "mse": 3.298089771224912,
+              "baseline_mse": 3.4264369764952596,
+              "relative_gain": 0.037457920910492735
+            },
+            "2022": {
+              "players": 218,
+              "mse": 4.0223308182289355,
+              "baseline_mse": 3.982096378772798,
+              "relative_gain": -0.01010383366676238
+            },
+            "2023": {
+              "players": 189,
+              "mse": 2.7441163175153407,
+              "baseline_mse": 2.7269607397390967,
+              "relative_gain": -0.006291098190832503
+            },
+            "2024": {
+              "players": 207,
+              "mse": 4.0640068668487315,
+              "baseline_mse": 4.103561970316523,
+              "relative_gain": 0.009639211922207316
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.09974035520689788,
+          "class_bootstrap_95_absolute_gain": [
+            0.0025002477167984836,
+            0.2231116742679131
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.012227317607607705,
+            "2019": 0.02296364695994962,
+            "2020": 0.029128010489391284,
+            "2021": 0.02362784676695369,
+            "2022": 0.03157661418129179,
+            "2023": 0.028363734348103586,
+            "2024": 0.027960771404311694
+          },
+          "by_position": {
+            "C": {
+              "players": 31,
+              "relative_gain": -0.013114373814879909
+            },
+            "CB": {
+              "players": 162,
+              "relative_gain": -0.007601618028954416
+            },
+            "DB": {
+              "players": 43,
+              "relative_gain": 0.05502102145082152
+            },
+            "DE": {
+              "players": 44,
+              "relative_gain": 0.12892751637657796
+            },
+            "DL": {
+              "players": 85,
+              "relative_gain": 0.014581641639706638
+            },
+            "DT": {
+              "players": 68,
+              "relative_gain": 0.10042912667096668
+            },
+            "EDGE": {
+              "players": 80,
+              "relative_gain": 0.06271785026596283
+            },
+            "FB": {
+              "players": 1,
+              "relative_gain": -0.09500170527866551
+            },
+            "G": {
+              "players": 12,
+              "relative_gain": -0.006269488417280044
+            },
+            "ILB": {
+              "players": 11,
+              "relative_gain": 0.043087654821047226
+            },
+            "LB": {
+              "players": 120,
+              "relative_gain": -0.02223349347252818
+            },
+            "OG": {
+              "players": 34,
+              "relative_gain": -0.005020705440381004
+            },
+            "OL": {
+              "players": 82,
+              "relative_gain": -0.019627240032907906
+            },
+            "OLB": {
+              "players": 13,
+              "relative_gain": -0.04419846023190912
+            },
+            "OT": {
+              "players": 93,
+              "relative_gain": -0.01167025586913419
+            },
+            "QB": {
+              "players": 75,
+              "relative_gain": 0.012665463048468715
+            },
+            "RB": {
+              "players": 118,
+              "relative_gain": 0.09539877374882284
+            },
+            "S": {
+              "players": 78,
+              "relative_gain": 0.010978895195270783
+            },
+            "SAF": {
+              "players": 17,
+              "relative_gain": 0.008955203695362556
+            },
+            "TE": {
+              "players": 90,
+              "relative_gain": 0.0282900215096079
+            },
+            "WR": {
+              "players": 197,
+              "relative_gain": 0.053652960870017606
+            }
+          }
+        },
+        "aggregate_vs_raw": {
+          "players": 1454,
+          "mse": 3.8230403362026677,
+          "baseline_mse": 3.967778166752206,
+          "relative_gain": 0.03647830711967749,
+          "absolute_gain": 0.1447378305495379,
+          "paired_player_bootstrap_95": [
+            0.09378767004046625,
+            0.19602646177676838
+          ],
+          "mean_absolute_error": 1.4309513674727885,
+          "by_class": {
+            "2018": {
+              "players": 208,
+              "mse": 4.299464635880966,
+              "baseline_mse": 4.479882624956169,
+              "relative_gain": 0.040272927703539484
+            },
+            "2019": {
+              "players": 213,
+              "mse": 5.270171896295735,
+              "baseline_mse": 5.6655504039284175,
+              "relative_gain": 0.06978642487383623
+            },
+            "2020": {
+              "players": 226,
+              "mse": 2.9583121283010803,
+              "baseline_mse": 2.924694041889145,
+              "relative_gain": -0.01149456521962208
+            },
+            "2021": {
+              "players": 193,
+              "mse": 3.298089771224912,
+              "baseline_mse": 3.5145028457665597,
+              "relative_gain": 0.06157715160263163
+            },
+            "2022": {
+              "players": 218,
+              "mse": 4.0223308182289355,
+              "baseline_mse": 4.091438234389283,
+              "relative_gain": 0.016890739197646287
+            },
+            "2023": {
+              "players": 189,
+              "mse": 2.7441163175153407,
+              "baseline_mse": 2.936945799416702,
+              "relative_gain": 0.06565646595849987
+            },
+            "2024": {
+              "players": 207,
+              "mse": 4.0640068668487315,
+              "baseline_mse": 4.07862530697371,
+              "relative_gain": 0.0035841586379567318
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.14787811757489808,
+          "class_bootstrap_95_absolute_gain": [
+            0.05301679861768572,
+            0.25225165352065887
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.03574734938570469,
+            "2019": 0.027668231004942208,
+            "2020": 0.04268584500242102,
+            "2021": 0.03313416596554713,
+            "2022": 0.04006043450331336,
+            "2023": 0.03337203829673594,
+            "2024": 0.04211737962085838
+          },
+          "by_position": {
+            "C": {
+              "players": 31,
+              "relative_gain": -0.019673124419453316
+            },
+            "CB": {
+              "players": 162,
+              "relative_gain": 0.012613753644584917
+            },
+            "DB": {
+              "players": 43,
+              "relative_gain": 0.06045085387798866
+            },
+            "DE": {
+              "players": 44,
+              "relative_gain": 0.030216018107261697
+            },
+            "DL": {
+              "players": 85,
+              "relative_gain": 0.02276763677860277
+            },
+            "DT": {
+              "players": 68,
+              "relative_gain": -0.011183426181809876
+            },
+            "EDGE": {
+              "players": 80,
+              "relative_gain": 0.04597993210625343
+            },
+            "FB": {
+              "players": 1,
+              "relative_gain": 0.6270337672449872
+            },
+            "G": {
+              "players": 12,
+              "relative_gain": -0.010920194208574322
+            },
+            "ILB": {
+              "players": 11,
+              "relative_gain": 0.0450717242922088
+            },
+            "LB": {
+              "players": 120,
+              "relative_gain": 0.093096438607409
+            },
+            "OG": {
+              "players": 34,
+              "relative_gain": 0.017791655199291222
+            },
+            "OL": {
+              "players": 82,
+              "relative_gain": 0.01837359239725013
+            },
+            "OLB": {
+              "players": 13,
+              "relative_gain": 0.1275427276854195
+            },
+            "OT": {
+              "players": 93,
+              "relative_gain": 0.041751911909898125
+            },
+            "QB": {
+              "players": 75,
+              "relative_gain": 0.04052524975738157
+            },
+            "RB": {
+              "players": 118,
+              "relative_gain": 0.06605741147470377
+            },
+            "S": {
+              "players": 78,
+              "relative_gain": 0.02728631426437093
+            },
+            "SAF": {
+              "players": 17,
+              "relative_gain": -0.03991411128488596
+            },
+            "TE": {
+              "players": 90,
+              "relative_gain": 0.04424376279011738
+            },
+            "WR": {
+              "players": 197,
+              "relative_gain": 0.047734068786112506
+            }
+          }
+        },
+        "aggregate_vs_custom": {
+          "players": 1454,
+          "mse": 3.8230403362026677,
+          "baseline_mse": 3.9646308910485866,
+          "relative_gain": 0.03571342673175548,
+          "absolute_gain": 0.14159055484591815,
+          "paired_player_bootstrap_95": [
+            0.08364939375149875,
+            0.19605740210357062
+          ],
+          "mean_absolute_error": 1.4309513674727885,
+          "by_class": {
+            "2018": {
+              "players": 208,
+              "mse": 4.299464635880966,
+              "baseline_mse": 4.54452408824893,
+              "relative_gain": 0.05392411781942804
+            },
+            "2019": {
+              "players": 213,
+              "mse": 5.270171896295735,
+              "baseline_mse": 5.56389954892822,
+              "relative_gain": 0.0527916886438158
+            },
+            "2020": {
+              "players": 226,
+              "mse": 2.9583121283010803,
+              "baseline_mse": 2.9768607593919607,
+              "relative_gain": 0.006230936745146644
+            },
+            "2021": {
+              "players": 193,
+              "mse": 3.298089771224912,
+              "baseline_mse": 3.454050073155453,
+              "relative_gain": 0.045152878107543856
+            },
+            "2022": {
+              "players": 218,
+              "mse": 4.0223308182289355,
+              "baseline_mse": 4.119091700121952,
+              "relative_gain": 0.02349082975990827
+            },
+            "2023": {
+              "players": 189,
+              "mse": 2.7441163175153407,
+              "baseline_mse": 2.9091397747470182,
+              "relative_gain": 0.05672586056681608
+            },
+            "2024": {
+              "players": 207,
+              "mse": 4.0640068668487315,
+              "baseline_mse": 4.09183621986376,
+              "relative_gain": 0.006801189373106265
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.1432728185945135,
+          "class_bootstrap_95_absolute_gain": [
+            0.0731547651962711,
+            0.2152033310449191
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.03214157764487777,
+            "2019": 0.03129377522176746,
+            "2020": 0.03960889387834718,
+            "2021": 0.034479078124175194,
+            "2022": 0.03796867720782695,
+            "2023": 0.033497937721356515,
+            "2024": 0.04069332346077625
+          },
+          "by_position": {
+            "C": {
+              "players": 31,
+              "relative_gain": 0.04720326231769919
+            },
+            "CB": {
+              "players": 162,
+              "relative_gain": 0.013018673677192344
+            },
+            "DB": {
+              "players": 43,
+              "relative_gain": 0.04321740131108823
+            },
+            "DE": {
+              "players": 44,
+              "relative_gain": 0.01927185664623396
+            },
+            "DL": {
+              "players": 85,
+              "relative_gain": 0.02268017371280942
+            },
+            "DT": {
+              "players": 68,
+              "relative_gain": -0.02722017805380713
+            },
+            "EDGE": {
+              "players": 80,
+              "relative_gain": 0.04859377674480713
+            },
+            "FB": {
+              "players": 1,
+              "relative_gain": 0.5872472488894631
+            },
+            "G": {
+              "players": 12,
+              "relative_gain": -0.019507068693002214
+            },
+            "ILB": {
+              "players": 11,
+              "relative_gain": 0.053296390617194704
+            },
+            "LB": {
+              "players": 120,
+              "relative_gain": 0.09481771403961278
+            },
+            "OG": {
+              "players": 34,
+              "relative_gain": 0.006020208876047008
+            },
+            "OL": {
+              "players": 82,
+              "relative_gain": 0.007069090915801341
+            },
+            "OLB": {
+              "players": 13,
+              "relative_gain": 0.13117550954812096
+            },
+            "OT": {
+              "players": 93,
+              "relative_gain": 0.027529207556887012
+            },
+            "QB": {
+              "players": 75,
+              "relative_gain": 0.05482191002895418
+            },
+            "RB": {
+              "players": 118,
+              "relative_gain": 0.03300659590673384
+            },
+            "S": {
+              "players": 78,
+              "relative_gain": 0.04048736837538109
+            },
+            "SAF": {
+              "players": 17,
+              "relative_gain": 0.015281830608039374
+            },
+            "TE": {
+              "players": 90,
+              "relative_gain": 0.05115867708220355
+            },
+            "WR": {
+              "players": 197,
+              "relative_gain": 0.04523364133023134
+            }
+          }
+        },
+        "aggregate_vs_original_combine_original_target": {
+          "players": 1454,
+          "mse": 3.8230403362026677,
+          "baseline_mse": 3.848146466619734,
+          "relative_gain": 0.00652421383511403,
+          "absolute_gain": 0.025106130417065636,
+          "paired_player_bootstrap_95": [
+            -0.07702612405608085,
+            0.1257715373760811
+          ],
+          "mean_absolute_error": 1.4309513674727885,
+          "by_class": {
+            "2018": {
+              "players": 208,
+              "mse": 4.299464635880966,
+              "baseline_mse": 4.168872228220622,
+              "relative_gain": -0.03132559611117737
+            },
+            "2019": {
+              "players": 213,
+              "mse": 5.270171896295735,
+              "baseline_mse": 4.9143316493933025,
+              "relative_gain": -0.07240867574461785
+            },
+            "2020": {
+              "players": 226,
+              "mse": 2.9583121283010803,
+              "baseline_mse": 3.3404464514300045,
+              "relative_gain": 0.11439618287110617
+            },
+            "2021": {
+              "players": 193,
+              "mse": 3.298089771224912,
+              "baseline_mse": 3.1880558674358728,
+              "relative_gain": -0.034514421441911046
+            },
+            "2022": {
+              "players": 218,
+              "mse": 4.0223308182289355,
+              "baseline_mse": 4.276294846852708,
+              "relative_gain": 0.05938880215677539
+            },
+            "2023": {
+              "players": 189,
+              "mse": 2.7441163175153407,
+              "baseline_mse": 2.780763979627419,
+              "relative_gain": 0.013178990515041258
+            },
+            "2024": {
+              "players": 207,
+              "mse": 4.0640068668487315,
+              "baseline_mse": 4.122195886341316,
+              "relative_gain": 0.014116024831665928
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.019209782143649507,
+          "class_bootstrap_95_absolute_gain": [
+            -0.14800666183097064,
+            0.18529315858535625
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.013465834044174153,
+            "2019": 0.024689340084888288,
+            "2020": -0.010300686643730092,
+            "2021": 0.011594758734608057,
+            "2022": -0.004044596845011647,
+            "2023": 0.005834320022689468,
+            "2024": 0.005158087027387537
+          },
+          "by_position": {
+            "C": {
+              "players": 31,
+              "relative_gain": 0.05450085493402966
+            },
+            "CB": {
+              "players": 162,
+              "relative_gain": 0.08754816054703846
+            },
+            "DB": {
+              "players": 43,
+              "relative_gain": -0.093564105775272
+            },
+            "DE": {
+              "players": 44,
+              "relative_gain": -0.11786970258965898
+            },
+            "DL": {
+              "players": 85,
+              "relative_gain": 0.022670259849673382
+            },
+            "DT": {
+              "players": 68,
+              "relative_gain": 0.013756850711517278
+            },
+            "EDGE": {
+              "players": 80,
+              "relative_gain": -0.04965377695898412
+            },
+            "FB": {
+              "players": 1,
+              "relative_gain": -43.684377562503926
+            },
+            "G": {
+              "players": 12,
+              "relative_gain": 0.04969175871337024
+            },
+            "ILB": {
+              "players": 11,
+              "relative_gain": -0.09196846195679713
+            },
+            "LB": {
+              "players": 120,
+              "relative_gain": -0.054230935614417324
+            },
+            "OG": {
+              "players": 34,
+              "relative_gain": 0.0008819952004493375
+            },
+            "OL": {
+              "players": 82,
+              "relative_gain": 0.04744610989444684
+            },
+            "OLB": {
+              "players": 13,
+              "relative_gain": -0.14836394717917384
+            },
+            "OT": {
+              "players": 93,
+              "relative_gain": -0.009735735270692124
+            },
+            "QB": {
+              "players": 75,
+              "relative_gain": -0.008310379800450256
+            },
+            "RB": {
+              "players": 118,
+              "relative_gain": -0.03341507749087137
+            },
+            "S": {
+              "players": 78,
+              "relative_gain": 0.015265424327824016
+            },
+            "SAF": {
+              "players": 17,
+              "relative_gain": 0.03103304568899528
+            },
+            "TE": {
+              "players": 90,
+              "relative_gain": 0.04422862402199281
+            },
+            "WR": {
+              "players": 197,
+              "relative_gain": 0.050000380412049315
+            }
+          }
+        }
+      },
+      "weights": [
+        {
+          "class": 2018,
+          "history_classes": [],
+          "weights": {
+            "combine": 0.25,
+            "historical": 0.25,
+            "raw": 0.25,
+            "custom": 0.25
+          },
+          "players": 208
+        },
+        {
+          "class": 2019,
+          "history_classes": [],
+          "weights": {
+            "combine": 0.25,
+            "historical": 0.25,
+            "raw": 0.25,
+            "custom": 0.25
+          },
+          "players": 213
+        },
+        {
+          "class": 2020,
+          "history_classes": [
+            2018
+          ],
+          "weights": {
+            "combine": 0.2509082172027616,
+            "historical": 0.24930214869727718,
+            "raw": 0.24999002596607428,
+            "custom": 0.249799608133887
+          },
+          "players": 226
+        },
+        {
+          "class": 2021,
+          "history_classes": [
+            2019
+          ],
+          "weights": {
+            "combine": 0.2514338721035331,
+            "historical": 0.2498329884948739,
+            "raw": 0.2492171670065747,
+            "custom": 0.24951597239501838
+          },
+          "players": 193
+        },
+        {
+          "class": 2022,
+          "history_classes": [
+            2018,
+            2020
+          ],
+          "weights": {
+            "combine": 0.2500421782056247,
+            "historical": 0.24960011096814513,
+            "raw": 0.2503510950126326,
+            "custom": 0.25000661581359773
+          },
+          "players": 218
+        },
+        {
+          "class": 2023,
+          "history_classes": [
+            2019,
+            2021
+          ],
+          "weights": {
+            "combine": 0.2520487134513375,
+            "historical": 0.2497411479390701,
+            "raw": 0.24886706523612592,
+            "custom": 0.24934307337346656
+          },
+          "players": 189
+        },
+        {
+          "class": 2024,
+          "history_classes": [
+            2018,
+            2020,
+            2022
+          ],
+          "weights": {
+            "combine": 0.2495737366371929,
+            "historical": 0.24999799004113768,
+            "raw": 0.25042718272367087,
+            "custom": 0.25000109059799847
+          },
+          "players": 207
+        }
+      ],
+      "equal_average_diagnostic": {
+        "aggregate_vs_equal_average": {
+          "players": 1454,
+          "mse": 3.8230403362026677,
+          "baseline_mse": 3.8231384081789046,
+          "relative_gain": 2.565221704425085e-05,
+          "absolute_gain": 9.807197623681696e-05,
+          "paired_player_bootstrap_95": [
+            -9.300744191471223e-06,
+            0.00021263503931467684
+          ],
+          "mean_absolute_error": 1.4309513674727885,
+          "by_class": {
+            "2018": {
+              "players": 208,
+              "mse": 4.299464635880966,
+              "baseline_mse": 4.299464635880966,
+              "relative_gain": 3.6361181331978867e-17
+            },
+            "2019": {
+              "players": 213,
+              "mse": 5.270171896295735,
+              "baseline_mse": 5.270171896295734,
+              "relative_gain": -1.8456073197182844e-17
+            },
+            "2020": {
+              "players": 226,
+              "mse": 2.9583121283010803,
+              "baseline_mse": 2.9580461235303126,
+              "relative_gain": -8.992583606165009e-05
+            },
+            "2021": {
+              "players": 193,
+              "mse": 3.298089771224912,
+              "baseline_mse": 3.2987195506667293,
+              "relative_gain": 0.00019091633348764908
+            },
+            "2022": {
+              "players": 218,
+              "mse": 4.0223308182289355,
+              "baseline_mse": 4.022289696462776,
+              "relative_gain": -1.0223472017656454e-05
+            },
+            "2023": {
+              "players": 189,
+              "mse": 2.7441163175153407,
+              "baseline_mse": 2.7445927533285013,
+              "relative_gain": 0.00017359071307867247
+            },
+            "2024": {
+              "players": 207,
+              "mse": 4.0640068668487315,
+              "baseline_mse": 4.06400727494393,
+              "relative_gain": 1.0041694599272237e-07
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.00011421383046445549,
+          "class_bootstrap_95_absolute_gain": [
+            -8.18759010990862e-05,
+            0.00033802603340170063
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 3.0570261394460236e-05,
+            "2019": 3.214317375290792e-05,
+            "2020": 4.1451997369881094e-05,
+            "2021": 4.276393147330463e-06,
+            "2022": 3.23711476809154e-05,
+            "2023": 1.042640545266826e-05,
+            "2024": 3.020865839856232e-05
+          },
+          "by_position": {
+            "C": {
+              "players": 31,
+              "relative_gain": 5.846428184178066e-05
+            },
+            "CB": {
+              "players": 162,
+              "relative_gain": -2.1291640269275647e-05
+            },
+            "DB": {
+              "players": 43,
+              "relative_gain": 0.00031765800940491577
+            },
+            "DE": {
+              "players": 44,
+              "relative_gain": 9.361963214379152e-06
+            },
+            "DL": {
+              "players": 85,
+              "relative_gain": -3.9464813163543486e-05
+            },
+            "DT": {
+              "players": 68,
+              "relative_gain": 8.408141894650247e-05
+            },
+            "EDGE": {
+              "players": 80,
+              "relative_gain": 1.3784151265598924e-05
+            },
+            "FB": {
+              "players": 1,
+              "relative_gain": 0.0
+            },
+            "G": {
+              "players": 12,
+              "relative_gain": 2.422641007291561e-05
+            },
+            "ILB": {
+              "players": 11,
+              "relative_gain": 6.34437382934152e-17
+            },
+            "LB": {
+              "players": 120,
+              "relative_gain": 4.0228259668693064e-05
+            },
+            "OG": {
+              "players": 34,
+              "relative_gain": -1.7492405761731057e-06
+            },
+            "OL": {
+              "players": 82,
+              "relative_gain": -6.155000742216684e-05
+            },
+            "OLB": {
+              "players": 13,
+              "relative_gain": 0.00015981596701341612
+            },
+            "OT": {
+              "players": 93,
+              "relative_gain": 4.2873868585839376e-05
+            },
+            "QB": {
+              "players": 75,
+              "relative_gain": -8.576891584246572e-06
+            },
+            "RB": {
+              "players": 118,
+              "relative_gain": -2.911104903147947e-05
+            },
+            "S": {
+              "players": 78,
+              "relative_gain": 5.06354575616983e-05
+            },
+            "SAF": {
+              "players": 17,
+              "relative_gain": 2.7699002443604635e-05
+            },
+            "TE": {
+              "players": 90,
+              "relative_gain": 0.0001084424165507606
+            },
+            "WR": {
+              "players": 197,
+              "relative_gain": 2.0786579865565467e-05
+            }
+          }
+        },
+        "max_prediction_change": 0.0033315709770045387
+      },
+      "class_normalized_losses": {
+        "2018": {
+          "players": 208,
+          "aggregate": 0.05068198207972531,
+          "combine": 0.04914256202971402,
+          "historical": 0.05556415635910959,
+          "raw": 0.05280874484289803,
+          "custom": 0.0535707368027504
+        },
+        "2019": {
+          "players": 213,
+          "aggregate": 0.06212465509683225,
+          "combine": 0.057930019126054264,
+          "historical": 0.06431739151110276,
+          "raw": 0.06678536710067508,
+          "custom": 0.06558710935283502
+        },
+        "2020": {
+          "players": 226,
+          "aggregate": 0.034872509712379096,
+          "combine": 0.03937709959904523,
+          "historical": 0.03472504064489856,
+          "raw": 0.034476220546778076,
+          "custom": 0.035091160513854705
+        },
+        "2021": {
+          "players": 193,
+          "aggregate": 0.03887780010738392,
+          "combine": 0.037580723189142066,
+          "historical": 0.04039075376752298,
+          "raw": 0.0414288720418297,
+          "custom": 0.04071625626344266
+        },
+        "2022": {
+          "players": 218,
+          "aggregate": 0.04741513553731898,
+          "combine": 0.05040885718354147,
+          "historical": 0.04694085296676682,
+          "raw": 0.048229772038381205,
+          "custom": 0.04855575040392211
+        },
+        "2023": {
+          "players": 189,
+          "aggregate": 0.032347574827882544,
+          "combine": 0.032779576556406495,
+          "historical": 0.03214534530419563,
+          "raw": 0.03462064395946875,
+          "custom": 0.03429286723297672
+        },
+        "2024": {
+          "players": 207,
+          "aggregate": 0.04790641176079918,
+          "combine": 0.048592342473787985,
+          "historical": 0.04837268633563483,
+          "raw": 0.048078733569022626,
+          "custom": 0.0482344634812453
+        }
+      },
+      "deterministic_regret_receipt": {
+        "0": {
+          "rounds": 4,
+          "normalized_equal_class_aggregate_loss": 0.18087603909022257,
+          "best_fixed_expert_loss": 0.18359347099707993,
+          "regret": -0.0027174319068573594,
+          "upper_bound": 1.8862943611198906,
+          "bound_satisfied": true
+        },
+        "1": {
+          "rounds": 3,
+          "normalized_equal_class_aggregate_loss": 0.13335003003209872,
+          "best_fixed_expert_loss": 0.12829031887160283,
+          "regret": 0.005059711160495889,
+          "upper_bound": 1.7612943611198906,
+          "bound_satisfied": true
+        }
+      }
+    },
+    "receiving_efficiency": {
+      "players": 185,
+      "bound": 30.0,
+      "outcome_clipped": 0,
+      "expert_clipped": {
+        "target": 0,
+        "combine": 0,
+        "historical": 0,
+        "raw": 0,
+        "custom": 0
+      },
+      "input_sha256": "0693f97644a028636f33003c9e48ccf0aef897d86370f572e3b07f37f76c31d3",
+      "comparisons": {
+        "aggregate_vs_combine": {
+          "players": 185,
+          "mse": 2.234386933773281,
+          "baseline_mse": 2.2940248660296483,
+          "relative_gain": 0.02599707315273545,
+          "absolute_gain": 0.059637932256366905,
+          "paired_player_bootstrap_95": [
+            -0.01786648731575485,
+            0.14193132052454566
+          ],
+          "mean_absolute_error": 1.1457414692242582,
+          "by_class": {
+            "2018": {
+              "players": 28,
+              "mse": 1.9047221471554185,
+              "baseline_mse": 2.021960449915898,
+              "relative_gain": 0.057982490589939886
+            },
+            "2019": {
+              "players": 25,
+              "mse": 2.396249751900453,
+              "baseline_mse": 2.6253084121414347,
+              "relative_gain": 0.08725019094200091
+            },
+            "2020": {
+              "players": 32,
+              "mse": 2.4917041619284346,
+              "baseline_mse": 2.5287261998411044,
+              "relative_gain": 0.0146405877848681
+            },
+            "2021": {
+              "players": 17,
+              "mse": 2.259872771816502,
+              "baseline_mse": 2.165831799629747,
+              "relative_gain": -0.04342025645889529
+            },
+            "2022": {
+              "players": 28,
+              "mse": 1.8662166039038712,
+              "baseline_mse": 1.845795830290982,
+              "relative_gain": -0.011063397845941469
+            },
+            "2023": {
+              "players": 34,
+              "mse": 2.083203301602709,
+              "baseline_mse": 2.1106282594601886,
+              "relative_gain": 0.012993741429622702
+            },
+            "2024": {
+              "players": 21,
+              "mse": 2.804179588752526,
+              "baseline_mse": 2.9030940121851865,
+              "relative_gain": 0.0340720703557951
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.05645666234351833,
+          "class_bootstrap_95_absolute_gain": [
+            -0.013189432583539145,
+            0.128800870269721
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.021073335014415346,
+            "2019": 0.014791289461391036,
+            "2020": 0.028672543503621604,
+            "2021": 0.03259162488494378,
+            "2022": 0.031136076271946107,
+            "2023": 0.028643269470671553,
+            "2024": 0.024642500048517375
+          },
+          "by_position": {
+            "TE": {
+              "players": 50,
+              "relative_gain": -0.020325130785172875
+            },
+            "WR": {
+              "players": 135,
+              "relative_gain": 0.03425758200774447
+            }
+          }
+        },
+        "aggregate_vs_historical": {
+          "players": 185,
+          "mse": 2.234386933773281,
+          "baseline_mse": 2.215968838075964,
+          "relative_gain": -0.008311531904622282,
+          "absolute_gain": -0.01841809569731714,
+          "paired_player_bootstrap_95": [
+            -0.06443249665448433,
+            0.028996456222701472
+          ],
+          "mean_absolute_error": 1.1457414692242582,
+          "by_class": {
+            "2018": {
+              "players": 28,
+              "mse": 1.9047221471554185,
+              "baseline_mse": 1.8647369513249168,
+              "relative_gain": -0.021442807685068777
+            },
+            "2019": {
+              "players": 25,
+              "mse": 2.396249751900453,
+              "baseline_mse": 2.291146856176672,
+              "relative_gain": -0.04587348708810884
+            },
+            "2020": {
+              "players": 32,
+              "mse": 2.4917041619284346,
+              "baseline_mse": 2.519098684140337,
+              "relative_gain": 0.010874731658736665
+            },
+            "2021": {
+              "players": 17,
+              "mse": 2.259872771816502,
+              "baseline_mse": 2.247491439786827,
+              "relative_gain": -0.005508956256958755
+            },
+            "2022": {
+              "players": 28,
+              "mse": 1.8662166039038712,
+              "baseline_mse": 1.87093114153213,
+              "relative_gain": 0.002519888371946124
+            },
+            "2023": {
+              "players": 34,
+              "mse": 2.083203301602709,
+              "baseline_mse": 2.0747395798799384,
+              "relative_gain": -0.004079414016510035
+            },
+            "2024": {
+              "players": 21,
+              "mse": 2.804179588752526,
+              "baseline_mse": 2.796057093088309,
+              "relative_gain": -0.002904982049291847
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": -0.020278083018683397,
+          "class_bootstrap_95_absolute_gain": [
+            -0.05240347667171735,
+            0.004987049172158199
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": -0.006395013099251357,
+            "2019": -0.0022110273330587242,
+            "2020": -0.013007628555110302,
+            "2021": -0.008599574674621118,
+            "2022": -0.009898405739192229,
+            "2023": -0.009191104478630027,
+            "2024": -0.00921535875343488
+          },
+          "by_position": {
+            "TE": {
+              "players": 50,
+              "relative_gain": -0.02099832426651184
+            },
+            "WR": {
+              "players": 135,
+              "relative_gain": -0.0059564779702898085
+            }
+          }
+        },
+        "aggregate_vs_raw": {
+          "players": 185,
+          "mse": 2.234386933773281,
+          "baseline_mse": 2.2293613996400334,
+          "relative_gain": -0.0022542482946279604,
+          "absolute_gain": -0.005025534133247948,
+          "paired_player_bootstrap_95": [
+            -0.0539865663586974,
+            0.04398092707164763
+          ],
+          "mean_absolute_error": 1.1457414692242582,
+          "by_class": {
+            "2018": {
+              "players": 28,
+              "mse": 1.9047221471554185,
+              "baseline_mse": 1.8723725909144466,
+              "relative_gain": -0.0172773070904506
+            },
+            "2019": {
+              "players": 25,
+              "mse": 2.396249751900453,
+              "baseline_mse": 2.2713112962592246,
+              "relative_gain": -0.05500719159324323
+            },
+            "2020": {
+              "players": 32,
+              "mse": 2.4917041619284346,
+              "baseline_mse": 2.5114835560384026,
+              "relative_gain": 0.007875581770150146
+            },
+            "2021": {
+              "players": 17,
+              "mse": 2.259872771816502,
+              "baseline_mse": 2.3473679437115123,
+              "relative_gain": 0.037273735517009854
+            },
+            "2022": {
+              "players": 28,
+              "mse": 1.8662166039038712,
+              "baseline_mse": 1.8900191923441252,
+              "relative_gain": 0.012593834251350878
+            },
+            "2023": {
+              "players": 34,
+              "mse": 2.083203301602709,
+              "baseline_mse": 2.1047559937276468,
+              "relative_gain": 0.010239995604795235
+            },
+            "2024": {
+              "players": 21,
+              "mse": 2.804179588752526,
+              "baseline_mse": 2.7841749510771883,
+              "relative_gain": -0.007185122352888579
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": -0.003523257569623986,
+          "class_bootstrap_95_absolute_gain": [
+            -0.05101832432050069,
+            0.039665927114043376
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": -6.64885530860973e-05,
+            "2019": 0.0061682645089443,
+            "2020": -0.004705907938637209,
+            "2021": -0.006488507697500618,
+            "2022": -0.004439905492005165,
+            "2023": -0.004877268724753612,
+            "2024": -0.0014397683300225689
+          },
+          "by_position": {
+            "TE": {
+              "players": 50,
+              "relative_gain": 0.009126915216267566
+            },
+            "WR": {
+              "players": 135,
+              "relative_gain": -0.0044278614060265006
+            }
+          }
+        },
+        "aggregate_vs_custom": {
+          "players": 185,
+          "mse": 2.234386933773281,
+          "baseline_mse": 2.337630858232895,
+          "relative_gain": 0.0441660513232871,
+          "absolute_gain": 0.10324392445961371,
+          "paired_player_bootstrap_95": [
+            -0.004908453877777306,
+            0.21019644249472705
+          ],
+          "mean_absolute_error": 1.1457414692242582,
+          "by_class": {
+            "2018": {
+              "players": 28,
+              "mse": 1.9047221471554185,
+              "baseline_mse": 2.233528537593856,
+              "relative_gain": 0.1472138747744208
+            },
+            "2019": {
+              "players": 25,
+              "mse": 2.396249751900453,
+              "baseline_mse": 2.8061906063166107,
+              "relative_gain": 0.146084465357912
+            },
+            "2020": {
+              "players": 32,
+              "mse": 2.4917041619284346,
+              "baseline_mse": 2.524763667689757,
+              "relative_gain": 0.013094099136642407
+            },
+            "2021": {
+              "players": 17,
+              "mse": 2.259872771816502,
+              "baseline_mse": 2.291635286687754,
+              "relative_gain": 0.013860196278073562
+            },
+            "2022": {
+              "players": 28,
+              "mse": 1.8662166039038712,
+              "baseline_mse": 1.8730115029758212,
+              "relative_gain": 0.00362779356194773
+            },
+            "2023": {
+              "players": 34,
+              "mse": 2.083203301602709,
+              "baseline_mse": 2.0531921881678423,
+              "relative_gain": -0.014616806749906149
+            },
+            "2024": {
+              "players": 21,
+              "mse": 2.804179588752526,
+              "baseline_mse": 2.750716706749936,
+              "relative_gain": -0.019435982582792763
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.10384145273166615,
+          "class_bootstrap_95_absolute_gain": [
+            -0.010453756213247813,
+            0.2409623973477372
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.02674488882083196,
+            "2019": 0.02443123108903613,
+            "2020": 0.05130451622480429,
+            "2021": 0.047166401279542296,
+            "2022": 0.04976053600003182,
+            "2023": 0.05548139463129985,
+            "2024": 0.053971248792906865
+          },
+          "by_position": {
+            "TE": {
+              "players": 50,
+              "relative_gain": 0.11552511550771188
+            },
+            "WR": {
+              "players": 135,
+              "relative_gain": 0.029412616389514718
+            }
+          }
+        },
+        "aggregate_vs_original_combine_original_target": {
+          "players": 185,
+          "mse": 2.234386933773281,
+          "baseline_mse": 2.2940248660296483,
+          "relative_gain": 0.02599707315273545,
+          "absolute_gain": 0.059637932256366905,
+          "paired_player_bootstrap_95": [
+            -0.01786648731575485,
+            0.14193132052454566
+          ],
+          "mean_absolute_error": 1.1457414692242582,
+          "by_class": {
+            "2018": {
+              "players": 28,
+              "mse": 1.9047221471554185,
+              "baseline_mse": 2.021960449915898,
+              "relative_gain": 0.057982490589939886
+            },
+            "2019": {
+              "players": 25,
+              "mse": 2.396249751900453,
+              "baseline_mse": 2.6253084121414347,
+              "relative_gain": 0.08725019094200091
+            },
+            "2020": {
+              "players": 32,
+              "mse": 2.4917041619284346,
+              "baseline_mse": 2.5287261998411044,
+              "relative_gain": 0.0146405877848681
+            },
+            "2021": {
+              "players": 17,
+              "mse": 2.259872771816502,
+              "baseline_mse": 2.165831799629747,
+              "relative_gain": -0.04342025645889529
+            },
+            "2022": {
+              "players": 28,
+              "mse": 1.8662166039038712,
+              "baseline_mse": 1.845795830290982,
+              "relative_gain": -0.011063397845941469
+            },
+            "2023": {
+              "players": 34,
+              "mse": 2.083203301602709,
+              "baseline_mse": 2.1106282594601886,
+              "relative_gain": 0.012993741429622702
+            },
+            "2024": {
+              "players": 21,
+              "mse": 2.804179588752526,
+              "baseline_mse": 2.9030940121851865,
+              "relative_gain": 0.0340720703557951
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.05645666234351833,
+          "class_bootstrap_95_absolute_gain": [
+            -0.013189432583539145,
+            0.128800870269721
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": 0.021073335014415346,
+            "2019": 0.014791289461391036,
+            "2020": 0.028672543503621604,
+            "2021": 0.03259162488494378,
+            "2022": 0.031136076271946107,
+            "2023": 0.028643269470671553,
+            "2024": 0.024642500048517375
+          },
+          "by_position": {
+            "TE": {
+              "players": 50,
+              "relative_gain": -0.020325130785172875
+            },
+            "WR": {
+              "players": 135,
+              "relative_gain": 0.03425758200774447
+            }
+          }
+        }
+      },
+      "weights": [
+        {
+          "class": 2018,
+          "history_classes": [],
+          "weights": {
+            "combine": 0.25,
+            "historical": 0.25,
+            "raw": 0.25,
+            "custom": 0.25
+          },
+          "players": 28
+        },
+        {
+          "class": 2019,
+          "history_classes": [],
+          "weights": {
+            "combine": 0.25,
+            "historical": 0.25,
+            "raw": 0.25,
+            "custom": 0.25
+          },
+          "players": 25
+        },
+        {
+          "class": 2020,
+          "history_classes": [
+            2018
+          ],
+          "weights": {
+            "combine": 0.24999338251537623,
+            "historical": 0.25003705836821943,
+            "raw": 0.2500349370518162,
+            "custom": 0.24993462206458814
+          },
+          "players": 32
+        },
+        {
+          "class": 2021,
+          "history_classes": [
+            2019
+          ],
+          "weights": {
+            "combine": 0.24996476702694642,
+            "historical": 0.25005759383150317,
+            "raw": 0.2500631050393298,
+            "custom": 0.24991453410222053
+          },
+          "players": 17
+        },
+        {
+          "class": 2022,
+          "history_classes": [
+            2018,
+            2020
+          ],
+          "weights": {
+            "combine": 0.24999124122112343,
+            "historical": 0.25003759139760046,
+            "raw": 0.25003758569910833,
+            "custom": 0.24993358168216778
+          },
+          "players": 28
+        },
+        {
+          "class": 2023,
+          "history_classes": [
+            2019,
+            2021
+          ],
+          "weights": {
+            "combine": 0.24999177933958647,
+            "historical": 0.25006192629394813,
+            "raw": 0.250039688179895,
+            "custom": 0.24990660618657043
+          },
+          "players": 34
+        },
+        {
+          "class": 2024,
+          "history_classes": [
+            2018,
+            2020,
+            2022
+          ],
+          "weights": {
+            "combine": 0.2499979478115272,
+            "historical": 0.2500373160608735,
+            "raw": 0.250032007390973,
+            "custom": 0.24993272873662628
+          },
+          "players": 21
+        }
+      ],
+      "equal_average_diagnostic": {
+        "aggregate_vs_equal_average": {
+          "players": 185,
+          "mse": 2.234386933773281,
+          "baseline_mse": 2.2343854077222227,
+          "relative_gain": -6.829847050068968e-07,
+          "absolute_gain": -1.5260510585648772e-06,
+          "paired_player_bootstrap_95": [
+            -3.758290968826237e-06,
+            7.571481757039278e-07
+          ],
+          "mean_absolute_error": 1.1457414692242582,
+          "by_class": {
+            "2018": {
+              "players": 28,
+              "mse": 1.9047221471554185,
+              "baseline_mse": 1.9047221471554185,
+              "relative_gain": 2.4069790631741873e-17
+            },
+            "2019": {
+              "players": 25,
+              "mse": 2.396249751900453,
+              "baseline_mse": 2.3962497519004535,
+              "relative_gain": 1.6609911133530842e-16
+            },
+            "2020": {
+              "players": 32,
+              "mse": 2.4917041619284346,
+              "baseline_mse": 2.4917043628561655,
+              "relative_gain": 8.063867205324838e-08
+            },
+            "2021": {
+              "players": 17,
+              "mse": 2.259872771816502,
+              "baseline_mse": 2.2598669806008784,
+              "relative_gain": -2.5626356211393507e-06
+            },
+            "2022": {
+              "players": 28,
+              "mse": 1.8662166039038712,
+              "baseline_mse": 1.8662156060191462,
+              "relative_gain": -5.347103100725221e-07
+            },
+            "2023": {
+              "players": 34,
+              "mse": 2.083203301602709,
+              "baseline_mse": 2.083200235593118,
+              "relative_gain": -1.4717786308013936e-06
+            },
+            "2024": {
+              "players": 21,
+              "mse": 2.804179588752526,
+              "baseline_mse": 2.8041768214492273,
+              "relative_gain": -9.868504997848448e-07
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": -1.7744979293751254e-06,
+          "class_bootstrap_95_absolute_gain": [
+            -3.412652410484084e-06,
+            -3.805934467998064e-07
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2018": -7.841573397183973e-07,
+            "2019": -7.987421329753636e-07,
+            "2020": -8.654855279542197e-07,
+            "2021": -4.903905520401149e-07,
+            "2022": -7.044407556001435e-07,
+            "2023": -5.198780369789413e-07,
+            "2024": -6.325043238536901e-07
+          },
+          "by_position": {
+            "TE": {
+              "players": 50,
+              "relative_gain": -2.8394115683001985e-06
+            },
+            "WR": {
+              "players": 135,
+              "relative_gain": -2.7670186133485665e-07
+            }
+          }
+        },
+        "max_prediction_change": 1.895761297632248e-05
+      },
+      "class_normalized_losses": {
+        "2018": {
+          "players": 28,
+          "aggregate": 0.0021163579412837984,
+          "combine": 0.002246622722128775,
+          "historical": 0.002071929945916574,
+          "raw": 0.0020804139899049416,
+          "custom": 0.002481698375104284
+        },
+        "2019": {
+          "players": 25,
+          "aggregate": 0.0026624997243338373,
+          "combine": 0.002917009346823816,
+          "historical": 0.002545718729085191,
+          "raw": 0.002523679218065805,
+          "custom": 0.0031179895625740115
+        },
+        "2020": {
+          "players": 32,
+          "aggregate": 0.002768560179920483,
+          "combine": 0.0028096957776012265,
+          "historical": 0.002798998537933708,
+          "raw": 0.0027905372844871136,
+          "custom": 0.0028052929640997298
+        },
+        "2021": {
+          "players": 17,
+          "aggregate": 0.0025109697464627792,
+          "combine": 0.002406479777366386,
+          "historical": 0.002497212710874252,
+          "raw": 0.002608186604123902,
+          "custom": 0.0025462614296530594
+        },
+        "2022": {
+          "players": 28,
+          "aggregate": 0.002073574004337635,
+          "combine": 0.002050884255878869,
+          "historical": 0.002078812379480144,
+          "raw": 0.002100021324826806,
+          "custom": 0.0020811238921953565
+        },
+        "2023": {
+          "players": 34,
+          "aggregate": 0.002314670335114121,
+          "combine": 0.002345142510511321,
+          "historical": 0.0023052661998665984,
+          "raw": 0.0023386177708084963,
+          "custom": 0.002281324653519825
+        },
+        "2024": {
+          "players": 21,
+          "aggregate": 0.0031157550986139165,
+          "combine": 0.0032256600135390965,
+          "historical": 0.0031067301034314538,
+          "raw": 0.0030935277234190976,
+          "custom": 0.003056351896388818
+        }
+      },
+      "deterministic_regret_receipt": {
+        "0": {
+          "rounds": 4,
+          "normalized_equal_class_aggregate_loss": 0.010074247224155833,
+          "best_fixed_expert_loss": 0.01005647096676188,
+          "regret": 1.7776257393952236e-05,
+          "upper_bound": 1.8862943611198906,
+          "bound_satisfied": true
+        },
+        "1": {
+          "rounds": 3,
+          "normalized_equal_class_aggregate_loss": 0.007488139805910737,
+          "best_fixed_expert_loss": 0.007348197639826042,
+          "regret": 0.00013994216608469515,
+          "upper_bound": 1.7612943611198906,
+          "bound_satisfied": true
+        }
+      }
+    },
+    "pressure_target": {
+      "players": 90,
+      "bound": 100.0,
+      "outcome_clipped": 0,
+      "expert_clipped": {
+        "target": 0,
+        "combine": 0,
+        "historical": 0,
+        "raw": 0,
+        "custom": 0
+      },
+      "input_sha256": "dc7413c6ec75ab1507466ef8b5aa4cf0633c357cd577f76fad5d8800a7a5171e",
+      "comparisons": {
+        "aggregate_vs_combine": {
+          "players": 90,
+          "mse": 0.9389375507749864,
+          "baseline_mse": 1.0108190207905046,
+          "relative_gain": 0.07111210665515924,
+          "absolute_gain": 0.07188147001551799,
+          "paired_player_bootstrap_95": [
+            -0.0639984723940297,
+            0.20013673454655417
+          ],
+          "mean_absolute_error": 0.7073776406712846,
+          "by_class": {
+            "2023": {
+              "players": 45,
+              "mse": 0.9631878442690346,
+              "baseline_mse": 0.9657655721011226,
+              "relative_gain": 0.00266910304793708
+            },
+            "2024": {
+              "players": 45,
+              "mse": 0.9146872572809381,
+              "baseline_mse": 1.0558724694798864,
+              "relative_gain": 0.13371426595533342
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.071881470015518,
+          "class_bootstrap_95_absolute_gain": [
+            0.002577727832087804,
+            0.1411852121989482
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2023": 0.13371426595533342,
+            "2024": 0.00266910304793708
+          },
+          "by_position": {
+            "DE": {
+              "players": 8,
+              "relative_gain": 0.0003068437249088967
+            },
+            "DT": {
+              "players": 23,
+              "relative_gain": -0.05641195741703342
+            },
+            "EDGE": {
+              "players": 29,
+              "relative_gain": 0.08121545608183176
+            },
+            "LB": {
+              "players": 30,
+              "relative_gain": 0.2549801321240748
+            }
+          }
+        },
+        "aggregate_vs_historical": {
+          "players": 90,
+          "mse": 0.9389375507749864,
+          "baseline_mse": 1.2522324337557467,
+          "relative_gain": 0.2501890819431289,
+          "absolute_gain": 0.3132948829807602,
+          "paired_player_bootstrap_95": [
+            0.11566525863645923,
+            0.5532279275434099
+          ],
+          "mean_absolute_error": 0.7073776406712846,
+          "by_class": {
+            "2023": {
+              "players": 45,
+              "mse": 0.9631878442690346,
+              "baseline_mse": 1.2087082294512934,
+              "relative_gain": 0.20312626256686894
+            },
+            "2024": {
+              "players": 45,
+              "mse": 0.9146872572809381,
+              "baseline_mse": 1.2957566380602,
+              "relative_gain": 0.2940902400853126
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.3132948829807602,
+          "class_bootstrap_95_absolute_gain": [
+            0.2455203851822587,
+            0.38106938077926167
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2023": 0.2940902400853126,
+            "2024": 0.20312626256686894
+          },
+          "by_position": {
+            "DE": {
+              "players": 8,
+              "relative_gain": 0.11352822450313957
+            },
+            "DT": {
+              "players": 23,
+              "relative_gain": 0.296260936204271
+            },
+            "EDGE": {
+              "players": 29,
+              "relative_gain": 0.29100119811052394
+            },
+            "LB": {
+              "players": 30,
+              "relative_gain": 0.09194384750185519
+            }
+          }
+        },
+        "aggregate_vs_raw": {
+          "players": 90,
+          "mse": 0.9389375507749864,
+          "baseline_mse": 1.0369708816291145,
+          "relative_gain": 0.0945381713130792,
+          "absolute_gain": 0.098033330854128,
+          "paired_player_bootstrap_95": [
+            -0.014450484097776627,
+            0.2133159717777408
+          ],
+          "mean_absolute_error": 0.7073776406712846,
+          "by_class": {
+            "2023": {
+              "players": 45,
+              "mse": 0.9631878442690346,
+              "baseline_mse": 1.1101484522525535,
+              "relative_gain": 0.13237923962811243
+            },
+            "2024": {
+              "players": 45,
+              "mse": 0.9146872572809381,
+              "baseline_mse": 0.9637933110056753,
+              "relative_gain": 0.05095081400128949
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.09803333085412802,
+          "class_bootstrap_95_absolute_gain": [
+            0.04910605372473712,
+            0.14696060798351893
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2023": 0.05095081400128949,
+            "2024": 0.13237923962811243
+          },
+          "by_position": {
+            "DE": {
+              "players": 8,
+              "relative_gain": -0.016208909697049485
+            },
+            "DT": {
+              "players": 23,
+              "relative_gain": 0.15041233044229207
+            },
+            "EDGE": {
+              "players": 29,
+              "relative_gain": 0.017676558059088403
+            },
+            "LB": {
+              "players": 30,
+              "relative_gain": 0.27545173287857705
+            }
+          }
+        },
+        "aggregate_vs_custom": {
+          "players": 90,
+          "mse": 0.9389375507749864,
+          "baseline_mse": 1.0041697377172796,
+          "relative_gain": 0.06496131529574027,
+          "absolute_gain": 0.065232186942293,
+          "paired_player_bootstrap_95": [
+            -0.08478235495770088,
+            0.20261119975124253
+          ],
+          "mean_absolute_error": 0.7073776406712846,
+          "by_class": {
+            "2023": {
+              "players": 45,
+              "mse": 0.9631878442690346,
+              "baseline_mse": 1.1682147258260729,
+              "relative_gain": 0.17550444881788196
+            },
+            "2024": {
+              "players": 45,
+              "mse": 0.9146872572809381,
+              "baseline_mse": 0.840124749608486,
+              "relative_gain": -0.08875170944219833
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.06523218694229302,
+          "class_bootstrap_95_absolute_gain": [
+            -0.07456250767245198,
+            0.20502688155703802
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2023": -0.08875170944219833,
+            "2024": 0.17550444881788196
+          },
+          "by_position": {
+            "DE": {
+              "players": 8,
+              "relative_gain": 0.16172711143090152
+            },
+            "DT": {
+              "players": 23,
+              "relative_gain": 0.01670425585937207
+            },
+            "EDGE": {
+              "players": 29,
+              "relative_gain": -0.07138426475376727
+            },
+            "LB": {
+              "players": 30,
+              "relative_gain": 0.34128047810641077
+            }
+          }
+        },
+        "aggregate_vs_original_combine_original_target": {
+          "players": 90,
+          "mse": 0.9389375507749864,
+          "baseline_mse": 1.0108190207905046,
+          "relative_gain": 0.07111210665515924,
+          "absolute_gain": 0.07188147001551799,
+          "paired_player_bootstrap_95": [
+            -0.0639984723940297,
+            0.20013673454655417
+          ],
+          "mean_absolute_error": 0.7073776406712846,
+          "by_class": {
+            "2023": {
+              "players": 45,
+              "mse": 0.9631878442690346,
+              "baseline_mse": 0.9657655721011226,
+              "relative_gain": 0.00266910304793708
+            },
+            "2024": {
+              "players": 45,
+              "mse": 0.9146872572809381,
+              "baseline_mse": 1.0558724694798864,
+              "relative_gain": 0.13371426595533342
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": 0.071881470015518,
+          "class_bootstrap_95_absolute_gain": [
+            0.002577727832087804,
+            0.1411852121989482
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2023": 0.13371426595533342,
+            "2024": 0.00266910304793708
+          },
+          "by_position": {
+            "DE": {
+              "players": 8,
+              "relative_gain": 0.0003068437249088967
+            },
+            "DT": {
+              "players": 23,
+              "relative_gain": -0.05641195741703342
+            },
+            "EDGE": {
+              "players": 29,
+              "relative_gain": 0.08121545608183176
+            },
+            "LB": {
+              "players": 30,
+              "relative_gain": 0.2549801321240748
+            }
+          }
+        }
+      },
+      "weights": [
+        {
+          "class": 2023,
+          "history_classes": [],
+          "weights": {
+            "combine": 0.25,
+            "historical": 0.25,
+            "raw": 0.25,
+            "custom": 0.25
+          },
+          "players": 45
+        },
+        {
+          "class": 2024,
+          "history_classes": [],
+          "weights": {
+            "combine": 0.25,
+            "historical": 0.25,
+            "raw": 0.25,
+            "custom": 0.25
+          },
+          "players": 45
+        }
+      ],
+      "equal_average_diagnostic": {
+        "aggregate_vs_equal_average": {
+          "players": 90,
+          "mse": 0.9389375507749864,
+          "baseline_mse": 0.9389375507749864,
+          "relative_gain": -5.1938932124022545e-17,
+          "absolute_gain": -4.876741371839799e-17,
+          "paired_player_bootstrap_95": [
+            -9.117176535338661e-17,
+            -1.2395562971118716e-17
+          ],
+          "mean_absolute_error": 0.7073776406712846,
+          "by_class": {
+            "2023": {
+              "players": 45,
+              "mse": 0.9631878442690346,
+              "baseline_mse": 0.9631878442690346,
+              "relative_gain": -5.887344124674602e-17
+            },
+            "2024": {
+              "players": 45,
+              "mse": 0.9146872572809381,
+              "baseline_mse": 0.9146872572809381,
+              "relative_gain": -4.463672599858124e-17
+            }
+          },
+          "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+          "equal_class_mean_absolute_gain": -4.876741371839799e-17,
+          "class_bootstrap_95_absolute_gain": [
+            -5.670618295915296e-17,
+            -4.082864447764302e-17
+          ],
+          "leave_one_class_out_relative_gain": {
+            "2023": -4.463672599858124e-17,
+            "2024": -5.887344124674602e-17
+          },
+          "by_position": {
+            "DE": {
+              "players": 8,
+              "relative_gain": -6.127953877020305e-17
+            },
+            "DT": {
+              "players": 23,
+              "relative_gain": -3.048063032802976e-17
+            },
+            "EDGE": {
+              "players": 29,
+              "relative_gain": -7.268965938825812e-17
+            },
+            "LB": {
+              "players": 30,
+              "relative_gain": -1.105904869656583e-17
+            }
+          }
+        },
+        "max_prediction_change": 4.440892098500626e-16
+      },
+      "class_normalized_losses": {
+        "2023": {
+          "players": 45,
+          "aggregate": 9.631878442690347e-05,
+          "combine": 9.657655721011224e-05,
+          "historical": 0.00012087082294512935,
+          "raw": 0.00011101484522525538,
+          "custom": 0.00011682147258260731
+        },
+        "2024": {
+          "players": 45,
+          "aggregate": 9.146872572809383e-05,
+          "combine": 0.00010558724694798866,
+          "historical": 0.00012957566380602,
+          "raw": 9.637933110056752e-05,
+          "custom": 8.401247496084863e-05
+        }
+      },
+      "deterministic_regret_receipt": {
+        "0": {
+          "rounds": 1,
+          "normalized_equal_class_aggregate_loss": 9.146872572809383e-05,
+          "best_fixed_expert_loss": 8.401247496084863e-05,
+          "regret": 7.456250767245203e-06,
+          "upper_bound": 1.5112943611198906,
+          "bound_satisfied": true
+        },
+        "1": {
+          "rounds": 1,
+          "normalized_equal_class_aggregate_loss": 9.631878442690347e-05,
+          "best_fixed_expert_loss": 9.657655721011224e-05,
+          "regret": -2.5777278320877027e-07,
+          "upper_bound": 1.5112943611198906,
+          "bound_satisfied": true
+        }
+      }
+    }
+  },
+  "source_sha256": {
+    "scripts/evaluate_scouting_identity.py": "e3b30280a90f2849fb219527ed088121327c4da5b8341445a8b709ffc98273eb",
+    "python/perfectpower/scouting_identity.py": "135421a416c388f95597e5a269e984c0e96c3ec0e3b6e2e115d27b3c2a864213"
+  }
+}

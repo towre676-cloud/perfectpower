@@ -24,7 +24,7 @@
   },
   "numerical_scope": "Exact integer populations and ranks; binary64 log-weight inference and source observations. Rational reference API checked on small graphs.",
   "formal_scope": "Uses the finite partial-state language framework developed in ArithmeticModes. New numerical compiler, feature extraction and NFL regression are not formally verified.",
-  "summary": "Movement corrections have not established a scouting advantage. A broader follow-up now covers 2,533 drafted prospects, 66 public archives and 1,454 chronological evaluations. College inputs show a retrospective 2.53% NFL usage-error reduction, but custom transformations add no dependable benefit; no predictive scouting edge is validated.",
+  "summary": "Historical identity audit: 2,790 name-and-birth verified college identities, 1,125 contextual recruiting candidates, zero authoritative/as-of recruitment features. A fixed convex blend reduces retrospective pressure-rate MSE 7.11% on 90 defenders, with player uncertainty crossing zero. No scouting model is promoted.",
   "benchmark": {
     "cases": [
       {
@@ -2804,5 +2804,35 @@
     },
     "selected_endpoint_replays": 96,
     "selected_replay_max_difference": 0.0
+  },
+  "scouting_identity": {
+    "schema": "pp-scouting-identity-release/1",
+    "population": 3762,
+    "college_identity": {
+      "verified_name_birth": 2790,
+      "unsupported": 969,
+      "ambiguous": 3
+    },
+    "corroborated_recruit_prospects": 1125,
+    "authoritative_recruit_links": 0,
+    "asof_eligible_recruit_features": 0,
+    "opportunity_player_seasons": 4956,
+    "development_gains_vs_conventional": {
+      "target": 0.00652421383511403,
+      "receiving_efficiency": 0.02599707315273545,
+      "pressure_target": 0.07111210665515924
+    },
+    "summary": "Historical identity audit: 2,790 name-and-birth verified college identities, 1,125 contextual recruiting candidates, zero authoritative/as-of recruitment features. A fixed convex blend reduces retrospective pressure-rate MSE 7.11% on 90 defenders, with player uncertainty crossing zero. No scouting model is promoted.",
+    "monograph": "docs/SCOUTING_IDENTITY_MONOGRAPH.md",
+    "retrospective_development": true,
+    "independent_confirmation": false,
+    "models_promoted": false,
+    "native_executable_upgrade": false,
+    "baseline_predictions_reused": true,
+    "earlier_negative_results_preserved": true,
+    "tests": {
+      "scouting": 28,
+      "movement": 25
+    }
   }
 }
