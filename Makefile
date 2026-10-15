@@ -740,3 +740,7 @@ movement-residual-test:
 .PHONY: scouting-metrics-test
 scouting-metrics-test:
 	$(PY) -m unittest discover -s python/tests -p 'test_scouting_metrics.py'
+
+.PHONY: scouting-depth-test
+scouting-depth-test:
+	$(PY) -m unittest discover -s python/tests -p 'test_scouting*.py'

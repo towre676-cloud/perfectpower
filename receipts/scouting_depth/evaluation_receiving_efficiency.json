@@ -1,0 +1,1148 @@
+{
+  "schema": "pp-scouting-depth-evaluation/1",
+  "protocol_sha256": "7e5c9261df8f6fd806e10edb5d6b83d60bfdd9eca13734aa7e8695f534267a06",
+  "input_sha256": "e2774a822d16ac9f5d9d51244c0a65b4a120488d507f50b2db2cc21e334936c0",
+  "model_bank": [
+    [
+      "ridge",
+      10.0
+    ],
+    [
+      "ridge",
+      100.0
+    ],
+    [
+      "ridge",
+      1000.0
+    ],
+    [
+      "ridge",
+      10000.0
+    ],
+    [
+      "role_ridge",
+      100.0
+    ],
+    [
+      "role_ridge",
+      1000.0
+    ],
+    [
+      "boost",
+      2,
+      1.0
+    ],
+    [
+      "boost",
+      2,
+      10.0
+    ],
+    [
+      "boost",
+      3,
+      1.0
+    ],
+    [
+      "boost",
+      3,
+      10.0
+    ],
+    [
+      "trees",
+      10
+    ]
+  ],
+  "retrospective": true,
+  "untouched_confirmation": false,
+  "receiving_efficiency": {
+    "status": "evaluated",
+    "eligible": 298,
+    "evaluated": 100,
+    "feature_dimensions": {
+      "combine": 9,
+      "historical": 111,
+      "raw": 207,
+      "custom": 362,
+      "draft_raw": 208,
+      "draft_custom": 363
+    },
+    "outer_audits": [
+      {
+        "class": 2021,
+        "training_players": 166,
+        "test_players": 17,
+        "configs": {
+          "combine": {
+            "selected": [
+              "trees",
+              10
+            ],
+            "inner_mse": [
+              2.9940576082989936,
+              2.8734461531018685,
+              2.837656592386915,
+              2.8315263969380235,
+              2.8939810494049953,
+              2.8331145097727153,
+              2.886436668172218,
+              2.90507860219937,
+              2.886436668172218,
+              2.90507860219937,
+              2.771879317167278
+            ]
+          },
+          "historical": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              3.9906723812122187,
+              3.354431734399,
+              2.9038634776835845,
+              2.8276133594841015,
+              3.0021008929396693,
+              2.8912466083199972,
+              3.2161445274364633,
+              3.2550449513299764,
+              3.2161445274364633,
+              3.2550449513299764,
+              3.0133996881479574
+            ]
+          },
+          "raw": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              4.291175873177569,
+              3.3009847146432167,
+              2.929249524202753,
+              2.8280512887412863,
+              3.0581562202067936,
+              2.862420336618647,
+              3.122040977922597,
+              3.078036172328694,
+              3.122040977922597,
+              3.078036172328694,
+              3.0637754428491513
+            ]
+          },
+          "custom": {
+            "selected": [
+              "role_ridge",
+              100.0
+            ],
+            "inner_mse": [
+              3.870044569510677,
+              2.8595515436987555,
+              2.8299934676818532,
+              2.8207588743180354,
+              2.6409089699773274,
+              2.6642850717121935,
+              2.7704382393474107,
+              2.7178862080045225,
+              2.7704382393474107,
+              2.7178862080045225,
+              2.9765528415958853
+            ]
+          },
+          "draft_raw": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              4.450921786888574,
+              3.323457132427512,
+              2.9341744600515005,
+              2.828976303323476,
+              3.088600751018662,
+              2.870347141912583,
+              3.0855994200850074,
+              3.011467852709816,
+              3.0855994200850074,
+              3.011467852709816,
+              3.1080633113231424
+            ]
+          },
+          "draft_custom": {
+            "selected": [
+              "role_ridge",
+              100.0
+            ],
+            "inner_mse": [
+              4.539375463339454,
+              2.9148181243449143,
+              2.8370629744708573,
+              2.821690859021927,
+              2.6715877784777207,
+              2.6724441791177727,
+              3.0052037059030168,
+              2.936529452127033,
+              3.0052037059030168,
+              2.936529452127033,
+              3.0262359970258617
+            ]
+          },
+          "optional": {
+            "accept_custom": false,
+            "inner_paired_gain": 0.18714231876395895,
+            "inner_player_se": 0.4127336623466027
+          },
+          "draft_optional": {
+            "accept_custom": false,
+            "inner_paired_gain": 0.15738852484575508,
+            "inner_player_se": 0.451848573698623
+          }
+        }
+      },
+      {
+        "class": 2022,
+        "training_players": 198,
+        "test_players": 28,
+        "configs": {
+          "combine": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              3.580637832213695,
+              3.1424626145607983,
+              3.002842356413481,
+              2.9783991652161896,
+              3.1202686364921997,
+              2.9886899850951716,
+              3.144719604200021,
+              3.1267854109482744,
+              3.2011144300318155,
+              3.1679468652050122,
+              3.139830835214034
+            ]
+          },
+          "historical": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.00825913366436,
+              3.118512970695503,
+              2.838396600721724,
+              2.939661403772883,
+              3.039030214014377,
+              2.7951859252899984,
+              3.4273179714898503,
+              3.4576810174549397,
+              3.518215387744912,
+              3.4993320334713593,
+              2.8490011241213655
+            ]
+          },
+          "raw": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.3097766115355585,
+              3.207202079633767,
+              2.8697259472672503,
+              2.9219363731922114,
+              3.097021219327131,
+              2.825979672029466,
+              3.3264796666719056,
+              3.278450557143436,
+              3.3631263687531563,
+              3.2678915427740405,
+              2.9803063629681747
+            ]
+          },
+          "custom": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.64636205341004,
+              3.1242016925185245,
+              2.820885833776731,
+              2.9001140968579566,
+              3.211406907879134,
+              2.720049912171485,
+              3.272447520335543,
+              3.146342902541126,
+              3.240043769629574,
+              3.129953520632775,
+              3.131617526973225
+            ]
+          },
+          "draft_raw": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.317675246368045,
+              3.205462157827648,
+              2.8701163312374334,
+              2.922251974749659,
+              3.097194782237162,
+              2.823001251488613,
+              3.6946318279219215,
+              3.5696095036502076,
+              3.724691002796294,
+              3.667911624240084,
+              3.016602790538644
+            ]
+          },
+          "draft_custom": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              5.07572326080912,
+              3.1390277359814664,
+              2.8225839075763512,
+              2.9004542085366194,
+              3.23469895510771,
+              2.720155968899642,
+              3.5769572212945557,
+              3.491621124502515,
+              3.526592423371098,
+              3.3668911816681133,
+              3.175136968387794
+            ]
+          },
+          "optional": {
+            "accept_custom": false,
+            "inner_paired_gain": 0.10592975985798214,
+            "inner_player_se": 0.13320878460241994
+          },
+          "draft_optional": {
+            "accept_custom": false,
+            "inner_paired_gain": 0.10284528258897131,
+            "inner_player_se": 0.13032982044162852
+          }
+        }
+      },
+      {
+        "class": 2023,
+        "training_players": 215,
+        "test_players": 34,
+        "configs": {
+          "combine": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              3.580637832213695,
+              3.1424626145607983,
+              3.002842356413481,
+              2.9783991652161896,
+              3.1202686364921997,
+              2.9886899850951716,
+              3.144719604200021,
+              3.1267854109482744,
+              3.2011144300318155,
+              3.1679468652050122,
+              3.139830835214034
+            ]
+          },
+          "historical": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.00825913366436,
+              3.118512970695503,
+              2.838396600721724,
+              2.939661403772883,
+              3.039030214014377,
+              2.7951859252899984,
+              3.4273179714898503,
+              3.4576810174549397,
+              3.518215387744912,
+              3.4993320334713593,
+              2.8490011241213655
+            ]
+          },
+          "raw": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.3097766115355585,
+              3.207202079633767,
+              2.8697259472672503,
+              2.9219363731922114,
+              3.097021219327131,
+              2.825979672029466,
+              3.3264796666719056,
+              3.278450557143436,
+              3.3631263687531563,
+              3.2678915427740405,
+              2.9803063629681747
+            ]
+          },
+          "custom": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.64636205341004,
+              3.1242016925185245,
+              2.820885833776731,
+              2.9001140968579566,
+              3.211406907879134,
+              2.720049912171485,
+              3.272447520335543,
+              3.146342902541126,
+              3.240043769629574,
+              3.129953520632775,
+              3.131617526973225
+            ]
+          },
+          "draft_raw": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              4.317675246368045,
+              3.205462157827648,
+              2.8701163312374334,
+              2.922251974749659,
+              3.097194782237162,
+              2.823001251488613,
+              3.6946318279219215,
+              3.5696095036502076,
+              3.724691002796294,
+              3.667911624240084,
+              3.016602790538644
+            ]
+          },
+          "draft_custom": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              5.07572326080912,
+              3.1390277359814664,
+              2.8225839075763512,
+              2.9004542085366194,
+              3.23469895510771,
+              2.720155968899642,
+              3.5769572212945557,
+              3.491621124502515,
+              3.526592423371098,
+              3.3668911816681133,
+              3.175136968387794
+            ]
+          },
+          "optional": {
+            "accept_custom": false,
+            "inner_paired_gain": 0.10592975985798214,
+            "inner_player_se": 0.13320878460241994
+          },
+          "draft_optional": {
+            "accept_custom": false,
+            "inner_paired_gain": 0.10284528258897131,
+            "inner_player_se": 0.13032982044162852
+          }
+        }
+      },
+      {
+        "class": 2024,
+        "training_players": 243,
+        "test_players": 21,
+        "configs": {
+          "combine": {
+            "selected": [
+              "role_ridge",
+              1000.0
+            ],
+            "inner_mse": [
+              2.9581642024490344,
+              2.6681336438698393,
+              2.5889885881348302,
+              2.5779882230865034,
+              2.6655796684538053,
+              2.5779270921856376,
+              2.631217477601851,
+              2.621566928665048,
+              2.6998105827485106,
+              2.6699763586141745,
+              2.707109826625584
+            ]
+          },
+          "historical": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              4.6401439384525665,
+              3.2064107352962097,
+              2.602224053868808,
+              2.566673132339189,
+              3.406938968629744,
+              2.6576019863648694,
+              3.0033709734669074,
+              2.9851667954487398,
+              3.101019419358026,
+              3.0441346542335515,
+              2.673036165332673
+            ]
+          },
+          "raw": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              5.158939861898467,
+              3.306619221387225,
+              2.5994547881822965,
+              2.5482091682000063,
+              3.467092956757431,
+              2.647395543230855,
+              2.9790519884351108,
+              2.929444205089294,
+              3.081108635268692,
+              2.992090366648825,
+              2.748404429359489
+            ]
+          },
+          "custom": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              5.1359386550721995,
+              3.2951902169862564,
+              2.601186789138687,
+              2.527121292042631,
+              3.4348563953654923,
+              2.628224155772259,
+              2.9345176271106754,
+              2.8436501361312234,
+              2.933813117775772,
+              2.8148001672530008,
+              2.8006487066452053
+            ]
+          },
+          "draft_raw": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              5.116724688132155,
+              3.3188852555155703,
+              2.6006111315999894,
+              2.548359270492292,
+              3.4931580874269845,
+              2.653074699992333,
+              3.2865052345354764,
+              3.180614306020667,
+              3.3673987880010428,
+              3.2778692514824503,
+              2.773786952541652
+            ]
+          },
+          "draft_custom": {
+            "selected": [
+              "ridge",
+              10000.0
+            ],
+            "inner_mse": [
+              5.604668569460369,
+              3.32826069254371,
+              2.604370205551431,
+              2.5273433091571404,
+              3.518960999357194,
+              2.6369713423490895,
+              3.1778811088687133,
+              3.08289830495445,
+              3.1853819493060267,
+              3.0308464217975803,
+              2.811178289013143
+            ]
+          },
+          "optional": {
+            "accept_custom": true,
+            "inner_paired_gain": 0.02108787615737405,
+            "inner_player_se": 0.01575312232595578
+          },
+          "draft_optional": {
+            "accept_custom": true,
+            "inner_paired_gain": 0.021015961335152065,
+            "inner_player_se": 0.0157295138413957
+          }
+        }
+      }
+    ],
+    "skipped": [
+      2018,
+      2019,
+      2020
+    ],
+    "comparisons": {
+      "historical_vs_combine": {
+        "players": 100,
+        "mse": 2.3552606762134256,
+        "baseline_mse": 2.098807195468116,
+        "relative_gain": -0.12219010936262353,
+        "absolute_gain": -0.25645348074531027,
+        "paired_player_bootstrap_95": [
+          -0.5586078129871773,
+          0.025726259188044272
+        ],
+        "mean_absolute_error": 1.1464291837171996,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 1.9788392650693054,
+            "baseline_mse": 2.054968591687742,
+            "relative_gain": 0.03704646724352707
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.377520396410141,
+            "baseline_mse": 1.7628659480367852,
+            "relative_gain": -0.3486677186418315
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.334362334307498,
+            "baseline_mse": 1.9893567370827094,
+            "relative_gain": -0.17342570630681473
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.6641385547250254,
+            "baseline_mse": 2.7594227562989455,
+            "relative_gain": 0.03453048336157075
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": -0.1970616293514468,
+        "class_bootstrap_95_absolute_gain": [
+          -0.4798300227990723,
+          0.08570676409617867
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": -0.15398755954996105,
+          "2022": -0.052547960782444586,
+          "2023": -0.09782694284000559,
+          "2024": -0.1819640573078081
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": -0.1420744079766088
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": -0.11920686739242116
+          }
+        }
+      },
+      "raw_vs_combine": {
+        "players": 100,
+        "mse": 2.341201365688128,
+        "baseline_mse": 2.098807195468116,
+        "relative_gain": -0.11549139470428993,
+        "absolute_gain": -0.24239417022001195,
+        "paired_player_bootstrap_95": [
+          -0.5535615590944896,
+          0.06702216789263243
+        ],
+        "mean_absolute_error": 1.1474092579734718,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 2.04084326384952,
+            "baseline_mse": 2.054968591687742,
+            "relative_gain": 0.006873743907988869
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.283849281033681,
+            "baseline_mse": 1.7628659480367852,
+            "relative_gain": -0.2955320190835205
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.366785194304828,
+            "baseline_mse": 1.9893567370827094,
+            "relative_gain": -0.18972386912143177
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.6193964099077953,
+            "baseline_mse": 2.7594227562989455,
+            "relative_gain": 0.05074479655990047
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": -0.18606502899741062,
+        "class_bootstrap_95_absolute_gain": [
+          -0.44920589510950715,
+          0.07707583711468594
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": -0.13992610362995456,
+          "2022": -0.0601286771562216,
+          "2023": -0.0801929256031927,
+          "2024": -0.17889463527726587
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": -0.16140296565025816
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": -0.10860328021642943
+          }
+        }
+      },
+      "raw_vs_historical": {
+        "players": 100,
+        "mse": 2.341201365688128,
+        "baseline_mse": 2.3552606762134256,
+        "relative_gain": 0.00596932249040968,
+        "absolute_gain": 0.014059310525298312,
+        "paired_player_bootstrap_95": [
+          -0.06190005564526021,
+          0.1109901579539689
+        ],
+        "mean_absolute_error": 1.1474092579734718,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 2.04084326384952,
+            "baseline_mse": 1.9788392650693054,
+            "relative_gain": -0.03133351954083208
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.283849281033681,
+            "baseline_mse": 2.377520396410141,
+            "relative_gain": 0.03939865900536341
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.366785194304828,
+            "baseline_mse": 2.334362334307498,
+            "relative_gain": -0.013889386202312878
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.6193964099077953,
+            "baseline_mse": 2.6641385547250254,
+            "relative_gain": 0.016794225937639854
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": 0.01099660035403616,
+        "class_bootstrap_95_absolute_gain": [
+          -0.047213429388772155,
+          0.06920663009684447
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": 0.012185101826825832,
+          "2022": -0.007202252682283144,
+          "2023": 0.016062656643491435,
+          "2024": 0.0025968827153116654
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": -0.016924079148129566
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": 0.009474197742099667
+          }
+        }
+      },
+      "custom_vs_raw": {
+        "players": 100,
+        "mse": 2.8611828791259284,
+        "baseline_mse": 2.341201365688128,
+        "relative_gain": -0.2221002947710853,
+        "absolute_gain": -0.5199815134378007,
+        "paired_player_bootstrap_95": [
+          -1.0272913096762684,
+          -0.11892258903981608
+        ],
+        "mean_absolute_error": 1.2619170788423997,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 4.756850952416206,
+            "baseline_mse": 2.04084326384952,
+            "relative_gain": -1.3308262014416743
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.441293151673836,
+            "baseline_mse": 2.283849281033681,
+            "relative_gain": -0.06893794259877561
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.424003644393192,
+            "baseline_mse": 2.366785194304828,
+            "relative_gain": -0.024175599131703203
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.594261407870544,
+            "baseline_mse": 2.6193964099077953,
+            "relative_gain": 0.009595722870421325
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": -0.7263837518144881,
+        "class_bootstrap_95_absolute_gain": [
+          -2.051310378947105,
+          -0.016041724025556023
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": -0.029213976358609808,
+          "2022": -0.2796560139893284,
+          "2023": -0.3257592351329652,
+          "2024": -0.29325644442494125
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": -0.42359774223941205
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": -0.1904298236318644
+          }
+        }
+      },
+      "optional_vs_raw": {
+        "players": 100,
+        "mse": 2.3359230152603048,
+        "baseline_mse": 2.341201365688128,
+        "relative_gain": 0.0022545478168519034,
+        "absolute_gain": 0.005278350427822864,
+        "paired_player_bootstrap_95": [
+          -0.016536454750418608,
+          0.023681355681891506
+        ],
+        "mean_absolute_error": 1.1431600345685662,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 2.04084326384952,
+            "baseline_mse": 2.04084326384952,
+            "relative_gain": 0.0
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.283849281033681,
+            "baseline_mse": 2.283849281033681,
+            "relative_gain": 0.0
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.366785194304828,
+            "baseline_mse": 2.366785194304828,
+            "relative_gain": 0.0
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.594261407870544,
+            "baseline_mse": 2.6193964099077953,
+            "relative_gain": 0.009595722870421325
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": 0.006283750509312935,
+        "class_bootstrap_95_absolute_gain": [
+          0.0,
+          0.018851251527938803
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": 0.002646774087980835,
+          "2022": 0.0031017672495023425,
+          "2023": 0.003435320316893362,
+          "2024": 0.0
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": 0.0003558012925743898
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": 0.0025529843367848907
+          }
+        }
+      },
+      "optional_vs_combine": {
+        "players": 100,
+        "mse": 2.3359230152603048,
+        "baseline_mse": 2.098807195468116,
+        "relative_gain": -0.1129764660156423,
+        "absolute_gain": -0.23711581979218913,
+        "paired_player_bootstrap_95": [
+          -0.5493816544721364,
+          0.07134282812239288
+        ],
+        "mean_absolute_error": 1.1431600345685662,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 2.04084326384952,
+            "baseline_mse": 2.054968591687742,
+            "relative_gain": 0.006873743907988869
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.283849281033681,
+            "baseline_mse": 1.7628659480367852,
+            "relative_gain": -0.2955320190835205
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.366785194304828,
+            "baseline_mse": 1.9893567370827094,
+            "relative_gain": -0.18972386912143177
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.594261407870544,
+            "baseline_mse": 2.7594227562989455,
+            "relative_gain": 0.05985358642541709
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": -0.17978127848809766,
+        "class_bootstrap_95_absolute_gain": [
+          -0.44920589510950715,
+          0.08964333813331182
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": -0.13690897675665387,
+          "2022": -0.05684040474516019,
+          "2023": -0.07648211689970359,
+          "2024": -0.17889463527726587
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": -0.1609897369738801
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": -0.10577303340632851
+          }
+        }
+      },
+      "draft_raw_vs_raw": {
+        "players": 100,
+        "mse": 2.3418552346987127,
+        "baseline_mse": 2.341201365688128,
+        "relative_gain": -0.0002792878135850119,
+        "absolute_gain": -0.0006538690105852812,
+        "paired_player_bootstrap_95": [
+          -0.02610171068014489,
+          0.022739285261433657
+        ],
+        "mean_absolute_error": 1.146003579806976,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 2.0361186708351475,
+            "baseline_mse": 2.04084326384952,
+            "relative_gain": 0.0023150200204305207
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.3071527915891927,
+            "baseline_mse": 2.283849281033681,
+            "relative_gain": -0.010203611398106093
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.352155115119474,
+            "baseline_mse": 2.366785194304828,
+            "relative_gain": 0.006181414021246311
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.6189501898625847,
+            "baseline_mse": 2.6193964099077953,
+            "relative_gain": 0.00017035223974621976
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": -0.0008756545776435568,
+        "class_bootstrap_95_absolute_gain": [
+          -0.016296484663040654,
+          0.011084114400318278
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": -0.0007306225248253916,
+          "2022": 0.003450098511189325,
+          "2023": -0.0036629459469433388,
+          "2024": -0.000417376742565692
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": 0.0046341264368973826
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": -0.001051556376636659
+          }
+        }
+      },
+      "draft_custom_vs_draft_raw": {
+        "players": 100,
+        "mse": 2.8210089465332446,
+        "baseline_mse": 2.3418552346987127,
+        "relative_gain": -0.204604325978406,
+        "absolute_gain": -0.47915371183453187,
+        "paired_player_bootstrap_95": [
+          -0.9517671519203091,
+          -0.09446111853607922
+        ],
+        "mean_absolute_error": 1.2533898038413913,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 4.504402821779466,
+            "baseline_mse": 2.0361186708351475,
+            "relative_gain": -1.2122496523898139
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.467631209728323,
+            "baseline_mse": 2.3071527915891927,
+            "relative_gain": -0.0695569095918399
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.4105621333623497,
+            "baseline_mse": 2.352155115119474,
+            "relative_gain": -0.024831278289190885
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.593964775064792,
+            "baseline_mse": 2.6189501898625847,
+            "relative_gain": 0.009540240549249726
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": -0.6655460431321328,
+        "class_bootstrap_95_absolute_gain": [
+          -1.865814867768957,
+          -0.016710801722541593
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": -0.02983662715578394,
+          "2022": -0.25604807421404574,
+          "2023": -0.297833231118087,
+          "2024": -0.2703316141517737
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": -0.3911720036137592
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": -0.17544700067302388
+          }
+        }
+      },
+      "draft_optional_vs_draft_raw": {
+        "players": 100,
+        "mse": 2.336608297591176,
+        "baseline_mse": 2.3418552346987127,
+        "relative_gain": 0.0022405044640649695,
+        "absolute_gain": 0.005246937107536383,
+        "paired_player_bootstrap_95": [
+          -0.01645674952644967,
+          0.023625716104447175
+        ],
+        "mean_absolute_error": 1.1417549479040816,
+        "by_class": {
+          "2021": {
+            "players": 17,
+            "mse": 2.0361186708351475,
+            "baseline_mse": 2.0361186708351475,
+            "relative_gain": 0.0
+          },
+          "2022": {
+            "players": 28,
+            "mse": 2.3071527915891927,
+            "baseline_mse": 2.3071527915891927,
+            "relative_gain": 0.0
+          },
+          "2023": {
+            "players": 34,
+            "mse": 2.352155115119474,
+            "baseline_mse": 2.352155115119474,
+            "relative_gain": 0.0
+          },
+          "2024": {
+            "players": 21,
+            "mse": 2.593964775064792,
+            "baseline_mse": 2.6189501898625847,
+            "relative_gain": 0.009540240549249726
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "equal_class_mean_absolute_gain": 0.006246353699448075,
+        "class_bootstrap_95_absolute_gain": [
+          0.0,
+          0.018739061098344223
+        ],
+        "leave_one_class_out_relative_gain": {
+          "2021": 0.002629101323617687,
+          "2022": 0.003093982084401369,
+          "2023": 0.0034024126634878797,
+          "2024": 0.0
+        },
+        "by_position": {
+          "TE": {
+            "players": 28,
+            "relative_gain": 0.0002773331841238922
+          },
+          "WR": {
+            "players": 72,
+            "relative_gain": 0.002547314434392748
+          }
+        }
+      }
+    }
+  },
+  "elapsed_seconds": 39.31307832600032,
+  "source_sha256": {
+    "python/perfectpower/scouting_depth.py": "c1bd2afcfb419a3775c402cfba94acf153e5add7f31955bae45fb201634f0b5b",
+    "scripts/run_scouting_depth.py": "a3af1aa44465fac2b01006ef0606e487a998ab516efff2672119768605d0f0e5"
+  }
+}

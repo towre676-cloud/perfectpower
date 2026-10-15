@@ -1,0 +1,18 @@
+{
+  "schema": "pp-scouting-depth-protocol/1",
+  "status": "Frozen before running this experiment; retrospective development on previously inspected classes",
+  "population": "Same exactly linked drafted Combine invitees, 2013-2024. No outcome-selected subgroups.",
+  "sources": "Reuse prior public cache; extend college box history to 2004, acquire 2004-2025 offensive opportunity and tackle-share tables and NFL player statistics 2013-2025. Additional acquired tables do not silently enter predictors.",
+  "targets": {
+    "opportunity": "Existing log(1+first two NFL seasons regular-season scrimmage snaps), all eligible positions",
+    "receiving_efficiency": "First two NFL regular seasons receiving yards / targets, Combine WR/TE with at least 30 observed targets. Conditional on reaching that opportunity threshold, not an unconditional prospect success score.",
+    "pressure": "Existing pressures per 100 defensive snaps; retain denominator limitation"
+  },
+  "features": "Conventional Combine; raw historical college game means and raw opportunity counts; custom beta-shrunk catch/conversion/explosive rates, target/touch/tackle shares, yards per target and per opportunity, per-active-game volume, previous physics and production metrics. Source-only, exact ID plus normalized exact name at every lag, draft-year minus 1/2/3. No recruiting numeric namespace guesses.",
+  "models": "Identical banks per feature family: ridge penalties 10,100,1000,10000; shared-plus-coarse-position interaction ridge 100,1000; histogram gradient boosting depth 2/3, L2 1/10, 150 iterations, learning rate .05, minimum leaf 30, no early stopping; extra trees 200, minimum leaf 10, max features .7. Fixed seed 84593.",
+  "selection": "Chronological inner validation, up to 3 most recent eligible classes, training classes at least 2 years earlier, >=100 training and >=20 validation players. Min pooled player MSE selects configuration independently for every feature family. Optional custom bank includes the entire raw model bank and accepts custom only if inner paired mean gain exceeds one player standard error. No outer feature or subgroup selection.",
+  "outer": "Classes 2018-2024; same 2-year outcome maturity gap, whole-player disjoint. Evaluation classes never fit preprocessing, regressions or hyperparameters. Prior outcome inspection means no untouched confirmation is claimed.",
+  "identity_amendment": "Before outer error comparisons, audit found older college and NFL ESPN namespaces differ. Add exact normalized name plus immutable birth-date bridge from only the 3 pre-draft roster seasons; require a unique college ID. Partial unbridged run was stopped; only its tuning configurations were inspected, not outer errors. Preserve its log and input receipt. This is source-driven repair, not outcome-selected feature screening.",
+  "uncertainty": "Report all class errors, player and class bootstrap of paired fixed prediction loss differences, leave-one-class-out pooled gains, position diagnostics. These intervals exclude refitting and adaptive research selection; no prospective certainty.",
+  "success_rule": "Report numerical gains and failures for every predeclared target and feature family, including comparison to equally tuned raw inputs and draft-pick controls. A successful point estimate does not establish a new movement-mathematics edge or independent replication. No release of a scouting recommendation model without corroboration."
+}

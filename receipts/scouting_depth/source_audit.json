@@ -1,0 +1,2419 @@
+{
+  "schema": "pp-scouting-depth-audit/1",
+  "unique_public_archives": 240,
+  "public_bytes": 198867807,
+  "public_sources": [
+    {
+      "name": "combine.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/combine/combine.csv",
+      "provider": "nflverse",
+      "bytes": 893875,
+      "sha256": "5648886b1bb9de8a0c42b05ee7b1d9cbe58897676caaa2f6a4a3d3c9228235bb",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "draft_picks.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/draft_picks/draft_picks.csv",
+      "provider": "nflverse",
+      "bytes": 1661658,
+      "sha256": "592abac6447d6df185acf079f64cbe6f48d6b6f00445d0a20a070ccdeb820672",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "players.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/players/players.csv",
+      "provider": "nflverse",
+      "bytes": 7303216,
+      "sha256": "6270eb598bee3dff245d955c612de8366aeb697a0a9431d79e0cae95fab35adc",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "advstats_season_def.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/pfr_advstats/advstats_season_def.csv",
+      "provider": "nflverse",
+      "bytes": 905623,
+      "sha256": "8935ac010182b566a44db166d5c216ab7be77970ebfedbedd0e170f89deed6af",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2012.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2012.csv",
+      "provider": "nflverse",
+      "bytes": 154,
+      "sha256": "802475aec59f0b125de85a6c35eb69e289a512bcf62d6be007d385ea8d613ebd",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2013.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2013.csv",
+      "provider": "nflverse",
+      "bytes": 2148056,
+      "sha256": "9d1fdd557875b9a2c71d88e583da24a739dfca671edf8223d6171e39a421000e",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2014.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2014.csv",
+      "provider": "nflverse",
+      "bytes": 2156558,
+      "sha256": "84540709d9483552185c8ca3ef30b2f66fb94b30c3e6c21e7a27205f337f21d3",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2015.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2015.csv",
+      "provider": "nflverse",
+      "bytes": 2155797,
+      "sha256": "841496252ada825c3c50d3ba9b4b26d3f4fabd0fedc5fb44f286ddaaa5bdb7e0",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2016.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2016.csv",
+      "provider": "nflverse",
+      "bytes": 2157110,
+      "sha256": "a778e24e9eb665ffe8f16093b03c5a263dca0250b3aa92bd6002f61f534bea59",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2017.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2017.csv",
+      "provider": "nflverse",
+      "bytes": 2157818,
+      "sha256": "eab2fad2df99249d4061ed9c5c34d312cdba07cf3159d027d255bdc9b6526917",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2018.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2018.csv",
+      "provider": "nflverse",
+      "bytes": 2157555,
+      "sha256": "9a408b78a55f799110aed70de3564e157faf089ce9bed780d0368bf49ae13e0b",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2019.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2019.csv",
+      "provider": "nflverse",
+      "bytes": 2156311,
+      "sha256": "0cd52be8fa57f18503b670cb8263246c4f548375b768cbcad1c7a7462c98970d",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2020.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2020.csv",
+      "provider": "nflverse",
+      "bytes": 2257664,
+      "sha256": "512e35f17d076eb5d99b933c4a144eb95dcddf40c0320dbb397cae3c35683716",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2021.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2021.csv",
+      "provider": "nflverse",
+      "bytes": 2388493,
+      "sha256": "8e4dae054a4749cf2d4919508d9161a6068fd67509979aefa385bfb3803d0ee5",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2022.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2022.csv",
+      "provider": "nflverse",
+      "bytes": 2379719,
+      "sha256": "0018a4833fbf0f825286c1c27450c6254391b548d6c55bcde728e93e4816815a",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2023.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2023.csv",
+      "provider": "nflverse",
+      "bytes": 2394875,
+      "sha256": "303b61aa5c33ffda863f93a750fc14483f397f9187ad502b1ce71e9b516a64c0",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2024.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2024.csv",
+      "provider": "nflverse",
+      "bytes": 2402841,
+      "sha256": "a2aa58efe093f8aa0ad5aadf09f81d8ec690a1183bd2dde68d20e7f109a9c335",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "snap_counts_2025.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/snap_counts/snap_counts_2025.csv",
+      "provider": "nflverse",
+      "bytes": 2401290,
+      "sha256": "3fc2deb0e9ad86d34d4578cb80bb21c95253e088ee22ca028adf46f7485eff1f",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2014.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2014.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 2621005,
+      "sha256": "48219d67e6942f1648adf42440a4df3856f36a92b2f918f01b93ab5e4f19176e",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2014.parquet",
+      "status": "acquired",
+      "bytes": 437904,
+      "sha256": "258f012b1d57ad4c033d2296d37f6188d494c638de59a0e315b93bc7bd7e807f",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2014.parquet",
+      "status": "acquired",
+      "bytes": 1994434,
+      "sha256": "ee717a9ca8f3351dbcb4afc890fa4f168425e40a61869dcc8aebd3c5c008f24a",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2014.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 74367,
+      "sha256": "a608554ec6764ef9ab331e62c9d972f37bcc8c116dcab74628acbbd053dc644e",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2015.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2015.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 2654776,
+      "sha256": "288490a363dd5e1f8ad7662992c485d10e0d604b9af99fc317ef498d74062011",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2015.parquet",
+      "status": "acquired",
+      "bytes": 442307,
+      "sha256": "19074d9ea473e1ca108e340551b275fe28df62e6b116873b9dffbca4ec22af93",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2015.parquet",
+      "status": "acquired",
+      "bytes": 2065645,
+      "sha256": "efd281cb48e869028861e53768535c35bd126ab7084b12bce431cfbb7ef35c30",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2015.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 73522,
+      "sha256": "8bcf2aa037aedff6fdc6f9e3567631f20f68f8e1fab57e9a31f33d2aee58947f",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2016.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2016.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 2856899,
+      "sha256": "0dbdd5559b220f99e3038d80c16f0dfdda9291a02f1110f525640478537f5cdc",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2016.parquet",
+      "status": "acquired",
+      "bytes": 514935,
+      "sha256": "657ed3627881f8581199899198f2c97638178bd01253619d63a9e81f51da3184",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2016.parquet",
+      "status": "acquired",
+      "bytes": 2230683,
+      "sha256": "4a934b6e65f0c53dc1646ecdf7bc0ec2e30688fc1722ef7c425ccabab590b8a8",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2016.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 82753,
+      "sha256": "fa24c0e520777ff92ece13646491e54a8448615b61e03f13dbffbd162f8abd3c",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2017.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2017.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 2879795,
+      "sha256": "fd9a1df800f725fe41d31093eb94ddc552f1ac03ef3eb582baf6edd20808cc91",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2017.parquet",
+      "status": "acquired",
+      "bytes": 507970,
+      "sha256": "be57bc465c407ddd065f9aa33445a316fcfab22940fbed80ab58c880e295bd92",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2017.parquet",
+      "status": "acquired",
+      "bytes": 2254162,
+      "sha256": "e6cff43ebe38abd0c00382154fc85025aad5a04946fd7f658128e6df0cae4360",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2017.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 82979,
+      "sha256": "d7d2b2104542df45d105694812348339f3dfa750bd9efa830fe7cfb0414f695e",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2018.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2018.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 2894337,
+      "sha256": "e3e75f9c165f423bb7fa0c2484c84a8e624f22c579adfba18f97826a0a763c07",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2018.parquet",
+      "status": "acquired",
+      "bytes": 508996,
+      "sha256": "42d9607f03e5b6e56974289825201ce9a92079a26bac9329af84b729445cda23",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2018.parquet",
+      "status": "acquired",
+      "bytes": 2499600,
+      "sha256": "233c6d7565265ac6075194be30f8ed9b333427ba710d48e73966bf8b5dbe3020",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2018.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 89582,
+      "sha256": "e62fd4291e16b8bc2cc6d58d5dac5cf14877c4902e1af31bc9b769a9672e5df5",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2019.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2019.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 2893606,
+      "sha256": "1e91dc41eb0422ab3f1fc3a8eea4d7a30144aa259d976aaf4844eded68cc5f86",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2019.parquet",
+      "status": "acquired",
+      "bytes": 504469,
+      "sha256": "fdd30bf40f4d3cb4a336cf80a8622401defd4cf11165f21927d8ced4997d35fe",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2019.parquet",
+      "status": "acquired",
+      "bytes": 2593774,
+      "sha256": "46e6ba49848957077944bb3d655d76e2887aed7e05b2ab8efe231a049d5246fc",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2019.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 78160,
+      "sha256": "7d4bfe2b79418174bffe716032bf935a20634b0c4d9eb9111628b4904581fb6d",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2020.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2020.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 1735205,
+      "sha256": "93be70034fe625b11c6699505aff29594b286517932fd33553eb3567aa06e2c7",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2020.parquet",
+      "status": "acquired",
+      "bytes": 347041,
+      "sha256": "7cfa97bcce7a69bbbaf787e93c5a5feafe9ab28f929cf42a5607ce7c949d9df2",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2020.parquet",
+      "status": "acquired",
+      "bytes": 1896623,
+      "sha256": "f66641455e79e814bf421f2fc70ddcffe6d254d1c35030ab853ee9b972b56952",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2020.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 75786,
+      "sha256": "5c34694a0642c787cead7d0854e006d907d52fe1ad243a8199375854ed15aa8a",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2021.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2021.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 2543371,
+      "sha256": "25282f83daec1654dcabd773e6895df639143827b0a1eeb0b388be3b04d29b28",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2021.parquet",
+      "status": "acquired",
+      "bytes": 567431,
+      "sha256": "0a6eed194330956e2c03561e1e7c7e0ade4645002479c022aacd957a137ed939",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2021.parquet",
+      "status": "acquired",
+      "bytes": 2910956,
+      "sha256": "aae9c5720db215333456a967cc316a47f69537accae9394ed46efd2e1ddbab52",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2021.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 72879,
+      "sha256": "f9360162f0ddfca94d68bf65e4d9788afcce6c25ac7e86b577d904e3e9b55031",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2022.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2022.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 4101693,
+      "sha256": "1244b3bdbd51b0197a35c3421e1f95a2f0b83937f461d5841a5d7f002e54ab2d",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2022.parquet",
+      "status": "acquired",
+      "bytes": 523636,
+      "sha256": "f02b5809abeb03f5bbaf51c657863a0f65d3d0e9abc685234e6dacabfb2c53ba",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2022.parquet",
+      "status": "acquired",
+      "bytes": 2910316,
+      "sha256": "308e5486457cedeffa4bf603a92b636ac1b25e0fa00022de7e41a0d06bb71c61",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2022.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 67942,
+      "sha256": "626cb48999eaac4c14592dba72041404555bf94de97c5e28ec4cd091b9d9ad68",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2023.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2023.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 4408003,
+      "sha256": "8bc3eff29a58c016a565d1732684d3fc4dd23c623988f1c1942062daba284126",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2023.parquet",
+      "status": "acquired",
+      "bytes": 665598,
+      "sha256": "c468119d73d089e3d30d53a936c9fc0d7eb1992d7bb2b567889c3ef413fb7c3b",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2023.parquet",
+      "status": "acquired",
+      "bytes": 2891334,
+      "sha256": "4ab0283a75ee1889068b971e88cbd853d710a9a71a20de02afa890f8fdf7cab4",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2023.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 75626,
+      "sha256": "2da8cc68c78d32ce3053f4852a133e6e70479989cacdcb1b7437de1a5a74d127",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2024.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2024.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 4568354,
+      "sha256": "46d2b61c938f6167837c6e761b0c245cbfa3ef3a1e9f63bb19c83e437c2d90da",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2024.parquet",
+      "status": "acquired",
+      "bytes": 831337,
+      "sha256": "644ffdfe5b2303265bff528db21591e1eec7c6c4356e297ee1037c6972d8ad45",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2024.parquet",
+      "status": "acquired",
+      "bytes": 3023950,
+      "sha256": "5d0f008bc4490ecd4ae0cd9c5224d5da4abc93914bd43321aa9cb854c168ba34",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2024.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 75656,
+      "sha256": "91cc5275f402d2db8b85bb93333460e0508c0c0490080c2389da10ab9a4d2a84",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "player_stats_2025.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2025.parquet",
+      "provider": "sportsdataverse_event_participants",
+      "bytes": 5251561,
+      "sha256": "e0a5cfc8ae0c0d03ab98fe3f1d5f9acb3b5c6cd895dbb433670f8774b25ff3b2",
+      "cache_reused": true,
+      "status": "acquired"
+    },
+    {
+      "name": "player_box_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2025.parquet",
+      "status": "acquired",
+      "bytes": 845197,
+      "sha256": "44a9185dd8f47a6cc5844ba629f4dd54b192d612066f696438d50a4af8f66d37",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2025.parquet",
+      "status": "acquired",
+      "bytes": 2948193,
+      "sha256": "087aec645b7d5edac3cb52d61f631c780b61fa7ffcf0f459c1002c604b1b4b25",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2025.parquet",
+      "provider": "sportsdataverse_recruiting",
+      "bytes": 76006,
+      "sha256": "a1e1a5e6896d9b45d20f5683156e6a0084e6f88b9226989977c3e523ec254f92",
+      "cache_reused": false,
+      "status": "acquired"
+    },
+    {
+      "name": "nfl_schedule_games.csv",
+      "url": "https://raw.githubusercontent.com/nflverse/nfldata/master/data/games.csv",
+      "status": "acquired",
+      "bytes": 2184456,
+      "sha256": "4ed003ca28b767e998c2d1a4abcc7d48476dce1a45b0f0184d297392d802d485",
+      "cache_reused": false
+    },
+    {
+      "name": "player_box_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2004.parquet",
+      "status": "acquired",
+      "bytes": 290224,
+      "sha256": "909d248444a02269579b9483c015f9d721406869784d42739482c84df9a071f1",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2004.parquet",
+      "status": "acquired",
+      "bytes": 596826,
+      "sha256": "b85e5531d0f8e31d43d1fd01f975039decc4f1c1e4e49cef7590b1ed610d6835",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2004.parquet",
+      "status": "acquired",
+      "bytes": 183357,
+      "sha256": "8890ca23f1748648c425e2cd2ae6e3dae41298156f9e3d6f2ee8482a0f5afa5d",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2004.parquet",
+      "status": "acquired",
+      "bytes": 92688,
+      "sha256": "07b873e81a25dce3d87bc85fbe590bb486e987cf4f86d55c33a428b9fb17e375",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2004.parquet",
+      "status": "acquired",
+      "bytes": 139023,
+      "sha256": "d8a5494d7549e0aadbe92a9dc4e816c0efd3a4f4bb5099f59aacd3df5a771feb",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2004.parquet",
+      "status": "acquired",
+      "bytes": 85454,
+      "sha256": "b38b798b2a4ccef2cdac466a6a253139a04aaf0d333d9a72f7f76407c0ea4f3c",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2004.parquet",
+      "status": "acquired",
+      "bytes": 611306,
+      "sha256": "b514c0e97ae4023e852f2417d23e3664b3264c6b4814698e8b72fc40cbec1523",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2005.parquet",
+      "status": "acquired",
+      "bytes": 302044,
+      "sha256": "f4fd721b706f54bc1ee702598ca3e453c34c09074b56d5ae4857e849e2a06437",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2005.parquet",
+      "status": "acquired",
+      "bytes": 634579,
+      "sha256": "1b0b9b9785db8692267957d616672181d99b385217c928c4a7c94a06195dbfb8",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2005.parquet",
+      "status": "acquired",
+      "bytes": 250951,
+      "sha256": "1458516d338c2ccda402faa08865e6017d6754f2aef46303b0119f60f4aff0aa",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2005.parquet",
+      "status": "acquired",
+      "bytes": 116155,
+      "sha256": "35691d5ed15ba2cbad5cff9245d301f6fe9e6551cdf1057baea565f950adf7b4",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2005.parquet",
+      "status": "acquired",
+      "bytes": 153477,
+      "sha256": "fafd41b057406b4727a186a2c2e1a7ff9f8ccd5ba5f01386b94f8853d4a38639",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2005.parquet",
+      "status": "acquired",
+      "bytes": 94187,
+      "sha256": "00dd08fa17c87c0dc5aa1cb5878c8c80d6d0a9b8618b89ce7ab7a6dc004cd753",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2005.parquet",
+      "status": "acquired",
+      "bytes": 615230,
+      "sha256": "ce21f60159e3804e85d5f90fbc04c707ed66b965ed173bd5402c5b5c16b16072",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2006.parquet",
+      "status": "acquired",
+      "bytes": 328737,
+      "sha256": "2c71c3e0e6e9aaf1b0d4d48d56e7d613c93c5fe8a0a06bfaf29c1fd5c7bd36fc",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2006.parquet",
+      "status": "acquired",
+      "bytes": 664369,
+      "sha256": "c9ec8c52cb1d98be5f1b3a0277a28ead8c749ab798993a943ec6486f12e026cb",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2006.parquet",
+      "status": "acquired",
+      "bytes": 250945,
+      "sha256": "df7547e7ebe4d07f5ef121bd5ed75b713bbc081848e6b296a4a923e8f44f81cb",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2006.parquet",
+      "status": "acquired",
+      "bytes": 115571,
+      "sha256": "ba6517a391e602b50778e0d44352ee4cdbf15c68c22330d71c99c08e75075bd9",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2006.parquet",
+      "status": "acquired",
+      "bytes": 156827,
+      "sha256": "17e01749dbb81151a6d137daff11537de42b08dfd9256588ff018752da976cef",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2006.parquet",
+      "status": "acquired",
+      "bytes": 92869,
+      "sha256": "ad19fed9feae589078742587bbdfdfe2f3c2ea746c5095d46c4347428da65c09",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2006.parquet",
+      "status": "acquired",
+      "bytes": 614427,
+      "sha256": "be688620260f774ee2ac9c6dcfe7103801a4090f25074cd8a653cba41effa84c",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2007.parquet",
+      "status": "acquired",
+      "bytes": 349743,
+      "sha256": "36719deef5d1b3ab31785c47737e1727c2cde2ab6eee67beb6f20c6eec15ca3c",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2007.parquet",
+      "status": "acquired",
+      "bytes": 771756,
+      "sha256": "3efb44934f3d258c0324c0ca52e99525d5b6747d2b77779b0651141f6c97b9da",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2007.parquet",
+      "status": "acquired",
+      "bytes": 263474,
+      "sha256": "f4362a2dc4a3e2c33a97834d5d3d1549323aceab667eef33b9347c464a678d09",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2007.parquet",
+      "status": "acquired",
+      "bytes": 121698,
+      "sha256": "4fa17817cbe68f09935782db97e23146d62ef36be15e269c96bba36f94be0ba9",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2007.parquet",
+      "status": "acquired",
+      "bytes": 163246,
+      "sha256": "6956c323efd2ce11f5a3ed1095154ca3e58e1887d4c23dfe4359df696a159c44",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2007.parquet",
+      "status": "acquired",
+      "bytes": 97832,
+      "sha256": "3099c96dbb8965aafda8e4b5354cee8475ec3d9e2d465ef27e478c37d5791e16",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2007.parquet",
+      "status": "acquired",
+      "bytes": 621254,
+      "sha256": "ef2dc6aa95c3ee643fdc372baf6d9e37f0800419431cdf7a87ac911f4911b95b",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2008.parquet",
+      "status": "acquired",
+      "bytes": 354888,
+      "sha256": "f10dca4f3ec7546292b4de3054ad8d042c68269b09623cd81ad945d761aac321",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2008.parquet",
+      "status": "acquired",
+      "bytes": 852641,
+      "sha256": "4b7132ed8171b537642008e2b18aad4c211b049f747e2cab824e271c82e8d559",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2008.parquet",
+      "status": "acquired",
+      "bytes": 277561,
+      "sha256": "745cbffb9d37cd27d895cb15df2de2fbc9f59b8987fce7158876801d50a278fd",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2008.parquet",
+      "status": "acquired",
+      "bytes": 121005,
+      "sha256": "db91a9e9ec8884d34d139b96770f46ed41135d48f4ec6af1d53b01fa27b2077a",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2008.parquet",
+      "status": "acquired",
+      "bytes": 168254,
+      "sha256": "111dacd351eb7d7dd48b583cf2e44fb96d8178f3ef8a4b5a9012c44790d3a861",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2008.parquet",
+      "status": "acquired",
+      "bytes": 99325,
+      "sha256": "a4e46763cc05d9d7f35c68b587f30e2e058c4edee37db938eda4eba98bce4927",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2008.parquet",
+      "status": "acquired",
+      "bytes": 620816,
+      "sha256": "5275c164b66da34b9f2569d7f908bc61834a1295a6f039ac5b91af2c2b2e7dad",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2009.parquet",
+      "status": "acquired",
+      "bytes": 385072,
+      "sha256": "2684eb08cc84442f93477667ae33d7612d72fa9cc39b584809f608f33e05af72",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2009.parquet",
+      "status": "acquired",
+      "bytes": 772126,
+      "sha256": "382d8a5730de31b3347180283fd420d0f6ad28a9952d297be4ffee6a14cf9ecc",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2009.parquet",
+      "status": "acquired",
+      "bytes": 281351,
+      "sha256": "56ef1bb1898afc36b117f045c1a00f7d97e8becf518cbc7a6454a3c23be87942",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2009.parquet",
+      "status": "acquired",
+      "bytes": 122803,
+      "sha256": "a0db42af1517f5cccfb520612b08df2be71a631ea09922ae87d46519ac8a7050",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2009.parquet",
+      "status": "acquired",
+      "bytes": 164722,
+      "sha256": "5836a7000cb719bf79f04702586ba1a7b95ac5aeeddd126290adea186984d724",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2009.parquet",
+      "status": "acquired",
+      "bytes": 98253,
+      "sha256": "9bcd5c2b99e1830deec5e05b4570c757207541ab75ca2753a83ae9d7d9b3e6b0",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2009.parquet",
+      "status": "acquired",
+      "bytes": 620864,
+      "sha256": "26b97f0c3cc8e85190dd77ab34bd78fc544e926153ee77221226189f08c9df5c",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2010.parquet",
+      "status": "acquired",
+      "bytes": 388244,
+      "sha256": "0bfee83df2c66cf5175c255c600f0ef876a418a43ef79cf12eebe9221f052812",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2010.parquet",
+      "status": "acquired",
+      "bytes": 761989,
+      "sha256": "296592c97cb50ea7f90ee2e95eb6ed1bc603b74908053a9794eff937022bf493",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2010.parquet",
+      "status": "acquired",
+      "bytes": 284414,
+      "sha256": "bdfbdf879e1c4a865b3ef8b82a8bf91092c89ceb538cd7b77ede0ed582a63a35",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2010.parquet",
+      "status": "acquired",
+      "bytes": 123454,
+      "sha256": "6261bb6e7b4f316ee1664aa7ea27648f23123a80aa1ab70ba76b3efedb047014",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2010.parquet",
+      "status": "acquired",
+      "bytes": 172018,
+      "sha256": "4d488e5fd0bcc4e022947d54bc114c1d62714167f0c16af47dabb0e5e76e1433",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2010.parquet",
+      "status": "acquired",
+      "bytes": 96608,
+      "sha256": "52874de64bb35018ed51e41fc07418a47ff538afbb34cb4cbd15e7774e2b1951",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2010.parquet",
+      "status": "acquired",
+      "bytes": 620068,
+      "sha256": "465b68e6a47cccd5f65f5495e419860aaf1f93107dd8becf1f8abfdba17c525a",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2011.parquet",
+      "status": "acquired",
+      "bytes": 385873,
+      "sha256": "4f214a009008dca9a278a8775f2fd1293647152c9c943537de38f0b8861f49a1",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2011.parquet",
+      "status": "acquired",
+      "bytes": 764228,
+      "sha256": "cdf7d5d016b44d8c8392af9d22f5f4d479b6a9990ddfad5f0928565f8af3179c",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2011.parquet",
+      "status": "acquired",
+      "bytes": 298668,
+      "sha256": "a3a0cfe226ad28463de55a139244e4747522f766a68884baa67ee9aff9261dfd",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2011.parquet",
+      "status": "acquired",
+      "bytes": 121600,
+      "sha256": "4c443ca66adcb546a394c1ce7d261b8d75775542fb56c92898872e663a70403e",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2011.parquet",
+      "status": "acquired",
+      "bytes": 165965,
+      "sha256": "10082bfeed81553a4cdad80fd9565f20f6a3fba0a6323a05f622ce46fee10809",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2011.parquet",
+      "status": "acquired",
+      "bytes": 98782,
+      "sha256": "8865cab638c9c6f9c239c7d5613c146e2da3130832625f1fb73b99abf42bf1d2",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2011.parquet",
+      "status": "acquired",
+      "bytes": 615510,
+      "sha256": "10d4e285edfe0d89a478e0dd5835ed72c0defbdc02a47f5f53c2eb7fc39f5119",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2012.parquet",
+      "status": "acquired",
+      "bytes": 396545,
+      "sha256": "1a57a45e7a9e5ef87705d6bd4c20278455e0418843d4d30420e00e41754ad947",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2012.parquet",
+      "status": "acquired",
+      "bytes": 777493,
+      "sha256": "217316838c6b62c85ec0a2a3e2c0b325c5b2b1df8d6cb9c67eeff18c6577c4da",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2012.parquet",
+      "status": "acquired",
+      "bytes": 304755,
+      "sha256": "1835e6bc6709cdc92fd7637adf8eabc101e5c217fb31538b1e18eb47f4078882",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2012.parquet",
+      "status": "acquired",
+      "bytes": 204787,
+      "sha256": "a279ca183aadae25324ca38950720ceca3ce31199c660d0db7cf3520a4b1db54",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2012.parquet",
+      "status": "acquired",
+      "bytes": 172691,
+      "sha256": "de1d4d75cb8f919c4c0044e9fe98e4e78a984bb2b4b51f4ce790a295e92c80bf",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2012.parquet",
+      "status": "acquired",
+      "bytes": 100847,
+      "sha256": "03c6829f24913e4435ea98909a4f26403a99262984e1d17726b49b72829684ae",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2012.parquet",
+      "status": "acquired",
+      "bytes": 629373,
+      "sha256": "1783c33392662d0d5b6d94bb3f0717bd76425f085f0d78387b83ec22f850304a",
+      "cache_reused": true
+    },
+    {
+      "name": "player_box_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_player_box/player_box_2013.parquet",
+      "status": "acquired",
+      "bytes": 407432,
+      "sha256": "525926dbadc57eb3c6965e8c5151ab556833ed59eaf9deecf3f65766c79e9c70",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rosters_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rosters/cfb_rosters_2013.parquet",
+      "status": "acquired",
+      "bytes": 834447,
+      "sha256": "5b0a80eb293ff0bb81111838245eb0df7c7e7c5b2f340b91179caf04485a9b7b",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2013.parquet",
+      "status": "acquired",
+      "bytes": 316348,
+      "sha256": "55f648359d0d1a6b1a319b1876a9c63bdced6859889ae5ca88d8c26313ab426a",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2013.parquet",
+      "status": "acquired",
+      "bytes": 213749,
+      "sha256": "4da5d90b50bd59dc106cbe3fa322d81d9ba17c86652914c9e74e68ac3c5f46c7",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2013.parquet",
+      "status": "acquired",
+      "bytes": 179434,
+      "sha256": "f369ab9c79f4dbb3604fced4716273d28e620b7c69d8acbe90de3b3815303d78",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2013.parquet",
+      "status": "acquired",
+      "bytes": 100059,
+      "sha256": "512bc0d93408762193bcbc90ac5c28da543551489a24a329948ae0ed8d3e369e",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2013.parquet",
+      "status": "acquired",
+      "bytes": 627206,
+      "sha256": "78d683decac45b06cf6be47fc148a2d92a662ef575423182e2b2ebec1cf1213c",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2014.parquet",
+      "status": "acquired",
+      "bytes": 307187,
+      "sha256": "19f09d056bd7435bd62298fefdd68f9130b37a0aac40b4b83725c4675803e1a0",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2014.parquet",
+      "status": "acquired",
+      "bytes": 127882,
+      "sha256": "cb1f6a9ebe892edf587775fc94d3e61204c2093643a39b28b6a10ae933319a92",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2014.parquet",
+      "status": "acquired",
+      "bytes": 254350,
+      "sha256": "6f587c12311494838009d779c5b786e3297dc6589e5fcf5a2a93623281e80d92",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2014.parquet",
+      "status": "acquired",
+      "bytes": 198124,
+      "sha256": "48e80ef0999cf0145f4918928940e2e04cc3cbb21fa46afb6d32ffe3cdce8d0c",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2014.parquet",
+      "status": "acquired",
+      "bytes": 112249,
+      "sha256": "97a15b9b25c2466bc0d83f6d485e39f338cbb5875d1172691c09acd3551fb4a6",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2014.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2014.parquet",
+      "status": "acquired",
+      "bytes": 635860,
+      "sha256": "60ab4d09a468e2335d215c89f3df837e5e14eb1636b005e43301e324dacd13f1",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2015.parquet",
+      "status": "acquired",
+      "bytes": 300847,
+      "sha256": "0be09966474eccae56f0ac732d814f19065c81cde260dc66b0af6accd865a904",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2015.parquet",
+      "status": "acquired",
+      "bytes": 141270,
+      "sha256": "c2b3cdc71a1defe4f4f2765ac40538fd1b2c3e00af9e63eca204f3f7a36f96ad",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2015.parquet",
+      "status": "acquired",
+      "bytes": 252599,
+      "sha256": "88b5dcd879b9407194655a5a3075aec76fbb2293ca633e3c47281120f2845ff2",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2015.parquet",
+      "status": "acquired",
+      "bytes": 194711,
+      "sha256": "75bd3908237e8031bba85028d8e6c8d1f75d65c5488794e9f073935fe8b4d554",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2015.parquet",
+      "status": "acquired",
+      "bytes": 117088,
+      "sha256": "9d33d023bc721308e32cef46bd5cef7474e41e1273a4e7399f40e391b4d453a4",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2015.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2015.parquet",
+      "status": "acquired",
+      "bytes": 635200,
+      "sha256": "86aed4d3cabb0e1229990c49a01243a322feaf3c6751b544f992861fea16ee53",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2016.parquet",
+      "status": "acquired",
+      "bytes": 303709,
+      "sha256": "d414f8f8d04da63bf54a2bba19f94c95e8acbd100cbb238a11b431b3a2c9859a",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2016.parquet",
+      "status": "acquired",
+      "bytes": 148938,
+      "sha256": "b593f00f4be9d92b5a5f7409ac9f1faed93da8f85e49cb69543f7d0f497396fc",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2016.parquet",
+      "status": "acquired",
+      "bytes": 253830,
+      "sha256": "0782fb595f8d138a946711669ce954f76d7d3531791673a5e23d5d4b3eaca13e",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2016.parquet",
+      "status": "acquired",
+      "bytes": 208350,
+      "sha256": "943b123a8fd1b81b963c6d91a383c354ddccae490747cc57ecacbe24711c0d29",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2016.parquet",
+      "status": "acquired",
+      "bytes": 110488,
+      "sha256": "8592a526bbb6a6c924f6f33e75c0aceed190375f4388169ea42989f73742ab8b",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2016.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2016.parquet",
+      "status": "acquired",
+      "bytes": 632191,
+      "sha256": "af4073d68e15b16099223b9c024d3326beb941b9d6f67170f4af1466535c4f28",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2017.parquet",
+      "status": "acquired",
+      "bytes": 302161,
+      "sha256": "c6d221daa80e98a54c17696d05311a106bdbcbcc418e086eef3ee8eb2d26c822",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2017.parquet",
+      "status": "acquired",
+      "bytes": 153643,
+      "sha256": "67a7cd4f571646d6a4e07c7192e32c05e3eecf90f2c7c0485e38c4d6cbf818fb",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2017.parquet",
+      "status": "acquired",
+      "bytes": 251837,
+      "sha256": "67c6a2fd67d94783aca878e65078606bd045708d36dfd468b9508fccd2918135",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2017.parquet",
+      "status": "acquired",
+      "bytes": 212907,
+      "sha256": "304f7963b5a9b07bcf75954d0348c6b7891020498f2efcc1cc71fac2380faa22",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2017.parquet",
+      "status": "acquired",
+      "bytes": 118901,
+      "sha256": "79a09c8b834b7b3b70cc6069e1ae00ff204239d2043983bca60058b6930822bf",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2017.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2017.parquet",
+      "status": "acquired",
+      "bytes": 628549,
+      "sha256": "c5bb49233bfb8a1ae67a4e9aa22816cb8a9bd4d0bbd68b72d64d8a4e6cdef376",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2018.parquet",
+      "status": "acquired",
+      "bytes": 317057,
+      "sha256": "21cb323a261e04d0fe52f4b6f27681d40619c03a355012bdf7edf3748acea274",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2018.parquet",
+      "status": "acquired",
+      "bytes": 166186,
+      "sha256": "1a444dc918ce6757f95d5de92893cc2fd2a71c754f0730b348e98993f554e2fd",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2018.parquet",
+      "status": "acquired",
+      "bytes": 246804,
+      "sha256": "875da0056230534d48f2e0b72243485dc3f47a4a0238877360da0ee1343e835e",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2018.parquet",
+      "status": "acquired",
+      "bytes": 214838,
+      "sha256": "571b02bf69a4054b5a81ca0298753b96f6f95a99dc4f631573d2086d9ce01018",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2018.parquet",
+      "status": "acquired",
+      "bytes": 119376,
+      "sha256": "b0df4bfb0b82bb86e0437e3c7983b5b384e681575384452d8fdd9d2533149f65",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2018.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2018.parquet",
+      "status": "acquired",
+      "bytes": 629068,
+      "sha256": "b5cfb138de0518470598175023625b3b1a12884c2112f6f94e92cc7ee1a7848e",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2019.parquet",
+      "status": "acquired",
+      "bytes": 318641,
+      "sha256": "2bf929773c9ba92a0679daff9460ced1e5cdfa18de73bd4c7eb5103c533a16bd",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2019.parquet",
+      "status": "acquired",
+      "bytes": 161130,
+      "sha256": "0feb854656390bed39a0e798dcae77804f80ee0447c4b6520a15948606eb6854",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2019.parquet",
+      "status": "acquired",
+      "bytes": 252181,
+      "sha256": "b76d3a69d375d836d10b41987c328824d05473765c09717fd83cd3319e9fb829",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2019.parquet",
+      "status": "acquired",
+      "bytes": 208669,
+      "sha256": "ddae36147ca491b8609321e7ac0d572ac9788cbc964466bdc5921fdce74df796",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2019.parquet",
+      "status": "acquired",
+      "bytes": 114116,
+      "sha256": "36336d4f635bc52b8eb1ffaf260a92a7e1f1cdf3efc54bfec084f14f8c55980c",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2019.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2019.parquet",
+      "status": "acquired",
+      "bytes": 628189,
+      "sha256": "025737fcb8130cc4b5c5c140eda60bafa2ac04619de45c91d74bc285adcaf6ea",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2020.parquet",
+      "status": "acquired",
+      "bytes": 232514,
+      "sha256": "bfc088b24065593987ae5cd89a39e0b1e29d53121649132e5705c11589a5b268",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2020.parquet",
+      "status": "acquired",
+      "bytes": 107542,
+      "sha256": "99d42e45090a7f1e69a44d53f82be1750a4223d8827d3c4d5079ce4befbf2d81",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2020.parquet",
+      "status": "acquired",
+      "bytes": 236833,
+      "sha256": "d5c57974a910da3d5f0f7ed1c536c1c151b948079d06018419cadef5584a1232",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2020.parquet",
+      "status": "acquired",
+      "bytes": 184602,
+      "sha256": "83692b8af4f6466142c8c7cc6d496478eccdf8af5acff2d73792d4c0358f7229",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2020.parquet",
+      "status": "acquired",
+      "bytes": 109400,
+      "sha256": "064a6bc5738538810243c30f16c5fc7184b283a399395f48335777e5be3f6101",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2020.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2020.parquet",
+      "status": "acquired",
+      "bytes": 638533,
+      "sha256": "61bc079f91168e3269859b48bb59b7e9273c6efb8ff870c21217e83004bfdf5c",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2021.parquet",
+      "status": "acquired",
+      "bytes": 302384,
+      "sha256": "64a5e98c5b2b129636ea9bc6c5ca957f1f003e7e7c6a1a82a95af66c3824db8c",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2021.parquet",
+      "status": "acquired",
+      "bytes": 148943,
+      "sha256": "e272fe66ab22c2b275aa8decba879d4416cc284c75ee6866a6b3571b589e6033",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2021.parquet",
+      "status": "acquired",
+      "bytes": 154025,
+      "sha256": "1f90faead91202408ffd55e6bf15794ca20f922413289ac7617f55739f7c687e",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2021.parquet",
+      "status": "acquired",
+      "bytes": 201625,
+      "sha256": "4a9f3a93b1276cd191ebda3d3949719d5c96cdb2b00207003c98fb4339857ca6",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2021.parquet",
+      "status": "acquired",
+      "bytes": 123862,
+      "sha256": "6e3962d60cfc0b459be52fcc235bbc1763c87f61dca5da93c8ce028fc6f7c76a",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2021.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2021.parquet",
+      "status": "acquired",
+      "bytes": 630362,
+      "sha256": "fb6bfe1573ecf971d05003f44ffc944d5d4c1a5a1f624c150c75f607bbf2d49d",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2022.parquet",
+      "status": "acquired",
+      "bytes": 308842,
+      "sha256": "47870f6d7cae79fcfbd7e7929f035695a0f9cd735f1fa8a9782fd367dee6729f",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2022.parquet",
+      "status": "acquired",
+      "bytes": 156221,
+      "sha256": "7dfa8df9de3b9a2cddaa116b4444343c99029a49ec6307b7ab46aeb346070fb5",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2022.parquet",
+      "status": "acquired",
+      "bytes": 157920,
+      "sha256": "fc8dabe8913d2474ec2010c880ae9b77836fd2dcd3ddbe672e380bb62246366f",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2022.parquet",
+      "status": "acquired",
+      "bytes": 203225,
+      "sha256": "257f5cc746b8c80d1902f32911820b8a9ad6f2b5a8c90a0bcaf89879b018fb7d",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2022.parquet",
+      "status": "acquired",
+      "bytes": 117587,
+      "sha256": "e7634cedcae8327063a32a59ab8e2ec9322d3012f72dc868827bbb5034143b1d",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2022.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2022.parquet",
+      "status": "acquired",
+      "bytes": 632918,
+      "sha256": "c074dd67eaf43fdf81118d575f4284d832173335a6e01c297fb818522e947ee6",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2023.parquet",
+      "status": "acquired",
+      "bytes": 311056,
+      "sha256": "5927ae9a1bc50f70c7b6aa76c5afbd6027d269d76f789e602a1e893bb11c2f82",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2023.parquet",
+      "status": "acquired",
+      "bytes": 169068,
+      "sha256": "460c14985b713efb1b1da4a771813b7f091af890a2a59f43436a6e4f13e1eb66",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2023.parquet",
+      "status": "acquired",
+      "bytes": 152715,
+      "sha256": "d7e78cef684fbdeb029e20e59ed6efa829e568bb3c9b3e257e44e3c61b961ba0",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2023.parquet",
+      "status": "acquired",
+      "bytes": 206086,
+      "sha256": "4f4485d6d574490eba9ce040183fea76945ba9d465d782c2c4dad7a745a68a11",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2023.parquet",
+      "status": "acquired",
+      "bytes": 117285,
+      "sha256": "0de300f1ac78a056e9e3f90cc0ccf133beca5bcdc7436e6269a2d1b976adca96",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2023.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2023.parquet",
+      "status": "acquired",
+      "bytes": 632057,
+      "sha256": "f097300632215950a65e023f60030dd1d0d5f80183b51e08eff3a744cb9b03e4",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2024.parquet",
+      "status": "acquired",
+      "bytes": 319289,
+      "sha256": "4a89b9f206ef500e80fdddf3bc7bd153395ea99fb37dc8f4619602c89863b560",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2024.parquet",
+      "status": "acquired",
+      "bytes": 190053,
+      "sha256": "c13c5a579b487b882a7bd142f61312dbd5f05204f599cc86225a108f363fdb96",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2024.parquet",
+      "status": "acquired",
+      "bytes": 151391,
+      "sha256": "25faecce64f114d373312af02e76b9a8c4b743d2459c9cc6f6a71784998210d2",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2024.parquet",
+      "status": "acquired",
+      "bytes": 207023,
+      "sha256": "acd59ecc8527acd019784cf71f13b15ab9aae9d61f7ca96e45807c5921b27476",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2024.parquet",
+      "status": "acquired",
+      "bytes": 118382,
+      "sha256": "8b15cf296d1b465a42221a4b114315d0a81a678360547b1b5e1c2ec01fa82c82",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2024.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2024.parquet",
+      "status": "acquired",
+      "bytes": 659454,
+      "sha256": "0a87b1ee04b4d555509cf95c422f999e033a065e88831d03f7c92ec1085de21e",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_players_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_players/usage_players_2025.parquet",
+      "status": "acquired",
+      "bytes": 346596,
+      "sha256": "f873bf4cb5605fc663df7c7fbde76be5186e55d4684470bb4bad1fc630d149ee",
+      "cache_reused": true
+    },
+    {
+      "name": "usage_tackles_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2025.parquet",
+      "status": "acquired",
+      "bytes": 200806,
+      "sha256": "2d37401a1f2f247bbc3640a57c743f44a188cd1ecc73bf0485d95a3b654b93a3",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_receiving_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_receiving/cfb_receiving_2025.parquet",
+      "status": "acquired",
+      "bytes": 278093,
+      "sha256": "3aa17b679449f3f7219fe9f3c9df82ce555bbc2b7d309f8f537c8d17402276ba",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_rushing_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_rushing/cfb_rushing_2025.parquet",
+      "status": "acquired",
+      "bytes": 205539,
+      "sha256": "fe55cc0e3253d36ae2e6ffc581fe0b05d6efc64e8be526c6f4fb033d451adc83",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_passing_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_passing/cfb_passing_2025.parquet",
+      "status": "acquired",
+      "bytes": 121866,
+      "sha256": "b804acbab5b8da3192ab8bfefd2465b540e228bba298f3ffc167ca8a87b82b7d",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_team_summaries_2025.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_team_summaries/cfb_team_summaries_2025.parquet",
+      "status": "acquired",
+      "bytes": 664676,
+      "sha256": "f7cc7803ba6c46e5b3cff33a57765b7fe9a516b73437a876c35ad1726a4a1dfe",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2002.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2002.parquet",
+      "status": "acquired",
+      "bytes": 33105,
+      "sha256": "a84beafbac1edb802a80791e91017c69bdbc0b5148073b478876ebb6ff6223c0",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2003.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2003.parquet",
+      "status": "acquired",
+      "bytes": 37944,
+      "sha256": "73ec26d65b9d24aa163c33467e824268f04c6c9473d1abc818c1909eab390b45",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2004.parquet",
+      "status": "acquired",
+      "bytes": 39336,
+      "sha256": "3cade36e86b7e1cc04541330577e1b38022148fa186dc446dbe8462ed00b63e9",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2005.parquet",
+      "status": "acquired",
+      "bytes": 39919,
+      "sha256": "ead01ed98a59be77d9f7dbc06354c8a8bf413a2184d82e54aee65c66ec7b4c7c",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2006.parquet",
+      "status": "acquired",
+      "bytes": 44290,
+      "sha256": "0c164e912ca309162937d6cb3d1aa12db59782256eae839101f9f41cae5faff0",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2007.parquet",
+      "status": "acquired",
+      "bytes": 44350,
+      "sha256": "f1b4db098be1c2dbb8cca95ac84f75e0bd9fc3147f3f73d12f0f88e85b983f59",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2008.parquet",
+      "status": "acquired",
+      "bytes": 46240,
+      "sha256": "d6bb9af580dacf5b7b0eb7034a247973c05487bb5b83ac74aed719a92be5b95a",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2009.parquet",
+      "status": "acquired",
+      "bytes": 47245,
+      "sha256": "b8f041bd3e8e9d41d800c1bc8c17e486dc4a9265d319f7d2e5d2d853f6c4f0e8",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2010.parquet",
+      "status": "acquired",
+      "bytes": 48914,
+      "sha256": "ada91043b72420200565c719ae0bf9b7e25c9a26f6dcf0d525144d5b4d94d8b7",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2011.parquet",
+      "status": "acquired",
+      "bytes": 51660,
+      "sha256": "82167eb335a2593fff9858e5e10b2c37da9784337433ac73bc0fcf738dd56a39",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2012.parquet",
+      "status": "acquired",
+      "bytes": 59478,
+      "sha256": "369f780bf3157fc683111b17f6efa1a179be266edf7a7448dbfb1127e650b0d0",
+      "cache_reused": true
+    },
+    {
+      "name": "cfb_recruits_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/cfb_recruits/cfb_recruits_2013.parquet",
+      "status": "acquired",
+      "bytes": 64543,
+      "sha256": "5962cd0e205e7904cc5a4ec9adf8e0b47a2cfd02a95f1cf1eb54da6f0c48be83",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2007.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2007.csv",
+      "status": "acquired",
+      "bytes": 1054552,
+      "sha256": "61e06b7969e7916da4e63103aecf3cc1327f32c7f7e0f597fb44081dba5a90ff",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2008.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2008.csv",
+      "status": "acquired",
+      "bytes": 1066800,
+      "sha256": "2f8543b5f275282f2699550cde9da02bbe8a44163c231753cf015a7fc491ef20",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2009.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2009.csv",
+      "status": "acquired",
+      "bytes": 1224540,
+      "sha256": "5d41a34e6f32f5c6845d46563332a0528a8492891370f826a6603983a02368c9",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2010.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2010.csv",
+      "status": "acquired",
+      "bytes": 1255176,
+      "sha256": "d9ce4a2b47369dd3697fcefd6dc7775ed776f98d69bc80c6af6204a3e655e092",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2011.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2011.csv",
+      "status": "acquired",
+      "bytes": 1319786,
+      "sha256": "06c37c0d3894ffd7a74be39121f9e0e389d6ba87addd73727909f4b246d27475",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2012.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2012.csv",
+      "status": "acquired",
+      "bytes": 1391645,
+      "sha256": "cb9f80dcc85defe8bce45050aaed677796aff5dc462365a319001d0d68b69d1d",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2013.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2013.csv",
+      "status": "acquired",
+      "bytes": 1426899,
+      "sha256": "a65204a9ecf385f1e56e9fe454244795b02b8bed3da14bc41233f633db9bfd76",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2014.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2014.csv",
+      "status": "acquired",
+      "bytes": 1526358,
+      "sha256": "6061c49cef9999fa8a1ec1b9c62b5d1953f0ccefb6ca6631e90104af5c7a278b",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2015.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2015.csv",
+      "status": "acquired",
+      "bytes": 1564665,
+      "sha256": "5a031ea6485999357948c6c2127f4ea72dcd254d781f39c911940a397b7f2c10",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2016.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2016.csv",
+      "status": "acquired",
+      "bytes": 1576655,
+      "sha256": "88a6c510816016f289eba252569bf5eba549316cb12207c439c5e7a395eb35f7",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2017.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2017.csv",
+      "status": "acquired",
+      "bytes": 1597741,
+      "sha256": "2e517c4da326b08741753693782af8073db1098e8a2944e735236885ff50a0b5",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2018.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2018.csv",
+      "status": "acquired",
+      "bytes": 1589146,
+      "sha256": "78cf79337e6e203c0fcc23004f5c1e9c1b6ee79ad66e17559ae76cd7082251b0",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2019.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2019.csv",
+      "status": "acquired",
+      "bytes": 1580008,
+      "sha256": "b1338e5f364cd385f75aecf15fec69be02d075f5545749ecb4bcbc351e09718a",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2020.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2020.csv",
+      "status": "acquired",
+      "bytes": 1636728,
+      "sha256": "44bfa428eae68eb45ee78fc6789e5409983e192606a75f678402cb0fe3a05ad5",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2021.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2021.csv",
+      "status": "acquired",
+      "bytes": 1712336,
+      "sha256": "41ff0aafb569b5d47836168bdd755a8dcac4581d40dc42efe2f7821a341e903a",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2022.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2022.csv",
+      "status": "acquired",
+      "bytes": 1689929,
+      "sha256": "42f3a4da856546bd9606dde29eecf54e8dbbd6627264bbd8e153dd34ecd0e535",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2023.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2023.csv",
+      "status": "acquired",
+      "bytes": 1695570,
+      "sha256": "fc731277c81c7ee25fb6af50cebd29a2adf3f8aadddeec1c485231aa9f98bdcc",
+      "cache_reused": true
+    },
+    {
+      "name": "player_stats_2024.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/player_stats/player_stats_2024.csv",
+      "status": "acquired",
+      "bytes": 1674023,
+      "sha256": "4f1598c9a6ba396a52e256762a0d9148abd22cdf856f26fc8825fa1d1dc49631",
+      "cache_reused": true
+    },
+    {
+      "name": "stats_player_week_2025.csv",
+      "url": "https://github.com/nflverse/nflverse-data/releases/download/stats_player/stats_player_week_2025.csv",
+      "status": "acquired",
+      "bytes": 8656387,
+      "sha256": "e5e0615b3d96a3eaebfaee91e55afb4a4e7fe0caf057454177bcd7d6ad4bcfc2",
+      "cache_reused": true
+    }
+  ],
+  "unavailable_requested_sources": [
+    {
+      "name": "usage_tackles_2004.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2004.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2004.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2004.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2005.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2005.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2005.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2005.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2006.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2006.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2006.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2006.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2007.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2007.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2007.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2007.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2008.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2008.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2008.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2008.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2009.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2009.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2009.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2009.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2010.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2010.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2010.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2010.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2011.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2011.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2011.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2011.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2012.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2012.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2012.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2012.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "usage_tackles_2013.parquet",
+      "url": "https://github.com/sportsdataverse/sportsdataverse-data/releases/download/espn_cfb_usage_tackles/usage_tackles_2013.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "name": "player_stats_2013.parquet",
+      "url": "https://raw.githubusercontent.com/sportsdataverse/cfbfastR-data/main/player_stats/parquet/player_stats_2013.parquet",
+      "status": "failed",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "nfl_performance_coverage": {
+    "2007": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 4627,
+      "unilateral_source_team_opponent_pairs": 15,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2008": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 4579,
+      "unilateral_source_team_opponent_pairs": 17,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2009": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5035,
+      "unilateral_source_team_opponent_pairs": 7,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2010": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 4988,
+      "unilateral_source_team_opponent_pairs": 10,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 2,
+      "ambiguous_players_quarantined_from_efficiency": 1
+    },
+    "2011": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5091,
+      "unilateral_source_team_opponent_pairs": 13,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2012": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5150,
+      "unilateral_source_team_opponent_pairs": 19,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2013": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5022,
+      "unilateral_source_team_opponent_pairs": 14,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2014": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5129,
+      "unilateral_source_team_opponent_pairs": 13,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2015": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5101,
+      "unilateral_source_team_opponent_pairs": 8,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2016": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5062,
+      "unilateral_source_team_opponent_pairs": 6,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2017": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5107,
+      "unilateral_source_team_opponent_pairs": 9,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2018": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5070,
+      "unilateral_source_team_opponent_pairs": 7,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2019": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5046,
+      "unilateral_source_team_opponent_pairs": 9,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2020": {
+      "observed_reciprocal_games": 256,
+      "expected_games": 256,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5198,
+      "unilateral_source_team_opponent_pairs": 5,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2021": {
+      "observed_reciprocal_games": 272,
+      "expected_games": 272,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5452,
+      "unilateral_source_team_opponent_pairs": 9,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2022": {
+      "observed_reciprocal_games": 271,
+      "expected_games": 271,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5391,
+      "unilateral_source_team_opponent_pairs": 6,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2023": {
+      "observed_reciprocal_games": 272,
+      "expected_games": 272,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5405,
+      "unilateral_source_team_opponent_pairs": 8,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2024": {
+      "observed_reciprocal_games": 272,
+      "expected_games": 272,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 5340,
+      "unilateral_source_team_opponent_pairs": 7,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    },
+    "2025": {
+      "observed_reciprocal_games": 272,
+      "expected_games": 272,
+      "exact_schedule_match": true,
+      "teams": 32,
+      "weekly_player_rows": 18540,
+      "unilateral_source_team_opponent_pairs": 0,
+      "context_scope": "Legacy source has unilateral team/opponent anomalies. Never used as predictors or denominators; reciprocal pair sets match the full schedule. Player receiving totals use source GSIS and season only.",
+      "ambiguous_weekly_rows": 0,
+      "ambiguous_players_quarantined_from_efficiency": 0
+    }
+  },
+  "opportunity_count_constraints": [
+    {
+      "name": "usage_players_2004.parquet",
+      "rows": 2282,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2005.parquet",
+      "rows": 3448,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2006.parquet",
+      "rows": 3448,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2007.parquet",
+      "rows": 3507,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2008.parquet",
+      "rows": 3692,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2009.parquet",
+      "rows": 3746,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2010.parquet",
+      "rows": 3800,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2011.parquet",
+      "rows": 4121,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2012.parquet",
+      "rows": 4167,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2013.parquet",
+      "rows": 4317,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2014.parquet",
+      "rows": 4081,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2015.parquet",
+      "rows": 3930,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2016.parquet",
+      "rows": 3953,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2017.parquet",
+      "rows": 3868,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2018.parquet",
+      "rows": 4163,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2019.parquet",
+      "rows": 4176,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2020.parquet",
+      "rows": 2863,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2021.parquet",
+      "rows": 3932,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2022.parquet",
+      "rows": 4078,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2023.parquet",
+      "rows": 4037,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2024.parquet",
+      "rows": 4164,
+      "count_constraints_pass": true
+    },
+    {
+      "name": "usage_players_2025.parquet",
+      "rows": 4620,
+      "count_constraints_pass": true
+    }
+  ],
+  "primary_and_pressure_labels_preserved": true,
+  "older_unobserved_snap_pressure_labels_remain_missing": true,
+  "expanded_players": 3762,
+  "added_older_prospects": 1229,
+  "proprietary_or_historical_tracking_acquisition_claimed": false
+}
