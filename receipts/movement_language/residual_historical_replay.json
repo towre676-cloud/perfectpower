@@ -1,0 +1,25 @@
+{
+  "schema": "pp-movement-historical-replay/1",
+  "scalar_metrics": 32,
+  "max_absolute_difference": 0.0,
+  "extraction": {
+    "input_cohort_sha256": "5f83794c138cf68268d8ef5b73671f25d5b3948d45645776763fd49ece52372d",
+    "source_tracking_sha256": "541c69f6629f5f803b08033c5c386735582120973562134b2c1e7ec6553fb0d3",
+    "source_attempts": 361,
+    "accepted_attempts": 361,
+    "source_rejections": {},
+    "players": 74,
+    "players_by_year": {
+      "2023": 23,
+      "2024": 22,
+      "2025": 29
+    },
+    "phase_populations_min": "3276",
+    "phase_populations_max": "27720",
+    "scenarios": 1083,
+    "extract_seconds": 70.88789142999985,
+    "target": "Mean observed pressure indicator in the supplied eligible rookie rush cohort; conditional, not unconditional career success.",
+    "onset_weights": "Equal source-only sensitivity scenarios .5,1,2 yd/s; not calibrated phase probabilities",
+    "frame_scope": "Up to first 61 contiguous 10Hz active frames. Gaps rejected. Four operational ordered phase templates, not labeled physiology."
+  }
+}

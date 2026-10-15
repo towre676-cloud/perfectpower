@@ -1,6 +1,6 @@
 {
   "schema": "pp-movement-language-release/1",
-  "tests": 18,
+  "tests": 25,
   "exact_rank_roundtrips": 4000,
   "extraction": {
     "input_cohort_sha256": "5f83794c138cf68268d8ef5b73671f25d5b3948d45645776763fd49ece52372d",
@@ -24,7 +24,7 @@
   },
   "numerical_scope": "Exact integer populations and ranks; binary64 log-weight inference and source observations. Rational reference API checked on small graphs.",
   "formal_scope": "Uses the finite partial-state language framework developed in ArithmeticModes. New numerical compiler, feature extraction and NFL regression are not formally verified.",
-  "summary": "The reusable engine evaluates all allowed phase segmentations and event-order features. The first private-data experiment covers 361 drill attempts, 74 players and 1,083 onset scenarios. A combined model improves exploratory 2025 pressure-rate error by 7.7%, but performs worse in earlier-cohort nested tests; a stable scouting gain is not established.",
+  "summary": "Movement residual corrections were tested on the recovered 74-player cohort. Across three nested split repeats, the selected strategy increased earlier-cohort MSE by 2.88%; it selected zero correction in both temporal main fits, including exploratory 2025. Two hundred full refits show instability. No dependable scouting improvement is established.",
   "benchmark": {
     "cases": [
       {
@@ -91,5 +91,18 @@
   },
   "restricted_raw_data_included": false,
   "private_player_outputs_included": false,
-  "parallel_session": "No parallel source or data files changed; only its existing cohort and original tracking read."
+  "parallel_session": "No parallel source or data files changed; only its existing cohort and original tracking read.",
+  "residual_followup": {
+    "schema": "pp-movement-residual/1",
+    "receipt": "receipts/movement_language/residual.json",
+    "protocol_sha256": "69136dcb98249452c499a9d5eb4523b6d673fe66c0970d36f52e21ca61c12dd0",
+    "development_baseline_mse": 0.0009532055704712809,
+    "development_selected_mse": 0.0009806406208433213,
+    "relative_gain": -0.02878188212693313,
+    "full_refits": 200,
+    "historical_replay_scalar_metrics": 32,
+    "historical_replay_max_difference": 0.0,
+    "validated_predictive_gain": false,
+    "monograph": "https://github.com/towre676-cloud/perfectpower/blob/main/docs/MOVEMENT_RESIDUAL_MONOGRAPH.md"
+  }
 }

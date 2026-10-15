@@ -1,0 +1,24 @@
+{
+  "schema": "pp-movement-residual-checks/1",
+  "focused_tests": 25,
+  "passed": true,
+  "historical_scalar_metrics": 32,
+  "historical_max_difference": 0.0,
+  "full_refits": 200,
+  "bootstrap_quantile_replay_max_difference": 0.0,
+  "original_engine_files_modified": false,
+  "parallel_PerfectJet_files_modified": false,
+  "predictive_release_validated": false,
+  "live_checks": [
+    {
+      "path": "/api/research",
+      "error": "HTTP Error 403: Forbidden",
+      "verified": false
+    },
+    {
+      "path": "/arithmetic/movement",
+      "error": "HTTP Error 403: Forbidden",
+      "verified": false
+    }
+  ]
+}

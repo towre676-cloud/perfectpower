@@ -1,0 +1,95 @@
+{
+  "schema": "pp-movement-residual-source-diagnostics/1",
+  "training_classes": [
+    2023,
+    2024
+  ],
+  "calibration_scope": "Repeated source attempts, not labeled phases or physiological probability calibration. No NFL labels used. Reliability uses distinct training players even during player bootstrap.",
+  "drills": {
+    "FOUR_BAG_AGILITY_DRILL": {
+      "all_class_attempts": 71,
+      "all_class_players": 71,
+      "all_class_repeat_players": 0,
+      "development_repeat_support": {
+        "players": 42,
+        "repeat_players": 0,
+        "within_degrees_freedom": 0
+      },
+      "development_feature_reliability_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "development_zero_weight_features": 40,
+      "features": 40
+    },
+    "FRONT_START_WAVE_DRILL_AND_LATERAL_REACTION": {
+      "all_class_attempts": 71,
+      "all_class_players": 71,
+      "all_class_repeat_players": 0,
+      "development_repeat_support": {
+        "players": 42,
+        "repeat_players": 0,
+        "within_degrees_freedom": 0
+      },
+      "development_feature_reliability_quantiles": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "development_zero_weight_features": 40,
+      "features": 40
+    },
+    "PASS_RUSH_DRILL": {
+      "all_class_attempts": 143,
+      "all_class_players": 74,
+      "all_class_repeat_players": 68,
+      "development_repeat_support": {
+        "players": 45,
+        "repeat_players": 39,
+        "within_degrees_freedom": 39
+      },
+      "development_feature_reliability_quantiles": [
+        0.0,
+        0.018232153999013262,
+        0.14849101190813557,
+        0.24355699590534927,
+        0.4287722799588266
+      ],
+      "development_zero_weight_features": 10,
+      "features": 40
+    },
+    "RUN_THE_HOOP_DRILL": {
+      "all_class_attempts": 76,
+      "all_class_players": 69,
+      "all_class_repeat_players": 7,
+      "development_repeat_support": {
+        "players": 42,
+        "repeat_players": 4,
+        "within_degrees_freedom": 4
+      },
+      "development_feature_reliability_quantiles": [
+        0.0,
+        0.5061814266145853,
+        0.7867977664598205,
+        0.8878552907046977,
+        0.9873028840774942
+      ],
+      "development_zero_weight_features": 3,
+      "features": 40
+    }
+  },
+  "exposure_quantiles": [
+    32.0,
+    55.0,
+    162.0,
+    409.1,
+    625.0
+  ],
+  "sum_exposure": 14665,
+  "no_phase_annotation_calibration": true
+}

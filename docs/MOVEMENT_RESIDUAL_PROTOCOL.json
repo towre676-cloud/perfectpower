@@ -1,0 +1,10 @@
+{
+  "schema": "pp-movement-residual-protocol/1",
+  "date": "2026-10-15",
+  "prior_inspection": "All classes previously inspected. Development analysis only.",
+  "target": "Equal-player observed rookie pressure rate in retained eligible cohort.",
+  "primary": "Inner-selected residual family with paired one-standard-error preference for zero versus independently tuned conventional ridge.",
+  "baseline": {"alpha": [0.1,1,10,100,1000,10000,"mean"], "physical_sets": ["full15","core8","motor4"], "position": "Combine position, never NFL position", "availability": "Identical four source drill flags"},
+  "corrections": {"families": ["kinematic","ordered","uncertain","combined","reliability_combined"], "alpha": [1,10,100,1000], "shrinkage": [0,0.25,0.5,1], "residuals": "Player-separated cross-fitted baseline predictions, tuning baseline only on each cross-fit training partition", "screening": "No outcome-based feature screening or PCA", "reliability": "Training-player/drill repeated attempts only; one minus pooled within-player variance over total source variance, clipped to [0,1]. Not physiological calibration", "selection": "Three player/class-stratified inner folds; pooled equal-player MSE; choose zero if best paired improvement does not exceed one standard error"},
+  "evaluation": {"development": "Three class-stratified 4-fold outer repeats on 2023/2024, seeds 714,914,1114", "temporal": "2023 to 2024 and 2023+2024 to exploratory 2025, tuned on training players only", "uncertainty": "Class-stratified paired player bootstrap of repeat-averaged outer losses; fixed predictions. Separate training-player bootstrap full refits for both temporal comparisons; duplicate identities kept together", "failures": "Retain all families, class errors, fallback frequencies, seed instability, missingness and reliability support", "no_claim": "Zero fallback does not guarantee unseen-risk dominance; no untouched confirmation or deployment claim"}
+}

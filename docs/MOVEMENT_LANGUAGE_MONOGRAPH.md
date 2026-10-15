@@ -26,6 +26,10 @@ The observation path has four fixed-scale coordinates: normalized elapsed time, 
 
 Four operational phase templates correspond to approach, braking, redirect and recovery. Their centers are fixed, not fitted to NFL outcomes. The first active window has at most 61 contiguous frames, with at least two frames per phase. Three sustained-onset definitions, 0.5, 1 and 2 yd/s, are evaluated. Their feature means and ranges are sensitivity summaries with equal scenario weights, not learned probability weights. Per-phase duration uncertainty, boundary widths and integrated acceleration/turn rewards expose ambiguous interpretations. The acceleration rate reported for a phase is expected integrated acceleration divided by expected duration; it is not the expectation of each path's duration-normalized rate.
 
+## Residual-correction follow-up
+
+The [October 15 residual study](MOVEMENT_RESIDUAL_MONOGRAPH.md) reproduces all 32 original scalar metrics exactly, then evaluates cross-fitted corrections against a more broadly tuned conventional model. It preserves this original experiment and its failures. The new receipt is `receipts/movement_language/residual.json`; the 2025 class remains exploratory.
+
 ## First real-data experiment
 
 The adapter read the other session's existing eligible defensive-front rookie cohort, without modifying it, and the original Combine tracking. It used four shared drill names: PASS_RUSH_DRILL, RUN_THE_HOOP_DRILL, FOUR_BAG_AGILITY_DRILL and FRONT_START_WAVE_DRILL_AND_LATERAL_REACTION. It accepted 361 attempts, covering 74 players and 1,083 onset scenarios. Player counts are 23 from 2023, 22 from 2024 and 29 from 2025. Allowed segmentation populations range from 3,276 to 27,720 per scenario. The target is each player's mean observed pressure indicator within the supplied charted rookie-rush cohort. It is conditional on that cohort and its playing opportunities, not an unconditional career-success measure.

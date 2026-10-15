@@ -733,3 +733,6 @@ planning-certificate-small:
 	python scripts/check_planning_lean.py --lean "$(PLANNING_LEAN)"
 planning-certificate-full:
 	python scripts/run_planning_certificate.py --certificate /tmp/petersen50.trace
+.PHONY: movement-residual-test
+movement-residual-test:
+	$(PY) -m unittest discover -s python/tests -p 'test_movement*.py'
