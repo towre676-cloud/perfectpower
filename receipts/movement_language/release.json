@@ -24,7 +24,7 @@
   },
   "numerical_scope": "Exact integer populations and ranks; binary64 log-weight inference and source observations. Rational reference API checked on small graphs.",
   "formal_scope": "Uses the finite partial-state language framework developed in ArithmeticModes. New numerical compiler, feature extraction and NFL regression are not formally verified.",
-  "summary": "Movement residual corrections were tested on the recovered 74-player cohort. Across three nested split repeats, the selected strategy increased earlier-cohort MSE by 2.88%; it selected zero correction in both temporal main fits, including exploratory 2025. Two hundred full refits show instability. No dependable scouting improvement is established.",
+  "summary": "Movement corrections have not established a scouting advantage. A broader follow-up now covers 2,533 drafted prospects, 66 public archives and 1,454 chronological evaluations. College inputs show a retrospective 2.53% NFL usage-error reduction, but custom transformations add no dependable benefit; no predictive scouting edge is validated.",
   "benchmark": {
     "cases": [
       {
@@ -104,5 +104,42 @@
     "historical_replay_max_difference": 0.0,
     "validated_predictive_gain": false,
     "monograph": "https://github.com/towre676-cloud/perfectpower/blob/main/docs/MOVEMENT_RESIDUAL_MONOGRAPH.md"
+  },
+  "scouting_expansion": {
+    "schema": "pp-scouting-expansion-release/1",
+    "population": 2533,
+    "source_combine_records": 8968,
+    "evaluated_primary": 1454,
+    "evaluated_secondary": 90,
+    "college_matched_control": 517,
+    "public_archives": 66,
+    "initial_replayed_metrics": 105,
+    "initial_max_replay_difference": 0.0,
+    "tests": {
+      "scouting": 10,
+      "movement": 25
+    },
+    "retrospective_only": true,
+    "custom_metric_predictive_improvement_validated": false,
+    "broader_raw_primary_relative_gain": 0.025342859465043718,
+    "custom_increment_primary_relative_gain": -0.00011587824601703573,
+    "official_feature_bridge": {
+      "schema": "pp-official-scouting-bridge/1",
+      "source_players": 510,
+      "exact_public_id_links": 482,
+      "college_name_verified": 399,
+      "custom_metric_columns": 110,
+      "by_class": {
+        "2023": 160,
+        "2024": 177,
+        "2025": 173
+      },
+      "outcome_evaluation_performed": false,
+      "NFL_outcomes_used_as_features": false,
+      "PerfectJet_files_modified": false,
+      "scope": "Feature-only expansion of the authorized 510-player BDB population. This does not turn the historical Combine pool into full trajectories or establish scouting accuracy."
+    },
+    "model_deployed": false,
+    "summary": "Expanded to 2,533 drafted prospects and 66 public data archives. Source-guarded college inputs reduce retrospective two-season NFL usage error by 2.53% versus Combine traits; the interval includes zero, college-linked controls do not confirm it, and custom metrics add no dependable benefit. No scouting edge or pressure-rate improvement is established."
   }
 }

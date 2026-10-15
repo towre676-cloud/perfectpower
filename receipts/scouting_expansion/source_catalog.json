@@ -1,0 +1,45 @@
+{
+  "schema": "pp-scouting-source-catalog/1",
+  "scope": "Broad source search and implemented ingestion, not a claim to possess all football data. Never substitute missing records with fabricated observations.",
+  "implemented": [
+    "nflverse historical Combine measurements",
+    "nflverse drafted players and exact PFR identities",
+    "nflverse ESPN/NFL ID and immutable birth-date crosswalk",
+    "nflverse regular-season NFL snap counts, 2013\u20132025 (2012 file empty)",
+    "PFR/nflverse season defensive pressure totals, conservative ambiguity rejection",
+    "SportsDataverse college game box scores, 2014\u20132025",
+    "SportsDataverse credited college play participant events, 2014\u20132025",
+    "Existing authorized BDB Combine tracking and rookie checkpoint, retained separately",
+    "SportsDataverse college rosters, 2014\u20132025 (downloaded/audited, not model inputs)",
+    "SportsDataverse recruiting, 2014\u20132025 (downloaded/audited, ID namespace mismatch prevents a verified join)"
+  ],
+  "discovered_not_ingested": [
+    {
+      "source": "CFBD API",
+      "url": "https://collegefootballdata.com/key",
+      "reason": "Authenticated API; no key supplied or found in this task. Public SportsDataverse releases already provide usable college data without a new account."
+    },
+    {
+      "source": "PFF/SIS historical college charting and college snap/rush denominators",
+      "reason": "No authorized bulk dataset accessible here. Public credit events do not reveal all on-field opportunities."
+    },
+    {
+      "source": "Historical player-tracking across every prospect",
+      "reason": "Public Combine data give timing/body measurements, not full historical trajectories. Cannot manufacture movement data for the 2000\u20132026 pool."
+    },
+    {
+      "source": "Pro-day videos, injuries, scouting reports and consensus boards",
+      "reason": "No consistent timestamped bulk join verified. Measurement conditions, injury timing and outcome-written scouting text can cause leakage; retain as future source-adapter work."
+    }
+  ],
+  "source_links": [
+    "https://nflreadr.nflverse.com/reference/load_combine.html",
+    "https://nflreadr.nflverse.com/reference/load_draft_picks.html",
+    "https://nflreadr.nflverse.com/reference/load_snap_counts.html",
+    "https://nflreadr.nflverse.com/reference/load_players.html",
+    "https://nflreadr.nflverse.com/reference/load_pfr_advstats.html",
+    "https://github.com/sportsdataverse/cfbfastR-data/blob/main/README.md",
+    "https://js.sportsdataverse.org/docs/cfb/reference/loaders"
+  ],
+  "not_joined": "Roster cfbd_recruit_ids and downloaded recruiting recruit_id are distinct namespaces. College roster historical rows carry current-looking draft/status metadata; these columns are excluded from scouting inputs."
+}

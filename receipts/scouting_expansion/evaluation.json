@@ -1,0 +1,2314 @@
+{
+  "schema": "pp-scouting-expanded-evaluation/1",
+  "protocol_sha256": "00d20699bb23fd1c45d47fceb2ffe164279eaa85ac0b7b7aa2f64c6074102f43",
+  "input_sha256": "f60067ab21eb6a36396016fd05b19c3ecf4bfca5cd971ccc85763b215f8f6225",
+  "primary": {
+    "target": "target",
+    "status": "evaluated",
+    "eligible_population": 2533,
+    "evaluated_players": 1454,
+    "feature_dimensions": {
+      "combine": 9,
+      "availability": 201,
+      "broad_raw": 111,
+      "custom": 218,
+      "draft_control": 112,
+      "draft_control_custom": 219
+    },
+    "outer_audits": [
+      {
+        "class": 2018,
+        "train_players": 861,
+        "test_players": 208,
+        "latest_training_class": 2016,
+        "configs": {
+          "combine": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.419322064697819,
+              4.332049010867401,
+              4.31057476986683,
+              4.592843475873991,
+              4.744946597668842
+            ]
+          },
+          "availability": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.419322064697831,
+              4.332049010867403,
+              4.310574769866831,
+              4.592843475873991,
+              4.744946597668842
+            ]
+          },
+          "broad_raw": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.419322064697807,
+              4.3320490108674035,
+              4.310574769866831,
+              4.592843475873991,
+              4.744946597668842
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              3.8924349673283745,
+              3.791629762372607,
+              3.644031511214401,
+              4.152320408787623,
+              4.671351149109086
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0011949626416794593,
+            "paired_standard_error": 0.009383192186799933,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.419322064697807,
+                4.3320490108674035,
+                4.310574769866831,
+                4.592843475873991,
+                4.744946597668842
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.557167596630691,
+                4.410142780575231,
+                4.335747967426337,
+                4.544684680431365,
+                4.732623350642896
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                3.8924349673283745,
+                3.791629762372607,
+                3.644031511214401,
+                4.152320408787623,
+                4.671351149109086
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.166705247429937,
+                3.9012102231032584,
+                3.673800885048731,
+                4.128046516068643,
+                4.660024301641515
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2019,
+        "train_players": 1079,
+        "test_players": 213,
+        "latest_training_class": 2017,
+        "configs": {
+          "combine": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.796182223093454,
+              4.721323195709165,
+              4.701821436038362,
+              4.866514093873434,
+              4.9926068646160315
+            ]
+          },
+          "availability": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.796182223093463,
+              4.721323195709166,
+              4.701821436038362,
+              4.866514093873434,
+              4.9926068646160315
+            ]
+          },
+          "broad_raw": {
+            "alpha": 100.0,
+            "inner_mse": [
+              5.082521623186529,
+              4.858030230647906,
+              4.711390974088212,
+              4.8659132001475935,
+              4.992467947994739
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.222553335263732,
+              4.072167227539122,
+              3.92736445297456,
+              4.360494568982351,
+              4.898584295680612
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.007562513730387606,
+            "paired_standard_error": 0.016021145431544714,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                5.082521623186529,
+                4.858030230647906,
+                4.711390974088212,
+                4.8659132001475935,
+                4.992467947994739
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                5.2711280858508704,
+                4.927887145614021,
+                4.715637523038411,
+                4.823128635687759,
+                4.981128224780527
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.222553335263732,
+                4.072167227539122,
+                3.92736445297456,
+                4.360494568982351,
+                4.898584295680612
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.45974650064784,
+                4.170364722092774,
+                3.9538918227140485,
+                4.342299241067826,
+                4.888620612213151
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2020,
+        "train_players": 1287,
+        "test_players": 226,
+        "latest_training_class": 2018,
+        "configs": {
+          "combine": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.5657146077378785,
+              4.534076072358527,
+              4.528822895169567,
+              4.576281725459154,
+              4.699175557837557
+            ]
+          },
+          "availability": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.5657146077378785,
+              4.534076072358528,
+              4.528822895169567,
+              4.576281725459154,
+              4.699175557837557
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.728047453094312,
+              5.128864669809894,
+              4.569723825215455,
+              4.556685817813263,
+              4.696530667756679
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.297699424768507,
+              3.983249198699991,
+              3.6656318975807713,
+              3.9446681235767893,
+              4.56420403112324
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.003823580150913562,
+            "paired_standard_error": 0.008282918568590047,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                5.728047453094312,
+                5.128864669809894,
+                4.569723825215455,
+                4.556685817813263,
+                4.696530667756679
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                5.86248514113686,
+                5.16942059676201,
+                4.587738451548849,
+                4.511944634707885,
+                4.681110024005836
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.297699424768507,
+                3.983249198699991,
+                3.6656318975807713,
+                3.9446681235767893,
+                4.56420403112324
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.394290893962316,
+                4.048912060463317,
+                3.710862574358477,
+                3.9289427221530406,
+                4.551099792864743
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2021,
+        "train_players": 1500,
+        "test_players": 193,
+        "latest_training_class": 2019,
+        "configs": {
+          "combine": {
+            "alpha": 10.0,
+            "inner_mse": [
+              4.834306100006298,
+              4.811411560452797,
+              4.830049721899793,
+              4.865867800042561,
+              5.007347002937843
+            ]
+          },
+          "availability": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.93546781258376,
+              5.525486257626922,
+              5.059984876587842,
+              4.883725267656047,
+              4.9788011613216705
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              6.185871605515282,
+              5.459539887017114,
+              4.870856842728812,
+              4.8381429488573024,
+              5.002878315703105
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.610363420607196,
+              4.208316208858503,
+              3.888171197374685,
+              4.138290011419703,
+              4.831575252293025
+            ]
+          },
+          "custom": {
+            "shrinkage": 1.0,
+            "inner_gain": 0.03605977691657083,
+            "paired_standard_error": 0.03564892623617581,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                6.185871605515282,
+                5.459539887017114,
+                4.870856842728812,
+                4.8381429488573024,
+                5.002878315703105
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                6.566212660409831,
+                5.482876212819027,
+                4.834797065812242,
+                4.782172494090405,
+                4.979432613251683
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.610363420607196,
+                4.208316208858503,
+                3.888171197374685,
+                4.138290011419703,
+                4.831575252293025
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.8653534728779055,
+                4.2737876500747465,
+                3.9086929486573836,
+                4.117197444530684,
+                4.8121015187413
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2022,
+        "train_players": 1726,
+        "test_players": 218,
+        "latest_training_class": 2020,
+        "configs": {
+          "combine": {
+            "alpha": 10.0,
+            "inner_mse": [
+              4.141925185627476,
+              4.069128990907507,
+              4.079953662191669,
+              4.124008655277893,
+              4.271944342270655
+            ]
+          },
+          "availability": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.578963567300493,
+              5.0225751853983285,
+              4.36447563633363,
+              4.112204707631461,
+              4.195420561227943
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.482346590210618,
+              4.722920167506398,
+              4.136830728716765,
+              4.055984981565169,
+              4.228590609226685
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.343045945891109,
+              3.7492760538235834,
+              3.3306192662288807,
+              3.40908963647864,
+              4.049768120717802
+            ]
+          },
+          "custom": {
+            "shrinkage": 1.0,
+            "inner_gain": 0.03816202152428834,
+            "paired_standard_error": 0.03177088317492887,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                5.482346590210618,
+                4.722920167506398,
+                4.136830728716765,
+                4.055984981565169,
+                4.228590609226685
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                6.006719948512125,
+                4.773940558489004,
+                4.107466834578924,
+                3.9969319092655295,
+                4.198190424109872
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.343045945891109,
+                3.7492760538235834,
+                3.3306192662288807,
+                3.40908963647864,
+                4.049768120717802
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.722468725487015,
+                3.8406926634690306,
+                3.3531198392887664,
+                3.3885249290913864,
+                4.024507394520291
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2023,
+        "train_players": 1919,
+        "test_players": 189,
+        "latest_training_class": 2021,
+        "configs": {
+          "combine": {
+            "alpha": 100.0,
+            "inner_mse": [
+              3.820672025415711,
+              3.728350394766422,
+              3.7137962417905523,
+              3.7911404899621592,
+              3.983992563720071
+            ]
+          },
+          "availability": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.556360734191812,
+              4.871717123327436,
+              4.0726876739864855,
+              3.7950991458424954,
+              3.8994647267233713
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              4.325634879523843,
+              3.9643836197823434,
+              3.7527025238581255,
+              3.7415856664276874,
+              3.940686098573349
+            ]
+          },
+          "draft_control": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              3.8264023985950617,
+              3.436724682943338,
+              3.199245666752255,
+              3.178241940652663,
+              3.752380644792111
+            ]
+          },
+          "custom": {
+            "shrinkage": 1.0,
+            "inner_gain": 0.09180999048634524,
+            "paired_standard_error": 0.02929928985374001,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                4.325634879523843,
+                3.9643836197823434,
+                3.7527025238581255,
+                3.7415856664276874,
+                3.940686098573349
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                4.907968043151196,
+                3.993708299065086,
+                3.681752973810501,
+                3.6534521466593577,
+                3.8973730935072033
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.003215938269984316,
+            "paired_standard_error": 0.010929065584140581,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                3.8264023985950617,
+                3.436724682943338,
+                3.199245666752255,
+                3.178241940652663,
+                3.752380644792111
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                4.307592382004738,
+                3.5293088168908264,
+                3.203076178844129,
+                3.147276960521766,
+                3.7169579456818846
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2024,
+        "train_players": 2137,
+        "test_players": 207,
+        "latest_training_class": 2022,
+        "configs": {
+          "combine": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              3.730978667992503,
+              3.608328325455217,
+              3.4673936605421924,
+              3.396682097783362,
+              3.526293013062396
+            ]
+          },
+          "availability": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              4.447640704826991,
+              4.105481726741639,
+              3.6481093645325045,
+              3.421154958248204,
+              3.4568046623923356
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              4.196730811167532,
+              3.910355577971634,
+              3.5586542023898793,
+              3.3533746247499248,
+              3.455531869154137
+            ]
+          },
+          "draft_control": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              3.725352407264145,
+              3.402569826894736,
+              3.0813566591777963,
+              2.861946072635788,
+              3.2670113554874476
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.020180766680256028,
+            "paired_standard_error": 0.026599777676337207,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                4.196730811167532,
+                3.910355577971634,
+                3.5586542023898793,
+                3.3533746247499248,
+                3.455531869154137
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                4.619673102324823,
+                3.9650558852232476,
+                3.565634024387562,
+                3.333193858069668,
+                3.4285220847494258
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                3.725352407264145,
+                3.402569826894736,
+                3.0813566591777963,
+                2.861946072635788,
+                3.2670113554874476
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                4.153575156069489,
+                3.550422259720417,
+                3.1429419107144088,
+                2.8787135552447536,
+                3.2477249028324278
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "skipped": [],
+    "comparisons": {
+      "availability_vs_combine": {
+        "players": 1454,
+        "mse": 3.8907634337181705,
+        "baseline_mse": 3.8281403157422687,
+        "relative_gain": -0.01635862659432315,
+        "absolute_gain": -0.0626231179759021,
+        "paired_player_bootstrap_95": [
+          -0.1915201195645482,
+          0.06050153324563183
+        ],
+        "mean_absolute_error": 1.5014064171183403,
+        "by_class": {
+          "2018": {
+            "players": 208,
+            "mse": 4.246596903907362,
+            "baseline_mse": 4.246596903907362,
+            "relative_gain": 4.007398037710702e-18
+          },
+          "2019": {
+            "players": 213,
+            "mse": 5.449377968443631,
+            "baseline_mse": 4.759572504379486,
+            "relative_gain": -0.1449301304748328
+          },
+          "2020": {
+            "players": 226,
+            "mse": 3.4504693514010327,
+            "baseline_mse": 3.2860571681081776,
+            "relative_gain": -0.05003326931999466
+          },
+          "2021": {
+            "players": 193,
+            "mse": 3.1708035657422,
+            "baseline_mse": 3.1880558674358728,
+            "relative_gain": 0.00541154308802884
+          },
+          "2022": {
+            "players": 218,
+            "mse": 3.9062976531483744,
+            "baseline_mse": 4.276294846852708,
+            "relative_gain": 0.0865228444143992
+          },
+          "2023": {
+            "players": 189,
+            "mse": 2.784754599591658,
+            "baseline_mse": 2.780763979627419,
+            "relative_gain": -0.001435080428787243
+          },
+          "2024": {
+            "players": 207,
+            "mse": 4.074868116043227,
+            "baseline_mse": 4.122195886341316,
+            "relative_gain": 0.011481203611625437
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 321,
+          "candidate_mean_snaps": 936.0654205607476,
+          "baseline_mean_snaps": 971.5420560747664
+        }
+      },
+      "broad_raw_vs_availability": {
+        "players": 1454,
+        "mse": 3.7311242937079445,
+        "baseline_mse": 3.8907634337181705,
+        "relative_gain": 0.041030286916639624,
+        "absolute_gain": 0.1596391400102265,
+        "paired_player_bootstrap_95": [
+          0.05780226195676688,
+          0.27322874595746505
+        ],
+        "mean_absolute_error": 1.444150772339356,
+        "by_class": {
+          "2018": {
+            "players": 208,
+            "mse": 4.342110006327241,
+            "baseline_mse": 4.246596903907362,
+            "relative_gain": -0.02249168088734665
+          },
+          "2019": {
+            "players": 213,
+            "mse": 4.7600591693119005,
+            "baseline_mse": 5.449377968443631,
+            "relative_gain": 0.126494951006051
+          },
+          "2020": {
+            "players": 226,
+            "mse": 3.1332181441590143,
+            "baseline_mse": 3.4504693514010327,
+            "relative_gain": 0.09194436319603916
+          },
+          "2021": {
+            "players": 193,
+            "mse": 3.1215476725643643,
+            "baseline_mse": 3.1708035657422,
+            "relative_gain": 0.015534198873119751
+          },
+          "2022": {
+            "players": 218,
+            "mse": 3.786851534774505,
+            "baseline_mse": 3.9062976531483744,
+            "relative_gain": 0.030577833278423852
+          },
+          "2023": {
+            "players": 189,
+            "mse": 2.7744128614765837,
+            "baseline_mse": 2.784754599591658,
+            "relative_gain": 0.0037136981896325645
+          },
+          "2024": {
+            "players": 207,
+            "mse": 4.094394067087313,
+            "baseline_mse": 4.074868116043227,
+            "relative_gain": -0.004791799510568207
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 321,
+          "candidate_mean_snaps": 970.4267912772585,
+          "baseline_mean_snaps": 936.0654205607476
+        }
+      },
+      "broad_raw_vs_combine": {
+        "players": 1454,
+        "mse": 3.7311242937079445,
+        "baseline_mse": 3.8281403157422687,
+        "relative_gain": 0.025342859465043718,
+        "absolute_gain": 0.0970160220343244,
+        "paired_player_bootstrap_95": [
+          -0.002305444318021386,
+          0.19522756843506087
+        ],
+        "mean_absolute_error": 1.444150772339356,
+        "by_class": {
+          "2018": {
+            "players": 208,
+            "mse": 4.342110006327241,
+            "baseline_mse": 4.246596903907362,
+            "relative_gain": -0.02249168088734665
+          },
+          "2019": {
+            "players": 213,
+            "mse": 4.7600591693119005,
+            "baseline_mse": 4.759572504379486,
+            "relative_gain": -0.00010224971506730345
+          },
+          "2020": {
+            "players": 226,
+            "mse": 3.1332181441590143,
+            "baseline_mse": 3.2860571681081776,
+            "relative_gain": 0.046511370962287336
+          },
+          "2021": {
+            "players": 193,
+            "mse": 3.1215476725643643,
+            "baseline_mse": 3.1880558674358728,
+            "relative_gain": 0.020861677974608684
+          },
+          "2022": {
+            "players": 218,
+            "mse": 3.786851534774505,
+            "baseline_mse": 4.276294846852708,
+            "relative_gain": 0.11445499658154455
+          },
+          "2023": {
+            "players": 189,
+            "mse": 2.7744128614765837,
+            "baseline_mse": 2.780763979627419,
+            "relative_gain": 0.0022839472164356833
+          },
+          "2024": {
+            "players": 207,
+            "mse": 4.094394067087313,
+            "baseline_mse": 4.122195886341316,
+            "relative_gain": 0.006744419726904153
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 321,
+          "candidate_mean_snaps": 970.4267912772585,
+          "baseline_mean_snaps": 971.5420560747664
+        }
+      },
+      "custom_vs_broad_raw": {
+        "players": 1454,
+        "mse": 3.7315566498467705,
+        "baseline_mse": 3.7311242937079445,
+        "relative_gain": -0.00011587824601703573,
+        "absolute_gain": -0.00043235613882642784,
+        "paired_player_bootstrap_95": [
+          -0.026237094977326653,
+          0.025806108134030236
+        ],
+        "mean_absolute_error": 1.4406962462335953,
+        "by_class": {
+          "2018": {
+            "players": 208,
+            "mse": 4.342110006327241,
+            "baseline_mse": 4.342110006327241,
+            "relative_gain": 0.0
+          },
+          "2019": {
+            "players": 213,
+            "mse": 4.7600591693119005,
+            "baseline_mse": 4.7600591693119005,
+            "relative_gain": 0.0
+          },
+          "2020": {
+            "players": 226,
+            "mse": 3.1332181441590143,
+            "baseline_mse": 3.1332181441590143,
+            "relative_gain": 0.0
+          },
+          "2021": {
+            "players": 193,
+            "mse": 2.991040801772341,
+            "baseline_mse": 3.1215476725643643,
+            "relative_gain": 0.04180838624989217
+          },
+          "2022": {
+            "players": 218,
+            "mse": 3.887056823347114,
+            "baseline_mse": 3.786851534774505,
+            "relative_gain": -0.026461372370273177
+          },
+          "2023": {
+            "players": 189,
+            "mse": 2.795427247613544,
+            "baseline_mse": 2.7744128614765837,
+            "relative_gain": -0.007574354353942596
+          },
+          "2024": {
+            "players": 207,
+            "mse": 4.094394067087313,
+            "baseline_mse": 4.094394067087313,
+            "relative_gain": 0.0
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 321,
+          "candidate_mean_snaps": 988.0591900311526,
+          "baseline_mean_snaps": 970.4267912772585
+        }
+      },
+      "custom_vs_combine": {
+        "players": 1454,
+        "mse": 3.7315566498467705,
+        "baseline_mse": 3.8281403157422687,
+        "relative_gain": 0.02522991790513055,
+        "absolute_gain": 0.09658366589549798,
+        "paired_player_bootstrap_95": [
+          0.0010652170739133629,
+          0.19116432379463108
+        ],
+        "mean_absolute_error": 1.4406962462335953,
+        "by_class": {
+          "2018": {
+            "players": 208,
+            "mse": 4.342110006327241,
+            "baseline_mse": 4.246596903907362,
+            "relative_gain": -0.02249168088734665
+          },
+          "2019": {
+            "players": 213,
+            "mse": 4.7600591693119005,
+            "baseline_mse": 4.759572504379486,
+            "relative_gain": -0.00010224971506730345
+          },
+          "2020": {
+            "players": 226,
+            "mse": 3.1332181441590143,
+            "baseline_mse": 3.2860571681081776,
+            "relative_gain": 0.046511370962287336
+          },
+          "2021": {
+            "players": 193,
+            "mse": 2.991040801772341,
+            "baseline_mse": 3.1880558674358728,
+            "relative_gain": 0.061797871133917555
+          },
+          "2022": {
+            "players": 218,
+            "mse": 3.887056823347114,
+            "baseline_mse": 4.276294846852708,
+            "relative_gain": 0.09102226049545392
+          },
+          "2023": {
+            "players": 189,
+            "mse": 2.795427247613544,
+            "baseline_mse": 2.780763979627419,
+            "relative_gain": -0.005273107711963933
+          },
+          "2024": {
+            "players": 207,
+            "mse": 4.094394067087313,
+            "baseline_mse": 4.122195886341316,
+            "relative_gain": 0.006744419726904153
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 321,
+          "candidate_mean_snaps": 988.0591900311526,
+          "baseline_mean_snaps": 971.5420560747664
+        }
+      },
+      "draft_control_vs_broad_raw": {
+        "players": 1454,
+        "mse": 3.1510098553479002,
+        "baseline_mse": 3.7311242937079445,
+        "relative_gain": 0.1554797944786593,
+        "absolute_gain": 0.5801144383600441,
+        "paired_player_bootstrap_95": [
+          0.43227437431270427,
+          0.723773411967941
+        ],
+        "mean_absolute_error": 1.3505845558943803,
+        "by_class": {
+          "2018": {
+            "players": 208,
+            "mse": 3.203283940785504,
+            "baseline_mse": 4.342110006327241,
+            "relative_gain": 0.2622748073821855
+          },
+          "2019": {
+            "players": 213,
+            "mse": 3.958183329348912,
+            "baseline_mse": 4.7600591693119005,
+            "relative_gain": 0.16845921687963078
+          },
+          "2020": {
+            "players": 226,
+            "mse": 2.8563475947583297,
+            "baseline_mse": 3.1332181441590143,
+            "relative_gain": 0.0883661898603614
+          },
+          "2021": {
+            "players": 193,
+            "mse": 2.7631899265322515,
+            "baseline_mse": 3.1215476725643643,
+            "relative_gain": 0.11480130487250279
+          },
+          "2022": {
+            "players": 218,
+            "mse": 3.5963026589915095,
+            "baseline_mse": 3.786851534774505,
+            "relative_gain": 0.050318549336617176
+          },
+          "2023": {
+            "players": 189,
+            "mse": 2.252898540296929,
+            "baseline_mse": 2.7744128614765837,
+            "relative_gain": 0.1879728602837061
+          },
+          "2024": {
+            "players": 207,
+            "mse": 3.302271520911923,
+            "baseline_mse": 4.094394067087313,
+            "relative_gain": 0.19346514605002188
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 321,
+          "candidate_mean_snaps": 1224.9470404984424,
+          "baseline_mean_snaps": 970.4267912772585
+        }
+      },
+      "draft_control_custom_vs_draft_control": {
+        "players": 1454,
+        "mse": 3.1510098553479002,
+        "baseline_mse": 3.1510098553479002,
+        "relative_gain": 0.0,
+        "absolute_gain": 0.0,
+        "paired_player_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "mean_absolute_error": 1.3505845558943803,
+        "by_class": {
+          "2018": {
+            "players": 208,
+            "mse": 3.203283940785504,
+            "baseline_mse": 3.203283940785504,
+            "relative_gain": 0.0
+          },
+          "2019": {
+            "players": 213,
+            "mse": 3.958183329348912,
+            "baseline_mse": 3.958183329348912,
+            "relative_gain": 0.0
+          },
+          "2020": {
+            "players": 226,
+            "mse": 2.8563475947583297,
+            "baseline_mse": 2.8563475947583297,
+            "relative_gain": 0.0
+          },
+          "2021": {
+            "players": 193,
+            "mse": 2.7631899265322515,
+            "baseline_mse": 2.7631899265322515,
+            "relative_gain": 0.0
+          },
+          "2022": {
+            "players": 218,
+            "mse": 3.5963026589915095,
+            "baseline_mse": 3.5963026589915095,
+            "relative_gain": 0.0
+          },
+          "2023": {
+            "players": 189,
+            "mse": 2.252898540296929,
+            "baseline_mse": 2.252898540296929,
+            "relative_gain": 0.0
+          },
+          "2024": {
+            "players": 207,
+            "mse": 3.302271520911923,
+            "baseline_mse": 3.302271520911923,
+            "relative_gain": 0.0
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 321,
+          "candidate_mean_snaps": 1224.9470404984424,
+          "baseline_mean_snaps": 1224.9470404984424
+        }
+      }
+    },
+    "positions": {
+      "C": 31,
+      "CB": 162,
+      "DB": 43,
+      "DE": 44,
+      "DL": 85,
+      "DT": 68,
+      "EDGE": 80,
+      "FB": 1,
+      "G": 12,
+      "ILB": 11,
+      "LB": 120,
+      "OG": 34,
+      "OL": 82,
+      "OLB": 13,
+      "OT": 93,
+      "QB": 75,
+      "RB": 118,
+      "S": 78,
+      "SAF": 17,
+      "TE": 90,
+      "WR": 197
+    },
+    "classes": [
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "maturity_gap_years": 2
+  },
+  "secondary": {
+    "target": "pressure_target",
+    "status": "evaluated",
+    "eligible_population": 339,
+    "evaluated_players": 90,
+    "feature_dimensions": {
+      "combine": 9,
+      "availability": 201,
+      "broad_raw": 111,
+      "custom": 218,
+      "draft_control": 112,
+      "draft_control_custom": 219
+    },
+    "outer_audits": [
+      {
+        "class": 2023,
+        "train_players": 200,
+        "test_players": 45,
+        "latest_training_class": 2021,
+        "configs": {
+          "combine": {
+            "alpha": 10.0,
+            "inner_mse": [
+              2.021660300353987,
+              1.4956142555364687,
+              1.5264321801327603,
+              1.836886877525365,
+              1.9320186999020368
+            ]
+          },
+          "availability": {
+            "alpha": 100.0,
+            "inner_mse": [
+              2.019157754543858,
+              1.6561586626640046,
+              1.6281290198647744,
+              1.8285052039037255,
+              1.9236749593688516
+            ]
+          },
+          "broad_raw": {
+            "alpha": 100.0,
+            "inner_mse": [
+              2.3326922779575963,
+              1.423543038279776,
+              1.390638687327421,
+              1.771054857573379,
+              1.9224841969027548
+            ]
+          },
+          "draft_control": {
+            "alpha": 10.0,
+            "inner_mse": [
+              1.6770092430678494,
+              1.1839411200808319,
+              1.2826054999771266,
+              1.7445660723008565,
+              1.919475873372089
+            ]
+          },
+          "custom": {
+            "shrinkage": 1.0,
+            "inner_gain": 0.12014319665497962,
+            "paired_standard_error": 0.07116094788298273,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                2.3326922779575963,
+                1.423543038279776,
+                1.390638687327421,
+                1.771054857573379,
+                1.9224841969027548
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                2.0205011945580478,
+                1.3273844838412265,
+                1.2704954906724415,
+                1.6785718984269968,
+                1.907374796246688
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 1.0,
+            "inner_gain": 0.09352512861963211,
+            "paired_standard_error": 0.06631967393068947,
+            "baseline": {
+              "alpha": 10.0,
+              "inner_mse": [
+                1.6770092430678494,
+                1.1839411200808319,
+                1.2826054999771266,
+                1.7445660723008565,
+                1.919475873372089
+              ]
+            },
+            "custom": {
+              "alpha": 10.0,
+              "inner_mse": [
+                1.6869281695728788,
+                1.1526882443212298,
+                1.1890803713574947,
+                1.6557995674639225,
+                1.904438031331866
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2024,
+        "train_players": 249,
+        "test_players": 45,
+        "latest_training_class": 2022,
+        "configs": {
+          "combine": {
+            "alpha": 10.0,
+            "inner_mse": [
+              1.716807953390209,
+              1.4111911064896536,
+              1.484700163829944,
+              1.723482477280133,
+              1.8040707064927726
+            ]
+          },
+          "availability": {
+            "alpha": 100.0,
+            "inner_mse": [
+              2.1302758477377575,
+              1.7206386343299531,
+              1.6101574900190891,
+              1.7250728222798437,
+              1.7961637822551197
+            ]
+          },
+          "broad_raw": {
+            "alpha": 100.0,
+            "inner_mse": [
+              2.677435182379869,
+              1.9348351981907828,
+              1.5245418323035702,
+              1.6679565032033765,
+              1.7935052246815193
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              2.3544715442611834,
+              1.798163927624395,
+              1.4279266343448291,
+              1.635092578666203,
+              1.7894258028145815
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.03576187560233494,
+            "paired_standard_error": 0.06304647041383604,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                2.677435182379869,
+                1.9348351981907828,
+                1.5245418323035702,
+                1.6679565032033765,
+                1.7935052246815193
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                3.0927718009075016,
+                1.9588865475481065,
+                1.488779956701235,
+                1.5943325291174135,
+                1.7799765398127136
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.020776885266845554,
+            "paired_standard_error": 0.029813665007393096,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                2.3544715442611834,
+                1.798163927624395,
+                1.4279266343448291,
+                1.635092578666203,
+                1.7894258028145815
+              ]
+            },
+            "custom": {
+              "alpha": 100.0,
+              "inner_mse": [
+                2.926441564397699,
+                1.8472763527512492,
+                1.410166875437788,
+                1.5654975988359363,
+                1.775984111328085
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "skipped": [
+      {
+        "class": 2018,
+        "train_players": 0,
+        "test_players": 48,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      },
+      {
+        "class": 2019,
+        "train_players": 3,
+        "test_players": 50,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      },
+      {
+        "class": 2020,
+        "train_players": 51,
+        "test_players": 58,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      },
+      {
+        "class": 2021,
+        "train_players": 101,
+        "test_players": 41,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      },
+      {
+        "class": 2022,
+        "train_players": 159,
+        "test_players": 49,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      }
+    ],
+    "comparisons": {
+      "availability_vs_combine": {
+        "players": 90,
+        "mse": 1.2390141390595,
+        "baseline_mse": 1.1475240636948727,
+        "relative_gain": -0.07972824122750119,
+        "absolute_gain": -0.09149007536462725,
+        "paired_player_bootstrap_95": [
+          -0.3456147897744379,
+          0.16247434994814655
+        ],
+        "mean_absolute_error": 0.8206728744450449,
+        "by_class": {
+          "2023": {
+            "players": 45,
+            "mse": 1.0852309336345058,
+            "baseline_mse": 1.1323433854960792,
+            "relative_gain": 0.041606152749268016
+          },
+          "2024": {
+            "players": 45,
+            "mse": 1.3927973444844937,
+            "baseline_mse": 1.1627047418936662,
+            "relative_gain": -0.19789426696246368
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 19,
+          "candidate_mean_snaps": 900.3684210526316,
+          "baseline_mean_snaps": 736.3157894736842
+        }
+      },
+      "broad_raw_vs_availability": {
+        "players": 90,
+        "mse": 1.1817459582777738,
+        "baseline_mse": 1.2390141390595,
+        "relative_gain": 0.04622076453881048,
+        "absolute_gain": 0.05726818078172614,
+        "paired_player_bootstrap_95": [
+          -0.10140060326591588,
+          0.20731777522414402
+        ],
+        "mean_absolute_error": 0.8048291275129926,
+        "by_class": {
+          "2023": {
+            "players": 45,
+            "mse": 1.0299631720709703,
+            "baseline_mse": 1.0852309336345058,
+            "relative_gain": 0.05092718964289055
+          },
+          "2024": {
+            "players": 45,
+            "mse": 1.3335287444845771,
+            "baseline_mse": 1.3927973444844937,
+            "relative_gain": 0.0425536423045474
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 19,
+          "candidate_mean_snaps": 742.3157894736842,
+          "baseline_mean_snaps": 900.3684210526316
+        }
+      },
+      "broad_raw_vs_combine": {
+        "players": 90,
+        "mse": 1.1817459582777738,
+        "baseline_mse": 1.1475240636948727,
+        "relative_gain": -0.029822376423820865,
+        "absolute_gain": -0.034221894582901084,
+        "paired_player_bootstrap_95": [
+          -0.34137842642841065,
+          0.24509478925053726
+        ],
+        "mean_absolute_error": 0.8048291275129926,
+        "by_class": {
+          "2023": {
+            "players": 45,
+            "mse": 1.0299631720709703,
+            "baseline_mse": 1.1323433854960792,
+            "relative_gain": 0.09041445796078544
+          },
+          "2024": {
+            "players": 45,
+            "mse": 1.3335287444845771,
+            "baseline_mse": 1.1627047418936662,
+            "relative_gain": -0.146919502807475
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 19,
+          "candidate_mean_snaps": 742.3157894736842,
+          "baseline_mean_snaps": 736.3157894736842
+        }
+      },
+      "custom_vs_broad_raw": {
+        "players": 90,
+        "mse": 1.1812013719123156,
+        "baseline_mse": 1.1817459582777738,
+        "relative_gain": 0.0004608320101654951,
+        "absolute_gain": 0.0005445863654580959,
+        "paired_player_bootstrap_95": [
+          -0.08174355633604952,
+          0.074417177440138
+        ],
+        "mean_absolute_error": 0.7973240050701011,
+        "by_class": {
+          "2023": {
+            "players": 45,
+            "mse": 1.028873999340054,
+            "baseline_mse": 1.0299631720709703,
+            "relative_gain": 0.001057487064053153
+          },
+          "2024": {
+            "players": 45,
+            "mse": 1.3335287444845771,
+            "baseline_mse": 1.3335287444845771,
+            "relative_gain": 0.0
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 19,
+          "candidate_mean_snaps": 719.4736842105264,
+          "baseline_mean_snaps": 742.3157894736842
+        }
+      },
+      "custom_vs_combine": {
+        "players": 90,
+        "mse": 1.1812013719123156,
+        "baseline_mse": 1.1475240636948727,
+        "relative_gain": -0.029347801307980065,
+        "absolute_gain": -0.03367730821744298,
+        "paired_player_bootstrap_95": [
+          -0.34676229170715317,
+          0.2476419968326119
+        ],
+        "mean_absolute_error": 0.7973240050701011,
+        "by_class": {
+          "2023": {
+            "players": 45,
+            "mse": 1.028873999340054,
+            "baseline_mse": 1.1323433854960792,
+            "relative_gain": 0.09137633290514173
+          },
+          "2024": {
+            "players": 45,
+            "mse": 1.3335287444845771,
+            "baseline_mse": 1.1627047418936662,
+            "relative_gain": -0.146919502807475
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 19,
+          "candidate_mean_snaps": 719.4736842105264,
+          "baseline_mean_snaps": 736.3157894736842
+        }
+      },
+      "draft_control_vs_broad_raw": {
+        "players": 90,
+        "mse": 1.29642979836407,
+        "baseline_mse": 1.1817459582777738,
+        "relative_gain": -0.09704610308414484,
+        "absolute_gain": -0.11468384008629637,
+        "paired_player_bootstrap_95": [
+          -0.3072746810142462,
+          0.08753978588912531
+        ],
+        "mean_absolute_error": 0.8314115744097081,
+        "by_class": {
+          "2023": {
+            "players": 45,
+            "mse": 1.198526148212775,
+            "baseline_mse": 1.0299631720709703,
+            "relative_gain": -0.1636592265749379
+          },
+          "2024": {
+            "players": 45,
+            "mse": 1.3943334485153653,
+            "baseline_mse": 1.3335287444845771,
+            "relative_gain": -0.04559684542404803
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 19,
+          "candidate_mean_snaps": 947.9473684210526,
+          "baseline_mean_snaps": 742.3157894736842
+        }
+      },
+      "draft_control_custom_vs_draft_control": {
+        "players": 90,
+        "mse": 1.460128004652629,
+        "baseline_mse": 1.29642979836407,
+        "relative_gain": -0.12626846937267666,
+        "absolute_gain": -0.16369820628855894,
+        "paired_player_bootstrap_95": [
+          -0.3190563374619007,
+          -0.028119756965084047
+        ],
+        "mean_absolute_error": 0.8835703175339472,
+        "by_class": {
+          "2023": {
+            "players": 45,
+            "mse": 1.5259225607898927,
+            "baseline_mse": 1.198526148212775,
+            "relative_gain": -0.27316584879297523
+          },
+          "2024": {
+            "players": 45,
+            "mse": 1.3943334485153653,
+            "baseline_mse": 1.3943334485153653,
+            "relative_gain": 0.0
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 19,
+          "candidate_mean_snaps": 956.7894736842105,
+          "baseline_mean_snaps": 947.9473684210526
+        }
+      }
+    },
+    "positions": {
+      "DE": 8,
+      "DT": 23,
+      "EDGE": 29,
+      "LB": 30
+    },
+    "classes": [
+      2023,
+      2024
+    ],
+    "maturity_gap_years": 2
+  },
+  "retrospective_only": true,
+  "causal_or_prospective_claim": false,
+  "college_matched_primary": {
+    "target": "target",
+    "status": "evaluated",
+    "eligible_population": 1204,
+    "evaluated_players": 517,
+    "feature_dimensions": {
+      "combine": 9,
+      "availability": 201,
+      "broad_raw": 111,
+      "custom": 218,
+      "draft_control": 112,
+      "draft_control_custom": 219
+    },
+    "outer_audits": [
+      {
+        "class": 2022,
+        "train_players": 530,
+        "test_players": 173,
+        "latest_training_class": 2020,
+        "configs": {
+          "combine": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              3.396282512657948,
+              3.237197160439768,
+              2.851110828263896,
+              2.744070760576514,
+              2.744314648112613
+            ]
+          },
+          "availability": {
+            "alpha": 10000.0,
+            "inner_mse": [
+              6.2549686205861175,
+              4.250100702283617,
+              2.977436472472296,
+              2.783643136745961,
+              2.7509135400628524
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              6.167069719448125,
+              3.7942629066544358,
+              2.94210862585158,
+              2.7218189112019315,
+              2.739837001601446
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.6146433756770335,
+              3.0057514850815954,
+              2.4202333273098717,
+              2.548287578063985,
+              2.7179823379028303
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.011835458367277087,
+            "paired_standard_error": 0.03290655912971864,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                6.167069719448125,
+                3.7942629066544358,
+                2.94210862585158,
+                2.7218189112019315,
+                2.739837001601446
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                9.571982588806213,
+                4.64243858981695,
+                3.0585287064629525,
+                2.693676459919921,
+                2.729770550586661
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.6146433756770335,
+                3.0057514850815954,
+                2.4202333273098717,
+                2.548287578063985,
+                2.7179823379028303
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                7.315359434777811,
+                3.814290241145216,
+                2.5833157850398676,
+                2.5377117868187895,
+                2.708202357736372
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2023,
+        "train_players": 687,
+        "test_players": 163,
+        "latest_training_class": 2021,
+        "configs": {
+          "combine": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              3.695192580023612,
+              3.4106356665247137,
+              3.1007593413880934,
+              3.097539179156753,
+              3.14716303765067
+            ]
+          },
+          "availability": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.6230243892439224,
+              4.0633370992357545,
+              3.1776121602233203,
+              3.090068699285699,
+              3.1223297994296146
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.4712093082701445,
+              3.838311276914667,
+              3.2482998727023986,
+              3.085724131267395,
+              3.1394216141246347
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.45966185983404,
+              3.254886545073212,
+              2.7126177310958357,
+              2.8394233769685986,
+              3.1001668395238147
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.25,
+            "inner_gain": 0.03650133021791992,
+            "paired_standard_error": 0.02742238607716574,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                5.4712093082701445,
+                3.838311276914667,
+                3.2482998727023986,
+                3.085724131267395,
+                3.1394216141246347
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                8.513926367388489,
+                4.711834669531732,
+                3.3258522762653095,
+                3.0320073900031277,
+                3.121940812058281
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.0,
+            "paired_standard_error": 0.0,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.45966185983404,
+                3.254886545073212,
+                2.7126177310958357,
+                2.8394233769685986,
+                3.1001668395238147
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                6.783721948933286,
+                3.9687673387539926,
+                2.8732521980734145,
+                2.822466245393733,
+                3.0841797651845613
+              ]
+            }
+          }
+        }
+      },
+      {
+        "class": 2024,
+        "train_players": 860,
+        "test_players": 181,
+        "latest_training_class": 2022,
+        "configs": {
+          "combine": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              3.568450787722329,
+              3.3431917454562856,
+              3.07754036725192,
+              3.0655368110839936,
+              3.1137863074146077
+            ]
+          },
+          "availability": {
+            "alpha": 10000.0,
+            "inner_mse": [
+              5.072501135447362,
+              3.9479952171602806,
+              3.254440129533301,
+              3.130221541654367,
+              3.113034006562961
+            ]
+          },
+          "broad_raw": {
+            "alpha": 1000.0,
+            "inner_mse": [
+              5.385179709528392,
+              4.061155888004949,
+              3.3656044654154806,
+              3.0976193700825982,
+              3.106439817362953
+            ]
+          },
+          "draft_control": {
+            "alpha": 100.0,
+            "inner_mse": [
+              4.314108709854407,
+              3.370740858638837,
+              2.809277371360113,
+              2.828440048709164,
+              3.059643796818089
+            ]
+          },
+          "custom": {
+            "shrinkage": 0.0,
+            "inner_gain": 0.01433663688628515,
+            "paired_standard_error": 0.019124842754640308,
+            "baseline": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                5.385179709528392,
+                4.061155888004949,
+                3.3656044654154806,
+                3.0976193700825982,
+                3.106439817362953
+              ]
+            },
+            "custom": {
+              "alpha": 10000.0,
+              "inner_mse": [
+                8.289313846985333,
+                5.011014925505717,
+                3.5946193680400462,
+                3.1253830098322335,
+                3.0972149651451457
+              ]
+            }
+          },
+          "draft_control_custom": {
+            "shrinkage": 0.25,
+            "inner_gain": 0.020474968194083395,
+            "paired_standard_error": 0.019354873295818673,
+            "baseline": {
+              "alpha": 100.0,
+              "inner_mse": [
+                4.314108709854407,
+                3.370740858638837,
+                2.809277371360113,
+                2.828440048709164,
+                3.059643796818089
+              ]
+            },
+            "custom": {
+              "alpha": 1000.0,
+              "inner_mse": [
+                6.783749412390641,
+                4.265670211065578,
+                3.0729047132351055,
+                2.881625209355564,
+                3.0522765700540737
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "skipped": [
+      {
+        "class": 2018,
+        "train_players": 4,
+        "test_players": 122,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      },
+      {
+        "class": 2019,
+        "train_players": 49,
+        "test_players": 175,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      },
+      {
+        "class": 2020,
+        "train_players": 171,
+        "test_players": 184,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      },
+      {
+        "class": 2021,
+        "train_players": 346,
+        "test_players": 157,
+        "reason": "insufficient matured chronological inner classes or evaluation players"
+      }
+    ],
+    "comparisons": {
+      "availability_vs_combine": {
+        "players": 517,
+        "mse": 3.299507623238774,
+        "baseline_mse": 3.203500976302962,
+        "relative_gain": -0.029969289114002356,
+        "absolute_gain": -0.09600664693581228,
+        "paired_player_bootstrap_95": [
+          -0.15927382195848167,
+          -0.034309057351216116
+        ],
+        "mean_absolute_error": 1.3518254014732307,
+        "by_class": {
+          "2022": {
+            "players": 173,
+            "mse": 3.094711085363374,
+            "baseline_mse": 3.002456998871213,
+            "relative_gain": -0.030726197419927884
+          },
+          "2023": {
+            "players": 163,
+            "mse": 2.6127964535060575,
+            "baseline_mse": 2.5870640212492595,
+            "relative_gain": -0.00994657729590022
+          },
+          "2024": {
+            "players": 181,
+            "mse": 4.113671831630359,
+            "baseline_mse": 3.9507928645319463,
+            "relative_gain": -0.04122690626498097
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 110,
+          "candidate_mean_snaps": 766.4727272727273,
+          "baseline_mean_snaps": 925.9909090909091
+        }
+      },
+      "broad_raw_vs_availability": {
+        "players": 517,
+        "mse": 3.213133457239051,
+        "baseline_mse": 3.299507623238774,
+        "relative_gain": 0.02617789557186676,
+        "absolute_gain": 0.08637416599972292,
+        "paired_player_bootstrap_95": [
+          0.003019886586113247,
+          0.17023371710085977
+        ],
+        "mean_absolute_error": 1.330500823484423,
+        "by_class": {
+          "2022": {
+            "players": 173,
+            "mse": 3.121066054683663,
+            "baseline_mse": 3.094711085363374,
+            "relative_gain": -0.008516132392757563
+          },
+          "2023": {
+            "players": 163,
+            "mse": 2.557398534804842,
+            "baseline_mse": 2.6127964535060575,
+            "relative_gain": 0.021202538998734005
+          },
+          "2024": {
+            "players": 181,
+            "mse": 3.8916552970117486,
+            "baseline_mse": 4.113671831630359,
+            "relative_gain": 0.05397040495829232
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 110,
+          "candidate_mean_snaps": 920.4454545454546,
+          "baseline_mean_snaps": 766.4727272727273
+        }
+      },
+      "broad_raw_vs_combine": {
+        "players": 517,
+        "mse": 3.213133457239051,
+        "baseline_mse": 3.203500976302962,
+        "relative_gain": -0.0030068606213461578,
+        "absolute_gain": -0.009632480936089347,
+        "paired_player_bootstrap_95": [
+          -0.08355846592176729,
+          0.06018998112003927
+        ],
+        "mean_absolute_error": 1.330500823484423,
+        "by_class": {
+          "2022": {
+            "players": 173,
+            "mse": 3.121066054683663,
+            "baseline_mse": 3.002456998871213,
+            "relative_gain": -0.039503998177839554
+          },
+          "2023": {
+            "players": 163,
+            "mse": 2.557398534804842,
+            "baseline_mse": 2.5870640212492595,
+            "relative_gain": 0.01146685439585402
+          },
+          "2024": {
+            "players": 181,
+            "mse": 3.8916552970117486,
+            "baseline_mse": 3.9507928645319463,
+            "relative_gain": 0.014968531519609916
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 110,
+          "candidate_mean_snaps": 920.4454545454546,
+          "baseline_mean_snaps": 925.9909090909091
+        }
+      },
+      "custom_vs_broad_raw": {
+        "players": 517,
+        "mse": 3.2141990238948615,
+        "baseline_mse": 3.213133457239051,
+        "relative_gain": -0.00033162850842976513,
+        "absolute_gain": -0.001065566655809961,
+        "paired_player_bootstrap_95": [
+          -0.010466901304968157,
+          0.008346738609308629
+        ],
+        "mean_absolute_error": 1.3312249797016964,
+        "by_class": {
+          "2022": {
+            "players": 173,
+            "mse": 3.121066054683663,
+            "baseline_mse": 3.121066054683663,
+            "relative_gain": 0.0
+          },
+          "2023": {
+            "players": 163,
+            "mse": 2.560778276897196,
+            "baseline_mse": 2.557398534804842,
+            "relative_gain": -0.001321554715214618
+          },
+          "2024": {
+            "players": 181,
+            "mse": 3.8916552970117486,
+            "baseline_mse": 3.8916552970117486,
+            "relative_gain": 0.0
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 110,
+          "candidate_mean_snaps": 894.6727272727272,
+          "baseline_mean_snaps": 920.4454545454546
+        }
+      },
+      "custom_vs_combine": {
+        "players": 517,
+        "mse": 3.2141990238948615,
+        "baseline_mse": 3.203500976302962,
+        "relative_gain": -0.003339486290478838,
+        "absolute_gain": -0.010698047591899315,
+        "paired_player_bootstrap_95": [
+          -0.08435654240944943,
+          0.06005870825505688
+        ],
+        "mean_absolute_error": 1.3312249797016964,
+        "by_class": {
+          "2022": {
+            "players": 173,
+            "mse": 3.121066054683663,
+            "baseline_mse": 3.002456998871213,
+            "relative_gain": -0.039503998177839554
+          },
+          "2023": {
+            "players": 163,
+            "mse": 2.560778276897196,
+            "baseline_mse": 2.5870640212492595,
+            "relative_gain": 0.010160453756134922
+          },
+          "2024": {
+            "players": 181,
+            "mse": 3.8916552970117486,
+            "baseline_mse": 3.9507928645319463,
+            "relative_gain": 0.014968531519609916
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 110,
+          "candidate_mean_snaps": 894.6727272727272,
+          "baseline_mean_snaps": 925.9909090909091
+        }
+      },
+      "draft_control_vs_broad_raw": {
+        "players": 517,
+        "mse": 2.808076990561414,
+        "baseline_mse": 3.213133457239051,
+        "relative_gain": 0.12606275838467365,
+        "absolute_gain": 0.4050564666776376,
+        "paired_player_bootstrap_95": [
+          0.17110173012905283,
+          0.6510061696107972
+        ],
+        "mean_absolute_error": 1.2701994569062969,
+        "by_class": {
+          "2022": {
+            "players": 173,
+            "mse": 2.9998030206671578,
+            "baseline_mse": 3.121066054683663,
+            "relative_gain": 0.03885308157273079
+          },
+          "2023": {
+            "players": 163,
+            "mse": 2.244389918011244,
+            "baseline_mse": 2.557398534804842,
+            "relative_gain": 0.12239336674895061
+          },
+          "2024": {
+            "players": 181,
+            "mse": 3.1324548337513805,
+            "baseline_mse": 3.8916552970117486,
+            "relative_gain": 0.1950842007624183
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 110,
+          "candidate_mean_snaps": 1138.1727272727273,
+          "baseline_mean_snaps": 920.4454545454546
+        }
+      },
+      "draft_control_custom_vs_draft_control": {
+        "players": 517,
+        "mse": 2.8142296592912603,
+        "baseline_mse": 2.808076990561414,
+        "relative_gain": -0.00219106126738248,
+        "absolute_gain": -0.0061526687298470726,
+        "paired_player_bootstrap_95": [
+          -0.03335990389244841,
+          0.020566760923083082
+        ],
+        "mean_absolute_error": 1.2635868958561702,
+        "by_class": {
+          "2022": {
+            "players": 173,
+            "mse": 2.9998030206671578,
+            "baseline_mse": 2.9998030206671578,
+            "relative_gain": 0.0
+          },
+          "2023": {
+            "players": 163,
+            "mse": 2.244389918011244,
+            "baseline_mse": 2.244389918011244,
+            "relative_gain": 0.0
+          },
+          "2024": {
+            "players": 181,
+            "mse": 3.1500290311730987,
+            "baseline_mse": 3.1324548337513805,
+            "relative_gain": -0.005610359400033643
+          }
+        },
+        "interval_scope": "Fixed-prediction class-stratified paired player bootstrap; excludes refitting, model-bank research selection, historical source revisions and new-cohort shift.",
+        "ranking_diagnostic": {
+          "scope": "Diagnostic equal-count top quartile within position/class groups of at least eight prospects; actual NFL opportunity, not causal value or decision profit. Not used to tune models.",
+          "selected_players": 110,
+          "candidate_mean_snaps": 1136.6272727272728,
+          "baseline_mean_snaps": 1138.1727272727273
+        }
+      }
+    },
+    "positions": {
+      "C": 4,
+      "CB": 78,
+      "DB": 14,
+      "DE": 19,
+      "DT": 47,
+      "EDGE": 47,
+      "G": 6,
+      "LB": 51,
+      "OG": 1,
+      "OT": 12,
+      "QB": 32,
+      "RB": 51,
+      "S": 13,
+      "SAF": 17,
+      "TE": 41,
+      "WR": 84
+    },
+    "classes": [
+      2022,
+      2023,
+      2024
+    ],
+    "maturity_gap_years": 2
+  },
+  "elapsed_seconds": 30.288211567999497,
+  "source_sha256": {
+    "python/perfectpower/scouting_metrics.py": "12aca04e6f2d01e260f3641ee1560ef47d5bd5bb405b78a5d2e0e226f5111c79",
+    "scripts/run_scouting_expansion.py": "e329db82c01d68cbf5f52ae09682e688b92038aff68e1aa6b99085d3ba405c15"
+  }
+}

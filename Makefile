@@ -736,3 +736,7 @@ planning-certificate-full:
 .PHONY: movement-residual-test
 movement-residual-test:
 	$(PY) -m unittest discover -s python/tests -p 'test_movement*.py'
+
+.PHONY: scouting-metrics-test
+scouting-metrics-test:
+	$(PY) -m unittest discover -s python/tests -p 'test_scouting_metrics.py'

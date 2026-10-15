@@ -1,0 +1,37 @@
+{
+  "schema": "pp-scouting-expansion-release/1",
+  "population": 2533,
+  "source_combine_records": 8968,
+  "evaluated_primary": 1454,
+  "evaluated_secondary": 90,
+  "college_matched_control": 517,
+  "public_archives": 66,
+  "initial_replayed_metrics": 105,
+  "initial_max_replay_difference": 0.0,
+  "tests": {
+    "scouting": 10,
+    "movement": 25
+  },
+  "retrospective_only": true,
+  "custom_metric_predictive_improvement_validated": false,
+  "broader_raw_primary_relative_gain": 0.025342859465043718,
+  "custom_increment_primary_relative_gain": -0.00011587824601703573,
+  "official_feature_bridge": {
+    "schema": "pp-official-scouting-bridge/1",
+    "source_players": 510,
+    "exact_public_id_links": 482,
+    "college_name_verified": 399,
+    "custom_metric_columns": 110,
+    "by_class": {
+      "2023": 160,
+      "2024": 177,
+      "2025": 173
+    },
+    "outcome_evaluation_performed": false,
+    "NFL_outcomes_used_as_features": false,
+    "PerfectJet_files_modified": false,
+    "scope": "Feature-only expansion of the authorized 510-player BDB population. This does not turn the historical Combine pool into full trajectories or establish scouting accuracy."
+  },
+  "model_deployed": false,
+  "summary": "Expanded to 2,533 drafted prospects and 66 public data archives. Source-guarded college inputs reduce retrospective two-season NFL usage error by 2.53% versus Combine traits; the interval includes zero, college-linked controls do not confirm it, and custom metrics add no dependable benefit. No scouting edge or pressure-rate improvement is established."
+}

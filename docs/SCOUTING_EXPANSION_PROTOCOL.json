@@ -1,0 +1,44 @@
+{
+  "schema": "pp-scouting-expansion-protocol/4",
+  "date": "2026-10-15",
+  "purpose": "Test custom metrics and genuinely additional college information on a broader, retrospective prospect population.",
+  "prior_inspection": "2023/2024/2025 movement cohorts previously inspected; all results retrospective development, not prospective confirmation.",
+  "population": "Drafted Combine invitees from 2013 through 2024 with unambiguous PFR ID and draft-year match; no complete-case athletic filtering. Exclude K/P/LS. Undrafted invitees remain in source inventory but are not assigned zero NFL outcomes from unmatched IDs.",
+  "identity": "Exact PFR IDs and draft years; exact ESPN crosswalk for college sources. Reject duplicate/ambiguous identities. No fuzzy name matching. College joins additionally require normalized exact source-name verification; ambiguous ESPN crosswalk identities excluded.",
+  "primary_target": "log(1 + first-two-seasons regular-season offense+defense snap count). NFL opportunity/use, not pure ability or pressure efficiency. Zero only for valid drafted identity in audited complete seasons.",
+  "secondary_target": "First-two-seasons PFR pressures per 100 defensive snaps among defensive-front players with observed advanced data. Not pass-rush win rate. Missing advanced rows remain unknown.",
+  "source_cutoff": "College seasons strictly earlier than draft year; immutable birth date only. Do not use career totals, latest NFL body measurements, current NFL position, survival, injuries or post-draft stats as features.",
+  "outer_validation": "Predict draft classes 2018 through 2024; training classes at most test_year-2 so two-season labels had matured by prospect draft time. Entire players separated.",
+  "inner_validation": "Latest up to three feasible earlier chronological class splits with the same two-year maturity gap; all imputation, scaling, tuning and optional shrinkage fitted inside training.",
+  "models": [
+    "combine_ridge",
+    "broad_raw_ridge",
+    "custom_ridge",
+    "draft_control_ridge",
+    "draft_control_custom_ridge"
+  ],
+  "regularization": {
+    "alpha": [
+      1,
+      10,
+      100,
+      1000,
+      10000
+    ],
+    "custom_shrinkage": [
+      0,
+      0.25,
+      0.5,
+      1
+    ],
+    "selection": "Select correction on chronological inner losses; zero preferred unless paired improvement exceeds one estimated standard error. No feature screening using outer outcomes.",
+    "earliest_inner_default": 100
+  },
+  "custom_metrics": "Fixed physical transformations, college production shares, efficiency, multi-season trajectory and opponent-strength adjustment, only when input definitions and coverage permit. Preserve missingness and source support.",
+  "uncertainty": "Paired player bootstrap stratified by held-out class; class-specific losses and sign stability. Intervals conditional on fitted predictions; no claim of full-refit or selection coverage.",
+  "decision": "New metrics earn scouting use only through repeated chronological improvement against broad raw and draft-control comparisons. Retain every failure and source exclusion. Do not tune another metric bank using these outcomes.",
+  "pre_evaluation_amendment": "Source/schema audit identified that a 2015 cohort floor leaves insufficient matured chronological inner splits for the 2018 outer test. Added exactly matched 2013/2014 training prospects before running any outcome evaluation; their unavailable college features stay missing.",
+  "model_scope": "Custom model is a shrinkage mixture of separately tuned raw and augmented ridge predictions; zero exactly preserves raw. Each inner endpoint tunes on still-earlier matured classes when available; otherwise uses fixed alpha 100.",
+  "source_availability_controls": "Before evaluating models, source audit identified that NFL-maintained crosswalk completeness and sparse old defensive rows could encode selection. Add combine+college-availability-only comparison and repeat the fixed model bank on name-verified college-linked players. These controls diagnose selection artifacts; they do not turn retrospective sources into prospective information.",
+  "post_initial_guard_amendment": "After retaining evaluation_initial.json, diagnosed extreme raw-model extrapolation (2018 maximum predicted log snaps 37.25). Freeze source-only guard: mask numeric columns with fewer than max(20,10% of training rows) finite observations; clip standardized incoming values to training 1st/99th percentiles. Apply to every model, preserve the exact feature/penalty bank, no new outcome-screened metric. Guarded run is adaptive retrospective development, not independent confirmation."
+}

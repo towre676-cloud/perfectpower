@@ -1,0 +1,499 @@
+{
+  "schema": "pp-scouting-source-audit/1",
+  "source_archives": 66,
+  "empty_tables": [
+    "snap_counts_2012.csv"
+  ],
+  "college_event_rows": 1637447,
+  "college_box_rows": 555417,
+  "distinct_college_roster_ids": 113417,
+  "tables": [
+    {
+      "name": "combine.csv",
+      "rows": 8968,
+      "columns": 18,
+      "sha256": "5648886b1bb9de8a0c42b05ee7b1d9cbe58897676caaa2f6a4a3d3c9228235bb",
+      "provider": "nflverse"
+    },
+    {
+      "name": "draft_picks.csv",
+      "rows": 12927,
+      "columns": 36,
+      "sha256": "592abac6447d6df185acf079f64cbe6f48d6b6f00445d0a20a070ccdeb820672",
+      "provider": "nflverse"
+    },
+    {
+      "name": "players.csv",
+      "rows": 24854,
+      "columns": 39,
+      "sha256": "6270eb598bee3dff245d955c612de8366aeb697a0a9431d79e0cae95fab35adc",
+      "provider": "nflverse"
+    },
+    {
+      "name": "advstats_season_def.csv",
+      "rows": 8146,
+      "columns": 30,
+      "sha256": "8935ac010182b566a44db166d5c216ab7be77970ebfedbedd0e170f89deed6af",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2012.csv",
+      "rows": 0,
+      "columns": 16,
+      "sha256": "802475aec59f0b125de85a6c35eb69e289a512bcf62d6be007d385ea8d613ebd",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2013.csv",
+      "rows": 23799,
+      "columns": 16,
+      "sha256": "9d1fdd557875b9a2c71d88e583da24a739dfca671edf8223d6171e39a421000e",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2014.csv",
+      "rows": 23864,
+      "columns": 16,
+      "sha256": "84540709d9483552185c8ca3ef30b2f66fb94b30c3e6c21e7a27205f337f21d3",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2015.csv",
+      "rows": 23842,
+      "columns": 16,
+      "sha256": "841496252ada825c3c50d3ba9b4b26d3f4fabd0fedc5fb44f286ddaaa5bdb7e0",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2016.csv",
+      "rows": 23890,
+      "columns": 16,
+      "sha256": "a778e24e9eb665ffe8f16093b03c5a263dca0250b3aa92bd6002f61f534bea59",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2017.csv",
+      "rows": 23862,
+      "columns": 16,
+      "sha256": "eab2fad2df99249d4061ed9c5c34d312cdba07cf3159d027d255bdc9b6526917",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2018.csv",
+      "rows": 23877,
+      "columns": 16,
+      "sha256": "9a408b78a55f799110aed70de3564e157faf089ce9bed780d0368bf49ae13e0b",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2019.csv",
+      "rows": 23862,
+      "columns": 16,
+      "sha256": "0cd52be8fa57f18503b670cb8263246c4f548375b768cbcad1c7a7462c98970d",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2020.csv",
+      "rows": 24999,
+      "columns": 16,
+      "sha256": "512e35f17d076eb5d99b933c4a144eb95dcddf40c0320dbb397cae3c35683716",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2021.csv",
+      "rows": 26468,
+      "columns": 16,
+      "sha256": "8e4dae054a4749cf2d4919508d9161a6068fd67509979aefa385bfb3803d0ee5",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2022.csv",
+      "rows": 26381,
+      "columns": 16,
+      "sha256": "0018a4833fbf0f825286c1c27450c6254391b548d6c55bcde728e93e4816815a",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2023.csv",
+      "rows": 26540,
+      "columns": 16,
+      "sha256": "303b61aa5c33ffda863f93a750fc14483f397f9187ad502b1ce71e9b516a64c0",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2024.csv",
+      "rows": 26615,
+      "columns": 16,
+      "sha256": "a2aa58efe093f8aa0ad5aadf09f81d8ec690a1183bd2dde68d20e7f109a9c335",
+      "provider": "nflverse"
+    },
+    {
+      "name": "snap_counts_2025.csv",
+      "rows": 26613,
+      "columns": 16,
+      "sha256": "3fc2deb0e9ad86d34d4578cb80bb21c95253e088ee22ca028adf46f7485eff1f",
+      "provider": "nflverse"
+    },
+    {
+      "name": "player_stats_2014.parquet",
+      "rows": 112848,
+      "columns": 70,
+      "sha256": "48219d67e6942f1648adf42440a4df3856f36a92b2f918f01b93ab5e4f19176e",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2014.parquet",
+      "rows": 34091,
+      "columns": 51,
+      "sha256": "258f012b1d57ad4c033d2296d37f6188d494c638de59a0e315b93bc7bd7e807f",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2014.parquet",
+      "rows": 22417,
+      "columns": 85,
+      "sha256": "ee717a9ca8f3351dbcb4afc890fa4f168425e40a61869dcc8aebd3c5c008f24a",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2014.parquet",
+      "rows": 3898,
+      "columns": 9,
+      "sha256": "a608554ec6764ef9ab331e62c9d972f37bcc8c116dcab74628acbbd053dc644e",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2015.parquet",
+      "rows": 114318,
+      "columns": 70,
+      "sha256": "288490a363dd5e1f8ad7662992c485d10e0d604b9af99fc317ef498d74062011",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2015.parquet",
+      "rows": 33938,
+      "columns": 51,
+      "sha256": "19074d9ea473e1ca108e340551b275fe28df62e6b116873b9dffbca4ec22af93",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2015.parquet",
+      "rows": 22764,
+      "columns": 85,
+      "sha256": "efd281cb48e869028861e53768535c35bd126ab7084b12bce431cfbb7ef35c30",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2015.parquet",
+      "rows": 3862,
+      "columns": 9,
+      "sha256": "8bcf2aa037aedff6fdc6f9e3567631f20f68f8e1fab57e9a31f33d2aee58947f",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2016.parquet",
+      "rows": 115466,
+      "columns": 70,
+      "sha256": "0dbdd5559b220f99e3038d80c16f0dfdda9291a02f1110f525640478537f5cdc",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2016.parquet",
+      "rows": 40719,
+      "columns": 61,
+      "sha256": "657ed3627881f8581199899198f2c97638178bd01253619d63a9e81f51da3184",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2016.parquet",
+      "rows": 23660,
+      "columns": 85,
+      "sha256": "4a934b6e65f0c53dc1646ecdf7bc0ec2e30688fc1722ef7c425ccabab590b8a8",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2016.parquet",
+      "rows": 4316,
+      "columns": 9,
+      "sha256": "fa24c0e520777ff92ece13646491e54a8448615b61e03f13dbffbd162f8abd3c",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2017.parquet",
+      "rows": 116273,
+      "columns": 70,
+      "sha256": "fd9a1df800f725fe41d31093eb94ddc552f1ac03ef3eb582baf6edd20808cc91",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2017.parquet",
+      "rows": 40016,
+      "columns": 61,
+      "sha256": "be57bc465c407ddd065f9aa33445a316fcfab22940fbed80ab58c880e295bd92",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2017.parquet",
+      "rows": 23142,
+      "columns": 85,
+      "sha256": "e6cff43ebe38abd0c00382154fc85025aad5a04946fd7f658128e6df0cae4360",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2017.parquet",
+      "rows": 4311,
+      "columns": 9,
+      "sha256": "d7d2b2104542df45d105694812348339f3dfa750bd9efa830fe7cfb0414f695e",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2018.parquet",
+      "rows": 116699,
+      "columns": 70,
+      "sha256": "e3e75f9c165f423bb7fa0c2484c84a8e624f22c579adfba18f97826a0a763c07",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2018.parquet",
+      "rows": 40131,
+      "columns": 61,
+      "sha256": "42d9607f03e5b6e56974289825201ce9a92079a26bac9329af84b729445cda23",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2018.parquet",
+      "rows": 24101,
+      "columns": 85,
+      "sha256": "233c6d7565265ac6075194be30f8ed9b333427ba710d48e73966bf8b5dbe3020",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2018.parquet",
+      "rows": 3932,
+      "columns": 9,
+      "sha256": "e62fd4291e16b8bc2cc6d58d5dac5cf14877c4902e1af31bc9b769a9672e5df5",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2019.parquet",
+      "rows": 117441,
+      "columns": 70,
+      "sha256": "1e91dc41eb0422ab3f1fc3a8eea4d7a30144aa259d976aaf4844eded68cc5f86",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2019.parquet",
+      "rows": 39436,
+      "columns": 61,
+      "sha256": "fdd30bf40f4d3cb4a336cf80a8622401defd4cf11165f21927d8ced4997d35fe",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2019.parquet",
+      "rows": 24229,
+      "columns": 85,
+      "sha256": "46e6ba49848957077944bb3d655d76e2887aed7e05b2ab8efe231a049d5246fc",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2019.parquet",
+      "rows": 4085,
+      "columns": 9,
+      "sha256": "7d4bfe2b79418174bffe716032bf935a20634b0c4d9eb9111628b4904581fb6d",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2020.parquet",
+      "rows": 72379,
+      "columns": 70,
+      "sha256": "93be70034fe625b11c6699505aff29594b286517932fd33553eb3567aa06e2c7",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2020.parquet",
+      "rows": 25715,
+      "columns": 61,
+      "sha256": "7cfa97bcce7a69bbbaf787e93c5a5feafe9ab28f929cf42a5607ce7c949d9df2",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2020.parquet",
+      "rows": 16947,
+      "columns": 85,
+      "sha256": "f66641455e79e814bf421f2fc70ddcffe6d254d1c35030ab853ee9b972b56952",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2020.parquet",
+      "rows": 4041,
+      "columns": 9,
+      "sha256": "5c34694a0642c787cead7d0854e006d907d52fe1ad243a8199375854ed15aa8a",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2021.parquet",
+      "rows": 106735,
+      "columns": 70,
+      "sha256": "25282f83daec1654dcabd773e6895df639143827b0a1eeb0b388be3b04d29b28",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2021.parquet",
+      "rows": 44043,
+      "columns": 61,
+      "sha256": "0a6eed194330956e2c03561e1e7c7e0ade4645002479c022aacd957a137ed939",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2021.parquet",
+      "rows": 26846,
+      "columns": 85,
+      "sha256": "aae9c5720db215333456a967cc316a47f69537accae9394ed46efd2e1ddbab52",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2021.parquet",
+      "rows": 3782,
+      "columns": 9,
+      "sha256": "f9360162f0ddfca94d68bf65e4d9788afcce6c25ac7e86b577d904e3e9b55031",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2022.parquet",
+      "rows": 171489,
+      "columns": 70,
+      "sha256": "1244b3bdbd51b0197a35c3421e1f95a2f0b83937f461d5841a5d7f002e54ab2d",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2022.parquet",
+      "rows": 40598,
+      "columns": 61,
+      "sha256": "f02b5809abeb03f5bbaf51c657863a0f65d3d0e9abc685234e6dacabfb2c53ba",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2022.parquet",
+      "rows": 26415,
+      "columns": 85,
+      "sha256": "308e5486457cedeffa4bf603a92b636ac1b25e0fa00022de7e41a0d06bb71c61",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2022.parquet",
+      "rows": 3487,
+      "columns": 9,
+      "sha256": "626cb48999eaac4c14592dba72041404555bf94de97c5e28ec4cd091b9d9ad68",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2023.parquet",
+      "rows": 182694,
+      "columns": 70,
+      "sha256": "8bc3eff29a58c016a565d1732684d3fc4dd23c623988f1c1942062daba284126",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2023.parquet",
+      "rows": 57239,
+      "columns": 61,
+      "sha256": "c468119d73d089e3d30d53a936c9fc0d7eb1992d7bb2b567889c3ef413fb7c3b",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2023.parquet",
+      "rows": 26375,
+      "columns": 85,
+      "sha256": "4ab0283a75ee1889068b971e88cbd853d710a9a71a20de02afa890f8fdf7cab4",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2023.parquet",
+      "rows": 3910,
+      "columns": 9,
+      "sha256": "2da8cc68c78d32ce3053f4852a133e6e70479989cacdcb1b7437de1a5a74d127",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2024.parquet",
+      "rows": 197903,
+      "columns": 70,
+      "sha256": "46d2b61c938f6167837c6e761b0c245cbfa3ef3a1e9f63bb19c83e437c2d90da",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2024.parquet",
+      "rows": 78993,
+      "columns": 61,
+      "sha256": "644ffdfe5b2303265bff528db21591e1eec7c6c4356e297ee1037c6972d8ad45",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2024.parquet",
+      "rows": 27477,
+      "columns": 85,
+      "sha256": "5d0f008bc4490ecd4ae0cd9c5224d5da4abc93914bd43321aa9cb854c168ba34",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2024.parquet",
+      "rows": 4012,
+      "columns": 9,
+      "sha256": "91cc5275f402d2db8b85bb93333460e0508c0c0490080c2389da10ab9a4d2a84",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    },
+    {
+      "name": "player_stats_2025.parquet",
+      "rows": 213202,
+      "columns": 70,
+      "sha256": "e0a5cfc8ae0c0d03ab98fe3f1d5f9acb3b5c6cd895dbb433670f8774b25ff3b2",
+      "provider": "sportsdataverse_event_participants"
+    },
+    {
+      "name": "player_box_2025.parquet",
+      "rows": 80498,
+      "columns": 61,
+      "sha256": "44a9185dd8f47a6cc5844ba629f4dd54b192d612066f696438d50a4af8f66d37",
+      "provider": "sportsdataverse_box_scores"
+    },
+    {
+      "name": "cfb_rosters_2025.parquet",
+      "rows": 26327,
+      "columns": 85,
+      "sha256": "087aec645b7d5edac3cb52d61f631c780b61fa7ffcf0f459c1002c604b1b4b25",
+      "provider": "sportsdataverse_rosters",
+      "warning": "Historical roster records also contain current-looking age, draft and status fields. None used as prospect features. Stable IDs/names only are suitable for audited joining."
+    },
+    {
+      "name": "cfb_recruits_2025.parquet",
+      "rows": 4171,
+      "columns": 9,
+      "sha256": "a1e1a5e6896d9b45d20f5683156e6a0084e6f88b9226989977c3e523ec254f92",
+      "provider": "sportsdataverse_recruiting",
+      "warning": "Recruit IDs use the 247-style identifier, while roster cfbd_recruit_ids use another namespace. No numeric-only or fuzzy-name join performed."
+    }
+  ],
+  "evaluated_vs_acquired": "The fixed empirical bank uses the original 42 archives. Twenty-four roster/recruiting archives were added for source coverage/identity work, not retroactively counted as model inputs or successful validation."
+}
