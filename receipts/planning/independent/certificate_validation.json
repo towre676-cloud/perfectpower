@@ -1,0 +1,37 @@
+{
+  "schema": "pp-bdd-certificate-validation/1",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "python/tests",
+        "-p",
+        "test_planning*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 7.925542067000151,
+      "stdout": "",
+      "stderr": "test_acceptance_never_disappears_in_quotient (test_planning.PlannerTests.test_acceptance_never_disappears_in_quotient) ... ok\ntest_catalogue_cli_and_source_data (test_planning.PlannerTests.test_catalogue_cli_and_source_data) ... ok\ntest_gf_against_bounded_enumeration_and_dp (test_planning.PlannerTests.test_gf_against_bounded_enumeration_and_dp) ... ok\ntest_gray_binary_prefixes_objectives_and_ties (test_planning.PlannerTests.test_gray_binary_prefixes_objectives_and_ties) ... ok\ntest_limits_reuse_and_immutability (test_planning.PlannerTests.test_limits_reuse_and_immutability) ... ok\ntest_machine_acceptance_and_disabled_prefix (test_planning.PlannerTests.test_machine_acceptance_and_disabled_prefix) ... ok\ntest_random_multiresource_models (test_planning.PlannerTests.test_random_multiresource_models) ... ok\ntest_words_against_enumeration_and_cost_series (test_planning.PlannerTests.test_words_against_enumeration_and_cost_series) ... ok\ntest_boundaries (test_planning_certificate.Certificates.test_boundaries) ... ok\ntest_exhaustive (test_planning_certificate.Certificates.test_exhaustive) ... ok\ntest_malformed (test_planning_certificate.Certificates.test_malformed) ... ok\ntest_unique_functional_extension_and_independent_counts (test_planning_cnf.CircuitTests.test_unique_functional_extension_and_independent_counts) ... ok\ntest_budgets_errors_and_native_baseline (test_planning_hybrid.HybridTests.test_budgets_errors_and_native_baseline) ... ok\ntest_huge_orbit_weights (test_planning_hybrid.HybridTests.test_huge_orbit_weights) ... ok\ntest_invalid_symmetries (test_planning_hybrid.HybridTests.test_invalid_symmetries) ... ok\ntest_native_exhaustive_differential (test_planning_hybrid.HybridTests.test_native_exhaustive_differential) ... ok\ntest_optimization_request (test_planning_hybrid.HybridTests.test_optimization_request) ... ok\ntest_optional_compiler_fallback (test_planning_hybrid.HybridTests.test_optional_compiler_fallback) ... ok\ntest_weighted_symmetry (test_planning_hybrid.HybridTests.test_weighted_symmetry) ... ok\ntest_budgets_and_failure_cache (test_planning_population.PopulationTests.test_budgets_and_failure_cache) ... ok\ntest_exhaustive_population_and_queries (test_planning_population.PopulationTests.test_exhaustive_population_and_queries) ... ok\ntest_huge_original_population_zero_cost_ties (test_planning_population.PopulationTests.test_huge_original_population_zero_cost_ties) ... ok\ntest_petersen_39_and_independent_conditional_fold (test_planning_population.PopulationTests.test_petersen_39_and_independent_conditional_fold) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 7.791s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python",
+        "python/verify_planning_independent.py",
+        "--selftest"
+      ],
+      "exit_code": 0,
+      "seconds": 2.902248211999904,
+      "stdout": "{\"random_exhaustive_cases\": 80, \"conditional_queries\": 320, \"count_boundary\": 4611686018427387904}\n",
+      "stderr": ""
+    }
+  ],
+  "small_random_exhaustive_instances": 120,
+  "boundary_instances": 3,
+  "record_byte_single_bit_mutations": 1696,
+  "full_unrestricted_population_kernel_proved": false
+}

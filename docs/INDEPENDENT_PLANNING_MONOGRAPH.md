@@ -74,3 +74,8 @@ Receipts bind the raw dataset, partition, standalone C++ sources, Python driver,
 ### Retained execution
 
 The 50-project source-bound run built its unrestricted diagram in 68.4149 seconds and completed all 179 conditional queries in 98.4184 seconds total inside the worker (101.155 seconds including process overhead). Peak RSS was 2,040,124 KiB. All 176 root leaves agreed; their independently counted sum was 702,508,860,122,761. The selected conditional rebuilds returned 16,777,216, 512 and 16,095,745. The 20-project total was 422,601, and the 39-project total was 368,072,359,571, also agreeing with the preserved independent references. The failed 12-million-node attempt reached its node limit after 49.612 seconds without establishing the unrestricted total. A final graph smaller than the cap does not imply that construction fits that cap: temporary conjunction nodes and earlier diagrams coexist before compaction.
+
+
+## Source-bound construction trace, October 15
+
+The native BDD verifier can now emit a complete source-bound trace without changing the established result or optimizer evidence. The separate packed checker verifies all threshold dependencies, Boolean intersections, reductions, skipped-coordinate counts and all five resource stages. The full trace reproduces 702,508,860,122,761; the final compact graph remains 9,190,151 nodes. The [certificate account](PLANNING_CERTIFICATE_MONOGRAPH.md) distinguishes this full external replay from the new kernel-checked small fixture and the still-open full formal replay obligation. The older receipts remain historical evidence with their original producer hashes.

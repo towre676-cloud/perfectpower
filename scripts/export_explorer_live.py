@@ -50,6 +50,13 @@ def export(root=ROOT):
     verification=root/'receipts/planning/independent/verification.json'
     if verification.exists():
         payload['native_portfolio']['independent_confirmation']=json.loads(verification.read_text())
+    certificate=root/'receipts/planning/independent/certificate50.json'
+    if certificate.exists():
+        payload['native_portfolio']['certificate_verification']={
+            'result':json.loads(certificate.read_text()),
+            'lean_theorems':json.loads((root/'receipts/planning/independent/lean.json').read_text())['theorems'],
+            'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/PLANNING_CERTIFICATE_MONOGRAPH.md',
+            'full_unrestricted_population_kernel_proved':False}
     transport=root/'receipts/arithmetic_transport/release.json'
     if transport.exists():
         payload['arithmetic_transport']={'title':'Paths under an arithmetic height ceiling',

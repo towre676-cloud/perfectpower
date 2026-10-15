@@ -21,7 +21,7 @@
   "monograph": "docs/INDEPENDENT_PLANNING_MONOGRAPH.md",
   "lean_foundation": {
     "receipt": "receipts/planning/independent/lean.json",
-    "theorems": 59,
+    "theorems": 99,
     "kernel_checked_conditional_counts": [
       16777216,
       512
@@ -30,6 +30,15 @@
     "optimizer_witness_proved": true,
     "global_native_count_kernel_proved": false,
     "optimizer_uniqueness_kernel_proved": false,
-    "monograph": "docs/PLANNING_LEAN_MONOGRAPH.md"
+    "monograph": "docs/PLANNING_LEAN_MONOGRAPH.md",
+    "original_theorems_preserved": 59
+  },
+  "source_bound_construction_certificate": {
+    "status": "externally_checked_source_bound",
+    "receipt": "receipts/planning/independent/certificate50.json",
+    "native_run": "receipts/planning/independent/certificate_native_run.json",
+    "monograph": "docs/PLANNING_CERTIFICATE_MONOGRAPH.md",
+    "count": 702508860122761,
+    "full_unrestricted_population_kernel_proved": false
   }
 }

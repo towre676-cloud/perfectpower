@@ -1,0 +1,32 @@
+{
+  "schema": "pp-bdd-certificate-native-run/1",
+  "generation_command": [
+    "bdd",
+    "40000000",
+    "petersen50.trace"
+  ],
+  "source_parent": "01d8da12d8a22b1b174a0801f6fde9317313814e",
+  "input_sha256": "a7eecf4a1d7d8be420bdf6eafe4892a1c6ccc5bb35d8f5d34d592cfea83d2051",
+  "sources": {
+    "native/independent_planning_bdd.cpp": "573fa767222ae1af21b6ed1666a1dee470322bc25988d4268a080468d294d7b2",
+    "native/planning_certificate_trace.hpp": "a562f32b8eceae343a1fbb52fca8fce5fb0628b3e15c96083f775fe84d1f156c"
+  },
+  "generator": {
+    "status": "complete",
+    "count": 702508860122761,
+    "nodes": 9190151,
+    "apply_calls": 58374793,
+    "build_seconds": 78.4996,
+    "seconds": 78.4996,
+    "peak_rss_kib": 2335056,
+    "conditional_counts": []
+  },
+  "diagnostics": "resource 0 nodes 4647 count 880154007273512 calls 1\nresource 1 nodes 147649 count 815144538147229 calls 455186\nresource 2 nodes 1738191 count 801110838149322 calls 7365031\nresource 3 nodes 6650260 count 748865262815026 calls 30372068\nresource 4 nodes 9190151 count 702508860122761 calls 58374793\n",
+  "raw_trace_sha256": "3ed96863081f6ba5c00eab09869034bcf1b42a0d16b45836b63fd30c6975d5ed",
+  "raw_trace_bytes": 1395583020,
+  "xz_trace_sha256": "bbfa02d1651d4bd7edc3056da412dd514c4de4dd8364688619b9b4894f858354",
+  "xz_trace_bytes": 394402476,
+  "compressed_replay_seconds": 181.65543684799968,
+  "uncompressed_first_replay_seconds": 159.11131920299977,
+  "full_unrestricted_population_kernel_proved": false
+}

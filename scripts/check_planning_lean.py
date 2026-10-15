@@ -11,7 +11,7 @@ import tempfile
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULES = ('PlanningDiagram', 'PetersenPlanning')
+MODULES = ('PlanningDiagram', 'PetersenPlanning', 'PlanningCertificate', 'PlanningCertificateExamples')
 
 
 def sha(path):
@@ -90,7 +90,7 @@ def main():
             if run.returncode: raise RuntimeError(run.stdout+run.stderr)
             commands.append({'module':module,'seconds':time.perf_counter()-start,'stdout':run.stdout,'stderr':run.stderr})
         audit=work/'Audit.lean'
-        audit.write_text('import PerfectPower.PetersenPlanning\n'+'\n'.join('#print axioms '+name for name in declarations)+'\n')
+        audit.write_text('import PerfectPower.PetersenPlanning\nimport PerfectPower.PlanningCertificateExamples\n'+'\n'.join('#print axioms '+name for name in declarations)+'\n')
         run=subprocess.run([args.lean,str(audit)],cwd=ROOT,env=env,text=True,capture_output=True,timeout=180)
         if run.returncode: raise RuntimeError(run.stdout+run.stderr)
         parsed=re.findall(r"'([^']+)' (?:depends on axioms: \[([^\]]*)\]|(does not depend on any axioms))",run.stdout.replace('\n',' '))

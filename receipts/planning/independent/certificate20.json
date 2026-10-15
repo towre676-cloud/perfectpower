@@ -1,0 +1,70 @@
+{
+  "schema": "pp-bdd-certificate-run/1",
+  "case": 20,
+  "source_order_original_indices": [
+    19,
+    13,
+    10,
+    3,
+    5,
+    9,
+    4,
+    14,
+    6,
+    16,
+    11,
+    15,
+    12,
+    8,
+    1,
+    7,
+    2,
+    17,
+    0,
+    18
+  ],
+  "raw_source_sha256": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283",
+  "sources": {
+    "native/independent_planning_bdd.cpp": "573fa767222ae1af21b6ed1666a1dee470322bc25988d4268a080468d294d7b2",
+    "native/planning_certificate_trace.hpp": "a562f32b8eceae343a1fbb52fca8fce5fb0628b3e15c96083f775fe84d1f156c",
+    "python/perfectpower/planning_certificate.py": "34ce8f6bb45243add026e408826ada5a516021e5e0b2c2aff0cc068e0b0af373",
+    "scripts/run_planning_certificate.py": "94326a3b25ebc6ffc52879e65357c0b453c1a63b384b450e4ed9acd62fa9565d"
+  },
+  "certificate": {
+    "bytes": 1352216,
+    "sha256": "7450b3b19ab8c071a0f9319b34b0f626ad342f61d30cc44b4e5e5aeafc6e45da"
+  },
+  "generator": {
+    "status": "complete",
+    "count": 422601,
+    "nodes": 2541,
+    "apply_calls": 56164,
+    "build_seconds": 0.0157195,
+    "seconds": 0.0157269,
+    "peak_rss_kib": 10228,
+    "conditional_counts": []
+  },
+  "generation_seconds": 0.021798957999635604,
+  "diagnostics": "resource 0 nodes 445 count 608786 calls 1\nresource 1 nodes 1409 count 542712 calls 7252\nresource 2 nodes 1721 count 521746 calls 12751\nresource 3 nodes 2141 count 511940 calls 21028\nresource 4 nodes 2226 count 498505 calls 30963\nresource 5 nodes 2226 count 498505 calls 37148\nresource 6 nodes 1918 count 451103 calls 37921\nresource 7 nodes 2275 count 444531 calls 42498\nresource 8 nodes 2560 count 436141 calls 49185\nresource 9 nodes 2541 count 422601 calls 56164\n",
+  "checker": {
+    "schema": "pp-bdd-trace-check/1",
+    "status": "externally_checked_source_bound",
+    "variables": 20,
+    "resources": 10,
+    "count": 422601,
+    "allocated_nodes": 8848,
+    "records_by_tag": [
+      8846,
+      5296,
+      28077,
+      10,
+      1
+    ],
+    "uncompressed_sha256": "7450b3b19ab8c071a0f9319b34b0f626ad342f61d30cc44b4e5e5aeafc6e45da",
+    "uncompressed_bytes": 1352216,
+    "full_population_kernel_proved": false,
+    "trust_boundary": "Python parser, packed tables, arithmetic and rule implementation; local rules have separate Lean proofs."
+  },
+  "checking_seconds": 0.1711992470000041,
+  "full_unrestricted_population_kernel_proved": false
+}

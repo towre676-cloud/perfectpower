@@ -724,3 +724,12 @@ movement-language-test:
 	PYTHONPATH=python python -m unittest python/tests/test_movement_language.py python/tests/test_movement_features.py python/tests/test_movement_transfer.py
 movement-language-benchmark:
 	PYTHONPATH=python python python/benchmark_movement_language.py
+
+.PHONY: planning-certificate-test planning-certificate-small planning-certificate-full
+planning-certificate-test:
+	PYTHONPATH=python python -m unittest discover -s python/tests -p 'test_planning_certificate.py' -v
+planning-certificate-small:
+	python scripts/export_planning_certificate_lean.py certs/planning/small.trace PerfectPower/PlanningCertificateExamples.lean
+	python scripts/check_planning_lean.py --lean "$(PLANNING_LEAN)"
+planning-certificate-full:
+	python scripts/run_planning_certificate.py --certificate /tmp/petersen50.trace
