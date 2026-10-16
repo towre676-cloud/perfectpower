@@ -1,0 +1,161 @@
+{
+  "analytic_tail_audit": {
+    "arcsine_kernel": "|c_n|<=3*u^2*3^ceil(2u^2)/(n*4^n); sum geometric tail with n>=terms+1",
+    "arcsine_moment": "e_r(n)<=2^r/r! and binom(2n,n)>=4^n/(2n+1) give stated positive tail",
+    "two_order": "|H_2n+A*H_n-D/(2n)|<=(2+A+D/2)*n; signed E bounded absolutely; geometric sum yields bound/4^terms"
+  },
+  "arithmetic": "binary64 numerical diagnostics, not proof certificates",
+  "audit_result": "no substantive mathematical/domain bug found in reviewed modules",
+  "combined_e8_log_mellin": {
+    "absolute_difference": 1.936228954946273e-13,
+    "analytic_absolute_truncation_bound_binary64": 8.531632077483594e-18,
+    "integrand": "(-log(x))*log(-log(x))*K(x)",
+    "normalization": "Gamma(2)=1; Gamma derivative term vanishes because F(2)=0",
+    "numerical_integral": -2.213427747845005,
+    "predicted_value": -2.213427747844811,
+    "quadrature_error_estimate": 1.4151923576471607e-12,
+    "tail_reason": "for t>=50, |K(exp(-t))|<17 and log(t)<=t",
+    "transformed_cutoff": 50
+  },
+  "combined_e8_mellin": [
+    {
+      "absolute_difference": 1.1102230246251565e-15,
+      "analytic_absolute_truncation_bound_binary64": 1.6722261181847167e-19,
+      "domain": "integer s>=2; original integral on 0<x<1",
+      "normalization": "divide by Gamma(s)=(s-1)!",
+      "numerical_integral": 1.1102230246251565e-15,
+      "predicted_value": 0.0,
+      "quadrature_error_estimate": 3.2923377265945526e-14,
+      "s": 2,
+      "transform": "x=exp(-t); integrand=t^(s-1)*exp(-t)*K(exp(-t))",
+      "transformed_cutoff": 50
+    },
+    {
+      "absolute_difference": 0.0,
+      "analytic_absolute_truncation_bound_binary64": 7.257570648746388e-17,
+      "domain": "integer s>=2; original integral on 0<x<1",
+      "normalization": "divide by Gamma(s)=(s-1)!",
+      "numerical_integral": -0.9043411908341953,
+      "predicted_value": -0.9043411908341953,
+      "quadrature_error_estimate": 1.8683872275341002e-14,
+      "s": 4,
+      "transform": "x=exp(-t); integrand=t^(s-1)*exp(-t)*K(exp(-t))",
+      "transformed_cutoff": 50
+    },
+    {
+      "absolute_difference": 3.3306690738754696e-16,
+      "analytic_absolute_truncation_bound_binary64": 9.46518564318675e-15,
+      "domain": "integer s>=2; original integral on 0<x<1",
+      "normalization": "divide by Gamma(s)=(s-1)!",
+      "numerical_integral": -0.9811809120577125,
+      "predicted_value": -0.9811809120577129,
+      "quadrature_error_estimate": 1.527111905030751e-14,
+      "s": 6,
+      "transform": "x=exp(-t); integrand=t^(s-1)*exp(-t)*K(exp(-t))",
+      "transformed_cutoff": 50
+    }
+  ],
+  "limitation": "SciPy quadrature error estimates and binary64 predictions are not rigorous numerical enclosures",
+  "normalization_audit": "Mellin integrals divide by Gamma(s); logarithmic derivative at s=2 needs no digamma correction because F(2)=0",
+  "runtime": {
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "scaled_sine_pole": [
+    {
+      "a": "2/3",
+      "absolute_difference": 0.002001793499672666,
+      "analytic_absolute_tail_bound": "1/250",
+      "b": "5/4",
+      "domain": "integer k>=2; positive rational a,b; absolutely integrable",
+      "k": 2,
+      "numerical_integral": {
+        "imaginary": 2.4831591411927467e-17,
+        "real": 0.39357834404487907
+      },
+      "predicted_real_value": 0.39558013754455174,
+      "quadrature_error_estimate": 1.6788038635315974e-10,
+      "radius": 500,
+      "tail_reason": "|sin(a*x)|<=1 and |x-i*b|>=|x|; tails<=2*R^(1-k)/(k-1)",
+      "within_tail_plus_error": true
+    },
+    {
+      "a": "3/2",
+      "absolute_difference": 6.0361540210607245e-09,
+      "analytic_absolute_tail_bound": "1/250000",
+      "b": "2/3",
+      "domain": "integer k>=2; positive rational a,b; absolutely integrable",
+      "k": 3,
+      "numerical_integral": {
+        "imaginary": -1.516144606392622e-17,
+        "real": -0.5792303907721679
+      },
+      "predicted_real_value": -0.5792303968083219,
+      "quadrature_error_estimate": 1.970696549238827e-10,
+      "radius": 500,
+      "tail_reason": "|sin(a*x)|<=1 and |x-i*b|>=|x|; tails<=2*R^(1-k)/(k-1)",
+      "within_tail_plus_error": true
+    },
+    {
+      "a": "2",
+      "absolute_difference": 2.0040378245766988e-09,
+      "analytic_absolute_tail_bound": "1/187500000",
+      "b": "3/4",
+      "domain": "integer k>=2; positive rational a,b; absolutely integrable",
+      "k": 4,
+      "numerical_integral": {
+        "imaginary": -1.1010963186265186e-18,
+        "real": -0.7511265565196892
+      },
+      "predicted_real_value": -0.7511265545156514,
+      "quadrature_error_estimate": 4.730630593256967e-09,
+      "radius": 500,
+      "tail_reason": "|sin(a*x)|<=1 and |x-i*b|>=|x|; tails<=2*R^(1-k)/(k-1)",
+      "within_tail_plus_error": true
+    }
+  ],
+  "schema": "pp-independent-period-quadrature/1",
+  "two_order_cancellation": [
+    {
+      "absolute_difference": 4.218847493575595e-15,
+      "caution": "binary64 conversion error dominates this tiny exact tail; comparison is not an enclosure",
+      "exact_analytic_series_tail": "9/166153499473114484112975882535043072",
+      "numerical_partial": 1.9587374395278008,
+      "numerical_zeta_side": 1.9587374395277966,
+      "r": 1,
+      "s": 2,
+      "terms": 60
+    },
+    {
+      "absolute_difference": 3.9968028886505635e-15,
+      "caution": "binary64 conversion error dominates this tiny exact tail; comparison is not an enclosure",
+      "exact_analytic_series_tail": "17215/73273693267643487493822364197953994752",
+      "numerical_partial": -0.9581475128051689,
+      "numerical_zeta_side": -0.9581475128051729,
+      "r": 1,
+      "s": 3,
+      "terms": 60
+    },
+    {
+      "absolute_difference": 8.215650382226158e-15,
+      "caution": "binary64 conversion error dominates this tiny exact tail; comparison is not an enclosure",
+      "exact_analytic_series_tail": "82573/122122822112739145823037273663256657920",
+      "numerical_partial": -0.14811476716264127,
+      "numerical_zeta_side": -0.14811476716264949,
+      "r": 2,
+      "s": 3,
+      "terms": 60
+    },
+    {
+      "absolute_difference": 2.6853519408120974e-14,
+      "caution": "binary64 conversion error dominates this tiny exact tail; comparison is not an enclosure",
+      "exact_analytic_series_tail": "22635983/10472031996167381754325446216624258416640",
+      "numerical_partial": 0.0766608532211832,
+      "numerical_zeta_side": 0.07666085322115634,
+      "r": 2,
+      "s": 4,
+      "terms": 60
+    }
+  ]
+}

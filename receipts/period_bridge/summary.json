@@ -1,0 +1,68 @@
+{
+  "counts": {
+    "checked_transport_paths": 6,
+    "exact_angle_specializations": 24,
+    "exact_raghava_receipts_replayed": 331,
+    "independent_numeric_comparisons": 120,
+    "kernel_bound_receipts": 50,
+    "moment_bound_receipts": 50,
+    "raghava_two_order_identities": 120,
+    "selected_series_partials": 5,
+    "sine_pole_receipts": 82,
+    "small_filter_cases": 1930,
+    "small_filter_even_weight_comparisons": 5790
+  },
+  "description": "Exact reusable integral families join harmonic/binomial recurrences to cyclotomic phase filters and an explicit E8 Coxeter model.",
+  "formal_kernel_verified": false,
+  "highlights": [
+    {
+      "detail": "Every selected-order pair through weight 33, with exact harmonic/zeta coefficients and rational tails; no independence claim.",
+      "label": "Raghava construction",
+      "value": "120 exact identities"
+    },
+    {
+      "detail": "The complete 264-branch fiber becomes one; its 240 primitive field conjugates become two with exact inclusion-exclusion.",
+      "label": "Phase reduction",
+      "value": "240 integrals become two"
+    },
+    {
+      "detail": "The explicit 248-dimensional cyclic root-permutation-plus-Cartan model has a unique real Mellin zero for s>1 at s=2.",
+      "label": "E8 integral cancellation",
+      "value": "zero at weight two"
+    },
+    {
+      "detail": "The real weight-two sum over the 240 primitive phases, checked against complete-source Bernoulli evaluation.",
+      "label": "Exact example",
+      "value": "22537*pi^2/6773760"
+    },
+    {
+      "detail": "Raghava arcsine moment at t=2sin(pi/840); the refined angle divides this value by 264^2.",
+      "label": "Artifact-angle bridge",
+      "value": "pi^2/352800"
+    },
+    {
+      "detail": "Integer reflection construction, Coxeter order 30 and characteristic polynomial Phi30 are checked.",
+      "label": "Actual E8 geometry",
+      "value": "240 roots; eight Coxeter orbits"
+    },
+    {
+      "detail": "Decimal arithmetic at precision 200 with independently Euler-transformed zeta values; these numerical comparisons are not rigorous enclosures.",
+      "label": "Independent diagnostics",
+      "value": "120 comparisons within exact tails"
+    }
+  ],
+  "limits": [
+    "This does not prove the supplied artifacts categorical colimit or arbitrary E8 unification claims.",
+    "The 240 Galois conjugates are not identified with the 240 E8 roots by matching cardinalities.",
+    "The E8 root-permutation-plus-Cartan model is a verified cyclic direct sum; no adjoint lift with root-space signs is asserted.",
+    "The two-order family is complete only within the cited polynomial ansatz; identities need not be numerically linearly independent.",
+    "Numerical Decimal comparisons are diagnostics and have no rigorous zeta enclosure."
+  ],
+  "live_data_is_executable_upgrade": false,
+  "monograph": "docs/PERIOD_BRIDGE_MONOGRAPH.md",
+  "result_path": "receipts/period_bridge/results.json",
+  "results_sha256": "674cb5a64498e27d106f0ae16552a56c0d35a1b463a9c73c4147ae51b7554ac5",
+  "schema": "pp-period-bridge/1",
+  "source_parent_commit": "d23deeba64218f202c2c15311ae9de95d4daa8a3",
+  "title": "Integral families: Raghava, phase geometry and E8"
+}

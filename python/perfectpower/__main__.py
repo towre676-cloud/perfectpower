@@ -218,7 +218,11 @@ def main():
     add_geometry_foundation_commands(sub)
     from .michor_cli import add_commands as add_differential_geometry_commands
     add_differential_geometry_commands(sub)
+    from .period_bridge_cli import add_commands as add_integral_commands
+    add_integral_commands(sub)
     args = parser.parse_args()
+    from .period_bridge_cli import cli as integral_cli
+    if integral_cli(args): return
     from .research_counting import cli as research_cli
     if research_cli(args): return
     from .michor_cli import cli as differential_geometry_cli

@@ -22,6 +22,8 @@ RECEIPTS=(
     'descent_bridges/verification.json',
     'descent_bridges/instances.json',
     'isogeny_point_groups/verification.json',
+    'period_bridge/summary.json',
+    'period_bridge/results.json',
 )
 
 

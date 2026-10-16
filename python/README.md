@@ -14,6 +14,10 @@ The [semilinear and curve-query guide](../docs/SEMILINEAR_CAPACITY_MONOGRAPH.md)
 
 The package installs from the repository root with `pip install .` and provides the `perfectpower` command. The CLI and the function API are stable within the 0.6 series.
 
+## Integral families
+
+`python -m perfectpower integral-families --explain` opens the retained Raghava, cyclotomic and E8 result summary; omit `--explain` for exact JSON, or add `--details` for all retained calculations. The summary and detailed receipts ship with the installed Python package, and `--receipt /path/to/summary.json` opens another retained release. From a source checkout, regenerate them with `PYTHONPATH=python python python/develop_period_bridge.py`, then refresh the application feed with `python scripts/export_explorer_live.py`. This collection draws on recovered public integral sources, particularly Raghava's parameter, harmonic-sum and cancellation methods, and treats the supplied Cody Lakeland visualizations as motivation; the calculations do not establish their proposed categorical trace of 264 or their categorical E8 unification. See the [period bridge monograph](../docs/PERIOD_BRIDGE_MONOGRAPH.md) for attribution, domains and proof status.
+
 ## Function API
 
 | Function | Returns | Status of the result |

@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'python'))
 from perfectpower.research_counting import MonomialPopulation, ResiduePopulation, digit_sumset
+from perfectpower.period_bridge_cli import application as integral_application
 
 
 def export(root=ROOT):
@@ -80,6 +81,9 @@ def export(root=ROOT):
             'result':json.loads(movement.read_text()),
             'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/MOVEMENT_LANGUAGE_MONOGRAPH.md',
             'native_engine_requires_upgrade':True,'public_demo_is_synthetic':True}
+    integrals = integral_application(root)
+    if integrals is not None:
+        payload['period_bridge'] = integrals
     encoded = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     source_parent = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=root, text=True).strip()
     envelope = {'schema': 'pp-explorer-live/1', 'source_parent': source_parent,
