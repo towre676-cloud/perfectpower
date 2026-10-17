@@ -2,8 +2,9 @@
 
 The category here is finite Q-vector spaces graded by Q/Z, with rational
 matrices preserving the grade. It is a split spectral model, not an assertion
-that arbitrary complex representations have rational eigenbases. Its finite
-Grothendieck algebra is Q[Q/Z]. No higher categorical structure is presumed.
+that arbitrary complex representations have rational eigenbases. Its
+rationalized Grothendieck algebra is Q[Q/Z]. No higher categorical structure
+is presumed.
 """
 from dataclasses import dataclass
 from fractions import Fraction as Q

@@ -1,0 +1,88 @@
+{
+  "application": "/integrals/",
+  "child_receipts": {
+    "coxeter.json": "4be021365ebf07621d6287ed4e881d129677ff3eb97ee71ce879aa309479f23d",
+    "dirichlet.json": "ee8e0a0a5c8c6f5c1396715ee802f967640f50ac5468dd2168a79e3ddb756cc9",
+    "e8_lift.json": "412fa3c6e6280fbf63d88856aaf20305037b874dee1e454686a3f8d1c51d64c3",
+    "observability.json": "5d25f9ba3946bc49a9d77b8dd472be0230cbb5924513bd79d762dd60dc3ef8cd"
+  },
+  "counts": {
+    "coxeter_geometry_cases": 64,
+    "coxeter_geometry_roots": 10814,
+    "dirichlet_characters": 80,
+    "exact_character_dft_checks": 863,
+    "exact_character_period_comparisons": 160,
+    "generating_coefficient_families": 130,
+    "global_taylor_checks": 16,
+    "jacobi_basis_triples": 2511496,
+    "maximum_generating_weight": 131,
+    "observable_adjoint_dimension": 30,
+    "observable_reflection_dimension": 8,
+    "prior_pair_decompositions": 120,
+    "residue_pair_periods": 270,
+    "rigorous_generating_value_enclosures": 26,
+    "rigorous_master_comparisons": 10,
+    "second_family_coefficients": 65,
+    "simple_lift_bracket_checks": 245024,
+    "supplementary_basis_reductions": 33,
+    "supplementary_family_coefficients": 65
+  },
+  "formal_kernel_verified": false,
+  "highlights": [
+    {
+      "detail": "Two complete scalar families, rigorous rational enclosures, a formal basis and exact recovery of every previous pair formula.",
+      "label": "Raghava generating engine",
+      "value": "130 identities through weight 131"
+    },
+    {
+      "detail": "The root-space signs, Jacobi identity, eight Tits lifts and complete adjoint spectrum are recomputed.",
+      "label": "Actual E8 adjoint",
+      "value": "248 dimensions; exhaustive brackets"
+    },
+    {
+      "detail": "Real Mellin zeros classified; B7 and C7 vanish at weight four, with log companion -pi^4*log(2)/5145.",
+      "label": "Coxeter continuation",
+      "value": "all irreducible crystallographic types"
+    },
+    {
+      "detail": "A minimal observable machine preserves the complete E8 adjoint trace sequence; this is not a 30-dimensional faithful adjoint representation.",
+      "label": "Exact observation",
+      "value": "248 dimensions reduce to 30"
+    },
+    {
+      "detail": "Exact Fourier reconstruction, independent Gauss/Bernoulli comparisons and 270 residue-pair periods.",
+      "label": "Dirichlet coverage",
+      "value": "80 complete character tables"
+    }
+  ],
+  "limits": [
+    "No identification of 240 cyclotomic field conjugates with 240 E8 roots follows from cardinalities.",
+    "The explicit finite phase category and conductor colimit do not establish unspecified higher-category resonance proposals.",
+    "Parity-mismatched values such as Catalan beta(2) remain formal periods.",
+    "Canonical zeta-coordinate changes are exact formal algebra, not numerical algebraic independence.",
+    "Coxeter classification concerns real zeros for s>1; it does not classify complex zeros."
+  ],
+  "live_data_is_executable_upgrade": false,
+  "monograph": "docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md",
+  "result_path": "receipts/period_bridge_deep/results.json",
+  "results_sha256": "b8e596406bd06936494eaaeeeb47f33bfd7669d4502dfccd71678e20e47741cb",
+  "schema": "pp-period-bridge-deep/1",
+  "scope": "Exact rational/integer Python computations, exhaustive finite checks and source-supported analytic theorems; not Lean-kernel formalization of these analytic identities.",
+  "source_parent_commit": "eebe82437f631e889883e6eafb2e32f8791aea77",
+  "source_sha256": {
+    "python/develop_period_bridge_deep.py": "e51e808d9c49fb228e5e0735827f984c564b86fca8ebf66624114bba163923c6",
+    "python/export_integral_browser.py": "3891ecba2996a6ed5fd704c7081e9cb63810182d439aab78708fdf6684d9eeef",
+    "python/perfectpower/coxeter_mellin.py": "9825f6cfd157a95a44c3d987ca0e6b6a16a9155f61b652e4eecd245c9df50d05",
+    "python/perfectpower/cyclotomic_real.py": "8a8d20f45f1a7af8189b682632a279736509abf8047aa418b768c59e63757bdf",
+    "python/perfectpower/dirichlet_periods.py": "d4b65d991a19343f4e5fb538cbfd065113fcd77b6f0b68f8fd160cebfe3af8b8",
+    "python/perfectpower/e8_lift.py": "29b0dd5a884d239edbc1a510dae1c02c6a3fa257105ccb7300c781d92a3de1cc",
+    "python/perfectpower/e8_periods.py": "476166db63374fedd78a1231813170334f77729b7ed28d732f13a876d6185694",
+    "python/perfectpower/period_observability.py": "14fcb13dd6c358734948dd12b8db054b1c9e7ead2e17b76b224271a396b6ed54",
+    "python/perfectpower/period_transport.py": "df1727036fe4587fa2638737cb14d0270a20c873155a916963568572c4421935",
+    "python/perfectpower/phase_descent.py": "7e95d32f13b63646b856ba506ec82efecbfab562803306b2af8ccb38e7f1ef27",
+    "python/perfectpower/raghava_generating.py": "2c39ee8b25a98fa75d586d7376cd9bb3f8ced6d90ea00f7da0455ce51252bd22",
+    "python/perfectpower/raghava_periods.py": "b1c193c6b7f360fbdc304aed3844aeb0792353215f260b19008d56bd06745c9c",
+    "web/integral-families/engine.js": "7cf9c312b3edce4f08d6f2e505d7057375f0c201da5689f72063202781afdd13"
+  },
+  "title": "Complete generating integrals, actual E8 adjoint lift and Coxeter continuation"
+}
