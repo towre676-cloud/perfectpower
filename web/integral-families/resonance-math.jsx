@@ -3,6 +3,12 @@ import React from 'react';
 // These identities describe the retained calculations. The ribbons, tower and
 // simplex meshes remain illustrations; they are not inputs to these formulas.
 export const MATH_VIEWS = {
+ operator: {kind:'operator', title:'One operator, two exact descriptions', label:'Raghava–Coxeter operator theorem',
+  caption:'The actual 8 × 8 E₈ Coxeter operator generates this convergent inverse-binomial sum.',
+  explanation:'C is the actual E₈ Coxeter matrix in the simple-root basis and L = 2I + C + C⁻¹. Its integer traces begin 8, 14, 42, 146, 538. The Raghava series sums them to 56π²/45. An explicit integer basis change intertwines C with the 30th cyclotomic companion operator, including every power. The finite matrix identities and phase-moment induction are checked in Lean. The convergence and identification with the infinite series have a separate analytic proof. Read the operator theorem for the full derivation and exact error bounds.'},
+ induction: {kind:'induction', title:'The cancellation survives refinement', label:'Finite phase-moment induction theorem',
+  caption:'For the E₈ adjoint spectrum, 264-branch induction gives dimension 65,472 and first moment 10,912π².',
+  explanation:'Here r₁(A) is the first Raghava operator trace divided by π², and Δ(A) = r₁(A) − dim(A)/6. The finite phase-moment theorem proves Δ(Ind_d A) = Δ(A)/d for every positive integer d. Thus induction preserves and reflects the weight-two zero; it cannot create a zero from a nonzero defect. The E₈ adjoint has Δ = 0. This connects its exact cancellation to the 264-branch operation without identifying the separate 240-element collections.'},
  bridge: {kind:'bridge', title:'The phase bridge', label:'Exact conductor map',
   caption:'384 primitive phases reach 8 Coxeter eigenphases, with 48 copies of each.',
   explanation:'Set q = exp(iπ/840) and ζ₃₀ = exp(2πi/30). Raising q to the 56th power gives ζ₃₀. On primitive conjugates this map reaches the eight primitive 30th-root phases, each 48 times. This is an exact phase map; it does not identify phase branches with E₈ roots.'},
@@ -26,8 +32,8 @@ export const MATH_VIEWS = {
   explanation:'For the retained E₈ adjoint Coxeter lift, the normalized Mellin trace separates into the root-permutation contribution +2π²/45 and Cartan contribution −2π²/45 at weight two. Their sum is exactly zero. The highlighted point follows the exact Coxeter successor; its 56 neighbors have inner product one with it.'}
 };
 
-export const CHAPTER_MATH = ['bridge','trace','raghava','reciprocity'];
-export const NODE_MATH = {left:'cyclotomic',right:'e8',upper:'bridge',lower:'raghava',center:'fiber'};
+export const CHAPTER_MATH = ['operator','trace','raghava','induction'];
+export const NODE_MATH = {left:'cyclotomic',right:'e8',upper:'bridge',lower:'operator',center:'fiber'};
 
 const M=({children})=><math display="block" aria-hidden="true">{children}</math>;
 const pi=<mi>π</mi>,theta=<mi>θ</mi>,q=<mi>q</mi>,Q=<mi>Q</mi>;
@@ -41,6 +47,8 @@ const res=<msub><mi mathvariant="normal">Res</mi><mrow><msub><mi>C</mi><mi>n</mi
 const hom=letter=><msub><mi mathvariant="normal">Hom</mi><msub><mi>C</mi><mi>{letter}</mi></msub></msub>;
 
 const LABELS={
+ operator:'L equals 2 I plus C plus inverse C. The sum from n equals one to infinity of trace L to the n divided by n squared times 2 n choose n equals 56 pi squared over 45.',
+ induction:'Delta of degree d induction of A equals Delta of A divided by d. Delta equals r one minus dimension divided by six.',
  bridge:'q to the power 56 equals zeta 30; 384 equals 48 times 8.',
  trace:'The sum from j equals zero to 263 of I sub s of Q times exp of 2 pi i j over 264 equals 264 to the power 1 minus s times I sub s of q.',
  raghava:'The sum from n equals one to infinity of 2 sine theta to the power 2 n, divided by n squared times the binomial coefficient 2 n choose n, equals 2 theta squared.',
@@ -52,6 +60,8 @@ const LABELS={
 
 export function MathIdentity({kind='bridge'}){
  let equation;
+ if(kind==='operator')equation=<><M><mi>L</mi><mo>=</mo><mn>2</mn><mi>I</mi><mo>+</mo><mi>C</mi><mo>+</mo>{power(<mi>C</mi>,<><mo>−</mo><mn>1</mn></>)}</M><M><munderover><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mo>∞</mo></munderover>{fraction(<><mi mathvariant="normal">Tr</mi><mo>(</mo>{power(<mi>L</mi>,<mi>n</mi>)}<mo>)</mo></>,<>{power(<mi>n</mi>,<mn>2</mn>)}{binomial}</>)}<mo>=</mo>{fraction(<><mn>56</mn>{power(pi,<mn>2</mn>)}</>,<mn>45</mn>)}</M></>;
+ if(kind==='induction')equation=<><M><mi>Δ</mi><mo>(</mo><msub><mi mathvariant="normal">Ind</mi><mi>d</mi></msub><mi>A</mi><mo>)</mo><mo>=</mo>{fraction(<><mi>Δ</mi><mo>(</mo><mi>A</mi><mo>)</mo></>,<mi>d</mi>)}</M><M><mi>Δ</mi><mo>=</mo><msub><mi>r</mi><mn>1</mn></msub><mo>−</mo>{fraction(<><mi mathvariant="normal">dim</mi><mi>A</mi></>,<mn>6</mn>)}</M></>;
  if(kind==='bridge')equation=<><M>{power(q,<mn>56</mn>)}<mo>=</mo><msub><mi>ζ</mi><mn>30</mn></msub></M><M><mn>384</mn><mo>=</mo><mn>48</mn><mo>×</mo><mn>8</mn></M></>;
  if(kind==='cyclotomic')equation=<><M>{q}<mo>=</mo>{exp(fraction(<><mi>i</mi>{pi}</>,<mn>840</mn>))}</M><M><mi>φ</mi><mo>(</mo><mn>1680</mn><mo>)</mo><mo>=</mo><mn>384</mn></M></>;
  if(kind==='fiber')equation=<><M>{power(Q,<mn>264</mn>)}<mo>=</mo>{q}</M><M><mn>264</mn><mo>=</mo><mn>240</mn><mo>+</mo><mn>24</mn></M></>;

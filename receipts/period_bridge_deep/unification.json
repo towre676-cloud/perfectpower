@@ -1,0 +1,905 @@
+{
+  "adjoint_endpoint_deflated_certificate": {
+    "arithmetic": "exact Fraction sum, outward dyadic bounds, Machin pi and cosine Taylor bounds",
+    "exact_pi_coefficient": "112/3",
+    "formal_kernel_verified": false,
+    "independent_enclosure_overlap": true,
+    "lower": "14596411600231920466388152705981/39614081257132168796771975168",
+    "order": 1,
+    "partial_interval": [
+      "14596411600231920466388152705981/39614081257132168796771975168",
+      "29192823200463840932776305411963/79228162514264337593543950336"
+    ],
+    "pi_power": 2,
+    "removed_moment_pi_coefficient": "4",
+    "removed_trivial_dimension": 8,
+    "schema": "pp-raghava-coxeter-adjoint-partial/1",
+    "series_trace_coefficient": "Tr(L_ad^n)-8*4^n",
+    "spectral_ratio_upper": "38262939352573251345690099/38685626227668133590597632",
+    "tail_absolute": "426386177898685977095/79228162514264337593543950336",
+    "target_interval": [
+      "228068931253626823139984276471/618970019642690137449562112",
+      "29192823200464233361917987388297/79228162514264337593543950336"
+    ],
+    "terms": 2048,
+    "upper": "14596411600445113555337495694529/39614081257132168796771975168"
+  },
+  "adjoint_mellin_pi_coefficients": [
+    "248",
+    "0",
+    "-94/10125",
+    "-97651/95681250",
+    "-3227521/30754687500",
+    "-81848118901/7672679437500000",
+    "-2317199129142511/2142246974765625000000",
+    "-729911803713061/6658789654687500000000",
+    "-3378802678268767411523/304205764938514892578125000000"
+  ],
+  "adjoint_moment_pi_coefficients": [
+    "248",
+    "124/3",
+    "21113/10125",
+    "686989/13668750",
+    "609548801/861131250000",
+    "4557326153/697516312500000",
+    "22050993984449/517905862031250000000",
+    "875389412469421/4241649010035937500000000",
+    "885714422916633857/1145245232709703125000000000000"
+  ],
+  "analytic_formal_kernel_verified": false,
+  "analytic_proof": "scalar arcsine series plus spectral calculus; endpoint by monotone convergence; Bernoulli Fourier expansion and centered binomial theorem",
+  "bernoulli_bridge_matrix": [
+    [
+      "1",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-1/12",
+      "1/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-7/720",
+      "1/12",
+      "-1/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-31/30240",
+      "7/720",
+      "-1/12",
+      "1/2",
+      "0",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-127/1209600",
+      "31/30240",
+      "-7/720",
+      "1/12",
+      "-1/2",
+      "0",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-73/6842880",
+      "127/1209600",
+      "-31/30240",
+      "7/720",
+      "-1/12",
+      "1/2",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-1414477/1307674368000",
+      "73/6842880",
+      "-127/1209600",
+      "31/30240",
+      "-7/720",
+      "1/12",
+      "-1/2",
+      "0",
+      "0"
+    ],
+    [
+      "-8191/74724249600",
+      "1414477/1307674368000",
+      "-73/6842880",
+      "127/1209600",
+      "-31/30240",
+      "7/720",
+      "-1/12",
+      "1/2",
+      "0"
+    ],
+    [
+      "-16931177/1524374691840000",
+      "8191/74724249600",
+      "-1414477/1307674368000",
+      "73/6842880",
+      "-127/1209600",
+      "31/30240",
+      "-7/720",
+      "1/12",
+      "-1/2"
+    ]
+  ],
+  "construction": "One actual Coxeter operator, Raghava functional calculus, and the invertible Bernoulli transform",
+  "fixed_fiber_obstruction": {
+    "base_conductor": 1680,
+    "e8_root_multiplicities": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "equivariant_isomorphism_possible": false,
+    "extension_conductor": 443520,
+    "primitive_fiber_dimension": 240,
+    "reason": "All fiber exponents are 1 modulo 30; the root Coxeter spectrum has every phase.",
+    "restricted_terms": [
+      [
+        1,
+        "240"
+      ]
+    ]
+  },
+  "formalization": {
+    "analytic_series_formalized": false,
+    "custom_axioms": false,
+    "declarations": {
+      "PerfectPower.CoxeterPhaseBridge.all_angle_moment_traces": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.all_power_conjugacy": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.all_power_trace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.all_raghava_moment_traces": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.angle_laplacian_cartan_selfAdjoint": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.angle_laplacian_definition": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.angle_laplacian_intertwining": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.angle_laplacian_powers_intertwining": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.bridge_inverse_left": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.bridge_inverse_right": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.bridge_preserves_bilinear": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.companion_at_cyclotomic_root": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.companion_evaluation": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coordinates_round_trip": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_eigenfunctional": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_intertwining": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_inverse_left": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_inverse_right": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_order": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_power_fifteen": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_power_five": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_power_four": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_power_six": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_power_ten": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_power_thirty": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_power_two": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_powers_intertwining": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_preserves_cartan": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_primitive_eigenfunctional": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.coxeter_reflection_product": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.cyclotomic_inverse_left": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.cyclotomic_inverse_right": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.cyclotomic_laplacian_definition": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.cyclotomic_preserves_gram": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.inverse_intertwining": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.lattice_round_trip": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.norm_two_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.phi30_at_primitive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.powers_intertwine": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_cyclotomic_operator_definition": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_operator_annihilator": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_operator_cartan_selfAdjoint": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_operator_definition": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_operator_intertwining": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_operator_recurrence": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_power_four": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_power_three": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_power_two": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_powers_intertwining": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_trace_initial": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_trace_recurrence": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.raghava_weighted_trace_transport": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_1": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_2": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_3": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_4": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_5": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_6": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_7": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.reflection_step_8": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.CoxeterPhaseBridge.transported_cartan": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.artifact_fiber_filter": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.artifact_nonprimitive_count": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.artifact_nonprimitive_parameterization": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.artifact_primitive_count": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.artifact_primitive_trace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.descendCoefficients_comp": [
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.fiberMoment_eq_filter": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.phaseTrace_eq_dft": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.phaseTrace_eq_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.phaseTrace_injective": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.phaseTrace_reconstruction": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.primitive_fiber_coprime": [
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.sum_primitive_powers": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.summable_fiber_trace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.PhaseFiber.weighted_fiber_trace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.adjoint_264_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.adjoint_264_moment": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.adjoint_all_refinements": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.adjoint_defect_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.adjoint_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.adjoint_moment": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.branch_phase_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.centered_square_sum": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.coxeter_family_defect": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.coxeter_family_zero_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.defect_eq_bernoulli": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.defect_induced_profile": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.fiberMoment_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.fixed_fiber_not_root_profile": [
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.inducedMass_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.inducedMoment_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.induction_defect": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.induction_zero_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.mass_induced_profile": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.moment_induced_profile": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.reflection_defect": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.reflection_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.reflection_moment": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.tower_defect": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.tower_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "PerfectPower.RaghavaInduction.tower_moment": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "kernel_checked": true,
+    "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+    "mathlib_revision": "c211948581bde9846a99e32d97a03f0d5307c31e",
+    "modules": [
+      "PhaseFiber",
+      "CoxeterPhaseBridge",
+      "RaghavaInduction"
+    ],
+    "native_decision_oracle": false,
+    "schema": "pp-raghava-coxeter-lean/1",
+    "scope": "Finite Fourier filters, actual integral Coxeter matrix transport, and rational phase-moment induction; the analytic series proof is separate.",
+    "source_sha256": {
+      "PerfectPower/CoxeterPhaseBridge.lean": "b9a7639c9b4255ca6856649ed45438b042f8ac3fbcc0d5020eb5227c19a3ca15",
+      "PerfectPower/PhaseFiber.lean": "5ee791015b102d657e7d8049ac8aeb12ff262718cf4f20231038822f39f0eecd",
+      "PerfectPower/RaghavaInduction.lean": "876da123547a6e9d4ea4a076c752ac81b7946e5b11d9a982050e25c903a11f40",
+      "lake-manifest.json": "e33945df9506a576456eb28f4a03bd745b0a742863b34076c53dc5c4dbc001ef",
+      "lean-toolchain": "b1a88ff98b9eb4f96aaf762f9d1ef0e692c9e52a80c51bbb58f3686a6f01571f",
+      "python/check_raghava_coxeter_lean.py": "cd99311e9904304a76ef4bf9829d1f2eaf491e3ee9e848b0db15681840a0637e"
+    },
+    "theorem_count": 102
+  },
+  "induction_264": {
+    "bernoulli_diagonalization_checked": true,
+    "composition_with_degree_two_checked": true,
+    "dimension": "65472",
+    "first_moment_pi_squared_coefficient": "10912",
+    "law": "r1(Ind_d A)-dim(Ind_d A)/6 = (r1(A)-dim(A)/6)/d",
+    "weight_two_defect": "0"
+  },
+  "note_url": "https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/unification.html",
+  "novelty": "derived bridge and concrete evaluations; historical originality not established",
+  "order": 8,
+  "reflection_mellin_pi_coefficients": [
+    "8",
+    "-2/45",
+    "-2821/303750",
+    "-2929531/2870437500",
+    "-2711117641/25833937500000",
+    "-350777652433/32882911875000000",
+    "-1529351425234057951/1413883003345312500000000",
+    "-1992659224136656531/18178495757296875000000000",
+    "-6480820321954079350777/583491577104843750000000000000"
+  ],
+  "reflection_moment_pi_coefficients": [
+    "8",
+    "56/45",
+    "10696/151875",
+    "194896/102515625",
+    "3331768/115330078125",
+    "12961136/46708681640625",
+    "110864548112/60692093206787109375",
+    "44309650592/5072124932281494140625",
+    "18992700344248/599144757625751495361328125"
+  ],
+  "reflection_operator": {
+    "annihilator": [
+      1,
+      -8,
+      14,
+      -7,
+      1
+    ],
+    "coxeter_thirtieth_power_identity": true,
+    "dimension": 8,
+    "exact_matrix_polynomial_zero": true,
+    "initial_traces": [
+      8,
+      14,
+      42,
+      146
+    ]
+  },
+  "reflection_precision_certificate": {
+    "arithmetic": "exact Fraction sum, outward dyadic bounds, Machin pi and cosine Taylor bounds",
+    "exact_pi_coefficient": "56/45",
+    "formal_kernel_verified": false,
+    "independent_enclosure_overlap": true,
+    "lower": "486547053341070556031965112453/39614081257132168796771975168",
+    "order": 1,
+    "partial_interval": [
+      "486547053341070556031965112453/39614081257132168796771975168",
+      "973094106682141112063930224907/79228162514264337593543950336"
+    ],
+    "pi_power": 2,
+    "schema": "pp-raghava-coxeter-partial/1",
+    "spectral_ratio_upper": "38262939352573251345690099/38685626227668133590597632",
+    "tail_absolute": "1202627933/79228162514264337593543950336",
+    "target_interval": [
+      "486547053341070556031966456471/39614081257132168796771975168",
+      "60818381667633819503995807059/4951760157141521099596496896"
+    ],
+    "terms": 4096,
+    "upper": "121636763335267639008141606605/9903520314283042199192993792"
+  },
+  "reflection_series_enclosures": [
+    {
+      "arithmetic": "exact Fraction sum, outward dyadic bounds, Machin pi and cosine Taylor bounds",
+      "exact_pi_coefficient": "56/45",
+      "formal_kernel_verified": false,
+      "independent_enclosure_overlap": true,
+      "lower": "14125685312300176039/1152921504606846976",
+      "order": 1,
+      "partial_interval": [
+        "14125685312300176039/1152921504606846976",
+        "226010964996802816625/18446744073709551616"
+      ],
+      "pi_power": 2,
+      "schema": "pp-raghava-coxeter-partial/1",
+      "spectral_ratio_upper": "139199762461697/140737488355328",
+      "tail_absolute": "76133213265101147669/18446744073709551616",
+      "target_interval": [
+        "226566127194590194165/18446744073709551616",
+        "113283063597295097083/9223372036854775808"
+      ],
+      "terms": 128,
+      "upper": "151072089130951982147/9223372036854775808"
+    },
+    {
+      "arithmetic": "exact Fraction sum, outward dyadic bounds, Machin pi and cosine Taylor bounds",
+      "exact_pi_coefficient": "10696/151875",
+      "formal_kernel_verified": false,
+      "independent_enclosure_overlap": true,
+      "lower": "62818877729037025415/9223372036854775808",
+      "order": 2,
+      "partial_interval": [
+        "62818877729037025415/9223372036854775808",
+        "125637755458074050831/18446744073709551616"
+      ],
+      "pi_power": 4,
+      "schema": "pp-raghava-coxeter-partial/1",
+      "spectral_ratio_upper": "139199762461697/140737488355328",
+      "tail_absolute": "76133213265101147669/9223372036854775808",
+      "target_interval": [
+        "31636929392934983021/4611686018427387904",
+        "126547717571739932085/18446744073709551616"
+      ],
+      "terms": 128,
+      "upper": "277904181988276346169/18446744073709551616"
+    },
+    {
+      "arithmetic": "exact Fraction sum, outward dyadic bounds, Machin pi and cosine Taylor bounds",
+      "exact_pi_coefficient": "194896/102515625",
+      "formal_kernel_verified": false,
+      "independent_enclosure_overlap": true,
+      "lower": "33270347993667635545/18446744073709551616",
+      "order": 3,
+      "partial_interval": [
+        "33270347993667635545/18446744073709551616",
+        "16635173996833817773/9223372036854775808"
+      ],
+      "pi_power": 6,
+      "schema": "pp-raghava-coxeter-partial/1",
+      "spectral_ratio_upper": "139199762461697/140737488355328",
+      "tail_absolute": "76133213265101147669/9223372036854775808",
+      "target_interval": [
+        "33715672042526340073/18446744073709551616",
+        "33715672042526340075/18446744073709551616"
+      ],
+      "terms": 128,
+      "upper": "46384193630967482721/4611686018427387904"
+    }
+  ],
+  "reflection_trace_prefix": [
+    8,
+    14,
+    42,
+    146,
+    538,
+    2044,
+    7902,
+    30856,
+    121178,
+    477434,
+    1884492,
+    7445936,
+    29436958
+  ],
+  "schema": "pp-raghava-coxeter-unification/1",
+  "source_sha256": {
+    "PerfectPower/CoxeterPhaseBridge.lean": "b9a7639c9b4255ca6856649ed45438b042f8ac3fbcc0d5020eb5227c19a3ca15",
+    "PerfectPower/PhaseFiber.lean": "5ee791015b102d657e7d8049ac8aeb12ff262718cf4f20231038822f39f0eecd",
+    "PerfectPower/RaghavaInduction.lean": "876da123547a6e9d4ea4a076c752ac81b7946e5b11d9a982050e25c903a11f40",
+    "docs/RAGHAVA_COXETER_UNIFICATION.md": "ba745f11ea86987695af571c8e59684e799f2069a5326db7f1a0268f654f3869",
+    "lake-manifest.json": "e33945df9506a576456eb28f4a03bd745b0a742863b34076c53dc5c4dbc001ef",
+    "lean-toolchain": "b1a88ff98b9eb4f96aaf762f9d1ef0e692c9e52a80c51bbb58f3686a6f01571f",
+    "python/check_raghava_coxeter_lean.py": "cd99311e9904304a76ef4bf9829d1f2eaf491e3ee9e848b0db15681840a0637e",
+    "python/export_raghava_coxeter.py": "1643b6a34f46f46fedf287b02cdedb89fb2a72cb3ed8f2e0a27375ea95cca405",
+    "python/perfectpower/e8_lift.py": "29b0dd5a884d239edbc1a510dae1c02c6a3fa257105ccb7300c781d92a3de1cc",
+    "python/perfectpower/e8_periods.py": "476166db63374fedd78a1231813170334f77729b7ed28d732f13a876d6185694",
+    "python/perfectpower/period_bridge_cli.py": "3a014c8ee175a952da7003eb1cbe11cb2d90d561f7bd3232ecea28bc53f2f035",
+    "python/perfectpower/raghava_coxeter.py": "a8484e04dc5141c8db1f22c2f5749a7e10e8cb44e481db3f57a77ba4383f8493",
+    "python/tests/test_raghava_coxeter.py": "70d07524e6762b82e78711ce31888225bb29dafc77f3836c8ea88f969f866383"
+  },
+  "sources": [
+    "https://arxiv.org/html/2607.09904v2",
+    "https://dlmf.nist.gov/24.8.E1"
+  ]
+}

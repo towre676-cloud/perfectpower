@@ -6,6 +6,8 @@ The recovered structural profiling and provenance tools are also integrated. New
 
 # PerfectPower
 
+The [Coxeter–Raghava operator bridge](docs/RAGHAVA_COXETER_UNIFICATION.md) connects the actual E8 lattice to cyclotomic coordinates, inverse-binomial moments and exact phase induction. Its 102 Lean theorems establish the finite lattice, Fourier and refinement identities; the analytic series proof is recorded separately. Run `PYTHONPATH=python python -m perfectpower raghava-coxeter --order 8`, or reproduce the finite formalization with `make raghava-coxeter-kernel`.
+
 **Budget Lab (v0.9.9)** applies the exact planner to four complete public participatory-budgeting elections. Launch the local browser application with `python START_BUDGET_LAB.py`, then open `http://127.0.0.1:8765/`. Change budgets, lock arbitrary projects, rank alternatives, sample uniformly and inspect maximum-support portfolios. The [application monograph](docs/BUDGET_LAB_MONOGRAPH.md) records independent full-workflow comparisons and the distinction between analytical portfolios and official voting rules.
 
 Version **0.9.8** adds weighted symmetry compression, a native meet-in-the-middle allocation index, and optimization-only search with exact dual and fractional bounds. See [the hybrid planning monograph](docs/HYBRID_PLANNING_MONOGRAPH.md) for measured comparisons and limits.

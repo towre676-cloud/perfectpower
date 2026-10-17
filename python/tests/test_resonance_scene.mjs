@@ -336,7 +336,7 @@ import {MathDefinition} from './resonance-math.jsx';
 import envelope from './atlas-data.json';
 const render=component=>renderToStaticMarkup(component);
 export const html=render(React.createElement(ResonanceExperience));
-export const identities=Object.fromEntries(['bridge','trace','raghava','reciprocity','e8','fiber','cyclotomic'].map(kind=>[kind,render(React.createElement(MathIdentity,{kind}))]));
+export const identities=Object.fromEntries(['bridge','trace','raghava','reciprocity','e8','fiber','cyclotomic','operator','induction'].map(kind=>[kind,render(React.createElement(MathIdentity,{kind}))]));
 export const rootReadout=render(React.createElement(RootReadout,{root:JSON.parse(envelope.payload_json).roots[0]}));
 export const traceDefinition=render(React.createElement(MathDefinition,{kind:'trace'}));`,resolveDir:web,sourcefile:'resonance-test-entry.mjs'},bundle:true,write:false,
   format:'cjs',platform:'node',target:'node22',logLevel:'silent',plugins,
@@ -366,7 +366,7 @@ assert(!html.includes('The 3D scene could not start'));
 const banner=html.match(/<section\b([^>]*class="math-banner[^"]*"[^>]*)>([\s\S]*?)<\/section>/);
 assert(banner,'Default scene must contain its mathematical identity');
 assert(!/\b(?:hidden|inert)(?:\s|=|$)/.test(banner[1])&&!/class="[^"]*\bchrome\b/.test(banner[1]));
-assert(banner[2].includes('class="math-equation"')&&banner[2].includes('data-identity="bridge"'));
+assert(banner[2].includes('class="math-equation"')&&banner[2].includes('data-identity="operator"'));
 const annotationGroup=html.match(/<div\b([^>]*class="node-labels math-annotations"[^>]*)>/)?.[1];
 assert(annotationGroup&&!/\b(?:hidden|inert)(?:\s|=|$)/.test(annotationGroup));
 const mathToggle=html.match(/<button\b([^>]*aria-label="Show mathematical annotations"[^>]*)>([\s\S]*?)<\/button>/);
@@ -375,7 +375,7 @@ assert(!/\b(?:hidden|inert)(?:\s|=|$)/.test(mathToggle[1]));
 
 const textContent=markup=>markup.replace(/<[^>]*>/g,'').replace(/<!--[^]*?-->/g,'').replaceAll('&gt;','>').replaceAll('&lt;','<').replaceAll('&amp;','&').replaceAll('&#x27;',"'").replaceAll('&quot;','"').replace(/\s+/g,'');
 const {identities,rootReadout,traceDefinition}=rendered.exports;
-const identityText={bridge:['q56=ζ30','384=48×8'],trace:['∑j=0263','2641−s','Is(q)'],raghava:['∑n=1∞','(2sinθ)2n','n2','2θ2'],reciprocity:['HomCN','IndCnV,W','≅HomCn','ResCnW'],e8:['J2=','2π245−2π245=0'],fiber:['Q264=q','264=240+24'],cyclotomic:['q=eiπ840','φ(1680)=384']};
+const identityText={operator:['L=2I+C+C−1','∑n=1∞','Tr(Ln)','56π245'],induction:['Δ(InddA)=','Δ(A)d','Δ=r1−dimA6'],bridge:['q56=ζ30','384=48×8'],trace:['∑j=0263','2641−s','Is(q)'],raghava:['∑n=1∞','(2sinθ)2n','n2','2θ2'],reciprocity:['HomCN','IndCnV,W','≅HomCn','ResCnW'],e8:['J2=','2π245−2π245=0'],fiber:['Q264=q','264=240+24'],cyclotomic:['q=eiπ840','φ(1680)=384']};
 for(const [kind,tokens] of Object.entries(identityText)){
   const markup=identities[kind],plain=textContent(markup);
   assert(markup.includes(`data-identity="${kind}"`)&&markup.includes('role="math"')&&/aria-label="[^"]+"/.test(markup));
@@ -383,10 +383,10 @@ for(const [kind,tokens] of Object.entries(identityText)){
   assert(!/undefined|NaN|\\frac|\\sum/.test(markup));
   for(const token of tokens)assert(plain.includes(token),`Missing mathematical content ${kind}: ${token}`);
 }
-assert.equal(new Set(Object.values(identities)).size,7);
+assert.equal(new Set(Object.values(identities)).size,9);
 assert(traceDefinition.includes('role="math"')&&traceDefinition.includes('<msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup>'));
 for(const token of ['Is(z)=1Γ(s)','z(−logx)s−1','1−zx','dx','=Lis(z)'])assert(textContent(traceDefinition).includes(token));
 assert(rootReadout.includes('class="root-coordinates"')&&!/<details\b|\bhidden=|\binert=/.test(rootReadout));
 assert(rootReadout.includes(`(${data.roots[0].doubled_root.map(n=>n/2).join(', ')})`));
 assert(textContent(rootReadout).includes('‖α‖²=2'));
-console.log(JSON.stringify({schema:'pp-resonance-scene-checks/1',scene_modes:SCENE_MODES.length,root_points:240,coxeter_orbits:8,exact_adjacency_pairs:edges,displayed_neighbor_segments:neighborSegments,simplex_triangles:simplexTriangles,ribbon_triangles:ribbonTriangles,node_effect_objects:effectObjects,phase_branches:264,primitive_phase_branches:240,deterministic_geometries:geometries.length,transition_samples:transitionSamples,camera_samples:cameraSamples,projected_frustum_points:frustumPoints,tower_frustum_points:towerFrustumPoints,label_layout_widths:labelLayouts,curve_samples:curveSamples,rendered_math_identities:7,visible_math_default:true,expanded_root_readout:true,payload_sha256:envelope.payload_sha256,esbuild_scene_bundle:true,react_server_markup:true,autonomous_default:true,cinema_default:true,browser_qa:false,passed:true}));
+console.log(JSON.stringify({schema:'pp-resonance-scene-checks/1',scene_modes:SCENE_MODES.length,root_points:240,coxeter_orbits:8,exact_adjacency_pairs:edges,displayed_neighbor_segments:neighborSegments,simplex_triangles:simplexTriangles,ribbon_triangles:ribbonTriangles,node_effect_objects:effectObjects,phase_branches:264,primitive_phase_branches:240,deterministic_geometries:geometries.length,transition_samples:transitionSamples,camera_samples:cameraSamples,projected_frustum_points:frustumPoints,tower_frustum_points:towerFrustumPoints,label_layout_widths:labelLayouts,curve_samples:curveSamples,rendered_math_identities:9,visible_math_default:true,expanded_root_readout:true,payload_sha256:envelope.payload_sha256,esbuild_scene_bundle:true,react_server_markup:true,autonomous_default:true,cinema_default:true,browser_qa:false,passed:true}));

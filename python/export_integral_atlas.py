@@ -24,6 +24,15 @@ def project(root, exponent):
 
 
 def build():
+    unified=json.loads((ROOT/'receipts/period_bridge_deep/unification.json').read_text())
+    formal=unified['formalization']
+    for name, expected in formal['source_sha256'].items():
+        assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected, 'Proof source changed after Lean checking'
+    unification=dict(schema=unified['schema'], finite_lean_theorems=formal['theorem_count'],
+                     finite_kernel_checked=formal['kernel_checked'],analytic_series_formalized=False,
+                     reflection_first_moment='56/45',adjoint_first_moment='124/3',
+                     refinement_degree=264,refined_dimension=65472,refined_first_moment='10912',
+                     note_url='./unification.html',receipt_url='./unification.json')
     orbits = e8.root_orbits()
     ordered = [root for orbit in orbits for root in orbit]
     index = {root: i for i, root in enumerate(ordered)}
@@ -50,7 +59,7 @@ def build():
     assert sum(row['primitive'] for row in branches) == 240
     radii = [hypot(rows[i*30]['x'],rows[i*30]['y']) for i in range(8)]
     assert len({round(r,8) for r in radii}) == 8
-    payload = dict(schema='pp-integral-atlas-data/1', roots=rows, orbit_radii=radii,
+    payload = dict(schema='pp-integral-atlas-data/1', roots=rows, orbit_radii=radii,unification=unification,
                    branches=branches, root_count=240, adjacency_pairs=6720,
                    projection='Fourier exponent 1 Coxeter plane; optional real exponent 7 depth. Normalized floating-point display coordinates.',
                    scope='The 240 primitive branches and the 240 E8 roots are different objects; the atlas defines no bijection between them.',
@@ -65,11 +74,15 @@ def build():
     target.write_text(json.dumps(envelope,sort_keys=True,indent=2)+'\n')
     result = dict(roots=240,orbits=8,adjacency_pairs=6720,branches=264,primitive=240,payload_sha256=envelope['payload_sha256'])
     sources = ['python/export_integral_atlas.py','python/build_resonance_downloads.py',
+               'python/export_raghava_coxeter.py','python/check_raghava_coxeter_lean.py',
+               'python/perfectpower/raghava_coxeter.py','python/tests/test_raghava_coxeter.py',
+               'receipts/period_bridge_deep/unification.json','receipts/period_bridge_deep/unification_lean.json',
+               'PerfectPower/PhaseFiber.lean','PerfectPower/CoxeterPhaseBridge.lean','PerfectPower/RaghavaInduction.lean',
                'python/tests/test_resonance_scene.mjs','python/tests/test_resonance_shaders.py'] + ['web/integral-families/'+name for name in
                ('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','calculator.html',
-                'resonance.jsx','resonance-math.jsx','resonance-scene.js','resonance-effects.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt')]
+                'resonance.jsx','resonance-math.jsx','resonance-scene.js','resonance-effects.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt','unification.html','unification-template.html','unification.json')]
     receipt = dict(schema='pp-spectral-atlas/1', title='The 384–264 Resonance', geometry=result,
-                   url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',
+                   url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',unification=unification,
                    calculator_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/calculator.html',
                    chapters=['framework','phase resonance','higher structure motif','nerve motif'],
                    runtime=dict(react='19.2.6',three='0.186.1',autonomous=True,mode_duration_seconds=18,
@@ -84,7 +97,7 @@ def build():
                    source_sha256={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in sources})
     (ROOT/'receipts/period_bridge_deep/atlas.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
     names=('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','atlas-data.json','calculator.html',
-           'resonance.bundle.js','resonance.bundle.js.LEGAL.txt','resonance.css')
+           'resonance.bundle.js','resonance.bundle.js.LEGAL.txt','resonance.css','unification.html','unification.json')
     assets={name:(ROOT/'web/integral-families'/name).read_text() for name in names}
     dedicated=dict(schema='pp-integral-atlas-web/1',assets=assets,
                    hashes={name:hashlib.sha256(raw.encode()).hexdigest() for name,raw in assets.items()})

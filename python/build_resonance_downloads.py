@@ -37,6 +37,7 @@ def assemble(download, inline):
     for before, after in [
         ('./calculator.html', SITE + '/integrals/calculator.html'),
         ('./atlas.html', SITE + '/integrals/atlas.html'),
+        ('./unification.html', SITE + '/integrals/unification.html'),
         ('/research', SITE + '/research'),
         ('/PerfectPower-Deep-Integral-Monograph.pdf', SITE + '/PerfectPower-Deep-Integral-Monograph.pdf'),
     ]:
@@ -46,10 +47,13 @@ def assemble(download, inline):
     standalone = standalone.replace('<link rel="stylesheet" href="./resonance.css">', '<style>' + css + '</style>')
     standalone = standalone.replace('<script src="./resonance.bundle.js" defer></script>', '<script>' + javascript + '</script>')
     fragment = (WEB / 'inline-fragment.html').read_text().replace('__RESONANCE_CSS__', css).replace('__RESONANCE_JAVASCRIPT__', javascript)
-    if len(fragment.encode()) >= 1_000_000:
+    if inline and len(fragment.encode()) >= 1_000_000:
         raise ValueError('Inline visualization exceeds one megabyte')
     results = []
-    for target, content in [(Path(download), standalone), (Path(inline), fragment)]:
+    copies=[(Path(download), standalone)]
+    if inline:
+        copies.append((Path(inline), fragment))
+    for target, content in copies:
         parser = Inspect()
         parser.feed(content)
         if parser.scripts != 1 or parser.roots != 1 or parser.external:
@@ -64,6 +68,6 @@ def assemble(download, inline):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--download', type=Path, required=True)
-    parser.add_argument('--inline', type=Path, required=True)
+    parser.add_argument('--inline', type=Path, help='also produce a self-contained in-chat fragment')
     args = parser.parse_args()
     print(json.dumps(assemble(args.download, args.inline)))

@@ -72,7 +72,7 @@ def render(source, output):
             ('Earlier selected-order identities', 'All 120 retained exactly'),
             ('Artifact conductor bridge', '384 / 264 / 240, with exact roles'),
             ('Actual E8 adjoint operator', '248 dimensions; zero at weight two'),
-            ('Minimal complete trace observations', '8 reflection / 30 adjoint states'),
+            ('Actual operator and induction bridge', 'Integral lattice map; refinement preserves the zero'),
             ('Coxeter classification and tuner', 'Every crystallographic type; B/C design rule'),
         ]
         table = Table([[Paragraph(a, cell), Paragraph(b, cell)] for a, b in rows], colWidths=[237, 260])

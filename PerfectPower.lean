@@ -496,3 +496,7 @@ import PerfectPower.PlanningDiagram
 import PerfectPower.PetersenPlanning
 import PerfectPower.ArithmeticHeightPauli
 import PerfectPower.ArithmeticModes
+
+import PerfectPower.PhaseFiber
+import PerfectPower.CoxeterPhaseBridge
+import PerfectPower.RaghavaInduction

@@ -744,3 +744,9 @@ scouting-metrics-test:
 .PHONY: scouting-depth-test
 scouting-depth-test:
 	$(PY) -m unittest discover -s python/tests -p 'test_scouting*.py'
+
+.PHONY: raghava-coxeter-kernel raghava-coxeter-test
+raghava-coxeter-kernel:
+	python3 python/check_raghava_coxeter_lean.py
+raghava-coxeter-test:
+	PYTHONPATH=python python3 -m unittest discover -s python/tests -p 'test_raghava_coxeter.py'

@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>One operator, two exact descriptions · PerfectPower</title>
+<style>
+:root{color-scheme:dark;font-family:Georgia,"Times New Roman",serif;color:#dbe4ff;background:#050918;line-height:1.75;font-size:17px}*{box-sizing:border-box}body{margin:0}header,main,footer{max-width:920px;margin:auto;padding:28px}header{display:flex;justify-content:space-between;gap:20px;font:13px system-ui,sans-serif;border-bottom:1px solid #53658455}a{color:#b5cdff;text-underline-offset:4px}main{padding-top:18px}h1,h2,h3{font-family:system-ui,sans-serif;font-weight:500;line-height:1.3;color:#eef2ff}h1{font-size:34px;letter-spacing:-1px;margin-top:24px}h2{font-size:25px;margin-top:42px}h3{font-size:20px;margin-top:30px}p{margin:17px 0}math{font-family:"Cambria Math","STIX Two Math",serif;font-size:1.08em}math[display=block]{margin:24px 0;max-width:100%;overflow-x:auto;padding:4px 0}pre{overflow:auto;padding:18px;background:#10182d;font-size:13px}code{font-size:.85em;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border-bottom:1px solid #53658455;text-align:left;padding:10px}blockquote{border-left:2px solid #9eafe2;padding-left:20px;margin-left:0;color:#c6d2ee}footer{font:13px system-ui,sans-serif;padding-bottom:55px;border-top:1px solid #53658455}@media(max-width:580px){:root{font-size:16px}header,main,footer{padding:20px}h1{font-size:28px}h2{font-size:23px}math[display=block]{font-size:1em}}
+</style></head>
+<body><header><a href="./">← The resonance field</a><a href="./unification.json">Exact results and proof record</a></header><main><h1 id="a-real-coxeterraghava-bridge-lattices-moments-and-induction">A
+real Coxeter–Raghava bridge: lattices, moments, and induction</h1>
+<p><strong>PerfectPower. Mathematical chapter prepared 17 October
+2026.</strong></p>
+<p>The construction in this chapter replaces an association between
+pictures by an explicit integral coordinate map and a commuting system
+of exact operations. The eight-dimensional E₈ Coxeter lattice is
+identified with an integral cyclotomic companion module, including its
+bilinear form. Raghava’s inverse-binomial series are then applied to
+that actual operator. A triangular Bernoulli transformation identifies
+their traces with the real even Mellin traces of the same operator.
+Ordinary cyclic induction acts on both descriptions, and the
+transformation intertwines the two actions. This is the precise sense of
+unification used here. It does not assert an equivalence of unspecified
+higher categories or a physical model.</p>
+<h2 id="the-actual-integral-lattice-map">The actual integral lattice
+map</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>A</mi><annotation encoding="application/x-tex">A</annotation></semantics></math>
+be the E₈ Cartan matrix in the simple-root ordering used by
+<code>e8_periods.py</code>, and let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mo>=</mo><msub><mi>s</mi><mn>8</mn></msub><mi>⋯</mi><msub><mi>s</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">C=s_8\cdots s_1</annotation></semantics></math>
+be its Coxeter matrix, with
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>s</mi><mn>1</mn></msub><annotation encoding="application/x-tex">s_1</annotation></semantics></math>
+acting first. In the coefficient basis of</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Λ</mi><mo>=</mo><mi>ℤ</mi><mrow><mo stretchy="true" form="prefix">[</mo><mi>X</mi><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>Φ</mi><mn>30</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>Φ</mi><mn>30</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>X</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>X</mi><mn>8</mn></msup><mo>+</mo><msup><mi>X</mi><mn>7</mn></msup><mo>−</mo><msup><mi>X</mi><mn>5</mn></msup><mo>−</mo><msup><mi>X</mi><mn>4</mn></msup><mo>−</mo><msup><mi>X</mi><mn>3</mn></msup><mo>+</mo><mi>X</mi><mo>+</mo><mn>1</mn><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\Lambda=\mathbb Z[X]/(\Phi_{30}(X)),\qquad
+\Phi_{30}(X)=X^8+X^7-X^5-X^4-X^3+X+1,
+</annotation></semantics></math></p>
+<p>write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>D</mi><annotation encoding="application/x-tex">D</annotation></semantics></math>
+for multiplication by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>.
+Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>
+be the eighth simple-root coordinate vector, and form the Krylov
+matrix</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo>,</mo><mi>C</mi><mi>v</mi><mo>,</mo><msup><mi>C</mi><mn>2</mn></msup><mi>v</mi><mo>,</mo><mi>…</mi><mo>,</mo><msup><mi>C</mi><mn>7</mn></msup><mi>v</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B=(v,Cv,C^2v,\ldots,C^7v).
+</annotation></semantics></math></p>
+<p>For the supplied ordering, this is the explicit matrix</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>1</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd><mtd columnalign="center" style="text-align: center"><mn>0</mn></mtd></mtr></mtable><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+B=\begin{pmatrix}
+0&amp;0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;1\\
+0&amp;0&amp;0&amp;0&amp;0&amp;1&amp;1&amp;0\\
+0&amp;0&amp;0&amp;0&amp;1&amp;1&amp;1&amp;1\\
+0&amp;0&amp;0&amp;1&amp;0&amp;1&amp;1&amp;1\\
+0&amp;0&amp;1&amp;0&amp;0&amp;1&amp;1&amp;1\\
+0&amp;1&amp;0&amp;0&amp;0&amp;1&amp;1&amp;0\\
+1&amp;0&amp;0&amp;0&amp;0&amp;1&amp;0&amp;0
+\end{pmatrix}.
+</annotation></semantics></math></p>
+<p>It has an integral two-sided inverse. Thus it is a unimodular change
+of lattice coordinates, rather than a map available only after allowing
+rational denominators. Direct multiplication establishes</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>B</mi><mo>=</mo><mi>B</mi><mi>D</mi><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>B</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>B</mi><mo>=</mo><mi>B</mi><msup><mi>B</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><mi>I</mi><mo>,</mo><mspace width="2.0em"></mspace><mi>G</mi><mo>=</mo><msup><mi>B</mi><mi>𝖳</mi></msup><mi>A</mi><mi>B</mi><mi>.</mi></mrow><annotation encoding="application/x-tex">
+CB=BD,\qquad B^{-1}B=BB^{-1}=I,
+\qquad G=B^{\mathsf T}AB.
+\tag{1}
+</annotation></semantics></math></p>
+<p>Equip
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Λ</mi><annotation encoding="application/x-tex">\Lambda</annotation></semantics></math>
+with the Gram matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>,
+rather than silently assigning it a different trace form. Equation (1)
+gives an isometry of integral lattices with their specified operators.
+In particular,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>𝖳</mi></msup><mi>A</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>B</mi><mi>y</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>x</mi><mi>𝖳</mi></msup><mi>G</mi><mi>y</mi><mo>,</mo><mspace width="2.0em"></mspace><msup><mi>C</mi><mi>n</mi></msup><mi>B</mi><mo>=</mo><mi>B</mi><msup><mi>D</mi><mi>n</mi></msup><mspace width="1.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>≥</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(Bx)^{\mathsf T}A(By)=x^{\mathsf T}Gy,
+\qquad C^nB=BD^n\quad(n\ge0).
+\tag{2}
+</annotation></semantics></math></p>
+<p>The norm-two vectors correspond under this map, with their pairings
+preserved. This supplies an actual cyclotomic realization of the E₈ root
+lattice and its Coxeter action. It does not identify a list of primitive
+field-conjugate branches with a list of roots by their common size.</p>
+<p>The proof is finite integral arithmetic for the inverse, intertwining
+and Gram identities, followed by induction for (2). The source
+<code>PerfectPower/CoxeterPhaseBridge.lean</code>, in namespace
+<code>PerfectPower.CoxeterPhaseBridge</code>, records the concrete
+matrices and the statements <code>bridge_inverse_left</code>,
+<code>bridge_inverse_right</code>, <code>integralBridge</code>,
+<code>coxeter_intertwining</code>, <code>all_power_conjugacy</code>,
+<code>transported_cartan</code>, <code>bridge_preserves_bilinear</code>
+and <code>norm_two_iff</code>. The chapter’s final proof-status
+paragraph distinguishes these source statements from successful kernel
+compilation.</p>
+<p>There is also a precise connection to the original phase of conductor
+1680. Put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><msub><mi>ζ</mi><mn>1680</mn></msub></mrow><annotation encoding="application/x-tex">\omega=\zeta_{1680}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><msup><mi>ω</mi><mn>56</mn></msup><mo>=</mo><msub><mi>ζ</mi><mn>30</mn></msub></mrow><annotation encoding="application/x-tex">\eta=\omega^{56}=\zeta_{30}</annotation></semantics></math>.
+The inclusion
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>η</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊂</mo><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(\eta)\subset\mathbb Q(\omega)</annotation></semantics></math>
+has degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>384</mn><mi>/</mi><mn>8</mn><mo>=</mo><mn>48</mn></mrow><annotation encoding="application/x-tex">384/8=48</annotation></semantics></math>.
+Consequently multiplication by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>ω</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(\omega)</annotation></semantics></math>,
+considered as a rational cyclic module, is 48 copies of multiplication
+by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>η</mi><annotation encoding="application/x-tex">\eta</annotation></semantics></math>
+on
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ℚ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>η</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb Q(\eta)</annotation></semantics></math>.
+After the rational extension of (1), it is 48 copies of the E₈
+reflection module. Choosing a basis of this field extension makes that
+direct-sum isomorphism explicit; no canonical integral basis of the
+larger extension is claimed here. Every operator trace developed below
+therefore scales by 48 on this conductor-1680 module.</p>
+<h2 id="one-operator-produces-the-raghava-and-mellin-families">One
+operator produces the Raghava and Mellin families</h2>
+<p>Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+be a finite-order complex linear operator on a finite-dimensional space
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math>.
+Its eigenvalues have the form
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi>q</mi></mrow></msup><annotation encoding="application/x-tex">e^{2\pi iq}</annotation></semantics></math>,
+with representatives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>q</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le q&lt;1</annotation></semantics></math>.
+Repeated eigenvalues retain their multiplicities. A finite-order
+operator is diagonalizable, because its minimal polynomial divides a
+polynomial
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mi>N</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">X^N-1</annotation></semantics></math>
+with distinct complex roots. Equivalently, averaging any positive
+Hermitian inner product over its finite cyclic group makes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+unitary. Thus the following spectral construction does not require the
+displayed matrix of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>T</mi><annotation encoding="application/x-tex">T</annotation></semantics></math>
+to be Hermitian in its original basis.</p>
+<p>Define</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>L</mi><mi>T</mi></msub><mo>=</mo><mn>2</mn><mi>I</mi><mo>+</mo><mi>T</mi><mo>+</mo><msup><mi>T</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+L_T=2I+T+T^{-1}.
+</annotation></semantics></math></p>
+<p>Its eigenvalue at phase
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>π</mi><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>4</mn><msup><mo>cos</mo><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>4</mn><mo stretchy="true" form="postfix">]</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\lambda(q)=2+2\cos(2\pi q)=4\cos^2(\pi q)\in[0,4].
+\tag{3}
+</annotation></semantics></math></p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j\ge1</annotation></semantics></math>,
+define the finite harmonic factors by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∏</mo><mrow><mi>a</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></munderover><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>z</mi><msup><mi>a</mi><mn>2</mn></msup></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>r</mi><mo>≥</mo><mn>0</mn></mrow></munder><msub><mi>e</mi><mi>r</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>z</mi><mi>r</mi></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\prod_{a=1}^{n-1}\left(1+\frac{z}{a^2}\right)
+=\sum_{r\ge0}e_r(n)z^r.
+</annotation></semantics></math></p>
+<p>The empty product at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math>
+is one. The scalar identity used by Raghava is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munder><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><mfrac><mrow><msub><mi>e</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><msup><mi>t</mi><mrow><mn>2</mn><mi>n</mi></mrow></msup></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><msup><mn>4</mn><mi>j</mi></msup><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><mo>arcsin</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>j</mi></mrow></msup><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">|</mo><mi>t</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>&lt;</mo><mn>2</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\sum_{n\ge1}\frac{e_{j-1}(n)t^{2n}}
+ {n^2\binom{2n}{n}}
+=\frac{4^j}{(2j)!}\arcsin(t/2)^{2j},\qquad |t|&lt;2.
+\tag{4}
+</annotation></semantics></math></p>
+<p>This is <a href="https://arxiv.org/html/2607.09904v2">Raghava, Eq.
+(2.2)</a>, with the paper’s stated classical antecedents retained. The
+coefficient normalization is important: at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">j=1</annotation></semantics></math>,
+the right side is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>arcsin</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">2\arcsin(t/2)^2</annotation></semantics></math>.</p>
+<p><strong>Operator moment theorem.</strong> The series</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℛ</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><mfrac><mrow><msub><mi>e</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><msubsup><mi>L</mi><mi>T</mi><mi>n</mi></msubsup></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\mathcal R_j(T)=\sum_{n\ge1}
+\frac{e_{j-1}(n)L_T^n}{n^2\binom{2n}{n}}
+\tag{5}
+</annotation></semantics></math></p>
+<p>converges in every matrix norm, and its eigenvalue at phase
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+is</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>j</mi></mrow></msup><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>j</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac{(2\pi)^{2j}}{(2j)!}(q-\tfrac12)^{2j}.
+\tag{6}
+</annotation></semantics></math></p>
+<p>To prove this, take
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>=</mo><msqrt><mrow><mi>λ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow></msqrt><mo>=</mo><mn>2</mn><mrow><mo stretchy="true" form="prefix">|</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow></mrow><annotation encoding="application/x-tex">t=\sqrt{\lambda(q)}=2|\cos(\pi q)|</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>q</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le q\le1</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>arcsin</mo><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mo>cos</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">|</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>π</mi><mrow><mo stretchy="true" form="prefix">|</mo><mi>q</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">|</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\arcsin(|\cos(\pi q)|)=\pi|q-\tfrac12|.
+</annotation></semantics></math></p>
+<p>Equation (4) therefore gives (6) whenever
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&lt;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\lambda(q)&lt;4</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\lambda=4</annotation></semantics></math>,
+every summand of (4) is nonnegative. Taking
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>↑</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">t\uparrow2</annotation></semantics></math>,
+monotone convergence for the counting measure gives the endpoint sum as
+the finite limit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>π</mi><mrow><mn>2</mn><mi>j</mi></mrow></msup><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow><annotation encoding="application/x-tex">\pi^{2j}/(2j)!</annotation></semantics></math>.
+This is the required endpoint argument; substituting a boundary value
+into an open-disk power-series statement without it would leave a gap.
+There are finitely many eigenspaces, so absolute scalar convergence on
+each eigenspace gives convergence of the matrix series after conjugation
+by a fixed diagonalizing matrix. This proves (5)–(6), including trivial
+eigenphases.</p>
+<p>Write</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>dim</mo><mi>V</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>r</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>π</mi><mrow><mo>−</mo><mn>2</mn><mi>j</mi></mrow></msup><mo>Tr</mo><msub><mi>ℛ</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><msup><mn>4</mn><mi>j</mi></msup><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><munder><mo>∑</mo><mi>q</mi></munder><msub><mi>m</mi><mi>q</mi></msub><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo>−</mo><mfrac displaystyle="false"><mn>1</mn><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>j</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+r_0(T)=\dim V,\qquad
+r_j(T)=\pi^{-2j}\operatorname{Tr}\mathcal R_j(T)
+=\frac{4^j}{(2j)!}\sum_q m_q(q-\tfrac12)^{2j}.
+\tag{7}
+</annotation></semantics></math></p>
+<p>These definitions extend linearly to finite rationally weighted phase
+profiles. Positivity is needed for the endpoint proof for each scalar
+series, not for extending the resulting identities by finite rational
+linearity.</p>
+<p>For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math>,
+write</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><mi>T</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mo>Re</mo><munder><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><mfrac><mrow><mo>Tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>T</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><msup><mi>n</mi><mrow><mn>2</mn><mi>k</mi></mrow></msup></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>z</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>Z</mi><mi>T</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msup><mi>π</mi><mrow><mn>2</mn><mi>k</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+Z_T(2k)=\operatorname{Re}\sum_{n\ge1}
+\frac{\operatorname{Tr}(T^n)}{n^{2k}},\qquad
+z_k(T)=Z_T(2k)/\pi^{2k}.
+\tag{8}
+</annotation></semantics></math></p>
+<p>Absolute convergence follows from finite dimension and finite order.
+When describing coordinate vectors below, define the additional zeroth
+coordinate to be
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>0</mn></msub><mo>=</mo><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mo>dim</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">z_0=r_0=\dim V</annotation></semantics></math>.
+<strong>This is a coordinate convention, not a definition or evaluation
+of a Mellin trace at weight zero.</strong></p>
+<h2 id="the-exact-invertible-bernoulli-transformation">The exact
+invertible Bernoulli transformation</h2>
+<p><strong>Moment–Mellin theorem.</strong> For every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\ge1</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msub><mi>z</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>0</mn></mrow><mi>k</mi></munderover><msub><mi>c</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub><msub><mi>r</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>T</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>c</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mn>4</mn><mrow><mi>k</mi><mo>−</mo><mi>j</mi></mrow></msup><msub><mi>B</mi><mrow><mn>2</mn><mi>k</mi><mo>−</mo><mn>2</mn><mi>j</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>k</mi><mo>−</mo><mn>2</mn><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+\boxed{z_k(T)=\sum_{j=0}^k c_{kj}r_j(T),\qquad
+c_{kj}=\frac{(-1)^{k+1}4^{k-j}B_{2k-2j}(1/2)}
+ {2(2k-2j)!}.}
+\tag{9}
+</annotation></semantics></math></p>
+<p>For the zeroth row set
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mn>00</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">c_{00}=1</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mn>0</mn><mi>j</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_{0j}=0</annotation></semantics></math>
+for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j&gt;0</annotation></semantics></math>.
+For every finite order
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>,
+the matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ℬ</mi><mi>K</mi></msub><mo>=</mo><msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>c</mi><mrow><mi>k</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>,</mo><mi>j</mi><mo>≤</mo><mi>K</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\mathcal B_K=(c_{kj})_{0\le k,j\le K}</annotation></semantics></math>
+is triangular and invertible over
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ℚ</mi><annotation encoding="application/x-tex">\mathbb Q</annotation></semantics></math>.</p>
+<p>The classical Bernoulli Fourier identity, <a
+href="https://dlmf.nist.gov/24.8.E1">DLMF 24.8.1</a>, gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>Re</mo><msub><mo>Li</mo><mrow><mn>2</mn><mi>k</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mi>q</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>π</mi><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>k</mi></mrow></msup></mrow><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><msub><mi>B</mi><mrow><mn>2</mn><mi>k</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\operatorname{Re}\operatorname{Li}_{2k}(e^{2\pi iq})
+=\frac{(-1)^{k+1}(2\pi)^{2k}}{2(2k)!}B_{2k}(q).
+</annotation></semantics></math></p>
+<p>Expand the Bernoulli polynomial about
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math>.
+Its odd centered coefficients vanish, because
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>B</mi><mrow><mn>2</mn><mi>k</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>B</mi><mrow><mn>2</mn><mi>k</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">B_{2k}(1-x)=B_{2k}(x)</annotation></semantics></math>.
+Substituting (7) into this finite centered expansion gives (9) term by
+term. Its diagonal is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mrow><mi>k</mi><mi>k</mi></mrow></msub><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>/</mi><mn>2</mn><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_{kk}=(-1)^{k+1}/2\ne0</annotation></semantics></math>.
+Hence the inverse is obtained recursively without any assumption of
+numerical independence of special constants.</p>
+<p>The first two rows are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mfrac><msub><mi>r</mi><mn>0</mn></msub><mn>12</mn></mfrac><mo>+</mo><mfrac><msub><mi>r</mi><mn>1</mn></msub><mn>2</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>z</mi><mn>2</mn></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mn>7</mn><msub><mi>r</mi><mn>0</mn></msub></mrow><mn>720</mn></mfrac><mo>+</mo><mfrac><msub><mi>r</mi><mn>1</mn></msub><mn>12</mn></mfrac><mo>−</mo><mfrac><msub><mi>r</mi><mn>2</mn></msub><mn>2</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+z_1=-\frac{r_0}{12}+\frac{r_1}{2},\qquad
+z_2=-\frac{7r_0}{720}+\frac{r_1}{12}-\frac{r_2}{2}.
+\tag{10}
+</annotation></semantics></math></p>
+<p>Consequently the retained even Mellin observations and Raghava
+moments contain exactly the same information at each finite order. The
+complete families determine the inversion-symmetrized finite phase
+profile: if two profiles differ, collect their distinct values of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>q</mi><mo>−</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mn>2</mn></msup><annotation encoding="application/x-tex">(q-1/2)^2</annotation></semantics></math>.
+The first corresponding power moments form a Vandermonde system with
+distinct nodes, so their simultaneous vanishing forces every combined
+weight to be zero. This recovers pair weights at
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">1-q</annotation></semantics></math>,
+rather than the orientation of an individual nonreal phase or the Lie
+bracket of a representation. A short truncation need not already
+identify the whole profile. The coordinate transformation is additive
+and respects intertwining operators; it is not claimed to turn tensor
+products into products of integral values.</p>
+<h2 id="an-exact-inverse-binomial-evaluation-from-the-e₈-operator">An
+exact inverse-binomial evaluation from the E₈ operator</h2>
+<p>Return to the actual eight-dimensional Coxeter matrix
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math>,
+and put
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mn>2</mn><mi>I</mi><mo>+</mo><mi>C</mi><mo>+</mo><msup><mi>C</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">L=2I+C+C^{-1}</annotation></semantics></math>.
+Its primitive phases have exponents</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>17</mn><mo>,</mo><mn>19</mn><mo>,</mo><mn>23</mn><mo>,</mo><mn>29</mn><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mn>30</mn><mo stretchy="false" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+1,7,11,13,17,19,23,29\pmod {30}.
+</annotation></semantics></math></p>
+<p>None is trivial, so
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>
+has no eigenvalue four. The finite matrix identity</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mn>4</mn></msup><mo>−</mo><mn>7</mn><msup><mi>L</mi><mn>3</mn></msup><mo>+</mo><mn>14</mn><msup><mi>L</mi><mn>2</mn></msup><mo>−</mo><mn>8</mn><mi>L</mi><mo>+</mo><mi>I</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">
+L^4-7L^3+14L^2-8L+I=0
+\tag{11}
+</annotation></semantics></math></p>
+<p>gives an efficient exact integer recurrence. If
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mo>Tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msup><mi>L</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">a_n=\operatorname{Tr}(L^n)</annotation></semantics></math>,
+then</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>a</mi><mn>0</mn></msub><mo>,</mo><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>2</mn></msub><mo>,</mo><msub><mi>a</mi><mn>3</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mn>8</mn><mo>,</mo><mn>14</mn><mo>,</mo><mn>42</mn><mo>,</mo><mn>146</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>4</mn></mrow></msub><mo>=</mo><mn>7</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>3</mn></mrow></msub><mo>−</mo><mn>14</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>2</mn></mrow></msub><mo>+</mo><mn>8</mn><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>a</mi><mi>n</mi></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+(a_0,a_1,a_2,a_3)=(8,14,42,146),
+\qquad
+a_{n+4}=7a_{n+3}-14a_{n+2}+8a_{n+1}-a_n.
+\tag{12}
+</annotation></semantics></math></p>
+<p>Thus
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>4</mn></msub><mo>=</mo><mn>538</mn></mrow><annotation encoding="application/x-tex">a_4=538</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>5</mn></msub><mo>=</mo><mn>2044</mn></mrow><annotation encoding="application/x-tex">a_5=2044</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>6</mn></msub><mo>=</mo><mn>7902</mn></mrow><annotation encoding="application/x-tex">a_6=7902</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mn>7</mn></msub><mo>=</mo><mn>30856</mn></mrow><annotation encoding="application/x-tex">a_7=30856</annotation></semantics></math>.
+These are traces of the actual matrix in (1), not coefficients chosen to
+fit a desired sum.</p>
+<p>The phase formula (7) gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>56</mn><mn>45</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>r</mi><mn>2</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>10696</mn><mn>151875</mn></mfrac><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>r</mi><mn>3</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>194896</mn><mn>102515625</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+r_1(C)=\frac{56}{45},\qquad
+r_2(C)=\frac{10696}{151875},\qquad
+r_3(C)=\frac{194896}{102515625}.
+</annotation></semantics></math></p>
+<p>In particular,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><munder><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><mfrac><msub><mi>a</mi><mi>n</mi></msub><mrow><msup><mi>n</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>56</mn><msup><mi>π</mi><mn>2</mn></msup></mrow><mn>45</mn></mfrac><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+\boxed{\sum_{n\ge1}\frac{a_n}{n^2\binom{2n}{n}}
+=\frac{56\pi^2}{45}.}
+\tag{13}
+</annotation></semantics></math></p>
+<p>Equations (1), (5) and (12) are the mechanism behind this evaluation.
+At higher orders the same integer sequence
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mi>n</mi></msub><annotation encoding="application/x-tex">a_n</annotation></semantics></math>
+is weighted by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">e_{j-1}(n)</annotation></semantics></math>,
+producing
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>π</mi><mrow><mn>2</mn><mi>j</mi></mrow></msup><msub><mi>r</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>C</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\pi^{2j}r_j(C)</annotation></semantics></math>.
+No new operator must be fitted for each weight. On the conductor-1680
+module with action by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>ω</mi><mn>56</mn></msup><annotation encoding="application/x-tex">\omega^{56}</annotation></semantics></math>,
+equation (13) scales to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>896</mn><msup><mi>π</mi><mn>2</mn></msup><mi>/</mi><mn>15</mn></mrow><annotation encoding="application/x-tex">896\pi^2/15</annotation></semantics></math>.</p>
+<p>There is a fully explicit independent remainder bound. Let
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\rho&lt;1</annotation></semantics></math>
+be any rational upper bound for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mo>cos</mo><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>π</mi><mi>/</mi><mn>30</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\cos^2(\pi/30)</annotation></semantics></math>,
+obtained here from rational Machin bounds for
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>π</mi><annotation encoding="application/x-tex">\pi</annotation></semantics></math>
+and a cosine Taylor remainder. Then
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>a</mi><mi>n</mi></msub><mo>≤</mo><mn>8</mn><msup><mrow><mo stretchy="true" form="prefix">(</mo><mn>4</mn><mi>ρ</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">0\le a_n\le8(4\rho)^n</annotation></semantics></math>.
+The inequalities</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>e</mi><mi>r</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>≤</mo><mfrac><msup><mn>2</mn><mi>r</mi></msup><mrow><mi>r</mi><mi>!</mi></mrow></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mo>≥</mo><mfrac><msup><mn>4</mn><mi>n</mi></msup><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+e_r(n)\le\frac{2^r}{r!},\qquad
+\binom{2n}{n}\ge\frac{4^n}{2n+1}
+</annotation></semantics></math></p>
+<p>show that the tail after
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N\ge0</annotation></semantics></math>
+terms at moment
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>
+is at most</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mn>24</mn><mspace width="0.167em"></mspace><msup><mn>2</mn><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mfrac><msup><mi>ρ</mi><mrow><mi>N</mi><mo>+</mo><mn>1</mn></mrow></msup><mrow><mn>1</mn><mo>−</mo><mi>ρ</mi></mrow></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac{24\,2^{j-1}}{(j-1)!(N+1)}
+\frac{\rho^{N+1}}{1-\rho}.
+\tag{14}
+</annotation></semantics></math></p>
+<p>The first inequality follows by bounding the elementary symmetric sum
+by a power of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>a</mi><mo>≥</mo><mn>1</mn></mrow></msub><msup><mi>a</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\sum_{a\ge1}a^{-2}&lt;2</annotation></semantics></math>,
+divided by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mi>!</mi></mrow><annotation encoding="application/x-tex">r!</annotation></semantics></math>.
+The second follows because the central binomial coefficient is the
+largest of the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2n+1</annotation></semantics></math>
+coefficients whose sum is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mn>4</mn><mi>n</mi></msup><annotation encoding="application/x-tex">4^n</annotation></semantics></math>.
+For
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≥</mo><mi>N</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge N+1</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><msup><mi>n</mi><mn>2</mn></msup><mo>≤</mo><mn>3</mn><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">(2n+1)/n^2\le3/(N+1)</annotation></semantics></math>,
+giving (14) by a geometric sum. The implementation sums (13)
+independently using exact rational coefficients, then rounds the result
+outward. At 4096 terms it obtains an enclosing interval of width less
+than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.518</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>20</mn></mrow></msup></mrow><annotation encoding="application/x-tex">1.518\times10^{-20}</annotation></semantics></math>,
+around
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>12.28217436580009</mn><annotation encoding="application/x-tex">12.28217436580009</annotation></semantics></math>.
+The closed value is used only for an independent interval comparison,
+never to manufacture the partial sum or remainder.</p>
+<h2 id="the-actual-adjoint-lift-and-its-cancellation">The actual adjoint
+lift and its cancellation</h2>
+<p>The exact construction in <code>python/perfectpower/e8_lift.py</code>
+uses the E₈ Lie bracket and simple-root exponentials to construct an
+actual adjoint Coxeter lift
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>T</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><annotation encoding="application/x-tex">T_{\mathrm{ad}}</annotation></semantics></math>,
+not merely an abstract 248-dimensional vector space. Its signed
+root-space cycles have product-one sign around every orbit. Removing
+those signs by a checked coordinate change gives eight regular cycles of
+length thirty, together with the Cartan spectrum above. The Lie
+construction and lift conventions are described in
+<code>docs/E8_LIFT_NOTE.md</code>, with classical inputs from <a
+href="https://arxiv.org/html/2602.19632v1">Geck’s simply-laced
+lattice-cocycle construction</a> and <a
+href="https://arxiv.org/abs/1608.00510">Adams–He’s Coxeter-lift order
+theorem</a>. Thus its phase multiplicities are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>m</mi><mi>j</mi></msub><mo>=</mo><mn>8</mn><mo>+</mo><msub><mn>𝟏</mn><mrow><mo>gcd</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mn>30</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mn>0</mn><mo>≤</mo><mi>j</mi><mo>&lt;</mo><mn>30</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+m_j=8+\mathbf1_{\gcd(j,30)=1},\qquad0\le j&lt;30.
+\tag{15}
+</annotation></semantics></math></p>
+<p>Direct evaluation of (7) for (15) gives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>248</mn></mrow><annotation encoding="application/x-tex">r_0=248</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mo>=</mo><mn>124</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">r_1=124/3</annotation></semantics></math>.
+Equation (10) therefore proves
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Z</mi><msub><mi>T</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Z_{T_{\mathrm{ad}}}(2)=0</annotation></semantics></math>,
+while (5) identifies that same cancellation with a positive
+inverse-binomial operator identity:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><munder><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><mfrac><mrow><mo>Tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>L</mi><msub><mi>T</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mi>n</mi></msubsup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>124</mn><msup><mi>π</mi><mn>2</mn></msup></mrow><mn>3</mn></mfrac><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+\boxed{\sum_{n\ge1}
+\frac{\operatorname{Tr}(L_{T_{\mathrm{ad}}}^n)}{n^2\binom{2n}{n}}
+=\frac{124\pi^2}{3}.}
+\tag{16}
+</annotation></semantics></math></p>
+<p>The eight trivial phases in (15) contribute eigenvalue four to
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><msub><mi>T</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub></msub><annotation encoding="application/x-tex">L_{T_{\mathrm{ad}}}</annotation></semantics></math>.
+They can be removed exactly. Each contributes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>π</mi><mrow><mn>2</mn><mi>j</mi></mrow></msup><mi>/</mi><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow><annotation encoding="application/x-tex">\pi^{2j}/(2j)!</annotation></semantics></math>
+to the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>-th
+moment. At first order this yields</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><munder><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></munder><mfrac><mrow><mo>Tr</mo><mrow><mo stretchy="true" form="prefix">(</mo><msubsup><mi>L</mi><msub><mi>T</mi><mrow><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></msub><mi>n</mi></msubsup><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mn>8</mn><mspace width="0.167em"></mspace><msup><mn>4</mn><mi>n</mi></msup></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac linethickness="0"><mrow><mn>2</mn><mi>n</mi></mrow><mi>n</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>112</mn><msup><mi>π</mi><mn>2</mn></msup></mrow><mn>3</mn></mfrac><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+\boxed{\sum_{n\ge1}
+\frac{\operatorname{Tr}(L_{T_{\mathrm{ad}}}^n)-8\,4^n}
+ {n^2\binom{2n}{n}}
+=\frac{112\pi^2}{3}.}
+\tag{17}
+</annotation></semantics></math></p>
+<p>The remaining coefficients are nonnegative, and their 240 eigenvalues
+are bounded by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn><mi>ρ</mi><mo>&lt;</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">4\rho&lt;4</annotation></semantics></math>.
+Replacing rank eight by rank 240 in (14) gives an exponential tail bound
+for (17) and its higher moments. A separate 2048-term rational sum
+encloses (17) with width less than
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5.382</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup></mrow><annotation encoding="application/x-tex">5.382\times10^{-9}</annotation></semantics></math>.
+Adding the removed endpoint contribution gives (16), and (10) recovers
+the exact zero Mellin trace. This provides a convergent computational
+route to the same cancellation through Raghava’s positive sums.</p>
+<h2 id="induction-is-an-exact-operation-on-the-moments">Induction is an
+exact operation on the moments</h2>
+<p>Consider a finite weighted phase profile
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>=</mo><msub><mo>∑</mo><mi>q</mi></msub><msub><mi>w</mi><mi>q</mi></msub><mrow><mo stretchy="true" form="prefix">[</mo><mi>q</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">A=\sum_q w_q[q]</annotation></semantics></math>,
+with rational weights and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>q</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le q&lt;1</annotation></semantics></math>.
+Ordinary cyclic induction of degree
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d\ge1</annotation></semantics></math>
+replaces each phase
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>q</mi><annotation encoding="application/x-tex">q</annotation></semantics></math>
+by</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>q</mi><mo>+</mo><mi>u</mi></mrow><mi>d</mi></mfrac><mo>,</mo><mspace width="2.0em"></mspace><mn>0</mn><mo>≤</mo><mi>u</mi><mo>&lt;</mo><mi>d</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+\frac{q+u}{d},\qquad0\le u&lt;d,
+</annotation></semantics></math></p>
+<p>with the original weight on each branch. Write
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r_j(A)</annotation></semantics></math>
+for (7) with these weights, including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mo>∑</mo><mi>q</mi></msub><msub><mi>w</mi><mi>q</mi></msub></mrow><annotation encoding="application/x-tex">r_0(A)=\sum_qw_q</annotation></semantics></math>.</p>
+<p><strong>Moment transfer theorem.</strong> For every
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j\ge0</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>Ind</mo><mi>d</mi></msub><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>j</mi></munderover><msub><mi>M</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>r</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo></mrow><annotation encoding="application/x-tex">
+r_j(\operatorname{Ind}_d A)=\sum_{k=0}^j M_d(j,k)r_k(A),
+\tag{18}
+</annotation></semantics></math></p>
+<p>where</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mn>4</mn><mrow><mi>j</mi><mo>−</mo><mi>k</mi></mrow></msup><msup><mi>d</mi><mrow><mo>−</mo><mn>2</mn><mi>j</mi></mrow></msup></mrow><mrow><mrow><mo stretchy="true" form="prefix">(</mo><mn>2</mn><mi>j</mi><mo>−</mo><mn>2</mn><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>!</mi></mrow></mfrac><munderover><mo>∑</mo><mrow><mi>u</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow></munderover><msup><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>−</mo><mfrac><mrow><mi>d</mi><mo>−</mo><mn>1</mn></mrow><mn>2</mn></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>2</mn><mi>j</mi><mo>−</mo><mn>2</mn><mi>k</mi></mrow></msup><mi>.</mi></mrow><annotation encoding="application/x-tex">
+M_d(j,k)=\frac{4^{j-k}d^{-2j}}{(2j-2k)!}
+\sum_{u=0}^{d-1}\left(u-\frac{d-1}{2}\right)^{2j-2k}.
+\tag{19}
+</annotation></semantics></math></p>
+<p>The diagonal is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>d</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>j</mi></mrow></msup></mrow><annotation encoding="application/x-tex">M_d(j,j)=d^{1-2j}</annotation></semantics></math>,
+including
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>d</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>d</mi></mrow><annotation encoding="application/x-tex">M_d(0,0)=d</annotation></semantics></math>.
+To prove the formula, write the centered phase of an induced branch
+as</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>q</mi><mo>+</mo><mi>u</mi></mrow><mi>d</mi></mfrac><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><mfrac><mrow><mi>q</mi><mo>−</mo><mn>1</mn><mi>/</mi><mn>2</mn><mo>+</mo><mi>u</mi><mo>−</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><mi>d</mi></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\frac{q+u}{d}-\frac12
+=\frac{q-1/2+u-(d-1)/2}{d}.
+</annotation></semantics></math></p>
+<p>Expand its even power by the binomial theorem. Every odd power of the
+second centered term sums to zero under
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>↔</mo><mi>d</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">u\leftrightarrow d-1-u</annotation></semantics></math>.
+The remaining even terms give (18)–(19), with the factorials cancelling
+exactly as displayed. The finite centered sums can be evaluated by the
+Bernoulli–Faulhaber formula, so the algorithm does not have to enumerate
+an enormous number of branches.</p>
+<p>Inducing first by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math>
+and then by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math>
+produces the same phases, with multiplicity, as induction by
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">de</annotation></semantics></math>:
+the two branch indices combine by the ordinary mixed-radix bijection.
+Therefore</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>d</mi></msub><msub><mi>M</mi><mi>e</mi></msub><mo>=</mo><msub><mi>M</mi><mrow><mi>d</mi><mi>e</mi></mrow></msub><mi>.</mi></mrow><annotation encoding="application/x-tex">
+M_dM_e=M_{de}.
+\tag{20}
+</annotation></semantics></math></p>
+<p>The finite matrices here are truncated at a common order;
+triangularity makes the same equality valid at every such truncation.
+The full-fiber root-of-unity filter also gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>z</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>Ind</mo><mi>d</mi></msub><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msup><mi>d</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>k</mi></mrow></msup><msub><mi>z</mi><mi>k</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="1.0em"></mspace><mi>k</mi><mo>≥</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+z_k(\operatorname{Ind}_d A)=d^{1-2k}z_k(A),\quad k\ge1.
+</annotation></semantics></math></p>
+<p>Together with mass scaling, this proves the commuting identity</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><msub><mi>ℬ</mi><mi>K</mi></msub><msub><mi>M</mi><mi>d</mi></msub><mo>=</mo><mo>diag</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo>,</mo><msup><mi>d</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>,</mo><msup><mi>d</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup><mo>,</mo><mi>…</mi><mo>,</mo><msup><mi>d</mi><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mi>K</mi></mrow></msup><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>ℬ</mi><mi>K</mi></msub><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+\boxed{\mathcal B_K M_d
+=\operatorname{diag}(d,d^{-1},d^{-3},\ldots,d^{1-2K})\mathcal B_K.}
+\tag{21}
+</annotation></semantics></math></p>
+<p>It is also an independent consequence of the Bernoulli multiplication
+formula. Equation (21) is the exact connection among branch filtering,
+Raghava moments and Mellin traces. It makes no appeal to a numerical
+resemblance between their values.</p>
+<h2 id="a-preserved-cancellation-and-a-sharp-uniqueness-statement">A
+preserved cancellation and a sharp uniqueness statement</h2>
+<p>At first order, (18) becomes</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>Ind</mo><mi>d</mi></msub><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><msub><mi>r</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mi>d</mi></mfrac><mo>+</mo><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mrow><mn>6</mn><mi>d</mi></mrow></mfrac><msub><mi>r</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+r_1(\operatorname{Ind}_d A)
+=\frac{r_1(A)}d+\frac{d^2-1}{6d}r_0(A).
+</annotation></semantics></math></p>
+<p>Define the cancellation defect</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><msub><mi>r</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>−</mo><mfrac><mrow><msub><mi>r</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>6</mn></mfrac><mo>=</mo><mn>2</mn><msub><mi>z</mi><mn>1</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>.</mi></mrow><annotation encoding="application/x-tex">
+\Delta(A)=r_1(A)-\frac{r_0(A)}6=2z_1(A).
+</annotation></semantics></math></p>
+<p>Since
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>Ind</mo><mi>d</mi></msub><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>d</mi><mspace width="0.167em"></mspace><msub><mi>r</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">r_0(\operatorname{Ind}_d A)=d\,r_0(A)</annotation></semantics></math>,</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>Δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mo>Ind</mo><mi>d</mi></msub><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>Δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mi>d</mi><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+\boxed{\Delta(\operatorname{Ind}_d A)=\Delta(A)/d.}
+\tag{22}
+</annotation></semantics></math></p>
+<p>Thus induction preserves and reflects an exact zero; it cannot
+produce a zero defect from a nonzero one. For the actual adjoint profile
+(15),
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>248</mn></mrow><annotation encoding="application/x-tex">r_0=248</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mo>=</mo><mn>124</mn><mi>/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">r_1=124/3</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta=0</annotation></semantics></math>.
+At
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mn>264</mn></mrow><annotation encoding="application/x-tex">d=264</annotation></semantics></math>,
+equations (18) and (22) give</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mi>′</mi><mo>=</mo><mn>65472</mn><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>r</mi><mn>1</mn></msub><mi>′</mi><mo>=</mo><mn>10912</mn><mo>,</mo><mspace width="2.0em"></mspace><mi>Δ</mi><mi>′</mi><mo>=</mo><mn>0</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+r_0&#39;=65472,\qquad r_1&#39;=10912,\qquad\Delta&#39;=0.
+\tag{23}
+</annotation></semantics></math></p>
+<p>Inflating the order-thirty spectrum to conductor 1680 before
+induction does not change any phase or moment, and places this
+degree-264 operation at conductor 443520. This is how the reference
+multiplier enters a genuine operation on the E₈ spectral object. The
+resulting mass 65472 is the induced adjoint dimension; it is not the
+dimension of E₈ or the size of one primitive fiber.</p>
+<p>There is a useful uniqueness theorem with an explicit scope. Among
+the two-parameter phase profiles</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>w</mi><mi>j</mi></msub><mo>=</mo><mi>a</mi><mo>+</mo><mi>b</mi><mspace width="0.167em"></mspace><msub><mn>𝟏</mn><mrow><mo>gcd</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>j</mi><mo>,</mo><mn>30</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn></mrow></msub><mo>,</mo><mspace width="2.0em"></mspace><mi>a</mi><mo>,</mo><mi>b</mi><mo>∈</mo><mi>ℚ</mi><mo>,</mo></mrow><annotation encoding="application/x-tex">
+w_j=a+b\,\mathbf1_{\gcd(j,30)=1},\qquad a,b\in\mathbb Q,
+</annotation></semantics></math></p>
+<p>the mass and first moment are</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mn>30</mn><mi>a</mi><mo>+</mo><mn>8</mn><mi>b</mi><mo>,</mo><mspace width="2.0em"></mspace><msub><mi>r</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mn>451</mn><mi>a</mi><mo>+</mo><mn>112</mn><mi>b</mi></mrow><mn>90</mn></mfrac><mi>.</mi></mrow><annotation encoding="application/x-tex">
+r_0=30a+8b,\qquad r_1=\frac{451a+112b}{90}.
+</annotation></semantics></math></p>
+<p>Direct subtraction gives</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><menclose notation="box"><mrow><mi>Δ</mi><mo>=</mo><mfrac><mrow><mi>a</mi><mo>−</mo><mn>8</mn><mi>b</mi></mrow><mn>90</mn></mfrac><mo>;</mo><mspace width="2.0em"></mspace><mi>Δ</mi><mo>=</mo><mn>0</mn><mo>⇔</mo><mi>a</mi><mo>=</mo><mn>8</mn><mi>b</mi><mi>.</mi></mrow></menclose><annotation encoding="application/x-tex">
+\boxed{\Delta=\frac{a-8b}{90};\qquad\Delta=0\iff a=8b.}
+\tag{24}
+</annotation></semantics></math></p>
+<p>Thus the actual adjoint mixture has the uniquely required ratio of
+regular to primitive multiplicity in this ansatz. With nonnegative
+integral
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math>,
+the smallest nonzero cancelling profile is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mn>8</mn><mo>,</mo><mi>b</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a=8,b=1</annotation></semantics></math>,
+of mass 248; every other such profile is an integral multiple. This does
+not classify all cyclic representations with a weight-two zero. The
+restriction to this regular-plus-primitive family is essential.</p>
+<p>The Lean source <code>PerfectPower/RaghavaInduction.lean</code>
+defines arbitrary finite rational weighted profiles and proves the
+finite centered-square formula underlying (22). Its named statements
+include <code>fiberMoment_eq</code>, <code>inducedMoment_eq</code>,
+<code>induction_defect</code>, <code>induction_zero_iff</code>,
+<code>coxeter_family_defect</code> and
+<code>coxeter_family_zero_iff</code>. Its finite rational formula is
+valid for arbitrary rational phase coordinates. The analytic
+identification with (5) additionally uses the principal representatives
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>≤</mo><mi>q</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\le q\le1</annotation></semantics></math>,
+as specified above.</p>
+<h2 id="why-the-tempting-240-to-240-identification-fails">Why the
+tempting 240-to-240 identification fails</h2>
+<p>The primitive branches above the fixed phase
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ζ</mi><mn>1680</mn></msub><annotation encoding="application/x-tex">\zeta_{1680}</annotation></semantics></math>
+have exponents</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>=</mo><mn>1</mn><mo>+</mo><mn>1680</mn><mi>t</mi><mo>,</mo><mspace width="1.0em"></mspace><mn>0</mn><mo>≤</mo><mi>t</mi><mo>&lt;</mo><mn>264</mn><mo>,</mo><mspace width="1.0em"></mspace><mo>gcd</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>u</mi><mo>,</mo><mn>443520</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>1</mn><mi>.</mi></mrow><annotation encoding="application/x-tex">
+u=1+1680t,\quad0\le t&lt;264,\quad\gcd(u,443520)=1.
+</annotation></semantics></math></p>
+<p>There are 240 such branches. Every exponent satisfies
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>u</mi><mo>≡</mo><mn>1</mn><mrow><mspace width="0.222em"></mspace><mo stretchy="false" form="prefix">(</mo><mo>mod</mo><mspace width="0.222em"></mspace><mn>30</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">u\equiv1\pmod{30}</annotation></semantics></math>.
+Restricting their characters from
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>443520</mn></msub><annotation encoding="application/x-tex">C_{443520}</annotation></semantics></math>
+to its natural
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mn>30</mn></msub><annotation encoding="application/x-tex">C_{30}</annotation></semantics></math>
+subgroup therefore gives 240 copies of the single phase
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ζ</mi><mn>30</mn></msub><annotation encoding="application/x-tex">\zeta_{30}</annotation></semantics></math>.
+The root-space part of the actual E₈ Coxeter lift gives eight copies of
+every thirtieth-root phase. The multiplicity functions disagree, so no
+equivariant isomorphism exists for this proposed natural restriction. An
+arbitrary bijection of the two underlying sets cannot repair that
+representation-theoretic obstruction.</p>
+<p>The integral lattice isomorphism (1) and the commuting formulas (9),
+(18) and (21) avoid this problem. They identify specified operators and
+preserve specified forms or transformations. They do not require the
+false fixed-fiber identification.</p>
+<h2 id="proof-scope-reproducibility-and-originality">Proof scope,
+reproducibility and originality</h2>
+<p>The analytic results in this chapter have mathematical proofs from
+the cited classical scalar identities, finite spectral calculus, the
+centered binomial expansion and elementary convergence estimates.
+Historical priority for their present combination or the displayed E₈
+inverse-binomial evaluations has not been established. They are reported
+as derived bridges and concrete evaluations, rather than as a newly
+discovered special-function summation principle.</p>
+<p>The exact Python implementation is
+<code>python/perfectpower/raghava_coxeter.py</code>. Its
+<code>receipt(order=8)</code> recomputes the operator polynomial, moment
+and Mellin coordinates, triangular inverse, degree-264 transfer checks,
+fixed-fiber obstruction and independent series enclosures. The focused
+command is
+<code>PYTHONPATH=python python3 -m unittest python/tests/test_raghava_coxeter.py -v</code>.
+All eleven focused tests passed during preparation of this chapter. They
+include 6560 exact scalar phase comparisons through conductor forty and
+weight sixteen, 81 powers of the actual eight-dimensional matrix, 41
+powers of the actual signed 248-dimensional adjoint matrix, exact
+transfer composition and Bernoulli diagonalization, and positive-series
+tail comparisons. These checks exercise independent finite mechanisms;
+they are not substitutes for the general mathematical proofs.</p>
+<p>The three new Lean modules compile with pinned Lean 4.20.0 and
+Mathlib 4.20.0. The integrated audit checks all 102 theorem
+declarations: 15 finite Fourier and fiber theorems, 61 integral Coxeter
+and operator theorems, and 26 rational phase-moment and induction
+theorems. Their axiom reports contain only the standard propext,
+Classical.choice and Quot.sound; no admitted proof, native decision
+oracle or new axiom occurs. Reproduce with
+<code>make raghava-coxeter-kernel</code>. The source-bound result is
+retained in
+<code>receipts/period_bridge_deep/unification_lean.json</code>. The
+infinite-series, functional-calculus and analytic convergence arguments
+in this chapter remain mathematical proofs outside the Lean kernel; the
+Lean files do not import them as new axioms.</p>
+</main><footer><a href="https://github.com/towre676-cloud/perfectpower">Complete source and Lean proofs</a> · <a href="/PerfectPower-Deep-Integral-Monograph.pdf">Complete mathematical reader</a></footer></body>
+</html>

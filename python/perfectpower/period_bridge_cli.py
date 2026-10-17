@@ -99,6 +99,8 @@ def explain(packet):
 
 
 def add_commands(sub):
+    unified=sub.add_parser('raghava-coxeter', help='compute the actual Coxeter operator, Raghava moments and exact induction bridge')
+    unified.add_argument('--order',type=int,default=8,help='highest moment order, from 1 through 32')
     p = sub.add_parser('integral-families', help='inspect retained Raghava, cyclotomic and E8 integral-family results')
     p.add_argument('--receipt', type=Path, help='summary JSON or its containing directory; defaults to the retained release')
     p.add_argument('--details', action='store_true', help='include sibling results.json and verify its declared SHA-256 when present')
@@ -106,6 +108,10 @@ def add_commands(sub):
 
 
 def cli(args):
+    if args.command == 'raghava-coxeter':
+        from .raghava_coxeter import receipt as operator_receipt
+        print(json.dumps(operator_receipt(args.order),sort_keys=True,indent=2))
+        return True
     if args.command != 'integral-families':
         return False
     packet = receipt(args.receipt, args.details)
