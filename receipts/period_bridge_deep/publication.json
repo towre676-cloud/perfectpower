@@ -1,0 +1,87 @@
+{
+  "schema": "pp-deep-publication/1",
+  "snapshot": "7dc14ccf89b8c4efbbb93cc543b97d028b43b411",
+  "site": {
+    "project_id": "appgprj_6acc6ba276c8819185f63d2e211f1634",
+    "version": 27,
+    "source_commit": "eaa06eb7ba1b5fe594ebb9998a3f97dcefb65085",
+    "deployment_id": "appgdep_6ad2deb5c63c81918883b793b8ccc169",
+    "status": "succeeded",
+    "url": "https://perfectpower-explorer-download.towre676.chatgpt.site"
+  },
+  "live_checks": [
+    {
+      "path": "/api/research",
+      "status": "live",
+      "bytes": 82360,
+      "sha256": "28248e198a1abe8d167eb9fa3150ffd8c636b99a24b9960b45957b078b2ceb1f",
+      "schema": "pp-research-applications/1",
+      "source_parent": "eebe82437f631e889883e6eafb2e32f8791aea77",
+      "payload_sha256": "73faf0d70ecd90e35a223ea3c9508a755a70ef678f817212092f287fe2c587d4",
+      "integral_counts": {
+        "coxeter_geometry_cases": 64,
+        "coxeter_geometry_roots": 10814,
+        "dirichlet_characters": 80,
+        "exact_character_dft_checks": 863,
+        "exact_character_period_comparisons": 160,
+        "generating_coefficient_families": 130,
+        "global_taylor_checks": 16,
+        "jacobi_basis_triples": 2511496,
+        "maximum_generating_weight": 131,
+        "observable_adjoint_dimension": 30,
+        "observable_reflection_dimension": 8,
+        "prior_pair_decompositions": 120,
+        "residue_pair_periods": 270,
+        "rigorous_generating_value_enclosures": 26,
+        "rigorous_master_comparisons": 10,
+        "second_family_coefficients": 65,
+        "simple_lift_bracket_checks": 245024,
+        "supplementary_basis_reductions": 33,
+        "supplementary_family_coefficients": 65
+      }
+    },
+    {
+      "path": "/integrals/browser-data.json",
+      "status": 200,
+      "bytes": 2449042,
+      "sha256": "1cc29cc42481048cae392930cf0bd0e5551e4fccfe4c1db5efe6f81339c90674",
+      "schema": "pp-integral-browser/1",
+      "payload_sha256": "0198411500ec96905a65b7bd30d1c84583b42a0c9ffa7988a88947cbbfdd4d40",
+      "payload_digest_valid": true,
+      "generating_families": 130
+    },
+    {
+      "path": "/integrals/",
+      "status": 200,
+      "bytes": 4117,
+      "sha256": "39f6e62a904eb4bf1437b545a1e4c9ed5e0bb641e7c76ed0394722919c2e93f5",
+      "integral_explorer_present": true
+    },
+    {
+      "path": "/PerfectPower-Deep-Integral-Monograph.pdf",
+      "status": 200,
+      "bytes": 321612,
+      "sha256": "1fe87d848b675d36339f7821ba02c24e2a9fc9348dc9792c463edf6300ba9add",
+      "pdf_signature": true
+    }
+  ],
+  "validation": {
+    "python_tests": 108,
+    "browser_comparisons": 330,
+    "source_and_receipt_digests": 21,
+    "site_production_build_passed": true,
+    "browser_visual_qa": "Not run: control-browser unavailable. Actual JavaScript arithmetic, production build, live HTTP assets, and all PDF pages checked."
+  },
+  "delivery": {
+    "archive_name": "PerfectPower_Deep_Complete.zip",
+    "monograph_name": "PerfectPower_Deep_Integral_Monograph_Updated.pdf",
+    "source_zip": "https://github.com/towre676-cloud/perfectpower/archive/7dc14ccf89b8c4efbbb93cc543b97d028b43b411.zip",
+    "monograph": "https://perfectpower-explorer-download.towre676.chatgpt.site/PerfectPower-Deep-Integral-Monograph.pdf"
+  },
+  "native": {
+    "installed_executables_rebuilt": false,
+    "live_data_is_executable_upgrade": false
+  },
+  "scope": "This publication evidence follows the immutable engine snapshot without altering its identity."
+}
+
