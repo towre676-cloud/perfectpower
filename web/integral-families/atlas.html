@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08141e">
+<meta name="description" content="An interactive atlas of Raghava integrals, cyclotomic branches, actual E8 roots and exact Mellin cancellations.">
+<title>Spectral Atlas · PerfectPower</title><link rel="stylesheet" href="./atlas.css">
+</head>
+<body>
+<header class="atlas-header"><a class="wordmark" href="/research"><span class="brand-integral" aria-hidden="true">∫</span><span>PerfectPower<span class="wordmark-sub">SPECTRAL ATLAS</span></span></a><nav class="header-links" aria-label="Resources"><a href="./calculator.html">Exact calculators <span aria-hidden="true">↗</span></a><a href="/PerfectPower-Deep-Integral-Monograph.pdf">Read the mathematics <span aria-hidden="true">↗</span></a></nav></header>
+<main>
+<div class="atlas-shell">
+<section class="chapter-copy" aria-labelledby="chapter-title">
+<p id="chapter-number" class="eyebrow">03 / THE ROOT SYSTEM</p>
+<h1 id="chapter-title">E₈, made<br><em>tangible.</em></h1>
+<p id="chapter-description" class="chapter-description">240 roots. Eight dimensions. One remarkable projection. Follow a root through its 30-step Coxeter orbit.</p>
+<div id="chapter-controls" class="chapter-controls"></div>
+<div id="chapter-result" class="chapter-result" aria-live="polite"></div>
+<details class="explanation"><summary>What is being shown?</summary><div id="chapter-proof" class="proof-copy"></div></details>
+</section>
+<section class="visual-panel" aria-labelledby="visual-title">
+<div class="visual-toolbar"><div><span class="live-dot" aria-hidden="true"></span><span id="visual-title">ACTUAL E8 ROOT COORDINATES</span></div><button id="save-view" type="button" class="text-button">Save view <span aria-hidden="true">↓</span></button></div>
+<div id="visual-stage" class="visual-stage"><svg id="atlas-plot" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="plot-title plot-description"><title id="plot-title">The E8 root system</title><desc id="plot-description">Loading the verified geometric coordinates.</desc></svg><div id="loading-message" class="loading-message" role="status">Opening the atlas…</div></div>
+<div class="visual-bottom"><p id="visual-caption">A geometric projection of actual roots. Select a point to inspect its eight coordinates.</p><button id="play" type="button" aria-pressed="false" class="play-button">Play orbit <span aria-hidden="true">▷</span></button></div>
+<div id="visual-legend" class="visual-legend" aria-label="Diagram legend"></div>
+</section>
+</div>
+<nav class="chapter-nav" aria-label="Atlas chapters">
+<button type="button" data-chapter="phase" aria-pressed="false"><span class="chapter-index">01</span><span><b>Lift the phase</b><small>264 branches, precisely separated</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+<button type="button" data-chapter="raghava" aria-pressed="false"><span class="chapter-index">02</span><span><b>Collect the sum</b><small>Raghava’s arcsine connection</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+<button type="button" data-chapter="e8" aria-pressed="true"><span class="chapter-index">03</span><span><b>Meet E₈</b><small>Actual roots, orbits and neighbors</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+<button type="button" data-chapter="mellin" aria-pressed="false"><span class="chapter-index">04</span><span><b>Tune the balance</b><small>Watch an exact integral vanish</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+</nav>
+<footer class="atlas-footer"><p>A shared language of phases.<br><span>Distinct mathematical objects, with their connections made explicit.</span></p><p id="data-status" role="status">Checking the source identities…</p><a href="https://github.com/towre676-cloud/perfectpower/archive/refs/heads/main.zip">Complete source ↓</a></footer>
+</main>
+<script src="./engine.js"></script><script src="./atlas-model.js"></script><script src="./atlas.js" defer></script>
+</body>
+</html>

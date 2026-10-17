@@ -1,6 +1,6 @@
 # Spectral Atlas: what the pictures actually mean
 
-The live `/integrals/` entry point now offers four linked views. The previous
+The geometric atlas at `/integrals/atlas.html` offers four linked mathematical views. The previous
 exact calculators remain at `/integrals/calculator.html`. The mathematical
 account remains the [deep monograph](PERIOD_BRIDGE_DEEP_MONOGRAPH.md), with
 the [PDF](PERIOD_BRIDGE_DEEP_MONOGRAPH.pdf) and all prior receipts retained.
@@ -37,7 +37,7 @@ Jacobian `exp(-t)`; the displayed sample interval starts at positive t.
 
 The user can inspect roots by direct selection or by native orbit and step
 controls, rotate the projection by dragging, pause the orbit animation, and
-export the current diagram as SVG with state and source identity. There is
+export the current diagram as SVG with state and source identity. The archived geometric atlas has
 no animation on first load. Changing chapters pauses playback. Reduced-motion
 preferences never trigger automatic motion. Narrow layouts stack controls
 and reflow the chapter navigation; diagrams use their measured container size.
@@ -53,3 +53,46 @@ The visualization publishes through the dedicated mathematical assets in
 `data/integral_atlas_web.json` and the Site's `/api/integral-atlas` receipt.
 The broader shared research and web feeds retain their previous published
 versions; their refresh was blocked by automatic approval review.
+
+
+## Autonomous React + Three.js experience
+
+The `/integrals/` entry point now opens a React 19.2.6 / Three.js 0.186.1
+scene based on the two user-supplied Claude artifacts. Their midnight-blue
+field, blue cyclotomic lobe, coral E8 lobe, upper violet bridge, lower gold
+convergence, central lavender fiber, and four-part automatic sequence guide
+the composition. The published Code tabs were examined directly. The new
+scene adds spatial curves, additive particle shaders, postprocessed bloom,
+camera orbit, and smooth 2.2-second transitions. Time uses elapsed seconds;
+each mode lasts 18 simulation seconds. Animation and scene cycling start
+automatically, except when the browser requests reduced motion. The user can
+pause, hold a scene, adjust speed/glow, orbit, and save the rendered frame.
+Hidden tabs suspend progression. No data or telemetry is transmitted.
+
+The scene includes 384 decorative positions around the cyclotomic node,
+the 240 source-derived E8 projections, and 264 decorative positions around
+the fiber node. Only the E8 node uses root coordinates; the other point
+arrangements are illustrations of counts, not embeddings or equivalences.
+The root display scales the normalized Coxeter-plane x/y coordinates by
+0.93 and the optional exponent-seven depth by 0.62. Cloud rotation and
+pulsation are visual operations. The violet cloud, gold cloud, toroidal
+knots, braids, curved connections, and simplices are conceptual motifs.
+The component's selected-node explanations distinguish these from exact
+phase maps and integral identities. In particular, there is no asserted
+higher categorical equivalence, categorical trace of 264, or physical E8
+model. Raghava's moment scaling and the Mellin cancellation remain available
+in the retained exact calculators and monograph.
+
+`web/integral-families/resonance.jsx` owns the React interface;
+`resonance-scene.js` owns Three.js. Install the pinned packages in that
+directory, then run `npm run build`. The release carries a self-contained
+`resonance.bundle.js` and its linked dependency licenses, so the hosted
+scene requires no CDN. `python/export_integral_atlas.py` binds the new
+source/assets into the dedicated mathematical receipt and feed.
+
+`node python/tests/test_resonance_scene.mjs` executes the actual Three
+geometry/curve constructors, checks all root positions, source geometry,
+determinism, and phase counts. It does not run a WebGL context or establish
+browser appearance. The original atlas's fixture test now loads `atlas.html`.
+The production build and live asset/receipt checks are reported separately
+from browser QA.

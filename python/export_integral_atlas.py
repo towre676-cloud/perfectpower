@@ -65,16 +65,20 @@ def build():
     target.write_text(json.dumps(envelope,sort_keys=True,indent=2)+'\n')
     result = dict(roots=240,orbits=8,adjacency_pairs=6720,branches=264,primitive=240,payload_sha256=envelope['payload_sha256'])
     sources = ['python/export_integral_atlas.py'] + ['web/integral-families/'+name for name in
-               ('index.html','atlas.js','atlas-model.js','atlas.css','calculator.html')]
-    receipt = dict(schema='pp-spectral-atlas/1', title='Spectral Atlas', geometry=result,
+               ('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','calculator.html',
+                'resonance.jsx','resonance-scene.js','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt')]
+    receipt = dict(schema='pp-spectral-atlas/1', title='The 384–264 Resonance', geometry=result,
                    url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',
                    calculator_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/calculator.html',
-                   chapters=['cyclotomic refinement','Raghava arcsine sums','actual E8 roots','Mellin balance'],
+                   chapters=['framework','phase resonance','higher structure motif','nerve motif'],
+                   runtime=dict(react='19.2.6',three='0.186.1',autonomous=True,mode_duration_seconds=18),
+                   atlas_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/atlas.html',
                    monograph='docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md',
                    scope='Exact underlying geometry and integer arithmetic; floating-point projections and curves. No identification of distinct 240-element objects.',
                    source_sha256={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in sources})
     (ROOT/'receipts/period_bridge_deep/atlas.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
-    names=('index.html','atlas.js','atlas-model.js','atlas.css','atlas-data.json','calculator.html')
+    names=('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','atlas-data.json','calculator.html',
+           'resonance.bundle.js','resonance.bundle.js.LEGAL.txt','resonance.css')
     assets={name:(ROOT/'web/integral-families'/name).read_text() for name in names}
     dedicated=dict(schema='pp-integral-atlas-web/1',assets=assets,
                    hashes={name:hashlib.sha256(raw.encode()).hexdigest() for name,raw in assets.items()})

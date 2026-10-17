@@ -1,0 +1,10 @@
+import {createRequire} from 'node:module';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const require=createRequire(import.meta.url);
+const paths=[root,path.resolve(root,'../../desktop/explorer'),...(process.env.RESONANCE_DEPENDENCY_PATHS||'').split(path.delimiter).filter(Boolean)];
+const resolve=(id)=>require.resolve(id,{paths});
+const {build}=await import(resolve('esbuild'));
+await build({entryPoints:[path.join(root,'resonance.jsx')],bundle:true,minify:true,format:'iife',target:['es2020'],outfile:path.join(root,'resonance.bundle.js'),legalComments:'linked',define:{'process.env.NODE_ENV':'"production"'},plugins:[{name:'pinned-runtime-dependencies',setup(b){b.onResolve({filter:/^(react(?:-dom)?)(\/.*)?$/},args=>({path:resolve(args.path)}));b.onResolve({filter:/^three(?:\/.*)?$/},args=>({path:args.path==='three'?path.join(path.dirname(resolve('three')),'three.module.js'):resolve(args.path)}));}}]});
+console.log('Built self-contained React + Three.js resonance experience.');

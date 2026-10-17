@@ -12,7 +12,7 @@ class Element{
  setPointerCapture(){} getBoundingClientRect(){return {left:0,top:0,width,height};}
 }
 function parse(html,owner=null){for(const m of html.matchAll(/<([a-z][\w:-]*)\b([^>]*)>/gi)){const attrs={};for(const a of m[2].matchAll(/([\w:-]+)(?:="([^"]*)")?/g))attrs[a[1]]=a[2]??'';if(attrs.id||Object.keys(attrs).some(k=>k.startsWith('data-')))new Element(m[1],attrs,owner);}}
-parse(fs.readFileSync(path.join(dir,'index.html'),'utf8'));
+parse(fs.readFileSync(path.join(dir,'atlas.html'),'utf8'));
 const document={getElementById:id=>registry.get(id)||null,querySelectorAll:selector=>{const key=selector.match(/^\[([^\]]+)\]$/)?.[1];return [...nodes].filter(n=>key in n.attrs);},addEventListener(){},hidden:false};
 const context={console,document,location:{hash:''},history:{replaceState(){}},TextEncoder,crypto:crypto.webcrypto,fetch:async()=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(path.join(dir,'atlas-data.json'),'utf8'))}),ResizeObserver:class{constructor(fn){resizers.push(fn);}observe(){this.fn?.();}},requestAnimationFrame:()=>1,cancelAnimationFrame(){},addEventListener(){},setTimeout,URL,Blob};
 context.IntegralEngine=require(path.join(dir,'engine.js'));context.AtlasModel=require(path.join(dir,'atlas-model.js'));vm.createContext(context);vm.runInContext(fs.readFileSync(path.join(dir,'atlas.js'),'utf8'),context);
