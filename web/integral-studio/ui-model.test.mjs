@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {PRESETS,VIEWS,DEFAULT_COEFFICIENTS,TOUR,cleanCoefficients,decodeState,shareState} from './ui-model.mjs';
+import {evaluateEnergy,gramMatrix} from './math-engine.mjs';
+test('Every share link preserves the actual mixture and selected view',()=>{for(const p of [...PRESETS,{coefficients:[.1234567890123456,-.00000000091,1/3,Math.PI],view:'energy'}]){const decoded=decodeState(shareState(p.coefficients,p.view));assert.deepEqual(decoded.coefficients,p.coefficients);assert.equal(decoded.view,p.view);assert.equal(decoded.shared,true);}});
+test('Malformed and unsafe share state falls back to a finite working mixture',()=>{for(const input of ['?mix=garbage','?mix=[1,2,3]','?mix=[1,2,null,4]','?mix=[99999,0,0,0]','?mix=%7B%7D'])assert.deepEqual(decodeState(input).coefficients,DEFAULT_COEFFICIENTS);assert.equal(decodeState('?view=missing').view,'integral');});
+test('All guided chapters point to real views and working finite identities',()=>{for(const step of TOUR){assert.ok(VIEWS.some(v=>v.id===step.view));const p=PRESETS.find(p=>p.id===step.preset);assert.ok(p);assert.ok(Number.isFinite(evaluateEnergy(p.coefficients).value));}});
+test('Golden energy and nonzero orthogonal partner are not conflated',()=>{const gold=PRESETS.find(p=>p.id==='golden');assert.ok(Math.abs(evaluateEnergy(gold.coefficients).value-8*Math.PI**3/15)<1e-12);const orth=PRESETS.find(p=>p.id==='orthogonal');const g=gramMatrix();assert.ok(Math.abs(orth.coefficients[0]*g[0][0]+orth.coefficients[1]*g[0][1])<1e-12);assert.ok(evaluateEnergy(orth.coefficients).value>1000);});

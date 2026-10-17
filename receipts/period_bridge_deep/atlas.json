@@ -2,21 +2,26 @@
   "atlas_url": "https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/atlas.html",
   "calculator_url": "https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/calculator.html",
   "chapters": [
-    "framework",
-    "phase resonance",
-    "higher structure motif",
-    "nerve motif"
+    "integral",
+    "spectrum",
+    "fourier",
+    "energy"
   ],
   "geometry": {
     "adjacency_pairs": 6720,
     "branches": 264,
     "orbits": 8,
-    "payload_sha256": "95ca515ca6486b84832550077ca070f3ac2cbe2f7981fe3f71f206121c1ce0e2",
+    "payload_sha256": "8dc555d6a72aba14edcce5785250cf8ab27d10c0e7da7250b1458b6457e846dc",
     "primitive": 240,
     "roots": 240
   },
-  "monograph": "docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md",
-  "runtime": {
+  "legacy_chapters": [
+    "framework",
+    "phase resonance",
+    "higher structure motif",
+    "nerve motif"
+  ],
+  "legacy_runtime": {
     "adaptive_quality": true,
     "autonomous": true,
     "background_grid": [
@@ -42,15 +47,19 @@
     "visible_root_coordinates": true,
     "volumetric_torus_strands": 12
   },
+  "monograph": "docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md",
   "schema": "pp-spectral-atlas/1",
   "scope": "Exact underlying geometry and integer arithmetic; floating-point projections and curves. No identification of distinct 240-element objects.",
   "source_sha256": {
     "PerfectPower/CoxeterPhaseBridge.lean": "b9a7639c9b4255ca6856649ed45438b042f8ac3fbcc0d5020eb5227c19a3ca15",
     "PerfectPower/PhaseFiber.lean": "5ee791015b102d657e7d8049ac8aeb12ff262718cf4f20231038822f39f0eecd",
     "PerfectPower/RaghavaInduction.lean": "876da123547a6e9d4ea4a076c752ac81b7946e5b11d9a982050e25c903a11f40",
-    "python/build_resonance_downloads.py": "2d0cf81417488b1991b3fdb01e33dae8c58a75e322a6e29aa63dc5056fccf03c",
+    "docs/INTEGRAL_STUDIO_MATHEMATICS.md": "c68df8a88b2b117eaeff4da28143cd7287aaba7c6dbbf81a3605a128950b419f",
+    "docs/INTEGRAL_STUDIO_MONOGRAPH.md": "25318ef6ca8969b5f13324011d68498447926d623bb02a9d01f769667c478b14",
+    "python/build_integral_studio_monograph.py": "4dce9520c3199b43fe7b41448cae1696b27bb073fb6fd8d77b6d47fcbac8c286",
+    "python/build_resonance_downloads.py": "e3c79a8b2cba55633a3c82f030dd5695cfa22e655836945d3506ecb61c8174cd",
     "python/check_raghava_coxeter_lean.py": "cd99311e9904304a76ef4bf9829d1f2eaf491e3ee9e848b0db15681840a0637e",
-    "python/export_integral_atlas.py": "81b014391196fe6c2bb975068e398cf386c24cdafc5b3d0ecbe8bc2b56f12aff",
+    "python/export_integral_atlas.py": "48ced7a970b4507021a144d39180b1f185ff1581124d02cb652835d83e8e0053",
     "python/export_raghava_coxeter.py": "1643b6a34f46f46fedf287b02cdedb89fb2a72cb3ed8f2e0a27375ea95cca405",
     "python/perfectpower/raghava_coxeter.py": "a8484e04dc5141c8db1f22c2f5749a7e10e8cb44e481db3f57a77ba4383f8493",
     "python/tests/test_raghava_coxeter.py": "70d07524e6762b82e78711ce31888225bb29dafc77f3836c8ea88f969f866383",
@@ -64,7 +73,7 @@
     "web/integral-families/atlas.js": "61b0b2ba7e487e638fcf27a7f918ba331cac5d53e371fadb4110d17d8adb96e0",
     "web/integral-families/build-resonance.mjs": "32c25bef8b92f962c06fabbef8f5bd5756820469f95c5e106e2408ff701abf78",
     "web/integral-families/calculator.html": "39f6e62a904eb4bf1437b545a1e4c9ed5e0bb641e7c76ed0394722919c2e93f5",
-    "web/integral-families/index.html": "8262b7dfb26b9900f1ddf76fe64dcac663481c8968e4feb7642d680c1824f005",
+    "web/integral-families/index.html": "c7cda9af834a5671a308533d1e98cd6cbcd6055ea0a5b292fca956de91d428d8",
     "web/integral-families/inline-fragment.html": "b91f124f122129d91a8a9318e51bf463da97b49c45b85d0c6b5bceeee35a4f11",
     "web/integral-families/package.json": "ef67698e09b21c71bfbddeb5c061f7c13eb9d572030c9548c8b5e201bd8f58d2",
     "web/integral-families/resonance-effects.js": "d7abb80cf8d08e898a116a6ed4dff2e793a3a0e64e2bc4e71bd23b755ceea3bb",
@@ -77,9 +86,72 @@
     "web/integral-families/resonance.jsx": "c1a87f885db05094c91db4807dd7db3d37eecc18cf63fc36fc88124ea16b83e0",
     "web/integral-families/unification-template.html": "876a7b09b44c3231cfbd3e9681a50c166fbd97a83b6e5fe7b36fcae1ffee9c75",
     "web/integral-families/unification.html": "4e5b48887b7ed775d207a5eef5585dace27073c839cfcda9f98d9b59a72f8811",
-    "web/integral-families/unification.json": "61a4accbad4037b1411677b1f86cdd935d7aed85f3969e95de27d7f3fa0d55f3"
+    "web/integral-families/unification.json": "61a4accbad4037b1411677b1f86cdd935d7aed85f3969e95de27d7f3fa0d55f3",
+    "web/integral-studio/README.md": "e04243a606ae9302659dc0850531829bb9e3d79200c3834fc7d70bebb8aa8aa5",
+    "web/integral-studio/StudioApp.jsx": "68e638a8b7470771b52a275eb118652caffd6b996b8439092faa1786fad9f281",
+    "web/integral-studio/StudioScene.jsx": "f97dd59892bbac9526ce9ffa2d96a8439c21276ffa0d534d866689e402959844",
+    "web/integral-studio/build-receipt.json": "e9f2e32e5e90e03e1d5098192266d80cb364cfebd800c34600b4082d576f366e",
+    "web/integral-studio/build-studio.mjs": "f8c31eba07bf6ef7522442608924b3731f67523847ede50abeb2cb134e81f5e8",
+    "web/integral-studio/e8-roots.json": "a8435981c10b43a545f37779d4a1fdcba747e9c59e97009448a635e1bb5e0aad",
+    "web/integral-studio/math-engine.mjs": "909c7d45dcb0b6762c28b7ca6c6c6e1cb3fcc8b283db32f2067d1e70993025da",
+    "web/integral-studio/math-engine.test.mjs": "7fa29ad7a37986189e4bf5a6b9fae081aa66e6d2e086950e089a9efa34c558d3",
+    "web/integral-studio/mathematics.json": "5bb4a7846678def9dc1e0f0899597cb7fbd3a58541f29364e3745990bb0ac934",
+    "web/integral-studio/package.json": "da32a23ee74a3ff0effb8464887c15e792c02662275c34296f9dda4fe1746d4e",
+    "web/integral-studio/pnpm-lock.yaml": "8deebd4c0b4aa43f1512be3b2aeb724602b13518155736d11abea2ae096f233f",
+    "web/integral-studio/studio-geometry.mjs": "f3950492b46d20e1a3b6c74b4666e4340eceaaa3a445d93ddedfe965de926bc1",
+    "web/integral-studio/studio-geometry.test.mjs": "f3d1c9122ccfe9cca98632c40fdb68403b3b07cbcd675e28c2613e07248c2bb1",
+    "web/integral-studio/studio.css": "be1c855f599533eadbc4f54c9665532be7fd39f9c3501417781ff35bc230a0ff",
+    "web/integral-studio/studio.html": "adad4ef96d2ad26a4b22324ff7a8cad90abf7bedea2057a630e51bbb337113a2",
+    "web/integral-studio/ui-model.mjs": "1146aca9ad5f1a18dad2ffa679fcd30836cef61052a0c5b21e42c1c994b18d9a",
+    "web/integral-studio/ui-model.test.mjs": "2f629faee3252210896051ccdcc4635ab5e6119f041185fb4f5fda7252259275",
+    "web/integral-studio/verify-ui.mjs": "d3df41f89dcb7d545eedaebbb518b3693be672009a994b890f6c37b30c929999"
   },
-  "title": "The 384\u2013264 Resonance",
+  "studio": {
+    "analytic_gram_entries": 10,
+    "analytic_gram_formalized_in_lean": false,
+    "basis": [
+      "log|Q+Q-|",
+      "log|Q+/Q-|",
+      "u^2",
+      "u^2(u+pi^2/2)"
+    ],
+    "dependencies": {
+      "@react-three/fiber": "9.8.1",
+      "katex": "0.19.0",
+      "react": "19.2.6",
+      "react-dom": "19.2.6",
+      "three": "0.186.1"
+    },
+    "entry_url": "https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/studio.html",
+    "independent_quadrature": true,
+    "legacy_resonance": "./resonance.html",
+    "master": "E(a,b,c,d)=integral_[\u22121,1](aA+bK+cP+dR)^2/sqrt(1-x^2) dx",
+    "mathematical_receipt_sha256": "5bb4a7846678def9dc1e0f0899597cb7fbd3a58541f29364e3745990bb0ac934",
+    "offline_sha256": "5c50909a8bd12c9303f73bc940a0b4fcf81fe89083b013d36352f4a053557773",
+    "offline_url": "https://perfectpower-explorer-download.towre676.chatgpt.site/PerfectPower_Integral_Studio.html",
+    "schema": "pp-integral-studio/1",
+    "source_sha256": {
+      "StudioApp.jsx": "68e638a8b7470771b52a275eb118652caffd6b996b8439092faa1786fad9f281",
+      "StudioScene.jsx": "f97dd59892bbac9526ce9ffa2d96a8439c21276ffa0d534d866689e402959844",
+      "build-studio.mjs": "f8c31eba07bf6ef7522442608924b3731f67523847ede50abeb2cb134e81f5e8",
+      "e8-roots.json": "a8435981c10b43a545f37779d4a1fdcba747e9c59e97009448a635e1bb5e0aad",
+      "math-engine.mjs": "909c7d45dcb0b6762c28b7ca6c6c6e1cb3fcc8b283db32f2067d1e70993025da",
+      "package.json": "da32a23ee74a3ff0effb8464887c15e792c02662275c34296f9dda4fe1746d4e",
+      "studio-geometry.mjs": "f3950492b46d20e1a3b6c74b4666e4340eceaaa3a445d93ddedfe965de926bc1",
+      "studio.css": "be1c855f599533eadbc4f54c9665532be7fd39f9c3501417781ff35bc230a0ff",
+      "studio.html": "adad4ef96d2ad26a4b22324ff7a8cad90abf7bedea2057a630e51bbb337113a2",
+      "ui-model.mjs": "1146aca9ad5f1a18dad2ffa679fcd30836cef61052a0c5b21e42c1c994b18d9a"
+    },
+    "title": "Integral Studio",
+    "url": "https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/",
+    "views": [
+      "integral",
+      "spectrum",
+      "fourier",
+      "energy"
+    ]
+  },
+  "title": "Integral Studio \u00b7 Spectral Atlas",
   "unification": {
     "adjoint_first_moment": "124/3",
     "analytic_series_formalized": false,

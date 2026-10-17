@@ -26,3 +26,18 @@ web/integral-families/node_modules/
 # Local formalization and PDF layout work.
 /tmp/raghava-coxeter/
 /tmp/pdfs/
+
+# Reproducible studio build diagnostics; compiled public assets are retained.
+web/integral-studio/build-meta.json
+web/integral-studio/.ssr-check.cjs
+
+# Preserved release packaging overlays, outside canonical Git source.
+/mobile-native/
+/mobile/ORIGINAL_FILES.json
+
+web/integral-studio/node_modules
+web/integral-studio/studio.bundle.js
+web/integral-studio/studio.bundle.js.LEGAL.txt
+web/integral-studio/studio.bundle.css
+
+web/integral-families/node_modules

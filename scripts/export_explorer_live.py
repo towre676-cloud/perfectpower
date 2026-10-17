@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Regenerate deterministic public application receipts and the live data feed."""
+"""Regenerate application feeds; --family integral-studio exports its dedicated feed."""
+import argparse
 import hashlib
 import json
 import subprocess
@@ -7,11 +8,12 @@ import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'python'))
-from perfectpower.research_counting import MonomialPopulation, ResiduePopulation, digit_sumset
-from perfectpower.period_bridge_cli import application as integral_application
 
 
 def export(root=ROOT):
+    from perfectpower.research_counting import MonomialPopulation, ResiduePopulation, digit_sumset
+    from perfectpower.period_bridge_cli import application as integral_application
+
     root = Path(root)
     applications, identities = [], {}
     receipts = root / 'receipts/research_counting'
@@ -93,5 +95,20 @@ def export(root=ROOT):
     return {'applications': len(applications), 'payload_sha256': envelope['payload_sha256'], 'source_parent': source_parent}
 
 
-if __name__ == '__main__':
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--family', choices=('all', 'integral-studio'), default='all',
+                        help='Export all application families, or only the dedicated integral-studio feed.')
+    args = parser.parse_args(argv)
+    if args.family == 'integral-studio':
+        # Dispatch before importing or reading any other application family.
+        # The atlas exporter writes only its mathematical receipts and feed.
+        subprocess.run([sys.executable, str(ROOT / 'python/export_integral_atlas.py')],
+                       cwd=ROOT, check=True)
+        return 0
     print(json.dumps(export()))
+    return 0
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())

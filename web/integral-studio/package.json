@@ -1,0 +1,9 @@
+{
+  "name": "perfectpower-integral-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"build": "node build-studio.mjs", "test": "node --test math-engine.test.mjs studio-geometry.test.mjs ui-model.test.mjs"},
+  "dependencies": {"react":"19.2.6","react-dom":"19.2.6","three":"0.186.1","@react-three/fiber":"9.8.1","katex":"0.19.0"},
+  "devDependencies": {"esbuild":"0.25.12"}
+}

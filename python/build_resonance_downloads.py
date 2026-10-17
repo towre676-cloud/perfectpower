@@ -43,7 +43,7 @@ def assemble(download, inline):
     ]:
         javascript = javascript.replace(json.dumps(before), json.dumps(after))
     javascript = javascript.replace('</script', '<\\/script')
-    standalone = (WEB / 'index.html').read_text()
+    standalone = (WEB / 'resonance.html').read_text()
     standalone = standalone.replace('<link rel="stylesheet" href="./resonance.css">', '<style>' + css + '</style>')
     standalone = standalone.replace('<script src="./resonance.bundle.js" defer></script>', '<script>' + javascript + '</script>')
     fragment = (WEB / 'inline-fragment.html').read_text().replace('__RESONANCE_CSS__', css).replace('__RESONANCE_JAVASCRIPT__', javascript)

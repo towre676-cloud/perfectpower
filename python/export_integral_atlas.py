@@ -24,6 +24,21 @@ def project(root, exponent):
 
 
 def build():
+    studio_dir = ROOT/'web/integral-studio'
+    studio_build = json.loads((studio_dir/'build-receipt.json').read_text())
+    studio = dict(schema='pp-integral-studio/1', title='Integral Studio',
+                  url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',
+                  entry_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/studio.html',
+                  views=['integral','spectrum','fourier','energy'],
+                  basis=['log|Q+Q-|','log|Q+/Q-|','u^2','u^2(u+pi^2/2)'],
+                  master='E(a,b,c,d)=integral_[−1,1](aA+bK+cP+dR)^2/sqrt(1-x^2) dx',
+                  dependencies=studio_build['dependencies'],
+                  analytic_gram_entries=10, analytic_gram_formalized_in_lean=False,
+                  independent_quadrature=True, source_sha256=studio_build['source_sha256'],
+                  mathematical_receipt_sha256=hashlib.sha256((studio_dir/'mathematics.json').read_bytes()).hexdigest(),
+                  offline_sha256=studio_build['offline_sha256'],
+                  offline_url='https://perfectpower-explorer-download.towre676.chatgpt.site/PerfectPower_Integral_Studio.html',
+                  legacy_resonance='./resonance.html')
     unified=json.loads((ROOT/'receipts/period_bridge_deep/unification.json').read_text())
     formal=unified['formalization']
     for name, expected in formal['source_sha256'].items():
@@ -59,7 +74,7 @@ def build():
     assert sum(row['primitive'] for row in branches) == 240
     radii = [hypot(rows[i*30]['x'],rows[i*30]['y']) for i in range(8)]
     assert len({round(r,8) for r in radii}) == 8
-    payload = dict(schema='pp-integral-atlas-data/1', roots=rows, orbit_radii=radii,unification=unification,
+    payload = dict(schema='pp-integral-atlas-data/1', roots=rows, orbit_radii=radii,unification=unification,studio=studio,
                    branches=branches, root_count=240, adjacency_pairs=6720,
                    projection='Fourier exponent 1 Coxeter plane; optional real exponent 7 depth. Normalized floating-point display coordinates.',
                    scope='The 240 primitive branches and the 240 E8 roots are different objects; the atlas defines no bijection between them.',
@@ -81,11 +96,14 @@ def build():
                'python/tests/test_resonance_scene.mjs','python/tests/test_resonance_shaders.py'] + ['web/integral-families/'+name for name in
                ('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','calculator.html',
                 'resonance.jsx','resonance-math.jsx','resonance-scene.js','resonance-effects.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt','unification.html','unification-template.html','unification.json')]
-    receipt = dict(schema='pp-spectral-atlas/1', title='The 384–264 Resonance', geometry=result,
+    sources += ['web/integral-studio/'+p for p in ('StudioApp.jsx','StudioScene.jsx','studio-geometry.mjs','studio-geometry.test.mjs','math-engine.mjs','math-engine.test.mjs','ui-model.mjs','ui-model.test.mjs','e8-roots.json','studio.css','studio.html','build-studio.mjs','verify-ui.mjs','mathematics.json','package.json','pnpm-lock.yaml','README.md','build-receipt.json')]
+    sources += ['docs/INTEGRAL_STUDIO_MATHEMATICS.md','docs/INTEGRAL_STUDIO_MONOGRAPH.md','python/build_integral_studio_monograph.py']
+    receipt = dict(schema='pp-spectral-atlas/1', title='Integral Studio · Spectral Atlas', geometry=result,studio=studio,
                    url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',unification=unification,
                    calculator_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/calculator.html',
-                   chapters=['framework','phase resonance','higher structure motif','nerve motif'],
-                   runtime=dict(react='19.2.6',three='0.186.1',autonomous=True,mode_duration_seconds=18,
+                   chapters=['integral','spectrum','fourier','energy'],
+                   legacy_chapters=['framework','phase resonance','higher structure motif','nerve motif'],
+                   legacy_runtime=dict(react='19.2.6',three='0.186.1',autonomous=True,mode_duration_seconds=18,
                                 interruptible_transitions=True,focus_inspection=True,adaptive_quality=True,
                                 root_neighbors=56,root_step_seconds=1.6,background_grid=[37,29],cinema_first=True,luminous_node_surfaces=5,
                                 volumetric_torus_strands=12,interference_discs=5,braid_strands=6,simplex_membranes=10,
@@ -97,7 +115,8 @@ def build():
                    source_sha256={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in sources})
     (ROOT/'receipts/period_bridge_deep/atlas.json').write_text(json.dumps(receipt,sort_keys=True,indent=2)+'\n')
     names=('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','atlas-data.json','calculator.html',
-           'resonance.bundle.js','resonance.bundle.js.LEGAL.txt','resonance.css','unification.html','unification.json')
+           'resonance.bundle.js','resonance.bundle.js.LEGAL.txt','resonance.css','resonance.html','unification.html','unification.json',
+           'studio.html','studio.bundle.js','studio.bundle.js.LEGAL.txt','studio.bundle.css','studio-mathematics.json')
     assets={name:(ROOT/'web/integral-families'/name).read_text() for name in names}
     dedicated=dict(schema='pp-integral-atlas-web/1',assets=assets,
                    hashes={name:hashlib.sha256(raw.encode()).hexdigest() for name,raw in assets.items()})

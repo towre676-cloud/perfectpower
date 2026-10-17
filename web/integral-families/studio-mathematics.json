@@ -1,0 +1,245 @@
+{
+  "schema": "perfectpower/integral-studio-mathematics/1",
+  "energy": "E(a,b,c,d) = integral_0^pi [a A(cos(theta))+b K(cos(theta))+c P(theta)+d R(theta)]^2 dtheta = t^T G t",
+  "definitions": {
+    "Q_plus": "4x^2+(1-sqrt(5))x-(3+sqrt(5))/2",
+    "Q_minus": "4x^2+(1+sqrt(5))x-(3-sqrt(5))/2",
+    "Q": "16x^4+8x^3-16x^2-8x+1",
+    "u": "theta(pi-theta) = pi^2/4-arcsin(x)^2",
+    "A": "log|Q_plus Q_minus|",
+    "K": "log|Q_plus/Q_minus|",
+    "P": "u^2",
+    "R": "u^2(u+pi^2/2)"
+  },
+  "root_theta_over_pi": [
+    "1/15",
+    "7/15",
+    "11/15",
+    "13/15"
+  ],
+  "coxeter_exponents": [
+    1,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29
+  ],
+  "exact_gram_entries": [
+    {
+      "i": 0,
+      "j": 0,
+      "label": "AA",
+      "value": 5.512226965386634,
+      "exactTex": "\\frac{8\\pi^3}{45}",
+      "mechanism": "Parseval / Ramanujan sum"
+    },
+    {
+      "i": 0,
+      "j": 1,
+      "label": "AK",
+      "value": -1.65366808961599,
+      "exactTex": "-\\frac{4\\pi^3}{75}",
+      "mechanism": "Quadratic Gauss sum / L(2,chi5)"
+    },
+    {
+      "i": 0,
+      "j": 2,
+      "label": "AP",
+      "value": 2.4091795929431026,
+      "exactTex": "\\frac{832\\pi}{1125}\\zeta(5)",
+      "mechanism": "Bernoulli selector / Euler factors"
+    },
+    {
+      "i": 0,
+      "j": 3,
+      "label": "AR",
+      "value": 17.793420658616146,
+      "exactTex": "\\frac{157976\\pi}{28125}\\zeta(7)",
+      "mechanism": "Bernoulli selector / Euler factors"
+    },
+    {
+      "i": 1,
+      "j": 1,
+      "label": "KK",
+      "value": 16.5366808961599,
+      "exactTex": "\\frac{8\\pi^3}{15}",
+      "mechanism": "Parseval / quadratic character"
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "label": "KP",
+      "value": 5.150542509696311,
+      "exactTex": "\\frac{41\\pi\\sqrt5}{54}L(5,\\chi_5)",
+      "mechanism": "Bernoulli selector / character filter"
+    },
+    {
+      "i": 1,
+      "j": 3,
+      "label": "KR",
+      "value": 39.24406130968061,
+      "exactTex": "\\frac{1825\\pi\\sqrt5}{324}L(7,\\chi_5)",
+      "mechanism": "Bernoulli selector / character filter"
+    },
+    {
+      "i": 2,
+      "j": 2,
+      "label": "PP",
+      "value": 47.31603068800984,
+      "exactTex": "\\frac{\\pi^9}{630}",
+      "mechanism": "Euler beta integral"
+    },
+    {
+      "i": 2,
+      "j": 3,
+      "label": "PR",
+      "value": 339.6294579785171,
+      "exactTex": "\\frac{4\\pi^{11}}{3465}",
+      "mechanism": "Euler beta integral"
+    },
+    {
+      "i": 3,
+      "j": 3,
+      "label": "RR",
+      "value": 2441.4868825502954,
+      "exactTex": "\\frac{101\\pi^{13}}{120120}",
+      "mechanism": "Euler beta integral"
+    }
+  ],
+  "numeric_gram": [
+    [
+      5.512226965386634,
+      -1.65366808961599,
+      2.4091795929431026,
+      17.793420658616146
+    ],
+    [
+      -1.65366808961599,
+      16.5366808961599,
+      5.150542509696311,
+      39.24406130968061
+    ],
+    [
+      2.4091795929431026,
+      5.150542509696311,
+      47.31603068800984,
+      339.6294579785171
+    ],
+    [
+      17.793420658616146,
+      39.24406130968061,
+      339.6294579785171,
+      2441.4868825502954
+    ]
+  ],
+  "special_values": {
+    "zeta5": 1.03692775514337,
+    "zeta7": 1.008349277381923,
+    "L5": 0.9656683647839307,
+    "L7": 0.9917933958293174
+  },
+  "eigenvalues": [
+    0.06164908651597185,
+    5.039047244419586,
+    16.254969611411703,
+    2489.496155157505
+  ],
+  "numerical_validation": {
+    "method": "Independent root-split Gauss-Legendre with fourth-order endpoint flattening",
+    "order": 64,
+    "checks": [
+      {
+        "label": "AA",
+        "formula": 5.512226965386634,
+        "quadrature": 5.512226965400958,
+        "relative_error": 2.598685003878261e-12
+      },
+      {
+        "label": "AK",
+        "formula": -1.65366808961599,
+        "quadrature": -1.653668089616366,
+        "relative_error": 2.2732585728577092e-13
+      },
+      {
+        "label": "AP",
+        "formula": 2.4091795929431026,
+        "quadrature": 2.409179592942186,
+        "relative_error": 3.804615196872027e-13
+      },
+      {
+        "label": "AR",
+        "formula": 17.793420658616146,
+        "quadrature": 17.7934206586096,
+        "relative_error": 3.6778193029352453e-13
+      },
+      {
+        "label": "KK",
+        "formula": 16.5366808961599,
+        "quadrature": 16.53668089617519,
+        "relative_error": 9.246643730730851e-13
+      },
+      {
+        "label": "KP",
+        "formula": 5.150542509696311,
+        "quadrature": 5.150542509696709,
+        "relative_error": 7.725476127545203e-14
+      },
+      {
+        "label": "KR",
+        "formula": 39.24406130968061,
+        "quadrature": 39.244061309683644,
+        "relative_error": 7.731150600733582e-14
+      },
+      {
+        "label": "PP",
+        "formula": 47.31603068800984,
+        "quadrature": 47.31603068800984,
+        "relative_error": 0
+      },
+      {
+        "label": "PR",
+        "formula": 339.6294579785171,
+        "quadrature": 339.6294579785171,
+        "relative_error": 0
+      },
+      {
+        "label": "RR",
+        "formula": 2441.4868825502954,
+        "quadrature": 2441.4868825502954,
+        "relative_error": 0
+      }
+    ],
+    "max_relative_error": 2.598685003878261e-12,
+    "tests": "node --test web/integral-studio/math-engine.test.mjs",
+    "test_count": 9
+  },
+  "proof_boundary": {
+    "new_identities": "Written analytic proofs and independent numerical checks",
+    "new_lean_theorems": false,
+    "quadrature_error_is_rigorous": false
+  },
+  "precision": {
+    "arithmetic": "IEEE-754 binary64; about 15 significant decimal digits",
+    "quadrature": "Independent root-split Gauss-Legendre with fourth-order endpoint flattening",
+    "singularities": "Four integrable logarithmic singularities; point values there may be infinite",
+    "interpretation": "Energy is integrated in theta measure; density is (aA+bK+cP+dR)^2",
+    "formalization": "The new Gram identities have written analytic proofs; they are not claimed as new Lean theorems."
+  },
+  "source_files": [
+    {
+      "path": "web/integral-studio/math-engine.mjs",
+      "sha256": "909c7d45dcb0b6762c28b7ca6c6c6e1cb3fcc8b283db32f2067d1e70993025da"
+    },
+    {
+      "path": "web/integral-studio/math-engine.test.mjs",
+      "sha256": "7fa29ad7a37986189e4bf5a6b9fae081aa66e6d2e086950e089a9efa34c558d3"
+    },
+    {
+      "path": "docs/INTEGRAL_STUDIO_MATHEMATICS.md",
+      "sha256": "c68df8a88b2b117eaeff4da28143cd7287aaba7c6dbbf81a3605a128950b419f"
+    }
+  ]
+}
