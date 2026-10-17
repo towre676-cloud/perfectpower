@@ -57,7 +57,7 @@ versions; their refresh was blocked by automatic approval review.
 
 ## Autonomous React + Three.js experience
 
-The `/integrals/` entry point now opens a React 19.2.6 / Three.js 0.186.1
+The `/integrals/resonance.html` entry point opens a React 19.2.6 / Three.js 0.186.1
 scene based on the two user-supplied Claude artifacts. Their midnight-blue
 field, blue cyclotomic lobe, coral E8 lobe, upper violet bridge, lower gold
 convergence, central lavender fiber, and four-part automatic sequence guide
@@ -69,19 +69,45 @@ automatically, except when the browser requests reduced motion. The user can
 pause, hold a scene, adjust speed/glow, orbit, and save the rendered frame.
 Hidden tabs suspend progression. No data or telemetry is transmitted.
 
-The scene includes 384 decorative positions around the cyclotomic node,
-the 240 source-derived E8 projections, and 264 decorative positions around
-the fiber node. Only the E8 node uses root coordinates; the other point
-arrangements are illustrations of counts, not embeddings or equivalences.
-The root display scales the normalized Coxeter-plane x/y coordinates by
-0.93 and the optional exponent-seven depth by 0.62. Cloud rotation and
-pulsation are visual operations. The violet cloud, gold cloud, toroidal
-knots, braids, curved connections, and simplices are conceptual motifs.
-The component's selected-node explanations distinguish these from exact
-phase maps and integral identities. In particular, there is no asserted
-higher categorical equivalence, categorical trace of 264, or physical E8
-model. Raghava's moment scaling and the Mellin cancellation remain available
-in the retained exact calculators and monograph.
+The cinematic scene at `/integrals/resonance.html` now projects actual phase
+records, preserving the newer Integral Studio landing page. The blue cloud
+contains all 384 primitive exponents modulo 1680; its power-56 map has eight
+images with multiplicity 48. The lavender cloud contains all 264 exponents
+1+1680j modulo 443520; its power-264 map has the single image q, retaining
+both the 240 primitive and 24 lower-conductor inputs. Gold phase points mark
+those lower-conductor branches. No fiber branch is identified with an E8 root.
+
+The phase display projection is `(0.88 cos(2πq), 0.88 sin(2πq),
+0.28 sin(14πq))`, a real projection of `(z,z^7)` in C². It is not a field
+embedding, lattice isometry or full representation of the cyclotomic field.
+Power maps hold the source for three seconds, interpolate to the image for
+five, hold the image for four and return for two. Intermediate straight paths
+are labeled display interpolation, never fractional power maps. Each source
+record and its image remain inspectable, including multiplicities. The user
+can hold source/image endpoints or scrub and resume the automatic path.
+
+Every E8 point follows its exact exported Coxeter successor. The simple-root
+coordinates and actual integral matrix are exported and cross-checked for
+all roots through all 30 steps. Fourier-plane x/y retain scale 0.93 and the
+real exponent-seven depth retains scale 0.62. A 1.6-second step holds its
+endpoint for 65% of the interval, then interpolates to the next. During that
+transition the inspector reports the last exact root, not the intermediate
+point as a root. All 56 neighbor identities are transported by the same
+operator. Source-root selection gives access to all eight orbits. Cloud
+orientation, pulsation, gold synthesis cloud, ribbons, braids, tower and
+simplices remain illustrations. They assert no new categorical equivalence.
+
+The first three Raghava operator moments, their Bernoulli-Mellin transform,
+and degree-264 adjoint induction come from the existing exact engine. Each
+of 128 partial sums uses exact rational coefficients from Tr(L^n), then is
+rounded for display. Exact targets are rational multiples of π^(2j); targets
+do not manufacture partials. Independently computed rational enclosures
+include the analytic remainder bound. The inspector exposes integer traces,
+exact moment coefficients, series order and truncation controls. Tr(C^k) is
+reported from actual matrix powers. Root/Cartan signed Mellin partials are
+summed independently with remaining absolute tail bounded by 248/N. Their
+finite sum is not forced to zero. The distinct exact identities are
+−248/12+(124/3)/2=0 and −65472/12+10912/2=0 at weight two.
 
 `web/integral-families/resonance.jsx` owns the React interface;
 `resonance-scene.js` owns Three.js. Install the pinned packages in that
@@ -113,7 +139,7 @@ Clicking a structure enters a close study and holds automatic scene changes.
 Returning restores the whole field and resumes the tour from a fresh scene
 interval. E8 now highlights a root and its actual 56 adjacent roots. The
 selected root follows the exported Coxeter successor every 1.6 simulation
-seconds, traversing all eight 30-root orbits. The inspector reports its
+seconds, with all eight orbits available through source-root selection. The inspector reports its
 source-derived eight coordinates, orbit and step. The displayed adjacency
 segments are projected exact root relations; the comet trails on the larger
 connecting paths remain conceptual motion graphics.
@@ -201,3 +227,17 @@ native shader compiler check, not browser compatibility, browser visual QA,
 or proof of runtime uniform values. PNG frame export now composites the
 rendered canvas onto an opaque midnight background so saved glow is not
 washed out by a white or checkerboard image viewer.
+
+## Calculation-driven checks
+
+The added Python regression recomputes source populations, every root through
+30 exact matrix steps, rational profiles and all three series through 128
+terms with independent direct matrix powers. The actual Three BufferGeometry
+checks cover 3,280 phase samples, 21,600 root vertex samples and 384 series
+samples. Native EGL compiles all eight shader pairs. Retained atlas, fixture
+UI and React markup checks pass. These do not establish browser appearance.
+The required managed control-browser capability was unavailable, so browser
+visual QA is explicitly unverified. The dedicated mathematical feed is regenerated. Automatic approval review
+blocked the broader research feed because it can include unrelated organizational
+and player-derived records; those shared feeds remain unchanged. Source delivery
+and successful Site deployment are checked separately. Existing finite Lean proofs were not changed or rebuilt here.

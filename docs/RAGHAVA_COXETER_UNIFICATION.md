@@ -389,3 +389,12 @@ The analytic results in this chapter have mathematical proofs from the cited cla
 The exact Python implementation is `python/perfectpower/raghava_coxeter.py`. Its `receipt(order=8)` recomputes the operator polynomial, moment and Mellin coordinates, triangular inverse, degree-264 transfer checks, fixed-fiber obstruction and independent series enclosures. The focused command is `PYTHONPATH=python python3 -m unittest python/tests/test_raghava_coxeter.py -v`. All eleven focused tests passed during preparation of this chapter. They include 6560 exact scalar phase comparisons through conductor forty and weight sixteen, 81 powers of the actual eight-dimensional matrix, 41 powers of the actual signed 248-dimensional adjoint matrix, exact transfer composition and Bernoulli diagonalization, and positive-series tail comparisons. These checks exercise independent finite mechanisms; they are not substitutes for the general mathematical proofs.
 
 The three new Lean modules compile with pinned Lean 4.20.0 and Mathlib 4.20.0. The integrated audit checks all 102 theorem declarations: 15 finite Fourier and fiber theorems, 61 integral Coxeter and operator theorems, and 26 rational phase-moment and induction theorems. Their axiom reports contain only the standard propext, Classical.choice and Quot.sound; no admitted proof, native decision oracle or new axiom occurs. Reproduce with `make raghava-coxeter-kernel`. The source-bound result is retained in `receipts/period_bridge_deep/unification_lean.json`. The infinite-series, functional-calculus and analytic convergence arguments in this chapter remain mathematical proofs outside the Lean kernel; the Lean files do not import them as new axioms.
+
+## Source-driven cinematic companion
+
+The cinematic resonance now projects actual conjugates and refinement
+branches, applies genuine integer power-map endpoints and moves every root
+by the exact Coxeter successor. Moment partials, signed Mellin partials,
+spectral traces and exact cancellations are inspectable. Projection and
+interpolation scope are specified in [the visualization account](INTEGRAL_ATLAS_NOTE.md).
+This rendering adds no new mathematical equivalence or Lean theorem.

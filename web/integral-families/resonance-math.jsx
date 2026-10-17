@@ -22,14 +22,14 @@ export const MATH_VIEWS = {
   caption:'Induction and restriction give an explicit linear bijection. The simplex mesh is illustrative.',
   explanation:'For n = 1680 dividing N = 443520, the retained finite linear category implements induction, restriction and this Hom-space bijection on actual phase-graded matrices. The source checks inverse maps and naturality. This is an ordinary linear correspondence; the animated nerve does not establish a higher categorical equivalence.'},
  cyclotomic: {kind:'cyclotomic', title:'The blue cyclotomic field', label:'Primitive 1680th roots',
-  caption:'q generates a degree-384 cyclotomic field. The blue surface illustrates its phase count.',
-  explanation:'The primitive root q = exp(iπ/840) has order 1680. Euler’s totient gives φ(1680) = 384, the degree of the full cyclotomic field over the rationals. The blue points illustrate the number of conjugates; their decorative spatial arrangement is not a field embedding.'},
+  caption:'q generates a degree-384 cyclotomic field. Blue points project its actual phases and 56th-power images.',
+  explanation:'The primitive root q = exp(iπ/840) has order 1680. Euler’s totient gives φ(1680) = 384, the degree of the full cyclotomic field over the rationals. Blue points are projections (0.88 cos(2πa/1680), 0.88 sin(2πa/1680), 0.28 sin(14πa/1680)). The 56th-power map reaches eight phases with multiplicity 48. The real display projection is not a field embedding or lattice isometry.'},
  fiber: {kind:'fiber', title:'The refined phase fiber', label:'264 preimages · 240 primitive',
   caption:'The power map has 264 branches: 240 primitive and 24 of lower conductor.',
   explanation:'All solutions of z²⁶⁴ = q are zⱼ = Q exp(2πij/264), for 0 ≤ j < 264. Their exponents at conductor 443520 are 1 + 1680j. Exactly 240 of these integers are coprime to 443520; the remaining 24 have conductor 40320. The 240 primitive branches and the 240 E₈ roots are distinct collections.'},
  e8: {kind:'e8', title:'The E₈ integral balance', label:'Exact normalized Mellin value · weight 2',
   caption:'The 240 root directions and 8 Cartan directions contribute equal and opposite terms.',
-  explanation:'For the retained E₈ adjoint Coxeter lift, the normalized Mellin trace separates into the root-permutation contribution +2π²/45 and Cartan contribution −2π²/45 at weight two. Their sum is exactly zero. The highlighted point follows the exact Coxeter successor; its 56 neighbors have inner product one with it.'}
+  explanation:'For the retained E₈ adjoint Coxeter lift, the normalized Mellin trace separates into the root-permutation contribution +2π²/45 and Cartan contribution −2π²/45 at weight two. Their sum is exactly zero. Every root follows the exact Coxeter successor, with labeled interpolation between endpoints; its 56 neighbors have inner product one with it.'}
 };
 
 export const CHAPTER_MATH = ['operator','trace','raghava','induction'];

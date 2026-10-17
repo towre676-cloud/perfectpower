@@ -5,6 +5,9 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { createResonanceEffects } from './resonance-effects.js';
+import { phaseRows, phaseMapPoint, phaseProjection, rootMapPoint, rootMotion, successor, calculationFrame } from './resonance-model.js';
+export { phaseRows, phaseMapPoint, phaseProjection, rootMapPoint, rootMotion, successor, calculationFrame, phaseImage, mapProgress } from './resonance-model.js';
+
 
 // The geometry is mathematical where a source exists; the connecting spaces,
 // towers and braids are visual metaphors, not claims of a proved equivalence.
@@ -89,6 +92,16 @@ export function createRootGeometry(data) {
   }
   return pointsGeometry(positions, colors, sizes);
 }
+
+
+export function createPhaseGeometry(data,kind,progress=0){
+ const source=payload(data),rows=phaseRows(source,kind),power=kind==='cyclotomic'?56:kind==='fiber'?264:1;
+ const positions=[],colors=[],sizes=[];
+ for(const row of rows){positions.push(...phaseMapPoint(row,power,progress));const c=new THREE.Color(row.primitive===false?0xffc896:kind==='cyclotomic'?COLORS[0]:COLORS[2]);colors.push(c.r,c.g,c.b);sizes.push(row.primitive===false?3.4:2.1);}
+ const geometry=pointsGeometry(positions,colors,sizes);geometry.userData={rows,power,kind};return geometry;
+}
+export function updatePhaseGeometry(geometry,progress){const {rows,power}=geometry.userData;rows.forEach((row,i)=>geometry.attributes.position.array.set(phaseMapPoint(row,power,progress),3*i));geometry.attributes.position.needsUpdate=true;}
+export function updateRootGeometry(geometry,data,steps,progress=0){data.roots.forEach((_,i)=>geometry.attributes.position.array.set(rootMapPoint(data,i,steps,progress),3*i));geometry.attributes.position.needsUpdate=true;}
 
 function writeRootNeighbors(source, rootIndex, array) {
   const selected = source.roots[rootIndex];
@@ -188,31 +201,8 @@ function seeded(index, salt = 0) {
   return x - Math.floor(x);
 }
 
-function cloudGeometry(count, colorValue, kind) {
-  const positions = [], colors = [], sizes = [], color = new THREE.Color(colorValue);
-  for (let i = 0; i < count; i++) {
-    const t = i / count, golden = i * 2.399963229728653;
-    let x, y, z;
-    if (kind === 'fiber') {
-      const a = t * TAU, r = .7 + .14 * Math.cos(a * 11);
-      x = r * Math.cos(a); y = r * Math.sin(a); z = .38 * Math.sin(a * 5);
-    } else if (kind === 'spiral') {
-      const a = t * TAU * 5, r = .23 + .53 * t;
-      x = r * Math.cos(a); y = r * Math.sin(a); z = (t - .5) * 1.1;
-    } else if (kind === 'converge') {
-      const r = .86 * Math.sqrt(t), a = t * TAU * 9;
-      x = r * Math.cos(a); y = r * Math.sin(a); z = .4 * Math.sin(a * .6);
-    } else {
-      const yy = 1 - 2 * (i + .5) / count, radius = Math.sqrt(1 - yy * yy) * .78;
-      x = Math.cos(golden) * radius; y = yy * .78; z = Math.sin(golden) * radius;
-    }
-    positions.push(x, y, z);
-    const intensity = .6 + .4 * seeded(i, 2);
-    colors.push(color.r * intensity, color.g * intensity, color.b * intensity);
-    sizes.push(1.4 + 1.7 * seeded(i, 3));
-  }
-  return pointsGeometry(positions, colors, sizes);
-}
+// Gold synthesis cloud is an illustration; the phase nodes use exact records.
+function cloudGeometry(count,colorValue){const p=[],c=[],sizes=[],color=new THREE.Color(colorValue);for(let i=0;i<count;i++){const t=i/count,r=.86*Math.sqrt(t),a=t*TAU*9;p.push(r*Math.cos(a),r*Math.sin(a),.4*Math.sin(a*.6));c.push(color.r,color.g,color.b);sizes.push(1.4+1.7*seeded(i,3));}return pointsGeometry(p,c,sizes);}
 
 function line(points, color, opacity = .25) {
   const g = new THREE.BufferGeometry().setFromPoints(points);
@@ -362,13 +352,18 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     const material = luminousMaterial(colorA, colorB, opacity, seed); surfaceMaterials.push(material);
     const mesh = new THREE.Mesh(geometry, material); group.add(mesh); return mesh;
   }
-  const nodeCounts = [384, 240, 96, 130, 264];
+  const nodeCounts = [384, 240, 8, 130, 264];
   const kinds = ['sphere', 'root', 'spiral', 'converge', 'fiber'];
   for (let i = 0; i < 5; i++) {
     const group = new THREE.Group(); group.position.copy(anchorVectors[0][i]); root.add(group);
     const visual = new THREE.Group(); group.add(visual);
-    const cloud = makePointObject(i === 1 ? createRootGeometry(source) : cloudGeometry(nodeCounts[i], COLORS[i], kinds[i]), i === 4 ? 1.5 : 1.1);
+    const cloud = makePointObject(i === 1 ? createRootGeometry(source) : [0,2,4].includes(i) ? createPhaseGeometry(source,IDS[i]) : cloudGeometry(nodeCounts[i], COLORS[i], kinds[i]), i === 4 ? 1.5 : 1.1);
     visual.add(cloud);
+    if([0,2,4].includes(i)){
+      visual.add(ring(.88,COLORS[i],.13));
+      const targets=i===0?source.calculations.eigen_exponents.map(a=>phaseProjection(a,30)):i===4?[phaseProjection(1,1680)]:[];
+      for(const point of targets){const target=new THREE.Mesh(new THREE.SphereGeometry(.025,8,6),new THREE.MeshBasicMaterial({color:0xffefcc}));target.position.set(...point);visual.add(target);}
+    }
     const haloMaterial = new THREE.SpriteMaterial({ map: glowTexture, color: COLORS[i], transparent: true, opacity: .16, blending: THREE.AdditiveBlending, depthWrite: false });
     haloMaterial.userData.baseOpacity = .16;
     const halo = new THREE.Sprite(haloMaterial); halo.scale.setScalar(i === 4 ? 2.5 : 2.25); visual.add(halo);
@@ -383,11 +378,8 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
   const neighborStrands = new THREE.LineSegments(neighborGeometry, neighborMaterial); neighborStrands.frustumCulled = false; nodes[1].visual.add(neighborStrands);
   const selectedMaterial = new THREE.SpriteMaterial({ map: glowTexture, color: 0xffead6, transparent: true, opacity: .95, blending: THREE.AdditiveBlending, depthWrite: false });
   const selectedMarker = new THREE.Sprite(selectedMaterial); selectedMarker.scale.setScalar(.32); nodes[1].visual.add(selectedMarker);
-  const rootWalk = [];
-  for (let orbit = 0; orbit < 8; orbit++) {
-    let id = source.roots.find(r => r.orbit === orbit).id;
-    for (let step = 0; step < 30; step++) { rootWalk.push(id); id = source.roots[id].next; }
-  }
+  let selectedPhase=0,selectedBranch=0,mapOverride=null,termOverride=null,momentOrder=1,selectedBaseRoot=0;
+  const phaseMarkers=[0,4].map(i=>{const marker=new THREE.Sprite(selectedMaterial);marker.scale.setScalar(.22);nodes[i].visual.add(marker);return marker;});
   const resonanceEffects = createResonanceEffects({ nodes, root, source });
 
   function makeFlow(group, start, end, colorA, colorB, bend, count = 34, thickness = .011, speed = 1) {
@@ -630,12 +622,14 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     for (const material of surfaceMaterials) material.uniforms.uTime.value = t;
     resonanceEffects.update(t, transition.weights, state.effectiveQuality, state.focus);
     for (const material of pointMaterials) { material.uniforms.uTime.value = t; material.uniforms.uScale.value = (material.userData.scale ?? 1) * (1 + .04 * breathe); }
-    const rootTick = Math.floor(t / 1.6);
-    if (rootTick !== state.rootTick) {
-      state.rootTick = rootTick; state.selectedRoot = rootWalk[rootTick % rootWalk.length];
-      writeRootNeighbors(source, state.selectedRoot, neighborGeometry.attributes.position.array); neighborGeometry.attributes.position.needsUpdate = true;
-      const r = source.roots[state.selectedRoot]; selectedMarker.position.set(r.x * .93, r.y * .93, r.z * .62);
-    }
+    const calculation=calculationFrame(source,t,{map:mapOverride,terms:termOverride,order:momentOrder});
+    updatePhaseGeometry(nodes[0].cloud.geometry,calculation.progress);updatePhaseGeometry(nodes[4].cloud.geometry,calculation.progress);
+    phaseMarkers[0].position.set(...phaseMapPoint(phaseRows(source,'cyclotomic')[selectedPhase],56,calculation.progress));
+    phaseMarkers[1].position.set(...phaseMapPoint(phaseRows(source,'fiber')[selectedBranch],264,calculation.progress));
+    const motion=rootMotion(t,state.reducedMotion);state.rootTick=motion.tick;state.selectedRoot=successor(source,selectedBaseRoot,motion.tick);
+    updateRootGeometry(nodes[1].cloud.geometry,source,motion.tick,motion.progress);
+    source.roots[selectedBaseRoot].neighbors.forEach((id,i)=>{const a=neighborGeometry.attributes.position.array;a.set(rootMapPoint(source,selectedBaseRoot,motion.tick,motion.progress),i*6);a.set(rootMapPoint(source,id,motion.tick,motion.progress),i*6+3);});
+    neighborGeometry.attributes.position.needsUpdate=true;selectedMarker.position.set(...rootMapPoint(source,selectedBaseRoot,motion.tick,motion.progress));
     selectedMarker.scale.setScalar(.26 + .06 * Math.sin((t % 1.6) / 1.6 * Math.PI));
     neighborMaterial.opacity = .18 + .08 * Math.sin((t % 1.6) / 1.6 * Math.PI);
     updateFlows(t);
@@ -673,12 +667,20 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
       if (nextQuality === 'eco' && state.effectiveQuality !== 'eco') state.qualityDowngradedAt = state.presentation;
       if (nextQuality !== state.effectiveQuality) { state.effectiveQuality = nextQuality; resize(); }
     }
-    onFrame?.({ elapsed: t, phase: t % TAU, mode: state.mode, progress: clamp((t - state.modeStart) / 18, 0, 1), fps: state.fps, nodes: nodeProjection, quality: state.effectiveQuality, selectedRoot: state.selectedRoot, orbitStep: source.roots[state.selectedRoot].step, focus: state.focus });
+    onFrame?.({ elapsed: t, phase: t % TAU, mode: state.mode, progress: clamp((t - state.modeStart) / 18, 0, 1), fps: state.fps, nodes: nodeProjection, quality: state.effectiveQuality, selectedRoot: state.selectedRoot, orbitStep: source.roots[state.selectedRoot].step, focus: state.focus, calculation, rootInterpolation:motion.progress, coxeterPower:motion.tick%30 });
   }
   for (const material of pointMaterials) material.userData.scale = material.uniforms.uScale.value;
   state.frame = requestAnimationFrame(animate);
 
   return {
+    setCalculation({map,terms,order,phase,branch,root}={}){
+      if(map===null||Number.isFinite(map)&&map>=0&&map<=1)mapOverride=map;
+      if(terms===null||Number.isInteger(terms)&&terms>=1&&terms<=128)termOverride=terms;
+      if(Number.isInteger(order)&&order>=1&&order<=3)momentOrder=order;
+      if(Number.isInteger(phase)&&phase>=0&&phase<384)selectedPhase=phase;
+      if(Number.isInteger(branch)&&branch>=0&&branch<264)selectedBranch=branch;
+      if(Number.isInteger(root)&&root>=0&&root<240)selectedBaseRoot=root;
+    },
     setMode(index) { if (Number.isFinite(index)) modeTo(index); },
     setPlaying(value) { state.playing = Boolean(value); state.last = 0; },
     setSpeed(value) { if (Number.isFinite(value)) state.speed = clamp(value, .1, 3); },

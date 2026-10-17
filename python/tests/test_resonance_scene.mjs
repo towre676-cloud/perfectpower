@@ -37,6 +37,27 @@ assert.equal(new Set(NODE_ANCHORS.map(p=>p.join(','))).size,5);
 const envelope=JSON.parse(fs.readFileSync(path.join(root,'web/integral-families/atlas-data.json'),'utf8'));
 assert.equal(crypto.createHash('sha256').update(envelope.payload_json).digest('hex'),envelope.payload_sha256);
 const data=JSON.parse(envelope.payload_json);
+const {createPhaseGeometry,updatePhaseGeometry,updateRootGeometry,phaseRows,phaseImage,calculationFrame,mapProgress,rootMotion}=compiled.exports;
+let calculatedPhaseSamples=0;
+for(const [kind,power,count,images] of [['cyclotomic',56,384,8],['fiber',264,264,1],['bridge',1,8,8]]){
+ const rows=phaseRows(data,kind),g=createPhaseGeometry(data,kind);assert.equal(rows.length,count);
+ for(const u of [0,.2,.5,.9,1]){updatePhaseGeometry(g,u);for(let i=0;i<count;i++){
+  const r=rows[i],a=2*Math.PI*r.exponent/r.conductor,b=2*Math.PI*((r.exponent*power)%r.conductor)/r.conductor;
+  const start=[.88*Math.cos(a),.88*Math.sin(a),.28*Math.sin(7*a)],end=[.88*Math.cos(b),.88*Math.sin(b),.28*Math.sin(7*b)];
+  for(let j=0;j<3;j++)assert(Math.abs(g.attributes.position.array[3*i+j]-(start[j]+(end[j]-start[j])*u))<1e-6);calculatedPhaseSamples++;
+ }}
+ const mult=new Map();for(const r of rows){const i=phaseImage(r.exponent,r.conductor,power);mult.set(i,(mult.get(i)||0)+1);}assert.equal(mult.size,images);
+ if(kind==='cyclotomic')assert.deepEqual([...mult.values()],Array(8).fill(48));if(kind==='fiber')assert.deepEqual([...mult.entries()],[[264,264]]);g.dispose();
+}
+const moving=createRootGeometry(data);
+for(let k=0;k<30;k++)for(const u of [0,.5,1]){updateRootGeometry(moving,data,k,u);for(let i=0;i<240;i++){
+ let id=i;for(let n=0;n<k;n++)id=data.roots[id].next;const a=data.roots[id],b=data.roots[a.next];
+ for(const [j,key,scale] of [[0,'x',.93],[1,'y',.93],[2,'z',.62]])assert(Math.abs(moving.attributes.position.array[3*i+j]-(a[key]+(b[key]-a[key])*u)*scale)<1e-7);
+}}moving.dispose();
+for(let j=1;j<=3;j++)for(let n=1;n<=128;n++){const f=calculationFrame(data,0,{terms:n,order:j,map:1});assert(f.partial>=0&&f.partial<f.target);assert.equal(f.stage,'Exact power-map image');if(n>1)assert(f.partial>=data.calculations.series[n-2].partial[j-1]);}
+for(const t of [0,3,8,12,14,28,100]){const f=calculationFrame(data,t);assert.equal(f.progress,mapProgress(t));assert.equal(rootMotion(t,true).progress,0);}assert.equal(mapProgress(0),0);assert.equal(mapProgress(8),1);assert.equal(mapProgress(14),0);
+console.log(JSON.stringify({calculated_phase_samples:calculatedPhaseSamples,coxeter_vertex_samples:21600,series_samples:384,exact_phase_maps:true}));
+
 assert.equal(data.roots.length,240);
 assert.deepEqual(Array.from({length:8},(_,i)=>data.roots.filter(r=>r.orbit===i).length),Array(8).fill(30));
 assert.equal(data.branches.length,264);
