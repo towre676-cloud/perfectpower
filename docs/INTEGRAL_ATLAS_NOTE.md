@@ -143,6 +143,27 @@ interface; selecting a structure also reveals its close-study view. The
 night-blue backdrop and blue, coral, violet, gold and lavender identities
 remain consistent across the four scenes.
 
+## Mathematics in the first view
+
+Equations now remain visible while the controls are hidden. Five measured
+labels attach the totient, Coxeter orbit count, conductor map, refinement
+map and first arcsine moment to their corresponding nodes. A larger
+semantic MathML identity follows the four chapters: the 56th-power phase
+map, the full 264-branch period distribution, Raghava's first arcsine
+moment, and ordinary Frobenius reciprocity. Selecting a node changes the
+headline to its own identity. The E8 inspector shows the current exact root
+coordinates and squared norm without an additional disclosure.
+
+The equation area is measured separately and reserves space above the 3D
+stage. The geometry and its attached labels use the same reduced stage
+coordinates. Hide math restores the full-height artwork; Show math restores
+the annotations. Read this identity holds automatic chapter changes while
+its definitions are open. The period definition retains the Gamma
+normalization and Re(s)>1 domain, and the arcsine definition states the
+principal real angle domain. The ordinary reciprocity equation is not a
+higher-category theorem. The different 240-element collections are still
+distinguished in the selected explanations.
+
 Each node now has a distinct three-dimensional silhouette. Blue intersecting
 phase bands surround an airy shell; the coral root cloud remains visible
 inside a faint faceted cage; violet open ribbons form a double braid; nested

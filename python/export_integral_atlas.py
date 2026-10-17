@@ -67,7 +67,7 @@ def build():
     sources = ['python/export_integral_atlas.py','python/build_resonance_downloads.py',
                'python/tests/test_resonance_scene.mjs','python/tests/test_resonance_shaders.py'] + ['web/integral-families/'+name for name in
                ('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','calculator.html',
-                'resonance.jsx','resonance-scene.js','resonance-effects.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt')]
+                'resonance.jsx','resonance-math.jsx','resonance-scene.js','resonance-effects.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt')]
     receipt = dict(schema='pp-spectral-atlas/1', title='The 384–264 Resonance', geometry=result,
                    url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',
                    calculator_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/calculator.html',
@@ -75,7 +75,9 @@ def build():
                    runtime=dict(react='19.2.6',three='0.186.1',autonomous=True,mode_duration_seconds=18,
                                 interruptible_transitions=True,focus_inspection=True,adaptive_quality=True,
                                 root_neighbors=56,root_step_seconds=1.6,background_grid=[37,29],cinema_first=True,luminous_node_surfaces=5,
-                                volumetric_torus_strands=12,interference_discs=5,braid_strands=6,simplex_membranes=10),
+                                volumetric_torus_strands=12,interference_discs=5,braid_strands=6,simplex_membranes=10,
+                                math_visible_by_default=True,scene_linked_identities=4,math_node_annotations=5,
+                                semantic_mathml=True,visible_root_coordinates=True),
                    atlas_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/atlas.html',
                    monograph='docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md',
                    scope='Exact underlying geometry and integer arithmetic; floating-point projections and curves. No identification of distinct 240-element objects.',

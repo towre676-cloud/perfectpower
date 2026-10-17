@@ -329,7 +329,16 @@ for(const geometry of geometries)geometry.dispose();
 
 // Render the actual React component with ReactDOMServer. No DOM or WebGL is
 // supplied: this checks useful initial markup and autonomous defaults only.
-const ssr=await build({stdin:{contents:"import React from 'react'; import {renderToStaticMarkup} from 'react-dom/server'; import {ResonanceExperience} from './resonance.jsx'; export const html=renderToStaticMarkup(React.createElement(ResonanceExperience));",resolveDir:web,sourcefile:'resonance-test-entry.mjs'},bundle:true,write:false,
+const ssr=await build({stdin:{contents:`import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import {ResonanceExperience,MathIdentity,RootReadout} from './resonance.jsx';
+import {MathDefinition} from './resonance-math.jsx';
+import envelope from './atlas-data.json';
+const render=component=>renderToStaticMarkup(component);
+export const html=render(React.createElement(ResonanceExperience));
+export const identities=Object.fromEntries(['bridge','trace','raghava','reciprocity','e8','fiber','cyclotomic'].map(kind=>[kind,render(React.createElement(MathIdentity,{kind}))]));
+export const rootReadout=render(React.createElement(RootReadout,{root:JSON.parse(envelope.payload_json).roots[0]}));
+export const traceDefinition=render(React.createElement(MathDefinition,{kind:'trace'}));`,resolveDir:web,sourcefile:'resonance-test-entry.mjs'},bundle:true,write:false,
   format:'cjs',platform:'node',target:'node22',logLevel:'silent',plugins,
   define:{'process.env.NODE_ENV':'"production"'}});
 const rendered={exports:{}};
@@ -337,7 +346,8 @@ new Function('module','exports','require',ssr.outputFiles[0].text)(rendered,rend
 const html=rendered.exports.html;
 assert.equal(typeof html,'string');
 assert(html.includes('AUTONOMOUS SEQUENCE'));
-assert(/class="resonance-experience quiet(?:\s|")/.test(html));
+const experienceClasses=html.match(/class="(resonance-experience[^"]*)"/)?.[1].split(/\s+/);
+assert(experienceClasses?.includes('quiet')&&experienceClasses.includes('has-math'));
 assert(/class="restore-ui"[^>]*>[\s\S]*?Show controls<\/button>/.test(html));
 assert(/<footer\b[^>]*class="resonance-footer chrome"[^>]*inert=""/.test(html));
 assert(html.includes('aria-label="Pause animation"'));
@@ -350,4 +360,33 @@ assert.equal((html.match(/aria-label="[^"]+: [^"]+" class="node-label /g)||[]).l
 assert(html.includes('class="resonance-canvas" role="img" aria-label='));
 assert(html.includes('Opening the resonance field'));
 assert(!html.includes('The 3D scene could not start'));
-console.log(JSON.stringify({schema:'pp-resonance-scene-checks/1',scene_modes:SCENE_MODES.length,root_points:240,coxeter_orbits:8,exact_adjacency_pairs:edges,displayed_neighbor_segments:neighborSegments,simplex_triangles:simplexTriangles,ribbon_triangles:ribbonTriangles,node_effect_objects:effectObjects,phase_branches:264,primitive_phase_branches:240,deterministic_geometries:geometries.length,transition_samples:transitionSamples,camera_samples:cameraSamples,projected_frustum_points:frustumPoints,tower_frustum_points:towerFrustumPoints,label_layout_widths:labelLayouts,curve_samples:curveSamples,payload_sha256:envelope.payload_sha256,esbuild_scene_bundle:true,react_server_markup:true,autonomous_default:true,cinema_default:true,browser_qa:false,passed:true}));
+
+// Mathematical annotations remain visible in cinema mode. The controls can
+// stay inert while the equations and their independent visibility toggle do not.
+const banner=html.match(/<section\b([^>]*class="math-banner[^"]*"[^>]*)>([\s\S]*?)<\/section>/);
+assert(banner,'Default scene must contain its mathematical identity');
+assert(!/\b(?:hidden|inert)(?:\s|=|$)/.test(banner[1])&&!/class="[^"]*\bchrome\b/.test(banner[1]));
+assert(banner[2].includes('class="math-equation"')&&banner[2].includes('data-identity="bridge"'));
+const annotationGroup=html.match(/<div\b([^>]*class="node-labels math-annotations"[^>]*)>/)?.[1];
+assert(annotationGroup&&!/\b(?:hidden|inert)(?:\s|=|$)/.test(annotationGroup));
+const mathToggle=html.match(/<button\b([^>]*aria-label="Show mathematical annotations"[^>]*)>([\s\S]*?)<\/button>/);
+assert(mathToggle&&mathToggle[1].includes('aria-pressed="true"')&&mathToggle[2].includes('Hide math'));
+assert(!/\b(?:hidden|inert)(?:\s|=|$)/.test(mathToggle[1]));
+
+const textContent=markup=>markup.replace(/<[^>]*>/g,'').replace(/<!--[^]*?-->/g,'').replaceAll('&gt;','>').replaceAll('&lt;','<').replaceAll('&amp;','&').replaceAll('&#x27;',"'").replaceAll('&quot;','"').replace(/\s+/g,'');
+const {identities,rootReadout,traceDefinition}=rendered.exports;
+const identityText={bridge:['q56=ζ30','384=48×8'],trace:['∑j=0263','2641−s','Is(q)'],raghava:['∑n=1∞','(2sinθ)2n','n2','2θ2'],reciprocity:['HomCN','IndCnV,W','≅HomCn','ResCnW'],e8:['J2=','2π245−2π245=0'],fiber:['Q264=q','264=240+24'],cyclotomic:['q=eiπ840','φ(1680)=384']};
+for(const [kind,tokens] of Object.entries(identityText)){
+  const markup=identities[kind],plain=textContent(markup);
+  assert(markup.includes(`data-identity="${kind}"`)&&markup.includes('role="math"')&&/aria-label="[^"]+"/.test(markup));
+  assert(markup.includes('<math display="block"')&&/<m(?:i|n|o|frac|sup|sub)\b/.test(markup),'Identity must use rendered MathML');
+  assert(!/undefined|NaN|\\frac|\\sum/.test(markup));
+  for(const token of tokens)assert(plain.includes(token),`Missing mathematical content ${kind}: ${token}`);
+}
+assert.equal(new Set(Object.values(identities)).size,7);
+assert(traceDefinition.includes('role="math"')&&traceDefinition.includes('<msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup>'));
+for(const token of ['Is(z)=1Γ(s)','z(−logx)s−1','1−zx','dx','=Lis(z)'])assert(textContent(traceDefinition).includes(token));
+assert(rootReadout.includes('class="root-coordinates"')&&!/<details\b|\bhidden=|\binert=/.test(rootReadout));
+assert(rootReadout.includes(`(${data.roots[0].doubled_root.map(n=>n/2).join(', ')})`));
+assert(textContent(rootReadout).includes('‖α‖²=2'));
+console.log(JSON.stringify({schema:'pp-resonance-scene-checks/1',scene_modes:SCENE_MODES.length,root_points:240,coxeter_orbits:8,exact_adjacency_pairs:edges,displayed_neighbor_segments:neighborSegments,simplex_triangles:simplexTriangles,ribbon_triangles:ribbonTriangles,node_effect_objects:effectObjects,phase_branches:264,primitive_phase_branches:240,deterministic_geometries:geometries.length,transition_samples:transitionSamples,camera_samples:cameraSamples,projected_frustum_points:frustumPoints,tower_frustum_points:towerFrustumPoints,label_layout_widths:labelLayouts,curve_samples:curveSamples,rendered_math_identities:7,visible_math_default:true,expanded_root_readout:true,payload_sha256:envelope.payload_sha256,esbuild_scene_bundle:true,react_server_markup:true,autonomous_default:true,cinema_default:true,browser_qa:false,passed:true}));
