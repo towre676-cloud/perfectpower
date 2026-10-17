@@ -30,6 +30,7 @@ RECEIPTS=(
     'period_bridge_deep/observability.json',
     'period_bridge_deep/coxeter.json',
     'period_bridge_deep/dirichlet.json',
+    'period_bridge_deep/atlas.json',
 )
 
 

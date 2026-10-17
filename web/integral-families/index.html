@@ -1,14 +1,38 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173e38"><title>Integral families · PerfectPower</title><link rel="stylesheet" href="./style.css"></head>
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08141e">
+<meta name="description" content="An interactive atlas of Raghava integrals, cyclotomic branches, actual E8 roots and exact Mellin cancellations.">
+<title>Spectral Atlas · PerfectPower</title><link rel="stylesheet" href="./atlas.css">
+</head>
 <body>
-<header class="topbar"><a class="brand" href="https://perfectpower-explorer-download.towre676.chatgpt.site/start"><span class="brand-mark">∫</span> PerfectPower</a><a class="back" href="https://perfectpower-explorer-download.towre676.chatgpt.site/research">All research <span aria-hidden="true">↗</span></a></header>
+<header class="atlas-header"><a class="wordmark" href="/research"><span class="brand-integral" aria-hidden="true">∫</span><span>PerfectPower<span class="wordmark-sub">SPECTRAL ATLAS</span></span></a><nav class="header-links" aria-label="Resources"><a href="./calculator.html">Exact calculators <span aria-hidden="true">↗</span></a><a href="/PerfectPower-Deep-Integral-Monograph.pdf">Read the mathematics <span aria-hidden="true">↗</span></a></nav></header>
 <main>
-<section class="hero"><div class="hero-copy"><p class="eyebrow">THE INTEGRAL EXPLORER</p><h1>Big sums.<br><em>Beautiful shortcuts.</em></h1><p class="intro">Choose an idea. Turn a dial. Watch whole families of integrals fit together.</p><p class="credit">Built around K. Srinivasa Raghava’s integral methods.</p></div><div class="hero-art"><canvas id="orbit" width="460" height="430" aria-label="A diagram of 264 phase branches, with the 240 primitive branches highlighted"></canvas><div class="orbit-caption"><span class="dot"></span><span id="orbit-label">264 phases · 240 fit the primitive filter</span><button id="motion" aria-label="Pause animation">Ⅱ</button></div></div></section>
-<nav class="modes" aria-label="Choose an idea"><button data-mode="angle" class="selected" aria-pressed="true"><span class="mode-icon">◔</span><span><b>Angle</b><small>A small turn, an exact answer</small></span><span class="mode-arrow">↗</span></button><button data-mode="cancel" aria-pressed="false"><span class="mode-icon">±</span><span><b>Cancellation</b><small>Make unwanted terms disappear</small></span><span class="mode-arrow">↗</span></button><button data-mode="e8" aria-pressed="false"><span class="mode-icon">✳</span><span><b>E8</b><small>Find the balance in a pattern</small></span><span class="mode-arrow">↗</span></button></nav>
-<div id="workspace" aria-live="polite"><section class="workspace loading"><p>Opening the exact result collection…</p></section></div>
-<section class="story"><span class="story-mark">∫</span><div><h2>One idea travels a long way.</h2><p>Raghava’s formulas connect an angle to an infinite sum. Phase filters collect related integrals into a much smaller answer. E8 supplies a separate, explicit pattern whose two contributions balance exactly.</p></div></section>
-<details class="sources"><summary>Where does the mathematics come from?</summary><div class="source-content"><p>The harmonic and arcsine families follow Raghava’s <a href="https://arxiv.org/html/2607.09904v2" target="_blank" rel="noreferrer">paper and its classical antecedents</a>. The two phase scales come from the <a href="https://claude.ai/public/artifacts/1db99748-b7fd-477b-8a9c-1bb54fb33a19" target="_blank" rel="noreferrer">first supplied visualization</a> and <a href="https://claude.ai/public/artifacts/4fd0f32a-22b6-4fae-b2d2-1f3732d324af" target="_blank" rel="noreferrer">384–264 visualization</a>.</p><p>Exact integer and rational calculations are replayed in PerfectPower. The analytic identities rely on the cited mathematics. These new integral identities have not been proved in Lean. The E8 panel states which construction has been retained. Checking an adjoint lift does not establish the visualizations’ proposed categorical unification, and 240 phase conjugates are not identified with 240 E8 roots.</p><p><a href="https://github.com/towre676-cloud/perfectpower/blob/main/docs/PERIOD_BRIDGE_MONOGRAPH.md" target="_blank" rel="noreferrer">Read the complete mathematical account ↗</a> · <a href="https://github.com/towre676-cloud/perfectpower/blob/main/receipts/period_bridge/results.json" target="_blank" rel="noreferrer">Full calculation receipts ↗</a></p><p id="data-identity" class="identity">Checking data identity…</p></div></details>
-<footer><span>PerfectPower · Integral families</span><span id="connection">Checking the retained calculations…</span></footer>
-</main><script src="./engine.js"></script><script src="./app.js" defer></script>
-</body></html>
+<div class="atlas-shell">
+<section class="chapter-copy" aria-labelledby="chapter-title">
+<p id="chapter-number" class="eyebrow">03 / THE ROOT SYSTEM</p>
+<h1 id="chapter-title">E₈, made<br><em>tangible.</em></h1>
+<p id="chapter-description" class="chapter-description">240 roots. Eight dimensions. One remarkable projection. Follow a root through its 30-step Coxeter orbit.</p>
+<div id="chapter-controls" class="chapter-controls"></div>
+<div id="chapter-result" class="chapter-result" aria-live="polite"></div>
+<details class="explanation"><summary>What is being shown?</summary><div id="chapter-proof" class="proof-copy"></div></details>
+</section>
+<section class="visual-panel" aria-labelledby="visual-title">
+<div class="visual-toolbar"><div><span class="live-dot" aria-hidden="true"></span><span id="visual-title">ACTUAL E8 ROOT COORDINATES</span></div><button id="save-view" type="button" class="text-button">Save view <span aria-hidden="true">↓</span></button></div>
+<div id="visual-stage" class="visual-stage"><svg id="atlas-plot" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="plot-title plot-description"><title id="plot-title">The E8 root system</title><desc id="plot-description">Loading the verified geometric coordinates.</desc></svg><div id="loading-message" class="loading-message" role="status">Opening the atlas…</div></div>
+<div class="visual-bottom"><p id="visual-caption">A geometric projection of actual roots. Select a point to inspect its eight coordinates.</p><button id="play" type="button" aria-pressed="false" class="play-button">Play orbit <span aria-hidden="true">▷</span></button></div>
+<div id="visual-legend" class="visual-legend" aria-label="Diagram legend"></div>
+</section>
+</div>
+<nav class="chapter-nav" aria-label="Atlas chapters">
+<button type="button" data-chapter="phase" aria-pressed="false"><span class="chapter-index">01</span><span><b>Lift the phase</b><small>264 branches, precisely separated</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+<button type="button" data-chapter="raghava" aria-pressed="false"><span class="chapter-index">02</span><span><b>Collect the sum</b><small>Raghava’s arcsine connection</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+<button type="button" data-chapter="e8" aria-pressed="true"><span class="chapter-index">03</span><span><b>Meet E₈</b><small>Actual roots, orbits and neighbors</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+<button type="button" data-chapter="mellin" aria-pressed="false"><span class="chapter-index">04</span><span><b>Tune the balance</b><small>Watch an exact integral vanish</small></span><span class="chapter-arrow" aria-hidden="true">↗</span></button>
+</nav>
+<footer class="atlas-footer"><p>A shared language of phases.<br><span>Distinct mathematical objects, with their connections made explicit.</span></p><p id="data-status" role="status">Checking the source identities…</p><a href="https://github.com/towre676-cloud/perfectpower/archive/refs/heads/main.zip">Complete source ↓</a></footer>
+</main>
+<script src="./engine.js"></script><script src="./atlas-model.js"></script><script src="./atlas.js" defer></script>
+</body>
+</html>

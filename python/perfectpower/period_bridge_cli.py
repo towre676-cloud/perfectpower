@@ -40,7 +40,7 @@ def application(root):
     if not path.is_file():
         return None
     summary, digest = read_summary(path)
-    return {
+    result = {
         'id': 'integral-families',
         'title': summary.get('title', 'Integral families'),
         'workspace': 'integral-families',
@@ -52,6 +52,16 @@ def application(root):
         'native_engine_requires_upgrade': True,
         'live_data_is_executable_upgrade': False,
     }
+    atlas = root / 'receipts/period_bridge_deep/atlas.json'
+    if atlas.is_file():
+        result['visualization'] = {
+            'title': 'Spectral Atlas',
+            'url': 'https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',
+            'receipt_path': 'receipts/period_bridge_deep/atlas.json',
+            'receipt_sha256': hashlib.sha256(atlas.read_bytes()).hexdigest(),
+            'result': json.loads(atlas.read_text()),
+        }
+    return result
 
 
 def receipt(path=None, details=False):
