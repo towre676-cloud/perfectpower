@@ -6,3 +6,26 @@
 @media(prefers-reduced-motion:reduce){#resonance-app .loading-orbit{animation:none}#resonance-app .chrome{transition:none}}
 
 @media(max-width:580px){#resonance-app .node-label{max-width:110px}#resonance-app .node-label span{font-size:11px;letter-spacing:0;text-transform:none}#resonance-app .node-label strong{display:none}#resonance-app .node-label.node-right span{font-size:11px}#resonance-app .scene-navigation button{min-height:40px}#resonance-app .header-actions button{min-width:36px;min-height:36px}}
+
+#resonance-app .quiet .chrome,#resonance-app .unavailable .chrome{visibility:hidden;opacity:0;pointer-events:none}
+#resonance-app .quiet .node-label,#resonance-app .unavailable .node-label{visibility:hidden!important}
+#resonance-app .node-label:disabled{cursor:default}
+#resonance-app .scene-heading{animation:resonance-title-in .65s ease both}
+@keyframes resonance-title-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+#resonance-app .quality-label{display:flex;justify-content:space-between;align-items:center;color:#b8c4df;font-size:12px;margin:20px 0}
+#resonance-app .quality-label select{color:#e1e6ff;background:#101933;border:1px solid #657ca74d;border-radius:5px;padding:7px 9px;font:inherit;min-width:130px}
+#resonance-app .root-study{border-left:1px solid #ff9d8766;padding-left:13px;margin:20px 0;color:#ffbda9}
+#resonance-app .root-study>span{font-size:10px;color:#a9b7d5;display:block}
+#resonance-app .root-study>strong{font-size:12px;font-weight:400;display:block;margin-top:6px}
+#resonance-app .root-study>p{font-size:10px;margin:5px 0 12px}
+#resonance-app .root-study summary{font-size:11px;color:#d0d9ee;cursor:pointer}
+#resonance-app .root-study code{display:block;font-size:11px;line-height:1.7;margin-top:10px;overflow-wrap:anywhere;white-space:normal;color:#ffcab9}
+#resonance-app .return-field{font-size:11px;color:#d6dfff;padding:8px 0 12px;border-bottom:1px solid #7e91ba33;display:block;width:100%;text-align:left}
+#resonance-app .restart-scene{font-size:12px;border:1px solid #7e91ba66;border-radius:6px;padding:12px 20px;background:#15203a}
+#resonance-app .scene-detail{max-height:calc(100% - 225px);overflow:auto;scrollbar-width:thin;scrollbar-color:#34466d transparent}
+@media(max-width:580px){#resonance-app .is-focused .scene-heading{visibility:hidden}#resonance-app .is-focused .scene-detail{max-height:260px}#resonance-app .scene-detail{font-size:12px}#resonance-app .node-label{min-height:35px}}
+@media(pointer:coarse){#resonance-app .drawer-top button,#resonance-app .header-actions button,#resonance-app .info-toggle,#resonance-app .play-toggle{min-width:44px;min-height:44px}#resonance-app .tool-button,#resonance-app .plain-action,#resonance-app .return-field{min-height:44px}#resonance-app .quality-label select{font-size:16px;min-height:44px}#resonance-app .node-label{min-height:44px}}
+@media(prefers-reduced-motion:reduce){#resonance-app .scene-heading{animation:none}}
+
+#resonance-app .is-focused .node-label{visibility:hidden!important;pointer-events:none}
+@media(max-width:649px){#resonance-app .is-focused .scene-heading{visibility:hidden}#resonance-app .is-focused .scene-detail{left:20px;right:20px;width:auto;max-height:260px}}

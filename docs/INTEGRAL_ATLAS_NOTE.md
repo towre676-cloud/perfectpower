@@ -96,3 +96,40 @@ determinism, and phase counts. It does not run a WebGL context or establish
 browser appearance. The original atlas's fixture test now loads `atlas.html`.
 The production build and live asset/receipt checks are reported separately
 from browser QA.
+
+
+## Refined motion and close study
+
+Transitions now save the visible node positions, scales and four scene
+weights before changing direction. Repeated selections during a transition
+continue from that mixture. A separate presentation clock permits manual
+view changes while the mathematical animation is paused; reduced motion
+makes transitions immediate. The automatic camera stays within a bounded
+front-facing arc rather than orbiting indefinitely behind the arrangement.
+Direct manipulation takes priority for eight seconds. Resize retains the
+user's zoom relative to the scene framing.
+
+Clicking a structure enters a close study and holds automatic scene changes.
+Returning restores the whole field and resumes the tour from a fresh scene
+interval. E8 now highlights a root and its actual 56 adjacent roots. The
+selected root follows the exported Coxeter successor every 1.6 simulation
+seconds, traversing all eight 30-root orbits. The inspector reports its
+source-derived eight coordinates, orbit and step. The displayed adjacency
+segments are projected exact root relations; the comet trails on the larger
+connecting paths remain conceptual motion graphics.
+
+A shader draws a restrained 37-by-29 warped luminous grid, echoing the
+original reference background. Six-point particle tails add directional
+flow. Adaptive detail reduces pixel ratio, bloom resolution and particle
+count on slower devices; explicit full and efficient modes remain available.
+This adaptation does not alter root data or mathematical calculations.
+
+Measured label boxes are clamped to the clear scene area and separated when
+they collide. Close-study labels are replaced by the selected inspector.
+Hidden interface elements are inert, and Escape closes panels even while a
+control has keyboard focus. A graphics interruption offers a restart.
+`python/build_resonance_downloads.py` produces the standalone and inline
+copies from the same shipped bundle, preserving licenses and checking their
+asset independence. New pure transition, camera, adjacency and label-layout
+checks complement the existing React markup and geometry tests. These are
+still distinct from browser visual and WebGL execution QA.
