@@ -24,6 +24,12 @@ RECEIPTS=(
     'isogeny_point_groups/verification.json',
     'period_bridge/summary.json',
     'period_bridge/results.json',
+    'period_bridge_deep/summary.json',
+    'period_bridge_deep/results.json',
+    'period_bridge_deep/e8_lift.json',
+    'period_bridge_deep/observability.json',
+    'period_bridge_deep/coxeter.json',
+    'period_bridge_deep/dirichlet.json',
 )
 
 

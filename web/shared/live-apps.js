@@ -24,7 +24,7 @@ async function refresh(){if(busy)return;busy=true;try{
   card.append(node('strong',data.title||'Integral families'),node('p',data.description||'Explore exact relationships between integral families.'));
   const highlights=node('div');highlights.style.cssText='display:flex;gap:20px;flex-wrap:wrap';
   for(const item of (data.highlights||[]).slice(0,3)){const value=node('div');value.append(node('strong',String(item.value??'')),node('div',item.label||''));highlights.append(value);}
-  card.append(highlights);const more=node('a','Read the mathematics →');more.href=integrals.monograph;more.style.cssText='display:inline-block;margin-top:12px;color:#28634d';card.append(more);research.append(card);
+  card.append(highlights);const explore=node('a','Explore the integral families →');explore.href=integrals.url||'https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/';explore.style.cssText='display:inline-block;margin:12px 18px 0 0;color:#28634d';card.append(explore);const more=node('a','Read the mathematics →');more.href=integrals.monograph;more.style.cssText='display:inline-block;margin-top:12px;color:#28634d';card.append(more);research.append(card);
   if(!integralFocused&&location.hash==='#integral-families'){integralFocused=true;card.scrollIntoView({block:'start'});}
  }
  const changed=Object.entries(updates).some(([key,value])=>known[key]&&value.digest&&known[key]!==value.digest);

@@ -99,6 +99,53 @@ class PeriodBridgeCliTests(unittest.TestCase):
             self.assertEqual(packet['summary'], summary)
             self.assertIn('_assets/receipts/period_bridge/summary.json', packet['receipt_path'])
 
+    def test_deep_summary_is_preferred_and_links_to_explorer(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            write_summary(root / 'receipts/period_bridge')
+            path, summary = write_summary(root / 'receipts/period_bridge_deep')
+            summary.update(schema='pp-period-bridge-deep/1', title='Deep integral families')
+            path.write_text(json.dumps(summary))
+            result = application(root)
+            self.assertEqual(result['result'], summary)
+            self.assertEqual(result['receipt_path'], 'receipts/period_bridge_deep/summary.json')
+            self.assertTrue(result['url'].endswith('/integrals/'))
+            self.assertTrue(result['monograph'].endswith('PERIOD_BRIDGE_DEEP_MONOGRAPH.md'))
+
+    def test_deep_details_digest_is_verified_and_tampering_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            path, summary = write_summary(Path(temporary))
+            raw = b'{"exact": "22537/6773760"}\n'
+            (path.parent / 'results.json').write_bytes(raw)
+            summary.update(schema='pp-period-bridge-deep/1',
+                           results_sha256=hashlib.sha256(raw).hexdigest())
+            path.write_text(json.dumps(summary))
+            packet = receipt(path, details=True)
+            self.assertEqual(packet['results'], {'exact': '22537/6773760'})
+            self.assertEqual(packet['results_sha256'], summary['results_sha256'])
+            (path.parent / 'results.json').write_text('{"exact": "1/2"}')
+            with self.assertRaisesRegex(ValueError, 'results_sha256'):
+                receipt(path, details=True)
+            # The lightweight summary route remains inspectable without loading details.
+            self.assertEqual(receipt(path)['summary'], summary)
+
+    def test_installed_runtime_prefers_deep_and_checks_declared_digest(self):
+        from perfectpower import resources
+        with tempfile.TemporaryDirectory() as temporary:
+            package = Path(temporary) / 'site-packages/perfectpower'
+            write_summary(package / '_assets/receipts/period_bridge')
+            path, summary = write_summary(package / '_assets/receipts/period_bridge_deep')
+            raw = b'{"deep": true}'
+            (path.parent / 'results.json').write_bytes(raw)
+            summary.update(schema='pp-period-bridge-deep/1',
+                           results_sha256=hashlib.sha256(raw).hexdigest())
+            path.write_text(json.dumps(summary))
+            with patch.object(resources, '__file__', str(package / 'resources.py')):
+                packet = receipt(details=True)
+            self.assertEqual(packet['summary'], summary)
+            self.assertEqual(packet['results'], {'deep': True})
+            self.assertIn('_assets/receipts/period_bridge_deep/summary.json', packet['receipt_path'])
+
     def test_wrong_receipt_schema_is_rejected(self):
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / 'summary.json'
