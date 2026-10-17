@@ -1,0 +1,57 @@
+{
+  "asset_hash_checks": {
+    "atlas-data.json": {
+      "actual": "fed1942fcd0f928c191054be4fa28c3a4fa160ebc22e2f0c2ea52946d8968d9d",
+      "expected": "fed1942fcd0f928c191054be4fa28c3a4fa160ebc22e2f0c2ea52946d8968d9d",
+      "matches": true
+    },
+    "resonance.bundle.js": {
+      "actual": "8f3903d8ef42be0bad81c7d6d05a0dc39bd21e91716de763dd98c3f48d896362",
+      "expected": "8f3903d8ef42be0bad81c7d6d05a0dc39bd21e91716de763dd98c3f48d896362",
+      "matches": true
+    },
+    "resonance.css": {
+      "actual": "5cfcf783e65c52eb92f46aa4317cc4899dcf797800198582d40f61f9d5c19cb6",
+      "expected": "5cfcf783e65c52eb92f46aa4317cc4899dcf797800198582d40f61f9d5c19cb6",
+      "matches": true
+    }
+  },
+  "browser_visual_qa": false,
+  "dedicated_api_matches": true,
+  "expected_engine_snapshot": "b693adcc4998e50a825dd1cbea58c7e2e4311142",
+  "http_statuses": {
+    "/api/integral-atlas": 200,
+    "/integrals/": 200,
+    "/integrals/atlas-data.json": 200,
+    "/integrals/resonance.bundle.js": 200,
+    "/integrals/resonance.css": 200,
+    "/integrals/resonance.html": 200
+  },
+  "payload_hash_valid": true,
+  "reported_engine_snapshot": "b693adcc4998e50a825dd1cbea58c7e2e4311142",
+  "schema": "pp-calculated-resonance-live-check/1",
+  "site_version": 38,
+  "source_calculations_present": true,
+  "studio_preserved": true,
+  "verified_at": "2026-10-17T19:42:57Z",
+  "site_url": "https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/resonance.html",
+  "site_source_commit": "6e3754834a619e77915f3f49e1f6671995b2e287",
+  "numerical_checks": {
+    "python_tests": 15,
+    "phase_geometry_samples": 3280,
+    "root_vertex_samples": 21600,
+    "series_samples": 384,
+    "native_shader_pairs": 8
+  },
+  "download": {
+    "filename": "PerfectPower-Calculated-Resonance.zip",
+    "bytes": 82107502,
+    "sha256": "162c65d015f8cf935db875919e70a6c43bb1ceaef18091470862acd99f3cae7f",
+    "source_files": 8004,
+    "all_source_blobs_verified": true,
+    "engine_snapshot": "b693adcc4998e50a825dd1cbea58c7e2e4311142"
+  },
+  "delivery_fix": "Public static assets had precedence over Worker routes. The Site now synchronizes and hash-checks its five cinematic mathematical assets from the dedicated payload before every build.",
+  "shared_research_feed": "Unchanged; automatic approval review blocked the broad feed upload because it can contain unrelated organizational and player-derived data.",
+  "native_executable_upgrade": false
+}
