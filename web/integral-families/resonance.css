@@ -29,3 +29,13 @@
 
 #resonance-app .is-focused .node-label{visibility:hidden!important;pointer-events:none}
 @media(max-width:649px){#resonance-app .is-focused .scene-heading{visibility:hidden}#resonance-app .is-focused .scene-detail{left:20px;right:20px;width:auto;max-height:260px}}
+
+#resonance-app .resonance-atmosphere{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.38;background:radial-gradient(ellipse at 23% 49%,#2344a214 0,transparent 35%),radial-gradient(ellipse at 78% 49%,#a1413512 0,transparent 32%),radial-gradient(ellipse at 50% 20%,#59379b14 0,transparent 38%),radial-gradient(ellipse at 50% 80%,#a2703710 0,transparent 32%);mix-blend-mode:screen}
+#resonance-app .resonance-vignette{z-index:1;background:radial-gradient(ellipse at 50% 48%,transparent 38%,#01031066 100%),linear-gradient(#02051255,transparent 16%,transparent 82%,#020512aa)}
+#resonance-app .restore-ui{display:flex;align-items:center;gap:9px;background:#091025b8;color:#b9c8eb;letter-spacing:.6px;padding:10px 16px;border-color:#5e76ac44;box-shadow:0 0 24px #14254d14;backdrop-filter:blur(10px);opacity:.78;transition:opacity .25s,border-color .25s}
+#resonance-app .restore-ui:hover,#resonance-app .restore-ui:focus-visible{opacity:1;border-color:#a3baff88}
+#resonance-app .controls-glyph{font-size:15px;color:#c6d3ef}
+#resonance-app .quiet .resonance-atmosphere{opacity:.54}
+#resonance-app .scene-navigation button.active .mode-number{color:#b4bfff}
+#resonance-app .node-label{background:radial-gradient(ellipse,#030617b3,transparent 75%)}
+@media(max-width:580px){#resonance-app .restore-ui{bottom:19px;right:18px;font-size:11px;min-height:40px}}

@@ -27,7 +27,7 @@ const result=await build({entryPoints:[source],bundle:true,write:false,
   plugins});
 const compiled={exports:{}};
 new Function('module','exports','require',result.outputFiles[0].text)(compiled,compiled.exports,runtimeRequire);
-const {SCENE_MODES,NODE_ANCHORS,createRootGeometry,createRootNeighborGeometry,createFlowCurve,createResonanceScene,createTransitionController,cameraFrameDistance,boundedCameraPosition}=compiled.exports;
+const {SCENE_MODES,NODE_ANCHORS,createRootGeometry,createRootNeighborGeometry,createFlowCurve,createSimplexFaceGeometry,createResonanceScene,createTransitionController,cameraFrameDistance,boundedCameraPosition}=compiled.exports;
 assert.deepEqual(SCENE_MODES,['colimit','resonance','tower','nerve']);
 assert.equal(typeof createResonanceScene,'function');
 assert.equal(NODE_ANCHORS.length,5);
@@ -101,6 +101,113 @@ for(let rootIndex=0;rootIndex<240;rootIndex++){
 }
 assert.throws(()=>createRootNeighborGeometry(data,240),/56 verified neighbors/);
 
+// The luminous nerve's subdivided membrane must cover its triangle exactly,
+// without reversed or zero-area facets or detached interpolation attributes.
+let simplexTriangles=0;
+const corners=[new THREE.Vector3(-1.3,.2,-.4),new THREE.Vector3(1.1,-.7,.8),new THREE.Vector3(.3,1.4,.2)];
+const faceNormal=corners[1].clone().sub(corners[0]).cross(corners[2].clone().sub(corners[0])).normalize();
+const faceArea=corners[1].clone().sub(corners[0]).cross(corners[2].clone().sub(corners[0])).length()/2;
+for(const divisions of [1,2,12,24,64]){
+  const membrane=createSimplexFaceGeometry(...corners,divisions),p=membrane.getAttribute('position'),n=membrane.getAttribute('normal'),bary=membrane.getAttribute('aBarycentric'),uv=membrane.getAttribute('uv'),index=membrane.getIndex();
+  assert.equal(p.count,(divisions+1)*(divisions+2)/2);
+  assert.equal(index.count,3*divisions*divisions);
+  assert.equal(n.count,p.count);assert.equal(bary.count,p.count);assert.equal(uv.count,p.count);
+  for(let i=0;i<p.count;i++){
+    const point=new THREE.Vector3().fromBufferAttribute(p,i),normal=new THREE.Vector3().fromBufferAttribute(n,i),weights=[bary.getX(i),bary.getY(i),bary.getZ(i)];
+    assert([...point.toArray(),...normal.toArray(),...weights,uv.getX(i),uv.getY(i)].every(Number.isFinite));
+    assert(weights.every(x=>x>=-1e-7&&x<=1+1e-7));assert(Math.abs(weights.reduce((s,x)=>s+x,0)-1)<1e-6);
+    assert(Math.abs(uv.getX(i)-weights[1])<1e-7&&Math.abs(uv.getY(i)-weights[2])<1e-7);
+    const expected=new THREE.Vector3();corners.forEach((corner,j)=>expected.addScaledVector(corner,weights[j]));
+    assert(point.distanceTo(expected)<3e-7);
+    assert(Math.abs(point.clone().sub(corners[0]).dot(faceNormal))<3e-7);
+    assert(Math.abs(normal.length()-1)<2e-6&&normal.dot(faceNormal)>.99999);
+  }
+  let area=0;
+  for(let i=0;i<index.count;i+=3){
+    const ids=[index.getX(i),index.getX(i+1),index.getX(i+2)];assert(ids.every(x=>Number.isInteger(x)&&x>=0&&x<p.count));
+    const [a,b,c]=ids.map(id=>new THREE.Vector3().fromBufferAttribute(p,id)),cross=b.sub(a).cross(c.sub(a));
+    assert(cross.length()>1e-10&&cross.dot(faceNormal)>0,'Membrane facets must retain their source winding');
+    area+=cross.length()/2;simplexTriangles++;
+  }
+  assert(Math.abs(area-faceArea)<3e-6*faceArea);
+  for(const corner of corners)assert(Array.from({length:p.count},(_,i)=>new THREE.Vector3().fromBufferAttribute(p,i).distanceTo(corner)).some(distance=>distance<1e-7));
+  membrane.dispose();
+}
+assert.throws(()=>createSimplexFaceGeometry(...corners,0),/subdivisions/);
+assert.throws(()=>createSimplexFaceGeometry([NaN,0,0],corners[1],corners[2]),/Finite simplex/);
+
+// Parallel-transport ribbons must remain visible from the front, keep their
+// width through high curvature, and close with matching smooth normals.
+const effectsBundle=await build({entryPoints:[path.join(web,'resonance-effects.js')],bundle:true,write:false,format:'cjs',platform:'node',target:'node22',logLevel:'silent',plugins});
+const effectsModule={exports:{}};
+new Function('module','exports','require',effectsBundle.outputFiles[0].text)(effectsModule,effectsModule.exports,runtimeRequire);
+const {createRibbonGeometry,createResonanceEffects}=effectsModule.exports;
+const ribbonCurves=[
+  {closed:true,curve:t=>[Math.cos(2*Math.PI*t),Math.sin(2*Math.PI*t),0]},
+  {closed:true,curve:t=>{const a=2*Math.PI*t,r=.58+.17*Math.cos(3*a);return [r*Math.cos(2*a),r*Math.sin(2*a),.24*Math.sin(3*a)];}},
+  {closed:false,curve:t=>[.42*Math.cos(3.3*Math.PI*t),1.72*(t-.5),.42*Math.sin(3.3*Math.PI*t)]}
+];
+let ribbonTriangles=0;
+for(const [caseIndex,{closed,curve}] of ribbonCurves.entries()){
+  const width=.055,segments=180,ribbon=createRibbonGeometry(curve,width,segments,closed),p=ribbon.getAttribute('position'),n=ribbon.getAttribute('normal'),uv=ribbon.getAttribute('uv'),index=ribbon.getIndex();
+  assert.equal(p.count,2*(segments+1));assert.equal(index.count,6*segments);
+  assert.equal(n.count,p.count);assert.equal(uv.count,p.count);
+  for(let i=0;i<=segments;i++){
+    const left=new THREE.Vector3().fromBufferAttribute(p,2*i),right=new THREE.Vector3().fromBufferAttribute(p,2*i+1),middle=left.clone().add(right).multiplyScalar(.5),center=new THREE.Vector3(...curve(i/segments));
+    assert(middle.distanceTo(center)<2e-7);
+    assert(left.distanceTo(right)>width*.1&&left.distanceTo(right)<width*1.001);
+    assert(Math.abs(uv.getX(2*i)-i/segments)<1e-7&&uv.getY(2*i)===0&&uv.getY(2*i+1)===1);
+    for(const id of [2*i,2*i+1]){const normal=new THREE.Vector3().fromBufferAttribute(n,id);assert(normal.toArray().every(Number.isFinite));assert(Math.abs(normal.length()-1)<2e-6);}
+  }
+  let projectedArea=0;
+  for(let i=0;i<index.count;i+=3){
+    const ids=[index.getX(i),index.getX(i+1),index.getX(i+2)];assert(ids.every(x=>Number.isInteger(x)&&x>=0&&x<p.count));
+    const [a,b,c]=ids.map(id=>new THREE.Vector3().fromBufferAttribute(p,id)),cross=b.sub(a).cross(c.sub(a));
+    assert(cross.toArray().every(Number.isFinite)&&cross.length()>1e-9);
+    const averageNormal=ids.reduce((sum,id)=>sum.add(new THREE.Vector3().fromBufferAttribute(n,id)),new THREE.Vector3()).normalize();
+    assert(cross.dot(averageNormal)>0,'Ribbon facets must agree with their shading normals');
+    projectedArea+=Math.abs(cross.z)/2;ribbonTriangles++;
+  }
+  if(caseIndex===0)assert(projectedArea>width*5,'A front-facing circular ribbon must have a visible band, not an edge-on strip');
+  if(closed)for(const side of [0,1]){
+    assert(new THREE.Vector3().fromBufferAttribute(p,side).distanceTo(new THREE.Vector3().fromBufferAttribute(p,2*segments+side))<1e-6);
+    assert(new THREE.Vector3().fromBufferAttribute(n,side).distanceTo(new THREE.Vector3().fromBufferAttribute(n,2*segments+side))<1e-7);
+    assert.equal(uv.getX(side),0);assert.equal(uv.getX(2*segments+side),1);
+  }
+  const repeated=createRibbonGeometry(curve,width,segments,closed);
+  for(const name of ['position','normal','uv'])assert.deepEqual(repeated.getAttribute(name).array,ribbon.getAttribute(name).array);
+  repeated.dispose();ribbon.dispose();
+}
+assert.throws(()=>createRibbonGeometry(t=>[t,0,0],.05,32,true),/coincident/);
+assert.throws(()=>createRibbonGeometry(()=>[0,0,0]),/nonzero tangent/);
+assert.throws(()=>createRibbonGeometry(()=>[NaN,0,0]),/finite/);
+
+// Build the five actual node forms without a renderer. Check the effect
+// budget, local extent, finite shaders/attributes, and common opacity policy.
+const effectNodes=Array.from({length:5},()=>({visual:new THREE.Group()}));
+const effectRuntime=createResonanceEffects({nodes:effectNodes});
+const effectMaterials=new Set(),effectGeometries=new Set();let effectObjects=0;
+for(const node of effectNodes)node.visual.traverse(object=>{
+  if(object.geometry){effectObjects++;effectGeometries.add(object.geometry);const p=object.geometry.getAttribute('position');assert(p&&Array.from(p.array).every(Number.isFinite));}
+  if(object.material)effectMaterials.add(object.material);
+});
+assert(effectObjects>20&&effectObjects<100,'Node form geometry must remain bounded');
+for(const material of effectMaterials){
+  assert.equal(material.transparent,true);assert.equal(material.depthWrite,false);
+  if(material.uniforms?.uOpacity)material.uniforms.uOpacity.value=.123;
+}
+for(const quality of ['high','eco']){
+  effectRuntime.update(12.3,[1,0,0,0],quality,'e8');
+  for(const node of effectNodes){
+    node.visual.updateMatrixWorld();
+    const bounds=new THREE.Box3().setFromObject(node.visual,true),size=bounds.getSize(new THREE.Vector3());
+    assert(size.toArray().every(x=>Number.isFinite(x)&&x<2.6),'Node effects must retain the framing margin');
+    const detail=node.visual.getObjectByName(`resonance-detail-${effectNodes.indexOf(node)}`);assert(detail);assert.equal(detail.visible,quality!=='eco');
+  }
+  for(const material of effectMaterials)if(material.uniforms?.uOpacity)assert.equal(material.uniforms.uOpacity.value,.123,'Effects must preserve the scene fade and focus opacity');
+}
+effectGeometries.forEach(g=>g.dispose());effectMaterials.forEach(m=>m.dispose());
+
 // Interrupted transitions must continue from the current mixture. This also
 // tests the presentation clock independently of the paused simulation clock.
 const anchorSets=[NODE_ANCHORS.map(p=>[...p]),NODE_ANCHORS.map(([x,y,z])=>[x*.8,y+1,z-.3]),Array.from({length:5},(_,i)=>[0,-3.5+i*1.75,0]),NODE_ANCHORS.map(([x,y,z],i)=>[x*.81,y*.94,z+i*.2])];
@@ -134,9 +241,9 @@ assert.equal(JSON.stringify(anchorSets),anchorCopy,'Transitions must not mutate 
 
 // A full hour of camera motion stays on the viewing side at fixed radius.
 // Project the labeled nodes' bounding boxes to check usable narrow framing.
-let cameraSamples=0,frustumPoints=0;
+let cameraSamples=0,frustumPoints=0,towerFrustumPoints=0;
 const tanHalfFov=Math.tan(43*Math.PI/360);
-for(const aspect of [.25,.5,1,16/9,4]){
+for(const aspect of [.25,.4,.5,1,16/9,4]){
   const distance=cameraFrameDistance(aspect);
   assert(Number.isFinite(distance)&&distance>=16.9);
   assert(distance*tanHalfFov*aspect>=7.1-1e-9);
@@ -154,6 +261,19 @@ for(const aspect of [.25,.5,1,16/9,4]){
       const p=new THREE.Vector3(anchor[0]+x,anchor[1]+y,anchor[2]+z).project(camera);
       assert(Math.abs(p.x)<1&&Math.abs(p.y)<1&&Math.abs(p.z)<1,'Reference node must remain inside the bounded camera frame');
       frustumPoints++;
+    }
+    // The tower chapter raises the camera to reveal its five tilted floors.
+    // Include their full radius, the ascending cage margin, and node halos.
+    camera.position.y+=distance*.17;camera.lookAt(0,0,0);camera.updateMatrixWorld();
+    const worldRotation=new THREE.Euler(.025*Math.sin(time*.11),.045*Math.sin(time*.14),0);
+    const projectTower=point=>{const p=point.applyEuler(worldRotation).project(camera);assert(Math.abs(p.x)<1&&Math.abs(p.y)<1&&Math.abs(p.z)<1,'Elevated tower camera must contain its floors and node halos');towerFrustumPoints++;};
+    for(let level=0;level<5;level++){
+      const y=-3.5+level*1.75,angle=time*.045*(level%2?-1:1);
+      for(let j=0;j<96;j++){
+        const a=2*Math.PI*j/96,p=new THREE.Vector3(2.16*Math.cos(a),2.16*Math.sin(a)*Math.sin(.14),2.16*Math.sin(a)*Math.cos(.14));
+        p.applyAxisAngle(new THREE.Vector3(0,1,0),angle);p.y+=y;projectTower(p);
+      }
+      for(const x of [-.85,.85])for(const yy of [-.85,.85])for(const z of [-.85,.85])projectTower(new THREE.Vector3(x,y+yy,z));
     }
   }
 }
@@ -217,6 +337,9 @@ new Function('module','exports','require',ssr.outputFiles[0].text)(rendered,rend
 const html=rendered.exports.html;
 assert.equal(typeof html,'string');
 assert(html.includes('AUTONOMOUS SEQUENCE'));
+assert(/class="resonance-experience quiet(?:\s|")/.test(html));
+assert(/class="restore-ui"[^>]*>[\s\S]*?Show controls<\/button>/.test(html));
+assert(/<footer\b[^>]*class="resonance-footer chrome"[^>]*inert=""/.test(html));
 assert(html.includes('aria-label="Pause animation"'));
 assert(html.includes('aria-label="Visualization scenes"'));
 const navigation=html.match(/<nav\b[^>]*aria-label="Visualization scenes"[^>]*>([\s\S]*?)<\/nav>/)?.[1];
@@ -227,4 +350,4 @@ assert.equal((html.match(/aria-label="[^"]+: [^"]+" class="node-label /g)||[]).l
 assert(html.includes('class="resonance-canvas" role="img" aria-label='));
 assert(html.includes('Opening the resonance field'));
 assert(!html.includes('The 3D scene could not start'));
-console.log(JSON.stringify({schema:'pp-resonance-scene-checks/1',scene_modes:SCENE_MODES.length,root_points:240,coxeter_orbits:8,exact_adjacency_pairs:edges,displayed_neighbor_segments:neighborSegments,phase_branches:264,primitive_phase_branches:240,deterministic_geometries:geometries.length,transition_samples:transitionSamples,camera_samples:cameraSamples,projected_frustum_points:frustumPoints,label_layout_widths:labelLayouts,curve_samples:curveSamples,payload_sha256:envelope.payload_sha256,esbuild_scene_bundle:true,react_server_markup:true,autonomous_default:true,browser_qa:false,passed:true}));
+console.log(JSON.stringify({schema:'pp-resonance-scene-checks/1',scene_modes:SCENE_MODES.length,root_points:240,coxeter_orbits:8,exact_adjacency_pairs:edges,displayed_neighbor_segments:neighborSegments,simplex_triangles:simplexTriangles,ribbon_triangles:ribbonTriangles,node_effect_objects:effectObjects,phase_branches:264,primitive_phase_branches:240,deterministic_geometries:geometries.length,transition_samples:transitionSamples,camera_samples:cameraSamples,projected_frustum_points:frustumPoints,tower_frustum_points:towerFrustumPoints,label_layout_widths:labelLayouts,curve_samples:curveSamples,payload_sha256:envelope.payload_sha256,esbuild_scene_bundle:true,react_server_markup:true,autonomous_default:true,cinema_default:true,browser_qa:false,passed:true}));

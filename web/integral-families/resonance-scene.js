@@ -4,6 +4,7 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { createResonanceEffects } from './resonance-effects.js';
 
 // The geometry is mathematical where a source exists; the connecting spaces,
 // towers and braids are visual metaphors, not claims of a proved equivalence.
@@ -115,6 +116,38 @@ export function createFlowCurve(start, end, bend = 0) {
   return new THREE.CubicBezierCurve3(a, c, d, b);
 }
 
+// Subdivision supplies smooth barycentric interference over a true triangle;
+// the resulting membrane is an illustrative nerve motif.
+export function createSimplexFaceGeometry(a, b, c, divisions = 12) {
+  const va = a?.isVector3 ? a : new THREE.Vector3(...a), vb = b?.isVector3 ? b : new THREE.Vector3(...b), vc = c?.isVector3 ? c : new THREE.Vector3(...c);
+  if (!Number.isInteger(divisions) || divisions < 1 || divisions > 64 || ![...va.toArray(), ...vb.toArray(), ...vc.toArray()].every(Number.isFinite)) throw new Error('Finite simplex vertices and 1–64 subdivisions are required.');
+  const positions = [], barycentric = [], uv = [], indices = [];
+  const offset = i => i * (divisions + 1) - i * (i - 1) / 2;
+  for (let i = 0; i <= divisions; i++) for (let j = 0; j <= divisions - i; j++) {
+    const u = i / divisions, v = j / divisions, w = 1 - u - v;
+    positions.push(va.x * w + vb.x * u + vc.x * v, va.y * w + vb.y * u + vc.y * v, va.z * w + vb.z * u + vc.z * v);
+    barycentric.push(w, u, v); uv.push(u, v);
+    if (i < divisions && j < divisions - i) {
+      indices.push(offset(i) + j, offset(i + 1) + j, offset(i) + j + 1);
+      if (j < divisions - i - 1) indices.push(offset(i + 1) + j, offset(i + 1) + j + 1, offset(i) + j + 1);
+    }
+  }
+  const geometry = new THREE.BufferGeometry(); geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geometry.setAttribute('aBarycentric', new THREE.Float32BufferAttribute(barycentric, 3)); geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  geometry.setIndex(indices); geometry.computeVertexNormals(); return geometry;
+}
+
+function luminousMaterial(colorA, colorB, opacity = .6, seed = 0) {
+  const material = new THREE.ShaderMaterial({
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
+    uniforms: { uTime: { value: 0 }, uOpacity: { value: opacity }, uColorA: { value: new THREE.Color(colorA) }, uColorB: { value: new THREE.Color(colorB) }, uSeed: { value: seed } },
+    vertexShader: 'varying vec2 vUv; varying vec3 vNormal; varying vec3 vView; void main(){vUv=uv;vec4 mv=modelViewMatrix*vec4(position,1.);vNormal=normalize(normalMatrix*normal);vView=-mv.xyz;gl_Position=projectionMatrix*mv;}',
+    fragmentShader: `uniform float uTime,uOpacity,uSeed; uniform vec3 uColorA,uColorB; varying vec2 vUv; varying vec3 vNormal,vView;
+      void main(){float facing=abs(dot(normalize(vNormal),normalize(vView)));float rim=pow(1.-facing,1.5);float stripe=.5+.5*cos(vUv.y*12.56637+uSeed);float sweep=pow(.5+.5*sin(vUv.x*31.4159-uTime*1.5+uSeed),12.);vec3 c=mix(uColorA,uColorB,.5+.45*sin(vUv.x*6.28318+uSeed));float light=.15+.55*rim+.17*stripe+.34*sweep;gl_FragColor=vec4(c*light,(.35+.65*rim)*uOpacity);}`,
+  });
+  material.userData.baseOpacity = opacity; return material;
+}
+
 const pointVertex = `
   attribute float aSize;
   varying vec3 vColor;
@@ -137,8 +170,8 @@ const pointFragment = `
   void main(){
     float d=length(gl_PointCoord-.5)*2.;
     if(d>1.) discard;
-    float halo=exp(-d*d*6.5)*.6;
-    float core=exp(-d*d*38.)*.85;
+    float halo=exp(-d*d*7.5)*.2;
+    float core=exp(-d*d*48.)*1.1+.22*(1.-smoothstep(.10,.22,d));
     gl_FragColor=vec4(vColor,(halo+core)*uOpacity*vFlicker);
   }`;
 
@@ -269,7 +302,7 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
   const glowTexture = makeGlowTexture();
   constructionCleanup.push(() => glowTexture.dispose());
   const root = new THREE.Group(); scene.add(root);
-  const pointMaterials = [], flows = [], allModeGroups = [], nodes = [], pickTargets = [];
+  const pointMaterials = [], surfaceMaterials = [], flows = [], allModeGroups = [], nodes = [], pickTargets = [];
   const state = { disposed: false, playing: true, auto: true, speed: 1, density: 1, bloom: .7, elapsed: 0, presentation: 0, mode: 0, modeStart: 0, last: 0, frame: 0, fps: 60, width: 1, height: 1, pixelRatio: 1, contextLost: false, failed: false, visible: !document.hidden, dragging: false, interactedAt: -100, quality: 'auto', effectiveQuality: 'high', qualityCheck: 0, focus: null, cameraReturning: false, selectedRoot: 0, rootTick: -1, reducedMotion: reducedMotion ?? Boolean(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches), frameDistance: 16.9 };
   const clockVector = new THREE.Vector3(), cameraGoal = new THREE.Vector3(), targetGoal = new THREE.Vector3(), raycaster = new THREE.Raycaster(), pointer = new THREE.Vector2();
   const nodeProjection = IDS.map(id => ({ id, x: 0, y: 0, visible: true }));
@@ -322,6 +355,13 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     const m = pointMaterial(scale, twinkle); pointMaterials.push(m);
     return new THREE.Points(geometry, m);
   };
+  function addLuminousTube(group, points, radius, colorA, colorB, opacity = .6, seed = 0) {
+    const closed = points[0].distanceToSquared(points[points.length - 1]) < 1e-8;
+    const curve = new THREE.CatmullRomCurve3(closed ? points.slice(0, -1) : points, closed, 'centripetal');
+    const geometry = new THREE.TubeGeometry(curve, Math.min(360, Math.max(96, points.length)), radius, 6, closed);
+    const material = luminousMaterial(colorA, colorB, opacity, seed); surfaceMaterials.push(material);
+    const mesh = new THREE.Mesh(geometry, material); group.add(mesh); return mesh;
+  }
   const nodeCounts = [384, 240, 96, 130, 264];
   const kinds = ['sphere', 'root', 'spiral', 'converge', 'fiber'];
   for (let i = 0; i < 5; i++) {
@@ -329,8 +369,8 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     const visual = new THREE.Group(); group.add(visual);
     const cloud = makePointObject(i === 1 ? createRootGeometry(source) : cloudGeometry(nodeCounts[i], COLORS[i], kinds[i]), i === 4 ? 1.5 : 1.1);
     visual.add(cloud);
-    const haloMaterial = new THREE.SpriteMaterial({ map: glowTexture, color: COLORS[i], transparent: true, opacity: .28, blending: THREE.AdditiveBlending, depthWrite: false });
-    haloMaterial.userData.baseOpacity = .28;
+    const haloMaterial = new THREE.SpriteMaterial({ map: glowTexture, color: COLORS[i], transparent: true, opacity: .16, blending: THREE.AdditiveBlending, depthWrite: false });
+    haloMaterial.userData.baseOpacity = .16;
     const halo = new THREE.Sprite(haloMaterial); halo.scale.setScalar(i === 4 ? 2.5 : 2.25); visual.add(halo);
     const corona = ring(i === 4 ? 1.02 : 1.08, COLORS[i], .3); corona.rotation.x = .35; visual.add(corona);
     const corona2 = ring(i === 4 ? 1.12 : 1.16, COLORS[i], .11); corona2.rotation.set(1.1, .25, .3); visual.add(corona2);
@@ -348,6 +388,7 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     let id = source.roots.find(r => r.orbit === orbit).id;
     for (let step = 0; step < 30; step++) { rootWalk.push(id); id = source.roots[id].next; }
   }
+  const resonanceEffects = createResonanceEffects({ nodes, root, source });
 
   function makeFlow(group, start, end, colorA, colorB, bend, count = 34, thickness = .011, speed = 1) {
     const curve = createFlowCurve(start, end, bend), samples = 96;
@@ -384,6 +425,11 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
   for (let k = 0; k < edges.length; k++) {
     const [a, b] = edges[k];
     makeFlow(colimit, NODE_ANCHORS[a], NODE_ANCHORS[b], COLORS[a], COLORS[b], (k % 2 ? 1 : -1) * .38, 29, .009, .035 + k * .003);
+    // Wider translucent filaments sit behind the bright moving cores. Their
+    // depth changes along the path, so the diamond reads as a spatial weave.
+    const path = createFlowCurve(NODE_ANCHORS[a], NODE_ANCHORS[b], (k % 2 ? 1 : -1) * .38).getPoints(80);
+    path.forEach((p, i) => { p.z -= .15 + .24 * Math.sin(i / 80 * Math.PI); });
+    addLuminousTube(colimit, path, .036, COLORS[a], COLORS[b], .27, k * .6);
   }
   makeFlow(colimit, [-4.8, 0, -.5], [4.8, 0, -.5], COLORS[0], COLORS[1], 2.55, 76, .006, .024);
   makeFlow(colimit, [4.8, 0, -.7], [-4.8, 0, -.7], COLORS[1], COLORS[0], 2.55, 76, .006, .019);
@@ -399,7 +445,8 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
       const t = TAU * j / 360, q = t * 3 + strand * TAU / 11, r = 2.05 + .48 * Math.cos(q);
       path.push(new THREE.Vector3(r * Math.cos(t * 2), r * Math.sin(t * 2) * .72, .85 * Math.sin(q)));
     }
-    torusGroup.add(line(path, color, strand % 3 ? .22 : .5));
+    torusGroup.add(line(path, color, strand % 3 ? .16 : .4));
+    addLuminousTube(torusGroup, path, strand % 3 ? .018 : .052, COLORS[strand % 2 ? 2 : 0], COLORS[4], strand % 3 ? .48 : .66, strand * .57);
   }
   const torusPositions = [], torusColors = [], torusSizes = [];
   for (let j = 0; j < 720; j++) {
@@ -409,6 +456,12 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     torusColors.push(c.r, c.g, c.b); torusSizes.push(j % 11 ? 1.5 : 3);
   }
   torusGroup.add(makePointObject(pointsGeometry(torusPositions, torusColors, torusSizes), 1.1));
+  const innerKnot = [];
+  for (let i = 0; i <= 300; i++) {
+    const a = i / 300 * TAU, r = 1.45 + .32 * Math.cos(5 * a);
+    innerKnot.push(new THREE.Vector3(r * Math.cos(2 * a), r * Math.sin(2 * a) * .72, .65 * Math.sin(5 * a)));
+  }
+  addLuminousTube(torusGroup, innerKnot, .085, COLORS[2], COLORS[1], .31, 2.1);
   for (let i = 0; i < 4; i++) makeFlow(resonance, modeAnchors[1][i], [0, 0, 0], COLORS[i], COLORS[4], (i % 2 ? -1 : 1) * .65, 42, .009, .04 + i * .006);
 
   // 03 — A five-level tower. Elliptical planes and rising helical strands
@@ -419,6 +472,14 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     const y = -3.5 + level * 1.75, plane = new THREE.Group(); plane.position.y = y;
     const outline = ring(2.12, COLORS[level], .24); outline.rotation.x = Math.PI / 2; plane.add(outline);
     const inner = ring(1.76, COLORS[level], .1); inner.rotation.x = Math.PI / 2; plane.add(inner);
+    const discMaterial = new THREE.ShaderMaterial({
+      transparent: true, depthWrite: false, side: THREE.DoubleSide, blending: THREE.AdditiveBlending,
+      uniforms: { uTime: { value: 0 }, uOpacity: { value: .7 }, uColor: { value: new THREE.Color(COLORS[level]) }, uSeed: { value: level * .7 } },
+      vertexShader: 'varying vec2 vP; void main(){vP=position.xy;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',
+      fragmentShader: `uniform float uTime,uOpacity,uSeed;uniform vec3 uColor;varying vec2 vP;void main(){float r=length(vP),a=atan(vP.y,vP.x);float envelope=smoothstep(.14,.32,r)*(1.-smoothstep(1.88,2.12,r));float rings=pow(.5+.5*cos(r*31.-uTime*.8+uSeed),18.);float spokes=pow(.5+.5*cos(a*48.+uTime*.12+uSeed),30.);float wave=pow(.5+.5*sin(r*8.-uTime*1.1+uSeed),12.);float edge=exp(-pow((r-2.04)*32.,2.));float alpha=(.025+.25*rings+.075*spokes+.07*wave+.33*edge)*envelope*uOpacity;gl_FragColor=vec4(uColor*(.42+.35*rings+.2*edge),alpha);}`,
+    });
+    discMaterial.userData.baseOpacity = .7; surfaceMaterials.push(discMaterial);
+    const disc = new THREE.Mesh(new THREE.RingGeometry(.15, 2.12, 96, 7), discMaterial); disc.rotation.x = Math.PI / 2 - .14; plane.add(disc);
     for (let k = 0; k < 4; k++) {
       const a = TAU * k / 4, b = a + Math.PI;
       plane.add(line([new THREE.Vector3(2.12 * Math.cos(a), 0, 2.12 * Math.sin(a)), new THREE.Vector3(2.12 * Math.cos(b), 0, 2.12 * Math.sin(b))], COLORS[level], .08));
@@ -429,6 +490,14 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
       makeFlow(tower, [1.75 * Math.cos(a), y, 1.75 * Math.sin(a)], [1.75 * Math.cos(a + .45), y + 1.75, 1.75 * Math.sin(a + .45)], COLORS[level], COLORS[level + 1], .2, 18, .008, .07);
     }
   }
+  for (let strand = 0; strand < 6; strand++) {
+    const path = [];
+    for (let i = 0; i <= 200; i++) {
+      const u = i / 200, a = u * TAU * 1.8 + strand * TAU / 6, r = 2.05 + .07 * Math.sin(u * TAU * 3 + strand);
+      path.push(new THREE.Vector3(r * Math.cos(a), -3.5 + 7 * u, r * Math.sin(a)));
+    }
+    addLuminousTube(tower, path, strand % 2 ? .018 : .031, COLORS[strand % 5], COLORS[(strand + 2) % 5], .54, strand * .7);
+  }
 
   // 04 — A simplicial nerve, explicitly schematic: translucent faces,
   // filigree edges, and particles travel around several overlapping covers.
@@ -437,10 +506,14 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
   for (let a = 0; a < 5; a++) for (let b = a + 1; b < 5; b++) {
     makeFlow(nerve, nervePositions[a], nervePositions[b], COLORS[a], COLORS[b], .16 * (a - b), 25, .008, .035);
     for (let c = b + 1; c < 5; c++) {
-      const geometry = new THREE.BufferGeometry().setFromPoints([nervePositions[a], nervePositions[b], nervePositions[c]]);
-      geometry.computeVertexNormals();
-      const material = new THREE.MeshBasicMaterial({ color: COLORS[(a + b + c) % 5], transparent: true, opacity: .024, side: THREE.DoubleSide, blending: THREE.AdditiveBlending, depthWrite: false });
-      material.userData.baseOpacity = .024;
+      const geometry = createSimplexFaceGeometry(nervePositions[a], nervePositions[b], nervePositions[c]);
+      const material = new THREE.ShaderMaterial({
+        transparent: true, side: THREE.DoubleSide, depthWrite: false, blending: THREE.AdditiveBlending,
+        uniforms: { uTime: { value: 0 }, uOpacity: { value: .72 }, uColorA: { value: new THREE.Color(COLORS[a]) }, uColorB: { value: new THREE.Color(COLORS[c]) }, uSeed: { value: a + b * .7 + c * .3 } },
+        vertexShader: 'attribute vec3 aBarycentric;varying vec3 vBary;varying vec3 vNormal,vView;void main(){vBary=aBarycentric;vec4 mv=modelViewMatrix*vec4(position,1.);vNormal=normalize(normalMatrix*normal);vView=-mv.xyz;gl_Position=projectionMatrix*mv;}',
+        fragmentShader: `uniform float uTime,uOpacity,uSeed;uniform vec3 uColorA,uColorB;varying vec3 vBary,vNormal,vView;void main(){float border=min(vBary.x,min(vBary.y,vBary.z));float edge=1.-smoothstep(.0,.018,border);vec3 cell=abs(fract(vBary*12.)-.5);float lattice=1.-smoothstep(.025,.065,min(cell.x,min(cell.y,cell.z)));float sweep=pow(.5+.5*sin((vBary.x+vBary.y*.55)*22.-uTime*.75+uSeed),20.);float rim=pow(1.-abs(dot(normalize(vNormal),normalize(vView))),2.);vec3 color=mix(uColorA,uColorB,vBary.z);float alpha=(.022+.055*lattice+.27*edge+.09*sweep+.035*rim)*uOpacity;gl_FragColor=vec4(color*(.4+.3*edge+.18*sweep),alpha);}`,
+      });
+      material.userData.baseOpacity = .72; surfaceMaterials.push(material);
       nerve.add(new THREE.Mesh(geometry, material));
     }
   }
@@ -540,7 +613,7 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
       node.visual.rotation.z = .1 * Math.sin(t * .18 + i);
       node.visual.rotation.x = .14 * Math.cos(t * .21 + i);
       node.visual.scale.setScalar(transition.scales[i] * (1 + .018 * Math.sin(t * .8 + i)));
-      node.halo.material.opacity = .22 + .07 * Math.sin(t * .8 + i);
+      node.halo.material.opacity = .11 + .035 * Math.sin(t * .8 + i);
       node.corona.rotation.z = t * .06 * (i % 2 ? -1 : 1);
       node.corona2.rotation.y = t * .045 + i;
     }
@@ -548,11 +621,14 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     root.rotation.x = .025 * Math.sin(t * .11);
     torusGroup.rotation.y = t * .075;
     torusGroup.rotation.z = .15 * Math.sin(t * .2);
+    torusGroup.scale.setScalar(1.09);
     for (let i = 0; i < towerPlanes.length; i++) towerPlanes[i].rotation.y = t * .045 * (i % 2 ? -1 : 1);
     for (let i = 0; i < coverRings.length; i++) coverRings[i].rotation.y = t * .05 + i * .25;
     stars.rotation.y = t * .0015;
     grid.material.opacity = .12 + .025 * breathe;
     backdropMaterial.uniforms.uTime.value = t;
+    for (const material of surfaceMaterials) material.uniforms.uTime.value = t;
+    resonanceEffects.update(t, transition.weights, state.effectiveQuality, state.focus);
     for (const material of pointMaterials) { material.uniforms.uTime.value = t; material.uniforms.uScale.value = (material.userData.scale ?? 1) * (1 + .04 * breathe); }
     const rootTick = Math.floor(t / 1.6);
     if (rootTick !== state.rootTick) {
@@ -574,7 +650,11 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
         if (state.width >= 650) { targetGoal.x += .24 * halfHeight * camera.aspect; targetGoal.y -= .12 * halfHeight; }
         else targetGoal.y -= .38 * halfHeight;
       }
-      boundedCameraPosition(state.reducedMotion ? 0 : t, distance, cameraGoal).add(targetGoal);
+      boundedCameraPosition(state.reducedMotion ? 0 : t, distance, cameraGoal);
+      // The tower has actual depth. A chapter-specific elevated viewpoint
+      // reveals its illuminated floors instead of leaving them edge-on.
+      if (focusIndex < 0) cameraGoal.y += distance * .17 * transition.weights[2];
+      cameraGoal.add(targetGoal);
       const ease = state.reducedMotion ? 1 : 1 - Math.exp(-dt * (state.focus ? 1.7 : .65));
       camera.position.lerp(cameraGoal, ease); controls.target.lerp(targetGoal, ease);
       if (state.cameraReturning && camera.position.distanceTo(cameraGoal) < .025 && controls.target.length() < .025) { state.cameraReturning = false; controls.minDistance = 9; }
@@ -609,7 +689,18 @@ export function createResonanceScene(host, { data, onFrame, onSelect, onError, r
     setQuality(value) { if (['auto', 'high', 'eco'].includes(value)) { state.quality = value; state.effectiveQuality = value === 'eco' ? 'eco' : 'high'; state.qualityCheck = state.presentation; resize(); } },
     setFocus(id) { if (id === null || IDS.includes(id)) { state.focus = id; state.cameraReturning = id === null; controls.minDistance = 2.8; state.interactedAt = state.presentation - 9; state.modeStart = state.elapsed; } },
     resetCamera() { state.focus = null; state.cameraReturning = false; controls.minDistance = 9; controls.reset(); camera.position.set(0, .1, state.frameDistance); controls.target.set(0, 0, 0); state.interactedAt = state.presentation; resize(); },
-    capture() { if (state.disposed || state.contextLost || state.failed) return null; composer.render(); return renderer.domElement.toDataURL('image/png'); },
+    capture() {
+      if (state.disposed || state.contextLost || state.failed) return null;
+      composer.render();
+      // The live scene is transparent over its midnight CSS atmosphere. Bake
+      // that atmosphere into PNG exports so white image viewers retain it.
+      const image = document.createElement('canvas'); image.width = renderer.domElement.width; image.height = renderer.domElement.height;
+      const context = image.getContext('2d'); if (!context) throw new Error('The image export drawing context is unavailable.');
+      const gradient = context.createRadialGradient(image.width * .5, image.height * .45, 0, image.width * .5, image.height * .45, Math.hypot(image.width, image.height) * .55);
+      gradient.addColorStop(0, '#0a0a20'); gradient.addColorStop(.55, '#050518'); gradient.addColorStop(1, '#010110');
+      context.fillStyle = gradient; context.fillRect(0, 0, image.width, image.height); context.drawImage(renderer.domElement, 0, 0);
+      return image.toDataURL('image/png');
+    },
     diagnostics() { return { engine: 'three', renderer: 'WebGL', modes: SCENE_MODES, mode: state.mode, playing: state.playing, auto: state.auto, elapsed: state.elapsed, fps: Math.round(state.fps), roots: source.roots.length, selectedRoot: state.selectedRoot, orbitStep: source.roots[state.selectedRoot].step, focus: state.focus, quality: state.quality, effectiveQuality: state.effectiveQuality, nodes: 5, flows: flows.length, gridIntersections: 37 * 29, geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, drawCalls: renderer.info.render.calls, pixelRatio: state.pixelRatio, contextLost: state.contextLost, failed: state.failed, disposed: state.disposed }; },
     dispose() {
       if (state.disposed) return;

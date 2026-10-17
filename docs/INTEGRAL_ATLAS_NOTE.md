@@ -133,3 +133,50 @@ copies from the same shipped bundle, preserving licenses and checking their
 asset independence. New pure transition, camera, adjacency and label-layout
 checks complement the existing React markup and geometry tests. These are
 still distinct from browser visual and WebGL execution QA.
+
+
+## Luminous surface pass
+
+The initial presentation now hides the interface, preserving the supplied
+references' full-screen animation. Show controls reveals the existing React
+interface; selecting a structure also reveals its close-study view. The
+night-blue backdrop and blue, coral, violet, gold and lavender identities
+remain consistent across the four scenes.
+
+Each node now has a distinct three-dimensional silhouette. Blue intersecting
+phase bands surround an airy shell; the coral root cloud remains visible
+inside a faint faceted cage; violet open ribbons form a double braid; nested
+gold wave ribbons suggest the integral connection; interlocked lavender
+knots surround the refinement node. Their shaders use view-dependent rim
+light and traveling filaments. These are explicitly decorative forms. The
+separately drawn 240 E8 coordinates and exact adjacency data are unchanged.
+Ribbon strips use parallel-transport width frames and a corrected closed
+seam, rather than camera-facing flat strokes.
+
+The four chapter structures also gain depth. The framework has broad
+translucent filaments behind its moving cores. The resonance scene contains
+eleven luminous torus strands and an inner knot. The tower has five animated
+interference discs and six ascending braids. Ten subdivided simplex faces
+form translucent, patterned membranes in the nerve scene. The tower camera
+rises slightly to make its floors visible. Broad particle halos are reduced
+so sharp cores and colored surface detail can be distinguished. Eco mode
+retains the main silhouettes while removing secondary detail and reducing
+postprocessing cost.
+
+The effects module, `resonance-effects.js`, is included in source identities
+and the self-contained compiled bundle. Geometry tests cover finite normals,
+indices, ribbon width and seam closure, simplex barycentric coordinates,
+bounds, and nonmutation of the exact root geometry. The controls and the
+mathematical scope remain available in the scene. No new categorical or
+physical equivalence is inferred from these visual surfaces.
+
+
+`python3 python/tests/test_resonance_shaders.py` additionally compiles and
+links the eight custom vertex/fragment shader pairs through a surfaceless
+native EGL OpenGL ES 3 context. It collects actual effects materials and the
+shipped scene shader literals, with the equivalent Three.js ShaderMaterial
+prefix. The release check passed on Mesa llvmpipe, OpenGL ES 3.2. This is a
+native shader compiler check, not browser compatibility, browser visual QA,
+or proof of runtime uniform values. PNG frame export now composites the
+rendered canvas onto an opaque midnight background so saved glow is not
+washed out by a white or checkerboard image viewer.

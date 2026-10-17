@@ -64,16 +64,18 @@ def build():
     target=ROOT/'web/integral-families/atlas-data.json'
     target.write_text(json.dumps(envelope,sort_keys=True,indent=2)+'\n')
     result = dict(roots=240,orbits=8,adjacency_pairs=6720,branches=264,primitive=240,payload_sha256=envelope['payload_sha256'])
-    sources = ['python/export_integral_atlas.py','python/build_resonance_downloads.py'] + ['web/integral-families/'+name for name in
+    sources = ['python/export_integral_atlas.py','python/build_resonance_downloads.py',
+               'python/tests/test_resonance_scene.mjs','python/tests/test_resonance_shaders.py'] + ['web/integral-families/'+name for name in
                ('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','calculator.html',
-                'resonance.jsx','resonance-scene.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt')]
+                'resonance.jsx','resonance-scene.js','resonance-effects.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt')]
     receipt = dict(schema='pp-spectral-atlas/1', title='The 384–264 Resonance', geometry=result,
                    url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',
                    calculator_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/calculator.html',
                    chapters=['framework','phase resonance','higher structure motif','nerve motif'],
                    runtime=dict(react='19.2.6',three='0.186.1',autonomous=True,mode_duration_seconds=18,
                                 interruptible_transitions=True,focus_inspection=True,adaptive_quality=True,
-                                root_neighbors=56,root_step_seconds=1.6,background_grid=[37,29]),
+                                root_neighbors=56,root_step_seconds=1.6,background_grid=[37,29],cinema_first=True,luminous_node_surfaces=5,
+                                volumetric_torus_strands=12,interference_discs=5,braid_strands=6,simplex_membranes=10),
                    atlas_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/atlas.html',
                    monograph='docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md',
                    scope='Exact underlying geometry and integer arithmetic; floating-point projections and curves. No identification of distinct 240-element objects.',
