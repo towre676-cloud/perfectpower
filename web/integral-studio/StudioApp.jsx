@@ -105,5 +105,3 @@ export function IntegralStudio(){
   {proof&&<Definitions onClose={()=>setProof(false)}/>}{notice&&<div className="studio-toast" role="status">{notice}</div>}
  </div>;
 }
-
-if(typeof document!=='undefined'){const mount=document.getElementById('integral-studio');if(mount)createRoot(mount).render(<IntegralStudio/>);}

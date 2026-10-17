@@ -1,6 +1,8 @@
-# PerfectPower Integral Studio
+# PerfectPower · The Resonance Field
 
-A self-contained React Three Fiber studio for the four-mode spectral integral. The four views display its actual density, E₈ root projection and primitive eigenphases, exact Fourier coefficients, and fixed-d Gram-energy slices. The guided tour, manual controls, shared mixture links, independent quadrature, local study checkpoints, JSON and PNG exports, and an offline HTML edition use the same mathematical engine.
+The default opening is a full-screen autonomous React Three Fiber composition. Five luminous structures present the actual 384 primitive conductor-1680 phases, their 8-fold phase image with multiplicity 48, the 264 lifted branches, the 240 E₈ roots and their true adjacency graph, and the exact integral-energy surface. Four camera sequences unfold with large mathematical overlays. Bloom, translucent surfaces, moving power-map tracers and spatial choreography supply the visual presentation. The calculation studio is reached through Explore or `?study=1`.
+
+The retained study workspace is a self-contained React Three Fiber studio for the four-mode spectral integral. The four views display its actual density, E₈ root projection and primitive eigenphases, exact Fourier coefficients, and fixed-d Gram-energy slices. The guided tour, manual controls, shared mixture links, independent quadrature, local study checkpoints, JSON and PNG exports, and an offline HTML edition use the same mathematical engine.
 
 The published entry is https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/ . The preceding resonance visualization remains at `/integrals/resonance.html`.
 

@@ -26,10 +26,12 @@ def project(root, exponent):
 def build():
     studio_dir = ROOT/'web/integral-studio'
     studio_build = json.loads((studio_dir/'build-receipt.json').read_text())
-    studio = dict(schema='pp-integral-studio/1', title='Integral Studio',
+    studio = dict(schema='pp-integral-studio/1', title='The Resonance Field',
                   url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',
                   entry_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/studio.html',
                   views=['integral','spectrum','fourier','energy'],
+                  study_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/studio.html?study=1',
+                  presentation=dict(default='full-screen cinematic',chapters=['connected field','264-fold lift','golden split','integral synthesis'],autonomous=True,chapter_seconds=27,bloom=True,mathematical_nodes=dict(primitive_1680=384,eigenphases=8,preimages_per_phase=48,fiber=264,primitive_fiber=240,e8_roots=240,e8_adjacencies=6720)),
                   basis=['log|Q+Q-|','log|Q+/Q-|','u^2','u^2(u+pi^2/2)'],
                   master='E(a,b,c,d)=integral_[−1,1](aA+bK+cP+dR)^2/sqrt(1-x^2) dx',
                   dependencies=studio_build['dependencies'],
@@ -96,12 +98,13 @@ def build():
                'python/tests/test_resonance_scene.mjs','python/tests/test_resonance_shaders.py'] + ['web/integral-families/'+name for name in
                ('index.html','atlas.html','atlas.js','atlas-model.js','atlas.css','calculator.html',
                 'resonance.jsx','resonance-math.jsx','resonance-scene.js','resonance-effects.js','resonance-layout.js','inline-fragment.html','resonance.css','build-resonance.mjs','package.json','resonance.bundle.js','resonance.bundle.js.LEGAL.txt','unification.html','unification-template.html','unification.json')]
-    sources += ['web/integral-studio/'+p for p in ('StudioApp.jsx','StudioScene.jsx','studio-geometry.mjs','studio-geometry.test.mjs','math-engine.mjs','math-engine.test.mjs','ui-model.mjs','ui-model.test.mjs','e8-roots.json','studio.css','studio.html','build-studio.mjs','verify-ui.mjs','mathematics.json','package.json','pnpm-lock.yaml','README.md','build-receipt.json')]
+    sources += ['web/integral-studio/'+p for p in ('CinematicExperience.jsx','CinematicScene.jsx','cinematic-geometry.mjs','cinematic-geometry.test.mjs','cinema.css','StudioApp.jsx','StudioScene.jsx','studio-geometry.mjs','studio-geometry.test.mjs','math-engine.mjs','math-engine.test.mjs','ui-model.mjs','ui-model.test.mjs','e8-roots.json','studio.css','studio.html','build-studio.mjs','verify-ui.mjs','mathematics.json','package.json','pnpm-lock.yaml','README.md','build-receipt.json')]
     sources += ['docs/INTEGRAL_STUDIO_MATHEMATICS.md','docs/INTEGRAL_STUDIO_MONOGRAPH.md','python/build_integral_studio_monograph.py']
-    receipt = dict(schema='pp-spectral-atlas/1', title='Integral Studio · Spectral Atlas', geometry=result,studio=studio,
+    receipt = dict(schema='pp-spectral-atlas/1', title='The Resonance Field · Integral Studio', geometry=result,studio=studio,
                    url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/',unification=unification,
                    calculator_url='https://perfectpower-explorer-download.towre676.chatgpt.site/integrals/calculator.html',
-                   chapters=['integral','spectrum','fourier','energy'],
+                   chapters=['connected field','264-fold lift','golden split','integral synthesis'],
+                   study_views=['integral','spectrum','fourier','energy'],
                    legacy_chapters=['framework','phase resonance','higher structure motif','nerve motif'],
                    legacy_runtime=dict(react='19.2.6',three='0.186.1',autonomous=True,mode_duration_seconds=18,
                                 interruptible_transitions=True,focus_inspection=True,adaptive_quality=True,
