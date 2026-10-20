@@ -15,6 +15,14 @@ def export(root=ROOT):
     from perfectpower.period_bridge_cli import application as integral_application
 
     root = Path(root)
+    if (root/'data/coxeter_research_equations.json').is_file():
+        # Optional continuation: legacy fixtures need no new research inputs.
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            'pp_coxeter_research_export', root/'scripts/export_coxeter_research.py')
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        module.export(root)
     applications, identities = [], {}
     receipts = root / 'receipts/research_counting'
     receipts.mkdir(parents=True, exist_ok=True)

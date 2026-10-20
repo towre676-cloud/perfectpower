@@ -2,13 +2,20 @@
   "application": "/integrals/",
   "child_receipts": {
     "coxeter.json": "4be021365ebf07621d6287ed4e881d129677ff3eb97ee71ce879aa309479f23d",
+    "coxeter_reconstruction.json": "ea6d59619e1b87d78e3ef43ce5d87c5828c816fe1cad9550e45c3cdc5cfa1a0d",
     "dirichlet.json": "ee8e0a0a5c8c6f5c1396715ee802f967640f50ac5468dd2168a79e3ddb756cc9",
     "e8_lift.json": "412fa3c6e6280fbf63d88856aaf20305037b874dee1e454686a3f8d1c51d64c3",
-    "observability.json": "5d25f9ba3946bc49a9d77b8dd472be0230cbb5924513bd79d762dd60dc3ef8cd"
+    "observability.json": "5d25f9ba3946bc49a9d77b8dd472be0230cbb5924513bd79d762dd60dc3ef8cd",
+    "trace_normalizer.json": "3249da599f70bf75cbf7a224c3a4a3ccae0e69112cf6753b7d0b71035bc8032f"
   },
   "counts": {
+    "adjoint_finite_even_coordinates": 33,
+    "adjoint_orientation_odd_coordinates": 14,
+    "coxeter_centralizer_order": 30,
     "coxeter_geometry_cases": 64,
     "coxeter_geometry_roots": 10814,
+    "coxeter_normalizer_order": 240,
+    "coxeter_research_equations": 13,
     "dirichlet_characters": 80,
     "exact_character_dft_checks": 863,
     "exact_character_period_comparisons": 160,
@@ -19,6 +26,8 @@
     "observable_adjoint_dimension": 30,
     "observable_reflection_dimension": 8,
     "prior_pair_decompositions": 120,
+    "reflection_finite_even_coordinates": 9,
+    "reflection_orientation_odd_coordinates": 4,
     "residue_pair_periods": 270,
     "rigorous_generating_value_enclosures": 26,
     "rigorous_master_comparisons": 10,
@@ -27,8 +36,67 @@
     "supplementary_basis_reductions": 33,
     "supplementary_family_coefficients": 65
   },
+  "coxeter_research": {
+    "child_receipts": {
+      "coxeter_reconstruction.json": "ea6d59619e1b87d78e3ef43ce5d87c5828c816fe1cad9550e45c3cdc5cfa1a0d",
+      "trace_normalizer.json": "3249da599f70bf75cbf7a224c3a4a3ccae0e69112cf6753b7d0b71035bc8032f"
+    },
+    "equation_ids": [
+      "PJ-E465",
+      "PJ-E466",
+      "PJ-E467",
+      "PJ-E468",
+      "PJ-E469",
+      "PJ-E470",
+      "PJ-E471",
+      "PJ-E472",
+      "PJ-E473",
+      "PJ-E474",
+      "PJ-E475",
+      "PJ-E476",
+      "PJ-E477"
+    ],
+    "equation_registry_sha256": "302d6c0dc52bdb951acf70c87dd45607be27f5f2504e56100a4425931575e94a",
+    "equations": "data/coxeter_research_equations.json",
+    "formal_kernel_verified": false,
+    "live_data_is_executable_upgrade": false,
+    "monograph": "docs/COXETER_RESEARCH_FRONTIERS.md",
+    "monograph_sha256": "fae2ab3abd11d7791fab9b8e61e8b535de44712ab41d862753fd31179c14ce54",
+    "new_lean_theorems": 0,
+    "preceding_monograph": "docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md",
+    "schema": "pp-coxeter-research-publication/1",
+    "scope": "Mathematical proofs and exact finite rational replay. Historical deep-period identities remain separate.",
+    "source_sha256": {
+      "data/coxeter_research_equations.json": "302d6c0dc52bdb951acf70c87dd45607be27f5f2504e56100a4425931575e94a",
+      "docs/COXETER_RECONSTRUCTION.md": "92fc96193fa869f320a6b0f1b3804df9c853e1687e9498731b9425e2cddf06ad",
+      "docs/COXETER_TRACE_NORMALIZER.md": "11a1b955e7018736b1e7e25865d90bb0d0f4b2872e08122303765387f9840830",
+      "python/perfectpower/coxeter_normalizer.py": "d7b87288e7c5ef3c477e5908348a2ccc9207409b9cd4e1158d2b191c380117ef",
+      "python/perfectpower/coxeter_reconstruction.py": "ce3cd463e97d1003bd07c14343ec1ac51e441c867078e9dc7b221bddcc312fc5",
+      "python/perfectpower/e8_periods.py": "476166db63374fedd78a1231813170334f77729b7ed28d732f13a876d6185694",
+      "python/perfectpower/exact_linear.py": "356f0b9bfe10ac31e745508146f06b6f1bee4bfeaadeab5975e7d11861da730f",
+      "python/perfectpower/period_transport.py": "df1727036fe4587fa2638737cb14d0270a20c873155a916963568572c4421935",
+      "python/perfectpower/raghava_coxeter.py": "a8484e04dc5141c8db1f22c2f5749a7e10e8cb44e481db3f57a77ba4383f8493",
+      "python/tests/test_coxeter_normalizer.py": "78351876b5fdb8ab02ec03c369eac6c5dc2ca82603cef118f100108cacb8d2a0",
+      "python/tests/test_coxeter_reconstruction.py": "070a87b9dc303f50e0ee8d8e0dc69aa403884fbade23799eed03747aff07681e",
+      "scripts/export_coxeter_research.py": "daa88efb52f210e3a23c47ab1d450a37514576a1623b38e2a534eb2b5ba738f0",
+      "scripts/verify_coxeter_normalizer.py": "35435d339a918d14048b6be2ee4a20aee84f7896b0cbc2ff7f3b568e25c8d52c",
+      "scripts/verify_coxeter_reconstruction.py": "1afe69e3ad796755403d998524a716e396f3f811a81ab4c5d0eda8a9d297fe3e"
+    }
+  },
   "formal_kernel_verified": false,
   "highlights": [
+    {
+      "detail": "Mass and eight Raghava moments certify the folded reflection profile without a competitor conductor bound. A positive rational conductor-30 profile matches the first eight coordinates. Four odd Mellin traces recover orientation.",
+      "id": "coxeter-finite-positive-recovery",
+      "label": "Finite spectral recovery",
+      "value": "nine even coordinates; exact positive sharpness"
+    },
+    {
+      "detail": "The trace form and all eight Galois-lift fibers are recomputed. Every lift of exponent 7 has nonidentity fourth power. Classical arithmetic framework; no priority or new Lean claim.",
+      "id": "coxeter-nonsplit-normalizer",
+      "label": "Arithmetic Coxeter symmetry",
+      "value": "240 integral isometries; nonsplit normalizer"
+    },
     {
       "detail": "Two complete scalar families, rigorous rational enclosures, a formal basis and exact recovery of every previous pair formula.",
       "label": "Raghava generating engine",
@@ -60,7 +128,10 @@
     "The explicit finite phase category and conductor colimit do not establish unspecified higher-category resonance proposals.",
     "Parity-mismatched values such as Catalan beta(2) remain formal periods.",
     "Canonical zeta-coordinate changes are exact formal algebra, not numerical algebraic independence.",
-    "Coxeter classification concerns real zeros for s>1; it does not classify complex zeros."
+    "Coxeter classification concerns real zeros for s>1; it does not classify complex zeros.",
+    "Finite moment completeness requires nonnegative weights and identifies the folded spectrum, not its integral lattice or Lie bracket.",
+    "The sharpness counterexample has rational weights; integer dimension-eight minimality and minimality of the combined even-plus-odd scheme remain open.",
+    "The new trace-form, nonsplit-normalizer and finite-recovery proofs add no Lean theorem or historical-priority claim."
   ],
   "live_data_is_executable_upgrade": false,
   "monograph": "docs/PERIOD_BRIDGE_DEEP_MONOGRAPH.md",
