@@ -1,0 +1,186 @@
+{
+ "budget_stated_up_front": {
+  "structure_build_seconds_max": 300,
+  "petersen_50_counting": "5400 s per depth-first worker (2 workers); refinement rounds capped at 2400 s / 1800 s / 1200 s",
+  "peak_rss_target_kb": 1500000,
+  "peak_rss_observed_kb": {
+   "dfs_worker_max": 166472,
+   "refine_round1": 1254164,
+   "refine_round2_disk_spill": 1889968,
+   "refine_round3_disk_spill": 1121344
+  },
+  "note": "Only refinement round 2 exceeded the 1.5 GB target (1.89 GB), while first sorting the already-oversized 2M-node heap loaded from round 1; the machine has 7.9 GB and no OOM occurred. Recorded plainly in REPORT.md."
+ },
+ "validation": {
+  "petersen_28_single": {
+   "exact_count": 208817578,
+   "expansions": 1288947,
+   "count_seconds": 7.895,
+   "peak_rss_kb": 86692,
+   "spot_subtree_record": {
+    "depth": 8,
+    "used": [
+     300,
+     400,
+     40,
+     110,
+     130,
+     145,
+     70,
+     120,
+     150,
+     170
+    ],
+    "value": 1048556,
+    "brute_force_value": 1048556,
+    "agrees": true
+   },
+   "spot_brute_force_agrees": true
+  },
+  "petersen_28_parallel": {
+   "exact_count": 208817578,
+   "expansions": 1288888,
+   "split_exact": 41942626,
+   "spot_check": {
+    "depth": 8,
+    "frontier_value": 1048464,
+    "brute_force_value": 1048464,
+    "agrees": true
+   }
+  },
+  "petersen_39_single": {
+   "exact_count": 368072359571,
+   "expansions": 136680243,
+   "count_seconds": 693.705,
+   "peak_rss_kb": 142428,
+   "spot_subtree_record": {
+    "depth": 19,
+    "used": [
+     519,
+     436,
+     291,
+     352,
+     540
+    ],
+    "value": 1048544,
+    "brute_force_value": 1048544,
+    "agrees": true
+   },
+   "spot_brute_force_agrees": true
+  }
+ },
+ "petersen_50_stages": {
+  "split": {
+   "depth": 6,
+   "prefixes": 52,
+   "split_exact": 211070361143360,
+   "total_width_after_split": 84854332298872
+  },
+  "dfs_workers_checkpoints": [
+   {
+    "expansions": 456500000,
+    "exact": 85994407402933,
+    "floor": 233289998663191,
+    "ceiling": 275645686443997,
+    "stack_nodes": 28
+   },
+   {
+    "expansions": 440750000,
+    "exact": 87571988839821,
+    "floor": 186488682045173,
+    "ceiling": 228810640931314,
+    "stack_nodes": 28
+   }
+  ],
+  "dfs_combined": {
+   "exact_constant": 384636757386114,
+   "interval": [
+    630849041851724,
+    715526688518671
+   ],
+   "width": 84677646666947,
+   "dfs_expansions_total": 897250000,
+   "termination": "workers killed by external SIGTERM at ~3880 s, before their 5400 s budget; checkpoints intact and verified"
+  },
+  "refine_round1_in_ram": {
+   "interval": [
+    697939133584130,
+    703886761583869
+   ],
+   "width": 5947627999739,
+   "exact_counted_constant": 414888596808882,
+   "live_frontier_nodes": 2000000,
+   "refine_expansions": 2003412,
+   "peak_rss_kb": 1254164,
+   "consistency_check": {
+    "depth": 48,
+    "frontier_interval": [
+     0,
+     1
+    ],
+    "plain_recursion_count": 1,
+    "inside": true
+   }
+  },
+  "refine_round2_disk_spill": {
+   "interval": [
+    698808976497556,
+    703708975305003
+   ],
+   "width": 4899998807447,
+   "exact_counted_constant": 426637069894404,
+   "live_frontier_nodes_total": 4156809,
+   "spilled_nodes": 2900005,
+   "total_refine_expansions_incl_refine1": 4162596,
+   "peak_rss_kb": 1889968,
+   "status": "target width reached"
+  },
+  "refine_round3_disk_spill": {
+   "interval": [
+    699497138009147,
+    703473996819983
+   ],
+   "width": 3976858810836,
+   "exact_counted_constant": 427102461235926,
+   "live_frontier_nodes_total": 19851001,
+   "spilled_nodes": 18500044,
+   "total_refine_expansions_incl_refine1": 19943700,
+   "peak_rss_kb": 1121344,
+   "status": "time budget exhausted"
+  }
+ },
+ "final": {
+  "interval": [
+   699497138009147,
+   703473996819983
+  ],
+  "width": 3976858810836,
+  "prior_interval": [
+   698342755629882,
+   703790474857480
+  ],
+  "prior_width": 5447719227598,
+  "width_reduction_percent": 27.0,
+  "strictly_narrower": true,
+  "contained_in_prior": true,
+  "audit": {
+   "nodes_total": 19851001,
+   "exact_constant": 427102461235926,
+   "floor": 699497138009147,
+   "ceiling": 703473996819983,
+   "width": 3976858810836,
+   "identity_lo_ok": true,
+   "identity_hi_ok": true,
+   "deepest_node_check": {
+    "depth": 48,
+    "stored_interval": [
+     0,
+     1
+    ],
+    "plain_recursion_count": 1,
+    "inside": true
+   }
+  }
+ },
+ "resume": "State saved in spill/ (manifest.json + ram_heap.pkl + spill_*.pkl, 709 MB). Resume: python3 refine2.py --repo <repo> --resume-spill --target-width <w> --max-seconds <s>. The two DFS worker checkpoints (petersen_50_checkpoint.json_w0/_w1) can alternatively be resumed via bounded_count.py --resume in single-worker mode."
+}

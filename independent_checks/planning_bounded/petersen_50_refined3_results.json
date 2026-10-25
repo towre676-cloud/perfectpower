@@ -1,0 +1,26 @@
+{
+ "case": "petersen_50",
+ "stage": "disk-backed best-first refinement (refine2)",
+ "status": "time budget exhausted",
+ "completed": false,
+ "exact_count": null,
+ "interval": [
+  699497138009147,
+  703473996819983
+ ],
+ "width": 3976858810836,
+ "exact_counted_constant": 427102461235926,
+ "live_frontier_nodes_total": 19851001,
+ "ram_heap_nodes": 1350957,
+ "spilled_nodes": 18500044,
+ "total_refine_expansions_incl_refine1": 19943700,
+ "refine2_seconds": 1204.3,
+ "peak_rss_kb": 1121344,
+ "prior_interval": [
+  698342755629882,
+  703790474857480
+ ],
+ "prior_width": 5447719227598,
+ "strictly_narrower_than_prior": true,
+ "resume": "python3 refine2.py --frontier-in spill/ram_heap.pkl with spill/manifest.json accounting + remaining spill files (see REPORT.md)"
+}
