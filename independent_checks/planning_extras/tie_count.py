@@ -196,7 +196,7 @@ def count_optima(caps, costs, profits, OPT, node_budget, time_budget,
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", default=str(HERE.parents[2]))  # default: repository root
+    ap.add_argument("--repo", default=str(HERE.parents[1]))  # default: repository root
     ap.add_argument("--budget-nodes", type=int, default=NODE_BUDGET)
     ap.add_argument("--budget-seconds", type=float, default=TIME_BUDGET)
     ap.add_argument("cases", nargs="+",

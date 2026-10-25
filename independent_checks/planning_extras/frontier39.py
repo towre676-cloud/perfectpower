@@ -56,7 +56,7 @@ def strip_volatile(d):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", default=str(HERE.parents[2]))  # default: repository root
+    ap.add_argument("--repo", default=str(HERE.parents[1]))  # default: repository root
     ap.add_argument("--skip-validation", action="store_true")
     ap.add_argument("--expansions", type=int, default=30_000_000)
     ap.add_argument("--time-budget", type=float, default=5400.0)
