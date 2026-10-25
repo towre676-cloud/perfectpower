@@ -469,7 +469,7 @@ def brute_force_subtree(caps, it, depth, used):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--repo", default=str(HERE.parents[2] / "perfectpower"))
+    ap.add_argument("--repo", default=str(HERE.parents[1]))  # repository root
     ap.add_argument("--case", default="petersen_50")
     ap.add_argument("--pair", default="3,4")
     ap.add_argument("--max-seconds", type=float, default=1800.0)

@@ -42,9 +42,7 @@ def main():
     print(f"nodes total={nodes} interval=[{man['floor']}, {man['ceiling']}] "
           f"width={man['ceiling']-man['floor']}")
 
-    caps, costs = bc.load_case(HERE.parents[2] / "perfectpower"
-                               if False else Path.home() / "workspace/research/perfectpower",
-                               "petersen_50")
+    caps, costs = bc.load_case(HERE.parents[1], "petersen_50")  # repository root
     n, m = len(costs), len(caps)
     order = sorted(range(n), key=lambda i: -sum(costs[i][j] / caps[j] for j in range(m)))
     items = [tuple(costs[i]) for i in order]
