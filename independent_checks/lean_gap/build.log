@@ -1,0 +1,11 @@
+== toolchain: Lean 4.20.0 (project pin), Mathlib v4.20.0 via lake exe cache get ==
+== command: lake env lean Verify.lean, where Verify.lean = SquareclassUniqueness.lean + two #print axioms lines ==
+'SquareclassIdentification.Int.eq_of_squarefree_of_isSquare_ratCast_div' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'SquareclassIdentification.squareclass_label_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+real	0m26.966s
+user	0m6.179s
+sys	0m3.257s
+lean exit:0
