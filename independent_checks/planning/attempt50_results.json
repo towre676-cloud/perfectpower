@@ -1,0 +1,258 @@
+{
+ "instance": {
+  "n": 50,
+  "caps": [
+   800,
+   650,
+   550,
+   550,
+   650
+  ],
+  "published_optimum": "16537"
+ },
+ "spec_crosscheck": {
+  "data_vs_example_identical": true
+ },
+ "receipt_point_replay": {
+  "feasible": true,
+  "profit": 16537,
+  "used": [
+   800,
+   639,
+   549,
+   472,
+   650
+  ]
+ },
+ "optimization_proof": {
+  "optimum": 16537,
+  "point": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   1,
+   0,
+   1,
+   1,
+   1,
+   0,
+   1,
+   1,
+   1,
+   0,
+   1,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   1,
+   1,
+   1,
+   1,
+   0,
+   1,
+   1,
+   0,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   0,
+   0,
+   1,
+   1,
+   1,
+   1
+  ],
+  "nodes": 614262,
+  "exhausted": true,
+  "seconds": 3.726,
+  "greedy_seed": 15540,
+  "root_lagrangian_bound": 16621,
+  "lagrangian_prices_scaled_4096": [
+   27609,
+   6799,
+   9730,
+   0,
+   20972
+  ],
+  "agrees_with_published": true
+ },
+ "resource_distributions": {
+  "singles": [
+   {
+    "resource": 0,
+    "total_cost": 1272,
+    "count_le_cap": 880154007273512,
+    "violations": 245745899569112,
+    "distinct_sums": 1273
+   },
+   {
+    "resource": 1,
+    "total_cost": 1076,
+    "count_le_cap": 847860584033536,
+    "violations": 278039322809088,
+    "distinct_sums": 1077
+   },
+   {
+    "resource": 2,
+    "total_cost": 859,
+    "count_le_cap": 991604638345472,
+    "violations": 134295268497152,
+    "distinct_sums": 860
+   },
+   {
+    "resource": 3,
+    "total_cost": 869,
+    "count_le_cap": 890166969886912,
+    "violations": 235732936955712,
+    "distinct_sums": 870
+   },
+   {
+    "resource": 4,
+    "total_cost": 1027,
+    "count_le_cap": 818815229152768,
+    "violations": 307084677689856,
+    "distinct_sums": 1028
+   }
+  ],
+  "pairs": [
+   {
+    "resources": [
+     0,
+     1
+    ],
+    "count_le_both": 815144538147229,
+    "both_violations": 213029853682805,
+    "distinct_sums": 418227
+   },
+   {
+    "resources": [
+     0,
+     2
+    ],
+    "count_le_both": 859990620877229,
+    "both_violations": 114131882100869,
+    "distinct_sums": 492772
+   },
+   {
+    "resources": [
+     0,
+     3
+    ],
+    "count_le_both": 795471605318536,
+    "both_violations": 151050535000736,
+    "distinct_sums": 511132
+   },
+   {
+    "resources": [
+     0,
+     4
+    ],
+    "count_le_both": 788992095901182,
+    "both_violations": 215922766317526,
+    "distinct_sums": 496920
+   },
+   {
+    "resources": [
+     1,
+     2
+    ],
+    "count_le_both": 826062592365724,
+    "both_violations": 112497276829340,
+    "distinct_sums": 437438
+   },
+   {
+    "resources": [
+     1,
+     3
+    ],
+    "count_le_both": 782473332984452,
+    "both_violations": 170345685906628,
+    "distinct_sums": 393304
+   },
+   {
+    "resources": [
+     1,
+     4
+    ],
+    "count_le_both": 775349678010098,
+    "both_violations": 234573771666418,
+    "distinct_sums": 414822
+   },
+   {
+    "resources": [
+     2,
+     3
+    ],
+    "count_le_both": 862447561888926,
+    "both_violations": 106575860499166,
+    "distinct_sums": 323990
+   },
+   {
+    "resources": [
+     2,
+     4
+    ],
+    "count_le_both": 797733584599364,
+    "both_violations": 113213623943748,
+    "distinct_sums": 438992
+   },
+   {
+    "resources": [
+     3,
+     4
+    ],
+    "count_le_both": 746335444328064,
+    "both_violations": 163253152131008,
+    "distinct_sums": 360502
+   }
+  ],
+  "seconds": 26.841,
+  "union_lower_bound": -74998198678296,
+  "bonferroni2_upper_bound": 1519596209399948,
+  "best_pair_upper_bound": 746335444328064,
+  "best_pair": [
+   3,
+   4
+  ],
+  "total_subsets": 1125899906842624
+ },
+ "frontier_refinement": {
+  "exact_counted": 295206809990662,
+  "lower": 698342755629882,
+  "upper": 703790474857480,
+  "expansions": 3000000,
+  "frontier_nodes": 2994605,
+  "seconds": 64.905,
+  "root_interval": [
+   88254953452712,
+   746335444328064
+  ],
+  "pair_used": [
+   3,
+   4
+  ],
+  "completed": false
+ },
+ "final_count_interval": {
+  "lower": 698342755629882,
+  "upper": 703790474857480,
+  "exact_count": null,
+  "status": "open_within_stated_budget"
+ }
+}

@@ -1,0 +1,21 @@
+petersen_6 brute_force: count=28 max=3800 ties=1 agree=True (0.0s)
+petersen_6 mitm_dict: count=28 max=3800 ties=1 agree=True (0.0s)
+petersen_6 collapse_dfs: count=28 max=3800 ties=1 agree=True (0.0s)
+petersen_10 brute_force: count=644 max=87061/10 ties=1 agree=True (0.004s)
+petersen_10 mitm_dict: count=644 max=87061/10 ties=1 agree=True (0.001s)
+petersen_10 collapse_dfs: count=644 max=87061/10 ties=1 agree=True (0.0s)
+petersen_15 brute_force: count=22158 max=4015 ties=1 agree=True (0.137s)
+petersen_15 mitm_dict: count=22158 max=4015 ties=1 agree=True (0.023s)
+petersen_15 collapse_dfs: count=22158 max=4015 ties=1 agree=True (0.004s)
+petersen_20 brute_force: count=422601 max=6120 ties=1 agree=True (3.783s)
+petersen_20 mitm_dict: count=422601 max=6120 ties=1 agree=True (0.616s)
+petersen_20 collapse_dfs: count=422601 max=6120 ties=1 agree=True (0.085s)
+petersen_28 collapse_dfs: count=208817578 max=12400 ties=1 agree=True (14.237s)
+petersen_6 prefix[1]: {'stated': {'count': 12, 'maximum': '3300', 'maximizer_count': 1}, 'recomputed': {'count': 12, 'maximum': '3300', 'maximizer_count': 1}}
+petersen_6 repo_engine(gray): count=28 agree=True (0.011s)
+petersen_10 repo_engine(gray): count=644 agree=True (0.008s)
+petersen_15 repo_engine(mitm): count=22158 agree=True (5.679s)
+petersen_20 repo_engine(mitm): count=422601 agree=True (0.005s)
+petersen_28 repo_engine(mitm): count=208817578 agree=True (0.567s)
+wrote recount_results.json
+ALL_AGREE

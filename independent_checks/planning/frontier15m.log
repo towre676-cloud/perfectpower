@@ -1,0 +1,9 @@
+Extra-budget probe: python3 frontier15m_probe.py (15,000,000 frontier
+expansions, pair resources (3, 4), time budget 1500 s).
+Outcome: the process was killed by the operating system after about
+373 s (shell reported "Killed", exit code 137 -- out of memory on this
+7 GB machine) before printing any result.  The best-first frontier heap
+grows by roughly one node per expansion, so memory is the binding
+constraint for this strategy; interval shrinkage beyond the stated
+3,000,000-expansion budget of attempt_50.py is unmeasured here.
+No result from this probe is used anywhere in REPORT.md.
