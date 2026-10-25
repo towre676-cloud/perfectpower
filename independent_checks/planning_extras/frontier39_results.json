@@ -1,0 +1,96 @@
+{
+ "pair_choice": {
+  "criterion": "pair minimising count_le_both (wave one)",
+  "petersen_28": {
+   "pair": [
+    1,
+    9
+   ],
+   "count_le_both": 209430105
+  },
+  "petersen_39": {
+   "pair": [
+    0,
+    3
+   ],
+   "count_le_both": 386299470526,
+   "caps": [
+    600,
+    500,
+    500,
+    500,
+    600
+   ]
+  }
+ },
+ "validation_petersen_28": {
+  "known_count": 208817578,
+  "original": {
+   "exact_counted": 208817578,
+   "lower": 208817578,
+   "upper": 208817578,
+   "expansions": 974960,
+   "frontier_nodes": 0,
+   "seconds": 76.061,
+   "root_interval": [
+    103798054,
+    209430105
+   ],
+   "pair_used": [
+    1,
+    9
+   ],
+   "completed": true
+  },
+  "copy": {
+   "exact_counted": 208817578,
+   "lower": 208817578,
+   "upper": 208817578,
+   "expansions": 974960,
+   "frontier_nodes": 0,
+   "seconds": 75.793,
+   "root_interval": [
+    103798054,
+    209430105
+   ],
+   "pair_used": [
+    1,
+    9
+   ],
+   "completed": true,
+   "stopped_reason": null,
+   "peak_rss_kb": 671520
+  },
+  "identical_apart_from_volatile_fields": true
+ },
+ "petersen_39_frontier": {
+  "exact_counted": 341450493494,
+  "lower": 367756900510,
+  "upper": 368192477002,
+  "expansions": 6145000,
+  "frontier_nodes": 5117375,
+  "seconds": 296.153,
+  "root_interval": [
+   88675300094,
+   386299470526
+  ],
+  "pair_used": [
+   0,
+   3
+  ],
+  "completed": false,
+  "stopped_reason": "rss_guard",
+  "peak_rss_kb": 2600316
+ },
+ "petersen_39_verdict": {
+  "stated_count": 368072359571,
+  "closed": false,
+  "exact_count": null,
+  "agrees_with_stated": false,
+  "interval": [
+   367756900510,
+   368192477002
+  ],
+  "interval_width": 435576492
+ }
+}

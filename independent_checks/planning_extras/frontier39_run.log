@@ -1,0 +1,36 @@
+petersen_28 best pair [1, 9] count_le_both=209430105
+petersen_39 caps=[600, 500, 500, 500, 600] best pair [0, 3] count_le_both=386299470526
+validation: original frontier_interval on petersen_28...
+  original: {'exact_counted': 208817578, 'lower': 208817578, 'upper': 208817578, 'expansions': 974960, 'frontier_nodes': 0, 'seconds': 76.061, 'root_interval': [103798054, 209430105], 'pair_used': [1, 9], 'completed': True} (91.7s)
+validation: monitored copy on petersen_28...
+  copy: {'exact_counted': 208817578, 'lower': 208817578, 'upper': 208817578, 'expansions': 974960, 'frontier_nodes': 0, 'seconds': 75.793, 'root_interval': [103798054, 209430105], 'pair_used': [1, 9], 'completed': True, 'stopped_reason': None, 'peak_rss_kb': 671520} (94.0s)
+validation PASSED
+closure run: petersen_39, pair=(0, 3), budget=30000000 expansions / 5400.0s / RSS cap 2600000 KB
+    [frontier] expansions=0 frontier=1 interval=[88675300094, 386299470526] width=297624170432 rss=518232 KB
+    [frontier] expansions=250000 frontier=243439 interval=[367052415986, 368330627048] width=1278211062 rss=586120 KB
+    [frontier] expansions=500000 frontier=489073 interval=[367158543647, 368302892708] width=1144349061 rss=686096 KB
+    [frontier] expansions=750000 frontier=734951 interval=[367256949623, 368285119862] width=1028170239 rss=786216 KB
+    [frontier] expansions=1000000 frontier=977061 interval=[367323008131, 368275276034] width=952267903 rss=884680 KB
+    [frontier] expansions=1250000 frontier=1217358 interval=[367378972519, 368268190796] width=889218277 rss=982456 KB
+    [frontier] expansions=1500000 frontier=1453113 interval=[367416693865, 368263629080] width=846935215 rss=1078056 KB
+    [frontier] expansions=1750000 frontier=1680292 interval=[367452528651, 368257950316] width=805421665 rss=1170328 KB
+    [frontier] expansions=2000000 frontier=1903586 interval=[367479438191, 368254325742] width=774887551 rss=1275724 KB
+    [frontier] expansions=2250000 frontier=2138751 interval=[367511996893, 368248048238] width=736051345 rss=1372880 KB
+    [frontier] expansions=2500000 frontier=2363704 interval=[367533182023, 368244313948] width=711131925 rss=1465344 KB
+    [frontier] expansions=2750000 frontier=2596181 interval=[367562883603, 368240892406] width=678008803 rss=1560928 KB
+    [frontier] expansions=3000000 frontier=2838689 interval=[367582746309, 368235864236] width=653117927 rss=1660264 KB
+    [frontier] expansions=3250000 frontier=3056218 interval=[367605476315, 368228259494] width=622783179 rss=1746936 KB
+    [frontier] expansions=3500000 frontier=3282307 interval=[367624705205, 368226423868] width=601718663 rss=1839312 KB
+    [frontier] expansions=3750000 frontier=3485114 interval=[367640404943, 368220376192] width=579971249 rss=1921828 KB
+    [frontier] expansions=4000000 frontier=3672171 interval=[367659855645, 368214420770] width=554565125 rss=1996676 KB
+    [frontier] expansions=4250000 frontier=3881402 interval=[367673703531, 368213235788] width=539532257 rss=2079328 KB
+    [frontier] expansions=4500000 frontier=4036552 interval=[367688358033, 368209070918] width=520712885 rss=2140572 KB
+    [frontier] expansions=4750000 frontier=4240778 interval=[367703740745, 368204582234] width=500841489 rss=2223080 KB
+    [frontier] expansions=5000000 frontier=4383106 interval=[367709913975, 368202137380] width=492223405 rss=2315068 KB
+    [frontier] expansions=5250000 frontier=4504176 interval=[367721991278, 368199420690] width=477429412 rss=2362472 KB
+    [frontier] expansions=5500000 frontier=4716764 interval=[367733743562, 368197310256] width=463566694 rss=2443764 KB
+    [frontier] expansions=5750000 frontier=4947856 interval=[367744082200, 368194966506] width=450884306 rss=2533464 KB
+    [frontier] expansions=6000000 frontier=5084755 interval=[367750100358, 368192923068] width=442822710 rss=2587912 KB
+petersen_39 frontier: {'exact_counted': 341450493494, 'lower': 367756900510, 'upper': 368192477002, 'expansions': 6145000, 'frontier_nodes': 5117375, 'seconds': 296.153, 'root_interval': [88675300094, 386299470526], 'pair_used': [0, 3], 'completed': False, 'stopped_reason': 'rss_guard', 'peak_rss_kb': 2600316}
+VERDICT: {'stated_count': 368072359571, 'closed': False, 'exact_count': None, 'agrees_with_stated': False, 'interval': [367756900510, 368192477002], 'interval_width': 435576492}
+wrote /home/hatch/workspace/research/staging_pp_extras/independent_checks/planning_extras/frontier39_results.json
