@@ -227,7 +227,7 @@ def main():
     ap = argparse.ArgumentParser()
     # Default --repo is the repository root, when this script is run
     # from independent_checks/planning/ inside a checkout.
-    ap.add_argument("--repo", default=str(HERE.parents[2]),
+    ap.add_argument("--repo", default=str(HERE.parents[1]),  # repository root
                     help="path to the (read-only) perfectpower checkout")
     ap.add_argument("--repo-engine", action="store_true")
     args = ap.parse_args()
