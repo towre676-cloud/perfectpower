@@ -1,0 +1,726 @@
+{
+ "petersen_6": {
+  "stated": {
+   "count": 28,
+   "maximum": "3800",
+   "maximizer_count": 1,
+   "point": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    1
+   ]
+  },
+  "methods": {
+   "brute_force": {
+    "count": 28,
+    "maximum": "3800",
+    "maximizer_count": 1,
+    "point": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     1
+    ],
+    "seconds": 0.0,
+    "agrees_with_receipt": true
+   },
+   "mitm_dict": {
+    "count": 28,
+    "maximum": "3800",
+    "maximizer_count": 1,
+    "seconds": 0.0,
+    "agrees_with_receipt": true
+   },
+   "collapse_dfs": {
+    "count": 28,
+    "maximum": "3800",
+    "maximizer_count": 1,
+    "point": [
+     0,
+     1,
+     1,
+     0,
+     0,
+     1
+    ],
+    "nodes": 26,
+    "seconds": 0.0,
+    "agrees_with_receipt": true
+   }
+  },
+  "bank_replay": [
+   {
+    "rank_stated": 0,
+    "feasible": true,
+    "profit": "0",
+    "profit_le_optimum": true,
+    "rank_recomputed": 0,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 7,
+    "feasible": true,
+    "profit": "1700",
+    "profit_le_optimum": true,
+    "rank_recomputed": 7,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 14,
+    "feasible": true,
+    "profit": "3800",
+    "profit_le_optimum": true,
+    "rank_recomputed": 14,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 21,
+    "feasible": true,
+    "profit": "3300",
+    "profit_le_optimum": true,
+    "rank_recomputed": 21,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 27,
+    "feasible": true,
+    "profit": "2400",
+    "profit_le_optimum": true,
+    "rank_recomputed": 27,
+    "rank_agrees": true
+   }
+  ],
+  "bank_all_ok": true,
+  "repo_engine": {
+   "count": 28,
+   "maximum": "3800",
+   "maximizer_count": 1,
+   "point": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    1
+   ],
+   "strategy": "gray",
+   "seconds": 0.011,
+   "agrees_with_receipt": true
+  }
+ },
+ "petersen_10": {
+  "stated": {
+   "count": 644,
+   "maximum": "87061/10",
+   "maximizer_count": 1,
+   "point": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ]
+  },
+  "methods": {
+   "brute_force": {
+    "count": 644,
+    "maximum": "87061/10",
+    "maximizer_count": 1,
+    "point": [
+     0,
+     1,
+     0,
+     1,
+     1,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    "seconds": 0.004,
+    "agrees_with_receipt": true
+   },
+   "mitm_dict": {
+    "count": 644,
+    "maximum": "87061/10",
+    "maximizer_count": 1,
+    "seconds": 0.001,
+    "agrees_with_receipt": true
+   },
+   "collapse_dfs": {
+    "count": 644,
+    "maximum": "87061/10",
+    "maximizer_count": 1,
+    "point": [
+     0,
+     1,
+     0,
+     1,
+     1,
+     0,
+     0,
+     1,
+     0,
+     1
+    ],
+    "nodes": 66,
+    "seconds": 0.0,
+    "agrees_with_receipt": true
+   }
+  },
+  "bank_replay": [
+   {
+    "rank_stated": 0,
+    "feasible": true,
+    "profit": "0",
+    "profit_le_optimum": true,
+    "rank_recomputed": 0,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 161,
+    "feasible": true,
+    "profit": "5977",
+    "profit_le_optimum": true,
+    "rank_recomputed": 161,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 322,
+    "feasible": true,
+    "profit": "32639/5",
+    "profit_le_optimum": true,
+    "rank_recomputed": 322,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 483,
+    "feasible": true,
+    "profit": "13087/5",
+    "profit_le_optimum": true,
+    "rank_recomputed": 483,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 643,
+    "feasible": true,
+    "profit": "83369/10",
+    "profit_le_optimum": true,
+    "rank_recomputed": 643,
+    "rank_agrees": true
+   }
+  ],
+  "bank_all_ok": true,
+  "repo_engine": {
+   "count": 644,
+   "maximum": "87061/10",
+   "maximizer_count": 1,
+   "point": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "strategy": "gray",
+   "seconds": 0.008,
+   "agrees_with_receipt": true
+  }
+ },
+ "petersen_15": {
+  "stated": {
+   "count": 22158,
+   "maximum": "4015",
+   "maximizer_count": 1,
+   "point": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1
+   ]
+  },
+  "methods": {
+   "brute_force": {
+    "count": 22158,
+    "maximum": "4015",
+    "maximizer_count": 1,
+    "point": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     1,
+     1,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    "seconds": 0.137,
+    "agrees_with_receipt": true
+   },
+   "mitm_dict": {
+    "count": 22158,
+    "maximum": "4015",
+    "maximizer_count": 1,
+    "seconds": 0.023,
+    "agrees_with_receipt": true
+   },
+   "collapse_dfs": {
+    "count": 22158,
+    "maximum": "4015",
+    "maximizer_count": 1,
+    "point": [
+     1,
+     1,
+     0,
+     1,
+     0,
+     1,
+     1,
+     0,
+     1,
+     1,
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    "nodes": 2393,
+    "seconds": 0.004,
+    "agrees_with_receipt": true
+   }
+  },
+  "bank_replay": [
+   {
+    "rank_stated": 0,
+    "feasible": true,
+    "profit": "0",
+    "profit_le_optimum": true,
+    "rank_recomputed": 0,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 5539,
+    "feasible": true,
+    "profit": "1350",
+    "profit_le_optimum": true,
+    "rank_recomputed": 5539,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 11079,
+    "feasible": true,
+    "profit": "2420",
+    "profit_le_optimum": true,
+    "rank_recomputed": 11079,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 16618,
+    "feasible": true,
+    "profit": "3380",
+    "profit_le_optimum": true,
+    "rank_recomputed": 16618,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 22157,
+    "feasible": true,
+    "profit": "2815",
+    "profit_le_optimum": true,
+    "rank_recomputed": 22157,
+    "rank_agrees": true
+   }
+  ],
+  "bank_all_ok": true,
+  "repo_engine": {
+   "count": 22158,
+   "maximum": "4015",
+   "maximizer_count": 1,
+   "point": [
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "strategy": "mitm",
+   "seconds": 5.679,
+   "agrees_with_receipt": true
+  }
+ },
+ "petersen_20": {
+  "stated": {
+   "count": 422601,
+   "maximum": "6120",
+   "maximizer_count": 1,
+   "point": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "methods": {
+   "brute_force": {
+    "count": 422601,
+    "maximum": "6120",
+    "maximizer_count": 1,
+    "point": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "seconds": 3.783,
+    "agrees_with_receipt": true
+   },
+   "mitm_dict": {
+    "count": 422601,
+    "maximum": "6120",
+    "maximizer_count": 1,
+    "seconds": 0.616,
+    "agrees_with_receipt": true
+   },
+   "collapse_dfs": {
+    "count": 422601,
+    "maximum": "6120",
+    "maximizer_count": 1,
+    "point": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "nodes": 53473,
+    "seconds": 0.085,
+    "agrees_with_receipt": true
+   }
+  },
+  "bank_replay": [
+   {
+    "rank_stated": 0,
+    "feasible": true,
+    "profit": "0",
+    "profit_le_optimum": true,
+    "rank_recomputed": 0,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 105650,
+    "feasible": true,
+    "profit": "3825",
+    "profit_le_optimum": true,
+    "rank_recomputed": 105650,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 211300,
+    "feasible": true,
+    "profit": "3140",
+    "profit_le_optimum": true,
+    "rank_recomputed": 211300,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 316950,
+    "feasible": true,
+    "profit": "2475",
+    "profit_le_optimum": true,
+    "rank_recomputed": 316950,
+    "rank_agrees": true
+   },
+   {
+    "rank_stated": 422600,
+    "feasible": true,
+    "profit": "2875",
+    "profit_le_optimum": true,
+    "rank_recomputed": 422600,
+    "rank_agrees": true
+   }
+  ],
+  "bank_all_ok": true,
+  "repo_engine": {
+   "count": 422601,
+   "maximum": "6120",
+   "maximizer_count": 1,
+   "point": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "strategy": "mitm",
+   "seconds": 0.005,
+   "agrees_with_receipt": true
+  }
+ },
+ "petersen_28": {
+  "stated": {
+   "count": 208817578,
+   "maximum": "12400",
+   "maximizer_count": 1,
+   "point": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  "methods": {
+   "collapse_dfs": {
+    "count": 208817578,
+    "maximum": "12400",
+    "maximizer_count": 1,
+    "point": [
+     1,
+     1,
+     1,
+     0,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     0,
+     1,
+     1,
+     1,
+     1
+    ],
+    "nodes": 8800952,
+    "seconds": 14.237,
+    "agrees_with_receipt": true
+   }
+  },
+  "bank_replay": [
+   {
+    "rank_stated": 0,
+    "feasible": true,
+    "profit": "0",
+    "profit_le_optimum": true
+   },
+   {
+    "rank_stated": 52204394,
+    "feasible": true,
+    "profit": "6910",
+    "profit_le_optimum": true
+   },
+   {
+    "rank_stated": 104408789,
+    "feasible": true,
+    "profit": "6445",
+    "profit_le_optimum": true
+   },
+   {
+    "rank_stated": 156613183,
+    "feasible": true,
+    "profit": "7330",
+    "profit_le_optimum": true
+   },
+   {
+    "rank_stated": 208817577,
+    "feasible": true,
+    "profit": "6555",
+    "profit_le_optimum": true
+   }
+  ],
+  "bank_all_ok": true,
+  "repo_engine": {
+   "count": 208817578,
+   "maximum": "12400",
+   "maximizer_count": 1,
+   "point": [
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1
+   ],
+   "strategy": "mitm",
+   "seconds": 0.567,
+   "agrees_with_receipt": true
+  }
+ },
+ "petersen_6_prefix_receipt": {
+  "stated": {
+   "count": 12,
+   "maximum": "3300",
+   "maximizer_count": 1
+  },
+  "recomputed": {
+   "count": 12,
+   "maximum": "3300",
+   "maximizer_count": 1
+  }
+ }
+}
