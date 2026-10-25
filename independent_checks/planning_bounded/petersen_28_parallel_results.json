@@ -1,0 +1,80 @@
+{
+ "case": "petersen_28",
+ "n": 28,
+ "resources": 10,
+ "pair": [
+  3,
+  4
+ ],
+ "mode": "parallel workers=2 split_depth=6",
+ "completed": true,
+ "exact_count": 208817578,
+ "interval": [
+  208817578,
+  208817578
+ ],
+ "width": 0,
+ "split_exact": 41942626,
+ "expansions": 1288888,
+ "build_seconds": 0.828,
+ "workers": [
+  {
+   "interval": [
+    98599381,
+    98599381
+   ],
+   "expansions": 690515,
+   "count_seconds": 7.059,
+   "peak_rss_kb": 76980,
+   "stack_nodes_at_end": 0,
+   "spot_subtree": {
+    "depth": 8,
+    "used": [
+     350,
+     460,
+     100,
+     150,
+     165,
+     165,
+     50,
+     100,
+     130,
+     135
+    ],
+    "value": 1048464
+   }
+  },
+  {
+   "interval": [
+    68275571,
+    68275571
+   ],
+   "expansions": 598373,
+   "count_seconds": 5.555,
+   "peak_rss_kb": 76824,
+   "stack_nodes_at_end": 0,
+   "spot_subtree": {
+    "depth": 8,
+    "used": [
+     340,
+     430,
+     70,
+     160,
+     190,
+     205,
+     20,
+     60,
+     90,
+     105
+    ],
+    "value": 1048568
+   }
+  }
+ ],
+ "spot_check": {
+  "depth": 8,
+  "frontier_value": 1048464,
+  "brute_force_value": 1048464,
+  "agrees": true
+ }
+}
