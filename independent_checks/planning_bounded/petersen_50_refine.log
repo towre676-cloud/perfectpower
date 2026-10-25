@@ -1,0 +1,39 @@
+structures built in 3.7s
+frontier reconstructed: exact constant 384636757386114, 56 nodes, interval [630849041851724, 715526688518671] width 84677646666947
+refine expansions=500000 live=500014 width=8324361963569 elapsed=6s maxrss=380660KB
+refine expansions=1000000 live=998940 width=6994799121155 elapsed=13s maxrss=596340KB
+refine expansions=1500000 live=1497720 width=6388687550989 elapsed=20s maxrss=811764KB
+refine expansions=2000000 live=1996588 width=5949448213135 elapsed=28s maxrss=1039092KB
+consistency check: {'depth': 48, 'frontier_interval': [0, 1], 'plain_recursion_count': 1, 'inside': True}
+{
+ "case": "petersen_50",
+ "stage": "best-first refinement of the depth-first frontier",
+ "status": "live-frontier cap reached",
+ "completed": false,
+ "exact_count": null,
+ "interval": [
+  697939133584130,
+  703886761583869
+ ],
+ "width": 5947627999739,
+ "exact_counted_constant": 414888596808882,
+ "live_frontier_nodes": 2000000,
+ "refine_expansions": 2003412,
+ "refine_seconds": 35.2,
+ "peak_rss_kb": 1254164,
+ "consistency_check": {
+  "depth": 48,
+  "frontier_interval": [
+   0,
+   1
+  ],
+  "plain_recursion_count": 1,
+  "inside": true
+ },
+ "prior_interval": [
+  698342755629882,
+  703790474857480
+ ],
+ "prior_width": 5447719227598,
+ "strictly_narrower_than_prior": false
+}

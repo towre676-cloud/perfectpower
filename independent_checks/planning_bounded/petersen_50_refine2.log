@@ -1,0 +1,41 @@
+structures built in 3.5s
+loaded frontier: live=2000000 width=5947627999739 exact=414888596808882
+spilled 900001 nodes to spill_0000.pkl; total live=2000001 width=5947624515131
+refine2 expansions=2250000 ram=1346354 spilled=900001 width=5789665655291 elapsed=11s maxrss=1219832KB
+refine2 expansions=2500000 ram=1595893 spilled=900001 width=5656490412709 elapsed=15s maxrss=1357476KB
+spilled 500001 nodes to spill_0001.pkl; total live=2500002 width=5655799892221
+refine2 expansions=2750000 ram=1345576 spilled=1400002 width=5526499328429 elapsed=29s maxrss=1499184KB
+refine2 expansions=3000000 ram=1595065 spilled=1400002 width=5386936069567 elapsed=34s maxrss=1630308KB
+spilled 500001 nodes to spill_0002.pkl; total live=3000003 width=5385906813931
+refine2 expansions=3250000 ram=1345044 spilled=1900003 width=5270490393939 elapsed=45s maxrss=1722452KB
+refine2 expansions=3500000 ram=1594694 spilled=1900003 width=5152601544717 elapsed=49s maxrss=1722452KB
+spilled 500001 nodes to spill_0003.pkl; total live=3500004 width=5150607141279
+refine2 expansions=3750000 ram=1344306 spilled=2400004 width=5054297945885 elapsed=60s maxrss=1820612KB
+refine2 expansions=4000000 ram=1594221 spilled=2400004 width=4963314698561 elapsed=63s maxrss=1820612KB
+spilled 500001 nodes to spill_0004.pkl; total live=4000005 width=4962576559149
+{
+ "case": "petersen_50",
+ "stage": "disk-backed best-first refinement (refine2)",
+ "status": "target width reached",
+ "completed": false,
+ "exact_count": null,
+ "interval": [
+  698808976497556,
+  703708975305003
+ ],
+ "width": 4899998807447,
+ "exact_counted_constant": 426637069894404,
+ "live_frontier_nodes_total": 4156809,
+ "ram_heap_nodes": 1256804,
+ "spilled_nodes": 2900005,
+ "total_refine_expansions_incl_refine1": 4162596,
+ "refine2_seconds": 75.5,
+ "peak_rss_kb": 1889968,
+ "prior_interval": [
+  698342755629882,
+  703790474857480
+ ],
+ "prior_width": 5447719227598,
+ "strictly_narrower_than_prior": true,
+ "resume": "python3 refine2.py --frontier-in spill/ram_heap.pkl with spill/manifest.json accounting + remaining spill files (see REPORT.md)"
+}
