@@ -11,7 +11,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from attempt_50 import frontier_interval
 
-repo = HERE.parents[2]  # repository root
+repo = HERE.parents[1]  # repository root
 d = json.loads((repo / "data/planning/petersen.json").read_text())
 spec = [c for c in d if c["name"] == "petersen_50"][0]["specification"]
 caps = [r["max"] for r in spec["resources"]]
