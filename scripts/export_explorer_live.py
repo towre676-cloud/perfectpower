@@ -48,6 +48,9 @@ def export(root=ROOT):
                                        'instances': 200, 'budget_seconds': 5,
                                        'exact': {'perfectpower_0102': 18, 'paired_0101': 12, 'ganak': 18, 'd4': 19},
                                        'independently_replayable_from_this_feed': False}}
+    confirmation=root/'receipts/scouting_confirmation/freeze.json'
+    if confirmation.exists():
+        payload['scouting_confirmation']=json.loads(confirmation.read_text())
     portfolio_input='examples/planning/petersen_50_population.json'
     portfolio_receipt='receipts/planning/explorer/validation.json'
     payload['native_portfolio']={'title':'Petersen 50-project portfolios', 'workspace':'portfolio',

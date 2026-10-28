@@ -1,0 +1,24 @@
+{
+  "schema": "pp-pressure-confirmation-protocol/1",
+  "date": "2026-10-28",
+  "status": "Specification frozen; 2025 prediction packet pending verified feature vintages and fitted artifact lineage. No independent confirmation or promotion.",
+  "target": "100 times total pressures divided by total defensive snaps in draft-year and draft-year+1 NFL regular seasons; zero exposure is undefined and reported separately, never imputed as zero.",
+  "population": "All 2025 Combine prospects with source position exactly LB, DE, DT, EDGE or DL; include undrafted prospects. Freeze full identity roster before labels; no selection by NFL participation, outcome or team.",
+  "model": {
+    "experts": ["combine", "historical", "raw", "custom"],
+    "fit": "Reuse scouting_depth.specs/tune/BANK/Design with seed84593, nested chronological splits, nonnegative forecasts, pressure clipping at100. Train only pressure labels in classes <=2023 for 2025. Exclude draft_raw/draft_custom, picks, NFL status, age from current roster and recruitment features.",
+    "ensemble": "scouting_identity.delayed_aggregate, eta1, bound100, parity-specific exp(-sum prior equal-class normalized MSE) weights over four experts; only odd classes <=2023 for2025. Freeze weights and exact fitted artifacts before labels.",
+    "role_mean": "scouting_patterns.matured_role_mean strength20, all matured eligible pressure labels <=2023, existing scouting_depth.GROUPS mapping; unseen role global mean; same label/identity population and target as experts.",
+    "routing": "Apply ensemble only if pre-draft position exactly LB, unique name+birth identity verified, every used feature has dated evidence available by 2025-04-23T23:59:59Z, and ensemble < Combine. Otherwise retain Combine. No disagreement cutoff, exposure gate or learned outcome gate.",
+    "training_vintages": "At each historical pseudo-prospective class Y use publication evidence by April23 Y and labels classes<=Y-2. Missing historical publication timestamps are not proof of availability. Unverified feature packages block confirmation freeze; never substitute retrospective current snapshots."
+  },
+  "identity": "Unique PFR identity across classes plus unique normalized-name AND birth-date college bridge, no conflicting birth, no ambiguous many-to-one links; quarantine ambiguity, report attrition by fixed reason. Conventional fallback stays in full population. Source and identity evidence hashes required.",
+  "comparators": ["conventional Combine", "matured role mean", "existing delayed ensemble", "no correction (identical to Combine)"],
+  "subgroups": ["selected LB", "all defense"],
+  "uncertainty": "Paired player squared losses; team-cluster percentile bootstrap10000 draws seed42871, Bonferroni two-sided intervals alpha=.05/8 for2 populations x4 comparisons. Cluster by first NFL regular-season team, frozen deterministic tie rule earliest game then lexical team; never team for routing. Fewer than8 clusters yields unavailable interval. Report conditional-on-one-cohort limits; team bootstrap does not establish transport across draft years.",
+  "success": "At least20 selected evaluable linebackers; simultaneous lower bounds for candidate loss gain versus Combine AND role mean strictly >0 in selected LB; full-defense lower bound versus Combine >=0 (zero tolerated harm). All roster identities reconciled; two full seasons complete; no missing source outcomes. Ensemble comparison descriptive because candidate equals ensemble on selected LB. Otherwise inconclusive or failed, never optimize thresholds.",
+  "readiness": "Do not open outcomes before2027-03-01 AND official full2025/2026 regular-season source completeness. Date alone insufficient. Keep future outcome files separate from prediction inputs. One locked primary score; later source corrections versioned without retuning. No interim testing or optional stopping.",
+  "scope": "2025 is a post-draft, pre-complete-outcome validation designed after2025 play began; not a pre-draft prediction. Record all prior exposure to partial2025/2026 results. If contamination or vintage gaps unresolved, label2025 secondary and require genuinely untouched later class under same preregistered rule.",
+  "negative_findings": "Retain all SCOUTING_PATTERNS findings, including top-five pooled reversal, adverse position/direction cells and receiving role-mean superiority. 55.19% remains retrospective, not expected future effect.",
+  "automation": "Weekly readiness and integrity check only until signed prediction manifest and full source completeness exist. Never refit frozen model, change routing or inspect partial confirmation labels. Automatic results do not promote a model."
+}

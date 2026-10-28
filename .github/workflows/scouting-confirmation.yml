@@ -1,0 +1,30 @@
+name: Scouting confirmation integrity
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 13 * * 1'
+  workflow_dispatch:
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy==2.3.5 pandas==2.2.3 pytest==9.2.0
+      - run: PYTHONPATH=python python -m pytest -q python/tests/test_scouting_confirmation.py python/tests/test_scouting_patterns.py python/tests/test_scouting_identity.py
+      - name: Verify committed specification hashes (no outcomes)
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          r=json.loads(pathlib.Path('receipts/scouting_confirmation/freeze.json').read_text())
+          for p,h in r['source_sha256'].items():
+              assert hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()==h,p
+          assert not r['prediction_packet_frozen'] and not r['models_promoted']
+          print(r['status'])
+          PY
