@@ -1,0 +1,23 @@
+{
+  "schema": "pp-combine-getoff-extraction/1",
+  "source_tracking_sha256": "541c69f6629f5f803b08033c5c386735582120973562134b2c1e7ec6553fb0d3",
+  "cohort_sha256": "5f83794c138cf68268d8ef5b73671f25d5b3948d45645776763fd49ece52372d",
+  "source_players_sha256": "c130267d72027fd958407bc1ea59447252ac9dffce8fae392c76d3c24b73a53f",
+  "source_sha256": "62e3329dbb2c662dc2dc4eb42f070c5b16b7742fe6b4072a51ee4f2b1387ab9a",
+  "rushes": 14665,
+  "players": 74,
+  "by_class": {
+    "2023": 23,
+    "2024": 22,
+    "2025": 29
+  },
+  "source_attempts": 143,
+  "rejections": {},
+  "players_with_launch": 74,
+  "feature_columns": [
+    "launch__speed_gain_0p5",
+    "launch__displacement_0p5"
+  ],
+  "predictor_scope": "Combine-only launch; observed NFL context supplied separately for conditional get-off predictions. No pressure outcomes, team IDs, eventual NFL position or post-play metrics retained.",
+  "onset": "First three consecutive speed samples>1yd/s, then endpoint speed gain and Euclidean displacement at+0.5s; 10Hz near-contiguous frames and actual-time interpolation to exactly+0.5s, no official cue/reaction claim."
+}
