@@ -1,0 +1,1855 @@
+{
+  "schema": "pp-combine-getoff/1",
+  "protocol_sha256": "fa8f212241aa73e0495f9a6d890f13ed7aceaa724e827b852cd7e1f6d0fe63f3",
+  "independent_confirmation": false,
+  "models_promoted": false,
+  "sealed_two_season_outcomes_opened": false,
+  "cohort": {
+    "players": 74,
+    "rushes": 14665,
+    "by_class": {
+      "2023": 23,
+      "2024": 22,
+      "2025": 29
+    }
+  },
+  "repeats": [
+    {
+      "seed": 714,
+      "primary": {
+        "players": 45,
+        "baseline_mse_seconds2": 0.004148847194441432,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.011068104075075035,
+            "relative_gain": -1.6677540907999515,
+            "absolute_gain_seconds2": -0.006919256880633601,
+            "conditional_player_95": [
+              -0.01076334304045363,
+              -0.003498840239403927
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -1.2211830207264756
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -2.5773386397680027
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.0071949561298691655,
+            "relative_gain": -0.7342061041700613,
+            "absolute_gain_seconds2": -0.0030461089354277327,
+            "conditional_player_95": [
+              -0.004837767039342305,
+              -0.0014157078233641238
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.48768102222471477
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -1.2363331350000595
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.004196125774214393,
+            "relative_gain": -0.011395594380121695,
+            "absolute_gain_seconds2": -4.7278579772960445e-05,
+            "conditional_player_95": [
+              -0.001504100827401,
+              0.0013591809048450552
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.018859116551962915
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.07301897180309512
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.004078397811309225,
+            "relative_gain": 0.016980471883031534,
+            "absolute_gain_seconds2": 7.0449383132207e-05,
+            "conditional_player_95": [
+              -9.4238121674906e-05,
+              0.00024375292390696853
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.041128752076799606
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.03220520990506252
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.004148847194441432,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "auxiliary": {
+        "players": 45,
+        "baseline_mse_seconds2": 0.056083762279724614,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.08484327823436949,
+            "relative_gain": -0.5127957680728208,
+            "absolute_gain_seconds2": -0.02875951595464488,
+            "conditional_player_95": [
+              -0.0338098420276592,
+              -0.023801478491494894
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.47593680139003935
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.5523072636739499
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.08097013028916362,
+            "relative_gain": -0.44373570883699304,
+            "absolute_gain_seconds2": -0.024886368009439015,
+            "conditional_player_95": [
+              -0.028286994474936742,
+              -0.021501431979294928
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.40559279518622604
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.4846235497224118
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.05613104085949757,
+            "relative_gain": -0.0008429994324765865,
+            "absolute_gain_seconds2": -4.727857977295964e-05,
+            "conditional_player_95": [
+              -0.0015041008274010005,
+              0.0013591809048450565
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.0018086192190879668
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.0036854399053427656
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.0560133128965924,
+            "relative_gain": 0.001256145812415944,
+            "absolute_gain_seconds2": 7.044938313220735e-05,
+            "conditional_player_95": [
+              -9.423812167490518e-05,
+              0.00024375292390697072
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.00394431262239912
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.0016254729806949378
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.056083762279724614,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "audits": [
+        {
+          "conventional": {
+            "physical_set": "core8",
+            "alpha": 100.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "core8",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.023562433069787357,
+              0.01734531433523157,
+              0.010840183553296866,
+              0.008320574326863912,
+              0.010915358169644777,
+              0.011871823058005146,
+              0.011999645704800384,
+              0.017330141937799408,
+              0.015012979100071005,
+              0.009872265644790334,
+              0.007954772372941704,
+              0.010935951698115245,
+              0.011877023747618533,
+              0.011999645704800384,
+              0.013243948569931543,
+              0.011950865801089235,
+              0.009219188632183465,
+              0.00869073603672379,
+              0.011335935767773538,
+              0.011927032262091786,
+              0.011999645704800384
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.053445094885231026,
+          "training_players": 33,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": 2.0392262481967172e-05,
+          "inner_player_se": 0.0005231176036886755
+        },
+        {
+          "conventional": {
+            "physical_set": "full15",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "full15",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.024297628991439033,
+              0.014483062744828232,
+              0.00610923948159478,
+              0.007209233354176015,
+              0.01087670163636455,
+              0.011899191563407786,
+              0.012032182902144445,
+              0.015274730511383462,
+              0.0110033578015983,
+              0.00779168196990903,
+              0.007670631634004436,
+              0.010976286763501604,
+              0.011911690101408646,
+              0.012032182902144445,
+              0.007616363354942442,
+              0.0073111644722339926,
+              0.007043270452874593,
+              0.008854914695863594,
+              0.011459390137681533,
+              0.011970268735913126,
+              0.012032182902144445
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.05271032090053552,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -5.614228123155047e-05,
+          "inner_player_se": 5.1162359995849824e-05
+        },
+        {
+          "conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.013223650750538454,
+              0.008532561605152115,
+              0.0055104244354652,
+              0.005941493586853335,
+              0.00889162430060234,
+              0.009782296298022903,
+              0.00989906145779182,
+              0.006675394572728837,
+              0.0059919391238168074,
+              0.004887009098078157,
+              0.0055856200064601635,
+              0.008836137928936848,
+              0.009776993737132249,
+              0.00989906145779182,
+              0.005860696398917767,
+              0.005401324713581081,
+              0.005244670762856063,
+              0.006981744482555349,
+              0.00936789902973562,
+              0.009841523338564813,
+              0.00989906145779182
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.04861511117449221,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -8.13545301030604e-06,
+          "inner_player_se": 0.00010322359835046946
+        },
+        {
+          "conventional": {
+            "physical_set": "motor4",
+            "alpha": 0.1,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "motor4",
+            "alpha": 0.1,
+            "inner_mse": [
+              0.02458990880835737,
+              0.011737265140631807,
+              0.006917341054000955,
+              0.006504394159598675,
+              0.009928963693666706,
+              0.010924280873074612,
+              0.011054057090267804,
+              0.011623527970836144,
+              0.009869191054361355,
+              0.006974391963650849,
+              0.006981634205269051,
+              0.01007852686822014,
+              0.010942689743479787,
+              0.011054057090267804,
+              0.006469828086773431,
+              0.00656504516309523,
+              0.007089255836605313,
+              0.008565257660130585,
+              0.01057973884769157,
+              0.011002244125785394,
+              0.011054057090267804
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.051567153719845465,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -3.747030543022338e-05,
+          "inner_player_se": 4.755479174807128e-05
+        }
+      ]
+    },
+    {
+      "seed": 914,
+      "primary": {
+        "players": 45,
+        "baseline_mse_seconds2": 0.0035702603331655815,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.01083609186465056,
+            "relative_gain": -2.0350985232056478,
+            "absolute_gain_seconds2": -0.007265831531484979,
+            "conditional_player_95": [
+              -0.011190121649928376,
+              -0.0038539878662463395
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -1.5421803227520139
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -3.11041042828725
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.007015781034345756,
+            "relative_gain": -0.9650614744178039,
+            "absolute_gain_seconds2": -0.0034455207011801756,
+            "conditional_player_95": [
+              -0.005070693270593968,
+              -0.002007104226641224
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.652617212678747
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -1.6466655093535005
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.004271494697490722,
+            "relative_gain": -0.19640986899781374,
+            "absolute_gain_seconds2": -0.0007012343643251427,
+            "conditional_player_95": [
+              -0.0022949371955962084,
+              0.0008911641953406375
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.17877081404956027
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.2348898556625174
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.003597879664348618,
+            "relative_gain": -0.0077359432102109375,
+            "absolute_gain_seconds2": -2.761933118303772e-05,
+            "conditional_player_95": [
+              -0.0001167627520430429,
+              5.1744427694595036e-05
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.005191963981516029
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.013285689899171478
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.0035702603331655815,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "auxiliary": {
+        "players": 45,
+        "baseline_mse_seconds2": 0.055510530118187594,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.08461126602394503,
+            "relative_gain": -0.5242381192144804,
+            "absolute_gain_seconds2": -0.02910073590575743,
+            "conditional_player_95": [
+              -0.034174753522710107,
+              -0.02424707899372535
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.4923255424813008
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.5584632806734795
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.08079095519364023,
+            "relative_gain": -0.4554167474464398,
+            "absolute_gain_seconds2": -0.02528042507545263,
+            "conditional_player_95": [
+              -0.02848164731933375,
+              -0.022214064858953782
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.416514970256105
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.49713759050192824
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.05621176448251273,
+            "relative_gain": -0.012632456631780385,
+            "absolute_gain_seconds2": -0.0007012343643251436,
+            "conditional_player_95": [
+              -0.0022949371955962093,
+              0.0008911641953406375
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.015235251503566746
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.009841046979205252
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.05553814944937061,
+            "relative_gain": -0.0004975512055862964,
+            "absolute_gain_seconds2": -2.7619331183038656e-05,
+            "conditional_player_95": [
+              -0.0001167627520430436,
+              5.1744427694595666e-05
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.0004424708668268841
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.0005566230098789678
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.055510530118187594,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "audits": [
+        {
+          "conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.025511535497814625,
+              0.010956320764157517,
+              0.00639528040030991,
+              0.007246974921753808,
+              0.009808311286280985,
+              0.01053877893449237,
+              0.010633809721682165,
+              0.010900653414175294,
+              0.007760234123290539,
+              0.0061156333815772556,
+              0.007015316857377064,
+              0.009796493417495273,
+              0.01053868673187392,
+              0.010633809721682165,
+              0.011253639035091146,
+              0.008365420604391032,
+              0.007604749668365936,
+              0.008653248823243982,
+              0.01026432938045467,
+              0.010593618469502545,
+              0.010633809721682165
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.049259614183284575,
+          "training_players": 33,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -0.00023042277283510652,
+          "inner_player_se": 0.00021022974858888322
+        },
+        {
+          "conventional": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.0265970617351017,
+              0.013149085482228845,
+              0.007585656058727016,
+              0.0074419612324982155,
+              0.01103835165698027,
+              0.0121292323305612,
+              0.012272351856386797,
+              0.025482495647379446,
+              0.017958768429427435,
+              0.010098280907540322,
+              0.008158259725861258,
+              0.011230410017482578,
+              0.012153027223913544,
+              0.012272351856386797,
+              0.015490032953569068,
+              0.013784671388361421,
+              0.010123203830680523,
+              0.009536081962907934,
+              0.01173426981775949,
+              0.012213696068670104,
+              0.012272351856386797
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.0551775057595529,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": 2.291059900443732e-05,
+          "inner_player_se": 8.900335217205735e-05
+        },
+        {
+          "conventional": {
+            "physical_set": "motor4",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "motor4",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.01647564947970902,
+              0.010700524413063892,
+              0.006788081825704793,
+              0.007345212286103711,
+              0.011563951471115507,
+              0.01282028607026784,
+              0.012984890012573682,
+              0.015840516909651554,
+              0.010882275525791161,
+              0.006927464016717842,
+              0.007464143823546789,
+              0.011649237801444633,
+              0.012831993269247895,
+              0.012984890012573682,
+              0.0065588618224401785,
+              0.0065034005944964775,
+              0.006393989702567842,
+              0.008862130812875886,
+              0.012250941433755567,
+              0.012905686679724925,
+              0.012984890012573682
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.05620577877164604,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -0.00017435399319953556,
+          "inner_player_se": 0.0001393457030854555
+        },
+        {
+          "conventional": {
+            "physical_set": "full15",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "full15",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.030159440152094073,
+              0.006673381103940472,
+              0.004028759425283618,
+              0.005207733534888441,
+              0.007589450221870519,
+              0.008225100856818057,
+              0.008306862671502916,
+              0.010431730755584505,
+              0.0068765404908373556,
+              0.004618919387633514,
+              0.005125446305458053,
+              0.007590419622681446,
+              0.008226000274996675,
+              0.008306862671502916,
+              0.01360613631893105,
+              0.008118279922651985,
+              0.005382252027254018,
+              0.006591452685643421,
+              0.00800254340835851,
+              0.008273971293449705,
+              0.008306862671502916
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.0452514603914334,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -0.00034830243567672255,
+          "inner_player_se": 0.00023528483276263413
+        }
+      ]
+    },
+    {
+      "seed": 1114,
+      "primary": {
+        "players": 45,
+        "baseline_mse_seconds2": 0.005570926201650949,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.011221431959825822,
+            "relative_gain": -1.0142847981903513,
+            "absolute_gain_seconds2": -0.005650505758174873,
+            "conditional_player_95": [
+              -0.00931691464949916,
+              -0.0023112440312393102
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.49138756852460286
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -2.5384924902238137
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.008214678799126306,
+            "relative_gain": -0.4745624877766072,
+            "absolute_gain_seconds2": -0.002643752597475359,
+            "conditional_player_95": [
+              -0.004805739694223972,
+              -0.0006464570042000995
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.20197202503549758
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -1.2691440164463046
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.004345006083781013,
+            "relative_gain": 0.22005678651902313,
+            "absolute_gain_seconds2": 0.0012259201178699353,
+            "conditional_player_95": [
+              -0.00037087806088432487,
+              0.0029164123417013306
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.3063545633013409
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.03149500552446705
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.0055856032467362215,
+            "relative_gain": -0.002634578982741414,
+            "absolute_gain_seconds2": -1.4677045085273048e-05,
+            "conditional_player_95": [
+              -0.00017664971306098281,
+              0.00014143378109331706
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.011626655721081673
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.02357667583820024
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.005570926201650949,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "auxiliary": {
+        "players": 45,
+        "baseline_mse_seconds2": 0.05747130445835124,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.0849966061191203,
+            "relative_gain": -0.4789399148007212,
+            "absolute_gain_seconds2": -0.02752530166076905,
+            "conditional_player_95": [
+              -0.03238372545290694,
+              -0.022644656156598806
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.40779985650074735
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.5589614269107056
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.08198985295842076,
+            "relative_gain": -0.4266224462999238,
+            "absolute_gain_seconds2": -0.02451854850006952,
+            "conditional_player_95": [
+              -0.028032456475910728,
+              -0.020922099527952497
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.36834169095379665
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.4921792406174637
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.05624538434048131,
+            "relative_gain": 0.02133099517096128,
+            "absolute_gain_seconds2": 0.0012259201178699357,
+            "conditional_player_95": [
+              -0.00037087806088432297,
+              0.002916412341701331
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.04176758763222095
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.001656995986281295
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.05748598150343653,
+            "relative_gain": -0.00025538040633669697,
+            "absolute_gain_seconds2": -1.4677045085273763e-05,
+            "conditional_player_95": [
+              -0.00017664971306098525,
+              0.00014143378109331462
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": -0.0015851481253186938
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0012404016631590792
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.05747130445835124,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "audits": [
+        {
+          "conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.044442787605047704,
+              0.015231318079877196,
+              0.006762414507976662,
+              0.007129552547187394,
+              0.010582012995875408,
+              0.011546277215944072,
+              0.011671314774388876,
+              0.05256856089592474,
+              0.012813292828235397,
+              0.006745738597749322,
+              0.007166160622769497,
+              0.010634428675405098,
+              0.011553724694579897,
+              0.011671314774388876,
+              0.012757443033061523,
+              0.0087529993181521,
+              0.007137409617894148,
+              0.00887620322684859,
+              0.011170906058697149,
+              0.011617177631318738,
+              0.011671314774388876
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.05273442579366478,
+          "training_players": 33,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": 0.00011687131053578757,
+          "inner_player_se": 0.00023770890752360867
+        },
+        {
+          "conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "core8",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.014947341892170698,
+              0.011557833034393283,
+              0.007781054293112796,
+              0.0070784966116884205,
+              0.00941654251871116,
+              0.010182005164243349,
+              0.0102833158411941,
+              0.009063214167507954,
+              0.007841747297563591,
+              0.0062420874282933594,
+              0.006401989849030127,
+              0.009327436812375748,
+              0.010173728790980108,
+              0.0102833158411941,
+              0.008604854483283263,
+              0.008130167042322814,
+              0.007106285364749086,
+              0.007898889042508512,
+              0.009827942211225031,
+              0.010233650310730848,
+              0.0102833158411941
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.04982521512051879,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -0.0002479255864294565,
+          "inner_player_se": 0.00013571392373241972
+        },
+        {
+          "conventional": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.02870162284140084,
+              0.012548908585677327,
+              0.006447153116216355,
+              0.006088986325010228,
+              0.008592116853381357,
+              0.009493503854817545,
+              0.009614699413548807,
+              0.015805385633736645,
+              0.011465101664989541,
+              0.007648148815552742,
+              0.0064626637514305805,
+              0.008730162752917107,
+              0.00951143657949561,
+              0.009614699413548807,
+              0.011531372519993213,
+              0.009496813648153397,
+              0.00735815237821907,
+              0.007161225171835988,
+              0.009058773656381813,
+              0.00955258668122336,
+              0.009614699413548807
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.04822084065365312,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -2.214790406369091e-05,
+          "inner_player_se": 9.225830133252624e-05
+        },
+        {
+          "conventional": {
+            "physical_set": "full15",
+            "alpha": 10.0,
+            "inner_mse": null,
+            "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+          },
+          "raw_conventional": {
+            "physical_set": "full15",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.013062971898082545,
+              0.007904201740956697,
+              0.005746340210228202,
+              0.006553200353544439,
+              0.010921897958835771,
+              0.0121915112295942,
+              0.012356819196306454,
+              0.008529100429349132,
+              0.0072611683240446645,
+              0.006108267229249783,
+              0.007025459441098825,
+              0.01105911973934553,
+              0.012208112185999254,
+              0.012356819196306454,
+              0.006661088616312547,
+              0.0064087656578774455,
+              0.006091537102929639,
+              0.008267555004960531,
+              0.011618545715151092,
+              0.012276985002268037,
+              0.012356819196306454
+            ],
+            "configuration_source": "raw player-mean get-off CV"
+          },
+          "correction_cap_seconds": 0.05518033037347951,
+          "training_players": 34,
+          "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+          "source_features": [
+            "launch__speed_gain_0p5",
+            "launch__displacement_0p5"
+          ],
+          "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+          "apply_correction": false,
+          "inner_player_gain": -0.00014226859931804303,
+          "inner_player_se": 6.47209637673852e-05
+        }
+      ]
+    }
+  ],
+  "temporal": {
+    "2023_to_2024": {
+      "primary": {
+        "players": 22,
+        "baseline_mse_seconds2": 0.0025504997419435777,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.00986131524943856,
+            "relative_gain": -2.8664247195429495,
+            "absolute_gain_seconds2": -0.007310815507494985,
+            "conditional_player_95": [
+              -0.012128307676513109,
+              -0.003259409763127087
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -2.8664247195429495
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.00529765558861477,
+            "relative_gain": -1.0771049302587872,
+            "absolute_gain_seconds2": -0.002747155846671192,
+            "conditional_player_95": [
+              -0.005289132186203861,
+              -0.0005919893857221626
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -1.0771049302587872
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.004096920839392993,
+            "relative_gain": -0.6063208209819243,
+            "absolute_gain_seconds2": -0.001546421097449416,
+            "conditional_player_95": [
+              -0.0037739200847913,
+              0.0003213381926901253
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.6063208209819243
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.0027764733944327085,
+            "relative_gain": -0.08859975508836189,
+            "absolute_gain_seconds2": -0.00022597365248913117,
+            "conditional_player_95": [
+              -0.0019069689770764198,
+              0.0014166555425071154
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.08859975508836189
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.0025504997419435777,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "auxiliary": {
+        "players": 22,
+        "baseline_mse_seconds2": 0.05590244290065316,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.08580992839602813,
+            "relative_gain": -0.5349942496882464,
+            "absolute_gain_seconds2": -0.02990748549537497,
+            "conditional_player_95": [
+              -0.036356438259273184,
+              -0.024279743982956653
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.5349942496882464
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.08124626873520435,
+            "relative_gain": -0.453358109583706,
+            "absolute_gain_seconds2": -0.025343825834551182,
+            "conditional_player_95": [
+              -0.0304115213612516,
+              -0.021023139766457505
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.453358109583706
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.05744886399810257,
+            "relative_gain": -0.027662853664510413,
+            "absolute_gain_seconds2": -0.0015464210974494173,
+            "conditional_player_95": [
+              -0.0037739200847913025,
+              0.0003213381926901251
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.027662853664510413
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.056128416553142275,
+            "relative_gain": -0.0040422858244445106,
+            "absolute_gain_seconds2": -0.00022597365248912892,
+            "conditional_player_95": [
+              -0.0019069689770764159,
+              0.0014166555425071169
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": -0.0040422858244445106
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.05590244290065316,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "audit": {
+        "conventional": {
+          "physical_set": "core8",
+          "alpha": 10.0,
+          "inner_mse": null,
+          "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+        },
+        "raw_conventional": {
+          "physical_set": "core8",
+          "alpha": 10.0,
+          "inner_mse": [
+            0.03232499802098068,
+            0.019796275076080214,
+            0.009993108805859087,
+            0.008903134676563156,
+            0.011873935985839678,
+            0.012704378702791733,
+            0.012810428639304209,
+            0.025924223323110247,
+            0.014076286759111848,
+            0.008814050316346696,
+            0.009072055017026112,
+            0.01203270151259753,
+            0.01272455343132261,
+            0.012810428639304209,
+            0.009823464211548463,
+            0.010415959784473981,
+            0.010176162993581676,
+            0.010442771061757703,
+            0.012381712899173399,
+            0.012764279135039469,
+            0.012810428639304209
+          ],
+          "configuration_source": "raw player-mean get-off CV"
+        },
+        "correction_cap_seconds": 0.05382469534136479,
+        "training_players": 23,
+        "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+        "source_features": [
+          "launch__speed_gain_0p5",
+          "launch__displacement_0p5"
+        ],
+        "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+        "apply_correction": false,
+        "inner_player_gain": 0.0004817096800585747,
+        "inner_player_se": 0.0004945414633321095
+      }
+    },
+    "exploratory_2025": {
+      "primary": {
+        "players": 29,
+        "baseline_mse_seconds2": 0.0022630308240325827,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.011360180213591458,
+            "relative_gain": -4.019896367716419,
+            "absolute_gain_seconds2": -0.009097149389558874,
+            "conditional_player_95": [
+              -0.014146948237238246,
+              -0.004859709491345262
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -4.019896367716419
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.006149248653572855,
+            "relative_gain": -1.7172624377317454,
+            "absolute_gain_seconds2": -0.0038862178295402737,
+            "conditional_player_95": [
+              -0.006497683477827842,
+              -0.0017461189190001354
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -1.7172624377317454
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.0026461221219784624,
+            "relative_gain": -0.16928240387960541,
+            "absolute_gain_seconds2": -0.0003830912979458799,
+            "conditional_player_95": [
+              -0.0014244267192973753,
+              0.000510059800024605
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -0.16928240387960541
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.002272324059033977,
+            "relative_gain": -0.004106543712398239,
+            "absolute_gain_seconds2": -9.293235001394408e-06,
+            "conditional_player_95": [
+              -0.00013619185615921725,
+              0.00013425315978706097
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -0.004106543712398239
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.0022630308240325827,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "auxiliary": {
+        "players": 29,
+        "baseline_mse_seconds2": 0.05738958957413135,
+        "comparisons": {
+          "raw_mean": {
+            "mse_seconds2": 0.08679236997773959,
+            "relative_gain": -0.5123364816127157,
+            "absolute_gain_seconds2": -0.02940278040360825,
+            "conditional_player_95": [
+              -0.034510783503452803,
+              -0.02471094793988245
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -0.5123364816127157
+              }
+            }
+          },
+          "raw_conventional": {
+            "mse_seconds2": 0.08158143841772102,
+            "relative_gain": -0.4215372338974567,
+            "absolute_gain_seconds2": -0.024191848843589648,
+            "conditional_player_95": [
+              -0.027341742000651804,
+              -0.02125849677594586
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -0.4215372338974567
+              }
+            }
+          },
+          "context": {
+            "mse_seconds2": 0.05777268087207723,
+            "relative_gain": -0.006675275094118429,
+            "absolute_gain_seconds2": -0.00038309129794587767,
+            "conditional_player_95": [
+              -0.0014244267192973742,
+              0.0005100598000246067
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -0.006675275094118429
+              }
+            }
+          },
+          "fixed": {
+            "mse_seconds2": 0.05739888280913275,
+            "relative_gain": -0.0001619324178889631,
+            "absolute_gain_seconds2": -9.293235001394318e-06,
+            "conditional_player_95": [
+              -0.00013619185615921855,
+              0.00013425315978706157
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": -0.0001619324178889631
+              }
+            }
+          },
+          "selected": {
+            "mse_seconds2": 0.05738958957413135,
+            "relative_gain": 0.0,
+            "absolute_gain_seconds2": 0.0,
+            "conditional_player_95": [
+              0.0,
+              0.0
+            ],
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+      },
+      "audit": {
+        "conventional": {
+          "physical_set": "full15",
+          "alpha": 100.0,
+          "inner_mse": null,
+          "configuration_source": "reuse raw-selected conventional configuration; no residual-target tuning"
+        },
+        "raw_conventional": {
+          "physical_set": "full15",
+          "alpha": 100.0,
+          "inner_mse": [
+            0.011556800873770945,
+            0.009196028677967323,
+            0.006736997907028731,
+            0.006334779851600183,
+            0.009775004911000725,
+            0.011133969808669451,
+            0.01132172456611897,
+            0.01308791605244177,
+            0.011187170469516748,
+            0.008016816227594772,
+            0.006516487073745419,
+            0.009853458581888968,
+            0.011145894134178932,
+            0.01132172456611897,
+            0.009507419722646713,
+            0.009062581670225755,
+            0.007787523105259252,
+            0.0078085342106440706,
+            0.01052441039107958,
+            0.011232228182544646,
+            0.01132172456611897
+          ],
+          "configuration_source": "raw player-mean get-off CV"
+        },
+        "correction_cap_seconds": 0.051729627866358624,
+        "training_players": 45,
+        "target": "Mean charted NFL player_get_off seconds, conditional on pre-snap context",
+        "source_features": [
+          "launch__speed_gain_0p5",
+          "launch__displacement_0p5"
+        ],
+        "nuisance_separation": "Every correction-response player excluded from complete context/source fitting, including peer nuisance targets.",
+        "apply_correction": false,
+        "inner_player_gain": 4.400829680269097e-06,
+        "inner_player_se": 8.29828856270003e-05
+      }
+    }
+  },
+  "development": {
+    "primary": {
+      "players": 45,
+      "baseline_mse_seconds2": 0.004430011243085987,
+      "comparisons": {
+        "raw_mean": {
+          "mse_seconds2": 0.011041875966517138,
+          "relative_gain": -1.4925164656749865,
+          "absolute_gain_seconds2": -0.006611864723431151,
+          "conditional_player_95": [
+            -0.010325201515756312,
+            -0.0033060448118374997
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": -0.9822029127309341
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -2.7161464669915336
+            }
+          }
+        },
+        "raw_conventional": {
+          "mse_seconds2": 0.0074751386544470765,
+          "relative_gain": -0.6873859329620627,
+          "absolute_gain_seconds2": -0.0030451274113610888,
+          "conditional_player_95": [
+            -0.004709719727083539,
+            -0.0014978782300808012
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": -0.40437229917347156
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -1.3659961150500568
+            }
+          }
+        },
+        "context": {
+          "mse_seconds2": 0.004270875518495376,
+          "relative_gain": 0.03592219429216516,
+          "absolute_gain_seconds2": 0.00015913572459061093,
+          "conditional_player_95": [
+            -0.001224524879129691,
+            0.001534388259166721
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": 0.09442403044119836
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -0.10435352723449785
+            }
+          }
+        },
+        "fixed": {
+          "mse_seconds2": 0.004420626907464689,
+          "relative_gain": 0.002118354809131704,
+          "absolute_gain_seconds2": 9.384335621298721e-06,
+          "conditional_player_95": [
+            -7.80719683636713e-05,
+            0.00010404927099079214
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": 0.005705572981541372
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -0.006483078077973317
+            }
+          }
+        },
+        "selected": {
+          "mse_seconds2": 0.004430011243085987,
+          "relative_gain": 0.0,
+          "absolute_gain_seconds2": 0.0,
+          "conditional_player_95": [
+            0.0,
+            0.0
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": 0.0
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": 0.0
+            }
+          }
+        }
+      },
+      "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+    },
+    "auxiliary": {
+      "players": 45,
+      "baseline_mse_seconds2": 0.05635519895208781,
+      "comparisons": {
+        "raw_mean": {
+          "mse_seconds2": 0.0848170501258116,
+          "relative_gain": -0.5050439303376704,
+          "absolute_gain_seconds2": -0.028461851173723785,
+          "conditional_player_95": [
+            -0.03334440045673679,
+            -0.023590254792345118
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": -0.4577639580347983
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -0.556570115166538
+            }
+          }
+        },
+        "raw_conventional": {
+          "mse_seconds2": 0.08125031281374154,
+          "relative_gain": -0.4417536327539028,
+          "absolute_gain_seconds2": -0.024895113861653724,
+          "conditional_player_95": [
+            -0.028174354960076402,
+            -0.021586757921965297
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": -0.396296879680006
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -0.4912928551037335
+            }
+          }
+        },
+        "context": {
+          "mse_seconds2": 0.056196063227497206,
+          "relative_gain": 0.0028237984702335376,
+          "absolute_gain_seconds2": 0.0001591357245906122,
+          "conditional_player_95": [
+            -0.0012245248791296895,
+            0.0015343882591667237
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": 0.010044412915355632
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -0.005045299085366251
+            }
+          }
+        },
+        "fixed": {
+          "mse_seconds2": 0.05634581461646652,
+          "relative_gain": 0.00016652120471224625,
+          "absolute_gain_seconds2": 9.384335621299978e-06,
+          "conditional_player_95": [
+            -7.807196836366954e-05,
+            0.00010404927099079376
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": 0.0006069337506302376
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": -0.000313444775313176
+            }
+          }
+        },
+        "selected": {
+          "mse_seconds2": 0.05635519895208781,
+          "relative_gain": 0.0,
+          "absolute_gain_seconds2": 0.0,
+          "conditional_player_95": [
+            0.0,
+            0.0
+          ],
+          "by_class": {
+            "2023": {
+              "players": 23,
+              "relative_gain": 0.0
+            },
+            "2024": {
+              "players": 22,
+              "relative_gain": 0.0
+            }
+          }
+        }
+      },
+      "scope": "Equal-player loss and fixed-prediction class-stratified paired bootstrap; no refitting, shared-game, researcher-selection or new-cohort guarantee."
+    }
+  },
+  "input_sha256": "2d25d5272d01077d224f7b300e2b492612d6d7c5c41fbab22242c54d7b42d0c6",
+  "source_sha256": {
+    "python/perfectpower/combine_getoff.py": "9b37ec9552e44dfdc21d3bcfeb482028a6a5445b89a5eafa1fccc020c9418bce",
+    "scripts/run_combine_getoff.py": "1db6fb085c4d9a5641334cfc1487234f5c8299cbdafacbd5c3c6c1a6fcf9eb3a"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0"
+  },
+  "elapsed_seconds": 37.892326344997855
+}

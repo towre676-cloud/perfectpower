@@ -27,12 +27,17 @@ def build():
         'python/perfectpower/movement_features.py',
         'python/perfectpower/movement_residual.py',
         'python/perfectpower/combine_compact.py',
+        'python/perfectpower/combine_getoff.py',
         'scripts/run_movement_transfer.py',
         'scripts/run_movement_residual.py',
         'docs/COMBINE_COMPACT_PROTOCOL.json',
         'scripts/prepare_movement_residual.py',
         'scripts/run_combine_compact.py',
         'scripts/audit_combine_repeatability.py',
+        'scripts/prepare_combine_getoff.py',
+        'scripts/run_combine_getoff.py',
+        'docs/COMBINE_GETOFF_PROTOCOL.json',
+        'research/kaggle_combine/upstream/manifest.json',
     ]
     for relative in paths:modules[relative]=(ROOT/relative).read_text()
     # The old negative receipt is aggregate evidence, not fitted data.
@@ -46,9 +51,11 @@ def build():
 
 We test whether a fixed, interpretable movement block adds information to conventional Combine measurements for recorded rookie pressure frequency. This is a smaller follow-up to the baseline-preserving residual experiment. That experiment's selected strategy **worsened repeated nested MSE2.878%**; its temporal fits chose zero correction. Earlier favorable movement comparisons and all2025 comparisons remain exploratory. Both engines reuse players and are not independent replications.
 
-The official challenge requires Combine sensor tracking linked to regular-season NFL performance. This notebook rebuilds the historical eligible rush cohort from official files and extracts source-only movement features. The roster remains conditional on observed NFL participation, charted get-off and at least30 eligible records; it does not represent all prospects. The response is a charted pressure-event fraction, not pressures per pass-rush opportunity for every player or a causal athletic effect.
+The official challenge requires Combine sensor tracking linked to regular-season NFL performance. This notebook rebuilds the historical eligible rush cohort from official files and extracts source-only movement features. The roster remains conditional on observed NFL participation, charted get-off and at least30 eligible records; it does not represent all prospects. The first response is a charted pressure-event fraction, not pressures per pass-rush opportunity for every player or a causal athletic effect. A separate, bounded follow-up below tests the supplied charted get-off measurement against two half-second Combine-launch coordinates while conditioning on recorded pre-snap NFL circumstances.
 
 **No competition data are bundled, downloaded or fabricated.** Attach the official competition dataset. The default input path is `/kaggle/input/nfl-big-data-bowl-2027`, overridable through `BDB_DATA_ROOT`. The supplied input hashes pin the original dataset version; a newer version must be reconciled explicitly before continuing.
+
+The earlier pressure-only notebook version has a hash-verified nine-file official rebuild recorded in `receipts/kaggle_combine/official_rebuild.json`. That receipt pins the earlier notebook hash; it does not certify this extended version. This code supports a verified raw-data run, with the current execution receipt required to establish completion. No Kaggle publication is claimed.
 
 The separate two-season2025 linebacker confirmation project is not opened or scored here.
 '''),code('''import os, sys, json, hashlib, tempfile, contextlib, importlib.util
@@ -77,6 +84,8 @@ The historical cohort adapter is preserved byte for byte and only its preparatio
 
 For a trusted saved continuation, set both `BDB_PLAYERS` and `BDB_EVENTS` to the exact private extracted files already authorized by you. Pickle files execute Python on loading, so this optional path is only for your own trusted saved files. A supplied continuation bypasses raw reconstruction; its receipt records that fact and it is not a substitute for a full official-data reproducibility run.
 '''),code(f'OFFICIAL_HASHES={manifest["official_source_sha256"]!r}\n'+'''
+DATA=Path(os.environ.get('BDB_DATA_ROOT','/kaggle/input/nfl-big-data-bowl-2027')).resolve()
+RAW_INPUTS_VERIFIED=False
 provided_players=os.environ.get('BDB_PLAYERS')
 provided_events=os.environ.get('BDB_EVENTS')
 if bool(provided_players)!=bool(provided_events):raise ValueError('Set BDB_PLAYERS and BDB_EVENTS together')
@@ -92,6 +101,7 @@ else:
         with (DATA/name).open('rb') as stream:
             for chunk in iter(lambda:stream.read(8*1024*1024),b''):h.update(chunk)
         if h.hexdigest()!=expected:raise ValueError('Official dataset version differs: '+name)
+    RAW_INPUTS_VERIFIED=True
     import front_transfer as historical_cohort
     import prepare_movement_residual as prepare_current
     COHORT=WORK/'private_front';EXTRACTED=WORK/'private_current'
@@ -127,7 +137,7 @@ print('Aggregate receipt:',RESULT.name)
 print(json.dumps({k:v for k,v in result.items() if k not in ('source_sha256','input_sha256','repeats')},indent=2)[:15000])
 '''),markdown('''## Results: keep gain, loss and fallback visible
 
-The three figures below summarize only recorded aggregate comparisons. Positive relative gain means lower error. The first figure keeps the earlier negative study visible. The next two report this run's comparisons and source-attempt repeatability; missing expected receipt fields cause a clear error rather than a fabricated chart. Intervals are conditional diagnostics and do not cover the full adaptive research history or future class shift. The exact aggregate receipt is the authority. Class stability appears in the table. Alternating event-ID split agreement uses only2023/2024 Combine attempts and no NFL outcomes; it is descriptive agreement across potentially different instructions, not biological reliability or calibrated physiology.
+The first three figures below summarize only recorded aggregate pressure comparisons and source repeatability; a fourth figure appears only after the separate get-off section actually runs. Positive relative gain means lower error. The first figure keeps the earlier negative study visible. The next two report this run's comparisons and source-attempt repeatability; missing expected receipt fields cause a clear error rather than a fabricated chart. Intervals are conditional diagnostics and do not cover the full adaptive research history or future class shift. The exact aggregate receipt is the authority. Class stability appears in the table. Alternating event-ID split agreement uses only2023/2024 Combine attempts and no NFL outcomes; it is descriptive agreement across potentially different instructions, not biological reliability or calibrated physiology.
 '''),code(f'HISTORICAL_DEVELOPMENT={old!r}\n'+'''
 old_rows=[(name,value['relative_gain']*100) for name,value in HISTORICAL_DEVELOPMENT['comparisons'].items()]
 fig,ax=plt.subplots(figsize=(8,3.6))
@@ -166,6 +176,70 @@ ax.set_ylabel('Alternating-split Spearman correlation');ax.set_ylim(-1.1,1.1)
 ax.set_title('Measurement support before scouting claims; absent points mean insufficient support')
 plt.tight_layout();plt.show()
 display(measurement_table)
+'''),markdown('''## Separate endpoint: Combine launch and charted NFL get-off
+
+The pressure-rate result remains above, including all losses. This follow-up tests a different question: do **two fixed0.5-second pass-rush-drill launch coordinates** help predict the supplied charted `player_get_off` seconds, after conditioning on recorded pre-snap NFL context? Operational onset is the first three consecutive speed samples above1yard/second; it is not an official cue or physiological reaction time.
+
+The primary loss is squared mean forecast error per player, with equal player weights. Auxiliary equal-player mean squared play error remains visible. Whole players stay together in development folds and forward tests. Numeric transforms, context fits, source forecasts, correction responses and selection all respect the training boundary. The context model uses fixed recorded alignment, game state and snap geometry; this is a conditional NFL prediction, not an unconditional pre-draft forecast or causal adjustment. The exact-zero correction remains available. Every class has already been inspected, so2025 stays exploratory and this endpoint cannot confirm the earlier pressure claim.
+
+A full raw run prepares the new launch fields and exact rush roster from verified official data. A trusted-input run additionally needs `BDB_GETOFF_RUSHES` pointing to your own prepared rush file, or all nine official source files under `BDB_DATA_ROOT`; otherwise this section explicitly skips. It never fabricates missing rush context. The get-off runner reports fixed-prediction paired-player intervals, omitting refitting, shared-game, researcher-selection and future-cohort uncertainty.
+'''),code('''GETOFF_RESULT=None
+provided_getoff=os.environ.get('BDB_GETOFF_RUSHES')
+GETOFF_INPUT=WORK/'private_getoff_input'
+if provided_getoff:
+    GETOFF_RUSHES=Path(provided_getoff).resolve()
+    if not GETOFF_RUSHES.is_file():raise FileNotFoundError('Trusted prepared get-off rush file missing')
+    getoff_mode='trusted prepared get-off rushes; raw reconstruction skipped for this section'
+elif all((DATA/name).is_file() for name in OFFICIAL_HASHES):
+    if not RAW_INPUTS_VERIFIED:
+        for name,expected in OFFICIAL_HASHES.items():
+            h=hashlib.sha256()
+            with (DATA/name).open('rb') as stream:
+                for chunk in iter(lambda:stream.read(8*1024*1024),b''):h.update(chunk)
+            if h.hexdigest()!=expected:raise ValueError('Official dataset version differs: '+name)
+        RAW_INPUTS_VERIFIED=True
+    GETOFF_COHORT=WORK/'private_front/private_rows.pkl'
+    import front_transfer as historical_cohort
+    import prepare_combine_getoff as getoff_prepare
+    with (WORK/'private_getoff_extraction.log').open('w') as log,contextlib.redirect_stdout(log):
+        if not GETOFF_COHORT.is_file():historical_cohort.prepare(DATA,GETOFF_COHORT.parent)
+        getoff_extraction=getoff_prepare.prepare(DATA,GETOFF_COHORT,PLAYERS,GETOFF_INPUT)
+    GETOFF_RUSHES=GETOFF_INPUT/'rushes.pkl'
+    getoff_mode='verified official raw launch/context reconstruction'
+else:
+    GETOFF_RUSHES=None
+    getoff_mode='SKIPPED get-off study: provide BDB_GETOFF_RUSHES or the complete official dataset; pressure results above remain available'
+print(getoff_mode)
+if GETOFF_RUSHES is not None:
+    import runpy
+    getoff_path=WORK/'aggregate_getoff.json'
+    getoff_argv=['run_combine_getoff.py','--rushes',str(GETOFF_RUSHES),'--private-out',str(WORK/'private_getoff_results'),'--aggregate',str(getoff_path)]
+    old_argv=sys.argv
+    try:
+        sys.argv=getoff_argv
+        with (WORK/'private_getoff_models.log').open('w') as log,contextlib.redirect_stdout(log):
+            runpy.run_path(str(REPO/'scripts/run_combine_getoff.py'),run_name='__main__')
+    finally:sys.argv=old_argv
+    GETOFF_RESULT=json.loads(getoff_path.read_text())
+    print('Get-off aggregate receipt:',getoff_path.name)
+    print(json.dumps({'cohort':GETOFF_RESULT['cohort'],'development':GETOFF_RESULT['development'],'temporal':{name:{'primary':value['primary'],'auxiliary':value['auxiliary']} for name,value in GETOFF_RESULT['temporal'].items()}},indent=2))
+'''),code('''if GETOFF_RESULT is None:
+    print('No get-off figure: required raw/prepared rush inputs are absent.')
+else:
+    getoff_primary=GETOFF_RESULT['development']['primary']
+    getoff_rows=[(name,cell['relative_gain']*100) for name,cell in getoff_primary['comparisons'].items()]
+    fig,ax=plt.subplots(figsize=(8,3.6))
+    ax.barh([name for name,_ in getoff_rows],[gain for _,gain in getoff_rows],color=['#327860' if gain>0 else '#b55d45' for _,gain in getoff_rows])
+    ax.axvline(0,color='#444',linewidth=.8);ax.set_xlabel('Relative gain in equal-player mean get-off squared error (%)')
+    ax.set_title('Separate launch-to-get-off endpoint; earlier cohorts are development')
+    plt.tight_layout();plt.show()
+    getoff_table=[]
+    for evaluation,values in [('development',GETOFF_RESULT['development'])]+list(GETOFF_RESULT['temporal'].items()):
+        for loss_name in ('primary','auxiliary'):
+            metric=values[loss_name]
+            for model,cell in metric['comparisons'].items():
+                getoff_table.append({'evaluation':evaluation,'loss':loss_name,'model':model,'baseline_seconds2':metric['baseline_mse_seconds2'],'model_seconds2':cell['mse_seconds2'],'relative_gain_percent':100*cell['relative_gain']})
+    display(pd.DataFrame(getoff_table))
 '''),markdown('''## Football interpretation and submission boundary
 
 In the recovered74-player cohort, the supplied source Combine position is `DL` for every player. The trained role-mean control therefore equals the global-mean control here; these are intentionally retained as transparent equivalent controls, not independent stratified benchmarks.

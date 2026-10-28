@@ -29,20 +29,52 @@
     "pass_rush_recovery_split_rho": 0.25870445344129556,
     "repeat_players": 39
   },
-  "tests_passed": 44,
+  "tests_passed": 55,
   "full_refits": 40,
   "mislinking_runs": 16,
   "notebook": "https://github.com/towre676-cloud/perfectpower/blob/main/notebooks/Combine_Movement_Continuation.ipynb",
   "monograph": "https://github.com/towre676-cloud/perfectpower/blob/main/docs/COMBINE_COMPACT_MONOGRAPH.md",
-  "raw_official_rebuild_executed": false,
+  "raw_official_rebuild_executed": true,
   "trusted_extracted_run_executed": true,
   "sealed_two_season_outcomes_opened": false,
   "artifact_sha256": {
     "docs/COMBINE_COMPACT_PROTOCOL.json": "d0512097e20fe9959b72897da6eccb1149f3442a8742f8e358390f747e4c521c",
     "receipts/kaggle_combine/compact.json": "69d02f6107efd2405c1815a877262d8c3f881e02c3a4b7081b506bacecc15845",
     "receipts/kaggle_combine/repeatability.json": "c02bbbb7aec54f67b3320f1ce85e50d226a164246d9d44e5c2f5e45e017c1d4e",
-    "notebooks/Combine_Movement_Continuation.ipynb": "70cffae8f8bbb029239c3e4d4e96b02ffb9ad85eeae5e00b877d6aec6c8ad938"
+    "notebooks/Combine_Movement_Continuation.ipynb": "09d327c78bf20cc434ef6ce770b9fbb4126a772b037afd6968a296e41dc3204a",
+    "docs/COMBINE_GETOFF_PROTOCOL.json": "fa8f212241aa73e0495f9a6d890f13ed7aceaa724e827b852cd7e1f6d0fe63f3",
+    "receipts/kaggle_combine/getoff.json": "ddb5db66227b5173bf885f7804837f033c9019ac8542c945c12b5c1659018b97",
+    "receipts/kaggle_combine/official_rebuild_full.json": "609ad81e02403a20f31ebfebd792693694b9dc8507056bc690756f7ae3acfddb"
   },
   "historical_scalar_metrics_reproduced": 32,
-  "historical_max_absolute_difference": 0.0
+  "historical_max_absolute_difference": 0.0,
+  "official_rebuild": {
+    "receipt": "receipts/kaggle_combine/official_rebuild_full.json",
+    "files_verified": 9,
+    "pressure_comparisons": 12,
+    "getoff_comparisons": 30,
+    "maximum_mse_difference": 0.0,
+    "figures": 4,
+    "trusted_extracted_bypass": false
+  },
+  "getoff_followup": {
+    "schema": "pp-combine-getoff-summary/1",
+    "monograph": "https://github.com/towre676-cloud/perfectpower/blob/main/docs/COMBINE_GETOFF_MONOGRAPH.md",
+    "primary_metric": "Equal-player squared mean charted get-off forecast error, conditional on observed NFL pre-snap context",
+    "fixed_development_gain": 0.002118354809131704,
+    "selected_development_gain": 0.0,
+    "fixed_temporal_gains": {
+      "2023_to_2024": -0.08859975508836189,
+      "exploratory_2025": -0.004106543712398239
+    },
+    "selected_temporal_gains": {
+      "2023_to_2024": 0.0,
+      "exploratory_2025": 0.0
+    },
+    "no_correction_selected_in_all_14_fits": true,
+    "source_launch_attempts": 143,
+    "players_with_launch": 74,
+    "independent_confirmation": false,
+    "models_promoted": false
+  }
 }
