@@ -1,0 +1,59 @@
+{
+  "schema": "pp-combine-repeatability/1",
+  "outcome_free": true,
+  "classes": [
+    2023,
+    2024
+  ],
+  "scope": "Deterministic alternating event-ID split within athlete/drill. Repetitions may differ in setup/instruction. Agreement is descriptive, not biological reliability or calibrated phase probability.",
+  "features": {
+    "movement__PASS_RUSH_DRILL__speed_gain": {
+      "attempts": 84,
+      "players": 45,
+      "repeat_players": 39,
+      "split_spearman": 0.5190283400809717,
+      "descriptive_player_bootstrap_95": [
+        0.15833204190160372,
+        0.8006649025442487
+      ],
+      "bootstrap_valid_draws": 1000,
+      "median_absolute_split_difference": 0.3787566131269857,
+      "units": "Inherited operational feature units; compare within feature only."
+    },
+    "movement__PASS_RUSH_DRILL__recovery_accel": {
+      "attempts": 84,
+      "players": 45,
+      "repeat_players": 39,
+      "split_spearman": 0.25870445344129556,
+      "descriptive_player_bootstrap_95": [
+        -0.08043514604380117,
+        0.5589503263256671
+      ],
+      "bootstrap_valid_draws": 1000,
+      "median_absolute_split_difference": 0.3166412448902195,
+      "units": "Inherited operational feature units; compare within feature only."
+    },
+    "movement__RUN_THE_HOOP_DRILL__redirect_turn": {
+      "attempts": 46,
+      "players": 42,
+      "repeat_players": 4,
+      "split_spearman": 1.0,
+      "descriptive_player_bootstrap_95": null,
+      "bootstrap_valid_draws": 0,
+      "median_absolute_split_difference": 0.02269115414404943,
+      "units": "Inherited operational feature units; compare within feature only."
+    },
+    "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": {
+      "attempts": 42,
+      "players": 42,
+      "repeat_players": 0,
+      "split_spearman": null,
+      "descriptive_player_bootstrap_95": null,
+      "bootstrap_valid_draws": 0,
+      "median_absolute_split_difference": null,
+      "units": "Inherited operational feature units; compare within feature only."
+    }
+  },
+  "input_sha256": "42be61c60d25ffbf5684417889a35525a875d9e668b64ed0589eaa164f37b20a",
+  "source_sha256": "8460d1c543669ea51e1dbce56600c9160e0f7d1a74ed63142686c268bd772910"
+}

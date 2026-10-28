@@ -6,7 +6,7 @@ from run_movement_transfer import model_predict,PHYS,bank
 
 class Transfer(unittest.TestCase):
     def rows(self):
-        rng=np.random.default_rng(410);x=pd.DataFrame({c:rng.normal(size=20) for c in PHYS});x['nfl_id']=np.arange(20);x['nfl_position']='DE';x['target']=np.clip(.1+x[PHYS[0]]*.01,0,1);x['movement__test__x']=rng.normal(size=20);return x
+        rng=np.random.default_rng(410);x=pd.DataFrame({c:rng.normal(size=20) for c in PHYS});x['nfl_id']=np.arange(20);x['combine_position']='DE';x['target']=np.clip(.1+x[PHYS[0]]*.01,0,1);x['movement__test__x']=rng.normal(size=20);return x
     def test_complete_baseline_fallback(self):
         x=self.rows();tr,te=x.iloc[:15],x.iloc[15:]
         a=model_predict(tr,te,[],10,0);b=model_predict(tr,te,['movement__test__x'],10,0)
