@@ -1,0 +1,35 @@
+{
+  "schema": "pp-pressure-specification-freeze/1",
+  "date": "2026-10-28",
+  "status": "specification_frozen_predictions_blocked",
+  "prediction_packet_frozen": false,
+  "independent_confirmation": false,
+  "models_promoted": false,
+  "blockers": [
+    "dated pre-draft feature evidence",
+    "reviewed 2025 input roster and training manifest",
+    "fitted artifacts and frozen 2025 predictions",
+    "prior partial-outcome exposure audit"
+  ],
+  "source_sha256": {
+    ".github/workflows/scouting-confirmation.yml": "9d794b613b748b43c44a725fcfcc7816a89bef02045e1210d40b1b71690d5e99",
+    "receipts/scouting_confirmation/environment.json": "a8fb4a10e1b303c1295fd34c8e2498e14d833e78e316bb38acc5fd366a7f4a9b",
+    "docs/SCOUTING_CONFIRMATION_PROTOCOL.json": "2c92e0044c2f3cd148ea6aae4550f7b0750c59fb80911b76c2e3683e10ba2e1f",
+    "docs/SCOUTING_CONFIRMATION_MONOGRAPH.md": "045345bdd703328d75d301922db238285a3f3daceab5a8c7953bbfb501b11f13",
+    "python/perfectpower/scouting_confirmation.py": "b97851645b7e9976d155be306ac481d2346246c222a0f62c24b4d5f606df4a02",
+    "python/perfectpower/scouting_depth.py": "183031b61941d51a15572397ce1cdf4b0b3e6ee5965e2d7cd9d587598f896a70",
+    "python/perfectpower/scouting_identity.py": "135421a416c388f95597e5a269e984c0e96c3ec0e3b6e2e115d27b3c2a864213",
+    "python/perfectpower/scouting_metrics.py": "12aca04e6f2d01e260f3641ee1560ef47d5bd5bb405b78a5d2e0e226f5111c79",
+    "python/perfectpower/scouting_patterns.py": "8912ac3afbd03d57ca4cab7738197033d278a12e58abf07158ddd9b202b29f1a",
+    "scripts/evaluate_scouting_confirmation.py": "16a0799f780916a57d46129e77a12f6618db6a428ed305fb32d6a531131e403f",
+    "scripts/replay_scouting_confirmation.py": "635a481ecab6d6719d34a77d901399cf82dba08b6c727ca3f63d3dc26296a6ca",
+    "python/tests/test_scouting_confirmation.py": "3ffedf60a5cb3976134372db7ec588cade50982fdea8059c7df42bcbaa0a1863",
+    "scripts/freeze_scouting_confirmation.py": "664b76ce84467ebc3b01ffc6d9b6f73717f8b329e2c1f89b9977f8ddf93ad764"
+  },
+  "tests": {
+    "passed": 29,
+    "command": "PYTHONPATH=python python3 -m pytest -q python/tests/test_scouting_confirmation.py python/tests/test_scouting_patterns.py python/tests/test_scouting_identity.py"
+  },
+  "automation": "weekly Monday morning America/New_York; readiness only until complete outcome and prediction freeze gates",
+  "monograph": "https://github.com/towre676-cloud/perfectpower/blob/main/docs/SCOUTING_CONFIRMATION_MONOGRAPH.md"
+}

@@ -1,0 +1,176 @@
+{
+  "schema": "pp-pressure-historical-replay/1",
+  "source_sha256": "77fccd5b270126fa2969ea2983c4e6bd11c12f12b3f0a3dbc9b61446408c56f5",
+  "development": true,
+  "future_outcomes_opened": false,
+  "cohorts": {
+    "2023": {
+      "schema": "pp-pressure-score/1",
+      "development": true,
+      "freeze_sha256": "3356c9ea2a815072a52ede01482c1565aea652c71a7da8b84666755058d55409",
+      "outcome_sha256": "aac13af9e8da4aa12c5058447a0f3c5ec04ceac46997a2081f07ae44b7d991a2",
+      "zero_exposure": 0,
+      "groups": {
+        "selected_LB": {
+          "n": 0,
+          "frozen_n": 0,
+          "comparisons": {
+            "combine": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            },
+            "role_mean": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            },
+            "aggregate": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            },
+            "no_correction": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            }
+          }
+        },
+        "all_defense": {
+          "n": 45,
+          "frozen_n": 45,
+          "comparisons": {
+            "combine": {
+              "candidate_mse": 0.9657655721011226,
+              "baseline_mse": 0.9657655721011226,
+              "absolute_gain": 0.0,
+              "relative_gain": 0.0,
+              "simultaneous_95_team_interval": null
+            },
+            "role_mean": {
+              "candidate_mse": 0.9657655721011226,
+              "baseline_mse": 1.1587299482766442,
+              "absolute_gain": 0.19296437617552178,
+              "relative_gain": 0.1665309302331521,
+              "simultaneous_95_team_interval": null
+            },
+            "aggregate": {
+              "candidate_mse": 0.9657655721011226,
+              "baseline_mse": 0.9631878442690346,
+              "absolute_gain": -0.002577727832087792,
+              "relative_gain": -0.00267624622489296,
+              "simultaneous_95_team_interval": null
+            },
+            "no_correction": {
+              "candidate_mse": 0.9657655721011226,
+              "baseline_mse": 0.9657655721011226,
+              "absolute_gain": 0.0,
+              "relative_gain": 0.0,
+              "simultaneous_95_team_interval": null
+            }
+          }
+        }
+      },
+      "success": false,
+      "models_promoted": false,
+      "original_exploratory_LB_lower": {
+        "n": 8,
+        "absolute_gain": 0.27848041198734674
+      }
+    },
+    "2024": {
+      "schema": "pp-pressure-score/1",
+      "development": true,
+      "freeze_sha256": "e82a7d97850ee8a27d07baaef5a96a93919aebfb17b20395bd1a5da634583e82",
+      "outcome_sha256": "72e910119589fbd5e6d8066b46de78fdb144326db14a85d52b20f1794673c363",
+      "zero_exposure": 0,
+      "groups": {
+        "selected_LB": {
+          "n": 0,
+          "frozen_n": 0,
+          "comparisons": {
+            "combine": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            },
+            "role_mean": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            },
+            "aggregate": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            },
+            "no_correction": {
+              "candidate_mse": null,
+              "baseline_mse": null,
+              "absolute_gain": null,
+              "relative_gain": null,
+              "simultaneous_95_team_interval": null
+            }
+          }
+        },
+        "all_defense": {
+          "n": 45,
+          "frozen_n": 45,
+          "comparisons": {
+            "combine": {
+              "candidate_mse": 1.0558724694798864,
+              "baseline_mse": 1.0558724694798864,
+              "absolute_gain": 0.0,
+              "relative_gain": 0.0,
+              "simultaneous_95_team_interval": null
+            },
+            "role_mean": {
+              "candidate_mse": 1.0558724694798864,
+              "baseline_mse": 1.5090603546945094,
+              "absolute_gain": 0.4531878852146231,
+              "relative_gain": 0.3003113055119425,
+              "simultaneous_95_team_interval": null
+            },
+            "aggregate": {
+              "candidate_mse": 1.0558724694798864,
+              "baseline_mse": 0.9146872572809382,
+              "absolute_gain": -0.1411852121989482,
+              "relative_gain": -0.15435353567583854,
+              "simultaneous_95_team_interval": null
+            },
+            "no_correction": {
+              "candidate_mse": 1.0558724694798864,
+              "baseline_mse": 1.0558724694798864,
+              "absolute_gain": 0.0,
+              "relative_gain": 0.0,
+              "simultaneous_95_team_interval": null
+            }
+          }
+        }
+      },
+      "success": false,
+      "models_promoted": false,
+      "original_exploratory_LB_lower": {
+        "n": 16,
+        "absolute_gain": 0.3408788379290707
+      }
+    }
+  },
+  "strict_asof_gate_selected": 0,
+  "explanation": "Missing publication timestamps block as-of eligibility; no historical pseudo-prospective claim."
+}
