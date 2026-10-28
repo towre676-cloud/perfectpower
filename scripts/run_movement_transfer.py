@@ -22,10 +22,37 @@ FAMILIES={'kinematic':['path_length','peak_speed','speed_gain','mean_acceleratio
           'uncertain':['recovery_accel','brake_accel','redirect_turn','phase_duration_','phase_sd_','phase_boundary_width_','phase_entropy_per_frame','onset_range_']}
 
 
+def source_metadata(rows):
+    """One audited Combine metadata row per player/class, without NFL fields.
+
+    Repeated rush rows may repeat source measurements or omit them. Distinct
+    observed values are conflicting evidence; row order must never resolve it.
+    """
+    keys=['nfl_id','draft_year'];required=set(keys+['combine_position']+PHYS)
+    if not required<=set(rows):raise ValueError('source Combine metadata missing: '+','.join(sorted(required-set(rows))))
+    x=rows[keys+['combine_position']+PHYS].copy()
+    if x[keys].isna().any().any():raise ValueError('missing source player/class identity')
+    if x.groupby('nfl_id').draft_year.nunique().gt(1).any():raise ValueError('source player occurs in multiple draft classes')
+    position=x.combine_position
+    if position.isna().any() or not position.map(lambda v:isinstance(v,str) and bool(v.strip())).all():
+        raise ValueError('source combine_position required for every row')
+    for col in PHYS:
+        try:x[col]=pd.to_numeric(x[col],errors='raise')
+        except (TypeError,ValueError) as error:raise ValueError('invalid source conventional field '+col) from error
+        if np.isinf(x[col].to_numpy(dtype=float)).any():raise ValueError('infinite source conventional field '+col)
+    group=x.groupby(keys,sort=True)
+    for col in ['combine_position']+PHYS:
+        if group[col].nunique(dropna=True).gt(1).any():raise ValueError('inconsistent source Combine field '+col)
+    return group[['combine_position']+PHYS].first().reset_index()
+
+
 def extract(data,cohort,dest):
     started=time.perf_counter();dest.mkdir(parents=True,exist_ok=True);x=pd.read_pickle(cohort)
-    if not {'nfl_id','draft_year','pressure_event','nfl_position'}<=set(x):raise ValueError('cohort schema')
-    tracking=pd.read_csv(data/'combine_tracking.csv');tracking=tracking[tracking.nfl_id.isin(x.nfl_id)&tracking.entity_type.eq('PLAYER')&tracking.drill_name.isin(DRILLS)]
+    if not {'nfl_id','draft_year','pressure_event'}<=set(x):raise ValueError('cohort schema')
+    metadata=source_metadata(x)
+    tracking=pd.read_csv(data/'combine_tracking.csv')
+    tracking=tracking.merge(metadata[['nfl_id','draft_year']],on=['nfl_id','draft_year'],how='inner',validate='many_to_one')
+    tracking=tracking[tracking.entity_type.eq('PLAYER')&tracking.drill_name.isin(DRILLS)]
     rows=[];reject={};attempts=0;populations=[]
     for key,g in tracking.groupby(['nfl_id','draft_year','event_id'],sort=True):
         attempts+=1;g=g.sort_values('time');t=pd.to_datetime(g.time);seconds=(t-t.iloc[0]).dt.total_seconds().to_numpy()
@@ -39,9 +66,7 @@ def extract(data,cohort,dest):
     featurecols=[c for c in events if c not in ('nfl_id','draft_year','event_id','drill_name')]
     wide=events.groupby(['nfl_id','draft_year','drill_name'])[featurecols].median().unstack('drill_name');wide.columns=[f'movement__{drill}__{name}' for name,drill in wide.columns]
     unit=x.groupby(['nfl_id','draft_year'],sort=True).pressure_event.agg(['mean','count']).rename(columns={'mean':'target','count':'exposure'}).reset_index()
-    numeric=[c for c in PHYS if c in x and pd.api.types.is_numeric_dtype(x[c])]
-    for c in numeric:unit[c]=unit.set_index(['nfl_id','draft_year']).index.map(x.groupby(['nfl_id','draft_year'])[c].first()).to_numpy()
-    unit=unit.merge(x[['nfl_id','draft_year','nfl_position']].drop_duplicates(),on=['nfl_id','draft_year'],validate='one_to_one').merge(wide.reset_index(),on=['nfl_id','draft_year'],how='left',validate='one_to_one')
+    unit=unit.merge(metadata,on=['nfl_id','draft_year'],validate='one_to_one').merge(wide.reset_index(),on=['nfl_id','draft_year'],how='left',validate='one_to_one')
     for drill in DRILLS:
         cols=[c for c in unit if c.startswith('movement__'+drill+'__')];unit['available__'+drill]=unit[cols].notna().any(axis=1).astype(float) if cols else 0.
     unit.to_pickle(dest/'players.pkl')
@@ -49,15 +74,19 @@ def extract(data,cohort,dest):
         'source_attempts':attempts,'accepted_attempts':len(events),'source_rejections':reject,'players':len(unit),'players_by_year':{str(k):int(v) for k,v in unit.groupby('draft_year').size().items()},
         'phase_populations_min':str(min(populations)),'phase_populations_max':str(max(populations)),'scenarios':len(populations),'extract_seconds':time.perf_counter()-started,
         'target':'Mean observed pressure indicator in the supplied eligible rookie rush cohort; conditional, not unconditional career success.',
+        'position_source':'Audited source combine_position; NFL position is never a predictor',
+        'conventional_source_consistency_checked':True,
         'onset_weights':'Equal source-only sensitivity scenarios .5,1,2 yd/s; not calibrated phase probabilities','frame_scope':'Up to first 61 contiguous 10Hz active frames. Gaps rejected. Four operational ordered phase templates, not labeled physiology.'}
     (dest/'extraction.json').write_text(json.dumps(receipt,indent=2)+'\n');return unit,receipt
 
 
 def model_predict(train,test,cols,alpha,k):
     if set(train.nfl_id)&set(test.nfl_id):raise ValueError('athlete leakage')
+    for rows in (train,test):
+        if 'combine_position' not in rows or rows.combine_position.isna().any():raise ValueError('source combine_position required')
     basecols=[c for c in PHYS if c in train]+[c for c in train if c.startswith('available__')]
     imp=SimpleImputer(strategy='median',keep_empty_features=True);sc=StandardScaler();b=sc.fit_transform(imp.fit_transform(train[basecols]));bt=sc.transform(imp.transform(test[basecols]))
-    enc=OneHotEncoder(handle_unknown='ignore',sparse_output=False);b=np.c_[b,enc.fit_transform(train[['nfl_position']])];bt=np.c_[bt,enc.transform(test[['nfl_position']])]
+    enc=OneHotEncoder(handle_unknown='ignore',sparse_output=False);b=np.c_[b,enc.fit_transform(train[['combine_position']])];bt=np.c_[bt,enc.transform(test[['combine_position']])]
     if cols and k:
         mi=SimpleImputer(strategy='median',keep_empty_features=True);ms=StandardScaler();m=ms.fit_transform(mi.fit_transform(train[cols]));mt=ms.transform(mi.transform(test[cols]))
         # Residualize measured movement against conventional traits inside fold.
@@ -101,7 +130,7 @@ def evaluate(unit,out):
     results={'schema':'pp-movement-transfer/1','baseline_columns':PHYS,'families':{k:len(v) for k,v in families.items()},'nested_selection':selection,'forward_selection':forward,
         'split_scope':'Entire athletes held out. Imputation, scales, residualization, PCA and alpha selected within training folds. Forward choices use 2023→2024 only.',
         '2025_scope':'Exploratory reuse: this draft class has already been inspected in parallel experiments. No untouched external-test or competition-win claim.',
-        'baseline_fallback':True,'model_scope':'Equal-player conditional pressure-rate regression. Known NFL position and Combine/source availability included. No NFL-derived movement covariate or outcome enters extraction.'}
+        'baseline_fallback':True,'model_scope':'Equal-player conditional pressure-rate regression. Source Combine position and drill availability included. NFL position is excluded; source measurements are audited for constancy before aggregation.'}
     for label,rows,pp in [('nested_2023_2024',dev,predictions),('exploratory_2025',test,future)]:
         results[label]={name:compare(rows.target.to_numpy(),pp['conventional'],p) for name,p in pp.items() if name!='conventional'}
         q=rows[['nfl_id','draft_year','target','exposure']].copy()

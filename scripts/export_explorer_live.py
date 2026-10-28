@@ -94,6 +94,9 @@ def export(root=ROOT):
             'result':json.loads(movement.read_text()),
             'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/MOVEMENT_LANGUAGE_MONOGRAPH.md',
             'native_engine_requires_upgrade':True,'public_demo_is_synthetic':True}
+    combine=root/'receipts/kaggle_combine/release.json'
+    if combine.exists():
+        payload['movement_language']['kaggle_continuation']=json.loads(combine.read_text())
     integrals = integral_application(root)
     if integrals is not None:
         payload['period_bridge'] = integrals

@@ -2,7 +2,8 @@ name: Movement language and source-only feature engine
 on:
   push:
     branches: [main]
-    paths: ['python/perfectpower/movement_*.py','python/tests/test_movement_*.py','scripts/run_movement_transfer.py','.github/workflows/movement-language.yml']
+    paths: ['python/perfectpower/movement_*.py','python/perfectpower/combine_compact.py','python/tests/test_movement_*.py','python/tests/test_combine_compact.py','scripts/run_movement_transfer.py','.github/workflows/movement-language.yml']
+  pull_request:
   workflow_dispatch:
 jobs:
   finite:
@@ -12,5 +13,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - run: python -m pip install numpy scipy pandas scikit-learn
-      - run: PYTHONPATH=python python -m unittest python/tests/test_movement_language.py python/tests/test_movement_features.py python/tests/test_movement_transfer.py
+      - run: python -m pip install -r requirements-movement.txt
+      - run: PYTHONPATH=python python -m unittest python/tests/test_movement_language.py python/tests/test_movement_features.py python/tests/test_movement_transfer.py python/tests/test_movement_transfer_source.py python/tests/test_movement_residual.py python/tests/test_combine_compact.py

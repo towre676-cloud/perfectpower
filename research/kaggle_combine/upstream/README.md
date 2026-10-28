@@ -1,0 +1,7 @@
+# Historical cohort reconstruction source
+
+These six Python modules are byte-for-byte public source literals recovered from `Canonical_Movement_Findings.ipynb` (Library ID `libfile_ce74a14b24448191a45f2cc17bf32b46`). `manifest.json` binds the original notebook, each module and the nine official competition input versions. No raw competition data, player rows, model predictions, images or notebook outputs are included.
+
+Only `front_transfer.prepare` and its dependency imports are used by the continuation notebook to reconstruct the existing eligible rookie-rush cohort. Its historical roster depends on observed NFL position, charted get-off, unique snap tracking and at least30 eligible records. This is a retrospective participation-conditioned sample, not a pre-draft prospect census. Reconstruction preserves the old sample rather than silently changing its estimand. Predictive modeling then uses the corrected source Combine position in the current repository's movement modules, not the legacy upstream model functions.
+
+The upstream modules also contain historical modeling code to preserve their exact source identity. Do not call those older fit/evaluate paths from the continuation notebook. New analyses should use the versioned current modules embedded by `scripts/build_kaggle_combine_notebook.py`. Historical 2025 competition observations are already explored; they are separate from the sealed two-season linebacker confirmation study.

@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Source support, complete-refit diagnostics and unchanged legacy metric replay."""
-import argparse,json,sys
+import argparse,hashlib,importlib.util,json,sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'python'))
 import numpy as np,pandas as pd
 from perfectpower.movement_residual import families,repeat_reliability
-from run_movement_transfer import evaluate
+# Historical NFL-position specification is replayed only from its pinned source.
+LEGACY=ROOT/'research/movement_language/run_movement_transfer_legacy.py'
+if hashlib.sha256(LEGACY.read_bytes()).hexdigest()!='785673482be4626edcf338334c740baf57004000bf585cb75387b7da92b03469':raise ValueError('legacy replay source changed')
+spec=importlib.util.spec_from_file_location('pp_movement_legacy_replay',LEGACY)
+legacy_module=importlib.util.module_from_spec(spec);spec.loader.exec_module(legacy_module)
+evaluate=legacy_module.evaluate
 
 
 def audit(unit,events,private,aggregate):

@@ -1,0 +1,1387 @@
+{
+  "schema": "pp-combine-compact/1",
+  "protocol_sha256": "d0512097e20fe9959b72897da6eccb1149f3442a8742f8e358390f747e4c521c",
+  "independent_confirmation": false,
+  "models_promoted": false,
+  "sealed_two_season_outcomes_opened": false,
+  "cohort": {
+    "players": 74,
+    "attempts": 361,
+    "rushes": 14665,
+    "by_class": {
+      "2023": 23,
+      "2024": 22,
+      "2025": 29
+    },
+    "source_position_counts": {
+      "DL": 74
+    }
+  },
+  "repeats": [
+    {
+      "seed": 714,
+      "evaluation": {
+        "players": 45,
+        "baseline_mse": 0.0010591294128220968,
+        "comparisons": {
+          "global_mean": {
+            "mse": 0.0011710859309346656,
+            "absolute_gain": -0.00011195651811256882,
+            "relative_gain": -0.1057061741060101,
+            "paired_player_bootstrap_95": [
+              -0.0002601020608125515,
+              3.4664703890675976e-05
+            ],
+            "player_win_fraction": 0.4,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0007164099210293108,
+                "candidate_mse": 0.0006724363483261254,
+                "relative_gain": 0.06138046307343988
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0014174270633327364,
+                "candidate_mse": 0.0016924014036617757,
+                "relative_gain": -0.1939954072010618
+              }
+            }
+          },
+          "role_mean": {
+            "mse": 0.0011710859309346656,
+            "absolute_gain": -0.00011195651811256882,
+            "relative_gain": -0.1057061741060101,
+            "paired_player_bootstrap_95": [
+              -0.0002601020608125515,
+              3.4664703890675976e-05
+            ],
+            "player_win_fraction": 0.4,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0007164099210293108,
+                "candidate_mse": 0.0006724363483261254,
+                "relative_gain": 0.06138046307343988
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0014174270633327364,
+                "candidate_mse": 0.0016924014036617757,
+                "relative_gain": -0.1939954072010618
+              }
+            }
+          },
+          "fixed": {
+            "mse": 0.0010766438626631692,
+            "absolute_gain": -1.7514449841072566e-05,
+            "relative_gain": -0.016536647579642363,
+            "paired_player_bootstrap_95": [
+              -8.1218060798597e-05,
+              4.791709413636036e-05
+            ],
+            "player_win_fraction": 0.6,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0007164099210293108,
+                "candidate_mse": 0.0007662492969034638,
+                "relative_gain": -0.06956823797546749
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0014174270633327364,
+                "candidate_mse": 0.0014011472723210428,
+                "relative_gain": 0.01148545236141839
+              }
+            }
+          },
+          "selected": {
+            "mse": 0.0010591294128220968,
+            "absolute_gain": 0.0,
+            "relative_gain": 0.0,
+            "paired_player_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "player_win_fraction": 0.0,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0007164099210293108,
+                "candidate_mse": 0.0007164099210293108,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0014174270633327364,
+                "candidate_mse": 0.0014174270633327364,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "interval_scope": "Fixed fitted predictions; class-stratified paired players. Does not include refitting, adaptive research selection or new-cohort uncertainty."
+      },
+      "audits": [
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.0020899035921745444,
+              0.0016504080898293977,
+              0.0010361882837384149,
+              0.0009243010358783564,
+              0.001025774765030548,
+              0.0010521123660738034,
+              0.0010554463516405388,
+              0.0014785640294779426,
+              0.0011960327236947615,
+              0.0010034691517826879,
+              0.000985977013252504,
+              0.0010416009969241543,
+              0.001053913639973549,
+              0.0010554463516405388,
+              0.0010047189267980137,
+              0.0010184326242822124,
+              0.0010197858183344107,
+              0.0010229940896910995,
+              0.0010495254726683799,
+              0.001054808054375215,
+              0.0010554463516405388
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.06060606060606061,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.030303030303030304
+          },
+          "apply_correction": false,
+          "inner_gain": -5.934198139846697e-05,
+          "inner_player_se": 4.7384118041298076e-05,
+          "maximum_absolute_fixed_change": 0.005102927627279388
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.002216916581114642,
+              0.0016619957046255318,
+              0.0008702188949387621,
+              0.0007367427143793458,
+              0.0009666397821869869,
+              0.0010425010741444889,
+              0.00105255610732195,
+              0.0014031771774012558,
+              0.0012728283189722242,
+              0.0010398194119409729,
+              0.0009175746140866845,
+              0.0010137642862923166,
+              0.0010480306363421475,
+              0.00105255610732195,
+              0.001368664410486099,
+              0.001309812737525867,
+              0.0011199204774419906,
+              0.0009378016837051882,
+              0.0010245413920301402,
+              0.0010494319549670152,
+              0.00105255610732195
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.08823529411764706,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.08823529411764706
+          },
+          "apply_correction": false,
+          "inner_gain": -9.558278282424836e-06,
+          "inner_player_se": 5.186815710189639e-05,
+          "maximum_absolute_fixed_change": 0.005353124760249198
+        },
+        {
+          "baseline": {
+            "physical_set": "motor4",
+            "alpha": 10.0,
+            "inner_mse": [
+              0.0050708604814316775,
+              0.003422842317947002,
+              0.0018303525777389014,
+              0.001161382492566013,
+              0.0012348435658357997,
+              0.0012815292945380827,
+              0.0012878947584467422,
+              0.002438655256074343,
+              0.0022064647132830025,
+              0.0015810922855749073,
+              0.0011909963246396313,
+              0.001252788344357504,
+              0.0012837645314816523,
+              0.0012878947584467422,
+              0.0011117890635711596,
+              0.0010910950035148983,
+              0.0010632789690782692,
+              0.001136544368733116,
+              0.0012593322184579665,
+              0.001284785625209939,
+              0.0012878947584467422
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.08823529411764706,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.08823529411764706
+          },
+          "apply_correction": false,
+          "inner_gain": 2.2115958430180158e-05,
+          "inner_player_se": 6.145712623463875e-05,
+          "maximum_absolute_fixed_change": 0.010747484829802825
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.0033087796150095975,
+              0.00233311607881085,
+              0.0013023809147529554,
+              0.0009723808787406526,
+              0.0010843284736800304,
+              0.00112084867923905,
+              0.0011256045960989385,
+              0.0018852399471525321,
+              0.0015397682786340706,
+              0.0010858704808872702,
+              0.0010367813610097543,
+              0.001104886963875572,
+              0.0011232387132108412,
+              0.0011256045960989385,
+              0.0011347592340350508,
+              0.001079059940560059,
+              0.000994592310032458,
+              0.0010453448209572253,
+              0.001110996294625316,
+              0.0011240175837018802,
+              0.0011256045960989385
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.029411764705882353,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.058823529411764705
+          },
+          "apply_correction": false,
+          "inner_gain": -2.516591340737437e-05,
+          "inner_player_se": 6.264632429829591e-05,
+          "maximum_absolute_fixed_change": 0.004960285168712372
+        }
+      ]
+    },
+    {
+      "seed": 914,
+      "evaluation": {
+        "players": 45,
+        "baseline_mse": 0.000910346111994335,
+        "comparisons": {
+          "global_mean": {
+            "mse": 0.0011124947821756206,
+            "absolute_gain": -0.00020214867018128585,
+            "relative_gain": -0.22205693803473267,
+            "paired_player_bootstrap_95": [
+              -0.00035264905483225806,
+              -4.9970771596061185e-05
+            ],
+            "player_win_fraction": 0.3111111111111111,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.000593451070714083,
+                "candidate_mse": 0.0006537496741725879,
+                "relative_gain": -0.1016066975596644
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.00124164547333278,
+                "candidate_mse": 0.0015920919405424277,
+                "relative_gain": -0.28224358300038094
+              }
+            }
+          },
+          "role_mean": {
+            "mse": 0.0011124947821756206,
+            "absolute_gain": -0.00020214867018128585,
+            "relative_gain": -0.22205693803473267,
+            "paired_player_bootstrap_95": [
+              -0.00035264905483225806,
+              -4.9970771596061185e-05
+            ],
+            "player_win_fraction": 0.3111111111111111,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.000593451070714083,
+                "candidate_mse": 0.0006537496741725879,
+                "relative_gain": -0.1016066975596644
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.00124164547333278,
+                "candidate_mse": 0.0015920919405424277,
+                "relative_gain": -0.28224358300038094
+              }
+            }
+          },
+          "fixed": {
+            "mse": 0.0008854743086889615,
+            "absolute_gain": 2.4871803305373507e-05,
+            "relative_gain": 0.027321260537803323,
+            "paired_player_bootstrap_95": [
+              -4.621454882939857e-05,
+              9.954924119179994e-05
+            ],
+            "player_win_fraction": 0.5111111111111111,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.000593451070714083,
+                "candidate_mse": 0.000632502933348348,
+                "relative_gain": -0.06580468813928497
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.00124164547333278,
+                "candidate_mse": 0.0011499443829086934,
+                "relative_gain": 0.07385448776931927
+              }
+            }
+          },
+          "selected": {
+            "mse": 0.000910346111994335,
+            "absolute_gain": 0.0,
+            "relative_gain": 0.0,
+            "paired_player_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "player_win_fraction": 0.0,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.000593451070714083,
+                "candidate_mse": 0.000593451070714083,
+                "relative_gain": 0.0
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.00124164547333278,
+                "candidate_mse": 0.00124164547333278,
+                "relative_gain": 0.0
+              }
+            }
+          }
+        },
+        "interval_scope": "Fixed fitted predictions; class-stratified paired players. Does not include refitting, adaptive research selection or new-cohort uncertainty."
+      },
+      "audits": [
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.0034171502800843354,
+              0.002215279566945186,
+              0.0014634034417404557,
+              0.0011969391807406305,
+              0.001322840215420235,
+              0.0013549452539452448,
+              0.0013589748864728311,
+              0.002979034918279106,
+              0.0022039588248796136,
+              0.0014890385875106873,
+              0.0012958796878856345,
+              0.001344315357121383,
+              0.0013573387626669093,
+              0.0013589748864728311,
+              0.001470442099168121,
+              0.001430595796192432,
+              0.0013801820880198603,
+              0.0013336604161104733,
+              0.0013538075948344693,
+              0.0013584139656294375,
+              0.0013589748864728311
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.09090909090909091,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.06060606060606061
+          },
+          "apply_correction": false,
+          "inner_gain": 3.3222870074932276e-05,
+          "inner_player_se": 9.489541953536071e-05,
+          "maximum_absolute_fixed_change": 0.010056465924156863
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.003909849442814849,
+              0.0017142561284036856,
+              0.0010331547740798815,
+              0.0009693661777927966,
+              0.0011642635669924582,
+              0.0012172312631913923,
+              0.0012240337876293407,
+              0.0014671492729492067,
+              0.0013940751807571023,
+              0.0011406784110699541,
+              0.001073532396251068,
+              0.0011900838298636806,
+              0.0012201936865832812,
+              0.0012240337876293407,
+              0.0011171568184415827,
+              0.0010872174073919595,
+              0.0010408471158222018,
+              0.0011008988871007784,
+              0.0012012465922241417,
+              0.0012215589274439259,
+              0.0012240337876293407
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.08823529411764706,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.08823529411764706
+          },
+          "apply_correction": false,
+          "inner_gain": -8.911106601463066e-05,
+          "inner_player_se": 9.25108942449832e-05,
+          "maximum_absolute_fixed_change": 0.005731263017533794
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.002744307561899851,
+              0.0020345207338112754,
+              0.0012565519712310872,
+              0.0010832266789145748,
+              0.0012879363295277197,
+              0.0013510023339200273,
+              0.0013592143081147643,
+              0.002099845276493116,
+              0.0017445122128151118,
+              0.0013934423161105396,
+              0.0012711739498243299,
+              0.0013331757596971251,
+              0.0013561603871352181,
+              0.0013592143081147643,
+              0.0014879905941180029,
+              0.001457247217095333,
+              0.0013610497688734916,
+              0.0012906672553261687,
+              0.0013429252604386824,
+              0.0013573957930031128,
+              0.0013592143081147643
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.058823529411764705,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.058823529411764705
+          },
+          "apply_correction": false,
+          "inner_gain": 4.3333416557390625e-05,
+          "inner_player_se": 0.00010248346248797309,
+          "maximum_absolute_fixed_change": 0.01096524505463959
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.002083325695775787,
+              0.0014021068533140444,
+              0.0010553841419015369,
+              0.000766651967765242,
+              0.0008198590074953477,
+              0.0008510395714504535,
+              0.0008552986001844254,
+              0.0014102854867820076,
+              0.0012647019293225445,
+              0.0010331415609762008,
+              0.0008224078402592917,
+              0.000838968059743647,
+              0.0008533393735722784,
+              0.0008552986001844254,
+              0.001028068941028977,
+              0.0010197016248107908,
+              0.0009580957833694349,
+              0.0008261145587648063,
+              0.0008440862947186296,
+              0.0008540023164101201,
+              0.0008552986001844254
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.029411764705882353,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.058823529411764705
+          },
+          "apply_correction": false,
+          "inner_gain": 3.364482680339868e-05,
+          "inner_player_se": 3.521955275304369e-05,
+          "maximum_absolute_fixed_change": 0.009056566385071588
+        }
+      ]
+    },
+    {
+      "seed": 1114,
+      "evaluation": {
+        "players": 45,
+        "baseline_mse": 0.0008901411865974115,
+        "comparisons": {
+          "global_mean": {
+            "mse": 0.00112234174055118,
+            "absolute_gain": -0.00023220055395376904,
+            "relative_gain": -0.26085811717280705,
+            "paired_player_bootstrap_95": [
+              -0.0004243832088526221,
+              -5.04543848881321e-05
+            ],
+            "player_win_fraction": 0.35555555555555557,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0005846356914620786,
+                "candidate_mse": 0.0006522551951542098,
+                "relative_gain": -0.11566092299809146
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0012095332951479862,
+                "candidate_mse": 0.0016137958561934672,
+                "relative_gain": -0.33423020487916344
+              }
+            }
+          },
+          "role_mean": {
+            "mse": 0.0011223417405511805,
+            "absolute_gain": -0.00023220055395376904,
+            "relative_gain": -0.26085811717280705,
+            "paired_player_bootstrap_95": [
+              -0.00042438320885262196,
+              -5.0454384888132116e-05
+            ],
+            "player_win_fraction": 0.35555555555555557,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0005846356914620786,
+                "candidate_mse": 0.00065225519515421,
+                "relative_gain": -0.11566092299809153
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0012095332951479862,
+                "candidate_mse": 0.0016137958561934674,
+                "relative_gain": -0.3342302048791635
+              }
+            }
+          },
+          "fixed": {
+            "mse": 0.0009033870612227491,
+            "absolute_gain": -1.3245874625337783e-05,
+            "relative_gain": -0.01488064458175505,
+            "paired_player_bootstrap_95": [
+              -8.048819027514378e-05,
+              4.3472416537460184e-05
+            ],
+            "player_win_fraction": 0.5333333333333333,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0005846356914620786,
+                "candidate_mse": 0.0006271456260175054,
+                "relative_gain": -0.07271183606515096
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0012095332951479862,
+                "candidate_mse": 0.0011921849253009582,
+                "relative_gain": 0.0143430279402978
+              }
+            }
+          },
+          "selected": {
+            "mse": 0.0009081290542690985,
+            "absolute_gain": -1.7987867671687065e-05,
+            "relative_gain": -0.020207881561402827,
+            "paired_player_bootstrap_95": [
+              -7.911045919369994e-05,
+              3.059911359462845e-05
+            ],
+            "player_win_fraction": 0.28888888888888886,
+            "by_class": {
+              "2023": {
+                "players": 23,
+                "baseline_mse": 0.0005846356914620786,
+                "candidate_mse": 0.0006200094176076722,
+                "relative_gain": -0.06050558777403724
+              },
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.0012095332951479862,
+                "candidate_mse": 0.001209345038051498,
+                "relative_gain": 0.0001556444103219969
+              }
+            }
+          }
+        },
+        "interval_scope": "Fixed fitted predictions; class-stratified paired players. Does not include refitting, adaptive research selection or new-cohort uncertainty."
+      },
+      "audits": [
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.003930843714864281,
+              0.0022473257460041886,
+              0.0011599938016614772,
+              0.0009421977560077639,
+              0.0011410908426307451,
+              0.0012053137106010972,
+              0.0012137621414339574,
+              0.002589702777194445,
+              0.0019379518455646142,
+              0.00116850013787676,
+              0.0009992761968131319,
+              0.0011617063014426553,
+              0.0012078408511545968,
+              0.0012137621414339574,
+              0.0018808703764177067,
+              0.00148504792930054,
+              0.0011274364442054419,
+              0.0010701727539809457,
+              0.0011833673878543739,
+              0.0012104115062475463,
+              0.0012137621414339574
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.09090909090909091,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.09090909090909091
+          },
+          "apply_correction": true,
+          "inner_gain": 5.077772523916177e-05,
+          "inner_player_se": 3.976784250118354e-05,
+          "maximum_absolute_fixed_change": 0.00827822290241799
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.0033437284659727402,
+              0.0022168598555687897,
+              0.0015580438882564398,
+              0.0011328381512163066,
+              0.0011911000695434537,
+              0.0012200845421139082,
+              0.0012239398771262725,
+              0.0017747984280124638,
+              0.0017855784818635108,
+              0.0014841482147909964,
+              0.0012381272651458362,
+              0.0012195913955436355,
+              0.0012233501191683098,
+              0.0012239398771262725,
+              0.0012760836358744337,
+              0.001275564773320653,
+              0.0012792503630681081,
+              0.0012191598364227117,
+              0.0012187535447574392,
+              0.001223308733999247,
+              0.0012239398771262725
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.08823529411764706,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.08823529411764706
+          },
+          "apply_correction": false,
+          "inner_gain": -5.548241513540713e-05,
+          "inner_player_se": 6.388771742601623e-05,
+          "maximum_absolute_fixed_change": 0.005934956566996011
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.0034666364612550822,
+              0.0023939855435265124,
+              0.0015025293237413398,
+              0.0011550468149328433,
+              0.0012266872794926833,
+              0.0012590113109837413,
+              0.0012633210594368428,
+              0.0019618145880681585,
+              0.0016305312180439494,
+              0.0012275290999186872,
+              0.0011718202369224596,
+              0.0012420412026422109,
+              0.0012609054320726226,
+              0.0012633210594368428,
+              0.0015759402905333303,
+              0.0014653923390678637,
+              0.0012806699046954367,
+              0.001219611971480318,
+              0.0012539033908290033,
+              0.0012622874454684425,
+              0.0012633210594368428
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.0,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.029411764705882353
+          },
+          "apply_correction": false,
+          "inner_gain": -0.00020682004268483665,
+          "inner_player_se": 0.00012153582630315136,
+          "maximum_absolute_fixed_change": 0.008495692225563678
+        },
+        {
+          "baseline": {
+            "physical_set": "full15",
+            "alpha": 100.0,
+            "inner_mse": [
+              0.0015162097540742684,
+              0.0010123493572809746,
+              0.0006113400613645213,
+              0.0005804569290414115,
+              0.0007769779959677413,
+              0.0008322665451477191,
+              0.0008394164437693226,
+              0.0012289056701045953,
+              0.0010837055201548327,
+              0.0008156834467814946,
+              0.0007207425967439437,
+              0.0008093214488514606,
+              0.0008359691268019834,
+              0.0008394164437693226,
+              0.0009240417122922646,
+              0.0008697851907721538,
+              0.0007472720973994161,
+              0.0007196534048311507,
+              0.0008152380081973664,
+              0.0008367679963562042,
+              0.0008394164437693226
+            ]
+          },
+          "coordinates": [
+            "movement__PASS_RUSH_DRILL__speed_gain",
+            "movement__PASS_RUSH_DRILL__recovery_accel",
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+          ],
+          "missing_fraction": {
+            "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+            "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+            "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.08823529411764706,
+            "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.058823529411764705
+          },
+          "apply_correction": true,
+          "inner_gain": 4.95276796859743e-05,
+          "inner_player_se": 3.4550260430050944e-05,
+          "maximum_absolute_fixed_change": 0.01023594237844945
+        }
+      ]
+    }
+  ],
+  "temporal": {
+    "2023_to_2024": {
+      "evaluation": {
+        "players": 22,
+        "baseline_mse": 0.001525834309243712,
+        "comparisons": {
+          "global_mean": {
+            "mse": 0.0015778727780071528,
+            "absolute_gain": -5.203846876344065e-05,
+            "relative_gain": -0.03410492767673693,
+            "paired_player_bootstrap_95": [
+              -0.00017759077708909952,
+              5.701978351922989e-05
+            ],
+            "player_win_fraction": 0.4090909090909091,
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.001525834309243712,
+                "candidate_mse": 0.0015778727780071528,
+                "relative_gain": -0.03410492767673693
+              }
+            },
+            "conditional_bonferroni_95": [
+              -0.0002211351659245008,
+              0.00010071534671207133
+            ]
+          },
+          "role_mean": {
+            "mse": 0.0015778727780071528,
+            "absolute_gain": -5.20384687634406e-05,
+            "relative_gain": -0.034104927676736896,
+            "paired_player_bootstrap_95": [
+              -0.0001775907770890993,
+              5.701978351922987e-05
+            ],
+            "player_win_fraction": 0.4090909090909091,
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.001525834309243712,
+                "candidate_mse": 0.0015778727780071528,
+                "relative_gain": -0.034104927676736896
+              }
+            },
+            "conditional_bonferroni_95": [
+              -0.00022113516592450072,
+              0.00010071534671207133
+            ]
+          },
+          "fixed": {
+            "mse": 0.0015758934506162595,
+            "absolute_gain": -5.005914137254762e-05,
+            "relative_gain": -0.03280771776416517,
+            "paired_player_bootstrap_95": [
+              -0.00018555883194992028,
+              6.892187377251284e-05
+            ],
+            "player_win_fraction": 0.36363636363636365,
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.001525834309243712,
+                "candidate_mse": 0.0015758934506162595,
+                "relative_gain": -0.03280771776416517
+              }
+            },
+            "conditional_bonferroni_95": [
+              -0.00026039385834786304,
+              0.00011021120768790488
+            ]
+          },
+          "selected": {
+            "mse": 0.001525834309243712,
+            "absolute_gain": 0.0,
+            "relative_gain": 0.0,
+            "paired_player_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "player_win_fraction": 0.0,
+            "by_class": {
+              "2024": {
+                "players": 22,
+                "baseline_mse": 0.001525834309243712,
+                "candidate_mse": 0.001525834309243712,
+                "relative_gain": 0.0
+              }
+            },
+            "conditional_bonferroni_95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "interval_scope": "Fixed fitted predictions; class-stratified paired players. Does not include refitting, adaptive research selection or new-cohort uncertainty."
+      },
+      "audit": {
+        "baseline": {
+          "physical_set": "full15",
+          "alpha": 100.0,
+          "inner_mse": [
+            0.0019467214831807658,
+            0.0015517965835387673,
+            0.0008721245164242653,
+            0.0006207633335741399,
+            0.0006673015501123313,
+            0.0006861934396818647,
+            0.0006886640127355522,
+            0.0011986494884664478,
+            0.0010807737100905752,
+            0.0008508067678465814,
+            0.0006630403661462222,
+            0.0006774671456152783,
+            0.000687360772455342,
+            0.0006886640127355522,
+            0.0007631854284093464,
+            0.0007181245307361625,
+            0.0007035708992146937,
+            0.0006465582733634863,
+            0.0006793148411580511,
+            0.0006876376968974795,
+            0.0006886640127355522
+          ]
+        },
+        "coordinates": [
+          "movement__PASS_RUSH_DRILL__speed_gain",
+          "movement__PASS_RUSH_DRILL__recovery_accel",
+          "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+          "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+        ],
+        "missing_fraction": {
+          "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+          "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+          "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.08695652173913043,
+          "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.08695652173913043
+        },
+        "apply_correction": false,
+        "inner_gain": -0.0002783561637823279,
+        "inner_player_se": 0.00011548258014054239,
+        "maximum_absolute_fixed_change": 0.00944756783362359
+      },
+      "full_refits": {
+        "draws": 20,
+        "zero_selection_count": 18,
+        "max_fixed_change": 0.020000000000000004,
+        "comparisons": {
+          "global_mean": {
+            "absolute_gain_95": [
+              -0.0002418273527645433,
+              0.0007667611908770091
+            ],
+            "positive_fraction": 0.5
+          },
+          "role_mean": {
+            "absolute_gain_95": [
+              -0.0002418273527645432,
+              0.0007667611908770091
+            ],
+            "positive_fraction": 0.5
+          },
+          "fixed": {
+            "absolute_gain_95": [
+              -0.000304074030009784,
+              0.00011311912622994423
+            ],
+            "positive_fraction": 0.5
+          },
+          "selected": {
+            "absolute_gain_95": [
+              0.0,
+              7.709030322932229e-05
+            ],
+            "positive_fraction": 0.1
+          }
+        },
+        "scope": "Complete training-player resample/refit then paired test-player resample; 20-draw percentile tails are coarse descriptive sensitivity, not calibrated simultaneous coverage or independent confirmation."
+      }
+    },
+    "exploratory_2025": {
+      "evaluation": {
+        "players": 29,
+        "baseline_mse": 0.000714146325495341,
+        "comparisons": {
+          "global_mean": {
+            "mse": 0.0007895606427435345,
+            "absolute_gain": -7.541431724819343e-05,
+            "relative_gain": -0.10560065151337872,
+            "paired_player_bootstrap_95": [
+              -0.0002457114877688196,
+              6.572167793441911e-05
+            ],
+            "player_win_fraction": 0.6206896551724138,
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "baseline_mse": 0.000714146325495341,
+                "candidate_mse": 0.0007895606427435345,
+                "relative_gain": -0.10560065151337872
+              }
+            },
+            "conditional_bonferroni_95": [
+              -0.0003152525433232383,
+              0.00010943594295497891
+            ]
+          },
+          "role_mean": {
+            "mse": 0.0007895606427435345,
+            "absolute_gain": -7.541431724819343e-05,
+            "relative_gain": -0.10560065151337872,
+            "paired_player_bootstrap_95": [
+              -0.0002457114877688196,
+              6.572167793441911e-05
+            ],
+            "player_win_fraction": 0.6206896551724138,
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "baseline_mse": 0.000714146325495341,
+                "candidate_mse": 0.0007895606427435345,
+                "relative_gain": -0.10560065151337872
+              }
+            },
+            "conditional_bonferroni_95": [
+              -0.0003152525433232383,
+              0.00010943594295497891
+            ]
+          },
+          "fixed": {
+            "mse": 0.0007738015400572452,
+            "absolute_gain": -5.965521456190408e-05,
+            "relative_gain": -0.08353360149340049,
+            "paired_player_bootstrap_95": [
+              -0.00013785277848014327,
+              1.4580761860695698e-05
+            ],
+            "player_win_fraction": 0.3448275862068966,
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "baseline_mse": 0.000714146325495341,
+                "candidate_mse": 0.0007738015400572452,
+                "relative_gain": -0.08353360149340049
+              }
+            },
+            "conditional_bonferroni_95": [
+              -0.00017475276210892978,
+              4.276729967234543e-05
+            ]
+          },
+          "selected": {
+            "mse": 0.0007738015400572452,
+            "absolute_gain": -5.965521456190408e-05,
+            "relative_gain": -0.08353360149340049,
+            "paired_player_bootstrap_95": [
+              -0.00013785277848014327,
+              1.4580761860695698e-05
+            ],
+            "player_win_fraction": 0.3448275862068966,
+            "by_class": {
+              "2025": {
+                "players": 29,
+                "baseline_mse": 0.000714146325495341,
+                "candidate_mse": 0.0007738015400572452,
+                "relative_gain": -0.08353360149340049
+              }
+            },
+            "conditional_bonferroni_95": [
+              -0.00017475276210892978,
+              4.276729967234543e-05
+            ]
+          }
+        },
+        "interval_scope": "Fixed fitted predictions; class-stratified paired players. Does not include refitting, adaptive research selection or new-cohort uncertainty."
+      },
+      "audit": {
+        "baseline": {
+          "physical_set": "full15",
+          "alpha": 100.0,
+          "inner_mse": [
+            0.0020194203978908505,
+            0.0014773117653261753,
+            0.0011078450759939656,
+            0.0009217797064209689,
+            0.0010607886279268956,
+            0.0011194525897257183,
+            0.0011275232871375126,
+            0.0018594064959655693,
+            0.0016706256281677021,
+            0.001311987478796692,
+            0.0010219974138783658,
+            0.0010882281520637263,
+            0.0011227869807353325,
+            0.0011275232871375126,
+            0.0011513504840782779,
+            0.0011350913127112683,
+            0.001074321904275393,
+            0.0010167580257641148,
+            0.0010994865829486188,
+            0.0011243475495324794,
+            0.0011275232871375126
+          ]
+        },
+        "coordinates": [
+          "movement__PASS_RUSH_DRILL__speed_gain",
+          "movement__PASS_RUSH_DRILL__recovery_accel",
+          "movement__RUN_THE_HOOP_DRILL__redirect_turn",
+          "movement__FOUR_BAG_AGILITY_DRILL__brake_accel"
+        ],
+        "missing_fraction": {
+          "movement__PASS_RUSH_DRILL__speed_gain": 0.0,
+          "movement__PASS_RUSH_DRILL__recovery_accel": 0.0,
+          "movement__RUN_THE_HOOP_DRILL__redirect_turn": 0.06666666666666667,
+          "movement__FOUR_BAG_AGILITY_DRILL__brake_accel": 0.06666666666666667
+        },
+        "apply_correction": true,
+        "inner_gain": 4.3464408670626876e-05,
+        "inner_player_se": 3.984665799826116e-05,
+        "maximum_absolute_fixed_change": 0.012688815684644833
+      },
+      "full_refits": {
+        "draws": 20,
+        "zero_selection_count": 17,
+        "max_fixed_change": 0.020000000000000004,
+        "comparisons": {
+          "global_mean": {
+            "absolute_gain_95": [
+              -0.00020662701699839472,
+              0.0006034470691332714
+            ],
+            "positive_fraction": 0.4
+          },
+          "role_mean": {
+            "absolute_gain_95": [
+              -0.00020662701699839499,
+              0.0006034470691332713
+            ],
+            "positive_fraction": 0.4
+          },
+          "fixed": {
+            "absolute_gain_95": [
+              -0.00031787070294525164,
+              8.435883550102975e-05
+            ],
+            "positive_fraction": 0.35
+          },
+          "selected": {
+            "absolute_gain_95": [
+              -7.192743380944516e-05,
+              3.488888473523684e-05
+            ],
+            "positive_fraction": 0.05
+          }
+        },
+        "scope": "Complete training-player resample/refit then paired test-player resample; 20-draw percentile tails are coarse descriptive sensitivity, not calibrated simultaneous coverage or independent confirmation."
+      }
+    }
+  },
+  "feature_source_medians_verified": true,
+  "development": {
+    "players": 45,
+    "baseline_mse": 0.0009532055704712809,
+    "comparisons": {
+      "global_mean": {
+        "mse": 0.001135307484553822,
+        "absolute_gain": -0.00018210191408254124,
+        "relative_gain": -0.191041596612268,
+        "paired_player_bootstrap_95": [
+          -0.0003424534241768081,
+          -2.390581501521047e-05
+        ],
+        "player_win_fraction": 0.3333333333333333,
+        "by_class": {
+          "2023": {
+            "players": 23,
+            "baseline_mse": 0.0006314988944018242,
+            "candidate_mse": 0.0006594804058843075,
+            "relative_gain": -0.04430967612221799
+          },
+          "2024": {
+            "players": 22,
+            "baseline_mse": 0.0012895352772711677,
+            "candidate_mse": 0.0016327630667992235,
+            "relative_gain": -0.26616393950413886
+          }
+        }
+      },
+      "role_mean": {
+        "mse": 0.0011353074845538223,
+        "absolute_gain": -0.00018210191408254132,
+        "relative_gain": -0.19104159661226808,
+        "paired_player_bootstrap_95": [
+          -0.0003424534241768081,
+          -2.3905815015210494e-05
+        ],
+        "player_win_fraction": 0.3333333333333333,
+        "by_class": {
+          "2023": {
+            "players": 23,
+            "baseline_mse": 0.0006314988944018242,
+            "candidate_mse": 0.0006594804058843077,
+            "relative_gain": -0.04430967612221803
+          },
+          "2024": {
+            "players": 22,
+            "baseline_mse": 0.0012895352772711677,
+            "candidate_mse": 0.0016327630667992239,
+            "relative_gain": -0.26616393950413897
+          }
+        }
+      },
+      "fixed": {
+        "mse": 0.0009551684108582933,
+        "absolute_gain": -1.9628403870123215e-06,
+        "relative_gain": -0.00205919945058846,
+        "paired_player_bootstrap_95": [
+          -6.0078790949044836e-05,
+          5.364802660043254e-05
+        ],
+        "player_win_fraction": 0.5333333333333333,
+        "by_class": {
+          "2023": {
+            "players": 23,
+            "baseline_mse": 0.0006314988944018242,
+            "candidate_mse": 0.0006752992854231058,
+            "relative_gain": -0.06935941045909629
+          },
+          "2024": {
+            "players": 22,
+            "baseline_mse": 0.0012895352772711677,
+            "candidate_mse": 0.0012477588601768983,
+            "relative_gain": 0.03239649029429718
+          }
+        }
+      },
+      "selected": {
+        "mse": 0.0009592015263618432,
+        "absolute_gain": -5.995955890562367e-06,
+        "relative_gain": -0.006290307228899077,
+        "paired_player_bootstrap_95": [
+          -2.6370153064566664e-05,
+          1.0199704531542811e-05
+        ],
+        "player_win_fraction": 0.28888888888888886,
+        "by_class": {
+          "2023": {
+            "players": 23,
+            "baseline_mse": 0.0006314988944018242,
+            "candidate_mse": 0.0006432901364503555,
+            "relative_gain": -0.0186718332416089
+          },
+          "2024": {
+            "players": 22,
+            "baseline_mse": 0.0012895352772711677,
+            "candidate_mse": 0.0012894725249056717,
+            "relative_gain": 4.866277534400009e-05
+          }
+        }
+      }
+    },
+    "interval_scope": "Fixed fitted predictions; class-stratified paired players. Does not include refitting, adaptive research selection or new-cohort uncertainty."
+  },
+  "mislinking_control": {
+    "draws": 16,
+    "absolute_gains": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mean_reassigned_fraction": 0.9694444444444444,
+    "scope": "Class/source-position constrained mislinking sensitivity; not a formal p-value or new independent evidence."
+  },
+  "input_sha256": {
+    "players": "6945445926ae959699f453d0b6770b66b3d2b492e4149b7fec45e0fa0f71698d",
+    "events": "42be61c60d25ffbf5684417889a35525a875d9e668b64ed0589eaa164f37b20a"
+  },
+  "source_sha256": {
+    "python/perfectpower/combine_compact.py": "6adee26b58470350b107227b69e2e9c501b238656e98c883ae93fadee641d90a",
+    "scripts/run_combine_compact.py": "336e8dd94cc91f412032868751b07083103d76e1d9174077df9c87cc19bc36aa",
+    "python/perfectpower/movement_residual.py": "f27725bdc0dd0ea96458af15df66e0bb219345a744aafe36defcf49de3795ff4"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "sklearn": "1.8.0"
+  },
+  "elapsed_seconds": 47.14255758199579
+}
