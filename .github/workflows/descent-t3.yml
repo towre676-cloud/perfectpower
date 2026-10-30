@@ -1,0 +1,42 @@
+name: T3 descent kernel replay
+on:
+  push:
+    branches: ["codex/t3-torsion-counting-20261030"]
+  pull_request:
+    paths:
+      - 'PerfectPower/Descent*.lean'
+      - 'PerfectPower/SquareclassUniqueness.lean'
+      - 'audit/VerifyDescent*.lean'
+      - '.github/workflows/descent-t3.yml'
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: "false"
+          build: "false"
+          test: "false"
+          lint: "false"
+      - name: Serial build and replay
+        run: |
+          set -euo pipefail
+          lake build PerfectPower.DescentCounting PerfectPower.DescentDeltaLabel
+          lake env lean audit/VerifyDescentDelta.lean 2>&1 | tee delta-audit.log
+          lake env lean audit/VerifyDescentCover.lean 2>&1 | tee cover-audit.log
+          lake env lean audit/VerifyDescentCounting.lean 2>&1 | tee counting-audit.log
+          python3 - <<'PY'
+          import re
+          for path in ['delta-audit.log','cover-audit.log','counting-audit.log']:
+              text = open(path).read()
+              rows = re.findall(r"depends on axioms: \\[([^]]*)\\]", text)
+              assert rows, (path, 'no audit output')
+              for row in rows:
+                  assert set(row.split(', ')) <= {'propext','Classical.choice','Quot.sound'}, (path,row)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: t3-kernel-replay
+          path: "*-audit.log"

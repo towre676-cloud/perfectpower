@@ -1,0 +1,7 @@
+import PerfectPower.DescentCounting
+#print axioms PerfectPower.DescentCounting.kernel_composition_count
+#print axioms PerfectPower.DescentCounting.exact_descent_count
+#print axioms PerfectPower.DescentCounting.torsion_correction
+#print axioms PerfectPower.DescentCounting.rank_count_of_doubling_index
+#print axioms PerfectPower.DescentCounting.divisor_four
+#print axioms PerfectPower.DescentCounting.elliptic_exact_descent_count
