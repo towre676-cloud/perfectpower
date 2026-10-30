@@ -1,0 +1,19 @@
+import PerfectPower.DescentCounting
+#print axioms PerfectPower.DescentCounting.kernel_composition_count
+#print axioms PerfectPower.DescentCounting.exact_descent_count
+#print axioms PerfectPower.DescentCounting.torsion_correction
+#print axioms PerfectPower.DescentCounting.rank_count_of_doubling_index
+#print axioms PerfectPower.DescentCounting.divisor_four
+#print axioms PerfectPower.DescentCounting.elliptic_exact_descent_count
+#print axioms PerfectPower.DescentCounting.card_two_of_description
+#print axioms PerfectPower.DescentCounting.phi_kernel_card
+#print axioms PerfectPower.DescentCounting.dual_eq_zero_iff
+#print axioms PerfectPower.DescentCounting.dual_kernel_card
+#print axioms PerfectPower.DescentCounting.elliptic_composition
+#print axioms PerfectPower.DescentCounting.elliptic_torsion_correction
+#print axioms PerfectPower.DescentCounting.elliptic_torsion_normalized_count
+#print axioms PerfectPower.DescentCounting.elliptic_divisor_four
+#print axioms PerfectPower.DescentCounting.elliptic_count_from_decomposition
+#print axioms PerfectPower.DescentCounting.doubling_kernel_card_from_decomposition
+#print axioms PerfectPower.DescentCounting.elliptic_divisor_four_from_decomposition
+

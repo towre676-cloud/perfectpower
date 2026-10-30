@@ -1,0 +1,29 @@
+name: T3 descent kernel replay
+on:
+  push:
+    branches: ["codex/t3-torsion-counting-20261030"]
+  pull_request:
+    paths:
+      - 'PerfectPower/Descent*.lean'
+      - 'PerfectPower/SquareclassUniqueness.lean'
+      - 'audit/VerifyDescent*.lean'
+      - 'scripts/check_descent_t3*'
+      - '.github/workflows/descent-t3.yml'
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: "false"
+          build: "false"
+          test: "false"
+          lint: "false"
+      - name: Serial build and certificate replay
+        run: bash scripts/check_descent_t3.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: t3-kernel-replay
+          path: receipts/descent_t3
