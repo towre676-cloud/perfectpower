@@ -186,6 +186,24 @@ theorem elliptic_torsion_correction (a b : ℚ) (hb : b ≠ 0) (hd : a^2-4*b ≠
   rw [torsion_correction _ _ (elliptic_composition a b hb hd),
     phi_kernel_card, dual_kernel_card]
 
+/-- T3 without a rank premise: the product of the two actual descent image
+orders, multiplied by rational two-torsion, is four times the doubling index. -/
+theorem elliptic_torsion_normalized_count (a b : ℚ) (hb : b ≠ 0)
+    (hd : a^2-4*b ≠ 0) :
+    (Nat.card (DescentDelta.deltaPhi a b hb hd).range *
+      Nat.card (DescentDelta.deltaDual a b hb).range) *
+      Nat.card (double (E a b).Point).ker =
+        4 * (double (E a b).Point).range.index := by
+  have hc := elliptic_exact_descent_count a b hb hd
+  have ht := elliptic_torsion_correction a b hb hd
+  rw [← hc]
+  calc
+    _ = ((phiHom a b hb hd).range.relindex
+        ((phiHom a b hb hd).range ⊔ (dualHom a b hb hd).ker) *
+        Nat.card (double (E a b).Point).ker) *
+        (double (E a b).Point).range.index := by ring
+    _ = _ := by rw [ht]
+
 /-- Finite descent images have the classical product, conditional only on the
 explicit doubling-index/rank interpretation. No saturation or height input is inferred. -/
 theorem elliptic_divisor_four (a b : ℚ) (hb : b ≠ 0) (hd : a^2-4*b ≠ 0)

@@ -91,6 +91,14 @@ Since gf=[2], equation (1) becomes
 
     c |E(Q)[2]| = |ker(phi)| |ker(dual)|.                  (2)
 
+The unconditional torsion-normalized form, with no rank premise, is
+
+    |image(deltaPhi)| |image(deltaDual)| |E(Q)[2]| = 4 [E(Q):2E(Q)].
+
+`elliptic_torsion_normalized_count` obtains this by multiplying the existing
+index equation by |E(Q)[2]| and substituting (2); it does not cancel a possibly
+zero natural index.
+
 Each explicit rational isogeny kernel consists of O and (0,0), so each has
 order two. `phi_kernel_card` uses main's `phi_eq_zero_iff`. The new
 `dual_eq_zero_iff` handles x=0 using `rawDual_some_zero`; for x≠0,
@@ -187,7 +195,7 @@ The deterministic receipt is `receipts/descent_t3/exact_checks.json`.
 | Full Selmer/global cover theory | arbitrary-label cover equivalences and relevant local/global analysis | not established by this work |
 
 The audit runner replays the original 18 delta and 16 cover declarations and
-the 16 new counting declarations. It requires exactly one axiom listing per
+the 17 new counting declarations. It requires exactly one axiom listing per
 declaration and rejects anything outside propext, Classical.choice, Quot.sound,
 including sorryAx and Lean.ofReduceBool. The new source contains no sorry,
 admit, or added axiom declarations. This source property is not a substitute

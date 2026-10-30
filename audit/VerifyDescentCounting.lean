@@ -11,6 +11,7 @@ import PerfectPower.DescentCounting
 #print axioms PerfectPower.DescentCounting.dual_kernel_card
 #print axioms PerfectPower.DescentCounting.elliptic_composition
 #print axioms PerfectPower.DescentCounting.elliptic_torsion_correction
+#print axioms PerfectPower.DescentCounting.elliptic_torsion_normalized_count
 #print axioms PerfectPower.DescentCounting.elliptic_divisor_four
 #print axioms PerfectPower.DescentCounting.elliptic_count_from_decomposition
 #print axioms PerfectPower.DescentCounting.doubling_kernel_card_from_decomposition
