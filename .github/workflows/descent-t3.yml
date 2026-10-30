@@ -7,6 +7,7 @@ on:
       - 'PerfectPower/Descent*.lean'
       - 'PerfectPower/SquareclassUniqueness.lean'
       - 'audit/VerifyDescent*.lean'
+      - 'scripts/check_descent_t3*'
       - '.github/workflows/descent-t3.yml'
 jobs:
   replay:
@@ -19,24 +20,10 @@ jobs:
           build: "false"
           test: "false"
           lint: "false"
-      - name: Serial build and replay
-        run: |
-          set -euo pipefail
-          lake build PerfectPower.DescentCounting PerfectPower.DescentDeltaLabel
-          lake env lean audit/VerifyDescentDelta.lean 2>&1 | tee delta-audit.log
-          lake env lean audit/VerifyDescentCover.lean 2>&1 | tee cover-audit.log
-          lake env lean audit/VerifyDescentCounting.lean 2>&1 | tee counting-audit.log
-          python3 - <<'PY'
-          import re
-          for path in ['delta-audit.log','cover-audit.log','counting-audit.log']:
-              text = open(path).read()
-              rows = re.findall(r"depends on axioms: \\[([^]]*)\\]", text)
-              assert rows, (path, 'no audit output')
-              for row in rows:
-                  assert set(row.split(', ')) <= {'propext','Classical.choice','Quot.sound'}, (path,row)
-          PY
+      - name: Serial build and certificate replay
+        run: bash scripts/check_descent_t3.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: t3-kernel-replay
-          path: "*-audit.log"
+          path: receipts/descent_t3

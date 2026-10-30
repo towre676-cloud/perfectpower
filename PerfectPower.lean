@@ -500,3 +500,6 @@ import PerfectPower.ArithmeticModes
 import PerfectPower.PhaseFiber
 import PerfectPower.CoxeterPhaseBridge
 import PerfectPower.RaghavaInduction
+
+import PerfectPower.DescentCounting
+import PerfectPower.DescentDeltaLabel
