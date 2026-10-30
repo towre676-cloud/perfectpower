@@ -20,16 +20,16 @@ theorem kernel_composition_count (f : G →+ H) (g : H →+ G) :
     rw [← AddMonoidHom.comap_ker, AddSubgroup.map_comap_eq]
   have h₁ := AddSubgroup.relindex_inf_mul_relindex
     (⊥ : AddSubgroup G) f.ker (g.comp f).ker
-  rw [inf_of_le_left hle, bot_inf, AddSubgroup.relindex_bot_left,
+  rw [inf_of_le_left hle, bot_inf_eq, AddSubgroup.relindex_bot_left,
     AddSubgroup.relindex_bot_left, AddSubgroup.relindex_ker, hmap] at h₁
   have h₂ := AddSubgroup.relindex_inf_mul_relindex
     (⊥ : AddSubgroup H) f.range g.ker
-  rw [bot_inf, AddSubgroup.relindex_bot_left,
+  rw [bot_inf_eq, AddSubgroup.relindex_bot_left,
     AddSubgroup.relindex_bot_left] at h₂
   rw [AddSubgroup.relindex_sup_left]
   calc
     f.range.relindex g.ker * Nat.card (g.comp f).ker =
-        Nat.card f.ker * (Nat.card (f.range ⊓ g.ker) * f.range.relindex g.ker) := by
+        Nat.card f.ker * (Nat.card ↥(f.range ⊓ g.ker) * f.range.relindex g.ker) := by
           rw [← h₁]; ring
     _ = Nat.card f.ker * Nat.card g.ker := by rw [h₂]
 
@@ -138,7 +138,7 @@ theorem dual_eq_zero_iff (a b : ℚ) (hb : b ≠ 0) (hd : a^2-4*b ≠ 0)
     dualHom a b hb hd P = 0 ↔
       P = 0 ∨ P = T (-2*a) (a^2-4*b) hd (dual_smooth a b hb) := by
   cases P with
-  | zero => simp
+  | zero => exact ⟨fun _ => Or.inl rfl, fun _ => map_zero _⟩
   | @some x y hp =>
     by_cases hx : x = 0
     · subst x
@@ -244,6 +244,7 @@ theorem doubling_kernel_card_from_decomposition {F T₀ : Type*}
         exact congrArg Prod.snd hx⟩
       invFun := fun t => ⟨e.symm (0,(t:T₀)), by
         apply e.injective
+        change e ((2:ℤ) • e.symm (0,(t:T₀))) = e 0
         rw [map_zsmul, e.apply_symm_apply, map_zero]
         apply Prod.ext
         · simp

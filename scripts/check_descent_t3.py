@@ -126,7 +126,7 @@ def finite_cases():
 
 
 if __name__ == '__main__':
-    result = dict(status='exact_python_checks_passed',lean_replay='not_run',
+    result = dict(status='exact_python_checks_passed',lean_replay='see_lean_audit_receipt',
                   rank_certified=False,curves=curve_cases(),finite_groups=finite_cases())
     path=Path(__file__).resolve().parents[1]/'receipts/descent_t3/exact_checks.json'
     path.parent.mkdir(parents=True,exist_ok=True)

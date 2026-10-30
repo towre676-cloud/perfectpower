@@ -20,9 +20,19 @@ if [[ ! -x "$compiler/bin/lean" ]]; then
     mv "$archive.partial" "$archive"
   fi
   printf '%s  %s\n' "$expected" "$archive" | sha256sum --check -
-  tar --zstd -xf "$archive" -C "$cache_root"
+  tar --zstd --no-same-owner -xf "$archive" -C "$cache_root"
 fi
 export PATH="$compiler/bin:$PATH"
+export TAR_OPTIONS="${TAR_OPTIONS:+$TAR_OPTIONS }--no-same-owner"
+if ! lean --version > "$cache_root/lean-startup.log" 2>&1; then
+  if ! grep -q 'failed to locate application' "$cache_root/lean-startup.log"; then
+    cat "$cache_root/lean-startup.log" >&2
+    exit 1
+  fi
+  cc -shared -fPIC -Wall -Wextra -Werror scripts/lean_proc_self_compat.c \
+    -ldl -o "$cache_root/lean-proc-self-compat.so"
+  export LD_PRELOAD="$cache_root/lean-proc-self-compat.so${LD_PRELOAD:+:$LD_PRELOAD}"
+fi
 lean --version
 [[ "$(cat lean-toolchain)" == "leanprover/lean4:v$version" ]] || {
   echo 'Repository toolchain differs from this pinned installer.' >&2; exit 2;

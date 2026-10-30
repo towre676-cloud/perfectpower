@@ -1,12 +1,21 @@
 # T3: two-isogeny counting with the torsion correction retained
 
-**Status: mathematical argument and Lean proof candidate, NOT replay-verified.**
-Prepared on 2026-10-30 against main `1f6b07f90c3a7bc05444a099da444a7839f37ae3`.
-The first focused CI run, 41089312295, ended in `startup_failure`; its jobs
-endpoint returned zero jobs. No compiler diagnostics or fresh axiom-audit output
-exist. The local environment has no Lean/Lake/elan executable, and direct
-GitHub downloads timed out. Consequently this work must remain a draft pending
-`bash scripts/check_descent_t3.sh` in a working pinned Lean environment.
+**Status: T3 group-theoretic counting is verified in Lean 4.20.0.**
+
+All 51 audited declarations passed local kernel replay: 18 delta, 16 cover,
+and 17 counting declarations. Every dependency list contains only
+`propext`, `Classical.choice`, and `Quot.sound`. The exact Python checks also
+pass. The source-hashed receipt is `receipts/descent_t3/lean_audit.json`; the
+three complete axiom logs and the successful build log accompany it.
+The Mathlib revision is `c211948581bde9846a99e32d97a03f0d5307c31e` (v4.20.0).
+
+The official compiler archive passed SHA-256
+`f3b058430f87dd9569c7ebd269f0af1be7b010b754849b543ee6cf9ccc08d4f0`.
+Local installation and replay are reproduced with
+`bash scripts/setup_descent_t3.sh`. On containers that expose only the
+`/proc/self/exe` spelling of the current executable, the installer supplies
+an equivalent-path compatibility shim. It changes no compiler code, kernel
+rules, theorem statements, or axiom allowlist.
 
 ## 1. What was independently inspected
 
@@ -46,8 +55,7 @@ explicit quartic-cover preimages, including the exceptional coordinate zero.
 The final kernel identifications have only the nonsingularity assumptions
 b≠0 and a²-4b≠0. A globally soluble family of arbitrary-label quartic covers is
 not a premise of these kernel identities: their construction needs only the
-trivial label. These observations are source inspection; the prior reports'
-successful compiler/axiom claims have not been freshly replayed here.
+trivial label. Both original proof-certificate audits have now been freshly replayed locally.
 
 ## 2. The general kernel-counting identity
 
@@ -62,7 +70,7 @@ c |K|=|ker(g)| by the subgroup index formula. Multiplication yields
 
     c |ker(gf)| = |ker(f)| |ker(g)|.                       (1)
 
-The Lean candidate `kernel_composition_count` proves the corresponding
+The Lean theorem `kernel_composition_count` proves the corresponding
 Nat.card identity using Mathlib v4.20.0's `relindex_inf_mul_relindex`,
 `relindex_ker`, and `map_comap_eq`. It uses no cancellation. Consequently its
 natural-card formulation also handles infinite groups using Mathlib's convention
@@ -82,7 +90,7 @@ The first isomorphism theorem and the two kernel identifications give
     |image(deltaPhi)| = [D(Q):phi(E(Q))],
     |image(deltaDual)| = [E(Q):dual(D(Q))].
 
-The candidate `exact_descent_count` combines these with the existing index
+The theorem `exact_descent_count` combines these with the existing index
 identity, while `elliptic_exact_descent_count` instantiates it with the actual
 point-group homomorphisms and PR #10's exactness theorems. Neither requires
 Mordell–Weil decomposition, saturation, or height bounds.
@@ -104,14 +112,14 @@ order two. `phi_kernel_card` uses main's `phi_eq_zero_iff`. The new
 `dual_eq_zero_iff` handles x=0 using `rawDual_some_zero`; for x≠0,
 `dual_some` produces an affine image, which cannot be O. The generic
 `card_two_of_description` supplies the cardinality without assuming a finite
-point group. Thus the candidate specializes (2) to c |E(Q)[2]|=4.
+point group. Thus the theorem specializes (2) to c |E(Q)[2]|=4.
 
 If a genuine decomposition E(Q)≃F×T is supplied, then
 
     [E(Q):2E(Q)] = 2^rank(F) |T[2]|,
     |E(Q)[2]| = |T[2]|.
 
-The first equality is already proved in main. The new candidate
+The first equality is already proved in main. The new theorem
 `doubling_kernel_card_from_decomposition` constructs an equivalence of the
 two kernels; the free coordinate of a two-torsion point is zero because a free
 Z-module has no nonzero element killed by 2. Substituting into exact descent
@@ -184,12 +192,12 @@ The deterministic receipt is `receipts/descent_t3/exact_checks.json`.
 | Statement | Mathematical hypotheses | Current evidence |
 |---|---|---|
 | Composition and corrected doubling index | actual group homomorphisms; gf=[2] for doubling | already in main; source independently inspected |
-| deltaPhi, deltaDual are homomorphisms | b≠0, a²-4b≠0 as appropriate | PR #9 source promoted unchanged; fresh replay blocked |
-| Both descent kernel/image equalities | nonsingular rational models | PR #10 source promoted unchanged; fresh replay blocked |
-| Finite descent images | integer coefficients and nonzero relevant coefficients | PR #9 finite image bounds; fresh replay blocked |
-| General kernel-counting identity | abelian groups and homomorphisms | new Lean candidate; exact finite tests passed |
-| Elliptic correction times two-torsion equals four | b≠0, a²-4b≠0 | new Lean candidate; five exact curve tests passed |
-| Classical rank/image formula | actual free-plus-finite decomposition (or explicit justified doubling-index formula) | new conditional Lean candidate; decomposition not discharged |
+| deltaPhi, deltaDual are homomorphisms | b≠0, a²-4b≠0 as appropriate | PR #9 source promoted unchanged; local replay and axiom audit passed |
+| Both descent kernel/image equalities | nonsingular rational models | PR #10 source promoted unchanged; local replay and axiom audit passed |
+| Finite descent images | integer coefficients and nonzero relevant coefficients | PR #9 finite image bounds; local replay and axiom audit passed |
+| General kernel-counting identity | abelian groups and homomorphisms | new Lean theorem; local replay, axiom audit, and exact finite tests passed |
+| Elliptic correction times two-torsion equals four | b≠0, a²-4b≠0 | new Lean theorem; local replay, axiom audit, and five exact curve tests passed |
+| Classical rank/image formula | actual free-plus-finite decomposition (or explicit justified doubling-index formula) | verified conditional Lean theorem; decomposition remains a premise |
 | Generated subgroup is the entire rational point group | PrimeSupport plus PrimeSaturated at its primes, or BoundedIndex plus required prime saturation | existing conditional MordellCompletionBridge results; inputs remain open |
 | Finite integral-point enumeration is globally complete | hbound for all integral solutions, plus the enumeration equality | existing conditional result; global height/coordinate bound remains open |
 | Full Selmer/global cover theory | arbitrary-label cover equivalences and relevant local/global analysis | not established by this work |
@@ -198,10 +206,8 @@ The audit runner replays the original 18 delta and 16 cover declarations and
 the 17 new counting declarations. It requires exactly one axiom listing per
 declaration and rejects anything outside propext, Classical.choice, Quot.sound,
 including sorryAx and Lean.ofReduceBool. The new source contains no sorry,
-admit, or added axiom declarations. This source property is not a substitute
-for compiling and inspecting the transitive axiom dependencies.
+admit, or added axiom declarations. Both compilation and the transitive axiom audit passed locally.
 
 No main merge, release, Explorer synchronization, unconditional rank theorem,
-saturation closure, or global height bound is claimed. The next acceptance
-gate is a successful pinned Lean replay and axiom audit; only then should the
-draft be presented as formal closure of T3's group-counting part.
+saturation closure, or global height bound is claimed. T3's group-counting part is formally closed. The rank interpretation remains
+conditional on the decomposition stated in the theorem.
