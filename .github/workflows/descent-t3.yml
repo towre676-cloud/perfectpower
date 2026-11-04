@@ -1,10 +1,17 @@
 name: T3 descent kernel replay
 on:
+  workflow_dispatch:
   push:
-    branches: ["codex/t3-torsion-counting-20261030"]
+    branches: ["main", "codex/t3-torsion-counting-20261030"]
   pull_request:
     paths:
+      - 'lean-toolchain'
+      - 'lakefile.toml'
+      - 'lake-manifest.json'
+      - 'PerfectPower.lean'
       - 'PerfectPower/Descent*.lean'
+      - 'PerfectPower/IsogenyIndexBridges.lean'
+      - 'PerfectPower/TwoIsogeny*.lean'
       - 'PerfectPower/SquareclassUniqueness.lean'
       - 'audit/VerifyDescent*.lean'
       - 'scripts/check_descent_t3*'
