@@ -35,10 +35,10 @@ The linked writeup separates descriptive repeat-attempt rank stability from incr
 
 This notebook extends the existing official reconstruction; it does not replace completed experiments. The original notebook and its historical execution receipt remain unchanged. **Default receipt mode audits saved aggregate evidence and recreates four figures. It does not read tracking rows or refit a model.** Raw mode below uses the original compute cells, the same estimators, and the same nine official SHA-256 pins.
 
-Use `BDB_SUBMISSION_MODE=raw` before Run All for an official-data run. Attach the authorized competition data and set `BDB_DATA_ROOT` if its mount differs from `/kaggle/input/nfl-big-data-bowl-2027`. No dataset is downloaded. The data version is checked before extraction. Raw outputs are private temporary files outside `/kaggle/working`; only the four aggregate figures and aggregate audit are written to the public output directory.
+Use `BDB_SUBMISSION_MODE=raw` before Run All for an official-data run. Attach the authorized competition data and set `BDB_DATA_ROOT` if its mount differs from `/kaggle/input/nfl-big-data-bowl-2027`. No dataset is downloaded. The data version is checked before extraction. Raw outputs are private temporary files under `/tmp`, outside `/kaggle/working`; only the four aggregate figures and aggregate audit are written to the public output directory.
 
-Raw dependencies: numpy 2.3.5, scipy 1.17.0, pandas 2.2.3, scikit-learn 1.8.0, plus matplotlib. Different versions may change numerical replay and must be disclosed. The default uses 20 full pressure refits per temporal comparison and 16 mislinking runs. Reduced counts are diagnostics, not full reproduction.
-'''),code('''import os, json, hashlib, tempfile, sys, contextlib, io, platform
+Raw dependencies: numpy 2.3.5, scipy 1.17.0, pandas 2.2.3, scikit-learn 1.8.0, plus matplotlib. Different versions may change numerical replay and must be disclosed. The default uses 20 full pressure refits per temporal comparison and 16 mislinking runs. Reduced counts are diagnostics, not full reproduction; the aggregate audit records this separately from raw execution. The audit records all numerical-library versions. No packages are installed automatically: reconcile the hosted environment with requirements-combine-submission.txt before the final replay.
+'''),code('''import os, json, hashlib, tempfile, sys, contextlib, io, platform, importlib.metadata
 from pathlib import Path
 import numpy as np
 import matplotlib
@@ -63,11 +63,36 @@ The historical raw receipt records 12 pressure and 30 get-off MSE comparisons wi
 '''),code(f'ORIGINAL_COMPUTE_CELLS={cell_sources!r}\nPAIR_AUDIT_SOURCE={pair_source!r}\n'+'''
 RAW_EXECUTED=False
 RAW_COMPARISONS=None
+FULL_REPRODUCTION=False
+VERSIONS={name:importlib.metadata.version(name) for name in ('numpy','scipy','pandas','scikit-learn','matplotlib','ipython')}
+
+def compare_replay(current, reference):
+    differences=[];baseline_differences=[]
+    for kind, models, mse, baseline in (
+        ('pressure', {'global_mean','role_mean','fixed','selected'}, 'mse', 'baseline_mse'),
+        ('getoff', {'raw_mean','raw_conventional','context','fixed','selected'}, 'mse_seconds2', 'baseline_mse_seconds2')):
+        for stage in ('development','2023_to_2024','exploratory_2025'):
+            def metrics(e):
+                value=e['compact.json' if kind=='pressure' else 'getoff.json']
+                value=value['development'] if stage=='development' else value['temporal'][stage]
+                if kind=='pressure':return [value if stage=='development' else value['evaluation']]
+                return [value['primary'],value['auxiliary']]
+            for actual, expected in zip(metrics(current),metrics(reference)):
+                if set(actual['comparisons'])!=models or set(expected['comparisons'])!=models:
+                    raise ValueError('Replay comparison keys differ: '+kind+'/'+stage)
+                for aa,bb in [(actual[baseline],expected[baseline])]+[(actual['comparisons'][m][mse],expected['comparisons'][m][mse]) for m in sorted(models)]:
+                    if not np.isfinite([aa,bb]).all():raise ValueError('Nonfinite replay loss')
+                baseline_differences.append(abs(actual[baseline]-expected[baseline]))
+                differences.extend((kind,abs(actual['comparisons'][m][mse]-expected['comparisons'][m][mse])) for m in sorted(models))
+    maximum=max([d for _,d in differences]+baseline_differences)
+    if maximum>1e-12:raise ValueError('Raw replay differs from historical losses')
+    return {'pressure_count':sum(k=='pressure' for k,_ in differences),'getoff_count':sum(k=='getoff' for k,_ in differences),'baseline_count':len(baseline_differences),'maximum_mse_difference':maximum}
+
 if MODE=='raw':
     # Never allow trusted extracted inputs to masquerade as an official rebuild.
     for key in ('BDB_PLAYERS','BDB_EVENTS','BDB_GETOFF_RUSHES'):
         if os.environ.get(key):raise ValueError('Unset trusted bypass for official raw mode: '+key)
-    private=Path(tempfile.mkdtemp(prefix='bdb_submission_private_')).resolve()
+    private=Path(tempfile.mkdtemp(prefix='bdb_submission_private_',dir='/tmp')).resolve()
     if private==OUT or OUT in private.parents:raise ValueError('Private work must be outside public outputs')
     prior=os.environ.get('BDB_WORK_ROOT');os.environ['BDB_WORK_ROOT']=str(private)
     scope={'__name__':'__submission_raw_replay__'}
@@ -80,26 +105,14 @@ if MODE=='raw':
         EVIDENCE['compact.json']=scope['result']
         EVIDENCE['getoff.json']=scope['GETOFF_RESULT']
         EVIDENCE['repeatability.json']=scope['repeatability']
-        diffs=[]
-        current=EVIDENCE['compact.json'];reference=json.loads(RECEIPT_TEXT['compact.json'])
-        for key in ('development','2023_to_2024','exploratory_2025'):
-            aa=current['development'] if key=='development' else current['temporal'][key]['evaluation']
-            bb=reference['development'] if key=='development' else reference['temporal'][key]['evaluation']
-            diffs.extend(abs(v['mse']-bb['comparisons'][m]['mse']) for m,v in aa['comparisons'].items())
-        pressure_diffs=diffs.copy();diffs=[]
-        current=EVIDENCE['getoff.json'];reference=json.loads(RECEIPT_TEXT['getoff.json'])
-        for key in ('development','2023_to_2024','exploratory_2025'):
-            aa=current['development'] if key=='development' else current['temporal'][key]
-            bb=reference['development'] if key=='development' else reference['temporal'][key]
-            for metric in ('primary','auxiliary'):
-                diffs.extend(abs(v['mse_seconds2']-bb[metric]['comparisons'][m]['mse_seconds2']) for m,v in aa[metric]['comparisons'].items())
-        RAW_COMPARISONS={'pressure_count':len(pressure_diffs),'getoff_count':len(diffs),'maximum_mse_difference':max(pressure_diffs+diffs)}
-        if RAW_COMPARISONS['maximum_mse_difference']>1e-12:raise ValueError('Raw replay differs from historical MSE: '+str(RAW_COMPARISONS))
+        EVIDENCE['getoff_extraction.json']=scope['getoff_extraction']
+        RAW_COMPARISONS=compare_replay(EVIDENCE,{name:json.loads(source) for name,source in RECEIPT_TEXT.items()})
         paired_scope={'__name__':'submission_paired_audit'}
         exec(compile(PAIR_AUDIT_SOURCE,'audit_combine_reliability_pair.py','exec'),paired_scope)
         import pandas as pd
-        EVIDENCE['reliability_pair_review.json','loss_geometry.json','rules_review.json']=paired_scope['audit'](pd.read_pickle(scope['EVENTS']))
+        EVIDENCE['reliability_pair_review.json']=paired_scope['audit'](pd.read_pickle(scope['EVENTS']))
         RAW_EXECUTED=True
+        FULL_REPRODUCTION=(scope['REFITS']==20 and scope['PERMUTATIONS']==16)
     finally:
         if prior is None:os.environ.pop('BDB_WORK_ROOT',None)
         else:os.environ['BDB_WORK_ROOT']=prior
@@ -110,7 +123,7 @@ Relative reduction is `(baseline MSE − candidate MSE) / baseline MSE`; positiv
 
 For one player with residuals e, `mean(e²) = mean(e)² + mean((e − mean(e))²)`. Adding a constant per player leaves the centered-residual term unchanged. The code checks this identity against the aggregate get-off losses for context-only, conventional-plus-context, fixed launch and selected launch. The additional insight is an exact decomposition of prior results, not a new experiment or estimate of irreducible noise.
 
-Rank stability is descriptive: speed gain is net change over a longer active window, not the separate half-second launch measure. The saved-attempt audit now supplies a joint paired-player bootstrap of the reliability difference: 0.260, descriptive 95% interval −0.105–0.650. This exploratory diagnostic was selected after the marginal results were known. It does not establish superiority of one feature. Receipt mode reads its aggregate result; raw mode recomputes it from extracted attempts.
+Rank stability is descriptive: speed gain is net change over a longer active window, not the separate half-second launch measure. The saved-attempt audit now supplies a joint paired-player bootstrap of the reliability difference: 0.260, descriptive 95% interval −0.105–0.650. This exploratory diagnostic was selected after the marginal results were known. It does not establish superiority of one feature. Receipt mode reads its aggregate result; raw mode recomputes it from extracted attempts. Figure 1 uses the result for the current mode.
 '''),code('RENDERER_SOURCE='+repr(renderer)+'\n'+'''
 analysis_scope={'__name__':'submission_analysis'}
 exec(compile(RENDERER_SOURCE,'combine_submission_analysis.py','exec'),analysis_scope)
@@ -119,7 +132,8 @@ AUDIT['raw_reexecution']=RAW_EXECUTED
 AUDIT['mode']=MODE
 AUDIT['historical_receipt_sha256']=RECEIPT_SHA256
 AUDIT['historical_notebook_sha256']=HISTORICAL_NOTEBOOK_SHA256
-AUDIT['versions']={'python':platform.python_version(),'numpy':np.__version__,'matplotlib':matplotlib.__version__}
+AUDIT['full_reproduction']=FULL_REPRODUCTION
+AUDIT['versions']={'python':platform.python_version(),**VERSIONS}
 if RAW_EXECUTED:
     AUDIT['raw_run']={'refits_per_temporal':int(os.environ.get('BDB_REFITS','20')),'mislinking_runs':int(os.environ.get('BDB_PERMUTATIONS','16')),'comparisons':RAW_COMPARISONS,'current_compact_sha256':hashlib.sha256(json.dumps(EVIDENCE['compact.json'],sort_keys=True).encode()).hexdigest(),'current_getoff_sha256':hashlib.sha256(json.dumps(EVIDENCE['getoff.json'],sort_keys=True).encode()).hexdigest()}
 (OUT/'aggregate_audit.json').write_text(json.dumps(AUDIT,indent=2)+'\\n')
@@ -147,7 +161,7 @@ Every source class has been inspected. A new wrapper, new endpoint or new split 
 
 Official requirements reviewed 4 November 2026: at most 2,000 writeup words, fewer than 10 combined tables/figures, explicit Combine-tracking-to-NFL linkage, readable markdown, embedded visuals and an attached public Kaggle notebook. Judging: football 30%, data science 30%, writing 20%, visualization 20%. Deadline: 6 January 2027, 23:59 UTC. The full Rules tab was inspected directly in the rendered browser on 4 November 2026. Hackathon teams have one submission and at most five members. Competition data remain noncommercial and protected from nonparticipant access. Public code must also be shared through the competition-associated Kaggle forum or notebooks under an OSI-approved license allowing commercial code use; winning solutions carry related license/reproduction obligations. No agreement or entry was accepted by this notebook.
 
-Sources: [official overview](https://www.kaggle.com/competitions/nfl-big-data-bowl-2027/overview/submission-requirements), [original PR 14](https://github.com/towre676-cloud/perfectpower/pull/14), [get-off monograph](https://github.com/towre676-cloud/perfectpower/blob/main/docs/COMBINE_GETOFF_MONOGRAPH.md). This notebook has not been uploaded, published or submitted. Attach it only after the author has reviewed and authorized publication.
+Source code retains the repository [Apache-2.0 license](https://github.com/towre676-cloud/perfectpower/blob/main/LICENSE); prose retains [CC BY 4.0](https://github.com/towre676-cloud/perfectpower/blob/main/LICENSE-docs). These licenses do not license the restricted competition inputs. Competition data attribution: Michael Lopez, Ally Blake, Tom Bliss, Addison Howard and Paul Mooney, NFL Big Data Bowl 2027, Kaggle (2026). A submission-specific winning-solution license review remains necessary.\n\nSources: [official overview](https://www.kaggle.com/competitions/nfl-big-data-bowl-2027/overview/submission-requirements), [original PR 14](https://github.com/towre676-cloud/perfectpower/pull/14), [get-off monograph](https://github.com/towre676-cloud/perfectpower/blob/main/docs/COMBINE_GETOFF_MONOGRAPH.md). This notebook has not been uploaded, published or submitted. Attach it only after the author has reviewed and authorized publication.
 ''')]
     for i,c in enumerate(cells):
         c['id']=f'submission-{i:02d}'

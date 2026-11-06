@@ -84,7 +84,8 @@ def render(evidence, out):
         else:ax.text(.03,i,'n = 0 · repeatability unavailable',va='center',color=gray)
     ax.set_yticks(range(4),names);ax.set_ylim(3.5,-.5);ax.set_xlim(-.2,1.08);ax.axvline(0,color='#CBD3D9',lw=1)
     ax.set_xlabel('Alternating-attempt Spearman rank correlation');ax.set_title('1  |  Repeatable rank is a measurement gate',loc='left',pad=18)
-    fig.text(.01,-.04,'2023/24 Combine attempts only. Lines: descriptive 95% player bootstrap intervals.\nPaired difference: 0.260 (descriptive 95% interval −0.105 to 0.650). No established superiority; conditions may differ.',fontsize=10,color=gray)
+    pair=evidence['reliability_pair_review.json'];lo,hi=pair['paired_player_bootstrap_95']
+    fig.text(.01,-.04,f'2023/24 Combine attempts only. Lines: descriptive 95% player bootstrap intervals.\nPaired difference: {pair["rho_difference"]:.3f} (descriptive 95% interval {lo:.3f} to {hi:.3f}). No established superiority; conditions may differ.',fontsize=10,color=gray)
     save(fig,'figure_1_repeatability')
     # 2: all stages, fixed and selected; intervals explicitly conditional.
     fig,ax=plt.subplots(figsize=(10,5.2));c=evidence['compact.json']

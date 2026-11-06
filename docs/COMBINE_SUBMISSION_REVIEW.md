@@ -1,6 +1,6 @@
 # Proposed Big Data Bowl 2027 materials: author review
 
-Prepared 4 November 2026 against PerfectPower main commit `408744741bd3ef1a56987e1888f90c85a16bf149`. Changes are local and uncommitted. Nothing was pushed to GitHub, published to a Site or uploaded/submitted to Kaggle.
+Prepared 4 November 2026 against PerfectPower main commit `408744741bd3ef1a56987e1888f90c85a16bf149`. This paragraph describes the original local preparation on 4 November. The package subsequently reached draft PR #16 on 5 November; it remains unpublished and unsubmitted on Kaggle. See KAGGLE_READINESS_AUDIT.md for the independent audit and proposed local corrections.
 
 ## Competition requirements and scoring
 

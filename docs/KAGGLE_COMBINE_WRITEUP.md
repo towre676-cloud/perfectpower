@@ -38,7 +38,7 @@ Positive gain means lower equal-player squared error. Selected compact MSE is 0.
 
 The conventional baseline itself beats the global mean in development: MSE 0.000953206 versus 0.001135307, a **16.0% reduction relative to the mean baseline**. That is a useful comparator, not a new independent validation. Adding tracking has to clear this stronger hurdle.
 
-An earlier broader residual strategy also worsened development error by 2.878%. Favorable earlier specifications remain exploratory results on reused players. They do not overturn the compact failure. Twenty complete training-player refits per temporal comparison provide coarse sensitivity diagnostics. Sixteen feature-mislinking runs always select fallback; that control does not demonstrate useful movement learning or supply a formal significance test.
+An earlier broader residual strategy also worsened development error by 2.878%. Favorable earlier specifications remain exploratory results on reused players. They do not overturn the compact failure. Twenty complete training-player refits per temporal comparison provide coarse sensitivity diagnostics. Sixteen feature-mislinking evaluations all match fallback loss; that control does not demonstrate useful movement learning or supply a formal significance test.
 
 ## A closer football mechanism still needs the same evidence
 
@@ -70,6 +70,8 @@ Use the profiles to structure film and drill review, with repeat counts visible.
 
 The uncertainty is substantial: 4,000 paired-player resamples condition on fixed predictions; get-off intervals omit model refitting, shared games/teams, prior researcher adaptation and future class shift. Twenty pressure refits do not resolve those limitations. Null findings do not prove that tracking is useless or exclude small effects.
 
-The linked notebook preserves the original extraction and estimators. Its receipt mode reproduces these four aggregate figures without restricted rows; its raw mode requires the nine hash-pinned official files. Historical receipts document a complete official rebuild with 12 pressure and 30 get-off MSE comparisons matching prior runs. This revision exactly replays the saved-attempt repeatability audit, adds the exploratory paired comparison and derives the loss identity. It does not claim a fresh raw-tracking reconstruction or NFL model refit. No restricted rows, player forecasts or separate linebacker results are included.
+The linked notebook preserves the original extraction and estimators. Its receipt mode reproduces these four aggregate figures from historical evidence without restricted rows; its raw mode requires the nine hash-pinned official files. Historical receipts document a complete official rebuild with 12 pressure and 30 get-off MSE comparisons matching prior runs. This revision exactly replays the saved-attempt repeatability audit, adds the exploratory paired comparison and derives the loss identity. It does not claim a fresh raw-tracking reconstruction or NFL model refit. No restricted rows, player forecasts or separate linebacker results are included.
 
-Code and experimental specifications: [PerfectPower](https://github.com/towre676-cloud/perfectpower/tree/main/research/kaggle_combine). The accompanying `Combine_Submission_2027.ipynb` is prepared for the required public Kaggle attachment, which remains a publication step pending author approval.
+Data attribution: Michael Lopez, Ally Blake, Tom Bliss, Addison Howard and Paul Mooney, *NFL Big Data Bowl 2027*, Kaggle (2026). Code uses Apache-2.0; prose uses CC BY 4.0. Competition inputs retain their separate restrictions.
+
+Code and experimental specifications: [PerfectPower](https://github.com/towre676-cloud/perfectpower/tree/b7c57c0d35ae8a1b31592b7bff5e2084478d7e3d/research/kaggle_combine). The accompanying `Combine_Submission_2027.ipynb` is prepared for the required public Kaggle attachment, which remains a publication step pending author approval.
