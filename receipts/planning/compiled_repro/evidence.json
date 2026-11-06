@@ -1,0 +1,106 @@
+{
+  "schema": "pp-compiled-repro-audit/1",
+  "final_record": {
+    "recorded_exact_count": 702508860122761,
+    "recorded_expansions": 24921515942,
+    "last_progress_heap": 2433019,
+    "final_heap_zero_source": "JSON assertion; RESULT completed=1",
+    "checkpoint_present": false,
+    "checkpoint_recovered": false,
+    "exhaustive_search_replayed": false,
+    "evidence_level": "cross-checked historical assertions, not a search certificate"
+  },
+  "raw_source_sha256": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283",
+  "source_bound_cases": [
+    28,
+    39,
+    50
+  ],
+  "campaign_accounting": {
+    "campaign50": {
+      "prefixes_total": 4086,
+      "prefixes_solved": 18,
+      "split_exact": 434014798562688,
+      "interval": [
+        677205149345632,
+        708957902784392
+      ],
+      "width": 31752753438760,
+      "total_expansions": 6508422086,
+      "fully_solved_width_tie_groups": [
+        [
+          3,
+          4
+        ],
+        [
+          16,
+          17
+        ]
+      ],
+      "aggregate_invariant_under_width_ties": true,
+      "prefix_sha256": "7eb95a46ab7c45d313e14cdc8e73c0372ab39b2acdc03c57533b71d66f13810f",
+      "reconstruction_log": "root_interval=[88254953452712, 746335444328064]\nsplit depth=13 prefixes=4086 split_exact=434014798562688 interval=[676161371780296, 709352483313564] width=33191111533268\n",
+      "solved_counts_independently_recomputed": false
+    },
+    "campaign50b": {
+      "prefixes_total": 3734,
+      "prefixes_solved": 76,
+      "split_exact": 479210271767118,
+      "interval": [
+        691091625831361,
+        703631266985368
+      ],
+      "width": 12539641154007,
+      "total_expansions": 6486774808,
+      "fully_solved_width_tie_groups": [
+        [
+          19,
+          20
+        ]
+      ],
+      "aggregate_invariant_under_width_ties": true,
+      "prefix_sha256": "5247b3cab2ee0d7beb82cc5d8ca1b68c61885295ddaa6610de6b52d05333467a",
+      "reconstruction_log": "root_interval=[159575572988122, 746335444328064]\nsplit depth=13 prefixes=3734 split_exact=479210271767118 interval=[688156764523556, 704218303357779] width=16061538834223\n",
+      "solved_counts_independently_recomputed": false
+    }
+  },
+  "gates": [
+    {
+      "case": 28,
+      "pairs": "single",
+      "count": 208817578,
+      "expansions": 1288947,
+      "log": "root_interval=[87665255, 212273251] target_width=0 max_seconds=45.0\nRESULT completed=1 interval=[208817578, 208817578] width=0 expansions=1288947 count_seconds=0.165 peak_rss_kb=61568\nEXACT=208817578\n"
+    },
+    {
+      "case": 28,
+      "pairs": "six",
+      "count": 208817578,
+      "expansions": 921324,
+      "log": "root_interval=[115028798, 211755594] target_width=0 max_seconds=45.0\nRESULT completed=1 interval=[208817578, 208817578] width=0 expansions=921324 count_seconds=0.410 peak_rss_kb=740708\nEXACT=208817578\n"
+    },
+    {
+      "case": 39,
+      "pairs": "single",
+      "count": 368072359571,
+      "expansions": 136680243,
+      "log": "root_interval=[88921646116, 392803463712] target_width=0 max_seconds=45.0\nexpansions=113447673 stack=17 interval=[363160155460, 368848028650] width=5687873190 elapsed=10.0s maxrss=100224KB\nexpansions=124662239 stack=21 interval=[364073991866, 368434154022] width=4360162156 elapsed=20.0s maxrss=100224KB\nexpansions=125173180 stack=21 interval=[364095440685, 368419753729] width=4324313044 elapsed=30.0s maxrss=100224KB\nexpansions=126904402 stack=22 interval=[364183255141, 368290407693] width=4107152552 elapsed=40.1s maxrss=100224KB\nRESULT completed=1 interval=[368072359571, 368072359571] width=0 expansions=136680243 count_seconds=44.506 peak_rss_kb=100224\nEXACT=368072359571\n"
+    },
+    {
+      "case": 39,
+      "pairs": "six",
+      "count": 368072359571,
+      "expansions": 8585148,
+      "log": "root_interval=[144861613273, 390216841432] target_width=0 max_seconds=45.0\nexpansions=8013772 stack=19 interval=[367488341391, 368087462235] width=599120844 elapsed=10.2s maxrss=573668KB\nRESULT completed=1 interval=[368072359571, 368072359571] width=0 expansions=8585148 count_seconds=12.204 peak_rss_kb=573668\nEXACT=368072359571\n"
+    }
+  ],
+  "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "build_diagnostics": "/workspace/scratch/afa64475f083/perfectpower/independent_checks/planning_compiled/petersen.c: In function \u2018mode_split\u2019:\n/workspace/scratch/afa64475f083/perfectpower/independent_checks/planning_compiled/petersen.c:539:22: warning: variable \u2018fcap\u2019 set but not used [-Wunused-but-set-variable]\n  539 |     size_t flen = 0, fcap = 0;\n      |                      ^~~~\n",
+  "python_interval_status": "retained historical interval, not replayed here",
+  "source_sha256": {
+    "independent_checks/planning_compiled/petersen.c": "fbb8c2e8acb7022a008300a2a23494da9efb0454f4e71990aaf549421fcf164d",
+    "independent_checks/planning_compiled/reproduce_evidence.py": "93868863a5f32a3164699dff8ef83dc87ee15757db2528e150c1c72e8204233f",
+    "independent_checks/planning_compiled/petersen_50_result.json": "449d503c68a7390a1734c596c0fe14829579539824f412a9f655f1127fbb81ad",
+    "independent_checks/planning_compiled/bf50/bfseed_run.log": "e8fa88dd6e3ed3a4b501d68f0740aa388b578e3afeb63922d1b9c425c7f5e27d"
+  }
+}
