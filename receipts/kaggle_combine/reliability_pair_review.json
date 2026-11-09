@@ -1,0 +1,24 @@
+{
+  "schema": "pp-combine-reliability-pair/1",
+  "status": "exploratory source-only diagnostic after marginal correlations were known",
+  "outcome_free": true,
+  "classes": [
+    2023,
+    2024
+  ],
+  "players": 39,
+  "complete_shared_attempts": 84,
+  "speed_gain_rho": 0.5190283400809717,
+  "recovery_accel_rho": 0.25870445344129556,
+  "rho_difference": 0.2603238866396761,
+  "paired_player_bootstrap_95": [
+    -0.10536592491698224,
+    0.6504284520093365
+  ],
+  "draws": 4000,
+  "valid_draws": 4000,
+  "seed": 20261104,
+  "scope": "Resample common players jointly across both metrics and attempt halves. Pointwise percentile diagnostic, no multiplicity or researcher-selection adjustment. Varying attempt conditions; not a controlled test-retest experiment. No NFL responses consumed; no predictive model fitted or selected.",
+  "input_sha256": "42be61c60d25ffbf5684417889a35525a875d9e668b64ed0589eaa164f37b20a",
+  "source_sha256": "269bce82f0925f569dde7ef8cc11e28ad047e688490306b73136210c8a36d6ef"
+}

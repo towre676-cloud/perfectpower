@@ -1,0 +1,98 @@
+{
+  "schema": "pp-combine-submission-analysis/1",
+  "evidence_type": "Existing aggregate receipts plus exact loss identity; no new tracking experiment",
+  "pressure": [
+    {
+      "stage": "development",
+      "baseline_mse": 0.0009532055704712809,
+      "fixed_gain_percent": -0.205919945058846,
+      "selected_gain_percent": -0.6290307228899077
+    },
+    {
+      "stage": "2023_to_2024",
+      "baseline_mse": 0.001525834309243712,
+      "fixed_gain_percent": -3.280771776416517,
+      "selected_gain_percent": 0.0
+    },
+    {
+      "stage": "exploratory_2025",
+      "baseline_mse": 0.000714146325495341,
+      "fixed_gain_percent": -8.353360149340048,
+      "selected_gain_percent": -8.353360149340048
+    }
+  ],
+  "getoff_decomposition": [
+    {
+      "stage": "development",
+      "primary_mse_s2": 0.004430011243085987,
+      "play_mse_s2": 0.05635519895208781,
+      "within_player_residual_variance_s2": 0.05192518770900182,
+      "within_share_percent": 92.13912589173484,
+      "oracle_maximum_play_gain_percent": 7.860874108265157,
+      "fixed_gain_primary_percent": 0.21183548091317042,
+      "fixed_gain_auxiliary_percent": 0.016652120471224625,
+      "absolute_gain_s2": 9.384335621298416e-06
+    },
+    {
+      "stage": "2023_to_2024",
+      "primary_mse_s2": 0.0025504997419435777,
+      "play_mse_s2": 0.05590244290065316,
+      "within_player_residual_variance_s2": 0.05335194315870958,
+      "within_share_percent": 95.43758803801082,
+      "oracle_maximum_play_gain_percent": 4.562411961989192,
+      "fixed_gain_primary_percent": -8.85997550883619,
+      "fixed_gain_auxiliary_percent": -0.40422858244445103,
+      "absolute_gain_s2": -0.00022597365248913084
+    },
+    {
+      "stage": "exploratory_2025",
+      "primary_mse_s2": 0.0022630308240325827,
+      "play_mse_s2": 0.05738958957413135,
+      "within_player_residual_variance_s2": 0.05512655875009877,
+      "within_share_percent": 96.05672241111016,
+      "oracle_maximum_play_gain_percent": 3.943277588889842,
+      "fixed_gain_primary_percent": -0.4106543712398239,
+      "fixed_gain_auxiliary_percent": -0.01619324178889631,
+      "absolute_gain_s2": -9.293235001394274e-06
+    }
+  ],
+  "getoff_fallback_fits": 14,
+  "speed_minus_recovery_rank_correlation": 0.2603238866396761,
+  "paired_reliability_difference_test_available": true,
+  "paired_reliability_difference": {
+    "schema": "pp-combine-reliability-pair/1",
+    "status": "exploratory source-only diagnostic after marginal correlations were known",
+    "outcome_free": true,
+    "classes": [
+      2023,
+      2024
+    ],
+    "players": 39,
+    "complete_shared_attempts": 84,
+    "speed_gain_rho": 0.5190283400809717,
+    "recovery_accel_rho": 0.25870445344129556,
+    "rho_difference": 0.2603238866396761,
+    "paired_player_bootstrap_95": [
+      -0.10536592491698224,
+      0.6504284520093365
+    ],
+    "draws": 4000,
+    "valid_draws": 4000,
+    "seed": 20261104,
+    "scope": "Resample common players jointly across both metrics and attempt halves. Pointwise percentile diagnostic, no multiplicity or researcher-selection adjustment. Varying attempt conditions; not a controlled test-retest experiment. No NFL responses consumed; no predictive model fitted or selected.",
+    "input_sha256": "42be61c60d25ffbf5684417889a35525a875d9e668b64ed0589eaa164f37b20a",
+    "source_sha256": "269bce82f0925f569dde7ef8cc11e28ad047e688490306b73136210c8a36d6ef"
+  },
+  "independent_confirmation": false,
+  "raw_reexecution": false,
+  "input_sha256": {
+    "compact.json": "69d02f6107efd2405c1815a877262d8c3f881e02c3a4b7081b506bacecc15845",
+    "getoff.json": "ddb5db66227b5173bf885f7804837f033c9019ac8542c945c12b5c1659018b97",
+    "repeatability.json": "c02bbbb7aec54f67b3320f1ce85e50d226a164246d9d44e5c2f5e45e017c1d4e",
+    "official_rebuild_full.json": "609ad81e02403a20f31ebfebd792693694b9dc8507056bc690756f7ae3acfddb",
+    "getoff_extraction.json": "598caee7adc62c7bd90b6ca1c32f1cbdc9bc1652faf54dabd67befdbe5b00aa1",
+    "reliability_pair_review.json": "1d0773407dc609e482bec7c6b4f52dc9f37eb397805f8221f29c59fefcfe02b8",
+    "loss_geometry.json": "834f8a2132bed01b2428b9e66a86441d111d3d013973dd15fffc5d39e9eaf0cb",
+    "rules_review.json": "052ee747435b6d130f7d8988c6db451071c7a47b19641a53056206e900acdd26"
+  }
+}
