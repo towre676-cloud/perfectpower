@@ -80,6 +80,8 @@ Checking this complete trace is independent verification of the encoded exhausti
 
 ## Reproduction commands
 
+For the complete BDD witness, follow the [pinned download and replay instructions](PETERSEN50_CERTIFICATE_REPLAY.md). The replay uses the canonical checker on main and can run independently of this compiled-search audit.
+
 From a checkout of the reviewed main snapshot with this proposed integration applied:
 
 ```bash
