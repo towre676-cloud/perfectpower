@@ -46,6 +46,8 @@ The committed native fixture `certs/planning/small.trace` uses rows `[3,4,2,5,1]
 
 ## Regression and reproducibility
 
+For the retained 50-project witness, see the [download, input manifest and replay receipts](PETERSEN50_CERTIFICATE_REPLAY.md).
+
 Run `make planning-certificate-test` for 120 seeded independently exhaustive instances with one through ten variables, zero-cost/skipped-coordinate cases, negative-capacity rejection and the exact `2^62` terminal case. The adversarial fixture tests named corruptions and flips every individual record byte's low bit. A mutation may remain a harmless valid certificate; every accepted mutation must preserve the independently checked population. The existing planning regression suite has 23 passing tests including this module; the separate original standalone verifier still passes 80 exhaustive cases and 320 conditional queries.
 
 Run `python scripts/run_planning_certificate.py --case 20 --certificate /tmp/petersen20.trace --receipt receipts/planning/independent/certificate20.json` for a bounded public-data construction and source-bound replay. Run the same command with `--case 50` for the full instance. The driver compiles the standalone native producer, limits producer address space and wall time, generates a trace, independently checks it, compares results and records source/input/certificate hashes. Default producer limits are 40,000,000 nodes, 600 seconds and 6,144 MiB address space. Replay is linear in the certificate stream, with memory proportional to allocated nodes plus current-stage proof records; it is not constant-memory verification.
