@@ -1,0 +1,178 @@
+'PerfectPower.PlanningDiagram.census_enumerates' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.census_cardinality' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.assignments_multiplicity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.census_congr' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.census_congr_length' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.census_false' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.census_true' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.census_bound' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.census_skip' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.weight_correct' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.weight_bound' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.reduce_equal_branches' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.branch_population_split' does not depend on any axioms
+'PerfectPower.PlanningDiagram.threshold_fits' does not depend on any axioms
+'PerfectPower.PlanningDiagram.threshold_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.threshold_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.dot_bound' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.dot_prefix' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.dot_zero_prefix' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.forced_zero_implication' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.feasible_member_bound' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.feasible_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.guard_implies_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.all_bounds_feasible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.unconstrained_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.cofactor_correct' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.intersect_correct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.intersect_fits' does not depend on any axioms
+'PerfectPower.PlanningDiagram.intersect_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningDiagram.natCensus_congr' does not depend on any axioms
+'PerfectPower.PlanningDiagram.natCensus_add' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.census_indicator' depends on axioms: [propext]
+'PerfectPower.PlanningDiagram.partition_pointwise' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.partition_aggregation' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningDiagram.partition_disjoint_cover' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.checked_node_population' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.checked_branch_population' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.changed_branch_count_rejected' depends on axioms: [propext]
+'PerfectPower.PlanningCertificate.stored_node_population' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.missing_child_rejected' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.variable_order_rejected' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.unreduced_node_rejected' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.manipulated_count_rejected' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningCertificate.same_refl' does not depend on any axioms
+'PerfectPower.PlanningCertificate.reduction_sound' depends on axioms: [propext]
+'PerfectPower.PlanningCertificate.skip_sound' does not depend on any axioms
+'PerfectPower.PlanningCertificate.count_transport' depends on axioms: [propext]
+'PerfectPower.PlanningCertificate.threshold_evidence_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningCertificate.conjunction_step_length' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningCertificate.source_chain_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningCertificate.source_bound_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningCertificate.feasible_append_resource' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningCertificate.prefix_evidence_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningCertificate.prefix_source_bound_population' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PlanningCertificate.finite_validation_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningCertificate.small_source_bound_population' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PlanningCertificateExamples.count2' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count3' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count4' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count5' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count6' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count7' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count8' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count9' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count10' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count11' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count12' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count13' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count14' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count15' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.count16' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.literal_count' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.literal_source_check' depends on axioms: [propext]
+'PerfectPower.PlanningCertificateExamples.native_diagram_original_predicate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PlanningCertificateExamples.native_population_original_predicate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PetersenPlanning.original_dimensions' does not depend on any axioms
+'PerfectPower.PetersenPlanning.suffix_totals' does not depend on any axioms
+'PerfectPower.PetersenPlanning.suffix_bounds' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PetersenPlanning.zero_prefix_suffix_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PetersenPlanning.zero_prefix_original_semantics' depends on axioms: [propext]
+'PerfectPower.PetersenPlanning.zero_prefix_original_population' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PetersenPlanning.optimizer_original_feasibility' does not depend on any axioms
+'PerfectPower.PetersenPlanning.optimizer_original_profit' does not depend on any axioms
+'PerfectPower.PetersenPlanning.residual_capacities' does not depend on any axioms
+'PerfectPower.PetersenPlanning.high_prefix_bounds' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PetersenPlanning.high_prefix_original_semantics' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PetersenPlanning.high_guard_bounds' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PetersenPlanning.high_guard_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PetersenPlanning.high_guard_diagram_population' does not depend on any axioms
+'PerfectPower.PetersenPlanning.high_prefix_original_population' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PetersenPlanning.retained_leaf_count' does not depend on any axioms
+'PerfectPower.PetersenPlanning.retained_count_aggregation' does not depend on any axioms
+'PerfectPower.PetersenPlanning.retained_cube_size_aggregation' does not depend on any axioms
+'PerfectPower.PetersenPlanning.retained_partition_fresh' does not depend on any axioms
+'PerfectPower.PetersenPlanning.retained_partition_in_range' does not depend on any axioms
+'PerfectPower.PetersenPlanning.retained_partition_addresses' does not depend on any axioms
+'PerfectPower.PetersenPlanning.retained_partition_leaf_count' does not depend on any axioms
+'PerfectPower.PetersenPlanning.original_disjoint_cover' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PetersenPlanning.original_partition_aggregation' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.subsets_congr' depends on axioms: [propext]
+'PerfectPower.PlanningPermutation.subsets_census' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.subsets_perm' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.sum_perm' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.projectFeasible_perm' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.dot_selected' depends on axioms: [propext]
+'PerfectPower.PlanningPermutation.reordered_semantics' depends on axioms: [propext]
+'PerfectPower.PlanningPermutation.reordered_population' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.range_reconstruct' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.reorder_identity' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningPermutation.original_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayBridge.threshold_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayBridge.conjunction_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayBridge.signed_append' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayBridge.stages_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayBridge.signed_nat' depends on axioms: [propext]
+'PerfectPower.PlanningReplayBridge.stage_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayBridge.original_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayBridge.branch_skipped_count' depends on axioms: [propext]
+'PerfectPower.PlanningReplayBridge.cast_count' does not depend on any axioms
+'PerfectPower.PlanningReplayBridge.lift_count' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayBridge.root_population' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayBridge.unequal_skips_count' depends on axioms: [propext]
+'PerfectPower.PlanningReplayBridge.indexed_allocation_count' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningTraceDecode.word_bound' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningTraceDecode.readWord_sound' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningTraceDecode.readWords_sound' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningTraceDecode.join64_bound' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningTraceDecode.signed32_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningTraceDecode.readRecord_consumes_32' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningTraceDecode.truncated_record_rejected' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningTraceDecode.fixture_decode' depends on axioms: [propext]
+'PerfectPower.PlanningTraceDecode.signed_negative_fixture' depends on axioms: [propext]
+'PerfectPower.PlanningTraceDecode.malformed_padding' does not depend on any axioms
+'PerfectPower.PlanningTraceDecode.unknown_tag' does not depend on any axioms
+'PerfectPower.PlanningReplayExamples.allocation_accepted' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.allocation_population' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.bad_skip_multiplier' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.bad_forward_reference' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.bad_order' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.bad_reduction' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.byte_allocation_accepted' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.byte_allocation_population' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.stream_threshold' depends on axioms: [propext]
+'PerfectPower.PlanningReplayExamples.stream_stage_evidence' depends on axioms: [propext]
+'PerfectPower.PlanningReplayExamples.complete_small_fixture_population' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PlanningReplayExamples.nat_threshold' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.intersect_semantic' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.PlanningReplayExamples.threshold0' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.threshold1' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.conjunction_fixture' does not depend on any axioms
+'PerfectPower.PlanningReplayExamples.source_stages' depends on axioms: [propext, Quot.sound]
+'PerfectPower.PlanningReplayExamples.coordinate_permutation' does not depend on any axioms
+'PerfectPower.PlanningReplayExamples.original_exact_population' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PerfectPower.PlanningReplayExamples.negative_threshold' does not depend on any axioms
+'PerfectPower.PlanningReplayExamples.negative_population' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.Petersen50Bridge.receipt_order_is_permutation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PerfectPower.Petersen50Bridge.ordered_dimensions' does not depend on any axioms
+'PerfectPower.Petersen50Bridge.population_if_complete_stage_evidence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

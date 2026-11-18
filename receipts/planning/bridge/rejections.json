@@ -1,0 +1,22 @@
+{
+  "false_population": {
+    "exit_code": 1,
+    "diagnostic": "/tmp/planning-bridge-_8idondz/false_population.lean:11:135: error: tactic 'decide' proved that the proposition\n  PlanningDiagram.census 3 (PlanningDiagram.feasible PlanningReplayExamples.rows PlanningReplayExamples.caps) = 4\nis false\n"
+  },
+  "duplicate_coordinate": {
+    "exit_code": 1,
+    "diagnostic": "/tmp/planning-bridge-_8idondz/duplicate_coordinate.lean:11:56: error: tactic 'decide' proved that the proposition\n  [0, 0, 2].Perm (List.range 3)\nis false\n"
+  },
+  "negative_capacity_truncation": {
+    "exit_code": 1,
+    "diagnostic": "/tmp/planning-bridge-_8idondz/negative_capacity_truncation.lean:11:115: error: tactic 'decide' proved that the proposition\n  (PlanningDiagram.census 2 fun xs => decide (\u2191(PlanningDiagram.dot [0, 0] xs) \u2264 -1)) = 4\nis false\n"
+  },
+  "wrong_little_endian_count": {
+    "exit_code": 1,
+    "diagnostic": "/tmp/planning-bridge-_8idondz/wrong_little_endian_count.lean:11:116: error: tactic 'decide' proved that the proposition\n  PlanningTraceDecode.readRecord PlanningTraceDecode.fixture = some (PlanningTraceDecode.Record.node 1 1 0 33554432, [])\nis false\n"
+  },
+  "accepted_bad_padding": {
+    "exit_code": 1,
+    "diagnostic": "/tmp/planning-bridge-_8idondz/accepted_bad_padding.lean:11:94: error: tactic 'decide' proved that the proposition\n  PlanningTraceDecode.fromWords [1, 1, 1, 0, 2, 0, 1, 0] = some (PlanningTraceDecode.Record.node 1 1 0 2)\nis false\n"
+  }
+}

@@ -1,0 +1,37 @@
+name: Petersen50 semantic bridge
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    paths:
+      - 'PerfectPower/Planning*.lean'
+      - 'PerfectPower/Petersen*.lean'
+      - 'scripts/check_planning_bridge.py'
+      - 'scripts/check_planning_lean.py'
+      - 'python/tests/test_planning*'
+      - 'python/perfectpower/planning_certificate.py'
+      - '.github/workflows/planning-bridge.yml'
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+      - name: Kernel build, axiom audit and false-certificate rejection
+        run: python scripts/check_planning_bridge.py --lean lean
+      - name: Small binary certificates and adversarial mutations
+        run: PYTHONPATH=python python -m unittest python.tests.test_planning_bridge python.tests.test_planning_certificate -v
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: petersen50-semantic-bridge
+          path: receipts/planning/bridge
