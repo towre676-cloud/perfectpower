@@ -71,6 +71,17 @@ def export(root=ROOT):
             'lean_theorems':json.loads((root/'receipts/planning/independent/lean.json').read_text())['theorems'],
             'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/PLANNING_CERTIFICATE_MONOGRAPH.md',
             'full_unrestricted_population_kernel_proved':False}
+    bridge=root/'receipts/planning/bridge/verification.json'
+    if certificate.exists() and bridge.exists():
+        checked=json.loads(bridge.read_text())
+        payload['native_portfolio']['certificate_verification']['semantic_bridge']={
+            'status':checked['status'], 'theorems':checked['theorems'],
+            'new_theorems':checked['new_theorems'],
+            'source_permutation_transport_kernel_proved':checked['source_permutation_transport_kernel_proved'],
+            'full_stream_to_stage_evidence_kernel_proved':False,
+            'full_population_kernel_proved':False,
+            'monograph':'https://github.com/towre676-cloud/perfectpower/blob/main/docs/PETERSEN50_LEAN_BRIDGE_REVIEW.md',
+            'receipt':'https://github.com/towre676-cloud/perfectpower/blob/main/receipts/planning/bridge/verification.json'}
     transport=root/'receipts/arithmetic_transport/release.json'
     if transport.exists():
         payload['arithmetic_transport']={'title':'Paths under an arithmetic height ceiling',

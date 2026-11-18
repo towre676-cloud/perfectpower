@@ -1,0 +1,66 @@
+{
+ "case": "petersen_50",
+ "best_first_campaign": {
+  "n": 50,
+  "m": 5,
+  "pairs": [
+   [
+    3,
+    4
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    0,
+    4
+   ],
+   [
+    0,
+    1
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    4
+   ]
+  ],
+  "exact_accumulated": 702508860122761,
+  "interval": [
+   702508860122761,
+   702508860122761
+  ],
+  "width": 0,
+  "expansions": 24921515942,
+  "heap_nodes": 0,
+  "closed_exactly": true
+ },
+ "dfs_prefix_campaign": {
+  "prefixes_solved": 76,
+  "prefixes_total": 3734,
+  "interval": [
+   691091625831361,
+   703631266985368
+  ],
+  "width": 12539641154007,
+  "total_expansions": 6486774808,
+  "completed": false
+ },
+ "python_campaign_audited_interval": [
+  699497138009147,
+  703473996819983
+ ],
+ "combined_rigorous_interval": [
+  702508860122761,
+  702508860122761
+ ],
+ "combined_width": 0,
+ "combined_relative_width": 0.0,
+ "exact_count": 702508860122761,
+ "closed_exactly": true,
+ "resumable_state": "bf50/state.bin (rerun petersen5 bfseed with the same state path); campaign50b/ prefix state via aggregate.py + claim.txt reset"
+}

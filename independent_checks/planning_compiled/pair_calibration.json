@@ -1,0 +1,24 @@
+{
+ "note": "Whole-tree DFS expansion counts (schedule-independent for exact closure) on the validation cases, by bound strength. All runs close exactly at the repository counts.",
+ "petersen_39": {
+  "exact_count": 368072359571,
+  "pairs_3_4":            {"expansions": 136680243, "seconds_single_core": 13.462},
+  "pairs_3_4+1_4":        {"expansions": 122569754},
+  "pairs_3_4+1_4+0_4":    {"expansions": 59958733},
+  "pairs_3_4+1_4+0_1":    {"expansions": 76633254},
+  "pairs_+0_1 (4 pairs)": {"expansions": 14022233, "seconds_single_core": 4.584},
+  "pairs_+1_3 (5 pairs)": {"expansions": 9651527, "seconds_single_core": 2.174},
+  "pairs_+2_4 (6 pairs)": {"expansions": 8585148, "seconds_single_core": 2.124}
+ },
+ "petersen_28": {
+  "exact_count": 208817578,
+  "pairs_3_4": {"expansions": 1288947, "seconds_single_core": 0.161},
+  "pairs_6":   {"expansions": 921324, "seconds_single_core": 0.418}
+ },
+ "petersen_50_root_intervals": {
+  "pairs_3_4 (attempt_50.py's bounds)": [88254953452712, 746335444328064],
+  "pairs_6 (this work)": [159575572988122, 746335444328064],
+  "comment": "the 6-pair root interval is a strict tightening (lower bound raised by pair (1,4)) of the reproduced single-pair root interval, and contains the Python campaign's audited interval [699497138009147, 703473996819983]"
+ },
+ "chosen_bounds_for_petersen_50": "pairs (3,4),(1,4),(0,4),(0,1),(1,3),(2,4)"
+}

@@ -1,0 +1,628 @@
+{
+  "schema": "pp-planning-lean-bridge/1",
+  "status": "kernel_checked_semantic_bridge",
+  "lean_version": "Lean (version 4.20.0, x86_64-unknown-linux-gnu, commit 77cfc4d1a4f6, Release)",
+  "base_commit": "89d1e580dd05b77930424d5911abe8c736efcfdc",
+  "source_binding": {
+    "raw_data_sha256": "727c5f90b6acafa0896ce4b5b5559e2995303b735ee083a07e9b724738fac283",
+    "partition_sha256": "b630e97e7758c4ab1e27f4a02af936748ffb995e816f037b4be4c328af5e0918",
+    "literal_original_rows_capacities_profits_match": true,
+    "literal_original_partition_addresses_and_count_labels_match": true
+  },
+  "theorems": 158,
+  "new_theorems": 59,
+  "axioms": {
+    "PerfectPower.PlanningDiagram.census_enumerates": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_cardinality": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.assignments_multiplicity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.census_congr": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_congr_length": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_false": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_true": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.census_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.census_skip": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.weight_correct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.weight_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.reduce_equal_branches": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.branch_population_split": [],
+    "PerfectPower.PlanningDiagram.threshold_fits": [],
+    "PerfectPower.PlanningDiagram.threshold_correct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.threshold_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.dot_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.dot_prefix": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.dot_zero_prefix": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.forced_zero_implication": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.feasible_member_bound": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.feasible_prefix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.guard_implies_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.all_bounds_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.unconstrained_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.cofactor_correct": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.intersect_correct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.intersect_fits": [],
+    "PerfectPower.PlanningDiagram.intersect_count": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.natCensus_congr": [],
+    "PerfectPower.PlanningDiagram.natCensus_add": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.census_indicator": [
+      "propext"
+    ],
+    "PerfectPower.PlanningDiagram.partition_pointwise": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.partition_aggregation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningDiagram.partition_disjoint_cover": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.checked_node_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.checked_branch_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.changed_branch_count_rejected": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificate.stored_node_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.missing_child_rejected": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.variable_order_rejected": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.unreduced_node_rejected": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.manipulated_count_rejected": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.same_refl": [],
+    "PerfectPower.PlanningCertificate.reduction_sound": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificate.skip_sound": [],
+    "PerfectPower.PlanningCertificate.count_transport": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificate.threshold_evidence_sound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.conjunction_step_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.source_chain_sound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.source_bound_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.feasible_append_resource": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.prefix_evidence_sound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.prefix_source_bound_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.finite_validation_sound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificate.small_source_bound_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count2": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count3": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count4": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count5": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count6": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count7": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count8": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count9": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count10": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count11": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count12": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count13": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count14": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count15": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.count16": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.literal_count": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.literal_source_check": [
+      "propext"
+    ],
+    "PerfectPower.PlanningCertificateExamples.native_diagram_original_predicate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningCertificateExamples.native_population_original_predicate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.original_dimensions": [],
+    "PerfectPower.PetersenPlanning.suffix_totals": [],
+    "PerfectPower.PetersenPlanning.suffix_bounds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.zero_prefix_suffix_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.zero_prefix_original_semantics": [
+      "propext"
+    ],
+    "PerfectPower.PetersenPlanning.zero_prefix_original_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.optimizer_original_feasibility": [],
+    "PerfectPower.PetersenPlanning.optimizer_original_profit": [],
+    "PerfectPower.PetersenPlanning.residual_capacities": [],
+    "PerfectPower.PetersenPlanning.high_prefix_bounds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_prefix_original_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_guard_bounds": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_guard_semantics": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.high_guard_diagram_population": [],
+    "PerfectPower.PetersenPlanning.high_prefix_original_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.retained_leaf_count": [],
+    "PerfectPower.PetersenPlanning.retained_count_aggregation": [],
+    "PerfectPower.PetersenPlanning.retained_cube_size_aggregation": [],
+    "PerfectPower.PetersenPlanning.retained_partition_fresh": [],
+    "PerfectPower.PetersenPlanning.retained_partition_in_range": [],
+    "PerfectPower.PetersenPlanning.retained_partition_addresses": [],
+    "PerfectPower.PetersenPlanning.retained_partition_leaf_count": [],
+    "PerfectPower.PetersenPlanning.original_disjoint_cover": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PetersenPlanning.original_partition_aggregation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.subsets_congr": [
+      "propext"
+    ],
+    "PerfectPower.PlanningPermutation.subsets_census": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.subsets_perm": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.sum_perm": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.projectFeasible_perm": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.dot_selected": [
+      "propext"
+    ],
+    "PerfectPower.PlanningPermutation.reordered_semantics": [
+      "propext"
+    ],
+    "PerfectPower.PlanningPermutation.reordered_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.range_reconstruct": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.reorder_identity": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningPermutation.original_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.threshold_sound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.conjunction_sound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.signed_append": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.stages_sound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.signed_nat": [
+      "propext"
+    ],
+    "PerfectPower.PlanningReplayBridge.stage_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.original_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.branch_skipped_count": [
+      "propext"
+    ],
+    "PerfectPower.PlanningReplayBridge.cast_count": [],
+    "PerfectPower.PlanningReplayBridge.lift_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.root_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayBridge.unequal_skips_count": [
+      "propext"
+    ],
+    "PerfectPower.PlanningReplayBridge.indexed_allocation_count": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.word_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.readWord_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.readWords_sound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.join64_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.signed32_range": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.readRecord_consumes_32": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.truncated_record_rejected": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningTraceDecode.fixture_decode": [
+      "propext"
+    ],
+    "PerfectPower.PlanningTraceDecode.signed_negative_fixture": [
+      "propext"
+    ],
+    "PerfectPower.PlanningTraceDecode.malformed_padding": [],
+    "PerfectPower.PlanningTraceDecode.unknown_tag": [],
+    "PerfectPower.PlanningReplayExamples.allocation_accepted": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.allocation_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.bad_skip_multiplier": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.bad_forward_reference": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.bad_order": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.bad_reduction": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.byte_allocation_accepted": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.byte_allocation_population": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.stream_threshold": [
+      "propext"
+    ],
+    "PerfectPower.PlanningReplayExamples.stream_stage_evidence": [
+      "propext"
+    ],
+    "PerfectPower.PlanningReplayExamples.complete_small_fixture_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.nat_threshold": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.intersect_semantic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.threshold0": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.threshold1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.conjunction_fixture": [],
+    "PerfectPower.PlanningReplayExamples.source_stages": [
+      "propext",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.coordinate_permutation": [],
+    "PerfectPower.PlanningReplayExamples.original_exact_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.PlanningReplayExamples.negative_threshold": [],
+    "PerfectPower.PlanningReplayExamples.negative_population": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.Petersen50Bridge.receipt_order_is_permutation": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PerfectPower.Petersen50Bridge.ordered_dimensions": [],
+    "PerfectPower.Petersen50Bridge.population_if_complete_stage_evidence": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "rejections": {
+    "false_population": {
+      "exit_code": 1,
+      "diagnostic": "/tmp/planning-bridge-_8idondz/false_population.lean:11:135: error: tactic 'decide' proved that the proposition\n  PlanningDiagram.census 3 (PlanningDiagram.feasible PlanningReplayExamples.rows PlanningReplayExamples.caps) = 4\nis false\n"
+    },
+    "duplicate_coordinate": {
+      "exit_code": 1,
+      "diagnostic": "/tmp/planning-bridge-_8idondz/duplicate_coordinate.lean:11:56: error: tactic 'decide' proved that the proposition\n  [0, 0, 2].Perm (List.range 3)\nis false\n"
+    },
+    "negative_capacity_truncation": {
+      "exit_code": 1,
+      "diagnostic": "/tmp/planning-bridge-_8idondz/negative_capacity_truncation.lean:11:115: error: tactic 'decide' proved that the proposition\n  (PlanningDiagram.census 2 fun xs => decide (\u2191(PlanningDiagram.dot [0, 0] xs) \u2264 -1)) = 4\nis false\n"
+    },
+    "wrong_little_endian_count": {
+      "exit_code": 1,
+      "diagnostic": "/tmp/planning-bridge-_8idondz/wrong_little_endian_count.lean:11:116: error: tactic 'decide' proved that the proposition\n  PlanningTraceDecode.readRecord PlanningTraceDecode.fixture = some (PlanningTraceDecode.Record.node 1 1 0 33554432, [])\nis false\n"
+    },
+    "accepted_bad_padding": {
+      "exit_code": 1,
+      "diagnostic": "/tmp/planning-bridge-_8idondz/accepted_bad_padding.lean:11:94: error: tactic 'decide' proved that the proposition\n  PlanningTraceDecode.fromWords [1, 1, 1, 0, 2, 0, 1, 0] = some (PlanningTraceDecode.Record.node 1 1 0 2)\nis false\n"
+    }
+  },
+  "sources": {
+    "PerfectPower/PlanningDiagram.lean": "7dea7d3d69b60a07164e857becf5ae4e698f70f76608f90be7cde023adf70952",
+    "PerfectPower/PlanningCertificate.lean": "d472fd8db533488ef78870eee7251e65bbc17ff2404dac1b20303e422d25554c",
+    "PerfectPower/PlanningCertificateExamples.lean": "392a62a0a2d23eb2f4a7a0deffff7d5a730766d365f32edd900e319787d9eb33",
+    "PerfectPower/PetersenPlanning.lean": "67f2c55d418d43e05b73cf77976fbb9be9f136cde2b9eae7551f724374086223",
+    "PerfectPower/PlanningPermutation.lean": "c4ee4947a72d609e6ef4a9d06bdf0e84aa62c766a85054425d0df3e6b9ab56f3",
+    "PerfectPower/PlanningReplayBridge.lean": "6cecaa2702d7f1dc17b7da963a01ca4769257f935ea11471de0d361c2c339c64",
+    "PerfectPower/PlanningTraceDecode.lean": "13150864f4cd393504814116deb91110446fa42464a0c4bcd19bf097614c8a4c",
+    "PerfectPower/PlanningReplayExamples.lean": "87bac6c8db4f4032dd802686e13b20dd33e5691712814e6607886bda0d93b148",
+    "PerfectPower/Petersen50Bridge.lean": "8a2b239608e031f5c0eeccaf49f46df77c7ba706208bf625a87989c0fc83fe39"
+  },
+  "verification_script_sha256": "303101b2463b4919f9a08a020b1fb109591c400047b8a7988310792e53c95656",
+  "support_sources": {
+    "python/tests/test_planning_bridge.py": "f1f83c3641aa5ac423befed2b9329c5e2c877829a125c9b02f3b9733517688fa",
+    "python/tests/test_planning_certificate.py": "39d390c13b2ac01f63509602af442114a01f3aa50c266ef01c2fefe1679df693",
+    "python/perfectpower/planning_certificate.py": "34ce8f6bb45243add026e408826ada5a516021e5e0b2c2aff0cc068e0b0af373",
+    "scripts/check_planning_lean.py": "239abed6f5280e2bfa52072f191b6c8d24d0efc5cc04a1a724d90ea7be572c94",
+    "native/independent_planning_bdd.cpp": "573fa767222ae1af21b6ed1666a1dee470322bc25988d4268a080468d294d7b2",
+    "native/planning_certificate_trace.hpp": "a562f32b8eceae343a1fbb52fca8fce5fb0628b3e15c96083f775fe84d1f156c"
+  },
+  "retained_external_receipt_sha256": "297bcf7fd0955c531f117058febcc70ca3a857b8307be8d7aba8fd8dabdb6705",
+  "retained_external_count": 702508860122761,
+  "receipt_order_matches_literal": true,
+  "small_source_population_kernel_proved": 3,
+  "negative_capacity_population_kernel_proved": 0,
+  "literal_allocation_bytes_kernel_decoded_and_count_checked": true,
+  "source_permutation_transport_kernel_proved": true,
+  "full_stream_to_stage_evidence_kernel_proved": false,
+  "full_population_kernel_proved": false,
+  "scoped_lake_build_passed": true,
+  "large_witness_replayed": false,
+  "historical_search_rerun": false,
+  "remaining_trusted_components": [
+    "Original file-to-literal source acquisition; checked independently in Python, not proved in Lean",
+    "Decompression, file I/O and digest identity for the complete witness",
+    "Full header/record stream parser and numeric reference-table invariants",
+    "Production Python/packed-table replay refinement to semantic evidence",
+    "Construction and kernel checking of complete Petersen50 stage evidence"
+  ]
+}
